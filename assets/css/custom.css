@@ -1,0 +1,17 @@
+body,
+.hextra-toc {
+  background-color: rgb(247, 245, 250);
+}
+.hx-bg-white {
+  background-color: rgb(247, 245, 250);
+}
+.hx-shadow-\[0_-12px_16px_white\] {
+  --tw-shadow: none;
+}
+.hx-shadow-\[0_-12px_16px_\#fff\] {
+  --tw-shadow: none;
+}
+
+footer.hx-bg-gray-100 {
+  background-color: white;
+}

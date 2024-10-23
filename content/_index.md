@@ -1,16 +1,10 @@
 ---
-title: My Site
+title: 
 toc: false
 ---
-This is the landing page.
+![img](https://cdn.yuelili.com/docs/web/assert/banner-anime-girl-roller.jpg)
 
-## Explore
-
-{{< cards >}}
-  {{< card link="ae" title="AE" icon="book-open" >}}
-  {{< card link="about" title="About" icon="user" >}}
-{{< /cards >}}
-
-## Documentation
-
-For more information, visit [Hextra](https://imfing.github.io/hextra).
+{{< counters >}}
+{{< counter title="书籍数量" count="12" >}}
+{{< counter title="文章数量" count="2000" >}}
+{{< /counters >}}
