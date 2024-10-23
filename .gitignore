@@ -1,0 +1,5 @@
+themes
+public
+hugo.exe
+.hugo*
+resources/_gen
