@@ -1,0 +1,21 @@
+{
+  "name": "docs",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.32.2",
+    "@tailwindcss/vite": "^4.0.14",
+    "astro": "^5.1.5",
+    "daisyui": "^5.0.6",
+    "sharp": "^0.33.5",
+    "starlight-sidebar-topics": "^0.5.1",
+    "tailwindcss": "^4.0.14"
+  }
+}
