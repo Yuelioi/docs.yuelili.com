@@ -1,16 +1,15 @@
 ---
 title: viewoptions
 ---
-
 # ViewOptions object
 
 `app.activeViewer.views[0].options`
 
-#### Description
+#### 描述
 
 The ViewOptions object represents the options for a given [View object](../view)
 
-#### Example
+#### 示例
 
 This enables checkerboards and locks guides for a given view
 
@@ -23,17 +22,17 @@ viewOptions.guidesLocked = true;
 
 ---
 
-## Attributes
+## 属性
 
 ### ViewOptions.channels
 
 `app.activeViewer.views[0].options.channels`
 
-#### Description
+#### 描述
 
 The state of the Channels menu.
 
-#### Type
+#### 类型
 
 A `ChannelType` enumerated value; read/write. One of:
 
@@ -55,11 +54,11 @@ A `ChannelType` enumerated value; read/write. One of:
 
 `app.activeViewer.views[0].options.checkerboards`
 
-#### Description
+#### 描述
 
 When `true`, checkerboards (transparency grid) is enabled in the current view.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -69,13 +68,13 @@ Boolean; read/write.
 
 `app.activeViewer.views[0].options.exposure`
 
-#### Description
+#### 描述
 
 The exposure value for the current view.
 
-#### Type
+#### 类型
 
-Floating-point value, in the range `[-40..40]`
+Floating-point value, 范围为 `[-40..40]`
 
 ---
 
@@ -83,20 +82,23 @@ Floating-point value, in the range `[-40..40]`
 
 `app.activeViewer.views[0].options.fastPreview`
 
-!!! note
-    This functionality was added in After Effects 12.0 (CC)
+:::note
+该方法添加于 After Effects 12.0 (CC)
+:::
 
-#### Description
+#### 描述
 
 The state of the Fast Previews menu. This is a read/write attribute using an enumerated value:
 
-!!! warning
-    If you try to get or set the attribute's value in the Layer or Footage panel, you'll get an error message.
+:::warning
+If you try to get or set the attribute's value in the Layer or Footage panel, you'll get an error message.
+:::
 
-!!! tip
-    The Draft preview mode is only available in ray-traced 3D compositions. If you try to use it in a Classic 3D composition, you'll get an error: "Cannot set Draft fast preview mode in a Classic 3D composition."
+:::tip
+The Draft preview mode is only available in ray-traced 3D compositions. If you try to use it in a Classic 3D composition, you'll get an error: "Cannot set Draft fast preview mode in a Classic 3D composition."
+:::
 
-#### Type
+#### 类型
 
 A `FastPreviewType` enumerated value; read/write. One of:
 
@@ -106,7 +108,7 @@ A `FastPreviewType` enumerated value; read/write. One of:
 - `FastPreviewType.FP_FAST_DRAFT`: Fast Draft
 - `FastPreviewType.FP_WIREFRAME`: Wireframe
 
-#### Example
+#### 示例
 
 ```javascript
 app.activeViewer.views[0].options.fastPreview === FastPreviewType.FP_ADAPTIVE_RESOLUTION;
@@ -122,18 +124,19 @@ app.activeViewer.views[0].options.fastPreview === FastPreviewType.FP_WIREFRAME;
 
 `app.activeViewer.views[0].options.guidesLocked`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+该方法添加于 After Effects 16.1 (CC 2019)
+:::
 
-#### Description
+#### 描述
 
 When `true`, indicates guides are locked in the view.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
-#### Example
+#### 示例
 
 ```javascript
 app.activeViewer.views[0].options.guidesLocked;
@@ -145,18 +148,19 @@ app.activeViewer.views[0].options.guidesLocked;
 
 `app.activeViewer.views[0].options.guidesSnap`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+该方法添加于 After Effects 16.1 (CC 2019)
+:::
 
-#### Description
+#### 描述
 
 When `true`, indicates layers snap to guides when dragged in the view.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
-#### Example
+#### 示例
 
 ```javascript
 app.activeViewer.views[0].options.guidesSnap;
@@ -168,18 +172,19 @@ app.activeViewer.views[0].options.guidesSnap;
 
 `app.activeViewer.views[0].options.guidesVisibility`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+该方法添加于 After Effects 16.1 (CC 2019)
+:::
 
-#### Description
+#### 描述
 
 When `true`, indicates guides are visible in the view.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
-#### Example
+#### 示例
 
 ```javascript
 app.activeViewer.views[0].options.guidesVisibility;
@@ -191,18 +196,19 @@ app.activeViewer.views[0].options.guidesVisibility;
 
 `app.activeViewer.views[0].options.rulers`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+该方法添加于 After Effects 16.1 (CC 2019)
+:::
 
-#### Description
+#### 描述
 
 When `true`, indicates rulers are shown in the view.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
-#### Example
+#### 示例
 
 ```javascript
 app.activeViewer.views[0].options.rulers;
@@ -214,10 +220,10 @@ app.activeViewer.views[0].options.rulers;
 
 `app.activeViewer.views[0].options.zoom`
 
-#### Description
+#### 描述
 
 Sets the current zoom value for the view, as a normalized percentage between 1% (0.01) and 1600% (16).
 
-#### Type
+#### 类型
 
-Floating-point value, in the range `[0.01..16]`
+Floating-point value, 范围为 `[0.01..16]`

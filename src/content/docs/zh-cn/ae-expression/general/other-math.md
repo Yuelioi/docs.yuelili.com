@@ -1,32 +1,31 @@
 ---
-title: other-math
+title: 其他数学函数
 ---
-
 # Other Math
 
-This category holds other math functions not otherwise covered.
+此类别包含其他未涵盖的数学函数。
 
 ---
 
-## Methods
+## 函数
 
 ### degreesToRadians()
 
 `degreesToRadians(degrees)`
 
-#### Description
+#### 描述
 
-Converts degrees to radians.
+将角度转换为弧度。
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |                 Description                  |
-| --------- | ------ | -------------------------------------------- |
-| `degrees` | Number | The value (in degrees) to convert to radians |
+| 参数      | 类型   | 描述                                   |
+| --------- | ------ | -------------------------------------- |
+| `degrees` | 数字   | 需要转换为弧度的角度值                |
 
-#### Returns
+#### 返回
 
-Number
+数字
 
 ---
 
@@ -34,16 +33,16 @@ Number
 
 `radiansToDegrees(radians)`
 
-#### Description
+#### 描述
 
-Converts radians to degrees.
+将弧度转换为角度。
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |                 Description                  |
-| --------- | ------ | -------------------------------------------- |
-| `radians` | Number | The value (in radians) to convert to degrees |
+| 参数      | 类型   | 描述                                   |
+| --------- | ------ | -------------------------------------- |
+| `radians` | 数字   | 需要转换为角度的弧度值                |
 
-#### Returns
+#### 返回
 
-Number
+数字

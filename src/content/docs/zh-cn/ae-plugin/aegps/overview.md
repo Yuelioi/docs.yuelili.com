@@ -1,7 +1,6 @@
 ---
 title: overview
 ---
-
 # Overview
 
 AEGPs use Plug-In Component Architecture (PICA) function suites to access all functionality.

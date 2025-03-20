@@ -1,15 +1,15 @@
 ---
 title: paragraphrange
 ---
-
 # ParagraphRange object
 
 `app.project.item(index).layer(index).text.sourceText.value.paragraphRange(paragraphIndexStart, [signedParagraphIndexEnd])`
 
-!!! note
-    This functionality was added in After Effects 24.3
+:::note
+该方法添加于 After Effects 24.3
+:::
 
-#### Description
+#### 描述
 
 The ParagraphRange object is an accessor to a paragraph range of the [TextDocument object](../textdocument) instance it was created from.
 
@@ -26,7 +26,7 @@ This instance becomes independent of the ParagraphRange instance it came from so
 
 For performance reasons, when accessing multiple attributes it is adviseable to retrieve the [CharacterRange object](../characterrange) once and re-use it rather than create a new one each time.
 
-#### Examples
+#### 示例
 
 This increases the font size of the first paragraph in the TextDocument, and set the rest of the paragraphs to fontSize 40.
 
@@ -42,21 +42,21 @@ textDocument.paragraphRange(1,-1).characterRange().fontSize = 40;
 
 ---
 
-## Attributes
+## 属性
 
 ### ParagraphRange.characterEnd
 
 `ParagraphRange.characterEnd`
 
-#### Description
+#### 描述
 
 The Text layer range calculated character end value.
 
 Throws an exception on access if the effective value would exceed the bounds of the related [TextDocument object](../textdocument).
 
-#### Type
+#### 类型
 
-Unsigned integer; read-only.
+Unsigned integer; 只读.
 
 ---
 
@@ -64,15 +64,15 @@ Unsigned integer; read-only.
 
 `ParagraphRange.characterStart`
 
-#### Description
+#### 描述
 
 The Text layer range calculated character start value.
 
 Throws an exception on access if the effective value would exceed the bounds of the related [TextDocument object](../textdocument).
 
-#### Type
+#### 类型
 
-Unsigned integer; read-only.
+Unsigned integer; 只读.
 
 ---
 
@@ -80,23 +80,23 @@ Unsigned integer; read-only.
 
 `ParagraphRange.isRangeValid`
 
-#### Description
+#### 描述
 
 Returns `true` if the current range is within the bounds of the related [TextDocument object](../textdocument), otherwise `false`.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
-## Methods
+## 函数
 
 ### ParagraphRange.characterRange()
 
 `ParagraphRange.characterRange()`
 
-#### Description
+#### 描述
 
 Returns a [CharacterRange object](../characterrange) initialized from [characterStart](#paragraphrangecharacterstart) and [characterEnd](#paragraphrangecharacterend).
 
@@ -104,11 +104,11 @@ Will throw an exception if [isRangeValid](#paragraphrangeisrangevalid) would ret
 
 The returned instance, once created, is independent of subsequent changes to the ParagraphRange it came from.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 [CharacterRange object](../characterrange);
 
@@ -118,16 +118,16 @@ None.
 
 `ParagraphRange.toString()`
 
-#### Description
+#### 描述
 
 Returns a string with the parameters used to create the ParagraphRange instance, e.g. `"ParagraphRange(0,-1)"`
 
 This may be safely called on an instance where [isRangeValid](#paragraphrangeisrangevalid) returns `false`.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 String;

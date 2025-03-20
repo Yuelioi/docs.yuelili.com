@@ -1,7 +1,6 @@
 ---
-title: marker-property
+title: 标记属性
 ---
-
 # Marker Property
 
 `thisComp.marker`
@@ -12,32 +11,33 @@ title: marker-property
 
 `thisLayer.marker`
 
-The Marker Property is a special version of the [Property](.././property) object *specifically* for composition & layer markers.
+标记属性是 [属性](../property) 对象的特殊版本，*专门* 用于合成和图层标记。
 
-It contains a special version of some of the same attributes and methods as the standard Property object, however most elements are not applicable here.
+它包含标准属性对象的一些相同属性和方法的特殊版本，但大多数元素在此不适用。
 
-!!! info
-    On this page, we're going to use `thisComp.marker` as a sample on how to call these items, however note that any method that returns a [Marker Property](#) will work.
+:::info
+在本页中，我们将使用 `thisComp.marker` 作为调用这些项的示例，但请注意，任何返回 [标记属性](#) 的方法都可以使用。
+:::
 
 ---
 
-## Attributes
+## 属性
 
 ### Marker.numKeys
 
 `thisComp.marker.numKeys`
 
-#### Description
+#### 描述
 
-Returns the total number of markers in this composition or layer.
+返回此合成或图层中的标记总数。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
-## Methods
+## 函数
 
 ### Marker.key(index)
 
@@ -45,47 +45,43 @@ Number
 
 `thisComp.marker.key(name)`
 
-#### Description
+#### 描述
 
-Returns the [MarkerKey](.././markerkey) object of the marker with the specified `index` or `name`.
+返回具有指定 `index` 或 `name` 的 [MarkerKey](../markerkey) 对象。
 
-The `index` refers to the order of the marker in composition time, not to the numbered name of the marker.
+`index` 指的是标记在合成时间中的顺序，而不是标记的编号名称。
 
-The `name` value is the name of the marker, as typed in the comment field in the marker dialog box. For example, `marker.key("1")`.
+`name` 值是标记的名称，如在标记对话框的注释字段中键入的名称。例如，`marker.key("1")`。
 
-If more than one marker has the same name, this method returns the marker that occurs first in time (in composition or layer time, depending on whether this is a composition or layer marker).
+如果有多个标记具有相同的名称，此方法返回在时间上最先出现的标记（根据是合成标记还是图层标记，分别使用合成时间或图层时间）。
 
-#### Parameters
+#### 参数
 
-+-----------+--------+-------------------------------------------+
-| Parameter |  Type  |                Description                |
-+===========+========+===========================================+
-| `index`   | Number | The marker index to get                   |
-+-----------+--------+-------------------------------------------+
-| `name`    | String | Marker name or index to access marker by. |
-|           |        |                                           |
-| `index`   | Number |                                           |
-+-----------+--------+-------------------------------------------+
+| 参数      | 类型   | 描述                         |
+| --------- | ------ | ---------------------------- |
+| `index` | 数字   | 要获取的标记索引             |
+| `name`  | 字符串 | 通过标记名称或索引访问标记。 |
+| `index` | 数字   |                              |
 
-#### Type
+#### 类型
 
-[MarkerKey](.././markerkey)
+[MarkerKey](../markerkey)
 
-#### Example
+#### 示例
 
-Return the time of the first composition marker:
+返回第一个合成标记的时间：
 
 ```js
 thisComp.marker.key(1).time;
 ```
 
-Return the time of the layer marker with the name "0":
+返回名称为 "0" 的图层标记的时间：
 
 ```js
 thisLayer.marker.key("0").time;
 ```
 
-On a layer, ramp the value of the property from `0` to `100` between two markers identified by name:
+在图层上，根据名称标识的两个标记之间的时间，将属性值从 `0` 渐变到 `100`：
 
 ```js
 const m1 = thisLayr.marker.key("Start").time;
@@ -99,29 +95,29 @@ linear(time, m1, m2, 0, 100);
 
 `thisComp.marker.nearestKey(t)`
 
-#### Description
+#### 描述
 
-Returns the marker that is nearest in comp or layer time to the provided time `t`.
+返回在合成或图层时间中最接近提供的时间 `t` 的标记。
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |               Description                |
-| --------- | ------ | ---------------------------------------- |
-| `t`       | Number | The time to find the nearest marker from |
+| 参数  | 类型 | 描述                 |
+| ----- | ---- | -------------------- |
+| `t` | 数字 | 查找最接近标记的时间 |
 
-#### Returns
+#### 返回
 
-[MarkerKey](.././markerkey)
+[MarkerKey](../markerkey)
 
-#### Example
+#### 示例
 
-Return the time of the composition marker nearest to the time of 1 second:
+返回最接近 1 秒时间的合成标记的时间：
 
 ```js
 thisComp.marker.nearestKey(1).time;
 ```
 
-This expression returns the time of the layer marker nearest to the current comp time:
+此表达式返回最接近当前合成时间的图层标记的时间：
 
 ```js
 thisLayer.marker.nearestKey(time).time;

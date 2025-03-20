@@ -1,30 +1,29 @@
 ---
 title: project
 ---
-
 # Project object
 
 `app.project`
 
-#### Description
+#### 描述
 
 The project object represents an After Effects project. Attributes provide access to specific objects within the project, such as imported files or footage and compositions, and also to project settings such as the timecode base. Methods can import footage, create solids, compositions and folders, and save changes.
 
 ---
 
-## Attributes
+## 属性
 
 ### Project.activeItem
 
 `app.project.activeItem`
 
-#### Description
+#### 描述
 
 The item that is currently active and is to be acted upon, or `null` if no item is currently selected or if multiple items are selected.
 
-#### Type
+#### 类型
 
-[Item object](../../item/item) or `null`; read-only.
+[Item object](../../item/item) or `null`; 只读.
 
 ---
 
@@ -32,11 +31,11 @@ The item that is currently active and is to be acted upon, or `null` if no item 
 
 `app.project.bitsPerChannel`
 
-#### Description
+#### 描述
 
 The color depth of the current project, either 8, 16, or 32 bits.
 
-#### Type
+#### 类型
 
 Integer (8, 16, or 32 only); read/write.
 
@@ -46,14 +45,15 @@ Integer (8, 16, or 32 only); read/write.
 
 `app.project.compensateForSceneReferredProfiles`
 
-!!! note
-    This functionality was added in After Effects 16.0 (CC 2019)
+:::note
+该方法添加于 After Effects 16.0 (CC 2019)
+:::
 
-#### Description
+#### 描述
 
 `true` if Compensate for Scene-referred Profiles should be enabled for this project; otherwise `false`.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -63,21 +63,23 @@ Boolean; read/write.
 
 `app.project.dirty`
 
-!!! note
-    This functionality was added in After Effects 17.5 (CC2020).
+:::note
+该方法添加于 After Effects 17.5 (CC2020).
+:::
 
-!!! warning
-    This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::warning
+This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::
 
-#### Description
+#### 描述
 
 `true` if the project has been modified from the last save; otherwise `false`.
 
 "Dirty" projects will have an `*` in the project window title.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -85,11 +87,11 @@ Boolean; read-only.
 
 `app.project.displayStartFrame`
 
-#### Description
+#### 描述
 
 An alternate way of setting the Frame Count menu setting in the Project Settings dialog box to 0 or 1, and is equivalent to using the `FramesCountType.FC_START_0` or `FramesCountType.FC_START_1` enumerated values for the [framesCountType](#projectframescounttype).
 
-#### Type
+#### 类型
 
 Integer (0 or 1); read/write.
 
@@ -99,17 +101,18 @@ Integer (0 or 1); read/write.
 
 `app.project.expressionEngine`
 
-!!! note
-    This functionality was added in After Effects 16.0 (CC 2019)
+:::note
+该方法添加于 After Effects 16.0 (CC 2019)
+:::
 
-#### Description
+#### 描述
 
 The Expressions Engine setting in the Project Settings dialog box, as a string. One of:
 
 - `extendscript`
 - `javascript-1.0`
 
-#### Type
+#### 类型
 
 String; read/write.
 
@@ -119,11 +122,11 @@ String; read/write.
 
 `app.project.feetFramesFilmType`
 
-#### Description
+#### 描述
 
 The Use Feet + Frames menu setting in the Project Settings dialog box. Use this attribute instead of the old `timecodeFilmType` attribute.
 
-#### Type
+#### 类型
 
 A `FeetFramesFilmType` enumerated value; read/write. One of:
 
@@ -136,13 +139,13 @@ A `FeetFramesFilmType` enumerated value; read/write. One of:
 
 `app.project.file`
 
-#### Description
+#### 描述
 
 The [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object for the file containing the project that is currently open.
 
-#### Type
+#### 类型
 
-[File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object or `null` if project has not been saved; read-only.
+[File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object or `null` if project has not been saved; 只读.
 
 ---
 
@@ -150,11 +153,11 @@ The [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access
 
 `app.project.footageTimecodeDisplayStartType`
 
-#### Description
+#### 描述
 
 The Footage Start Time setting in the Project Settings dialog box, which is enabled when Timecode is selected as the time display style.
 
-#### Type
+#### 类型
 
 A `FootageTimecodeDisplayStartType` enumerated value; read/write. One of:
 
@@ -167,11 +170,11 @@ A `FootageTimecodeDisplayStartType` enumerated value; read/write. One of:
 
 `app.project.framesCountType`
 
-#### Description
+#### 描述
 
 The Frame Count menu setting in the Project Settings dialog box.
 
-#### Type
+#### 类型
 
 A `FramesCountType` enumerated value; read/write. One of:
 
@@ -179,8 +182,9 @@ A `FramesCountType` enumerated value; read/write. One of:
 - `FramesCountType.FC_START_0`
 - `FramesCountType.FC_TIMECODE_CONVERSION`
 
-!!! warning
-    Setting this attribute to `FramesCountType.FC_TIMECODE_CONVERSION` resets the `displayStartFrame` attribute to 0.
+:::warning
+Setting this attribute to `FramesCountType.FC_TIMECODE_CONVERSION` resets the `displayStartFrame` attribute to 0.
+:::
 
 ---
 
@@ -188,13 +192,13 @@ A `FramesCountType` enumerated value; read/write. One of:
 
 `app.project.framesUseFeetFrames`
 
-#### Description
+#### 描述
 
 The "Use Feet + Frames" setting in the Project Settings dialog box.
 
 `true` if using Feet + Frames; `false` if using Frames.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -204,15 +208,16 @@ Boolean; read/write.
 
 `app.project.gpuAccelType`
 
-!!! note
-    This functionality was added in After Effects 13.8 (CC 2015.3)
+:::note
+该方法添加于 After Effects 13.8 (CC 2015.3)
+:::
 
-#### Description
+#### 描述
 
 Get or set the current projects GPU Acceleration option.
 see [app.availableGPUAccelTypes](application.md#appavailablegpuacceltypes)
 
-#### Type
+#### 类型
 
 A `GpuAccelType` enumerated value; read/write. One of:
 
@@ -221,7 +226,7 @@ A `GpuAccelType` enumerated value; read/write. One of:
 - `GpuAccelType.OPENCL`
 - `GpuAccelType.SOFTWARE`
 
-#### Example
+#### 示例
 
 ```javascript
 // access via scripting to Project Settings -> Video Rendering and Effects -> Use
@@ -260,13 +265,13 @@ app.project.gpuAccelType = GpuAccelType.METAL;
 
 `app.project.items`
 
-#### Description
+#### 描述
 
 All of the items in the project.
 
-#### Type
+#### 类型
 
-[ItemCollection object](../../item/itemcollection); read-only.
+[ItemCollection object](../../item/itemcollection); 只读.
 
 ---
 
@@ -274,11 +279,11 @@ All of the items in the project.
 
 `app.project.linearBlending`
 
-#### Description
+#### 描述
 
 `true` if linear blending should be used for this project; otherwise `false`.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -288,14 +293,15 @@ Boolean; read/write.
 
 `app.project.linearizeWorkingSpace`
 
-!!! note
-    This functionality was added in After Effects 16.0 (CC 2019)
+:::note
+该方法添加于 After Effects 16.0 (CC 2019)
+:::
 
-#### Description
+#### 描述
 
 `true` if Linearize Working Space should be enabled for this project; otherwise `false`.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -305,15 +311,15 @@ Boolean; read/write.
 
 `app.project.numItems`
 
-#### Description
+#### 描述
 
 The total number of items contained in the project, including folders and all types of footage.
 
-#### Type
+#### 类型
 
-Integer; read-only.
+Integer; 只读.
 
-#### Example
+#### 示例
 
 ```javascript
 var numItems = app.project.numItems;
@@ -326,14 +332,13 @@ alert("There are " + numItems + " items in this project.")
 
 `app.project.renderQueue`
 
-#### Description
+#### 描述
 
 The [Render Queue](../../renderqueue/renderqueue) of the project.
 
+#### 类型
 
-#### Type
-
-[RenderQueue object](../../renderqueue/renderqueue); read-only.
+[RenderQueue object](../../renderqueue/renderqueue); 只读.
 
 ---
 
@@ -341,13 +346,13 @@ The [Render Queue](../../renderqueue/renderqueue) of the project.
 
 `app.project.revision`
 
-#### Description
+#### 描述
 
 The current revision of the project. Every user action increases the revision number. New project starts at revision 1.
 
-#### Type
+#### 类型
 
-Integer; the current revision version of the project; read-only.
+Integer; the current revision version of the project; 只读.
 
 ---
 
@@ -355,13 +360,13 @@ Integer; the current revision version of the project; read-only.
 
 `app.project.rootFolder`
 
-#### Description
+#### 描述
 
 The root folder containing the contents of the project; this is a virtual folder that contains all items in the Project panel, but not items contained inside other folders in the Project panel.
 
-#### Type
+#### 类型
 
-[FolderItem object](../../item/folderitem); read-only.
+[FolderItem object](../../item/folderitem); 只读.
 
 ---
 
@@ -369,13 +374,13 @@ The root folder containing the contents of the project; this is a virtual folder
 
 `app.project.selection`
 
-#### Description
+#### 描述
 
 All items selected in the Project panel, in the sort order shown in the Project panel.
 
-#### Type
+#### 类型
 
-Array of [Item objects](../../item/item); read-only.
+Array of [Item objects](../../item/item); 只读.
 
 ---
 
@@ -383,11 +388,11 @@ Array of [Item objects](../../item/item); read-only.
 
 `app.project.timeDisplayType`
 
-#### Description
+#### 描述
 
 The time display style, corresponding to the Time Display Style section in the Project Settings dialog box.
 
-#### Type
+#### 类型
 
 A `TimeDisplayType` enumerated value; read/write. One of:
 
@@ -400,14 +405,15 @@ A `TimeDisplayType` enumerated value; read/write. One of:
 
 `app.project.toolType`
 
-!!! note
-    This functionality was added in After Effects 14.0 (CC 2017)
+:::note
+该方法添加于 After Effects 14.0 (CC 2017)
+:::
 
-#### Description
+#### 描述
 
 Get and sets the active tool in the Tools panel.
 
-#### Type
+#### 类型
 
 A `ToolType` enumerated value; read/write. One of:
 
@@ -441,7 +447,7 @@ A `ToolType` enumerated value; read/write. One of:
 - `ToolType.Tool_Quickselect`: Roto Brush Tool
 - `ToolType.Tool_Hairbrush`: Refine Edge Tool
 
-#### Examples
+#### 示例
 
 The following sample code checks the current tool, and if it is not the Unified Camera Tool, sets the current tool to that:
 
@@ -492,11 +498,11 @@ if (item !== null && (item.typeName === "Footage" || item.typeName === "Composit
 
 `app.project.transparencyGridThumbnails`
 
-#### Description
+#### 描述
 
 When `true`, thumbnail views use the transparency checkerboard pattern.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -506,10 +512,11 @@ Boolean; read/write.
 
 `app.project.usedFonts`
 
-!!! note
-    This functionality was added in After Effects 24.5
+:::note
+该方法添加于 After Effects 24.5
+:::
 
-#### Description
+#### 描述
 
 Returns an Array of Objects containing references to used fonts and the Text Layers and times on which they appear in the current [Project](#project-object).
 
@@ -538,9 +545,9 @@ if (usedList.length) {
 }
 ```
 
-#### Type
+#### 类型
 
-Array of Objects; read-only.
+Array of Objects; 只读.
 
 ---
 
@@ -548,23 +555,24 @@ Array of Objects; read-only.
 
 `app.project.workingGamma`
 
-#### Description
+#### 描述
 
 The current project's working gamma value, either 2.2 or 2.4.
 
 Setting values other than 2.2 or 2.4 will cause a scripting error.
 
-!!! tip
-    When the project's color working space is set, the working gamma value is ignored by After Effects.
+:::tip
+When the project's color working space is set, the working gamma value is ignored by After Effects.
+:::
 
-#### Type
+#### 类型
 
 `2.2` or `2.4`; read/write.
 
-#### Examples
+#### 示例
 
-* To set the working gamma to 2.4 (Rec. 709): `app.project.workingGamma = 2.4;`
-* To get the current working gamma: `var currentGamma = app.project.workingGamma;`
+- To set the working gamma to 2.4 (Rec. 709): `app.project.workingGamma = 2.4;`
+- To get the current working gamma: `var currentGamma = app.project.workingGamma;`
 
 ---
 
@@ -572,21 +580,21 @@ Setting values other than 2.2 or 2.4 will cause a scripting error.
 
 `app.project.workingSpace`
 
-#### Description
+#### 描述
 
 A string which is the color profile description for the project's color working space. To set the working space to None, set `workingSpace` to an empty string.
 
 Use `app.project.listColorProfiles()` to return an array of available color profile descriptions that can be used to set the color working space.
 
-#### Type
+#### 类型
 
 String; read/write.
 
-#### Examples
+#### 示例
 
-* To set the working space to Rec.709 Gamma 2.4: `app.project.workingSpace = "Rec.709 Gamma 2.4";`
-* To set the working space to None: `app.project.workingSpace = "";`
-* To get the current working space: `var currentSpace = app.project.workingSpace;`
+- To set the working space to Rec.709 Gamma 2.4: `app.project.workingSpace = "Rec.709 Gamma 2.4";`
+- To set the working space to None: `app.project.workingSpace = "";`
+- To get the current working space: `var currentSpace = app.project.workingSpace;`
 
 ---
 
@@ -594,15 +602,15 @@ String; read/write.
 
 `app.project.xmpPacket`
 
-#### Description
+#### 描述
 
 The project's XMP metadata, stored as RDF (XML-based). For more information on XMP, see the [JavaScript Tools Guide](https://extendscript.docsforadobe.dev/).
 
-#### Type
+#### 类型
 
 String; read/write.
 
-#### Example
+#### 示例
 
 The following example code accesses the XMP metadata of the current project, and modifies the Label project metadata field.
 
@@ -628,24 +636,24 @@ app.project.xmpPacket = mdata.serialize();
 
 ---
 
-## Methods
+## 函数
 
 ### Project.autoFixExpressions()
 
 `app.project.autoFixExpressions(oldText, newText)`
 
-#### Description
+#### 描述
 
 Automatically replaces text found in broken expressions in the project, if the new text causes the expression to evaluate without errors.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |     Description      |
+| 参数 |  类型  |     描述      |
 | --------- | ------ | -------------------- |
 | `oldText` | String | The text to replace. |
 | `newText` | String | The new text.        |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -655,23 +663,20 @@ Nothing.
 
 `app.project.close(closeOptions)`
 
-#### Description
+#### 描述
 
 Closes the project with the option of saving changes automatically, prompting the user to save changes or closing without saving changes.
 
-#### Parameters
+#### 参数
 
-+----------------+---------------------+-------------------------------------------------------------------------------------------+
-|   Parameter    |        Type         |                                        Description                                        |
-+================+=====================+===========================================================================================+
+|   参数    |        类型         |                                        描述                                        |
+|----------------|---------------------|-------------------------------------------------------------------------------------------|
 | `closeOptions` | `CloseOptions` enum | Action to be performed on close. One of:                                                  |
-|                |                     |                                                                                           |
 |                |                     | - `CloseOptions.DO_NOT_SAVE_CHANGES`: Close without saving.                               |
 |                |                     | - `CloseOptions.PROMPT_TO_SAVE_CHANGES`: Prompt for whether to save changes before close. |
 |                |                     | - `CloseOptions.SAVE_CHANGES`: Save automatically on close.                               |
-+----------------+---------------------+-------------------------------------------------------------------------------------------+
 
-#### Returns
+#### 返回
 
 Boolean. `true` on success. `false` if the file has not been previously saved, the user is prompted, and the user cancels the save.
 
@@ -681,15 +686,15 @@ Boolean. `true` on success. `false` if the file has not been previously saved, t
 
 `app.project.consolidateFootage()`
 
-#### Description
+#### 描述
 
 Consolidates all footage in the project. Same as the File > Consolidate All Footage command.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Integer; the total number of footage items removed.
 
@@ -699,23 +704,23 @@ Integer; the total number of footage items removed.
 
 `app.project.importFile(importOptions)`
 
-#### Description
+#### 描述
 
 Imports the file specified in the specified ImportOptions object, using the specified options. Same as the File > Import File command.
 
 Creates and returns a new FootageItem object from the file, and adds it to the project's items array.
 
-#### Parameters
+#### 参数
 
-|    Parameter    |                    Type                    |                               Description                                |
+|    参数    |                    类型                    |                               描述                                |
 | --------------- | ------------------------------------------ | ------------------------------------------------------------------------ |
 | `importOptions` | [ImportOptions](../../other/importoptions) | Options specifying the file to import and the options for the operation. |
 
-#### Returns
+#### 返回
 
 [FootageItem object](../../item/footageitem).
 
-#### Example
+#### 示例
 
 ```javascript
 app.project.importFile(new ImportOptions(new File("sample.psd"));
@@ -727,11 +732,11 @@ app.project.importFile(new ImportOptions(new File("sample.psd"));
 
 `app.project.importFileWithDialog()`
 
-#### Description
+#### 描述
 
 Shows an Import File dialog box. Same as the File > Import > File command.
 
-#### Returns
+#### 返回
 
 Array of [Item objects](../../item/item) created during import; or `null` if the user cancels the dialog box.
 
@@ -741,21 +746,21 @@ Array of [Item objects](../../item/item) created during import; or `null` if the
 
 `app.project.importPlaceholder(name, width, height, frameRate, duration)`
 
-#### Description
+#### 描述
 
 Creates and returns a new PlaceholderItem and adds it to the project's items array. Same as the File > Import > Placeholder command.
 
-#### Parameters
+#### 参数
 
-|  Parameter  |                        Type                         |                 Description                 |
+|  参数  |                        类型                         |                 描述                 |
 | ----------- | --------------------------------------------------- | ------------------------------------------- |
 | `name`      | String                                              | The name of the placeholder.                |
-| `width`     | Integer, in the range `[4..30000]`                  | The width of the placeholder in pixels.     |
-| `height`    | Integer, in the range `[4..30000]`                  | The height of the placeholder in pixels.    |
-| `frameRate` | Floating-point value, in the range `[1.0..99.0]`    | The frame rate of the placeholder.          |
-| `duration`  | Floating-point value, in the range `[0.0..10800.0]` | The duration of the placeholder in seconds. |
+| `width`     | Integer, 范围为 `[4..30000]`                  | The width of the placeholder in pixels.     |
+| `height`    | Integer, 范围为 `[4..30000]`                  | The height of the placeholder in pixels.    |
+| `frameRate` | Floating-point value, 范围为 `[1.0..99.0]`    | The frame rate of the placeholder.          |
+| `duration`  | Floating-point value, 范围为 `[0.0..10800.0]` | The duration of the placeholder in seconds. |
 
-#### Returns
+#### 返回
 
 PlaceholderItem object.
 
@@ -765,17 +770,17 @@ PlaceholderItem object.
 
 `app.project.item(index)`
 
-#### Description
+#### 描述
 
 Retrieves an item at a specified index position.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type   |                          Description                          |
+| 参数 |  类型   |                          描述                          |
 | --------- | ------- | ------------------------------------------------------------- |
 | `index`   | Integer | The index position of the item. The first item is at index 1. |
 
-#### Returns
+#### 返回
 
 [Item object](../../item/item).
 
@@ -785,20 +790,21 @@ Retrieves an item at a specified index position.
 
 `app.project.itemByID(id)`
 
-!!! note
-    This functionality was added in After Effects 13.0 (CC 2014)
+:::note
+该方法添加于 After Effects 13.0 (CC 2014)
+:::
 
-#### Description
+#### 描述
 
 Retrieves an item by its [Item ID](../item/item.md#itemid)
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type   |    Description    |
+| 参数 |  类型   |    描述    |
 | --------- | ------- | ----------------- |
 | `id`      | Integer | The ID of an item |
 
-#### Returns
+#### 返回
 
 [Item object](../../item/item).
 
@@ -808,24 +814,25 @@ Retrieves an item by its [Item ID](../item/item.md#itemid)
 
 `app.project.layerByID(id)`
 
-!!! note
-    This functionality was added in After Effects 22.0 (2022)
+:::note
+该方法添加于 After Effects 22.0 (2022)
+:::
 
-#### Description
+#### 描述
 
 Instance method on Project which, when given a valid ID value, returns the Layer object in the Project with that given ID.
 
-#### Parameters
+#### 参数
 
-| Parameter |          Type          |                      Description                      |
+| 参数 |          类型          |                      描述                      |
 | --------- | ---------------------- | ----------------------------------------------------- |
 | `id`      | Integer (non-negative) | The ID of the Layer to be retrieved from the Project. |
 
-#### Returns
+#### 返回
 
 [Layer object](../../layer/layer) with the given ID if it exists on the project; otherwise null. Non-valid IDs will throw an exception stating that the input parameter is not an unsigned integer.
 
-#### Example
+#### 示例
 
 ```javascript
 var firstComp = app.project.item(1);
@@ -843,15 +850,15 @@ if (app.project.layerByID(layerID) === firstLayer) {
 
 `app.project.listColorProfiles()`
 
-#### Description
+#### 描述
 
 Returns an array of color profile descriptions that can be set as the project's color working space.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Array of strings.
 
@@ -861,21 +868,21 @@ Array of strings.
 
 `app.project.reduceProject(array_of_items)`
 
-#### Description
+#### 描述
 
 Removes all items from the project except those specified. Same as the File > Reduce Project command.
 
-#### Parameters
+#### 参数
 
-|    Parameter     |                   Type                   |      Description      |
+|    参数     |                   类型                   |      描述      |
 | ---------------- | ---------------------------------------- | --------------------- |
 | `array_of_items` | Array of [Item objects](../../item/item) | The items to be kept. |
 
-#### Returns
+#### 返回
 
 Integer; the total number of items removed.
 
-#### Example
+#### 示例
 
 ```javascript
 var items = [];
@@ -890,15 +897,15 @@ app.project.reduceProject(items);
 
 `app.project.removeUnusedFootage()`
 
-#### Description
+#### 描述
 
 Removes unused footage from the project. Same as the File > Remove Unused Footage command.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Integer; the total number of FootageItem objects removed.
 
@@ -908,10 +915,11 @@ Integer; the total number of FootageItem objects removed.
 
 `app.project.replaceFont(fromFont, toFont, [noFontLocking = false])`
 
-!!! note
-    This functionality was added in After Effects 24.5
+:::note
+该方法添加于 After Effects 24.5
+:::
 
-#### Description
+#### 描述
 
 This function will replace all the usages of [Font object](../../text/fontobject) `fromFont` with [Font object](../../text/fontobject) `toFont`.
 
@@ -930,15 +938,15 @@ var toFont = fontList[0];
 var layerChanged = app.project.replaceFont(fromFont, toFont);
 ```
 
-#### Parameters
+#### 参数
 
-|    Parameter    |                 Type                 |          Description          |
+|    参数    |                 类型                 |          描述          |
 | --------------- | ------------------------------------ | ----------------------------- |
 | `fromFont`      | [Font object](../../text/fontobject) | Font to be replaced.          |
 | `toFont`        | [Font object](../../text/fontobject) | Font to replace it with.      |
 | `noFontLocking` | Boolean                              | Optional. Defaults to `false` |
 
-#### Returns
+#### 返回
 
 Boolean. `true` if at least one Layer was changed.
 
@@ -948,19 +956,19 @@ Boolean. `true` if at least one Layer was changed.
 
 `app.project.save([file])`
 
-#### Description
+#### 描述
 
 Saves the project. The same as the File > Save or File > Save As command. If the project has never previously been saved and no file is specified, prompts the user for a location and file name.
 
 Pass a [File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object to save a project to a new file without prompting.
 
-#### Parameters
+#### 参数
 
-| Parameter |                                              Type                                              |         Description         |
+| 参数 |                                              类型                                              |         描述         |
 | --------- | ---------------------------------------------------------------------------------------------- | --------------------------- |
 | `file`    | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) | Optional. The file to save. |
 
-#### Returns
+#### 返回
 
 None.
 
@@ -970,15 +978,15 @@ None.
 
 `app.project.saveWithDialog()`
 
-#### Description
+#### 描述
 
 Shows the Save dialog box. The user can name a file with a location and save the project, or click Cancel to exit the dialog box.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Boolean; `true` if the project was saved.
 
@@ -988,27 +996,27 @@ Boolean; `true` if the project was saved.
 
 `app.project.setDefaultImportFolder(folder)`
 
-#### Description
+#### 描述
 
 Sets the folder that will be shown in the file import dialog. This location will be used as an override until setDefaultImportFolder() is called with no parameters, or until After Effects is quit.
 
-#### Parameters
+#### 参数
 
-| Parameter |                                                Type                                                |       Description        |
+| 参数 |                                                类型                                                |       描述        |
 | --------- | -------------------------------------------------------------------------------------------------- | ------------------------ |
 | `folder`  | [Extendscript Folder](https://extendscript.docsforadobe.dev/file-system-access/folder-object.html) | Folder to set as default |
 
-#### Returns
+#### 返回
 
 Boolean; indicates if the operation was successful.
 
-#### Examples
+#### 示例
 
 Any of the following will set the default import folder to C:/My Folder:
 
-* `var myFolder = new Folder("C:/My Folder"); app.project.setDefaultImportFolder(myFolder);`
-* `app.project.setDefaultImportFolder(new Folder("C:/My Folder"));`
-* `app.project.setDefaultImportFolder(Folder("C:/My Folder"));`
+- `var myFolder = new Folder("C:/My Folder"); app.project.setDefaultImportFolder(myFolder);`
+- `app.project.setDefaultImportFolder(new Folder("C:/My Folder"));`
+- `app.project.setDefaultImportFolder(Folder("C:/My Folder"));`
 
 Note: if the path refers to an existing file and not a folder, the Folder function returns a File object instead of a Folder object, which will cause `setDefaultImportFolder()` to return `false`.
 
@@ -1022,17 +1030,17 @@ To disable the default folder, call `setDefaultImportFolder()` with no parameter
 
 `app.project.showWindow(doShow)`
 
-#### Description
+#### 描述
 
 Shows or hides the Project panel.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type   |                                Description                                 |
+| 参数 |  类型   |                                描述                                 |
 | --------- | ------- | -------------------------------------------------------------------------- |
 | `doShow`  | Boolean | When `true`, show the Project panel. When `false`, hide the Project panel. |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -1044,21 +1052,22 @@ Nothing.
 
 `app.project.newTeamProject(teamProjectName, description)`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+该方法添加于 After Effects 14.2 (CC 2017.1)
+:::
 
-#### Description
+#### 描述
 
 Creates a new team project.
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type  |          Description          |
+|     参数     |  类型  |          描述          |
 | ----------------- | ------ | ----------------------------- |
 | `teamProjectName` | String | Team project name             |
 | `description`     | String | Optional. Project description |
 
-#### Returns
+#### 返回
 
 Boolean. `true` if the team project is successfully created, otherwise `false`.
 
@@ -1068,20 +1077,21 @@ Boolean. `true` if the team project is successfully created, otherwise `false`.
 
 `app.project.openTeamProject(teamProjectName)`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+该方法添加于 After Effects 14.2 (CC 2017.1)
+:::
 
-#### Description
+#### 描述
 
 Opens a team project.
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type  |    Description    |
+|     参数     |  类型  |    描述    |
 | ----------------- | ------ | ----------------- |
 | `teamProjectName` | String | Team project name |
 
-#### Returns
+#### 返回
 
 Boolean. `true` if the team project is successfully opened, otherwise `false`.
 
@@ -1091,20 +1101,21 @@ Boolean. `true` if the team project is successfully opened, otherwise `false`.
 
 `app.project.shareTeamProject(comment)`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+该方法添加于 After Effects 14.2 (CC 2017.1)
+:::
 
-#### Description
+#### 描述
 
 Shares the currently open team project.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |    Description     |
+| 参数 |  类型  |    描述     |
 | --------- | ------ | ------------------ |
 | `comment` | String | Optional. Comment. |
 
-#### Returns
+#### 返回
 
 Boolean. `true` if the team project is successfully shared, otherwise `false`.
 
@@ -1114,14 +1125,15 @@ Boolean. `true` if the team project is successfully shared, otherwise `false`.
 
 `app.project.syncTeamProject()`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+该方法添加于 After Effects 14.2 (CC 2017.1)
+:::
 
-#### Description
+#### 描述
 
 Syncs the currently open team project.
 
-#### Returns
+#### 返回
 
 Boolean. `true` if the team project is successfully synced, otherwise `false`.
 
@@ -1131,14 +1143,15 @@ Boolean. `true` if the team project is successfully synced, otherwise `false`.
 
 `app.project.closeTeamProject()`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+该方法添加于 After Effects 14.2 (CC 2017.1)
+:::
 
-#### Description
+#### 描述
 
 Closes a currently open team project.
 
-#### Returns
+#### 返回
 
 Boolean. `true` if the team project is successfully closed, otherwise `false`.
 
@@ -1148,20 +1161,21 @@ Boolean. `true` if the team project is successfully closed, otherwise `false`.
 
 `app.project.convertTeamProjectToProject(project_file)`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+该方法添加于 After Effects 14.2 (CC 2017.1)
+:::
 
-#### Description
+#### 描述
 
 Converts a team project to an After Effects project on a local disk.
 
-#### Parameters
+#### 参数
 
-|   Parameter    |                                              Type                                              |                                               Description                                               |
+|   参数    |                                              类型                                              |                                               描述                                               |
 | -------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | `project_file` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) | The local After Effects project. File extension should be either .aep or .aet (.aepx is not supported). |
 
-#### Returns
+#### 返回
 
 Boolean. `true` if the team project is successfully converted, otherwise `false`.
 
@@ -1171,15 +1185,16 @@ Boolean. `true` if the team project is successfully converted, otherwise `false`
 
 `app.project.listTeamProjects()`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+该方法添加于 After Effects 14.2 (CC 2017.1)
+:::
 
-#### Description
+#### 描述
 
 Returns an array containing the name strings for all team projects available for the current user.
 Archived Team Projects are not included.
 
-#### Returns
+#### 返回
 
 Array of strings.
 
@@ -1189,20 +1204,21 @@ Array of strings.
 
 `app.project.isTeamProjectOpen(teamProjectName)`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+该方法添加于 After Effects 14.2 (CC 2017.1)
+:::
 
-#### Description
+#### 描述
 
 Checks whether specified team project is currently open.
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type  |    Description    |
+|     参数     |  类型  |    描述    |
 | ----------------- | ------ | ----------------- |
 | `teamProjectName` | String | Team project name |
 
-#### Returns
+#### 返回
 
 Boolean. `true` if the specified team project is currently open, otherwise `false`.
 
@@ -1212,14 +1228,15 @@ Boolean. `true` if the specified team project is currently open, otherwise `fals
 
 `app.project.isAnyTeamProjectOpen()`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+该方法添加于 After Effects 14.2 (CC 2017.1)
+:::
 
-#### Description
+#### 描述
 
 Checks whether any team project is currently open.
 
-#### Returns
+#### 返回
 
 Boolean. `true` if any team project is currently open, otherwise `false`.
 
@@ -1229,14 +1246,15 @@ Boolean. `true` if any team project is currently open, otherwise `false`.
 
 `app.project.isTeamProjectEnabled()`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+该方法添加于 After Effects 14.2 (CC 2017.1)
+:::
 
-#### Description
+#### 描述
 
 Checks whether or not team project is enabled for After Effects. (This will almost always return `true`.)
 
-#### Returns
+#### 返回
 
 Boolean. `true` if team project is currently enabled, otherwise `false`.
 
@@ -1246,14 +1264,15 @@ Boolean. `true` if team project is currently enabled, otherwise `false`.
 
 `app.project.isLoggedInToTeamProject()`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+该方法添加于 After Effects 14.2 (CC 2017.1)
+:::
 
-#### Description
+#### 描述
 
 Checks whether or not the client (After Effects) is currently logged into the team project server.
 
-#### Returns
+#### 返回
 
 Boolean. `true` if the client (After Effects) is currently logged into the team projects server, otherwise `false`.
 
@@ -1263,14 +1282,15 @@ Boolean. `true` if the client (After Effects) is currently logged into the team 
 
 `app.project.isSyncCommandEnabled()`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+该方法添加于 After Effects 14.2 (CC 2017.1)
+:::
 
-#### Description
+#### 描述
 
 Checks whether or not the Sync command is enabled.
 
-#### Returns
+#### 返回
 
 Boolean. `true` if the team projects Sync command is enabled, otherwise `false`.
 
@@ -1280,14 +1300,15 @@ Boolean. `true` if the team projects Sync command is enabled, otherwise `false`.
 
 `app.project.isShareCommandEnabled()`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+该方法添加于 After Effects 14.2 (CC 2017.1)
+:::
 
-#### Description
+#### 描述
 
 Checks whether or not the Share command is enabled.
 
-#### Returns
+#### 返回
 
 Boolean. `true` if the team projects Share command is enabled, otherwise `false`.
 
@@ -1297,14 +1318,15 @@ Boolean. `true` if the team projects Share command is enabled, otherwise `false`
 
 `app.project.isResolveCommandEnabled()`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+该方法添加于 After Effects 14.2 (CC 2017.1)
+:::
 
-#### Description
+#### 描述
 
 Checks whether or not the Resolve command is enabled.
 
-#### Returns
+#### 返回
 
 Boolean. `true` if the team projects Resolve command is enabled, otherwise `false`.
 
@@ -1314,25 +1336,23 @@ Boolean. `true` if the team projects Resolve command is enabled, otherwise `fals
 
 `app.project.resolveConflict(ResolveType)`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+该方法添加于 After Effects 14.2 (CC 2017.1)
+:::
 
-#### Description
+#### 描述
 
 Resolves a conflict between the open team project and the version on the team projects server, using the specified resolution method.
 
-#### Parameters
+#### 参数
 
-+---------------+--------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-|   Parameter   |        Type        |                                                                      Description                                                                       |
-+===============+====================+========================================================================================================================================================+
+|   参数   |        类型        |                                                                      描述                                                                       |
+|---------------|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `ResolveType` | `ResolveType` enum | The type of conflict resolution to use. One of:                                                                                                        |
-|               |                    |                                                                                                                                                        |
 |               |                    | - `ResolveType.ACCEPT_THEIRS`: Take the shared version. The shared version replaces your version.                                                      |
 |               |                    | - `ResolveType.ACCEPT_YOURS`: Keep your version of the project. The shared version is not taken.                                                       |
 |               |                    | - `ResolveType.ACCEPT_THEIRS_AND_COPY`: Copy and rename your version, then take the shared version. The shared version replaces your original version. |
-+---------------+--------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#### Returns
+#### 返回
 
 Boolean. `true` if the resolution of the specified type was successful, otherwise `false`.

@@ -1,12 +1,11 @@
 ---
 title: propertybase
 ---
-
 # PropertyBase object
 
 `app.project.item(index).layer(index).propertySpec`
 
-#### Description
+#### 描述
 
 Properties are accessed by name through layers, using various kinds of expression syntax, as controlled by application preferences. For example, the following are all ways of access properties in the Effects group
 
@@ -19,8 +18,9 @@ var effect1againtoo2 = app.project.item(1).layer(1)("Effects")("Add Grain")("Vie
 
 See also [PropertyGroup.property()](propertygroup.md#propertygroupproperty).
 
-!!! info
-    PropertyBase is the base class for both [Property](../property) and [PropertyGroup](../propertygroup), so PropertyBase attributes and methods are available when working with properties and property groups.
+:::info
+PropertyBase is the base class for both [Property](../property) and [PropertyGroup](../propertygroup), so PropertyBase attributes and methods are available when working with properties and property groups.
+:::
 
 #### Reference invalidation
 
@@ -53,7 +53,7 @@ alert(effect2.name); // invalid reference because group index positions have cha
 
 ---
 
-## Attributes
+## 属性
 
 ### PropertyBase.active
 
@@ -61,8 +61,7 @@ alert(effect2.name); // invalid reference because group index positions have cha
 
 `app.project.item(index).layer(index).propertySpec.active`
 
-
-#### Description
+#### 描述
 
 For a layer, this corresponds to the setting of the eyeball icon. When `true`, the layer's video is active at the current time. For this to be `true`, the layer must be enabled, no other layer may be soloing unless this layer is soloed too, and the time must be between the `inPoint` and `outPoint` values of this layer.
 
@@ -70,9 +69,9 @@ This value is never `true` in an audio layer; there is a separate `audioActive` 
 
 For an effect and all properties, it is the same as the enabled attribute, except that it's read-only.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -80,13 +79,13 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).propertySpec.canSetEnabled`
 
-#### Description
+#### 描述
 
 When `true`, you can set the `enabled` attribute value. Generally, this is `true` if the user interface displays an eyeball icon for this property; it is `true` for all layers.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -94,7 +93,7 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).propertySpec.elided`
 
-#### Description
+#### 描述
 
 When `true`, this property is a group used to organize other properties. The property is not displayed in the user interface and its child properties are not indented in the Timeline panel.For example, for a text layer with two animators and no properties twirled down, you might see:
 
@@ -106,9 +105,9 @@ When `true`, this property is a group used to organize other properties. The pro
 
 In this example, "Animator 1" and "Animator 2" are contained in a PropertyBase called "Text Animators." This parent group is not displayed in the user interface, and so the two child properties are not indented in the Timeline panel.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -118,14 +117,13 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).propertySpec.enabled`
 
-
-#### Description
+#### 描述
 
 For layer, this corresponds to the video switch state of the layer in the Timeline panel. For an effect and all properties, it corresponds to the setting of the eyeball icon, if there is one.
 
 When `true`, the layer or property is enabled; otherwise `false`.
 
-#### Type
+#### 类型
 
 Boolean; read/write if `canSetEnabled` is `true`, read-only if `canSetEnabled` is `false`.
 
@@ -135,13 +133,13 @@ Boolean; read/write if `canSetEnabled` is `true`, read-only if `canSetEnabled` i
 
 `app.project.item(index).layer(index).propertySpec.isEffect`
 
-#### Description
+#### 描述
 
 When `true`, this property is an effect PropertyGroup.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -149,13 +147,13 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).propertySpec.isMask`
 
-#### Description
+#### 描述
 
 When `true`, this property is a mask PropertyGroup.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -163,13 +161,13 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).propertySpec.isModified`
 
-#### Description
+#### 描述
 
 When `true`, this property has been changed since its creation.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -177,13 +175,13 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).propertySpec.matchName`
 
-#### Description
+#### 描述
 
 A special name for the property used to build unique naming paths. The match name is not displayed, but you can refer to it in scripts. Every property has a unique match-name identifier. Match names are stable from version to version regardless of the display name (the name attribute value) or any changes to the application. Unlike the display name, it is not localized. An indexed group may not have a name value, but always has a matchName value. (An indexed group has the type `PropertyType.INDEXED_GROUP`; see [PropertyBase.propertyType](#propertybasepropertytype).)
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -193,14 +191,13 @@ String; read-only.
 
 `app.project.item(index).layer(index).propertySpec.name`
 
-
-#### Description
+#### 描述
 
 For a layer, the name of the layer. By default, this is the same as the Source name, unless [Layer.isNameSet](../layer/layer.md#layerisnameset) returns `false`.
 
 For an effect and all properties - the display name of the property. (Compare [PropertyBase.matchName](#propertybasematchname).) It is an error to set the name value if the property is not a child of an indexed group (that is, a property group that has the type `PropertyType.INDEXED_GROUP`; see [PropertyBase.propertyType](#propertybasepropertytype)).
 
-#### Type
+#### 类型
 
 String; read/write for a child of an indexed group; otherwise read-only.
 
@@ -210,13 +207,13 @@ String; read/write for a child of an indexed group; otherwise read-only.
 
 `app.project.item(index).layer(index).propertySpec.parentProperty`
 
-#### Description
+#### 描述
 
 The property group that is the immediate parent of this property, or `null` if this PropertyBase is a layer.
 
-#### Type
+#### 类型
 
-PropertyGroup object or `null`; read-only.
+PropertyGroup object or `null`; 只读.
 
 ---
 
@@ -224,13 +221,13 @@ PropertyGroup object or `null`; read-only.
 
 `app.project.item(index).layer(index).propertySpec.propertyDepth`
 
-#### Description
+#### 描述
 
 The number of levels of parent groups between this property and the containing layer. The value 0 for a layer.
 
-#### Type
+#### 类型
 
-Integer; read-only.
+Integer; 只读.
 
 ---
 
@@ -238,13 +235,13 @@ Integer; read-only.
 
 `app.project.item(index).layer(index).propertySpec.propertyIndex`
 
-#### Description
+#### 描述
 
 The position index of this property within its parent group, if it is a child of an indexed group (a property group that has the type `PropertyType.INDEXED_GROUP`; see [PropertyBase.propertyType](#propertybasepropertytype)).
 
-#### Type
+#### 类型
 
-Integer; read-only.
+Integer; 只读.
 
 ---
 
@@ -252,11 +249,11 @@ Integer; read-only.
 
 `app.project.item(index).layer(index).propertySpec.propertyType`
 
-#### Description
+#### 描述
 
 The type of this property.
 
-#### Type
+#### 类型
 
 A `PropertyType` enumerated value; read/write. One of:
 
@@ -270,29 +267,29 @@ A `PropertyType` enumerated value; read/write. One of:
 
 `app.project.item(index).layer(index).propertySpec.selected`
 
-#### Description
+#### 描述
 
 When `true`, this property is selected. Set to `true` to select the property, or to `false` to deselect it. Sampling this attribute repeatedly for a large number of properties can slow down system performance. To read the full set of selected properties of a composition or layer, use either [CompItem.selectedProperties](../item/compitem.md#compitemselectedproperties) or [Layer.selectedProperties](../layer/layer.md#layerselectedproperties).
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
-## Methods
+## 函数
 
 ### PropertyBase.duplicate()
 
 `app.project.item(index).layer(index).propertySpec.duplicate()`
 
-#### Description
+#### 描述
 
 If this property is a child of an indexed group, creates and returns a new PropertyBase object with the same attribute values as this one. If this property is not a child of an indexed group, the method generates an exception and displays an error. An indexed group has the type `PropertyType.INDEXED_GROUP`; see [PropertyBase.propertyType](#propertybasepropertytype).
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 PropertyBase object.
 
@@ -302,20 +299,21 @@ PropertyBase object.
 
 `app.project.item(index).layer(index).propertySpec.moveTo(newIndex)`
 
-#### Description
+#### 描述
 
 Moves this property to a new position in its parent property group. This method is valid only for children of indexed groups; if it is not, or if the index value is not valid, the method generates an exception and displays an error. (An indexed group has the type `PropertyType.INDEXED_GROUP`; see [PropertyBase.propertyType](#propertybasepropertytype).)
 
-!!! warning
-    Using this method invalidates existing references to other children in the same indexed group. For example, if you have three effects on a layer, each effect assigned to a different variable, moving one of the effects invalidates the references for all of these variables. You will need to reassign them.
+:::warning
+Using this method invalidates existing references to other children in the same indexed group. For example, if you have three effects on a layer, each effect assigned to a different variable, moving one of the effects invalidates the references for all of these variables. You will need to reassign them.
+:::
 
-#### Parameters
+#### 参数
 
-| Parameter  |  Type   |                             Description                              |
+| 参数  |  类型   |                             描述                              |
 | ---------- | ------- | -------------------------------------------------------------------- |
 | `newIndex` | Integer | The new index position at which to place this property in its group. |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -325,21 +323,21 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.propertyGroup([countUp])`
 
-#### Description
+#### 描述
 
 Gets the PropertyGroup object for an ancestor group of this property at a specified level of the parent-child hierarchy.
 
-#### Parameters
+#### 参数
 
-| Parameter |                    Type                    |                                                        Description                                                         |
+| 参数 |                    类型                    |                                                        描述                                                         |
 | --------- | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
-| `countUp` | Integer, in the range `[1..propertyDepth]` | Optional. The number of levels to ascend within the parent-child hierarchy. Default is 1, which gets the immediate parent. |
+| `countUp` | Integer, 范围为 `[1..propertyDepth]` | Optional. The number of levels to ascend within the parent-child hierarchy. Default is 1, which gets the immediate parent. |
 
-#### Returns
+#### 返回
 
 PropertyGroup object, or [Layer object](../../layer/layer) if the count reaches the containing layer.
 
-#### Example
+#### 示例
 
 ```javascript
 var containing_layer = my_property.propertyGroup(my_property.propertyDepth);
@@ -351,14 +349,14 @@ var containing_layer = my_property.propertyGroup(my_property.propertyDepth);
 
 `app.project.item(index).layer(index).propertySpec.remove()`
 
-#### Description
+#### 描述
 
 Removes this property from its parent group. If this is a property group, it removes the child properties as well. This method is valid only for children of indexed groups; if it is not, or if the index value is not valid, the method generates an exception and displays an error. (An indexed group has the type `PropertyType.INDEXED_GROUP`; see [PropertyBase.propertyType](#propertybasepropertytype).) This method can be called on a text animation property (that is, any animator that has been set to a text layer).
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Nothing.

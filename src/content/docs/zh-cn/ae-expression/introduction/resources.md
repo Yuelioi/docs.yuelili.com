@@ -1,18 +1,18 @@
 ---
-title: resources
+title: 资源
 ---
-
 # Resources
 
-!!! note
-    Have suggestions for new resources to add here? Please [reach out](mailto:hi@docsforadobe.dev)! Happy to add your site, book, training channel, etc.
+:::note
+有建议添加新的资源吗？请[联系我们](mailto\:hi@docsforadobe.dev)！我们很乐意添加您的网站、书籍、培训频道等。
+:::
 
-Dan Ebberts provides example expressions and tutorials for learning how to work with expressions on his [MotionScript website](https://www.motionscript.com). For example, Dan provides an excellent [page about collision detection](http://www.motionscript.com/design-guide/collision.html).
+Dan Ebberts 在他的 [MotionScript 网站](https://www.motionscript.com/) 上提供了示例表达式和教程，帮助学习如何使用表达式。例如，Dan 提供了一个关于碰撞检测的[优秀页面](http://www.motionscript.com/design-guide/collision.html)。
 
-The AE Enhancers forum provides many examples and much useful information about expressions, as well as scripts and animation presets. In [this post on the AE Enhancers forum](https://aenhancers.com/viewtopic.php?t=630), Paul Tuersley provides a tutorial and example project that show how to use expressions to animate several layers in a swarm.
+AE Enhancers 论坛提供了许多示例和关于表达式的有用信息，以及脚本和动画预设。在 [AE Enhancers 论坛的这个帖子](https://aenhancers.com/viewtopic.php?t=630) 中，Paul Tuersley 提供了一个教程和示例项目，展示了如何使用表达式为多个图层设置群集动画。
 
-Rick Gerard provides an example on [Rick's site](https://hottek.net/2007/11/square-wheels.html) that demonstrates rolling a square object along a floor so that the sides stay in contact with the floor plane.
+Rick Gerard 在 [Rick 的网站](https://hottek.net/2007/11/square-wheels.html) 上提供了一个示例，演示了如何让一个方形物体沿着地板滚动，使其侧面始终与地板平面接触。
 
-Chris Zwar provides an example project on [chriszwar.com](http://chriszwar.com/wordpress/2008/11/imagegrids/) for automatically arranging still images or videos into a grid (like a video wall). You can easily adjust position and spacing with sliders that are connected to a system of expressions. There are three compositions in the project—one for stills, one for videos, and one to create an auto-storyboard in which a video is sampled at user-defined intervals and aligned into a grid.
+Chris Zwar 在 [chriszwar.com](http://chriszwar.com/wordpress/2008/11/imagegrids/) 上提供了一个示例项目，用于自动将静态图像或视频排列成网格（类似于视频墙）。您可以通过连接到表达式系统的滑块轻松调整位置和间距。项目中有三个合成——一个用于静态图像，一个用于视频，另一个用于创建自动故事板，其中视频在用户定义的时间间隔内采样并排列成网格。
 
-[JJ Gifford's website](http://www.jjgifford.com/expressions/) provides several example projects that demonstrate how to use expressions.
+[JJ Gifford 的网站](http://www.jjgifford.com/expressions/) 提供了几个示例项目，展示了如何使用表达式。

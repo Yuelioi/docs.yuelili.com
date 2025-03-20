@@ -1,39 +1,39 @@
 ---
-title: markerkey
+title: 标记键
 ---
-
 # MarkerKey
 
 `thisComp.marker.key(1)`
 
-You can access values for composition markers and layer markers using the same methods. Access layer markers through the thisLayer.marker object; access composition markers through the [Marker Property](.././marker-property) object.
+你可以使用相同的方法访问合成标记和图层标记的值。通过 `thisLayer.marker` 对象访问图层标记；通过 [标记属性](../marker-property) 对象访问合成标记。
 
-For the purpose of expressions, markers are a special type of [Key](.././key) object, so you can use methods such as [`nearestKey(time)`](./property.md#nearestkey) to access markers, and markers also have `time` and `index` attributes. The `index` attribute is not the number (name) of the marker; it is the keyframe *index* number, representing the order of the marker in the time ruler.
+对于表达式的目的，标记是一种特殊的 [关键帧](../key) 对象，因此你可以使用诸如 [`nearestKey(time)`](./property.md#nearestkey) 等方法来访问标记，并且标记也具有 `time` 和 `index` 属性。`index` 属性不是标记的编号（名称）；它是关键帧的*索引*编号，表示标记在时间标尺中的顺序。
 
-Expressions have access to all the values for a marker that you can set in the Composition Marker or Layer Marker dialog box.
+表达式可以访问你在合成标记或图层标记对话框中设置的所有标记值。
 
-Because the XMP metadata in a footage item can be converted into layer markers for a layer based on that item, expressions can interact with XMP metadata. For information, see [XMP metadata in After Effects](https://helpx.adobe.com/after-effects/using/xmp-metadata.html#xmp_metadata_in_after_effects).
+由于素材项中的 XMP 元数据可以转换为基于该项目的图层的图层标记，因此表达式可以与 XMP 元数据进行交互。有关信息，请参阅 [After Effects 中的 XMP 元数据](https://helpx.adobe.com/after-effects/using/xmp-metadata.html#xmp_metadata_in_after_effects)。
 
-Dan Ebberts provides a tutorial on the [After Effects Developer Center](http://www.adobe.com/devnet/aftereffects/) that includes an example of using XMP metadata with expressions.
+Dan Ebberts 在 [After Effects 开发者中心](http://www.adobe.com/devnet/aftereffects/) 上提供了一个教程，其中包括使用 XMP 元数据与表达式的示例。
 
-!!! info
-    On this page, we're going to use `thisComp.marker.key(1)` as a sample on how to call these items, however note that any method that returns a [MarkerKey](#) will work.
+:::info
+在本页中，我们将使用 `thisComp.marker.key(1)` 作为调用这些项的示例，但请注意，任何返回 [标记键](#) 的方法都可以使用。
+:::
 
 ---
 
-## Attributes
+## 属性
 
 ### MarkerKey.chapter
 
 `thisComp.marker.key(1).chapter`
 
-#### Description
+#### 描述
 
-Contents of Chapter field in marker dialog box.
+标记对话框中章节字段的内容。
 
-#### Type
+#### 类型
 
-String
+字符串
 
 ---
 
@@ -41,13 +41,13 @@ String
 
 `thisComp.marker.key(1).comment`
 
-#### Description
+#### 描述
 
-Contents of Comment field in marker dialog box.
+标记对话框中注释字段的内容。
 
-#### Type
+#### 类型
 
-String
+字符串
 
 ---
 
@@ -55,13 +55,13 @@ String
 
 `thisComp.marker.key(1).cuePointName`
 
-#### Description
+#### 描述
 
-Contents of cue point Name field in marker dialog box.
+标记对话框中提示点名称字段的内容。
 
-#### Type
+#### 类型
 
-String
+字符串
 
 ---
 
@@ -69,13 +69,13 @@ String
 
 `thisComp.marker.key(1).duration`
 
-#### Description
+#### 描述
 
-Duration, in seconds, of marker.
+标记的持续时间，单位为秒。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -83,15 +83,15 @@ Number
 
 `thisComp.marker.key(1).eventCuePoint`
 
-#### Description
+#### 描述
 
-Setting for cue point type in marker dialog box.
+标记对话框中提示点类型的设置。
 
-`true` for Event; `false` for Navigation.
+`true` 表示事件；`false` 表示导航。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -99,13 +99,13 @@ Boolean
 
 `thisComp.marker.key(1).frameTarget`
 
-#### Description
+#### 描述
 
-Contents of Frame Target field in marker dialog box.
+标记对话框中帧目标字段的内容。
 
-#### Type
+#### 类型
 
-String
+字符串
 
 ---
 
@@ -113,17 +113,17 @@ String
 
 `thisComp.marker.key(1).parameters`
 
-#### Description
+#### 描述
 
-Contents of Parameter Name and Parameter Value fields in marker dialog box.
+标记对话框中参数名称和参数值字段的内容。
 
-#### Type
+#### 类型
 
-Associative array of String values
+字符串值的关联数组
 
-#### Example
+#### 示例
 
-If you have a parameter named "background color", then you can use the following expression to access its value at the nearest marker:
+如果你有一个名为 "background color" 的参数，则可以使用以下表达式访问最近标记处的值：
 
 ```js
 thisComp.marker.nearestKey(time).parameters["background color"];
@@ -135,20 +135,17 @@ thisComp.marker.nearestKey(time).parameters["background color"];
 
 `thisComp.marker.key(1).protectedRegion`
 
-!!! note
-    This functionality was added in After Effects 16.0
+:::note 该方法添加于 After Effects 16.0 :::#### 描述
 
-#### Description
+合成标记对话框中受保护区域选项的状态。
 
-State of the Protected Region option in the Composition Marker dialog box.
+当为 `true` 时，合成标记表现为受保护区域。
 
-When `true`, the composition marker behaves as a protected region.
+对于嵌套合成图层上的受保护区域标记也会返回 `true`，但通常不适用于图层标记。
 
-Will also return `true` for protected region markers on nested composition layers, but is otherwise not applicable to layer markers.
+#### 类型
 
-#### Type
-
-Boolean
+布尔值
 
 ---
 
@@ -156,19 +153,19 @@ Boolean
 
 `thisComp.marker.key(1).url`
 
-#### Description
+#### 描述
 
-Contents of URL field in marker dialog box.
+标记对话框中 URL 字段的内容。
 
-#### Type
+#### 类型
 
-String
+字符串
 
 ---
 
-## Example
+## 示例
 
-This expression on the Source Text property of a text layer displays the time, duration, index, comment (name), chapter, URL, frame target, and cue point name for the layer marker nearest the current time, and whether the marker is for an event cue point:
+此表达式应用于文本图层的源文本属性，显示最接近当前时间的图层标记的时间、持续时间、索引、注释（名称）、章节、URL、帧目标和提示点名称，以及标记是否为事件提示点：
 
 ```js
 const m = thisLayer.marker.nearestKey(time);

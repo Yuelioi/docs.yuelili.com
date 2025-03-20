@@ -1,49 +1,39 @@
 ---
-title: camera
+title: 摄像机
 ---
-
 # Camera
 
 `thisLayer.cameraOption`
 
-This category is for items specific to Camera Layers.
+此类别用于摄像机图层的特定属性。
 
-!!! info
-    Camera is a subclass of the [Layer object](../../layer/layer). All methods and attributes of Layer are available when working with Camera, except:
+:::info
 
-    - `source`
-    - `effect`
-    - `mask`
-    - `width`
-    - `height`
-    - `anchorPoint`
-    - `scale`
-    - `opacity`
-    - `audioLevels`
-    - `timeRemap`
-    - all the 3d material properties
+* 所有 3D 材质属性
+
+:::
 
 ---
 
-## Attributes
+## 属性
 
 ### Camera.active
 
 `thisLayer.cameraOption.active`
 
-#### Description
+#### 描述
 
-Returns `true` if:
+如果满足以下条件，则返回 `true`：
 
-1. The camera is the active camera for the composition at the current time: the *video switch* for the camera layer is on,
-2. the current time is in the range from the *in point* of the camera layer to the *out point* of the camera layer, **and**
-3. The camera is the first (topmost) such camera layer listed in the *timeline panel*
+1. 摄像机在当前时间是合成的活动摄像机：摄像机图层的*视频开关*已打开，
+2. 当前时间在摄像机图层的*入点*到*出点*范围内，**并且**
+3. 摄像机是*时间轴面板*中列出的第一个（最顶部）此类摄像机图层。
 
-Returns `false` otherwise.
+否则返回 `false`。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -51,13 +41,13 @@ Boolean
 
 `thisLayer.cameraOption.aperture`
 
-#### Description
+#### 描述
 
-Returns the aperture value of a camera, in pixels.
+返回摄像机的光圈值，单位为像素。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -65,13 +55,13 @@ Number
 
 `thisLayer.cameraOption.blurLevel`
 
-#### Description
+#### 描述
 
-Returns the blur level value of a camera as a percentage.
+以百分比形式返回摄像机的模糊级别值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -79,13 +69,13 @@ Number
 
 `thisLayer.cameraOption.depthOfField`
 
-#### Description
+#### 描述
 
-Returns `1` if the Depth Of Field property of a camera is on, or returns `0` if the Depth Of Field property is off.
+如果摄像机的景深属性已打开，则返回 `1`；如果景深属性已关闭，则返回 `0`。
 
-#### Type
+#### 类型
 
-Boolean Number
+布尔值数字
 
 ---
 
@@ -93,13 +83,13 @@ Boolean Number
 
 `thisLayer.cameraOption.focusDistance`
 
-#### Description
+#### 描述
 
-Returns the focus distance value of a camera, in pixels.
+返回摄像机的焦点距离值，单位为像素。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -107,13 +97,13 @@ Number
 
 `thisLayer.cameraOption.highlightGain`
 
-#### Description
+#### 描述
 
-Returns the camera highlight gain, from 1 to 100.
+返回摄像机的高光增益，范围为 1 到 100。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -121,13 +111,13 @@ Number
 
 `thisLayer.cameraOption.highlightSaturation`
 
-#### Description
+#### 描述
 
-Returns the camera highlight saturation, from `1` to `100`.
+返回摄像机的高光饱和度，范围为 `1` 到 `100`。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -135,17 +125,17 @@ Number
 
 `thisLayer.cameraOption.highlightThreshold`
 
-#### Description
+#### 描述
 
-Returns the camera highlight threshhold.
+返回摄像机的高光阈值。
 
-- In an 8-bit comp, this value ranges from `0` to `100`
-- In a 16-bit comp, this value ranges from `0` to `32768`
-- In a 32-bit comp, this value ranges from `0` to `1.0`
+* 在 8 位合成中，此值范围为 `0` 到 `100`
+* 在 16 位合成中，此值范围为 `0` 到 `32768`
+* 在 32 位合成中，此值范围为 `0` 到 `1.0`
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -153,13 +143,13 @@ Number
 
 `thisLayer.cameraOption.irisAspectRatio`
 
-#### Description
+#### 描述
 
-Returns the camera iris aspect ratio, from 1 to 100.
+返回摄像机光圈宽高比，范围为 1 到 100。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -167,13 +157,13 @@ Number
 
 `thisLayer.cameraOption.irisDiffractionFringe`
 
-#### Description
+#### 描述
 
-Returns the camera iris diffraction fringe, from 1 to 100.
+返回摄像机光圈衍射边缘，范围为 1 到 100。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -181,13 +171,13 @@ Number
 
 `thisLayer.cameraOption.irisRotation`
 
-#### Description
+#### 描述
 
-Returns the iris rotation value, in degrees.
+返回光圈旋转值，单位为度。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -195,13 +185,13 @@ Number
 
 `thisLayer.cameraOption.irisRoundness`
 
-#### Description
+#### 描述
 
-Returns the camera iris roundness value as a percentage.
+以百分比形式返回摄像机光圈圆度值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -209,16 +199,13 @@ Number
 
 `thisLayer.cameraOption.irisShape`
 
-#### Description
+#### 描述
 
-Returns the iris shape value from 1-10, corresponding to the selected dropdown value.
+返回光圈形状值，范围为 1-10，对应于选定的下拉值。
 
-!!! note
-    Value `2` is reserved for the divider.
+:::note 值 `2` 保留用于分隔符。 :::#### 类型
 
-#### Type
-
-Number
+数字
 
 ---
 
@@ -226,13 +213,13 @@ Number
 
 `thisLayer.cameraOption.pointOfInterest`
 
-#### Description
+#### 描述
 
-Returns the point of interest values of a camera in world space.
+返回摄像机在世界空间中的兴趣点值。
 
-#### Type
+#### 类型
 
-Array (3 dimensional)
+数组（3 维）
 
 ---
 
@@ -240,19 +227,19 @@ Array (3 dimensional)
 
 `thisLayer.cameraOption.zoom`
 
-#### Description
+#### 描述
 
-Returns the zoom values of a camera in pixels.
+返回摄像机的缩放值，单位为像素。
 
-#### Type
+#### 类型
 
-Number
+数字
 
-#### Example
+#### 示例
 
-Here's an expression for the Scale property of a layer that maintains the relative size of the layer in frame while changing the z position (depth) of a layer or the Zoom value of a camera:
+以下是一个用于图层缩放属性的表达式，它在改变图层的 z 位置（深度）或摄像机的缩放值时保持图层的相对大小不变：
 
-```js
+ ```js
 cam = thisComp.activeCamera;
 distance = length(sub(position, cam.position));
 scale * distance / cam.zoom;

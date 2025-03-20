@@ -1,7 +1,6 @@
 ---
 title: javascript
 ---
-
 # Elements of basic JavaScript relevant to After Effects scripting
 
 ## Javascript Variables
@@ -10,7 +9,7 @@ Scripting shares a global environment, so any script executed at startup can def
 
 ### Keywords and Statement Syntax
 
-| Keyword/Statement |                                                             Description                                                              |
+| Keyword/Statement |                                                             描述                                                              |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | `break`           | Standard JavaScript; exit the currently executing loop.                                                                              |
 | `continue`        | JavaScript; cease execution of the current loop iteration.                                                                           |
@@ -39,9 +38,9 @@ Scripting shares a global environment, so any script executed at startup can def
 
 The following tables list and describe all operators recognized by the After Effects scripting engine and show the precedence and associativity for all operators.
 
-### Description of Operators
+### 描述 of Operators
 
-|         Operators         |                       Description                       |
+|         Operators         |                       描述                       |
 | ------------------------- | ------------------------------------------------------- |
 | `new`                     | Create new object instance.                             |
 | `delete`                  | Delete property from an object.                         |
@@ -132,8 +131,9 @@ For the same example above, [Layer object](../../layer/layer) (itself a subclass
 
 This is why you won't see the `name` property on the Layer page, but you can still use `layer.name` in your script; `name` is inherited from [PropertyBase.name](../property/propertybase.md#propertybasename).
 
-!!! warning
-    In a few specific cases, properties & methods are **removed** with inheritance, not just added. Those cases are noted on the relevant object page.
+:::warning
+In a few specific cases, properties & methods are **removed** with inheritance, not just added. Those cases are noted on the relevant object page.
+:::
 
 ### Checking Classes
 

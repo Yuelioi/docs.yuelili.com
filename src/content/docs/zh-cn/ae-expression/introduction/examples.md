@@ -1,25 +1,25 @@
 ---
-title: examples
+title: 示例
 ---
-
 # Examples
 
-!!! note
-    Many of the examples in this section are based on expressions provided by Dan Ebberts.
+:::note
+本节中的许多示例基于 Dan Ebberts 提供的表达式。
+:::
 
 ---
 
-## Get this project's AEP name (AE 15.1+ only)
+## 获取项目的 AEP 名称（仅限 AE 15.1+）
 
-While there is no method to directly access your AEP's name, you CAN get the full path to the AEP.
+虽然没有直接访问 AEP 名称的方法，但你可以获取 AEP 的完整路径。
 
-With some string manipulation, you can derive the aep name from this:
+通过一些字符串操作，你可以从中推导出 AEP 名称：
 
 ```js
 var aepName = thisProject.fullPath.split($.os.indexOf("Windows") > -1 ? "\\" : "/").pop();
 ```
 
-If you wanted to write "Unsaved" in that case, you can use the following expression:
+如果你想在未保存的情况下显示 "Unsaved"，可以使用以下表达式：
 
 ```js
 var aepName = thisProject.fullPath.split($.os.indexOf("Windows") > -1 ? "\\" : "/").pop();
@@ -28,100 +28,109 @@ aepName = aepName === "" ? "Unsaved" : aepName;
 
 ---
 
-## Make a layer revolve in a circle
+## 让图层绕圈旋转
 
-You can create an expression without using properties from other layers. For example, you can make a layer revolve in a perfect circle.
+你可以创建不依赖其他图层属性的表达式。例如，你可以让一个图层绕一个完美的圆圈旋转。
 
-1. Select a layer, press P to reveal its Position property in the Timeline panel, and Alt-click (Windows) or Option-click (Mac OS) the stopwatch to the left of the property name.
-2. Enter the following in the expression field:
-    ```js
-    [(thisComp.width/2), (thisComp.height/2)] + [Math.sin(time)*50, -Math.cos(time)*50]
-    ```
+1. 选择一个图层，按 P 键在时间轴面板中显示其位置属性，然后按住 Alt 键（Windows）或 Option 键（Mac OS）点击属性名称左侧的秒表图标。
+2. 在表达式字段中输入以下内容：
 
----
-
-## Rotate the hands of a clock
-
-You can use the pick whip to link rotation values between layers to animate the hands on a clock—as the hour hand moves from hour to hour, the minute hand rotates the full circumference of the clock face. This type of animation would take a long time to create if you had to set each keyframe for both hand layers, but with the pick whip, you can do it in a matter of minutes.
-
-1. Import or create two long, narrow solid-color layers: an hour hand and a minute hand.
-2. Set the anchor points at the ends of the layers.
-3. Move the layers so that the anchor points are at the center of the composition.
-4. Set Rotation keyframes for the hour hand.
-5. Select the Rotation property for the minute hand and choose `Animation > Add Expression.`
-6. Drag the pick whip to the Rotation property for the hour hand. The following expression appears:
-    ```js
-    thisComp.layer("hour hand").rotation
-    ```
-7. To make the minute hand rotate 12 times as fast as the hour hand, add `* 12` at the end of the expression as follows:
-    ```js
-    thisComp.layer("hour hand").rotation * 12
-    ```
+   ```js
+   [(thisComp.width/2), (thisComp.height/2)] + [Math.sin(time)*50, -Math.cos(time)*50]
+   ```
 
 ---
 
-## Position one layer between two others
+## 旋转时钟的指针
 
-This example expression positions and maintains one layer at a balanced distance between two other layers.
+你可以使用拾取器将图层之间的旋转值链接起来，以动画时钟的指针——当时针从一个小时移动到下一个小时，分针会绕时钟表面旋转一整圈。如果你需要为两个指针图层设置每个关键帧，这种类型的动画会花费很长时间，但使用拾取器，你可以在几分钟内完成。
 
-1. Start with three layers.
-2. Animate the positions of the first two layers in the Timeline panel.
-3. Select the third layer, press P to reveal the Position property, and Alt-click (Windows) or Option-click (Mac OS) the stopwatch button to the left of the property name.
-4. Enter the following in the expression field:
-    ```js
-    (thisComp.layer(1).position + thisComp.layer(2).position)/2
-    ```
+1. 导入或创建两个长而窄的纯色图层：一个时针和一个分针。
+2. 将图层的锚点设置在图层的一端。
+3. 移动图层，使锚点位于合成的中心。
+4. 为时针设置旋转关键帧。
+5. 选择分针的旋转属性，然后选择 `动画 > 添加表达式`。
+6. 将拾取器拖动到时针的旋转属性。以下表达式将出现：
 
----
+   ```js
+   thisComp.layer("hour hand").rotation
+   ```
 
-## Create a trail of images
+7. 为了让分针的旋转速度是时针的 12 倍，在表达式末尾添加 `* 12`，如下所示：
 
-This example expression instructs a layer to be at the same position as the next higher layer in the Timeline panel, but delayed by a specified amount of time (in this case, 0.5 seconds). You can set similar expressions for the other geometric properties.
-
-1. Start with two solid-color layers that are scaled to approximately 30% of the composition size. (See Solid-color layers and solid-color footage items.)
-2. Animate the position of the first layer.
-3. Select the second layer, press P to reveal the Position property, and Alt-click (Windows) or Option-click (Mac OS) the stopwatch button to the left of the property name.
-4. Enter the following in the expression field:
-    ```js
-    thisComp.layer(thisLayer, -1).position.valueAtTime(time - .5)
-    ```
-5. Duplicate the last layer five times by selecting it and pressing Ctrl+D (Windows) or Command+D (Mac OS) five times.
-
-All layers follow the same path, and each is delayed 0.5 seconds from the previous.
-
-!!! note
-    Dan Ebberts provides more examples and techniques for creating trails of images on his [MotionScript](http://www.motionscript.com/mastering-expressions/follow-the-leader.html).
+   ```js
+   thisComp.layer("hour hand").rotation * 12
+   ```
 
 ---
 
-## Create a bulge between two layers
+## 将一个图层定位在另外两个图层之间
 
-This example expression synchronizes the Bulge Center argument of the Bulge effect in one layer with the position of another layer. For example, you can create an effect that looks like a magnifying glass moving over a layer, with the contents under the magnifying glass bulging as the lens (that is, the overlying layer) moves. This expression uses the fromWorld method, which makes the expression work correctly regardless of whether you move the magnifying glass layer or the underlying layer. You can rotate or scale the underlying layer, and the expression stays intact.
+此示例表达式将一个图层定位并保持在另外两个图层之间的平衡距离。
 
-You can also use other effects, such as Ripple, with this expression.
+1. 从三个图层开始。
+2. 在时间轴面板中为前两个图层设置位置动画。
+3. 选择第三个图层，按 P 键显示位置属性，然后按住 Alt 键（Windows）或 Option 键（Mac OS）点击属性名称左侧的秒表图标。
+4. 在表达式字段中输入以下内容：
 
-1. Start with two layers. Make one layer a magnifying glass or similar object with a hole in the middle and name it Magnifier. (See Creating layers.)
-2. Animate the position of the magnifying glass layer. (See Motion paths.)
-3. Apply the Bulge effect to the other layer. (See Apply an effect or animation preset.)
-4. Select the Bulge Center property of the Bulge effect in the Timeline panel and choose Animation > Add Expression, or Alt-click (Windows) or Option-click (Mac OS) the stopwatch button for the property.
-5. Select the default expression text and type the following:
-    ```js
-    fromWorld(thisComp.layer("Magnifier").position)
-    ```
+   ```js
+   (thisComp.layer(1).position + thisComp.layer(2).position)/2
+   ```
 
 ---
 
-## Fade opacity of a 3D layer based on distance from camera
+## 创建图像轨迹
 
-Apply the following expression to the Opacity property of a 3D layer:
+此示例表达式指示一个图层位于时间轴面板中下一个更高图层的位置，但延迟指定的时间量（在本例中为 0.5 秒）。你可以为其他几何属性设置类似的表达式。
+
+1. 从两个纯色图层开始，将它们缩放到大约合成大小的 30%。（参见纯色图层和纯色素材项。）
+2. 为第一个图层设置位置动画。
+3. 选择第二个图层，按 P 键显示位置属性，然后按住 Alt 键（Windows）或 Option 键（Mac OS）点击属性名称左侧的秒表图标。
+4. 在表达式字段中输入以下内容：
+
+   ```js
+   thisComp.layer(thisLayer, -1).position.valueAtTime(time - .5)
+   ```
+
+5. 通过选择最后一个图层并按 Ctrl+D（Windows）或 Command+D（Mac OS）五次，复制该图层五次。
+
+所有图层都遵循相同的路径，每个图层都比前一个延迟 0.5 秒。
+
+:::note
+Dan Ebberts 在他的 [MotionScript](http://www.motionscript.com/mastering-expressions/follow-the-leader.html) 上提供了更多创建图像轨迹的示例和技术。
+:::
+
+---
+
+## 在两个图层之间创建凸起效果
+
+此示例表达式将一个图层中的 Bulge 效果的 Bulge Center 参数与另一个图层的位置同步。例如，你可以创建一个效果，看起来像一个放大镜在一个图层上移动，放大镜下的内容随着镜头（即上方的图层）移动而凸起。此表达式使用 fromWorld 方法，无论你移动放大镜图层还是底层图层，表达式都能正常工作。你可以旋转或缩放底层图层，表达式仍然有效。
+
+你也可以将此表达式与其他效果（如 Ripple）一起使用。
+
+1. 从两个图层开始。将一个图层设置为放大镜或类似的对象，中间有一个洞，并将其命名为 Magnifier。（参见创建图层。）
+2. 为放大镜图层设置位置动画。（参见运动路径。）
+3. 将 Bulge 效果应用到另一个图层。（参见应用效果或动画预设。）
+4. 在时间轴面板中选择 Bulge 效果的 Bulge Center 属性，然后选择 `动画 > 添加表达式`，或按住 Alt 键（Windows）或 Option 键（Mac OS）点击属性的秒表图标。
+5. 选择默认的表达式文本并输入以下内容：
+
+   ```js
+   fromWorld(thisComp.layer("Magnifier").position)
+   ```
+
+---
+
+## 根据与摄像机的距离淡出 3D 图层的不透明度
+
+将以下表达式应用于 3D 图层的不透明度属性：
 
 ```js
-startFade = 500; // Start fade 500 pixels from camera.
-endFade = 1500;  // End fade 1500 pixels from camera.
+startFade = 500; // 从摄像机 500 像素处开始淡出。
+endFade = 1500;  // 从摄像机 1500 像素处结束淡出。
 
-try { // Check whether there's a camera
+try { // 检查是否有摄像机
 C = thisComp.activeCamera.toWorld([0,0,0]);
-} catch (err) { // No camera, so assume 50mm
+} catch (err) { // 没有摄像机，因此假设为 50mm
 w = thisComp.width * thisComp.pixelAspect;
 z = (w/2)/Math.tan(degreesToRadians(19.799));
 C = [0,0,-z];
@@ -133,26 +142,23 @@ d = length(C,P);
 linear(d,startFade,endFade,100,0)
 ```
 
-The fade starts at a distance of `500` pixels from the camera and is complete at `1500` pixels from the camera. The linear interpolation method is used to map distance values to opacity values.
+淡出从距离摄像机 `500` 像素处开始，在距离摄像机 `1500` 像素处完成。使用线性插值方法将距离值映射到不透明度值。
 
 ---
 
-## Make a 3D layer invisible if facing away from camera
+## 如果 3D 图层背对摄像机则使其不可见
 
-Apply the following expression to the Opacity property of a 3D layer:
+将以下表达式应用于 3D 图层的不透明度属性：
 
 ```js
 if (toCompVec([0, 0, 1])[2] > 0 ) value else 0
 ```
 
-!!! note
-    Dan Ebberts explains this expression on his [site](http://www.adobe.com/go/learn_ae_motionscriptinvisiblelayer).
+:::note Dan Ebberts 在他的 [网站](http://www.adobe.com/go/learn_ae_motionscriptinvisiblelayer) 上解释了此表达式。 :::---
 
----
+## 如果 3D 图层背对摄像机则水平翻转
 
-## Flip layer horizontally if facing away from camera
-
-Apply the following expression to the Scale property of a 3D layer:
+将以下表达式应用于 3D 图层的缩放属性：
 
 ```js
 if (toCompVec([0, 0, 1])[2] > 0 ) value else [-value[0], value[1], value[2]]
@@ -160,9 +166,9 @@ if (toCompVec([0, 0, 1])[2] > 0 ) value else [-value[0], value[1], value[2]]
 
 ---
 
-## Animate scale at each layer marker
+## 在每个图层标记处动画缩放
 
-Apply the following expression to a Scale property to make a layer wobble at each marker:
+将以下表达式应用于缩放属性，使图层在每个标记处晃动：
 
 ```js
 n = 0;
@@ -186,11 +192,11 @@ scaleFact = (100 + amp * Math.sin(angle) / Math.exp(decay * t)) / 100;
 
 ---
 
-## Start or stop wiggle at specific time
+## 在特定时间开始或停止摆动
 
-You can use any expression in place of the wiggle expression used here, to begin and end the influence of any expression at a specific time.
+你可以用任何表达式替换此处使用的摆动表达式，以在特定时间开始和结束任何表达式的影响。
 
-Apply the following expression to a property to wiggle it beginning at time 2 seconds:
+将以下表达式应用于属性，以在 2 秒时开始摆动：
 
 ```js
 timeToStart = 2;
@@ -201,7 +207,7 @@ wiggle(3,25);
 }
 ```
 
-Apply the following expression to a property to stop wiggling it at time 4 seconds:
+将以下表达式应用于属性，以在 4 秒时停止摆动：
 
 ```js
 timeToStop = 4;
@@ -213,7 +219,7 @@ if (time > timeToStop) {
 }
 ```
 
-Apply the following expression to a property to start wiggling it at time 2 seconds and stop wiggling it at time 4 seconds:
+将以下表达式应用于属性，以在 2 秒时开始摆动并在 4 秒时停止摆动：
 
 ```js
 timeToStart = 2;
@@ -228,9 +234,9 @@ if ((time > timeToStart) && (time < timeToStop)) {
 
 ---
 
-## Match camera focal plane to another layer
+## 将摄像机焦平面匹配到另一个图层
 
-Apply the following expression to the Focus Distance property of a camera layer to have its focus distance match the distance to the anchor point of a layer named "target":
+将以下表达式应用于摄像机图层的 Focus Distance 属性，使其焦点距离与名为 "target" 的图层的锚点距离匹配：
 
 ```js
 target = thisComp.layer("target");
@@ -239,5 +245,6 @@ V2 = toWorldVec([0,0,1]);
 dot(V1,V2);
 ```
 
-!!! note
-    Dan Ebberts explains this expression example in detail on his [website](http://motionscript.com/design-guide/auto-focus.html).
+:::
+note Dan Ebberts 在他的 [网站](http://motionscript.com/design-guide/auto-focus.html) 上详细解释了这个表达式示例。
+:::

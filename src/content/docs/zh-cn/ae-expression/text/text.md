@@ -1,45 +1,47 @@
 ---
-title: text
+title: 文本
 ---
-
 # Text
 
 `text`
 
-This category holds generic text-related entries for text layers.
+此类别包含文本图层的通用文本相关条目。
 
 ---
 
-## Attributes
+## 属性
 
 ### Text.sourceText
 
 `text.sourceText`
 
-#### Description
+#### 描述
 
-Returns the text content of a text layer.
+返回文本图层的文本内容。
 
-!!! note
-    As of After Effects 17.0, this property returns the [Source Text](.././sourcetext) object to access text style properties. If no style properties are specified, this returns the text content as expected.
+:::note
 
-#### Type
+从 After Effects 17.0 开始，此属性返回 [源文本](.././sourcetext) 对象以访问文本样式属性。如果未指定样式属性，则按预期返回文本内容。
+:::
 
-String of text content, or [Source Text](.././sourcetext) (AE 17.0+)
+#### 类型
+
+文本内容的字符串，或 [源文本](../sourcetext) (AE 17.0+)
 
 ---
 
-### Text.Font...
+### Text.Font
 
-#### Description
+#### 描述
 
-!!! note
-    This isn't actually an expression method! Instead, it's a button from the expression fly-out menu.
+:::note
+这实际上不是一个表达式方法！而是表达式弹出菜单中的一个按钮。
+:::
 
-Launches a dialog window for the user to specify a font name and weight.
+弹出一个对话框窗口，供用户指定字体名称和粗细。
 
-Upon selection, the internal font name is injected into the expression editor as a string.
+选择后，内部字体名称将作为字符串注入表达式编辑器。
 
-#### Type
+#### 类型
 
-String
+字符串

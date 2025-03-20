@@ -1,39 +1,39 @@
 ---
-title: random-numbers
+title: 随机数
+---
+# random numbers
+
+这些条目处理表达式中的随机性。
+
+:::note
+[wiggle()](../objects/property.md#wiggle) 方法—用于随机地变化属性值—属于 [Property](../../objects/property) 属性和方法类别。
+:::
+
 ---
 
-# Random Numbers
-
-These items deal with randomness in expressions.
-
-!!! note
-    The [wiggle()](../objects/property.md#wiggle) method—which is used to randomly vary a property value—is in the [Property](../../objects/property) attributes and methods category.
-
----
-
-## Methods
+## 函数
 
 ### gaussRandom()
 
 `gaussRandom([maxValOrArray=1])`
 
-#### Description
+#### 描述
 
-When `maxValOrArray` is a Number, this method returns a random number. Approximately `90%` of the results are in the `0` to `maxValOrArray` range, and the remaining `10%` are outside this range.
+当 `maxValOrArray` 是数字时，此方法返回一个随机数。大约 `90%` 的结果位于 `0` 到 `maxValOrArray` 范围内，剩余的 `10%` 超出此范围。
 
-When `maxValOrArray` is an Array, this method returns an Array of random values, with the same dimension as `maxValOrArray`. `90%` of the values are in the range from `0` to `maxValOrArray`, and the remaining `10%` are outside this range.
+当 `maxValOrArray` 是数组时，此方法返回一个随机值的数组，数组的维度与 `maxValOrArray` 相同。`90%` 的值在 `0` 到 `maxValOrArray` 的范围内，剩余的 `10%` 超出此范围。
 
-The results have a Gaussian (bell-shaped) distribution.
+结果遵循高斯（钟形）分布。
 
-#### Parameters
+#### 参数
 
-|    Parameter    |      Type       |                                          Description                                          |
-| --------------- | --------------- | --------------------------------------------------------------------------------------------- |
-| `maxValOrArray` | Number or Array | Optional. The max value (or array) to generate a random number to, from `0`. Defaults to `1`. |
+| 参数              | 类型       | 描述                                                     |
+| ----------------- | ---------- | -------------------------------------------------------- |
+| `maxValOrArray` | 数字或数组 | 可选。生成一个随机数的最大值（或数组），默认值为 `1`。 |
 
-#### Returns
+#### 返回
 
-Number or Array
+数字或数组
 
 ---
 
@@ -41,24 +41,24 @@ Number or Array
 
 `gaussRandom(minValOrArray, maxValOrArray)`
 
-#### Description
+#### 描述
 
-If `minValOrArray` and `maxValOrArray` are Numbers, this method returns a random number. Approximately `90%` of the results are in the range from `minValOrArray` to `maxValOrArray`, and the remaining `10%` are outside this range.
+如果 `minValOrArray` 和 `maxValOrArray` 是数字，此方法返回一个随机数。大约 `90%` 的结果在 `minValOrArray` 到 `maxValOrArray` 的范围内，剩余的 `10%` 超出此范围。
 
-If the arguments are Arrays, this method returns an Array of random numbers with the same dimension as the argument with the greater dimension. For each component, approximately 90% of the results are in the range from the corresponding component of `minValOrArray` to the corresponding component of `maxValOrArray`, and the remaining `10%` are outside this range.
+如果参数是数组，则此方法返回一个与参数中维度较大者维度相同的随机数数组。每个组件的大约 `90%` 的结果位于从 `minValOrArray` 到 `maxValOrArray` 对应组件的范围内，剩余的 `10%` 超出此范围。
 
-The results have a Gaussian (bell-shaped) distribution.
+结果遵循高斯（钟形）分布。
 
-#### Parameters
+#### 参数
 
-|    Parameter    |      Type       |                        Description                         |
-| --------------- | --------------- | ---------------------------------------------------------- |
-| `minValOrArray` | Number or Array | The min value (or array) to generate a random number from. |
-| `maxValOrArray` | Number or Array | The max value (or array) to generate a random number to.   |
+| 参数              | 类型       | 描述                             |
+| ----------------- | ---------- | -------------------------------- |
+| `minValOrArray` | 数字或数组 | 要生成随机数的最小值（或数组）。 |
+| `maxValOrArray` | 数字或数组 | 要生成随机数的最大值（或数组）。 |
 
-#### Returns
+#### 返回
 
-Number or Array
+数字或数组
 
 ---
 
@@ -66,25 +66,25 @@ Number or Array
 
 `noise(valOrArray)`
 
-#### Description
+#### 描述
 
-Returns a number in the range from `-1` to `1`.
+返回一个范围在 `-1` 到 `1` 之间的数字。
 
-The noise is not actually random; it is based on Perlin noise, which means that the return values for two input values that are near one another tend to be near one another.
+噪声实际上不是随机的；它基于 Perlin 噪声，这意味着对于两个相近的输入值，返回值也往往接近。
 
-This type of noise is useful when you want a sequence of seemingly random numbers that don't vary wildly from one to the other—as is usually the case when animating any apparently random natural motion.
+这种噪声在你需要一系列看似随机的数字，而这些数字之间不会有剧烈波动时特别有用—例如在动画中模拟看似随机的自然运动。
 
-#### Parameters
+#### 参数
 
-|  Parameter   |                   Type                   |                           Description                            |
-| ------------ | ---------------------------------------- | ---------------------------------------------------------------- |
-| `valOrArray` | Number or an Array (2- or 3-dimensional) | The input value (or array) to use to generate the random number. |
+| 参数           | 类型                   | 描述                               |
+| -------------- | ---------------------- | ---------------------------------- |
+| `valOrArray` | 数字或数组（2维或3维） | 用于生成随机数的输入值（或数组）。 |
 
-#### Returns
+#### 返回
 
-Number
+数字
 
-#### Example
+#### 示例
 
 ```js
 rotation + 360*noise(time)
@@ -96,22 +96,23 @@ rotation + 360*noise(time)
 
 `random([maxValOrArray=1])`
 
-#### Description
+#### 描述
 
-If `maxValOrArray` is a Number, this method returns a number in the range from `0` to `maxValOrArray`.
+如果 `maxValOrArray` 是数字，此方法返回一个在 `0` 到 `maxValOrArray` 之间的数字。
 
-If `maxValOrArray` is an Array, this method returns an Array with the same dimension as `maxValOrArray`, with each component ranging from `0` to the corresponding component of `maxValOrArray`.
+如果 `maxValOrArray` 是数组，此方法返回一个数组，数组的维度与 `maxValOrArray` 相同，每个组件的值都在 `0` 到 `maxValOrArray` 对应组件的范围之间。
 
-!!! note
-    In After Effects CC and CS6, the behavior of random() is changed to be more random when layer IDs are close together. The wiggle() expression is not affected.
+:::note
+在 After Effects CC 和 CS6 中，`random()` 的行为已更改，使得当图层 ID 接近时，生成的随机性更强。`wiggle()` 表达式不受影响�
+:::
 
-#### Parameters
+#### 参数
 
-|    Parameter    |      Type       |                                          Description                                          |
-| --------------- | --------------- | --------------------------------------------------------------------------------------------- |
-| `maxValOrArray` | Number or Array | Optional. The max value (or array) to generate a random number to, from `0`. Defaults to `1`. |
+| 参数              | 类型            | 描述                                                   |
+| ----------------- | --------------- | ------------------------------------------------------ |
+| `maxValOrArray` | Number or Array | 可选。生成一个随机数的最大值（或数组），默认值为 `1` |
 
-#### Returns
+#### 返回
 
 Number or Array
 
@@ -121,22 +122,22 @@ Number or Array
 
 `random(minValOrArray, maxValOrArray)`
 
-#### Description
+#### 描述
 
-If `minValOrArray` and `maxValOrArray` are Numbers, this method returns a number in the range from `minValOrArray` to `maxValOrArray`.
+如果 `minValOrArray` 和 `maxValOrArray` 是数字，此方法返回一个在 `minValOrArray` 到 `maxValOrArray` 之间的数字。
 
-If the arguments are Arrays, this method returns an Array with the same dimension as the argument with the greater dimension, with each component in the range from the corresponding component of `minValOrArray` to the corresponding component of `maxValOrArray`.
+如果参数是数组，则此方法返回一个数组，数组的维度与较大维度的数组相同，每个组件的值位于从 `minValOrArray` 到 `maxValOrArray` 对应组件的范围内。
 
-For example, the expression `random([100, 200], [300, 400])` returns an Array whose first value is in the range `100–300` and whose second value is in the range `200–400`. If the dimensions of the two input Arrays don't match, higher-dimension values of the shorter Array are filled out with zeros.
+例如，表达式 `random([100, 200], [300, 400])` 返回一个数组，其第一个值在 `100–300` 范围内，第二个值在 `200–400` 范围内。如果两个输入数组的维度不匹配，较短数组的高维度值将填充为零。
 
-#### Parameters
+#### 参数
 
-|    Parameter    |      Type       |                        Description                         |
-| --------------- | --------------- | ---------------------------------------------------------- |
-| `minValOrArray` | Number or Array | The min value (or array) to generate a random number from. |
-| `maxValOrArray` | Number or Array | The max value (or array) to generate a random number to.   |
+| 参数              | 类型            | 描述                           |
+| ----------------- | --------------- | ------------------------------ |
+| `minValOrArray` | Number or Array | 要生成随机数的最小值（或数组） |
+| `maxValOrArray` | Number or Array | 要生成随机数的最大值（或数组)  |
 
-#### Returns
+#### 返回
 
 Number or Array
 
@@ -146,30 +147,30 @@ Number or Array
 
 `seedRandom(offset[, timeless=false])`
 
-#### Description
+#### 描述
 
-The `random()` and `gaussRandom()` methods use a seed value that controls the sequence of numbers.
+`random()` 和 `gaussRandom()` 方法使用一个种子值来控制数字序列。
 
-By default, the seed is computed as a function of a unique layer identifier, the property within the layer, the current time, and an offset value of `0`.
+默认情况下，种子值是唯一图层标识符、图层中的属性、当前时间和 `0` 的偏移量的函数。
 
-Call `seedRandom()` to set the offset to something other than 0 to create a different random sequence.
+调用 `seedRandom()` 设置偏移量为 `0` 以外的值，以创建不同的随机序列。
 
-The multiplication by `100` in this example converts the value in the range `0–1` returned by the random method into a Number in the range `0–100`; this range is more typically useful for the Opacity property, which has values from `0%` to `100%`.
+此示例中 `100` 的乘法将 `random()` 方法返回的 `0–1` 范围的值转换为 `0–100` 范围的数字；这个范围对于 Opacity 属性非常有用，因为它的值从 `0%` 到 `100%`。
 
-#### Parameters
+#### 参数
 
-| Parameter  |  Type   |                                                                                                           Description                                                                                                           |
-| ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `offset`   | Number  | The value with which to offset the seed. This is also used to control the initial value of the [`wiggle()`](../objects/property.md#wiggle) function.                                                                            |
-| `timeless` | Boolean | Optional. Use `true` for the timeless argument to not use the current time as input to the random seed. This allows you to generate a random number that doesn't vary depending on the time of evaluation. Defaults to `false`. |
+| 参数         | 类型    | 描述                                                                                                                          |
+| ------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `offset`   | Number  | 用于偏移种子的值。这也控制[`wiggle()`](../objects/property.md#wiggle) 函数的初始值                                             |
+| `timeless` | Boolean | 可选。若 `timeless` 为 `true`，则不使用当前时间作为随机种子的输入。这样可以生成一个与时间无关的随机数。默认值为 `false` |
 
-#### Returns
+#### 返回
 
 None
 
-#### Example
+#### 示例
 
-This expression on the Opacity property sets the Opacity value to a random value that does not vary with time:
+此表达式将 Opacity 属性值设置为一个与时间无关的随机值：
 
 ```js
 seedRandom(123456, true);

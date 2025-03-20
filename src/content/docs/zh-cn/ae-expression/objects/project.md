@@ -1,32 +1,31 @@
 ---
-title: project
+title: 项目
 ---
-
 # Project
 
 `thisProject`
 
-This category holds info related to your current *project* as a whole -- that is, the current AEP. Thus, changing the corresponding project settings will also update the values that these expressions return.
+此类别包含与当前*项目*整体相关的信息——即当前的 AEP 文件。因此，更改相应的项目设置也会更新这些表达式返回的值。
 
 ---
 
-## Attributes
+## 属性
 
 ### Project.bitsPerChannel
 
 `thisProject.bitsPerChannel`
 
-#### Description
+#### 描述
 
-The color depth of the project in bits per channel (bpc), as set in *Project Settings > Color Management*
+项目的颜色深度，以每通道位数（bpc）为单位，设置在*项目设置 > 颜色管理*中。
 
-They are one of 8, 16, or 32. Equivalent to the scripting project attribute [`app.project.bitsPerChannel`](https://ae-scripting.docsforadobe.dev/general/project/#projectbitsperchannel).
+值为 8、16 或 32 之一。等同于脚本项目属性 [`app.project.bitsPerChannel`](https://ae-scripting.docsforadobe.dev/general/project/#projectbitsperchannel)。
 
-#### Type
+#### 类型
 
-Number
+数字
 
-#### Example
+#### 示例
 
 ```js
 thisProject.bitsPerChannel
@@ -38,15 +37,15 @@ thisProject.bitsPerChannel
 
 `thisProject.fullPath`
 
-#### Description
+#### 描述
 
-The platform-specific absolute file path, including the project file name. If the project has not been saved, it returns an empty string.
+平台特定的绝对文件路径，包括项目文件名。如果项目尚未保存，则返回空字符串。
 
-#### Type
+#### 类型
 
-String
+字符串
 
-#### Example
+#### 示例
 
 ```js
 thisProject.fullPath
@@ -58,17 +57,17 @@ thisProject.fullPath
 
 `thisProject.linearBlending`
 
-#### Description
+#### 描述
 
-The state of the Blend Colors Using 1.0 Gamma option in *Project Settings > Color Management*.
+*项目设置 > 颜色管理*中“使用 1.0 Gamma 混合颜色”选项的状态。
 
-Equivalent to the scripting project attribute [`app.project.linearBlending`](https://ae-scripting.docsforadobe.dev/general/project/#projectlinearblending).
+等同于脚本项目属性 [`app.project.linearBlending`](https://ae-scripting.docsforadobe.dev/general/project/#projectlinearblending)。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
-#### Example
+#### 示例
 
 ```js
 thisProject.linearBlending

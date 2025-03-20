@@ -1,7 +1,6 @@
 ---
 title: managing-control-titles
 ---
-
 # Managing control titles
 
 User interface elements often need a title or label to identify their purpose, with the title placed near the element it identifies. As shown by examples in [Automatic layout](../automatic-layout), you can use a `statictext` element as a title or label, and use the automatic layout mechanism to control the placement of such a title relative to the element it identifies.

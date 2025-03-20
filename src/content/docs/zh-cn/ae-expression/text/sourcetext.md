@@ -1,31 +1,31 @@
 ---
-title: sourcetext
+title: 源文本
 ---
-
 # Source Text
 
 `text.sourceText`
 
-These functions are accessible on the [Text.sourceText](text.md#textsourcetext) object in AE 17.0 and later.
+这些函数在 AE 17.0 及更高版本中可通过 [Text.sourceText](https://text.md/#textsourcetext) 对象访问。
 
 ---
 
-## Attributes
+## 属性
 
 ### SourceText.isHorizontalText
 
 `text.sourceText.isHorizontalText`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns `true` if the Text layer is horizontal and `false` if it is vertical.
+如果文本图层是水平的，则返回 `true`；如果是垂直的，则返回 `false`。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -33,16 +33,16 @@ Boolean
 
 `text.sourceText.isParagraphText`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0. :::
 
-#### Description
+#### 描述
 
-Returns `true` if a Text layer is Paragraph text. If the Text layer is a Point text, it returns `false`.
+如果文本图层是段落文本，则返回 `true`。如果文本图层是点文本，则返回 `false`。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -50,16 +50,13 @@ Boolean
 
 `text.sourceText.isPointText`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note 该方法添加于 After Effects 25.0. :::#### 描述
 
-#### Description
+如果文本图层是点文本，则返回 `true`。如果文本图层是段落文本，则返回 `false`。
 
-Returns `true` if a Text layer is Point text. If the Text layer is Paragraph text, it returns `false`.
+#### 类型
 
-#### Type
-
-Boolean
+布尔值
 
 ---
 
@@ -67,16 +64,13 @@ Boolean
 
 `text.sourceText.isVerticalText`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note 该方法添加于 After Effects 25.0. :::#### 描述
 
-#### Description
+如果文本图层是垂直的，则返回 `true`；如果是水平的，则返回 `false`。
 
-Returns `true` if the Text layer is vertical and `false` if it is horizontal.
+#### 类型
 
-#### Type
-
-Boolean
+布尔值
 
 ---
 
@@ -84,33 +78,33 @@ Boolean
 
 `text.sourceText.style`
 
-#### Description
+#### 描述
 
-Returns the [Text Style](.././style) object for a given `sourceText` property.
+返回给定 `sourceText` 属性的 [文本样式](../style) 对象。
 
-#### Type
+#### 类型
 
-[Text Style](.././style) object
+[文本样式](../style) 对象
 
 ---
 
-## Methods
+## 函数
 
 ### SourceText.createStyle()
 
 `text.sourceText.createStyle()`
 
-#### Description
+#### 描述
 
-Used to initialize an empty [Text Style](.././style) object in which you'd manually bake in specific values.
+用于初始化一个空的 [文本样式](../style) 对象，你可以在其中手动设置特定值。
 
-#### Returns
+#### 返回
 
-Empty [Text Style](.././style) object.
+空的 [文本样式](../style) 对象。
 
-#### Example
+#### 示例
 
-To create a new style with font size 300 and the font Impact:
+创建一个字体大小为 300 且字体为 Impact 的新样式：
 
 ```js
 text.sourceText
@@ -125,29 +119,26 @@ text.sourceText
 
 `text.sourceText.getStyleAt(charIndex[, time])`
 
-#### Description
+#### 描述
 
-This function returns the [Text Style](.././style) object of a particular character at a specific time.
+此函数返回特定时间某个字符的 [文本样式](../style) 对象。
 
-In case the style is keyframed and changes over time, use the second `time` parameter to specify the target time to get the style at.
+如果样式是关键帧化的并且随时间变化，请使用第二个 `time` 参数指定获取样式的时间。
 
-!!! note
-    Using [SourceText.style](#sourcetextstyle) is the same as using `text.sourceText.getStyleAt(0,0)`
+:::note 使用 [SourceText.style](#sourcetextstyle) 与使用 `text.sourceText.getStyleAt(0,0)` 相同。 :::#### 参数
 
-#### Parameters
+| 参数      | 类型 | 描述                                        |
+| --------- | ---- | ------------------------------------------- |
+| `index` | 数字 | 需要样式的字母或字符的索引                  |
+| `time`  | 数字 | 可选。获取样式的合成时间。默认为 `time`。 |
 
-| Parameter |  Type  |                                     Description                                      |
-| --------- | ------ | ------------------------------------------------------------------------------------ |
-| `index`   | Number | The index of the letter or character whose style is needed                           |
-| `time`    | Number | Optional. The time within the composition to get the style from. Defaults to `time`. |
+#### 返回
 
-#### Returns
+[文本样式](../style) 对象
 
-[Text Style](.././style) object
+#### 示例
 
-#### Example
-
-To get the style of the first character at the beginning of the timeline:
+获取时间轴开头第一个字符的样式：
 
 ```js
 text.sourceText.getStyleAt(0,0);

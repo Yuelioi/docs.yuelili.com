@@ -1,7 +1,6 @@
 ---
 title: bridgetalk-message-object
 ---
-
 # BridgeTalk message object
 
 The message object defines the basic communication packet that is sent between applications. Its properties allow you to specify the receiving application (the target), the data to send to the target (the body), and the type of data that is sent. The messaging protocol is extensible; it allows you to define new types of data for the type property, and to send and receive arbitrary additional information with the headers property.
@@ -26,7 +25,7 @@ Before you send a message to another application, you must set the target proper
 
 `bridgeTalkObj.body`
 
-#### Description
+#### 描述
 
 The data payload of the message.
 
@@ -34,7 +33,7 @@ The data payload of the message.
 - If this message is a result returned from the static BridgeTalk `onReceive` method of a target application, directed to an onResult callback in this object, contains the return result from that method flattened into a string. See [Passing values between applications](communicating-through-messages.md#passing-values-between-applications).
 - If this message contains an error notification for the onError callback, contains the error message.
 
-#### Type
+#### 类型
 
 String
 
@@ -44,7 +43,7 @@ String
 
 `bridgeTalkObj.headers`
 
-#### Description
+#### 描述
 
 A JavaScript object containing script-defined headers.
 
@@ -52,11 +51,11 @@ Use this property to define custom header data to send supplementary information
 
 The predefined header `["Error-Code"]` is used to return error messages to a sender; see [Messaging error codes](../messaging-error-codes).
 
-#### Type
+#### 类型
 
 Object
 
-#### Example
+#### 示例
 
 Examples of setting headers:
 
@@ -72,19 +71,17 @@ var info = bt.headers.info;
 var error = bt.headers ["Error-Code"];
 ```
 
-
-
 ---
 
 ### sender
 
 `bridgeTalkObj.sender`
 
-#### Description
+#### 描述
 
 The application specifier for the sending application (see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers)).
 
-#### Type
+#### 类型
 
 String
 
@@ -94,11 +91,11 @@ String
 
 `bridgeTalkObj.target`
 
-#### Description
+#### 描述
 
 The application specifier for the target, or receiving, application (see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers)).
 
-#### Type
+#### 类型
 
 String
 
@@ -108,13 +105,13 @@ String
 
 `bridgeTalkObj.timeout`
 
-#### Description
+#### 描述
 
 The number of seconds before the message times out.
 
 If a message has not been removed from the input queue for processing before this time elapses, the message is discarded. If the sender has defined an [onTimeout()](#ontimeout) callback for the message, the target application sends a time-out message back to the sender.
 
-#### Type
+#### 类型
 
 Number
 
@@ -124,7 +121,7 @@ Number
 
 `bridgeTalkObj.type`
 
-#### Description
+#### 描述
 
 The message type, which indicates what type of data the body contains.
 
@@ -132,7 +129,7 @@ Default is `ExtendScript`.
 
 You can define a type for script-defined data. If you do so, the target application must have a static `BridgeTalk` `onReceive_` method that checks for and processes that type.
 
-#### Type
+#### 类型
 
 String
 
@@ -140,15 +137,15 @@ String
 
 ## BridgeTalk message object callbacks
 
-!!! note
-    The message callbacks are optional, and are not implemented by all message-enabled applications.
+:::note
+The message callbacks are optional, and are not implemented by all message-enabled applications.
+:::
 
 ### onError()
 
 `bridgeTalkObj.onError()`
 
-#### Description
-
+#### 描述
 
 A callback function that the target application invokes to return an error response to the sender. It can send JavaScript run-time errors or exceptions, or C++ exceptions.
 
@@ -166,7 +163,7 @@ The body property of the received message object contains the error message, and
 
 ### onReceived()
 
-#### Description
+#### 描述
 
 `bridgeTalkObj.onReceived()`
 
@@ -186,7 +183,7 @@ The target passes back the original message object, with the body property set t
 
 ### onResult()
 
-#### Description
+#### 描述
 
 `bridgeTalkObj.onResult()`
 
@@ -208,7 +205,7 @@ This is the result of the target application's static BridgeTalk [onReceive](bri
 
 ### onTimeout()
 
-#### Description
+#### 描述
 
 `bridgeTalkObj.onTimeout()`
 
@@ -232,7 +229,7 @@ bridgeTalkObj.onTimeout = function( timeoutMsgObject ) {
 
 `bridgeTalkObj.send([timoutInSecs[, launchParameters]])`
 
-#### Description
+#### 描述
 
 Sends this message to the target application.
 
@@ -240,14 +237,14 @@ If the target application is not running and the message contains a body, the me
 
 Sending the message does not guarantee that the target actually receives it. You can request notification of receipt by defining an onReceived callback for this message object. (Note that this is different from the static onReceive method of the BridgeTalk class that handles unsolicited messages.)
 
-#### Parameters
+#### 参数
 
-|     Parameter      |  Type  |                                                                                                                                                                                    Description                                                                                                                                                                                     |
+|     参数      |  类型  |                                                                                                                                                                                    描述                                                                                                                                                                                     |
 | ------------------ | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `timoutInSecs`     | Number | Optional. A maximum number of seconds to wait for a result before returning from this function. The message is sent synchronously, and the function does not return until the target has processed the message or this number of seconds have passed. If not supplied or 0, the message is sent asynchronously, and the function returns immediately without waiting for a result. |
 | `launchParameters` | String | Optional. A string of parameters to append to the name of the target application when launching it, if the application is not already running. If the target application is already running, this value is ignored.                                                                                                                                                                |
 
-#### Returns
+#### 返回
 
 Boolean. `true` if the message could be sent immediately, `false` if it could not be sent or was queued for sending later.
 
@@ -257,18 +254,18 @@ Boolean. `true` if the message could be sent immediately, `false` if it could no
 
 `bridgeTalkObj.sendResult(result)`
 
-#### Description
+#### 描述
 
 When processing an unsolicited message, the static BridgeTalk onReceive method can return an intermediate result to the sender by calling this method in the received message object. It invokes the onResult callback of the original message, passing a new message object containing the specified result value.
 
 This allows you to send multiple responses to messages.
 
-#### Parameters
+#### 参数
 
-| Parameter | Type |                                                                                                                                                     Description                                                                                                                                                      |
+| 参数 | Type |                                                                                                                                                     描述                                                                                                                                                      |
 | --------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `result`  | Any  | You can send data of any type as the result value. The messaging framework creates a BridgeTalk message object, and flattens this value into a string which it stores in the body of that message. See [Passing values between applications](communicating-through-messages.md#passing-values-between-applications). |
 
-#### Returns
+#### 返回
 
 Boolean. `true` if the received message has an onResult callback defined and the response message can be sent, `false` otherwise.

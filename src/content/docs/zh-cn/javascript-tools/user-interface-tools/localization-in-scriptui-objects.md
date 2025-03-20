@@ -1,7 +1,6 @@
 ---
 title: localization-in-scriptui-objects
 ---
-
 # Localization in ScriptUI objects
 
 For portions of your user interface that are displayed on the screen, you may want to localize the displayed text. You can localize the display strings in any ScriptUI object simply and efficiently, using the global `localize` function. This function takes as its argument a *localization object* containing the localized versions of a string.

@@ -1,17 +1,17 @@
 ---
-title: time-conversion
+title: 时间转换
 ---
-
 # Time Conversion
 
-These methods are all about converting between various time formats.
+这些方法用于在各种时间格式之间进行转换。
 
-!!! tip
-    If you want more control over the look of timecode in your footage, use the `timeToCurrentFormat()` method or other `timeTo` methods to generate the timecode instead of using the Timecode or Numbers effect.
+:::tip
+如果你想对素材中的时间码外观有更多控制，可以使用 `timeToCurrentFormat()` 方法或其他 `timeTo` 方法来生成时间码，而不是使用时间码或数字效果。
+:::
 
-#### Example
+#### 示例
 
-You can easily format and animate the timecode text by creating a text layer, applying whatever text styling you'd like, and adding this expression to the Source Text property:
+你可以通过创建一个文本图层，应用你想要的文本样式，并将此表达式添加到源文本属性中，轻松格式化和动画化时间码文本：
 
 ```js
 timeToCurrentFormat();
@@ -19,26 +19,26 @@ timeToCurrentFormat();
 
 ---
 
-## Methods
+## 函数
 
 ### framesToTime()
 
 `framesToTime(frames[, fps=1.0 / thisComp.frameDuration])`
 
-#### Description
+#### 描述
 
-Returns the time corresponding to the frames argument. It doesn't have to be an integer.
+返回与帧数参数对应的时间。帧数不必是整数。
 
-The inverse of [`timeToFrames()`](#timetoframes).
+这是 [`timeToFrames()`]() 的逆操作。
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |                                                                     Description                                                                      |
-| --------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `frames`  | Number | The amount of frames to convert.                                                                                                                     |
-| `fps`     | Number | Optional. The number of frames per second to use to convert. Defaults to `1.0 / thisComp.frameDuration` (the frame rate of the current composition). |
+| 参数       | 类型   | 描述                                                                                    |
+| ---------- | ------ | --------------------------------------------------------------------------------------- |
+| `frames` | Number | 要转换的帧数。                                                                          |
+| `fps`    | Number | 可选。用于转换的每秒帧数。默认为 `1.0 / thisComp.frameDuration`（当前合成的帧速率）。 |
 
-#### Returns
+#### 返回
 
 Number
 
@@ -48,23 +48,20 @@ Number
 
 `timeToCurrentFormat([t=time + thisComp.displayStartTime][, fps=1.0 / thisComp.frameDuration][, isDuration=false][, ntscDropFrame=thisComp.ntscDropFrame])`
 
-#### Description
+#### 描述
 
-Converts the value of `t` to a String representing time in the current Project Settings display format.
+将 `t` 的值转换为表示当前项目设置显示格式时间的字符串。
 
-#### Parameters
+#### 参数
 
-|    Parameter    |  Type   |                                                                                                             Description                                                                                                             |
-| --------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `t`             | Number  | Optional. The time (in seconds) to convert. Defaults to `time + thisComp.displayStartTime`.                                                                                                                                         |
-| `fps`           | Number  | Optional. Defaults to `1.0 / thisComp.frameDuration` (the frame rate of the current composition).                                                                                                                                   |
-| `isDuration`    | Boolean | Optional. Whether `t` represents a difference between two times, vs an absolute time. Absolute times are rounded down toward negative infinity; durations are rounded away from zero (up for positive values). Defaults to `false`. |
-| `ntscDropFrame` | Boolean | Optional. If `false`, the result is NTSC non-drop-frame timecode. If `true`, the result is NTSC drop-frame timecode. Defaults to `thisComp.ntscDropFrame`.                                                                          |
+| 参数              | 类型    | 描述                                                                                                                                   |
+| ----------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `t`             | Number  | 可选。要转换的时间（以秒为单位）。默认为 `time + thisComp.displayStartTime`。                                                        |
+| `fps`           | Number  | 可选。默认为 `1.0 / thisComp.frameDuration`（当前合成的帧速率）。                                                                    |
+| `isDuration`    | Boolean | 可选。`t` 是否表示两个时间之间的差异，而不是绝对时间。绝对时间向负无穷方向舍入；持续时间向零舍入（正值向上舍入）。默认为 `false`。 |
+| `ntscDropFrame` | Boolean | 可选。如果为 `false`，结果为 NTSC 非丢帧时间码。如果为 `true`，结果为 NTSC 丢帧时间码。默认为 `thisComp.ntscDropFrame`。         |
 
-!!! note
-    The `ntscDropFrame` argument was added in After Effects CS5.5.
-
-#### Returns
+:::note `ntscDropFrame` 参数在 After Effects CS5.5 中添加。 :::#### 返回
 
 String
 
@@ -74,19 +71,19 @@ String
 
 `timeToFeetAndFrames([t=time + thisComp.displayStartTime][, fps=1.0 / thisComp.frameDuration][, framesPerFoot=16][, isDuration=false])`
 
-#### Description
+#### 描述
 
-Converts the value of `t` to a String representing feet of film and frames.
+将 `t` 的值转换为表示胶片英尺和帧数的字符串。
 
-#### Parameters
+#### 参数
 
-|    Parameter    |  Type   |                                                                                                             Description                                                                                                             |
-| --------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `t`             | Number  | Optional. The time (in seconds) to convert. Defaults to `time + thisComp.displayStartTime`.                                                                                                                                         |
-| `framesPerFoot` | Number  | Optional. Specifies the number of frames in one foot of film. Defaults to `16` (the most common rate for 35mm footage).                                                                                                             |
-| `isDuration`    | Boolean | Optional. Whether `t` represents a difference between two times, vs an absolute time. Absolute times are rounded down toward negative infinity; durations are rounded away from zero (up for positive values). Defaults to `false`. |
+| 参数              | 类型    | 描述                                                                                                                                   |
+| ----------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `t`             | Number  | 可选。要转换的时间（以秒为单位）。默认为 `time + thisComp.displayStartTime`。                                                        |
+| `framesPerFoot` | Number  | 可选。指定一英尺胶片中的帧数。默认为 `16`（35mm 胶片最常见的速率）。                                                                 |
+| `isDuration`    | Boolean | 可选。`t` 是否表示两个时间之间的差异，而不是绝对时间。绝对时间向负无穷方向舍入；持续时间向零舍入（正值向上舍入）。默认为 `false`。 |
 
-#### Returns
+#### 返回
 
 String
 
@@ -96,19 +93,19 @@ String
 
 `timeToFrames([t=time + thisComp.displayStartTime][, fps=1.0 / thisComp.frameDuration][, isDuration=false])`
 
-#### Description
+#### 描述
 
-Converts the value of `t` (some amount of time, in seconds) to an integer number of frames.
+将 `t` 的值（以秒为单位的时间）转换为整数帧数。
 
-#### Parameters
+#### 参数
 
-|  Parameter   |  Type   |                                                                                                             Description                                                                                                             |
-| ------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `t`          | Number  | Optional. The time (in seconds) to convert. Defaults to `time + thisComp.displayStartTime`.                                                                                                                                         |
-| `fps`        | Number  | Optional. The number of frames per second to use to convert. Defaults to `1.0 / thisComp.frameDuration` (the frame rate of the current composition).                                                                                |
-| `isDuration` | Boolean | Optional. Whether `t` represents a difference between two times, vs an absolute time. Absolute times are rounded down toward negative infinity; durations are rounded away from zero (up for positive values). Defaults to `false`. |
+| 参数           | 类型    | 描述                                                                                                                                   |
+| -------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `t`          | Number  | 可选。要转换的时间（以秒为单位）。默认为 `time + thisComp.displayStartTime`。                                                        |
+| `fps`        | Number  | 可选。用于转换的每秒帧数。默认为 `1.0 / thisComp.frameDuration`（当前合成的帧速率）。                                                |
+| `isDuration` | Boolean | 可选。`t` 是否表示两个时间之间的差异，而不是绝对时间。绝对时间向负无穷方向舍入；持续时间向零舍入（正值向上舍入）。默认为 `false`。 |
 
-#### Returns
+#### 返回
 
 Number
 
@@ -118,19 +115,19 @@ Number
 
 `timeToNTSCTimecode([t=time + thisComp.displayStartTime][, ntscDropFrame=false][, isDuration=false])`
 
-#### Description
+#### 描述
 
-Converts `t` to a String representing NTSC timecode.
+将 `t` 转换为表示 NTSC 时间码的字符串。
 
-#### Parameters
+#### 参数
 
-|    Parameter    |  Type   |                                                                                                             Description                                                                                                             |
-| --------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `t`             | Number  | Optional. The time (in seconds) to convert. Defaults to `time + thisComp.displayStartTime`.                                                                                                                                         |
-| `ntscDropFrame` | Boolean | Optional. If `false`, the result is NTSC non-drop-frame timecode. If `true`, the result is NTSC drop-frame timecode. Defaults to `false`.                                                                                           |
-| `isDuration`    | Boolean | Optional. Whether `t` represents a difference between two times, vs an absolute time. Absolute times are rounded down toward negative infinity; durations are rounded away from zero (up for positive values). Defaults to `false`. |
+| 参数              | 类型    | 描述                                                                                                                                   |
+| ----------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `t`             | Number  | 可选。要转换的时间（以秒为单位）。默认为 `time + thisComp.displayStartTime`。                                                        |
+| `ntscDropFrame` | Boolean | 可选。如果为 `false`，结果为 NTSC 非丢帧时间码。如果为 `true`，结果为 NTSC 丢帧时间码。默认为 `false`。                          |
+| `isDuration`    | Boolean | 可选。`t` 是否表示两个时间之间的差异，而不是绝对时间。绝对时间向负无穷方向舍入；持续时间向零舍入（正值向上舍入）。默认为 `false`。 |
 
-#### Returns
+#### 返回
 
 String
 
@@ -140,18 +137,18 @@ String
 
 `timeToTimecode([t=time + thisComp.displayStartTime][, timecodeBase=30][, isDuration=false])`
 
-#### Description
+#### 描述
 
-Converts the value of `t` to a String representing timecode.
+将 `t` 的值转换为表示时间码的字符串。
 
-#### Parameters
+#### 参数
 
-|   Parameter    |  Type   |                                                                                                             Description                                                                                                             |
-| -------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `t`            | Number  | Optional. The time (in seconds) to convert. Defaults to `time + thisComp.displayStartTime`.                                                                                                                                         |
-| `timecodeBase` | Number  | Optional. Specifies the number of frames in one second. Defaults to `30`.                                                                                                                                                           |
-| `isDuration`   | Boolean | Optional. Whether `t` represents a difference between two times, vs an absolute time. Absolute times are rounded down toward negative infinity; durations are rounded away from zero (up for positive values). Defaults to `false`. |
+| 参数             | 类型    | 描述                                                                                                                                   |
+| ---------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `t`            | Number  | 可选。要转换的时间（以秒为单位）。默认为 `time + thisComp.displayStartTime`。                                                        |
+| `timecodeBase` | Number  | 可选。指定每秒的帧数。默认为 `30`。                                                                                                  |
+| `isDuration`   | Boolean | 可选。`t` 是否表示两个时间之间的差异，而不是绝对时间。绝对时间向负无穷方向舍入；持续时间向零舍入（正值向上舍入）。默认为 `false`。 |
 
-#### Returns
+#### 返回
 
 String

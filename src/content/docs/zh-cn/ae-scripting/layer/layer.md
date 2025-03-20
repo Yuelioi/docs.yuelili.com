@@ -1,22 +1,23 @@
 ---
 title: layer
 ---
-
 # Layer object
 
 `app.project.item(index).layer(index)`
 
-#### Description
+#### 描述
 
 The Layer object provides access to layers within compositions. It can be accessed from an item's layer collection either by index number or by a name string.
 
-!!! info
-    Layer is a subclass of [PropertyGroup](../../property/propertygroup), which is a subclass of [PropertyBase](../../property/propertybase). All methods and attributes of PropertyGroup, in addition to those listed below, are available when working with Layer, with the exception that `propertyIndex` attribute is set to `undefined`.
+:::info
+Layer is a subclass of [PropertyGroup](../../property/propertygroup), which is a subclass of [PropertyBase](../../property/propertybase). All methods and attributes of PropertyGroup, in addition to those listed below, are available when working with Layer, with the exception that `propertyIndex` attribute is set to `undefined`.
+:::
 
-!!! info
-    Layer is the base class for [CameraLayer object](../cameralayer), [LightLayer object](../lightlayer), and [AVLayer object](../avlayer), so Layer attributes and methods are available when working with all layer types. Layers contain AE properties, in addition to their JavaScript attributes and methods. For examples of how to access properties in layers, see [PropertyBase object](../../property/propertybase).
+:::info
+Layer is the base class for [CameraLayer object](../cameralayer), [LightLayer object](../lightlayer), and [AVLayer object](../avlayer), so Layer attributes and methods are available when working with all layer types. Layers contain AE properties, in addition to their JavaScript attributes and methods. For examples of how to access properties in layers, see [PropertyBase object](../../property/propertybase).
+:::
 
-#### Example
+#### 示例
 
 If the first item in the project is a [CompItem](../../item/compitem), this example disables the first layer in that composition and renames it. This might, for example, turn an icon off in the composition.
 
@@ -28,17 +29,17 @@ firstLayer.name = "DisabledLayer";
 
 ---
 
-## Attributes
+## 属性
 
 ### Layer.autoOrient
 
 `app.project.item(index).layer(index).autoOrient`
 
-#### Description
+#### 描述
 
 The type of automatic orientation to perform for the layer.
 
-#### Type
+#### 类型
 
 An `AutoOrientType` enumerated value; read/write. One of:
 
@@ -53,11 +54,11 @@ An `AutoOrientType` enumerated value; read/write. One of:
 
 `app.project.item(index).layer(index).comment`
 
-#### Description
+#### 描述
 
 A descriptive comment for the layer.
 
-#### Type
+#### 类型
 
 String; read/write.
 
@@ -67,13 +68,13 @@ String; read/write.
 
 `app.project.item(index).layer(index).containingComp`
 
-#### Description
+#### 描述
 
 The composition that contains this layer.
 
-#### Type
+#### 类型
 
-CompItem object; read-only.
+CompItem object; 只读.
 
 ---
 
@@ -81,13 +82,13 @@ CompItem object; read-only.
 
 `app.project.item(index).layer(index).hasVideo`
 
-#### Description
+#### 描述
 
 When `true`, the layer has a video switch (the eyeball icon) in the Timeline panel; otherwise `false`.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -95,10 +96,11 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).id`
 
-!!! note
-    This functionality was added in After Effects 22.0 (2022)
+:::note
+该方法添加于 After Effects 22.0 (2022)
+:::
 
-#### Description
+#### 描述
 
 Instance property on Layer which returns a unique and persistent identification number used internally to identify a Layer between sessions.
 
@@ -107,9 +109,9 @@ The value of the ID remains the same when the project is saved to a file and lat
 However, when you import this project into another project, new IDs are assigned to all Layers in the imported project.
 The ID is not displayed anywhere in the user interface..
 
-#### Type
+#### 类型
 
-Integer; read-only.
+Integer; 只读.
 
 ---
 
@@ -117,13 +119,13 @@ Integer; read-only.
 
 `app.project.item(index).layer(index).index`
 
-#### Description
+#### 描述
 
 The index position of the layer.
 
-#### Type
+#### 类型
 
-Integer, in the range `[1..numLayers]`; read-only.
+Integer, 范围为 `[1..numLayers]`; 只读.
 
 ---
 
@@ -131,13 +133,13 @@ Integer, in the range `[1..numLayers]`; read-only.
 
 `app.project.item(index).layer(index).inPoint`
 
-#### Description
+#### 描述
 
 The "in" point of the layer, expressed in composition time (seconds).
 
-#### Type
+#### 类型
 
-Floating-point value, in the range `[-10800.0..10800.0]` (minus or plus three hours); read/write.
+Floating-point value, 范围为 `[-10800.0..10800.0]` (minus or plus three hours); read/write.
 
 ---
 
@@ -145,16 +147,17 @@ Floating-point value, in the range `[-10800.0..10800.0]` (minus or plus three ho
 
 `app.project.item(index).layer(index).isNameSet`
 
-#### Description
+#### 描述
 
 `true` if the value of the name attribute has been set explicitly, rather than automatically from the source.
 
-!!! tip
-    This always returns `true` for layers that do not have a [AVLayer.source](avlayer.md#avlayersource)
+:::tip
+This always returns `true` for layers that do not have a [AVLayer.source](avlayer.md#avlayersource)
+:::
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -162,14 +165,15 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).label`
 
-#### Description
+#### 描述
 
 The label color for the item. Colors are represented by their number (0 for None, or 1 to 16 for one of the preset colors in the Labels preferences).
 
-!!! tip
-    Custom label colors cannot be set programmatically.
+:::tip
+Custom label colors cannot be set programmatically.
+:::
 
-#### Type
+#### 类型
 
 Integer (0 to 16); read/write.
 
@@ -179,11 +183,11 @@ Integer (0 to 16); read/write.
 
 `app.project.item(index).layer(index).locked`
 
-#### Description
+#### 描述
 
 When `true`, the layer is locked; otherwise `false`. This corresponds to the lock toggle in the Layer panel.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -193,17 +197,17 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).marker`
 
-#### Description
+#### 描述
 
 A [PropertyGroup object](../../property/propertygroup) that contains all a layer's markers. Layer marker scripting has the same functionality as [Comp markers](../item/compitem.md#compitemmarkerproperty).
 
 See [MarkerValue object](../../other/markervalue).
 
-#### Type
+#### 类型
 
-PropertyGroup object or `null`; read-only.
+PropertyGroup object or `null`; 只读.
 
-#### Example
+#### 示例
 
 The following sample code creates two layer markers with different properties
 
@@ -226,13 +230,13 @@ solidLayer.marker.setValueAtTime(3, layerMarker2);
 
 `app.project.item(index).layer(index).nullLayer`
 
-#### Description
+#### 描述
 
 When `true`, the layer was created as a null object; otherwise `false`.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -240,13 +244,13 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).outPoint`
 
-#### Description
+#### 描述
 
 The "out" point of the layer, expressed in composition time (seconds).
 
-#### Type
+#### 类型
 
-Floating-point value, in the range `[-10800.0..10800.0]` (minus or plus three hours); read/write.
+Floating-point value, 范围为 `[-10800.0..10800.0]` (minus or plus three hours); read/write.
 
 ---
 
@@ -254,7 +258,7 @@ Floating-point value, in the range `[-10800.0..10800.0]` (minus or plus three ho
 
 `app.project.item(index).layer(index).parent`
 
-#### Description
+#### 描述
 
 The parent of this layer; can be `null`.
 
@@ -264,7 +268,7 @@ For example, if the new parent has a rotation of 30 degrees, the child layer is 
 
 To set the parent without changing the child layer's transform values, use the [setParentWithJump](#layersetparentwithjump) method.
 
-#### Type
+#### 类型
 
 Layer object or `null`; read/write.
 
@@ -274,13 +278,13 @@ Layer object or `null`; read/write.
 
 `app.project.item(index).layer(index).selectedProperties`
 
-#### Description
+#### 描述
 
 An array containing all of the currently selected [Property](../../property/property) and [PropertyGroup](../../property/propertygroup) objects in the layer.
 
-#### Type
+#### 类型
 
-Array of [PropertyBase](../../property/propertybase) objects; read-only.
+Array of [PropertyBase](../../property/propertybase) objects; 只读.
 
 ---
 
@@ -288,11 +292,11 @@ Array of [PropertyBase](../../property/propertybase) objects; read-only.
 
 `app.project.item(index).layer(index).shy`
 
-#### Description
+#### 描述
 
 When `true`, the layer is "shy", meaning that it is hidden in the Layer panel if the composition's "Hide all shy layers" option is toggled on.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -302,11 +306,11 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).solo`
 
-#### Description
+#### 描述
 
 When `true`, the layer is soloed, otherwise `false`.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -316,13 +320,13 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).startTime`
 
-#### Description
+#### 描述
 
 The start time of the layer, expressed in composition time (seconds).
 
-#### Type
+#### 类型
 
-Floating-point value, in the range `[-10800.0..10800.0]` (minus or plus three hours); read/write.
+Floating-point value, 范围为 `[-10800.0..10800.0]` (minus or plus three hours); read/write.
 
 ---
 
@@ -330,13 +334,13 @@ Floating-point value, in the range `[-10800.0..10800.0]` (minus or plus three ho
 
 `app.project.item(index).layer(index).stretch`
 
-#### Description
+#### 描述
 
 The layer's time stretch, expressed as a percentage. A value of 100 means no stretch. Values between 0 and 1 are set to 1, and values between -1 and 0 (not including 0) are set to -1.
 
-#### Type
+#### 类型
 
-Floating-point value, in the range `[-9900.0..9900.0]`; read/write.
+Floating-point value, 范围为 `[-9900.0..9900.0]`; read/write.
 
 ---
 
@@ -344,35 +348,35 @@ Floating-point value, in the range `[-9900.0..9900.0]`; read/write.
 
 `app.project.item(index).layer(index).time`
 
-#### Description
+#### 描述
 
 The current time of the layer, expressed in composition time (seconds).
 
-#### Type
+#### 类型
 
-Floating-point value; read-only.
+Floating-point value; 只读.
 
 ---
 
-## Methods
+## 函数
 
 ### Layer.activeAtTime()
 
 `app.project.item(index).layer(index).activeAtTime(time)`
 
-#### Description
+#### 描述
 
 Returns `true` if this layer will be active at the specified time.
 
 To return `true`, the layer must be enabled, no other layer may be soloing unless this layer is soloed too, and the time must be between the `inPoint` and `outPoint` values of this layer.
 
-#### Parameters
+#### 参数
 
-| Parameter |         Type         |     Description      |
+| 参数 |         类型         |     描述      |
 | --------- | -------------------- | -------------------- |
 | `time`    | Floating-point value | The time in seconds. |
 
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -382,22 +386,23 @@ Boolean.
 
 `app.project.item(index).layer(index).applyPreset(presetName);`
 
-#### Description
+#### 描述
 
 Applies the specified collection of animation settings (an animation preset) to all the currently selected layers of the comp to which the layer belongs. If no layer is selected, it applies the animation preset to a new solid layer.
 
 Predefined animation preset files are installed in the Presets folder, and users can create new animation presets through the user interface.
 
-!!! warning
-    The animation preset is applied to the the selected layer(s) of the comp, not to the layer whose applyPreset function is called. Hence, the layer whose applyPreset function is called effectively just determines the comp whose layers are processed.
+:::warning
+The animation preset is applied to the the selected layer(s) of the comp, not to the layer whose applyPreset function is called. Hence, the layer whose applyPreset function is called effectively just determines the comp whose layers are processed.
+:::
 
-#### Parameters
+#### 参数
 
-|  Parameter   |                                                 Type                                                  |                Description                |
+|  参数   |                                                 类型                                                  |                描述                |
 | ------------ | ----------------------------------------------------------------------------------------------------- | ----------------------------------------- |
 | `presetName` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object | The file containing the animation preset. |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -407,7 +412,7 @@ Nothing.
 
 `app.project.item(index).layer(index).copyToComp(intoComp)`
 
-#### Description
+#### 描述
 
 Copies the layer into the specified composition. The original layer remains unchanged.
 
@@ -417,19 +422,21 @@ Copying in a layer changes the index positions of previously existing layers in 
 
 This is the same as copying and pasting a layer through the user interface.
 
-!!! note
-    As of After Effects 13.6, this method no longer causes After Effects to crash when the layer has a parent.
+:::note
+As of After Effects 13.6, this method no longer causes After Effects to crash when the layer has a parent.
+:::
 
-!!! warning
-    As of After Effects 13.7 (13.6, has not been tested), if the copied layer has an effect on it and the user undoes the action, After Effects will Crash.
+:::warning
+As of After Effects 13.7 (13.6, has not been tested), if the copied layer has an effect on it and the user undoes the action, After Effects will Crash.
+:::
 
-#### Parameters
+#### 参数
 
-| Parameter  |                  Type                  |       Description       |
+| 参数  |                  类型                  |       描述       |
 | ---------- | -------------------------------------- | ----------------------- |
 | `intoComp` | [CompItem object](../../item/compitem) | The target composition. |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -439,29 +446,27 @@ Nothing.
 
 `app.project.item(index).layer(index).doSceneEditDetection(applyOptions)`
 
-!!! note
-    This functionality was added in After Effects 22.3 (2022)
+:::note
+该方法添加于 After Effects 22.3 (2022)
+:::
 
-#### Description
+#### 描述
 
 Runs Scene Edit Detection on the layer that the method is called on and returns an array containing the times of any detected scenes. This is the same as selecting a layer in the Timeline and choosing "Layer > Scene Edit Detection" with the single argument determining whether the edits are applied as markers, layer splits, pre-comps, or are not applied to the layer.
 
 Just as in the UI, `doSceneEditDetection` will fail and error if called on a non-video layer or a video layer with Time Remapping enabled.
 
-#### Parameters
+#### 参数
 
-+----------------+-------------------------------+------------------------------------------------------------------------------------------------+
-|   Parameter    |             Type              |                                          Description                                           |
-+================+===============================+================================================================================================+
+|   参数    |             类型              |                                          描述                                           |
+|----------------|-------------------------------|------------------------------------------------------------------------------------------------|
 | `applyOptions` | `SceneEditDetectionMode` enum | How the detected edits will be applied. One of:                                                |
-|                |                               |                                                                                                |
 |                |                               | - `SceneEditDetectionMode.MARKERS`: Create markers at edit points.                             |
 |                |                               | - `SceneEditDetectionMode.SPLIT`: Split layer.                                                 |
 |                |                               | - `SceneEditDetectionMode.SPLIT_PRECOMP`: Split layer at edit points and pre-compose each one. |
 |                |                               | - `SceneEditDetectionMode.NONE`: Detected edits are not applied to the layer.                  |
-+----------------+-------------------------------+------------------------------------------------------------------------------------------------+
 
-#### Returns
+#### 返回
 
 Array of floating-point values; the times of the detected edit points expressed in composition time.
 
@@ -471,15 +476,15 @@ Array of floating-point values; the times of the detected edit points expressed 
 
 `app.project.item(index).layer(index).duplicate()`
 
-#### Description
+#### 描述
 
 Duplicates the layer. Creates a new Layer object in which all values are the same as in this one. This has the same effect as selecting a layer in the user interface and choosing Edit > Duplicate, except the selection in the user interface does not change when you call this method.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Layer object.
 
@@ -489,18 +494,17 @@ Layer object.
 
 `app.project.item(index).layer(index).moveAfter(layer)`
 
-#### Description
+#### 描述
 
 Moves this layer to a position immediately after (below) the specified layer.
 
-#### Parameters
+#### 参数
 
-| Parameter |           Type           |                Description                |
+| 参数 |           类型           |                描述                |
 | --------- | ------------------------ | ----------------------------------------- |
 | `layer`   | [Layer object](../layer) | The target layer in the same composition. |
 
-
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -510,17 +514,17 @@ Nothing.
 
 `app.project.item(index).layer(index).moveBefore(layer)`
 
-#### Description
+#### 描述
 
 Moves this layer to a position immediately before (above) the specified layer.
 
-#### Parameters
+#### 参数
 
-| Parameter |           Type           |                Description                |
+| 参数 |           类型           |                描述                |
 | --------- | ------------------------ | ----------------------------------------- |
 | `layer`   | [Layer object](../layer) | The target layer in the same composition. |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -530,15 +534,15 @@ Nothing.
 
 `app.project.item(index).layer(index).moveToBeginning()`
 
-#### Description
+#### 描述
 
 Moves this layer to the topmost position of the layer stack (the first layer).
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -548,15 +552,15 @@ Nothing.
 
 `app.project.item(index).layer(index).moveToEnd()`
 
-#### Description
+#### 描述
 
 Moves this layer to the bottom position of the layer stack (the last layer).
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -566,15 +570,15 @@ Nothing.
 
 `app.project.item(index).layer(index).remove()`
 
-#### Description
+#### 描述
 
 Deletes the specified layer from the composition.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -584,7 +588,7 @@ Nothing.
 
 `app.project.item(index).layer(index).setParentWithJump([newParent])`
 
-#### Description
+#### 描述
 
 Sets the parent of this layer to the specified layer, without changing the transform values of the child layer.
 
@@ -592,12 +596,12 @@ There may be an apparent jump in the rotation, translation, or scale of the chil
 
 If you do not want the child layer to jump, set the [parent](#layerparent) attribute directly. In this case, an offset is calculated and set in the child layer's transform fields, to prevent the jump from occurring.
 
-#### Parameters
+#### 参数
 
-|  Parameter  |           Type           |                                       Description                                        |
+|  参数  |           类型           |                                       描述                                        |
 | ----------- | ------------------------ | ---------------------------------------------------------------------------------------- |
 | `newParent` | [Layer object](../layer) | Optional. A layer in the same composition. If not specified, it sets the parent to None. |
 
-#### Returns
+#### 返回
 
 Nothing.

@@ -1,7 +1,6 @@
 ---
 title: plug-in-installation
 ---
-
 # Plug-in Installation
 
 Use the common plug-in folder as described here: [Where Installers Should Put Plug-ins](../../intro/where-installers-should-put-plug-ins).

@@ -1,7 +1,6 @@
 ---
 title: cross-dom-functions
 ---
-
 # Cross-DOM functions
 
 The cross-DOM is a small application programming interface (API), which provides a set of functions that are common across message-enabled applications. These include functions to open files, execute scripts, and print files. For details of the function set, see [Cross-DOM API reference](#cross-dom-api-reference).
@@ -14,7 +13,7 @@ The cross-DOM functions for each application are implemented in JavaScript. You 
 
 The sample code distributed with the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) includes these code examples that specifically demonstrate the use of cross-DOM functions:
 
-|                                                                       Example                                                                       |                        Description                         |
+|                                                                       Example                                                                       |                        描述                         |
 | --------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
 | [OpenImageInPhotoshop.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/OpenImageInPhotoshop.jsx) | Shows how to send an image file to be opened in Photoshop. |
 
@@ -39,8 +38,9 @@ For each platform, there is a startup folder shared by all Adobe Creative Suite 
 - In Windows®, the installation startup folders are: `%CommonProgramFiles%\Adobe\Startup Scripts CS5\Adobe AppName\`
 - In Mac OS®, the installation startup folders are: `/Library/Application Support/Adobe/Startup Scripts CS5/Adobe AppName/`
 
-!!! note
-    This is not the location in which to store your own startup scripts; see [Scripting for specific applications](../../introduction/scripting-for-specific-applications).
+:::note
+This is not the location in which to store your own startup scripts; see [Scripting for specific applications](../../introduction/scripting-for-specific-applications).
+:::
 
 ---
 
@@ -72,17 +72,17 @@ All message-enabled applications implement the following cross-DOM functions:
 
 `appspec.executeScript(script)`
 
-#### Description
+#### 描述
 
 Performs a JavaScript eval on the specified script. The entire document object model (DOM) of the target application is available to the script.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |         Description         |
+| 参数 |  类型  |         描述         |
 | --------- | ------ | --------------------------- |
 | `script`  | String | The script to be evaluated. |
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -92,17 +92,17 @@ Nothing
 
 `appspec.open(files)`
 
-#### Description
+#### 描述
 
 Performs the equivalent of the target application's File > Open command on the specified files.
 
-#### Parameters
+#### 参数
 
-| Parameter |                                     Type                                      |                                          Description                                          |
+| 参数 |                                     类型                                      |                                          描述                                          |
 | --------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `files`   | [File object](../../file-system-access/file-object) or array of File objects. | File(s) to open. For applications that use compound documents, this should be a project file. |
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -112,23 +112,21 @@ Nothing
 
 `appspec.openAsNew([options])`
 
-#### Description
+#### 描述
 
 Performs the equivalent of the target application's File > New command.
 
-#### Parameters
+#### 参数
 
-+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| Parameter |                                                                                               Type                                                                                                |         Description         |
-+===========+===================================================================================================================================================================================================+=============================+
+| 参数 |                                                                                               类型                                                                                                |         描述         |
+|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|
 | `options` | Application-specific creation options:                                                                                                                                                            | Optional. Creation options. |
 |           | - Adobe Bridge: none                                                                                                                                                                              |                             |
 |           | - Photoshop: none                                                                                                                                                                                 |                             |
 |           | - InDesign: creation options are: `(Boolean:showingWindow, ObjectOrString:documentPresets)`. See the arguments for `documents.add()` in the Adobe InDesign CS5 Scripting Reference.               |                             |
 |           | - Illustrator: creation options are: `([DocumentColorSpace:colorspace][, Number:width, Number:height])`. See the arguments for documents.add() in the Adobe Illustrator CS5 JavaScript Reference. |                             |
-+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 
-#### Returns
+#### 返回
 
 Boolean. `true` on success.
 
@@ -138,17 +136,17 @@ Boolean. `true` on success.
 
 `appspec.print(files)`
 
-#### Description
+#### 描述
 
 Performs the equivalent of the target application's File > Print command on the specified files.
 
-#### Parameters
+#### 参数
 
-| Parameter |                                     Type                                      |                                          Description                                           |
+| 参数 |                                     类型                                      |                                          描述                                           |
 | --------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | `files`   | [File object](../../file-system-access/file-object) or array of File objects. | File(s) to print. For applications that use compound documents, this should be a project file. |
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -158,14 +156,15 @@ Nothing
 
 `appspec.quit()`
 
-#### Description
+#### 描述
 
 Performs the equivalent of the target application's File > Exit or File > Close command.
 
-!!! note
-    This function is available for Adobe Acrobat®, but does nothing. Scripts cannot terminate the application.
+:::note
+This function is available for Adobe Acrobat®, but does nothing. Scripts cannot terminate the application.
+:::
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -175,16 +174,16 @@ Nothing
 
 `appspec.reveal(file)`
 
-#### Description
+#### 描述
 
 Gives the target application the operating-system focus, and, if the specified file is open in that application, brings it to the foreground.
 
-#### Parameters
+#### 参数
 
-| Parameter |                             Type                              |     Description     |
+| 参数 |                             类型                              |     描述     |
 | --------- | ------------------------------------------------------------- | ------------------- |
 | `file`    | [File object](../../file-system-access/file-object) or String | File info to reveal |
 
-#### Returns
+#### 返回
 
 Nothing

@@ -1,263 +1,262 @@
 ---
-title: changelog
+title: 更新日志
 ---
-
 # Changelog
 
-What's new and changed for expressions?
+表达式新增了什么?
 
 ---
 
 ## [After Effects 25.0](https://helpx.adobe.com/after-effects/using/whats-new/2025.html) (October 2024)
 
-Added many new text style properties and methods for both characters and paragraphs, as well as the ability to control per-character styling through expressions.
+新增了许多用于字符和段落的文本样式属性和方法，以及通过表达式控制每个字符样式的能力。
 
-- New attributes of .sourceText:
-    - Added: [SourceText.isPointText](../text/sourcetext.md#sourcetextispointtext)
-    - Added: [SourceText.isParagraphText](../text/sourcetext.md#sourcetextisparagraphtext)
-    - Added: [SourceText.isHorizontalText](../text/sourcetext.md#sourcetextishorizontaltext)
-    - Added: [SourceText.isVerticalText](../text/sourcetext.md#sourcetextisverticaltext)
-- New per-character style properties and methods:
-    - Added: [TextStyle.replaceText()](../text/style.md#textstylereplacetext)
-    - Added: [TextStyle.baselineDirection](../text/style.md#textstylebaselinedirection)
-    - Added: [TextStyle.setBaselineDirection()](../text/style.md#textstylesetbaselinedirection)
-    - Added: [TextStyle.baselineOption](../text/style.md#textstylebaselineoption)
-    - Added: [TextStyle.setBaselineOption()](../text/style.md#textstylesetbaselineoption)
-    - Added: [TextStyle.digitSet](../text/style.md#textstyledigitset)
-    - Added: [TextStyle.setDigitSet()](../text/style.md#textstylesetdigitset)
-    - Added: [TextStyle.isLigature](../text/style.md#textstyleisligature)
-    - Added: [TextStyle.setLigature()](../text/style.md#textstylesetligature)
-    - Added: [TextStyle.tsume](../text/style.md#textstyletsume)
-    - Added: [TextStyle.setTsume()](../text/style.md#textstylesettsume)
-    - Added: [TextStyle.verticalScaling](../text/style.md#textstyleverticalscaling)
-    - Added: [TextStyle.setVerticalScaling()](../text/style.md#textstylesetverticalscaling)
-    - Added: [TextStyle.horizontalScaling](../text/style.md#textstylehorizontalscaling)
-    - Added: [TextStyle.setHorizontalScaling()](../text/style.md#textstylesethorizontalscaling)
-    - Added: [TextStyle.lineJoin](../text/style.md#textstylelinejoin)
-    - Added: [TextStyle.setLineJoin()](../text/style.md#textstylesetlinejoin)
-- New paragraph style properties and methods:
-    - Added: [TextStyle.direction](../text/style.md#textstyledirection)
-    - Added: [TextStyle.setDirection()](../text/style.md#textstylesetdirection)
-    - Added: [TextStyle.isEveryLineComposer](../text/style.md#textstyleiseverylinecomposer)
-    - Added: [TextStyle.setEveryLineComposer()](../text/style.md#textstyleseteverylinecomposer)
-    - Added: [TextStyle.firstLineIndent](../text/style.md#textstylefirstlineindent)
-    - Added: [TextStyle.setFirstLineIndent()](../text/style.md#textstylesetfirstlineindent)
-    - Added: [TextStyle.isHangingRoman](../text/style.md#textstyleishangingroman)
-    - Added: [TextStyle.setHangingRoman()](../text/style.md#textstylesethangingroman)
-    - Added: [TextStyle.justification](../text/style.md#textstylejustification)
-    - Added: [TextStyle.setJustification()](../text/style.md#textstylesetjustification)
-    - Added: [TextStyle.leadingType](../text/style.md#textstyleleadingtype)
-    - Added: [TextStyle.setLeadingType()](../text/style.md#textstylesetleadingtype)
-    - Added: [TextStyle.leftMargin](../text/style.md#textstyleleftmargin)
-    - Added: [TextStyle.setLeftMargin()](../text/style.md#textstylesetleftmargin)
-    - Added: [TextStyle.rightMargin](../text/style.md#textstylerightmargin)
-    - Added: [TextStyle.setRightMargin()](../text/style.md#textstylesetrightmargin)
-    - Added: [TextStyle.spaceAfter](../text/style.md#textstylespaceafter)
-    - Added: [TextStyle.setSpaceAfter()](../text/style.md#textstylesetspaceafter)
-    - Added: [TextStyle.spaceBefore](../text/style.md#textstylespacebefore)
-    - Added: [TextStyle.setSpaceBefore()](../text/style.md#textstylesetspacebefore)
-- Existing style methods updated to allow per-character styles:
-    - Changed: [TextStyle.setFontSize()](../text/style.md#textstylesetfontsize)
-    - Changed: [TextStyle.setFont()](../text/style.md#textstylesetfont)
-    - Changed: [TextStyle.setFauxBold()](../text/style.md#textstylesetfauxbold)
-    - Changed: [TextStyle.setFauxItalic()](../text/style.md#textstylesetfauxitalic)
-    - Changed: [TextStyle.setAllCaps()](../text/style.md#textstylesetallcaps)
-    - Changed: [TextStyle.setSmallCaps()](../text/style.md#textstylesetsmallcaps)
-    - Changed: [TextStyle.setTracking()](../text/style.md#textstylesettracking)
-    - Changed: [TextStyle.setLeading()](../text/style.md#textstylesetleading)
-    - Changed: [TextStyle.setAutoLeading()](../text/style.md#textstylesetautoleading)
-    - Changed: [TextStyle.setBaselineShift()](../text/style.md#textstylesetbaselineshift)
-    - Changed: [TextStyle.setApplyFill()](../text/style.md#textstylesetapplyfill)
-    - Changed: [TextStyle.setFillColor()](../text/style.md#textstylesetfillcolor)
-    - Changed: [TextStyle.setApplyStroke()](../text/style.md#textstylesetapplystroke)
-    - Changed: [TextStyle.setStrokeColor()](../text/style.md#textstylesetstrokecolor)
-    - Changed: [TextStyle.setStrokeWidth()](../text/style.md#textstylesetstrokewidth)
-
----
-
-## [After Effects 17.7](https://helpx.adobe.com/after-effects/kb/fixed-issues.html#BugsfixedintheFebruary2021releaseversion177) (Feb 2021)
-
-- Fixed: An issue where expression edits made in the Graph Editor were not applied consistently.
+* .sourceText 的新属性：
+  * 新增: [SourceText.isPointText](../text/sourcetext.md#sourcetextispointtext)
+  * 新增: [SourceText.isParagraphText](../text/sourcetext.md#sourcetextisparagraphtext)
+  * 新增: [SourceText.isHorizontalText](../text/sourcetext.md#sourcetextishorizontaltext)
+  * 新增: [SourceText.isVerticalText](../text/sourcetext.md#sourcetextisverticaltext)
+* 新的每个字符样式属性和方法：
+  * 新增: [TextStyle.replaceText()](../text/style.md#textstylereplacetext)
+  * 新增: [TextStyle.baselineDirection](../text/style.md#textstylebaselinedirection)
+  * 新增: [TextStyle.setBaselineDirection()](../text/style.md#textstylesetbaselinedirection)
+  * 新增: [TextStyle.baselineOption](../text/style.md#textstylebaselineoption)
+  * 新增: [TextStyle.setBaselineOption()](../text/style.md#textstylesetbaselineoption)
+  * 新增: [TextStyle.digitSet](../text/style.md#textstyledigitset)
+  * 新增: [TextStyle.setDigitSet()](../text/style.md#textstylesetdigitset)
+  * 新增: [TextStyle.isLigature](../text/style.md#textstyleisligature)
+  * 新增: [TextStyle.setLigature()](../text/style.md#textstylesetligature)
+  * 新增: [TextStyle.tsume](../text/style.md#textstyletsume)
+  * 新增: [TextStyle.setTsume()](../text/style.md#textstylesettsume)
+  * 新增: [TextStyle.verticalScaling](../text/style.md#textstyleverticalscaling)
+  * 新增: [TextStyle.setVerticalScaling()](../text/style.md#textstylesetverticalscaling)
+  * 新增: [TextStyle.horizontalScaling](../text/style.md#textstylehorizontalscaling)
+  * 新增: [TextStyle.setHorizontalScaling()](../text/style.md#textstylesethorizontalscaling)
+  * 新增: [TextStyle.lineJoin](../text/style.md#textstylelinejoin)
+  * 新增: [TextStyle.setLineJoin()](../text/style.md#textstylesetlinejoin)
+* 新的段落样式属性和方法：
+  * 新增: [TextStyle.direction](../text/style.md#textstyledirection)
+  * 新增: [TextStyle.setDirection()](../text/style.md#textstylesetdirection)
+  * 新增: [TextStyle.isEveryLineComposer](../text/style.md#textstyleiseverylinecomposer)
+  * 新增: [TextStyle.setEveryLineComposer()](../text/style.md#textstyleseteverylinecomposer)
+  * 新增: [TextStyle.firstLineIndent](../text/style.md#textstylefirstlineindent)
+  * 新增: [TextStyle.setFirstLineIndent()](../text/style.md#textstylesetfirstlineindent)
+  * 新增: [TextStyle.isHangingRoman](../text/style.md#textstyleishangingroman)
+  * 新增: [TextStyle.setHangingRoman()](../text/style.md#textstylesethangingroman)
+  * 新增: [TextStyle.justification](../text/style.md#textstylejustification)
+  * 新增: [TextStyle.setJustification()](../text/style.md#textstylesetjustification)
+  * 新增: [TextStyle.leadingType](../text/style.md#textstyleleadingtype)
+  * 新增: [TextStyle.setLeadingType()](../text/style.md#textstylesetleadingtype)
+  * 新增: [TextStyle.leftMargin](../text/style.md#textstyleleftmargin)
+  * 新增: [TextStyle.setLeftMargin()](../text/style.md#textstylesetleftmargin)
+  * 新增: [TextStyle.rightMargin](../text/style.md#textstylerightmargin)
+  * 新增: [TextStyle.setRightMargin()](../text/style.md#textstylesetrightmargin)
+  * 新增: [TextStyle.spaceAfter](../text/style.md#textstylespaceafter)
+  * 新增: [TextStyle.setSpaceAfter()](../text/style.md#textstylesetspaceafter)
+  * 新增: [TextStyle.spaceBefore](../text/style.md#textstylespacebefore)
+  * 新增: [TextStyle.setSpaceBefore()](../text/style.md#textstylesetspacebefore)
+* 现有样式方法更新为支持每个字符样式：
+  * 更改: [TextStyle.setFontSize()](../text/style.md#textstylesetfontsize)
+  * 更改: [TextStyle.setFont()](../text/style.md#textstylesetfont)
+  * 更改: [TextStyle.setFauxBold()](../text/style.md#textstylesetfauxbold)
+  * 更改: [TextStyle.setFauxItalic()](../text/style.md#textstylesetfauxitalic)
+  * 更改: [TextStyle.setAllCaps()](../text/style.md#textstylesetallcaps)
+  * 更改: [TextStyle.setSmallCaps()](../text/style.md#textstylesetsmallcaps)
+  * 更改: [TextStyle.setTracking()](../text/style.md#textstylesettracking)
+  * 更改: [TextStyle.setLeading()](../text/style.md#textstylesetleading)
+  * 更改: [TextStyle.setAutoLeading()](../text/style.md#textstylesetautoleading)
+  * 更改: [TextStyle.setBaselineShift()](../text/style.md#textstylesetbaselineshift)
+  * 更改: [TextStyle.setApplyFill()](../text/style.md#textstylesetapplyfill)
+  * 更改: [TextStyle.setFillColor()](../text/style.md#textstylesetfillcolor)
+  * 更改: [TextStyle.setApplyStroke()](../text/style.md#textstylesetapplystroke)
+  * 更改: [TextStyle.setStrokeColor()](../text/style.md#textstylesetstrokecolor)
+  * 更改: [TextStyle.setStrokeWidth()](../text/style.md#textstylesetstrokewidth)
 
 ---
 
-## [After Effects 17.6](https://helpx.adobe.com/after-effects/kb/fixed-issues.html#BugsfixedintheJanuary2021releaseversion176) (Jan 2021)
+## [After Effects 17.7](https://helpx.adobe.com/after-effects/kb/fixed-issues.html#BugsfixedintheFebruary2021releaseversion177) (2021年2月)
 
-- Fixed: An issue that could cause an expression to be replaced instead of appending when using expression or property pick-whip.
-
----
-
-## [After Effects 17.1.2](https://helpx.adobe.com/after-effects/kb/fixed-issues.html#BugsfixedintheJuly2020releaseversion1712) (Jul 2020)
-
-- Fixed: An issue where Markers could not be referenced by name in the JavaScript Expressions Engine.
+* 修复: 在图形编辑器中进行的表达式编辑未一致应用的问题。
 
 ---
 
-## [After Effects 17.1](https://helpx.adobe.com/after-effects/kb/fixed-issues.html#BugsfixedintheMay2020releaseversion171) (May 19 2020)
+## [After Effects 17.6](https://helpx.adobe.com/after-effects/kb/fixed-issues.html#BugsfixedintheJanuary2021releaseversion176) (2021年1月)
 
-- Fixed: An issue with Expression editor to auto-complete 'timeToFrames' function.
-
----
-
-## [After Effects 17.0.5](https://helpx.adobe.com/after-effects/kb/fixed-issues.html#BugsfixedintheMarch2020releaseversion1705) (Mar 2020)
-
-- Fixed: An issue where the Link Focus to Layer command produced an expression that did not work with the JavaScript expression engine.
+* 修复: 使用表达式或属性拾取器时，表达式可能被替换而不是追加的问题。
 
 ---
 
-## [After Effects 17.0.2](https://helpx.adobe.com/after-effects/kb/fixed-issues.html#BugsfixedintheJanuary2020releaseversion1702) (Jan 2020)
+## [After Effects 17.1.2](https://helpx.adobe.com/after-effects/kb/fixed-issues.html#BugsfixedintheJuly2020releaseversion1712) (2020年7月)
 
-- Fixed: An issue where wrong line numbers would be displayed related to errors in JavaScript expressions.
-
----
-
-## [After Effects 17.0](https://helpx.adobe.com/after-effects/using/whats-new/2020.html) (Jan 24 2020)
-
-- Implemented Dropdown Menu Expression Control
-- Expression Editor improvements:
-    - You can now use the new scrolling functionality to prevent the scroll from adjusting incorrectly when the box is resized by typing the return character.
-    - Prevent numbers from matching in an autocomplete list if the variable begins with a number. Smarter autocomplete prevents from overriding closing brackets and quotes.
-    - You can now scale font size for Hi-DPI displays.
-    - Graph editor now commits changes in preferences for all the open graph editors.
-    - If you enable syntax highlight, the folding icon buttons in the UI now respect the default and background color, or the line numbers color and background color.
-- Expression performance improvements:
-    - After Effects now attempts to detect an expression that does not change throughout a comp and calculates the expression only once. Load your favorite expression-filled comp and experience the improved performance.
-    - Any expression using [posterizeTime()](../general/global.md#posterizetime) now calculates only once for the entire comp, not on every frame.
-- Added: Extended expressions access to Text properties.
-    - Added: [Text.Font...](../text/text.md#textfont)
-    - Added: [Source Text](../../text/sourcetext)
-    - Added: [Text Style](../../text/style)
+* 修复: 在 JavaScript 表达式引擎中无法通过名称引用标记的问题。
 
 ---
 
-## [After Effects 16.1.3](https://helpx.adobe.com/after-effects/kb/fixed-issues.html#BugsfixedintheearlierversionsofAfterEffects) (Sep 2019)
+## [After Effects 17.1](https://helpx.adobe.com/after-effects/kb/fixed-issues.html#BugsfixedintheMay2020releaseversion171) (2020年5月19日)
 
-- Fixed: Indentation of curly braces on new lines could be incorrect in the Expressions editor.
-
----
-
-## [After Effects 16.1.2](https://helpx.adobe.com/after-effects/kb/fixed-issues.html#BugsfixedintheearlierversionsofAfterEffects) (June 2019)
-
-- Fixed: After Effects crashes when you close a project that has an expression containing an error.
-- Fixed: Expression error messages could be truncated in the error ribbon if there were multiple lines of error text to show.
-- Fixed: The property, this_Layer had stopped working when using the Legacy ExtendScript expression engine.
-- Fixed: Crash when switching the project level expression engine from JavaScript to Legacy ExtendScript.
-- Fixed: Crash with expressions that contain calls to Date.toLocaleString().
-- Fixed: Crash when editing expressions in the Graph Editor expression field when AutoComplete is disabled.
+* 修复: 表达式编辑器自动补全 'timeToFrames' 函数的问题。
 
 ---
 
-## [After Effects 16.1 (CC 19)](https://helpx.adobe.com/after-effects/kb/fixed-issues.html#BugsfixedintheearlierversionsofAfterEffects) (Apr 2 2019)
+## [After Effects 17.0.5](https://helpx.adobe.com/after-effects/kb/fixed-issues.html#BugsfixedintheMarch2020releaseversion1705) (2020年3月)
 
-- Implemented new expression editor
-- Fixed: The JavaScript expressions engine does not generate the same random number results as the Legacy ExtendScript engine.
-- Fixed: When an expression references the name of a layer in a string or in a Source Text property, the name of the layer is not returned. Instead, it returns [Object].
-- Fixed: The [sampleImage()](../layer/general.md#layersampleimage) expression method returns the wrong value if the post-expression value of the property is read by a ScriptUI panel.
-- Fixed: Applying the [createPath()](../objects/path-property.md#pathpropertycreatepath) expression via the Expression Language menu autofills the (is_Closed) parameter as deprecated snake case instead of camel caseisClosed.
-- Fixed: Renaming an effect that is referenced by an expression causes the expression to incorrectly update references to that effect properties when those properties have the same name as the effect.
-- Fixed: The Link Focus Distance to Layer, Link Focus Distance to Point of Interest, Create Stereo 3D Rig, and Create Orbit Null commands create expressions that are incompatible with the JavaScript expression engine.
-- Fixed: Specific complex, multi-composition expressions cause fast flickering of the expression error warning banner and icons. Note that to fix this, there is a small slowdown in expression evaluation speed for these expressions.
+* 修复: 使用“将焦点链接到图层”命令生成的表达式在 JavaScript 表达式引擎中无法工作的问题。
 
 ---
 
-## [After Effects 16.0 (CC 19)](https://helpx.adobe.com/after-effects/using/whats-new/2019.html) (Oct 15 2018)
+## [After Effects 17.0.2](https://helpx.adobe.com/after-effects/kb/fixed-issues.html#BugsfixedintheJanuary2020releaseversion1702) (2020年1月)
 
-- Implemented new Javascript engine
-- Added: [hexToRgb](../general/color-conversion.md#hextorgb)
-- Added: [marker protectedRegion](../objects/markerkey.md#markerkeyprotectedregion) property
+* 修复: JavaScript 表达式中错误相关的行号显示不正确的问题。
 
 ---
 
-## [After Effects 15.1.2](https://helpx.adobe.com/after-effects/kb/bug-fixes-in-after-effects-cc.html) (Jul 16 2018)
+## [After Effects 17.0](https://helpx.adobe.com/after-effects/using/whats-new/2020.html) (2020年1月24日)
 
-- Fixed: If your project contains multiple master properties by the same name, the expressions that refer to the master properties evaluate incorrectly.
-- Fixed: The Property Link pick whip incorrectly writes a self-referential expression for the other selected properties.
-
----
-
-## [After Effects 15.1](https://helpx.adobe.com/after-effects/using/whats-new/2018.html#AfterEffectsCCApril2018version151release) (Apr 3 2018)
-
-- Added: Property Link pick whip
-- Added: Support for custom expression function libraries
-- Added: Expression access to [Project](../../objects/project)
-    - Added: [Project.fullPath](../objects/project.md#projectfullpath)
-    - Added: [Project.bitsPerChannel](../objects/project.md#projectbitsperchannel)
-    - Added: [Project.linearBlending](../objects/project.md#projectlinearblending)
-
----
-
-## [After Effects 15.0 (CC)](https://community.adobe.com/t5/after-effects/expression-and-scripting-improvements-in-after-effects-october-2017-pdf/td-p/4787866) (Oct 18 2017)
-
-- Added: Expression access to data in JSON files
-    - Added: [footage sourceText](../objects/footage.md#footagesourcetext) attribute
-    - Added: [footage sourceData](../objects/footage.md#footagesourcedata) attribute
-    - Added: [footage dataValue](../objects/footage.md#footagedatavalue) method
-    - Added: [footage dataKeyCount](../objects/footage.md#footagedatakeycount) method
-    - Added: [footage dataKeyTimes](../objects/footage.md#footagedatakeytimes) method
-    - Added: [footage dataKeyValues](../objects/footage.md#footagedatakeyvalues) method
-- Added: Expression access to path points on masks, Bezier shapes, and brush strokes
-    - Added: [path points](../objects/path-property.md#pathpropertypoints) method
-    - Added: [path inTangents](../objects/path-property.md#pathpropertyintangents) method
-    - Added: [path outTangents](../objects/path-property.md#pathpropertyouttangents) method
-    - Added: [path isClosed](../objects/path-property.md#pathpropertyisclosed) method
-    - Added: [path pointOnPath](../objects/path-property.md#pathpropertypointonpath) method
-    - Added: [path tangentOnPath](../objects/path-property.md#pathpropertytangentonpath) method
-    - Added: [path normalOnPath](../objects/path-property.md#pathpropertynormalonpath) method
-    - Added: [path createPath](../objects/path-property.md#pathpropertycreatepath) method
+* 实现了下拉菜单表达式控制
+* 表达式编辑器改进：
+  * 现在可以使用新的滚动功能，防止在输入回车字符时调整框大小时滚动不正确。
+  * 如果变量以数字开头，自动补全列表中的数字将不再匹配。更智能的自动补全功能防止覆盖闭合括号和引号。
+  * 现在可以为高DPI显示器缩放字体大小。
+  * 图形编辑器现在为所有打开的图形编辑器提交偏好设置更改。
+  * 如果启用语法高亮，UI中的折叠图标按钮现在会尊重默认和背景颜色，或行号颜色和背景颜色。
+* 表达式性能改进：
+  * After Effects 现在尝试检测在整个合成中不变的表达式，并仅计算一次。加载您喜欢的充满表达式的合成，体验性能提升。
+  * 任何使用 [posterizeTime()](../general/global.md#posterizetime) 的表达式现在仅对整个合成计算一次，而不是每一帧。
+* 新增: 扩展表达式对文本属性的访问。
+  * 新增: [Text.Font...](../text/text.md#textfont)
+  * 新增: [Source Text](../text/sourcetext)
+  * 新增: [Text Style](../text/style)
 
 ---
 
-## [After Effects 13.6 (CC 2015)](https://helpx.adobe.com/after-effects/kb/ae-13-6.html) (Nov 30 2015)
+## [After Effects 16.1.3](https://helpx.adobe.com/after-effects/kb/fixed-issues.html#BugsfixedintheearlierversionsofAfterEffects) (2019年9月)
 
-- Improved performance of expressions on time-remapped layers. This also reduces rendering time for audio on time-remapped layers with expressions.
-- Fixed: Changing the source text of a text layer no longer causes expressions to fail when the name of the text layer was referenced.
-- Fixed: After Effects no longer crashes when the graph editor is displayed while processing an time remapping expression.
+* 修复: 表达式编辑器中新行上的大括号缩进可能不正确的问题。
 
 ---
 
-## [After Effects 13.5 (CC 2015)](https://helpx.adobe.com/after-effects/kb/what-s-new-and-changed-in-after-effects-cc-2015--13-5-.html) (Jun 15 2015)
+## [After Effects 16.1.2](https://helpx.adobe.com/after-effects/kb/fixed-issues.html#BugsfixedintheearlierversionsofAfterEffects) (2019年6月)
 
-- More efficient expression evaluation
-- Added: Expression warning banner
-
----
-
-## [After Effects 13.2 (CC 2014.2)](https://helpx.adobe.com/ca/after-effects/using/whats-new-2014.html) (Dec 16 2014)
-
-- Added: [sourceRectAtTime()](../layer/sub-objects.md#layersourcerectattime) method
-- Fixed: [sampleImage()](../layer/general.md#layersampleimage) in an expression no longer disables multiprocessing
+* 修复: 当关闭包含错误表达式的项目时，After Effects 崩溃的问题。
+* 修复: 如果有多个错误文本行要显示，错误信息可能会在错误横幅中被截断。
+* 修复: 使用旧版 ExtendScript 表达式引擎时，this_Layer 属性停止工作的问题。
+* 修复: 将项目级表达式引擎从 JavaScript 切换到旧版 ExtendScript 时崩溃的问题。
+* 修复: 包含对 Date.toLocaleString() 调用的表达式导致崩溃的问题。
+* 修复: 在禁用自动补全的情况下编辑图形编辑器表达式字段中的表达式时崩溃的问题。
 
 ---
 
-## [After Effects 12.1 (CC)](https://helpx.adobe.com/after-effects/using/whats-new-12-1.html/) (Sep 8 2013)
+## [After Effects 16.1 (CC 19)](https://helpx.adobe.com/after-effects/kb/fixed-issues.html#BugsfixedintheearlierversionsofAfterEffects) (2019年4月2日)
 
-- Added iris and highlight properties for camera layers to the expression language menu
-- - Added: [Camera.irisShape](../objects/camera.md#camerairisshape)
-    - Added: [Camera.irisRotation](../objects/camera.md#camerairisrotation)
-    - Added: [Camera.irisRoundness](../objects/camera.md#camerairisroundness)
-    - Added: [Camera.irisAspectRatio](../objects/camera.md#camerairisaspectratio)
-    - Added: [Camera.irisDiffractionFringe](../objects/camera.md#camerairisdiffractionfringe)
-    - Added: [Camera.highlightGain](../objects/camera.md#camerahighlightgain)
-    - Added: [Camera.highlightThreshold](../objects/camera.md#camerahighlightthreshold)
-    - Added: [Camera.highlightSaturation](../objects/camera.md#camerahighlightsaturation)
-
----
-
-## [After Effects 10.5 (CS5.5)](https://helpx.adobe.com/ro/after-effects/user-guide.html/ro/after-effects/using/expression-language-reference.ug.html/) (Apr 11 2011)
-
-- Added: [Footage.ntscDropFrame](../objects/footage.md#footagentscdropframe)
-- Added: ntscDropFrame argument to [timeToCurrentFormat()](../general/time-conversion.md#timetocurrentformat)
-- Added: [Layer.sourceTime()](../layer/sub-objects.md#layersourcetime)
+* 实现了新的表达式编辑器
+* 修复: JavaScript 表达式引擎生成的随机数结果与旧版 ExtendScript 引擎不同的问题。
+* 修复: 当表达式引用字符串或源文本属性中的图层名称时，未返回图层名称，而是返回 [Object] 的问题。
+* 修复: 如果 ScriptUI 面板读取属性的表达式后值，[sampleImage()](../layer/general.md#layersampleimage) 表达式方法返回错误值的问题。
+* 修复: 通过表达式语言菜单应用 [createPath()](../objects/path-property.md#pathpropertycreatepath) 表达式时，自动填充的 (is_Closed) 参数为已弃用的蛇形命名法而不是驼峰命名法 isClosed 的问题。
+* 修复: 重命名被表达式引用的效果时，当这些属性与效果名称相同时，表达式错误地更新对该效果属性的引用的问题。
+* 修复: “将焦点距离链接到图层”、“将焦点距离链接到兴趣点”、“创建立体3D装置”和“创建轨道空对象”命令生成的表达式与 JavaScript 表达式引擎不兼容的问题。
+* 修复: 特定的复杂、多合成表达式导致表达式错误警告横幅和图标快速闪烁的问题。请注意，为了解决此问题，这些表达式的表达式评估速度会有小幅下降。
 
 ---
 
-## [After Effects 5.5](https://en.wikipedia.org/wiki/Adobe_After_Effects#History/) (Jan 7 2002)
+## [After Effects 16.0 (CC 19)](https://helpx.adobe.com/after-effects/using/whats-new/2019.html) (2018年10月15日)
 
-- Added: Looping via expressions
-- Added: Expression controllers
+* 实现了新的 JavaScript 引擎
+* 新增: [hexToRgb](../general/color-conversion.md#hextorgb)
+* 新增: [marker protectedRegion](../objects/markerkey.md#markerkeyprotectedregion) 属性
 
 ---
 
-## [After Effects 5.0](https://en.wikipedia.org/wiki/Adobe_After_Effects#History/) (Apr 2001)
+## [After Effects 15.1.2](https://helpx.adobe.com/after-effects/kb/bug-fixes-in-after-effects-cc.html) (2018年7月16日)
 
-- Expressions first added
+* 修复: 如果项目中包含多个同名的主属性，引用这些主属性的表达式评估不正确的问题。
+* 修复: 属性链接拾取器错误地为其他选定的属性写入自引用表达式的问题。
+
+---
+
+## [After Effects 15.1](https://helpx.adobe.com/after-effects/using/whats-new/2018.html#AfterEffectsCCApril2018version151release) (2018年4月3日)
+
+* 新增: 属性链接拾取器
+* 新增: 支持自定义表达式函数库
+* 新增: 表达式访问 [Project](../objects/project)
+  * 新增: [Project.fullPath](../objects/project.md#projectfullpath)
+  * 新增: [Project.bitsPerChannel](../objects/project.md#projectbitsperchannel)
+  * 新增: [Project.linearBlending](../objects/project.md#projectlinearblending)
+
+---
+
+## [After Effects 15.0 (CC)](https://community.adobe.com/t5/after-effects/expression-and-scripting-improvements-in-after-effects-october-2017-pdf/td-p/4787866) (2017年10月18日)
+
+* 新增: 表达式访问 JSON 文件中的数据
+  * 新增: [footage sourceText](../objects/footage.md#footagesourcetext) 属性
+  * 新增: [footage sourceData](../objects/footage.md#footagesourcedata) 属性
+  * 新增: [footage dataValue](../objects/footage.md#footagedatavalue) 方法
+  * 新增: [footage dataKeyCount](../objects/footage.md#footagedatakeycount) 方法
+  * 新增: [footage dataKeyTimes](../objects/footage.md#footagedatakeytimes) 方法
+  * 新增: [footage dataKeyValues](../objects/footage.md#footagedatakeyvalues) 方法
+* 新增: 表达式访问蒙版、贝塞尔形状和画笔描边的路径点
+  * 新增: [path points](../objects/path-property.md#pathpropertypoints) 方法
+  * 新增: [path inTangents](../objects/path-property.md#pathpropertyintangents) 方法
+  * 新增: [path outTangents](../objects/path-property.md#pathpropertyouttangents) 方法
+  * 新增: [path isClosed](../objects/path-property.md#pathpropertyisclosed) 方法
+  * 新增: [path pointOnPath](../objects/path-property.md#pathpropertypointonpath) 方法
+  * 新增: [path tangentOnPath](../objects/path-property.md#pathpropertytangentonpath) 方法
+  * 新增: [path normalOnPath](../objects/path-property.md#pathpropertynormalonpath) 方法
+  * 新增: [path createPath](../objects/path-property.md#pathpropertycreatepath) 方法
+
+---
+
+## [After Effects 13.6 (CC 2015)](https://helpx.adobe.com/after-effects/kb/ae-13-6.html) (2015年11月30日)
+
+* 改进了时间重映射图层上的表达式性能。这也减少了带有表达式的时间重映射图层上音频的渲染时间。
+* 修复: 更改文本层的源文本不再导致引用文本层名称的表达式失败。
+* 修复: 在处理时间重映射表达式时显示图形编辑器不再导致 After Effects 崩溃。
+
+---
+
+## [After Effects 13.5 (CC 2015)](https://helpx.adobe.com/after-effects/kb/what-s-new-and-changed-in-after-effects-cc-2015--13-5-.html) (2015年6月15日)
+
+* 更高效的表达式评估
+* 新增: 表达式警告横幅
+
+---
+
+## [After Effects 13.2 (CC 2014.2)](https://helpx.adobe.com/ca/after-effects/using/whats-new-2014.html) (2014年12月16日)
+
+* 新增: [sourceRectAtTime()](../layer/sub-objects.md#layersourcerectattime) 方法
+* 修复: 表达式中的 [sampleImage()](../layer/general.md#layersampleimage) 不再禁用多处理
+
+---
+
+## [After Effects 12.1 (CC)](https://helpx.adobe.com/after-effects/using/whats-new-12-1.html/) (2013年9月8日)
+
+* 新增相机图层的虹膜和高光属性到表达式语言菜单
+  * 新增: [Camera.irisShape](../objects/camera.md#camerairisshape)
+  * 新增: [Camera.irisRotation](../objects/camera.md#camerairisrotation)
+  * 新增: [Camera.irisRoundness](../objects/camera.md#camerairisroundness)
+  * 新增: [Camera.irisAspectRatio](../objects/camera.md#camerairisaspectratio)
+  * 新增: [Camera.irisDiffractionFringe](../objects/camera.md#camerairisdiffractionfringe)
+  * 新增: [Camera.highlightGain](../objects/camera.md#camerahighlightgain)
+  * 新增: [Camera.highlightThreshold](../objects/camera.md#camerahighlightthreshold)
+  * 新增: [Camera.highlightSaturation](../objects/camera.md#camerahighlightsaturation)
+
+---
+
+## [After Effects 10.5 (CS5.5)](https://helpx.adobe.com/ro/after-effects/user-guide.html/ro/after-effects/using/expression-language-reference.ug.html/) (2011年4月11日)
+
+* 新增: [Footage.ntscDropFrame](../objects/footage.md#footagentscdropframe)
+* 新增: ntscDropFrame 参数到 [timeToCurrentFormat()](../general/time-conversion.md#timetocurrentformat)
+* 新增: [Layer.sourceTime()](../layer/sub-objects.md#layersourcetime)
+
+---
+
+## [After Effects 5.5](https://en.wikipedia.org/wiki/Adobe_After_Effects#History/) (2002年1月7日)
+
+* 新增: 通过表达式实现循环
+* 新增: 表达式控制器
+
+---
+
+## [After Effects 5.0](https://en.wikipedia.org/wiki/Adobe_After_Effects#History/) (2001年4月)
+
+* 首次引入表达式

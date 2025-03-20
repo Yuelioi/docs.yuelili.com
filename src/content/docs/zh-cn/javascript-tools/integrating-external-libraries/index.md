@@ -1,7 +1,6 @@
 ---
 title: index
 ---
-
 # Integrating External Libraries
 
 You can extend the JavaScript DOM for an application by writing a C or C++ shared library, compiling it for the platform you are using, and loading it into JavaScript as an ExternalObject object. A shared library is implemented by a DLL in Windows, a bundle or framework in Mac OS, or a SharedObject in UNIX.

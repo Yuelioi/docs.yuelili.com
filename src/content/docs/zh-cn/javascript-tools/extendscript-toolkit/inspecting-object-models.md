@@ -1,7 +1,6 @@
 ---
 title: inspecting-object-models
 ---
-
 # Inspecting object models
 
 The ExtendScript Toolkit offers the ability to inspect the object model of any loaded dictionary, using the Object Model Viewer that you invoke from the Help menu.

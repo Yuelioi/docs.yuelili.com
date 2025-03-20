@@ -1,41 +1,43 @@
 ---
-title: property
+title: 属性
 ---
-
 # Property
 
-This category holds generic entries relating to generic *properties*.
+此类别包含与通用*属性*相关的条目。
 
-In expressions, a Property is *typically* anything that exists in the timeline (even if it can't be keyframed, or hold an expression).
+在表达式中，属性*通常*是时间轴中存在的任何内容（即使它不能设置关键帧或包含表达式）。
 
-??? example "Examples of Properties"
+??? example "属性示例"
 
-    All of the following AE items are actually "Properties" for the use of expressions, along with *some* ways to access those properties by code:
+```text
+以下所有 AE 项实际上都是表达式中使用的“属性”，以及*一些*通过代码访问这些属性的方式：
 
-    - Position (`thisLayer.transform.position`, `layer.position`)
-    - Scale (`thisLayer.transform.scale`, `layer.scale`)
-    - A slider effect's *actual slider* (`effect("Slider Control")("Slider")`, `effect("Slider Control")(1)`)
-    - A text layer's [Text](../../text/text) property (`thisLayer.text`)
-        - *Note that in this case, Text also has its own special items, found in the above link.*
+- 位置 (`thisLayer.transform.position`, `layer.position`)
+- 缩放 (`thisLayer.transform.scale`, `layer.scale`)
+- 滑块效果的*实际滑块* (`effect("Slider Control")("Slider")`, `effect("Slider Control")(1)`)
+- 文本图层的 [文本](../../text/text) 属性 (`thisLayer.text`)
+    - *请注意，在这种情况下，文本也有其自己的特殊项，请参见上面的链接。*
+```
 
-!!! info
-    On this page, we're going to use `thisLayer.position` as a sample on how to call these items, however note that any method that returns a [Property](#) will work.
+:::info
+在本页中，我们将使用 `thisLayer.position` 作为调用这些项的示例，但请注意，任何返回 [属性](#) 的方法都可以使用。
+:::
 
 ---
 
-## Attributes
+## 属性
 
 ### name
 
 `thisLayer.position.name`
 
-#### Description
+#### 描述
 
-Returns the name of the property or property group.
+返回属性或属性组的名称。
 
-#### Type
+#### 类型
 
-String
+字符串
 
 ---
 
@@ -43,16 +45,13 @@ String
 
 `thisLayer.position.numKeys`
 
-#### Description
+#### 描述
 
-Returns the number of keyframes on a property, or the number of markers on a marker property.
+返回属性上的关键帧数量，或标记属性上的标记数量。
 
-!!! note
-    If you use the **Separate Dimensions** command to separate the dimensions of the Position property into individual components, the number of keyframes changes, so the value returned by this method changes.
+:::note 如果你使用**分离维度**命令将位置属性的维度分离为单独的组件，关键帧的数量会发生变化，因此此方法返回的值也会发生变化。 :::#### 类型
 
-#### Type
-
-Number
+数字
 
 ---
 
@@ -60,13 +59,13 @@ Number
 
 `thisLayer.position.propertyIndex`
 
-#### Description
+#### 描述
 
-Returns the index of a property relative to other properties in its property group, including property groups within masks, effects, text animators, selectors, shapes, trackers, and track points.
+返回属性相对于其属性组中其他属性的索引，包括蒙版、效果、文本动画器、选择器、形状、跟踪器和跟踪点中的属性组。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -74,16 +73,13 @@ Number
 
 `thisLayer.position.speed`
 
-#### Description
+#### 描述
 
-Returns a 1-dimensional, positive speed value equal to the speed at which the property is changing at the default time.
+返回一个一维的正速度值，等于属性在默认时间变化的速度。
 
-!!! note
-    This can be used only for spatial properties.
+:::note 这只能用于空间属性。 :::#### 类型
 
-#### Type
-
-Number
+数字
 
 ---
 
@@ -91,13 +87,13 @@ Number
 
 `thisLayer.position.value`
 
-#### Description
+#### 描述
 
-Returns the value of a property at the current time.
+返回当前时间的属性值。
 
-#### Type
+#### 类型
 
-Number, Array, or String
+数字、数组或字符串
 
 ---
 
@@ -105,45 +101,45 @@ Number, Array, or String
 
 `thisLayer.position.velocity`
 
-#### Description
+#### 描述
 
-Returns the temporal velocity value at the current time. For spatial properties, such as Position, it returns the tangent vector value. The result is the same dimension as the property.
+返回当前时间的时间速度值。对于空间属性（如位置），它返回切线矢量值。结果与属性的维度相同。
 
-#### Type
+#### 类型
 
-Number or Array
+数字或数组
 
 ---
 
-## Methods
+## 函数
 
 ### key()
 
 `thisLayer.position.key(index)`
 
-#### Description
+#### 描述
 
-Returns the Key or MarkerKey object by index number.
+通过索引号返回关键帧或标记键对象。
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |             Description             |
-| --------- | ------ | ----------------------------------- |
-| `index`   | Number | The key (or MarkerKey) index number |
+| 参数      | 类型 | 描述                       |
+| --------- | ---- | -------------------------- |
+| `index` | 数字 | 关键帧（或标记键）的索引号 |
 
-#### Returns
+#### 返回
 
-Key or MarkerKey
+关键帧或标记键
 
-#### Example
+#### 示例
 
-To retrieve the first keyframe on a property:
+**获取属性上的第一个关键帧：**
 
 ```js
 thisLayer.scale.key(1);
 ```
 
-To retrieve the *last* keyframe on a property:
+**获取属性上的*最后一个*关键帧：**
 
 ```js
 thisLayer.rotation.key(thisLayer.rotation.numKeys);
@@ -155,22 +151,19 @@ thisLayer.rotation.key(thisLayer.rotation.numKeys);
 
 `thisLayer.position.key(markerName)`
 
-#### Description
+#### 描述
 
-Returns the MarkerKey object with this name.
+返回具有此名称的标记键对象。
 
-!!! note
-    This can be used only on marker properties.
+:::note 这只能用于标记属性。 :::#### 参数
 
-#### Parameters
+| 参数           | 类型   | 描述                     |
+| -------------- | ------ | ------------------------ |
+| `markerName` | 字符串 | 要返回匹配键的标记名称。 |
 
-|  Parameter   |  Type  |                      Description                      |
-| ------------ | ------ | ----------------------------------------------------- |
-| `markerName` | String | The name of the marker to return the matching key of. |
+#### 返回
 
-#### Returns
-
-MarkerKey
+标记键
 
 ---
 
@@ -178,44 +171,45 @@ MarkerKey
 
 `thisLayer.position.loopIn([type="cycle"][, numKeyframes=0])`
 
-#### Description
+#### 描述
 
-Loops a segment of time that is measured from the first keyframe on the layer forward toward the Out point of the layer. The loop plays from the In point of the layer.
+循环从图层上的第一个关键帧向前到图层出点的时间段。循环从图层的入点开始播放。
 
-You can use keyframe-looping methods to repeat a series of keyframes. You can use these methods on most properties. Exceptions include:
-    - properties that can't be expressed by simple numeric values in the Timeline panel, such as:
-        - the Source Text property,
-        - path shape properties, and
-        - the Histogram property for the Levels effect.
+你可以使用关键帧循环方法来重复一系列关键帧。你可以在大多数属性上使用这些方法。例外包括：
 
-Keyframes or duration values that are too large are clipped to the maximum allowable value. Values that are too small result in a constant loop.
+- 无法通过时间轴面板中的简单数值表达的属性，例如：
+- 源文本属性，
+- 路径形状属性，以及
+- 色阶效果的直方图属性。
 
-#### Parameters
+关键帧或持续时间值过大时会被裁剪到最大允许值。值过小会导致恒定循环。
 
-|   Parameter    |                           Type                            |                                                                  Description                                                                   |
-| -------------- | --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `type`         | Predefined string as defined in [Loop Types](#loop-types) | Optional. The loop type to use. Defaults to `"cycle"`                                                                                          |
-| `numKeyframes` | Number                                                    | Optional. The segment to loop, from keyframe #1 to keyframe #`numKeyframes + 1`. If unspecified (or `0`), all keyframes loop. Defaults to `0`. |
+#### 参数
 
-#### Returns
+| 参数             | 类型                             | 描述                                                                                                                     |
+| ---------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `type`         | 预定义字符串，如[循环类型]() 中定义 | 可选。要使用的循环类型。默认为 `"cycle"`                                                                               |
+| `numKeyframes` | 数字                             | 可选。要循环的段，从关键帧 #1 到关键帧 #`numKeyframes + 1`。如果未指定（或为 `0`），则所有关键帧循环。默认为 `0`。 |
 
-A looped value of the same property type as this current property.
+#### 返回
 
-#### Example
+与此当前属性类型相同的循环值。
 
-**To loop the segment bounded by the first and fourth keyframes:**
+#### 示例
+
+**循环由第一个和第四个关键帧界定的段：**
 
 ```js
 loopIn("cycle", 3);
 ```
 
-**To loop forward and backward indefinitely from your current keyframes:**
+**从当前关键帧向前和向后无限循环：**
 
 ```js
 loopIn("continue") + loopOut("continue") - value;
 ```
 
-Note that we need to subtract `value`, because both `loopIn()` and `loopOut()` include the current value; by adding them, we have two copies of the current value, and need to remove one (the ` - value`) to get back to the proper keyframe value.
+请注意，我们需要减去 `value`，因为 `loopIn()` 和 `loopOut()` 都包含当前值；通过将它们相加，我们有两个当前值的副本，需要移除一个（`- value`）以返回到正确的关键帧值。
 
 ---
 
@@ -223,24 +217,24 @@ Note that we need to subtract `value`, because both `loopIn()` and `loopOut()` i
 
 `thisLayer.position.loopInDuration([type="cycle"][, duration=0])`
 
-#### Description
+#### 描述
 
-Loops a segment of time that is measured from the first keyframe on the layer forward toward the Out point of the layer.
+循环从图层上的第一个关键帧向前到图层出点的时间段。
 
-#### Parameters
+#### 参数
 
-| Parameter  |                           Type                            |                                                                                           Description                                                                                            |
-| ---------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `type`     | Predefined string as defined in [Loop Types](#loop-types) | Optional. The loop type to use. Defaults to `"cycle"`                                                                                                                                            |
-| `duration` | Number                                                    | Optional. The number of composition seconds in a segment to loop, measured from the first keyframe. If unspecified (or `0`), the segment to loop begins at the layer Out point. Defaults to `0`. |
+| 参数         | 类型                             | 描述                                                                                                                     |
+| ------------ | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `type`     | 预定义字符串，如[循环类型]() 中定义 | 可选。要使用的循环类型。默认为 `"cycle"`                                                                               |
+| `duration` | 数字                             | 可选。要循环的段的合成秒数，从第一个关键帧开始测量。如果未指定（或为 `0`），则要循环的段从图层出点开始。默认为 `0`。 |
 
-#### Returns
+#### 返回
 
-A looped value of the same property type as this current property.
+与此当前属性类型相同的循环值。
 
-#### Example
+#### 示例
 
-**To loop the first second of the entire animation:**
+**循环整个动画的第一秒：**
 
 ```js
 loopInDuration("cycle", 1);
@@ -252,27 +246,24 @@ loopInDuration("cycle", 1);
 
 `thisLayer.position.loopOut([type="cycle"][, numKeyframes=0])`
 
-#### Description
+#### 描述
 
-Loops a segment of time that is measured from the last keyframe on the layer back toward the In point of the layer. The loop plays until the Out point of the layer.
+循环从图层上的最后一个关键帧向后到图层入点的时间段。循环播放直到图层出点。
 
-!!! info
-    David Van Brink provides an instructional article and sample project on his [omino pixel blog](http://omino.com/pixelblog/2007/11/23/salmonella/) that show how to use the Echo effect, the Particle Playground effect, and the `loopOut()` method to animate a swarm of stylized swimming bacteria.
+:::info David Van Brink 在他的 [omino pixel 博客](http://omino.com/pixelblog/2007/11/23/salmonella/) 上提供了一篇指导文章和示例项目，展示了如何使用 Echo 效果、Particle Playground 效果和 `loopOut()` 方法来动画化一群风格化的游泳细菌。 :::#### 参数
 
-#### Parameters
+| 参数             | 类型                             | 描述                                                                                                   |
+| ---------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `type`         | 预定义字符串，如[循环类型]() 中定义 | 可选。要使用的循环类型。默认为 `"cycle"`                                                             |
+| `numKeyframes` | 数字                             | 可选。要循环的段，从最后一个关键帧向后测量。如果未指定（或为 `0`），则所有关键帧循环。默认为 `0`。 |
 
-|   Parameter    |                           Type                            |                                                              Description                                                               |
-| -------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `type`         | Predefined string as defined in [Loop Types](#loop-types) | Optional. The loop type to use. Defaults to `"cycle"`                                                                                  |
-| `numKeyframes` | Number                                                    | Optional. The segment to loop, measured backward from the last keyframe. If unspecified (or `0`), all keyframes loop. Defaults to `0`. |
+#### 返回
 
-#### Returns
+与此当前属性类型相同的循环值。
 
-A looped value of the same property type as this current property.
+#### 示例
 
-#### Example
-
-**To loop the segment bounded by the last keyframe and second-to-last keyframe:**
+**循环由最后一个关键帧和倒数第二个关键帧界定的段：**
 
 ```js
 loopOut("cycle", 1);
@@ -284,24 +275,24 @@ loopOut("cycle", 1);
 
 `thisLayer.position.loopOutDuration([type="cycle"][, duration=0])`
 
-#### Description
+#### 描述
 
-Loops a segment of time that is measured from the last keyframe on the layer back toward the In point of the layer. The loop plays until the Out point of the layer.
+循环从图层上的最后一个关键帧向后到图层入点的时间段。循环播放直到图层出点。
 
-#### Parameters
+#### 参数
 
-| Parameter  |                           Type                            |                                                                                               Description                                                                                               |
-| ---------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `type`     | Predefined string as defined in [Loop Types](#loop-types) | Optional. The loop type to use. Defaults to `"cycle"`                                                                                                                                                   |
-| `duration` | Number                                                    | Optional. The number of composition seconds in a segment to loop, measured backward from the last keyframe. If unspecified (or `0`), the segment to loop begins at the layer In point. Defaults to `0`. |
+| 参数         | 类型                             | 描述                                                                                                                       |
+| ------------ | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `type`     | 预定义字符串，如[循环类型]() 中定义 | 可选。要使用的循环类型。默认为 `"cycle"`                                                                                 |
+| `duration` | 数字                             | 可选。要循环的段的合成秒数，从最后一个关键帧向后测量。如果未指定（或为 `0`），则要循环的段从图层入点开始。默认为 `0`。 |
 
-#### Returns
+#### 返回
 
-A looped value of the same property type as this current property.
+与此当前属性类型相同的循环值。
 
-#### Example
+#### 示例
 
-**To loop the last second of the entire animation:**
+**循环整个动画的最后一秒：**
 
 ```js
 loopOutDuration("cycle", 1);
@@ -313,28 +304,28 @@ loopOutDuration("cycle", 1);
 
 `thisLayer.position.nearestKey(t)`
 
-#### Description
+#### 描述
 
-Returns the Key or MarkerKey object nearest to a designated time `t`.
+返回最接近指定时间 `t` 的关键帧或标记键对象。
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |              Description              |
-| --------- | ------ | ------------------------------------- |
-| `t`       | Number | The time to find the nearest key from |
+| 参数  | 类型 | 描述                   |
+| ----- | ---- | ---------------------- |
+| `t` | 数字 | 要查找最近关键帧的时间 |
 
-#### Returns
+#### 返回
 
-Key or MarkerKey
+关键帧或标记键
 
-#### Example
+#### 示例
 
-**Get the nearest keyframe to the 2-second time in the comp:**
+**获取最接近合成中 2 秒时间的关键帧：**
 
 ```js
 const twoSecondKey = thisLayer.scale.nearestKey(2);
 
-// and then, to get the value of that key:
+// 然后，获取该关键帧的值：
 twoSecondKey.value;
 ```
 
@@ -344,27 +335,27 @@ twoSecondKey.value;
 
 `thisLayer.position.propertyGroup([countUp=1])`
 
-#### Description
+#### 描述
 
-Returns a group of properties relative to the property on which the expression is written.
+返回相对于写入表达式的属性的一组属性。
 
-For example, if you add the `propertyGroup(1)` expression to the Rotation property of a brush stroke, the expression targets the Transform property group, which contains the Rotation property. If you add `propertyGroup(2)` instead, the expression targets the Brush property group.
+例如，如果你将 `propertyGroup(1)` 表达式添加到画笔描边的旋转属性，表达式将目标为包含旋转属性的变换属性组。如果你添加 `propertyGroup(2)`，表达式将目标为画笔属性组。
 
-This method lets you establish name-independent relationships in the property hierarchy. It is especially useful when duplicating properties that contain expressions.The `numProperties` method for `propertyGroup` returns the number of properties in the property group.
+此方法允许你在属性层次结构中建立与名称无关的关系。它在复制包含表达式的属性时特别有用。`propertyGroup` 的 `numProperties` 方法返回属性组中的属性数量。
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |                                      Description                                      |
-| --------- | ------ | ------------------------------------------------------------------------------------- |
-| `countUp` | Number | Optional. The number of property groups "up" the hierarchy to climb. Defaults to `1`. |
+| 参数        | 类型 | 描述                                         |
+| ----------- | ---- | -------------------------------------------- |
+| `countUp` | 数字 | 可选。要向上爬取的属性组数量。默认为 `1`。 |
 
-#### Returns
+#### 返回
 
-[PropertyGroup object](.././propertygroup)
+[属性组对象](../propertygroup)
 
-#### Example
+#### 示例
 
-**Return the number of properties in the group that contains the property on which this expression is written:**
+**返回包含写入此表达式的属性的组中的属性数量：**
 
 ```js
 thisProperty.propertyGroup(1).numProperties;
@@ -376,31 +367,26 @@ thisProperty.propertyGroup(1).numProperties;
 
 `thisLayer.position.smooth([width=.2][, samples=5][, t=time])`
 
-#### Description
+#### 描述
 
-Smooths the property values over time, converting large, brief deviations in the value to smaller, more evenly distributed deviations. This smoothing is accomplished by applying a box filter to the value of the property at the specified time.
+平滑属性值随时间的变化，将值中的大而短暂的偏差转换为更小、更均匀分布的偏差。这是通过在指定时间对属性值应用盒式滤波器来实现的。
 
-#### Parameters
+#### 参数
 
-+-----------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter |  Type  |                                                                        Description                                                                        |
-+===========+========+===========================================================================================================================================================+
-| `width`   | Number | Optional. The range of time (in seconds) over which the filter is averaged. Defaults to `0.2`.                                                            |
-+-----------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `samples` | Number | Optional. The number of discrete samples evenly spaced over time. Use a larger value for greater smoothness (but decreased performance). Defaults to `5`. |
-|           |        |                                                                                                                                                           |
-|           |        | Generally, you'll want samples to be an odd number so that the value at the current time is included in the average.                                      |
-+-----------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `t`       | Number | Optional. The specified time (in comp seconds) to apply the smoothing filter to. Defaults to `time` (the current comp time, in seconds).                  |
-+-----------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 参数        | 类型 | 描述                                                                                               |
+| ----------- | ---- | -------------------------------------------------------------------------------------------------- |
+| `width`   | 数字 | 可选。滤波器平均的时间范围（以秒为单位）。默认为 `0.2`。                                         |
+| `samples` | 数字 | 可选。在时间上均匀分布的离散样本数量。使用较大的值以获得更大的平滑度（但性能降低）。默认为 `5`。 |
+|             |      | 通常，你希望样本数量为奇数，以便当前时间的值包含在平均值中。                                       |
+| `t`       | 数字 | 可选。应用平滑滤波器的指定时间（以合成秒为单位）。默认为 `time`（当前合成时间，以秒为单位）。    |
 
-#### Returns
+#### 返回
 
-Number or Array
+数字或数组
 
-#### Example
+#### 示例
 
-**To smooth a position property's animation:**
+**平滑位置属性的动画：**
 
 ```js
 position.smooth(0.1, 5)
@@ -412,19 +398,19 @@ position.smooth(0.1, 5)
 
 `thisLayer.position.speedAtTime(t)`
 
-#### Description
+#### 描述
 
-Returns the spatial speed value at the specified time.
+返回指定时间的空间速度值。
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |                         Description                         |
-| --------- | ------ | ----------------------------------------------------------- |
-| `t`       | Number | The specified time at which to get the spatial speed value. |
+| 参数  | 类型 | 描述                       |
+| ----- | ---- | -------------------------- |
+| `t` | 数字 | 获取空间速度值的指定时间。 |
 
-#### Returns
+#### 返回
 
-Number
+数字
 
 ---
 
@@ -432,29 +418,29 @@ Number
 
 `thisLayer.position.temporalWiggle(freq, amp[, octaves=1][, amp_mult=0.5][, t=time])`
 
-#### Description
+#### 描述
 
-Samples the property at a wiggled time.
+在摆动的时间采样属性。
 
-For this function to be meaningful, the property it samples must be animated, because the function alters only the time of sampling, not the value.
+为了使此函数有意义，它采样的属性必须是动画的，因为该函数仅改变采样时间，而不是值。
 
-#### Parameters
+#### 参数
 
-| Parameter  |  Type  |                                      Description                                       |
-| ---------- | ------ | -------------------------------------------------------------------------------------- |
-| `freq`     | Number | The frequency, in wiggles per second.                                                  |
-| `amp`      | Number | The amplitude, in units of the property to which it is applied.                        |
-| `octaves`  | Number | Optional. The number of octaves of noise to add together. Defaults to `1`.             |
-| `amp_mult` | Number | Optional. The amount that `amp` is multiplied by for each octave. Defaults to `0.5`.   |
-| `t`        | Number | Optional. The base start time. Defaults to `time` (the current comp time, in seconds). |
+| 参数         | 类型 | 描述                                                              |
+| ------------ | ---- | ----------------------------------------------------------------- |
+| `freq`     | 数字 | 频率，以每秒摆动次数为单位。                                      |
+| `amp`      | 数字 | 振幅，以应用到的属性单位为单位。                                  |
+| `octaves`  | 数字 | 可选。要添加在一起的噪声八度数。默认为 `1`。                    |
+| `amp_mult` | 数字 | 可选。每个八度 `amp` 乘以的倍数。默认为 `0.5`。               |
+| `t`        | 数字 | 可选。基本开始时间。默认为 `time`（当前合成时间，以秒为单位）。 |
 
-#### Returns
+#### 返回
 
-Number or Array
+数字或数组
 
-#### Example
+#### 示例
 
-**To add a temporal wiggle to scale:**
+**为缩放添加时间摆动：**
 
 ```js
 scale.temporalWiggle(5, 0.2)
@@ -466,26 +452,23 @@ scale.temporalWiggle(5, 0.2)
 
 `thisLayer.position.valueAtTime(t)`
 
-#### Description
+#### 描述
 
-Returns the value of a property at the specified time, in seconds.
+返回指定时间（以秒为单位）的属性值。
 
-!!! note
-    Dan Ebberts provides more examples and techniques for using the `valueAtTime` and `velocityAtTime` methods on [MotionScript](http://www.motionscript.com/mastering-expressions/follow-the-leader.html).
+:::note Dan Ebberts 在 [MotionScript](http://www.motionscript.com/mastering-expressions/follow-the-leader.html) 上提供了更多使用 `valueAtTime` 和 `velocityAtTime` 方法的示例和技术。 :::#### 参数
 
-#### Parameters
+| 参数  | 类型 | 描述                       |
+| ----- | ---- | -------------------------- |
+| `t` | 数字 | 获取值的时间（以秒为单位） |
 
-| Parameter |  Type  |                 Description                 |
-| --------- | ------ | ------------------------------------------- |
-| `t`       | Number | The time, in seconds, to get the value from |
+#### 返回
 
-#### Returns
+数字或数组
 
-Number or Array
+#### 示例
 
-#### Example
-
-For example, to have a property value for each frame chosen randomly from a set of four values, set your four values as keyframes at `0`, `1`, `2`, and `3` seconds, and then apply the following expression to the property:
+例如，要使每个帧的属性值从一组四个值中随机选择，请在 `0`、`1`、`2` 和 `3` 秒处将你的四个值设置为关键帧，然后将以下表达式应用于属性：
 
 ```js
 valueAtTime(random(4))
@@ -497,19 +480,19 @@ valueAtTime(random(4))
 
 `thisLayer.position.velocityAtTime(t)`
 
-#### Description
+#### 描述
 
-Returns the temporal velocity value at the specified time.
+返回指定时间的时间速度值。
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |                       Description                       |
-| --------- | ------ | ------------------------------------------------------- |
-| `t`       | Number | The time, in seconds, to get the temporal velocity from |
+| 参数  | 类型 | 描述                             |
+| ----- | ---- | -------------------------------- |
+| `t` | 数字 | 获取时间速度的时间（以秒为单位） |
 
-#### Returns
+#### 返回
 
-Number or Array
+数字或数组
 
 ---
 
@@ -517,46 +500,35 @@ Number or Array
 
 `thisLayer.position.wiggle(freq, amp[, octaves=1][, amp_mult=0.5][, t=time])`
 
-#### Description
+#### 描述
 
-Randomly shakes (wiggles) the value of the property.
+随机抖动（摆动）属性的值。
 
-!!! note
-    Dan Ebberts provides an example expression and a detailed explanation on his [website](http://www.motionscript.com/design-guide/looping-wiggle.html) that shows how to use the time parameter of the wiggle method to create a looping animation.
+:::note Dan Ebberts 在他的 [网站](http://www.motionscript.com/design-guide/looping-wiggle.html) 上提供了一个示例表达式和详细解释，展示了如何使用 `wiggle` 方法的时间参数创建循环动画。 :::#### 参数
 
-#### Parameters
+| 参数         | 类型 | 描述                                                                                                                                              |
+| ------------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `freq`     | 数字 | 频率，以每秒摆动次数为单位。                                                                                                                      |
+| `amp`      | 数字 | 振幅，以应用到的属性单位为单位。                                                                                                                  |
+| `octaves`  | 数字 | 可选。要添加在一起的噪声八度数。此值控制摆动中的细节量。                                                                                          |
+|              |      | 将此值设置为高于默认值以包含更高频率，或设置为低于默认值以包含摆动中的振幅谐波。默认为 `1`。                                                    |
+| `amp_mult` | 数字 | 可选。每个八度 `amp` 乘以的倍数。此值控制谐波衰减的速度。                                                                                       |
+|              |      | 将此值设置为接近 `1` 以使谐波以与基频相同的振幅添加，或设置为接近 `0` 以添加较少的细节。默认为 `0.5`。                                      |
+| `t`        | 数字 | 可选。基本开始时间。此值默认为当前时间。如果你希望输出是在不同时间采样的属性值的摆动，请使用此参数。默认为 `time`（当前合成时间，以秒为单位）。 |
 
-+------------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter  |  Type  |                                                                                                               Description                                                                                                               |
-+============+========+=========================================================================================================================================================================================================================================+
-| `freq`     | Number | Frequency, in wiggles per second.                                                                                                                                                                                                       |
-+------------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `amp`      | Number | Amplitude, in units of the property to which it is applied.                                                                                                                                                                             |
-+------------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `octaves`  | Number | Optional. Number of octaves of noise to add together. This value controls how much detail is in the wiggle.                                                                                                                             |
-|            |        |                                                                                                                                                                                                                                         |
-|            |        | Make this value higher than the default to include higher frequencies or lower to include amplitude harmonics in the wiggle. Defaults to `1`.                                                                                           |
-+------------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `amp_mult` | Number | Optional. Amount that `amp` is multiplied by for each octave. This value controls how fast the harmonics drop off.                                                                                                                      |
-|            |        |                                                                                                                                                                                                                                         |
-|            |        | Make this value closer to `1` to have the harmonics added at the same amplitude as the base frequency, or closer to `0` to add in less detail. Defaults to `0.5`.                                                                       |
-+------------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `t`        | Number | Optional. Base start time. This value defaults to the current time. Use this parameter if you want the output to be a wiggle of the property value sampled at a different time. Defaults to `time` (the current comp time, in seconds). |
-+------------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+#### 返回
 
-#### Returns
+数字或数组
 
-Number or Array
+#### 示例
 
-#### Example
-
-This produces about `5` wiggles per second with an average size of about 20 pixels. In addition to the main wiggle, two more levels of detailed wiggles occur with a frequency of `10` and `20` wiggles per second, and sizes of `10` and `5` pixels, respectively:
+这会产生大约每秒 `5` 次摆动，平均大小约为 20 像素。除了主要摆动外，还会发生两个更详细的摆动级别，频率分别为每秒 `10` 和 `20` 次摆动，大小分别为 `10` 和 `5` 像素：
 
 ```js
 position.wiggle(5, 20, 3, 0.5);
 ```
 
-This example, on a two-dimensional property such as Scale, wiggles both dimensions by the same amount:
+此示例在二维属性（如缩放）上，使两个维度以相同的量摆动：
 
 ```js
 const v = wiggle(5, 10);
@@ -564,7 +536,7 @@ const v = wiggle(5, 10);
 [v[0], v[0]];
 ```
 
-This example, on a two-dimensional property, wiggles only along the y-axis:
+此示例在二维属性上，仅沿 y 轴摆动：
 
 ```js
 const freq = 3;
@@ -576,25 +548,23 @@ const w = wiggle(freq,amp);
 
 ---
 
-## Loop Types
+## 循环类型
 
-The following loop types are predefined strings used in the "type" parameter for:
+以下循环类型是用于以下方法的“类型”参数的预定义字符串：
 
-- [loopIn()](#loopin)
-- [loopInDuration()](#loopinduration)
-- [loopOut()](#loopout)
-- [loopOutDuration()](#loopoutduration)
+- [loopIn()]()
+- [loopInDuration()]()
+- [loopOut()]()
+- [loopOutDuration()]()
 
-+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----+
-|     Type     |                                                                                                                       Behaviour                                                                                                                       |     |
-+==============+=======================================================================================================================================================================================================================================================+=====+
-| `"cycle"`    | Default. Repeats the specified segment.                                                                                                                                                                                                               |     |
-+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----+
-| `"pingpong"` | Repeats the specified segment, alternating between forward and backward.                                                                                                                                                                              |     |
-+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----+
-| `"offset"`   | Repeats the specified segment, but offsets each cycle by the difference in the value of the property at the start and end of the segment, multiplied by the number of times the segment has looped.                                                   |     |
-+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----+
-| `"continue"` | Does not repeat the specified segment, but continues to animate a property based on the velocity at the first or last keyframe.                                                                                                                       |     |
-|              |                                                                                                                                                                                                                                                       |     |
-|              | For example, if the last keyframe of a Scale property of a layer is `100%`, the layer continues to scale from `100%` to the Out point, instead of looping directly back to the Out point. This type does not accept a keyframes or duration argument. |     |
-+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----+
+| 类型           | Behaviour                                                                                                                                           |  |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | - |
+| `"cycle"`    | 默认。重复指定的段。                                                                                                                                |  |
+| `"pingpong"` | 重复指定的段，交替向前和向后。                                                                                                                      |  |
+| `"offset"`   | 重复指定的段，但通过段开始和结束时的属性值差异乘以段循环的次数来偏移每个周期。                                                                      |  |
+| `"continue"` | 不重复指定的段，而是根据第一个或最后一个关键帧的速度继续动画属性。                                                                                  |  |
+|                | 例如，如果图层的缩放属性的最后一个关键帧为 `100%`，则图层会继续从 `100%` 缩放到出点，而不是直接循环回到出点。此类型不接受关键帧或持续时间参数。 |  |
+
+|  |                                                |  |
+| - | ---------------------------------------------- | - |
+|  | s not accept a keyframes or duration argument. |  |

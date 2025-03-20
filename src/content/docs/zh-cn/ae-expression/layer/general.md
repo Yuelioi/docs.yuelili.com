@@ -1,29 +1,30 @@
 ---
-title: general
+title: 常规
 ---
 
 # Layer General
 
 `thisLayer`
 
-!!! info
-    On this page, we're going to use `thisLayer` as a sample on how to call these items, however note that any method that returns a [Layer](.././layer) will work.
+:::info
+在本页中，我们将使用 `thisLayer` 作为调用这些项的示例，但请注意，任何返回 [Layer](.././layer) 的方法都可以使用。
+:::
 
 ---
 
-## Attributes
+## 属性
 
 ### Layer.active
 
 `thisLayer.active`
 
-#### Description
+#### 描述
 
-Returns `true` if the Video switch is on for the layer and the current time is in the range from the In point of the layer to the Out point of the layer; `false` otherwise.
+如果图层的视频开关已打开，并且当前时间在图层的入点到出点范围内，则返回 `true`；否则返回 `false`。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -31,13 +32,13 @@ Boolean
 
 `thisLayer.audioActive`
 
-#### Description
+#### 描述
 
-Returns `true` if the Audio switch is on for the layer and the current time is in the range from the In point of the layer to the Out point of the layer; `false` otherwise.
+如果图层的音频开关已打开，并且当前时间在图层的入点到出点范围内，则返回 `true`；否则返回 `false`。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -45,13 +46,13 @@ Boolean
 
 `thisLayer.enabled`
 
-#### Description
+#### 描述
 
-Whether the layer is enabled.
+图层是否启用。
 
-#### Type
+#### 类型
 
-Boolean. `true` if the Video switch is on for the layer; `false` otherwise.
+布尔值。如果图层的视频开关已打开，则为 `true`；否则为 `false`。
 
 ---
 
@@ -59,13 +60,13 @@ Boolean. `true` if the Video switch is on for the layer; `false` otherwise.
 
 `thisLayer.hasAudio`
 
-#### Description
+#### 描述
 
-Whether the layer has audio.
+图层是否有音频。
 
-#### Type
+#### 类型
 
-Boolean. `true` if the layer has audio or `false` if it doesn't.
+布尔值。如果图层有音频，则为 `true`；否则为 `false`。
 
 ---
 
@@ -73,21 +74,21 @@ Boolean. `true` if the layer has audio or `false` if it doesn't.
 
 `thisLayer.hasParent`
 
-#### Description
+#### 描述
 
-Use the `hasParent` attribute to determine if a layer has a parent layer. You can use this attribute even if the layer has no parent layer at present.
+使用 `hasParent` 属性来确定图层是否有父图层。即使图层当前没有父图层，也可以使用此属性。
 
-#### Type
+#### 类型
 
-Boolean. `true` if the layer has a parent, `false` if it doesn't.
+布尔值。如果图层有父图层，则为 `true`；否则为 `false`。
 
-#### Example
+#### 示例
 
-The following expression indicates that the layer to which you apply it wiggles based on the position of the parent. If the layer has no parent, then it wiggles based on its own position.
+以下表达式表示应用它的图层会根据父图层的位置进行摆动。如果图层没有父图层，则根据其自身位置进行摆动。
 
-If the layer is given a parent later, then the behavior of the layer changes accordingly:
+如果图层稍后被赋予父图层，则其行为会相应改变：
 
-```js
+ ```js
 idx = index;
 if (hasParent) {
         idx = parent.index;
@@ -101,13 +102,13 @@ thisComp.layer(idx).position.wiggle(5,20)
 
 `thisLayer.hasVideo`
 
-#### Description
+#### 描述
 
-Whether the layer has video.
+图层是否有视频。
 
-#### Type
+#### 类型
 
-Boolean. `true` if the layer has audio or `false` if it doesn't.
+布尔值。如果图层有视频，则为 `true`；否则为 `false`。
 
 ---
 
@@ -115,15 +116,15 @@ Boolean. `true` if the layer has audio or `false` if it doesn't.
 
 `thisLayer.height`
 
-#### Description
+#### 描述
 
-Returns the height of the layer, in pixels.
+返回图层的高度，单位为像素。
 
-If the layer has a [source](./sub-objects.md#layersource), this is the same as either the source [comp height](../objects/comp.md#compheight) or the source [footage height](../objects/footage.md#footageheight) (as applicable).
+如果图层有 [源](../sub-objects.md#layersource)，则与源的 [合成高度](../objects/comp.md#compheight) 或源的 [素材高度](../objects/footage.md#footageheight) 相同（视情况而定）。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -131,13 +132,13 @@ Number
 
 `thisLayer.index`
 
-#### Description
+#### 描述
 
-Returns the index number of the layer in the composition.
+返回图层在合成中的索引号。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -145,16 +146,13 @@ Number
 
 `thisLayer.inPoint`
 
-#### Description
+#### 描述
 
-Returns the In point of the layer, in seconds.
+返回图层的入点，单位为秒。
 
-!!! note
-    In general, the value of outPoint is greater than the value of inPoint. However, if a layer is reversed in time, the value of inPoint is greater than the value of outPoint. Similarly, the value of startTime can be greater than the value of inPoint.
+:::note 通常情况下，`outPoint` 的值大于 `inPoint` 的值。然而，如果图层在时间上反转，`inPoint` 的值将大于 `outPoint` 的值。同样，`startTime` 的值也可能大于 `inPoint` 的值。 :::#### 类型
 
-#### Type
-
-Number
+数字
 
 ---
 
@@ -162,13 +160,13 @@ Number
 
 `thisLayer.outPoint`
 
-#### Description
+#### 描述
 
-Returns the Out point of the layer, in seconds.
+返回图层的出点，单位为秒。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -176,19 +174,19 @@ Number
 
 `thisLayer.parent`
 
-#### Description
+#### 描述
 
-Returns the parent Layer object of the layer, if it has one.
+返回图层的父图层对象（如果有）。
 
-You can check whether a layer has a parent with the [`Layer.hasParent`](#layerhasparent) attribute.
+你可以使用 [`Layer.hasParent`]() 属性来检查图层是否有父图层。
 
-#### Type
+#### 类型
 
-[Layer](../../layer/layer), [Light](../../objects/light), or [Camera](../../objects/camera) object
+[Layer](../layer/layer)、[Light](../objects/light) 或 [Camera](../objects/camera) 对象
 
-#### Example
+#### 示例
 
-```js
+ ```js
 position[0] + parent.width
 ```
 
@@ -198,13 +196,13 @@ position[0] + parent.width
 
 `thisLayer.startTime`
 
-#### Description
+#### 描述
 
-Returns the start time of the layer, in seconds.
+返回图层的开始时间，单位为秒。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -212,49 +210,45 @@ Number
 
 `thisLayer.width`
 
-#### Description
+#### 描述
 
-Returns the width of the layer, in pixels.
+返回图层的宽度，单位为像素。
 
-If the layer has a [source](./sub-objects.md#layersource), this is the same as either the source [comp width](../objects/comp.md#compwidth) or the source [footage width](../objects/footage.md#footagewidth) (as applicable).
+如果图层有 [源](../../sub-objects#layersource)，则与源的 [合成宽度](../objects/comp#compwidth) 或源的 [素材宽度](../objects/footage#footagewidth) 相同（视情况而定）。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
-## Methods
+## 函数
 
 ### Layer.sampleImage()
 
 `thisLayer.sampleImage(point[, radius=[0.5, 0.5]][, postEffect=true][, t=time])`
 
-#### Description
+#### 描述
 
-Samples the color and alpha channel values of a layer and returns the average alpha-weighted value of the pixels within the specified distance of the point as an array: `[red, green, blue, alpha]`.
+采样图层的颜色和 Alpha 通道值，并返回指定点周围区域内像素的平均 Alpha 加权值，作为一个数组：`[red, green, blue, alpha]`。
 
-!!! note
-    Using `sampleImage()` in an expression no longer disables multiprocessing.
+:::note 在表达式中使用 `sampleImage()` 不再禁用多处理。 :::#### 参数
 
-#### Parameters
+| 参数           | 类型         | 描述                                                                                                                                               |
+| -------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `point`      | 二维数字数组 | 必需。采样的点，位于图层空间中。点 `[0, 0]` 是图层左上角像素的中心。                                                                             |
+| `radius`     | 二维数字数组 | 可选。指定采样中心到采样矩形边缘的水平距离和垂直距离。默认值采样一个像素。默认为 `[0.5, 0.5]`。                                                  |
+| `postEffect` | 布尔值       | 可选。如果为 `true`，则采样在图层蒙版和效果**直接应用于图层**之后的值。如果为 `false`，则采样在图层蒙版和效果之前的值。默认为 `true`。 |
+| `t`          | 数字         | 可选。默认为 `time`。                                                                                                                            |
 
-|  Parameter   |            Type            |                                                                                                   Description                                                                                                   |
-| ------------ | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `point`      | 2-dimensional Number array | Required. The point at which to sample, im layer space. The point `[0, 0]` is the center of the upper-left pixel in the layer.                                                                                  |
-| `radius`     | 2-dimensional Number array | Optional. Specifies the horizontal and vertical distance from the sample center to the edges of the sampled rectangle. The default value samples one pixel. Defaults to `[0.5, 0.5]`.                           |
-| `postEffect` | Boolean                    | Optional. If `true`, to sample the values *after* layer masks and effects **directly applied to the layer** have been rendered. If `false`, sample values *before* layer masks and effects. Defaults to `true`. |
-| `t`          | Number                     | Optional. Defaults to `time`.                                                                                                                                                                                   |
+#### 类型
 
+数组（四维）
 
-#### Type
+#### 示例
 
-Array (4-dimensional)
+以下代码采样一个宽度为 4 像素、高度为 3 像素的矩形，中心位于图层左上角向下和向右 100 像素的位置：
 
-#### Examples
-
-This samples a rectangle 4 pixels wide and 3 pixels high, centered around a point 100 pixels down and to the right of the upper-left corner of the layer:
-
-```js
+ ```js
 thisComp.layer(1).sampleImage([100, 100], [2, 1.5])
 ```

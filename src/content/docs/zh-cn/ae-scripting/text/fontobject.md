@@ -1,13 +1,13 @@
 ---
 title: fontobject
 ---
-
 # Font object
 
-!!! note
-    This functionality was added in After Effects 24.0
+:::note
+该方法添加于 After Effects 24.0
+:::
 
-#### Description
+#### 描述
 
 The Font object provides information about a specific font, along with the font technology used, helping disambiguate when multiple fonts sharing the same Postscript name are installed on the system.
 
@@ -15,21 +15,22 @@ Most of these APIs simply return information which is contained in the Font data
 
 ---
 
-## Attributes
+## 属性
 
 ### FontObject.designAxesData
 
 `app.fonts.allFonts[0][0].designAxesData`
 
-#### Description
+#### 描述
 
 Returns an Array of Objects, containing the design axes data from the font.
 Each object is composed of the axis `name`, `tag`, `min` value and `max` value.
 
-!!! tip
-    Will return undefined for non-variable fonts.
+:::tip
+Will return undefined for non-variable fonts.
+:::
 
-#### Example
+#### 示例
 
 This example will select the first returned Font Family Array.
 
@@ -44,9 +45,9 @@ var firstAxis = axesData[0];
 alert(firstAxis.name+"\n"+firstAxis.tag+"\n"+firstAxis.min+"\n"+firstAxis.max);
 ```
 
-#### Type
+#### 类型
 
-Array of Objects; read-only.
+Array of Objects; 只读.
 
 ---
 
@@ -54,16 +55,17 @@ Array of Objects; read-only.
 
 `app.fonts.fontsWithDefaultDesignAxes[0].designVector`
 
-#### Description
+#### 描述
 
 For Variable fonts will return an ordered array with a length matching the number of design axes defined by the font.
 
-!!! tip
-    Will return undefined for non-variable fonts.
+:::tip
+Will return undefined for non-variable fonts.
+:::
 
-#### Type
+#### 类型
 
-Array of floating-point values; read-only.
+Array of floating-point values; 只读.
 
 ---
 
@@ -71,13 +73,13 @@ Array of floating-point values; read-only.
 
 `app.fonts.allFonts[0][0].familyName`
 
-#### Description
+#### 描述
 
 The family name of the font, in the ASCII character set.
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -85,16 +87,17 @@ String; read-only.
 
 `app.fonts.fontsWithDefaultDesignAxes[0].familyPrefix`
 
-#### Description
+#### 描述
 
 The family prefix of the variable font. For example, the family of the PostScript name "SFPro-Bold" is "SFPro".
 
-!!! tip
-    Will return undefined for non-variable fonts.
+:::tip
+Will return undefined for non-variable fonts.
+:::
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -102,10 +105,11 @@ String; read-only.
 
 `app.fonts.allFonts[0][0].fontID`
 
-!!! note
-    This functionality was added in After Effects 24.2
+:::note
+该方法添加于 After Effects 24.2
+:::
 
-#### Description
+#### 描述
 
 A unique number assigned to the FontObject instance when it is created, value is greater than or equal to 1. It never changes during the application session but may be different in subsequent launches of the application.
 
@@ -113,9 +117,9 @@ Can be used to compare two FontObject instances to see if they refer to the same
 
 FontObjects can be looked up by fontID with [getFontByID](fontsobject.md#fontsobjectgetfontbyid) .
 
-#### Type
+#### 类型
 
-Integer; read-only.
+Integer; 只读.
 
 ---
 
@@ -123,13 +127,13 @@ Integer; read-only.
 
 `app.fonts.allFonts[0][0].fullName`
 
-#### Description
+#### 描述
 
 The full name of the font, in the ASCII character set. Usually composed of the family name and the style name.
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -137,13 +141,13 @@ String; read-only.
 
 `app.fonts.allFonts[0][0].hasDesignAxes`
 
-#### Description
+#### 描述
 
 Returns `true` if the font is a variable font.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -151,13 +155,13 @@ Boolean; read-only.
 
 `app.fonts.allFonts[0][0].isFromAdobeFonts`
 
-#### Description
+#### 描述
 
 Returns `true` if the font is from Adobe Fonts.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -165,13 +169,13 @@ Boolean; read-only.
 
 `app.fonts.allFonts[0][0].isSubstitute`
 
-#### Description
+#### 描述
 
 returns `true` when this font instance represents a font reference which was missing on project open.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -179,16 +183,17 @@ Boolean; read-only.
 
 `app.fonts.allFonts[0][0].location`
 
-#### Description
+#### 描述
 
 The location of the font file on your system.
 
-!!! warning
-    Not guaranteed to be returned for all font types; return value may be empty string for some kinds of fonts.
+:::warning
+Not guaranteed to be returned for all font types; return value may be empty string for some kinds of fonts.
+:::
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -196,13 +201,13 @@ String; read-only.
 
 `app.fonts.allFonts[0][0].nativeFamilyName`
 
-#### Description
+#### 描述
 
 The native family name of the font in full 16 bit Unicode. Often different than what is returned by [FontObject.familyName](#fontobjectfamilyname) for non-Latin fonts.
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -210,13 +215,13 @@ String; read-only.
 
 `app.fonts.allFonts[0][0].nativeFullName`
 
-#### Description
+#### 描述
 
 The native full name of the font in full 16 bit Unicode. Often different than what is returned by [FontObject.fullName](#fontobjectfullname) for non-Latin fonts.
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -224,13 +229,13 @@ String; read-only.
 
 `app.fonts.allFonts[0][0].nativeStyleName`
 
-#### Description
+#### 描述
 
 The native style name of the font in full 16 bit Unicode. Often different than what is returned by [FontObject.styleName](#fontobjectstylename) for non-Latin fonts.
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -238,13 +243,13 @@ String; read-only.
 
 `app.fonts.allFonts[0][0].postScriptName`
 
-#### Description
+#### 描述
 
 The postscript name of the font.
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -252,13 +257,13 @@ String; read-only.
 
 `app.fonts.allFonts[0][0].styleName`
 
-#### Description
+#### 描述
 
 The style name of the font, in the ASCII character set.
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -266,13 +271,13 @@ String; read-only.
 
 `app.fonts.allFonts[0][0].technology`
 
-#### Description
+#### 描述
 
 The technology used by the font.
 
-#### Type
+#### 类型
 
-An `CTFontTechnology` enumerated value; read-only. One of:
+An `CTFontTechnology` enumerated value; 只读. One of:
 
 - `CTFontTechnology.CT_TYPE1_FONT`
 - `CTFontTechnology.CT_TRUETYPE_FONT`
@@ -289,13 +294,13 @@ An `CTFontTechnology` enumerated value; read-only. One of:
 
 `app.fonts.allFonts[0][0].type`
 
-#### Description
+#### 描述
 
 The internal type of the font.
 
-#### Type
+#### 类型
 
-An `CTFontType` enumerated value; read-only. One of:
+An `CTFontType` enumerated value; 只读. One of:
 
 - `CTFontType.CT_TYPE1_FONTTYPE`
 - `CTFontType.CT_TRUETYPE_FONTTYPE`
@@ -314,13 +319,13 @@ An `CTFontType` enumerated value; read-only. One of:
 
 `app.fonts.allFonts[0][0].version`
 
-#### Description
+#### 描述
 
 The version number of the font.
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -328,13 +333,13 @@ String; read-only.
 
 `app.fonts.allFonts[0][0].writingScripts`
 
-#### Description
+#### 描述
 
 The supported character sets of the font.
 
-#### Type
+#### 类型
 
-An array of `CTScript` enumerated values; read-only. One or more of:
+An array of `CTScript` enumerated values; 只读. One or more of:
 
 - `CTScript.CT_ROMAN_SCRIPT`
 - `CTScript.CT_JAPANESE_SCRIPT`
@@ -426,16 +431,17 @@ An array of `CTScript` enumerated values; read-only. One or more of:
 - `CTScript.CT_TAIVIET_SCRIPT`
 - `CTScript.CT_DONTKNOW_SCRIPT`
 
-## Methods
+## 函数
 
 ### FontObject.hasGlyphsFor()
 
 `app.fonts.allFonts[0][0].hasGlyphsFor(charString)`
 
-!!! note
-    This functionality was added in After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
+:::note
+该方法添加于 After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
+:::
 
-#### Description
+#### 描述
 
 Fonts do not contain glyphs for all possible ranges of Unicode and this method gives the caller the opportunity to query the Font about support for one or more characters.
 
@@ -443,14 +449,13 @@ Returns `true` if the font has a glyph for every character in the `charString`.
 
 The character order does not matter, and in the case of a parameter string with more than one character, it is not possible though this API to determine which character had no glyph support.
 
-#### Parameters
+#### 参数
 
-|  Parameter   |  Type  |                                Description                                |
+|  参数   |  类型  |                                描述                                |
 | ------------ | ------ | ------------------------------------------------------------------------- |
 | `charString` | String | Text that will be checked for support in the [Font object](#font-object). |
 
-
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -460,20 +465,21 @@ Boolean.
 
 `app.fonts.fontsWithDefaultDesignAxes[0].hasSameDict(fontObject)`
 
-#### Description
+#### 描述
 
 This function will `true` if the [Font object](#font-object) passed as an argument shares the same variable font dictionary as the [Font object](#font-object) the function is called on.
 
-!!! tip
-    Can only return `true` when called on a variable [Font object](#font-object) with the argument also being a [Font object](#font-object) of a variable font.
+:::tip
+Can only return `true` when called on a variable [Font object](#font-object) with the argument also being a [Font object](#font-object) of a variable font.
+:::
 
-#### Parameters
+#### 参数
 
-|  Parameter   |            Type             |   Description   |
+|  参数   |            类型             |   描述   |
 | ------------ | --------------------------- | --------------- |
 | `fontObject` | [Font object](#font-object) | Object to check |
 
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -483,22 +489,23 @@ Boolean.
 
 `app.fonts.fontsWithDefaultDesignAxes[0].otherFontsWithSameDict(fontObject)`
 
-!!! note
-    This functionality was added in After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
+:::note
+该方法添加于 After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
+:::
 
-#### Description
+#### 描述
 
 Given an [Font object](#font-object) passed as an argument, returns an Array of [Font object](#font-object) instances which share the same font dictionary as the [Font object](#font-object) the function is called on.
 
 Will return an empty Array if the argument is not a Variable font, or the Variable font only has one instance (the parameter one).
 
-#### Parameters
+#### 参数
 
-|  Parameter   |            Type             |   Description   |
+|  参数   |            类型             |   描述   |
 | ------------ | --------------------------- | --------------- |
 | `fontObject` | [Font object](#font-object) | Object to check |
 
-#### Returns
+#### 返回
 
 Array of [Font objects](#font-object), may be empty.
 
@@ -508,16 +515,16 @@ Array of [Font objects](#font-object), may be empty.
 
 `app.fonts.fontsWithDefaultDesignAxes[0].postScriptNameForDesignVector([...vectorValues])`
 
-#### Description
+#### 描述
 
 This function will return the postscript name of the variable font for the specific design vectors passed as the argument.
 
-#### Parameters
+#### 参数
 
-|   Parameter    |              Type              |                                           Description                                           |
+|   参数    |              类型              |                                           描述                                           |
 | -------------- | ------------------------------ | ----------------------------------------------------------------------------------------------- |
 | `vectorValues` | Array of floating-point values | Values to check [FontObject.designVector](#fontobjectdesignvector) for the given variable font. |
 
-#### Returns
+#### 返回
 
 A String.

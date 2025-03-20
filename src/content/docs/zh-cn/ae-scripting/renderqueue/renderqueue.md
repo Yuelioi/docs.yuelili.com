@@ -1,35 +1,35 @@
 ---
 title: renderqueue
 ---
-
 # RenderQueue object
 
 `app.project.renderQueue`
 
-#### Description
+#### 描述
 
 The RenderQueue object represents the render automation process, the data and functionality that is available through the Render Queue panel of a particular After Effects project. Attributes provide access to items in the render queue and their render status. Methods can start, pause, and stop the rendering process. The [RenderQueueItem object](../renderqueueitem) provides access to the specific settings for an item to be rendered.
 
 ---
 
-## Attributes
+## 属性
 
 ### RenderQueue.canQueueInAME
 
 `app.project.renderQueue.canQueueInAME`
 
-!!! note
-    This functionality was added in After Effects 14.0 (CC 2017)
+:::note
+该方法添加于 After Effects 14.0 (CC 2017)
+:::
 
-#### Description
+#### 描述
 
 indicates whether or not there are queued render items in the After Effects render queue. Only queued items can be added to the AME queue.
 
 [RenderQueue.queueInAME()](#renderqueuequeueiname)
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -37,15 +37,16 @@ Boolean; read-only.
 
 `app.project.renderQueue.queueNotify`
 
-!!! note
-    This functionality was added in After Effects 22.0 (2022)
+:::note
+该方法添加于 After Effects 22.0 (2022)
+:::
 
-#### Description
+#### 描述
 
 Read or write the **Notify** property for the entire Render Queue.
 This is exposed in the UI as a checkbox in the lower right corner of the Render Queue panel.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -55,13 +56,13 @@ Boolean; read/write.
 
 `app.project.renderQueue.items`
 
-#### Description
+#### 描述
 
 A collection of all items in the render queue. See [RenderQueueItem object](../renderqueueitem).
 
-#### Type
+#### 类型
 
-[RQItemCollection object](../rqitemcollection); read-only.
+[RQItemCollection object](../rqitemcollection); 只读.
 
 ---
 
@@ -69,13 +70,13 @@ A collection of all items in the render queue. See [RenderQueueItem object](../r
 
 `app.project.renderQueue.numItems`
 
-#### Description
+#### 描述
 
 The total number of items in the render queue.
 
-#### Type
+#### 类型
 
-Integer; read-only.
+Integer; 只读.
 
 ---
 
@@ -83,33 +84,33 @@ Integer; read-only.
 
 `app.project.renderQueue.rendering`
 
-#### Description
+#### 描述
 
 When `true`, the rendering process is in progress or paused. When `false`, it is stopped.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
-## Methods
+## 函数
 
 ### RenderQueue.item()
 
 `app.project.renderQueue.item(index)`
 
-#### Description
+#### 描述
 
 Gets a specified item from the ite ms collection.
 
-#### Parameters
+#### 参数
 
-| Parameter |                 Type                  |           Description           |
+| 参数 |                 类型                  |           描述           |
 | --------- | ------------------------------------- | ------------------------------- |
-| `index`   | Integer, in the range `[0..numItems]` | The position index of the item. |
+| `index`   | Integer, 范围为 `[0..numItems]` | The position index of the item. |
 
-#### Returns
+#### 返回
 
 [RenderQueueItem object](../renderqueueitem).
 
@@ -119,17 +120,17 @@ Gets a specified item from the ite ms collection.
 
 `app.project.renderQueue.pauseRendering(pause)`
 
-#### Description
+#### 描述
 
 Pauses the current rendering process, or continues a paused rendering process. This is the same as clicking Pause in the Render Queue panel during a render. You can call this method from an [RenderQueueItem.onstatus](renderqueueitem.md#renderqueueitemonstatus) or [app.onError](../general/application.md#apponerror) callback.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type   |                                  Description                                   |
+| 参数 |  类型   |                                  描述                                   |
 | --------- | ------- | ------------------------------------------------------------------------------ |
 | `pause`   | Boolean | `true` to pause a current render process, `false` to continue a paused render. |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -139,18 +140,18 @@ Nothing.
 
 `app.project.renderQueue.render()`
 
-#### Description
+#### 描述
 
 Starts the rendering process. This is the same as clicking Render in the Render Queue panel. The method does not return until the render process is complete. To pause or stop the rendering process, call [RenderQueue.pauseRendering()](#renderqueuepauserendering) or [RenderQueue.stopRendering()](#renderqueuestoprendering) from an `onError` or `onstatus` callback.
 
 - To respond to errors during the rendering process, define a callback function in [app.onError](../general/application.md#apponerror).
 - To respond to changes in the status of a particular item while the render is progressing, define a callback function in [RenderQueueItem.onstatus](renderqueueitem.md#renderqueueitemonstatus) in the associated RenderQueueItem object.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -160,17 +161,17 @@ Nothing.
 
 `app.project.renderQueue.showWindow(doShow)`
 
-#### Description
+#### 描述
 
 Shows or hides the Render Queue panel.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type   |                           Description                            |
+| 参数 |  类型   |                           描述                            |
 | --------- | ------- | ---------------------------------------------------------------- |
 | `doShow`  | Boolean | When `true`, show the Render Queue panel. When `false`, hide it. |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -180,15 +181,15 @@ Nothing.
 
 `app.project.renderQueue.stopRendering()`
 
-#### Description
+#### 描述
 
 Stops the rendering process. This is the same as clicking Stop in the Render Queue panel during a render. You can call this method from an [RenderQueueItem.onstatus](renderqueueitem.md#renderqueueitemonstatus) or [app.onError](../general/application.md#apponerror) callback.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -198,30 +199,33 @@ Nothing.
 
 `app.project.renderQueue.queueInAME(render_immediately_in_AME)`
 
-!!! note
-    This functionality was added in After Effects 14.0 (CC 2017)
+:::note
+该方法添加于 After Effects 14.0 (CC 2017)
+:::
 
-#### Description
+#### 描述
 
 Calls the Queue In AME command. This method requires passing a boolean value, telling AME whether to only queue the render items (`false`) or if AME should also start processing its queue (`true`).
 
-!!! note
-    This requires Adobe Media Encoder CC 2017 (11.0) or later.
+:::note
+This requires Adobe Media Encoder CC 2017 (11.0) or later.
+:::
 
-!!! tip
-    When AME receives the queued items, it applies the most recently used encoding preset. If `render_immediately_in_AME` is set to `true`, you will not have an opportunity to change the encoding settings.
+:::tip
+When AME receives the queued items, it applies the most recently used encoding preset. If `render_immediately_in_AME` is set to `true`, you will not have an opportunity to change the encoding settings.
+:::
 
-#### Parameters
+#### 参数
 
-|          Parameter          |  Type   |                                                       Description                                                       |
+|          参数          |  类型   |                                                       描述                                                       |
 | --------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------- |
 | `render_immediately_in_AME` | Boolean | Telling AME whether to only queue the render items (`false`) or if AME should also start processing its queue (`true`). |
 
-#### Returns
+#### 返回
 
 Nothing.
 
-#### Example
+#### 示例
 
 The following sample code checks to see if there are queued items in the render queue, and if so queues them in AME but does not immediately start rendering:
 

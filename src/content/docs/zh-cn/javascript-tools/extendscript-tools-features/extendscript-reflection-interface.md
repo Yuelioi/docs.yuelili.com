@@ -1,7 +1,6 @@
 ---
 title: extendscript-reflection-interface
 ---
-
 # ExtendScript Reflection Interface
 
 ExtendScript provides a reflection interface that allows you to find out everything about an object, including its name, a description, the expected data type for properties, the arguments and return value for methods, and any default values or limitations to the input values.
@@ -22,18 +21,19 @@ for (var i = 0; i < props.length; i++) {
 
 ### ReflectionObject Attributes
 
-!!! info
-    All properties are read only.
+:::info
+All properties are read only.
+:::
 
-#### description
+#### 描述
 
 `reflect.description`
 
-##### Description
+##### 描述
 
 Short text describing the reflected object, or undefined if no description is available.
 
-##### Type
+##### 类型
 
 String
 
@@ -43,25 +43,25 @@ String
 
 `reflect.help`
 
-##### Description
+##### 描述
 
 Longer text describing the reflected object more completely, or `undefined` if no description is available.
 
-##### Type
+##### 类型
 
 String
 
 ---
 
-#### methods
+#### 函数
 
 `reflect.methods`
 
-##### Description
+##### 描述
 
 An Array of [ReflectionInfo object](#reflectioninfo-object) containing all methods of the reflected object, defined in the class or in the specific instance.
 
-##### Type
+##### 类型
 
 Array of [ReflectionInfo objects](#reflectioninfo-object)
 
@@ -71,11 +71,11 @@ Array of [ReflectionInfo objects](#reflectioninfo-object)
 
 `reflect.name`
 
-##### Description
+##### 描述
 
 The class name of the reflected object.
 
-##### Type
+##### 类型
 
 String
 
@@ -85,13 +85,13 @@ String
 
 `reflect.properties`
 
-##### Description
+##### 描述
 
 An Array of [ReflectionInfo object](#reflectioninfo-object) containing all properties of the reflected object, defined in the class or in the specific instance. For objects with dynamic properties (defined at runtime) the list contains only those dynamic properties that have already been accessed by the script.
 
 For example, in an object wrapping an HTML tag, the names of the HTML attributes are determined at run time.
 
-##### Type
+##### 类型
 
 Array of [ReflectionInfo objects](#reflectioninfo-object)
 
@@ -103,19 +103,19 @@ Array of [ReflectionInfo objects](#reflectioninfo-object)
 
 `reflectionObj.find(name)`
 
-##### Description
+##### 描述
 
 Returns the [ReflectionInfo object](#reflectioninfo-object) for the named property of the reflected object, or null if no such property exists.
 
 Use this method to get information about dynamic properties that have not yet been accessed, but that are known to exist.
 
-##### Parameters
+##### 参数
 
-| Parameter |  Type  |                   Description                   |
+| 参数 |  类型  |                   描述                   |
 | --------- | ------ | ----------------------------------------------- |
 | name      | String | The property for which to retrieve information. |
 
-#### Examples
+#### 示例
 
 This code determines the class name of an object:
 
@@ -173,11 +173,11 @@ obj.reflect.methods.indexOf.arguments[0];
 
 `obj.reflect.methods[0].arguments`
 
-##### Description
+##### 描述
 
 For a reflected method, an array of [ReflectionInfo objects](#reflectioninfo-object) describing each method argument.
 
-##### Type
+##### 类型
 
 Array of [ReflectionInfo objects](#reflectioninfo-object)
 
@@ -187,11 +187,11 @@ Array of [ReflectionInfo objects](#reflectioninfo-object)
 
 `obj.reflect.methods[0].dataType`
 
-##### Description
+##### 描述
 
 The data type of the reflected element.
 
-##### Type
+##### 类型
 
 String. One of:
 
@@ -212,25 +212,25 @@ String. One of:
 
 `obj.reflect.methods[0].defaultValue`
 
-##### Description
+##### 描述
 
 The default value for a reflected property or method argument, or `undefined` if there is no default value, if the property is undefined, or if the element is a method.
 
-##### Type
+##### 类型
 
 Any
 
 ---
 
-#### description
+#### 描述
 
 `obj.reflect.methods[0].description`
 
-##### Description
+##### 描述
 
 Short text describing the reflected object, or `undefined` if no description is available.
 
-##### Type
+##### 类型
 
 String
 
@@ -240,11 +240,11 @@ String
 
 `obj.reflect.methods[0].help`
 
-##### Description
+##### 描述
 
 Longer text describing the reflected object more completely, or `undefined` if no description is available.
 
-##### Type
+##### 类型
 
 String
 
@@ -254,11 +254,11 @@ String
 
 `obj.reflect.methods[0].isCollection`
 
-##### Description
+##### 描述
 
 When `true`, the reflected property or method returns a collection; otherwise, `false`.
 
-##### Type
+##### 类型
 
 Boolean
 
@@ -268,11 +268,11 @@ Boolean
 
 `obj.reflect.methods[0].max`
 
-##### Description
+##### 描述
 
 The maximum numeric value for the reflected element, or `undefined` if there is no maximum or if the element is a method.
 
-##### Type
+##### 类型
 
 Number
 
@@ -282,11 +282,11 @@ Number
 
 `obj.reflect.methods[0].min`
 
-##### Description
+##### 描述
 
 The minimum numeric value for the reflected element, or `undefined` if there is no minimum or if the element is a method.
 
-##### Type
+##### 类型
 
 Number
 
@@ -296,25 +296,25 @@ Number
 
 `obj.reflect.methods[0].name`
 
-##### Description
+##### 描述
 
 The name of the reflected element. A string, or a number for an array index.
 
-##### Type
+##### 类型
 
 String or Number
 
 ---
 
-#### type
+#### 类型
 
 `obj.reflect.methods[0].type`
 
-##### Description
+##### 描述
 
 The type of the reflected element.
 
-##### Type
+##### 类型
 
 String. One of:
 

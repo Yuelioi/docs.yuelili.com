@@ -1,22 +1,21 @@
 ---
 title: compitem
 ---
-
 # CompItem object
 
 `app.project.item(index)`
 
 `app.project.items[index]`
 
-
-#### Description
+#### 描述
 
 The CompItem object represents a composition, and allows you to manipulate and get information about it. Access the objects by position index number in a project's item collection.
 
-!!! info
-    CompItem is a subclass of [AVItem object](../avitem), which is a subclass of [Item object](../item). All methods and attributes of AVItem and Item, in addition to those listed below, are available when working with CompItem.
+:::info
+CompItem is a subclass of [AVItem object](../avitem), which is a subclass of [Item object](../item). All methods and attributes of AVItem and Item, in addition to those listed below, are available when working with CompItem.
+:::
 
-#### Example
+#### 示例
 
 Given that the first item in the project is a CompItem, the following code displays two alerts. The first shows the number of layers in the CompItem, and the second shows the name of the last layer in the CompItem.
 
@@ -28,19 +27,19 @@ alert("name of last layer is " + firstComp.layer(firstComp.numLayers).name);
 
 ---
 
-## Attributes
+## 属性
 
 ### CompItem.activeCamera
 
 `app.project.item(index).activeCamera`
 
-#### Description
+#### 描述
 
 The active camera, which is the front-most camera layer that is enabled. The value is `null` if the composition contains no enabled camera layers.
 
-#### Type
+#### 类型
 
-CameraLayer object; read-only.
+CameraLayer object; 只读.
 
 ---
 
@@ -48,13 +47,13 @@ CameraLayer object; read-only.
 
 `app.project.item(index).bgColor`
 
-#### Description
+#### 描述
 
 The background color of the composition. The three array values specify the red, green, and blue components of the color.
 
-#### Type
+#### 类型
 
-An array containing three floating-point values, `[R, G, B]`, in the range `[0.0..1.0]`; read/write.
+An array containing three floating-point values, `[R, G, B]`, 范围为 `[0.0..1.0]`; read/write.
 
 ---
 
@@ -62,19 +61,21 @@ An array containing three floating-point values, `[R, G, B]`, in the range `[0.0
 
 `app.project.item(index).counters`
 
-!!! note
-    This functionality was added in After Effects 13.2 (CC2014).
+:::note
+该方法添加于 After Effects 13.2 (CC2014).
+:::
 
-!!! warning
-    This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::warning
+This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::
 
-#### Description
+#### 描述
 
 This attribute works app-wide: if changed on one CompItem, it will change it for every CompItem in the project. The value stays until restarting AE. Once restarted, it will revert to `false`.
 
 This parameter doesn't do anything.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -84,16 +85,17 @@ Boolean; read/write.
 
 `app.project.item(index).displayStartFrame`
 
-#### Description
+#### 描述
 
 The frame value of the beginning of the composition.
 
 This value is an alternative to calculating the start frame using [CompItem.displayStartTime](#compitemdisplaystarttime) and [CompItem.frameDuration](#compitemframeduration) to compensate for floating-point problems.
 
-!!! note
-    This functionality was added in After Effects 17.1.
+:::note
+该方法添加于 After Effects 17.1.
+:::
 
-#### Type
+#### 类型
 
 Integer; read/write.
 
@@ -103,14 +105,15 @@ Integer; read/write.
 
 `app.project.item(index).displayStartTime`
 
-#### Description
+#### 描述
 
 The time set as the beginning of the composition, in seconds. This is the equivalent of the Start Timecode or Start Frame setting in the Composition Settings dialog box.
 
-!!! note
-    As of After Effects 17.1, the minimum value is `-10800.0`. Before 17.1, the minimum value was `0.0`
+:::note
+As of After Effects 17.1, the minimum value is `-10800.0`. Before 17.1, the minimum value was `0.0`
+:::
 
-#### Type
+#### 类型
 
 Floating-point valuem in the range `[-10800.0..86339.0]` (-3:00:00:00 to 23:59:00:00); read/write.
 
@@ -120,11 +123,11 @@ Floating-point valuem in the range `[-10800.0..86339.0]` (-3:00:00:00 to 23:59:0
 
 `app.project.item(index).draft3d`
 
-#### Description
+#### 描述
 
 When `true`, Draft 3D mode is enabled for the Composition panel. This corresponds to the value of the Draft 3D button in the Composition panel.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -134,11 +137,11 @@ Boolean; read/write.
 
 `app.project.item(index).dropFrame`
 
-#### Description
+#### 描述
 
 When `true`, indicates that the composition uses drop-frame timecode. When `false`, indicates non-drop-frame timecode. This corresponds to the setting in the Composition Settings dialog box.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -148,11 +151,11 @@ Boolean; read/write.
 
 `app.project.item(index).frameBlending`
 
-#### Description
+#### 描述
 
 When `true`, frame blending is enabled for this Composition. Corresponds to the value of the Frame Blending button in the Composition panel.
 
-#### Type
+#### 类型
 
 Boolean; if `true`, frame blending is enabled; read/write.
 
@@ -162,11 +165,11 @@ Boolean; if `true`, frame blending is enabled; read/write.
 
 `app.project.item(index).frameDuration`
 
-#### Description
+#### 描述
 
 The duration of a frame, in seconds. This is the inverse of the `frameRate` value (frames-per-second).
 
-#### Type
+#### 类型
 
 Floating-point value; read/write.
 
@@ -176,11 +179,11 @@ Floating-point value; read/write.
 
 `app.project.item(index).hideShyLayers`
 
-#### Description
+#### 描述
 
 When `true`, only layers with shy set to `false` are shown in the Timeline panel. When `false`, all layers are visible, including those whose shy value is `true`. Corresponds to the value of the Hide All Shy Layers button in the Composition panel.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -190,13 +193,13 @@ Boolean; read/write.
 
 `app.project.item(index).layers`
 
-#### Description
+#### 描述
 
 A [LayerCollection object](../../layer/layercollection) that contains all the Layer objects for layers in this composition.
 
-#### Type
+#### 类型
 
-LayerCollection object; read-only.
+LayerCollection object; 只读.
 
 ---
 
@@ -204,20 +207,21 @@ LayerCollection object; read-only.
 
 `app.project.item(index).markerProperty`
 
-!!! note
-    This functionality was added in After Effects 14.0 (CC 2017)
+:::note
+该方法添加于 After Effects 14.0 (CC 2017)
+:::
 
-#### Description
+#### 描述
 
 A [PropertyGroup object](../../property/propertygroup) that contains all a composition's markers. Composition marker scripting has the same functionality as [Layer markers](../layer/layer.md#layermarker).
 
 See [MarkerValue object](../../other/markervalue).
 
-#### Type
+#### 类型
 
-PropertyGroup object or `null`; read-only.
+PropertyGroup object or `null`; 只读.
 
-#### Example
+#### 示例
 
 The following sample code creates a project and composition, then creates two composition markers with different properties
 
@@ -244,11 +248,11 @@ comp.markerProperty.setValueAtTime(3, compMarker2);
 
 `app.project.item(index).motionBlur`
 
-#### Description
+#### 描述
 
 When `true`, motion blur is enabled for the composition. Corresponds to the value of the Motion Blur button in the Composition panel.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -258,11 +262,11 @@ Boolean; read/write.
 
 `app.project.item(index).motionBlurAdaptiveSampleLimit`
 
-#### Description
+#### 描述
 
 The maximum number of motion blur samples of 2D layer motion. This corresponds to the Adaptive Sample Limit setting in the Advanced tab of the Composition Settings dialog box.
 
-#### Type
+#### 类型
 
 Integer (between 16 and 256); read/write.
 
@@ -272,11 +276,11 @@ Integer (between 16 and 256); read/write.
 
 `app.project.item(index).motionBlurSamplesPerFrame`
 
-#### Description
+#### 描述
 
 The minimum number of motion blur samples per frame for Classic 3D layers, shape layers, and certain effects. This corresponds to the Samples Per Frame setting in the Advanced tab of the Composition Settings dialog box.
 
-#### Type
+#### 类型
 
 Integer (between 2 and 64); read/write.
 
@@ -286,16 +290,17 @@ Integer (between 2 and 64); read/write.
 
 `app.project.item(index).motionGraphicsTemplateControllerCount`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+该方法添加于 After Effects 16.1 (CC 2019)
+:::
 
-#### Description
+#### 描述
 
 The number of properties in the Essential Graphics panel for the composition.
 
-#### Type
+#### 类型
 
-Integer; read-only.
+Integer; 只读.
 
 ---
 
@@ -303,10 +308,11 @@ Integer; read-only.
 
 `app.project.item(index).motionGraphicsTemplateName`
 
-!!! note
-    This functionality was added in After Effects 15.0 (CC 2018)
+:::note
+该方法添加于 After Effects 15.0 (CC 2018)
+:::
 
-#### Description
+#### 描述
 
 Read or write the name property in the Essential Graphics panel for the composition.
 
@@ -319,7 +325,7 @@ app.project.activeItem.motionGraphicsTemplateName = "My Template";
 alert(app.project.activeItem.motionGraphicsTemplateName);
 ```
 
-#### Type
+#### 类型
 
 String; read/write.
 
@@ -329,13 +335,13 @@ String; read/write.
 
 `app.project.item(index).numLayers`
 
-#### Description
+#### 描述
 
 The number of layers in the composition.
 
-#### Type
+#### 类型
 
-Integer; read-only.
+Integer; 只读.
 
 ---
 
@@ -343,11 +349,11 @@ Integer; read-only.
 
 `app.project.item(index).preserveNestedFrameRate`
 
-#### Description
+#### 描述
 
 When `true`, the frame rate of nested compositions is preserved in the current composition. Corresponds to the value of the "Preserve frame rate when nested or in render queue" option in the Advanced tab of the Composition Settings dialog box.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -357,11 +363,11 @@ Boolean; read/write.
 
 `app.project.item(index).preserveNestedResolution`
 
-#### Description
+#### 描述
 
 When `true`, the resolution of nested compositions is preserved in the current composition. Corresponds to the value of the "Preserve Resolution When Nested" option in the Advanced tab of the Composition Settings dialog box.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -371,11 +377,11 @@ Boolean; read/write.
 
 `app.project.item(index).renderer`
 
-#### Description
+#### 描述
 
 The current rendering plug-in module to be used to render this composition, as set in the Advanced tab of the Composition Settings dialog box. Allowed values are the members of [CompItem.renderers](#compitemrenderers).
 
-#### Type
+#### 类型
 
 String; read/write.
 
@@ -385,13 +391,13 @@ String; read/write.
 
 `app.project.item(index).renderers`
 
-#### Description
+#### 描述
 
 The available rendering plug-in modules. Member strings reflect installed modules, as seen in the Advanced tab of the Composition Settings dialog box.
 
-#### Type
+#### 类型
 
-Array of strings; read-only.
+Array of strings; 只读.
 
 ---
 
@@ -399,11 +405,11 @@ Array of strings; read-only.
 
 `app.project.item(index).resolutionFactor`
 
-#### Description
+#### 描述
 
 The x and y downsample resolution factors for rendering the composition. The two values in the array specify how many pixels to skip when sampling; the first number controls horizontal sampling, the second controls vertical sampling. Full resolution is `[1, 1]`, half resolution is `[2, 2]`, and quarter resolution is `[4, 4]`. The default is `[1, 1]`.
 
-#### Type
+#### 类型
 
 Array of two integers in the range `[1..99]`; read/write.
 
@@ -413,13 +419,13 @@ Array of two integers in the range `[1..99]`; read/write.
 
 `app.project.item(index).selectedLayers`
 
-#### Description
+#### 描述
 
 All of the selected layers in this composition. This is a 0-based array (the first object is at index 0).
 
-#### Type
+#### 类型
 
-Array of [Layer](../../layer/layer) objects; read-only.
+Array of [Layer](../../layer/layer) objects; 只读.
 
 ---
 
@@ -427,13 +433,13 @@ Array of [Layer](../../layer/layer) objects; read-only.
 
 `app.project.item(index).selectedProperties`
 
-#### Description
+#### 描述
 
 All of the selected properties (Property and PropertyGroup objects) in this composition. The first property is at index position 0.
 
-#### Type
+#### 类型
 
-Array of [Property](../../property/property) and [PropertyGroup](../../property/propertygroup) objects; read-only.
+Array of [Property](../../property/property) and [PropertyGroup](../../property/propertygroup) objects; 只读.
 
 ---
 
@@ -441,13 +447,13 @@ Array of [Property](../../property/property) and [PropertyGroup](../../property/
 
 `app.project.item(index).shutterAngle`
 
-#### Description
+#### 描述
 
 The shutter angle setting for the composition. This corresponds to the Shutter Angle setting in the Advanced tab of the Composition Settings dialog box.
 
-#### Type
+#### 类型
 
-Integer, in the range `[0..720]`; read/write.
+Integer, 范围为 `[0..720]`; read/write.
 
 ---
 
@@ -455,13 +461,13 @@ Integer, in the range `[0..720]`; read/write.
 
 `app.project.item(index).shutterPhase`
 
-#### Description
+#### 描述
 
 The shutter phase setting for the composition. This corresponds to the Shutter Phase setting in the Advanced tab of the Composition Settings dialog box.
 
-#### Type
+#### 类型
 
-Integer, in the range `[-360..360]`; read/write.
+Integer, 范围为 `[-360..360]`; read/write.
 
 ---
 
@@ -469,11 +475,11 @@ Integer, in the range `[-360..360]`; read/write.
 
 `app.project.item(index).workAreaDuration`
 
-#### Description
+#### 描述
 
 The duration of the work area in seconds. This is the difference of the start-point and end-point times of the Composition work area.
 
-#### Type
+#### 类型
 
 Floating-point value; read/write.
 
@@ -483,31 +489,31 @@ Floating-point value; read/write.
 
 `app.project.item(index).workAreaStart`
 
-#### Description
+#### 描述
 
 The time when the Composition work area begins, in seconds.
 
-#### Type
+#### 类型
 
 Floating-point value; read/write.
 
 ---
 
-## Methods
+## 函数
 
 ### CompItem.duplicate()
 
 `app.project.item(index).duplicate()`
 
-#### Description
+#### 描述
 
 Creates and returns a duplicate of this composition, which contains the same layers as the original.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 CompItem object.
 
@@ -517,10 +523,11 @@ CompItem object.
 
 `app.project.item(index).exportAsMotionGraphicsTemplate(doOverWriteFileIfExisting[, file_path])`
 
-!!! note
-    This functionality was added in After Effects 15.0 (CC 2018)
+:::note
+该方法添加于 After Effects 15.0 (CC 2018)
+:::
 
-#### Description
+#### 描述
 
 Exports the composition as a Motion Graphics template. Returns `true` if the Motion Graphics template is successfully exported, otherwise `false`.
 
@@ -535,18 +542,17 @@ user's Motion Graphics Templates folder:
 | macOS   | `/Users/<name>/Library/Application Support/Adobe/Common/Motion Graphics Templates/` |
 | Windows | `C:\Users\<name>\AppData\Roaming\Adobe\Common\Motion Graphics Templates\`           |
 
-
 If the project has been changed since the last time it was saved, After Effects will prompt the user to save the project. To avoid this, use the
 project `save()` method before exporting the Motion Graphics template.
 
-#### Parameters
+#### 参数
 
-|          Parameter          |  Type   |                        Description                         |
+|          参数          |  类型   |                        描述                         |
 | --------------------------- | ------- | ---------------------------------------------------------- |
 | `doOverWriteFileIfExisting` | Boolean | Whether to overwrite an existing file of the same name.    |
 | `file_path`                 | String  | Optional. Path to the folder where the file will be saved. |
 
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -556,22 +562,23 @@ Boolean.
 
 `app.project.item(index).getMotionGraphicsTemplateControllerName(index)`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+该方法添加于 After Effects 16.1 (CC 2019)
+:::
 
-#### Description
+#### 描述
 
 Gets the name of a single property in the Essential Graphics panel.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type   |                        Description                         |
+| 参数 |  类型   |                        描述                         |
 | --------- | ------- | ---------------------------------------------------------- |
 | `index`   | Integer | The index of the EGP property whose name will be returned. |
 
-#### Returns
+#### 返回
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -579,26 +586,28 @@ String; read-only.
 
 `app.project.item(index).setMotionGraphicsControllerName(index, newName)`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+该方法添加于 After Effects 16.1 (CC 2019)
+:::
 
-#### Description
+#### 描述
 
 Sets the name of a single property in the Essential Graphics panel.
 
-!!! tip
-    To rename a property as it is added to the EGP, see [Property.addToMotionGraphicsTemplateAs()](../property/property.md#propertyaddtomotiongraphicstemplateas).
+:::tip
+To rename a property as it is added to the EGP, see [Property.addToMotionGraphicsTemplateAs()](../property/property.md#propertyaddtomotiongraphicstemplateas).
+:::
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type   |                 Description                  |
+| 参数 |  类型   |                 描述                  |
 | --------- | ------- | -------------------------------------------- |
 | `index`   | Integer | The index of the EGP property to be renamed. |
 | `newName` | String  | The new name for the EGP property.           |
 
-#### Returns
+#### 返回
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -610,31 +619,30 @@ String; read-only.
 
 `app.project.item(index).layer(name)`
 
-
-#### Description
+#### 描述
 
 Returns a Layer object, which can be specified by name, an index position in this layer, or an index position relative to another layer.
 
-#### Parameters
+#### 参数
 
-| Parameter |                                                 Type                                                 |                        Description                         |
+| 参数 |                                                 类型                                                 |                        描述                         |
 | --------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| `index`   | Integer, in the range `[1..numLayers]`, where `numLayers` is the number of layers in the composition | The index number of the desired layer in this composition. |
+| `index`   | Integer, 范围为 `[1..numLayers]`, where `numLayers` is the number of layers in the composition | The index number of the desired layer in this composition. |
 
 or:
 
-|  Parameter   |                                                                     Type                                                                      |                                                                           Description                                                                           |
+|  参数   |                                                                     类型                                                                      |                                                                           描述                                                                           |
 | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `otherLayer` | [Layer object](../../layer/layer) in this composition.                                                                                       | The `relIndex` value is added to the index value of this layer to find the position of the desired layer.                                                       |
-| `relIndex`   | Integer, in the range `[1 - otherLayer.index .. numLayers - otherLayer.index]`, where `numLayers` is the number of layers in the composition. | The position of the desired layer, relative to `otherLayer`. This value is added to the `otherLayer` value to derive the absolute index of the layer to return. |
+| `relIndex`   | Integer, 范围为 `[1 - otherLayer.index .. numLayers - otherLayer.index]`, where `numLayers` is the number of layers in the composition. | The position of the desired layer, relative to `otherLayer`. This value is added to the `otherLayer` value to derive the absolute index of the layer to return. |
 
 or:
 
-| Parameter |  Type  |          Description           |
+| 参数 |  类型  |          描述           |
 | --------- | ------ | ------------------------------ |
 | `name`    | String | The name of the desired layer. |
 
-#### Returns
+#### 返回
 
 [Layer object](../../layer/layer).
 
@@ -644,18 +652,19 @@ or:
 
 `app.project.item(index).openInEssentialGraphics()`
 
-!!! note
-    This functionality was added in After Effects 15.0 (CC 2018)
+:::note
+该方法添加于 After Effects 15.0 (CC 2018)
+:::
 
-#### Description
+#### 描述
 
 Opens the composition in the Essential Graphics panel.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -665,14 +674,14 @@ Nothing.
 
 `app.project.item(index).openInViewer()`
 
-#### Description
+#### 描述
 
 Opens the composition in a Composition panel, and moves the Composition panel to front and gives it focus.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 [Viewer object](../../other/viewer) object for the Composition panel, or `null` if the composition could not be opened.

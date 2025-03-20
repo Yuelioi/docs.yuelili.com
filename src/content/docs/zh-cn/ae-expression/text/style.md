@@ -1,54 +1,49 @@
 ---
-title: style
+title: 样式
 ---
-
 # Text Style
 
 `text.sourceText.style`
 
-Most of these functions are accessible from the [SourceText.style](./sourcetext.md#sourcetextstyle) object in AE 17.0 and later. Where noted, additional methods were added in AE 25.0. The ability to control per-character styling was also added in 25.0. Use the second and third arguments (when available) to control per-character styling.
+在 AE 17.0 及更高版本中，大多数这些函数都可以通过 [SourceText.style](./sourcetext.md#sourcetextstyle) 对象访问。如注明，AE 25.0 中添加了额外的方法。25.0 中还添加了控制每个字符样式的功能。使用第二个和第三个参数（当可用时）来控制每个字符的样式。
 
-!!! note
-    When using per-character styling, line breaks and spaces are also considered characters and must be accounted for (or skipped, if desired) when calcuating character indexes.
+:::note
+当使用每个字符样式时，换行符和空格也被视为字符，并且在计算字符索引时必须考虑（或跳过，如果需要）。
+:::
 
-For more info on working with text styles, see:
+有关处理文本样式的更多信息，请参阅：
 
-- [Use Expressions to Edit and Access Text Properties on helpx.adobe.com](https://helpx.adobe.com/after-effects/using/expressions-text-properties.html)
-- [After Effects 2020: Express Yourself (and Your Text) on blog.adobe.com](https://blog.adobe.com/en/publish/2020/01/24/after-effects-2020-express-yourself-and-your-text)
-- [After Effects 2025: Per-Character Text Style Expressions on youtube.com](https://www.youtube.com/watch?v=yG8UbiKKeYw)
+* [在 helpx.adobe.com 上使用表达式编辑和访问文本属性](https://helpx.adobe.com/after-effects/using/expressions-text-properties.html)
+* [After Effects 2020: 表达你自己（和你的文本）在 blog.adobe.com](https://blog.adobe.com/en/publish/2020/01/24/after-effects-2020-express-yourself-and-your-text)
+* [After Effects 2025: 每个字符的文本样式表达式在 youtube.com](https://www.youtube.com/watch?v=yG8UbiKKeYw)
 
-### Chaining
+### 链式调用
 
-All the methods for [Text Style](#text-style) will return a [Text Style](#text-style) object, so you can call them in a chain, e.g.:
+所有 [文本样式]() 的方法都会返回一个 [文本样式]() 对象，因此你可以链式调用它们，例如：
 
 ```js
 text.sourceText.style.setFont("Times New Roman").setFontSize(42).setText("New Text");
 ```
 
-!!! tip
-    You can also format this chain with line breaks to make it easier to read:
-    ```js
-    text.sourceText.style
-        .setFont("Times New Roman")
-        .setFontSize(42)
-        .setText("New Text");
-    ```
+:::tip
+
+:::
 
 ---
 
-## Attributes
+## 属性
 
 ### TextStyle.applyFill
 
 `text.sourceText.style.applyFill`
 
-#### Description
+#### 描述
 
-Returns whether Fill Color is enabled.
+返回是否启用了填充颜色。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -56,13 +51,13 @@ Boolean
 
 `text.sourceText.style.applyStroke`
 
-#### Description
+#### 描述
 
-Returns whether Stroke is enabled.
+返回是否启用了描边。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -70,20 +65,21 @@ Boolean
 
 `text.sourceText.style.baselineDirection`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns the Baseline Direction for a Text layer.
+返回文本图层的基线方向。
 
-#### Type
+#### 类型
 
-Predefined string. One of:
+预定义字符串。其中之一：
 
-- `"default"`
-- `"rotated"`
-- `"tate-chuu-yoko"`
+* `"default"`
+* `"rotated"`
+* `"tate-chuu-yoko"`
 
 ---
 
@@ -91,20 +87,21 @@ Predefined string. One of:
 
 `text.sourceText.style.baselineOption`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns the Baseline Option Type for a Text layer.
+返回文本图层的基线选项类型。
 
-#### Type
+#### 类型
 
-Predefined string. One of:
+预定义字符串。其中之一：
 
-- `"default"`
-- `"subscript"`
-- `"superscript"`
+* `"default"`
+* `"subscript"`
+* `"superscript"`
 
 ---
 
@@ -112,13 +109,13 @@ Predefined string. One of:
 
 `text.sourceText.style.baselineShift`
 
-#### Description
+#### 描述
 
-Returns the value of Baseline Shift for a Text layer.
+返回文本图层的基线偏移值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -126,19 +123,20 @@ Number
 
 `text.sourceText.style.digitSet`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns the Digit Set for a Text layer.
+返回文本图层的数字集。
 
-#### Type
+#### 类型
 
-Predefined string. One of:
+预定义字符串。其中之一：
 
-- `"default"`
-- `"hindidigits"`
+* `"default"`
+* `"hindidigits"`
 
 ---
 
@@ -146,19 +144,20 @@ Predefined string. One of:
 
 `text.sourceText.style.direction`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns the value of Direction of the first paragraph of a Text layer.
+返回文本图层第一段的方向值。
 
-#### Type
+#### 类型
 
-Predefined string. One of:
+预定义字符串。其中之一：
 
-- `"left-to-right"`
-- `"right-to-left"`
+* `"left-to-right"`
+* `"right-to-left"`
 
 ---
 
@@ -166,13 +165,13 @@ Predefined string. One of:
 
 `text.sourceText.style.fillColor`
 
-#### Description
+#### 描述
 
-Returns the text Fill Color as RGB values on a scale from 0 - 1.0.
+返回文本填充颜色的 RGB 值，范围为 0 - 1.0。
 
-#### Type
+#### 类型
 
-Array of Numbers.
+数字数组。
 
 ---
 
@@ -180,16 +179,17 @@ Array of Numbers.
 
 `text.sourceText.style.firstLineIndent`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns the value of First Line Indent of the first line of the first paragraph of a Text layer.
+返回文本图层第一段第一行的首行缩进值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -197,13 +197,13 @@ Number
 
 `text.sourceText.style.font`
 
-#### Description
+#### 描述
 
-Returns the font name for a Text layer.
+返回文本图层的字体名称。
 
-#### Type
+#### 类型
 
-String
+字符串
 
 ---
 
@@ -211,13 +211,13 @@ String
 
 `text.sourceText.style.fontSize`
 
-#### Description
+#### 描述
 
-Returns the value of Font Size for a Text layer.
+返回文本图层的字体大小值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -225,16 +225,17 @@ Number
 
 `text.sourceText.style.horizontalScaling`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns the Horizontal Scaling for a Text layer.
+返回文本图层的水平缩放。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -242,13 +243,13 @@ Number
 
 `text.sourceText.style.isAllCaps`
 
-#### Description
+#### 描述
 
-Returns whether All Caps is enabled.
+返回是否启用了全部大写。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -256,13 +257,13 @@ Boolean
 
 `text.sourceText.style.isAutoLeading`
 
-#### Description
+#### 描述
 
-Returns whether Auto Leading is enabled.
+返回是否启用了自动行距。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -270,16 +271,17 @@ Boolean
 
 `text.sourceText.style.isEveryLineComposer`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns `true` if the Text layer if Every-Line Composer is set for the first paragraph of a Text layer and `false` if Single-Line Composer is set for the first paragraph of a Text layer
+如果文本图层第一段设置了每行排版器，则返回 `true`，如果设置了单行排版器，则返回 `false`。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -287,13 +289,13 @@ Boolean
 
 `text.sourceText.style.isFauxBold`
 
-#### Description
+#### 描述
 
-Returns whether Faux Bold is enabled.
+返回是否启用了伪粗体。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -301,13 +303,13 @@ Boolean
 
 `text.sourceText.style.isFauxItalic`
 
-#### Description
+#### 描述
 
-Returns whether Faux Italics are enabled.
+返回是否启用了伪斜体。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -315,16 +317,17 @@ Boolean
 
 `text.sourceText.style.isHangingRoman`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Whether Hanging Roman Punctuation is set for the entire Text layer.
+是否对整个文本图层设置了悬挂罗马标点符号。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -332,16 +335,17 @@ Boolean
 
 `text.sourceText.style.isLigature`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns whether ligatures are enabled.
+返回是否启用了连字。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -349,13 +353,13 @@ Boolean
 
 `text.sourceText.style.isSmallCaps`
 
-#### Description
+#### 描述
 
-Returns whether Small Caps is enabled.
+返回是否启用了小型大写字母。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -363,27 +367,25 @@ Boolean
 
 `text.sourceText.style.justification`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns the value of Justification of the first paragraph of a Text layer.
+返回文本图层第一段的对齐方式值。
 
-!!! warning
-    The left and right values for alignment/justification will be reversed if the Text layer's [TextStyle.direction](#textstyledirection) is set to use right-to-left. You can control this using the Property or Paragraph panel, or via [TextStyle.setDirection()](#textstylesetdirection).
+:::warning 如果文本图层的 [TextStyle.direction](#textstyledirection) 设置为从右到左，对齐/两端对齐的左右值将反转。你可以使用属性或段落面板，或通过 [TextStyle.setDirection()](#textstylesetdirection) 来控制这一点。 :::#### 类型
 
-#### Type
+预定义字符串。其中之一：
 
-Predefined string. One of:
-
-- `"alignCenter"`
-- `"alignLeft"`
-- `"alignRight"`
-- `"justifyFull"`
-- `"justifyLastCenter"`
-- `"justifyLastLeft"`
-- `"justifyLastRight"`
+* `"alignCenter"`
+* `"alignLeft"`
+* `"alignRight"`
+* `"justifyFull"`
+* `"justifyLastCenter"`
+* `"justifyLastLeft"`
+* `"justifyLastRight"`
 
 ---
 
@@ -391,18 +393,19 @@ Predefined string. One of:
 
 `text.sourceText.style.kerning`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns the Kerning Value for a Text Layer.
+返回文本图层的字距调整值。
 
-For this value to be returned as anything other than zero, the [KerningType](#textstylekerningtype) must not be set.
+要使此值返回非零值，[KerningType]() 必须未设置。
 
-#### Type
+#### 类型
 
-Number. Read-only.
+数字。只读。
 
 ---
 
@@ -410,20 +413,21 @@ Number. Read-only.
 
 `text.sourceText.style.kerningType`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns the Kerning Type for a Text layer.
+返回文本图层的字距调整类型。
 
-#### Type
+#### 类型
 
-Read-only. Predefined string. One of:
+只读。预定义字符串。其中之一：
 
-- `"manual"`
-- `"metrics"`
-- `"optical"`
+* `"manual"`
+* `"metrics"`
+* `"optical"`
 
 ---
 
@@ -431,13 +435,13 @@ Read-only. Predefined string. One of:
 
 `text.sourceText.style.leading`
 
-#### Description
+#### 描述
 
-Returns the value of Leading for a Text layer.
+返回文本图层的行距值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -445,19 +449,20 @@ Number
 
 `text.sourceText.style.leadingType`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns the value of Leading Type for the first paragraph of a Text layer.
+返回文本图层第一段的行距类型值。
 
-#### Type
+#### 类型
 
-Predefined string. One of:
+预定义字符串。其中之一：
 
-- `"bottom-to-bottom"`
-- `"top-to-top"`
+* `"bottom-to-bottom"`
+* `"top-to-top"`
 
 ---
 
@@ -465,16 +470,17 @@ Predefined string. One of:
 
 `text.sourceText.style.leftMargin`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns the value of Left Margin of the first paragraph of a Text layer.
+返回文本图层第一段的左边距值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -482,20 +488,21 @@ Number
 
 `text.sourceText.style.lineJoin`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns the Line Join Type for a Text layer.
+返回文本图层的线连接类型。
 
-#### Type
+#### 类型
 
-Predefined string. One of:
+预定义字符串。其中之一：
 
-- `"bevel"`
-- `"miter"`
-- `"round"`
+* `"bevel"`
+* `"miter"`
+* `"round"`
 
 ---
 
@@ -503,16 +510,17 @@ Predefined string. One of:
 
 `text.sourceText.style.rightMargin`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns the value of Right Margin of the first paragraph of a Text layer.
+返回文本图层第一段的右边距值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -520,16 +528,17 @@ Number
 
 `text.sourceText.style.spaceAfter`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns the value of the Space After the first paragraph of a Text layer.
+返回文本图层第一段后的间距值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -537,16 +546,17 @@ Number
 
 `text.sourceText.style.spaceBefore`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns the value of the Space Before the first paragraph of a Text layer.
+返回文本图层第一段前的间距值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -554,13 +564,13 @@ Number
 
 `text.sourceText.style.strokeColor`
 
-#### Description
+#### 描述
 
-Returns the Stroke Color as RGB values on a scale from 0 - 1.0.
+返回描边颜色的 RGB 值，范围为 0 - 1.0。
 
-#### Type
+#### 类型
 
-Array of numbers
+数字数组
 
 ---
 
@@ -568,13 +578,13 @@ Array of numbers
 
 `text.sourceText.style.strokeWidth`
 
-#### Description
+#### 描述
 
-Returns the Stroke Width value for a Text layer.
+返回文本图层的描边宽度值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -582,13 +592,13 @@ Number
 
 `text.sourceText.style.tracking`
 
-#### Description
+#### 描述
 
-Returns the value of Tracking for a Text layer.
+返回文本图层的字间距值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -596,16 +606,17 @@ Number
 
 `text.sourceText.style.tsume`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns the Tsume value for a Text layer.
+返回文本图层的 Tsume 值。
 
-#### Type
+#### 类型
 
-Number (between `0` and `1`).
+数字（介于 `0` 和 `1` 之间）。
 
 ---
 
@@ -613,54 +624,56 @@ Number (between `0` and `1`).
 
 `text.sourceText.style.verticalScaling`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Returns the Vertical Scaling for a Text layer.
+返回文本图层的垂直缩放。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
-## Methods
+## 函数
 
 ### TextStyle.replaceText()
 
 `text.sourceText.style.replaceText(value[, startIndex, numOfCharacters])`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-This is used when you want to define (or inherit) a [Text Style](#text-style), while setting the content for a substring of the text.
+当你想定义（或继承）一个 [文本样式]() 时使用，同时设置文本子字符串的内容。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type  | Description |                                                                                                           |
-| ----------------- | ------ | ----------- | --------------------------------------------------------------------------------------------------------- |
-| `value`           | String | Required.   | The text to set.                                                                                          |
-| `startIndex`      | Number | Optional.   | The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number | Optional.   | The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型   | 描述   |                                                    |
+| ------------------- | ------ | ------ | -------------------------------------------------- |
+| `value`           | 字符串 | 必填。 | 要设置的文本。                                     |
+| `startIndex`      | 数字   | 可选。 | 要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字   | 可选。 | 要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
-#### Example
+#### 示例
 
-To create a custom style and then set a substring of the text within the expression:
+要创建一个自定义样式，然后在表达式中设置文本的子字符串：
 
 ```js
-// assume the value of the source text is "Old Text"
+// 假设源文本的值为 "Old Text"
 const referenceText = thisComp.layer("Source Layer Name").text.sourceText;
 const style = referenceText.getStyleAt(0,0);
 
-// This will change the text from "Old Text" to "NewText" as the first 4 characters are replaced.
+// 这将把文本从 "Old Text" 改为 "NewText"，因为前 4 个字符被替换了。
 style.replaceText("New", 0, 4);
 ```
 
@@ -670,23 +683,23 @@ style.replaceText("New", 0, 4);
 
 `text.sourceText.style.setAllCaps(value[, startIndex, numOfCharacters])`
 
-#### Description
+#### 描述
 
-Used to set the All Caps status.
+用于设置全部大写的状态。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type   |                                                     Description                                                     |
-| ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Boolean | Required. Whether to enable or disable All Caps.                                                                    |
-| `startIndex`      | Number  | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number  | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型   | 描述                                                     |
+| ------------------- | ------ | -------------------------------------------------------- |
+| `value`           | 布尔值 | 必填。是否启用或禁用全部大写。                           |
+| `startIndex`      | 数字   | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字   | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -694,23 +707,23 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setApplyFill(value[, startIndex, numOfCharacters])`
 
-#### Description
+#### 描述
 
-Used to set whether Fill Color is enabled.
+用于设置是否启用填充颜色。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type   |                                                     Description                                                     |
-| ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Boolean | Required. Whether to enable or disable Fill.                                                                        |
-| `startIndex`      | Number  | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number  | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型   | 描述                                                     |
+| ------------------- | ------ | -------------------------------------------------------- |
+| `value`           | 布尔值 | 必填。是否启用或禁用填充。                               |
+| `startIndex`      | 数字   | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字   | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -718,23 +731,23 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setApplyStroke(value[, startIndex, numOfCharacters])`
 
-#### Description
+#### 描述
 
-Used to set whether Stroke is enabled.
+用于设置是否启用描边。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type   |                                                     Description                                                     |
-| ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Boolean | Required. Whether to enable or disable Stroke.                                                                      |
-| `startIndex`      | Number  | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number  | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型   | 描述                                                     |
+| ------------------- | ------ | -------------------------------------------------------- |
+| `value`           | 布尔值 | 必填。是否启用或禁用描边。                               |
+| `startIndex`      | 数字   | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字   | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -742,23 +755,23 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setAutoLeading(value[, startIndex, numOfCharacters])`
 
-#### Description
+#### 描述
 
-Used to set the Auto Leading status.
+用于设置自动行距的状态。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type   |                                                     Description                                                     |
-| ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Boolean | Required. Whether to enable or disable Auto Leading.                                                                |
-| `startIndex`      | Number  | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number  | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型   | 描述                                                     |
+| ------------------- | ------ | -------------------------------------------------------- |
+| `value`           | 布尔值 | 必填。是否启用或禁用自动行距。                           |
+| `startIndex`      | 数字   | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字   | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -766,26 +779,27 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setBaselineDirection(value[, startIndex, numOfCharacters])`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Used to set the Baseline Direction.
+用于设置基线方向。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |                                       Type                                       |                                                     Description                                                     |
-| ----------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Predefined string as defined in [BaselineDirection](#textstylebaselinedirection) | The value to set for Baseline Direction.                                                                            |
-| `startIndex`      | Number                                                                           | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number                                                                           | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型                                        | 描述                                                     |
+| ------------------- | ------------------------------------------- | -------------------------------------------------------- |
+| `value`           | 预定义字符串，如[BaselineDirection]() 中所定义 | 要设置的基线方向值。                                     |
+| `startIndex`      | 数字                                        | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字                                        | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -793,23 +807,23 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setBaselineShift(value[, startIndex, numOfCharacters])`
 
-#### Description
+#### 描述
 
-Used to set the Baseline Shift to a specified value.
+用于将基线偏移设置为指定值。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type  |                                                     Description                                                     |
-| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Number | Required. The Baseline Shift value to set.                                                                          |
-| `startIndex`      | Number | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型 | 描述                                                     |
+| ------------------- | ---- | -------------------------------------------------------- |
+| `value`           | 数字 | 必填。要设置的基线偏移值。                               |
+| `startIndex`      | 数字 | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字 | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -817,26 +831,27 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setBaselineOption(value[, startIndex, numOfCharacters])`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Used to set the baseline option.
+用于设置基线选项。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |                                    Type                                    |                                                     Description                                                     |
-| ----------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Predefined string as defined in [BaselineOption](#textstylebaselineoption) | Required. The value to set for Baseline Option.                                                                     |
-| `startIndex`      | Number                                                                     | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number                                                                     | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型                                     | 描述                                                     |
+| ------------------- | ---------------------------------------- | -------------------------------------------------------- |
+| `value`           | 预定义字符串，如[BaselineOption]() 中所定义 | 必填。要设置的基线选项值。                               |
+| `startIndex`      | 数字                                     | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字                                     | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -844,26 +859,27 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setDigitSet(value[, startIndex, numOfCharacters])`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Used to set the Digit Set.
+用于设置数字集。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |                              Type                              |                                                     Description                                                     |
-| ----------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Predefined string as defined in [DigitSet](#textstyledigitset) | Required. The value to use for Digit Set.                                                                           |
-| `startIndex`      | Number                                                         | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number                                                         | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型                               | 描述                                                     |
+| ------------------- | ---------------------------------- | -------------------------------------------------------- |
+| `value`           | 预定义字符串，如[DigitSet]() 中所定义 | 必填。要使用的数字集值。                                 |
+| `startIndex`      | 数字                               | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字                               | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -871,25 +887,19 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setDirection(value)`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
 
-!!! warning
-    This method must be called after [TextStyle.setText()](#textstylesettext) if both are being used.
+用于设置整个文本图层的方向，可以是 `left-to-right` 或 `right-to-left`。
 
-#### Description
+#### 参数
 
-Used to set the Direction for the entire Text layer, either `left-to-right` or `right-to-left`.
+| 参数      | 类型                                | 描述           |
+| --------- | ----------------------------------- | -------------- |
+| `value` | 预定义字符串，如[Direction]() 中所定义 | 所需的方向值。 |
 
-#### Parameters
+#### 返回
 
-| Parameter |                               Type                               |           Description            |
-| --------- | ---------------------------------------------------------------- | -------------------------------- |
-| `value`   | Predefined string as defined in [Direction](#textstyledirection) | The desired value for Direction. |
-
-#### Returns
-
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -897,25 +907,19 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setEveryLineComposer(value)`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
 
-!!! warning
-    This method must be called after [TextStyle.setText()](#textstylesettext) if both are being used.
+用于启用或禁用整个文本图层的每行排版器。
 
-#### Description
+#### 参数
 
-Used to enable or disable the Every-Line Composer for the entire Text layer.
+| 参数      | 类型   | 描述                       |
+| --------- | ------ | -------------------------- |
+| `value` | 布尔值 | 是否启用或禁用每行排版器。 |
 
-#### Parameters
+#### 返回
 
-| Parameter |  Type   |                    Description                    |
-| --------- | ------- | ------------------------------------------------- |
-| `value`   | Boolean | Whether to enable or disable Every-Line Composer. |
-
-#### Returns
-
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -923,23 +927,23 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setFauxBold(value[, startIndex, numOfCharacters])`
 
-#### Description
+#### 描述
 
-Used to set the Faux Bold status.
+用于设置伪粗体状态。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type   |                                                     Description                                                     |
-| ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Boolean | Required. Whether to enable or disable Faux Bold.                                                                   |
-| `startIndex`      | Number  | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number  | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型   | 描述                                                     |
+| ------------------- | ------ | -------------------------------------------------------- |
+| `value`           | 布尔值 | 必填。是否启用或禁用伪粗体。                             |
+| `startIndex`      | 数字   | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字   | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -947,23 +951,23 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setFauxItalic(value[, startIndex, numOfCharacters])`
 
-#### Description
+#### 描述
 
-Used to set the Faux Italics status.
+用于设置伪斜体状态。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type   |                                                     Description                                                     |
-| ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Boolean | Required. Whether to enable or disable Faux Italics.                                                                |
-| `startIndex`      | Number  | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number  | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型   | 描述                                                     |
+| ------------------- | ------ | -------------------------------------------------------- |
+| `value`           | 布尔值 | 必填。是否启用或禁用伪斜体。                             |
+| `startIndex`      | 数字   | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字   | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -971,25 +975,25 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setFillColor(value[, startIndex, numOfCharacters])`
 
-#### Description
+#### 描述
 
-Used to set the text Fill Color.
+用于设置文本填充颜色。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-Keep in mind that [TextStyle.applyFill](#textstyleapplyfill) must be `true` in order for the fill color to show up. You can set it to `true` by enabling Fill in the Properties or Character panel, or by using [TextStyle.setApplyFill()](#textstylesetapplyfill).
+请记住，[TextStyle.applyFill]() 必须为 `true` 才能显示填充颜色。你可以通过在属性或字符面板中启用填充，或使用 [TextStyle.setApplyFill()]() 来将其设置为 `true`。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |       Type       |                                                     Description                                                     |
-| ----------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Array of numbers | Required. `[R, G, B]` with each value between `0.0` and `1.0`.                                                      |
-| `startIndex`      | Number           | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number           | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型     | 描述                                                      |
+| ------------------- | -------- | --------------------------------------------------------- |
+| `value`           | 数字数组 | 必填。`[R, G, B]`，每个值介于 `0.0` 和 `1.0` 之间。 |
+| `startIndex`      | 数字     | 可选。要替换的子字符串的起始索引。默认为 `0`。          |
+| `numOfCharacters` | 数字     | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。  |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -997,25 +1001,19 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setFirstLineIndent(value)`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
 
-!!! warning
-    This method must be called after [TextStyle.setText()](#textstylesettext) if both are being used.
+用于将文本图层的首行缩进设置为指定值。
 
-#### Description
+#### 参数
 
-Used to set the First Line Indent of a Text layer to a specified value.
+| 参数      | 类型 | 描述               |
+| --------- | ---- | ------------------ |
+| `value` | 数字 | 所需的首行缩进值。 |
 
-#### Parameters
+#### 返回
 
-| Parameter |  Type  |               Description                |
-| --------- | ------ | ---------------------------------------- |
-| `value`   | Number | The desired value for First Line Indent. |
-
-#### Returns
-
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -1023,23 +1021,23 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setFont(value[, startIndex, numOfCharacters])`
 
-#### Description
+#### 描述
 
-Used to set the font to a specified value.
+用于将字体设置为指定值。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type  |                                                     Description                                                     |
-| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | String | Required. The font to set.                                                                                          |
-| `startIndex`      | Number | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型   | 描述                                                     |
+| ------------------- | ------ | -------------------------------------------------------- |
+| `value`           | 字符串 | 必填。要设置的字体。                                     |
+| `startIndex`      | 数字   | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字   | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -1047,50 +1045,43 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setFontSize(value[, startIndex, numOfCharacters])`
 
-#### Description
+#### 描述
 
-Used to set the Font Size to a specified value.
+用于将字体大小设置为指定值。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type  |                                                     Description                                                     |
-| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Number | Required. The Font Size to set.                                                                                     |
-| `startIndex`      | Number | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型 | 描述                                                     |
+| ------------------- | ---- | -------------------------------------------------------- |
+| `value`           | 数字 | 必填。要设置的字体大小。                                 |
+| `startIndex`      | 数字 | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字 | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
-
 
 ### TextStyle.setHangingRoman()
 
 `text.sourceText.style.setHangingRoman(value)`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
 
-!!! warning
-    This method must be called after [TextStyle.setText()](#textstylesettext) if both are being used.
+用于启用或禁用整个文本图层的悬挂罗马标点符号。
 
-#### Description
+#### 参数
 
-Used to enable or disable Hanging Roman Punctuation for the entire Text layer.
+| 参数      | 类型   | 描述                             |
+| --------- | ------ | -------------------------------- |
+| `value` | 布尔值 | 是否启用或禁用悬挂罗马标点符号。 |
 
-#### Parameters
+#### 返回
 
-| Parameter |  Type   |                       Description                       |
-| --------- | ------- | ------------------------------------------------------- |
-| `value`   | Boolean | Whether to enable or disable Roman Hanging Punctuation. |
-
-#### Returns
-
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -1098,26 +1089,27 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setHorizontalScaling(value[, startIndex, numOfCharacters])`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Used to set the Horizontal Scaling to a specified value.
+用于将水平缩放设置为指定值。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type  |                                                     Description                                                     |
-| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Number | Required. The value to set the Horizontal Scaling.                                                                  |
-| `startIndex`      | Number | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型 | 描述                                                     |
+| ------------------- | ---- | -------------------------------------------------------- |
+| `value`           | 数字 | 必填。要设置的水平缩放值。                               |
+| `startIndex`      | 数字 | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字 | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -1125,28 +1117,19 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setJustification(value)`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
 
-!!! warning
-    This method must be called after [TextStyle.setText()](#textstylesettext) if both are being used.
+用于设置整个文本图层的对齐方式。
 
-#### Description
+:::warning 如果文本图层的 [TextStyle.direction](#textstyledirection) 设置为从右到左，对齐/两端对齐的左右值将反转。你可以使用属性或段落面板，或通过 [TextStyle.setDirection()](#textstylesetdirection) 来控制这一点。 :::#### 参数
 
-Used to set the Justification for the entire Text layer.
+| 参数      | 类型                                    | 描述               |
+| --------- | --------------------------------------- | ------------------ |
+| `value` | 预定义字符串，如[Justification]() 中所定义 | 所需的对齐方式值。 |
 
-!!! warning
-    The left and right values for alignment/justification will be reversed if the Text layer's [TextStyle.direction](#textstyledirection) is set to use right-to-left. You can control this using the Property or Paragraph panel, or via [TextStyle.setDirection()](#textstylesetdirection).
+#### 返回
 
-#### Parameters
-
-| Parameter |                                   Type                                   |               Description                |
-| --------- | ------------------------------------------------------------------------ | ---------------------------------------- |
-| `value`   | Predefined string as defined in [Justification](#textstylejustification) | The desired value for the Justification. |
-
-#### Returns
-
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -1154,25 +1137,26 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setKerning(value, characterIndex)`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Used to set the Kerning Value at the specifed character index.
+用于在指定字符索引处设置字距调整值。
 
-This will only affect the Text layer when [KerningType](#textstylekerningtype) is not set for the character index.
+只有当字符索引的 [KerningType]() 未设置时，才会影响文本图层。
 
-#### Parameters
+#### 参数
 
-|    Parameter     |  Type  |                          Description                           |
-| ---------------- | ------ | -------------------------------------------------------------- |
-| `value`          | Number | Required. The value to set the Kerning Value.                  |
-| `characterIndex` | Number | Required. The character index for the substring to be applied. |
+| 参数               | 类型 | 描述                               |
+| ------------------ | ---- | ---------------------------------- |
+| `value`          | 数字 | 必填。要设置的字距调整值。         |
+| `characterIndex` | 数字 | 必填。要应用的子字符串的字符索引。 |
 
-#### Returns
+#### 返回
 
-None
+无
 
 ---
 
@@ -1180,31 +1164,27 @@ None
 
 `text.sourceText.style.setKerningType(value[, startIndex, numOfCharacters])`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Used to set the Kerning Type.
+用于设置字距调整类型。
 
-The value will be applied to the entire Text layer unless a start index and number of characters are specified.
+除非指定了起始索引和字符数，否则该值将应用于整个文本图层。
 
-!!! note
-    `manual` is not a valid value for this method. To set manual kerning, use [TextStyle.setKerning()](#textstylesetkerning).
+:::note 另外，请注意，自动字距调整将优先于手动字距调整。 :::#### 参数
 
-    Also, note that automatic kerning will take a precendence over manual kerning.
+| 参数                | 类型                                                   | 描述                                                     |
+| ------------------- | ------------------------------------------------------ | -------------------------------------------------------- |
+| `value`           | `metrics` 或 `optical`，如 [KerningType]() 中所定义。 | 必填。要设置的字距调整类型值。                           |
+| `startIndex`      | 数字                                                   | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字                                                   | 可选。要更改的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Parameters
+#### 返回
 
-|     Parameter     |                                    Type                                     |                                                    Description                                                     |
-| ----------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `value`           | `metrics` or `optical`, as defined in [KerningType](#textstylekerningtype). | Required. The value to set for Kerning Type.                                                                       |
-| `startIndex`      | Number                                                                      | Optional. The start index for the substring to be replaced. Defaults to `0`.                                       |
-| `numOfCharacters` | Number                                                                      | Optional. The length of the substring to be changed. Defaults to the number of characters until end of the string. |
-
-#### Returns
-
-None
+无
 
 ---
 
@@ -1212,25 +1192,25 @@ None
 
 `text.sourceText.style.setLeading(value[, startIndex, numOfCharacters])`
 
-#### Description
+#### 描述
 
-Used to set the Leading to a specified value.
+用于将行距设置为指定值。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-Keep in mind that [TextStyle.isAutoLeading](#textstyleisautoleading) must be `false` in order for `setLeading()` to have any visible affect. You can set Leading to a value other than Auto in the Properties or Character panel, or via [TextStyle.setAutoLeading()](#textstylesetautoleading).
+请记住，[TextStyle.isAutoLeading]() 必须为 `false`，`setLeading()` 才能产生任何可见效果。你可以通过在属性或字符面板中将行距设置为非自动值，或通过 [TextStyle.setAutoLeading()]() 来设置。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type  |                                                     Description                                                     |
-| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Number | Required. The Leading value to set.                                                                                 |
-| `startIndex`      | Number | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型 | 描述                                                     |
+| ------------------- | ---- | -------------------------------------------------------- |
+| `value`           | 数字 | 必填。要设置的行距值。                                   |
+| `startIndex`      | 数字 | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字 | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -1238,25 +1218,19 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setLeadingType(value)`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
 
-!!! warning
-    This method must be called after [TextStyle.setText()](#textstylesettext) if both are being used.
+用于设置整个文本图层的行距类型。
 
-#### Description
+#### 参数
 
-Used to set the Leading Type for the entire Text layer.
+| 参数      | 类型                                  | 描述               |  |
+| --------- | ------------------------------------- | ------------------ | - |
+| `value` | 预定义字符串，如[LeadingType]() 中所定义 | 所需的行距类型值。 |  |
 
-#### Parameters
+#### 返回
 
-| Parameter |                                 Type                                 |             Description             |     |
-| --------- | -------------------------------------------------------------------- | ----------------------------------- | --- |
-| `value`   | Predefined string as defined in [LeadingType](#textstyleleadingtype) | The desired value for Leading Type. |     |
-
-#### Returns
-
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -1264,25 +1238,19 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setLeftMargin(value)`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
 
-!!! warning
-    This method must be called after [TextStyle.setText()](#textstylesettext) if both are being used.
+用于将文本图层的左边距设置为指定值。
 
-#### Description
+#### 参数
 
-Used to set the Left Margin of a Text layer to a specified value.
+| 参数      | 类型 | 描述             |
+| --------- | ---- | ---------------- |
+| `value` | 数字 | 所需的左边距值。 |
 
-#### Parameters
+#### 返回
 
-| Parameter |  Type  |            Description             |
-| --------- | ------ | ---------------------------------- |
-| `value`   | Number | The desired value for Left Margin. |
-
-#### Returns
-
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -1290,26 +1258,27 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setLigature(value[, startIndex, numOfCharacters])`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Used to enable or disable ligatures.
+用于启用或禁用连字。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type   |                                                     Description                                                     |
-| ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Boolean | Required. Whether to enable or disable ligatures.                                                                   |
-| `startIndex`      | Number  | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number  | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型   | 描述                                                     |
+| ------------------- | ------ | -------------------------------------------------------- |
+| `value`           | 布尔值 | 必填。是否启用或禁用连字。                               |
+| `startIndex`      | 数字   | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字   | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -1317,26 +1286,27 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setLineJoin(value[, startIndex, numOfCharacters])`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Used to set the Line Join Type to a specified value.
+用于将线连接类型设置为指定值。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |                              Type                              |                                                     Description                                                     |
-| ----------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Predefined string as defined in [LineJoin](#textstylelinejoin) | Required. The value to set for Line Join Type.                                                                      |
-| `startIndex`      | Number                                                         | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number                                                         | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型                               | 描述                                                     |
+| ------------------- | ---------------------------------- | -------------------------------------------------------- |
+| `value`           | 预定义字符串，如[LineJoin]() 中所定义 | 必填。要设置的线连接类型值。                             |
+| `startIndex`      | 数字                               | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字                               | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -1344,25 +1314,19 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setRightMargin(value)`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
 
-!!! warning
-    This method must be called after [TextStyle.setText()](#textstylesettext) if both are being used.
+用于将文本图层的右边距设置为指定值。
 
-#### Description
+#### 参数
 
-Used to set the Right Margin of a Text layer to a specified value.
+| 参数      | 类型 | 描述             |
+| --------- | ---- | ---------------- |
+| `value` | 数字 | 所需的右边距值。 |
 
-#### Parameters
+#### 返回
 
-| Parameter |  Type  |             Description             |
-| --------- | ------ | ----------------------------------- |
-| `value`   | Number | The desired value for Right Margin. |
-
-#### Returns
-
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -1370,23 +1334,23 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setSmallCaps(value[, startIndex, numOfCharacters])`
 
-#### Description
+#### 描述
 
-Used to set the Small Caps status.
+用于设置小型大写字母的状态。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type   |                                                     Description                                                     |
-| ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Boolean | Required. Whether to enable or disable Small Caps.                                                                  |
-| `startIndex`      | Number  | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number  | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型   | 描述                                                     |
+| ------------------- | ------ | -------------------------------------------------------- |
+| `value`           | 布尔值 | 必填。是否启用或禁用小型大写字母。                       |
+| `startIndex`      | 数字   | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字   | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -1394,25 +1358,19 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setSpaceAfter(value)`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
 
-!!! warning
-    This method must be called after [TextStyle.setText()](#textstylesettext) if both are being used.
+用于将文本图层的段后间距属性设置为指定值。
 
-#### Description
+#### 参数
 
-Used to set the Space After attribute of a Text layer to a specified value.
+| 参数      | 类型 | 描述                   |
+| --------- | ---- | ---------------------- |
+| `value` | 数字 | 所需的段后间距属性值。 |
 
-#### Parameters
+#### 返回
 
-| Parameter |  Type  |                   Description                    |
-| --------- | ------ | ------------------------------------------------ |
-| `value`   | Number | The desired value for the Space After attribute. |
-
-#### Returns
-
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -1420,25 +1378,19 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setSpaceBefore(value)`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
 
-!!! warning
-    This method must be called after [TextStyle.setText()](#textstylesettext) if both are being used.
+用于将文本图层的段前间距属性设置为指定值。
 
-#### Description
+#### 参数
 
-Used to set the Space Before attribute of a Text layer to a specified value.
+| 参数      | 类型 | 描述                   |
+| --------- | ---- | ---------------------- |
+| `value` | 数字 | 所需的段前间距属性值。 |
 
-#### Parameters
+#### 返回
 
-| Parameter |  Type  |                    Description                    |
-| --------- | ------ | ------------------------------------------------- |
-| `value`   | Number | The desired value for the Space Before attribute. |
-
-#### Returns
-
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -1446,25 +1398,25 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setStrokeColor(value[, startIndex, numOfCharacters])`
 
-#### Description
+#### 描述
 
-Used to set the Stroke Color.
+用于设置描边颜色。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-Keep in mind that [TextStyle.applyStroke](#textstyleapplystroke) must be `true` and [TextStyle.strokeWidth](#textstylestrokewidth) must be greater than zero in order for any stroke color to be shown. You can set these by enabling Stroke or increasing Stroke Width in the Properties or Character panel, or by using [TextStyle.setApplyStroke()](#textstylesetapplystroke) and [TextStyle.setStrokeWidth()](#textstylesetstrokewidth), respectively.
+请记住，[TextStyle.applyStroke]() 必须为 `true`，并且 [TextStyle.strokeWidth]() 必须大于零才能显示任何描边颜色。你可以通过在属性或字符面板中启用描边或增加描边宽度，或分别使用 [TextStyle.setApplyStroke()]() 和 [TextStyle.setStrokeWidth()]() 来设置这些值。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |       Type       |                                                     Description                                                     |
-| ----------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Array of numbers | Required. `[R, G, B]` with each value between `0.0` and `1.0`.                                                      |
-| `startIndex`      | Number           | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number           | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型     | 描述                                                      |
+| ------------------- | -------- | --------------------------------------------------------- |
+| `value`           | 数字数组 | 必填。`[R, G, B]`，每个值介于 `0.0` 和 `1.0` 之间。 |
+| `startIndex`      | 数字     | 可选。要替换的子字符串的起始索引。默认为 `0`。          |
+| `numOfCharacters` | 数字     | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。  |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -1472,25 +1424,25 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setStrokeWidth(value[, startIndex, numOfCharacters])`
 
-#### Description
+#### 描述
 
-Used to set the Stroke Width to a specified value.
+用于将描边宽度设置为指定值。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-Keep in mind that [TextStyle.applyStroke](#textstyleapplystroke) must be `true` in order to see any change in stroke width. You can set this either by enabling Stroke in the Properties or Character panel, or via [TextStyle.setApplyStroke()](#textstylesetapplystroke).
+请记住，[TextStyle.applyStroke]() 必须为 `true` 才能看到描边宽度的任何变化。你可以通过在属性或字符面板中启用描边，或通过 [TextStyle.setApplyStroke()]() 来设置此值。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type  |                                                     Description                                                     |
-| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Number | Required. The value to set the Stroke Width.                                                                        |
-| `startIndex`      | Number | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型 | 描述                                                     |
+| ------------------- | ---- | -------------------------------------------------------- |
+| `value`           | 数字 | 必填。要设置的描边宽度值。                               |
+| `startIndex`      | 数字 | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字 | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -1498,23 +1450,23 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setText(value)`
 
-#### Description
+#### 描述
 
-This is used when you want to define (or inherit) a [Text Style](#text-style) while setting the text content separately.
+当你想定义（或继承）一个 [文本样式]() 时使用，同时单独设置文本内容。
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |   Description    |
-| --------- | ------ | ---------------- |
-| `value`   | String | The text to set. |
+| 参数      | 类型   | 描述           |
+| --------- | ------ | -------------- |
+| `value` | 字符串 | 要设置的文本。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
-#### Examples
+#### 示例
 
-To inherit the style and content from another layer:
+要从另一个图层继承样式和内容：
 
 ```js
 const referenceText = thisComp.layer("Source Layer Name").text.sourceText;
@@ -1523,7 +1475,7 @@ const style = referenceText.getStyleAt(0, 0);
 style.setText(referenceText);
 ```
 
-To create a custom style and then set the text within the expression:
+要创建一个自定义样式，然后在表达式中设置文本：
 
 ```js
 text.sourceText
@@ -1539,23 +1491,23 @@ text.sourceText
 
 `text.sourceText.style.setTracking(value[, startIndex, numOfCharacters])`
 
-#### Description
+#### 描述
 
-Used to set the Tracking to a specified value.
+用于将字间距设置为指定值。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type  |                                                     Description                                                     |
-| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Number | Required. The Tracking value to set.                                                                                |
-| `startIndex`      | Number | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型 | 描述                                                     |
+| ------------------- | ---- | -------------------------------------------------------- |
+| `value`           | 数字 | 必填。要设置的字间距值。                                 |
+| `startIndex`      | 数字 | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字 | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。
 
 ---
 
@@ -1563,26 +1515,27 @@ A [TextStyle object](#text-style).
 
 `text.sourceText.style.setTsume(value[, startIndex, numOfCharacters])`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Used to set the Tsume to a specified value.
+用于将 Tsume 设置为指定值。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type  |                                                     Description                                                     |
-| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Number | Required. The value to set the Tsume, between `0` and `100`.                                                        |
-| `startIndex`      | Number | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型 | 描述                                                     |
+| ------------------- | ---- | -------------------------------------------------------- |
+| `value`           | 数字 | 必填。要设置的 Tsume 值，介于 `0` 和 `100` 之间。    |
+| `startIndex`      | 数字 | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字 | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-None
+无
 
 ---
 
@@ -1590,23 +1543,24 @@ None
 
 `text.sourceText.style.setVerticalScaling(value[, startIndex, numOfCharacters])`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+该方法添加于 After Effects 25.0.
+:::
 
-#### Description
+#### 描述
 
-Used to set the Vertical Scaling to a specified value.
+用于将垂直缩放设置为指定值。
 
-The value will be set for the entire Text layer unless `startIndex` and `numOfCharacters` are specified.
+除非指定了 `startIndex` 和 `numOfCharacters`，否则该值将应用于整个文本图层。
 
-#### Parameters
+#### 参数
 
-|     Parameter     |  Type  |                                                     Description                                                     |
-| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------- |
-| `value`           | Number | Required. The value to set the Vertical Scaling.                                                                    |
-| `startIndex`      | Number | Optional. The start index for the substring to be replaced. Defaults to `0`.                                        |
-| `numOfCharacters` | Number | Optional. The length of the substring to be replaced. Defaults to the number of characters until end of the string. |
+| 参数                | 类型 | 描述                                                     |
+| ------------------- | ---- | -------------------------------------------------------- |
+| `value`           | 数字 | 必填。要设置的垂直缩放值。                               |
+| `startIndex`      | 数字 | 可选。要替换的子字符串的起始索引。默认为 `0`。         |
+| `numOfCharacters` | 数字 | 可选。要替换的子字符串的长度。默认为字符串末尾的字符数。 |
 
-#### Returns
+#### 返回
 
-A [TextStyle object](#text-style).
+一个 [TextStyle 对象]()。

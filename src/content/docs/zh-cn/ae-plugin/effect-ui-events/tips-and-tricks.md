@@ -1,7 +1,6 @@
 ---
 title: tips-and-tricks
 ---
-
 # Tips & Tricks
 
 ## UI Performance

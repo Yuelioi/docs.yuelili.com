@@ -1,16 +1,15 @@
 ---
 title: viewer
 ---
-
 # Viewer object
 
 `app.activeViewer`
 
-#### Description
+#### 描述
 
 The Viewer object represents a Composition, Layer, or Footage panel.
 
-#### Example
+#### 示例
 
 This maximizes the active viewer panel, and displays its type if it contains a composition.
 
@@ -24,19 +23,19 @@ if (activeViewer.type === ViewerType.VIEWER_COMPOSITION) {
 
 ---
 
-## Attributes
+## 属性
 
 ### Viewer.active
 
 `viewer.active`
 
-#### Description
+#### 描述
 
 When `true`, indicates if the viewer panel is focused, and thereby frontmost.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -44,11 +43,11 @@ Boolean; read-only.
 
 `viewer.activeViewIndex`
 
-#### Description
+#### 描述
 
 The index of the current active [View object](../view), in the [Viewer.views](#viewerviews) array.
 
-#### Type
+#### 类型
 
 Integer; read/write.
 
@@ -58,11 +57,11 @@ Integer; read/write.
 
 `viewer.maximized`
 
-#### Description
+#### 描述
 
 When `true`, indicates if the viewer panel is at its maximized size.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -72,13 +71,13 @@ Boolean; read/write.
 
 `viewer.views`
 
-#### Description
+#### 描述
 
 All of the Views associated with this viewer.
 
-#### Type
+#### 类型
 
-Array of [View object](../view) objects; read-only.
+Array of [View object](../view) objects; 只读.
 
 ---
 
@@ -86,13 +85,13 @@ Array of [View object](../view) objects; read-only.
 
 `viewer.type`
 
-#### Description
+#### 描述
 
 The content in the viewer panel.
 
-#### Type
+#### 类型
 
-A `ViewerType` enumerated value; read-only. One of:
+A `ViewerType` enumerated value; 只读. One of:
 
 - `ViewerType.VIEWER_COMPOSITION`
 - `ViewerType.VIEWER_LAYER`
@@ -100,21 +99,21 @@ A `ViewerType` enumerated value; read-only. One of:
 
 ---
 
-## Methods
+## 函数
 
 ### Viewer.setActive()
 
 `viewer.setActive()`
 
-#### Description
+#### 描述
 
 Moves the viewer panel to the front and places focus on it, making it active.
 Calling this method will set the [viewer's active attribute](#vieweractive) to `true`.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Boolean indicating if the viewer panel was made active.

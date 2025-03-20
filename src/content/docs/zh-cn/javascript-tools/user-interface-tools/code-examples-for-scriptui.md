@@ -1,12 +1,11 @@
 ---
 title: code-examples-for-scriptui
 ---
-
 # Code examples for ScriptUI
 
 The sample code distributed with the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) includes code examples that specifically demonstrate different ways of building and populating a ScriptUI dialog.
 
-|                                                                  Building ScriptUI dialogs                                                                  |                                                                                                                                                        Description                                                                                                                                                        |
+|                                                                  Building ScriptUI dialogs                                                                  |                                                                                                                                                        描述                                                                                                                                                        |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [SnpCreateDialog.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SnpCreateDialog.jsx)                   | Creates a very simple, modeless dialog (a palette) with OK and Cancel button behavior.                                                                                                                                                                                                                                    |
 | [SnpCreateUIAddMethod.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SnpCreateUIAddMethod.jsx)         | Shows how to add controls to a dialog using the add method.                                                                                                                                                                                                                                                               |

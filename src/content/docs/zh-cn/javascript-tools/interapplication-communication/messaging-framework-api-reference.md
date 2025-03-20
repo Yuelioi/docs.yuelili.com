@@ -1,7 +1,6 @@
 ---
 title: messaging-framework-api-reference
 ---
-
 # Messaging framework API reference
 
 This application programming interface (API) defines a communication protocol between message-enabled applications. These objects are available to all ExtendScript scripts when any of the applications is loaded.
@@ -14,7 +13,7 @@ The messaging API defines the BridgeTalk class. Static properties and methods of
 
 The sample code distributed with the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) includes these code examples that specifically demonstrate the use of interapplication messaging:
 
-|                                                             Interapplication messaging example                                                              |                                                      Description                                                       |
+|                                                             Interapplication messaging example                                                              |                                                      描述                                                       |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | [MessagingBetweenApps.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/MessagingBetweenApps.jsx)         | Shows how to send a message to a Creative Suite application and receive a response.                                    |
 | [MessageSendingToInDesign.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/MessageSendingToInDesign.jsx) | Sends message to InDesign through BridgeTalk.                                                                          |

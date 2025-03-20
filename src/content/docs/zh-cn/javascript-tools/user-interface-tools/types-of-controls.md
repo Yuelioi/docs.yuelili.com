@@ -1,7 +1,6 @@
 ---
 title: types-of-controls
 ---
-
 # Types of controls
 
 The following sections introduce the types of controls you can add to a `Window` or other container element (`panel` or `group`). For details of the properties and functions, and of how to create each type of element, see [Control object constructors](control-objects.md#control-object-constructors).
@@ -134,8 +133,9 @@ dlg.msgPnl.msgEt = dlg.msgPnl.add( "edittext", undefined, "<your message here>",
 dlg.show();
 ```
 
-!!! note
-    The creation property on the second EditText field, `multiline: true`, indicates a field in which a long text string can be entered. The text wraps to appear as multiple lines.
+:::note
+The creation property on the second EditText field, `multiline: true`, indicates a field in which a long text string can be entered. The text wraps to appear as multiple lines.
+:::
 
 ---
 
@@ -143,8 +143,9 @@ dlg.show();
 
 Allows users to enter a decimal number, which is returned to the script when the dialog is dismissed. The value entered is validated for being a localized number format and checked against a lower and upper boundary when the control loses focus. Text in EditNumber elements can be selected, copied, and pasted.
 
-!!! note
-    This functionality was added in Photoshop 20.0 (CC 2019), and may not exist in other hosts.
+:::note
+This functionality was added in Photoshop 20.0 (CC 2019), and may not exist in other hosts.
+:::
 
 - Set the `text` property to assign the initial displayed number in the element, and read it to obtain the current number value, as entered or modified by the user.
 - Set the `textselection` property to replace the current selection with new text, or to insert text at the cursor (insertion point). Read this property to obtain the current selection, if any.
@@ -161,8 +162,9 @@ dlg.msgPnl.msgEt = dlg.msgPnl.add( "editnumber", undefined, 2025, 2000, 2100 );
 dlg.show();
 ```
 
-!!! note
-    Decimal numbers like `2.5` are accepted for minimum and maximum values.
+:::note
+Decimal numbers like `2.5` are accepted for minimum and maximum values.
+:::
 
 ---
 
@@ -260,7 +262,7 @@ You can specify the choice items on creation of the list object, or afterward us
 
 Items added to or inserted into any type of list control are `ListItem` objects, with properties that can be manipulated from a script. ListItem elements can be of the following types:
 
-|    Type     |                                                                                         Description                                                                                          |
+|    类型     |                                                                                         描述                                                                                          |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `item`      | The typical item in any type of list. It displays text or an image, and can be selected. To display an image, set the item object's image property; [Displaying images](#displaying-images). |
 | `separator` | A separator is a nonselectable visual element in a drop-down list. Although it has a text property, the value is ignored, and the item is displayed as a horizontal line.                    |

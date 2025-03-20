@@ -1,7 +1,6 @@
 ---
 title: symbol-export
 ---
-
 # Exporting Symbols in Effects
 
 The After Effects team recently became aware of an issue with conflicting symbols that violate the C++ language One Definition Rule (ODR).

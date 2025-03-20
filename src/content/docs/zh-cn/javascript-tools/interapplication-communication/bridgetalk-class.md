@@ -1,7 +1,6 @@
 ---
 title: bridgetalk-class
 ---
-
 # BridgeTalk class
 
 Static properties and methods of this class provide a way for your script to determine basic messaging system information before you create any specific message objects. Static methods allow you to check if an application is installed and is already running, and to launch the application. A callback defined on the class determines how the application processes incoming messages.
@@ -12,12 +11,13 @@ You can access static properties and methods in the BridgeTalk class, which is a
 var thisApp = BridgeTalk.appName;
 ```
 
-!!! note
-    You must instantiate the BridgeTalk class to create the BridgeTalk message object, which is used to send message packets between applications. Dynamic properties and methods can be accessed only in instances.
+:::note
+You must instantiate the BridgeTalk class to create the BridgeTalk message object, which is used to send message packets between applications. Dynamic properties and methods can be accessed only in instances.
+:::
 
 ---
 
-## Attributes
+## 属性
 
 The BridgeTalk class provides these static properties, which are available in the global namespace:
 
@@ -25,13 +25,13 @@ The BridgeTalk class provides these static properties, which are available in th
 
 `BridgeTalk.appInstance`
 
-#### Description
+#### 描述
 
 The instance identifier of an application launched by the messaging framework, the instance portion of an application specifier; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).
 
 Used only for those applications, such as InDesign, that support launching and running multiple instances.
 
-#### Type
+#### 类型
 
 String. Read only.
 
@@ -41,11 +41,11 @@ String. Read only.
 
 `BridgeTalk.appLocale`
 
-#### Description
+#### 描述
 
 The locale of this application, the locale portion of an application specifier; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers). When a message is sent, this is the locale of the sending application.
 
-#### Type
+#### 类型
 
 String. Read only.
 
@@ -55,11 +55,11 @@ String. Read only.
 
 `BridgeTalk.appName`
 
-#### Description
+#### 描述
 
 The name of this application, the appname portion of an application specifier; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers). When a message is sent, this is the name of the sending application.
 
-#### Type
+#### 类型
 
 String. Read only.
 
@@ -69,11 +69,11 @@ String. Read only.
 
 `BridgeTalk.appSpecifier`
 
-#### Description
+#### 描述
 
 A lower-case string containing the complete specifier for this application; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).
 
-#### Type
+#### 类型
 
 String.
 
@@ -83,7 +83,7 @@ String.
 
 `BridgeTalk.appStatus`
 
-#### Description
+#### 描述
 
 The current processing status of this application. One of:
 
@@ -91,7 +91,7 @@ The current processing status of this application. One of:
 - `idle`: The application is currently idle, but processes messages regularly.
 - `not installed`: The application is not installed.
 
-#### Type
+#### 类型
 
 String. Read only.
 
@@ -101,11 +101,11 @@ String. Read only.
 
 `BridgeTalk.appVersion`
 
-#### Description
+#### 描述
 
 The version number of this application, the version portion of an application specifier; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers). When a message is sent, this is the version of the sending application.
 
-#### Type
+#### 类型
 
 String. Read only.
 
@@ -115,9 +115,9 @@ String. Read only.
 
 `BridgeTalk.onReceive`
 
-#### Description
+#### 描述
 
-#### Returns
+#### 返回
 
 callback function that this application applies to unsolicited incoming messages. The default function evaluates the body of the received message and returns the result of evaluation. To change the default behavior, set this to a function definition in the following form:
 
@@ -129,16 +129,17 @@ BridgeTalk.onReceive = function( bridgeTalkObject ) {
 
 The body property of the received message object contains the received data. The function can return any type. See [Handling unsolicited messages](communicating-through-messages.md#handling-unsolicited-messages).
 
-!!! note
-    This function is not applied to a message that is received in response to a message sent from this application. Response messages are processed by the onResult, onReceived, or onError callbacks associated with the sent message.
+:::note
+This function is not applied to a message that is received in response to a message sent from this application. Response messages are processed by the onResult, onReceived, or onError callbacks associated with the sent message.
+:::
 
-#### Type
+#### 类型
 
 Function
 
 ---
 
-## Methods
+## 函数
 
 The BridgeTalk class provides these static methods, which are available in the global namespace:
 
@@ -146,19 +147,19 @@ The BridgeTalk class provides these static methods, which are available in the g
 
 `BridgeTalk.bringToFrontapp)`
 
-#### Description
+#### 描述
 
 Brings all windows of the specified application to the front of the screen.
 
 In Mac OS, an application can be running but have no windows open. In this case, calling this function might or might not open a new window, depending on the application. For Adobe Bridge, it opens a new browser window.
 
-#### Parameters
+#### 参数
 
-| Parameter |                                           Type                                           |              Description               |
+| 参数 |                                           类型                                           |              描述               |
 | --------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
 | `app`     | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -168,17 +169,17 @@ Nothing
 
 `BridgeTalk.getAppPathapp)`
 
-#### Description
+#### 描述
 
 Retrieves the full path of the executable file for a specified application.
 
-#### Parameters
+#### 参数
 
-| Parameter |                                           Type                                           |              Description               |
+| 参数 |                                           类型                                           |              描述               |
 | --------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
 | `app`     | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
 
-#### Returns
+#### 返回
 
 String
 
@@ -188,21 +189,21 @@ String
 
 `BridgeTalk.getDisplayNameapp)`
 
-#### Description
+#### 描述
 
 Returns a localized display name for an application, or `null` if the application is not installed. For example:
 
-#### Parameters
+#### 参数
 
-| Parameter |                                           Type                                           |              Description               |
+| 参数 |                                           类型                                           |              描述               |
 | --------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
 | `app`     | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
 
-#### Returns
+#### 返回
 
 String
 
-#### Example
+#### 示例
 
 ```javascript
 BridgeTalk.getDisplayName("photoshop-10.0");
@@ -215,33 +216,27 @@ BridgeTalk.getDisplayName("photoshop-10.0");
 
 `BridgeTalk.getSpecifierappName[, version][, locale])`
 
-#### Description
+#### 描述
 
 Retrieves a complete application specifier.
 
-#### Parameters
+#### 参数
 
-+-----------+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter |                      Type                       |                                                                      Description                                                                       |
-+===========+=================================================+========================================================================================================================================================+
+| 参数 |                      类型                       |                                                                      描述                                                                       |
+|-----------|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `appName` | The base name of the application to search for. |                                                                                                                                                        |
-+-----------+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `version` | Number                                          | Optional. The specific version number to search for.                                                                                                   |
 |           |                                                 | If `0` or not supplied, returns the most recent version.                                                                                               |
 |           |                                                 | If negative, returns the highest version up to and including the absolute value.                                                                       |
-|           |                                                 |                                                                                                                                                        |
 |           |                                                 | If a major version is specified, returns the highest minor-version variation. For example, if Photoshop CS versions 9, 9.1, and 10 are installed:      |
-|           |                                                 |                                                                                                                                                        |
 |           |                                                 | <pre lang="javascript">BridgeTalk.Specifier( "photoshop", "9" )<br/> => ["photoshop-9.1"]<br/></pre>                                                   |
-+-----------+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `locale`  | String                                          | Optional. The specific locale to search for. If not supplied and multiple language versions are installed, prefers the version for the current locale. |
-+-----------+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#### Returns
+#### 返回
 
 [Application specifier](application-and-namespace-specifiers.md#application-specifiers) for a messaging-enabled application version installed on this computer, or `null` if the requested version of the application is not installed.
 
-#### Example
+#### 示例
 
 For example, assuming installed applications include Photoshop CS4 11.0 `en_us`, Photoshop CS2 8.5 `de_de`, Photoshop CS2 9.0 `de_de`, and Photoshop CS2 9.5 `de_de`, and that the current locale is `en_US`
 
@@ -268,17 +263,17 @@ BridgeTalk.getSpecifier ("photoshop", 8);
 
 `BridgeTalk.getStatus(targetSpec)`
 
-#### Description
+#### 描述
 
 Retrieves the processing status of an application.
 
-#### Parameters
+#### 参数
 
-|  Parameter   |                                           Type                                           |                                                         Description                                                          |
+|  参数   |                                           类型                                           |                                                         描述                                                          |
 | ------------ | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | `targetSpec` | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | Optional. A specifier for the target application. If not supplied, returns the processing status of the current application. |
 
-#### Returns
+#### 返回
 
 String, one of:
 
@@ -295,31 +290,23 @@ String, one of:
 
 `BridgeTalk.getTargets([version],[locale])`
 
-#### Description
+#### 描述
 
 Retrieves a list of messaging-enabled applications installed on this computer.
 
-#### Parameters
+#### 参数
 
-+-----------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter |  Type  |                                                                                                     Description                                                                                                     |
-+===========+========+=====================================================================================================================================================================================================================+
+| 参数 |  类型  |                                                                                                     描述                                                                                                     |
+|-----------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `version` | Number | Optional. The specific version number to search for, or `null` to return the most appropriate version (matching, most recent, or running), with version information.                                                |
-|           |        |                                                                                                                                                                                                                     |
 |           |        | Specify only a major version number to return the highest minor-version variation.                                                                                                                                  |
-|           |        |                                                                                                                                                                                                                     |
 |           |        | For example, if Photoshop CS versions 9, 9.5, and 10 are installed                                                                                                                                                  |
-|           |        |                                                                                                                                                                                                                     |
 |           |        | <pre lang="javascript">BridgeTalk.getTargets( "9" )<br/>=> [photoshop-9.5]</pre>                                                                                                                                    |
-|           |        |                                                                                                                                                                                                                     |
 |           |        | Specify a negative value to return all versions up to the absolute value of the version number. For example                                                                                                         |
-|           |        |                                                                                                                                                                                                                     |
 |           |        | <pre lang="javascript">BridgeTalk.getTargets( "-9.9" )<br/>=> [photoshop-9.0, photoshop-9.5]</pre>                                                                                                                  |
-+-----------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `locale`  | String | Optional. The specific locale to search for, or null to `return` applications for all locales, with locale information. If not supplied when version is supplied, returns specifiers with version information only. |
-+-----------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#### Returns
+#### 返回
 
 Returns an array of [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).
 
@@ -327,7 +314,7 @@ Returns an array of [Application specifiers](application-and-namespace-specifier
 - If locale is supplied, specifiers include the full name, with both version and locale information.
 - If neither version nor locale is supplied, returns base specifiers with neither version nor locale information, but tries to find the most appropriate version and locale; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).
 
-#### Example
+#### 示例
 
 For example, assuming installed applications include Photoshop CS3 10.0 `en_US`, Photoshop CS4 11.0 `en_us`, and Illustrator CS4 14.0 `de_de`
 
@@ -354,17 +341,17 @@ BridgeTalk.getTargets( null, null );
 
 `BridgeTalk.isRunning(specifier)`
 
-#### Description
+#### 描述
 
 Checks whether a given application is running and active on the local computer.
 
-#### Parameters
+#### 参数
 
-|  Parameter  |                                           Type                                           |              Description               |
+|  参数  |                                           类型                                           |              描述               |
 | ----------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
 | `specifier` | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
 
-#### Returns
+#### 返回
 
 Boolean
 
@@ -374,18 +361,18 @@ Boolean
 
 `BridgeTalk.launch(specifier[, where])`
 
-#### Description
+#### 描述
 
 Launches the given application on the local computer. It is not necessary to launch an application explicitly in order to send it a message; sending a message to an application that is not running automatically launches it.
 
-#### Parameters
+#### 参数
 
-|  Parameter  |                                           Type                                           |                                                        Description                                                         |
+|  参数  |                                           类型                                           |                                                        描述                                                         |
 | ----------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | `specifier` | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application                                                                                     |
 | `where`     | Unknown.                                                                                 | Optional. If the value "background" is specified, the application's main window is not brought to the front of the screen. |
 
-#### Returns
+#### 返回
 
 Boolean. `true` if the application has already been launched, `false` if it was launched by this call.
 
@@ -395,17 +382,17 @@ Boolean. `true` if the application has already been launched, `false` if it was 
 
 `BridgeTalk.loadAppScript(specifier)`
 
-#### Description
+#### 描述
 
 Loads the startup script for an application from the common StartupScripts folders. Use to implement late loading of startup scripts.
 
-#### Parameters
+#### 参数
 
-|  Parameter  |                                           Type                                           |              Description               |
+|  参数  |                                           类型                                           |              描述               |
 | ----------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
 | `specifier` | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
 
-#### Returns
+#### 返回
 
 Boolean. `true` if the script was successfully loaded.
 
@@ -415,25 +402,21 @@ Boolean. `true` if the script was successfully loaded.
 
 `BridgeTalk.ping(specifier, pingRequest)`
 
-#### Description
+#### 描述
 
 Sends a message to another application to determine whether it can be contacted.
 
-#### Parameters
+#### 参数
 
-+---------------+------------------------------------------------------------------------------------------+----------------------------------------+
-|   Parameter   |                                           Type                                           |              Description               |
-+===============+==========================================================================================+========================================+
+|   参数   |                                           类型                                           |              描述               |
+|---------------|------------------------------------------------------------------------------------------|----------------------------------------|
 | `specifier`   | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
-+---------------+------------------------------------------------------------------------------------------+----------------------------------------+
 | `pingRequest` | Identifying key string, one of:                                                          | Specific type of return value.         |
-|               |                                                                                          |                                        |
 |               | - `STATUS`: Returns the processing status; see [getStatus()](#bridgetalkgetstatus).      |                                        |
 |               | - `DIAGNOSTICS`: Returns a diagnostic report that includes a list of valid ping keys.    |                                        |
 |               | - `ECHO_REQUEST`: Returns `ECHO_RESPONSE` for a simple ping request.                     |                                        |
-+---------------+------------------------------------------------------------------------------------------+----------------------------------------+
 
-#### Returns
+#### 返回
 
 String
 
@@ -443,13 +426,14 @@ String
 
 `BridgeTalk.pump()`
 
-#### Description
+#### 描述
 
 Checks all active messaging interfaces for outgoing and incoming messages, and processes them if there are any.
 
-!!! note
-    Most applications have a message processing loop that continually checks the message queues, so use of this method is rarely required.
+:::note
+Most applications have a message processing loop that continually checks the message queues, so use of this method is rarely required.
+:::
 
-#### Returns
+#### 返回
 
 Boolean. `true` if any messages have been processed, `false` otherwise.

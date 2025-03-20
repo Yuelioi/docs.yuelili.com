@@ -1,12 +1,11 @@
 ---
 title: preferences
 ---
-
 # Preferences object
 
 `app.preferences`
 
-#### Description
+#### 描述
 
 The Preferences object provides an easy way to manage internal AE preferences, such as you'd find in AE's Preferences menu. These are saved in the After Effects preference files, and are persistent between application sessions.
 
@@ -34,29 +33,29 @@ The third argument is enum `PREFType` value, one of:
 
 ---
 
-## Methods
+## 函数
 
 ### Preferences.deletePref()
 
 `app.preferences.deletePref(sectionName, keyName[, prefType])`
 
-#### Description
+#### 描述
 
 Deletes a preference from the preference file.
 
-#### Parameters
+#### 参数
 
-|   Parameter   |               Type                |               Description               |
+|   参数   |               类型                |               描述               |
 | ------------- | --------------------------------- | --------------------------------------- |
 | `sectionName` | String                            | The name of a preferences section.      |
 | `keyName`     | String                            | The key name of the preference.         |
 | `prefType`    | [`PREFType` enum](#preftype-enum) | Optional. Which preference file to use. |
 
-#### Returns
+#### 返回
 
 Nothing.
 
-#### Example
+#### 示例
 
 If you have saved a setting named with the key name "trimPrecomps" in a section called "Precomp Cropper", you can delete the setting by:
 
@@ -70,23 +69,23 @@ app.preferences.deletePref("Settings_Precomp Cropper", "trimPrecomps");
 
 `app.preferences.getPrefAsBool(sectionName, keyName[, prefType])`
 
-#### Description
+#### 描述
 
 Retrieves a preference value from the preferences file, and parses it as a boolean.
 
-#### Parameters
+#### 参数
 
-|   Parameter   |               Type                |               Description               |
+|   参数   |               类型                |               描述               |
 | ------------- | --------------------------------- | --------------------------------------- |
 | `sectionName` | String                            | The name of a preferences section.      |
 | `keyName`     | String                            | The key name of the preference.         |
 | `prefType`    | [`PREFType` enum](#preftype-enum) | Optional. Which preference file to use. |
 
-#### Returns
+#### 返回
 
 Boolean.
 
-#### Example
+#### 示例
 
 To retrieve the value of the Flow Chart "Expand Flowchart Comps by Default" preference:
 
@@ -108,19 +107,19 @@ alert("The setting is: " + debuggerEnabled);
 
 `app.preferences.getPrefAsFloat(sectionName, keyName[, prefType])`
 
-#### Description
+#### 描述
 
 Retrieves a preference value from the preferences file, and parses it as a float.
 
-#### Parameters
+#### 参数
 
-|   Parameter   |               Type                |               Description               |
+|   参数   |               类型                |               描述               |
 | ------------- | --------------------------------- | --------------------------------------- |
 | `sectionName` | String                            | The name of a preferences section.      |
 | `keyName`     | String                            | The key name of the preference.         |
 | `prefType`    | [`PREFType` enum](#preftype-enum) | Optional. Which preference file to use. |
 
-#### Returns
+#### 返回
 
 Float.
 
@@ -130,19 +129,19 @@ Float.
 
 `app.preferences.getPrefAsLong(sectionName, keyName[, prefType])`
 
-#### Description
+#### 描述
 
 Retrieves a preference value from the preferences file, and parses it as a long (number).
 
-#### Parameters
+#### 参数
 
-|   Parameter   |               Type                |               Description               |
+|   参数   |               类型                |               描述               |
 | ------------- | --------------------------------- | --------------------------------------- |
 | `sectionName` | String                            | The name of a preferences section.      |
 | `keyName`     | String                            | The key name of the preference.         |
 | `prefType`    | [`PREFType` enum](#preftype-enum) | Optional. Which preference file to use. |
 
-#### Returns
+#### 返回
 
 Long.
 
@@ -152,19 +151,19 @@ Long.
 
 `app.preferences.getPrefAsString(sectionName, keyName[, prefType])`
 
-#### Description
+#### 描述
 
 Retrieves a preference value from the preferences file, and parses it as a string.
 
-#### Parameters
+#### 参数
 
-|   Parameter   |               Type                |               Description               |
+|   参数   |               类型                |               描述               |
 | ------------- | --------------------------------- | --------------------------------------- |
 | `sectionName` | String                            | The name of a preferences section.      |
 | `keyName`     | String                            | The key name of the preference.         |
 | `prefType`    | [`PREFType` enum](#preftype-enum) | Optional. Which preference file to use. |
 
-#### Returns
+#### 返回
 
 String.
 
@@ -174,19 +173,19 @@ String.
 
 `app.preferences.havePref(sectionName, keyName[, prefType])`
 
-#### Description
+#### 描述
 
 Returns `true` if the specified preference item exists and has a value.
 
-#### Parameters
+#### 参数
 
-|   Parameter   |               Type                |               Description               |
+|   参数   |               类型                |               描述               |
 | ------------- | --------------------------------- | --------------------------------------- |
 | `sectionName` | String                            | The name of a preferences section.      |
 | `keyName`     | String                            | The key name of the preference.         |
 | `prefType`    | [`PREFType` enum](#preftype-enum) | Optional. Which preference file to use. |
 
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -196,15 +195,15 @@ Boolean.
 
 `app.preferences.reload()`
 
-#### Description
+#### 描述
 
 Reloads the preferences file manually. Otherwise, changes to preferences will only be accessible by scripting after an application restart.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -214,20 +213,20 @@ Nothing.
 
 `app.preferences.savePrefAsBool(sectionName, keyName, value[, prefType])`
 
-#### Description
+#### 描述
 
 Saves a preference item as a boolean.
 
-#### Parameters
+#### 参数
 
-|   Parameter   |               Type                |               Description               |
+|   参数   |               类型                |               描述               |
 | ------------- | --------------------------------- | --------------------------------------- |
 | `sectionName` | String                            | The name of a preferences section.      |
 | `keyName`     | String                            | The key name of the preference.         |
 | `value`       | Boolean                           | The new value.                          |
 | `prefType`    | [`PREFType` enum](#preftype-enum) | Optional. Which preference file to use. |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -237,20 +236,20 @@ Nothing.
 
 `app.preferences.savePrefAsFloat(sectionName, keyName, value[, prefType])`
 
-#### Description
+#### 描述
 
 Saves a preference item as a float.
 
-#### Parameters
+#### 参数
 
-|   Parameter   |               Type                |               Description               |
+|   参数   |               类型                |               描述               |
 | ------------- | --------------------------------- | --------------------------------------- |
 | `sectionName` | String                            | The name of a preferences section.      |
 | `keyName`     | String                            | The key name of the preference.         |
 | `value`       | Floating-point value              | The new value.                          |
 | `prefType`    | [`PREFType` enum](#preftype-enum) | Optional. Which preference file to use. |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -260,20 +259,20 @@ Nothing.
 
 `app.preferences.savePrefAsLong(sectionName, keyName, value[, prefType])`
 
-#### Description
+#### 描述
 
 Saves a preference item as a long.
 
-#### Parameters
+#### 参数
 
-|   Parameter   |               Type                |               Description               |
+|   参数   |               类型                |               描述               |
 | ------------- | --------------------------------- | --------------------------------------- |
 | `sectionName` | String                            | The name of a preferences section.      |
 | `keyName`     | String                            | The key name of the preference.         |
 | `value`       | Long value                        | The new value.                          |
 | `prefType`    | [`PREFType` enum](#preftype-enum) | Optional. Which preference file to use. |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -283,20 +282,20 @@ Nothing.
 
 `app.preferences.savePrefAsString(sectionName, keyName, value[, prefType])`
 
-#### Description
+#### 描述
 
 Saves a preference item as a string.
 
-#### Parameters
+#### 参数
 
-|   Parameter   |               Type                |               Description               |
+|   参数   |               类型                |               描述               |
 | ------------- | --------------------------------- | --------------------------------------- |
 | `sectionName` | String                            | The name of a preferences section.      |
 | `keyName`     | String                            | The key name of the preference.         |
 | `value`       | String                            | The new value.                          |
 | `prefType`    | [`PREFType` enum](#preftype-enum) | Optional. Which preference file to use. |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -306,14 +305,14 @@ Nothing.
 
 `app.preferences.saveToDisk()`
 
-#### Description
+#### 描述
 
 Saves the preferences to disk manually. Otherwise, changes to preferences will only be accessible by scripting after an application restart.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Nothing.

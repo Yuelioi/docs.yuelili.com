@@ -1,7 +1,6 @@
 ---
 title: selecting-scripts
 ---
-
 # Selecting Scripts
 
 You can open multiple scripts (or text files, including programs in other languages). You can find and open scripts in a number of ways:

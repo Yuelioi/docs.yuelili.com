@@ -1,22 +1,19 @@
 ---
-title: layer
+title: 图层
 ---
-
 # Layer
 
-As Layers are the foundation of most things in After Effects, this category is large and has been split into smaller pages for various focuses.
+由于图层是 After Effects 中大多数内容的基础，因此这个类别非常大，并且已经根据不同的重点拆分为更小的页面。
 
-These pages reflect the organization of the Expression fly-out menu within After Effects.
+这些页面反映了 After Effects 中表达式弹出菜单的组织结构。
 
-!!! info
-    Layer is the base class for [Camera](../../objects/camera) and [Light](../../objects/light), so Layer attributes and methods are available when working with those layer types (except when noted).
+:::info
+图层也是 [PropertyGroup](../../objects/propertygroup) 的子类，因此除了下面列出的方法外，PropertyGroup 的所有方法在处理图层时也可用。 :::
 
-    Layer is also a subclass of [PropertyGroup](../../objects/propertygroup), so all methods of PropertyGroup, in addition to those listed in the below pages, are available when working with Layer.
+这些类别包括：
 
-Those categories are:
-
-- [Layer Sub-objects](.././sub-objects) is for items that give you *other objects* based on the current layer; things like the source (for precomps or footage), effects, masks, sourceRect, etc.
-- [Layer General](.././general) holds general info about the layer; width and height, whether the layer has audio or video, the layer's start and end points, etc. With few exceptions, typically *don't change* over the duration of the comp.
-- [Layer Properties](.././properties) is generally for more dynamic properties; the layer's transform data (position, scale, rotation, etc), its audio or time remap, info about markers, and so on.
-- [Layer Space Transforms](.././layer-space-transforms) contains info on how to convert values from one "space" to another, such as from layer space to world space.
-- [Layer 3D](.././threed) is all about the 3d properties of layers. 3d rotation values, material properties, and more live here.
+* [图层子对象](../sub-objects) 包含基于当前图层提供的 *其他对象* ；例如源（用于预合成或素材）、效果、蒙版、sourceRect 等。
+* [图层通用信息](../general) 包含图层的通用信息；宽度和高度、图层是否有音频或视频、图层的开始和结束点等。除了少数例外，通常在合成的持续时间内 *不会改变* 。
+* [图层属性](../properties) 通常用于更动态的属性；图层的变换数据（位置、缩放、旋转等）、音频或时间重映射、标记信息等。
+* [图层空间变换](../layer-space-transforms) 包含如何将值从一个“空间”转换到另一个空间的信息，例如从图层空间转换到世界空间。
+* [图层 3D](../threed) 包含图层的 3D 属性。3D 旋转值、材质属性等都在这里。

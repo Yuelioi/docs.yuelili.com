@@ -1,7 +1,6 @@
 ---
 title: control-objects
 ---
-
 # Control objects
 
 UI elements that belong to windows can be containers or controls. Containers share some aspects of top-level windows, and some aspects of controls, and so are described here with controls.
@@ -16,20 +15,20 @@ Use the `add` method to create new containers and controls. The `add` method is 
 
 `containerObj.(type[, bounds, text, {creation_props}]);`
 
-#### Description
+#### 描述
 
 Creates and returns a new control or container object and adds it to the children of this window or container.
 
-#### Parameters
+#### 参数
 
-|    Parameter     |                         Type                         |                                                                                                                                    Description                                                                                                                                     |
+|    参数     |                         类型                         |                                                                                                                                    描述                                                                                                                                     |
 | ---------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `type`           | String                                               | The control type. See [Control types and creation parameters](#control-types-and-creation-parameters).                                                                                                                                                                             |
 | `bounds`         | [Bounds object](size-and-location-objects.md#bounds) | Optional. A bounds specification that describes the size and position of the new control or container, relative to its parent. If supplied, this value creates a new [Bounds](size-and-location-objects.md#bounds) object which is assigned to the new object's `bounds` property. |
 | `text`           | String                                               | Optional. Initial text to be displayed in the control as the title, label, or contents, depending on the control type. If supplied, this value is assigned to the new object's `text` property.                                                                                    |
 | `creation_props` | Object                                               | Optional. The properties of this object specify creation parameters, which are specific to each object type. See [Control types and creation parameters](#control-types-and-creation-parameters).                                                                                  |
 
-#### Returns
+#### 返回
 
 Returns the new object, or `null` if unable to create the object.
 
@@ -47,13 +46,13 @@ All types of controls, including containers, have an optional creation parameter
 
 Class Name: `Button`
 
-#### Description
+#### 描述
 
 A pushbutton containing a mouse-sensitive text string. Calls the [onClick](#onclick) callback if the control is clicked or if its [notify()](#notify) method is called.
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                         Type                         |                          Description                           |
+|       参数       |                         类型                         |                          描述                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
 | `text`                | String                                               | Optional. The text displayed in the control.                   |
@@ -61,11 +60,11 @@ A pushbutton containing a mouse-sensitive text string. Calls the [onClick](#oncl
 
 #### Creation Properties
 
-| Property |  Type  |                                                                                                                        Description                                                                                                                        |
+| Property |  类型  |                                                                                                                        描述                                                                                                                        |
 | -------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`   | String | A unique name for the control. For a modal dialog, the special name "ok" makes this [defaultElement](window-object.md#defaultelement), and the special name "cancel" makes this the [cancelElement](window-object.md#cancelelement) of the parent dialog. |
 
-#### Example
+#### 示例
 
 To add to a window `w`:
 
@@ -79,15 +78,15 @@ w.add("button"[, bounds, text, {creation_properties}]);
 
 Class Name: `Checkbox`
 
-#### Description
+#### 描述
 
 A dual-state control showing a box with a checkmark when value is `true`, empty when `value` is `false`.
 
 Calls the [onClick](#onclick) callback if the control is clicked or if its [notify()](#notify) method is called.
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                         Type                         |                          Description                           |
+|       参数       |                         类型                         |                          描述                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
 | `text`                | String                                               | Optional. The text displayed in the control.                   |
@@ -95,11 +94,11 @@ Calls the [onClick](#onclick) callback if the control is clicked or if its [noti
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
+| Property |  类型  |          描述           |
 | -------- | ------ | ------------------------------ |
 | `name`   | String | A unique name for the control. |
 
-#### Example
+#### 示例
 
 To add to a window `w`:
 
@@ -113,13 +112,13 @@ w.add("checkbox"[, bounds, text, {creation_properties}]);
 
 Class Name: `DropDownList`
 
-#### Description
+#### 描述
 
 A drop-down list with zero or more items. Calls the [onChange](#onchange) callback if the item selection is changed by a script or the user, or if the object's [notify()](#notify) method is called.
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                         Type                         |                                                                                                      Description                                                                                                       |
+|       参数       |                         类型                         |                                                                                                      描述                                                                                                       |
 | --------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                                                                                                                                                                             |
 | `items`               | Array of strings                                     | Optional. Supply this argument or the `creation_properties` argument, not both. The text of each list item. A `ListItem` object is created for each item. An item with the text string `"-"` creates a separator item. |
@@ -127,12 +126,12 @@ A drop-down list with zero or more items. Calls the [onChange](#onchange) callba
 
 #### Creation Properties
 
-| Property |       Type       |                             Description                             |
+| Property |       类型       |                             描述                             |
 | -------- | ---------------- | ------------------------------------------------------------------- |
 | `name`   | String           | A unique name for the control.                                      |
 | `items`  | Array of strings | The text of each list item. See the Parameters table for more info. |
 
-#### Example
+#### 示例
 
 To add to a window `w`:
 
@@ -146,10 +145,11 @@ w.add( "dropdownlist", bounds[, items, {creation_properties}] );
 
 Class Name: `EditNumber`
 
-!!! note
-    This functionality was added in Photoshop 20.0 (CC 2019), and may not exist in other hosts.
+:::note
+This functionality was added in Photoshop 20.0 (CC 2019), and may not exist in other hosts.
+:::
 
-#### Description
+#### 描述
 
 An editable text field the user can enter decimal numbers into. Fractions are allowed.
 
@@ -159,9 +159,9 @@ Calls the [onChanging](#onchanging) callback when any change is made to the text
 
 The `textselection` property contains currently selected text.
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                         Type                         |                          Description                           |
+|       参数       |                         类型                         |                          描述                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
 | `text`                | String                                               | Optional. The text displayed in the control.                   |
@@ -171,7 +171,7 @@ The `textselection` property contains currently selected text.
 
 #### Creation Properties
 
-|         Property          |  Type   |                                                                                                                                                                                                                     Description                                                                                                                                                                                                                     |
+|         Property          |  类型   |                                                                                                                                                                                                                     描述                                                                                                                                                                                                                     |
 | ------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`                    | String  | A unique name for the control.                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | `readonly`                | Boolean | Optional. When `false` (the default), the control accepts text input. When `true`, the control does not accept input but only displays the contents of the `text` property.                                                                                                                                                                                                                                                                         |
@@ -179,7 +179,7 @@ The `textselection` property contains currently selected text.
 | `enterKeySignalsOnChange` | Boolean | Optional. When `false` (the default), the control signals an [onChange](#onchange) event when the editable text is changed and the control loses the keyboard focus (that is, the user tabs to another control, clicks outside the control, or types `ENTER`). When `true`, the control only signals an `onChange` event when the editable text is changed and the user types `ENTER`; other changes to the keyboard focus do not signal the event. |
 | `borderless`              | Boolean | Optional. When `true`, the control is drawn with no border. Default is `false`.                                                                                                                                                                                                                                                                                                                                                                     |
 
-#### Example
+#### 示例
 
 To add to a window `w`:
 
@@ -193,15 +193,15 @@ w.add("editnumber"[, bounds, text, minValue, maxValue, {creation_properties}]);
 
 Class Name: `EditText`
 
-#### Description
+#### 描述
 
 An editable text field that the user can change. Calls the [onChange](#onchange) callback if the text is changed and the user types `ENTER` or the control loses focus, or if its [notify()](#notify) method is called. Calls the [onChanging](#onchanging) callback when any change is made to the text.
 
 The `textselection` property contains currently selected text.
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                         Type                         |                          Description                           |
+|       参数       |                         类型                         |                          描述                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
 | `text`                | String                                               | Optional. The text displayed in the control.                   |
@@ -209,7 +209,7 @@ The `textselection` property contains currently selected text.
 
 #### Creation Properties
 
-|         Property          |  Type   |                                                                                                                                                                                                                Description                                                                                                                                                                                                                |
+|         Property          |  类型   |                                                                                                                                                                                                                描述                                                                                                                                                                                                                |
 | ------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`                    | String  | A unique name for the control.                                                                                                                                                                                                                                                                                                                                                                                                            |
 | `readonly`                | Boolean | When `false` (the default), the control accepts text input. When `true`, the control does not accept input but only displays the contents of the `text` property.                                                                                                                                                                                                                                                                         |
@@ -219,7 +219,7 @@ The `textselection` property contains currently selected text.
 | `multiline`               | Boolean | When `false` (the default), the control accepts a single line of text. When `true`, the control accepts multiple lines, in which case the text wraps within the width of the control.                                                                                                                                                                                                                                                     |
 | `scrollable`              | Boolean | (For multiline elements only) When `true` (the default), the text field has a vertical scrollbar that is enabled when the element contains more text than fits in the visible area. When `false`, no vertical scrollbar appears; if the element contains more text than fits in the visible area, the arrow keys can be used to scroll the text up and down.                                                                              |
 
-#### Example
+#### 示例
 
 To add to a window `w`:
 
@@ -233,7 +233,7 @@ w.add("edittext"[, bounds, text, {creation_properties}]);
 
 Class Name: `FlashPlayer`
 
-#### Description
+#### 描述
 
 A control that contains a Flash Player, which can load and play Flash movies stored in SWF files.
 
@@ -241,9 +241,9 @@ The ScriptUI FlashPlayer element runs the Flash application within an Adobe appl
 
 A control object of this type contains functions that allow your script to load SWF files, control movie playback, and communicate with the ActionScript environment. See [FlashPlayer control functions](#flashplayer-control-functions).
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                             Type                              |                                   Description                                    |
+|       参数       |                             类型                              |                                   描述                                    |
 | --------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------- |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds)          | Optional. The control's position and size.                                       |
 | `moveToLoad`          | String or [File object](../../file-system-access/file-object) | Optional. A path or URL string or File for the SWF file to load into the player. |
@@ -251,11 +251,11 @@ A control object of this type contains functions that allow your script to load 
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
+| Property |  类型  |          描述           |
 | -------- | ------ | ------------------------------ |
 | `name`   | String | A unique name for the control. |
 
-#### Example
+#### 示例
 
 To add to a window `w`:
 
@@ -269,26 +269,26 @@ w.add("flashplayer"[, bounds, movieToLoad, {creation_properties}]);
 
 Class Name: `Group`
 
-#### Description
+#### 描述
 
 A container for other controls. Containers have additional properties that control the children; see [Container Attributes](window-object.md#container-attributes).
 
 Hiding a group hides all its children. Making it visible makes visible those children that are not individually hidden.
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                         Type                         |                          Description                           |
+|       参数       |                         类型                         |                          描述                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
 | `creation_properties` | Object                                               | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
+| Property |  类型  |          描述           |
 | -------- | ------ | ------------------------------ |
 | `name`   | String | A unique name for the control. |
 
-#### Example
+#### 示例
 
 To add to a window `w`:
 
@@ -302,13 +302,13 @@ w.add("group"[, bounds, {creation_properties}]);
 
 Class Name: `IconButton`
 
-#### Description
+#### 描述
 
 A mouse-sensitive pushbutton containing an icon. Calls the [onClick](#onclick) callback if the control is clicked or if its [notify()](#notify) method is called.
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                                       Type                                       |                                                                             Description                                                                              |
+|       参数       |                                       类型                                       |                                                                             描述                                                                              |
 | --------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds)                             | Optional. The control's position and size.                                                                                                                           |
 | `icon`                | Named resource, pathname, or [File object](../../file-system-access/file-object) | Optional. The named resource for the icon or family of icons displayed in the button control, or a pathname or File for an image file. Images must be in PNG format. |
@@ -316,20 +316,15 @@ A mouse-sensitive pushbutton containing an icon. Calls the [onClick](#onclick) c
 
 #### Creation Properties
 
-+----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Property |  Type   |                                                                                                                          Description                                                                                                                           |
-+==========+=========+================================================================================================================================================================================================================================================================+
+| Property |  类型   |                                                                                                                          描述                                                                                                                           |
+|----------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `name`   | String  | A unique name for the control.                                                                                                                                                                                                                                 |
-+----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `style`  | String  | A string for the visual style, one of:                                                                                                                                                                                                                         |
-|          |         |                                                                                                                                                                                                                                                                |
 |          |         | - `button`: Has a visible border with a raised or 3D appearance.                                                                                                                                                                                               |
 |          |         | - `toolbutton`: Has a flat appearance, appropriate for inclusion in a toolbar                                                                                                                                                                                  |
-+----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `toggle` | Boolean | For a button-style control, a value of `true` causes it to get a button-pressed appearance the first time it is clicked, and alternate with the unpressed appearance each time it is clicked. The toggle state is reflected in the control's `value` property. |
-+----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#### Example
+#### 示例
 
 To add to a window `w`:
 
@@ -343,13 +338,13 @@ w.add("iconbutton"[, bounds, icon, {creation_properties}]);
 
 Class Name: `Image`
 
-#### Description
+#### 描述
 
 Displays an icon or image.
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                                       Type                                       |                                                                             Description                                                                              |
+|       参数       |                                       类型                                       |                                                                             描述                                                                              |
 | --------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds)                             | Optional. The control's position and size.                                                                                                                           |
 | `icon`                | Named resource, pathname, or [File object](../../file-system-access/file-object) | Optional. The named resource for the icon or family of icons displayed in the button control, or a pathname or File for an image file. Images must be in PNG format. |
@@ -357,11 +352,11 @@ Displays an icon or image.
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
+| Property |  类型  |          描述           |
 | -------- | ------ | ------------------------------ |
 | `name`   | String | A unique name for the control. |
 
-#### Example
+#### 示例
 
 To add to a window `w`:
 
@@ -375,7 +370,7 @@ w.add("image"[, bounds, icon, {creation_properties}]);
 
 Class Name: `Array of ListItem`
 
-#### Description
+#### 描述
 
 The choice items in a list box or drop-down list. The objects are created when items are specified on creation of the parent list object, or afterward using the list control's [add()](#add) method.
 
@@ -395,13 +390,13 @@ Item objects have these properties which are not found in other controls:
 
 Class Name: `ListBox`
 
-#### Description
+#### 描述
 
 A list box with zero or more items. Calls the [onChange](#onchange) callback if the item selection is changed by a script or the user, or if the object's [notify()](#notify) method is called. A double click on an item selects that item and calls the [onDoubleClick](#ondoubleclick) callback.
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                         Type                         |                                                                                                                                                                 Description                                                                                                                                                                  |     |
+|       参数       |                         类型                         |                                                                                                                                                                 描述                                                                                                                                                                  |     |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                                                                                                                                                                                                                                                                                                   |     |
 | `items`               | Array of Strings                                     | Optional. The text of each list item. A [ListItem](types-of-controls.md#listitem) object is created for each item. Supply this argument, or the items property in `creation_properties`, not both. A [ListItem](types-of-controls.md#listitem) object is created for each item. An item with the text string `"-"` creates a separator item. |     |
@@ -409,7 +404,7 @@ A list box with zero or more items. Calls the [onChange](#onchange) callback if 
 
 #### Creation Properties
 
-|     Property      |       Type       |                                                                                                                                                                     Description                                                                                                                                                                      |
+|     Property      |       类型       |                                                                                                                                                                     描述                                                                                                                                                                      |
 | ----------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`            | String           | A unique name for the control.                                                                                                                                                                                                                                                                                                                       |
 | `multiselect`     | Boolean          | When `false` (the default), only one item can be selected. When `true`, multiple items can be selected.                                                                                                                                                                                                                                              |
@@ -419,7 +414,7 @@ A list box with zero or more items. Calls the [onChange](#onchange) callback if 
 | `columnWidths`    | Array of Numbers | An array of numbers for the preferred width in pixels of each column.                                                                                                                                                                                                                                                                                |
 | `columnTitles`    | Array of Strings | A corresponding array of strings for the title of each column, to be shown if `showHeaders` is `true`.                                                                                                                                                                                                                                               |
 
-#### Example
+#### 示例
 
 To add to a window `w`:
 
@@ -433,15 +428,15 @@ w.add("listbox", bounds[, items, {creation_properties}]);
 
 Class Name: `Panel`
 
-#### Description
+#### 描述
 
 A container for other types of controls, with an optional frame.
 
 Containers have additional properties that control the children; see [Container Attributes](window-object.md#container-attributes). Hiding a panel hides all its children. Making it visible makes visible those children that are not individually hidden.
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                         Type                         |                          Description                           |
+|       参数       |                         类型                         |                          描述                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
 | `text`                | String                                               | Optional. The text displayed in the border of the panel.       |
@@ -449,27 +444,21 @@ Containers have additional properties that control the children; see [Container 
 
 #### Creation Properties
 
-+-----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|       Property        |  Type   |                                                                                                                              Description                                                                                                                               |
-+=======================+=========+========================================================================================================================================================================================================================================================================+
+|       Property        |  类型   |                                                                                                                              描述                                                                                                                               |
+|-----------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `name`                | String  | A unique name for the control.                                                                                                                                                                                                                                         |
-+-----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `borderStyle`         | String  | A string that specifies the appearance of the border drawn around the panel. Default is `etched`. One of:                                                                                                                                                              |
-|                       |         |                                                                                                                                                                                                                                                                        |
 |                       |         | - `black`                                                                                                                                                                                                                                                              |
 |                       |         | - `etched`                                                                                                                                                                                                                                                             |
 |                       |         | - `gray`                                                                                                                                                                                                                                                               |
 |                       |         | - `raised`                                                                                                                                                                                                                                                             |
 |                       |         | - `sunken`                                                                                                                                                                                                                                                             |
 |                       |         | - `topDivider`: draws a horizonal line at the top of the panel only.                                                                                                                                                                                                   |
-|                       |         |                                                                                                                                                                                                                                                                        |
 |                       |         | !!! warning                                                                                                                                                                                                                                                            |
 |                       |         | The `topDivider` property is officially undocumented and was found via research. Please contribute if you have more information on it!                                                                                                                                 |
-+-----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `subPanelCoordinates` | Boolean | When `true`, this panel automatically adjusts the positions of its children for compatability with Photoshop CS. Default is `false`, meaning that the panel does not adjust the positions of its children, even if the parent window has automatic adjustment enabled. |
-+-----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#### Example
+#### 示例
 
 To add to a window `w`:
 
@@ -483,15 +472,15 @@ w.add("panel"[, bounds, text, {creation_properties}]);
 
 Class Name: `Progressbar`
 
-#### Description
+#### 描述
 
 A horizontal rectangle that shows progress of an operation.
 
 All `progressbar` controls have a horizontal orientation. The `value` property contains the current position of the progress indicator; the default is 0. There is a `minvalue` property, but it is always 0; attempts to set it to a different value are silently ignored.
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                         Type                         |                                                            Description                                                            |
+|       参数       |                         类型                         |                                                            描述                                                            |
 | --------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                                                                                        |
 | `value`               | Number                                               | Optional. The initial position of the progress indicator. Default is 0.                                                           |
@@ -501,11 +490,11 @@ All `progressbar` controls have a horizontal orientation. The `value` property c
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
+| Property |  类型  |          描述           |
 | -------- | ------ | ------------------------------ |
 | `name`   | String | A unique name for the control. |
 
-#### Example
+#### 示例
 
 To add to a window `w`:
 
@@ -519,15 +508,15 @@ w.add("progressbar"[, bounds, value, minvalue, maxvalue, creation_properties}]);
 
 Class Name: `RadioButton`
 
-#### Description
+#### 描述
 
 A dual-state control, grouped with other radiobuttons, of which only one can be in the selected state. Shows the selected state when `value` is `true`, empty when value is `false`. Calls the [onClick](#onclick) callback if the control is clicked or if its [notify()](#notify) method is called.
 
 All radiobuttons in a group must be created sequentially, with no intervening creation of other element types. Only one `radiobutton` in a group can be set at a time; setting a different `radiobutton` unsets the original one.
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                         Type                         |                          Description                           |
+|       参数       |                         类型                         |                          描述                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
 | `text`                | String                                               | Optional. The text displayed in the control.                   |
@@ -535,11 +524,11 @@ All radiobuttons in a group must be created sequentially, with no intervening cr
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
+| Property |  类型  |          描述           |
 | -------- | ------ | ------------------------------ |
 | `name`   | String | A unique name for the control. |
 
-#### Example
+#### 示例
 
 To add to a window `w`:
 
@@ -553,7 +542,7 @@ w.add("radiobutton"[, bounds, text, {creation_properties}]);
 
 Class Name: `Scrollbar`
 
-#### Description
+#### 描述
 
 A scrollbar with a draggable scroll indicator and stepper buttons to move the indicator. The `scrollbar` control has a horizontal orientation if the `width` is greater than the `height` at creation time, or vertical if its `height` is greater than its `width`.
 
@@ -561,15 +550,15 @@ Calls the [onChange](#onchange) callback after the position of the indicator is 
 
 #### Properties
 
-|  Property   |  Type  |                                                                              Description                                                                              |
+|  Property   |  类型  |                                                                              描述                                                                              |
 | ----------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `value`     | Number | Contains the current position of the scrollbar's indicator within the scrolling area, within the range of `minvalue` and `maxvalue`.                                  |
 | `stepdelta` | Number | Determines the scrolling unit for the up or down arrow. Default is `1`.                                                                                               |
 | `jumpdelta` | Number | Determines the scrolling unit for a jump (as when the bar is clicked outside the indicator or arrows); default is 20% of the range between `minvalue` and `maxvalue`. |
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                         Type                         |                                                                 Description                                                                 |
+|       参数       |                         类型                         |                                                                 描述                                                                 |
 | --------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                                                                                                  |
 | `value`               | Number                                               | Optional. The initial position of the scroll indicator. Default is 0.                                                                       |
@@ -579,11 +568,11 @@ Calls the [onChange](#onchange) callback after the position of the indicator is 
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
+| Property |  类型  |          描述           |
 | -------- | ------ | ------------------------------ |
 | `name`   | String | A unique name for the control. |
 
-#### Example
+#### 示例
 
 To add to a window `w`:
 
@@ -597,7 +586,7 @@ w.add("scrollbar"[, bounds, value, minvalue, maxvalue, {creation_properties}]);
 
 Class Name: `Slider`
 
-#### Description
+#### 描述
 
 A slider with a moveable position indicator. All `slider` controls have a horizontal orientation. Calls the [onChange](#onchange) callback after the position of the indicator is changed or if its [notify()](#notify) method is called.
 
@@ -605,9 +594,9 @@ Calls the `onChanging` callback repeatedly while the user is moving the indicato
 
 The `value` property contains the current position of the indicator within the range of `minvalue` and `maxvalue`.
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                         Type                         |                                                            Description                                                            |
+|       参数       |                         类型                         |                                                            描述                                                            |
 | --------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                                                                                        |
 | `value`               | Number                                               | Optional. The initial position of the scroll indicator. Default is 0.                                                             |
@@ -617,11 +606,11 @@ The `value` property contains the current position of the indicator within the r
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
+| Property |  类型  |          描述           |
 | -------- | ------ | ------------------------------ |
 | `name`   | String | A unique name for the control. |
 
-#### Example
+#### 示例
 
 To add to a window `w`:
 
@@ -635,13 +624,13 @@ w.add("slider"[, bounds, value, minvalue, maxvalue, {creation_properties}]);
 
 Class Name: `StaticText`
 
-#### Description
+#### 描述
 
 A text field that the user cannot change.
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                         Type                         |                          Description                           |
+|       参数       |                         类型                         |                          描述                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
 | `text`                | String                                               | Optional. The text displayed in the control.                   |
@@ -649,25 +638,19 @@ A text field that the user cannot change.
 
 #### Creation Properties
 
-+-------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|  Property   |  Type   |                                                                                       Description                                                                                        |
-+=============+=========+==========================================================================================================================================================================================+
+|  Property   |  类型   |                                                                                       描述                                                                                        |
+|-------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `name`      | String  | A unique name for the control.                                                                                                                                                           |
-+-------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `multiline` | Boolean | When `false` (the default), the control displays a single line of text. When `true`, the control displays multiple lines, in which case the text wraps within the width of the control.  |
-+-------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `scrolling` | Boolean | When `false` (the default), the displayed text cannot be scrolled. When `true`, the displayed text can be vertically scrolled using scrollbars; this case implies `multiline` is `true`. |
 | `truncate`  | String  | Truncate behaviour, one of:                                                                                                                                                              |
-|             |         |                                                                                                                                                                                          |
 |             |         | - `middle`                                                                                                                                                                               |
 |             |         | - `end`                                                                                                                                                                                  |
 |             |         | - `none`                                                                                                                                                                                 |
-|             |         |                                                                                                                                                                                          |
 |             |         | If `middle` or `end`, defines where to remove characters from the text and replace them with an ellipsis if the specified title does not fit within the space reserved for it.           |
 |             |         | If `none`, and the text does not fit, characters are removed from the end, without any replacement ellipsis character.                                                                   |
-+-------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#### Example
+#### 示例
 
 To add to a window `w`:
 
@@ -681,15 +664,15 @@ w.add("statictext"[, bounds, text, {creation_properties}]);
 
 Class Name: `Tab`
 
-#### Description
+#### 描述
 
 A container for other types of controls. Differs from a [panel](#panel) element in that is must be a direct child of a [tabbedpanel](#tabbedpanel) element, the title is shown in the selection tab, and it does not have a script-definable border. The currently active tab is the value of the parent's `selection` property.
 
 Containers have additional properties that control the children; see [Container Attributes](window-object.md#container-attributes). Hiding a panel hides all its children. Making it visible makes visible those children that are not individually hidden.
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                         Type                         |                          Description                           |
+|       参数       |                         类型                         |                          描述                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
 | `text`                | String                                               | Optional. The text displayed in the control.                   |
@@ -697,11 +680,11 @@ Containers have additional properties that control the children; see [Container 
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
+| Property |  类型  |          描述           |
 | -------- | ------ | ------------------------------ |
 | `name`   | String | A unique name for the control. |
 
-#### Example
+#### 示例
 
 To add a tab to a tabbed panel `t` in window `w`:
 
@@ -715,7 +698,7 @@ w.t.add("tab"[, bounds, text, {creation_properties}]);
 
 Class Name: `TabbedPanel`
 
-#### Description
+#### 描述
 
 A container for selectable [tab](#tab) containers. Differs from a [panel](#panel) element in that it can contain only [tab](#tab) elements as direct children.
 
@@ -723,9 +706,9 @@ Containers have additional properties that control the children; see [Container 
 
 The selected tab child is the value of the parent's `selection` property. One and only one of the `tab` children must be selected; selecting one deselects the others. When the value of the `selection` property changes, either by a user selecting a different tab, or by a script setting the property, the `tabbedpanel` receives an [onChange](#onchange) notification.
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                         Type                         |                          Description                           |
+|       参数       |                         类型                         |                          描述                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
 | `text`                | String                                               | Optional. The text displayed in the control.                   |
@@ -733,11 +716,11 @@ The selected tab child is the value of the parent's `selection` property. One an
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
+| Property |  类型  |          描述           |
 | -------- | ------ | ------------------------------ |
 | `name`   | String | A unique name for the control. |
 
-#### Example
+#### 示例
 
 To add to a window `w`:
 
@@ -751,13 +734,13 @@ w.add("tabbedpanel"[, bounds, text, {creation_properties}]);
 
 Class Name: `TreeView`
 
-#### Description
+#### 描述
 
 A hierarchical list whose items can contain child items. Items at any level of the tree can be individually selected. Calls the [onChange](#onchange) callback if the item selection is changed by a script or the user, or if the object's [notify()](#notify) method is called.
 
-#### Parameters
+#### 参数
 
-|       Parameter       |                         Type                         |                                                                                                                            Description                                                                                                                             |
+|       参数       |                         类型                         |                                                                                                                            描述                                                                                                                             |
 | --------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                                                                                                                                                                                                                         |
 | `items`               | Array of Strings                                     | Optional. The text of each top-level list item. A [ListItem](types-of-controls.md#listitem) object is created for each item. An item with the type node can contain child items. Supply this argument, or the `items` property in `creation_properties`, not both. |
@@ -765,12 +748,12 @@ A hierarchical list whose items can contain child items. Items at any level of t
 
 #### Creation Properties
 
-| Property |       Type       |                                                                                                                                                                 Description                                                                                                                                                                  |
+| Property |       类型       |                                                                                                                                                                 描述                                                                                                                                                                  |
 | -------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`   | String           | A unique name for the control.                                                                                                                                                                                                                                                                                                               |
 | `items`  | Array of Strings | The text of each top-level list item. A [ListItem](types-of-controls.md#listitem) object is created for each item. An item with the type `node` can contain child items. Supply this property, or the `items` argument, not both. This form is most useful for elements defined using [Resource specifications](../resource-specifications). |
 
-#### Example
+#### 示例
 
 To add to a window `w`:
 
@@ -790,7 +773,7 @@ See [Container Attributes](./window-object.md#container-attributes) for properti
 
 `controlObj.active`
 
-#### Description
+#### 描述
 
 When `true`, the object is active, `false` otherwise. Set to `true` to make a given control or dialog active.
 
@@ -798,7 +781,7 @@ When `true`, the object is active, `false` otherwise. Set to `true` to make a gi
 - An active palette is the front-most window.
 - An active control is the one with focus-that is, the one that accepts keystrokes, or in the case of a [Button](types-of-controls.md#button), be selected when the user types ENTER in Windows, or presses the spacebar in Mac OS.
 
-#### Type
+#### 类型
 
 Boolean
 
@@ -808,32 +791,28 @@ Boolean
 
 `controlObj.alignment`
 
-#### Description
+#### 描述
 
 Applies to child elements of a container. If defined, this value overrides the `alignChildren` setting for the parent container.
 
 For a single string value, allowed values depend on the `orientation` value in the parent container.
 
-+---------------------+------------------------+
 | `orientation` Value |     Allowed values     |
-+=====================+========================+
+|---------------------|------------------------|
 | `"row"`             | - `"bottom"`           |
 |                     | - `"center"` (default) |
 |                     | - `"fill"`             |
 |                     | - `"top"`              |
-+---------------------+------------------------+
 | `"column"`          | - `"center"` (default) |
 |                     | - `"fill"`             |
 |                     | - `"left"`             |
 |                     | - `"right"`            |
-+---------------------+------------------------+
 | `"stack"`           | - `"bottom"`           |
 |                     | - `"center"` (default) |
 |                     | - `"fill"`             |
 |                     | - `"left"`             |
 |                     | - `"right"`            |
 |                     | - `"top"`              |
-+---------------------+------------------------+
 
 For an array value, the first string element defines the horizontal alignment and the second element defines the vertical alignment.
 
@@ -841,10 +820,11 @@ The horizontal alignment value must be one of `"left"`, `"right"`, `"center"` or
 
 The vertical alignment value must be one of `"top"`, `"bottom"`, `"center"`, or `"fill"`.
 
-!!! note
-    Values are not case sensitive.
+:::note
+Values are not case sensitive.
+:::
 
-#### Type
+#### 类型
 
 String or Array of 2 Strings
 
@@ -854,14 +834,15 @@ String or Array of 2 Strings
 
 `controlObj.bounds`
 
-#### Description
+#### 描述
 
 A [Bounds](size-and-location-objects.md#bounds) object describing the boundaries of the element, in screen coordinates for Window elements, and parent-relative coordinates for child elements (compare [windowBounds](#windowbounds)). For windows, the bounds refer only to the window's content region.
 
-!!! warning
-    Setting an element's [`size`](#size) or [`location`](#location) changes its [`bounds`](#bounds) property, and vice-versa.
+:::warning
+Setting an element's [`size`](#size) or [`location`](#location) changes its [`bounds`](#bounds) property, and vice-versa.
+:::
 
-#### Type
+#### 类型
 
 [Bounds](size-and-location-objects.md#bounds)
 
@@ -871,13 +852,13 @@ A [Bounds](size-and-location-objects.md#bounds) object describing the boundaries
 
 `controlObj.characters`
 
-#### Description
+#### 描述
 
 Used by the [LayoutManager object](../layoutmanager-object) to determine the default [preferredSize](#preferredsize) for a [StaticText](types-of-controls.md#statictext) or [EditText](types-of-controls.md#edittext) control.
 
 The control will be made wide enough to display the given number of `X` characters in the font used by the control. Setting this property is the best way to reserve space in a control for a maximum number of characters to display.
 
-#### Type
+#### 类型
 
 Number
 
@@ -887,16 +868,17 @@ Number
 
 `controlObj.checked`
 
-#### Description
+#### 描述
 
-!!! info
-    For [ListItem](types-of-controls.md#listitem) objects only.
+:::info
+For [ListItem](types-of-controls.md#listitem) objects only.
+:::
 
 - When `true`, the item is marked with the platform-appropriate checkmark.
 - When `false`, no checkmark is drawn, but space is reserved for it in the left margin, so that the item lines up with other checkable items.
 - When `undefined`, no space is reserved for a checkmark.
 
-#### Type
+#### 类型
 
 Boolean
 
@@ -906,21 +888,22 @@ Boolean
 
 `controlObj.columns`
 
-#### Description
+#### 描述
 
-!!! info
-    For [ListBox](#listbox) objects only.
+:::info
+For [ListBox](#listbox) objects only.
+:::
 
 A JavaScript object with two read-only properties whose values are set by the creation parameters.
 
 #### Properties
 
-|     Property      |       Type       |                                             Description                                             |
+|     Property      |       类型       |                                             描述                                             |
 | ----------------- | ---------------- | --------------------------------------------------------------------------------------------------- |
 | `titles`          | Array of Strings | An array of column title strings, whose length matches the number of columns specified at creation. |
 | `preferredWidths` | Array of Numbers | An array of column widths, whose length matches the number of columns specified at creation.        |
 
-#### Type
+#### 类型
 
 Object
 
@@ -930,15 +913,16 @@ Object
 
 `controlObj.enabled`
 
-#### Description
+#### 描述
 
 - When `true`, the control is enabled, meaning that it accepts input.
 - When `false`, control elements do not accept input, and all types of elements have a dimmed appearance.
 
-!!! note
-    A disabled [ListItem](types-of-controls.md#listitem) is not selectable in a [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) object.
+:::note
+A disabled [ListItem](types-of-controls.md#listitem) is not selectable in a [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) object.
+:::
 
-#### Type
+#### 类型
 
 Boolean
 
@@ -948,11 +932,11 @@ Boolean
 
 `controlObj.expanded`
 
-#### Description
+#### 描述
 
 For [ListItem](types-of-controls.md#listitem) objects of type `node` in [TreeView](#treeview) list controls. When `true`, the item is in the expanded state and its children are shown, when `false`, it is collapsed and children are hidden.
 
-#### Type
+#### 类型
 
 Boolean
 
@@ -962,11 +946,11 @@ Boolean
 
 `controlObj.graphics`
 
-#### Description
+#### 描述
 
 A [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object) that can be used to customize the control's appearance, in response to the [onDraw](#ondraw) event.
 
-#### Type
+#### 类型
 
 [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object)
 
@@ -976,13 +960,13 @@ A [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-ob
 
 `controlObj.helpTip`
 
-#### Description
+#### 描述
 
 A brief help message (also called a *tool tip*) that is displayed in a small floating window when the mouse cursor hovers over a user-interface control element.
 
 Set to an empty string or `null` to remove help text.
 
-#### Type
+#### 类型
 
 String
 
@@ -992,12 +976,13 @@ String
 
 `controlObj.icon`
 
-#### Description
+#### 描述
 
-!!! danger
-    Deprecated. Use [Image](types-of-controls.md#image) instead.
+:::danger
+Deprecated. Use [Image](types-of-controls.md#image) instead.
+:::
 
-#### Type
+#### 类型
 
 String or [File](../../file-system-access/file-object) object
 
@@ -1007,17 +992,17 @@ String or [File](../../file-system-access/file-object) object
 
 `controlObj.image`
 
-#### Description
+#### 描述
 
 A [ScriptUIImage object](graphic-customization-objects.md#scriptuiimage-object), or the name of an icon resource, or the pathname or [File object](../../file-system-access/file-object) for a file that contains a platform-specific image in PNG or JPEG format, or for a shortcut or alias to such a file.
 
 - For an [IconButton](types-of-controls.md#iconbutton), the icon appears as the content of the button.
 - For an [Image](types-of-controls.md#image), the image is the entire content of the image element.
 - For a [ListItem](types-of-controls.md#listitem), the image is displayed to the left of the text.
-    - If the parent is a multi-column [ListBox](#listbox), this is the display image for the label in the first column, and labels for further columns are specified in the [subitems](#subitems) array.
-    - See [Creating multi-column lists](types-of-controls.md#creating-multi-column-lists).
+  - If the parent is a multi-column [ListBox](#listbox), this is the display image for the label in the first column, and labels for further columns are specified in the [subitems](#subitems) array.
+  - See [Creating multi-column lists](types-of-controls.md#creating-multi-column-lists).
 
-#### Type
+#### 类型
 
 [ScriptUIImage object](graphic-customization-objects.md#scriptuiimage-object)
 
@@ -1027,11 +1012,11 @@ A [ScriptUIImage object](graphic-customization-objects.md#scriptuiimage-object),
 
 `controlObj.indent`
 
-#### Description
+#### 描述
 
 A number of pixels by which to indent the element during automatic layout. Applies for `column` orientation and `left` alignment, or `row` orientation and `top` alignment.
 
-#### Type
+#### 类型
 
 Number
 
@@ -1041,14 +1026,15 @@ Number
 
 `controlObj.index`
 
-#### Description
+#### 描述
 
-!!! info
-    For [ListItem](types-of-controls.md#listitem) objects only.
+:::info
+For [ListItem](types-of-controls.md#listitem) objects only.
+:::
 
 The index of this item in the `items` collection of its parent list control.
 
-#### Type
+#### 类型
 
 Number. Read only.
 
@@ -1058,17 +1044,19 @@ Number. Read only.
 
 `controlObj.items`
 
-#### Description
+#### 描述
 
-!!! info
-    For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::info
+For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::
 
 A collection of [ListItem](types-of-controls.md#listitem) objects for the items in the list. Access by 0-based index.
 
-!!! tip
-    To obtain the number of items in the list, use `items.length`.
+:::tip
+To obtain the number of items in the list, use `items.length`.
+:::
 
-#### Type
+#### 类型
 
 Array of Objects. Read only.
 
@@ -1078,10 +1066,11 @@ Array of Objects. Read only.
 
 `controlObj.itemSize`
 
-#### Description
+#### 描述
 
-!!! info
-    For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::info
+For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::
 
 A [Dimension](./size-and-location-objects.md#dimension) object describing the width and height in pixels of each item in the list.
 
@@ -1089,7 +1078,7 @@ Used by auto-layout to determine the [`preferredSize`](#preferredsize) of the li
 
 If not set explicitly, the size of each item is set to match the largest height and width among all items in the list.
 
-#### Type
+#### 类型
 
 [Dimension](./size-and-location-objects.md#dimension) object
 
@@ -1099,16 +1088,17 @@ If not set explicitly, the size of each item is set to match the largest height 
 
 `controlObj.jumpdelta`
 
-#### Description
+#### 描述
 
-!!! info
-    For [Scrollbar](types-of-controls.md#scrollbar) objects only.
+:::info
+For [Scrollbar](types-of-controls.md#scrollbar) objects only.
+:::
 
 The amount to increment or decrement a [Scrollbar](types-of-controls.md#scrollbar) indicator's position when the user clicks ahead or behind the moveable element.
 
 Default is 20% of the range between the [`maxvalue`](#maxvalue) and [`minvalue`](#minvalue) property values.
 
-#### Type
+#### 类型
 
 Number
 
@@ -1118,7 +1108,7 @@ Number
 
 `controlObj.justify`
 
-#### Description
+#### 描述
 
 The justification of text in [StaticText](#statictext) and [EditText](#edittext) controls.
 
@@ -1128,10 +1118,11 @@ One of:
 - `"center"`
 - `"right"`
 
-!!! note
-    Justification only works if the value is set on creation, using a resource specification or creation parameters.
+:::note
+Justification only works if the value is set on creation, using a resource specification or creation parameters.
+:::
 
-#### Type
+#### 类型
 
 String
 
@@ -1141,7 +1132,7 @@ String
 
 `controlObj.location`
 
-#### Description
+#### 描述
 
 A [Point](size-and-location-objects.md#point) object describing the location of the element as an array, `[x, y]`, representing the coordinates of the upper left corner of the element. These are screen coordinates for `Window` elements, and parent-relative coordinates for other elements.
 
@@ -1149,10 +1140,11 @@ The `location` is defined as `[bounds.x, bounds.y]`.
 
 By default, `location` is `undefined` until the parent container's layout manager is invoked.
 
-!!! warning
-    Setting an element's [`size`](#size) or [`location`](#location) changes its [`bounds`](#bounds) property, and vice-versa.
+:::warning
+Setting an element's [`size`](#size) or [`location`](#location) changes its [`bounds`](#bounds) property, and vice-versa.
+:::
 
-#### Type
+#### 类型
 
 [Point object](size-and-location-objects.md#point)
 
@@ -1162,13 +1154,13 @@ By default, `location` is `undefined` until the parent container's layout manage
 
 `controlObj.maximumSize`
 
-#### Description
+#### 描述
 
 A [Dimension](size-and-location-objects.md#dimension) object that specifies the maximum height and width for an element.
 
 The default is 50 pixels less than the screen size in each dimension. In Windows, this can occupy the entire screen; you must define a `maximumSize` to be large enough for your intended usage.
 
-#### Type
+#### 类型
 
 [Dimension object](size-and-location-objects.md#dimension)
 
@@ -1178,11 +1170,11 @@ The default is 50 pixels less than the screen size in each dimension. In Windows
 
 `controlObj.minimumSize`
 
-#### Description
+#### 描述
 
 A [Dimension](size-and-location-objects.md#dimension) object that specifies the minimum height and width for an element. Default is `[0,0]`.
 
-#### Type
+#### 类型
 
 [Dimension object](size-and-location-objects.md#dimension)
 
@@ -1192,14 +1184,14 @@ A [Dimension](size-and-location-objects.md#dimension) object that specifies the 
 
 `controlObj.maxvalue`
 
-#### Description
+#### 描述
 
 The maximum value that the [`value`](#value) property can have.
 
 - If `maxvalue` is reset less than `value`, `value` is reset to `maxvalue`.
 - If `maxvalue` is reset less than [`minvalue`](#minvalue), `minvalue` is reset to `maxvalue`.
 
-#### Type
+#### 类型
 
 Number
 
@@ -1209,14 +1201,14 @@ Number
 
 `controlObj.minvalue`
 
-#### Description
+#### 描述
 
 The minimum value that the [`value`](#value) property can have.
 
 - If `minvalue` is reset greater than `value`, `value` is reset to `minvalue`.
 - If `minvalue` is reset greater than [`maxvalue`](#maxvalue), `maxvalue` is reset to `minvalue`.
 
-#### Type
+#### 类型
 
 Number
 
@@ -1226,11 +1218,11 @@ Number
 
 `controlObj.parent`
 
-#### Description
+#### 描述
 
 The immediate parent object of this element.
 
-#### Type
+#### 类型
 
 [Control Object](#). Read only.
 
@@ -1240,13 +1232,13 @@ The immediate parent object of this element.
 
 `controlObj.preferredSize`
 
-#### Description
+#### 描述
 
 A [Dimension](size-and-location-objects.md#dimension) object used by layout managers to determine the best size for each element. If not explicitly set by a script, value is established by the user-interface framework in which ScriptUI is employed, and is based on such attributes of the element as its text, font, font size, icon size, and other user-interface framework-specific attributes.
 
 A script can explicitly set `preferredSize` before the layout manager is invoked in order to establish an element size other than the default. To set a specific value for only one dimension, specify the other dimension as `-1`.
 
-#### Type
+#### 类型
 
 [Dimension object](size-and-location-objects.md#dimension)
 
@@ -1256,11 +1248,11 @@ A script can explicitly set `preferredSize` before the layout manager is invoked
 
 `controlObj.properties`
 
-#### Description
+#### 描述
 
 An object that contains one or more creation properties of the element (properties used only when the element is created).
 
-#### Type
+#### 类型
 
 Object
 
@@ -1270,17 +1262,18 @@ Object
 
 `controlObj.selected`
 
-#### Description
+#### 描述
 
-!!! info
-    For [ListItem](types-of-controls.md#listitem) objects only.
+:::info
+For [ListItem](types-of-controls.md#listitem) objects only.
+:::
 
 - When `true`, the item is part of the [`selection`](#selection) for its parent list.
 - When `false`, the item is not selected.
 
 Set to `true` to select this item in a single-selection list, or to add it to the selection array for a multi-selection list.
 
-#### Type
+#### 类型
 
 Boolean
 
@@ -1290,10 +1283,11 @@ Boolean
 
 `controlObj.selection`
 
-#### Description
+#### 描述
 
-!!! info
-    For [ListBox](#listbox) objects only.
+:::info
+For [ListBox](#listbox) objects only.
+:::
 
 For a [ListBox](#listbox), an array of [ListItem](types-of-controls.md#listitem) objects for the current selection in a multi-selection list. Setting this value causes the selected item to be highlighted and to be scrolled into view if necessary. If no items are selected, the value is `null`. Set to `null` to deselect all items.
 
@@ -1304,7 +1298,7 @@ You can set the value using the index of an item or an array of indices, rather 
 - If you set the value to an array for a single-selection list, only the first item in the array is selected.
 - If you set the value to a single item for a multi-selection list, that item is added to the current selection.
 
-#### Type
+#### 类型
 
 Array of [ListItem objects](./types-of-controls.md#listitem)
 
@@ -1314,10 +1308,11 @@ Array of [ListItem objects](./types-of-controls.md#listitem)
 
 `controlObj.selection`
 
-#### Description
+#### 描述
 
-!!! info
-    For [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::info
+For [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::
 
 The currently selected [ListItem](types-of-controls.md#listitem) object.
 
@@ -1329,7 +1324,7 @@ Whenever the value changes, the [onChange](#onchange) callback is called.
 
 You can set the value using the index of an item or an array of indices, rather than object references. If set to an index value that is out of range, the operation is ignored. When set with an index value, the property still returns an object reference.
 
-#### Type
+#### 类型
 
 `ListItem`
 
@@ -1339,11 +1334,11 @@ You can set the value using the index of an item or an array of indices, rather 
 
 `controlObj.shortcutKey`
 
-#### Description
+#### 描述
 
 The key sequence that invokes the [onShortcutKey](#onshortcutkey) callback for this element (in [Windows](.././window-object) only).
 
-#### Type
+#### 类型
 
 String
 
@@ -1353,7 +1348,7 @@ String
 
 `controlObj.size`
 
-#### Description
+#### 描述
 
 A [Dimension](size-and-location-objects.md#dimension) object that defines the actual dimensions of an element.
 
@@ -1363,10 +1358,11 @@ Although a script can explicitly set size before the layout manager is invoked t
 
 Defined as `[bounds.width, bounds.height]`.
 
-!!! warning
-    Setting an element's [`size`](#size) or [`location`](#location) changes its [`bounds`](#bounds) property, and vice-versa.
+:::warning
+Setting an element's [`size`](#size) or [`location`](#location) changes its [`bounds`](#bounds) property, and vice-versa.
+:::
 
-#### Type
+#### 类型
 
 [Dimension](size-and-location-objects.md#dimension) object
 
@@ -1376,11 +1372,11 @@ Defined as `[bounds.width, bounds.height]`.
 
 `controlObj.stepdelta`
 
-#### Description
+#### 描述
 
 The amount by which to increment or decrement a [Scrollbar](types-of-controls.md#scrollbar) element's position when the user clicks a stepper button.
 
-#### Type
+#### 类型
 
 Number
 
@@ -1390,10 +1386,11 @@ Number
 
 `controlObj.subitems`
 
-#### Description
+#### 描述
 
-!!! info
-    For [ListItem](types-of-controls.md#listitem) objects only.
+:::info
+For [ListItem](types-of-controls.md#listitem) objects only.
+:::
 
 When the parent is a multi-column [ListBox](#listbox), the [ListItem.text](#text) and [ListItem.image](#image) values describe the label in the first column, and this specifies additional labels for that row in the remaining columns.
 
@@ -1403,12 +1400,12 @@ This contains an array of JavaScript objects, whose length is one less than the 
 
 Each object has two properties, of which one or both can be supplied:
 
-| Property |  Type  |                 Description                  |
+| Property |  类型  |                 描述                  |
 | -------- | ------ | -------------------------------------------- |
 | `text`   | String | A localizable display string for this label. |
 | `image`  | Image  | An Image object for this label.              |
 
-#### Type
+#### 类型
 
 Array
 
@@ -1418,7 +1415,7 @@ Array
 
 `controlObj.text`
 
-#### Description
+#### 描述
 
 The title, label, or displayed text. Ignored for containers of type `group`.
 
@@ -1428,7 +1425,7 @@ For [ListItem](types-of-controls.md#listitem) objects, this is the display strin
 
 This is a localizable string: see [Localization in ScriptUI objects](../localization-in-scriptui-objects).
 
-#### Type
+#### 类型
 
 String
 
@@ -1438,16 +1435,17 @@ String
 
 `controlObj.textselection`
 
-#### Description
+#### 描述
 
 The currently selected text in a control that displays text, or the empty string if there is no text selected.
 
 Setting the value replaces the current text selection and modifies the value of the [`text`](#text) property. If there is no current selection, inserts the new value into the `text` string at the current insertion point. The `textselection` value is reset to an empty string after it modifies the `text` value.
 
-!!! note
-    Setting the `textselection` property before the [EditText](types-of-controls.md#edittext) control's parent Window exists is an undefined operation.
+:::note
+Setting the `textselection` property before the [EditText](types-of-controls.md#edittext) control's parent Window exists is an undefined operation.
+:::
 
-#### Type
+#### 类型
 
 String
 
@@ -1457,14 +1455,15 @@ String
 
 `controlObj.title`
 
-#### Description
+#### 描述
 
-!!! info
-    For [DropDownList](#dropdownlist), [FlashPlayer](#flashplayer), [IconButton](#iconbutton), [Image](#image), or [TabbedPanel](#tabbedpanel) objects only.
+:::info
+For [DropDownList](#dropdownlist), [FlashPlayer](#flashplayer), [IconButton](#iconbutton), [Image](#image), or [TabbedPanel](#tabbedpanel) objects only.
+:::
 
 A text label for the element. The title can appear to the left or right of the element, or above or below it, or you can superimpose the title over the center of the element. The placement is controlled by the [titleLayout](#titlelayout) value.
 
-#### Type
+#### 类型
 
 String
 
@@ -1474,16 +1473,17 @@ String
 
 `controlObj.titleLayout`
 
-#### Description
+#### 描述
 
-!!! info
-    For [DropDownList](#dropdownlist), [FlashPlayer](#flashplayer), [IconButton](#iconbutton), [Image](#image), or [TabbedPanel](#tabbedpanel) objects only.
+:::info
+For [DropDownList](#dropdownlist), [FlashPlayer](#flashplayer), [IconButton](#iconbutton), [Image](#image), or [TabbedPanel](#tabbedpanel) objects only.
+:::
 
 For a control with a title value, the way the text label is shown in relation to the element.
 
 #### Properties
 
-|   Property   |                      Type                      |                                                                                                                                                     Description                                                                                                                                                     |
+|   Property   |                      类型                      |                                                                                                                                                     描述                                                                                                                                                     |
 | ------------ | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `alignment`  | Array or Numbers                               | The position of the title relative to the element, an array of [horizontal_alignment, vertical_alignment]. For possible alignment values, see [alignment](#alignment). Note that `fill` is not a valid alignment value for either horizontal or vertical alignment in this context.                                 |
 | `characters` | Number                                         | If `1` or greater, reserves a title width wide enough to hold the specified number of "X" characters in the font for this element. If 0, the title width is calculated based on the value of the `title` property during layout operations.                                                                         |
@@ -1492,7 +1492,7 @@ For a control with a title value, the way the text label is shown in relation to
 | `justify`    | String                                         | One of `"left"`, `"center"`, or `"right"`, how to justify the text when the space allocated for the title width is greater than the actual width of the text.                                                                                                                                                       |
 | `truncate`   | String                                         | If `"middle"` or `"end"`, defines where to remove characters from the text and replace them with an ellipsis ("...") if the specified title does not fit within the space reserved for it. If `"none"`, and the text does not fit, characters are removed from the end, without any replacement ellipsis character. |
 
-#### Type
+#### 类型
 
 Object
 
@@ -1502,14 +1502,14 @@ Object
 
 `controlObj.type`
 
-#### Description
+#### 描述
 
 Contains the type name of the element, as specified on creation.
 
 - For [`Window`](.././window-object) objects, one of the type names window, palette, or dialog.
 - For [`controls`](.././control-objects), the type of the control, as specified in the add method that created it.
 
-#### Type
+#### 类型
 
 String. Read only.
 
@@ -1519,14 +1519,15 @@ String. Read only.
 
 `controlObj.value`
 
-#### Description
+#### 描述
 
-!!! info
-    For [Checkbox](types-of-controls.md#checkbox) or [RadioButton](types-of-controls.md#radiobutton) objects only.
+:::info
+For [Checkbox](types-of-controls.md#checkbox) or [RadioButton](types-of-controls.md#radiobutton) objects only.
+:::
 
 `true` if the control is in the selected or set state, `false` if it is not.
 
-#### Type
+#### 类型
 
 Boolean
 
@@ -1536,14 +1537,15 @@ Boolean
 
 `controlObj.value`
 
-#### Description
+#### 描述
 
-!!! info
-    For [Scrollbar](types-of-controls.md#scrollbar) or [Slider](types-of-controls.md#slider) objects only.
+:::info
+For [Scrollbar](types-of-controls.md#scrollbar) or [Slider](types-of-controls.md#slider) objects only.
+:::
 
 The current position of the indicator. If set to a value outside the range specified by minvalue and maxvalue, it is automatically reset to the closest boundary.
 
-#### Type
+#### 类型
 
 Number
 
@@ -1553,13 +1555,13 @@ Number
 
 `controlObj.visible`
 
-#### Description
+#### 描述
 
 When `true`, the element is shown, when `false` it is hidden.
 
 When a container is hidden, its children are also hidden, but they retain their own visibility values, and are shown or hidden accordingly when the parent is next shown.
 
-#### Type
+#### 类型
 
 Boolean
 
@@ -1569,11 +1571,11 @@ Boolean
 
 `controlObj.window`
 
-#### Description
+#### 描述
 
 The Window that contains this control.
 
-#### Type
+#### 类型
 
 [Window object](../window-object). Read only.
 
@@ -1583,11 +1585,11 @@ The Window that contains this control.
 
 `controlObj.windowBounds`
 
-#### Description
+#### 描述
 
 A [Bounds](size-and-location-objects.md#bounds) object that contains the bounds of this control in the containing window's coordinates. Compare to this control object's [`.bounds`](#bounds) property, in which coordinates are relative to the immediate parent container.
 
-#### Type
+#### 类型
 
 [Bounds object](size-and-location-objects.md#bounds). Read only.
 
@@ -1597,7 +1599,7 @@ A [Bounds](size-and-location-objects.md#bounds) object that contains the bounds 
 
 `controlObj.function_name`
 
-#### Description
+#### 描述
 
 For the [FlashPlayer](types-of-controls.md#flashplayer) control, a function definition for a callback from the Flash ActionScript environment.
 
@@ -1611,10 +1613,11 @@ There are no special naming requirements, but the function must take and return 
 - String
 - undefined
 
-!!! note
-    The ActionScript `class` and `date` objects are not supported as parameter values.
+:::note
+The ActionScript `class` and `date` objects are not supported as parameter values.
+:::
 
-#### Type
+#### 类型
 
 Function
 
@@ -1628,17 +1631,15 @@ The following table shows the methods defined for each element type, and for spe
 
 `controlObj.addEventListener(eventName, handler[, capturePhase=false]);`
 
-#### Description
+#### 描述
 
 Registers an event handler for a particular type of event occurring in this control.
 
 #### Parameter
 
-+----------------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|   Parameter    |   Type   |                                                                                                                                                                                                                          Description                                                                                                                                                                                                                          |
-+================+==========+===============================================================================================================================================================================================================================================================================================================================================================================================================================================================+
+|   参数    |   类型   |                                                                                                                                                                                                                          描述                                                                                                                                                                                                                          |
+|----------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `eventName`    | String   | The event name string. Predefined event names include:                                                                                                                                                                                                                                                                                                                                                                                                        |
-|                |          |                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |                |          | - `"change"`                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |                |          | - `"changing"`                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 |                |          | - `"move"`                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
@@ -1657,13 +1658,10 @@ Registers an event handler for a particular type of event occurring in this cont
 |                |          | - `"keyup"`                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |                |          | - `"keydown"`                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |                |          | - `"click"` (detail = 1 for single, 2 for double)                                                                                                                                                                                                                                                                                                                                                                                                             |
-+----------------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `handler`      | Function | The function to register for the specified event in this target. This can be the name of a function defined in the extension, or a locally defined handler function to be executed when the event occurs. A handler function takes one argument, an object of the UIEvent base class. See [Registering event listeners for windows or controls](defining-behavior-with-event-callbacks-and-listeners.md#registering-event-listeners-for-windows-or-controls). |
-+----------------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `capturePhase` | Boolean  | Optional. When `true`, the handler is called only in the capturing phase of the event propagation. Default is `false`, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target.                                                                                                                                                                   |
-+----------------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -1673,17 +1671,17 @@ Nothing
 
 `controlObj.dispatchEvent(eventObj)`
 
-#### Description
+#### 描述
 
 Simulates the occurrence of an event in this target. A script can create an event object for a specific event, using [ScriptUI.events.createEvent()](scriptui-class.md#scriptuieventscreateevent), and pass it to this method to start the event propagation for the event.
 
-#### Parameters
+#### 参数
 
-| Parameter  |  Type  |             Description              |
+| 参数  |  类型  |             描述              |
 | ---------- | ------ | ------------------------------------ |
 | `eventObj` | Object | An object of the UIEvent base class. |
 
-#### Returns
+#### 返回
 
 Boolean. `false` if any of the registered listeners that handled the event called the event object's [preventDefault()](event-handling.md#preventdefault) method, `true` otherwise.
 
@@ -1693,11 +1691,11 @@ Boolean. `false` if any of the registered listeners that handled the event calle
 
 `controlObj.hide()`
 
-#### Description
+#### 描述
 
 Hides this container or control. When a window or container is hidden, its children are also hidden, but when it is shown again, the children retain their own visibility states.
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -1707,25 +1705,21 @@ Nothing
 
 `controlObj.notify([event])`
 
-#### Description
+#### 描述
 
 Sends a notification message, simulating the specified user interaction event.
 
-#### Parameters
+#### 参数
 
-+-----------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter |  Type  |                                                                                    Description                                                                                     |
-+===========+========+====================================================================================================================================================================================+
+| 参数 |  类型  |                                                                                    描述                                                                                     |
+|-----------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `event`   | String | Optional. The name of the control event handler to call. One of:                                                                                                                   |
-|           |        |                                                                                                                                                                                    |
 |           |        | - `"onClick"`                                                                                                                                                                      |
 |           |        | - `"onChange"`                                                                                                                                                                     |
 |           |        | - `"onChanging"`                                                                                                                                                                   |
-|           |        |                                                                                                                                                                                    |
 |           |        | By default, simulates the [onChange](#onchange) event for an [EditText](types-of-controls.md#edittext) control, an [onClick](#onclick) event for controls that support that event. |
-+-----------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -1735,19 +1729,19 @@ Nothing
 
 `controlbj.removeEventListener(eventName, handler[, capturePhase]);`
 
-#### Description
+#### 描述
 
 Unregisters an event handler for a particular type of event occurring in this control. All arguments must be identical to those that were used to register the event handler.
 
-#### Parameters
+#### 参数
 
-|   Parameter    |   Type   |                               Description                               |
+|   参数    |   类型   |                               描述                               |
 | -------------- | -------- | ----------------------------------------------------------------------- |
 | `eventName`    | String   | The event name.                                                         |
 | `handler`      | Function | The function that was registered to handle the event.                   |
 | `capturePhase` | Boolean  | Optional. Whether the handler was to respond only in the capture phase. |
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -1757,13 +1751,13 @@ Nothing
 
 `controlObj.show()`
 
-#### Description
+#### 描述
 
 Shows this container or control.
 
 When a window or container is hidden, its children are also hidden, but when it is shown again, the children retain their own visibility states.
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -1773,14 +1767,15 @@ Nothing
 
 `listItemObj.toString()`
 
-#### Description
+#### 描述
 
-!!! info
-    For [ListItem](types-of-controls.md#listitem) objects only.
+:::info
+For [ListItem](types-of-controls.md#listitem) objects only.
+:::
 
 Retrieves the value of this item's text property as a string.
 
-#### Returns
+#### 返回
 
 String
 
@@ -1790,14 +1785,15 @@ String
 
 `listItemObj.valueOf()`
 
-#### Description
+#### 描述
 
-!!! info
-    For [ListItem](types-of-controls.md#listitem) objects only.
+:::info
+For [ListItem](types-of-controls.md#listitem) objects only.
+:::
 
 Retrieves the index number of this item in the parent list's items array.
 
-#### Returns
+#### 返回
 
 Number
 
@@ -1811,29 +1807,25 @@ The following table shows the methods defined for list objects only.
 
 `listObj.add(type, text[, index=listObj.numItems])`
 
-#### Description
+#### 描述
 
-!!! info
-    For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::info
+For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::
 
 Adds an `item` to the items array at the given index.
 
-#### Parameters
+#### 参数
 
-+-----------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter |  Type  |                                                                                  Description                                                                                  |
-+===========+========+===============================================================================================================================================================================+
+| 参数 |  类型  |                                                                                  描述                                                                                  |
+|-----------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `type`    | String | The type of item to add. One of:                                                                                                                                              |
-|           |        |                                                                                                                                                                               |
 |           |        | - `item`: A basic, selectable item with a text label.                                                                                                                         |
 |           |        | - `separator`: A separator. For [DropDownList](#dropdownlist) objects only. In this case, the text value is ignored, and the method returns `null`.                           |
-+-----------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `text`    | String | The localizable text label for the item.                                                                                                                                      |
-+-----------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `index`   | Number | Optional. The index into the current item list after which this item is inserted. If not supplied, or greater than the current list length, the new item is added at the end. |
-+-----------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#### Returns
+#### 返回
 
 [Item](#item) object for `type = "item"`, or `null` for `type = "separator"`.
 
@@ -1843,20 +1835,21 @@ Adds an `item` to the items array at the given index.
 
 `listObj.find(text)`
 
-#### Description
+#### 描述
 
-!!! info
-    For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::info
+For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::
 
 Looks in this object's `items` array for an item object with the given `text` value.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |          Description          |
+| 参数 |  类型  |          描述          |
 | --------- | ------ | ----------------------------- |
 | `text`    | String | The text of the item to find. |
 
-#### Returns
+#### 返回
 
 The [ListItem](./types-of-controls.md#listitem) object if found; otherwise `null`.
 
@@ -1870,20 +1863,20 @@ The [ListItem](./types-of-controls.md#listitem) object if found; otherwise `null
 
 `containerObj.remove(child)`
 
-#### Description
+#### 描述
 
 - For containers ([Panel](#panel), [Group](#group)): removes the specified child control from the container's `children` array.
 - For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects: removes the specified item from this object's items array.
 
 No error results if the item does not exist.
 
-#### Parameters
+#### 参数
 
-|        Parameter         |                          Type                          |                                            Description                                             |
+|        参数         |                          类型                          |                                            描述                                             |
 | ------------------------ | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
 | `index`, `text`, `child` | Number of String or [Control](#control-objects) object | The item or child to remove, specified by `0`-based index, `text` value, or as a `control` object. |
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -1893,14 +1886,15 @@ Nothing
 
 `listObj.removeAll()`
 
-#### Description
+#### 描述
 
-!!! info
-    For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::info
+For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::
 
 Removes all items from the object's `items` array.
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -1910,20 +1904,21 @@ Nothing
 
 `listObj.revealItem(item)`
 
-#### Description
+#### 描述
 
-!!! info
-    For [ListBox](#listbox) objects only.
+:::info
+For [ListBox](#listbox) objects only.
+:::
 
 Scrolls the list to make the specified item visible, if necessary.
 
-#### Parameters
+#### 参数
 
-| Parameter |                  Type                  |                  Description                   |
+| 参数 |                  类型                  |                  描述                   |
 | --------- | -------------------------------------- | ---------------------------------------------- |
 | `item`    | [Control](.././control-objects) object | The item or child to reveal, a control object. |
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -1931,8 +1926,9 @@ Nothing
 
 ## FlashPlayer control functions
 
-!!! info
-    For [FlashPlayer](#flashplayer) objects only.
+:::info
+For [FlashPlayer](#flashplayer) objects only.
+:::
 
 ### Limitations
 
@@ -1949,19 +1945,16 @@ There are limitations on how these functions can be used to control playback of 
 
 `flashPlayerObj.invokePlayerFunction(fnName, [arg1[,...argN]] )`
 
-#### Description
+#### 描述
 
 Invokes an ActionScript function defined in the Flash application.
 
-#### Parameters
+#### 参数
 
-+-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter |  Type  |                                                                                                                                              Description                                                                                                                                               |
-+===========+========+========================================================================================================================================================================================================================================================================================================+
+| 参数 |  类型  |                                                                                                                                              描述                                                                                                                                               |
+|-----------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `fnName`  | String | The name of a Flash ActionScript function that has been registered with the ExternalInterface object by the currently loaded SWF file; see [Calling ActionScript functions from a ScriptUI script](communicating-with-the-flash-application.md#calling-actionscript-functions-from-a-scriptui-script). |
-+-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `args`    | Any    | Optional. One or more arguments to pass through to the function, of these types:                                                                                                                                                                                                                       |
-|           |        |                                                                                                                                                                                                                                                                                                        |
 |           |        | - Array                                                                                                                                                                                                                                                                                                |
 |           |        | - Boolean                                                                                                                                                                                                                                                                                              |
 |           |        | - `null`                                                                                                                                                                                                                                                                                               |
@@ -1969,9 +1962,8 @@ Invokes an ActionScript function defined in the Flash application.
 |           |        | - Object                                                                                                                                                                                                                                                                                               |
 |           |        | - String                                                                                                                                                                                                                                                                                               |
 |           |        | - `undefined`                                                                                                                                                                                                                                                                                          |
-+-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#### Returns
+#### 返回
 
 The result of the invoked function, which must be one of the allowed types. The ActionScript `class` and `date` objects are not supported as return values.
 
@@ -1981,17 +1973,17 @@ The result of the invoked function, which must be one of the allowed types. The 
 
 `flashPlayerObj.loadMovie(file)`
 
-#### Description
+#### 描述
 
 Loads a movie into the Flash Player, and begins playing it. If you do not specify an associated movie file when creating the control, you must use this function to load one.
 
-#### Parameters
+#### 参数
 
-| Parameter |                        Type                         |      Description      |
+| 参数 |                        类型                         |      描述      |
 | --------- | --------------------------------------------------- | --------------------- |
 | `file`    | [File object](../../file-system-access/file-object) | The SWF file to load. |
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -2001,20 +1993,21 @@ Nothing
 
 `flashPlayerObj.playMovie(rewind)`
 
-#### Description
+#### 描述
 
 Restarts a movie that has been stopped.
 
-!!! warning
-    Do not call when a movie is currently playing.
+:::warning
+Do not call when a movie is currently playing.
+:::
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type   |                                                    Description                                                     |
+| 参数 |  类型   |                                                    描述                                                     |
 | --------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
 | `rewind`  | Boolean | When `true`, restarts the movie from the beginning; otherwise, starts playing from the point where it was stopped. |
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -2024,14 +2017,15 @@ Nothing
 
 `flashPlayerObj.stopMovie()`
 
-#### Description
+#### 描述
 
 Halts playback of the current movie.
 
-!!! note
-    Does not work when called from the player's hosting environment.
+:::note
+Does not work when called from the player's hosting environment.
+:::
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -2073,10 +2067,10 @@ Called when the user finishes making a change in one of the following control ty
 - [TreeView](#treeview)
 
 - For [EditNumber](types-of-controls.md#editnumber) and [EditText](types-of-controls.md#edittext) controls, called only when the change is complete-that is, when focus moves to another control, or the user types `ENTER`.
-    - The exact behavior depends on the creation parameter `enterKeySignalsOnChange`; see the [EditText](#edittext) description.
+  - The exact behavior depends on the creation parameter `enterKeySignalsOnChange`; see the [EditText](#edittext) description.
 - For a [Slider](types-of-controls.md#slider) or [Scrollbar](types-of-controls.md#scrollbar), called when the user has finished dragging the position marker or has clicked the control.
 - For a [ListBox](#listbox), [DropDownList](#dropdownlist) or [TreeView](#treeview) control, called whenever the selection property changes.
-    - This can happen when a script sets the property directly or removes a selected item from the list, or when the user changes the selection.
+  - This can happen when a script sets the property directly or removes a selected item from the list, or when the user changes the selection.
 
 ---
 
@@ -2118,8 +2112,9 @@ The list's [`selection`](#selection) property is set to the clicked item.
 
 ### onEnterKey
 
-!!! warning
-    This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::warning
+This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::
 
 Called when the user presses return or enter in a [EditText](#edittext) control.
 
@@ -2139,8 +2134,9 @@ Called when the user expands (opens) a node in a [TreeView](#treeview) control. 
 
 ### onShortcutKey
 
-!!! info
-    For [Windows](.././window-object) objects only.
+:::info
+For [Windows](.././window-object) objects only.
+:::
 
 Called when a shortcut-key sequence is typed that matches the [shortcutKey](#shortcutkey) value for an element in the active window.
 
@@ -2156,7 +2152,7 @@ There is no object constructor.
 
 The object contains the following read-only properties:
 
-|       Property        |  Type   |                                           Behaviour                                           |
+|       Property        |  类型   |                                           Behaviour                                           |
 | --------------------- | ------- | --------------------------------------------------------------------------------------------- |
 | `altKeyPressed`       | Boolean | When `true`, the ALT key was pressed. (In Windows OS only.)                                   |
 | `capsLockKeyPressed`  | Boolean | When `true`, the CAPSLOCK key was pressed.                                                    |

@@ -1,24 +1,26 @@
 ---
 title: property
 ---
-
 # Property object
 
 `app.project.item(index).layer(index).propertySpec`
 
-#### Description
+#### 描述
 
 The Property object contains value, keyframe, and expression information about a particular AE property of a layer. An AE property is a value, often animatable, of an effect, mask, or transform within an individual layer. For examples of how to access properties, see [PropertyBase object](../propertybase) and [PropertyGroup.property()](propertygroup.md#propertygroupproperty).
 
-!!! info
-    Property is a subclass of [PropertyBase](../propertybase). All methods and attributes of PropertyBase, in addition to those listed below, are available when working with Property.
+:::info
+Property is a subclass of [PropertyBase](../propertybase). All methods and attributes of PropertyBase, in addition to those listed below, are available when working with Property.
+:::
 
-!!! note
-    JavaScript objects commonly referred to as "properties" are called "attributes" in this guide, to avoid confusion with the After Effects definition of property.
+:::note
+JavaScript objects commonly referred to as "properties" are called "attributes" in this guide, to avoid confusion with the After Effects definition of property.
+:::
 
-#### Examples
+#### 示例
 
 Get and set the value of opacity:
+
 ```javascript
 var myProperty = myLayer.opacity;
 // opacity has propertyValueType of OneD, and is stored as a float
@@ -111,16 +113,17 @@ myTextLayer.sourceText.setValue("foo");
 
 ---
 
-## Attributes
+## 属性
 
 ### Property.alternateSource
 
 `app.project.item(index).layer(index).propertySpec.alternateSource`
 
-!!! note
-    This functionality was added in After Effects 18.0 (2021)
+:::note
+该方法添加于 After Effects 18.0 (2021)
+:::
 
-#### Description
+#### 描述
 
 The value is `null` when:
 
@@ -138,9 +141,9 @@ A layer is "marked" for media replacement when the layer is added to the Essenti
 
 Use [Property.setAlternateSource()](#propertysetalternatesource) to change the value.
 
-#### Type
+#### 类型
 
-AVItem object; read-only.
+AVItem object; 只读.
 
 ---
 
@@ -148,18 +151,19 @@ AVItem object; read-only.
 
 `app.project.item(index).layer(index).propertySpec.canSetAlternateSource`
 
-!!! note
-    This functionality was added in After Effects 18.0 (2021)
+:::note
+该方法添加于 After Effects 18.0 (2021)
+:::
 
-#### Description
+#### 描述
 
 Test whether the property is an Essential Property that supports Media Replacement.
 
 Returns `true` if the property allows Media Replacement, otherwise `false`.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -167,13 +171,13 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).propertySpec.canSetExpression`
 
-#### Description
+#### 描述
 
 When `true`, the named property is of a type whose expression can be set by a script. See also [Property expression](#propertyexpression) attribute.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -181,13 +185,13 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).propertySpec.canVaryOverTime`
 
-#### Description
+#### 描述
 
 When `true`, the named property can vary over time—that is, keyframe values or expressions can be written to this property.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -195,14 +199,15 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).propertySpec.dimensionsSeparated`
 
-#### Description
+#### 描述
 
 When `true`, the property's dimensions are represented as separate properties. For example, if the layer's position is represented as X Position and Y Position properties in the Timeline panel, the Position property has this attribute set to `true`.
 
-!!! tip
-    This attribute applies only when the [isSeparationLeader](#propertyisseparationleader) attribute is `true`.
+:::tip
+This attribute applies only when the [isSeparationLeader](#propertyisseparationleader) attribute is `true`.
+:::
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -212,14 +217,15 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).essentialProperty.property(index).essentialPropertySource`
 
-!!! note
-    This functionality was added in After Effects 22.0 (2022)
+:::note
+该方法添加于 After Effects 22.0 (2022)
+:::
 
-#### Description
+#### 描述
 
 Instance property on an Essential Property object which returns the original source Property which was used to create the Essential Property.
 
-#### Type
+#### 类型
 
 Can be either:
 
@@ -227,7 +233,7 @@ Can be either:
 - A read/write [AVLayer object](../../layer/avlayer), in the case that the source object used to create the Essential Property was a Media Replacement Footage item
 - `null` if called on a non-Essential Property
 
-#### Example
+#### 示例
 
 ```javascript
 var firstComp = app.project.item(1);
@@ -250,7 +256,7 @@ if (essentialOpacity.essentialPropertySource == opacityProp) {
 
 `app.project.item(index).layer(index).propertySpec.expression`
 
-#### Description
+#### 描述
 
 The expression for the named property. Writeable only when [canSetExpression](#propertycansetexpression) for the named property is `true`. When you specify a value for this attribute, the string is evaluated.
 
@@ -258,7 +264,7 @@ The expression for the named property. Writeable only when [canSetExpression](#p
 - If the string does not contain a valid expression, an error is generated, and [expressionEnabled](#propertyexpressionenabled) becomes `false`.
 - If you set the attribute to the empty string, [expressionEnabled](#propertyexpressionenabled) becomes `false`, but no error is generated.
 
-#### Type
+#### 类型
 
 String; read/write if [canSetExpression](#propertycansetexpression) for the named property is `true`.
 
@@ -268,11 +274,11 @@ String; read/write if [canSetExpression](#propertycansetexpression) for the name
 
 `app.project.item(index).layer(index).propertySpec.expressionEnabled`
 
-#### Description
+#### 描述
 
 When `true`, the named property uses its associated expression to generate a value. When `false`, the keyframe information or static value of the property is used. This attribute can be set to `true` only if [canSetExpression](#propertycansetexpression) for the named property is `true` and [expression](#propertyexpression) contains a valid expression string.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -282,13 +288,13 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).propertySpec.expressionError`
 
-#### Description
+#### 描述
 
 Contains the error, if any, generated by evaluation of the string most recently set in [expression](#propertyexpression). If no expression string has been specified, or if the last expression string evaluated without error, contains the empty string `("")`.
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -296,13 +302,13 @@ String; read-only.
 
 `app.project.item(index).layer(index).propertySpec.hasMax`
 
-#### Description
+#### 描述
 
 When `true`, there is a maximum permitted value for the named property; otherwise `false`.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -310,13 +316,13 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).propertySpec.hasMin`
 
-#### Description
+#### 描述
 
 When `true`, there is a minimum permitted value for the named property; otherwise `false`.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -324,14 +330,15 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).propertySpec.isDropdownEffect`
 
-!!! note
-    This functionality was added in After Effects 17.0.1 (2020)
+:::note
+该方法添加于 After Effects 17.0.1 (2020)
+:::
 
-#### Description
+#### 描述
 
 When `true`, the property is the Menu property of a Dropdown Menu Control effect and can have its items updated with [setPropertyParameters](#propertysetpropertyparameters).
 
-#### Examples
+#### 示例
 
 ```javascript
 appliedEffect.property("Menu").isDropdownEffect;    // true
@@ -339,9 +346,9 @@ appliedEffect.property("Color").isDropdownEffect;   // false
 appliedEffect.property("Feather").isDropdownEffect; // false
 ```
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -349,16 +356,17 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).propertySpec.isSeparationFollower`
 
-#### Description
+#### 描述
 
 When `true`, the property represents one of the separated dimensions for a multidimensional property. For example, the X Position property has this attribute set to `true`.
 
-!!! tip
-    The original, consolidated, multidimensional property is the "separation leader" and the new, separated, single-dimensional properties are its "separation followers".
+:::tip
+The original, consolidated, multidimensional property is the "separation leader" and the new, separated, single-dimensional properties are its "separation followers".
+:::
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -366,16 +374,17 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).propertySpec.isSeparationLeader`
 
-#### Description
+#### 描述
 
 When `true`, the property is multidimensional and can be separated. For example, the Position property has this attribute set to `true`.
 
-!!! tip
-    The original, consolidated, multidimensional property is the "separation leader" and the new, separated, single-dimensional properties are its "separation followers".
+:::tip
+The original, consolidated, multidimensional property is the "separation leader" and the new, separated, single-dimensional properties are its "separation followers".
+:::
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -383,13 +392,13 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).propertySpec.isSpatial`
 
-#### Description
+#### 描述
 
 When `true`, the named property defines a spatial value. Examples are position and effect point controls.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -397,14 +406,14 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).propertySpec.isTimeVarying`
 
-#### Description
+#### 描述
 
 When `true`, the named property is time varying — that is, it has keyframes or an enabled expression. When this attribute is `true`, the attribute `canVaryOverTime`
 must also be true.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -412,13 +421,13 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).propertySpec.maxValue`
 
-#### Description
+#### 描述
 
 The maximum permitted value of the named property. If the `hasMax` attribute is `false`, an exception occurs, and an error is generated.
 
-#### Type
+#### 类型
 
-Floating-point value; read-only.
+Floating-point value; 只读.
 
 ---
 
@@ -426,13 +435,13 @@ Floating-point value; read-only.
 
 `app.project.item(index).layer(index).propertySpec.minValue`
 
-#### Description
+#### 描述
 
 The minimum permitted value of the named property. If the `hasMin` attribute is `false`, an exception occurs, and an error is generated.
 
-#### Type
+#### 类型
 
-Floating-point value; read-only.
+Floating-point value; 只读.
 
 ---
 
@@ -440,13 +449,13 @@ Floating-point value; read-only.
 
 `app.project.item(index).layer(index).propertySpec.numKeys`
 
-#### Description
+#### 描述
 
 The number of keyframes in the named property. If the value is 0, the property is not being keyframed.
 
-#### Type
+#### 类型
 
-Integer; read-only.
+Integer; 只读.
 
 ---
 
@@ -454,13 +463,13 @@ Integer; read-only.
 
 `app.project.item(index).layer(index).propertySpec.propertyIndex`
 
-#### Description
+#### 描述
 
 The position index of the named property. The first property is at index position 1.
 
-#### Type
+#### 类型
 
-Integer; read-only.
+Integer; 只读.
 
 ---
 
@@ -468,7 +477,7 @@ Integer; read-only.
 
 `app.project.item(index).layer(index).propertySpec.propertyValueType`
 
-#### Description
+#### 描述
 
 The type of value stored in the named property. The `PropertyValueType` enumeration has one value for each type of data that can be stored in or retrieved from a property. Each type of data is stored and retrieved in a different kind of structure. All property objects store data according to one of these categories. For example, a 3D spatial property (such as a layer's position) is stored as an array of three floating-point values. When setting a value for position, pass in such an array, as follows: `mylayer.property("position").setValue([10, 20, 0]);`
 
@@ -481,7 +490,7 @@ var myMask = mylayer.property("ADBE Mask Parade").property(1);
 myMask.property("ADBE Mask Shape").setValue(myShape);
 ```
 
-#### Type
+#### 类型
 
 A `PropertyValueType` enumerated value; read/write. One of:
 
@@ -505,13 +514,13 @@ A `PropertyValueType` enumerated value; read/write. One of:
 
 `app.project.item(index).layer(index).propertySpec.selectedKeys`
 
-#### Description
+#### 描述
 
 The indices of all the selected keyframes in the named property. If no keyframes are selected, or if the property has no keyframes, returns an empty array.
 
-#### Type
+#### 类型
 
-Array of integers; read-only.
+Array of integers; 只读.
 
 ---
 
@@ -519,13 +528,13 @@ Array of integers; read-only.
 
 `app.project.item(index).layer(index).propertySpec.separationDimension`
 
-#### Description
+#### 描述
 
 For a separated follower, the dimension number it represents in the multidimensional leader. The first dimension starts at 0. For example, the Y Position property has a `separationDimension` value of 1; X Position has a value of 0.
 
-#### Type
+#### 类型
 
-Integer; read-only.
+Integer; 只读.
 
 ---
 
@@ -533,16 +542,17 @@ Integer; read-only.
 
 `app.project.item(index).layer(index).propertySpec.separationLeader`
 
-#### Description
+#### 描述
 
 The original multidimensional property for this separated follower. For example, if the current property is Y Position, this attribute's value points to the Position property.
 
-!!! tip
-    The original, consolidated, multidimensional property is the "separation leader" and the new, separated, single-dimensional properties are its "separation followers".
+:::tip
+The original, consolidated, multidimensional property is the "separation leader" and the new, separated, single-dimensional properties are its "separation followers".
+:::
 
-#### Type
+#### 类型
 
-Property object; read-only.
+Property object; 只读.
 
 ---
 
@@ -550,13 +560,13 @@ Property object; read-only.
 
 `app.project.item(index).layer(index).propertySpec.unitsText`
 
-#### Description
+#### 描述
 
 The text description of the units in which the value is expressed.
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -564,7 +574,7 @@ String; read-only.
 
 `app.project.item(index).layer(index).propertySpec.value`
 
-#### Description
+#### 描述
 
 The value of the named property at the current time.
 
@@ -574,29 +584,29 @@ The value of the named property at the current time.
 
 The type of value returned depends on the property value type. See [examples for Property object](#examples).
 
-#### Type
+#### 类型
 
-A value appropriate for the type of the property (see [Property.propertyValueType](#propertypropertyvaluetype)); read-only.
+A value appropriate for the type of the property (see [Property.propertyValueType](#propertypropertyvaluetype)); 只读.
 
 ---
 
-## Methods
+## 函数
 
 ### Property.addKey()
 
 `app.project.item(index).layer(index).propertySpec.addKey(time)`
 
-#### Description
+#### 描述
 
 Adds a new keyframe or marker to the named property at the specified time and returns the index of the new keyframe.
 
-#### Parameters
+#### 参数
 
-| Parameter |         Type         |                                        Description                                         |
+| 参数 |         类型         |                                        描述                                         |
 | --------- | -------------------- | ------------------------------------------------------------------------------------------ |
 | `time`    | Floating-point value | The time, in seconds, at which to add the keyframe. The beginning of the composition is 0. |
 
-#### Returns
+#### 返回
 
 Integer; the index of the new keyframe or marker.
 
@@ -606,10 +616,11 @@ Integer; the index of the new keyframe or marker.
 
 `app.project.item(index).layer(index).propertySpec.addToMotionGraphicsTemplate(comp)`
 
-!!! note
-    This functionality was added in After Effects 15.0 (CC 2018)
+:::note
+该方法添加于 After Effects 15.0 (CC 2018)
+:::
 
-#### Description
+#### 描述
 
 Adds the property to the Essential Graphics panel for the specified composition.
 
@@ -619,13 +630,13 @@ If the property is not added, it is either because it is not one of the supporte
 
 Use the [Property.canAddToMotionGraphicsTemplate()](#propertycanaddtomotiongraphicstemplate) method to test whether the property can be added to a Motion Graphics template.
 
-#### Parameters
+#### 参数
 
-| Parameter |              Type               |                      Description                      |
+| 参数 |              类型               |                      描述                      |
 | --------- | ------------------------------- | ----------------------------------------------------- |
 | `comp`    | [CompItem](../../item/compitem) | The composition that you wish to add the property to. |
 
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -635,10 +646,11 @@ Boolean.
 
 `app.project.item(index).layer(index).propertySpec.addToMotionGraphicsTemplateAs(comp, name)`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+该方法添加于 After Effects 16.1 (CC 2019)
+:::
 
-#### Description
+#### 描述
 
 Adds the property to the Essential Graphics panel for the specified composition, but with an additional option to give the EGP property a custom name.
 
@@ -648,14 +660,14 @@ If the property is not added, it is either because it is not one of the supporte
 
 Use the [Property.canAddToMotionGraphicsTemplate()](#propertycanaddtomotiongraphicstemplate) method to test whether the property can be added to a Motion Graphics template.
 
-#### Parameters
+#### 参数
 
-| Parameter |              Type               |                      Description                      |
+| 参数 |              类型               |                      描述                      |
 | --------- | ------------------------------- | ----------------------------------------------------- |
 | `comp`    | [CompItem](../../item/compitem) | The composition that you wish to add the property to. |
 | `name`    | String                          | The new name.                                         |
 
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -665,10 +677,11 @@ Boolean.
 
 `app.project.item(index).layer(index).propertySpec.canAddToMotionGraphicsTemplate(comp)`
 
-!!! note
-    This functionality was added in After Effects 15.0 (CC 2018)
+:::note
+该方法添加于 After Effects 15.0 (CC 2018)
+:::
 
-#### Description
+#### 描述
 
 Test whether or not the property can be added to the Essential Graphics panel for the specified composition.
 
@@ -683,13 +696,13 @@ Supported property types are:
 - Numerical Slider (i.e., a single-value numerical property, such as Transform > Opacity or the Slider Control expression control effect)
 - Source Text
 
-#### Parameters
+#### 参数
 
-| Parameter |              Type               |                      Description                      |
+| 参数 |              类型               |                      描述                      |
 | --------- | ------------------------------- | ----------------------------------------------------- |
 | `comp`    | [CompItem](../../item/compitem) | The composition that you wish to add the property to. |
 
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -699,20 +712,21 @@ Boolean.
 
 `app.project.item(index).layer(index).propertySpec.getSeparationFollower(dim)`
 
-#### Description
+#### 描述
 
 For a separated, multidimensional property, retrieves a specific follower property. For example, you can use this method on the Position property to access the separated X Position and Y Position properties
 
-!!! tip
-    This attribute applies only when the [isSeparationLeader](#propertyisseparationleader) attribute is `true`.
+:::tip
+This attribute applies only when the [isSeparationLeader](#propertyisseparationleader) attribute is `true`.
+:::
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type   |              Description              |
+| 参数 |  类型   |              描述              |
 | --------- | ------- | ------------------------------------- |
 | `dim`     | Integer | The dimension number (starting at 0). |
 
-#### Returns
+#### 返回
 
 Property object, or an error if the property is not multidimensional or does not have the specified dimension.
 
@@ -722,13 +736,13 @@ Property object, or an error if the property is not multidimensional or does not
 
 `app.project.item(index).layer(index).propertySpec.isInterpolationTypeValid(type)`
 
-#### Description
+#### 描述
 
 Returns `true` if the named property can be interpolated using the specified keyframe interpolation type.
 
-#### Parameters
+#### 参数
 
-#### Type
+#### 类型
 
 A `KeyframeInterpolationType` enumerated value; one of:
 
@@ -736,7 +750,7 @@ A `KeyframeInterpolationType` enumerated value; one of:
 - `KeyframeInterpolationType.BEZIER`
 - `KeyframeInterpolationType.HOLD`
 
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -746,17 +760,17 @@ Boolean.
 
 `app.project.item(index).layer(index).propertySpec.keyInInterpolationType(keyIndex)`
 
-#### Description
+#### 描述
 
 Returns the 'in' interpolation type for the specified keyframe.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 
-#### Returns
+#### 返回
 
 A `KeyframeInterpolationType` enumerated value; one of:
 
@@ -770,17 +784,17 @@ A `KeyframeInterpolationType` enumerated value; one of:
 
 `app.project.item(index).layer(index).propertySpec.keyInSpatialTangent(keyIndex)`
 
-#### Description
+#### 描述
 
 Returns the incoming spatial tangent for the specified keyframe, if the named property is spatial (that is, the value type is `TwoD_SPATIALorThreeD_SPATIAL`).
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 
-#### Returns
+#### 返回
 
 Array of floating-point values:
 
@@ -794,17 +808,17 @@ Array of floating-point values:
 
 `app.project.item(index).layer(index).propertySpec.keyInTemporalEase(keyIndex)`
 
-#### Description
+#### 描述
 
 Returns the incoming temporal ease for the specified keyframe.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 
-#### Returns
+#### 返回
 
 Array of [KeyframeEase objects](../../other/keyframeease):
 
@@ -818,22 +832,23 @@ Array of [KeyframeEase objects](../../other/keyframeease):
 
 `app.project.item(index).layer(index).propertySpec.keyLabel(keyIndex)`
 
-!!! note
-    This functionality was added in After Effects 22.6.
+:::note
+该方法添加于 After Effects 22.6.
+:::
 
-#### Description
+#### 描述
 
 The label color for the keyframe. Colors are represented by their number (0 for None, or 1 to 16 for one of the preset colors in the Labels preferences).
 
 Read only. Keyframe color labels can be set by [setLabelAtKey](#propertysetlabelatkey).
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 
-#### Returns
+#### 返回
 
 Integer (0 to 16); read only.
 
@@ -843,17 +858,17 @@ Integer (0 to 16); read only.
 
 `app.project.item(index).layer(index).propertySpec.keyOutInterpolationType(keyIndex)`
 
-#### Description
+#### 描述
 
 Returns the outgoing interpolation type for the specified keyframe.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 
-#### Returns
+#### 返回
 
 A `KeyframeInterpolationType` enumerated value; one of:
 
@@ -867,17 +882,17 @@ A `KeyframeInterpolationType` enumerated value; one of:
 
 `app.project.item(index).layer(index).propertySpec.keyOutSpatialTangent(keyIndex)`
 
-#### Description
+#### 描述
 
 Returns the outgoing spatial tangent for the specified keyframe.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 
-#### Returns
+#### 返回
 
 Array of floating-point values:
 
@@ -891,17 +906,17 @@ Array of floating-point values:
 
 `app.project.item(index).layer(index).propertySpec.keyOutTemporalEase(keyIndex)`
 
-#### Description
+#### 描述
 
 Returns the outgoing temporal ease for the specified keyframe.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 
-#### Returns
+#### 返回
 
 Array of KeyframeEase objects:
 
@@ -915,17 +930,17 @@ Array of KeyframeEase objects:
 
 `app.project.item(index).layer(index).propertySpec.keyRoving(keyIndex)`
 
-#### Description
+#### 描述
 
 Returns `true` if the specified keyframe is roving. The first and last keyframe in a property cannot rove; if you try to set roving for one of these, the operation is ignored, and keyRoving() continues to return `false`. If the property value type is neither `TwoD_SPATIAL` nor `ThreeD_SPATIAL`, an exception is generated.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -935,17 +950,17 @@ Boolean.
 
 `app.project.item(index).layer(index).propertySpec.keySelected(keyIndex)`
 
-#### Description
+#### 描述
 
 Returns `true` if the specified keyframe is selected.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -955,17 +970,17 @@ Boolean.
 
 `app.project.item(index).layer(index).propertySpec.keySpatialAutoBezier(keyIndex)`
 
-#### Description
+#### 描述
 
 Returns `true` if the specified keyframe has spatial auto-Bezier interpolation. (This type of interpolation affects this keyframe only if `keySpatialContinuous(keyIndex)` is also true.) If the property value type is neither `TwoD_SPATIAL` nor `ThreeD_SPATIAL`, an exception is generated.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -975,17 +990,17 @@ Boolean.
 
 `app.project.item(index).layer(index).propertySpec.keySpatialContinuous(keyIndex)`
 
-#### Description
+#### 描述
 
 Returns `true` if the specified keyframe has spatial continuity. If the property value type is neither `TwoD_SPATIAL` nor `ThreeD_SPATIAL`, an exception is generated.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -995,17 +1010,17 @@ Boolean.
 
 `app.project.item(index).layer(index).propertySpec.keyTemporalAutoBezier(keyIndex)`
 
-#### Description
+#### 描述
 
 Returns `true` if the specified keyframe has temporal auto-Bezier interpolation. Temporal auto-Bezier interpolation affects this keyframe only if the keyframe interpolation type is `KeyframeInterpolationType.BEZIER` for both `keyInInterpolationType(keyIndex)` and `keyOutInterpolationType(keyIndex)`.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -1015,17 +1030,17 @@ Boolean.
 
 `app.project.item(index).layer(index).propertySpec.keyTemporalContinuous(keyIndex)`
 
-#### Description
+#### 描述
 
 Returns `true` if the specified keyframe has temporal continuity. Temporal continuity affects this keyframe only if keyframe interpolation type is `KeyframeInterpolationType.BEZIER` for both `keyInInterpolationType(keyIndex)` and `keyOutInterpolationType(keyIndex)`.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -1036,19 +1051,18 @@ Boolean.
 `app.project.item(index).layer(index).propertySpec.keyTime(keyIndex)`
 `app.project.item(index).layer(index).propertySpec.keyTime(markerComment)`
 
-#### Description
+#### 描述
 
 Finds the specified keyframe or marker and returns the time at which it occurs. If no keyframe or marker can be found that matches the argument, this method generates an exception, and an error is displayed.
 
-#### Parameters
+#### 参数
 
-
-|    Parameter    |                 Type                 |                                                       Description                                                        |
+|    参数    |                 类型                 |                                                       描述                                                        |
 | --------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex`      | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex`      | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 | `markerComment` | String                               | The comment attached to a marker (see [MarkerValue.comment](../other/markervalue.md#markervaluecomment) attribute).      |
 
-#### Returns
+#### 返回
 
 Floating-point value.
 
@@ -1060,19 +1074,18 @@ Floating-point value.
 
 `app.project.item(index).layer(index).propertySpec.keyValue(markerComment)`
 
-
-#### Description
+#### 描述
 
 Finds the specified keyframe or marker and returns its current value. If no keyframe or marker can be found that matches the argument, this method generates an exception, and an error is displayed.
 
-#### Parameters
+#### 参数
 
-|    Parameter    |                 Type                 |                                                       Description                                                        |
+|    参数    |                 类型                 |                                                       描述                                                        |
 | --------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex`      | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex`      | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 | `markerComment` | String                               | The comment attached to a marker (see [MarkerValue.comment](../other/markervalue.md#markervaluecomment) attribute).      |
 
-#### Returns
+#### 返回
 
 Returns the value of the type corresponding to the [PropertyValueType](#propertypropertyvaluetype).
 
@@ -1082,17 +1095,17 @@ Returns the value of the type corresponding to the [PropertyValueType](#property
 
 `app.project.item(index).layer(index).propertySpec.nearestKeyIndex(time)`
 
-#### Description
+#### 描述
 
 Returns the index of the keyframe nearest to the specified time.
 
-#### Parameters
+#### 参数
 
-| Parameter |         Type         |                         Description                          |
+| 参数 |         类型         |                         描述                          |
 | --------- | -------------------- | ------------------------------------------------------------ |
 | `time`    | Floating-point value | The time, in seconds. The beginning of the composition is 0. |
 
-#### Returns
+#### 返回
 
 Integer.
 
@@ -1102,17 +1115,17 @@ Integer.
 
 `app.project.item(index).layer(index).propertySpec.removeKey(keyIndex)`
 
-#### Description
+#### 描述
 
 Removes the specified keyframe from the named property. If no keyframe with the specified index exists, generates an exception and displays an error. When a keyframe is removed, the remaining index numbers change. To remove more than one keyframe, you must start with the highest index number and work down to the lowest to ensure that the remaining indices reference the same keyframe after each removal.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -1122,10 +1135,11 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.setAlternateSource(newSource)`
 
-!!! note
-    This functionality was added in After Effects 18.0 (2021)
+:::note
+该方法添加于 After Effects 18.0 (2021)
+:::
 
-#### Description
+#### 描述
 
 Set the alternate source for this property.
 
@@ -1134,13 +1148,13 @@ The Property object and the input parameters for the AVItem that is being called
 - Use the [AVItem.isMediaReplacementCompatible](../item/avitem.md#avitemismediareplacementcompatible) method to test whether the AVItem can be used as an alternate source for Media Replacement.
 - Use [Property.canSetAlternateSource](#propertycansetalternatesource) to test if the property allows Media Replacement.
 
-#### Parameters
+#### 参数
 
-|  Parameter  |                Type                |      Description       |
+|  参数  |                类型                |      描述       |
 | ----------- | ---------------------------------- | ---------------------- |
 | `newSource` | [AVItem object](../../item/avitem) | The new source AVItem. |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -1150,31 +1164,25 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.setInterpolationTypeAtKey(keyIndex, inType[, outType])`
 
-#### Description
+#### 描述
 
 Sets the `in` and `out` interpolation types for the specified keyframe.
 
-#### Parameters
+#### 参数
 
-+------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter  |               Type                |                                                                      Description                                                                      |
-+============+===================================+=======================================================================================================================================================+
-| `keyIndex` | Integer                           | The index for the keyframe, in the range `[1..numKeys]`, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
-+------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 参数  |               类型                |                                                                      描述                                                                      |
+|------------|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `keyIndex` | Integer                           | The index for the keyframe, 范围为 `[1..numKeys]`, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 | `inType`   | `KeyframeInterpolationType` enum. | The incoming interpolation type. One of:                                                                                                              |
-|            |                                   |                                                                                                                                                       |
 |            |                                   | - `KeyframeInterpolationType.LINEAR`                                                                                                                  |
 |            |                                   | - `KeyframeInterpolationType.BEZIER`                                                                                                                  |
 |            |                                   | - `KeyframeInterpolationType.HOLD`                                                                                                                    |
-+------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `outType`  | `KeyframeInterpolationType` enum. | Optional. The outgoing interpolation type. If not supplied, the 'out' type is set to the `inType` value. One of:                                      |
-|            |                                   |                                                                                                                                                       |
 |            |                                   | - `KeyframeInterpolationType.LINEAR`                                                                                                                  |
 |            |                                   | - `KeyframeInterpolationType.BEZIER`                                                                                                                  |
 |            |                                   | - `KeyframeInterpolationType.HOLD`                                                                                                                    |
-+------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -1184,21 +1192,22 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.setLabelAtKey(keyIndex, labelIndex)`
 
-!!! note
-    This functionality was added in After Effects 22.6 (2022)
+:::note
+该方法添加于 After Effects 22.6 (2022)
+:::
 
-#### Description
+#### 描述
 
 Set the label color for the keyframe. Colors are represented by their number (0 for None, or 1 to 16 for one of the preset colors in the Labels preferences).
 
-#### Parameters
+#### 参数
 
-|  Parameter   |                 Type                 |                                                       Description                                                        |
+|  参数   |                 类型                 |                                                       描述                                                        |
 | ------------ | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex`   | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
-| `labelIndex` | Integer, in the range `[0..16]`      | The index for the new label value.                                                                                       |
+| `keyIndex`   | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `labelIndex` | Integer, 范围为 `[0..16]`      | The index for the new label value.                                                                                       |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -1208,10 +1217,11 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.setPropertyParameters(items)`
 
-!!! note
-    This functionality was added in After Effects 17.0.1 (2020)
+:::note
+该方法添加于 After Effects 17.0.1 (2020)
+:::
 
-#### Description
+#### 描述
 
 Sets parameters for a Dropdown Menu Control's Menu Property. This method will overwrite the existing set of Menu items with the provided array of strings.
 
@@ -1219,26 +1229,23 @@ Sets parameters for a Dropdown Menu Control's Menu Property. This method will ov
 - To check if a property allows parameters to be set, check with [isDropdownEffect](#propertyisdropdowneffect) before calling this method.
 - An exception is raised whenever this method fails.
 
-#### Parameters
+#### 参数
 
-+-----------+------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter |       Type       |                                                                                  Description                                                                                  |
-+===========+==================+===============================================================================================================================================================================+
+| 参数 |       类型       |                                                                                  描述                                                                                  |
+|-----------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `items`   | Array of strings | Values which will replace the existing menu entries in a Dropdown Menu Control.                                                                                               |
-|           |                  |                                                                                                                                                                               |
 |           |                  | - Only strings are allowed.                                                                                                                                                   |
 |           |                  | - Empty item strings are not allowed.                                                                                                                                         |
 |           |                  | - Duplicate item strings are not allowed.                                                                                                                                     |
 |           |                  | - The character `"\"` is not allowed in the item strings.                                                                                                                     |
 |           |                  | - The string `"(-"` can be specified as of the item strings, to create a separator line in the dropdown menu. The separator lines will claim an index for each of themselves. |
-+-----------+------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-!!! tip
-    Item strings should be in ASCII or MultiByte encodable in the current code-page. In other words, the item strings should be provided in the script of the running system.
+:::tip
 
-    For example: Specifying the item strings in Japanese while running the script on an English system will create a dropdown effect with illegible characters in the item strings.
+For example: Specifying the item strings in Japanese while running the script on an English system will create a dropdown effect with illegible characters in the item strings.
+:::
 
-#### Example
+#### 示例
 
 ```javascript
 var dropdownItems = [
@@ -1253,7 +1260,7 @@ var dropdownEffect = layer.property("ADBE Effect Parade").addProperty("ADBE Drop
 dropdownEffect.property(1).setPropertyParameters(dropdownItems);
 ```
 
-#### Returns
+#### 返回
 
 Property object, the updated Dropdown Menu Control's Menu property.
 
@@ -1263,18 +1270,18 @@ Property object, the updated Dropdown Menu Control's Menu property.
 
 `app.project.item(index).layer(index).propertySpec.setRovingAtKey(keyIndex, newVal)`
 
-#### Description
+#### 描述
 
 Turns roving on or off for the specified keyframe. The first and last keyframe in a property cannot rove; if you try to set roving for one of these, the operation is ignored, and `keyRoving()` continues to return `false`. If the property value type is neither `TwoD_SPATIAL` nor `ThreeD_SPATIAL`, an exception is generated.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 | `newVal`   | Boolean                              | `true` to turn roving on, `false` to turn roving off.                                                                    |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -1284,18 +1291,18 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.setSelectedAtKey(keyIndex, onOff)`
 
-#### Description
+#### 描述
 
 Selects or deselects the specified keyframe.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 | `onOff`    | Boolean                              | `true` to select the keyframe, `false` to deselect it.                                                                   |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -1305,18 +1312,18 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.setSpatialAutoBezierAtKey(keyIndex, newVal)`
 
-#### Description
+#### 描述
 
 Turns spatial auto-Bezier interpolation on or off for the specified keyframe. If the property value type is neither `TwoD_SPATIAL` nor `ThreeD_SPATIAL`, an exception is generated.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 | `newVal`   | Boolean                              | `true` to turn spatial auto-Bezier on, `false` to turn it off.                                                           |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -1326,18 +1333,18 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.setSpatialContinuousAtKey(keyIndex, newVal)`
 
-#### Description
+#### 描述
 
 Turns spatial continuity on or off for the specified keyframe. If the property value type is neither `TwoD_SPATIAL` nor `ThreeD_SPATIAL`, an exception is generated.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 | `newVal`   | Boolean                              | `true` to turn spatial auto-Bezier on, `false` to turn it off.                                                           |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -1347,29 +1354,23 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.setSpatialTangentsAtKey(keyIndex, inTangent[, outTangent])`
 
-#### Description
+#### 描述
 
 Sets the incoming and outgoing tangent vectors for the specified keyframe. If the property value type is neither `TwoD_SPATIAL` nor `ThreeD_SPATIAL`, an exception is generated.
 
-#### Parameters
+#### 参数
 
-+--------------+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-|  Parameter   |                   Type                    |                                                                      Description                                                                      |
-+==============+===========================================+=======================================================================================================================================================+
-| `keyIndex`   | Integer                                   | The index for the keyframe, in the range `[1..numKeys]`, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
-+--------------+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|  参数   |                   类型                    |                                                                      描述                                                                      |
+|--------------|-------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `keyIndex`   | Integer                                   | The index for the keyframe, 范围为 `[1..numKeys]`, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 | `inTangent`  | An array of 2 or 3 floating-point values. | The incoming tangent vector.                                                                                                                          |
-|              |                                           |                                                                                                                                                       |
 |              |                                           | - If the property value type is `PropertyValueType.TwoD_SPATIAL`, the array contains 2 values.                                                        |
 |              |                                           | - If the property value type is `PropertyValueType.ThreeD_SPATIAL`, the array contains 3 values.                                                      |
-+--------------+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `outTangent` | An array of 2 or 3 floating-point values. | Optional. The outgoing tangent vector. If not supplied, the `out` tangent is set to the `inTangent` value.                                            |
-|              |                                           |                                                                                                                                                       |
 |              |                                           | - If the property value type is `PropertyValueType.TwoD_SPATIAL`, the array contains 2 values.                                                        |
 |              |                                           | - If the property value type is `PropertyValueType.ThreeD_SPATIAL`, the array contains 3 values.                                                      |
-+--------------+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -1379,18 +1380,18 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.setTemporalAutoBezierAtKey(keyIndex, newVal)`
 
-#### Description
+#### 描述
 
 Turns temporal auto-Bezier interpolation on or off for the specified keyframe. When this is turned on, it affects this keyframe only if `keySpatialContinuous(keyIndex)` is also true.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 | `newVal`   | Boolean                              | `true` to turn temporal auto-Bezier on, `false` to turn it off.                                                          |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -1400,18 +1401,18 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.setTemporalContinuousAtKey(keyIndex, newVal)`
 
-#### Description
+#### 描述
 
 Turns temporal continuity on or off for the specified keyframe. When temporal continuity is turned on, it affects this keyframe only if the keyframe interpolation type is `KeyframeInterpolationType.BEZIER` for both `keyInInterpolationType(keyIndex)` and `keyOutInterpolationType(keyIndex)`.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 | `newVal`   | Boolean                              | `true` to turn temporal auto-Bezier on, `false` to turn it off.                                                          |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -1421,31 +1422,25 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.setTemporalEaseAtKey(keyIndex, inTemporalEase[, outTemporalEase])`
 
-#### Description
+#### 描述
 
 Sets the incoming and outgoing temporal ease for the specified keyframe. See [KeyframeEase object](../../other/keyframeease).
 
-#### Parameters
+#### 参数
 
-+-------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     Parameter     |                                  Type                                   |                                                                      Description                                                                      |
-+===================+=========================================================================+=======================================================================================================================================================+
-| `keyIndex`        | Integer                                                                 | The index for the keyframe, in the range `[1..numKeys]`, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
-+-------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|     参数     |                                  类型                                   |                                                                      描述                                                                      |
+|-------------------|-------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `keyIndex`        | Integer                                                                 | The index for the keyframe, 范围为 `[1..numKeys]`, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 | `inTemporalEase`  | An array of 1, 2, or 3 [KeyframeEase objects](../../other/keyframeease) | The incoming temporal ease.                                                                                                                           |
-|                   |                                                                         |                                                                                                                                                       |
 |                   |                                                                         | - If the property value type is `PropertyValueType.TwoD`, the array contains 2 objects.                                                               |
 |                   |                                                                         | - If the property value type is `PropertyValueType.ThreeD`, the array contains 3 objects.                                                             |
 |                   |                                                                         | - For all other value types, the array contains 1 object.                                                                                             |
-+-------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `outTemporalEase` | An array of 1, 2, or 3 [KeyframeEase objects](../../other/keyframeease) | Optional. The outgoing temporal ease. If not supplied, the outgoing ease is set to the `inTemporalEase` value.                                        |
-|                   |                                                                         |                                                                                                                                                       |
 |                   |                                                                         | - If the property value type is `PropertyValueType.TwoD`, the array contains 2 objects.                                                               |
 |                   |                                                                         | - If the property value type is `PropertyValueType.ThreeD`, the array contains 3 objects.                                                             |
 |                   |                                                                         | - For all other value types, the array contains 1 object.                                                                                             |
-+-------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -1455,17 +1450,17 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.setValue(newValue)`
 
-#### Description
+#### 描述
 
 Sets the static value of a property that has no keyframes. If the named property has keyframes, this method generates an exception and displays an error. To set the value of a property with keyframes, use [Property.setValueAtTime()](#propertysetvalueattime) or [Property.setValueAtKey()](#propertysetvalueatkey).
 
-#### Parameters
+#### 参数
 
-| Parameter  | Type  |                                                      Description                                                      |
+| 参数  | Type  |                                                      描述                                                      |
 | ---------- | ----- | --------------------------------------------------------------------------------------------------------------------- |
 | `newValue` | Value | A value appropriate for the type of property being set; see [Property.propertyValueType](#propertypropertyvaluetype). |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -1475,18 +1470,18 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.setValueAtKey(keyIndex, newValue)`
 
-#### Description
+#### 描述
 
 Finds the specified keyframe and sets its value. If the named property has no keyframes, or no keyframe with the specified index, this method generates an exception and displays an error.
 
-#### Parameters
+#### 参数
 
-| Parameter  |                 Type                 |                                                       Description                                                        |
+| 参数  |                 类型                 |                                                       描述                                                        |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex` | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
+| `keyIndex` | Integer, 范围为 `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
 | `newValue` | Value                                | A value appropriate for the type of property being set; see [Property.propertyValueType](#propertypropertyvaluetype).    |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -1496,18 +1491,18 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.setValueAtTime(time, newValue)`
 
-#### Description
+#### 描述
 
 Sets the value of a keyframe at the specified time. Creates a new keyframe for the named property, if one does not currently exist for the specified time, and sets its value.
 
-#### Parameters
+#### 参数
 
-| Parameter  |         Type         |                                                      Description                                                      |
+| 参数  |         类型         |                                                      描述                                                      |
 | ---------- | -------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | `time`     | Floating-point value | The time, in seconds, at which to set the value. The beginning of the composition is 0.                               |
 | `newValue` | Value                | A value appropriate for the type of property being set; see [Property.propertyValueType](#propertypropertyvaluetype). |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -1517,18 +1512,18 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.setValuesAtTimes(times, newValues)`
 
-#### Description
+#### 描述
 
 Sets values for a set of keyframes at specified times. Creates a new keyframe for the named property, if one does not currently exist for a specified time, and sets its value. Times and values are expressed as arrays; the arrays must be of the same length.
 
-#### Parameters
+#### 参数
 
-|  Parameter  |              Type              |                                                           Description                                                           |
+|  参数  |              类型              |                                                           描述                                                           |
 | ----------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
 | `times`     | Array of floating-point values | An array of times, in seconds. The beginning of the composition is 0.                                                           |
 | `newValues` | Array of values                | A array of values appropriate for the type of property being set; see [Property.propertyValueType](#propertypropertyvaluetype). |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -1538,20 +1533,21 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.valueAtTime(time, preExpression)`
 
-#### Description
+#### 描述
 
 The value of the named property as evaluated at the specified time. Note that the type of value returned is not made explicit; it will be of a different type, depending on the property evaluated.
 
-!!! tip
-    As After Effects 13.6, this method now waits for time-intensive expressions, like `sampleImage`, to finish evaluating before it returns the result.
+:::tip
+As After Effects 13.6, this method now waits for time-intensive expressions, like `sampleImage`, to finish evaluating before it returns the result.
+:::
 
-#### Parameters
+#### 参数
 
-|    Parameter    |         Type         |                                                                                                                                        Description                                                                                                                                        |
+|    参数    |         类型         |                                                                                                                                        描述                                                                                                                                        |
 | --------------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `time`          | Floating-point value | The time, in seconds, at which to set the value. The beginning of the composition is 0.                                                                                                                                                                                                   |
 | `preExpression` | Boolean              | If the property has an expression and this is `true`, return the value for the specified time without applying the expression to it. When `false`, return the result of evaluating the expression for the specified time. Ignored if the property does not have an associated expression. |
 
-#### Returns
+#### 返回
 
 A value appropriate for the type of the property (see "Property propertyValueType attribute" on page 138).

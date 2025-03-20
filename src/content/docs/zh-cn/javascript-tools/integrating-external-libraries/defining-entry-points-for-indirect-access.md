@@ -1,7 +1,6 @@
 ---
 title: defining-entry-points-for-indirect-access
 ---
-
 # Defining entry points for indirect access
 
 The C-client object interface for external libraries allows your C or C++ shared-library code to define, create, use, and manage JavaScript objects.
@@ -16,30 +15,23 @@ The following entry points are required if you wish to use the object interface:
 
 `int ESClientInterface (SoCClient_e kReason, SoServerInterface* pServer, SoHServer hServer)`
 
-#### Description
+#### 描述
 
 Your library must define this global function in order to use the object interface to JavaScript. The function is called twice in each session, immediately upon loading the library, and again when unloading it.
 
-#### Parameters
+#### 参数
 
-+-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter |                                                                                                         Description                                                                                                          |
-+===========+==============================================================================================================================================================================================================================+
+| 参数 |                                                                                                         描述                                                                                                          |
+|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `kReason` | The reason for this call, one of these constants:                                                                                                                                                                            |
-|           |                                                                                                                                                                                                                              |
 |           | - `kSoCClient_init`: The function is being called for initialization upon load.                                                                                                                                              |
 |           | - `kSoCClient_term`.: The function is being called for termination upon unload.                                                                                                                                              |
-+-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `pServer` | A pointer to an [SoServerInterface](#soserverinterface) containing function pointers for the entry points, which enable the shared-library code to call into JavaScript to create and access JavaScript classes and objects. |
-|           |                                                                                                                                                                                                                              |
 |           | The shared-library code is responsible for storing this structure between the initialization and termination call, and retrieving it to access the functions.                                                                |
-+-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `hServer` | An [Support structures](#support-structures) reference for this shared library. The server is an object factory that creates and manages [Support structures](#support-structures) objects.                                  |
-|           |                                                                                                                                                                                                                              |
 |           | The shared-library code is responsible for storing this structure between the initialization and termination calls. You must pass it to [taggedDataInit()](#taggeddatainit) and [taggedDataFree()](#taggeddatafree).         |
-+-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#### Returns
+#### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -49,17 +41,17 @@ Returns an error code, `kESErrOK` on success.
 
 `void * ESMallocMem (size_t nbytes)`
 
-#### Description
+#### 描述
 
 Provides a memory allocation routine to be used by JavaScript for managing memory associated with the library's objects.
 
-#### Parameters
+#### 参数
 
-| Parameter |           Description            |
+| 参数 |           描述            |
 | --------- | -------------------------------- |
 | `nbytes`  | The number of bytes to allocate. |
 
-#### Returns
+#### 返回
 
 A pointer to the allocated block of memory.
 
@@ -128,18 +120,17 @@ These functions allow your C/C++ shared library code to create, modify, and acce
 
 `ESerror_t dumpServer (SoHServer hServer);`
 
-##### Description
+##### 描述
 
 Prints the contents of this server to the JavaScript Console in the ExtendScript Toolkit, for debugging.
 
-##### Parameters
+##### 参数
 
-| Parameter |                                                                                   Description                                                                                   |
+| 参数 |                                                                                   描述                                                                                   |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `hServer` | The [Support structures](#support-structures) reference for this shared library, as passed to your global [ESClientInterface()](#esclientinterface) function on initialization. |
 
-
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -149,18 +140,17 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t dumpObject (SoHObject hObject);`
 
-##### Description
+##### 描述
 
 Prints the contents of this object to the JavaScript Console in the ExtendScript Toolkit, for debugging.
 
-##### Parameters
+##### 参数
 
-| Parameter |                                      Description                                       |
+| 参数 |                                      描述                                       |
 | --------- | -------------------------------------------------------------------------------------- |
 | `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
 
-
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -170,19 +160,19 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t addClass (SoHServer hServer, char* name, SoObjectInterface_p pObjectInterface);`
 
-##### Description
+##### 描述
 
 Creates a new JavaScript class.
 
-##### Parameters
+##### 参数
 
-|     Parameter      |                                                                                   Description                                                                                   |
+|     参数      |                                                                                   描述                                                                                   |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `hServer`          | The [Support structures](#support-structures) reference for this shared library, as passed to your global [ESClientInterface()](#esclientinterface) function on initialization. |
 | `name`             | String. The unique name of the new class. The name must begin with an uppercase alphabetic character.                                                                           |
 | `pObjectInterface` | A pointer to an [SoObjectInterface](#soobjectinterface). A structure containing pointers to the object interface methods for instances of this class.                           |
 
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -192,20 +182,20 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t addMethod (SoHObject hObject, const char* name, int id, char* desc);`
 
-##### Description
+##### 描述
 
 Adds new method to an instance.
 
-##### Parameters
+##### 参数
 
-| Parameter |                                      Description                                       |
+| 参数 |                                      描述                                       |
 | --------- | -------------------------------------------------------------------------------------- |
 | `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
 | `name`    | String. The unique name of the new method.                                             |
 | `id`      | Number. The unique identifier for the new method.                                      |
 | `desc`    | String. A descriptive string for the new method.                                       |
 
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -215,18 +205,18 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t addMethods (SoHObject hObject, SoCClientName_p pNames);`
 
-##### Description
+##### 描述
 
 Adds a set of new methods to an instance.
 
-##### Parameters
+##### 参数
 
-| Parameter  |                                                Description                                                |
+| 参数  |                                                描述                                                |
 | ---------- | --------------------------------------------------------------------------------------------------------- |
 | `hObject`  | The [Support structures](#support-structures) reference for an instance of this class.                    |
 | `pNames[]` | [SoCClientName](#socclientname). A structure containing the names and identifiers of methods to be added. |
 
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -236,20 +226,20 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t addProperty (SoHObject hObject, const char* name, int id, char* desc);`
 
-##### Description
+##### 描述
 
 Adds new property to an instance.
 
-##### Parameters
+##### 参数
 
-| Parameter |                                      Description                                       |
+| 参数 |                                      描述                                       |
 | --------- | -------------------------------------------------------------------------------------- |
 | `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
 | `name`    | String. The unique name of the new property.                                           |
 | `id`      | Number. The unique identifier for the new property.                                    |
 | `desc`    | String. Optional. A descriptive string for the new property, or null.                  |
 
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -259,18 +249,18 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t addProperties (SoHObject hObject, SoCClientName_p pNames);`
 
-##### Description
+##### 描述
 
 Adds a set of new properties to an instance.
 
-##### Parameters
+##### 参数
 
-| Parameter  |                                                 Description                                                  |
+| 参数  |                                                 描述                                                  |
 | ---------- | ------------------------------------------------------------------------------------------------------------ |
 | `hObject`  | The [Support structures](#support-structures) reference for an instance of this class.                       |
 | `pNames[]` | [SoCClientName](#socclientname). A structure containing the names and identifiers of properties to be added. |
 
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -280,19 +270,19 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t getClass (SoHObject hObject, char* name, int name_l);`
 
-##### Description
+##### 描述
 
 Retrieves this object's parent class name.
 
-##### Parameters
+##### 参数
 
-| Parameter |                                      Description                                       |
+| 参数 |                                      描述                                       |
 | --------- | -------------------------------------------------------------------------------------- |
 | `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
 | `name`    | String. A buffer in which to return the unique name of the class.                      |
 | `name_1`  | Number. The size of the name buffer.                                                   |
 
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -302,19 +292,19 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t getServer (SoHObject hObject, SoHServer* phServer, SoServerInterface_p* ppServerInterface);`
 
-##### Description
+##### 描述
 
 Retrieves the interface methods for this object, and the server object that manages it.
 
-##### Parameters
+##### 参数
 
-|      Parameter      |                                             Description                                              |
+|      参数      |                                             描述                                              |
 | ------------------- | ---------------------------------------------------------------------------------------------------- |
 | `hObject`           | The [Support structures](#support-structures) reference for an instance of this class.               |
 | `phServer`          | A buffer in which to return the [Support structures](#support-structures) reference for this object. |
 | `ppServerInterface` | A buffer in which to return the [SoObjectInterface](#soobjectinterface) reference for this object.   |
 
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -324,18 +314,18 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t setClientData (SoHObject hObject, void* pData);`
 
-##### Description
+##### 描述
 
 Sets your own data to be stored with an object.
 
-##### Parameters
+##### 参数
 
-| Parameter |                                      Description                                       |
+| 参数 |                                      描述                                       |
 | --------- | -------------------------------------------------------------------------------------- |
 | `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
 | `pData`   | A pointer to the library-defined data.                                                 |
 
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -345,18 +335,18 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t setClientData (SoHObject hObject, void** pData);`
 
-##### Description
+##### 描述
 
 Retrieves data that was stored with [setClientData()](#setclientdata).
 
-##### Parameters
+##### 参数
 
-| Parameter |                                      Description                                       |
+| 参数 |                                      描述                                       |
 | --------- | -------------------------------------------------------------------------------------- |
 | `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
 | `pData`   | A buffer in which to return a pointer to the library-defined data.                     |
 
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -366,20 +356,19 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t eval (SohServer hServer, char* string, TaggedData* pTaggedData);`
 
-##### Description
+##### 描述
 
 Calls the JavaScript interpreter to evaluate a JavaScript expression.
 
-##### Parameters
+##### 参数
 
-|   Parameter   |                                                                                   Description                                                                                   |
+|   参数   |                                                                                   描述                                                                                   |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `hServer`     | The [Support structures](#support-structures) reference for this shared library, as passed to your global [ESClientInterface()](#esclientinterface) function on initialization. |
 | String        | A string containing the JavaScript expression to evaluate.                                                                                                                      |
 | `pTaggedData` | A pointer to a [TaggedData](#taggeddata) object in which to return the result of evaluation.                                                                                    |
 
-
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -389,18 +378,18 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t taggedDataInit (SoHSever hServer, TaggedData* pTaggedData);`
 
-##### Description
+##### 描述
 
 Initializes a TaggedData structure.
 
-##### Parameters
+##### 参数
 
-|   Parameter   |                                                                                   Description                                                                                   |
+|   参数   |                                                                                   描述                                                                                   |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `hServer`     | The [Support structures](#support-structures) reference for this shared library, as passed to your global [ESClientInterface()](#esclientinterface) function on initialization. |
 | `pTaggedData` | A pointer to a [TaggedData](#taggeddata).                                                                                                                                       |
 
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -410,18 +399,18 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t setClientData (SoHServer hServer, TaggedData* pTaggedData);`
 
-##### Description
+##### 描述
 
 Frees memory being used by a TaggedData structure.
 
-##### Parameters
+##### 参数
 
-|   Parameter   |                                                                                   Description                                                                                   |
+|   参数   |                                                                                   描述                                                                                   |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `hServer`     | The [Support structures](#support-structures) reference for this shared library, as passed to your global [ESClientInterface()](#esclientinterface) function on initialization. |
 | `pTaggedData` | A pointer to a [TaggedData](#taggeddata).                                                                                                                                       |
 
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -451,7 +440,7 @@ All `SoObjectInterface` members must be valid function pointers, or NULL. You mu
 
 `ESerror_t initialize (SoHObject hObject, int argc, TaggedData* argv);`
 
-##### Description
+##### 描述
 
 Required. Called when JavaScript code instantiates this class with the new operator:
 
@@ -461,14 +450,14 @@ var xx = New MyClass(arg1, ...)
 
 The initialization function typically adds properties and methods to the object. Objects of the same class can offer different properties and methods, which you can add with the [addMethod()](#addmethod) and [addProperty()](#addproperty) functions in the stored SoServerInterface.
 
-##### Parameters
+##### 参数
 
-|  Parameter   |                                                 Description                                                 |
+|  参数   |                                                 描述                                                 |
 | ------------ | ----------------------------------------------------------------------------------------------------------- |
 | `hObject`    | The [Support structures](#support-structures) reference for an instance of this class.                      |
 | `argc, argv` | The number of and pointer to arguments passed to the constructor, in the form of [TaggedData](#taggeddata). |
 
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -478,7 +467,7 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t put (SoHObject hObject, SoCClientName* name, TaggedData* pValue);`
 
-##### Description
+##### 描述
 
 Called when JavaScript code sets a property of this class:
 
@@ -488,15 +477,15 @@ xx.myproperty = "abc" ;
 
 If you provide `NULL` for this function, the JavaScript object is read-only.
 
-##### Parameters
+##### 参数
 
-| Parameter |                                      Description                                       |
+| 参数 |                                      描述                                       |
 | --------- | -------------------------------------------------------------------------------------- |
 | `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
 | `name`    | The name of the property, a pointer to an [SoCClientName](#socclientname).             |
 | `pValue`  | The new value, a pointer to a [TaggedData](#taggeddata).                               |
 
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -506,7 +495,7 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t get (SoHObject hObject, SoCClientName* name, TaggedData* pValue);`
 
-##### Description
+##### 描述
 
 Called when JavaScript code accesses a property of this class:
 
@@ -514,15 +503,15 @@ Called when JavaScript code accesses a property of this class:
 alert(xx.myproperty);
 ```
 
-##### Parameters
+##### 参数
 
-| Parameter |                                      Description                                       |
+| 参数 |                                      描述                                       |
 | --------- | -------------------------------------------------------------------------------------- |
 | `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
 | `name`    | The name of the property, a pointer to an [SoCClientName](#socclientname).             |
 | `pValue`  | A buffer in which to return the property value, a [TaggedData](#taggeddata).           |
 
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -532,7 +521,7 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t call (SoHObject hObject, SoCClientName* name, int argc, TaggedData* argv, TaggedData* pResult);`
 
-##### Description
+##### 描述
 
 Called when JavaScript code calls a method of this class:
 
@@ -542,16 +531,16 @@ xx.mymethod()
 
 Required in order for JavaScript to call any methods of this class.
 
-##### Parameters
+##### 参数
 
-|  Parameter   |                                           Description                                            |
+|  参数   |                                           描述                                            |
 | ------------ | ------------------------------------------------------------------------------------------------ |
 | `hObject`    | The [Support structures](#support-structures) reference for an instance of this class.           |
 | `name`       | The name of the property, a pointer to an [SoCClientName](#socclientname).                       |
 | `argc, argv` | The number and pointer to arguments passed to the call, in the form of [TaggedData](#taggeddata) |
 | `pResult`    | A buffer in which to return the result of the call, in the form of [TaggedData](#taggeddata)     |
 
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -561,18 +550,18 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t valueOf (SoHObject hObject, TaggedData* pResult);`
 
-##### Description
+##### 描述
 
 Creates and returns the value of the object, with no type conversion.
 
-##### Parameters
+##### 参数
 
-| Parameter |                                          Description                                          |
+| 参数 |                                          描述                                          |
 | --------- | --------------------------------------------------------------------------------------------- |
 | `hObject` | The [Support structures](#support-structures) reference for an instance of this class.        |
 | `pResult` | A buffer in which to return the result of the value, in the form of [TaggedData](#taggeddata) |
 
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -582,19 +571,18 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t toString (SoHObject hObject, TaggedData* pResult);`
 
-##### Description
+##### 描述
 
 Creates and returns a string representing the value of this object.
 
-##### Parameters
+##### 参数
 
-| Parameter |                                          Description                                           |
+| 参数 |                                          描述                                           |
 | --------- | ---------------------------------------------------------------------------------------------- |
 | `hObject` | The [Support structures](#support-structures) reference for an instance of this class.         |
 | `pResult` | A buffer in which to return the result of the string, in the form of [TaggedData](#taggeddata) |
 
-
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -604,19 +592,19 @@ Returns an error code, `kESErrOK` on success.
 
 `ESerror_t finalize (SoHObject hObject);`
 
-##### Description
+##### 描述
 
 Required. Called when JavaScript deletes an instance of this class.
 
 Use this function to free any memory you have allocated.
 
-##### Parameters
+##### 参数
 
-| Parameter |                                      Description                                       |
+| 参数 |                                      描述                                       |
 | --------- | -------------------------------------------------------------------------------------- |
 | `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
 
-##### Returns
+##### 返回
 
 Returns an error code, `kESErrOK` on success.
 
@@ -626,9 +614,9 @@ Returns an error code, `kESErrOK` on success.
 
 These support structures are passed to functions that you define for your JavaScript interface:
 
-#### Parameters
+#### 参数
 
-|    Parameter    |                                                 Description                                                 |
+|    参数    |                                                 描述                                                 |
 | --------------- | ----------------------------------------------------------------------------------------------------------- |
 | `SoHObject`     | An opaque pointer `(long *)` to the C/C++ representation of a JavaScript object.                            |
 | `SoHServer`     | An opaque pointer `(long *)` to the server object, which acts as an object factory for the shared library.  |
@@ -647,9 +635,9 @@ SoCClientName {
 }
 ```
 
-#### Parameters
+#### 参数
 
-| Parameter  |                                                                                                                                                        Description                                                                                                                                                         |
+| 参数  |                                                                                                                                                        描述                                                                                                                                                         |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name_sig` | The name of the property or method, unique within the class. Optionally contains a signature following an underscore, which identifies the types of arguments to methods; see Function signatures. When names are passed back to your SoObjectInterface functions, the signature portion is omitted.                       |
 | `id`       | A unique identifying number for the property or method, or 0 to assign a generated UID. If you assign the UID, your C/C++ code can use it to avoid string comparisons when identifying JavaScript properties and methods. It is recommended that you either assign all UIDs explicitly, or allow them all to be generated. |
@@ -674,27 +662,19 @@ typedef struct {
 } TaggedData;
 ```
 
-#### Parameters
+#### 参数
 
-+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter |                                                                                                                                   Description                                                                                                                                   |
-+===========+=================================================================================================================================================================================================================================================================================+
+| 参数 |                                                                                                                                   描述                                                                                                                                   |
+|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `intval`  | Integer and boolean data values. Type is `kTypeInteger`, `kTypeUInteger`, or `kTypeBool`.                                                                                                                                                                                       |
-+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `fltval`  | Floating-point numeric data values. Type is `kTypeDouble`.                                                                                                                                                                                                                      |
-+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | String    | String data values. All strings are UTF-8 encoded and null-terminated. Type is `kTypeString` or `kTypeScript`.                                                                                                                                                                  |
-|           |                                                                                                                                                                                                                                                                                 |
 |           | - The library must define an entry point [ESFreeMem()](defining-entry-points-for-direct-access.md#esfreemem), which ExtendScript calls to release a returned string pointer. If this entry point is missing, ExtendScript does not attempt to release any returned string data. |
 |           | - When a function returns a string of type kTypeScript, ExtendScript evaluates the script and returns the result of evaluation as the result of the function call.                                                                                                              |
-+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `hObject` | A C/C++ representation of a JavaScript object data value. Type is `kTypeLiveObject` or `kTypeLiveObjectRelease`.                                                                                                                                                                |
-|           |                                                                                                                                                                                                                                                                                 |
 |           | - When a function returns an object of type kTypeLiveObject, ExtendScript does not release the object.                                                                                                                                                                          |
 |           | - When a function returns an object of type kTypeLiveObjectRelease, ExtendScript releases the object.                                                                                                                                                                           |
-+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `type`    | The data type tag. One of:                                                                                                                                                                                                                                                      |
-|           |                                                                                                                                                                                                                                                                                 |
 |           | - `kTypeUndefined`: a null value, equivalent of JavaScript `undefined`. The return value for a function is always set to this by default.                                                                                                                                       |
 |           | - `kTypeBool`: a boolean value, 0 for `false`, 1 for `true`.                                                                                                                                                                                                                    |
 |           | - `kTypeDouble`: a 64-bit floating-point number.                                                                                                                                                                                                                                |
@@ -704,6 +684,4 @@ typedef struct {
 |           | - `kTypeInteger`: a 32-bit signed integer value.                                                                                                                                                                                                                                |
 |           | - `kTypeUInteger`: a 32-bit unsigned integer value.                                                                                                                                                                                                                             |
 |           | - `kTypeScript`: a string containing an executable JavaScript script.                                                                                                                                                                                                           |
-+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `filler`  | A 4-byte filler for 8-byte alignment.                                                                                                                                                                                                                                           |
-+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

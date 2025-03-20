@@ -1,7 +1,6 @@
 ---
 title: specifying-measurement-values
 ---
-
 # Specifying measurement values
 
 ExtendScript provides the UnitValue object to represent measurement values. The properties and methods of the UnitValue object make it easy to change the value, the unit, or both, or to perform conversions from one unit to another.
@@ -38,7 +37,7 @@ The value is a number, and the unit is specified with a string in abbreviated, s
 | `"tpc"`      | `"traditional pica"`  | `"traditional picas"`  | 12 tpt               |
 | `"ci"`       | `"cicero"`            | `"ciceros"`            | 12.7872 pt           |
 | `"px"`       | `"pixel"`             | `"pixels"`             | baseless (see below) |
-| `"%" `       | `"percent"`           | `"percent"`            | baseless (see below) |
+| `"%"`       | `"percent"`           | `"percent"`            | baseless (see below) |
 
 If an unknown unit type is supplied, the type is set to `"?"`, and the `UnitValue` object prints as "UnitValue 0.00000".
 
@@ -52,13 +51,13 @@ myVal = UnitValue ("12 centimeters");
 
 ---
 
-## Attributes
+## 属性
 
 ### UnitValue.baseUnit
 
 `unitValueObj.baseUnit`
 
-#### Description
+#### 描述
 
 A [UnitValue object](#unitvalue-object) that defines the size of one pixel, or a total size to use as a base for percentage values.
 
@@ -66,7 +65,7 @@ This is used as the base conversion unit for pixels and percentages; see [Conver
 
 Default is 0.013889 inches (1/72 in), which is the base conversion unit for pixels at 72 dpi. Set to null to restore the default.
 
-#### Type
+#### 类型
 
 UnitValue
 
@@ -76,11 +75,11 @@ UnitValue
 
 `unitValueObj.type`
 
-#### Description
+#### 描述
 
 The unit type in abbreviated form; for example, "cm" or "in".
 
-#### Type
+#### 类型
 
 String
 
@@ -90,36 +89,35 @@ String
 
 `unitValueObj.value`
 
-#### Description
+#### 描述
 
 The numeric measurement value.
 
-#### Type
+#### 类型
 
 Number
 
 ---
 
-
 ---
 
-## Methods
+## 函数
 
 ### UnitValue.as()
 
 `unitValueObj.as(unit)`
 
-#### Description
+#### 描述
 
 Returns the numeric value of this object in the given unit. If the unit is unknown or cannot be computed, generates a run-time error.
 
 #### Parameter
 
-| Parameter |  Type  |                            Description                            |
+| 参数 |  类型  |                            描述                            |
 | --------- | ------ | ----------------------------------------------------------------- |
 | `unit`    | String | The unit type in abbreviated form; for example, `"cm"` or `"in"`. |
 
-#### Returns
+#### 返回
 
 Number
 
@@ -129,7 +127,7 @@ Number
 
 `unitValueObj.convert(unit)`
 
-#### Description
+#### 描述
 
 Converts this object to the given unit, resetting the type and value accordingly.
 
@@ -137,11 +135,11 @@ Returns `true` if the conversion is successful. If the unit is unknown or the ob
 
 #### Parameter
 
-| Parameter |  Type  |                            Description                            |
+| 参数 |  类型  |                            描述                            |
 | --------- | ------ | ----------------------------------------------------------------- |
 | `unit`    | String | The unit type in abbreviated form; for example, `"cm"` or `"in"`. |
 
-#### Returns
+#### 返回
 
 Boolean
 

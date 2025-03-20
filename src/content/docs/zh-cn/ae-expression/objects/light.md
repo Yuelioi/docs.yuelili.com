@@ -1,46 +1,35 @@
 ---
-title: light
+title: 灯光
 ---
-
 # Light
 
 `thisLayer.lightOption`
 
-This category is for items specific to Light Layers.
+此类别用于灯光图层的特定属性。
 
-!!! info
-    Light is a subclass of the [Layer object](../../layer/layer). All methods and attributes of Layer are available when working with Light, except:
+:::info
 
-    - `source`
-    - `effect`
-    - `mask`
-    - `width`
-    - `height`
-    - `anchorPoint`
-    - `scale`
-    - `opacity`
-    - `audioLevels`
-    - `timeRemap`
-    - all the material properties
+* 所有材质属性 :::
 
-!!! note
-    David Van Brink provides an instructional article and sample project on his [omino pixel blog](http://www.adobe.com/go/learn_ae_ominoflashing) that shows how to use expressions with lights.
+:::note
 
+David Van Brink 在他的 [omino pixel 博客](http://www.adobe.com/go/learn_ae_ominoflashing) 上提供了一篇指导文章和示例项目，展示了如何在灯光中使用表达式。
+:::
 ---
 
-## Attributes
+## 属性
 
 ### Light.castsShadows
 
 `thisLayer.lightOption.castsShadows`
 
-#### Description
+#### 描述
 
-Returns whether the light casts shadows.
+返回灯光是否投射阴影。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -48,13 +37,13 @@ Boolean
 
 `thisLayer.lightOption.color`
 
-#### Description
+#### 描述
 
-Returns the color value of a light.
+返回灯光的颜色值。
 
-#### Type
+#### 类型
 
-Array (4-dimensional)
+数组（四维）
 
 ---
 
@@ -62,13 +51,13 @@ Array (4-dimensional)
 
 `thisLayer.lightOption.coneAngle`
 
-#### Description
+#### 描述
 
-Returns the cone angle of a light, in degrees.
+返回灯光的锥角，单位为度。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -76,13 +65,13 @@ Number
 
 `thisLayer.lightOption.coneFeather`
 
-#### Description
+#### 描述
 
-Returns the cone feather value of a light as a percentage.
+以百分比形式返回灯光的锥角羽化值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -90,13 +79,13 @@ Number
 
 `thisLayer.lightOption.falloff`
 
-#### Description
+#### 描述
 
-Returns the cone falloff dropdown option.
+返回灯光的衰减下拉选项。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -104,13 +93,13 @@ Number
 
 `thisLayer.lightOption.falloffDistance`
 
-#### Description
+#### 描述
 
-Returns the falloff distance of a light.
+返回灯光的衰减距离。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -118,13 +107,13 @@ Number
 
 `thisLayer.lightOption.intensity`
 
-#### Description
+#### 描述
 
-Returns the intensity values of a light as a percentage.
+以百分比形式返回灯光的强度值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -132,13 +121,13 @@ Number
 
 `thisLayer.lightOption.pointOfInterest`
 
-#### Description
+#### 描述
 
-Returns the point of interest values for a light in world space.
+返回灯光在世界空间中的兴趣点值。
 
-#### Type
+#### 类型
 
-Array (3-dimensional)
+数组（3 维）
 
 ---
 
@@ -146,13 +135,13 @@ Array (3-dimensional)
 
 `thisLayer.lightOption.radius`
 
-#### Description
+#### 描述
 
-Returns the radius values of a light.
+返回灯光的半径值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -160,13 +149,13 @@ Number
 
 `thisLayer.lightOption.shadowDarkness`
 
-#### Description
+#### 描述
 
-Returns the shadow darkness value of a light as a percentage.
+以百分比形式返回灯光的阴影暗度值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -174,10 +163,10 @@ Number
 
 `thisLayer.lightOption.shadowDiffusion`
 
-#### Description
+#### 描述
 
-Returns the shadow diffusion value of a light, in pixels.
+返回灯光的阴影扩散值，单位为像素。
 
-#### Type
+#### 类型
 
-Number
+数字

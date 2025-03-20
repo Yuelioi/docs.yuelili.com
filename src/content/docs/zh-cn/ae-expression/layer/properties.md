@@ -1,31 +1,31 @@
 ---
-title: properties
+title: 属性
 ---
-
 # Layer Properties
 
 `thisLayer`
 
-When you add masks, effects, paint, or text to a layer, After Effects adds new properties to the Timeline panel. There are too many of these properties to list here, so use the pick whip to learn the syntax for referring to them in your expressions.
+当你向图层添加蒙版、效果、绘画或文本时，After Effects 会在时间轴面板中添加新的属性。这些属性太多，无法在此一一列出，因此请使用拾取器来学习在表达式中引用它们的语法。
 
-!!! info
-    On this page, we're going to use `thisLayer` as a sample on how to call these items, however note that any method that returns a [Layer](.././layer) will work.
+:::info
+在本页中，我们将使用 `thisLayer` 作为调用这些项的示例，但请注意，任何返回 [Layer](.././layer) 的方法都可以使用。
+:::
 
 ---
 
-## Attributes
+## 属性
 
 ### Layer.anchorPoint
 
 `thisLayer.anchorPoint`
 
-#### Description
+#### 描述
 
-Returns the anchor point value of the layer in the coordinate system of the layer (layer space).
+返回图层在其坐标系（图层空间）中的锚点值。
 
-#### Type
+#### 类型
 
-Array of Numbers (2- or 3-dimensional)
+数字数组（2 维或 3 维）
 
 ---
 
@@ -33,13 +33,13 @@ Array of Numbers (2- or 3-dimensional)
 
 `thisLayer.audioLevels`
 
-#### Description
+#### 描述
 
-Returns the value of the Audio Levels property of the layer, in decibels. This value is a 2D value; the first value represents the left audio channel, and the second value represents the right. The value is not the amplitude of the audio track of the source material. Instead, it is the value of the Audio Levels property, which may be affected by keyframes.
+返回图层的音频电平属性值，单位为分贝。该值是一个 2D 值；第一个值表示左音频通道，第二个值表示右音频通道。该值不是源素材音频轨道的振幅，而是音频电平属性的值，可能会受到关键帧的影响。
 
-#### Type
+#### 类型
 
-Array of Numbers (2-dimensional)
+数字数组（2 维）
 
 ---
 
@@ -47,13 +47,13 @@ Array of Numbers (2-dimensional)
 
 `thisLayer.marker`
 
-#### Description
+#### 描述
 
-Returns a given layer's [Marker](../../objects/marker-property) property.
+返回给定图层的 [Marker](../objects/marker-property) 属性。
 
-#### Type
+#### 类型
 
-[Marker Property](../../objects/marker-property)
+[Marker 属性](../objects/marker-property)
 
 ---
 
@@ -61,13 +61,13 @@ Returns a given layer's [Marker](../../objects/marker-property) property.
 
 `thisLayer.name`
 
-#### Description
+#### 描述
 
-Returns the name of the layer.
+返回图层的名称。
 
-#### Type
+#### 类型
 
-String
+字符串
 
 ---
 
@@ -75,13 +75,13 @@ String
 
 `thisLayer.opacity`
 
-#### Description
+#### 描述
 
-Returns the opacity value for the layer, expressed as a percentage.
+返回图层的不透明度值，以百分比表示。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -89,13 +89,13 @@ Number
 
 `thisLayer.position`
 
-#### Description
+#### 描述
 
-Returns the position value of the layer, in world space if the layer has no parent. If the layer has a parent, it returns the position value of the layer in the coordinate system of the parent layer (in the layer space of the parent layer).
+返回图层的位置值，如果图层没有父图层，则返回世界空间中的位置值。如果图层有父图层，则返回图层在父图层坐标系中的位置值（在父图层的图层空间中）。
 
-#### Type
+#### 类型
 
-Array of Numbers (2- or 3-dimensional)
+数字数组（2 维或 3 维）
 
 ---
 
@@ -103,13 +103,13 @@ Array of Numbers (2- or 3-dimensional)
 
 `thisLayer.rotation`
 
-#### Description
+#### 描述
 
-Returns the rotation value of the layer in degrees. For a 3D layer, it returns the z rotation value in degrees.
+返回图层的旋转值，单位为度。对于 3D 图层，返回 z 轴的旋转值，单位为度。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -117,15 +117,13 @@ Number
 
 `thisLayer.scale`
 
-#### Description
+#### 描述
 
-Returns the scale value of the layer, expressed as a percentage.
+返回图层的缩放值，以百分比表示。
 
-#### Type
+#### 类型
 
-Array of Numbers (2- or 3-dimensional)
-
----
+数字数组（2 维或 3 维）
 
 ---
 
@@ -133,10 +131,10 @@ Array of Numbers (2- or 3-dimensional)
 
 `thisLayer.timeRemap`
 
-#### Description
+#### 描述
 
-Returns the value of the Time Remap property, in seconds, if Time Remap is enabled.
+如果启用了时间重映射，则返回时间重映射属性的值，单位为秒。
 
-#### Type
+#### 类型
 
-Number
+数字

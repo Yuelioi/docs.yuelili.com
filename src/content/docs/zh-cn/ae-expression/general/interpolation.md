@@ -1,52 +1,53 @@
 ---
-title: interpolation
+title: 插值
 ---
-
 # Interpolation
 
-For all the Interpolation methods, the argument `t` is often `time` or `value`, though it can have other values, instead. If `t` is `time`, the interpolation between values happens over a duration. If `t` is `value`, then the expression maps one range of values to a new range of values.
+对于所有插值方法，参数 `t` 通常是 `time`（时间）或 `value`（值），但它也可以是其他值。如果 `t` 是 `time`，则值之间的插值会在一段时间内发生。如果 `t` 是 `value`，则表达式会将一个值范围映射到一个新的值范围。
 
-All the Interpolation methods can also be used to convert from one range of values to another.
+所有插值方法还可以用于将一个值范围转换为另一个值范围。
 
-Chris and Trish Meyer provide additional information and examples for these methods in an article on the [ProVideo Coalition website](http://provideocoalition.com/index.php/cmg_keyframes/story/deeper_modes_of_expression_part_2_interpolation_methods/).
+Chris 和 Trish Meyer 在 [ProVideo Coalition 网站](http://provideocoalition.com/index.php/cmg_keyframes/story/deeper_modes_of_expression_part_2_interpolation_methods/) 的文章中提供了关于这些方法的更多信息和示例。
 
-Ian Haigh provides a script on [After Effects Scripts website](http://aescripts.com/ease-and-wizz/) that you can use to easily apply advanced interpolation method expressions—such as bounces—to properties.
+Ian Haigh 在 [After Effects Scripts 网站](http://aescripts.com/ease-and-wizz/) 上提供了一个脚本，你可以使用它轻松地将高级插值方法（如弹跳效果）应用到属性上。
 
 ---
 
-## Methods
+## 函数
 
 ### linear(t, tMin, tMax, value1, value2)
 
 `linear(t, tMin, tMax, value1, value2)`
 
-#### Description
+#### 描述
 
-Returns `value1` when `t <= tMin`. Returns `value2` when `t >= tMax`. Returns a linear interpolation between `value1` and `value2` when `tMin < t < tMax`.
+当 `t <= tMin` 时返回 `value1`。
+当 `t >= tMax` 时返回 `value2`。
+当 `tMin < t < tMax` 时，返回 `value1` 和 `value2` 之间的线性插值。
 
-#### Parameters
+#### 参数
 
-| Parameter |      Type       |        Description        |
-| --------- | --------------- | ------------------------- |
-| `t`       | Number          | Interpolation Driver      |
-| `tMin`    | Number          | Minimum driver value      |
-| `tMax`    | Number          | Maximum driver value      |
-| `value1`  | Number or Array | Value to interpolate from |
-| `value2`  | Number or Array | Value to interpolate to   |
+| 参数       | 类型       | 描述       |
+| ---------- | ---------- | ---------- |
+| `t`      | 数字       | 插值驱动器 |
+| `tMin`   | 数字       | 最小值     |
+| `tMax`   | 数字       | 最大值     |
+| `value1` | 数字或数组 | 插值起始值 |
+| `value2` | 数字或数组 | 插值结束值 |
 
-#### Returns
+#### 返回
 
-Number or Array
+数字数组
 
-#### Example
+#### 示例
 
-This expression on the Opacity property causes Opacity values to ramp linearly from `20%` to `80%` over the time from `0` seconds to `6` seconds:
+此表达式作用于不透明度（Opacity）属性，在 `0` 秒到 `6` 秒的时间范围内，令不透明度值从 `20%` 线性过渡到 `80%`：
 
 ```js
 linear(time, 0, 6, 20, 80)
 ```
 
-This expression on the Opacity property converts the Opacity values from the range `0%`-`100%` to the range `20%`-`80%`:
+此表达式作用于不透明度（Opacity）属性，将不透明度值从 `0%` 到 `100%` 的范围转换为 `20%` 到 `80%` 的范围：
 
 ```js
 linear(value, 0, 100, 20, 80)
@@ -58,21 +59,21 @@ linear(value, 0, 100, 20, 80)
 
 `linear(t, value1, value2)`
 
-#### Description
+#### 描述
 
-Returns a value that linearly interpolates from `value1` to `value2` as `t` ranges from `0` to `1`. Returns `value1` when `t <= 0`. Returns `value2` when `t >= 1`.
+返回一个值，随着 `t` 从 `0` 变到 `1`，该值在 `value1` 和 `value2` 之间进行线性插值。当 `t <= 0` 时返回 `value1`，当 `t >= 1` 时返回 `value2`。
 
-#### Parameters
+#### 参数
 
-| Parameter |      Type       |        Description        |
-| --------- | --------------- | ------------------------- |
-| `t`       | Number          | Interpolation Driver      |
-| `value1`  | Number or Array | Value to interpolate from |
-| `value2`  | Number or Array | Value to interpolate to   |
+| 参数       | 类型       | 描述       |
+| ---------- | ---------- | ---------- |
+| `t`      | 数字       | 插值驱动器 |
+| `value1` | 数字或数组 | 插值起始值 |
+| `value2` | 数字或数组 | 插值结束值 |
 
-#### Returns
+#### 返回
 
-Number or Array
+数字或数组
 
 ---
 
@@ -80,23 +81,23 @@ Number or Array
 
 `ease(t, tMin, tMax, value1, value2)`
 
-#### Description
+#### 描述
 
-Similar to linear with the same arguments, except that the interpolation eases in and out so that the velocity is `0` at the start and end points. This method results in a smooth animation.
+与线性插值相似，使用相同的参数，但插值过程会在开始和结束点进行缓动（ease in and out），使得速度在起始点和结束点时为 `0`。此方法产生平滑的动画效果。
 
-#### Parameters
+#### 参数
 
-| Parameter |      Type       |        Description        |
-| --------- | --------------- | ------------------------- |
-| `t`       | Number          | Interpolation Driver      |
-| `tMin`    | Number          | Minimum driver value      |
-| `tMax`    | Number          | Maximum driver value      |
-| `value1`  | Number or Array | Value to interpolate from |
-| `value2`  | Number or Array | Value to interpolate to   |
+| 参数       | 类型       | 描述       |
+| ---------- | ---------- | ---------- |
+| `t`      | 数字       | 插值驱动器 |
+| `tMin`   | 数字       | 最小驱动值 |
+| `tMax`   | 数字       | 最大驱动值 |
+| `value1` | 数字或数组 | 插值起始值 |
+| `value2` | 数字或数组 | 插值结束值 |
 
-#### Returns
+#### 返回
 
-Number or Array
+数字或数组
 
 ---
 
@@ -104,21 +105,21 @@ Number or Array
 
 `ease(t, value1, value2)`
 
-#### Description
+#### 描述
 
-Similar to linear with the same arguments, except that the interpolation eases in and out so that the velocity is `0` at the start and end points. This method results in a smooth animation.
+与线性插值相似，使用相同的参数，但插值过程会在开始和结束点进行缓动（ease in and out），使得速度在起始点和结束点时为 `0`。此方法产生平滑的动画效果。
 
-#### Parameters
+#### 参数
 
-| Parameter |      Type       |        Description        |
-| --------- | --------------- | ------------------------- |
-| `t`       | Number          | Interpolation Driver      |
-| `value1`  | Number or Array | Value to interpolate from |
-| `value2`  | Number or Array | Value to interpolate to   |
+| 参数       | 类型       | 描述       |
+| ---------- | ---------- | ---------- |
+| `t`      | 数字       | 插值驱动器 |
+| `value1` | 数字或数组 | 插值起始值 |
+| `value2` | 数字或数组 | 插值结束值 |
 
-#### Returns
+#### 返回
 
-Number or Array
+数字或数组
 
 ---
 
@@ -126,23 +127,23 @@ Number or Array
 
 `easeIn(t, tMin, tMax, value1, value2)`
 
-#### Description
+#### 描述
 
-Similar to ease, except that the tangent is `0` only on the `tMin` side and interpolation is `linear` on the `tMax` side.
+与 `ease` 相似，区别在于切线在 `tMin` 侧为 `0`，并且在 `tMax` 侧插值为线性。
 
-#### Parameters
+#### 参数
 
-| Parameter |      Type       |        Description        |
-| --------- | --------------- | ------------------------- |
-| `t`       | Number          | Interpolation Driver      |
-| `tMin`    | Number          | Minimum driver value      |
-| `tMax`    | Number          | Maximum driver value      |
-| `value1`  | Number or Array | Value to interpolate from |
-| `value2`  | Number or Array | Value to interpolate to   |
+| 参数       | 类型       | 描述       |
+| ---------- | ---------- | ---------- |
+| `t`      | 数字       | 插值驱动器 |
+| `tMin`   | 数字       | 最小驱动值 |
+| `tMax`   | 数字       | 最大驱动值 |
+| `value1` | 数字或数组 | 插值起始值 |
+| `value2` | 数字或数组 | 插值结束值 |
 
-#### Returns
+#### 返回
 
-Number or Array
+数字或数组
 
 ---
 
@@ -150,21 +151,21 @@ Number or Array
 
 `easeIn(t, value1, value2)`
 
-#### Description
+#### 描述
 
-Similar to ease, except that the tangent is `0` only on the `value1` side and interpolation is `linear` on the `value2` side.
+与 `ease` 相似，区别在于切线在 `value1` 侧为 `0`，并且在 `value2` 侧插值为线性。
 
-#### Parameters
+#### 参数
 
-| Parameter |      Type       |        Description        |
-| --------- | --------------- | ------------------------- |
-| `t`       | Number          | Interpolation Driver      |
-| `value1`  | Number or Array | Value to interpolate from |
-| `value2`  | Number or Array | Value to interpolate to   |
+| 参数       | 类型       | 描述       |
+| ---------- | ---------- | ---------- |
+| `t`      | 数字       | 插值驱动器 |
+| `value1` | 数字或数组 | 插值起始值 |
+| `value2` | 数字或数组 | 插值结束值 |
 
-#### Returns
+#### 返回
 
-Number or Array
+数字或数组
 
 ---
 
@@ -172,23 +173,23 @@ Number or Array
 
 `easeOut(t, tMin, tMax, value1, value2)`
 
-#### Description
+#### 描述
 
-Similar to ease, except that the tangent is `0` only on the `tMax` side and interpolation is `linear` on the `tMin` side.
+与 `ease` 相似，区别在于切线在 `tMax` 侧为 `0`，并且在 `tMin` 侧插值为线性。
 
-#### Parameters
+#### 参数
 
-| Parameter |      Type       |        Description        |
-| --------- | --------------- | ------------------------- |
-| `t`       | Number          | Interpolation Driver      |
-| `tMin`    | Number          | Minimum driver value      |
-| `tMax`    | Number          | Maximum driver value      |
-| `value1`  | Number or Array | Value to interpolate from |
-| `value2`  | Number or Array | Value to interpolate to   |
+| 参数       | 类型       | 描述       |
+| ---------- | ---------- | ---------- |
+| `t`      | 数字       | 插值驱动器 |
+| `tMin`   | 数字       | 最小驱动值 |
+| `tMax`   | 数字       | 最大驱动值 |
+| `value1` | 数字或数组 | 插值起始值 |
+| `value2` | 数字或数组 | 插值结束值 |
 
-#### Returns
+#### 返回
 
-Number or Array
+数字或数组
 
 ---
 
@@ -196,18 +197,18 @@ Number or Array
 
 `easeOut(t, value1, value2)`
 
-#### Description
+#### 描述
 
-Similar to ease, except that the tangent is `0` only on the `value2` side and interpolation is `linear` on the `value1` side.
+与 `ease` 相似，区别在于切线在 `value2` 侧为 `0`，并且在 `value1` 侧插值为线性。
 
-#### Parameters
+#### 参数
 
-| Parameter |      Type       |        Description        |
-| --------- | --------------- | ------------------------- |
-| `t`       | Number          | Interpolation Driver      |
-| `value1`  | Number or Array | Value to interpolate from |
-| `value2`  | Number or Array | Value to interpolate to   |
+| 参数       | 类型       | 描述       |
+| ---------- | ---------- | ---------- |
+| `t`      | 数字       | 插值驱动器 |
+| `value1` | 数字或数组 | 插值起始值 |
+| `value2` | 数字或数组 | 插值结束值 |
 
-#### Returns
+#### 返回
 
-Number or Array
+数字或数组

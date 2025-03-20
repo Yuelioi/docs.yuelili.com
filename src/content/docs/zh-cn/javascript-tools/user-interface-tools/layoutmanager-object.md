@@ -1,7 +1,6 @@
 ---
 title: layoutmanager-object
 ---
-
 # LayoutManager object
 
 Controls the automatic layout behavior for a window or container. The subclass AutoLayoutManager implements the default automatic layout behavior.
@@ -26,19 +25,19 @@ The default object has no predefined properties, but a script can assign arbitra
 
 `windowObj.layout.layout( recalculate )`
 
-#### Description
+#### 描述
 
 Invokes the automatic layout behavior for the managed container. Adjusts sizes and positions of the child elements of this window or container according to the placement and alignment property values in the parent and children.
 
 Invoked automatically the first time the window is displayed. Thereafter, the script must invoke it explicitly to change the layout in case of changes in the size or position of the parent or children.
 
-#### Parameters
+#### 参数
 
-|   Parameter   |  Type   |                                                                Description                                                                |
+|   参数   |  类型   |                                                                描述                                                                |
 | ------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | `recalculate` | Boolean | Optional. When `true`, forces the layout manager to recalculate the container size for this and any child containers. Default is `false`. |
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -48,12 +47,12 @@ Nothing
 
 `windowObj.layout.resize()`
 
-#### Description
+#### 描述
 
 Resizes and moves the child elements of the managed container, according to the alignment values for each child of the container, after the container has been resized by the user or by a script.
 
 See [Automatic layout](../automatic-layout) for details of how alignment affects an element's size and location.
 
-#### Returns
+#### 返回
 
 Nothing

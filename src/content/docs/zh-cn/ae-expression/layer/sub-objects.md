@@ -1,46 +1,43 @@
 ---
-title: sub-objects
+title: 子对象
 ---
-
 # Layer Sub-objects
 
 `thisLayer`
 
-This category describes items that give you *other objects* based on the current layer; things like the source (for precomps or footage), effects, masks, sourceRect, etc.
+此类别描述了基于当前图层提供的 *其他对象* ；例如源（用于预合成或素材）、效果、蒙版、sourceRect 等。
 
-!!! info
-    On this page, we're going to use `thisLayer` as a sample on how to call these items, however note that any method that returns a [Layer](.././layer) will work.
-
-!!! note
-    For After Effects CC and CS6, the Expression language menu, the "Layer Sub-objects", "Layer General", "Layer Properties", "Layer 3D", and "Layer Space Transforms" have been arranged into a "Layer" submenu.
+:::info
+在本页中，我们将使用 `thisLayer` 作为调用这些项的示例，但请注意，任何返回 [Layer](.././layer) 的方法都可以使用。 ::::::note 对于 After Effects CC 和 CS6，表达式语言菜单中的“图层子对象”、“图层通用信息”、“图层属性”、“图层 3D”和“图层空间变换”已被组织到“图层”子菜单中。
+:::
 
 ---
 
-## Attributes
+## 属性
 
 ### Layer.source
 
 `thisLayer.source`
 
-#### Description
+#### 描述
 
-Returns the source [Comp](../../objects/comp) or [Footage](../../objects/footage) object for the layer.
+返回图层的源 [Comp](../objects/comp) 或 [Footage](../objects/footage) 对象。
 
-Default time is adjusted to the time in the source.
+默认时间会调整为源中的时间。
 
-Example:
+示例：
 
-```js
+ ```js
 source.layer(1).position
 ```
 
-#### Type
+#### 类型
 
-[Comp](../../objects/comp) or [Footage](../../objects/footage)
+[Comp](../objects/comp) 或 [Footage](../objects/footage)
 
 ---
 
-## Methods
+## 函数
 
 ### Layer.effect()
 
@@ -48,37 +45,34 @@ source.layer(1).position
 
 `thisLayer.effect(index)`
 
-#### Description
+#### 描述
 
-The `name` value will have After Effects find the effect by its name in the Effect Controls panel. The name can be the default name or a user-defined name. If multiple effects have the same name, the effect closest to the top of the Effect Controls panel is used.
+`name` 值将让 After Effects 根据效果名称在效果控制面板中查找效果。名称可以是默认名称或用户定义的名称。如果多个效果具有相同的名称，则使用效果控制面板中最顶部的效果。
 
-The `index` value will have After Effects finds the effect by its index in the Effect Controls panel, starting at `1` and counting from the top.
+`index` 值将让 After Effects 根据效果在效果控制面板中的索引查找效果，从 `1` 开始并从顶部计数。
 
-#### Parameters
+#### 参数
 
-+-----------+--------+------------------------------+
-| Parameter |  Type  |         Description          |
-+===========+========+==============================+
-| `name`    | String | Effect name or index to get. |
-|           |        |                              |
-| `index`   | Number |                              |
-+-----------+--------+------------------------------+
+| 参数      | 类型   | 描述                     |
+| --------- | ------ | ------------------------ |
+| `name`  | 字符串 | 要获取的效果名称或索引。 |
+| `index` | 数字   |                          |
 
-#### Returns
+#### 返回
 
-[Effect](../../objects/effect)
+[Effect](../objects/effect)
 
-#### Example
+#### 示例
 
-Get the "Blurriness" effect by name:
+按名称获取“模糊度”效果：
 
-```js
+ ```js
 thisLayer.effect("Fast Blur")
 ```
 
-Get the first effect on the layer:
+获取图层上的第一个效果：
 
-```js
+ ```js
 thisLayer.effect(1)
 ```
 
@@ -90,37 +84,34 @@ thisLayer.effect(1)
 
 `thisLayer.mask(index)`
 
-#### Description
+#### 描述
 
-The `name` value can be the default name or a user-defined name. If multiple masks have the same name, the first (topmost) mask is used.
+`name` 值可以是默认名称或用户定义的名称。如果多个蒙版具有相同的名称，则使用第一个（最顶部）的蒙版。
 
-The `index` value will have After Effects finds the mask by its index in the Timeline panel, starting at `1` and counting from the top.
+`index` 值将让 After Effects 根据蒙版在时间轴面板中的索引查找蒙版，从 `1` 开始并从顶部计数。
 
-#### Parameters
+#### 参数
 
-+-----------+--------+------------------------------+
-| Parameter |  Type  |         Description          |
-+===========+========+==============================+
-| `name`    | String | Effect name or index to get. |
-|           |        |                              |
-| `index`   | Number |                              |
-+-----------+--------+------------------------------+
+| 参数      | 类型   | 描述                     |
+| --------- | ------ | ------------------------ |
+| `name`  | 字符串 | 要获取的蒙版名称或索引。 |
+| `index` | 数字   |                          |
 
-#### Returns
+#### 返回
 
-[Effect](../../objects/effect)
+[Effect](../objects/effect)
 
-#### Example
+#### 示例
 
-Get the mask "Mask 1" by name:
+按名称获取蒙版“Mask 1”：
 
-```js
+ ```js
 thisLayer.mask("Mask 1")
 ```
 
-Get the first mask on the layer:
+获取图层上的第一个蒙版：
 
-```js
+ ```js
 thisLayer.mask(1)
 ```
 
@@ -130,34 +121,30 @@ thisLayer.mask(1)
 
 `thisLayer.sourceRectAtTime(t = time, includeExtents = false)`
 
-!!! note
-    This functionality was added in After Effects 13.2
-    Paragraph text extents was added in After Effects 15.1.
+:::note
+段落文本范围在 After Effects 15.1 中添加。
+:::
 
-#### Description
+#### 描述
 
-Returns the bounding box of the layer (or the layer's source).
+返回图层（或图层源）的边界框。
 
-#### Parameters
+#### 参数
 
-+------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------+
-|    Parameter     |  Type   |                                                               Description                                                                |
-+==================+=========+==========================================================================================================================================+
-| `t`              | Number  | Optional. The specified time (in comp seconds) to apply the smoothing filter to. Defaults to `time` (the current comp time, in seconds). |
-+------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------+
-| `includeExtents` | Boolean | Optional. Only applies to shape layers and paragraph text layers. Defaults to `false`.                                                   |
-|                  |         |                                                                                                                                          |
-|                  |         | - For shape layers: Increases the size of the layer bounds as necessary.                                                                 |
-|                  |         | - For paragraph text layers: Returns the bounds of the paragraph box                                                                     |
-+------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------+
+| 参数               | 类型   | 描述                                                                                          |
+| ------------------ | ------ | --------------------------------------------------------------------------------------------- |
+| `t`              | 数字   | 可选。应用平滑滤镜的指定时间（以合成秒为单位）。默认为 `time`（当前合成时间，以秒为单位）。 |
+| `includeExtents` | 布尔值 | 可选。仅适用于形状图层和段落文本图层。默认为 `false`。                                      |
+|                    |        | - 对于形状图层：根据需要增加图层边界的大小。                                                  |
+|                    |        | - 对于段落文本图层：返回段落框的边界                                                          |
 
-#### Returns
+#### 返回
 
-An object with four attributes: `{top, left, width, height}`
+一个包含四个属性的对象：`{top, left, width, height}`
 
-#### Example
+#### 示例
 
-```js
+ ```js
 myTextLayer.sourceRectAtTime().width
 ```
 
@@ -167,20 +154,20 @@ myTextLayer.sourceRectAtTime().width
 
 `thisLayer.sourceTime([t=time])`
 
+:::note
+该方法添加于 After Effects CS5.5
+:::
 
-!!! note
-    This functionality was added in After Effects CS5.5
+#### 描述
 
-#### Description
+返回与时间 `t` 对应的图层源。
 
-Returns the layer source corresponding to time `t`.
+#### 参数
 
-#### Parameters
+| 参数  | 类型 | 描述                                                                                          |
+| ----- | ---- | --------------------------------------------------------------------------------------------- |
+| `t` | 数字 | 可选。应用平滑滤镜的指定时间（以合成秒为单位）。默认为 `time`（当前合成时间，以秒为单位）。 |
 
-| Parameter |  Type  |                                                               Description                                                                |
-| --------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `t`       | Number | Optional. The specified time (in comp seconds) to apply the smoothing filter to. Defaults to `time` (the current comp time, in seconds). |
+#### 返回
 
-#### Returns
-
-Number
+数字

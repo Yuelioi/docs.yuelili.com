@@ -1,7 +1,6 @@
 ---
 title: socket-object
 ---
-
 # Socket Object
 
 TCP connections are the basic transport layer of the Internet. Every time your Web browser connects to a server and requests a new page, it opens a TCP connection to handle the request as well as the server's reply. The JavaScript Socket object lets you connect to any server on the Internet and to exchange data with this server.

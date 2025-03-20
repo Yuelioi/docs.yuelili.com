@@ -1,7 +1,6 @@
 ---
 title: externalobject-object
 ---
-
 # ExternalObject object
 
 You specify the name of the library in the constructor. The constructor searches for the named library using the paths defined in the static property [ExternalObject.searchFolders](#externalobjectsearchfolders).
@@ -19,21 +18,15 @@ Before loading the library, the current folder is temporarily switched to the lo
 
 `obj = new ExternalObject ("lib:" + filespec, arg1, ...argn);`
 
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|   Parameter   |                                                                                  Description                                                                                   |
-+===============+================================================================================================================================================================================+
+|   参数   |                                                                                  描述                                                                                   |
+|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `filespec`    | The specifier "lib:" is case sensitive, and serves as the marker for dynamic libraries. Concatenate this to the base name of the shared library, with or without an extension. |
-|               |                                                                                                                                                                                |
 |               | ExtendScript appends a file extension if necessary, according to the operating system:                                                                                         |
-|               |                                                                                                                                                                                |
 |               | - `.dll` in Windows                                                                                                                                                            |
 |               | - `.bundle` or `.framework` in Mac OS (only Mach-O bundles are supported)                                                                                                      |
 |               | - `.so` in UNIX (except for HP/UX, where the extension is `.sl`)                                                                                                               |
 |               |     - The name of the library is case sensitive in UNIX.                                                                                                                       |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `arg1...argn` | Optional. Any number of arguments to pass to the library's initialization routine.                                                                                             |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 For example:
 
@@ -51,13 +44,13 @@ The ExternalObject class provides these static properties:
 
 `ExternalObject.log`
 
-#### Description
+#### 描述
 
 Set to `true` to write status information to standard output (the JavaScript Console in the ExtendScript Toolkit).
 
 Set to `false` to turn logging off. Default is `false`.
 
-#### Type
+#### 类型
 
 Boolean
 
@@ -67,7 +60,7 @@ Boolean
 
 `ExternalObject.searchFolders`
 
-#### Description
+#### 描述
 
 A set of alternate paths in which to search for the shared library files, a single string with multiple path specifications delimited by semicolons (;).
 
@@ -79,7 +72,7 @@ Default value is:
 - In Mac OS, `"Plugins;Plug-Ins;Frameworks;.;../../../Plugins;../../../Plug-ins;../../../Frameworks;../../..;"`
 - In UNIX, `"Plugins;Plug-Ins;plugins;."`
 
-#### Type
+#### 类型
 
 String
 
@@ -89,11 +82,11 @@ String
 
 `ExternalObject.version`
 
-#### Description
+#### 描述
 
 The version of the library, as returned by [ESGetVersion()](defining-entry-points-for-direct-access.md#esgetversion).
 
-#### Type
+#### 类型
 
 Number
 
@@ -107,17 +100,17 @@ The ExternalObject class provides this static function to help debug problems wi
 
 `ExternalObject.search(spec)`
 
-#### Description
+#### 描述
 
 Reports whether a compiled C/C++ library can be found, but does not load it. If logging is on, the paths searched are reported to the JavaScript Console in the ExtendScript Toolkit.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |                                    Description                                     |
+| 参数 |  类型  |                                    描述                                     |
 | --------- | ------ | ---------------------------------------------------------------------------------- |
 | `spec`    | String | The file specification for the compiled library, with or without path information. |
 
-#### Returns
+#### 返回
 
 Boolean. `true` if the library is found, `false` otherwise.
 
@@ -129,12 +122,12 @@ Boolean. `true` if the library is found, `false` otherwise.
 
 `externalObj.terminate()`
 
-#### Description
+#### 描述
 
 Explicitly shuts down the `ExternalObject` dynamic library wrapped by this instance.
 
 It can be helpful to force a shutdown of the external library if termination of external libraries during the shutdown of the hosting application does not occur in the correct order.
 
-#### Returns
+#### 返回
 
 Nothing

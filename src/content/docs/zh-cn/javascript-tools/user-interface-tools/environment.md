@@ -1,7 +1,6 @@
 ---
 title: environment
 ---
-
 # Environment object
 
 This global object is available through the [ScriptUI.environment](scriptui-class.md#scriptuienvironment) property.
@@ -38,16 +37,16 @@ The Keyboard State object contains the following properties:
 
 The name of the key currently pressed. This is the JavaScript name, a string such as `"A"` or `"a"`.
 
-!!! note
-    This only works for single keys being pressed; holding multiple will report `undefined`.
+:::note
 
-    Modifier keys will report `undefined`; to get those, see [shiftKey, ctrlKey, altKey, metaKey](#shiftkey-ctrlkey-altkey-metakey)
+Modifier keys will report `undefined`; to get those, see [shiftKey, ctrlKey, altKey, metaKey](#shiftkey-ctrlkey-altkey-metakey)
+:::
 
-#### Type
+#### 类型
 
 String
 
-#### Example
+#### 示例
 
 For example, with 'a' pressed:
 
@@ -69,18 +68,19 @@ alert(currentPressedKey); // "A"
 
 `ScriptUI.environment.keyboardState.metaKey`
 
-#### Description
+#### 描述
 
 `true` if the named modifier key is currently active.
 
-!!! note
-    `metaKey` captures both the `META` and `COMMAND` keys.
+:::note
+`metaKey` captures both the `META` and `COMMAND` keys.
+:::
 
-#### Type
+#### 类型
 
 Boolean
 
-#### Example
+#### 示例
 
 For example, checking whether a modifier key is held during script execution:
 

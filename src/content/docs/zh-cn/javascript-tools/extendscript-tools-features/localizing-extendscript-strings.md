@@ -1,7 +1,6 @@
 ---
 title: localizing-extendscript-strings
 ---
-
 # Localizing ExtendScript strings
 
 Localization is the process of translating and otherwise manipulating an interface so it looks as if it were originally designed for a particular language. ExtendScript enables you to localize the strings in your script's user interface. The language is chosen by the application at startup, according to the current locale provided by the operating system.
@@ -130,31 +129,23 @@ $.locale = null; // restore to the locale of the app
 
 `localize (ZString)`
 
-#### Description
+#### 描述
 
 The globally available `localize` function can be used to provide localized strings anywhere a displayed text value is specified.
 
 The function takes a specially formatted set of localized versions of a display string, and returns the version appropriate to the current locale.
 
-#### Parameters
+#### 参数
 
-+------------------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|    Parameter     |  Type   |                                                                                                                                            Description                                                                                                                                             |
-+==================+=========+====================================================================================================================================================================================================================================================================================================+
+|    参数     |  类型   |                                                                                                                                            描述                                                                                                                                             |
+|------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | localization_obj | Object  | A JavaScript object literal whose property names are locale names, and whose property values are the localized text strings. The locale name is an identifier as specified in the ISO 3166 standard, a set of two-letter language abbreviations, such as `"en"` for English and `"de"` for German. |
-|                  |         |                                                                                                                                                                                                                                                                                                    |
 |                  |         | For example: `btnText = { en: "Yes", de: "Ja", fr: "Oui" }; b1 = w.add ("button", undefined, localize (btnText));`                                                                                                                                                                                 |
-|                  |         |                                                                                                                                                                                                                                                                                                    |
 |                  |         | The string value of each property can contain variables in the form %1, %2, and so on, corresponding to additional arguments. The variable is replaced with the result of evaluating the corresponding argument in the returned string.                                                            |
-+------------------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | args             | Any     | Optional. Additional JavaScript expressions matching variables in the string values supplied in the localization object. The first argument corresponds to the variable `%1`, the second to `%2`, and so on.                                                                                       |
-|                  |         |                                                                                                                                                                                                                                                                                                    |
 |                  |         | Each expression is evaluated and the result inserted in the variable's positionin the returned string.                                                                                                                                                                                             |
-+------------------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ZString          | ZString | Internal use only. A ZString is an internal Adobe format for localized strings, which you might see in Adobe scripts. It is a string that begins with `$$$` and contains a path to the localized string in an installed ZString dictionary.                                                        |
-|                  |         |                                                                                                                                                                                                                                                                                                    |
 |                  |         | For example: `w = new Window ("dialog", localize ("$$$/UI/title1=Sample"));`                                                                                                                                                                                                                       |
-+------------------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 For example:
 

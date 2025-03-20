@@ -1,15 +1,15 @@
 ---
 title: composedlinerange
 ---
-
 # ComposedLineRange object
 
 `app.project.item(index).layer(index).text.sourceText.value.composedLineRange(composedLineIndexStart, [signedComposedLineIndexEnd])`
 
-!!! note
-    This functionality was added in After Effects 24.3
+:::note
+该方法添加于 After Effects 24.3
+:::
 
-#### Description
+#### 描述
 
 The ComposedLineRange object is an accessor to a composed line range of the [TextDocument object](../textdocument) instance it was created from.
 
@@ -30,7 +30,7 @@ This instance becomes independent of the ComposedLineRange instance it came from
 
 For performance reasons, when accessing multiple attributes it is adviseable to retrieve the [CharacterRange object](../characterrange) once and re-use it rather than create a new one each time.
 
-#### Examples
+#### 示例
 
 This changes the fill color to red of the first composed line in the TextDocument, and set the rest of the lines to color blue.
 
@@ -46,21 +46,21 @@ textDocument.composedLineRange(1,-1).characterRange().fillColor = [0, 0, 1.0];
 
 ---
 
-## Attributes
+## 属性
 
 ### ComposedLineRange.characterEnd
 
 `ComposedLineRange.characterEnd`
 
-#### Description
+#### 描述
 
 The Text layer range calculated character end value.
 
 Throws an exception on access if the effective value would exceed the bounds of the related [TextDocument object](../textdocument).
 
-#### Type
+#### 类型
 
-Unsigned integer; read-only.
+Unsigned integer; 只读.
 
 ---
 
@@ -68,15 +68,15 @@ Unsigned integer; read-only.
 
 `ComposedLineRange.characterStart`
 
-#### Description
+#### 描述
 
 The Text layer range calculated character start value.
 
 Throws an exception on access if the effective value would exceed the bounds of the related [TextDocument object](../textdocument).
 
-#### Type
+#### 类型
 
-Unsigned integer; read-only.
+Unsigned integer; 只读.
 
 ---
 
@@ -84,23 +84,23 @@ Unsigned integer; read-only.
 
 `ComposedLineRange.isRangeValid`
 
-#### Description
+#### 描述
 
 Returns `true` if the current range is within the bounds of the related [TextDocument object](../textdocument), otherwise `false`.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
-## Methods
+## 函数
 
 ### ComposedLineRange.characterRange()
 
 `ComposedLineRange.characterRange()`
 
-#### Description
+#### 描述
 
 Returns a [CharacterRange object](../characterrange) initialized from [characterStart](#composedlinerangecharacterstart) and [characterEnd](#composedlinerangecharacterend).
 
@@ -108,11 +108,11 @@ Will throw an exception if isRangeValid would return `false`.
 
 The returned instance, once created, is independent of subsequent changes to the ComposedLineRange it came from.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 [CharacterRange object](../characterrange);
 
@@ -122,16 +122,16 @@ None.
 
 `ComposedLineRange.toString()`
 
-#### Description
+#### 描述
 
 Returns a string with the parameters used to create the ComposedLineRange instance, e.g. `"ComposedLineRange(0,-1)"`
 
 This may be safely called on an instance where isRangeValid returns `false`.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 String;

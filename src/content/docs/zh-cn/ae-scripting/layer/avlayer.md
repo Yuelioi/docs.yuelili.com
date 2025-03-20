@@ -1,20 +1,21 @@
 ---
 title: avlayer
 ---
-
 # AVLayer object
 
 `app.project.item(index).layer(index)`
 
-#### Description
+#### 描述
 
 The AVLayer object provides an interface to those layers that contain AVItem objects (composition layers, footage layers, solid layers, text layers, and sound layers).
 
-!!! info
-    AVLayer is a subclass of [Layer object](../layer). All methods and attributes of Layer, in addition to those listed below, are available when working with AVLayer.
+:::info
+AVLayer is a subclass of [Layer object](../layer). All methods and attributes of Layer, in addition to those listed below, are available when working with AVLayer.
+:::
 
-!!! info
-    AVLayer is a base class for [TextLayer object](../textlayer), so AVLayer attributes and methods are available when working with TextLayer objects.
+:::info
+AVLayer is a base class for [TextLayer object](../textlayer), so AVLayer attributes and methods are available when working with TextLayer objects.
+:::
 
 #### AE Properties
 
@@ -26,37 +27,37 @@ Different types of layers have different AE properties. AVLayer has the followin
 - Masks
 - Effects
 - Transform
-    - Anchor Point
-    - Position
-    - Scale
-    - Orientation
-    - X Rotation
-    - Y Rotation
-    - Rotation
-    - Opacity
+  - Anchor Point
+  - Position
+  - Scale
+  - Orientation
+  - X Rotation
+  - Y Rotation
+  - Rotation
+  - Opacity
 - Layer Styles
 - Geometry Options // Ray-traced 3D
 - Material Options
-    - Casts Shadows
-    - Light Transmission
-    - Accepts Shadows
-    - Accepts Lights
-    - Appears in Reflections // Ray-traced 3D
-    - Ambient
-    - Diffuse
-    - Specular Intensity
-    - Specular Shininess
-    - Metal
-    - Reflection Intensity // Ray-traced 3D
-    - Reflection Sharpness // Ray-traced 3D
-    - Reflection Rolloff // Ray-traced 3D
-    - Transparency // Ray-traced 3D
-    - Transparency Rolloff // Ray-traced 3D
-    - Index of Refraction // Ray-traced 3D
+  - Casts Shadows
+  - Light Transmission
+  - Accepts Shadows
+  - Accepts Lights
+  - Appears in Reflections // Ray-traced 3D
+  - Ambient
+  - Diffuse
+  - Specular Intensity
+  - Specular Shininess
+  - Metal
+  - Reflection Intensity // Ray-traced 3D
+  - Reflection Sharpness // Ray-traced 3D
+  - Reflection Rolloff // Ray-traced 3D
+  - Transparency // Ray-traced 3D
+  - Transparency Rolloff // Ray-traced 3D
+  - Index of Refraction // Ray-traced 3D
 - Audio
-    - AudioLevels
+  - AudioLevels
 
-#### Example
+#### 示例
 
 If the first item in the project is a CompItem, and the first layer of that CompItem is an AVLayer, the following sets the layer `quality`, `startTime`, and `inPoint`.
 
@@ -69,17 +70,17 @@ firstLayer.inPoint = 2;
 
 ---
 
-## Attributes
+## 属性
 
 ### AVLayer.adjustmentLayer
 
 `app.project.item(index).layer(index).adjustmentLayer`
 
-#### Description
+#### 描述
 
 `true` if the layer is an adjustment layer.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -89,14 +90,14 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).audioActive`
 
-#### Description
+#### 描述
 
 `true` if the layer's audio is active at the current time. For this value to be true, `audioEnabled` must be true, no other layer with audio may be soloing unless this layer is soloed too, and the time must be between the `inPoint`
 and `outPoint` of this layer.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -104,11 +105,11 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).audioEnabled`
 
-#### Description
+#### 描述
 
 When `true`, the layer's audio is enabled. This value corresponds to the audio toggle switch in the Timeline panel.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -118,11 +119,11 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).blendingMode`
 
-#### Description
+#### 描述
 
 The blending mode of the layer.
 
-#### Type
+#### 类型
 
 A BlendingMode enumerated value; read/write. One of:
 
@@ -172,13 +173,13 @@ A BlendingMode enumerated value; read/write. One of:
 
 `app.project.item(index).layer(index).canSetCollapseTransformation`
 
-#### Description
+#### 描述
 
 `true` if it is legal to change the value of the `collapseTransformation` attribute on this layer.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -186,13 +187,13 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).canSetTimeRemapEnabled`
 
-#### Description
+#### 描述
 
 `true` if it is legal to change the value of the `timeRemapEnabled` attribute on this layer.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -200,11 +201,11 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).collapseTransformation`
 
-#### Description
+#### 描述
 
 `true` if collapse transformation is on for this layer.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -214,11 +215,11 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).effectsActive`
 
-#### Description
+#### 描述
 
 `true` if the layer's effects are active, as indicated by the `<f>` icon next to it in the user interface.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -228,11 +229,11 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).environmentLayer`
 
-#### Description
+#### 描述
 
 `true` if this is an environment layer in a Ray-traced 3D composition. Setting this attribute to `true` automatically makes the layer 3D (`threeDLayer` becomes true).
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -242,13 +243,13 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).frameBlending`
 
-#### Description
+#### 描述
 
 `true` if frame blending is enabled for the layer.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -256,11 +257,11 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).frameBlendingType`
 
-#### Description
+#### 描述
 
 The type of frame blending to perform when frame blending is enabled for the layer.
 
-#### Type
+#### 类型
 
 A FrameBlendingType enumerated value; read/write. One of:
 
@@ -274,11 +275,11 @@ A FrameBlendingType enumerated value; read/write. One of:
 
 `app.project.item(index).layer(index).guideLayer`
 
-#### Description
+#### 描述
 
 `true` if the layer is a guide layer.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -288,13 +289,13 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).hasAudio`
 
-#### Description
+#### 描述
 
 `true` if the layer contains an audio component, regardless of whether it is audio-enabled or soloed.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -302,18 +303,19 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).hasTrackMatte`
 
-!!! note
-    This functionality was updated in After Effects 23.0. Track Matte is no longer dependent on layer order.
+:::note
+This functionality was updated in After Effects 23.0. Track Matte is no longer dependent on layer order.
+:::
 
-#### Description
+#### 描述
 
 `true` if this layer has track matte. When `true`, this layer's `trackMatteType` value controls how the matte is applied.
 
 See [AVLayer.trackMatteType](#avlayertrackmattetype) for available track matte types.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -321,13 +323,13 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).height`
 
-#### Description
+#### 描述
 
 The height of the layer in pixels.
 
-#### Type
+#### 类型
 
-Floating-point value; read-only.
+Floating-point value; 只读.
 
 ---
 
@@ -335,13 +337,13 @@ Floating-point value; read-only.
 
 `app.project.item(index).layer(index).isNameFromSource`
 
-#### Description
+#### 描述
 
 `true` if the layer has no expressly set name, but contains a named source. In this case, `layer.name` has the same value as `layer.source.name`. `false` if the layer has an expressly set name, or if the layer does not have a source.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -349,16 +351,17 @@ Boolean; read-only.
 
 `app.project.item(index)layer(index).isTrackMatte`
 
-!!! note
-    This functionality was updated in After Effects 23.0. Track Matte is no longer dependent on layer order.
+:::note
+This functionality was updated in After Effects 23.0. Track Matte is no longer dependent on layer order.
+:::
 
-#### Description
+#### 描述
 
 `true` if this layer is being used as a track matte.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -366,11 +369,11 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).motionBlur`
 
-#### Description
+#### 描述
 
 `true` if motion blur is enabled for the layer.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -380,11 +383,11 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).preserveTransparency`
 
-#### Description
+#### 描述
 
 `true` if preserve transparency is enabled for the layer.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -394,11 +397,11 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).quality`
 
-#### Description
+#### 描述
 
 The quality with which this layer is displayed.
 
-#### Type
+#### 类型
 
 A `LayerQuality` enumerated value; read/write. One of:
 
@@ -412,14 +415,15 @@ A `LayerQuality` enumerated value; read/write. One of:
 
 `app.project.item(index).layer(index).samplingQuality`
 
-!!! note
-    This functionality was added in After Effects 12.0 (CC)
+:::note
+该方法添加于 After Effects 12.0 (CC)
+:::
 
-#### Description
+#### 描述
 
 Set/get layer sampling method (bicubic or bilinear)
 
-#### Type
+#### 类型
 
 A `LayerSamplingQuality` enumerated value; read/write. One of:
 
@@ -432,13 +436,13 @@ A `LayerSamplingQuality` enumerated value; read/write. One of:
 
 `app.project.item(index).layer(index).source`
 
-#### Description
+#### 描述
 
 The source AVItem for this layer. The value is `null` in a Text layer. Use [AVLayer.replaceSource()](#avlayerreplacesource) to change the value.
 
-#### Type
+#### 类型
 
-AVItem object; read-only.
+AVItem object; 只读.
 
 ---
 
@@ -446,11 +450,11 @@ AVItem object; read-only.
 
 `app.project.item(index).layer(index).threeDLayer`
 
-#### Description
+#### 描述
 
 `true` if this is a 3D layer.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -460,11 +464,11 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).threeDPerChar`
 
-#### Description
+#### 描述
 
 `true` if this layer has the Enable Per-character 3D switch set, allowing its characters to be animated off the plane of the text layer. Applies only to text layers.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -474,11 +478,11 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).timeRemapEnabled`
 
-#### Description
+#### 描述
 
 `true` if time remapping is enabled for this layer.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -488,14 +492,15 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).trackMatteLayer`
 
-!!! note
-    This functionality was added in After Effects 23.0
+:::note
+该方法添加于 After Effects 23.0
+:::
 
-#### Description
+#### 描述
 
 Returns the track matte layer for this layer. Returns `null` if this layer has no track matte layer.
 
-#### Type
+#### 类型
 
 AVLayer object; read only.
 
@@ -505,18 +510,20 @@ AVLayer object; read only.
 
 `app.project.item(index).layer(index).trackMatteType`
 
-!!! note
-    This functionality was updated in After Effects 23.0
+:::note
+This functionality was updated in After Effects 23.0
+:::
 
-!!! warning
-    This is a Legacy API we don't recommend using for setting Track Matte Type in new scripts. Please consider using the latest track matte APIs [AVLayer.setTrackMatte()](#avlayersettrackmatte) and [AVLayer.removeTrackMatte()](#avlayerremovetrackmatte) for your tasks.
+:::warning
+This is a Legacy API we don't recommend using for setting Track Matte Type in new scripts. Please consider using the latest track matte APIs [AVLayer.setTrackMatte()](#avlayersettrackmatte) and [AVLayer.removeTrackMatte()](#avlayerremovetrackmatte) for your tasks.
+:::
 
-#### Description
+#### 描述
 
 If this layer has a track matte, specifies the way the track matte is applied.
 Specifying the `TrackMatteType.NO_TRACK_MATTE` type will remove the track matte for this layer and reset the track matte type.
 
-#### Type
+#### 类型
 
 A `TrackMatteType` enumerated value; read/write. One of:
 
@@ -526,7 +533,7 @@ A `TrackMatteType` enumerated value; read/write. One of:
 - `TrackMatteType.LUMA_INVERTED`
 - `TrackMatteType.NO_TRACK_MATTE`
 
-#### Example
+#### 示例
 
 ```javascript
 // Returns the current track matte type for myLayer
@@ -547,26 +554,27 @@ myLayer.trackMatteType = TrackMatteType.NO_TRACK_MATTE;
 
 `app.project.item(index).layer(index).width`
 
-#### Description
+#### 描述
 
 The width of the layer in pixels.
 
-#### Type
+#### 类型
 
-Floating-point value; read-only.
+Floating-point value; 只读.
 
 ---
 
-## Methods
+## 函数
 
 ### AVLayer.addToMotionGraphicsTemplate()
 
 `app.project.item(index).layer(index).addToMotionGraphicsTemplate(comp)`
 
-!!! note
-    This functionality was added in After Effects 18.0 (2021)
+:::note
+该方法添加于 After Effects 18.0 (2021)
+:::
 
-#### Description
+#### 描述
 
 Adds the layer to the Essential Graphics Panel for the specified composition.
 
@@ -576,13 +584,13 @@ If the layer cannot be added, it is either because it is not a layer type for wh
 
 Use the [AVLayer.canAddToMotionGraphicsTemplate()](#avlayercanaddtomotiongraphicstemplate) method to test whether the layer can be added to a Motion Graphics template.
 
-#### Parameters
+#### 参数
 
-| Parameter |                  Type                   |                          Description                           |
+| 参数 |                  类型                   |                          描述                           |
 | --------- | --------------------------------------- | -------------------------------------------------------------- |
 | `comp`    | [CompItem object](../../item/compitem) | The composition where you wish to add the property to the EGP. |
 
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -592,10 +600,11 @@ Boolean.
 
 `app.project.item(index).layer(index).addToMotionGraphicsTemplateAs(comp, name)`
 
-!!! note
-    This functionality was added in After Effects 18.0 (2021)
+:::note
+该方法添加于 After Effects 18.0 (2021)
+:::
 
-#### Description
+#### 描述
 
 Adds the layer to the Essential Graphics Panel for the specified composition.
 
@@ -605,14 +614,14 @@ If the layer cannot be added, it is either because it is not a layer type for wh
 
 Use the [AVLayer.canAddToMotionGraphicsTemplate()](#avlayercanaddtomotiongraphicstemplate) method to test whether the layer can be added to a Motion Graphics template.
 
-#### Parameters
+#### 参数
 
-| Parameter |                  Type                   |                          Description                           |
+| 参数 |                  类型                   |                          描述                           |
 | --------- | --------------------------------------- | -------------------------------------------------------------- |
 | `comp`    | [CompItem object](../../item/compitem) | The composition where you wish to add the property to the EGP. |
 | `name`    | String                                  | The new name.                                                  |
 
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -622,19 +631,19 @@ Boolean.
 
 `app.project.item(index).layer(index).audioActiveAtTime(time)`
 
-#### Description
+#### 描述
 
 Returns `true` if this layer's audio will be active at the specified time.
 
 For this method to return `true`, `audioEnabled` must be `true`, no other layer with audio may be soloing unless this layer is soloed too, and the time must be between the `inPoint` and `outPoint` of this layer.
 
-#### Parameters
+#### 参数
 
-| Parameter |         Type         |      Description      |
+| 参数 |         类型         |      描述      |
 | --------- | -------------------- | --------------------- |
 | `time`    | Floating-point value | The time, in seconds. |
 
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -644,23 +653,23 @@ Boolean.
 
 `app.project.item(index).layer(index).calculateTransformFromPoints(pointTopLeft, pointTopRight, pointBottomRight)`
 
-#### Description
+#### 描述
 
 Calculates a transformation from a set of points in this layer.
 
-#### Parameters
+#### 参数
 
-|     Parameter      |                    Type                     |             Description             |
+|     参数      |                    类型                     |             描述             |
 | ------------------ | ------------------------------------------- | ----------------------------------- |
 | `pointTopLeft`     | Array of floating-point values, `[x, y, z]` | The top left point coordinates.     |
 | `pointTopRight`    | Array of floating-point values, `[x, y, z]` | The top right point coordinates.    |
 | `pointBottomRight` | Array of floating-point values, `[x, y, z]` | The bottom right point coordinates. |
 
-#### Returns
+#### 返回
 
 An Object with the transformation properties set.
 
-#### Example
+#### 示例
 
 ```javascript
 var newLayer = comp.layers.add(newFootage);
@@ -678,10 +687,11 @@ for (var sel in transform) {
 
 `app.project.item(index).layer(index).canAddToMotionGraphicsTemplate(comp)`
 
-!!! note
-    This functionality was added in After Effects 18.0 (2021)
+:::note
+该方法添加于 After Effects 18.0 (2021)
+:::
 
-#### Description
+#### 描述
 
 Test whether or not the layer can be added to the Essential Graphics Panel for the specified composition.
 
@@ -699,13 +709,13 @@ The AVLayer needs to comply with the restrictions below in order to be treated a
 - If the [AVLayer.source](#avlayersource) is a [FootageItem object](../../item/footageitem), then FootageItem.FootageSource should not be a [SolidSource object](../../sources/solidsource).
 - If the [AVLayer.source](#avlayersource) is a [FootageItem object](../../item/footageitem) and the FootageItem.FootageSource is a [FileSource object](../../sources/filesource) then that FileSource should not point to a non-media file e.g. a JSX script file.
 
-#### Parameters
+#### 参数
 
-| Parameter |                  Type                   |                          Description                           |
+| 参数 |                  类型                   |                          描述                           |
 | --------- | --------------------------------------- | -------------------------------------------------------------- |
 | `comp`    | [CompItem object](../../item/compitem) | The composition where you wish to add the property to the EGP. |
 
-#### Returns
+#### 返回
 
 Boolean.
 
@@ -715,25 +725,27 @@ Boolean.
 
 `app.project.item(index).layer(index).compPointToSource()`
 
-!!! note
-    This functionality was added in After Effects 13.2 (CC 2014.2)
+:::note
+该方法添加于 After Effects 13.2 (CC 2014.2)
+:::
 
-#### Description
+#### 描述
 
 Converts composition coordinates, such as `sourcePointToComp`, to layer coordinates.
 
-!!! warning
-    This value only reflects the first character in the text layer at the current time.
+:::warning
+This value only reflects the first character in the text layer at the current time.
+:::
 
-#### Parameters
+#### 参数
 
-|      Parameter      |                   Type                   |                Description                |
+|      参数      |                   类型                   |                描述                |
 | ------------------- | ---------------------------------------- | ----------------------------------------- |
 | `sourcePointToComp` | Array of floating-point values, `[x, y]` | Position array of composition coordinates |
 
-#### Returns
+#### 返回
 
-Array of ([X,Y]) position coordinates; read-only.
+Array of ([X,Y]) position coordinates; 只读.
 
 ---
 
@@ -741,15 +753,15 @@ Array of ([X,Y]) position coordinates; read-only.
 
 `app.project.item(index).layer(index).openInViewer()`
 
-#### Description
+#### 描述
 
 Opens the layer in a Layer panel, and moves the Layer panel to front and gives it focus.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Viewer object for the Layer panel, or `null` if the layer could not be opened (e.g., for text or shape layers, which cannot be opened in the Layer panel).
 
@@ -759,19 +771,20 @@ Viewer object for the Layer panel, or `null` if the layer could not be opened (e
 
 `app.project.item(index).layer(index).removeTrackMatte()`
 
-!!! note
-    This functionality was added in After Effects 23.0
+:::note
+该方法添加于 After Effects 23.0
+:::
 
-#### Description
+#### 描述
 
 Removes the track matte for this layer while preserving the TrackMatteType.
 See [AVLayer.setTrackMatte()](#avlayersettrackmatte) for another way of removing track matte.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -792,27 +805,24 @@ alert(myLayer.trackMatteType);
 
 `app.project.item(index).layer(index).replaceSource(newSource, fixExpressions)`
 
-#### Description
+#### 描述
 
 Replaces the source for this layer.
 
-!!! warning
-    If this method is performed on a null layer, the layers `isNull` attribute is not changed from `true`. This causes the layer not to be visible in comp viewer and renders.
+:::warning
+If this method is performed on a null layer, the layers `isNull` attribute is not changed from `true`. This causes the layer not to be visible in comp viewer and renders.
+:::
 
-#### Parameters
+#### 参数
 
-+------------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|    Parameter     |                Type                |                                                                                                       Description                                                                                                        |
-+==================+====================================+==========================================================================================================================================================================================================================+
+|    参数     |                类型                |                                                                                                       描述                                                                                                        |
+|------------------|------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `newSource`      | [AVItem object](../../item/avitem) | The new source AVItem object.                                                                                                                                                                                            |
-+------------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `fixExpressions` | Boolean                            | `true` to adjust expressions for the new source, otherwise `false`.                                                                                                                                                      |
-|                  |                                    |                                                                                                                                                                                                                          |
 |                  |                                    | !!! warning                                                                                                                                                                                                              |
 |                  |                                    |      This feature can be resource-intensive; if replacing a large amount of footage, do this only at the end of the operation. See also [Project.autoFixExpressions()](../general/project.md#projectautofixexpressions). |
-+------------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -822,29 +832,31 @@ Nothing.
 
 `app.project.item(index).layer(index).setTrackMatte(trackMatteLayer, trackMatteType)`
 
-!!! note
-    This functionality was added in After Effects 23.0
+:::note
+该方法添加于 After Effects 23.0
+:::
 
-#### Description
+#### 描述
 
 Sets the track matte layer and type for this layer. Passing in `null` to trackMatteLayer parameter removes the track matte.
 See [AVLayer.removeTrackMatte()](#avlayerremovetrackmatte) for another way of removing track matte.
 
-#### Parameters
+#### 参数
 
-|     Parameter     |                     Type                      |                  Description                   |
+|     参数     |                     类型                      |                  描述                   |
 | ----------------- | --------------------------------------------- | ---------------------------------------------- |
 | `trackMatteLayer` | [AVLayer](../../layer/avlayer)               | The layer to be used as the track matte layer. |
 | `trackMatteType`  | [TrackMatteType](#avlayertrackmattetype) enum | The type of the track matte to be used.        |
 
-!!! warning
-    Passing in `TrackMatteType.NO_TRACK_MATTE` as type is invalid and will result in no-op.
+:::warning
+Passing in `TrackMatteType.NO_TRACK_MATTE` as type is invalid and will result in no-op.
+:::
 
-#### Returns
+#### 返回
 
 Nothing
 
-#### Example
+#### 示例
 
 ```javascript
 // Sets the track matte layer of myLayer with otherLayer as Alpha type
@@ -870,27 +882,29 @@ myLayer.setTrackMatte(otherLayer, TrackMatteType.NO_TRACK_MATTE);
 
 `app.project.item(index).layer(index).sourcePointToComp()`
 
-!!! note
-    This functionality was added in After Effects 13.2 (CC 2014.2)
+:::note
+该方法添加于 After Effects 13.2 (CC 2014.2)
+:::
 
-#### Description
+#### 描述
 
 Converts layer coordinates, such as `boxTextPos`, to composition coordinates.
 
-!!! warning
-    This value only reflects the first character in the text layer at the current time.
+:::warning
+This value only reflects the first character in the text layer at the current time.
+:::
 
-#### Parameters
+#### 参数
 
-|  Parameter   |                   Type                   |              Description               |
+|  参数   |                   类型                   |              描述               |
 | ------------ | ---------------------------------------- | -------------------------------------- |
 | `boxTextPos` | Array of floating-point values, `[x, y]` | A position array of layer coordinates. |
 
-#### Returns
+#### 返回
 
-Array of ([X,Y]) position coordinates; read-only.
+Array of ([X,Y]) position coordinates; 只读.
 
-#### Example
+#### 示例
 
 ```javascript
 // For a paragraph text layer.
@@ -904,17 +918,17 @@ var boxTextCompPos = myTextLayer.sourcePointToComp(boxTextLayerPos);
 
 `app.project.item(index).layer(index).sourceRectAtTime(timeT, extents)`
 
-#### Description
+#### 描述
 
 Retrieves the rectangle bounds of the layer at the specified time index, corrected for text or shape layer content. Use, for example, to write text that is properly aligned to the baseline.
 
-#### Parameters
+#### 参数
 
-| Parameter |         Type         |                                                              Description                                                               |
+| 参数 |         类型         |                                                              描述                                                               |
 | --------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | `timeT`   | Floating-point value | The time index, in seconds.                                                                                                            |
 | `extents` | Boolean              | `true` to include the extents, otherwise `false`. Extents apply to shape layers, increasing the size of the layer bounds as necessary. |
 
-#### Returns
+#### 返回
 
 A JavaScript object with four attributes, [`top`, `left`, `width`, `height`].

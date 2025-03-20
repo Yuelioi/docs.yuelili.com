@@ -1,33 +1,33 @@
 ---
-title: footage
+title: 素材
 ---
-
 # Footage
 
 `footage("myFile")`
 
-To use a footage item from the Project panel as an object in an expression, use the global footage method, as in `footage("myFile")`.
+要将项目面板中的素材项用作表达式中的对象，请使用全局素材方法，例如 `footage("myFile")`。
 
-You can also access a footage object using the source attribute on a layer whose source is a footage item (i.e. `thisLayer.source`)
+你也可以使用图层的 source 属性访问素材对象，前提是该图层的源是素材项（即 `thisLayer.source`）。
 
-!!! info
-    On this page, we're going to use `footage("myFile")` as a sample on how to call these items, however note that any method that returns a [Footage object](#) will work.
+:::info
+在本页中，我们将使用 `footage("myFile")` 作为调用这些项的示例，但请注意，任何返回 [素材对象](#) 的方法都可以使用。
+:::
 
 ---
 
-## Attributes
+## 属性
 
 ### Footage.duration
 
 `footage("myFile").duration`
 
-#### Description
+#### 描述
 
-Returns the duration of the footage item, in seconds.
+返回素材项的持续时间，单位为秒。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -35,13 +35,13 @@ Number
 
 `footage("myFile").frameDuration`
 
-#### Description
+#### 描述
 
-Returns the duration of a frame in the footage item, in seconds.
+返回素材项中一帧的持续时间，单位为秒。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -49,13 +49,13 @@ Number
 
 `footage("myFile").height`
 
-#### Description
+#### 描述
 
-Returns the height of the footage item, in pixels.
+返回素材项的高度，单位为像素。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -63,13 +63,13 @@ Number
 
 `footage("myFile").name`
 
-#### Description
+#### 描述
 
-Returns the name of the footage item as shown in the Project panel.
+返回素材项的名称，如项目面板中所示。
 
-#### Type
+#### 类型
 
-String
+字符串
 
 ---
 
@@ -77,16 +77,17 @@ String
 
 `footage("myFile").ntscDropFrame`
 
-!!! note
-    This functionality was added in After Effects CS5.5
+:::
+note 该方法添加于 After Effects CS5.5
+:::
 
-#### Description
+#### 描述
 
-Returns `true` if the timecode is in drop-frame format.
+如果时间码是丢帧格式，则返回 `true`。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -94,13 +95,13 @@ Boolean
 
 `footage("myFile").pixelAspect`
 
-#### Description
+#### 描述
 
-Returns the pixel aspect ratio of the footage item.
+返回素材项的像素宽高比。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -108,27 +109,27 @@ Number
 
 `footage("myFile").sourceData`
 
-#### Description
+#### 描述
 
-Returns the data of a JSON file as an array of `sourceData` objects.
+返回 JSON 文件的数据作为 `sourceData` 对象的数组。
 
-The structure of the JSON file will determine the size and complexity of the array.
+JSON 文件的结构将决定数组的大小和复杂性。
 
-Individual data streams can be referenced as hierarchal attributes of the data.
+可以通过数据的层次结构属性引用各个数据流。
 
-#### Type
+#### 类型
 
-An array of `sourceData` objects; read-only.
+`sourceData` 对象的数组；只读。
 
-#### Example
+#### 示例
 
-Given a data stream named "Color", the following will return the value of "Color" from the first data object:
+给定一个名为 "Color" 的数据流，以下代码将返回第一个数据对象中 "Color" 的值：
 
 ```js
 footage("sample.json").sourceData[0].Color
 ```
 
-Typical use is to assign a JSON file's `sourceData` to a variable, and then reference the desired data stream. For example:
+通常的用法是将 JSON 文件的 `sourceData` 分配给一个变量，然后引用所需的数据流。例如：
 
 ```js
 const myData = footage("sample.json").sourceData;
@@ -141,17 +142,17 @@ myData[0].Color;
 
 `footage("myFile").sourceText`
 
-#### Description
+#### 描述
 
-Returns the contents of a JSON file as a string.
+以字符串形式返回 JSON 文件的内容。
 
-The `eval()` method can be used to convert the string to an array of sourceData objects, identical to the results of the [Footage.sourceData](#footagesourcedata) attribute, from which the individual data streams can be referenced as hierarchal attributes of the data.
+可以使用 `eval()` 方法将字符串转换为 `sourceData` 对象的数组，与 [Footage.sourceData]() 属性的结果相同，从中可以通过数据的层次结构属性引用各个数据流。
 
-#### Type
+#### 类型
 
-String, the contents of the JSON file; read-only.
+字符串，JSON 文件的内容；只读。
 
-#### Example
+#### 示例
 
 ```js
 const myData = eval(footage("sample.json").sourceText);
@@ -164,47 +165,47 @@ myData.sampleValue;
 
 `footage("myFile").width`
 
-#### Description
+#### 描述
 
-Returns the width of the footage item, in pixels.
+返回素材项的宽度，单位为像素。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
-## Methods
+## 函数
 
 ### Footage.dataKeyCount()
 
 `footage("myFile").dataKeyCount(dataPath)`
 
-#### Description
+#### 描述
 
-Returns the number of samples in a specificed dynamic data stream in a MGJSON file.
+返回 MGJSON 文件中指定动态数据流的样本数量。
 
-Accepts a single array value to define the path in the hierarchy to the desired dynamic data stream.
+接受一个数组值来定义层次结构中所需动态数据流的路径。
 
-#### Parameters
+#### 参数
 
-| Parameter  | Type  |                               Description                               |
-| ---------- | ----- | ----------------------------------------------------------------------- |
-| `dataPath` | Array | Required. The path in the hierarchy to a static or dynamic data stream. |
+| 参数         | 类型 | 描述                                     |
+| ------------ | ---- | ---------------------------------------- |
+| `dataPath` | 数组 | 必需。层次结构中静态或动态数据流的路径。 |
 
-#### Returns
+#### 返回
 
-The number of samples in the dynamic data stream.
+动态数据流中的样本数量。
 
-#### Example
+#### 示例
 
-To return the count of samples for the first child:
+返回第一个子项的样本数量：
 
 ```js
 footage("sample.mgjson").dataKeyCount([0])
 ```
 
-To return the count of samples for the second group:
+返回第二个组的样本数量：
 
 ```js
 footage("sample.mgjson").dataKeyCount([1][0])
@@ -216,29 +217,29 @@ footage("sample.mgjson").dataKeyCount([1][0])
 
 `footage("myFile").dataKeyTimes(dataPath[, t0=startTime][, t1=endTime])`
 
-#### Description
+#### 描述
 
-Returns the time in seconds for the samples of a specificed dynamic data stream in a MGJSON file.
+返回 MGJSON 文件中指定动态数据流样本的时间，单位为秒。
 
-Optionally specify the time span from which to return samples. By default the time for all samples between `startTime` and `endTime` in the dynamicdata stream are returned, as defined by the data stream's `samplesTemporalExtent` property in the MGJSON file.
+可选地指定要返回样本的时间范围。默认情况下，返回动态数据流中 `startTime` 和 `endTime` 之间的所有样本的时间，如 MGJSON 文件中数据流的 `samplesTemporalExtent` 属性所定义。
 
-Accepts a single array value to define the path in the hierarchy to the desired dynamic data stream.
+接受一个数组值来定义层次结构中所需动态数据流的路径。
 
-#### Parameters
+#### 参数
 
-| Parameter  |  Type  |                                               Description                                                |
-| ---------- | ------ | -------------------------------------------------------------------------------------------------------- |
-| `dataPath` | Array  | Required. The path in the hierarchy to a static or dynamic data stream.                                  |
-| `t0`       | Number | Optional. The start time, in seconds, of the span from which to return samples. Defaults to `startTime`. |
-| `t1`       | Number | Optional. The end time, in seconds, of the span from which to return samples. Defaults to `endTime`.     |
+| 参数         | 类型 | 描述                                                                   |
+| ------------ | ---- | ---------------------------------------------------------------------- |
+| `dataPath` | 数组 | 必需。层次结构中静态或动态数据流的路径。                               |
+| `t0`       | 数字 | 可选。要返回样本的时间范围的开始时间，单位为秒。默认为 `startTime`。 |
+| `t1`       | 数字 | 可选。要返回样本的时间范围的结束时间，单位为秒。默认为 `endTime`。   |
 
-#### Returns
+#### 返回
 
-Array of numbers representing the sample times.
+表示样本时间的数字数组。
 
-#### Example
+#### 示例
 
-Return the times of samples between 1 second and 3 seconds for the first child:
+返回第一个子项在 1 秒到 3 秒之间的样本时间：
 
 ```js
 footage("sample.mgjson").dataKeyTimes([0], 1, 3)
@@ -250,29 +251,29 @@ footage("sample.mgjson").dataKeyTimes([0], 1, 3)
 
 `footage("myFile").dataKeyValues(dataPath[, t0=startTime][, t1=endTime])`
 
-#### Description
+#### 描述
 
-Returns the values for the samples of a specificed dynamic data stream in a MGJSON file.
+返回 MGJSON 文件中指定动态数据流样本的值。
 
-Optionally specify the time span from which to return samples. By default the time for all samples between startTime and endTime in the dynamicdata stream are returned, as defined by the data stream's `samplesTemporalExtent` property in the MGJSON file.
+可选地指定要返回样本的时间范围。默认情况下，返回动态数据流中 `startTime` 和 `endTime` 之间的所有样本的值，如 MGJSON 文件中数据流的 `samplesTemporalExtent` 属性所定义。
 
-Accepts a single array value to define the path in the hierarchy to the desired dynamic data stream.
+接受一个数组值来定义层次结构中所需动态数据流的路径。
 
-#### Parameters
+#### 参数
 
-| Parameter  |  Type  |                                               Description                                                |
-| ---------- | ------ | -------------------------------------------------------------------------------------------------------- |
-| `dataPath` | Array  | Required. The path in the hierarchy to a static or dynamic data stream.                                  |
-| `t0`       | Number | Optional. The start time, in seconds, of the span from which to return samples. Defaults to `startTime`. |
-| `t1`       | Number | Optional. The end time, in seconds, of the span from which to return samples. Defaults to `endTime`.     |
+| 参数         | 类型 | 描述                                                                   |
+| ------------ | ---- | ---------------------------------------------------------------------- |
+| `dataPath` | 数组 | 必需。层次结构中静态或动态数据流的路径。                               |
+| `t0`       | 数字 | 可选。要返回样本的时间范围的开始时间，单位为秒。默认为 `startTime`。 |
+| `t1`       | 数字 | 可选。要返回样本的时间范围的结束时间，单位为秒。默认为 `endTime`。   |
 
-#### Returns
+#### 返回
 
-Array of numbers representing the sample values.
+表示样本值的数字数组。
 
-#### Example
+#### 示例
 
-Return the values of samples between 1 second and 3 seconds for the first child:
+返回第一个子项在 1 秒到 3 秒之间的样本值：
 
 ```js
 footage("sample.mgjson").dataKeyValues([0], 1, 3)
@@ -284,31 +285,31 @@ footage("sample.mgjson").dataKeyValues([0], 1, 3)
 
 `footage("myFile").dataValue(dataPath)`
 
-#### Description
+#### 描述
 
-Returns the value of specificed static or dynamic data stream in a MGJSON file.
+返回 MGJSON 文件中指定静态或动态数据流的值。
 
-Accepts a single array value to define the path in the hierarchy to the desired data stream.
+接受一个数组值来定义层次结构中所需数据流的路径。
 
-#### Parameters
+#### 参数
 
-| Parameter  | Type  |                               Description                               |
-| ---------- | ----- | ----------------------------------------------------------------------- |
-| `dataPath` | Array | Required. The path in the hierarchy to a static or dynamic data stream. |
+| 参数         | 类型 | 描述                                     |
+| ------------ | ---- | ---------------------------------------- |
+| `dataPath` | 数组 | 必需。层次结构中静态或动态数据流的路径。 |
 
-#### Returns
+#### 返回
 
-The value of the data stream.
+数据流的值。
 
-#### Example
+#### 示例
 
-To return data of the first child:
+返回第一个子项的数据：
 
 ```js
 footage("sample.mgjson").dataValue([0])
 ```
 
-To return data of the first child in the second group:
+返回第二个组中第一个子项的数据：
 
 ```js
 footage("sample.mgjson").dataValue([1][0])

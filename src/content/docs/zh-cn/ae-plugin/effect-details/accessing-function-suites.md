@@ -1,7 +1,6 @@
 ---
 title: accessing-function-suites
 ---
-
 # Accessing the After Effects Function Suites
 
 If you are writing C++ code, accessing the suites should be done using the AEFX_SuiteScoper which automatically acquires the suite when needed and disposes of it when done.
@@ -16,12 +15,11 @@ AEFX_SuiteScoper<PF_GPUDeviceSuite1> gpu_suite = AEFX_SuiteScoper<PF_GPUDeviceSu
     out_dataP);
 ```
 
-!!! note
-    AEFX_SuiteScoper will throw an Exception, `A_Err_MISSING_SUITE`, if the requested suite cannot be acquired and the optional second template argument, `ALLOW_NO_SUITE`, is set to false.
+:::note
 
-    If you set `ALLOW_NO_SUITE` to `false`, please ensure you wrap the `AEFX_SuiteScoper<>` call with a try/catch wrapper.
+If `ALLOW_NO_SUITE` is set to `true`, then you should check the returned pointer is not NULL before using it.
+:::
 
-    If `ALLOW_NO_SUITE` is set to `true`, then you should check the returned pointer is not NULL before using it.
 
 Once you have the suite you may make calls to any function in the suite list so:
 

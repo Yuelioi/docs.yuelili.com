@@ -1,7 +1,6 @@
 ---
 title: debugging-plug-ins
 ---
-
 # Debugging Plug-ins
 
 The best way to learn the interaction(s) between After Effects and plug-ins is running the samples in your debugger. Spending some quality time in your compiler's debugger, and a sample project that closely resembles your plug-in, can really pay off.

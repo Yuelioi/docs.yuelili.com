@@ -1,7 +1,6 @@
 ---
 title: code-profiling-for-optimization
 ---
-
 # Code profiling for optimization
 
 The Profiling tool helps you to optimize program execution.

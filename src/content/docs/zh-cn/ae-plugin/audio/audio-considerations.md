@@ -1,7 +1,6 @@
 ---
 title: audio-considerations
 ---
-
 # Audio Considerations
 
 The After Effects audio API supports sampling rates up to 96Khz, in as many formats as possible.

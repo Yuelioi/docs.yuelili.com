@@ -1,13 +1,13 @@
 ---
 title: defining-entry-points-for-direct-access
 ---
-
 # Defining entry points for direct access
 
 A library to be loaded and accessed directly through an [ExternalObject instance](.././externalobject-object) must publish the following entry points.
 
-!!! note
-    These must be exported as C functions, not C++ functions
+:::note
+These must be exported as C functions, not C++ functions
+:::
 
 ---
 
@@ -19,17 +19,17 @@ The following entry points are required if you wish to use an [ExternalObject in
 
 `char* ESInitialize (TaggedData* argv, long argc);`
 
-#### Description
+#### 描述
 
 Called when your library is loaded into memory.
 
-#### Parameters
+#### 参数
 
-|  Parameter   |                                         Description                                          |
+|  参数   |                                         描述                                          |
 | ------------ | -------------------------------------------------------------------------------------------- |
 | `argv, argc` | The pointer to and number of arguments passed to the constructor, in the form of TaggedData. |
 
-#### Returns
+#### 返回
 
 A string of function signatures; see [Library initialization](#library-initialization).
 
@@ -39,13 +39,13 @@ A string of function signatures; see [Library initialization](#library-initializ
 
 `long ESGetVersion (void );`
 
-#### Description
+#### 描述
 
 Takes no arguments, and returns a version number for the library as a long integer.
 
 The result is available in JavaScript as ExternalObject.version.
 
-#### Returns
+#### 返回
 
 Long integer
 
@@ -55,15 +55,15 @@ Long integer
 
 `void ESFreeMem (void* p);`
 
-#### Description
+#### 描述
 
 Called to free memory allocated for a null-terminated string passed to or from library functions.
 
-| Parameter |       Description        |
+| 参数 |       描述        |
 | --------- | ------------------------ |
 | `p`       | A pointer to the string. |
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -73,11 +73,11 @@ Nothing
 
 `void ESTerminate (void );`
 
-#### Description
+#### 描述
 
 Called when your library is being unloaded. See [Library termination](#library-termination).
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -103,10 +103,10 @@ The variant data does not support JavaScript objects. The following data types a
 
 If, when a function is invoked, a supplied parameter is undefined, ExtendScript sets the data type to `undefined` and does not attempt to convert the data to the requested type.
 
-!!! note
-    The data type of a return value cannot be predefined; JavaScript functions can return any data type.
+:::note
 
-    The called function is free to return any of the listed data types.
+The called function is free to return any of the listed data types.
+:::
 
 ---
 
@@ -130,7 +130,7 @@ For each function, the string begins with the function name, followed by an unde
 
 The characters that indicate data types are:
 
-| Characeter |                                                       Description                                                       |
+| Characeter |                                                       描述                                                       |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------- |
 | `a`        | Any type. The argument is not converted. This is the default, if no type is supplied or if a type code is unrecognized. |
 | `b`        | Boolean                                                                                                                 |
@@ -148,10 +148,10 @@ Two ();
 
 The signature strings for these two functions would be `"One_ds"`, `"Two"`.
 
-!!! warning
-    You cannot define function overloading by returning multiple different signatures for one function.
+:::warning
 
-    Attempting to do so produces undefined results.
+Attempting to do so produces undefined results.
+:::
 
 ---
 

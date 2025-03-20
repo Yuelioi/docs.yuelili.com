@@ -1,26 +1,25 @@
 ---
-title: global
+title: 全局
 ---
-
 # Global
 
-These attributes and methods are global, top-level elements accessible from any expression across your project. They're among the most commonly-used expression elements.
+这些属性和方法是全局的、顶层的元素，可以从项目中的任何表达式中访问。它们是最常用的表达式元素之一。
 
 ---
 
-## Attributes
+## 属性
 
 ### colorDepth
 
 `colorDepth`
 
-#### Description
+#### 描述
 
-Type the project color depth value.
+输入项目的颜色深度值。
 
-For example, `colorDepth` returns `16` when the project color depth is 16 bits per channel.
+例如，当项目颜色深度为每通道 16 位时，`colorDepth` 返回 `16`。
 
-#### Type
+#### 类型
 
 Number
 
@@ -30,11 +29,11 @@ Number
 
 `thisComp`
 
-#### Description
+#### 描述
 
-Represents the composition containing the expression.
+表示包含表达式的合成。
 
-#### Type
+#### 类型
 
 [Comp](../../objects/comp)
 
@@ -44,15 +43,15 @@ Represents the composition containing the expression.
 
 `thisLayer`
 
-#### Description
+#### 描述
 
-Represents the layer containing the expression.
+表示包含表达式的图层。
 
-Because `thisLayer` is the default object, its use is optional.
+由于 `thisLayer` 是默认对象，因此它的使用是可选的。
 
-For example, you can start an expression with `thisLayer.width` or `width` and get the same result.
+例如，你可以用 `thisLayer.width` 或 `width` 开始一个表达式，并得到相同的结果。
 
-#### Type
+#### 类型
 
 [Layer](../../layer/layer), [Light](../../objects/light), or [Camera](../../objects/camera) object
 
@@ -62,11 +61,11 @@ For example, you can start an expression with `thisLayer.width` or `width` and g
 
 `thisProject`
 
-#### Description
+#### 描述
 
-Represents the project which contains the expression.
+表示包含表达式的项目。
 
-#### Type
+#### 类型
 
 [Project](../../objects/project)
 
@@ -76,13 +75,13 @@ Represents the project which contains the expression.
 
 `thisProperty`
 
-#### Description
+#### 描述
 
-Represents the property containing the expression.
+表示包含表达式的属性。
 
-For example, if you write an expression on the Rotation property, you can start an expression with `thisProperty` to refer to the Rotation property.
+例如，如果你在旋转属性上编写表达式，可以用 `thisProperty` 开始表达式以引用旋转属性。
 
-#### Type
+#### 类型
 
 [Property](../../objects/property)
 
@@ -92,11 +91,11 @@ For example, if you write an expression on the Rotation property, you can start 
 
 `time`
 
-#### Description
+#### 描述
 
-Represents the composition time, in seconds, at which the expression is being evaluated.
+表示表达式正在计算的合成时间（单位：秒）。
 
-#### Type
+#### 类型
 
 Number
 
@@ -106,33 +105,33 @@ Number
 
 `value`
 
-#### Description
+#### 描述
 
-Represents the value at the current time for the property containing the expression.
+表示包含表达式的属性在当前时间的值。
 
-#### Type
+#### 类型
 
-A value of the same property type as the property being refrenced.
+与被引用属性相同类型的值。
 
 ---
 
-## Methods
+## 函数
 
 ### comp()
 
 `comp(name)`
 
-#### Description
+#### 描述
 
-Retrieves another composition by name.
+按名称获取另一个合成。
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |            Description             |
-| --------- | ------ | ---------------------------------- |
-| `name`    | String | The name of the composition to get |
+| 参数     | 类型   | 描述     |
+| -------- | ------ | -------- |
+| `name` | String | 合成名称 |
 
-#### Returns
+#### 返回
 
 [Comp](../../objects/comp)
 
@@ -142,17 +141,17 @@ Retrieves another composition by name.
 
 `footage(name)`
 
-#### Description
+#### 描述
 
-Retrieves a footage item by name.
+通过名称检索 footage 项。
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |             Description             |
-| --------- | ------ | ----------------------------------- |
-| `name`    | String | The name of the footage item to get |
+| 参数     | 类型   | 描述                      |
+| -------- | ------ | ------------------------- |
+| `name` | String | 要获取的 footage 项的名称 |
 
-#### Returns
+#### 返回
 
 [Footage](../../objects/footage)
 
@@ -162,23 +161,23 @@ Retrieves a footage item by name.
 
 `posterizeTime(updatesPerSecond)`
 
-#### Description
+#### 描述
 
-This expression allows you to set the frame rate for a property to be lower than the frame rate of the composition.
+此表达式允许您将属性的帧率设置为低于合成的帧率。
 
-#### Parameters
+#### 参数
 
-|     Parameter      |  Type  |                           Description                           |
-| ------------------ | ------ | --------------------------------------------------------------- |
-| `updatesPerSecond` | Number | The *number of times per second* the expression should evaluate |
+| 参数                 | 类型   | 描述                       |
+| -------------------- | ------ | -------------------------- |
+| `updatesPerSecond` | Number | 表达式每秒应计算的*次数* |
 
-#### Returns
+#### 返回
 
 Number
 
-#### Example
+#### 示例
 
-To change a property to a random value 1 time per second:
+要将属性每秒更改为随机值一次：
 
 ```js
 posterizeTime(1);
@@ -186,7 +185,7 @@ posterizeTime(1);
 random()
 ```
 
-To change a 2d property (such as Position or Scale) to a random value 3 times per second:
+要将二维属性（如位置或缩放）每秒随机更改 3 次，可以使用以下表达式：
 
 ```js
 posterizeTime(3);
@@ -195,7 +194,7 @@ const newValue = random(0, 100);
 [newValue, newValue];
 ```
 
-To change a property to a random value within a specified range, every 12 frames:
+要使属性在指定范围内每 12 帧随机更改一次，可以使用以下表达式：
 
 ```js
 const holdFrames = 12;

@@ -1,30 +1,29 @@
 ---
 title: renderqueueitem
 ---
-
 # RenderQueueItem object
 
 `app.project.renderQueue.item(index)`
 
-#### Description
+#### 描述
 
 The RenderQueueItem object represents an individual item in the render queue. It provides access to the specific settings for an item to be rendered. Create the object by adding a composition to the Render Queue with the [RQItemCollection object](../rqitemcollection); see [RQItemCollection.add()](rqitemcollection.md#rqitemcollectionadd).
 
 ---
 
-## Attributes
+## 属性
 
 ### RenderQueueItem.comp
 
 `app.project.renderQueue.item(index).comp`
 
-#### Description
+#### 描述
 
 The composition that will be rendered by this render-queue item. To change the composition, you must delete this render-queue item and create a new one.
 
-#### Type
+#### 类型
 
-[CompItem object](../../item/compitem); read-only.
+[CompItem object](../../item/compitem); 只读.
 
 ---
 
@@ -32,13 +31,13 @@ The composition that will be rendered by this render-queue item. To change the c
 
 `app.project.renderQueue.item(index).elapsedSeconds`
 
-#### Description
+#### 描述
 
 The number of seconds spent rendering this item.
 
-#### Type
+#### 类型
 
-Integer, or `null` if item has not been rendered; read-only.
+Integer, or `null` if item has not been rendered; 只读.
 
 ---
 
@@ -46,11 +45,11 @@ Integer, or `null` if item has not been rendered; read-only.
 
 `app.project.renderQueue.item(index).logType`
 
-#### Description
+#### 描述
 
 A log type for this item, indicating which events should be logged while this item is being rendered.
 
-#### Type
+#### 类型
 
 A `LogType` enumerated value; (read/write). One of:
 
@@ -64,13 +63,13 @@ A `LogType` enumerated value; (read/write). One of:
 
 `app.project.renderQueue.item(index).numOutputModules`
 
-#### Description
+#### 描述
 
 The total number of Output Modules assigned to this item.
 
-#### Type
+#### 类型
 
-Integer; read-only.
+Integer; 只读.
 
 ---
 
@@ -78,17 +77,17 @@ Integer; read-only.
 
 `app.project.renderQueue.item(index).onstatus`
 
-#### Description
+#### 描述
 
 The name of a callback function that is called whenever the value of the [RenderQueueItem.status](#renderqueueitemstatus) attribute changes.
 
 You cannot make changes to render queue items or to the application while rendering is in progress or paused; you can, however, use this callback to pause or stop the rendering process. See [RenderQueue.pauseRendering()](renderqueue.md#renderqueuepauserendering) and [RenderQueue.stopRendering()](renderqueue.md#renderqueuestoprendering). See also [app.onError](../general/application.md#apponerror).
 
-#### Type
+#### 类型
 
 A function name string, or `null` if no function is assigned.
 
-#### Example
+#### 示例
 
 ```javascript
 function myStatusChanged() {
@@ -105,13 +104,13 @@ app.project.renderQueue.item(1).render = false; // changes status and shows dial
 
 `app.project.renderQueue.item(index).outputModules`
 
-#### Description
+#### 描述
 
 The collection of Output Modules for the item.
 
-#### Type
+#### 类型
 
-[OMCollection object](../omcollection); read-only.
+[OMCollection object](../omcollection); 只读.
 
 ---
 
@@ -119,16 +118,17 @@ The collection of Output Modules for the item.
 
 `app.project.renderQueue.item(index).queueItemNotify`
 
-!!! note
-    This functionality was added in After Effects 22.0 (2022)
+:::note
+该方法添加于 After Effects 22.0 (2022)
+:::
 
-#### Description
+#### 描述
 
 Scripts can read and write the **Notify** checkbox for each individual item in the Render Queue. This is exposed in the UI as a checkbox next to each Render Queue item in the Notify column.
 
 This column is hidden by default and may need to be selected to be visible by right clicking on the Render Queue column headers and choosing Notify.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -138,12 +138,12 @@ Boolean; read/write.
 
 `app.project.renderQueue.item(index).render`
 
-#### Description
+#### 描述
 
 When `true`, the item will be rendered when the render queue is started. When set to `true`, the [RenderQueueItem.status](#renderqueueitemstatus) is set to `RQItemStatus.QUEUED`. When set to `false`, `status` is set to
 `RQItemStatus.UNQUEUED`.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -153,13 +153,13 @@ Boolean; read/write.
 
 `app.project.renderQueue.item(index).skipFrames`
 
-#### Description
+#### 描述
 
 The number of frames to skip when rendering this item. Use this to do rendering tests that are faster than a full render. A value of 0 skip no frames, and results in regular rendering of all frames. A value of 1 skips every other frame. This is equivalent to "rendering on twos." Higher values skip a larger number of frames. The total length of time remains unchanged. For example, if skip has a value of 1, a sequence output would have half the number of frames and in movie output, each frame would be double the duration.
 
-#### Type
+#### 类型
 
-Integer, in the range `[0..99]`; read/write.
+Integer, 范围为 `[0..99]`; read/write.
 
 ---
 
@@ -167,13 +167,13 @@ Integer, in the range `[0..99]`; read/write.
 
 `app.project.renderQueue.item(index).startTime`
 
-#### Description
+#### 描述
 
 The day and time that this item started rendering.
 
-#### Type
+#### 类型
 
-Date object, or `null` if the item has not started rendering; read-only.
+Date object, or `null` if the item has not started rendering; 只读.
 
 ---
 
@@ -181,13 +181,13 @@ Date object, or `null` if the item has not started rendering; read-only.
 
 `app.project.renderQueue.item(index).status`
 
-#### Description
+#### 描述
 
 The current render status of the item.
 
-#### Type
+#### 类型
 
-An `RQItemStatus` enumerated value; read-only. One of:
+An `RQItemStatus` enumerated value; 只读. One of:
 
 - `RQItemStatus.WILL_CONTINUE`: Rendering process has been paused.
 - `RQItemStatus.NEEDS_OUTPUT`: Item lacks a valid output path.
@@ -204,13 +204,13 @@ An `RQItemStatus` enumerated value; read-only. One of:
 
 `app.project.renderQueue.item(index).templates`
 
-#### Description
+#### 描述
 
 The names of all Render Settings templates available for the item. See also [RenderQueueItem.saveAsTemplate()](#renderqueueitemsaveastemplate).
 
-#### Type
+#### 类型
 
-Array of strings; read-only.
+Array of strings; 只读.
 
 ---
 
@@ -218,11 +218,11 @@ Array of strings; read-only.
 
 `app.project.renderQueue.item(index).timeSpanDuration`
 
-#### Description
+#### 描述
 
 The duration in seconds of the composition to be rendered. The duration is determined by subtracting the start time from the end time. Setting this value is the same as setting a custom end time in the Render Settings dialog box.
 
-#### Type
+#### 类型
 
 Floating-point value; read/write.
 
@@ -232,33 +232,33 @@ Floating-point value; read/write.
 
 `app.project.renderQueue.item(index).timeSpanStart`
 
-#### Description
+#### 描述
 
 The time in the composition, in seconds, at which rendering will begin. Setting this value is the same as setting a custom start time in the Render Settings dialog box.
 
-#### Type
+#### 类型
 
 Floating-point value; read/write.
 
 ---
 
-## Methods
+## 函数
 
 ### RenderQueueItem.applyTemplate()
 
 `app.project.renderQueue.item(index).applyTemplate(templateName)`
 
-#### Description
+#### 描述
 
 Applies a Render Settings template to the item. See also [RenderQueueItem.saveAsTemplate()](#renderqueueitemsaveastemplate) and [RenderQueueItem.templates](#renderqueueitemtemplates).
 
-#### Parameters
+#### 参数
 
-|   Parameter    |  Type  |            Description             |
+|   参数    |  类型  |            描述             |
 | -------------- | ------ | ---------------------------------- |
 | `templateName` | String | The name of the template to apply. |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -268,18 +268,19 @@ Nothing.
 
 `app.project.renderQueue.item(index).duplicate()`
 
-#### Description
+#### 描述
 
 Creates a duplicate of this item and adds it this render queue.
 
-!!! tip
-    Duplicating an item whose status is "Done" sets the new item's status to "Queued".
+:::tip
+Duplicating an item whose status is "Done" sets the new item's status to "Queued".
+:::
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 RenderQueueItem object.
 
@@ -289,17 +290,18 @@ RenderQueueItem object.
 
 `app.project.renderQueue.item(index).getSetting()`
 
-!!! note
-    This functionality was added in After Effects 13.0 (CC 2014)
+:::note
+该方法添加于 After Effects 13.0 (CC 2014)
+:::
 
-#### Description
+#### 描述
 
 Gets a specific Render Queue Item setting.
 
 - Depreciated Source: [https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 - Archived version: [https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 
-#### Example
+#### 示例
 
 ```javascript
 // Get current value of render setting's "Proxy Use"
@@ -316,17 +318,18 @@ var rqItem1_proxyUse_str = app.project.renderQueue.item(1).getSetting("Proxy Use
 
 `app.project.renderQueue.item(index).getSettings()`
 
-!!! note
-    This functionality was added in After Effects 13.0 (CC 2014)
+:::note
+该方法添加于 After Effects 13.0 (CC 2014)
+:::
 
-#### Description
+#### 描述
 
 Gets all settings for a given Render Queue Item.
 
 - Depreciated Source: [https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 - Archived version: [https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 
-#### Example
+#### 示例
 
 ```javascript
 // Get object that contains all possible values of all render settings of
@@ -342,17 +345,17 @@ var rqItem1_spec_str_json = rqItem1_spec_str.toSource();
 
 `app.project.renderQueue.item(index).outputModule(index)`
 
-#### Description
+#### 描述
 
 Gets an output module with the specified index position.
 
-#### Parameters
+#### 参数
 
-| Parameter |                     Type                      |               Description                |
+| 参数 |                     类型                      |               描述                |
 | --------- | --------------------------------------------- | ---------------------------------------- |
-| `index`   | Integer, in the range `[1..numOutputModules]` | The position index of the output module. |
+| `index`   | Integer, 范围为 `[1..numOutputModules]` | The position index of the output module. |
 
-#### Returns
+#### 返回
 
 OutputModule object.
 
@@ -362,15 +365,15 @@ OutputModule object.
 
 `app.project.renderQueue.item(index).remove()`
 
-#### Description
+#### 描述
 
 Removes this item from the render queue.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -380,18 +383,17 @@ Nothing.
 
 `app.project.renderQueue.item(index).saveAsTemplate(name)`
 
-#### Description
+#### 描述
 
 Saves the item's current render settings as a new template with the specified name.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |          Description          |
+| 参数 |  类型  |          描述          |
 | --------- | ------ | ----------------------------- |
 | `name`    | String | The name of the new template. |
 
-
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -401,10 +403,11 @@ Nothing.
 
 `app.project.renderQueue.item(index).setSetting()`
 
-!!! note
-    This functionality was added in After Effects 13.0 (CC 2014)
+:::note
+该方法添加于 After Effects 13.0 (CC 2014)
+:::
 
-#### Description
+#### 描述
 
 Sets a specific setting for a given Render Queue Item.
 
@@ -412,7 +415,7 @@ Depreciated Source: [https://blogs.adobe.com/creativecloud/new-changed-after-eff
 
 Archived version: [https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 
-#### Example
+#### 示例
 
 ```javascript
 // Set value of "Proxy Use" to "Use All Proxies"
@@ -431,17 +434,18 @@ app.project.renderQueue.item(1).setSetting("Proxy Use", 1);
 
 `app.project.renderQueue.item(index).setSettings()`
 
-!!! note
-    This functionality was added in After Effects 13.0 (CC 2014)
+:::note
+该方法添加于 After Effects 13.0 (CC 2014)
+:::
 
-#### Description
+#### 描述
 
 Sets a multiple settings for a given Render Queue Item.
 
 - Depreciated Source: [https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 - Archived version: [https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 
-#### Example
+#### 示例
 
 ```javascript
 // Get an object that contains string version of settable render setting

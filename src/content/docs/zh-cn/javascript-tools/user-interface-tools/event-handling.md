@@ -1,7 +1,6 @@
 ---
 title: event-handling
 ---
-
 # Event handling
 
 Several helper classes provide low-level event-handling capabilities.
@@ -26,11 +25,11 @@ Both keyboard and mouse events have these properties.
 
 `eventObj.bubbles`
 
-##### Description
+##### 描述
 
 When `true`, the event supports the bubbling phase.
 
-##### Type
+##### 类型
 
 Boolean
 
@@ -40,11 +39,11 @@ Boolean
 
 `eventObj.cancelable`
 
-##### Description
+##### 描述
 
 When `true`, the handler can call this object's [preventDefault()](#preventdefault) method to cancel the default action of the event.
 
-##### Type
+##### 类型
 
 Boolean
 
@@ -54,13 +53,13 @@ Boolean
 
 `eventObj.currentTarget`
 
-##### Description
+##### 描述
 
 The element object where the currently executing handler was registered.
 
 This could be an ancestor of the target object, if the handler is invoked during the capture or bubbling phase.
 
-##### Type
+##### 类型
 
 Object
 
@@ -70,7 +69,7 @@ Object
 
 `eventObj.eventPhase`
 
-##### Description
+##### 描述
 
 Current event propagation phase. One of these constants:
 
@@ -79,7 +78,7 @@ Current event propagation phase. One of these constants:
 - `Event.AT_TARGET`
 - `Event.BUBBLING_PHASE`
 
-##### Type
+##### 类型
 
 Number
 
@@ -89,14 +88,13 @@ Number
 
 `eventObj.target`
 
-##### Description
+##### 描述
 
 The element object where the event occurred.
 
-##### Type
+##### 类型
 
 Object
-
 
 ---
 
@@ -104,21 +102,21 @@ Object
 
 `eventObj.timeStamp`
 
-##### Description
+##### 描述
 
 Time the event was initiated. A JavaScript Date object.
 
-##### Type
+##### 类型
 
 Object
 
 ---
 
-#### type
+#### 类型
 
 `eventObj.type`
 
-##### Description
+##### 描述
 
 The name of the event that occurred. Predefined events types are:
 
@@ -135,7 +133,7 @@ The name of the event that occurred. Predefined events types are:
 
 Additional type names apply specifically to keyboard and mouse events.
 
-##### Type
+##### 类型
 
 String
 
@@ -145,11 +143,11 @@ String
 
 `eventObj.view`
 
-##### Description
+##### 描述
 
 The container or control object that dispatched the event.
 
-##### Type
+##### 类型
 
 [Container](.././window-object) or [Control](.././control-objects) object
 
@@ -161,15 +159,15 @@ The container or control object that dispatched the event.
 
 `eventObj.initUIEvent(eventName, bubble, isCancelable, view, detail)`
 
-##### Description
+##### 描述
 
 Modifies an event before it is dispatched to its targets. Takes effect only if [UIEvent.eventPhase](#eventphase) is `Event.NOT_DISPATCHING`.
 
 Ignored at all other phases.
 
-##### Parameters
+##### 参数
 
-|   Parameter    |                                   Type                                    |                                                                   Description                                                                   |
+|   参数    |                                   类型                                    |                                                                   描述                                                                   |
 | -------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | `eventName`    | String                                                                    | The event name string.                                                                                                                          |
 | `bubble`       | Boolean                                                                   | When `true`, the event should be triggered in ancestors of the target object during the bubbling phase.                                         |
@@ -177,7 +175,7 @@ Ignored at all other phases.
 | `view`         | [Container](.././window-object) or [Control](.././control-objects) object | The container or control object that dispatched the event.                                                                                      |
 | `detail`       | Any                                                                       | Details of the event, which vary according to the event type. The value is `1` or `2` for the click event, indicating a single or double click. |
 
-##### Returns
+##### 返回
 
 Nothing
 
@@ -187,13 +185,13 @@ Nothing
 
 `eventObj.preventDefault()`
 
-##### Description
+##### 描述
 
 Cancels the default action of this event, if this event is cancelable (that is, [cancelable](#cancelable) is true).
 
 For example, the default click action of an OK button is to close the containing dialog; this call prevents that behavior.
 
-##### Returns
+##### 返回
 
 Nothing
 
@@ -203,11 +201,11 @@ Nothing
 
 `eventObj.stopPropagation()`
 
-##### Description
+##### 描述
 
 Stops event propagation (bubbling and capturing) after executing the handler or handlers at the current target.
 
-##### Returns
+##### 返回
 
 Nothing
 
@@ -217,8 +215,9 @@ Nothing
 
 This type of object is passed to your registered event handler when a keyboard-input event occurs. The properties reflect the keypress and key modifier state at the time the keyboard event was generated.
 
-!!! info
-    All properties are read only.
+:::info
+All properties are read only.
+:::
 
 ### KeyboardEvent Object Methods
 
@@ -228,13 +227,13 @@ In addition to the properties defined for [UIEvent base class](#uievent-base-cla
 
 `eventObj.altKey`
 
-##### Description
+##### 描述
 
 When `true`, the `ALT` key was active.
 
 Value is `undefined` if the `keyIdentifier` is for a modifier key.
 
-##### Type
+##### 类型
 
 Boolean
 
@@ -244,13 +243,13 @@ Boolean
 
 `eventObj.ctrlKey`
 
-##### Description
+##### 描述
 
 When `true`, the `CTRL` key was active.
 
 Value is `undefined` if the `keyIdentifier` is for a modifier key.
 
-##### Type
+##### 类型
 
 Boolean
 
@@ -260,13 +259,13 @@ Boolean
 
 `eventObj.metaKey`
 
-##### Description
+##### 描述
 
 When `true`, the `META` or `COMMAND` key was active.
 
 Value is `undefined` if the `keyIdentifier` is for a modifier key.
 
-##### Type
+##### 类型
 
 Boolean
 
@@ -276,13 +275,13 @@ Boolean
 
 `eventObj.shiftKey`
 
-##### Description
+##### 描述
 
 When `true`, the `SHIFT` key was active.
 
 Value is `undefined` if the `keyIdentifier` is for a modifier key.
 
-##### Type
+##### 类型
 
 Boolean
 
@@ -292,11 +291,11 @@ Boolean
 
 `eventObj.keyIdentifier`
 
-##### Description
+##### 描述
 
 The key whose keypress generated the event, as a W3C identifier contained in a string; for example, `"U+0044"`. See [W3 Keyset Article](https://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/keyset.html).
 
-##### Type
+##### 类型
 
 String
 
@@ -306,7 +305,7 @@ String
 
 `eventObj.keyLocation`
 
-##### Description
+##### 描述
 
 A constant that identifies where on the keyboard the keypress occurred.
 
@@ -317,7 +316,7 @@ One of:
 - `DOM_KEY_LOCATION_RIGHT`
 - `DOM_KEY_LOCATION_NUMPAD`
 
-##### Type
+##### 类型
 
 Number
 
@@ -327,28 +326,28 @@ Number
 
 `eventObj.keyName`
 
-##### Description
+##### 描述
 
 The key whose keypress generated the event, as a simple key name; for example `"A"`.
 
-##### Type
+##### 类型
 
 String
 
 ---
 
-#### type
+#### 类型
 
 `eventObj.type`
 
-##### Description
+##### 描述
 
 The name of the event that occurred. Key events types are:
 
 - `keyup`
 - `keydown`
 
-##### Type
+##### 类型
 
 String
 
@@ -362,18 +361,18 @@ In addition to the functions defined for [UIEvent base class](#uievent-base-clas
 
 `eventObj.getModifierState(keyIdentifier)`
 
-##### Description
+##### 描述
 
 Get the current modifier keys being used in this event.
 
-!!! note
-    If you're trying to check whether keyboard modifier keys (alt/ctrl/meta/shift) are held down at any time in your script, not just in an event, see [Keyboard state object](environment.md#keyboard-state-object).
+:::note
+If you're trying to check whether keyboard modifier keys (alt/ctrl/meta/shift) are held down at any time in your script, not just in an event, see [Keyboard state object](environment.md#keyboard-state-object).
+:::
 
-##### Parameters
+##### 参数
 
-+-----------------+--------+--------------------------------------------------------+
-|    Parameter    |  Type  |                      Description                       |
-+=================+========+========================================================+
+|    参数    |  类型  |                      描述                       |
+|-----------------|--------|--------------------------------------------------------|
 | `keyIdentifier` | String | A string containing a modifier key identifier, one of: |
 |                 |        | - `Alt`                                                |
 |                 |        | - `CapsLock`                                           |
@@ -382,9 +381,8 @@ Get the current modifier keys being used in this event.
 |                 |        | - `NumLock`                                            |
 |                 |        | - `Scroll`                                             |
 |                 |        | - `Shift`                                              |
-+-----------------+--------+--------------------------------------------------------+
 
-##### Returns
+##### 返回
 
 Boolean. `true` if the given modifier was active when the event occurred, `false` otherwise.
 
@@ -394,13 +392,13 @@ Boolean. `true` if the given modifier was active when the event occurred, `false
 
 `eventObj.initKeyboardEvent(eventName, bubble, isCancelable, view, keyID, keyLocation, modifiersList)`
 
-##### Description
+##### 描述
 
 Reinitializes the object, allowing you to change the event properties after construction. Arguments set the corresponding properties.
 
-##### Parameters
+##### 参数
 
-|    Parameter    |                                   Type                                    |                                               Description                                               |
+|    参数    |                                   类型                                    |                                               描述                                               |
 | --------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | `eventName`     | String                                                                    | The event name string.                                                                                  |
 | `bubble`        | Boolean                                                                   | When `true`, the event should be triggered in ancestors of the target object during the bubbling phase. |
@@ -410,7 +408,7 @@ Reinitializes the object, allowing you to change the event properties after cons
 | `keyLocation`   | String                                                                    | Sets the `keyLocation`. value.                                                                          |
 | `modifiersList` | String                                                                    | A whitespace-separated string of modifier key names, such as "Control Alt".                             |
 
-##### Returns
+##### 返回
 
 Nothing
 
@@ -426,8 +424,9 @@ In the case of nested elements, mouse event types are always targeted at the mos
 
 In addition to the properties defined for [UIEvent base class](#uievent-base-class), a mouse event has these properties.
 
-!!! info
-    All properties are read only.
+:::info
+All properties are read only.
+:::
 
 ---
 
@@ -435,13 +434,13 @@ In addition to the properties defined for [UIEvent base class](#uievent-base-cla
 
 `eventObj.altKey`
 
-##### Description
+##### 描述
 
 When `true`, the `ALT` key was active.
 
 Value is `undefined` if the `keyIdentifier` is for a modifier key.
 
-##### Type
+##### 类型
 
 Boolean
 
@@ -451,7 +450,7 @@ Boolean
 
 `eventObj.button`
 
-##### Description
+##### 描述
 
 Which mouse button changed state.
 
@@ -463,7 +462,7 @@ One of:
 
 Some mice may provide or simulate more buttons, and values higher than `2` represent such buttons.
 
-##### Type
+##### 类型
 
 Number
 
@@ -475,11 +474,11 @@ Number
 
 `eventObj.clientY`
 
-##### Description
+##### 描述
 
 The horizontal and vertical coordinates at which the event occurred relative to the target object. The origin is the top left of the control or window, inside any border decorations.
 
-##### Type
+##### 类型
 
 Number
 
@@ -489,13 +488,13 @@ Number
 
 `eventObj.ctrlKey`
 
-##### Description
+##### 描述
 
 When `true`, the `CTRL` key was active.
 
 Value is `undefined` if the `keyIdentifier` is for a modifier key.
 
-##### Type
+##### 类型
 
 Boolean
 
@@ -505,13 +504,13 @@ Boolean
 
 `eventObj.detail`
 
-##### Description
+##### 描述
 
 Details of the event, which vary according to the event type.
 
 For the `click`, `mousedown`, and `mouseup` events, the value is `1` for a single click, or `2` for a double click.
 
-##### Type
+##### 类型
 
 Number
 
@@ -521,13 +520,13 @@ Number
 
 `eventObj.metaKey`
 
-##### Description
+##### 描述
 
 When `true`, the `META` or `COMMAND` key was active.
 
 Value is `undefined` if the `keyIdentifier` is for a modifier key.
 
-##### Type
+##### 类型
 
 Boolean
 
@@ -537,14 +536,14 @@ Boolean
 
 `eventObj.relatedTarget`
 
-##### Description
+##### 描述
 
 - For a `mouseover` event, the UI element the pointer is leaving, if any.
 - For a `mouseout` event, the UI element the pointer is entering, if any.
 
 Otherwise `undefined`.
 
-##### Type
+##### 类型
 
 Object
 
@@ -556,11 +555,11 @@ Object
 
 `eventObj.screenY`
 
-##### Description
+##### 描述
 
 The horizontal and vertical coordinates at which the event occurred relative to the screen.
 
-##### Type
+##### 类型
 
 Number
 
@@ -570,23 +569,23 @@ Number
 
 `eventObj.shiftKey`
 
-##### Description
+##### 描述
 
 When `true`, the `SHIFT` key was active.
 
 Value is `undefined` if the `keyIdentifier` is for a modifier key.
 
-##### Type
+##### 类型
 
 Boolean
 
 ---
 
-#### type
+#### 类型
 
 `eventObj.type`
 
-##### Description
+##### 描述
 
 The name of the event that occurred. Mouse events types are:
 
@@ -599,7 +598,7 @@ The name of the event that occurred. Mouse events types are:
 
 The sequence of click events is: `mousedown`, `mouseup`, `click`.
 
-##### Type
+##### 类型
 
 String
 
@@ -615,17 +614,15 @@ In addition to the functions defined for [UIEvent base class](#uievent-base-clas
 
 `eventObj.getModifierState(keyIdentifier)`
 
-##### Description
+##### 描述
 
 Get the current modifier keys being used in this event.
 
-#### Parameters
+#### 参数
 
-+-----------------+--------+--------------------------------------------------------+
-|    Parameter    |  Type  |                      Description                       |
-+=================+========+========================================================+
+|    参数    |  类型  |                      描述                       |
+|-----------------|--------|--------------------------------------------------------|
 | `keyIdentifier` | String | A string containing a modifier key identifier, one of: |
-|                 |        |                                                        |
 |                 |        | - `"Alt"`                                              |
 |                 |        | - `"CapsLock"`                                         |
 |                 |        | - `"Control"`                                          |
@@ -633,9 +630,8 @@ Get the current modifier keys being used in this event.
 |                 |        | - `"NumLock"`                                          |
 |                 |        | - `"Scroll"`                                           |
 |                 |        | - `"Shift"`                                            |
-+-----------------+--------+--------------------------------------------------------+
 
-##### Returns
+##### 返回
 
 Boolean. `true` if the given modifier was active when the event occurred, `false` otherwise.
 
@@ -663,13 +659,13 @@ eventObj.initMouseEvent(
 )
 ```
 
-##### Description
+##### 描述
 
 Reinitializes the object, allowing you to change the event properties after construction. Arguments set the corresponding properties.
 
-##### Parameters
+##### 参数
 
-|         Parameter          |                                   Type                                    |                                                                  Description                                                                  |
+|         参数          |                                   类型                                    |                                                                  描述                                                                  |
 | -------------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | `eventName`                | String                                                                    | The event name string.                                                                                                                        |
 | `bubble`                   | Boolean                                                                   | When `true`, the event should be triggered in ancestors of the target object during the bubbling phase.                                       |
@@ -682,6 +678,6 @@ Reinitializes the object, allowing you to change the event properties after cons
 | `button`                   | Number                                                                    | Sets the mouse button.                                                                                                                        |
 | `relatedTarget`            | Object                                                                    | Optional. Sets the related target, if any, for a `mouseover` or `mouseout` event.                                                             |
 
-##### Returns
+##### 返回
 
 Nothing

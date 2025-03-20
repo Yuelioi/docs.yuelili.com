@@ -1,15 +1,15 @@
 ---
 title: fontsobject
 ---
-
 # Fonts object
 
 `app.fonts`
 
-!!! note
-    This functionality was added in After Effects 24.0
+:::note
+该方法添加于 After Effects 24.0
+:::
 
-#### Description
+#### 描述
 
 The Fonts objects provides information about the current font ecosystem on your device.
 
@@ -27,13 +27,13 @@ After any change to the font ecosystem from installing new real fonts, the outst
 
 ---
 
-## Attributes
+## 属性
 
 ### FontsObject.allFonts
 
 `app.fonts.allFonts`
 
-#### Description
+#### 描述
 
 The list of all the fonts currently available on your system.
 
@@ -49,11 +49,11 @@ The family groups and [Font objects](../fontobject) in the group are sorted acco
 
 [Font object](../fontobject) for which [isSubstitute](fontobject.md#fontobjectissubstitute) returns `true` are always sorted to the end as individual family groups.
 
-#### Type
+#### 类型
 
-Array of Arrays of [Font objects](../fontobject); read-only.
+Array of Arrays of [Font objects](../fontobject); 只读.
 
-#### Example
+#### 示例
 
 This example will select the first returned Font Family Array.
 
@@ -74,14 +74,15 @@ alert(firstFontFamilyName+" "+firstFamilyStyle);
 
 `app.fonts.favoriteFontFamilyList`
 
-!!! note
-    This functionality was added in After Effects 24.6
+:::note
+该方法添加于 After Effects 24.6
+:::
 
-#### Description
+#### 描述
 
 Provides access to the Favorites list presented in the Character panel and Properties panel. To set the Favorites simply provide an (unsorted) array of strings based on the [familyName](fontobject.md#fontobjectfamilyname). To clear the list simply assign an empty Array.
 
-#### Type
+#### 类型
 
 Array of Strings; read/write.
 
@@ -91,18 +92,19 @@ Array of Strings; read/write.
 
 `app.fonts.fontsDuplicateByPostScriptName`
 
-!!! note
-    This functionality was added in After Effects 24.6
+:::note
+该方法添加于 After Effects 24.6
+:::
 
-#### Description
+#### 描述
 
 It is perfectly legal and common for more than one [Font object](../fontobject) to return the same value for [postScriptName](fontobject.md#fontobjectpostscriptname) but as this can sometimes lead to confusion about what [Font object](../fontobject) will actually be used when using [TextDocument.font](textdocument.md#textdocumentfont) or the `.font` attribute of a [CharacterRange object](../characterrange), this property exists to both reveal what duplicates exist and also their relative order.
 
 This returns an Array in which each element is an Array of [Font objects](../fontobject), where the 0th element [Font object](../fontobject) is considered the primary [Font object](../fontobject) for the given PostScript name.
 
-#### Type
+#### 类型
 
-Array of Arrays of [Font Objects](../fontobject); read-only.
+Array of Arrays of [Font Objects](../fontobject); 只读.
 
 ---
 
@@ -110,10 +112,11 @@ Array of Arrays of [Font Objects](../fontobject); read-only.
 
 `app.fonts.fontServerRevision`
 
-!!! note
-    This functionality was added in After Effects 24.2
+:::note
+该方法添加于 After Effects 24.2
+:::
 
-#### Description
+#### 描述
 
 Returns an unsigned number representing the current revision of the font environment.
 
@@ -121,11 +124,11 @@ The revision is advanced when anything happens to the font environment which wou
 
 Among these are: installing or removing fonts in the font environment, opening or closing a project with substituted fonts, causing a custom Variable font instance to be created, and changing the setting in the Character Panel dropdown "Show Font Names in English".
 
-#### Type
+#### 类型
 
-Floating-point value; read-only.
+Floating-point value; 只读.
 
-#### Example
+#### 示例
 
 ```javascript
 var fsRev = app.fonts.fontServerRevision;
@@ -138,15 +141,15 @@ alert(fsRev);
 
 `app.fonts.fontsWithDefaultDesignAxes`
 
-#### Description
+#### 描述
 
 Returns an array of variable [Font objects](../fontobject), each using a unique font dictionary and with default values for their design axes. This API is a convenient way to quickly filter for a unique instance of each installed variable font.
 
-#### Type
+#### 类型
 
-Array of [Font objects](../fontobject); read-only.
+Array of [Font objects](../fontobject); 只读.
 
-#### Example
+#### 示例
 
 ```javascript
 var variableFontList = app.fonts.fontsWithDefaultDesignAxes;
@@ -159,19 +162,21 @@ alert(variableFontList.length);
 
 `app.fonts.freezeSyncSubstitutedFonts`
 
-!!! note
-    This functionality was added in After Effects 24.6
+:::note
+该方法添加于 After Effects 24.6
+:::
 
-#### Description
+#### 描述
 
 When a Project is opened and one or more fonts are not found in the local font environment, a *sync* process is initiated with Adobe Fonts to see if one or more Fonts could be activated and installed.
 
 By default this happens automatically—this property will disable it from happening.
 
-!!! warning
-    The rules for deciding if Adobe Fonts has a matching font is entirely based on the PostScript name. With some Variable Fonts, due to ambiguity about which font has which named instance, it is possible that more than one face (Regular/Italic) may be installed during an activation. Whether the installed font is a valid replacement is controlled by the [FontsObject.substitutedFontReplacementMatchPolicy](#fontsobjectsubstitutedfontreplacementmatchpolicy).
+:::warning
+The rules for deciding if Adobe Fonts has a matching font is entirely based on the PostScript name. With some Variable Fonts, due to ambiguity about which font has which named instance, it is possible that more than one face (Regular/Italic) may be installed during an activation. Whether the installed font is a valid replacement is controlled by the [FontsObject.substitutedFontReplacementMatchPolicy](#fontsobjectsubstitutedfontreplacementmatchpolicy).
+:::
 
-#### Type
+#### 类型
 
 Boolean; read/write. One of:
 
@@ -184,16 +189,17 @@ Boolean; read/write. One of:
 
 `app.fonts.missingOrSubstitutedFonts`
 
-#### Description
+#### 描述
 
 The list of all the missing or substituted fonts of the current Project.
 
-!!! tip
-    A substituted font is a font that was already missing when the project is opened. A missing font is a font that went missing (font being uninstalled, for example) *while* the project was open.
+:::tip
+A substituted font is a font that was already missing when the project is opened. A missing font is a font that went missing (font being uninstalled, for example) *while* the project was open.
+:::
 
-#### Type
+#### 类型
 
-Array of [Font objects](../fontobject); read-only.
+Array of [Font objects](../fontobject); 只读.
 
 ---
 
@@ -201,14 +207,15 @@ Array of [Font objects](../fontobject); read-only.
 
 `app.fonts.mruFontFamilyList`
 
-!!! note
-    This functionality was added in After Effects 24.6
+:::note
+该方法添加于 After Effects 24.6
+:::
 
-#### Description
+#### 描述
 
 Provides access to the Most Recently Used (MRU) list presented in the Character panel and Properties panel. To set the MRU simply provide an (unsorted) array of strings based on the [familyName](fontobject.md#fontobjectfamilyname). To clear the list simply assign an empty Array.
 
-#### Type
+#### 类型
 
 Array of Strings; read/write.
 
@@ -218,37 +225,39 @@ Array of Strings; read/write.
 
 `app.fonts.substitutedFontReplacementMatchPolicy`
 
-!!! note
-    This functionality was added in After Effects 24.6
+:::note
+该方法添加于 After Effects 24.6
+:::
 
-#### Description
+#### 描述
 
 Controls the rules which are used to determine which fonts are considered matching for automatic replacement for a substituted [Font object](../fontobject).
 
-#### Type
+#### 类型
 
 A `SubstitutedFontReplacementMatchPolicy` enumerated value; read/write. One of:
 
 - `SubstitutedFontReplacementMatchPolicy.POSTSCRIPT_NAME` is the default; any [Font object](../fontobject) which has the same PostScript name is a valid candidate for replacement of a substituted [Font object](../fontobject).
 - `SubstitutedFontReplacementMatchPolicy.CTFI_EQUAL` requires that the following properties of substituted [Font object](../fontobject) must match to be considered a valid candidate:
-    - [postScriptName](fontobject.md#fontobjectpostscriptname)
-    - [technology](fontobject.md#fontobjecttechnology)
-    - [writingScripts](fontobject.md#fontobjectwritingscripts) (primary)
-    - [designVector](fontobject.md#fontobjectdesignvector)
+  - [postScriptName](fontobject.md#fontobjectpostscriptname)
+  - [technology](fontobject.md#fontobjecttechnology)
+  - [writingScripts](fontobject.md#fontobjectwritingscripts) (primary)
+  - [designVector](fontobject.md#fontobjectdesignvector)
 - `SubstitutedFontReplacementMatchPolicy.DISABLED` means that no [Font object](../fontobject) is an acceptable replacement for a the substituted [Font object](../fontobject).
 
 ---
 
-## Methods
+## 函数
 
 ### FontsObject.getCTScriptForString()
 
 `app.fonts.getCTScriptForString(charString, preferredCTScript)`
 
-!!! note
-    This functionality was added in After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
+:::note
+该方法添加于 After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
+:::
 
-#### Description
+#### 描述
 
 This function will return an array of generic objects describing the number of characters in the range and the `CTScript` enum assigned to them. See [FontObject.writingScripts](fontobject.md#fontobjectwritingscripts) for a full list of `CTScript` enumerated values.
 
@@ -263,14 +272,14 @@ var str = "[0] chars:" + scriptsV[0].chars +   // 2
 alert(str);
 ```
 
-#### Parameters
+#### 参数
 
-|      Parameter      |      Type       |                        Description                         |
+|      参数      |      类型       |                        描述                         |
 | ------------------- | --------------- | ---------------------------------------------------------- |
 | `charString`        | String          | Characters to check. If empty, will return an empty array. |
 | `preferredCTScript` | `CTScript` enum | CT Script to prefer                                        |
 
-#### Returns
+#### 返回
 
 Array of generic objects;
 
@@ -283,10 +292,11 @@ Array of generic objects;
 
 `app.fonts.getDefaultFontForCTScript(ctScript)`
 
-!!! note
-    This functionality was added in After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
+:::note
+该方法添加于 After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
+:::
 
-#### Description
+#### 描述
 
 This function will return an instance of [Font object](../fontobject) mapped as the default font based on `CTScript`.
 
@@ -306,13 +316,13 @@ Unicode characters mapped to the `CTScript`.
 var font = app.fonts.getDefaultFontForCTScript(CTScript.CT_JAPANESE_SCRIPT);
 ```
 
-#### Parameters
+#### 参数
 
-| Parameter  |      Type       |                   Description                    |
+| 参数  |      类型       |                   描述                    |
 | ---------- | --------------- | ------------------------------------------------ |
 | `ctScript` | `CTScript` enum | Corresponding CTScript to get default font from. |
 
-#### Returns
+#### 返回
 
 [Font object](../fontobject)
 
@@ -322,10 +332,11 @@ var font = app.fonts.getDefaultFontForCTScript(CTScript.CT_JAPANESE_SCRIPT);
 
 `app.fonts.getFontByID(fontID)`
 
-!!! note
-    This functionality was added in After Effects 24.2
+:::note
+该方法添加于 After Effects 24.2
+:::
 
-#### Description
+#### 描述
 
 This function will return an instance of [Font object](../fontobject) based on the ID of a previously found font.
 
@@ -337,13 +348,13 @@ var font2 = app.fonts.getFontByID(font1.fontID);
 alert(font1.fontID == font2.fontID);
 ```
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type   |     Description     |
+| 参数 |  类型   |     描述     |
 | --------- | ------- | ------------------- |
 | fontID    | Integer | The ID of the font. |
 
-#### Returns
+#### 返回
 
 [Font object](../fontobject), or undefined if no font by that ID.
 
@@ -353,28 +364,29 @@ alert(font1.fontID == font2.fontID);
 
 `app.fonts.getFontsByFamilyNameAndStyleName(familyName, styleName)`
 
-#### Description
+#### 描述
 
 This function will return an array of [Font object](../fontobject) based on the Family Name and Style Name of a font. If no suitable font is found, it will return an empty Array.
 
-!!! tip
-    The returned array length can be more than 1 if you have multiple copies of a same font.
+:::tip
+The returned array length can be more than 1 if you have multiple copies of a same font.
+:::
 
 ```javascript
 var fontList = app.fonts.getFontsByFamilyNameAndStyleName("Abolition", "Regular")
 alert(fontList.length);
 ```
 
-#### Parameters
+#### 参数
 
-| Parameter  |  Type  |         Description          |
+| 参数  |  类型  |         描述          |
 | ---------- | ------ | ---------------------------- |
 | FamilyName | String | The Family Name of the font. |
 | StyleName  | String | The Style Name of the font.  |
 
-#### Returns
+#### 返回
 
-Array of [Font objects](../fontobject); read-only.
+Array of [Font objects](../fontobject); 只读.
 
 ---
 
@@ -382,7 +394,7 @@ Array of [Font objects](../fontobject); read-only.
 
 `app.fonts.getFontsByPostScriptName(postscriptName)`
 
-#### Description
+#### 描述
 
 This function will return an array of [Font objects](../fontobject) based on the PostScript name of previously found Fonts.
 
@@ -397,15 +409,15 @@ var fontList = app.fonts.getFontsByPostScriptName("Abolition")
 alert(fontList.length);
 ```
 
-#### Parameters
+#### 参数
 
-|   Parameter    |  Type  |           Description            |
+|   参数    |  类型  |           描述            |
 | -------------- | ------ | -------------------------------- |
 | postscriptName | String | The PostScript Name of the font. |
 
-#### Returns
+#### 返回
 
-Array of [Font objects](../fontobject); read-only.
+Array of [Font objects](../fontobject); 只读.
 
 ---
 
@@ -413,10 +425,11 @@ Array of [Font objects](../fontobject); read-only.
 
 `app.fonts.pollForAndPushNonSystemFontFoldersChanges()`
 
-!!! note
-    This functionality was added in After Effects 24.6
+:::note
+该方法添加于 After Effects 24.6
+:::
 
-#### Description
+#### 描述
 
 The addition and removal of font files in what is considered the *system font folders* is recognized and handled automatically without user intervention to update the font environment. Non-system font folders are not automatically handled and so additions and removal of font files in these folders are not recognized until the After Effects is restarted.
 
@@ -430,7 +443,7 @@ Windows: <systemDrive>:\Program Files\Common Files\Adobe\Fonts
 Mac: /Library/Application Support/Adobe/Fonts
 ```
 
-#### Returns
+#### 返回
 
 Boolean; One of:
 
@@ -443,10 +456,11 @@ Boolean; One of:
 
 `app.fonts.setDefaultFontForCTScript(ctScript, font)`
 
-!!! note
-    This functionality was added in After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
+:::note
+该方法添加于 After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
+:::
 
-#### Description
+#### 描述
 
 This function will set an instance of [Font object](../fontobject) mapped based on `CTScript` parameter.
 
@@ -474,14 +488,14 @@ var ret = app.fonts.setDefaultFontForCTScript(CTScript.CT_ROMAN_SCRIPT, font);
 alert("set:" + ret);
 ```
 
-#### Parameters
+#### 参数
 
-| Parameter  |             Type             |                           Description                            |
+| 参数  |             类型             |                           描述                            |
 | ---------- | ---------------------------- | ---------------------------------------------------------------- |
 | `ctScript` | `CTScript` enum              | CTScript for font to be mapped                                   |
 | `font`     | [Font object](../fontobject) | The font to be mapped. If `null`, then current mapping is reset. |
 
-#### Returns
+#### 返回
 
 Boolean; One of:
 

@@ -1,31 +1,31 @@
 ---
-title: threed
+title: 3D
 ---
-
 # Layer 3D
 
 `thisLayer`
 
-These attributes are related to the 3d properties of layers.
+这些属性与图层的 3D 属性相关。
 
-!!! info
-    On this page, we're going to use `thisLayer` as a sample on how to call these items, however note that any method that returns a [Layer](.././layer) will work.
+:::info
+在本页中，我们将使用 `thisLayer` 作为调用这些项的示例，但请注意，任何返回 [Layer](.././layer) 的方法都可以使用。
+:::
 
 ---
 
-## Attributes
+## 属性
 
 ### Layer.acceptsLights
 
 `thisLayer.acceptsLights`
 
-#### Description
+#### 描述
 
-Returns a value of `1` if the layer accepts lights.
+如果图层接受灯光，则返回 `1`。
 
-#### Type
+#### 类型
 
-Boolean Number
+布尔值数字
 
 ---
 
@@ -33,13 +33,13 @@ Boolean Number
 
 `thisLayer.acceptsShadows`
 
-#### Description
+#### 描述
 
-Returns a value of `1` if the layer accepts shadows and `2` if the property is set to `Only`.
+如果图层接受阴影，则返回 `1`；如果属性设置为 `仅接受阴影`，则返回 `2`。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -47,13 +47,13 @@ Number
 
 `thisLayer.ambient`
 
-#### Description
+#### 描述
 
-Returns the ambient component value as a percentage.
+以百分比形式返回环境光分量值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -61,13 +61,13 @@ Number
 
 `thisLayer.castsShadows`
 
-#### Description
+#### 描述
 
-Returns a value of `1.0` if the layer casts shadows and `2` if the property is set to `Only`.
+如果图层投射阴影，则返回 `1.0`；如果属性设置为 `仅投射阴影`，则返回 `2`。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -75,13 +75,13 @@ Number
 
 `thisLayer.diffuse`
 
-#### Description
+#### 描述
 
-Returns the diffuse component value as a percentage.
+以百分比形式返回漫反射分量值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -89,13 +89,13 @@ Number
 
 `thisLayer.lightTransmission`
 
-#### Description
+#### 描述
 
-Returns the value of the Light Transmission property for a 3D layer.
+返回 3D 图层的光传输属性值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -103,13 +103,13 @@ Number
 
 `thisLayer.metal`
 
-#### Description
+#### 描述
 
-Returns the metal component value as a percentage.
+以百分比形式返回金属分量值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -117,13 +117,13 @@ Number
 
 `thisLayer.orientation`
 
-#### Description
+#### 描述
 
-Returns the 3D orientation value, in degrees, for a 3D layer.
+返回 3D 图层的 3D 方向值，单位为度。
 
-#### Type
+#### 类型
 
-Array (3-dimensional)
+数组（3 维）
 
 ---
 
@@ -131,13 +131,13 @@ Array (3-dimensional)
 
 `thisLayer.rotationX`
 
-#### Description
+#### 描述
 
-Returns the x rotation value, in degrees, for a 3D layer.
+返回 3D 图层的 x 轴旋转值，单位为度。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -145,13 +145,13 @@ Number
 
 `thisLayer.rotationY`
 
-#### Description
+#### 描述
 
-Returns the y rotation value, in degrees, for a 3D layer.
+返回 3D 图层的 y 轴旋转值，单位为度。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -159,13 +159,13 @@ Number
 
 `thisLayer.rotationZ`
 
-#### Description
+#### 描述
 
-Returns the z rotation value, in degrees, for a 3D layer.
+返回 3D 图层的 z 轴旋转值，单位为度。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -173,13 +173,13 @@ Number
 
 `thisLayer.shininess`
 
-#### Description
+#### 描述
 
-Returns the shininess component value as a percentage.
+以百分比形式返回光泽度分量值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -187,10 +187,10 @@ Number
 
 `thisLayer.specular`
 
-#### Description
+#### 描述
 
-Returns the specular component value as a percentage.
+以百分比形式返回镜面反射分量值。
 
-#### Type
+#### 类型
 
-Number
+数字

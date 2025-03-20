@@ -1,7 +1,6 @@
 ---
 title: where-installers-should-put-plug-ins
 ---
-
 # Where Installers Should Put Plug-ins
 
 Installing your plug-ins in the common location will allow them to be loaded by Premiere Pro, if installed.

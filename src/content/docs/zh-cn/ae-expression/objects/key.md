@@ -1,35 +1,34 @@
 ---
-title: key
+title: 关键帧
 ---
-
 # Key
 
 `thisProperty.key(1)`
 
-When you access a Key object, you can get `time`, `index`, and `value` properties from it.
+当你访问一个关键帧对象时，你可以从中获取 `time`、`index` 和 `value` 属性。
 
-!!! tip
-    In expressions, "Key" refers to Keyframes.
+:::tip
+在表达式中，“Key”指的是关键帧。 :::
 
-
-!!! info
-    On this page, we're going to use `thisProperty.key(1)` as a sample on how to call these items, however note that any method that returns a [Key](#) will work.
+:::info
+在本页中，我们将使用 `thisProperty.key(1)` 作为调用这些项的示例，但请注意，任何返回 [关键帧](#) 的方法都可以使用。
+:::
 
 ---
 
-## Attributes
+## 属性
 
 ### Key.index
 
 `thisProperty.key(1).index`
 
-#### Description
+#### 描述
 
-Returns the index of the keyframe.
+返回关键帧的索引。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -37,13 +36,13 @@ Number
 
 `thisProperty.key(1).time`
 
-#### Description
+#### 描述
 
-Returns the time of the keyframe.
+返回关键帧的时间。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -51,26 +50,26 @@ Number
 
 `thisProperty.key(1).value`
 
-#### Description
+#### 描述
 
-Returns the value of the keyframe.
+返回关键帧的值。
 
-#### Type
+#### 类型
 
-A value of the same property type as the property being refrenced.
+与引用属性类型相同的值。
 
 ---
 
-## Example
+## 示例
 
-The following expression, when written on an Opacity property with keyframes, ignores the keyframe values and uses only the placement of the keyframes in time to determine where a flash should occur:
+以下表达式在应用于具有关键帧的不透明度属性时，忽略关键帧的值，仅使用关键帧在时间上的位置来确定闪光发生的位置：
 
 ```js
 const d = Math.abs(time - nearestKey(time).time);
 easeOut(d, 0, .1, 100, 0)
 ```
 
-The following expression gives you the value of the third Position keyframe:
+以下表达式返回第三个位置关键帧的值：
 
 ```js
 position.key(3).value;

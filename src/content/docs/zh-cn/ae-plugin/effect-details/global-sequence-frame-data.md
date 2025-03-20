@@ -1,7 +1,6 @@
 ---
 title: global-sequence-frame-data
 ---
-
 # Global, Sequence, & Frame Data
 
 After Effects allows plug-ins to store data at three scopes: global, sequence, and frame. Consider carefully where you store information; choosing poorly can impact performance, or make your plug-in confusing to the user.
@@ -18,8 +17,10 @@ Frame data is used for information specific to rendering a given frame. This has
 
 After Effects saves sequence data in the project file, but not global or frame data. Pointers within sequence data which point to external data are, in all likelihood, invalid upon reopening the project, and must be re-connected. We call this process "flattening" and "unflattening" the sequence data.
 
-!!! note
-    The Compute Cache does not store its contents to the project file. The data stored in the cache must be recreated during render.
+:::note
+The Compute Cache does not store its contents to the project file. The data stored in the cache must be recreated during render.
+:::
+
 
 ---
 
@@ -97,13 +98,10 @@ When enabling Multi-Frame Rendering on an effect, the `sequence_data` object wil
 
 ### PF_EffectSequenceDataSuite1
 
-+---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 |         Function          |                                                            Purpose                                                             |
-+===========================+================================================================================================================================+
+|---------------------------|--------------------------------------------------------------------------------------------------------------------------------|
 | `PF_GetConstSequenceData` | Retrieves the read-only const sequence_data object for a rendering thread when Multi-Frame Rendering is enabled for an effect. |
-|                           |                                                                                                                                |
 |                           | <pre lang="cpp">PF_Err(*PF_GetConstSequenceData)(<br/>  PF_ProgPtr effect_ref,<br/>  PF_ConstHandle \*sequence_data);</pre>    |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 ```cpp
 static PF_Err Render(

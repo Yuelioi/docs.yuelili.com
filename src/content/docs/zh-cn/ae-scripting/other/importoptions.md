@@ -1,15 +1,13 @@
 ---
 title: importoptions
 ---
-
 # ImportOptions object
 
 `new ImportOptions();`
 
 `new ImportOptions(file);`
 
-
-#### Description
+#### 描述
 
 The ImportOptions object encapsulates the options used to import a file with the [Project.importFile()](../general/project.md#projectimportfile) methods.
 
@@ -23,17 +21,17 @@ new ImportOptions().file = new File("myfile.psd");
 
 ---
 
-## Attributes
+## 属性
 
 ### ImportOptions.file
 
 `importOptions.file`
 
-#### Description
+#### 描述
 
 The file to be imported. If a file is set in the constructor, you can access it through this attribute.
 
-#### Type
+#### 类型
 
 [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object; read/write.
 
@@ -43,11 +41,11 @@ The file to be imported. If a file is set in the constructor, you can access it 
 
 `importOptions.forceAlphabetical`
 
-#### Description
+#### 描述
 
 When `true`, has the same effect as setting the "Force alphabetical order" option in the File > Import > File dialog box.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -57,11 +55,11 @@ Boolean; read/write.
 
 `importOptions.importAs`
 
-#### Description
+#### 描述
 
 The type of object for which the imported file is to be the source. Before setting, use [canImportAs](#importoptionscanimportas) to check that a given file can be imported as the source of the given object type.
 
-#### Type
+#### 类型
 
 An `ImportAsType` enumerated value; read/write. One of:
 
@@ -76,10 +74,11 @@ An `ImportAsType` enumerated value; read/write. One of:
 
 `importOptions.rangeEnd`
 
-!!! warning
-    This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::warning
+This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::
 
-#### Description
+#### 描述
 
 Sets the end clipping range of the sequence, that is going to be imported.
 
@@ -88,7 +87,7 @@ Sets the end clipping range of the sequence, that is going to be imported.
 - Throws an exception if [forceAlphabetical](#importoptionsforcealphabetical) is set to `true`.
 - Throws an exception if `rangeEnd` is less then [rangeStart](#importoptionsrangestart) and resets the range to include all the files.
 
-#### Type
+#### 类型
 
 Integer; read/write.
 
@@ -98,10 +97,11 @@ Integer; read/write.
 
 `importOptions.rangeStart`
 
-!!! warning
-    This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::warning
+This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::
 
-#### Description
+#### 描述
 
 Sets the start clipping range of the sequence, that is going to be imported.
 
@@ -110,11 +110,11 @@ Sets the start clipping range of the sequence, that is going to be imported.
 - Throws an exception if [rangeEnd](#importoptionsrangeend) value is 0.
 - Throws an exception if `rangeStart` is greater then [rangeEnd](#importoptionsrangeend) and resets the range to include all the files.
 
-#### Type
+#### 类型
 
 Integer; read/write.
 
-#### Example
+#### 示例
 
 ```javascript
 /*
@@ -138,44 +138,41 @@ var item = app.project.importFile(importOptions);
 
 `importOptions.sequence`
 
-#### Description
+#### 描述
 
 When `true`, a sequence is imported; otherwise, an individual file is imported.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
 ---
 
-## Methods
+## 函数
 
 ### ImportOptions.canImportAs()
 
 `importOptions.canImportAs(type)`
 
-#### Description
+#### 描述
 
 Reports whether the file can be imported as the source of a particular object type. If this method returns `true`, you can set the given type as the value of the [importAs](#importoptionsimportas) attribute.
 
-#### Parameters
+#### 参数
 
-+-----------+----------------------+------------------------------------------------+
-| Parameter |         Type         |                  Description                   |
-+===========+======================+================================================+
+| 参数 |         类型         |                  描述                   |
+|-----------|----------------------|------------------------------------------------|
 | `type`    | `ImportAsType` enum. | The type of file that can be imported. One of: |
-|           |                      |                                                |
 |           |                      | - `ImportAsType.COMP`                          |
 |           |                      | - `ImportAsType.FOOTAGE`                       |
 |           |                      | - `ImportAsType.COMP_CROPPED_LAYERS`           |
 |           |                      | - `ImportAsType.PROJECT`                       |
-+-----------+----------------------+------------------------------------------------+
 
-#### Returns
+#### 返回
 
 Boolean.
 
-#### Example
+#### 示例
 
 ```javascript
 var io = new ImportOptions(new File("c:\\myFile.psd"));
@@ -190,27 +187,28 @@ if (io.canImportAs(ImportAsType.COMP)) {
 
 `importOptions.isFileNameNumbered(file)`
 
-!!! warning
-    This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::warning
+This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::
 
-#### Description
+#### 描述
 
 Reports whether the file object is numbered, i.e. file name has a digit.
 
-#### Parameters
+#### 参数
 
-| Parameter |                                                 Type                                                  |    Description    |
+| 参数 |                                                 类型                                                  |    描述    |
 | --------- | ----------------------------------------------------------------------------------------------------- | ----------------- |
 | `file`    | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object | The file to check |
 
-#### Returns
+#### 返回
 
 Object, containing 2 keys:
 
 - `isNumbered`: Boolean; wether the file name contains any digit,
 - `num`: Integer; a number found in file name. Returns 0 when `isNumbered` is `false`.
 
-#### Example
+#### 示例
 
 ```javascript
 var importOptions = new ImportOptions();

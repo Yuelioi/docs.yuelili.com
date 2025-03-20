@@ -1,55 +1,51 @@
 ---
-title: propertygroup
+title: 属性组
 ---
-
 # PropertyGroup
 
 `thisLayer("ADBE Effect Parade")`
 
-All properties in the Timeline are organized into groups, which share some attributes of properties like `name` and `propertyIndex`.
+时间轴中的所有属性都组织成组，这些组共享一些属性的属性，如 `name` 和 `propertyIndex`。
 
-Property Groups can have a fixed number of properties (e.g. an individual effect whose properties don't change) or a variable number of properties (e.g. the "Effects" group itself which can have any number of effect within it).
+属性组可以具有固定数量的属性（例如，属性不会更改的单个效果）或可变数量的属性（例如，“效果”组本身可以包含任意数量的效果）。
 
-#### Top-level groups in a Layer
+#### 图层中的顶级组
 
-- Motion Trackers
-- Text
-- Contents
-- Masks
-- Effects
-- Transform
-- Layer Styles
-- Geometry Options
-- Material Options
-- Audio
-- Data
-- Essential Properties
+* 运动跟踪器
+* 文本
+* 内容
+* 蒙版
+* 效果
+* 变换
+* 图层样式
+* 几何选项
+* 材质选项
+* 音频
+* 数据
+* 基本属性
 
-#### Nested groups
+#### 嵌套组
 
-- Individual effects
-- Individual masks
-- Shape groups
-- Text Animators
+* 单个效果
+* 单个蒙版
+* 形状组
+* 文本动画器
 
-!!! info
-    On this page, we're going to use `thisLayer("ADBE Effect Parade")` (the "Effects" group) as a sample on how to call these items, however note that any method that returns a [PropertyGroup](#) will work.
+:::info 在本页中，我们将使用 `thisLayer("ADBE Effect Parade")`（“效果”组）作为调用这些项的示例，但请注意，任何返回 [属性组](#) 的方法都可以使用。 :::---
 
----
-
-## Attributes
+## 属性
 
 ### PropertyGroup.name
 
 `thisLayer("ADBE Effect Parade").name`
 
-#### Description
+#### 描述
 
-Returns the name of the property group.
+返回属性组的名称。
 
-#### Type
+#### 类型
 
-String
+字符串
 
 ---
 
@@ -57,20 +53,17 @@ String
 
 `thisLayer("ADBE Effect Parade").numProperties`
 
-#### Description
+#### 描述
 
-Returns the number of properties or groups directly within a group.
+返回组中直接包含的属性或组的数量。
 
-!!! note
-    This does not include properties nested inside child groups.
+:::note 这不包括嵌套在子组中的属性。 :::#### 类型
 
-#### Type
+数字
 
-Number
+#### 示例
 
-#### Example
-
-To find the number of effects applied to a layer:
+查找应用于图层的效果数量：
 
 ```js
 thisLayer("ADBE Effect Parade").numProperties
@@ -82,35 +75,34 @@ thisLayer("ADBE Effect Parade").numProperties
 
 `thisLayer("ADBE Effect Parade").propertyIndex`
 
-#### Description
+#### 描述
 
-Returns the index of a property group relative to other properties or groups in its property group.
+返回属性组相对于其属性组中其他属性或组的索引。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
-## Methods
+## 函数
 
 ### PropertyGroup.propertyGroup()
 
 `propertyGroup([countUp=1])`
 
-#### Description
+#### 描述
 
-Returns a higher-level property group relative to the property group on which the method is called.
+返回相对于调用该方法的属性组的更高级别的属性组。
 
-See [`propertyGroup()`](property.md#propertygroup) for additional details.
+有关更多详细信息，请参阅 [`propertyGroup()`](https://property.md/#propertygroup)。
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |                                      Description                                      |
-| --------- | ------ | ------------------------------------------------------------------------------------- |
-| `countUp` | Number | Optional. The number of property groups "up" the hierarchy to climb. Defaults to `1`. |
+| 参数        | 类型 | 描述                                         |
+| ----------- | ---- | -------------------------------------------- |
+| `countUp` | 数字 | 可选。要向上爬取的属性组数量。默认为 `1`。 |
 
+#### 返回
 
-#### Returns
-
-[PropertyGroup object](#)
+[属性组对象]()

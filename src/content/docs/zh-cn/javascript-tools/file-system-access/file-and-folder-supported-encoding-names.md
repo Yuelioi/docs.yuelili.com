@@ -1,7 +1,6 @@
 ---
 title: file-and-folder-supported-encoding-names
 ---
-
 # File- and Folder-supported encoding names
 
 The following list of names is a basic set of encoding names supported by the File object. Some of the character encoders are built in, while the operating system is queried for most of the other encoders.

@@ -1,18 +1,17 @@
 ---
-title: vector-math
+title: 矢量数学
 ---
-
 # Vector Math
 
-Vector Math functions are global methods that perform operations on arrays, treating them as mathematical vectors.
+矢量数学函数是全局方法，用于对数组执行操作，将其视为数学矢量。
 
-Unless otherwise specified, Vector Math methods are lenient about dimensions and return a value that is the dimension of the largest input Array object, filling in missing elements with zeros.
+除非另有说明，矢量数学方法对维度是宽松的，并返回与最大输入数组对象维度相同的值，缺失的元素用零填充。
 
-Unlike built-in JavaScript methods, such as `Math.sin`, these methods are not used with the `Math` prefix.
+与内置的 JavaScript 方法（如 `Math.sin`）不同，这些方法不使用 `Math` 前缀。
 
-#### Example
+#### 示例
 
-This expression returns `[11, 22, 3]`:
+此表达式返回 `[11, 22, 3]`：
 
 ```js
 add([10, 20], [1, 2, 3])
@@ -20,24 +19,24 @@ add([10, 20], [1, 2, 3])
 
 ---
 
-## Methods
+## 函数
 
 ### add()
 
 `add(vec1, vec2)`
 
-#### Description
+#### 描述
 
-Adds two vectors.
+将两个矢量相加。
 
-#### Parameters
+#### 参数
 
-| Parameter | Type  |      Description      |
-| --------- | ----- | --------------------- |
-| `vec1`    | Array | First vector to add.  |
-| `vec2`    | Array | Second vector to add. |
+| 参数     | 类型  | 描述                 |
+| -------- | ----- | -------------------- |
+| `vec1` | Array | 要相加的第一个矢量。 |
+| `vec2` | Array | 要相加的第二个矢量。 |
 
-#### Returns
+#### 返回
 
 Array
 
@@ -47,25 +46,25 @@ Array
 
 `clamp(value, limit1, limit2)`
 
-#### Description
+#### 描述
 
-The value of each component of `value` is constrained to fall between the values of the corresponding values of `limit1` and `limit2`.
+将 `value` 的每个分量限制在 `limit1` 和 `limit2` 的对应值之间。
 
-#### Parameters
+#### 参数
 
-| Parameter |      Type       |             Description             |
-| --------- | --------------- | ----------------------------------- |
-| `value`   | Number or Array | Value to clamp.                     |
-| `limit1`  | Number or Array | Minimum amount to clamp `value` to. |
-| `limit2`  | Number or Array | Maximum amount to clamp `value` to. |
+| 参数       | 类型            | 描述                      |
+| ---------- | --------------- | ------------------------- |
+| `value`  | Number or Array | 要限制的值。              |
+| `limit1` | Number or Array | 限制 `value` 的最小值。 |
+| `limit2` | Number or Array | 限制 `value` 的最大值。 |
 
-#### Returns
+#### 返回
 
 Number or Array
 
-#### Example
+#### 示例
 
-Ensure that a wiggled amount never exceeds the 0-100 range:
+确保抖动值始终在 0-100 范围内：
 
 ```js
 const wiggled = wiggle(0.5, 500);
@@ -78,20 +77,20 @@ clamp(wiggled, 0, 500);
 
 `cross(vec1, vec2)`
 
-#### Description
+#### 描述
 
-Returns the vector cross product of `vec1` and `vec2`.
+返回 `vec1` 和 `vec2` 的矢量叉积。
 
-Refer to a math reference or JavaScript guide for more information.
+有关更多信息，请参阅数学参考或 JavaScript 指南。
 
-#### Parameters
+#### 参数
 
-| Parameter |            Type             |                 Description                  |
-| --------- | --------------------------- | -------------------------------------------- |
-| `vec1`    | Array (2- or 3-dimensional) | First vector to calculate cross product of.  |
-| `vec2`    | Array (2- or 3-dimensional) | Second vector to calculate cross product of. |
+| 参数     | 类型                        | 描述                     |
+| -------- | --------------------------- | ------------------------ |
+| `vec1` | Array (2- or 3-dimensional) | 要计算叉积的第一个矢量。 |
+| `vec2` | Array (2- or 3-dimensional) | 要计算叉积的第二个矢量。 |
 
-#### Returns
+#### 返回
 
 Array (2- or 3-dimensional)
 
@@ -101,18 +100,18 @@ Array (2- or 3-dimensional)
 
 `div(vec, amount)`
 
-#### Description
+#### 描述
 
-Divides every element of the vector by the amount.
+将矢量的每个元素除以 `amount`。
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |       Description       |
-| --------- | ------ | ----------------------- |
-| `vec`     | Array  | The vector to divide    |
-| `amount`  | Number | The amount to divide by |
+| 参数       | 类型   | 描述           |
+| ---------- | ------ | -------------- |
+| `vec`    | Array  | 要除以的矢量。 |
+| `amount` | Number | 要除以的值。   |
 
-#### Returns
+#### 返回
 
 Array
 
@@ -122,18 +121,18 @@ Array
 
 `dot(vec1, vec2)`
 
-#### Description
+#### 描述
 
-Returns the dot (inner) product of the vector arguments.
+返回矢量参数的点积（内积）。
 
-#### Parameters
+#### 参数
 
-| Parameter | Type  |                Description                 |
-| --------- | ----- | ------------------------------------------ |
-| `vec1`    | Array | First vector to calculate dot product of.  |
-| `vec2`    | Array | Second vector to calculate dot product of. |
+| 参数     | Type  | 描述                     |
+| -------- | ----- | ------------------------ |
+| `vec1` | Array | 要计算点积的第一个矢量。 |
+| `vec2` | Array | 要计算点积的第二个矢量。 |
 
-#### Returns
+#### 返回
 
 Number
 
@@ -143,29 +142,30 @@ Number
 
 `length(vec[, point2])`
 
-#### Description
+#### 描述
 
-Returns the length of vector `vec`.
+返回矢量 `vec` 的长度。
 
-If a second argument is provided, instead treats the first argument as a point and returns the distance between the two points.
+如果提供了第二个参数，则将第一个参数视为点，并返回两点之间的距离。
 
-!!! tip
-    Using `length()` with two arguments is the same as `length(sub(vec, point2))`.
+:::tip
+使用带有两个参数的 `length()` 等同于 `length(sub(vec, point2))`。
+:::
 
-#### Parameters
+#### 参数
 
-| Parameter | Type  |                         Description                          |
-| --------- | ----- | ------------------------------------------------------------ |
-| `vec`     | Array | The vector to normalize, or the first point to measure from. |
-| `point2`  | Array | Optional. The second point to measure to.                    |
+| 参数       | Type  | 描述                                 |
+| ---------- | ----- | ------------------------------------ |
+| `vec`    | Array | 要归一化的矢量，或要测量的第一个点。 |
+| `point2` | Array | 可选。要测量的第二个点。             |
 
-#### Returns
+#### 返回
 
 Number
 
-#### Example
+#### 示例
 
-For example, add this expression to the Focus Distance property of a camera to lock the focal plane to the camera's point of interest so that the point of interest is in focus:
+例如，将此表达式添加到摄像机的焦点距离属性，以将焦平面锁定到摄像机的兴趣点，从而使兴趣点保持清晰：
 
 ```js
 length(position, pointOfInterest)
@@ -177,31 +177,32 @@ length(position, pointOfInterest)
 
 `lookAt(fromPoint, atPoint)`
 
-#### Description
+#### 描述
 
-Orients a layer to look at a given point, from a given point.
+使图层从 `fromPoint` 看向 `atPoint`。
 
-The return value can be used as an expression for the Orientation property, making the z-axis of the layer point at atPoint.
+返回值可用作 Orientation 属性的表达式，使图层的 z 轴指向 `atPoint`。
 
-This method is especially useful for cameras and lights.
+此方法特别适用于摄像机和灯光。
 
-!!! tip
-    If you use this expression on a camera, turn off auto-orientation.
+:::
+tip 如果在摄像机上使用此表达式，请关闭自动定向。
+:::
 
-#### Parameters
+#### 参数
 
-|  Parameter  |         Type          |                        Description                         |
-| ----------- | --------------------- | ---------------------------------------------------------- |
-| `fromPoint` | Array (3-dimensional) | The location (in world space) of the layer to orient.      |
-| `atPoint`   | Array (3-dimensional) | The point (in world space) you want to point the layer at. |
+| 参数          | 类型                  | 描述                                 |
+| ------------- | --------------------- | ------------------------------------ |
+| `fromPoint` | Array (3-dimensional) | 要定向的图层的位置（在世界空间中）。 |
+| `atPoint`   | Array (3-dimensional) | 要指向的点（在世界空间中）。         |
 
-#### Returns
+#### 返回
 
 Array (3-dimensional)
 
-#### Example
+#### 示例
 
-This expression on the Orientation property of a spot light makes the light point at the anchor point of layer number 1 in the same composition:
+将此表达式应用于聚光灯的 Orientation 属性，使灯光指向同一合成中编号为 1 的图层的锚点：
 
 ```js
 lookAt(position, thisComp.layer(1).position)
@@ -213,18 +214,18 @@ lookAt(position, thisComp.layer(1).position)
 
 `mul(vec, amount)`
 
-#### Description
+#### 描述
 
-Multiplies every element of the vector by the amount.
+将矢量的每个元素乘以 `amount`。
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |        Description        |
-| --------- | ------ | ------------------------- |
-| `vec`     | Array  | The vector to multiply    |
-| `amount`  | Number | The amount to multiply by |
+| 参数       | 类型   | 描述           |
+| ---------- | ------ | -------------- |
+| `vec`    | Array  | 要乘以的矢量。 |
+| `amount` | Number | 要乘以的值。   |
 
-#### Returns
+#### 返回
 
 Array
 
@@ -234,19 +235,19 @@ Array
 
 `normalize(vec)`
 
-#### Description
+#### 描述
 
-Normalizes the vector so that its length is `1.0`.
+归一化矢量，使其长度为 `1.0`。
 
-Using the normalize method is a short way of performing the operation `div(vec, length(vec))`.
+使用 `normalize` 方法是执行 `div(vec, length(vec))` 操作的简写方式。
 
-#### Parameters
+#### 参数
 
-| Parameter | Type  |       Description       |
-| --------- | ----- | ----------------------- |
-| `vec`     | Array | The vector to normalize |
+| 参数    | Type  | 描述             |
+| ------- | ----- | ---------------- |
+| `vec` | Array | 要归一化的矢量。 |
 
-#### Returns
+#### 返回
 
 Array
 
@@ -256,17 +257,17 @@ Array
 
 `sub(vec1, vec2)`
 
-#### Description
+#### 描述
 
-Subtracts two vectors.
+减去两个矢量。
 
-#### Parameters
+#### 参数
 
-| Parameter | Type  |    Description    |
-| --------- | ----- | ----------------- |
-| `vec1`    | Array | The first vector  |
-| `vec2`    | Array | The second vector |
+| 参数     | Type  | 描述         |
+| -------- | ----- | ------------ |
+| `vec1` | Array | 第一个矢量。 |
+| `vec2` | Array | 第二个矢量。 |
 
-#### Returns
+#### 返回
 
 Array

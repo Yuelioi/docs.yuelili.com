@@ -1,29 +1,27 @@
 ---
 title: dollar-object
 ---
-
 # Dollar ($) object
 
 This global ExtendScript object provides a number of debugging facilities and informational methods. The properties of the $ object allow you to get global information such as the most recent run-time error, and set flags that control debugging and localization behavior. The methods allow you to output text to the JavaScript Console during script execution, control execution and other ExtendScript behavior programmatically, and gather statistics on object use.
 
 ---
 
-## Attributes
+## 属性
 
 ### $.appEncoding
 
 `$.appEncoding`
 
-#### Description
+#### 描述
 
 The Internet name of the application's default character encoding, such as "CP1252" or "X-SHIFT-JIS". Valid values are implementation- and OS-dependent.
 
 Set to change the default encoding for the application. The returned value can differ from the value set. In Windows, for example, if set to "x-latin1", the returned value is the synonymous "ISO-8859-1".
 
-#### Type
+#### 类型
 
 String
-
 
 ---
 
@@ -31,9 +29,9 @@ String
 
 `$.build`
 
-#### Description
+#### 描述
 
-#### Type
+#### 类型
 
 String
 
@@ -47,9 +45,9 @@ Read only.
 
 `$.buildDate`
 
-#### Description
+#### 描述
 
-#### Type
+#### 类型
 
 `Date`
 
@@ -63,9 +61,9 @@ Read only.
 
 `$.decimalPoint`
 
-#### Description
+#### 描述
 
-#### Type
+#### 类型
 
 String
 
@@ -79,9 +77,9 @@ Read only.
 
 `$.engineName`
 
-#### Description
+#### 描述
 
-#### Type
+#### 类型
 
 String
 
@@ -95,9 +93,9 @@ Read only.
 
 `$.error`
 
-#### Description
+#### 描述
 
-#### Type
+#### 类型
 
 `Error`
 
@@ -113,9 +111,9 @@ Assigning error text to this property generates a run-time error; however, the p
 
 `$.fileName`
 
-#### Description
+#### 描述
 
-#### Type
+#### 类型
 
 String
 
@@ -129,9 +127,9 @@ Read only.
 
 `$.flags`
 
-#### Description
+#### 描述
 
-#### Type
+#### 类型
 
 Number
 
@@ -143,8 +141,9 @@ Gets or sets low-level debug output flags. A logical AND of the following bit fl
 - `0x0100` (256): Enables extended error handling (see strict).
 - `0x0200` (512): Enables the localization feature of the toString method. Equivalent to the localize property.
 
-!!! note
-    Other bit values are not public and should not be used.
+:::note
+Other bit values are not public and should not be used.
+:::
 
 ---
 
@@ -152,11 +151,11 @@ Gets or sets low-level debug output flags. A logical AND of the following bit fl
 
 `$.global`
 
-#### Description
+#### 描述
 
 Provides access to the Global object, which contains the JavaScript global namespace.
 
-#### Type
+#### 类型
 
 Global
 
@@ -166,11 +165,11 @@ Global
 
 `$.hiresTimer`
 
-#### Description
+#### 描述
 
 A high-resolution timer that measures the number of microseconds since this property was last accessed. Value is initialized as early as possible, so the first access returns the startup time for ExtendScript. The property is thread-local; that is, the first access on a thread returns the time needed to create and initialize that thread.
 
-#### Type
+#### 类型
 
 Number. Read only.
 
@@ -180,11 +179,11 @@ Number. Read only.
 
 `$.includePath`
 
-#### Description
+#### 描述
 
 The path for include files for the current script.
 
-#### Type
+#### 类型
 
 String. Read only.
 
@@ -194,11 +193,11 @@ String. Read only.
 
 `$.level`
 
-#### Description
+#### 描述
 
 The current debugging level, which enables or disables the JavaScript debugger.
 
-#### Type
+#### 类型
 
 Number. Read only. One of:
 
@@ -212,11 +211,11 @@ Number. Read only. One of:
 
 `$.line`
 
-#### Description
+#### 描述
 
 The current line of the currently executing script; the first line is number 1.
 
-#### Type
+#### 类型
 
 Number. Read only.
 
@@ -226,13 +225,13 @@ Number. Read only.
 
 `$.locale`
 
-#### Description
+#### 描述
 
 Gets or sets the current locale. The string contains five characters in the form LL_RR, where LL is an ISO 639 language specifier, and RR is an ISO 3166 region specifier.
 
 Initially, this is the value that the application or the platform returns for the current user. You can set it to temporarily change the locale for testing. To return to the application or platform setting, set to Nothing, `null`, or the empty string.
 
-#### Type
+#### 类型
 
 String
 
@@ -242,13 +241,13 @@ String
 
 `$.localize`
 
-#### Description
+#### 描述
 
 Enable or disable the extended localization features of the built-in `toString()` method.
 
 See [Localizing ExtendScript strings](.././localizing-extendscript-strings).
 
-#### Type
+#### 类型
 
 Boolean
 
@@ -258,14 +257,13 @@ Boolean
 
 `$.memCache`
 
-#### Description
+#### 描述
 
 Gets or sets the ExtendScript memory cache size in bytes.
 
-#### Type
+#### 类型
 
 Number
-
 
 ---
 
@@ -273,11 +271,11 @@ Number
 
 `$.os`
 
-#### Description
+#### 描述
 
 The current operating system version information.
 
-#### Type
+#### 类型
 
 String. Read only.
 
@@ -287,17 +285,17 @@ String. Read only.
 
 `$.screens`
 
-#### Description
+#### 描述
 
 An array of objects containing information about the display screens attached to your computer.
 
-#### Type
+#### 类型
 
 Array of objects
 
 #### Properties
 
-| Property  |    Type    |                    Description                     |
+| Property  |    类型    |                    描述                     |
 | --------- | ---------- | -------------------------------------------------- |
 | `left`    | Coordinate | The left corner of the drawable area               |
 | `top`     | Coordinate | The top corner of the drawable area                |
@@ -311,11 +309,11 @@ Array of objects
 
 `$.stack`
 
-#### Description
+#### 描述
 
 The current stack trace.
 
-#### Type
+#### 类型
 
 String
 
@@ -325,13 +323,13 @@ String
 
 `$.strict`
 
-#### Description
+#### 描述
 
 When `true`, any attempt to write to a read-only property causes a runtime error.
 
 Some objects do not permit the creation of new properties when `true`.
 
-#### Type
+#### 类型
 
 Boolean
 
@@ -341,27 +339,27 @@ Boolean
 
 `$.version`
 
-#### Description
+#### 描述
 
 The version number of the JavaScript engine as a three-part number and description; for example: "3.92.95 (debug)"
 
-#### Type
+#### 类型
 
 String. Read only.
 
 ---
 
-## Methods
+## 函数
 
 ### $.about()
 
 `$.about()`
 
-#### Description
+#### 描述
 
 Displays the About box for the ExtendScript component, and returns the text of the About box as a string.
 
-#### Returns
+#### 返回
 
 String
 
@@ -371,19 +369,19 @@ String
 
 `$.bp([condition])`
 
-#### Description
+#### 描述
 
 Executes a breakpoint at the current position.
 
 If no condition is needed, it is recommended that you use the JavaScript `debugger;` statement in the script, rather than this method.
 
-#### Parameters
+#### 参数
 
-|  Parameter  |  Type  |                                                                        Description                                                                         |
+|  参数  |  类型  |                                                                        描述                                                                         |
 | ----------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `condition` | String | Optional. The JavaScript statement to be used as a condition. If the statement evaluates to `true` or nonzero when this point is reached, execution stops. |
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -393,18 +391,17 @@ Nothing
 
 `$.colorPicker(name)`
 
-#### Description
+#### 描述
 
 Invokes the platform-specific color selection dialog
 
-#### Parameters
+#### 参数
 
-| Parameter |                Type                |                                 Description                                  |
+| 参数 |                类型                |                                 描述                                  |
 | --------- | ---------------------------------- | ---------------------------------------------------------------------------- |
 | `name`    | Hexadecimal RGB value (`0xRRGGBB`) | The color to be preselected in the dialog, or `-1` for the platform default. |
 
-
-#### Returns
+#### 返回
 
 Hexadecimal RGB value, e.g. `0xRRGGBB`.
 
@@ -414,18 +411,18 @@ Hexadecimal RGB value, e.g. `0xRRGGBB`.
 
 `$.evalFile(path[, timeout=10000])`
 
-#### Description
+#### 描述
 
 Loads a JavaScript script file from disk, evaluates it, and returns the result of evaluation.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |                                                          Description                                                           |
+| 参数 |  类型  |                                                          描述                                                           |
 | --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------ |
 | `path`    | String | The name and location of the file.                                                                                             |
 | `timeout` | Number | Optional. A number of milliseconds to wait before returning undefined, if the script cannot be evaluated. Defaults to `10000`. |
 
-#### Returns
+#### 返回
 
 Any type
 
@@ -435,11 +432,11 @@ Any type
 
 `$.gc()`
 
-#### Description
+#### 描述
 
 Initiates garbage collection in the JavaScript engine.
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -449,26 +446,25 @@ Nothing
 
 `$.getenv(envname)`
 
-#### Description
+#### 描述
 
 Retrieves the value of the specified environment variable, or null if no such variable is defined.
 
-!!! note
-    On MacOS the only env vars that will be accessible are:
+:::note
 
-    - System default environment variable
-    - Custom environment variables created by the `$.setenv()` metho
-    - Custom environment variables created with `launchctl setenv CUSTOM_VAR "custom_value"`
+- Custom environment variables created with `launchctl setenv CUSTOM_VAR "custom_value"`
+
+:::
 
 Any env vars set in .bash_profile, .bashrc, .profile, .zshenv, or .zshrc will be ignored.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |              Description              |
+| 参数 |  类型  |              描述              |
 | --------- | ------ | ------------------------------------- |
 | `envname` | String | The name of the environment variable. |
 
-#### Returns
+#### 返回
 
 String
 
@@ -478,18 +474,18 @@ String
 
 `$.setenv(envname, value)`
 
-#### Description
+#### 描述
 
 Sets the value of the specified environment variable, if no such variable is defined.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |              Description              |
+| 参数 |  类型  |              描述              |
 | --------- | ------ | ------------------------------------- |
 | `envname` | String | The name of the environment variable. |
 | `value`   | String | The new value, a string.              |
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -499,19 +495,19 @@ Nothing
 
 `$.sleep(milliseconds)`
 
-#### Description
+#### 描述
 
 Suspends the calling thread for the given number of milliseconds.
 
 During a sleep period, checks at `100` millisecond intervals to see whether the sleep should be terminated. This can happen if there is a break request, or if the script timeout has expired.
 
-#### Parameters
+#### 参数
 
-|   Parameter    |  Type  |             Description             |
+|   参数    |  类型  |             描述             |
 | -------------- | ------ | ----------------------------------- |
 | `milliseconds` | Number | The number of milliseconds to wait. |
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -521,17 +517,17 @@ Nothing
 
 `$.write(text[, text...]...)`
 
-#### Description
+#### 描述
 
 Writes the specified text to the JavaScript Console.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |                                  Description                                  |
+| 参数 |  类型  |                                  描述                                  |
 | --------- | ------ | ----------------------------------------------------------------------------- |
 | `text`    | String | One or more strings to write, which are concatenated to form a single string. |
 
-#### Returns
+#### 返回
 
 Nothing
 
@@ -541,16 +537,16 @@ Nothing
 
 `$.writeln (text[, text...]...)`
 
-#### Description
+#### 描述
 
 Writes the specified text to the JavaScript Console and appends a linefeed sequence.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |                                  Description                                  |
+| 参数 |  类型  |                                  描述                                  |
 | --------- | ------ | ----------------------------------------------------------------------------- |
 | `text`    | String | One or more strings to write, which are concatenated to form a single string. |
 
-#### Returns
+#### 返回
 
 Nothing

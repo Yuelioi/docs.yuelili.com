@@ -1,7 +1,6 @@
 ---
-title: comp
+title: 合成
 ---
-
 # Comp
 
 `thisComp`
@@ -10,34 +9,35 @@ title: comp
 
 `layer("layerName").source`
 
-These attributes and methods can be called on Comp objects.
+这些属性和方法可以在合成对象上调用。
 
-These are typically accessed in a few ways, most commonly:
+通常通过以下几种方式访问这些属性，最常见的是：
 
-- `thisComp` to get the Comp object of the active comp the expression is written in,
-- `comp("CompName")` to get a specific comp by name,
-- `layer("layerName").source`, **if referring to a precomp layer**, to get the targeted precomp layer's source comp
+* `thisComp` 获取表达式所在的活动合成的合成对象，
+* `comp("CompName")` 通过名称获取特定的合成，
+* `layer("layerName").source`， **如果引用的是预合成图层** ，获取目标预合成图层的源合成
 
-!!! info
-    On this page, we're going to use `thisComp` as a sample on how to call these items, however note that any method that returns a [Comp](#) will work.
+:::info
+在本页中，我们将使用 `thisComp` 作为调用这些项的示例，但请注意，任何返回 [Comp](#) 的方法都可以使用。
+:::
 
 ---
 
-## Attributes
+## 属性
 
 ### Comp.activeCamera
 
 `thisComp.activeCamera`
 
-#### Description
+#### 描述
 
-Returns the [Camera object](.././camera) for the camera through which the composition is rendered at the current frame.
+返回当前帧渲染合成时使用的 [Camera 对象](../camera)。
 
-This camera is not necessarily the camera through which you are looking in the Composition panel.
+此摄像机不一定是你在合成面板中查看的摄像机。
 
-#### Type
+#### 类型
 
-[Camera](.././camera)
+[Camera](../camera)
 
 ---
 
@@ -45,13 +45,13 @@ This camera is not necessarily the camera through which you are looking in the C
 
 `thisComp.bgColor`
 
-#### Description
+#### 描述
 
-Returns the background color of the composition.
+返回合成的背景颜色。
 
-#### Type
+#### 类型
 
-Array (4-dimensional)
+数组（四维）
 
 ---
 
@@ -59,13 +59,13 @@ Array (4-dimensional)
 
 `thisComp.displayStartTime`
 
-#### Description
+#### 描述
 
-Returns the composition start time, in seconds.
+返回合成的开始时间，单位为秒。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -73,13 +73,13 @@ Number
 
 `thisComp.duration`
 
-#### Description
+#### 描述
 
-Returns the composition duration, in seconds.
+返回合成的持续时间，单位为秒。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -87,13 +87,13 @@ Number
 
 `thisComp.frameDuration`
 
-#### Description
+#### 描述
 
-Returns the duration of a frame, in seconds.
+返回一帧的持续时间，单位为秒。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -101,13 +101,13 @@ Number
 
 `thisComp.height`
 
-#### Description
+#### 描述
 
-Returns the composition height, in pixels.
+返回合成的高度，单位为像素。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -115,18 +115,13 @@ Number
 
 `thisComp.marker`
 
-#### Description
+#### 描述
 
-Returns a given composition's [Marker](.././marker-property) property.
+返回给定合成的 [Marker](../marker-property) 属性。
 
-!!! note
-    You can no longer access a composition marker by marker number.
+:::note 如果你有一个在早期版本的 After Effects 中创建的项目，并且在表达式中使用了合成标记编号，则必须将这些调用更改为使用 `marker.key(name)`。因为合成标记的默认名称是数字，所以将引用转换为使用名称通常只需将数字用引号括起来。 :::#### 类型
 
-    If you have a project created in a previous version of After Effects that uses composition marker numbers in expressions, you must change those calls to use `marker.key(name)` instead. Because the default name of a composition marker is a number, converting the reference to use the name is often just a matter of surrounding the number with quotation marks.
-
-#### Type
-
-[Marker Property](.././marker-property)
+[Marker 属性](../marker-property)
 
 ---
 
@@ -134,13 +129,13 @@ Returns a given composition's [Marker](.././marker-property) property.
 
 `thisComp.name`
 
-#### Description
+#### 描述
 
-Returns the name of the composition.
+返回合成的名称。
 
-#### Type
+#### 类型
 
-String
+字符串
 
 ---
 
@@ -148,16 +143,13 @@ String
 
 `thisComp.ntscDropFrame`
 
-!!! note
-    This functionality was added in After Effects CS5.5
+:::note 该方法添加于 After Effects CS5.5 :::#### 描述
 
-#### Description
+如果时间码是丢帧格式，则返回 `true`。
 
-Returns `true` if the timecode is in drop-frame format.
+#### 类型
 
-#### Type
-
-Boolean
+布尔值
 
 ---
 
@@ -165,13 +157,13 @@ Boolean
 
 `thisComp.numLayers`
 
-#### Description
+#### 描述
 
-Returns the number of layers in the composition.
+返回合成中的图层数量。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -179,13 +171,13 @@ Number
 
 `thisComp.pixelAspect`
 
-#### Description
+#### 描述
 
-Returns the pixel aspect ratio of the composition.
+返回合成的像素宽高比。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -193,13 +185,13 @@ Number
 
 `thisComp.shutterAngle`
 
-#### Description
+#### 描述
 
-Returns the shutter-angle value of the composition, in degrees.
+返回合成的快门角度值，单位为度。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -207,13 +199,13 @@ Number
 
 `thisComp.shutterPhase`
 
-#### Description
+#### 描述
 
-Returns the shutter phase of the composition, in degrees.
+返回合成的快门相位，单位为度。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -221,25 +213,25 @@ Number
 
 `thisComp.width`
 
-#### Description
+#### 描述
 
-Returns the composition width, in pixels.
+返回合成的宽度，单位为像素。
 
-#### Type
+#### 类型
 
-Number
+数字
 
-#### Example
+#### 示例
 
-Apply the following expression to the Position property of a layer to center the layer in the composition frame:
+将以下表达式应用于图层的 Position 属性，以使图层在合成帧中居中：
 
-```js
+ ```js
 [thisComp.width / 2, thisComp.height / 2];
 ```
 
 ---
 
-## Methods
+## 函数
 
 ### Comp.layer()
 
@@ -249,53 +241,48 @@ Apply the following expression to the Position property of a layer to center the
 
 `thisComp.layer(otherLayer, relIndex)`
 
-#### Description
+#### 描述
 
-Return the [Layer](../../layer/layer) object with the specified `index` or `name`.
+返回具有指定 `index` 或 `name` 的 [Layer](../layer/layer) 对象。
 
-The `index` value refers to the layer order in the Timeline panel.
+`index` 值指的是时间轴面板中的图层顺序。
 
-The `name` value refers to the user-specified layer name, or the layer source name if there is no layer name.
+`name` 值指的是用户指定的图层名称，如果没有图层名称，则指的是图层源名称。
 
-If duplicate names exist, After Effects uses the first (topmost) one in the Timeline panel.
+如果存在重复的名称，After Effects 会使用时间轴面板中的第一个（最顶部）图层。
 
-If using the `otherLayer, relIndex` call, this retrieves the layer that is `relIndex` layers above or below `otherLayer`.
+如果使用 `otherLayer, relIndex` 调用，则获取与 `otherLayer` 相对 `relIndex` 层的图层。
 
-#### Parameters
+#### 参数
 
-+--------------+----------------------------+--------------------------------------------------------------+
-|  Parameter   |            Type            |                         Description                          |
-+==============+============================+==============================================================+
-| `index`      | Number                     | Layer name or index to get.                                  |
-|              |                            |                                                              |
-| `name`       | String                     |                                                              |
-+--------------+----------------------------+--------------------------------------------------------------+
-| `otherLayer` | [Layer](../../layer/layer) | The "other" layer to start getting layers relative to        |
-+--------------+----------------------------+--------------------------------------------------------------+
-| `relIndex`   | Number                     | The number of layers to move above or below the `otherLayer` |
-+--------------+----------------------------+--------------------------------------------------------------+
+| 参数           | 类型                         | 描述                                           |
+| -------------- | ---------------------------- | ---------------------------------------------- |
+| `index`      | 数字                         | 要获取的图层名称或索引。                       |
+| `name`       | 字符串                       |                                                |
+| `otherLayer` | [Layer](../layer/layer) | 开始获取相对图层的“其他”图层                 |
+| `relIndex`   | 数字                         | 相对于 `otherLayer` 向上或向下移动的图层数量 |
 
-#### Returns
+#### 返回
 
-[Layer](../../layer/layer), [Light](.././light), or [Camera](.././camera) object
+[Layer](../layer/layer)、[Light](../light) 或 [Camera](../camera) 对象
 
-#### Example
+#### 示例
 
-Get the 3rd layer in the current comp:
+获取当前合成中的第 3 个图层：
 
-```js
+ ```js
 thisComp.layer(3)
 ```
 
-Get the layer named "Solid 1" from the current comp:
+从当前合成中获取名为 "Solid 1" 的图层：
 
-```js
+ ```js
 thisComp.layer("Solid 1")
 ```
 
-Check whether the next layer down in the Timeline panel is active:
+检查时间轴面板中下一个图层是否处于活动状态：
 
-```js
+ ```js
 const nextLayer = thisComp.layer(thisLayer, 1);
 nextLayer.active;
 ```
@@ -306,25 +293,25 @@ nextLayer.active;
 
 `thisComp.layerByComment(comment)`
 
-#### Description
+#### 描述
 
-Retrieves a layer by matching the comment parameter to the value in the layer's Comment column.
+通过将注释参数与图层注释列中的值匹配来检索图层。
 
-The matches are simple text matches. They will match partial words, and are case sensitive. Matching does not appear to use regular expressions or wildcards. If duplicate comments exist, After Effects uses the first (topmost) one in the Timeline panel.
+匹配是简单的文本匹配。它们会匹配部分单词，并且区分大小写。匹配似乎不使用正则表达式或通配符。如果存在重复的注释，After Effects 会使用时间轴面板中的第一个（最顶部）图层。
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |           Description            |
-| --------- | ------ | -------------------------------- |
-| `comment` | String | The comment to find a layer from |
+| 参数        | 类型   | 描述             |
+| ----------- | ------ | ---------------- |
+| `comment` | 字符串 | 要查找图层的注释 |
 
-#### Returns
+#### 返回
 
-[Layer](../../layer/layer), [Light](.././light), or [Camera](.././camera) object
+[Layer](../layer/layer)、[Light](../light) 或 [Camera](../camera) 对象
 
-#### Example
+#### 示例
 
-```js
-// note this will match a layer with a comment "Controller" or "Motion Control"
+ ```js
+// 注意这将匹配注释为 "Controller" 或 "Motion Control" 的图层
 thisComp.layerByComment("Control");
 ```

@@ -1,33 +1,33 @@
 ---
 title: maskpropertygroup
 ---
-
 # MaskPropertyGroup object
 
 `app.project.item(index).layer(index).mask`
 
-#### Description
+#### 描述
 
 The MaskPropertyGroup object encapsulates mask attributes in a layer.
 
-!!! info
-    MaskPropertyGroup is a subclass of [PropertyGroup object](../propertygroup). All methods and attributes of [PropertyBase object](../propertybase) and PropertyGroup, in addition to those listed below, are available when working with MaskPropertyGroup.
+:::info
+MaskPropertyGroup is a subclass of [PropertyGroup object](../propertygroup). All methods and attributes of [PropertyBase object](../propertybase) and PropertyGroup, in addition to those listed below, are available when working with MaskPropertyGroup.
+:::
 
 ---
 
-## Attributes
+## 属性
 
 ### MaskPropertyGroup.color
 
 `app.project.item(index).layer(index).mask(index).color`
 
-#### Description
+#### 描述
 
 The color used to draw the mask outline as it appears in the user interface (Composition panel, Layer panel, and Timeline panel).
 
-#### Type
+#### 类型
 
-Array of three floating-point values, `[R, G, B]`, in the range `[0.0..1.0]`; read/write.
+Array of three floating-point values, `[R, G, B]`, 范围为 `[0.0..1.0]`; read/write.
 
 ---
 
@@ -35,11 +35,11 @@ Array of three floating-point values, `[R, G, B]`, in the range `[0.0..1.0]`; re
 
 `app.project.item(index).layer(index).mask(index).inverted`
 
-#### Description
+#### 描述
 
 When `true`, the mask is inverted; otherwise `false`.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -49,11 +49,11 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).mask(index).locked`
 
-#### Description
+#### 描述
 
 When `true`, the mask is locked and cannot be edited in the user interface; otherwise `false`.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -63,11 +63,11 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).mask(index).maskFeatherFalloff`
 
-#### Description
+#### 描述
 
 The feather falloff mode for the mask. Equivalent to the Layer > Mask > Feather Falloff setting.
 
-#### Type
+#### 类型
 
 A `MaskFeatherFalloff` enumerated value; read/write. One of:
 
@@ -80,11 +80,11 @@ A `MaskFeatherFalloff` enumerated value; read/write. One of:
 
 `app.project.item(index).layer(index).mask(index).maskMode`
 
-#### Description
+#### 描述
 
 The masking mode for this mask.
 
-#### Type
+#### 类型
 
 A `MaskMode` enumerated value; read/write. One of:
 
@@ -102,11 +102,11 @@ A `MaskMode` enumerated value; read/write. One of:
 
 `app.project.item(index).layer(index).mask(index).maskMotionBlur`
 
-#### Description
+#### 描述
 
 How motion blur is applied to this mask.
 
-#### Type
+#### 类型
 
 A `MakMotionBlur` enumerated value; read/write. One of:
 
@@ -120,10 +120,10 @@ A `MakMotionBlur` enumerated value; read/write. One of:
 
 `app.project.item(index).layer(index).mask(index).rotoBezier`
 
-#### Description
+#### 描述
 
 When `true`, the mask is a RotoBezier shape; otherwise `false`.
 
-#### Type
+#### 类型
 
 Boolean; read/write.

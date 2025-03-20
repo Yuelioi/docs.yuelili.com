@@ -1,7 +1,6 @@
 ---
 title: the-xml-object
 ---
-
 # The XML Object
 
 The XML object represents an XML element node in an XML tree. The topmost `XML` object for an XML file represents the root node. It acts as a list, which contains additional `XML` objects for each element. These in turn contain XML objects for their own member elements, and so on.

@@ -1,35 +1,35 @@
 ---
-title: effect
+title: 效果
 ---
-
 # Effect
 
 `thisLayer.effect("Bulge")`
 
-This category contains information relating to Effects.
+此类别包含与效果相关的信息。
 
-!!! info
-    On this page, we're going to use `thisLayer.effect("Bulge")` as a sample on how to call these items, however note that any method that returns an [Effect](#) will work.
+:::info
+在本页中，我们将使用 `thisLayer.effect("Bulge")` 作为调用这些项的示例，但请注意，任何返回 [Effect](#) 的方法都可以使用。
+:::
 
 ---
 
-## Attributes
+## 属性
 
 ### Effect.active
 
 `thisLayer.effect("Bulge").active`
 
-#### Description
+#### 描述
 
-Returns `true` if the effect is turned on (the *effect switch* is selected).
+如果效果已打开（*效果开关*已选中），则返回 `true`。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
-## Methods
+## 函数
 
 ### Effect.param()
 
@@ -37,35 +37,32 @@ Boolean
 
 `thisLayer.effect("Bulge").param(index)`
 
-#### Description
+#### 描述
 
-Returns a property within an effect. Effect control points are always in layer space.
+返回效果中的属性。效果控制点始终位于图层空间中。
 
-This method can be called using *either* the property's `name` or its `index`.
+此方法可以使用属性的 `name` 或其 `index` 来调用。
 
-#### Parameters
+#### 参数
 
-+-----------+--------+-----------------------------------------------+
-| Parameter |  Type  |                  Description                  |
-+===========+========+===============================================+
-| `name`    | String | Property name or index to access property by. |
-|           |        |                                               |
-| `index`   | Number |                                               |
-+-----------+--------+-----------------------------------------------+
+| 参数      | 类型   | 描述                         |
+| --------- | ------ | ---------------------------- |
+| `name`  | 字符串 | 通过属性名称或索引访问属性。 |
+| `index` | 数字   |                              |
 
-#### Returns
+#### 返回
 
-[Property object](.././property)
+[属性对象](../property)
 
-#### Example
+#### 示例
 
-To return the "Bulge Height" property from the "Bulge" effect by name:
+通过名称返回 "Bulge" 效果中的 "Bulge Height" 属性：
 
 ```js
 thisLayer.effect("Bulge").param("Bulge Height");
 ```
 
-To return the "Bulge Height" property from the "Bulge" effect by index:
+通过索引返回 "Bulge" 效果中的 "Bulge Height" 属性：
 
 ```js
 thisLayer.effect("Bulge").param(4);

@@ -1,7 +1,6 @@
 ---
 title: operator-overloading
 ---
-
 # Operator overloading
 
 ExtendScript allows you to extend or override the behavior of a math or a Boolean operator for a specific class by defining a method in that class with same name as the operator. For example, this code defines the addition (+) operator for the class `MyClass`. In this case, the addition operator simply adds the operand to the property value:
@@ -30,16 +29,13 @@ Result: 15
 You can override the following operators:
 
 
-+----------+-------------------+
 | Category |     Operators     |
-+==========+===================+
+|----------|-------------------|
 | Unary    | `+, ~`            |
-+----------+-------------------+
 | Binary   | - `+, *, /, %, ^` |
 |          | - `<, <=, ==`     |
 |          | - `<<, >>, >>>`   |
 |          | - `&, \|, ===`    |
-+----------+-------------------+
 
 - The operators `>` and `>=` are implemented by executing NOT operator `<=` and NOT operator `<`.
 - Combined assignment operators such as `*=` are not supported.

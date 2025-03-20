@@ -1,7 +1,6 @@
 ---
 title: communicating-with-the-flash-application
 ---
-
 # Communicating with the Flash application
 
 ScriptUI supports a Flash Player, which runs the Flash application within a window in an Adobe application. The Flash application runs ActionScript, a different implementation of JavaScript from the ExtendScript version of JavaScript that Adobe applications run.
@@ -72,7 +71,7 @@ ExternalInterface.addCallback( "getActionScriptArray", this, getActionScriptArra
 
 These examples in the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) demonstrate how to use the Flash Player:
 
-|                                                                   Example                                                                   |                                                                  Description                                                                  |
+|                                                                   Example                                                                   |                                                                  描述                                                                  |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | [UsingFlashPlayer.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/UsingFlashPlayer.jsx) | Shows how to create a Flash® Player, and use it to load a play back a movie defined in an SWF file.                                           |
 | [ActionScriptDemo.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/ActionScriptDemo.jsx) | Shows how to communicate between the Adobe application scripting environment and the ActionScript™ scripting environment of the Flash Player. |

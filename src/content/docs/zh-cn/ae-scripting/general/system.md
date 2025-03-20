@@ -1,16 +1,15 @@
 ---
 title: system
 ---
-
 # System object
 
 `system`
 
-#### Description
+#### 描述
 
 The System object provides access to attributes found on the user's system, such as the user name and the name and version of the operating system. It is available through the `system` global variable.
 
-#### Example
+#### 示例
 
 ```javascript
 alert("Your OS is " + system.osName + " running version" + system.osVersion);
@@ -19,19 +18,19 @@ confirm("You are: " + system.userName + " running on " + system.machineName + ".
 
 ---
 
-## Attributes
+## 属性
 
 ### System.machineName
 
 `system.machineName`
 
-#### Description
+#### 描述
 
 The name of the computer on which After Effects is running.
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -39,16 +38,17 @@ String; read-only.
 
 `system.osName`
 
-#### Description
+#### 描述
 
 The name of the operating system on which After Effects is running.
 
-!!! warning
-    As of Windows 7, this attribute returns a blank value. Use $.os instead.
+:::warning
+As of Windows 7, this attribute returns a blank value. Use $.os instead.
+:::
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -56,13 +56,13 @@ String; read-only.
 
 `system.osVersion`
 
-#### Description
+#### 描述
 
 The version of the current local operating system.
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -70,23 +70,23 @@ String; read-only.
 
 `system.userName`
 
-#### Description
+#### 描述
 
 The name of the user currently logged on to the system.
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
-## Methods
+## 函数
 
 ### System.callSystem()
 
 `system.callSystem(cmdLineToExecute);`
 
-#### Description
+#### 描述
 
 Executes a system command, as if you had typed it on the operating system's command line. Returns whatever the system outputs in response to the command, if anything. In Windows, you can invoke commands using the `/c` switch for the `cmd.exe` command, passing the command to run in escaped quotes (`\"...\"`). For example, the following retrieves the current time and displays it to the user:
 
@@ -95,12 +95,12 @@ var timeStr = system.callSystem("cmd.exe /c \"time /t\"");
 alert("Current time is " + timeStr);
 ```
 
-#### Parameters
+#### 参数
 
-|     Parameter      |  Type  |           Description           |
+|     参数      |  类型  |           描述           |
 | ------------------ | ------ | ------------------------------- |
 | `cmdLineToExecute` | String | The command and its parameters. |
 
-#### Returns
+#### 返回
 
 The output from the command.

@@ -1,7 +1,6 @@
 ---
 title: implementation-details
 ---
-
 # Implementation Details
 
 ## Export Bit-Depth

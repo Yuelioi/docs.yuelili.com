@@ -1,7 +1,6 @@
 ---
 title: PF_EventUnion
 ---
-
 # PF_EventUnion
 
 The PF_EventUnion in PF_EventExtra is a union of the four following structures.
@@ -14,25 +13,16 @@ A mouse click or drag occurred within the custom UI's area.
 
 ### PF_DoClickEventInfo
 
-+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |        Member        |                                                                                    Purpose                                                                                     |
-+======================+================================================================================================================================================================================+
+|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `when`               | The (OS-level) time at which the click occurred.                                                                                                                               |
-+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `screen_point`       | Where, in screen coordinates, the click occurred. For Custom Comp UI, these coordinates can be converted to composition coordinates using the [UI Callbacks](../ui-callbacks). |
-|                      |                                                                                                                                                                                |
 |                      | See the CCU sample project for an example.                                                                                                                                     |
-+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `num_clicks`         | The number of clicks that occurred.                                                                                                                                            |
-+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `modifiers`          | Which modifier keys (if any) were held down during click.                                                                                                                      |
-+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `continue_refcon[4]` | An array of 4 `A_intptr_t` the plug-in can use to store information during a click-drag-drag sequence.                                                                         |
-+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `send_drag`          | Set this flag to `TRUE` to indicate continued dragging. The next click event will then effectively be a drag event.                                                            |
-+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `last_time`          | Set when the drag event ends (the user has released the mouse button).                                                                                                         |
-+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ---
 
@@ -44,15 +34,11 @@ Note: when handling draw requests, use the image dimensions provided in [PF_InDa
 
 ### PF_DrawEventInfo
 
-+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |    Member     |                                                                                         Purpose                                                                                          |
-+===============+==========================================================================================================================================================================================+
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `update_rect` | The rectangle in which to draw, in the context window's coordinate system. These coordinates can be converted to different coordinate systems using the [UI Callbacks](../ui-callbacks). |
-|               |                                                                                                                                                                                          |
 |               | See the CCU sample project for an example.                                                                                                                                               |
-+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `depth`       | Pixel depth of the drawing context.                                                                                                                                                      |
-+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ---
 
@@ -66,19 +52,13 @@ In order to receive keydown events in Premiere Pro, plug-ins must set PF_CustomE
 
 ### PF_KeyDownEvent
 
-+----------------+-----------------------------------------------------------------------------------------------------------------------------------+
 |     Member     |                                                              Purpose                                                              |
-+================+===================================================================================================================================+
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------|
 | `when`         | Time at which the click occurred.                                                                                                 |
-+----------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | `screen_point` | Screen coordinate of the mouse pointer when the key was pressed.                                                                  |
-|                |                                                                                                                                   |
 |                | For Custom Comp UI, these coordinates can be converted to composition coordinates using the [UI Callbacks](../ui-callbacks).      |
-|                |                                                                                                                                   |
 |                | See the CCU sample project for an example.                                                                                        |
-+----------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | `key_code`     | Either a character code (for printable characters, we use the unshifted upper case version; A not a, 7 not &), or a control code: |
-|                |                                                                                                                                   |
 |                | - `PF_ControlCode_Unknown`                                                                                                        |
 |                | - `PF_ControlCode_Space`                                                                                                          |
 |                | - `PF_ControlCode_Backspace`                                                                                                      |
@@ -112,16 +92,13 @@ In order to receive keydown events in Premiere Pro, plug-ins must set PF_CustomE
 |                | - `PF_ControlCode_Shift`                                                                                                          |
 |                | - `PF_ControlCode_CapsLock`                                                                                                       |
 |                | - `PF_ControlCode_ContextMenu`                                                                                                    |
-+----------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | `modifiers`    | Which (if any) modifier keys were down during the key press.                                                                      |
-|                |                                                                                                                                   |
 |                | - `PF_Mod_NONE`                                                                                                                   |
 |                | - `PF_Mod_CMD_CTRL_KEY` (cmd on Mac, ctrl on Windows)                                                                             |
 |                | - `PF_Mod_SHIFT_KEY`                                                                                                              |
 |                | - `PF_Mod_CAPS_LOCK_KEY`                                                                                                          |
 |                | - `PF_Mod_OPT_ALT_KEY` (option on Mac, alt on Windows)                                                                            |
 |                | - `PF_Mod_MAC_CONTROL_KEY`                                                                                                        |
-+----------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 
 
@@ -133,19 +110,13 @@ The cursor has moved onto (but not off of) the effect's custom UI, to allow the 
 
 ### PF_AdjustCursorEventInfo
 
-+----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Member         | Purpose                                                                                                                                                                               |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `screen_point` | Screen coordinate of the mouse pointer. For Custom Comp UI, these coordinates can be converted to composition coordinates using the [UI Callbacks](../ui-callbacks).                  |
-|                |                                                                                                                                                                                       |
 |                | See the CCU sample project for an example.                                                                                                                                            |
-+----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `modifiers`    | What, if any, modifier keys were held down when the message was sent.                                                                                                                 |
-+----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `set_cursor`   | Set this to your desired cursor, or `PF_Cursor_CUSTOM` if you have set the cursor yourself using OS-specific calls. See AE_EffectUI.h for a complete enumeration of built-in cursors. |
-|                |                                                                                                                                                                                       |
 |                | If you don't want to override the cursor, set this to `PF_Cursor_NONE`, or simply ignore this message.                                                                                |
-+----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ---
 

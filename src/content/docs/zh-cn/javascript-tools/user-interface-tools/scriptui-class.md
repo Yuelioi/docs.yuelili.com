@@ -1,7 +1,6 @@
 ---
 title: scriptui-class
 ---
-
 # ScriptUI class
 
 The globally available ScriptUI class provides central information about the ScriptUI module. This object is not instantiable.
@@ -27,11 +26,11 @@ When you query the [alignment](window-object.md#alignment) property, it returns 
 - `ScriptUI.Alignment.FILL` (5)
 - `ScriptUI.Alignment.CENTER` (6)
 
-#### Type
+#### 类型
 
 Object. Read only.
 
-#### Example
+#### 示例
 
 ```javascript
 myGroup.alignment = [ScriptUI.Alignment.LEFT, ScriptUI.Alignment.TOP]
@@ -43,13 +42,13 @@ myGroup.alignment = [ScriptUI.Alignment.LEFT, ScriptUI.Alignment.TOP]
 
 `ScriptUI.applicationFonts`
 
-#### Description
+#### 描述
 
 Collects the enumerated values that specify the default application fonts.
 
 The available fonts vary according to the application and system configuration.
 
-#### Type
+#### 类型
 
 Object
 
@@ -59,11 +58,11 @@ Object
 
 `ScriptUI.compatability`
 
-#### Description
+#### 描述
 
 An object whose properties are the names of compatibility modes supported by the host application. For example, the presence of `ScriptUI.compatability.su1PanelCoordinates` means that the application allows backward compatibility with the coordinate system of Panel elements in ScriptUI version 1.
 
-#### Type
+#### 类型
 
 Object
 
@@ -73,11 +72,11 @@ Object
 
 `ScriptUI.coreVersion`
 
-#### Description
+#### 描述
 
 The internal core version number of the ScriptUI components.
 
-#### Type
+#### 类型
 
 String. Read only.
 
@@ -87,11 +86,11 @@ String. Read only.
 
 `ScriptUI.environment`
 
-#### Description
+#### 描述
 
 A JavaScript object that provides access to attributes of the ScriptUI environment; contains a Keyboard state object that reports the active state of the keyboard at any time, independent of the event-handling framework.
 
-#### Type
+#### 类型
 
 [Environment object](environment.md#environment-object)
 
@@ -101,11 +100,11 @@ A JavaScript object that provides access to attributes of the ScriptUI environme
 
 `ScriptUI.events`
 
-#### Description
+#### 描述
 
 A JavaScript object that contains one function, [ScriptUI.events.createEvent()](#scriptuieventscreateevent), which allows you to create event objects in order to simulate user-interaction events.
 
-#### Type
+#### 类型
 
 Object
 
@@ -115,7 +114,7 @@ Object
 
 `ScriptUI.FontStyle`
 
-#### Description
+#### 描述
 
 Collects the enumerated values that can be used as the style argument to the [ScriptUI.newFont()](#scriptuinewfont) method. For example:
 
@@ -130,7 +129,7 @@ Values are:
 - `ITALIC`
 - `BOLDITALIC`
 
-#### Type
+#### 类型
 
 String. Read only.
 
@@ -140,11 +139,11 @@ String. Read only.
 
 `ScriptUI.frameworkName`
 
-#### Description
+#### 描述
 
 The name of the user-interface framework with which this ScriptUI component is compatible.
 
-#### Type
+#### 类型
 
 String. Read only.
 
@@ -154,11 +153,11 @@ String. Read only.
 
 `ScriptUI.version`
 
-#### Description
+#### 描述
 
 The main version number of the ScriptUI component framework.
 
-#### Type
+#### 类型
 
 String. Read only.
 
@@ -170,7 +169,7 @@ String. Read only.
 
 `ScriptUI.events.createEvent(eventType)`
 
-#### Description
+#### 描述
 
 This function is in the JavaScript object contained in the [events](#scriptuievents) property.
 
@@ -178,18 +177,17 @@ This object is passed to a function that you register to respond to events of a 
 
 See [Registering event listeners for windows or controls](defining-behavior-with-event-callbacks-and-listeners.md#registering-event-listeners-for-windows-or-controls).
 
-#### Parameters
+#### 参数
 
-+-------------+--------+----------------------------+
-|  Parameter  |  Type  |        Description         |
-+=============+========+============================+
+|  参数  |  类型  |        描述         |
+|-------------|--------|----------------------------|
 | `eventType` | String | The type of event, one of: |
 |             |        | - `UIEvent`                |
 |             |        | - `KeyboardEvent`          |
 |             |        | - `MouseEvent`             |
 | ----------- | ------ | -------------------------- |
 
-#### Returns
+#### 返回
 
 It returns an event object of the appropriate type:
 
@@ -203,17 +201,17 @@ It returns an event object of the appropriate type:
 
 `ScriptUI.getResourceText(text)`
 
-#### Description
+#### 描述
 
 Finds and returns the resource for a given text string from the host application's resource data. If no string resource matches the given text, the text itself is returned.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |    Description     |
+| 参数 |  类型  |    描述     |
 | --------- | ------ | ------------------ |
 | `text`    | String | The text to match. |
 
-#### Returns
+#### 返回
 
 String
 
@@ -223,19 +221,19 @@ String
 
 `ScriptUI.newFont(name, style, size);`
 
-#### Description
+#### 描述
 
 Creates a new font object for use in text controls and titles.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |                                        Description                                         |
+| 参数 |  类型  |                                        描述                                         |
 | --------- | ------ | ------------------------------------------------------------------------------------------ |
 | `name`    | String | The font or font family name string.                                                       |
 | `style`   | String | The font style string or an enumerated value from [ScriptUI.FontStyle](#scriptuifontstyle) |
 | `size`    | Number | The font size in points, a number.                                                         |
 
-#### Returns
+#### 返回
 
 [ScriptUIFont object](graphic-customization-objects.md#scriptuifont-object)
 
@@ -245,19 +243,19 @@ Creates a new font object for use in text controls and titles.
 
 `ScriptUI.newImage( normal, disabled, pressed, rollover );`
 
-#### Description
+#### 描述
 
 Creates a new image object for use in controls that can display images, loading the associated images from the specified resources or image files.
 
 #### Parameter
 
-| Parameter  |  Type  |                                                                  Description                                                                   |
+| 参数  |  类型  |                                                                  描述                                                                   |
 | ---------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | `normal`   | String | The resource name or path to the image to use for the normal or default state.                                                                 |
 | `disabled` | String | The resource name or path to the image to use for the disabled state, shown when the control containing the image is disabled (enabled=false). |
 | `pressed`  | String | The resource name or path to the image to use for the pressed state, shown when the user clicks on the image.                                  |
 | `rollover` | String | The resource name or path to the image to use for the rollover state, which is shown when the cursor moves over the image.                     |
 
-#### Returns
+#### 返回
 
 [ScriptUIImage object](graphic-customization-objects.md#scriptuiimage-object)

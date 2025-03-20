@@ -1,20 +1,21 @@
 ---
 title: threedmodellayer
 ---
-
 # ThreeDModelLayer object
 
 `app.project.item(index).layer(index)`
 
-!!! note
-    This functionality was added in After Effects 24.4
+:::note
+该方法添加于 After Effects 24.4
+:::
 
-#### Description
+#### 描述
 
 The ThreeDModelLayer object represents a 3D Model layer within a composition.
 
-!!! info
-    ThreeDModelLayer is a subclass of [AVLayer object](../avlayer). All methods and attributes of AVLayer are available when working with ThreeDModelLayer.
+:::info
+ThreeDModelLayer is a subclass of [AVLayer object](../avlayer). All methods and attributes of AVLayer are available when working with ThreeDModelLayer.
+:::
 
 #### AE Properties
 
@@ -23,19 +24,19 @@ ThreeDModelLayer inherits the following properties and property groups from [AVL
 - Marker
 - Time Remap
 - Transform
-    - Anchor Point
-    - Position
-    - Scale
-    - Orientation
-    - X Rotation
-    - Y Rotation
-    - Rotation
-    - Opacity
+  - Anchor Point
+  - Position
+  - Scale
+  - Orientation
+  - X Rotation
+  - Y Rotation
+  - Rotation
+  - Opacity
 - Layer Styles
 - Audio
-    - AudioLevels
+  - AudioLevels
 
-#### Example
+#### 示例
 
 If the first item in the project is a CompItem, and the first layer of that CompItem is an ThreeDModelLayer, the following checks its type.
 

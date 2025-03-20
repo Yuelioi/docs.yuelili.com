@@ -1,16 +1,15 @@
 ---
 title: characterrange
 ---
-
 # CharacterRange object
 
 `app.project.item(index).layer(index).text.sourceText.value.characterRange(characterIndexStart, [signedCharacterIndexEnd])`
 
+:::note
+该方法添加于 After Effects 24.3
+:::
 
-!!! note
-    This functionality was added in After Effects 24.3
-
-#### Description
+#### 描述
 
 The CharacterRange object is an accessor to a character range of the [TextDocument object](../textdocument) instance it was created from.
 
@@ -41,7 +40,7 @@ The following attributes and methods are **not** available on instances of Chara
 | `paragraphCount`  |                               |
 | `pointText`       |                               |
 
-#### Examples
+#### 示例
 
 This increases the font size of the first character in the TextDocument, and set the rest of the characters to fontSize 40.
 
@@ -55,21 +54,21 @@ textDocument.characterRange(1,-1).fontSize = 40;
 
 ---
 
-## Attributes
+## 属性
 
 ### CharacterRange.characterEnd
 
 `CharacterRange.characterEnd`
 
-#### Description
+#### 描述
 
 The Text layer range calculated character end value.
 
 Throws an exception on access if the effective value would exceed the bounds of the related [TextDocument object](../textdocument).
 
-#### Type
+#### 类型
 
-Unsigned integer; read-only.
+Unsigned integer; 只读.
 
 ---
 
@@ -77,15 +76,15 @@ Unsigned integer; read-only.
 
 `CharacterRange.characterStart`
 
-#### Description
+#### 描述
 
 The Text layer range calculated character start value.
 
 Throws an exception on access if the effective value would exceed the bounds of the related [TextDocument object](../textdocument).
 
-#### Type
+#### 类型
 
-Unsigned integer; read-only.
+Unsigned integer; 只读.
 
 ---
 
@@ -93,7 +92,7 @@ Unsigned integer; read-only.
 
 `CharacterRange.fillColor`
 
-#### Description
+#### 描述
 
 The Text layer range CharacterRange attribute Fill Color, as an array of `[r, g, b]` floating-point values.
 
@@ -103,10 +102,11 @@ Setting this value will also set `applyFill` to `true` across the affected chara
 
 If this attribute has a mixed value for the range of characters, it will be read as `undefined`.
 
-!!! warning
-    In contrast to the same attribute on the TextDocument API, we will *not* throw an exception on read if `applyFill` is not `true`.
+:::warning
+In contrast to the same attribute on the TextDocument API, we will *not* throw an exception on read if `applyFill` is not `true`.
+:::
 
-#### Type
+#### 类型
 
 Array `[r, g, b]` of floating-point values; read/write.
 
@@ -116,13 +116,13 @@ Array `[r, g, b]` of floating-point values; read/write.
 
 `CharacterRange.isRangeValid`
 
-#### Description
+#### 描述
 
 Returns `true` if the current range is within the bounds of the related [TextDocument object](../textdocument), otherwise `false`.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -130,7 +130,7 @@ Boolean; read-only.
 
 `CharacterRange.kerning`
 
-#### Description
+#### 描述
 
 The Text layer range character attribute kerning option.
 
@@ -141,7 +141,7 @@ This effectively reports the manual kerning value, and not the calculated kernin
 
 Setting this value will also set `AutoKernType.NO_AUTO_KERN` to `true` across the affected characters.
 
-#### Type
+#### 类型
 
 Integer value; read/write.
 
@@ -151,7 +151,7 @@ Integer value; read/write.
 
 `CharacterRange.strokeColor`
 
-#### Description
+#### 描述
 
 The Text layer CharacterRange stroke color character property, as an array of [r, g, b] floating-point values.
 
@@ -161,10 +161,11 @@ If this attribute has a mixed value, it will be read as `undefined`.
 
 Setting this value will also set [applyStroke](textdocument.md#textdocumentapplystroke) to `true` across the affected characters.
 
-!!! warning
-    In contrast to the same attribute on the TextDocument API, we will *not* throw an exception on read if [applyStroke](textdocument.md#textdocumentapplystroke) is not `true`.
+:::warning
+In contrast to the same attribute on the TextDocument API, we will *not* throw an exception on read if [applyStroke](textdocument.md#textdocumentapplystroke) is not `true`.
+:::
 
-#### Type
+#### 类型
 
 Array [r, g, b] of floating-point values; read/write.
 
@@ -174,7 +175,7 @@ Array [r, g, b] of floating-point values; read/write.
 
 `CharacterRange.strokeOverFill`
 
-#### Description
+#### 描述
 
 The Text layer CharacterRange Stroke Over Fill character property.
 
@@ -182,13 +183,12 @@ Indicates the rendering order for the fill and stroke for characters in the rang
 
 If this attribute has a mixed value, it will be read as `undefined`.
 
-!!! warning
-    The Text layer can override per-character attribute setting via the All Strokes First or All Fills First setting on the CharPanel.
+:::warning
 
-    The value returned here represents what is applied to the characters, without regard to the possible Text layer override.
+The value returned here represents what is applied to the characters, without regard to the possible Text layer override.
+:::
 
-
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -198,7 +198,7 @@ Boolean; read/write.
 
 `CharacterRange.text`
 
-#### Description
+#### 描述
 
 The text value for the Text layer range.
 
@@ -208,22 +208,23 @@ On write, the characters in the range will be replaced with whatever string valu
 
 To insert characters without deleting any existing, call [TextDocument.characterRange()](textdocument.md#textdocumentcharacterrange) with the same value for start as end to get an insertion point range.
 
-#### Type
+#### 类型
 
 String; read/write.
 
 ---
 
-## Methods
+## 函数
 
 ### CharacterRange.pasteFrom()
 
 `CharacterRange.pasteFrom(characterRange)`
 
-!!! note
-    This functionality was added in After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
+:::note
+该方法添加于 After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
+:::
 
-#### Description
+#### 描述
 
 Copies, using paste semantics, from the `characterRange` parameter to the callee [CharacterRange object](#characterrange-object). The two instances may be the same, and the spans may be different.
 
@@ -236,13 +237,13 @@ The internal steps of the operation are:
 
 As the span of the [CharacterRange object](#characterrange-object) is not adjusted by this call, when the source [CharacterRange object](#characterrange-object) instance has a shorter span than the target [CharacterRange object](#characterrange-object) instance, the target instance may become invalid.
 
-#### Parameters
+#### 参数
 
-|    Parameter     |                      Type                       |                                                     Description                                                      |
+|    参数     |                      类型                       |                                                     描述                                                      |
 | ---------------- | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | `characterRange` | [CharacterRange object](#characterrange-object) | Object whose text and styling will be pasted in place of the callee [CharacterRange object](#characterrange-object). |
 
-#### Returns
+#### 返回
 
 None.
 
@@ -252,16 +253,16 @@ None.
 
 `CharacterRange.toString()`
 
-#### Description
+#### 描述
 
 Returns a string with the parameters used to create the CharacterRange instance, e.g. `"CharacterRange(0,-1)"`.
 
 This may be safely called on an instance where isRangeValid returns `false`.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
-String; read-only.
+String; 只读.

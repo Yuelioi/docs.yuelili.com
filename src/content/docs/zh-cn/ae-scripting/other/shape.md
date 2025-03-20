@@ -1,12 +1,11 @@
 ---
 title: shape
 ---
-
 # Shape object
 
 `app.project.item(index).layer(index).property(index).property("maskShape").value`
 
-#### Description
+#### 描述
 
 The Shape object encapsulates information describing a shape in a shape layer, or the outline shape of a Mask. It is the value of the "Mask Path" AE properties, and of the "Path" AE property of a shape layer. Use the constructor, `new Shape()`, to create a new, empty Shape object, then set the attributes individually to define the shape.
 
@@ -20,24 +19,30 @@ RotoBezier masks calculate their tangents automatically. (See [MaskPropertyGroup
 
 For closed mask shapes, variable-width mask feather points can exist anywhere along the mask path. Feather points are part of the Mask Path property. Reference a specific feather point by the number of the mask path segment (portion of the path between adjacent vertices) where it appears.
 
-!!! tip
-    The feather points on a mask are listed in an array in the order that they were created.
+:::tip
+The feather points on a mask are listed in an array in the order that they were created.
+:::
 
-#### Examples
+#### 示例
 
 - Create a square mask. A square is a closed shape with 4 vertices. The `inTangents` and `outTangents` for connected straight-line segments are 0, the default, and do not need to be explicitly set.
+
     ```javascript
     var myShape = new Shape();
     myShape.vertices = [[0,0], [0,100], [100,100], [100,0]];
     myShape.closed = true;
     ```
+
 - Create a "U" shaped mask. A "U" is an open shape with the same 4 vertices used in the square.
+
     ```javascript
     var myShape = new Shape();
     myShape.vertices = [[0,0], [0,100], [100,100], [100,0]];
     myShape.closed = false;
     ```
+
 - Create an oval. An oval is a closed shape with 4 vertices and with inTangent and outTangent values.
+
     ```javascript
     var myShape = new Shape();
     myShape.vertices = [[300,50], [200,150],[300,250],[400,150]];
@@ -45,7 +50,9 @@ For closed mask shapes, variable-width mask feather points can exist anywhere al
     myShape.outTangents = [[-55.23,0],[0,55.23],[55.23,0],[0,-55.23]];
     myShape.closed = true;
     ```
+
 - Create a square mask with two feather points. A large square mask with two feather points, one closer to the left end the second mask segment (off the bottom edge) with a radius of 30 pixels and the other one centered the third mask segment (off the right edge) with a larger radius of 100 pixels.
+
     ```javascript
     var myShape = new Shape();
     myShape.vertices = [[100,100], [100,400], [400,400], [400,100]]; // segments drawn counter clockwise
@@ -57,17 +64,17 @@ For closed mask shapes, variable-width mask feather points can exist anywhere al
 
 ---
 
-## Attributes
+## 属性
 
 ### Shape.closed
 
 `shapeObject.value.closed`
 
-#### Description
+#### 描述
 
 When `true`, the first and last vertices are connected to form a closed curve. When `false`, the closing segment is not drawn.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -77,14 +84,15 @@ Boolean; read/write.
 
 `shapeObject.value.featherInterps`
 
-#### Description
+#### 描述
 
 An array containing each feather point's radius interpolation type (0 for non-Hold feather points, 1 for Hold feather points).
 
-!!! tip
-    Values are stored in the array in the order that feather points are created.
+:::tip
+Values are stored in the array in the order that feather points are created.
+:::
 
-#### Type
+#### 类型
 
 Array of integers (0 or 1); read/write.
 
@@ -94,14 +102,15 @@ Array of integers (0 or 1); read/write.
 
 `shapeObject.value.featherRadii`
 
-#### Description
+#### 描述
 
 An array containing each feather point's radius (feather amount); inner feather points have negative values.
 
-!!! tip
-    Values are stored in the array in the order that feather points are created.
+:::tip
+Values are stored in the array in the order that feather points are created.
+:::
 
-#### Type
+#### 类型
 
 Array of floating-point values; read/write.
 
@@ -111,14 +120,15 @@ Array of floating-point values; read/write.
 
 `shapeObject.value.featherRelCornerAngles`
 
-#### Description
+#### 描述
 
 An array containing each feather point's relative angle percentage between the two normals on either side of a curved outer feather boundary at a corner on a mask path. The angle value is 0% for feather points not at corners.
 
-!!! tip
-    Values are stored in the array in the order that feather points are created.
+:::tip
+Values are stored in the array in the order that feather points are created.
+:::
 
-#### Type
+#### 类型
 
 Array of floating-point percentage values (0 to 100); read/write.
 
@@ -128,14 +138,15 @@ Array of floating-point percentage values (0 to 100); read/write.
 
 `shapeObject.value.featherRelSegLocs`
 
-#### Description
+#### 描述
 
 An array containing each feather point's relative position, from 0 to 1, on its mask path segment (section of the mask path between vertices, numbered starting at 0).
 
-!!! tip
-    Values are stored in the array in the order that feather points are created. To move a feather point to a different mask path segment, first change the [featherSegLocs](#shapefeatherseglocs) attribute value, then this attribute.
+:::tip
+Values are stored in the array in the order that feather points are created. To move a feather point to a different mask path segment, first change the [featherSegLocs](#shapefeatherseglocs) attribute value, then this attribute.
+:::
 
-#### Type
+#### 类型
 
 Array of floating-point values (0 to 1); read/write.
 
@@ -145,18 +156,19 @@ Array of floating-point values (0 to 1); read/write.
 
 `shapeObject.value.featherSegLocs`
 
-#### Description
+#### 描述
 
 An array containing each feather point's mask path segment number (section of the mask path between vertices, numbered starting at 0).
 
-!!! tip
-    Values are stored in the array in the order that feather points are created. Move a feather point to a different segment by changing both its segment number (this attribute) and, optionally, its [featherRelSegLocs](#shapefeatherrelseglocs) attribute value.
+:::tip
+Values are stored in the array in the order that feather points are created. Move a feather point to a different segment by changing both its segment number (this attribute) and, optionally, its [featherRelSegLocs](#shapefeatherrelseglocs) attribute value.
+:::
 
-#### Type
+#### 类型
 
 Array of integers; read/write.
 
-#### Example
+#### 示例
 
 ```javascript
 // Assuming a rectangle closed mask (segments numbered 0-3) has 3 mask feather points,
@@ -182,14 +194,15 @@ layer.mask(1).property("ADBE Mask Shape").setValue(my_maskShape);
 
 `shapeObject.value.featherTensions`
 
-#### Description
+#### 描述
 
 An array containing each feather point's tension amount, from 0 (0% tension) to 1 (100% tension).
 
-!!! tip
-    Values are stored in the array in the order that feather points are created.
+:::tip
+Values are stored in the array in the order that feather points are created.
+:::
 
-#### Type
+#### 类型
 
 Array of floating-point values (0 to 1); read/write.
 
@@ -199,15 +212,15 @@ Array of floating-point values (0 to 1); read/write.
 
 `shapeObject.value.featherTypes`
 
-#### Description
+#### 描述
 
 An array containing each feather point's direction, either 0 (outer feather point) or 1 (inner feather point).
 
-!!! tip
-    You cannot change the direction of a feather point after it has been created.
-    Values are stored in the array in the order that feather points are created.
+:::tip
+Values are stored in the array in the order that feather points are created.
+:::
 
-#### Type
+#### 类型
 
 Array of integers (0 or 1); read/write.
 
@@ -217,7 +230,7 @@ Array of integers (0 or 1); read/write.
 
 `shapeObject.value.inTangents`
 
-#### Description
+#### 描述
 
 The incoming tangent vectors, or direction handles, associated with the vertices of the shape. Specify each vector as an array of two floating-point values, and collect the vectors into an array the same length as the `vertices` array.
 
@@ -225,7 +238,7 @@ Each tangent value defaults to [0,0]. When the mask shape is not RotoBezier, thi
 
 If the shape is in a RotoBezier mask, all tangent values are ignored and the tangents are automatically calculated.
 
-#### Type
+#### 类型
 
 Array of floating-point pair arrays; read/write.
 
@@ -235,7 +248,7 @@ Array of floating-point pair arrays; read/write.
 
 `shapeObject.value.outTangents`
 
-#### Description
+#### 描述
 
 The outgoing tangent vectors, or direction handles, associated with the vertices of the shape. Specify each vector as an array of two floating-point values, and collect the vectors into an array the same length as the `vertices` array.
 
@@ -243,7 +256,7 @@ Each tangent value defaults to [0,0]. When the mask shape is not RotoBezier, thi
 
 If the shape is in a RotoBezier mask, all tangent values are ignored and the tangents are automatically calculated.
 
-#### Type
+#### 类型
 
 Array of floating-point pair arrays; read/write.
 
@@ -253,16 +266,16 @@ Array of floating-point pair arrays; read/write.
 
 `shapeObject.value.vertices`
 
-#### Description
+#### 描述
 
 The anchor points of the shape. Specify each point as an array of two floating-point values, and collect the point pairs into an array for the complete set of points.
 
-#### Example
+#### 示例
 
 ```javascript
 myShape.vertices = [[0,0], [0,1], [1,1], [1,0]];
 ```
 
-#### Type
+#### 类型
 
 Array of floating-point pair arrays; read/write.

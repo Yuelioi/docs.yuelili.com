@@ -1,30 +1,29 @@
 ---
 title: view
 ---
-
 # View object
 
 `app.activeViewer.views[0]`
 
-#### Description
+#### 描述
 
 The View object represents a specific view.
 
 ---
 
-## Attributes
+## 属性
 
 ### View.active
 
 `app.activeViewer.views[0].active`
 
-#### Description
+#### 描述
 
 When `true`, indicates if the viewer panel is focused, and thereby frontmost.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -32,31 +31,31 @@ Boolean; read-only.
 
 `app.activeViewer.views[0].options`
 
-#### Description
+#### 描述
 
 Options object for this View
 
-#### Type
+#### 类型
 
 [ViewOptions object](../viewoptions)
 
 ---
 
-## Methods
+## 函数
 
 ### View.setActive()
 
 `app.activeViewer.views[0].setActive()`
 
-#### Description
+#### 描述
 
 Moves this view panel to the front and places focus on it, making it active.
 Calling this method will set the [view's active attribute](#viewactive) to `true`.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Boolean, indicating if the view panel was made active.

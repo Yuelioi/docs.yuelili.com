@@ -1,24 +1,23 @@
 ---
 title: filesource
 ---
-
 # FileSource object
 
 `app.project.item(index).mainSource`
 
 `app.project.item(index).proxySource`
 
-
-#### Description
+#### 描述
 
 The FileSource object describes footage that comes from a file.
 
-!!! info
-    FileSource is a subclass of [FootageSource object](../footagesource). All methods and attributes of FootageSource, in addition to those listed below, are available when working with FileSource.
+:::info
+FileSource is a subclass of [FootageSource object](../footagesource). All methods and attributes of FootageSource, in addition to those listed below, are available when working with FileSource.
+:::
 
 ---
 
-## Attributes
+## 属性
 
 ### FileSource.file
 
@@ -26,17 +25,16 @@ The FileSource object describes footage that comes from a file.
 
 `app.project.item(index).proxySource.file`
 
-
-#### Description
+#### 描述
 
 The [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object for the file that defines this asset. To change the value:
 
 - If this FileSource is a [proxySource](../item/avitem.md#avitemproxysource) of an [AVItem](../../item/avitem), call [setProxy()](../item/avitem.md#avitemsetproxy) or [setProxyWithSequence()](../item/avitem.md#avitemsetproxywithsequence).
 - If this FileSource is a [mainSource](../item/footageitem.md#footageitemmainsource) of a [FootageItem](../../item/footageitem), call [replace()](../item/footageitem.md#footageitemreplace) or [replaceWithSequence()](../item/footageitem.md#footageitemreplacewithsequence).
 
-#### Type
+#### 类型
 
-[File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object; read-only.
+[File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object; 只读.
 
 ---
 
@@ -46,31 +44,30 @@ The [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access
 
 `app.project.item(index).proxySource.missingFootagePath`
 
-
-#### Description
+#### 描述
 
 The path and filename of footage that is missing from this asset. See also [AVItem.footageMissing](../item/avitem.md#avitemfootagemissing).
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
-## Methods
+## 函数
 
 ### FileSource.reload()
 
 `app.project.item(index).mainSource.reload()`
 
-#### Description
+#### 描述
 
 Reloads the asset from the file. This method can be called only on a `mainSource`, not a `proxySource`.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Nothing.

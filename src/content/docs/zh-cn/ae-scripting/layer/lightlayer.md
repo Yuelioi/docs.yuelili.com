@@ -1,17 +1,17 @@
 ---
 title: lightlayer
 ---
-
 # LightLayer object
 
 `app.project.item(index).layer(index)`
 
-#### Description
+#### 描述
 
 The LightLayer object represents a light layer within a composition. Create it using the [LayerCollection.addLight()](layercollection.md#layercollectionaddlight) method. It can be accessed in an item's layer collection either by index number or by a name string.
 
-!!! info
-    LightLayer is a subclass of [Layer object](../layer). All methods and attributes of Layer are available when working with Light-Layer.
+:::info
+LightLayer is a subclass of [Layer object](../layer). All methods and attributes of Layer are available when working with Light-Layer.
+:::
 
 #### AE Properties
 
@@ -19,37 +19,37 @@ LightLayer defines no additional attributes, but has different AE properties tha
 
 - `Marker`
 - `Transform`:
-    - `PointofInterest`
-    - `Position`
-    - `Scale`
-    - `Orientation`
-    - `XRotation`
-    - `YRotation`
-    - `Rotation`
-    - `Opacity`
+  - `PointofInterest`
+  - `Position`
+  - `Scale`
+  - `Orientation`
+  - `XRotation`
+  - `YRotation`
+  - `Rotation`
+  - `Opacity`
 - `LightOptions`:
-    - `Intensity`
-    - `Color`
-    - `ConeAngle`
-    - `ConeFeather`
-    - `CastsShadows`
-    - `ShadowDarkness`
-    - `ShadowDiffusion`
+  - `Intensity`
+  - `Color`
+  - `ConeAngle`
+  - `ConeFeather`
+  - `CastsShadows`
+  - `ShadowDarkness`
+  - `ShadowDiffusion`
 
 ---
 
-## Attributes
+## 属性
 
-### LightLayer.lightSource:
+### LightLayer.lightSource
 
 `app.project.item(index).layer(index).lightSource`
 
-!!! note
-    `LightLayer.lightSource` was added in After Effects 24.3, but allowed only HDR and EXR layers as sources.
+:::note
 
-    In After Effects (Beta) 25.2.0.098, it was updated to allow any 2D layer type as a source.
+In After Effects (Beta) 25.2.0.098, it was updated to allow any 2D layer type as a source.
+:::
 
-#### Description
+#### 描述
 
 For a light layer, the layer to use as a light source when `LightLayer.lightType` is `LightType.ENVIRONMENT`.
 
@@ -61,14 +61,15 @@ For a light layer, the layer to use as a light source when `LightLayer.lightType
 
 `app.project.item(index).layer(index).lightType`
 
-!!! note
-    `LightType.ENVIRONMENT` was added in After Effects 24.3
+:::note
+`LightType.ENVIRONMENT` was added in After Effects 24.3
+:::
 
-#### Description
+#### 描述
 
 For a light layer, its light type. Trying to set this attribute for a non-light layer produces an error.
 
-#### Type
+#### 类型
 
 A `LightType` enumerated value; read/write. One of:
 

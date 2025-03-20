@@ -1,14 +1,13 @@
 ---
 title: drawing-objects
 ---
-
 # Drawing objects
 
 ScriptUI allows you to draw directly on controls to customize their appearance. You do this by calling methods of the [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object) in response to the [onDraw](control-objects.md#ondraw) event (see [Defining behavior with event callbacks and listeners](../defining-behavior-with-event-callbacks-and-listeners)).
 
 These methods take as parameters a number of helper objects that encapsulate drawing information, including the following:
 
-|                                     Object                                     |                                                                Description                                                                |
+|                                     Object                                     |                                                                描述                                                                |
 | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | [ScriptUIGraphics](./graphic-customization-objects.md#scriptuigraphics-object) | Encapsulates the drawing methods. The graphics object is associated with each control is found in the control object's graphics property. |
 | [ScriptUIBrush](./graphic-customization-objects.md#scriptuibrush-object)       | Describes the brush used to paint textures in a control.                                                                                  |
@@ -31,7 +30,7 @@ g.backgroundColor = myBrush;
 
 These examples in the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) demonstrates how to use graphic customization objects:
 
-|                                                                Example                                                                |                                                          Description                                                          |
+|                                                                Example                                                                |                                                          描述                                                          |
 | ------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | [ColorSelector.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/ColorSelector.jsx) | Uses graphic objects to change the background color of a window as the user selects the color value with a slider.            |
 | [ColorPicker.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/ColorPicker.jsx)     | A more complex version of the color-selection dialog shows how to use additional graphics objects, including fonts and paths. |

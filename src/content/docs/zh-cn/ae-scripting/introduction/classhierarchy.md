@@ -1,7 +1,6 @@
 ---
 title: classhierarchy
 ---
-
 # After Effects Class Hierarchy
 
 This section lists the class hierarchies for relevant AE API elements. For a primer on what this means, see [Javascript Classes](javascript.md#javascript-classes)

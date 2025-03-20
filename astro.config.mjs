@@ -18,7 +18,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "月离文档",
-      defaultLocale: "en",
+      defaultLocale: "zh-cn",
       locales: {
         en: {
           label: "English",

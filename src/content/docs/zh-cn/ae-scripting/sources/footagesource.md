@@ -1,24 +1,23 @@
 ---
 title: footagesource
 ---
-
 # FootageSource object
 
 `app.project.item(index).mainSource`
 
 `app.project.item(index).proxySource`
 
-
-#### Description
+#### 描述
 
 The FootageSource object holds information describing the source of some footage. It is used as the `mainSource` of a [FootageItem object](../../item/footageitem), or the `proxySource` of a [CompItem object](../../item/compitem) or FootageItem.
 
-!!! info
-    FootageSource is the base class for [SolidSource object](../solidsource), so FootageSource attributes and methods are available when working with SolidSource objects.
+:::info
+FootageSource is the base class for [SolidSource object](../solidsource), so FootageSource attributes and methods are available when working with SolidSource objects.
+:::
 
 ---
 
-## Attributes
+## 属性
 
 ### FootageSource.alphaMode
 
@@ -26,12 +25,11 @@ The FootageSource object holds information describing the source of some footage
 
 `app.project.item(index).proxySource.alphaMode`
 
-
-#### Description
+#### 描述
 
 Defines how the alpha information in the footage is interpreted. If `hasAlpha` is `false`, this attribute has no relevant meaning.
 
-#### Type
+#### 类型
 
 An Alpha Mode enumerated value; (read/write). One of:
 
@@ -47,14 +45,13 @@ An Alpha Mode enumerated value; (read/write). One of:
 
 `app.project.item(index).proxySource.conformFrameRate`
 
-
-#### Description
+#### 描述
 
 A frame rate to use instead of the `nativeFrameRate` value. If set to 0, the `nativeFrameRate` is used instead. It is an error to set this value if [FootageSource.isStill](#footagesourceisstill) is `true`. It is an error to set this value to 0 if [removePulldown](#footagesourceremovepulldown) is not set to `PulldownPhase.OFF`. If this is 0 when you set `removePulldown` to a value other than `PulldownPhase.OFF`, then this is automatically set to the value of `nativeFrameRate`.
 
-#### Type
+#### 类型
 
-Floating-point value, in the range `[0.0..99.0]`; read/write.
+Floating-point value, 范围为 `[0.0..99.0]`; read/write.
 
 ---
 
@@ -64,14 +61,13 @@ Floating-point value, in the range `[0.0..99.0]`; read/write.
 
 `app.project.item(index).proxySource.displayFrameRate`
 
-
-#### Description
+#### 描述
 
 The effective frame rate as displayed and rendered in compositions by After Effects. If [removePulldown](#footagesourceremovepulldown) is `PulldownPhase.OFF`, then this is the same as the `conformFrameRate` (if non-zero) or the `nativeFrameRate` (if `conformFrameRate` is 0). If `removePulldown` is not `PulldownPhase.OFF`, this is `conformFrameRate * 0.8`, the effective frame rate after removing 1 of every 5 frames.
 
-#### Type
+#### 类型
 
-Floating-point value, in the range `[0.0..99.0]`; read-only.
+Floating-point value, 范围为 `[0.0..99.0]`; 只读.
 
 ---
 
@@ -81,12 +77,11 @@ Floating-point value, in the range `[0.0..99.0]`; read-only.
 
 `app.project.item(index).proxySource.fieldSeparationType`
 
-
-#### Description
+#### 描述
 
 How the fields are to be separated in non-still footage. It is an error to set this attribute if `isStill` is `true`. It is an error to set this value to `FieldSeparationType.OFF` if [removePulldown](#footagesourceremovepulldown) is not `PulldownPhase.OFF`.
 
-#### Type
+#### 类型
 
 A `FieldSeparationType` enumerated value; read/write. One of:
 
@@ -102,14 +97,13 @@ A `FieldSeparationType` enumerated value; read/write. One of:
 
 `app.project.item(index).proxySource.hasAlpha`
 
-
-#### Description
+#### 描述
 
 When `true`, the footage has an alpha component. In this case, the attributes `alphaMode`, `invertAlpha`, and `premulColor` have valid values. When `false`, those attributes have no relevant meaning for the footage.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -119,12 +113,11 @@ Boolean; read-only.
 
 `app.project.item(index).proxySource.highQualityFieldSeparation`
 
-
-#### Description
+#### 描述
 
 When `true`, After Effects uses special algorithms to determine how to perform high-quality field separation. It is an error to set this attribute if `isStill` is `true`, or if `fieldSeparationType` is `FieldSeparationType.OFF`.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -136,12 +129,11 @@ Boolean; read/write.
 
 `app.project.item(index).proxySource.invertAlpha`
 
-
-#### Description
+#### 描述
 
 When `true`, an alpha channel in a footage clip or proxy should be inverted. This attribute is valid only if an alpha is present. If `hasAlpha` is `false`, or if `alphaMode` is `AlphaMode.IGNORE`, this attribute is ignored.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -153,14 +145,13 @@ Boolean; read/write.
 
 `app.project.item(index).proxySource.isStill`
 
-
-#### Description
+#### 描述
 
 When `true` the footage is still; When `false`, it has a time-based component. Examples of still footage are JPEG files, solids, and placeholders with a duration of 0. Examples of non-still footage are movie files, sound files, sequences, and placeholders of non-zero duration.
 
-#### Type
+#### 类型
 
-Boolean; read-only.
+Boolean; 只读.
 
 ---
 
@@ -170,14 +161,13 @@ Boolean; read-only.
 
 `app.project.item(index).proxySource.loop`
 
-
-#### Description
+#### 描述
 
 The number of times that the footage is to be played consecutively when used in a composition. It is an error to set this attribute if `isStill` is `true`.
 
-#### Type
+#### 类型
 
-Integer, in the range `[1..9999]`; default is 1; read/write.
+Integer, 范围为 `[1..9999]`; default is 1; read/write.
 
 ---
 
@@ -187,14 +177,13 @@ Integer, in the range `[1..9999]`; default is 1; read/write.
 
 `app.project.item(index).proxySource.nativeFrameRate`
 
-
-#### Description
+#### 描述
 
 The native frame rate of the footage.
 
-#### Type
+#### 类型
 
-Floating-point value; read-only.
+Floating-point value; 只读.
 
 ---
 
@@ -204,14 +193,13 @@ Floating-point value; read-only.
 
 `app.project.item(index).proxySource.premulColor`
 
-
-#### Description
+#### 描述
 
 The color to be premultiplied. This attribute is valid only if the `alphaMode` is `alphaMode.PREMULTIPLIED`.
 
-#### Type
+#### 类型
 
-Array of three floating-point values, `[R, G, B]`, in the range `[0.0..1.0]`; read/write.
+Array of three floating-point values, `[R, G, B]`, 范围为 `[0.0..1.0]`; read/write.
 
 ---
 
@@ -221,12 +209,11 @@ Array of three floating-point values, `[R, G, B]`, in the range `[0.0..1.0]`; re
 
 `app.project.item(index).proxySource.removePulldown`
 
-
-#### Description
+#### 描述
 
 How the pulldowns are to be removed when field separation is used. It is an error to set this attribute if `isStill` is `true`. It is an error to attempt to set this to a value other than `PulldownPhase.OFF` in the case where `fieldSeparationType` is `FieldSeparationType.OFF`.
 
-#### Type
+#### 类型
 
 A `PulldownPhase` enumerated value; read/write. One of:
 
@@ -244,7 +231,7 @@ A `PulldownPhase` enumerated value; read/write. One of:
 
 ---
 
-## Methods
+## 函数
 
 ### FootageSource.guessAlphaMode()
 
@@ -252,16 +239,15 @@ A `PulldownPhase` enumerated value; read/write. One of:
 
 `app.project.item(index).proxySource.guessAlphaMode()`
 
-
-#### Description
+#### 描述
 
 Sets `alphaMode`, `premulColor`, and `invertAlpha` to the best estimates for this footage source. If `hasAlpha` is `false`, no change is made.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -273,22 +259,18 @@ Nothing.
 
 `app.project.item(index).proxySource.guessPulldown(method)`
 
-
-#### Description
+#### 描述
 
 Sets `fieldSeparationType` and [removePulldown](#footagesourceremovepulldown) to the best estimates for this footage source. If `isStill` is `true`, no change is made.
 
-#### Parameters
+#### 参数
 
-+-----------+------------------------+-------------------------------------------+
-| Parameter |          Type          |                Description                |
-+===========+========================+===========================================+
+| 参数 |          类型          |                描述                |
+|-----------|------------------------|-------------------------------------------|
 | `method`  | `PulldownMethod` enum. | The method to use for estimation. One of: |
-|           |                        |                                           |
 |           |                        | - `PulldownMethod.PULLDOWN_3_2`           |
 |           |                        | - `PulldownMethod.ADVANCE_24P`            |
-+-----------+------------------------+-------------------------------------------+
 
-#### Returns
+#### 返回
 
 Nothing.

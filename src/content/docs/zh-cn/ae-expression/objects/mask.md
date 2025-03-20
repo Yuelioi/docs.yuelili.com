@@ -1,34 +1,31 @@
 ---
-title: mask
+title: 蒙版
 ---
-
 # Mask
 
 `thisLayer.mask("Mask 1")`
 
-This category contains information relating to mask objects. To manipulate the actual mask *path*, see [Mask Path](#maskmaskpath).
+此类别包含与蒙版对象相关的信息。要操作实际的蒙版 *路径* ，请参阅 [蒙版路径]()。
 
-!!! note
-    You can link Mask Path properties to other path properties (paths in a shape layer and brush strokes), but the properties are not accessible for direct numerical manipulation through expressions.
-
-!!! info
-    On this page, we're going to use `thisLayer.mask("Mask 1")` as a sample on how to call these items, however note that any method that returns a [Mask](#) will work.
+:::note
+你可以将蒙版路径属性链接到其他路径属性（形状图层中的路径和画笔描边），但这些属性无法通过表达式直接进行数值操作。 ::::::info 在本页中，我们将使用 `thisLayer.mask("Mask 1")` 作为调用这些项的示例，但请注意，任何返回 [蒙版](#) 的方法都可以使用。
+:::
 
 ---
 
-## Attributes
+## 属性
 
 ### Mask.invert
 
 `thisLayer.mask("Mask 1").invert`
 
-#### Description
+#### 描述
 
-Returns `true` if the mask is inverted or `false` if it is not.
+如果蒙版已反转，则返回 `true`；否则返回 `false`。
 
-#### Type
+#### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -36,13 +33,13 @@ Boolean
 
 `thisLayer.mask("Mask 1").maskExpansion`
 
-#### Description
+#### 描述
 
-Returns the expansion value of a mask, in pixels.
+返回蒙版的扩展值，单位为像素。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -50,13 +47,13 @@ Number
 
 `thisLayer.mask("Mask 1").maskFeather`
 
-#### Description
+#### 描述
 
-Returns the feather value of a mask, in pixels.
+返回蒙版的羽化值，单位为像素。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -64,13 +61,13 @@ Number
 
 `thisLayer.mask("Mask 1").maskOpacity`
 
-#### Description
+#### 描述
 
-Returns the opacity value of a mask as a percentage.
+以百分比形式返回蒙版的不透明度值。
 
-#### Type
+#### 类型
 
-Number
+数字
 
 ---
 
@@ -78,10 +75,10 @@ Number
 
 `thisLayer.mask("Mask 1").maskPath`
 
-#### Description
+#### 描述
 
-Returns the actual mask [Path](.././path-property).
+返回实际的蒙版 [路径](../path-property)。
 
-#### Type
+#### 类型
 
-[Path object](.././path-property)
+[路径对象](../path-property)

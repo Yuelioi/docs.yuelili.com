@@ -1,28 +1,27 @@
 ---
 title: outputmodule
 ---
-
 # OutputModule object
 
 `app.project.renderQueue.item(index).outputModule(index)`
 
-#### Description
+#### 描述
 
 An OutputModule object of a [RenderQueueItem](../renderqueueitem) generates a single file or sequence via a render operation, and contains attributes and methods relating to the file to be rendered.
 
 ---
 
-## Attributes
+## 属性
 
 ### OutputModule.file
 
 `app.project.renderQueue.item(index).outputModule(index).file`
 
-#### Description
+#### 描述
 
 The [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object for the file this output module is set to render.
 
-#### Type
+#### 类型
 
 [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object; read/write.
 
@@ -32,11 +31,11 @@ The [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access
 
 `app.project.renderQueue.item(index).outputModule(index).includeSourceXMP`
 
-#### Description
+#### 描述
 
 When `true`, writes all source footage XMP metadata to the output file. Corresponds to the Include Source XMP Metadata option in the Output Module Settings dialog box.
 
-#### Type
+#### 类型
 
 Boolean; read/write.
 
@@ -46,13 +45,13 @@ Boolean; read/write.
 
 `app.project.renderQueue.item(index).outputModule(index).name`
 
-#### Description
+#### 描述
 
 The name of the output module, as shown in the user interface.
 
-#### Type
+#### 类型
 
-String; read-only.
+String; 只读.
 
 ---
 
@@ -60,11 +59,11 @@ String; read-only.
 
 `app.project.renderQueue.item(index).outputModule(index).postRenderAction`
 
-#### Description
+#### 描述
 
 An action to be performed when the render operation is completed.
 
-#### Type
+#### 类型
 
 A `PostRenderAction` enumerated value (read/write); one of:
 
@@ -79,33 +78,33 @@ A `PostRenderAction` enumerated value (read/write); one of:
 
 `app.project.renderQueue.item(index).outputModule(index).templates`
 
-#### Description
+#### 描述
 
 The names of all output-module templates available in the local installation of After Effects.
 
-#### Type
+#### 类型
 
-Array of strings; read-only.
+Array of strings; 只读.
 
 ---
 
-## Methods
+## 函数
 
 ### OutputModule.applyTemplate()
 
 `app.project.renderQueue.item(index).outputModule(index).applyTemplate(templateName)`
 
-#### Description
+#### 描述
 
 Applies the specified existing output-module template.
 
-#### Parameters
+#### 参数
 
-|   Parameter    |  Type  |               Description               |
+|   参数    |  类型  |               描述               |
 | -------------- | ------ | --------------------------------------- |
 | `templateName` | String | The name of the template to be applied. |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -115,17 +114,18 @@ Nothing.
 
 `app.project.renderQueue.item(index).outputModule(index).getSetting()`
 
-!!! note
-    This functionality was added in After Effects 13.0 (CC 2014)
+:::note
+该方法添加于 After Effects 13.0 (CC 2014)
+:::
 
-#### Description
+#### 描述
 
 Gets a specific setting for a given Output Module.
 
 - Depreciated Source: [https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 - Archived version: [https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 
-#### Example
+#### 示例
 
 See the example in [RenderQueueItem.getSetting()](renderqueueitem.md#renderqueueitemgetsetting) for structure reference.
 
@@ -135,17 +135,18 @@ See the example in [RenderQueueItem.getSetting()](renderqueueitem.md#renderqueue
 
 `app.project.renderQueue.item(index).outputModule(index).getSettings()`
 
-!!! note
-    This functionality was added in After Effects 13.0 (CC 2014)
+:::note
+该方法添加于 After Effects 13.0 (CC 2014)
+:::
 
-#### Description
+#### 描述
 
 Gets all settings for a given Output Module.
 
 - Depreciated Source: [https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 - Archived version: [https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 
-#### Example
+#### 示例
 
 ```javascript
 // Get object that contains the string version of all current output module setting
@@ -182,15 +183,15 @@ var current_omFileTempalte = app.project.renderQueue.item(1).outputModule(1).get
 
 `app.project.renderQueue.item(index).outputModule(index).remove()`
 
-#### Description
+#### 描述
 
 Removes this OutputModule object from the collection.
 
-#### Parameters
+#### 参数
 
 None.
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -200,17 +201,17 @@ Nothing.
 
 `app.project.renderQueue.item(index).outputModule(index).saveAsTemplate(name)`
 
-#### Description
+#### 描述
 
 Saves this output module as a template and adds it to the te mpl ate s array.
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |          Description          |
+| 参数 |  类型  |          描述          |
 | --------- | ------ | ----------------------------- |
 | `name`    | String | The name of the new template. |
 
-#### Returns
+#### 返回
 
 Nothing.
 
@@ -220,17 +221,18 @@ Nothing.
 
 `app.project.renderQueue.item(index).outputModule(index).setSetting()`
 
-!!! note
-    This functionality was added in After Effects 13.0 (CC 2014)
+:::note
+该方法添加于 After Effects 13.0 (CC 2014)
+:::
 
-#### Description
+#### 描述
 
 Sets a specific setting for a given Output Module.
 
 - Depreciated Source: [https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 - Archived version: [https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 
-#### Example
+#### 示例
 
 See the example in [RenderQueueItem.setSetting()](renderqueueitem.md#renderqueueitemsetsetting) for structure reference.
 
@@ -240,18 +242,20 @@ See the example in [RenderQueueItem.setSetting()](renderqueueitem.md#renderqueue
 
 `app.project.renderQueue.item(index).outputModule(index).setSettings()`
 
-!!! note
-    This functionality was added in After Effects 13.0 (CC 2014)
+:::note
+该方法添加于 After Effects 13.0 (CC 2014)
+:::
 
-#### Description
+#### 描述
 
 - Depreciated Source: [https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 - Archived version: [https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 
-!!! warning
-    There is a bug that causes OutputModule object to be invalidated after the output module setting is modified, so you need to retrieve the Output Module again after you modify it.
+:::warning
+There is a bug that causes OutputModule object to be invalidated after the output module setting is modified, so you need to retrieve the Output Module again after you modify it.
+:::
 
-#### Examples
+#### 示例
 
 Get the settings from one item's output module and use them on another:
 

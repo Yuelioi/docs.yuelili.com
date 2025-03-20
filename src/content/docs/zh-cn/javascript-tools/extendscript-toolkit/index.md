@@ -1,11 +1,12 @@
 ---
 title: index
 ---
-
 # The ExtendScript Toolkit
 
-!!! warning
-    The Extendscript Toolkit has been deprecated in favour of [The VS Code Debugger](../../vscode-debugger/index)!
+:::warning
+The Extendscript Toolkit has been deprecated in favour of [The VS Code Debugger](../../vscode-debugger/index)!
+:::
+
 
 This information is preserved here for legacy reference, but the Extendscript Toolkit is no longer being actively maintained or supported, and will no longer work on 64-bit-only versions of MacOS.
 

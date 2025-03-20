@@ -1,12 +1,11 @@
 ---
 title: messaging-error-codes
 ---
-
 # Messaging error codes
 
 The interapplication messaging protocol defines the following error codes, which are compatible with ExtendScript error codes. Negative values indicate unrecoverable errors that cause ExtendScript to terminate a running script.
 
-| Code  |           Description           |
+| Code  |           描述           |
 | ----: | ------------------------------- |
 |   `1` | General error                   |
 |   `8` | Syntax error                    |

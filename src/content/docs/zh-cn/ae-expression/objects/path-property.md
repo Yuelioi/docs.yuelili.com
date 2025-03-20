@@ -1,82 +1,74 @@
 ---
-title: path-property
+title: 路径
 ---
-
 # Path Property
 
 `thisLayer.mask("Mask 1").maskPath`
 
 `thisLayer.content("Shape 1").content("Path 1").path;`
 
-!!! note
-    This functionality was added in After Effects 15.0 (CC)
+:::note 该方法添加于 After Effects 15.0 (CC) :::此类别包含与蒙版和形状*路径*相关的信息。
 
-This category contains information relating to mask & shape *paths*.
-
-!!! info
-    On this page, we're going to use `thisLayer.mask("Mask 1").maskPath` as a sample on how to call these items, however note that any method that returns a [Path](#) will work.
+:::info
+在本页中，我们将使用 `thisLayer.mask("Mask 1").maskPath` 作为调用这些项的示例，但请注意，任何返回 [路径](#) 的方法都可以使用。
+:::
 
 ---
 
-## Attributes
+## 属性
 
 ### name
 
 `thisLayer.mask("Mask 1").maskPath.name`
 
-#### Description
+#### 描述
 
-Returns the name of the property.
+返回属性的名称。
 
-#### Type
+#### 类型
 
-String
+字符串
 
 ---
 
-## Methods
+## 函数
 
 ### PathProperty.createPath()
 
 `thisLayer.mask("Mask 1").maskPath.createPath(points=[[0,0], [100,0], [100,100], [0,100]], inTangents=[], outTangents=[], is_closed=true)`
 
-#### Description
+#### 描述
 
-Creates a path object from a set of points and tangents.
+从一组点和切线创建路径对象。
 
-The [`points()`](#pathpropertypoints), [`inTangents()`](#pathpropertyintangents), [`outTangents()`](#pathpropertyouttangents), and [`isClosed()`](#pathpropertyisclosed) methods of a path can be passed into the `points`, `inTangents`, `outTangents`, and `is_closed` parameters to duplicate a path.
+路径的 [`points()`]()、[`inTangents()`]()、[`outTangents()`]() 和 [`isClosed()`]() 方法可以传递给 `points`、`inTangents`、`outTangents` 和 `is_closed` 参数以复制路径。
 
-The points and tangents of the same path can be passed into `createPath()` with modifications to generate a different result.
+可以将相同路径的点和切线传递给 `createPath()` 并进行修改以生成不同的结果。
 
-#### Parameters
+#### 参数
 
-+---------------+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|   Parameter   |            Type             |                                                                                                         Description                                                                                                         |
-+===============+=============================+=============================================================================================================================================================================================================================+
-| `points`      | Array of number pair arrays | Optional. An array of number pair arrays representing the `[x, y]` coordinates of the points. The array must contain at least 1 item, and can be of any greater length. Defaults to `[[0,0], [100,0], [100,100], [0,100]]`. |
-+---------------+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `inTangents`  | Array of number pair arrays | Optional. An array of number pair arrays representing their `[x, y]` *offset* coordinates. The length of this array must be exactly the same as the `points` parameter. Defaults to `[]`.                                   |
-|               |                             |                                                                                                                                                                                                                             |
-|               |                             | Coordinate values are offset relative to the parent point's coordinates. i.e. The value `[0, 0]` creates no curvature at the incoming tangent.                                                                              |
-+---------------+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `outTangents` | Array of number pair arrays | Optional. See `inTangents`. Defaults to `[]`.                                                                                                                                                                               |
-| `is_closed`   | Boolean                     | Optional. Defaults to `true`.                                                                                                                                                                                               |
-+---------------+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 参数            | 类型             | 描述                                                                                                                                               |
+| --------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `points`      | 数字对数组的数组 | 可选。表示点的 `[x, y]` 坐标的数字对数组的数组。数组必须包含至少 1 个项目，并且可以是任意长度。默认为 `[[0,0], [100,0], [100,100], [0,100]]`。 |
+| `inTangents`  | 数字对数组的数组 | 可选。表示其 `[x, y]` *偏移*坐标的数字对数组的数组。此数组的长度必须与 `points` 参数完全相同。默认为 `[]`。                                |
+|                 |                  | 坐标值相对于父点坐标的偏移。即，值 `[0, 0]` 在传入切线处不创建曲率。                                                                             |
+| `outTangents` | 数字对数组的数组 | 可选。参见 `inTangents`。默认为 `[]`。                                                                                                         |
+| `is_closed`   | 布尔值           | 可选。默认为 `true`。                                                                                                                            |
 
-#### Returns
+#### 返回
 
-[Path](#)
+[路径]()
 
-#### Example
+#### 示例
 
-For example, the following expression will remove curves from Mask 1 by not passing the inTangents or outTangents parameters:
+例如，以下表达式将通过不传递 `inTangents` 或 `outTangents` 参数来移除 Mask 1 的曲线：
 
 ```js
 const myMask = mask("Mask 1").path;
 myMask.createPath(myMask.points());
 ```
 
-The following example passes the points and tangents of Mask 1 and converts it to an open path by setting `is_closed` to `false`:
+以下示例传递 Mask 1 的点和切线，并通过将 `is_closed` 设置为 `false` 将其转换为开放路径：
 
 ```js
 const myMask = mask("Mask 1").path;
@@ -89,24 +81,23 @@ myMask.createPath(myMask.points(), myMask.inTangents(), myMask.outTangents(), fa
 
 `thisLayer.mask("Mask 1").maskPath.inTangents([t=time])`
 
-#### Description
+#### 描述
 
-Get the `[x, y]` coordinates of the incoming tangent handle for all points on a path.
+获取路径上所有点的传入切线手柄的 `[x, y]` 坐标。
 
-Tangent coordinate values are offset relative to the parent point's coordinates (i.e. the value `[0, 0]` creates no curvature at the incoming tangent).
+切线坐标值相对于父点坐标的偏移（即，值 `[0, 0]` 在传入切线处不创建曲率）。
 
-This method can be passed into the [`createPath()`](#pathpropertycreatepath) method for the `inTangents` parameter when duplicating a path.
+此方法可以传递给 [`createPath()`]() 方法的 `inTangents` 参数以复制路径。
 
+#### 参数
 
-#### Parameters
+| 参数  | 类型 | 描述                                                                                  |
+| ----- | ---- | ------------------------------------------------------------------------------------- |
+| `t` | 数字 | 可选。采样切线的时间（以合成秒为单位）。默认为 `time`（当前合成时间，以秒为单位）。 |
 
-| Parameter |  Type  |                                                          Description                                                           |
-| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `t`       | Number | Optional. The specified time (in comp seconds) to sample the tangents. Defaults to `time` (the current comp time, in seconds). |
+#### 返回
 
-#### Returns
-
-Array of number pair arrays, rounded to the fourth decimal place
+数字对数组的数组，四舍五入到小数点后四位
 
 ---
 
@@ -114,15 +105,15 @@ Array of number pair arrays, rounded to the fourth decimal place
 
 `thisLayer.mask("Mask 1").maskPath.isClosed()`
 
-#### Description
+#### 描述
 
-Determines if the path is open or closed. Returns `true` if the path is closed, `false` if the path is open.
+确定路径是开放还是闭合。如果路径闭合，则返回 `true`；如果路径开放，则返回 `false`。
 
-This method can be passed into the [`createPath()`](#pathpropertycreatepath) method for the `is_closed` parameter when duplicating a path.
+此方法可以传递给 [`createPath()`]() 方法的 `is_closed` 参数以复制路径。
 
-#### Returns
+#### 返回
 
-Boolean
+布尔值
 
 ---
 
@@ -130,30 +121,30 @@ Boolean
 
 `thisLayer.mask("Mask 1").maskPath.normalOnPath(percentage=0.5, t=time)`
 
-#### Description
+#### 描述
 
-Get the calculated `[x, y]` coordinates of the normal for an arbitrary point along a path.
+获取路径上任意点的法线的 `[x, y]` 坐标。
 
-Coordinate values of normals are offset relative to the parent point's coordinates (i.e. the value `[0, 0]` is the same as the parent point).
+法线的坐标值相对于父点坐标的偏移（即，值 `[0, 0]` 与父点相同）。
 
-The normal's parent point is expressed as a percentage of the arc-length of the path. Read the description of the [`pointOnPath()`](#pathpropertypointonpath) method for details about arc-length percentage.
+法线的父点表示为路径弧长的百分比。有关弧长百分比的详细信息，请参阅 [`pointOnPath()`]() 方法的描述。
 
-The linear distance between the parent point's coordinates and `normalOnPath()` coordinates will always be `1`.
+父点坐标与 `normalOnPath()` 坐标之间的线性距离始终为 `1`。
 
-#### Parameters
+#### 参数
 
-|  Parameter   |  Type  |                                                        Description                                                         |
-| ------------ | ------ | -------------------------------------------------------------------------------------------------------------------------- |
-| `percentage` | Number | Optional. The percentage along the path at which to sample the normal. Defaults to `0.5` (50%).                            |
-| `t`          | Number | Optional. The specified time (in comp seconds) to sample the path. Defaults to `time` (the current comp time, in seconds). |
+| 参数           | 类型 | 描述                                                                                  |
+| -------------- | ---- | ------------------------------------------------------------------------------------- |
+| `percentage` | 数字 | 可选。采样法线的路径百分比。默认为 `0.5`（50%）。                                   |
+| `t`          | 数字 | 可选。采样路径的时间（以合成秒为单位）。默认为 `time`（当前合成时间，以秒为单位）。 |
 
-#### Returns
+#### 返回
 
-A number pair array
+数字对数组
 
-#### Example
+#### 示例
 
-**Sample a normal and make it longer:**
+**采样法线并使其更长：**
 
 ```js
 myPath.normalOnPath() * 100
@@ -165,23 +156,23 @@ myPath.normalOnPath() * 100
 
 `thisLayer.mask("Mask 1").maskPath.outTangents([t=time])`
 
-#### Description
+#### 描述
 
-Get the `[x, y]` coordinates of the outgoing tangent handle for all points on a path.
+获取路径上所有点的传出切线手柄的 `[x, y]` 坐标。
 
-Tangent coordinate values are offset relative to the parent point's coordinates (i.e. the value `[0, 0]` creates no curvature at the outgoing tangent).
+切线坐标值相对于父点坐标的偏移（即，值 `[0, 0]` 在传出切线处不创建曲率）。
 
-This method can be passed into the [`createPath()`](#pathpropertycreatepath) method for the `outTangents` parameter when duplicating a path.
+此方法可以传递给 [`createPath()`]() 方法的 `outTangents` 参数以复制路径。
 
-#### Parameters
+#### 参数
 
-| Parameter |  Type  |                                                          Description                                                           |
-| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `t`       | Number | Optional. The specified time (in comp seconds) to sample the tangents. Defaults to `time` (the current comp time, in seconds). |
+| 参数  | 类型 | 描述                                                                                  |
+| ----- | ---- | ------------------------------------------------------------------------------------- |
+| `t` | 数字 | 可选。采样切线的时间（以合成秒为单位）。默认为 `time`（当前合成时间，以秒为单位）。 |
 
-#### Returns
+#### 返回
 
-Array of number pair arrays, rounded to the fourth decimal place
+数字对数组的数组，四舍五入到小数点后四位
 
 ---
 
@@ -189,27 +180,20 @@ Array of number pair arrays, rounded to the fourth decimal place
 
 `thisLayer.mask("Mask 1").maskPath.pointOnPath([percentage=0.5][, t=time])`
 
-#### Description
+#### 描述
 
-Get the `[x, y]` coordinates of an arbitrary point along a path.
+获取路径上任意点的 `[x, y]` 坐标。
 
-The point is expressed as a percentage of the arc-length of the path. `0.0` (0%) is the first point and `1.0` (100%) is the last point. When the path is closed, 0% and 100% will return the same coordinates.
+该点表示为路径弧长的百分比。`0.0`（0%）是第一个点，`1.0`（100%）是最后一个点。当路径闭合时，0% 和 100% 将返回相同的坐标。
 
-!!! info
-    Percentage of arc-length is used to ensure uniform speed along the path.
+:::info 这意味着对于具有相同点的开放路径和闭合路径，开放路径上的百分比不会返回与闭合路径相同的坐标，因为闭合路径的长度更长。 :::| 参数             | 类型 | 描述                                                                                    |
+| ------------------ | ------ | ----------------------------------------------------------------------------------------- |
+| `percentage` | 数字 | 可选。采样点的路径百分比。默认为 `0.5`（50%）。                                     |
+| `t`          | 数字 | 可选。采样路径的时间（以合成秒为单位）。默认为 `time`（当前合成时间，以秒为单位）。 |
 
-    Other than 0% and 100%, percentages do not necessarily correlate with the Bezier points on the path. (i.e., For a path with three points, the second point will not necessarily be at 50%.)
+#### 返回
 
-    This also means that for an open path and closed path with identical points, the percentage along the open path will not return the same coordinates as the closed path due to the additional length of the closed path.
-
-|  Parameter   |  Type  |                                                        Description                                                         |
-| ------------ | ------ | -------------------------------------------------------------------------------------------------------------------------- |
-| `percentage` | Number | Optional. The percentage along the path at which to sample the point. Defaults to `0.5` (50%).                             |
-| `t`          | Number | Optional. The specified time (in comp seconds) to sample the path. Defaults to `time` (the current comp time, in seconds). |
-
-#### Returns
-
-A number pair array
+数字对数组
 
 ---
 
@@ -217,34 +201,35 @@ A number pair array
 
 `thisLayer.mask("Mask 1").maskPath.points([t=time])`
 
-#### Description
+#### 描述
 
-Get the x,y coordinates of all points on a path.
+获取路径上所有点的 `x,y` 坐标。
 
-The returned values are relative, depending on the context:
-- Coordinates for **layer mask path points** are relative to the layer's origin in its upper-left hand corner.
-- Coordinates for **Bezier shape path points** are are relative to the anchor point of the path's shape group
-    - (ex., "Transform: Shape 1 > Anchor Point").
-- Coordinates for **brush stroke path points** are relative to the **start of the stroke**; the first point is `[0,0]`.
-    - This method can be passed into the [`createPath()`](#pathpropertycreatepath) method for the points parameter when duplicating a path.
+返回的值是相对的，具体取决于上下文：
 
-#### Parameters
+* **图层蒙版路径点**的坐标相对于图层左上角的原点。
+* **贝塞尔形状路径点**的坐标相对于路径形状组的锚点
+  * （例如，“Transform: Shape 1 > Anchor Point”）。
+* **画笔描边路径点**的坐标相对于 **描边的起点** ；第一个点是 `[0,0]`。
+  * 此方法可以传递给 [`createPath()`]() 方法的 `points` 参数以复制路径。
 
-| Parameter |  Type  |                                                        Description                                                         |
-| --------- | ------ | -------------------------------------------------------------------------------------------------------------------------- |
-| `t`       | Number | Optional. The specified time (in comp seconds) to sample the path. Defaults to `time` (the current comp time, in seconds). |
+#### 参数
 
-#### Returns
+| 参数  | 类型 | 描述                                                                                  |
+| ----- | ---- | ------------------------------------------------------------------------------------- |
+| `t` | 数字 | 可选。采样路径的时间（以合成秒为单位）。默认为 `time`（当前合成时间，以秒为单位）。 |
 
-Array of number pair arrays, rounded to the fourth decimal place
+#### 返回
 
-#### Example
+数字对数组的数组，四舍五入到小数点后四位
 
-**Read the coordinates of the first vertex of Mask 1 on Dark Gray Solid 1 and converts them to composition coordinates.**
+#### 示例
 
-Apply this to a 2D point control of an effect, such as Write-on or CC Particle Systems II, to make the effect trace or track the first point of an animated mask.
+**读取 Dark Gray Solid 1 上 Mask 1 的第一个顶点的坐标并将其转换为合成坐标。**
 
-Duplicate the effect and change the path points index value ([0]) to trace or track the other points of the mask.
+将此应用于效果（如 Write-on 或 CC Particle Systems II）的 2D 点控制，以使效果跟踪或追踪动画蒙版的第一个点。
+
+复制效果并更改路径点索引值（[0]）以跟踪或追踪蒙版的其他点。
 
 ```js
 const myLayer = thisComp.layer("Dark Gray Solid 1");
@@ -257,33 +242,32 @@ myLayer.toComp(myLayer.mask("Mask 1").maskPath.points()[0]);
 
 `thisLayer.mask("Mask 1").maskPath.tangentOnPath([percentage=0.5][, t=time])`
 
-#### Description
+#### 描述
 
-Get the calculated `[x, y]` coordinates of the outgoing tangent handle for an arbitrary point along a path.
+获取路径上任意点的传出切线手柄的 `[x, y]` 坐标。
 
-Tangent coordinate values are offset relative to the parent point's coordinates (i.e. the value [0, 0] creates no curvature at the outgoing tangent). Values will differ from those returned by `outTangents()` if a user-defined point also exists at that arc-length pecentage.
+切线坐标值相对于父点坐标的偏移（即，值 `[0, 0]` 在传出切线处不创建曲率）。如果在该弧长百分比处存在用户定义的点，则返回值将与 `outTangents()` 返回的值不同。
 
-The incoming tangent handle is the inverse of this value (multiply the `[x, y]` coordinates by `-1`).
+传入切线手柄是该值的逆（将 `[x, y]` 坐标乘以 `-1`）。
 
-The tangent's parent point is expressed as a percentage of the arc-length of the path. Read the description of the [`pointOnPath()`](#pathpropertypointonpath) method for details about arc-length percentage.
+切线的父点表示为路径弧长的百分比。有关弧长百分比的详细信息，请参阅 [`pointOnPath()`]() 方法的描述。
 
-The linear distance between the parent point's coordinates and `tangentOnPath()` coordinates will always be `1`.
+父点坐标与 `tangentOnPath()` 坐标之间的线性距离始终为 `1`。
 
-#### Parameters
+#### 参数
 
+| 参数           | 类型 | 描述                                                                                  |
+| -------------- | ---- | ------------------------------------------------------------------------------------- |
+| `percentage` | 数字 | 可选。采样切线的路径百分比。默认为 `0.5`（50%）。                                   |
+| `t`          | 数字 | 可选。采样路径的时间（以合成秒为单位）。默认为 `time`（当前合成时间，以秒为单位）。 |
 
-|  Parameter   |  Type  |                                                        Description                                                         |
-| ------------ | ------ | -------------------------------------------------------------------------------------------------------------------------- |
-| `percentage` | Number | Optional. The percentage along the path at which to sample the tangent. Defaults to `0.5` (50%).                           |
-| `t`          | Number | Optional. The specified time (in comp seconds) to sample the path. Defaults to `time` (the current comp time, in seconds). |
+#### 返回
 
-#### Returns
+数字对数组
 
-A number pair array
+#### 示例
 
-#### Example
-
-**Sample a tangent and make it longer:**
+**采样切线并使其更长：**
 
 ```js
 myPath.tangentOnPath() * 100
@@ -291,11 +275,11 @@ myPath.tangentOnPath() * 100
 
 ---
 
-## Example
+## 示例
 
-Writes the list of point and tangent coordinates from Path 1 of Shape 1 on layer Shape Layer 1, at `time=0`, into a string.
+将 Shape Layer 1 图层上 Shape 1 的 Path 1 路径的点坐标和切线坐标列表写入字符串，时间为 `time=0`。
 
-Apply this to the source text property of a text layer for a readout of the coordinates and incoming and outgoing tangents of the shape.
+将此应用于文本图层的源文本属性，以读取形状的坐标和传入和传出切线。
 
 ```js
 let pointsList = "";
