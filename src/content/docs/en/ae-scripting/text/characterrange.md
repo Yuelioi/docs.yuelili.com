@@ -1,14 +1,15 @@
 ---
 title: characterrange
 ---
-
 # CharacterRange object
 
 `app.project.item(index).layer(index).text.sourceText.value.characterRange(characterIndexStart, [signedCharacterIndexEnd])`
 
 
-!!! note
-    This functionality was added in After Effects 24.3
+:::note
+This functionality was added in After Effects 24.3
+:::
+
 
 #### Description
 
@@ -103,8 +104,10 @@ Setting this value will also set `applyFill` to `true` across the affected chara
 
 If this attribute has a mixed value for the range of characters, it will be read as `undefined`.
 
-!!! warning
-    In contrast to the same attribute on the TextDocument API, we will *not* throw an exception on read if `applyFill` is not `true`.
+:::warning
+In contrast to the same attribute on the TextDocument API, we will *not* throw an exception on read if `applyFill` is not `true`.
+:::
+
 
 #### Type
 
@@ -161,8 +164,10 @@ If this attribute has a mixed value, it will be read as `undefined`.
 
 Setting this value will also set [applyStroke](textdocument.md#textdocumentapplystroke) to `true` across the affected characters.
 
-!!! warning
-    In contrast to the same attribute on the TextDocument API, we will *not* throw an exception on read if [applyStroke](textdocument.md#textdocumentapplystroke) is not `true`.
+:::warning
+In contrast to the same attribute on the TextDocument API, we will *not* throw an exception on read if [applyStroke](textdocument.md#textdocumentapplystroke) is not `true`.
+:::
+
 
 #### Type
 
@@ -182,10 +187,11 @@ Indicates the rendering order for the fill and stroke for characters in the rang
 
 If this attribute has a mixed value, it will be read as `undefined`.
 
-!!! warning
-    The Text layer can override per-character attribute setting via the All Strokes First or All Fills First setting on the CharPanel.
+:::warning
 
-    The value returned here represents what is applied to the characters, without regard to the possible Text layer override.
+The value returned here represents what is applied to the characters, without regard to the possible Text layer override.
+:::
+
 
 
 #### Type
@@ -220,8 +226,10 @@ String; read/write.
 
 `CharacterRange.pasteFrom(characterRange)`
 
-!!! note
-    This functionality was added in After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
+:::note
+This functionality was added in After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
+:::
+
 
 #### Description
 

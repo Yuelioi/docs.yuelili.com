@@ -1,7 +1,6 @@
 ---
 title: sdk-audience
 ---
-
 # SDK Audience
 
 You must be a proficient C/C++ programmer to write After Effects plug-ins. While we'll help with issues specific to the After Effects API, we can't help you learn your IDE or basic programming concepts.

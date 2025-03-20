@@ -1,7 +1,6 @@
 ---
 title: cross-dom-functions
 ---
-
 # Cross-DOM functions
 
 The cross-DOM is a small application programming interface (API), which provides a set of functions that are common across message-enabled applications. These include functions to open files, execute scripts, and print files. For details of the function set, see [Cross-DOM API reference](#cross-dom-api-reference).
@@ -39,8 +38,10 @@ For each platform, there is a startup folder shared by all Adobe Creative Suite 
 - In Windows®, the installation startup folders are: `%CommonProgramFiles%\Adobe\Startup Scripts CS5\Adobe AppName\`
 - In Mac OS®, the installation startup folders are: `/Library/Application Support/Adobe/Startup Scripts CS5/Adobe AppName/`
 
-!!! note
-    This is not the location in which to store your own startup scripts; see [Scripting for specific applications](../../introduction/scripting-for-specific-applications).
+:::note
+This is not the location in which to store your own startup scripts; see [Scripting for specific applications](../../introduction/scripting-for-specific-applications).
+:::
+
 
 ---
 
@@ -118,15 +119,13 @@ Performs the equivalent of the target application's File > New command.
 
 #### Parameters
 
-+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | Parameter |                                                                                               Type                                                                                                |         Description         |
-+===========+===================================================================================================================================================================================================+=============================+
+|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|
 | `options` | Application-specific creation options:                                                                                                                                                            | Optional. Creation options. |
 |           | - Adobe Bridge: none                                                                                                                                                                              |                             |
 |           | - Photoshop: none                                                                                                                                                                                 |                             |
 |           | - InDesign: creation options are: `(Boolean:showingWindow, ObjectOrString:documentPresets)`. See the arguments for `documents.add()` in the Adobe InDesign CS5 Scripting Reference.               |                             |
 |           | - Illustrator: creation options are: `([DocumentColorSpace:colorspace][, Number:width, Number:height])`. See the arguments for documents.add() in the Adobe Illustrator CS5 JavaScript Reference. |                             |
-+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 
 #### Returns
 
@@ -162,8 +161,10 @@ Nothing
 
 Performs the equivalent of the target application's File > Exit or File > Close command.
 
-!!! note
-    This function is available for Adobe Acrobat®, but does nothing. Scripts cannot terminate the application.
+:::note
+This function is available for Adobe Acrobat®, but does nothing. Scripts cannot terminate the application.
+:::
+
 
 #### Returns
 

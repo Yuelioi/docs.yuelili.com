@@ -1,7 +1,6 @@
 ---
 title: xml-object-reference
 ---
-
 # XML Object Reference
 
 This section provides reference details for the properties and methods of the XML object itself, and for the related utility objects and global functions that you use to work with namespaces:
@@ -21,14 +20,11 @@ The constructor returns the XML object representing the root node of an XML tree
 
 `[new] XML (xmlCode);`
 
-+-----------+---------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | Property  |     Type      |                                                                    Description                                                                     |
-+===========+===============+====================================================================================================================================================+
+|-----------|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 | `xmlCode` | String or XML | A string containing valid XML code, or an existing XML object.                                                                                     |
-|           |               |                                                                                                                                                    |
 |           |               | - If a valid string is supplied, returns a new XML object encapsulating the XML code. If the XML code cannot be parsed, throws a JavaScript error. |
 |           |               | - If an existing object is supplied and the `new` operator is used, returns a copy of the object; otherwise, returns the object itself.            |
-+-----------+---------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 ---
@@ -581,16 +577,12 @@ If the named element does not exist, appends the given value as a text element.
 
 #### Parameters
 
-+-----------+--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter |                                            Type                                            |                                                                                 Description                                                                                  |
-+===========+============================================================================================+==============================================================================================================================================================================+
+|-----------|--------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `name`    | String                                                                                     | An element or attribute name, with or without the 0-based position index of a specific element, or the wildcard string `"*"`.                                                |
-|           |                                                                                            |                                                                                                                                                                              |
 |           |                                                                                            | - If no position index is supplied, replaces the value of all matching elements.                                                                                             |
 |           |                                                                                            | - If the wildcard is supplied, replaces the value of all contained elements. When an element contain subelements, those are removed, and only the replacement value remains. |
-+-----------+--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `value`   | [XML object](#xml-object) or any value that can be converted to a String with `toString()` | Value to replace with                                                                                                                                                        |
-+-----------+--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -736,16 +728,12 @@ If the XPath expression does not evaluate to a node list, throws a JavaScript ex
 
 #### Parameters
 
-+--------------+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |  Parameter   |  Type  |                                                                                                                       Description                                                                                                                        |
-+==============+========+==========================================================================================================================================================================================================================================================+
+|--------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `expression` | String | A String containing an XPath expression.                                                                                                                                                                                                                 |
-|              |        |                                                                                                                                                                                                                                                          |
 |              |        | !!! note                                                                                                                                                                                                                                                 |
 |              |        |     In this context, include the actual top level element. For example, an expression for the example XML must start with "/bookstore". This is unlike JavaScript property access, where the top level element is implied.                               |
-+--------------+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `variables`  | Object | Optional. A JavaScript object containing variable definitions. The properties are used to look up XPath variables contained in the expression. For example, if the expression contains the variable `$abc`, the value is in the object's `abc` property. |
-+--------------+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -765,10 +753,11 @@ These functions are available in the JavaScript global namespace.
 
 Reports whether a string contains a name that conforms to valid XML syntax.
 
-!!! note
-    This implementation uses the same rules as for a JavaScript name, except for the '$' character, which is disallowed, and the '-' character, which as added.
+:::note
 
-    It does not follow the W3C definition of an XML name, which adds more Unicode characters to the valid set of characters.
+It does not follow the W3C definition of an XML name, which adds more Unicode characters to the valid set of characters.
+:::
+
 
 #### Parameters
 

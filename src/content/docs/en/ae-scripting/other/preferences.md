@@ -1,7 +1,6 @@
 ---
 title: preferences
 ---
-
 # Preferences object
 
 `app.preferences`

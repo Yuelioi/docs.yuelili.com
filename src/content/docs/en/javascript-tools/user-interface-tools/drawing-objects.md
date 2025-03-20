@@ -1,7 +1,6 @@
 ---
 title: drawing-objects
 ---
-
 # Drawing objects
 
 ScriptUI allows you to draw directly on controls to customize their appearance. You do this by calling methods of the [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object) in response to the [onDraw](control-objects.md#ondraw) event (see [Defining behavior with event callbacks and listeners](../defining-behavior-with-event-callbacks-and-listeners)).

@@ -1,7 +1,6 @@
 ---
 title: globals
 ---
-
 # Global functions
 
 #### Description
@@ -69,8 +68,10 @@ Floating-point value, the number of seconds.
 
 `generateRandomNumber()`
 
-!!! note
-    This functionality was added in After Effects 13.6 (CC 2015)
+:::note
+This functionality was added in After Effects 13.6 (CC 2015)
+:::
+
 
 #### Description
 
@@ -107,8 +108,10 @@ for (var i = 1; i <= myComp.numLayers; i++) {
 
 `getEnumAsString()`
 
-!!! note
-    This functionality was added in After Effects 24.0
+:::note
+This functionality was added in After Effects 24.0
+:::
+
 
 #### Description
 

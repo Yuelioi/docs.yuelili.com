@@ -1,7 +1,6 @@
 ---
 title: file-object
 ---
-
 # File Object
 
 Represents a file in the local file system in a platform-independent manner. All properties and methods resolve file system aliases automatically and act on the original file unless otherwise noted.
@@ -19,23 +18,16 @@ To create a File object, use the File function or the new operator. The construc
 
 The CRLF sequence for the file is preset to the system default, and the encoding is preset to the default system encoding.
 
-+-----------+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter |  Type  |                                                                                                                          Description                                                                                                                           |
-+===========+========+================================================================================================================================================================================================================================================================+
+|-----------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `path`    | String | Optional. The absolute or relative path to the file associated with this object, specified in platform-specific or URI format; see [Specifying paths](using-file-and-folder-objects.md#specifying-paths). The value stored in the object is the absolute path. |
-|           |        |                                                                                                                                                                                                                                                                |
 |           |        | The path need not refer to an existing file. If not supplied, a temporary name is generated.                                                                                                                                                                   |
-|           |        |                                                                                                                                                                                                                                                                |
 |           |        | If the path refers to an existing folder:                                                                                                                                                                                                                      |
-|           |        |                                                                                                                                                                                                                                                                |
 |           |        | - The File function returns a Folder object instead of a File object.                                                                                                                                                                                          |
 |           |        | - The new operator returns a File object for a nonexisting file with the same name.                                                                                                                                                                            |
-|           |        |                                                                                                                                                                                                                                                                |
 |           |        | !!! warning                                                                                                                                                                                                                                                    |
 |           |        |     In After Effects on MacOS, if `path.length` is more than 1002, After Effects crashes.                                                                                                                                                                      |
-|           |        |                                                                                                                                                                                                                                                                |
 |           |        |     This has been reported on MacOS 10.11.6 and After Effects 13.8 and 14.0.                                                                                                                                                                                   |
-+-----------+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ---
 
@@ -149,23 +141,16 @@ Opens the built-in platform-specific file-browsing dialog in which a user can se
 
 #### Parameters
 
-+---------------+--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 |   Parameter   |        Type        |                                                                     Description                                                                     |
-+===============+====================+=====================================================================================================================================================+
+|---------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | `prompt`      | String             | Optional. The prompt text, if the dialog allows a prompt.                                                                                           |
-+---------------+--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | `filter`      | String or Function | Optional. A filter that limits the types of files displayed in the dialog.                                                                          |
-|               |                    |                                                                                                                                                     |
 |               |                    | In Windows, a filter expression, such as `"JavaScript:*.jsx;All files:*.*"`                                                                         |
-|               |                    |                                                                                                                                                     |
 |               |                    | !!! tip                                                                                                                                             |
 |               |                    |     - Separate expression with a semicolon (`;`) to filter by all these types at once; (show `jsx` AND `all`)                                       |
 |               |                    |     - Separate with a comma (`,`) to populate the filter dropdown, to select one type at a time (show `jsx` OR `all`)                               |
-|               |                    |                                                                                                                                                     |
 |               |                    | In Mac OS, a filter function that takes a File instance and returns `true` if the file should be included in the display, `false` if it should not. |
-+---------------+--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | `multiSelect` | Boolean            | Optional. When `true`, the user can select multiple files and the return value is an array. Default is `false`.                                     |
-+---------------+--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -185,19 +170,14 @@ Opens the built-in platform-specific file-browsing dialog in which a user can se
 
 #### Parameters
 
-+-----------+--------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter |        Type        |                                                             Description                                                              |
-+===========+====================+======================================================================================================================================+
+|-----------|--------------------|--------------------------------------------------------------------------------------------------------------------------------------|
 | `prompt`  | String             | A string containing the prompt text, if the dialog allows a prompt.                                                                  |
-+-----------+--------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | `filter`  | String or Function | Optional. [Windows](../../user-interface-tools/window-object) only. A filter that limits the types of files displayed in the dialog. |
-|           |                    |                                                                                                                                      |
 |           |                    | A filter expression, such as `"JavaScript:*.jsx;All files:*.*"`                                                                      |
-|           |                    |                                                                                                                                      |
 |           |                    | !!! tip                                                                                                                              |
 |           |                    |     - Separate expression with a semicolon (`;`) to filter by all these types at once; (show `jsx` AND `all`)                        |
 |           |                    |     - Separate with a comma (`,`) to populate the filter dropdown, to select one type at a time (show `jsx` OR `all`)                |
-+-----------+--------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -666,25 +646,22 @@ Opens the referenced file for subsequent read/write operations. The method resol
 
 The method attempts to detect the encoding of the open file. It reads a few bytes at the current location and tries to detect the Byte Order Mark character 0xFFFE. If found, the current position is advanced behind the detected character and the encoding property is set to one of the strings UCS-2BE, UCS-2LE, UCS4-BE, UCS-4LE, or UTF-8. If the marker character is not found, it checks for zero bytes at the current location and makes an assumption about one of the above formats (except UTF-8). If everything fails, the encoding property is set to the system encoding.
 
-!!! warning
-    Be careful about opening a file more than once. The operating system usually permits you to do so, but if you start writing to the file using two different File objects, you can destroy your data.
+:::warning
+Be careful about opening a file more than once. The operating system usually permits you to do so, but if you start writing to the file using two different File objects, you can destroy your data.
+:::
+
 
 #### Parameters
 
-+-----------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter |  Type  |                                                                   Description                                                                   |
-+===========+========+=================================================================================================================================================+
+|-----------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | `mode`    | String | A string indicating the read/write mode. One of:                                                                                                |
-|           |        |                                                                                                                                                 |
 |           |        | - `r`: (read) Opens for reading. If the file does not exist or cannot be found, the call fails.                                                 |
 |           |        | - `w`: (write) Opens a file for writing. If the file exists, its contents are destroyed. If the file does not exist, creates a new, empty file. |
 |           |        | - `e`: (edit) Opens an existing file for reading and writing.                                                                                   |
 |           |        | - `a`: (append) Opens the file in Append mode, and moves the current position to the end of the file.                                           |
-+-----------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | `type`    | String | Optional. In Mac OS, the type of a newly created file, a 4-character string. Ignored in Windows and UNIX.                                       |
-+-----------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | `creator` | String | Optional. In Mac OS, the creator of a newly created file, a 4-character string. Ignored in Windows and UNIX.                                    |
-+-----------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -702,23 +679,16 @@ Opens the built-in platform-specific file-browsing dialog, in which the user can
 
 #### Parameters
 
-+---------------+--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 |   Parameter   |        Type        |                                                                     Description                                                                     |
-+===============+====================+=====================================================================================================================================================+
+|---------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | `prompt`      | String             | Optional. The prompt text, if the dialog allows a prompt.                                                                                           |
-+---------------+--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | `filter`      | String or Function | Optional. A filter that limits the types of files displayed in the dialog.                                                                          |
-|               |                    |                                                                                                                                                     |
 |               |                    | In Windows, a filter expression, such as `"JavaScript:*.jsx;All files:*.*"`                                                                         |
-|               |                    |                                                                                                                                                     |
 |               |                    | !!! tip                                                                                                                                             |
 |               |                    |     - Separate expression with a semicolon (`;`) to filter by all these types at once; (show `jsx` AND `all`)                                       |
 |               |                    |     - Separate with a comma (`,`) to populate the filter dropdown, to select one type at a time (show `jsx` OR `all`)                               |
-|               |                    |                                                                                                                                                     |
 |               |                    | In Mac OS, a filter function that takes a File instance and returns `true` if the file should be included in the display, `false` if it should not. |
-+---------------+--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | `multiSelect` | Boolean.           | Optional. When `true`, the user can select multiple files and the return value is an array. Default is `false`.                                     |
-+---------------+--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -792,8 +762,10 @@ Deletes the file associated with this object from disk, immediately, without mov
 
 Does not resolve aliases; instead, deletes the referenced alias or shortcut file itself.
 
-!!! warning
-    Cannot be undone. It is recommended that you prompt the user for permission before deleting.
+:::warning
+Cannot be undone. It is recommended that you prompt the user for permission before deleting.
+:::
+
 
 #### Returns
 
@@ -849,21 +821,15 @@ Differs from the class method [saveDialog()](#filesavedialog) in that it presets
 
 #### Parameters
 
-+-----------+--------------------+-----------------------------------------------------------------------------------------------------------------------+
 | Parameter |        Type        |                                                      Description                                                      |
-+===========+====================+=======================================================================================================================+
+|-----------|--------------------|-----------------------------------------------------------------------------------------------------------------------|
 | `prompt`  | String             | Optional. The prompt text, if the dialog allows a prompt.                                                             |
-+-----------+--------------------+-----------------------------------------------------------------------------------------------------------------------+
 | `filter`  | String or Function | Optional. A filter that limits the types of files displayed in the dialog.                                            |
-|           |                    |                                                                                                                       |
 |           |                    | In Windows, a filter expression, such as `"JavaScript:*.jsx;All files:*.*"`                                           |
-|           |                    |                                                                                                                       |
 |           |                    | !!! tip                                                                                                               |
 |           |                    |     - Separate expression with a semicolon (`;`) to filter by all these types at once; (show `jsx` AND `all`)         |
 |           |                    |     - Separate with a comma (`,`) to populate the filter dropdown, to select one type at a time (show `jsx` OR `all`) |
-|           |                    |                                                                                                                       |
 |           |                    | Not used in MacOS                                                                                                     |
-+-----------+--------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -883,17 +849,13 @@ Seeks to the specified position in the file. The new position cannot be less tha
 
 #### Parameters
 
-+-----------+--------+-----------------------------------------------------------------------------------------------------------------------------+
 | Parameter |  Type  |                                                         Description                                                         |
-+===========+========+=============================================================================================================================+
+|-----------|--------|-----------------------------------------------------------------------------------------------------------------------------|
 | `pos`     | Number | The new current position in the file as an offset in bytes from the start, current position, or end, depending on the mode. |
-+-----------+--------+-----------------------------------------------------------------------------------------------------------------------------+
 | `mode`    | Number | Optional. The seek mode, one of:                                                                                            |
-|           |        |                                                                                                                             |
 |           |        | - `0`: Seek to absolute position, where pos=0 is the first byte of the file. This is the default.                           |
 |           |        | - `1`: Seek relative to the current position.                                                                               |
 |           |        | - `2`: Seek backward from the end of the file.                                                                              |
-+-----------+--------+-----------------------------------------------------------------------------------------------------------------------------+
 
 
 #### Returns
@@ -924,8 +886,10 @@ Number
 
 Writes the specified text to the file at the current position. For encoded files, writing a single Unicode character may write multiple bytes.
 
-!!! warning
-    Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.
+:::warning
+Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.
+:::
+
 
 #### Parameters
 
@@ -947,8 +911,10 @@ Boolean. `true` on success.
 
 Writes the specified text to the file at the current position, and appends a Line Feed sequence in the style specified by the linefeed property.For encoded files, writing a single Unicode character may write multiple bytes.
 
-!!! warning
-    Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.
+:::warning
+Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.
+:::
+
 
 #### Parameters
 

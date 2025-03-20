@@ -1,7 +1,6 @@
 ---
 title: dollar-object
 ---
-
 # Dollar ($) object
 
 This global ExtendScript object provides a number of debugging facilities and informational methods. The properties of the $ object allow you to get global information such as the most recent run-time error, and set flags that control debugging and localization behavior. The methods allow you to output text to the JavaScript Console during script execution, control execution and other ExtendScript behavior programmatically, and gather statistics on object use.
@@ -143,8 +142,10 @@ Gets or sets low-level debug output flags. A logical AND of the following bit fl
 - `0x0100` (256): Enables extended error handling (see strict).
 - `0x0200` (512): Enables the localization feature of the toString method. Equivalent to the localize property.
 
-!!! note
-    Other bit values are not public and should not be used.
+:::note
+Other bit values are not public and should not be used.
+:::
+
 
 ---
 
@@ -453,12 +454,10 @@ Nothing
 
 Retrieves the value of the specified environment variable, or null if no such variable is defined.
 
-!!! note
-    On MacOS the only env vars that will be accessible are:
+:::note
+- Custom environment variables created with `launchctl setenv CUSTOM_VAR "custom_value"`
+:::
 
-    - System default environment variable
-    - Custom environment variables created by the `$.setenv()` metho
-    - Custom environment variables created with `launchctl setenv CUSTOM_VAR "custom_value"`
 
 Any env vars set in .bash_profile, .bashrc, .profile, .zshenv, or .zshrc will be ignored.
 

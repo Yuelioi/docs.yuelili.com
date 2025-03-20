@@ -1,7 +1,6 @@
 ---
 title: scriptui-class
 ---
-
 # ScriptUI class
 
 The globally available ScriptUI class provides central information about the ScriptUI module. This object is not instantiable.
@@ -180,9 +179,8 @@ See [Registering event listeners for windows or controls](defining-behavior-with
 
 #### Parameters
 
-+-------------+--------+----------------------------+
 |  Parameter  |  Type  |        Description         |
-+=============+========+============================+
+|-------------|--------|----------------------------|
 | `eventType` | String | The type of event, one of: |
 |             |        | - `UIEvent`                |
 |             |        | - `KeyboardEvent`          |

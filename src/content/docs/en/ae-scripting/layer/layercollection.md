@@ -1,7 +1,6 @@
 ---
 title: layercollection
 ---
-
 # LayerCollection object
 
 `app.project.item(index).layers`
@@ -10,8 +9,10 @@ title: layercollection
 
 The LayerCollection object represents a set of layers. The LayerCollection belonging to a [CompItem object](../../item/compitem) contains all the layer objects for layers in the composition. The methods of the collection object allow you to manipulate the layer list.
 
-!!! info
-    LayerCollection is a subclass of [Collection object](../../other/collection). All methods and attributes of Collection, in addition to those listed below, are available when working with LayerCollection.
+:::info
+LayerCollection is a subclass of [Collection object](../../other/collection). All methods and attributes of Collection, in addition to those listed below, are available when working with LayerCollection.
+:::
+
 
 #### Example
 
@@ -40,17 +41,12 @@ Creates a new [AVLayer object](../avlayer) containing the specified item, and ad
 
 #### Parameters
 
-+------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter  |                Type                |                                                                                                                                Description                                                                                                                                |
-+============+====================================+===========================================================================================================================================================================================================================================================================+
+|------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `item`     | [AVItem object](../../item/avitem) | The item to be added.                                                                                                                                                                                                                                                     |
-+------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `duration` | Floating-point value               | Optional. The length of a still layer in seconds. Used only if the item contains a piece of still footage. Has no effect on movies, sequences or audio.                                                                                                                   |
-|            |                                    |                                                                                                                                                                                                                                                                           |
 |            |                                    | If supplied, sets the duration value of the new layer. Otherwise, the duration value is set according to user preferences.                                                                                                                                                |
-|            |                                    |                                                                                                                                                                                                                                                                           |
 |            |                                    | By default, this is the same as the duration of the containing [CompItem](../../item/compitem). To set another preferred value, open `Edit > Preferences > Import` (Windows) or `After Effects > Preferences > Import` (Mac OS), and specify options under Still Footage. |
-+------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -130,13 +126,10 @@ Creates a new null layer and adds the [AVLayer object](../avlayer) to this colle
 
 #### Parameters
 
-+------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter  |         Type         |                                                                                                                                Description                                                                                                                                |
-+============+======================+===========================================================================================================================================================================================================================================================================+
+|------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `duration` | Floating-point value | Optional. The length of a still layer in seconds. If supplied, sets the `duration` value of the new layer. Otherwise, the `duration` value is set according to user preferences.                                                                                          |
-|            |                      |                                                                                                                                                                                                                                                                           |
 |            |                      | By default, this is the same as the duration of the containing [CompItem](../../item/compitem). To set another preferred value, open `Edit > Preferences > Import (Windows)` or `After Effects > Preferences > Import (Mac OS)`, and specify options under Still Footage. |
-+------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -172,23 +165,15 @@ Creates a new [SolidSource object](../../sources/solidsource), with values set a
 
 #### Parameters
 
-+---------------+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |   Parameter   |                 Type                 |                                                                                                                               Description                                                                                                                                |
-+===============+======================================+==========================================================================================================================================================================================================================================================================+
+|---------------|--------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `color`       | Array of three floating-point values | The color of the solid. Three numbers, `[R, G, B]`, in the range `[0.0..1.0]`                                                                                                                                                                                            |
-+---------------+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `name`        | String                               | The name of the solid.                                                                                                                                                                                                                                                   |
-+---------------+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `width`       | Integer                              | The width of the solid in pixels, in the range `[4..30000]`                                                                                                                                                                                                              |
-+---------------+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `height`      | Integer                              | The height of the solid in pixels, in the range `[4..30000]`                                                                                                                                                                                                             |
-+---------------+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `pixelAspect` | Floating-point value                 | The pixel aspect ratio of the solid, in the range `[0.01..100.0]`                                                                                                                                                                                                        |
-+---------------+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `duration`    | Floating-point value                 | Optional. The length of a still layer in seconds. If supplied, sets the `duration` value of the new layer. Otherwise, the `duration` value is set according to user preferences.                                                                                         |
-|               |                                      |                                                                                                                                                                                                                                                                          |
 |               |                                      | By default, this is the same as the duration of the containing [CompItem](../../item/compitem). To set another preferred value, open `Edit > Preferences > Import` (Windows) or `After Effects > Preferences > Import` (MacOS), and specify options under Still Footage. |
-+---------------+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -220,8 +205,10 @@ Creates a new point text layer with [TextDocument.lineOrientation](../text/textd
 
 `app.project.item(index).layers.addVerticalBoxText([width, height])`
 
-!!! note
-    This functionality was added in After Effects 24.2
+:::note
+This functionality was added in After Effects 24.2
+:::
+
 
 #### Description
 
@@ -244,8 +231,10 @@ TextLayer object.
 
 `app.project.item(index).layers.addVerticalText([sourceText])`
 
-!!! note
-    This functionality was added in After Effects 24.2
+:::note
+This functionality was added in After Effects 24.2
+:::
+
 
 #### Description
 

@@ -1,7 +1,6 @@
 ---
 title: socket-object-reference
 ---
-
 # Socket Object Reference
 
 This section provides details of the object's properties and methods.

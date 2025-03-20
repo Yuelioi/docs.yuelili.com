@@ -1,7 +1,6 @@
 ---
 title: tips-tricks
 ---
-
 # Tips & Tricks
 
 ## Best Practices

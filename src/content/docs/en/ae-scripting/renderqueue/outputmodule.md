@@ -1,7 +1,6 @@
 ---
 title: outputmodule
 ---
-
 # OutputModule object
 
 `app.project.renderQueue.item(index).outputModule(index)`
@@ -115,8 +114,10 @@ Nothing.
 
 `app.project.renderQueue.item(index).outputModule(index).getSetting()`
 
-!!! note
-    This functionality was added in After Effects 13.0 (CC 2014)
+:::note
+This functionality was added in After Effects 13.0 (CC 2014)
+:::
+
 
 #### Description
 
@@ -135,8 +136,10 @@ See the example in [RenderQueueItem.getSetting()](renderqueueitem.md#renderqueue
 
 `app.project.renderQueue.item(index).outputModule(index).getSettings()`
 
-!!! note
-    This functionality was added in After Effects 13.0 (CC 2014)
+:::note
+This functionality was added in After Effects 13.0 (CC 2014)
+:::
+
 
 #### Description
 
@@ -220,8 +223,10 @@ Nothing.
 
 `app.project.renderQueue.item(index).outputModule(index).setSetting()`
 
-!!! note
-    This functionality was added in After Effects 13.0 (CC 2014)
+:::note
+This functionality was added in After Effects 13.0 (CC 2014)
+:::
+
 
 #### Description
 
@@ -240,16 +245,20 @@ See the example in [RenderQueueItem.setSetting()](renderqueueitem.md#renderqueue
 
 `app.project.renderQueue.item(index).outputModule(index).setSettings()`
 
-!!! note
-    This functionality was added in After Effects 13.0 (CC 2014)
+:::note
+This functionality was added in After Effects 13.0 (CC 2014)
+:::
+
 
 #### Description
 
 - Depreciated Source: [https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 - Archived version: [https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 
-!!! warning
-    There is a bug that causes OutputModule object to be invalidated after the output module setting is modified, so you need to retrieve the Output Module again after you modify it.
+:::warning
+There is a bug that causes OutputModule object to be invalidated after the output module setting is modified, so you need to retrieve the Output Module again after you modify it.
+:::
+
 
 #### Examples
 

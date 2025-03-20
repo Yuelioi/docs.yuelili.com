@@ -1,7 +1,6 @@
 ---
 title: layer-space-transforms
 ---
-
 # Layer Space Transforms
 
 `thisLayer`
@@ -10,8 +9,10 @@ Use layer space transform methods to transform values from one space to another,
 
 Composition (comp) and world space are the same for 2D layers. For 3D layers, however, composition space is relative to the active camera, and world space is independent of the camera.
 
-!!! info
-    On this page, we're going to use `thisLayer` as a sample on how to call these items, however note that any method that returns a [Layer](.././layer) will work.
+:::info
+On this page, we're going to use `thisLayer` as a sample on how to call these items, however note that any method that returns a [Layer](.././layer) will work.
+:::
+
 
 #### "From" & "To" Methods
 
@@ -85,11 +86,15 @@ fromComp(thisComp.layer(2).position)
 
 Transforms a point from layer space to view-independent world space.
 
-!!! tip
-    Dan Ebberts provides an expression on his [MotionScript website](http://www.motionscript.com/design-guide/auto-orient-y-only.html) that uses the `toWorld` method to auto-orient a layer along only one axis. This is useful, for example, for having characters turn from side to side to follow the camera while remaining upright.
+:::tip
+Dan Ebberts provides an expression on his [MotionScript website](http://www.motionscript.com/design-guide/auto-orient-y-only.html) that uses the `toWorld` method to auto-orient a layer along only one axis. This is useful, for example, for having characters turn from side to side to follow the camera while remaining upright.
+:::
 
-!!! tip
-    Rich Young provides a set of expressions on his [AE Portal website](http://aeportal.blogspot.com/2010/02/fly-around-cc-sphered-layer-in-after.html) that use the toWorld method link a camera and light to a layer with the CC Sphere effect.
+
+:::tip
+Rich Young provides a set of expressions on his [AE Portal website](http://aeportal.blogspot.com/2010/02/fly-around-cc-sphered-layer-in-after.html) that use the toWorld method link a camera and light to a layer with the CC Sphere effect.
+:::
+
 
 #### Parameters
 
@@ -263,8 +268,10 @@ fromWorld(thisComp.layer(2).position)
 
 Projects a point located in composition space to a point on the surface of the layer (zero z-value) at the location where it appears when viewed from the active camera. This method is useful for setting effect control points.
 
-!!! note
-    Use with 3D layers only.
+:::note
+Use with 3D layers only.
+:::
+
 
 #### Parameters
 

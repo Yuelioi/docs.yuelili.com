@@ -1,7 +1,6 @@
 ---
 title: defining-entry-points-for-indirect-access
 ---
-
 # Defining entry points for indirect access
 
 The C-client object interface for external libraries allows your C or C++ shared-library code to define, create, use, and manage JavaScript objects.
@@ -22,22 +21,15 @@ Your library must define this global function in order to use the object interfa
 
 #### Parameters
 
-+-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter |                                                                                                         Description                                                                                                          |
-+===========+==============================================================================================================================================================================================================================+
+|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `kReason` | The reason for this call, one of these constants:                                                                                                                                                                            |
-|           |                                                                                                                                                                                                                              |
 |           | - `kSoCClient_init`: The function is being called for initialization upon load.                                                                                                                                              |
 |           | - `kSoCClient_term`.: The function is being called for termination upon unload.                                                                                                                                              |
-+-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `pServer` | A pointer to an [SoServerInterface](#soserverinterface) containing function pointers for the entry points, which enable the shared-library code to call into JavaScript to create and access JavaScript classes and objects. |
-|           |                                                                                                                                                                                                                              |
 |           | The shared-library code is responsible for storing this structure between the initialization and termination call, and retrieving it to access the functions.                                                                |
-+-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `hServer` | An [Support structures](#support-structures) reference for this shared library. The server is an object factory that creates and manages [Support structures](#support-structures) objects.                                  |
-|           |                                                                                                                                                                                                                              |
 |           | The shared-library code is responsible for storing this structure between the initialization and termination calls. You must pass it to [taggedDataInit()](#taggeddatainit) and [taggedDataFree()](#taggeddatafree).         |
-+-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -676,25 +668,17 @@ typedef struct {
 
 #### Parameters
 
-+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter |                                                                                                                                   Description                                                                                                                                   |
-+===========+=================================================================================================================================================================================================================================================================================+
+|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `intval`  | Integer and boolean data values. Type is `kTypeInteger`, `kTypeUInteger`, or `kTypeBool`.                                                                                                                                                                                       |
-+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `fltval`  | Floating-point numeric data values. Type is `kTypeDouble`.                                                                                                                                                                                                                      |
-+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | String    | String data values. All strings are UTF-8 encoded and null-terminated. Type is `kTypeString` or `kTypeScript`.                                                                                                                                                                  |
-|           |                                                                                                                                                                                                                                                                                 |
 |           | - The library must define an entry point [ESFreeMem()](defining-entry-points-for-direct-access.md#esfreemem), which ExtendScript calls to release a returned string pointer. If this entry point is missing, ExtendScript does not attempt to release any returned string data. |
 |           | - When a function returns a string of type kTypeScript, ExtendScript evaluates the script and returns the result of evaluation as the result of the function call.                                                                                                              |
-+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `hObject` | A C/C++ representation of a JavaScript object data value. Type is `kTypeLiveObject` or `kTypeLiveObjectRelease`.                                                                                                                                                                |
-|           |                                                                                                                                                                                                                                                                                 |
 |           | - When a function returns an object of type kTypeLiveObject, ExtendScript does not release the object.                                                                                                                                                                          |
 |           | - When a function returns an object of type kTypeLiveObjectRelease, ExtendScript releases the object.                                                                                                                                                                           |
-+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `type`    | The data type tag. One of:                                                                                                                                                                                                                                                      |
-|           |                                                                                                                                                                                                                                                                                 |
 |           | - `kTypeUndefined`: a null value, equivalent of JavaScript `undefined`. The return value for a function is always set to this by default.                                                                                                                                       |
 |           | - `kTypeBool`: a boolean value, 0 for `false`, 1 for `true`.                                                                                                                                                                                                                    |
 |           | - `kTypeDouble`: a 64-bit floating-point number.                                                                                                                                                                                                                                |
@@ -704,6 +688,4 @@ typedef struct {
 |           | - `kTypeInteger`: a 32-bit signed integer value.                                                                                                                                                                                                                                |
 |           | - `kTypeUInteger`: a 32-bit unsigned integer value.                                                                                                                                                                                                                             |
 |           | - `kTypeScript`: a string containing an executable JavaScript script.                                                                                                                                                                                                           |
-+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `filler`  | A 4-byte filler for 8-byte alignment.                                                                                                                                                                                                                                           |
-+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

@@ -1,13 +1,14 @@
 ---
 title: general
 ---
-
 # Layer General
 
 `thisLayer`
 
-!!! info
-    On this page, we're going to use `thisLayer` as a sample on how to call these items, however note that any method that returns a [Layer](.././layer) will work.
+:::info
+On this page, we're going to use `thisLayer` as a sample on how to call these items, however note that any method that returns a [Layer](.././layer) will work.
+:::
+
 
 ---
 
@@ -149,8 +150,10 @@ Number
 
 Returns the In point of the layer, in seconds.
 
-!!! note
-    In general, the value of outPoint is greater than the value of inPoint. However, if a layer is reversed in time, the value of inPoint is greater than the value of outPoint. Similarly, the value of startTime can be greater than the value of inPoint.
+:::note
+In general, the value of outPoint is greater than the value of inPoint. However, if a layer is reversed in time, the value of inPoint is greater than the value of outPoint. Similarly, the value of startTime can be greater than the value of inPoint.
+:::
+
 
 #### Type
 
@@ -234,8 +237,10 @@ Number
 
 Samples the color and alpha channel values of a layer and returns the average alpha-weighted value of the pixels within the specified distance of the point as an array: `[red, green, blue, alpha]`.
 
-!!! note
-    Using `sampleImage()` in an expression no longer disables multiprocessing.
+:::note
+Using `sampleImage()` in an expression no longer disables multiprocessing.
+:::
+
 
 #### Parameters
 

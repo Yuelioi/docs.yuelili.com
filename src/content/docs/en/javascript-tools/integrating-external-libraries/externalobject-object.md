@@ -1,7 +1,6 @@
 ---
 title: externalobject-object
 ---
-
 # ExternalObject object
 
 You specify the name of the library in the constructor. The constructor searches for the named library using the paths defined in the static property [ExternalObject.searchFolders](#externalobjectsearchfolders).
@@ -19,20 +18,15 @@ Before loading the library, the current folder is temporarily switched to the lo
 
 `obj = new ExternalObject ("lib:" + filespec, arg1, ...argn);`
 
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |   Parameter   |                                                                                  Description                                                                                   |
-+===============+================================================================================================================================================================================+
+|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `filespec`    | The specifier "lib:" is case sensitive, and serves as the marker for dynamic libraries. Concatenate this to the base name of the shared library, with or without an extension. |
-|               |                                                                                                                                                                                |
 |               | ExtendScript appends a file extension if necessary, according to the operating system:                                                                                         |
-|               |                                                                                                                                                                                |
 |               | - `.dll` in Windows                                                                                                                                                            |
 |               | - `.bundle` or `.framework` in Mac OS (only Mach-O bundles are supported)                                                                                                      |
 |               | - `.so` in UNIX (except for HP/UX, where the extension is `.sl`)                                                                                                               |
 |               |     - The name of the library is case sensitive in UNIX.                                                                                                                       |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `arg1...argn` | Optional. Any number of arguments to pass to the library's initialization routine.                                                                                             |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 For example:

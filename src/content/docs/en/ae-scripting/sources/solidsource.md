@@ -1,7 +1,6 @@
 ---
 title: solidsource
 ---
-
 # SolidSource object
 
 `app.project.item(index).mainSource`
@@ -13,8 +12,10 @@ title: solidsource
 
 The SolidSource object represents a solid-color footage source.
 
-!!! info
-    SolidSource is a subclass of [FootageSource](../footagesource). All methods and attributes of FootageSource, in addition to those listed below, are available when working with SolidSource.
+:::info
+SolidSource is a subclass of [FootageSource](../footagesource). All methods and attributes of FootageSource, in addition to those listed below, are available when working with SolidSource.
+:::
+
 
 ---
 

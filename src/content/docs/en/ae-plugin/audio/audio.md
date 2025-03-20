@@ -1,7 +1,6 @@
 ---
 title: audio
 ---
-
 # Audio
 
 After Effects can process audio encoded at up to 96Khz, floating point (24-bit) resolution, mono or stereo.

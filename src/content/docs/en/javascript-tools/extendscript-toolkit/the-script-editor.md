@@ -1,7 +1,6 @@
 ---
 title: the-script-editor
 ---
-
 # The Script Editor
 
 The Script Editor is a full-featured source code editor for JavaScript. You can open any number of Script Editor document windows; each displays one Unicode source code document.

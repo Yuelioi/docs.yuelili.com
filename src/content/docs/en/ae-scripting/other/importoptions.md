@@ -1,7 +1,6 @@
 ---
 title: importoptions
 ---
-
 # ImportOptions object
 
 `new ImportOptions();`
@@ -76,8 +75,10 @@ An `ImportAsType` enumerated value; read/write. One of:
 
 `importOptions.rangeEnd`
 
-!!! warning
-    This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::warning
+This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::
+
 
 #### Description
 
@@ -98,8 +99,10 @@ Integer; read/write.
 
 `importOptions.rangeStart`
 
-!!! warning
-    This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::warning
+This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::
+
 
 #### Description
 
@@ -160,16 +163,13 @@ Reports whether the file can be imported as the source of a particular object ty
 
 #### Parameters
 
-+-----------+----------------------+------------------------------------------------+
 | Parameter |         Type         |                  Description                   |
-+===========+======================+================================================+
+|-----------|----------------------|------------------------------------------------|
 | `type`    | `ImportAsType` enum. | The type of file that can be imported. One of: |
-|           |                      |                                                |
 |           |                      | - `ImportAsType.COMP`                          |
 |           |                      | - `ImportAsType.FOOTAGE`                       |
 |           |                      | - `ImportAsType.COMP_CROPPED_LAYERS`           |
 |           |                      | - `ImportAsType.PROJECT`                       |
-+-----------+----------------------+------------------------------------------------+
 
 #### Returns
 
@@ -190,8 +190,10 @@ if (io.canImportAs(ImportAsType.COMP)) {
 
 `importOptions.isFileNameNumbered(file)`
 
-!!! warning
-    This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::warning
+This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::
+
 
 #### Description
 

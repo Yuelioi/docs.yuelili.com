@@ -1,7 +1,6 @@
 ---
 title: application-and-namespace-specifiers
 ---
-
 # Application and namespace specifiers
 
 All forms of interapplication communication use [Application specifiers](#application-specifiers) to identify Adobe applications.
@@ -20,11 +19,9 @@ When a script for one application invokes cross-DOM or exported functions, it id
 
 Application specifiers are strings that encode the application name, a version number and a language code. They take the following form: `appname[_instance[[-version[-locale]]]`
 
-+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Specifier  |                                                                                                Description                                                                                                 |
-+============+============================================================================================================================================================================================================+
+|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `appname`  | An Adobe application name. For example, these are the identifying strings for applications that can use the ExtendScript Toolkit in Creative Suite 4:                                                      |
-|            |                                                                                                                                                                                                            |
 |            | - `aftereffects`                                                                                                                                                                                           |
 |            | - `bridge`                                                                                                                                                                                                 |
 |            | - `estoolkit`                                                                                                                                                                                              |
@@ -33,17 +30,11 @@ Application specifiers are strings that encode the application name, a version n
 |            | - `indesign`                                                                                                                                                                                               |
 |            | - `indesignserver`                                                                                                                                                                                         |
 |            | - `photoshop`                                                                                                                                                                                              |
-+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `instance` | Optional. An additional string appended with an underscore, that distinguishes the instance for those applications (such as InDesign Server) that support the launching and running of multiple instances. |
-|            |                                                                                                                                                                                                            |
 |            | For example, for a server launched with SOAP port 12345, the specifier would be `indesignserver_configuration_12345`.                                                                                      |
-+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `version`  | Optional. A number indicating at least a major version. The number should include a minor version separated from the major version number by a dot; for example, 1.5.                                      |
-|            |                                                                                                                                                                                                            |
 |            | If not supplied, assumes the same suite version as the sending application, if possible; otherwise, the highest available version number.                                                                  |
-|            |                                                                                                                                                                                                            |
 |            | This is the complete list of identifying names and version numbers for applications that can use interapplication messaging in Creative Suite 4:                                                           |
-|            |                                                                                                                                                                                                            |
 |            | - `acrobat-9.0`                                                                                                                                                                                            |
 |            | - `aftereffects-9.0`                                                                                                                                                                                       |
 |            | - `soundbooth-2.0`                                                                                                                                                                                         |
@@ -64,13 +55,9 @@ Application specifiers are strings that encode the application name, a version n
 |            | - `audition-4.0`                                                                                                                                                                                           |
 |            | - `ame-1.0`                                                                                                                                                                                                |
 |            | - `exman-2.0`                                                                                                                                                                                              |
-+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `locale`   | Optional. An Adobe locale code, consisting of a 2-letter ISO-639 language code and an optional 2-letter ISO 3166 country code separated by an underscore. Case is significant.                             |
-|            |                                                                                                                                                                                                            |
 |            | For example, `en_us`, `en_uk`, `ja_jp`, `de_de`, `fr_fr`. If not supplied, ExtendScript uses the current platform locale.                                                                                  |
-|            |                                                                                                                                                                                                            |
 |            | Do not specify a locale for a multilingual application, such as Bridge, that has all locale versions included in a single installation.                                                                    |
-+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 The following are examples of legal specifiers:
 

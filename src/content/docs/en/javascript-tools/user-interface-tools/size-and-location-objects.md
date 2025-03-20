@@ -1,7 +1,6 @@
 ---
 title: size-and-location-objects
 ---
-
 # Size and location objects
 
 ScriptUI defines objects to represent the complex values of properties that place and size windows and user-interface elements. These objects cannot be created directly, but are created when you set the corresponding property. That property then returns that object. For example, the `bounds` property returns a `Bounds` object.

@@ -1,7 +1,6 @@
 ---
 title: messaging-framework-api-reference
 ---
-
 # Messaging framework API reference
 
 This application programming interface (API) defines a communication protocol between message-enabled applications. These objects are available to all ExtendScript scripts when any of the applications is loaded.

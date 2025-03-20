@@ -1,13 +1,14 @@
 ---
 title: random-numbers
 ---
-
 # Random Numbers
 
 These items deal with randomness in expressions.
 
-!!! note
-    The [wiggle()](../objects/property.md#wiggle) method—which is used to randomly vary a property value—is in the [Property](../../objects/property) attributes and methods category.
+:::note
+The [wiggle()](../objects/property.md#wiggle) method—which is used to randomly vary a property value—is in the [Property](../../objects/property) attributes and methods category.
+:::
+
 
 ---
 
@@ -102,8 +103,10 @@ If `maxValOrArray` is a Number, this method returns a number in the range from `
 
 If `maxValOrArray` is an Array, this method returns an Array with the same dimension as `maxValOrArray`, with each component ranging from `0` to the corresponding component of `maxValOrArray`.
 
-!!! note
-    In After Effects CC and CS6, the behavior of random() is changed to be more random when layer IDs are close together. The wiggle() expression is not affected.
+:::note
+In After Effects CC and CS6, the behavior of random() is changed to be more random when layer IDs are close together. The wiggle() expression is not affected.
+:::
+
 
 #### Parameters
 

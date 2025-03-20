@@ -1,7 +1,6 @@
 ---
 title: accessing-camera-light-information
 ---
-
 # Accessing Camera & Light Information
 
 Using functions provided in the [AEGP_PFInterfaceSuite](../aegps/aegp-suites.md#aegp_pfinterfacesuite1), effects can access camera and lighting information for the layer to which they're applied; see the Resizer sample.

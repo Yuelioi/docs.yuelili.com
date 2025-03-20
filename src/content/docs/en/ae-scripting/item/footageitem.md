@@ -1,7 +1,6 @@
 ---
 title: footageitem
 ---
-
 # FootageItem object
 
 `app.project.item(index)`
@@ -11,8 +10,10 @@ title: footageitem
 
 The FootageItem object represents a footage item imported into a project, which appears in the Project panel. These are accessed by position index number in a project's item collection.
 
-!!! info
-    FootageItem is a subclass of [AVItem object](../avitem), which is a subclass of [Item object](../item). All methods and attributes of AVItem and Item, in addition to those listed below, are available when working with FootageItem.
+:::info
+FootageItem is a subclass of [AVItem object](../avitem), which is a subclass of [Item object](../item). All methods and attributes of AVItem and Item, in addition to those listed below, are available when working with FootageItem.
+:::
+
 
 ---
 
@@ -64,8 +65,10 @@ If this is a FileSource object, and the [footageMissing](avitem.md#avitemfootage
 
 Opens the footage in a Footage panel, and moves the Footage panel to front and gives it focus.
 
-!!! tip
-    Missing and placeholder footage can be opened using this method, but cannot manually (via double-clicking it).
+:::tip
+Missing and placeholder footage can be opened using this method, but cannot manually (via double-clicking it).
+:::
+
 
 #### Parameters
 

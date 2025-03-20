@@ -1,20 +1,23 @@
 ---
 title: threedmodellayer
 ---
-
 # ThreeDModelLayer object
 
 `app.project.item(index).layer(index)`
 
-!!! note
-    This functionality was added in After Effects 24.4
+:::note
+This functionality was added in After Effects 24.4
+:::
+
 
 #### Description
 
 The ThreeDModelLayer object represents a 3D Model layer within a composition.
 
-!!! info
-    ThreeDModelLayer is a subclass of [AVLayer object](../avlayer). All methods and attributes of AVLayer are available when working with ThreeDModelLayer.
+:::info
+ThreeDModelLayer is a subclass of [AVLayer object](../avlayer). All methods and attributes of AVLayer are available when working with ThreeDModelLayer.
+:::
+
 
 #### AE Properties
 

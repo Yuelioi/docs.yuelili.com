@@ -1,7 +1,6 @@
 ---
 title: shape
 ---
-
 # Shape object
 
 `app.project.item(index).layer(index).property(index).property("maskShape").value`
@@ -20,8 +19,10 @@ RotoBezier masks calculate their tangents automatically. (See [MaskPropertyGroup
 
 For closed mask shapes, variable-width mask feather points can exist anywhere along the mask path. Feather points are part of the Mask Path property. Reference a specific feather point by the number of the mask path segment (portion of the path between adjacent vertices) where it appears.
 
-!!! tip
-    The feather points on a mask are listed in an array in the order that they were created.
+:::tip
+The feather points on a mask are listed in an array in the order that they were created.
+:::
+
 
 #### Examples
 
@@ -81,8 +82,10 @@ Boolean; read/write.
 
 An array containing each feather point's radius interpolation type (0 for non-Hold feather points, 1 for Hold feather points).
 
-!!! tip
-    Values are stored in the array in the order that feather points are created.
+:::tip
+Values are stored in the array in the order that feather points are created.
+:::
+
 
 #### Type
 
@@ -98,8 +101,10 @@ Array of integers (0 or 1); read/write.
 
 An array containing each feather point's radius (feather amount); inner feather points have negative values.
 
-!!! tip
-    Values are stored in the array in the order that feather points are created.
+:::tip
+Values are stored in the array in the order that feather points are created.
+:::
+
 
 #### Type
 
@@ -115,8 +120,10 @@ Array of floating-point values; read/write.
 
 An array containing each feather point's relative angle percentage between the two normals on either side of a curved outer feather boundary at a corner on a mask path. The angle value is 0% for feather points not at corners.
 
-!!! tip
-    Values are stored in the array in the order that feather points are created.
+:::tip
+Values are stored in the array in the order that feather points are created.
+:::
+
 
 #### Type
 
@@ -132,8 +139,10 @@ Array of floating-point percentage values (0 to 100); read/write.
 
 An array containing each feather point's relative position, from 0 to 1, on its mask path segment (section of the mask path between vertices, numbered starting at 0).
 
-!!! tip
-    Values are stored in the array in the order that feather points are created. To move a feather point to a different mask path segment, first change the [featherSegLocs](#shapefeatherseglocs) attribute value, then this attribute.
+:::tip
+Values are stored in the array in the order that feather points are created. To move a feather point to a different mask path segment, first change the [featherSegLocs](#shapefeatherseglocs) attribute value, then this attribute.
+:::
+
 
 #### Type
 
@@ -149,8 +158,10 @@ Array of floating-point values (0 to 1); read/write.
 
 An array containing each feather point's mask path segment number (section of the mask path between vertices, numbered starting at 0).
 
-!!! tip
-    Values are stored in the array in the order that feather points are created. Move a feather point to a different segment by changing both its segment number (this attribute) and, optionally, its [featherRelSegLocs](#shapefeatherrelseglocs) attribute value.
+:::tip
+Values are stored in the array in the order that feather points are created. Move a feather point to a different segment by changing both its segment number (this attribute) and, optionally, its [featherRelSegLocs](#shapefeatherrelseglocs) attribute value.
+:::
+
 
 #### Type
 
@@ -186,8 +197,10 @@ layer.mask(1).property("ADBE Mask Shape").setValue(my_maskShape);
 
 An array containing each feather point's tension amount, from 0 (0% tension) to 1 (100% tension).
 
-!!! tip
-    Values are stored in the array in the order that feather points are created.
+:::tip
+Values are stored in the array in the order that feather points are created.
+:::
+
 
 #### Type
 
@@ -203,9 +216,10 @@ Array of floating-point values (0 to 1); read/write.
 
 An array containing each feather point's direction, either 0 (outer feather point) or 1 (inner feather point).
 
-!!! tip
-    You cannot change the direction of a feather point after it has been created.
-    Values are stored in the array in the order that feather points are created.
+:::tip
+Values are stored in the array in the order that feather points are created.
+:::
+
 
 #### Type
 

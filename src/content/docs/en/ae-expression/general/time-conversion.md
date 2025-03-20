@@ -1,13 +1,14 @@
 ---
 title: time-conversion
 ---
-
 # Time Conversion
 
 These methods are all about converting between various time formats.
 
-!!! tip
-    If you want more control over the look of timecode in your footage, use the `timeToCurrentFormat()` method or other `timeTo` methods to generate the timecode instead of using the Timecode or Numbers effect.
+:::tip
+If you want more control over the look of timecode in your footage, use the `timeToCurrentFormat()` method or other `timeTo` methods to generate the timecode instead of using the Timecode or Numbers effect.
+:::
+
 
 #### Example
 
@@ -61,8 +62,10 @@ Converts the value of `t` to a String representing time in the current Project S
 | `isDuration`    | Boolean | Optional. Whether `t` represents a difference between two times, vs an absolute time. Absolute times are rounded down toward negative infinity; durations are rounded away from zero (up for positive values). Defaults to `false`. |
 | `ntscDropFrame` | Boolean | Optional. If `false`, the result is NTSC non-drop-frame timecode. If `true`, the result is NTSC drop-frame timecode. Defaults to `thisComp.ntscDropFrame`.                                                                          |
 
-!!! note
-    The `ntscDropFrame` argument was added in After Effects CS5.5.
+:::note
+The `ntscDropFrame` argument was added in After Effects CS5.5.
+:::
+
 
 #### Returns
 

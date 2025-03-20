@@ -1,13 +1,14 @@
 ---
 title: vscode-extension-features
 ---
-
 # VS Code Extension Features
 
 Once you have the Extendscript VS Code Extension up and running, there are a few other things you can do; [export to jsxbin](#exporting-as-binary), [use breakpoints in your code](#using-breakpoints), and more.
 
-!!! note
-    This guide is meant to give insight on how to use specific Extendscript for VS Code features.
+:::note
+This guide is meant to give insight on how to use specific Extendscript for VS Code features.
+:::
+
 
 If you're looking on how to get up and running with the extension, see [Getting Started with the VS Code Debugger](../getting-started-with-vscode-debugger).
 
@@ -51,8 +52,10 @@ To export your script as binary, you have a few options:
 
 The VS Code extension allows you to export either single files or entire directories via the command line, but it takes a bit of work on your end.
 
-!!! warning
-    While there is a built-in way to do it, it can be a fairly unfriendly process. As an alternative, consider the gulp-accessible [npm package jsxbin](https://www.npmjs.com/package/jsxbin). It does the same as below, but with much less user involvement.
+:::warning
+While there is a built-in way to do it, it can be a fairly unfriendly process. As an alternative, consider the gulp-accessible [npm package jsxbin](https://www.npmjs.com/package/jsxbin). It does the same as below, but with much less user involvement.
+:::
+
 
 There are reports that this package has issues on Windows. As an alternative gulp task, you can try [this script](https://bitbucket.org/motiondesign/workspace/snippets/aLzaX5) from [Justin Taylor](http://justintaylor.tv/).
 

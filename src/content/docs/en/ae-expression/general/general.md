@@ -1,7 +1,6 @@
 ---
 title: general
 ---
-
 # General
 
 The methods and attributes in this category apply to–and can be used by–nearly *every* expression in After Effects.

@@ -1,7 +1,6 @@
 ---
 title: index
 ---
-
 # User-Interface Tools
 
 Adobe provides the ScriptUI component, which works with the ExtendScript JavaScript interpreter to provide JavaScript scripts with the ability to create and interact with user interface elements. It provides an object model for windows and user-interface control elements within an Adobe application.

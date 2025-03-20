@@ -1,7 +1,6 @@
 ---
 title: layer
 ---
-
 # Layer object
 
 `app.project.item(index).layer(index)`
@@ -10,11 +9,15 @@ title: layer
 
 The Layer object provides access to layers within compositions. It can be accessed from an item's layer collection either by index number or by a name string.
 
-!!! info
-    Layer is a subclass of [PropertyGroup](../../property/propertygroup), which is a subclass of [PropertyBase](../../property/propertybase). All methods and attributes of PropertyGroup, in addition to those listed below, are available when working with Layer, with the exception that `propertyIndex` attribute is set to `undefined`.
+:::info
+Layer is a subclass of [PropertyGroup](../../property/propertygroup), which is a subclass of [PropertyBase](../../property/propertybase). All methods and attributes of PropertyGroup, in addition to those listed below, are available when working with Layer, with the exception that `propertyIndex` attribute is set to `undefined`.
+:::
 
-!!! info
-    Layer is the base class for [CameraLayer object](../cameralayer), [LightLayer object](../lightlayer), and [AVLayer object](../avlayer), so Layer attributes and methods are available when working with all layer types. Layers contain AE properties, in addition to their JavaScript attributes and methods. For examples of how to access properties in layers, see [PropertyBase object](../../property/propertybase).
+
+:::info
+Layer is the base class for [CameraLayer object](../cameralayer), [LightLayer object](../lightlayer), and [AVLayer object](../avlayer), so Layer attributes and methods are available when working with all layer types. Layers contain AE properties, in addition to their JavaScript attributes and methods. For examples of how to access properties in layers, see [PropertyBase object](../../property/propertybase).
+:::
+
 
 #### Example
 
@@ -95,8 +98,10 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).id`
 
-!!! note
-    This functionality was added in After Effects 22.0 (2022)
+:::note
+This functionality was added in After Effects 22.0 (2022)
+:::
+
 
 #### Description
 
@@ -149,8 +154,10 @@ Floating-point value, in the range `[-10800.0..10800.0]` (minus or plus three ho
 
 `true` if the value of the name attribute has been set explicitly, rather than automatically from the source.
 
-!!! tip
-    This always returns `true` for layers that do not have a [AVLayer.source](avlayer.md#avlayersource)
+:::tip
+This always returns `true` for layers that do not have a [AVLayer.source](avlayer.md#avlayersource)
+:::
+
 
 #### Type
 
@@ -166,8 +173,10 @@ Boolean; read-only.
 
 The label color for the item. Colors are represented by their number (0 for None, or 1 to 16 for one of the preset colors in the Labels preferences).
 
-!!! tip
-    Custom label colors cannot be set programmatically.
+:::tip
+Custom label colors cannot be set programmatically.
+:::
+
 
 #### Type
 
@@ -388,8 +397,10 @@ Applies the specified collection of animation settings (an animation preset) to 
 
 Predefined animation preset files are installed in the Presets folder, and users can create new animation presets through the user interface.
 
-!!! warning
-    The animation preset is applied to the the selected layer(s) of the comp, not to the layer whose applyPreset function is called. Hence, the layer whose applyPreset function is called effectively just determines the comp whose layers are processed.
+:::warning
+The animation preset is applied to the the selected layer(s) of the comp, not to the layer whose applyPreset function is called. Hence, the layer whose applyPreset function is called effectively just determines the comp whose layers are processed.
+:::
+
 
 #### Parameters
 
@@ -417,11 +428,15 @@ Copying in a layer changes the index positions of previously existing layers in 
 
 This is the same as copying and pasting a layer through the user interface.
 
-!!! note
-    As of After Effects 13.6, this method no longer causes After Effects to crash when the layer has a parent.
+:::note
+As of After Effects 13.6, this method no longer causes After Effects to crash when the layer has a parent.
+:::
 
-!!! warning
-    As of After Effects 13.7 (13.6, has not been tested), if the copied layer has an effect on it and the user undoes the action, After Effects will Crash.
+
+:::warning
+As of After Effects 13.7 (13.6, has not been tested), if the copied layer has an effect on it and the user undoes the action, After Effects will Crash.
+:::
+
 
 #### Parameters
 
@@ -439,8 +454,10 @@ Nothing.
 
 `app.project.item(index).layer(index).doSceneEditDetection(applyOptions)`
 
-!!! note
-    This functionality was added in After Effects 22.3 (2022)
+:::note
+This functionality was added in After Effects 22.3 (2022)
+:::
+
 
 #### Description
 
@@ -450,16 +467,13 @@ Just as in the UI, `doSceneEditDetection` will fail and error if called on a non
 
 #### Parameters
 
-+----------------+-------------------------------+------------------------------------------------------------------------------------------------+
 |   Parameter    |             Type              |                                          Description                                           |
-+================+===============================+================================================================================================+
+|----------------|-------------------------------|------------------------------------------------------------------------------------------------|
 | `applyOptions` | `SceneEditDetectionMode` enum | How the detected edits will be applied. One of:                                                |
-|                |                               |                                                                                                |
 |                |                               | - `SceneEditDetectionMode.MARKERS`: Create markers at edit points.                             |
 |                |                               | - `SceneEditDetectionMode.SPLIT`: Split layer.                                                 |
 |                |                               | - `SceneEditDetectionMode.SPLIT_PRECOMP`: Split layer at edit points and pre-compose each one. |
 |                |                               | - `SceneEditDetectionMode.NONE`: Detected edits are not applied to the layer.                  |
-+----------------+-------------------------------+------------------------------------------------------------------------------------------------+
 
 #### Returns
 

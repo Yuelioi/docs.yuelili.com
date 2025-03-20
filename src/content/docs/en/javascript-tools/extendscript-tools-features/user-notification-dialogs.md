@@ -1,7 +1,6 @@
 ---
 title: user-notification-dialogs
 ---
-
 # User notification dialogs
 
 ExtendScript provides a set of globally available functions that allow you to display short messages to the user in platform-standard dialog boxes. There are three types of message dialogs:

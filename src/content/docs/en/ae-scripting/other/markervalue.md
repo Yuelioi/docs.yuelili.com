@@ -1,7 +1,6 @@
 ---
 title: markervalue
 ---
-
 # MarkerValue object
 
 `new MarkerValue(comment, chapter, url, frameTarget, cuePointName, params)`

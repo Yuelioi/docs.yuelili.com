@@ -1,7 +1,6 @@
 ---
 title: other-integration-possibilities
 ---
-
 # Other Integration Possibilities
 
 Although this SDK describes the majority of integration possibilities with After Effects, there are other possibilities not to be overlooked.

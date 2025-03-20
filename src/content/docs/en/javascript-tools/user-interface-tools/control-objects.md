@@ -1,7 +1,6 @@
 ---
 title: control-objects
 ---
-
 # Control objects
 
 UI elements that belong to windows can be containers or controls. Containers share some aspects of top-level windows, and some aspects of controls, and so are described here with controls.
@@ -146,8 +145,10 @@ w.add( "dropdownlist", bounds[, items, {creation_properties}] );
 
 Class Name: `EditNumber`
 
-!!! note
-    This functionality was added in Photoshop 20.0 (CC 2019), and may not exist in other hosts.
+:::note
+This functionality was added in Photoshop 20.0 (CC 2019), and may not exist in other hosts.
+:::
+
 
 #### Description
 
@@ -316,18 +317,13 @@ A mouse-sensitive pushbutton containing an icon. Calls the [onClick](#onclick) c
 
 #### Creation Properties
 
-+----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Property |  Type   |                                                                                                                          Description                                                                                                                           |
-+==========+=========+================================================================================================================================================================================================================================================================+
+|----------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `name`   | String  | A unique name for the control.                                                                                                                                                                                                                                 |
-+----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `style`  | String  | A string for the visual style, one of:                                                                                                                                                                                                                         |
-|          |         |                                                                                                                                                                                                                                                                |
 |          |         | - `button`: Has a visible border with a raised or 3D appearance.                                                                                                                                                                                               |
 |          |         | - `toolbutton`: Has a flat appearance, appropriate for inclusion in a toolbar                                                                                                                                                                                  |
-+----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `toggle` | Boolean | For a button-style control, a value of `true` causes it to get a button-pressed appearance the first time it is clicked, and alternate with the unpressed appearance each time it is clicked. The toggle state is reflected in the control's `value` property. |
-+----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Example
 
@@ -449,25 +445,19 @@ Containers have additional properties that control the children; see [Container 
 
 #### Creation Properties
 
-+-----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |       Property        |  Type   |                                                                                                                              Description                                                                                                                               |
-+=======================+=========+========================================================================================================================================================================================================================================================================+
+|-----------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `name`                | String  | A unique name for the control.                                                                                                                                                                                                                                         |
-+-----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `borderStyle`         | String  | A string that specifies the appearance of the border drawn around the panel. Default is `etched`. One of:                                                                                                                                                              |
-|                       |         |                                                                                                                                                                                                                                                                        |
 |                       |         | - `black`                                                                                                                                                                                                                                                              |
 |                       |         | - `etched`                                                                                                                                                                                                                                                             |
 |                       |         | - `gray`                                                                                                                                                                                                                                                               |
 |                       |         | - `raised`                                                                                                                                                                                                                                                             |
 |                       |         | - `sunken`                                                                                                                                                                                                                                                             |
 |                       |         | - `topDivider`: draws a horizonal line at the top of the panel only.                                                                                                                                                                                                   |
-|                       |         |                                                                                                                                                                                                                                                                        |
 |                       |         | !!! warning                                                                                                                                                                                                                                                            |
 |                       |         | The `topDivider` property is officially undocumented and was found via research. Please contribute if you have more information on it!                                                                                                                                 |
-+-----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `subPanelCoordinates` | Boolean | When `true`, this panel automatically adjusts the positions of its children for compatability with Photoshop CS. Default is `false`, meaning that the panel does not adjust the positions of its children, even if the parent window has automatic adjustment enabled. |
-+-----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Example
 
@@ -649,23 +639,17 @@ A text field that the user cannot change.
 
 #### Creation Properties
 
-+-------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |  Property   |  Type   |                                                                                       Description                                                                                        |
-+=============+=========+==========================================================================================================================================================================================+
+|-------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `name`      | String  | A unique name for the control.                                                                                                                                                           |
-+-------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `multiline` | Boolean | When `false` (the default), the control displays a single line of text. When `true`, the control displays multiple lines, in which case the text wraps within the width of the control.  |
-+-------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `scrolling` | Boolean | When `false` (the default), the displayed text cannot be scrolled. When `true`, the displayed text can be vertically scrolled using scrollbars; this case implies `multiline` is `true`. |
 | `truncate`  | String  | Truncate behaviour, one of:                                                                                                                                                              |
-|             |         |                                                                                                                                                                                          |
 |             |         | - `middle`                                                                                                                                                                               |
 |             |         | - `end`                                                                                                                                                                                  |
 |             |         | - `none`                                                                                                                                                                                 |
-|             |         |                                                                                                                                                                                          |
 |             |         | If `middle` or `end`, defines where to remove characters from the text and replace them with an ellipsis if the specified title does not fit within the space reserved for it.           |
 |             |         | If `none`, and the text does not fit, characters are removed from the end, without any replacement ellipsis character.                                                                   |
-+-------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Example
 
@@ -814,26 +798,22 @@ Applies to child elements of a container. If defined, this value overrides the `
 
 For a single string value, allowed values depend on the `orientation` value in the parent container.
 
-+---------------------+------------------------+
 | `orientation` Value |     Allowed values     |
-+=====================+========================+
+|---------------------|------------------------|
 | `"row"`             | - `"bottom"`           |
 |                     | - `"center"` (default) |
 |                     | - `"fill"`             |
 |                     | - `"top"`              |
-+---------------------+------------------------+
 | `"column"`          | - `"center"` (default) |
 |                     | - `"fill"`             |
 |                     | - `"left"`             |
 |                     | - `"right"`            |
-+---------------------+------------------------+
 | `"stack"`           | - `"bottom"`           |
 |                     | - `"center"` (default) |
 |                     | - `"fill"`             |
 |                     | - `"left"`             |
 |                     | - `"right"`            |
 |                     | - `"top"`              |
-+---------------------+------------------------+
 
 For an array value, the first string element defines the horizontal alignment and the second element defines the vertical alignment.
 
@@ -841,8 +821,10 @@ The horizontal alignment value must be one of `"left"`, `"right"`, `"center"` or
 
 The vertical alignment value must be one of `"top"`, `"bottom"`, `"center"`, or `"fill"`.
 
-!!! note
-    Values are not case sensitive.
+:::note
+Values are not case sensitive.
+:::
+
 
 #### Type
 
@@ -858,8 +840,10 @@ String or Array of 2 Strings
 
 A [Bounds](size-and-location-objects.md#bounds) object describing the boundaries of the element, in screen coordinates for Window elements, and parent-relative coordinates for child elements (compare [windowBounds](#windowbounds)). For windows, the bounds refer only to the window's content region.
 
-!!! warning
-    Setting an element's [`size`](#size) or [`location`](#location) changes its [`bounds`](#bounds) property, and vice-versa.
+:::warning
+Setting an element's [`size`](#size) or [`location`](#location) changes its [`bounds`](#bounds) property, and vice-versa.
+:::
+
 
 #### Type
 
@@ -889,8 +873,10 @@ Number
 
 #### Description
 
-!!! info
-    For [ListItem](types-of-controls.md#listitem) objects only.
+:::info
+For [ListItem](types-of-controls.md#listitem) objects only.
+:::
+
 
 - When `true`, the item is marked with the platform-appropriate checkmark.
 - When `false`, no checkmark is drawn, but space is reserved for it in the left margin, so that the item lines up with other checkable items.
@@ -908,8 +894,10 @@ Boolean
 
 #### Description
 
-!!! info
-    For [ListBox](#listbox) objects only.
+:::info
+For [ListBox](#listbox) objects only.
+:::
+
 
 A JavaScript object with two read-only properties whose values are set by the creation parameters.
 
@@ -935,8 +923,10 @@ Object
 - When `true`, the control is enabled, meaning that it accepts input.
 - When `false`, control elements do not accept input, and all types of elements have a dimmed appearance.
 
-!!! note
-    A disabled [ListItem](types-of-controls.md#listitem) is not selectable in a [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) object.
+:::note
+A disabled [ListItem](types-of-controls.md#listitem) is not selectable in a [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) object.
+:::
+
 
 #### Type
 
@@ -994,8 +984,10 @@ String
 
 #### Description
 
-!!! danger
-    Deprecated. Use [Image](types-of-controls.md#image) instead.
+:::danger
+Deprecated. Use [Image](types-of-controls.md#image) instead.
+:::
+
 
 #### Type
 
@@ -1043,8 +1035,10 @@ Number
 
 #### Description
 
-!!! info
-    For [ListItem](types-of-controls.md#listitem) objects only.
+:::info
+For [ListItem](types-of-controls.md#listitem) objects only.
+:::
+
 
 The index of this item in the `items` collection of its parent list control.
 
@@ -1060,13 +1054,17 @@ Number. Read only.
 
 #### Description
 
-!!! info
-    For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::info
+For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::
+
 
 A collection of [ListItem](types-of-controls.md#listitem) objects for the items in the list. Access by 0-based index.
 
-!!! tip
-    To obtain the number of items in the list, use `items.length`.
+:::tip
+To obtain the number of items in the list, use `items.length`.
+:::
+
 
 #### Type
 
@@ -1080,8 +1078,10 @@ Array of Objects. Read only.
 
 #### Description
 
-!!! info
-    For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::info
+For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::
+
 
 A [Dimension](./size-and-location-objects.md#dimension) object describing the width and height in pixels of each item in the list.
 
@@ -1101,8 +1101,10 @@ If not set explicitly, the size of each item is set to match the largest height 
 
 #### Description
 
-!!! info
-    For [Scrollbar](types-of-controls.md#scrollbar) objects only.
+:::info
+For [Scrollbar](types-of-controls.md#scrollbar) objects only.
+:::
+
 
 The amount to increment or decrement a [Scrollbar](types-of-controls.md#scrollbar) indicator's position when the user clicks ahead or behind the moveable element.
 
@@ -1128,8 +1130,10 @@ One of:
 - `"center"`
 - `"right"`
 
-!!! note
-    Justification only works if the value is set on creation, using a resource specification or creation parameters.
+:::note
+Justification only works if the value is set on creation, using a resource specification or creation parameters.
+:::
+
 
 #### Type
 
@@ -1149,8 +1153,10 @@ The `location` is defined as `[bounds.x, bounds.y]`.
 
 By default, `location` is `undefined` until the parent container's layout manager is invoked.
 
-!!! warning
-    Setting an element's [`size`](#size) or [`location`](#location) changes its [`bounds`](#bounds) property, and vice-versa.
+:::warning
+Setting an element's [`size`](#size) or [`location`](#location) changes its [`bounds`](#bounds) property, and vice-versa.
+:::
+
 
 #### Type
 
@@ -1272,8 +1278,10 @@ Object
 
 #### Description
 
-!!! info
-    For [ListItem](types-of-controls.md#listitem) objects only.
+:::info
+For [ListItem](types-of-controls.md#listitem) objects only.
+:::
+
 
 - When `true`, the item is part of the [`selection`](#selection) for its parent list.
 - When `false`, the item is not selected.
@@ -1292,8 +1300,10 @@ Boolean
 
 #### Description
 
-!!! info
-    For [ListBox](#listbox) objects only.
+:::info
+For [ListBox](#listbox) objects only.
+:::
+
 
 For a [ListBox](#listbox), an array of [ListItem](types-of-controls.md#listitem) objects for the current selection in a multi-selection list. Setting this value causes the selected item to be highlighted and to be scrolled into view if necessary. If no items are selected, the value is `null`. Set to `null` to deselect all items.
 
@@ -1316,8 +1326,10 @@ Array of [ListItem objects](./types-of-controls.md#listitem)
 
 #### Description
 
-!!! info
-    For [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::info
+For [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::
+
 
 The currently selected [ListItem](types-of-controls.md#listitem) object.
 
@@ -1363,8 +1375,10 @@ Although a script can explicitly set size before the layout manager is invoked t
 
 Defined as `[bounds.width, bounds.height]`.
 
-!!! warning
-    Setting an element's [`size`](#size) or [`location`](#location) changes its [`bounds`](#bounds) property, and vice-versa.
+:::warning
+Setting an element's [`size`](#size) or [`location`](#location) changes its [`bounds`](#bounds) property, and vice-versa.
+:::
+
 
 #### Type
 
@@ -1392,8 +1406,10 @@ Number
 
 #### Description
 
-!!! info
-    For [ListItem](types-of-controls.md#listitem) objects only.
+:::info
+For [ListItem](types-of-controls.md#listitem) objects only.
+:::
+
 
 When the parent is a multi-column [ListBox](#listbox), the [ListItem.text](#text) and [ListItem.image](#image) values describe the label in the first column, and this specifies additional labels for that row in the remaining columns.
 
@@ -1444,8 +1460,10 @@ The currently selected text in a control that displays text, or the empty string
 
 Setting the value replaces the current text selection and modifies the value of the [`text`](#text) property. If there is no current selection, inserts the new value into the `text` string at the current insertion point. The `textselection` value is reset to an empty string after it modifies the `text` value.
 
-!!! note
-    Setting the `textselection` property before the [EditText](types-of-controls.md#edittext) control's parent Window exists is an undefined operation.
+:::note
+Setting the `textselection` property before the [EditText](types-of-controls.md#edittext) control's parent Window exists is an undefined operation.
+:::
+
 
 #### Type
 
@@ -1459,8 +1477,10 @@ String
 
 #### Description
 
-!!! info
-    For [DropDownList](#dropdownlist), [FlashPlayer](#flashplayer), [IconButton](#iconbutton), [Image](#image), or [TabbedPanel](#tabbedpanel) objects only.
+:::info
+For [DropDownList](#dropdownlist), [FlashPlayer](#flashplayer), [IconButton](#iconbutton), [Image](#image), or [TabbedPanel](#tabbedpanel) objects only.
+:::
+
 
 A text label for the element. The title can appear to the left or right of the element, or above or below it, or you can superimpose the title over the center of the element. The placement is controlled by the [titleLayout](#titlelayout) value.
 
@@ -1476,8 +1496,10 @@ String
 
 #### Description
 
-!!! info
-    For [DropDownList](#dropdownlist), [FlashPlayer](#flashplayer), [IconButton](#iconbutton), [Image](#image), or [TabbedPanel](#tabbedpanel) objects only.
+:::info
+For [DropDownList](#dropdownlist), [FlashPlayer](#flashplayer), [IconButton](#iconbutton), [Image](#image), or [TabbedPanel](#tabbedpanel) objects only.
+:::
+
 
 For a control with a title value, the way the text label is shown in relation to the element.
 
@@ -1521,8 +1543,10 @@ String. Read only.
 
 #### Description
 
-!!! info
-    For [Checkbox](types-of-controls.md#checkbox) or [RadioButton](types-of-controls.md#radiobutton) objects only.
+:::info
+For [Checkbox](types-of-controls.md#checkbox) or [RadioButton](types-of-controls.md#radiobutton) objects only.
+:::
+
 
 `true` if the control is in the selected or set state, `false` if it is not.
 
@@ -1538,8 +1562,10 @@ Boolean
 
 #### Description
 
-!!! info
-    For [Scrollbar](types-of-controls.md#scrollbar) or [Slider](types-of-controls.md#slider) objects only.
+:::info
+For [Scrollbar](types-of-controls.md#scrollbar) or [Slider](types-of-controls.md#slider) objects only.
+:::
+
 
 The current position of the indicator. If set to a value outside the range specified by minvalue and maxvalue, it is automatically reset to the closest boundary.
 
@@ -1611,8 +1637,10 @@ There are no special naming requirements, but the function must take and return 
 - String
 - undefined
 
-!!! note
-    The ActionScript `class` and `date` objects are not supported as parameter values.
+:::note
+The ActionScript `class` and `date` objects are not supported as parameter values.
+:::
+
 
 #### Type
 
@@ -1634,11 +1662,9 @@ Registers an event handler for a particular type of event occurring in this cont
 
 #### Parameter
 
-+----------------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |   Parameter    |   Type   |                                                                                                                                                                                                                          Description                                                                                                                                                                                                                          |
-+================+==========+===============================================================================================================================================================================================================================================================================================================================================================================================================================================================+
+|----------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `eventName`    | String   | The event name string. Predefined event names include:                                                                                                                                                                                                                                                                                                                                                                                                        |
-|                |          |                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |                |          | - `"change"`                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |                |          | - `"changing"`                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 |                |          | - `"move"`                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
@@ -1657,11 +1683,8 @@ Registers an event handler for a particular type of event occurring in this cont
 |                |          | - `"keyup"`                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |                |          | - `"keydown"`                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |                |          | - `"click"` (detail = 1 for single, 2 for double)                                                                                                                                                                                                                                                                                                                                                                                                             |
-+----------------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `handler`      | Function | The function to register for the specified event in this target. This can be the name of a function defined in the extension, or a locally defined handler function to be executed when the event occurs. A handler function takes one argument, an object of the UIEvent base class. See [Registering event listeners for windows or controls](defining-behavior-with-event-callbacks-and-listeners.md#registering-event-listeners-for-windows-or-controls). |
-+----------------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `capturePhase` | Boolean  | Optional. When `true`, the handler is called only in the capturing phase of the event propagation. Default is `false`, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target.                                                                                                                                                                   |
-+----------------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -1713,17 +1736,13 @@ Sends a notification message, simulating the specified user interaction event.
 
 #### Parameters
 
-+-----------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter |  Type  |                                                                                    Description                                                                                     |
-+===========+========+====================================================================================================================================================================================+
+|-----------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `event`   | String | Optional. The name of the control event handler to call. One of:                                                                                                                   |
-|           |        |                                                                                                                                                                                    |
 |           |        | - `"onClick"`                                                                                                                                                                      |
 |           |        | - `"onChange"`                                                                                                                                                                     |
 |           |        | - `"onChanging"`                                                                                                                                                                   |
-|           |        |                                                                                                                                                                                    |
 |           |        | By default, simulates the [onChange](#onchange) event for an [EditText](types-of-controls.md#edittext) control, an [onClick](#onclick) event for controls that support that event. |
-+-----------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -1775,8 +1794,10 @@ Nothing
 
 #### Description
 
-!!! info
-    For [ListItem](types-of-controls.md#listitem) objects only.
+:::info
+For [ListItem](types-of-controls.md#listitem) objects only.
+:::
+
 
 Retrieves the value of this item's text property as a string.
 
@@ -1792,8 +1813,10 @@ String
 
 #### Description
 
-!!! info
-    For [ListItem](types-of-controls.md#listitem) objects only.
+:::info
+For [ListItem](types-of-controls.md#listitem) objects only.
+:::
+
 
 Retrieves the index number of this item in the parent list's items array.
 
@@ -1813,25 +1836,22 @@ The following table shows the methods defined for list objects only.
 
 #### Description
 
-!!! info
-    For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::info
+For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::
+
 
 Adds an `item` to the items array at the given index.
 
 #### Parameters
 
-+-----------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter |  Type  |                                                                                  Description                                                                                  |
-+===========+========+===============================================================================================================================================================================+
+|-----------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `type`    | String | The type of item to add. One of:                                                                                                                                              |
-|           |        |                                                                                                                                                                               |
 |           |        | - `item`: A basic, selectable item with a text label.                                                                                                                         |
 |           |        | - `separator`: A separator. For [DropDownList](#dropdownlist) objects only. In this case, the text value is ignored, and the method returns `null`.                           |
-+-----------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `text`    | String | The localizable text label for the item.                                                                                                                                      |
-+-----------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `index`   | Number | Optional. The index into the current item list after which this item is inserted. If not supplied, or greater than the current list length, the new item is added at the end. |
-+-----------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -1845,8 +1865,10 @@ Adds an `item` to the items array at the given index.
 
 #### Description
 
-!!! info
-    For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::info
+For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::
+
 
 Looks in this object's `items` array for an item object with the given `text` value.
 
@@ -1895,8 +1917,10 @@ Nothing
 
 #### Description
 
-!!! info
-    For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::info
+For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
+:::
+
 
 Removes all items from the object's `items` array.
 
@@ -1912,8 +1936,10 @@ Nothing
 
 #### Description
 
-!!! info
-    For [ListBox](#listbox) objects only.
+:::info
+For [ListBox](#listbox) objects only.
+:::
+
 
 Scrolls the list to make the specified item visible, if necessary.
 
@@ -1931,8 +1957,10 @@ Nothing
 
 ## FlashPlayer control functions
 
-!!! info
-    For [FlashPlayer](#flashplayer) objects only.
+:::info
+For [FlashPlayer](#flashplayer) objects only.
+:::
+
 
 ### Limitations
 
@@ -1955,13 +1983,10 @@ Invokes an ActionScript function defined in the Flash application.
 
 #### Parameters
 
-+-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter |  Type  |                                                                                                                                              Description                                                                                                                                               |
-+===========+========+========================================================================================================================================================================================================================================================================================================+
+|-----------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `fnName`  | String | The name of a Flash ActionScript function that has been registered with the ExternalInterface object by the currently loaded SWF file; see [Calling ActionScript functions from a ScriptUI script](communicating-with-the-flash-application.md#calling-actionscript-functions-from-a-scriptui-script). |
-+-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `args`    | Any    | Optional. One or more arguments to pass through to the function, of these types:                                                                                                                                                                                                                       |
-|           |        |                                                                                                                                                                                                                                                                                                        |
 |           |        | - Array                                                                                                                                                                                                                                                                                                |
 |           |        | - Boolean                                                                                                                                                                                                                                                                                              |
 |           |        | - `null`                                                                                                                                                                                                                                                                                               |
@@ -1969,7 +1994,6 @@ Invokes an ActionScript function defined in the Flash application.
 |           |        | - Object                                                                                                                                                                                                                                                                                               |
 |           |        | - String                                                                                                                                                                                                                                                                                               |
 |           |        | - `undefined`                                                                                                                                                                                                                                                                                          |
-+-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -2005,8 +2029,10 @@ Nothing
 
 Restarts a movie that has been stopped.
 
-!!! warning
-    Do not call when a movie is currently playing.
+:::warning
+Do not call when a movie is currently playing.
+:::
+
 
 #### Parameters
 
@@ -2028,8 +2054,10 @@ Nothing
 
 Halts playback of the current movie.
 
-!!! note
-    Does not work when called from the player's hosting environment.
+:::note
+Does not work when called from the player's hosting environment.
+:::
+
 
 #### Returns
 
@@ -2118,8 +2146,10 @@ The list's [`selection`](#selection) property is set to the clicked item.
 
 ### onEnterKey
 
-!!! warning
-    This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::warning
+This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::
+
 
 Called when the user presses return or enter in a [EditText](#edittext) control.
 
@@ -2139,8 +2169,10 @@ Called when the user expands (opens) a node in a [TreeView](#treeview) control. 
 
 ### onShortcutKey
 
-!!! info
-    For [Windows](.././window-object) objects only.
+:::info
+For [Windows](.././window-object) objects only.
+:::
+
 
 Called when a shortcut-key sequence is typed that matches the [shortcutKey](#shortcutkey) value for an element in the active window.
 

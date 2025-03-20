@@ -1,7 +1,6 @@
 ---
 title: event-handling
 ---
-
 # Event handling
 
 Several helper classes provide low-level event-handling capabilities.
@@ -217,8 +216,10 @@ Nothing
 
 This type of object is passed to your registered event handler when a keyboard-input event occurs. The properties reflect the keypress and key modifier state at the time the keyboard event was generated.
 
-!!! info
-    All properties are read only.
+:::info
+All properties are read only.
+:::
+
 
 ### KeyboardEvent Object Methods
 
@@ -366,14 +367,15 @@ In addition to the functions defined for [UIEvent base class](#uievent-base-clas
 
 Get the current modifier keys being used in this event.
 
-!!! note
-    If you're trying to check whether keyboard modifier keys (alt/ctrl/meta/shift) are held down at any time in your script, not just in an event, see [Keyboard state object](environment.md#keyboard-state-object).
+:::note
+If you're trying to check whether keyboard modifier keys (alt/ctrl/meta/shift) are held down at any time in your script, not just in an event, see [Keyboard state object](environment.md#keyboard-state-object).
+:::
+
 
 ##### Parameters
 
-+-----------------+--------+--------------------------------------------------------+
 |    Parameter    |  Type  |                      Description                       |
-+=================+========+========================================================+
+|-----------------|--------|--------------------------------------------------------|
 | `keyIdentifier` | String | A string containing a modifier key identifier, one of: |
 |                 |        | - `Alt`                                                |
 |                 |        | - `CapsLock`                                           |
@@ -382,7 +384,6 @@ Get the current modifier keys being used in this event.
 |                 |        | - `NumLock`                                            |
 |                 |        | - `Scroll`                                             |
 |                 |        | - `Shift`                                              |
-+-----------------+--------+--------------------------------------------------------+
 
 ##### Returns
 
@@ -426,8 +427,10 @@ In the case of nested elements, mouse event types are always targeted at the mos
 
 In addition to the properties defined for [UIEvent base class](#uievent-base-class), a mouse event has these properties.
 
-!!! info
-    All properties are read only.
+:::info
+All properties are read only.
+:::
+
 
 ---
 
@@ -621,11 +624,9 @@ Get the current modifier keys being used in this event.
 
 #### Parameters
 
-+-----------------+--------+--------------------------------------------------------+
 |    Parameter    |  Type  |                      Description                       |
-+=================+========+========================================================+
+|-----------------|--------|--------------------------------------------------------|
 | `keyIdentifier` | String | A string containing a modifier key identifier, one of: |
-|                 |        |                                                        |
 |                 |        | - `"Alt"`                                              |
 |                 |        | - `"CapsLock"`                                         |
 |                 |        | - `"Control"`                                          |
@@ -633,7 +634,6 @@ Get the current modifier keys being used in this event.
 |                 |        | - `"NumLock"`                                          |
 |                 |        | - `"Scroll"`                                           |
 |                 |        | - `"Shift"`                                            |
-+-----------------+--------+--------------------------------------------------------+
 
 ##### Returns
 

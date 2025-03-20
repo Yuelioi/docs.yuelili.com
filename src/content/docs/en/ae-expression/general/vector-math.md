@@ -1,7 +1,6 @@
 ---
 title: vector-math
 ---
-
 # Vector Math
 
 Vector Math functions are global methods that perform operations on arrays, treating them as mathematical vectors.
@@ -149,8 +148,10 @@ Returns the length of vector `vec`.
 
 If a second argument is provided, instead treats the first argument as a point and returns the distance between the two points.
 
-!!! tip
-    Using `length()` with two arguments is the same as `length(sub(vec, point2))`.
+:::tip
+Using `length()` with two arguments is the same as `length(sub(vec, point2))`.
+:::
+
 
 #### Parameters
 
@@ -185,8 +186,10 @@ The return value can be used as an expression for the Orientation property, maki
 
 This method is especially useful for cameras and lights.
 
-!!! tip
-    If you use this expression on a camera, turn off auto-orientation.
+:::tip
+If you use this expression on a camera, turn off auto-orientation.
+:::
+
 
 #### Parameters
 

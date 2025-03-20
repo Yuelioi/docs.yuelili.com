@@ -1,7 +1,6 @@
 ---
 title: communicating-through-messages
 ---
-
 # Communicating through messages
 
 Adobe Bridge provides an application programming interface (API) that defines a communication protocol between Adobe ExtendScript- and message-enabled applications. This provides the most general mechanism for communication between applications. A messaging-enabled application can launch another messaging-enabled application, and send or receive scripts to effect certain actions. For example, from within Adobe Bridge, a script can launch Photoshop, and then send a script to Photoshop that requests a photomerge operation.
@@ -55,8 +54,10 @@ bt.body = "new Document('C:\\BridgeScripts');app.document.target.children.length
 
 If you want to handle a response for this message, or use the data that is returned from the script's evaluation, you must set up the response-handling mechanism before you send the message. You do this by defining the [onResult()](bridgetalk-message-object.md#onresult) callback in the message object.
 
-!!! note
-    The message callbacks are optional, and are not implemented by all message-enabled applications. The response to a message is, by default, the result of evaluation of the script contained in that message's body property. The target application might define some different kind of response; see [Receiving messages](#receiving-messages).
+:::note
+The message callbacks are optional, and are not implemented by all message-enabled applications. The response to a message is, by default, the result of evaluation of the script contained in that message's body property. The target application might define some different kind of response; see [Receiving messages](#receiving-messages).
+:::
+
 
 When the target has finished processing this message, it looks for an onResult callback in the message object it received. If it is found, the target automatically invokes it, passing it the response. The response is packaged into a string, which is in turn packaged into the body property of a new message object. That message object is the argument to your onResult callback function.
 
@@ -70,8 +71,10 @@ bt.onResult = function(returnBtObj) {
 
 If you want to handle errors that might arise during script processing, you can define an [onError()](bridgetalk-message-object.md#onerror) callback in the message object. Similarly, you can define a [timeout](bridgetalk-message-object.md#timeout) value and [onTimeout()](bridgetalk-message-object.md#ontimeout) callback to handle the case where the target cannot process the message within a given time. For more information, see [Handling responses from the message target](#handling-responses-from-the-message-target).
 
-!!! note
-    If you define callbacks to handle a response, you must store the message in a variable that still exists when the response is received. Otherwise, JavaScript might garbage-collect the message object, and the response would be lost.
+:::note
+If you define callbacks to handle a response, you must store the message in a variable that still exists when the response is received. Otherwise, JavaScript might garbage-collect the message object, and the response would be lost.
+:::
+
 
 ### Step 4: Send the message
 
@@ -189,8 +192,10 @@ BridgeTalk.onReceive = function (message) {
 
 To handle responses to a message you have sent, you define callback handler functions in the message object itself. The target application cannot send a response message back to the sender unless the message object it received has the appropriate callback defined.
 
-!!! note
-    The message callbacks are optional, and are not implemented by all message-enabled applications.
+:::note
+The message callbacks are optional, and are not implemented by all message-enabled applications.
+:::
+
 
 When your message is received by its target, the target application's static BridgeTalk object's onReceive method processes that message, and can invoke one of the message object's callbacks to return a response. In each case, the messaging framework packages the response in a new message object, whose target application is the sender. Your callback functions receive this response message object as an argument.
 

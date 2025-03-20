@@ -1,7 +1,6 @@
 ---
 title: viewer
 ---
-
 # Viewer object
 
 `app.activeViewer`

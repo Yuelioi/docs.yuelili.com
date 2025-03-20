@@ -1,7 +1,6 @@
 ---
 title: lightlayer
 ---
-
 # LightLayer object
 
 `app.project.item(index).layer(index)`
@@ -10,8 +9,10 @@ title: lightlayer
 
 The LightLayer object represents a light layer within a composition. Create it using the [LayerCollection.addLight()](layercollection.md#layercollectionaddlight) method. It can be accessed in an item's layer collection either by index number or by a name string.
 
-!!! info
-    LightLayer is a subclass of [Layer object](../layer). All methods and attributes of Layer are available when working with Light-Layer.
+:::info
+LightLayer is a subclass of [Layer object](../layer). All methods and attributes of Layer are available when working with Light-Layer.
+:::
+
 
 #### AE Properties
 
@@ -44,10 +45,11 @@ LightLayer defines no additional attributes, but has different AE properties tha
 
 `app.project.item(index).layer(index).lightSource`
 
-!!! note
-    `LightLayer.lightSource` was added in After Effects 24.3, but allowed only HDR and EXR layers as sources.
+:::note
 
-    In After Effects (Beta) 25.2.0.098, it was updated to allow any 2D layer type as a source.
+In After Effects (Beta) 25.2.0.098, it was updated to allow any 2D layer type as a source.
+:::
+
 
 #### Description
 
@@ -61,8 +63,10 @@ For a light layer, the layer to use as a light source when `LightLayer.lightType
 
 `app.project.item(index).layer(index).lightType`
 
-!!! note
-    `LightType.ENVIRONMENT` was added in After Effects 24.3
+:::note
+`LightType.ENVIRONMENT` was added in After Effects 24.3
+:::
+
 
 #### Description
 

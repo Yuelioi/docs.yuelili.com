@@ -1,7 +1,6 @@
 ---
 title: property
 ---
-
 # Property
 
 This category holds generic entries relating to generic *properties*.
@@ -18,8 +17,10 @@ In expressions, a Property is *typically* anything that exists in the timeline (
     - A text layer's [Text](../../text/text) property (`thisLayer.text`)
         - *Note that in this case, Text also has its own special items, found in the above link.*
 
-!!! info
-    On this page, we're going to use `thisLayer.position` as a sample on how to call these items, however note that any method that returns a [Property](#) will work.
+:::info
+On this page, we're going to use `thisLayer.position` as a sample on how to call these items, however note that any method that returns a [Property](#) will work.
+:::
+
 
 ---
 
@@ -47,8 +48,10 @@ String
 
 Returns the number of keyframes on a property, or the number of markers on a marker property.
 
-!!! note
-    If you use the **Separate Dimensions** command to separate the dimensions of the Position property into individual components, the number of keyframes changes, so the value returned by this method changes.
+:::note
+If you use the **Separate Dimensions** command to separate the dimensions of the Position property into individual components, the number of keyframes changes, so the value returned by this method changes.
+:::
+
 
 #### Type
 
@@ -78,8 +81,10 @@ Number
 
 Returns a 1-dimensional, positive speed value equal to the speed at which the property is changing at the default time.
 
-!!! note
-    This can be used only for spatial properties.
+:::note
+This can be used only for spatial properties.
+:::
+
 
 #### Type
 
@@ -159,8 +164,10 @@ thisLayer.rotation.key(thisLayer.rotation.numKeys);
 
 Returns the MarkerKey object with this name.
 
-!!! note
-    This can be used only on marker properties.
+:::note
+This can be used only on marker properties.
+:::
+
 
 #### Parameters
 
@@ -256,8 +263,10 @@ loopInDuration("cycle", 1);
 
 Loops a segment of time that is measured from the last keyframe on the layer back toward the In point of the layer. The loop plays until the Out point of the layer.
 
-!!! info
-    David Van Brink provides an instructional article and sample project on his [omino pixel blog](http://omino.com/pixelblog/2007/11/23/salmonella/) that show how to use the Echo effect, the Particle Playground effect, and the `loopOut()` method to animate a swarm of stylized swimming bacteria.
+:::info
+David Van Brink provides an instructional article and sample project on his [omino pixel blog](http://omino.com/pixelblog/2007/11/23/salmonella/) that show how to use the Echo effect, the Particle Playground effect, and the `loopOut()` method to animate a swarm of stylized swimming bacteria.
+:::
+
 
 #### Parameters
 
@@ -382,17 +391,12 @@ Smooths the property values over time, converting large, brief deviations in the
 
 #### Parameters
 
-+-----------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter |  Type  |                                                                        Description                                                                        |
-+===========+========+===========================================================================================================================================================+
+|-----------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `width`   | Number | Optional. The range of time (in seconds) over which the filter is averaged. Defaults to `0.2`.                                                            |
-+-----------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `samples` | Number | Optional. The number of discrete samples evenly spaced over time. Use a larger value for greater smoothness (but decreased performance). Defaults to `5`. |
-|           |        |                                                                                                                                                           |
 |           |        | Generally, you'll want samples to be an odd number so that the value at the current time is included in the average.                                      |
-+-----------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `t`       | Number | Optional. The specified time (in comp seconds) to apply the smoothing filter to. Defaults to `time` (the current comp time, in seconds).                  |
-+-----------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -470,8 +474,10 @@ scale.temporalWiggle(5, 0.2)
 
 Returns the value of a property at the specified time, in seconds.
 
-!!! note
-    Dan Ebberts provides more examples and techniques for using the `valueAtTime` and `velocityAtTime` methods on [MotionScript](http://www.motionscript.com/mastering-expressions/follow-the-leader.html).
+:::note
+Dan Ebberts provides more examples and techniques for using the `valueAtTime` and `velocityAtTime` methods on [MotionScript](http://www.motionscript.com/mastering-expressions/follow-the-leader.html).
+:::
+
 
 #### Parameters
 
@@ -521,28 +527,22 @@ Number or Array
 
 Randomly shakes (wiggles) the value of the property.
 
-!!! note
-    Dan Ebberts provides an example expression and a detailed explanation on his [website](http://www.motionscript.com/design-guide/looping-wiggle.html) that shows how to use the time parameter of the wiggle method to create a looping animation.
+:::note
+Dan Ebberts provides an example expression and a detailed explanation on his [website](http://www.motionscript.com/design-guide/looping-wiggle.html) that shows how to use the time parameter of the wiggle method to create a looping animation.
+:::
+
 
 #### Parameters
 
-+------------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter  |  Type  |                                                                                                               Description                                                                                                               |
-+============+========+=========================================================================================================================================================================================================================================+
+|------------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `freq`     | Number | Frequency, in wiggles per second.                                                                                                                                                                                                       |
-+------------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `amp`      | Number | Amplitude, in units of the property to which it is applied.                                                                                                                                                                             |
-+------------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `octaves`  | Number | Optional. Number of octaves of noise to add together. This value controls how much detail is in the wiggle.                                                                                                                             |
-|            |        |                                                                                                                                                                                                                                         |
 |            |        | Make this value higher than the default to include higher frequencies or lower to include amplitude harmonics in the wiggle. Defaults to `1`.                                                                                           |
-+------------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `amp_mult` | Number | Optional. Amount that `amp` is multiplied by for each octave. This value controls how fast the harmonics drop off.                                                                                                                      |
-|            |        |                                                                                                                                                                                                                                         |
 |            |        | Make this value closer to `1` to have the harmonics added at the same amplitude as the base frequency, or closer to `0` to add in less detail. Defaults to `0.5`.                                                                       |
-+------------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `t`        | Number | Optional. Base start time. This value defaults to the current time. Use this parameter if you want the output to be a wiggle of the property value sampled at a different time. Defaults to `time` (the current comp time, in seconds). |
-+------------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -585,16 +585,10 @@ The following loop types are predefined strings used in the "type" parameter for
 - [loopOut()](#loopout)
 - [loopOutDuration()](#loopoutduration)
 
-+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----+
 |     Type     |                                                                                                                       Behaviour                                                                                                                       |     |
-+==============+=======================================================================================================================================================================================================================================================+=====+
+|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
 | `"cycle"`    | Default. Repeats the specified segment.                                                                                                                                                                                                               |     |
-+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----+
 | `"pingpong"` | Repeats the specified segment, alternating between forward and backward.                                                                                                                                                                              |     |
-+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----+
 | `"offset"`   | Repeats the specified segment, but offsets each cycle by the difference in the value of the property at the start and end of the segment, multiplied by the number of times the segment has looped.                                                   |     |
-+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----+
 | `"continue"` | Does not repeat the specified segment, but continues to animate a property based on the velocity at the first or last keyframe.                                                                                                                       |     |
-|              |                                                                                                                                                                                                                                                       |     |
 |              | For example, if the last keyframe of a Scale property of a layer is `100%`, the layer continues to scale from `100%` to the Out point, instead of looping directly back to the Out point. This type does not accept a keyframes or duration argument. |     |
-+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----+

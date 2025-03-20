@@ -1,7 +1,6 @@
 ---
 title: bridgetalk-class
 ---
-
 # BridgeTalk class
 
 Static properties and methods of this class provide a way for your script to determine basic messaging system information before you create any specific message objects. Static methods allow you to check if an application is installed and is already running, and to launch the application. A callback defined on the class determines how the application processes incoming messages.
@@ -12,8 +11,10 @@ You can access static properties and methods in the BridgeTalk class, which is a
 var thisApp = BridgeTalk.appName;
 ```
 
-!!! note
-    You must instantiate the BridgeTalk class to create the BridgeTalk message object, which is used to send message packets between applications. Dynamic properties and methods can be accessed only in instances.
+:::note
+You must instantiate the BridgeTalk class to create the BridgeTalk message object, which is used to send message packets between applications. Dynamic properties and methods can be accessed only in instances.
+:::
+
 
 ---
 
@@ -129,8 +130,10 @@ BridgeTalk.onReceive = function( bridgeTalkObject ) {
 
 The body property of the received message object contains the received data. The function can return any type. See [Handling unsolicited messages](communicating-through-messages.md#handling-unsolicited-messages).
 
-!!! note
-    This function is not applied to a message that is received in response to a message sent from this application. Response messages are processed by the onResult, onReceived, or onError callbacks associated with the sent message.
+:::note
+This function is not applied to a message that is received in response to a message sent from this application. Response messages are processed by the onResult, onReceived, or onError callbacks associated with the sent message.
+:::
+
 
 #### Type
 
@@ -221,21 +224,15 @@ Retrieves a complete application specifier.
 
 #### Parameters
 
-+-----------+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter |                      Type                       |                                                                      Description                                                                       |
-+===========+=================================================+========================================================================================================================================================+
+|-----------|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `appName` | The base name of the application to search for. |                                                                                                                                                        |
-+-----------+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `version` | Number                                          | Optional. The specific version number to search for.                                                                                                   |
 |           |                                                 | If `0` or not supplied, returns the most recent version.                                                                                               |
 |           |                                                 | If negative, returns the highest version up to and including the absolute value.                                                                       |
-|           |                                                 |                                                                                                                                                        |
 |           |                                                 | If a major version is specified, returns the highest minor-version variation. For example, if Photoshop CS versions 9, 9.1, and 10 are installed:      |
-|           |                                                 |                                                                                                                                                        |
 |           |                                                 | <pre lang="javascript">BridgeTalk.Specifier( "photoshop", "9" )<br/> => ["photoshop-9.1"]<br/></pre>                                                   |
-+-----------+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `locale`  | String                                          | Optional. The specific locale to search for. If not supplied and multiple language versions are installed, prefers the version for the current locale. |
-+-----------+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -301,23 +298,15 @@ Retrieves a list of messaging-enabled applications installed on this computer.
 
 #### Parameters
 
-+-----------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter |  Type  |                                                                                                     Description                                                                                                     |
-+===========+========+=====================================================================================================================================================================================================================+
+|-----------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `version` | Number | Optional. The specific version number to search for, or `null` to return the most appropriate version (matching, most recent, or running), with version information.                                                |
-|           |        |                                                                                                                                                                                                                     |
 |           |        | Specify only a major version number to return the highest minor-version variation.                                                                                                                                  |
-|           |        |                                                                                                                                                                                                                     |
 |           |        | For example, if Photoshop CS versions 9, 9.5, and 10 are installed                                                                                                                                                  |
-|           |        |                                                                                                                                                                                                                     |
 |           |        | <pre lang="javascript">BridgeTalk.getTargets( "9" )<br/>=> [photoshop-9.5]</pre>                                                                                                                                    |
-|           |        |                                                                                                                                                                                                                     |
 |           |        | Specify a negative value to return all versions up to the absolute value of the version number. For example                                                                                                         |
-|           |        |                                                                                                                                                                                                                     |
 |           |        | <pre lang="javascript">BridgeTalk.getTargets( "-9.9" )<br/>=> [photoshop-9.0, photoshop-9.5]</pre>                                                                                                                  |
-+-----------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `locale`  | String | Optional. The specific locale to search for, or null to `return` applications for all locales, with locale information. If not supplied when version is supplied, returns specifiers with version information only. |
-+-----------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -421,17 +410,13 @@ Sends a message to another application to determine whether it can be contacted.
 
 #### Parameters
 
-+---------------+------------------------------------------------------------------------------------------+----------------------------------------+
 |   Parameter   |                                           Type                                           |              Description               |
-+===============+==========================================================================================+========================================+
+|---------------|------------------------------------------------------------------------------------------|----------------------------------------|
 | `specifier`   | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
-+---------------+------------------------------------------------------------------------------------------+----------------------------------------+
 | `pingRequest` | Identifying key string, one of:                                                          | Specific type of return value.         |
-|               |                                                                                          |                                        |
 |               | - `STATUS`: Returns the processing status; see [getStatus()](#bridgetalkgetstatus).      |                                        |
 |               | - `DIAGNOSTICS`: Returns a diagnostic report that includes a list of valid ping keys.    |                                        |
 |               | - `ECHO_REQUEST`: Returns `ECHO_RESPONSE` for a simple ping request.                     |                                        |
-+---------------+------------------------------------------------------------------------------------------+----------------------------------------+
 
 #### Returns
 
@@ -447,8 +432,10 @@ String
 
 Checks all active messaging interfaces for outgoing and incoming messages, and processes them if there are any.
 
-!!! note
-    Most applications have a message processing loop that continually checks the message queues, so use of this method is rarely required.
+:::note
+Most applications have a message processing loop that continually checks the message queues, so use of this method is rarely required.
+:::
+
 
 #### Returns
 

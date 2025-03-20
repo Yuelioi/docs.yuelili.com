@@ -1,7 +1,6 @@
 ---
 title: bridgetalk-message-object
 ---
-
 # BridgeTalk message object
 
 The message object defines the basic communication packet that is sent between applications. Its properties allow you to specify the receiving application (the target), the data to send to the target (the body), and the type of data that is sent. The messaging protocol is extensible; it allows you to define new types of data for the type property, and to send and receive arbitrary additional information with the headers property.
@@ -140,8 +139,10 @@ String
 
 ## BridgeTalk message object callbacks
 
-!!! note
-    The message callbacks are optional, and are not implemented by all message-enabled applications.
+:::note
+The message callbacks are optional, and are not implemented by all message-enabled applications.
+:::
+
 
 ### onError()
 

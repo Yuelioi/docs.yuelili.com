@@ -5,10 +5,13 @@ import starlight from "@astrojs/starlight";
 import tailwindcss from "@tailwindcss/vite";
 import starlightSidebarTopics from "starlight-sidebar-topics";
 
+// navs
 import { aeExpression } from "./src/nav/ae-expression";
 import { aeScripting } from "./src/nav/ae-scripting";
 import { javascriptTools } from "./src/nav/javascript-tools";
 import { aePlugin } from "./src/nav/ae-plugin";
+
+import starlightGiscus from "starlight-giscus";
 
 // https://astro.build/config
 export default defineConfig({
@@ -36,8 +39,15 @@ export default defineConfig({
           // {
           //   exclude: ["/ae-scripting/**/*"],
           // },
-          [aeExpression, aeScripting, javascriptTools]
+          [aeExpression, aeScripting, javascriptTools, aePlugin]
         ),
+
+        starlightGiscus({
+          repo: "Yuelioi/docs.yuelili.com",
+          repoId: "R_kgDOOKmEWg",
+          category: "Comments",
+          categoryId: "DIC_kwDOOKmEWs4CoQZJ",
+        }),
       ],
     }),
   ],

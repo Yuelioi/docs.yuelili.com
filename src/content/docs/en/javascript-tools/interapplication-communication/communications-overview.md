@@ -1,7 +1,6 @@
 ---
 title: communications-overview
 ---
-
 # Communications overview
 
 Scripts written for any message-enabled application can communicate with other message-enabled applications in two ways; through directly calling functions defined in a remote application, and by sending messages and receiving responses from a remote application. A specific syntax is provided for identifying applications unambiguously.

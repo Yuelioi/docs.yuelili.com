@@ -1,7 +1,6 @@
 ---
 title: other-math
 ---
-
 # Other Math
 
 This category holds other math functions not otherwise covered.

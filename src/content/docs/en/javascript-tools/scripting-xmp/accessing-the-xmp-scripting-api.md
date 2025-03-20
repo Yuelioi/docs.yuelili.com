@@ -1,7 +1,6 @@
 ---
 title: accessing-the-xmp-scripting-api
 ---
-
 # Accessing the XMP scripting API
 
 To use the XMP objects, you must load the XMP library as an ExtendScript ExternalObject. To avoid loading multiple instances of the library, use code like the following:
@@ -63,8 +62,10 @@ In Adobe Bridge, you can pass XMP metadata between the built-in `Metadata` objec
     var xmp = new XMPFile( thumb.spec.fsName, XMPConst.UNKNOWN, XMPConst.OPEN_FOR_UPDATE );
     ```
 
-!!! note
-    The `XMPFile` object does not support all of the file formats that Adobe Bridge supports.
+:::note
+The `XMPFile` object does not support all of the file formats that Adobe Bridge supports.
+:::
+
 
 ---
 

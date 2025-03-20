@@ -1,7 +1,6 @@
 ---
 title: global
 ---
-
 # Global
 
 These attributes and methods are global, top-level elements accessible from any expression across your project. They're among the most commonly-used expression elements.

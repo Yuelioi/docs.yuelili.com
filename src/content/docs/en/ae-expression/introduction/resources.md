@@ -1,11 +1,12 @@
 ---
 title: resources
 ---
-
 # Resources
 
-!!! note
-    Have suggestions for new resources to add here? Please [reach out](mailto:hi@docsforadobe.dev)! Happy to add your site, book, training channel, etc.
+:::note
+Have suggestions for new resources to add here? Please [reach out](mailto:hi@docsforadobe.dev)! Happy to add your site, book, training channel, etc.
+:::
+
 
 Dan Ebberts provides example expressions and tutorials for learning how to work with expressions on his [MotionScript website](https://www.motionscript.com). For example, Dan provides an excellent [page about collision detection](http://www.motionscript.com/design-guide/collision.html).
 

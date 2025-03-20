@@ -1,7 +1,6 @@
 ---
 title: objectmodel
 ---
-
 # The After Effects Object Model
 
 As you look through this reference section, which is organized alphabetically by object, you can refer to the following diagrams for an overview of where the various objects fall within the hierarchy, and their correspondence to the user interface.
@@ -19,8 +18,10 @@ The hierarchy of objects in scripting corresponds to the hierarchy in the user i
 
 The application contains a Project panel, which displays a project. The project contains compositions, which contain layers. The source for a layer can be a footage file, placeholder, or solid, also listed in the Project panel. Each layer contains settings known as properties, and these can contain markers and keyframes. The renderqueue contains render-queue items as well as render settings and output modules. All of these entities are represented by objects in scripting.
 
-!!! note
-    To avoid ambiguity, this manual uses the term "attribute" to refer to JavaScript object properties, and the term "property" or "AE property" to refer to After Effects layer properties.
+:::note
+To avoid ambiguity, this manual uses the term "attribute" to refer to JavaScript object properties, and the term "property" or "AE property" to refer to After Effects layer properties.
+:::
+
 
 #### Object summary
 

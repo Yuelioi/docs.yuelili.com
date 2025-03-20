@@ -1,7 +1,6 @@
 ---
 title: interpolation
 ---
-
 # Interpolation
 
 For all the Interpolation methods, the argument `t` is often `time` or `value`, though it can have other values, instead. If `t` is `time`, the interpolation between values happens over a duration. If `t` is `value`, then the expression maps one range of values to a new range of values.

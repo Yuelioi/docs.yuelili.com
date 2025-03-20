@@ -1,7 +1,6 @@
 ---
 title: application
 ---
-
 # Application object
 
 `app`
@@ -34,8 +33,10 @@ The Viewer object for the currently focused or active-focused viewer (Compositio
 
 `app.availableGPUAccelTypes`
 
-!!! note
-    This functionality was added in After Effects 14.0 (CC 2017)
+:::note
+This functionality was added in After Effects 14.0 (CC 2017)
+:::
+
 
 #### Description
 
@@ -109,8 +110,10 @@ Integer; read-only.
 
 `app.disableRendering`
 
-!!! note
-    This functionality was added in After Effects 16.0 (CC 2019)
+:::note
+This functionality was added in After Effects 16.0 (CC 2019)
+:::
+
 
 #### Description
 
@@ -193,8 +196,10 @@ app.exitCode = 2; // on quit, if value is 2, an error has occurred
 
 `app.fonts`
 
-!!! note
-    This functionality was added in After Effects 24.0
+:::note
+This functionality was added in After Effects 24.0
+:::
+
 
 #### Description
 
@@ -214,8 +219,10 @@ Returns an object to navigate and retreive all the fonts currently available on 
 
 A string indicating the locale (language and regional designations) After Effects is running.
 
-!!! tip
-    `$.locale` returns the operating system language, not the language of the After Effects application.
+:::tip
+`$.locale` returns the operating system language, not the language of the After Effects application.
+:::
+
 
 #### Type
 
@@ -371,8 +378,10 @@ Settings object; read-only.
 
 `app.version`
 
-!!! note
-    This functionality was added in After Effects 12.0 (CC)
+:::note
+This functionality was added in After Effects 12.0 (CC)
+:::
+
 
 #### Description
 
@@ -666,8 +675,10 @@ if (my_file.exists) {
 
 `app.openFast(file)`
 
-!!! warning
-    This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::warning
+This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::
+
 
 #### Description
 
@@ -725,36 +736,26 @@ Loads color swatch data from an Adobe Swatch Exchange (ASE) file.
 
 The swatch data, in this format:
 
-+---------------------+-------------------------------------------------------------------+
 |      Property       |                            Description                            |
-+=====================+===================================================================+
+|---------------------|-------------------------------------------------------------------|
 | `data.majorVersion` | The ASE version number.                                           |
 | `data.minorVersion` |                                                                   |
-+---------------------+-------------------------------------------------------------------+
 | `data.values`       | An array of Swatch Value.                                         |
-+---------------------+-------------------------------------------------------------------+
 | `SwatchValue.type`  | One of "RGB", "CMYK", "LAB", "Gray"                               |
-+---------------------+-------------------------------------------------------------------+
 | `SwatchValue.r`     | When `type = "RGB"`, the color values in the range `[0.0..1.0]`.  |
 | `SwatchValue.g`     |                                                                   |
 | `SwatchValue.b`     | `[0, 0, 0]` is Black.                                             |
-+---------------------+-------------------------------------------------------------------+
 | `SwatchValue.c`     | When `type = "CMYK"`, the color values in the range `[0.0..1.0]`. |
 | `SwatchValue.m`     |                                                                   |
 | `SwatchValue.y`     | `[0, 0, 0, 0]` is White.                                          |
 | `SwatchValue.k`     |                                                                   |
-+---------------------+-------------------------------------------------------------------+
 | `SwatchValue.L`     | When `type = "LAB"`, the color values.                            |
 | `SwatchValue.a`     |                                                                   |
 | `SwatchValue.b`     | - `L` is in the range `[0.0..1.0]`                                |
 |                     | - `a` and `b`are in the range `[-128.0..+128.0]`                  |
-|                     |                                                                   |
 |                     | `[0, 0, 0]` is Black.                                             |
-+---------------------+-------------------------------------------------------------------+
 | `SwatchValue.value` | When `type = "Gray"`, the `value` range is `[0.0..1.0]`.          |
-|                     |                                                                   |
 |                     | `0.0` is Black.                                                   |
-+---------------------+-------------------------------------------------------------------+
 
 ---
 
@@ -788,8 +789,10 @@ Nothing.
 
 `app.purge(target)`
 
-!!! tip
-    This functionality was updated in After Effects 24.3 to allow the `ALL_CACHES` enumerated value to clear both the RAM and disk cache, with the ALL_MEMORY_CACHES enumerated value added to purge only the RAM. In versions prior to 24.3, `ALL_CACHES` will only clear the RAM cache.
+:::tip
+This functionality was updated in After Effects 24.3 to allow the `ALL_CACHES` enumerated value to clear both the RAM and disk cache, with the ALL_MEMORY_CACHES enumerated value added to purge only the RAM. In versions prior to 24.3, `ALL_CACHES` will only clear the RAM cache.
+:::
+
 
 #### Description
 
@@ -797,17 +800,14 @@ Purges unused data of the specified types. Replicates the Purge options in the E
 
 #### Parameters
 
-+-----------+--------------------+----------------------------------------------------------------------------------------------------------+
 | Parameter |        Type        |                                               Description                                                |
-+===========+====================+==========================================================================================================+
+|-----------|--------------------|----------------------------------------------------------------------------------------------------------|
 | `target`  | `PurgeTarget` enum | The type of elements to purge from memory. One of:                                                       |
-|           |                    |                                                                                                          |
 |           |                    | - `PurgeTarget.ALL_CACHES`: Purges all data that After Effects has cached to both RAM and disk cache.    |
 |           |                    | - `PurgeTarget.ALL_MEMORY_CACHES`: Purges all data that After Effects has cached to RAM. *(new in 24.3)* |
 |           |                    | - `PurgeTarget.UNDO_CACHES`: Purges all data saved in the undo cache.                                    |
 |           |                    | - `PurgeTarget.SNAPSHOT_CACHES`: Purges all data cached as composition/layer snapshots.                  |
 |           |                    | - `PurgeTarget.IMAGE_CACHES`: Purges all saved image data.                                               |
-+-----------+--------------------+----------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -880,8 +880,10 @@ Nothing.
 
 `app.setMultiFrameRenderingConfig(mfr_on, max_cpu_perc)`
 
-!!! note
-    This functionality was added in After Effects 22.0 (2022)
+:::note
+This functionality was added in After Effects 22.0 (2022)
+:::
+
 
 #### Description
 

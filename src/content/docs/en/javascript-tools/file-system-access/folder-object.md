@@ -1,7 +1,6 @@
 ---
 title: folder-object
 ---
-
 # Folder Object
 
 Represents a file-system folder or directory in a platform-independent manner. All properties and methods resolve file system aliases automatically and act on the original file unless otherwise noted.
@@ -17,23 +16,16 @@ new Folder( [path] ); // Always returns a Folder object
 
 To create a Folder object, use the Folder function or the new operator. The constructor accepts full or partial path names, and returns the new object.
 
-+-----------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter |  Type  |                                                                                                                           Description                                                                                                                            |
-+===========+========+==================================================================================================================================================================================================================================================================+
+|-----------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `path`    | String | Optional. The absolute or relative path to the Folder associated with this object, specified in platform-specific or URI format; see [Specifying paths](using-file-and-folder-objects.md#specifying-paths). The value stored in the object is the absolute path. |
-|           |        |                                                                                                                                                                                                                                                                  |
 |           |        | The path need not refer to an existing Folder. If not supplied, a temporary name is generated.                                                                                                                                                                   |
-|           |        |                                                                                                                                                                                                                                                                  |
 |           |        | If the path refers to an existing file:                                                                                                                                                                                                                          |
-|           |        |                                                                                                                                                                                                                                                                  |
 |           |        | - The Folder function returns a File object instead of a File object.                                                                                                                                                                                            |
 |           |        | - The new operator returns a Folder object for a nonexisting folder with the same name.                                                                                                                                                                          |
-|           |        |                                                                                                                                                                                                                                                                  |
 |           |        | !!! warning                                                                                                                                                                                                                                                      |
 |           |        |     In After Effects on MacOS, if `path.length` is more than 1002, After Effects crashes.                                                                                                                                                                        |
-|           |        |                                                                                                                                                                                                                                                                  |
 |           |        |     This has been reported on MacOS 10.11.6 and After Effects 13.8 and 14.0.                                                                                                                                                                                     |
-+-----------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ---
 
@@ -599,20 +591,14 @@ Retrieves the contents of this folder, filtered by the supplied mask.
 
 #### Parameters
 
-+-----------+--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter |        Type        |                                                                                                                                             Description                                                                                                                                             |
-+===========+====================+=====================================================================================================================================================================================================================================================================================================+
+|-----------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `mask`    | String or Function | Optional. A search mask for file names.                                                                                                                                                                                                                                                             |
-|           |                    |                                                                                                                                                                                                                                                                                                     |
 |           |                    | A string that can contain question mark (`?`) and asterisk (`*`) wild cards. Default is "`*`", which matches all file names.                                                                                                                                                                        |
-|           |                    |                                                                                                                                                                                                                                                                                                     |
 |           |                    | Can also be the name of a function that takes a File or Folder object as its argument.                                                                                                                                                                                                              |
-|           |                    |                                                                                                                                                                                                                                                                                                     |
 |           |                    | It is called for each file or folder found in the search; if it returns `true`, the object is added to the return array.                                                                                                                                                                            |
-|           |                    |                                                                                                                                                                                                                                                                                                     |
 |           |                    | !!! note                                                                                                                                                                                                                                                                                            |
 |           |                    |     In Windows, all aliases end with the extension `.lnk`; ExtendScript strips this from the file name when found, in order to preserve compatibility with other operating systems. You can search for all aliases by supplying the search mask `"*.lnk"`, but note that such code is not portable. |
-+-----------+--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 #### Returns
@@ -651,8 +637,10 @@ Deletes the empty folder associated with this object from disk, immediately, wit
 
 Folders must be empty before they can be deleted. Does not resolve aliases; instead, deletes the referenced alias or shortcut file itself.
 
-!!! note
-    Cannot be undone. It is recommended that you prompt the user for permission before deleting.
+:::note
+Cannot be undone. It is recommended that you prompt the user for permission before deleting.
+:::
+
 
 #### Returns
 

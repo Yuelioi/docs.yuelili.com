@@ -1,7 +1,6 @@
 ---
 title: viewoptions
 ---
-
 # ViewOptions object
 
 `app.activeViewer.views[0].options`
@@ -83,18 +82,24 @@ Floating-point value, in the range `[-40..40]`
 
 `app.activeViewer.views[0].options.fastPreview`
 
-!!! note
-    This functionality was added in After Effects 12.0 (CC)
+:::note
+This functionality was added in After Effects 12.0 (CC)
+:::
+
 
 #### Description
 
 The state of the Fast Previews menu. This is a read/write attribute using an enumerated value:
 
-!!! warning
-    If you try to get or set the attribute's value in the Layer or Footage panel, you'll get an error message.
+:::warning
+If you try to get or set the attribute's value in the Layer or Footage panel, you'll get an error message.
+:::
 
-!!! tip
-    The Draft preview mode is only available in ray-traced 3D compositions. If you try to use it in a Classic 3D composition, you'll get an error: "Cannot set Draft fast preview mode in a Classic 3D composition."
+
+:::tip
+The Draft preview mode is only available in ray-traced 3D compositions. If you try to use it in a Classic 3D composition, you'll get an error: "Cannot set Draft fast preview mode in a Classic 3D composition."
+:::
+
 
 #### Type
 
@@ -122,8 +127,10 @@ app.activeViewer.views[0].options.fastPreview === FastPreviewType.FP_WIREFRAME;
 
 `app.activeViewer.views[0].options.guidesLocked`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+This functionality was added in After Effects 16.1 (CC 2019)
+:::
+
 
 #### Description
 
@@ -145,8 +152,10 @@ app.activeViewer.views[0].options.guidesLocked;
 
 `app.activeViewer.views[0].options.guidesSnap`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+This functionality was added in After Effects 16.1 (CC 2019)
+:::
+
 
 #### Description
 
@@ -168,8 +177,10 @@ app.activeViewer.views[0].options.guidesSnap;
 
 `app.activeViewer.views[0].options.guidesVisibility`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+This functionality was added in After Effects 16.1 (CC 2019)
+:::
+
 
 #### Description
 
@@ -191,8 +202,10 @@ app.activeViewer.views[0].options.guidesVisibility;
 
 `app.activeViewer.views[0].options.rulers`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+This functionality was added in After Effects 16.1 (CC 2019)
+:::
+
 
 #### Description
 

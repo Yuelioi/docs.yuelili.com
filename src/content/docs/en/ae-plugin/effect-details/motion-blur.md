@@ -1,7 +1,6 @@
 ---
 title: motion-blur
 ---
-
 # Motion Blur
 
 Effects handle their own motion blur, using [PF_InData>shutter_angle](../effect-basics/PF_InData.md#pf_indata-members) along with [PF_InData>shutter_phase](../effect-basics/PF_InData.md#pf_indata-members).

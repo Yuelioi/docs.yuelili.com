@@ -1,12 +1,18 @@
 import fs from "fs";
 import path from "path";
 import { promisify } from "util";
+import { fileURLToPath } from "url";
+
+import fse from "fs-extra";
 
 const readdir = promisify(fs.readdir);
 const stat = promisify(fs.stat);
 const unlink = promisify(fs.unlink);
 const rmdir = promisify(fs.rmdir);
 const rename = promisify(fs.rename);
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const SOURCE_DIR = path.join(__dirname, "../", "dist/astro");
 const TARGET_DIR = path.join(__dirname, "../", "dist/sync");
@@ -60,26 +66,26 @@ async function deleteRecursive(dirPath) {
 
 async function moveFiles() {
   try {
-    const sourceExists = fs.existsSync(SOURCE_DIR);
+    const sourceExists = fse.existsSync(SOURCE_DIR);
     if (!sourceExists) {
       throw new Error("源目录不存在");
     }
 
-    if (!fs.existsSync(TARGET_DIR)) {
-      fs.mkdirSync(TARGET_DIR, { recursive: true });
-    }
+    fse.ensureDirSync(TARGET_DIR); // 自动创建目标目录（等效于 mkdir -p）
 
-    const items = await readdir(SOURCE_DIR);
+    const items = await fse.readdir(SOURCE_DIR);
+    console.log(`开始移动 ${items.length} 个项目...`);
 
+    let count = 0;
     for (const item of items) {
       const sourcePath = path.join(SOURCE_DIR, item);
       const targetPath = path.join(TARGET_DIR, item);
 
-      await rename(sourcePath, targetPath);
-      console.log(`已移动: ${sourcePath} → ${targetPath}`);
+      await fse.copy(sourcePath, targetPath, { overwrite: true });
+      console.log(`[${++count}/${items.length}] 已移动: ${item}`);
     }
   } catch (error) {
-    throw new Error(`文件移动失败: ${error.message}`);
+    throw new Error(`文件移动失败: ${error.message}`, { cause: error });
   }
 }
 

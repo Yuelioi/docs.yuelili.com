@@ -1,7 +1,6 @@
 ---
 title: view
 ---
-
 # View object
 
 `app.activeViewer.views[0]`

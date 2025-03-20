@@ -1,7 +1,6 @@
 ---
 title: automatic-layout
 ---
-
 # Automatic layout
 
 When a script creates a window and its associated user-interface elements, it can explicitly control the size and location of each element and of the container elements, or it can take advantage of the automatic layout capability provided by ScriptUI. The automatic layout mechanism uses certain available information about user-interface elements, along with a set of layout rules, to establish a visually pleasing layout of the controls in a dialog, automatically determining the proper sizes for elements and containers.
@@ -32,8 +31,10 @@ A layout manager can determine the best size for a child element through the ele
 
 For details of how you can set these property values to affect the automatic layout, see [Automatic layout properties](#automatic-layout-properties).
 
-!!! note
-    The default font and font size are chosen differently on different platforms, and by different applications on the same platform, so ScriptUI windows that are created the same way can appear different in different contexts.
+:::note
+The default font and font size are chosen differently on different platforms, and by different applications on the same platform, so ScriptUI windows that are created the same way can appear different in different contexts.
+:::
+
 
 ---
 

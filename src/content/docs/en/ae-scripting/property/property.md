@@ -1,7 +1,6 @@
 ---
 title: property
 ---
-
 # Property object
 
 `app.project.item(index).layer(index).propertySpec`
@@ -10,11 +9,15 @@ title: property
 
 The Property object contains value, keyframe, and expression information about a particular AE property of a layer. An AE property is a value, often animatable, of an effect, mask, or transform within an individual layer. For examples of how to access properties, see [PropertyBase object](../propertybase) and [PropertyGroup.property()](propertygroup.md#propertygroupproperty).
 
-!!! info
-    Property is a subclass of [PropertyBase](../propertybase). All methods and attributes of PropertyBase, in addition to those listed below, are available when working with Property.
+:::info
+Property is a subclass of [PropertyBase](../propertybase). All methods and attributes of PropertyBase, in addition to those listed below, are available when working with Property.
+:::
 
-!!! note
-    JavaScript objects commonly referred to as "properties" are called "attributes" in this guide, to avoid confusion with the After Effects definition of property.
+
+:::note
+JavaScript objects commonly referred to as "properties" are called "attributes" in this guide, to avoid confusion with the After Effects definition of property.
+:::
+
 
 #### Examples
 
@@ -117,8 +120,10 @@ myTextLayer.sourceText.setValue("foo");
 
 `app.project.item(index).layer(index).propertySpec.alternateSource`
 
-!!! note
-    This functionality was added in After Effects 18.0 (2021)
+:::note
+This functionality was added in After Effects 18.0 (2021)
+:::
+
 
 #### Description
 
@@ -148,8 +153,10 @@ AVItem object; read-only.
 
 `app.project.item(index).layer(index).propertySpec.canSetAlternateSource`
 
-!!! note
-    This functionality was added in After Effects 18.0 (2021)
+:::note
+This functionality was added in After Effects 18.0 (2021)
+:::
+
 
 #### Description
 
@@ -199,8 +206,10 @@ Boolean; read-only.
 
 When `true`, the property's dimensions are represented as separate properties. For example, if the layer's position is represented as X Position and Y Position properties in the Timeline panel, the Position property has this attribute set to `true`.
 
-!!! tip
-    This attribute applies only when the [isSeparationLeader](#propertyisseparationleader) attribute is `true`.
+:::tip
+This attribute applies only when the [isSeparationLeader](#propertyisseparationleader) attribute is `true`.
+:::
+
 
 #### Type
 
@@ -212,8 +221,10 @@ Boolean; read/write.
 
 `app.project.item(index).layer(index).essentialProperty.property(index).essentialPropertySource`
 
-!!! note
-    This functionality was added in After Effects 22.0 (2022)
+:::note
+This functionality was added in After Effects 22.0 (2022)
+:::
+
 
 #### Description
 
@@ -324,8 +335,10 @@ Boolean; read-only.
 
 `app.project.item(index).layer(index).propertySpec.isDropdownEffect`
 
-!!! note
-    This functionality was added in After Effects 17.0.1 (2020)
+:::note
+This functionality was added in After Effects 17.0.1 (2020)
+:::
+
 
 #### Description
 
@@ -353,8 +366,10 @@ Boolean; read-only.
 
 When `true`, the property represents one of the separated dimensions for a multidimensional property. For example, the X Position property has this attribute set to `true`.
 
-!!! tip
-    The original, consolidated, multidimensional property is the "separation leader" and the new, separated, single-dimensional properties are its "separation followers".
+:::tip
+The original, consolidated, multidimensional property is the "separation leader" and the new, separated, single-dimensional properties are its "separation followers".
+:::
+
 
 #### Type
 
@@ -370,8 +385,10 @@ Boolean; read-only.
 
 When `true`, the property is multidimensional and can be separated. For example, the Position property has this attribute set to `true`.
 
-!!! tip
-    The original, consolidated, multidimensional property is the "separation leader" and the new, separated, single-dimensional properties are its "separation followers".
+:::tip
+The original, consolidated, multidimensional property is the "separation leader" and the new, separated, single-dimensional properties are its "separation followers".
+:::
+
 
 #### Type
 
@@ -537,8 +554,10 @@ Integer; read-only.
 
 The original multidimensional property for this separated follower. For example, if the current property is Y Position, this attribute's value points to the Position property.
 
-!!! tip
-    The original, consolidated, multidimensional property is the "separation leader" and the new, separated, single-dimensional properties are its "separation followers".
+:::tip
+The original, consolidated, multidimensional property is the "separation leader" and the new, separated, single-dimensional properties are its "separation followers".
+:::
+
 
 #### Type
 
@@ -606,8 +625,10 @@ Integer; the index of the new keyframe or marker.
 
 `app.project.item(index).layer(index).propertySpec.addToMotionGraphicsTemplate(comp)`
 
-!!! note
-    This functionality was added in After Effects 15.0 (CC 2018)
+:::note
+This functionality was added in After Effects 15.0 (CC 2018)
+:::
+
 
 #### Description
 
@@ -635,8 +656,10 @@ Boolean.
 
 `app.project.item(index).layer(index).propertySpec.addToMotionGraphicsTemplateAs(comp, name)`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+This functionality was added in After Effects 16.1 (CC 2019)
+:::
+
 
 #### Description
 
@@ -665,8 +688,10 @@ Boolean.
 
 `app.project.item(index).layer(index).propertySpec.canAddToMotionGraphicsTemplate(comp)`
 
-!!! note
-    This functionality was added in After Effects 15.0 (CC 2018)
+:::note
+This functionality was added in After Effects 15.0 (CC 2018)
+:::
+
 
 #### Description
 
@@ -703,8 +728,10 @@ Boolean.
 
 For a separated, multidimensional property, retrieves a specific follower property. For example, you can use this method on the Position property to access the separated X Position and Y Position properties
 
-!!! tip
-    This attribute applies only when the [isSeparationLeader](#propertyisseparationleader) attribute is `true`.
+:::tip
+This attribute applies only when the [isSeparationLeader](#propertyisseparationleader) attribute is `true`.
+:::
+
 
 #### Parameters
 
@@ -818,8 +845,10 @@ Array of [KeyframeEase objects](../../other/keyframeease):
 
 `app.project.item(index).layer(index).propertySpec.keyLabel(keyIndex)`
 
-!!! note
-    This functionality was added in After Effects 22.6.
+:::note
+This functionality was added in After Effects 22.6.
+:::
+
 
 #### Description
 
@@ -1122,8 +1151,10 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.setAlternateSource(newSource)`
 
-!!! note
-    This functionality was added in After Effects 18.0 (2021)
+:::note
+This functionality was added in After Effects 18.0 (2021)
+:::
+
 
 #### Description
 
@@ -1156,23 +1187,17 @@ Sets the `in` and `out` interpolation types for the specified keyframe.
 
 #### Parameters
 
-+------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter  |               Type                |                                                                      Description                                                                      |
-+============+===================================+=======================================================================================================================================================+
+|------------|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `keyIndex` | Integer                           | The index for the keyframe, in the range `[1..numKeys]`, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
-+------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `inType`   | `KeyframeInterpolationType` enum. | The incoming interpolation type. One of:                                                                                                              |
-|            |                                   |                                                                                                                                                       |
 |            |                                   | - `KeyframeInterpolationType.LINEAR`                                                                                                                  |
 |            |                                   | - `KeyframeInterpolationType.BEZIER`                                                                                                                  |
 |            |                                   | - `KeyframeInterpolationType.HOLD`                                                                                                                    |
-+------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `outType`  | `KeyframeInterpolationType` enum. | Optional. The outgoing interpolation type. If not supplied, the 'out' type is set to the `inType` value. One of:                                      |
-|            |                                   |                                                                                                                                                       |
 |            |                                   | - `KeyframeInterpolationType.LINEAR`                                                                                                                  |
 |            |                                   | - `KeyframeInterpolationType.BEZIER`                                                                                                                  |
 |            |                                   | - `KeyframeInterpolationType.HOLD`                                                                                                                    |
-+------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -1184,8 +1209,10 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.setLabelAtKey(keyIndex, labelIndex)`
 
-!!! note
-    This functionality was added in After Effects 22.6 (2022)
+:::note
+This functionality was added in After Effects 22.6 (2022)
+:::
+
 
 #### Description
 
@@ -1208,8 +1235,10 @@ Nothing.
 
 `app.project.item(index).layer(index).propertySpec.setPropertyParameters(items)`
 
-!!! note
-    This functionality was added in After Effects 17.0.1 (2020)
+:::note
+This functionality was added in After Effects 17.0.1 (2020)
+:::
+
 
 #### Description
 
@@ -1221,22 +1250,20 @@ Sets parameters for a Dropdown Menu Control's Menu Property. This method will ov
 
 #### Parameters
 
-+-----------+------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter |       Type       |                                                                                  Description                                                                                  |
-+===========+==================+===============================================================================================================================================================================+
+|-----------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `items`   | Array of strings | Values which will replace the existing menu entries in a Dropdown Menu Control.                                                                                               |
-|           |                  |                                                                                                                                                                               |
 |           |                  | - Only strings are allowed.                                                                                                                                                   |
 |           |                  | - Empty item strings are not allowed.                                                                                                                                         |
 |           |                  | - Duplicate item strings are not allowed.                                                                                                                                     |
 |           |                  | - The character `"\"` is not allowed in the item strings.                                                                                                                     |
 |           |                  | - The string `"(-"` can be specified as of the item strings, to create a separator line in the dropdown menu. The separator lines will claim an index for each of themselves. |
-+-----------+------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-!!! tip
-    Item strings should be in ASCII or MultiByte encodable in the current code-page. In other words, the item strings should be provided in the script of the running system.
+:::tip
 
-    For example: Specifying the item strings in Japanese while running the script on an English system will create a dropdown effect with illegible characters in the item strings.
+For example: Specifying the item strings in Japanese while running the script on an English system will create a dropdown effect with illegible characters in the item strings.
+:::
+
 
 #### Example
 
@@ -1353,21 +1380,15 @@ Sets the incoming and outgoing tangent vectors for the specified keyframe. If th
 
 #### Parameters
 
-+--------------+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 |  Parameter   |                   Type                    |                                                                      Description                                                                      |
-+==============+===========================================+=======================================================================================================================================================+
+|--------------|-------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `keyIndex`   | Integer                                   | The index for the keyframe, in the range `[1..numKeys]`, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
-+--------------+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `inTangent`  | An array of 2 or 3 floating-point values. | The incoming tangent vector.                                                                                                                          |
-|              |                                           |                                                                                                                                                       |
 |              |                                           | - If the property value type is `PropertyValueType.TwoD_SPATIAL`, the array contains 2 values.                                                        |
 |              |                                           | - If the property value type is `PropertyValueType.ThreeD_SPATIAL`, the array contains 3 values.                                                      |
-+--------------+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `outTangent` | An array of 2 or 3 floating-point values. | Optional. The outgoing tangent vector. If not supplied, the `out` tangent is set to the `inTangent` value.                                            |
-|              |                                           |                                                                                                                                                       |
 |              |                                           | - If the property value type is `PropertyValueType.TwoD_SPATIAL`, the array contains 2 values.                                                        |
 |              |                                           | - If the property value type is `PropertyValueType.ThreeD_SPATIAL`, the array contains 3 values.                                                      |
-+--------------+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -1427,23 +1448,17 @@ Sets the incoming and outgoing temporal ease for the specified keyframe. See [Ke
 
 #### Parameters
 
-+-------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 |     Parameter     |                                  Type                                   |                                                                      Description                                                                      |
-+===================+=========================================================================+=======================================================================================================================================================+
+|-------------------|-------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `keyIndex`        | Integer                                                                 | The index for the keyframe, in the range `[1..numKeys]`, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
-+-------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `inTemporalEase`  | An array of 1, 2, or 3 [KeyframeEase objects](../../other/keyframeease) | The incoming temporal ease.                                                                                                                           |
-|                   |                                                                         |                                                                                                                                                       |
 |                   |                                                                         | - If the property value type is `PropertyValueType.TwoD`, the array contains 2 objects.                                                               |
 |                   |                                                                         | - If the property value type is `PropertyValueType.ThreeD`, the array contains 3 objects.                                                             |
 |                   |                                                                         | - For all other value types, the array contains 1 object.                                                                                             |
-+-------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `outTemporalEase` | An array of 1, 2, or 3 [KeyframeEase objects](../../other/keyframeease) | Optional. The outgoing temporal ease. If not supplied, the outgoing ease is set to the `inTemporalEase` value.                                        |
-|                   |                                                                         |                                                                                                                                                       |
 |                   |                                                                         | - If the property value type is `PropertyValueType.TwoD`, the array contains 2 objects.                                                               |
 |                   |                                                                         | - If the property value type is `PropertyValueType.ThreeD`, the array contains 3 objects.                                                             |
 |                   |                                                                         | - For all other value types, the array contains 1 object.                                                                                             |
-+-------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -1542,8 +1557,10 @@ Nothing.
 
 The value of the named property as evaluated at the specified time. Note that the type of value returned is not made explicit; it will be of a different type, depending on the property evaluated.
 
-!!! tip
-    As After Effects 13.6, this method now waits for time-intensive expressions, like `sampleImage`, to finish evaluating before it returns the result.
+:::tip
+As After Effects 13.6, this method now waits for time-intensive expressions, like `sampleImage`, to finish evaluating before it returns the result.
+:::
+
 
 #### Parameters
 

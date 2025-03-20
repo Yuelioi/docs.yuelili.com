@@ -1,7 +1,6 @@
 ---
 title: index
 ---
-
 # File System Access
 
 Adobe ExtendScript defines classes that simplify cross-platform file-system access. These classes are available to all applications that support a JavaScript interface.

@@ -1,7 +1,6 @@
 ---
 title: aegp-details
 ---
-
 # AEGP Details
 
 ## Have A Cookie

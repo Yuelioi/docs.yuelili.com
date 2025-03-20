@@ -1,7 +1,6 @@
 ---
 title: folderitem
 ---
-
 # FolderItem object
 
 `app.project.FolderItem`

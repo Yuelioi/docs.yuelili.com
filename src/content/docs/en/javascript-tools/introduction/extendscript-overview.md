@@ -1,15 +1,16 @@
 ---
 title: extendscript-overview
 ---
-
 # ExtendScript overview
 
 Adobe provides an extended implementation of JavaScript, called ExtendScript, that is used by many Adobe applications that provide a scripting interface. In addition to implementing the JavaScript language according to the ECMA JavaScript specification, ExtendScript provides certain additional features and utilities.
 
 This document describes JavaScript modules, tools, utilities, and features that are available to all JavaScript-enabled Adobe applications.
 
-!!! note
-    Some modules, and features of some modules, are optional. Check the product documentation for each application for details of which modules and features are implemented.
+:::note
+Some modules, and features of some modules, are optional. Check the product documentation for each application for details of which modules and features are implemented.
+:::
+
 
 ## Example code
 

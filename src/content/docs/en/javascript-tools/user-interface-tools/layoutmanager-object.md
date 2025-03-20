@@ -1,7 +1,6 @@
 ---
 title: layoutmanager-object
 ---
-
 # LayoutManager object
 
 Controls the automatic layout behavior for a window or container. The subclass AutoLayoutManager implements the default automatic layout behavior.

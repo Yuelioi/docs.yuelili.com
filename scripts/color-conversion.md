@@ -1,100 +1,178 @@
----
-title: color-conversion
+# Layer Sub-objects
+
+`thisLayer`
+
+This category describes items that give you *other objects* based on the current layer; things like the source (for precomps or footage), effects, masks, sourceRect, etc.
+
+:::info
+On this page, we're going to use `thisLayer` as a sample on how to call these items, however note that any method that returns a [Layer](./layer) will work.
+:::
+
+
+:::note
+For After Effects CC and CS6, the Expression language menu, the "Layer Sub-objects", "Layer General", "Layer Properties", "Layer 3D", and "Layer Space Transforms" have been arranged into a "Layer" submenu.
+:::
+
+
 ---
 
-# Color Conversion
+## Attributes
 
-These methods are all around converting colours from one format to another. Think converting a hex code to RGB, so you can use your client's brand colours in an expression in the project, or converting a value to HSL so you can adjust the lightness or saturation procedurally.
+### Layer.source
+
+`thisLayer.source`
+
+#### Description
+
+Returns the source [Comp](../objects/comp) or [Footage](../objects/footage) object for the layer.
+
+Default time is adjusted to the time in the source.
+
+Example:
+
+```js
+source.layer(1).position
+```
+
+#### Type
+
+[Comp](../objects/comp) or [Footage](../objects/footage)
 
 ---
 
 ## Methods
 
-### rgbToHsl()
+### Layer.effect()
 
-`rgbToHsl(rgbaArray)`
+`thisLayer.effect(name)`
+
+`thisLayer.effect(index)`
 
 #### Description
 
-Converts a color in RGBA space to HSLA space.
+The `name` value will have After Effects find the effect by its name in the Effect Controls panel. The name can be the default name or a user-defined name. If multiple effects have the same name, the effect closest to the top of the Effect Controls panel is used.
 
-The input is an Array of normalized red, green, blue, and alpha channel values, all in the range of `0.0` to `1.0`.
-
-The resulting value is an Array of hue, saturation, lightness, and alpha channel values, also in the range of `0.0` to `1.0`.
+The `index` value will have After Effects finds the effect by its index in the Effect Controls panel, starting at `1` and counting from the top.
 
 #### Parameters
 
-|  Parameter  |               Type               |              Description               |
-| ----------- | -------------------------------- | -------------------------------------- |
-| `rgbaArray` | Array of numbers (4-dimensional) | RGBA values, in the range `[0.0..1.0]` |
+| Parameter |  Type  |         Description          |
+|-----------|--------|------------------------------|
+| `name`    | String | Effect name or index to get. |
+| `index`   | Number |                              |
 
 #### Returns
 
-HSLA Array (4-dimensional)
+[Effect](../objects/effect)
 
 #### Example
 
+Get the "Blurriness" effect by name:
+
 ```js
-rgbToHsl.effect("Change Color")("Color To Change")
+thisLayer.effect("Fast Blur")
+```
+
+Get the first effect on the layer:
+
+```js
+thisLayer.effect(1)
 ```
 
 ---
 
-### hslToRgb()
+### Layer.mask()
 
-`hslToRgb(hslaArray)`
+`thisLayer.mask(name)`
+
+`thisLayer.mask(index)`
 
 #### Description
 
-Converts a color in HSLA space to RGBA space.
+The `name` value can be the default name or a user-defined name. If multiple masks have the same name, the first (topmost) mask is used.
 
-This conversion is the opposite of the conversion performed by the [rgbToHsl()](#rgbtohsl) method.
+The `index` value will have After Effects finds the mask by its index in the Timeline panel, starting at `1` and counting from the top.
 
 #### Parameters
 
-|  Parameter  |               Type               |              Description               |
-| ----------- | -------------------------------- | -------------------------------------- |
-| `hslaArray` | Array of numbers (4-dimensional) | HSLA values, in the range `[0.0..1.0]` |
+| Parameter |  Type  |         Description          |
+|-----------|--------|------------------------------|
+| `name`    | String | Effect name or index to get. |
+| `index`   | Number |                              |
 
 #### Returns
 
-RGBA Array (4-dimensional)
+[Effect](../objects/effect)
+
+#### Example
+
+Get the mask "Mask 1" by name:
+
+```js
+thisLayer.mask("Mask 1")
+```
+
+Get the first mask on the layer:
+
+```js
+thisLayer.mask(1)
+```
 
 ---
 
-### hexToRgb()
+### Layer.sourceRectAtTime()
 
-`hexToRgb(hexString)`
+`thisLayer.sourceRectAtTime(t = time, includeExtents = false)`
 
-!!! note
-    This functionality was added in After Effects 16.0.
+:::note
+Paragraph text extents was added in After Effects 15.1.
+:::
+
 
 #### Description
 
-Converts a color in hex triplet space to RGB space, or in hex quartet space to RGBA space.
-
-For hex triplets, the alpha channel defaults to 1.0.
+Returns the bounding box of the layer (or the layer's source).
 
 #### Parameters
 
-+-------------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------------------------------------------------------------+
-|                                               Parameter                                               |  Type  |                                                            Description                                                             |
-+=======================================================================================================+========+====================================================================================================================================+
-| `hexString`                                                                                           | String | Hex triplet (6 digits, no alpha channel) or quartet (8 digits, includes alpha channel) containing only numerals or characters A–F. |
-|                                                                                                       |        |                                                                                                                                    |
-| Optional leading characters 0x, 0X, or # will be ignored. Characters beyond 8 digits will be ignored. |        |                                                                                                                                    |
-+-------------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------------------------------------------------------------+
+|    Parameter     |  Type   |                                                               Description                                                                |
+|------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------|
+| `t`              | Number  | Optional. The specified time (in comp seconds) to apply the smoothing filter to. Defaults to `time` (the current comp time, in seconds). |
+| `includeExtents` | Boolean | Optional. Only applies to shape layers and paragraph text layers. Defaults to `false`.                                                   |
+|                  |         | - For shape layers: Increases the size of the layer bounds as necessary.                                                                 |
+|                  |         | - For paragraph text layers: Returns the bounds of the paragraph box                                                                     |
 
 #### Returns
 
-Array (4-dimensional)
+An object with four attributes: `{top, left, width, height}`
 
-#### Examples
+#### Example
 
-Any of the following will return `[1.0, 0.0, 1.0, 1.0]`:
+```js
+myTextLayer.sourceRectAtTime().width
+```
 
-- `hexToRgb("FF00FF")`
-- `hexToRgb("#FF00FF")`
-- `hexToRgb("0xFF00FF")`
-- `hexToRgb("0XFF00FFFF")`
-  - **Note:** This inputs an 8-digit hex quartet; the last two digits set alpha channel to 1.0.
+---
+
+### Layer.sourceTime()
+
+`thisLayer.sourceTime([t=time])`
+
+:::note
+This functionality was added in After Effects CS5.5
+:::
+
+
+#### Description
+
+Returns the layer source corresponding to time `t`.
+
+#### Parameters
+
+| Parameter |  Type  |                                                               Description                                                                |
+| --------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `t`       | Number | Optional. The specified time (in comp seconds) to apply the smoothing filter to. Defaults to `time` (the current comp time, in seconds). |
+
+#### Returns
+
+Number

@@ -1,7 +1,6 @@
 ---
 title: using-file-and-folder-objects
 ---
-
 # Using File and Folder objects
 
 Because path name syntax is very different on Windows, Mac OS, and UNIX®, Adobe ExendScript defines the `File` and `Folder` objects to provide platform-independent access to the underlying file system. A File object represents a disk file, a Folder object represents a directory or folder.
@@ -18,8 +17,10 @@ if ( typeof f.open == "undefined" ) ... // Folders do not open
 
 File and Folder objects can be used anywhere that a path name is required, such as in properties and arguments for files and folders.
 
-!!! note
-    When you create two File objects that refer to the same disk file, they are treated as distinct objects. If you open one of them for I/O, the operating system may inhibit access from the other object, because the disk file already is open.
+:::note
+When you create two File objects that refer to the same disk file, they are treated as distinct objects. If you open one of them for I/O, the operating system may inhibit access from the other object, because the disk file already is open.
+:::
+
 
 ---
 
@@ -82,8 +83,10 @@ UNIX and Mac OS assign the HOME environment variable according to the user login
 
 On Windows, the `HOME` environment variable is optional. If it is assigned, its value must be a Windows path name or a path name referring to a remote server (such as `\\myhost\mydir`). If the `HOME` environment variable is undefined, the ExtendScript default is the user's home directory, usually the `C:\Users\username` folder.
 
-!!! note
-    A script can access many of the folders that are specified with platform-specific variables through static, globally available Folder class properties; for instance, `appData` contains the folder that stores application data for all users.
+:::note
+A script can access many of the folders that are specified with platform-specific variables through static, globally available Folder class properties; for instance, `appData` contains the folder that stores application data for all users.
+:::
+
 
 ### Volume and drive names
 

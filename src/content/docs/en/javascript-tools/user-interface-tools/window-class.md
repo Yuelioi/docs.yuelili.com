@@ -1,7 +1,6 @@
 ---
 title: window-class
 ---
-
 # Window class
 
 The Window class defines these static properties and functions. Window instances created with new `Window()` do not have these properties and functions defined.
@@ -16,8 +15,10 @@ The Window class defines these static properties and functions. Window instances
 
 #### Description
 
-!!! danger
-    Deprecated. Use [ScriptUI.frameworkName](./scriptui-class.md#scriptuiframeworkname) instead.
+:::danger
+Deprecated. Use [ScriptUI.frameworkName](./scriptui-class.md#scriptuiframeworkname) instead.
+:::
+
 
 #### Type
 
@@ -31,8 +32,10 @@ String
 
 #### Description
 
-!!! danger
-    Deprecated. Use [ScriptUI.version](./scriptui-class.md#scriptuiversion) instead.
+:::danger
+Deprecated. Use [ScriptUI.version](./scriptui-class.md#scriptuiversion) instead.
+:::
+
 
 #### Type
 
@@ -105,8 +108,10 @@ Boolean. `true` if the user clicked "Yes", `false` if the user clicked "No".
 
 Use this method to find an existing window. This includes windows already created by a script, and windows created by the application (if the application supports this case).
 
-!!! warning
-    Not supported in all ScriptUI implementations.
+:::warning
+Not supported in all ScriptUI implementations.
+:::
+
 
 #### Parameters
 

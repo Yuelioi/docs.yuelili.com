@@ -1,7 +1,6 @@
 ---
 title: layerstyles
 ---
-
 # Layer Styles Match Names
 
 ---

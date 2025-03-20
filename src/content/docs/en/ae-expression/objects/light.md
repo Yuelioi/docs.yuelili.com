@@ -1,30 +1,21 @@
 ---
 title: light
 ---
-
 # Light
 
 `thisLayer.lightOption`
 
 This category is for items specific to Light Layers.
 
-!!! info
-    Light is a subclass of the [Layer object](../../layer/layer). All methods and attributes of Layer are available when working with Light, except:
+:::info
+- all the material properties
+:::
 
-    - `source`
-    - `effect`
-    - `mask`
-    - `width`
-    - `height`
-    - `anchorPoint`
-    - `scale`
-    - `opacity`
-    - `audioLevels`
-    - `timeRemap`
-    - all the material properties
 
-!!! note
-    David Van Brink provides an instructional article and sample project on his [omino pixel blog](http://www.adobe.com/go/learn_ae_ominoflashing) that shows how to use expressions with lights.
+:::note
+David Van Brink provides an instructional article and sample project on his [omino pixel blog](http://www.adobe.com/go/learn_ae_ominoflashing) that shows how to use expressions with lights.
+:::
+
 
 ---
 

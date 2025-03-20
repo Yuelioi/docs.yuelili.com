@@ -1,17 +1,17 @@
 ---
 title: layer
 ---
-
 # Layer
 
 As Layers are the foundation of most things in After Effects, this category is large and has been split into smaller pages for various focuses.
 
 These pages reflect the organization of the Expression fly-out menu within After Effects.
 
-!!! info
-    Layer is the base class for [Camera](../../objects/camera) and [Light](../../objects/light), so Layer attributes and methods are available when working with those layer types (except when noted).
+:::info
 
-    Layer is also a subclass of [PropertyGroup](../../objects/propertygroup), so all methods of PropertyGroup, in addition to those listed in the below pages, are available when working with Layer.
+Layer is also a subclass of [PropertyGroup](../../objects/propertygroup), so all methods of PropertyGroup, in addition to those listed in the below pages, are available when working with Layer.
+:::
+
 
 Those categories are:
 

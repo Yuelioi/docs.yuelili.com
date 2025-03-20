@@ -1,7 +1,6 @@
 ---
 title: compitem
 ---
-
 # CompItem object
 
 `app.project.item(index)`
@@ -13,8 +12,10 @@ title: compitem
 
 The CompItem object represents a composition, and allows you to manipulate and get information about it. Access the objects by position index number in a project's item collection.
 
-!!! info
-    CompItem is a subclass of [AVItem object](../avitem), which is a subclass of [Item object](../item). All methods and attributes of AVItem and Item, in addition to those listed below, are available when working with CompItem.
+:::info
+CompItem is a subclass of [AVItem object](../avitem), which is a subclass of [Item object](../item). All methods and attributes of AVItem and Item, in addition to those listed below, are available when working with CompItem.
+:::
+
 
 #### Example
 
@@ -62,11 +63,15 @@ An array containing three floating-point values, `[R, G, B]`, in the range `[0.0
 
 `app.project.item(index).counters`
 
-!!! note
-    This functionality was added in After Effects 13.2 (CC2014).
+:::note
+This functionality was added in After Effects 13.2 (CC2014).
+:::
 
-!!! warning
-    This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+
+:::warning
+This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::
+
 
 #### Description
 
@@ -90,8 +95,10 @@ The frame value of the beginning of the composition.
 
 This value is an alternative to calculating the start frame using [CompItem.displayStartTime](#compitemdisplaystarttime) and [CompItem.frameDuration](#compitemframeduration) to compensate for floating-point problems.
 
-!!! note
-    This functionality was added in After Effects 17.1.
+:::note
+This functionality was added in After Effects 17.1.
+:::
+
 
 #### Type
 
@@ -107,8 +114,10 @@ Integer; read/write.
 
 The time set as the beginning of the composition, in seconds. This is the equivalent of the Start Timecode or Start Frame setting in the Composition Settings dialog box.
 
-!!! note
-    As of After Effects 17.1, the minimum value is `-10800.0`. Before 17.1, the minimum value was `0.0`
+:::note
+As of After Effects 17.1, the minimum value is `-10800.0`. Before 17.1, the minimum value was `0.0`
+:::
+
 
 #### Type
 
@@ -204,8 +213,10 @@ LayerCollection object; read-only.
 
 `app.project.item(index).markerProperty`
 
-!!! note
-    This functionality was added in After Effects 14.0 (CC 2017)
+:::note
+This functionality was added in After Effects 14.0 (CC 2017)
+:::
+
 
 #### Description
 
@@ -286,8 +297,10 @@ Integer (between 2 and 64); read/write.
 
 `app.project.item(index).motionGraphicsTemplateControllerCount`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+This functionality was added in After Effects 16.1 (CC 2019)
+:::
+
 
 #### Description
 
@@ -303,8 +316,10 @@ Integer; read-only.
 
 `app.project.item(index).motionGraphicsTemplateName`
 
-!!! note
-    This functionality was added in After Effects 15.0 (CC 2018)
+:::note
+This functionality was added in After Effects 15.0 (CC 2018)
+:::
+
 
 #### Description
 
@@ -517,8 +532,10 @@ CompItem object.
 
 `app.project.item(index).exportAsMotionGraphicsTemplate(doOverWriteFileIfExisting[, file_path])`
 
-!!! note
-    This functionality was added in After Effects 15.0 (CC 2018)
+:::note
+This functionality was added in After Effects 15.0 (CC 2018)
+:::
+
 
 #### Description
 
@@ -556,8 +573,10 @@ Boolean.
 
 `app.project.item(index).getMotionGraphicsTemplateControllerName(index)`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+This functionality was added in After Effects 16.1 (CC 2019)
+:::
+
 
 #### Description
 
@@ -579,15 +598,19 @@ String; read-only.
 
 `app.project.item(index).setMotionGraphicsControllerName(index, newName)`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+This functionality was added in After Effects 16.1 (CC 2019)
+:::
+
 
 #### Description
 
 Sets the name of a single property in the Essential Graphics panel.
 
-!!! tip
-    To rename a property as it is added to the EGP, see [Property.addToMotionGraphicsTemplateAs()](../property/property.md#propertyaddtomotiongraphicstemplateas).
+:::tip
+To rename a property as it is added to the EGP, see [Property.addToMotionGraphicsTemplateAs()](../property/property.md#propertyaddtomotiongraphicstemplateas).
+:::
+
 
 #### Parameters
 
@@ -644,8 +667,10 @@ or:
 
 `app.project.item(index).openInEssentialGraphics()`
 
-!!! note
-    This functionality was added in After Effects 15.0 (CC 2018)
+:::note
+This functionality was added in After Effects 15.0 (CC 2018)
+:::
+
 
 #### Description
 

@@ -1,7 +1,6 @@
 ---
 title: renderqueue
 ---
-
 # RenderQueue object
 
 `app.project.renderQueue`
@@ -18,8 +17,10 @@ The RenderQueue object represents the render automation process, the data and fu
 
 `app.project.renderQueue.canQueueInAME`
 
-!!! note
-    This functionality was added in After Effects 14.0 (CC 2017)
+:::note
+This functionality was added in After Effects 14.0 (CC 2017)
+:::
+
 
 #### Description
 
@@ -37,8 +38,10 @@ Boolean; read-only.
 
 `app.project.renderQueue.queueNotify`
 
-!!! note
-    This functionality was added in After Effects 22.0 (2022)
+:::note
+This functionality was added in After Effects 22.0 (2022)
+:::
+
 
 #### Description
 
@@ -198,18 +201,24 @@ Nothing.
 
 `app.project.renderQueue.queueInAME(render_immediately_in_AME)`
 
-!!! note
-    This functionality was added in After Effects 14.0 (CC 2017)
+:::note
+This functionality was added in After Effects 14.0 (CC 2017)
+:::
+
 
 #### Description
 
 Calls the Queue In AME command. This method requires passing a boolean value, telling AME whether to only queue the render items (`false`) or if AME should also start processing its queue (`true`).
 
-!!! note
-    This requires Adobe Media Encoder CC 2017 (11.0) or later.
+:::note
+This requires Adobe Media Encoder CC 2017 (11.0) or later.
+:::
 
-!!! tip
-    When AME receives the queued items, it applies the most recently used encoding preset. If `render_immediately_in_AME` is set to `true`, you will not have an opportunity to change the encoding settings.
+
+:::tip
+When AME receives the queued items, it applies the most recently used encoding preset. If `render_immediately_in_AME` is set to `true`, you will not have an opportunity to change the encoding settings.
+:::
+
 
 #### Parameters
 

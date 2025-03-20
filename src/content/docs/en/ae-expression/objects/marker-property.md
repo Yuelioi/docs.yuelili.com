@@ -1,7 +1,6 @@
 ---
 title: marker-property
 ---
-
 # Marker Property
 
 `thisComp.marker`
@@ -16,8 +15,10 @@ The Marker Property is a special version of the [Property](.././property) object
 
 It contains a special version of some of the same attributes and methods as the standard Property object, however most elements are not applicable here.
 
-!!! info
-    On this page, we're going to use `thisComp.marker` as a sample on how to call these items, however note that any method that returns a [Marker Property](#) will work.
+:::info
+On this page, we're going to use `thisComp.marker` as a sample on how to call these items, however note that any method that returns a [Marker Property](#) will work.
+:::
+
 
 ---
 
@@ -57,15 +58,11 @@ If more than one marker has the same name, this method returns the marker that o
 
 #### Parameters
 
-+-----------+--------+-------------------------------------------+
 | Parameter |  Type  |                Description                |
-+===========+========+===========================================+
+|-----------|--------|-------------------------------------------|
 | `index`   | Number | The marker index to get                   |
-+-----------+--------+-------------------------------------------+
 | `name`    | String | Marker name or index to access marker by. |
-|           |        |                                           |
 | `index`   | Number |                                           |
-+-----------+--------+-------------------------------------------+
 
 #### Type
 

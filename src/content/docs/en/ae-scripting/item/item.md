@@ -1,7 +1,6 @@
 ---
 title: item
 ---
-
 # Item object
 
 `app.project.item(index)`
@@ -13,8 +12,10 @@ title: item
 
 The Item object represents an item that can appear in the Project panel. The first item is at index 1.
 
-!!! info
-    Item is the base class for [AVItem object](../avitem) and for [FolderItem object](../folderitem), which are in turn the base classes for various other item types, so Item attributes and methods are available when working with all of these item types.
+:::info
+Item is the base class for [AVItem object](../avitem) and for [FolderItem object](../folderitem), which are in turn the base classes for various other item types, so Item attributes and methods are available when working with all of these item types.
+:::
+
 
 #### Example
 
@@ -77,8 +78,10 @@ String; read-only.
 
 `app.project.item(index).guides`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+This functionality was added in After Effects 16.1 (CC 2019)
+:::
+
 
 #### Description
 
@@ -112,8 +115,10 @@ Integer; read-only.
 
 The label color for the item. Colors are represented by their number (0 for None, or 1 to 16 for one of the preset colors in the Labels preferences).
 
-!!! tip
-    Custom label colors cannot be set programmatically.
+:::tip
+Custom label colors cannot be set programmatically.
+:::
+
 
 #### Type
 
@@ -225,8 +230,10 @@ if (/Composition|Komposition|Composición|Composizione|コンポジション|컴
 
 `app.project.item(index).addGuide(orientationType, position)`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+This functionality was added in After Effects 16.1 (CC 2019)
+:::
+
 
 #### Description
 
@@ -275,8 +282,10 @@ Nothing.
 
 `app.project.item(index).removeGuide(guideIndex)`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+This functionality was added in After Effects 16.1 (CC 2019)
+:::
+
 
 #### Description
 
@@ -300,8 +309,10 @@ Removes the first guide in `activeItem`.
 app.project.activeItem.removeGuide(0);
 ```
 
-!!! warning
-    Removing a guide will cause all higher guide indexes to shift downward.
+:::warning
+Removing a guide will cause all higher guide indexes to shift downward.
+:::
+
 
 ---
 
@@ -309,8 +320,10 @@ app.project.activeItem.removeGuide(0);
 
 `app.project.item(index).setGuide(position,guideIndex)`
 
-!!! note
-    This functionality was added in After Effects 16.1 (CC 2019)
+:::note
+This functionality was added in After Effects 16.1 (CC 2019)
+:::
+
 
 #### Description
 

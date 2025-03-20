@@ -1,15 +1,16 @@
 ---
 title: threed
 ---
-
 # Layer 3D
 
 `thisLayer`
 
 These attributes are related to the 3d properties of layers.
 
-!!! info
-    On this page, we're going to use `thisLayer` as a sample on how to call these items, however note that any method that returns a [Layer](.././layer) will work.
+:::info
+On this page, we're going to use `thisLayer` as a sample on how to call these items, however note that any method that returns a [Layer](.././layer) will work.
+:::
+
 
 ---
 

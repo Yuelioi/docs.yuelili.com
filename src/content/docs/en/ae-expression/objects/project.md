@@ -1,7 +1,6 @@
 ---
 title: project
 ---
-
 # Project
 
 `thisProject`

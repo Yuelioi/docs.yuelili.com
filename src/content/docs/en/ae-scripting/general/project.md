@@ -1,7 +1,6 @@
 ---
 title: project
 ---
-
 # Project object
 
 `app.project`
@@ -46,8 +45,10 @@ Integer (8, 16, or 32 only); read/write.
 
 `app.project.compensateForSceneReferredProfiles`
 
-!!! note
-    This functionality was added in After Effects 16.0 (CC 2019)
+:::note
+This functionality was added in After Effects 16.0 (CC 2019)
+:::
+
 
 #### Description
 
@@ -63,11 +64,15 @@ Boolean; read/write.
 
 `app.project.dirty`
 
-!!! note
-    This functionality was added in After Effects 17.5 (CC2020).
+:::note
+This functionality was added in After Effects 17.5 (CC2020).
+:::
 
-!!! warning
-    This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+
+:::warning
+This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+:::
+
 
 #### Description
 
@@ -99,8 +104,10 @@ Integer (0 or 1); read/write.
 
 `app.project.expressionEngine`
 
-!!! note
-    This functionality was added in After Effects 16.0 (CC 2019)
+:::note
+This functionality was added in After Effects 16.0 (CC 2019)
+:::
+
 
 #### Description
 
@@ -179,8 +186,10 @@ A `FramesCountType` enumerated value; read/write. One of:
 - `FramesCountType.FC_START_0`
 - `FramesCountType.FC_TIMECODE_CONVERSION`
 
-!!! warning
-    Setting this attribute to `FramesCountType.FC_TIMECODE_CONVERSION` resets the `displayStartFrame` attribute to 0.
+:::warning
+Setting this attribute to `FramesCountType.FC_TIMECODE_CONVERSION` resets the `displayStartFrame` attribute to 0.
+:::
+
 
 ---
 
@@ -204,8 +213,10 @@ Boolean; read/write.
 
 `app.project.gpuAccelType`
 
-!!! note
-    This functionality was added in After Effects 13.8 (CC 2015.3)
+:::note
+This functionality was added in After Effects 13.8 (CC 2015.3)
+:::
+
 
 #### Description
 
@@ -288,8 +299,10 @@ Boolean; read/write.
 
 `app.project.linearizeWorkingSpace`
 
-!!! note
-    This functionality was added in After Effects 16.0 (CC 2019)
+:::note
+This functionality was added in After Effects 16.0 (CC 2019)
+:::
+
 
 #### Description
 
@@ -400,8 +413,10 @@ A `TimeDisplayType` enumerated value; read/write. One of:
 
 `app.project.toolType`
 
-!!! note
-    This functionality was added in After Effects 14.0 (CC 2017)
+:::note
+This functionality was added in After Effects 14.0 (CC 2017)
+:::
+
 
 #### Description
 
@@ -506,8 +521,10 @@ Boolean; read/write.
 
 `app.project.usedFonts`
 
-!!! note
-    This functionality was added in After Effects 24.5
+:::note
+This functionality was added in After Effects 24.5
+:::
+
 
 #### Description
 
@@ -554,8 +571,10 @@ The current project's working gamma value, either 2.2 or 2.4.
 
 Setting values other than 2.2 or 2.4 will cause a scripting error.
 
-!!! tip
-    When the project's color working space is set, the working gamma value is ignored by After Effects.
+:::tip
+When the project's color working space is set, the working gamma value is ignored by After Effects.
+:::
+
 
 #### Type
 
@@ -661,15 +680,12 @@ Closes the project with the option of saving changes automatically, prompting th
 
 #### Parameters
 
-+----------------+---------------------+-------------------------------------------------------------------------------------------+
 |   Parameter    |        Type         |                                        Description                                        |
-+================+=====================+===========================================================================================+
+|----------------|---------------------|-------------------------------------------------------------------------------------------|
 | `closeOptions` | `CloseOptions` enum | Action to be performed on close. One of:                                                  |
-|                |                     |                                                                                           |
 |                |                     | - `CloseOptions.DO_NOT_SAVE_CHANGES`: Close without saving.                               |
 |                |                     | - `CloseOptions.PROMPT_TO_SAVE_CHANGES`: Prompt for whether to save changes before close. |
 |                |                     | - `CloseOptions.SAVE_CHANGES`: Save automatically on close.                               |
-+----------------+---------------------+-------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -785,8 +801,10 @@ Retrieves an item at a specified index position.
 
 `app.project.itemByID(id)`
 
-!!! note
-    This functionality was added in After Effects 13.0 (CC 2014)
+:::note
+This functionality was added in After Effects 13.0 (CC 2014)
+:::
+
 
 #### Description
 
@@ -808,8 +826,10 @@ Retrieves an item by its [Item ID](../item/item.md#itemid)
 
 `app.project.layerByID(id)`
 
-!!! note
-    This functionality was added in After Effects 22.0 (2022)
+:::note
+This functionality was added in After Effects 22.0 (2022)
+:::
+
 
 #### Description
 
@@ -908,8 +928,10 @@ Integer; the total number of FootageItem objects removed.
 
 `app.project.replaceFont(fromFont, toFont, [noFontLocking = false])`
 
-!!! note
-    This functionality was added in After Effects 24.5
+:::note
+This functionality was added in After Effects 24.5
+:::
+
 
 #### Description
 
@@ -1044,8 +1066,10 @@ Nothing.
 
 `app.project.newTeamProject(teamProjectName, description)`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+This functionality was added in After Effects 14.2 (CC 2017.1)
+:::
+
 
 #### Description
 
@@ -1068,8 +1092,10 @@ Boolean. `true` if the team project is successfully created, otherwise `false`.
 
 `app.project.openTeamProject(teamProjectName)`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+This functionality was added in After Effects 14.2 (CC 2017.1)
+:::
+
 
 #### Description
 
@@ -1091,8 +1117,10 @@ Boolean. `true` if the team project is successfully opened, otherwise `false`.
 
 `app.project.shareTeamProject(comment)`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+This functionality was added in After Effects 14.2 (CC 2017.1)
+:::
+
 
 #### Description
 
@@ -1114,8 +1142,10 @@ Boolean. `true` if the team project is successfully shared, otherwise `false`.
 
 `app.project.syncTeamProject()`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+This functionality was added in After Effects 14.2 (CC 2017.1)
+:::
+
 
 #### Description
 
@@ -1131,8 +1161,10 @@ Boolean. `true` if the team project is successfully synced, otherwise `false`.
 
 `app.project.closeTeamProject()`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+This functionality was added in After Effects 14.2 (CC 2017.1)
+:::
+
 
 #### Description
 
@@ -1148,8 +1180,10 @@ Boolean. `true` if the team project is successfully closed, otherwise `false`.
 
 `app.project.convertTeamProjectToProject(project_file)`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+This functionality was added in After Effects 14.2 (CC 2017.1)
+:::
+
 
 #### Description
 
@@ -1171,8 +1205,10 @@ Boolean. `true` if the team project is successfully converted, otherwise `false`
 
 `app.project.listTeamProjects()`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+This functionality was added in After Effects 14.2 (CC 2017.1)
+:::
+
 
 #### Description
 
@@ -1189,8 +1225,10 @@ Array of strings.
 
 `app.project.isTeamProjectOpen(teamProjectName)`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+This functionality was added in After Effects 14.2 (CC 2017.1)
+:::
+
 
 #### Description
 
@@ -1212,8 +1250,10 @@ Boolean. `true` if the specified team project is currently open, otherwise `fals
 
 `app.project.isAnyTeamProjectOpen()`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+This functionality was added in After Effects 14.2 (CC 2017.1)
+:::
+
 
 #### Description
 
@@ -1229,8 +1269,10 @@ Boolean. `true` if any team project is currently open, otherwise `false`.
 
 `app.project.isTeamProjectEnabled()`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+This functionality was added in After Effects 14.2 (CC 2017.1)
+:::
+
 
 #### Description
 
@@ -1246,8 +1288,10 @@ Boolean. `true` if team project is currently enabled, otherwise `false`.
 
 `app.project.isLoggedInToTeamProject()`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+This functionality was added in After Effects 14.2 (CC 2017.1)
+:::
+
 
 #### Description
 
@@ -1263,8 +1307,10 @@ Boolean. `true` if the client (After Effects) is currently logged into the team 
 
 `app.project.isSyncCommandEnabled()`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+This functionality was added in After Effects 14.2 (CC 2017.1)
+:::
+
 
 #### Description
 
@@ -1280,8 +1326,10 @@ Boolean. `true` if the team projects Sync command is enabled, otherwise `false`.
 
 `app.project.isShareCommandEnabled()`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+This functionality was added in After Effects 14.2 (CC 2017.1)
+:::
+
 
 #### Description
 
@@ -1297,8 +1345,10 @@ Boolean. `true` if the team projects Share command is enabled, otherwise `false`
 
 `app.project.isResolveCommandEnabled()`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+This functionality was added in After Effects 14.2 (CC 2017.1)
+:::
+
 
 #### Description
 
@@ -1314,8 +1364,10 @@ Boolean. `true` if the team projects Resolve command is enabled, otherwise `fals
 
 `app.project.resolveConflict(ResolveType)`
 
-!!! note
-    This functionality was added in After Effects 14.2 (CC 2017.1)
+:::note
+This functionality was added in After Effects 14.2 (CC 2017.1)
+:::
+
 
 #### Description
 
@@ -1323,15 +1375,12 @@ Resolves a conflict between the open team project and the version on the team pr
 
 #### Parameters
 
-+---------------+--------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 |   Parameter   |        Type        |                                                                      Description                                                                       |
-+===============+====================+========================================================================================================================================================+
+|---------------|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `ResolveType` | `ResolveType` enum | The type of conflict resolution to use. One of:                                                                                                        |
-|               |                    |                                                                                                                                                        |
 |               |                    | - `ResolveType.ACCEPT_THEIRS`: Take the shared version. The shared version replaces your version.                                                      |
 |               |                    | - `ResolveType.ACCEPT_YOURS`: Keep your version of the project. The shared version is not taken.                                                       |
 |               |                    | - `ResolveType.ACCEPT_THEIRS_AND_COPY`: Copy and rename your version, then take the shared version. The shared version replaces your original version. |
-+---------------+--------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 

@@ -1,18 +1,21 @@
 ---
 title: mask
 ---
-
 # Mask
 
 `thisLayer.mask("Mask 1")`
 
 This category contains information relating to mask objects. To manipulate the actual mask *path*, see [Mask Path](#maskmaskpath).
 
-!!! note
-    You can link Mask Path properties to other path properties (paths in a shape layer and brush strokes), but the properties are not accessible for direct numerical manipulation through expressions.
+:::note
+You can link Mask Path properties to other path properties (paths in a shape layer and brush strokes), but the properties are not accessible for direct numerical manipulation through expressions.
+:::
 
-!!! info
-    On this page, we're going to use `thisLayer.mask("Mask 1")` as a sample on how to call these items, however note that any method that returns a [Mask](#) will work.
+
+:::info
+On this page, we're going to use `thisLayer.mask("Mask 1")` as a sample on how to call these items, however note that any method that returns a [Mask](#) will work.
+:::
+
 
 ---
 

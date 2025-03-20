@@ -1,15 +1,16 @@
 ---
 title: properties
 ---
-
 # Layer Properties
 
 `thisLayer`
 
 When you add masks, effects, paint, or text to a layer, After Effects adds new properties to the Timeline panel. There are too many of these properties to list here, so use the pick whip to learn the syntax for referring to them in your expressions.
 
-!!! info
-    On this page, we're going to use `thisLayer` as a sample on how to call these items, however note that any method that returns a [Layer](.././layer) will work.
+:::info
+On this page, we're going to use `thisLayer` as a sample on how to call these items, however note that any method that returns a [Layer](.././layer) will work.
+:::
+
 
 ---
 

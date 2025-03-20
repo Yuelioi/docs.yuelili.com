@@ -1,13 +1,14 @@
 ---
 title: defining-entry-points-for-direct-access
 ---
-
 # Defining entry points for direct access
 
 A library to be loaded and accessed directly through an [ExternalObject instance](.././externalobject-object) must publish the following entry points.
 
-!!! note
-    These must be exported as C functions, not C++ functions
+:::note
+These must be exported as C functions, not C++ functions
+:::
+
 
 ---
 
@@ -103,10 +104,11 @@ The variant data does not support JavaScript objects. The following data types a
 
 If, when a function is invoked, a supplied parameter is undefined, ExtendScript sets the data type to `undefined` and does not attempt to convert the data to the requested type.
 
-!!! note
-    The data type of a return value cannot be predefined; JavaScript functions can return any data type.
+:::note
 
-    The called function is free to return any of the listed data types.
+The called function is free to return any of the listed data types.
+:::
+
 
 ---
 
@@ -148,10 +150,11 @@ Two ();
 
 The signature strings for these two functions would be `"One_ds"`, `"Two"`.
 
-!!! warning
-    You cannot define function overloading by returning multiple different signatures for one function.
+:::warning
 
-    Attempting to do so produces undefined results.
+Attempting to do so produces undefined results.
+:::
+
 
 ---
 

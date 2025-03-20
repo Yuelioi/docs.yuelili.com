@@ -1,7 +1,6 @@
 ---
 title: sourcetext
 ---
-
 # Source Text
 
 `text.sourceText`
@@ -16,8 +15,10 @@ These functions are accessible on the [Text.sourceText](text.md#textsourcetext) 
 
 `text.sourceText.isHorizontalText`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+This functionality was added in After Effects 25.0.
+:::
+
 
 #### Description
 
@@ -33,8 +34,10 @@ Boolean
 
 `text.sourceText.isParagraphText`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+This functionality was added in After Effects 25.0.
+:::
+
 
 #### Description
 
@@ -50,8 +53,10 @@ Boolean
 
 `text.sourceText.isPointText`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+This functionality was added in After Effects 25.0.
+:::
+
 
 #### Description
 
@@ -67,8 +72,10 @@ Boolean
 
 `text.sourceText.isVerticalText`
 
-!!! note
-    This functionality was added in After Effects 25.0.
+:::note
+This functionality was added in After Effects 25.0.
+:::
+
 
 #### Description
 
@@ -131,8 +138,10 @@ This function returns the [Text Style](.././style) object of a particular charac
 
 In case the style is keyframed and changes over time, use the second `time` parameter to specify the target time to get the style at.
 
-!!! note
-    Using [SourceText.style](#sourcetextstyle) is the same as using `text.sourceText.getStyleAt(0,0)`
+:::note
+Using [SourceText.style](#sourcetextstyle) is the same as using `text.sourceText.getStyleAt(0,0)`
+:::
+
 
 #### Parameters
 

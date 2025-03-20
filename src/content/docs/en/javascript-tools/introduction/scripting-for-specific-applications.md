@@ -1,7 +1,6 @@
 ---
 title: scripting-for-specific-applications
 ---
-
 # Scripting for specific applications
 
 On startup, all Adobe JavaScript-enabled applications execute JSX files that they find in their startup directories; some of these are installed by applications, and some can be installed by scripters. The policies of different applications vary as to the locations, write access, and loading order.

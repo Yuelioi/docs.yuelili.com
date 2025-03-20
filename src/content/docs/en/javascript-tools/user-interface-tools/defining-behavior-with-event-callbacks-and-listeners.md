@@ -1,7 +1,6 @@
 ---
 title: defining-behavior-with-event-callbacks-and-listeners
 ---
-
 # Defining behavior with event callbacks and listeners
 
 You must define the behavior of your controls in order for them to respond to user interaction. You can do this by defining event-handling callback functions as part of the definition of the control or window. To respond to a specific event, define a handler function for it, and assign a reference to that function in the corresponding property of the window or control object. Different types of windows and controls respond to different actions, or events:

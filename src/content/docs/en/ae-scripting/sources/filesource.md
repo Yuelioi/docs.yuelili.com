@@ -1,7 +1,6 @@
 ---
 title: filesource
 ---
-
 # FileSource object
 
 `app.project.item(index).mainSource`
@@ -13,8 +12,10 @@ title: filesource
 
 The FileSource object describes footage that comes from a file.
 
-!!! info
-    FileSource is a subclass of [FootageSource object](../footagesource). All methods and attributes of FootageSource, in addition to those listed below, are available when working with FileSource.
+:::info
+FileSource is a subclass of [FootageSource object](../footagesource). All methods and attributes of FootageSource, in addition to those listed below, are available when working with FileSource.
+:::
+
 
 ---
 

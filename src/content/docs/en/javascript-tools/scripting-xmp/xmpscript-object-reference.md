@@ -1,7 +1,6 @@
 ---
 title: xmpscript-object-reference
 ---
-
 # XMPScript object reference
 
 The classes defined for the XMP JavaScript API, with their properties and methods, are listed here in alphabetical order.
@@ -34,21 +33,16 @@ This object is returned by [XMPMeta.resolveAlias](#xmpmetaresolvealias). The rea
 
 ### XMPAliasInfo object properties
 
-+-----------+--------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | Property  |  Type  |                                                               Description                                                               |
-+===========+========+=========================================================================================================================================+
+|-----------|--------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | arrayForm | Number | A constant that describes the property type of the resolved alias, 0 for a simple property. Constants are:                              |
-|           |        |                                                                                                                                         |
 |           |        | - `XMPConst.ALIAS_TO_SIMPLE_PROP`: A direct mapping. It can be simple-to-simple, array-to-array, or structure-to-structure.             |
 |           |        | - `XMPConst.ALIAS_TO_ARRAY`: The actual property is an unordered array; the alias is to the first element.                              |
 |           |        | - `XMPConst.ALIAS_TO_ORDERED_ARRAY`: The actual property is an ordered array; the alias is to the first element.                        |
 |           |        | - `XMPConst.ALIAS_TO_ALT_ARRAY`: The actual property is an alternate array; the alias is to the first element.                          |
 |           |        | - `XMPConst.ALIAS_TO_ALT_TEXT`: The actual property is an alternate text array; the alias is to the `x-default` element.                |
-+-----------+--------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | name      | String | The name of the property to which the alias resolves.                                                                                   |
-+-----------+--------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | namespace | String | The namespace of the property to which the alias resolves. See [Schema namespace string constants](#schema-namespace-string-constants). |
-+-----------+--------+-----------------------------------------------------------------------------------------------------------------------------------------+
 
 ---
 
@@ -186,32 +180,21 @@ new XMPDateTime(iso8601Date); // initializes the object with an ISO date
 
 All properties are read-write, and allow you to modify the date-time value. If values are set outside the allowed range, they are automatically set to the minimum or maximum allowed value.
 
-+--------------+--------+-------------------------------------------------------------------------------+
 |   Property   |  Type  |                                  Description                                  |
-+==============+========+===============================================================================+
+|--------------|--------|-------------------------------------------------------------------------------|
 | `year`       | Number | The year, in the range `[0000...9999]`.                                       |
-+--------------+--------+-------------------------------------------------------------------------------+
 | `month`      | Number | The month, in the range `[1...12]`.                                           |
-+--------------+--------+-------------------------------------------------------------------------------+
 | `day`        | Number | The day, in the range `[1...31]`.                                             |
-+--------------+--------+-------------------------------------------------------------------------------+
 | `hour`       | Number | The hour, in the range `[1...23]`.                                            |
-+--------------+--------+-------------------------------------------------------------------------------+
 | `minute`     | Number | The minute, in the range `[1...59]`.                                          |
-+--------------+--------+-------------------------------------------------------------------------------+
 | `second`     | Number | The second, in the range `[1...59]`.                                          |
-+--------------+--------+-------------------------------------------------------------------------------+
 | `nanosecond` | Number | The nanosecond, in the range `[0...1e+9 -1]`.                                 |
-+--------------+--------+-------------------------------------------------------------------------------+
 | `tzSign`     | Number | The time zone direction of offset.                                            |
 |              |        | - `0`: UTC                                                                    |
 |              |        | - `-1`: west                                                                  |
 |              |        | - `1`: east                                                                   |
-+--------------+--------+-------------------------------------------------------------------------------+
 | `tzHour`     | Number | The time zone hour offset from the prime meridian, in the range `[1...23]`.   |
-+--------------+--------+-------------------------------------------------------------------------------+
 | `tzMinute`   | Number | The time zone minute offset from the prime meridian, in the range `[1...59]`. |
-+--------------+--------+-------------------------------------------------------------------------------+
 
 ---
 
@@ -307,10 +290,11 @@ The XMP Toolkit also supplies the Packet Scanner as a fallback solution for unsu
 
 The XMPScript API does not currently support retrieving thumbnails.
 
-!!! note
-    You can also use the Adobe Bridge `Metadata` object to access embedded metadata in files. It supports thumbnails and previews, and additional file formats such as PDF and Camera Raw.
+:::note
 
-    For details, see the Adobe Bridge JavaScript Guide and Adobe Bridge JavaScript Reference.
+For details, see the Adobe Bridge JavaScript Guide and Adobe Bridge JavaScript Reference.
+:::
+
 
 ---
 
@@ -318,15 +302,11 @@ The XMPScript API does not currently support retrieving thumbnails.
 
 `new XMPFile(filePath, format, openFlags)`
 
-+-------------+------------------------------------------------------------------------------------------------------------+--------------------------------+
 |  Property   |                                                    Type                                                    |          Description           |
-+=============+============================================================================================================+================================+
+|-------------|------------------------------------------------------------------------------------------------------------|--------------------------------|
 | `filePath`  | String                                                                                                     | File path                      |
-+-------------+------------------------------------------------------------------------------------------------------------+--------------------------------+
 | `format`    | [File format numeric constant](#file-format-numeric-constants)                                             | Format to create as.           |
-+-------------+------------------------------------------------------------------------------------------------------------+--------------------------------+
 | `openFlags` | Constant. One of:                                                                                          | The open options for the file. |
-|             |                                                                                                            |                                |
 |             | - `XMPConst.OPEN_FOR_READ` - Open for read-only access.                                                    |                                |
 |             | - `XMPConst.OPEN_FOR_UPDATE` - Open for reading and writing.                                               |                                |
 |             | - `XMPConst.OPEN_ONLY_XMP` - Only the XMP is wanted, allows space/time optimizations.                      |                                |
@@ -334,7 +314,6 @@ The XMPScript API does not currently support retrieving thumbnails.
 |             | - `XMPConst.OPEN_USE_SMART_HANDLER` - Require the use of a smart handler. No packet scanning is performed. |                                |
 |             | - `XMPConst.OPEN_USE_PACKET_SCANNING` - Force packet scanning, do not use a smart handler.                 |                                |
 |             | - `XMPConst.OPEN_LIMITED_SCANNING` - Only packet-scan files known to need scanning.                        |                                |
-+-------------+------------------------------------------------------------------------------------------------------------+--------------------------------+
 
 ---
 
@@ -425,12 +404,10 @@ Closes this open file, after writing to it as necessary; that is, if the file wa
 
 ##### Parameters
 
-+--------------+--------------------------------------------------------------------------------------------+--------------------------+
 |  Parameter   |                                            Type                                            |       Description        |
-+==============+============================================================================================+==========================+
+|--------------|--------------------------------------------------------------------------------------------|--------------------------|
 | `closeFlags` | Close-option constant, or `0`. One of:                                                     | Flags to use for closing |
 |              | - `XMPConst.CLOSE_UPDATE_SAFELY` - Write into a temporary file then swap for crash safety. |                          |
-+--------------+--------------------------------------------------------------------------------------------+--------------------------+
 
 ##### Returns
 
@@ -510,22 +487,20 @@ Nothing
 
 This object is returned by [XMPFile.getFileInfo](#xmpfilegetfileinfo). The read-only properties describe the file represented by the [XMPFile object](#xmpfile-object).
 
-!!! note
-    This object is not related to the XMP File Info dialog that Adobe Creative Suite 4 applications use to display metadata.
+:::note
+This object is not related to the XMP File Info dialog that Adobe Creative Suite 4 applications use to display metadata.
+:::
+
 
 ---
 
 ### XMPFileInfo object properties
 
-+----------------+--------+------------------------------------------------------------------------------------------------------------+
 |    Property    |  Type  |                                                Description                                                 |
-+================+========+============================================================================================================+
+|----------------|--------|------------------------------------------------------------------------------------------------------------|
 | `filePath`     | String | The absolute path of the file, in JavaScript notation.                                                     |
-+----------------+--------+------------------------------------------------------------------------------------------------------------+
 | `format`       | Number | One of the file-format constants. See [File format numeric constants](#file-format-numeric-constants).     |
-+----------------+--------+------------------------------------------------------------------------------------------------------------+
 | `handlerFlags` | Number | The features that are supported for this format. A logical OR of these bit-flag constants:                 |
-|                |        |                                                                                                            |
 |                |        | - `XMPConst.HANDLER_CAN_INJECT_XMP` - Can inject first-time XMP into an existing file.                     |
 |                |        | - `XMPConst.HANDLER_CAN_EXPAND` - Can expand XMP or other metadata in an existing file.                    |
 |                |        | - `XMPConst.HANDLER_CAN_REWRITE` - Can copy one file to another, writing new metadata.                     |
@@ -536,9 +511,7 @@ This object is returned by [XMPFile.getFileInfo](#xmpfilegetfileinfo). The read-
 |                |        | - `XMPConst.HANDLER_RETURNS_TNAIL` - File handler returns native thumbnail.                                |
 |                |        | - `XMPConst.HANDLER_OWNS_FILE` - File handler does the file open and close.                                |
 |                |        | - `XMPConst.HANDLER_ALLOWS_SAFE_UPDATE` - File handler allows crash-safe file updates.                     |
-+----------------+--------+------------------------------------------------------------------------------------------------------------+
 | `openFlags`    | Number | The options with which this file was opened. One of these constants:                                       |
-|                |        |                                                                                                            |
 |                |        | - `XMPConst.OPEN_FOR_READ` - Open for read-only access.                                                    |
 |                |        | - `XMPConst.OPEN_FOR_UPDATE` - Open for reading and writing.                                               |
 |                |        | - `XMPConst.OPEN_ONLY_XMP` - Only the XMP is wanted, allows space/time optimizations.                      |
@@ -546,7 +519,6 @@ This object is returned by [XMPFile.getFileInfo](#xmpfilegetfileinfo). The read-
 |                |        | - `XMPConst.OPEN_USE_SMART_HANDLER` - Require the use of a smart handler. No packet scanning is performed. |
 |                |        | - `XMPConst.OPEN_USE_PACKET_SCANNING` - Force packet scanning, do not use a smart handler.                 |
 |                |        | - `XMPConst.OPEN_LIMITED_SCANNING` - Only packet-scan files known to need scanning.                        |
-+----------------+--------+------------------------------------------------------------------------------------------------------------+
 
 ---
 
@@ -659,8 +631,10 @@ Deletes the specified alias; does not delete the aliased property.
 
 If the alias does not exist, does nothing.
 
-!!! note
-    Not yet implemented in the XMP Toolkit.
+:::note
+Not yet implemented in the XMP Toolkit.
+:::
+
 
 ##### Parameters
 
@@ -683,8 +657,10 @@ Nothing
 
 Deletes a registered prefix - namespace URI pair.
 
-!!! note
-    Not yet implemented in the XMP Toolkit.
+:::note
+Not yet implemented in the XMP Toolkit.
+:::
+
 
 ##### Parameters
 
@@ -778,25 +754,18 @@ Multiple alias names can map to the same actual property, as long as the forms m
 
 ##### Parameters
 
-+--------------+-------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |  Parameter   |                                  Type                                   |                                                                              Description                                                                               |
-+==============+=========================================================================+========================================================================================================================================================================+
+|--------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `aliasNS`    | String                                                                  | The alias namespace string. See [Schema namespace string constants](#schema-namespace-string-constants).                                                               |
-+--------------+-------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `aliasProp`  | String                                                                  | The alias property, a simple name string.                                                                                                                              |
-+--------------+-------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `actualNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace string of the aliased property.                                                                                                                          |
-+--------------+-------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `actualProp` | String                                                                  | The aliased property, a simple name string.                                                                                                                            |
-+--------------+-------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `arrayForm`  | Number                                                                  | The array form for a simple alias to an array item, which controls how the array is created if it is set for the first time through the alias. One of these constants: |
-|              |                                                                         |                                                                                                                                                                        |
 |              |                                                                         | - `XMPConst.ALIAS_TO_SIMPLE_PROP` (default) - A direct mapping. It can be simple-to-simple, array-to-array, or structure-to-structure.                                 |
 |              |                                                                         | - `XMPConst.ALIAS_TO_ARRAY` - The actual is an unordered array, the alias is to the first element of the array.                                                        |
 |              |                                                                         | - `XMPConst.ALIAS_TO_ORDERED_ARRAY` - The actual is an ordered array, the alias is to the first element of the array.                                                  |
 |              |                                                                         | - `XMPConst.ALIAS_TO_ALT_ARRAY` - The actual is an alternate array, the alias is to the first element of the array.                                                    |
 |              |                                                                         | - `XMPConst.ALIAS_TO_ALT_TEXT` - The actual is an alternate-text array (a localized property), the alias is to the x-default element of the array.                     |
-+--------------+-------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -859,26 +828,18 @@ Appends an item to an existing array, or creates a new array-type property if th
 
 ##### Parameters
 
-+----------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 |   Parameter    |                                   Type                                   |                                                                  Description                                                                   |
-+================+==========================================================================+================================================================================================================================================+
+|----------------|--------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
 | `schemaNS`     | [Schema namespace string constants](#schema-namespace-string-constants). | The namespace URI string.                                                                                                                      |
-+----------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 | `arrayName`    | String                                                                   | The array-type property name string. Can be a general path expression.                                                                         |
-+----------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 | `itemOptions`  | Number                                                                   | Optional. A flag that describes the new item, if it is being created. One of:                                                                  |
-|                |                                                                          |                                                                                                                                                |
 |                |                                                                          | - `0`: The default. A simple item, or the type implied by the arrayOptions value.                                                              |
 |                |                                                                          | - `XMPConst.PROP_IS_ARRAY`: The item is an array (of type alt, bag, or seq).                                                                   |
 |                |                                                                          | - `XMPConst.PROP_IS_STRUCT`: The item is a structure with nested fields.                                                                       |
-+----------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 | `itemValue`    | String                                                                   | The new item value string. Pass `null` for array items that do not have values.                                                                |
-+----------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 | `arrayOptions` | Number                                                                   | Optional. A flag that describes the array form. Must be provided if the array is being created; ignored if the array already exists. One of:   |
-|                |                                                                          |                                                                                                                                                |
 |                |                                                                          | - `XMPConst.ARRAY_IS_ORDERED` - Item order is significant. Implies `XMPConst.PROP_IS_ARRAY`.                                                   |
 |                |                                                                          | - `XMPConst.ARRAY_IS_ALTERNATIVE` - Items are mutually exclusive alternates. Implies `XMPConst.PROP_IS_ARRAY` and `XMPConst.ARRAY_IS_ORDERED`. |
-+----------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ##### Returns
 
@@ -1155,21 +1116,16 @@ Retrieves the value and options of a metadata property. Use for top-level, simpl
 
 ##### Parameters
 
-+-------------+-------------------------------------------------------------------------+-------------------------------------------------------------+
 |  Parameter  |                                  Type                                   |                         Description                         |
-+=============+=========================================================================+=============================================================+
+|-------------|-------------------------------------------------------------------------|-------------------------------------------------------------|
 | `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                   |
-+-------------+-------------------------------------------------------------------------+-------------------------------------------------------------+
 | `propName`  | String                                                                  | The property name string. Can be a general path expression. |
-+-------------+-------------------------------------------------------------------------+-------------------------------------------------------------+
 | `valueType` | String                                                                  | Optional. The property data type, one of:                   |
-|             |                                                                         |                                                             |
 |             |                                                                         | - `XMPConst.STRING`                                         |
 |             |                                                                         | - `XMPConst.INTEGER`                                        |
 |             |                                                                         | - `XMPConst.NUMBER`                                         |
 |             |                                                                         | - `XMPConst.BOOLEAN`                                        |
 |             |                                                                         | - `XMPConst.XMPDATE`                                        |
-+-------------+-------------------------------------------------------------------------+-------------------------------------------------------------+
 
 ##### Returns
 
@@ -1233,23 +1189,16 @@ Inserts an item into an array, before an existing item. The index positions of a
 
 ##### Parameters
 
-+---------------+--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 |   Parameter   |                                                  Type                                                  |                                                                 Description                                                                  |
-+===============+========================================================================================================+==============================================================================================================================================+
+|---------------|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | `schemaNS`    | The namespace URI string. See [Schema namespace string constants](#schema-namespace-string-constants). |                                                                                                                                              |
-+---------------+--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | `arrayName`   | String                                                                                                 | The array-type property name string. Can be a general path expression.                                                                       |
-+---------------+--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | `itemIndex`   | Number                                                                                                 | The 1-based position index at which to insert the new item. Use `XMPConst.ARRAY_LAST_ITEM` to reference the last existing item in the array. |
-+---------------+--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | `itemValue`   | String                                                                                                 | The new item value. Pass `null` for array items that do not have values.                                                                     |
-+---------------+--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | `itemOptions` | Number                                                                                                 | Optional. A flag that describes the new item, if it is being created. One of:                                                                |
-|               |                                                                                                        |                                                                                                                                              |
 |               |                                                                                                        | - `0`: A simple item, the default.                                                                                                           |
 |               |                                                                                                        | - `XMPConst.PROP_IS_ARRAY`: The item is an array (of type alt, bag, or seq).                                                                 |
 |               |                                                                                                        | - `XMPConst.PROP_IS_STRUCT`: The item is a structure with nested fields.                                                                     |
-+---------------+--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 ##### Returns
 
@@ -1267,21 +1216,16 @@ Creates an iteration object that can iterate over the properties, arrays, and qu
 
 ##### Parameters
 
-+------------+---------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | Parameter  |                                                                 Type                                                                  |                                         Description                                          |
-+============+=======================================================================================================================================+==============================================================================================+
+|------------|---------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | `options`  | A logical OR of these bit-flag constants:                                                                                             | The set of options that control how the iteration is performed, and how values are returned. |
-|            |                                                                                                                                       |                                                                                              |
 |            | - `XMPConst.ITERATOR_JUST_CHILDREN` - Limit iteration to immediate children of the root property. By default, iterates into subtrees. |                                                                                              |
 |            | - `XMPConst.ITERATOR_JUST_LEAFNODES` - Limit iteration to leaf nodes. By default, iterates into all nodes of a subtree.               |                                                                                              |
 |            | - `XMPConst.ITERATOR_JUST_LEAFNAMES` - Return only the leaf part of the path. By default, returns a full path.                        |                                                                                              |
 |            | - `XMPConst.ITERATOR_INCLUDE_ALIASES` - Include aliases. By default, considers only actual properties.                                |                                                                                              |
 |            | - `XMPConst.ITERATOR_OMIT_QUALIFIERS` - Omit qualifiers from iteration.                                                               |                                                                                              |
-+------------+---------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | `schemaNS` | [Schema namespace string constants](#schema-namespace-string-constants)                                                               | The namespace URI string.                                                                    |
-+------------+---------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | `propName` | String                                                                                                                                | The array-type property name string. Can be a general path expression.                       |
-+------------+---------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
 ##### Returns
 
@@ -1299,11 +1243,9 @@ Serializes this XMP metadata into a string as RDF.
 
 ##### Parameters
 
-+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |  Parameter   |                                                                                               Type                                                                                                |                                                                            Description                                                                            |
-+==============+===================================================================================================================================================================================================+===================================================================================================================================================================+
+|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `options`    | Optional. A logical OR of these bit-flag constants:                                                                                                                                               | The set of options that control how the serialization is performed. The options must be logically consistent; if they conflict, the function throws an exception. |
-|              |                                                                                                                                                                                                   |                                                                                                                                                                   |
 |              | - `XMPConst.SERIALIZE_OMIT_PACKET_WRAPPER` - Do not include an XML packet wrapper.                                                                                                                |                                                                                                                                                                   |
 |              | - `XMPConst.SERIALIZE_READ_ONLY_PACKET` - Create a read-only XML packet wrapper.                                                                                                                  |                                                                                                                                                                   |
 |              | - `XMPConst.SERIALIZE_USE_COMPACT_FORMAT` - Use a highly compact RDF syntax and layout.                                                                                                           |                                                                                                                                                                   |
@@ -1311,19 +1253,13 @@ Serializes this XMP metadata into a string as RDF.
 |              | - `XMPConst.SERIALIZE_INCLUDE_THUMBNAIL_PAD` - Include typical space for a JPEG thumbnail in the padding if no xmp:Thumbnail property is present.                                                 |                                                                                                                                                                   |
 |              | - `XMPConst.SERIALIZE_EXACT_PACKET_LENGTH` - Compute padding to meet the overall packet length provided by the padding parameter. Throws an exception if the unpadded packet exceeds this length. |                                                                                                                                                                   |
 |              | - `XMPConst.SERIALIZE_WRITE_ALIAS_COMMENTS` - Include XML comments for aliases.                                                                                                                   |                                                                                                                                                                   |
-+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `padding`    | Number                                                                                                                                                                                            | Optional.                                                                                                                                                         |
-|              |                                                                                                                                                                                                   |                                                                                                                                                                   |
 |              |                                                                                                                                                                                                   | - If the options value is `SERIALIZE_EXACT_PACKET_LENGTH`, this the exact length of the packet, including padding characters that are added to meet this length.  |
 |              |                                                                                                                                                                                                   | - If the options value is not `SERIALIZE_EXACT_PACKET_LENGTH`, this is a number of padding characters to add.                                                     |
 |              |                                                                                                                                                                                                   | - Default is `0`, meaning to use the appropriate amount of padding.                                                                                               |
-+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `indent`     | String                                                                                                                                                                                            | Optional. The string to use as an indent. Default is two spaces.                                                                                                  |
-+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `newline`    | String                                                                                                                                                                                            | Optional. The newline character to use. Default is `U+000A`.                                                                                                      |
-+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `baseIndent` | Number                                                                                                                                                                                            | Optional. The level of indentation of the outermost XML element. Default is `0`.                                                                                  |
-+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ##### Returns
 
@@ -1341,11 +1277,9 @@ Serializes this XMP metadata into a string as RDF, then converts that to an arra
 
 ##### Parameters
 
-+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |  Parameter   |                                                                                               Type                                                                                                |                                                                                 Description                                                                                 |
-+==============+===================================================================================================================================================================================================+=============================================================================================================================================================================+
+|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `options`    | A logical OR of these bit-flag constants:                                                                                                                                                         | Optional. The set of options that control how the serialization is performed. The options must be logically consistent; if they conflict, the function throws an exception. |
-|              |                                                                                                                                                                                                   |                                                                                                                                                                             |
 |              | - `XMPConst.SERIALIZE_OMIT_PACKET_WRAPPER` - Do not include an XML packet wrapper.                                                                                                                |                                                                                                                                                                             |
 |              | - `XMPConst.SERIALIZE_READ_ONLY_PACKET` - Create a read-only XML packet wrapper.                                                                                                                  |                                                                                                                                                                             |
 |              | - `XMPConst.SERIALIZE_USE_COMPACT_FORMAT` - Use a highly compact RDF syntax and layout.                                                                                                           |                                                                                                                                                                             |
@@ -1353,19 +1287,13 @@ Serializes this XMP metadata into a string as RDF, then converts that to an arra
 |              | - `XMPConst.SERIALIZE_INCLUDE_THUMBNAIL_PAD` - Include typical space for a JPEG thumbnail in the padding if no xmp:Thumbnail property is present.                                                 |                                                                                                                                                                             |
 |              | - `XMPConst.SERIALIZE_EXACT_PACKET_LENGTH` - Compute padding to meet the overall packet length provided by the padding parameter. Throws an exception if the unpadded packet exceeds this length. |                                                                                                                                                                             |
 |              | - `XMPConst.SERIALIZE_WRITE_ALIAS_COMMENTS` - Include XML comments for aliases.                                                                                                                   |                                                                                                                                                                             |
-+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `padding`    | Number                                                                                                                                                                                            | Optional.                                                                                                                                                                   |
-|              |                                                                                                                                                                                                   |                                                                                                                                                                             |
 |              |                                                                                                                                                                                                   | - If the options value is `SERIALIZE_EXACT_PACKET_LENGTH`, this the exact length of the packet, including padding characters that are added to meet this length.            |
 |              |                                                                                                                                                                                                   | - If the options value is not `SERIALIZE_EXACT_PACKET_LENGTH`, this is a number of padding characters to add.                                                               |
 |              |                                                                                                                                                                                                   | - Default is `0`, meaning to use the appropriate amount of padding.                                                                                                         |
-+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `indent`     | String                                                                                                                                                                                            | Optional. The string to use as an indent. Default is two spaces.                                                                                                            |
-+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `newline`    | String                                                                                                                                                                                            | Optional. The newline character to use. Default is `U+000A`.                                                                                                                |
-+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `baseIndent` | Number                                                                                                                                                                                            | Optional. The level of indentation of the outermost XML element. Default is `0`.                                                                                            |
-+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ##### Returns
 
@@ -1383,23 +1311,16 @@ Replaces an item within an array, or appends an item. The array must exist. To c
 
 ##### Parameters
 
-+---------------+------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 |   Parameter   |                                     Type                                     |                                                                Description                                                                 |
-+===============+==============================================================================+============================================================================================================================================+
+|---------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | `schemaNS`    | [Schema namespace string constants](#schema-namespace-string-constants)      | The namespace URI string.                                                                                                                  |
-+---------------+------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | `arrayName`   | String                                                                       | The array-type property name string. Can be a general path expression.                                                                     |
-+---------------+------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | `itemIndex`   | Number                                                                       | The 1-based position index at which to insert the new item. Use `XMPConst.ARRAY_LAST_ITEM` to replace the last existing item in the array. |
-+---------------+------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | `itemValue`   | String                                                                       | The new item value string. Pass `null` for array items that do not have values.                                                            |
-+---------------+------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | `itemOptions` | A flag that describes the new item, if it is being created. One of:          | Optional                                                                                                                                   |
-|               |                                                                              |                                                                                                                                            |
 |               | - `0`: A simple item, the default.                                           |                                                                                                                                            |
 |               | - `XMPConst.PROP_IS_ARRAY`: The item is an array (of type alt, bag, or seq). |                                                                                                                                            |
 |               | - `XMPConst.PROP_IS_STRUCT`: The item is a structure with nested fields.     |                                                                                                                                            |
-+---------------+------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 ##### Returns
 
@@ -1442,25 +1363,17 @@ Sets the value of a field within a structure-type property, or creates a new fie
 
 ##### Parameters
 
-+--------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 |  Parameter   |                                     Type                                      |                                 Description                                 |
-+==============+===============================================================================+=============================================================================+
+|--------------|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
 | `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants)       | The namespace URI string.                                                   |
-+--------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | `structName` | String                                                                        | The name string of an existing structure. Can be a general path expression. |
-+--------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | `fieldNS`    | [Schema namespace string constants](#schema-namespace-string-constants)       | The field type namespace string.                                            |
-+--------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | `fieldName`  | String                                                                        | The field name string. Must be a simple XML name.                           |
-+--------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | `fieldValue` | String                                                                        | The new field value string. Pass null for fields that do not have values.   |
-+--------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | `options`    | Option flags that describe a new structure. One of:                           | Optional. Used only if the structure is being created.                      |
-|              |                                                                               |                                                                             |
 |              | - `0` - A simple item, the default.                                           |                                                                             |
 |              | - `XMPConst.PROP_IS_ARRAY` - The item is an array (of type alt, bag, or seq). |                                                                             |
 |              | - `XMPConst.PROP_IS_STRUCT` - The item is a structure with nested fields.     |                                                                             |
-+--------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 ##### Returns
 
@@ -1478,25 +1391,17 @@ Attaches a new qualifier to a metadata property. A qualifier can be added to a s
 
 ##### Parameters
 
-+-------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 |  Parameter  |                                     Type                                      |                                             Description                                             |
-+=============+===============================================================================+=====================================================================================================+
+|-------------|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
 | `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants)       | The namespace URI string.                                                                           |
-+-------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 | `propName`  | String                                                                        | The name string of an existing property. Can be a general path expression.                          |
-+-------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 | `qualNS`    | String                                                                        | The URI of the qualifier namespace. Has the same URI and prefix usage as a schema namespace.        |
-+-------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 | `qualName`  | String                                                                        | The name of the qualifier. Must be a simple XML name. Has the same prefix usage as a property name. |
-+-------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 | `qualValue` | String                                                                        | The new qualifier value string. Pass null for qualifiers that do not have values.                   |
-+-------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 | `options`   | Option flags that describe the qualifier. One of:                             | Optional. Used only if the qualifier is being created.                                              |
-|             |                                                                               |                                                                                                     |
 |             | - `0` - A simple item, the default.                                           |                                                                                                     |
 |             | - `XMPConst.PROP_IS_ARRAY` - The item is an array (of type alt, bag, or seq). |                                                                                                     |
 |             | - `XMPConst.PROP_IS_STRUCT` - The item is a structure with nested fields.     |                                                                                                     |
-+-------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 
 ##### Returns
 
@@ -1514,29 +1419,21 @@ Sets the value of a simple metadata property, creating the property if necessary
 
 ##### Parameters
 
-+--------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 |  Parameter   |                                     Type                                      |                                            Description                                            |
-+==============+===============================================================================+===================================================================================================+
+|--------------|-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
 | `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants)       | The namespace URI string.                                                                         |
-+--------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 | `propName`   | String                                                                        | The property name string. Can be a general path expression.                                       |
-+--------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 | `propValue`  | String                                                                        | The new property value string. Pass null to create an array or non-leaf level structure property. |
-+--------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 | `setOptions` | A simple-valued property. Other constant values are:                          | Optional. The type of property to create, if the named property does not exist. Default is `0`.   |
-|              |                                                                               |                                                                                                   |
 |              | - `0` - A simple item, the default.                                           |                                                                                                   |
 |              | - `XMPConst.PROP_IS_ARRAY` - The item is an array (of type alt, bag, or seq). |                                                                                                   |
 |              | - `XMPConst.PROP_IS_STRUCT` - The item is a structure with nested fields.     |                                                                                                   |
-+--------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 | `valueType`  | The property data type. One of:                                               | Optional. If supplied, the value is converted to this type.                                       |
-|              |                                                                               |                                                                                                   |
 |              | - `XMPConst.STRING`                                                           |                                                                                                   |
 |              | - `XMPConst.INTEGER`                                                          |                                                                                                   |
 |              | - `XMPConst.NUMBER`                                                           |                                                                                                   |
 |              | - `XMPConst.BOOLEAN`                                                          |                                                                                                   |
 |              | - `XMPConst.XMPDATE`                                                          |                                                                                                   |
-+--------------+-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 
 ##### Returns
 
@@ -1572,26 +1469,19 @@ This object is returned by [XMPFile.getPacketInfo()](#xmpfilegetpacketinfo). The
 
 ### XMPPacketInfo object properties
 
-+-------------+---------+---------------------------------------------------------------------+
 |  Parameter  |  Type   |                             Description                             |
-+=============+=========+=====================================================================+
+|-------------|---------|---------------------------------------------------------------------|
 | `charForm`  | Number  | The character encoding in the packet, one of:                       |
 |             |         | - `0` - UTF8                                                        |
 |             |         | - `2` - UTF-16, MSB-first (big-endian)                              |
 |             |         | - `3` - UTF-16, LSB-first (little-endian)                           |
 |             |         | - `4` - UTF 32, MSB-first (big-endian)                              |
 |             |         | - `5` - UTF 32, LSB-first (little-endian)                           |
-+-------------+---------+---------------------------------------------------------------------+
 | `length`    | Number  | The length of the packet in bytes.                                  |
-+-------------+---------+---------------------------------------------------------------------+
 | `offset`    | Number  | The byte-offset from the start of the file where the packet begins. |
-+-------------+---------+---------------------------------------------------------------------+
 | `packet`    | String  | The raw packet data.                                                |
-+-------------+---------+---------------------------------------------------------------------+
 | `padSize`   | Number  | The packet's padding size in bytes, 0 if unknown.                   |
-+-------------+---------+---------------------------------------------------------------------+
 | `writeable` | Boolean | If `true`, the packet is writeable.                                 |
-+-------------+---------+---------------------------------------------------------------------+
 
 ---
 
@@ -1604,22 +1494,15 @@ This object is returned by various property accessor functions of the [XMPMeta o
 
 ### XMPProperty object properties
 
-+-----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter |  Type   |                                                                                                     Description                                                                                                      |
-+===========+=========+======================================================================================================================================================================================================================+
+|-----------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | locale    | String  | The language of the property value. This value is set by calls to [getLocalizedText()](#xmpmetagetlocalizedtext), which assigns the language of the selected alternative text item, if an appropriate item is found. |
-+-----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | namespace | String  | The namespace of the property; see [Schema namespace string constants](#schema-namespace-string-constants). Typically used when browsing metadata with an [XMPIterator object](#xmpiterator-object).                 |
-+-----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | options   | Number  | A constant that describes the property type, 0 for a simple property. Constants are:                                                                                                                                 |
-|           |         |                                                                                                                                                                                                                      |
 |           |         | - `XMPConst.PROP_IS_ARRAY` - The property is an array (of type alt, bag, or seq).                                                                                                                                    |
 |           |         | - `XMPConst.PROP_IS_STRUCT` - The property is a structure with nested fields.                                                                                                                                        |
-+-----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | path      | String  | The property path, including the property name. For a simple property, the entire path is the property name.                                                                                                         |
-+-----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | value     | Variant | The value of the property, if any. Arrays and non-leaf levels of structures do not have values.                                                                                                                      |
-+-----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ---
 
@@ -1645,19 +1528,14 @@ Copies properties from a source XMPMeta object and appends them to a destination
 
 ##### Parameters
 
-+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | Parameter |                                                                                                            Type                                                                                                            |                           Description                            |
-+===========+============================================================================================================================================================================================================================+==================================================================+
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
 | `source`  | [XMPMeta Object](#xmpmeta-object)                                                                                                                                                                                          | The source XMPMeta object.                                       |
-+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | `dest`    | [XMPMeta Object](#xmpmeta-object)                                                                                                                                                                                          | The destination XMPMeta object.                                  |
-+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | `options` | A logical OR of these bit-flag constants:                                                                                                                                                                                  | Option flags that control the copying operation. Default is `0`. |
-|           |                                                                                                                                                                                                                            |                                                                  |
 |           | - `XMPConst.APPEND_ALL_PROPERTIES` - Include both internal and external properties. By default, copies only external properties. This applies only to top-level properties.                                                |                                                                  |
 |           | - `XMPConst.APPEND_REPLACE_OLD_VALUES` - Replace the values of existing properties with the value from the source object. By default, existing values are retained. This applies to properties at all levels of hierarchy. |                                                                  |
 |           | - `XMPConst.APPEND_DELETE_EMPTY_VALUES` - Delete properties if the new value is empty.                                                                                                                                     |                                                                  |
-+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 ##### Returns
 
@@ -1756,10 +1634,11 @@ Creates and returns a string containing the path expression to select an alterna
 schemaNS:arrayName[@xml:lang="langName"]
 ```
 
-!!! note
-    Do not use this in place of getLocalizedText() or setLocalizedText().
+:::note
 
-    Those functions provide extra logic to choose the appropriate language and maintain consistency with the x-default value. This function provides a path expression for an explicit language, and only for that language.
+Those functions provide extra logic to choose the appropriate language and maintain consistency with the x-default value. This function provides a path expression for an explicit language, and only for that language.
+:::
+
 
 ##### Parameters
 
@@ -1839,27 +1718,18 @@ Copies properties in the specified subtree from a source [XMPMeta object](#xmpme
 
 ##### Parameters
 
-+--------------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |  Parameter   |                                  Type                                   |                                                                                                        Description                                                                                                         |
-+==============+=========================================================================+============================================================================================================================================================================================================================+
+|--------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `source`     | [XMPMeta Object](#xmpmeta-object)                                       | The source XMPMeta object.                                                                                                                                                                                                 |
-+--------------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `dest`       | [XMPMeta Object](#xmpmeta-object)                                       | The destination XMPMeta object.                                                                                                                                                                                            |
-+--------------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `sourceNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The source namespace URI string.                                                                                                                                                                                           |
-+--------------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `sourceRoot` | String                                                                  | The property name string for the root location of the source subtree. Can be a general path expression.                                                                                                                    |
-+--------------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `destNS`     | [Schema namespace string constants](#schema-namespace-string-constants) | The destination namespace URI string.                                                                                                                                                                                      |
-+--------------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `destRoot`   | String                                                                  | Optional. The property name string for the root location of the destination subtree. Can be a general path expression. Default is the source root location.                                                                |
-+--------------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `options`    | A logical OR of these bit-flag constants:                               | Option flags that control the copying operation. Default is `0`.                                                                                                                                                           |
-|              |                                                                         |                                                                                                                                                                                                                            |
 |              |                                                                         | - `XMPConst.APPEND_ALL_PROPERTIES` - Include both internal and external properties. By default, copies only external properties. This applies only to top-level properties.                                                |
 |              |                                                                         | - `XMPConst.APPEND_REPLACE_OLD_VALUES` - Replace the values of existing properties with the value from the source object. By default, existing values are retained. This applies to properties at all levels of hierarchy. |
 |              |                                                                         | - `XMPConst.APPEND_DELETE_EMPTY_VALUES` - Delete properties if the new value is empty.                                                                                                                                     |
-+--------------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ##### Returns
 
@@ -1883,20 +1753,14 @@ If neither the namespace nor the property name are supplied, removes all externa
 
 ##### Parameters
 
-+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Parameter  |                                                                             Type                                                                              |                                                                            Description                                                                            |
-+============+===============================================================================================================================================================+===================================================================================================================================================================+
+|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `xmpObj`   | [XMPMeta Object](#xmpmeta-object)                                                                                                                             | The object to remove properties from                                                                                                                              |
-+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `schemaNS` | [Schema namespace string constants](#schema-namespace-string-constants). Optional. The namespace URI string. Must be supplied if a property name is supplied. |                                                                                                                                                                   |
-+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `propName` | String                                                                                                                                                        | Optional. The property name string. Can be a general path expression.                                                                                             |
-+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `options`  | A logical OR of these bit-flag constants:                                                                                                                     | Option flags that control the deletion operation. Default is `0`.                                                                                                 |
-|            |                                                                                                                                                               |                                                                                                                                                                   |
 |            |                                                                                                                                                               | - `XMPConst.REMOVE_ALL_PROPERTIES` - Remove internal and external properties. By default, removes only external properties. Applies only to top-level properties. |
 |            |                                                                                                                                                               | - `XMPConst.REMOVE_INCLUDE_ALIASES` - Remove aliases defined in the namespace. If the property name is supplied, removes it regardless of this option.            |
-+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ##### Returns
 
@@ -1914,24 +1778,17 @@ Updates individual array item strings in the XMPMeta object from a concatenated 
 
 ##### Parameters
 
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 |   Parameter    |                                                                                                            Type                                                                                                            |                                                       Description                                                        |
-+================+============================================================================================================================================================================================================================+==========================================================================================================================+
+|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | `xmpObj`       | [XMPMeta Object](#xmpmeta-object)                                                                                                                                                                                          | The object to separate items from                                                                                        |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | `schemaNS`     | The namespace URI string. See [Schema namespace string constants](#schema-namespace-string-constants).                                                                                                                     |                                                                                                                          |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | `arrayName`    | String                                                                                                                                                                                                                     | The array property name string. Can be a general path expression. Each item in the array must be a simple string value.  |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | `arrayOptions` | A logical OR of these bit-flag constants:                                                                                                                                                                                  | Option flags that control how the array property is updated from the separated string. Default is `0`.                   |
-|                |                                                                                                                                                                                                                            |                                                                                                                          |
 |                | - `XMPConst.APPEND_ALL_PROPERTIES` - Include both internal and external properties. By default, copies only external properties. This applies only to top-level properties.                                                |                                                                                                                          |
 |                | - `XMPConst.APPEND_REPLACE_OLD_VALUES` - Replace the values of existing properties with the value from the source object. By default, existing values are retained. This applies to properties at all levels of hierarchy. |                                                                                                                          |
 |                | - `XMPConst.APPEND_DELETE_EMPTY_VALUES` - Delete properties if the new value is empty.                                                                                                                                     |                                                                                                                          |
 |                | - `XMPConst.SEPARATE_ALLOW_COMMAS` - Allow commas in item values. If not specified, an item containing a comma (such as "LastName, FirstName") is separated into two array items.                                          |                                                                                                                          |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | `concatString` | String                                                                                                                                                                                                                     | The string containing the concatenated array values, as returned by [catenateArrayItems()](#xmputilscatenatearrayitems). |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 ##### Returns
 

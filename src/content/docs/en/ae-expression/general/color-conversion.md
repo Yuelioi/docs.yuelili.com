@@ -1,7 +1,6 @@
 ---
 title: color-conversion
 ---
-
 # Color Conversion
 
 These methods are all around converting colours from one format to another. Think converting a hex code to RGB, so you can use your client's brand colours in an expression in the project, or converting a value to HSL so you can adjust the lightness or saturation procedurally.
@@ -32,7 +31,7 @@ The resulting value is an Array of hue, saturation, lightness, and alpha channel
 
 HSLA Array (4-dimensional)
 
-#### Example
+#### Example:
 
 ```js
 rgbToHsl.effect("Change Color")("Color To Change")
@@ -66,8 +65,10 @@ RGBA Array (4-dimensional)
 
 `hexToRgb(hexString)`
 
-!!! note
-    This functionality was added in After Effects 16.0.
+:::note
+This functionality was added in After Effects 16.0.
+:::
+
 
 #### Description
 
@@ -77,13 +78,10 @@ For hex triplets, the alpha channel defaults to 1.0.
 
 #### Parameters
 
-+-------------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------------------------------------------------------------+
 |                                               Parameter                                               |  Type  |                                                            Description                                                             |
-+=======================================================================================================+========+====================================================================================================================================+
+|-------------------------------------------------------------------------------------------------------|--------|------------------------------------------------------------------------------------------------------------------------------------|
 | `hexString`                                                                                           | String | Hex triplet (6 digits, no alpha channel) or quartet (8 digits, includes alpha channel) containing only numerals or characters A–F. |
-|                                                                                                       |        |                                                                                                                                    |
 | Optional leading characters 0x, 0X, or # will be ignored. Characters beyond 8 digits will be ignored. |        |                                                                                                                                    |
-+-------------------------------------------------------------------------------------------------------+--------+------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -97,4 +95,4 @@ Any of the following will return `[1.0, 0.0, 1.0, 1.0]`:
 - `hexToRgb("#FF00FF")`
 - `hexToRgb("0xFF00FF")`
 - `hexToRgb("0XFF00FFFF")`
-  - **Note:** This inputs an 8-digit hex quartet; the last two digits set alpha channel to 1.0.
+    - **Note:** This inputs an 8-digit hex quartet; the last two digits set alpha channel to 1.0.

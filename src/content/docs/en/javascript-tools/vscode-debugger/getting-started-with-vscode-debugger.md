@@ -1,13 +1,14 @@
 ---
 title: getting-started-with-vscode-debugger
 ---
-
 # Getting Started with the VS Code Debugger
 
 Unlike the ExtendScript Toolkit, the VS Code debugger takes some work to get up and running. This document is intended to make that process as straightforward as possible.
 
-!!! note
-    This guide is meant to walk you through how to install and run the Extendscript for VS Code debugger.
+:::note
+This guide is meant to walk you through how to install and run the Extendscript for VS Code debugger.
+:::
+
 
 If you're looking on how to use specific features of the extension, see [VS Code Extension Features](../vscode-extension-features).
 
@@ -82,8 +83,10 @@ Once you've set up your environment and built your script:
 - Click on the status bar button labelled "▷ Eval in host app name" to launch the current script, or use the command pallette and choose ExtendScript - Evaluate Script In Attached Host.
 - If the script throws any errors, you'll be able to view variables & a call stack
 
-!!! note
-    If you're compiling the end jsx file from a number of source files, the debugger will catch errors in the *compiled* script, not the source files - you'll need to backtrack yourself to figure out what source file the error came from, unless you're building source maps in some way.
+:::note
+If you're compiling the end jsx file from a number of source files, the debugger will catch errors in the *compiled* script, not the source files - you'll need to backtrack yourself to figure out what source file the error came from, unless you're building source maps in some way.
+:::
+
 
 This may not apply to compiled files using #include
 

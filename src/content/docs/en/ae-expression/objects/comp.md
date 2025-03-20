@@ -1,7 +1,6 @@
 ---
 title: comp
 ---
-
 # Comp
 
 `thisComp`
@@ -18,8 +17,10 @@ These are typically accessed in a few ways, most commonly:
 - `comp("CompName")` to get a specific comp by name,
 - `layer("layerName").source`, **if referring to a precomp layer**, to get the targeted precomp layer's source comp
 
-!!! info
-    On this page, we're going to use `thisComp` as a sample on how to call these items, however note that any method that returns a [Comp](#) will work.
+:::info
+On this page, we're going to use `thisComp` as a sample on how to call these items, however note that any method that returns a [Comp](#) will work.
+:::
+
 
 ---
 
@@ -119,10 +120,11 @@ Number
 
 Returns a given composition's [Marker](.././marker-property) property.
 
-!!! note
-    You can no longer access a composition marker by marker number.
+:::note
 
-    If you have a project created in a previous version of After Effects that uses composition marker numbers in expressions, you must change those calls to use `marker.key(name)` instead. Because the default name of a composition marker is a number, converting the reference to use the name is often just a matter of surrounding the number with quotation marks.
+If you have a project created in a previous version of After Effects that uses composition marker numbers in expressions, you must change those calls to use `marker.key(name)` instead. Because the default name of a composition marker is a number, converting the reference to use the name is often just a matter of surrounding the number with quotation marks.
+:::
+
 
 #### Type
 
@@ -148,8 +150,10 @@ String
 
 `thisComp.ntscDropFrame`
 
-!!! note
-    This functionality was added in After Effects CS5.5
+:::note
+This functionality was added in After Effects CS5.5
+:::
+
 
 #### Description
 
@@ -263,17 +267,12 @@ If using the `otherLayer, relIndex` call, this retrieves the layer that is `relI
 
 #### Parameters
 
-+--------------+----------------------------+--------------------------------------------------------------+
 |  Parameter   |            Type            |                         Description                          |
-+==============+============================+==============================================================+
+|--------------|----------------------------|--------------------------------------------------------------|
 | `index`      | Number                     | Layer name or index to get.                                  |
-|              |                            |                                                              |
 | `name`       | String                     |                                                              |
-+--------------+----------------------------+--------------------------------------------------------------+
 | `otherLayer` | [Layer](../../layer/layer) | The "other" layer to start getting layers relative to        |
-+--------------+----------------------------+--------------------------------------------------------------+
 | `relIndex`   | Number                     | The number of layers to move above or below the `otherLayer` |
-+--------------+----------------------------+--------------------------------------------------------------+
 
 #### Returns
 

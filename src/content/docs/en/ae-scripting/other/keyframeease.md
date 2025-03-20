@@ -1,7 +1,6 @@
 ---
 title: keyframeease
 ---
-
 # KeyframeEase object
 
 `myKey = new KeyframeEase(speed, influence);`

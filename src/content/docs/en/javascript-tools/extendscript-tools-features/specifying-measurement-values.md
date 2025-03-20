@@ -1,7 +1,6 @@
 ---
 title: specifying-measurement-values
 ---
-
 # Specifying measurement values
 
 ExtendScript provides the UnitValue object to represent measurement values. The properties and methods of the UnitValue object make it easy to change the value, the unit, or both, or to perform conversions from one unit to another.

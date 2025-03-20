@@ -1,6 +1,6 @@
 export const aePlugin = {
   label: "AE Plugin Development",
-  link: "/ae-plugin/intro/",
+  link: "ae-plugin/intro/what-can-i-do",
   icon: "puzzle",
   items: [
     {
@@ -30,11 +30,11 @@ export const aePlugin = {
         "ae-plugin/effect-basics/effect-basics",
         "ae-plugin/effect-basics/entry-point",
         "ae-plugin/effect-basics/command-selectors",
-        "ae-plugin/effect-basics/PF_InData",
-        "ae-plugin/effect-basics/PF_OutData",
+        "ae-plugin/effect-basics/pf_indata",
+        "ae-plugin/effect-basics/pf_outdata",
         "ae-plugin/effect-basics/parameters",
-        "ae-plugin/effect-basics/PF_ParamDef",
-        "ae-plugin/effect-basics/PF_EffectWorld",
+        "ae-plugin/effect-basics/pf_paramdef",
+        "ae-plugin/effect-basics/pf_effectworld",
         "ae-plugin/effect-basics/errors",
       ],
     },
@@ -72,8 +72,8 @@ export const aePlugin = {
       label: "Effect UI & Events",
       items: [
         "ae-plugin/effect-ui-events/effect-ui-events",
-        "ae-plugin/effect-ui-events/PF_EventExtra",
-        "ae-plugin/effect-ui-events/PF_EventUnion",
+        "ae-plugin/effect-ui-events/pf_eventextra",
+        "ae-plugin/effect-ui-events/pf_eventunion",
         "ae-plugin/effect-ui-events/custom-ui-and-drawbot",
         "ae-plugin/effect-ui-events/ui-callbacks",
         "ae-plugin/effect-ui-events/tips-and-tricks",
@@ -111,7 +111,7 @@ export const aePlugin = {
       items: [
         "ae-plugin/aeios/aeios",
         "ae-plugin/aeios/calling-sequence",
-        "ae-plugin/aeios/AEIO_ModuleInfo",
+        "ae-plugin/aeios/aeio_moduleinfo",
         "ae-plugin/aeios/new-kids-on-the-function-block",
         "ae-plugin/aeios/implementation-details",
       ],

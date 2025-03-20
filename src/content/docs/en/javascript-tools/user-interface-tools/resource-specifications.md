@@ -1,7 +1,6 @@
 ---
 title: resource-specifications
 ---
-
 # Resource specifications
 
 You can create one or more user-interface elements at a time using a *resource* specification. This specially formatted string provides a simple and compact means of creating an element, including any container element and its component elements. The resource-specification string is passed as the `type` parameter to the `Window()` or `add()` constructor function.

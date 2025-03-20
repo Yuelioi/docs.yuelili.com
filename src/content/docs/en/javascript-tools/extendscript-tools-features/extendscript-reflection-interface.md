@@ -1,7 +1,6 @@
 ---
 title: extendscript-reflection-interface
 ---
-
 # ExtendScript Reflection Interface
 
 ExtendScript provides a reflection interface that allows you to find out everything about an object, including its name, a description, the expected data type for properties, the arguments and return value for methods, and any default values or limitations to the input values.
@@ -22,8 +21,10 @@ for (var i = 0; i < props.length; i++) {
 
 ### ReflectionObject Attributes
 
-!!! info
-    All properties are read only.
+:::info
+All properties are read only.
+:::
+
 
 #### description
 

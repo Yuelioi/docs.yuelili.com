@@ -1,27 +1,16 @@
 ---
 title: camera
 ---
-
 # Camera
 
 `thisLayer.cameraOption`
 
 This category is for items specific to Camera Layers.
 
-!!! info
-    Camera is a subclass of the [Layer object](../../layer/layer). All methods and attributes of Layer are available when working with Camera, except:
+:::info
+- all the 3d material properties
+:::
 
-    - `source`
-    - `effect`
-    - `mask`
-    - `width`
-    - `height`
-    - `anchorPoint`
-    - `scale`
-    - `opacity`
-    - `audioLevels`
-    - `timeRemap`
-    - all the 3d material properties
 
 ---
 
@@ -213,8 +202,10 @@ Number
 
 Returns the iris shape value from 1-10, corresponding to the selected dropdown value.
 
-!!! note
-    Value `2` is reserved for the divider.
+:::note
+Value `2` is reserved for the divider.
+:::
+
 
 #### Type
 

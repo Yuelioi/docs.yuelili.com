@@ -1,7 +1,6 @@
 ---
 title: propertygroup
 ---
-
 # PropertyGroup
 
 `thisLayer("ADBE Effect Parade")`
@@ -32,8 +31,10 @@ Property Groups can have a fixed number of properties (e.g. an individual effect
 - Shape groups
 - Text Animators
 
-!!! info
-    On this page, we're going to use `thisLayer("ADBE Effect Parade")` (the "Effects" group) as a sample on how to call these items, however note that any method that returns a [PropertyGroup](#) will work.
+:::info
+On this page, we're going to use `thisLayer("ADBE Effect Parade")` (the "Effects" group) as a sample on how to call these items, however note that any method that returns a [PropertyGroup](#) will work.
+:::
+
 
 ---
 
@@ -61,8 +62,10 @@ String
 
 Returns the number of properties or groups directly within a group.
 
-!!! note
-    This does not include properties nested inside child groups.
+:::note
+This does not include properties nested inside child groups.
+:::
+
 
 #### Type
 

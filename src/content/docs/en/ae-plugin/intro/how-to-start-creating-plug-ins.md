@@ -1,7 +1,6 @@
 ---
 title: how-to-start-creating-plug-ins
 ---
-
 # How To Start Creating Plug-ins
 
 ## Play!

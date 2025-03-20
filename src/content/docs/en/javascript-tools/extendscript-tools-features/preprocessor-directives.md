@@ -1,7 +1,6 @@
 ---
 title: preprocessor-directives
 ---
-
 # Preprocessor directives
 
 ExtendScript provides preprocessor directives for including external scripts, naming scripts, specifying a JavaScript engine, and setting certain flags.

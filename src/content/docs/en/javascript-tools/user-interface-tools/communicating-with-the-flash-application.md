@@ -1,7 +1,6 @@
 ---
 title: communicating-with-the-flash-application
 ---
-
 # Communicating with the Flash application
 
 ScriptUI supports a Flash Player, which runs the Flash application within a window in an Adobe application. The Flash application runs ActionScript, a different implementation of JavaScript from the ExtendScript version of JavaScript that Adobe applications run.

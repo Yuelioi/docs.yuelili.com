@@ -1,7 +1,6 @@
 ---
 title: configuring-the-toolkit-window
 ---
-
 # Configuring the Toolkit window
 
 The ExtendScript Toolkit initially appears with a default workspace arrangement, containing a default configuration of tabbed panels and Script Editor document windows contained in a parent frame. The arrangement is highly configurable, through the Window menu, the context menus of individual panels and panel groups, or directly using drag and drop.
@@ -44,10 +43,11 @@ If you are displaying more than one document, and you have undocked one or more 
 
 You can edit or run scripts in multiple document windows simultaneously. The current document window is highlighted and has the input focus. You can select another document window by clicking in it, or you can switch between them with the commands Window > Next document and Window > Previous document. The default keyboard shortcuts for these commands are F6 and SHIFT-F6; you can change these using the Keyboard Shortcuts page in the Preferences dialog (Edit > Preferences).
 
-!!! note
-    Because you can run scripts in the same application simultaneously, you should be careful not to interrupt the processing of one script with another.
+:::note
 
-    For example, if one script opens a modal dialog in Photoshop, and you run another script that targets Photoshop while the dialog is still open, the second script is likely to generate an error.
+For example, if one script opens a modal dialog in Photoshop, and you run another script that targets Photoshop while the dialog is still open, the second script is likely to generate an error.
+:::
+
 
 
 ![Split-Document Button](./_static/02_the-extendscript-toolkit_configuring-the-toolkit-window_document-windows_split-documents.png)
