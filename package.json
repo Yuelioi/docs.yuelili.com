@@ -15,7 +15,7 @@
     "astro": "^5.1.5",
     "daisyui": "^5.0.6",
     "sharp": "^0.33.5",
-    "starlight-sidebar-topics": "^0.5.1",
+    "starlight-sidebar-topics": "^0.6.0",
     "tailwindcss": "^4.0.14"
   }
 }

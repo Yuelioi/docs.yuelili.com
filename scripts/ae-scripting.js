@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
 
+const editPath = "https://github.com/Yuelioi/docs.yuelili.com/edit/main/src/content/docs/";
+
 function processMarkdownFiles(dirPath, parentDepth = 0) {
   const entries = fs.readdirSync(dirPath, { withFileTypes: true });
 
@@ -31,12 +33,9 @@ title: ${fileName}
             return `[${text}](${adjustedLink})`;
           });
 
-          // 合并新内容
           const newContent = frontMatter + updatedContent;
 
-          // 写回文件
           fs.writeFileSync(fullPath, newContent, "utf8");
-
           console.log(`✅ 已更新: ${fullPath}`);
         }
       } catch (err) {

@@ -5,7 +5,10 @@
     "**/*",
     "../../scripts"
   ],
+  "compilerOptions": {
+    "outDir": "dist/astro"
+  },
   "exclude": [
     "dist"
-  ]
+  ],
 }
