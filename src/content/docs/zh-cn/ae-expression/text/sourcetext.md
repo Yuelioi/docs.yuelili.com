@@ -34,7 +34,8 @@ title: 源文本
 `text.sourceText.isParagraphText`
 
 :::note
-该方法添加于 After Effects 25.0. :::
+该方法添加于 After Effects 25.0.
+:::
 
 #### 描述
 
@@ -50,7 +51,11 @@ title: 源文本
 
 `text.sourceText.isPointText`
 
-:::note 该方法添加于 After Effects 25.0. :::#### 描述
+:::note
+该方法添加于 After Effects 25.0.
+:::
+
+#### 描述
 
 如果文本图层是点文本，则返回 `true`。如果文本图层是段落文本，则返回 `false`。
 
@@ -64,7 +69,11 @@ title: 源文本
 
 `text.sourceText.isVerticalText`
 
-:::note 该方法添加于 After Effects 25.0. :::#### 描述
+:::note
+该方法添加于 After Effects 25.0.
+:::
+
+#### 描述
 
 如果文本图层是垂直的，则返回 `true`；如果是水平的，则返回 `false`。
 
@@ -125,7 +134,11 @@ text.sourceText
 
 如果样式是关键帧化的并且随时间变化，请使用第二个 `time` 参数指定获取样式的时间。
 
-:::note 使用 [SourceText.style](#sourcetextstyle) 与使用 `text.sourceText.getStyleAt(0,0)` 相同。 :::#### 参数
+:::note
+使用 [SourceText.style](#sourcetextstyle) 与使用 `text.sourceText.getStyleAt(0,0)` 相同。
+:::
+
+#### 参数
 
 | 参数      | 类型 | 描述                                        |
 | --------- | ---- | ------------------------------------------- |

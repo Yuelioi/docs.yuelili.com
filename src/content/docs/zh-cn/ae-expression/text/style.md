@@ -375,7 +375,11 @@ text.sourceText.style.setFont("Times New Roman").setFontSize(42).setText("New Te
 
 返回文本图层第一段的对齐方式值。
 
-:::warning 如果文本图层的 [TextStyle.direction](#textstyledirection) 设置为从右到左，对齐/两端对齐的左右值将反转。你可以使用属性或段落面板，或通过 [TextStyle.setDirection()](#textstylesetdirection) 来控制这一点。 :::#### 类型
+:::warning
+如果文本图层的 [TextStyle.direction](#textstyledirection) 设置为从右到左，对齐/两端对齐的左右值将反转。你可以使用属性或段落面板，或通过 [TextStyle.setDirection()](#textstylesetdirection) 来控制这一点。
+:::
+
+#### 类型
 
 预定义字符串。其中之一：
 
@@ -887,7 +891,15 @@ style.replaceText("New", 0, 4);
 
 `text.sourceText.style.setDirection(value)`
 
-:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
+:::note
+该方法添加于 After Effects 25.0.
+:::
+
+:::warning
+如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。
+:::
+
+#### 描述
 
 用于设置整个文本图层的方向，可以是 `left-to-right` 或 `right-to-left`。
 
@@ -907,7 +919,15 @@ style.replaceText("New", 0, 4);
 
 `text.sourceText.style.setEveryLineComposer(value)`
 
-:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
+:::note
+该方法添加于 After Effects 25.0.
+:::
+
+:::warning
+如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。
+:::
+
+#### 描述
 
 用于启用或禁用整个文本图层的每行排版器。
 
@@ -1001,7 +1021,15 @@ style.replaceText("New", 0, 4);
 
 `text.sourceText.style.setFirstLineIndent(value)`
 
-:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
+:::note
+该方法添加于 After Effects 25.0.
+:::
+
+:::warning
+如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。
+:::
+
+#### 描述
 
 用于将文本图层的首行缩进设置为指定值。
 
@@ -1069,7 +1097,15 @@ style.replaceText("New", 0, 4);
 
 `text.sourceText.style.setHangingRoman(value)`
 
-:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
+:::note
+该方法添加于 After Effects 25.0.
+:::
+
+:::warning
+如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。
+:::
+
+#### 描述
 
 用于启用或禁用整个文本图层的悬挂罗马标点符号。
 
@@ -1117,11 +1153,23 @@ style.replaceText("New", 0, 4);
 
 `text.sourceText.style.setJustification(value)`
 
-:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
+:::note
+该方法添加于 After Effects 25.0.
+:::
+
+:::warning
+如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。
+:::
+
+#### 描述
 
 用于设置整个文本图层的对齐方式。
 
-:::warning 如果文本图层的 [TextStyle.direction](#textstyledirection) 设置为从右到左，对齐/两端对齐的左右值将反转。你可以使用属性或段落面板，或通过 [TextStyle.setDirection()](#textstylesetdirection) 来控制这一点。 :::#### 参数
+:::warning
+如果文本图层的 [TextStyle.direction](#textstyledirection) 设置为从右到左，对齐/两端对齐的左右值将反转。你可以使用属性或段落面板，或通过 [TextStyle.setDirection()](#textstylesetdirection) 来控制这一点。
+:::
+
+#### 参数
 
 | 参数      | 类型                                    | 描述               |
 | --------- | --------------------------------------- | ------------------ |
@@ -1174,7 +1222,11 @@ style.replaceText("New", 0, 4);
 
 除非指定了起始索引和字符数，否则该值将应用于整个文本图层。
 
-:::note 另外，请注意，自动字距调整将优先于手动字距调整。 :::#### 参数
+:::note
+另外，请注意，自动字距调整将优先于手动字距调整。
+:::
+
+#### 参数
 
 | 参数                | 类型                                                   | 描述                                                     |
 | ------------------- | ------------------------------------------------------ | -------------------------------------------------------- |
@@ -1218,7 +1270,15 @@ style.replaceText("New", 0, 4);
 
 `text.sourceText.style.setLeadingType(value)`
 
-:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
+:::note
+该方法添加于 After Effects 25.0.
+:::
+
+:::warning
+如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。
+:::
+
+#### 描述
 
 用于设置整个文本图层的行距类型。
 
@@ -1238,7 +1298,15 @@ style.replaceText("New", 0, 4);
 
 `text.sourceText.style.setLeftMargin(value)`
 
-:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
+:::note
+该方法添加于 After Effects 25.0.
+:::
+
+:::warning
+如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。
+:::
+
+#### 描述
 
 用于将文本图层的左边距设置为指定值。
 
@@ -1314,7 +1382,15 @@ style.replaceText("New", 0, 4);
 
 `text.sourceText.style.setRightMargin(value)`
 
-:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
+:::note
+该方法添加于 After Effects 25.0.
+:::
+
+:::warning
+如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。
+:::
+
+#### 描述
 
 用于将文本图层的右边距设置为指定值。
 
@@ -1358,7 +1434,15 @@ style.replaceText("New", 0, 4);
 
 `text.sourceText.style.setSpaceAfter(value)`
 
-:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
+:::note
+该方法添加于 After Effects 25.0.
+:::
+
+:::warning
+如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。
+:::
+
+#### 描述
 
 用于将文本图层的段后间距属性设置为指定值。
 
@@ -1378,7 +1462,15 @@ style.replaceText("New", 0, 4);
 
 `text.sourceText.style.setSpaceBefore(value)`
 
-:::note 该方法添加于 After Effects 25.0. ::::::warning 如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。 :::#### 描述
+:::note
+该方法添加于 After Effects 25.0.
+:::
+
+:::warning
+如果同时使用 [TextStyle.setText()](#textstylesettext)，则必须在调用此方法之前调用它。
+:::
+
+#### 描述
 
 用于将文本图层的段前间距属性设置为指定值。
 
