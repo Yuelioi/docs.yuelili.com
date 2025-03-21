@@ -1,0 +1,28 @@
+---
+import "@/styles/markdown.css";
+const currentPath = Astro.url.pathname;
+const urlList = currentPath.split("/");
+const currentCategory = urlList[2];
+---
+
+<span
+  data-pagefind-filter='category'
+  style='display:none;'>
+  {currentCategory}
+</span>
+<div class='sl-markdown-content'><slot /></div>
+
+<script>
+  const observer = new MutationObserver(() => {
+    const filterPanel = document.querySelector(".pagefind-ui__filter-panel");
+    if (filterPanel instanceof HTMLElement) {
+      if (window.location.pathname.split("/").length >= 4) {
+        filterPanel.style.display = "none";
+      }
+
+      observer.disconnect();
+    }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+</script>

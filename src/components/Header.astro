@@ -1,14 +1,13 @@
 ---
-import type { Props } from '@astrojs/starlight/props'
-import SiteTitle from '@astrojs/starlight/components/SiteTitle.astro'
-import Search from '@astrojs/starlight/components/Search.astro'
-import ThemeSelect from '@astrojs/starlight/components/ThemeSelect.astro'
-import LanguageSelect from '@astrojs/starlight/components/LanguageSelect.astro'
-import config from 'virtual:starlight/user-config'
+import type { Props } from "@astrojs/starlight/props";
+import SiteTitle from "@astrojs/starlight/components/SiteTitle.astro";
+import Search from "./Search.astro";
+import ThemeSelect from "@astrojs/starlight/components/ThemeSelect.astro";
+import LanguageSelect from "@astrojs/starlight/components/LanguageSelect.astro";
+import config from "virtual:starlight/user-config";
 
 // import SocialIcons from '@astrojs/starlight/components/'
-const shouldRenderSearch =
-  config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro'
+const shouldRenderSearch = config.pagefind || config.components.Search !== "@astrojs/starlight/components/Search.astro";
 ---
 
 <div class='header sl-flex'>
@@ -50,7 +49,7 @@ const shouldRenderSearch =
     align-items: center;
   }
   .social-icons::after {
-    content: '';
+    content: "";
     height: 2rem;
     border-inline-end: 1px solid var(--sl-color-gray-5);
   }
@@ -66,18 +65,14 @@ const shouldRenderSearch =
       --__sidebar-width: max(0rem, var(--sl-content-inline-start, 0rem) - var(--sl-nav-pad-x));
       --__main-column-fr: calc(
         (
-            100% + var(--__sidebar-pad, 0rem) - var(--__toc-width, var(--sl-sidebar-width)) -
-              (2 * var(--__toc-width, var(--sl-nav-pad-x))) - var(--sl-content-inline-start, 0rem) -
-              var(--sl-content-width)
+            100% + var(--__sidebar-pad, 0rem) - var(--__toc-width, var(--sl-sidebar-width)) - (2 * var(--__toc-width, var(--sl-nav-pad-x))) -
+              var(--sl-content-inline-start, 0rem) - var(--sl-content-width)
           ) / 2
       );
       display: grid;
       grid-template-columns:
         /* 1 (site title): runs up until the main content column’s left edge or the width of the title, whichever is the largest  */
-        minmax(
-          calc(var(--__sidebar-width) + max(0rem, var(--__main-column-fr) - var(--sl-nav-gap))),
-          auto
-        )
+        minmax(calc(var(--__sidebar-width) + max(0rem, var(--__main-column-fr) - var(--sl-nav-gap))), auto)
         /* 2 (search box): all free space that is available. */
         1fr
         /* 3 (right items): use the space that these need. */

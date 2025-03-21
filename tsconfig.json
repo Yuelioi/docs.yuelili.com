@@ -6,7 +6,13 @@
     "../../scripts"
   ],
   "compilerOptions": {
-    "outDir": "dist/astro"
+    "outDir": "dist/astro",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+    }
   },
   "exclude": [
     "dist"
