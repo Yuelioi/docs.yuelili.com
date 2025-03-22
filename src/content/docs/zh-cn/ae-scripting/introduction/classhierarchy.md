@@ -1,63 +1,63 @@
 ---
 title: classhierarchy
 ---
-# After Effects Class Hierarchy
+### After Effects 类层级结构
 
-This section lists the class hierarchies for relevant AE API elements. For a primer on what this means, see [Javascript Classes](javascript.md#javascript-classes)
+本节列出了 After Effects API 相关元素的类层级结构。关于类的基础知识，请参阅 [JavaScript 类](javascript.md#javascript-classes)。
 
-When using this guide, any objects that exist as part of a class hierarchy will note whether they exist as a subclass or base class (or both) of another object.
+在使用本指南时，属于某个类层级的对象会标明它是另一个对象的子类、基类，或两者兼有。
 
-As it can be useful to see all available class hierarchies in one place, we've created this list below.
+为了方便查看所有可用的类层级，我们在下方列出了完整列表。
 
-Note that some classes exist only as base classes, and demonstrate unexpected behaviour when type checking via `instanceof`, as noted in the table below. Classes with no symbol behave as expected.
+请注意，一些类仅作为基类存在，在使用 `instanceof` 进行类型检查时可能会表现出意外行为，这些情况已在下表中标注。没有符号的类则表现如预期。
 
-#### Symbol Legend
+#### 符号说明
 
-| Symbol |                      Definition                      |
-| ------ | ---------------------------------------------------- |
-| ⚠      | `instanceof` is always `false`                       |
-| ❌      | Class is undefined; `instanceof` will throw an error |
-
----
-
-## Properties, Property Groups, and Layers
-
-- [PropertyBase object](../../property/propertybase) ⚠
-    - [Property object](../../property/property)
-    - [PropertyGroup object](../../property/propertygroup)
-        - [MaskPropertyGroup object](../../property/maskpropertygroup)
-        - [Layer object](../../layer/layer) ⚠
-            - [AVLayer object](../../layer/avlayer)
-                - [ShapeLayer object](../../layer/shapelayer)
-                - [TextLayer object](../../layer/textlayer)
-            - [CameraLayer object](../../layer/cameralayer)
-            - [LightLayer object](../../layer/lightlayer)
+| 符号 | 定义                                        |
+| ---- | ------------------------------------------- |
+| ⚠    | `instanceof` 始终返回 `false`               |
+| ❌    | 该类未定义，使用 `instanceof` 会抛出错误 |
 
 ---
 
-## Project Items
+## 属性、属性组和图层
 
-- [Item object](../../item/item) ❌
-    - [AVItem object](../../item/avitem) ❌
-        - [CompItem object](../../item/compitem)
-        - [FootageItem object](../../item/footageitem)
-    - [FolderItem object](../../item/folderitem)
-
----
-
-## Footage Item Sources
-
-- [FootageSource object](../../sources/footagesource) ❌
-    - [FileSource object](../../sources/filesource)
-    - [PlaceholderSource object](../../sources/placeholdersource)
-    - [SolidSource object](../../sources/solidsource)
+- [PropertyBase 对象](../../property/propertybase) ⚠
+  - [Property 对象](../../property/property)
+  - [PropertyGroup 对象](../../property/propertygroup)
+    - [MaskPropertyGroup 对象](../../property/maskpropertygroup)
+    - [Layer 对象](../../layer/layer) ⚠
+      - [AVLayer 对象](../../layer/avlayer)
+        - [ShapeLayer 对象](../../layer/shapelayer)
+        - [TextLayer 对象](../../layer/textlayer)
+      - [CameraLayer 对象](../../layer/cameralayer)
+      - [LightLayer 对象](../../layer/lightlayer)
 
 ---
 
-## Collections
+## 项目项（Project Items）
 
-- [Collection object](../../other/collection) ❌
-    - [ItemCollection object](../../item/itemcollection)
-    - [LayerCollection object](../../layer/layercollection)
-    - [OMCollection object](../../renderqueue/omcollection)
-    - [RQItemCollection object](../../renderqueue/rqitemcollection)
+- [Item 对象](../../item/item) ❌
+  - [AVItem 对象](../../item/avitem) ❌
+    - [CompItem 对象](../../item/compitem)
+    - [FootageItem 对象](../../item/footageitem)
+  - [FolderItem 对象](../../item/folderitem)
+
+---
+
+## 素材项来源（Footage Item Sources）
+
+- [FootageSource 对象](../../sources/footagesource) ❌
+  - [FileSource 对象](../../sources/filesource)
+  - [PlaceholderSource 对象](../../sources/placeholdersource)
+  - [SolidSource 对象](../../sources/solidsource)
+
+---
+
+## 集合（Collections）
+
+- [Collection 对象](../../other/collection) ❌
+  - [ItemCollection 对象](../../item/itemcollection)
+  - [LayerCollection 对象](../../layer/layercollection)
+  - [OMCollection 对象](../../renderqueue/omcollection)
+  - [RQItemCollection 对象](../../renderqueue/rqitemcollection)

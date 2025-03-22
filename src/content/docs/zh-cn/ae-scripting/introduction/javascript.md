@@ -5,7 +5,7 @@ title: javascript
 
 ## Javascript Variables
 
-Scripting shares a global environment, so any script executed at startup can define variables and functions that are available to all scripts. In all cases, variables and functions, once defined by running a script that contains them, persist in subsequent scripts during a given After Effects session. Once the application is quit, all such globally defined variables and functions are cleared. Scripters should be careful about giving variables in scripts unique names, so that a script does not inadvertently reassign global variables intended to persist throughout a session.
+脚本共享一个全局环境，因此任何在启动时执行的脚本都可以定义变量和函数，这些变量和函数对所有脚本都可用。在所有情况下，一旦通过运行包含它们的脚本定义了变量和函数，它们就会在给定的After Effects会话期间持续存在于后续的脚本中。一旦应用程序退出，所有此类全局定义的变量和函数都会被清除。编写脚本的人应注意为脚本中的变量赋予唯一的名称，以避免无意中重新分配那些旨在整个会话期间保持不变的全局变量。
 
 ### Keywords and Statement Syntax
 
@@ -29,7 +29,7 @@ Scripting shares a global environment, so any script executed at startup can def
 | `true`            | Literal representing the Boolean true value.                                                                                         |
 | `undefined`       | Indicates that the variable, array element, or object property has not yet been assigned a value.                                    |
 | `var`             | Standard JavaScript syntax used to declare a local variable.                                                                         |
-| `while`           | Standard JavaScript construct. Similar to the do...while loop, except loop condition evaluation occurs at the beginning of the loop. |
+| `while`           | 标准的JavaScript结构。类似于do...while循环，不同之处在于循环条件的评估发生在循环的开始处。 |
 | `with`            | Standard JavaScript construct used to specify an object to use in subsequent statements.                                             |
 
 ---

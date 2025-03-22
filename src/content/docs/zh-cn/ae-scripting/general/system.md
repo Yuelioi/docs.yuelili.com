@@ -1,13 +1,13 @@
 ---
 title: system
 ---
-# System object
+# System 对象
 
 `system`
 
 #### 描述
 
-The System object provides access to attributes found on the user's system, such as the user name and the name and version of the operating system. It is available through the `system` global variable.
+System 对象提供对用户系统上某些属性的访问，例如用户名、操作系统的名称和版本等。可通过全局变量 `system` 访问。
 
 #### 示例
 
@@ -26,7 +26,7 @@ confirm("You are: " + system.userName + " running on " + system.machineName + ".
 
 #### 描述
 
-The name of the computer on which After Effects is running.
+运行 After Effects 的计算机名称。
 
 #### 类型
 
@@ -40,10 +40,10 @@ String; 只读.
 
 #### 描述
 
-The name of the operating system on which After Effects is running.
+运行 After Effects 的操作系统名称。
 
 :::warning
-As of Windows 7, this attribute returns a blank value. Use $.os instead.
+在 Windows 7 及以上版本，该属性返回空值。请使用 $.os 代替。
 :::
 
 #### 类型
@@ -58,7 +58,7 @@ String; 只读.
 
 #### 描述
 
-The version of the current local operating system.
+当前本地操作系统的版本。
 
 #### 类型
 
@@ -72,7 +72,7 @@ String; 只读.
 
 #### 描述
 
-The name of the user currently logged on to the system.
+当前登录系统的用户名。
 
 #### 类型
 
@@ -88,7 +88,9 @@ String; 只读.
 
 #### 描述
 
-Executes a system command, as if you had typed it on the operating system's command line. Returns whatever the system outputs in response to the command, if anything. In Windows, you can invoke commands using the `/c` switch for the `cmd.exe` command, passing the command to run in escaped quotes (`\"...\"`). For example, the following retrieves the current time and displays it to the user:
+执行一个系统命令，就像在操作系统的命令行中输入它一样。返回系统对该命令的输出（如果有）。
+
+在 Windows 上，可以使用 `cmd.exe /c` 方式调用命令，并将命令放在转义引号（`\"...\"`）中。例如，以下代码获取当前时间并显示给用户：
 
 ```javascript
 var timeStr = system.callSystem("cmd.exe /c \"time /t\"");
@@ -97,10 +99,10 @@ alert("Current time is " + timeStr);
 
 #### 参数
 
-|     参数      |  类型  |           描述           |
-| ------------------ | ------ | ------------------------------- |
-| `cmdLineToExecute` | String | The command and its parameters. |
+| 参数                 | 类型   | 描述                            |
+| -------------------- | ------ | ------------------------------- |
+| `cmdLineToExecute` | String | 要执行的命令及其参数。|
 
 #### 返回
 
-The output from the command.
+执行命令的输出结果。

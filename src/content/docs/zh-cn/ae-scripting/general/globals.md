@@ -1,24 +1,25 @@
 ---
-title: globals
+title: 全局函数
 ---
-# Global functions
+
+# Global
 
 #### 描述
 
-These globally available functions that are specific to After Effects. Any JavaScript object or function can call these functions, which allow you to display text in a small (3-line) area of the Info panel, to convert numeric time values to and from string values, or to generate a random number.
+这些全局可用的函数是 After Effects 特有的。任何 JavaScript 对象或函数都可以调用这些函数，它们允许您在信息面板的一个小区域（3行）显示文本，将数字时间值与字符串值相互转换，或生成随机数。
 
-|     Global function      |                          描述                           |
-| ------------------------ | -------------------------------------------------------------- |
-| `clearOutput()`          | Clears text from the Info panel.                               |
-| `currentFormatToTime()`  | Converts string time value to a numeric time value.            |
-| `generateRandomNumber()` | Generates a random number.                                     |
-| `getEnumAsString()`      | Converts an Enum value to it's string name.                    |
-| `timeToCurrentFormat()`  | Converts a numeric time value to a string time value.          |
-| `write()`                | Writes text to the Info panel, with no line break added.       |
-| `writeLn()`              | Writes text to the Info panel, adding a line break at the end. |
-| `isValid()`              | When `true`, the specified object exists.                      |
+| 全局函数                   | 描述                                     |
+| -------------------------- | ---------------------------------------- |
+| `clearOutput()`          | 清除信息面板中的文本。                   |
+| `currentFormatToTime()`  | 将字符串时间值转换为数字时间值。         |
+| `generateRandomNumber()` | 生成一个随机数。                         |
+| `getEnumAsString()`      | 将枚举值转换为其字符串名称。             |
+| `timeToCurrentFormat()`  | 将数字时间值转换为字符串时间值。         |
+| `write()`                | 将文本写入信息面板，不添加换行符。       |
+| `writeLn()`              | 将文本写入信息面板，并在末尾添加换行符。 |
+| `isValid()`              | 当为 `true` 时，指定的对象存在。       |
 
-Additional global functions for standard user I/O (`alert`, `confirm` , and `prompt`) and static functions for file I/O, are defined by ExtendScript; for detailed reference information, see the [JavaScript Tools Guide](https://extendscript.docsforadobe.dev/).
+ExtendScript 还定义了用于标准用户 I/O 的额外全局函数（`alert`、`confirm` 和 `prompt`）以及用于文件 I/O 的静态函数；有关详细参考信息，请参阅 [JavaScript 工具指南](https://extendscript.docsforadobe.dev/)。
 
 ---
 
@@ -30,15 +31,15 @@ Additional global functions for standard user I/O (`alert`, `confirm` , and `pro
 
 #### 描述
 
-Clears the output in the Info panel.
+清除信息面板中的输出。
 
 #### 参数
 
-None.
+无。
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
@@ -48,19 +49,19 @@ Nothing.
 
 #### 描述
 
-Converts a formatted string for a frame time value to a number of seconds, given a specified frame rate. For example, if the formatted frame time value is 0:00:12 (the exact string format is determined by a project setting), and the frame rate is 24 fps, the time would be 0.5 seconds (12/24). If the frame rate is 30 fps, the time would be 0.4 seconds (12/30). If the time is a duration, the frames are counted from 0. Otherwise, the frames are counted from the project's starting frame (see [Project.displayStartFrame](project.md#projectdisplaystartframe)).
+将帧时间值的格式化字符串转换为秒数，给定指定的帧速率。例如，如果格式化的帧时间值为 0:00:12（确切的字符串格式由项目设置决定），并且帧速率为 24 fps，则时间为 0.5 秒（12/24）。如果帧速率为 30 fps，则时间为 0.4 秒（12/30）。如果时间是持续时间，则帧从 0 开始计数。否则，帧从项目的起始帧开始计数（参见 [Project.displayStartFrame](https://project.md/#projectdisplaystartframe)）。
 
 #### 参数
 
-|    参数    |                                                                        描述                                                                         |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `formattedTime` | The frame time value, a string specifying a number of frames in the project's current time display format.                                                 |
-| `fps`           | The frames-per-second, a floating-point value.                                                                                                             |
-| `isDuration`    | Optional. When `true`, the time is a duration (measured from frame 0). When `false` (the default), the time is measured from the project's starting frame. |
+| 参数              | 描述                                                                                                                  |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `formattedTime` | 帧时间值，指定项目当前时间显示格式中帧数的字符串。                                                                    |
+| `fps`           | 帧速率，浮点值。                                                                                                      |
+| `isDuration`    | 可选。当为 `true` 时，时间为持续时间（从第 0 帧开始测量）。当为 `false`（默认值）时，时间从项目的起始帧开始测量。 |
 
 #### 返回
 
-Floating-point value, the number of seconds.
+浮点值，秒数。
 
 ---
 
@@ -68,32 +69,32 @@ Floating-point value, the number of seconds.
 
 `generateRandomNumber()`
 
-:::note
-该方法添加于 After Effects 13.6 (CC 2015)
-:::
+:::note 该方法添加于 After Effects 13.6 (CC 2015) :::#### 描述
 
-#### 描述
+生成随机数。建议使用此函数代替 `Math.random()` 来生成将应用于项目中的值的随机数（例如，使用 setValue 时）。
 
-Generates random numbers. This function is recommended instead of `Math.random()` for generating random numbers that will be applied as values in a project (e.g., when using setValue).
-
-This method avoids a problem where `Math.random()` would not return random values in After Effects CC 2015 (13.5.x) due to a concurrency issue with multiple CPU threads.
+此方法避免了在 After Effects CC 2015 (13.5.x) 中由于多 CPU 线程的并发问题，`Math.random()` 不会返回随机值的问题。
 
 #### 返回
 
-Floating-point, pseudo-random number in the range `[0..1]`.
+浮点数，范围在 `[0..1]` 内的伪随机数。
 
 #### 示例
 
-```javascript
-// change the position X of all layers with random number
+javascript
+
+复制
+
+```
+// 使用随机数更改所有图层的位置 X
 
 var myComp = app.project.activeItem;
 var x = 0;
 
 for (var i = 1; i <= myComp.numLayers; i++) {
-    // If you use Math.random(), this does not work
+    // 如果使用 Math.random()，这将不起作用
     // x = 400 * (Math.random()) - 200;
-    // use new generateRandomNumber() instead
+    // 使用新的 generateRandomNumber() 代替
 
     x = 400 * generateRandomNumber() - 200;
     var currentPos = myComp.layer(i).property("Position").value;
@@ -107,26 +108,26 @@ for (var i = 1; i <= myComp.numLayers; i++) {
 
 `getEnumAsString()`
 
-:::note
-该方法添加于 After Effects 24.0
-:::
+:::note 该方法添加于 After Effects 24.0 :::#### 描述
 
-#### 描述
-
-Returns the string value of an Enum.
+返回枚举的字符串值。
 
 #### 参数
 
-Enum.
+枚举。
 
 #### 返回
 
-String.
+字符串。
 
 #### 示例
 
-```javascript
-// Returns: "BlendingMode.ADD"
+javascript
+
+复制
+
+```
+// 返回: "BlendingMode.ADD"
 alert(getEnumAsString(5220));
 ```
 
@@ -138,28 +139,32 @@ alert(getEnumAsString(5220));
 
 #### 描述
 
-Determines if the specified After Effects object (e.g., composition, layer, mask, etc.) still exists. Some operations, such as [PropertyBase.moveTo()](../property/propertybase.md#propertybasemoveto), might invalidate existing variable assignments to related objects. This function allows you to test whether those assignments are still valid before attempting to access them.
+确定指定的 After Effects 对象（例如，合成、图层、遮罩等）是否仍然存在。某些操作，例如 [PropertyBase.moveTo()](https://../property/propertybase.md#propertybasemoveto)，可能会使现有变量赋值失效。此函数允许您在尝试访问这些赋值之前测试它们是否仍然有效。
 
 #### 参数
 
-| 参数 |                   描述                   |
-| --------- | ----------------------------------------------- |
-| `obj`     | The After Effects object to check for validity. |
+| 参数    | 描述                                |
+| ------- | ----------------------------------- |
+| `obj` | 要检查有效性的 After Effects 对象。 |
 
 #### 返回
 
-Boolean.
+布尔值。
 
 #### 示例
 
-```javascript
-var layer = app.project.activeItem.layer(1); // assume layer has three masks
-alert(isValid(layer)); // displays "true"
+javascript
+
+复制
+
+```
+var layer = app.project.activeItem.layer(1); // 假设图层有三个遮罩
+alert(isValid(layer)); // 显示 "true"
 var mask1 = layer.mask(1);
 var mask2 = layer.mask(2);
 var mask3 = layer.mask(3);
-mask3.moveTo(1); // move the third mask to the top of the mask stack
-alert(isValid(mask1)); // displays "false"; mask2 and mask3 do as well
+mask3.moveTo(1); // 将第三个遮罩移动到遮罩堆栈的顶部
+alert(isValid(mask1)); // 显示 "false"; mask2 和 mask3 也是如此
 ```
 
 ---
@@ -170,19 +175,19 @@ alert(isValid(mask1)); // displays "false"; mask2 and mask3 do as well
 
 #### 描述
 
-Converts a numeric time value (a number of seconds) to a frame time value; that is, a formatted string thatshows which frame corresponds to that time, at the specified rate. For example, if the time is 0.5 seconds, andthe frame rate is 24 fps, the frame would be 0:00:12 (when the project is set to display as timecode). If the framerate is 30 fps, the frame would be 0:00:15. The format of the timecode string is determined by a project setting. If the time is a duration, the frames are counted from 0. Otherwise, the frames are counted from the project's starting frame (see [Project displayStartFrame](project.md#projectdisplaystartframe) attribute).
+将数字时间值（秒数）转换为帧时间值；即，显示在指定速率下该时间对应的帧的格式化字符串。例如，如果时间为 0.5 秒，帧速率为 24 fps，则帧为 0:00:12（当项目设置为显示时间码时）。如果帧速率为 30 fps，则帧为 0:00:15。时间码字符串的格式由项目设置决定。如果时间是持续时间，则帧从 0 开始计数。否则，帧从项目的起始帧开始计数（参见 [Project displayStartFrame](https://project.md/#projectdisplaystartframe) 属性）。
 
 #### 参数
 
-|  参数   |                                                                      描述                                                                       |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `time`       | The number of seconds, a floating-point value.                                                                                                         |
-| `fps`        | The frames-per-second, a floating-point value.                                                                                                         |
-| `isDuration` | Optional. When `true`, the time is a duration (measured from frame 0). When `false` (the default), the time is measured from the project's starting frame. |
+| 参数           | 描述                                                                                                                  |
+| -------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `time`       | 秒数，浮点值。                                                                                                        |
+| `fps`        | 帧速率，浮点值。                                                                                                      |
+| `isDuration` | 可选。当为 `true` 时，时间为持续时间（从第 0 帧开始测量）。当为 `false`（默认值）时，时间从项目的起始帧开始测量。 |
 
 #### 返回
 
-String in the project's current time display format.
+项目当前时间显示格式的字符串。
 
 ---
 
@@ -192,23 +197,27 @@ String in the project's current time display format.
 
 #### 描述
 
-Writes output to the Info panel, with no line break added.
+将输出写入信息面板，不添加换行符。
 
 #### 参数
 
-| 参数 |                           描述                            |
-| --------- | ---------------------------------------------------------------- |
-| `text`    | The string to display. Truncated if too long for the Info panel. |
+| 参数     | 描述                                               |
+| -------- | -------------------------------------------------- |
+| `text` | 要显示的字符串。如果信息面板空间不足，则会被截断。 |
 
 #### 返回
 
-Nothing.
+无。
 
 #### 示例
 
-```javascript
-write("This text appears in Info panel ");
-write("with more on same line.");
+javascript
+
+复制
+
+```
+write("此文本出现在信息面板中 ");
+write("更多内容在同一行。");
 ```
 
 ---
@@ -219,21 +228,25 @@ write("with more on same line.");
 
 #### 描述
 
-Writes output to the Info panel and adds a line break at the end.
+将输出写入信息面板，并在末尾添加换行符。
 
 #### 参数
 
-| 参数 |      描述       |
-| --------- | ---------------------- |
-| `text`    | The string to display. |
+| 参数     | 描述             |
+| -------- | ---------------- |
+| `text` | 要显示的字符串。 |
 
 #### 返回
 
-Nothing.
+无。
 
 #### 示例
 
-```javascript
-writeLn("This text appears on first line");
-writeLn("This text appears on second line");
+javascript
+
+复制
+
+```
+writeLn("此文本出现在第一行");
+writeLn("此文本出现在第二行");
 ```
