@@ -1,52 +1,51 @@
 ---
-title: getting-started-with-vscode-debugger
+title: 开始使用 VS Code 调试器
 ---
-# Getting Started with the VS Code Debugger
+# 开始使用 VS Code 调试器
 
-Unlike the ExtendScript Toolkit, the VS Code debugger takes some work to get up and running. This document is intended to make that process as straightforward as possible.
+与 ExtendScript Toolkit 不同，VS Code 调试器需要一些工作才能启动和运行。本文档旨在使该过程尽可能简单明了。
 
 :::note
-This guide is meant to walk you through how to install and run the Extendscript for VS Code debugger.
+本指南旨在引导您如何安装和运行 VS Code 的 Extendscript 调试器。
 :::
 
+如果您想了解如何使用扩展的特定功能，请参阅 [VS Code 扩展功能](../vscode-extension-features)。
 
-If you're looking on how to use specific features of the extension, see [VS Code Extension Features](../vscode-extension-features).
+通常，您需要按照以下步骤操作：
 
-Generally, you'll need to follow these steps:
-
-- [Installing the extension](#installing-the-extension)
-- [Opening a project directory](#opening-a-project-directory)
-- [Creating a debug launch task](#creating-a-debug-launch-task)
-- [Attaching the debugger](#attaching-the-debugger)
-- [Running the debugger](#running-the-debugger)
-- [Futher reading](#futher-reading)
-
----
-
-## Installing the extension
-
-Either head to the [extension marketplace link](https://marketplace.visualstudio.com/items?itemName=Adobe.extendscript-debug) and install from there, or search "ExtendScript Debugger" within VS Code's extension browser and install.
-
-If you're going the latter route, make sure you're installing the one from Adobe!
+- [安装扩展](#installing-the-extension)
+- [打开项目目录](#opening-a-project-directory)
+- [创建调试启动任务](#creating-a-debug-launch-task)
+- [附加调试器](#attaching-the-debugger)
+- [运行调试器](#running-the-debugger)
+- [进一步阅读](#futher-reading)
 
 ---
 
-## Opening a project directory
+## 安装扩展
 
-- File > Open Folder
-- Choose your project directory
+您可以前往 [扩展市场链接](https://marketplace.visualstudio.com/items?itemName=Adobe.extendscript-debug) 并从那里安装，或者在 VS Code 的扩展浏览器中搜索 "ExtendScript Debugger" 并安装。
+
+如果您选择后者，请确保安装的是 Adobe 提供的版本！
 
 ---
 
-## Creating a debug launch task
+## 打开项目目录
 
-To use the extension, you need to create a debug task for VS Code to run when you want to debug extendscript.
+- 文件 > 打开文件夹
+- 选择您的项目目录
 
-In your project directory:
+---
 
-- create a folder called .vscode (with the period)
-- in that folder, create a file launch.json
-- paste in the following code:
+## 创建调试启动任务
+
+要使用此扩展，您需要为 VS Code 创建一个调试任务，以便在调试 ExtendScript 时运行。
+
+在您的项目目录中：
+
+- 创建一个名为 `.vscode` 的文件夹（带点号）
+- 在该文件夹中，创建一个名为 `launch.json` 的文件
+- 粘贴以下代码：
 
 ```json
 {
@@ -61,37 +60,38 @@ In your project directory:
 }
 ```
 
-This creates a config for VSCode's debugger that attaches to the host app of your choice.
-
-## Attaching the debugger
-
-Once the extension is installed:
-
-- Open a JS workspace
-- Launch your Adobe app of choice
-- Select the run and Debug tab from the sidebar or hit Ctrl+Shift+D, then in the drop-down menu choose "extendScript-Debug attach"
-- Choose the host app from the drop-down that appears
-
-The bottom Status bar will turn orange indicating that the debugger is now attached to the host app. You can use the debug console to evaluate commands and query variables, even if a script is not running.
+这将为 VS Code 的调试器创建一个配置，用于附加到您选择的主机应用程序。
 
 ---
 
-## Running the debugger
+## 附加调试器
 
-Once you've set up your environment and built your script:
+安装扩展后：
 
-- Click on the status bar button labelled "▷ Eval in host app name" to launch the current script, or use the command pallette and choose ExtendScript - Evaluate Script In Attached Host.
-- If the script throws any errors, you'll be able to view variables & a call stack
+- 打开一个 JS 工作区
+- 启动您选择的 Adobe 应用程序
+- 从侧边栏中选择“运行和调试”选项卡，或按 `Ctrl+Shift+D`，然后在下拉菜单中选择 "extendScript-Debug attach"
+- 从出现的下拉列表中选择主机应用程序
+
+底部的状态栏将变为橙色，表示调试器已附加到主机应用程序。您可以使用调试控制台来评估命令和查询变量，即使脚本未运行。
+
+---
+
+## 运行调试器
+
+设置好环境并构建脚本后：
+
+- 点击状态栏上标有 "▷ Eval in host app name" 的按钮以启动当前脚本，或使用命令面板并选择 "ExtendScript - Evaluate Script In Attached Host"。
+- 如果脚本抛出任何错误，您将能够查看变量和调用堆栈
 
 :::note
-If you're compiling the end jsx file from a number of source files, the debugger will catch errors in the *compiled* script, not the source files - you'll need to backtrack yourself to figure out what source file the error came from, unless you're building source maps in some way.
+如果您从多个源文件编译最终的 `.jsx` 文件，调试器将捕获*编译后*脚本中的错误，而不是源文件中的错误——除非您以某种方式构建源映射，否则您需要自己回溯以确定错误来自哪个源文件。
 :::
 
-
-This may not apply to compiled files using #include
+这可能不适用于使用 `#include` 编译的文件
 
 ---
 
-## Futher reading
+## 进一步阅读
 
-- [Debugging in VS Code](https://code.visualstudio.com/docs/editor/debugging)
+- [在 VS Code 中调试](https://code.visualstudio.com/docs/editor/debugging)

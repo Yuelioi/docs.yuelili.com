@@ -1,25 +1,25 @@
 ---
-title: layer
+title: 图层
 ---
-# Layer object
+# Layer 对象
 
 `app.project.item(index).layer(index)`
 
 #### 描述
 
-The Layer object provides access to layers within compositions. It can be accessed from an item's layer collection either by index number or by a name string.
+Layer 对象提供了对合成中图层的访问。可以通过索引号或名称字符串从项目的图层集合中访问它。
 
 :::info
-Layer is a subclass of [PropertyGroup](../../property/propertygroup), which is a subclass of [PropertyBase](../../property/propertybase). All methods and attributes of PropertyGroup, in addition to those listed below, are available when working with Layer, with the exception that `propertyIndex` attribute is set to `undefined`.
+Layer 是 [PropertyGroup](../../property/propertygroup) 的子类，而 PropertyGroup 又是 [PropertyBase](../../property/propertybase) 的子类。除了下面列出的方法和属性外，PropertyGroup 的所有方法和属性在处理 Layer 时都可用，但 `propertyIndex` 属性设置为 `undefined`。
 :::
 
 :::info
-Layer is the base class for [CameraLayer object](../cameralayer), [LightLayer object](../lightlayer), and [AVLayer object](../avlayer), so Layer attributes and methods are available when working with all layer types. Layers contain AE properties, in addition to their JavaScript attributes and methods. For examples of how to access properties in layers, see [PropertyBase object](../../property/propertybase).
+Layer 是 [CameraLayer 对象](../cameralayer)、[LightLayer 对象](../lightlayer) 和 [AVLayer 对象](../avlayer) 的基类，因此在处理所有图层类型时，Layer 的属性和方法都可用。除了它们的 JavaScript 属性和方法外，图层还包含 AE 属性。有关如何访问图层中的属性的示例，请参阅 [PropertyBase 对象](../../property/propertybase)。
 :::
 
 #### 示例
 
-If the first item in the project is a [CompItem](../../item/compitem), this example disables the first layer in that composition and renames it. This might, for example, turn an icon off in the composition.
+如果项目中的第一个项目是 [CompItem](../../item/compitem)，此示例将禁用该合成中的第一个图层并重命名它。例如，这可能会关闭合成中的某个图标。
 
 ```javascript
 var firstLayer = app.project.item(1).layer(1);
@@ -37,16 +37,16 @@ firstLayer.name = "DisabledLayer";
 
 #### 描述
 
-The type of automatic orientation to perform for the layer.
+图层执行的自动定向类型。
 
 #### 类型
 
-An `AutoOrientType` enumerated value; read/write. One of:
+`AutoOrientType` 枚举值；可读写。可能的值包括：
 
-- `AutoOrientType.ALONG_PATH` Layer faces in the direction of the motion path.
-- `AutoOrientType.CAMERA_OR_POINT_OF_INTEREST` Layer always faces the active camera or points at its point of interest.
-- `AutoOrientType.CHARACTERS_TOWARD_CAMERA` Each character in a per-character 3D text layer automatically faces the active camera.
-- `AutoOrientType.NO_AUTO_ORIENT` Layer rotates freely, independent of any motion path, point of interest, or other layers.
+- `AutoOrientType.ALONG_PATH` 图层朝向运动路径的方向。
+- `AutoOrientType.CAMERA_OR_POINT_OF_INTEREST` 图层始终朝向活动摄像机或指向其兴趣点。
+- `AutoOrientType.CHARACTERS_TOWARD_CAMERA` 每个字符在逐字符 3D 文本图层中自动朝向活动摄像机。
+- `AutoOrientType.NO_AUTO_ORIENT` 图层自由旋转，独立于任何运动路径、兴趣点或其他图层。
 
 ---
 
@@ -56,11 +56,11 @@ An `AutoOrientType` enumerated value; read/write. One of:
 
 #### 描述
 
-A descriptive comment for the layer.
+图层的描述性注释。
 
 #### 类型
 
-String; read/write.
+字符串；可读写。
 
 ---
 
@@ -70,11 +70,11 @@ String; read/write.
 
 #### 描述
 
-The composition that contains this layer.
+包含此图层的合成。
 
 #### 类型
 
-CompItem object; 只读.
+CompItem 对象；只读。
 
 ---
 
@@ -84,11 +84,11 @@ CompItem object; 只读.
 
 #### 描述
 
-When `true`, the layer has a video switch (the eyeball icon) in the Timeline panel; otherwise `false`.
+当为 `true` 时，图层在时间轴面板中有一个视频开关（眼睛图标）；否则为 `false`。
 
 #### 类型
 
-Boolean; 只读.
+布尔值；只读。
 
 ---
 
@@ -102,16 +102,15 @@ Boolean; 只读.
 
 #### 描述
 
-Instance property on Layer which returns a unique and persistent identification number used internally to identify a Layer between sessions.
+Layer 上的实例属性，返回一个唯一且持久的标识号，用于在会话之间标识图层。
 
-The value of the ID remains the same when the project is saved to a file and later reloaded.
+当项目保存到文件并稍后重新加载时，ID 的值保持不变。
 
-However, when you import this project into another project, new IDs are assigned to all Layers in the imported project.
-The ID is not displayed anywhere in the user interface..
+但是，当将此项目导入另一个项目时，导入项目中的所有图层都会被分配新的 ID。ID 不会在用户界面中的任何地方显示。
 
 #### 类型
 
-Integer; 只读.
+整数；只读。
 
 ---
 
@@ -121,11 +120,11 @@ Integer; 只读.
 
 #### 描述
 
-The index position of the layer.
+图层的索引位置。
 
 #### 类型
 
-Integer, 范围为 `[1..numLayers]`; 只读.
+整数，范围为 `[1..numLayers]`；只读。
 
 ---
 
@@ -135,11 +134,11 @@ Integer, 范围为 `[1..numLayers]`; 只读.
 
 #### 描述
 
-The "in" point of the layer, expressed in composition time (seconds).
+图层的“入点”，以合成时间（秒）表示。
 
 #### 类型
 
-Floating-point value, 范围为 `[-10800.0..10800.0]` (minus or plus three hours); read/write.
+浮点值，范围为 `[-10800.0..10800.0]`（正负三小时）；可读写。
 
 ---
 
@@ -149,15 +148,15 @@ Floating-point value, 范围为 `[-10800.0..10800.0]` (minus or plus three hours
 
 #### 描述
 
-`true` if the value of the name attribute has been set explicitly, rather than automatically from the source.
+如果 name 属性的值已显式设置，而不是从源自动设置，则为 `true`。
 
 :::tip
-This always returns `true` for layers that do not have a [AVLayer.source](avlayer.md#avlayersource)
+对于没有 [AVLayer.source](avlayer.md#avlayersource) 的图层，此值始终返回 `true`。
 :::
 
 #### 类型
 
-Boolean; 只读.
+布尔值；只读。
 
 ---
 
@@ -167,15 +166,15 @@ Boolean; 只读.
 
 #### 描述
 
-The label color for the item. Colors are represented by their number (0 for None, or 1 to 16 for one of the preset colors in the Labels preferences).
+项目的标签颜色。颜色由其编号表示（0 表示无颜色，1 到 16 表示标签首选项中的预设颜色之一）。
 
 :::tip
-Custom label colors cannot be set programmatically.
+无法通过编程方式设置自定义标签颜色。
 :::
 
 #### 类型
 
-Integer (0 to 16); read/write.
+整数（0 到 16）；可读写。
 
 ---
 
@@ -185,11 +184,11 @@ Integer (0 to 16); read/write.
 
 #### 描述
 
-When `true`, the layer is locked; otherwise `false`. This corresponds to the lock toggle in the Layer panel.
+当为 `true` 时，图层被锁定；否则为 `false`。这对应于图层面板中的锁定切换。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读写。
 
 ---
 
@@ -199,17 +198,17 @@ Boolean; read/write.
 
 #### 描述
 
-A [PropertyGroup object](../../property/propertygroup) that contains all a layer's markers. Layer marker scripting has the same functionality as [Comp markers](../item/compitem.md#compitemmarkerproperty).
+包含图层所有标记的 [PropertyGroup 对象](../../property/propertygroup)。图层标记脚本与 [Comp 标记](../item/compitem.md#compitemmarkerproperty) 具有相同的功能。
 
-See [MarkerValue object](../../other/markervalue).
+请参阅 [MarkerValue 对象](../../other/markervalue)。
 
 #### 类型
 
-PropertyGroup object or `null`; 只读.
+PropertyGroup 对象或 `null`；只读。
 
 #### 示例
 
-The following sample code creates two layer markers with different properties
+以下示例代码创建了两个具有不同属性的图层标记
 
 ```javascript
 var solidLayer = comp.layers.addSolid([1, 1, 1], "mylayer", 1920, 1080, 1.0);
@@ -232,11 +231,11 @@ solidLayer.marker.setValueAtTime(3, layerMarker2);
 
 #### 描述
 
-When `true`, the layer was created as a null object; otherwise `false`.
+当为 `true` 时，图层是作为空对象创建的；否则为 `false`。
 
 #### 类型
 
-Boolean; 只读.
+布尔值；只读。
 
 ---
 
@@ -246,11 +245,11 @@ Boolean; 只读.
 
 #### 描述
 
-The "out" point of the layer, expressed in composition time (seconds).
+图层的“出点”，以合成时间（秒）表示。
 
 #### 类型
 
-Floating-point value, 范围为 `[-10800.0..10800.0]` (minus or plus three hours); read/write.
+浮点值，范围为 `[-10800.0..10800.0]`（正负三小时）；可读写。
 
 ---
 
@@ -260,17 +259,17 @@ Floating-point value, 范围为 `[-10800.0..10800.0]` (minus or plus three hours
 
 #### 描述
 
-The parent of this layer; can be `null`.
+此图层的父级；可以为 `null`。
 
-Offset values are calculated to counterbalance any transforms above this layer in the hierarchy, so that when you set the parent there is no apparent jump in the layer's transform.
+偏移值被计算为抵消层次结构中此图层上方的任何变换，以便在设置父级时，图层的变换不会出现明显的跳跃。
 
-For example, if the new parent has a rotation of 30 degrees, the child layer is assigned a rotation of -30 degrees.
+例如，如果新父级具有 30 度的旋转，则子图层将被分配 -30 度的旋转。
 
-To set the parent without changing the child layer's transform values, use the [setParentWithJump](#layersetparentwithjump) method.
+要在不更改子图层变换值的情况下设置父级，请使用 [setParentWithJump](#layersetparentwithjump) 方法。
 
 #### 类型
 
-Layer object or `null`; read/write.
+Layer 对象或 `null`；可读写。
 
 ---
 
@@ -280,11 +279,11 @@ Layer object or `null`; read/write.
 
 #### 描述
 
-An array containing all of the currently selected [Property](../../property/property) and [PropertyGroup](../../property/propertygroup) objects in the layer.
+包含图层中当前选定的所有 [Property](../../property/property) 和 [PropertyGroup](../../property/propertygroup) 对象的数组。
 
 #### 类型
 
-Array of [PropertyBase](../../property/propertybase) objects; 只读.
+[PropertyBase](../../property/propertybase) 对象的数组；只读。
 
 ---
 
@@ -294,11 +293,11 @@ Array of [PropertyBase](../../property/propertybase) objects; 只读.
 
 #### 描述
 
-When `true`, the layer is "shy", meaning that it is hidden in the Layer panel if the composition's "Hide all shy layers" option is toggled on.
+当为 `true` 时，图层是“害羞的”，这意味着如果合成的“隐藏所有害羞图层”选项已切换为打开，则图层在图层面板中隐藏。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读写。
 
 ---
 
@@ -308,11 +307,11 @@ Boolean; read/write.
 
 #### 描述
 
-When `true`, the layer is soloed, otherwise `false`.
+当为 `true` 时，图层是独奏的，否则为 `false`。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读写。
 
 ---
 
@@ -322,11 +321,11 @@ Boolean; read/write.
 
 #### 描述
 
-The start time of the layer, expressed in composition time (seconds).
+图层的开始时间，以合成时间（秒）表示。
 
 #### 类型
 
-Floating-point value, 范围为 `[-10800.0..10800.0]` (minus or plus three hours); read/write.
+浮点值，范围为 `[-10800.0..10800.0]`（正负三小时）；可读写。
 
 ---
 
@@ -336,11 +335,11 @@ Floating-point value, 范围为 `[-10800.0..10800.0]` (minus or plus three hours
 
 #### 描述
 
-The layer's time stretch, expressed as a percentage. A value of 100 means no stretch. Values between 0 and 1 are set to 1, and values between -1 and 0 (not including 0) are set to -1.
+图层的时间拉伸，以百分比表示。值为 100 表示没有拉伸。0 到 1 之间的值设置为 1，-1 到 0 之间的值（不包括 0）设置为 -1。
 
 #### 类型
 
-Floating-point value, 范围为 `[-9900.0..9900.0]`; read/write.
+浮点值，范围为 `[-9900.0..9900.0]`；可读写。
 
 ---
 
@@ -350,11 +349,11 @@ Floating-point value, 范围为 `[-9900.0..9900.0]`; read/write.
 
 #### 描述
 
-The current time of the layer, expressed in composition time (seconds).
+图层的当前时间，以合成时间（秒）表示。
 
 #### 类型
 
-Floating-point value; 只读.
+浮点值；只读。
 
 ---
 
@@ -366,19 +365,19 @@ Floating-point value; 只读.
 
 #### 描述
 
-Returns `true` if this layer will be active at the specified time.
+如果此图层在指定时间处于活动状态，则返回 `true`。
 
-To return `true`, the layer must be enabled, no other layer may be soloing unless this layer is soloed too, and the time must be between the `inPoint` and `outPoint` values of this layer.
+要返回 `true`，图层必须启用，没有其他图层独奏（除非此图层也独奏），并且时间必须在此图层的 `inPoint` 和 `outPoint` 值之间。
 
 #### 参数
 
-| 参数 |         类型         |     描述      |
-| --------- | -------------------- | -------------------- |
-| `time`    | Floating-point value | The time in seconds. |
+| 参数     | 类型   | 描述         |
+| -------- | ------ | ------------ |
+| `time` | 浮点值 | 时间（秒）。 |
 
 #### 返回
 
-Boolean.
+布尔值。
 
 ---
 
@@ -388,23 +387,23 @@ Boolean.
 
 #### 描述
 
-Applies the specified collection of animation settings (an animation preset) to all the currently selected layers of the comp to which the layer belongs. If no layer is selected, it applies the animation preset to a new solid layer.
+将指定的动画设置集合（动画预设）应用于图层所属合成中当前选定的所有图层。如果没有选定图层，则将动画预设应用于新的纯色图层。
 
-Predefined animation preset files are installed in the Presets folder, and users can create new animation presets through the user interface.
+预定义的动画预设文件安装在 Presets 文件夹中，用户可以通过用户界面创建新的动画预设。
 
 :::warning
-The animation preset is applied to the the selected layer(s) of the comp, not to the layer whose applyPreset function is called. Hence, the layer whose applyPreset function is called effectively just determines the comp whose layers are processed.
+动画预设应用于合成的选定图层，而不是调用 applyPreset 函数的图层。因此，调用 applyPreset 函数的图层实际上只是确定要处理的合成的图层。
 :::
 
 #### 参数
 
-|  参数   |                                                 类型                                                  |                描述                |
-| ------------ | ----------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| `presetName` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object | The file containing the animation preset. |
+| 参数           | 类型                                                                                             | 描述                 |
+| -------------- | ------------------------------------------------------------------------------------------------ | -------------------- |
+| `presetName` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象 | 包含动画预设的文件。 |
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
@@ -414,31 +413,31 @@ Nothing.
 
 #### 描述
 
-Copies the layer into the specified composition. The original layer remains unchanged.
+将图层复制到指定的合成中。原始图层保持不变。
 
-Creates a new Layer object with the same values as this one, and prepends the new object to the [LayerCollection object](../layercollection) in the target CompItem. Retrieve the copy using into `Comp.layer(1)`.
+创建一个与此图层具有相同值的新 Layer 对象，并将其前置到目标 CompItem 中的 [LayerCollection 对象](../layercollection)。使用 `intoComp.layer(1)` 检索副本。
 
-Copying in a layer changes the index positions of previously existing layers in the target composition.
+复制图层会更改目标合成中先前存在的图层的索引位置。
 
-This is the same as copying and pasting a layer through the user interface.
+这与通过用户界面复制和粘贴图层相同。
 
 :::note
-As of After Effects 13.6, this method no longer causes After Effects to crash when the layer has a parent.
+从 After Effects 13.6 开始，当图层具有父级时，此方法不再导致 After Effects 崩溃。
 :::
 
 :::warning
-As of After Effects 13.7 (13.6, has not been tested), if the copied layer has an effect on it and the user undoes the action, After Effects will Crash.
+从 After Effects 13.7 开始（13.6 尚未测试），如果复制的图层上有效果并且用户撤消操作，After Effects 将崩溃。
 :::
 
 #### 参数
 
-| 参数  |                  类型                  |       描述       |
-| ---------- | -------------------------------------- | ----------------------- |
-| `intoComp` | [CompItem object](../../item/compitem) | The target composition. |
+| 参数         | 类型                              | 描述       |
+| ------------ | --------------------------------- | ---------- |
+| `intoComp` | [CompItem 对象](../../item/compitem) | 目标合成。 |
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
@@ -452,23 +451,23 @@ Nothing.
 
 #### 描述
 
-Runs Scene Edit Detection on the layer that the method is called on and returns an array containing the times of any detected scenes. This is the same as selecting a layer in the Timeline and choosing "Layer > Scene Edit Detection" with the single argument determining whether the edits are applied as markers, layer splits, pre-comps, or are not applied to the layer.
+在调用该方法的图层上运行场景编辑检测，并返回包含检测到的场景时间的数组。这与在时间轴中选择图层并选择“图层 > 场景编辑检测”相同，单个参数确定编辑是作为标记、图层分割、预合成应用，还是不应用于图层。
 
-Just as in the UI, `doSceneEditDetection` will fail and error if called on a non-video layer or a video layer with Time Remapping enabled.
+就像在用户界面中一样，如果对非视频图层或启用了时间重映射的视频图层调用 `doSceneEditDetection`，它将失败并报错。
 
 #### 参数
 
-|   参数    |             类型              |                                          描述                                           |
-|----------------|-------------------------------|------------------------------------------------------------------------------------------------|
-| `applyOptions` | `SceneEditDetectionMode` enum | How the detected edits will be applied. One of:                                                |
-|                |                               | - `SceneEditDetectionMode.MARKERS`: Create markers at edit points.                             |
-|                |                               | - `SceneEditDetectionMode.SPLIT`: Split layer.                                                 |
-|                |                               | - `SceneEditDetectionMode.SPLIT_PRECOMP`: Split layer at edit points and pre-compose each one. |
-|                |                               | - `SceneEditDetectionMode.NONE`: Detected edits are not applied to the layer.                  |
+| 参数             | 类型                            | 描述                                                                          |
+| ---------------- | ------------------------------- | ----------------------------------------------------------------------------- |
+| `applyOptions` | `SceneEditDetectionMode` 枚举 | 检测到的编辑将如何应用。可能的值包括：                                        |
+|                  |                                 | -`SceneEditDetectionMode.MARKERS`：在编辑点创建标记。                       |
+|                  |                                 | -`SceneEditDetectionMode.SPLIT`：分割图层。                                 |
+|                  |                                 | -`SceneEditDetectionMode.SPLIT_PRECOMP`：在编辑点分割图层并预合成每个部分。 |
+|                  |                                 | -`SceneEditDetectionMode.NONE`：检测到的编辑不应用于图层。                  |
 
 #### 返回
 
-Array of floating-point values; the times of the detected edit points expressed in composition time.
+浮点值数组；检测到的编辑点的时间，以合成时间表示。
 
 ---
 
@@ -478,15 +477,15 @@ Array of floating-point values; the times of the detected edit points expressed 
 
 #### 描述
 
-Duplicates the layer. Creates a new Layer object in which all values are the same as in this one. This has the same effect as selecting a layer in the user interface and choosing Edit > Duplicate, except the selection in the user interface does not change when you call this method.
+复制图层。创建一个与此图层具有相同值的新 Layer 对象。这与在用户界面中选择图层并选择“编辑 > 复制”具有相同的效果，只是调用此方法时用户界面中的选择不会更改。
 
 #### 参数
 
-None.
+无。
 
 #### 返回
 
-Layer object.
+Layer 对象。
 
 ---
 
@@ -496,17 +495,17 @@ Layer object.
 
 #### 描述
 
-Moves this layer to a position immediately after (below) the specified layer.
+将此图层移动到指定图层之后（下方）的位置。
 
 #### 参数
 
-| 参数 |           类型           |                描述                |
-| --------- | ------------------------ | ----------------------------------------- |
-| `layer`   | [Layer object](../layer) | The target layer in the same composition. |
+| 参数      | 类型                | 描述                   |
+| --------- | ------------------- | ---------------------- |
+| `layer` | [Layer 对象](../layer) | 同一合成中的目标图层。 |
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
@@ -516,17 +515,17 @@ Nothing.
 
 #### 描述
 
-Moves this layer to a position immediately before (above) the specified layer.
+将此图层移动到指定图层之前（上方）的位置。
 
 #### 参数
 
-| 参数 |           类型           |                描述                |
-| --------- | ------------------------ | ----------------------------------------- |
-| `layer`   | [Layer object](../layer) | The target layer in the same composition. |
+| 参数      | 类型                | 描述                   |
+| --------- | ------------------- | ---------------------- |
+| `layer` | [Layer 对象](../layer) | 同一合成中的目标图层。 |
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
@@ -536,72 +535,18 @@ Nothing.
 
 #### 描述
 
-Moves this layer to the topmost position of the layer stack (the first layer).
+将此图层移动到图层堆栈的顶部（第一个图层）。
 
 #### 参数
 
-None.
+无。
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
 ### Layer.moveToEnd()
 
-`app.project.item(index).layer(index).moveToEnd()`
-
-#### 描述
-
-Moves this layer to the bottom position of the layer stack (the last layer).
-
-#### 参数
-
-None.
-
-#### 返回
-
-Nothing.
-
----
-
-### Layer.remove()
-
-`app.project.item(index).layer(index).remove()`
-
-#### 描述
-
-Deletes the specified layer from the composition.
-
-#### 参数
-
-None.
-
-#### 返回
-
-Nothing.
-
----
-
-### Layer.setParentWithJump()
-
-`app.project.item(index).layer(index).setParentWithJump([newParent])`
-
-#### 描述
-
-Sets the parent of this layer to the specified layer, without changing the transform values of the child layer.
-
-There may be an apparent jump in the rotation, translation, or scale of the child layer, as this layer's transform values are combined with those of its ancestors.
-
-If you do not want the child layer to jump, set the [parent](#layerparent) attribute directly. In this case, an offset is calculated and set in the child layer's transform fields, to prevent the jump from occurring.
-
-#### 参数
-
-|  参数  |           类型           |                                       描述                                        |
-| ----------- | ------------------------ | ---------------------------------------------------------------------------------------- |
-| `newParent` | [Layer object](../layer) | Optional. A layer in the same composition. If not specified, it sets the parent to None. |
-
-#### 返回
-
-Nothing.
+`app.project

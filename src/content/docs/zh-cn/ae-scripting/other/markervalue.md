@@ -1,59 +1,59 @@
 ---
-title: markervalue
+title: 标记值
 ---
-# MarkerValue object
+# MarkerValue 对象
 
 `new MarkerValue(comment, chapter, url, frameTarget, cuePointName, params)`
 
 #### 描述
 
-The MarkerValue object represents a layer or composition marker, which associates a comment, and optionally a chapter reference point, Web-page link, or Flash Video cue point with a particular point in a layer.
+MarkerValue 对象表示图层或合成标记，它将注释以及可选的章节参考点、网页链接或 Flash 视频提示点与图层中的特定点关联起来。
 
-Create it with the constructor; all arguments except `comment` are optional.
+使用构造函数创建它；除 `comment` 外，所有参数都是可选的。
 
-All arguments are strings that set in the corresponding attributes of the returned MarkerValue object, except `params`; this is an array containing key-value pairs, which can then be accessed with the [getParameters()](#markervaluegetparameters) and [setParameters()](#markervaluesetparameters) methods.
+所有参数都是字符串，设置返回的 MarkerValue 对象的相应属性，除了 `params`；这是一个包含键值对的数组，可以通过 [getParameters()](#markervaluegetparameters) 和 [setParameters()](#markervaluesetparameters) 方法访问。
 
-A script can set any number of parameter pairs; the order does not reflect the order displayed in the application.
+脚本可以设置任意数量的参数对；顺序不会反映在应用程序中显示的顺序。
 
-To associate a marker with a layer, set the MarkerValue object in the [Layer.marker](../layer/layer.md#layermarker) property of the layer: `layerObject.property("Marker").setValueAtTime(time, markerValueObject);`
+要将标记与图层关联，请在图层的 [Layer.marker](../layer/layer.md#layermarker) 属性中设置 MarkerValue 对象：`layerObject.property("Marker").setValueAtTime(time, markerValueObject);`
 
-To associate a marker with a composition, set the MarkerValue object in the [CompItem.markerProperty](../item/compitem.md#compitemmarkerproperty) property of the comp: `compObject.markerProperty.setValueAtTime(time, markerValueObject);`
+要将标记与合成关联，请在合成的 [CompItem.markerProperty](../item/compitem.md#compitemmarkerproperty) 属性中设置 MarkerValue 对象：`compObject.markerProperty.setValueAtTime(time, markerValueObject);`
 
-For information on the usage of markers see "Using markers" in After Effects Help.
+有关标记的使用信息，请参阅 After Effects 帮助中的“使用标记”。
 
 #### 示例
 
-- To set a **layer** marker that says "Fade Up" at the 2 second mark:
+- 要在 2 秒处设置一个显示“Fade Up”的**图层**标记：
 
-    ```javascript
-    var myMarker = new MarkerValue("FadeUp");
-    myLayer.property("Marker").setValueAtTime(2, myMarker);
-    // or
-    myLayer.marker.setValueAtTime(2, myMarker);
-    ```
+  ```javascript
+  var myMarker = new MarkerValue("FadeUp");
+  myLayer.property("Marker").setValueAtTime(2, myMarker);
+  // 或者
+  myLayer.marker.setValueAtTime(2, myMarker);
+  ```
 
-- To set a **comp** marker that says "Fade Up" at the 2 second mark:
+- 要在 2 秒处设置一个显示“Fade Up”的**合成**标记：
 
-    ```javascript
-    var myMarker = new MarkerValue("FadeUp");
-    comp.markerProperty.setValueAtTime(2, myMarker);
-    ```
+  ```javascript
+  var myMarker = new MarkerValue("FadeUp");
+  comp.markerProperty.setValueAtTime(2, myMarker);
+  ```
 
-- To get comment values from a particular marker:
+- 从特定标记获取注释值：
 
-    ```javascript
-    var layer = app.project.item(1).layer(1);
-    var markerProperty = layer.marker;
+  ```javascript
+  var layer = app.project.item(1).layer(1);
+  var markerProperty = layer.marker;
 
-    var commentOfFirstMarker = markerProperty.keyValue(1).comment;
+  var commentOfFirstMarker = markerProperty.keyValue(1).comment;
 
-    // or
-    var commentOfMarkerAtTime4 = markerProperty.valueAtTime(4.0, true).comment;
+  // 或者
+  var commentOfMarkerAtTime4 = markerProperty.valueAtTime(4.0, true).comment;
 
-    // or
-    var markerValueAtTimeClosestToTime4 = markerProperty.keyValue(markerProperty.nearestKeyIndex(4.0));
-    var commentOfMarkerClosestToTime4 = markerValueAtTimeClosestToTime4.comment;
-    ```
+  // 或者
+  var markerValueAtTimeClosestToTime4 = markerProperty.keyValue(markerProperty.nearestKeyIndex(4.0));
+  var commentOfMarkerClosestToTime4 = markerValueAtTimeClosestToTime4.comment;
+  ```
 
 ---
 
@@ -65,11 +65,11 @@ For information on the usage of markers see "Using markers" in After Effects Hel
 
 #### 描述
 
-A text chapter link for this marker. Chapter links initiate a jump to a chapter in a QuickTime movie or in other formats that support chapter marks.
+此标记的文本章节链接。章节链接会跳转到 QuickTime 电影或其他支持章节标记的格式中的章节。
 
 #### 类型
 
-String; read/write.
+字符串；可读写。
 
 ---
 
@@ -79,11 +79,11 @@ String; read/write.
 
 #### 描述
 
-A text comment for this marker. This comment appears in the Timeline panel next to the layer marker.
+此标记的文本注释。此注释会显示在时间轴面板中图层标记旁边。
 
 #### 类型
 
-String; read/write.
+字符串；可读写。
 
 ---
 
@@ -93,11 +93,11 @@ String; read/write.
 
 #### 描述
 
-The Flash Video cue point name, as shown in the Marker dialog box.
+Flash 视频提示点名称，如标记对话框中所示。
 
 #### 类型
 
-String; read/write.
+字符串；可读写。
 
 ---
 
@@ -107,11 +107,11 @@ String; read/write.
 
 #### 描述
 
-The marker's duration, in seconds. The duration appears in the Timeline panel as a short bar extending from the marker location.
+标记的持续时间（以秒为单位）。持续时间在时间轴面板中显示为从标记位置延伸的短条。
 
 #### 类型
 
-Floating-point value; read/write.
+浮点值；可读写。
 
 ---
 
@@ -121,11 +121,11 @@ Floating-point value; read/write.
 
 #### 描述
 
-When `true`, the FlashVideo cue point is for an event; otherwise, it is for navigation.
+当为 `true` 时，Flash 视频提示点用于事件；否则，用于导航。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读写。
 
 ---
 
@@ -135,11 +135,11 @@ Boolean; read/write.
 
 #### 描述
 
-A text frame target for this marker. Together with the URL value, this targets a specific frame within a Web page.
+此标记的文本帧目标。与 URL 值一起，此目标指向网页中的特定帧。
 
 #### 类型
 
-String; read/write.
+字符串；可读写。
 
 ---
 
@@ -149,11 +149,11 @@ String; read/write.
 
 #### 描述
 
-A URL for this marker. This URL is an automatic link to a Web page.
+此标记的 URL。此 URL 是网页的自动链接。
 
 #### 类型
 
-String; read/write.
+字符串；可读写。
 
 ---
 
@@ -163,13 +163,13 @@ String; read/write.
 
 #### 描述
 
-The label color for a composition or layer marker. Colors are represented by their number (0 for None, or 1 to 16 for one of the preset colors in the Labels preferences). Custom label colors cannot be set programmatically.
+合成或图层标记的标签颜色。颜色由其编号表示（0 表示无颜色，1 到 16 表示标签首选项中的预设颜色之一）。无法通过编程方式设置自定义标签颜色。
 
-Available in After Effects 16.0 or later.
+在 After Effects 16.0 或更高版本中可用。
 
 #### 类型
 
-Integer (0 to 16); read/write.
+整数（0 到 16）；可读写。
 
 ---
 
@@ -179,13 +179,13 @@ Integer (0 to 16); read/write.
 
 #### 描述
 
-State of the Protected Region option in the Composition Marker dialog box. When `true`, the composition marker behaves as a protected region. Will also return `true` for protected region markers on nested composition layers, but is otherwise not applicable to layer markers.
+合成标记对话框中“受保护区域”选项的状态。当为 `true` 时，合成标记表现为受保护区域。对于嵌套合成图层上的受保护区域标记，也会返回 `true`，但通常不适用于图层标记。
 
-Available in After Effects 16.0 or later.
+在 After Effects 16.0 或更高版本中可用。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读写。
 
 ---
 
@@ -197,15 +197,15 @@ Boolean; read/write.
 
 #### 描述
 
-Returns the key-value pairs for Flash Video cue-point parameters, for a cue point associated with this marker value.
+返回与此标记值关联的 Flash 视频提示点参数的键值对。
 
 #### 参数
 
-None.
+无。
 
 #### 返回
 
-An object with an attribute matching each parameter name, containing that parameter's value.
+一个对象，其属性与每个参数名称匹配，包含该参数的值。
 
 ---
 
@@ -215,17 +215,17 @@ An object with an attribute matching each parameter name, containing that parame
 
 #### 描述
 
-Associates a set of key-value pairs for Flash Video cue-point parameters, for a cue point associated with this marker value. A cue point can have any number of parameters, but you can add only three through the user interface; use this method to add more than three parameters.
+为此标记值关联的 Flash 视频提示点参数设置一组键值对。提示点可以有任意数量的参数，但通过用户界面只能添加三个；使用此方法可以添加更多参数。
 
 #### 参数
 
-|    参数    |         类型          |                                                                                描述                                                                                |
-| --------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `keyValuePairs` | Key-value pair object | Object containing the key-value pairs as attributes and values. The object's `toString()` method is called to assign the string value of each attribute to the named key. |
+| 参数              | 类型       | 描述                                                                                             |
+| ----------------- | ---------- | ------------------------------------------------------------------------------------------------ |
+| `keyValuePairs` | 键值对对象 | 包含键值对作为属性和值的对象。调用对象的 `toString()` 方法将每个属性的字符串值分配给命名的键。 |
 
 #### 返回
 
-Nothing.
+无。
 
 #### 示例
 

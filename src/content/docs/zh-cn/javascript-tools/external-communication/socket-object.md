@@ -1,103 +1,103 @@
 ---
-title: socket-object
+title: socket-对象
 ---
-# Socket Object
+# Socket 对象
 
-TCP connections are the basic transport layer of the Internet. Every time your Web browser connects to a server and requests a new page, it opens a TCP connection to handle the request as well as the server's reply. The JavaScript Socket object lets you connect to any server on the Internet and to exchange data with this server.
+TCP 连接是互联网的基本传输层。每次您的 Web 浏览器连接到服务器并请求新页面时，它都会打开一个 TCP 连接来处理请求以及服务器的响应。JavaScript 的 Socket 对象允许您连接到互联网上的任何服务器，并与该服务器交换数据。
 
-The Socket object provides basic functionality to connect to a remote computer over a TCP/IP network or the Internet. It provides calls like [`open()`](./socket-object-reference.md#socketopen) and [`close()`](./socket-object-reference.md#socketclose) to establish or to terminate a connection, and [`read()`](./socket-object-reference.md#socketread) or [`write()`](./socket-object-reference.md#socketwrite) to transfer data. The [`listen()`](./socket-object-reference.md#socketlisten) method establishes a simple Internet server; the server uses the method [`poll()`](./socket-object-reference.md#socketpoll) to check for incoming connections.
+Socket 对象提供了通过 TCP/IP 网络或互联网连接到远程计算机的基本功能。它提供了诸如 [`open()`](./socket-object-reference.md#socketopen) 和 [`close()`](./socket-object-reference.md#socketclose) 等调用来建立或终止连接，以及 [`read()`](./socket-object-reference.md#socketread) 或 [`write()`](./socket-object-reference.md#socketwrite) 来传输数据。[`listen()`](./socket-object-reference.md#socketlisten) 方法用于建立一个简单的互联网服务器；服务器使用 [`poll()`](./socket-object-reference.md#socketpoll) 方法来检查传入的连接。
 
-Many of these connections are based on simple data exchange of ASCII data, while other protocols, like the FTP protocol, are more complex and involve binary data. One of the simplest protocols is the HTTP protocol.
+许多这些连接基于简单的 ASCII 数据交换，而其他协议（如 FTP 协议）则更为复杂，涉及二进制数据。最简单的协议之一是 HTTP 协议。
 
-The following sample TCP/IP client connects to a WWW server (which listens on port 80); it then sends a very simple HTTP GET request to obtain the home page of the WWW server, and then it reads the reply, which is the home page together with a HTTP response header:
+以下示例是一个 TCP/IP 客户端，它连接到一个 WWW 服务器（该服务器监听端口 80）；然后发送一个非常简单的 HTTP GET 请求以获取 WWW 服务器的主页，然后读取响应，即主页以及 HTTP 响应头：
 
 ```javascript
 var reply = "";
 var conn = new Socket;
 
-// access Adobe's home page
+// 访问 Adobe 的主页
 if (conn.open ("www.adobe.com:80")) {
 
-    // send a HTTP GET request
+    // 发送 HTTP GET 请求
     conn.write ("GET /index.html HTTP/1.0\n\n");
 
-    // and read the server's reply
+    // 并读取服务器的响应
     reply = conn.read(999999);
 
     conn.close();
 }
 ```
 
-After executing this code, the variable `reply` contains the contents of the Adobe home page together with an HTTP response header.
+执行此代码后，变量 `reply` 包含 Adobe 主页的内容以及 HTTP 响应头。
 
-Establishing an Internet server is a bit more complicated. A typical server program sits and waits for incoming connections, which it then processes. Usually, you would not want your application to run in an endless loop, waiting for any incoming connection request. Therefore, you can ask a Socket object for an incoming connection by calling the [`poll()`](./socket-object-reference.md#socketpoll) method of a Socket object.
+建立一个互联网服务器稍微复杂一些。典型的服务器程序会等待传入的连接，然后处理这些连接。通常，您不希望应用程序在无限循环中运行，等待任何传入的连接请求。因此，您可以通过调用 Socket 对象的 [`poll()`](./socket-object-reference.md#socketpoll) 方法来检查传入的连接。
 
-This call would just check the incoming connections and then return immediately. If there is a connection request, the call to [`poll()`](./socket-object-reference.md#socketpoll) would return another Socket object containing the brand new connection. Use this connection object to talk to the calling client; when finished, close the connection and discard the connection object.
+此调用只会检查传入的连接，然后立即返回。如果有连接请求，调用 [`poll()`](./socket-object-reference.md#socketpoll) 将返回另一个包含全新连接的 Socket 对象。使用此连接对象与调用客户端通信；完成后，关闭连接并丢弃连接对象。
 
-Before a Socket object is able to check for an incoming connection, it must be told to listen on a specific port, like port 80 for HTTP requests. Do this by calling the [`listen()`](./socket-object-reference.md#socketlisten) method instead of the [`open()`](./socket-object-reference.md#socketopen) method.
+在 Socket 对象能够检查传入连接之前，必须告诉它在特定端口上监听，例如用于 HTTP 请求的端口 80。通过调用 [`listen()`](./socket-object-reference.md#socketlisten) 方法而不是 [`open()`](./socket-object-reference.md#socketopen) 方法来实现这一点。
 
-The following example is a very simple Web server. It listens on port 80, waiting until it detects an incoming request. The HTTP header is discarded, and a dummy HTML page is transmitted to the caller:
+以下示例是一个非常简单的 Web 服务器。它在端口 80 上监听，直到检测到传入的请求。丢弃 HTTP 头，并向调用者传输一个虚拟的 HTML 页面：
 
 ```javascript
 conn = new Socket;
-// listen on port 80
+// 监听端口 80
 if (conn.listen (80)) {
-    // wait forever for a connection
+    // 永远等待连接
     var incoming;
     do incoming = conn.poll();
     while (incoming == null);
 
-    // discard the request
+    // 丢弃请求
     conn.read();
 
-    // Reply with a HTTP header
+    // 回复 HTTP 头
     incoming.writeln ("HTTP/1.0 200 OK");
     incoming.writeln ("Content-Type: text/html");
     incoming.writeln();
 
-    // Transmit a dummy homepage
+    // 传输虚拟主页
     incoming.writeln ("<html><body><h1>Homepage</h1></body></html>");
 
-    // done!
+    // 完成！
     incoming.close();
     delete incoming;
 }
 ```
 
-Often, the remote endpoint terminates the connection after transmitting data. Therefore, there is a connected property that contains `true` as long as the connection still exists. If the connected property returns `false`, the connection is closed automatically.
+通常，远程端点在传输数据后会终止连接。因此，有一个 `connected` 属性，只要连接仍然存在，它就包含 `true`。如果 `connected` 属性返回 `false`，则连接会自动关闭。
 
-On errors, the [`error`](./socket-object-reference.md#socketerror) property of the Socket object contains a short message describing the type of the error.
+在发生错误时，Socket 对象的 [`error`](./socket-object-reference.md#socketerror) 属性包含一个简短的错误描述消息。
 
-The Socket object lets you easily implement software that talks to each other via the Internet. You could, for example, let two Adobe applications exchange documents and data simply by writing and executing JavaScript programs.
+Socket 对象使您可以轻松实现通过互联网相互通信的软件。例如，您可以通过编写和执行 JavaScript 程序让两个 Adobe 应用程序交换文档和数据。
 
 ---
 
-## Chat server sample
+## 聊天服务器示例
 
-The following sample code implements a very simple chat server. A chat client may connect to the chat server, who is listening on port number 1234. The server responds with a welcome message and waits for one line of input from the client. The client types some text and transmits it to the server who displays the text and lets the user at the server computer type a line of text, which the client computer again displays. This goes back and forth until either the server or the client computer types the word "bye":
+以下示例代码实现了一个非常简单的聊天服务器。聊天客户端可以连接到聊天服务器，服务器正在监听端口号 1234。服务器响应欢迎消息并等待客户端的一行输入。客户端输入一些文本并将其传输到服务器，服务器显示文本并让服务器计算机的用户输入一行文本，客户端计算机再次显示。这个过程来回进行，直到服务器或客户端计算机输入单词 "bye"：
 
 ```javascript
-// A simple Chat server on port 1234
+// 一个简单的聊天服务器，监听端口 1234
 function chatServer() {
     var tcp = new Socket;
 
-    // listen on port 1234
-    writeln ("Chat server listening on port 1234");
+    // 监听端口 1234
+    writeln ("聊天服务器正在监听端口 1234");
     if (tcp.listen (1234)) {
         for (;;) {
-            // poll for a new connection
+            // 轮询新连接
             var connection = tcp.poll();
             if (connection != null) {
-                writeln ("Connection from " + connection.host);
+                writeln ("来自 " + connection.host + " 的连接");
 
-                // we have a new connection, so welcome and chat
-                // until client terminates the session
-                connection.writeln ("Welcome to a little chat!");
+                // 我们有一个新连接，所以欢迎并聊天
+                // 直到客户端终止会话
+                connection.writeln ("欢迎来到小聊天室！");
                 chat (connection);
-                connection.writeln ( "*** Goodbye ***");
+                connection.writeln ( "*** 再见 ***");
                 connection.close();
                 delete connection;
-                writeln ("Connection closed");
+                writeln ("连接已关闭");
             }
         }
     }
@@ -106,9 +106,9 @@ function chatServer() {
 function chatClient() {
     var connection = new Socket;
 
-    // connect to sample server
+    // 连接到示例服务器
     if (connection.open ("remote-pc.corp.adobe.com:1234")) {
-        // then chat with server
+        // 然后与服务器聊天
         chat (connection);
         connection.close();
         delete connection;
@@ -116,26 +116,26 @@ function chatClient() {
 }
 
 function chat (c) {
-    // select a long timeout
+    // 设置较长的超时时间
     c.timeout=1000;
 
     while (true) {
-        // get one line and echo it
+        // 获取一行并回显
         writeln (c.read());
 
-        // stop if the connection is broken
+        // 如果连接断开则停止
         if (!c.connected)
             break;
 
-        // read a line of text
-        write ("chat: ");
+        // 读取一行文本
+        write ("聊天: ");
         var text = readln();
 
         if (text == "bye")
-            // stop conversation if the user entered "bye"
+            // 如果用户输入 "bye" 则停止对话
             break;
         else
-            // otherwise transmit to server
+            // 否则传输到服务器
             c.writeln (text);
     }
 }

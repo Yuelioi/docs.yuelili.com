@@ -1,34 +1,34 @@
 ---
-title: externalobject-object
+title: externalobject 对象
 ---
-# ExternalObject object
+# ExternalObject 对象
 
-You specify the name of the library in the constructor. The constructor searches for the named library using the paths defined in the static property [ExternalObject.searchFolders](#externalobjectsearchfolders).
+您在构造函数中指定库的名称。构造函数使用静态属性 [ExternalObject.searchFolders](#externalobjectsearchfolders) 中定义的路径搜索指定名称的库。
 
-If you are having difficulty loading your library as an ExternalObject, set the property `ExternalObject.log` to `true`, then call `ExternalObject.search('lib:myLibrary')`. This function performs the search, and the log reports the paths that have been searched to the ExtendScript Toolkit Console.
+如果您在将库加载为 ExternalObject 时遇到困难，请将属性 `ExternalObject.log` 设置为 `true`，然后调用 `ExternalObject.search('lib:myLibrary')`。此函数执行搜索，并将搜索的路径记录到 ExtendScript Toolkit 控制台。
 
-Before loading the library, the current folder is temporarily switched to the location of the found executable file.
+在加载库之前，当前文件夹会临时切换到找到的可执行文件的位置。
 
-- In Mac OS, the current directory is set to the bundle or framework folder for the library.
-- In Windows and UNIX, the current directory is set to the folder that contains the library.
+- 在 Mac OS 中，当前目录设置为库的 bundle 或 framework 文件夹。
+- 在 Windows 和 UNIX 中，当前目录设置为包含库的文件夹。
 
 ---
 
-## ExternalObject constructor
+## ExternalObject 构造函数
 
 `obj = new ExternalObject ("lib:" + filespec, arg1, ...argn);`
 
-|   参数   |                                                                                  描述                                                                                   |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `filespec`    | The specifier "lib:" is case sensitive, and serves as the marker for dynamic libraries. Concatenate this to the base name of the shared library, with or without an extension. |
-|               | ExtendScript appends a file extension if necessary, according to the operating system:                                                                                         |
-|               | - `.dll` in Windows                                                                                                                                                            |
-|               | - `.bundle` or `.framework` in Mac OS (only Mach-O bundles are supported)                                                                                                      |
-|               | - `.so` in UNIX (except for HP/UX, where the extension is `.sl`)                                                                                                               |
-|               |     - The name of the library is case sensitive in UNIX.                                                                                                                       |
-| `arg1...argn` | Optional. Any number of arguments to pass to the library's initialization routine.                                                                                             |
+| 参数            | 描述                                                                                           |
+| --------------- | ---------------------------------------------------------------------------------------------- |
+| `filespec`    | 标识符 "lib:" 区分大小写，并作为动态库的标记。将其与共享库的基本名称连接，可以带或不带扩展名。 |
+|                 | 根据操作系统，ExtendScript 会附加必要的文件扩展名：                                            |
+|                 | - 在 Windows 中为 `.dll`                                                                     |
+|                 | - 在 Mac OS 中为 `.bundle` 或 `.framework`（仅支持 Mach-O bundle）                         |
+|                 | - 在 UNIX 中为 `.so`（HP/UX 除外，其扩展名为 `.sl`）                                       |
+|                 | - 在 UNIX 中，库名称区分大小写。                                                               |
+| `arg1...argn` | 可选。传递给库初始化例程的任意数量的参数。                                                     |
 
-For example:
+例如：
 
 ```javascript
 var mylib = new ExternalObject( "lib:myLibrary" );
@@ -36,9 +36,9 @@ var mylib = new ExternalObject( "lib:myLibrary" );
 
 ---
 
-## ExternalObject Class Attributes
+## ExternalObject 类属性
 
-The ExternalObject class provides these static properties:
+ExternalObject 类提供以下静态属性：
 
 ### ExternalObject.log
 
@@ -46,13 +46,13 @@ The ExternalObject class provides these static properties:
 
 #### 描述
 
-Set to `true` to write status information to standard output (the JavaScript Console in the ExtendScript Toolkit).
+设置为 `true` 以将状态信息写入标准输出（ExtendScript Toolkit 中的 JavaScript 控制台）。
 
-Set to `false` to turn logging off. Default is `false`.
+设置为 `false` 以关闭日志记录。默认值为 `false`。
 
 #### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -62,19 +62,19 @@ Boolean
 
 #### 描述
 
-A set of alternate paths in which to search for the shared library files, a single string with multiple path specifications delimited by semicolons (;).
+一组用于搜索共享库文件的备用路径，是一个包含多个路径规范的字符串，路径之间用分号（;）分隔。
 
-Paths can be absolute or relative to the [Folder.startup](../file-system-access/folder-object.md#folderstartup) location.
+路径可以是绝对路径，也可以是相对于 [Folder.startup](../file-system-access/folder-object.md#folderstartup) 位置的相对路径。
 
-Default value is:
+默认值为：
 
-- In Windows, `"Plugins;Plug-Ins;."`
-- In Mac OS, `"Plugins;Plug-Ins;Frameworks;.;../../../Plugins;../../../Plug-ins;../../../Frameworks;../../..;"`
-- In UNIX, `"Plugins;Plug-Ins;plugins;."`
+- 在 Windows 中，`"Plugins;Plug-Ins;."`
+- 在 Mac OS 中，`"Plugins;Plug-Ins;Frameworks;.;../../../Plugins;../../../Plug-ins;../../../Frameworks;../../..;"`
+- 在 UNIX 中，`"Plugins;Plug-Ins;plugins;."`
 
 #### 类型
 
-String
+字符串
 
 ---
 
@@ -84,17 +84,17 @@ String
 
 #### 描述
 
-The version of the library, as returned by [ESGetVersion()](defining-entry-points-for-direct-access.md#esgetversion).
+库的版本，由 [ESGetVersion()](defining-entry-points-for-direct-access.md#esgetversion) 返回。
 
 #### 类型
 
-Number
+数字
 
 ---
 
-## ExternalObject Class Methods
+## ExternalObject 类方法
 
-The ExternalObject class provides this static function to help debug problems with loading libraries as external objects:
+ExternalObject 类提供以下静态函数，以帮助调试将库加载为外部对象时的问题：
 
 ### ExternalObject.search()
 
@@ -102,21 +102,21 @@ The ExternalObject class provides this static function to help debug problems wi
 
 #### 描述
 
-Reports whether a compiled C/C++ library can be found, but does not load it. If logging is on, the paths searched are reported to the JavaScript Console in the ExtendScript Toolkit.
+报告是否可以找到已编译的 C/C++ 库，但不加载它。如果日志记录已打开，搜索的路径将报告到 ExtendScript Toolkit 中的 JavaScript 控制台。
 
 #### 参数
 
-| 参数 |  类型  |                                    描述                                     |
-| --------- | ------ | ---------------------------------------------------------------------------------- |
-| `spec`    | String | The file specification for the compiled library, with or without path information. |
+| 参数     | 类型   | 描述                                           |
+| -------- | ------ | ---------------------------------------------- |
+| `spec` | 字符串 | 已编译库的文件规范，可以包含或不包含路径信息。 |
 
 #### 返回
 
-Boolean. `true` if the library is found, `false` otherwise.
+布尔值。如果找到库，则为 `true`，否则为 `false`。
 
 ---
 
-## ExternalObject Object Methods
+## ExternalObject 对象方法
 
 ### ExternalObject.terminate()
 
@@ -124,10 +124,10 @@ Boolean. `true` if the library is found, `false` otherwise.
 
 #### 描述
 
-Explicitly shuts down the `ExternalObject` dynamic library wrapped by this instance.
+显式关闭此实例包装的 `ExternalObject` 动态库。
 
-It can be helpful to force a shutdown of the external library if termination of external libraries during the shutdown of the hosting application does not occur in the correct order.
+如果在宿主应用程序关闭期间外部库的终止顺序不正确，强制关闭外部库可能会有所帮助。
 
 #### 返回
 
-Nothing
+无

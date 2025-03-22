@@ -1,50 +1,50 @@
 ---
-title: xml-object-reference
+title: xml 对象参考
 ---
-# XML Object Reference
+# XML 对象参考
 
-This section provides reference details for the properties and methods of the XML object itself, and for the related utility objects and global functions that you use to work with namespaces:
+本节提供了 XML 对象本身的属性和方法的参考详细信息，以及用于处理命名空间的相关实用对象和全局函数：
 
-- [XML object](#xml-object)
-- [Namespace object](#namespace-object)
-- [QName object](#qname-object)
-- [Global functions](#global-functions)
+- [XML 对象](#xml-object)
+- [命名空间对象](#namespace-object)
+- [QName 对象](#qname-object)
+- [全局函数](#global-functions)
 
-## XML Object
+## XML 对象
 
-The `XML` object provides both static properties and functions, available through the `XML` class, and dynamic properties and functions available through each instance.
+`XML` 对象提供了静态属性和函数（通过 `XML` 类访问）以及动态属性和函数（通过每个实例访问）。
 
-### XML object constructor
+### XML 对象构造函数
 
-The constructor returns the XML object representing the root node of an XML tree, which contains additional XML objects for all contained elements.
+构造函数返回表示 XML 树根节点的 XML 对象，该对象包含所有包含元素的附加 XML 对象。
 
 `[new] XML (xmlCode);`
 
-| Property  |     类型      |                                                                    描述                                                                     |
-|-----------|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| `xmlCode` | String or XML | A string containing valid XML code, or an existing XML object.                                                                                     |
-|           |               | - If a valid string is supplied, returns a new XML object encapsulating the XML code. If the XML code cannot be parsed, throws a JavaScript error. |
-|           |               | - If an existing object is supplied and the `new` operator is used, returns a copy of the object; otherwise, returns the object itself.            |
+| 属性        | 类型         | 描述                                                                                                        |
+| ----------- | ------------ | ----------------------------------------------------------------------------------------------------------- |
+| `xmlCode` | 字符串或 XML | 包含有效 XML 代码的字符串，或现有的 XML 对象。                                                              |
+|             |              | - 如果提供了有效的字符串，则返回封装 XML 代码的新 XML 对象。如果无法解析 XML 代码，则抛出 JavaScript 错误。 |
+|             |              | - 如果提供了现有对象并且使用了 `new` 运算符，则返回该对象的副本；否则，返回对象本身。                     |
 
 ---
 
-## XML Settings
+## XML 设置
 
-These static properties are available through the XML class. They control how XML is parsed and generated:
+这些静态属性通过 XML 类访问。它们控制 XML 的解析和生成方式：
 
-|            Property            |  类型   |                                                             描述                                                             |
-| ------------------------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `ignoreComments`               | Boolean | Description When `true`, comments are stripped from the XML during parsing. Default is `false`.                                     |
-| `ignoreProcessingInstructions` | Boolean | Description When `true`, processing instructions (`<?xxx?>` elements) are stripped from the XML during parsing. Default is `false`. |
-| `ignoreWhitespace`             | Boolean | Description When `true`, white-space characters are stripped from the XML during parsing. Default is `true`.                        |
-| `prettyIndent`                 | Number  | Description The number of spaces to use for indenting when pretty-printing. Default is 2.                                           |
-| `prettyPrinting`               | Boolean | Description When `true`, `toXMLString()` uses indenting and line feeds to create the XML string. Default is `true`.                 |
+| 属性                             | 类型   | 描述                                                                                        |
+| -------------------------------- | ------ | ------------------------------------------------------------------------------------------- |
+| `ignoreComments`               | 布尔值 | 当为 `true` 时，在解析期间从 XML 中删除注释。默认值为 `false`。                         |
+| `ignoreProcessingInstructions` | 布尔值 | 当为 `true` 时，在解析期间从 XML 中删除处理指令（`<?xxx?>` 元素）。默认值为 `false`。 |
+| `ignoreWhitespace`             | 布尔值 | 当为 `true` 时，在解析期间从 XML 中删除空白字符。默认值为 `true`。                      |
+| `prettyIndent`                 | 数字   | 在美化打印时用于缩进的空格数。默认值为 2。                                                  |
+| `prettyPrinting`               | 布尔值 | 当为 `true` 时，`toXMLString()` 使用缩进和换行符创建 XML 字符串。默认值为 `true`。    |
 
 ---
 
-## XML Class Methods
+## XML 类方法
 
-These static functions are available through the XML class, and provide information about the global settings of the XML parser.
+这些静态函数通过 XML 类访问，并提供有关 XML 解析器全局设置的信息。
 
 ### XML.defaultSettings()
 
@@ -52,11 +52,11 @@ These static functions are available through the XML class, and provide informat
 
 #### 描述
 
-Retrieves the default global option settings that control how XML is parsed and generated.
+检索控制 XML 解析和生成的默认全局选项设置。
 
 #### 返回
 
-Returns a JavaScript object containing five properties, which correspond to the five [XML Settings](#xml-settings).
+返回一个包含五个属性的 JavaScript 对象，这些属性对应于 [XML 设置](#xml-settings)。
 
 ---
 
@@ -66,11 +66,11 @@ Returns a JavaScript object containing five properties, which correspond to the 
 
 #### 描述
 
-Retrieves the current global option settings that control how XML is parsed and generated.
+检索控制 XML 解析和生成的当前全局选项设置。
 
 #### 返回
 
-Returns a JavaScript object containing five properties, which correspond to the five [XML Settings](#xml-settings)
+返回一个包含五个属性的 JavaScript 对象，这些属性对应于 [XML 设置](#xml-settings)。
 
 ---
 
@@ -80,23 +80,23 @@ Returns a JavaScript object containing five properties, which correspond to the 
 
 #### 描述
 
-Sets the global option settings that control how XML is parsed and generated. You can use this to restore settings retrieved with [settings()](#xml-settings) or [defaultSettings()](#xmldefaultsettings).
+设置控制 XML 解析和生成的全局选项设置。您可以使用此函数恢复通过 [settings()](#xml-settings) 或 [defaultSettings()](#xmldefaultsettings) 检索的设置。
 
 #### 参数
 
-| 参数 |  类型  |                                                描述                                                 |
-| --------- | ------ | ---------------------------------------------------------------------------------------------------------- |
-| `object`  | Object | A JavaScript object containing five properties, which correspond to the five [XML Settings](#xml-settings) |
+| 参数       | 类型 | 描述                                                                       |
+| ---------- | ---- | -------------------------------------------------------------------------- |
+| `object` | 对象 | 一个包含五个属性的 JavaScript 对象，这些属性对应于[XML 设置](#xml-settings)。 |
 
 #### 返回
 
-Nothing
+无
 
 ---
 
-## XML Object Attributes
+## XML 对象属性
 
-The properties of the XML object are named for and contain the values of the child elements and attributes of the element that the object represents.
+XML 对象的属性以子元素和属性的名称命名，并包含这些子元素和属性的值。
 
 ### xmlObj.childElementName
 
@@ -104,11 +104,11 @@ The properties of the XML object are named for and contain the values of the chi
 
 #### 描述
 
-Child-element properties are named with the child element name.
+子元素属性以子元素名称命名。
 
 #### 类型
 
-[XML object](#xml-object)
+[XML 对象](#xml-object)
 
 ---
 
@@ -118,15 +118,15 @@ Child-element properties are named with the child element name.
 
 #### 描述
 
-Attribute properties are named with the attribute name prefixed with the at-sign, `@`.
+属性属性以属性名称前缀 `@` 命名。
 
 #### 类型
 
-[XML object](#xml-object)
+[XML 对象](#xml-object)
 
 ---
 
-## XML Object Methods
+## XML 对象方法
 
 ### XML.addNamespace()
 
@@ -134,17 +134,17 @@ Attribute properties are named with the attribute name prefixed with the at-sign
 
 #### 描述
 
-Adds a namespace declaration to this node.
+向此节点添加命名空间声明。
 
 #### 参数
 
-| 参数 |                 类型                  |         描述          |
-| --------- | ------------------------------------- | ---------------------------- |
-| `ns`      | [Namespace object](#namespace-object) | Namespace declaration to add |
+| 参数   | 类型                           | 描述                 |
+| ------ | ------------------------------ | -------------------- |
+| `ns` | [命名空间对象](#namespace-object) | 要添加的命名空间声明 |
 
 #### 返回
 
-This [XML object](#xml-object).
+此 [XML 对象](#xml-object)。
 
 ---
 
@@ -154,17 +154,17 @@ This [XML object](#xml-object).
 
 #### 描述
 
-Appends a child element to this node, after any existing children. If the argument is not XML, creates a new XML element that contains the string as its text value, using the same element name as the last element currently contained in this object's node.
+将子元素追加到此节点，位于任何现有子元素之后。如果参数不是 XML，则创建一个新的 XML 元素，该元素包含字符串作为其文本值，并使用当前包含在此对象节点中的最后一个元素的相同元素名称。
 
 #### 参数
 
-| 参数 |                                            类型                                             |       描述       |
-| --------- | ------------------------------------------------------------------------------------------- | ----------------------- |
-| `child`   | [XML object](#xml-object), or any value that can be converted to a String with `toString()` | Child element to append |
+| 参数      | 类型                                                                | 描述           |
+| --------- | ------------------------------------------------------------------- | -------------- |
+| `child` | [XML 对象](#xml-object) 或任何可以通过 `toString()` 转换为字符串的值 | 要追加的子元素 |
 
 #### 返回
 
-This [XML object](#xml-object).
+此 [XML 对象](#xml-object)。
 
 ---
 
@@ -174,17 +174,17 @@ This [XML object](#xml-object).
 
 #### 描述
 
-Retrieves a list of the named attribute elements contained in this node.
+检索此节点中包含的命名属性元素的列表。
 
 #### 参数
 
-| 参数 |  类型  |     描述     |
-| --------- | ------ | ------------------- |
-| `name`    | String | Ahe attribute name. |
+| 参数     | 类型   | 描述       |
+| -------- | ------ | ---------- |
+| `name` | 字符串 | 属性名称。 |
 
 #### 返回
 
-An [XML object](#xml-object) containing all values of the named attribute.
+包含命名属性所有值的 [XML 对象](#xml-object)。
 
 ---
 
@@ -194,17 +194,17 @@ An [XML object](#xml-object) containing all values of the named attribute.
 
 #### 描述
 
-Retrieves a list of all child elements of this node of a given type.
+检索此节点中给定类型的所有子元素的列表。
 
 #### 参数
 
-| 参数 |       类型       |                                 描述                                  |
-| --------- | ---------------- | ---------------------------------------------------------------------------- |
-| `which`   | String or Number | The element name, or a Number, a 0-based index into this node's child array. |
+| 参数      | 类型         | 描述                                          |
+| --------- | ------------ | --------------------------------------------- |
+| `which` | 字符串或数字 | 元素名称，或数字（此节点子数组的 0 基索引）。 |
 
 #### 返回
 
-An [XML object](#xml-object) containing all child elements of the given type.
+包含给定类型的所有子元素的 [XML 对象](#xml-object)。
 
 ---
 
@@ -214,11 +214,11 @@ An [XML object](#xml-object) containing all child elements of the given type.
 
 #### 描述
 
-Retrieves the 0-based position index of this node within its parent node.
+检索此节点在其父节点中的 0 基位置索引。
 
 #### 返回
 
-Number
+数字
 
 ---
 
@@ -228,11 +228,11 @@ Number
 
 #### 描述
 
-Retrieves all of the immediate child elements of this node, including text elements.
+检索此节点的所有直接子元素，包括文本元素。
 
 #### 返回
 
-An [XML object](#xml-object) containing the child elements.
+包含子元素的 [XML 对象](#xml-object)。
 
 ---
 
@@ -242,11 +242,11 @@ An [XML object](#xml-object) containing the child elements.
 
 #### 描述
 
-Retrieves all XML comment elements from this node.
+检索此节点中的所有 XML 注释元素。
 
 #### 返回
 
-An [XML object](#xml-object) containing the comments.
+包含注释的 [XML 对象](#xml-object)。
 
 ---
 
@@ -256,17 +256,17 @@ An [XML object](#xml-object) containing the comments.
 
 #### 描述
 
-Reports whether an element is contained in this node at any level of nesting.
+报告元素是否在此节点的任何嵌套级别中包含。
 
 #### 参数
 
-| 参数 |           类型            |   描述    |
-| --------- | ------------------------- | ---------------- |
-| `element` | [XML object](#xml-object) | Element to check |
+| 参数        | 类型                 | 描述         |
+| ----------- | -------------------- | ------------ |
+| `element` | [XML 对象](#xml-object) | 要检查的元素 |
 
 #### 返回
 
-Boolean. `true` if the element is contained in this XML tree.
+布尔值。如果元素包含在此 XML 树中，则为 `true`。
 
 ---
 
@@ -276,11 +276,11 @@ Boolean. `true` if the element is contained in this XML tree.
 
 #### 描述
 
-Creates a copy of this node.
+创建此节点的副本。
 
 #### 返回
 
-The new XML object.
+新的 XML 对象。
 
 ---
 
@@ -290,17 +290,17 @@ The new XML object.
 
 #### 描述
 
-Retrieves all descendent elements of this node of a given element type, or all XML-valued descendants, at any level of nesting. Includes text elements.
+检索此节点中给定元素类型的所有后代元素，或所有 XML 值的后代元素，无论嵌套级别如何。包括文本元素。
 
 #### 参数
 
-| 参数 |  类型  |                                 描述                                 |
-| --------- | ------ | --------------------------------------------------------------------------- |
-| `name`    | String | Optional. The element name to match. If not provided, matches all elements. |
+| 参数     | 类型   | 描述                                                 |
+| -------- | ------ | ---------------------------------------------------- |
+| `name` | 字符串 | 可选。要匹配的元素名称。如果未提供，则匹配所有元素。 |
 
 #### 返回
 
-An [XML object](#xml-object) containing properties for each descendant element.
+包含每个后代元素属性的 [XML 对象](#xml-object)。
 
 ---
 
@@ -310,17 +310,17 @@ An [XML object](#xml-object) containing properties for each descendant element.
 
 #### 描述
 
-Retrieves all of the immediate child elements of this node of the given type, or of all types. Does not include text elements.
+检索此节点中给定类型的所有直接子元素，或所有类型的子元素。不包括文本元素。
 
 #### 参数
 
-| 参数 |  类型  |                                 描述                                 |
-| --------- | ------ | --------------------------------------------------------------------------- |
-| `name`    | String | Optional. The element name to match. If not provided, matches all elements. |
+| 参数     | 类型   | 描述                                                 |
+| -------- | ------ | ---------------------------------------------------- |
+| `name` | 字符串 | 可选。要匹配的元素名称。如果未提供，则匹配所有元素。 |
 
 #### 返回
 
-An [XML object](#xml-object) containing properties for each child element.
+包含每个子元素属性的 [XML 对象](#xml-object)。
 
 ---
 
@@ -330,11 +330,11 @@ An [XML object](#xml-object) containing properties for each child element.
 
 #### 描述
 
-Reports whether this node has complex content; that is, whether it contains child elements. Disregards contents of other kinds, including attributes, comments, processing instructions and text nodes.
+报告此节点是否具有复杂内容；即，是否包含子元素。忽略其他类型的内容，包括属性、注释、处理指令和文本节点。
 
 #### 返回
 
-Boolean. `true` if this node contains child elements.
+布尔值。如果此节点包含子元素，则为 `true`。
 
 ---
 
@@ -344,13 +344,13 @@ Boolean. `true` if this node contains child elements.
 
 #### 描述
 
-Reports whether this node has simple content; that is, whether it represents a text node, an attribute node, or an element without child elements (regardless of whether it also contains attributes, comments, processing instructions or text).
+报告此节点是否具有简单内容；即，是否表示文本节点、属性节点或不包含子元素的元素（无论是否还包含属性、注释、处理指令或文本）。
 
-Object representing comments and processing instructions do not have simple content.
+表示注释和处理指令的对象不具有简单内容。
 
 #### 返回
 
-Boolean. `true` if this node contains no child elements.
+布尔值。如果此节点不包含子元素，则为 `true`。
 
 ---
 
@@ -360,11 +360,11 @@ Boolean. `true` if this node contains no child elements.
 
 #### 描述
 
-Retrieves the current list of valid namespaces in this element.
+检索此元素中有效的命名空间列表。
 
 #### 返回
 
-An Array of [Namespace object](#namespace-object), in which the last member is the default namespace.
+[命名空间对象](#namespace-object) 的数组，其中最后一个成员是默认命名空间。
 
 ---
 
@@ -374,18 +374,18 @@ An Array of [Namespace object](#namespace-object), in which the last member is t
 
 #### 描述
 
-Inserts a new child element or text node into this node, after another existing child element. If the relative element is not currently in this node, does not insert the new child.
+将新的子元素或文本节点插入到此节点中，位于另一个现有子元素之后。如果相对元素当前不在此节点中，则不插入新的子元素。
 
 #### 参数
 
-| 参数 |           类型            |                                                    描述                                                     |
-| --------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `child1`  | [XML object](#xml-object) | The existing child element after which to place the new child, or `null` to insert the new child at the beginning. |
-| `child2`  | [XML object](#xml-object) | The new child element, or any value that can be converted to a String with `toString()`.                           |
+| 参数       | 类型                 | 描述                                                               |
+| ---------- | -------------------- | ------------------------------------------------------------------ |
+| `child1` | [XML 对象](#xml-object) | 在其后放置新子元素的现有子元素，或 `null` 以在开头插入新子元素。 |
+| `child2` | [XML 对象](#xml-object) | 新的子元素，或任何可以通过 `toString()` 转换为字符串的值。       |
 
 #### 返回
 
-This [XML object](#xml-object).
+此 [XML 对象](#xml-object)。
 
 ---
 
@@ -395,18 +395,18 @@ This [XML object](#xml-object).
 
 #### 描述
 
-Inserts a new child element or text node into this node, before another existing child element. If the relative element is not currently in this node, does not insert the new child.
+将新的子元素或文本节点插入到此节点中，位于另一个现有子元素之前。如果相对元素当前不在此节点中，则不插入新的子元素。
 
 #### 参数
 
-| 参数 |                                                                 类型                                                                  | Description |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `child1`  | [XML object](#xml-object) The existing child element before which to place the new child, or null to insert the new child at the end. |             |
-| `child2`  | [XML object](#xml-object) The new child element, or any value that can be converted to a String with `toString()`.                    |             |
+| 参数       | 类型                                                                                    | 描述 |
+| ---------- | --------------------------------------------------------------------------------------- | ---- |
+| `child1` | [XML 对象](#xml-object) 在其前放置新子元素的现有子元素，或 `null` 以在末尾插入新子元素。 |      |
+| `child2` | [XML 对象](#xml-object) 新的子元素，或任何可以通过 `toString()` 转换为字符串的值。       |      |
 
 #### 返回
 
-This [XML object](#xml-object).
+此 [XML 对象](#xml-object)。
 
 ---
 
@@ -416,11 +416,11 @@ This [XML object](#xml-object).
 
 #### 描述
 
-Reports the number of child elements contained in this node. The minimum number is 1, the element that this object represents.
+报告此节点中包含的子元素数量。最小数量为 1，即此对象表示的元素。
 
 #### 返回
 
-Number
+数字
 
 ---
 
@@ -430,11 +430,11 @@ Number
 
 #### 描述
 
-Retrieves the local name of this element; that is, the element name, without any namespace prefix.
+检索此元素的本地名称；即，不带任何命名空间前缀的元素名称。
 
 #### 返回
 
-String
+字符串
 
 ---
 
@@ -444,11 +444,11 @@ String
 
 #### 描述
 
-Retrieves the full name of this element, with the namespace information.
+检索此元素的完整名称，包括命名空间信息。
 
 #### 返回
 
-A [QName object](#qname-object) containing the element name and namespace URI.
+包含元素名称和命名空间 URI 的 [QName 对象](#qname-object)。
 
 ---
 
@@ -458,11 +458,11 @@ A [QName object](#qname-object) containing the element name and namespace URI.
 
 #### 描述
 
-Retrieves the namespace URI of this element.
+检索此元素的命名空间 URI。
 
 #### 返回
 
-String
+字符串
 
 ---
 
@@ -472,11 +472,11 @@ String
 
 #### 描述
 
-Reports the type of this node.
+报告此节点的类型。
 
 #### 返回
 
-A String, one of:
+字符串，可能为以下之一：
 
 - `element`
 - `attribute`
@@ -492,11 +492,11 @@ A String, one of:
 
 #### 描述
 
-Retrieves all of the namespace declarations contained in this node.
+检索此节点中包含的所有命名空间声明。
 
 #### 返回
 
-An Array of [Namespace object](#namespace-object).
+[命名空间对象](#namespace-object) 的数组。
 
 ---
 
@@ -506,11 +506,11 @@ An Array of [Namespace object](#namespace-object).
 
 #### 描述
 
-Puts all text nodes in this and all descendant XML objects into a normal form by merging adjacent text nodes and eliminating empty text nodes.
+通过合并相邻的文本节点并消除空的文本节点，将此节点及其所有后代 XML 对象中的所有文本节点放入正常形式。
 
 #### 返回
 
-This [XML object](#xml-object).
+此 [XML 对象](#xml-object)。
 
 ---
 
@@ -520,11 +520,11 @@ This [XML object](#xml-object).
 
 #### 描述
 
-Retrieves the parent node of this node.
+检索此节点的父节点。
 
 #### 返回
 
-An [XML object](#xml-object), or `null` for the root element.
+[XML 对象](#xml-object)，或根元素的 `null`。
 
 ---
 
@@ -534,17 +534,17 @@ An [XML object](#xml-object), or `null` for the root element.
 
 #### 描述
 
-Prepends a child element to this node, before any existing children. If you prepend a string to a text element, the result is two text elements; call [normalize()](#xmlnormalize) to concatenate them into a single text string.
+将子元素预置到此节点，位于任何现有子元素之前。如果将字符串预置到文本元素，则结果为两个文本元素；调用 [normalize()](#xmlnormalize) 将它们连接为单个文本字符串。
 
 #### 参数
 
-| 参数 |                类型                 |       描述        |
-| --------- | ----------------------------------- | ------------------------ |
-| `child`   | [XML object](#xml-object) or String | Child element to prepend |
+| 参数      | 类型                          | 描述           |
+| --------- | ----------------------------- | -------------- |
+| `child` | [XML 对象](#xml-object) 或字符串 | 要预置的子元素 |
 
 #### 返回
 
-This [XML object](#xml-object).
+此 [XML 对象](#xml-object)。
 
 ---
 
@@ -554,13 +554,13 @@ This [XML object](#xml-object).
 
 #### 描述
 
-A String, the name of a processing instruction, or null to get all processing instructions.
+一个字符串，处理指令的名称，或 `null` 以获取所有处理指令。
 
-Retrieves processing instructions contained in this node.
+检索此节点中包含的处理指令。
 
 #### 返回
 
-An [XML object](#xml-object) containing the children of this object that are processing instructions, matching the name if supplied.
+包含此对象的子元素的 [XML 对象](#xml-object)，这些子元素是处理指令，如果提供了名称，则匹配该名称。
 
 ---
 
@@ -570,351 +570,12 @@ An [XML object](#xml-object) containing the children of this object that are pro
 
 #### 描述
 
-Replaces one or more property values in this node.
+替换此节点中的一个或多个属性值。
 
-If the named element does not exist, appends the given value as a text element.
-
-#### 参数
-
-| 参数 |                                            类型                                            |                                                                                 描述                                                                                  |
-|-----------|--------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `name`    | String                                                                                     | An element or attribute name, with or without the 0-based position index of a specific element, or the wildcard string `"*"`.                                                |
-|           |                                                                                            | - If no position index is supplied, replaces the value of all matching elements.                                                                                             |
-|           |                                                                                            | - If the wildcard is supplied, replaces the value of all contained elements. When an element contain subelements, those are removed, and only the replacement value remains. |
-| `value`   | [XML object](#xml-object) or any value that can be converted to a String with `toString()` | Value to replace with                                                                                                                                                        |
-
-#### 返回
-
-This [XML object](#xml-object).
-
----
-
-### XML.setChildren()
-
-`xmlObj.setChildren(value);`
-
-#### 描述
-
-Replaces all of the XML-valued properties in this object with a new value, which can be a simple text element, or can contain another set of XML properties.
+如果命名元素不存在，则将给定值追加为文本元素。
 
 #### 参数
 
-| 参数 |                                            类型                                             |      描述      |
-| --------- | ------------------------------------------------------------------------------------------- | --------------------- |
-| `value`   | [XML object](#xml-object) or any value that can be converted to a String with `toString()`. | Value to replace with |
-
-#### 返回
-
-This [XML object](#xml-object).
-
----
-
-### XML.setLocalName()
-
-`xmlObj.setLocalName(name);`
-
-#### 描述
-
-Replaces the local name of this object; that is, the element name without any namespace prefix.
-
-#### 参数
-
-| 参数 |  类型  |  Description  |
-| --------- | ------ | ------------- |
-| `name`    | String | The new name. |
-
-#### 返回
-
-This [XML object](#xml-object).
-
----
-
-### XML.setName()
-
-`xmlObj.setName(name);`
-
-#### 描述
-
-Replaces the full name of this object; that is, the element name and its namespace prefix.
-
-#### 参数
-
-| 参数 |  类型  |  Description  |
-| --------- | ------ | ------------- |
-| `name`    | String | The new name. |
-
-#### 返回
-
-This [XML object](#xml-object).
-
----
-
-### XML.setNamespace()
-
-`xmlObj.setNamespace(ns);`
-
-#### 描述
-
-Sets the namespace for this XML element. If the namespace has not been declared in the tree above this element, add a namespace declaration instead.
-
-#### 参数
-
-| 参数 |       类型       |                           描述                            |
-| --------- | ---------------- | ---------------------------------------------------------------- |
-| `ns`      | Namespace object | Namespace that has been declared in the tree above this element. |
-
-#### 返回
-
-This [XML object](#xml-object).
-
----
-
-### XML.text()
-
-`xmlObj.text();`
-
-#### 描述
-
-Retrieves text nodes from this element.
-
-An [XML object](#xml-object) containing all properties of this object that represent XML text nodes.
-
----
-
-### XML.toString()
-
-`xmlObj.toString();`
-
-#### 描述
-
-Creates a string representation of this object.
-
-- For text and attribute nodes, this is the textual value of the node.
-- For other elements, it is the result of [toXMLString()](#xmltoxmlstring).
-- If this XML object is a list, concatenates the result of calling the function on each contained element.
-
-#### 返回
-
-String
-
----
-
-### XML.toXMLString()
-
-`xmlObj.toXMLString();`
-
-#### 描述
-
-Creates an XML-encoded string representation of this [XML object](#xml-object).
-
-This result includes the start tag, attributes and end tag of the XML object, regardless of its content. Formats the string as specified by the global settings [XML.prettyPrinting](#xml-settings) and [XML.prettyIndent](#xml-settings).
-
-#### 返回
-
-String
-
----
-
-### XML.xpath()
-
-`xmlObj.xpath(expression[, variables]);`
-
-#### 描述
-
-Evaluates an XPath expression in accordance with the W3C XPath recommendation, using this XML object as the context node. The context position and size are set to 1, and all variables are initially unbound. If this XML object is a list, evaluates all contained XML element nodes (not comments or other node types) and return the results in a list in the order of execution.
-
-If the XPath expression does not evaluate to a node list, throws a JavaScript exception.
-
-#### 参数
-
-|  参数   |  类型  |                                                                                                                       描述                                                                                                                        |
-|--------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `expression` | String | A String containing an XPath expression.                                                                                                                                                                                                                 |
-|              |        | !!! note                                                                                                                                                                                                                                                 |
-|              |        |     In this context, include the actual top level element. For example, an expression for the example XML must start with "/bookstore". This is unlike JavaScript property access, where the top level element is implied.                               |
-| `variables`  | Object | Optional. A JavaScript object containing variable definitions. The properties are used to look up XPath variables contained in the expression. For example, if the expression contains the variable `$abc`, the value is in the object's `abc` property. |
-
-#### 返回
-
-An [XML object](#xml-object), the result of evaluation.
-
----
-
-## Global functions
-
-These functions are available in the JavaScript global namespace.
-
-### isXMLName()
-
-`isXMLName(String name)`
-
-#### 描述
-
-Reports whether a string contains a name that conforms to valid XML syntax.
-
-:::note
-
-It does not follow the W3C definition of an XML name, which adds more Unicode characters to the valid set of characters.
-:::
-
-#### 参数
-
-| 参数 |  类型  |            描述            |
-| --------- | ------ | --------------------------------- |
-| `name`    | String | Whether the string is an XML Name |
-
-#### 返回
-
-Boolean. `true` if the name is a valid XML name, `false` otherwise.
-
----
-
-### setDefaultXMLNamespace()
-
-`setDefaultXMLNamespace(Namespace ns)`
-
-#### 描述
-
-Sets the default namespace for XML objects. You can also set the default namespace using this syntax:
-
-```javascript
-default xml namespace = Namespace object
-default xml namespace = URL_string
-```
-
-#### 参数
-
-| 参数 |       类型       |                   描述                    |
-| --------- | ---------------- | ------------------------------------------------ |
-| `ns`      | Namespace object | Object to set as default. Any prefix is ignored. |
-
-#### 返回
-
-Nothing
-
----
-
-## QName Object
-
-This object encapsulates a fully qualified XML name, the combination of a local XML name and its namespace URI.
-
-### QName object constructor
-
-The constructor takes several forms:
-
-```javascript
-new QName ()
-new QName (name)
-new QName (ns)
-new QName (uri, name)
-```
-
-When no arguments are supplies, creates a `QName` object with an empty local name and no URI.
-
-| 参数 |   类型    |                                                                                                      描述                                                                                                       |
-| --------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name      | String    | Creates a `QName` object with the given local name and the URI of the default namespace. Can be the wildcard character, "\*".                                                                                          |
-| name      | QName     | Creates a copy of an existing [QName object](#qname-object).                                                                                                                                                           |
-| ns        | Namespace | Creates a `QName` object with an empty local name and the URI of the [Namespace object](#namespace-object).                                                                                                            |
-| uri, name | String    | Create a `QName` object with the given namespace URI and local name. If the local name is supplied as the wildcard character, "\*", the `uri` argument is ignored, and the URI value is that of the default namespace. |
-
----
-
-## QName Object Attributes
-
-### QName.name
-
-`QName.name`
-
-#### 描述
-
-The local element name portion of the XML element's fully qualified XML name.
-
-#### 类型
-
-String
-
----
-
-### QName.uri
-
-`QName.uri`
-
-#### 描述
-
-The namespace prefix of the XML element's fully qualified XML name.
-
-#### 类型
-
-String
-
----
-
-## Namespace object
-
-This object encapsulates the definition of an XML namespace. A namespace associates an XML-name prefix with a complete URI. The prefix is a string that precedes the local name of an XML element or attribute and identifies the namespace, while the URI points to the actual location where the definition of the namespace is found.
-
-For example, this XML definition contains a namespace declaration:
-
-```xml
-<?xml xmlns:adobe=http://www.adobe.com/test?>
-```
-
-In the corresponding namespace, the prefix is `adobe`, and the URI is `http://www.adobe.com/test`.
-
----
-
-### Namespace object constructor
-
-The Namespace constructor takes several forms:
-
-```javascript
-new Namespace()
-new Namespace (String uri)
-new Namespace (QName prefix)
-new Namespace (Namespace ns)
-new Namespace (String prefix, String uri)
-```
-
-When no argument is supplied, creates a namespace with an empty prefix and URI.
-
-#### 参数
-
-|   参数   |   类型    |                                                                                                                         描述                                                                                                                         |
-| ------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `uri`         | String    | Creates a Namespace object with an empty prefix and the given URI.                                                                                                                                                                                          |
-| `prefix`      | QName     | Creates a namespace with an empty prefix and the URI set to the URI of the [QName object](#qname-object) (if the QName object contains a URI).                                                                                                              |
-| `ns`          | Namespace | Creates a copy of the given [Namespace object](#namespace-object). If the `Namespace()` function is called without the `new` operator, and the only argument is a `Namespace` object, the function simply returns that object, rather than creating a copy. |
-| `prefix, uri` | String    | Creates a `Namespace` object with the given prefix and the given URI.                                                                                                                                                                                       |
-
----
-
-## Namespace Object Attributes
-
-### Namespace.prefix
-
-`namespace.prefix`
-
-#### 描述
-
-The element-name prefix associated with the namespace URI. The prefix value can be `undefined`, as when a specified prefix is not a valid XML name.
-
-Namespaces with an undefined prefix are completely ignored; they are not added to an XML namespace declaration.
-
-#### 类型
-
-String
-
----
-
-### Namespace.uri
-
-`namespace.uri`
-
-#### 描述
-
-The location of the namespace definition, a URI.
-
-#### 类型
-
-String
+| 参数     | 类型   | 描述                                                                    |
+| -------- | ------ | ----------------------------------------------------------------------- |
+| `name` | 字符串 | 元素或属性名称，带有或不带有特定元素的 0 基位置索引，或通配符字符串 `"* |

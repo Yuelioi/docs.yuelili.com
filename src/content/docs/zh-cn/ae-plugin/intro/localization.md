@@ -1,21 +1,21 @@
 ---
-title: localization
+title: 本地化
 ---
-# Localization
+# 本地化
 
-Starting in CC, PF App Suite ([Useful Utility Functions](../../effect-details/useful-utility-functions)) adds `PF_AppGetLanguage()` to query the current language so that a plug-in can use the correct language string.
+从 CC 版本开始，PF App Suite（[实用工具函数](../../effect-details/useful-utility-functions)）增加了 `PF_AppGetLanguage()` 函数，用于查询当前语言，以便插件可以使用正确的语言字符串。
 
-When passing strings to AE, some parts of the API accept Unicode. In other areas, for example when specifying effect parameter names during `PF_Cmd_PARAM_SETUP`, you'll need to pass the names in a char string. For these non-Unicode strings, AE interprets strings as being multi-byte encoded using the application's current locale. To build these strings, on Windows you can use the `WideCharToMultiByte()` function, specifying `CP_OEMCP` as the first argument. On macOS, use the encoding returned by `GetApplicationTextEncoding()`.
+当向 AE 传递字符串时，API 的某些部分接受 Unicode。在其他区域，例如在 `PF_Cmd_PARAM_SETUP` 期间指定效果参数名称时，您需要以字符字符串的形式传递名称。对于这些非 Unicode 字符串，AE 会将字符串解释为使用应用程序当前区域设置的多字节编码。要构建这些字符串，在 Windows 上可以使用 `WideCharToMultiByte()` 函数，并将 `CP_OEMCP` 指定为第一个参数。在 macOS 上，使用 `GetApplicationTextEncoding()` 返回的编码。
 
-Testing with different languages in AE doesn't require an OS reinstallation, but it does require a reinstallation of AE:
+在 AE 中测试不同语言不需要重新安装操作系统，但需要重新安装 AE：
 
 ### Windows
 
-- Change the system locale to the targeted language (control panel > region and language > administrative tab > change system locale)
-- Restart machine
-- Install AE in the according language.
+- 将系统区域设置更改为目标语言（控制面板 > 区域和语言 > 管理选项卡 > 更改系统区域设置）
+- 重启计算机
+- 安装相应语言的 AE。
 
 ### MacOS
 
-- Set targeted language to the primary language in the preferred language list
-- Install AE in the according language.
+- 将目标语言设置为首选语言列表中的主要语言
+- 安装相应语言的 AE。

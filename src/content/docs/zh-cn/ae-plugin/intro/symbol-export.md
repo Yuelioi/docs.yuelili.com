@@ -1,15 +1,15 @@
 ---
-title: symbol-export
+title: 导出符号
 ---
-# Exporting Symbols in Effects
+# 在 Effects 中导出符号
 
-The After Effects team recently became aware of an issue with conflicting symbols that violate the C++ language One Definition Rule (ODR).
+After Effects 团队最近发现了一个与符号冲突相关的问题，该问题违反了 C++ 语言的“单一定义规则”（ODR）。
 
-In early 2021, the version of the Boost library used by After Effects was upgraded to 1.74. Over the last few months we've identified a number of plugins that are also using Boost but are exporting symbols in such a way that After Effects or the plugin may end up calling the incorrect version of Boost leading to hangs and crashes for users. We also identified a number of the AE SDK samples were setup to export all symbols by default which may have been contributing to the problem, assuming they were used as the starting point for other plugins. These have been fixed as part of the March 2021 SDK.
+2021 年初，After Effects 使用的 Boost 库版本升级到了 1.74。在过去的几个月中，我们发现一些插件也在使用 Boost，但它们以某种方式导出符号，导致 After Effects 或插件可能最终调用错误的 Boost 版本，从而导致用户遇到程序挂起或崩溃的问题。我们还发现，AE SDK 示例中的一些设置默认导出了所有符号，这可能是问题的原因之一，假设这些示例被用作其他插件的起点。这些问题已在 2021 年 3 月的 SDK 中修复。
 
-**The only symbol that After Effects requires to be exported is the entry point of the plugin.**
+**After Effects 唯一需要导出的符号是插件的入口点。**
 
-An example can be found in the SDK samples in entry.h:
+可以在 SDK 示例的 `entry.h` 中找到示例：
 
 ```cpp
 #ifdef AE_OS_WIN
@@ -19,7 +19,7 @@ An example can be found in the SDK samples in entry.h:
 #endif
 ```
 
-and then this is applied to the entry point function, for example:
+然后将其应用于入口点函数，例如：
 
 ```cpp
 extern "C" DllExport
@@ -35,10 +35,10 @@ PF_Err PluginDataEntryFunction(
     result = PF_REGISTER_EFFECT(
         inPtr,
         inPluginDataCallBackPtr,
-        "ColorGrid", // Name
-        "ADBE ColorGrid", // Match Name
-        "Sample Plug-ins", // Category
-        AE_RESERVED_INFO); // Reserved Info
+        "ColorGrid", // 名称
+        "ADBE ColorGrid", // 匹配名称
+        "Sample Plug-ins", // 类别
+        AE_RESERVED_INFO); // 保留信息
 
     return result;
 }
@@ -46,35 +46,35 @@ PF_Err PluginDataEntryFunction(
 
 ---
 
-## Disabling Xcode Symbol Export
+## 禁用 Xcode 符号导出
 
-To disable symbol export in Xcode:
+要在 Xcode 中禁用符号导出：
 
-1. Find the **Apple Clang - Code Generation** section in the **Build** settings for your project.
-2. Set the **Symbols Hidden By Default** to **YES**
+1. 在项目的 **Build** 设置中找到 **Apple Clang - Code Generation** 部分。
+2. 将 **Symbols Hidden By Default** 设置为 **YES**。
 
 ![Apple Clang Symbols](../_static/appleclang-symbols.png "Apple Clang Symbols")
-*Apple Clang Symbols*
+*Apple Clang 符号*
 
-For any specific symbols that must be made public, use the `__attribute__((visibility("default")))` in code.
+对于必须公开的任何特定符号，请在代码中使用 `__attribute__((visibility("default")))`。
 
-More information can be found in Apple's Xcode documentation [https://help.apple.com/xcode/mac/11.4/#/itcaec37c2a6](https://help.apple.com/xcode/mac/11.4/#/itcaec37c2a6) (excerpt below):
+更多信息可以在 Apple 的 Xcode 文档中找到：[https://help.apple.com/xcode/mac/11.4/#/itcaec37c2a6](https://help.apple.com/xcode/mac/11.4/#/itcaec37c2a6)（摘录如下）：
 
-> Symbols Hidden by Default (GCC_SYMBOLS_PRIVATE_EXTERN)
+> **Symbols Hidden by Default (GCC_SYMBOLS_PRIVATE_EXTERN)**
 >
-> When enabled, all symbols are declared private extern unless explicitly marked to be exported using __attribute__((visibility("default"))) in code. If not enabled, all symbols are exported unless explicitly marked as private extern.
+> 启用后，除非在代码中明确使用 `__attribute__((visibility("default")))` 标记为导出，否则所有符号都声明为私有外部符号。如果未启用，除非明确标记为私有外部符号，否则所有符号都会被导出。
 
 ---
 
-## Disabling Visual Studio Export
+## 禁用 Visual Studio 导出
 
-By default, builds from Visual Studio automatically disable symbol exports. To export symbols, you must either supply a module definition file or set the \_\_declspec(dllexport) keyword in the functions definition.
+默认情况下，Visual Studio 的构建会自动禁用符号导出。要导出符号，您必须提供模块定义文件或在函数定义中设置 `__declspec(dllexport)` 关键字。
 
-More information can be found in Microsoft's Visual Studio documentation [https://docs.microsoft.com/en-us/cpp/build/exporting-from-a-dll?view=msvc-160](https://docs.microsoft.com/en-us/cpp/build/exporting-from-a-dll?view=msvc-160) (excerpt below):
+更多信息可以在 Microsoft 的 Visual Studio 文档中找到：[https://docs.microsoft.com/en-us/cpp/build/exporting-from-a-dll?view=msvc-160](https://docs.microsoft.com/en-us/cpp/build/exporting-from-a-dll?view=msvc-160)（摘录如下）：
 
-> You can export functions from a DLL using two methods:
+> 您可以使用两种方法从 DLL 导出函数：
 >
-> 1. Create a module definition (.def) file and use the .def file when building the DLL. Use this approach if you want to export functions from your DLL by ordinal rather than by name.
-> 2. Use the keyword __declspec(dllexport) in the function's definition.
+> 1. 创建一个模块定义文件（.def），并在构建 DLL 时使用该文件。如果您希望通过序号而不是名称从 DLL 导出函数，请使用此方法。
+> 2. 在函数定义中使用 `__declspec(dllexport)` 关键字。
 >
-> When exporting functions with either method, make sure to use the __stdcall calling convention.
+> 使用这两种方法导出函数时，请确保使用 `__stdcall` 调用约定。

@@ -1,21 +1,21 @@
 ---
-title: implementation
+title: 实现
 ---
-# Implementation
+# 实现
 
-Because the functionality available through the AEGP API is so vast, and the integration with After Effects so complete, a good deal of design work is necessary to ensure that your plug-in behaves appropriately in all situations.
+由于AEGP API提供的功能非常广泛，并且与After Effects的集成非常完整，因此需要进行大量的设计工作，以确保您的插件在所有情况下都能正常运行。
 
-AEGPs interact with After Effects through PICA function suites.
+AEGP通过PICA函数套件与After Effects进行交互。
 
-AEGPs are not loaded in a specific order.
+AEGP没有特定的加载顺序。
 
-Check the version of the AEGP API (from within your AEGP's entry point function) to confirm whether a given suite will be available.
+检查AEGP API的版本（从您的AEGP入口点函数内部）以确认某个套件是否可用。
 
-AEGPs may also use any effect API suite function which doesn't require a PF_ProgPtr (obtained by effects from PF_InData).
+AEGP还可以使用任何不需要PF_ProgPtr的效果API套件函数（效果从PF_InData获取）。
 
 ---
 
-## Entry Point
+## 入口函数
 
 ```cpp
 A_Err AEGP_PluginInitFuncPrototype(
@@ -26,54 +26,51 @@ A_Err AEGP_PluginInitFuncPrototype(
     AEGP_GlobalRefcon    *global_refconP)
 ```
 
-The plug-in's entry point, exported in the [PiPL Resources](../../intro/pipl-resources), is called just once during launch; all other calls to the AEGP go to the functions it's registered.
+插件的入口点，在[PiPL资源](../../intro/pipl-resources)中导出，仅在启动时调用一次；所有对AEGP的其他调用都会转到它注册的函数。
 
-This is very different from the effect plug-in model, where all communication comes through the same entry point.
+这与效果插件模型非常不同，后者所有的通信都通过同一个入口点进行。
 
-Because plug-in load order may vary, it's never a good idea to acquire suites not provided by After Effects during your entry point function. Rather, wait until the appropriate hook function(s).
+由于插件加载顺序可能有所不同，因此在入口点函数中获取After Effects未提供的套件从来不是一个好主意。相反，应等待适当的钩子函数。
 
-The AEGP [API Versions](../intro/compatibility-across-multiple-versions.md#api-versions) can help distinguish between different versions of After Effects, in case the AEGP needs to behave differently or handle different behavior.
+AEGP [API版本](../intro/compatibility-across-multiple-versions.md#api-versions)可以帮助区分不同版本的After Effects，以防AEGP需要表现不同或处理不同的行为。
 
-Those other functions are registered as callback hooks. An AEGP that adds menu items must register an UpdateMenuHook function (with a function signature as described in AE_GeneralPlug.h) which After Effects can call to determine whether or not to enable those items. Similarly, plug-ins which process commands register a CommandHook (one for all commands).
-
----
-
-## Specialization
-
-AEIOs and Artisans must register with After Effects in order to receive the messaging streams on which they depend.
-
-Like everything else in the AEGP API, this is done through a function suite; in this case, the aptly-named AEGP_RegisterSuite.
+这些其他函数被注册为回调钩子。添加菜单项的AEGP必须注册一个UpdateMenuHook函数（具有AE_GeneralPlug.h中描述的函数签名），After Effects可以调用该函数来确定是否启用这些项。同样地，处理命令的插件会注册一个CommandHook（一个用于所有命令）。
 
 ---
 
-## Example: Adding A Menu Item
+## 专业化
 
-During your entry point function, use `AEGP_GetUniqueCommand()` from [Command Suite](aegp-suites.md#aegp_commandsuite1) to obtain a command ID from After Effects, for use with `AEGP_InsertMenuCommand`. Use a different ID for each menu item you add.
+AEIO和Artisans必须向After Effects注册才能接收它们所依赖的消息流。
 
-Using AEGP_RegisterSuite's `AEGP_RegisterCommandHook()`, tell After Effects which function to call when your menu item(s) are selected. The function you register using `AEGP_RegisterUpdateMenuHook()` enables and disabling your menu item(s). Your menu item(s) will be permanently disabled unless you register a menu updating function.
-
-No matter how many menu items you add, you register only one CommandHook. When called, determine which menu item was chosen (based on the command ID), use AEGP PICA suite functions to determine the current state of the project, and act accordingly. For example, keyframing plug-ins may want to disable their menu items unless a (keyframe-able) parameter stream is part of the current selection.
+与AEGP API中的其他一切一样，这是通过功能套件完成的；在这种情况下是恰如其名的AEGP_RegisterSuite。
 
 ---
 
-## Private Data
+## 示例：添加菜单项
 
-Unlike effects, AEGPs are never unloaded during an After Effects session. Still, that doesn't mean that relying on static and global variables is a good idea.
+在您的入口点函数期间，使用[Command Suite](aegp-suites.md#aegp_commandsuite1)中的`AEGP_GetUniqueCommand()`从After Effects获取命令ID以用于`AEGP_InsertMenuCommand`。为您添加的每个菜单项使用不同的ID。
 
-All hook functions are passed a plugin_refconPV for storage information specific to that function. Many AEGP Suite functions take the `aegp_plugin_id` as a parameter; store it in the `global_refconPV` you are passed, either in a structure you allocate or just the ID itself.
+使用AEGP_RegisterSuite的`AEGP_RegisterCommandHook()`告诉After Effects当选择您的菜单项时要调用的函数。您使用`AEGP_RegisterUpdateMenuHook()`注册的函数启用和禁用您的菜单项。除非您注册了菜单更新功能否则您的菜单将永久禁用.
 
-Where possible, use these refcons to store information, not statics and global variables. This becomes especially important when dealing with multi-threading issues.
-
-Use `global_refconPV` for your globals (like your `aegp_plugin_id`) and refcon for hook-function-specific storage.
-
-A potential "multiple instances of After Effects" gotcha; when a second, command-line instance of After Effects is launched, all of an AEGP's handles are duplicated. If this causes problems (and it may), provide code that attaches saved handles to specific instantiations of your plug-in.
+无论您添加多少项目,只需登记一次 Command Hook.当被呼叫时根据指令 ID 判断选择了哪个项目,利用 AEPG PICA suite functions 确定当前工程状态并相应行动.例如关键帧插件可能希望在其参数流不是当前选择部分时禁用自己的选项.
 
 ---
 
-## Threading
+### 私有数据
 
-AEGP supports no threading at all. Everything must be done from the main thread, either in response to a callback, or from the idle hook.
+不同于特效,AEPGs在一个 AE session 内永远不会卸载.但这并不意味着依赖静态变量和全局变量就是好主意.
 
-There is one call that is thread safe: `AEGP_CauseIdleRoutinesToBeCalled()`.
+所有 hook functions 都被传递了一个 plugin_refconPV 来存储特定于该 function 的信息.许多 AEPG Suite functions都将 `aepg _plugin _id`作为参数;将其存储在传递给您的 `global _refcon PV`,无论是分配结构还是仅 ID本身.
 
-But since `SPBasicSuite` itself is not thread safe, you'll need to stash off the function pointer in the main thread.
+尽可能利用 refcons而非 statics and global variables储存信息这点在处理多线程问题时尤为重要.
+
+用 `global _refcon PV`存放 globals(如你 aepg _plugin id),而 refcon则专门针对 hook-function-specific storage.
+潜在“多个实例”陷阱:当第二个命令行实例启动后,aepgs handles都会被复制如果这导致问题(可能会),提供代码将保存 handles附加到具体 instantiation上即可解决此问题...
+
+---
+
+### 线程安全
+
+APGE完全不支持任何形式多线程操作一切都得在主线程完成要么响应回拨要么来自空闲勾选...
+唯一保证 thread safe call: 'cause idle routines to be called()'.
+但由于 SPBasicSuite自身并非 thread safe所以你得把 function pointer藏匿在主线上...

@@ -1,171 +1,169 @@
 ---
-title: using-file-and-folder-objects
+title: 使用文件和文件夹对象
 ---
-# Using File and Folder objects
+# 使用文件和文件夹对象
 
-Because path name syntax is very different on Windows, Mac OS, and UNIX®, Adobe ExendScript defines the `File` and `Folder` objects to provide platform-independent access to the underlying file system. A File object represents a disk file, a Folder object represents a directory or folder.
+由于 Windows、Mac OS 和 UNIX® 上的路径名称语法差异很大，Adobe ExtendScript 定义了 `File` 和 `Folder` 对象，以提供与平台无关的底层文件系统访问。`File` 对象表示磁盘文件，`Folder` 对象表示目录或文件夹。
 
-- The `Folder` object supports file system functionality such as traversing the hierarchy; creating, renaming or removing files; or resolving file aliases.
-- The `File` object supports input/output functions to read or write files.
+- `Folder` 对象支持文件系统功能，例如遍历层次结构、创建、重命名或删除文件，或解析文件别名。
+- `File` 对象支持输入/输出功能以读取或写入文件。
 
-There are several ways to distinguish between a File and a Folder object. For example:
+有几种方法可以区分 `File` 和 `Folder` 对象。例如：
 
 ```javascript
 if ( f instanceof File ) ...
-if ( typeof f.open == "undefined" ) ... // Folders do not open
+if ( typeof f.open == "undefined" ) ... // 文件夹无法打开
 ```
 
-File and Folder objects can be used anywhere that a path name is required, such as in properties and arguments for files and folders.
+文件和文件夹对象可以在需要路径名称的任何地方使用，例如文件和文件夹的属性和参数中。
 
 :::note
-When you create two File objects that refer to the same disk file, they are treated as distinct objects. If you open one of them for I/O, the operating system may inhibit access from the other object, because the disk file already is open.
+当你创建两个引用同一磁盘文件的 `File` 对象时，它们被视为不同的对象。如果你打开其中一个进行 I/O 操作，操作系统可能会阻止从另一个对象访问，因为磁盘文件已经打开。
 :::
-
 
 ---
 
-## Specifying paths
+## 指定路径
 
-When creating a File or Folder object, you can specify a platform-specific path name, or an absolute or relative path in a platform-independent format known as universal resource identifier (URI) notation. The path stored in the object is always an absolute, full path name that points to a fixed location on the disk.
+在创建 `File` 或 `Folder` 对象时，你可以指定特定于平台的路径名称，或以称为统一资源标识符（URI）表示法的平台无关格式指定绝对或相对路径。对象中存储的路径始终是绝对路径名称，指向磁盘上的固定位置。
 
-- Use the toString method to obtain the name of the file or folder as string containing an absolute path name in URI notation.
-- Use the `fsName` property to obtain the platform-specific file name.
+- 使用 `toString` 方法获取文件或文件夹的名称，作为包含 URI 表示法中绝对路径名称的字符串。
+- 使用 `fsName` 属性获取特定于平台的文件名。
 
-### Absolute and relative path names
+### 绝对和相对路径名称
 
-An absolute path name in URI notation describes the full path from a root directory down to a specific file or folder. It starts with one or two slashes (`/`), and a slash separates path elements.
+URI 表示法中的绝对路径名称描述了从根目录到特定文件或文件夹的完整路径。它以一个或两个斜杠（`/`）开头，斜杠分隔路径元素。
 
-For example, the following describes an absolute location for the file `myFile.jsx`:
+例如，以下描述了文件 `myFile.jsx` 的绝对位置：
 
 ```javascript
 /dir1/dir2/mydir/myFile.jsx
 ```
 
-A relative path name in URI notation is appended to the path of the current directory, as stored in the globally available `current` property of the Folder class. It starts with a folder or file name, or with one of the special names dot (`.`) for the current directory, or dot dot (`..`) for the parent of the current directory. A slash (`/`) separates path elements.
+URI 表示法中的相对路径名称附加到当前目录的路径中，该路径存储在 `Folder` 类的全局可用 `current` 属性中。它以文件夹或文件名开头，或以特殊名称点（`.`）表示当前目录，或以点点（`..`）表示当前目录的父目录。斜杠（`/`）分隔路径元素。
 
-For example, the following paths describe various relative locations for the file `myFile.jsx`:
+例如，以下路径描述了文件 `myFile.jsx` 的各种相对位置：
 
-|    File reference    |                        Location                        |
-| -------------------- | ------------------------------------------------------ |
-| `myFile.jsx`         | In the current directory.                              |
-| `./myFile.jsx`       |                                                        |
-| `../myFile.jsx`      | In the parent of the current directory.                |
-| `../../myFile.jsx`   | In the grandparent of the current directory.           |
-| `../dir1/myFile.jsx` | In `dir1`, which is parallel to the current directory. |
+|    文件引用    |                        位置                        |
+| -------------- | ------------------------------------------------- |
+| `myFile.jsx`   | 在当前目录中。                                    |
+| `./myFile.jsx` |                                                    |
+| `../myFile.jsx`| 在当前目录的父目录中。                            |
+| `../../myFile.jsx` | 在当前目录的祖父目录中。                     |
+| `../dir1/myFile.jsx` | 在 `dir1` 中，与当前目录平行。          |
 
-Relative path names are independent of different volume names on different machines and operating systems, and therefore make your code considerably more portable. You can, for example, use an absolute path for a single operation, to set the current directory in the Folder.current property, and use relative paths for all other operations. You would then need only a single code change to update to a new platform or file location.
+相对路径名称独立于不同机器和操作系统上的不同卷名，因此使你的代码更具可移植性。例如，你可以使用绝对路径进行单个操作，以在 `Folder.current` 属性中设置当前目录，并对所有其他操作使用相对路径。然后，你只需要一次代码更改即可更新到新平台或文件位置。
 
-### Character interpretation in paths
+### 路径中的字符解释
 
-There are some platform differences in how pathnames are interpreted:
+在路径名称的解释上存在一些平台差异：
 
-- On Windows and Mac OS, path names are not case sensitive. In UNIX, paths are case sensitive.
-- On Windows, both the slash (`/`) and the backslash (`\`) are valid path element separators. Backslash is the escape character, so you must use a double backslash (`\\`) to indicate the character.
-- On Mac OS, both the slash (`/`) and the colon (`:`) are valid path element separators.
+- 在 Windows 和 Mac OS 上，路径名称不区分大小写。在 UNIX 上，路径区分大小写。
+- 在 Windows 上，斜杠（`/`）和反斜杠（`\`）都是有效的路径元素分隔符。反斜杠是转义字符，因此你必须使用双反斜杠（`\\`）来表示该字符。
+- 在 Mac OS 上，斜杠（`/`）和冒号（`:`）都是有效的路径元素分隔符。
 
-If a path name starts with two slashes (or backslashes on Windows), the first element refers to a remote server. For example, `//myhost/mydir/myfile` refers to the path `/mydir/myfile` on the server myhost.
+如果路径名称以两个斜杠（或在 Windows 上为反斜杠）开头，则第一个元素引用远程服务器。例如，`//myhost/mydir/myfile` 引用服务器 `myhost` 上的路径 `/mydir/myfile`。
 
-URI notation allows special characters in pathnames, but they must specified with an escape character (%) followed by a hexadecimal character code. Special characters are those which are not alphanumeric and not one of the characters:
+URI 表示法允许路径名称中的特殊字符，但它们必须使用转义字符（%）后跟十六进制字符代码指定。特殊字符是非字母数字且不是以下字符之一的字符：
 
 ```javascript
 / - - . ! ~ * ' ( )
 ```
 
-A space, for example, is encoded as `%20`, so the file name `"my file"` is specified as `"my%20file"`. Similarly, the character `ä` is encoded as `%E4`, so the file name `"Bräun"` is specified as `"Br%E4un"`.
+例如，空格编码为 `%20`，因此文件名 `"my file"` 指定为 `"my%20file"`。同样，字符 `ä` 编码为 `%E4`，因此文件名 `"Bräun"` 指定为 `"Br%E4un"`。
 
-This encoding scheme is compatible with the global JavaScript functions `encodeURI` and `decodeURI`.
+此编码方案与全局 JavaScript 函数 `encodeURI` 和 `decodeURI` 兼容。
 
-### The home directory
+### 主目录
 
-A path name can start with a tilde (`~`) to indicate the user's home directory. It corresponds to the platform's `HOME` environment variable.
+路径名称可以以波浪号（`~`）开头，表示用户的主目录。它对应于平台的 `HOME` 环境变量。
 
-UNIX and Mac OS assign the HOME environment variable according to the user login. On Mac OS, the default home directory is `/Users/username`. In UNIX, it is typically `/home/username` or `/users/username.` ExtendScript assigns the home directory value directly from the platform value.
+UNIX 和 Mac OS 根据用户登录分配 `HOME` 环境变量。在 Mac OS 上，默认主目录是 `/Users/username`。在 UNIX 上，通常是 `/home/username` 或 `/users/username`。ExtendScript 直接从平台值分配主目录值。
 
-On Windows, the `HOME` environment variable is optional. If it is assigned, its value must be a Windows path name or a path name referring to a remote server (such as `\\myhost\mydir`). If the `HOME` environment variable is undefined, the ExtendScript default is the user's home directory, usually the `C:\Users\username` folder.
+在 Windows 上，`HOME` 环境变量是可选的。如果已分配，其值必须是 Windows 路径名称或引用远程服务器的路径名称（例如 `\\myhost\mydir`）。如果 `HOME` 环境变量未定义，ExtendScript 默认是用户的主目录，通常是 `C:\Users\username` 文件夹。
 
 :::note
-A script can access many of the folders that are specified with platform-specific variables through static, globally available Folder class properties; for instance, `appData` contains the folder that stores application data for all users.
+脚本可以通过静态、全局可用的 `Folder` 类属性访问许多使用平台特定变量指定的文件夹；例如，`appData` 包含存储所有用户应用程序数据的文件夹。
 :::
 
+### 卷和驱动器名称
 
-### Volume and drive names
+卷或驱动器名称可以是 URI 表示法中绝对路径的第一部分。这些值根据平台进行解释。
 
-A volume or drive name can be the first part of an absolute path in URI notation. The values are interpreted according to the platform.
+#### Mac OS 卷
 
-#### Mac OS volumes
+当 Mac OS X 启动时，启动卷是文件系统的根目录。所有其他卷，包括远程卷，都是 `/Volumes` 目录的一部分。`File` 和 `Folder` 对象使用以下规则解释路径名称的第一个元素：
 
-When Mac OS X starts, the startup volume is the root directory of the file system. All other volumes, including remote volumes, are part of the /Volumes directory. The File and Folder objects use these rules to interpret the first element of a path name:
+- 如果名称是启动卷的名称，则丢弃它。
+- 如果名称是卷名，则前缀 `/Volumes`。
+- 否则，保持路径不变。
 
-- If the name is the name of the startup volume, discard it.
-- If the name is a volume name, prepend `/Volumes`.
-- Otherwise, leave the path as is.
+Mac OS 9 不再作为操作系统支持，但仍然支持使用冒号作为路径分隔符，并且与 URI 和 Mac OS X 路径对应，如下表所示。这些示例假设启动卷为 `MacOSX`，并且有一个挂载的卷 `Remote`。
 
-Mac OS 9 is not supported as an operating system, but the use of the colon as a path separator is still supported and corresponds to URI and to Mac OS X paths as shown in the following table. These examples assume that the startup volume is `MacOSX`, and that there is a mounted volume `Remote`.
-
-|   URI path name    | Mac OS 9 path name |     Mac OS X path name     |
-| ------------------ | ------------------ | -------------------------- |
-| `/MacOSX/dir/file` | `MacOSX:dir:file`  | `/dir/file`                |
+|   URI 路径名称    | Mac OS 9 路径名称 |     Mac OS X 路径名称     |
+| ----------------- | ----------------- | ------------------------ |
+| `/MacOSX/dir/file` | `MacOSX:dir:file`  | `/dir/file`              |
 | `/Remote/dir/file` | `Remote:dir:file`  | `/Volumes/Remote/dir/file` |
-| `/root/dir/file`   | `Root:dir:file`    | `/root/dir/file`           |
-| `~/dir/file`       |                    | `/Users/jdoe/dir/file`     |
+| `/root/dir/file`   | `Root:dir:file`    | `/root/dir/file`         |
+| `~/dir/file`       |                    | `/Users/jdoe/dir/file`   |
 
-#### Windows drives
+#### Windows 驱动器
 
-On Windows, volume names correspond to drive letters. The URI path /c/temp/file normally translates to the Windows path `C:\temp\file`.
+在 Windows 上，卷名对应于驱动器字母。URI 路径 `/c/temp/file` 通常转换为 Windows 路径 `C:\temp\file`。
 
-If a drive exists with a name matching the first part of the path, that part is always interpreted as that drive.
+如果存在与路径第一部分匹配的驱动器名称，则该部分始终解释为该驱动器。
 
-It is possible for there to be a folder in the root that has the same name as the drive; imagine, for example, a folder `C:\C` on Windows. A path starting with /c always addresses the drive `C:`, so in this case, to access the folder by name, you must use both the drive name and the folder name, for example `/c/c` for `C:\C`.
+根目录中可能存在与驱动器名称相同的文件夹；例如，假设 Windows 上有一个文件夹 `C:\C`。以 `/c` 开头的路径始终寻址驱动器 `C:`，因此在这种情况下，要按名称访问该文件夹，你必须同时使用驱动器名称和文件夹名称，例如 `/c/c` 表示 `C:\C`。
 
-If the current drive contains a root folder with the same name as another drive letter, that name is considered to be a folder. That is, if there is a folder `D:\C`, and if the current drive is `D:`, the URI path `/c/temp/file` translates to the Windows path `D:\c\temp\file`. In this case, to access drive `C`, you would have to use the Windows path name conventions.
+如果当前驱动器包含与另一个驱动器字母同名的根文件夹，则该名称被视为文件夹。也就是说，如果存在文件夹 `D:\C`，并且当前驱动器是 `D:`，则 URI 路径 `/c/temp/file` 转换为 Windows 路径 `D:\c\temp\file`。在这种情况下，要访问驱动器 `C`，你必须使用 Windows 路径名称约定。
 
-To access a remote volume, use a uniform naming convention (UNC) path name of the form `//servername/sharename`. These path names are portable, because both Max OS X and UNIX ignore multiple slash characters. Note that on Windows, UNC names do not work for local volumes. These examples assume that the current drive is `D:`
+要访问远程卷，请使用统一命名约定（UNC）路径名称，形式为 `//servername/sharename`。这些路径名称是可移植的，因为 Mac OS X 和 UNIX 都会忽略多个斜杠字符。请注意，在 Windows 上，UNC 名称不适用于本地卷。这些示例假设当前驱动器为 `D:`。
 
-|   URI path name    |      Windows path name       |
-| ------------------ | ---------------------------- |
-| `/c/dir/file`      | `c:\\dir\\file`              |
-| `/remote/dir/file` | `D:\\remote\\dir\\file`      |
-| `/root/dir/file`   | `D:\\root\\dir\\file`        |
-| `~/dir/file`       | `C:\\Users\\jdoe\\dir\\file` |
+|   URI 路径名称    |      Windows 路径名称       |
+| ----------------- | -------------------------- |
+| `/c/dir/file`     | `c:\\dir\\file`            |
+| `/remote/dir/file`| `D:\\remote\\dir\\file`    |
+| `/root/dir/file`  | `D:\\root\\dir\\file`      |
+| `~/dir/file`      | `C:\\Users\\jdoe\\dir\\file` |
 
-### Aliases
+### 别名
 
-When you access an alias, the operation is transparently forwarded to the real file. The only operations that affect the alias are calls to `rename` and `remove`, and setting properties `readonly` and `hidden`. When a File object represents an alias, the `alias` property of the object returns `true`, and the `resolve` method returns the File or Folder object for the target of the alias.
+当你访问别名时，操作会透明地转发到实际文件。唯一影响别名的操作是调用 `rename` 和 `remove`，以及设置属性 `readonly` 和 `hidden`。当 `File` 对象表示别名时，对象的 `alias` 属性返回 `true`，`resolve` 方法返回别名目标的 `File` 或 `Folder` 对象。
 
-On Windows, all file system aliases (called shortcuts) are actual files whose names end with the extension `.lnk`. Never use this extension directly; the File and Folder objects work without it.
+在 Windows 上，所有文件系统别名（称为快捷方式）都是实际文件，其名称以 `.lnk` 扩展名结尾。切勿直接使用此扩展名；`File` 和 `Folder` 对象无需它即可工作。
 
-For example, suppose there is a shortcut to the file `/folder1/some.txt` in the folder `/folder2`. The full Windows file name of the shortcut file is `\folder2\some.txt.lnk`.
+例如，假设在文件夹 `/folder2` 中有一个指向文件 `/folder1/some.txt` 的快捷方式。快捷方式文件的完整 Windows 文件名为 `\folder2\some.txt.lnk`。
 
-To access the shortcut from a File object, specify the path `/folder2/some.txt`. Calling that File object's open method opens the linked file (in `/folder1`). Calling the File object's `rename` method renames the shortcut file itself (leaving the `.lnk` extension intact).
+要从 `File` 对象访问快捷方式，请指定路径 `/folder2/some.txt`。调用该 `File` 对象的 `open` 方法将打开链接文件（在 `/folder1` 中）。调用 `File` 对象的 `rename` 方法将重命名快捷方式文件本身（保留 `.lnk` 扩展名）。
 
-However, Windows permits a file and its shortcut to reside in the same folder. In this case, the File object always accesses the original file. You cannot create a File object to access the shortcut when it is in the same folder as its linked file.
+然而，Windows 允许文件及其快捷方式位于同一文件夹中。在这种情况下，`File` 对象始终访问原始文件。当快捷方式与其链接文件位于同一文件夹时，你无法创建 `File` 对象来访问快捷方式。
 
-A script can create a file alias by creating a File object for a file that does not yet exist on disk, and using its [`createAlias`](../file-system-access/file-object.md#filecreatealias) method to specify the target of the alias.
+脚本可以通过为磁盘上尚不存在的文件创建 `File` 对象，并使用其 [`createAlias`](../file-system-access/file-object.md#filecreatealias) 方法指定别名的目标来创建文件别名。
 
-### Portability issues
+### 可移植性问题
 
-If your application will run on multiple platforms, use relative path names, or try to originate path names from the home directory. If that is not possible, work with Mac OS X and UNIX aliases, and store your files on a machine that is remote to your Windows machine so that you can use UNC names.
+如果你的应用程序将在多个平台上运行，请使用相对路径名称，或尝试从主目录生成路径名称。如果不可能，请使用 Mac OS X 和 UNIX 别名，并将文件存储在 Windows 机器的远程机器上，以便你可以使用 UNC 名称。
 
-As an example, suppose you use the UNIX machine myServer for data storage. If you set up an alias share in the root directory of `myServer`, and if you set up a Windows-accessible share at share pointing to the same data location, the path name `//myServer/share/file` would work for all three platforms.
+例如，假设你使用 UNIX 机器 `myServer` 进行数据存储。如果你在 `myServer` 的根目录中设置别名共享，并在 `share` 处设置指向同一数据位置的 Windows 可访问共享，则路径名称 `//myServer/share/file` 将适用于所有三个平台。
 
 ---
 
 ## Unicode I/O
 
-When doing file I/O, Adobe applications convert 8-bit character encoding to Unicode. By default, this conversion process assumes that the system encoding is used (code page 1252 on Windows or Mac Roman on Mac OS). The `encoding` property of a File object returns the current encoding. You can set the encoding property to the name of the desired encoding. The File object looks for the corresponding encoder in the operating system to use for subsequent I/O. The name is one of the standard Internet names that are used to describe the encoding of HTML files, such as `ASCII`, `X-SJIS`, or `ISO-8859-1`. For a complete list, see [File- and Folder-supported encoding names](../file-and-folder-supported-encoding-names).
+在进行文件 I/O 时，Adobe 应用程序将 8 位字符编码转换为 Unicode。默认情况下，此转换过程假定使用系统编码（Windows 上的代码页 1252 或 Mac OS 上的 Mac Roman）。`File` 对象的 `encoding` 属性返回当前编码。你可以将 `encoding` 属性设置为所需编码的名称。`File` 对象在操作系统中查找相应的编码器以用于后续 I/O。名称是用于描述 HTML 文件编码的标准 Internet 名称之一，例如 `ASCII`、`X-SJIS` 或 `ISO-8859-1`。有关完整列表，请参阅 [文件和文件夹支持的编码名称](../file-and-folder-supported-encoding-names)。
 
-A special encoder, `BINARY`, is provided for binary I/O. This encoder simply extends every 8-bit character it finds to a Unicode character between 0 and 255. When using this encoder to write binary files, the encoder writes the lower 8 bits of the Unicode character. For example, to write the Unicode character `1000`, which is `0x3E8`, the encoder actually writes the character 232 (`0xE8`).
+提供了一个特殊的编码器 `BINARY` 用于二进制 I/O。此编码器简单地将找到的每个 8 位字符扩展为 0 到 255 之间的 Unicode 字符。当使用此编码器写入二进制文件时，编码器写入 Unicode 字符的低 8 位。例如，要写入 Unicode 字符 `1000`（即 `0x3E8`），编码器实际上写入字符 232（`0xE8`）。
 
-The data of some of the common file formats (UCS-2, UCS-4, UTF-8, UTF-16) starts with a special byte order mark (BOM) character (`\uFEFF`). The `File.open` method reads a few bytes of a file looking for this character. If it is found, the corresponding encoding is set automatically and the character is skipped. If there is no BOM character at the beginning of the file, open() reads the first 2 KB of the file and checks whether the data might be valid UTF-8 encoded data, and if so, sets the encoding to UTF-8.
+某些常见文件格式（UCS-2、UCS-4、UTF-8、UTF-16）的数据以特殊的字节顺序标记（BOM）字符（`\uFEFF`）开头。`File.open` 方法读取文件的前几个字节以查找此字符。如果找到，则自动设置相应的编码并跳过该字符。如果文件开头没有 BOM 字符，`open()` 会读取文件的前 2 KB 并检查数据是否可能是有效的 UTF-8 编码数据，如果是，则将编码设置为 UTF-8。
 
-To write 16-bit Unicode files in UTF-16 format, use the encoding UCS-2. This encoding uses whatever byte-order format the host platform supports.
+要以 UTF-16 格式写入 16 位 Unicode 文件，请使用编码 UCS-2。此编码使用主机平台支持的任何字节顺序格式。
 
-When using UTF-8 encoding or 16-bit Unicode, always write the BOM character `"\uFEFF"` as the first character of the file.
+使用 UTF-8 编码或 16 位 Unicode 时，始终将 BOM 字符 `"\uFEFF"` 作为文件的第一个字符写入。
 
 ---
 
-## File error handling
+## 文件错误处理
 
-Each object has an `error` property. If accessing a property or calling a method causes an error, this property contains a message describing the type of the error. On success, the property contains the empty string. You can set the property, but setting it only causes the error message to be cleared. If a file is open, assigning an arbitrary value to the property also resets its error flag.
+每个对象都有一个 `error` 属性。如果访问属性或调用方法导致错误，此属性包含描述错误类型的消息。成功时，该属性包含空字符串。你可以设置该属性，但设置它只会清除错误消息。如果文件已打开，为该属性分配任意值也会重置其错误标志。
 
-For a complete list of supported error messages, see [File access error messages](../file-access-error-messages).
+有关支持的完整错误消息列表，请参阅 [文件访问错误消息](../file-access-error-messages)。

@@ -1,9 +1,9 @@
 ---
-title: dollar-object
+title: $ 对象
 ---
-# Dollar ($) object
+# Dollar ($) 对象
 
-This global ExtendScript object provides a number of debugging facilities and informational methods. The properties of the $ object allow you to get global information such as the most recent run-time error, and set flags that control debugging and localization behavior. The methods allow you to output text to the JavaScript Console during script execution, control execution and other ExtendScript behavior programmatically, and gather statistics on object use.
+这个全局的 ExtendScript 对象提供了许多调试工具和信息方法。$ 对象的属性允许你获取全局信息，例如最近的运行时错误，并设置控制调试和本地化行为的标志。这些方法允许你在脚本执行期间将文本输出到 JavaScript 控制台，以编程方式控制执行和其他 ExtendScript 行为，并收集对象使用的统计信息。
 
 ---
 
@@ -15,13 +15,13 @@ This global ExtendScript object provides a number of debugging facilities and in
 
 #### 描述
 
-The Internet name of the application's default character encoding, such as "CP1252" or "X-SHIFT-JIS". Valid values are implementation- and OS-dependent.
+应用程序默认字符编码的 Internet 名称，例如 "CP1252" 或 "X-SHIFT-JIS"。有效值取决于实现和操作系统。
 
-Set to change the default encoding for the application. The returned value can differ from the value set. In Windows, for example, if set to "x-latin1", the returned value is the synonymous "ISO-8859-1".
+设置为更改应用程序的默认编码。返回的值可能与设置的值不同。例如，在 Windows 中，如果设置为 "x-latin1"，则返回的值是同义的 "ISO-8859-1"。
 
 #### 类型
 
-String
+字符串
 
 ---
 
@@ -31,13 +31,13 @@ String
 
 #### 描述
 
+当前 ExtendScript 构建的版本信息。
+
 #### 类型
 
-String
+字符串
 
-The version information for the current ExtendScript build.
-
-Read only.
+只读。
 
 ---
 
@@ -47,13 +47,13 @@ Read only.
 
 #### 描述
 
+当前 JavaScript 引擎构建的日期。
+
 #### 类型
 
 `Date`
 
-The date the current JavaScript engine was built.
-
-Read only.
+只读。
 
 ---
 
@@ -63,13 +63,13 @@ Read only.
 
 #### 描述
 
+当前区域设置中用于格式化数字输出的小数点字符。
+
 #### 类型
 
-String
+字符串
 
-The character used in formatted numeric output for a decimal point, for the current locale.
-
-Read only.
+只读。
 
 ---
 
@@ -79,13 +79,13 @@ Read only.
 
 #### 描述
 
+当前 JavaScript 引擎的名称（如果已设置）。
+
 #### 类型
 
-String
+字符串
 
-The name of the current JavaScript engine, if set.
-
-Read only.
+只读。
 
 ---
 
@@ -95,15 +95,15 @@ Read only.
 
 #### 描述
 
+最近的运行时错误信息，包含在 JavaScript Error 对象中。
+
+将错误文本分配给此属性会生成运行时错误；然而，生成运行时错误的推荐方法是抛出 Error 对象。
+
 #### 类型
 
 `Error`
 
-String
-
-The most recent run-time error information, contained in a JavaScript Error object.
-
-Assigning error text to this property generates a run-time error; however, the preferred way to generate a run-time error is to throw an Error object.
+字符串
 
 ---
 
@@ -113,13 +113,13 @@ Assigning error text to this property generates a run-time error; however, the p
 
 #### 描述
 
+当前脚本的文件名。
+
 #### 类型
 
-String
+字符串
 
-The file name of the current script.
-
-Read only.
+只读。
 
 ---
 
@@ -129,21 +129,21 @@ Read only.
 
 #### 描述
 
-#### 类型
+获取或设置低级调试输出标志。以下位标志值的逻辑与：
 
-Number
-
-Gets or sets low-level debug output flags. A logical AND of the following bit flag values:
-
-- `0x0002` (2): Displays each line with its line number as it is executed.
-- `0x0040` (64): Enables excessive garbage collection. Usually, garbage collection starts when the number of objects has increased by a certain amount since the last garbage collection. This flag causes ExtendScript to garbage collect after almost every statement. This impairs performance severely, but is useful when you suspect that an object gets released too soon.
-- `0x0080` (128): Displays all calls with their arguments and the return value.
-- `0x0100` (256): Enables extended error handling (see strict).
-- `0x0200` (512): Enables the localization feature of the toString method. Equivalent to the localize property.
+- `0x0002` (2): 在执行时显示每行及其行号。
+- `0x0040` (64): 启用过多的垃圾回收。通常，垃圾回收在上次垃圾回收后对象数量增加一定量时开始。此标志使 ExtendScript 在几乎每条语句后都进行垃圾回收。这会严重影响性能，但在怀疑对象过早释放时非常有用。
+- `0x0080` (128): 显示所有调用及其参数和返回值。
+- `0x0100` (256): 启用扩展错误处理（参见 strict）。
+- `0x0200` (512): 启用 toString 方法的本地化功能。等同于 localize 属性。
 
 :::note
-Other bit values are not public and should not be used.
+其他位值不是公开的，不应使用。
 :::
+
+#### 类型
+
+数字
 
 ---
 
@@ -153,7 +153,7 @@ Other bit values are not public and should not be used.
 
 #### 描述
 
-Provides access to the Global object, which contains the JavaScript global namespace.
+提供对 Global 对象的访问，该对象包含 JavaScript 全局命名空间。
 
 #### 类型
 
@@ -167,11 +167,11 @@ Global
 
 #### 描述
 
-A high-resolution timer that measures the number of microseconds since this property was last accessed. Value is initialized as early as possible, so the first access returns the startup time for ExtendScript. The property is thread-local; that is, the first access on a thread returns the time needed to create and initialize that thread.
+一个高分辨率计时器，测量自上次访问此属性以来的微秒数。值尽可能早地初始化，因此第一次访问返回 ExtendScript 的启动时间。该属性是线程本地的；也就是说，线程上的第一次访问返回创建和初始化该线程所需的时间。
 
 #### 类型
 
-Number. Read only.
+数字。只读。
 
 ---
 
@@ -181,11 +181,11 @@ Number. Read only.
 
 #### 描述
 
-The path for include files for the current script.
+当前脚本的包含文件路径。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -195,15 +195,15 @@ String. Read only.
 
 #### 描述
 
-The current debugging level, which enables or disables the JavaScript debugger.
+当前的调试级别，启用或禁用 JavaScript 调试器。
 
 #### 类型
 
-Number. Read only. One of:
+数字。只读。以下之一：
 
-- `0`: No debugging
-- `1`: Break on runtime errors
-- `2`: Full debug mode
+- `0`: 无调试
+- `1`: 在运行时错误时中断
+- `2`: 完全调试模式
 
 ---
 
@@ -213,11 +213,11 @@ Number. Read only. One of:
 
 #### 描述
 
-The current line of the currently executing script; the first line is number 1.
+当前执行脚本的当前行号；第一行为 1。
 
 #### 类型
 
-Number. Read only.
+数字。只读。
 
 ---
 
@@ -227,13 +227,13 @@ Number. Read only.
 
 #### 描述
 
-Gets or sets the current locale. The string contains five characters in the form LL_RR, where LL is an ISO 639 language specifier, and RR is an ISO 3166 region specifier.
+获取或设置当前区域设置。字符串包含五个字符，形式为 LL_RR，其中 LL 是 ISO 639 语言标识符，RR 是 ISO 3166 区域标识符。
 
-Initially, this is the value that the application or the platform returns for the current user. You can set it to temporarily change the locale for testing. To return to the application or platform setting, set to Nothing, `null`, or the empty string.
+最初，这是应用程序或平台为当前用户返回的值。你可以设置它以临时更改区域设置以进行测试。要返回到应用程序或平台设置，请设置为 Nothing、`null` 或空字符串。
 
 #### 类型
 
-String
+字符串
 
 ---
 
@@ -243,13 +243,13 @@ String
 
 #### 描述
 
-Enable or disable the extended localization features of the built-in `toString()` method.
+启用或禁用内置 `toString()` 方法的扩展本地化功能。
 
-See [Localizing ExtendScript strings](.././localizing-extendscript-strings).
+参见 [本地化 ExtendScript 字符串](.././localizing-extendscript-strings)。
 
 #### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -259,11 +259,11 @@ Boolean
 
 #### 描述
 
-Gets or sets the ExtendScript memory cache size in bytes.
+获取或设置 ExtendScript 内存缓存大小（以字节为单位）。
 
 #### 类型
 
-Number
+数字
 
 ---
 
@@ -273,11 +273,11 @@ Number
 
 #### 描述
 
-The current operating system version information.
+当前操作系统的版本信息。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -287,21 +287,21 @@ String. Read only.
 
 #### 描述
 
-An array of objects containing information about the display screens attached to your computer.
+包含有关连接到计算机的显示屏幕信息的对象数组。
 
 #### 类型
 
-Array of objects
+对象数组
 
-#### Properties
+#### 属性
 
-| Property  |    类型    |                    描述                     |
-| --------- | ---------- | -------------------------------------------------- |
-| `left`    | Coordinate | The left corner of the drawable area               |
-| `top`     | Coordinate | The top corner of the drawable area                |
-| `right`   | Coordinate | The right corner of the drawable area              |
-| `bottom`  | Coordinate | The bottom corner of the drawable area             |
-| `primary` | Boolean    | `true` if the object describes the primary display |
+| 属性        | 类型   | 描述                                |
+| ----------- | ------ | ----------------------------------- |
+| `left`    | 坐标   | 可绘制区域的左角                    |
+| `top`     | 坐标   | 可绘制区域的顶部                    |
+| `right`   | 坐标   | 可绘制区域的右角                    |
+| `bottom`  | 坐标   | 可绘制区域的底部                    |
+| `primary` | 布尔值 | 如果对象描述主显示器，则为 `true` |
 
 ---
 
@@ -311,11 +311,11 @@ Array of objects
 
 #### 描述
 
-The current stack trace.
+当前的堆栈跟踪。
 
 #### 类型
 
-String
+字符串
 
 ---
 
@@ -325,13 +325,13 @@ String
 
 #### 描述
 
-When `true`, any attempt to write to a read-only property causes a runtime error.
+当为 `true` 时，任何尝试写入只读属性的操作都会导致运行时错误。
 
-Some objects do not permit the creation of new properties when `true`.
+某些对象在 `true` 时不允许创建新属性。
 
 #### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -341,11 +341,11 @@ Boolean
 
 #### 描述
 
-The version number of the JavaScript engine as a three-part number and description; for example: "3.92.95 (debug)"
+JavaScript 引擎的版本号，为一个三部分数字和描述；例如："3.92.95 (debug)"
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -357,11 +357,11 @@ String. Read only.
 
 #### 描述
 
-Displays the About box for the ExtendScript component, and returns the text of the About box as a string.
+显示 ExtendScript 组件的关于框，并返回关于框的文本作为字符串。
 
 #### 返回
 
-String
+字符串
 
 ---
 
@@ -371,19 +371,19 @@ String
 
 #### 描述
 
-Executes a breakpoint at the current position.
+在当前位置执行断点。
 
-If no condition is needed, it is recommended that you use the JavaScript `debugger;` statement in the script, rather than this method.
+如果不需要条件，建议在脚本中使用 JavaScript `debugger;` 语句，而不是此方法。
 
 #### 参数
 
-|  参数  |  类型  |                                                                        描述                                                                         |
-| ----------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `condition` | String | Optional. The JavaScript statement to be used as a condition. If the statement evaluates to `true` or nonzero when this point is reached, execution stops. |
+| 参数          | 类型   | 描述                                                                                       |
+| ------------- | ------ | ------------------------------------------------------------------------------------------ |
+| `condition` | 字符串 | 可选。用作条件的 JavaScript 语句。如果在此点到达时语句评估为 `true` 或非零，则停止执行。 |
 
 #### 返回
 
-Nothing
+无
 
 ---
 
@@ -393,17 +393,17 @@ Nothing
 
 #### 描述
 
-Invokes the platform-specific color selection dialog
+调用平台特定的颜色选择对话框。
 
 #### 参数
 
-| 参数 |                类型                |                                 描述                                  |
-| --------- | ---------------------------------- | ---------------------------------------------------------------------------- |
-| `name`    | Hexadecimal RGB value (`0xRRGGBB`) | The color to be preselected in the dialog, or `-1` for the platform default. |
+| 参数     | 类型                           | 描述                                           |
+| -------- | ------------------------------ | ---------------------------------------------- |
+| `name` | 十六进制 RGB 值 (`0xRRGGBB`) | 对话框中预选的颜色，或 `-1` 表示平台默认值。 |
 
 #### 返回
 
-Hexadecimal RGB value, e.g. `0xRRGGBB`.
+十六进制 RGB 值，例如 `0xRRGGBB`。
 
 ---
 
@@ -413,18 +413,18 @@ Hexadecimal RGB value, e.g. `0xRRGGBB`.
 
 #### 描述
 
-Loads a JavaScript script file from disk, evaluates it, and returns the result of evaluation.
+从磁盘加载 JavaScript 脚本文件，评估它，并返回评估结果。
 
 #### 参数
 
-| 参数 |  类型  |                                                          描述                                                           |
-| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `path`    | String | The name and location of the file.                                                                                             |
-| `timeout` | Number | Optional. A number of milliseconds to wait before returning undefined, if the script cannot be evaluated. Defaults to `10000`. |
+| 参数        | 类型   | 描述                                                                     |
+| ----------- | ------ | ------------------------------------------------------------------------ |
+| `path`    | 字符串 | 文件的名称和位置。                                                       |
+| `timeout` | 数字   | 可选。在返回未定义之前等待的毫秒数，如果脚本无法评估。默认为 `10000`。 |
 
 #### 返回
 
-Any type
+任意类型
 
 ---
 
@@ -434,11 +434,11 @@ Any type
 
 #### 描述
 
-Initiates garbage collection in the JavaScript engine.
+在 JavaScript 引擎中启动垃圾回收。
 
 #### 返回
 
-Nothing
+无
 
 ---
 
@@ -448,25 +448,25 @@ Nothing
 
 #### 描述
 
-Retrieves the value of the specified environment variable, or null if no such variable is defined.
+检索指定环境变量的值，如果未定义此类变量，则返回 null。
 
 :::note
 
-- Custom environment variables created with `launchctl setenv CUSTOM_VAR "custom_value"`
+- 使用 `launchctl setenv CUSTOM_VAR "custom_value"` 创建的自定义环境变量
 
 :::
 
-Any env vars set in .bash_profile, .bashrc, .profile, .zshenv, or .zshrc will be ignored.
+在 .bash_profile、.bashrc、.profile、.zshenv 或 .zshrc 中设置的任何环境变量将被忽略。
 
 #### 参数
 
-| 参数 |  类型  |              描述              |
-| --------- | ------ | ------------------------------------- |
-| `envname` | String | The name of the environment variable. |
+| 参数        | 类型   | 描述             |
+| ----------- | ------ | ---------------- |
+| `envname` | 字符串 | 环境变量的名称。 |
 
 #### 返回
 
-String
+字符串
 
 ---
 
@@ -476,18 +476,18 @@ String
 
 #### 描述
 
-Sets the value of the specified environment variable, if no such variable is defined.
+设置指定环境变量的值，如果未定义此类变量。
 
 #### 参数
 
-| 参数 |  类型  |              描述              |
-| --------- | ------ | ------------------------------------- |
-| `envname` | String | The name of the environment variable. |
-| `value`   | String | The new value, a string.              |
+| 参数        | 类型   | 描述               |
+| ----------- | ------ | ------------------ |
+| `envname` | 字符串 | 环境变量的名称。   |
+| `value`   | 字符串 | 新值，一个字符串。 |
 
 #### 返回
 
-Nothing
+无
 
 ---
 
@@ -497,19 +497,19 @@ Nothing
 
 #### 描述
 
-Suspends the calling thread for the given number of milliseconds.
+将调用线程挂起指定的毫秒数。
 
-During a sleep period, checks at `100` millisecond intervals to see whether the sleep should be terminated. This can happen if there is a break request, or if the script timeout has expired.
+在睡眠期间，每隔 `100` 毫秒检查一次是否应终止睡眠。如果存在中断请求或脚本超时已过期，则可能发生这种情况。
 
 #### 参数
 
-|   参数    |  类型  |             描述             |
-| -------------- | ------ | ----------------------------------- |
-| `milliseconds` | Number | The number of milliseconds to wait. |
+| 参数             | 类型 | 描述           |
+| ---------------- | ---- | -------------- |
+| `milliseconds` | 数字 | 等待的毫秒数。 |
 
 #### 返回
 
-Nothing
+无
 
 ---
 
@@ -519,17 +519,17 @@ Nothing
 
 #### 描述
 
-Writes the specified text to the JavaScript Console.
+将指定的文本写入 JavaScript 控制台。
 
 #### 参数
 
-| 参数 |  类型  |                                  描述                                  |
-| --------- | ------ | ----------------------------------------------------------------------------- |
-| `text`    | String | One or more strings to write, which are concatenated to form a single string. |
+| 参数     | 类型   | 描述                                         |
+| -------- | ------ | -------------------------------------------- |
+| `text` | 字符串 | 要写入的一个或多个字符串，连接成一个字符串。 |
 
 #### 返回
 
-Nothing
+无
 
 ---
 
@@ -539,14 +539,14 @@ Nothing
 
 #### 描述
 
-Writes the specified text to the JavaScript Console and appends a linefeed sequence.
+将指定的文本写入 JavaScript 控制台并附加换行符序列。
 
 #### 参数
 
-| 参数 |  类型  |                                  描述                                  |
-| --------- | ------ | ----------------------------------------------------------------------------- |
-| `text`    | String | One or more strings to write, which are concatenated to form a single string. |
+| 参数     | 类型   | 描述                                         |
+| -------- | ------ | -------------------------------------------- |
+| `text` | 字符串 | 要写入的一个或多个字符串，连接成一个字符串。 |
 
 #### 返回
 
-Nothing
+无

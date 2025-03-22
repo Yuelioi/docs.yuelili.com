@@ -1,21 +1,21 @@
 ---
-title: lightlayer
+title: 灯光图层
 ---
-# LightLayer object
+# LightLayer 对象
 
 `app.project.item(index).layer(index)`
 
 #### 描述
 
-The LightLayer object represents a light layer within a composition. Create it using the [LayerCollection.addLight()](layercollection.md#layercollectionaddlight) method. It can be accessed in an item's layer collection either by index number or by a name string.
+LightLayer 对象表示合成中的一个灯光层。可以使用 [LayerCollection.addLight()](layercollection.md#layercollectionaddlight) 方法创建它。可以通过索引号或名称字符串在项目的图层集合中访问它。
 
 :::info
-LightLayer is a subclass of [Layer object](../layer). All methods and attributes of Layer are available when working with Light-Layer.
+LightLayer 是 [Layer 对象](../layer) 的子类。在使用 LightLayer 时，Layer 的所有方法和属性都可用。
 :::
 
-#### AE Properties
+#### AE 属性
 
-LightLayer defines no additional attributes, but has different AE properties than other layer types. It has thefollowing properties and property groups:
+LightLayer 没有定义额外的属性，但与其他图层类型相比，它具有不同的 AE 属性。它具有以下属性和属性组：
 
 - `Marker`
 - `Transform`:
@@ -46,14 +46,14 @@ LightLayer defines no additional attributes, but has different AE properties tha
 
 :::note
 
-In After Effects (Beta) 25.2.0.098, it was updated to allow any 2D layer type as a source.
+在 After Effects (Beta) 25.2.0.098 中，它被更新为允许任何 2D 图层类型作为光源。
 :::
 
 #### 描述
 
-For a light layer, the layer to use as a light source when `LightLayer.lightType` is `LightType.ENVIRONMENT`.
+对于灯光层，当 `LightLayer.lightType` 为 `LightType.ENVIRONMENT` 时，用作光源的图层。
 
-`LightLayer.lightSource` can be any 2D video, still, or pre-composition layer in the same composition. Attempting to assign a 3D layer as the `.lightSource` will result in an "Invalid light source specified" error.
+`LightLayer.lightSource` 可以是同一合成中的任何 2D 视频、静态图像或预合成图层。尝试将 3D 图层分配为 `.lightSource` 会导致“指定的光源无效”错误。
 
 ---
 
@@ -62,16 +62,16 @@ For a light layer, the layer to use as a light source when `LightLayer.lightType
 `app.project.item(index).layer(index).lightType`
 
 :::note
-`LightType.ENVIRONMENT` was added in After Effects 24.3
+`LightType.ENVIRONMENT` 在 After Effects 24.3 中添加
 :::
 
 #### 描述
 
-For a light layer, its light type. Trying to set this attribute for a non-light layer produces an error.
+对于灯光层，其灯光类型。尝试为非灯光层设置此属性会产生错误。
 
 #### 类型
 
-A `LightType` enumerated value; read/write. One of:
+一个 `LightType` 枚举值；可读写。取值为以下之一：
 
 - `LightType.PARALLEL`
 - `LightType.SPOT`

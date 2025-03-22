@@ -1,20 +1,20 @@
 ---
-title: keyframeease
+title: 关键字
 ---
-# KeyframeEase object
+# KeyframeEase 对象
 
 `myKey = new KeyframeEase(speed, influence);`
 
 #### 描述
 
-The KeyframeEase object encapsulates the keyframe ease settings of a layer's AE property. Keyframe ease is determined by the speed and influence values that you set using the property's [setTemporalEaseAtKey](../property/property.md#propertysettemporaleaseatkey) method. The constructor creates a KeyframeEase object. Both parameters are required.
+KeyframeEase 对象封装了图层 AE 属性的关键帧缓动设置。关键帧缓动由使用属性的 [setTemporalEaseAtKey](../property/property.md#propertysettemporaleaseatkey) 方法设置的速度和影响值决定。构造函数创建一个 KeyframeEase 对象。两个参数都是必需的。
 
-- `speed`: A floating-point value. Sets the `speed` attribute.
-- `influence`: A floating-pointvalue in the range `[0.1..100.0]`. Sets the `influence` attribute.
+- `speed`: 浮点值。设置 `speed` 属性。
+- `influence`: 浮点值，范围为 `[0.1..100.0]`。设置 `influence` 属性。
 
 #### 示例
 
-This example assumes that the Position, a spatial property, has more than two keyframes.
+此示例假设 Position（一个空间属性）有两个以上的关键帧。
 
 ```javascript
 var easeIn = new KeyframeEase(0.5, 50);
@@ -23,7 +23,7 @@ var myPositionProperty = app.project.item(1).layer(1).property("Position");
 myPositionProperty.setTemporalEaseAtKey(2, [easeIn], [easeOut]);
 ```
 
-This example sets the Scale, a temporal property with either two or three dimensions. For 2D and 3D properties you must set an `easeIn` and `easeOut` value for each dimension:
+此示例设置了 Scale（一个具有二维或三维的时间属性）。对于 2D 和 3D 属性，您必须为每个维度设置 `easeIn` 和 `easeOut` 值：
 
 ```javascript
 var easeIn = new KeyframeEase(0.5, 50);
@@ -42,11 +42,11 @@ myScaleProperty.setTemporalEaseAtKey(2, [easeIn, easeIn, easeIn], [easeOut, ease
 
 #### 描述
 
-The influence value of the keyframe, as shown in the Keyframe Velocity dialog box.
+关键帧的影响值，如关键帧速度对话框中所示。
 
 #### 类型
 
-Floating-point value, 范围为 `[0.1..100.0]`; read/write.
+浮点值，范围为 `[0.1..100.0]`；可读写。
 
 ---
 
@@ -56,8 +56,8 @@ Floating-point value, 范围为 `[0.1..100.0]`; read/write.
 
 #### 描述
 
-The speed value of the keyframe. The units depend on the type of keyframe, and are displayed in the Keyframe Velocity dialog box.
+关键帧的速度值。单位取决于关键帧的类型，并显示在关键帧速度对话框中。
 
 #### 类型
 
-Floating-point value; read/write.
+浮点值；可读写。

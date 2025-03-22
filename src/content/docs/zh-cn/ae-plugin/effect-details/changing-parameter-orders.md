@@ -1,26 +1,26 @@
 ---
-title: changing-parameter-orders
+title: 改变参数顺序
 ---
-# Changing Parameter Orders, the Nice Way
+# 以优雅的方式改变参数顺序
 
-It is possible to add or remove parameters from a plug-in, without forcing users to re-apply all instances of that plug-in to use the updated version. However, some advance planning on your part is necessary to allow for such changes. Your users (and technical support staff) will appreciate the effort.
+可以在不强制用户重新应用该插件的所有实例的情况下，向插件添加或删除参数。然而，为了允许这样的更改，您需要进行一些提前规划。您的用户（以及技术支持人员）会感谢您的努力。
 
-You must first create a parameter array index. During *PF_Cmd_PARAM_SETUP*, assign index values to each parameter as you add them, using a simple enumeration. The order of enumeration corresponds to the order in which the parameters are registered during *PF_Cmd_PARAM_SETUP*, which in turn determines the order in which they appear in the Effect Control and Timeline panels.
+首先，您必须创建一个参数数组索引。在 *PF_Cmd_PARAM_SETUP* 期间，使用简单的枚举为每个参数分配索引值。枚举的顺序对应于在 *PF_Cmd_PARAM_SETUP* 期间注册参数的顺序，这反过来决定了它们在效果控制和时间轴面板中显示的顺序。
 
-Create another enumeration for disk IDs. The order of this enumeration must *not* be changed, though you may add to the end of this list. Note that the order of this list need not correspond with that of the parameter array index. Parameter disk IDs should range from 1 to 9999. Why not zero? Long story...
+为磁盘 ID 创建另一个枚举。此枚举的顺序*不能*更改，尽管您可以在列表末尾添加新项。请注意，此列表的顺序不必与参数数组索引的顺序一致。参数磁盘 ID 的范围应为 1 到 9999。为什么不从零开始？说来话长...
 
-*In the early "wild west" days of After Effects plug-in programming, it was fairly common for developers not to bother with setting IDs. After Effects, realizing this, checked the ID of the first parameter added by that effect; if it was zero, it was assumed that the programmer hadn't bothered to ID params; After Effects then assigned each its own ID. This assumption works fine if you never set param IDs, but not so well if you start numbering your IDs from NULL. That's why.*
+*在 After Effects 插件编程的早期“狂野西部”时代，开发者通常不费心设置 ID。After Effects 意识到这一点后，会检查该效果添加的第一个参数的 ID；如果为零，则假定程序员没有费心为参数设置 ID；然后 After Effects 会为每个参数分配自己的 ID。如果您从未设置参数 ID，这种假设是有效的，但如果您从 NULL 开始编号，就不那么好了。这就是原因。*
 
-Before calling PF_ADD_PARAM(), specify the disk ID in the PF_ParamDef.uu.id field. If no value is specified, After Effects makes parameters sequential starting with 1. The parameter's information is tagged with this ID when saved. In this way, After Effects can still understand that, although your "Foobarocity" slider is now the fourth parameter passed, it's the same parameter as when it was second.
+在调用 PF_ADD_PARAM() 之前，请在 PF_ParamDef.uu.id 字段中指定磁盘 ID。如果未指定值，After Effects 会从 1 开始顺序分配参数。保存时，参数的信息会与此 ID 一起标记。通过这种方式，After Effects 仍然可以理解，尽管您的“Foobarocity”滑块现在是传递的第四个参数，但它与之前作为第二个参数时是相同的参数。
 
-To delete a parameter without forcing re-application, remove the code which creates it and its entry in the parameter array index list. However, *do not* remove its entry in the disk ID list. To add a new parameter, add an entry in the appropriate location in the parameter array indices list, add the parameter creation code, and append the disk ID to the end of the disk ID enumeration. To re-order, change the parameter array index list and reorder the parameter creation code appropriately.
+要在不强制重新应用的情况下删除参数，请删除创建它的代码及其在参数数组索引列表中的条目。但是，*不要*删除其在磁盘 ID 列表中的条目。要添加新参数，请在参数数组索引列表中的适当位置添加条目，添加参数创建代码，并将磁盘 ID 附加到磁盘 ID 枚举的末尾。要重新排序，请更改参数数组索引列表并适当重新排序参数创建代码。
 
 ---
 
-## Change defaults? Change IDs
+## 更改默认值？更改 ID
 
-If you don't, if someone saves a project with the old default and then reads it in with the new effect installed, that parameter will change to the new default value.
+如果不这样做，如果有人使用旧的默认值保存项目，然后使用安装的新效果读取它，该参数将更改为新的默认值。
 
-Presto! Instant support call.
+瞧！立即引发支持电话。
 
-This is another prime use case for `PF_ParamFlag_USE_VALUE_FOR_OLD_PROJECTS` from [Parameter Flags](../effect-basics/PF_ParamDef.md#parameter-flags).
+这是 [参数标志](../effect-basics/PF_ParamDef.md#parameter-flags) 中 `PF_ParamFlag_USE_VALUE_FOR_OLD_PROJECTS` 的另一个主要用例。

@@ -1,86 +1,86 @@
 ---
-title: vscode-extension-features
+title: VS Code 扩展功能
 ---
-# VS Code Extension Features
+# VS Code 扩展功能
 
-Once you have the Extendscript VS Code Extension up and running, there are a few other things you can do; [export to jsxbin](#exporting-as-binary), [use breakpoints in your code](#using-breakpoints), and more.
+一旦你安装并运行了 Extendscript VS Code 扩展，你还可以做一些其他事情；[导出为 jsxbin](#导出为二进制文件)，[在代码中使用断点](#使用断点)，以及更多功能。
 
 :::note
-This guide is meant to give insight on how to use specific Extendscript for VS Code features.
+本指南旨在提供如何使用 VS Code 中特定 Extendscript 功能的见解。
 :::
 
-If you're looking on how to get up and running with the extension, see [Getting Started with the VS Code Debugger](../getting-started-with-vscode-debugger).
+如果你想知道如何开始使用该扩展，请参阅 [VS Code 调试器入门](../getting-started-with-vscode-debugger)。
 
 ---
 
-## Using Breakpoints
+## 使用断点
 
-Breakpoints allow you to stop your code running at a specific line, letting you explore the call stack, variable status, and function arguments at that exact point.
+断点允许你在代码的特定行停止运行，让你可以探索调用堆栈、变量状态和函数参数。
 
-You can create breakpoints one of two ways; either using [VS Code's native Breakpoints system](#vs-code-breakpoints), or using [Extendscript's inline breakpoint method](#extendscript-breakpoints).
+你可以通过两种方式创建断点；使用 [VS Code 的原生断点系统](#vs-code-断点)，或使用 [Extendscript 的内联断点方法](#extendscript-断点)。
 
-### VS Code Breakpoints
+### VS Code 断点
 
-One advantage of using VS Code is that we can set VS Code breakpoints and have the debugger respect them! See the official [Visual Studio article on breakpoints](https://code.visualstudio.com/docs/editor/debugging#_breakpoints).
+使用 VS Code 的一个优势是我们可以设置 VS Code 断点，并让调试器遵守它们！请参阅官方的 [Visual Studio 关于断点的文章](https://code.visualstudio.com/docs/editor/debugging#_breakpoints)。
 
-### Extendscript Breakpoints
+### Extendscript 断点
 
-You can add in `$.bp()` anywhere in your source file, and the debugger will catch on it at the correct place, allowing you to view the call stack / data browser at that point.
+你可以在源代码文件的任何位置添加 `$.bp()`，调试器会在正确的位置捕获它，允许你查看调用堆栈/数据浏览器。
 
-This works identically to the `debugger;` method in browser-based Javascript.
+这与浏览器中基于 Javascript 的 `debugger;` 方法完全相同。
 
-See [bp()](../extendscript-tools-features/dollar-object.md#bp) for more info.
+更多信息请参阅 [bp()](../extendscript-tools-features/dollar-object.md#bp)。
 
 ---
 
-## Exporting as Binary
+## 导出为二进制文件
 
-In the old Extendscript ToolKit, you could very easily save your projects as an obfuscated binary file. This functionality still exists in the VS Code debugger!
+在旧的 Extendscript ToolKit 中，你可以非常轻松地将项目保存为混淆的二进制文件。此功能在 VS Code 调试器中仍然存在！
 
-You can export either [from the vscode interface](#jsxbin-from-vs-code), or [via the command line](#jsxbin-from-the-command-line).
+你可以通过 [vscode 界面](#从-vs-code-导出-jsxbin) 或 [命令行](#从命令行导出-jsxbin) 导出。
 
-### JSXBIN from VS Code
+### 从 VS Code 导出 JSXBIN
 
-To export your script as binary, you have a few options:
+要将脚本导出为二进制文件，你有几种选择：
 
-- With the file open, right-click the document and press 'Export as Binary'
-- Open the command palette (Ctrl + Shift + P) and type 'Export as Binary'
-- Use the keyboard shortcut for the same command (Ctrl + Shift + J)
+- 打开文件后，右键单击文档并选择“导出为二进制文件”
+- 打开命令面板（Ctrl + Shift + P）并输入“导出为二进制文件”
+- 使用相同的快捷键（Ctrl + Shift + J）
 
-### JSXBIN from the Command Line
+### 从命令行导出 JSXBIN
 
-The VS Code extension allows you to export either single files or entire directories via the command line, but it takes a bit of work on your end.
+VS Code 扩展允许你通过命令行导出单个文件或整个目录，但这需要你做一些额外的工作。
 
 :::warning
-While there is a built-in way to do it, it can be a fairly unfriendly process. As an alternative, consider the gulp-accessible [npm package jsxbin](https://www.npmjs.com/package/jsxbin). It does the same as below, but with much less user involvement.
+虽然有一种内置的方法可以实现这一点，但这个过程可能不太友好。作为替代方案，可以考虑使用 gulp-accessible 的 [npm 包 jsxbin](https://www.npmjs.com/package/jsxbin)。它的功能与下面相同，但用户参与度更低。
 :::
 
-There are reports that this package has issues on Windows. As an alternative gulp task, you can try [this script](https://bitbucket.org/motiondesign/workspace/snippets/aLzaX5) from [Justin Taylor](http://justintaylor.tv/).
+有报告称此包在 Windows 上存在问题。作为替代的 gulp 任务，你可以尝试 [Justin Taylor](http://justintaylor.tv/) 提供的 [这个脚本](https://bitbucket.org/motiondesign/workspace/snippets/aLzaX5)。
 
-Both methods above require the VS Code extension be installed.
+以上两种方法都需要安装 VS Code 扩展。
 
-All of the files are saved in the same directory with the same filename (though the suffix will be .jsxbin). Any passed directories will be recursively traversed.
+所有文件都保存在同一目录中，并使用相同的文件名（尽管后缀为 .jsxbin）。任何传递的目录都将被递归遍历。
 
-1. Within the Extension install directory, there's a `exportToJSX.js` script file that accepts a file path or directory to convert. We need to get this path.
-    - Note that you'll need to swap X.X.X with the current version #
-    - MacOS: `$HOME/.vscode/extensions/adobe.extendscript-debug-X.X.X/public-scripts/exportToJSX.js`
-    - Windows: `%USERPROFILE%\.vscode\extensions\adobe.extendscript-debug-X.X.X\public-scripts\exportToJSX.js`
-2. This script accepts a few arguments;
-    - `-f`, `--force`: Overwrite the '.jsxbin' file/files if already exists
-    - `-n`, `--name`: The '.js/.jsx' script path or path to some directory having these files.
-    - `h`, `--help`: Show this help and exit
-3. Running the script
-    - From your command line, run `node path/to/exportToJSX.js [options] [file/directory]`
+1. 在扩展安装目录中，有一个 `exportToJSX.js` 脚本文件，它接受要转换的文件路径或目录。我们需要获取此路径。
+   - 注意，你需要将 X.X.X 替换为当前版本号
+   - MacOS: `$HOME/.vscode/extensions/adobe.extendscript-debug-X.X.X/public-scripts/exportToJSX.js`
+   - Windows: `%USERPROFILE%\.vscode\extensions\adobe.extendscript-debug-X.X.X\public-scripts\exportToJSX.js`
+2. 此脚本接受几个参数；
+   - `-f`, `--force`: 如果 '.jsxbin' 文件已存在，则覆盖它
+   - `-n`, `--name`: '.js/.jsx' 脚本路径或包含这些文件的目录路径。
+   - `h`, `--help`: 显示帮助信息并退出
+3. 运行脚本
+   - 在命令行中运行 `node path/to/exportToJSX.js [options] [file/directory]`
 
 #### 示例
 
-**Exporting a single script**
+**导出单个脚本**
 
 ```sh
 sh node "C:/Users/Dev/.vscode/extensions/adobe.extendscript-debug-1.1.2/public-scripts/exportToJSX.js" "d:/projects/scripting/coolTool.jsx"
 ```
 
-**Exporting a folder, overwriting**
+**导出文件夹并覆盖**
 
 ```sh
 sh node "C:/Users/Dev/.vscode/extensions/adobe.extendscript-debug-1.1.2/public-scripts/exportToJSX.js" --force "d:/projects/scripting/"

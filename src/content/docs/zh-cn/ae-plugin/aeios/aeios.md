@@ -3,60 +3,60 @@ title: aeios
 ---
 # AEIOs
 
-AEIOs are AEGPs that perform media file import and/or export. AEIOs do everything for a file of a given type that After Effects (or the plug-ins which ship with After Effects) would normally do. On the import side, AEIOs can open existing files, manage file-specific interpretation options, and provide audio and frames from the file to After Effects in AEGP_SoundWorld and PF_EffectWorld format. Additionally, AEIOs can create files interactively, asking users for the settings they'd like instead of reading them from a file. On the export side, AEIOs can create and manage output options for render queue items, create output files and save frames (provided by After Effects as PF_EffectWorlds) into those files.
+AEIOs 是执行媒体文件导入和/或导出的 AEGP。AEIOs 为给定类型的文件执行 After Effects（或随 After Effects 附带的插件）通常会执行的所有操作。在导入方面，AEIOs 可以打开现有文件，管理文件特定的解释选项，并以 AEGP_SoundWorld 和 PF_EffectWorld 格式向 After Effects 提供文件中的音频和帧。此外，AEIOs 可以交互式地创建文件，向用户询问他们想要的设置，而不是从文件中读取这些设置。在导出方面，AEIOs 可以为渲染队列项创建和管理输出选项，创建输出文件并将帧（由 After Effects 提供为 PF_EffectWorlds）保存到这些文件中。
 
-AEIOs work with uncompressed video with pixels in ARGB order from low to high-byte. Pixels can be 8-bit, 16-bit, or 32-bit float per channel. AEIOs must handle their own compression/decompression of any codecs supported.
-
----
-
-## AEIO, or AEGP?
-
-AEIOs provide pixels and audio data to After Effects.
-
-If you're writing an importer/exporter for a file format that represents timeline or project format (referencing file formats supported by After Effects or other installed AEIOs), write an AEGP and add its command to the Import/Export submenu.
+AEIOs 处理未压缩的视频，像素按 ARGB 顺序从低字节到高字节排列。像素可以是每通道 8 位、16 位或 32 位浮点数。AEIOs 必须自行处理其支持的任何编解码器的压缩/解压缩。
 
 ---
 
-## AEIO For Import, Or MediaCore Importer?
+## AEIO 还是 AEGP？
 
-After Effects supports MediaCore importer plug-ins. MediaCore is a set of shared libraries that grew out of Premiere Pro; thus the MediaCore APIs are described in the [Premiere Pro SDK](http://ppro-plugin-sdk.aenhancers.com/).
+AEIOs 向 After Effects 提供像素和音频数据。
 
-Only MediaCore importer plug-ins support an importer priority system: The highest priority importer gets the first opportunity to import a file, and if the particular imported file isn't supported, the next-highest priority importer will then have the opportunity to try importing it, and so on. MediaCore importers cannot defer file import to an AEIO. So if your goal is to take over file handling for any file type for which After Effects already provides a plug-in, you need to develop a MediaCore importer plug-in.
-
-If the above constraints haven't already answered whether you need to build an AEIO or MediaCore importer, then you'll likely want to build a MediaCore importer, which can be used across the video and audio applications including Premiere Pro, Media Encoder, Prelude, SpeedGrade, and Audition.
+如果你正在为表示时间线或项目格式的文件格式编写导入器/导出器（引用 After Effects 或其他已安装的 AEIOs 支持的文件格式），请编写一个 AEGP 并将其命令添加到导入/导出子菜单中。
 
 ---
 
-## How It Works
+## 使用 AEIO 导入，还是 MediaCore 导入器？
 
-From within its entry point function, an AEIO populates a structure of function pointers with the names of the functions it wants called in response to certain events. Many of these function hooks are optional.
+After Effects 支持 MediaCore 导入器插件。MediaCore 是一组源自 Premiere Pro 的共享库；因此，MediaCore API 在 [Premiere Pro SDK](http://ppro-plugin-sdk.aenhancers.com/) 中有描述。
 
----
+只有 MediaCore 导入器插件支持导入器优先级系统：最高优先级的导入器首先有机会导入文件，如果特定导入的文件不受支持，则次高优先级的导入器将有机会尝试导入它，依此类推。MediaCore 导入器不能将文件导入推迟到 AEIO。因此，如果你的目标是接管 After Effects 已经提供插件的任何文件类型的文件处理，你需要开发一个 MediaCore 导入器插件。
 
-## What Would After Effects Do?
-
-For many AEIO hook functions, you can ask After Effects to perform default processing (this capability is noted in each hook's descriptions).
-
-Unless you have compelling reasons to do otherwise, return `AEIO_Err_USE_DFLT_CALLBACK` from the function, and let After Effects do the work.
-
-This is also a good way to learn the calling sequence before beginning implementation.
+如果上述限制尚未回答你需要构建 AEIO 还是 MediaCore 导入器，那么你可能会希望构建一个 MediaCore 导入器，它可以在包括 Premiere Pro、Media Encoder、Prelude、SpeedGrade 和 Audition 在内的视频和音频应用程序中使用。
 
 ---
 
-## Registering Your AEIO
+## 工作原理
 
-During your plug-in's entry point function, populate a AEIO_ModuleInfo describing the filetype(s) the AEIO supports, and an AEIO_FunctionBlock structure that points to your file handling functions. For some of these functions, you can rely on After Effects' default behavior by returning AEIO_Err_USE_DFLT_CALLBACK. However, you must still provide a function matching the required signature, that does so. Once you've filled out both these structures, call `AEGP_RegisterIO()` from [AEGP_RegisterSuites5](../aegps/aegp-suites.md#aegp_registersuites5).
+在其入口点函数中，AEIO 填充一个函数指针结构，其中包含它希望在响应某些事件时调用的函数的名称。这些函数钩子中有许多是可选的。
 
-In the AEIO_ModuleInfo that you pass in to the register call, you provide the file type and description information that After Effects uses in the Import dialog, for the "Files of type" drop-down on Windows, or the Enable drop-down on MacOS. As of CS6, file extensions cannot be more than three characters long, even though we have a few built-in importers with longer extensions.
+---
+
+## After Effects 会做什么？
+
+对于许多 AEIO 钩子函数，你可以要求 After Effects 执行默认处理（此功能在每个钩子的描述中都有说明）。
+
+除非你有充分的理由不这样做，否则从函数中返回 `AEIO_Err_USE_DFLT_CALLBACK`，并让 After Effects 完成工作。
+
+这也是在开始实现之前学习调用顺序的好方法。
+
+---
+
+## 注册你的 AEIO
+
+在你的插件的入口点函数中，填充一个描述 AEIO 支持的文件类型的 AEIO_ModuleInfo，以及一个指向你的文件处理函数的 AEIO_FunctionBlock 结构。对于其中一些函数，你可以通过返回 AEIO_Err_USE_DFLT_CALLBACK 来依赖 After Effects 的默认行为。但是，你仍然必须提供一个符合所需签名的函数来执行此操作。填写完这两个结构后，调用 [AEGP_RegisterSuites5](../aegps/aegp-suites.md#aegp_registersuites5) 中的 `AEGP_RegisterIO()`。
+
+在你传递给注册调用的 AEIO_ModuleInfo 中，你提供了 After Effects 在导入对话框中使用的文件类型和描述信息，用于 Windows 上的“文件类型”下拉菜单或 MacOS 上的启用下拉菜单。自 CS6 以来，文件扩展名不能超过三个字符，即使我们有一些内置的导入器具有更长的扩展名。
 
 ---
 
 ## InSpec, OutSpec
 
-On most import-related functions, an `AEIO_InSpecH` is passed. On most output-related functions, an `AEIO_OutSpecH` is passed.
+在大多数与导入相关的函数中，会传递一个 `AEIO_InSpecH`。在大多数与输出相关的函数中，会传递一个 `AEIO_OutSpecH`。
 
-What are these mysterious handles? These opaque data handles can be used with [AEGP_IOInSuite5](new-kids-on-the-function-block.md#aegp_ioinsuite5) and [AEGPIOOutSuite4](new-kids-on-the-function-block.md#aegpiooutsuite4), to set or query for information about the import or output.
+这些神秘的句柄是什么？这些不透明的数据句柄可以与 [AEGP_IOInSuite5](new-kids-on-the-function-block.md#aegp_ioinsuite5) 和 [AEGPIOOutSuite4](new-kids-on-the-function-block.md#aegpiooutsuite4) 一起使用，以设置或查询有关导入或输出的信息。
 
-For example, on an import, you'll use `AEIO_InSpecH` when calling `AEGP_SetInSpecDimensions` in AEGP_IOInSuite.
+例如，在导入时，你将在调用 AEGP_IOInSuite 中的 `AEGP_SetInSpecDimensions` 时使用 `AEIO_InSpecH`。
 
-And during an export, you'll use `AEIO_OutSpecH` when calling `AEGP_GetOutSpecDimensions` in `AEGP_IOOutSuite`. So use these handles to exchange information with After Effects about the details of the input or output.
+在导出期间，你将在调用 `AEGP_IOOutSuite` 中的 `AEGP_GetOutSpecDimensions` 时使用 `AEIO_OutSpecH`。因此，使用这些句柄与 After Effects 交换有关输入或输出详细信息的信息。

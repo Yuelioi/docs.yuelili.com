@@ -1,170 +1,168 @@
 ---
-title: communicating-through-messages
+title: 通过消息进行通信
 ---
-# Communicating through messages
+# 通过消息进行通信
 
-Adobe Bridge provides an application programming interface (API) that defines a communication protocol between Adobe ExtendScript- and message-enabled applications. This provides the most general mechanism for communication between applications. A messaging-enabled application can launch another messaging-enabled application, and send or receive scripts to effect certain actions. For example, from within Adobe Bridge, a script can launch Photoshop, and then send a script to Photoshop that requests a photomerge operation.
+Adobe Bridge 提供了一个应用程序编程接口（API），定义了 Adobe ExtendScript 和支持消息的应用程序之间的通信协议。这为应用程序之间的通信提供了最通用的机制。支持消息的应用程序可以启动另一个支持消息的应用程序，并发送或接收脚本来执行某些操作。例如，在 Adobe Bridge 中，脚本可以启动 Photoshop，然后向 Photoshop 发送一个请求进行照片合并操作的脚本。
 
-While the exported functions allow specific access to certain capabilities of the application, the script in an interapplication message allows full access to the target application's document object model (DOM), in addition to all cross-DOM and application exported functions.
+虽然导出的函数允许特定访问应用程序的某些功能，但应用程序间消息中的脚本允许完全访问目标应用程序的文档对象模型（DOM），以及所有跨 DOM 和应用程序导出的函数。
 
-The messaging API defines the BridgeTalk class, whose globally available static properties and functions provide access to environmental information relevant for communication between applications. You can instantiate this class to create a BridgeTalk message object, which encapsulates a message and allows you to send it to another application. For details of these objects, see [Messaging framework API reference](../messaging-framework-api-reference).
+消息 API 定义了 `BridgeTalk` 类，其全局可用的静态属性和函数提供了与应用程序间通信相关的环境信息。您可以实例化此类以创建 `BridgeTalk` 消息对象，该对象封装了一条消息并允许您将其发送到另一个应用程序。有关这些对象的详细信息，请参阅 [消息框架 API 参考](../messaging-framework-api-reference)。
 
-## Sending messages
+## 发送消息
 
-To send a script or other data to another application, you must create and configure a [BridgeTalk message object](../bridgetalk-message-object).
+要将脚本或其他数据发送到另一个应用程序，您必须创建并配置一个 [BridgeTalk 消息对象](../bridgetalk-message-object)。
 
-This object contains the data to be sent (generally a script to be executed in the target application), and also specifies how to handle the response.
+该对象包含要发送的数据（通常是要在目标应用程序中执行的脚本），并指定如何处理响应。
 
-This simple example walks through the steps of sending a script from Adobe Bridge CS5 to Photoshop CS5, and receiving a response.
+这个简单的示例演示了从 Adobe Bridge CS5 向 Photoshop CS5 发送脚本并接收响应的步骤。
 
-### Step 1: Check that the target application is installed
+### 步骤 1：检查目标应用程序是否已安装
 
-Before you can actually send a message, you must check that the required version of the target application is installed. The function [getSpecifier()](bridgetalk-class.md#bridgetalkgetspecifier), available in the global namespace through the [BridgeTalk class](../bridgetalk-class), provides this information.
+在您实际发送消息之前，必须检查目标应用程序的所需版本是否已安装。通过 [BridgeTalk 类](../bridgetalk-class) 在全局命名空间中可用的 [getSpecifier()](bridgetalk-class.md#bridgetalkgetspecifier) 函数提供了此信息。
 
-For example, this code, which will send a message to Adobe Bridge CS5 as part of a script being executed by Photoshop CS5, checks that the required version of Adobe Bridge is installed:
+例如，以下代码将向 Adobe Bridge CS5 发送消息，作为由 Photoshop CS5 执行的脚本的一部分，检查所需的 Adobe Bridge 版本是否已安装：
 
 ```javascript
 var targetApp = BridgeTalk.getSpecifier( "bridge-3.0");
 if( targetApp ) {
-    // construct and send message
+    // 构造并发送消息
 }
 ```
 
-When you send the message, the messaging framework automatically launches the target application, if it is not already running.
+当您发送消息时，如果目标应用程序尚未运行，消息框架会自动启动它。
 
-### Step 2: Construct a message object
+### 步骤 2：构造消息对象
 
-The next step is to construct a message to send to the application. You do this by creating a BridgeTalk message object, and assigning values to its properties. You must specify the target application and the message body, which is usually a script packaged into a string.
+下一步是构造要发送到应用程序的消息。您可以通过创建 `BridgeTalk` 消息对象并为其属性赋值来实现。您必须指定目标应用程序和消息体，消息体通常是打包成字符串的脚本。
 
-Scripts sent in messages can be very complex, and can use the full DOM of the target application. This example defines a message script that accesses the Adobe Bridge DOM to request the number of files or folders found in a specific folder:
+消息中发送的脚本可以非常复杂，并且可以使用目标应用程序的完整 DOM。此示例定义了一个消息脚本，该脚本访问 Adobe Bridge DOM 以请求特定文件夹中找到的文件或文件夹的数量：
 
 ```javascript
-// create a new BridgeTalk message object
+// 创建一个新的 BridgeTalk 消息对象
 var bt = new BridgeTalk;
 
-// send this msg to the Adobe Bridge CS4 application
+// 将此消息发送到 Adobe Bridge CS4 应用程序
 var targetApp = BridgeTalk.getSpecifier( "bridge-3.0");
 bt.target = targetApp;
 
-// the script to evaluate is contained in a string in the "body" property
+// 要评估的脚本包含在 "body" 属性中的字符串中
 bt.body = "new Document('C:\\BridgeScripts');app.document.target.children.length;"
 ```
 
-### Step 3: Specify how to handle a response
+### 步骤 3：指定如何处理响应
 
-If you want to handle a response for this message, or use the data that is returned from the script's evaluation, you must set up the response-handling mechanism before you send the message. You do this by defining the [onResult()](bridgetalk-message-object.md#onresult) callback in the message object.
+如果您想处理此消息的响应，或使用脚本评估返回的数据，则必须在发送消息之前设置响应处理机制。您可以通过在消息对象中定义 [onResult()](bridgetalk-message-object.md#onresult) 回调来实现。
 
 :::note
-The message callbacks are optional, and are not implemented by all message-enabled applications. The response to a message is, by default, the result of evaluation of the script contained in that message's body property. The target application might define some different kind of response; see [Receiving messages](#receiving-messages).
+消息回调是可选的，并非所有支持消息的应用程序都实现了它们。消息的响应默认是该消息的 `body` 属性中包含的脚本的评估结果。目标应用程序可能会定义某种不同的响应；请参阅 [接收消息](#receiving-messages)。
 :::
 
-When the target has finished processing this message, it looks for an onResult callback in the message object it received. If it is found, the target automatically invokes it, passing it the response. The response is packaged into a string, which is in turn packaged into the body property of a new message object. That message object is the argument to your onResult callback function.
+当目标处理完此消息后，它会在接收到的消息对象中查找 `onResult` 回调。如果找到，目标会自动调用它，并将响应传递给它。响应被打包成一个字符串，该字符串又被打包到一个新消息对象的 `body` 属性中。该消息对象是您的 `onResult` 回调函数的参数。
 
-This handler, for example, processes the returned result using a script-defined processResult function:
+例如，此处理程序使用脚本定义的 `processResult` 函数处理返回的结果：
 
-```javascript`
+```javascript
 bt.onResult = function(returnBtObj) {
     processResult(returnBtObj.body);
 }
-
 ```
 
-If you want to handle errors that might arise during script processing, you can define an [onError()](bridgetalk-message-object.md#onerror) callback in the message object. Similarly, you can define a [timeout](bridgetalk-message-object.md#timeout) value and [onTimeout()](bridgetalk-message-object.md#ontimeout) callback to handle the case where the target cannot process the message within a given time. For more information, see [Handling responses from the message target](#handling-responses-from-the-message-target).
+如果您想处理脚本处理过程中可能出现的错误，可以在消息对象中定义一个 [onError()](bridgetalk-message-object.md#onerror) 回调。同样，您可以定义一个 [timeout](bridgetalk-message-object.md#timeout) 值和 [onTimeout()](bridgetalk-message-object.md#ontimeout) 回调来处理目标无法在给定时间内处理消息的情况。有关更多信息，请参阅 [处理来自消息目标的响应](#handling-responses-from-the-message-target)。
 
 :::note
-If you define callbacks to handle a response, you must store the message in a variable that still exists when the response is received. Otherwise, JavaScript might garbage-collect the message object, and the response would be lost.
+如果您定义了回调来处理响应，则必须将消息存储在响应接收时仍然存在的变量中。否则，JavaScript 可能会垃圾回收消息对象，响应将丢失。
 :::
 
+### 步骤 4：发送消息
 
-### Step 4: Send the message
-
-To send the message, call the message object's `send` method. You do not need to specify where to send the message to, since the target application is set in the message itself:
+要发送消息，请调用消息对象的 `send` 方法。您不需要指定发送消息的位置，因为目标应用程序已在消息本身中设置：
 
 ```javascript
 bt.send();
 ```
 
-You can optionally specify a timeout value, which makes the call synchronous; when you do this, the method waits for a response from the target application, or for the timeout value to expire, before returning. When a timeout is not specified, as in this example, the call is asynchronous and the `send()` method returns immediately.
+您可以选择指定一个超时值，这将使调用同步；当您这样做时，该方法会等待目标应用程序的响应，或等待超时值到期，然后再返回。当未指定超时时，如本示例所示，调用是异步的，`send()` 方法会立即返回。
 
-A second optional parameter allows you to specify launch parameters, in case the target application is not currently running, and the messaging framework needs to launch it.
+第二个可选参数允许您指定启动参数，以防目标应用程序当前未运行，消息框架需要启动它。
 
-The complete script looks like this:
+完整的脚本如下所示：
 
 ```javascript
-// script to be executed in Photoshop CS4
+// 在 Photoshop CS4 中执行的脚本
 #target "photoshop-11.0"
 
-// check that the target app is installed
+// 检查目标应用程序是否已安装
 var targetApp = BridgeTalk.getSpecifier( "bridge-3.0");
 
 if( targetApp ) {
-    // construct a message object
+    // 构造消息对象
     var bt = new BridgeTalk;
 
-    // the message is intended for Adobe Bridge CS4
+    // 消息的目标是 Adobe Bridge CS4
     bt.target = targetApp;
 
-    // the script to evaluate is contained in a string in the "body" property
+    // 要评估的脚本包含在 "body" 属性中的字符串中
     bt.body = "new Document('C:\\BridgeScripts');app.document.target.children.length;"
 
-    // define result handler callback
+    // 定义结果处理回调
     bt.onResult = function(returnBtObj) {
-    processResult(returnBtObj.body); } //fn defined elsewhere
+    processResult(returnBtObj.body); } //fn 在其他地方定义
 
-    // send the message asynchronously
+    // 异步发送消息
     bt.send();
 }
 ```
 
 ---
 
-## Receiving messages
+## 接收消息
 
-An application can be the target of a message; that is, it receives an unsolicited message from another application. An unsolicited message is handled by the static [BridgeTalk.onReceive](bridgetalk-class.md#bridgetalkonreceive) callback function in the target application. See [Handling unsolicited messages](#handling-unsolicited-messages).
+应用程序可以是消息的目标；也就是说，它可以从另一个应用程序接收未经请求的消息。未经请求的消息由目标应用程序中的静态 [BridgeTalk.onReceive](bridgetalk-class.md#bridgetalkonreceive) 回调函数处理。请参阅 [处理未经请求的消息](#handling-unsolicited-messages)。
 
-An application that sends a message can receive response messages; that is, messages that come as the result of requesting a response when a message was sent. These can be:
+发送消息的应用程序可以接收响应消息；也就是说，作为发送消息时请求响应的结果而收到的消息。这些可以是：
 
-- The result of an error in processing the message
-- The result of a timeout when attempting to process the message
-- A notification of receipt of the message
-- Intermediate responses
-- The final result of processing the message.
+- 处理消息时出错的结果
+- 尝试处理消息时超时的结果
+- 消息接收的通知
+- 中间响应
+- 处理消息的最终结果。
 
-All of these response messages are sent automatically by the target application, and are handled by callbacks defined in the sending message object. For details, see [Handling responses from the message target](#handling-responses-from-the-message-target).
+所有这些响应消息都由目标应用程序自动发送，并由发送消息对象中定义的回调处理。有关详细信息，请参阅 [处理来自消息目标的响应](#handling-responses-from-the-message-target)。
 
 ---
 
-## Handling unsolicited messages
+## 处理未经请求的消息
 
-To specify how the application should handle unsolicited incoming messages, define a callback handler function in the static [onReceive](bridgetalk-class.md#bridgetalkonreceive) property of the `BridgeTalk` class. This function takes a single argument, a [BridgeTalk message object](../bridgetalk-message-object).
+要指定应用程序应如何处理未经请求的传入消息，请在 `BridgeTalk` 类的静态 [onReceive](bridgetalk-class.md#bridgetalkonreceive) 属性中定义一个回调处理函数。此函数接受一个参数，即 [BridgeTalk 消息对象](../bridgetalk-message-object)。
 
-The default behavior of the `onReceive` handler is to evaluate the body of the received message with JavaScript, and return the result of that evaluation. (The result of evaluating a script is the result of the last line of the script.) To return the result, it creates a new message object, encapsulates the result in a string in the body property of that object, and passes that object to the [onResult()](bridgetalk-message-object.md#onresult) callback defined in the original message.
+`onReceive` 处理程序的默认行为是使用 JavaScript 评估接收到的消息的 `body`，并返回该评估的结果。（评估脚本的结果是脚本的最后一行。）为了返回结果，它会创建一个新的消息对象，将该结果封装在该对象的 `body` 属性中的字符串中，并将该对象传递给原始消息中定义的 [onResult()](bridgetalk-message-object.md#onresult) 回调。
 
-If an error occurs on evaluation, the default `onReceive` handler returns the error information using a similar mechanism. It creates a new message object, encapsulates the error information in a string in the body property of that object, and passes that object to the [onError()](bridgetalk-message-object.md#onerror) callback defined in the original message.
+如果评估时发生错误，默认的 `onReceive` 处理程序会使用类似的机制返回错误信息。它会创建一个新的消息对象，将错误信息封装在该对象的 `body` 属性中的字符串中，并将该对象传递给原始消息中定义的 [onError()](bridgetalk-message-object.md#onerror) 回调。
 
-To change the default behavior set the `BridgeTalk.onReceive` property to a function definition in the following form:
+要更改默认行为，请将 `BridgeTalk.onReceive` 属性设置为以下形式的函数定义：
 
 ```javascript
 BridgeTalk.onReceive = function( bridgeTalkObject ) {
-    // callback definition here
+    // 在此处定义回调
 };
 ```
 
-The `body` property of the received message object contains the received data.
+接收到的消息对象的 `body` 属性包含接收到的数据。
 
-The function can return any type.
+该函数可以返回任何类型。
 
-The function that you define does not need to explicitly create and return a `BridgeTalk` message object.
+您定义的函数不需要显式创建并返回 `BridgeTalk` 消息对象。
 
-The messaging framework creates a new `BridgeTal``k message object, and packages the return value of the ``onReceive` handler as a string in the body property of that object.
+消息框架会创建一个新的 `BridgeTalk` 消息对象，并将 `onReceive` 处理程序的返回值作为字符串打包到该对象的 `body` 属性中。
 
-Return values are flattened into a string using the Unicode Transformation Format-8 (UTF-8) encoding. If the function does not specify a return value, the resulting string is the empty string.
+返回值使用 Unicode 转换格式-8（UTF-8）编码扁平化为字符串。如果函数未指定返回值，则生成的字符串为空字符串。
 
-The result object is transmitted back to the sender if the sender has implemented an `onResult` callback for the original message.
+如果发送者为原始消息实现了 `onResult` 回调，则结果对象会传输回发送者。
 
-### Message-handling examples
+### 消息处理示例
 
-This example shows the default mechanism for handling unsolicited messages received from other applications. This simple handler executes the message's data as a script and returns the results of that execution:
+此示例展示了处理从其他应用程序接收到的未经请求的消息的默认机制。这个简单的处理程序将消息的数据作为脚本执行并返回该执行的结果：
 
 ```javascript
 BridgeTalk.onReceive = function (message) {
@@ -172,7 +170,7 @@ BridgeTalk.onReceive = function (message) {
 }
 ```
 
-This example shows how you might extend the receive handler to process a new type of message:
+此示例展示了如何扩展接收处理程序以处理新类型的消息：
 
 ```javascript
 BridgeTalk.onReceive = function (message) {
@@ -188,36 +186,36 @@ BridgeTalk.onReceive = function (message) {
 
 ---
 
-## Handling responses from the message target
+## 处理来自消息目标的响应
 
-To handle responses to a message you have sent, you define callback handler functions in the message object itself. The target application cannot send a response message back to the sender unless the message object it received has the appropriate callback defined.
+要处理您发送的消息的响应，您可以在消息对象本身中定义回调处理函数。目标应用程序无法将响应消息发送回发送者，除非它接收到的消息对象定义了适当的回调。
 
 :::note
-The message callbacks are optional, and are not implemented by all message-enabled applications.
+消息回调是可选的，并非所有支持消息的应用程序都实现了它们。
 :::
 
-When your message is received by its target, the target application's static BridgeTalk object's onReceive method processes that message, and can invoke one of the message object's callbacks to return a response. In each case, the messaging framework packages the response in a new message object, whose target application is the sender. Your callback functions receive this response message object as an argument.
+当您的消息被其目标接收时，目标应用程序的静态 `BridgeTalk` 对象的 `onReceive` 方法会处理该消息，并可以调用消息对象的一个回调以返回响应。在每种情况下，消息框架都会将响应打包到一个新的消息对象中，其目标应用程序是发送者。您的回调函数会接收此响应消息对象作为参数。
 
-A response message can be:
+响应消息可以是：
 
-- The result of an error in processing the message. This is handled by the [onError()](bridgetalk-message-object.md#onerror) callback.
-  - If an error occurs in processing the message body (as the result of a JavaScript syntax error, for instance), the target application invokes the [onError()](bridgetalk-message-object.md#onerror) callback, passing a response message that contains the error code and error message. If you do not have an [onError()](bridgetalk-message-object.md#onerror) callback defined, the error is completely transparent. It can appear that the message has not been processed, since no result is ever returned to the [onResult()](bridgetalk-message-object.md#onresult) callback.
-- A notification of receipt of the message. This is handled by the [onReceived()](bridgetalk-message-object.md#onreceived) callback.
-  - Message sending is asynchronous. Getting a `true` result from the send method does not guarantee that your message was actually received by the target application. If you want to be notified of the receipt of your message, define the [onReceived()](bridgetalk-message-object.md#onreceived) callback in the message object. The target sends back the original message object to this callback, first replacing the body value with an empty string.
-- The result of a time-out. This is handled by the [onTimeout()](bridgetalk-message-object.md#ontimeout) callback.
-  - You can specify a number of seconds in a message object's [timeout](bridgetalk-message-object.md#timeout) property. If the message is not removed from the input queue for processing before the time elapses, it is discarded. If the sender has defined an [onTimeout()](bridgetalk-message-object.md#ontimeout) callback for the message, the target application sends a time-out message back to the sender.
-- Intermediate responses. These are handled by the [onResult()](bridgetalk-message-object.md#onresult) callback.
-  - The script that you send can send back intermediate responses by invoking the original message object's [sendResult()](bridgetalk-message-object.md#sendresult) method. It can send data of any type, but that data is packaged into a body string in a new message object, which is passed to your callback. See [Passing values between applications](#passing-values-between-applications).
-- The final result of processing the message. This is handled by the [onResult()](bridgetalk-message-object.md#onresult) callback.
-  - When it finishes processing your message, the target application can send back a result of any type. If you have sent a script, and the target application is using the default BridgeTalk [onReceive](bridgetalk-class.md#bridgetalkonreceive) callback to process messages, the return value is the final result of evaluating that script. In any case, the return value is packaged into a body string in a new message object, which is passed to your callback. See [Passing values between applications](#passing-values-between-applications).
+- 处理消息时出错的结果。这由 [onError()](bridgetalk-message-object.md#onerror) 回调处理。
+  - 如果在处理消息体时发生错误（例如由于 JavaScript 语法错误），目标应用程序会调用 [onError()](bridgetalk-message-object.md#onerror) 回调，传递包含错误代码和错误消息的响应消息。如果您没有定义 [onError()](bridgetalk-message-object.md#onerror) 回调，则错误是完全透明的。它可能看起来像是消息未被处理，因为从未返回结果给 [onResult()](bridgetalk-message-object.md#onresult) 回调。
+- 消息接收的通知。这由 [onReceived()](bridgetalk-message-object.md#onreceived) 回调处理。
+  - 消息发送是异步的。从 `send` 方法获得 `true` 结果并不能保证您的消息实际上已被目标应用程序接收。如果您想收到消息接收的通知，请在消息对象中定义 [onReceived()](bridgetalk-message-object.md#onreceived) 回调。目标会将原始消息对象发送回此回调，首先将 `body` 值替换为空字符串。
+- 超时的结果。这由 [onTimeout()](bridgetalk-message-object.md#ontimeout) 回调处理。
+  - 您可以在消息对象的 [timeout](bridgetalk-message-object.md#timeout) 属性中指定秒数。如果消息在时间到期之前未从输入队列中移除以进行处理，则会被丢弃。如果发送者为消息定义了 [onTimeout()](bridgetalk-message-object.md#ontimeout) 回调，则目标应用程序会向发送者发送超时消息。
+- 中间响应。这由 [onResult()](bridgetalk-message-object.md#onresult) 回调处理。
+  - 您发送的脚本可以通过调用原始消息对象的 [sendResult()](bridgetalk-message-object.md#sendresult) 方法发送回中间响应。它可以发送任何类型的数据，但该数据会被打包到一个新消息对象的 `body` 字符串中，并传递给您的回调。请参阅 [在应用程序之间传递值](#passing-values-between-applications)。
+- 处理消息的最终结果。这由 [onResult()](bridgetalk-message-object.md#onresult) 回调处理。
+  - 当它完成处理您的消息时，目标应用程序可以发送回任何类型的结果。如果您发送了脚本，并且目标应用程序使用默认的 `BridgeTalk` [onReceive](bridgetalk-class.md#bridgetalkonreceive) 回调来处理消息，则返回值是该脚本评估的最终结果。无论如何，返回值会被打包到一个新消息对象的 `body` 字符串中，并传递给您的回调。请参阅 [在应用程序之间传递值](#passing-values-between-applications)。
 
-The following examples demonstrate how to handle simple responses and multiple responses, and how to integrate error handling with response handling.
+以下示例演示了如何处理简单响应和多个响应，以及如何将错误处理与响应处理集成。
 
-### Example: Receiving a simple response
+### 示例：接收简单响应
 
-In this example, an application script asks Adobe Bridge to find out how many files and folders are in a certain folder, which the evaluation of the script returns. (The default BridgeTalk.onReceive method processes this correctly.)
+在此示例中，应用程序脚本要求 Adobe Bridge 查找某个文件夹中有多少个文件和文件夹，脚本的评估会返回该数量。（默认的 `BridgeTalk.onReceive` 方法正确处理了这一点。）
 
-The `onResult` method saves that number in `fileCountResult`, a script-defined property of the message, for later use:
+`onResult` 方法将该数字保存在 `fileCountResult` 中，这是消息的脚本定义属性，供以后使用：
 
 ```javascript
 var bt = new BridgeTalk;
@@ -230,9 +228,9 @@ bt.onResult = function( retObj ) {
 bt.send();
 ```
 
-### Example: Handling any error
+### 示例：处理任何错误
 
-In this example, the onError handler re-throws the error message within the sending application:
+在此示例中，`onError` 处理程序在发送应用程序中重新抛出错误消息：
 
 ```javascript
 var bt = new BridgeTalk;
@@ -242,9 +240,9 @@ bt.onError = function (btObj) {
 }
 ```
 
-### Example: Handling expected errors and responses
+### 示例：处理预期的错误和响应
 
-This example creates a message that asks Adobe Bridge to return XMP metadata for a specific file. The `onResult` method processes the data using a script-defined processFileSize function. Any errors are handled by the `onError` method. For example, if the file requested is not an existing file, the resulting error is returned to the onError method:
+此示例创建了一条消息，要求 Adobe Bridge 返回特定文件的 XMP 元数据。`onResult` 方法使用脚本定义的 `processFileSize` 函数处理数据。任何错误都由 `onError` 方法处理。例如，如果请求的文件不是现有文件，则生成的错误会返回给 `onError` 方法：
 
 ```javascript
 var bt = new BridgeTalk;
@@ -262,25 +260,23 @@ bt.onError = function( errorMsg ) {
 bt.send();
 ```
 
-### Example: Setting up a target to send multiple responses
+### 示例：设置目标以发送多个响应
 
-This example integrates the sending of multiple responses with the evaluation of a message body. It sets up a handler for a message such as the one sent in the following example.
+此示例将发送多个响应与消息体的评估集成在一起。它为以下示例中发送的消息设置了一个处理程序。
 
-The target application (Adobe Bridge) defines a static onReceive method to allow for a new type of message, which it calls an iterator. An iterator type of message expects the message.body to use the iteration variable i within the script, so that different results are produced for each pass through the while loop. Each result is sent back to the sending application with the sendResult() method. When the message.body has finished processing its task, it sets a flag to end the while loop:
+目标应用程序（Adobe Bridge）定义了一个静态的 `onReceive` 方法，以允许处理一种新类型的消息，它称之为迭代器。迭代器类型的消息期望 `message.body` 在脚本中使用迭代变量 `i`，以便在每次循环时生成不同的结果。每个结果都通过 `sendResult()` 方法发送回发送应用程序。当 `message.body` 完成其任务时，它会设置一个标志以结束 `while` 循环：
 
 ```javascript
-// Code for processing the message and sending intermediate responses
-// in the target application (Adobe Bridge)
+// 在目标应用程序（Adobe Bridge）中处理消息并发送中间响应的代码
 BridgeTalk.onReceive = function (message){
     switch (message.type) {
         case "iterator":
             done = false;
             i = 0;
             while (!done) {
-                // the message.body uses "i" to produce different results
-                // for each execution of the message.
-                // when done, the message.body sets "done" to `true`
-                // so this onReceive method breaks out of the loop.
+                // message.body 使用 "i" 在每次执行消息时生成不同的结果
+                // 当完成时，message.body 将 "done" 设置为 `true`
+                // 以便此 onReceive 方法跳出循环。
                 message.sendResult(eval(message.body));
                 i++;
             }
@@ -291,148 +287,8 @@ BridgeTalk.onReceive = function (message){
 }
 ```
 
-### Example: Setting up a sender to receive multiple responses
+### 示例：设置发送者以接收多个响应
 
-This example sends a message of the type iterator, to be handled by the onReceive handler in the previous example, and processes the responses received from that target.
+此示例发送了一条类型为迭代器的消息，由上一个示例中的 `onReceive` 处理程序处理，并处理从该目标接收到的响应。
 
-The sending application creates a message whose script (contained in the body string) iterates through all files in a specific folder (represented by an Adobe Bridge Thumbnail object), using the iterator variable i.
-
-For each file in the folder, it returns file size data. For each contained folder, it returns -1. The last executed line in the script is the final result value for the message.
-
-The `onResult` method of the message object receives each intermediate result, stores it into an array, `resArr`, and processes it immediately using a script-defined function processInterResult:
-
-```javascript
-// Code for send message and handling response
-// in the sending application (any message-enabled application)
-var idx = 0;
-var resArr = new Array;
-bt = new BridgeTalk;
-bt.target = "bridge";
-bt.type = "iterator";
-bt.body = "
-var fld = new Thumbnail(Folder('C/Junk'));
-if (i == (fld.children.length - 1))
-done = true; //no more files, end loop
-tn = fld.children[i];
-if (tn.spec.constructor.name == 'File')
-md = tn.core.immediate.size;
-else md = -1;
-";
-
-// store intermediate results
-bt.onResult = function(rObj) {
-    resArr[idx] = rObj.body;
-    processInterResult(resArr[idx]);
-    idx++;
-};
-
-bt.onError = function(eObj) {
-    bt.error = eObj.body
-};
-
-bt.send();
-```
-
----
-
-## Passing values between applications
-
-The BridgeTalk.onReceive static callback function can return values of any type. The messaging framework, however, packages the response into a response message, and passes any returned values in the message body, first converting the result to a UTF-8-encoded string.
-
-### Passing simple types
-
-When your message object's onResult callback receives a response, it must interpret the string it finds in the body of the response message to obtain a result of the correct type. Results of various types can be identified and processed as follows:
-
-|  类型   |                                                                                                                                                                                                                                                   描述                                                                                                                                                                                                                                                   |
-| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Number  | JavaScript allows you to access a string that contains a number directly as a number, without doing any type conversion. However, be careful when using the plus operator (+), which works with either strings or numbers. If one of the operands is a string, both operands are converted to strings and concatenated.                                                                                                                                                                                         |
-| String  | No conversion is required.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| Boolean | The result string is either "true" or "false." You can convert it to a true boolean by evaluating it with the `eval` method.                                                                                                                                                                                                                                                                                                                                                                                    |
-| Date    | The result string contains the date in the form: `"dow mmm dd yyyy hh:mm:ss GMT-nnnn".` For example "Wed Jun 23 2004 00:00:00 GMT-0700".                                                                                                                                                                                                                                                                                                                                                                        |
-| Array   | The result string contains a comma delimited list of the elements of the array. For example, If the result array is `[12, "test", 432]`, the messaging framework flattens this into the string `"12,test,432"`. As an alternative to simply returning the array, the message target can use the `toSource` method to return the code used to create the array. In this case, the sender must reconstitute the array by using the `eval` method on the result string in the response body. See discussion below. |
-
-### Passing complex types
-
-When returning complex types (arrays and objects), the script that you send must construct a result string, using the toSource method to serialize the array or object. In this case, the sender must reconstitute the array or object by using the eval method on the result string in the response body.
-
-#### Passing an array with toSource and eval
-
-For example, the following code sends a script that returns an array in this way. The onResult callback that receives the response uses eval to reconstruct the array:
-
-```javascript
-// Code for send message and handling response
-// in the sending application (any message-enabled application)
-var idx = 0;
-var resArr = new Array;
-var bt = new BridgeTalk;
-bt.target = "bridge-3.0";
-
-// the script passed to the target application
-// needs to return the array using "toSource"
-bt.body = "var arr = [10, this string, 324]; arr.toSource()";
-
-bt.onResult = function(resObj) {
-    // use eval to reconstruct the array
-    arr = eval(resObj.body);
-
-    // now you can access the returned array
-    for (i=0; i< arr.length(); i++)
-        doSomething(arr[i]);
-}
-
-// send the message
-bt.send();
-```
-
-#### Passing an object with toSource and eval
-
-This technique is the only way to pass objects between applications. For example, this code sends a script that returns an object containing some of the metadata for a specific file and defines an onResult callback that receives the object:
-
-```javascript
-var bt = new BridgeTalk;
-bt.target = "bridge-3.0";
-
-//the script passed to the target application
-// returns the object using "toSource"
-bt.body = "var tn = new Thumbnail(File('C:\\Myphotos\\photo1.jpg'));
-var md = {fname:tn.core.immediate.name,
-fsize:tn.core.immediate.size};
-md.toSource();"
-
-//For the result, use eval to reconstruct the object
-bt.onResult = function(resObj) {
-    md = bt.result = eval(resObj.body);
-    // now you can access fname and fsize properties
-    doSomething (md.fname, md.fsize);
-}
-
-// send the message
-bt.send();
-```
-
-#### Passing a DOM object
-
-You can send a script that returns a DOM object, but the resulting object contains only those properties that were accessed within the script. For example, the following script requests the return of the Adobe Bridge DOM Thumbnail object. Only the properties path and uri are accessed by the script, and only those properties are returned:
-
-```javascript
-var bt = new BridgeTalk;
-bt.target = "bridge";
-
-//set up the script passed to the target application
-// to return the array using "toSource"
-bt.body = "var tn = new Thumbnail(File('C:\\Myphotos\\photo1.jpg'));
-var p = tn.path; var u = tn.uri;
-tn.toSource();"
-
-//For the result, use eval to reconstruct the object
-bt.onResult = function(resObj) {
-    // use eval to reconstruct the object
-    tn = eval(resObj.body);
-    // now the script can access tn.path and tn.uri,
-    // but no other properties of the Adobe Bridge DOM Thumbnail object
-    doSomething (tn.path, tn.uri);
-}
-
-// send the message
-bt.send();
-```
+发送应用程序创建了一条消息，其脚本（包含在 `body`

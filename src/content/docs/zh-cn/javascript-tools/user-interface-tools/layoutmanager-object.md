@@ -1,25 +1,25 @@
 ---
-title: layoutmanager-object
+title: 布局管理对象
 ---
-# LayoutManager object
+# LayoutManager 对象
 
-Controls the automatic layout behavior for a window or container. The subclass AutoLayoutManager implements the default automatic layout behavior.
+控制窗口或容器的自动布局行为。子类 `AutoLayoutManager` 实现了默认的自动布局行为。
 
-## AutoLayoutManager object constructor
+## AutoLayoutManager 对象构造函数
 
-Create an instance of the `AutoLayoutManager` class with the new operator:
+使用 `new` 操作符创建 `AutoLayoutManager` 类的实例：
 
 ```javascript
 myWin.layout = new AutoLayoutManager( myWin );
 ```
 
-An instance is automatically created when you create a `Window` or container (`group` or `panel`) object, and referenced by the container's [layout](window-object.md#layout) property. This instance implements the default layout behavior unless you override it.
+当您创建 `Window` 或容器（`group` 或 `panel`）对象时，会自动创建一个实例，并通过容器的 [layout](window-object.md#layout) 属性引用。除非您覆盖它，否则此实例将实现默认的布局行为。
 
-## AutoLayoutManager object properties
+## AutoLayoutManager 对象属性
 
-The default object has no predefined properties, but a script can assign arbitrary properties to an object it creates, to store data needed by the script-defined layout algorithm.
+默认对象没有预定义的属性，但脚本可以为其创建的对象分配任意属性，以存储脚本定义的布局算法所需的数据。
 
-## AutoLayoutManager object functions
+## AutoLayoutManager 对象函数
 
 ### layout()
 
@@ -27,19 +27,19 @@ The default object has no predefined properties, but a script can assign arbitra
 
 #### 描述
 
-Invokes the automatic layout behavior for the managed container. Adjusts sizes and positions of the child elements of this window or container according to the placement and alignment property values in the parent and children.
+调用托管容器的自动布局行为。根据父容器和子元素的放置和对齐属性值，调整此窗口或容器的子元素的大小和位置。
 
-Invoked automatically the first time the window is displayed. Thereafter, the script must invoke it explicitly to change the layout in case of changes in the size or position of the parent or children.
+在窗口首次显示时自动调用。之后，如果父容器或子元素的大小或位置发生变化，脚本必须显式调用它以更改布局。
 
 #### 参数
 
-|   参数   |  类型   |                                                                描述                                                                |
-| ------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `recalculate` | Boolean | Optional. When `true`, forces the layout manager to recalculate the container size for this and any child containers. Default is `false`. |
+| 参数            | 类型    | 描述                                                                                         |
+| --------------- | ------- | -------------------------------------------------------------------------------------------- |
+| `recalculate` | Boolean | 可选。当为 `true` 时，强制布局管理器重新计算此容器及任何子容器的大小。默认值为 `false`。 |
 
 #### 返回
 
-Nothing
+无
 
 ---
 
@@ -49,10 +49,10 @@ Nothing
 
 #### 描述
 
-Resizes and moves the child elements of the managed container, according to the alignment values for each child of the container, after the container has been resized by the user or by a script.
+在用户或脚本调整容器大小后，根据容器每个子元素的对齐值，调整托管容器的子元素的大小和位置。
 
-See [Automatic layout](../automatic-layout) for details of how alignment affects an element's size and location.
+有关对齐如何影响元素大小和位置的详细信息，请参阅 [自动布局](../automatic-layout)。
 
 #### 返回
 
-Nothing
+无

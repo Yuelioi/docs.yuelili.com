@@ -1,39 +1,39 @@
 ---
-title: file-object
+title: 文件对象
 ---
-# File Object
+# 文件对象
 
-Represents a file in the local file system in a platform-independent manner. All properties and methods resolve file system aliases automatically and act on the original file unless otherwise noted.
+以平台无关的方式表示本地文件系统中的文件。除非另有说明，所有属性和方法都会自动解析文件系统别名，并对原始文件进行操作。
 
 ---
 
-## File Object Constructors
+## 文件对象构造函数
 
 ```javascript
-File ( [ path ] );    // Can return a Folder object
-new File ([ path ] ); // Always returns a File object
+File ( [ path ] );    // 可能返回一个文件夹对象
+new File ([ path ] ); // 始终返回一个文件对象
 ```
 
-To create a File object, use the File function or the new operator. The constructor accepts full or partial path names, and returns the new object.
+要创建一个文件对象，请使用 `File` 函数或 `new` 操作符。构造函数接受完整或部分路径名，并返回新对象。
 
-The CRLF sequence for the file is preset to the system default, and the encoding is preset to the default system encoding.
+文件的 CRLF 序列预设为系统默认值，编码预设为默认系统编码。
 
 | 参数 |  类型  |                                                                                                                          描述                                                                                                                           |
 |-----------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `path`    | String | Optional. The absolute or relative path to the file associated with this object, specified in platform-specific or URI format; see [Specifying paths](using-file-and-folder-objects.md#specifying-paths). The value stored in the object is the absolute path. |
-|           |        | The path need not refer to an existing file. If not supplied, a temporary name is generated.                                                                                                                                                                   |
-|           |        | If the path refers to an existing folder:                                                                                                                                                                                                                      |
-|           |        | - The File function returns a Folder object instead of a File object.                                                                                                                                                                                          |
-|           |        | - The new operator returns a File object for a nonexisting file with the same name.                                                                                                                                                                            |
-|           |        | !!! warning                                                                                                                                                                                                                                                    |
-|           |        |     In After Effects on MacOS, if `path.length` is more than 1002, After Effects crashes.                                                                                                                                                                      |
-|           |        |     This has been reported on MacOS 10.11.6 and After Effects 13.8 and 14.0.                                                                                                                                                                                   |
+| `path`    | String | 可选。与此对象关联的文件的绝对或相对路径，以平台特定或 URI 格式指定；请参阅 [指定路径](using-file-and-folder-objects.md#specifying-paths)。对象中存储的值是绝对路径。 |
+|           |        | 路径不必引用现有文件。如果未提供路径，则生成一个临时名称。                                                                                                                                                                   |
+|           |        | 如果路径引用现有文件夹：                                                                                                                                                                                                                      |
+|           |        | - `File` 函数返回一个文件夹对象而不是文件对象。                                                                                                                                                                                          |
+|           |        | - `new` 操作符返回一个具有相同名称的不存在文件的文件对象。                                                                                                                                                                            |
+|           |        | !!! 警告                                                                                                                                                                                                                                                    |
+|           |        |     在 MacOS 上的 After Effects 中，如果 `path.length` 超过 1002，After Effects 会崩溃。                                                                                                                                                                      |
+|           |        |     此问题已在 MacOS 10.11.6 和 After Effects 13.8 及 14.0 上报告。                                                                                                                                                                                   |
 
 ---
 
-## File Class Attributes
+## 文件类属性
 
-This property is available as a static property of the File class. It is not necessary to create an instance to access it.
+此属性作为文件类的静态属性可用。无需创建实例即可访问它。
 
 ### File.fs
 
@@ -41,9 +41,9 @@ This property is available as a static property of the File class. It is not nec
 
 #### 描述
 
-The name of the file system.
+文件系统的名称。
 
-One of:
+可能的值：
 
 - `Windows`
 - `Macintosh`
@@ -51,13 +51,13 @@ One of:
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
-## File Class Methods
+## 文件类方法
 
-These functions are available as static methods of the File class. It is not necessary to create an instance to call them.
+这些函数作为文件类的静态方法可用。无需创建实例即可调用它们。
 
 ### File.decode()
 
@@ -65,25 +65,25 @@ These functions are available as static methods of the File class. It is not nec
 
 #### 描述
 
-Decodes the specified string as required by RFC 2396.
+按照 RFC 2396 的要求解码指定的字符串。
 
-All special characters must be encoded in UTF-8 and stored as escaped characters starting with the percent sign followed by two hexadecimal digits. Special characters are those with a numeric value greater than 127, except the following:
+所有特殊字符必须以 UTF-8 编码，并存储为以百分号开头后跟两个十六进制数字的转义字符。特殊字符是数值大于 127 的字符，除了以下字符：
 
 ```javascript
 / - _ . ! ~ * ' ( )
 ```
 
-For example, the string `"my%20file"` is decoded as `"my<br/>file"`.
+例如，字符串 `"my%20file"` 被解码为 `"my<br/>file"`。
 
 #### 参数
 
 | 参数 |  类型  |          描述          |
 | --------- | ------ | ----------------------------- |
-| `uri`     | String | The encoded string to decode. |
+| `uri`     | String | 要解码的编码字符串。 |
 
 #### 返回
 
-String
+字符串
 
 ---
 
@@ -93,9 +93,9 @@ String
 
 #### 描述
 
-Encodes the specified string as required by RFC 2396.
+按照 RFC 2396 的要求编码指定的字符串。
 
-All special characters are encoded in UTF-8 and stored as escaped characters starting with the percent sign followed by two hexadecimal digits. For example, the string "my file" is encoded as "my%20file". Special characters are those with a numeric value greater than 127, except the following:
+所有特殊字符都以 UTF-8 编码，并存储为以百分号开头后跟两个十六进制数字的转义字符。例如，字符串 `"my file"` 被编码为 `"my%20file"`。特殊字符是数值大于 127 的字符，除了以下字符：
 
 ```javascript
 / - _ . ! ~ * ' ( )
@@ -105,11 +105,11 @@ All special characters are encoded in UTF-8 and stored as escaped characters sta
 
 | 参数 |  类型  |      描述      |
 | --------- | ------ | --------------------- |
-| `name`    | String | The string to encode. |
+| `name`    | String | 要编码的字符串。 |
 
 #### 返回
 
-String
+字符串
 
 ---
 
@@ -119,15 +119,15 @@ String
 
 #### 描述
 
-Checks whether a given encoding is available.
+检查给定的编码是否可用。
 
 #### 参数
 
 | 参数 |  类型  |                                                                               描述                                                                                |
 | --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `name`    | String | The encoding name. Typical values are `"ASCII"`, `"binary"`, or `"UTF-8"`. See [File- and Folder-supported encoding names](../file-and-folder-supported-encoding-names). |
+| `name`    | String | 编码名称。典型值为 `"ASCII"`、`"binary"` 或 `"UTF-8"`。请参阅 [文件和文件夹支持的编码名称](../file-and-folder-supported-encoding-names)。 |
 
-Boolean. `true` if your system supports the specified encoding, `false` otherwise.
+布尔值。如果系统支持指定的编码，则为 `true`，否则为 `false`。
 
 ---
 
@@ -137,26 +137,26 @@ Boolean. `true` if your system supports the specified encoding, `false` otherwis
 
 #### 描述
 
-Opens the built-in platform-specific file-browsing dialog in which a user can select an existing file or multiple files, and creates new File objects to represent the selected files.
+打开内置的平台特定文件浏览对话框，用户可以在其中选择现有文件或多个文件，并创建新的文件对象来表示所选文件。
 
 #### 参数
 
 |   参数   |        类型        |                                                                     描述                                                                     |
 |---------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| `prompt`      | String             | Optional. The prompt text, if the dialog allows a prompt.                                                                                           |
-| `filter`      | String or Function | Optional. A filter that limits the types of files displayed in the dialog.                                                                          |
-|               |                    | In Windows, a filter expression, such as `"JavaScript:*.jsx;All files:*.*"`                                                                         |
-|               |                    | !!! tip                                                                                                                                             |
-|               |                    |     - Separate expression with a semicolon (`;`) to filter by all these types at once; (show `jsx` AND `all`)                                       |
-|               |                    |     - Separate with a comma (`,`) to populate the filter dropdown, to select one type at a time (show `jsx` OR `all`)                               |
-|               |                    | In Mac OS, a filter function that takes a File instance and returns `true` if the file should be included in the display, `false` if it should not. |
-| `multiSelect` | Boolean            | Optional. When `true`, the user can select multiple files and the return value is an array. Default is `false`.                                     |
+| `prompt`      | String             | 可选。提示文本，如果对话框允许提示。                                                                                           |
+| `filter`      | String or Function | 可选。限制对话框中显示的文件类型的过滤器。                                                                          |
+|               |                    | 在 Windows 中，过滤器表达式，例如 `"JavaScript:*.jsx;All files:*.*"`                                                                         |
+|               |                    | !!! 提示                                                                                                                                             |
+|               |                    |     - 用分号 (`;`) 分隔表达式以同时过滤这些类型；（显示 `jsx` 和 `all`）                                       |
+|               |                    |     - 用逗号 (`,`) 分隔以填充过滤器下拉列表，以便一次选择一种类型（显示 `jsx` 或 `all`）                               |
+|               |                    | 在 Mac OS 中，过滤器函数接受文件实例并返回 `true` 如果文件应包含在显示中，否则返回 `false`。 |
+| `multiSelect` | Boolean            | 可选。当为 `true` 时，用户可以选择多个文件，返回值为数组。默认为 `false`。                                     |
 
 #### 返回
 
-The [File](#file-object) for the selected file, or an array of File Objects if multiple files are selected.
+所选文件的 [文件对象](#file-object)，如果选择了多个文件，则返回文件对象数组。
 
-If the user cancels, returns `null`.
+如果用户取消，返回 `null`。
 
 ---
 
@@ -166,30 +166,30 @@ If the user cancels, returns `null`.
 
 #### 描述
 
-Opens the built-in platform-specific file-browsing dialog in which a user can select an existing file location to which to save information, and creates a new [File object](#file-object) to represent the selected file location.
+打开内置的平台特定文件浏览对话框，用户可以在其中选择现有文件位置以保存信息，并创建新的 [文件对象](#file-object) 来表示所选文件位置。
 
 #### 参数
 
 | 参数 |        类型        |                                                             描述                                                              |
 |-----------|--------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| `prompt`  | String             | A string containing the prompt text, if the dialog allows a prompt.                                                                  |
-| `filter`  | String or Function | Optional. [Windows](../../user-interface-tools/window-object) only. A filter that limits the types of files displayed in the dialog. |
-|           |                    | A filter expression, such as `"JavaScript:*.jsx;All files:*.*"`                                                                      |
-|           |                    | !!! tip                                                                                                                              |
-|           |                    |     - Separate expression with a semicolon (`;`) to filter by all these types at once; (show `jsx` AND `all`)                        |
-|           |                    |     - Separate with a comma (`,`) to populate the filter dropdown, to select one type at a time (show `jsx` OR `all`)                |
+| `prompt`  | String             | 包含提示文本的字符串，如果对话框允许提示。                                                                  |
+| `filter`  | String or Function | 可选。仅限 [Windows](../../user-interface-tools/window-object)。限制对话框中显示的文件类型的过滤器。 |
+|           |                    | 过滤器表达式，例如 `"JavaScript:*.jsx;All files:*.*"`                                                                      |
+|           |                    | !!! 提示                                                                                                                              |
+|           |                    |     - 用分号 (`;`) 分隔表达式以同时过滤这些类型；（显示 `jsx` 和 `all`）                        |
+|           |                    |     - 用逗号 (`,`) 分隔以填充过滤器下拉列表，以便一次选择一种类型（显示 `jsx` 或 `all`）                |
 
 #### 返回
 
-A [File](#file-object) for the the selected file location.
+所选文件位置的 [文件对象](#file-object)。
 
-If the user cancels, returns `null`.
+如果用户取消，返回 `null`。
 
 ---
 
-## File Object Attributes
+## 文件对象属性
 
-These properties are available for `File` objects.
+这些属性可用于 `File` 对象。
 
 ---
 
@@ -199,11 +199,11 @@ These properties are available for `File` objects.
 
 #### 描述
 
-The full path name for the referenced file in URI notation.
+引用文件的完整路径名，以 URI 表示法表示。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -213,11 +213,11 @@ String. Read only.
 
 #### 描述
 
-When `true`, the object refers to a file system alias or shortcut.
+当为 `true` 时，对象引用文件系统别名或快捷方式。
 
 #### 类型
 
-Boolean. Read only.
+布尔值。只读。
 
 ---
 
@@ -227,11 +227,11 @@ Boolean. Read only.
 
 #### 描述
 
-The creation date of the referenced file, or `null` if the object does not refer to a file on disk.
+引用文件的创建日期，如果对象未引用磁盘上的文件，则为 `null`。
 
 #### 类型
 
-Date. Read only.
+日期。只读。
 
 ---
 
@@ -241,11 +241,11 @@ Date. Read only.
 
 #### 描述
 
-In Mac OS, the file creator as a four-character string. In Windows or UNIX, value is `"????"`.
+在 Mac OS 中，文件创建者为一个四字符字符串。在 Windows 或 UNIX 中，值为 `"????"`。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -255,11 +255,11 @@ String. Read only.
 
 #### 描述
 
-The localized name of the referenced file, without the path.
+引用文件的本地化名称，不带路径。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -269,15 +269,15 @@ String. Read only.
 
 #### 描述
 
-Gets or sets the encoding for subsequent read/write operations. One of the encoding constants listed in [File- and Folder-supported encoding names](../file-and-folder-supported-encoding-names).
+获取或设置后续读/写操作的编码。编码常量之一，列在 [文件和文件夹支持的编码名称](../file-and-folder-supported-encoding-names) 中。
 
-If the value is not recognized, uses the system default encoding.
+如果值未被识别，则使用系统默认编码。
 
-A special encoder, `"BINARY"`, is used to read binary files. It stores each byte of the file as one Unicode character regardless of any encoding. When writing, the lower byte of each Unicode character is treated as a single byte to write.
+特殊编码器 `"BINARY"` 用于读取二进制文件。它将文件的每个字节存储为一个 Unicode 字符，无论任何编码。写入时，每个 Unicode 字符的低字节被视为要写入的单个字节。
 
 #### 类型
 
-String
+字符串
 
 ---
 
@@ -287,11 +287,11 @@ String
 
 #### 描述
 
-When `true`, a read attempt caused the current position to be at the end of the file, or the file is not open.
+当为 `true` 时，读取尝试导致当前位置位于文件末尾，或文件未打开。
 
 #### 类型
 
-Boolean. Read only.
+布尔值。只读。
 
 ---
 
@@ -301,15 +301,15 @@ Boolean. Read only.
 
 #### 描述
 
-A message describing the last file system error; see [File access error messages](../file-access-error-messages).
+描述最后一个文件系统错误的消息；请参阅 [文件访问错误消息](../file-access-error-messages)。
 
-Typically set by the file system, but a script can set it. Setting this value clears any error message and resets the error bit for opened files.
+通常由文件系统设置，但脚本也可以设置它。设置此值会清除任何错误消息并重置已打开文件的错误位。
 
-Contains the empty string if there is no error.
+如果没有错误，则为空字符串。
 
 #### 类型
 
-String
+字符串
 
 ---
 
@@ -319,11 +319,11 @@ String
 
 #### 描述
 
-When `true`, this object refers to a file or file-system alias that actually exists in the file system.
+当为 `true` 时，此对象引用文件系统中实际存在的文件或文件系统别名。
 
 #### 类型
 
-Boolean. Read only.
+布尔值。只读。
 
 ---
 
@@ -333,11 +333,11 @@ Boolean. Read only.
 
 #### 描述
 
-The platform-specific full path name for the referenced file.
+引用文件的平台特定完整路径名。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -347,11 +347,11 @@ String. Read only.
 
 #### 描述
 
-The full path name for the referenced file in URI notation.
+引用文件的完整路径名，以 URI 表示法表示。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -361,11 +361,11 @@ String. Read only.
 
 #### 描述
 
-When `true`, the file is not shown in the platform-specific file browser. Read/write. If the object references a file-system alias or shortcut, the flag is altered on the alias, not on the original file.
+当为 `true` 时，文件不会显示在平台特定的文件浏览器中。可读写。如果对象引用文件系统别名或快捷方式，则标志在别名上更改，而不是在原始文件上更改。
 
 #### 类型
 
-Boolea
+布尔值
 
 ---
 
@@ -375,11 +375,11 @@ Boolea
 
 #### 描述
 
-The size of the file in bytes. Can be set only for a file that is not open, in which case it truncates or pads the file with 0-bytes to the new length.
+文件的大小（以字节为单位）。只能为未打开的文件设置，在这种情况下，它会将文件截断或填充 0 字节到新长度。
 
 #### 类型
 
-Number
+数字
 
 ---
 
@@ -389,17 +389,17 @@ Number
 
 #### 描述
 
-How line feed characters are written in the file system.
+文件系统中换行符的写入方式。
 
-One of:
+可能的值：
 
-- `Windows` - Windows style
-- `Macintosh` - Mac OS style
-- `Unix` - UNIX style
+- `Windows` - Windows 风格
+- `Macintosh` - Mac OS 风格
+- `Unix` - UNIX 风格
 
 #### 类型
 
-String
+字符串
 
 ---
 
@@ -409,11 +409,11 @@ String
 
 #### 描述
 
-A localized version of the file name portion of the absolute URI for the referenced file, without the path specification.
+引用文件的绝对 URI 的文件名部分的本地化版本，不带路径规范。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -423,11 +423,11 @@ String. Read only.
 
 #### 描述
 
-The date of the referenced file's last modification, or null if the object does not refer to a file on disk.
+引用文件的最后修改日期，如果对象未引用磁盘上的文件，则为 `null`。
 
 #### 类型
 
-Date. Read only.
+日期。只读。
 
 ---
 
@@ -437,11 +437,11 @@ Date. Read only.
 
 #### 描述
 
-The file name portion of the absolute URI for the referenced file, without the path specification.
+引用文件的绝对 URI 的文件名部分，不带路径规范。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -451,11 +451,11 @@ String. Read only.
 
 #### 描述
 
-The Folder object for the folder that contains this file.
+包含此文件的文件夹对象。
 
 #### 类型
 
-Folder. Read only.
+文件夹。只读。
 
 ---
 
@@ -465,11 +465,11 @@ Folder. Read only.
 
 #### 描述
 
-The path portion of the absolute URI for the referenced file, without the file name.
+引用文件的绝对 URI 的路径部分，不带文件名。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -479,11 +479,11 @@ String. Read only.
 
 #### 描述
 
-When `true`, prevents the file from being altered or deleted. If the referenced file is a file-system alias or shortcut, the flag is altered on the alias, not on the original file.
+当为 `true` 时，防止文件被修改或删除。如果引用的文件是文件系统别名或快捷方式，则标志在别名上更改，而不是在原始文件上更改。
 
 #### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -493,11 +493,11 @@ Boolean
 
 #### 描述
 
-The path name for the referenced file in URI notation, relative to the current folder.
+引用文件的路径名，以 URI 表示法表示，相对于当前文件夹。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -507,22 +507,22 @@ String. Read only.
 
 #### 描述
 
-The file type as a four-character string.
+文件类型为四字符字符串。
 
-- In Mac OS, the Mac OS file type.
-- - In Windows, `"appl"` for `.EXE` files, `"shlb"` for `.DLL` files and `"TEXT"` for any other file.
+- 在 Mac OS 中，为 Mac OS 文件类型。
+- - 在 Windows 中，`.EXE` 文件为 `"appl"`，`.DLL` 文件为 `"shlb"`，其他文件为 `"TEXT"`。
 
-If the file does not exist, the value is `"????"`.
+如果文件不存在，值为 `"????"`。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
-## File Object Methods
+## 文件对象方法
 
-These functions are available for File objects.
+这些函数可用于文件对象。
 
 ### File.changePath()
 
@@ -530,17 +530,17 @@ These functions are available for File objects.
 
 #### 描述
 
-Changes the path specification of the referenced file.
+更改引用文件的路径规范。
 
 #### 参数
 
 | 参数 |  类型  |                        描述                        |
 | --------- | ------ | --------------------------------------------------------- |
-| `path`    | String | The new path, absolute or relative to the current folder. |
+| `path`    | String | 新路径，绝对路径或相对于当前文件夹的路径。 |
 
 #### 返回
 
-Boolean. `true` on success.
+布尔值。成功时为 `true`。
 
 ---
 
@@ -550,11 +550,11 @@ Boolean. `true` on success.
 
 #### 描述
 
-Closes this open file.
+关闭此打开的文件。
 
 #### 返回
 
-Boolean. `true` on success, `false` if there are I/O errors.
+布尔值。成功时为 `true`，如果有 I/O 错误则为 `false`。
 
 ---
 
@@ -564,19 +564,19 @@ Boolean. `true` on success, `false` if there are I/O errors.
 
 #### 描述
 
-Copies this object's referenced file to the specified target location.
+将此对象引用的文件复制到指定的目标位置。
 
-Resolves any aliases to find the source file. If a file exists at the target location, it is overwritten.
+解析任何别名以找到源文件。如果目标位置存在文件，则覆盖它。
 
 #### 参数
 
 | 参数 |                 类型                  |                                     描述                                     |
 | --------- | ------------------------------------- | ----------------------------------------------------------------------------------- |
-| `target`  | String or [File object](#file-object) | The URI path to the target location, or a File that references the target location. |
+| `target`  | String or [File object](#file-object) | 目标位置的 URI 路径，或引用目标位置的文件对象。 |
 
 #### 返回
 
-Boolean. `true` if the copy was successful, `false` otherwise.
+布尔值。如果复制成功则为 `true`，否则为 `false`。
 
 ---
 
@@ -586,337 +586,8 @@ Boolean. `true` if the copy was successful, `false` otherwise.
 
 #### 描述
 
-Makes this file a file-system alias or shortcut to the specified file. The referenced file for this object must not yet exist on disk.
+将此文件设置为指定文件的文件系统别名或快捷方式。此对象引用的文件必须尚未存在于磁盘上。
 
 #### 参数
 
-| 参数 |  类型  |         描述          |
-| --------- | ------ | ---------------------------- |
-| `path`    | String | The path of the target file. |
-
-#### 返回
-
-Boolean. `true` if the operation was successful, `false` otherwise.
-
----
-
-### File.execute()
-
-`fileObj.execute()`
-
-#### 描述
-
-Opens this file using the appropriate application, as if it had been double-clicked in a file browser.
-
-You can use this method to run scripts, launch applications, and so on.
-
-#### 返回
-
-Boolean. `true` immediately if the application launch was successful.
-
----
-
-### File.getRelativeURI()
-
-`fileObj.getRelativeURI([basePath])`
-
-#### 描述
-
-Retrieves the URI for this file, relative to the specified base path, in URI notation. If no base path is supplied, the URI is relative to the path of the current folder.
-
-#### 参数
-
-| 参数  |  类型  |                                           描述                                            |
-| ---------- | ------ | ------------------------------------------------------------------------------------------------ |
-| `basePath` | String | Optional. A string containing the base path for the relative URI. Default is the current folder. |
-
-#### 返回
-
-String
-
----
-
-### File.open()
-
-`fileObj.open(mode[, type][, creator])`
-
-#### 描述
-
-Opens the referenced file for subsequent read/write operations. The method resolves any aliases to find the file.
-
-The method attempts to detect the encoding of the open file. It reads a few bytes at the current location and tries to detect the Byte Order Mark character 0xFFFE. If found, the current position is advanced behind the detected character and the encoding property is set to one of the strings UCS-2BE, UCS-2LE, UCS4-BE, UCS-4LE, or UTF-8. If the marker character is not found, it checks for zero bytes at the current location and makes an assumption about one of the above formats (except UTF-8). If everything fails, the encoding property is set to the system encoding.
-
-:::warning
-Be careful about opening a file more than once. The operating system usually permits you to do so, but if you start writing to the file using two different File objects, you can destroy your data.
-:::
-
-#### 参数
-
-| 参数 |  类型  |                                                                   描述                                                                   |
-|-----------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| `mode`    | String | A string indicating the read/write mode. One of:                                                                                                |
-|           |        | - `r`: (read) Opens for reading. If the file does not exist or cannot be found, the call fails.                                                 |
-|           |        | - `w`: (write) Opens a file for writing. If the file exists, its contents are destroyed. If the file does not exist, creates a new, empty file. |
-|           |        | - `e`: (edit) Opens an existing file for reading and writing.                                                                                   |
-|           |        | - `a`: (append) Opens the file in Append mode, and moves the current position to the end of the file.                                           |
-| `type`    | String | Optional. In Mac OS, the type of a newly created file, a 4-character string. Ignored in Windows and UNIX.                                       |
-| `creator` | String | Optional. In Mac OS, the creator of a newly created file, a 4-character string. Ignored in Windows and UNIX.                                    |
-
-#### 返回
-
-Boolean. `true` if the file has been opened successfully, `false` otherwise.
-
----
-
-### File.openDlg()
-
-`fileObj.openDlg([prompt=""][, filter=""][, multiSelect=false])`
-
-#### 描述
-
-Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file or files, and creates new File objects to represent the selected files. Differs from the class method openDialog() in that it presets the current folder to this File object's parent folder and the current file to this object's associated file.
-
-#### 参数
-
-|   参数   |        类型        |                                                                     描述                                                                     |
-|---------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| `prompt`      | String             | Optional. The prompt text, if the dialog allows a prompt.                                                                                           |
-| `filter`      | String or Function | Optional. A filter that limits the types of files displayed in the dialog.                                                                          |
-|               |                    | In Windows, a filter expression, such as `"JavaScript:*.jsx;All files:*.*"`                                                                         |
-|               |                    | !!! tip                                                                                                                                             |
-|               |                    |     - Separate expression with a semicolon (`;`) to filter by all these types at once; (show `jsx` AND `all`)                                       |
-|               |                    |     - Separate with a comma (`,`) to populate the filter dropdown, to select one type at a time (show `jsx` OR `all`)                               |
-|               |                    | In Mac OS, a filter function that takes a File instance and returns `true` if the file should be included in the display, `false` if it should not. |
-| `multiSelect` | Boolean.           | Optional. When `true`, the user can select multiple files and the return value is an array. Default is `false`.                                     |
-
-#### 返回
-
-If the user clicks **OK**, returns a [File](#file-object) or [Folder object](.././folder-object) for the selected file or folder, or an array of objects.
-
-If the user cancels, returns `null`.
-
----
-
-### File.read()
-
-`fileObj.read([chars])`
-
-#### 描述
-
-Reads the contents of the file starting at the current position.
-
-Returns a string that contains up to the specified number of characters.
-
-#### 参数
-
-| 参数 |  类型  |                                                                                                           描述                                                                                                           |
-| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `chars`   | Number | Optional. An integer specifying the number of characters to read. By default, reads from the current position to the end of the file. If the file is encoded, multiple bytes might be read to create single Unicode characters. |
-
-#### 返回
-
-String
-
----
-
-### File.readch()
-
-`fileObj.readch()`
-
-#### 描述
-
-Reads a single text character from the file at the current position. Line feeds are recognized as CR, LF, CRLF, or LFCR pairs. If the file is encoded, multiple bytes might be read to create single Unicode characters.
-
-Returns a string that contains the character.
-
-#### 返回
-
-String
-
----
-
-### File.readln()
-
-`fileObj.readln()`
-
-#### 描述
-
-Reads a single line of text from the file at the current position, and returns it in a string. Line feeds are recognized as CR, LF, CRLF, or LFCR pairs. If the file is encoded, multiple bytes might be read to create single Unicode characters.
-
-Returns a string that contains the text.
-
-#### 返回
-
-String
-
----
-
-### File.remove()
-
-`fileObj.remove()`
-
-#### 描述
-
-Deletes the file associated with this object from disk, immediately, without moving it to the system trash.
-
-Does not resolve aliases; instead, deletes the referenced alias or shortcut file itself.
-
-:::warning
-Cannot be undone. It is recommended that you prompt the user for permission before deleting.
-:::
-
-#### 返回
-
-Boolean. `true` if the file is deleted successfully.
-
----
-
-### File.rename()
-
-`fileObj.rename(newName)`
-
-#### 描述
-
-Renames the associated file.
-
-Does not resolve aliases, but renames the referenced alias or shortcut file itself.
-
-#### 参数
-
-| 参数 |  类型  |           描述            |
-| --------- | ------ | -------------------------------- |
-| `newName` | String | The new file name, with no path. |
-
-#### 返回
-
-Boolean. `true` on success.
-
----
-
-### File.resolve()
-
-`fileObj.resolve()`
-
-#### 描述
-
-If this object references an alias or shortcut, this method resolves that alias and returns a new File object that references the file-system element to which the alias resolves.
-
-#### 返回
-
-The new [File object](#file-object), or `null` if this object does not reference an alias, or if the alias cannot be resolved.
-
----
-
-### File.saveDlg()
-
-`fileObj.saveDlg([prompt=""][, preset=""])`
-
-#### 描述
-
-Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file location to which to save information, and creates a new File object to represent the selected file.
-
-Differs from the class method [saveDialog()](#filesavedialog) in that it presets the current folder to this File object's parent folder and the file to this object's associated file.
-
-#### 参数
-
-| 参数 |        类型        |                                                      描述                                                      |
-|-----------|--------------------|-----------------------------------------------------------------------------------------------------------------------|
-| `prompt`  | String             | Optional. The prompt text, if the dialog allows a prompt.                                                             |
-| `filter`  | String or Function | Optional. A filter that limits the types of files displayed in the dialog.                                            |
-|           |                    | In Windows, a filter expression, such as `"JavaScript:*.jsx;All files:*.*"`                                           |
-|           |                    | !!! tip                                                                                                               |
-|           |                    |     - Separate expression with a semicolon (`;`) to filter by all these types at once; (show `jsx` AND `all`)         |
-|           |                    |     - Separate with a comma (`,`) to populate the filter dropdown, to select one type at a time (show `jsx` OR `all`) |
-|           |                    | Not used in MacOS                                                                                                     |
-
-#### 返回
-
-The [File object](#file-object) for the selected file.
-
-If the user cancels, returns `null`.
-
----
-
-### File.seek()
-
-`fileObj.seek(pos[, mode=0])`
-
-#### 描述
-
-Seeks to the specified position in the file. The new position cannot be less than 0 or greater than the current file size.
-
-#### 参数
-
-| 参数 |  类型  |                                                         描述                                                         |
-|-----------|--------|-----------------------------------------------------------------------------------------------------------------------------|
-| `pos`     | Number | The new current position in the file as an offset in bytes from the start, current position, or end, depending on the mode. |
-| `mode`    | Number | Optional. The seek mode, one of:                                                                                            |
-|           |        | - `0`: Seek to absolute position, where pos=0 is the first byte of the file. This is the default.                           |
-|           |        | - `1`: Seek relative to the current position.                                                                               |
-|           |        | - `2`: Seek backward from the end of the file.                                                                              |
-
-#### 返回
-
-Boolean. `true` if the position was changed.
-
----
-
-### File.tell()
-
-`fileObj.tell()`
-
-#### 描述
-
-Retrieves the current position index as a byte offset from the start of the file.
-
-#### 返回
-
-Number
-
----
-
-### File.write()
-
-`fileObj.write( text[, text...]...)`
-
-#### 描述
-
-Writes the specified text to the file at the current position. For encoded files, writing a single Unicode character may write multiple bytes.
-
-:::warning
-Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.
-:::
-
-#### 参数
-
-| 参数 |  类型  |                                  描述                                  |
-| --------- | ------ | ----------------------------------------------------------------------------- |
-| `text`    | String | One or more strings to write, which are concatenated to form a single string. |
-
-#### 返回
-
-Boolean. `true` on success.
-
----
-
-### File.writeln()
-
-`fileObj.writeln (text[, text...]...)`
-
-#### 描述
-
-Writes the specified text to the file at the current position, and appends a Line Feed sequence in the style specified by the linefeed property.For encoded files, writing a single Unicode character may write multiple bytes.
-
-:::warning
-Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.
-:::
-
-#### 参数
-
-| 参数 |  类型  |                                  描述                                  |
-| --------- | ------ | ----------------------------------------------------------------------------- |
-| `text`    | String | One or more strings to write, which are concatenated to form a single string. |
-
-#### 返回
-
-Boolean. `true` on success.
+| 参数 |  类型 

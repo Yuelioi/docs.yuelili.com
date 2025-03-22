@@ -1,43 +1,43 @@
 ---
-title: tips-tricks
+title: 技巧与窍门
 ---
-# Tips & Tricks
+# 技巧与窍门
 
-## Best Practices
+## 最佳实践
 
-If your prototypes are anything like ours, the first version of your plug-in that runs without crashing differs radically from the version that actually ships.
+如果你的原型和我们的类似，那么你的插件第一个不崩溃的版本与最终发布的版本可能会有很大的不同。
 
-How your plug-in responds to things like downsampling, errors and exceptions, pixel aspect ratio, out-of-memory situations, and being interrupted while processing determines how usable it is (and how many support requests you'll have to handle).
-
----
-
-## Responsiveness
-
-Make your plug-ins as responsive as possible using `PF_ABORT()` and `PF_PROGRESS()` from [Interaction Callbacks](interaction-callback-functions.md#interaction-callbacks).
-
-We actually test all our effects for interrupt-ability; you'd be surprised how cranky users can get waiting for your pokey effect to finish processing a film resolution sequence!
-
-After Effects' iteration functions inherently provide this functionality; you don't need to worry about calling the above functions from within your pixel processing functions.
+你的插件如何处理诸如降采样、错误和异常、像素宽高比、内存不足情况以及处理过程中被中断等问题，决定了它的可用性（以及你需要处理多少支持请求）。
 
 ---
 
-## Make Your Effect Easy To Find
+## 响应性
 
-It's possible to have your effect show up in the "Effects & Presets" palette when users search for something other than the plug-in's name.
+使用[交互回调](interaction-callback-functions.md#interaction-callbacks)中的`PF_ABORT()`和`PF_PROGRESS()`，使你的插件尽可能响应迅速。
 
-Apply your effect (leaving the settings at default, unless you're very certain the user will want something different when they search for the given term), and select "Save selection as animation preset" from the effect controls palette.
+我们实际上测试了所有效果的中断能力；你会惊讶于用户等待你的缓慢效果处理完一个电影分辨率序列时会有多不耐烦！
 
-Save it to the name by which you want users to find the plug-in.
-
-Have your plug-in's installer put the resultant .ffx file into the \\Presets directory, next to the After Effects executable.
-
-Your preset will show up when users search for the name to which it was saved.
+After Effects的迭代函数本身提供了这种功能；你不需要担心在像素处理函数中调用上述函数。
 
 ---
 
-## Sampling Pixels At (x,y)
+## 让你的效果易于找到
 
-Sometimes, instead of just processing every pixel, you'll want to get to a specific offset within the input frame. Below is one way to sample the pixel at a given (x,y) location; similar code could be used to write to the given location.
+可以让你的效果在用户搜索插件名称以外的内容时显示在“效果与预设”面板中。
+
+应用你的效果（保持设置为默认值，除非你非常确定用户在搜索给定术语时会想要不同的设置），然后从效果控制面板中选择“将选择保存为动画预设”。
+
+将其保存为你希望用户找到插件的名称。
+
+让你的插件安装程序将生成的.ffx文件放入\\Presets目录，与After Effects可执行文件相邻。
+
+当用户搜索保存的名称时，你的预设将显示出来。
+
+---
+
+## 在(x,y)处采样像素
+
+有时，你不仅想处理每个像素，还想在输入帧中获取特定偏移量。以下是一种在给定(x,y)位置采样像素的方法；类似的代码可以用于写入给定位置。
 
 ```cpp
 PF_Pixel *sampleIntegral32(PF_EffectWorld &def, int x, int y){
@@ -54,35 +54,35 @@ PF_Pixel16 *sampleIntegral64(PF_EffectWorld &def, int x, int y){
 }
 ```
 
-Special thanks to Paul Miller for answering this question.
+特别感谢Paul Miller回答这个问题。
 
 ---
 
-## Where's The Center Of A Pixel?
+## 像素的中心在哪里？
 
-Deeeeeep, man. After Effects rotates around the upper left corner of the upper left pixel when the anchor point (see User Documentation) is (0,0).
+深奥的问题，伙计。当锚点（参见用户文档）为(0,0)时，After Effects围绕左上角像素的左上角旋转。
 
-However, the subpixel sample and area sample callbacks actually treat (.0, .0) as a direct hit. To compensate for this, subtract 0.5 from x and y values before calling those functions.
+然而，子像素采样和区域采样回调实际上将(.0, .0)视为直接命中。为了补偿这一点，在调用这些函数之前从x和y值中减去0.5。
 
-The matrix functions (`transform_world` from [PF_WorldTransformSuite1](graphics-utility-suites.md#pf_worldtransformsuite1)) don't have this problem.
+矩阵函数（来自[PF_WorldTransformSuite1](graphics-utility-suites.md#pf_worldtransformsuite1)的`transform_world`）没有这个问题。
 
-When translating an image by a subpixel amount, make the output layer one pixel wider than its input, and leave the origin at (0,0).
-
----
-
-## Text Layer Origin
-
-Almost all layer types have their origin in the upper-left corner. Not so with text layers!
-
-A text layer origin by default is at the bottom-left baseline position of the first character. You can see this if you create a text item and then pick the layer so the anchor point shows up.
-
-Look at where the default anchor point location is. The transform is not at the corner of the layer rectangle.
+当以子像素量平移图像时，使输出层比其输入宽一个像素，并将原点保持在(0,0)。
 
 ---
 
-## Clean Slate
+## 文本层原点
 
-You don't necessarily begin effect processing with a clean output slate. Our Gaussian blur filter, in an effort to do so, performs the following before rendering:
+几乎所有图层类型的原点都在左上角。文本层则不然！
+
+默认情况下，文本层的原点位于第一个字符的底部基线位置。如果你创建一个文本项然后选择图层，锚点会显示出来。
+
+看看默认锚点位置在哪里。变换不在图层矩形的角落。
+
+---
+
+## 干净的画布
+
+你不一定从干净的输出画布开始效果处理。我们的高斯模糊滤镜为了做到这一点，在渲染之前执行以下操作：
 
 ```cpp
 src_rect.left   = in_data>output_origin_x;
@@ -99,35 +99,35 @@ if (!err) {
 
 ---
 
-## Caching Behavior
+## 缓存行为
 
-After Effects provides numerous ways to specify caching behavior. `PF_OutFlag_NON_PARAM_VARY`, `PF_OutFlag_WIDE_TIME_INPUT`, `PF_OutFlag_I_USE_SHUTTER_ANGLE`, `PF_OutFlag_I_SYNTHESIZE_AUDIO`, `PF_OutFlag2_I_USE_3D_CAMERA`, and `PF_OutFlag2_I_USE_3D_LIGHTS` (all from [PF_OutFlags](../effect-basics/PF_OutData.md#pf_outflags)) all influence caching decisions.
+After Effects提供了多种指定缓存行为的方式。`PF_OutFlag_NON_PARAM_VARY`、`PF_OutFlag_WIDE_TIME_INPUT`、`PF_OutFlag_I_USE_SHUTTER_ANGLE`、`PF_OutFlag_I_SYNTHESIZE_AUDIO`、`PF_OutFlag2_I_USE_3D_CAMERA`和`PF_OutFlag2_I_USE_3D_LIGHTS`（均来自[PF_OutFlags](../effect-basics/PF_OutData.md#pf_outflags)）都会影响缓存决策。
 
-Supporting [dynamic outflags](../effect-basics/PF_OutData.md#pf_outflags) can greatly improve performance, preventing After Effects from invalidating your effect's cache as aggressively as it otherwise would.
+支持[动态outflags](../effect-basics/PF_OutData.md#pf_outflags)可以极大地提高性能，防止After Effects像其他情况下那样积极地使你的效果缓存失效。
 
-Confirm that your plug-in performs well with different After Effects cache settings. Does your plug-in get called to update as often as expected, or does After Effects think it has valid pixels when you think it doesn't?
-
----
-
-## Global Performance Cache Consideratons
-
-With the new caching in CS6, you may need to clear cached frames after changing your effect's rendering, so that frames rendered and stored in the cache prior to the change will not be reused. To do so manually during development:
-
-1. In Preferences > Media & Disk Cache, disable the Disk Cache
-2. Click "Empty Disk Cache" just to be sure (disabling the Disk Cache in step 1 only disables the *writing* of disk cache, not necessarily the usage)
-3. Relaunch
-
-If you ever encounter a glitch, it likely a legitimate bug in your effect, such as improper rectangle handling in SmartFX.
-
-On the other hand, if you fix a rendering bug in your plug-in and ship an update, you can't expect all users will empty their disk caches. A user may have a disk cache of the buggy frame and it needs to be invalidated. What to do? Update your plug-in's effect version. This value (and the AE build number) is part of the cache key, so if you update it any frames cached containing content from your plug-in will no longer match.
+确认你的插件在不同的After Effects缓存设置下表现良好。你的插件是否按预期被调用来更新，或者After Effects认为它有有效的像素而你认为没有？
 
 ---
 
-## Some Thoughts On Time From A Long-Time Developer
+## 全局性能缓存考虑
 
-Stoney Ballard put together the following summary of how time works with effects; you may find it helpful.
+在CS6中，新的缓存机制可能需要你在更改效果的渲染后清除缓存帧，以便在更改之前渲染并存储在缓存中的帧不会被重用。在开发过程中手动执行此操作：
 
-There are five `in_data` parameters that describe time to a filter:
+1. 在首选项 > 媒体与磁盘缓存中，禁用磁盘缓存
+2. 点击“清空磁盘缓存”以确保（在步骤1中禁用磁盘缓存仅禁用磁盘缓存的*写入*，而不一定是使用）
+3. 重新启动
+
+如果你遇到任何故障，这可能是你的效果中的一个合法错误，例如SmartFX中的矩形处理不当。
+
+另一方面，如果你修复了插件中的渲染错误并发布了更新，你不能期望所有用户都会清空他们的磁盘缓存。用户可能有错误帧的磁盘缓存，需要使其失效。怎么办？更新你的插件的效果版本。此值（以及AE构建号）是缓存键的一部分，因此如果你更新它，任何包含你插件内容的缓存帧将不再匹配。
+
+---
+
+## 来自长期开发者的一些关于时间的思考
+
+Stoney Ballard整理了以下关于效果如何与时间配合的总结；你可能会发现它很有帮助。
+
+有五个`in_data`参数描述时间给滤镜：
 
 - `current_time`
 - `time_step`
@@ -135,54 +135,52 @@ There are five `in_data` parameters that describe time to a filter:
 - `total_time`
 - `time_scale`
 
-Their values are dependent on:
+它们的值取决于：
 
-- The frame being rendered
-- The duration of the layer and composition The frame rate of the comp
-- Any Time Stretch Any Time Remapping
-- The time behavior of an outer composition (one enclosing the composition with the layer being filtered)
-- The setting of the "Preserve frame rate when nested or in render queue" (PFR) switch
+- 正在渲染的帧
+- 图层和合成的持续时间
+- 合成的帧速率
+- 任何时间拉伸
+- 任何时间重映射
+- 外部合成的时间行为（包含正在过滤的图层的合成）
+- “嵌套或在渲染队列中时保留帧速率”（PFR）开关的设置
 
-The frame being rendered affects current_time. It is expressed in the local (layer) time system. If the PFR switch is off, current_time may be any non-negative value. If on, it will be restricted to a multiple of time_step and local_time_step. Layer duration affects only total_time. Comp duration is a factor only when Time Remapping (TR) is on. In that case, total_time is the larger of layer duration and composition duration. Composition frame rate affects only the time_scale. Time Stretch affects only time_step and local_time_step. If the time stretch is negative, these values are negative. Even if the layer's duration (as seen in
+正在渲染的帧影响current_time。它以本地（图层）时间系统表示。如果PFR开关关闭，current_time可以是任何非负值。如果打开，它将被限制为time_step和local_time_step的倍数。图层持续时间仅影响total_time。合成持续时间仅在时间重映射（TR）打开时是一个因素。在这种情况下，total_time是图层持续时间和合成持续时间中较大的一个。合成帧速率仅影响time_scale。时间拉伸仅影响time_step和local_time_step。如果时间拉伸为负，这些值为负。即使图层的持续时间（在合成中看到的）发生变化，total_time仍然不受影响。这就像时间拉伸在滤镜*之上*，但在外部合成*之下*。PFR不会改变时间拉伸的效果。时间拉伸与外部合成不同，因为它平等地影响两个步进参数，而外部合成仅影响time_step。
 
-the comp) changes, total_time remains unaffected. This works as if Time Stretch was *above* a filter, but *below* an outer comp. PFR does not alter the effect of Time Stretch. Time Stretch is different than an outer comp, since it affects both step params equally, while an outer comp affects only time_step.
+时间重映射发生在滤镜*之下*，因此它不会影响除total_time之外的时间参数。当TR打开时，图层被延长到与合成相同的时间（但从不缩短），无论实际需要多少时间，或者图层在合成中的位置。这可能导致total_time变大。它与实际的时间映射无关，只是是否启用。
 
-Time Remapping happens *below* the filter, so that it does not affect the time params other than the total_time. When TR is on, the layer is lengthened to the same as the comp (but never shortened), regardless of how much time it actually takes, or where in the comp the layer is. This may cause total_time to be larger. It has nothing to do with the actual time map, just whether or not it's enabled.
+最大的变化来自嵌套在外部合成中，除非PFR打开。当PFR打开时，滤镜完全与外部合成中的时间变化隔离。当然，在这种情况下，current_time不一定以time_step的增量移动。它可能会跳过帧或向后移动。
 
-The biggest variation comes from being nested in an outer comp, unless PFR is on. When PFR is on, a filter is completely isolated from time variations in an outer comp. Of course, current_time will not necessarily move in increments of time_step in that case. It may skip frames or go backwards.
+当PFR关闭时，local_time_step、total_time和time_scale保持设置为内部合成的值，但time_step包含外部合成中下一帧的时间，以本地时间系统表示。这可以是任何值，包括0。这可以解释为瞬时时间速率，而不是持续时间。0值可以持续任意数量的渲染帧，但current_time在本地图层上不会改变。
 
-When PFR is off, local_time_step, total_time, and time_scale remain set to what they were for the inner comp, but time_step contains the time to the next frame in the outer comp, expressed in the local time system. This may be any value, including 0. This can be interpreted as an instantaneous time rate, rather than a duration. A 0 value can last for an arbitrary number of rendered frames, but the current_time won't change on the local layer.
+从另一个方向看：
 
-Looked at from the other direction:
+current_time被量化为time_step间隔，除非渲染外部合成且内部合成的PFR关闭。这是图层中的当前时间，而不是任何合成中的时间。
 
-current_time is quantized to time_step intervals unless rendering an outer comp with PFR off for the inner comp. This is the current time in the layer, not in any comp.
+local_time_step的值仅受时间拉伸影响。它永远不会为零，但可以为负。
 
-The value of local_time_step is affected only by Time Stretch. It can never be zero, but it can be negative.
+time_step和local_time_step总是相同的值，除非渲染外部合成且PFR关闭。time_step还受外部合成的时间行为影响（PFR关闭）。它可以有任何值，正、负或零，并且可以为每一帧（外部合成的）不同。time_step可用于确定当前帧的持续时间（PFR关闭）。
 
-time_step and local_time_step are always the same value unless rendering an outer comp with PFR off. time_step is also affected by the time behavior of an outer comp (with PFR off). It can have any value, positive, negative, or zero, and can be different for every frame (of the outer comp). time_step can be used to determine the duration of the current frame (with PFR off).
+total_time是图层的持续时间，除非时间重映射打开，这使它成为图层持续时间和合成持续时间中较大的一个。
 
-total_time is the duration of the layer, unless Time Remapping is on, which makes it the larger of the layer duration and the duration of the comp.
+time_scale是比例，使得total_time / time_scale是图层在其合成中的持续时间（以秒为单位）。它仅受合成帧速率影响，尽管所有时间值可以按比例缩放。
 
-time_scale is the scale such that total_time / time_scale is the layer duration in seconds in its comp. It is affected only by the comp frame rate, although presumably all the time values could be scaled proportionately for any reason.
-
-A layer's intrinsic frame rate (if it has one) is not visible anywhere, although it's usually the same as the comp frame rate. If a filter needs to access the actual frames of a clip, it can do so
-
-only by being in a comp of the same frame rate, and with no Time Stretch or Time Remapping applied to its layer. It should use local_time_step to determine where the frames are.
+图层的固有帧速率（如果有）在任何地方都不可见，尽管它通常与合成帧速率相同。如果滤镜需要访问剪辑的实际帧，它只能通过在与剪辑相同帧速率的合成中，并且没有时间拉伸或时间重映射应用于其图层来实现。它应该使用local_time_step来确定帧的位置。
 
 ---
 
-## Rate x Time == Pain!
+## 速率 x 时间 == 痛苦！
 
-Be careful if one of your parameters is a speed or velocity parameter. Consider the ripple effect. It assumes a constant and uses the current time to determine how far along the ripple has gone (d = v \* t). If the user interpolates the speed over time, you should integrate the velocity function from time zero to the current time. Ripple does *not* do this, but provides a "phase" parameter that the user can interpolate as they wish, providing correct results as long as the speed is set to zero. If you want to provide the correct behavior, you can sample (and integrate) the speed parameter from the beginning of time until the current time using PF_CHECKOUT_PARAM(), or you can provide a "phase" or "distance" parameter and warn the user about interpolating the speed. The cost of checking out many parameter values is negligible compared to rendering, and is the recommended approach.
+如果你的参数之一是速度或速度参数，请小心。考虑涟漪效果。它假设一个常数并使用当前时间来确定涟漪已经走了多远（d = v \* t）。如果用户在时间上插值速度，你应该从时间零到当前时间积分速度函数。涟漪效果*不*这样做，但提供了一个“相位”参数，用户可以按意愿插值，只要速度设置为零，就能提供正确的结果。如果你想提供正确的行为，你可以使用PF_CHECKOUT_PARAM()从时间开始到当前时间采样（并积分）速度参数，或者你可以提供“相位”或“距离”参数并警告用户关于插值速度。与渲染相比，检查出许多参数值的成本可以忽略不计，是推荐的方法。
 
-If you check out parameter values at other times, or use layer parameters at all, you *must* check in those parameters when finished, even if an error has occurred. Remember, checked-out parameters are read-only.
+如果你在其他时间检查出参数值，或使用图层参数，你*必须*在完成后检查这些参数，即使发生了错误。记住，检查出的参数是只读的。
 
 ---
 
-## Testing
+## 测试
 
-Try using your plug-in in RAM previews to ensure you handle out-of-memory conditions gracefully. Does your plug-in handle running out of memory gracefully?
+尝试在RAM预览中使用你的插件，以确保你优雅地处理内存不足的情况。你的插件是否优雅地处理内存不足？
 
-If you receive `PF_Err_OUT_OF_MEMORY` (from [Error Codes](../effect-basics/errors.md#error-codes)) when requesting memory, do you pass it back to After Effects?
+如果你在请求内存时收到`PF_Err_OUT_OF_MEMORY`（来自[错误代码](../effect-basics/errors.md#error-codes)），你是否将其传递回After Effects？
 
-What happens when your video effect is applied to an audio-only layer? Test with projects created using older versions of your plug-in.
+当你的视频效果应用于仅音频图层时会发生什么？使用旧版本的插件创建的项目进行测试。

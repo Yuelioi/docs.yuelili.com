@@ -1,23 +1,23 @@
 ---
-title: operator-overloading
+title: 运算符重载
 ---
-# Operator overloading
+# 运算符重载
 
-ExtendScript allows you to extend or override the behavior of a math or a Boolean operator for a specific class by defining a method in that class with same name as the operator. For example, this code defines the addition (+) operator for the class `MyClass`. In this case, the addition operator simply adds the operand to the property value:
+ExtendScript 允许你通过在类中定义一个与运算符同名的方法来扩展或覆盖特定类的数学或布尔运算符的行为。例如，以下代码为类 `MyClass` 定义了加法（+）运算符。在这种情况下，加法运算符简单地将操作数与属性值相加：
 
 ```javascript
-// define the constructor method
+// 定义构造函数
 function MyClass (initialValue) {
     this.value = initialValue;
 }
 
-// define the addition operator
+// 定义加法运算符
 MyClass.prototype ["+"] = function (operand) {
     return this.value + operand;
 }
 ```
 
-This allows you to perform the "+" operation with any object of this class:
+这允许你对该类的任何对象执行 "+" 操作：
 
 ```javascript
 var obj = new MyClass (5);
@@ -26,33 +26,32 @@ obj + 10;
 Result: 15
 ```
 
-You can override the following operators:
+你可以重载以下运算符：
 
+| 类别     |     运算符      |
+|----------|-----------------|
+| 一元运算符 | `+, ~`          |
+| 二元运算符 | - `+, *, /, %, ^` |
+|          | - `<, <=, ==`   |
+|          | - `<<, >>, >>>` |
+|          | - `&, \|, ===`  |
 
-| Category |     Operators     |
-|----------|-------------------|
-| Unary    | `+, ~`            |
-| Binary   | - `+, *, /, %, ^` |
-|          | - `<, <=, ==`     |
-|          | - `<<, >>, >>>`   |
-|          | - `&, \|, ===`    |
+- 运算符 `>` 和 `>=` 是通过执行 NOT 运算符 `<=` 和 NOT 运算符 `<` 来实现的。
+- 不支持组合赋值运算符，例如 `*=`。
 
-- The operators `>` and `>=` are implemented by executing NOT operator `<=` and NOT operator `<`.
-- Combined assignment operators such as `*=` are not supported.
+所有运算符重载的实现都必须返回操作的结果。要执行默认操作，请返回 `undefined`。
 
-All operator overload implementations must return the result of the operation. To perform the default operation, return `undefined`.
+一元运算符函数作用于 `this` 对象，而二元运算符作用于 `this` 对象和第一个参数。+ 和 - 运算符同时具有一元和二元实现。如果第一个参数是 `undefined`，则运算符是一元的；如果提供了第一个参数，则运算符是二元的。
 
-Unary operator functions work on the `this` object, while binary operators work on the `this` object and the first argument. The + and - operators have both unary and binary implementations. If the first argument is undefined, the operator is unary; if it is supplied, the operator is binary.
-
-For binary operators, a second argument indicates the order of operands. For noncommutative operators, either implement both order variants in your function or return `undefined` for combinations that you do not support. For example:
+对于二元运算符，第二个参数表示操作数的顺序。对于非交换运算符，要么在函数中实现两种顺序的变体，要么返回 `undefined` 以表示不支持的操作组合。例如：
 
 ```javascript
 this ["/"] = function (operand, rev) {
     if (rev) {
-        // do not resolve operand / this
+        // 不解析 operand / this
         return;
     } else {
-        // resolve this / operand
+        // 解析 this / operand
         return this.value / operand;
 }
 ```

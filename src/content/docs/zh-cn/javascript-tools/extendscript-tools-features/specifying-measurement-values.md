@@ -1,17 +1,17 @@
 ---
-title: specifying-measurement-values
+title: 指定测量值
 ---
-# Specifying measurement values
+# 指定测量值
 
-ExtendScript provides the UnitValue object to represent measurement values. The properties and methods of the UnitValue object make it easy to change the value, the unit, or both, or to perform conversions from one unit to another.
+ExtendScript 提供了 `UnitValue` 对象来表示测量值。`UnitValue` 对象的属性和方法使得更改值、单位或两者都更改变得容易，或者可以执行从一个单位到另一个单位的转换。
 
-## UnitValue object
+## UnitValue 对象
 
-Represents measurement values that contain both the numeric magnitude and the unit of measurement.
+表示包含数值大小和测量单位的测量值。
 
-### UnitValue object constructor
+### UnitValue 对象构造函数
 
-The UnitValue constructor creates a new UnitValue object. The keyword new is optional:
+`UnitValue` 构造函数创建一个新的 `UnitValue` 对象。关键字 `new` 是可选的：
 
 ```javascript
 myVal = new UnitValue (value, unit);
@@ -19,29 +19,29 @@ myVal = new UnitValue ("value unit");
 myVal = new UnitValue (value, "unit");
 ```
 
-The value is a number, and the unit is specified with a string in abbreviated, singular, or plural form, as shown in the following table.
+`value` 是一个数字，`unit` 用一个字符串指定，可以是缩写、单数或复数形式，如下表所示。
 
-| Abbreviation |       Singular        |         Plural         |       Comments       |
-| ------------ | --------------------- | ---------------------- | -------------------- |
-| `"in"`       | `"inch"`              | `"inches"`             | 2.54 cm              |
-| `"ft"`       | `"foot"`              | `"feet"`               | 30.48 cm             |
-| `"yd"`       | `"yard"`              | `"yards"`              | 91.44 cm             |
-| `"mi"`       | `"mile"`              | `"miles"`              | 1609.344 m           |
-| `"mm"`       | `"millimeter"`        | `"millimeters"`        |                      |
-| `"cm"`       | `"centintimeter"`     | `"centimeters"`        |                      |
-| `"m"`        | `"meter"`             | `"meters"`             |                      |
-| `"km"`       | `"kilometer"`         | `"kilometers"`         |                      |
-| `"pt"`       | `"point"`             | `"points"`             | inches / 72          |
-| `"pc"`       | `"pica"`              | `"picas"`              | points \* 12         |
-| `"tpt"`      | `"traditional point"` | `"traditional points"` | inches / 72.27       |
-| `"tpc"`      | `"traditional pica"`  | `"traditional picas"`  | 12 tpt               |
-| `"ci"`       | `"cicero"`            | `"ciceros"`            | 12.7872 pt           |
-| `"px"`       | `"pixel"`             | `"pixels"`             | baseless (see below) |
-| `"%"`       | `"percent"`           | `"percent"`            | baseless (see below) |
+| 缩写       | 单数形式            | 复数形式            | 备注                |
+| ---------- | ------------------- | ------------------- | ------------------- |
+| `"in"`     | `"inch"`            | `"inches"`          | 2.54 厘米           |
+| `"ft"`     | `"foot"`            | `"feet"`            | 30.48 厘米          |
+| `"yd"`     | `"yard"`            | `"yards"`           | 91.44 厘米          |
+| `"mi"`     | `"mile"`            | `"miles"`           | 1609.344 米         |
+| `"mm"`     | `"millimeter"`      | `"millimeters"`     |                     |
+| `"cm"`     | `"centintimeter"`   | `"centimeters"`     |                     |
+| `"m"`      | `"meter"`           | `"meters"`          |                     |
+| `"km"`     | `"kilometer"`       | `"kilometers"`      |                     |
+| `"pt"`     | `"point"`           | `"points"`          | 英寸 / 72           |
+| `"pc"`     | `"pica"`            | `"picas"`           | 点数 * 12           |
+| `"tpt"`    | `"traditional point"` | `"traditional points"` | 英寸 / 72.27       |
+| `"tpc"`    | `"traditional pica"` | `"traditional picas"` | 12 tpt             |
+| `"ci"`     | `"cicero"`          | `"ciceros"`         | 12.7872 点          |
+| `"px"`     | `"pixel"`           | `"pixels"`          | 无基准（见下文）    |
+| `"%"`      | `"percent"`         | `"percent"`         | 无基准（见下文）    |
 
-If an unknown unit type is supplied, the type is set to `"?"`, and the `UnitValue` object prints as "UnitValue 0.00000".
+如果提供了未知的单位类型，类型将设置为 `"?"`，并且 `UnitValue` 对象将打印为 `"UnitValue 0.00000"`。
 
-For example, all the following formats are equivalent:
+例如，以下所有格式都是等效的：
 
 ```javascript
 myVal = new UnitValue (12, "cm");
@@ -59,11 +59,11 @@ myVal = UnitValue ("12 centimeters");
 
 #### 描述
 
-A [UnitValue object](#unitvalue-object) that defines the size of one pixel, or a total size to use as a base for percentage values.
+一个 [UnitValue 对象](#unitvalue-object)，用于定义一个像素的大小，或用作百分比值基准的总大小。
 
-This is used as the base conversion unit for pixels and percentages; see [Converting pixel and percentage values](#converting-pixel-and-percentage-values).
+这被用作像素和百分比的基础转换单位；请参阅 [转换像素和百分比值](#converting-pixel-and-percentage-values)。
 
-Default is 0.013889 inches (1/72 in), which is the base conversion unit for pixels at 72 dpi. Set to null to restore the default.
+默认值为 0.013889 英寸（1/72 英寸），这是 72 dpi 下像素的基础转换单位。设置为 `null` 以恢复默认值。
 
 #### 类型
 
@@ -77,7 +77,7 @@ UnitValue
 
 #### 描述
 
-The unit type in abbreviated form; for example, "cm" or "in".
+单位类型的缩写形式；例如，`"cm"` 或 `"in"`。
 
 #### 类型
 
@@ -91,7 +91,7 @@ String
 
 #### 描述
 
-The numeric measurement value.
+数值测量值。
 
 #### 类型
 
@@ -109,13 +109,13 @@ Number
 
 #### 描述
 
-Returns the numeric value of this object in the given unit. If the unit is unknown or cannot be computed, generates a run-time error.
+返回此对象在给定单位中的数值。如果单位未知或无法计算，则生成运行时错误。
 
-#### Parameter
+#### 参数
 
-| 参数 |  类型  |                            描述                            |
-| --------- | ------ | ----------------------------------------------------------------- |
-| `unit`    | String | The unit type in abbreviated form; for example, `"cm"` or `"in"`. |
+| 参数   | 类型   | 描述                             |
+| ------ | ------ | -------------------------------- |
+| `unit` | String | 单位类型的缩写形式；例如，`"cm"` 或 `"in"`。 |
 
 #### 返回
 
@@ -129,15 +129,15 @@ Number
 
 #### 描述
 
-Converts this object to the given unit, resetting the type and value accordingly.
+将此对象转换为给定单位，并相应地重置类型和值。
 
-Returns `true` if the conversion is successful. If the unit is unknown or the object cannot be converted, generates a run-time error and returns `false`.
+如果转换成功，则返回 `true`。如果单位未知或对象无法转换，则生成运行时错误并返回 `false`。
 
-#### Parameter
+#### 参数
 
-| 参数 |  类型  |                            描述                            |
-| --------- | ------ | ----------------------------------------------------------------- |
-| `unit`    | String | The unit type in abbreviated form; for example, `"cm"` or `"in"`. |
+| 参数   | 类型   | 描述                             |
+| ------ | ------ | -------------------------------- |
+| `unit` | String | 单位类型的缩写形式；例如，`"cm"` 或 `"in"`。 |
 
 #### 返回
 
@@ -145,30 +145,30 @@ Boolean
 
 ---
 
-## Converting pixel and percentage values
+## 转换像素和百分比值
 
-Converting measurements among different units requires a common base unit. For example, for length, the meter is the base unit. All length units can be converted into meters, which makes it possible to convert any length unit into any other length unit.
+在不同单位之间转换测量值需要一个共同的基础单位。例如，对于长度，米是基础单位。所有长度单位都可以转换为米，这使得可以将任何长度单位转换为任何其他长度单位。
 
-Pixels and percentages do not have a standard common base unit. Pixel measurements are relative to display resolution, and percentages are relative to an absolute total size.
+像素和百分比没有标准的共同基础单位。像素测量相对于显示分辨率，而百分比相对于绝对总大小。
 
-- To convert pixels into length units, you must know the size of a single pixel. The size of a pixel depends on the display resolution. A common resolution measurement is 72 dpi, which means that there are 72 pixels to the inch. The conversion base for pixels at 72 dpi is 0.013889 inches (1/72 inch).
-- Percentage values are relative to a total measurement. For example, 10% of 100 inches is 10 inches, while 10% of 1 meter is 0.1 meters. The conversion base of a percentage is the unit value corresponding to 100%.
+- 要将像素转换为长度单位，您必须知道单个像素的大小。像素的大小取决于显示分辨率。常见的分辨率测量是 72 dpi，这意味着每英寸有 72 个像素。72 dpi 下像素的转换基础是 0.013889 英寸（1/72 英寸）。
+- 百分比值是相对于总测量的。例如，100 英寸的 10% 是 10 英寸，而 1 米的 10% 是 0.1 米。百分比的基础转换单位是 100% 对应的单位值。
 
-The default `baseUnit` of a `unitValue` object is 0.013889 inches, the base for pixels at 72 dpi. If the `unitValue` is for pixels at any other dpi, or for a percentage value, you must set the `baseUnit` value accordingly. The `baseUnit` value is itself a `unitValue` object, containing both a magnitude and a unit.
+`unitValue` 对象的默认 `baseUnit` 是 0.013889 英寸，即 72 dpi 下像素的基础。如果 `unitValue` 用于任何其他 dpi 的像素或百分比值，则必须相应地设置 `baseUnit` 值。`baseUnit` 值本身是一个 `unitValue` 对象，包含大小和单位。
 
-For a system using a different DPI, you can change the `baseUnit` value in the `UnitValue` class, thus changing the default for all new `unitValue` objects. For example, to double the resolution of pixels:
+对于使用不同 DPI 的系统，您可以更改 `UnitValue` 类中的 `baseUnit` 值，从而更改所有新 `unitValue` 对象的默认值。例如，要将像素的分辨率加倍：
 
 ```javascript
 UnitValue.baseUnit = UnitValue (1/144, "in"); //144 dpi
 ```
 
-To restore the default, assign null to the class property:
+要恢复默认值，请将 `null` 分配给类属性：
 
 ```javascript
-UnitValue.baseUnit = null; //restore default
+UnitValue.baseUnit = null; //恢复默认值
 ```
 
-You can override the default value for any particular unitValue object by setting the property in that object. For example, to create a unitValue object for pixels with 96 dpi:
+您可以通过在该对象中设置属性来覆盖任何特定 `unitValue` 对象的默认值。例如，要创建一个 96 dpi 的像素 `unitValue` 对象：
 
 ```javascript
 pixels = UnitValue (10, "px");
@@ -176,7 +176,7 @@ myPixBase = UnitValue (1/96, "in");
 pixels.baseUnit = myPixBase;
 ```
 
-For percentage measurements, set the baseUnit property to the measurement value for 100%. For example, to create a unitValue object for 40% of 10 feet:
+对于百分比测量，将 `baseUnit` 属性设置为 100% 的测量值。例如，要创建一个 10 英尺的 40% 的 `unitValue` 对象：
 
 ```javascript
 myPctVal = UnitValue (40, "%");
@@ -184,72 +184,72 @@ myBase = UnitValue (10, "ft")
 myPctVal.baseUnit = myBase;
 ```
 
-Use the [as()](#unitvalueas) method to get to a percentage value as a unit value:
+使用 [as()](#unitvalueas) 方法将百分比值转换为单位值：
 
 ```javascript
 myFootVal = myPctVal.as ("ft"); // => 4
 myInchVal = myPctVal.as ("in"); // => 36
 ```
 
-You can convert a unitValue from an absolute measurement to pixels or percents in the same way:
+您可以用相同的方式将 `unitValue` 从绝对测量转换为像素或百分比：
 
 ```javascript
-myMeterVal = UnitValue (10, "m"); // 10 meters
+myMeterVal = UnitValue (10, "m"); // 10 米
 myBase = UnitValue (1, "km");
-myMeterVal.baseUnit = myBase; //as a percentage of 1 kilometer
+myMeterVal.baseUnit = myBase; //作为 1 千米的百分比
 pctOfKm = myMeterVal.as ('%'); // => 1
-myVal = UnitValue ("1 in"); // Define measurement in inches
-// convert to pixels using default base
+myVal = UnitValue ("1 in"); // 定义以英寸为单位的测量值
+// 使用默认基础转换为像素
 myVal.convert ("px"); // => value=72 type=px
 ```
 
 ---
 
-## Computing with unit values
+## 使用单位值进行计算
 
-UnitValue objects can be used in computational JavaScript expressions. The way the value is used depends on the type of operator.
+`UnitValue` 对象可以用于 JavaScript 计算表达式中。值的使用方式取决于操作符的类型。
 
-### Unary operators `(~, !, +, -)`
+### 一元操作符 `(~, !, +, -)`
 
-|   Operator   |                                Behaviour                                |
-| ------------ | ----------------------------------------------------------------------- |
-| `~unitValue` | Result is a new UnitValue with the same type, but value converted to a 32-bit integer and inverted bitwise. |
-| `!unitValue` | Result is `true` if the numeric value is nonzero, `false` if it is not. |
-| `+unitValue` | Result is a new UnitValue with the same type and value as the original. |
-| `-unitValue` | Result is a new UnitValue with the same type and negated value from the original |
+| 操作符       | 行为                                                                 |
+| ------------ | -------------------------------------------------------------------- |
+| `~unitValue` | 结果是一个新的 `UnitValue`，具有相同的类型，但值转换为 32 位整数并按位取反。 |
+| `!unitValue` | 如果数值非零，则结果为 `true`，否则为 `false`。                      |
+| `+unitValue` | 结果是一个新的 `UnitValue`，具有与原始对象相同的类型和值。           |
+| `-unitValue` | 结果是一个新的 `UnitValue`，具有与原始对象相同的类型和取反的值。     |
 
-### Binary operators `(+, -, *, /, %)`
+### 二元操作符 `(+, -, *, /, %)`
 
-If one operand is unitValue object and the other is a number, the operation is applied to the number and the numeric value of the object. The expression returns a new unitValue object with the result as its value.
+如果一个操作数是 `unitValue` 对象，另一个是数字，则操作将应用于数字和对象的数值。表达式返回一个新的 `unitValue` 对象，结果作为其值。
 
-For example:
+例如：
 
 ```javascript
 val = new UnitValue ("10 cm");
 res = val * 20;
-// res is a UnitValue (200, "cm");
+// res 是一个 UnitValue (200, "cm");
 ```
 
-If both operands are unitValue objects, JavaScript converts the right operand to the same unit as the left operand and applies the operation to the resulting values. The expression returns a new unitValue object with the unit of the left operand, and the result value.
+如果两个操作数都是 `unitValue` 对象，JavaScript 将右操作数转换为与左操作数相同的单位，并将操作应用于结果值。表达式返回一个新的 `unitValue` 对象，具有左操作数的单位和结果值。
 
-For example:
+例如：
 
 ```javascript
 a = new UnitValue ("1 m");
 b = new UnitValue ("10 cm");
 a + b;
-// res is a UnitValue (1.1, "m");
+// res 是一个 UnitValue (1.1, "m");
 b + a;
-// res is a UnitValue (110, "cm");
+// res 是一个 UnitValue (110, "cm");
 ```
 
-### Comparisons (=, ==, <, >, <=, >=)
+### 比较操作符 `(=, ==, <, >, <=, >=)`
 
-If one operand is a unitValue object and the other is a number, JavaScript compares the number with the unitValue's numeric value.
+如果一个操作数是 `unitValue` 对象，另一个是数字，JavaScript 将数字与 `unitValue` 的数值进行比较。
 
-If both operands are unitValue objects, JavaScript converts both objects to the same unit, and compares the converted numeric values.
+如果两个操作数都是 `unitValue` 对象，JavaScript 将两个对象转换为相同的单位，并比较转换后的数值。
 
-For example:
+例如：
 
 ```javascript
 a = new UnitValue ("98 cm");

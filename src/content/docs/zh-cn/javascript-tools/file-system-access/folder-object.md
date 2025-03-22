@@ -1,37 +1,37 @@
 ---
-title: folder-object
+title: 文件对象
 ---
-# Folder Object
+# Folder 对象
 
-Represents a file-system folder or directory in a platform-independent manner. All properties and methods resolve file system aliases automatically and act on the original file unless otherwise noted.
+以平台无关的方式表示文件系统中的文件夹或目录。除非另有说明，所有属性和方法都会自动解析文件系统别名并作用于原始文件。
 
 ---
 
-## Folder Object Constructors
+## Folder 对象构造函数
 
 ```javascript
-Folder( [path] ); // Can return a File object
-new Folder( [path] ); // Always returns a Folder object
+Folder( [path] ); // 可能返回一个 File 对象
+new Folder( [path] ); // 始终返回一个 Folder 对象
 ```
 
-To create a Folder object, use the Folder function or the new operator. The constructor accepts full or partial path names, and returns the new object.
+要创建一个 Folder 对象，可以使用 `Folder` 函数或 `new` 操作符。构造函数接受完整或部分路径名，并返回新对象。
 
-| 参数 |  类型  |                                                                                                                           描述                                                                                                                            |
-|-----------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `path`    | String | Optional. The absolute or relative path to the Folder associated with this object, specified in platform-specific or URI format; see [Specifying paths](using-file-and-folder-objects.md#specifying-paths). The value stored in the object is the absolute path. |
-|           |        | The path need not refer to an existing Folder. If not supplied, a temporary name is generated.                                                                                                                                                                   |
-|           |        | If the path refers to an existing file:                                                                                                                                                                                                                          |
-|           |        | - The Folder function returns a File object instead of a File object.                                                                                                                                                                                            |
-|           |        | - The new operator returns a Folder object for a nonexisting folder with the same name.                                                                                                                                                                          |
-|           |        | !!! warning                                                                                                                                                                                                                                                      |
-|           |        |     In After Effects on MacOS, if `path.length` is more than 1002, After Effects crashes.                                                                                                                                                                        |
-|           |        |     This has been reported on MacOS 10.11.6 and After Effects 13.8 and 14.0.                                                                                                                                                                                     |
+| 参数     | 类型   | 描述                                                                                                                                                                |
+| -------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `path` | String | 可选。与此对象关联的文件夹的绝对或相对路径，以平台特定或 URI 格式指定；请参阅[指定路径](using-file-and-folder-objects.md#specifying-paths)。对象中存储的值为绝对路径。 |
+|          |        | 路径不必引用现有的文件夹。如果未提供，则生成一个临时名称。                                                                                                          |
+|          |        | 如果路径引用现有文件：                                                                                                                                              |
+|          |        | -`Folder` 函数返回一个 File 对象而不是 Folder 对象。                                                                                                              |
+|          |        | -`new` 操作符返回一个不存在的同名文件夹的 Folder 对象。                                                                                                           |
+|          |        | !!! 警告                                                                                                                                                            |
+|          |        | 在 MacOS 上的 After Effects 中，如果 `path.length` 超过 1002，After Effects 会崩溃。                                                                              |
+|          |        | 此问题已在 MacOS 10.11.6 和 After Effects 13.8 及 14.0 中报告。                                                                                                     |
 
 ---
 
-## Folder Class Attributes
+## Folder 类属性
 
-These properties are available as static properties of the Folder class. It is not necessary to create an instance to access them.
+这些属性作为 Folder 类的静态属性可用。无需创建实例即可访问它们。
 
 ### Folder.appData
 
@@ -39,14 +39,14 @@ These properties are available as static properties of the Folder class. It is n
 
 #### 描述
 
-A Folder object for the folder that contains application data for all users.
+包含所有用户的应用程序数据的文件夹的 Folder 对象。
 
-- In Windows, the value of `%PROGRAMDATA%` (by default, `C:\ProgramData`)
-- In Mac OS, `/Library/Application Support`
+- 在 Windows 中，值为 `%PROGRAMDATA%`（默认情况下为 `C:\ProgramData`）
+- 在 Mac OS 中，为 `/Library/Application Support`
 
 #### 类型
 
-Folder. Read only.
+Folder。只读。
 
 ---
 
@@ -56,14 +56,14 @@ Folder. Read only.
 
 #### 描述
 
-The Folder object for the folder that contains the bundle of the running application.
+包含正在运行的应用程序的捆绑包的文件夹的 Folder 对象。
 
-- In Windows, for example: `C:\Program Files (x86)\Adobe\Adobe ExtendScript Toolkit CC\`
-- In Mac OS, for example: `/Applications/Adobe ExtendScript Toolkit CC/ExtendScript Toolkit.app`
+- 在 Windows 中，例如：`C:\Program Files (x86)\Adobe\Adobe ExtendScript Toolkit CC\`
+- 在 Mac OS 中，例如：`/Applications/Adobe ExtendScript Toolkit CC/ExtendScript Toolkit.app`
 
 #### 类型
 
-String. Read only.
+String。只读。
 
 ---
 
@@ -73,14 +73,14 @@ String. Read only.
 
 #### 描述
 
-A Folder object for the folder that contains files common to all programs.
+包含所有程序共用的文件的文件夹的 Folder 对象。
 
-- In Windows, the value of `%CommonProgramFiles%` (by default, `C:\Program Files\Common Files`)
-- In Mac OS, `/Library/Application Support`
+- 在 Windows 中，值为 `%CommonProgramFiles%`（默认情况下为 `C:\Program Files\Common Files`）
+- 在 Mac OS 中，为 `/Library/Application Support`
 
 #### 类型
 
-Folder. Read only.
+Folder。只读。
 
 ---
 
@@ -90,7 +90,7 @@ Folder. Read only.
 
 #### 描述
 
-A Folder object for the current folder. Assign either a Folder object or a string containing the new path name to set the current folder.
+当前文件夹的 Folder 对象。可以通过分配 Folder 对象或包含新路径名称的字符串来设置当前文件夹。
 
 #### 类型
 
@@ -104,14 +104,14 @@ Folder
 
 #### 描述
 
-A Folder object for the folder that contains the user's desktop.
+包含用户桌面的文件夹的 Folder 对象。
 
-- In Windows, `C:\Users\[username]\Desktop`
-- In Mac OS, `~/Desktop`
+- 在 Windows 中，为 `C:\Users\[username]\Desktop`
+- 在 Mac OS 中，为 `~/Desktop`
 
 #### 类型
 
-Folder. Read only.
+Folder。只读。
 
 ---
 
@@ -121,17 +121,17 @@ Folder. Read only.
 
 #### 描述
 
-The name of the file system.
+文件系统的名称。
 
-One of:
+可能的值：
 
 - `Windows`,
-- `Macintosh`, or
+- `Macintosh`, 或
 - `Unix`
 
 #### 类型
 
-String. Read only.
+String。只读。
 
 ---
 
@@ -141,14 +141,14 @@ String. Read only.
 
 #### 描述
 
-A Folder object for the user's default document folder.
+用户的默认文档文件夹的 Folder 对象。
 
-- In Windows, `C:\Users\[username]\Documents`
-- In Mac OS, `~/Documents`
+- 在 Windows 中，为 `C:\Users\[username]\Documents`
+- 在 Mac OS 中，为 `~/Documents`
 
 #### 类型
 
-Folder. Read only.
+Folder。只读。
 
 ---
 
@@ -158,11 +158,11 @@ Folder. Read only.
 
 #### 描述
 
-A Folder object for the folder containing the executable image of the running application.
+包含正在运行的应用程序的可执行映像的文件夹的 Folder 对象。
 
 #### 类型
 
-Folder. Read only.
+Folder。只读。
 
 ---
 
@@ -172,14 +172,14 @@ Folder. Read only.
 
 #### 描述
 
-A Folder object for the folder containing the operating system files.
+包含操作系统文件的文件夹的 Folder 对象。
 
-- In Windows, the value of `%windir%` (by default, `C:\Windows`)
-- In Mac OS, `/System`
+- 在 Windows 中，值为 `%windir%`（默认情况下为 `C:\Windows`）
+- 在 Mac OS 中，为 `/System`
 
 #### 类型
 
-Folder. Read only.
+Folder。只读。
 
 ---
 
@@ -189,11 +189,11 @@ Folder. Read only.
 
 #### 描述
 
-A Folder object for the default folder for temporary files.
+默认临时文件夹的 Folder 对象。
 
 #### 类型
 
-Folder. Read only.
+Folder。只读。
 
 ---
 
@@ -203,12 +203,12 @@ Folder. Read only.
 
 #### 描述
 
-- In Mac OS, a Folder object for the folder containing deleted items.
-- In Windows, where the Recycle Bin is a database rather than a folder, value is `null`.
+- 在 Mac OS 中，包含已删除项目的文件夹的 Folder 对象。
+- 在 Windows 中，由于回收站是一个数据库而不是文件夹，因此值为 `null`。
 
 #### 类型
 
-Folder or `null`. Read only.
+Folder 或 `null`。只读。
 
 ---
 
@@ -218,20 +218,20 @@ Folder or `null`. Read only.
 
 #### 描述
 
-A Folder object for the folder that contains application data for the current user.
+包含当前用户的应用程序数据的文件夹的 Folder 对象。
 
-- In Windows, the value of %APPDATA% (by default, `C:\Users\[username]\Appdata\Roaming`)
-- In Mac OS, `~/Library/Application Support`
+- 在 Windows 中，值为 `%APPDATA%`（默认情况下为 `C:\Users\[username]\Appdata\Roaming`）
+- 在 Mac OS 中，为 `~/Library/Application Support`
 
 #### 类型
 
-Folder. Read only.
+Folder。只读。
 
 ---
 
-## Folder Class Methods
+## Folder 类方法
 
-These functions are available as a static methods of the Folder class. It is not necessary to create an instance in order to call them.
+这些函数作为 Folder 类的静态方法可用。无需创建实例即可调用它们。
 
 ### Folder.decode()
 
@@ -239,9 +239,9 @@ These functions are available as a static methods of the Folder class. It is not
 
 #### 描述
 
-Decodes the specified string as required by RFC 2396.
+按照 RFC 2396 的要求解码指定的字符串。
 
-All special characters must be encoded in UTF-8 and stored as escaped characters starting with the percent sign followed by two hexadecimal digits. For example, the string `"my%20file"` is decoded as `"my file"`. Special characters are those with a numeric value greater than 127, except the following:
+所有特殊字符必须以 UTF-8 编码并存储为以百分号开头后跟两个十六进制数字的转义字符。例如，字符串 `"my%20file"` 解码为 `"my file"`。特殊字符是数值大于 127 的字符，除了以下字符：
 
 ```javascript
 ``/ - _ . ! ~ * ' ( )``
@@ -249,9 +249,9 @@ All special characters must be encoded in UTF-8 and stored as escaped characters
 
 #### 参数
 
-| 参数 |  类型  |          描述          |
-| --------- | ------ | ----------------------------- |
-| `uri`     | String | The encoded string to decode. |
+| 参数    | 类型   | 描述                 |
+| ------- | ------ | -------------------- |
+| `uri` | String | 要解码的编码字符串。 |
 
 #### 返回
 
@@ -265,9 +265,9 @@ String
 
 #### 描述
 
-Encodes the specified string as required by RFC 2396.
+按照 RFC 2396 的要求编码指定的字符串。
 
-All special characters must be encoded in UTF-8 and stored as escaped characters starting with the percent sign followed by two hexadecimal digits. For example, the string `"my%20file"` is decoded as `"my file"`. Special characters are those with a numeric value greater than 127, except the following:
+所有特殊字符必须以 UTF-8 编码并存储为以百分号开头后跟两个十六进制数字的转义字符。例如，字符串 `"my%20file"` 解码为 `"my file"`。特殊字符是数值大于 127 的字符，除了以下字符：
 
 ```javascript
 ``/ - _ . ! ~ * ' ( )``
@@ -275,9 +275,9 @@ All special characters must be encoded in UTF-8 and stored as escaped characters
 
 #### 参数
 
-| 参数 |  类型  |      描述      |
-| --------- | ------ | --------------------- |
-| `name`    | String | The string to encode. |
+| 参数     | 类型   | 描述             |
+| -------- | ------ | ---------------- |
+| `name` | String | 要编码的字符串。 |
 
 #### 返回
 
@@ -291,17 +291,17 @@ String
 
 #### 描述
 
-Checks whether a given encoding is available.
+检查给定的编码是否可用。
 
 #### 参数
 
-| 参数 |  类型  |                                                                               描述                                                                                |
-| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `name`    | String | The encoding name. Typical values are `"ASCII"`, `"binary"`, or `"UTF-8"`. See [File- and Folder-supported encoding names](../file-and-folder-supported-encoding-names). |
+| 参数     | 类型   | 描述                                                                                                                                         |
+| -------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name` | String | 编码名称。典型值为 `"ASCII"`、`"binary"` 或 `"UTF-8"`。请参阅 [文件和文件夹支持的编码名称](../file-and-folder-supported-encoding-names)。 |
 
 #### 返回
 
-Boolean. `true` if your system supports the specified encoding, `false` otherwise.
+Boolean。如果系统支持指定的编码，则返回 `true`，否则返回 `false`。
 
 ---
 
@@ -311,25 +311,25 @@ Boolean. `true` if your system supports the specified encoding, `false` otherwis
 
 #### 描述
 
-Opens the built-in platform-specific file-browsing dialog, and creates a new File or Folder object for the selected file or folder. Differs from the object method [selectDlg()](#folderselectdlg) in that it does not preselect a folder.
+打开内置的平台特定的文件浏览对话框，并为所选文件或文件夹创建一个新的 File 或 Folder 对象。与对象方法 [selectDlg()](#folderselectdlg) 不同，它不会预选文件夹。
 
 #### 参数
 
-| 参数 |  类型  |          描述          |
-| --------- | ------ | ----------------------------- |
-| `prompt`   | String | Optional. The prompt text, if the dialog allows a prompt.   |
+| 参数       | 类型   | 描述                                     |
+| ---------- | ------ | ---------------------------------------- |
+| `prompt` | String | 可选。如果对话框允许提示，则为提示文本。 |
 
 #### 返回
 
-If the user clicks `OK`, returns a [File](.././file-object) or Folder object for the selected file or folder.
+如果用户点击 `OK`，则返回所选文件或文件夹的 [File](.././file-object) 或 Folder 对象。
 
-If the user cancels, returns `null`.
+如果用户取消，则返回 `null`。
 
 ---
 
-## Folder Object Attributes
+## Folder 对象属性
 
-These properties are available for Folder objects.
+这些属性可用于 Folder 对象。
 
 ### Folder.absoluteURI
 
@@ -337,11 +337,11 @@ These properties are available for Folder objects.
 
 #### 描述
 
-The full path name for the referenced folder in URI notation.
+引用文件夹的完整路径名，以 URI 表示法表示。
 
 #### 类型
 
-String. Read only.
+String。只读。
 
 ---
 
@@ -351,11 +351,11 @@ String. Read only.
 
 #### 描述
 
-When `true`, the object refers to a file system alias or shortcut.
+当为 `true` 时，对象引用文件系统别名或快捷方式。
 
 #### 类型
 
-Boolean. Read only.
+Boolean。只读。
 
 ---
 
@@ -365,11 +365,11 @@ Boolean. Read only.
 
 #### 描述
 
-The creation date of the referenced folder, or null if the object does not refer to a folder on disk.
+引用文件夹的创建日期，如果对象未引用磁盘上的文件夹，则为 `null`。
 
 #### 类型
 
-Date. Read only.
+Date。只读。
 
 ---
 
@@ -379,11 +379,11 @@ Date. Read only.
 
 #### 描述
 
-The localized name of the referenced folder, without the path.
+引用文件夹的本地化名称，不带路径。
 
 #### 类型
 
-String. Read only.
+String。只读。
 
 ---
 
@@ -393,9 +393,9 @@ String. Read only.
 
 #### 描述
 
-A message describing the most recent file system error; see [File access error messages](../file-access-error-messages).
+描述最近文件系统错误的消息；请参阅 [文件访问错误消息](../file-access-error-messages)。
 
-Typically set by the file system, but a script can set it. Setting this value clears any error message and resets the error bit for opened files. Contains the empty string if there is no error.
+通常由文件系统设置，但脚本也可以设置它。设置此值会清除任何错误消息并重置已打开文件的错误位。如果没有错误，则为空字符串。
 
 #### 类型
 
@@ -409,11 +409,11 @@ String
 
 #### 描述
 
-When `true`, this object refers to a folder that currently exists in the file system.
+当为 `true` 时，此对象引用文件系统中当前存在的文件夹。
 
 #### 类型
 
-Boolean. Read only.
+Boolean。只读。
 
 ---
 
@@ -423,11 +423,11 @@ Boolean. Read only.
 
 #### 描述
 
-The platform-specific name of the referenced folder as a full path name.
+引用文件夹的平台特定名称，作为完整路径名。
 
 #### 类型
 
-String. Read only.
+String。只读。
 
 ---
 
@@ -437,11 +437,11 @@ String. Read only.
 
 #### 描述
 
-The full path name for the referenced folder in URI notation.
+引用文件夹的完整路径名，以 URI 表示法表示。
 
 #### 类型
 
-String. Read only.
+String。只读。
 
 ---
 
@@ -451,11 +451,11 @@ String. Read only.
 
 #### 描述
 
-A localized version of the folder name portion of the absolute URI for the referenced file, without the path specification.
+引用文件的绝对 URI 的文件夹名称部分的本地化版本，不带路径规范。
 
 #### 类型
 
-String. Read only.
+String。只读。
 
 ---
 
@@ -465,11 +465,11 @@ String. Read only.
 
 #### 描述
 
-The date of the referenced folder's last modification, or `null` if the object does not refer to a folder on disk.
+引用文件夹的最后修改日期，如果对象未引用磁盘上的文件夹，则为 `null`。
 
 #### 类型
 
-Date. Read only.
+Date。只读。
 
 ---
 
@@ -479,11 +479,11 @@ Date. Read only.
 
 #### 描述
 
-The folder name portion of the absolute URI for the referenced file, without the path specification.
+引用文件的绝对 URI 的文件夹名称部分，不带路径规范。
 
 #### 类型
 
-String. Read only.
+String。只读。
 
 ---
 
@@ -493,11 +493,11 @@ String. Read only.
 
 #### 描述
 
-The Folder object for the folder that contains this folder, or `null` if this object refers to the root folder of a volume.
+包含此文件夹的文件夹的 Folder 对象，如果此对象引用卷的根文件夹，则为 `null`。
 
 #### 类型
 
-Folder. Read only.
+Folder。只读。
 
 ---
 
@@ -507,11 +507,11 @@ Folder. Read only.
 
 #### 描述
 
-The path portion of the absolute URI for the referenced folder, without the folder name.
+引用文件夹的绝对 URI 的路径部分，不带文件夹名称。
 
 #### 类型
 
-String. Read only.
+String。只读。
 
 ---
 
@@ -521,17 +521,17 @@ String. Read only.
 
 #### 描述
 
-The path name for the referenced folder in URI notation, relative to the current folder.
+引用文件夹的路径名，以 URI 表示法表示，相对于当前文件夹。
 
 #### 类型
 
-String. Read only.
+String。只读。
 
 ---
 
-## Folder Object Methods
+## Folder 对象方法
 
-These functions are available for Folder objects.
+这些函数可用于 Folder 对象。
 
 ### Folder.changePath()
 
@@ -541,15 +541,15 @@ These functions are available for Folder objects.
 
 #### 参数
 
-| 参数 |  类型  |                           描述                            |
-| --------- | ------ | ---------------------------------------------------------------- |
-| `path`    | String | The new path, absolute or relative to the current parent folder. |
+| 参数     | 类型   | 描述                                             |
+| -------- | ------ | ------------------------------------------------ |
+| `path` | String | 新路径，绝对路径或相对于当前父文件夹的相对路径。 |
 
-Changes the path specification of the referenced folder.
+更改引用文件夹的路径规范。
 
 #### 返回
 
-Boolean. `true` on success.
+Boolean。成功时返回 `true`。
 
 ---
 
@@ -559,11 +559,11 @@ Boolean. `true` on success.
 
 #### 描述
 
-Creates a folder at the location given by this object's path property.
+在此对象的路径属性指定的位置创建文件夹。
 
 #### 返回
 
-Boolean. `true` if the folder was created successfully.
+Boolean。如果文件夹成功创建，则返回 `true`。
 
 ---
 
@@ -573,11 +573,11 @@ Boolean. `true` if the folder was created successfully.
 
 #### 描述
 
-Opens this folder in the platform-specific file browser (as if it had been double-clicked in the file browser).
+在平台特定的文件浏览器中打开此文件夹（就像在文件浏览器中双击它一样）。
 
 #### 返回
 
-Boolean. `true` immediately if the folder was opened successfully.
+Boolean。如果文件夹成功打开，则立即返回 `true`。
 
 ---
 
@@ -587,22 +587,22 @@ Boolean. `true` immediately if the folder was opened successfully.
 
 #### 描述
 
-Retrieves the contents of this folder, filtered by the supplied mask.
+检索此文件夹的内容，并根据提供的掩码进行过滤。
 
 #### 参数
 
-| 参数 |        类型        |                                                                                                                                             描述                                                                                                                                             |
-|-----------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `mask`    | String or Function | Optional. A search mask for file names.                                                                                                                                                                                                                                                             |
-|           |                    | A string that can contain question mark (`?`) and asterisk (`*`) wild cards. Default is "`*`", which matches all file names.                                                                                                                                                                        |
-|           |                    | Can also be the name of a function that takes a File or Folder object as its argument.                                                                                                                                                                                                              |
-|           |                    | It is called for each file or folder found in the search; if it returns `true`, the object is added to the return array.                                                                                                                                                                            |
-|           |                    | !!! note                                                                                                                                                                                                                                                                                            |
-|           |                    |     In Windows, all aliases end with the extension `.lnk`; ExtendScript strips this from the file name when found, in order to preserve compatibility with other operating systems. You can search for all aliases by supplying the search mask `"*.lnk"`, but note that such code is not portable. |
+| 参数     | 类型               | 描述                                                                                                                                                                                                        |
+| -------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `mask` | String or Function | 可选。文件名的搜索掩码。                                                                                                                                                                                    |
+|          |                    | 可以包含问号 (`?`) 和星号 (`*`) 通配符的字符串。默认为 `"*"`，匹配所有文件名。                                                                                                                        |
+|          |                    | 也可以是函数的名称，该函数以 File 或 Folder 对象作为其参数。                                                                                                                                                |
+|          |                    | 它为搜索中找到的每个文件或文件夹调用；如果返回 `true`，则将对象添加到返回数组中。                                                                                                                         |
+|          |                    | !!! 注意                                                                                                                                                                                                    |
+|          |                    | 在 Windows 中，所有别名都以 `.lnk` 扩展名结尾；ExtendScript 在找到时从文件名中剥离此扩展名，以保持与其他操作系统的兼容性。您可以通过提供搜索掩码 `"*.lnk"` 来搜索所有别名，但请注意，此类代码不可移植。 |
 
 #### 返回
 
-Returns an array of [File](.././file-object) and Folder objects, or `null` if this object's referenced folder does not exist.
+返回 [File](.././file-object) 和 Folder 对象的数组，如果此对象引用的文件夹不存在，则返回 `null`。
 
 ---
 
@@ -612,92 +612,12 @@ Returns an array of [File](.././file-object) and Folder objects, or `null` if th
 
 #### 描述
 
-Retrieves the path for this folder relative to the specified base path or the current folder, in URI notation.
+检索此文件夹相对于指定基路径或当前文件夹的路径，以 URI 表示法表示。
 
 #### 参数
 
-| 参数  |  类型  |                                 描述                                  |
-| ---------- | ------ | ---------------------------------------------------------------------------- |
-| `basePath` | String | Optional. The base path for the relative URI. Default is the current folder. |
+| 参数         | 类型   | 描述                                        |
+| ------------ | ------ | ------------------------------------------- |
+| `basePath` | String | 可选。相对 URI 的基路径。默认为当前文件夹。 |
 
 #### 返回
-
-String
-
----
-
-### Folder.remove()
-
-`folderObj.remove()`
-
-#### 描述
-
-Deletes the empty folder associated with this object from disk, immediately, without moving it to the system trash.
-
-Folders must be empty before they can be deleted. Does not resolve aliases; instead, deletes the referenced alias or shortcut file itself.
-
-:::note
-Cannot be undone. It is recommended that you prompt the user for permission before deleting.
-:::
-
-#### 返回
-
-Boolean. `true` if the folder is deleted successfully.
-
----
-
-### Folder.rename()
-
-`folderObj.rename(newName)`
-
-#### 描述
-
-#### 参数
-
-| 参数 |  类型  |            描述             |
-| --------- | ------ | ---------------------------------- |
-| `newName` | String | The new folder name, with no path. |
-
-Renames the associated folder. Does not resolve aliases; instead, renames the referenced alias or shortcut file itself.
-
-#### 返回
-
-Boolean. `true` on success.
-
----
-
-### Folder.resolve()
-
-`folderObj.resolve()`
-
-#### 描述
-
-If this object references an alias or shortcut, this method resolves that alias
-
-#### 返回
-
-A new [Folder object](#) that references the file-system element to which the alias resolves, or `null` if this object does not reference an alias, or if the alias cannot be resolved.
-
----
-
-### Folder.selectDlg()
-
-`folderObj.selectDlg(prompt)`
-
-#### 描述
-
-Opens the built-in platform-specific file-browsing dialog, and creates a new File or Folder object for the selected file or folder.
-
-Differs from the class method [`selectDialog()`](#folderselectdialog) in that it preselects this folder.
-
-#### 参数
-
-| 参数 |  类型  |                   描述                   |
-| --------- | ------ | ----------------------------------------------- |
-| `prompt`  | String | The prompt text, if the dialog allows a prompt. |
-
-#### 返回
-
-If the user clicks `OK`, returns a [File](.././file-object) or Folder object for the selected file or folder.
-
-If the user cancels, returns `null`.

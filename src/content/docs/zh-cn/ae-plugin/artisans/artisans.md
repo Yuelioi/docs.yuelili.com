@@ -1,19 +1,18 @@
 ---
 title: artisans
 ---
-# Artisans
+# artisans (工匠?)
 
 :::note
-If you're considering developing an Artisan, please talk it over with us first.
+如果您正在考虑开发一个 `artisans`插件，请先与我们讨论。
 :::
 
+工匠 API 暴露了插件所需的函数钩子，以便提供 3D 图层的渲染输出，完全接管 After Effects 的工作（After Effects 仍然处理所有 2D 图层的渲染）。每个合成中只能有一个工匠插件，可以在*合成设置* > *高级*对话框中选择。工匠插件渲染 3D 环境，并向 After Effects 请求有关合成中每个元素的信息。正如您可能猜到的那样，这是一个庞大而繁琐的过程。不建议任何没有强烈需求覆盖 After Effects 3D 渲染的人使用此 API。
 
-The Artisan API exposes function hooks necessary for a plug-in to provide rendered output of 3D layers, taking over completely from After Effects (which still handles all rendering of 2D layers). There can be only one Artisan per composition, chosen from within the *Composition Settings* > *Advanced* dialog. Artisans render the 3D environment, asking After Effects for information about each element in the composition. As you might guess, this is a vast and tedious process. This API is not recommended for anyone without a strong need to override After Effects' 3D rendering.
-
-Artisans may share information with effects written to communicate with them, but effects may not initiate this communication. Many of the suites used by Artisans require a rendering context which is generated only after all effects have been applied to the layer.
+工匠插件可以与编写为与其通信的效果共享信息，但效果不能发起此通信。许多工匠插件使用的套件需要一个渲染上下文，该上下文仅在所有效果应用于图层后生成。
 
 ---
 
-## Interactive Artisans
+## 交互式工匠插件
 
-These differ from standard artisans in that they handle all layers in a composition (not just those which the user has made 3D), and they will only ever be called for onscreen display, never for rendered final output (the rendering calls "fall through" to the default artisan).
+这些与标准工匠插件的不同之处在于，它们处理合成中的所有图层（不仅仅是用户设置为 3D 的图层），并且它们只会被调用用于屏幕显示，而不会用于渲染最终输出（渲染调用会“回退”到默认的工匠插件）。

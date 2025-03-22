@@ -1,17 +1,17 @@
 ---
-title: viewoptions
+title: 视图选项
 ---
-# ViewOptions object
+# ViewOptions 对象
 
 `app.activeViewer.views[0].options`
 
 #### 描述
 
-The ViewOptions object represents the options for a given [View object](../view)
+ViewOptions 对象表示给定 [View 对象](../view) 的选项。
 
 #### 示例
 
-This enables checkerboards and locks guides for a given view
+以下代码为给定视图启用棋盘格并锁定参考线：
 
 ```javascript
 var activeViewer = app.activeViewer;
@@ -30,11 +30,11 @@ viewOptions.guidesLocked = true;
 
 #### 描述
 
-The state of the Channels menu.
+通道菜单的状态。
 
 #### 类型
 
-A `ChannelType` enumerated value; read/write. One of:
+一个 `ChannelType` 枚举值；可读/写。可能的值为：
 
 - `CHANNEL_ALPHA`
 - `CHANNEL_ALPHA_BOUNDARY`
@@ -56,11 +56,11 @@ A `ChannelType` enumerated value; read/write. One of:
 
 #### 描述
 
-When `true`, checkerboards (transparency grid) is enabled in the current view.
+当为 `true` 时，当前视图中启用棋盘格（透明网格）。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读/写。
 
 ---
 
@@ -70,11 +70,11 @@ Boolean; read/write.
 
 #### 描述
 
-The exposure value for the current view.
+当前视图的曝光值。
 
 #### 类型
 
-Floating-point value, 范围为 `[-40..40]`
+浮点值，范围为 `[-40..40]`。
 
 ---
 
@@ -88,25 +88,25 @@ Floating-point value, 范围为 `[-40..40]`
 
 #### 描述
 
-The state of the Fast Previews menu. This is a read/write attribute using an enumerated value:
+快速预览菜单的状态。这是一个使用枚举值的可读/写属性：
 
 :::warning
-If you try to get or set the attribute's value in the Layer or Footage panel, you'll get an error message.
+如果您尝试在图层或素材面板中获取或设置该属性的值，您将收到错误消息。
 :::
 
 :::tip
-The Draft preview mode is only available in ray-traced 3D compositions. If you try to use it in a Classic 3D composition, you'll get an error: "Cannot set Draft fast preview mode in a Classic 3D composition."
+草稿预览模式仅在光线追踪 3D 合成中可用。如果您尝试在经典 3D 合成中使用它，您将收到错误：“无法在经典 3D 合成中设置草稿快速预览模式。”
 :::
 
 #### 类型
 
-A `FastPreviewType` enumerated value; read/write. One of:
+一个 `FastPreviewType` 枚举值；可读/写。可能的值为：
 
-- `FastPreviewType.FP_OFF`: Off (Final Quality)
-- `FastPreviewType.FP_ADAPTIVE_RESOLUTION`: Adaptive Resolution
-- `FastPreviewType.FP_DRAFT`: Draft
-- `FastPreviewType.FP_FAST_DRAFT`: Fast Draft
-- `FastPreviewType.FP_WIREFRAME`: Wireframe
+- `FastPreviewType.FP_OFF`: 关闭（最终质量）
+- `FastPreviewType.FP_ADAPTIVE_RESOLUTION`: 自适应分辨率
+- `FastPreviewType.FP_DRAFT`: 草稿
+- `FastPreviewType.FP_FAST_DRAFT`: 快速草稿
+- `FastPreviewType.FP_WIREFRAME`: 线框
 
 #### 示例
 
@@ -130,11 +130,11 @@ app.activeViewer.views[0].options.fastPreview === FastPreviewType.FP_WIREFRAME;
 
 #### 描述
 
-When `true`, indicates guides are locked in the view.
+当为 `true` 时，表示视图中的参考线已锁定。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读/写。
 
 #### 示例
 
@@ -154,11 +154,11 @@ app.activeViewer.views[0].options.guidesLocked;
 
 #### 描述
 
-When `true`, indicates layers snap to guides when dragged in the view.
+当为 `true` 时，表示在视图中拖动图层时会吸附到参考线。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读/写。
 
 #### 示例
 
@@ -178,11 +178,11 @@ app.activeViewer.views[0].options.guidesSnap;
 
 #### 描述
 
-When `true`, indicates guides are visible in the view.
+当为 `true` 时，表示视图中的参考线可见。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读/写。
 
 #### 示例
 
@@ -202,11 +202,11 @@ app.activeViewer.views[0].options.guidesVisibility;
 
 #### 描述
 
-When `true`, indicates rulers are shown in the view.
+当为 `true` 时，表示视图中显示标尺。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读/写。
 
 #### 示例
 
@@ -222,8 +222,8 @@ app.activeViewer.views[0].options.rulers;
 
 #### 描述
 
-Sets the current zoom value for the view, as a normalized percentage between 1% (0.01) and 1600% (16).
+设置视图的当前缩放值，作为 1% (0.01) 到 1600% (16) 之间的归一化百分比。
 
 #### 类型
 
-Floating-point value, 范围为 `[0.01..16]`
+浮点值，范围为 `[0.01..16]`。

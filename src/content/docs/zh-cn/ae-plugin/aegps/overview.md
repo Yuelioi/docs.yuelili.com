@@ -1,32 +1,32 @@
 ---
-title: overview
+title: 概述
 ---
-# Overview
+# 概述
 
-AEGPs use Plug-In Component Architecture (PICA) function suites to access all functionality.
+AEGP（After Effects通用插件）使用插件组件架构（PICA）功能套件来访问所有功能。
 
-They may also publish their own function suites, for use by effect plug-ins (since plug-in load order varies, AEGPs can't depend on suites not provided by After Effects).
+它们还可以发布自己的功能套件，供效果插件使用（由于插件的加载顺序不同，AEGP不能依赖于After Effects未提供的套件）。
 
-AEGPs can also request a suite and, if it's not present, provide replacement functionality themselves.
-
----
-
-## AEGP Communication With After Effects
-
-For effect plug-ins, all communication with After Effects occurs through a single entry point function. This is not the case with AEGPs.
-
-While After Effects *does* call the entry point function designated in the AEGP's PiPL (which is still required), all subsequent communication between After Effects and AEGPs is handled by the hook functions the AEGP registers.
-
-This registration must be performed from within the plug-in's entry function, using the [Register Suite](aegp-suites.md#aegp_registersuites5).
+AEGP还可以请求一个套件，如果该套件不存在，它们可以自己提供替代功能。
 
 ---
 
-## Different Tasks, Same API
+## AEGP与After Effects的通信
 
-AEGPs work in the same manner, regardless of specialization.
+对于效果插件来说，所有与After Effects的通信都通过一个单一的入口点函数进行。但AEGP并非如此。
 
-They can be simple, just [adding one menu item](implementation.md#example-adding-a-menu-item) to trigger an external application, or complex like Artisans.
+虽然After Effects确实会调用在AEGP的PiPL中指定的入口点函数（这仍然是必需的），但之后的所有通信都由AEGP注册的钩子函数处理。
 
-While any plug-in can access any function suite, only plug-ins of the appropriate type will have access to all the required parameters.
+此注册必须在插件的入口函数内执行，使用[注册套件](aegp-suites.md#aegp_registersuites5)。
 
-Only Artisans will have render contexts, and only AEIO plug-ins will receive input and output specifications; messaging is dependent upon which hook functions are registered.
+---
+
+## 不同的任务，相同的API
+
+无论专业领域如何，AEGP的工作方式都是相同的。
+
+它们可以是简单的，只需[添加一个菜单项](implementation.md#example-adding-a-menu-item)来触发外部应用程序；也可以是复杂的，像Artisans那样复杂。
+
+虽然任何插件都可以访问任何功能套件，但只有适当类型的插件才能访问所有必需的参数。
+
+只有Artisans才会有渲染上下文；只有AEIO插件才会接收输入和输出规范；消息传递取决于注册了哪些钩子函数。

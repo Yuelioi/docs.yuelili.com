@@ -3,10 +3,10 @@ title: premiere-elements
 ---
 # Premiere Elements
 
-Premiere Elements (but not Premiere Pro) displays visual icons for each effect. You will need to provide icons for your effects, or else an empty black icon will be shown for your effects, or even worse behavior in Premiere Elements 8.
+Premiere Elements（但不是 Premiere Pro）会为每个效果显示视觉图标。你需要为你的效果提供图标，否则你的效果将显示一个空的黑色图标，甚至在 Premiere Elements 8 中可能会出现更糟糕的行为。
 
-The icons are 60x45 PNG files, and are placed here:
+图标是 60x45 的 PNG 文件，放置在以下路径：
 
 `/[Program Files]/Adobe/Adobe Premiere Elements [version]/Plug-in/Common/Effect/Previews/`
 
-The filename should be the match name of the effect, which you specify in the [PiPL Resources](../../intro/pipl-resources), prefixed with "AE." So if the match name was "MatchName", then the filename should be "AE.MatchName.png"
+文件名应与效果的匹配名称一致，该名称在 [PiPL Resources](../../intro/pipl-resources) 中指定，并以 "AE" 为前缀。因此，如果匹配名称是 "MatchName"，那么文件名应为 "AE.MatchName.png"。

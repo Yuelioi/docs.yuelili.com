@@ -1,27 +1,27 @@
 ---
 title: avitem
 ---
-# AVItem object
+# AVItem 对象
 
 `app.project.item(index)`
 
 #### 描述
 
-The AVItem object provides access to attributes and methods of audio/visual files imported into After Effects.
+AVItem 对象提供了对导入到 After Effects 中的音视频文件的属性和方法的访问。
 
 :::info
-AVItem is a subclass of Item. All methods and attributes of Item, in addition to those listed below, are available when working with AVItem. See [Item object](../item)
+AVItem 是 Item 的子类。除了下面列出的方法和属性外，Item 的所有方法和属性在处理 AVItem 时也可用。请参阅 [Item 对象](../item)。
 :::
 
 :::info
-AVItem is the base class for both CompItem and FootageItem, so AVItem attributes and methods are also available when working with CompItem and FootageItem objects. See [CompItem object](../compitem) and [FootageItem object](../footageitem).
+AVItem 是 CompItem 和 FootageItem 的基类，因此 AVItem 的属性和方法在处理 CompItem 和 FootageItem 对象时也可用。请参阅 [CompItem 对象](../compitem) 和 [FootageItem 对象](../footageitem)。
 :::
 
 :::warning
-CompItems and FootageItems, while logical descendants of AVItem, are not *really* subclasses of AVItem as AVItem doesn't exist in Extendscript, ie. attempting to check if `item instanceof AVItem` will fail because AVItem is undefined. This is also true for `Item` itself.
+CompItems 和 FootageItems 虽然是 AVItem 的逻辑子类，但它们并不是 *真正的* AVItem 子类，因为 AVItem 在 Extendscript 中并不存在，即尝试检查 `item instanceof AVItem` 将会失败，因为 AVItem 是未定义的。对于 `Item` 本身也是如此。
 :::
 
-See [Javascript Classes](../introduction/javascript.md#javascript-classes) and [After Effects Class Hierarchy](../../introduction/classhierarchy) for more info.
+更多信息请参阅 [Javascript 类](../introduction/javascript.md#javascript-classes) 和 [After Effects 类层次结构](../../introduction/classhierarchy)。
 
 ---
 
@@ -33,14 +33,14 @@ See [Javascript Classes](../introduction/javascript.md#javascript-classes) and [
 
 #### 描述
 
-Returns the duration, in seconds, of the item. Still footage items have a duration of 0.
+返回项目的持续时间（以秒为单位）。静态素材项目的持续时间为 0。
 
-- In a CompItem, the value is linked to the duration of the composition, and is read/write.
-- In a FootageItem, the value is linked to the `duration` of the `mainSource` object, and is read-only.
+- 在 CompItem 中，该值与合成的持续时间相关联，并且是可读写的。
+- 在 FootageItem 中，该值与 `mainSource` 对象的 `duration` 相关联，并且是只读的。
 
 #### 类型
 
-Floating-point value, 范围为 `[0.0..10800.0]`; read/write for a [CompItem](../../item/compitem); otherwise, read-only.
+浮点值，范围为 `[0.0..10800.0]`；对于 [CompItem](../../item/compitem) 是可读写的；否则为只读。
 
 ---
 
@@ -50,11 +50,11 @@ Floating-point value, 范围为 `[0.0..10800.0]`; read/write for a [CompItem](..
 
 #### 描述
 
-When `true`, the AVItem is a placeholder, or represents footage with a source file that cannot be found. In this case, the path of the missing source file is in the `missingFootagePath` attribute of the footage item's source-file object. See [FootageItem.mainSource](footageitem.md#footageitemmainsource) and [FileSource.missingFootagePath](../sources/filesource.md#filesourcemissingfootagepath).
+当为 `true` 时，AVItem 是一个占位符，或者表示源文件无法找到的素材。在这种情况下，缺失的源文件路径位于素材项目的源文件对象的 `missingFootagePath` 属性中。请参阅 [FootageItem.mainSource](footageitem.md#footageitemmainsource) 和 [FileSource.missingFootagePath](../sources/filesource.md#filesourcemissingfootagepath)。
 
 #### 类型
 
-Boolean; 只读.
+布尔值；只读。
 
 ---
 
@@ -64,11 +64,11 @@ Boolean; 只读.
 
 #### 描述
 
-Returns the length of a frame for this AVItem, in seconds. This is the reciprocal of `frameRate`. When set, the reciprocal is automatically set as a new `frameRate` value. This attribute returns the reciprocal of the `frameRate`, which may not be identical to a value you set, if that value is not evenly divisible into 1.0 (for example, 0.3). Due to numerical limitations, (1 / (1 / 0.3)) is close to, but not exactly, 0.3. If the AVItem is a FootageItem, this value is linked to the `mainSource`, and is read-only. To change it, set the `conformFrameRate` of the `mainSource` object. This sets both the `frameRate` and `frameDuration` of the FootageItem.
+返回此 AVItem 的帧长度（以秒为单位）。这是 `frameRate` 的倒数。设置时，倒数会自动设置为新的 `frameRate` 值。此属性返回 `frameRate` 的倒数，可能与您设置的值不完全相同，如果该值不能均匀地除以 1.0（例如 0.3）。由于数值限制，(1 / (1 / 0.3)) 接近但不完全等于 0.3。如果 AVItem 是 FootageItem，则该值与 `mainSource` 相关联，并且是只读的。要更改它，请设置 `mainSource` 对象的 `conformFrameRate`。这将设置 FootageItem 的 `frameRate` 和 `frameDuration`。
 
 #### 类型
 
-Floating-point value, 范围为 `[1/99..1.0]`; read-only for a [FootageItem](../../item/footageitem), otherwise read/write.
+浮点值，范围为 `[1/99..1.0]`；对于 [FootageItem](../../item/footageitem) 是只读的，否则为可读写。
 
 ---
 
@@ -78,14 +78,14 @@ Floating-point value, 范围为 `[1/99..1.0]`; read-only for a [FootageItem](../
 
 #### 描述
 
-The frame rate of the AVItem, in frames-per-second. This is the reciprocal of the `frameDuration` . When set, the reciprocal is automatically set as a new `frameDuration` value.
+AVItem 的帧速率，以每秒帧数为单位。这是 `frameDuration` 的倒数。设置时，倒数会自动设置为新的 `frameDuration` 值。
 
-- In a CompItem, the value is linked to the `frameRate` of the composition, and is read/write.
-- In a FootageItem, the value is linked to the `frameRate` of the `mainSource` object, and is read-only. To change it, set the `conformFrameRate` of the `mainSource` object. This sets both the `frameRate` and `frameDuration` of the FootageItem.
+- 在 CompItem 中，该值与合成的 `frameRate` 相关联，并且是可读写的。
+- 在 FootageItem 中，该值与 `mainSource` 对象的 `frameRate` 相关联，并且是只读的。要更改它，请设置 `mainSource` 对象的 `conformFrameRate`。这将设置 FootageItem 的 `frameRate` 和 `frameDuration`。
 
 #### 类型
 
-Floating-point value, 范围为 `[1.0..99.0]`; read-only for a [FootageItem](../../item/footageitem), otherwise read/write.
+浮点值，范围为 `[1.0..99.0]`；对于 [FootageItem](../../item/footageitem) 是只读的，否则为可读写。
 
 ---
 
@@ -95,14 +95,14 @@ Floating-point value, 范围为 `[1.0..99.0]`; read-only for a [FootageItem](../
 
 #### 描述
 
-When `true`, the AVItem has an audio component.
+当为 `true` 时，AVItem 具有音频组件。
 
-- In a CompItem, the value is linked to the composition.
-- In a FootageItem, the value is linked to the `mainSource` object.
+- 在 CompItem 中，该值与合成相关联。
+- 在 FootageItem 中，该值与 `mainSource` 对象相关联。
 
 #### 类型
 
-Boolean; 只读.
+布尔值；只读。
 
 ---
 
@@ -112,14 +112,14 @@ Boolean; 只读.
 
 #### 描述
 
-When `true`, the AVItem has a video component.
+当为 `true` 时，AVItem 具有视频组件。
 
-- In a CompItem, the value is linked to the composition.
-- In a FootageItem, the value is linked to the `mainSource` object.
+- 在 CompItem 中，该值与合成相关联。
+- 在 FootageItem 中，该值与 `mainSource` 对象相关联。
 
 #### 类型
 
-Boolean; 只读.
+布尔值；只读。
 
 ---
 
@@ -129,14 +129,14 @@ Boolean; 只读.
 
 #### 描述
 
-The height of the item in pixels.
+项目的高度（以像素为单位）。
 
-- In a CompItem, the value is linked to the composition, and is read/write.
-- In a FootageItem, the value is linked to the `mainSource` object, and is read/write only if the `mainSource` object is a SolidSource. Otherwise, it is read-only.
+- 在 CompItem 中，该值与合成相关联，并且是可读写的。
+- 在 FootageItem 中，该值与 `mainSource` 对象相关联，并且仅在 `mainSource` 对象是 SolidSource 时可读写。否则为只读。
 
 #### 类型
 
-Integer, 范围为 `[1..30000]`; read/write, except as noted.
+整数，范围为 `[1..30000]`；除非另有说明，否则为可读写。
 
 ---
 
@@ -150,19 +150,19 @@ Integer, 范围为 `[1..30000]`; read/write, except as noted.
 
 #### 描述
 
-Test whether the AVItem can be used as an alternate source when calling [Property.setAlternateSource()](../property/property.md#propertysetalternatesource).
+测试 AVItem 是否可以在调用 [Property.setAlternateSource()](../property/property.md#propertysetalternatesource) 时用作替代源。
 
-Returns `true` if the item can be used, or otherwise `false`.
+如果项目可用，则返回 `true`，否则返回 `false`。
 
-A CompItem or a FootageItem can be used as an alternate source for the layer, with some restrictions:
+CompItem 或 FootageItem 可以用作图层的替代源，但有一些限制：
 
-- If the AVItem is a [FootageItem object](../footageitem), then FootageItem.FootageSource should not be a [SolidSource object](../../sources/solidsource).
-- If the AVItem is a [FootageItem object](../footageitem) and the FootageItem.FootageSource is a [FileSource object](../../sources/filesource) then that FileSource should not point to a non-media file e.g. a JSX script file.
-- Setting the AVItem cannot create a cyclical reference within the project.
+- 如果 AVItem 是 [FootageItem 对象](../footageitem)，则 FootageItem.FootageSource 不应该是 [SolidSource 对象](../../sources/solidsource)。
+- 如果 AVItem 是 [FootageItem 对象](../footageitem) 并且 FootageItem.FootageSource 是 [FileSource 对象](../../sources/filesource)，则该 FileSource 不应指向非媒体文件，例如 JSX 脚本文件。
+- 设置 AVItem 不能在项目中创建循环引用。
 
 #### 类型
 
-Boolean; read only.
+布尔值；只读。
 
 ---
 
@@ -172,13 +172,13 @@ Boolean; read only.
 
 #### 描述
 
-The name of the item, as shown in the Project panel.
+项目的名称，如项目面板中所示。
 
-- In a FootageItem, the value is linked to the `mainSource` object. If the `mainSource` object is a `FileSource`, this value controls the display name in the Project panel, but does not affect the file name.
+- 在 FootageItem 中，该值与 `mainSource` 对象相关联。如果 `mainSource` 对象是 `FileSource`，则此值控制项目面板中的显示名称，但不会影响文件名。
 
 #### 类型
 
-String; read/write.
+字符串；可读写。
 
 ---
 
@@ -188,27 +188,27 @@ String; read/write.
 
 #### 描述
 
-The pixel aspect ratio (PAR) of the item.
+项目的像素宽高比 (PAR)。
 
-- In a CompItem, the value is linked to the composition.
-- In a FootageItem, the value is linked to the mainSource object.
+- 在 CompItem 中，该值与合成相关联。
+- 在 FootageItem 中，该值与 mainSource 对象相关联。
 
-The value you retrieve after setting may be slightly different from the value you supplied. The following table compares the value as it appears in the UI with the more accurate value returned by this attribute.
+设置后检索的值可能与您提供的值略有不同。下表比较了 UI 中显示的值与此属性返回的更准确的值。
 
-| PAR in the After Effects UI | PAR returned by the pixelAspect attribute |
-| --------------------------- | ----------------------------------------- |
-| 0.91                        | 0.909091                                  |
-| 1                           | 1                                         |
-| 1.5                         | 1.5                                       |
-| 1.09                        | 1.09402                                   |
-| 1.21                        | 1.21212                                   |
-| 1.33                        | 1.33333                                   |
-| 1.46                        | 1.45869                                   |
-| 2                           | 2                                         |
+| After Effects UI 中的 PAR | pixelAspect 属性返回的 PAR |
+| ------- | ------ |
+| 0.91            | 0.909091     |
+| 1               | 1        |
+| 1.5             | 1.5        |
+| 1.09            | 1.09402      |
+| 1.21            | 1.21212      |
+| 1.33            | 1.33333      |
+| 1.46            | 1.45869      |
+| 2               | 2        |
 
 #### 类型
 
-Floating-point value, 范围为 `[0.01..100.0]`; read/write.
+浮点值，范围为 `[0.01..100.0]`；可读写。
 
 ---
 
@@ -218,11 +218,11 @@ Floating-point value, 范围为 `[0.01..100.0]`; read/write.
 
 #### 描述
 
-The FootageSource being used as a proxy. The attribute is read-only; to change it, call any of the AVItem methods that change the proxy source: `setProxy()`, `setProxyWithSequence()`, `setProxyWithSolid()`, or `setProxyWithPlaceholder()`.
+用作代理的 FootageSource。该属性是只读的；要更改它，请调用任何更改代理源的 AVItem 方法：`setProxy()`、`setProxyWithSequence()`、`setProxyWithSolid()` 或 `setProxyWithPlaceholder()`。
 
 #### 类型
 
-`FootageSource` object; 只读.
+`FootageSource` 对象；只读。
 
 ---
 
@@ -232,11 +232,11 @@ The FootageSource being used as a proxy. The attribute is read-only; to change i
 
 #### 描述
 
-The current time of the item when it is being previewed directly from the Project panel. This value is a number of seconds. Use the global method [timeToCurrentFormat()](../general/globals.md#timetocurrentformat) to convert it to a string value that expresses the time in terms of frames. It is an error to set this value for a FootageItem whose `mainSource` is still (`item.mainSource.isStill` is `true`).
+项目从项目面板直接预览时的当前时间。该值以秒为单位。使用全局方法 [timeToCurrentFormat()](../general/globals.md#timetocurrentformat) 将其转换为以帧表示时间的字符串值。对于 `mainSource` 是静态的 FootageItem（`item.mainSource.isStill` 为 `true`），设置此值是错误的。
 
 #### 类型
 
-Floating-point value; read/write.
+浮点值；可读写。
 
 ---
 
@@ -246,11 +246,11 @@ Floating-point value; read/write.
 
 #### 描述
 
-All the compositions that use this AVItem. Note that upon retrieval, the array value is copied, so it is not automatically updated. If you get this value, then add this item into another composition, you must retrieve the value again to get an array that includes the new item.
+所有使用此 AVItem 的合成。请注意，检索时，数组值会被复制，因此不会自动更新。如果您获取此值，然后将此项目添加到另一个合成中，则必须再次检索该值以获取包含新项目的数组。
 
 #### 类型
 
-Array of CompItem objects; 只读.
+CompItem 对象数组；只读。
 
 ---
 
@@ -260,11 +260,11 @@ Array of CompItem objects; 只读.
 
 #### 描述
 
-When `true`, a proxy is used for the item. It is set to `true` by all the `SetProxy` methods, and to `false` by the `SetProxyToNone()` method.
+当为 `true` 时，项目使用代理。所有 `SetProxy` 方法都会将其设置为 `true`，而 `SetProxyToNone()` 方法会将其设置为 `false`。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读写。
 
 ---
 
@@ -274,14 +274,14 @@ Boolean; read/write.
 
 #### 描述
 
-The width of the item, in pixels.
+项目的宽度（以像素为单位）。
 
-- In a CompItem, the value is linked to the composition, and is read/write.
-- In a FootageItem, the value is linked to the `mainSource` object, and is read/write only if the `mainSource` object is a SolidSource. Otherwise, it is read-only.
+- 在 CompItem 中，该值与合成相关联，并且是可读写的。
+- 在 FootageItem 中，该值与 `mainSource` 对象相关联，并且仅在 `mainSource` 对象是 SolidSource 时可读写。否则为只读。
 
 #### 类型
 
-Integer, 范围为 `[1..30000]`; read/write, except as noted.
+整数，范围为 `[1..30000]`；除非另有说明，否则为可读写。
 
 ---
 
@@ -293,23 +293,23 @@ Integer, 范围为 `[1..30000]`; read/write, except as noted.
 
 #### 描述
 
-Sets a file as the proxy of this AVItem.
+将文件设置为此 AVItem 的代理。
 
-Loads the specified file into a new FileSource object, sets this as the value of the `proxySource` attribute, and sets `useProxy` to `true`.
+将指定文件加载到新的 FileSource 对象中，将其设置为 `proxySource` 属性的值，并将 `useProxy` 设置为 `true`。
 
-It does not preserve the interpretation parameters, instead using the user preferences. If the file has an unlabeled alpha channel, and the user preference says to ask the user what to do, the method estimates the alpha interpretation, rather than asking the user.
+它不会保留解释参数，而是使用用户首选项。如果文件具有未标记的 alpha 通道，并且用户首选项设置为询问用户如何处理，则该方法会估计 alpha 解释，而不是询问用户。
 
-This differs from setting a FootageItem's `mainSource`, but both actions are performed as in the user interface.
+这与设置 FootageItem 的 `mainSource` 不同，但这两个操作都像在用户界面中一样执行。
 
 #### 参数
 
-| 参数 |                                                 类型                                                  |           描述           |
-| --------- | ----------------------------------------------------------------------------------------------------- | ------------------------------- |
-| `file`    | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object | The file to be used as a proxy. |
+| 参数 |            类型             |       描述       |
+| ---- | ---------------- | ------ |
+| `file`  | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象 | 用作代理的文件。 |
 
 #### 返回
 
-None.
+无。
 
 ---
 
@@ -319,15 +319,15 @@ None.
 
 #### 描述
 
-Removes the proxy from this AVItem, sets the value of `proxySource` to `null`, and sets the value of `useProxy` to `false`.
+从此 AVItem 中移除代理，将 `proxySource` 的值设置为 `null`，并将 `useProxy` 的值设置为 `false`。
 
 #### 参数
 
-None.
+无。
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
@@ -337,25 +337,25 @@ Nothing.
 
 #### 描述
 
-Creates a PlaceholderSource object with specified values, sets this as the value of the `proxySource` attribute, and sets `useProxy` to `true`. It does not preserve the interpretation parameters, instead using the user preferences.
+使用指定值创建一个 PlaceholderSource 对象，将其设置为 `proxySource` 属性的值，并将 `useProxy` 设置为 `true`。它不会保留解释参数，而是使用用户首选项。
 
 :::note
-There is no direct way to set a placeholder as a proxy in the user interface; this behavior occurs when a proxy has been set and then moved or deleted.
+在用户界面中没有直接的方法将占位符设置为代理；当代理已设置然后被移动或删除时，会发生此行为。
 :::
 
 #### 参数
 
-|  参数  |                  类型                  |                 描述                 |
-| ----------- | -------------------------------------- | ------------------------------------------- |
-| `name`      | String                                 | The name of the new object.                 |
-| `width`     | Integer, 范围为 `[4..30000]`     | The pixel dimensions of the placeholder.    |
-| `height`    | Integer, 范围为 `[4..30000]`     | The pixel dimensions of the placeholder.    |
-| `frameRate` | Integer, 范围为 `[1..99]`        | Frame rate for the proxy.                   |
-| `duration`  | Integer, 范围为 `[0.0..10800.0]` | The total length in seconds, up to 3 hours. |
+|  参数  |          类型          |         描述         |
+| ------ | -------- | -------- |
+| `name`    | 字符串    | 新对象的名称。         |
+| `width`   | 整数, 范围为 `[4..30000]`   | 占位符的像素尺寸。  |
+| `height`  | 整数, 范围为 `[4..30000]`   | 占位符的像素尺寸。  |
+| `frameRate` | 整数, 范围为 `[1..99]`    | 代理的帧速率。           |
+| `duration`  | 整数, 范围为 `[0.0..10800.0]` | 总长度（以秒为单位），最多 3 小时。 |
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
@@ -365,22 +365,22 @@ Nothing.
 
 #### 描述
 
-Sets a sequence of files as the proxy of this AVItem, with the option of forcing alphabetical order.
-Loads the specified file sequence into a new FileSource object, sets this as the value of the `proxySource` attribute, and sets `useProxy` to `true`.
+将文件序列设置为此 AVItem 的代理，并可以选择强制按字母顺序排列。
+将指定的文件序列加载到新的 FileSource 对象中，将其设置为 `proxySource` 属性的值，并将 `useProxy` 设置为 `true`。
 
-It does not preserve the interpretation parameters, instead using the user preferences.
-If any file has an unlabeled alpha channel, and the user preference says to ask the user what to do, the method estimates the alpha interpretation, rather than asking the user.
+它不会保留解释参数，而是使用用户首选项。
+如果任何文件具有未标记的 alpha 通道，并且用户首选项设置为询问用户如何处理，则该方法会估计 alpha 解释，而不是询问用户。
 
 #### 参数
 
-|      参数      |                                                 类型                                                  |                       描述                       |
-| ------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| `file`              | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object | The first file in the sequence.                         |
-| `forceAlphabetical` | Boolean                                                                                               | When `true`, use the "Force alphabetical order" option. |
+|    参数    |            类型             |             描述             |
+| ---- | ---------------- | ---------- |
+| `file`        | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象 | 序列中的第一个文件。             |
+| `forceAlphabetical` | 布尔值          | 当为 `true` 时，使用“强制按字母顺序排列”选项。 |
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
@@ -390,21 +390,21 @@ Nothing.
 
 #### 描述
 
-Creates a [SolidSource object](../../sources/solidsource) with specified values, sets this as the value of the `proxySource` attribute, and sets `useProxy` to `true`. It does not preserve the interpretation parameters, instead using the user preferences.
+使用指定值创建一个 [SolidSource 对象](../../sources/solidsource)，将其设置为 `proxySource` 属性的值，并将 `useProxy` 设置为 `true`。它不会保留解释参数，而是使用用户首选项。
 
 :::note
-There is no way, using the user interface, to set a solid as a proxy; this feature is available only through scripting.
+在用户界面中没有方法将纯色设置为代理；此功能仅通过脚本可用。
 :::
 
 #### 参数
 
-|     参数     |                                     类型                                      |               描述                |
-| ----------------- | ----------------------------------------------------------------------------- | ---------------------------------------- |
-| `color`           | Array of three floating-point values, `[R, G, B]`, 范围为 `[0.0..1.0]`. | The color of the solid.                  |
-| `name`            | String                                                                        | The name of the new object.              |
-| `width`, `height` | Integer, 范围为 `[1..30000]`                                            | The pixel dimensions of the placeholder. |
-| `pixelAspect`     | Floating-point value, 范围为 `[0.01..100.0]`                            | The pixel aspect ratio of the solid.     |
+|   参数   |      类型       |         描述        |
+| ------- | ------------ | ---------- |
+| `color`       | 三个浮点值的数组，`[R, G, B]`，范围为 `[0.0..1.0]`。 | 纯色的颜色。          |
+| `name`      | 字符串          | 新对象的名称。        |
+| `width`, `height` | 整数, 范围为 `[1..30000]`         | 占位符的像素尺寸。 |
+| `pixelAspect`   | 浮点值, 范围为 `[0.01..100.0]`              | 纯色的像素宽高比。   |
 
 #### 返回
 
-Nothing.
+无。

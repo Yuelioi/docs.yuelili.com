@@ -1,34 +1,34 @@
 ---
-title: audio-specific-float-slider-variables
+title: 音频专用浮点滑块变量
 ---
-# Audio-Specific Float Slider Variables
+# 音频专用浮点滑块变量
 
-`PF_Param_FLOAT_SLIDERs` contain several parameters not found in other sliders; flags, phase, and curve tolerance.
-
----
-
-## Flags
-
-The only flag available is `PF_FSliderFlag_WANT_PHASE`.
-
-This registers the effect to receive updated phase information from After Effects during audio rendering.
-
-To understand what this flag does, turn it off and check your output.
+`PF_Param_FLOAT_SLIDERs` 包含其他滑块中没有的几个参数：标志、相位和曲线容差。
 
 ---
 
-## Phase
+## 标志
 
-This is where the requested phase value is stored.
+唯一可用的标志是 `PF_FSliderFlag_WANT_PHASE`。
 
----
+此标志将效果注册为在音频渲染期间从 After Effects 接收更新的相位信息。
 
-## Curve Tolerance
-
-Curve tolerance is used by After Effects to subdivide the audio effects' time-variant parameters. Set this to zero for default behavior (or for non-audio `FLOAT_SLIDER` parameters).
+要了解此标志的作用，请将其关闭并检查输出。
 
 ---
 
-## What's Zero, Really?
+## 相位
 
-When amplitude is zero, After Effects is at -192db.
+这是存储请求的相位值的地方。
+
+---
+
+## 曲线容差
+
+After Effects 使用曲线容差来细分音频效果的时间变化参数。将其设置为零以获得默认行为（或用于非音频 `FLOAT_SLIDER` 参数）。
+
+---
+
+## 零到底是什么？
+
+当振幅为零时，After Effects 处于 -192db。

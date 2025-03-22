@@ -1,63 +1,64 @@
 ---
-title: errors
+title: 错误处理
 ---
-# Errors
+# 错误处理
 
-Always, always, *always* (always!) return a `PF_Err` from `main()`. Plug-ins must pass all errors back to After Effects.
+永远、永远、*永远*（永远！）从 `main()` 返回一个 `PF_Err`。插件必须将所有错误传递回 After Effects。
 
-It is vitally important that you pass any errors (returned to you by callbacks and PICA suites) to After Effects, unless you've handled them.
+至关重要的是，除非你已经处理了错误，否则你必须将所有错误（由回调和 PICA 套件返回的错误）传递给 After Effects。
 
-Be vigilant about returning the right error code, and disposing of any memory you've allocated.
+要警惕返回正确的错误代码，并释放你分配的任何内存。
 
-Really. We're serious.
+真的。我们是认真的。
 
 ---
 
-## Error Codes
+## 错误代码
 
-|                Error                |                                                           Meaning                                                            |
+|                错误                |                                                           含义                                                            |
 |-------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| `PF_Err_NONE`                       | Success.                                                                                                                     |
-| `PF_Err_OUT_OF_MEMORY`              | Memory allocation failed.                                                                                                    |
-|                                     | Note that RAM preview will cause this condition, so After Effects will be expecting to receive this error from your plug-in. |
-| `PF_Err_INTERNAL_STRUCT_DAMAGED`    | Problems using a data structure.                                                                                             |
-| `PF_Err_INVALID_INDEX`              | Problems finding/using array member.                                                                                         |
-| `PF_Err_UNRECOGNIZED_PARAM_TYPE`    | Problem with parameter data.                                                                                                 |
-| `PF_Err_INVALID_CALLBACK`           | Problems accessing function through pointer.                                                                                 |
-| `PF_Err_BAD_CALLBACK_PARAM`         | Problems using a parameter passed to a callback.                                                                             |
-| `PF_Interrupt_CANCEL`               | Both effect and AEGP callbacks can return this to effects, if a user action aborts a render.                                 |
-|                                     | If the effect gets this error from a callback, it should stop processing the frame and return the error to the host.         |
-|                                     | Failure to pass the error back may result in misrendered frames being cached.                                                |
-| `PF_Err_CANNOT_PARSE_KEYFRAME_TEXT` | Return this from `PF_Arbitrary_SCAN_FUNC` when problems occur parsing the clipboard into keyframe data.                      |
+| `PF_Err_NONE`                       | 成功。                                                                                                                     |
+| `PF_Err_OUT_OF_MEMORY`              | 内存分配失败。                                                                                                    |
+|                                     | 注意，RAM 预览会导致这种情况，因此 After Effects 会期望从你的插件中收到此错误。 |
+| `PF_Err_INTERNAL_STRUCT_DAMAGED`    | 使用数据结构时出现问题。                                                                                             |
+| `PF_Err_INVALID_INDEX`              | 查找/使用数组成员时出现问题。                                                                                         |
+| `PF_Err_UNRECOGNIZED_PARAM_TYPE`    | 参数数据出现问题。                                                                                                 |
+| `PF_Err_INVALID_CALLBACK`           | 通过指针访问函数时出现问题。                                                                                 |
+| `PF_Err_BAD_CALLBACK_PARAM`         | 使用传递给回调的参数时出现问题。                                                                             |
+| `PF_Interrupt_CANCEL`               | 如果用户操作中止渲染，效果和 AEGP 回调都可以将此返回给效果。                                 |
+|                                     | 如果效果从回调中收到此错误，它应停止处理帧并将错误返回给主机。         |
+|                                     | 未能传递错误可能会导致缓存渲染错误的帧。                                                |
+| `PF_Err_CANNOT_PARSE_KEYFRAME_TEXT` | 当解析剪贴板到关键帧数据时出现问题，从 `PF_Arbitrary_SCAN_FUNC` 返回此错误。                      |
 
 ---
 
-## Error Reporting Policy
+## 错误报告策略
 
-After Effects has a consistent policy for error handling; follow it.
+After Effects 有一个一致的错误处理策略；请遵循它。
 
-If you encounter an error in your plug-in's code, report it to the user immediately, before returning from your plug-in to After Effects.
+如果你在插件代码中遇到错误，请在从插件返回到 After Effects 之前立即向用户报告。
 
-After Effects considers errors from the operating system, encountered during your plug-in's execution, to be yours.
+After Effects 认为在插件执行期间遇到的操作系统错误是你的错误。
 
-If you get an error code back from one of our callback functions, pass it back to After Effects; we've already reported it.
+如果你从我们的回调函数中收到一个错误代码，请将其传递回 After Effects；我们已经报告了它。
 
-Out-of-memory errors are never reported by After Effects. Error reporting is always suppressed during RAM preview, and when After Effects is running in - noui mode.
+内存不足错误永远不会由 After Effects 报告。在 RAM 预览期间以及 After Effects 以 -noui 模式运行时，错误报告总是被抑制。
 
-To report an error from within a plug-in, set `PF_OutFlag_DISPLAY_ERROR_MESSAGE`, and describe the error in [PF_OutData>return_msg](PF_OutData.md#pf_outdata).
+要从插件内部报告错误，请设置 `PF_OutFlag_DISPLAY_ERROR_MESSAGE`，并在 [PF_OutData>return_msg](PF_OutData.md#pf_outdata) 中描述错误。
 
-Doing so will enter your error into the render log, and prevent system hangs in renders driven by a render engine or scripting.
+这样做会将你的错误记录到渲染日志中，并防止由渲染引擎或脚本驱动的渲染中出现系统挂起。
 
 ---
 
-## Dig In!
+## 深入探索！
 
-Now you have a basic understanding of effect plug-ins, and are ready to start experimenting with some real code. Go ahead and get started!
+现在你已经对效果插件有了基本的了解，并准备好开始尝试一些真正的代码。继续开始吧！
 
-After getting the basics of your plug-in setup, you may have some questions about reuseable code, advanced functionality, and how to optimize your code to make it faster.
+在掌握了插件的基本设置后，你可能会对可重用代码、高级功能以及如何优化代码以使其更快有一些疑问。
 
-To this end, After Effects exposes a tremendous amount of its internal functionality via function suites.
+为此，After Effects 通过函数套件暴露了大量的内部功能。
 
-By relying on After Effects code for utility functions, you should be able to get your image processing algorithms implemented quickly.
+通过依赖 After Effects 代码来实现实用功能，你应该能够快速实现图像处理算法。
 
-This will discussed in [Effect Details](../../effect-details/effect-details).
+这将在 [效果详情](../../effect-details/effect-details) 中讨论。
+---

@@ -1,17 +1,17 @@
 ---
-title: footageitem
+title: 素材项目
 ---
-# FootageItem object
+# FootageItem 对象
 
 `app.project.item(index)`
 `app.project.items[index]`
 
 #### 描述
 
-The FootageItem object represents a footage item imported into a project, which appears in the Project panel. These are accessed by position index number in a project's item collection.
+FootageItem 对象表示导入项目中的素材项，这些素材项会显示在项目面板中。可以通过项目项集合中的位置索引号来访问它们。
 
 :::info
-FootageItem is a subclass of [AVItem object](../avitem), which is a subclass of [Item object](../item). All methods and attributes of AVItem and Item, in addition to those listed below, are available when working with FootageItem.
+FootageItem 是 [AVItem 对象](../avitem) 的子类，而 AVItem 又是 [Item 对象](../item) 的子类。除了下面列出的方法和属性外，使用 FootageItem 时还可以使用 AVItem 和 Item 的所有方法和属性。
 :::
 
 ---
@@ -24,13 +24,13 @@ FootageItem is a subclass of [AVItem object](../avitem), which is a subclass of 
 
 #### 描述
 
-The [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object for the footage's source file.
+素材源文件的 [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象。
 
-If the FootageItem's `mainSource` is a FileSource, this is the same as [FootageItem.mainSource.file](../sources/filesource.md#filesourcefile). Otherwise it is `null`.
+如果 FootageItem 的 `mainSource` 是 FileSource，则此属性与 [FootageItem.mainSource.file](../sources/filesource.md#filesourcefile) 相同。否则为 `null`。
 
 #### 类型
 
-[File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object; 只读.
+[File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象；只读。
 
 ---
 
@@ -40,17 +40,17 @@ If the FootageItem's `mainSource` is a FileSource, this is the same as [FootageI
 
 #### 描述
 
-The footage source, an object that contains all of the settings related to that footage item, including those that are normally accessed through the Interpret Footage dialog box. The attribute is read-only. To change its value, call one of the FootageItem "replace" methods. See the [FootageSource object](../../sources/footagesource), and its three types:
+素材源，一个包含与该素材项相关的所有设置的对象，包括通常通过“解释素材”对话框访问的那些设置。该属性是只读的。要更改其值，请调用 FootageItem 的某个“替换”方法。请参阅 [FootageSource 对象](../../sources/footagesource) 及其三种类型：
 
-- [SolidSource object](../../sources/solidsource)
-- [FileSource object](../../sources/filesource)
-- [PlaceholderSource object](../../sources/placeholdersource)
+- [SolidSource 对象](../../sources/solidsource)
+- [FileSource 对象](../../sources/filesource)
+- [PlaceholderSource 对象](../../sources/placeholdersource)
 
-If this is a FileSource object, and the [footageMissing](avitem.md#avitemfootagemissing) value is `true`, the path to the missing footage file is in the [FileSource.missingFootagePath](../sources/filesource.md#filesourcemissingfootagepath) attribute.
+如果这是一个 FileSource 对象，并且 [footageMissing](avitem.md#avitemfootagemissing) 值为 `true`，则缺失素材文件的路径位于 [FileSource.missingFootagePath](../sources/filesource.md#filesourcemissingfootagepath) 属性中。
 
 #### 类型
 
-[FootageSource object](../../sources/footagesource); 只读.
+[FootageSource 对象](../../sources/footagesource)；只读。
 
 ---
 
@@ -62,19 +62,19 @@ If this is a FileSource object, and the [footageMissing](avitem.md#avitemfootage
 
 #### 描述
 
-Opens the footage in a Footage panel, and moves the Footage panel to front and gives it focus.
+在素材面板中打开素材，并将素材面板置于最前面并使其获得焦点。
 
 :::tip
-Missing and placeholder footage can be opened using this method, but cannot manually (via double-clicking it).
+缺失和占位符素材可以使用此方法打开，但不能手动（通过双击）打开。
 :::
 
 #### 参数
 
-None.
+无。
 
 #### 返回
 
-[Viewer object](../../other/viewer) for the Footage panel, or `null` if the footage could not be opened.
+素材面板的 [Viewer 对象](../../other/viewer)，如果素材无法打开则返回 `null`。
 
 ---
 
@@ -84,19 +84,19 @@ None.
 
 #### 描述
 
-Changes the source of this FootageItem to the specified file.
+将此 FootageItem 的源更改为指定的文件。
 
-In addition to loading the file, the method creates a new FileSource object for the file and sets mainSource to that object. In the new source object, it sets the `name`, `width`, `height`, `frameDuration`, and `duration` attributes (see [AVItem object](../avitem)) based on the contents of the file.
+除了加载文件外，该方法还会为该文件创建一个新的 FileSource 对象，并将 `mainSource` 设置为该对象。在新的源对象中，它会根据文件内容设置 `name`、`width`、`height`、`frameDuration` 和 `duration` 属性（请参阅 [AVItem 对象](../avitem)）。
 
-The method preserves interpretation parameters from the previous `mainSource` object.
+该方法会保留之前 `mainSource` 对象的解释参数。
 
-If the specified file has an unlabeled alpha channel, the method estimates the alpha interpretation.
+如果指定的文件具有未标记的 Alpha 通道，则该方法会估计 Alpha 解释。
 
 #### 参数
 
-| 参数 |                                                 类型                                                  |                   描述                   |
-| --------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
-| `file`    | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object | The file to be used as the footage main source. |
+| 参数     | 类型                                                                                             | 描述                 |
+| -------- | ------------------------------------------------------------------------------------------------ | -------------------- |
+| `file` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象 | 用作素材主源的文件。 |
 
 ---
 
@@ -106,17 +106,17 @@ If the specified file has an unlabeled alpha channel, the method estimates the a
 
 #### 描述
 
-Changes the source of this FootageItem to the specified placeholder. Creates a new PlaceholderSource object, sets its values from the parameters, and sets `mainSource` to that object.
+将此 FootageItem 的源更改为指定的占位符。创建一个新的 PlaceholderSource 对象，根据参数设置其值，并将 `mainSource` 设置为该对象。
 
 #### 参数
 
-|  参数  |                        类型                         |                 描述                 |
-| ----------- | --------------------------------------------------- | ------------------------------------------- |
-| `name`      | String                                              | The name of the placeholder.                |
-| `width`     | Integer, 范围为 `[4..30000]`                  | The width of the placeholder in pixels.     |
-| `height`    | Integer, 范围为 `[4..30000]`                  | The height of the placeholder in pixels.    |
-| `frameRate` | Floating-point value, 范围为 `[1.0..99.0]`    | The frame rate of the placeholder.          |
-| `duration`  | Floating-point value, 范围为 `[0.0..10800.0]` | The duration of the placeholder in seconds. |
+| 参数          | 类型                              | 描述                             |
+| ------------- | --------------------------------- | -------------------------------- |
+| `name`      | 字符串                            | 占位符的名称。                   |
+| `width`     | 整数，范围为 `[4..30000]`       | 占位符的宽度（以像素为单位）。   |
+| `height`    | 整数，范围为 `[4..30000]`       | 占位符的高度（以像素为单位）。   |
+| `frameRate` | 浮点值，范围为 `[1.0..99.0]`    | 占位符的帧率。                   |
+| `duration`  | 浮点值，范围为 `[0.0..10800.0]` | 占位符的持续时间（以秒为单位）。 |
 
 ---
 
@@ -126,18 +126,18 @@ Changes the source of this FootageItem to the specified placeholder. Creates a n
 
 #### 描述
 
-Changes the source of this FootageItem to the specified image sequence.
+将此 FootageItem 的源更改为指定的图像序列。
 
-In addition to loading the file, the method creates a new FileSource object for the file and sets `mainSource` to that object. In the new source object, it sets the `name`, `width`, `height`, `frameDuration`, and `duration` attributes (see [AVItem object](../avitem)) based on the contents of the file.
+除了加载文件外，该方法还会为该文件创建一个新的 FileSource 对象，并将 `mainSource` 设置为该对象。在新的源对象中，它会根据文件内容设置 `name`、`width`、`height`、`frameDuration` 和 `duration` 属性（请参阅 [AVItem 对象](../avitem)）。
 
-The method preserves interpretation parameters from the previous `mainSource` object. If the specified file has an unlabeled alpha channel, the method estimates the alpha interpretation.
+该方法会保留之前 `mainSource` 对象的解释参数。如果指定的文件具有未标记的 Alpha 通道，则该方法会估计 Alpha 解释。
 
 #### 参数
 
-|      参数      |                                                 类型                                                  |                              描述                              |
-| ------------------- | ----------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| `file`              | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object | The first file in the sequence to be used as the footage main source. |
-| `forceAlphabetical` | Boolean                                                                                               | When `true`, use the "Force alphabetical order" option.               |
+| 参数                  | 类型                                                                                             | 描述                                           |
+| --------------------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------- |
+| `file`              | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象 | 用作素材主源的序列中的第一个文件。             |
+| `forceAlphabetical` | 布尔值                                                                                           | 当为 `true` 时，使用“强制按字母顺序”选项。 |
 
 ---
 
@@ -147,14 +147,14 @@ The method preserves interpretation parameters from the previous `mainSource` ob
 
 #### 描述
 
-Changes the source of this FootageItem to the specified solid. Creates a new SolidSource object, sets its values from the parameters, and sets `mainSource` to that object.
+将此 FootageItem 的源更改为指定的纯色。创建一个新的 SolidSource 对象，根据参数设置其值，并将 `mainSource` 设置为该对象。
 
 #### 参数
 
-|   参数   |                                     类型                                      |             描述              |
-| ------------- | ----------------------------------------------------------------------------- | ------------------------------------ |
-| `color`       | Array of three floating-point values, `[R, G, B]`, 范围为 `[0.0..1.0]`. | The color of the solid.              |
-| `name`        | String                                                                        | The name of the solid.               |
-| `width`       | Integer, 范围为 `[4..30000]`                                            | The width of the solid in pixels.    |
-| `height`      | Integer, 范围为 `[4..30000]`                                            | The height of the solid in pixels.   |
-| `pixelAspect` | Floating-point value, 范围为 `[0.01..100.0]`                            | The pixel aspect ratio of the solid. |
+| 参数            | 类型                                                     | 描述                         |
+| --------------- | -------------------------------------------------------- | ---------------------------- |
+| `color`       | 三个浮点值的数组，`[R, G, B]`，范围为 `[0.0..1.0]`。 | 纯色的颜色。                 |
+| `name`        | 字符串                                                   | 纯色的名称。                 |
+| `width`       | 整数，范围为 `[4..30000]`                              | 纯色的宽度（以像素为单位）。 |
+| `height`      | 整数，范围为 `[4..30000]`                              | 纯色的高度（以像素为单位）。 |
+| `pixelAspect` | 浮点值，范围为 `[0.01..100.0]`                         | 纯色的像素宽高比。           |

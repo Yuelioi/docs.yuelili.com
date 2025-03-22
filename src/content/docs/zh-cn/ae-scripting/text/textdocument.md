@@ -1,7 +1,7 @@
 ---
 title: textdocument
 ---
-# TextDocument object
+# TextDocument 对象
 
 `new TextDocument(docText)`
 
@@ -9,11 +9,11 @@ title: textdocument
 
 #### 描述
 
-The TextDocument object stores a value for a TextLayer's Source Text property. Create it with the constructor, passing the string to be encapsulated.
+TextDocument 对象存储了 TextLayer 的 Source Text 属性的值。通过构造函数创建它，并传递要封装的字符串。
 
 #### 示例
 
-This sets a value of some source text and displays an alert showing the new value.
+以下代码设置了一些源文本的值，并显示一个弹窗展示新值。
 
 ```javascript
 var myTextDocument = new TextDocument("HappyCake");
@@ -21,7 +21,7 @@ myTextLayer.property("Source Text").setValue(myTextDocument);
 alert(myTextLayer.property("Source Text").value);
 ```
 
-This sets keyframe values for text that show different words over time
+以下代码为文本设置关键帧值，以显示随时间变化的不同单词。
 
 ```javascript
 var textProp = myTextLayer.property("Source Text");
@@ -31,7 +31,7 @@ textProp.setValueAtTime(.66, newTextDocument("is"));
 textProp.setValueAtTime(1, newTextDocument("yummy!"));
 ```
 
-This sets various character and paragraph settings for some text
+以下代码为一些文本设置各种字符和段落样式。
 
 ```javascript
 var textProp = myTextLayer.property("Source Text");
@@ -66,15 +66,15 @@ textProp.setValue(textDocument);
 
 #### 描述
 
-`true` if a Text layer has All Caps enabled; otherwise `false`. To set this value, use [fontCapsOption](#textdocumentfontcapsoption) added in After Effects 24.0.
+如果文本图层启用了“全部大写”，则为 `true`；否则为 `false`。要设置此值，请使用 After Effects 24.0 中添加的 [fontCapsOption](#textdocumentfontcapsoption)。
 
 :::warning
-This value only reflects the first character in the Text layer.
+此值仅反映文本图层中的第一个字符。
 :::
 
 #### 类型
 
-Boolean; 只读.
+布尔值；只读。
 
 ---
 
@@ -84,11 +84,11 @@ Boolean; 只读.
 
 #### 描述
 
-When `true`, the Text layer shows a fill. Access the [fillColor](#textdocumentfillcolor) attribute for the actual color. When `false`, only a stroke is shown.
+当为 `true` 时，文本图层显示填充。访问 [fillColor](#textdocumentfillcolor) 属性以获取实际颜色。当为 `false` 时，仅显示描边。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读写。
 
 ---
 
@@ -98,11 +98,11 @@ Boolean; read/write.
 
 #### 描述
 
-When `true`, the Text layer shows a stroke. Access the [strokeColor](#textdocumentstrokecolor) attribute for the actual color and [strokeWidth](#textdocumentstrokewidth) for its thickness. When `false`, only a fill is shown.
+当为 `true` 时，文本图层显示描边。访问 [strokeColor](#textdocumentstrokecolor) 属性以获取实际颜色，访问 [strokeWidth](#textdocumentstrokewidth) 以获取其粗细。当为 `false` 时，仅显示填充。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读写。
 
 ---
 
@@ -116,19 +116,19 @@ Boolean; read/write.
 
 #### 描述
 
-The Text layer's auto hyphenate paragraph option.
+文本图层的自动连字符段落选项。
 
-If this attribute has a mixed value, it will be read as `undefined`.
+如果此属性具有混合值，则读取为 `undefined`。
 
 :::warning
-This value reflects all paragraphs in the Text layer.
+此值反映文本图层中的所有段落。
 :::
 
-If you change this value, it will set all paragraphs in the Text layer to the specified setting.
+如果更改此值，它将为文本图层中的所有段落设置指定的设置。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读写。
 
 ---
 
@@ -138,19 +138,19 @@ Boolean; read/write.
 
 #### 描述
 
-The Text layer's auto leading character option.
+文本图层的自动行距字符选项。
 
-If this attribute has a mixed value, it will be read as `undefined`.
+如果此属性具有混合值，则读取为 `undefined`。
 
 :::warning
-This value reflects all paragraphs in the Text layer.
+此值反映文本图层中的所有段落。
 :::
 
-If you change this value, it will set all paragraphs in the Text layer to the specified setting.
+如果更改此值，它将为文本图层中的所有段落设置指定的设置。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读写。
 
 ---
 
@@ -164,17 +164,17 @@ Boolean; read/write.
 
 #### 描述
 
-The Text layer's auto kern type option.
+文本图层的自动字距类型选项。
 
 :::warning
-This value only reflects the first character in the Text layer.
+此值仅反映文本图层中的第一个字符。
 :::
 
-If you change this value, it will set all characters in the Text layer to the specified setting.
+如果更改此值，它将为文本图层中的所有字符设置指定的设置。
 
 #### 类型
 
-An `AutoKernType` enumerated value; read/write. One of:
+`AutoKernType` 枚举值；可读写。可能的值包括：
 
 - `AutoKernType.NO_AUTO_KERN`
 - `AutoKernType.METRIC_KERN`
@@ -192,17 +192,17 @@ An `AutoKernType` enumerated value; read/write. One of:
 
 #### 描述
 
-The Text layer's baseline direction option. This is significant for Japanese language in vertical texts. "BASELINE_VERTICAL_CROSS_STREAM" is also know as Tate-Chu-Yoko.
+文本图层的基线方向选项。这对于垂直文本中的日语文本尤为重要。"BASELINE_VERTICAL_CROSS_STREAM" 也称为 Tate-Chu-Yoko。
 
 :::warning
-This value only reflects the first character in the Text layer.
+此值仅反映文本图层中的第一个字符。
 :::
 
-If you change this value, it will set all characters in the Text layer to the specified setting.
+如果更改此值，它将为文本图层中的所有字符设置指定的设置。
 
 #### 类型
 
-A `BaselineDirection` enumerated value; read/write. One of:
+`BaselineDirection` 枚举值；可读写。可能的值包括：
 
 - `BaselineDirection.BASELINE_WITH_STREAM`
 - `BaselineDirection.BASELINE_VERTICAL_ROTATED`
@@ -220,31 +220,31 @@ A `BaselineDirection` enumerated value; read/write. One of:
 
 #### 描述
 
-The baseline (x,y) locations for a Text layer. Line wraps in a paragraph text box are treated as multiple lines.
+文本图层的基线 (x,y) 位置。段落文本框中的换行被视为多行。
 
 :::tip
-If a line has no characters, the x and y values for start and end will be the maximum float value (`3.402823466e+38F`).
+如果某行没有字符，则开始和结束的 x 和 y 值将为最大浮点值 (`3.402823466e+38F`)。
 :::
 
 #### 类型
 
-Array of floating-point values in the form of
+浮点值数组，形式如下：
 
 ```javascript
 [
-    line0.start_x,
-    line0.start_y,
-    line0.end_x,
-    line0.end_y,
-    line1.start_x,
-    line1.start_y,
-    line1.end_x,
-    line1.end_y,
-    ...
-    lineN-1.start_x,
-    lineN-1.start_y,
-    lineN-1.end_x,
-    lineN-1.end_y
+  line0.start_x,
+  line0.start_y,
+  line0.end_x,
+  line0.end_y,
+  line1.start_x,
+  line1.start_y,
+  line1.end_x,
+  line1.end_y,
+  ...
+  lineN-1.start_x,
+  lineN-1.start_y,
+  lineN-1.end_x,
+  lineN-1.end_y
 ]
 ```
 
@@ -260,17 +260,17 @@ Array of floating-point values in the form of
 
 #### 描述
 
-This Text layer's baseline shift in pixels.
+此文本图层的基线偏移量（以像素为单位）。
 
 :::warning
-This value only reflects the first character in the Text layer.
+此值仅反映文本图层中的第一个字符。
 :::
 
-If you change this value, it will set all characters in the Text layer to the specified setting.
+如果更改此值，它将为文本图层中的所有字符设置指定的设置。
 
 #### 类型
 
-Floating-point value; read-write.
+浮点值；可读写。
 
 ---
 
@@ -284,16 +284,16 @@ Floating-point value; read-write.
 
 #### 描述
 
-Enables the automated change of the box height to fit the text content in the box.
-The box only grows down.
+启用自动调整框高度以适应框中的文本内容。
+框仅向下增长。
 
-Defaults to `BoxAutoFitPolicy.NONE`.
+默认为 `BoxAutoFitPolicy.NONE`。
 
-Will be disabled if [TextDocument.boxVerticalAlignment](#textdocumentboxverticalalignment) is anything other than `BoxVerticalAlignment.TOP`.
+如果 [TextDocument.boxVerticalAlignment](#textdocumentboxverticalalignment) 不是 `BoxVerticalAlignment.TOP`，则此功能将被禁用。
 
 #### 类型
 
-A `BoxAutoFitPolicy` enumerated value; read-write. One of:
+`BoxAutoFitPolicy` 枚举值；可读写。可能的值包括：
 
 - `BoxAutoFitPolicy.NONE`
 - `BoxAutoFitPolicy.HEIGHT_CURSOR`
@@ -312,15 +312,15 @@ A `BoxAutoFitPolicy` enumerated value; read-write. One of:
 
 #### 描述
 
-Controls the position of the first line of composed text relative to the top of the box.
+控制第一行文本相对于框顶部的对齐方式。
 
-Disabled if [TextDocument.boxFirstBaselineAlignmentMinimum](#textdocumentboxfirstbaselinealignmentminimum) is anything other than zero.
+如果 [TextDocument.boxFirstBaselineAlignmentMinimum](#textdocumentboxfirstbaselinealignmentminimum) 不为零，则此功能将被禁用。
 
-Defaults to `BoxFirstBaselineAlignment.ASCENT`.
+默认为 `BoxFirstBaselineAlignment.ASCENT`。
 
 #### 类型
 
-A `BoxFirstBaselineAlignment` enumerated value; read-write. One of:
+`BoxFirstBaselineAlignment` 枚举值；可读写。可能的值包括：
 
 - `BoxFirstBaselineAlignment.ASCENT`
 - `BoxFirstBaselineAlignment.CAP_HEIGHT`
@@ -344,15 +344,15 @@ A `BoxFirstBaselineAlignment` enumerated value; read-write. One of:
 
 #### 描述
 
-Manually controls the position of the first line of composed text relative to the top of the box.
+手动控制第一行文本相对于框顶部的位置。
 
-A value set here other than zero will override the effect of the [TextDocument.boxFirstBaselineAlignment](#textdocumentboxfirstbaselinealignment) value.
+此处设置的非零值将覆盖 [TextDocument.boxFirstBaselineAlignment](#textdocumentboxfirstbaselinealignment) 值的效果。
 
-Defaults to zero.
+默认为零。
 
 #### 类型
 
-Floating-point value; read/write.
+浮点值；可读写。
 
 ---
 
@@ -366,13 +366,13 @@ Floating-point value; read/write.
 
 #### 描述
 
-Controls the inner space between the box bounds and where the composable text box begins. The same value is applied to all four sides of the box.
+控制框边界与可组合文本框开始位置之间的内部间距。相同的值应用于框的所有四个边。
 
-Defaults to zero.
+默认为零。
 
 #### 类型
 
-Floating-point value; read/write.
+浮点值；可读写。
 
 ---
 
@@ -386,11 +386,11 @@ Floating-point value; read/write.
 
 #### 描述
 
-Returns `true` if some part of the text did not compose into the box.
+如果文本的某些部分未组合到框中，则返回 `true`。
 
 #### 类型
 
-Boolean; 只读.
+布尔值；只读。
 
 ---
 
@@ -400,11 +400,11 @@ Boolean; 只读.
 
 #### 描述
 
-`true` if a Text layer is a layer of paragraph (bounded) text; otherwise `false`.
+如果文本图层是段落（有界）文本图层，则为 `true`；否则为 `false`。
 
 #### 类型
 
-Boolean; 只读.
+布尔值；只读。
 
 ---
 
@@ -414,26 +414,26 @@ Boolean; 只读.
 
 :::note
 
-As of After Effects 14 (CC2017), it seems this is also writeable.
+从 After Effects 14 (CC2017) 开始，此属性似乎也可写。
 :::
 
 #### 描述
 
-The layer coordinates from a paragraph (box) Text layer's anchor point as a [width, height] array of pixel dimensions.
+段落（框）文本图层的锚点的图层坐标，作为像素尺寸的 [宽度, 高度] 数组。
 
 :::warning
-Throws an exception if [boxText](#textdocumentboxtext) does not return `true` for the Text layer.
+如果 [boxText](#textdocumentboxtext) 对文本图层不返回 `true`，则抛出异常。
 :::
 
 #### 类型
 
-Array of ([X,Y]) position coordinates; read/write.
+([X,Y]) 位置坐标数组；可读写。
 
 #### 示例
 
 ```javascript
-// For a paragraph Text layer returns [x, y] position from layer anchor point in layer coordinates.
-// e.g. approximately [0, -25] with default character panel settings.
+// 对于段落文本图层，返回图层锚点的 [x, y] 位置（图层坐标）。
+// 例如，使用默认字符面板设置时，大约为 [0, -25]。
 var boxTextLayerPos = myTextLayer.sourceText.value.boxTextPos;
 ```
 
@@ -445,15 +445,15 @@ var boxTextLayerPos = myTextLayer.sourceText.value.boxTextPos;
 
 #### 描述
 
-The size of a paragraph (box) Text layer as a [width, height] array of pixel dimensions.
+段落（框）文本图层的大小，作为像素尺寸的 [宽度, 高度] 数组。
 
 :::warning
-Throws an exception if [boxText](#textdocumentboxtext) does not return `true` for the Text layer.
+如果 [boxText](#textdocumentboxtext) 对文本图层不返回 `true`，则抛出异常。
 :::
 
 #### 类型
 
-Array of two integers (minimum value of 1); read/write.
+两个整数的数组（最小值为 1）；可读写。
 
 ---
 
@@ -467,13 +467,13 @@ Array of two integers (minimum value of 1); read/write.
 
 #### 描述
 
-Enables the automated vertical alignment of the composed text in the box.
+启用框中组合文本的自动垂直对齐。
 
-Defaults to `BoxVerticalAlignment.TOP`
+默认为 `BoxVerticalAlignment.TOP`
 
 #### 类型
 
-A `BoxVerticalAlignment` enumerated value; read-write. One of:
+`BoxVerticalAlignment` 枚举值；可读写。可能的值包括：
 
 - `BoxVerticalAlignment.TOP`
 - `BoxVerticalAlignment.CENTER`
@@ -488,15 +488,15 @@ A `BoxVerticalAlignment` enumerated value; read-write. One of:
 
 #### 描述
 
-Returns the number of composed lines in the Text layer, may be zero if all text is overset.
+返回文本图层中组合行的数量，如果所有文本都溢出，则可能为零。
 
-The [TextDocument object](#textdocument-object) instance is initialized from the composed state and subsequent changes to the [TextDocument object](#textdocument-object) instance does not cause recomposition.
+[TextDocument 对象](#textdocument-object) 实例从组合状态初始化，后续对 [TextDocument 对象](#textdocument-object) 实例的更改不会导致重新组合。
 
-Even if you remove all the text from the [TextDocument object](#textdocument-object) instance, the value returned here remains unchanged.
+即使从 [TextDocument 对象](#textdocument-object) 实例中删除所有文本，此处返回的值仍保持不变。
 
 #### 类型
 
-Integer; 只读.
+整数；只读。
 
 ---
 
@@ -510,23 +510,23 @@ Integer; 只读.
 
 #### 描述
 
-The Text layer's paragraph composer engine option. By default new Text layers will use the `ComposerEngine.UNIVERSAL_TYPE_ENGINE`; the other enum value will only be encountered in projects created before the Universal Type Engine engine (formerly known as the South Asian and Middle Eastern engine) became the default in [After Effects 22.1.1](https://helpx.adobe.com/after-effects/using/whats-new/2022-1.html).
+文本图层的段落组合引擎选项。默认情况下，新的文本图层将使用 `ComposerEngine.UNIVERSAL_TYPE_ENGINE`；其他枚举值仅在 [After Effects 22.1.1](https://helpx.adobe.com/after-effects/using/whats-new/2022-1.html) 中 Universal Type Engine（以前称为南亚和中东引擎）成为默认引擎之前创建的项目中遇到。
 
-If this attribute has a mixed value, it will be read as `undefined`.
+如果此属性具有混合值，则读取为 `undefined`。
 
-This attrribute is read-write, but an exception will be thrown if any enum value other than `ComposerEngine.UNIVERSAL_TYPE_ENGINE` is written.
+此属性可读写，但如果写入除 `ComposerEngine.UNIVERSAL_TYPE_ENGINE` 之外的任何枚举值，则会抛出异常。
 
-In effect, you can change an older document from `ComposerEngine.LATIN_CJK_ENGINE` to `ComposerEngine.UNIVERSAL_TYPE_ENGINE`, but not the reverse.
+实际上，您可以将旧文档从 `ComposerEngine.LATIN_CJK_ENGINE` 更改为 `ComposerEngine.UNIVERSAL_TYPE_ENGINE`，但不能反向更改。
 
 :::warning
-This value reflects all paragraphs in the Text layer.
+此值反映文本图层中的所有段落。
 :::
 
-If you change this value, it will set all paragraphs in the Text layer to the specified setting.
+如果更改此值，它将为文本图层中的所有段落设置指定的设置。
 
 #### 类型
 
-A `ComposerEngine` enumerated value; read-write. One of:
+`ComposerEngine` 枚举值；可读写。可能的值包括：
 
 - `ComposerEngine.LATIN_CJK_ENGINE`
 - `ComposerEngine.UNIVERSAL_TYPE_ENGINE`
@@ -543,17 +543,17 @@ A `ComposerEngine` enumerated value; read-write. One of:
 
 #### 描述
 
-The Text layer's digit set option.
+文本图层的数字集选项。
 
 :::warning
-This value only reflects the first character in the Text layer.
+此值仅反映文本图层中的第一个字符。
 :::
 
-If you change this value, it will set all characters in the Text layer to the specified setting.
+如果更改此值，它将为文本图层中的所有字符设置指定的设置。
 
 #### 类型
 
-A `DigitSet` enumerated value; read/write. One of:
+`DigitSet` 枚举值；可读写。可能的值包括：
 
 - `DigitSet.DEFAULT_DIGITS`
 - `DigitSet.ARABIC_DIGITS`
@@ -573,1178 +573,6 @@ A `DigitSet` enumerated value; read/write. One of:
 
 #### 描述
 
-The Text layer's paragraph direction option.
+文本图层的段落方向选项。
 
-If this attribute has a mixed value, it will be read as `undefined`.
-
-:::warning
-This value reflects all paragraphs in the Text layer.
-:::
-
-If you change this value, it will set all paragraphs in the Text layer to the specified setting.
-
-#### 类型
-
-A `ParagraphDirection` enumerated value; read/write. One of:
-
-- `ParagraphDirection.DIRECTION_LEFT_TO_RIGHT`
-- `ParagraphDirection.DIRECTION_RIGHT_TO_LEFT`
-
----
-
-### TextDocument.endIndent
-
-`textDocument.endIndent`
-
-:::note
-该方法添加于 After Effects 24.0
-:::
-
-#### 描述
-
-The Text layer's paragraph end indent option.
-
-If this attribute has a mixed value, it will be read as `undefined`.
-
-:::warning
-This value reflects all paragraphs in the Text layer.
-:::
-
-If you change this value, it will set all paragraphs in the Text layer to the specified setting.
-
-#### 类型
-
-Floating-point value; read/write.
-
----
-
-### TextDocument.everyLineComposer
-
-`textDocument.everyLineComposer`
-
-:::note
-该方法添加于 After Effects 24.0
-:::
-
-#### 描述
-
-The Text layer's Every-Line Composer paragraph option. If set to `false`, the TextDocument will use the Single-Line Composer.
-
-If this attribute has a mixed value, it will be read as `undefined`.
-
-:::warning
-This value reflects all paragraphs in the Text layer.
-:::
-
-If you change this value, it will set all paragraphs in the Text layer to the specified setting.
-
-#### 类型
-
-Boolean; read/write.
-
----
-
-### TextDocument.fauxBold
-
-`textDocument.fauxBold`
-
-:::note
-
-The write functionality was added in After Effects 24.0
-:::
-
-#### 描述
-
-`true` if a Text layer has faux bold enabled; otherwise `false`.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-#### 类型
-
-Boolean; read/write.
-
-#### 示例
-
-```javascript
-var isFauxBold = myTextLayer.sourceText.value.fauxBold;
-```
-
----
-
-### TextDocument.fauxItalic
-
-`textDocument.fauxItalic`
-
-:::note
-
-The write functionality was added in After Effects 24.0
-:::
-
-#### 描述
-
-`true` if a Text layer has faux italic enabled; otherwise `false`.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-#### 类型
-
-Boolean; read/write.
-
----
-
-### TextDocument.fillColor
-
-`textDocument.fillColor`
-
-#### 描述
-
-The Text layer's fill color, as an array of `[r, g, b]` floating-point values. For example, in an 8-bpc project, a red value of 255 would be 1.0, and in a 32-bpc project, an overbright blue value can be something like 3.2.
-
-Throws an exception on read if [applyFill](#textdocumentapplyfill) is not `true`.
-
-Setting this value will also set [applyFill](#textdocumentapplyfill) to `true` across the affected characters.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-#### 类型
-
-Array `[r, g, b]` of floating-point values; read/write.
-
----
-
-### TextDocument.firstLineIndent
-
-`textDocument.firstLineIndent`
-
-:::note
-该方法添加于 After Effects 24.0
-:::
-
-#### 描述
-
-The Text layer's paragraph first line indent option.
-
-If this attribute has a mixed value, it will be read as `undefined`.
-
-:::warning
-This value reflects all paragraphs in the Text layer.
-:::
-
-If you change this value, it will set all paragraphs in the Text layer to the specified setting.
-
-#### 类型
-
-Floating-point value; read/write.
-
----
-
-### TextDocument.font
-
-`textDocument.font`
-
-#### 描述
-
-The Text layer's font specified by its PostScript name.
-
-On write, there are very few resrictions on what can be supplied - if the underlying font management system does not have a matching [Font object](../fontobject) instance matching the supplied PostScript name a substitute instance will be created.
-The Font instance returned in the case of duplicate PostScript names will be the 0th element of the array returned from [FontsObject.getFontsByPostScriptName()](fontsobject.md#fontsobjectgetfontsbypostscriptname).
-
-You should use the [Font object](../fontobject) attribute for precise control.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-#### 类型
-
-String; read/write.
-
----
-
-### TextDocument.fontBaselineOption
-
-`textDocument.fontBaselineOption`
-
-:::note
-该方法添加于 After Effects 24.0
-:::
-
-#### 描述
-
-The Text layer's font baseline option. This is for setting a textDocument to superscript or subscript.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-#### 类型
-
-A `FontBaselineOption` enumerated value; read/write. One of:
-
-- `FontBaselineOption.FONT_NORMAL_BASELINE`
-- `FontBaselineOption.FONT_FAUXED_SUPERSCRIPT`
-- `FontBaselineOption.FONT_FAUXED_SUBSCRIPT`
-
----
-
-### TextDocument.fontCapsOption
-
-`textDocument.fontCapsOption`
-
-:::note
-该方法添加于 After Effects 24.0
-:::
-
-#### 描述
-
-The Text layer's font caps option.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-#### 类型
-
-A `FontCapsOption` enumerated value; read/write. One of:
-
-- `FontCapsOption.FONT_NORMAL_CAPS`
-- `FontCapsOption.FONT_SMALL_CAPS`
-- `FontCapsOption.FONT_ALL_CAPS`
-- `FontCapsOption.FONT_ALL_SMALL_CAPS`
-
----
-
-### TextDocument.fontFamily
-
-`textDocument.fontFamily`
-
-:::note
-该方法添加于 After Effects 13.1 (CC 2014.1)
-:::
-
-#### 描述
-
-String with with the name of the font family.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-#### 类型
-
-String; 只读.
-
----
-
-### TextDocument.fontLocation
-
-`textDocument.fontLocation`
-
-:::note
-该方法添加于 After Effects 13.1 (CC 2014.1)
-:::
-
-#### 描述
-
-Path of font file, providing its location on disk.
-
-:::warning
-Not guaranteed to be returned for all font types; return value may be empty string for some kinds of fonts.
-:::
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-#### 类型
-
-String; 只读.
-
----
-
-### TextDocument.fontObject
-
-`textDocument.fontObject`
-
-:::note
-该方法添加于 After Effects 24.0
-:::
-
-#### 描述
-
-The Text layer's [Font object](../fontobject) specified by its PostScript name.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-#### 类型
-
-[Font object](../fontobject); read/write.
-
----
-
-### TextDocument.fontSize
-
-`textDocument.fontSize`
-
-#### 描述
-
-The Text layer's font size in pixels.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-#### 类型
-
-Floating-point value (0.1 to 1296, inclusive); read/write.
-
----
-
-### TextDocument.fontStyle
-
-`textDocument.fontStyle`
-
-:::note
-该方法添加于 After Effects 13.1 (CC 2014.1)
-:::
-
-#### 描述
-
-String with style information, e.g., "bold", "italic"
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-#### 类型
-
-String; 只读.
-
----
-
-### TextDocument.hangingRoman
-
-`textDocument.hangingRoman`
-
-:::note
-该方法添加于 After Effects 24.0
-:::
-
-#### 描述
-
-The Text layer's Roman Hanging Punctuation paragraph option. This is only meaningful to box Text layers—it allows punctuation to fit outside the box rather than flow to the next line.
-
-If this attribute has a mixed value, it will be read as `undefined`.
-
-:::warning
-This value reflects all paragraphs in the Text layer.
-:::
-
-If you change this value, it will set all paragraphs in the Text layer to the specified setting.
-
-#### 类型
-
-Boolean; read/write.
-
----
-
-### TextDocument.horizontalScale
-
-`textDocument.horizontalScale`
-
-:::note
-该方法添加于 After Effects 13.2 (CC 2014.2)
-:::
-
-#### 描述
-
-This Text layer's horizontal scale in pixels.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-#### 类型
-
-Floating-point value; read-write.
-
-#### 示例
-
-```javascript
-var valOfHScale = myTextLayer.sourceText.value.horizontalScale;
-```
-
----
-
-### TextDocument.justification
-
-`textDocument.justification`
-
-#### 描述
-
-The paragraph justification for the Text layer.
-
-#### 类型
-
-A `ParagraphJustification` enumerated value; read/write. One of:
-
-- `ParagraphJustification.LEFT_JUSTIFY`
-- `ParagraphJustification.RIGHT_JUSTIFY`
-- `ParagraphJustification.CENTER_JUSTIFY`
-- `ParagraphJustification.FULL_JUSTIFY_LASTLINE_LEFT`
-- `ParagraphJustification.FULL_JUSTIFY_LASTLINE_RIGHT`
-- `ParagraphJustification.FULL_JUSTIFY_LASTLINE_CENTER`
-- `ParagraphJustification.FULL_JUSTIFY_LASTLINE_FULL`
-- `ParagraphJustification.MULTIPLE_JUSTIFICATIONS`
-
-Text layers with mixed justification values will be read as `ParagraphJustification.MULTIPLE_JUSTIFICATIONS`.
-
-Setting a TextDocument to use `ParagraphJustification.MULTIPLE_JUSTIFICATIONS` will result in `ParagraphJustification.CENTER_JUSTIFY` instead.
-
-:::warning
-This value reflects all paragraphs in the Text layer.
-:::
-
-If you change this value, it will set all paragraphs in the Text layer to the specified setting.
-
----
-
-### TextDocument.kerning
-
-`textDocument.kerning`
-
-:::note
-该方法添加于 After Effects 24.0
-:::
-
-#### 描述
-
-The Text layer's kerning option.
-
-Returns zero for `AutoKernType.METRIC_KERN` and `AutoKernType.OPTICAL_KERN`.
-
-Setting this value will also set `AutoKernType.NO_AUTO_KERN` to `true` across the affected characters.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-#### 类型
-
-Integer value; read/write.
-
----
-
-### TextDocument.leading
-
-`textDocument.leading`
-
-:::note
-该方法添加于 After Effects 14.2 (CC 2017.1)
-:::
-
-#### 描述
-
-The Text layer's spacing between lines.
-
-Returns zero if [TextDocument.autoLeading](#textdocumentautoleading) is `true`.
-
-Setting this value will also set [TextDocument.autoLeading](#textdocumentautoleading) to `true` across the affected characters.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-The minimum accepted value to set is 0, but this will be silently clipped to 0.01.
-
-#### 类型
-
-Floating-point value; read/write.
-
-#### 示例
-
-```javascript
-// This creates a Text layer and sets the leading to 100
-
-var composition = app.project.activeItem;
-var myTextLayer = comp.layers.addText("Spring\nSummer\nAutumn\nWinter");
-var myTextSource = myTextLayer.sourceText;
-var myTextDocument = myTextSource.value;
-myTextDocument.leading = 100;
-myTextSource.setValue(myTextDocument);
-```
-
----
-
-### TextDocument.leadingType
-
-`textDocument.leadingType`
-
-:::note
-该方法添加于 After Effects 24.0
-:::
-
-#### 描述
-
-The Text layer's paragraph leading type option.
-
-If this attribute has a mixed value, it will be read as `undefined`.
-
-:::warning
-This value reflects all paragraphs in the Text layer.
-:::
-
-If you change this value, it will set all paragraphs in the Text layer to the specified setting.
-
-#### 类型
-
-A `LeadingType` enumerated value; read/write. One of:
-
-- `LeadingType.ROMAN_LEADING_TYPE`
-- `LeadingType.JAPANESE_LEADING_TYPE`
-
----
-
-### TextDocument.ligature
-
-`textDocument.ligature`
-
-:::note
-该方法添加于 After Effects 24.0
-:::
-
-#### 描述
-
-The Text layer's ligature option.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-#### 类型
-
-Boolean; read/write.
-
----
-
-### TextDocument.lineJoinType
-
-`textDocument.lineJoinType`
-
-:::note
-该方法添加于 After Effects 24.0
-:::
-
-#### 描述
-
-The Text layer's line join type option for Stroke.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-#### 类型
-
-A `LineJoinType` enumerated value; read/write. One of:
-
-- `LineJoinType.LINE_JOIN_MITER`
-- `LineJoinType.LINE_JOIN_ROUND`
-- `LineJoinType.LINE_JOIN_BEVEL`
-
----
-
-### TextDocument.lineOrientation
-
-`textDocument.lineOrientation`
-
-:::note
-该方法添加于 After Effects 24.2
-:::
-
-#### 描述
-
-The Text layer's line orientation, in general horizontal vs vertical, which affects how all text in the layer is composed.
-
-#### 类型
-
-A `LineOrientation` enumerated value; read/write. One of:
-
-- `LineOrientation.HORIZONTAL`
-- `LineOrientation.VERTICAL_RIGHT_TO_LEFT`
-- `LineOrientation.VERTICAL_LEFT_TO_RIGHT`
-
----
-
-### TextDocument.noBreak
-
-`textDocument.noBreak`
-
-:::note
-该方法添加于 After Effects 24.0
-:::
-
-#### 描述
-
-The Text layer's no break attribute.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-#### 类型
-
-Boolean; read/write.
-
----
-
-### TextDocument.paragraphCount
-
-`textDocument.paragraphCount`
-
-#### 描述
-
-Returns the number of paragraphs in the text layer, always greater than or equal to 1.
-
-#### 类型
-
-Integer; 只读.
-
----
-
-### TextDocument.pointText
-
-`textDocument.pointText`
-
-#### 描述
-
-`true` if a Text layer is a layer of point (unbounded) text; otherwise `false`.
-
-#### 类型
-
-Boolean; 只读.
-
----
-
-### TextDocument.smallCaps
-
-`textDocument.smallCaps`
-
-:::note
-该方法添加于 After Effects 13.2 (CC 2014.2)
-:::
-
-#### 描述
-
-`true` if a Text layer has small caps enabled; otherwise `false`. To set this value, use [TextDocument.fontCapsOption](#textdocumentfontcapsoption) added in After Effects 24.0.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-#### 类型
-
-Boolean; 只读.
-
----
-
-### TextDocument.spaceAfter
-
-`textDocument.spaceAfter`
-
-:::note
-该方法添加于 After Effects 24.0
-:::
-
-#### 描述
-
-The Text layer's paragraph space after option.
-
-If this attribute has a mixed value, it will be read as `undefined`.
-
-:::warning
-This value reflects all paragraphs in the Text layer.
-:::
-
-If you change this value, it will set all paragraphs in the Text layer to the specified setting.
-
-#### 类型
-
-Floating-point value; read/write.
-
----
-
-### TextDocument.spaceBefore
-
-`textDocument.spaceBefore`
-
-:::note
-该方法添加于 After Effects 24.0
-:::
-
-#### 描述
-
-The Text layer's paragraph space before option.
-
-If this attribute has a mixed value, it will be read as `undefined`.
-
-:::warning
-This value reflects all paragraphs in the Text layer.
-:::
-
-If you change this value, it will set all paragraphs in the Text layer to the specified setting.
-
-#### 类型
-
-Floating-point value; read/write.
-
----
-
-### TextDocument.startIndent
-
-`textDocument.startIndent`
-
-:::note
-该方法添加于 After Effects 24.0
-:::
-
-#### 描述
-
-The Text layer's paragraph start indent option.
-
-If this attribute has a mixed value, it will be read as `undefined`.
-
-:::warning
-This value reflects all paragraphs in the Text layer.
-:::
-
-If you change this value, it will set all paragraphs in the Text layer to the specified setting.
-
-#### 类型
-
-Floating-point value; read/write.
-
----
-
-### TextDocument.strokeColor
-
-`textDocument.strokeColor`
-
-#### 描述
-
-The Text layer's stroke color, as an array of [r, g, b] floating-point values. For example, in an 8-bpc project, a red value of 255 would be 1.0, and in a 32-bpc project, an overbright blue value can be something like 3.2.
-
-Throws an exception on read if [applyStroke](#textdocumentapplystroke) is not `true`.
-
-Setting this value will also set [applyStroke](#textdocumentapplystroke) to `true` across the affected characters.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-#### 类型
-
-Array [r, g, b] of floating-point values; read/write.
-
----
-
-### TextDocument.strokeOverFill
-
-`textDocument.strokeOverFill`
-
-#### 描述
-
-Indicates the rendering order for the fill and stroke of a Text layer. When `true`, the stroke appears over the fill.
-
-The Text layer can override the per-character attribute setting if the Text layer is set to use All Strokes Over All Fills or All Fills Over All Strokes in the Character Panel. Thus the value returned here might be different than the actual attribute value set on the character. It is possible to set the Fill/Stroke render order via the "Fill & Stroke" property under More Options on the Text layer using TextLayer.text("ADBE Text More Options")("ADBE Text Render Order").
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-#### 类型
-
-Boolean; read/write.
-
----
-
-### TextDocument.strokeWidth
-
-`textDocument.strokeWidth`
-
-#### 描述
-
-The Text layer's stroke thickness in pixels.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-The minimum accepted value to set is 0, but this will be silently clipped to 0.01.
-
-#### 类型
-
-Floating-point value (0 to 1000, inclusive); read/write.
-
----
-
-### TextDocument.subscript
-
-`textDocument.subscript`
-
-:::note
-该方法添加于 After Effects 13.2 (CC 2014.2)
-:::
-
-#### 描述
-
-`true` if a Text layer has subscript enabled; otherwise `false`. To set this value, use [TextDocument.fontBaselineOption](#textdocumentfontbaselineoption) added in After Effects 24.0.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-#### 类型
-
-Boolean; 只读.
-
----
-
-### TextDocument.superscript
-
-`textDocument.superscript`
-
-:::note
-该方法添加于 After Effects 13.2 (CC 2014.2)
-:::
-
-#### 描述
-
-`true` if a Text layer has superscript enabled; otherwise `false`. To set this value, use [TextDocument.fontBaselineOption](#textdocumentfontbaselineoption) added in After Effects 24.0.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-#### 类型
-
-Boolean; 只读.
-
----
-
-### TextDocument.text
-
-`textDocument.text`
-
-#### 描述
-
-The text value for the Text layer's Source Text property.
-
-#### 类型
-
-String; read/write.
-
----
-
-### TextDocument.tracking
-
-`textDocument.tracking`
-
-#### 描述
-
-The Text layer's spacing between characters.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-#### 类型
-
-Floating-point value; read/write.
-
----
-
-### TextDocument.tsume
-
-`textDocument.tsume`
-
-:::note
-该方法添加于 After Effects 13.2 (CC 2014.2)
-:::
-
-#### 描述
-
-This Text layer's tsume value as a normalized percentage, from 0.0 -> 1.0.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-This attribute accepts values from 0.0 -> 100.0, however the value IS expecting a normalized value from 0.0 -> 1.0. Using a value higher than 1.0 will produce unexpected results; AE's Character Panel will clamp the value at 100%, despite the higher value set by scripting (ie `TextDocument.tsume = 100` \_really_ sets a value of 10,000%)
-
-#### 类型
-
-Floating-point value; read-write.
-
----
-
-### TextDocument.verticalScale
-
-`textDocument.verticalScale`
-
-:::note
-该方法添加于 After Effects 13.2 (CC 2014.2)
-:::
-
-#### 描述
-
-This Text layer's vertical scale in pixels.
-
-:::warning
-This value only reflects the first character in the Text layer.
-:::
-
-If you change this value, it will set all characters in the Text layer to the specified setting.
-
-#### 类型
-
-Floating-point value; read-write.
-
----
-
-## 函数
-
-### TextDocument.characterRange()
-
-`textDocument.characterRange(characterStart, [signedCharacterEnd])`
-
-:::note
-该方法添加于 After Effects 24.3
-:::
-
-#### 描述
-
-Returns an instance of the Text layer range accessor CharacterRange.
-
-The instance will remember the parameters passed in the constructor - they remain constant and changes to the [TextDocument](#textdocument-object) length may cause the instance to throw exceptions on access until the [TextDocument](#textdocument-object) length is changed to a length which makes the range valid again.
-
-Use toString() to find out what the constructed parameters were.
-
-#### 参数
-
-|      参数       |       类型       |                                                                                            描述                                                                                             |
-|----------------------|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `characterStart`     | Unsigned integer | Starts at zero, must be the less than or equal to the (text) length of the [TextDocument object](#textdocument-object).                                                                            |
-| `signedCharacterEnd` | Signed integer.  | Optional. If not specified, will be computed at `(characterStart + 1)`.                                                                                                                            |
-|                      |                  | If set to `-1`, then the [CharacterRange object](../characterrange) will dynamically calculate this on access to be equal to the (text) length of the [TextDocument object](#textdocument-object). |
-|                      |                  | `signedCharacterEnd` must be greater than or equal to `characterStart`, and less than or equal to the (text) length of the [TextDocument object](#textdocument-object).                            |
-
-Throws an exception if the parameters would result in an invalid range.
-
-It is not possible to create a [CharacterRange object](../characterrange) which spans the final carriage return in the [TextDocument object](#textdocument-object).
-
-#### 返回
-
-An instance of [CharacterRange object](../characterrange)
-
----
-
-### TextDocument.composedLineCharacterIndexesAt()
-
-`textDocument.composedLineCharacterIndexesAt(characterIndex)`
-
-:::note
-该方法添加于 After Effects 24.3
-:::
-
-#### 描述
-
-Returns the character index bounds of a [ComposedLineRange object](../composedlinerange) in the Text layer.
-
-#### 参数
-
-|    参数     |       类型       |                                       描述                                        |
-| ---------------- | ---------------- | ---------------------------------------------------------------------------------------- |
-| `characterIndex` | Unsigned integer | A text index in the Text layer, which will be mapped to the composed line it intersects. |
-
-#### 返回
-
-Generic object;
-Key `start` will be set to text index of the start of the composed line (greater than or equal to zero).
-Key `end` will be set to text index of the end of the composed line (greater than start, or equal to start if it is the last composed line).
-
-Will throw an exception if the computed start and end are outside of the current [TextDocument object](#textdocument-object)
-Remember that the composed lines are static and subsequent changes to the [TextDocument object](#textdocument-object) instance which changes its length may render the composed line data invalid.
-
----
-
-### TextDocument.composedLineRange()
-
-`textDocument.composedLineRange(composedLineIndexStart, [signedComposedLineIndexEnd])`
-
-:::note
-该方法添加于 After Effects 24.3
-:::
-
-#### 描述
-
-Returns an instance of the Text layer range accessor [ComposedLineRange object](../composedlinerange).
-
-The instance will remember the parameters passed in the constructor - they remain constant and changes to the [TextDocument](#textdocument-object) contents may cause the instance to throw exceptions on access until the [TextDocument](#textdocument-object) contents are changed which makes the range valid again.
-
-Use [ComposedLineRange.toString()](composedlinerange.md#composedlinerangetostring) to find out what the constructed parameters were.
-
-#### 参数
-
-|          参数           |       类型       |                                                                                           描述                                                                                           |
-|------------------------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `composedLineIndexStart`     | Unsigned integer | Starts at zero, must be the less than the number of composed lines in the [TextDocument object](#textdocument-object).                                                                          |
-| `signedComposedLineIndexEnd` | Signed integer.  | Optional. If not specified, will be computed at `(composedLineIndexStart + 1)`.                                                                                                                 |
-|                              |                  | If set to -1, then the [ComposedLineRange object](../composedlinerange) will dynamically calculate this on access to the last composed line of the [TextDocument object](#textdocument-object). |
-|                              |                  | `signedComposedLineIndexEnd` must be greater than `composedLineIndexStart`, and less than or equal to the number of composed lines in the [TextDocument object](#textdocument-object).          |
-
-Throws an exception if the parameters would result in an invalid range.
-
-Remember that the composed lines are static and subsequent changes to the [TextDocument object](#textdocument-object) instance which changes its length may render the composed line data invalid.
-
-#### 返回
-
-An instance of [ComposedLineRange object](../composedlinerange)
-
----
-
-### TextDocument.paragraphCharacterIndexesAt()
-
-`textDocument.paragraphCharacterIndexesAt(characterIndex)`
-
-:::note
-该方法添加于 After Effects 24.3
-:::
-
-#### 描述
-
-Returns the character index bounds of a paragraph in the Text layer.
-
-#### 参数
-
-|    参数     |       类型       |                                     描述                                      |
-| ---------------- | ---------------- | ------------------------------------------------------------------------------------ |
-| `characterIndex` | Unsigned integer | A text index in the Text layer, which will be mapped to the paragraph it intersects. |
-
-#### 返回
-
-Generic object;
-Key `start` will be set to text index of the start of the paragraph (greater than or equal to zero).
-Key `end` will be set to text index of the end of the paragraph (greater than start, or equal to start if it is the last paragraph).
-
----
-
-### TextDocument.paragraphRange()
-
-`textDocument.paragraphRange(paragraphIndexStart, [signedParagraphIndexEnd])`
-
-:::note
-该方法添加于 After Effects 24.3
-:::
-
-#### 描述
-
-Returns an instance of the Text layer range accessor [ParagraphRange object](../paragraphrange).
-
-The instance will remember the parameters passed in the constructor - they remain constant and changes to the [TextDocument](#textdocument-object) contents may cause the instance to throw exceptions on access until the [TextDocument](#textdocument-object) contents are changed which makes the range valid again.
-
-Use [ParagraphRange.toString()](paragraphrange.md#paragraphrangetostring) to find out what the constructed parameters were.
-
-#### 参数
-
-|         参数         |       类型       |                                                                                      描述                                                                                      |
-|---------------------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `paragraphIndexStart`     | Unsigned integer | Starts at zero, must be the less than the number of paragraphs in the [TextDocument object](#textdocument-object).                                                                    |
-| `signedParagraphIndexEnd` | Signed integer   | Optional. If not specified, will be computed at `(paragraphIndexStart + 1)`.                                                                                                          |
-|                           |                  | If set to -1, then the [ParagraphRange object](../paragraphrange) will dynamically calculate this on access to the last paragraph of the [TextDocument object](#textdocument-object). |
-|                           |                  | `signedParagraphIndexEnd` must be greater than `paragraphIndexStart`, and less than or equal to the number of paragraphs in the [TextDocument object](#textdocument-object).          |
-
-Throws an exception if the parameters would result in an invalid range.
-
-#### 返回
-
-An instance of [ParagraphRange object](../paragraphrange)
-
----
-
-### TextDocument.resetCharStyle()
-
-`textDocument.resetCharStyle()`
-
-#### 描述
-
-Restores all characters in the Text layer to the default text character characteristics in the Character panel.
-
-#### 参数
-
-None.
-
-#### 返回
-
-Nothing.
-
----
-
-### TextDocument.resetParagraphStyle()
-
-`textDocument.resetParagraphStyle()`
-
-#### 描述
-
-Restores all paragraphs in the Text layer to the default text paragraph characteristics in the Paragraph panel.
-
-#### 参数
-
-None.
-
-#### 返回
-
-Nothing.
+如果此属性

@@ -1,15 +1,15 @@
 ---
-title: file-and-folder-supported-encoding-names
+title: 文件和文件夹支持的编码名称
 ---
-# File- and Folder-supported encoding names
+# 文件和文件夹支持的编码名称
 
-The following list of names is a basic set of encoding names supported by the File object. Some of the character encoders are built in, while the operating system is queried for most of the other encoders.
+以下列表是 File 对象支持的基本编码名称集合。其中一些字符编码器是内置的，而大多数其他编码器是通过查询操作系统获得的。
 
-Depending on the language packs installed, some of the encodings may not be available. Names that refer to the same encoding are listed in one line. Underlines are replaced with dashes before matching an encoding name.
+根据安装的语言包，某些编码可能不可用。指向相同编码的名称列在一行中。在匹配编码名称之前，下划线会被替换为短横线。
 
-The File object processes an extended Unicode character with a value greater that 65535 as a Unicode surrogate pair (two characters in the range between 0xD700-0xDFFF).
+File 对象将值大于 65535 的扩展 Unicode 字符处理为 Unicode 代理对（两个字符，范围在 0xD700-0xDFFF 之间）。
 
-Built-in encodings are:
+内置编码包括：
 
 ```none
 US-ASCII, ASCII, ISO646-US, ISO-646.IRV:1991, ISO-IR-6,
@@ -30,21 +30,21 @@ MACINTOSH, X-MAC-ROMAN
 BINARY
 ```
 
-The ASCII encoder raises errors for characters greater than 127, and the BINARY encoder simply converts between bytes and Unicode characters by using the lower 8 bits. The latter encoder is convenient for reading and writing binary data.
+ASCII 编码器会对大于 127 的字符报错，而 BINARY 编码器则简单地通过使用低 8 位在字节和 Unicode 字符之间进行转换。后者便于读取和写入二进制数据。
 
 ---
 
-## Additional encodings
+## 其他编码
 
-In Windows, all encodings use code pages, which are assigned numeric values. The usual Western character set that Windows uses, for example, is the code page 1252. You can select Windows code pages by prepending the number of the code page with "CP" or "WINDOWS": for example, "CP1252" for the code page 1252. The File object has many other built-in encoding names that match predefined code page numbers. If a code page is not present, the encoding cannot be selected.
+在 Windows 中，所有编码都使用代码页，这些代码页被分配了数值。例如，Windows 使用的常见西方字符集是代码页 1252。你可以通过在代码页编号前加上 "CP" 或 "WINDOWS" 来选择 Windows 代码页：例如，代码页 1252 为 "CP1252"。File 对象有许多其他内置的编码名称，这些名称与预定义的代码页编号匹配。如果代码页不存在，则无法选择该编码。
 
-In Mac OS, you can select encoders by name rather than by code page number. The File object queries Mac OS directly for an encoder. As far as Mac OS character sets are identical with Windows code pages, Mac OS also knows the Windows code page numbers.
+在 Mac OS 中，你可以通过名称而不是代码页编号来选择编码器。File 对象直接向 Mac OS 查询编码器。只要 Mac OS 字符集与 Windows 代码页相同，Mac OS 也会知道 Windows 代码页编号。
 
-In UNIX, the number of available encoders depends on the installation of the `iconv` library.
+在 UNIX 中，可用编码器的数量取决于 `iconv` 库的安装。
 
-### Common encoding names
+### 常见编码名称
 
-The following encoding names are implemented both in Windows and in Mac OS:
+以下编码名称在 Windows 和 Mac OS 中均实现：
 
 ```none
 UTF-7, UTF7, UNICODE-1-1-UTF-7, X-UNICODE-2-0-UTF-7
@@ -87,7 +87,7 @@ X-MAC-ICELANDIC
 X-MAC-TURKISH
 ```
 
-### Additional Windows encoding names:
+### 其他 Windows 编码名称：
 
 ```none
 CP437, IBM850, WINDOWS-437
@@ -99,9 +99,9 @@ ISO-2022-JP
 ISO-2022-KR
 ```
 
-### Additional Mac OS encoding names
+### 其他 Mac OS 编码名称
 
-These names are alias names for encodings that Mac OS might know:
+这些名称是 Mac OS 可能知道的编码的别名：
 
 ```none
 TIS-620, TIS620, TIS620-0, TIS620.2529-1, TIS620.2533-0, TIS620.2533-1, ISO-IR-166
@@ -117,6 +117,6 @@ EUC-CN, EUCCN, GB2312, CN-GB
 EUC-TW, EUCTW, X-EUC-TW
 ```
 
-### UNIX encodings
+### UNIX 编码
 
-In UNIX, the `File` object looks for the presence of the `iconv` library, and uses whatever encoding it finds there. If you need a special encoding in UNIX, make sure that there is an `iconv` encoding module installed that converts between UTF-16 (the internal format that the `File` object uses) and the desired encoding.
+在 UNIX 中，`File` 对象会查找 `iconv` 库的存在，并使用其中找到的任何编码。如果你在 UNIX 中需要特殊编码，请确保安装了 `iconv` 编码模块，该模块可以在 UTF-16（`File` 对象使用的内部格式）和所需编码之间进行转换。

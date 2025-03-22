@@ -1,21 +1,21 @@
 ---
-title: textlayer
+title: 文字图层
 ---
-# TextLayer object
+# TextLayer 对象
 
 `app.project.item(index).layer(index)`
 
 #### 描述
 
-The TextLayer object represents a text layer within a composition. Create it using the [LayerCollection object's addText method](layercollection.md#layercollectionaddtext). It can be accessed in an item's layer collection either by index number or by a name string.
+TextLayer 对象表示合成中的文本图层。使用 [LayerCollection 对象的 addText 方法](layercollection.md#layercollectionaddtext) 创建它。可以通过索引号或名称字符串在项目的图层集合中访问它。
 
 :::info
-TextLayer is a subclass of [AVLayer](../avlayer), which is a subclass of [Layer](../layer). All methods and attributes of AVLayer and Layer are available when working with TextLayer.
+TextLayer 是 [AVLayer](../avlayer) 的子类，而 AVLayer 又是 [Layer](../layer) 的子类。在使用 TextLayer 时，AVLayer 和 Layer 的所有方法和属性都可用。
 :::
 
-#### AE Properties
+#### AE 属性
 
-TextLayer defines no additional attributes, but has the following AE properties and property groups, in addition to those inherited from AVLayer:
+TextLayer 没有定义额外的属性，但除了从 AVLayer 继承的属性外，还具有以下 AE 属性和属性组：
 
 - `Text`
 - `SourceText`
@@ -33,9 +33,9 @@ TextLayer defines no additional attributes, but has the following AE properties 
 - `InterCharacterBlending`
 - `Animators`
 
-#### Unused Properties and Attributes
+#### 未使用的属性和属性
 
-The `TimeRemapandMotionTrackers` properties, inherited from AVLayer, are not applicable to text layers, and their related AVLayer attributes are not used:
+从 AVLayer 继承的 `TimeRemapandMotionTrackers` 属性不适用于文本图层，其相关的 AVLayer 属性也未使用：
 
 - `canSetTimeRemapEnabled`
 - `timeRemapEnabled`

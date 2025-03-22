@@ -1,25 +1,25 @@
 ---
-title: settings
+title: 设置
 ---
-# Settings object
+# 设置对象
 
 `app.settings`
 
 #### 描述
 
-The Settings object provides an easy way to manage settings for third-party scripts. The settings are saved in the main After Effects preferences file, and are persistent between application sessions.
+设置对象提供了一种简单的方式来管理第三方脚本的设置。这些设置保存在 After Effects 的主偏好文件中，并在应用程序会话之间持久化。
 
-Settings are identified by section and key within the file, and each key name is associated with a value.
+设置通过文件中的部分和键来标识，每个键名都与一个值相关联。
 
-In the settings file, section names are enclosed in brackets and quotation marks, and key names are listing in quotation marks below the sectionname. All values are strings.
+在设置文件中，部分名称用括号和引号括起来，键名列在部分名称下方的引号中。所有值都是字符串。
 
-You can create new settings with this object, as well as accessing existing settings.
+您可以使用此对象创建新设置，也可以访问现有设置。
 
-As of Version 12/CC, preferences and settings methods now take a third argument to specify the target preferences file if Section/Key is not in the main preferences file. See [Preferences object](../preferences) for more info.
+从版本 12/CC 开始，偏好和设置方法现在接受第三个参数，用于指定目标偏好文件（如果部分/键不在主偏好文件中）。有关更多信息，请参阅 [偏好对象](../preferences)。
 
 :::tip
 
-- If you're looking to get or set internal AE preferences, see [Preferences object](../preferences)
+- 如果您想获取或设置 AE 的内部偏好，请参阅 [偏好对象](../preferences)
 
 :::
 
@@ -33,31 +33,31 @@ As of Version 12/CC, preferences and settings methods now take a third argument 
 
 #### 描述
 
-Retrieves a script settings item value from the preferences file.
+从偏好文件中检索脚本设置项的值。
 
 :::warning
-If the value is greater than 1999 bytes, `getSetting` that item will throw an error (seen in AE 15.0.1)
+如果值大于 1999 字节，`getSetting` 将抛出错误（在 AE 15.0.1 中观察到）。
 :::
 
 #### 参数
 
-|   参数   |                       类型                        |               描述               |
-| ------------- | ------------------------------------------------- | --------------------------------------- |
-| `sectionName` | String                                            | The name of a settings section.         |
-| `keyName`     | String                                            | The key name of the setting item.       |
-| `prefType`    | [`PREFType` enum](./preferences.md#preftype-enum) | Optional. Which preference file to use. |
+|   参数   |             类型            |         描述         |
+| --- | --------- | --------- |
+| `sectionName` | 字符串         | 设置部分的名称。     |
+| `keyName`   | 字符串         | 设置项的键名。     |
+| `prefType`  | [`PREFType` 枚举](./preferences.md#preftype-enum) | 可选。指定要使用的偏好文件。 |
 
 #### 返回
 
-String.
+字符串。
 
 #### 示例
 
-If you have saved a setting named with the key name "trimPrecomps" in a section called "Precomp Cropper", you can retrieve the value by:
+如果您在名为 "Precomp Cropper" 的部分中保存了一个键名为 "trimPrecomps" 的设置，您可以通过以下方式检索该值：
 
 ```javascript
 var trimPrecompsSetting = app.settings.getSetting("Precomp Cropper", "trimPrecomps");
-alert("The setting is: " + trimPrecompsSetting);
+alert("设置值为: " + trimPrecompsSetting);
 ```
 
 ---
@@ -68,19 +68,19 @@ alert("The setting is: " + trimPrecompsSetting);
 
 #### 描述
 
-Returns `true` if the specified script settings item exists and has a value.
+如果指定的脚本设置项存在且有值，则返回 `true`。
 
 #### 参数
 
-|   参数   |                       类型                        |               描述               |
-| ------------- | ------------------------------------------------- | --------------------------------------- |
-| `sectionName` | String                                            | The name of a settings section.         |
-| `keyName`     | String                                            | The key name of the setting item.       |
-| `prefType`    | [`PREFType` enum](./preferences.md#preftype-enum) | Optional. Which preference file to use. |
+|   参数   |             类型            |         描述         |
+| --- | --------- | --------- |
+| `sectionName` | 字符串         | 设置部分的名称。     |
+| `keyName`   | 字符串         | 设置项的键名。     |
+| `prefType`  | [`PREFType` 枚举](./preferences.md#preftype-enum) | 可选。指定要使用的偏好文件。 |
 
 #### 返回
 
-Boolean.
+布尔值。
 
 ---
 
@@ -90,32 +90,32 @@ Boolean.
 
 #### 描述
 
-Saves a value for a script settings item.
+保存脚本设置项的值。
 
 :::warning
-If the value is greater than 1999 bytes, `saveSetting` that item will throw an error (seen in AE 15.0.1)
+如果值大于 1999 字节，`saveSetting` 将抛出错误（在 AE 15.0.1 中观察到）。
 :::
 
 #### 参数
 
-|   参数   |                       类型                        |               描述               |
-| ------------- | ------------------------------------------------- | --------------------------------------- |
-| `sectionName` | String                                            | The name of a settings section.         |
-| `keyName`     | String                                            | The key name of the setting item.       |
-| `value`       | String                                            | The new value.                          |
-| `prefType`    | [`PREFType` enum](./preferences.md#preftype-enum) | Optional. Which preference file to use. |
+|   参数   |             类型            |         描述         |
+| --- | --------- | --------- |
+| `sectionName` | 字符串         | 设置部分的名称。     |
+| `keyName`   | 字符串         | 设置项的键名。     |
+| `value`     | 字符串         | 新值。              |
+| `prefType`  | [`PREFType` 枚举](./preferences.md#preftype-enum) | 可选。指定要使用的偏好文件。 |
 
 #### 返回
 
-Nothing.
+无。
 
 #### 示例
 
-If you want to save a setting called "trimPrecomps" for a script named "Precomp Cropper", you could save that setting via
+如果您想为名为 "Precomp Cropper" 的脚本保存一个名为 "trimPrecomps" 的设置，您可以通过以下方式保存该设置：
 
 ```javascript
 var trimPrecompsSetting = true;
 app.settings.saveSetting("Precomp Cropper", "trimPrecomps", trimPrecompsSetting);
 ```
 
-Note that the setting will be saved as a string. You'll want to parse it into a bool later, if needed.
+请注意，设置将保存为字符串。如果需要，您稍后可能需要将其解析为布尔值。

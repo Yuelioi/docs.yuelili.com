@@ -1,7 +1,7 @@
 ---
-title: filesource
+title: 文件源
 ---
-# FileSource object
+# FileSource 对象
 
 `app.project.item(index).mainSource`
 
@@ -9,10 +9,10 @@ title: filesource
 
 #### 描述
 
-The FileSource object describes footage that comes from a file.
+FileSource 对象描述了来自文件的素材。
 
 :::info
-FileSource is a subclass of [FootageSource object](../footagesource). All methods and attributes of FootageSource, in addition to those listed below, are available when working with FileSource.
+FileSource 是 [FootageSource 对象](../footagesource) 的子类。除了下面列出的方法和属性外，FootageSource 的所有方法和属性在操作 FileSource 时也可用。
 :::
 
 ---
@@ -27,14 +27,14 @@ FileSource is a subclass of [FootageSource object](../footagesource). All method
 
 #### 描述
 
-The [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object for the file that defines this asset. To change the value:
+定义此资产的文件的 [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象。要更改该值：
 
-- If this FileSource is a [proxySource](../item/avitem.md#avitemproxysource) of an [AVItem](../../item/avitem), call [setProxy()](../item/avitem.md#avitemsetproxy) or [setProxyWithSequence()](../item/avitem.md#avitemsetproxywithsequence).
-- If this FileSource is a [mainSource](../item/footageitem.md#footageitemmainsource) of a [FootageItem](../../item/footageitem), call [replace()](../item/footageitem.md#footageitemreplace) or [replaceWithSequence()](../item/footageitem.md#footageitemreplacewithsequence).
+- 如果此 FileSource 是 [AVItem](../../item/avitem) 的 [proxySource](../item/avitem.md#avitemproxysource)，请调用 [setProxy()](../item/avitem.md#avitemsetproxy) 或 [setProxyWithSequence()](../item/avitem.md#avitemsetproxywithsequence)。
+- 如果此 FileSource 是 [FootageItem](../../item/footageitem) 的 [mainSource](../item/footageitem.md#footageitemmainsource)，请调用 [replace()](../item/footageitem.md#footageitemreplace) 或 [replaceWithSequence()](../item/footageitem.md#footageitemreplacewithsequence)。
 
 #### 类型
 
-[File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object; 只读.
+[File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象; 只读.
 
 ---
 
@@ -46,11 +46,11 @@ The [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access
 
 #### 描述
 
-The path and filename of footage that is missing from this asset. See also [AVItem.footageMissing](../item/avitem.md#avitemfootagemissing).
+此资产中缺失素材的路径和文件名。另请参阅 [AVItem.footageMissing](../item/avitem.md#avitemfootagemissing)。
 
 #### 类型
 
-String; 只读.
+字符串; 只读.
 
 ---
 
@@ -62,12 +62,12 @@ String; 只读.
 
 #### 描述
 
-Reloads the asset from the file. This method can be called only on a `mainSource`, not a `proxySource`.
+从文件重新加载资产。此方法只能在 `mainSource` 上调用，而不能在 `proxySource` 上调用。
 
 #### 参数
 
-None.
+无。
 
 #### 返回
 
-Nothing.
+无。

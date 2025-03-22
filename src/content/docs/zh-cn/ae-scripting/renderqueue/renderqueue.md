@@ -1,13 +1,13 @@
 ---
-title: renderqueue
+title: 渲染队列
 ---
-# RenderQueue object
+# RenderQueue 对象
 
 `app.project.renderQueue`
 
 #### 描述
 
-The RenderQueue object represents the render automation process, the data and functionality that is available through the Render Queue panel of a particular After Effects project. Attributes provide access to items in the render queue and their render status. Methods can start, pause, and stop the rendering process. The [RenderQueueItem object](../renderqueueitem) provides access to the specific settings for an item to be rendered.
+RenderQueue 对象表示渲染自动化过程，即通过特定 After Effects 项目的渲染队列面板可用的数据和功能。属性提供了对渲染队列中项目及其渲染状态的访问。方法可以启动、暂停和停止渲染过程。[RenderQueueItem 对象](../renderqueueitem) 提供了对要渲染项目的特定设置的访问。
 
 ---
 
@@ -23,7 +23,7 @@ The RenderQueue object represents the render automation process, the data and fu
 
 #### 描述
 
-indicates whether or not there are queued render items in the After Effects render queue. Only queued items can be added to the AME queue.
+指示 After Effects 渲染队列中是否有排队的渲染项目。只有排队的项目才能添加到 AME 队列中。
 
 [RenderQueue.queueInAME()](#renderqueuequeueiname)
 
@@ -43,12 +43,12 @@ Boolean; 只读.
 
 #### 描述
 
-Read or write the **Notify** property for the entire Render Queue.
-This is exposed in the UI as a checkbox in the lower right corner of the Render Queue panel.
+读取或写入整个渲染队列的 **Notify** 属性。
+这在用户界面中表现为渲染队列面板右下角的复选框。
 
 #### 类型
 
-Boolean; read/write.
+Boolean; 可读写.
 
 ---
 
@@ -58,11 +58,11 @@ Boolean; read/write.
 
 #### 描述
 
-A collection of all items in the render queue. See [RenderQueueItem object](../renderqueueitem).
+渲染队列中所有项目的集合。请参阅 [RenderQueueItem 对象](../renderqueueitem)。
 
 #### 类型
 
-[RQItemCollection object](../rqitemcollection); 只读.
+[RQItemCollection 对象](../rqitemcollection); 只读.
 
 ---
 
@@ -72,7 +72,7 @@ A collection of all items in the render queue. See [RenderQueueItem object](../r
 
 #### 描述
 
-The total number of items in the render queue.
+渲染队列中的项目总数。
 
 #### 类型
 
@@ -86,7 +86,7 @@ Integer; 只读.
 
 #### 描述
 
-When `true`, the rendering process is in progress or paused. When `false`, it is stopped.
+当为 `true` 时，渲染过程正在进行或暂停。当为 `false` 时，渲染过程已停止。
 
 #### 类型
 
@@ -102,17 +102,17 @@ Boolean; 只读.
 
 #### 描述
 
-Gets a specified item from the ite ms collection.
+从项目集合中获取指定的项目。
 
 #### 参数
 
-| 参数 |                 类型                  |           描述           |
-| --------- | ------------------------------------- | ------------------------------- |
-| `index`   | Integer, 范围为 `[0..numItems]` | The position index of the item. |
+| 参数      | 类型                              | 描述             |
+| --------- | --------------------------------- | ---------------- |
+| `index` | Integer, 范围为 `[0..numItems]` | 项目的位置索引。 |
 
 #### 返回
 
-[RenderQueueItem object](../renderqueueitem).
+[RenderQueueItem 对象](../renderqueueitem)。
 
 ---
 
@@ -122,17 +122,17 @@ Gets a specified item from the ite ms collection.
 
 #### 描述
 
-Pauses the current rendering process, or continues a paused rendering process. This is the same as clicking Pause in the Render Queue panel during a render. You can call this method from an [RenderQueueItem.onstatus](renderqueueitem.md#renderqueueitemonstatus) or [app.onError](../general/application.md#apponerror) callback.
+暂停当前的渲染过程，或继续已暂停的渲染过程。这与在渲染过程中点击渲染队列面板中的“暂停”按钮相同。你可以从 [RenderQueueItem.onstatus](renderqueueitem.md#renderqueueitemonstatus) 或 [app.onError](../general/application.md#apponerror) 回调中调用此方法。
 
 #### 参数
 
-| 参数 |  类型   |                                  描述                                   |
-| --------- | ------- | ------------------------------------------------------------------------------ |
-| `pause`   | Boolean | `true` to pause a current render process, `false` to continue a paused render. |
+| 参数      | 类型    | 描述                                                      |
+| --------- | ------- | --------------------------------------------------------- |
+| `pause` | Boolean | `true` 暂停当前的渲染过程，`false` 继续已暂停的渲染。 |
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
@@ -142,18 +142,18 @@ Nothing.
 
 #### 描述
 
-Starts the rendering process. This is the same as clicking Render in the Render Queue panel. The method does not return until the render process is complete. To pause or stop the rendering process, call [RenderQueue.pauseRendering()](#renderqueuepauserendering) or [RenderQueue.stopRendering()](#renderqueuestoprendering) from an `onError` or `onstatus` callback.
+启动渲染过程。这与点击渲染队列面板中的“渲染”按钮相同。该方法在渲染过程完成之前不会返回。要暂停或停止渲染过程，请从 `onError` 或 `onstatus` 回调中调用 [RenderQueue.pauseRendering()](#renderqueuepauserendering) 或 [RenderQueue.stopRendering()](#renderqueuestoprendering)。
 
-- To respond to errors during the rendering process, define a callback function in [app.onError](../general/application.md#apponerror).
-- To respond to changes in the status of a particular item while the render is progressing, define a callback function in [RenderQueueItem.onstatus](renderqueueitem.md#renderqueueitemonstatus) in the associated RenderQueueItem object.
+- 要在渲染过程中响应错误，请在 [app.onError](../general/application.md#apponerror) 中定义一个回调函数。
+- 要在渲染过程中响应特定项目状态的变化，请在关联的 RenderQueueItem 对象中的 [RenderQueueItem.onstatus](renderqueueitem.md#renderqueueitemonstatus) 中定义一个回调函数。
 
 #### 参数
 
-None.
+无。
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
@@ -163,17 +163,17 @@ Nothing.
 
 #### 描述
 
-Shows or hides the Render Queue panel.
+显示或隐藏渲染队列面板。
 
 #### 参数
 
-| 参数 |  类型   |                           描述                            |
-| --------- | ------- | ---------------------------------------------------------------- |
-| `doShow`  | Boolean | When `true`, show the Render Queue panel. When `false`, hide it. |
+| 参数       | 类型    | 描述                                                            |
+| ---------- | ------- | --------------------------------------------------------------- |
+| `doShow` | Boolean | 当为 `true` 时，显示渲染队列面板。当为 `false` 时，隐藏它。 |
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
@@ -183,15 +183,15 @@ Nothing.
 
 #### 描述
 
-Stops the rendering process. This is the same as clicking Stop in the Render Queue panel during a render. You can call this method from an [RenderQueueItem.onstatus](renderqueueitem.md#renderqueueitemonstatus) or [app.onError](../general/application.md#apponerror) callback.
+停止渲染过程。这与在渲染过程中点击渲染队列面板中的“停止”按钮相同。你可以从 [RenderQueueItem.onstatus](renderqueueitem.md#renderqueueitemonstatus) 或 [app.onError](../general/application.md#apponerror) 回调中调用此方法。
 
 #### 参数
 
-None.
+无。
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
@@ -205,37 +205,37 @@ Nothing.
 
 #### 描述
 
-Calls the Queue In AME command. This method requires passing a boolean value, telling AME whether to only queue the render items (`false`) or if AME should also start processing its queue (`true`).
+调用“在 AME 中排队”命令。此方法需要传递一个布尔值，告诉 AME 是仅将渲染项目排队 (`false`) 还是 AME 也应该开始处理其队列 (`true`)。
 
 :::note
-This requires Adobe Media Encoder CC 2017 (11.0) or later.
+这需要 Adobe Media Encoder CC 2017 (11.0) 或更高版本。
 :::
 
 :::tip
-When AME receives the queued items, it applies the most recently used encoding preset. If `render_immediately_in_AME` is set to `true`, you will not have an opportunity to change the encoding settings.
+当 AME 接收到排队的项目时，它会应用最近使用的编码预设。如果 `render_immediately_in_AME` 设置为 `true`，你将没有机会更改编码设置。
 :::
 
 #### 参数
 
-|          参数          |  类型   |                                                       描述                                                       |
-| --------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `render_immediately_in_AME` | Boolean | Telling AME whether to only queue the render items (`false`) or if AME should also start processing its queue (`true`). |
+| 参数                          | 类型    | 描述                                                                               |
+| ----------------------------- | ------- | ---------------------------------------------------------------------------------- |
+| `render_immediately_in_AME` | Boolean | 告诉 AME 是仅将渲染项目排队 (`false`) 还是 AME 也应该开始处理其队列 (`true`)。 |
 
 #### 返回
 
-Nothing.
+无。
 
 #### 示例
 
-The following sample code checks to see if there are queued items in the render queue, and if so queues them in AME but does not immediately start rendering:
+以下示例代码检查渲染队列中是否有排队的项目，如果有，则将它们排队到 AME 中，但不会立即开始渲染：
 
 ```javascript
-// Scripting support for Queue in AME.
-// Requires Adobe Media Encoder 11.0.
+// 支持在 AME 中排队的脚本。
+// 需要 Adobe Media Encoder 11.0。
 if (app.project.renderQueue.canQueueInAME === true) {
-    // Send queued items to AME, but do not start rendering.
-    app.project.renderQueue.queueInAME(false);
+  // 将排队的项目发送到 AME，但不立即开始渲染。
+  app.project.renderQueue.queueInAME(false);
 } else {
-    alert("There are no queued item in the Render Queue.");
+  alert("渲染队列中没有排队的项目。");
 }
 ```

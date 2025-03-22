@@ -1,16 +1,16 @@
 ---
-title: maskpropertygroup
+title: 蒙版属性组
 ---
-# MaskPropertyGroup object
+# MaskPropertyGroup 对象
 
 `app.project.item(index).layer(index).mask`
 
 #### 描述
 
-The MaskPropertyGroup object encapsulates mask attributes in a layer.
+MaskPropertyGroup 对象封装了图层中的遮罩属性。
 
 :::info
-MaskPropertyGroup is a subclass of [PropertyGroup object](../propertygroup). All methods and attributes of [PropertyBase object](../propertybase) and PropertyGroup, in addition to those listed below, are available when working with MaskPropertyGroup.
+MaskPropertyGroup 是 [PropertyGroup 对象](../propertygroup) 的子类。除了下面列出的方法和属性外，[PropertyBase 对象](../propertybase) 和 PropertyGroup 的所有方法和属性在处理 MaskPropertyGroup 时也可用。
 :::
 
 ---
@@ -23,11 +23,11 @@ MaskPropertyGroup is a subclass of [PropertyGroup object](../propertygroup). All
 
 #### 描述
 
-The color used to draw the mask outline as it appears in the user interface (Composition panel, Layer panel, and Timeline panel).
+用于绘制遮罩轮廓的颜色，显示在用户界面中（合成面板、图层面板和时间轴面板）。
 
 #### 类型
 
-Array of three floating-point values, `[R, G, B]`, 范围为 `[0.0..1.0]`; read/write.
+包含三个浮点值的数组，`[R, G, B]`，范围为 `[0.0..1.0]`；可读写。
 
 ---
 
@@ -37,11 +37,11 @@ Array of three floating-point values, `[R, G, B]`, 范围为 `[0.0..1.0]`; read/
 
 #### 描述
 
-When `true`, the mask is inverted; otherwise `false`.
+当为 `true` 时，遮罩被反转；否则为 `false`。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读写。
 
 ---
 
@@ -51,11 +51,11 @@ Boolean; read/write.
 
 #### 描述
 
-When `true`, the mask is locked and cannot be edited in the user interface; otherwise `false`.
+当为 `true` 时，遮罩被锁定且无法在用户界面中编辑；否则为 `false`。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读写。
 
 ---
 
@@ -65,11 +65,11 @@ Boolean; read/write.
 
 #### 描述
 
-The feather falloff mode for the mask. Equivalent to the Layer > Mask > Feather Falloff setting.
+遮罩的羽化衰减模式。等同于图层 > 遮罩 > 羽化衰减设置。
 
 #### 类型
 
-A `MaskFeatherFalloff` enumerated value; read/write. One of:
+`MaskFeatherFalloff` 枚举值；可读写。取值为：
 
 - `MaskFeatherFalloff.FFO_LINEAR`
 - `MaskFeatherFalloff.FFO_SMOOTH`
@@ -82,11 +82,11 @@ A `MaskFeatherFalloff` enumerated value; read/write. One of:
 
 #### 描述
 
-The masking mode for this mask.
+此遮罩的遮罩模式。
 
 #### 类型
 
-A `MaskMode` enumerated value; read/write. One of:
+`MaskMode` 枚举值；可读写。取值为：
 
 - `MaskMode.NONE`
 - `MaskMode.ADD`
@@ -104,11 +104,11 @@ A `MaskMode` enumerated value; read/write. One of:
 
 #### 描述
 
-How motion blur is applied to this mask.
+运动模糊如何应用于此遮罩。
 
 #### 类型
 
-A `MakMotionBlur` enumerated value; read/write. One of:
+`MakMotionBlur` 枚举值；可读写。取值为：
 
 - `MaskMotionBlur.SAME_AS_LAYER`
 - `MaskMotionBlur.ON`
@@ -122,8 +122,8 @@ A `MakMotionBlur` enumerated value; read/write. One of:
 
 #### 描述
 
-When `true`, the mask is a RotoBezier shape; otherwise `false`.
+当为 `true` 时，遮罩为 RotoBezier 形状；否则为 `false`。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读写。

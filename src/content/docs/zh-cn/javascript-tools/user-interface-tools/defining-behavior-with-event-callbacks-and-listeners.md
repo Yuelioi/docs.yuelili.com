@@ -1,41 +1,41 @@
 ---
-title: defining-behavior-with-event-callbacks-and-listeners
+title: 使用事件回调和监听器定义行为
 ---
-# Defining behavior with event callbacks and listeners
+# 使用事件回调和监听器定义行为
 
-You must define the behavior of your controls in order for them to respond to user interaction. You can do this by defining event-handling callback functions as part of the definition of the control or window. To respond to a specific event, define a handler function for it, and assign a reference to that function in the corresponding property of the window or control object. Different types of windows and controls respond to different actions, or events:
+为了让控件能够响应用户交互，你必须定义它们的行为。你可以通过将事件处理回调函数定义为控件或窗口的一部分来实现这一点。为了响应特定事件，你需要为该事件定义一个处理函数，并将该函数的引用分配给窗口或控件对象的相应属性。不同类型的窗口和控件会响应不同的操作或事件：
 
-- Windows generate events when the user moves or resizes the window. To handle these events, define callback functions for `onMove`, `onMoving`, `onResize`, `onResizing`.
-    - To respond to the user opening or closing the window, define callback functions for `onShow` and `onClose`.
-- Button, RadioButton, and Checkbox controls generate events when the user clicks within the control bounds.
-    - To handle the event, define a callback function for [onClick](control-objects.md#onclick).
-- EditNumber, EditText, Scrollbar, and Slider controls generate events when the content or value changes-that is, when the user types into an edit field, or moves the scroll or slider indicator. To handle these events, define callback functions for [onChange](control-objects.md#onchange) and [onChanging](control-objects.md#onchanging).
-- ListBox, DropDownList, and TreeView controls generate events whenever the selection in the list changes. To handle the event, define a callback function for [onChange](control-objects.md#onchange).
-    - The TreeView control also generates events when the user expands or collapses a node, handled by the [onExpand](control-objects.md#onexpand) and [onCollapse](control-objects.md#oncollapse) callback functions.
-- The ListBox also generates an event when the user double-clicks an item. To handle it, define a callback function for the [onDoubleClick](control-objects.md#ondoubleclick) event.
-- Both containers and controls generate events just before they are drawn, that allow you to customize their appearance. To handle these events, define callback functions for [onDraw](control-objects.md#ondraw).
-    - Your handler can modify or control how the container or control is drawn using the methods defined in the control's associated [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object).
-- In [Windows](.././window-object) only, you can register a key sequence as a [shortcutKey](control-objects.md#shortcutkey) for a window or for most types of controls. To handle the key sequence, define a callback function for [onShortcutKey](control-objects.md#onshortcutkey) in that control.
+- 当用户移动或调整窗口大小时，窗口会生成事件。为了处理这些事件，你需要为 `onMove`、`onMoving`、`onResize`、`onResizing` 定义回调函数。
+    - 为了响应用户打开或关闭窗口，你需要为 `onShow` 和 `onClose` 定义回调函数。
+- 当用户点击控件边界内的区域时，按钮（Button）、单选按钮（RadioButton）和复选框（Checkbox）控件会生成事件。
+    - 为了处理该事件，你需要为 [onClick](control-objects.md#onclick) 定义一个回调函数。
+- 当内容或值发生变化时，EditNumber、EditText、Scrollbar 和 Slider 控件会生成事件，即当用户在编辑字段中输入内容或移动滚动条或滑块指示器时。为了处理这些事件，你需要为 [onChange](control-objects.md#onchange) 和 [onChanging](control-objects.md#onchanging) 定义回调函数。
+- 当列表中的选择发生变化时，ListBox、DropDownList 和 TreeView 控件会生成事件。为了处理该事件，你需要为 [onChange](control-objects.md#onchange) 定义一个回调函数。
+    - 当用户展开或折叠节点时，TreeView 控件也会生成事件，这些事件由 [onExpand](control-objects.md#onexpand) 和 [onCollapse](control-objects.md#oncollapse) 回调函数处理。
+- 当用户双击列表项时，ListBox 也会生成事件。为了处理该事件，你需要为 [onDoubleClick](control-objects.md#ondoubleclick) 事件定义一个回调函数。
+- 容器和控件在绘制之前都会生成事件，允许你自定义它们的外观。为了处理这些事件，你需要为 [onDraw](control-objects.md#ondraw) 定义一个回调函数。
+    - 你的处理函数可以使用控件关联的 [ScriptUIGraphics 对象](graphic-customization-objects.md#scriptuigraphics-object) 中定义的方法来修改或控制容器或控件的绘制方式。
+- 仅在 [Windows](.././window-object) 中，你可以将键序列注册为窗口或大多数类型控件的 [shortcutKey](control-objects.md#shortcutkey)。为了处理该键序列，你需要在控件中为 [onShortcutKey](control-objects.md#onshortcutkey) 定义一个回调函数。
 
 ---
 
-## Defining event-handler callback functions
+## 定义事件处理回调函数
 
-Your script can define an event handler as a named function referenced by the callback property, or as an unnamed function defined inline in the callback property.
+你的脚本可以将事件处理程序定义为回调属性引用的命名函数，或者定义为在回调属性中内联定义的未命名函数。
 
-- If you define a named function, assign its name as the value of the corresponding callback property. For example:
+- 如果你定义了一个命名函数，请将其名称作为相应回调属性的值。例如：
     ```javascript
-    function hasBtnsCbOnClick() { /* do something interesting */ }
+    function hasBtnsCbOnClick() { /* 做一些有趣的事情 */ }
     hasBtnsCb.onClick = hasBtnsCbOnClick;
     ```
-- For a simple, unnamed function, set the property value directly to the function definition:
+- 对于简单的未命名函数，直接将属性值设置为函数定义：
     ```javascript
     UI-element.callback-name = function () { handler-definition };
     ```
 
-Event-handler functions take no arguments.
+事件处理函数不接受任何参数。
 
-For example, the following sets the onClick property of the hasBtnsCb checkbox to a function that enables another control in the same dialog:
+例如，以下代码将 hasBtnsCb 复选框的 onClick 属性设置为一个函数，该函数启用同一对话框中的另一个控件：
 
 ```javascript
 hasBtnsCb.onClick = function () {
@@ -43,7 +43,7 @@ hasBtnsCb.onClick = function () {
 };
 ```
 
-The following statements set the `onClick` event handlers for buttons that close the containing dialog, returning different values to the `show` method that invoked the dialog, so the calling script can tell which button was clicked:
+以下语句为关闭包含对话框的按钮设置了 `onClick` 事件处理程序，返回不同的值给调用对话框的 `show` 方法，以便调用脚本可以知道点击了哪个按钮：
 
 ```javascript
 buildBtn.onClick = function() {
@@ -57,20 +57,20 @@ cancelBtn.onClick = function() {
 
 ---
 
-## Simulating user events
+## 模拟用户事件
 
-You can simulate user actions by sending an event notification directly to a window or control with the notify method. A script can use this method to generate events in the controls of a window, as if a user was clicking buttons, entering text, or moving the window. If you have defined an event-handler callback for the element, the `notify` method invokes it.
+你可以通过使用 `notify` 方法直接向窗口或控件发送事件通知来模拟用户操作。脚本可以使用此方法在窗口的控件中生成事件，就像用户在点击按钮、输入文本或移动窗口一样。如果你为元素定义了事件处理回调，`notify` 方法会调用它。
 
-The notify method takes an optional argument that specifies which event it should simulate. If a control can generate only one kind of event, notification generates that event by default.
+`notify` 方法接受一个可选参数，用于指定它应模拟的事件。如果控件只能生成一种事件，通知默认会生成该事件。
 
-The following controls generate the `onClick` event:
+以下控件会生成 `onClick` 事件：
 
 - [`Button`](./control-objects.md#button)
 - [`Checkbox`](./control-objects.md#checkbox)
 - [`IconButton`](./control-objects.md#iconbutton)
 - [`RadioButton`](./control-objects.md#radiobutton)
 
-The following controls generate the `onChange` event:
+以下控件会生成 `onChange` 事件：
 
 - [`DropDownList`](./control-objects.md#dropdownlist)
 - [`EditNumber`](./control-objects.md#editnumber)
@@ -80,109 +80,108 @@ The following controls generate the `onChange` event:
 - [`Slider`](./control-objects.md#slider)
 - [`TreeView`](./control-objects.md#treeview)
 
-The following controls generate the `onChanging` event:
+以下控件会生成 `onChanging` 事件：
 
 - [`EditNumber`](./control-objects.md#editnumber)
 - [`EditText`](./control-objects.md#edittext)
 - [`Scrollbar`](./control-objects.md#scrollbar)
 - [`Slider`](./control-objects.md#slider)
 
-In the [ListBox](./control-objects.md#listbox), double-clicking an item generates the `onDoubleClick` event.
+在 [ListBox](./control-objects.md#listbox) 中，双击某个项会生成 `onDoubleClick` 事件。
 
-In [`RadioButton`](./control-objects.md#radiobutton) and [`Checkbox`](./control-objects.md#checkbox) controls, the boolean value property automatically changes when the user clicks the control. If you use `notify()` to simulate a click, the value changes just as if the user had clicked.
+在 [`RadioButton`](./control-objects.md#radiobutton) 和 [`Checkbox`](./control-objects.md#checkbox) 控件中，布尔值属性会在用户点击控件时自动更改。如果你使用 `notify()` 来模拟点击，值会像用户点击一样发生变化。
 
-For example, if the value of a checkbox `hasBtnsCb` is `true`, this code changes the value to `false`:
+例如，如果复选框 `hasBtnsCb` 的值为 `true`，以下代码会将其值更改为 `false`：
 
 ```javascript
 if ( dlg.hasBtnsCb.value == true ) {
-    dlg.hasBtnsCb.notify(); // dlg.hasBtnsCb.value is now `false`
+    dlg.hasBtnsCb.notify(); // dlg.hasBtnsCb.value 现在为 `false`
 }
 ```
 
 ---
 
-## Registering event listeners for windows or controls
+## 为窗口或控件注册事件监听器
 
-Another way to define the behavior of your windows and controls is register a handler function that responds to a specific type of event in that window or control. This technique allows you to respond to the cascading of an event through a hierarchy of containers and controls.
+另一种定义窗口和控件行为的方法是注册一个处理函数，以响应该窗口或控件中特定类型的事件。这种技术允许你响应事件在容器和控件层次结构中的传播。
 
-Use [addEventListener()](window-object.md#addeventlistener) or [addEventListener()](control-objects.md#addeventlistener) to register a handler. The function you register receives an event object (from the [UIEvent base class](event-handling.md#uievent-base-class)) that encapsulates the event information. As an event cascades down through a hierarchy and back up through the hierarchy, your handler can respond at any level, or use the UIEvent object's [stopPropagation()](event-handling.md#stoppropagation) method to stop the event propagation at some level.
+使用 [addEventListener()](window-object.md#addeventlistener) 或 [addEventListener()](control-objects.md#addeventlistener) 来注册处理程序。你注册的函数会接收一个事件对象（来自 [UIEvent 基类](event-handling.md#uievent-base-class)），该对象封装了事件信息。当事件在层次结构中向下传播并返回时，你的处理程序可以在任何级别响应，或者使用 UIEvent 对象的 [stopPropagation()](event-handling.md#stoppropagation) 方法在某个级别停止事件传播。
 
-You can register:
+你可以注册：
 
-- The name of a handler function defined in the extension that takes one argument, the event object. For example:
+- 扩展中定义的处理函数的名称，该函数接受一个参数，即事件对象。例如：
     ```javascript
     myButton.addEventListener( "click", myFunction );
     ```
 
-- A locally defined handler function that takes one argument, the event object. For example:
+- 本地定义的处理函数，该函数接受一个参数，即事件对象。例如：
     ```javascript
-    myButton.addEventListener( "click", "function( e ) { /*handler code*/ }" );
+    myButton.addEventListener( "click", "function( e ) { /*处理代码*/ }" );
     ```
 
-The handler or registered code statement is executed when the specified event occurs in the target. A script can programmatically simulate an event by creating an event objects with [ScriptUI.events.createEvent()](scriptui-class.md#scriptuieventscreateevent), and passing it to an event target's [dispatchEvent()](control-objects.md#dispatchevent) function.
+当指定事件在目标中发生时，处理程序或注册的代码语句会被执行。脚本可以通过使用 [ScriptUI.events.createEvent()](scriptui-class.md#scriptuieventscreateevent) 创建事件对象，并将其传递给事件目标的 [dispatchEvent()](control-objects.md#dispatchevent) 函数来以编程方式模拟事件。
 
-You can remove a handler that has been previously registered by calling the event target's [removeEventListener()](control-objects.md#removeeventlistener) function. The parameters you pass to this function must be identical to those passed to the [addEventListener()](control-objects.md#addeventlistener) call that registered the handler. Typically, a script would register all event handlers during initialization, and unregister them during termination; however, unregistering handlers on termination is not required.
+你可以通过调用事件目标的 [removeEventListener()](control-objects.md#removeeventlistener) 函数来移除之前注册的处理程序。传递给此函数的参数必须与传递给 [addEventListener()](control-objects.md#addeventlistener) 调用的参数完全相同。通常，脚本会在初始化期间注册所有事件处理程序，并在终止时取消注册；然而，终止时取消注册处理程序并不是必需的。
 
-You can register for an event in a parent or ancestor object of the actual target; see the following section.
+你可以在实际目标的父对象或祖先对象中注册事件；请参阅以下部分。
 
-The predefined types of `UIEvent` correspond to the event callbacks, as follows:
+预定义的 `UIEvent` 类型与事件回调对应如下：
 
-|                        Callback                         |      UIEvent type      |
-| ------------------------------------------------------- | ---------------------- |
-| [`"onChange"`](./control-objects.md#onchange)           | `"change"`             |
-| [`"onChanging"`](./control-objects.md#onchanging)       | `"changing"`           |
-| [`"onClick"`](./control-objects.md#onclick)             | `"click"` (detail = 1) |
+|                        回调                         |      UIEvent 类型      |
+| --------------------------------------------------- | ---------------------- |
+| [`"onChange"`](./control-objects.md#onchange)       | `"change"`             |
+| [`"onChanging"`](./control-objects.md#onchanging)   | `"changing"`           |
+| [`"onClick"`](./control-objects.md#onclick)         | `"click"` (detail = 1) |
 | [`"onDoubleClick"`](./control-objects.md#ondoubleclick) | `"click"` (detail = 2) |
-| [`"onEnterKey"`](./control-objects.md#onenterkey)       | `"enterKey"`           |
-| [`"onMove"`](./window-object.md#onmove)                 | `"move"`               |
-| [`"onMoving"`](./window-object.md#onmoving)             | `"moving"`             |
-| [`"onResize"`](./window-object.md#onresize)             | `"resize"`             |
-| [`"onResizing"`](./window-object.md#onresizing)         | `"resizing"`           |
-| [`"onShow"`](./window-object.md#onshow)                 | `"show"`               |
-| [`"onActivate"`](./control-objects.md#onactivate)       | `"focus"`              |
-| [`"onDeactivate"`](./control-objects.md#ondeactivate)   | `"blur"`               |
+| [`"onEnterKey"`](./control-objects.md#onenterkey)   | `"enterKey"`           |
+| [`"onMove"`](./window-object.md#onmove)             | `"move"`               |
+| [`"onMoving"`](./window-object.md#onmoving)         | `"moving"`             |
+| [`"onResize"`](./window-object.md#onresize)         | `"resize"`             |
+| [`"onResizing"`](./window-object.md#onresizing)     | `"resizing"`           |
+| [`"onShow"`](./window-object.md#onshow)             | `"show"`               |
+| [`"onActivate"`](./control-objects.md#onactivate)   | `"focus"`              |
+| [`"onDeactivate"`](./control-objects.md#ondeactivate) | `"blur"`               |
 
-In addition, ScriptUI implements all types of W3C events according to the W3C DOM level 3 functional specification [for UI events](https://www.w3.org/TR/uievents/), with these modifications and exceptions:
+此外，ScriptUI 根据 W3C DOM 级别 3 功能规范 [UI 事件](https://www.w3.org/TR/uievents/) 实现了所有类型的 W3C 事件，并进行了以下修改和例外：
 
-- ScriptUI does not implement the `hasFeature()` method of the `DOMImplementation` interface; there is no way to query whether a given W3C DOM feature is implemented in ScriptUI.
-- In ScriptUI, the W3C `EventTarget` interface is implemented by UI element objects (such as `Button`, `Window`, and so on).
-- In ScriptUI, the W3C `AbstractView` object is a UI element (such as `Button`, `Window`, and so on).
-- None of the "namespace" properties or methods are supported (such as `initEventNS` and `initMouseEventNS`).
+- ScriptUI 没有实现 `DOMImplementation` 接口的 `hasFeature()` 方法；无法查询 ScriptUI 中是否实现了给定的 W3C DOM 功能。
+- 在 ScriptUI 中，W3C `EventTarget` 接口由 UI 元素对象（如 `Button`、`Window` 等）实现。
+- 在 ScriptUI 中，W3C `AbstractView` 对象是一个 UI 元素（如 `Button`、`Window` 等）。
+- 不支持任何“命名空间”属性或方法（如 `initEventNS` 和 `initMouseEventNS`）。
 
-The ScriptUI implementation of W3C mouse events follows the W3C DOM level 3 functional specification [for MouseEvent](https://www.w3.org/TR/uievents/#mouseevent), with these differences:
+ScriptUI 对 W3C 鼠标事件的实现遵循 W3C DOM 级别 3 功能规范 [MouseEvent](https://www.w3.org/TR/uievents/#mouseevent)，但有以下区别：
 
-- To create a `MouseEvent` instance, call `ScriptUI.events.createEvent( "MouseEvent" )`, rather than `DocumentEvent.createEvent( "MouseEvent" )`.
-- The `getModifierState` method of the `MouseEvent` interface is not supported.
+- 要创建 `MouseEvent` 实例，请调用 `ScriptUI.events.createEvent( "MouseEvent" )`，而不是 `DocumentEvent.createEvent( "MouseEvent" )`。
+- `MouseEvent` 接口的 `getModifierState` 方法不受支持。
 
-The ScriptUI implementation of W3C keyboard events follows the W3C DOM level 3 functional specification [for KeyboardEvent](https://www.w3.org/TR/uievents/#keyboardevent).
+ScriptUI 对 W3C 键盘事件的实现遵循 W3C DOM 级别 3 功能规范 [KeyboardEvent](https://www.w3.org/TR/uievents/#keyboardevent)。
 
 ---
 
-## How registered event-handlers are called
+## 注册的事件处理程序如何被调用
 
-When an event occurs in a target, all handlers that have been registered for that event and target are called. Multiple event handlers can be registered for the same event in different targets, even in targets of the same type. For example, if there is a dialog with two checkboxes, you might want to register a click handler for each checkbox object. You would do this, for example, if each checkbox reacts differently to the click.
+当事件在目标中发生时，所有为该事件和目标注册的处理程序都会被调用。可以为不同目标中的同一事件注册多个事件处理程序，甚至可以为同一类型的目标注册多个处理程序。例如，如果有一个包含两个复选框的对话框，你可能希望为每个复选框对象注册一个点击处理程序。例如，如果每个复选框对点击的反应不同，你会这样做。
 
-You can also register events for child objects with a parent object. If both checkboxes should react the same way to a mouse click, they require the same handler. In this case, you can register the handler with the parent window or container instead. When the click event occurs in either child control, the handler registered for the parent window is called.
+你也可以为子对象在父对象中注册事件。如果两个复选框对鼠标点击的反应相同，它们需要相同的处理程序。在这种情况下，你可以在父窗口或容器中注册处理程序。当点击事件发生在任一子控件中时，为父窗口注册的处理程序会被调用。
 
-You can combine these two techniques, so that more than one action occurs in response to the event. That is, you can register a general event handler with the parent, and register a different, more specific handler for the same event with the child object that is the actual target.
+你可以结合这两种技术，以便在响应事件时发生多个操作。也就是说，你可以在父对象中注册一个通用的事件处理程序，并在实际目标的子对象中为同一事件注册一个不同的、更具体的处理程序。
 
-The rules for how multiple event handlers are called depend on three phases of event propagation, as
-follows:
+多个事件处理程序的调用规则取决于事件传播的三个阶段，如下所示：
 
-- **Capture phase** - When an event occurs in an object hierarchy, it is captured by the topmost ancestor object at which a handler is registered (the window, for example). If no handler is registered for the topmost ancestor, ScriptUI looks for a handler for the next ancestor (the dialog, for example), on down through the hierarchy to the direct parent of actual target. When ScriptUI finds a handler registered for any ancestor of the target, it executes that handler then proceeds to the next phase.
-- **At-target phase** - ScriptUI calls any handlers that are registered with the actual target object.
-- **Bubble phase** - The event bubbles back out through the hierarchy; ScriptUI again looks for handlers registered for the event with ancestor objects, starting with the immediate parent, and working back up the hierarchy to the topmost ancestor. When ScriptUI finds a handler, it executes it and the event propagation is complete.
+- **捕获阶段** - 当事件发生在对象层次结构中时，它会被注册了处理程序的最高祖先对象（例如窗口）捕获。如果没有为最高祖先注册处理程序，ScriptUI 会查找下一个祖先（例如对话框）的处理程序，沿着层次结构向下直到实际目标的直接父对象。当 ScriptUI 找到为目标任何祖先注册的处理程序时，它会执行该处理程序，然后进入下一阶段。
+- **目标阶段** - ScriptUI 调用为实际目标对象注册的任何处理程序。
+- **冒泡阶段** - 事件在层次结构中冒泡返回；ScriptUI 再次查找为事件注册的处理程序，从直接父对象开始，沿着层次结构向上直到最高祖先。当 ScriptUI 找到处理程序时，它会执行它，事件传播完成。
 
-For example, suppose a dialog window contains a group which contains a button. A script registers an event handler function for the click event at the Window object, another handler at the group object, and a third handler at the button object (the actual target).
+例如，假设一个对话框窗口包含一个组，组中包含一个按钮。脚本为点击事件在 Window 对象注册了一个事件处理函数，另一个处理函数在组对象注册，第三个处理函数在按钮对象（实际目标）注册。
 
-When the user clicks the button, the Window object's handler is called first (during the capture phase), then the button object's handler (during the at-target phase). Finally, ScriptUI calls the handler registered with the group object (during the bubble phase).
+当用户点击按钮时，Window 对象的处理程序首先被调用（在捕获阶段），然后是按钮对象的处理程序（在目标阶段）。最后，ScriptUI 调用在组对象注册的处理程序（在冒泡阶段）。
 
-If you register a handler at an ancestor object of the actual event target, you can specify the third argument to [addEventListener()](control-objects.md#addeventlistener), so that the ancestor's handler responds only in the capture phase, not in the bubbling phase. For example, the following click handler, registered with the parent dialog object, responds only in the capture phase:
+如果你在实际事件目标的祖先对象中注册处理程序，你可以指定 [addEventListener()](control-objects.md#addeventlistener) 的第三个参数，以便祖先的处理程序仅在捕获阶段响应，而不是在冒泡阶段。例如，以下点击处理程序在父对话框对象中注册，仅在捕获阶段响应：
 
 ```javascript
 myDialog.addEventListener( "click", handleAllItems, true );
 ```
 
-This value is `false` by default, so if it is not supplied, the handler can respond only in the bubbling phase when the object's descendent is the target, or when the object is itself the target of the event (the at-target phase).
+默认情况下，此值为 `false`，因此如果未提供，处理程序只能在冒泡阶段响应，当对象的后代是目标时，或者当对象本身是事件的目标时（目标阶段）。
 
-To distinguish which of multiple registered handlers is being executed at any given time, the event object provides the [eventPhase](event-handling.md#eventphase), and the [currentTarget](event-handling.md#currenttarget), which In the capture and bubbling phases contains the ancestor of the target object at which the currently executing handler was registered.
+为了区分在任何给定时间执行的多个注册处理程序，事件对象提供了 [eventPhase](event-handling.md#eventphase) 和 [currentTarget](event-handling.md#currenttarget)，在捕获和冒泡阶段，它包含当前执行处理程序注册的目标对象的祖先。

@@ -1,75 +1,75 @@
 ---
-title: code-profiling-for-optimization
+title: 代码性能分析优化
 ---
-# Code profiling for optimization
+# 代码性能分析优化
 
-The Profiling tool helps you to optimize program execution.
+性能分析工具帮助您优化程序执行。
 
-When you turn profiling on, the JavaScript engine collects information about a program while it is running. It counts how often the program executed a line or function, or how long it took to execute a line or function. You can choose exactly which profiling data to display.
-
----
-
-## Profiling Options
-
-Because profiling significantly slows execution time, the Profile menu offers these profiling options.
-
-### Off
-
-Profiling turned off.
-
-This is the default.
-
-### Functions
-
-The profiler counts each function call.
-
-At the end of execution, displays the total to the left of the line number where the function header is defined.
-
-### Lines
-
-The profiler counts each time each line is executed.
-
-At the end of execution, displays the total to the left of the line number. Consumes more execution time, but delivers more detailed information.
-
-### Add Timing Info
-
-Instead of counting the functions or lines, records the time taken to execute each function or line.
-
-At the end of execution, displays the total number of microseconds spent in the function or line, to the left of the line number. This is the most time-consuming form of profiling.
-
-### No Profiler Data
-
-When selected, do not display profiler data.
-
-### Show Hit Count
-
-When selected, display hit counts.
-
-### Show Timing
-
-When selected, display timing data.
-
-### Erase Profiler Data
-
-Clear all profiling data.
-
-### Save Data As
-
-Save profiling data as comma-separated values in a CSV file that can be loaded into a spreadsheet program such as Excel.
+当您开启性能分析时，JavaScript 引擎会在程序运行时收集相关信息。它会统计程序执行某一行或函数的次数，或者执行某一行或函数所花费的时间。您可以选择显示哪些性能分析数据。
 
 ---
 
-## Viewing Profiling Info
+## 性能分析选项
 
-When execution halts (at termination, at a breakpoint, or due to a runtime error), the Toolkit displays this information in the Document Window, line by line. The profiling data is color coded:
+由于性能分析会显著降低执行速度，性能分析菜单提供了以下选项。
 
-- Green indicates the lowest number of hits, or the fastest execution time.
-- Orange or yellow indicates a trouble spot, such as a line that has been executed many times, or which line took the most time to execute.
+### 关闭
 
-This example shows number-of-hits information:
+关闭性能分析。
 
-![Number of Hits](./_static/02_the-extendscript-toolkit_code-profiling_number-of-hits.jpg)
+这是默认设置。
 
-This example displays timing information for the program, in microseconds. The timing might not be accurate down to the microsecond; it depends on the resolution and accuracy of the hardware timers built into your computer.
+### 函数
 
-![Timing Info](./_static/02_the-extendscript-toolkit_code-profiling_timing-info.jpg)
+性能分析器统计每个函数的调用次数。
+
+在执行结束时，显示在函数头定义的行号左侧的总调用次数。
+
+### 行
+
+性能分析器统计每行代码的执行次数。
+
+在执行结束时，显示在行号左侧的总执行次数。这会消耗更多的执行时间，但提供更详细的信息。
+
+### 添加时间信息
+
+不统计函数或行的执行次数，而是记录执行每个函数或行所花费的时间。
+
+在执行结束时，显示在行号左侧的函数或行所花费的总微秒数。这是最耗时的性能分析形式。
+
+### 无性能分析数据
+
+选择此项时，不显示性能分析数据。
+
+### 显示命中次数
+
+选择此项时，显示命中次数。
+
+### 显示时间信息
+
+选择此项时，显示时间数据。
+
+### 清除性能分析数据
+
+清除所有性能分析数据。
+
+### 另存为
+
+将性能分析数据保存为逗号分隔值（CSV）文件，可以加载到 Excel 等电子表格程序中。
+
+---
+
+## 查看性能分析信息
+
+当执行停止时（在终止、断点或运行时错误时），工具包会在文档窗口中逐行显示这些信息。性能分析数据以颜色编码：
+
+- 绿色表示最低的命中次数或最快的执行时间。
+- 橙色或黄色表示问题点，例如执行次数较多的行或执行时间最长的行。
+
+以下示例显示了命中次数的信息：
+
+![命中次数](./_static/02_the-extendscript-toolkit_code-profiling_number-of-hits.jpg)
+
+以下示例显示了程序的执行时间信息，单位为微秒。时间可能无法精确到微秒；这取决于计算机内置硬件计时器的分辨率和准确性。
+
+![时间信息](./_static/02_the-extendscript-toolkit_code-profiling_timing-info.jpg)

@@ -1,14 +1,14 @@
 ---
-title: audio
+title: 音频
 ---
-# Audio
+# 音频
 
-After Effects can process audio encoded at up to 96Khz, floating point (24-bit) resolution, mono or stereo.
+After Effects 可以处理高达 96Khz、浮点（24 位）分辨率的单声道或立体声音频。
 
-We provide high quality resampling.
+我们提供高质量的重新采样。
 
-`PF_InData` and `PF_OutData` both contain information specific to audio handling.
+`PF_InData` 和 `PF_OutData` 都包含与音频处理相关的信息。
 
-While audio isn't the focus of After Effects' feature set, it is an important component of compositing and pre-visualization workflows.
+虽然音频不是 After Effects 功能集的重点，但它是合成和预可视化工作流程中的重要组成部分。
 
-Also, several engineers on our team are audio fanatics, and ensure that our audio effects (and the whole audio pipeline) are of the highest quality.
+此外，我们团队中的几位工程师是音频狂热者，他们确保我们的音频效果（以及整个音频管道）具有最高质量。

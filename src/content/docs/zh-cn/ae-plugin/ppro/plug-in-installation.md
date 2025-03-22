@@ -1,10 +1,10 @@
 ---
-title: plug-in-installation
+title: 插件安装
 ---
-# Plug-in Installation
+# 插件安装
 
-Use the common plug-in folder as described here: [Where Installers Should Put Plug-ins](../../intro/where-installers-should-put-plug-ins).
+请按照此处描述的通用插件文件夹使用：[安装程序应将插件放置的位置](../../intro/where-installers-should-put-plug-ins)。
 
-If you try to install an effect plug-in only to the Premiere Pro plug-ins directory, you will be surprised to find that your effect is not rendered when you export to disk through Adobe Media Encoder, an entirely separate application.
+如果你尝试仅将效果插件安装到 Premiere Pro 的插件目录中，你会惊讶地发现，当你通过 Adobe Media Encoder（一个完全独立的应用程序）导出到磁盘时，你的效果不会被渲染。
 
-Oh, and you'll also miss out on project interchange and copy / paste between Premiere Pro and After Effects.
+哦，你还将错过 Premiere Pro 和 After Effects 之间的项目交换和复制/粘贴功能。

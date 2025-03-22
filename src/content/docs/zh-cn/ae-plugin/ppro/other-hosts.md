@@ -1,21 +1,20 @@
 ---
-title: other-hosts
+title: 其他宿主
 ---
-# Other Hosts
+# 其他宿主
 
-For third-party hosts, the Adobe policy remains:
+对于第三方宿主，Adobe 的政策保持不变：
 
 :::quote
-Adobe neither supports nor recommends the creation of Adobe-compatible third-party hosts. While it may be possible to create a partially functional host by reverse engineering from the plug-in API specification, we do not recommend it and will not support you in doing so.
+Adobe 既不支持也不推荐创建与 Adobe 兼容的第三方宿主。虽然通过从插件 API 规范进行逆向工程可能创建出部分功能可用的宿主，但我们不推荐这样做，也不会为此提供支持。
 :::
-
 
 ---
 
-## Reality Sandwich
+## 现实情况
 
-We realize that, for developers like you, one good way to grow your market is to ensure that your plug-ins work in as many hosts as possible.
+我们意识到，对于像您这样的开发者来说，扩大市场的一个好方法是确保您的插件在尽可能多的宿主中运行。
 
-Our SmartFX API has created quite a bit of distance between the After Effects API and the implementations available in the rest of the plug-in hosting world.
+我们的 SmartFX API 在 After Effects API 和其他插件宿主世界的实现之间创造了相当大的距离。
 
-We will do what we can to help the other hosts support newer features. If you encounter problems in third party hosts, please refer them to us if they need assistance.
+我们将尽力帮助其他宿主支持更新的功能。如果您在第三方宿主中遇到问题，请将问题反馈给我们，如果他们需要帮助。

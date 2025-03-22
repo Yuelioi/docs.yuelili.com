@@ -1,32 +1,32 @@
 ---
-title: bigger-differences
+title: 更大的差异
 ---
-# Bigger Differences
+# 更大的差异
 
-As long as an effect only supports the basic ARGB_8u pixel format supported by After Effects, Premiere Pro will try to imitate the After Effects hosting behavior and hide various differences because of the different render pipeline architecture. But if an effect wants to support additional pixel formats, such as 32-bit RGB, be prepared to handle further divergent behavior.
-
----
-
-## Pixel Formats
-
-Premiere Pro provides function suites for declaring support for pixel formats other than the 8-bit RGB format used by After Effects - ARGB_8u. These pixel formats include the Premiere Pro native 8-bit RGB format - BGRA_8u, as well as YUV, 32-bit formats, and more. For a more detailed discussion of the various pixel formats, see ["Pixel Formats and Colorspaces" from the Premiere Pro SDK Guide](http://ppro-plugin-sdk.aenhancers.com/universals/pixel-formats-and-color-spaces.html).
-
-Use the PF Pixel Format Suite (defined in PrAESDKSupport.h) to register for [PF_EffectWorld / PF_LayerDef](../../effect-basics/PF_EffectWorld) in other pixel formats. Use the Premiere Pixel Format Suite (defined in the aptly-named PrSDKPixelFormatSuite.h) to get black and white values in those pixel formats.
-
-After Effects functions such as `PF_BLEND()` have not been enhanced to work with pixel formats beyond 8-bit RGB.
+只要一个效果仅支持After Effects支持的基本ARGB_8u像素格式，Premiere Pro会尝试模仿After Effects的托管行为，并隐藏由于不同渲染管道架构带来的各种差异。但如果一个效果希望支持额外的像素格式，例如32位RGB，那么需要准备好处理进一步的差异行为。
 
 ---
 
-## 32-Bit Float Support
+## 像素格式
 
-Premiere Pro does not support After Effects 16-bit rendering or SmartFX. For 32-bit rendering in Premiere Pro, you'll need to declare support for one of the 32-bit pixel formats (see previous section), and then implement 32-bit rendering for `PF_Cmd_RENDER`. You can support multiple render depths this way. See the SDK Noise sample project for an example.
+Premiere Pro提供了功能套件，用于声明支持除了After Effects使用的8位RGB格式（ARGB_8u）之外的其他像素格式。这些像素格式包括Premiere Pro原生的8位RGB格式（BGRA_8u），以及YUV、32位格式等。有关各种像素格式的详细讨论，请参阅[Premiere Pro SDK指南中的“像素格式和色彩空间”](http://ppro-plugin-sdk.aenhancers.com/universals/pixel-formats-and-color-spaces.html)。
 
-Depending on the clip(s) to which an effect is applied, 32-bit processing is not always necessary to preserve the quality of the source input. But there are settings to force 32-bit rendering, to give effects processing finer granularity and more headroom, if desired. Go to Settings>Sequence Settings> Video Previews>Maximum Bit Depth, to control previewing from the timeline. For export to file, use Export Settings>Video>Basic Settings>Render at Maximum Depth.
+使用PF像素格式套件（定义在PrAESDKSupport.h中）来注册[PF_EffectWorld / PF_LayerDef](../../effect-basics/PF_EffectWorld)以支持其他像素格式。使用Premiere像素格式套件（定义在PrSDKPixelFormatSuite.h中）来获取这些像素格式中的黑白值。
+
+After Effects的函数（如`PF_BLEND()`）尚未增强以支持8位RGB之外的像素格式。
 
 ---
 
-## PF_CHECKOUT_PARAM and Pixel Formats
+## 32位浮点支持
 
-Before CS6, `PF_CHECKOUT_PARAM()` only returned 8-bit ARGB buffers, regardless of the pixel format currently being used for rendering. Starting in CS6, an effect can opt in to get frames in the same format as the render request, whether it is 32-bit float, YUV, etc.
+Premiere Pro不支持After Effects的16位渲染或SmartFX。要在Premiere Pro中进行32位渲染，您需要声明支持32位像素格式之一（参见上一节），然后为`PF_Cmd_RENDER`实现32位渲染。您可以通过这种方式支持多种渲染深度。请参阅SDK Noise示例项目以获取示例。
 
-Plug-ins may request this behavior, but existing plug-ins will continue working receiving 8-bit ARGB frames. The call is EffectWantsCheckedOutFramesToMatch RenderPixelFormat(), in the PF Utility Suite, defined in PrSDKAESupport.h. The call should be made on `PF_Cmd_GLOBAL_SETUP`, the same selector where an effect would already advertise support beyond 8-bit RGB using `AddSupportedPixelFormat()`.
+根据应用效果的剪辑，32位处理并不总是必要的，以保持源输入的质量。但有一些设置可以强制32位渲染，以便在需要时为效果处理提供更精细的粒度和更多的余量。转到设置>序列设置>视频预览>最大位深度，以控制时间轴上的预览。对于导出到文件，请使用导出设置>视频>基本设置>以最大深度渲染。
+
+---
+
+## PF_CHECKOUT_PARAM 和像素格式
+
+在CS6之前，`PF_CHECKOUT_PARAM()`仅返回8位ARGB缓冲区，无论当前用于渲染的像素格式是什么。从CS6开始，效果可以选择获取与渲染请求相同格式的帧，无论是32位浮点、YUV等。
+
+插件可以请求此行为，但现有插件将继续接收8位ARGB帧。调用是EffectWantsCheckedOutFramesToMatch RenderPixelFormat()，在PF Utility Suite中定义，位于PrSDKAESupport.h中。该调用应在`PF_Cmd_GLOBAL_SETUP`上进行，这是效果已经使用`AddSupportedPixelFormat()`声明支持8位RGB之外的像素格式的同一选择器。

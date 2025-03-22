@@ -1,24 +1,24 @@
 ---
-title: types-of-controls
+title: 控件类型
 ---
-# Types of controls
+# 控件类型
 
-The following sections introduce the types of controls you can add to a `Window` or other container element (`panel` or `group`). For details of the properties and functions, and of how to create each type of element, see [Control object constructors](control-objects.md#control-object-constructors).
+以下部分介绍了可以添加到 `Window` 或其他容器元素（`panel` 或 `group`）中的控件类型。有关属性和函数的详细信息，以及如何创建每种类型的元素，请参阅 [控件对象构造函数](control-objects.md#control-object-constructors)。
 
 ---
 
-## Containers
+## 容器
 
-These are types of `Control` objects which are contained in windows, and which contain and group other controls.
+这些是包含在窗口中的 `Control` 对象类型，它们包含并分组其他控件。
 
-### Panel
+### 面板 (Panel)
 
-Typically used to visually organize related controls.
+通常用于视觉上组织相关的控件。
 
-- Set the text property to define a title that appears at the top of the panel.
-- An optional borderStyle creation property controls the appearance of the border drawn around the panel.
+- 设置 `text` 属性以定义出现在面板顶部的标题。
+- 可选的 `borderStyle` 创建属性控制绘制在面板周围的边框的外观。
 
-You can use panels as separators: those with width of 0 appear as vertical lines and those with height of 0 appear as horizontal lines:
+你可以将面板用作分隔符：宽度为 0 的面板显示为垂直线，高度为 0 的面板显示为水平线：
 
 ```javascript
 var dlg = new Window( "dialog", "Alert Box Builder" );
@@ -27,46 +27,46 @@ dlg.msgPnl = dlg.add( "panel", [ 25, 15, 355, 130 ], "Messages" );
 
 ---
 
-### Group
+### 组 (Group)
 
-Used to visually organize related controls.
+用于视觉上组织相关的控件。
 
-Unlike `Panels`, `Groups` have no title or visible border.
+与 `Panel` 不同，`Group` 没有标题或可见的边框。
 
-You can use them to create hierarchies of controls, and for fine control over layout attributes of certain groups of controls within a larger panel. For examples, see [Creating more complex arrangements](automatic-layout.md#creating-more-complex-arrangements).
-
----
-
-### TabbedPanel
-
-A panel that contains only Tab objects as its immediate children. It has a selection property that contains the currently active Tab child.
-
-When the value of the selection property changes, either by a user selecting a different tab, or by a script setting the property, the TabbedPanel receives an `onChange` notification.
-
-The title property provides an optional label; the titleLayout property places the label within the panel.
+你可以使用它们创建控件的层次结构，并在较大的面板内对某些控件组的布局属性进行精细控制。有关示例，请参阅 [创建更复杂的布局](automatic-layout.md#creating-more-complex-arrangements)。
 
 ---
 
-### Tab
+### 选项卡面板 (TabbedPanel)
 
-A general container whose parent is a TabbedPanel, with a selectable tab showing a localizable text value.
+一个仅包含 `Tab` 对象作为其直接子元素的面板。它有一个 `selection` 属性，包含当前活动的 `Tab` 子元素。
 
-Its size and position are determined by the parent.
+当 `selection` 属性的值发生变化时，无论是用户选择不同的选项卡，还是脚本设置该属性，`TabbedPanel` 都会收到一个 `onChange` 通知。
+
+`title` 属性提供了一个可选的标签；`titleLayout` 属性将标签放置在面板内。
 
 ---
 
-## User-interface controls
+### 选项卡 (Tab)
 
-These are types of `Control` objects that are contained in windows, panels, and groups, and that provide specific kinds of display and user interaction. Control instances are created by passing the corresponding `type` keyword to the `add()` method of a Window or container; see [Control types and creation parameters](control-objects.md#control-types-and-creation-parameters).
+一个通用容器，其父元素是 `TabbedPanel`，带有一个可选的选项卡，显示可本地化的文本值。
 
-These examples do not set bounds explicitly on creation, because it is often more useful to set a preferred size, then allow the layout manager to set the bounds; see [Automatic layout](../automatic-layout).
+其大小和位置由父元素决定。
 
-### Button
+---
 
-Typically used to initiate some action from a window when a user clicks the button; for example, accepting a dialog's current settings, canceling a dialog, bringing up a new dialog, and so on.
+## 用户界面控件
 
-- Set the `text` property to assign a label to identify a Button's function.
-- The `onClick` callback method provides behavior.
+这些是包含在窗口、面板和组中的 `Control` 对象类型，提供特定类型的显示和用户交互。控件实例通过将相应的 `type` 关键字传递给 `Window` 或容器的 `add()` 方法来创建；请参阅 [控件类型和创建参数](control-objects.md#control-types-and-creation-parameters)。
+
+这些示例在创建时没有显式设置边界，因为通常更有用的是设置首选大小，然后让布局管理器设置边界；请参阅 [自动布局](../automatic-layout)。
+
+### 按钮 (Button)
+
+通常用于在用户单击按钮时从窗口启动某些操作；例如，接受对话框的当前设置、取消对话框、弹出新对话框等。
+
+- 设置 `text` 属性以分配一个标签来标识按钮的功能。
+- `onClick` 回调方法提供行为。
 
 ```javascript
 var dlg = new Window( "dialog", "Alert Box Builder" );
@@ -79,30 +79,30 @@ dlg.show();
 
 ---
 
-### IconButton
+### 图标按钮 (IconButton)
 
-A button that displays an icon, with or without a text label. Like a text button, typically initiates an action in response to a click.
+显示图标的按钮，可以带有或不带有文本标签。与文本按钮类似，通常在单击时启动操作。
 
-- The `image` property identifies the icon image; see [Displaying images](#displaying-images).
-- The `title` or `text` property provides an optional label; the [titleLayout](control-objects.md#titlelayout) property places the label with respect to the image.
-- The `onClick` callback method provides behavior.
-
----
-
-### Image
-
-Displays an iconic image.
-
-- The `image` property identifies the icon image; see [Displaying images](#displaying-images).
-- The `title` property provides an optional label; the [titleLayout](control-objects.md#titlelayout) property places the label with respect to the image.
+- `image` 属性标识图标图像；请参阅 [显示图像](#displaying-images)。
+- `title` 或 `text` 属性提供可选的标签；[titleLayout](control-objects.md#titlelayout) 属性将标签相对于图像放置。
+- `onClick` 回调方法提供行为。
 
 ---
 
-### StaticText
+### 图像 (Image)
 
-Typically used to display text strings that are not intended for direct manipulation by a user, such as informative messages or labels.
+显示图标图像。
 
-This example creates a Panel and adds several StaticText elements:
+- `image` 属性标识图标图像；请参阅 [显示图像](#displaying-images)。
+- `title` 属性提供可选的标签；[titleLayout](control-objects.md#titlelayout) 属性将标签相对于图像放置。
+
+---
+
+### 静态文本 (StaticText)
+
+通常用于显示不打算由用户直接操作的文本字符串，例如信息性消息或标签。
+
+此示例创建一个面板并添加多个静态文本元素：
 
 ```javascript
 var dlg = new Window( "dialog", "Alert Box Builder" );
@@ -114,14 +114,14 @@ dlg.show();
 
 ---
 
-### EditText
+### 编辑文本 (EditText)
 
-Allows users to enter text, which is returned to the script when the dialog is dismissed. Text in EditText elements can be selected, copied, and pasted.
+允许用户输入文本，当对话框关闭时，文本将返回给脚本。`EditText` 元素中的文本可以被选择、复制和粘贴。
 
-- Set the `text` property to assign the initial displayed text in the element, and read it to obtain the current text value, as entered or modified by the user.
-- Set the `textselection` property to replace the current selection with new text, or to insert text at the cursor (insertion point). Read this property to obtain the current selection, if any.
+- 设置 `text` 属性以分配元素中初始显示的文本，并读取它以获取用户输入或修改的当前文本值。
+- 设置 `textselection` 属性以用新文本替换当前选择，或在光标（插入点）处插入文本。读取此属性以获取当前选择（如果有）。
 
-This example adds some EditText elements, with initial values that a user can accept or replace:
+此示例添加了一些 `EditText` 元素，带有用户可以接受或替换的初始值：
 
 ```javascript
 var dlg = new Window( "dialog", "Alert Box Builder" );
@@ -134,23 +134,23 @@ dlg.show();
 ```
 
 :::note
-The creation property on the second EditText field, `multiline: true`, indicates a field in which a long text string can be entered. The text wraps to appear as multiple lines.
+第二个 `EditText` 字段的创建属性 `multiline: true` 表示一个可以输入长文本字符串的字段。文本换行显示为多行。
 :::
 
 ---
 
-### EditNumber
+### 编辑数字 (EditNumber)
 
-Allows users to enter a decimal number, which is returned to the script when the dialog is dismissed. The value entered is validated for being a localized number format and checked against a lower and upper boundary when the control loses focus. Text in EditNumber elements can be selected, copied, and pasted.
+允许用户输入一个十进制数字，当对话框关闭时，该数字将返回给脚本。输入的值将被验证为本地化的数字格式，并在控件失去焦点时检查其是否在上下边界内。`EditNumber` 元素中的文本可以被选择、复制和粘贴。
 
 :::note
-This functionality was added in Photoshop 20.0 (CC 2019), and may not exist in other hosts.
+此功能在 Photoshop 20.0 (CC 2019) 中添加，可能在其他宿主中不存在。
 :::
 
-- Set the `text` property to assign the initial displayed number in the element, and read it to obtain the current number value, as entered or modified by the user.
-- Set the `textselection` property to replace the current selection with new text, or to insert text at the cursor (insertion point). Read this property to obtain the current selection, if any.
+- 设置 `text` 属性以分配元素中初始显示的数字，并读取它以获取用户输入或修改的当前数字值。
+- 设置 `textselection` 属性以用新文本替换当前选择，或在光标（插入点）处插入文本。读取此属性以获取当前选择（如果有）。
 
-This example adds some EditNumber elements, with initial values that a user can accept or replace:
+此示例添加了一些 `EditNumber` 元素，带有用户可以接受或替换的初始值：
 
 ```javascript
 var dlg = new Window( "dialog", "Date Box" );
@@ -163,36 +163,36 @@ dlg.show();
 ```
 
 :::note
-Decimal numbers like `2.5` are accepted for minimum and maximum values.
+接受像 `2.5` 这样的十进制数字作为最小值和最大值。
 :::
 
 ---
 
-### Checkbox
+### 复选框 (Checkbox)
 
-Allows the user to set a boolean state.
+允许用户设置布尔状态。
 
-- Set the `text` property to assign an identifying text string that appears next to the clickable box.
-- The user can click to select or deselect the box, which shows a checkmark when selected. The `value` is `true` when it is selected (checked) and `false` when it is not.
+- 设置 `text` 属性以分配一个标识文本字符串，该字符串出现在可点击的框旁边。
+- 用户可以点击选择或取消选择该框，选中时显示一个勾号。`value` 为 `true` 时表示选中（勾选），`false` 时表示未选中。
 
-When you create a Checkbox, you can set its value property to specify its initial state and appearance.
+创建复选框时，可以设置其 `value` 属性以指定其初始状态和外观。
 
 ```javascript
-// Add a checkbox to control the buttons that dismiss an alert box
+// 添加一个复选框以控制关闭警告框的按钮
 dlg.hasBtnsCb = dlg.add( "checkbox", undefined, "Should there be alert buttons?" );
 dlg.hasBtnsCb.value = true;
 ```
 
 ---
 
-### RadioButton
+### 单选按钮 (RadioButton)
 
-Allows the user to select one choice among several.
+允许用户在多个选项中选择一个。
 
-- Set the text property to assign an identifying text string that appears next to the clickable button.
-- The `value` is `true` when the button is selected. The button shows the state in a platform-specific manner, with a filled or empty dot, for example.
+- 设置 `text` 属性以分配一个标识文本字符串，该字符串出现在可点击的按钮旁边。
+- 当按钮被选中时，`value` 为 `true`。按钮以平台特定的方式显示状态，例如填充或空心的圆点。
 
-You group a related set of radio buttons by creating all the related elements one after another. When any button's value becomes `true`, the value of all other buttons in the group becomes `false`. When you create a group of radio buttons, you should set the state of one of them `true`:
+你可以通过连续创建所有相关的元素来分组一组相关的单选按钮。当任何按钮的 `value` 变为 `true` 时，组中所有其他按钮的 `value` 变为 `false`。创建一组单选按钮时，你应该将其中一个按钮的状态设置为 `true`：
 
 ```javascript
 var dlg = new Window( "dialog", "Alert Box Builder" );
@@ -206,35 +206,35 @@ dlg.show();
 
 ---
 
-### Progressbar
+### 进度条 (Progressbar)
 
-Typically used to display the progress of a time-consuming operation. A colored bar covers a percentage of the area of the control, representing the percentage completion of the operation.
+通常用于显示耗时操作的进度。彩色条覆盖控件的部分区域，表示操作的完成百分比。
 
-The `value` property reflects and controls how much of the visible area is colored, relative to the maximum value (`maxvalue`).
+`value` 属性反映并控制着相对于最大值 (`maxvalue`) 的可见区域的着色比例。
 
-By default the range is `[0..100]`, so the `value = 50` when the operation is half done.
-
----
-
-### Slider
-
-Typically used to select within a range of values. The slider is a horizontal bar with a draggable indicator, and you can click a point on the slider bar to jump the indicator to that location.
-
-The `value` property reflects and controls the position of the indicator, within the range determined by `minvalue` and `maxvalue`.
-
-By default the range is 0 to 100, so setting `value = 50` moves the indicator to the middle of the bar.
+默认范围为 `[0..100]`，因此当操作完成一半时，`value = 50`。
 
 ---
 
-### Scrollbar
+### 滑块 (Slider)
 
-Like a slider, the scrollbar is a bar with a draggable indicator. It also has "stepper" buttons at each end, that you can click to jump the indicator by the amount in the `stepdelta` property. If you click a point on the bar outside the indicator, the indicator jumps by the amount in the jumpdelta property.
+通常用于在一定范围内选择值。滑块是一个带有可拖动指示器的水平条，你可以点击滑块条上的某个点以将指示器跳转到该位置。
 
-You can create scrollbars with horizontal or vertical orientation; if `width` is greater than `height`, it is horizontal, otherwise it is vertical. Arguments to the `add` method that creates the scrollbar define values for the `value`, `minvalue` and `maxvalue` properties.
+`value` 属性反映并控制指示器的位置，范围由 `minvalue` 和 `maxvalue` 决定。
 
-Scrollbars are often created with an associated `EditText` field to display the current value of the scrollbar, and to allow setting the scrollbar's position to a specific value.
+默认范围为 0 到 100，因此设置 `value = 50` 会将指示器移动到条的中间。
 
-This example creates a scrollbar with associated `StaticText` and `EditText` elements within a panel:
+---
+
+### 滚动条 (Scrollbar)
+
+与滑块类似，滚动条是一个带有可拖动指示器的条。它还在两端有“步进”按钮，你可以点击以按 `stepdelta` 属性中的量跳转指示器。如果你点击条上指示器外的某个点，指示器会按 `jumpdelta` 属性中的量跳转。
+
+你可以创建水平或垂直方向的滚动条；如果 `width` 大于 `height`，则为水平滚动条，否则为垂直滚动条。创建滚动条的 `add` 方法的参数定义了 `value`、`minvalue` 和 `maxvalue` 属性的值。
+
+滚动条通常与一个 `EditText` 字段关联，以显示滚动条的当前值，并允许将滚动条的位置设置为特定值。
+
+此示例创建了一个滚动条，并在面板内关联了 `StaticText` 和 `EditText` 元素：
 
 ```javascript
 dlg.sizePnl = dlg.add( "panel", undefined, "Dimensions" );
@@ -245,157 +245,45 @@ dlg.sizePnl.widthEt = dlg.sizePnl.add( "edittext" );
 
 ---
 
-### ListBox, DropDownList and TreeView
+### 列表框 (ListBox)、下拉列表 (DropDownList) 和树视图 (TreeView)
 
-These controls display lists of items, which are represented by `ListItem` objects in the `items` property. You can access the items in this array using a 0-based index.
+这些控件显示项目列表，这些项目由 `items` 属性中的 `ListItem` 对象表示。你可以使用基于 0 的索引访问此数组中的项目。
 
-- A `ListBox` control displays a list of choices. When you create the object, you specify whether it allows the user to select only one or multiple items. If a list contains more items than can be displayed in the available area, a scrollbar may appear that allows the user to scroll through all the list items. A list box can display items in multiple columns; see [Creating multi-column lists](#creating-multi-column-lists).
-- A `DropDownList` control displays a single visible item. When you click the control, a list drops down and allows you to select one of the other items in the list. Drop-down lists can have nonselectable separator items for visually separating groups of related items, as in a menu.
-- A `TreeView` control is similar to a ListBox, except that the items can have child items. Items with children can be expanded or collapsed to show or hide the child items. Child items can in turn contain children.
-- The `title` property provides an optional label; the [titleLayout](control-objects.md#titlelayout) property places the label with respect to the list.
+- `ListBox` 控件显示一个选择列表。创建对象时，你可以指定是否允许用户选择单个或多个项目。如果列表包含的项目多于可用区域中显示的项目，则可能会出现滚动条，允许用户滚动浏览所有列表项。列表框可以显示多列项目；请参阅 [创建多列列表](#creating-multi-column-lists)。
+- `DropDownList` 控件显示一个可见的项目。当你点击控件时，会下拉一个列表，允许你选择列表中的其他项目之一。下拉列表可以有不可选择的分隔符项目，用于视觉上分隔相关项目组，如菜单中所示。
+- `TreeView` 控件类似于 `ListBox`，不同之处在于项目可以有子项目。带有子项目的项目可以展开或折叠以显示或隐藏子项目。子项目又可以包含子项目。
+- `title` 属性提供了一个可选的标签；[titleLayout](control-objects.md#titlelayout) 属性将标签相对于列表放置。
 
-You can specify the choice items on creation of the list object, or afterward using the list object's `add()` method. You can remove items programmatically with the list object's `remove()` and `removeAll()` methods.
+你可以在创建列表对象时指定选择项目，或之后使用列表对象的 `add()` 方法。你可以使用列表对象的 `remove()` 和 `removeAll()` 方法以编程方式删除项目。
 
 ---
 
-### ListItem
+### 列表项 (ListItem)
 
-Items added to or inserted into any type of list control are `ListItem` objects, with properties that can be manipulated from a script. ListItem elements can be of the following types:
+添加到或插入到任何类型列表控件中的项目是 `ListItem` 对象，具有可以从脚本操作的属性。`ListItem` 元素可以是以下类型：
 
 |    类型     |                                                                                         描述                                                                                          |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `item`      | The typical item in any type of list. It displays text or an image, and can be selected. To display an image, set the item object's image property; [Displaying images](#displaying-images). |
-| `separator` | A separator is a nonselectable visual element in a drop-down list. Although it has a text property, the value is ignored, and the item is displayed as a horizontal line.                    |
-| `node`      | A displayable and selectable item in a `TreeView` control which can contain other `ListItem` objects, including other items of type node.                                                    |
+| `item`      | 任何类型列表中的典型项目。它显示文本或图像，并且可以被选择。要显示图像，请设置项目对象的 `image` 属性；[显示图像](#displaying-images)。 |
+| `separator` | 分隔符是下拉列表中的不可选择的视觉元素。尽管它有 `text` 属性，但该值被忽略，项目显示为水平线。                    |
+| `node`      | `TreeView` 控件中的可显示和可选择项目，可以包含其他 `ListItem` 对象，包括其他类型为 `node` 的项目。                                                    |
 
 ---
 
-### FlashPlayer
+### Flash 播放器 (FlashPlayer)
 
-Runs a Flash movie within a ScriptUI window. Its control's methods allow you to load a movie from an SWF file and control the playback. See [FlashPlayer control functions](control-objects.md#flashplayer-control-functions).
+在 ScriptUI 窗口中运行 Flash 电影。其控件的方法允许你从 SWF 文件加载电影并控制播放。请参阅 [FlashPlayer 控件函数](control-objects.md#flashplayer-control-functions)。
 
-You can also use the control object to communicate with the Flash application, calling ActionScript methods, and making JavaScript methods defined in your Adobe application script available to the Flash ActionScript code. See [Calling ActionScript functions from a ScriptUI script](communicating-with-the-flash-application.md#calling-actionscript-functions-from-a-scriptui-script).
+你还可以使用控件对象与 Flash 应用程序通信，调用 ActionScript 方法，并使你在 Adobe 应用程序脚本中定义的 JavaScript 方法可供 Flash ActionScript 代码使用。请参阅 [从 ScriptUI 脚本调用 ActionScript 函数](communicating-with-the-flash-application.md#calling-actionscript-functions-from-a-scriptui-script)。
 
-The `title` property provides an optional label; the [titleLayout](control-objects.md#titlelayout) property places the label with respect to the player.
-
----
-
-## Displaying images
-
-You can display icon images in `Image` or `IconButton` controls, or display images in place of strings or in addition to strings as the selectable items in a `Listbox` or `DropdownList` control. In each case, the image is defined by setting the element's `image` property. You can set it to a [ScriptUIImage object](graphic-customization-objects.md#scriptuiimage-object); a named icon resource; a [File object](../../file-system-access/file-object); or the pathname of a file containing the iconic image, or of an alias or shortcut to that file (see [Specifying paths](../file-system-access/using-file-and-folder-objects.md#specifying-paths)).
-
-The image data for an icon can be in Portable Network Graphics (PNG) format, or in Joint Photographic Experts Group (JPEG) format. See [http://www.libpng.org](http://www.libpng.org) and [http://www.jpeg.org/](http://www.jpeg.org/) for detailed information on these formats.
-
-You can set or reset the `image` property at any time to change the image displayed in the element.
-
-The scripting environment can define icon *resources*, which are available to scripts by name. To specify an icon resource, set a control's `image` property to the resource's JavaScript name, or refer to the resource by name when creating the control. For example, to create a button with an application-defined icon resource:
-
-```javascript
-myWin.upBtn = myWin.add ( "iconbutton", undefined, "SourceFolderIcon" );
-```
-
-Photoshop CC, for example, defines these icon resources:
-
-- `Step1Icon`
-- `Step2Icon`
-- `Step3Icon`
-- `Step4Icon`
-- `SourceFolderIcon`
-- `DestinationFolderIcon`
-
-If a script does not explicitly set the `preferredSize` or `size` property of an element that displays a icon image, the value of `preferredSize` is determined by the dimensions of the iconic image. If the size values are explicitly set to dimensions smaller than those of the actual image graphic, the displayed image is clipped. If they are set to dimensions larger than those of the image graphic, the displayed image is centered in the larger space. An image is never scaled to fit the available space.
+`title` 属性提供了一个可选的标签；[titleLayout](control-objects.md#titlelayout) 属性将标签相对于播放器放置。
 
 ---
 
-## Creating multi-column lists
+## 显示图像
 
-In list controls ([ListBox, DropDownList and TreeView](#listbox-dropdownlist-and-treeview)), a set of [ListItem](#listitem) objects represents the individual choices in the list. Each choice can be labeled with a localizable string, an image, or both, as specified by the [text](control-objects.md#text) and [image](control-objects.md#image) properties of the [ListItem](#listitem) (see [Displaying images](#displaying-images)).
+你可以在 `Image` 或 `IconButton` 控件中显示图标图像，或在 `Listbox` 或 `DropdownList` 控件中显示图像以代替字符串或与字符串一起显示为可选项目。在每种情况下，图像通过设置元素的 `image` 属性来定义。你可以将其设置为 [ScriptUIImage 对象](graphic-customization-objects.md#scriptuiimage-object)；命名的图标资源；[File 对象](../../file-system-access/file-object)；或包含图标图像的文件路径名，或该文件的别名或快捷方式（请参阅 [指定路径](../file-system-access/using-file-and-folder-objects.md#specifying-paths)）。
 
-You can define a [ListBox](control-objects.md#listbox) to have multiple columns, by specifying the `numberOfColumns` creation parameter. By default, the number of columns is 1. If you specify multiple columns, you can also use the creation parameters to specify whether headers are shown, and the header text for each column.
+图标图像数据可以是便携式网络图形（PNG）格式或联合图像专家组（JPEG）格式。有关这些格式的详细信息，请参阅 [http://www.libpng.org](http://www.libpng.org) 和 [http://www.jpeg.org/](http://www.jpeg.org/)。
 
-If you specify more than one column, each [ListItem](#listitem) object that you add to the box specifies one selectable row. The `text` and `image` of the [ListItem]() object specifies the label in the first column, and the [subitems](control-objects.md#subitems) property specifies labels that appear in that row for the remaining columns.
-
-The [subitems](control-objects.md#subitems) value is an array, whose length is one less than the number of columns. That is, the first member, `ListItem.subitems[0]`, specifies the label in the second column. Each member specifies one label, as a JavaScript object with two properties:
-
-```javascript
-{ text : displayString , image : imageFileReference }
-```
-
-For example, the following fragment defines a list box with two columns, and specifies the labels in each column for the two choices:
-
-```javascript
-...
-// create list box with two titled columns
-var list = dlg.add ("ListBox", [0, 0, 150, 75], "asd",
-{numberOfColumns: 2, showHeaders: true,
-columnTitles: ["First Name", "Last Name"]});
-// add an item for the first row, with the label value for the first column
-var item1 = list.add ("item", "John");
-// add the label value for the second column in that row.
-item1.subItems[0].text = "Doe";
-// add an item for the second row, with the text for the first column label
-var item2 = list.add ("item", "Jane");
-// add the label text and image for the second column in the second row
-item2.subItems[0].text = "Doe";
-item2.subItems[0].image = File ("~/Desktop/Step1.png");
-...
-```
-
-This creates a control that looks like this:
-
-![Multi-Column Lists](./_static/04_user-interface-tools_types-of-controls_multi-column-lists.jpg)
-
-Notice that the columns have headers, and the label in the second column of the second row has both text and an image.
-
----
-
-## Prompts and alerts
-
-Static functions on the `Window` class are globally available to display short messages in standard dialogs.
-
-The host application controls the appearance of these simple dialogs, so they are consistent with other alert and message boxes displayed by the application. You can often use these standard dialogs for simple interactions with your users, rather than designing special-purpose dialogs of your own.
-
-Use the static functions `alert`, `confirm`, and `prompt` on the `Window` class to invoke these dialogs with your own messages. You do not need to create a Window object to call these functions.
-
----
-
-## Modal dialogs
-
-A modal dialog is initially invisible. Your script invokes it using the `show` method, which does not return until the dialog has been dismissed. The user can dismiss it by using a platform-specific window gesture, or by using one of the dialog controls that you supply, typically an **OK** or **Cancel** button. The `onClick` method of such a button must call the `close` or `hide` method to close the dialog. The `close` method allows you to pass a value to be returned by the show method.
-
-For an example of how to define such buttons and their behavior, see [Defining behavior with event callbacks and listeners](../defining-behavior-with-event-callbacks-and-listeners).
-
-### Creating and using modal dialogs
-
-A dialog typically contains some controls that the user must interact with, to make selections or enter values that your script will use. In some cases, the result of the user action is stored in the object, and you can retrieve it after the dialog has been dismissed. For example, if the user changes the state of a `Checkbox` or `RadioButton`, the new state is found in the control's `value` property.
-
-However, if you need to respond to a user action while the dialog is still active, you must assign the control a callback function for the interaction event, either `onClick` or `onChange`. The callback function is the value of the `onClick` or `onChange` property of the control.
-
-For example, if you need to validate a value that the user enters in a edittext control, you can do so in an `onChange` callback handler function for that control. The callback can perform the validation, and perhaps display an alert to inform the user of errors.
-
-Sometimes, a modal dialog presents choices to the user that must be correct before your script allows the dialog to be dismissed. If your script needs to validate the state of a dialog after the user clicks OK, you can define an `onClose` event handler for the dialog. This callback function is invoked whenever a window is closed. If the function returns `true`, the window is closed, but if it returns `false`, the close operation is cancelled and the window remains open.
-
-Your `onClose` handler can examine the states of any controls in the dialog to determine their correctness, and can show alert messages or use other modal dialogs to alert the user to any errors that must be corrected. It can then return `true` to allow the dialog to be dismissed, or `false` to allow the user to correct any errors.
-
-### Dismissing a modal dialog
-
-Every modal dialog should have at least one button that the user can click to dismiss the dialog. Typically modal dialogs have an OK and a Cancel button to close the dialog with or without accepting changes that were made in it.
-
-You can define `onClick` callbacks for the buttons that close the parent dialog by calling its close method. You have the option of sending a value to the close method, which is in turn passed on to and returned from the show method that invoked the dialog. This return value allows your script to distinguish different closing events; for example, clicking OK can return 1, clicking Cancel can return 2. However, for this typical behavior, you do not need to define these callbacks explicitly; see [Default and cancel elements](#default-and-cancel-elements).
-
-For some dialogs, such as a simple alert with only an OK button, you do not need to return any value. For more complex dialogs with several possible user actions, you might need to distinguish more outcomes. If you need to distinguish more than two closing states, you must define your own closing callbacks rather than relying on the default behavior.
-
-If, by mistake, you create a modal dialog with no buttons to dismiss it, or if your dialog does have buttons, but their `onClick` handlers do not function properly, a user can still dismiss the dialog by typing ESC. In this case, the system will execute a call to the dialog's `close` method, passing a value of 2. This is not, of course, a recommended way to design your dialogs, but is provided as an escape hatch to prevent the application from hanging in case of an error in the operations of your dialog.
-
-### Default and cancel elements
-
-The user can typically dismiss a modal dialog by clicking an OK or Cancel button, or by typing certain keyboard shortcuts. By convention, typing ENTER is the same as clicking OK or the default button, and typing ESC is the same as clicking Cancel. The keyboard shortcut has the same effect as calling notify for the associated `button` control.
-
-To determine which control is notified by which keyboard shortcut, set the `Dialog` object's `defaultElement` and `cancelElement` properties. The value is the control object that should be notified when the user types the associated keyboard shortcut.
-
-- For buttons assigned as the `defaultElement`, if there is no `onClick` handler associated with the button, clicking the button or typing ENTER calls the parent dialog's `close` method, passing a value of 1 to be returned by the show call that opened the dialog.
-- For buttons assigned as the `cancelElement`, if there is no `onClick` handler associated with the button, clicking the button or typing ESC calls the parent dialog's `close` method, passing a value of 2 to be returned by the show call that opened the dialog.
-
-If you do not set the `defaultElement` and `cancelElement` properties explicitly, ScriptUI tries to choose reasonable defaults when the dialog is about to be shown for the first time. For the default element, it looks for a button whose `name` or `text` value is `"ok"` (disregarding case). For the cancel element, it looks for a button whose `name` or `text` value is `"cancel"` (disregarding case). Because it looks at the name value first, this works even if the text value is localized. If there is no suitable button in the dialog, the property value remains `null`, which means that the keyboard shortcut has no effect in that dialog.
-
-To make this feature most useful, it is recommended that you always provide the `name` creation property for buttons meant to be used in this way.
+你可以随时设置或

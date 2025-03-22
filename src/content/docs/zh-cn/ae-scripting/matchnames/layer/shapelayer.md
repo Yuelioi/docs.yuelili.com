@@ -1,308 +1,308 @@
 ---
-title: shapelayer
+title: 形状图层
 ---
-# Shape Layer Match Names
-
----
-
-## Layer
-
-|     Match Name      | Display Name (EN) |
-| ------------------- | ----------------- |
-| `ADBE Vector Layer` | Shape Layer       |
+# 形状图层匹配名称
 
 ---
 
-## Contents
+## 图层
 
-|        Match Name         | Display Name (EN) |
-| ------------------------- | ----------------- |
-| `ADBE Root Vectors Group` | Contents          |
-
----
-
-## Group
-
-|          Match Name           | Display Name (EN) |
-| ----------------------------- | ----------------- |
-| `ADBE Vector Group`           | Group             |
-| `ADBE Vector Blend Mode`      | Blend Mode        |
-| `ADBE Vectors Group`          | Contents          |
-| `ADBE Vector Transform Group` | Transform         |
-| `ADBE Vector Materials Group` | Material Options  |
+|   匹配名称   | 显示名称 (中文) |
+| ---- | ------- |
+| `ADBE Vector Layer` | 形状图层     |
 
 ---
 
-## Rectangle
+## 内容
 
-|          Match Name           | Display Name (EN) |
-| ----------------------------- | ----------------- |
-| `ADBE Vector Shape - Rect`    | Rectangle         |
-| `ADBE Vector Shape Direction` | Shape Direction   |
-| `ADBE Vector Rect Size`       | Size              |
-| `ADBE Vector Rect Position`   | Position          |
-| `ADBE Vector Rect Roundness`  | Roundness         |
+|    匹配名称    | 显示名称 (中文) |
+| ----- | ------- |
+| `ADBE Root Vectors Group` | 内容      |
 
 ---
 
-## Ellipse
+## 组
 
-|           Match Name           | Display Name (EN) |
-| ------------------------------ | ----------------- |
-| `ADBE Vector Shape - Ellipse`  | Ellipse           |
-| `ADBE Vector Shape Direction`  | Shape Direction   |
-| `ADBE Vector Ellipse Size`     | Size              |
-| `ADBE Vector Ellipse Position` | Position          |
-
----
-
-## Polystar
-
-|            Match Name             | Display Name (EN) |
-| --------------------------------- | ----------------- |
-| `ADBE Vector Shape - Star`        | Polystar          |
-| `ADBE Vector Shape Direction`     | Shape Direction   |
-| `ADBE Vector Star Type`           | Type              |
-| `ADBE Vector Star Points`         | Points            |
-| `ADBE Vector Star Position`       | Position          |
-| `ADBE Vector Star Rotation`       | Rotation          |
-| `ADBE Vector Star Inner Radius`   | Inner Radius      |
-| `ADBE Vector Star Outer Radius`   | Outer Radius      |
-| `ADBE Vector Star Inner Roundess` | Inner Roundness   |
-| `ADBE Vector Star Outer Roundess` | Outer Roundness   |
+|      匹配名称      | 显示名称 (中文) |
+| --------- | ------- |
+| `ADBE Vector Group`       | 组       |
+| `ADBE Vector Blend Mode`    | 混合模式    |
+| `ADBE Vectors Group`      | 内容      |
+| `ADBE Vector Transform Group` | 变换     |
+| `ADBE Vector Materials Group` | 材质选项  |
 
 ---
 
-## Path
+## 矩形
 
-|          Match Name           | Display Name (EN) |
-| ----------------------------- | ----------------- |
-| `ADBE Vector Shape - Group`   | Path              |
-| `ADBE Vector Shape Direction` | Shape Direction   |
-| `ADBE Vector Shape`           | Path              |
-
----
-
-## Fill
-
-|          Match Name           | Display Name (EN) |
-| ----------------------------- | ----------------- |
-| `ADBE Vector Graphic - Fill`  | Fill              |
-| `ADBE Vector Blend Mode`      | Blend Mode        |
-| `ADBE Vector Composite Order` | Composite         |
-| `ADBE Vector Fill Rule`       | Fill Rule         |
-| `ADBE Vector Fill Color`      | Color             |
-| `ADBE Vector Fill Opacity`    | Opacity           |
+|      匹配名称      | 显示名称 (中文) |
+| --------- | ------- |
+| `ADBE Vector Shape - Rect`  | 矩形     |
+| `ADBE Vector Shape Direction` | 形状方向   |
+| `ADBE Vector Rect Size`     | 大小        |
+| `ADBE Vector Rect Position`   | 位置      |
+| `ADBE Vector Rect Roundness`  | 圆角     |
 
 ---
 
-## Stroke
+## 椭圆
 
-|            Match Name            | Display Name (EN) |
-| -------------------------------- | ----------------- |
-| `ADBE Vector Graphic - Stroke`   | Stroke            |
-| `ADBE Vector Blend Mode`         | Blend Mode        |
-| `ADBE Vector Composite Order`    | Composite         |
-| `ADBE Vector Stroke Color`       | Color             |
-| `ADBE Vector Stroke Opacity`     | Opacity           |
-| `ADBE Vector Stroke Width`       | Stroke Width      |
-| `ADBE Vector Stroke Line Cap`    | Line Cap          |
-| `ADBE Vector Stroke Line Join`   | Line Join         |
-| `ADBE Vector Stroke Miter Limit` | Miter Limit       |
+|       匹配名称       | 显示名称 (中文) |
+| ---------- | ------- |
+| `ADBE Vector Shape - Ellipse`  | 椭圆       |
+| `ADBE Vector Shape Direction`  | 形状方向   |
+| `ADBE Vector Ellipse Size`   | 大小        |
+| `ADBE Vector Ellipse Position` | 位置      |
 
 ---
 
-## Stroke Dashes
+## 多边形/星形
 
-|         Match Name          | Display Name (EN) |
-| --------------------------- | ----------------- |
-| `ADBE Vector Stroke Dashes` | Dashes            |
-| `ADBE Vector Stroke Dash 1` | Dash              |
-| `ADBE Vector Stroke Gap 1`  | Gap               |
-| `ADBE Vector Stroke Dash 2` | Dash 2            |
-| `ADBE Vector Stroke Gap 2`  | Gap 2             |
-| `ADBE Vector Stroke Dash 3` | Dash 3            |
-| `ADBE Vector Stroke Gap 3`  | Gap 3             |
-| `ADBE Vector Stroke Offset` | Offset            |
-
----
-
-## Stroke Taper
-
-|            Match Name            | Display Name (EN) |
-| -------------------------------- | ----------------- |
-| `ADBE Vector Stroke Taper`       | Taper             |
-| `ADBE Vector Taper Start Width`  | Start Width       |
-| `ADBE Vector Taper Length Units` | Length Units      |
-| `ADBE Vector Taper End Width`    | End Width         |
-| `ADBE Vector Taper End Ease`     | End Ease          |
-| `ADBE Vector Taper End Length`   | End Length        |
-| `ADBE Vector Taper Start Length` | Start Length      |
-| `ADBE Vector Taper Start Ease`   | Start Ease        |
+|      匹配名称      | 显示名称 (中文) |
+| -------- | ------- |
+| `ADBE Vector Shape - Star`    | 多边形/星形      |
+| `ADBE Vector Shape Direction`   | 形状方向   |
+| `ADBE Vector Star Type`       | 类型        |
+| `ADBE Vector Star Points`     | 点      |
+| `ADBE Vector Star Position`     | 位置      |
+| `ADBE Vector Star Rotation`     | 旋转      |
+| `ADBE Vector Star Inner Radius`   | 内半径    |
+| `ADBE Vector Star Outer Radius`   | 外半径    |
+| `ADBE Vector Star Inner Roundess` | 内圆角   |
+| `ADBE Vector Star Outer Roundess` | 外圆角   |
 
 ---
 
-## Stroke Wave
+## 路径
 
-|           Match Name            | Display Name (EN) |
-| ------------------------------- | ----------------- |
-| `ADBE Vector Stroke Wave`       | Wave              |
-| `ADBE Vector Taper Wave Amount` | Amount            |
-| `ADBE Vector Taper Wave Units`  | Units             |
-| `ADBE Vector Taper Wave Phase`  | Phase             |
-| `ADBE Vector Taper Wavelength`  | Wavelength        |
+|      匹配名称      | 显示名称 (中文) |
+| --------- | ------- |
+| `ADBE Vector Shape - Group`   | 路径        |
+| `ADBE Vector Shape Direction` | 形状方向   |
+| `ADBE Vector Shape`       | 路径        |
 
 ---
 
-## Gradient Fill
+## 填充
 
-|            Match Name            | Display Name (EN) |
-| -------------------------------- | ----------------- |
-| `ADBE Vector Graphic - G-Fill`   | Gradient Fill     |
-| `ADBE Vector Blend Mode`         | Blend Mode        |
-| `ADBE Vector Composite Order`    | Composite         |
-| `ADBE Vector Fill Rule`          | Fill Rule         |
-| `ADBE Vector Grad Type`          | Type              |
-| `ADBE Vector Grad Start Pt`      | Start Point       |
-| `ADBE Vector Grad End Pt`        | End Point         |
-| `ADBE Vector Grad HiLite Length` | Highlight Length  |
-| `ADBE Vector Grad HiLite Angle`  | Highlight Angle   |
-| `ADBE Vector Grad Colors`        | Colors            |
-| `ADBE Vector Fill Opacity`       | Opacity           |
+|      匹配名称      | 显示名称 (中文) |
+| --------- | ------- |
+| `ADBE Vector Graphic - Fill`  | 填充        |
+| `ADBE Vector Blend Mode`    | 混合模式    |
+| `ADBE Vector Composite Order` | 合成     |
+| `ADBE Vector Fill Rule`     | 填充规则     |
+| `ADBE Vector Fill Color`    | 颜色       |
+| `ADBE Vector Fill Opacity`  | 不透明度       |
 
 ---
 
-## Gradient Stroke
+## 描边
 
-|            Match Name            | Display Name (EN) |
-| -------------------------------- | ----------------- |
-| `ADBE Vector Graphic - G-Stroke` | Gradient Stroke   |
-| `ADBE Vector Blend Mode`         | Blend Mode        |
-| `ADBE Vector Composite Order`    | Composite         |
-| `ADBE Vector Grad Type`          | Type              |
-| `ADBE Vector Grad Start Pt`      | Start Point       |
-| `ADBE Vector Grad End Pt`        | End Point         |
-| `ADBE Vector Grad HiLite Length` | Highlight Length  |
-| `ADBE Vector Grad HiLite Angle`  | Highlight Angle   |
-| `ADBE Vector Grad Colors`        | Colors            |
-| `ADBE Vector Stroke Opacity`     | Opacity           |
-| `ADBE Vector Stroke Width`       | Stroke Width      |
-| `ADBE Vector Stroke Line Cap`    | Line Cap          |
-| `ADBE Vector Stroke Line Join`   | Line Join         |
-| `ADBE Vector Stroke Miter Limit` | Miter Limit       |
-| `ADBE Vector Stroke Dashes`      | Dashes            |
+|     匹配名称     | 显示名称 (中文) |
+| ------- | ------- |
+| `ADBE Vector Graphic - Stroke`   | 描边      |
+| `ADBE Vector Blend Mode`     | 混合模式    |
+| `ADBE Vector Composite Order`  | 合成     |
+| `ADBE Vector Stroke Color`     | 颜色       |
+| `ADBE Vector Stroke Opacity`   | 不透明度       |
+| `ADBE Vector Stroke Width`     | 描边宽度    |
+| `ADBE Vector Stroke Line Cap`  | 线帽      |
+| `ADBE Vector Stroke Line Join`   | 线连接     |
+| `ADBE Vector Stroke Miter Limit` | 斜接限制     |
 
 ---
 
-## Merge Paths
+## 描边虚线
 
-|          Match Name          | Display Name (EN) |
-| ---------------------------- | ----------------- |
-| `ADBE Vector Filter - Merge` | Merge Paths       |
-| `ADBE Vector Merge Type`     | Mode              |
-
----
-
-## Offset Paths
-
-|            Match Name            | Display Name (EN) |
-| -------------------------------- | ----------------- |
-| `ADBE Vector Filter - Offset`    | Offset Paths      |
-| `ADBE Vector Offset Amount`      | Amount            |
-| `ADBE Vector Offset Line Join`   | Line Join         |
-| `ADBE Vector Offset Miter Limit` | Miter Limit       |
-| `ADBE Vector Offset Copies`      | Copies            |
-| `ADBE Vector Offset Copy Offset` | Copy Offset       |
+|    匹配名称     | 显示名称 (中文) |
+| ------- | ------- |
+| `ADBE Vector Stroke Dashes` | 虚线      |
+| `ADBE Vector Stroke Dash 1` | 虚线        |
+| `ADBE Vector Stroke Gap 1`  | 间隔         |
+| `ADBE Vector Stroke Dash 2` | 虚线 2      |
+| `ADBE Vector Stroke Gap 2`  | 间隔 2       |
+| `ADBE Vector Stroke Dash 3` | 虚线 3      |
+| `ADBE Vector Stroke Gap 3`  | 间隔 3       |
+| `ADBE Vector Stroke Offset` | 偏移      |
 
 ---
 
-## Pucker & Bloat
+## 描边锥化
 
-|            Match Name            | Display Name (EN) |
-| -------------------------------- | ----------------- |
-| `ADBE Vector Filter - PB`        | Pucker & Bloat    |
-| `ADBE Vector PuckerBloat Amount` | Amount            |
-
----
-
-## Repeater
-
-|            Match Name            | Display Name (EN) |
-| -------------------------------- | ----------------- |
-| `ADBE Vector Filter - Repeater`  | Repeater          |
-| `ADBE Vector Repeater Copies`    | Copies            |
-| `ADBE Vector Repeater Offset`    | Offset            |
-| `ADBE Vector Repeater Order`     | Composite         |
-| `ADBE Vector Repeater Transform` | Transform         |
+|     匹配名称     | 显示名称 (中文) |
+| ------- | ------- |
+| `ADBE Vector Stroke Taper`     | 锥化       |
+| `ADBE Vector Taper Start Width`  | 起始宽度     |
+| `ADBE Vector Taper Length Units` | 长度单位    |
+| `ADBE Vector Taper End Width`  | 结束宽度     |
+| `ADBE Vector Taper End Ease`   | 结束缓动      |
+| `ADBE Vector Taper End Length`   | 结束长度    |
+| `ADBE Vector Taper Start Length` | 起始长度    |
+| `ADBE Vector Taper Start Ease`   | 起始缓动    |
 
 ---
 
-## Round Corners
+## 描边波浪
 
-|            Match Name            | Display Name (EN) |
-| -------------------------------- | ----------------- |
-| `ADBE Vector Filter - RC`        | Round Corners     |
-| `ADBE Vector RoundCorner Radius` | Radius            |
-
----
-
-## Trim Paths
-
-|         Match Name          |  Display Name (EN)   |
-| --------------------------- | -------------------- |
-| `ADBE Vector Filter - Trim` | Trim Paths           |
-| `ADBE Vector Trim Start`    | Start                |
-| `ADBE Vector Trim End`      | End                  |
-| `ADBE Vector Trim Offset`   | Offset               |
-| `ADBE Vector Trim Type`     | Trim Multiple Shapes |
+|       匹配名称      | 显示名称 (中文) |
+| ------ | ------- |
+| `ADBE Vector Stroke Wave`     | 波浪        |
+| `ADBE Vector Taper Wave Amount` | 数量      |
+| `ADBE Vector Taper Wave Units`  | 单位       |
+| `ADBE Vector Taper Wave Phase`  | 相位       |
+| `ADBE Vector Taper Wavelength`  | 波长    |
 
 ---
 
-## Twist
+## 渐变填充
 
-|          Match Name          | Display Name (EN) |
-| ---------------------------- | ----------------- |
-| `ADBE Vector Filter - Twist` | Twist             |
-| `ADBE Vector Twist Angle`    | Angle             |
-| `ADBE Vector Twist Center`   | Center            |
-
----
-
-## Wiggle Paths
-
-|           Match Name           | Display Name (EN) |
-| ------------------------------ | ----------------- |
-| `ADBE Vector Filter - Roughen` | Wiggle Paths      |
-| `ADBE Vector Roughen Size`     | Size              |
-| `ADBE Vector Roughen Detail`   | Detail            |
-| `ADBE Vector Roughen Points`   | Points            |
-| `ADBE Vector Temporal Freq`    | Wiggles/Second    |
-| `ADBE Vector Correlation`      | Correlation       |
-| `ADBE Vector Temporal Phase`   | Temporal Phase    |
-| `ADBE Vector Spatial Phase`    | Spatial Phase     |
-| `ADBE Vector Random Seed`      | Random Seed       |
+|     匹配名称     | 显示名称 (中文) |
+| ------- | ------- |
+| `ADBE Vector Graphic - G-Fill`   | 渐变填充   |
+| `ADBE Vector Blend Mode`     | 混合模式    |
+| `ADBE Vector Composite Order`  | 合成     |
+| `ADBE Vector Fill Rule`      | 填充规则     |
+| `ADBE Vector Grad Type`      | 类型        |
+| `ADBE Vector Grad Start Pt`    | 起始点     |
+| `ADBE Vector Grad End Pt`    | 结束点     |
+| `ADBE Vector Grad HiLite Length` | 高光长度  |
+| `ADBE Vector Grad HiLite Angle`  | 高光角度   |
+| `ADBE Vector Grad Colors`    | 颜色      |
+| `ADBE Vector Fill Opacity`     | 不透明度       |
 
 ---
 
-## Wiggle Transform
+## 渐变描边
 
-|            Match Name             | Display Name (EN) |
-| --------------------------------- | ----------------- |
-| `ADBE Vector Filter - Wiggler`    | Wiggle Transform  |
-| `ADBE Vector Xform Temporal Freq` | Wiggles/Second    |
-| `ADBE Vector Correlation`         | Correlation       |
-| `ADBE Vector Temporal Phase`      | Temporal Phase    |
-| `ADBE Vector Spatial Phase`       | Spatial Phase     |
-| `ADBE Vector Random Seed`         | Random Seed       |
-| `ADBE Vector Wiggler Transform`   | Transform         |
+|     匹配名称     | 显示名称 (中文) |
+| ------- | ------- |
+| `ADBE Vector Graphic - G-Stroke` | 渐变描边   |
+| `ADBE Vector Blend Mode`     | 混合模式    |
+| `ADBE Vector Composite Order`  | 合成     |
+| `ADBE Vector Grad Type`      | 类型        |
+| `ADBE Vector Grad Start Pt`    | 起始点     |
+| `ADBE Vector Grad End Pt`    | 结束点     |
+| `ADBE Vector Grad HiLite Length` | 高光长度  |
+| `ADBE Vector Grad HiLite Angle`  | 高光角度   |
+| `ADBE Vector Grad Colors`    | 颜色      |
+| `ADBE Vector Stroke Opacity`   | 不透明度       |
+| `ADBE Vector Stroke Width`     | 描边宽度    |
+| `ADBE Vector Stroke Line Cap`  | 线帽      |
+| `ADBE Vector Stroke Line Join`   | 线连接     |
+| `ADBE Vector Stroke Miter Limit` | 斜接限制     |
+| `ADBE Vector Stroke Dashes`    | 虚线      |
 
 ---
 
-## Zig Zag
+## 合并路径
 
-|          Match Name           | Display Name (EN)  |
-| ----------------------------- | ------------------ |
-| `ADBE Vector Filter - Zigzag` | Zig Zag            |
-| `ADBE Vector Zigzag Size`     | Size               |
-| `ADBE Vector Zigzag Detail`   | Ridges per segment |
-| `ADBE Vector Zigzag Points`   | Points             |
+|     匹配名称     | 显示名称 (中文) |
+| -------- | ------- |
+| `ADBE Vector Filter - Merge` | 合并路径     |
+| `ADBE Vector Merge Type`   | 模式        |
+
+---
+
+## 偏移路径
+
+|     匹配名称     | 显示名称 (中文) |
+| ------- | ------- |
+| `ADBE Vector Filter - Offset`  | 偏移路径    |
+| `ADBE Vector Offset Amount`    | 数量      |
+| `ADBE Vector Offset Line Join`   | 线连接     |
+| `ADBE Vector Offset Miter Limit` | 斜接限制     |
+| `ADBE Vector Offset Copies`    | 副本      |
+| `ADBE Vector Offset Copy Offset` | 副本偏移     |
+
+---
+
+## 收缩与膨胀
+
+|     匹配名称     | 显示名称 (中文) |
+| ------- | ------- |
+| `ADBE Vector Filter - PB`    | 收缩与膨胀  |
+| `ADBE Vector PuckerBloat Amount` | 数量      |
+
+---
+
+## 重复器
+
+|     匹配名称     | 显示名称 (中文) |
+| ------- | ------- |
+| `ADBE Vector Filter - Repeater`  | 重复器      |
+| `ADBE Vector Repeater Copies`  | 副本      |
+| `ADBE Vector Repeater Offset`  | 偏移      |
+| `ADBE Vector Repeater Order`   | 合成     |
+| `ADBE Vector Repeater Transform` | 变换     |
+
+---
+
+## 圆角
+
+|     匹配名称     | 显示名称 (中文) |
+| ------- | ------- |
+| `ADBE Vector Filter - RC`    | 圆角   |
+| `ADBE Vector RoundCorner Radius` | 半径      |
+
+---
+
+## 修剪路径
+
+|    匹配名称     |  显示名称 (中文)   |
+| ------- | ----- |
+| `ADBE Vector Filter - Trim` | 修剪路径       |
+| `ADBE Vector Trim Start`  | 起始        |
+| `ADBE Vector Trim End`    | 结束          |
+| `ADBE Vector Trim Offset`   | 偏移         |
+| `ADBE Vector Trim Type`   | 修剪多个形状 |
+
+---
+
+## 扭转
+
+|     匹配名称     | 显示名称 (中文) |
+| -------- | ------- |
+| `ADBE Vector Filter - Twist` | 扭转       |
+| `ADBE Vector Twist Angle`  | 角度       |
+| `ADBE Vector Twist Center`   | 中心      |
+
+---
+
+## 摆动路径
+
+|       匹配名称       | 显示名称 (中文) |
+| ---------- | ------- |
+| `ADBE Vector Filter - Roughen` | 摆动路径    |
+| `ADBE Vector Roughen Size`   | 大小        |
+| `ADBE Vector Roughen Detail`   | 细节      |
+| `ADBE Vector Roughen Points`   | 点      |
+| `ADBE Vector Temporal Freq`  | 摆动/秒  |
+| `ADBE Vector Correlation`    | 相关性     |
+| `ADBE Vector Temporal Phase`   | 时间相位  |
+| `ADBE Vector Spatial Phase`  | 空间相位   |
+| `ADBE Vector Random Seed`    | 随机种子     |
+
+---
+
+## 摆动变换
+
+|      匹配名称      | 显示名称 (中文) |
+| -------- | ------- |
+| `ADBE Vector Filter - Wiggler`  | 摆动变换  |
+| `ADBE Vector Xform Temporal Freq` | 摆动/秒  |
+| `ADBE Vector Correlation`     | 相关性     |
+| `ADBE Vector Temporal Phase`    | 时间相位  |
+| `ADBE Vector Spatial Phase`     | 空间相位   |
+| `ADBE Vector Random Seed`     | 随机种子     |
+| `ADBE Vector Wiggler Transform`   | 变换     |
+
+---
+
+## 锯齿
+
+|      匹配名称      | 显示名称 (中文)  |
+| --------- | --- |
+| `ADBE Vector Filter - Zigzag` | 锯齿      |
+| `ADBE Vector Zigzag Size`   | 大小         |
+| `ADBE Vector Zigzag Detail`   | 每段脊数 |
+| `ADBE Vector Zigzag Points`   | 点       |

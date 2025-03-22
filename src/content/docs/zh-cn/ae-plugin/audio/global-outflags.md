@@ -1,10 +1,10 @@
 ---
-title: global-outflags
+title: 全局输出标志
 ---
-# Global Outflags
+# 全局输出标志
 
-All audio effects must set either `PF_OutFlag_AUDIO_EFFECT_TOO` or `PF_OutFlag_AUDIO_EFFECT_ONLY`.
+所有音频效果必须设置 `PF_OutFlag_AUDIO_EFFECT_TOO` 或 `PF_OutFlag_AUDIO_EFFECT_ONLY`。
 
-`PF_OutFlag_I_USE_AUDIO` is for visual effects that check out audio data, but don't modify it.
+`PF_OutFlag_I_USE_AUDIO` 适用于检查音频数据但不修改它的视觉效果。
 
-`PF_OutFlag_AUDIO_FLOAT_ONLY`, `PF_OutFlag_AUDIO_IIR` and `PF_OutFlag_I_SYNTHESIZE_AUDIO` provide greater control over audio output (see [PF_OutFlags](../effect-basics/PF_OutData.md#pf_outflags) for more details).
+`PF_OutFlag_AUDIO_FLOAT_ONLY`、`PF_OutFlag_AUDIO_IIR` 和 `PF_OutFlag_I_SYNTHESIZE_AUDIO` 提供了对音频输出的更精细控制（详见 [PF_OutFlags](../effect-basics/PF_OutData.md#pf_outflags)）。

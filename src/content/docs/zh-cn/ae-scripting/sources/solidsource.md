@@ -1,7 +1,7 @@
 ---
-title: solidsource
+title: 纯色素材源
 ---
-# SolidSource object
+# SolidSource 对象
 
 `app.project.item(index).mainSource`
 
@@ -9,10 +9,10 @@ title: solidsource
 
 #### 描述
 
-The SolidSource object represents a solid-color footage source.
+SolidSource 对象表示一个纯色素材源。
 
 :::info
-SolidSource is a subclass of [FootageSource](../footagesource). All methods and attributes of FootageSource, in addition to those listed below, are available when working with SolidSource.
+SolidSource 是 [FootageSource](../footagesource) 的子类。除了下面列出的方法和属性外，FootageSource 的所有方法和属性在操作 SolidSource 时也可用。
 :::
 
 ---
@@ -25,8 +25,8 @@ SolidSource is a subclass of [FootageSource](../footagesource). All methods and 
 
 #### 描述
 
-The color of the solid, expressed as red, green, and blue values.
+纯色的颜色，以红、绿、蓝值表示。
 
 #### 类型
 
-Array of three floating-point values, `[R, G, B]`, 范围为 `[0.0..1.0]`; read/write.
+由三个浮点值组成的数组，`[R, G, B]`，范围为 `[0.0..1.0]`；可读写。

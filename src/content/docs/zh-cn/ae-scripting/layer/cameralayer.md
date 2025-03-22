@@ -1,21 +1,21 @@
 ---
-title: cameralayer
+title: 摄像机图层
 ---
-# CameraLayer object
+# CameraLayer 对象
 
 `app.project.item(index).layer(index)`
 
 #### 描述
 
-The CameraLayer object represents a camera layer within a composition. Create it using [LayerCollection.addCamera()](layercollection.md#layercollectionaddcamera). It can be accessed in an item's layer collection either by index number or by a name string.
+CameraLayer 对象表示合成中的一个摄像机图层。可以使用 [LayerCollection.addCamera()](layercollection.md#layercollectionaddcamera) 创建它。可以通过索引号或名称字符串在项目的图层集合中访问它。
 
 :::info
-CameraLayer is a subclass of [Layer object](../layer). All methods and attributes of Layer are available when working with CameraLayer.
+CameraLayer 是 [Layer 对象](../layer) 的子类。在使用 CameraLayer 时，所有 Layer 的方法和属性都可用。
 :::
 
-#### AE Properties
+#### AE 属性
 
-CameraLayer defines no additional attributes, but has different AE properties than other layer types. It has the following properties and property groups:
+CameraLayer 没有定义额外的属性，但与其他图层类型相比，它具有不同的 AE 属性。它具有以下属性和属性组：
 
 - `Marker`
 - `Transform`

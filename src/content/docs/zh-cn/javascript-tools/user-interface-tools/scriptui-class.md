@@ -1,23 +1,23 @@
 ---
 title: scriptui-class
 ---
-# ScriptUI class
+# ScriptUI 类
 
-The globally available ScriptUI class provides central information about the ScriptUI module. This object is not instantiable.
+全局可用的 ScriptUI 类提供了关于 ScriptUI 模块的核心信息。该对象不可实例化。
 
 ---
 
-## ScriptUI Classs Attributes
+## ScriptUI 类属性
 
 ### ScriptUI.Alignment
 
 `ScriptUI.Alignment`
 
-Collects the enumerated values that can be used in the [alignment](window-object.md#alignment) and [alignChildren](window-object.md#alignchildren) properties of controls and containers, and in the alignment property used to set a control's [titleLayout](control-objects.md#titlelayout) property.
+收集了可用于控件和容器的 [alignment](window-object.md#alignment) 和 [alignChildren](window-object.md#alignchildren) 属性中的枚举值，以及用于设置控件的 [titleLayout](control-objects.md#titlelayout) 属性的对齐属性。
 
-Use these constants to set the alignment.
+使用这些常量来设置对齐方式。
 
-When you query the [alignment](window-object.md#alignment) property, it returns index values that correspond to the constants as shown. Constant values are:
+当查询 [alignment](window-object.md#alignment) 属性时，它会返回与常量对应的索引值，如下所示。常量值为：
 
 - `ScriptUI.Alignment.TOP` (1)
 - `ScriptUI.Alignment.BOTTOM` (2)
@@ -28,7 +28,7 @@ When you query the [alignment](window-object.md#alignment) property, it returns 
 
 #### 类型
 
-Object. Read only.
+对象。只读。
 
 #### 示例
 
@@ -44,13 +44,13 @@ myGroup.alignment = [ScriptUI.Alignment.LEFT, ScriptUI.Alignment.TOP]
 
 #### 描述
 
-Collects the enumerated values that specify the default application fonts.
+收集了指定默认应用程序字体的枚举值。
 
-The available fonts vary according to the application and system configuration.
+可用的字体根据应用程序和系统配置而异。
 
 #### 类型
 
-Object
+对象
 
 ---
 
@@ -60,11 +60,11 @@ Object
 
 #### 描述
 
-An object whose properties are the names of compatibility modes supported by the host application. For example, the presence of `ScriptUI.compatability.su1PanelCoordinates` means that the application allows backward compatibility with the coordinate system of Panel elements in ScriptUI version 1.
+一个对象，其属性是宿主应用程序支持的兼容模式名称。例如，`ScriptUI.compatability.su1PanelCoordinates` 的存在意味着应用程序允许与 ScriptUI 版本 1 中 Panel 元素的坐标系统向后兼容。
 
 #### 类型
 
-Object
+对象
 
 ---
 
@@ -74,11 +74,11 @@ Object
 
 #### 描述
 
-The internal core version number of the ScriptUI components.
+ScriptUI 组件的内部核心版本号。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -88,11 +88,11 @@ String. Read only.
 
 #### 描述
 
-A JavaScript object that provides access to attributes of the ScriptUI environment; contains a Keyboard state object that reports the active state of the keyboard at any time, independent of the event-handling framework.
+一个 JavaScript 对象，提供对 ScriptUI 环境属性的访问；包含一个 Keyboard 状态对象，该对象报告键盘在任何时间的活动状态，独立于事件处理框架。
 
 #### 类型
 
-[Environment object](environment.md#environment-object)
+[Environment 对象](environment.md#environment-object)
 
 ---
 
@@ -102,11 +102,11 @@ A JavaScript object that provides access to attributes of the ScriptUI environme
 
 #### 描述
 
-A JavaScript object that contains one function, [ScriptUI.events.createEvent()](#scriptuieventscreateevent), which allows you to create event objects in order to simulate user-interaction events.
+一个 JavaScript 对象，包含一个函数 [ScriptUI.events.createEvent()](#scriptuieventscreateevent)，该函数允许您创建事件对象以模拟用户交互事件。
 
 #### 类型
 
-Object
+对象
 
 ---
 
@@ -116,13 +116,13 @@ Object
 
 #### 描述
 
-Collects the enumerated values that can be used as the style argument to the [ScriptUI.newFont()](#scriptuinewfont) method. For example:
+收集了可用作 [ScriptUI.newFont()](#scriptuinewfont) 方法的 style 参数的枚举值。例如：
 
 ```javascript
 var font = ScriptUI.newFont( "Helvetica", ScriptUI.FontStyle.BOLD )
 ```
 
-Values are:
+值为：
 
 - `REGULAR`
 - `BOLD`
@@ -131,7 +131,7 @@ Values are:
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -141,11 +141,11 @@ String. Read only.
 
 #### 描述
 
-The name of the user-interface framework with which this ScriptUI component is compatible.
+此 ScriptUI 组件兼容的用户界面框架的名称。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -155,15 +155,15 @@ String. Read only.
 
 #### 描述
 
-The main version number of the ScriptUI component framework.
+ScriptUI 组件框架的主版本号。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
-## ScriptUI Class Methods
+## ScriptUI 类方法
 
 ### ScriptUI.events.createEvent()
 
@@ -171,17 +171,17 @@ String. Read only.
 
 #### 描述
 
-This function is in the JavaScript object contained in the [events](#scriptuievents) property.
+此函数位于 [events](#scriptuievents) 属性中包含的 JavaScript 对象中。
 
-This object is passed to a function that you register to respond to events of a certain type that occur in a window or control. Use [windowObj.addEventListener()](window-object.md#addeventlistener) or [controlObj.addEventListener()](control-objects.md#addeventlistener) to register a handler function.
+该对象被传递给一个函数，您注册该函数以响应窗口或控件中发生的某种类型的事件。使用 [windowObj.addEventListener()](window-object.md#addeventlistener) 或 [controlObj.addEventListener()](control-objects.md#addeventlistener) 来注册处理函数。
 
-See [Registering event listeners for windows or controls](defining-behavior-with-event-callbacks-and-listeners.md#registering-event-listeners-for-windows-or-controls).
+请参阅 [为窗口或控件注册事件监听器](defining-behavior-with-event-callbacks-and-listeners.md#registering-event-listeners-for-windows-or-controls)。
 
 #### 参数
 
 |  参数  |  类型  |        描述         |
 |-------------|--------|----------------------------|
-| `eventType` | String | The type of event, one of: |
+| `eventType` | String | 事件类型，其中之一： |
 |             |        | - `UIEvent`                |
 |             |        | - `KeyboardEvent`          |
 |             |        | - `MouseEvent`             |
@@ -189,11 +189,11 @@ See [Registering event listeners for windows or controls](defining-behavior-with
 
 #### 返回
 
-It returns an event object of the appropriate type:
+返回一个适当类型的事件对象：
 
-- A [UIEvent base class](event-handling.md#uievent-base-class) encapsulates input event information for an event that propagates through a container and control hierarchy. This is a base class for the more specialized keyboard and mouse event types.
-- A [KeyboardEvent object](event-handling.md#keyboardevent-object) encapsulates information about keyboard input events.
-- A [MouseEvent object](event-handling.md#mouseevent-object) encapsulates information about mouse events.
+- [UIEvent 基类](event-handling.md#uievent-base-class) 封装了在容器和控件层次结构中传播的事件的输入事件信息。这是更专业的键盘和鼠标事件类型的基类。
+- [KeyboardEvent 对象](event-handling.md#keyboardevent-object) 封装了键盘输入事件的信息。
+- [MouseEvent 对象](event-handling.md#mouseevent-object) 封装了鼠标事件的信息。
 
 ---
 
@@ -203,17 +203,17 @@ It returns an event object of the appropriate type:
 
 #### 描述
 
-Finds and returns the resource for a given text string from the host application's resource data. If no string resource matches the given text, the text itself is returned.
+从宿主应用程序的资源数据中查找并返回给定文本字符串的资源。如果没有字符串资源与给定文本匹配，则返回文本本身。
 
 #### 参数
 
 | 参数 |  类型  |    描述     |
 | --------- | ------ | ------------------ |
-| `text`    | String | The text to match. |
+| `text`    | String | 要匹配的文本。 |
 
 #### 返回
 
-String
+字符串
 
 ---
 
@@ -223,19 +223,19 @@ String
 
 #### 描述
 
-Creates a new font object for use in text controls and titles.
+创建一个新的字体对象，用于文本控件和标题。
 
 #### 参数
 
 | 参数 |  类型  |                                        描述                                         |
 | --------- | ------ | ------------------------------------------------------------------------------------------ |
-| `name`    | String | The font or font family name string.                                                       |
-| `style`   | String | The font style string or an enumerated value from [ScriptUI.FontStyle](#scriptuifontstyle) |
-| `size`    | Number | The font size in points, a number.                                                         |
+| `name`    | String | 字体或字体族名称字符串。                                                       |
+| `style`   | String | 字体样式字符串或 [ScriptUI.FontStyle](#scriptuifontstyle) 中的枚举值 |
+| `size`    | Number | 字体大小（以磅为单位），一个数字。                                                         |
 
 #### 返回
 
-[ScriptUIFont object](graphic-customization-objects.md#scriptuifont-object)
+[ScriptUIFont 对象](graphic-customization-objects.md#scriptuifont-object)
 
 ---
 
@@ -245,17 +245,17 @@ Creates a new font object for use in text controls and titles.
 
 #### 描述
 
-Creates a new image object for use in controls that can display images, loading the associated images from the specified resources or image files.
+创建一个新的图像对象，用于可以显示图像的控件，从指定的资源或图像文件加载相关图像。
 
-#### Parameter
+#### 参数
 
 | 参数  |  类型  |                                                                  描述                                                                   |
 | ---------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `normal`   | String | The resource name or path to the image to use for the normal or default state.                                                                 |
-| `disabled` | String | The resource name or path to the image to use for the disabled state, shown when the control containing the image is disabled (enabled=false). |
-| `pressed`  | String | The resource name or path to the image to use for the pressed state, shown when the user clicks on the image.                                  |
-| `rollover` | String | The resource name or path to the image to use for the rollover state, which is shown when the cursor moves over the image.                     |
+| `normal`   | String | 用于正常或默认状态的图像的资源名称或路径。                                                                 |
+| `disabled` | String | 用于禁用状态的图像的资源名称或路径，当包含图像的控件被禁用时显示（enabled=false）。 |
+| `pressed`  | String | 用于按下状态的图像的资源名称或路径，当用户点击图像时显示。                                  |
+| `rollover` | String | 用于悬停状态的图像的资源名称或路径，当光标移动到图像上时显示。                     |
 
 #### 返回
 
-[ScriptUIImage object](graphic-customization-objects.md#scriptuiimage-object)
+[ScriptUIImage 对象](graphic-customization-objects.md#scriptuiimage-object)

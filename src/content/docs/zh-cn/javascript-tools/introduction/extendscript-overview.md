@@ -1,88 +1,87 @@
 ---
-title: extendscript-overview
+title: extendscript-概述
 ---
-# ExtendScript overview
+# ExtendScript 概述
 
-Adobe provides an extended implementation of JavaScript, called ExtendScript, that is used by many Adobe applications that provide a scripting interface. In addition to implementing the JavaScript language according to the ECMA JavaScript specification, ExtendScript provides certain additional features and utilities.
+Adobe 提供了一种扩展的 JavaScript 实现，称为 ExtendScript，许多提供脚本接口的 Adobe 应用程序都使用它。除了根据 ECMA JavaScript 规范实现 JavaScript 语言外，ExtendScript 还提供了一些额外的功能和实用工具。
 
-This document describes JavaScript modules, tools, utilities, and features that are available to all JavaScript-enabled Adobe applications.
+本文档描述了所有支持 JavaScript 的 Adobe 应用程序可用的 JavaScript 模块、工具、实用工具和功能。
 
 :::note
-Some modules, and features of some modules, are optional. Check the product documentation for each application for details of which modules and features are implemented.
+某些模块及其功能是可选的。请查看每个应用程序的产品文档，了解哪些模块和功能已实现的详细信息。
 :::
 
+## 示例代码
 
-## Example code
+[Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) 包含了本文档，同时还包含了一组代码示例，展示了如何使用 ScriptUI、应用程序间通信和外部通信的功能。本书通过示例名称来引用这些示例，以说明概念和技术。
 
-The [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit), which contains this document, also contains a set of code samples that demonstrate how to use features of ScriptUI, interapplication communication, and external communication. This book refers to these samples by name for illustration of concepts and techniques.
+你可以从 [Github](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) 下载最新（也是最后一个）的 SDK。早期版本可能仍然可以通过 [直接链接](https://github.com/aenhancers/javascript-tools-guide/issues/2#issuecomment-1019312237) 访问。
 
-You can download the latest (and last) SDK from [Github](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit). Earlier versions might still be accessible through [direct links](https://github.com/aenhancers/javascript-tools-guide/issues/2#issuecomment-1019312237).
+示例位于 ExtendScript SDK 根目录下：
 
-The samples are located under the ExtendScript SDK root directory:
+- `SDKroot/Samples/javascript/`: 示例脚本
+- `SDKroot/Samples/resources/`: 资源文件，如图像或 Flash 文件
 
-- `SDKroot/Samples/javascript/`: sample scripts
-- `SDKroot/Samples/resources/`: resources, such as image or flash files
+## 开发和调试工具
 
-## Development and debugging tools
+为了帮助开发、调试和测试脚本，Adobe 提供了 ExtendScript Toolkit，这是一个用于 ExtendScript 的交互式开发和测试环境，随所有支持 JavaScript 的应用程序一起安装。
 
-For help in developing, debugging, and testing scripts, Adobe provides the ExtendScript Toolkit, an interactive development and testing environment for ExtendScript, which is installed with all JavaScript-enabled applications.
+有关完整详细信息，请参阅 [ExtendScript Toolkit](../extendscript-toolkit/index.md#the-extendscript-toolkit)。
 
-For complete details, see [The ExtendScript Toolkit](../extendscript-toolkit/index.md#the-extendscript-toolkit).
+ExtendScript 还提供了支持开发和调试的全局对象：
 
-ExtendScript also provides global objects that support development and debugging:
+- 一个全局调试对象，即 Dollar ($) 对象。
+- 一个用于报告 ExtendScript 元素的实用工具，即 ExtendScript 反射接口。
 
-- A global debugging object, the Dollar ($) object.
-- A reporting utility for ExtendScript elements, the ExtendScript reflection interface.
+有关完整详细信息，请参阅 [ExtendScript 工具和功能](../extendscript-tools-features/index.md#extendscript-tools-and-features)。
 
-For complete details, see [ExtendScript Tools and Features](../extendscript-tools-features/index.md#extendscript-tools-and-features).
+## 跨平台文件系统访问
 
-## Cross-platform file-system access
+Adobe ExtendScript 定义了 File 和 Folder 类，简化了跨平台文件系统的访问。这些类对所有支持 JavaScript 接口的应用程序都可用。
 
-Adobe ExtendScript defines File and Folder classes that simplify cross-platform file-system access. These classes are available to all applications that support a JavaScript interface.
+有关完整详细信息，请参阅 [文件系统访问](../file-system-access/index.md#file-system-access)。
 
-For complete details, see [File System Access](../file-system-access/index.md#file-system-access).
+## 用户界面开发工具
 
-## User-interface development tools
+Adobe 提供了 ScriptUI 模块，它与 ExtendScript JavaScript 解释器一起工作，使 JavaScript 脚本能够创建用户界面元素并与之交互。它为 Adobe 应用程序中的窗口和用户界面控件元素提供了一个对象模型。有关完整详细信息，请参阅 [用户界面工具](../user-interface-tools/index.md#user-interface-tools)。
 
-Adobe provides the ScriptUI module, which works with the ExtendScript JavaScript interpreter to provide JavaScript scripts with the ability to create and interact with user interface elements. It provides an object model for windows and user-interface control elements within an Adobe application. For complete details, see [User-Interface Tools](../user-interface-tools/index.md#user-interface-tools).
+此外，ExtendScript 还提供了：
 
-In addition, ExtendScript provides:
+- 用于本地化显示字符串的全局函数；请参阅 [本地化 ExtendScript 字符串](../../extendscript-tools-features/localizing-extendscript-strings)。
+- 用于在对话框中显示简短消息的全局函数；请参阅 [用户通知对话框](../../extendscript-tools-features/user-notification-dialogs)。
+- 一种用于指定测量值及其单位的对象类型；请参阅 [指定测量值](../../extendscript-tools-features/specifying-measurement-values)。
 
-- Global functions for localization of display strings; see [Localizing ExtendScript strings](../../extendscript-tools-features/localizing-extendscript-strings)
-- Global functions for displaying short messages in dialog boxes; see [User notification dialogs](../../extendscript-tools-features/user-notification-dialogs).
-- An object type for specifying measurement values together with their units; see [Specifying measurement values](../../extendscript-tools-features/specifying-measurement-values).
+## 应用程序间通信和消息传递
 
-## Interapplication communication and messaging
+ExtendScript 为所有支持 JavaScript 的 Adobe 应用程序提供了一个通用的脚本环境，并允许通过脚本进行应用程序间通信。
 
-ExtendScript provides a common scripting environment for all Adobe JavaScript-enabled applications, and allows interapplication communication through scripts.
+通过跨 DOM 和消息传递框架提供了不同级别的通信。
 
-Different levels of communication are provided through the cross-DOM and the messaging framework.
+- 跨 DOM 函数是一组有限的、跨所有支持消息传递的应用程序的基本函数，允许你的脚本通过调用其他应用程序的打开或打印函数来打开或打印文件。除了基本函数集外，一些应用程序还提供了更广泛的导出 JavaScript 函数集给其他应用程序。
+- 应用程序间消息传递框架是一个应用程序编程接口 (API)，允许对应用程序之间的通信进行广泛的控制。该 API 允许你向其他应用程序发送消息并接收结果，以及接收其他应用程序发送的消息并返回结果。通常，应用程序之间传递的数据是 JavaScript 脚本。然而，消息传递框架是可扩展的。它允许你定义不同类型的数据在应用程序之间传递，并指定如何处理它们。
 
-- Cross-DOM functions are a limited set of basic functions common across all message-enabled applications, which allow your script to, for example, open or print files in other applications, simply by calling the open or print function for that application. In addition to the basic set of common functions, some applications provide more extensive sets of exported JavaScript functions to other applications.
-- The interapplication messaging framework is an application programming interface (API) that allows extensive control over communication between applications. The API allows you to send messages to other applications and receive results, and to receive messages sent by other applications and return results. Typically the data passed between applications are JavaScript scripts. However, the messaging framework is extensible. It allows you to define different types of data to send between applications, and to specify how they are handled.
+有关完整详细信息，请参阅 [使用脚本进行应用程序间通信](../interapplication-communication/index.md#interapplication-communication-with-scripts)。
 
-For complete details, see [Interapplication Communication with Scripts](../interapplication-communication/index.md#interapplication-communication-with-scripts).
+## 外部通信
 
-## External communication
+ExtendScript 提供了使用标准协议与其他计算机或互联网通信的工具。Socket 对象支持低级别的 TCP 连接。
 
-ExtendScript offers tools for communicating with other computers or the internet using standard protocols. The Socket object supports low-level TCP connections.
+有关完整详细信息，请参阅 [外部通信工具](../external-communication/index.md#external-communication-tools)。
 
-For complete details, see [External Communication Tools](../external-communication/index.md#external-communication-tools).
+## 外部共享库集成
 
-## External shared-library integration
+你可以通过编写 C 或 C++ 共享库，将其编译为你所使用的平台，并将其作为 ExternalObject 实例加载到 JavaScript 中来扩展应用程序的 JavaScript DOM。共享库在 Windows 中由 DLL 实现，在 Mac OS 中由 bundle 或 framework 实现，在 UNIX 中由 SharedObject 实现。
 
-You can extend the JavaScript DOM for an application by writing a C or C++ shared library, compiling it for the platform you are using, and loading it into JavaScript as an ExternalObject instance. A shared library is implemented by a DLL in Windows, a bundle or framework in Mac OS, or a SharedObject in UNIX.
+有关完整详细信息，请参阅 [集成外部库](../integrating-external-libraries/index.md#integrating-external-libraries)。
 
-For complete details, see [Integrating External Libraries](../integrating-external-libraries/index.md#integrating-external-libraries).
+## 其他实用工具和功能
 
-## Additional utilities and features
+ExtendScript 提供了以下实用工具和功能：
 
-ExtendScript provides these utilities and features:
-
-- JavaScript language enhancements
-    - Tools for combining scripts, such as a `#include` directive. See [Preprocessor directives](../../extendscript-tools-features/preprocessor-directives).
-    - Support for extending or overriding math and logical operator behavior on a class-by-class basis. See [Operator overloading](../../extendscript-tools-features/operator-overloading).
-    - For complete details, see [ExtendScript Tools and Features](../extendscript-tools-features/index.md#extendscript-tools-and-features).
-- JavaScript compilation, through the ExtendScript Toolkit. See [The ExtendScript Toolkit](../extendscript-toolkit/index.md#the-extendscript-toolkit).
-- XML integration: ExtendScript defines the XML object, which allows you to process XML with your JavaScript scripts. For complete details, see [Integrating XML into JavaScript](../integrating-xml/index.md#integrating-xml-into-javascript).
-- Scripting support for XMP metadata manipulation: XMPScript provides a JavaScript API for the Adobe
+- JavaScript 语言增强
+    - 用于组合脚本的工具，例如 `#include` 指令。请参阅 [预处理器指令](../../extendscript-tools-features/preprocessor-directives)。
+    - 支持按类扩展或覆盖数学和逻辑运算符行为。请参阅 [运算符重载](../../extendscript-tools-features/operator-overloading)。
+    - 有关完整详细信息，请参阅 [ExtendScript 工具和功能](../extendscript-tools-features/index.md#extendscript-tools-and-features)。
+- 通过 ExtendScript Toolkit 进行 JavaScript 编译。请参阅 [ExtendScript Toolkit](../extendscript-toolkit/index.md#the-extendscript-toolkit)。
+- XML 集成：ExtendScript 定义了 XML 对象，允许你使用 JavaScript 脚本处理 XML。有关完整详细信息，请参阅 [将 XML 集成到 JavaScript 中](../integrating-xml/index.md#integrating-xml-into-javascript)。
+- 支持 XMP 元数据操作的脚本：XMPScript 提供了一个用于 Adobe 的 JavaScript API。

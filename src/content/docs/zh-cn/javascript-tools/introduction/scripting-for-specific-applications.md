@@ -1,37 +1,37 @@
 ---
-title: scripting-for-specific-applications
+title: 特定应用程序的脚本编写
 ---
-# Scripting for specific applications
+# 特定应用程序的脚本编写
 
-On startup, all Adobe JavaScript-enabled applications execute JSX files that they find in their startup directories; some of these are installed by applications, and some can be installed by scripters. The policies of different applications vary as to the locations, write access, and loading order.
+在启动时，所有支持 JavaScript 的 Adobe 应用程序都会执行其启动目录中的 JSX 文件；其中一些文件是由应用程序安装的，另一些可以由脚本编写者安装。不同应用程序的策略在位置、写入权限和加载顺序方面有所不同。
 
-In addition, individual applications may look for application-specific scripts in particular directories, which may be configurable. Some applications allow access to scripts from menus; all of them allow you to load and run scripts using the ExtendScript Toolkit.
+此外，个别应用程序可能会在特定目录中查找特定于应用程序的脚本，这些目录可能是可配置的。某些应用程序允许从菜单访问脚本；所有应用程序都允许您使用 ExtendScript Toolkit 加载和运行脚本。
 
-For details of how to load and run scripts for any individual application, see the JavaScript Scripting Guide for that application.
+有关如何为任何单个应用程序加载和运行脚本的详细信息，请参阅该应用程序的 JavaScript 脚本编写指南。
 
-## Startup scripts
+## 启动脚本
 
-A script in a startup directory might be executed on startup by multiple applications. If you place a script in such a directory, it must contain code to check whether it is being run by the intended application. You can do this using the appName static property of the BridgeTalk class. For example:
+启动目录中的脚本可能会在启动时由多个应用程序执行。如果您将脚本放置在此类目录中，则它必须包含代码以检查是否由预期的应用程序运行。您可以使用 `BridgeTalk` 类的 `appName` 静态属性来实现这一点。例如：
 
 ```javascript
 if ( BridgeTalk.appName == "bridge" ) {
-    //continue executing script
+    // 继续执行脚本
 }
 ```
 
-If a script that is run by one application will communicate with another application or add functionality that depends on another application, it must first check whether that application/version is installed. You can do this using the ``BridgeTalk.getSpecifier()` static function. For example:
+如果一个脚本由一个应用程序运行，并且将与另一个应用程序通信或添加依赖于另一个应用程序的功能，则必须首先检查该应用程序/版本是否已安装。您可以使用 `BridgeTalk.getSpecifier()` 静态函数来实现这一点。例如：
 
 ```javascript
 if ( BridgeTalk.appName == "bridge-2.0" ) {
-    // Check to see that Photoshop is installed.
+    // 检查是否安装了 Photoshop。
     if ( BridgeTalk.getSpecifier( "photoshop", 10 ) ){
-        // Add the Photoshop automate menu to the Adobe Bridge UI.
+        // 将 Photoshop 自动化菜单添加到 Adobe Bridge 用户界面。
     }
 }
 ```
 
-For details of interapplication communication, see [Interapplication Communication with Scripts](../interapplication-communication/index.md#interapplication-communication-with-scripts).
+有关应用程序间通信的详细信息，请参阅[使用脚本进行应用程序间通信](../interapplication-communication/index.md#interapplication-communication-with-scripts)。
 
-## JavaScript variables
+## JavaScript 变量
 
-Scripting shares a global environment, so any script executed at startup can define variables and functions that are available to all scripts. In all cases, variables and functions, once defined by running a script that contains them, persist in subsequent scripts during a given application session. Once the application is quit, all such globally defined variables and functions are cleared. Scripters should be careful about giving variables in scripts unique names, so that a script does not inadvertently reassign global variables intended to persist throughout a session.
+脚本共享一个全局环境，因此在启动时执行的任何脚本都可以定义对所有脚本可用的变量和函数。在所有情况下，一旦通过运行包含它们的脚本定义了变量和函数，它们就会在给定的应用程序会话期间在后续脚本中持续存在。一旦应用程序退出，所有此类全局定义的变量和函数都会被清除。脚本编写者应小心为脚本中的变量赋予唯一名称，以免脚本无意中重新分配在整个会话期间应持续存在的全局变量。

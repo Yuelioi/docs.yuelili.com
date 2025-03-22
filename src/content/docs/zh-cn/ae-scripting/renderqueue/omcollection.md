@@ -1,16 +1,16 @@
 ---
 title: omcollection
 ---
-# OMCollection object
+# OMCollection 对象
 
 `app.project.renderQueue.items.outputModules`
 
 #### 描述
 
-The OMCollection contains all of the output modules in a render queue. The collection provides access to the [OutputModule objects](../outputmodule), and allows you to create them. The first OutputModule object in the collection is at index position 1.
+OMCollection 包含了渲染队列中的所有输出模块。该集合提供了对 [OutputModule 对象](../outputmodule) 的访问，并允许你创建它们。集合中的第一个 OutputModule 对象位于索引位置 1。
 
 :::info
-OMCollection is a subclass of [Collection object](../../other/collection). All methods and attributes of Collection are available when working with OMCollection.
+OMCollection 是 [Collection 对象](../../other/collection) 的子类。在使用 OMCollection 时，Collection 的所有方法和属性都可用。
 :::
 
 ---
@@ -23,8 +23,8 @@ OMCollection is a subclass of [Collection object](../../other/collection). All m
 
 #### 描述
 
-Adds a new Output Module to the Render Queue Item, creating an OutputModule.
+向渲染队列项添加一个新的输出模块，创建一个 OutputModule。
 
 #### 返回
 
-[OutputModule object](../outputmodule).
+[OutputModule 对象](../outputmodule)。

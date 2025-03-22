@@ -1,5 +1,5 @@
 ---
-title: project
+title: 项目
 ---
 # Project object
 
@@ -70,21 +70,17 @@ title: project
 
 #### 参数
 
-| 参数              | 类型                                         | 描述                               |
-| ----------------- | -------------------------------------------- | ---------------------------------- |
-| `importOptions` | [ImportOptions](https://../other/importoptions) | 指定要导入的文件及操作选项的对象。 |
+| 参数              | 类型                                 | 描述                               |
+| ----------------- | ------------------------------------ | ---------------------------------- |
+| `importOptions` | [ImportOptions](../other/importoptions) | 指定要导入的文件及操作选项的对象。 |
 
 #### 返回
 
-[FootageItem 对象](https://../item/footageitem)。
+[FootageItem 对象](../item/footageitem)。
 
 #### 示例
 
-javascript
-
-复制
-
-```
+```javascript
 app.project.importFile(new ImportOptions(new File("sample.psd"));
 ```
 
@@ -100,7 +96,7 @@ app.project.importFile(new ImportOptions(new File("sample.psd"));
 
 #### 返回
 
-导入过程中创建的 [Item 对象](https://../item/item) 数组；如果用户取消对话框，则返回 `null`。
+导入过程中创建的 [Item 对象](../item/item) 数组；如果用户取消对话框，则返回 `null`。
 
 ---
 
@@ -144,7 +140,7 @@ PlaceholderItem 对象。
 
 #### 返回
 
-[Item 对象](https://../item/item)。
+[Item 对象](../item/item)。
 
 ---
 
@@ -152,9 +148,15 @@ PlaceholderItem 对象。
 
 `app.project.itemByID(id)`
 
-:::note 该方法添加于 After Effects 13.0 (CC 2014) :::#### 描述
+:::note
 
-通过 [Item ID](https://../item/item.md#itemid) 检索项。
+该方法添加于 After Effects 13.0 (CC 2014)
+
+:::
+
+#### 描述
+
+通过 [Item ID](../item/item.md#itemid) 检索项。
 
 #### 参数
 
@@ -164,7 +166,7 @@ PlaceholderItem 对象。
 
 #### 返回
 
-[Item 对象](https://../item/item)。
+[Item 对象](../item/item)。
 
 ---
 
@@ -184,21 +186,17 @@ PlaceholderItem 对象。
 
 #### 返回
 
-如果项目中存在具有给定 ID 的 [Layer 对象](https://../layer/layer)，则返回该对象；否则返回 null。无效的 ID 将抛出异常，提示输入参数不是无符号整数。
+如果项目中存在具有给定 ID 的 [Layer 对象](../layer/layer)，则返回该对象；否则返回 null。无效的 ID 将抛出异常，提示输入参数不是无符号整数。
 
 #### 示例
 
-javascript
-
-复制
-
-```
+```javascript
 var firstComp = app.project.item(1);
 var firstLayer = firstComp.layer(1);
 var layerID = firstLayer.id;
 
 if (app.project.layerByID(layerID) === firstLayer) {
-    alert("您可以通过 ID 获取图层！");
+  alert("您可以通过 ID 获取图层！");
 }
 ```
 
@@ -232,9 +230,9 @@ if (app.project.layerByID(layerID) === firstLayer) {
 
 #### 参数
 
-| 参数               | 类型                                | 描述         |
-| ------------------ | ----------------------------------- | ------------ |
-| `array_of_items` | [Item 对象](https://../item/item) 数组 | 要保留的项。 |
+| 参数               | 类型                        | 描述         |
+| ------------------ | --------------------------- | ------------ |
+| `array_of_items` | [Item 对象](../item/item) 数组 | 要保留的项。 |
 
 #### 返回
 
@@ -242,11 +240,7 @@ if (app.project.layerByID(layerID) === firstLayer) {
 
 #### 示例
 
-javascript
-
-复制
-
-```
+```javascript
 var items = [];
 items[items.length] = app.project.item(1);
 items[items.length] = app.project.item(3);
@@ -279,9 +273,9 @@ app.project.reduceProject(items);
 
 :::note 该方法添加于 After Effects 24.5 :::#### 描述
 
-此函数将替换项目中所有使用 [Font 对象](https://../text/fontobject) `fromFont` 的地方为 [Font 对象](https://../text/fontobject) `toFont`。
+此函数将替换项目中所有使用 [Font 对象](../text/fontobject) `fromFont` 的地方为 [Font 对象](../text/fontobject) `toFont`。
 
-此操作使用了与自动字体替换相同的机制和策略，因此即使在具有混合样式的 [TextDocuments](https://../text/textdocument) 上也能进行完整且精确的替换，保留 `fromFont` 应用的字符范围。
+此操作使用了与自动字体替换相同的机制和策略，因此即使在具有混合样式的 [TextDocuments](../text/textdocument) 上也能进行完整且精确的替换，保留 `fromFont` 应用的字符范围。
 
 此操作不可撤销。
 
@@ -289,11 +283,7 @@ app.project.reduceProject(items);
 
 请注意，当 `fromFont` 是替换字体且 `toFont` 具有相同的字体属性时，不会发生回退，参数将被忽略并视为 `true`。
 
-javascript
-
-复制
-
-```
+```javascript
 var fromFont = app.project.usedFonts[0].font;
 var fontList = app.fonts.getFontsByPostScriptName("TimesNewRomanPSMT");
 var toFont = fontList[0];
@@ -302,11 +292,11 @@ var layerChanged = app.project.replaceFont(fromFont, toFont);
 
 #### 参数
 
-| 参数              | 类型                                 | 描述                   |
-| ----------------- | ------------------------------------ | ---------------------- |
-| `fromFont`      | [Font 对象](https://../text/fontobject) | 要替换的字体。         |
-| `toFont`        | [Font 对象](https://../text/fontobject) | 替换后的字体。         |
-| `noFontLocking` | 布尔值                               | 可选。默认为 `false` |
+| 参数              | 类型                         | 描述                   |
+| ----------------- | ---------------------------- | ---------------------- |
+| `fromFont`      | [Font 对象](../text/fontobject) | 要替换的字体。         |
+| `toFont`        | [Font 对象](../text/fontobject) | 替换后的字体。         |
+| `noFontLocking` | 布尔值                       | 可选。默认为 `false` |
 
 #### 返回
 

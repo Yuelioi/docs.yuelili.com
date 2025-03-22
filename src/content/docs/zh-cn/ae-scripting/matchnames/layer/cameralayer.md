@@ -1,40 +1,40 @@
 ---
-title: cameralayer
+title: 相机层
 ---
-# Camera Layer Match Names
-
----
-
-## Layer
-
-|     Match Name      | Display Name (EN) |
-| ------------------- | ----------------- |
-| `ADBE Camera Layer` |                   |
+# 相机层匹配名称
 
 ---
 
-## Camera
+## 层
 
-|          Match Name          | Display Name (EN) |
-| ---------------------------- | ----------------- |
-| `ADBE Camera Options Group`  | Camera Options    |
-| `ADBE Camera Zoom`           | Zoom              |
-| `ADBE Camera Depth of Field` | Depth of Field    |
-| `ADBE Camera Focus Distance` | Focus Distance    |
-| `ADBE Camera Aperture`       | Aperture          |
-| `ADBE Camera Blur Level`     | Blur Level        |
+|   匹配名称    | 显示名称 (中文) |
+| ---- | ------- |
+| `ADBE Camera Layer` |           |
 
 ---
 
-## Iris
+## 相机
 
-|            Match Name             |    Display Name (EN)    |
-| --------------------------------- | ----------------------- |
-| `ADBE Iris Shape`                 | Iris Shape              |
-| `ADBE Iris Rotation`              | Iris Rotation           |
-| `ADBE Iris Roundness`             | Iris Roundness          |
-| `ADBE Iris Aspect Ratio`          | Iris Aspect Ratio       |
-| `ADBE Iris Diffraction Fringe`    | Iris Diffraction Fringe |
-| `ADBE Iris Highlight Gain`        | Highlight Gain          |
-| `ADBE Iris Highlight Threshold`   | Highlight Threshold     |
-| `ADBE Iris Hightlight Saturation` | Highlight Saturation    |
+|      匹配名称      | 显示名称 (中文) |
+| -------- | ------- |
+| `ADBE Camera Options Group`  | 相机选项  |
+| `ADBE Camera Zoom`       | 缩放        |
+| `ADBE Camera Depth of Field` | 景深  |
+| `ADBE Camera Focus Distance` | 对焦距离  |
+| `ADBE Camera Aperture`     | 光圈      |
+| `ADBE Camera Blur Level`   | 模糊级别    |
+
+---
+
+## 光圈
+
+|       匹配名称       |  显示名称 (中文)  |
+| -------- | -------- |
+| `ADBE Iris Shape`         | 光圈形状        |
+| `ADBE Iris Rotation`        | 光圈旋转       |
+| `ADBE Iris Roundness`       | 光圈圆度      |
+| `ADBE Iris Aspect Ratio`      | 光圈纵横比     |
+| `ADBE Iris Diffraction Fringe`  | 光圈衍射边缘 |
+| `ADBE Iris Highlight Gain`    | 高光增益      |
+| `ADBE Iris Highlight Threshold`   | 高光阈值   |
+| `ADBE Iris Hightlight Saturation` | 高光饱和度  |

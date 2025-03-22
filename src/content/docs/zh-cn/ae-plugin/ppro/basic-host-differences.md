@@ -1,93 +1,93 @@
 ---
-title: basic-host-differences
+title: 基础主机差异
 ---
-# Basic Host Differences
+# 基础主机差异
 
-We've tried to provide robust compatibility for After Effects effect plug-ins in Premiere Pro.
+我们已尽力为Premiere Pro中的After Effects效果插件提供强大的兼容性。
 
-There are underlying differences in the render pipeline that lead to differences, and we realize the API implementation may not be perfect.
+渲染管道中存在一些底层差异，导致了一些不同，我们意识到API的实现可能并不完美。
 
-Below is an overview of some differences the plug-in will encounter when running in Premiere Pro.
-
----
-
-## Time Values
-
-Premiere Pro uses slightly different time values in PF_InData. For example in CS4:
-
-Rendering in NTSC, time_scale is 60000, time_step is 1001, field gives field order (in After Effects, for field rendering, scale is 2997, step is 50, or for progressive rendering, scale is 2997, step is 100).
-
-Rendering in PAL, time_scale is 50, time_step is 1, field gives field order (in After Effects, for field rendering, scale is 3200, step is 64, or for progressive rendering, scale is 3200, step is 128).
-
-It's the ratio of time-related values that produces the time value, not specifically the time_scale value. It's possible Premiere Pro will use different time_scales in the future, so please don't hard code. Just be aware that it does not necessarily use the exact same values as After Effects.
+以下是插件在Premiere Pro中运行时可能遇到的一些差异的概述。
 
 ---
 
-## Rendering Frames
+## 时间值
 
-Premiere is optimized for responsive editing. When scrubbing in the timeline, and changing effect parameters, Premiere will immediately request a low-quality render for immediate display, followed by a high-quality render. So the effect may receive two requests for the same effective time, one at a low resolution, low bit-depth, followed by one at full-resolution, full bit-depth. The resolution requested for each render with take into account the Playback and Paused Resolution set in the Source and Program Monitors: The first request will be at the Playback Resolution, and the second request will be at the Paused Resolution.
+Premiere Pro在PF_InData中使用的时间值略有不同。例如在CS4中：
 
-Premiere will also perform speculative rendering, to render a set of frames ahead in the timeline, so that if/when the editor starts playback, the initial frames will be ready. This means that when repositioning the time needle, or when changing effect parameters, Premiere will ask the effect to render a set of frames ahead of the current time. If the frames have previously been rendered and cached, the effect will not see these render requests because the cached frames will be used.
+在NTSC中渲染时，`time_scale`为60000，`time_step`为1001，`field`给出场顺序（在After Effects中，对于场渲染，`scale`为2997，`step`为50，或者对于逐行渲染，`scale`为2997，`step`为100）。
 
-When rendering frames in Premiere-native pixel formats, Premiere will send PF_Cmd_RENDER once for each field, rather than for each frame. The `PF_InData->field` will indicate which field is being rendered, the `PF_LayerDef->height` will be half of the frame height, and the `PF_LayerDef->rowbytes` will be double the normal value.
+在PAL中渲染时，`time_scale`为50，`time_step`为1，`field`给出场顺序（在After Effects中，对于场渲染，`scale`为3200，`step`为64，或者对于逐行渲染，`scale`为3200，`step`为128）。
 
----
-
-## Render Order
-
-Premiere Pro was built to provide real-time playback of footage with effects wherever possible. The render scheduling is much more aggressive and multithreaded rendering is a basic requirement. This is quite different than After Effects, where users are building layers upon layers of effects and more willing to wait for a RAM preview.
-
-Multithreaded rendering in Premiere applies to AE effects too. When rendering an AE effect, the request from Premiere passes through a critical section which is used for all commands, except those relating to arbitrary data. The critical section prevents two threads from calling the same instance of the effect at the same time. However, Premiere creates multiple instances of the effect, which can be called concurrently from separate threads.
-
-Therefore, an effect should not expect to receive render requests in order of increasing time. Also, effects should not depend on static, non-constant variables.
+时间值的生成是基于时间相关值的比率，而不是特定的`time_scale`值。未来Premiere Pro可能会使用不同的`time_scale`，因此请不要硬编码。只需注意它不一定使用与After Effects完全相同的值。
 
 ---
 
-## Frame Dimensions
+## 渲染帧
 
-Differences between source footage and the project/composition are handled differently.
+Premiere针对响应式编辑进行了优化。当在时间轴中拖动或更改效果参数时，Premiere会立即请求低质量渲染以立即显示，随后再进行高质量渲染。因此，效果可能会收到两次针对同一有效时间的请求，一次是低分辨率、低位深度的渲染，随后是完整分辨率、完整位深度的渲染。每次渲染请求的分辨率将考虑源监视器和节目监视器中设置的播放和暂停分辨率：第一次请求将以播放分辨率进行，第二次请求将以暂停分辨率进行。
 
-For example, in CS4, when importing an NTSC clip in a PAL sequence, `PF_InData>width,height` are `(598,480)` and `PF_InData->pixel_aspect_ratio` is `(768,702)`.
+Premiere还会执行推测性渲染，以提前渲染时间轴中的一组帧，以便在编辑器开始播放时，初始帧已经准备就绪。这意味着当重新定位时间指针或更改效果参数时，Premiere会要求效果渲染当前时间之前的一组帧。如果这些帧之前已经渲染并缓存，效果将不会看到这些渲染请求，因为将使用缓存的帧。
 
-In AE, `width,height` are `(720,480)` and `pixel_aspect_ratio` is `(10,11)`.
+当以Premiere原生像素格式渲染帧时，Premiere会为每个场发送一次`PF_Cmd_RENDER`，而不是为每个帧发送。`PF_InData->field`将指示正在渲染的场，`PF_LayerDef->height`将是帧高度的一半，`PF_LayerDef->rowbytes`将是正常值的两倍。
+
+---
+
+## 渲染顺序
+
+Premiere Pro旨在尽可能实时播放带有效果的素材。渲染调度更加激进，多线程渲染是基本要求。这与After Effects有很大不同，在After Effects中，用户正在构建层层效果，并且更愿意等待RAM预览。
+
+Premiere中的多线程渲染也适用于AE效果。当渲染AE效果时，Premiere的请求会通过一个临界区，该临界区用于所有命令，除了与任意数据相关的命令。临界区防止两个线程同时调用同一个效果实例。然而，Premiere会创建多个效果实例，这些实例可以从不同的线程并发调用。
+
+因此，效果不应期望按时间递增的顺序接收渲染请求。此外，效果不应依赖于静态的、非常量的变量。
+
+---
+
+## 帧尺寸
+
+源素材与项目/合成之间的差异处理方式不同。
+
+例如，在CS4中，当在PAL序列中导入NTSC剪辑时，`PF_InData>width,height`为`(598,480)`，`PF_InData->pixel_aspect_ratio`为`(768,702)`。
+
+在AE中，`width,height`为`(720,480)`，`pixel_aspect_ratio`为`(10,11)`。
 
 ---
 
 ## PF_InData
 
-Premiere Pro handles field rendering differently than After Effects. While field rendering, `PF_InData>field` gives the current field being rendered, ignoring whether or not `PF_OutFlag_PIX_INDEPENDENT` flag was set.
+Premiere Pro处理场渲染的方式与After Effects不同。在场渲染期间，`PF_InData>field`给出当前正在渲染的场，忽略是否设置了`PF_OutFlag_PIX_INDEPENDENT`标志。
 
-In Premiere Pro, effects receive the quality setting of the monitor window in [PF_InData>quality](../effect-basics/PF_InData.md#pf_indata-members). This differs from After Effects, where the source layer's quality setting is provided here.
-
----
-
-## Parameter UI
-
-Premiere Pro does not honor the [PF_ParamFlag_START_COLLAPSED](../effect-basics/PF_ParamDef.md#parameter-flags) flag. Parameters are always initialized with their twirlies collapsed, and cannot be automatically twirled open by parameter supervision.
-
-Premiere Pro supports the macro `PF_ADD_FLOAT_EXPONENTIAL_SLIDER()`, which lets you define an exponent. Although this macro is newly added for the CC 2015 release 2 SDK, Premiere Pro has used this for some time in the Fast Color Corrector, in the Input Grey Level parameter. The exponent is used so that although the range is from 0.10 to 10, 1.0 is about in the middle of the slider. The exponent we used was 2.5. Typical values would be from 0.01 to 100.
-
-Starting in CC 2015, effects will not be sent `PF_Cmd_UPDATE_PARAMS_UI` or `PF_Event_DRAW` when the time needle is moved and there are no keyframes, unless the effect sets `PF_OutFlag_NON_PARAM_VARY`. Effects such as those that draw histograms in the Effect Controls panel will need to be aware of this optimization.
+在Premiere Pro中，效果会接收监视器窗口的质量设置，位于[PF_InData>quality](../effect-basics/PF_InData.md#pf_indata-members)。这与After Effects不同，在After Effects中，这里提供的是源图层的质量设置。
 
 ---
 
-## Missing Suites
+## 参数UI
 
-Many suites supported by After Effects are not implemented in the Premiere Pro host. In several cases, even if a suite is missing in Premiere Pro, an equivalent macro function is available. Here are a few examples:
+Premiere Pro不支持[PF_ParamFlag_START_COLLAPSED](../effect-basics/PF_ParamDef.md#parameter-flags)标志。参数始终以折叠状态初始化，并且不能通过参数监督自动展开。
 
-|        After Effects suite call         | Premiere Pro equivalent function |
+Premiere Pro支持宏`PF_ADD_FLOAT_EXPONENTIAL_SLIDER()`，该宏允许您定义指数。尽管此宏是为CC 2015版本2 SDK新添加的，但Premiere Pro已经在Fast Color Corrector中的Input Grey Level参数中使用了此功能。指数用于使范围从0.10到10，但1.0大约位于滑块的中间位置。我们使用的指数为2.5。典型值范围为0.01到100。
+
+从CC 2015开始，当时间指针移动且没有关键帧时，效果将不会收到`PF_Cmd_UPDATE_PARAMS_UI`或`PF_Event_DRAW`，除非效果设置了`PF_OutFlag_NON_PARAM_VARY`。在效果控制面板中绘制直方图的效果需要注意此优化。
+
+---
+
+## 缺失的套件
+
+After Effects支持的许多套件在Premiere Pro主机中未实现。在某些情况下，即使Premiere Pro中缺少某个套件，也有等效的宏函数可用。以下是一些示例：
+
+|        After Effects套件调用         | Premiere Pro等效函数 |
 | --------------------------------------- | -------------------------------- |
 | `WorldTransformSuite1()->copy()`        | `PF_COPY()`                      |
 | `WorldTransformSuite1()->convolve()`    | `in_data->utils->convolve()`     |
 | `FillMatteSuite2()->fill()`             | `PF_FILL()`                      |
 | `PF_PixelDataSuite1->get_pixel_data8()` | `PF_GET_PIXEL_DATA8()`           |
 
-The sample projects demonstrate alternate ways of handling a missing suite, by checking for the host application and version. The Portable sample project demonstrates both host application and version checking.
+示例项目展示了通过检查主机应用程序和版本来处理缺失套件的替代方法。Portable示例项目展示了主机应用程序和版本检查。
 
 ---
 
-## A Special Suite for AE Effects Running in Premiere Pro
+## 用于在Premiere Pro中运行的AE效果的特殊套件
 
-No AEGP calls are supported by Premiere Pro. However, there are some interesting parallels in the header PrSDKAESupport.h. For example, you can use the Utility Suite in that header to get the frame rate or field type of the source footage, or to get the speed applied to the clip.
+Premiere Pro不支持任何AEGP调用。然而，在头文件PrSDKAESupport.h中有一些有趣的相似之处。例如，您可以使用该头文件中的Utility Suite来获取源素材的帧速率或场类型，或获取应用于剪辑的速度。
 
-Note that other suites from the Premiere Pro SDK cannot be used in AE effects.
+请注意，Premiere Pro SDK中的其他套件不能在AE效果中使用。

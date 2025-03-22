@@ -1,13 +1,13 @@
 ---
-title: renderqueueitem
+title: 渲染队列项
 ---
-# RenderQueueItem object
+# RenderQueueItem 对象
 
 `app.project.renderQueue.item(index)`
 
 #### 描述
 
-The RenderQueueItem object represents an individual item in the render queue. It provides access to the specific settings for an item to be rendered. Create the object by adding a composition to the Render Queue with the [RQItemCollection object](../rqitemcollection); see [RQItemCollection.add()](rqitemcollection.md#rqitemcollectionadd).
+RenderQueueItem 对象表示渲染队列中的单个项目。它提供了对要渲染的项目的特定设置的访问。通过使用 [RQItemCollection 对象](../rqitemcollection) 将合成添加到渲染队列来创建该对象；请参阅 [RQItemCollection.add()](rqitemcollection.md#rqitemcollectionadd)。
 
 ---
 
@@ -19,11 +19,11 @@ The RenderQueueItem object represents an individual item in the render queue. It
 
 #### 描述
 
-The composition that will be rendered by this render-queue item. To change the composition, you must delete this render-queue item and create a new one.
+该渲染队列项目将渲染的合成。要更改合成，必须删除此渲染队列项目并创建一个新的。
 
 #### 类型
 
-[CompItem object](../../item/compitem); 只读.
+[CompItem 对象](../../item/compitem); 只读.
 
 ---
 
@@ -33,11 +33,11 @@ The composition that will be rendered by this render-queue item. To change the c
 
 #### 描述
 
-The number of seconds spent rendering this item.
+渲染此项目所花费的秒数。
 
 #### 类型
 
-Integer, or `null` if item has not been rendered; 只读.
+整数，如果项目尚未渲染则为 `null`; 只读.
 
 ---
 
@@ -47,11 +47,11 @@ Integer, or `null` if item has not been rendered; 只读.
 
 #### 描述
 
-A log type for this item, indicating which events should be logged while this item is being rendered.
+该项目的日志类型，指示在渲染此项目时应记录哪些事件。
 
 #### 类型
 
-A `LogType` enumerated value; (read/write). One of:
+`LogType` 枚举值; (可读/写). 可能的值包括：
 
 - `LogType.ERRORS_ONLY`
 - `LogType.ERRORS_AND_SETTINGS`
@@ -65,11 +65,11 @@ A `LogType` enumerated value; (read/write). One of:
 
 #### 描述
 
-The total number of Output Modules assigned to this item.
+分配给此项目的输出模块总数。
 
 #### 类型
 
-Integer; 只读.
+整数; 只读.
 
 ---
 
@@ -79,23 +79,23 @@ Integer; 只读.
 
 #### 描述
 
-The name of a callback function that is called whenever the value of the [RenderQueueItem.status](#renderqueueitemstatus) attribute changes.
+每当 [RenderQueueItem.status](#renderqueueitemstatus) 属性的值发生变化时调用的回调函数的名称。
 
-You cannot make changes to render queue items or to the application while rendering is in progress or paused; you can, however, use this callback to pause or stop the rendering process. See [RenderQueue.pauseRendering()](renderqueue.md#renderqueuepauserendering) and [RenderQueue.stopRendering()](renderqueue.md#renderqueuestoprendering). See also [app.onError](../general/application.md#apponerror).
+在渲染进行中或暂停时，您无法对渲染队列项目或应用程序进行更改；但是，您可以使用此回调来暂停或停止渲染过程。请参阅 [RenderQueue.pauseRendering()](renderqueue.md#renderqueuepauserendering) 和 [RenderQueue.stopRendering()](renderqueue.md#renderqueuestoprendering)。另请参阅 [app.onError](../general/application.md#apponerror)。
 
 #### 类型
 
-A function name string, or `null` if no function is assigned.
+函数名称字符串，如果未分配函数则为 `null`。
 
 #### 示例
 
 ```javascript
 function myStatusChanged() {
-    alert(app.project.renderQueue.item(1).status);
+  alert(app.project.renderQueue.item(1).status);
 }
 
 app.project.renderQueue.item(1).onstatus = myStatusChanged();
-app.project.renderQueue.item(1).render = false; // changes status and shows dialog
+app.project.renderQueue.item(1).render = false; // 更改状态并显示对话框
 ```
 
 ---
@@ -106,11 +106,11 @@ app.project.renderQueue.item(1).render = false; // changes status and shows dial
 
 #### 描述
 
-The collection of Output Modules for the item.
+该项目的输出模块集合。
 
 #### 类型
 
-[OMCollection object](../omcollection); 只读.
+[OMCollection 对象](../omcollection); 只读.
 
 ---
 
@@ -124,13 +124,13 @@ The collection of Output Modules for the item.
 
 #### 描述
 
-Scripts can read and write the **Notify** checkbox for each individual item in the Render Queue. This is exposed in the UI as a checkbox next to each Render Queue item in the Notify column.
+脚本可以读取和写入渲染队列中每个项目的 **Notify** 复选框。这在用户界面中显示为渲染队列项目旁边的复选框，位于 Notify 列中。
 
-This column is hidden by default and may need to be selected to be visible by right clicking on the Render Queue column headers and choosing Notify.
+默认情况下，此列是隐藏的，可能需要通过右键单击渲染队列列标题并选择 Notify 来使其可见。
 
 #### 类型
 
-Boolean; read/write.
+布尔值; 可读/写.
 
 ---
 
@@ -140,12 +140,11 @@ Boolean; read/write.
 
 #### 描述
 
-When `true`, the item will be rendered when the render queue is started. When set to `true`, the [RenderQueueItem.status](#renderqueueitemstatus) is set to `RQItemStatus.QUEUED`. When set to `false`, `status` is set to
-`RQItemStatus.UNQUEUED`.
+当为 `true` 时，项目将在渲染队列启动时被渲染。当设置为 `true` 时，[RenderQueueItem.status](#renderqueueitemstatus) 设置为 `RQItemStatus.QUEUED`。当设置为 `false` 时，`status` 设置为 `RQItemStatus.UNQUEUED`。
 
 #### 类型
 
-Boolean; read/write.
+布尔值; 可读/写.
 
 ---
 
@@ -155,11 +154,11 @@ Boolean; read/write.
 
 #### 描述
 
-The number of frames to skip when rendering this item. Use this to do rendering tests that are faster than a full render. A value of 0 skip no frames, and results in regular rendering of all frames. A value of 1 skips every other frame. This is equivalent to "rendering on twos." Higher values skip a larger number of frames. The total length of time remains unchanged. For example, if skip has a value of 1, a sequence output would have half the number of frames and in movie output, each frame would be double the duration.
+渲染此项目时要跳过的帧数。使用此功能可以执行比完整渲染更快的渲染测试。值为 0 时不跳过任何帧，并导致所有帧的常规渲染。值为 1 时跳过每隔一帧。这相当于“每隔两帧渲染一次”。更高的值会跳过更多的帧。总时间长度保持不变。例如，如果 skip 的值为 1，则序列输出将具有一半的帧数，而在电影输出中，每帧的持续时间将加倍。
 
 #### 类型
 
-Integer, 范围为 `[0..99]`; read/write.
+整数，范围为 `[0..99]`; 可读/写.
 
 ---
 
@@ -169,11 +168,11 @@ Integer, 范围为 `[0..99]`; read/write.
 
 #### 描述
 
-The day and time that this item started rendering.
+该项目开始渲染的日期和时间。
 
 #### 类型
 
-Date object, or `null` if the item has not started rendering; 只读.
+Date 对象，如果项目尚未开始渲染则为 `null`; 只读.
 
 ---
 
@@ -183,20 +182,20 @@ Date object, or `null` if the item has not started rendering; 只读.
 
 #### 描述
 
-The current render status of the item.
+该项目的当前渲染状态。
 
 #### 类型
 
-An `RQItemStatus` enumerated value; 只读. One of:
+`RQItemStatus` 枚举值; 只读. 可能的值包括：
 
-- `RQItemStatus.WILL_CONTINUE`: Rendering process has been paused.
-- `RQItemStatus.NEEDS_OUTPUT`: Item lacks a valid output path.
-- `RQItemStatus.UNQUEUED`: Item is listed in the Render Queue panel but composition is not ready to render.
-- `RQItemStatus.QUEUED`: Composition is ready to render.
-- `RQItemStatus.RENDERING`: Composition is rendering
-- `RQItemStatus.USER_STOPPED`: Rendering process was stopped by user or script.
-- `RQItemStatus.ERR_STOPPED`: Rendering process was stopped due to an error.
-- `RQItemStatus.DONE`: Rendering process for the item is complete.
+- `RQItemStatus.WILL_CONTINUE`: 渲染过程已暂停。
+- `RQItemStatus.NEEDS_OUTPUT`: 项目缺少有效的输出路径。
+- `RQItemStatus.UNQUEUED`: 项目列在渲染队列面板中，但合成尚未准备好渲染。
+- `RQItemStatus.QUEUED`: 合成已准备好渲染。
+- `RQItemStatus.RENDERING`: 合成正在渲染。
+- `RQItemStatus.USER_STOPPED`: 渲染过程被用户或脚本停止。
+- `RQItemStatus.ERR_STOPPED`: 渲染过程因错误而停止。
+- `RQItemStatus.DONE`: 该项目的渲染过程已完成。
 
 ---
 
@@ -206,11 +205,11 @@ An `RQItemStatus` enumerated value; 只读. One of:
 
 #### 描述
 
-The names of all Render Settings templates available for the item. See also [RenderQueueItem.saveAsTemplate()](#renderqueueitemsaveastemplate).
+该项目可用的所有渲染设置模板的名称。另请参阅 [RenderQueueItem.saveAsTemplate()](#renderqueueitemsaveastemplate)。
 
 #### 类型
 
-Array of strings; 只读.
+字符串数组; 只读.
 
 ---
 
@@ -220,11 +219,11 @@ Array of strings; 只读.
 
 #### 描述
 
-The duration in seconds of the composition to be rendered. The duration is determined by subtracting the start time from the end time. Setting this value is the same as setting a custom end time in the Render Settings dialog box.
+要渲染的合成的持续时间（以秒为单位）。持续时间通过从结束时间减去开始时间来确定。设置此值与在渲染设置对话框中设置自定义结束时间相同。
 
 #### 类型
 
-Floating-point value; read/write.
+浮点值; 可读/写.
 
 ---
 
@@ -234,11 +233,11 @@ Floating-point value; read/write.
 
 #### 描述
 
-The time in the composition, in seconds, at which rendering will begin. Setting this value is the same as setting a custom start time in the Render Settings dialog box.
+合成中开始渲染的时间（以秒为单位）。设置此值与在渲染设置对话框中设置自定义开始时间相同。
 
 #### 类型
 
-Floating-point value; read/write.
+浮点值; 可读/写.
 
 ---
 
@@ -250,17 +249,17 @@ Floating-point value; read/write.
 
 #### 描述
 
-Applies a Render Settings template to the item. See also [RenderQueueItem.saveAsTemplate()](#renderqueueitemsaveastemplate) and [RenderQueueItem.templates](#renderqueueitemtemplates).
+将渲染设置模板应用于该项目。另请参阅 [RenderQueueItem.saveAsTemplate()](#renderqueueitemsaveastemplate) 和 [RenderQueueItem.templates](#renderqueueitemtemplates)。
 
 #### 参数
 
-|   参数    |  类型  |            描述             |
-| -------------- | ------ | ---------------------------------- |
-| `templateName` | String | The name of the template to apply. |
+| 参数             | 类型   | 描述               |
+| ---------------- | ------ | ------------------ |
+| `templateName` | 字符串 | 要应用的模板名称。 |
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
@@ -270,19 +269,19 @@ Nothing.
 
 #### 描述
 
-Creates a duplicate of this item and adds it this render queue.
+创建此项目的副本并将其添加到渲染队列中。
 
 :::tip
-Duplicating an item whose status is "Done" sets the new item's status to "Queued".
+复制状态为“Done”的项目会将新项目的状态设置为“Queued”。
 :::
 
 #### 参数
 
-None.
+无。
 
 #### 返回
 
-RenderQueueItem object.
+RenderQueueItem 对象。
 
 ---
 
@@ -296,19 +295,19 @@ RenderQueueItem object.
 
 #### 描述
 
-Gets a specific Render Queue Item setting.
+获取特定渲染队列项目设置。
 
-- Depreciated Source: [https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
-- Archived version: [https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
+- 已弃用的来源：[https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
+- 存档版本：[https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 
 #### 示例
 
 ```javascript
-// Get current value of render setting's "Proxy Use"
-// Key and value strings are English.
+// 获取渲染设置的“Proxy Use”当前值
+// 键和值字符串为英文。
 var rqItem1_proxyUse = app.project.renderQueue.item(1).getSetting("Proxy Use");
 
-// Get string version of same setting, add "-str" at the end of key string
+// 获取相同设置的字符串版本，在键字符串末尾添加“-str”
 var rqItem1_proxyUse_str = app.project.renderQueue.item(1).getSetting("Proxy Use-str");
 ```
 
@@ -324,16 +323,15 @@ var rqItem1_proxyUse_str = app.project.renderQueue.item(1).getSetting("Proxy Use
 
 #### 描述
 
-Gets all settings for a given Render Queue Item.
+获取给定渲染队列项目的所有设置。
 
-- Depreciated Source: [https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
-- Archived version: [https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
+- 已弃用的来源：[https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
+- 存档版本：[https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 
 #### 示例
 
 ```javascript
-// Get object that contains all possible values of all render settings of
-// render queue item 1 and convert to JSON format.
+// 获取包含渲染队列项目1的所有可能渲染设置值的对象，并将其转换为JSON格式。
 
 var rqItem1_spec_str = app.project.renderQueue.item(1).getSettings(GetSettingsFormat.SPEC);
 var rqItem1_spec_str_json = rqItem1_spec_str.toSource();
@@ -347,17 +345,17 @@ var rqItem1_spec_str_json = rqItem1_spec_str.toSource();
 
 #### 描述
 
-Gets an output module with the specified index position.
+获取指定索引位置的输出模块。
 
 #### 参数
 
-| 参数 |                     类型                      |               描述                |
-| --------- | --------------------------------------------- | ---------------------------------------- |
-| `index`   | Integer, 范围为 `[1..numOutputModules]` | The position index of the output module. |
+| 参数      | 类型                                   | 描述                 |
+| --------- | -------------------------------------- | -------------------- |
+| `index` | 整数，范围为 `[1..numOutputModules]` | 输出模块的位置索引。 |
 
 #### 返回
 
-OutputModule object.
+OutputModule 对象。
 
 ---
 
@@ -367,15 +365,15 @@ OutputModule object.
 
 #### 描述
 
-Removes this item from the render queue.
+从渲染队列中删除此项目。
 
 #### 参数
 
-None.
+无。
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
@@ -385,17 +383,17 @@ Nothing.
 
 #### 描述
 
-Saves the item's current render settings as a new template with the specified name.
+将项目的当前渲染设置保存为具有指定名称的新模板。
 
 #### 参数
 
-| 参数 |  类型  |          描述          |
-| --------- | ------ | ----------------------------- |
-| `name`    | String | The name of the new template. |
+| 参数     | 类型   | 描述           |
+| -------- | ------ | -------------- |
+| `name` | 字符串 | 新模板的名称。 |
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
@@ -409,21 +407,21 @@ Nothing.
 
 #### 描述
 
-Sets a specific setting for a given Render Queue Item.
+为给定渲染队列项目设置特定设置。
 
-Depreciated Source: [https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
+已弃用的来源：[https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 
-Archived version: [https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
+存档版本：[https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 
 #### 示例
 
 ```javascript
-// Set value of "Proxy Use" to "Use All Proxies"
+// 将“Proxy Use”的值设置为“Use All Proxies”
 
 app.project.renderQueue.item(1).setSetting("Proxy Use", "Use All Proxies");
 
-// You can use numbers, too.
-// The next line does the same as the previous example.
+// 您也可以使用数字。
+// 下一行与上一个示例相同。
 
 app.project.renderQueue.item(1).setSetting("Proxy Use", 1);
 ```
@@ -440,34 +438,31 @@ app.project.renderQueue.item(1).setSetting("Proxy Use", 1);
 
 #### 描述
 
-Sets a multiple settings for a given Render Queue Item.
+为给定渲染队列项目设置多个设置。
 
-- Depreciated Source: [https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
-- Archived version: [https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
+- 已弃用的来源：[https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
+- 存档版本：[https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 
 #### 示例
 
 ```javascript
-// Get an object that contains string version of settable render setting
-// values of render queue item 1.
-// To get the values in the number format, use
-// GetSettingsFormat.NUMBER_SETTABLE as an argument.
+// 获取包含渲染队列项目1的可设置渲染设置值的字符串版本的对象。
+// 要以数字格式获取值，请使用 GetSettingsFormat.NUMBER_SETTABLE 作为参数。
 
 var rqItem1_settable_str = app.project.renderQueue.item(1).getSettings( GetSettingsFormat.STRING_SETTABLE );
 
-// Set render queue item 2 with values that you got from render
-//queue item 1.
+// 使用从渲染队列项目1获取的值设置渲染队列项目2。
 
 app.project.renderQueue.item(2).setSettings( rqItem1_settable_str );
 
-// Set render queue item 3 with values you create.
+// 使用您创建的值设置渲染队列项目3。
 
 var my_renderSettings = {
-    "Color Depth":        "32 bits per channel",
-    "Quality":            "Best",
-    "Effects":            "All On",
-    "Time Span Duration": "1.0",
-    "Time Span Start":    "2.0"
+  "Color Depth":    "32 bits per channel",
+  "Quality":      "Best",
+  "Effects":      "All On",
+  "Time Span Duration": "1.0",
+  "Time Span Start":  "2.0"
 };
 
 app.project.renderQueue.item(2).setSettings( my_renderSettings );

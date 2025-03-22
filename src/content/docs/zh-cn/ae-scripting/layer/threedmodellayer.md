@@ -1,7 +1,7 @@
 ---
 title: threedmodellayer
 ---
-# ThreeDModelLayer object
+# ThreeDModelLayer 对象
 
 `app.project.item(index).layer(index)`
 
@@ -11,39 +11,39 @@ title: threedmodellayer
 
 #### 描述
 
-The ThreeDModelLayer object represents a 3D Model layer within a composition.
+ThreeDModelLayer 对象表示合成中的 3D 模型图层。
 
 :::info
-ThreeDModelLayer is a subclass of [AVLayer object](../avlayer). All methods and attributes of AVLayer are available when working with ThreeDModelLayer.
+ThreeDModelLayer 是 [AVLayer 对象](../avlayer) 的子类。在使用 ThreeDModelLayer 时，AVLayer 的所有方法和属性都可用。
 :::
 
-#### AE Properties
+#### AE 属性
 
-ThreeDModelLayer inherits the following properties and property groups from [AVLayer object](../avlayer):
+ThreeDModelLayer 从 [AVLayer 对象](../avlayer) 继承了以下属性和属性组：
 
-- Marker
-- Time Remap
-- Transform
-  - Anchor Point
-  - Position
-  - Scale
-  - Orientation
-  - X Rotation
-  - Y Rotation
-  - Rotation
-  - Opacity
-- Layer Styles
-- Audio
-  - AudioLevels
+- 标记
+- 时间重映射
+- 变换
+  - 锚点
+  - 位置
+  - 缩放
+  - 方向
+  - X 旋转
+  - Y 旋转
+  - 旋转
+  - 不透明度
+- 图层样式
+- 音频
+  - 音频电平
 
 #### 示例
 
-If the first item in the project is a CompItem, and the first layer of that CompItem is an ThreeDModelLayer, the following checks its type.
+如果项目中的第一个项目是 CompItem，并且该 CompItem 的第一个图层是 ThreeDModelLayer，则以下代码检查其类型。
 
 ```javascript
 var modelLayer = app.project.item(1).layer(1);
 if (modelLayer instanceof ThreeDModelLayer)
 {
-    // do something
+  // 执行某些操作
 }
 ```

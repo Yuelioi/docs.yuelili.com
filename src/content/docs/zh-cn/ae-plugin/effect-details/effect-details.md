@@ -1,18 +1,18 @@
 ---
-title: effect-details
+title: 效果细节
 ---
-# Effect Details
+# 效果细节
 
-Now that we've covered the basics of effect plug-ins, we'll cover some of the finer points to polish off your effect. Not every section will be relevant to every plug-in, so feel free to use the PDF document bookmarks to skip to the sections pertinent to your current project.
+现在我们已经介绍了效果插件的基础知识，接下来我们将讨论一些更细致的点，以完善你的效果。并非每个部分都适用于每个插件，因此请随意使用PDF文档的书签功能跳转到与当前项目相关的部分。
 
 ---
 
-## Free Code == Good
+## 免费代码 == 好
 
-After Effects provides effect plug-ins with as much information and supporting code as possible. Use our function suites and callbacks to obtain the value of parameters (including source footage) at different times. Use our memory allocation suite to avoid competing with the host for resources. Use our image processing suites to copy, fill, blend and convolve images, and convert between color spaces. Obtain information about the masks applied to a layer. ANSI emulation and math utility suites are also provided, as well as information about the application, user, serial number, and current drawing context.
+After Effects 为效果插件提供了尽可能多的信息和支持代码。使用我们的函数套件和回调来获取不同时间参数（包括源素材）的值。使用我们的内存分配套件来避免与主机争夺资源。使用我们的图像处理套件来复制、填充、混合和卷积图像，并在颜色空间之间进行转换。获取应用于图层的蒙版信息。还提供了ANSI模拟和数学实用程序套件，以及有关应用程序、用户、序列号和当前绘图上下文的信息。
 
-Previous versions of After Effects have provided functions for many common tasks. As we moved to support deeper color, these were moved to function suites. Use the newer function suites whenever possible; things will just be better.
+After Effects 的早期版本已经为许多常见任务提供了函数。随着我们支持更深层次的色彩，这些函数被移到了函数套件中。尽可能使用较新的函数套件；事情会变得更好。
 
-Using our function suites keeps your plug-in compact; you write and test less code. The functions are tested, optimized, and used by our own plug-ins. The functions are distributed to multiple processors and take advantage of available hardware acceleration.
+使用我们的函数套件可以保持插件的紧凑性；你编写和测试的代码更少。这些函数经过测试、优化，并被我们自己的插件使用。这些函数被分配到多个处理器，并利用可用的硬件加速。
 
-No, really, use the provided functions. Seriously.
+不，真的，使用提供的函数。认真的。

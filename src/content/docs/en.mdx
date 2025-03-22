@@ -1,13 +1,13 @@
 ---
-title: 欢迎来到月离文档站
+title: Welcom to Yuelili Docs
 description: Get started building your docs site with Starlight.
 template: splash
 hero:
-  tagline: 还在构建中...可以先尝试
+  tagline: Switch language/Switch theme mode
   image:
     file: ../../assets/houston.webp
   actions:
-    - text: 开始使用
+    - text: Get Started
       link: /en/ae-expression/introduction/examples/
       icon: right-arrow
 
@@ -15,19 +15,34 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## Yuelili Documentation
+
+Welcome to the Yuelili documentation site, where we share technical documentation with the Yuelili team.
+
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+<a href="/en/ae-expression/introduction/changelog">
+	<Card title="AE表达式" icon="pencil">
+		After Effects expressions documentation。
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+  </a>
+
+  <a href="/en/ae-scripting/introduction/changelog">
+	<Card title="AE脚本文档" icon="add-document">
+		After Effects scripting development documentation。
+	</Card> 
+  </a>
+
+  <a href="/en/ae-plugin/intro/whats-new">
+	<Card title="AE插件文档" icon="open-book">
+		After Effects plugin development documentation。
+	</Card> 
+  </a>
+
+  <a href="/en/javascript-tools/introduction/extendscript-overview">
+	<Card title="JavaScript 工具" icon="open-book">
+		JavaScript tutorials documentation。
+	</Card> 
+  </a>
 </CardGrid>
+

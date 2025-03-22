@@ -1,19 +1,19 @@
 ---
-title: user-notification-dialogs
+title: 用户通知对话框
 ---
-# User notification dialogs
+# 用户通知对话框
 
-ExtendScript provides a set of globally available functions that allow you to display short messages to the user in platform-standard dialog boxes. There are three types of message dialogs:
+ExtendScript 提供了一组全局可用的函数，允许你在平台标准的对话框中向用户显示简短消息。有三种类型的消息对话框：
 
-- **Alert** - Displays a dialog containing a short message and an **OK** button.
-- **Confirm** - Displays a dialog containing a short message and two buttons, **Yes** and **No**, allowing the user to accept or reject an action.
-- **Prompt** - Displays a dialog containing a short message, a text entry field, and **OK** and **Cancel** buttons, allowing the user to supply a value to the script.
+- **Alert** - 显示一个包含简短消息和 **OK** 按钮的对话框。
+- **Confirm** - 显示一个包含简短消息和两个按钮（**Yes** 和 **No**）的对话框，允许用户接受或拒绝某个操作。
+- **Prompt** - 显示一个包含简短消息、文本输入字段以及 **OK** 和 **Cancel** 按钮的对话框，允许用户为脚本提供一个值。
 
-These dialogs are customizable to a small degree. The appearance is platform specific.
+这些对话框在一定程度上是可定制的。外观是平台特定的。
 
 ---
 
-## Global Methods
+## 全局方法
 
 ### alert()
 
@@ -21,29 +21,29 @@ These dialogs are customizable to a small degree. The appearance is platform spe
 
 #### 描述
 
-Displays a platform-standard dialog containing a short message and an **OK** button.
+显示一个平台标准的对话框，包含简短消息和一个 **OK** 按钮。
 
 #### 参数
 
 | 参数 |  类型   |                                                                                        描述                                                                                         |
 | --------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| message   | String  | The string for the displayed message.                                                                                                                                                      |
-| title     | String  | Optional. A string to appear as the title of the dialog, if the platform supports a title. Mac OS does not support titles for alert dialogs. The default title string is `"Script Alert"`. |
-| errorIcon | Boolean | Optional. When `true`, the platform-standard alert icon is replaced by the platform-standard error icon in the dialog. Default is `false`.                                                 |
+| message   | String  | 显示的字符串消息。                                                                                                                                                      |
+| title     | String  | 可选。如果平台支持标题，则显示为对话框的标题。Mac OS 不支持警报对话框的标题。默认标题字符串为 `"Script Alert"`。 |
+| errorIcon | Boolean | 可选。当为 `true` 时，对话框中的平台标准警报图标将被平台标准错误图标替换。默认为 `false`。                                                 |
 
 #### 返回
 
-Returns nothing
+无返回值
 
 #### 示例
 
-This figure shows simple alert dialogs in Windows and in Mac OS.
+下图显示了 Windows 和 Mac OS 中的简单警报对话框。
 
 ![Windows Alert](./_static/08_extendscript-tools_user-notification-dialogs_alert_win1.jpg)
 ![Windows Alert](./_static/08_extendscript-tools_user-notification-dialogs_alert_win2.jpg)
 ![MacOS Alert](./_static/08_extendscript-tools_user-notification-dialogs_alert_macos.jpg)
 
-This figure shows alert dialogs with error icons.
+下图显示了带有错误图标的警报对话框。
 
 ![Windows Alert w/ Icon](./_static/08_extendscript-tools_user-notification-dialogs_alert_win-icon.jpg)
 ![MacOS Alert w/ Icon](./_static/08_extendscript-tools_user-notification-dialogs_alert_macos-icon.jpg)
@@ -56,28 +56,28 @@ This figure shows alert dialogs with error icons.
 
 #### 描述
 
-Displays a platform-standard dialog containing a short message and two buttons labeled Yes and No.
+显示一个平台标准的对话框，包含简短消息和两个分别标记为 **Yes** 和 **No** 的按钮。
 
 #### 参数
 
 | 参数 |  类型   |                                                                                            描述                                                                                            |
 | --------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| message   | String  | The string for the displayed message.                                                                                                                                                             |
-| noAsDflt  | Boolean | Optional. When `true`, the **No** button is the default choice, selected when the user types `ENTER`. Default is `false`, meaning that **Yes** is the default choice.                             |
-| title     | String  | Optional. A string to appear as the title of the dialog, if the platform supports a title. Mac OS does not support titles for confirmation dialogs. The default title string is `"Script Alert"`. |
+| message   | String  | 显示的字符串消息。                                                                                                                                                             |
+| noAsDflt  | Boolean | 可选。当为 `true` 时，**No** 按钮为默认选择，用户按下 `ENTER` 时将选择该按钮。默认为 `false`，意味着 **Yes** 是默认选择。                             |
+| title     | String  | 可选。如果平台支持标题，则显示为对话框的标题。Mac OS 不支持确认对话框的标题。默认标题字符串为 `"Script Alert"`。 |
 
 #### 返回
 
-Returns `true` if the user clicked **Yes**, `false` if the user clicked **No**.
+如果用户点击 **Yes**，则返回 `true`；如果用户点击 **No**，则返回 `false`。
 
 #### 示例
 
-This figure shows simple confirmation dialogs on Windows and Mac OS.
+下图显示了 Windows 和 Mac OS 中的简单确认对话框。
 
 ![Windows Confirmation](./_static/08_extendscript-tools_user-notification-dialogs_confirmation_win.jpg)
 ![MacOS Confirmation](./_static/08_extendscript-tools_user-notification-dialogs_confirmation_macos.jpg)
 
-This figure shows confirmation dialogs with No as the default button.
+下图显示了 **No** 作为默认按钮的确认对话框。
 
 ![Windows Confirmation w/ 'No' as default](./_static/08_extendscript-tools_user-notification-dialogs_confirmation_win-no-default.jpg)
 ![MacOS Confirmation w/ 'No' as default](./_static/08_extendscript-tools_user-notification-dialogs_confirmation_macos-no-default.jpg)
@@ -90,28 +90,28 @@ This figure shows confirmation dialogs with No as the default button.
 
 #### 描述
 
-Displays a platform-standard dialog containing a short message, a text edit field, and two buttons labeled **OK** and **Cancel**.
+显示一个平台标准的对话框，包含简短消息、文本编辑字段以及两个分别标记为 **OK** 和 **Cancel** 的按钮。
 
 #### 参数
 
 | 参数 |  类型  |                                                                                            描述                                                                                            |
 | --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| message   | String | The string for the displayed message.                                                                                                                                                             |
-| preset    | String | The initial value to be displayed in the text edit field.                                                                                                                                         |
-| title     | String | Optional. A string to appear as the title of the dialog, if the platform supports a title. Mac OS does not support titles for confirmation dialogs. The default title string is `"Script Alert"`. |
+| message   | String | 显示的字符串消息。                                                                                                                                                             |
+| preset    | String | 文本编辑字段中显示的初始值。                                                                                                                                         |
+| title     | String | 可选。如果平台支持标题，则显示为对话框的标题。Mac OS 不支持确认对话框的标题。默认标题字符串为 `"Script Alert"`。 |
 
 #### 返回
 
-Returns the value of the text edit field if the user clicked **OK**, `null` if the user clicked **Cancel**.
+如果用户点击 **OK**，则返回文本编辑字段的值；如果用户点击 **Cancel**，则返回 `null`。
 
 #### 示例
 
-This figure shows simple prompt dialogs on Windows and Mac OS.
+下图显示了 Windows 和 Mac OS 中的简单提示对话框。
 
 ![Windows prompt](./_static/08_extendscript-tools_user-notification-dialogs_prompt_win.jpg)
 ![MacOS prompt](./_static/08_extendscript-tools_user-notification-dialogs_prompt_macos.jpg)
 
-This figure shows confirmation dialogs with a title value specified.
+下图显示了指定标题值的确认对话框。
 
 ![Windows prompt w/ title](./_static/08_extendscript-tools_user-notification-dialogs_prompt_win-title.jpg)
 ![MacOS prompt w/ title](./_static/08_extendscript-tools_user-notification-dialogs_prompt_macos-title.jpg)

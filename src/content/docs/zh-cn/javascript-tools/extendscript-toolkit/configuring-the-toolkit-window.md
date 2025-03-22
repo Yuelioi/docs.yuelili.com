@@ -1,82 +1,80 @@
 ---
-title: configuring-the-toolkit-window
+title: 配置工具窗口
 ---
-# Configuring the Toolkit window
+# 配置工具窗口
 
-The ExtendScript Toolkit initially appears with a default workspace arrangement, containing a default configuration of tabbed panels and Script Editor document windows contained in a parent frame. The arrangement is highly configurable, through the Window menu, the context menus of individual panels and panel groups, or directly using drag and drop.
+ExtendScript Toolkit 初始显示时带有默认的工作区布局，包含默认配置的选项卡面板和包含在父框架中的脚本编辑器文档窗口。通过窗口菜单、各个面板和面板组的上下文菜单，或直接使用拖放操作，可以高度自定义布局。
 
-![ExtendScript Toolkit Window](./_static/02_the-extendscript-toolkit_configuring-the-toolkit-window.png)
+![ExtendScript Toolkit 窗口](./_static/02_the-extendscript-toolkit_configuring-the-toolkit-window.png)
 
-You can, for example, adjust the relative sizes of the panels by dragging the separators up or down, or right or left, and can rearrange the groupings. To move a tabbed panel, drag the tab into another pane.
+例如，您可以通过上下或左右拖动分隔符来调整面板的相对大小，并可以重新排列分组。要移动选项卡面板，请将选项卡拖到另一个窗格中。
 
-If you drag a tab so that the entire destination group is highlighted, it becomes another stacked panel in that group. If you drag a tab to the top or bottom of a group (so that only the top or bottom bar of the destination group is highlighted), that group splits to show the panels in a tiled format.
+如果您拖动选项卡以使整个目标组高亮显示，它将成为该组中的另一个堆叠面板。如果您将选项卡拖动到组的顶部或底部（以便仅目标组的顶部或底部栏高亮显示），则该组会拆分以平铺格式显示面板。
 
-- You can dock the entire panel group to different edges of the Toolkit window.
-- You can collapse the entire panel group, then expose individual panels.
-- You can open and close, or collapse and expand individual panels, regardless of the dock state.
-- You can undock individual tabs or the entire control panel, making them floating panels. Floating panels can be docked to each other, or can be independent.
+- 您可以将整个面板组停靠在工具窗口的不同边缘。
+- 您可以折叠整个面板组，然后展开单个面板。
+- 无论停靠状态如何，您都可以打开或关闭、折叠或展开单个面板。
+- 您可以取消停靠单个选项卡或整个控制面板，使其成为浮动面板。浮动面板可以相互停靠，也可以独立存在。
 
-There are predefined configurations, called workspaces, suitable for various uses, and you can save your favorite configurations as workspaces. See [Workspaces](#workspaces).
-
----
-
-## Panel menus
-
-Panel groups have a context menu, which you invoke with a right click in the tab or on the background of the title bar. These menus have panel-control commands, including Close Panel and Close Group to hide the individual panel or entire group.
-
-![A Panel](./_static/02_the-extendscript-toolkit_configuring-the-toolkit-window_panel-menus_panel.png)
-
-- You can also show or hide specific panels by toggling them on or off in the Window menu. Use the Window menu to show a hidden panel, or to bring a floating panel to the front.
-- Use Window > Hide panels to close all of the panels.
-
-Some panels also have a flyout menu, specific to that panel, which you access through the menu icon in the upper right corner. The JavaScript Console has a right-click menu that allows you to copy and paste text.
-
-The individual panels are discussed in detail in the following sections.
+有一些预定义的配置，称为工作区，适用于各种用途，您可以将您喜欢的配置保存为工作区。请参阅[工作区](#workspaces)。
 
 ---
 
-## Document windows
+## 面板菜单
 
-When you open scripts or text files, each file appears in its own Script Editor document window. By default, the document windows are docked; that is, shown as tabbed panes in the main window. However, like the panels, you can drag any document window out of the frame to make it an independent floating window.
+面板组有一个上下文菜单，您可以通过右键单击选项卡或标题栏的背景来调用。这些菜单包含面板控制命令，包括“关闭面板”和“关闭组”以隐藏单个面板或整个组。
 
-If you are displaying more than one document, and you have undocked one or more of them, you can choose to show the document windows in tiled or cascade style-that is, side by side in the main window, or overlapping in the main window. To do this, choose Window > Tile Documents or Window > Cascade.
+![面板](./_static/02_the-extendscript-toolkit_configuring-the-toolkit-window_panel-menus_panel.png)
 
-You can edit or run scripts in multiple document windows simultaneously. The current document window is highlighted and has the input focus. You can select another document window by clicking in it, or you can switch between them with the commands Window > Next document and Window > Previous document. The default keyboard shortcuts for these commands are F6 and SHIFT-F6; you can change these using the Keyboard Shortcuts page in the Preferences dialog (Edit > Preferences).
+- 您还可以通过在窗口菜单中切换来显示或隐藏特定面板。使用窗口菜单显示隐藏的面板，或将浮动面板置于前面。
+- 使用窗口 > 隐藏面板以关闭所有面板。
+
+某些面板还有一个特定于该面板的弹出菜单，您可以通过右上角的菜单图标访问。JavaScript 控制台有一个右键菜单，允许您复制和粘贴文本。
+
+各个面板将在以下部分中详细讨论。
+
+---
+
+## 文档窗口
+
+当您打开脚本或文本文件时，每个文件都会显示在其自己的脚本编辑器文档窗口中。默认情况下，文档窗口是停靠的；也就是说，作为主窗口中的选项卡窗格显示。然而，与面板一样，您可以将任何文档窗口拖出框架，使其成为独立的浮动窗口。
+
+如果您显示多个文档，并且您已经取消停靠其中一个或多个文档，您可以选择以平铺或层叠样式显示文档窗口——即并排显示在主窗口中，或重叠显示在主窗口中。为此，请选择窗口 > 平铺文档或窗口 > 层叠。
+
+您可以同时在多个文档窗口中编辑或运行脚本。当前文档窗口高亮显示并具有输入焦点。您可以通过单击选择另一个文档窗口，或者您可以使用命令窗口 > 下一个文档和窗口 > 上一个文档在它们之间切换。这些命令的默认键盘快捷键是 F6 和 SHIFT-F6；您可以使用首选项对话框中的键盘快捷键页面（编辑 > 首选项）更改这些快捷键。
 
 :::note
 
-For example, if one script opens a modal dialog in Photoshop, and you run another script that targets Photoshop while the dialog is still open, the second script is likely to generate an error.
+例如，如果一个脚本在 Photoshop 中打开了一个模态对话框，而您在对话框仍然打开时运行另一个针对 Photoshop 的脚本，第二个脚本可能会生成错误。
 :::
 
+![拆分文档按钮](./_static/02_the-extendscript-toolkit_configuring-the-toolkit-window_document-windows_split-documents.png)
 
+*文档窗口右上角的一个按钮允许您拆分该窗口。*
 
-![Split-Document Button](./_static/02_the-extendscript-toolkit_configuring-the-toolkit-window_document-windows_split-documents.png)
+当窗口被拆分时，第二个窗口是同一源的另一个视图。您在文本中所做的任何更改、添加的断点等都会同时出现在两个窗口中。默认情况下，副本位于原始停靠窗口的右侧，如图所示。但是，如果您使用 CTRL-单击拆分窗口，第二个窗口将出现在原始窗口的下方。
 
-*A button in the upper right corner of the document window allows you to split that window.*
-
-When the window is split, the second window is another view of exactly the same source. Any changes you make in the text, breakpoints that you add, and so on, appear simultaneously in both windows. The copy is, by default, positioned to the right of the original, docked window, as shown. However, if you use CTRL-click to split the window, the second appears below the original.
-
-For more information about the document windows and the Script Editor, see [The Script Editor](../the-script-editor).
+有关文档窗口和脚本编辑器的更多信息，请参阅[脚本编辑器](../the-script-editor)。
 
 ---
 
-## Workspaces
+## 工作区
 
-The Toolkit saves the current layout when you exit, and restores it at the next startup. It saves and restores the open documents, the current positions within the documents, any breakpoints that have been set, and other preferences that have been set in the Preferences dialog.
+工具包在退出时保存当前布局，并在下次启动时恢复。它保存并恢复打开的文档、文档中的当前位置、设置的任何断点以及在首选项对话框中设置的其他首选项。
 
-- The Startup page in the Preferences dialog (Edit > Preferences) offers a choice of whether to open a blank document window, no document window, or display a previously opened document on startup.
-- The Tookit defines a number of workspace configurations that are suitable for specific usage types. To choose a predefined or user-defined workspace, use the workspace menu that drops down from the upper right corner of the Toolkit.
-    - When you choose a workspace, its name appears here. You can also add and remove workspaces from this menu.
-    ![Current Workspace Name](./_static/02_the-extendscript-toolkit_configuring-the-toolkit-window_workspaces_current-workspace-name.png)
-- You can save any configuration as a named workspace, using the Create new Workspace menu command, or the Add button on the Workspaces page in the Preferences dialog (Edit > Preferences).
-- You can remove workspaces you have defined, either individually using the menu or the Workspaces page in the Preferences dialog, or all at once using the Default button at the bottom of the Workspace page.
-- The Keyboard Shortcuts page in the Preferences dialog (Edit > Preferences) allows you to set or modify keyboard shortcuts for all menu commands. There is a warning if you assign a key combination that is already in use. If you assign the combination to a new command, it is removed from the previous command.
-- You can restore all preferences to their default values by holding the SHIFT key down while the Toolkit loads.
+- 首选项对话框中的启动页面（编辑 > 首选项）提供了一个选择，即在启动时是打开空白文档窗口、无文档窗口，还是显示先前打开的文档。
+- 工具包定义了许多适用于特定使用类型的工作区配置。要选择预定义或用户定义的工作区，请使用从工具包右上角下拉的工作区菜单。
+    - 当您选择一个工作区时，其名称会显示在此处。您还可以从此菜单中添加和删除工作区。
+    ![当前工作区名称](./_static/02_the-extendscript-toolkit_configuring-the-toolkit-window_workspaces_current-workspace-name.png)
+- 您可以使用“创建新工作区”菜单命令或首选项对话框中的工作区页面上的添加按钮（编辑 > 首选项）将任何配置保存为命名工作区。
+- 您可以删除您定义的工作区，可以单独使用菜单或首选项对话框中的工作区页面，也可以使用工作区页面底部的默认按钮一次性删除所有工作区。
+- 首选项对话框中的键盘快捷键页面（编辑 > 首选项）允许您为所有菜单命令设置或修改键盘快捷键。如果您分配了一个已经在使用的键组合，会有一个警告。如果您将该组合分配给新命令，它将从先前的命令中删除。
+- 您可以通过在工具包加载时按住 SHIFT 键来将所有首选项恢复为默认值。
 
 ---
 
-## Dialogs
+## 对话框
 
-Some dialog windows offer the option "Don't show again". If you select this option, the Toolkit remembers the choices made in this dialog, and next time it would appear, makes the same choices without showing the dialog.
+某些对话框窗口提供“不再显示”选项。如果您选择此选项，工具包会记住在此对话框中所做的选择，并在下次出现时做出相同的选择而不显示对话框。
 
-To make these dialogs display again, click Reset Dialogs on the User Interface page in the Preferences dialog (Edit > Preferences).
+要使这些对话框再次显示，请单击首选项对话框中的用户界面页面上的重置对话框（编辑 > 首选项）。

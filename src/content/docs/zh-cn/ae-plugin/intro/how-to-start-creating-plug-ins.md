@@ -1,52 +1,52 @@
 ---
-title: how-to-start-creating-plug-ins
+title: 如何开始创建插件
 ---
-# How To Start Creating Plug-ins
+# 如何开始创建插件
 
-## Play!
+## 玩转它！
 
-Before you write a line of code, Spend some significant time playing with After Effects, and with the [Sample Projects](../sample-projects). Build the plug-ins into the right folder. Set lots of breakpoints, read the amusing and informative comments.
+在编写一行代码之前，花一些时间熟悉 After Effects 和 [示例项目](../sample-projects)。将插件构建到正确的文件夹中。设置许多断点，阅读那些有趣且信息丰富的注释。
 
-See a quickstart video on building an effect (on macOS): [quickstart video](https://assets.adobe.com/public/08c43fb7-4633-4007-5201-b3b77405d770?scid=social_20180227_75678337)
-
----
-
-## Plan!
-
-Be clear on what your plug-in will attempt to do.
+观看一个关于构建效果的快速入门视频（macOS 上）：[快速入门视频](https://assets.adobe.com/public/08c43fb7-4633-4007-5201-b3b77405d770?scid=social_20180227_75678337)
 
 ---
 
-## Hack!
+## 规划！
 
-After experimenting with the samples, find one that does something *like* what you want to do. The temptation to start from scratch may be strong; fight it! For effects, use the Skeleton template project. Avoid the headache of reconstructing projects (including the troublesome custom build steps for Windows PiPL resource generation) by grafting your code into an existing project.
-
----
-
-## Steal!
-
-To make the Skeleton sample your own, copy the entire \\Skeleton directory, renaming it to (for example) \\WhizBang. Using your text editor of choice, search \\WhizBang\*.\* (yes, that includes .NET and Xcode project files) for occurrences of Skeleton and SKELETON, and replace them with WhizBang and WHIZBANG.
-
-You now have a compiling and running plug-in that responds to common commands, handles 8 and 16-bpc color, uses our AEGP_SuiteHandler utility code, and responds to 3D light and camera information. There, was that so hard?
-
-AEGP developers will do well to start with Projector (for After Effects project creation support), Easy Cheese for a keyframe assistant, IO for media file format support, and Persisto for a simple menu command and working with preferences.
+明确你的插件将要实现的功能。
 
 ---
 
-## Test!
+## 动手！
 
-If only for testing convenience, you should have a project saved with your effect applied, and all its parameters keyframed to strange values. Between these projects which stress your plug-in, and the tools provided by your development environment, you're well on your way to shipping some tested code.
-
----
-
-## Blame!
-
-If you run into behavior that seems wrong, see if you can reproduce the behavior using one of the unmodified sample projects. This can save you a lot of time, if you can determine whether the bug behavior was introduced by your modifications, or was already there to begin with.
+在尝试了示例之后，找到一个与你想要实现的功能*类似*的示例。从头开始的诱惑可能很强；但请抵制它！对于效果插件，使用 Skeleton 模板项目。通过将你的代码移植到现有项目中，避免重建项目的麻烦（包括 Windows PiPL 资源生成的自定义构建步骤）。
 
 ---
 
-## Developers Matter
+## 借鉴！
 
-Third party developers drive API and SDK improvement and expansion. Your products enable After Effects to do things we'd never considered. Your efforts make After Effects better; keep it up!
+为了让 Skeleton 示例成为你自己的项目，复制整个 \\Skeleton 目录，并将其重命名为（例如）\\WhizBang。使用你选择的文本编辑器，搜索 \\WhizBang\*.\*（是的，包括 .NET 和 Xcode 项目文件）中的 Skeleton 和 SKELETON，并将它们替换为 WhizBang 和 WHIZBANG。
 
-We work hard on the SDK, and welcome your comments and feedback. Almost every change we make to the API is suggested by developers like you. [Give us feedback](https://community.adobe.com/t5/after-effects/bd-p/after-effects?page=1&sort=latest_replies&filter=all&topics=label-sdkcom)
+现在，你已经拥有了一个可以编译和运行的插件，它能够响应常见命令、处理 8 和 16-bpc 颜色、使用我们的 AEGP_SuiteHandler 工具代码，并响应 3D 灯光和相机信息。看，这有那么难吗？
+
+AEGP 开发者可以从 Projector（用于 After Effects 项目创建支持）、Easy Cheese（用于关键帧助手）、IO（用于媒体文件格式支持）和 Persisto（用于简单的菜单命令和偏好设置操作）开始。
+
+---
+
+## 测试！
+
+即使只是为了测试方便，你也应该保存一个应用了你的效果的项目，并将其所有参数设置为奇怪的值。通过这些项目对你的插件进行压力测试，再加上开发环境提供的工具，你已经准备好发布一些经过测试的代码了。
+
+---
+
+## 归咎！
+
+如果你遇到看似错误的行为，看看是否可以使用未修改的示例项目重现该行为。如果你能确定这个错误行为是由你的修改引入的，还是原本就存在的，这将为你节省大量时间。
+
+---
+
+## 开发者很重要
+
+第三方开发者推动 API 和 SDK 的改进和扩展。你的产品使 After Effects 能够实现我们从未考虑过的功能。你的努力让 After Effects 变得更好；请继续努力！
+
+我们在 SDK 上投入了大量精力，并欢迎你的评论和反馈。我们对 API 的几乎所有更改都是由像你这样的开发者提出的。[给我们反馈](https://community.adobe.com/t5/after-effects/bd-p/after-effects?page=1&sort=latest_replies&filter=all&topics=label-sdkcom)

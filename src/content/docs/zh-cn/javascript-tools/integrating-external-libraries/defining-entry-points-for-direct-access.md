@@ -1,19 +1,19 @@
 ---
-title: defining-entry-points-for-direct-access
+title: 定义直接访问的入口点
 ---
-# Defining entry points for direct access
+# 定义直接访问的入口点
 
-A library to be loaded and accessed directly through an [ExternalObject instance](.././externalobject-object) must publish the following entry points.
+要通过 [ExternalObject 实例](.././externalobject-object) 直接加载和访问的库必须发布以下入口点。
 
 :::note
-These must be exported as C functions, not C++ functions
+这些必须作为 C 函数导出，而不是 C++ 函数。
 :::
 
 ---
 
-## Entry Points
+## 入口点
 
-The following entry points are required if you wish to use an [ExternalObject instance](.././externalobject-object):
+如果您希望使用 [ExternalObject 实例](.././externalobject-object)，则需要以下入口点：
 
 ### ESInitialize()
 
@@ -21,17 +21,17 @@ The following entry points are required if you wish to use an [ExternalObject in
 
 #### 描述
 
-Called when your library is loaded into memory.
+当您的库加载到内存时调用。
 
 #### 参数
 
 |  参数   |                                         描述                                          |
 | ------------ | -------------------------------------------------------------------------------------------- |
-| `argv, argc` | The pointer to and number of arguments passed to the constructor, in the form of TaggedData. |
+| `argv, argc` | 传递给构造函数的参数指针和数量，以 TaggedData 的形式传递。 |
 
 #### 返回
 
-A string of function signatures; see [Library initialization](#library-initialization).
+函数签名字符串；请参阅 [库初始化](#库初始化)。
 
 ---
 
@@ -41,13 +41,13 @@ A string of function signatures; see [Library initialization](#library-initializ
 
 #### 描述
 
-Takes no arguments, and returns a version number for the library as a long integer.
+不接受参数，并返回库的版本号作为长整型。
 
-The result is available in JavaScript as ExternalObject.version.
+结果在 JavaScript 中作为 `ExternalObject.version` 可用。
 
 #### 返回
 
-Long integer
+长整型
 
 ---
 
@@ -57,15 +57,15 @@ Long integer
 
 #### 描述
 
-Called to free memory allocated for a null-terminated string passed to or from library functions.
+调用以释放为传递给或从库函数传递的空终止字符串分配的内存。
 
 | 参数 |       描述        |
 | --------- | ------------------------ |
-| `p`       | A pointer to the string. |
+| `p`       | 指向字符串的指针。 |
 
 #### 返回
 
-Nothing
+无
 
 ---
 
@@ -75,88 +75,88 @@ Nothing
 
 #### 描述
 
-Called when your library is being unloaded. See [Library termination](#library-termination).
+当您的库被卸载时调用。请参阅 [库终止](#库终止)。
 
 #### 返回
 
-Nothing
+无
 
 ---
 
-## Additional functions
+## 其他函数
 
-The shared library can contain any number of additional functions. Each function corresponds to a JavaScript method in the [ExternalObject instance](.././externalobject-object). If a function is undefined, ExtendScript throws a run-time error.
+共享库可以包含任意数量的其他函数。每个函数对应于 [ExternalObject 实例](.././externalobject-object) 中的一个 JavaScript 方法。如果函数未定义，ExtendScript 会抛出运行时错误。
 
-Each function must accept the following arguments:
+每个函数必须接受以下参数：
 
-- An array of [TaggedData](defining-entry-points-for-indirect-access.md#taggeddata).
-- An argument count.
-- A variant data structure that takes the return value.
+- 一个 [TaggedData](defining-entry-points-for-indirect-access.md#taggeddata) 数组。
+- 一个参数计数。
+- 一个用于接收返回值的变体数据结构。
 
-The variant data does not support JavaScript objects. The following data types are allowed:
+变体数据不支持 JavaScript 对象。允许以下数据类型：
 
 - `undefined`
-- Boolean
+- 布尔值
 - `double`
-- String - Must be UTF-8 encoded. The library must define an entry point [ESFreeMem()](#esfreemem), which ExtendScript calls to release a returned string pointer. If this entry point is missing, ExtendScript does not attempt to release any returned string data.
-- `Script` - A string to be evaluated by ExtendScript. Use to return small JavaScript scripts that define arbitrarily complex data.
+- 字符串 - 必须为 UTF-8 编码。库必须定义入口点 [ESFreeMem()](#esfreemem)，ExtendScript 调用该入口点以释放返回的字符串指针。如果缺少此入口点，ExtendScript 不会尝试释放任何返回的字符串数据。
+- `Script` - 由 ExtendScript 评估的字符串。用于返回定义任意复杂数据的小型 JavaScript 脚本。
 
-If, when a function is invoked, a supplied parameter is undefined, ExtendScript sets the data type to `undefined` and does not attempt to convert the data to the requested type.
+如果在调用函数时提供的参数未定义，ExtendScript 会将数据类型设置为 `undefined`，并且不会尝试将数据转换为请求的类型。
 
 :::note
 
-The called function is free to return any of the listed data types.
+被调用的函数可以自由返回列出的任何数据类型。
 :::
 
 ---
 
-## Library initialization
+## 库初始化
 
-ExtendScript calls [ESInitialize()](#esinitialize) to initialize the library.
+ExtendScript 调用 [ESInitialize()](#esinitialize) 来初始化库。
 
-The function receives an argument vector containing the additional arguments passed in to the ExternalObject constructor.
+该函数接收一个参数向量，其中包含传递给 ExternalObject 构造函数的附加参数。
 
-The function can return an array of function name-signature strings, which are used to support the ExtendScript reflection interface, and to cast function arguments to specific types. You do not need to define a signature for a function in order to make it callable in JavaScript.
+该函数可以返回一组函数名称-签名字符串，用于支持 ExtendScript 反射接口，并将函数参数转换为特定类型。您不需要为函数定义签名即可使其在 JavaScript 中可调用。
 
-### Function signatures
+### 函数签名
 
-If you choose to return a set of function name-signature strings, each string associates a function name with that function's parameter types, if any. For example:
+如果您选择返回一组函数名称-签名字符串，则每个字符串将函数名称与该函数的参数类型（如果有）关联起来。例如：
 
 ```javascript
 ["functionName1_argtypes", "functionName2_argtypes", "functionName3"]
 ```
 
-For each function, the string begins with the function name, followed by an underscore character and a list of argument data types, represented as a single character for each argument. If the function does not have arguments, you can omit the trailing underscore character (unless there is an underscore in the function name).
+对于每个函数，字符串以函数名称开头，后跟下划线字符和参数数据类型列表，每个参数用一个字符表示。如果函数没有参数，则可以省略尾随的下划线字符（除非函数名称中包含下划线）。
 
-The characters that indicate data types are:
+表示数据类型的字符如下：
 
-| Characeter |                                                       描述                                                       |
+| 字符 |                                                       描述                                                       |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `a`        | Any type. The argument is not converted. This is the default, if no type is supplied or if a type code is unrecognized. |
-| `b`        | Boolean                                                                                                                 |
-| `d`        | signed 32 bit integer                                                                                                   |
-| `u`        | unsigned 32 bit integer                                                                                                 |
-| `f`        | 64 bit floating point                                                                                                   |
-| `s`        | String                                                                                                                  |
+| `a`        | 任何类型。参数不会被转换。如果未提供类型或类型代码无法识别，则这是默认值。 |
+| `b`        | 布尔值                                                                                                                 |
+| `d`        | 有符号 32 位整数                                                                                                   |
+| `u`        | 无符号 32 位整数                                                                                                 |
+| `f`        | 64 位浮点数                                                                                                   |
+| `s`        | 字符串                                                                                                                  |
 
-For example, suppose your library defines these two entry points:
+例如，假设您的库定义了以下两个入口点：
 
 ```javascript
 One (Integer a, String b);
 Two ();
 ```
 
-The signature strings for these two functions would be `"One_ds"`, `"Two"`.
+这两个函数的签名字符串将是 `"One_ds"` 和 `"Two"`。
 
 :::warning
 
-Attempting to do so produces undefined results.
+尝试这样做会产生未定义的结果。
 :::
 
 ---
 
-## Library termination
+## 库终止
 
-Define the entry point [ESInitialize()](#esinitialize) to free any memory you have allocated when your library is unloaded.
+定义入口点 [ESInitialize()](#esinitialize) 以在库卸载时释放您分配的任何内存。
 
-Whenever a JavaScript function makes a call to a library function, it increments a reference count for that library. When the reference count for a library reaches 0, the library is automatically unloaded; your termination function is called, and the `ExternalObject` instance is deleted. Note that deleting the `ExternalObject` instance does not unload the library if there are remaining references.
+每当 JavaScript 函数调用库函数时，它会增加该库的引用计数。当库的引用计数达到 0 时，库会自动卸载；您的终止函数被调用，并且 `ExternalObject` 实例被删除。请注意，删除 `ExternalObject` 实例不会卸载库，如果仍有剩余的引用。

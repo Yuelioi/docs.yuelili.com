@@ -1,11 +1,11 @@
 ---
-title: entry-point
+title: 入口函数
 ---
 # Entry Point
 
-All communication between After Effects and an effect plug-in is initiated by After Effects, and it all happens by the host (After Effects) calling a single entry point function.
+After Effects 和效果插件之间的所有通信都是由 After Effects 发起的，并且都是通过主机（After Effects）调用一个单一的入口点函数来实现的。
 
-For all effect plug-ins, the entry point function must have the following signature:
+对于所有效果插件，入口点函数必须具有以下签名：
 
 ```cpp
 PF_Err main (
@@ -17,27 +17,27 @@ PF_Err main (
     void         *extra)
 ```
 
-The name of the entry point function above is "main", but it can be whatever is specified in [PiPL Resources](../../intro/pipl-resources).
+上述入口点函数的名称是 "main"，但它可以是 [PiPL 资源](../../intro/pipl-resources) 中指定的任何名称。
 
-Before each call to the entry point function, After Effects updates [PF_InData](../PF_InData) and the plug- in's parameter array PF_ParamDef[] (except as noted).
+在每次调用入口点函数之前，After Effects 会更新 [PF_InData](../PF_InData) 和插件的参数数组 `PF_ParamDef[]`（除非另有说明）。
 
-After the plug-in returns from its call, After Effects checks [PF_OutData](../PF_OutData) for changes and, when appropriate, uses the PF_LayerDef the effect has rendered.
+插件从调用返回后，After Effects 会检查 [PF_OutData](../PF_OutData) 是否有变化，并在适当的情况下使用效果渲染的 `PF_LayerDef`。
 
 ---
 
-## Entry Point Function Parameters
+## 入口点函数参数
 
-|                   Argument                    |                                                                                     Purpose                                                                                     |
-|-----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [cmd](../command-selectors)                   | After Effects sets the [Command Selectors](../command-selectors) to tell the plug-in what to do.                                                                                |
-| [in_data](../PF_InData)                       | Information about the application's state and the data the plug-in is being told to act upon.                                                                                   |
-|                                               | Pointers to numerous interface and image manipulation functions are also provided.                                                                                              |
-| [out_data](../PF_OutData)                     | Pass back information to After Effects by setting fields within out_data.                                                                                                       |
-| [params](../parameters)                       | An array of the plug-in's parameters at the time provided in in_data> current_time.                                                                                             |
-|                                               | `params[0]` is the input image (a [PF_EffectWorld / PF_LayerDef](../PF_EffectWorld)) to which the effect should be applied.                                                     |
-|                                               | These values are only valid during certain selectors (this is noted in the [selector descriptions](command-selectors.md#calling-sequence)).                                     |
-|                                               | 参数s are discussed at length here: [PF_ParamDef](../PF_ParamDef).                                                                                                         |
-| [output](../PF_EffectWorld)                   | The output image, to be rendered by the effect plug-in and passed back to After Effects.                                                                                        |
-|                                               | Only valid during certain selectors.                                                                                                                                            |
-| [extra](../../effect-ui-events/PF_EventExtra) | The extra parameter varies with the command sent or (in the case of [PF_Cmd_EVENT](command-selectors.md#messaging), the [event type](../../effect-ui-events/effect-ui-events)). |
-|                                               | Used primarily for event management and [Parameter Supervision](../../effect-details/parameter-supervision).                                                                    |
+| 参数                                       | 用途                                                                                                                                                |
+| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [cmd](../command-selectors)                   | After Effects 设置[命令选择器](../command-selectors) 来告诉插件要做什么。                                                                              |
+| [in_data](../PF_InData)                       | 关于应用程序状态的信息以及插件被告知要处理的数据。                                                                                                  |
+|                                            | 还提供了许多接口和图像操作函数的指针。                                                                                                              |
+| [out_data](../PF_OutData)                     | 通过在 `out_data` 中设置字段将信息传递回 After Effects。                                                                                          |
+| [params](../parameters)                       | 插件在 `in_data> current_time` 时提供的参数数组。                                                                                                 |
+|                                            | `params[0]` 是输入图像（一个 [PF_EffectWorld / PF_LayerDef](../PF_EffectWorld)），效果应应用于此图像。                                               |
+|                                            | 这些值仅在特定选择器期间有效（这在[选择器描述](command-selectors.md#calling-sequence) 中有说明）。                                                     |
+|                                            | 参数在此处详细讨论：[PF_ParamDef](../PF_ParamDef)。                                                                                                    |
+| [output](../PF_EffectWorld)                   | 输出图像，由效果插件渲染并传递回 After Effects。                                                                                                    |
+|                                            | 仅在特定选择器期间有效。                                                                                                                            |
+| [extra](../../effect-ui-events/PF_EventExtra) | `extra` 参数根据发送的命令或（在 [PF_Cmd_EVENT](command-selectors.md#messaging) 的情况下，[事件类型](../../effect-ui-events/effect-ui-events)）而变化。 |
+|                                            | 主要用于事件管理和[参数监督](../../effect-details/parameter-supervision)。                                                                             |

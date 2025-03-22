@@ -1,56 +1,56 @@
 ---
-title: other-integration-possibilities
+title: 其他集成可能性
 ---
-# Other Integration Possibilities
+# 其他集成可能性
 
-Although this SDK describes the majority of integration possibilities with After Effects, there are other possibilities not to be overlooked.
+尽管此 SDK 描述了与 After Effects 的大多数集成可能性，但还有一些其他可能性不容忽视。
 
 ---
 
-## Scripting
+## 脚本编写
 
-Scripting is a relatively nimble and lightweight means to perform automated tasks with After Effects. ScriptUI is one way you can provide UI integration with custom dialogs and panels (see [HTML5 Panels](#html5-panels) too). And scripting may be used in tandem with plug-in development, in the cases where a certain function is made available via scripting and not via the C APIs described in this document.
+脚本编写是一种相对灵活且轻量级的方式，用于在 After Effects 中执行自动化任务。ScriptUI 是一种可以通过自定义对话框和面板提供 UI 集成的方式（也可以参见 [HTML5 面板](#html5-panels)）。在某些情况下，脚本编写可以与插件开发结合使用，特别是当某些功能通过脚本提供而不是通过本文档中描述的 C API 提供时。
 
-Scripting in After Effects is done using ExtendScript, based on JavaScript. After Effects includes the ExtendScript ToolKit, a convenient interface for creating and testing your own scripts. Scripts may be compiled into .jsxbin binary files, to protect intellectual property.
+在 After Effects 中，脚本编写使用基于 JavaScript 的 ExtendScript 完成。After Effects 包含 ExtendScript 工具包，这是一个方便的界面，用于创建和测试您自己的脚本。脚本可以编译为 .jsxbin 二进制文件，以保护知识产权。
 
-You can access the After Effects Scripting Guide, and find a link to the scripting forums, on the Adobe I/O website at: [https://www.adobe.io/apis/creativecloud/aftereffects.html](https://www.adobe.io/apis/creativecloud/aftereffects.html)
+您可以访问 After Effects 脚本指南，并在 Adobe I/O 网站上找到脚本论坛的链接：[https://www.adobe.io/apis/creativecloud/aftereffects.html](https://www.adobe.io/apis/creativecloud/aftereffects.html)
 
-After Effects can be driven by executing scripts from the commandline. In your script, you can open the project and run script actions on it. So for example, you can execute the following statement to run a script from the command line directly:
+After Effects 可以通过从命令行执行脚本来驱动。在您的脚本中，您可以打开项目并对其运行脚本操作。例如，您可以直接从命令行执行以下语句来运行脚本：
 
 ```sh
 AfterFX -s "app.quit()"
 ```
 
-Or you can execute this statement to run a .jsx script that includes a quit at the end:
+或者您可以执行以下语句来运行包含退出命令的 .jsx 脚本：
 
 ```sh
 AfterFX -r path_to_jsx_script
 ```
 
-On Windows, AfterFX.com is the way to get feedback to the console, because AfterFX.com is a command line application.
+在 Windows 上，AfterFX.com 是获取控制台反馈的方式，因为 AfterFX.com 是一个命令行应用程序。
 
 ---
 
-## HTML5 Panels
+## HTML5 面板
 
-In CC 2014 and later, After Effects supports HTML5 panels. They are accessed in After Effects from Window > Extensions > (your panel name). Panels can be resized and docked just like any other panel in After Effects. Panels are built using HTML5, After Effects Scripting, and JavaScript. You may download the After Effects Panel SDK from the the Adobe I/O website at: [https://www.adobe.io/apis/creativecloud/aftereffects.html](https://www.adobe.io/apis/creativecloud/aftereffects.html)
+在 CC 2014 及更高版本中，After Effects 支持 HTML5 面板。它们可以通过 After Effects 中的“窗口 > 扩展 >（您的面板名称）”访问。面板可以像 After Effects 中的任何其他面板一样调整大小和停靠。面板是使用 HTML5、After Effects 脚本和 JavaScript 构建的。您可以从 Adobe I/O 网站下载 After Effects 面板 SDK：[https://www.adobe.io/apis/creativecloud/aftereffects.html](https://www.adobe.io/apis/creativecloud/aftereffects.html)
 
 ---
 
 ## AERender
 
-Closely coupled with scripting is the command line interface offered by aerender. aerender is primarily suited to allow automated renders, but can be used to execute any sequence of scripting commands from the command line. An overview is available in the After Effects help documents here: [https://helpx.adobe.com/after-effects/using/automated-rendering-network-rendering.html](https://helpx.adobe.com/after-effects/using/automated-rendering-network-rendering.html)
+与脚本编写密切相关的是 aerender 提供的命令行界面。aerender 主要用于实现自动化渲染，但也可以用于从命令行执行任何脚本命令序列。After Effects 帮助文档中提供了概述：[https://helpx.adobe.com/after-effects/using/automated-rendering-network-rendering.html](https://helpx.adobe.com/after-effects/using/automated-rendering-network-rendering.html)
 
 ---
 
-## Premiere Pro Importers
+## Premiere Pro 导入器
 
-Premiere Pro importers provide support for importing media into applications across most applications in the Adobe Creative Cloud, including Premiere Pro, Media Encoder, Prelude, and Audition. Because of this broader compatibility, unless you need very specific integration with After Effects only available via the AEIO API in this SDK, we recommend developing a Premiere Pro importer. The Premiere Pro SDK is available at: [https://www.adobe.io/apis/creativecloud/premierepro.html](https://www.adobe.io/apis/creativecloud/premierepro.html)
+Premiere Pro 导入器提供了将媒体导入 Adobe Creative Cloud 中大多数应用程序的支持，包括 Premiere Pro、Media Encoder、Prelude 和 Audition。由于这种更广泛的兼容性，除非您需要通过此 SDK 中的 AEIO API 实现与 After Effects 的非常特定的集成，否则我们建议开发 Premiere Pro 导入器。Premiere Pro SDK 可在以下位置获取：[https://www.adobe.io/apis/creativecloud/premierepro.html](https://www.adobe.io/apis/creativecloud/premierepro.html)
 
-One advantage of MediaCore importer plug-ins over AEIOs is its priority system: The highest priority importer gets first crack at importing a file, and if the particular imported file isn't supported, the next-highest priority importer will then have the opportunity to try importing it, and so on.
+MediaCore 导入器插件相对于 AEIO 的一个优势是其优先级系统：最高优先级的导入器首先尝试导入文件，如果特定导入文件不受支持，则次高优先级的导入器将有机会尝试导入，依此类推。
 
 ---
 
 ## Mercury Transmit
 
-Mercury Transmit plug-ins are used for sending video to output hardware for broadcast-quality monitoring. Transmitters are supported across most applications in the Adobe Creative Cloud, including Premiere Pro, After Effects, Prelude, and Character Animator. The Mercury Transmit API is documented in the Premiere Pro SDK, available at: [https://www.adobe.io/apis/creativecloud/premierepro.html](https://www.adobe.io/apis/creativecloud/premierepro.html)
+Mercury Transmit 插件用于将视频发送到输出硬件以进行广播质量的监控。发射器在 Adobe Creative Cloud 中的大多数应用程序中受支持，包括 Premiere Pro、After Effects、Prelude 和 Character Animator。Mercury Transmit API 记录在 Premiere Pro SDK 中，可在以下位置获取：[https://www.adobe.io/apis/creativecloud/premierepro.html](https://www.adobe.io/apis/creativecloud/premierepro.html)

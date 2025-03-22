@@ -1,82 +1,81 @@
 ---
-title: data-types
+title: 数据类型
 ---
-# Data Types
+# 数据类型
 
-Whenever possible, After Effects presents plug-ins with opaque data types, and provides accessor functions for manipulating them. For example, video frames are represented using the opaque AEGP_WorldH. While in some cases it might be more efficient to simply modify the underlying structure, by maintaining the opaqueness of the data types we allow for changes to our implementation without making you recompile (and redistribute) your plug-ins.
+在可能的情况下，After Effects 会向插件提供不透明的数据类型，并提供用于操作它们的访问函数。例如，视频帧使用不透明的 AEGP_WorldH 表示。虽然在某些情况下直接修改底层结构可能更高效，但通过保持数据类型的不透明性，我们可以在不影响您重新编译（和重新分发）插件的情况下对实现进行更改
 
 ---
 
 ## AEGP API Data Types
 
-|            类型            |                                                                                      Describes                                                                                      |                                  Manage Using                                   |
-|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-| `AEGP_MemHandle`           | This structure contains more than just the referenced memory. So it should not be dereferenced directly.                                                                            | [AEGP Memory Suite](aegp-suites.md#aegp_memorysuite1)                           |
-|                            | Use `AEGP_LockMemHandle` in the AEGP Memory Suite to get a pointer to the memory referenced by the `AEGP_MemHandle`. And of course, unlock it when you're done.                     |                                                                                 |
-| `AEGP_ProjectH`            | The current After Effects project. Projects are a set of elements arranged hierarchically in a tree to preserve semantic relationships.                                             | [AEGP Project Suite](aegp-suites.md#aegp_projsuite6)                            |
-|                            | Interior nodes of the tree are folders.                                                                                                                                             |                                                                                 |
-|                            | As of CS6, there will only ever be one open project.                                                                                                                                |                                                                                 |
-| `AEGP_ItemH`               | An abstraction describing any element of a project, including folders. An item is anything that can be selected.                                                                    | [AEGP Item Suite](aegp-suites.md#aegp_itemsuite9)                               |
-|                            | Since multiple object types can be selected, we treat them as AEGP_ItemHs until more specificity is required.                                                                       |                                                                                 |
-| `AEGP_Collection2H`        | A set of selected items.                                                                                                                                                            | [AEGP Collection Suite](aegp-suites.md#aegp_collectionsuite2)                   |
-| `AEGP_CompH`               | A composition is a sequence of renderable items that, together, produce output.                                                                                                     | [AEGP Composition Suite](aegp-suites.md#aegp_compositesuite2)                   |
-|                            | A composition exists over a time interval.                                                                                                                                          |                                                                                 |
-|                            | Multiple compositions can exist within one project.                                                                                                                                 |                                                                                 |
-| `AEGP_FootageH`            | An item that can be rendered. Folders and compositions are the only items that are not footage.                                                                                     | [AEGP Footage Suite](aegp-suites.md#aegp_footagesuite5)                         |
-| `AEGP_LayerH`              | An element of a composition. Layers are rendered in sequence, which allows for occlusions.                                                                                          | [AEGP Layer Suite](aegp-suites.md#aegp_layersuite9)                             |
-|                            | Solids, text, paint, cameras, lights, images, and image sequences are all represented as layers.                                                                                    |                                                                                 |
-|                            | Layers may be defined over sub-intervals of the composition's time interval.                                                                                                        |                                                                                 |
-| `AEGP_WorldH`              | A frame of pixels.                                                                                                                                                                  | [AEGP World Suite](aegp-suites.md#aegp_worldsuite3)                             |
-| `AEGP_EffectRefH`          | An effect applied to a layer. An effect is a function that takes as its argument a layer (and possibly other parameters) and returns an altered version of the layer for rendering. | [AEGP Effect Suite](aegp-suites.md#aegp_effectsuite4)                           |
-| `AEGP_StreamRefH`          | Any [parameter stream](aegp-suites.md#diving-into-streams) attached to a layer, in a composition.                                                                                   | [AEGP Stream Suite](aegp-suites.md#stream-suite),                               |
-|                            |                                                                                                                                                                                     | [AEGP Dynamic Stream Suite](aegp-suites.md#aegp_dynamicstreamsuite4),           |
-|                            | See the description of `AEGP_GetNewLayerStream` from [AEGP_StreamSuite5](aegp-suites.md#stream-suite) for a full list of stream types.                                              | [AEGP Keyframe Suite](aegp-suites.md#aegp_keyframesuite3)                       |
-| `AEGP_MaskRefH`            | A mask applied to a layer. An AEGP_MaskRefH is used to access details about the mask stream, not the specific points which constitute the mask.                                     | [AEGP Mask Suite](aegp-suites.md#aegp_masksuite6)                               |
-|                            | A mask is a rasterized path (sequence of vertices) that partitions a layer into two pieces, allowing each to be rendered differently.                                               |                                                                                 |
-| `AEGP_MaskOutlineValH`     | The specific points which constitute the mask.                                                                                                                                      | [AEGP Mask Outline Suite](aegp-suites.md#aegp_maskoutlinesuite3)                |
-|                            | The points in a mask outline are ordered, and the mask need not be closed.                                                                                                          |                                                                                 |
-| `AEGP_TextDocumentH`       | Represents the actual text associated with a text layer.                                                                                                                            | [AEGP Text Document Suite](aegp-suites.md#aegp_textdocumentsuite1)              |
-| `AEGP_TextOutlinesH`       | A reference to all the paths that make up the outlines of a given text layer.                                                                                                       | [AEGP Text Layer Suite](aegp-suites.md#aegp_textlayersuite1)                    |
-| `AEGP_MarkerVal`           | The data associated with a given timeline marker.                                                                                                                                   | [AEGP Marker Suite](aegp-suites.md#aegp_markersuite2)                           |
-| `AEGP_PersistentBlobH`     | A "blob" of data containing the current preferences.                                                                                                                                | [AEGP Persistent Data Suite](aegp-suites.md#persistent-data-suite)              |
-| `AEGP_RenderOptionsH`      | The settings associated with a render request.                                                                                                                                      | [AEGP Render Options Suite](aegp-suites.md#aegp_renderoptionssuite4)            |
-| `AEGP_LayerRenderOptionsH` | The settings associated with a layer render request.                                                                                                                                | [AEGP Layer Render Options Suite](aegp-suites.md#aegp_layerrenderoptionssuite1) |
-| `AEGP_FrameReceiptH`       | A reference to a rendered frame.                                                                                                                                                    | [AEGP Render Suite](aegp-suites.md#render-suites)                               |
-| `AEGP_RQItemRefH`          | An item in the render queue.                                                                                                                                                        | [AEGP Render Queue Suite](aegp-suites.md#render-queue-suite),                   |
-|                            |                                                                                                                                                                                     | [AEGP Render Queue Item Suite](aegp-suites.md#render-queue-item-suite)          |
-| `AEGP_OutputModuleRefH`    | An output module, attached to a specific AEGP_RQItemRef in the render queue.                                                                                                        | [AEGP Output Module Suite](aegp-suites.md#output-module-suite)                  |
-| `AEGP_SoundDataH`          | The [audio settings](aegp-suites.md#audio-settings) used for a given layer.                                                                                                         | [AEGP Sound Data Suite](aegp-suites.md#aegp_sounddatesuite1)                    |
-| `AEGP_RenderLayerContextH` | State information at the time of a render request, sent to an Artisan by After Effects.                                                                                             | [AEGP Canvas Suite](../artisans/artisan-data-types.md#aegp_canvassuite8)        |
-| `AEGP_RenderReceiptH`      | Used by Artisans when rendering.                                                                                                                                                    | [AEGP Canvas Suite](../artisans/artisan-data-types.md#aegp_canvassuite8)        |
+| 类型                         | Describes                                                                                                                             | Manage Using                                                                 |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `AEGP_MemHandle`           | 该结构体包含的内容远不止被引用的内存，因此不应直接解引用。                                                                            | [AEGP Memory Suite](aegp-suites.md#aegp_memorysuite1)                           |
+|                              | 使用 AEGP 内存套件中的 `AEGP_LockMemHandle` 来获取 `AEGP_MemHandle` 所引用内存的指针。完成后请务必解锁。                          |                                                                              |
+| `AEGP_ProjectH`            | 当前 After Effects 项目。项目是一组通过树状结构分层排列以保持语义关系的元素。                                                         | [AEGP Project Suite](aegp-suites.md#aegp_projsuite6)                            |
+|                              | 树的内部节点是文件夹。                                                                                                                |                                                                              |
+|                              | 自 CS6 版本起，只会存在一个打开的项目。                                                                                               |                                                                              |
+| `AEGP_ItemH`               | 描述项目中任何元素的抽象概念（包括文件夹）。项目项是任何可被选择的对象。                                                              | [AEGP Item Suite](aegp-suites.md#aegp_itemsuite9)                               |
+|                              | 由于多种对象类型都可被选择，在需要更具体类型前我们统一视为 AEGP_ItemH。                                                               |                                                                              |
+| `AEGP_Collection2H`        | 一组被选中的项目项集合。                                                                                                              | [AEGP Collection Suite](aegp-suites.md#aegp_collectionsuite2)                   |
+| `AEGP_CompH`               | 合成是多个可渲染项目项的序列，共同产生输出结果。                                                                                      | [AEGP Composition Suite](aegp-suites.md#aegp_compositesuite2)                   |
+|                              | 合成存在于特定时间区间内。                                                                                                            |                                                                              |
+|                              | 一个项目可包含多个合成。                                                                                                              |                                                                              |
+| `AEGP_FootageH`            | 可渲染的项目项。文件夹和合成是仅有的非素材类型。                                                                                      | [AEGP Footage Suite](aegp-suites.md#aegp_footagesuite5)                         |
+| `AEGP_LayerH`              | 合成的组成元素。图层按顺序渲染以实现遮挡效果。                                                                                        | [AEGP Layer Suite](aegp-suites.md#aegp_layersuite9)                             |
+|                              | 固态层、文本、绘画、摄像机、灯光、图像及图像序列都以图层形式表现。                                                                    |                                                                              |
+|                              | 当前 After Effects 项目。项目是一组通过树状结构分层排列以保持语义关系的元素。                                                         |                                                                              |
+| `AEGP_WorldH`              | 单帧像素数据。                                                                                                                        | [AEGP World Suite](aegp-suites.md#aegp_worldsuite3)                             |
+| `AEGP_EffectRefH`          | 应用于图层的特效。特效函数以图层（可能包含其他参数）为输入，返回修改后的渲染版本。                                                    | [AEGP Effect Suite](aegp-suites.md#aegp_effectsuite4)                           |
+| `AEGP_StreamRefH`          | 合成中附加到图层的任何[parameter stream](aegp-suites.md#diving-into-streams)                                                             | [AEGP Stream Suite](aegp-suites.md#stream-suite),                               |
+|                              |                                                                                                                                       | [AEGP Dynamic Stream Suite](aegp-suites.md#aegp_dynamicstreamsuite4),           |
+|                              | See the description of `AEGP_GetNewLayerStream` from [AEGP_StreamSuite5](aegp-suites.md#stream-suite) for a full list of stream types. | [AEGP Keyframe Suite](aegp-suites.md#aegp_keyframesuite3)                       |
+| `AEGP_MaskRefH`            | 应用于图层的遮罩。AEGP_MaskRefH 用于访问遮罩流信息，而非构成遮罩的具体顶点数据。                                                      | [AEGP Mask Suite](aegp-suites.md#aegp_masksuite6)                               |
+|                              | 遮罩是栅格化路径（顶点序列），可将图层分割为两个部分以便分别渲染。                                                                    |                                                                              |
+| `AEGP_MaskOutlineValH`     | 构成遮罩的具体顶点数据。                                                                                                              | [AEGP Mask Outline Suite](aegp-suites.md#aegp_maskoutlinesuite3)                |
+|                              | 遮罩轮廓顶点按顺序排列，遮罩路径无需闭合。                                                                                            |                                                                              |
+| `AEGP_TextDocumentH`       | 表示文本图层关联的实际文本内容。                                                                                                      | [AEGP Text Document Suite](aegp-suites.md#aegp_textdocumentsuite1)              |
+| `AEGP_TextOutlinesH`       | 引用构成文本图层轮廓的所有路径。                                                                                                      | [AEGP Text Layer Suite](aegp-suites.md#aegp_textlayersuite1)                    |
+| `AEGP_MarkerVal`           | 时间轴标记关联的数据。                                                                                                                | [AEGP Marker Suite](aegp-suites.md#aegp_markersuite2)                           |
+| `AEGP_PersistentBlobH`     | 包含当前首选项设置的"二进制数据块"。                                                                                                  | [AEGP Persistent Data Suite](aegp-suites.md#persistent-data-suite)              |
+| `AEGP_RenderOptionsH`      | 渲染请求关联的设置参数。                                                                                                              | [AEGP Render Options Suite](aegp-suites.md#aegp_renderoptionssuite4)            |
+| `AEGP_LayerRenderOptionsH` | 图层渲染请求关联的设置参数。                                                                                                          | [AEGP Layer Render Options Suite](aegp-suites.md#aegp_layerrenderoptionssuite1) |
+| `AEGP_FrameReceiptH`       | 已渲染帧的引用。                                                                                                                      | [AEGP Render Suite](aegp-suites.md#render-suites)                               |
+| `AEGP_RQItemRefH`          | 渲染队列中的条目。                                                                                                                    | [AEGP Render Queue Suite](aegp-suites.md#render-queue-suite),                   |
+|                              |                                                                                                                                       | [AEGP Render Queue Item Suite](aegp-suites.md#render-queue-item-suite)          |
+| `AEGP_OutputModuleRefH`    | 附加到渲染队列中特定 AEGP_RQItemRef 的输出模块。                                                                                      | [AEGP Output Module Suite](aegp-suites.md#output-module-suite)                  |
+| `AEGP_SoundDataH`          | 图层使用的[audio settings](aegp-suites.md#audio-settings)                                                                                | [AEGP Sound Data Suite](aegp-suites.md#aegp_sounddatesuite1)                    |
+| `AEGP_RenderLayerContextH` | After Effects 发送给 Artisan 的渲染时状态信息。                                                                                       | [AEGP Canvas Suite](../artisans/artisan-data-types.md#aegp_canvassuite8)        |
+| `AEGP_RenderReceiptH`      | Artisan 渲染时使用的引用凭证。                                                                                                        | [AEGP Canvas Suite](../artisans/artisan-data-types.md#aegp_canvassuite8)        |
 
 ---
 
-## Nasty, Brutish, and Short
+## 恶劣、野蛮且短暂
 
-Information about layers, streams, and many other items doesn't survive long; it's often invalidated by user activity.
+关于图层、流以及其他许多项目的信息不会长久保存；它们经常因用户活动而失效。
 
-Anything that modifies the quantity (not quality) of items will invalidate references to those items; adding a keyframe to a stream invalidates references to that stream, but forcing a layer to be rendered doesn't invalidate references to it. Do not cache layer pixels.
+任何修改项目数量（而非质量）的操作都会使这些项目的引用失效；向流中添加关键帧会使该流的引用失效，但强制渲染图层并不会使其引用失效。不要缓存图层的像素数据。
 
-Caching references between calls to a specific hook function within your plug-in is not recommended; acquire information when you need it, and forget (release) it as soon as possible.
-
----
-
-## Were You Just Going To Leave That Data Lying Around?
-
-When you ask After Effects to populate and return handles to data structures, it's important that you clean up after yourself. For the following data types, you must call the appropriate disposal routines.
+不建议在插件内部对特定钩子函数的调用之间缓存引用；应在需要时获取信息，并尽快忘记（释放）它。
 
 ---
 
-## Data Types Requiring Disposal
+## 你打算就这样把数据丢在那里不管吗？
 
-|         Data Type          |                                                                       Disposal Function                                                                        |
-|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `AEGP_Collection2H`        | `AEGP_DisposeCollection`, from [AEGP_CollectionSuite2](aegp-suites.md#aegp_collectionsuite2)                                                                   |
-| `AEGP_FootageH`            | `AEGP_DisposeFootage`, from [AEGP_FootageSuite5](aegp-suites.md#aegp_footagesuite5)                                                                            |
-| `AEGP_WorldH`              | `AEGP_Dispose`, from [AEGP_WorldSuite3](aegp-suites.md#aegp_worldsuite3)                                                                                       |
-|                            | (Or `AEGP_DisposeTexture`, from [AEGP_CanvasSuite8](../artisans/artisan-data-types.md#aegp_canvassuite8), if layer texture created using `AEGP_RenderTexture`) |
-| `AEGP_EffectRefH`          | `AEGP_DisposeEffect`, from [AEGP_EffectSuite4](aegp-suites.md#aegp_effectsuite4)                                                                               |
-| `AEGP_MaskRefH`            | `AEGP_DisposeMask`, from [AEGP_MaskSuite6](aegp-suites.md#aegp_masksuite6)                                                                                     |
-| `AEGP_RenderOptionsH`      | `AEGP_Dispose`, from [AEGP_RenderQueueMonitorSuite1](aegp-suites.md#aegp_renderqueuemonitorsuite1)                                                             |
-| `AEGP_LayerRenderOptionsH` | `AEGP_Dispose`, from [AEGP_LayerRenderOptionsSuite1](aegp-suites.md#aegp_layerrenderoptionssuite1)                                                             |
-| `AEGP_RenderReceiptH`      | `AEGP_DisposeRenderReceipt`, from [AEGP_CanvasSuite8](../artisans/artisan-data-types.md#aegp_canvassuite8)                                                     |
+当你要求After Effects填充并返回数据结构句柄时，重要的是你要自行清理。对于以下数据类型，你必须调用相应的清理例程
+---------------------------------------------------------------------------------------------------------------
+
+## 需要处置的数据类型
+
+| 数据类型                     | 处置函数                                                                                                                                                        |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `AEGP_Collection2H`        | `AEGP_DisposeCollection`, from [AEGP_CollectionSuite2](aegp-suites.md#aegp_collectionsuite2)                                                                     |
+| `AEGP_FootageH`            | `AEGP_DisposeFootage`, from [AEGP_FootageSuite5](aegp-suites.md#aegp_footagesuite5)                                                                              |
+| `AEGP_WorldH`              | `AEGP_Dispose`, from [AEGP_WorldSuite3](aegp-suites.md#aegp_worldsuite3)                                                                                         |
+|                              | (Or `AEGP_DisposeTexture`, from [AEGP_CanvasSuite8](../artisans/artisan-data-types.md#aegp_canvassuite8), if layer texture created using `AEGP_RenderTexture`) |
+| `AEGP_EffectRefH`          | `AEGP_DisposeEffect`, from [AEGP_EffectSuite4](aegp-suites.md#aegp_effectsuite4)                                                                                 |
+| `AEGP_MaskRefH`            | `AEGP_DisposeMask`, from [AEGP_MaskSuite6](aegp-suites.md#aegp_masksuite6)                                                                                       |
+| `AEGP_RenderOptionsH`      | `AEGP_Dispose`, from [AEGP_RenderQueueMonitorSuite1](aegp-suites.md#aegp_renderqueuemonitorsuite1)                                                               |
+| `AEGP_LayerRenderOptionsH` | `AEGP_Dispose`, from [AEGP_LayerRenderOptionsSuite1](aegp-suites.md#aegp_layerrenderoptionssuite1)                                                               |
+| `AEGP_RenderReceiptH`      | `AEGP_DisposeRenderReceipt`, from [AEGP_CanvasSuite8](../artisans/artisan-data-types.md#aegp_canvassuite8)                                                       |

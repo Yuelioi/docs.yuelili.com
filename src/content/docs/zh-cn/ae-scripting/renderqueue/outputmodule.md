@@ -1,13 +1,13 @@
 ---
-title: outputmodule
+title: 输出模块
 ---
-# OutputModule object
+# OutputModule 对象
 
 `app.project.renderQueue.item(index).outputModule(index)`
 
 #### 描述
 
-An OutputModule object of a [RenderQueueItem](../renderqueueitem) generates a single file or sequence via a render operation, and contains attributes and methods relating to the file to be rendered.
+[RenderQueueItem](../renderqueueitem) 的 OutputModule 对象通过渲染操作生成单个文件或序列，并包含与要渲染的文件相关的属性和方法。
 
 ---
 
@@ -19,11 +19,11 @@ An OutputModule object of a [RenderQueueItem](../renderqueueitem) generates a si
 
 #### 描述
 
-The [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object for the file this output module is set to render.
+此输出模块设置为渲染的文件的 [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象。
 
 #### 类型
 
-[Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object; read/write.
+[Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象；可读写。
 
 ---
 
@@ -33,11 +33,11 @@ The [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access
 
 #### 描述
 
-When `true`, writes all source footage XMP metadata to the output file. Corresponds to the Include Source XMP Metadata option in the Output Module Settings dialog box.
+当为 `true` 时，将所有源素材的 XMP 元数据写入输出文件。对应于输出模块设置对话框中的“包含源 XMP 元数据”选项。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读写。
 
 ---
 
@@ -47,11 +47,11 @@ Boolean; read/write.
 
 #### 描述
 
-The name of the output module, as shown in the user interface.
+输出模块的名称，如用户界面中所示。
 
 #### 类型
 
-String; 只读.
+字符串；只读。
 
 ---
 
@@ -61,11 +61,11 @@ String; 只读.
 
 #### 描述
 
-An action to be performed when the render operation is completed.
+渲染操作完成后要执行的操作。
 
 #### 类型
 
-A `PostRenderAction` enumerated value (read/write); one of:
+`PostRenderAction` 枚举值（可读写）；可以是以下之一：
 
 - `PostRenderAction.NONE`
 - `PostRenderAction.IMPORT`
@@ -80,11 +80,11 @@ A `PostRenderAction` enumerated value (read/write); one of:
 
 #### 描述
 
-The names of all output-module templates available in the local installation of After Effects.
+本地安装的 After Effects 中所有可用的输出模块模板的名称。
 
 #### 类型
 
-Array of strings; 只读.
+字符串数组；只读。
 
 ---
 
@@ -96,17 +96,17 @@ Array of strings; 只读.
 
 #### 描述
 
-Applies the specified existing output-module template.
+应用指定的现有输出模块模板。
 
 #### 参数
 
-|   参数    |  类型  |               描述               |
-| -------------- | ------ | --------------------------------------- |
-| `templateName` | String | The name of the template to be applied. |
+| 参数             | 类型   | 描述               |
+| ---------------- | ------ | ------------------ |
+| `templateName` | 字符串 | 要应用的模板名称。 |
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
@@ -120,14 +120,14 @@ Nothing.
 
 #### 描述
 
-Gets a specific setting for a given Output Module.
+获取给定输出模块的特定设置。
 
-- Depreciated Source: [https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
-- Archived version: [https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
+- 废弃来源：[https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
+- 存档版本：[https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 
 #### 示例
 
-See the example in [RenderQueueItem.getSetting()](renderqueueitem.md#renderqueueitemgetsetting) for structure reference.
+请参阅 [RenderQueueItem.getSetting()](renderqueueitem.md#renderqueueitemgetsetting) 中的示例以获取结构参考。
 
 ---
 
@@ -141,38 +141,34 @@ See the example in [RenderQueueItem.getSetting()](renderqueueitem.md#renderqueue
 
 #### 描述
 
-Gets all settings for a given Output Module.
+获取给定输出模块的所有设置。
 
-- Depreciated Source: [https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
-- Archived version: [https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
+- 废弃来源：[https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
+- 存档版本：[https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 
 #### 示例
 
 ```javascript
-// Get object that contains the string version of all current output module setting
-// values of output module item 1 from render queue item 1.
-// To get the values in the number format, use GetSettingsFormat.NUMBER as an argument.
+// 获取包含渲染队列项1的输出模块项1的所有当前输出模块设置值的字符串版本的对象。
+// 要以数字格式获取值，请使用 GetSettingsFormat.NUMBER 作为参数。
 
 var omItem1_all_str= app.project.renderQueue.item(1).outputModule(1).getSettings( GetSettingsFormat.STRING );
 
-// Convert to JSON format so that it is human-readable.
+// 转换为 JSON 格式以便人类可读。
 
 var omItem1_all_str_json = omItem1_all_str.toSource();
 
-// Get object that contains string version of settable output module setting values
-// of output module item 1 from render queue item 1.
-// If you want to get the values in the number format, use
-// GetSettingsFormat.NUMBER_SETTABLE as an argument.
+// 获取包含渲染队列项1的输出模块项1的可设置输出模块设置值的字符串版本的对象。
+// 如果要获取数字格式的值，请使用 GetSettingsFormat.NUMBER_SETTABLE 作为参数。
 
 var omItem1_settable_str = app.project.renderQueue.item(1).outputModule(1).getSettings( GetSettingsFormat.STRING_SETTABLE );
 
-// Currently, the format setting in the output module is not settable, but it
-// is readable. The next line will tell you the current format of output module
-// item 1 from render queue item 1.
+// 目前，输出模块中的格式设置不可设置，但可读取。
+// 下一行将告诉您渲染队列项1的输出模块项1的当前格式。
 
 var current_format = app.project.renderQueue.item(1).outputModule(1).getSettings(GetSettingsFormat.STRING).Format;
 
-// This line will tell you the output module file info.
+// 此行将告诉您输出模块的文件信息。
 
 var current_omFileTempalte = app.project.renderQueue.item(1).outputModule(1).getSettings(GetSettingsFormat.STRING)["Output File Info"]["File Template"];
 ```
@@ -185,15 +181,15 @@ var current_omFileTempalte = app.project.renderQueue.item(1).outputModule(1).get
 
 #### 描述
 
-Removes this OutputModule object from the collection.
+从集合中删除此 OutputModule 对象。
 
 #### 参数
 
-None.
+无。
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
@@ -203,17 +199,17 @@ Nothing.
 
 #### 描述
 
-Saves this output module as a template and adds it to the te mpl ate s array.
+将此输出模块保存为模板并将其添加到模板数组中。
 
 #### 参数
 
-| 参数 |  类型  |          描述          |
-| --------- | ------ | ----------------------------- |
-| `name`    | String | The name of the new template. |
+| 参数     | 类型   | 描述           |
+| -------- | ------ | -------------- |
+| `name` | 字符串 | 新模板的名称。 |
 
 #### 返回
 
-Nothing.
+无。
 
 ---
 
@@ -227,14 +223,14 @@ Nothing.
 
 #### 描述
 
-Sets a specific setting for a given Output Module.
+设置给定输出模块的特定设置。
 
-- Depreciated Source: [https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
-- Archived version: [https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
+- 废弃来源：[https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
+- 存档版本：[https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 
 #### 示例
 
-See the example in [RenderQueueItem.setSetting()](renderqueueitem.md#renderqueueitemsetsetting) for structure reference.
+请参阅 [RenderQueueItem.setSetting()](renderqueueitem.md#renderqueueitemsetsetting) 中的示例以获取结构参考。
 
 ---
 
@@ -248,81 +244,79 @@ See the example in [RenderQueueItem.setSetting()](renderqueueitem.md#renderqueue
 
 #### 描述
 
-- Depreciated Source: [https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
-- Archived version: [https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
+- 废弃来源：[https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
+- 存档版本：[https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://web.archive.org/web/20200622100656/https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
 
 :::warning
-There is a bug that causes OutputModule object to be invalidated after the output module setting is modified, so you need to retrieve the Output Module again after you modify it.
+存在一个错误，导致在修改输出模块设置后 OutputModule 对象失效，因此在修改后需要重新获取输出模块。
 :::
 
 #### 示例
 
-Get the settings from one item's output module and use them on another:
+从一个项目的输出模块获取设置并将其应用于另一个项目：
 
 ```javascript
-// If you want to get the values in the number format, use
-// GetSettingsFormat.NUMBER_SETTABLE as an argument.
+// 如果要获取数字格式的值，请使用 GetSettingsFormat.NUMBER_SETTABLE 作为参数。
 
 var omItem1_settable_str = app.project.renderQueue.item(1).outputModule(1).getSettings( GetSettingsFormat.STRING_SETTABLE );
 
-// Set output module item 1 of render queue item 2 with values that you get from
-// output module 1 of render queue item 1
+// 使用从渲染队列项1的输出模块1获取的值设置渲染队列项2的输出模块项1
 
 app.project.renderQueue.item(2).outputModule(1).setSettings( omItem1_settable_str );
 ```
 
-Set output module item 1 of render queue item 3 with values that you create:
+使用您创建的值设置渲染队列项3的输出模块项1：
 
 ```javascript
 var crop_data = {
-    "Crop":        true,
-    "Crop Bottom": 0,
-    "Crop Left":   0,
-    "Crop Right":  8,
-    "Crop Top":    10
+  "Crop":    true,
+  "Crop Bottom": 0,
+  "Crop Left":   0,
+  "Crop Right":  8,
+  "Crop Top":  10
 };
 
 app.project.renderQueue.item(1).outputModule(3).setSettings( crop_data );
 ```
 
-Route the output file to the user directory:
+将输出文件路由到用户目录：
 
 ```javascript
 var om1 = app.project.renderQueue.item(1).outputModule(1);
-var file_name = File.decode( om1.file.name ); // Name contains special character, space?
+var file_name = File.decode( om1.file.name ); // 名称包含特殊字符，如空格？
 var new_dir = new Folder( "~/new_output" );
 var new_path = new_dir.fsName;
 
 var new_data = {
-    "Output File Info": {
-        "Base Path":      new_path,
-        "Subfolder Path": "draft",
-        "File Name":      file_name
-    }
+  "Output File Info": {
+    "Base Path":    new_path,
+    "Subfolder Path": "draft",
+    "File Name":    file_name
+  }
 };
 
 om1.setSettings( new_data );
 ```
 
-In this example, the output file is routed to the user directory, but this time using the full path:
+在此示例中，输出文件被路由到用户目录，但这次使用完整路径：
 
 ```javascript
 var om1 = app.project.renderQueue.item(1).outputModule(1);
 
-// Name contains special character, such as space?
+// 名称包含特殊字符，如空格？
 var file_name = File.decode( om1.file.name );
 var new_path = "/Users/myAccount/new_output";
 var separator = "/";
 
 if ($.os.indexOf("Mac") == -1) {
-    new_path = "C:\Users\myAccount\new_output";
-    separator = "\\";
+  new_path = "C:\Users\myAccount\new_output";
+  separator = "\\";
 }
 
 var new_data = {
-    "Output File Info": {
-        "Full Flat Path": new_path + separator + file_name
-    }
+  "Output File Info": {
+    "Full Flat Path": new_path + separator + file_name
+  }
 };
 
 om1.setSettings( new_data );

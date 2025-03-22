@@ -1,53 +1,54 @@
 ---
-title: apple-silicon-support
+title: Apple Silicon 支持
 ---
-# Apple Silicon Support
+# Apple Silicon 支持
 
-Adobe now supports Apple Silicon effect plugins in some products running natively on Apple Silicon. For instance, After Effects effect plugins are also available in Adobe Premiere Pro and Adobe Media Encoder.
+Adobe 现在支持在部分原生运行于 Apple Silicon 的产品中使用 Apple Silicon 效果插件。例如，After Effects 的效果插件也可以在 Adobe Premiere Pro 和 Adobe Media Encoder 中使用。
 
-Not all Adobe products have native Apple Silicon versions yet, but in those that do, only effect plugins with Apple Silicon implementations will be available. We recommend adding the Apple Silicon target soon in anticipation of rapid adoption of these new M1 machines.
+并非所有 Adobe 产品都有原生的 Apple Silicon 版本，但在那些支持的产品中，只有具有 Apple Silicon 实现的效果插件才可用。我们建议尽快添加 Apple Silicon 目标，以应对这些新 M1 机器的快速普及。
 
 :::note
-In order to build a Mac Universal binary, you will need Xcode 12.2 or greater. Adobe is currently using Xcode 12.4.
+为了构建 Mac 通用二进制文件，您需要 Xcode 12.2 或更高版本。Adobe 目前使用的是 Xcode 12.4。
 :::
 
-
-To learn more about Universal binaries, please visit [https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary](https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary)
+要了解更多关于通用二进制文件的信息，请访问 [https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary](https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary)
 
 ---
 
-## How to add Universal Binary Support for your Plugins
+## 如何为您的插件添加通用二进制支持
 
-1. Open your plugins Xcode project in 12.2 or above and Xcode will automatically add an Apple Silicon target for you.
+1. 在 Xcode 12.2 或更高版本中打开您的插件项目，Xcode 将自动为您添加 Apple Silicon 目标。
 
-![Mac Universal Build](../_static/mac_universal_build.png "Mac Universal Build")
-*Mac Universal Build*
+![Mac 通用构建](../_static/mac_universal_build.png "Mac 通用构建")
+*Mac 通用构建*
 
-1. Tell After Effects what the main entry point is for Apple Silicon builds.
+2. 告诉 After Effects Apple Silicon 构建的主入口点是什么。
 
-> * Find the .r resource file for your plugin.
-> * Add `CodeMacARM64 {"EffectMain"}` next to your existing Intel Mac entry point definition.
+> * 找到您的插件的 .r 资源文件。
+> * 在现有的 Intel Mac 入口点定义旁边添加 `CodeMacARM64 {"EffectMain"}`。
+>
 >   ```cpp
 >   #if defined(AE_OS_MAC)
 >     CodeMacARM64 {"EffectMain"},
 >     CodeMacIntel64 {"EffectMain"},
 >   #endif
 >   ```
-> * If for some reason you need different entry points on x64 and ARM just provide a different entry point name and string.
+>
+> * 如果由于某些原因您需要在 x64 和 ARM 上使用不同的入口点，只需提供不同的入口点名称和字符串即可。
 
-3. Compile the Universal binary by building for the Any Mac (Apple Silicon, Intel) Target, or by using Product -> Archive.
+3. 通过为“Any Mac (Apple Silicon, Intel)”目标构建或使用 Product -> Archive 来编译通用二进制文件。
 
-Assuming there are no compile time issues with the Apple Silicon build, you can now use the single Universal binary for both Intel and Apple Silicon applications.
+假设 Apple Silicon 构建没有编译时问题，您现在可以为 Intel 和 Apple Silicon 应用程序使用单一的通用二进制文件。
 
 ---
 
-## Exception Behavior with Apple Silicon Across "C" Functions
+## 跨“C”函数的 Apple Silicon 异常行为
 
-Extra care should be taken when using exceptions on Apple Silicon. In many environments throwing exceptions that propagate through traditional "C" functions worked fine. It was bad practice, with undefined behavior, but generally "worked".
+在 Apple Silicon 上使用异常时应格外小心。在许多环境中，通过传统的“C”函数传播的异常抛出通常可以正常工作。虽然这是不良实践，具有未定义行为，但通常“有效”。
 
-On Apple Silicon, rather than undefined behavior the ABI has changed so terminate() is called when this occurs.
+在 Apple Silicon 上，ABI 已更改，因此当发生这种情况时，会调用 terminate() 而不是未定义行为。
 
-Since the main entry point of a plugin is always an extern "C" calling convention, this code should be wrapped in a try/catch block to prevent program termination. For example:
+由于插件的主入口点始终是 extern "C" 调用约定，因此应将该代码包装在 try/catch 块中以防止程序终止。例如：
 
 ```cpp
 PF_Err EffectMain ( PF_Cmd cmd,
@@ -58,11 +59,11 @@ PF_Err EffectMain ( PF_Cmd cmd,
 {
     try
     {
-        /* Your code here */
+        /* 您的代码在这里 */
     }
     catch
     {
-        /* return most appropriate PF_Err */
+        /* 返回最合适的 PF_Err */
     }
 }
 ```

@@ -1,20 +1,10 @@
 ---
-title: cheating-effect-usage-of-aegp-suites
+title: AEGP效果套件作弊法
 ---
-# Cheating Effect Usage of AEGP Suites
+# AEGP套件的作弊法
 
-As soon as we showed developers the initial implementation of AEGP suites, they wanted to "cheat" and use them from within effects. This is certainly possible, but please keep in mind that depending on factors outside the effect API (i.e., any information you get from the AEGP APIs) can lead to trouble. If After Effects thinks an effect has all the information it needs to render, it won't (for example) update its parameters based on changes made through an AEGP function. We're actively working on this dependency issue for future versions, but bear it in mind as you write effects which "masquerade" as AEGPs.
+当我们向开发者展示AEGP套件的初始实现时，他们就想“作弊”并从效果内部使用它们。这当然是可能的，但请记住，依赖效果API之外的因素（即从AEGP API获取的任何信息）可能会导致问题。如果After Effects认为一个效果拥有渲染所需的所有信息，它不会（例如）根据通过AEGP函数所做的更改更新其参数。我们正在积极为未来版本解决这个依赖问题，但在编写“伪装”成AEGP的效果时请牢记这一点。
 
-Effects can use some AEGP suites to take advantage of camera and lighting information, as well as the `AEGP_GetLayerParentComp` and `AEGP_GetCompBGColor` functions, from [AEGP_CompSuite11](aegp-suites.md#aegp_compsuite11). This should not be interpreted to mean that effects can use *any* AEGP suite calls. Also, see [Effect UI & Events](../../effect-ui-events/effect-ui-events) for more information on effects adding keyframes.
+效果可以使用一些AEGP套件来利用相机和光照信息，以及来自[AEGP_CompSuite11](aegp-suites.md#aegp_compsuite11)的 `AEGP_GetLayerParentComp`和 `AEGP_GetCompBGColor`函数。这不应被解释为意味着效果可以使用*任何*AEGP套件调用。此外，有关添加关键帧的效果的更多信息，请参见[Effect UI &amp; Events](../../effect-ui-events/effect-ui-events)。
 
-[AEGP_PFInterfaceSuite](aegp-suites.md#aegp_pfinterfacesuite1) is the starting point. The functions in this suite allow you to retrieve the AEGP_LayerH for the layer to which the effect is applied, and the AEGP_EffectRefH for the instance of your effect. `AEGP_RegisterWithAEGP` from [AEGP_UtilitySuite6](aegp-suites.md#aegp_utilitysuite6) allows you to get an AEGP_PluginID, which is needed for many AEGP calls.
-
----
-
-## Depending on AEGP Queries
-
-One word: Don't. Effects cannot allow the results of AEGP queries to control what is rendered, without appropriately storing those query results (usually in sequence data), cancelling their own render, and forcing a re-render using the queried information.
-
-This is tricky.
-
-Failure to do so will result in nasty, subtle caching bugs guaranteed to cause hair loss and weight gain.
+[AEGP_PFInterfaceSuite](aegp-suites.md#aegp_pfinterfacesuite1)是起点。此套件中的函数允许您检索应用效果的图层的AEP_LayerH以及您的效果的实例的AE_EffectRefH。[AEUtilitySuite6](ae-suites.md#aeutilitysuite6)中的 `AE_RegisterWithAE`允许您获取许多AE调用所需的PluginID.   ## 依赖于 AE查询  一句话：不要这样做！除非适当存储这些查询结果（通常在序列数据中），取消自己的渲染并使用查询到的信息强制重新渲染,否则无法让 AE查询的结果控制所呈现的内容.   这很棘手.   如果不这样做会导致令人讨厌且难以察觉的缓存错误,保证会导致脱发和体重增加.

@@ -1,7 +1,7 @@
 ---
-title: fontsobject
+title: 字体组对象
 ---
-# Fonts object
+# 字体组对象
 
 `app.fonts`
 
@@ -11,19 +11,19 @@ title: fontsobject
 
 #### 描述
 
-The Fonts objects provides information about the current font ecosystem on your device.
+字体对象提供了关于设备上当前字体生态系统的信息。
 
-After Effects maintains an internal font proxy to a real font which it has enumerated in the font ecosystem. As the fonts in the font ecosystem are added and removed these internal font proxies are kept in sync as well by being added and removed.
+After Effects 维护了一个内部字体代理，指向字体生态系统中枚举的真实字体。随着字体生态系统中字体的添加和移除，这些内部字体代理也会同步添加和移除。
 
-The properties we report via the proxy [Font object](../fontobject) are the data that is available to us from the font files themselves, which of course will vary according to technology and type of font. It is not possible here to describe all the possible interesting variations and troubles that this causes us and in general it is advisable to be careful with assuming that the behavior and properties for one font type or technology are common to all other font types and technology - the answer as always is "it depends".
+我们通过代理 [Font 对象](../fontobject) 报告的属性是从字体文件本身获得的数据，这些数据当然会根据字体技术和类型的不同而有所变化。在这里无法描述所有可能的有趣变化和由此带来的问题，一般来说，假设一种字体类型或技术的行为和属性适用于所有其他字体类型和技术是不明智的——答案总是“视情况而定”。
 
-A [Font object](../fontobject) is a soft reference to one of these internal font proxies and as a consequence is not sufficient to keep the internal font proxy alive. As a result if the internal font proxy is removed, the referencing [Font object](../fontobject) will throw an invalid exception for any property reference.
+[Font 对象](../fontobject) 是对这些内部字体代理的软引用，因此不足以保持内部字体代理的存活。如果内部字体代理被移除，引用的 [Font 对象](../fontobject) 将在任何属性引用时抛出无效异常。
 
-On project open, and a few other situations, it may come to pass that the font which is being referenced in the persisted data cannot be found in the current font ecosystem. In these situations an internal font proxy will be created which will contain the desired properties, such as PostScript name, and will return `true` for [isSubstitute](fontobject.md#fontobjectissubstitute). There will be an underlying real font which will be selected to support this internal font proxy, but we do not reveal what it is and there is no way to influence this selection.
+在项目打开时，以及其他一些情况下，可能会发生持久化数据中引用的字体在当前字体生态系统中找不到的情况。在这些情况下，将创建一个内部字体代理，其中包含所需的属性，例如 PostScript 名称，并将为 [isSubstitute](fontobject.md#fontobjectissubstitute) 返回 `true`。将有一个底层的真实字体被选择来支持这个内部字体代理，但我们不会透露它是什么，也无法影响这个选择。
 
-Continuing the open process with created substitute fonts, an attempt will be made to sync matching fonts from Creative Cloud Adobe Fonts. This is an asynchronous activity and the project will usually finish opening and be ready for use before any fonts are brought down from Adobe Fonts. Depending on how many fonts are being synced, they may be installed at different times. There is no way to disable this attempt.
+继续使用创建的替代字体进行打开过程，将尝试从 Creative Cloud Adobe Fonts 同步匹配的字体。这是一个异步活动，项目通常会在从 Adobe Fonts 下载任何字体之前完成打开并准备使用。根据同步的字体数量，它们可能会在不同的时间安装。无法禁用此尝试。
 
-After any change to the font ecosystem from installing new real fonts, the outstanding list of substitute fonts will be evaluated to see if there now exists a real font which is a valid replacement for it - currently only requiring the PostScript name to match - and if one is found automatically all the references in the project to the substitute will be replaced with the newly installed font.
+在安装新的真实字体后，将对未完成的替代字体列表进行评估，以查看是否存在一个真实字体可以有效地替换它——目前只需要 PostScript 名称匹配——如果找到一个，项目中对替代字体的所有引用将自动替换为新安装的字体。
 
 ---
 
@@ -35,33 +35,33 @@ After any change to the font ecosystem from installing new real fonts, the outst
 
 #### 描述
 
-The list of all the fonts currently available on your system.
+当前系统上所有可用字体的列表。
 
-They are grouped into what is named a family group which are Arrays of [Font object](../fontobject).
+它们被分组为所谓的家族组，这些组是 [Font 对象](../fontobject) 的数组。
 
-The Family Name of the group is simply the [familyName](fontobject.md#fontobjectfamilyname) of any of the [Font objects](../fontobject) in the group.
+组的家族名称只是组中任何 [Font 对象](../fontobject) 的 [familyName](fontobject.md#fontobjectfamilyname)。
 
-The Family Name in one font group is not guaranteed to have unique name compared to different font groups - the grouping is determined by a number of factors including the returned value of [FontObject.technology](fontobject.md#fontobjecttechnology) and [FontObject.writingScripts](fontobject.md#fontobjectwritingscripts).
+一个字体组的家族名称不保证与其他字体组具有唯一的名称——分组由多个因素决定，包括 [FontObject.technology](fontobject.md#fontobjecttechnology) 和 [FontObject.writingScripts](fontobject.md#fontobjectwritingscripts) 的返回值。
 
-In addition, it is perfectly acceptable to have multiple fonts with the same PostScript name, though only one will have the same (PostScript name, Technology, Primary Writing Script) tuple. In the case of true duplicates, it is undefined which will be returned and which will be suppressed.
+此外，完全允许多个字体具有相同的 PostScript 名称，尽管只有一个具有相同的（PostScript 名称、技术、主要书写脚本）元组。在真正重复的情况下，返回哪个字体以及哪个字体被抑制是未定义的。
 
-The family groups and [Font objects](../fontobject) in the group are sorted according to the setting in the Character Panel dropdown "Show Font Names in English". If set to `true`, the [familyName](fontobject.md#fontobjectfamilyname) and [styleName](fontobject.md#fontobjectstylename) property is used, otherwise the [nativeFamilyName](fontobject.md#fontobjectnativefamilyname) and [nativeStyleName](fontobject.md#fontobjectnativestylename) property is used.
+家族组和组中的 [Font 对象](../fontobject) 根据字符面板下拉菜单中的“以英文显示字体名称”设置进行排序。如果设置为 `true`，则使用 [familyName](fontobject.md#fontobjectfamilyname) 和 [styleName](fontobject.md#fontobjectstylename) 属性，否则使用 [nativeFamilyName](fontobject.md#fontobjectnativefamilyname) 和 [nativeStyleName](fontobject.md#fontobjectnativestylename) 属性。
 
-[Font object](../fontobject) for which [isSubstitute](fontobject.md#fontobjectissubstitute) returns `true` are always sorted to the end as individual family groups.
+[Font 对象](../fontobject) 如果 [isSubstitute](fontobject.md#fontobjectissubstitute) 返回 `true`，则始终作为单独的家族组排序到最后。
 
 #### 类型
 
-Array of Arrays of [Font objects](../fontobject); 只读.
+[Font 对象](../fontobject) 的数组的数组；只读。
 
 #### 示例
 
-This example will select the first returned Font Family Array.
+此示例将选择第一个返回的字体家族数组。
 
 ```javascript
-// Getting the first available Font Family Group on the system
+// 获取系统上第一个可用的字体家族组
 var firstFontGroup = app.fonts.allFonts[0];
 
-// Getting the first Style for that Font Family
+// 获取该字体家族的第一个样式
 var firstFontFamilyName = firstFontGroup[0].familyName;
 var firstFamilyStyle = firstFontGroup[0].styleName;
 
@@ -80,11 +80,11 @@ alert(firstFontFamilyName+" "+firstFamilyStyle);
 
 #### 描述
 
-Provides access to the Favorites list presented in the Character panel and Properties panel. To set the Favorites simply provide an (unsorted) array of strings based on the [familyName](fontobject.md#fontobjectfamilyname). To clear the list simply assign an empty Array.
+提供对字符面板和属性面板中显示的收藏列表的访问。要设置收藏列表，只需提供一个基于 [familyName](fontobject.md#fontobjectfamilyname) 的（未排序的）字符串数组。要清除列表，只需分配一个空数组。
 
 #### 类型
 
-Array of Strings; read/write.
+字符串数组；可读写。
 
 ---
 
@@ -98,13 +98,13 @@ Array of Strings; read/write.
 
 #### 描述
 
-It is perfectly legal and common for more than one [Font object](../fontobject) to return the same value for [postScriptName](fontobject.md#fontobjectpostscriptname) but as this can sometimes lead to confusion about what [Font object](../fontobject) will actually be used when using [TextDocument.font](textdocument.md#textdocumentfont) or the `.font` attribute of a [CharacterRange object](../characterrange), this property exists to both reveal what duplicates exist and also their relative order.
+多个 [Font 对象](../fontobject) 返回相同的 [postScriptName](fontobject.md#fontobjectpostscriptname) 是完全合法且常见的，但由于这有时会导致在使用 [TextDocument.font](textdocument.md#textdocumentfont) 或 [CharacterRange 对象](../characterrange) 的 `.font` 属性时对实际使用的 [Font 对象](../fontobject) 产生混淆，此属性既用于揭示存在的重复项，也用于揭示它们的相对顺序。
 
-This returns an Array in which each element is an Array of [Font objects](../fontobject), where the 0th element [Font object](../fontobject) is considered the primary [Font object](../fontobject) for the given PostScript name.
+这将返回一个数组，其中每个元素是一个 [Font 对象](../fontobject) 的数组，其中第 0 个元素的 [Font 对象](../fontobject) 被视为给定 PostScript 名称的主要 [Font 对象](../fontobject)。
 
 #### 类型
 
-Array of Arrays of [Font Objects](../fontobject); 只读.
+[Font 对象](../fontobject) 的数组的数组；只读。
 
 ---
 
@@ -118,15 +118,15 @@ Array of Arrays of [Font Objects](../fontobject); 只读.
 
 #### 描述
 
-Returns an unsigned number representing the current revision of the font environment.
+返回一个无符号数字，表示字体环境的当前修订版本。
 
-The revision is advanced when anything happens to the font environment which would change the contents, properties, or order of [Font objects](../fontobject) returned from a call to [FontsObject.allFonts](#fontsobjectallfonts).
+当字体环境中发生任何会改变 [FontsObject.allFonts](#fontsobjectallfonts) 返回的 [Font 对象](../fontobject) 的内容、属性或顺序的事情时，修订版本会增加。
 
-Among these are: installing or removing fonts in the font environment, opening or closing a project with substituted fonts, causing a custom Variable font instance to be created, and changing the setting in the Character Panel dropdown "Show Font Names in English".
+其中包括：在字体环境中安装或移除字体、打开或关闭带有替代字体的项目、导致创建自定义可变字体实例，以及更改字符面板下拉菜单中的“以英文显示字体名称”设置。
 
 #### 类型
 
-Floating-point value; 只读.
+浮点值；只读。
 
 #### 示例
 
@@ -143,11 +143,11 @@ alert(fsRev);
 
 #### 描述
 
-Returns an array of variable [Font objects](../fontobject), each using a unique font dictionary and with default values for their design axes. This API is a convenient way to quickly filter for a unique instance of each installed variable font.
+返回一个可变 [Font 对象](../fontobject) 的数组，每个对象使用唯一的字体字典，并具有其设计轴的默认值。此 API 是一种快速过滤每个已安装可变字体的唯一实例的便捷方法。
 
 #### 类型
 
-Array of [Font objects](../fontobject); 只读.
+[Font 对象](../fontobject) 的数组；只读。
 
 #### 示例
 
@@ -168,20 +168,20 @@ alert(variableFontList.length);
 
 #### 描述
 
-When a Project is opened and one or more fonts are not found in the local font environment, a *sync* process is initiated with Adobe Fonts to see if one or more Fonts could be activated and installed.
+当项目打开时，如果本地字体环境中找不到一个或多个字体，将启动与 Adobe Fonts 的 *同步* 过程，以查看是否可以激活并安装一个或多个字体。
 
-By default this happens automatically—this property will disable it from happening.
+默认情况下，这是自动发生的——此属性将禁用此行为。
 
 :::warning
-The rules for deciding if Adobe Fonts has a matching font is entirely based on the PostScript name. With some Variable Fonts, due to ambiguity about which font has which named instance, it is possible that more than one face (Regular/Italic) may be installed during an activation. Whether the installed font is a valid replacement is controlled by the [FontsObject.substitutedFontReplacementMatchPolicy](#fontsobjectsubstitutedfontreplacementmatchpolicy).
+决定 Adobe Fonts 是否有匹配字体的规则完全基于 PostScript 名称。对于某些可变字体，由于对哪个字体具有哪个命名实例的模糊性，可能会在激活期间安装多个字面（Regular/Italic）。安装的字体是否是有效替换由 [FontsObject.substitutedFontReplacementMatchPolicy](#fontsobjectsubstitutedfontreplacementmatchpolicy) 控制。
 :::
 
 #### 类型
 
-Boolean; read/write. One of:
+布尔值；可读写。其中之一：
 
-- `false` is the default—sync from Adobe Fonts may be attempted.
-- `true` means that no sync or install will be attempted.
+- `false` 是默认值——可能会尝试从 Adobe Fonts 同步。
+- `true` 表示不会尝试同步或安装。
 
 ---
 
@@ -191,15 +191,15 @@ Boolean; read/write. One of:
 
 #### 描述
 
-The list of all the missing or substituted fonts of the current Project.
+当前项目中所有缺失或替代字体的列表。
 
 :::tip
-A substituted font is a font that was already missing when the project is opened. A missing font is a font that went missing (font being uninstalled, for example) *while* the project was open.
+替代字体是在项目打开时已经缺失的字体。缺失字体是在项目打开时（例如字体被卸载）丢失的字体。
 :::
 
 #### 类型
 
-Array of [Font objects](../fontobject); 只读.
+[Font 对象](../fontobject) 的数组；只读。
 
 ---
 
@@ -213,11 +213,11 @@ Array of [Font objects](../fontobject); 只读.
 
 #### 描述
 
-Provides access to the Most Recently Used (MRU) list presented in the Character panel and Properties panel. To set the MRU simply provide an (unsorted) array of strings based on the [familyName](fontobject.md#fontobjectfamilyname). To clear the list simply assign an empty Array.
+提供对字符面板和属性面板中显示的最近使用（MRU）列表的访问。要设置 MRU，只需提供一个基于 [familyName](fontobject.md#fontobjectfamilyname) 的（未排序的）字符串数组。要清除列表，只需分配一个空数组。
 
 #### 类型
 
-Array of Strings; read/write.
+字符串数组；可读写。
 
 ---
 
@@ -231,19 +231,19 @@ Array of Strings; read/write.
 
 #### 描述
 
-Controls the rules which are used to determine which fonts are considered matching for automatic replacement for a substituted [Font object](../fontobject).
+控制用于确定哪些字体被视为自动替换替代 [Font 对象](../fontobject) 的匹配规则。
 
 #### 类型
 
-A `SubstitutedFontReplacementMatchPolicy` enumerated value; read/write. One of:
+`SubstitutedFontReplacementMatchPolicy` 枚举值；可读写。其中之一：
 
-- `SubstitutedFontReplacementMatchPolicy.POSTSCRIPT_NAME` is the default; any [Font object](../fontobject) which has the same PostScript name is a valid candidate for replacement of a substituted [Font object](../fontobject).
-- `SubstitutedFontReplacementMatchPolicy.CTFI_EQUAL` requires that the following properties of substituted [Font object](../fontobject) must match to be considered a valid candidate:
+- `SubstitutedFontReplacementMatchPolicy.POSTSCRIPT_NAME` 是默认值；任何具有相同 PostScript 名称的 [Font 对象](../fontobject) 都是替代 [Font 对象](../fontobject) 的有效候选者。
+- `SubstitutedFontReplacementMatchPolicy.CTFI_EQUAL` 要求替代 [Font 对象](../fontobject) 的以下属性必须匹配才能被视为有效候选者：
   - [postScriptName](fontobject.md#fontobjectpostscriptname)
   - [technology](fontobject.md#fontobjecttechnology)
-  - [writingScripts](fontobject.md#fontobjectwritingscripts) (primary)
+  - [writingScripts](fontobject.md#fontobjectwritingscripts)（主要）
   - [designVector](fontobject.md#fontobjectdesignvector)
-- `SubstitutedFontReplacementMatchPolicy.DISABLED` means that no [Font object](../fontobject) is an acceptable replacement for a the substituted [Font object](../fontobject).
+- `SubstitutedFontReplacementMatchPolicy.DISABLED` 表示没有 [Font 对象](../fontobject) 是替代 [Font 对象](../fontobject) 的可接受替换。
 
 ---
 
@@ -254,37 +254,37 @@ A `SubstitutedFontReplacementMatchPolicy` enumerated value; read/write. One of:
 `app.fonts.getCTScriptForString(charString, preferredCTScript)`
 
 :::note
-该方法添加于 After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
+该方法添加于 After Effects (Beta) 25.0，并且在 Beta 期间可能会发生变化。
 :::
 
 #### 描述
 
-This function will return an array of generic objects describing the number of characters in the range and the `CTScript` enum assigned to them. See [FontObject.writingScripts](fontobject.md#fontobjectwritingscripts) for a full list of `CTScript` enumerated values.
+此函数将返回一个通用对象数组，描述范围内的字符数量以及分配给它们的 `CTScript` 枚举。有关 `CTScript` 枚举值的完整列表，请参阅 [FontObject.writingScripts](fontobject.md#fontobjectwritingscripts)。
 
-If a character is deemed to be included in one or more `CTScript` values, the value specfied in the second argument `preferredCTScript` will break the tie.
+如果一个字符被认为包含在一个或多个 `CTScript` 值中，第二个参数 `preferredCTScript` 指定的值将打破平局。
 
 ```javascript
 var scriptsV = app.fonts.getCTScriptForString("ABヂ", CTScript.CT_ROMAN_SCRIPT);
 var str = "[0] chars:" + scriptsV[0].chars +   // 2
-            " ctScript:" + getEnumAsString(scriptsV[0].ctScript) +
-            "\n[1] chars:" + scriptsV[1].chars + // 1
-            " ctScript:" + getEnumAsString(scriptsV[1].ctScript);
+      " ctScript:" + getEnumAsString(scriptsV[0].ctScript) +
+      "\n[1] chars:" + scriptsV[1].chars + // 1
+      " ctScript:" + getEnumAsString(scriptsV[1].ctScript);
 alert(str);
 ```
 
 #### 参数
 
-|      参数      |      类型       |                        描述                         |
-| ------------------- | --------------- | ---------------------------------------------------------- |
-| `charString`        | String          | Characters to check. If empty, will return an empty array. |
-| `preferredCTScript` | `CTScript` enum | CT Script to prefer                                        |
+| 参数                  | 类型              | 描述                                       |
+| --------------------- | ----------------- | ------------------------------------------ |
+| `charString`        | 字符串            | 要检查的字符。如果为空，将返回一个空数组。 |
+| `preferredCTScript` | `CTScript` 枚举 | 首选的 CT 脚本                             |
 
 #### 返回
 
-Array of generic objects;
+通用对象数组；
 
-- Key `chars` will be set to number of characters the in the range.
-- Key `ctScript` will be set to the `CTScript` which applies to the characters in the range.
+- 键 `chars` 将设置为范围内的字符数量。
+- 键 `ctScript` 将设置为适用于范围内字符的 `CTScript`。
 
 —
 
@@ -293,24 +293,18 @@ Array of generic objects;
 `app.fonts.getDefaultFontForCTScript(ctScript)`
 
 :::note
-该方法添加于 After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
+该方法添加于 After Effects (Beta) 25.0，并且在 Beta 期间可能会发生变化。
 :::
 
 #### 描述
 
-This function will return an instance of [Font object](../fontobject) mapped as the default font based on `CTScript`.
+此函数将返回基于 `CTScript` 映射的默认字体的 [Font 对象](../fontobject) 实例。
 
-After Effects uses these mappings when typing or applying a font where it finds
-that the font does not contain a glyph for the character.
-In this situation it will attempt to map the character to a `CTScript` value
-and then use this default mapping to select an alternate font which may have a
-glyph for the character.
+After Effects 在键入或应用字体时使用这些映射，当它发现字体不包含某个字符的字形时。在这种情况下，它将尝试将字符映射到 `CTScript` 值，然后使用此默认映射选择一个可能具有该字符字形的替代字体。
 
-This mechanism is also used with text and fonts in Scripting thus providing a way
-to expose which fonts will be used for which `CTScript` values.
+此机制也用于脚本中的文本和字体，从而提供了一种方法来暴露哪些字体将用于哪些 `CTScript` 值。
 
-There is no guarantee that what is returned will support all, or even any, of the
-Unicode characters mapped to the `CTScript`.
+不保证返回的内容支持映射到 `CTScript` 的所有或任何 Unicode 字符。
 
 ```javascript
 var font = app.fonts.getDefaultFontForCTScript(CTScript.CT_JAPANESE_SCRIPT);
@@ -318,13 +312,13 @@ var font = app.fonts.getDefaultFontForCTScript(CTScript.CT_JAPANESE_SCRIPT);
 
 #### 参数
 
-| 参数  |      类型       |                   描述                    |
-| ---------- | --------------- | ------------------------------------------------ |
-| `ctScript` | `CTScript` enum | Corresponding CTScript to get default font from. |
+| 参数         | 类型              | 描述                            |
+| ------------ | ----------------- | ------------------------------- |
+| `ctScript` | `CTScript` 枚举 | 要获取默认字体的对应 CTScript。 |
 
 #### 返回
 
-[Font object](../fontobject)
+[Font 对象](../fontobject)
 
 ---
 
@@ -338,9 +332,9 @@ var font = app.fonts.getDefaultFontForCTScript(CTScript.CT_JAPANESE_SCRIPT);
 
 #### 描述
 
-This function will return an instance of [Font object](../fontobject) based on the ID of a previously found font.
+此函数将基于之前找到的字体的 ID 返回一个 [Font 对象](../fontobject) 实例。
 
-If no matching font is found, it will return undefined. This can occur with an unknown ID or if the original font has been removed from the font environment.
+如果找不到匹配的字体，它将返回 undefined。这可能发生在未知 ID 或原始字体已从字体环境中移除的情况下。
 
 ```javascript
 var font1 = app.fonts.allFonts[0][0];
@@ -350,13 +344,13 @@ alert(font1.fontID == font2.fontID);
 
 #### 参数
 
-| 参数 |  类型   |     描述     |
-| --------- | ------- | ------------------- |
-| fontID    | Integer | The ID of the font. |
+| 参数   | 类型 | 描述        |
+| ------ | ---- | ----------- |
+| fontID | 整数 | 字体的 ID。 |
 
 #### 返回
 
-[Font object](../fontobject), or undefined if no font by that ID.
+[Font 对象](../fontobject)，如果找不到该 ID 的字体，则返回 undefined。
 
 ---
 
@@ -366,10 +360,10 @@ alert(font1.fontID == font2.fontID);
 
 #### 描述
 
-This function will return an array of [Font object](../fontobject) based on the Family Name and Style Name of a font. If no suitable font is found, it will return an empty Array.
+此函数将基于字体的家族名称和样式名称返回一个 [Font 对象](../fontobject) 数组。如果找不到合适的字体，它将返回一个空数组。
 
 :::tip
-The returned array length can be more than 1 if you have multiple copies of a same font.
+如果存在多个相同字体的副本，返回的数组长度可能大于 1。
 :::
 
 ```javascript
@@ -379,14 +373,14 @@ alert(fontList.length);
 
 #### 参数
 
-| 参数  |  类型  |         描述          |
-| ---------- | ------ | ---------------------------- |
-| FamilyName | String | The Family Name of the font. |
-| StyleName  | String | The Style Name of the font.  |
+| 参数       | 类型   | 描述             |
+| ---------- | ------ | ---------------- |
+| FamilyName | 字符串 | 字体的家族名称。 |
+| StyleName  | 字符串 | 字体的样式名称。 |
 
 #### 返回
 
-Array of [Font objects](../fontobject); 只读.
+[Font 对象](../fontobject) 的数组；只读。
 
 ---
 
@@ -396,108 +390,8 @@ Array of [Font objects](../fontobject); 只读.
 
 #### 描述
 
-This function will return an array of [Font objects](../fontobject) based on the PostScript name of previously found Fonts.
+此函数将基于之前找到的字体的 PostScript 名称返回一个 [Font 对象](../fontobject) 数组。
 
-It is perfectly valid to have multiple [Font objects](../fontobject) which share the same PostScript name, the order of these is determined by the order in which they were enumerated in the font environment. The entry at `[0]` will be used when setting the [TextDocument.fontObject](textdocument.md#textdocumentfontobject) property.
+完全允许多个 [Font 对象](../fontobject) 共享相同的 PostScript 名称，这些字体的顺序由它们在字体环境中的枚举顺序决定。`[0]` 处的条目将在设置 [TextDocument.fontObject](textdocument.md#textdocumentfontobject) 属性时使用。
 
-In addition, there is a special property of this API with regards to Variable fonts. If no [Font object](../fontobject) matching the requested PostScript exists, but we find that there exist a variable font which matches the requested PostScript name prefix, then this Variable font instance will be requested to create a matching [Font object](../fontobject). This is the only way that we will return an instance which did not exist prior to invoking this method.
-
-If no matching font is found, it will return an empty Array.
-
-```javascript
-var fontList = app.fonts.getFontsByPostScriptName("Abolition")
-alert(fontList.length);
-```
-
-#### 参数
-
-|   参数    |  类型  |           描述            |
-| -------------- | ------ | -------------------------------- |
-| postscriptName | String | The PostScript Name of the font. |
-
-#### 返回
-
-Array of [Font objects](../fontobject); 只读.
-
----
-
-### FontsObject.pollForAndPushNonSystemFontFoldersChanges()
-
-`app.fonts.pollForAndPushNonSystemFontFoldersChanges()`
-
-:::note
-该方法添加于 After Effects 24.6
-:::
-
-#### 描述
-
-The addition and removal of font files in what is considered the *system font folders* is recognized and handled automatically without user intervention to update the font environment. Non-system font folders are not automatically handled and so additions and removal of font files in these folders are not recognized until the After Effects is restarted.
-
-This function will trigger a check against the known non-system font folders, and if it is recognized that there has been a change, an asynchronous update to the font environment will be scheduled to process this change.
-
-The non-system font folders After Effects knows about are here:
-
-```text
-Windows: <systemDrive>:\Program Files\Common Files\Adobe\Fonts
-
-Mac: /Library/Application Support/Adobe/Fonts
-```
-
-#### 返回
-
-Boolean; One of:
-
-- `false` if no changes to the font environment are known.
-- `true` if a change in the font environment has been detected and an asynchronous update scheduled to deal with it. This state will be cleared once the update has been processed, at which time [FontsObject.fontServerRevision](#fontsobjectfontserverrevision) will return an incremented value.
-
-—
-
-### FontsObject.setDefaultFontForCTScript()
-
-`app.fonts.setDefaultFontForCTScript(ctScript, font)`
-
-:::note
-该方法添加于 After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
-:::
-
-#### 描述
-
-This function will set an instance of [Font object](../fontobject) mapped based on `CTScript` parameter.
-
-After Effects uses these mappings when typing or applying a font where it finds
-that the font does not contain a glyph for a given character.
-In this situation it will attempt to map the character to a `CTScript` value
-and then use this default mapping to select an alternate font which may have a glyph
-for the character.
-
-Variable fonts are not acceptable as defaults and will result in an exception being thrown.
-
-There is no requirement that the specfied font has glyphs for any or all of the characters
-mapped to the `CTScript`.
-
-This mechanism is also used with text and fonts in Scripting thus providing a way
-to expose which fonts will be used for which `CTScript` values (see [FontsObject.getDefaultFontForCTScript()](#fontsobjectgetdefaultfontforctscript)).
-
-The font assigned to the `CTScript.CT_ROMAN_SCRIPT` is the one which is used to re-initialize the Character Panel after resetting the character style.
-
-To reset the default for a specific `CTScript` back to the value it had at App launch, simply pass in `null`.
-
-```javascript
-var font = app.fonts.getFontsByPostScriptName("MyriadPro-Regular")[0];
-var ret = app.fonts.setDefaultFontForCTScript(CTScript.CT_ROMAN_SCRIPT, font);
-alert("set:" + ret);
-```
-
-#### 参数
-
-| 参数  |             类型             |                           描述                            |
-| ---------- | ---------------------------- | ---------------------------------------------------------------- |
-| `ctScript` | `CTScript` enum              | CTScript for font to be mapped                                   |
-| `font`     | [Font object](../fontobject) | The font to be mapped. If `null`, then current mapping is reset. |
-
-#### 返回
-
-Boolean; One of:
-
-- `false` if the specfied mapping is the same the current one.
-- `true` if the specified mapping is different from the current one.
+此外，此 API 对于可变字体有一个特殊属性。如果找不到与请求的 Post

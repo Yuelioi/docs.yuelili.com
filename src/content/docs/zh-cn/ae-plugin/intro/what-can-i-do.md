@@ -1,62 +1,62 @@
 ---
-title: what-can-i-do
+title: 我能用这个SDK做什么
 ---
-# What Can I Do With This SDK?
+# 我能用这个SDK做什么？
 
-This SDK describes the Application Programming Interface (API) that developers use to build plug-ins. These plug-ins can extend the capabilities of After Effects and other applications that support the After Effects API. Plug-ins may also be used to bridge the gap between After Effects and another application.
-
----
-
-## What Plug-Ins Can I Build With This SDK?
-
-*Effect plug-ins* can be applied to video or audio in a composition, to process video and/or audio data. Some examples of built-in effects are Brightness and Contast, Hue/Saturation, Gaussian Blur, and Warp Stabilizer. Effect plug-ins can provide a set of parameter controls for the user to fine-tune the effect. These parameter values can vary over time, and effects may use other layers and parameters at different times to calculate the output. It's often thought that all plug-ins are effects. But effects are just one type of plug-in used by After Effects.
-
-See a quickstart video on building an effect (on macOS): [adobe.ly/2sjMDwM](https://adobe.ly/2sjMDwM)
-
-*After Effects General Plug-ins (AEGPs)* can read and modify nearly every element of After Effects projects and preferences. They can add menu items, 'hook' (register themselves to receive) and trigger After Effects' internal commands, and add new panels that dock and resize within the After Effects UI. They can work with markers and keyframes, and manage the render queue. They can even run scripts. Some examples of built-in AEGPs are the AAF importer, and the SWF exporter. Automatic Duck Pro Import AE is another well-known AEGP.
-
-*After Effects Input/Output (AEIO) plug-ins* provide support for new media file types. Unless you need a custom setup dialog to specify interpretation settings, the [Premiere Pro Importers](other-integration-possibilities.md#premiere-pro-importers) API provides similar functionality, and is preferable in many cases. AEIOs use the AEGP API along with certain APIs specific to AEIOs. While After Effects still supports Photoshop format plug-ins and filters, as well as Foreign Project Format (FPF) plug-ins, these APIs have been long deprecated in favor of the AEIO API.
-
-*BlitHook* plug-ins output video to external hardware for broadcast quality monitoring and playback to tape. The EMP sample project provides a starting point. In After Effects CC 2014 and later, [Mercury Transmit](other-integration-possibilities.md#mercury-transmit) is the recommended API.
-
-*Artisans* provide rendered output of 3D layers, taking over 3D rendering from After Effects (which still handles all rendering of 2D layers). Artisans use the AEGP API along with certain APIs specific to Artisans.
-
-Didn't see the type of integration you need described above? After Effects is very flexible, and there are several other ways to integrate with After Effects. See: [Other Integration Possibilities](../other-integration-possibilities).
+这个SDK描述了开发者用来构建插件的应用程序编程接口（API）。这些插件可以扩展After Effects的功能，以及其他支持After Effects API的应用程序的功能。插件还可以用于弥合After Effects与其他应用程序之间的差距。
 
 ---
 
-## Where Do Plug-ins Appear In After Effects?
+## 我能用这个SDK构建哪些插件？
 
-Effects plug-ins appear in both the *Effect* menu and the Effects & Presets panel, in the effect category specified in their PiPL. Once they're applied, the effect's parameter controls (sliders, pop-ups, etc.) appear in the Effect Controls panel (ECP).
+*效果插件*可以应用于合成中的视频或音频，以处理视频和/或音频数据。内置效果的一些示例包括亮度和对比度、色相/饱和度、高斯模糊和变形稳定器。效果插件可以提供给用户一组参数控件，以微调效果。这些参数值可以随时间变化，效果可能会在不同时间使用其他图层和参数来计算输出。通常认为所有插件都是效果。但效果只是After Effects使用的一种插件类型。
 
-After Effects General Plug-ins (AEGPs) can add items to any After Effects menu, and additional panels listed in the Window menu. These menu items are indistinguishable from After Effects' own menu items.
+观看一个关于构建效果的快速入门视频（在macOS上）：[adobe.ly/2sjMDwM](https://adobe.ly/2sjMDwM)
 
-[AEIOs](../../aeios/aeios) and Photoshop Format plug-ins can appear in the *File > Import* menu, or in the *Import File* dialog in the *Files of type* drop-down, depending on the type of importer. AEIOs and Format plug-ins can also appear as available output formats in the render queue.
+*After Effects通用插件（AEGP）*可以读取和修改After Effects项目和偏好设置的几乎所有元素。它们可以添加菜单项，“挂钩”（注册自己以接收）并触发After Effects的内部命令，并添加在After Effects UI中停靠和调整大小的新面板。它们可以与标记和关键帧一起工作，并管理渲染队列。它们甚至可以运行脚本。内置AEGP的一些示例包括AAF导入器和SWF导出器。Automatic Duck Pro Import AE是另一个著名的AEGP。
 
-BlitHook plug-ins are automatically loaded and used by AE, but do not appear in any menu or dialog. The plug-in may optionally provide a menu item that opens it's own custom settings dialog. It would register and update the menu item using the AEGP API.
+*After Effects输入/输出（AEIO）插件*为新的媒体文件类型提供支持。除非您需要一个自定义设置对话框来指定解释设置，否则[Premiere Pro导入器](other-integration-possibilities.md#premiere-pro-importers) API提供了类似的功能，并且在许多情况下更可取。AEIO使用AEGP API以及特定于AEIO的某些API。虽然After Effects仍然支持Photoshop格式插件和过滤器，以及外部项目格式（FPF）插件，但这些API早已被弃用，转而支持AEIO API。
 
-It can registered to be called by After Effects to update the menu with `AEGP_RegisterUpdateMenuHook()`, and it can dim/activate the menu item using `AEGP_EnableCommand()`/`DisableCommand()`.
+*BlitHook*插件将视频输出到外部硬件，用于广播质量监控和磁带播放。EMP示例项目提供了一个起点。在After Effects CC 2014及更高版本中，[Mercury Transmit](other-integration-possibilities.md#mercury-transmit)是推荐的API。
 
-Artisans appear in the *Rendering Plug-in* drop-down in the *Advanced* tab of the *Composition Settings* dialog.
+*Artisans*提供3D图层的渲染输出，接管After Effects的3D渲染（After Effects仍然处理所有2D图层的渲染）。Artisans使用AEGP API以及特定于Artisans的某些API。
 
----
-
-## How Does After Effects Interact With Plug-ins?
-
-Plug-ins, written in C or C++, are bundle packages on macOS and DLLs on Windows. They must contain a Plug-in Property List ([PiPL Resources](../pipl-resources)) resource on both platforms. The plug-ins must be located in one of a few specific folders in order to be loaded and used by After Effects.
-
-For effects plug-ins, After Effects sends command selectors (and relevant information) to the plug-in [Entry Point](../../effect-basics/entry-point) designated in the effects' [PiPL Resources](../pipl-resources) resource. Selectors are sent in response to actions the user takes—applying the effect, changing parameters, scrubbing through frames in the timeline, and rendering all prompt different sequences of selectors.
-
-After Effects creates multiple instances of effects, with settings and input data unique to each sequence. All instances share the same global data, and can share data between all frames within their sequence. After Effects doesn't process all image data as soon as the user applies an effect; it invokes effects only when their output is required.
-
-After Effects General Plug-ins (AEGPs) have their entry point function called during application launch, and register for whatever messaging they need at that time. Further calls to the AEGP are initiated by user actions, as part of the plug-in's response to menu commands or UI events. Depending on their features, plug-ins may need to respond to OS-specific entry points as well, for UI work and thread management.
-
-For BlitHook plug-ins, frames are pushed as they're displayed in the Composition panel. Users can initiate a RAM preview on an area of the timeline so that it is rendered to RAM, and then it all gets played out at full speed.
+没有看到您需要的集成类型？After Effects非常灵活，还有其他几种与After Effects集成的方式。请参阅：[其他集成可能性](../other-integration-possibilities)。
 
 ---
 
-## SDK Contents
+## 插件在After Effects中出现在哪里？
 
-The SDK contains headers defining the After Effects APIs, sample projects demonstrating integration features, and this SDK Guide.
+效果插件出现在*效果*菜单和效果与预设面板中，位于其PiPL中指定的效果类别中。一旦应用，效果的参数控件（滑块、弹出窗口等）将出现在效果控制面板（ECP）中。
 
-They are compiled with the SDK header files, which expose various After Effects functionality to be used by the plug-in.
+After Effects通用插件（AEGP）可以将项目添加到任何After Effects菜单中，以及Window菜单中列出的其他面板中。这些菜单项与After Effects自己的菜单项无法区分。
+
+[AEIOs](../../aeios/aeios)和Photoshop格式插件可以出现在*文件 > 导入*菜单中，或者出现在*导入文件*对话框中的*文件类型*下拉菜单中，具体取决于导入器的类型。AEIO和格式插件还可以作为渲染队列中的可用输出格式出现。
+
+BlitHook插件由AE自动加载和使用，但不会出现在任何菜单或对话框中。插件可以选择提供一个菜单项，打开其自定义设置对话框。它将使用AEGP API注册和更新菜单项。
+
+它可以注册为After Effects调用以使用`AEGP_RegisterUpdateMenuHook()`更新菜单，并且可以使用`AEGP_EnableCommand()`/`DisableCommand()`来禁用/激活菜单项。
+
+Artisans出现在*合成设置*对话框的*高级*选项卡中的*渲染插件*下拉菜单中。
+
+---
+
+## After Effects如何与插件交互？
+
+用C或C++编写的插件在macOS上是捆绑包，在Windows上是DLL。它们必须在两个平台上包含插件属性列表（[PiPL资源](../pipl-resources)）资源。插件必须位于几个特定文件夹之一中，才能被After Effects加载和使用。
+
+对于效果插件，After Effects将命令选择器（及相关信息）发送到效果[入口点](../../effect-basics/entry-point)中指定的插件入口点，该入口点在效果的[PiPL资源](../pipl-resources)资源中指定。选择器是响应用户操作发送的——应用效果、更改参数、在时间轴中拖动帧以及渲染都会提示不同的选择器序列。
+
+After Effects创建效果的多个实例，每个序列具有唯一的设置和输入数据。所有实例共享相同的全局数据，并且可以在其序列内的所有帧之间共享数据。After Effects不会在用户应用效果时立即处理所有图像数据；它仅在需要其输出时调用效果。
+
+After Effects通用插件（AEGP）在应用程序启动期间调用其入口点函数，并在那时注册所需的任何消息传递。对AEGP的进一步调用由用户操作启动，作为插件对菜单命令或UI事件的响应的一部分。根据其功能，插件可能还需要响应特定于操作系统的入口点，以进行UI工作和线程管理。
+
+对于BlitHook插件，帧在显示在合成面板中时被推送。用户可以启动时间轴某个区域的RAM预览，以便将其渲染到RAM中，然后以全速播放。
+
+---
+
+## SDK内容
+
+SDK包含定义After Effects API的头文件、展示集成功能的示例项目以及本SDK指南。
+
+它们与SDK头文件一起编译，这些头文件公开了各种After Effects功能供插件使用。

@@ -1,146 +1,147 @@
 ---
 title: javascript
 ---
-# Elements of basic JavaScript relevant to After Effects scripting
 
-## Javascript Variables
+# 与 After Effects 脚本相关的基础 JavaScript 元素
 
-脚本共享一个全局环境，因此任何在启动时执行的脚本都可以定义变量和函数，这些变量和函数对所有脚本都可用。在所有情况下，一旦通过运行包含它们的脚本定义了变量和函数，它们就会在给定的After Effects会话期间持续存在于后续的脚本中。一旦应用程序退出，所有此类全局定义的变量和函数都会被清除。编写脚本的人应注意为脚本中的变量赋予唯一的名称，以避免无意中重新分配那些旨在整个会话期间保持不变的全局变量。
+## JavaScript 变量
 
-### Keywords and Statement Syntax
+脚本共享一个全局环境，因此任何在启动时执行的脚本都可以定义变量和函数，这些变量和函数对所有脚本都可用。在所有情况下，一旦通过运行包含它们的脚本定义了变量和函数，它们就会在给定的 After Effects 会话期间持续存在于后续的脚本中。一旦应用程序退出，所有此类全局定义的变量和函数都会被清除。编写脚本的人应注意为脚本中的变量赋予唯一的名称，以避免无意中重新分配那些旨在整个会话期间保持不变的全局变量。
 
-| Keyword/Statement |                                                             描述                                                              |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `break`           | Standard JavaScript; exit the currently executing loop.                                                                              |
-| `continue`        | JavaScript; cease execution of the current loop iteration.                                                                           |
-| `case`            | Label used in a `switch` statement.                                                                                                  |
-| `default`         | Label used in a `switch` statement when a `case` label is not found.                                                                 |
-| `do...while`      | Standard JavaScript construct. Similar to the while loop, except loop condition evaluation occurs at the end of the loop.            |
-| `false`           | Literal representing the Boolean false value.                                                                                        |
-| `for`             | Standard JavaScript loop construct.                                                                                                  |
-| `for...in`        | Standard JavaScript construct. Provides a way to easily loop through the properties of an object.                                    |
-| `function`        | Used to define a function.                                                                                                           |
-| `if/if...else`    | Standard JavaScript conditional constructs.                                                                                          |
-| `new`             | Standard JavaScript constructor statement.                                                                                           |
-| `null`            | Assigned to a variable, array element, or object property to indicate that it does not contain a legalvalue.                         |
-| `return`          | Standard JavaScript way of returning a value from a function or exiting a function.                                                  |
-| `switch`          | Standard JavaScript way of evaluating a JavaScript expression and attempting to match the expression's value to a `case` label.      |
-| `this`            | Standard JavaScript method of indicating the current object.                                                                         |
-| `true`            | Literal representing the Boolean true value.                                                                                         |
-| `undefined`       | Indicates that the variable, array element, or object property has not yet been assigned a value.                                    |
-| `var`             | Standard JavaScript syntax used to declare a local variable.                                                                         |
-| `while`           | 标准的JavaScript结构。类似于do...while循环，不同之处在于循环条件的评估发生在循环的开始处。 |
-| `with`            | Standard JavaScript construct used to specify an object to use in subsequent statements.                                             |
+### 关键字和语句语法
 
----
-
-## Javascript Operators
-
-The following tables list and describe all operators recognized by the After Effects scripting engine and show the precedence and associativity for all operators.
-
-### 描述 of Operators
-
-|         Operators         |                       描述                       |
-| ------------------------- | ------------------------------------------------------- |
-| `new`                     | Create new object instance.                             |
-| `delete`                  | Delete property from an object.                         |
-| `typeof`                  | Returns data type.                                      |
-| `void`                    | Returns undefined value.                                |
-| `.`                       | Object member.                                          |
-| `[]`                      | Array element.                                          |
-| `()`                      | Function call.                                          |
-| `++`                      | Pre- or post-increment.                                 |
-| `--`                      | Pre- or post-decrement.                                 |
-| `-`                       | Unary negation or subtraction.                          |
-| `~`                       | Bitwise NOT.                                            |
-| `!`                       | Logical NOT.                                            |
-| `*`                       | Multiply.                                               |
-| `/`                       | Divide.                                                 |
-| `%`                       | Modulo division.                                        |
-| `+`                       | Add.                                                    |
-| `<<`                      | Bitwise left shift.                                     |
-| `>>`                      | Bitwise right shift.                                    |
-| `>>>`                     | Unsigned bitwise right shift.                           |
-| `<`                       | Less than.                                              |
-| `<=`                      | Less than or equal.                                     |
-| `>`                       | Greater than.                                           |
-| `>=`                      | Greater than or equal.                                  |
-| `==`                      | Equal.                                                  |
-| `!=`                      | Not equal.                                              |
-| `&`                       | Bitwise AND.                                            |
-| `^`                       | Bitwise XOR.                                            |
-| <code>&#124;</code>       | Bitwise OR.                                             |
-| `&&`                      | Logical AND.                                            |
-| <code>&#124;&#124;</code> | Logical OR.                                             |
-| `?:`                      | Conditional (ternary).                                  |
-| `=`                       | Assignment.                                             |
-| `+=`                      | Assignment with add operation.                          |
-| `-=`                      | Assignment with subtract operation.                     |
-| `*=`                      | Assignment with multiply operation.                     |
-| `/=`                      | Assignment with divide operation.                       |
-| `%=`                      | Assignment with modulo division operation.              |
-| `<<=`                     | Assignment with bitwise left shift operation.           |
-| `>>=`                     | Assignment with bitwise right shift operation.          |
-| `>>>=`                    | Assignment with unsigned bitwise right shift operation. |
-| `&=`                      | Assignment with bitwise AND operation.                  |
-| `^=`                      | Assignment with bitwise XOR operation.                  |
-| <code>&#124;=</code>      | Assignment with bitwise OR operation.                   |
-| `,`                       | Multiple evaluation.                                    |
-
-### Operator Precedence
-
-|                  Operators (highest precedence to lowest)                  | Associativity |
-| -------------------------------------------------------------------------- | ------------- |
-| `[]`, `()`, `.`                                                            | left to right |
-| `new`, `delete`, `-` (unary negation), `!`, `typeof`, `void`, `++`, `--`   | right to left |
-| `*`, `/`, `%`                                                              | left to right |
-| `+`, `-` (subtraction)                                                     | left to right |
-| `<<`, `>>`, `>>>`                                                          | left to right |
-| `<`, `<=`, `>`, `>=`                                                       | left to right |
-| `==`, `!=`                                                                 | left to right |
-| `&`                                                                        | left to right |
-| `^`                                                                        | left to right |
-| `\`                                                                        | left to right |
-| `&&`                                                                       | left to right |
-| <code>&#124;&#124;</code>                                                  | left to right |
-| `?:`                                                                       | right to left |
-| `==`, `/=`, `%=`, `<<=`, `>>=`, `>>>=`, `&=`, `^=`, `\=`, `+=`, `-=`, `*=` | right to left |
-| `,`                                                                        | left to right |
+| 关键字/语句 |                  描述      |
+| ------- | ---------------------- |
+| `break`       | 标准 JavaScript；退出当前执行的循环。              |
+| `continue`    | JavaScript；停止当前循环迭代的执行。             |
+| `case`      | 在 `switch` 语句中使用的标签。           |
+| `default`     | 在 `switch` 语句中未找到 `case` 标签时使用的标签。       |
+| `do...while`    | 标准 JavaScript 结构。类似于 while 循环，不同之处在于循环条件的评估发生在循环的末尾。      |
+| `false`       | 表示布尔值 false 的字面量。                  |
+| `for`       | 标准 JavaScript 循环结构。           |
+| `for...in`    | 标准 JavaScript 结构。提供了一种简单的方式来遍历对象的属性。     |
+| `function`    | 用于定义函数。                |
+| `if/if...else`  | 标准 JavaScript 条件结构。                    |
+| `new`       | 标准 JavaScript 构造函数语句。                     |
+| `null`      | 分配给变量、数组元素或对象属性，以指示它不包含合法值。             |
+| `return`      | 标准 JavaScript 从函数返回值或退出函数的方式。             |
+| `switch`      | 标准 JavaScript 评估 JavaScript 表达式并尝试将表达式的值与 `case` 标签匹配的方式。    |
+| `this`      | 标准 JavaScript 指示当前对象的方式。           |
+| `true`      | 表示布尔值 true 的字面量。                   |
+| `undefined`     | 指示变量、数组元素或对象属性尚未被赋值。     |
+| `var`       | 标准 JavaScript 语法，用于声明局部变量。           |
+| `while`       | 标准 JavaScript 结构。类似于 do...while 循环，不同之处在于循环条件的评估发生在循环的开始处。 |
+| `with`      | 标准 JavaScript 结构，用于指定在后续语句中使用的对象。          |
 
 ---
 
-## Javascript Classes
+## JavaScript 运算符
 
-### Class Inheritance
+以下表格列出并描述了 After Effects 脚本引擎识别的所有运算符，并显示了所有运算符的优先级和结合性。
 
-This is section gives you a brief overview in oriented programming and inheritance. If you already know about this, you can skip this section.
+### 运算符描述
 
-In Javascript/Extendscript, Class Inheritance is the idea that you can define some properties or methods for a given object, and then create a *subclass* (or "child class") that inherits all of those properties & methods and adds more, further refining it.
+|     运算符     |             描述             |
+| ----- | ---------- |
+| `new`           | 创建新的对象实例。               |
+| `delete`          | 从对象中删除属性。             |
+| `typeof`          | 返回数据类型。       |
+| `void`          | 返回未定义的值。   |
+| `.`             | 对象成员。         |
+| `[]`            | 数组元素。         |
+| `()`            | 函数调用。         |
+| `++`            | 前置或后置递增。    |
+| `--`            | 前置或后置递减。    |
+| `-`             | 一元取反或减法。              |
+| `~`             | 按位取反。         |
+| `!`             | 逻辑取反。         |
+| `*`             | 乘法。            |
+| `/`             | 除法。            |
+| `%`             | 取模除法。       |
+| `+`             | 加法。             |
+| `<<`            | 按位左移。      |
+| `>>`            | 按位右移。     |
+| `>>>`           | 无符号按位右移。               |
+| `<`             | 小于。           |
+| `<=`            | 小于或等于。      |
+| `>`             | 大于。          |
+| `>=`            | 大于或等于。     |
+| `==`            | 等于。             |
+| `!=`            | 不等于。           |
+| `&`             | 按位与。         |
+| `^`             | 按位异或。         |
+| <code>&#124;</code>     | 按位或。          |
+| `&&`            | 逻辑与。         |
+| <code>&#124;&#124;</code> | 逻辑或。          |
+| `?:`            | 条件（三元）运算符。     |
+| `=`             | 赋值。          |
+| `+=`            | 加法赋值。              |
+| `-=`            | 减法赋值。           |
+| `*=`            | 乘法赋值。           |
+| `/=`            | 除法赋值。             |
+| `%=`            | 取模赋值。        |
+| `<<=`           | 按位左移赋值。       |
+| `>>=`           | 按位右移赋值。      |
+| `>>>=`          | 无符号按位右移赋值。 |
+| `&=`            | 按位与赋值。          |
+| `^=`            | 按位异或赋值。          |
+| <code>&#124;=</code>    | 按位或赋值。           |
+| `,`             | 多重求值。     |
 
-For example, "automobile" could be one base class, with "cars" being a subclass of the "automobile" base class, with "sedan" and "convertible" being two subclasses of the "car" base class. Any properties or methods from "automobile" are also accessible by "convertible," because there's a direct inheritance from "automobile" -> "car" -> "convertible".
+### 运算符优先级
 
-### Class Inheritance in After Effects
+|          运算符（从高到低优先级）          | 结合性 |
+| -------------- | --- |
+| `[]`, `()`, `.`                 | 从左到右 |
+| `new`, `delete`, `-` (一元取反), `!`, `typeof`, `void`, `++`, `--`   | 从右到左 |
+| `*`, `/`, `%`      | 从左到右 |
+| `+`, `-` (减法)              | 从左到右 |
+| `<<`, `>>`, `>>>`                 | 从左到右 |
+| `<`, `<=`, `>`, `>=`                | 从左到右 |
+| `==`, `!=`       | 从左到右 |
+| `&`          | 从左到右 |
+| `^`          | 从左到右 |
+| `\`          | 从左到右 |
+| `&&`           | 从左到右 |
+| <code>&#124;&#124;</code>             | 从左到右 |
+| `?:`           | 从右到左 |
+| `==`, `/=`, `%=`, `<<=`, `>>=`, `>>>=`, `&=`, `^=`, `\=`, `+=`, `-=`, `*=` | 从右到左 |
+| `,`          | 从左到右 |
 
-As a script developer, this is useful to know because many elements in the After Effects scripting environment follows this pattern.
+---
 
-As a user, you can see this in After Effects layers; every layer exists in the timeline, has a Name and Index and Label Color, but some types of layers have different properties than others - for example, Audio layers can't be enable/disabled, and Camera and Light layers can't have effects. They share the base "Layer" features, but are each **subclasses** with their own properties.
+## JavaScript 类
 
-The same idea exists in After Effects scripting. Many API-accessible elements are part of class hierarchies that inherit and refine properties & methods. This lets the After Effects developers use existing structures to create new API-accessible components, and it allows script developers to use this same hierarchy to work with the After Effects DOM.
+### 类继承
 
-For the same example above, [Layer object](../../layer/layer) (itself a subclass of [PropertyGroup object](../../property/propertygroup)) is the *base class* for [AVLayer object](../../layer/avlayer), [CameraLayer object](../../layer/cameralayer), and [LightLayer object](../../layer/lightlayer). This means that CameraLayer inherits everything from the Layer object, which inherits everything from the PropertyGroup object, which inherits everything from the PropertyBase object.
+本节简要介绍面向对象编程和继承。如果你已经了解这些内容，可以跳过本节。
 
-This is why you won't see the `name` property on the Layer page, but you can still use `layer.name` in your script; `name` is inherited from [PropertyBase.name](../property/propertybase.md#propertybasename).
+在 JavaScript/Extendscript 中，类继承是指你可以为某个对象定义一些属性或方法，然后创建一个*子类*（或“子类”），该子类继承所有这些属性和方法并添加更多内容，从而进一步细化它。
+
+例如，“汽车”可以是一个基类，而“轿车”是“汽车”基类的一个子类，“轿车”和“敞篷车”是“轿车”基类的两个子类。任何来自“汽车”的属性或方法也可以被“敞篷车”访问，因为存在从“汽车” -> “轿车” -> “敞篷车”的直接继承关系。
+
+### After Effects 中的类继承
+
+作为脚本开发者，了解这一点很有用，因为 After Effects 脚本环境中的许多元素都遵循这种模式。
+
+作为用户，你可以在 After Effects 图层中看到这一点；每个图层都存在于时间轴中，具有名称、索引和标签颜色，但某些类型的图层具有不同的属性——例如，音频图层不能被启用/禁用，而摄像机和灯光图层不能应用效果。它们共享基类“Layer”的特性，但每个都是具有自己属性的**子类**。
+
+同样的概念存在于 After Effects 脚本中。许多 API 可访问的元素都是类层次结构的一部分，这些类继承并细化了属性和方法。这使得 After Effects 开发者能够使用现有结构创建新的 API 可访问组件，并允许脚本开发者使用相同的层次结构来处理 After Effects DOM。
+
+对于上面的例子，[Layer 对象](../../layer/layer)（本身是 [PropertyGroup 对象](../../property/propertygroup) 的子类）是 [AVLayer 对象](../../layer/avlayer)、[CameraLayer 对象](../../layer/cameralayer) 和 [LightLayer 对象](../../layer/lightlayer) 的*基类*。这意味着 CameraLayer 继承了 Layer 对象的所有内容，而 Layer 对象继承了 PropertyGroup 对象的所有内容，PropertyGroup 对象又继承了 PropertyBase 对象的所有内容。
+
+这就是为什么你不会在 Layer 页面上看到 `name` 属性，但你仍然可以在脚本中使用 `layer.name`；`name` 是从 [PropertyBase.name](../property/propertybase.md#propertybasename) 继承的。
 
 :::warning
-In a few specific cases, properties & methods are **removed** with inheritance, not just added. Those cases are noted on the relevant object page.
+在某些特定情况下，属性和方法在继承时会被**移除**，而不仅仅是添加。这些情况在相关对象页面上有注明。
 :::
 
-### Checking Classes
+### 检查类
 
-Typically in Javascript, you can use `instanceof` to check whether any given element matches an expected object type.
+通常在 JavaScript 中，你可以使用 `instanceof` 来检查任何给定元素是否与预期的对象类型匹配。
 
-Keep in mind that you will need to check against the *most specific* class possible; an AE Text Layer will only return `true` for `layer instanceof TextLayer`, and `false` for all parent classes (`layer instanceof AVLayer`, `layer instanceof Layer`, etc.)
+请记住，你需要检查*最具体*的类；AE 文本图层只会对 `layer instanceof TextLayer` 返回 `true`，而对所有父类（`layer instanceof AVLayer`、`layer instanceof Layer` 等）返回 `false`。
 
-With that said, there exist some elements in the API that are *only* base classes for other classes; they exist to hold inherited properties & methods, but no DOM element is exactly of this type.
+尽管如此，API 中存在一些元素*仅*作为其他类的基类；它们的存在是为了保存继承的属性和方法，但没有 DOM 元素完全属于这种类型。
 
-When checking `object instanceof {class}` with these classes, AE will either throw an error that `{class} is undefined` or return `false`, depending on how the class was implemented. The list below documents which base-only classes report which behaviours.
+当使用这些类检查 `object instanceof {class}` 时，AE 要么会抛出 `{class} is undefined` 的错误，要么返回 `false`，具体取决于类的实现方式。下面的列表记录了哪些仅作为基类的类报告哪种行为。

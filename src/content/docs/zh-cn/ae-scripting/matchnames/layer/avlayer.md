@@ -1,62 +1,61 @@
 ---
 title: avlayer
 ---
-# AVLayer Match Names
+# AVLayer 匹配名称
 
 ---
 
-## Layer
+## 图层
 
-|   Match Name    | Display Name (EN) |
-| --------------- | ----------------- |
-| `ADBE AV Layer` |                   |
-
----
-
-## Top-Level
-
-|       Match Name       |  Display Name (EN)   |
-| ---------------------- | -------------------- |
-| `ADBE Marker`          | Marker               |
-| `ADBE Time Remapping`  | Time Remap           |
-| `ADBE MTrackers`       | Motion Trackers      |
-| `ADBE Mask Parade`     | Masks                |
-| `ADBE Effect Parade`   | Effects              |
-| `ADBE Layer Overrides` | Essential Properties |
-
+|   匹配名称   | 显示名称 (中文) |
+| ----- | ------- |
+| `ADBE AV Layer` |           |
 
 ---
 
-## Transform
+## 顶层
 
-|       Match Name       | Display Name (EN) |
-| ---------------------- | ----------------- |
-| `ADBE Transform Group` | Transform         |
-| `ADBE Anchor Point`    | Anchor Point      |
-| `ADBE Position`        | Position          |
-| `ADBE Position_0`      | X Position        |
-| `ADBE Position_1`      | Y Position        |
-| `ADBE Position_2`      | Z Position        |
-| `ADBE Scale`           | Scale             |
-| `ADBE Orientation`     | Orientation       |
-| `ADBE Rotate X`        | X Rotation        |
-| `ADBE Rotate Y`        | Y Rotation        |
-| `ADBE Rotate Z`        | Z Rotation        |
-| `ADBE Opacity`         | Opacity           |
+|     匹配名称     |  显示名称 (中文)   |
+| ------- | ----- |
+| `ADBE Marker`      | 标记         |
+| `ADBE Time Remapping`  | 时间重映射       |
+| `ADBE MTrackers`     | 运动跟踪器    |
+| `ADBE Mask Parade`   | 蒙版        |
+| `ADBE Effect Parade`   | 效果        |
+| `ADBE Layer Overrides` | 基本属性 |
 
 ---
 
-## Audio
+## 变换
 
-|     Match Name      | Display Name (EN) |
-| ------------------- | ----------------- |
-| `ADBE Audio Group`  | Audio             |
-| `ADBE Audio Levels` | Audio Levels      |
+|     匹配名称     | 显示名称 (中文) |
+| ------- | ------- |
+| `ADBE Transform Group` | 变换     |
+| `ADBE Anchor Point`  | 锚点    |
+| `ADBE Position`    | 位置      |
+| `ADBE Position_0`    | X 位置    |
+| `ADBE Position_1`    | Y 位置    |
+| `ADBE Position_2`    | Z 位置    |
+| `ADBE Scale`       | 缩放       |
+| `ADBE Orientation`   | 方向     |
+| `ADBE Rotate X`    | X 旋转    |
+| `ADBE Rotate Y`    | Y 旋转    |
+| `ADBE Rotate Z`    | Z 旋转    |
+| `ADBE Opacity`     | 不透明度       |
 
 ---
 
-## Essential Properties
+## 音频
 
-|          Match Name           | Display Name (EN) |
-| ----------------------------- | ----------------- |
-| `ADBE Layer Source Alternate` |                   |
+|   匹配名称    | 显示名称 (中文) |
+| ---- | ------- |
+| `ADBE Audio Group`  | 音频       |
+| `ADBE Audio Levels` | 音频电平    |
+
+---
+
+## 基本属性
+
+|      匹配名称       | 显示名称 (中文) |
+| --------- | ------- |
+| `ADBE Layer Source Alternate` |           |

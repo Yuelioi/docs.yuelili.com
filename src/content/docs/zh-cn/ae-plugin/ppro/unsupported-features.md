@@ -1,28 +1,28 @@
 ---
-title: unsupported-features
+title: 不支持的功能
 ---
-# Unsupported Features
+# 不支持的功能
 
-Premiere Pro is currently known to not support the following features of the After Effects API:
+目前已知 Premiere Pro 不支持 After Effects API 的以下功能：
 
-(If you would like a feature with a "-" bullet, please email [Premiere Pro API Engineering](mailto:bbb@adobe.com) with the feature request. Numbers preceded by an 'F' are feature request numbers, and the others are bug numbers)
+（如果您希望支持带有“-”符号的功能，请通过邮件联系 [Premiere Pro API 工程团队](mailto:bbb@adobe.com) 提交功能请求。以“F”开头的数字是功能请求编号，其他的是错误编号）
 
-- F7233 - extent_hint support
-- F7835 - Multiple PiPLs in a single plug-in
-- F7836 - AEGP support
-- F7517 - Audio support - if a plug-in sets PF_OutFlag_I_USE_AUDIO in PF_Cmd_GLOBAL_SETUP, it will not be loaded at all
-- F9355 - Support PF_ParamFlag_COLLAPSE_TWIRLY
+- F7233 - 支持 extent_hint
+- F7835 - 单个插件中支持多个 PiPL
+- F7836 - 支持 AEGP
+- F7517 - 音频支持 - 如果插件在 PF_Cmd_GLOBAL_SETUP 中设置了 PF_OutFlag_I_USE_AUDIO，则插件将完全不会被加载
+- F9355 - 支持 PF_ParamFlag_COLLAPSE_TWIRLY
 - PF World Transform Suite
 - PF AE Channel Suite
-- AE's implementation of high bit color depth support
+- AE 的高位色深支持实现
 - SmartFX
-- 3D support
+- 3D 支持
 - PF_SUBPIXEL_SAMPLE(), PF_GET_PIXEL_DATA16()
 
 ---
 
-## But... Why'd You LOAD It If You Can't RUN It?!
+## 但是……如果不能运行，为什么要加载它？！
 
-Premiere Pro attempts to load AEGP plug-ins. To detect this and avoid any problem behavior, your command hook function can access a suite which is only provided by After Effects; AEGP_CanvasSuite is a fine candidate.
+Premiere Pro 会尝试加载 AEGP 插件。为了检测这一点并避免任何问题行为，您的命令钩子函数可以访问一个仅由 After Effects 提供的套件；AEGP_CanvasSuite 是一个很好的候选。
 
-If the suite isn't present, return an error. The plug-in will be placed on Premiere Pro's "don't load these" list.
+如果该套件不存在，则返回错误。插件将被放入 Premiere Pro 的“不加载这些”列表中。

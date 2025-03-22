@@ -1,15 +1,15 @@
 ---
-title: extendscript-reflection-interface
+title: ExtendScript 反射接口
 ---
-# ExtendScript Reflection Interface
+# ExtendScript 反射接口
 
-ExtendScript provides a reflection interface that allows you to find out everything about an object, including its name, a description, the expected data type for properties, the arguments and return value for methods, and any default values or limitations to the input values.
+ExtendScript 提供了一个反射接口，允许你了解一个对象的所有信息，包括其名称、描述、属性的预期数据类型、方法的参数和返回值，以及任何默认值或输入值的限制。
 
 ---
 
 ## ReflectionObject
 
-Every object has a reflect property that returns a Reflection Object that reports the contents of the object. You can, for example, show the values of all the properties of an object with code like this:
+每个对象都有一个 `reflect` 属性，它返回一个 Reflection 对象，该对象报告对象的内容。例如，你可以使用以下代码显示对象的所有属性值：
 
 ```javascript
 var f = new File ("myfile");
@@ -19,10 +19,10 @@ for (var i = 0; i < props.length; i++) {
 }
 ```
 
-### ReflectionObject Attributes
+### ReflectionObject 属性
 
 :::info
-All properties are read only.
+所有属性均为只读。
 :::
 
 #### 描述
@@ -31,11 +31,11 @@ All properties are read only.
 
 ##### 描述
 
-Short text describing the reflected object, or undefined if no description is available.
+描述反射对象的简短文本，如果没有描述则为 `undefined`。
 
 ##### 类型
 
-String
+字符串
 
 ---
 
@@ -45,11 +45,11 @@ String
 
 ##### 描述
 
-Longer text describing the reflected object more completely, or `undefined` if no description is available.
+描述反射对象的更完整的较长文本，如果没有描述则为 `undefined`。
 
 ##### 类型
 
-String
+字符串
 
 ---
 
@@ -59,11 +59,11 @@ String
 
 ##### 描述
 
-An Array of [ReflectionInfo object](#reflectioninfo-object) containing all methods of the reflected object, defined in the class or in the specific instance.
+包含反射对象所有方法的 [ReflectionInfo 对象](#reflectioninfo-object) 数组，这些方法定义在类或特定实例中。
 
 ##### 类型
 
-Array of [ReflectionInfo objects](#reflectioninfo-object)
+[ReflectionInfo 对象](#reflectioninfo-object) 数组
 
 ---
 
@@ -73,11 +73,11 @@ Array of [ReflectionInfo objects](#reflectioninfo-object)
 
 ##### 描述
 
-The class name of the reflected object.
+反射对象的类名。
 
 ##### 类型
 
-String
+字符串
 
 ---
 
@@ -87,17 +87,17 @@ String
 
 ##### 描述
 
-An Array of [ReflectionInfo object](#reflectioninfo-object) containing all properties of the reflected object, defined in the class or in the specific instance. For objects with dynamic properties (defined at runtime) the list contains only those dynamic properties that have already been accessed by the script.
+包含反射对象所有属性的 [ReflectionInfo 对象](#reflectioninfo-object) 数组，这些属性定义在类或特定实例中。对于具有动态属性（在运行时定义）的对象，列表仅包含脚本已访问的那些动态属性。
 
-For example, in an object wrapping an HTML tag, the names of the HTML attributes are determined at run time.
+例如，在包装 HTML 标签的对象中，HTML 属性的名称在运行时确定。
 
 ##### 类型
 
-Array of [ReflectionInfo objects](#reflectioninfo-object)
+[ReflectionInfo 对象](#reflectioninfo-object) 数组
 
 ---
 
-### ReflectionObject Methods
+### ReflectionObject 方法
 
 #### find()
 
@@ -105,40 +105,40 @@ Array of [ReflectionInfo objects](#reflectioninfo-object)
 
 ##### 描述
 
-Returns the [ReflectionInfo object](#reflectioninfo-object) for the named property of the reflected object, or null if no such property exists.
+返回反射对象指定属性的 [ReflectionInfo 对象](#reflectioninfo-object)，如果该属性不存在则返回 `null`。
 
-Use this method to get information about dynamic properties that have not yet been accessed, but that are known to exist.
+使用此方法可以获取尚未访问但已知存在的动态属性的信息。
 
 ##### 参数
 
-| 参数 |  类型  |                   描述                   |
-| --------- | ------ | ----------------------------------------------- |
-| name      | String | The property for which to retrieve information. |
+| 参数 | 类型   | 描述                   |
+| ---- | ------ | ---------------------- |
+| name | 字符串 | 要检索信息的属性名称。 |
 
 #### 示例
 
-This code determines the class name of an object:
+以下代码确定对象的类名：
 
 ```javascript
 obj = new String ("hi");
 obj.reflect.name; // => String
 ```
 
-This code gets a list of all methods:
+以下代码获取所有方法的列表：
 
 ```javascript
 obj = new String ("hi");
 obj.reflect.methods; //=> indexOf,slice,...
-obj.reflect.find ("indexOf"); // => the method info
+obj.reflect.find ("indexOf"); // => 方法信息
 ```
 
-This code gets a list of properties:
+以下代码获取属性列表：
 
 ```javascript
 Math.reflect.properties; //=> PI,LOG10,...
 ```
 
-This code gets the data type of a property:
+以下代码获取属性的数据类型：
 
 ```javascript
 Math.reflect.find ("PI").type; // => number
@@ -146,11 +146,11 @@ Math.reflect.find ("PI").type; // => number
 
 ---
 
-## ReflectionInfo Object
+## ReflectionInfo 对象
 
-This object contains information about a property, a method, or a method argument.
+此对象包含有关属性、方法或方法参数的信息。
 
-You can access ReflectionInfo objects in a Reflection object's properties and methods arrays, by name or index:
+你可以通过名称或索引在 Reflection 对象的 `properties` 和 `methods` 数组中访问 ReflectionInfo 对象：
 
 ```javascript
 obj = new String ("hi");
@@ -158,7 +158,7 @@ obj.reflect.methods[0];
 obj.reflect.methods["indexOf"];
 ```
 
-You can access the ReflectionInfo objects for the arguments of a method in the arguments array of the ReflectionInfo object for the method, by index:
+你可以通过索引在方法的 `arguments` 数组中访问方法参数的 ReflectionInfo 对象：
 
 ```javascript
 obj.reflect.methods["indexOf"].arguments[0];
@@ -167,7 +167,7 @@ obj.reflect.methods.indexOf.arguments[0];
 
 ---
 
-### ReflectionInfo Attributes
+### ReflectionInfo 属性
 
 #### arguments
 
@@ -175,11 +175,11 @@ obj.reflect.methods.indexOf.arguments[0];
 
 ##### 描述
 
-For a reflected method, an array of [ReflectionInfo objects](#reflectioninfo-object) describing each method argument.
+对于反射方法，描述每个方法参数的 [ReflectionInfo 对象](#reflectioninfo-object) 数组。
 
 ##### 类型
 
-Array of [ReflectionInfo objects](#reflectioninfo-object)
+[ReflectionInfo 对象](#reflectioninfo-object) 数组
 
 ---
 
@@ -189,21 +189,21 @@ Array of [ReflectionInfo objects](#reflectioninfo-object)
 
 ##### 描述
 
-The data type of the reflected element.
+反射元素的数据类型。
 
 ##### 类型
 
-String. One of:
+字符串。可能的值包括：
 
 - `"boolean"`
 - `"number"`
 - `"string"`
-- `"Classname"`: The class name of an object.
-    !!! note
-        Class names start with a capital letter. Thus, the value `String` stands for a JavaScript string, while String is a JavaScript String wrapper object.
-- `*`: Any type. This is the default.
+- `"Classname"`: 对象的类名。
+  !!! 注意
+  类名以大写字母开头。因此，值 `String` 表示 JavaScript 字符串，而 `String` 是 JavaScript 字符串包装对象。
+- `*`: 任何类型。这是默认值。
 - `null`
-- `undefined`: Return data type for a function that does not return any value.
+- `undefined`: 不返回任何值的函数的返回数据类型。
 - `unknown`
 
 ---
@@ -214,11 +214,11 @@ String. One of:
 
 ##### 描述
 
-The default value for a reflected property or method argument, or `undefined` if there is no default value, if the property is undefined, or if the element is a method.
+反射属性或方法参数的默认值，如果没有默认值、属性未定义或元素是方法，则为 `undefined`。
 
 ##### 类型
 
-Any
+任意类型
 
 ---
 
@@ -228,11 +228,11 @@ Any
 
 ##### 描述
 
-Short text describing the reflected object, or `undefined` if no description is available.
+描述反射对象的简短文本，如果没有描述则为 `undefined`。
 
 ##### 类型
 
-String
+字符串
 
 ---
 
@@ -242,11 +242,11 @@ String
 
 ##### 描述
 
-Longer text describing the reflected object more completely, or `undefined` if no description is available.
+描述反射对象的更完整的较长文本，如果没有描述则为 `undefined`。
 
 ##### 类型
 
-String
+字符串
 
 ---
 
@@ -256,11 +256,11 @@ String
 
 ##### 描述
 
-When `true`, the reflected property or method returns a collection; otherwise, `false`.
+如果为 `true`，则反射属性或方法返回一个集合；否则为 `false`。
 
 ##### 类型
 
-Boolean
+布尔值
 
 ---
 
@@ -270,11 +270,11 @@ Boolean
 
 ##### 描述
 
-The maximum numeric value for the reflected element, or `undefined` if there is no maximum or if the element is a method.
+反射元素的最大数值，如果没有最大值或元素是方法，则为 `undefined`。
 
 ##### 类型
 
-Number
+数字
 
 ---
 
@@ -284,11 +284,11 @@ Number
 
 ##### 描述
 
-The minimum numeric value for the reflected element, or `undefined` if there is no minimum or if the element is a method.
+反射元素的最小数值，如果没有最小值或元素是方法，则为 `undefined`。
 
 ##### 类型
 
-Number
+数字
 
 ---
 
@@ -298,11 +298,11 @@ Number
 
 ##### 描述
 
-The name of the reflected element. A string, or a number for an array index.
+反射元素的名称。字符串或数组索引的数字。
 
 ##### 类型
 
-String or Number
+字符串或数字
 
 ---
 
@@ -312,15 +312,15 @@ String or Number
 
 ##### 描述
 
-The type of the reflected element.
+反射元素的类型。
 
 ##### 类型
 
-String. One of:
+字符串。可能的值包括：
 
-- `readonly`: A Read only property.
-- `readwrite`: A read-write property.
-- `createonly`: A property that is valid only during creation of an object.
-- `method`: A method.
+- `readonly`: 只读属性。
+- `readwrite`: 读写属性。
+- `createonly`: 仅在对象创建期间有效的属性。
+- `method`: 方法。
 
 ---

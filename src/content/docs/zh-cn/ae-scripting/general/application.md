@@ -1,5 +1,5 @@
 ---
-title: application
+title: 应用
 ---
 # Application object
 
@@ -50,11 +50,7 @@ Application 对象的属性提供了对 After Effects 内部特定对象的访�
 
 以下示例代码检查当前计算机可用的 GPU 加速类型，如果可用则设置为 Metal：
 
-javascript
-
-复制
-
-```
+```javascript
 // app.availableGPUAccelTypes 返回当前系统可用的 GPU 加速类型
 // 在设置前需要先检查可用性
 var newType = GpuAccelType.METAL;
@@ -63,16 +59,16 @@ var newType = GpuAccelType.METAL;
 var canSet = false;
 var currentOptions = app.availableGPUAccelTypes;
 for (var op in currentOptions) {
-    if (currentOptions[op] === newType) {
-        canSet = true;
-    }
+  if (currentOptions[op] === newType) {
+    canSet = true;
+  }
 }
 
 if (canSet) {
-    // 设置 GPU 加速类型
-    app.project.gpuAccelType = newType;
+  // 设置 GPU 加速类型
+  app.project.gpuAccelType = newType;
 } else {
-    alert("当前操作系统不支持 Metal 加速");
+  alert("当前操作系统不支持 Metal 加速");
 }
 ```
 
@@ -141,11 +137,7 @@ if (canSet) {
 
 #### 示例
 
-javascript
-
-复制
-
-```
+```javascript
 var effectName = app.effects[12].displayName;
 ```
 
@@ -185,11 +177,7 @@ var effectName = app.effects[12].displayName;
 
 #### 示例
 
-javascript
-
-复制
-
-```
+```javascript
 app.exitCode = 2; // 退出时若值为 2 表示发生错误
 ```
 
@@ -231,18 +219,14 @@ app.exitCode = 2; // 退出时若值为 2 表示发生错误
 
 #### 示例
 
-javascript
-
-复制
-
-```
+```javascript
 var lang = app.isoLanguage;
 if (lang === "en_US") {
-    alert("After Effects 当前使用英语界面");
+  alert("After Effects 当前使用英语界面");
 } else if (lang === "fr_FR") {
-    alert("After Effects 当前使用法语界面");
+  alert("After Effects 当前使用法语界面");
 } else {
-    alert("After Effects 当前使用非英法语言界面");
+  alert("After Effects 当前使用非英法语言界面");
 }
 ```
 
@@ -304,13 +288,9 @@ if (lang === "en_US") {
 
 #### 示例
 
-javascript
-
-复制
-
-```
+```javascript
 function err(errString) {
-    alert(errString) ;
+  alert(errString) ;
 }
 app.onError = err;
 ```
@@ -389,11 +369,7 @@ app.onError = err;
 
 #### 示例
 
-javascript
-
-复制
-
-```
+```javascript
 var ver = app.version;
 alert("本机运行的 AfterEffects 版本是：" + ver);
 ```
@@ -569,11 +545,7 @@ GUI 应用程序中的菜单命令都有独立 ID 号，可作此方法的参数
 
 #### 示例
 
-javascript
-
-复制
-
-```
+```javascript
 // 调用"转换为贝塞尔路径"命令
 app.executeCommand(4162);
 ```
@@ -607,11 +579,7 @@ app.executeCommand(4162);
 
 #### 示例
 
-javascript
-
-复制
-
-```
+```javascript
 app.findMenuCommandId("Convert To Bezier Path")
 ```
 
@@ -637,11 +605,7 @@ app.findMenuCommandId("Convert To Bezier Path")
 
 #### 示例
 
-javascript
-
-复制
-
-```
+```javascript
 app.project.close(CloseOptions.DO_NOT_SAVE_CHANGES);
 app.newProject();
 ```
@@ -670,17 +634,13 @@ app.newProject();
 
 #### 示例
 
-javascript
-
-复制
-
-```
+```javascript
 var my_file = new File("../my_folder/my_test.aep");
 if (my_file.exists) {
-    var new_project = app.open(my_file);
-    if (new_project) {
-        alert(new_project.file.name);
-    }
+  var new_project = app.open(my_file);
+  if (new_project) {
+    alert(new_project.file.name);
+  }
 }
 ```
 
@@ -706,11 +666,7 @@ if (my_file.exists) {
 
 #### 示例
 
-javascript
-
-复制
-
-```
+```javascript
 var projectFile = new File("someFile.aep");
 
 $.hiresTimer;
@@ -726,8 +682,8 @@ var normalEnd = $.hiresTimer / 1000;
 app.project.close(CloseOptions.DO_NOT_SAVE_CHANGES);
 
 alert( "时间差为 " + parseInt(normalEnd-fastEnd) + " 毫秒" +
-        "\n\n快速打开: " + fastEnd + " 毫秒" +
-        "\n常规打开:" + normalEnd + " 毫秒" );
+    "\n\n快速打开: " + fastEnd + " 毫秒" +
+    "\n常规打开:" + normalEnd + " 毫秒" );
 ```
 
 ### app.parseSwatchFile()
@@ -811,14 +767,14 @@ Nothing.
 
 #### 参数
 
-| 参数     | 类型                | 描述                                                         |
-| -------- | ------------------- | ------------------------------------------------------------ |
-| `target` | `PurgeTarget` 枚举值 | 要清除的缓存类型之一：                                       |
-|          |                     | - `PurgeTarget.ALL_CACHES`：清除 RAM 和磁盘缓存。          |
-|          |                     | - `PurgeTarget.ALL_MEMORY_CACHES`：清除 RAM 缓存（24.3 版本新增）。 |
-|          |                     | - `PurgeTarget.UNDO_CACHES`：清除撤销缓存。                 |
-|          |                     | - `PurgeTarget.SNAPSHOT_CACHES`：清除合成/图层快照缓存。   |
-|          |                     | - `PurgeTarget.IMAGE_CACHES`：清除已保存的图像数据。       |
+| 参数       | 类型                   | 描述                                                                 |
+| ---------- | ---------------------- | -------------------------------------------------------------------- |
+| `target` | `PurgeTarget` 枚举值 | 要清除的缓存类型之一：                                               |
+|            |                        | -`PurgeTarget.ALL_CACHES`：清除 RAM 和磁盘缓存。                   |
+|            |                        | -`PurgeTarget.ALL_MEMORY_CACHES`：清除 RAM 缓存（24.3 版本新增）。 |
+|            |                        | -`PurgeTarget.UNDO_CACHES`：清除撤销缓存。                         |
+|            |                        | -`PurgeTarget.SNAPSHOT_CACHES`：清除合成/图层快照缓存。            |
+|            |                        | -`PurgeTarget.IMAGE_CACHES`：清除已保存的图像数据。                |
 
 #### 返回
 
@@ -854,11 +810,11 @@ Nothing.
 
 #### 参数
 
-| 参数              | 类型    | 描述                                               |
-| ---------------- | ------- | -------------------------------------------------- |
-| `stringToExecute` | String  | 需要执行的 JavaScript 代码。                       |
-| `delay`         | Float   | 执行前等待的毫秒数。                               |
-| `repeat`        | Boolean | `true` 表示重复执行，`false` 仅执行一次。 |
+| 参数                | 类型    | 描述                                          |
+| ------------------- | ------- | --------------------------------------------- |
+| `stringToExecute` | String  | 需要执行的 JavaScript 代码。                  |
+| `delay`           | Float   | 执行前等待的毫秒数。                          |
+| `repeat`          | Boolean | `true` 表示重复执行，`false` 仅执行一次。 |
 
 #### 返回
 
@@ -876,11 +832,11 @@ Nothing.
 
 #### 参数
 
-| 参数                | 类型    | 描述                                                                                                                                             |
-| ------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `stringToExecute` | 字符串  | 包含要执行的JavaScript代码的字符串。                                                                                                   |
-| `delay`           | 浮点数   | 在执行JavaScript之前等待的毫秒数。                                                                                |
-| `repeat`          | 布尔值   | 当为`true`时，重复执行脚本，每次执行之间间隔指定的延迟时间。当为`false`时，脚本仅执行一次。 |
+| 参数                | 类型   | 描述                                                                                              |
+| ------------------- | ------ | ------------------------------------------------------------------------------------------------- |
+| `stringToExecute` | 字符串 | 包含要执行的JavaScript代码的字符串。                                                              |
+| `delay`           | 浮点数 | 在执行JavaScript之前等待的毫秒数。                                                                |
+| `repeat`          | 布尔值 | 当为 `true`时，重复执行脚本，每次执行之间间隔指定的延迟时间。当为 `false`时，脚本仅执行一次。 |
 
 #### 返回
 
@@ -898,10 +854,10 @@ Nothing.
 
 #### 参数
 
-| 参数                        | 类型   | 描述                                              |
-| --------------------------- | ------ | ------------------------------------------------- |
-| `imageCachePercentage`    | Float  | 分配给图像缓存的内存百分比。                      |
-| `maximumMemoryPercentage` | Float  | 最大可用内存百分比。                              |
+| 参数                        | 类型  | 描述                         |
+| --------------------------- | ----- | ---------------------------- |
+| `imageCachePercentage`    | Float | 分配给图像缓存的内存百分比。 |
+| `maximumMemoryPercentage` | Float | 最大可用内存百分比。         |
 
 #### 返回
 
@@ -919,20 +875,20 @@ Nothing.
 
 #### 描述
 
-从脚本中调用此函数将为下一次渲染设置多帧渲染配置。  
+从脚本中调用此函数将为下一次渲染设置多帧渲染配置。
 脚本执行完成后，这些设置将重置为之前在用户界面中设置的配置。
 
 #### 参数
 
-| 参数             | 类型                                      | 描述                                                                                                             |
-| ---------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `mfr_on`       | Boolean                                   | 设置为 `true` 以启用多帧渲染。                                                                                 |
-| `max_cpu_perc` | Floating-point value, 范围为 `[1..100]`   | 多帧渲染应使用的最大 CPU 百分比。如果 `mfr_on` 设置为 `false`，则传入值应为100。                              |
+| 参数             | 类型                                      | 描述                                                                                 |
+| ---------------- | ----------------------------------------- | ------------------------------------------------------------------------------------ |
+| `mfr_on`       | Boolean                                   | 设置为 `true` 以启用多帧渲染。                                                     |
+| `max_cpu_perc` | Floating-point value, 范围为 `[1..100]` | 多帧渲染应使用的最大 CPU 百分比。如果 `mfr_on` 设置为 `false`，则传入值应为100。 |
 
 #### 返回
 
 无返回值
----
+--------
 
 ### app.setSavePreferencesOnQuit()
 

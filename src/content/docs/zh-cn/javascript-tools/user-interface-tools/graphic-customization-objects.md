@@ -1,36 +1,36 @@
 ---
-title: graphic-customization-objects
+title: 图形自定义对象
 ---
-# Graphic customization objects
+# 图形自定义对象
 
-These objects provide the ability to customize the appearance of user-interface controls before they are drawn:
+这些对象提供了在绘制用户界面控件之前自定义其外观的能力：
 
-- [ScriptUIGraphics object](#scriptuigraphics-object)
-- [ScriptUIBrush object](#scriptuibrush-object)
-- [ScriptUIFont object](#scriptuifont-object)
-- [ScriptUIImage object](#scriptuiimage-object)
-- [ScriptUIPath object](#scriptuipath-object)
-- [ScriptUIPen object](#scriptuipen-object)
+- [ScriptUIGraphics 对象](#scriptuigraphics-object)
+- [ScriptUIBrush 对象](#scriptuibrush-object)
+- [ScriptUIFont 对象](#scriptuifont-object)
+- [ScriptUIImage 对象](#scriptuiimage-object)
+- [ScriptUIPath 对象](#scriptuipath-object)
+- [ScriptUIPen 对象](#scriptuipen-object)
 
-In addition, the Custom element class (if supported by the Adobe application you are using) allows you to define completely customized UI elements that are rendered by the application in a manner you define.
+此外，Custom 元素类（如果您使用的 Adobe 应用程序支持）允许您定义完全自定义的 UI 元素，这些元素由应用程序按照您定义的方式进行渲染。
 
 ---
 
-## ScriptUIGraphics Object
+## ScriptUIGraphics 对象
 
-Most types of user-interface elements have a graphics property which contains an object of this type, which allows you to customize aspects of the element's appearance, such as the color and font. Use an onDraw callback function to set these properties or call the functions.
+大多数类型的用户界面元素都有一个 `graphics` 属性，该属性包含此类型的对象，允许您自定义元素外观的各个方面，例如颜色和字体。使用 `onDraw` 回调函数来设置这些属性或调用这些函数。
 
-All measurements are in pixels.
+所有测量值均以像素为单位。
 
-### ScriptUIGraphics Class Attributes
+### ScriptUIGraphics 类属性
 
-These static properties provide color type constants with which to create Pen and Brush objects.
+这些静态属性提供了用于创建 Pen 和 Brush 对象的颜色类型常量。
 
 #### BrushType
 
 ##### 描述
 
-Contains the enumerated constants for the type argument of `newBrush()`. Types are:
+包含 `newBrush()` 的 `type` 参数的枚举常量。类型包括：
 
 - `SOLID_COLOR`
 - `THEME_COLOR`
@@ -45,7 +45,7 @@ Object
 
 ##### 描述
 
-Contains the enumerated constants for the type argument of `newPen()`. Types are:
+包含 `newPen()` 的 `type` 参数的枚举常量。类型包括：
 
 - `SOLID_COLOR`
 - `THEME_COLOR`
@@ -56,9 +56,9 @@ Object
 
 ---
 
-### ScriptUIGraphics Object Attributes
+### ScriptUIGraphics 对象属性
 
-The object contains the following properties:
+该对象包含以下属性：
 
 #### backgroundColor
 
@@ -66,11 +66,11 @@ The object contains the following properties:
 
 ##### 描述
 
-The background color of a container, or the parent background color for a control element.
+容器的背景颜色，或控件元素的父背景颜色。
 
 ##### 类型
 
-[ScriptUIBrush object](#scriptuibrush-object)
+[ScriptUIBrush 对象](#scriptuibrush-object)
 
 ---
 
@@ -80,11 +80,11 @@ The background color of a container, or the parent background color for a contro
 
 ##### 描述
 
-The current drawing path for this object.
+此对象的当前绘制路径。
 
 ##### 类型
 
-[ScriptUIPath object](#scriptuipath-object)
+[ScriptUIPath 对象](#scriptuipath-object)
 
 ---
 
@@ -94,11 +94,11 @@ The current drawing path for this object.
 
 ##### 描述
 
-The current position in the drawing path for this object
+此对象的绘制路径中的当前位置。
 
 ##### 类型
 
-[Point object](./size-and-location-objects.md#point)
+[Point 对象](./size-and-location-objects.md#point)
 
 ---
 
@@ -108,11 +108,11 @@ The current position in the drawing path for this object
 
 ##### 描述
 
-The background color for the disabled state of a container, or the parent background color for the disabled state of a control element.
+容器禁用状态的背景颜色，或控件元素禁用状态的父背景颜色。
 
 ##### 类型
 
-[ScriptUIBrush object](#scriptuibrush-object)
+[ScriptUIBrush 对象](#scriptuibrush-object)
 
 ---
 
@@ -122,11 +122,11 @@ The background color for the disabled state of a container, or the parent backgr
 
 ##### 描述
 
-The foreground color for the disabled state of a container, or the parent foreground color for the disabled state of a control element.
+容器禁用状态的前景颜色，或控件元素禁用状态的父前景颜色。
 
 ##### 类型
 
-[ScriptUIPen object](#scriptuipen-object)
+[ScriptUIPen 对象](#scriptuipen-object)
 
 ---
 
@@ -136,11 +136,11 @@ The foreground color for the disabled state of a container, or the parent foregr
 
 ##### 描述
 
-The default font to use in writing text.
+用于书写文本的默认字体。
 
 ##### 类型
 
-[ScriptUIFont object](#scriptuifont-object)
+[ScriptUIFont 对象](#scriptuifont-object)
 
 ---
 
@@ -150,17 +150,17 @@ The default font to use in writing text.
 
 ##### 描述
 
-The foreground color for a container, or the parent foreground color of a control element.
+容器的前景颜色，或控件元素的父前景颜色。
 
 ##### 类型
 
-[ScriptUIPen object](#scriptuipen-object)
+[ScriptUIPen 对象](#scriptuipen-object)
 
 ---
 
-### ScriptUIGraphics Object Methods
+### ScriptUIGraphics 对象方法
 
-These functions directly customize the appearance of the associated element by drawing on the screen, or create the Pen and Brush objects used to populate the graphics object or pass to the drawing methods:
+这些函数通过在屏幕上绘制来直接自定义关联元素的外观，或创建用于填充图形对象或传递给绘制方法的 Pen 和 Brush 对象：
 
 ---
 
@@ -170,11 +170,11 @@ These functions directly customize the appearance of the associated element by d
 
 ##### 描述
 
-Defines a line from the current position to the start point of the current path (the value of [`currentPath`](#currentpath)), which closes the path.
+定义从当前位置到当前路径起点（[`currentPath`](#currentpath) 的值）的线，从而闭合路径。
 
 ##### 返回
 
-Nothing
+无
 
 ---
 
@@ -184,22 +184,22 @@ Nothing
 
 ##### 描述
 
-Draws a focus ring within the given rectangular region. This is a visual indicator showing that a given control has the keyboard focus (accepts keyboard input).
+在给定的矩形区域内绘制焦点环。这是一个视觉指示器，显示某个控件具有键盘焦点（接受键盘输入）。
 
-In Mac OS, this is typically a light blue ring around the control.
+在 Mac OS 中，这通常是控件周围的浅蓝色环。
 
-In Windows, it is typically a dashed-line rectangle around some part of the control.
+在 Windows 中，这通常是控件某部分的虚线矩形。
 
 ##### 参数
 
 |     参数     |  类型  |                                                      描述                                                       |
 | ----------------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
-| `left`, `top`     | Number | Defines the top left corner of the region, in the coordinate system of the control that contains this graphics object. |
-| `width`, `height` | Number | Optional. The width and height of the region in pixels.                                                                |
+| `left`, `top`     | Number | 定义区域的左上角，位于包含此图形对象的控件的坐标系中。 |
+| `width`, `height` | Number | 可选。区域的宽度和高度（以像素为单位）。                                                                |
 
 ##### 返回
 
-Nothing
+无
 
 ---
 
@@ -209,19 +209,19 @@ Nothing
 
 ##### 描述
 
-Draws an image within the given rectangular region, using the image file from the given image object that is appropriate to the control's current state.
+在给定的矩形区域内绘制图像，使用来自给定图像对象的图像文件，该文件适合控件的当前状态。
 
 ##### 参数
 
 |     参数     |                     类型                      |                                                                                                   描述                                                                                                    |
 | ----------------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `image`           | [ScriptUIImage object](#scriptuiimage-object) | The ScriptUIImage object containing the images to be drawn.                                                                                                                                                      |
-| `left`, `top`     | Number                                        | Defines the top left corner of the drawing region, in the coordinate system of the control that contains this graphics object.                                                                                   |
-| `width`, `height` | Number                                        | Optional. The width and height of the drawing region in pixels. If specified, the image is stretched or shrunk to fit into the given rectangular area. If omitted, the image's original width or height is used. |
+| `image`           | [ScriptUIImage 对象](#scriptuiimage-object) | 包含要绘制的图像的 ScriptUIImage 对象。                                                                                                                                                      |
+| `left`, `top`     | Number                                        | 定义绘制区域的左上角，位于包含此图形对象的控件的坐标系中。                                                                                   |
+| `width`, `height` | Number                                        | 可选。绘制区域的宽度和高度（以像素为单位）。如果指定，图像将被拉伸或缩小以适应给定的矩形区域。如果省略，则使用图像的原始宽度或高度。 |
 
 ##### 返回
 
-Nothing
+无
 
 ---
 
@@ -231,11 +231,11 @@ Nothing
 
 ##### 描述
 
-Draws the platform-specific control associated with this element.
+绘制与此元素关联的平台特定控件。
 
 ##### 返回
 
-Nothing
+无
 
 ---
 
@@ -245,20 +245,20 @@ Nothing
 
 ##### 描述
 
-Draws a string of text starting at a given point, using the given pen and font.
+在给定点开始绘制文本字符串，使用给定的笔和字体。
 
 ##### 参数
 
 | 参数 |                    类型                     |                                                       描述                                                        |
 | --------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `text`    | String                                      | The text string.                                                                                                         |
-| `pen`     | [ScriptUIPen object](#scriptuipen-object)   | The [ScriptUIPen object](#scriptuipen-object) for the drawing pen to use.                                                |
-| `x`, `y`  | Number                                      | The origin point of the drawn text, in the coordinate system of the control that contains this graphics object.          |
-| `font`    | [ScriptUIFont object](#scriptuifont-object) | Optional. The [ScriptUIFont object](#scriptuifont-object) for the font to use. Default is the font value in this object. |
+| `text`    | String                                      | 文本字符串。                                                                                                         |
+| `pen`     | [ScriptUIPen 对象](#scriptuipen-object)   | 用于绘制的 [ScriptUIPen 对象](#scriptuipen-object)。                                                |
+| `x`, `y`  | Number                                      | 绘制文本的起点，位于包含此图形对象的控件的坐标系中。          |
+| `font`    | [ScriptUIFont 对象](#scriptuifont-object) | 可选。用于绘制的 [ScriptUIFont 对象](#scriptuifont-object)。默认为此对象中的字体值。 |
 
 ##### 返回
 
-Nothing
+无
 
 ---
 
@@ -268,20 +268,20 @@ Nothing
 
 ##### 描述
 
-Defines an elliptical path within a given rectangular area in the currentPath object, which can be filled using [`fillPath()`](#fillpath) or stroked using [`strokePath()`](#strokepath).
+在 `currentPath` 对象中定义一个椭圆路径，该路径可以使用 [`fillPath()`](#fillpath) 填充或使用 [`strokePath()`](#strokepath) 描边。
 
-Returns a [Point object](./size-and-location-objects.md#point) for the upper left corner of the area, which is the new [`currentPoint`](#currentpoint).
+返回区域的左上角的 [Point 对象](./size-and-location-objects.md#point)，这是新的 [`currentPoint`](#currentpoint)。
 
 ##### 参数
 
 |     参数     |  类型  |                                                      描述                                                       |
 | ----------------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
-| `left`, `top`     | Number | Defines the top left corner of the region, in the coordinate system of the control that contains this graphics object. |
-| `width`, `height` | Number | The width and height of the region in pixels.                                                                          |
+| `left`, `top`     | Number | 定义区域的左上角，位于包含此图形对象的控件的坐标系中。 |
+| `width`, `height` | Number | 区域的宽度和高度（以像素为单位）。                                                                          |
 
 ##### 返回
 
-[Point object](./size-and-location-objects.md#point)
+[Point 对象](./size-and-location-objects.md#point)
 
 ---
 
@@ -291,18 +291,18 @@ Returns a [Point object](./size-and-location-objects.md#point) for the upper lef
 
 ##### 描述
 
-Fills a path using a given painting brush.
+使用给定的绘画笔刷填充路径。
 
 ##### 参数
 
 | 参数 |                     类型                      |                                                      描述                                                      |
 | --------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `brush`   | [ScriptUIBrush object](#scriptuibrush-object) | The ScriptUIBrush object that defines the fill color.                                                                 |
-| `path`    | [ScriptUIPath object](#scriptuipath-object)   | Optional, the [ScriptUIPath object](#scriptuipath-object) for the path. If not supplied, operates on the currentPath. |
+| `brush`   | [ScriptUIBrush 对象](#scriptuibrush-object) | 定义填充颜色的 ScriptUIBrush 对象。                                                                 |
+| `path`    | [ScriptUIPath 对象](#scriptuipath-object)   | 可选，路径的 [ScriptUIPath 对象](#scriptuipath-object)。如果未提供，则对 currentPath 进行操作。 |
 
 ##### 返回
 
-Nothing
+无
 
 ---
 
@@ -312,19 +312,19 @@ Nothing
 
 ##### 描述
 
-Adds a path segment to the `currentPath`, from the `currentPoint` to the specified point.
+向 `currentPath` 添加一个路径段，从 `currentPoint` 到指定点。
 
-Returns a [Point object](./size-and-location-objects.md#point) for the upper left corner of the area, which is the new [`currentPoint`](#currentpoint).
+返回区域的左上角的 [Point 对象](./size-and-location-objects.md#point)，这是新的 [`currentPoint`](#currentpoint)。
 
 ##### 参数
 
 | 参数 |  类型  |                                                  描述                                                   |
 | --------- | ------ | -------------------------------------------------------------------------------------------------------------- |
-| `x`, `y`  | Number | The destination point of the line, in the coordinate system of the control that contains this graphics object. |
+| `x`, `y`  | Number | 线的目标点，位于包含此图形对象的控件的坐标系中。 |
 
 ##### 返回
 
-[Point object](./size-and-location-objects.md#point)
+[Point 对象](./size-and-location-objects.md#point)
 
 ---
 
@@ -334,21 +334,21 @@ Returns a [Point object](./size-and-location-objects.md#point) for the upper lef
 
 ##### 描述
 
-Calculates the size needed to draw a text string in a given font.
+计算在给定字体中绘制文本字符串所需的大小。
 
-Returns a [Dimension object](./size-and-location-objects.md#dimension) object containing the height and width of the string in pixels.
+返回包含字符串高度和宽度的 [Dimension 对象](./size-and-location-objects.md#dimension)（以像素为单位）。
 
 ##### 参数
 
 |    参数    |                    类型                     |                                                                                 描述                                                                                 |
 | --------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `text`          | Text                                        | The text string to measure.                                                                                                                                                 |
-| `font`          | [ScriptUIFont object](#scriptuifont-object) | Optional. The [ScriptUIFont object](#scriptuifont-object) for the font to use. Default is the font value in this object.                                                    |
-| `boundingWidth` | Number                                      | Optional. A number that specifies the maximum width in pixels of the area in which the text might be placed. Use when wrapping a long string of text across multiple lines. |
+| `text`          | Text                                        | 要测量的文本字符串。                                                                                                                                                 |
+| `font`          | [ScriptUIFont 对象](#scriptuifont-object) | 可选。用于绘制的 [ScriptUIFont 对象](#scriptuifont-object)。默认为此对象中的字体值。                                                    |
+| `boundingWidth` | Number                                      | 可选。指定文本可能放置区域的最大宽度（以像素为单位）。当将长文本字符串跨多行换行时使用。 |
 
 ##### 返回
 
-[Dimension object](./size-and-location-objects.md#dimension)
+[Dimension 对象](./size-and-location-objects.md#dimension)
 
 ---
 
@@ -358,17 +358,17 @@ Returns a [Dimension object](./size-and-location-objects.md#dimension) object co
 
 ##### 描述
 
-Adds a given point to the [`currentPath`](#currentpath), and makes it the [`currentPoint`](#currentpoint).
+将给定点添加到 [`currentPath`](#currentpath)，并将其设为 [`currentPoint`](#currentpoint)。
 
 ##### 参数
 
 | 参数 |  类型  |                                           描述                                            |
 | --------- | ------ | ------------------------------------------------------------------------------------------------ |
-| `x`, `y`  | Number | The new coordinates, in the coordinate system of the control that contains this graphics object. |
+| `x`, `y`  | Number | 新坐标，位于包含此图形对象的控件的坐标系中。 |
 
 ##### 返回
 
-[Point object](./size-and-location-objects.md#point)
+[Point 对象](./size-and-location-objects.md#point)
 
 ---
 
@@ -378,24 +378,24 @@ Adds a given point to the [`currentPath`](#currentpath), and makes it the [`curr
 
 ##### 描述
 
-Creates a new painting brush.
+创建一个新的绘画笔刷。
 
 ##### 参数
 
 | 参数 |          类型           |                                                                                                             描述                                                                                                              |
 |-----------|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| type      | [BrushType](#brushtype) | The brush type, one of these constants:                                                                                                                                                                                              |
+| type      | [BrushType](#brushtype) | 笔刷类型，以下常量之一：                                                                                                                                                                                              |
 |           |                         | - `ScriptUIGraphics.BrushType.SOLID_COLOR`                                                                                                                                                                                           |
 |           |                         | - `ScriptUIGraphics.BrushType.THEME_COLOR`                                                                                                                                                                                           |
-| color     | Array of Numbers        | The brush color. If type is `SOLID_COLOR`, the color expressed as an array of three or four values, in the form `[R, B, G, A]` specifying the red, green, and blue values of the color and, optionally, the opacity (alpha channel). |
-|           |                         | All values are numbers in the range `[0.0...1.0]`.                                                                                                                                                                                   |
-|           |                         | An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.                                                                                                                                                           |
-|           |                         | If the type is `THEME_COLOR`, the name string of the theme.                                                                                                                                                                          |
-|           |                         | Theme colors are defined by the host application.                                                                                                                                                                                    |
+| color     | Array of Numbers        | 笔刷颜色。如果类型为 `SOLID_COLOR`，则颜色表示为三个或四个值的数组，形式为 `[R, B, G, A]`，指定颜色的红、绿、蓝值以及可选的透明度（alpha 通道）。 |
+|           |                         | 所有值均为 `[0.0...1.0]` 范围内的数字。                                                                                                                                                                                   |
+|           |                         | 透明度为 0 表示完全透明，透明度为 1 表示完全不透明。                                                                                                                                                           |
+|           |                         | 如果类型为 `THEME_COLOR`，则为主题的名称字符串。                                                                                                                                                                          |
+|           |                         | 主题颜色由宿主应用程序定义。                                                                                                                                                                                    |
 
 ##### 返回
 
-[ScriptUIBrush object](#scriptuibrush-object).
+[ScriptUIBrush 对象](#scriptuibrush-object)。
 
 ---
 
@@ -405,11 +405,11 @@ Creates a new painting brush.
 
 ##### 描述
 
-Creates a new, empty drawing path in `currentPath`, replacing any existing path.
+在 `currentPath` 中创建一个新的空绘制路径，替换任何现有路径。
 
 ##### 返回
 
-[ScriptUIPath object](#scriptuipath-object).
+[ScriptUIPath 对象](#scriptuipath-object)。
 
 ---
 
@@ -419,25 +419,25 @@ Creates a new, empty drawing path in `currentPath`, replacing any existing path.
 
 ##### 描述
 
-Creates a new drawing pen.
+创建一个新的绘制笔。
 
 ##### 参数
 
 |  参数  |        类型         |                                                                                                                   描述                                                                                                                   |
 |-------------|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| type        | [PenType](#pentype) | The pen type, one of these constants:                                                                                                                                                                                                           |
+| type        | [PenType](#pentype) | 笔类型，以下常量之一：                                                                                                                                                                                                           |
 |             |                     | - `ScriptUIGraphics.PenType.SOLID_COLOR`                                                                                                                                                                                                        |
 |             |                     | - `ScriptUIGraphics.PenType.THEME_COLOR`                                                                                                                                                                                                        |
-| `color`     | Array of Numbers    | The pen color. If type is SOLID_COLOR, the color expressed as an array of three or four values, in the form `[R, B, G, A]` specifying the red, green, and blue values of the color and, optionally, the opacity (alpha channel).                |
-|             |                     | All values are numbers in the range `[0.0...1.0]`.                                                                                                                                                                                              |
-|             |                     | An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.                                                                                                                                                                      |
-|             |                     | If the type is `THEME_COLOR`, the name string of the theme.                                                                                                                                                                                     |
-|             |                     | Theme colors are defined by the host application.                                                                                                                                                                                               |
-| `lineWidth` | Pixels              | The width in pixels of the line this pen will draw. The line is centered around the current point. For example, if lineWidth is 2, drawing a line from (0, 10) to (5, 10) paints the two rows of pixels directly above and below y-position 10. |
+| `color`     | Array of Numbers    | 笔颜色。如果类型为 SOLID_COLOR，则颜色表示为三个或四个值的数组，形式为 `[R, B, G, A]`，指定颜色的红、绿、蓝值以及可选的透明度（alpha 通道）。                |
+|             |                     | 所有值均为 `[0.0...1.0]` 范围内的数字。                                                                                                                                                                                              |
+|             |                     | 透明度为 0 表示完全透明，透明度为 1 表示完全不透明。                                                                                                                                                                      |
+|             |                     | 如果类型为 `THEME_COLOR`，则为主题的名称字符串。                                                                                                                                                                                     |
+|             |                     | 主题颜色由宿主应用程序定义。                                                                                                                                                                                               |
+| `lineWidth` | Pixels              | 此笔绘制的线的宽度（以像素为单位）。线以当前点为中心。例如，如果 lineWidth 为 2，则从 (0, 10) 到 (5, 10) 绘制一条线会在 y 位置 10 的正上方和正下方绘制两行像素。 |
 
 ##### 返回
 
-[ScriptUIPen object](#scriptuipen-object).
+[ScriptUIPen 对象](#scriptuipen-object)。
 
 ---
 
@@ -447,20 +447,20 @@ Creates a new drawing pen.
 
 ##### 描述
 
-Defines a rectangular path in the currentPath object, which can be filled using [`fillPath()`](#fillpath) or stroked using [`strokePath()`](#strokepath).
+在 `currentPath` 对象中定义一个矩形路径，该路径可以使用 [`fillPath()`](#fillpath) 填充或使用 [`strokePath()`](#strokepath) 描边。
 
-Returns a [Point object](./size-and-location-objects.md#point) for the upper left corner of the rectangle, which is the new currentPoint.
+返回矩形左上角的 [Point 对象](./size-and-location-objects.md#point)，这是新的 currentPoint。
 
 ##### 参数
 
 |     参数     |  类型  |                                                      描述                                                       |
 | ----------------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
-| `left`, `top`     | Number | Defines the top left corner of the region, in the coordinate system of the control that contains this graphics object. |
-| `width`, `height` | Number | The width and height of the region in pixels.                                                                          |
+| `left`, `top`     | Number | 定义区域的左上角，位于包含此图形对象的控件的坐标系中。 |
+| `width`, `height` | Number | 区域的宽度和高度（以像素为单位）。                                                                          |
 
 ##### 返回
 
-[Point object](./size-and-location-objects.md#point)
+[Point 对象](./size-and-location-objects.md#point)
 
 ---
 
@@ -470,192 +470,10 @@ Returns a [Point object](./size-and-location-objects.md#point) for the upper lef
 
 ##### 描述
 
-Strokes the path segments of a path with a given drawing pen.
+使用给定的绘制笔描边路径的路径段。
 
 ##### 参数
 
 | 参数 |                    类型                     |                                                      描述                                                      |
 | --------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `pen`     | [ScriptUIPen object](#scriptuipen-object)   | The [ScriptUIPen object](#scriptuipen-object) that defines the color and line width.                                  |
-| `path`    | [ScriptUIPath object](#scriptuipath-object) | Optional, the [ScriptUIPath object](#scriptuipath-object) for the path. If not supplied, operates on the currentPath. |
-
-##### 返回
-
-Nothing
-
----
-
-## ScriptUIBrush Object
-
-A helper object that encapsulates the qualities of a brush used to paint fill into a path in a control. Create with the `newBrush()` method of the `ScriptUIGraphics` object.
-
-Used as a value of `backgroundColor` and `disabledBackgroundColor`.
-
-Passed as an argument to `fillPath()`.
-
-### ScriptUIBrush Object Attributes
-
-The object contains the following properties:
-
-| Property |      类型       |                                                                                                       描述                                                                                                       |
-|----------|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `color`  | Array of Number | The paint color to use when the type is `SOLID_COLOR`. An array in the form [R, B, G, A] specifying the red, green, blue values of the color and the opacity (alpha channel) value as numbers in the range [0.0...1.0]. |
-|          |                 | An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.                                                                                                                                              |
-| `theme`  | String          | The name of a color theme to use as a painting texture when the type is `THEME_COLOR`. Theme colors are defined by the host application.                                                                                |
-| `type`   | Number          | The brush type, one of these constants:                                                                                                                                                                                 |
-|          |                 | - `ScriptUIGraphics.BrushType.SOLID_COLOR`                                                                                                                                                                              |
-|          |                 | - `ScriptUIGraphics.BrushType.THEME_COLOR`                                                                                                                                                                              |
-
----
-
-## ScriptUIFont Object
-
-A helper object that encapsulates the qualities of a font used to draw text into a control. Create with the [`newFont()`](./scriptui-class.md#scriptuinewfont) method of the `ScriptUI` class.
-
-Used as a value of font.
-
-Passed as an argument to [`drawString()`](#drawstring) and [`measureString()`](#measurestring).
-
-### ScriptUIFont Object Attributes
-
-The object contains the following properties:
-
-|   Property   |  类型  |                                                             描述                                                              |
-|--------------|--------|--------------------------------------------------------------------------------------------------------------------------------------|
-| `family`     | String | The font family name.                                                                                                                |
-| `name`       | String | The complete font name, consisting of the family and style, if specified.                                                            |
-| `size`       | Number | The font point size.                                                                                                                 |
-| `style`      | Object | The font style. One of these constants:                                                                                              |
-|              |        | - `ScriptUI.FontStyle.REGULAR`                                                                                                       |
-|              |        | - `ScriptUI.FontStyle.BOLD`                                                                                                          |
-|              |        | - `ScriptUI.FontStyle.ITALIC`                                                                                                        |
-|              |        | - `ScriptUI.FontStyle.BOLDITALIC`                                                                                                    |
-| `substitute` | String | The name of a substitution font, a fallback font to substitute for this font if the requested font family or style is not available. |
-
----
-
-## ScriptUIImage Object
-
-A helper object that encapsulates a set of images that can be drawn into a control. Alternate versions of an image can reflect the state, such as a dimmed version for a disabled control.
-
-An object of this type is created automatically when a script uses a pathname or File object to set the image property of an Image, IconButton, or ListItem object; the new object becomes the value of that property.
-
-You can create this object explicitly using the [`newImage()`](./scriptui-class.md#scriptuinewimage) method of the `ScriptUI` class. When you do this, you can specify alternate versions of the image to be used for different control states, such as enabled, disabled, and rollover.
-
-This object is passed as an argument to [`drawImage()`](#drawimage).
-
-### ScriptUIImage Object Attributes
-
-The object contains the following read-only properties:
-
-|  Property  |   类型    |                                                           描述                                                            |
-| ---------- | --------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `format`   | String    | The image format. Scripts can define images in `JPEG` and `PNG` format. Applications can define images in the `resource` format. |
-| `name`     | String    | The image name, either a file name or resource name.                                                                             |
-| `pathname` | String    | The full path to the file that contains the image.                                                                               |
-| `size`     | Dimension | A Dimension object that defines the size of the image in pixels.                                                                 |
-
----
-
-## ScriptUIPath Object
-
-A helper object that encapsulates a drawing path for a figure to be drawn into a control. Create the object the [`newPath()`](#newpath) method and define path segments with the `moveto()`, `lineto()`, `rectPath()`, and `ellipsePath()` methods of the `ScriptUIGraphics` object.
-
-Used as a value of currentPath, where it is acted upon by [`closePath()`](#closepath) and other methods.
-
-Can be passed as an optional argument to [`fillPath()`](#fillpath) and [`strokePath()`](#strokepath) (which otherwise act upon the [`currentPath`](#currentpath)).
-
-The class defines no properties or methods.
-
----
-
-## ScriptUIPen Object
-
-A helper object that encapsulates the qualities of a pen used to stroke path segments in a control. Create with the [`newPen()`](#newpen) method of the `ScriptUIGraphics` object.
-
-Used as a value of [`foregroundColor`](#foregroundcolor) and [`disabledForegroundColor`](#disabledforegroundcolor).
-
-Passed as an argument to [`drawString()`](#drawstring) and [`strokePath()`](#strokepath).
-
-### ScriptUIPen Object Attributes
-
-The object contains the following properties:
-
-|  Property   |      类型       |                                                                                                      描述                                                                                                      |
-|-------------|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `color`     | Array of Number | The paint color to use when the type is SOLID_COLOR. An array in the form [R, B, G, A] specifying the red, green, blue values of the color and the opacity (alpha channel) value as numbers in the range [0.0...1.0]. |
-|             |                 | An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.                                                                                                                                            |
-| `lineWidth` | Number          | The pixel width of the drawing line.                                                                                                                                                                                  |
-| `theme`     | String          | The name of a color theme to use for drawing when the type is `THEME_COLOR`. Theme colors are defined by the host application.                                                                                        |
-| `type`      | Number          | The pen type, one of these constants:                                                                                                                                                                                 |
-|             |                 | - `ScriptUIGraphics.PenType.SOLID_COLOR`                                                                                                                                                                              |
-|             |                 | - `ScriptUIGraphics.PenType.THEME_COLOR`                                                                                                                                                                              |
-
----
-
-## Custom element class
-
-Elements of the Custom class differ from typical UI elements in that they have no default appearance; the script which creates a custom element is responsible for drawing it by defining the element's onDraw event handler function. This allows scripts to create any appearance for custom elements that can be rendered via the drawing functions defined for a UI element's graphics object.
-
-Custom elements have the same common properties that other types of control elements have (see [Common properties](../common-properties)). The different types of custom elements have additional properties.
-
-The Custom element class has the following types of elements:
-
-|       Element        |                                                                                          描述                                                                                           |     |
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
-| `customBoundedValue` | Can be used to implement controls whose 'value' can vary within minimum and maximum bounds, like the Progressbar, Slider, and Scrollbar. Has the same additional properties as those controls: |     |
-|                      | - `value`                                                                                                                                                                                      |     |
-|                      | - `minvalue`                                                                                                                                                                                   |     |
-|                      | - `maxvalue`                                                                                                                                                                                   |     |
-|                      | - `shortcutKey`                                                                                                                                                                                |     |
-|                      | If the value property is changed, the control receives an onChange event notification, followed by an onDraw event notification, so the element can redraw itself with the changed state.      |     |
-| `customButton`       | Can be used to implement various types of button controls, like the `Button`, `IconButton` with text, `Checkbox`, and so on. Additional properties are:                                        |     |
-|                      | - `image`                                                                                                                                                                                      |     |
-|                      | - `shortcutKey`                                                                                                                                                                                |     |
-|                      | - `text`                                                                                                                                                                                       |     |
-|                      | - `value`                                                                                                                                                                                      |     |
-| `customView`         | Has an `image` property that allows a script to define an image to display.                                                                                                                    |     |
-|                      | If no `onDraw` function is defined and the image property is set, the default appearance is simply the specified image, rendered centered in the bounds of the element.                        |     |
-
-A custom element's onDraw event handler function is not called when the mouse enters or leaves the screen region occupied by the element.
-
-If you need to force a drawing update in such cases, you must call `notify("onDraw")` for the element, in response to a mouseOver or mouseout event for the element.
-
-In the following example, the script forces a visual update for a customButton element when the mouse enters or leaves the button, by handling mouseover or mouseout events for the custom button:
-
-```javascript
-var res =
-"""palette {
-    text:'Custom elements demo',
-    properties:{ closeOnKey:'OSCmnd+W', resizeable:true },
-    customBtn: Custom {
-        type:'customButton',
-        text:'Redraw original image'
-    },
-    customImageViewer: Custom {
-        type:'customView',
-        alignment:['fill','fill']
-    }
-}""";
-
-var w = new Window (res);
-w.customBtn.onDraw = drawButton;
-w.customBtn.addEventListener ("mouseover", btnMouseEventHandler, false);
-w.customBtn.addEventListener ("mouseout", btnMouseEventHandler, false);
-
-// ...
-
-function btnMouseEventHandler (event) {
-    try {
-        //
-        Redraw the button on mouseover and mouseout
-        event.target.notify("onDraw");
-    } catch (e) {
-        ...
-    }
-}
-
-function drawButton (drawingState) {
-    ...
-}
-```
+| `pen`     | [ScriptUIPen 对象](#scriptuipen-object)   | 定义颜色和线

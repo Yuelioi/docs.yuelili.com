@@ -1,24 +1,24 @@
 ---
-title: resource-specifications
+title: 资源规范
 ---
-# Resource specifications
+# 资源规范
 
-You can create one or more user-interface elements at a time using a *resource* specification. This specially formatted string provides a simple and compact means of creating an element, including any container element and its component elements. The resource-specification string is passed as the `type` parameter to the `Window()` or `add()` constructor function.
+你可以使用*资源*规范一次性创建一个或多个用户界面元素。这种特殊格式的字符串提供了一种简单且紧凑的方式来创建元素，包括任何容器元素及其组件元素。资源规范字符串作为 `type` 参数传递给 `Window()` 或 `add()` 构造函数。
 
-The general structure of a resource specification is an element type specification (such as `dialog`), followed by a set of braces enclosing one or more property definitions.
+资源规范的一般结构是一个元素类型规范（例如 `dialog`），后跟一组大括号，括号内包含一个或多个属性定义。
 
 ```javascript
 var myResource = "dialog{ control_specs }";
 var myDialog = new Window ( myResource );
 ```
 
-Controls are defined as properties within windows and other containers. For each control, give the class name of the control, followed by the properties of the control enclosed in braces. For example, the following specifies a button:
+控件被定义为窗口和其他容器中的属性。对于每个控件，给出控件的类名，后跟用大括号括起来的控件属性。例如，以下代码指定了一个按钮：
 
 ```javascript
 testBtn: Button { text: "Test" }
 ```
 
-The following resource string specifies a panel that contains grouped `StaticText` and `EditText` controls:
+以下资源字符串指定了一个包含分组 `StaticText` 和 `EditText` 控件的面板：
 
 ```javascript
 "msgPnl: Panel { orientation:'column', alignChildren:['right', 'top'],\
@@ -35,42 +35,42 @@ The following resource string specifies a panel that contains grouped `StaticTex
 }"
 ```
 
-The property with name properties specifies creation `properties`; see [Creation properties](scriptui-programming-model.md#creation-properties).
+名为 `properties` 的属性指定了创建 `properties`；请参阅[创建属性](scriptui-programming-model.md#creation-properties)。
 
-A property value can be specified as `null`, `true`, `false`, a String, a Number, an inline Array, or an Object.
+属性值可以指定为 `null`、`true`、`false`、字符串、数字、内联数组或对象。
 
-- An inline array contains one or more values in the form:
+- 内联数组包含一个或多个值，形式如下：
     ```javascript
     [ value, value, ... ]
     ```
-- An object can be an inline object, or a named object, in the form:
+- 对象可以是内联对象或命名对象，形式如下：
     ```javascript
     { classname inlineObject }
     ```
 
-    In this case, the classname must be one of the control class names list in [Types of controls](../types-of-controls).
-- An inline object contains one or more properties, in the form:
+    在这种情况下，`classname` 必须是[控件类型](../types-of-controls)中列出的控件类名之一。
+- 内联对象包含一个或多个属性，形式如下：
     ```javascript
     { propertyName: propertyValue, propertyName: propertyValue, ... }
     ```
 
 ---
 
-## Using resource strings
+## 使用资源字符串
 
-These examples in the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) demonstrate how to use resource specification strings:
+[Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) 中的这些示例演示了如何使用资源规范字符串：
 
-| [AlertBoxBuilder1.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/AlertBoxBuilder1.jsx)   | Demonstrates one way to use resource strings, creating a dialog that allows the user to enter some values, and then using those values to construct the resource string for a customizable alert dialog.   |
+| [AlertBoxBuilder1.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/AlertBoxBuilder1.jsx)   | 演示了一种使用资源字符串的方式，创建一个允许用户输入一些值的对话框，然后使用这些值构建可自定义的警告对话框的资源字符串。   |
 |-----------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [AlertBoxBuilder2.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/AlertBoxBuilder2.jsx)   | Constructs the same dialog, using a resource string (rather than the `add()` method) to specify all of the dialog contents for the user-input dialog.                                                      |
+| [AlertBoxBuilder2.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/AlertBoxBuilder2.jsx)   | 使用资源字符串（而不是 `add()` 方法）指定用户输入对话框的所有内容，构建相同的对话框。                                                      |
 
-The two Alert Box Builder examples create the same dialog to collect values from the user.
+这两个 Alert Box Builder 示例创建了相同的对话框来从用户那里收集值。
 
-![Resource Strings Window](./_static/04_user-interface-tools_defining-behavior_resource-strings.jpg)
+![资源字符串窗口](./_static/04_user-interface-tools_defining-behavior_resource-strings.jpg)
 
-The Build button event handler builds a resource string from the collected values, and returns it from the dialog invocation function; the script then saves the resource string to a file. That resource string can later be used to create and display the user-configured alert box.
+Build 按钮的事件处理程序根据收集的值构建资源字符串，并从对话框调用函数中返回它；然后脚本将资源字符串保存到文件中。该资源字符串稍后可用于创建并显示用户配置的警告框。
 
-The resource specification format can also be used to create a single element or container and its child elements. For instance, if the `alertBuilderResource` in the example did not contain the panel `btnPnlResource`, you could define that resource separately, then add it to the dialog as follows:
+资源规范格式也可用于创建单个元素或容器及其子元素。例如，如果示例中的 `alertBuilderResource` 不包含面板 `btnPnlResource`，你可以单独定义该资源，然后将其添加到对话框中，如下所示：
 
 ```javascript
 var btnPnlResource = "btnPnl: Panel { orientation:'row', \

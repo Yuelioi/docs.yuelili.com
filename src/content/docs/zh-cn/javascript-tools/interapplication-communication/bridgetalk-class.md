@@ -1,25 +1,25 @@
 ---
-title: bridgetalk-class
+title: bridgetalk 类
 ---
-# BridgeTalk class
+# BridgeTalk 类
 
-Static properties and methods of this class provide a way for your script to determine basic messaging system information before you create any specific message objects. Static methods allow you to check if an application is installed and is already running, and to launch the application. A callback defined on the class determines how the application processes incoming messages.
+该类的静态属性和方法为您的脚本提供了一种方式，在创建任何特定消息对象之前确定基本的消息系统信息。静态方法允许您检查应用程序是否已安装并正在运行，并启动应用程序。类上定义的回调决定了应用程序如何处理传入消息。
 
-You can access static properties and methods in the BridgeTalk class, which is available in the global namespace. For example:
+您可以在全局命名空间中访问 BridgeTalk 类的静态属性和方法。例如：
 
 ```javascript
 var thisApp = BridgeTalk.appName;
 ```
 
 :::note
-You must instantiate the BridgeTalk class to create the BridgeTalk message object, which is used to send message packets between applications. Dynamic properties and methods can be accessed only in instances.
+您必须实例化 BridgeTalk 类以创建 BridgeTalk 消息对象，该对象用于在应用程序之间发送消息包。动态属性和方法只能在实例中访问。
 :::
 
 ---
 
 ## 属性
 
-The BridgeTalk class provides these static properties, which are available in the global namespace:
+BridgeTalk 类提供了以下静态属性，这些属性在全局命名空间中可用：
 
 ### BridgeTalk.appInstance
 
@@ -27,13 +27,13 @@ The BridgeTalk class provides these static properties, which are available in th
 
 #### 描述
 
-The instance identifier of an application launched by the messaging framework, the instance portion of an application specifier; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).
+由消息框架启动的应用程序的实例标识符，应用程序指定符的实例部分；请参阅 [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers)。
 
-Used only for those applications, such as InDesign, that support launching and running multiple instances.
+仅适用于支持启动和运行多个实例的应用程序，例如 InDesign。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -43,11 +43,11 @@ String. Read only.
 
 #### 描述
 
-The locale of this application, the locale portion of an application specifier; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers). When a message is sent, this is the locale of the sending application.
+此应用程序的区域设置，应用程序指定符的区域设置部分；请参阅 [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers)。当发送消息时，这是发送应用程序的区域设置。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -57,11 +57,11 @@ String. Read only.
 
 #### 描述
 
-The name of this application, the appname portion of an application specifier; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers). When a message is sent, this is the name of the sending application.
+此应用程序的名称，应用程序指定符的应用程序名称部分；请参阅 [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers)。当发送消息时，这是发送应用程序的名称。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -71,11 +71,11 @@ String. Read only.
 
 #### 描述
 
-A lower-case string containing the complete specifier for this application; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).
+包含此应用程序完整指定符的小写字符串；请参阅 [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers)。
 
 #### 类型
 
-String.
+字符串。
 
 ---
 
@@ -85,15 +85,15 @@ String.
 
 #### 描述
 
-The current processing status of this application. One of:
+此应用程序的当前处理状态。可能的值包括：
 
-- `busy`: The application is currently busy, but not processing messages. This is the case, for example, when a modal dialog is shown.
-- `idle`: The application is currently idle, but processes messages regularly.
-- `not installed`: The application is not installed.
+- `busy`：应用程序当前繁忙，但未处理消息。例如，当显示模态对话框时就是这种情况。
+- `idle`：应用程序当前空闲，但定期处理消息。
+- `not installed`：应用程序未安装。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -103,11 +103,11 @@ String. Read only.
 
 #### 描述
 
-The version number of this application, the version portion of an application specifier; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers). When a message is sent, this is the version of the sending application.
+此应用程序的版本号，应用程序指定符的版本部分；请参阅 [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers)。当发送消息时，这是发送应用程序的版本。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -119,89 +119,89 @@ String. Read only.
 
 #### 返回
 
-callback function that this application applies to unsolicited incoming messages. The default function evaluates the body of the received message and returns the result of evaluation. To change the default behavior, set this to a function definition in the following form:
+此应用程序应用于未经请求的传入消息的回调函数。默认函数评估接收到的消息的主体并返回评估结果。要更改默认行为，请将其设置为以下形式的函数定义：
 
 ```javascript
 BridgeTalk.onReceive = function( bridgeTalkObject ) {
-    // act on received message
+    // 处理接收到的消息
 };
 ```
 
-The body property of the received message object contains the received data. The function can return any type. See [Handling unsolicited messages](communicating-through-messages.md#handling-unsolicited-messages).
+接收到的消息对象的 `body` 属性包含接收到的数据。该函数可以返回任何类型。请参阅 [处理未经请求的消息](communicating-through-messages.md#handling-unsolicited-messages)。
 
 :::note
-This function is not applied to a message that is received in response to a message sent from this application. Response messages are processed by the onResult, onReceived, or onError callbacks associated with the sent message.
+此函数不适用于从该应用程序发送的消息的响应消息。响应消息由与发送的消息关联的 `onResult`、`onReceived` 或 `onError` 回调处理。
 :::
 
 #### 类型
 
-Function
+函数
 
 ---
 
 ## 函数
 
-The BridgeTalk class provides these static methods, which are available in the global namespace:
+BridgeTalk 类提供了以下静态方法，这些方法在全局命名空间中可用：
 
 ### BridgeTalk.bringToFront()
 
-`BridgeTalk.bringToFrontapp)`
+`BridgeTalk.bringToFront(app)`
 
 #### 描述
 
-Brings all windows of the specified application to the front of the screen.
+将指定应用程序的所有窗口置于屏幕的最前面。
 
-In Mac OS, an application can be running but have no windows open. In this case, calling this function might or might not open a new window, depending on the application. For Adobe Bridge, it opens a new browser window.
+在 Mac OS 中，应用程序可能正在运行但没有打开任何窗口。在这种情况下，调用此函数可能会或可能不会打开新窗口，具体取决于应用程序。对于 Adobe Bridge，它会打开一个新的浏览器窗口。
 
 #### 参数
 
-| 参数 |                                           类型                                           |              描述               |
-| --------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
-| `app`     | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
+| 参数    | 类型                                                                          | 描述                 |
+| ------- | ----------------------------------------------------------------------------- | -------------------- |
+| `app` | [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers) | 目标应用程序的指定符 |
 
 #### 返回
 
-Nothing
+无
 
 ---
 
 ### BridgeTalk.getAppPath()
 
-`BridgeTalk.getAppPathapp)`
+`BridgeTalk.getAppPath(app)`
 
 #### 描述
 
-Retrieves the full path of the executable file for a specified application.
+检索指定应用程序的可执行文件的完整路径。
 
 #### 参数
 
-| 参数 |                                           类型                                           |              描述               |
-| --------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
-| `app`     | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
+| 参数    | 类型                                                                          | 描述                 |
+| ------- | ----------------------------------------------------------------------------- | -------------------- |
+| `app` | [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers) | 目标应用程序的指定符 |
 
 #### 返回
 
-String
+字符串
 
 ---
 
 ### BridgeTalk.getDisplayName()
 
-`BridgeTalk.getDisplayNameapp)`
+`BridgeTalk.getDisplayName(app)`
 
 #### 描述
 
-Returns a localized display name for an application, or `null` if the application is not installed. For example:
+返回应用程序的本地化显示名称，如果应用程序未安装则返回 `null`。例如：
 
 #### 参数
 
-| 参数 |                                           类型                                           |              描述               |
-| --------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
-| `app`     | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
+| 参数    | 类型                                                                          | 描述                 |
+| ------- | ----------------------------------------------------------------------------- | -------------------- |
+| `app` | [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers) | 目标应用程序的指定符 |
 
 #### 返回
 
-String
+字符串
 
 #### 示例
 
@@ -214,31 +214,31 @@ BridgeTalk.getDisplayName("photoshop-10.0");
 
 ### BridgeTalk.getSpecifier()
 
-`BridgeTalk.getSpecifierappName[, version][, locale])`
+`BridgeTalk.getSpecifier(appName[, version][, locale])`
 
 #### 描述
 
-Retrieves a complete application specifier.
+检索完整的应用程序指定符。
 
 #### 参数
 
-| 参数 |                      类型                       |                                                                      描述                                                                       |
-|-----------|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `appName` | The base name of the application to search for. |                                                                                                                                                        |
-| `version` | Number                                          | Optional. The specific version number to search for.                                                                                                   |
-|           |                                                 | If `0` or not supplied, returns the most recent version.                                                                                               |
-|           |                                                 | If negative, returns the highest version up to and including the absolute value.                                                                       |
-|           |                                                 | If a major version is specified, returns the highest minor-version variation. For example, if Photoshop CS versions 9, 9.1, and 10 are installed:      |
-|           |                                                 | <pre lang="javascript">BridgeTalk.Specifier( "photoshop", "9" )<br/> => ["photoshop-9.1"]<br/></pre>                                                   |
-| `locale`  | String                                          | Optional. The specific locale to search for. If not supplied and multiple language versions are installed, prefers the version for the current locale. |
+| 参数        | 类型                         | 描述                                                                                                             |
+| ----------- | ---------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `appName` | 要搜索的应用程序的基本名称。 |                                                                                                                  |
+| `version` | 数字                         | 可选。要搜索的特定版本号。                                                                                       |
+|             |                              | 如果为 `0` 或未提供，则返回最新版本。                                                                          |
+|             |                              | 如果为负值，则返回最高版本，直到并包括该值的绝对值。                                                             |
+|             |                              | 如果指定了主版本号，则返回最高次版本号的变化。例如，如果安装了 Photoshop CS 版本 9、9.1 和 10：                  |
+|             |                              | `<pre lang="javascript">`BridgeTalk.Specifier( "photoshop", "9" )`` => ["photoshop-9.1"]`</pre>` |
+| `locale`  | 字符串                       | 可选。要搜索的特定区域设置。如果未提供且安装了多个语言版本，则优先选择当前区域设置的版本。                       |
 
 #### 返回
 
-[Application specifier](application-and-namespace-specifiers.md#application-specifiers) for a messaging-enabled application version installed on this computer, or `null` if the requested version of the application is not installed.
+[应用程序指定符](application-and-namespace-specifiers.md#application-specifiers)，用于此计算机上安装的支持消息传递的应用程序版本，如果请求的应用程序版本未安装，则返回 `null`。
 
 #### 示例
 
-For example, assuming installed applications include Photoshop CS4 11.0 `en_us`, Photoshop CS2 8.5 `de_de`, Photoshop CS2 9.0 `de_de`, and Photoshop CS2 9.5 `de_de`, and that the current locale is `en_US`
+例如，假设安装的应用程序包括 Photoshop CS4 11.0 `en_us`、Photoshop CS2 8.5 `de_de`、Photoshop CS2 9.0 `de_de` 和 Photoshop CS2 9.5 `de_de`，并且当前区域设置为 `en_US`。
 
 ```javascript
 BridgeTalk.getSpecifier ("photoshop");
@@ -265,24 +265,24 @@ BridgeTalk.getSpecifier ("photoshop", 8);
 
 #### 描述
 
-Retrieves the processing status of an application.
+检索应用程序的处理状态。
 
 #### 参数
 
-|  参数   |                                           类型                                           |                                                         描述                                                          |
-| ------------ | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `targetSpec` | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | Optional. A specifier for the target application. If not supplied, returns the processing status of the current application. |
+| 参数           | 类型                                                                          | 描述                                                                   |
+| -------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `targetSpec` | [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers) | 可选。目标应用程序的指定符。如果未提供，则返回当前应用程序的处理状态。 |
 
 #### 返回
 
-String, one of:
+字符串，可能的值包括：
 
-- `BUSY`: The application is currently busy, but not processing messages. This is the case, for example, when a modal dialog is shown.
-- `IDLE`: The application is currently idle, but processes messages regularly.
-- `PUMPING`: The application is currently processing messages.
-- `ISNOTRUNNING`: The application is installed but not running.
-- `ISNOTINSTALLED`: The application is not installed.
-- `UNDEFINED`: The application is running but not responding to ping requests. This can be true of a CS2 application that uses an earlier version of the messaging framework.
+- `BUSY`：应用程序当前繁忙，但未处理消息。例如，当显示模态对话框时就是这种情况。
+- `IDLE`：应用程序当前空闲，但定期处理消息。
+- `PUMPING`：应用程序当前正在处理消息。
+- `ISNOTRUNNING`：应用程序已安装但未运行。
+- `ISNOTINSTALLED`：应用程序未安装。
+- `UNDEFINED`：应用程序正在运行但未响应 ping 请求。这可能是使用早期版本消息框架的 CS2 应用程序的情况。
 
 ---
 
@@ -292,31 +292,31 @@ String, one of:
 
 #### 描述
 
-Retrieves a list of messaging-enabled applications installed on this computer.
+检索此计算机上安装的支持消息传递的应用程序列表。
 
 #### 参数
 
-| 参数 |  类型  |                                                                                                     描述                                                                                                     |
-|-----------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `version` | Number | Optional. The specific version number to search for, or `null` to return the most appropriate version (matching, most recent, or running), with version information.                                                |
-|           |        | Specify only a major version number to return the highest minor-version variation.                                                                                                                                  |
-|           |        | For example, if Photoshop CS versions 9, 9.5, and 10 are installed                                                                                                                                                  |
-|           |        | <pre lang="javascript">BridgeTalk.getTargets( "9" )<br/>=> [photoshop-9.5]</pre>                                                                                                                                    |
-|           |        | Specify a negative value to return all versions up to the absolute value of the version number. For example                                                                                                         |
-|           |        | <pre lang="javascript">BridgeTalk.getTargets( "-9.9" )<br/>=> [photoshop-9.0, photoshop-9.5]</pre>                                                                                                                  |
-| `locale`  | String | Optional. The specific locale to search for, or null to `return` applications for all locales, with locale information. If not supplied when version is supplied, returns specifiers with version information only. |
+| 参数        | 类型   | 描述                                                                                                                                         |
+| ----------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `version` | 数字   | 可选。要搜索的特定版本号，或 `null` 以返回最合适的版本（匹配、最新或正在运行的版本），并包含版本信息。                                     |
+|             |        | 仅指定主版本号以返回最高次版本号的变化。                                                                                                     |
+|             |        | 例如，如果安装了 Photoshop CS 版本 9、9.5 和 10                                                                                              |
+|             |        | `<pre lang="javascript">`BridgeTalk.getTargets( "9" )``=> [photoshop-9.5]`</pre>`                                                 |
+|             |        | 指定负值以返回所有版本，直到版本号的绝对值。例如                                                                                             |
+|             |        | `<pre lang="javascript">`BridgeTalk.getTargets( "-9.9" )``=> [photoshop-9.0, photoshop-9.5]`</pre>`                               |
+| `locale`  | 字符串 | 可选。要搜索的特定区域设置，或 `null` 以返回所有区域设置的应用程序，并包含区域设置信息。如果未提供版本信息，则仅返回带有版本信息的指定符。 |
 
 #### 返回
 
-Returns an array of [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).
+返回 [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers) 的数组。
 
-- If version is supplied, specifiers include the base name plus the version information.
-- If locale is supplied, specifiers include the full name, with both version and locale information.
-- If neither version nor locale is supplied, returns base specifiers with neither version nor locale information, but tries to find the most appropriate version and locale; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).
+- 如果提供了版本，指定符包括基本名称和版本信息。
+- 如果提供了区域设置，指定符包括完整名称，包含版本和区域设置信息。
+- 如果未提供版本和区域设置，则返回基本指定符，不包含版本和区域设置信息，但尝试找到最合适的版本和区域设置；请参阅 [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers)。
 
 #### 示例
 
-For example, assuming installed applications include Photoshop CS3 10.0 `en_US`, Photoshop CS4 11.0 `en_us`, and Illustrator CS4 14.0 `de_de`
+例如，假设安装的应用程序包括 Photoshop CS3 10.0 `en_US`、Photoshop CS4 11.0 `en_us` 和 Illustrator CS4 14.0 `de_de`。
 
 ```javascript
 BridgeTalk.getTargets();
@@ -343,17 +343,17 @@ BridgeTalk.getTargets( null, null );
 
 #### 描述
 
-Checks whether a given application is running and active on the local computer.
+检查给定应用程序是否正在本地计算机上运行并处于活动状态。
 
 #### 参数
 
-|  参数  |                                           类型                                           |              描述               |
-| ----------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
-| `specifier` | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
+| 参数          | 类型                                                                          | 描述                 |
+| ------------- | ----------------------------------------------------------------------------- | -------------------- |
+| `specifier` | [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers) | 目标应用程序的指定符 |
 
 #### 返回
 
-Boolean
+布尔值
 
 ---
 
@@ -363,18 +363,18 @@ Boolean
 
 #### 描述
 
-Launches the given application on the local computer. It is not necessary to launch an application explicitly in order to send it a message; sending a message to an application that is not running automatically launches it.
+在本地计算机上启动给定的应用程序。为了向应用程序发送消息，不需要显式启动应用程序；向未运行的应用程序发送消息会自动启动它。
 
 #### 参数
 
-|  参数  |                                           类型                                           |                                                        描述                                                         |
-| ----------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `specifier` | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application                                                                                     |
-| `where`     | Unknown.                                                                                 | Optional. If the value "background" is specified, the application's main window is not brought to the front of the screen. |
+| 参数          | 类型                                                                          | 描述                                                                      |
+| ------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `specifier` | [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers) | 目标应用程序的指定符                                                      |
+| `where`     | 未知。                                                                        | 可选。如果指定了值 "background"，则应用程序的主窗口不会置于屏幕的最前面。 |
 
 #### 返回
 
-Boolean. `true` if the application has already been launched, `false` if it was launched by this call.
+布尔值。如果应用程序已经启动，则返回 `true`，如果由此次调用启动，则返回 `false`。
 
 ---
 
@@ -384,17 +384,17 @@ Boolean. `true` if the application has already been launched, `false` if it was 
 
 #### 描述
 
-Loads the startup script for an application from the common StartupScripts folders. Use to implement late loading of startup scripts.
+从公共的 StartupScripts 文件夹加载应用程序的启动脚本。用于实现启动脚本的延迟加载。
 
 #### 参数
 
-|  参数  |                                           类型                                           |              描述               |
-| ----------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
-| `specifier` | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
+| 参数          | 类型                                                                          | 描述                 |
+| ------------- | ----------------------------------------------------------------------------- | -------------------- |
+| `specifier` | [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers) | 目标应用程序的指定符 |
 
 #### 返回
 
-Boolean. `true` if the script was successfully loaded.
+布尔值。如果脚本成功加载，则返回 `true`。
 
 ---
 
@@ -404,21 +404,21 @@ Boolean. `true` if the script was successfully loaded.
 
 #### 描述
 
-Sends a message to another application to determine whether it can be contacted.
+向另一个应用程序发送消息以确定是否可以联系到它。
 
 #### 参数
 
-|   参数   |                                           类型                                           |              描述               |
-|---------------|------------------------------------------------------------------------------------------|----------------------------------------|
-| `specifier`   | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
-| `pingRequest` | Identifying key string, one of:                                                          | Specific type of return value.         |
-|               | - `STATUS`: Returns the processing status; see [getStatus()](#bridgetalkgetstatus).      |                                        |
-|               | - `DIAGNOSTICS`: Returns a diagnostic report that includes a list of valid ping keys.    |                                        |
-|               | - `ECHO_REQUEST`: Returns `ECHO_RESPONSE` for a simple ping request.                     |                                        |
+| 参数            | 类型                                                                          | 描述                 |
+| --------------- | ----------------------------------------------------------------------------- | -------------------- |
+| `specifier`   | [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers) | 目标应用程序的指定符 |
+| `pingRequest` | 标识键字符串，可能的值包括：                                                  | 特定类型的返回值。   |
+|                 | -`STATUS`：返回处理状态；请参阅 [getStatus()](#bridgetalkgetstatus)。          |                      |
+|                 | -`DIAGNOSTICS`：返回包含有效 ping 键列表的诊断报告。                        |                      |
+|                 | -`ECHO_REQUEST`：返回 `ECHO_RESPONSE` 以进行简单的 ping 请求。            |                      |
 
 #### 返回
 
-String
+字符串
 
 ---
 
@@ -428,12 +428,12 @@ String
 
 #### 描述
 
-Checks all active messaging interfaces for outgoing and incoming messages, and processes them if there are any.
+检查所有活动的消息传递接口以获取传出和传入消息，并在有消息时处理它们。
 
 :::note
-Most applications have a message processing loop that continually checks the message queues, so use of this method is rarely required.
+大多数应用程序都有一个消息处理循环，持续检查消息队列，因此很少需要使用此方法。
 :::
 
 #### 返回
 
-Boolean. `true` if any messages have been processed, `false` otherwise.
+布尔值。如果处理了任何消息，则返回 `true`，否则返回 `false`。

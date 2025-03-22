@@ -1,11 +1,11 @@
 ---
 title: window-object
 ---
-# Window object
+# Window 对象
 
-## Window Object constructor
+## Window 对象构造函数
 
-The constructor creates and returns a new Window object, or null if window creation failed.
+构造函数创建并返回一个新的 Window 对象，如果窗口创建失败则返回 `null`。
 
 ```javascript
 new Window (type [, title, bounds, {creation_properties}]);
@@ -13,40 +13,40 @@ new Window (type [, title, bounds, {creation_properties}]);
 
 |       参数       |                          类型                           |                                                                            描述                                                                            |
 |-----------------------|---------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`                | String                                                  | The window type. One of:                                                                                                                                          |
-|                       |                                                         | - `"dialog"` - Creates a modal dialog.                                                                                                                            |
-|                       |                                                         | - `"palette"` - Creates a modeless dialog, also called a floating palette. (Not supported by Photoshop CC.)                                                       |
-|                       |                                                         | - `"window"` - Creates a simple window that can be used as a main window for an application. (Not supported by Photoshop CC.)                                     |
-|                       |                                                         | This argument can be a ScriptUI resource specification; in this case, all other arguments are ignored. See [Resource specifications](../resource-specifications). |
-| `title`               | String                                                  | Optional. The window title. A localizable string.                                                                                                                 |
-| `bounds`              | [Bounds](./size-and-location-objects.md#bounds) object. | Optional. The window's position and size.                                                                                                                         |
-| `creation_properties` | Object                                                  | Optional. An object that contains any of the properties below.                                                                                                    |
+| `type`                | String                                                  | 窗口类型。可选值如下：                                                                                                                                          |
+|                       |                                                         | - `"dialog"` - 创建一个模态对话框。                                                                                                                            |
+|                       |                                                         | - `"palette"` - 创建一个非模态对话框，也称为浮动面板。（Photoshop CC 不支持。）                                                                                       |
+|                       |                                                         | - `"window"` - 创建一个简单窗口，可用作应用程序的主窗口。（Photoshop CC 不支持。）                                                                                     |
+|                       |                                                         | 此参数可以是 ScriptUI 资源规范；在这种情况下，所有其他参数将被忽略。请参阅 [资源规范](../resource-specifications)。 |
+| `title`               | String                                                  | 可选。窗口标题。可本地化的字符串。                                                                                                                 |
+| `bounds`              | [Bounds](./size-and-location-objects.md#bounds) object. | 可选。窗口的位置和大小。                                                                                                                         |
+| `creation_properties` | Object                                                  | 可选。包含以下任何属性的对象。                                                                                                    |
 
-#### Creation Properties
+#### 创建属性
 
 |       参数       |  类型   |                                                                                                           描述                                                                                                            |
 |-----------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `resizeable`          | Boolean | When `true`, the window can be resized by the user.                                                                                                                                                                              |
-|                       |         | Default is `false`.                                                                                                                                                                                                              |
-| `su1PanelCoordinates` | Boolean | (Photoshop only) When `true`, the child panels of this window automatically adjust the positions of their children for compatability with Photoshop CS (in which the vertical coordinate was measured from outside the frame).   |
-|                       |         | Individual panels can override the parent window's setting.                                                                                                                                                                      |
-|                       |         | Default is `false`.                                                                                                                                                                                                              |
-| `closeButton`         | Boolean | When `true`, the title bar includes a button to close the window, if the platform and window type allow it.                                                                                                                      |
-|                       |         | When `false`, it does not. Not used for dialogs.                                                                                                                                                                                 |
-|                       |         | Default is `true`.                                                                                                                                                                                                               |
-| `maximizeButton`      | Boolean | When `true`, the title bar includes a button to expand the window to its maximum size (typically, the entire screen), if the platform and window type allow it. When `false`, it does not. Not used for dialogs.                 |
-|                       |         | Default is `false` for type palette, `true` for type window.                                                                                                                                                                     |
-| `minimizeButton`      | Boolean | When `true`, the title bar includes a button to minimize or iconify the window, if the platform and window type allow it. When `false`, it does not. Main windows cannot have a minimize button in Mac OS. Not used for dialogs. |
-|                       |         | Default is `false` for type palette, `true` for type window.                                                                                                                                                                     |
-| `independent`         | Boolean | When `true`, a window of type window is independent of other application windows, and can be hidden behind them in Windows. In Mac OS, has no effect.                                                                            |
-|                       |         | Default is `false`.                                                                                                                                                                                                              |
-| `borderless`          | Boolean | When `true`, the window has no title bar or borders. Properties that control those features are ignored.                                                                                                                         |
+| `resizeable`          | Boolean | 当为 `true` 时，用户可调整窗口大小。                                                                                                                                                                              |
+|                       |         | 默认值为 `false`。                                                                                                                                                                                                              |
+| `su1PanelCoordinates` | Boolean | （仅限 Photoshop）当为 `true` 时，此窗口的子面板会自动调整其子元素的位置以兼容 Photoshop CS（在 Photoshop CS 中，垂直坐标是从框架外部测量的）。   |
+|                       |         | 单个面板可以覆盖父窗口的设置。                                                                                                                                                                      |
+|                       |         | 默认值为 `false`。                                                                                                                                                                                                              |
+| `closeButton`         | Boolean | 当为 `true` 时，标题栏包含一个关闭窗口的按钮（如果平台和窗口类型允许）。                                                                                                                      |
+|                       |         | 当为 `false` 时，不包含。不用于对话框。                                                                                                                                                                                 |
+|                       |         | 默认值为 `true`。                                                                                                                                                                                                               |
+| `maximizeButton`      | Boolean | 当为 `true` 时，标题栏包含一个将窗口扩展到最大尺寸（通常是整个屏幕）的按钮（如果平台和窗口类型允许）。当为 `false` 时，不包含。不用于对话框。                 |
+|                       |         | 默认值为 `false`（类型为 `palette` 时），`true`（类型为 `window` 时）。                                                                                                                                                                     |
+| `minimizeButton`      | Boolean | 当为 `true` 时，标题栏包含一个最小化或图标化窗口的按钮（如果平台和窗口类型允许）。当为 `false` 时，不包含。主窗口在 Mac OS 中不能有最小化按钮。不用于对话框。 |
+|                       |         | 默认值为 `false`（类型为 `palette` 时），`true`（类型为 `window` 时）。                                                                                                                                                                     |
+| `independent`         | Boolean | 当为 `true` 时，类型为 `window` 的窗口独立于其他应用程序窗口，并且可以在 Windows 中隐藏在其他窗口后面。在 Mac OS 中无效。                                                                            |
+|                       |         | 默认值为 `false`。                                                                                                                                                                                                              |
+| `borderless`          | Boolean | 当为 `true` 时，窗口没有标题栏或边框。控制这些功能的属性将被忽略。                                                                                                                         |
 
 ---
 
-## Window Object Attributes
+## Window 对象属性
 
-The following element properties apply specifically to Window elements:
+以下元素属性专门适用于 Window 元素：
 
 ### active
 
@@ -54,11 +54,11 @@ The following element properties apply specifically to Window elements:
 
 #### 描述
 
-When `true`, the object is active, `false` otherwise. Set to `true` to make a given control or dialog active.
+当为 `true` 时，对象处于活动状态，否则为 `false`。设置为 `true` 以使给定控件或对话框处于活动状态。
 
-- A modal dialog that is visible is by definition the active dialog.
-- An active palette is the front-most window.
-- An active control is the one with focus-that is, the one that accepts keystrokes, or in the case of a Button, be selected when the user types RETURN or ENTER.
+- 可见的模态对话框默认是活动对话框。
+- 活动面板是最前面的窗口。
+- 活动控件是具有焦点的控件，即接受键盘输入的控件，或者在按钮的情况下，当用户按下 RETURN 或 ENTER 时被选中。
 
 #### 类型
 
@@ -72,9 +72,9 @@ Boolean
 
 #### 描述
 
-For a window of type dialog, the control to notify when a user types the ESC key.
+对于类型为 `dialog` 的窗口，当用户按下 ESC 键时要通知的控件。
 
-By default, looks for a button whose name or text is `"cancel"` (case disregarded).
+默认情况下，查找名称或文本为 `"cancel"`（不区分大小写）的按钮。
 
 #### 类型
 
@@ -88,9 +88,9 @@ By default, looks for a button whose name or text is `"cancel"` (case disregarde
 
 #### 描述
 
-For a window of type dialog, the control to notify when a user types the ENTER key.
+对于类型为 `dialog` 的窗口，当用户按下 ENTER 键时要通知的控件。
 
-By default, looks for a button whose name or text is `"ok"` (case disregarded).
+默认情况下，查找名称或文本为 `"ok"`（不区分大小写）的按钮。
 
 #### 类型
 
@@ -104,13 +104,13 @@ By default, looks for a button whose name or text is `"ok"` (case disregarded).
 
 #### 描述
 
-A Bounds object for the boundaries of the Window's frame in screen coordinates.
+一个 Bounds 对象，表示窗口框架在屏幕坐标中的边界。
 
-The frame consists of the title bar and borders that enclose the content region of a window, depending on the windowing system.
+框架包括标题栏和边框，包围窗口的内容区域，具体取决于窗口系统。
 
 #### 类型
 
-[Bounds](size-and-location-objects.md#bounds). Read only.
+[Bounds](size-and-location-objects.md#bounds)。只读。
 
 ---
 
@@ -120,9 +120,9 @@ The frame consists of the title bar and borders that enclose the content region 
 
 #### 描述
 
-A Point object for the location of the top left corner of the Window's frame. The same as `[frameBounds.x, frameBounds.y]`.
+一个 Point 对象，表示窗口框架左上角的位置。与 `[frameBounds.x, frameBounds.y]` 相同。
 
-Set this value to move the window frame to the specified location on the screen. The [`frameBounds`](#framebounds) value changes accordingly.
+设置此值以将窗口框架移动到屏幕上的指定位置。[`frameBounds`](#framebounds) 值会相应更改。
 
 #### 类型
 
@@ -136,11 +136,11 @@ Set this value to move the window frame to the specified location on the screen.
 
 #### 描述
 
-A Dimension object for the size and location of the Window's frame in screen coordinates.
+一个 Dimension 对象，表示窗口框架在屏幕坐标中的大小和位置。
 
 #### 类型
 
-[Dimension](size-and-location-objects.md#dimension). Read only.
+[Dimension](size-and-location-objects.md#dimension)。只读。
 
 ---
 
@@ -150,7 +150,7 @@ A Dimension object for the size and location of the Window's frame in screen coo
 
 #### 描述
 
-When `true`, the window is expanded.
+当为 `true` 时，窗口已最大化。
 
 #### 类型
 
@@ -164,7 +164,7 @@ Boolean
 
 #### 描述
 
-When `true`, the window is minimized or iconified.
+当为 `true` 时，窗口已最小化或图标化。
 
 #### 类型
 
@@ -178,11 +178,11 @@ Boolean
 
 #### 描述
 
-The opacity of the window, 范围为 `[0..1]`.
+窗口的不透明度，范围为 `[0..1]`。
 
-A value of `1.0` (the default) makes the window completely opaque, a value of 0 makes it completely transparent.
+值为 `1.0`（默认值）时，窗口完全不透明，值为 `0` 时，窗口完全透明。
 
-Intermediate values make it partially transparent to any degree.
+中间值使窗口部分透明，透明度可调。
 
 #### 类型
 
@@ -197,10 +197,10 @@ Number
 #### 描述
 
 :::note
-In [Windows](#) only.
+仅在 [Windows](#) 中有效。
 :::
 
-The key sequence that invokes this window's [ControlEvent.onShortcutKey](./control-objects.md#onshortcutkey) callback.
+调用此窗口的 [ControlEvent.onShortcutKey](./control-objects.md#onshortcutkey) 回调的键序列。
 
 #### 类型
 
@@ -208,9 +208,9 @@ String
 
 ---
 
-## Container Attributes
+## 容器属性
 
-The following table shows properties that apply to Window objects and container objects (controls of type `panel`, `tabbedpanel`, `tab`, and `group`).
+下表显示了适用于 Window 对象和容器对象（类型为 `panel`、`tabbedpanel`、`tab` 和 `group` 的控件）的属性。
 
 ---
 
@@ -220,42 +220,42 @@ The following table shows properties that apply to Window objects and container 
 
 #### 描述
 
-Tells the layout manager how unlike-sized children of a container should be aligned within a column or row. Order of creation determines which children are at the top of a column or the left of a row; the earlier a child is created, the closer it is to the top or left of its column or row.
+告诉布局管理器如何在容器中对齐不同大小的子元素。创建顺序决定了哪些子元素位于列的顶部或行的左侧；子元素创建得越早，它就越靠近其列或行的顶部或左侧。
 
-If defined, alignment for a child element overrides the alignChildren setting for the parent container.
+如果定义了子元素的对齐方式，它将覆盖父容器的 `alignChildren` 设置。
 
-For a single string value, allowed values depend on the orientation value.
+对于单个字符串值，允许的值取决于 `orientation` 值。
 
-For `orientation=row`:
-
-- `top`
-- `bottom`
-- `center` (default)
-- `fill`
-
-For `orientation=column`:
-
-- `left`
-- `right`
-- `center` (default)
-- `fill`
-
-For `orientation=stack`:
+对于 `orientation=row`：
 
 - `top`
 - `bottom`
-- `left`
-- `right`
-- `center` (default)
+- `center`（默认）
 - `fill`
 
-For an array value, the first string element defines the horizontal alignment and the second element defines the vertical alignment. The horizontal alignment value must be one of left, right, center or fill. The vertical alignment value must be one of top, bottom, center, or fill.
+对于 `orientation=column`：
 
-Values are not case sensitive.
+- `left`
+- `right`
+- `center`（默认）
+- `fill`
+
+对于 `orientation=stack`：
+
+- `top`
+- `bottom`
+- `left`
+- `right`
+- `center`（默认）
+- `fill`
+
+对于数组值，第一个字符串元素定义水平对齐方式，第二个元素定义垂直对齐方式。水平对齐值必须为 `left`、`right`、`center` 或 `fill` 之一。垂直对齐值必须为 `top`、`bottom`、`center` 或 `fill` 之一。
+
+值不区分大小写。
 
 #### 类型
 
-String, or Array of 2 Strings
+String 或 2 个 String 的数组
 
 ---
 
@@ -265,42 +265,42 @@ String, or Array of 2 Strings
 
 #### 描述
 
-Applies to child elements of a container. If defined, this value overrides the alignChildren setting for the parent container.
+适用于容器的子元素。如果定义了此值，它将覆盖父容器的 `alignChildren` 设置。
 
-For a single string value, allowed values depend on the `orientation` value.
+对于单个字符串值，允许的值取决于 `orientation` 值。
 
-For `orientation = row`:
-
-- `top`
-- `bottom`
-- `center` (default)
-- `fill`
-
-For `orientation=column`:
-
-- `left`
-- `right`
-- `center` (default)
-- `fill`
-
-For `orientation = stack`:
+对于 `orientation = row`：
 
 - `top`
 - `bottom`
-- `left`
-- `right`
-- `center` (default)
+- `center`（默认）
 - `fill`
 
-For an array value, the first string element defines the horizontal alignment and the second element defines the vertical alignment.
+对于 `orientation=column`：
 
-The horizontal alignment value must be one of `left`, `right`, `center` or `fill`. The vertical alignment value must be one of `top`, `bottom`, `center`, or `fill`.
+- `left`
+- `right`
+- `center`（默认）
+- `fill`
 
-Values are not case sensitive.
+对于 `orientation = stack`：
+
+- `top`
+- `bottom`
+- `left`
+- `right`
+- `center`（默认）
+- `fill`
+
+对于数组值，第一个字符串元素定义水平对齐方式，第二个元素定义垂直对齐方式。
+
+水平对齐值必须为 `left`、`right`、`center` 或 `fill` 之一。垂直对齐值必须为 `top`、`bottom`、`center` 或 `fill` 之一。
+
+值不区分大小写。
 
 #### 类型
 
-String, or Array of 2 Strings
+String 或 2 个 String 的数组
 
 ---
 
@@ -310,13 +310,13 @@ String, or Array of 2 Strings
 
 #### 描述
 
-A Bounds object for the boundaries of the window's drawable area in screen coordinates. Compare [frameBounds](#framebounds).
+一个 Bounds 对象，表示窗口的可绘制区域在屏幕坐标中的边界。与 [frameBounds](#framebounds) 进行比较。
 
-Does not apply to containers of type tab, whose bounds are determined by the parent tabbedpanel container.
+不适用于类型为 `tab` 的容器，其边界由父 `tabbedpanel` 容器决定。
 
 #### 类型
 
-[Bounds](size-and-location-objects.md#bounds). Read only.
+[Bounds](size-and-location-objects.md#bounds)。只读。
 
 ---
 
@@ -326,13 +326,13 @@ Does not apply to containers of type tab, whose bounds are determined by the par
 
 #### 描述
 
-The collection of user-interface elements that have been added to this window or container.
+已添加到此窗口或容器的用户界面元素的集合。
 
-An array indexed by number or by a string containing an element's `name`. The `length` property of this array is the number of child elements for container elements, and is zero for controls.
+一个按数字索引或按包含元素 `name` 的字符串索引的数组。此数组的 `length` 属性是容器元素的子元素数量，对于控件则为零。
 
 #### 类型
 
-Array of Objects. Read only.
+对象数组。只读。
 
 ---
 
@@ -342,11 +342,11 @@ Array of Objects. Read only.
 
 #### 描述
 
-A ScriptUIGraphics object that can be used to customize the window's appearance, in response to the onDraw event.
+一个 ScriptUIGraphics 对象，可用于自定义窗口的外观，以响应 `onDraw` 事件。
 
 #### 类型
 
-[ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object)
+[ScriptUIGraphics 对象](graphic-customization-objects.md#scriptuigraphics-object)
 
 ---
 
@@ -356,13 +356,13 @@ A ScriptUIGraphics object that can be used to customize the window's appearance,
 
 #### 描述
 
-A LayoutManager object for a window or container. The first time a container object is made visible, ScriptUI invokes this layout manager by calling its layout function.
+窗口或容器的 LayoutManager 对象。容器对象首次可见时，ScriptUI 通过调用其布局函数来调用此布局管理器。
 
-Default is an instance of the LayoutManager class that is automatically created when the container element is created.
+默认值是容器元素创建时自动创建的 LayoutManager 类的实例。
 
 #### 类型
 
-[LayoutManager object](../layoutmanager-object)
+[LayoutManager 对象](../layoutmanager-object)
 
 ---
 
@@ -372,9 +372,9 @@ Default is an instance of the LayoutManager class that is automatically created 
 
 #### 描述
 
-A Point object for the location of the top left corner of the Window's drawable area, or the top left corner of the frame for a panel.
+一个 Point 对象，表示窗口可绘制区域的左上角位置，或面板框架的左上角位置。
 
-The same as `[bounds.x, bounds.y]`.
+与 `[bounds.x, bounds.y]` 相同。
 
 #### 类型
 
@@ -388,9 +388,9 @@ The same as `[bounds.x, bounds.y]`.
 
 #### 描述
 
-A Margins object describing the number of pixels between the edges of this container and the outermost child elements. You can specify different margins for each edge of the container.
+一个 Margins 对象，描述此容器边缘与最外层子元素之间的像素数。可以为容器的每个边缘指定不同的边距。
 
-The default value is based on the type of container, and is chosen to match the standard Adobe user-interface guidelines.
+默认值基于容器类型，并选择以匹配 Adobe 用户界面标准指南。
 
 #### 类型
 
@@ -406,7 +406,7 @@ The default value is based on the type of container, and is chosen to match the 
 
 [Dimension](size-and-location-objects.md#dimension)
 
-A Dimension object for the largest rectangle to which the window can be resized, used in automatic layout and resizing.
+一个 Dimension 对象，表示窗口可以调整到的最大矩形，用于自动布局和调整大小。
 
 #### 类型
 
@@ -420,7 +420,7 @@ A Dimension object for the largest rectangle to which the window can be resized,
 
 [Dimension](size-and-location-objects.md#dimension)
 
-A Dimension object for the smallest rectangle to which the window can be resized, used in automatic layout and resizing.
+一个 Dimension 对象，表示窗口可以调整到的最小矩形，用于自动布局和调整大小。
 
 #### 类型
 
@@ -432,19 +432,19 @@ A Dimension object for the smallest rectangle to which the window can be resized
 
 #### 描述
 
-How elements are organized within this container.
+此容器内元素的组织方式。
 
-Interpreted by the layout manager for the container.
+由容器的布局管理器解释。
 
-The default LayoutManager object accepts the (case-insensitive) values:
+默认的 LayoutManager 对象接受（不区分大小写的）值：
 
 - `row`
 - `column`
 - `stack`
 
-The default orientation depends on the type of container. For `Window` and `Panel`, the default is `column`, and for `Group` the default is `row`.
+默认方向取决于容器类型。对于 `Window` 和 `Panel`，默认值为 `column`，对于 `Group`，默认值为 `row`。
 
-The allowed values for the container's alignChildren and its children's alignment properties depend on the orientation.
+容器的 `alignChildren` 及其子元素的 `alignment` 属性的允许值取决于方向。
 
 #### 类型
 
@@ -458,11 +458,11 @@ String
 
 #### 描述
 
-The immediate parent object of this element, a window or container element. The value is `null` for Window objects.
+此元素的直接父对象，即窗口或容器元素。对于 Window 对象，值为 `null`。
 
 #### 类型
 
-Object. Read only.
+对象。只读。
 
 ---
 
@@ -472,7 +472,7 @@ Object. Read only.
 
 #### 描述
 
-A Dimension object for the preferred size of the window, used in automatic layout and resizing. To set a specific value for only one dimension, specify other dimension as `-1`.
+一个 Dimension 对象，表示窗口的首选大小，用于自动布局和调整大小。要为仅一个维度设置特定值，请将其他维度指定为 `-1`。
 
 #### 类型
 
@@ -486,7 +486,7 @@ A Dimension object for the preferred size of the window, used in automatic layou
 
 #### 描述
 
-An object that contains one or more creation properties of the container (properties used only when the element is created).
+一个对象，包含容器的一个或多个创建属性（仅在元素创建时使用的属性）。
 
 #### 类型
 
@@ -501,12 +501,12 @@ Object
 #### 描述
 
 :::info
-For [TabbedPanel](./control-objects.md#tabbedpanel) objects only.
+仅适用于 [TabbedPanel](./control-objects.md#tabbedpanel) 对象。
 :::
 
-The currently active [Tab](control-objects.md#tab) child. Setting this property changes the active tab. The value can only be `null` when the panel has no children; setting it to `null` is an error.
+当前活动的 [Tab](control-objects.md#tab) 子元素。设置此属性会更改活动选项卡。仅当面板没有子元素时，值可以为 `null`；将其设置为 `null` 是错误的。
 
-When the value changes, either by a user selecting a different tab, or by a script setting the property, the [onChange](control-objects.md#onchange) callback for the panel is called.
+当值更改时，无论是用户选择不同的选项卡，还是脚本设置属性，面板的 [onChange](control-objects.md#onchange) 回调都会被调用。
 
 #### 类型
 
@@ -520,7 +520,7 @@ When the value changes, either by a user selecting a different tab, or by a scri
 
 #### 描述
 
-A Dimension object for the current size and location of a group or panel element, or of the content area of a window.
+一个 Dimension 对象，表示组或面板元素的当前大小和位置，或窗口内容区域的大小和位置。
 
 #### 类型
 
@@ -534,411 +534,4 @@ A Dimension object for the current size and location of a group or panel element
 
 #### 描述
 
-The number of pixels separating one child element from its adjacent sibling element. Because each container holds only a single row or column of children, only a single spacing value is needed for a container.
-
-The default value is based on the type of container, and is chosen to match standard Adobe user-interface guidelines.
-
-#### 类型
-
-Number
-
----
-
-### text
-
-`windowOrContainerObj.text`
-
-#### 描述
-
-The title, label, or displayed text. Does not apply to containers of type `group` or `tabbedpanel`.
-
-This is a localizable string: see [Localization in ScriptUI objects](../localization-in-scriptui-objects).
-
-#### 类型
-
-String
-
----
-
-### visible
-
-`windowOrContainerObj.visible`
-
-#### 描述
-
-When `true`, the element is shown, when `false` it is hidden.
-
-When a container is hidden, its children are also hidden, but they retain their own visibility values, and are shown or hidden accordingly when the parent is next shown.
-
-#### 类型
-
-Boolean
-
----
-
-### window
-
-`windowOrContainerObj.window`
-
-#### 描述
-
-The top-level parent window of this container, a [Window object](#window-object).
-
-#### 类型
-
-[Window](#window-object)
-
----
-
-### windowBounds
-
-`windowOrContainerObj.windowBounds`
-
-#### 描述
-
-A Bounds object for the size and location of this container relative to its top-level parent window.
-
-#### 类型
-
-[Bounds](size-and-location-objects.md#bounds)
-
----
-
-## Window Object Methods
-
-These functions are defined for Window instances, and as indicated for container objects of type `Panel` and `Group`.
-
----
-
-### add()
-
-`windowOrContainerObj.add(type[, bounds, text, { creation_props } ]);`
-
-#### 描述
-
-Creates and returns a new control or container object and adds it to the children of this window or container.
-
-#### 参数
-
-|    参数     |                          类型                          |                                                                                                                                      描述                                                                                                                                       |
-| ---------------- | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `type`           | String                                                 | The control type. See [Control types and creation parameters](control-objects.md#control-types-and-creation-parameters).                                                                                                                                                               |
-| `bounds`         | [Bounds object](./size-and-location-objects.md#bounds) | Optional. A bounds specification that describes the size and position of the new control or container, relative to its parent. See Bounds object for specification formats. If supplied, this value creates a new Bounds object which is assigned to the new object's bounds property. |
-| `text`           | String                                                 | Optional. Initial text to be displayed in the control as the title, label, or contents, depending on the control type. If supplied, this value is assigned to the new object's text property.                                                                                          |
-| `creation_props` | Object.                                                | Optional. The properties of this object specify creation parameters, which are specific to each object type. See [Control types and creation parameters](control-objects.md#control-types-and-creation-parameters).                                                                    |
-
-#### 返回
-
-The new object, or `null` if unable to create the object.
-
----
-
-### addEventListener()
-
-`windowObj.addEventListener(eventName, handler[, capturePhase=false]);`
-
-#### 描述
-
-Registers an event handler for a particular type of event occurring in this window.
-
-#### 参数
-
-|   参数    |   类型   |                                                                                                                                                                                                                   描述                                                                                                                                                                                                                    |
-|----------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `eventName`    | String   | The event name string. Predefined event names include:                                                                                                                                                                                                                                                                                                                                                                                           |
-|                |          | - `"change"`                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|                |          | - `"changing"`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|                |          | - `"move"`                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|                |          | - `"moving"`                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|                |          | - `"resize"`                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|                |          | - `"resizing"`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|                |          | - `"show"`                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|                |          | - `"enterKey"`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|                |          | - `"focus"`                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|                |          | - `"blur"`                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|                |          | - `"mousedown"`                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                |          | - `"mouseup"`                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|                |          | - `"mousemove"`                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                |          | - `"mouseover"`                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                |          | - `"mouseout"`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|                |          | - `"click"` (detail = 1 for single, 2 for double)                                                                                                                                                                                                                                                                                                                                                                                                |
-| `handler`      | Function | The function to register for the specified event in this target. This can be the name of a function defined in the extension, or a locally defined handler function to be executed when the event occurs. A handler function takes one argument, the UIEvent base class. See [Registering event listeners for windows or controls](defining-behavior-with-event-callbacks-and-listeners.md#registering-event-listeners-for-windows-or-controls). |
-| `capturePhase` | Boolean  | Optional. When `true`, the handler is called only in the capturing phase of the event propagation. Default is `false`, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target.                                                                                                                                                      |
-
-#### 返回
-
-Nothing
-
----
-
-### center()
-
-`windowObj.center([window])`
-
-#### 描述
-
-Centers this window on the screen, or with respect to another specified window.
-
-#### 参数
-
-| 参数 |                类型                 |        描述         |
-| --------- | ----------------------------------- | -------------------------- |
-| `window`  | [Window object](.././window-object) | Optional. A Window object. |
-
-#### 返回
-
-Nothing
-
----
-
-### close()
-
-`windowObj.close([result])`
-
-#### 描述
-
-Closes this window. If an `onClose` callback is defined for the window, calls that function before closing the window.
-
-#### 参数
-
-| 参数 |  类型  |                                            描述                                             |
-| --------- | ------ | -------------------------------------------------------------------------------------------------- |
-| `result`  | Number | Optional. A number to be returned from the show method that invoked this window as a modal dialog. |
-
-#### 返回
-
-Nothing
-
----
-
-### dispatchEvent()
-
-`windowObj.dispatchEvent(eventObj)`
-
-#### 描述
-
-Simulates the occurrence of an event in this target. A script can create a UIEvent base class for a specific event and pass it to this method to start the event propagation for the event.
-
-#### 参数
-
-| 参数  |                             类型                             |      描述      |
-| ---------- | ------------------------------------------------------------ | --------------------- |
-| `eventObj` | [UIEvent base class](./event-handling.md#uievent-base-class) | A UIEvent base class. |
-
-#### 返回
-
-Boolean. `false` if any of the registered listeners that handled the event called the event object's [preventDefault()](event-handling.md#preventdefault) method, `true` otherwise.
-
----
-
-### findElement()
-
-`windowOrContainerObj.findElement(name)`
-
-#### 描述
-
-Searches for the named element among the children of this window or container, and returns the object if found.
-
-#### 参数
-
-| 参数 |  类型  |                             描述                              |
-| --------- | ------ | -------------------------------------------------------------------- |
-| `name`    | String | The name of the element, as specified in the name creation property. |
-
-#### 返回
-
-The control object or `null`.
-
----
-
-### hide()
-
-`windowObj.hide()`
-
-Hides this window. When a window is hidden, its children are also hidden, but when it is shown again, the children retain their own visibility states.
-
-For a modal dialog, closes the dialog and sets its result to `0`.
-
-#### 返回
-
-Nothing
-
----
-
-### notify()
-
-`windowObj.notify([event])`
-
-#### 描述
-
-Sends a notification message, simulating the specified user interaction event.
-
-#### 参数
-
-| 参数 |  类型  |                           描述                           |
-|-----------|--------|-----------------------------------------------------------------|
-| `event`   | String | Optional. The name of the window event handler to call. One of: |
-|           |        | - `onClose`                                                     |
-|           |        | - `onMove`                                                      |
-|           |        | - `onMoving`                                                    |
-|           |        | - `onResize`                                                    |
-|           |        | - `onResizing`                                                  |
-|           |        | - `onShow`                                                      |
-
-#### 返回
-
-Nothing
-
-#### 示例
-
-To simulate a dialog being moved by a user:
-
-```javascript
-myDlg.notify("onMove")
-```
-
----
-
-### remove()
-
-`windowOrContainerObj.remove(index)`
-
-`windowOrContainerObj.remove(text)`
-
-`windowOrContainerObj.remove(child)`
-
-#### 描述
-
-Removes the specified child control from this window's or container's children array. No error results if the child does not exist.
-
-#### 参数
-
-|       参数        |                           类型                            |                                                描述                                                 |
-| ---------------------- | --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `index`/`text`/`child` | Number, String, or [Control object](.././control-objects) | The child control to remove, specified by 0-based index, the contained text value, or as a control object. |
-
-#### 返回
-
-Nothing
-
----
-
-### removeEventListener()
-
-`windowOrContainerObj.removeEventListener(eventName, handler[, capturePhase])`
-
-#### 描述
-
-Unregisters an event handler for a particular type of event occurring in this window. All arguments must be identical to those that were used to register the event handler.
-
-#### 参数
-
-|   参数    |   类型   |                               描述                               |
-| -------------- | -------- | ----------------------------------------------------------------------- |
-| `eventName`    | String   | The event name string.                                                  |
-| `handler`      | Function | The function that was registered to handle the event.                   |
-| `capturePhase` | Boolean  | Optional. Whether the handler was to respond only in the capture phase. |
-
-#### 返回
-
-Nothing
-
----
-
-### show()
-
-`windowOrContainerObj.show()`
-
-Shows this window, container, or control. If an [onShow](#window-event-handling-callbacks) callback is defined for a window, calls that function before showing the window.
-
-When a window or container is hidden, its children are also hidden, but when it is shown again, the children retain their own visibility states.
-
-For a modal dialog, opens the dialog and does not return until the dialog is dismissed. If it is dismissed via the [close()](#close) method, this method returns any result value passed to that method. Otherwise, returns 0.
-
-#### 返回
-
-Nothing
-
----
-
-### update()
-
-`windowOrContainerObj.update()`
-
-Allows a script to run a long operation (such as copying a large file) and update UI elements to show the status of the operation.
-
-Normally, drawing updates to UI elements occur during idle periods, when the application is not doing anything and the OS event queue is being processed, but during a long scripted operation, the normal event loop is not running. Use this method to perform the necessary synchronous drawing updates, and also process certain mouse and keyboard events in order to allow a user to cancel the current operation (by clicking a Cancel button, for instance).
-
-During the update() operation, the application is put into a modal state, so that it does not handle any events that would activate a different window, or give focus to a control outside the window being updated. The modal state allows drawing events for controls in other windows to occur (as is the case during a modal [show()](#show) operation), so that the script does not prevent the update of other parts of the application's UI while in the operation loop.
-
-It is an error to call the update() method for a window that is not currently visible.
-
-#### 返回
-
-Nothing
-
----
-
-## Window event-handling callbacks
-
-The following callback functions can be defined to respond to events in windows. To respond to an event, define a function with the corresponding name in the `Window` instance. These callbacks are not available for other container types (controls of type `panel` or `group`).
-
-### onActivate
-
-Called when the user make the window active by clicking it or otherwise making it the keyboard focus.
-
----
-
-### onClose
-
-Called when a request is made to close the window, either by an explicit call to the [close()](#close) function or by a user action (clicking the OS-specific close icon in the title bar). The function is called before the window actually closes; it can return `false` to cancel the close operation.
-
----
-
-### onDeactivate
-
-Called when the user makes a previously active window inactive; for instance by closing it, or by clicking another window to change the keyboard focus.
-
----
-
-### onDraw
-
-Called when a container or control is about to be drawn. Allows the script to modify or control the appearance, using the control's associated [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object) object. Handler takes one argument, a [DrawState object](control-objects.md#drawstate-object) object.
-
----
-
-### onMove
-
-Called when the window has been moved.
-
----
-
-### onMoving
-
-Called while a window in being moved, each time the position changes. A handler can monitor the move operation.
-
----
-
-### onResize
-
-Called when the window has been resized.
-
----
-
-### onResizing
-
-Called while a window is being resized, each time the height or width changes. A handler can monitor the resize operation.
-
----
-
-### onShortcutKey
-
-(In [Windows](#) only)
-
-Called when a shortcut-key sequence is typed that matches the shortcutKey value for this window.
-
----
-
-### onShow
-
-Called when a request is made to open the window using the [show()](#show) method, before the window is made visible, but after automatic layout is complete. A handler can modify the results of the automatic layout.
+一个

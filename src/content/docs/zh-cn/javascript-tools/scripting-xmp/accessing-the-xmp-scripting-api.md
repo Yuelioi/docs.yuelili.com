@@ -1,43 +1,43 @@
 ---
-title: accessing-the-xmp-scripting-api
+title: 访问XMP脚本API
 ---
-# Accessing the XMP scripting API
+# 访问XMP脚本API
 
-To use the XMP objects, you must load the XMP library as an ExtendScript ExternalObject. To avoid loading multiple instances of the library, use code like the following:
+要使用XMP对象，您必须将XMP库作为ExtendScript的ExternalObject加载。为了避免加载多个库实例，请使用如下代码：
 
 ```javascript
-// load the library
+// 加载库
 if ( ExternalObject.AdobeXMPScript == undefined ) {
     ExternalObject.AdobeXMPScript = new ExternalObject( "lib:AdobeXMPScript");
 }
 ```
 
-After the library has been loaded, these primary XMP classes are available in the global JavaScript namespace:
+加载库后，以下主要的XMP类将在全局JavaScript命名空间中可用：
 
-|                             Object                             |                                                                                        描述                                                                                         |
+|                             对象                             |                                                                                        描述                                                                                         |
 | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object) | Provides the core services of the XMP Toolkit. Allows you to create and delete metadata properties, and to retrieve and modify property values.                                            |
-| [XMPFile object](xmpscript-object-reference.md#xmpfile-object) | Provides convenient I/O access to the main, or document level, XMP for a file. Allows you to retrieve existing metadata from a file, update file metadata, and add new metadata to a file. |
+| [XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object) | 提供XMP Toolkit的核心服务。允许您创建和删除元数据属性，并检索和修改属性值。                                            |
+| [XMPFile对象](xmpscript-object-reference.md#xmpfile-object) | 提供对文件的主文档级别XMP的便捷I/O访问。允许您从文件中检索现有元数据，更新文件元数据，并向文件添加新元数据。 |
 
-Additional top-level objects include array-handling utilities, a date-time object, and constant definitions that include namespace constants. The top-level objects provide access to additional support classes that encapsulate individual metadata properties, file information, and XMP packet information, and a utility that allows iteration through properties.
+其他顶级对象包括数组处理工具、日期时间对象以及包含命名空间常量的常量定义。顶级对象提供了对封装单个元数据属性、文件信息和XMP数据包信息的附加支持类的访问，以及允许遍历属性的工具。
 
-See [XMPScript object reference](../xmpscript-object-reference) for details of the classes, their properties, and their methods.
+有关类、它们的属性和方法的详细信息，请参阅[XMPScript对象参考](../xmpscript-object-reference)。
 
 ---
 
-## Using the XMP scripting API
+## 使用XMP脚本API
 
-The [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object) is the primary means of access to the namespaces and properties of an XMP metadata packet. Through this object, you can create and delete namespaces and properties, and examine and modify property values.
+[XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object)是访问XMP元数据包的命名空间和属性的主要方式。通过此对象，您可以创建和删除命名空间和属性，并检查和修改属性值。
 
-You can obtain or create an [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object) in several ways:
+您可以通过以下几种方式获取或创建[XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object)：
 
-- You can use an [XMPFile object](xmpscript-object-reference.md#xmpfile-object) to retrieve existing metadata directly from a file. The `XMPFile.`[getXMP()](xmpscript-object-reference.md#xmpfilegetxmp) method creates an [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object), which you can use to examine or modify the properties and their values. You can then use `XMPFile.`[putXMP()](xmpscript-object-reference.md#xmpfileputxmp) to write the modified metadata back to the file.
-- You can create an [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object) with the constructor, initializing it with an XMP packet created or obtained elsewhere.
-- You can create a new, empty [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object) with the constructor, and use its methods to create entirely new namespaces and properties. You can then use `XMPFile.`[putXMP()](xmpscript-object-reference.md#xmpfileputxmp) to inject the new metadata into a file.
+- 您可以使用[XMPFile对象](xmpscript-object-reference.md#xmpfile-object)直接从文件中检索现有元数据。`XMPFile.`[getXMP()](xmpscript-object-reference.md#xmpfilegetxmp)方法会创建一个[XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object)，您可以使用它来检查或修改属性及其值。然后，您可以使用`XMPFile.`[putXMP()](xmpscript-object-reference.md#xmpfileputxmp)将修改后的元数据写回文件。
+- 您可以使用构造函数创建一个[XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object)，并使用在其他地方创建或获取的XMP数据包初始化它。
+- 您可以使用构造函数创建一个新的空[XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object)，并使用其方法创建全新的命名空间和属性。然后，您可以使用`XMPFile.`[putXMP()](xmpscript-object-reference.md#xmpfileputxmp)将新元数据注入文件。
 
-In Adobe Bridge, you can pass XMP metadata between the built-in `Metadata` object and the XMPScript [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object) using serialized XMP.
+在Adobe Bridge中，您可以使用序列化的XMP在内置的`Metadata`对象和XMPScript的[XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object)之间传递XMP元数据。
 
-- You can use XMPScript to examine thumbnail metadata by creating the [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object) from the metadata stored with a `Thumbnail` object, using the object constructor. To ensure that the metadata is up-to-date, use synchronous mode (which is off by default):
+- 您可以使用XMPScript通过从`Thumbnail`对象存储的元数据创建[XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object)来检查缩略图元数据，使用对象构造函数。为了确保元数据是最新的，请使用同步模式（默认情况下关闭）：
 
     ```javascript
     var thumb = new Thumbnail( new File( "/C/myImage.jpg") );
@@ -46,104 +46,104 @@ In Adobe Bridge, you can pass XMP metadata between the built-in `Metadata` objec
     var xmp = new XMPMeta( thumb.metadata.serialize() );
     ```
 
-    or:
+    或：
 
     ```javascript
     var xmp = new XMPMeta( thumb.synchronousMetadata.serialize() );
     ```
 
-- You can modify the metadata in an Adobe Bridge thumbnail by creating a new `Metadata` object with serialized XMP. Continuing the previous example:
+- 您可以通过使用序列化的XMP创建一个新的`Metadata`对象来修改Adobe Bridge缩略图中的元数据。继续前面的示例：
 
     ```javascript
-    // Create a compact XMP packet
+    // 创建一个紧凑的XMP数据包
     var newPacket = xmp.serialize( XMPConst.SERIALIZE_OMIT_PACKET_WRAPPER | XMPConst.SERIALIZE_USE_COMPACT_FORMAT ) );
     thumb.metadata = new Metadata( newPacket );
     ```
 
-- To write metadata back to the file for a thumbnail, you can access the thumbnail's file and create an [XMPFile object](xmpscript-object-reference.md#xmpfile-object) object to access the embedded metadata directly:
+- 要将元数据写回缩略图的文件，您可以访问缩略图的文件并创建一个[XMPFile对象](xmpscript-object-reference.md#xmpfile-object)对象以直接访问嵌入的元数据：
 
     ```javascript
     var xmp = new XMPFile( thumb.spec.fsName, XMPConst.UNKNOWN, XMPConst.OPEN_FOR_UPDATE );
     ```
 
-:::note
-The `XMPFile` object does not support all of the file formats that Adobe Bridge supports.
+:::注意
+`XMPFile`对象不支持Adobe Bridge支持的所有文件格式。
 :::
 
 ---
 
-### Creating new metadata
+### 创建新元数据
 
-This code creates an empty [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object), uses it to set a metadata property, and serializes it to a string, which you could pass to an authoring tool, for example, or store in a file.
+此代码创建一个空的[XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object)，使用它设置元数据属性，并将其序列化为字符串，您可以将其传递给创作工具，或存储在文件中。
 
 ```javascript
 var xmp = new XMPMeta();
 xmp.setProperty( XMPConst.NS_XMP, "CreatorTool", "My Script" );
-var xmpStr = xmp.serialize(); // Serialize the XMP packet to XML
+var xmpStr = xmp.serialize(); // 将XMP数据包序列化为XML
 
-// Retrieve property
+// 检索属性
 var prop = xmp.getProperty(XMPConst.NS_XMP, "CreatorTool");
-$.writeln( "namespace: " + prop.namespace + "\n" +
-    "property path + name: " + prop.path + "\n" +
-    "value: " + prop ); // same as prop.value
+$.writeln( "命名空间: " + prop.namespace + "\n" +
+    "属性路径 + 名称: " + prop.path + "\n" +
+    "值: " + prop ); // 与prop.value相同
 ```
 
 ---
 
-### Modifying existing metadata
+### 修改现有元数据
 
-This code accesses an existing XMP packet, assuming the location has been assigned to a string variable. It sets the modification-date property to the current date and time, and stores the updated XMP packet back to the string, making it as small as possible.
+此代码访问现有的XMP数据包，假设位置已分配给字符串变量。它将修改日期属性设置为当前日期和时间，并将更新后的XMP数据包存储回字符串，使其尽可能小。
 
 ```javascript
-var xmp = new XMPMeta( xmpStr ); // Object initialized with xmp packet as string
-var dateTime = new XMPDateTime( new Date() ); // Now
+var xmp = new XMPMeta( xmpStr ); // 使用XMP数据包字符串初始化对象
+var dateTime = new XMPDateTime( new Date() ); // 现在
 var oldModificationDate = mp.getProperty( XMPConst.NS_XMP, "ModifyDate", "xmpdate" );
 
-$.writeln( "Old modification date: " + oldModificationDate );
+$.writeln( "旧的修改日期: " + oldModificationDate );
 xmp.setProperty( XMPConst.NS_XMP, "ModifyDate", dateTime, "xmpdate" );
 
-// Serialize to XML, in compact style
+// 序列化为XML，使用紧凑样式
 var xmpStr = xmp.serialize( XMPConst.SERIALIZE_USE_COMPACT_FORMAT );
 ```
 
 ---
 
-### Using XMPFile for batch processing
+### 使用XMPFile进行批处理
 
-This example iterates through a folder of image files and processes the metadata. The script processes each picture as follows:
+此示例遍历文件夹中的图像文件并处理元数据。脚本按以下方式处理每张图片：
 
-- Reads and parses the metadata. If an image file does not contain XMP metadata, the legacy metadata is automatically converted to XMP.
-- Deletes the list of existing creators, and adds a new creator value.
-- Writes the modified metadata back to the file.
+- 读取并解析元数据。如果图像文件不包含XMP元数据，则自动将旧元数据转换为XMP。
+- 删除现有的创建者列表，并添加一个新的创建者值。
+- 将修改后的元数据写回文件。
 
 ```javascript
-$.writeln( "XMPFiles batch processing example" );
+$.writeln( "XMPFiles批处理示例" );
 
-// Define folder containing images (make sure that you use copies)
+// 定义包含图像的文件夹（确保使用副本）
 var picFolder = "/c/temp/photos";
 
-// Load the XMPScript library
+// 加载XMPScript库
 if ( ExternalObject.AdobeXMPScript == undefined ) {
     ExternalObject.AdobeXMPScript = new ExternalObject( "lib:AdobeXMPScript" );
 }
 
-// Iterate through the photos in the folder
+// 遍历文件夹中的照片
 var pics = Folder(picFolder).getFiles();
 for ( var i = 0; i < pics.length; i++ ) {
     var file = pics[i];
-    $.writeln( "Process file: " + file.fsName );
+    $.writeln( "处理文件: " + file.fsName );
 
-    // Applies only to files, not to folders
+    // 仅适用于文件，不适用于文件夹
     if ( file instanceof File ) {
         var xmpFile = new XMPFile( file.fsName, XMPConst.UNKNOWN, XMPConst.OPEN_FOR_UPDATE );
         var xmp = xmpFile.getXMP();
 
-        // Delete existing authors and add a new one
-        // Existing metadata stays untouched
+        // 删除现有作者并添加一个新作者
+        // 现有元数据保持不变
         xmp.deleteProperty( XMPConst.NS_DC, "creator" );
         xmp.appendArrayItem( XMPConst.NS_DC, "creator", "Judy", 0, XMPConst.ARRAY_IS_ORDERED );
 
-        // Write updated metadata into the file
+        // 将更新后的元数据写入文件
         if ( xmpFile.canPutXMP( xmp ) ) {
             xmpFile.putXMP( xmp );
         }
@@ -154,62 +154,62 @@ for ( var i = 0; i < pics.length; i++ ) {
 
 ---
 
-### Integrating XMPScript with Adobe Bridge
+### 将XMPScript与Adobe Bridge集成
 
-This script adds a command to the context menu for Thumbnails that shows some of the XMP properties.
+此脚本为缩略图的上下文菜单添加了一个命令，显示一些XMP属性。
 
-It demonstrates how to retrieve the XMP metadata that is stored with the Thumbnail object, and use it to create an [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object), then use that object to retrieve different types of property values.
+它演示了如何检索与`Thumbnail`对象一起存储的XMP元数据，并使用它创建一个[XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object)，然后使用该对象检索不同类型的属性值。
 
-To use this script, place it in the "Startup Scripts" folder for Adobe Bridge (see [Startup scripts](../introduction/scripting-for-specific-applications.md#startup-scripts)). When you start Adobe Bridge, select a thumbnail for a document that contains XMP metadata, right click, and choose **Show XMP Properties** from the menu.
+要使用此脚本，请将其放置在Adobe Bridge的“启动脚本”文件夹中（请参阅[启动脚本](../introduction/scripting-for-specific-applications.md#startup-scripts)）。当您启动Adobe Bridge时，选择一个包含XMP元数据的文档的缩略图，右键单击，然后从菜单中选择**显示XMP属性**。
 
 ```javascript
-$.writeln("XMPFiles batch processing example");
+$.writeln("XMPFiles批处理示例");
 
-// Define folder containing images (make sure that you use copies)
+// 定义包含图像的文件夹（确保使用副本）
 var picFolder = "/c/temp/photos";
 
-// Load the XMPScript library
-$.writeln("XMPScript Adobe Bridge Integration Example");
+// 加载XMPScript库
+$.writeln("XMPScript Adobe Bridge集成示例");
 
-// Load the XMPScript library
+// 加载XMPScript库
 if ( ExternalObject.AdobeXMPScript == undefined ) {
     ExternalObject.AdobeXMPScript = new ExternalObject( "lib:AdobeXMPScript" );
 }
-// Add a context menu item to Thumbnails
-var xmpCommand = new MenuElement( "command", "Show XMP Properties", "at the end of Thumbnail", "showProperties" );
+// 为缩略图添加上下文菜单项
+var xmpCommand = new MenuElement( "command", "显示XMP属性", "在缩略图末尾", "showProperties" );
 
-// Define command behavior
+// 定义命令行为
 xmpCommand.onSelect = function(m) {
 
-// Get the first selected thumbnail
+// 获取第一个选中的缩略图
 var thumb = app.document.selections[0];
 
-// If there is one, and it has metadata
+// 如果存在且包含元数据
 if ( thumb && thumb.metadata ) {
 
-    // Retrieve metadata from the thumbnail into an XMPMeta object`
-    // ( if app.synchronousMode is set, use thumb.metadata )
+    // 从缩略图检索元数据到XMPMeta对象中`
+    // （如果app.synchronousMode已设置，则使用thumb.metadata）
 
     var xmp = new XMPMeta( thumb.synchronousMetadata.serialize() );
 
-    // Retrieve some of the XMP property values
-    // A simple property with a localized string value
-    var msg = "Title: " + xmp.getLocalizedText( XMPConst.NS_DC, "title", null, "en" ) + "\n";
+    // 检索一些XMP属性值
+    // 一个带有本地化字符串值的简单属性
+    var msg = "标题: " + xmp.getLocalizedText( XMPConst.NS_DC, "title", null, "en" ) + "\n";
 
-    // An array property
-    msg += "Authors of the document:\n";
+    // 一个数组属性
+    msg += "文档的作者:\n";
     var num = xmp.countArrayItems( XMPConst.NS_DC, "creator" );
 
     for ( var i = 1; i <= num; i++ ) {}
         msg += "* " + xmp.getArrayItem( XMPConst.NS_DC, "creator", i ) + "\n";
     }
 
-    // A simple property with a date value
-    msg += "Creation Date: " + xmp.getProperty( XMPConst.NS_XMP, "CreateDate" )
+    // 一个带有日期值的简单属性
+    msg += "创建日期: " + xmp.getProperty( XMPConst.NS_XMP, "CreateDate" )
 
-    // Display the values
+    // 显示值
     Window.alert( msg );
 } else {
-    Window.alert( "No thumbnail selected or no XMP contained" );
+    Window.alert( "未选择缩略图或不包含XMP" );
 }
 ```

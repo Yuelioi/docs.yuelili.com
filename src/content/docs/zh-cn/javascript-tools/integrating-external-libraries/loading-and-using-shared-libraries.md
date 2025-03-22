@@ -1,48 +1,48 @@
 ---
-title: loading-and-using-shared-libraries
+title: 加载和使用共享库
 ---
-# Loading and using shared libraries
+# 加载和使用共享库
 
-To load an external shared library into JavaScript, create a new [ExternalObject object](../externalobject-object). The instance acts as a container and manager for the JavaScript interface to the library. It provides a logging facility that prints status information to the JavaScript Console in the ExtendScript Toolkit, to help you debug your external library use.
+要将外部共享库加载到 JavaScript 中，需要创建一个新的 [ExternalObject 对象](../externalobject-object)。该实例充当 JavaScript 与库之间接口的容器和管理器。它提供了一个日志工具，可以将状态信息打印到 ExtendScript Toolkit 中的 JavaScript 控制台，以帮助您调试外部库的使用。
 
-Once the library has been loaded, its exported symbols become available to JavaScript. In your JavaScript code, you can call the functions defined in the library directly in the `ExternalObject` instance, or indirectly through library-defined object types.
+一旦库被加载，其导出的符号将对 JavaScript 可用。在 JavaScript 代码中，您可以直接在 `ExternalObject` 实例中调用库中定义的函数，或者通过库定义的对象类型间接调用。
 
 ---
 
-## Direct access to library calls through the ExternalObject instance
+## 通过 ExternalObject 实例直接访问库调用
 
-Use the direct-access style for C-language libraries. For each function defined in the C library, there is a corresponding method in the ExternalObject object. You can pass data to these methods and receive the return value directly.
+对于 C 语言库，使用直接访问方式。对于 C 库中定义的每个函数，ExternalObject 对象中都有一个对应的方法。您可以将数据传递给这些方法并直接接收返回值。
 
-For example:
+例如：
 
 ```javascript
-mylib = new ExternalObject ("lib:" + samplelib); // load the library
+mylib = new ExternalObject ("lib:" + samplelib); // 加载库
 alert(mylib.version) ;
-// access functions directly from ExternalObject instance
+// 直接从 ExternalObject 实例访问函数
 var a = mylib.method_abc(1,2.0,true, "this is data") ;
 alert(a) ;
 mylib.unload() ;
 ```
 
-For details of how to define functions for direct access through the ExternalObject object, see [Defining entry points for direct access](.././defining-entry-points-for-direct-access)
+有关如何定义函数以通过 ExternalObject 对象直接访问的详细信息，请参阅 [定义直接访问的入口点](.././defining-entry-points-for-direct-access)。
 
 ---
 
-## Indirect access to library calls through JavaScript classes
+## 通过 JavaScript 类间接访问库调用
 
-Use the indirect style to access classes defined in a C++ library. For each C++ class defined in the library, a corresponding JavaScript class is automatically defined, and you can access the properties and methods through an instance of that class.
+使用间接方式访问 C++ 库中定义的类。对于库中定义的每个 C++ 类，会自动定义一个对应的 JavaScript 类，您可以通过该类的实例访问属性和方法。
 
-For example:
+例如：
 
 ```javascript
-anotherlib= new ExternalObject ("lib:" + filespec); // load the library
+anotherlib= new ExternalObject ("lib:" + filespec); // 加载库
 alert(anotherlib.version) ;
-// instantiate library-defined class
+// 实例化库定义的类
 var myObject = new MyNewClass() ;
-// access functions from instance
+// 从实例访问函数
 var a = myObject.method_abc(1,2.0,true,"this is data") ;
 alert(a) ;
 anotherlib.unload() ;
 ```
 
-For details of how to define functions for direct access through the ExternalObject object, see [Defining entry points for indirect access](.././defining-entry-points-for-indirect-access).
+有关如何定义函数以通过 ExternalObject 对象间接访问的详细信息，请参阅 [定义间接访问的入口点](.././defining-entry-points-for-indirect-access)。

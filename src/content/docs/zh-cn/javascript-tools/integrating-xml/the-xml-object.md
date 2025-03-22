@@ -1,13 +1,13 @@
 ---
-title: the-xml-object
+title: xml 对象
 ---
-# The XML Object
+# XML 对象
 
-The XML object represents an XML element node in an XML tree. The topmost `XML` object for an XML file represents the root node. It acts as a list, which contains additional `XML` objects for each element. These in turn contain XML objects for their own member elements, and so on.
+XML 对象表示 XML 树中的 XML 元素节点。XML 文件的顶层 `XML` 对象表示根节点。它充当一个列表，其中包含每个元素的附加 `XML` 对象。这些对象又包含它们自己的成员元素的 XML 对象，依此类推。
 
-The child elements of an element tree are available as properties of the `XML` object for the parent. The name of the property corresponds to the name of the element. Each property contains an array of `XML` objects, each of which represents one element of the named type.
+元素树的子元素作为父元素的 `XML` 对象的属性可用。属性的名称对应于元素的名称。每个属性包含一个 `XML` 对象数组，每个对象表示一个命名类型的元素。
 
-For example, suppose you have the following, minimal XML code:
+例如，假设你有以下最小的 XML 代码：
 
 ```xml
 <rootElement>
@@ -20,13 +20,13 @@ For example, suppose you have the following, minimal XML code:
 </rootElement>
 ```
 
-In a JavaScript script, the XML object that you create from this XML code represents the root element:
+在 JavaScript 脚本中，你从此 XML 代码创建的 XML 对象表示根元素：
 
 ```javascript
 var myRoot = new XML( "<rootElement> <elementA> <elementB></elementB> </elementA> <elementA> <elementB></elementB> </elementA> </rootElement>");
 ```
 
-You can assign a constant to an XML value directly. The following implicitly creates the XML object assigned to `myRoot`:
+你可以直接将常量分配给 XML 值。以下隐式创建了分配给 `myRoot` 的 XML 对象：
 
 ```javascript
 var myRoot = <rootElement>
@@ -39,19 +39,19 @@ var myRoot = <rootElement>
 </rootElement>;
 ```
 
-The object `myRoot` contains a property named `elementA`, which contains two `XML` objects for the two instances of that element. Each of these, in turn, contains an `elementB` property, which contains one empty `XML` object:
+对象 `myRoot` 包含一个名为 `elementA` 的属性，该属性包含两个 `XML` 对象，分别表示该元素的两个实例。每个对象又包含一个 `elementB` 属性，该属性包含一个空的 `XML` 对象：
 
 ```javascript
 var elemB1 = myRoot.elementA[0].elementB[0];
 ```
 
-If an element is empty in the XML, the corresponding property exists and contains an empty XML object; it is never `null` or `undefined`.
+如果 XML 中的元素为空，则相应的属性存在并包含一个空的 XML 对象；它永远不会是 `null` 或 `undefined`。
 
 ---
 
-## Accessing XML elements
+## 访问 XML 元素
 
-This sample XML code is used for examples throughout this chapter:
+本章中的示例使用以下示例 XML 代码：
 
 ```xml
 <bookstore>
@@ -84,46 +84,46 @@ This sample XML code is used for examples throughout this chapter:
 </bookstore>
 ```
 
-To encapsulate this code in an XML object, serialize it into a string and pass that string to the constructor:
+要将此代码封装在 XML 对象中，将其序列化为字符串并将该字符串传递给构造函数：
 
 ```javascript
 var bookXmlStr = "...";
 var bookstoreXML = new XML (bookXmlStr);
 ```
 
-Using this example, the root element `<bookstore>`, is represented by the XML object returned from the constructor. Each of the `<book>` elements is available as a member of the book property of the XML object.
+使用此示例，根元素 `<bookstore>` 由构造函数返回的 XML 对象表示。每个 `<book>` 元素作为 XML 对象的 `book` 属性的成员可用。
 
-- The Javascript statement `bookstoreXML.book;` returns the entire list of books.
-- The statement `bookstoreXML.book[0];` returns the `XML` object for the first book.
-- The statement `bookstoreXML.book[0].author;` returns all authors of the first book.
+- JavaScript 语句 `bookstoreXML.book;` 返回所有书籍的列表。
+- 语句 `bookstoreXML.book[0];` 返回第一本书的 `XML` 对象。
+- 语句 `bookstoreXML.book[0].author;` 返回第一本书的所有作者。
 
-For additional ways of accessing elements in the tree, see [Retrieving contained elements](#retrieving-contained-elements), and [Creating and accessing namespaces](#creating-and-accessing-namespaces)
+有关访问树中元素的更多方法，请参阅 [检索包含的元素](#retrieving-contained-elements) 和 [创建和访问命名空间](#creating-and-accessing-namespaces)。
 
 ---
 
-## Accessing XML attributes
+## 访问 XML 属性
 
-Attribute are properties of their parent elements. In ExtendScript, access an attribute name by using a preceding at-sign (`@`). An attribute property is a one-element list, which contains an XML object for the value of the attribute. For example:
+属性是其父元素的属性。在 ExtendScript 中，通过在属性名称前加上 at 符号 (`@`) 来访问属性名称。属性属性是一个单元素列表，其中包含属性值的 XML 对象。例如：
 
 ```xml
 bookstoreXML.book [0].@category;
 ```
 
-This returns the category attribute of the first book, whose value is the string `"COOKING"`.
+这将返回第一本书的 `category` 属性，其值为字符串 `"COOKING"`。
 
-To access all category attributes of all books, use this statement:
+要访问所有书籍的所有 `category` 属性，请使用以下语句：
 
 ```xml
 bookstoreXML.book.@category
 ```
 
-You can reference a set of elements with a particular attribute value, using a predicate in this form:
+你可以使用以下形式的谓词引用具有特定属性值的一组元素：
 
 ```xml
 element.(@attribute == value)
 ```
 
-For example, this statement returns only book elements that have a category attribute with the value `"CHILDREN"`:
+例如，此语句仅返回具有 `category` 属性且值为 `"CHILDREN"` 的书籍元素：
 
 ```xml
 bookstoreXML.book.(@category == "CHILDREN");
@@ -131,11 +131,11 @@ bookstoreXML.book.(@category == "CHILDREN");
 
 ---
 
-## Viewing XML objects
+## 查看 XML 对象
 
-The XML object, like all ExtendScript objects, has a ref:controlobj-toString method that serializes the contents into a string. In this case, the string contains only the text content of the element, not the tags. For example, for the element `<x>text</x>`, the `toString()` method returns `"text"`.
+XML 对象与所有 ExtendScript 对象一样，具有 `toString` 方法，该方法将内容序列化为字符串。在这种情况下，字符串仅包含元素的文本内容，而不包含标签。例如，对于元素 `<x>text</x>`，`toString()` 方法返回 `"text"`。
 
-This method is called when you evaluate the object in the JavaScript Console of the ExtendScript Toolkit. It recreates the XML text that the object encapsulates. Thus, if you evaluate the object `bookstoreXML.book[1]` in the Console, you see the XML text for the encapsulated tree, formatted with line feeds and spaces:
+当你在 ExtendScript Toolkit 的 JavaScript 控制台中评估对象时，会调用此方法。它会重新创建对象封装的 XML 文本。因此，如果你在控制台中评估对象 `bookstoreXML.book[1]`，你将看到封装的树的 XML 文本，格式化为带有换行符和空格：
 
 ```xml
 > bookstoreXML.book[1];
@@ -147,45 +147,45 @@ This method is called when you evaluate the object in the JavaScript Console of 
     </book>
 ```
 
-If you evaluate an object with a text value, you see the text value. For example:
+如果你评估具有文本值的对象，你将看到文本值。例如：
 
 ```xml
 > bookstoreXML.book[1].@category;
     CHILDREN
 ```
 
-If you access multiple values, the values are concatenated:
+如果你访问多个值，这些值将被连接起来：
 
 ```xml
 > bookstoreXML.book.@category
     COOKINGCHILDRENCHILDRENMUSIC
 ```
 
-The [toXMLString()](xml-object-reference.md#xmltoxmlstring) method serializes the entire element, including the tags, into a string.
+[toXMLString()](xml-object-reference.md#xmltoxmlstring) 方法将整个元素（包括标签）序列化为字符串。
 
-For example, for the element `<x>text</x>`, the method returns `"<x>text</x>"`.
+例如，对于元素 `<x>text</x>`，该方法返回 `"<x>text</x>"`。
 
 ---
 
-## Modifying XML elements and attributes
+## 修改 XML 元素和属性
 
-You can change an element by assigning a value to the corresponding property.
+你可以通过为相应属性赋值来更改元素。
 
-- If the value assigned is an XML element, the element is simply replaced. If there are multiple elements of the same type, the first element is replaced, and all other elements are deleted.
-- If the value assigned is not XML, it is converted to a string, and the content of the element is replaced with that string.
-- If no element of this type is present, a new element is appended to the XML.
+- 如果分配的值是 XML 元素，则元素将被替换。如果有多个相同类型的元素，则第一个元素将被替换，所有其他元素将被删除。
+- 如果分配的值不是 XML，则将其转换为字符串，并用该字符串替换元素的内容。
+- 如果不存在此类型的元素，则会将新元素附加到 XML 中。
 
-You can change the values of attributes using the same technique.
+你可以使用相同的技术更改属性的值。
 
-### Modification examples
+### 修改示例
 
-**In the sample XML, the third book has several <author> elements. This statement replaces all of them with a single element, containing a new string:**
+**在示例 XML 中，第三本书有多个 `<author>` 元素。此语句将所有元素替换为包含新字符串的单个元素：**
 
 ```javascript
 bookstoreXML.book[2].author = "Charles 'Lewis Carroll' Dodgeson";
 ```
 
-The result is this XML:
+结果是以下 XML：
 
 ```xml
 <book category="CHILDREN">
@@ -196,23 +196,23 @@ The result is this XML:
 </book>
 ```
 
-**To replace just the first author, leaving all the other authors in place, use this statement:**
+**要仅替换第一个作者，保留所有其他作者，请使用以下语句：**
 
 ```javascript
 bookstoreXML.book[2].author[0] = "Charles Dodgeson, aka Lewis Carroll";
 ```
 
-**This statement changes the content of the <year> element in the second book. ExtendScript automatically converts the numeric value to a string:**
+**此语句更改第二本书中 `<year>` 元素的内容。ExtendScript 会自动将数值转换为字符串：**
 
 ```javascript
 bookstoreXML.book[1].year = 1901;
 ```
 
-**This following statement adds a new <rating> element to the second book:**
+**以下语句向第二本书添加一个新的 `<rating>` 元素：**
 
 `> bookstoreXML.book[1].rating = "**\***";`
 
-The result is this XML:
+结果是以下 XML：
 
 ```xml
 <book category="CHILDREN">
@@ -224,13 +224,13 @@ The result is this XML:
 </book>
 ```
 
-**This statement changes the value of the category attribute of the second book:**
+**此语句更改第二本书的 `category` 属性的值：**
 
 ```javascript
 bookstoreXML.book[1].@category = "LITERATURE, FANTASY"
 ```
 
-The result is this XML:
+结果是以下 XML：
 
 ```xml
 <book category="LITERATURE, FANTASY">
@@ -240,25 +240,25 @@ The result is this XML:
 
 ---
 
-## Deleting elements and attributes
+## 删除元素和属性
 
-To delete an element or attribute in the XML, use the JavaScript `delete` operator to delete the corresponding element or attribute property. If there are multiple instances of an element, you can delete all, or refer to a single one by its index.
+要删除 XML 中的元素或属性，请使用 JavaScript 的 `delete` 运算符删除相应的元素或属性属性。如果元素有多个实例，你可以删除所有实例，或通过索引引用单个实例。
 
-### Deletion examples
+### 删除示例
 
-This statement deletes all authors from the third book:
+此语句删除第三本书的所有作者：
 
 ```xml
 delete bookstoreXML.book[2].author;
 ```
 
-This statement deletes only the second author from the third book:
+此语句仅删除第三本书的第二个作者：
 
 ```xml
 delete bookstoreXML.book[2].author[1];
 ```
 
-This statement deletes the category attribute from the third book:
+此语句删除第三本书的 `category` 属性：
 
 ```xml
 delete bookstoreXML.book[2].@category;
@@ -266,19 +266,20 @@ delete bookstoreXML.book[2].@category;
 
 ---
 
-## Retrieving contained elements
+## 检索包含的元素
 
-The `XML` object provides methods that allow you to retrieve elements contained at various levels of the tree:
+`XML` 对象提供了允许你检索树中不同级别包含的元素的方法：
 
-- `XML.`[children()](xml-object-reference.md#xmlchildren) gets the direct child elements, including text elements.
-- `XML.`[elements()](xml-object-reference.md#xmlelements) gets the direct child elements that are XML tags, but does not get text.
-- `XML.`[descendants()](xml-object-reference.md#xmldescendants) allows you to match a specific tag, and gets all matching elements at any level of nesting. You can also use a "double dot" notation to access descendants of an element. For example, these statements are equivalent:
-    ```javascript
-    xml..title
-    xml.descendants("title")
-    ```
+- `XML.`[children()](xml-object-reference.md#xmlchildren) 获取直接子元素，包括文本元素。
+- `XML.`[elements()](xml-object-reference.md#xmlelements) 获取直接子元素中的 XML 标签，但不获取文本。
+- `XML.`[descendants()](xml-object-reference.md#xmldescendants) 允许你匹配特定标签，并获取任何嵌套级别的所有匹配元素。你还可以使用“双点”符号访问元素的后代。例如，以下语句是等效的：
 
-For example, consider this XML code loaded into a top-level `XML` object named `x`:
+  ```javascript
+  xml..title
+  xml.descendants("title")
+  ```
+
+例如，考虑以下 XML 代码加载到名为 `x` 的顶层 `XML` 对象中：
 
 ```xml
 <top>
@@ -291,58 +292,63 @@ For example, consider this XML code loaded into a top-level `XML` object named `
 </top>
 ```
 
-Here are the results of the different calls.
+以下是不同调用的结果。
 
-- The result of `XML.`[children()](xml-object-reference.md#xmlchildren) contains 3 elements, the direct child tags `<one>` and `<two>`, and the directly contained text of the `<top>` tag:
-    ```xml
-    **> x.children()**
-        <one>one text</one>
-        <two>
-        two text
-        <inside>inside text</inside>
-        </two>
-        top text
+- `XML.`[children()](xml-object-reference.md#xmlchildren) 的结果包含 3 个元素，直接子标签 `<one>` 和 `<two>`，以及 `<top>` 标签的直接包含文本：
 
-    **> x.children().length()**
-        3
-    ```
-- The result of `XML.`[elements()](xml-object-reference.md#xmlelements) contains 2 elements, the direct child tags `<one>` and `<two>`:
-    ```xml
-    **> x.elements()**
-        <one>one text</one>
-        <two>
-            two text
-            <inside>inside text</inside>
-        </two>
-    **> x.elements().length()**
-        2
-    ```
-- The result of `XML.`[descendants()](xml-object-reference.md#xmldescendants) contains 7 elements, the direct child tags `<one>` and `<two>`, the `<inside>` tag one level down, and the text contents of all the tags:
-    ```xml
-    **> x.descendants()**
-        <one>one text</one>
-        one text
-        <two>
-            two text
-            <inside>inside text</inside>
-        </two>
-        two text
-        <inside>inside text</inside>
-        inside text
-        top text
-    **> x.descendants().length()**
-        7
-    ```
+  ```xml
+  **> x.children()**
+      <one>one text</one>
+      <two>
+      two text
+      <inside>inside text</inside>
+      </two>
+      top text
+
+  **> x.children().length()**
+      3
+  ```
+
+- `XML.`[elements()](xml-object-reference.md#xmlelements) 的结果包含 2 个元素，直接子标签 `<one>` 和 `<two>`：
+
+  ```xml
+  **> x.elements()**
+      <one>one text</one>
+      <two>
+          two text
+          <inside>inside text</inside>
+      </two>
+  **> x.elements().length()**
+      2
+  ```
+
+- `XML.`[descendants()](xml-object-reference.md#xmldescendants) 的结果包含 7 个元素，直接子标签 `<one>` 和 `<two>`，下一级的 `<inside>` 标签，以及所有标签的文本内容：
+
+  ```xml
+  **> x.descendants()**
+      <one>one text</one>
+      one text
+      <two>
+          two text
+          <inside>inside text</inside>
+      </two>
+      two text
+      <inside>inside text</inside>
+      inside text
+      top text
+  **> x.descendants().length()**
+      7
+  ```
 
 ---
 
-## Creating and accessing namespaces
+## 创建和访问命名空间
 
-Simple access statements access elements in the default namespace. If you need to define elements in more than one namespace, you must use a [Namespace object](xml-object-reference.md#namespace-object) to access any elements that are NOT in the default namespace.
+简单的访问语句访问默认命名空间中的元素。如果你需要在多个命名空间中定义元素，则必须使用 [Namespace 对象](xml-object-reference.md#namespace-object) 来访问不在默认命名空间中的任何元素。
 
-### Defining a namespace within the tree
+### 在树中定义命名空间
 
-You can define a namespace within an XML element using the xmlns attribute, and define elements within the schema as belonging to that namespace. For example, these additions to the example XML add a namespace that maps the prefix "kids" to the namespace "[http://kids.mybookstore.com](http://kids.mybookstore.com)", and then uses the prefix to place a particular book element in that namespace:
+你可以使用 `xmlns` 属性在 XML 元素中定义命名空间，并将模式中的元素定义为属于该命名空间。例如，以下示例 XML 的添加定义了一个命名空间，将前缀 "kids" 映射到命名空间 "[http://kids.mybookstore.com](http://kids.mybookstore.com)"，然后使用该前缀将特定书籍元素放置在该命名空间中：
 
 ```xml
 <bookstore **xmlns:kids="http://kids.mybookstore.com"**>
@@ -363,9 +369,9 @@ You can define a namespace within an XML element using the xmlns attribute, and 
 ...
 ```
 
-When this namespace is defined, the simple statement `bookstoreXML.book` no longer returns "The Wonderful Wizard of Oz", because that book is no longer in the default namespace. To access that book, you must define a [Namespace object](xml-object-reference.md#namespace-object) for the namespace, and use it to access the element.
+定义此命名空间后，简单的语句 `bookstoreXML.book` 不再返回 "The Wonderful Wizard of Oz"，因为该书不再位于默认命名空间中。要访问该书，你必须为命名空间定义一个 [Namespace 对象](xml-object-reference.md#namespace-object)，并使用它来访问元素。
 
-For example, this JavaScript code creates a [Namespace object](xml-object-reference.md#namespace-object) for the namespace defined in the <bookstore> element, and accesses the books in the namespace through that object:
+例如，以下 JavaScript 代码为 `<bookstore>` 元素中定义的命名空间创建了一个 [Namespace 对象](xml-object-reference.md#namespace-object)，并通过该对象访问命名空间中的书籍：
 
 ```javascript
 var ns = new Namespace ("http://kids.mybookstore.com");
@@ -374,67 +380,71 @@ bookstoreXML.ns::book;
 
 ---
 
-### Setting a default namespace
+### 设置默认命名空间
 
-By default, the default namespace is a namespace whose URI is the empty string. It is possible to set the default namespace; in this case, simple accessors access elements that are in that namespace.
+默认情况下，默认命名空间是一个 URI 为空字符串的命名空间。可以设置默认命名空间；在这种情况下，简单的访问器访问该命名空间中的元素。
 
-To set the default namespace, use the global function [setDefaultXMLNamespace()](xml-object-reference.md#setdefaultxmlnamespace), or this syntax:
+要设置默认命名空间，请使用全局函数 [setDefaultXMLNamespace()](xml-object-reference.md#setdefaultxmlnamespace)，或以下语法：
 
 ```javascript
 default xml namespace = namespace_specifier;
 ```
 
-The namespace specifier can be either a [Namespace object](xml-object-reference.md#namespace-object), or a URL string. For example:
+命名空间说明符可以是 [Namespace 对象](xml-object-reference.md#namespace-object) 或 URL 字符串。例如：
 
 ```javascript
 default xml namespace = "http://books.mybookstore.com";
 ```
 
-Once you have set the default namespace:
+设置默认命名空间后：
 
-- Elements that are meant to be in the default namespace (and thus accessible with simple accessors) must use the namespace prefix.
-- All elements that do not have a specific namespace assignment are in the empty namespace, rather than the default namespace. In order to access them, you must use a [Namespace object](xml-object-reference.md#namespace-object) with the empty string as the URI.
-
----
-
-### Accessing elements in namespaces
-
-- You can access elements that are in the default namespace directly, without using a [Namespace object](xml-object-reference.md#namespace-object).
-    - If you have not set a default, you can use direct access for elements with no namespace specifier.
-    - If you have set a default, you can use direct access for elements in that namespace.
-- If you have assigned an element to a namespace, and have not made it the default, you must use a [Namespace object](xml-object-reference.md#namespace-object) to access those elements. For example:
-    ```javascript
-    var ns = new Namespace (**"http://kids.mybookstore.com"**);
-    bookstoreXML.**ns::book**;
-    ```
-
-    This returns all books that have been assigned to the "kids" namespace.
-- If you have set a default namespace, you can still access all objects that do not have any specific namespace assignment by using a [Namespace object](xml-object-reference.md#namespace-object) for the empty string, which is the default creation case:
-    ```javascript
-    var emptyNS = new Namespace ();
-    bookstoreXML.emptyNS::book;
-    ```
-
-    This returns all books that have not been assigned to any namespace.
-- To access all elements, regardless of the namespace assignment, you can use an asterisk (\*) wild-card
-    character or null as the namespace name:
-    ```javascript
-    bookstoreXML.*::book;
-    ```
-
-    or
-    ```js
-    var nullNS = null;
-    bookstoreXML.nullNS::book;
-    ```
+- 默认命名空间中的元素（因此可以通过简单访问器访问）必须使用命名空间前缀。
+- 所有没有特定命名空间分配的元素都位于空命名空间中，而不是默认命名空间中。要访问它们，你必须使用 URI 为空字符串的 [Namespace 对象](xml-object-reference.md#namespace-object)。
 
 ---
 
-## Mixing XML and JavaScript
+### 访问命名空间中的元素
 
-You can enclose JavaScript statements in curly brackets, and embed them into XML. The JavaScript part is evaluated during the construction of the XML.
+- 你可以直接访问默认命名空间中的元素，而无需使用 [Namespace 对象](xml-object-reference.md#namespace-object)。
 
-For example, this function returns an XML value, in which embedded JavaScript variables will be evaluated and included:
+  - 如果你没有设置默认值，则可以对没有命名空间说明符的元素使用直接访问。
+  - 如果你设置了默认值，则可以对位于该命名空间中的元素使用直接访问。
+- 如果你已将元素分配给命名空间，并且未将其设置为默认值，则必须使用 [Namespace 对象](xml-object-reference.md#namespace-object) 来访问这些元素。例如：
+
+  ```javascript
+  var ns = new Namespace (**"http://kids.mybookstore.com"**);
+  bookstoreXML.**ns::book**;
+  ```
+
+  这将返回所有已分配给 "kids" 命名空间的书籍。
+- 如果你设置了默认命名空间，你仍然可以通过使用 URI 为空字符串的 [Namespace 对象](xml-object-reference.md#namespace-object) 来访问所有没有特定命名空间分配的对象，这是默认创建情况：
+
+  ```javascript
+  var emptyNS = new Namespace ();
+  bookstoreXML.emptyNS::book;
+  ```
+
+  这将返回所有未分配给任何命名空间的书籍。
+- 要访问所有元素，无论命名空间分配如何，你可以使用星号 (\*) 通配符或 `null` 作为命名空间名称：
+
+  ```javascript
+  bookstoreXML.*::book;
+  ```
+
+  或
+
+  ```js
+  var nullNS = null;
+  bookstoreXML.nullNS::book;
+  ```
+
+---
+
+## 混合 XML 和 JavaScript
+
+你可以将 JavaScript 语句括在花括号中，并将其嵌入到 XML 中。JavaScript 部分在 XML 构造期间被评估。
+
+例如，此函数返回一个 XML 值，其中嵌入的 JavaScript 变量将被评估并包含在内：
 
 ```javascript
 function makeXML (first, last) {
@@ -442,30 +452,30 @@ function makeXML (first, last) {
 }
 ```
 
-Calling this function:
+调用此函数：
 
 ```javascript
 makeXML ( "Jane", "Doe" );
 ```
 
-results in this XML:
+结果是以下 XML：
 
 ```xml
 <person first="Jane" last="Doe">Jane Doe</person>
 ```
 
-You can also use these operators on XML elements:
+你还可以在 XML 元素上使用这些运算符：
 
-- Use the plus operator, +, to combine XML elements into a list.
-- Use the == operator to make an in-depth comparison of two XML trees.
+- 使用加号运算符 `+` 将 XML 元素组合成一个列表。
+- 使用 `==` 运算符对两个 XML 树进行深度比较。
 
 ---
 
-## XML lists
+## XML 列表
 
-ExtendScript defines an `XMLList` object, which is identical to the [XML object](xml-object-reference.md#xml-object) except that you can create it by passing it an XML list, and it creates an XML list rather than an XML tag.
+ExtendScript 定义了一个 `XMLList` 对象，它与 [XML 对象](xml-object-reference.md#xml-object) 相同，只是你可以通过传递 XML 列表来创建它，并且它创建的是 XML 列表而不是 XML 标签。
 
-All XML statements and functions that collect XML return the result as an `XMLList`, which can be empty if there is no match. For example, the following statement returns an empty list:
+所有收集 XML 的 XML 语句和函数都将结果作为 `XMLList` 返回，如果没有匹配项，则可以为空。例如，以下语句返回一个空列表：
 
 ```javascript
 bookstoreXML.magazine;

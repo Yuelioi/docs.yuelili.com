@@ -1,7 +1,7 @@
 ---
 title: fontobject
 ---
-# Font object
+# 字体对象
 
 :::note
 该方法添加于 After Effects 24.0
@@ -9,9 +9,9 @@ title: fontobject
 
 #### 描述
 
-The Font object provides information about a specific font, along with the font technology used, helping disambiguate when multiple fonts sharing the same Postscript name are installed on the system.
+字体对象提供了关于特定字体的信息，包括所使用的字体技术，帮助在系统中安装了多个共享相同Postscript名称的字体时进行区分。
 
-Most of these APIs simply return information which is contained in the Font data file itself, seek more information there.
+这些API中的大多数只是返回字体数据文件本身包含的信息，更多信息请参阅字体数据文件。
 
 ---
 
@@ -23,23 +23,23 @@ Most of these APIs simply return information which is contained in the Font data
 
 #### 描述
 
-Returns an Array of Objects, containing the design axes data from the font.
-Each object is composed of the axis `name`, `tag`, `min` value and `max` value.
+返回一个对象数组，包含字体的设计轴数据。
+每个对象由轴`name`、`tag`、`min`值和`max`值组成。
 
 :::tip
-Will return undefined for non-variable fonts.
+对于非可变字体，将返回undefined。
 :::
 
 #### 示例
 
-This example will select the first returned Font Family Array.
+此示例将选择第一个返回的字体家族数组。
 
 ```javascript
-// Getting the first available Variable Font on the system
+// 获取系统中第一个可用的可变字体
 var firstVariableFont = fontsWithDefaultDesignAxes[0];
 var axesData = firstVariableFont.designAxesData;
 
-// Getting the first design axis for that Font
+// 获取该字体的第一个设计轴
 var firstAxis = axesData[0];
 
 alert(firstAxis.name+"\n"+firstAxis.tag+"\n"+firstAxis.min+"\n"+firstAxis.max);
@@ -47,7 +47,7 @@ alert(firstAxis.name+"\n"+firstAxis.tag+"\n"+firstAxis.min+"\n"+firstAxis.max);
 
 #### 类型
 
-Array of Objects; 只读.
+对象数组; 只读.
 
 ---
 
@@ -57,15 +57,15 @@ Array of Objects; 只读.
 
 #### 描述
 
-For Variable fonts will return an ordered array with a length matching the number of design axes defined by the font.
+对于可变字体，将返回一个有序数组，其长度与字体定义的设计轴数量匹配。
 
 :::tip
-Will return undefined for non-variable fonts.
+对于非可变字体，将返回undefined。
 :::
 
 #### 类型
 
-Array of floating-point values; 只读.
+浮点值数组; 只读.
 
 ---
 
@@ -75,11 +75,11 @@ Array of floating-point values; 只读.
 
 #### 描述
 
-The family name of the font, in the ASCII character set.
+字体的家族名称，使用ASCII字符集。
 
 #### 类型
 
-String; 只读.
+字符串; 只读.
 
 ---
 
@@ -89,15 +89,15 @@ String; 只读.
 
 #### 描述
 
-The family prefix of the variable font. For example, the family of the PostScript name "SFPro-Bold" is "SFPro".
+可变字体的家族前缀。例如，PostScript名称“SFPro-Bold”的家族是“SFPro”。
 
 :::tip
-Will return undefined for non-variable fonts.
+对于非可变字体，将返回undefined。
 :::
 
 #### 类型
 
-String; 只读.
+字符串; 只读.
 
 ---
 
@@ -111,15 +111,15 @@ String; 只读.
 
 #### 描述
 
-A unique number assigned to the FontObject instance when it is created, value is greater than or equal to 1. It never changes during the application session but may be different in subsequent launches of the application.
+创建FontObject实例时分配的唯一编号，值大于或等于1。在应用程序会话期间不会更改，但在应用程序的后续启动中可能会不同。
 
-Can be used to compare two FontObject instances to see if they refer to the same underlying native font instance.
+可用于比较两个FontObject实例，以查看它们是否引用相同的底层原生字体实例。
 
-FontObjects can be looked up by fontID with [getFontByID](fontsobject.md#fontsobjectgetfontbyid) .
+可以使用[getFontByID](fontsobject.md#fontsobjectgetfontbyid)通过fontID查找FontObjects。
 
 #### 类型
 
-Integer; 只读.
+整数; 只读.
 
 ---
 
@@ -129,11 +129,11 @@ Integer; 只读.
 
 #### 描述
 
-The full name of the font, in the ASCII character set. Usually composed of the family name and the style name.
+字体的全名，使用ASCII字符集。通常由家族名称和样式名称组成。
 
 #### 类型
 
-String; 只读.
+字符串; 只读.
 
 ---
 
@@ -143,11 +143,11 @@ String; 只读.
 
 #### 描述
 
-Returns `true` if the font is a variable font.
+如果字体是可变字体，则返回`true`。
 
 #### 类型
 
-Boolean; 只读.
+布尔值; 只读.
 
 ---
 
@@ -157,11 +157,11 @@ Boolean; 只读.
 
 #### 描述
 
-Returns `true` if the font is from Adobe Fonts.
+如果字体来自Adobe Fonts，则返回`true`。
 
 #### 类型
 
-Boolean; 只读.
+布尔值; 只读.
 
 ---
 
@@ -171,11 +171,11 @@ Boolean; 只读.
 
 #### 描述
 
-returns `true` when this font instance represents a font reference which was missing on project open.
+当此字体实例表示在项目打开时缺失的字体引用时，返回`true`。
 
 #### 类型
 
-Boolean; 只读.
+布尔值; 只读.
 
 ---
 
@@ -185,15 +185,15 @@ Boolean; 只读.
 
 #### 描述
 
-The location of the font file on your system.
+字体文件在系统中的位置。
 
 :::warning
-Not guaranteed to be returned for all font types; return value may be empty string for some kinds of fonts.
+不保证所有字体类型都会返回；某些字体的返回值可能为空字符串。
 :::
 
 #### 类型
 
-String; 只读.
+字符串; 只读.
 
 ---
 
@@ -203,11 +203,11 @@ String; 只读.
 
 #### 描述
 
-The native family name of the font in full 16 bit Unicode. Often different than what is returned by [FontObject.familyName](#fontobjectfamilyname) for non-Latin fonts.
+字体的原生家族名称，使用完整的16位Unicode。对于非拉丁字体，通常与[FontObject.familyName](#fontobjectfamilyname)返回的值不同。
 
 #### 类型
 
-String; 只读.
+字符串; 只读.
 
 ---
 
@@ -217,11 +217,11 @@ String; 只读.
 
 #### 描述
 
-The native full name of the font in full 16 bit Unicode. Often different than what is returned by [FontObject.fullName](#fontobjectfullname) for non-Latin fonts.
+字体的原生全名，使用完整的16位Unicode。对于非拉丁字体，通常与[FontObject.fullName](#fontobjectfullname)返回的值不同。
 
 #### 类型
 
-String; 只读.
+字符串; 只读.
 
 ---
 
@@ -231,11 +231,11 @@ String; 只读.
 
 #### 描述
 
-The native style name of the font in full 16 bit Unicode. Often different than what is returned by [FontObject.styleName](#fontobjectstylename) for non-Latin fonts.
+字体的原生样式名称，使用完整的16位Unicode。对于非拉丁字体，通常与[FontObject.styleName](#fontobjectstylename)返回的值不同。
 
 #### 类型
 
-String; 只读.
+字符串; 只读.
 
 ---
 
@@ -245,11 +245,11 @@ String; 只读.
 
 #### 描述
 
-The postscript name of the font.
+字体的PostScript名称。
 
 #### 类型
 
-String; 只读.
+字符串; 只读.
 
 ---
 
@@ -259,11 +259,11 @@ String; 只读.
 
 #### 描述
 
-The style name of the font, in the ASCII character set.
+字体的样式名称，使用ASCII字符集。
 
 #### 类型
 
-String; 只读.
+字符串; 只读.
 
 ---
 
@@ -273,11 +273,11 @@ String; 只读.
 
 #### 描述
 
-The technology used by the font.
+字体所使用的技术。
 
 #### 类型
 
-An `CTFontTechnology` enumerated value; 只读. One of:
+`CTFontTechnology`枚举值; 只读. 可能的值包括：
 
 - `CTFontTechnology.CT_TYPE1_FONT`
 - `CTFontTechnology.CT_TRUETYPE_FONT`
@@ -296,11 +296,11 @@ An `CTFontTechnology` enumerated value; 只读. One of:
 
 #### 描述
 
-The internal type of the font.
+字体的内部类型。
 
 #### 类型
 
-An `CTFontType` enumerated value; 只读. One of:
+`CTFontType`枚举值; 只读. 可能的值包括：
 
 - `CTFontType.CT_TYPE1_FONTTYPE`
 - `CTFontType.CT_TRUETYPE_FONTTYPE`
@@ -321,11 +321,11 @@ An `CTFontType` enumerated value; 只读. One of:
 
 #### 描述
 
-The version number of the font.
+字体的版本号。
 
 #### 类型
 
-String; 只读.
+字符串; 只读.
 
 ---
 
@@ -335,11 +335,11 @@ String; 只读.
 
 #### 描述
 
-The supported character sets of the font.
+字体支持的字符集。
 
 #### 类型
 
-An array of `CTScript` enumerated values; 只读. One or more of:
+`CTScript`枚举值数组; 只读. 可能的值包括：
 
 - `CTScript.CT_ROMAN_SCRIPT`
 - `CTScript.CT_JAPANESE_SCRIPT`
@@ -438,26 +438,26 @@ An array of `CTScript` enumerated values; 只读. One or more of:
 `app.fonts.allFonts[0][0].hasGlyphsFor(charString)`
 
 :::note
-该方法添加于 After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
+该方法添加于 After Effects (Beta) 25.0，并且在Beta期间可能会发生变化。
 :::
 
 #### 描述
 
-Fonts do not contain glyphs for all possible ranges of Unicode and this method gives the caller the opportunity to query the Font about support for one or more characters.
+字体并不包含所有可能的Unicode范围的字符，此方法为调用者提供了查询字体是否支持一个或多个字符的机会。
 
-Returns `true` if the font has a glyph for every character in the `charString`.
+如果字体具有`charString`中每个字符的字形，则返回`true`。
 
-The character order does not matter, and in the case of a parameter string with more than one character, it is not possible though this API to determine which character had no glyph support.
+字符顺序无关紧要，并且在参数字符串包含多个字符的情况下，无法通过此API确定哪个字符没有字形支持。
 
 #### 参数
 
-|  参数   |  类型  |                                描述                                |
-| ------------ | ------ | ------------------------------------------------------------------------- |
-| `charString` | String | Text that will be checked for support in the [Font object](#font-object). |
+|  参数   |  类型  |   描述   |
+| ------- | ------ | ------------- |
+| `charString` | 字符串 | 将在[字体对象](#font-object)中检查支持的文本。 |
 
 #### 返回
 
-Boolean.
+布尔值。
 
 ---
 
@@ -467,21 +467,21 @@ Boolean.
 
 #### 描述
 
-This function will `true` if the [Font object](#font-object) passed as an argument shares the same variable font dictionary as the [Font object](#font-object) the function is called on.
+如果作为参数传递的[字体对象](#font-object)与调用该函数的[字体对象](#font-object)共享相同的可变字体字典，则此函数将返回`true`。
 
 :::tip
-Can only return `true` when called on a variable [Font object](#font-object) with the argument also being a [Font object](#font-object) of a variable font.
+只有在可变[字体对象](#font-object)上调用时，并且参数也是可变字体的[字体对象](#font-object)时，才能返回`true`。
 :::
 
 #### 参数
 
-|  参数   |            类型             |   描述   |
-| ------------ | --------------------------- | --------------- |
-| `fontObject` | [Font object](#font-object) | Object to check |
+|  参数   |      类型       |   描述   |
+| ------- | ------- | ----- |
+| `fontObject` | [字体对象](#font-object) | 要检查的对象 |
 
 #### 返回
 
-Boolean.
+布尔值。
 
 ---
 
@@ -490,41 +490,3 @@ Boolean.
 `app.fonts.fontsWithDefaultDesignAxes[0].otherFontsWithSameDict(fontObject)`
 
 :::note
-该方法添加于 After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
-:::
-
-#### 描述
-
-Given an [Font object](#font-object) passed as an argument, returns an Array of [Font object](#font-object) instances which share the same font dictionary as the [Font object](#font-object) the function is called on.
-
-Will return an empty Array if the argument is not a Variable font, or the Variable font only has one instance (the parameter one).
-
-#### 参数
-
-|  参数   |            类型             |   描述   |
-| ------------ | --------------------------- | --------------- |
-| `fontObject` | [Font object](#font-object) | Object to check |
-
-#### 返回
-
-Array of [Font objects](#font-object), may be empty.
-
----
-
-### FontObject.postScriptNameForDesignVector()
-
-`app.fonts.fontsWithDefaultDesignAxes[0].postScriptNameForDesignVector([...vectorValues])`
-
-#### 描述
-
-This function will return the postscript name of the variable font for the specific design vectors passed as the argument.
-
-#### 参数
-
-|   参数    |              类型              |                                           描述                                           |
-| -------------- | ------------------------------ | ----------------------------------------------------------------------------------------------- |
-| `vectorValues` | Array of floating-point values | Values to check [FontObject.designVector](#fontobjectdesignvector) for the given variable font. |
-
-#### 返回
-
-A String.

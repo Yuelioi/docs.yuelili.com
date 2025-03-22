@@ -1,13 +1,13 @@
 ---
-title: view
+title: 视图
 ---
-# View object
+# View 对象
 
 `app.activeViewer.views[0]`
 
 #### 描述
 
-The View object represents a specific view.
+View 对象表示一个特定的视图。
 
 ---
 
@@ -19,7 +19,7 @@ The View object represents a specific view.
 
 #### 描述
 
-When `true`, indicates if the viewer panel is focused, and thereby frontmost.
+当为 `true` 时，表示查看器面板是否被聚焦，并因此位于最前面。
 
 #### 类型
 
@@ -33,11 +33,11 @@ Boolean; 只读.
 
 #### 描述
 
-Options object for this View
+此视图的选项对象
 
 #### 类型
 
-[ViewOptions object](../viewoptions)
+[ViewOptions 对象](../viewoptions)
 
 ---
 
@@ -49,13 +49,13 @@ Options object for this View
 
 #### 描述
 
-Moves this view panel to the front and places focus on it, making it active.
-Calling this method will set the [view's active attribute](#viewactive) to `true`.
+将此视图面板移至最前面并聚焦于它，使其处于活动状态。
+调用此方法会将 [view 的 active 属性](#viewactive) 设置为 `true`。
 
 #### 参数
 
-None.
+无。
 
 #### 返回
 
-Boolean, indicating if the view panel was made active.
+Boolean，表示视图面板是否被激活。

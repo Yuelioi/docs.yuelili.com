@@ -1,26 +1,26 @@
 ---
-title: drawing-objects
+title: 绘制对象
 ---
-# Drawing objects
+# 绘制对象
 
-ScriptUI allows you to draw directly on controls to customize their appearance. You do this by calling methods of the [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object) in response to the [onDraw](control-objects.md#ondraw) event (see [Defining behavior with event callbacks and listeners](../defining-behavior-with-event-callbacks-and-listeners)).
+ScriptUI 允许你直接在控件上绘制以自定义其外观。你可以通过在 [onDraw](control-objects.md#ondraw) 事件中调用 [ScriptUIGraphics 对象](graphic-customization-objects.md#scriptuigraphics-object) 的方法来实现这一点（参见 [使用事件回调和监听器定义行为](../defining-behavior-with-event-callbacks-and-listeners)）。
 
-These methods take as parameters a number of helper objects that encapsulate drawing information, including the following:
+这些方法接受一些封装了绘制信息的辅助对象作为参数，包括以下内容：
 
-|                                     Object                                     |                                                                描述                                                                |
+|                                     对象                                     |                                                                描述                                                                |
 | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| [ScriptUIGraphics](./graphic-customization-objects.md#scriptuigraphics-object) | Encapsulates the drawing methods. The graphics object is associated with each control is found in the control object's graphics property. |
-| [ScriptUIBrush](./graphic-customization-objects.md#scriptuibrush-object)       | Describes the brush used to paint textures in a control.                                                                                  |
-| [ScriptUIFont](./graphic-customization-objects.md#scriptuifont-object)         | Describes the font used to write text into a control.                                                                                     |
-| [ScriptUIImage](./graphic-customization-objects.md#scriptuiimage-object)       | Describes an image to be drawn in a control.                                                                                              |
-| [ScriptUIPath](./graphic-customization-objects.md#scriptuipath-object)         | Describes a drawing path for a figure to be drawn into a control.                                                                         |
-| [ScriptUIPen](./graphic-customization-objects.md#scriptuipen-object)           | Describes the pen used to draw lines in a control.                                                                                        |
+| [ScriptUIGraphics](./graphic-customization-objects.md#scriptuigraphics-object) | 封装了绘制方法。每个控件关联的图形对象可以在控件对象的 `graphics` 属性中找到。 |
+| [ScriptUIBrush](./graphic-customization-objects.md#scriptuibrush-object)       | 描述用于在控件中绘制纹理的画笔。                                                                                  |
+| [ScriptUIFont](./graphic-customization-objects.md#scriptuifont-object)         | 描述用于在控件中写入文本的字体。                                                                                     |
+| [ScriptUIImage](./graphic-customization-objects.md#scriptuiimage-object)       | 描述要在控件中绘制的图像。                                                                                              |
+| [ScriptUIPath](./graphic-customization-objects.md#scriptuipath-object)         | 描述要在控件中绘制的图形的路径。                                                                         |
+| [ScriptUIPen](./graphic-customization-objects.md#scriptuipen-object)           | 描述用于在控件中绘制线条的画笔。                                                                                        |
 
-For details of these objects, see [Graphic customization objects](.././graphic-customization-objects).
+有关这些对象的详细信息，请参阅 [图形自定义对象](.././graphic-customization-objects)。
 
-The `ScriptUIGraphics` object contains methods that create the other graphics objects; for example, `ScriptUIGraphics.newBrush()` creates a `ScriptUIBrush` instance with a specific color. These graphic objects are then used as property values in the `ScriptUIGraphics` object, which controls how a user-interface element is drawn on the screen. For example, if you put the new Brush object in the `backgroundColor` property, the element is drawn using that color for the background.
+`ScriptUIGraphics` 对象包含创建其他图形对象的方法；例如，`ScriptUIGraphics.newBrush()` 会创建一个具有特定颜色的 `ScriptUIBrush` 实例。这些图形对象随后被用作 `ScriptUIGraphics` 对象中的属性值，控制用户界面元素在屏幕上的绘制方式。例如，如果你将新的 `Brush` 对象放入 `backgroundColor` 属性中，则该元素将使用该颜色绘制背景。
 
-To make the background of a window light gray, you could use this code:
+要将窗口的背景设置为浅灰色，可以使用以下代码：
 
 ```javascript
 g = myWindow.graphics;
@@ -28,11 +28,11 @@ myBrush = g.newBrush( g.BrushType.SOLID_COLOR, [ 0.75, 0.75, 0.75, 1 ] );
 g.backgroundColor = myBrush;
 ```
 
-These examples in the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) demonstrates how to use graphic customization objects:
+以下示例来自 [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit)，展示了如何使用图形自定义对象：
 
-|                                                                Example                                                                |                                                          描述                                                          |
+|                                                                示例                                                                |                                                          描述                                                          |
 | ------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| [ColorSelector.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/ColorSelector.jsx) | Uses graphic objects to change the background color of a window as the user selects the color value with a slider.            |
-| [ColorPicker.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/ColorPicker.jsx)     | A more complex version of the color-selection dialog shows how to use additional graphics objects, including fonts and paths. |
+| [ColorSelector.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/ColorSelector.jsx) | 使用图形对象在用户通过滑块选择颜色值时更改窗口的背景颜色。            |
+| [ColorPicker.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/ColorPicker.jsx)     | 一个更复杂的颜色选择对话框，展示了如何使用其他图形对象，包括字体和路径。 |
 
-In addition, the [Custom element class](./graphic-customization-objects.md#custom-element-class) allows you to define completely customized elements of several types (ranges, buttons, lists), whose appearance is rendered entirely by your [onDraw](control-objects.md#ondraw) implementation.
+此外，[自定义元素类](./graphic-customization-objects.md#custom-element-class) 允许你定义完全自定义的几种类型（范围、按钮、列表）的元素，其外观完全由你的 [onDraw](control-objects.md#ondraw) 实现来渲染。

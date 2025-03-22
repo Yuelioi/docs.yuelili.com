@@ -1,190 +1,190 @@
 ---
-title: layerstyles
+title: 图层样式
 ---
-# Layer Styles Match Names
-
----
-
-## Styles
-
-|         Match Name         |       Display Name (EN)        |
-| -------------------------- | ------------------------------ |
-| `ADBE Blend Options Group` | Blending Options               |
-| `ADBE Global Angle2`       | Global Light Angle             |
-| `ADBE Global Altitude2`    | Global Light Altitude          |
-| `ADBE Adv Blend Group`     | Advanced Blending              |
-| `ADBE Layer Fill Opacity2` | Fill Opacity                   |
-| `ADBE R Channel Blend`     | Red                            |
-| `ADBE G Channel Blend`     | Green                          |
-| `ADBE B Channel Blend`     | Blue                           |
-| `ADBE Blend Interior`      | Blend Interior Styles as Group |
-| `ADBE Blend Ranges`        | Use Blend Ranges from Source   |
+# 图层样式匹配名称
 
 ---
 
-## Drop Shadow
+## 样式
 
-|           Match Name            |      Display Name (EN)       |
-| ------------------------------- | ---------------------------- |
-| `dropShadow/enabled`            | Drop Shadow                  |
-| `dropShadow/mode2`              | Blend Mode                   |
-| `dropShadow/color`              | Color                        |
-| `dropShadow/opacity`            | Opacity                      |
-| `dropShadow/useGlobalAngle`     | Use Global Light             |
-| `dropShadow/localLightingAngle` | Angle                        |
-| `dropShadow/distance`           | Distance                     |
-| `dropShadow/chokeMatte`         | Spread                       |
-| `dropShadow/blur`               | Size                         |
-| `dropShadow/noise`              | Noise                        |
-| `dropShadow/layerConceals`      | Layer Knocks Out Drop Shadow |
-
----
-
-## Inner Shadow
-
-|            Match Name            | Display Name (EN) |
-| -------------------------------- | ----------------- |
-| `innerShadow/enabled`            | Inner Shadow      |
-| `innerShadow/mode2`              | Blend Mode        |
-| `innerShadow/color`              | Color             |
-| `innerShadow/opacity`            | Opacity           |
-| `innerShadow/useGlobalAngle`     | Use Global Light  |
-| `innerShadow/localLightingAngle` | Angle             |
-| `innerShadow/distance`           | Distance          |
-| `innerShadow/chokeMatte`         | Choke             |
-| `innerShadow/blur`               | Size              |
-| `innerShadow/noise`              | Noise             |
+|     匹配名称     |     显示名称 (中文)    |
+| ------ | ---------- |
+| `ADBE Blend Options Group` | 混合选项         |
+| `ADBE Global Angle2`     | 全局光照角度       |
+| `ADBE Global Altitude2`  | 全局光照高度      |
+| `ADBE Adv Blend Group`   | 高级混合        |
+| `ADBE Layer Fill Opacity2` | 填充不透明度           |
+| `ADBE R Channel Blend`   | 红色              |
+| `ADBE G Channel Blend`   | 绿色              |
+| `ADBE B Channel Blend`   | 蓝色               |
+| `ADBE Blend Interior`    | 将内部样式作为组混合 |
+| `ADBE Blend Ranges`    | 使用源文件的混合范围   |
 
 ---
 
-## Outer Glow
+## 投影
 
-|           Match Name           |  Display Name (EN)  |
-| ------------------------------ | ------------------- |
-| `outerGlow/enabled`            | Outer Glow          |
-| `outerGlow/mode2`              | Blend Mode          |
-| `outerGlow/opacity`            | Opacity             |
-| `outerGlow/noise`              | Noise               |
-| `outerGlow/AEColorChoice`      | Color Type          |
-| `outerGlow/color`              | Color               |
-| `outerGlow/gradient`           | Colors              |
-| `outerGlow/gradientSmoothness` | Gradient Smoothness |
-| `outerGlow/glowTechnique`      | Technique           |
-| `outerGlow/chokeMatte`         | Spread              |
-| `outerGlow/blur`               | Size                |
-| `outerGlow/inputRange`         | Range               |
-| `outerGlow/shadingNoise`       | Jitter              |
+|       匹配名称      |    显示名称 (中文)     |
+| ------ | -------- |
+| `dropShadow/enabled`      | 投影          |
+| `dropShadow/mode2`        | 混合模式           |
+| `dropShadow/color`        | 颜色            |
+| `dropShadow/opacity`      | 不透明度            |
+| `dropShadow/useGlobalAngle`   | 使用全局光照       |
+| `dropShadow/localLightingAngle` | 角度            |
+| `dropShadow/distance`       | 距离           |
+| `dropShadow/chokeMatte`     | 扩展             |
+| `dropShadow/blur`         | 大小             |
+| `dropShadow/noise`        | 噪点            |
+| `dropShadow/layerConceals`    | 图层挖空投影 |
 
 ---
 
-## Inner Glow
+## 内阴影
 
-|           Match Name           |  Display Name (EN)  |
-| ------------------------------ | ------------------- |
-| `innerGlow/enabled`            | Inner Glow          |
-| `innerGlow/mode2`              | Blend Mode          |
-| `innerGlow/opacity`            | Opacity             |
-| `innerGlow/noise`              | Noise               |
-| `innerGlow/AEColorChoice`      | Color Type          |
-| `innerGlow/color`              | Color               |
-| `innerGlow/gradient`           | Colors              |
-| `innerGlow/gradientSmoothness` | Gradient Smoothness |
-| `innerGlow/glowTechnique`      | Technique           |
-| `innerGlow/innerGlowSource`    | Source              |
-| `innerGlow/chokeMatte`         | Choke               |
-| `innerGlow/blur`               | Size                |
-| `innerGlow/inputRange`         | Range               |
-| `innerGlow/shadingNoise`       | Jitter              |
+|      匹配名称      | 显示名称 (中文) |
+| ------- | ------- |
+| `innerShadow/enabled`      | 内阴影    |
+| `innerShadow/mode2`        | 混合模式    |
+| `innerShadow/color`        | 颜色       |
+| `innerShadow/opacity`      | 不透明度       |
+| `innerShadow/useGlobalAngle`   | 使用全局光照  |
+| `innerShadow/localLightingAngle` | 角度       |
+| `innerShadow/distance`       | 距离      |
+| `innerShadow/chokeMatte`     | 阻塞       |
+| `innerShadow/blur`         | 大小        |
+| `innerShadow/noise`        | 噪点       |
 
 ---
 
-## Bevel/Emboss
+## 外发光
 
-|             Match Name              | Display Name (EN) |
-| ----------------------------------- | ----------------- |
-| `bevelEmboss/enabled`               | Bevel and Emboss  |
-| `bevelEmboss/bevelStyle`            | Style             |
-| `bevelEmboss/bevelTechnique`        | Technique         |
-| `bevelEmboss/strengthRatio`         | Depth             |
-| `bevelEmboss/bevelDirection`        | Direction         |
-| `bevelEmboss/blur`                  | Size              |
-| `bevelEmboss/softness`              | Soften            |
-| `bevelEmboss/useGlobalAngle`        | Use Global Light  |
-| `bevelEmboss/localLightingAngle`    | Angle             |
-| `bevelEmboss/localLightingAltitude` | Altitude          |
-| `bevelEmboss/highlightMode`         | Highlight Mode    |
-| `bevelEmboss/highlightColor`        | Highlight Color   |
-| `bevelEmboss/highlightOpacity`      | Highlight Opacity |
-| `bevelEmboss/shadowMode`            | Shadow Mode       |
-| `bevelEmboss/shadowColor`           | Shadow Color      |
-| `bevelEmboss/shadowOpacity`         | Shadow Opacity    |
+|       匹配名称       |  显示名称 (中文)  |
+| ---------- | ---- |
+| `outerGlow/enabled`      | 外发光      |
+| `outerGlow/mode2`        | 混合模式      |
+| `outerGlow/opacity`      | 不透明度       |
+| `outerGlow/noise`        | 噪点         |
+| `outerGlow/AEColorChoice`    | 颜色类型      |
+| `outerGlow/color`        | 颜色         |
+| `outerGlow/gradient`       | 颜色        |
+| `outerGlow/gradientSmoothness` | 渐变平滑度 |
+| `outerGlow/glowTechnique`    | 技术       |
+| `outerGlow/chokeMatte`     | 扩展        |
+| `outerGlow/blur`         | 大小        |
+| `outerGlow/inputRange`     | 范围         |
+| `outerGlow/shadingNoise`     | 抖动        |
 
 ---
 
-## Satin
+## 内发光
 
-|          Match Name           | Display Name (EN) |
-| ----------------------------- | ----------------- |
-| `chromeFX/enabled`            | Satin             |
-| `chromeFX/mode2`              | Blend Mode        |
-| `chromeFX/color`              | Color             |
-| `chromeFX/opacity`            | Opacity           |
-| `chromeFX/localLightingAngle` | Angle             |
-| `chromeFX/distance`           | Distance          |
-| `chromeFX/blur`               | Size              |
-| `chromeFX/invert`             | Invert            |
-
----
-
-## Solid Fill
-
-|     Match Name      | Display Name (EN) |
-| ------------------- | ----------------- |
-| `solidFill/enabled` | Color Overlay     |
-| `solidFill/mode2`   | Blend Mode        |
-| `solidFill/color`   | Color             |
-| `solidFill/opacity` | Opacity           |
+|       匹配名称       |  显示名称 (中文)  |
+| ---------- | ---- |
+| `innerGlow/enabled`      | 内发光      |
+| `innerGlow/mode2`        | 混合模式      |
+| `innerGlow/opacity`      | 不透明度       |
+| `innerGlow/noise`        | 噪点         |
+| `innerGlow/AEColorChoice`    | 颜色类型      |
+| `innerGlow/color`        | 颜色         |
+| `innerGlow/gradient`       | 颜色        |
+| `innerGlow/gradientSmoothness` | 渐变平滑度 |
+| `innerGlow/glowTechnique`    | 技术       |
+| `innerGlow/innerGlowSource`  | 源        |
+| `innerGlow/chokeMatte`     | 阻塞         |
+| `innerGlow/blur`         | 大小        |
+| `innerGlow/inputRange`     | 范围         |
+| `innerGlow/shadingNoise`     | 抖动        |
 
 ---
 
-## Grad Fill
+## 斜面和浮雕
 
-|            Match Name             |  Display Name (EN)  |
-| --------------------------------- | ------------------- |
-| `gradientFill/enabled`            | Gradient Overlay    |
-| `gradientFill/mode2`              | Blend Mode          |
-| `gradientFill/opacity`            | Opacity             |
-| `gradientFill/gradient`           | Colors              |
-| `gradientFill/gradientSmoothness` | Gradient Smoothness |
-| `gradientFill/angle`              | Angle               |
-| `gradientFill/type`               | Style               |
-| `gradientFill/reverse`            | Reverse             |
-| `gradientFill/align`              | Align with Layer    |
-| `gradientFill/scale`              | Scale               |
-| `gradientFill/offset`             | Offset              |
-
----
-
-## Pattern
-
-|      Match Name       | Display Name (EN) |
-| --------------------- | ----------------- |
-| `patternFill/enabled` | Pattern Overlay   |
-| `patternFill/mode2`   | Blend Mode        |
-| `patternFill/opacity` | Opacity           |
-| `patternFill/align`   | Link with Layer   |
-| `patternFill/scale`   | Scale             |
-| `patternFill/phase`   | Offset            |
+|        匹配名称        | 显示名称 (中文) |
+| ---------- | ------- |
+| `bevelEmboss/enabled`         | 斜面和浮雕  |
+| `bevelEmboss/bevelStyle`      | 样式       |
+| `bevelEmboss/bevelTechnique`    | 技术     |
+| `bevelEmboss/strengthRatio`     | 深度       |
+| `bevelEmboss/bevelDirection`    | 方向     |
+| `bevelEmboss/blur`          | 大小        |
+| `bevelEmboss/softness`        | 软化      |
+| `bevelEmboss/useGlobalAngle`    | 使用全局光照  |
+| `bevelEmboss/localLightingAngle`  | 角度       |
+| `bevelEmboss/localLightingAltitude` | 高度      |
+| `bevelEmboss/highlightMode`     | 高光模式  |
+| `bevelEmboss/highlightColor`    | 高光颜色   |
+| `bevelEmboss/highlightOpacity`    | 高光不透明度 |
+| `bevelEmboss/shadowMode`      | 阴影模式     |
+| `bevelEmboss/shadowColor`       | 阴影颜色    |
+| `bevelEmboss/shadowOpacity`     | 阴影不透明度  |
 
 ---
 
-## Stroke
+## 光泽
 
-|    Match Name     | Display Name (EN) |
-| ----------------- | ----------------- |
-| `frameFX/enabled` | Stroke            |
-| `frameFX/mode2`   | Blend Mode        |
-| `frameFX/color`   | Color             |
-| `frameFX/size`    | Size              |
-| `frameFX/opacity` | Opacity           |
-| `frameFX/style`   | Position          |
+|       匹配名称       | 显示名称 (中文) |
+| --------- | ------- |
+| `chromeFX/enabled`      | 光泽       |
+| `chromeFX/mode2`        | 混合模式    |
+| `chromeFX/color`        | 颜色       |
+| `chromeFX/opacity`      | 不透明度       |
+| `chromeFX/localLightingAngle` | 角度       |
+| `chromeFX/distance`       | 距离      |
+| `chromeFX/blur`         | 大小        |
+| `chromeFX/invert`       | 反转      |
+
+---
+
+## 纯色填充
+
+|    匹配名称    | 显示名称 (中文) |
+| ---- | ------- |
+| `solidFill/enabled` | 颜色叠加   |
+| `solidFill/mode2`   | 混合模式    |
+| `solidFill/color`   | 颜色       |
+| `solidFill/opacity` | 不透明度       |
+
+---
+
+## 渐变填充
+
+|       匹配名称       |  显示名称 (中文)  |
+| -------- | ---- |
+| `gradientFill/enabled`      | 渐变叠加  |
+| `gradientFill/mode2`        | 混合模式      |
+| `gradientFill/opacity`      | 不透明度       |
+| `gradientFill/gradient`       | 颜色        |
+| `gradientFill/gradientSmoothness` | 渐变平滑度 |
+| `gradientFill/angle`        | 角度         |
+| `gradientFill/type`         | 样式         |
+| `gradientFill/reverse`      | 反转       |
+| `gradientFill/align`        | 与图层对齐  |
+| `gradientFill/scale`        | 缩放         |
+| `gradientFill/offset`       | 偏移        |
+
+---
+
+## 图案
+
+|     匹配名称     | 显示名称 (中文) |
+| ------ | ------- |
+| `patternFill/enabled` | 图案叠加   |
+| `patternFill/mode2`   | 混合模式    |
+| `patternFill/opacity` | 不透明度       |
+| `patternFill/align`   | 与图层链接   |
+| `patternFill/scale`   | 缩放       |
+| `patternFill/phase`   | 偏移      |
+
+---
+
+## 描边
+
+|   匹配名称   | 显示名称 (中文) |
+| ------- | ------- |
+| `frameFX/enabled` | 描边      |
+| `frameFX/mode2`   | 混合模式    |
+| `frameFX/color`   | 颜色       |
+| `frameFX/size`  | 大小        |
+| `frameFX/opacity` | 不透明度       |
+| `frameFX/style`   | 位置      |

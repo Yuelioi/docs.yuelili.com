@@ -1,8 +1,8 @@
 ---
-title: accessing-camera-light-information
+title: 访问相机和光照信息
 ---
-# Accessing Camera & Light Information
+# 访问相机和光照信息
 
-Using functions provided in the [AEGP_PFInterfaceSuite](../aegps/aegp-suites.md#aegp_pfinterfacesuite1), effects can access camera and lighting information for the layer to which they're applied; see the Resizer sample.
+使用 [AEGP_PFInterfaceSuite](../aegps/aegp-suites.md#aegp_pfinterfacesuite1) 中提供的函数，效果可以访问它们所应用图层的相机和光照信息；请参阅 Resizer 示例。
 
-You can also use many of the other functions from AE_GeneralPlug.h; the possibilities are vast.
+你也可以使用 AE_GeneralPlug.h 中的许多其他函数；可能性非常广泛。

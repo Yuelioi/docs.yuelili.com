@@ -2,22 +2,22 @@
 title: 全局函数
 ---
 
-# Global
+# 全局
 
 #### 描述
 
 这些全局可用的函数是 After Effects 特有的。任何 JavaScript 对象或函数都可以调用这些函数，它们允许您在信息面板的一个小区域（3行）显示文本，将数字时间值与字符串值相互转换，或生成随机数。
 
-| 全局函数                   | 描述                                     |
-| -------------------------- | ---------------------------------------- |
-| `clearOutput()`          | 清除信息面板中的文本。                   |
-| `currentFormatToTime()`  | 将字符串时间值转换为数字时间值。         |
-| `generateRandomNumber()` | 生成一个随机数。                         |
-| `getEnumAsString()`      | 将枚举值转换为其字符串名称。             |
-| `timeToCurrentFormat()`  | 将数字时间值转换为字符串时间值。         |
-| `write()`                | 将文本写入信息面板，不添加换行符。       |
-| `writeLn()`              | 将文本写入信息面板，并在末尾添加换行符。 |
-| `isValid()`              | 当为 `true` 时，指定的对象存在。       |
+| 全局函数           | 描述      |
+| ------ | ---------- |
+| `clearOutput()`      | 清除信息面板中的文本。           |
+| `currentFormatToTime()`  | 将字符串时间值转换为数字时间值。     |
+| `generateRandomNumber()` | 生成一个随机数。             |
+| `getEnumAsString()`    | 将枚举值转换为其字符串名称。       |
+| `timeToCurrentFormat()`  | 将数字时间值转换为字符串时间值。     |
+| `write()`        | 将文本写入信息面板，不添加换行符。     |
+| `writeLn()`        | 将文本写入信息面板，并在末尾添加换行符。 |
+| `isValid()`        | 当为 `true` 时，指定的对象存在。     |
 
 ExtendScript 还定义了用于标准用户 I/O 的额外全局函数（`alert`、`confirm` 和 `prompt`）以及用于文件 I/O 的静态函数；有关详细参考信息，请参阅 [JavaScript 工具指南](https://extendscript.docsforadobe.dev/)。
 
@@ -53,11 +53,11 @@ ExtendScript 还定义了用于标准用户 I/O 的额外全局函数（`alert`�
 
 #### 参数
 
-| 参数              | 描述                                                                                                                  |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `formattedTime` | 帧时间值，指定项目当前时间显示格式中帧数的字符串。                                                                    |
-| `fps`           | 帧速率，浮点值。                                                                                                      |
-| `isDuration`    | 可选。当为 `true` 时，时间为持续时间（从第 0 帧开始测量）。当为 `false`（默认值）时，时间从项目的起始帧开始测量。 |
+| 参数        | 描述                   |
+| ------- | ---------------------- |
+| `formattedTime` | 帧时间值，指定项目当前时间显示格式中帧数的字符串。        |
+| `fps`       | 帧速率，浮点值。             |
+| `isDuration`  | 可选。当为 `true` 时，时间为持续时间（从第 0 帧开始测量）。当为 `false`（默认值）时，时间从项目的起始帧开始测量。 |
 
 #### 返回
 
@@ -69,7 +69,11 @@ ExtendScript 还定义了用于标准用户 I/O 的额外全局函数（`alert`�
 
 `generateRandomNumber()`
 
-:::note 该方法添加于 After Effects 13.6 (CC 2015) :::#### 描述
+:::note
+该方法添加于 After Effects 13.6 (CC 2015)
+:::
+
+#### 描述
 
 生成随机数。建议使用此函数代替 `Math.random()` 来生成将应用于项目中的值的随机数（例如，使用 setValue 时）。
 
@@ -81,24 +85,20 @@ ExtendScript 还定义了用于标准用户 I/O 的额外全局函数（`alert`�
 
 #### 示例
 
-javascript
-
-复制
-
-```
+```javascript
 // 使用随机数更改所有图层的位置 X
 
 var myComp = app.project.activeItem;
 var x = 0;
 
 for (var i = 1; i <= myComp.numLayers; i++) {
-    // 如果使用 Math.random()，这将不起作用
-    // x = 400 * (Math.random()) - 200;
-    // 使用新的 generateRandomNumber() 代替
+  // 如果使用 Math.random()，这将不起作用
+  // x = 400 * (Math.random()) - 200;
+  // 使用新的 generateRandomNumber() 代替
 
-    x = 400 * generateRandomNumber() - 200;
-    var currentPos = myComp.layer(i).property("Position").value;
-    myComp.layer(i).property("Position").setValue([currentPos[0] + x, currentPos[1]]);
+  x = 400 * generateRandomNumber() - 200;
+  var currentPos = myComp.layer(i).property("Position").value;
+  myComp.layer(i).property("Position").setValue([currentPos[0] + x, currentPos[1]]);
 }
 ```
 
@@ -108,7 +108,11 @@ for (var i = 1; i <= myComp.numLayers; i++) {
 
 `getEnumAsString()`
 
-:::note 该方法添加于 After Effects 24.0 :::#### 描述
+:::note
+该方法添加于 After Effects 24.0
+:::
+
+#### 描述
 
 返回枚举的字符串值。
 
@@ -122,11 +126,7 @@ for (var i = 1; i <= myComp.numLayers; i++) {
 
 #### 示例
 
-javascript
-
-复制
-
-```
+```javascript
 // 返回: "BlendingMode.ADD"
 alert(getEnumAsString(5220));
 ```
@@ -143,8 +143,8 @@ alert(getEnumAsString(5220));
 
 #### 参数
 
-| 参数    | 描述                                |
-| ------- | ----------------------------------- |
+| 参数  | 描述   |
+| ------- | ---------- |
 | `obj` | 要检查有效性的 After Effects 对象。 |
 
 #### 返回
@@ -153,11 +153,7 @@ alert(getEnumAsString(5220));
 
 #### 示例
 
-javascript
-
-复制
-
-```
+```javascript
 var layer = app.project.activeItem.layer(1); // 假设图层有三个遮罩
 alert(isValid(layer)); // 显示 "true"
 var mask1 = layer.mask(1);
@@ -175,14 +171,14 @@ alert(isValid(mask1)); // 显示 "false"; mask2 和 mask3 也是如此
 
 #### 描述
 
-将数字时间值（秒数）转换为帧时间值；即，显示在指定速率下该时间对应的帧的格式化字符串。例如，如果时间为 0.5 秒，帧速率为 24 fps，则帧为 0:00:12（当项目设置为显示时间码时）。如果帧速率为 30 fps，则帧为 0:00:15。时间码字符串的格式由项目设置决定。如果时间是持续时间，则帧从 0 开始计数。否则，帧从项目的起始帧开始计数（参见 [Project displayStartFrame](https://project.md/#projectdisplaystartframe) 属性）。
+将数字时间值（秒数）转换为帧时间值；即，显示在指定速率下该时间对应的帧的格式化字符串。例如，如果时间为 0.5 秒，帧速率为 24 fps，则帧为 0:00:12（当项目设置为显示时间码时）。如果帧速率为 30 fps，则帧为 0:00:15。时间码字符串的格式由项目设置决定。如果时间是持续时间，则帧从 0 开始计数。否则，帧从项目的起始帧开始计数（参见 [Project displayStartFrame](../project/#projectdisplaystartframe) 属性）。
 
 #### 参数
 
-| 参数           | 描述                                                                                                                  |
-| -------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `time`       | 秒数，浮点值。                                                                                                        |
-| `fps`        | 帧速率，浮点值。                                                                                                      |
+| 参数       | 描述                   |
+| ---- | ---------------------- |
+| `time`     | 秒数，浮点值。             |
+| `fps`    | 帧速率，浮点值。             |
 | `isDuration` | 可选。当为 `true` 时，时间为持续时间（从第 0 帧开始测量）。当为 `false`（默认值）时，时间从项目的起始帧开始测量。 |
 
 #### 返回
@@ -201,8 +197,8 @@ alert(isValid(mask1)); // 显示 "false"; mask2 和 mask3 也是如此
 
 #### 参数
 
-| 参数     | 描述                                               |
-| -------- | -------------------------------------------------- |
+| 参数   | 描述            |
+| --- | ---------- |
 | `text` | 要显示的字符串。如果信息面板空间不足，则会被截断。 |
 
 #### 返回
@@ -211,11 +207,7 @@ alert(isValid(mask1)); // 显示 "false"; mask2 和 mask3 也是如此
 
 #### 示例
 
-javascript
-
-复制
-
-```
+```javascript
 write("此文本出现在信息面板中 ");
 write("更多内容在同一行。");
 ```
@@ -232,8 +224,8 @@ write("更多内容在同一行。");
 
 #### 参数
 
-| 参数     | 描述             |
-| -------- | ---------------- |
+| 参数   | 描述       |
+| --- | ------ |
 | `text` | 要显示的字符串。 |
 
 #### 返回
@@ -242,11 +234,7 @@ write("更多内容在同一行。");
 
 #### 示例
 
-javascript
-
-复制
-
-```
+```javascript
 writeLn("此文本出现在第一行");
 writeLn("此文本出现在第二行");
 ```

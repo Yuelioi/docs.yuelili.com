@@ -1,38 +1,38 @@
 ---
-title: communications-overview
+title: 通信概述
 ---
-# Communications overview
+# 通信概述
 
-Scripts written for any message-enabled application can communicate with other message-enabled applications in two ways; through directly calling functions defined in a remote application, and by sending messages and receiving responses from a remote application. A specific syntax is provided for identifying applications unambiguously.
-
----
-
-## Remote function calls
-
-A limited set of basic functions (the cross-DOM) are common across all message-enabled applications, and allow your script to, for example, open or print files in other applications, simply by calling the open or print function for that application.
-
-- [Cross-DOM functions](../cross-dom-functions) describes the usage of this feature.
-- [Cross-DOM API reference](cross-dom-functions.md#cross-dom-api-reference) provides reference details for the functions of the basic cross-DOM.
-
-Each message-enabled application can also export a set of functions to provide a selected set of application-specific functionality; see [Application-specific exported functions](cross-dom-functions.md#application-specific-exported-functions).
-
-For example, an Adobe Bridge script can request a photo merge in Photoshop by calling `photoshop.photomerge(files)`. The set of functions available for each application varies widely.
+为任何支持消息传递的应用程序编写的脚本可以通过两种方式与其他支持消息传递的应用程序进行通信：通过直接调用远程应用程序中定义的函数，以及通过发送消息并接收来自远程应用程序的响应。提供了一种特定的语法来明确标识应用程序。
 
 ---
 
-## Messaging framework
+## 远程函数调用
 
-The interapplication messaging framework is a JavaScript application programming interface (API) that allows extensive control over communication between applications. The API allows you to send messages to other applications and receive results, and to receive messages sent by other applications and return results. Typically the data passed between applications are JavaScript scripts. However, the messaging framework is extensible. It allows you to define different types of data to send between applications, and to specify how they are handled.
+所有支持消息传递的应用程序都共享一组有限的基本函数（跨DOM函数），这些函数允许您的脚本通过调用其他应用程序的打开或打印函数来执行诸如打开或打印文件等操作。
 
-- [Communicating through messages](../communicating-through-messages) describes the usage of this feature.
-- [Messaging framework API reference](../messaging-framework-api-reference) provides complete reference details.
+- [跨DOM函数](../cross-dom-functions) 描述了此功能的用法。
+- [跨DOM API参考](cross-dom-functions.md#cross-dom-api-reference) 提供了基本跨DOM函数的参考详细信息。
+
+每个支持消息传递的应用程序还可以导出一组函数，以提供特定的应用程序功能；请参阅[应用程序特定的导出函数](cross-dom-functions.md#application-specific-exported-functions)。
+
+例如，Adobe Bridge脚本可以通过调用 `photoshop.photomerge(files)` 请求在Photoshop中进行照片合并。每个应用程序可用的函数集差异很大。
 
 ---
 
-## Identifying applications
+## 消息传递框架
 
-When calling external functions or exchanging messages, you must identify particular applications using namespace specifiers. A specifier consists of a specific name string (such as photoshop), and optional additions that identify a particular release or locale version. Application specifiers are used occasionally in other contexts as well. For details of the syntax, see [Application and namespace specifiers](../application-and-namespace-specifiers).
+应用程序间消息传递框架是一个JavaScript应用程序编程接口（API），允许对应用程序之间的通信进行广泛控制。该API允许您向其他应用程序发送消息并接收结果，以及接收其他应用程序发送的消息并返回结果。通常，应用程序之间传递的数据是JavaScript脚本。然而，消息传递框架是可扩展的。它允许您定义要在应用程序之间发送的不同类型的数据，并指定如何处理这些数据。
 
-Regardless of which method you use to perform interapplication communication, you must place your script in a location where the application you want to run it can see it. There are different locations for the startup scripts of the applications themselves, and for scripts provided by developers.
+- [通过消息进行通信](../communicating-through-messages) 描述了此功能的用法。
+- [消息传递框架API参考](../messaging-framework-api-reference) 提供了完整的参考详细信息。
 
-Because all JavaScript-enabled applications look in the same locations for scripts to run, the scripts themselves must be explicit about which application they are meant for. A script should check that all applications it needs to communicate with are installed with the correct version, and that any other applications that might be installed do not run the script. For details, see [Scripting for specific applications](../../introduction/scripting-for-specific-applications).
+---
+
+## 标识应用程序
+
+在调用外部函数或交换消息时，您必须使用命名空间标识符来标识特定的应用程序。标识符由一个特定的名称字符串（如photoshop）和可选的附加信息组成，这些附加信息用于标识特定的版本或本地化版本。应用程序标识符在其他上下文中也偶尔使用。有关语法的详细信息，请参阅[应用程序和命名空间标识符](../application-and-namespace-specifiers)。
+
+无论您使用哪种方法执行应用程序间通信，都必须将脚本放置在您希望运行它的应用程序可以看到的位置。应用程序本身的启动脚本和开发人员提供的脚本有不同的位置。
+
+由于所有支持JavaScript的应用程序都在相同的位置查找要运行的脚本，因此脚本本身必须明确说明它们是为哪个应用程序编写的。脚本应检查其需要与之通信的所有应用程序是否已安装并具有正确的版本，并确保任何其他已安装的应用程序不会运行该脚本。有关详细信息，请参阅[为特定应用程序编写脚本](../../introduction/scripting-for-specific-applications)。

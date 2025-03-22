@@ -1,10 +1,10 @@
 ---
-title: effect-basics
+title: 效果基础
 ---
-# Effect Basics
+# 效果基础
 
-This chapter will provide all the information you need to know to understand how a basic effect plug-in works.
+本章将提供所有你需要了解的信息，以理解一个基本的效果插件是如何工作的。
 
-These details are fundamental to every effect plug-in.
+这些细节对于每个效果插件都是基础性的。
 
-By the time you finish this chapter, you'll be ready for the fun stuff; modifying pixels!
+当你完成本章时，你将准备好进入更有趣的部分：修改像素！

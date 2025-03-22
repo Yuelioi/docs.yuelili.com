@@ -1,23 +1,23 @@
 ---
-title: viewer
+title: 查看器
 ---
-# Viewer object
+# Viewer 对象
 
 `app.activeViewer`
 
 #### 描述
 
-The Viewer object represents a Composition, Layer, or Footage panel.
+Viewer 对象表示一个合成、图层或素材面板。
 
 #### 示例
 
-This maximizes the active viewer panel, and displays its type if it contains a composition.
+以下代码将最大化活动查看器面板，并在其包含合成时显示其类型。
 
 ```javascript
 var activeViewer = app.activeViewer;
 activeViewer.maximized = true;
 if (activeViewer.type === ViewerType.VIEWER_COMPOSITION) {
-    alert("Composition panel is active.");
+  alert("Composition panel is active.");
 }
 ```
 
@@ -31,11 +31,11 @@ if (activeViewer.type === ViewerType.VIEWER_COMPOSITION) {
 
 #### 描述
 
-When `true`, indicates if the viewer panel is focused, and thereby frontmost.
+当为 `true` 时，表示查看器面板是否被聚焦，从而位于最前面。
 
 #### 类型
 
-Boolean; 只读.
+布尔值；只读。
 
 ---
 
@@ -45,11 +45,11 @@ Boolean; 只读.
 
 #### 描述
 
-The index of the current active [View object](../view), in the [Viewer.views](#viewerviews) array.
+当前活动的 [View 对象](../view) 在 [Viewer.views](#viewerviews) 数组中的索引。
 
 #### 类型
 
-Integer; read/write.
+整数；可读写。
 
 ---
 
@@ -59,11 +59,11 @@ Integer; read/write.
 
 #### 描述
 
-When `true`, indicates if the viewer panel is at its maximized size.
+当为 `true` 时，表示查看器面板是否处于最大化状态。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读写。
 
 ---
 
@@ -73,11 +73,11 @@ Boolean; read/write.
 
 #### 描述
 
-All of the Views associated with this viewer.
+与此查看器关联的所有视图。
 
 #### 类型
 
-Array of [View object](../view) objects; 只读.
+[View 对象](../view) 数组；只读。
 
 ---
 
@@ -87,11 +87,11 @@ Array of [View object](../view) objects; 只读.
 
 #### 描述
 
-The content in the viewer panel.
+查看器面板中的内容类型。
 
 #### 类型
 
-A `ViewerType` enumerated value; 只读. One of:
+`ViewerType` 枚举值；只读。可能的值包括：
 
 - `ViewerType.VIEWER_COMPOSITION`
 - `ViewerType.VIEWER_LAYER`
@@ -107,13 +107,12 @@ A `ViewerType` enumerated value; 只读. One of:
 
 #### 描述
 
-Moves the viewer panel to the front and places focus on it, making it active.
-Calling this method will set the [viewer's active attribute](#vieweractive) to `true`.
+将查看器面板移至最前面并聚焦，使其处于活动状态。调用此方法会将 [viewer 的 active 属性](#vieweractive) 设置为 `true`。
 
 #### 参数
 
-None.
+无。
 
 #### 返回
 
-Boolean indicating if the viewer panel was made active.
+布尔值，表示查看器面板是否被激活。

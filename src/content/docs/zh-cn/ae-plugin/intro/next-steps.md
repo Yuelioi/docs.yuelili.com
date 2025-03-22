@@ -1,8 +1,8 @@
 ---
-title: next-steps
+title: 下一步
 ---
-# Next Steps
+# 下一步
 
-You now have an understanding of what plug-ins are, what they can do, and how After Effects communicates with them.
+你现在已经了解了什么是插件，它们能做什么，以及 After Effects 如何与插件进行通信。
 
-Next, we will cover the [basics of effects plug-ins](../../effect-basics/effect-basics).
+接下来，我们将介绍[效果插件的基础知识](../../effect-basics/effect-basics)。

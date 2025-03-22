@@ -1,43 +1,43 @@
 ---
-title: lightlayer
+title: 灯光图层
 ---
-# Light Layer Match Names
-
----
-
-## Layer
-
-|     Match Name     | Display Name (EN) |
-| ------------------ | ----------------- |
-| `ADBE Light Layer` |                   |
+# Light Layer 匹配名称
 
 ---
 
-## Light
+## 图层
 
-|         Match Name          | Display Name (EN) |
-| --------------------------- | ----------------- |
-| `ADBE Light Options Group`  | Light Options     |
-| `ADBE Light Intensity`      | Intensity         |
-| `ADBE Light Color`          | Color             |
-| `ADBE Light Cone Angle`     | Cone Angle        |
-| `ADBE Light Cone Feather 2` | Cone Feather      |
+| 匹配名称             | 显示名称 (中文) |
+| -------------------- | --------------- |
+| `ADBE Light Layer` |                 |
 
 ---
 
-## Falloff
+## 灯光
 
-|          Match Name           | Display Name (EN) |
-| ----------------------------- | ----------------- |
-| `ADBE Light Falloff Type`     | Falloff           |
-| `ADBE Light Falloff Start`    | Radius            |
-| `ADBE Light Falloff Distance` | Falloff Distance  |
+| 匹配名称                      | 显示名称 (中文) |
+| ----------------------------- | --------------- |
+| `ADBE Light Options Group`  | 灯光选项        |
+| `ADBE Light Intensity`      | 强度            |
+| `ADBE Light Color`          | 颜色            |
+| `ADBE Light Cone Angle`     | 锥角            |
+| `ADBE Light Cone Feather 2` | 锥形羽化        |
 
 ---
 
-## Shadow
+## 衰减
 
-|          Match Name           | Display Name (EN) |
-| ----------------------------- | ----------------- |
-| `ADBE Light Shadow Darkness`  | Shadow Darkness   |
-| `ADBE Light Shadow Diffusion` | Shadow Diffusion  |
+| 匹配名称                        | 显示名称 (中文) |
+| ------------------------------- | --------------- |
+| `ADBE Light Falloff Type`     | 衰减类型        |
+| `ADBE Light Falloff Start`    | 半径            |
+| `ADBE Light Falloff Distance` | 衰减距离        |
+
+---
+
+## 阴影
+
+| 匹配名称                        | 显示名称 (中文) |
+| ------------------------------- | --------------- |
+| `ADBE Light Shadow Darkness`  | 阴影暗度        |
+| `ADBE Light Shadow Diffusion` | 阴影扩散        |

@@ -1,66 +1,66 @@
 ---
-title: shape
+title: 形状
 ---
-# Shape object
+# Shape 对象
 
 `app.project.item(index).layer(index).property(index).property("maskShape").value`
 
 #### 描述
 
-The Shape object encapsulates information describing a shape in a shape layer, or the outline shape of a Mask. It is the value of the "Mask Path" AE properties, and of the "Path" AE property of a shape layer. Use the constructor, `new Shape()`, to create a new, empty Shape object, then set the attributes individually to define the shape.
+Shape 对象封装了描述形状图层中的形状或遮罩轮廓形状的信息。它是 "Mask Path" AE 属性的值，也是形状图层的 "Path" AE 属性的值。使用构造函数 `new Shape()` 创建一个新的、空的 Shape 对象，然后单独设置属性以定义形状。
 
-A shape has a set of anchor points, or vertices, and a pair of direction handles, or tangent vectors, for each anchor point. A tangent vector (in a non-RotoBezier mask) determines the direction of the line that is drawn to or from an anchor point. There is one incoming tangent vector and one outgoing tangent vector associated with each vertex in the shape.
+一个形状有一组锚点（或顶点），以及每个锚点的一对方向手柄（或切线向量）。在非 RotoBezier 遮罩中，切线向量决定了绘制到或从锚点绘制的线条的方向。每个顶点都有一个传入切线向量和一个传出切线向量。
 
-A tangent value is a pair of x,y coordinates specified relative to the associated vertex. For example, a tangent of [-1,-1] is located above and to the left of the vertex and has a 45 degree slope, regardless of the actual location of the vertex. The longer a handle is, the greater its influence; for example, an incoming shape segment stays closer to the vector for an `inTangent` of [-2,-2] than it does for an `inTangent` of [-1,-1], even though both of these come toward the vertex from the same direction.
+切线值是一对相对于关联顶点的 x,y 坐标。例如，切线值 [-1,-1] 位于顶点的左上方，斜率为 45 度，无论顶点的实际位置如何。手柄越长，其影响力越大；例如，传入形状段会更接近 `inTangent` 为 [-2,-2] 的向量，而不是 `inTangent` 为 [-1,-1] 的向量，即使两者都从同一方向朝向顶点。
 
-If a shape is not closed, the `inTangent` for the first vertex and the `outTangent` for the final vertex are ignored. If the shape is closed, these two vectors specify the direction handles of the final connecting segment out of the final vertex and back into the first vertex.
+如果形状未闭合，则第一个顶点的 `inTangent` 和最后一个顶点的 `outTangent` 将被忽略。如果形状闭合，这两个向量指定从最后一个顶点返回到第一个顶点的最终连接段的切线手柄。
 
-RotoBezier masks calculate their tangents automatically. (See [MaskPropertyGroup.rotoBezier](../property/maskpropertygroup.md#maskpropertygrouprotobezier)) If a shape is used in a RotoBezier mask, the tangent values are ignored. This means that, for RotoBezier masks, you can construct a shape by setting only the `vertices` attribute and setting both `inTangents` and `outTangents` to `null`. When you access the new shape, its tangent values are filled with the automatically calculated tangent values.
+RotoBezier 遮罩会自动计算其切线。（参见 [MaskPropertyGroup.rotoBezier](../property/maskpropertygroup.md#maskpropertygrouprotobezier)）如果形状用于 RotoBezier 遮罩，则切线值将被忽略。这意味着，对于 RotoBezier 遮罩，您可以通过仅设置 `vertices` 属性并将 `inTangents` 和 `outTangents` 设置为 `null` 来构造形状。当您访问新形状时，其切线值将填充为自动计算的切线值。
 
-For closed mask shapes, variable-width mask feather points can exist anywhere along the mask path. Feather points are part of the Mask Path property. Reference a specific feather point by the number of the mask path segment (portion of the path between adjacent vertices) where it appears.
+对于闭合的遮罩形状，可变宽度的遮罩羽化点可以存在于遮罩路径的任何位置。羽化点是遮罩路径属性的一部分。通过遮罩路径段（相邻顶点之间的路径部分）的编号引用特定的羽化点。
 
 :::tip
-The feather points on a mask are listed in an array in the order that they were created.
+遮罩上的羽化点按创建顺序列在数组中。
 :::
 
 #### 示例
 
-- Create a square mask. A square is a closed shape with 4 vertices. The `inTangents` and `outTangents` for connected straight-line segments are 0, the default, and do not need to be explicitly set.
+- 创建一个方形遮罩。方形是一个具有 4 个顶点的闭合形状。连接的直线段的 `inTangents` 和 `outTangents` 为 0（默认值），不需要显式设置。
 
-    ```javascript
-    var myShape = new Shape();
-    myShape.vertices = [[0,0], [0,100], [100,100], [100,0]];
-    myShape.closed = true;
-    ```
+  ```javascript
+  var myShape = new Shape();
+  myShape.vertices = [[0,0], [0,100], [100,100], [100,0]];
+  myShape.closed = true;
+  ```
 
-- Create a "U" shaped mask. A "U" is an open shape with the same 4 vertices used in the square.
+- 创建一个 "U" 形遮罩。"U" 是一个具有与方形相同的 4 个顶点的开放形状。
 
-    ```javascript
-    var myShape = new Shape();
-    myShape.vertices = [[0,0], [0,100], [100,100], [100,0]];
-    myShape.closed = false;
-    ```
+  ```javascript
+  var myShape = new Shape();
+  myShape.vertices = [[0,0], [0,100], [100,100], [100,0]];
+  myShape.closed = false;
+  ```
 
-- Create an oval. An oval is a closed shape with 4 vertices and with inTangent and outTangent values.
+- 创建一个椭圆形。椭圆形是一个具有 4 个顶点和 `inTangent` 和 `outTangent` 值的闭合形状。
 
-    ```javascript
-    var myShape = new Shape();
-    myShape.vertices = [[300,50], [200,150],[300,250],[400,150]];
-    myShape.inTangents = [[55.23,0],[0,-55.23],[-55.23,0],[0,55.23]];
-    myShape.outTangents = [[-55.23,0],[0,55.23],[55.23,0],[0,-55.23]];
-    myShape.closed = true;
-    ```
+  ```javascript
+  var myShape = new Shape();
+  myShape.vertices = [[300,50], [200,150],[300,250],[400,150]];
+  myShape.inTangents = [[55.23,0],[0,-55.23],[-55.23,0],[0,55.23]];
+  myShape.outTangents = [[-55.23,0],[0,55.23],[55.23,0],[0,-55.23]];
+  myShape.closed = true;
+  ```
 
-- Create a square mask with two feather points. A large square mask with two feather points, one closer to the left end the second mask segment (off the bottom edge) with a radius of 30 pixels and the other one centered the third mask segment (off the right edge) with a larger radius of 100 pixels.
+- 创建一个带有两个羽化点的方形遮罩。一个大的方形遮罩，带有两个羽化点，一个靠近第二个遮罩段（底部边缘）的左端，半径为 30 像素，另一个位于第三个遮罩段（右侧边缘）的中心，半径为 100 像素。
 
-    ```javascript
-    var myShape = new Shape();
-    myShape.vertices = [[100,100], [100,400], [400,400], [400,100]]; // segments drawn counter clockwise
-    myShape.closed = true;
-    myShape.featherSegLocs = [1, 2]; // segments are numbered starting at 0, so second segment is 1
-    myShape.featherRelSegLocs = [0.15, 0.5]; // 0.15 is closer to the lower-left corner of the square
-    myShape.featherRadii = [30, 100]; // second feather point (onright-sidesegment) has a larger radius
-    ```
+  ```javascript
+  var myShape = new Shape();
+  myShape.vertices = [[100,100], [100,400], [400,400], [400,100]]; // 段按逆时针方向绘制
+  myShape.closed = true;
+  myShape.featherSegLocs = [1, 2]; // 段从 0 开始编号，因此第二段为 1
+  myShape.featherRelSegLocs = [0.15, 0.5]; // 0.15 更接近方形的左下角
+  myShape.featherRadii = [30, 100]; // 第二个羽化点（在右侧段上）具有更大的半径
+  ```
 
 ---
 
@@ -72,11 +72,11 @@ The feather points on a mask are listed in an array in the order that they were 
 
 #### 描述
 
-When `true`, the first and last vertices are connected to form a closed curve. When `false`, the closing segment is not drawn.
+当为 `true` 时，第一个和最后一个顶点连接以形成闭合曲线。当为 `false` 时，不绘制闭合段。
 
 #### 类型
 
-Boolean; read/write.
+布尔值；可读写。
 
 ---
 
@@ -86,15 +86,15 @@ Boolean; read/write.
 
 #### 描述
 
-An array containing each feather point's radius interpolation type (0 for non-Hold feather points, 1 for Hold feather points).
+包含每个羽化点的半径插值类型的数组（0 表示非 Hold 羽化点，1 表示 Hold 羽化点）。
 
 :::tip
-Values are stored in the array in the order that feather points are created.
+值按羽化点的创建顺序存储在数组中。
 :::
 
 #### 类型
 
-Array of integers (0 or 1); read/write.
+整数数组（0 或 1）；可读写。
 
 ---
 
@@ -104,15 +104,15 @@ Array of integers (0 or 1); read/write.
 
 #### 描述
 
-An array containing each feather point's radius (feather amount); inner feather points have negative values.
+包含每个羽化点的半径（羽化量）的数组；内部羽化点具有负值。
 
 :::tip
-Values are stored in the array in the order that feather points are created.
+值按羽化点的创建顺序存储在数组中。
 :::
 
 #### 类型
 
-Array of floating-point values; read/write.
+浮点值数组；可读写。
 
 ---
 
@@ -122,15 +122,15 @@ Array of floating-point values; read/write.
 
 #### 描述
 
-An array containing each feather point's relative angle percentage between the two normals on either side of a curved outer feather boundary at a corner on a mask path. The angle value is 0% for feather points not at corners.
+包含每个羽化点的相对角度百分比的数组，该角度是遮罩路径上拐角处曲线外部羽化边界两侧法线之间的百分比。对于不在拐角处的羽化点，角度值为 0%。
 
 :::tip
-Values are stored in the array in the order that feather points are created.
+值按羽化点的创建顺序存储在数组中。
 :::
 
 #### 类型
 
-Array of floating-point percentage values (0 to 100); read/write.
+浮点百分比值数组（0 到 100）；可读写。
 
 ---
 
@@ -140,15 +140,15 @@ Array of floating-point percentage values (0 to 100); read/write.
 
 #### 描述
 
-An array containing each feather point's relative position, from 0 to 1, on its mask path segment (section of the mask path between vertices, numbered starting at 0).
+包含每个羽化点在其遮罩路径段（顶点之间的遮罩路径部分，从 0 开始编号）上的相对位置（从 0 到 1）的数组。
 
 :::tip
-Values are stored in the array in the order that feather points are created. To move a feather point to a different mask path segment, first change the [featherSegLocs](#shapefeatherseglocs) attribute value, then this attribute.
+值按羽化点的创建顺序存储在数组中。要将羽化点移动到不同的遮罩路径段，请先更改 [featherSegLocs](#shapefeatherseglocs) 属性值，然后再更改此属性。
 :::
 
 #### 类型
 
-Array of floating-point values (0 to 1); read/write.
+浮点值数组（0 到 1）；可读写。
 
 ---
 
@@ -158,33 +158,33 @@ Array of floating-point values (0 to 1); read/write.
 
 #### 描述
 
-An array containing each feather point's mask path segment number (section of the mask path between vertices, numbered starting at 0).
+包含每个羽化点的遮罩路径段编号（顶点之间的遮罩路径部分，从 0 开始编号）的数组。
 
 :::tip
-Values are stored in the array in the order that feather points are created. Move a feather point to a different segment by changing both its segment number (this attribute) and, optionally, its [featherRelSegLocs](#shapefeatherrelseglocs) attribute value.
+值按羽化点的创建顺序存储在数组中。通过更改其段编号（此属性）和（可选）其 [featherRelSegLocs](#shapefeatherrelseglocs) 属性值，将羽化点移动到不同的段。
 :::
 
 #### 类型
 
-Array of integers; read/write.
+整数数组；可读写。
 
 #### 示例
 
 ```javascript
-// Assuming a rectangle closed mask (segments numbered 0-3) has 3 mask feather points,
-// move all 3 feather points to the first mask segment.
+// 假设一个矩形闭合遮罩（段编号为 0-3）有 3 个遮罩羽化点，
+// 将所有 3 个羽化点移动到第一个遮罩段。
 
-// Get the Shape object for the mask, assumed here to be the first mask on the layer.
+// 获取遮罩的 Shape 对象，假设此处为图层上的第一个遮罩。
 var my_maskShape = layer.mask(1).property("ADBE Mask Shape").value;
 
-// Check where mask feather points are located.
-// Note: They are stored in the order that they are added.
+// 检查遮罩羽化点的位置。
+// 注意：它们按添加顺序存储。
 var where_are_myMaskFeatherPoints = my_maskShape.featherSegLocs;
 
-// Move all 3 feather points to the first mask segment (numbered 0).
+// 将所有 3 个羽化点移动到第一个遮罩段（编号为 0）。
 my_maskShape.featherSegLocs = [0, 0, 0];
 
-// Update the mask path.
+// 更新遮罩路径。
 layer.mask(1).property("ADBE Mask Shape").setValue(my_maskShape);
 ```
 
@@ -196,15 +196,15 @@ layer.mask(1).property("ADBE Mask Shape").setValue(my_maskShape);
 
 #### 描述
 
-An array containing each feather point's tension amount, from 0 (0% tension) to 1 (100% tension).
+包含每个羽化点的张力量的数组，从 0（0% 张力）到 1（100% 张力）。
 
 :::tip
-Values are stored in the array in the order that feather points are created.
+值按羽化点的创建顺序存储在数组中。
 :::
 
 #### 类型
 
-Array of floating-point values (0 to 1); read/write.
+浮点值数组（0 到 1）；可读写。
 
 ---
 
@@ -214,15 +214,15 @@ Array of floating-point values (0 to 1); read/write.
 
 #### 描述
 
-An array containing each feather point's direction, either 0 (outer feather point) or 1 (inner feather point).
+包含每个羽化点方向的数组，0（外部羽化点）或 1（内部羽化点）。
 
 :::tip
-Values are stored in the array in the order that feather points are created.
+值按羽化点的创建顺序存储在数组中。
 :::
 
 #### 类型
 
-Array of integers (0 or 1); read/write.
+整数数组（0 或 1）；可读写。
 
 ---
 
@@ -232,15 +232,15 @@ Array of integers (0 or 1); read/write.
 
 #### 描述
 
-The incoming tangent vectors, or direction handles, associated with the vertices of the shape. Specify each vector as an array of two floating-point values, and collect the vectors into an array the same length as the `vertices` array.
+与形状顶点关联的传入切线向量或方向手柄。将每个向量指定为两个浮点值的数组，并将这些向量收集到与 `vertices` 数组长度相同的数组中。
 
-Each tangent value defaults to [0,0]. When the mask shape is not RotoBezier, this results in a straight line segment.
+每个切线值默认为 [0,0]。当遮罩形状不是 RotoBezier 时，这将导致直线段。
 
-If the shape is in a RotoBezier mask, all tangent values are ignored and the tangents are automatically calculated.
+如果形状位于 RotoBezier 遮罩中，则所有切线值都将被忽略，并且切线会自动计算。
 
 #### 类型
 
-Array of floating-point pair arrays; read/write.
+浮点对数组的数组；可读写。
 
 ---
 
@@ -250,15 +250,15 @@ Array of floating-point pair arrays; read/write.
 
 #### 描述
 
-The outgoing tangent vectors, or direction handles, associated with the vertices of the shape. Specify each vector as an array of two floating-point values, and collect the vectors into an array the same length as the `vertices` array.
+与形状顶点关联的传出切线向量或方向手柄。将每个向量指定为两个浮点值的数组，并将这些向量收集到与 `vertices` 数组长度相同的数组中。
 
-Each tangent value defaults to [0,0]. When the mask shape is not RotoBezier, this results in a straight line segment.
+每个切线值默认为 [0,0]。当遮罩形状不是 RotoBezier 时，这将导致直线段。
 
-If the shape is in a RotoBezier mask, all tangent values are ignored and the tangents are automatically calculated.
+如果形状位于 RotoBezier 遮罩中，则所有切线值都将被忽略，并且切线会自动计算。
 
 #### 类型
 
-Array of floating-point pair arrays; read/write.
+浮点对数组的数组；可读写。
 
 ---
 
@@ -268,7 +268,7 @@ Array of floating-point pair arrays; read/write.
 
 #### 描述
 
-The anchor points of the shape. Specify each point as an array of two floating-point values, and collect the point pairs into an array for the complete set of points.
+形状的锚点。将每个点指定为两个浮点值的数组，并将这些点对收集到完整点集的数组中。
 
 #### 示例
 
@@ -278,4 +278,4 @@ myShape.vertices = [[0,0], [0,1], [1,1], [1,0]];
 
 #### 类型
 
-Array of floating-point pair arrays; read/write.
+浮点对数组的数组；可读写。

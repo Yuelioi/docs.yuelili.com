@@ -1,17 +1,17 @@
 ---
 title: socket-object-reference
 ---
-# Socket Object Reference
+# Socket 对象参考
 
-This section provides details of the object's properties and methods.
+本节提供了该对象的属性和方法的详细信息。
 
-Socket object constructor:
+Socket 对象构造函数：
 
 ```javascript
 [new] Socket();
 ```
 
-Creates and returns a new [Socket object](.././socket-object).
+创建并返回一个新的 [Socket 对象](.././socket-object)。
 
 ---
 
@@ -23,11 +23,11 @@ Creates and returns a new [Socket object](.././socket-object).
 
 #### 描述
 
-When `true`, the connection is active.
+当值为 `true` 时，表示连接处于活动状态。
 
 #### 类型
 
-Boolean. Read only.
+布尔值。只读。
 
 ---
 
@@ -37,13 +37,13 @@ Boolean. Read only.
 
 #### 描述
 
-Sets or retrieves the name of the encoding used to transmit data.
+设置或获取用于传输数据的编码名称。
 
-Typical values are `"ASCII"`, `"BINARY"`, or `"UTF-8"`.
+典型值为 `"ASCII"`、`"BINARY"` 或 `"UTF-8"`。
 
 #### 类型
 
-String
+字符串
 
 ---
 
@@ -53,11 +53,11 @@ String
 
 #### 描述
 
-When `true`, the receive buffer is empty.
+当值为 `true` 时，表示接收缓冲区为空。
 
 #### 类型
 
-Boolean. Read only.
+布尔值。只读。
 
 ---
 
@@ -67,11 +67,11 @@ Boolean. Read only.
 
 #### 描述
 
-A message describing the most recent error. Setting this value clears any error message.
+描述最近一次错误的消息。设置此值会清除任何错误消息。
 
 #### 类型
 
-String
+字符串
 
 ---
 
@@ -81,13 +81,13 @@ String
 
 #### 描述
 
-The name of the remote computer when a connection is established.
+建立连接时远程计算机的名称。
 
-If the connection is shut down or does not exist, the property contains the empty string.
+如果连接已关闭或不存在，则该属性包含空字符串。
 
 #### 类型
 
-String. Read only.
+字符串。只读。
 
 ---
 
@@ -97,11 +97,11 @@ String. Read only.
 
 #### 描述
 
-The timeout in seconds to be applied to read or write operations. Default is `10`.
+应用于读取或写入操作的超时时间（以秒为单位）。默认值为 `10`。
 
 #### 类型
 
-Number
+数字
 
 ---
 
@@ -113,13 +113,13 @@ Number
 
 #### 描述
 
-Terminates the open connection. Deleting the object also closes the connection, but not until JavaScript garbage-collects the object.
+终止打开的连接。删除对象也会关闭连接，但只有在 JavaScript 垃圾回收该对象时才会关闭。
 
-The connection might stay open longer than you wish if you do not close it explicitly.
+如果不显式关闭连接，连接可能会保持打开状态的时间比预期的更长。
 
 #### 返回
 
-Boolean. `true` if the connection was closed, `false` on I/O errors.
+布尔值。如果连接已关闭，则返回 `true`；如果发生 I/O 错误，则返回 `false`。
 
 ---
 
@@ -129,20 +129,20 @@ Boolean. `true` if the connection was closed, `false` on I/O errors.
 
 #### 描述
 
-Instructs the object to start listening for an incoming connection.
+指示对象开始监听传入连接。
 
-The call to `open()` and the call to `listen()` are mutually exclusive. Call one function or the other, not both.
+`open()` 调用和 `listen()` 调用是互斥的。只能调用其中一个函数，不能同时调用两者。
 
 #### 参数
 
 | 参数  |  类型   |                                                                     描述                                                                     |
 | ---------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `port`     | Number. | The TCP/IP port number to listen on. Valid port numbers are `[1..65535]`. Typical values are 80 for a Web server, 23 for a Telnet server and so on. |
-| `encoding` | String  | Optional. The encoding to be used for the connection. Typical values are `"ASCII"`, `"binary"`, or `"UTF-8"`. Default is `"ASCII"`                  |
+| `port`     | 数字。  | 要监听的 TCP/IP 端口号。有效端口号为 `[1..65535]`。典型值为 80（用于 Web 服务器）、23（用于 Telnet 服务器）等。 |
+| `encoding` | 字符串  | 可选。用于连接的编码。典型值为 `"ASCII"`、`"binary"` 或 `"UTF-8"`。默认值为 `"ASCII"`。                  |
 
 #### 返回
 
-Boolean. `true` on success.
+布尔值。成功时返回 `true`。
 
 ---
 
@@ -152,20 +152,20 @@ Boolean. `true` on success.
 
 #### 描述
 
-Opens the connection for subsequent read/write operations.
+打开连接以进行后续的读/写操作。
 
-The call to open() and the call to listen() are mutually exclusive. Call one function or the other, not both.
+`open()` 调用和 `listen()` 调用是互斥的。只能调用其中一个函数，不能同时调用两者。
 
 #### 参数
 
 | 参数  |  类型  |                                                                                                       描述                                                                                                       |
 | ---------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `host`     | String | The name or IP address of the remote computer, followed by a colon and the port number to connect to. The port number is required. Valid computer names are, for example, `"www.adobe.com:80"` or `"192.150.14.12:80"`. |
-| `encoding` | String | Optional. The encoding to be used for the connection. Typical values are `"ASCII"`, `"binary"`, or `"UTF-8"`. Default is `"ASCII"`                                                                                      |
+| `host`     | 字符串 | 远程计算机的名称或 IP 地址，后跟冒号和要连接的端口号。端口号是必需的。有效的计算机名称示例为 `"www.adobe.com:80"` 或 `"192.150.14.12:80"`。 |
+| `encoding` | 字符串 | 可选。用于连接的编码。典型值为 `"ASCII"`、`"binary"` 或 `"UTF-8"`。默认值为 `"ASCII"`。                                                                                      |
 
 #### 返回
 
-Boolean. `true` on success.
+布尔值。成功时返回 `true`。
 
 ---
 
@@ -175,15 +175,15 @@ Boolean. `true` on success.
 
 #### 描述
 
-Checks a listening object for a new incoming connection. If a connection request was detected, the method returns a new Socket object that wraps the new connection. Use this connection object to communicate with the remote computer.
+检查监听对象是否有新的传入连接。如果检测到连接请求，则该方法返回一个新的 Socket 对象，该对象封装了新连接。使用此连接对象与远程计算机通信。
 
-After use, close the connection and delete the JavaScript object. If no new connection request was detected, the method returns null.
+使用后，关闭连接并删除 JavaScript 对象。如果未检测到新的连接请求，则该方法返回 `null`。
 
 #### 参数
 
 #### 返回
 
-[Socket object](.././socket-object) or `null`.
+[Socket 对象](.././socket-object) 或 `null`。
 
 ---
 
@@ -193,19 +193,19 @@ After use, close the connection and delete the JavaScript object. If no new conn
 
 #### 描述
 
-Reads up to the specified number of characters from the connection, waiting if necessary.
+从连接中读取指定数量的字符，必要时等待。
 
-Ignores CR characters unless encoding is set to `BINARY`.
+除非编码设置为 `BINARY`，否则忽略 CR 字符。
 
 #### 参数
 
 | 参数 |  类型  |                                                  描述                                                   |
 | --------- | ------ | -------------------------------------------------------------------------------------------------------------- |
-| `count`   | Number | Optional. The number of characters to read. If negative, the call is equivalent to `readln()`. Default is `0`. |
+| `count`   | 数字 | 可选。要读取的字符数。如果为负数，则调用等同于 `readln()`。默认值为 `0`。 |
 
 #### 返回
 
-String that contains up to the number of characters that were supposed to be read, or the number of characters read before the connection closed or timed out.
+包含最多应读取的字符数的字符串，或在连接关闭或超时之前读取的字符数。
 
 ---
 
@@ -217,13 +217,13 @@ String that contains up to the number of characters that were supposed to be rea
 
 #### 参数
 
-Reads one line of text up to the next line feed. Line feeds are recognized as LF or CRLF pairs.
+读取一行文本，直到下一个换行符。换行符识别为 LF 或 CRLF 对。
 
-CR characters are ignored.
+忽略 CR 字符。
 
 #### 返回
 
-String
+字符串
 
 ---
 
@@ -233,19 +233,19 @@ String
 
 #### 描述
 
-Concatenates all arguments into a single string and writes that string to the connection.
+将所有参数连接成一个字符串并将该字符串写入连接。
 
-CRLF sequences are converted to LFs unless encoding is set to `BINARY.`
+除非编码设置为 `BINARY`，否则 CRLF 序列将转换为 LF。
 
 #### 参数
 
 | 参数 |  类型   |                                          描述                                          |
 | --------- | ------- | --------------------------------------------------------------------------------------------- |
-| `text`    | String. | Any number of string values. All arguments are concatenated to form the string to be written. |
+| `text`    | 字符串。 | 任意数量的字符串值。所有参数将连接起来形成要写入的字符串。 |
 
 #### 返回
 
-Boolean. `true` on success.
+布尔值。成功时返回 `true`。
 
 ---
 
@@ -255,14 +255,15 @@ Boolean. `true` on success.
 
 #### 描述
 
-Concatenates all arguments into a single string, appends a Line Feed character, and writes that string to the connection.
+将所有参数连接成一个字符串，附加一个换行符，并将该字符串写入连接。
 
 #### 参数
 
 | 参数 |  类型   |                                          描述                                          |
 | --------- | ------- | --------------------------------------------------------------------------------------------- |
-| `text`    | String. | Any number of string values. All arguments are concatenated to form the string to be written. |
+| `text`    | 字符串。 | 任意数量的字符串值。所有参数将连接起来形成要写入的字符串。 |
 
 #### 返回
 
-Boolean. `true` on success.
+布尔值。成功时返回 `true`。
+---

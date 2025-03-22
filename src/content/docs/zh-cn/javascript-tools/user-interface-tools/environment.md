@@ -1,33 +1,33 @@
 ---
-title: environment
+title: 环境
 ---
-# Environment object
+# 环境对象
 
-This global object is available through the [ScriptUI.environment](scriptui-class.md#scriptuienvironment) property.
+此全局对象可通过 [ScriptUI.environment](scriptui-class.md#scriptuienvironment) 属性访问。
 
-It defines attributes of the ScriptUI environment, and only contains one property.
+它定义了 ScriptUI 环境的属性，并且仅包含一个属性。
 
-Due to this object including only a single property (that is itself an object), all of the relevant documentation will be contained in this page.
+由于此对象仅包含一个属性（该属性本身是一个对象），因此所有相关文档都将包含在此页面中。
 
 ---
 
-## Environment object properties
+## 环境对象属性
 
-The following element properties apply specifically to Environment elements:
+以下元素属性专门适用于环境元素：
 
-## Keyboard state object
+## 键盘状态对象
 
-This JavaScript object reports the active state of the keyboard at any time; that is, the current key that is down and any modifiers that are pressed.
+此 JavaScript 对象报告键盘在任何时间的活动状态；即当前按下的键以及任何按下的修饰键。
 
-This is independent of the event-handling system, which means that at any time in your script, you can use this object to check whether specific keys (such as keyboard modifiers) are pressed, and trigger alternative actions as a result.
+这与事件处理系统无关，这意味着在脚本中的任何时间，您都可以使用此对象检查是否按下了特定键（例如键盘修饰键），并因此触发替代操作。
 
-It is available through the [ScriptUI.environment](scriptui-class.md#scriptuienvironment) object:
+它可通过 [ScriptUI.environment](scriptui-class.md#scriptuienvironment) 对象访问：
 
 ```javascript
 var myKeyState = ScriptUI.environment.keyboardState;
 ```
 
-The Keyboard State object contains the following properties:
+键盘状态对象包含以下属性：
 
 ---
 
@@ -35,20 +35,20 @@ The Keyboard State object contains the following properties:
 
 `ScriptUI.environment.keyboardState.keyName`
 
-The name of the key currently pressed. This is the JavaScript name, a string such as `"A"` or `"a"`.
+当前按下的键的名称。这是 JavaScript 名称，一个字符串，例如 `"A"` 或 `"a"`。
 
 :::note
 
-Modifier keys will report `undefined`; to get those, see [shiftKey, ctrlKey, altKey, metaKey](#shiftkey-ctrlkey-altkey-metakey)
+修饰键将报告 `undefined`；要获取这些键，请参阅 [shiftKey, ctrlKey, altKey, metaKey](#shiftkey-ctrlkey-altkey-metakey)
 :::
 
 #### 类型
 
-String
+字符串
 
 #### 示例
 
-For example, with 'a' pressed:
+例如，按下 'a' 时：
 
 ```javascript
 var currentPressedKey = ScriptUI.environment.keyboardState.keyName;
@@ -70,49 +70,49 @@ alert(currentPressedKey); // "A"
 
 #### 描述
 
-`true` if the named modifier key is currently active.
+如果命名的修饰键当前处于活动状态，则为 `true`。
 
 :::note
-`metaKey` captures both the `META` and `COMMAND` keys.
+`metaKey` 捕获 `META` 和 `COMMAND` 键。
 :::
 
 #### 类型
 
-Boolean
+布尔值
 
 #### 示例
 
-For example, checking whether a modifier key is held during script execution:
+例如，检查在脚本执行期间是否按住了修饰键：
 
 ```javascript
 var shiftHeld = ScriptUI.environment.keyboardState.shiftKey;
 
 if (shiftHeld) {
-    alert("User is holding shift!");
+    alert("用户按住了 Shift 键！");
 }
 ```
 
-Or to check for keyboard modifier combinations:
+或者检查键盘修饰键组合：
 
 ```javascript
 var keyboardState = ScriptUI.environment.keyboardState;
 
 if (keyboardState.shiftKey && keyboardState.altKey) {
-    alert("Shift and alt held!");
+    alert("Shift 和 Alt 键被按住！");
 }
 ```
 
-This can also be used within interface buttons as alternative to [checking the modifiers via keyboard events](event-handling.md#getmodifierstate), which can be more confusing and less user-intuitive, unless you're confident you're handling event states properly.
+这也可以在界面按钮中使用，作为 [通过键盘事件检查修饰键](event-handling.md#getmodifierstate) 的替代方案，除非您确信正确处理了事件状态，否则后者可能会更令人困惑且不太直观。
 
-For example:
+例如：
 
 ```javascript
 button.onClick = function () {
     if (ScriptUI.environment.keyboardState.shiftKey) {
-        // Special functionality for 'shift' key here
+        // 此处为 'Shift' 键的特殊功能
         return;
     }
 
-    // normal button behaviour here
+    // 此处为正常按钮行为
 }
 ```

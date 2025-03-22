@@ -1,75 +1,75 @@
 ---
-title: size-and-location-objects
+title: 尺寸和位置对象
 ---
-# Size and location objects
+# 尺寸和位置对象
 
-ScriptUI defines objects to represent the complex values of properties that place and size windows and user-interface elements. These objects cannot be created directly, but are created when you set the corresponding property. That property then returns that object. For example, the `bounds` property returns a `Bounds` object.
+ScriptUI 定义了用于表示窗口和用户界面元素位置和大小的复杂属性值的对象。这些对象不能直接创建，而是在设置相应属性时创建。该属性随后返回该对象。例如，`bounds` 属性返回一个 `Bounds` 对象。
 
-You can set these properties as objects, strings, or arrays.
+你可以将这些属性设置为对象、字符串或数组。
 
-- `e.prop = Object` - The object must contain the set of properties defined for this type, as shown in the table below. The properties have integer values.
-- `e.prop = String` - The string must be an executable JavaScript inline object declaration, conforming to the same object description.
-- `e.prop = Array` - The array must have integer coordinate values in the order defined for this type, as shown in the table below. For example:
+- `e.prop = Object` - 对象必须包含为此类型定义的属性集，如下表所示。属性值为整数。
+- `e.prop = String` - 字符串必须是一个可执行的 JavaScript 内联对象声明，符合相同的对象描述。
+- `e.prop = Array` - 数组必须按照为此类型定义的顺序包含整数坐标值，如下表所示。例如：
 
-The following examples show equivalent ways of placing a 380 by 390 pixel window near the upper left corner of the screen:
+以下示例展示了将 380 x 390 像素的窗口放置在屏幕左上角附近的等效方式：
 
 ```javascript
 var dlg = new Window( "dialog", "Alert Box Builder ");
-dlg.bounds = { x:100, y:100, width:380, height:390 }; // Object
-dlg.bounds = { left:100, top:100, right:480, bottom:490 }; // Object
-dlg.bounds = "x:100, y:100, width:380, height:390"; // String
-dlg.bounds = "left:100, top:100, right:480, bottom:490"; // String
-dlg.bounds = [100, 100, 480, 490]; // Array
+dlg.bounds = { x:100, y:100, width:380, height:390 }; // 对象
+dlg.bounds = { left:100, top:100, right:480, bottom:490 }; // 对象
+dlg.bounds = "x:100, y:100, width:380, height:390"; // 字符串
+dlg.bounds = "left:100, top:100, right:480, bottom:490"; // 字符串
+dlg.bounds = [100, 100, 480, 490]; // 数组
 ```
 
-You can access the resulting object as an array with values in the order defined for the type, or as an object with the properties supported for the type.
+你可以将结果对象作为数组访问，数组中的值按照类型的定义顺序排列，或者作为对象访问，对象包含该类型支持的属性。
 
 ---
 
-## Size and location object types
+## 尺寸和位置对象类型
 
-The following objects are the property-value object types, the element properties that create and contain them, and their array and object-property formats.
+以下是属性值对象类型、创建和包含它们的元素属性，以及它们的数组和对象属性格式。
 
 ### Bounds
 
-Defines the boundaries of a window within the screen's coordinate space, or of a user-interface element within the container's coordinate space. Contains an array, [left, top, right, bottom], that defines the coordinates of the upper left and lower right corners of the element.
+定义窗口在屏幕坐标空间中的边界，或用户界面元素在容器坐标空间中的边界。包含一个数组 `[left, top, right, bottom]`，用于定义元素左上角和右下角的坐标。
 
-A `Bounds` object is created when you set an element's `bounds` property, and this property returns a `Bounds` object.
+当你设置元素的 `bounds` 属性时，会创建一个 `Bounds` 对象，该属性返回一个 `Bounds` 对象。
 
-- An object must contain properties named `left`, `top`, `right`, `bottom`, or `x`, `y`, `width`, `height`.
-- An array must have values in the order [left, top, right, bottom].
+- 对象必须包含名为 `left`、`top`、`right`、`bottom` 或 `x`、`y`、`width`、`height` 的属性。
+- 数组必须按顺序包含值 `[left, top, right, bottom]`。
 
 ---
 
 ### Dimension
 
-Defines the size of a Window or user-interface element. Contains an array, `[ width, height ]`, that defines the element's size in pixels.
+定义窗口或用户界面元素的大小。包含一个数组 `[width, height]`，用于定义元素的像素大小。
 
-A `Dimension` object is created when you set an element's size or `preferredSize` property. (A `preferredSize` of -1 causes the size to be calculated automatically.)
+当你设置元素的 `size` 或 `preferredSize` 属性时，会创建一个 `Dimension` 对象。（`preferredSize` 为 -1 时，大小会自动计算。）
 
-- An object must contain properties named `width` and `height`.
-- An array must have values in the order `[ width, height ]`.
+- 对象必须包含名为 `width` 和 `height` 的属性。
+- 数组必须按顺序包含值 `[width, height]`。
 
 ---
 
 ### Margins
 
-Defines the number of pixels between the edges of a container and its outermost child elements. Contains an array `[ left, top, right, bottom ]` whose elements define the margins between the left edge of a container and its leftmost child element, and so on.
+定义容器边缘与其最外层子元素之间的像素数。包含一个数组 `[left, top, right, bottom]`，其元素定义了容器左边缘与其最左侧子元素之间的边距，依此类推。
 
-A `Margins` object is created when you set an element's `margins` property.
+当你设置元素的 `margins` 属性时，会创建一个 `Margins` 对象。
 
-- An object must contain properties named `left`, `top`, `right`, and `bottom`.
-- An array must have values in the order [ `left`, `top`, `right`, `bottom` ].
+- 对象必须包含名为 `left`、`top`、`right` 和 `bottom` 的属性。
+- 数组必须按顺序包含值 `[left, top, right, bottom]`。
 
-You can also set the margins property to a number; all of the array values are then set to this number.
+你也可以将 `margins` 属性设置为一个数字；此时数组中的所有值都将设置为该数字。
 
 ---
 
 ### Point
 
-Defines the location of a `Window` or user-interface element. Contains an array, `[ x, y ]`, whose values represent the origin point of the element as horizontal and vertical pixel offsets from the origin of the element's coordinate space.
+定义窗口或用户界面元素的位置。包含一个数组 `[x, y]`，其值表示元素的原点作为水平和垂直像素偏移量，从元素坐标空间的原点开始。
 
-A `Point` object is created when you set an element's location property.
+当你设置元素的 `location` 属性时，会创建一个 `Point` 对象。
 
-- An object must contain properties named `x` and `y`.
-- An array must have values in the order `[ x, y ]`.
+- 对象必须包含名为 `x` 和 `y` 的属性。
+- 数组必须按顺序包含值 `[x, y]`。

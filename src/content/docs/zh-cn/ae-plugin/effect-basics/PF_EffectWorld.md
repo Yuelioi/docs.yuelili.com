@@ -3,102 +3,102 @@ title: PF_EffectWorld
 ---
 # PF_EffectWorld / PF_LayerDef
 
-After Effects represents images using PF_EffectWorlds, also called PF_LayerDefs.
+After Effects 使用 PF_EffectWorlds（也称为 PF_LayerDefs）来表示图像。
 
 ---
 
-## PF_EffectWorld Structure
+## PF_EffectWorld 结构
 
-|        Item        |                                                                    描述                                                                     |
-|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| `world_flags`      | Currently, the only flags are:                                                                                                                     |
-|                    | - `PF_WorldFlag_DEEP` - set if the world is 16-bpc                                                                                                 |
-|                    | - `PF_WorldFlag_WRITEABLE` - indicates that you are allowed to alter the image data of the world.                                                  |
-|                    | Normally effects cannot alter input image data; only output.                                                                                       |
-| `data`             | Pointer to image data, stored as a `PF_PixelPtr`.                                                                                                  |
-|                    | Do not access directly; use the [PF_PixelPtr Accessor Macros](#pf_pixelptr-accessor-macros).                                                       |
-|                    | Image data in After Effects is always organized in sequential words each containing Alpha, Red, Green, Blue from the low byte to the high byte.    |
-| `rowbytes`         | The length, in bytes, of each row in the image's block of pixels.                                                                                  |
-|                    | The block of pixels contains height lines each with width pixels followed by some bytes of padding.                                                |
-|                    | The width pixels (times four, because each pixel is four bytes long) plus optional extra padding adds up to rowbytes bytes.                        |
-|                    | Use this value to traverse the image data.                                                                                                         |
-|                    | Platform-specific padding at the end of rows makes it unwise to traverse the entire buffer.                                                        |
-|                    | Instead, find the beginning of each row using height and rowbytes.                                                                                 |
-|                    | !!! note                                                                                                                                           |
-|                    |      This value does not vary based on whether field rendering is active.                                                                          |
-|                    | !!! note                                                                                                                                           |
-|                    |      Input and output worlds with the same dimensions can use different rowbytes values.                                                           |
-| `width`            | Width and height of the pixel buffer.                                                                                                              |
+|        项         |                                                                    描述                                                                     |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `world_flags`      | 目前，唯一的标志是：                                                                                                                     |
+|                    | - `PF_WorldFlag_DEEP` - 如果世界是 16-bpc，则设置此标志                                                                                                 |
+|                    | - `PF_WorldFlag_WRITEABLE` - 表示允许您更改世界的图像数据。                                                  |
+|                    | 通常效果无法更改输入图像数据；只能更改输出。                                                                                       |
+| `data`             | 指向图像数据的指针，存储为 `PF_PixelPtr`。                                                                                                  |
+|                    | 不要直接访问；使用 [PF_PixelPtr 访问宏](#pf_pixelptr-accessor-macros)。                                                       |
+|                    | After Effects 中的图像数据始终按顺序组织，每个字包含 Alpha、Red、Green、Blue，从低字节到高字节。    |
+| `rowbytes`         | 图像像素块中每行的长度（以字节为单位）。                                                                                  |
+|                    | 像素块包含高度行，每行有宽度像素，后跟一些填充字节。                                                |
+|                    | 宽度像素（乘以四，因为每个像素是四个字节长）加上可选的额外填充加起来等于 rowbytes 字节。                        |
+|                    | 使用此值遍历图像数据。                                                                                                         |
+|                    | 行尾的平台特定填充使得遍历整个缓冲区是不明智的。                                                        |
+|                    | 相反，使用高度和 rowbytes 找到每行的开头。                                                                                 |
+|                    | !!! 注意                                                                                                                                           |
+|                    |      此值不会因是否启用场渲染而变化。                                                                          |
+|                    | !!! 注意                                                                                                                                           |
+|                    |      具有相同维度的输入和输出世界可以使用不同的 rowbytes 值。                                                           |
+| `width`            | 像素缓冲区的宽度和高度。                                                                                                              |
 | `height`           |                                                                                                                                                    |
-| `extent_hint`      | The smallest rectangle encompassing all opaque (non-zero alpha) pixels in the layer.                                                               |
-|                    | This defines the area which needs to be output.                                                                                                    |
-|                    | If your plug-in varies with extent (like a diffusion dither), ignore this and render the full frame each time.                                     |
-| `pix_aspect_ratio` | The pixel aspect ratio expressed as a `PF_Rational`.                                                                                               |
-|                    | !!! note                                                                                                                                           |
-|                    |      Effects can use this value for checked out layers, but must use `PF_InData.pixel_aspect_ratio` for the layer to which they're applied. Sorry. |
-| `platform_ref`     | No longer used in CS5.                                                                                                                             |
-|                    | Platform-specific reference information.                                                                                                           |
-|                    | On Windows, this contains an opaque value.                                                                                                         |
-|                    | On macOS, `PF_GET_PLATFORM_REFS` provides a `CGrafPtr` and a `GDeviceHandle` from a `PF_EffectWorld`.                                              |
-|                    | !!! note                                                                                                                                           |
-|                    |      You cannot acquire a `platform_ref` during `PF_Cmd_GLOBAL_SETUP`, as there isn't any output context yet. Patience, my pet.                    |
-| `dephault`         | For layer parameters only.                                                                                                                         |
-|                    | Either `PF_LayerDefault_MYSELF` or `PF_LayerDefault_NONE`.                                                                                         |
+| `extent_hint`      | 包含图层中所有不透明（非零 Alpha）像素的最小矩形。                                                               |
+|                    | 这定义了需要输出的区域。                                                                                                    |
+|                    | 如果您的插件随范围变化（如扩散抖动），请忽略此值并每次渲染完整帧。                                     |
+| `pix_aspect_ratio` | 像素宽高比，表示为 `PF_Rational`。                                                                                               |
+|                    | !!! 注意                                                                                                                                           |
+|                    |      效果可以使用此值来检查图层，但必须使用 `PF_InData.pixel_aspect_ratio` 来应用于它们所应用的图层。抱歉。 |
+| `platform_ref`     | 在 CS5 中不再使用。                                                                                                                             |
+|                    | 平台特定的参考信息。                                                                                                           |
+|                    | 在 Windows 上，此值包含一个不透明的值。                                                                                                         |
+|                    | 在 macOS 上，`PF_GET_PLATFORM_REFS` 从 `PF_EffectWorld` 提供 `CGrafPtr` 和 `GDeviceHandle`。                                              |
+|                    | !!! 注意                                                                                                                                           |
+|                    |      在 `PF_Cmd_GLOBAL_SETUP` 期间无法获取 `platform_ref`，因为此时还没有输出上下文。耐心点，亲爱的。                    |
+| `dephault`         | 仅用于图层参数。                                                                                                                         |
+|                    | 可以是 `PF_LayerDefault_MYSELF` 或 `PF_LayerDefault_NONE`。                                                                                         |
 
 ---
 
-## New In 16.0
+## 16.0 新增内容
 
-During PF_Cmd_SMART_RENDER_GPU, PF_LayerDef will be filled out the same as it is for regular CPU renders, but PF_LayerDef.data will be null; all other fields will be valid.
-
----
-
-## Rowbytes In PF_EffectWorlds
-
-Don't assume that you can get to the next scanline of a `PF_EffectWorld` using `(width * sizeof(current_pixel_type)) + 4`, or whatever; use the PF_EffectWorld's `rowbytes` instead.
-
-Never write outside the indicated region of a PF_EffectWorld; this can corrupt cached image buffers that don't belong to you.
-
-To test whether your effects are honoring the `PF_EffectWorld>rowbytes`, apply the Grow Bounds effect *after* your effect.
-
-The output buffer will have larger rowbytes than the input (though it will still have the same logical size).
+在 `PF_Cmd_SMART_RENDER_GPU` 期间，`PF_LayerDef` 将与常规 CPU 渲染一样填充，但 `PF_LayerDef.data` 将为 null；所有其他字段将有效。
 
 ---
 
-## Byte Alignment
+## PF_EffectWorlds 中的 Rowbytes
 
-The pixels in a `PF_EffectWorld` are not guaranteed to be 16-byte-aligned. An effect may get a subregion of a larger PF_EffectWorld. Users of Apple's sample code for pixel processing optimization, you have been warned.
+不要假设您可以使用 `(width * sizeof(current_pixel_type)) + 4` 或其他方式到达 `PF_EffectWorld` 的下一行；请改用 `PF_EffectWorld` 的 `rowbytes`。
 
-Beyond 8-bit per channel color, After Effects supports 16 bit and 32-bit float per-channel color.
+切勿在 `PF_EffectWorld` 的指定区域之外写入；这可能会损坏不属于您的缓存图像缓冲区。
 
-Effects will never receive input and output worlds with differing bit depths, nor will they receive worlds with higher bit depth than they have claimed to be able to handle.
+要测试您的效果是否遵守 `PF_EffectWorld>rowbytes`，请在您的效果之后应用 Grow Bounds 效果。
 
----
-
-## Accessor Macros For Opaque (Data Type) Pixels
-
-Use the following macros to access the data within (opaque) PF_PixelPtrs.
-
-It is, emphatically, *not* safe to simply cast pointers of one type into another! To make it work at all requires a cast, and there's nothing that prevents you from casting it incorrectly. We may change its implementation at a later date (at which time you'll thank us for forcing this level of abstraction).
+输出缓冲区的 rowbytes 将比输入缓冲区大（尽管它仍具有相同的逻辑大小）。
 
 ---
 
-## PF_PixelPtr Accessor Macros
+## 字节对齐
 
-|         Macro         |                                                                                        Purpose                                                                                         |
-|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `PF_GET_PIXEL_DATA16` | Obtain a pointer to a 16-bpc pixel within the specified world.                                                                                                                         |
-|                       | The returned pixel pointer will be NULL if the world is not 16-bpc.                                                                                                                    |
-|                       | The second parameter is optional; if it is not NULL, the returned pixel will be an interpretation of the values in the passed-in pixel, as if it were in the specified PF_EffectWorld. |
+`PF_EffectWorld` 中的像素不保证是 16 字节对齐的。效果可能会获得较大 `PF_EffectWorld` 的子区域。使用 Apple 的像素处理优化示例代码的用户，请注意。
+
+除了每通道 8 位颜色外，After Effects 还支持每通道 16 位和 32 位浮点颜色。
+
+效果永远不会接收到具有不同位深度的输入和输出世界，也不会接收到比它们声称能够处理的位深度更高的世界。
+
+---
+
+## 不透明（数据类型）像素的访问宏
+
+使用以下宏访问（不透明）`PF_PixelPtr` 中的数据。
+
+强烈建议不要简单地将一种类型的指针强制转换为另一种类型！要使它工作，需要强制转换，但没有任何东西可以防止您错误地转换它。我们可能会在以后更改其实现（届时您会感谢我们强制这种抽象级别）。
+
+---
+
+## PF_PixelPtr 访问宏
+
+|         宏         |                                                                                        用途                                                                                         |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `PF_GET_PIXEL_DATA16` | 获取指定世界中 16-bpc 像素的指针。                                                                                                                         |
+|                       | 如果世界不是 16-bpc，则返回的像素指针将为 NULL。                                                                                                                    |
+|                       | 第二个参数是可选的；如果它不是 NULL，则返回的像素将是对传入像素值的解释，就像它在指定的 `PF_EffectWorld` 中一样。 |
 |                       | <pre lang="cpp">PF_GET_PIXEL_DATA16 (<br/>  PF_EffectWorld wP,<br/>  PF_PixelPtr    pP0,<br/>  PF_Pixel16     \*outPP);</pre>                                                          |
-| `PF_GET_PIXEL_DATA8`  | Obtain a pointer to a 8-bpc pixel within the specified world.                                                                                                                          |
-|                       | The returned pixel pointer will be NULL if the world is not 8- bpc.                                                                                                                    |
-|                       | The second parameter is optional; if it is not NULL, the returned pixel will be an interpretation of the values in the passed-in pixel, as if it were in the specified PF_EffectWorld. |
+| `PF_GET_PIXEL_DATA8`  | 获取指定世界中 8-bpc 像素的指针。                                                                                                                          |
+|                       | 如果世界不是 8-bpc，则返回的像素指针将为 NULL。                                                                                                                    |
+|                       | 第二个参数是可选的；如果它不是 NULL，则返回的像素将是对传入像素值的解释，就像它在指定的 `PF_EffectWorld` 中一样。 |
 |                       | <pre lang="cpp">PF_GET_PIXEL_DATA8 (<br/>  PF_EffectWorld wP,<br/>  PF_PixelPtr    pP0,<br/>  PF_Pixel8      \*outPP);</pre>                                                           |
 
-Think of `PF_GET_PIXEL_DATA16` and `PF_GET_PIXEL_DATA8` as safe (ahem) casting routines.
+将 `PF_GET_PIXEL_DATA16` 和 `PF_GET_PIXEL_DATA8` 视为安全的（咳咳）强制转换例程。
 
-The code required is actually very simple to get a `PF_Pixel16*` out of the PF_EffectWorld output:
+获取 `PF_Pixel16*` 所需的代码实际上非常简单：
 
 ```cpp
 {
@@ -108,6 +108,6 @@ The code required is actually very simple to get a `PF_Pixel16*` out of the PF_E
 }
 ```
 
-This returns deep_pixelP as NULL if the world does not have deep pixels.
+如果世界没有深像素，则返回的 `deep_pixelP` 为 NULL。
 
-The second parameter is not used very often and should be passed as NULL; pass a PF_PixelPtr that is *not* contained in a PF_EffectWorld to coerce it to the depth of that PF_EffectWorld).
+第二个参数不常用，应传递为 NULL；传递一个不包含在 `PF_EffectWorld` 中的 `PF_PixelPtr` 以强制将其转换为该 `PF_EffectWorld` 的深度）。

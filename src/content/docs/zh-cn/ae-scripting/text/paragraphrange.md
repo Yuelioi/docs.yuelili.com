@@ -1,7 +1,7 @@
 ---
 title: paragraphrange
 ---
-# ParagraphRange object
+# ParagraphRange 对象
 
 `app.project.item(index).layer(index).text.sourceText.value.paragraphRange(paragraphIndexStart, [signedParagraphIndexEnd])`
 
@@ -11,24 +11,24 @@ title: paragraphrange
 
 #### 描述
 
-The ParagraphRange object is an accessor to a paragraph range of the [TextDocument object](../textdocument) instance it was created from.
+ParagraphRange 对象是从 [TextDocument 对象](../textdocument) 实例创建的段落范围的访问器。
 
-- The [characterStart](#paragraphrangecharacterstart) attribute will report the first character index of the range.
-- The [characterEnd](#paragraphrangecharacterend) attribute will report the (last + 1) character index of the range, such that ([characterEnd](#paragraphrangecharacterend) - [characterStart](#paragraphrangecharacterstart)) represents the number of characters in the range.
-- The only time these two properties will equal will on an empty last paragraph of the [TextDocument object](../textdocument).
+- [characterStart](#paragraphrangecharacterstart) 属性将报告范围的第一个字符索引。
+- [characterEnd](#paragraphrangecharacterend) 属性将报告范围的（最后一个 + 1）字符索引，因此 ([characterEnd](#paragraphrangecharacterend) - [characterStart](#paragraphrangecharacterstart)) 表示范围内的字符数。
+- 这两个属性唯一相等的情况是在 [TextDocument 对象](../textdocument) 的最后一个空段落上。
 
-When accessed, the ParagraphRange object will check that effective [characterStart](#paragraphrangecharacterstart) and effective [characterEnd](#paragraphrangecharacterend) of the range remains valid for the current span of the related [TextDocument object](../textdocument). This is the same rule as applied when the ParagraphRange was created, but because the length of the related [TextDocument object](../textdocument) can change through the addition or removal of characters, the effective [characterStart](#paragraphrangecharacterstart) and effective [characterEnd](#paragraphrangecharacterend) may no longer be valid. In this situation an exception will be thrown on access, either read or write. The [isRangeValid](#paragraphrangeisrangevalid) attribute will return `false` if the effective range is no longer valid.
+当访问时，ParagraphRange 对象将检查有效 [characterStart](#paragraphrangecharacterstart) 和有效 [characterEnd](#paragraphrangecharacterend) 是否仍然适用于相关 [TextDocument 对象](../textdocument) 的当前范围。这与创建 ParagraphRange 时应用的规则相同，但由于相关 [TextDocument 对象](../textdocument) 的长度可能通过添加或删除字符而改变，因此有效 [characterStart](#paragraphrangecharacterstart) 和有效 [characterEnd](#paragraphrangecharacterend) 可能不再有效。在这种情况下，访问时将抛出异常，无论是读取还是写入。如果有效范围不再有效，[isRangeValid](#paragraphrangeisrangevalid) 属性将返回 `false`。
 
-Note that if the [TextDocument object](../textdocument) length changes, the character range could become valid again.
+请注意，如果 [TextDocument 对象](../textdocument) 的长度发生变化，字符范围可能会再次变为有效。
 
-As a convenience, the function [ParagraphRange.characterRange()](#paragraphrangecharacterrange) can be invoked which will return a [CharacterRange object](../characterrange) instance initialized from [characterStart](#paragraphrangecharacterstart) and [characterEnd](#paragraphrangecharacterend).
-This instance becomes independent of the ParagraphRange instance it came from so subsequent changes to the ParagraphRange limits are not communicated to the [CharacterRange object](../characterrange) instance.
+为了方便起见，可以调用 [ParagraphRange.characterRange()](#paragraphrangecharacterrange) 函数，该函数将返回从 [characterStart](#paragraphrangecharacterstart) 和 [characterEnd](#paragraphrangecharacterend) 初始化的 [CharacterRange 对象](../characterrange) 实例。
+此实例与它来自的 ParagraphRange 实例独立，因此 ParagraphRange 限制的后续更改不会传递到 [CharacterRange 对象](../characterrange) 实例。
 
-For performance reasons, when accessing multiple attributes it is adviseable to retrieve the [CharacterRange object](../characterrange) once and re-use it rather than create a new one each time.
+出于性能原因，当访问多个属性时，建议检索一次 [CharacterRange 对象](../characterrange) 并重复使用它，而不是每次都创建一个新的实例。
 
 #### 示例
 
-This increases the font size of the first paragraph in the TextDocument, and set the rest of the paragraphs to fontSize 40.
+以下示例将 TextDocument 中第一段的字体大小增加，并将其余段落的字体大小设置为 40。
 
 ```javascript
 var textDocument = app.project.item(index).layer(index).property("Source Text").value;
@@ -50,13 +50,13 @@ textDocument.paragraphRange(1,-1).characterRange().fontSize = 40;
 
 #### 描述
 
-The Text layer range calculated character end value.
+文本图层范围计算的字符结束值。
 
-Throws an exception on access if the effective value would exceed the bounds of the related [TextDocument object](../textdocument).
+如果有效值超出相关 [TextDocument 对象](../textdocument) 的范围，访问时将抛出异常。
 
 #### 类型
 
-Unsigned integer; 只读.
+无符号整数；只读。
 
 ---
 
@@ -66,13 +66,13 @@ Unsigned integer; 只读.
 
 #### 描述
 
-The Text layer range calculated character start value.
+文本图层范围计算的字符起始值。
 
-Throws an exception on access if the effective value would exceed the bounds of the related [TextDocument object](../textdocument).
+如果有效值超出相关 [TextDocument 对象](../textdocument) 的范围，访问时将抛出异常。
 
 #### 类型
 
-Unsigned integer; 只读.
+无符号整数；只读。
 
 ---
 
@@ -82,11 +82,11 @@ Unsigned integer; 只读.
 
 #### 描述
 
-Returns `true` if the current range is within the bounds of the related [TextDocument object](../textdocument), otherwise `false`.
+如果当前范围在相关 [TextDocument 对象](../textdocument) 的范围内，则返回 `true`，否则返回 `false`。
 
 #### 类型
 
-Boolean; 只读.
+布尔值；只读。
 
 ---
 
@@ -98,19 +98,19 @@ Boolean; 只读.
 
 #### 描述
 
-Returns a [CharacterRange object](../characterrange) initialized from [characterStart](#paragraphrangecharacterstart) and [characterEnd](#paragraphrangecharacterend).
+返回从 [characterStart](#paragraphrangecharacterstart) 和 [characterEnd](#paragraphrangecharacterend) 初始化的 [CharacterRange 对象](../characterrange)。
 
-Will throw an exception if [isRangeValid](#paragraphrangeisrangevalid) would return `false`.
+如果 [isRangeValid](#paragraphrangeisrangevalid) 返回 `false`，将抛出异常。
 
-The returned instance, once created, is independent of subsequent changes to the ParagraphRange it came from.
+返回的实例一旦创建，就独立于它来自的 ParagraphRange 的后续更改。
 
 #### 参数
 
-None.
+无。
 
 #### 返回
 
-[CharacterRange object](../characterrange);
+[CharacterRange 对象](../characterrange)；
 
 ---
 
@@ -120,14 +120,14 @@ None.
 
 #### 描述
 
-Returns a string with the parameters used to create the ParagraphRange instance, e.g. `"ParagraphRange(0,-1)"`
+返回一个字符串，其中包含用于创建 ParagraphRange 实例的参数，例如 `"ParagraphRange(0,-1)"`。
 
-This may be safely called on an instance where [isRangeValid](#paragraphrangeisrangevalid) returns `false`.
+即使 [isRangeValid](#paragraphrangeisrangevalid) 返回 `false`，也可以安全地调用此方法。
 
 #### 参数
 
-None.
+无。
 
 #### 返回
 
-String;
+字符串；

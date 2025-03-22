@@ -1,15 +1,15 @@
 ---
-title: defining-entry-points-for-indirect-access
+title: 定义间接访问的入口点
 ---
-# Defining entry points for indirect access
+# 定义间接访问的入口点
 
-The C-client object interface for external libraries allows your C or C++ shared-library code to define, create, use, and manage JavaScript objects.
+用于外部库的 C 客户端对象接口允许您的 C 或 C++ 共享库代码定义、创建、使用和管理 JavaScript 对象。
 
 ---
 
-## Entry Points
+## 入口点
 
-The following entry points are required if you wish to use the object interface:
+如果您希望使用对象接口，则需要以下入口点：
 
 ### ESClientInterface()
 
@@ -17,23 +17,23 @@ The following entry points are required if you wish to use the object interface:
 
 #### 描述
 
-Your library must define this global function in order to use the object interface to JavaScript. The function is called twice in each session, immediately upon loading the library, and again when unloading it.
+您的库必须定义此全局函数才能使用 JavaScript 的对象接口。该函数在每个会话中调用两次，一次是在加载库时立即调用，另一次是在卸载库时调用。
 
 #### 参数
 
 | 参数 |                                                                                                         描述                                                                                                          |
 |-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `kReason` | The reason for this call, one of these constants:                                                                                                                                                                            |
-|           | - `kSoCClient_init`: The function is being called for initialization upon load.                                                                                                                                              |
-|           | - `kSoCClient_term`.: The function is being called for termination upon unload.                                                                                                                                              |
-| `pServer` | A pointer to an [SoServerInterface](#soserverinterface) containing function pointers for the entry points, which enable the shared-library code to call into JavaScript to create and access JavaScript classes and objects. |
-|           | The shared-library code is responsible for storing this structure between the initialization and termination call, and retrieving it to access the functions.                                                                |
-| `hServer` | An [Support structures](#support-structures) reference for this shared library. The server is an object factory that creates and manages [Support structures](#support-structures) objects.                                  |
-|           | The shared-library code is responsible for storing this structure between the initialization and termination calls. You must pass it to [taggedDataInit()](#taggeddatainit) and [taggedDataFree()](#taggeddatafree).         |
+| `kReason` | 此调用的原因，以下常量之一：                                                                                                                                                                            |
+|           | - `kSoCClient_init`: 函数在加载时被调用以进行初始化。                                                                                                                                              |
+|           | - `kSoCClient_term`.: 函数在卸载时被调用以进行终止。                                                                                                                                              |
+| `pServer` | 指向 [SoServerInterface](#soserverinterface) 的指针，包含入口点的函数指针，使共享库代码能够调用 JavaScript 以创建和访问 JavaScript 类和对象。 |
+|           | 共享库代码负责在初始化和终止调用之间存储此结构，并在访问函数时检索它。                                                                |
+| `hServer` | 此共享库的 [支持结构](#support-structures) 引用。服务器是一个对象工厂，用于创建和管理 [支持结构](#support-structures) 对象。                                  |
+|           | 共享库代码负责在初始化和终止调用之间存储此结构。您必须将其传递给 [taggedDataInit()](#taggeddatainit) 和 [taggedDataFree()](#taggeddatafree)。         |
 
 #### 返回
 
-Returns an error code, `kESErrOK` on success.
+返回错误代码，成功时为 `kESErrOK`。
 
 ---
 
@@ -43,78 +43,76 @@ Returns an error code, `kESErrOK` on success.
 
 #### 描述
 
-Provides a memory allocation routine to be used by JavaScript for managing memory associated with the library's objects.
+提供 JavaScript 用于管理与库对象相关的内存的内存分配例程。
 
 #### 参数
 
 | 参数 |           描述            |
 | --------- | -------------------------------- |
-| `nbytes`  | The number of bytes to allocate. |
+| `nbytes`  | 要分配的字节数。 |
 
 #### 返回
 
-A pointer to the allocated block of memory.
+指向分配的内存块的指针。
 
 ---
 
-## Shared-library function API
+## 共享库函数 API
 
-Your shared-library C/C++ code defines its interface to JavaScript in two sets of functions, collected in [SoServerInterface](#soserverinterface) and [SoObjectInterface](#soobjectinterface) function-pointer structures.
+您的共享库 C/C++ 代码通过两组函数定义其与 JavaScript 的接口，这些函数收集在 [SoServerInterface](#soserverinterface) 和 [SoObjectInterface](#soobjectinterface) 函数指针结构中。
 
-Return values from most functions are integer constants. The error code `kESErrOK == 0` indicates success.
+大多数函数的返回值是整数常量。错误代码 `kESErrOK == 0` 表示成功。
 
 ### SoServerInterface
 
-`SoServerInterface` is a structure of function pointers which enable the shared-library code to call
+`SoServerInterface` 是一个函数指针结构，使共享库代码能够调用 JavaScript 对象。它在加载库时传递给全局 ESClientInterface() 函数进行初始化，并在卸载库时再次传递给该函数进行清理。在这些调用之间，您的共享库代码必须存储该结构并使用它来访问通信函数。
 
-JavaScript objects. It is passed to the global ESClientInterface() function for initialization when the library is loaded, and again for cleanup when the library is unloaded. Between these calls, your shared-library code must store the structure and use it to access the communication functions.
+您可以在 C 代码中为每个对象和类存储信息。推荐的方法是在 initialize() 期间创建一个数据结构，并在 finalize() 期间释放它。然后，您可以使用 setClientData() 和 getClientData() 访问该数据。
 
-You can store information for every object and class in your C code. The recommended method is to create a data structure during the initialize() and free it during finalize(). You can then access that data with setClientData() and getClientData().
-
-The SoServerInterface structure contains these function pointers:
+SoServerInterface 结构包含以下函数指针：
 
 ```cpp
 SoServerInterface {
     SoServerDumpServer_f
     SoServerDumpObject_f
 
-    dumpServer; //debugging, show server in console
-    dumpObject; //debugging, show object in console
+    dumpServer; //调试，在控制台中显示服务器
+    dumpObject; //调试，在控制台中显示对象
 
     SoServerAddClass_f
 
-    addClass; //define a JS class
+    addClass; //定义一个 JS 类
 
     SoServerAddMethod_f
     SoServerAddMethods_f
     SoServerAddProperty_f
     SoServerAddProperties_f
 
-    addMethod; // define a method
-    addMethods; // define a set of methods
-    addProperty; // define a property
-    addProperties; // define a set of properties
+    addMethod; // 定义一个方法
+    addMethods; // 定义一组方法
+    addProperty; // 定义一个属性
+    addProperties; // 定义一组属性
 
     SoServerGetClass_f
     SoServerGetServer_f
 
-    getClass; // get class for an instance
-    getServer; // get server for an instance
+    getClass; // 获取实例的类
+    getServer; // 获取实例的服务器
 
     SoServerSetClientData_f
     SoServerGetClientData_f
 
-    setClientData; //set data in instance
-    getClientData; //get data from instance
+    setClientData; //在实例中设置数据
+    getClientData; //从实例中获取数据
 
     SoServerEval_f
-    eval; // call JavaScript interpreter
-    SoServerTaggedDataInit_f taggedDataInit; // init tagged data
-    SoServerTaggedDataFree_f taggedDataFree; // free tagged data
+    eval; // 调用 JavaScript 解释器
+    SoServerTaggedDataInit_f taggedDataInit; // 初始化标记数据
+    SoServerTaggedDataFree_f taggedDataFree; // 释放标记数据
 }
 ```
 
-These functions allow your C/C++ shared library code to create, modify, and access JavaScript classes and objects. The functions must conform to the following type definitions.
+这些函数允许您的 C/C++ 共享库代码创建、修改和访问 JavaScript 类和对象。这些函数必须符合以下类型定义。
 
 #### dumpServer()
 
@@ -122,17 +120,17 @@ These functions allow your C/C++ shared library code to create, modify, and acce
 
 ##### 描述
 
-Prints the contents of this server to the JavaScript Console in the ExtendScript Toolkit, for debugging.
+将此服务器的内容打印到 ExtendScript Toolkit 中的 JavaScript 控制台，用于调试。
 
 ##### 参数
 
 | 参数 |                                                                                   描述                                                                                   |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `hServer` | The [Support structures](#support-structures) reference for this shared library, as passed to your global [ESClientInterface()](#esclientinterface) function on initialization. |
+| `hServer` | 此共享库的 [支持结构](#support-structures) 引用，作为初始化时传递给全局 [ESClientInterface()](#esclientinterface) 函数的参数。 |
 
 ##### 返回
 
-Returns an error code, `kESErrOK` on success.
+返回错误代码，成功时为 `kESErrOK`。
 
 ---
 
@@ -142,17 +140,17 @@ Returns an error code, `kESErrOK` on success.
 
 ##### 描述
 
-Prints the contents of this object to the JavaScript Console in the ExtendScript Toolkit, for debugging.
+将此对象的内容打印到 ExtendScript Toolkit 中的 JavaScript 控制台，用于调试。
 
 ##### 参数
 
 | 参数 |                                      描述                                       |
 | --------- | -------------------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
+| `hObject` | 此类的实例的 [支持结构](#support-structures) 引用。 |
 
 ##### 返回
 
-Returns an error code, `kESErrOK` on success.
+返回错误代码，成功时为 `kESErrOK`。
 
 ---
 
@@ -162,19 +160,19 @@ Returns an error code, `kESErrOK` on success.
 
 ##### 描述
 
-Creates a new JavaScript class.
+创建一个新的 JavaScript 类。
 
 ##### 参数
 
 |     参数      |                                                                                   描述                                                                                   |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `hServer`          | The [Support structures](#support-structures) reference for this shared library, as passed to your global [ESClientInterface()](#esclientinterface) function on initialization. |
-| `name`             | String. The unique name of the new class. The name must begin with an uppercase alphabetic character.                                                                           |
-| `pObjectInterface` | A pointer to an [SoObjectInterface](#soobjectinterface). A structure containing pointers to the object interface methods for instances of this class.                           |
+| `hServer`          | 此共享库的 [支持结构](#support-structures) 引用，作为初始化时传递给全局 [ESClientInterface()](#esclientinterface) 函数的参数。 |
+| `name`             | 字符串。新类的唯一名称。名称必须以大写字母开头。                                                                           |
+| `pObjectInterface` | 指向 [SoObjectInterface](#soobjectinterface) 的指针。包含此类的实例的对象接口方法的结构。                           |
 
 ##### 返回
 
-Returns an error code, `kESErrOK` on success.
+返回错误代码，成功时为 `kESErrOK`。
 
 ---
 
@@ -184,20 +182,20 @@ Returns an error code, `kESErrOK` on success.
 
 ##### 描述
 
-Adds new method to an instance.
+向实例添加新方法。
 
 ##### 参数
 
 | 参数 |                                      描述                                       |
 | --------- | -------------------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
-| `name`    | String. The unique name of the new method.                                             |
-| `id`      | Number. The unique identifier for the new method.                                      |
-| `desc`    | String. A descriptive string for the new method.                                       |
+| `hObject` | 此类的实例的 [支持结构](#support-structures) 引用。 |
+| `name`    | 字符串。新方法的唯一名称。                                             |
+| `id`      | 数字。新方法的唯一标识符。                                      |
+| `desc`    | 字符串。新方法的描述性字符串。                                       |
 
 ##### 返回
 
-Returns an error code, `kESErrOK` on success.
+返回错误代码，成功时为 `kESErrOK`。
 
 ---
 
@@ -207,18 +205,18 @@ Returns an error code, `kESErrOK` on success.
 
 ##### 描述
 
-Adds a set of new methods to an instance.
+向实例添加一组新方法。
 
 ##### 参数
 
 | 参数  |                                                描述                                                |
 | ---------- | --------------------------------------------------------------------------------------------------------- |
-| `hObject`  | The [Support structures](#support-structures) reference for an instance of this class.                    |
-| `pNames[]` | [SoCClientName](#socclientname). A structure containing the names and identifiers of methods to be added. |
+| `hObject`  | 此类的实例的 [支持结构](#support-structures) 引用。                    |
+| `pNames[]` | [SoCClientName](#socclientname)。包含要添加的方法的名称和标识符的结构。 |
 
 ##### 返回
 
-Returns an error code, `kESErrOK` on success.
+返回错误代码，成功时为 `kESErrOK`。
 
 ---
 
@@ -228,20 +226,20 @@ Returns an error code, `kESErrOK` on success.
 
 ##### 描述
 
-Adds new property to an instance.
+向实例添加新属性。
 
 ##### 参数
 
 | 参数 |                                      描述                                       |
 | --------- | -------------------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
-| `name`    | String. The unique name of the new property.                                           |
-| `id`      | Number. The unique identifier for the new property.                                    |
-| `desc`    | String. Optional. A descriptive string for the new property, or null.                  |
+| `hObject` | 此类的实例的 [支持结构](#support-structures) 引用。 |
+| `name`    | 字符串。新属性的唯一名称。                                           |
+| `id`      | 数字。新属性的唯一标识符。                                    |
+| `desc`    | 字符串。可选。新属性的描述性字符串，或 null。                  |
 
 ##### 返回
 
-Returns an error code, `kESErrOK` on success.
+返回错误代码，成功时为 `kESErrOK`。
 
 ---
 
@@ -251,18 +249,18 @@ Returns an error code, `kESErrOK` on success.
 
 ##### 描述
 
-Adds a set of new properties to an instance.
+向实例添加一组新属性。
 
 ##### 参数
 
 | 参数  |                                                 描述                                                  |
 | ---------- | ------------------------------------------------------------------------------------------------------------ |
-| `hObject`  | The [Support structures](#support-structures) reference for an instance of this class.                       |
-| `pNames[]` | [SoCClientName](#socclientname). A structure containing the names and identifiers of properties to be added. |
+| `hObject`  | 此类的实例的 [支持结构](#support-structures) 引用。                       |
+| `pNames[]` | [SoCClientName](#socclientname)。包含要添加的属性的名称和标识符的结构。 |
 
 ##### 返回
 
-Returns an error code, `kESErrOK` on success.
+返回错误代码，成功时为 `kESErrOK`。
 
 ---
 
@@ -272,19 +270,19 @@ Returns an error code, `kESErrOK` on success.
 
 ##### 描述
 
-Retrieves this object's parent class name.
+检索此对象的父类名称。
 
 ##### 参数
 
 | 参数 |                                      描述                                       |
 | --------- | -------------------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
-| `name`    | String. A buffer in which to return the unique name of the class.                      |
-| `name_1`  | Number. The size of the name buffer.                                                   |
+| `hObject` | 此类的实例的 [支持结构](#support-structures) 引用。 |
+| `name`    | 字符串。用于返回类的唯一名称的缓冲区。                      |
+| `name_1`  | 数字。名称缓冲区的大小。                                                   |
 
 ##### 返回
 
-Returns an error code, `kESErrOK` on success.
+返回错误代码，成功时为 `kESErrOK`。
 
 ---
 
@@ -294,19 +292,19 @@ Returns an error code, `kESErrOK` on success.
 
 ##### 描述
 
-Retrieves the interface methods for this object, and the server object that manages it.
+检索此对象的接口方法以及管理它的服务器对象。
 
 ##### 参数
 
 |      参数      |                                             描述                                              |
 | ------------------- | ---------------------------------------------------------------------------------------------------- |
-| `hObject`           | The [Support structures](#support-structures) reference for an instance of this class.               |
-| `phServer`          | A buffer in which to return the [Support structures](#support-structures) reference for this object. |
-| `ppServerInterface` | A buffer in which to return the [SoObjectInterface](#soobjectinterface) reference for this object.   |
+| `hObject`           | 此类的实例的 [支持结构](#support-structures) 引用。               |
+| `phServer`          | 用于返回此对象的 [支持结构](#support-structures) 引用的缓冲区。 |
+| `ppServerInterface` | 用于返回此对象的 [SoObjectInterface](#soobjectinterface) 引用的缓冲区。   |
 
 ##### 返回
 
-Returns an error code, `kESErrOK` on success.
+返回错误代码，成功时为 `kESErrOK`。
 
 ---
 
@@ -316,18 +314,18 @@ Returns an error code, `kESErrOK` on success.
 
 ##### 描述
 
-Sets your own data to be stored with an object.
+设置要与对象一起存储的您自己的数据。
 
 ##### 参数
 
 | 参数 |                                      描述                                       |
 | --------- | -------------------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
-| `pData`   | A pointer to the library-defined data.                                                 |
+| `hObject` | 此类的实例的 [支持结构](#support-structures) 引用。 |
+| `pData`   | 指向库定义数据的指针。                                                 |
 
 ##### 返回
 
-Returns an error code, `kESErrOK` on success.
+返回错误代码，成功时为 `kESErrOK`。
 
 ---
 
@@ -337,18 +335,18 @@ Returns an error code, `kESErrOK` on success.
 
 ##### 描述
 
-Retrieves data that was stored with [setClientData()](#setclientdata).
+检索与 [setClientData()](#setclientdata) 一起存储的数据。
 
 ##### 参数
 
 | 参数 |                                      描述                                       |
 | --------- | -------------------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
-| `pData`   | A buffer in which to return a pointer to the library-defined data.                     |
+| `hObject` | 此类的实例的 [支持结构](#support-structures) 引用。 |
+| `pData`   | 用于返回指向库定义数据的指针的缓冲区。                     |
 
 ##### 返回
 
-Returns an error code, `kESErrOK` on success.
+返回错误代码，成功时为 `kESErrOK`。
 
 ---
 
@@ -358,19 +356,19 @@ Returns an error code, `kESErrOK` on success.
 
 ##### 描述
 
-Calls the JavaScript interpreter to evaluate a JavaScript expression.
+调用 JavaScript 解释器以评估 JavaScript 表达式。
 
 ##### 参数
 
 |   参数   |                                                                                   描述                                                                                   |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `hServer`     | The [Support structures](#support-structures) reference for this shared library, as passed to your global [ESClientInterface()](#esclientinterface) function on initialization. |
-| String        | A string containing the JavaScript expression to evaluate.                                                                                                                      |
-| `pTaggedData` | A pointer to a [TaggedData](#taggeddata) object in which to return the result of evaluation.                                                                                    |
+| `hServer`     | 此共享库的 [支持结构](#support-structures) 引用，作为初始化时传递给全局 [ESClientInterface()](#esclientinterface) 函数的参数。 |
+| String        | 包含要评估的 JavaScript 表达式的字符串。                                                                                                                      |
+| `pTaggedData` | 指向 [TaggedData](#taggeddata) 对象的指针，用于返回评估结果。                                                                                    |
 
 ##### 返回
 
-Returns an error code, `kESErrOK` on success.
+返回错误代码，成功时为 `kESErrOK`。
 
 ---
 
@@ -380,18 +378,18 @@ Returns an error code, `kESErrOK` on success.
 
 ##### 描述
 
-Initializes a TaggedData structure.
+初始化 TaggedData 结构。
 
 ##### 参数
 
 |   参数   |                                                                                   描述                                                                                   |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `hServer`     | The [Support structures](#support-structures) reference for this shared library, as passed to your global [ESClientInterface()](#esclientinterface) function on initialization. |
-| `pTaggedData` | A pointer to a [TaggedData](#taggeddata).                                                                                                                                       |
+| `hServer`     | 此共享库的 [支持结构](#support-structures) 引用，作为初始化时传递给全局 [ESClientInterface()](#esclientinterface) 函数的参数。 |
+| `pTaggedData` | 指向 [TaggedData](#taggeddata) 的指针。                                                                                                                                       |
 
 ##### 返回
 
-Returns an error code, `kESErrOK` on success.
+返回错误代码，成功时为 `kESErrOK`。
 
 ---
 
@@ -401,26 +399,26 @@ Returns an error code, `kESErrOK` on success.
 
 ##### 描述
 
-Frees memory being used by a TaggedData structure.
+释放 TaggedData 结构使用的内存。
 
 ##### 参数
 
 |   参数   |                                                                                   描述                                                                                   |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `hServer`     | The [Support structures](#support-structures) reference for this shared library, as passed to your global [ESClientInterface()](#esclientinterface) function on initialization. |
-| `pTaggedData` | A pointer to a [TaggedData](#taggeddata).                                                                                                                                       |
+| `hServer`     | 此共享库的 [支持结构](#support-structures) 引用，作为初始化时传递给全局 [ESClientInterface()](#esclientinterface) 函数的参数。 |
+| `pTaggedData` | 指向 [TaggedData](#taggeddata) 的指针。                                                                                                                                       |
 
 ##### 返回
 
-Returns an error code, `kESErrOK` on success.
+返回错误代码，成功时为 `kESErrOK`。
 
 ---
 
 ### SoObjectInterface
 
-When you add a JavaScript class with SoServerInterface.addClass(), you must provide this interface. JavaScript calls the provided functions to interact with objects of the new class.
+当您使用 SoServerInterface.addClass() 添加 JavaScript 类时，必须提供此接口。JavaScript 调用提供的函数以与新类的对象进行交互。
 
-The SoObjectInterface is an array of function pointers defined as follows:
+SoObjectInterface 是一个函数指针数组，定义如下：
 
 ```cpp
 SoObjectInterface {
@@ -434,7 +432,7 @@ SoObjectInterface {
 }
 ```
 
-All `SoObjectInterface` members must be valid function pointers, or NULL. You must implement `initialize()` and `finalize()`. The functions must conform to the following type definitions.
+所有 `SoObjectInterface` 成员必须是有效的函数指针，或 NULL。您必须实现 `initialize()` 和 `finalize()`。这些函数必须符合以下类型定义。
 
 #### initialize()
 
@@ -442,246 +440,14 @@ All `SoObjectInterface` members must be valid function pointers, or NULL. You mu
 
 ##### 描述
 
-Required. Called when JavaScript code instantiates this class with the new operator:
+必需。当 JavaScript 代码使用 new 运算符实例化此类时调用：
 
 ```javascript
 var xx = New MyClass(arg1, ...)
 ```
 
-The initialization function typically adds properties and methods to the object. Objects of the same class can offer different properties and methods, which you can add with the [addMethod()](#addmethod) and [addProperty()](#addproperty) functions in the stored SoServerInterface.
+初始化函数通常向对象添加属性和方法。同一类的对象可以提供不同的属性和方法，您可以使用存储的 SoServerInterface 中的 [addMethod()](#addmethod) 和 [addProperty()](#addproperty) 函数添加这些属性和方法。
 
 ##### 参数
 
 |  参数   |                                                 描述                                                 |
-| ------------ | ----------------------------------------------------------------------------------------------------------- |
-| `hObject`    | The [Support structures](#support-structures) reference for an instance of this class.                      |
-| `argc, argv` | The number of and pointer to arguments passed to the constructor, in the form of [TaggedData](#taggeddata). |
-
-##### 返回
-
-Returns an error code, `kESErrOK` on success.
-
----
-
-#### put()
-
-`ESerror_t put (SoHObject hObject, SoCClientName* name, TaggedData* pValue);`
-
-##### 描述
-
-Called when JavaScript code sets a property of this class:
-
-```javascript
-xx.myproperty = "abc" ;
-```
-
-If you provide `NULL` for this function, the JavaScript object is read-only.
-
-##### 参数
-
-| 参数 |                                      描述                                       |
-| --------- | -------------------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
-| `name`    | The name of the property, a pointer to an [SoCClientName](#socclientname).             |
-| `pValue`  | The new value, a pointer to a [TaggedData](#taggeddata).                               |
-
-##### 返回
-
-Returns an error code, `kESErrOK` on success.
-
----
-
-#### get()
-
-`ESerror_t get (SoHObject hObject, SoCClientName* name, TaggedData* pValue);`
-
-##### 描述
-
-Called when JavaScript code accesses a property of this class:
-
-```javascript
-alert(xx.myproperty);
-```
-
-##### 参数
-
-| 参数 |                                      描述                                       |
-| --------- | -------------------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
-| `name`    | The name of the property, a pointer to an [SoCClientName](#socclientname).             |
-| `pValue`  | A buffer in which to return the property value, a [TaggedData](#taggeddata).           |
-
-##### 返回
-
-Returns an error code, `kESErrOK` on success.
-
----
-
-#### call()
-
-`ESerror_t call (SoHObject hObject, SoCClientName* name, int argc, TaggedData* argv, TaggedData* pResult);`
-
-##### 描述
-
-Called when JavaScript code calls a method of this class:
-
-```javascript
-xx.mymethod()
-```
-
-Required in order for JavaScript to call any methods of this class.
-
-##### 参数
-
-|  参数   |                                           描述                                            |
-| ------------ | ------------------------------------------------------------------------------------------------ |
-| `hObject`    | The [Support structures](#support-structures) reference for an instance of this class.           |
-| `name`       | The name of the property, a pointer to an [SoCClientName](#socclientname).                       |
-| `argc, argv` | The number and pointer to arguments passed to the call, in the form of [TaggedData](#taggeddata) |
-| `pResult`    | A buffer in which to return the result of the call, in the form of [TaggedData](#taggeddata)     |
-
-##### 返回
-
-Returns an error code, `kESErrOK` on success.
-
----
-
-#### valueOf()
-
-`ESerror_t valueOf (SoHObject hObject, TaggedData* pResult);`
-
-##### 描述
-
-Creates and returns the value of the object, with no type conversion.
-
-##### 参数
-
-| 参数 |                                          描述                                          |
-| --------- | --------------------------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#support-structures) reference for an instance of this class.        |
-| `pResult` | A buffer in which to return the result of the value, in the form of [TaggedData](#taggeddata) |
-
-##### 返回
-
-Returns an error code, `kESErrOK` on success.
-
----
-
-#### toString()
-
-`ESerror_t toString (SoHObject hObject, TaggedData* pResult);`
-
-##### 描述
-
-Creates and returns a string representing the value of this object.
-
-##### 参数
-
-| 参数 |                                          描述                                           |
-| --------- | ---------------------------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#support-structures) reference for an instance of this class.         |
-| `pResult` | A buffer in which to return the result of the string, in the form of [TaggedData](#taggeddata) |
-
-##### 返回
-
-Returns an error code, `kESErrOK` on success.
-
----
-
-#### finalize()
-
-`ESerror_t finalize (SoHObject hObject);`
-
-##### 描述
-
-Required. Called when JavaScript deletes an instance of this class.
-
-Use this function to free any memory you have allocated.
-
-##### 参数
-
-| 参数 |                                      描述                                       |
-| --------- | -------------------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
-
-##### 返回
-
-Returns an error code, `kESErrOK` on success.
-
----
-
-## Support structures
-
-These support structures are passed to functions that you define for your JavaScript interface:
-
-#### 参数
-
-|    参数    |                                                 描述                                                 |
-| --------------- | ----------------------------------------------------------------------------------------------------------- |
-| `SoHObject`     | An opaque pointer `(long *)` to the C/C++ representation of a JavaScript object.                            |
-| `SoHServer`     | An opaque pointer `(long *)` to the server object, which acts as an object factory for the shared library.  |
-| `SoCClientName` | A structure that uniquely identifies methods and properties.                                                |
-| `TaggedData`    | A structure that encapsulates data values with type information, to be passed between C/C++ and JavaScript. |
-
-### SoCClientName
-
-The SoCClientName data structure stores identifying information for methods and properties of JavaScript objects created by shared-library C/C++ code. It is defined as follows:
-
-```cpp
-SoCClientName {
-    char* name_sig ;
-    uint32_t id ;
-    char* desc ;
-}
-```
-
-#### 参数
-
-| 参数  |                                                                                                                                                        描述                                                                                                                                                         |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name_sig` | The name of the property or method, unique within the class. Optionally contains a signature following an underscore, which identifies the types of arguments to methods; see Function signatures. When names are passed back to your SoObjectInterface functions, the signature portion is omitted.                       |
-| `id`       | A unique identifying number for the property or method, or 0 to assign a generated UID. If you assign the UID, your C/C++ code can use it to avoid string comparisons when identifying JavaScript properties and methods. It is recommended that you either assign all UIDs explicitly, or allow them all to be generated. |
-| `desc`     | A descriptive string or `NULL`.                                                                                                                                                                                                                                                                                            |
-
----
-
-### TaggedData
-
-The TaggedData structure is used to communicate data values between JavaScript and shared-library C/C++ code. Types are automatically converted as appropriate:
-
-```cpp
-typedef struct {
-    union {
-        long intval;
-        double fltval;
-        char* string;
-        SoHObject* hObject;
-    } data;
-    long type;
-    long filler;
-} TaggedData;
-```
-
-#### 参数
-
-| 参数 |                                                                                                                                   描述                                                                                                                                   |
-|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `intval`  | Integer and boolean data values. Type is `kTypeInteger`, `kTypeUInteger`, or `kTypeBool`.                                                                                                                                                                                       |
-| `fltval`  | Floating-point numeric data values. Type is `kTypeDouble`.                                                                                                                                                                                                                      |
-| String    | String data values. All strings are UTF-8 encoded and null-terminated. Type is `kTypeString` or `kTypeScript`.                                                                                                                                                                  |
-|           | - The library must define an entry point [ESFreeMem()](defining-entry-points-for-direct-access.md#esfreemem), which ExtendScript calls to release a returned string pointer. If this entry point is missing, ExtendScript does not attempt to release any returned string data. |
-|           | - When a function returns a string of type kTypeScript, ExtendScript evaluates the script and returns the result of evaluation as the result of the function call.                                                                                                              |
-| `hObject` | A C/C++ representation of a JavaScript object data value. Type is `kTypeLiveObject` or `kTypeLiveObjectRelease`.                                                                                                                                                                |
-|           | - When a function returns an object of type kTypeLiveObject, ExtendScript does not release the object.                                                                                                                                                                          |
-|           | - When a function returns an object of type kTypeLiveObjectRelease, ExtendScript releases the object.                                                                                                                                                                           |
-| `type`    | The data type tag. One of:                                                                                                                                                                                                                                                      |
-|           | - `kTypeUndefined`: a null value, equivalent of JavaScript `undefined`. The return value for a function is always set to this by default.                                                                                                                                       |
-|           | - `kTypeBool`: a boolean value, 0 for `false`, 1 for `true`.                                                                                                                                                                                                                    |
-|           | - `kTypeDouble`: a 64-bit floating-point number.                                                                                                                                                                                                                                |
-|           | - `kTypeString`: a character string.                                                                                                                                                                                                                                            |
-|           | - `kTypeLiveObject`: a pointer to an internal representation of an object (SoHObject).                                                                                                                                                                                          |
-|           | - `kTypeLiveObjectRelease`: a pointer to an internal representation of an object (SoHObject).                                                                                                                                                                                   |
-|           | - `kTypeInteger`: a 32-bit signed integer value.                                                                                                                                                                                                                                |
-|           | - `kTypeUInteger`: a 32-bit unsigned integer value.                                                                                                                                                                                                                             |
-|           | - `kTypeScript`: a string containing an executable JavaScript script.                                                                                                                                                                                                           |
-| `filler`  | A 4-byte filler for 8-byte alignment.                                                                                                                                                                                                                                           |
