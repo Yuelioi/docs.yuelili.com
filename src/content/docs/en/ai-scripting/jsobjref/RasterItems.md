@@ -1,10 +1,13 @@
+---
+title: RasterItems
+---
 # RasterItems
 
 `app.activeDocument.rasterItems`
 
 #### Description
 
-A collection of [RasterItem](./RasterItem.md) objects.
+A collection of [RasterItem](.././RasterItem) objects.
 
 ---
 
@@ -70,7 +73,7 @@ Get the first element in the collection with the provided name.
 
 #### Returns
 
-[SymbolItem](./SymbolItem.md)
+[SymbolItem](.././SymbolItem)
 
 ---
 
@@ -90,7 +93,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[SymbolItem](./SymbolItem.md)
+[SymbolItem](.././SymbolItem)
 
 ---
 

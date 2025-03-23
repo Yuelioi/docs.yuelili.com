@@ -1,3 +1,6 @@
+---
+title: PrinterInfo
+---
 # PrinterInfo
 
 `printerInfo`
@@ -230,7 +233,7 @@ The list of supported paper sizes.
 
 #### Type
 
-Array of [Paper](./Paper.md)
+Array of [Paper](.././Paper)
 
 ---
 

@@ -1,10 +1,13 @@
+---
+title: LegacyTextItems
+---
 # LegacyTextItems
 
 `legacyTextItems`
 
 #### Description
 
-A collection of [LegacyTextItem](./LegacyTextItem.md) objects.
+A collection of [LegacyTextItem](.././LegacyTextItem) objects.
 
 ---
 
@@ -84,7 +87,7 @@ Get the first element in the collection with the specified name.
 
 #### Returns
 
-[LegacyTextItem](./LegacyTextItem.md)
+[LegacyTextItem](.././LegacyTextItem)
 
 ---
 
@@ -104,7 +107,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[LegacyTextItem](./LegacyTextItem.md)
+[LegacyTextItem](.././LegacyTextItem)
 
 ---
 

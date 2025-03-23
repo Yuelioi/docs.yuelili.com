@@ -1,7 +1,7 @@
 export const aeScripting = {
-  label: "ae-scripting",
+  label: "Ae脚本开发",
   link: "ae-scripting/introduction/overview",
-  icon: "information",
+  icon: "open-book",
   items: [
     {
       label: "Introduction",

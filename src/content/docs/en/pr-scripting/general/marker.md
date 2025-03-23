@@ -1,3 +1,6 @@
+---
+title: Marker object
+---
 # Marker object
 
 `app.project.activeSequence.markers.getFirstMarker()`
@@ -7,7 +10,7 @@
 
 #### Description
 
-Both [Project items](../item/projectitem.md) and [sequences](../sequence/sequence.md) have associated Marker objects, which represent their associated markers.
+Both [Project items](../../item/projectitem) and [sequences](../../sequence/sequence) have associated Marker objects, which represent their associated markers.
 
 ---
 
@@ -39,11 +42,11 @@ String; read/write.
 
 #### Description
 
-A [Time object](../other/time.md) containing the value of the ending of the marker.
+A [Time object](../../other/time) containing the value of the ending of the marker.
 
 #### Type
 
-[Time object](../other/time.md); read/write.
+[Time object](../../other/time); read/write.
 
 ---
 
@@ -90,11 +93,11 @@ String; read/write.
 
 #### Description
 
-A [Time object](../other/time.md) containing the value of the beginning of the marker.
+A [Time object](../../other/time) containing the value of the beginning of the marker.
 
 #### Type
 
-[Time object](../other/time.md); read/write.
+[Time object](../../other/time); read/write.
 
 ---
 
@@ -114,8 +117,10 @@ The type of marker, one of:
 - `"Segmentation"`
 - `"WebLink"`
 
-!!! note
-    Premiere Pro can import some marker types which cannot be created from within Premiere Pro.
+:::note
+Premiere Pro can import some marker types which cannot be created from within Premiere Pro.
+:::
+
 
 #### Type
 
@@ -132,8 +137,10 @@ String; read-only.
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().getColorByIndex(index)`
 
 
-!!! note
-    This functionality was added in Adobe Premire Pro 13.x.
+:::note
+This functionality was added in Adobe Premire Pro 13.x.
+:::
+
 
 #### Description
 
@@ -200,8 +207,10 @@ Returns a String containing the URL, or `0` if unsuccessful.
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().setColorByIndex(colorIndex, markerIndex)`
 
 
-!!! note
-    This functionality was added in Adobe Premire Pro 13.x.
+:::note
+This functionality was added in Adobe Premire Pro 13.x.
+:::
+
 
 #### Description
 

@@ -1,3 +1,6 @@
+---
+title: GraphItem
+---
 # GraphItem
 
 `app.activeDocument.graphItems[index]`
@@ -50,7 +53,7 @@ It is not necessary to set the type of the `contentVariable` before binding. Ill
 
 #### Type
 
-[Variable](./Variable.md)
+[Variable](.././Variable)
 
 ---
 
@@ -150,7 +153,7 @@ The layer to which this graph item belongs.
 
 #### Type
 
-[Layer](./Layer.md); read-only.
+[Layer](.././Layer); read-only.
 
 ---
 
@@ -234,7 +237,7 @@ The parent of this object.
 
 #### Type
 
-[Layer](./Layer.md) or [GroupItem](./GroupItem.md)
+[Layer](.././Layer) or [GroupItem](.././GroupItem)
 
 ---
 
@@ -292,7 +295,7 @@ The tags contained in this graph item.
 
 #### Type
 
-[Tags](./Tags.md); read-only.
+[Tags](.././Tags); read-only.
 
 ---
 
@@ -350,7 +353,7 @@ It is not necessary to set the type of the `visibilityVariable` before binding. 
 
 #### Type
 
-[Variable](./Variable.md)
+[Variable](.././Variable)
 
 ---
 
@@ -592,7 +595,7 @@ Transforms the art item by applying a transformation matrix.
 
 |       Parameter        |                               Type                                |                  Description                   |
 | ---------------------- | ----------------------------------------------------------------- | ---------------------------------------------- |
-| `transformationMatrix` | [Matrix](./Matrix.md)                                             | Transformation matrix to apply                 |
+| `transformationMatrix` | [Matrix](.././Matrix)                                             | Transformation matrix to apply                 |
 | `changePositions`      | Boolean, optional                                                 | Whether to change Positions                    |
 | `changeFillPatterns`   | Boolean, optional                                                 | Whether to change Fill Patterns                |
 | `changeFillGradients`  | Boolean, optional                                                 | Whether to change Fill Gradients               |

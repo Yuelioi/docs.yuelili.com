@@ -1,3 +1,6 @@
+---
+title: Your first Illustrator script
+---
 # Your first Illustrator script
 
 The traditional first project in any programming language is displaying the message "Hello World!" In this example, you create a new Illustrator document, then add a text frame containing this message. Follow these steps:

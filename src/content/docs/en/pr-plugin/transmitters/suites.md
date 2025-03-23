@@ -1,6 +1,9 @@
+---
+title: Suites
+---
 # Suites
 
-For information on how to acquire and manage suites, as well as information on more suites that are available to other plugin types beyond just transmitters, see [SweetPea Suites](../universals/sweetpea-suites.md).
+For information on how to acquire and manage suites, as well as information on more suites that are available to other plugin types beyond just transmitters, see [SweetPea Suites](../../universals/sweetpea-suites).
 
 ---
 
@@ -32,19 +35,13 @@ prSuiteError (*GetNextAudioBuffer)(
   unsigned int  inNumSampleFrames);
 ```
 
-+---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 |      Parameter      |                                                                       Description                                                                       |
-+=====================+=========================================================================================================================================================+
+|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `inInBuffers`       | Currently unused in CS6.                                                                                                                                |
-|                     |                                                                                                                                                         |
 |                     | A pointer to an array of buffers holding `inNumSampleFrames` input audio in each buffer, corresponding to the total number of available input channels. |
-+---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `outOutBuffers`     | A pointer to an array of buffers `inNumSampleFrames` long into which the host will write the output audio.                                              |
-|                     |                                                                                                                                                         |
 |                     | There must be N buffers, where N is the number of output channels for the output channel type specified in `InitPluginAudio`.                           |
-+---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `inNumSampleFrames` | The size of each of the buffers in the array in both `inInBuffers` and `outOutBuffers`.                                                                 |
-+---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ---
 

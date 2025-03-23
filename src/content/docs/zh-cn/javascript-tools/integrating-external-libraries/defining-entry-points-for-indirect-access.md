@@ -1,15 +1,15 @@
 ---
-title: 定义间接访问的入口点
+title: 定义间接访问的入口函数
 ---
-# 定义间接访问的入口点
+# 定义间接访问的入口函数
 
 用于外部库的 C 客户端对象接口允许您的 C 或 C++ 共享库代码定义、创建、使用和管理 JavaScript 对象。
 
 ---
 
-## 入口点
+## 入口函数
 
-如果您希望使用对象接口，则需要以下入口点：
+如果您希望使用对象接口，则需要以下入口函数：
 
 ### ESClientInterface()
 
@@ -26,7 +26,7 @@ title: 定义间接访问的入口点
 | `kReason` | 此调用的原因，以下常量之一：                                                                                                                                                                            |
 |           | - `kSoCClient_init`: 函数在加载时被调用以进行初始化。                                                                                                                                              |
 |           | - `kSoCClient_term`.: 函数在卸载时被调用以进行终止。                                                                                                                                              |
-| `pServer` | 指向 [SoServerInterface](#soserverinterface) 的指针，包含入口点的函数指针，使共享库代码能够调用 JavaScript 以创建和访问 JavaScript 类和对象。 |
+| `pServer` | 指向 [SoServerInterface](#soserverinterface) 的指针，包含入口函数的函数指针，使共享库代码能够调用 JavaScript 以创建和访问 JavaScript 类和对象。 |
 |           | 共享库代码负责在初始化和终止调用之间存储此结构，并在访问函数时检索它。                                                                |
 | `hServer` | 此共享库的 [支持结构](#support-structures) 引用。服务器是一个对象工厂，用于创建和管理 [支持结构](#support-structures) 对象。                                  |
 |           | 共享库代码负责在初始化和终止调用之间存储此结构。您必须将其传递给 [taggedDataInit()](#taggeddatainit) 和 [taggedDataFree()](#taggeddatafree)。         |
@@ -440,14 +440,246 @@ SoObjectInterface {
 
 ##### 描述
 
-必需。当 JavaScript 代码使用 new 运算符实例化此类时调用：
+必需。当 JavaScript 代码使用 `new` 操作符实例化此类时调用：
 
 ```javascript
 var xx = New MyClass(arg1, ...)
 ```
 
-初始化函数通常向对象添加属性和方法。同一类的对象可以提供不同的属性和方法，您可以使用存储的 SoServerInterface 中的 [addMethod()](#addmethod) 和 [addProperty()](#addproperty) 函数添加这些属性和方法。
+初始化函数通常向对象添加属性和方法。同一类的对象可以提供不同的属性和方法，您可以使用存储的 `SoServerInterface` 中的 [addMethod()](#addmethod) 和 [addProperty()](#addproperty) 函数添加这些属性和方法。
 
 ##### 参数
 
-|  参数   |                                                 描述                                                 |
+|  参数   |                                                 描述                                                  |
+| -------- | ---------------------------------------------------------------------------------------------------- |
+| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。                                                     |
+| `argc, argv` | 传递给构造函数的参数数量和指针，以 [TaggedData](#taggeddata) 的形式传递。                             |
+
+##### 返回值
+
+返回错误代码，成功时返回 `kESErrOK`。
+
+---
+
+#### put()
+
+`ESerror_t put (SoHObject hObject, SoCClientName* name, TaggedData* pValue);`
+
+##### 描述
+
+当 JavaScript 代码设置此类的属性时调用：
+
+```javascript
+xx.myproperty = "abc" ;
+```
+
+如果为此函数提供 `NULL`，则 JavaScript 对象为只读。
+
+##### 参数
+
+| 参数      |                                      描述                                       |
+| --------- | ------------------------------------------------------------------------------ |
+| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。                               |
+| `name`    | 属性名称，指向 [SoCClientName](#socclientname) 的指针。                         |
+| `pValue`  | 新值，指向 [TaggedData](#taggeddata) 的指针。                                   |
+
+##### 返回值
+
+返回错误代码，成功时返回 `kESErrOK`。
+
+---
+
+#### get()
+
+`ESerror_t get (SoHObject hObject, SoCClientName* name, TaggedData* pValue);`
+
+##### 描述
+
+当 JavaScript 代码访问此类的属性时调用：
+
+```javascript
+alert(xx.myproperty);
+```
+
+##### 参数
+
+| 参数      |                                      描述                                       |
+| --------- | ------------------------------------------------------------------------------ |
+| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。                               |
+| `name`    | 属性名称，指向 [SoCClientName](#socclientname) 的指针。                         |
+| `pValue`  | 用于返回属性值的缓冲区，类型为 [TaggedData](#taggeddata)。                      |
+
+##### 返回值
+
+返回错误代码，成功时返回 `kESErrOK`。
+
+---
+
+#### call()
+
+`ESerror_t call (SoHObject hObject, SoCClientName* name, int argc, TaggedData* argv, TaggedData* pResult);`
+
+##### 描述
+
+当 JavaScript 代码调用此类的方法时调用：
+
+```javascript
+xx.mymethod()
+```
+
+必需，以便 JavaScript 调用此类的任何方法。
+
+##### 参数
+
+| 参数      |                                           描述                                            |
+| --------- | ---------------------------------------------------------------------------------------- |
+| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。                                         |
+| `name`    | 属性名称，指向 [SoCClientName](#socclientname) 的指针。                                   |
+| `argc, argv` | 传递给调用的参数数量和指针，以 [TaggedData](#taggeddata) 的形式传递。                     |
+| `pResult` | 用于返回调用结果的缓冲区，以 [TaggedData](#taggeddata) 的形式传递。                       |
+
+##### 返回值
+
+返回错误代码，成功时返回 `kESErrOK`。
+
+---
+
+#### valueOf()
+
+`ESerror_t valueOf (SoHObject hObject, TaggedData* pResult);`
+
+##### 描述
+
+创建并返回对象的值，不进行类型转换。
+
+##### 参数
+
+| 参数      |                                          描述                                           |
+| --------- | -------------------------------------------------------------------------------------- |
+| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。                                       |
+| `pResult` | 用于返回值的缓冲区，以 [TaggedData](#taggeddata) 的形式传递。                           |
+
+##### 返回值
+
+返回错误代码，成功时返回 `kESErrOK`。
+
+---
+
+#### toString()
+
+`ESerror_t toString (SoHObject hObject, TaggedData* pResult);`
+
+##### 描述
+
+创建并返回表示此对象值的字符串。
+
+##### 参数
+
+| 参数      |                                          描述                                           |
+| --------- | -------------------------------------------------------------------------------------- |
+| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。                                       |
+| `pResult` | 用于返回字符串结果的缓冲区，以 [TaggedData](#taggeddata) 的形式传递。                   |
+
+##### 返回值
+
+返回错误代码，成功时返回 `kESErrOK`。
+
+---
+
+#### finalize()
+
+`ESerror_t finalize (SoHObject hObject);`
+
+##### 描述
+
+必需。当 JavaScript 删除此类的实例时调用。
+
+使用此函数释放已分配的内存。
+
+##### 参数
+
+| 参数      |                                      描述                                       |
+| --------- | ------------------------------------------------------------------------------ |
+| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。                               |
+
+##### 返回值
+
+返回错误代码，成功时返回 `kESErrOK`。
+
+---
+
+## 支持结构
+
+这些支持结构会传递给为 JavaScript 接口定义的函数：
+
+#### 参数
+
+| 参数           |                                                 描述                                                  |
+| -------------- | ---------------------------------------------------------------------------------------------------- |
+| `SoHObject`    | 指向 JavaScript 对象的 C/C++ 表示形式的不透明指针 `(long *)`。                                        |
+| `SoHServer`    | 指向服务器对象的不透明指针 `(long *)`，该对象充当共享库的对象工厂。                                   |
+| `SoCClientName` | 唯一标识方法和属性的结构。                                                                            |
+| `TaggedData`   | 封装带有类型信息的数据值的结构，用于在 C/C++ 和 JavaScript 之间传递。                                 |
+
+### SoCClientName
+
+`SoCClientName` 数据结构存储由共享库 C/C++ 代码创建的 JavaScript 对象的方法和属性的标识信息。其定义如下：
+
+```cpp
+SoCClientName {
+    char* name_sig ;
+    uint32_t id ;
+    char* desc ;
+}
+```
+
+#### 参数
+
+| 参数       |                                                                                                                                                        描述                                                                                                                                                         |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `name_sig` | 属性或方法的名称，在类内唯一。可选地包含下划线后的签名，用于标识方法的参数类型；请参阅函数签名。当名称传递回您的 `SoObjectInterface` 函数时，签名部分会被省略。                                                                                       |
+| `id`       | 属性或方法的唯一标识号，或 0 以分配生成的 UID。如果您分配 UID，您的 C/C++ 代码可以使用它来避免在识别 JavaScript 属性和方法时进行字符串比较。建议您要么显式分配所有 UID，要么允许它们全部生成。                                                         |
+| `desc`     | 描述性字符串或 `NULL`。                                                                                                                                                                                                                                                                                            |
+
+---
+
+### TaggedData
+
+`TaggedData` 结构用于在 JavaScript 和共享库 C/C++ 代码之间传递数据值。类型会根据需要自动转换：
+
+```cpp
+typedef struct {
+    union {
+        long intval;
+        double fltval;
+        char* string;
+        SoHObject* hObject;
+    } data;
+    long type;
+    long filler;
+} TaggedData;
+```
+
+#### 参数
+
+| 参数      |                                                                                                   描述                                                                                                   |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `intval`  | 整数和布尔数据值。类型为 `kTypeInteger`、`kTypeUInteger` 或 `kTypeBool`。                                                                                                                               |
+| `fltval`  | 浮点数值数据值。类型为 `kTypeDouble`。                                                                                                                                                                  |
+| `string`  | 字符串数据值。所有字符串均为 UTF-8 编码并以 null 结尾。类型为 `kTypeString` 或 `kTypeScript`。                                                                                                           |
+|           | - 库必须定义一个入口函数 [ESFreeMem()](defining-entry-points-for-direct-access.md#esfreemem)，ExtendScript 调用该入口函数以释放返回的字符串指针。如果缺少此入口函数，ExtendScript 不会尝试释放任何返回的字符串数据。 |
+|           | - 当函数返回类型为 `kTypeScript` 的字符串时，ExtendScript 会评估该脚本并返回评估结果作为函数调用的结果。                                                                                                  |
+| `hObject` | JavaScript 对象数据值的 C/C++ 表示形式。类型为 `kTypeLiveObject` 或 `kTypeLiveObjectRelease`。                                                                                                           |
+|           | - 当函数返回类型为 `kTypeLiveObject` 的对象时，ExtendScript 不会释放该对象。                                                                                                                             |
+|           | - 当函数返回类型为 `kTypeLiveObjectRelease` 的对象时，ExtendScript 会释放该对象。                                                                                                                        |
+| `type`    | 数据类型标签。以下之一：                                                                                                                                                                                |
+|           | - `kTypeUndefined`：空值，相当于 JavaScript 的 `undefined`。函数的返回值默认始终设置为该值。                                                                                                             |
+|           | - `kTypeBool`：布尔值，0 表示 `false`，1 表示 `true`。                                                                                                                                                  |
+|           | - `kTypeDouble`：64 位浮点数。                                                                                                                                                                          |
+|           | - `kTypeString`：字符字符串。                                                                                                                                                                           |
+|           | - `kTypeLiveObject`：指向对象内部表示形式（SoHObject）的指针。                                                                                                                                          |
+|           | - `kTypeLiveObjectRelease`：指向对象内部表示形式（SoHObject）的指针。                                                                                                                                   |
+|           | - `kTypeInteger`：32 位有符号整数值。                                                                                                                                                                   |
+|           | - `kTypeUInteger`：32 位无符号整数值。                                                                                                                                                                  |
+|           | - `kTypeScript`：包含可执行 JavaScript 脚本的字符串。                                                                                                                                                   |
+| `filler`  | 用于 8 字节对齐的 4 字节填充。                                                                                                                                                                          |

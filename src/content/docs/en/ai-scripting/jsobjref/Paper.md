@@ -1,10 +1,13 @@
+---
+title: Paper
+---
 # Paper
 
 `app.class`
 
 #### Description
 
-Associates paper information with a paper name. `Paper` objects are used by [Printer](./Printer.md) objects.
+Associates paper information with a paper name. `Paper` objects are used by [Printer](.././Printer) objects.
 
 ---
 
@@ -34,7 +37,7 @@ The paper information.
 
 #### Type
 
-[PaperInfo](./PaperInfo.md)
+[PaperInfo](.././PaperInfo)
 
 ---
 

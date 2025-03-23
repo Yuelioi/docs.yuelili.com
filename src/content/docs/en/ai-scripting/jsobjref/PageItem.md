@@ -1,3 +1,6 @@
+---
+title: PageItem
+---
 # PageItem
 
 `app.activeDocument.pageItems[index]`
@@ -6,9 +9,9 @@
 
 Any art item. Every art item and group in a document is a page item. You may refer to a page item as an element of a document, layer, or group item.
 
-The `PageItem` class gives you complete access to every art item contained in an Illustrator document. The `PageItem` class is the superclass of all artwork objects in a document. The [CompoundPathItem](./CompoundPathItem.md), [GroupItem](./GroupItem.md), [MeshItem](./MeshItem.md), [PathItem](./PathItem.md), [PlacedItem](./PlacedItem.md), [PluginItem](./PluginItem.md), [RasterItem](./RasterItem.md), and [TextFrameItem](./TextFrameItem.md) classes each inherit a set of properties from the `PageItem` class.
+The `PageItem` class gives you complete access to every art item contained in an Illustrator document. The `PageItem` class is the superclass of all artwork objects in a document. The [CompoundPathItem](.././CompoundPathItem), [GroupItem](.././GroupItem), [MeshItem](.././MeshItem), [PathItem](.././PathItem), [PlacedItem](.././PlacedItem), [PluginItem](.././PluginItem), [RasterItem](.././RasterItem), and [TextFrameItem](.././TextFrameItem) classes each inherit a set of properties from the `PageItem` class.
 
-You cannot create a `PageItem` directly, you must create one of the specific `PageItem` subclasses, such as [PathItem](./PathItem.md).
+You cannot create a `PageItem` directly, you must create one of the specific `PageItem` subclasses, such as [PathItem](.././PathItem).
 
 ---
 
@@ -138,7 +141,7 @@ The layer to which this page item belongs.
 
 #### Type
 
-[Layer](./Layer.md); read-only.
+[Layer](.././Layer); read-only.
 
 ---
 
@@ -292,7 +295,7 @@ The collection of tags associated with this page item.
 
 #### Type
 
-[Tags](./Tags.md)
+[Tags](.././Tags)
 
 ---
 
@@ -342,8 +345,10 @@ String.
 
 `app.activeDocument.pageItems[index].uuid`
 
-!!! note
-    This functionality was added in Illustrator 24.0. (CC2020)
+:::note
+This functionality was added in Illustrator 24.0. (CC2020)
+:::
+
 
 #### Description
 
@@ -365,7 +370,7 @@ The visibility variable to which this page item path is bound.
 
 #### Type
 
-[Variable](./Variable.md)
+[Variable](.././Variable)
 
 ---
 
@@ -573,7 +578,7 @@ Transforms the art item by applying a transformation matrix.
 
 |       Parameter        |                               Type                                |                  Description                   |
 | ---------------------- | ----------------------------------------------------------------- | ---------------------------------------------- |
-| `transformationMatrix` | [Matrix](./Matrix.md)                                             | Transformation matrix to apply                 |
+| `transformationMatrix` | [Matrix](.././Matrix)                                             | Transformation matrix to apply                 |
 | `changePositions`      | Boolean, optional                                                 | Whether to change Positions                    |
 | `changeFillPatterns`   | Boolean, optional                                                 | Whether to change Fill Patterns                |
 | `changeFillGradients`  | Boolean, optional                                                 | Whether to change Fill Gradients               |

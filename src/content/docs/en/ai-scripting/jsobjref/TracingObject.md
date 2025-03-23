@@ -1,3 +1,6 @@
+---
+title: TracingObject
+---
 # TracingObject
 
 `TracingObject`
@@ -96,7 +99,7 @@ The raster art used to create the associated vector art plug-in group.
 
 #### Type
 
-[PlacedItem](./PlacedItem.md) or [RasterItem](./RasterItem.md)
+[PlacedItem](.././PlacedItem) or [RasterItem](.././RasterItem)
 
 ---
 
@@ -110,7 +113,7 @@ The options used to convert the raster artwork to vector art.
 
 #### Type
 
-[TracingOptions](./TracingOptions.md)
+[TracingOptions](.././TracingOptions)
 
 ---
 
@@ -156,7 +159,7 @@ By default, `viewed` is `false`, and the new group contains only the tracing res
 
 If `viewed` is `true`, the new group retains additional information that was specified for the viewing mode, such as outlines and overlays.
 
-Deletes this object and its associated [PluginItem](./PluginItem.md) object. Any group-level attributes that were applied to the plug-in item are applied to the top level of the new group item.
+Deletes this object and its associated [PluginItem](.././PluginItem) object. Any group-level attributes that were applied to the plug-in item are applied to the top level of the new group item.
 
 #### Parameters
 
@@ -166,7 +169,7 @@ Deletes this object and its associated [PluginItem](./PluginItem.md) object. Any
 
 #### Returns
 
-[GroupItem](./GroupItem.md)
+[GroupItem](.././GroupItem)
 
 ---
 
@@ -182,4 +185,4 @@ Reverts the artwork in the document to the original source raster art and remove
 
 #### Returns
 
-[PlacedItem](./PlacedItem.md) or [RasterItem](./RasterItem.md)
+[PlacedItem](.././PlacedItem) or [RasterItem](.././RasterItem)

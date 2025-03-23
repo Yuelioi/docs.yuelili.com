@@ -1,3 +1,6 @@
+---
+title: PPDFile
+---
 # PPDFile
 
 `app.PPDFileList[index]`
@@ -34,7 +37,7 @@ The PPD file information.
 
 #### Type
 
-[PPDFileInfo](./PPDFileInfo.md)
+[PPDFileInfo](.././PPDFileInfo)
 
 ---
 

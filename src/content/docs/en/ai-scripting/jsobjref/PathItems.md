@@ -1,10 +1,13 @@
+---
+title: PathItems
+---
 # PathItems
 
 `app.activeDocument.pathItems`
 
 #### Description
 
-A collection of [PathItem](./PathItem.md) objects.
+A collection of [PathItem](.././PathItem) objects.
 
 The methods `ellipse`, `polygon`, `rectangle`, `roundedRectangle`, and `star` allow you to create complex path items using straightforward parameters.
 
@@ -68,7 +71,7 @@ Creates a new object.
 
 #### Returns
 
-[PathItem](./PathItem.md)
+[PathItem](.././PathItem)
 
 ---
 
@@ -102,7 +105,7 @@ Creates a new pathItem in the shape of an ellipse using the supplied parameters.
 
 #### Returns
 
-[PathItem](./PathItem.md)
+[PathItem](.././PathItem)
 
 ---
 
@@ -122,7 +125,7 @@ Gets the first element in the collection with the specified name.
 
 #### Returns
 
-[PathItem](./PathItem.md)
+[PathItem](.././PathItem)
 
 ---
 
@@ -142,7 +145,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[PathItem](./PathItem.md)
+[PathItem](.././PathItem)
 
 ---
 
@@ -174,7 +177,7 @@ Creates a new `pathItem` in the shape of an polygon using the supplied parameter
 
 #### Returns
 
-[PathItem](./PathItem.md)
+[PathItem](.././PathItem)
 
 ---
 
@@ -198,7 +201,7 @@ Creates a new `pathItem` in the shape of an polygon using the supplied parameter
 
 #### Returns
 
-[PathItem](./PathItem.md)
+[PathItem](.././PathItem)
 
 ---
 
@@ -248,7 +251,7 @@ Creates a new pathItem in the shape of a rectangle with rounded corners using th
 
 #### Returns
 
-[PathItem](./PathItem.md)
+[PathItem](.././PathItem)
 
 ---
 
@@ -282,7 +285,7 @@ Creates a new path item in the shape of a star using the supplied parameters.
 
 #### Returns
 
-[PathItem](./PathItem.md)
+[PathItem](.././PathItem)
 
 ---
 

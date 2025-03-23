@@ -1,3 +1,6 @@
+---
+title: GroupItem
+---
 # GroupItem
 
 `app.activeDocument.groupItems[index]`
@@ -64,7 +67,7 @@ The compound path items contained in this group.
 
 #### Type
 
-[CompoundPathItems](./CompoundPathItems.md); read-only.
+[CompoundPathItems](.././CompoundPathItems); read-only.
 
 ---
 
@@ -120,7 +123,7 @@ he graph items contained in this group.
 
 #### Type
 
-[GraphItems](./GraphItems.md); read-only.
+[GraphItems](.././GraphItems); read-only.
 
 ---
 
@@ -134,7 +137,7 @@ The group items contained in this group.
 
 #### Type
 
-[GroupItems](./GroupItems.md); read-only.
+[GroupItems](.././GroupItems); read-only.
 
 ---
 
@@ -190,7 +193,7 @@ The layer to which this group item belongs.
 
 #### Type
 
-[Layer](./Layer.md); read-only.
+[Layer](.././Layer); read-only.
 
 ---
 
@@ -218,7 +221,7 @@ The legacy text items in the group.
 
 #### Type
 
-[LegacyTextItems](./LegacyTextItems.md); read-only.
+[LegacyTextItems](.././LegacyTextItems); read-only.
 
 ---
 
@@ -246,7 +249,7 @@ The mesh items contained in this group.
 
 #### Type
 
-[MeshItems](./MeshItems.md); read-only.
+[MeshItems](.././MeshItems); read-only.
 
 ---
 
@@ -274,7 +277,7 @@ The non-native art items in this group.
 
 #### Type
 
-[NonNativeItems](./NonNativeItems.md)
+[NonNativeItems](.././NonNativeItems)
 
 ---
 
@@ -318,7 +321,7 @@ The page items (all art item classes) contained in this group.
 
 #### Type
 
-[PageItems](./PageItems.md); read-only.
+[PageItems](.././PageItems); read-only.
 
 ---
 
@@ -332,7 +335,7 @@ The parent of this object.
 
 #### Type
 
-[Layer](./Layer.md) or [GroupItem](./GroupItem.md); read-only.
+[Layer](.././Layer) or [GroupItem](.././GroupItem); read-only.
 
 ---
 
@@ -346,7 +349,7 @@ The path items contained in this group.
 
 #### Type
 
-[PathItems](./PathItems.md); read-only.
+[PathItems](.././PathItems); read-only.
 
 ---
 
@@ -360,7 +363,7 @@ The placed items contained in this group.
 
 #### Type
 
-[PlacedItems](./PlacedItems.md); read-only.
+[PlacedItems](.././PlacedItems); read-only.
 
 ---
 
@@ -374,7 +377,7 @@ The plug-in items contained in this group.
 
 #### Type
 
-[PluginItems](./PluginItems.md); read-only.
+[PluginItems](.././PluginItems); read-only.
 
 ---
 
@@ -402,7 +405,7 @@ The raster items contained in this group.
 
 #### Type
 
-[RasterItems](./RasterItems.md); read-only.
+[RasterItems](.././RasterItems); read-only.
 
 ---
 
@@ -446,7 +449,7 @@ The symbol item objects in this group.
 
 #### Type
 
-[SymbolItems](./SymbolItems.md); read-only.
+[SymbolItems](.././SymbolItems); read-only.
 
 ---
 
@@ -460,7 +463,7 @@ The tags contained in this group.
 
 #### Type
 
-[Tags](./Tags.md); read-only.
+[Tags](.././Tags); read-only.
 
 ---
 
@@ -474,7 +477,7 @@ The text art items contained in this group.
 
 #### Type
 
-[TextFrameItems](./TextFrameItems.md); read-only.
+[TextFrameItems](.././TextFrameItems); read-only.
 
 ---
 
@@ -530,7 +533,7 @@ The visibility variable bound to the item.
 
 #### Type
 
-[Variable](./Variable.md)
+[Variable](.././Variable)
 
 ---
 
@@ -642,7 +645,7 @@ Creates a duplicate of the selected object.
 
 #### Returns
 
-[GroupItem](./GroupItem.md)
+[GroupItem](.././GroupItem)
 
 ---
 
@@ -663,7 +666,7 @@ Moves the object.
 
 #### Returns
 
-[GroupItem](./GroupItem.md)
+[GroupItem](.././GroupItem)
 
 ---
 
@@ -775,7 +778,7 @@ Transforms the art item by applying a transformation matrix.
 
 |       Parameter        |                               Type                                |                  Description                   |
 | ---------------------- | ----------------------------------------------------------------- | ---------------------------------------------- |
-| `transformationMatrix` | [Matrix](./Matrix.md)                                             | Transformation matrix to apply                 |
+| `transformationMatrix` | [Matrix](.././Matrix)                                             | Transformation matrix to apply                 |
 | `changePositions`      | Boolean, optional                                                 | Whether to change Positions                    |
 | `changeFillPatterns`   | Boolean, optional                                                 | Whether to change Fill Patterns                |
 | `changeFillGradients`  | Boolean, optional                                                 | Whether to change Fill Gradients               |

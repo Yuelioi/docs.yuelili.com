@@ -1,3 +1,6 @@
+---
+title: ProjectCollection object
+---
 # ProjectCollection object
 
 `app.projects`
@@ -5,10 +8,12 @@
 `app.production.projects`
 
 
-The ProjectCollection object represents a collection of [Project objects](../general/project.md).
+The ProjectCollection object represents a collection of [Project objects](../../general/project).
 
-!!! info
-    ProjectCollection is a subclass of [Collection object](collection.md). All methods and attributes of Collection, in addition to those listed below, are available when working with ProjectCollection.
+:::info
+ProjectCollection is a subclass of [Collection object](../collection). All methods and attributes of Collection, in addition to those listed below, are available when working with ProjectCollection.
+:::
+
 
 ---
 

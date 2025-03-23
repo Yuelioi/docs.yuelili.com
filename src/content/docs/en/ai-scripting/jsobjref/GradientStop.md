@@ -1,3 +1,6 @@
+---
+title: GradientStop
+---
 # GradientStop
 
 `app.activeDocument.gradients[index].gradientStops[index]`
@@ -22,7 +25,7 @@ The color linked to this gradient stop.
 
 #### Type
 
-[Color](./Color.md)
+[Color](.././Color)
 
 ---
 
@@ -66,7 +69,7 @@ The gradient that contains this gradient stop.
 
 #### Type
 
-[Gradient](./Gradient.md); read-only.
+[Gradient](.././Gradient); read-only.
 
 ---
 

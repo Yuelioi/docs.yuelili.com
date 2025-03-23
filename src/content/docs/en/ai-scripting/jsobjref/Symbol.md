@@ -1,3 +1,6 @@
+---
+title: Symbol
+---
 # Symbol
 
 `app.activeDocument.symbols[index]`
@@ -6,7 +9,7 @@
 
 An art item that is stored in the Symbols palette, and can be reused one or more times in the document without duplicating the art data. Symbols are contained in documents.
 
-Instances of `Symbol` in a document are associated with [SymbolItem](./SymbolItem.md) objects, which store the art object properties.
+Instances of `Symbol` in a document are associated with [SymbolItem](.././SymbolItem) objects, which store the art object properties.
 
 ---
 

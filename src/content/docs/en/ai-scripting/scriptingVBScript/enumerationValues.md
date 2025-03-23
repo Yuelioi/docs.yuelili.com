@@ -1,3 +1,6 @@
+---
+title: Working with enumeration values
+---
 # Working with enumeration values
 
 Properties that use enumeration values in VBScript use a numeral rather than a text value.

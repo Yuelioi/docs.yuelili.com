@@ -1,3 +1,6 @@
+---
+title: Dataset
+---
 # Dataset
 
 `app.activeDocument.dataSets[index]`
@@ -6,7 +9,7 @@
 
 A set of data used for dynamic publishing. A dataset allows you to collect a number of variables and their dynamic data into one object.
 
-You must have at least one variable bound to an art item in order to create a dataset. See the class [Variable](./Variable.md).
+You must have at least one variable bound to an art item in order to create a dataset. See the class [Variable](.././Variable).
 
 ---
 
@@ -36,7 +39,7 @@ The name of the object that contains this dataset.
 
 #### Type
 
-[Document](./Document.md); read-only.
+[Document](.././Document); read-only.
 
 ---
 

@@ -1,3 +1,6 @@
+---
+title: PrGPU SDK Macros
+---
 # PrGPU SDK Macros
 
 The PrGPU SDK macros and device functions allow you to write kernels that will compile on multiple GPU compute languages - CUDA, OpenCL, and Metal. These languages have an enormous overlap - a C98 language subset, and by using the porting macros and functions to abstract out the differences, you can write portable code. You can still access API specific features not covered by the porting set but you'll need to include an alternate code path for the other APIs.

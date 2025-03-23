@@ -1,3 +1,6 @@
+---
+title: PDFFileOptions
+---
 # PDFFileOptions
 
 `app.preferences.PDFFileOptions`

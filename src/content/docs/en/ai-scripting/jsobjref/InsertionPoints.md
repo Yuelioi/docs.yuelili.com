@@ -1,10 +1,13 @@
+---
+title: InsertionPoints
+---
 # InsertionPoints
 
 `app.activeDocument.textFrames[index].insertionPoints`
 
 #### Description
 
-A collection of [InsertionPoint](./InsertionPoint.md) objects.
+A collection of [InsertionPoint](.././InsertionPoint) objects.
 
 ---
 
@@ -70,7 +73,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[InsertionPoint](./InsertionPoint.md)
+[InsertionPoint](.././InsertionPoint)
 
 ---
 

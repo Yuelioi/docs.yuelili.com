@@ -1,3 +1,6 @@
+---
+title: CharacterAttributes
+---
 # CharacterAttributes
 
 `characterAttributes`
@@ -6,8 +9,10 @@
 
 Specifies the properties of a character contained in a text frame. A `CharacterStyle` object associates these attributes with a specific text range through its `characterAttributes` property.
 
-!!! note
-    Character attributes do not have default values, and are undefined until explicitly set.
+:::note
+Character attributes do not have default values, and are undefined until explicitly set.
+:::
+
 
 ---
 
@@ -205,7 +210,7 @@ The color of the text fill.
 
 #### Type
 
-[Color](./Color.md)
+[Color](.././Color)
 
 ---
 
@@ -471,7 +476,7 @@ The color of the text stroke.
 
 #### Type
 
-[Color](./Color.md)
+[Color](.././Color)
 
 ---
 
@@ -555,7 +560,7 @@ The text font.
 
 #### Type
 
-[TextFont](./TextFont.md)
+[TextFont](.././TextFont)
 
 ---
 

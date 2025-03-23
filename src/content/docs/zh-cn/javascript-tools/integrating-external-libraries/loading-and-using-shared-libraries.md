@@ -24,7 +24,7 @@ alert(a) ;
 mylib.unload() ;
 ```
 
-有关如何定义函数以通过 ExternalObject 对象直接访问的详细信息，请参阅 [定义直接访问的入口点](.././defining-entry-points-for-direct-access)。
+有关如何定义函数以通过 ExternalObject 对象直接访问的详细信息，请参阅 [定义直接访问的入口函数](.././defining-entry-points-for-direct-access)。
 
 ---
 
@@ -45,4 +45,4 @@ alert(a) ;
 anotherlib.unload() ;
 ```
 
-有关如何定义函数以通过 ExternalObject 对象间接访问的详细信息，请参阅 [定义间接访问的入口点](.././defining-entry-points-for-indirect-access)。
+有关如何定义函数以通过 ExternalObject 对象间接访问的详细信息，请参阅 [定义间接访问的入口函数](.././defining-entry-points-for-indirect-access)。

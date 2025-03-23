@@ -1,3 +1,6 @@
+---
+title: Tag
+---
 # Tag
 
 `app.activeDocument.selection[index].tags[index]`

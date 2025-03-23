@@ -31,7 +31,7 @@ title: 命令选择器
 
 `PF_Cmd_ABOUT` 在用户从效果控制窗口（ECW）中选择 *关于...* 时发送。
 
-`PF_Cmd_GLOBAL_SETDOWN` 在 After Effects 关闭或最后一个效果实例被移除时发送。不要依赖此消息来确定插件何时从内存中移除；请使用操作系统特定的入口点。
+`PF_Cmd_GLOBAL_SETDOWN` 在 After Effects 关闭或最后一个效果实例被移除时发送。不要依赖此消息来确定插件何时从内存中移除；请使用操作系统特定的入口函数。
 
 ---
 

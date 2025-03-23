@@ -1,3 +1,6 @@
+---
+title: Sequence object
+---
 # Sequence object
 
 `app.project.sequences[index]`
@@ -35,11 +38,11 @@ An enumerated value; read/write. One of:
 
 #### Description
 
-An array of audio [Track](track.md) objects in the sequence.
+An array of audio [Track](../track) objects in the sequence.
 
 #### Type
 
-[TrackCollection object](../collection/trackcollection.md); read-only.
+[TrackCollection object](../../collection/trackcollection); read-only.
 
 ---
 
@@ -99,8 +102,10 @@ This is the ordinal assigned to the sequence upon creation.
 
 If this is the thirty-third sequence created within the project during a given Premiere Pro session, this value will be `33`.
 
-!!! note
-    In testing, this attribute seems unstable and produces unreliable results. Recommend using [Sequence.sequenceID](#sequencesequenceid) instead.
+:::note
+In testing, this attribute seems unstable and produces unreliable results. Recommend using [Sequence.sequenceID](#sequencesequenceid) instead.
+:::
+
 
 #### Type
 
@@ -114,11 +119,11 @@ Integer, read-only.
 
 #### Description
 
-An array of [Marker](../general/marker.md) objects in the sequence.
+An array of [Marker](../../general/marker) objects in the sequence.
 
 #### Type
 
-[MarkerCollection object](../collection/markercollection.md), read-only;
+[MarkerCollection object](../../collection/markercollection), read-only;
 
 ---
 
@@ -142,14 +147,16 @@ String; read/write.
 
 #### Description
 
-The [ProjectItem object](../item/projectitem.md) associated with the sequence.
+The [ProjectItem object](../../item/projectitem) associated with the sequence.
 
-!!! note
-    Not all sequences will have a `projectItem`. There may be sequences in a project that Premiere generates that are invisible to the user, these do not have `projectItems`
+:::note
+Not all sequences will have a `projectItem`. There may be sequences in a project that Premiere generates that are invisible to the user, these do not have `projectItems`
+:::
+
 
 #### Type
 
-[ProjectItem object](../item/projectitem.md); read-only.
+[ProjectItem object](../../item/projectitem); read-only.
 
 ---
 
@@ -218,11 +225,11 @@ An enumerated value; read/write. One of:
 
 #### Description
 
-An array of video [Track](track.md) objects in the sequence.
+An array of video [Track](../track) objects in the sequence.
 
 #### Type
 
-[TrackCollection object](../collection/trackcollection.md); read-only.
+[TrackCollection object](../../collection/trackcollection); read-only.
 
 ---
 
@@ -275,23 +282,16 @@ Generates a new, auto-reframed sequence.
 
 #### Parameters
 
-+----------------------+---------+--------------------------------------------+
 |      Parameter       |  Type   |                Description                 |
-+======================+=========+============================================+
+|----------------------|---------|--------------------------------------------|
 | `numerator`          | Integer | Numerator of desired frame aspect ratio.   |
-+----------------------+---------+--------------------------------------------+
 | `denominator`        | Integer | Denominator of desired frame aspect ratio. |
-+----------------------+---------+--------------------------------------------+
 | `motionPreset`       | String  | One of:                                    |
-|                      |         |                                            |
 |                      |         | - `slower`                                 |
 |                      |         | - `default`                                |
 |                      |         | - `faster`                                 |
-+----------------------+---------+--------------------------------------------+
 | `newName`            | String  | A name for a newly created sequence.       |
-+----------------------+---------+--------------------------------------------+
 | `useNestedSequences` | Boolean | Whether to honor nested sequence.          |
-+----------------------+---------+--------------------------------------------+
 
 #### Returns
 
@@ -364,19 +364,15 @@ Boolean; `true` if successful.
 
 #### Description
 
-Creates a caption track in the sequence using caption data from a [ProjectItem object](../item/projectitem.md).
+Creates a caption track in the sequence using caption data from a [ProjectItem object](../../item/projectitem).
 
 #### Parameters
 
-+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------+
 |    Parameter    |                     Type                     |                                            Description                                            |
-+=================+==============================================+===================================================================================================+
-| `projectItem`   | [ProjectItem object](../item/projectitem.md) | A captions source clip (e.g. .srt)                                                                |
-+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------+
+|-----------------|----------------------------------------------|---------------------------------------------------------------------------------------------------|
+| `projectItem`   | [ProjectItem object](../../item/projectitem) | A captions source clip (e.g. .srt)                                                                |
 | `startAtTime`   | Float                                        | Offset in seconds from start of sequence                                                          |
-+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------+
 | `captionFormat` | `Sequence.CAPTION_FORMAT_` enum              | Caption format of the new track. Optional, default is `Sequence.CAPTION_FORMAT_SUBTITLE`. One of: |
-|                 |                                              |                                                                                                   |
 |                 |                                              | - `Sequence.CAPTION_FORMAT_SUBTITLE` - Subtitle                                                   |
 |                 |                                              | - `Sequence.CAPTION_FORMAT_608` - CEA-608                                                         |
 |                 |                                              | - `Sequence.CAPTION_FORMAT_708` - CEA-708                                                         |
@@ -384,7 +380,6 @@ Creates a caption track in the sequence using caption data from a [ProjectItem o
 |                 |                                              | - `Sequence.CAPTION_FORMAT_OPEN_EBU` - EBU Subtitle                                               |
 |                 |                                              | - `Sequence.CAPTION_FORMAT_OP42` - OP-42                                                          |
 |                 |                                              | - `Sequence.CAPTION_FORMAT_OP47` - OP-47                                                          |
-+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -416,8 +411,10 @@ Creates a new sequence, from the in point to the out point, which is a sub-seque
 
 Returns the newly-created [Sequence object](#sequence-object).
 
-!!! note
-    This is not the same as nesting. The newly-created sequence is not inserted back into the original sequence. To nest, see the example function below.
+:::note
+This is not the same as nesting. The newly-created sequence is not inserted back into the original sequence. To nest, see the example function below.
+:::
+
 
 #### Example
 
@@ -480,19 +477,14 @@ Renders the sequence to the specified output path, using the specified output pr
 
 #### Parameters
 
-+----------------+---------+---------------------------------------------------------------------------+
 |   Parameter    |  Type   |                                Description                                |
-+================+=========+===========================================================================+
+|----------------|---------|---------------------------------------------------------------------------|
 | `outputPath`   | String  | An output path, to which to render the media.                             |
-+----------------+---------+---------------------------------------------------------------------------+
 | `presetPath`   | String  | Path to the preset file (.epr file) which contains the encoding settings. |
-+----------------+---------+---------------------------------------------------------------------------+
 | `workAreaType` | Integer | The work area type to be rendered (see below). One of:                    |
-|                |         |                                                                           |
 |                |         | - `0` - Renders the entire sequence.                                      |
 |                |         | - `1` - Renders between the in and out point of the sequence.             |
 |                |         | - `2` - Renders the work area of the sequence.                            |
-+----------------+---------+---------------------------------------------------------------------------+
 
 #### Returns
 
@@ -506,7 +498,7 @@ Returns a boolean; `true` if successful.
 
 #### Description
 
-Creates a new [Project object](../general/project.md) containing only the given sequence and its constituent media.
+Creates a new [Project object](../../general/project) containing only the given sequence and its constituent media.
 
 #### Parameters
 
@@ -572,7 +564,7 @@ None.
 
 #### Returns
 
-Returns a [Time object](../other/time.md).
+Returns a [Time object](../../other/time).
 
 ---
 
@@ -608,7 +600,7 @@ None.
 
 #### Returns
 
-Returns a [Time object](../other/time.md).
+Returns a [Time object](../../other/time).
 
 ---
 
@@ -626,7 +618,7 @@ None.
 
 #### Returns
 
-Returns a [Time object](../other/time.md).
+Returns a [Time object](../../other/time).
 
 ---
 
@@ -636,7 +628,7 @@ Returns a [Time object](../other/time.md).
 
 #### Description
 
-An array of [Track item](../item/trackitem.md) objects, of the selected clips in the sequence, in temporal order.
+An array of [Track item](../../item/trackitem) objects, of the selected clips in the sequence, in temporal order.
 
 #### Parameters
 
@@ -644,7 +636,7 @@ None.
 
 #### Returns
 
-Returns a [TrackItemCollection object](../collection/trackitemcollection.md).
+Returns a [TrackItemCollection object](../../collection/trackitemcollection).
 
 ---
 
@@ -664,47 +656,30 @@ None.
 
 Returns an object; a sequence settings structure.
 
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 |        Property         |              Type               |                                 Description                                  |
-+=========================+=================================+==============================================================================+
+|-------------------------|---------------------------------|------------------------------------------------------------------------------|
 | `audioChannelCount`     | Integer                         | Number of audio channels in the sequence.                                    |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `audioChannelType`      | Integer                         | Audio channel type. One of:                                                  |
-|                         |                                 |                                                                              |
 |                         |                                 | - `0` - Mono                                                                 |
 |                         |                                 | - `1` - Stereo                                                               |
 |                         |                                 | - `2` - 5.1                                                                  |
 |                         |                                 | - `3` - Multichannel                                                         |
 |                         |                                 | - `4` - 4 Channel                                                            |
 |                         |                                 | - `5` - 8 Channel                                                            |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `audioDisplayFormat`    | Integer                         | Audio timecode display format. One of:                                       |
-|                         |                                 |                                                                              |
 |                         |                                 | - `200` - Audio Samples                                                      |
 |                         |                                 | - `201` - Milliseconds                                                       |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
-| `audioSampleRate`       | [Time object](../other/time.md) | Audio sample rate.                                                           |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
+| `audioSampleRate`       | [Time object](../../other/time) | Audio sample rate.                                                           |
 | `autoToneMapEnabled`    | Boolean                         | Whether Auto Tone Map Media is checked.                                      |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `compositeLinearColor`  | Boolean                         | Whether sequence is composited in linear color.                              |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `editingMode`           | String                          | The GUID of the editing mode.                                                |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `maximumBitDepth`       | Boolean                         | Whether sequence is composited at maximum depth.                             |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `maximumRenderQuality`  | Boolean                         | Whether sequence is rendered at maximum quality.                             |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `previewCodec`          | String                          | Four character code of preview codec in use.                                 |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `previewFrameWidth`     | Integer                         | Width of preview frame.                                                      |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `previewFrameHeight`    | Integer                         | Height of preview frame.                                                     |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `previewFileFormat`     | Integer                         | Path to the output preset (.epr file) being used for preview file rendering. |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `videoDisplayFormat`    | Integer                         | Video time display format. One of:                                           |
-|                         |                                 |                                                                              |
 |                         |                                 | - `100` - 24 Timecode                                                        |
 |                         |                                 | - `101` - 25 Timecode                                                        |
 |                         |                                 | - `102` - 29.97 Drop Timecode                                                |
@@ -719,35 +694,23 @@ Returns an object; a sequence settings structure.
 |                         |                                 | - `111` - 16mm Feet + Frames                                                 |
 |                         |                                 | - `112` - 35mm Feet + Frames                                                 |
 |                         |                                 | - `113` - 48 Timecode                                                        |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `videoFieldType`        | Integer                         | Video field type. One of:                                                    |
-|                         |                                 |                                                                              |
 |                         |                                 | - `-1` - Default                                                             |
 |                         |                                 | - `0` - No Fields (Progressive Scan)                                         |
 |                         |                                 | - `1` - Upper Field First                                                    |
 |                         |                                 | - `2` - Lower Field First                                                    |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `videoFrameHeight`      | Integer                         | Height of sequence video frame.                                              |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `videoFrameWidth`       | Integer                         | Width of sequence video frame.                                               |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `videoPixelAspectRatio` | String                          | Pixel aspect ratio.                                                          |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `vrHorzCapturedView`    | Integer                         | The horizontal captured view, in degrees, for VR.                            |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `vrVertCapturedView`    | Integer                         | The vertical captured view, in degrees, for VR.                              |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `vrLayout`              | Integer                         | The layout of footage in use, for VR. One of:                                |
-|                         |                                 |                                                                              |
 |                         |                                 | - `0` - Monoscopic                                                           |
 |                         |                                 | - `1` - Stereoscopic - Over/Under                                            |
 |                         |                                 | - `2` - Stereoscopic - Side by Side                                          |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 | `vrProjection`          | Integer                         | The projection type in use, for VR footage. One of:                          |
-|                         |                                 |                                                                              |
 |                         |                                 | - `0` - None                                                                 |
 |                         |                                 | - `1` - Equirectangular                                                      |
-+-------------------------+---------------------------------+------------------------------------------------------------------------------+
 
 ---
 
@@ -783,7 +746,7 @@ None.
 
 #### Returns
 
-Returns a [Time object](../other/time.md).
+Returns a [Time object](../../other/time).
 
 ---
 
@@ -819,7 +782,7 @@ None.
 
 #### Returns
 
-Returns a [Time object](../other/time.md).
+Returns a [Time object](../../other/time).
 
 ---
 
@@ -842,7 +805,7 @@ Imports a MOGRT, or an After Effects Motion Graphics Template, to the specified 
 
 #### Returns
 
-Returns a [TrackItem object](../item/trackitem.md).
+Returns a [TrackItem object](../../item/trackitem).
 
 ---
 
@@ -866,7 +829,7 @@ Imports a MOGRT, or an After Effects Motion Graphics Template, from the current 
 
 #### Returns
 
-Returns a [TrackItem object](../item/trackitem.md).
+Returns a [TrackItem object](../../item/trackitem).
 
 ---
 
@@ -882,7 +845,7 @@ Inserts a clip into the sequence, on the specified video and audio tracks, at th
 
 |   Parameter   |                     Type                     |                        Description                        |
 | ------------- | -------------------------------------------- | --------------------------------------------------------- |
-| `projectItem` | [ProjectItem object](../item/projectitem.md) | A project item from which to get media.                   |
+| `projectItem` | [ProjectItem object](../../item/projectitem) | A project item from which to get media.                   |
 | `time`        | Time                                       | The time at which to add project item.        |
 | `vTrackIndex` | Integer                                      | The (zero-based) track index, into which to insert video. |
 | `aTrackIndex` | Integer                                      | The (zero-based) track index, into which to insert audio. |
@@ -919,8 +882,10 @@ Returns a boolean.
 
 Returns whether or not the sequence work area bar is enabled.
 
-!!! note
-    The work area bar is disabled by default. To enable it, check 'Work Area Bar' in the sequence hamburger menu.
+:::note
+The work area bar is disabled by default. To enable it, check 'Work Area Bar' in the sequence hamburger menu.
+:::
+
 
 #### Parameters
 
@@ -962,7 +927,7 @@ Inserts a clip into the sequence, *overwriting existing clips*, on the specified
 
 |   Parameter   |                     Type                     |                        Description                        |
 | ------------- | -------------------------------------------- | --------------------------------------------------------- |
-| `projectItem` | [ProjectItem object](../item/projectitem.md) | A project item from which to get media.                   |
+| `projectItem` | [ProjectItem object](../../item/projectitem) | A project item from which to get media.                   |
 | `time`        | String                                       | The time at which to add project item, in seconds.        |
 | `vTrackIndex` | Integer                                      | The (zero-based) track index, into which to insert video. |
 | `aTrackIndex` | Integer                                      | The (zero-based) track index, into which to insert audio. |
@@ -983,22 +948,16 @@ Performs cut detection on the sequence selection.
 
 #### Parameters
 
-+--------------------------+---------+-------------------------------------------------+
 |        Parameter         |  Type   |                   Description                   |
-+==========================+=========+=================================================+
+|--------------------------|---------|-------------------------------------------------|
 | `actionDesired`          | String  | One of:                                         |
-|                          |         |                                                 |
 |                          |         | - `CreateMarkers`                               |
 |                          |         | - `ApplyCuts`                                   |
-+--------------------------+---------+-------------------------------------------------+
 | `applyCutsToLinkedAudio` | Boolean | Whether to apply detected cuts on linked audio. |
-+--------------------------+---------+-------------------------------------------------+
 | `sensitivity`            | String  | One of:                                         |
-|                          |         |                                                 |
 |                          |         | - `LowSensitivity`                              |
 |                          |         | - `MediumSensitivity`                           |
 |                          |         | - `HighSensitivity`                             |
-+--------------------------+---------+-------------------------------------------------+
 
 #### Returns
 
@@ -1018,7 +977,7 @@ Sets a new sequence in point.
 
 | Parameter |                    Type                    |      Description       |
 | --------- | ------------------------------------------ | ---------------------- |
-| `time`    | Integer or [Time object](../other/time.md) | A new time in seconds. |
+| `time`    | Integer or [Time object](../../other/time) | A new time in seconds. |
 
 #### Returns
 
@@ -1038,7 +997,7 @@ Sets a new sequence out point.
 
 | Parameter |                    Type                    |      Description       |
 | --------- | ------------------------------------------ | ---------------------- |
-| `time`    | Integer or [Time object](../other/time.md) | A new time in seconds. |
+| `time`    | Integer or [Time object](../../other/time) | A new time in seconds. |
 
 #### Returns
 
@@ -1098,7 +1057,7 @@ Sets a new sequence work area in point.
 
 | Parameter |                    Type                    |      Description       |
 | --------- | ------------------------------------------ | ---------------------- |
-| `time`    | Integer or [Time object](../other/time.md) | A new time in seconds. |
+| `time`    | Integer or [Time object](../../other/time) | A new time in seconds. |
 
 #### Returns
 
@@ -1118,7 +1077,7 @@ Sets a new sequence work area out point.
 
 | Parameter |                    Type                    |      Description       |
 | --------- | ------------------------------------------ | ---------------------- |
-| `time`    | Integer or [Time object](../other/time.md) | A new time in seconds. |
+| `time`    | Integer or [Time object](../../other/time) | A new time in seconds. |
 
 #### Returns
 

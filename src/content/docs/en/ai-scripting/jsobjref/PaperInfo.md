@@ -1,3 +1,6 @@
+---
+title: PaperInfo
+---
 # PaperInfo
 
 `printerList[printerIndex].printerInfo.paperSizes[paperSizeIndex].paperInfo`

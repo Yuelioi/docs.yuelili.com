@@ -1,3 +1,6 @@
+---
+title: TrackItem object
+---
 # TrackItem object
 
 `app.project.sequences[index].audioTracks[index].clips[index]`
@@ -7,7 +10,7 @@
 
 #### Description
 
-The TrackItem object represents an item on a video or audio track, within a [Sequence object](../sequence/sequence.md).
+The TrackItem object represents an item on a video or audio track, within a [Sequence object](../../sequence/sequence).
 
 ---
 
@@ -26,7 +29,7 @@ The components associated with this trackItem. This can include intrinsic transf
 
 #### Type
 
-[ComponentCollection object](../collection/componentcollection.md), read-only;
+[ComponentCollection object](../../collection/componentcollection), read-only;
 
 ---
 
@@ -43,7 +46,7 @@ The duration of the trackItem.
 
 #### Type
 
-[Time object](../other/time.md), read-only.
+[Time object](../../other/time), read-only.
 
 ---
 
@@ -58,12 +61,14 @@ The duration of the trackItem.
 
 The visible end time of the trackItem in the sequence, relative to the beginning of its corresponding sequence (NOT the sequence zero point).
 
-!!! note
-    This may differ from the trackItem's out point, which is relative to the source.
+:::note
+This may differ from the trackItem's out point, which is relative to the source.
+:::
+
 
 #### Type
 
-[Time object](../other/time.md), read/write.
+[Time object](../../other/time), read/write.
 
 ---
 
@@ -80,7 +85,7 @@ The in point set on the source for this trackItem instance, relative to the begi
 
 #### Type
 
-[Time object](../other/time.md), read/write.
+[Time object](../../other/time), read/write.
 
 ---
 
@@ -168,7 +173,7 @@ The out point set on the source for this TrackItem instance, relative to the beg
 
 #### Type
 
-[Time object](../other/time.md), read/write.
+[Time object](../../other/time), read/write.
 
 ---
 
@@ -181,11 +186,11 @@ The out point set on the source for this TrackItem instance, relative to the beg
 
 #### Description
 
-The [ProjectItem object](projectitem.md) from which the media is being drawn.
+The [ProjectItem object](../projectitem) from which the media is being drawn.
 
 #### Type
 
-A [ProjectItem object](projectitem.md).
+A [ProjectItem object](../projectitem).
 
 ---
 
@@ -202,7 +207,7 @@ The visible start time of the trackItem in the sequence, relative to the beginni
 
 #### Type
 
-[Time object](../other/time.md), read/write.
+[Time object](../../other/time), read/write.
 
 ---
 
@@ -442,7 +447,7 @@ Moves the inPoint of the track item to a new time, by shifting it by a number of
 
 |  Parameter   |              Type               |                                          Description                                          |
 | ------------ | ------------------------------- | --------------------------------------------------------------------------------------------- |
-| `newInPoint` | [Time object](../other/time.md) | A Time object that represent the amount of time, in seconds, to shift the track item's start. |
+| `newInPoint` | [Time object](../../other/time) | A Time object that represent the amount of time, in seconds, to shift the track item's start. |
 
 #### Returns
 

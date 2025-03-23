@@ -1,9 +1,9 @@
 ---
-title: 定义直接访问的入口点
+title: 定义直接访问的入口函数
 ---
-# 定义直接访问的入口点
+# 定义直接访问的入口函数
 
-要通过 [ExternalObject 实例](.././externalobject-object) 直接加载和访问的库必须发布以下入口点。
+要通过 [ExternalObject 实例](.././externalobject-object) 直接加载和访问的库必须发布以下入口函数。
 
 :::note
 这些必须作为 C 函数导出，而不是 C++ 函数。
@@ -11,9 +11,9 @@ title: 定义直接访问的入口点
 
 ---
 
-## 入口点
+## 入口函数
 
-如果您希望使用 [ExternalObject 实例](.././externalobject-object)，则需要以下入口点：
+如果您希望使用 [ExternalObject 实例](.././externalobject-object)，则需要以下入口函数：
 
 ### ESInitialize()
 
@@ -98,7 +98,7 @@ title: 定义直接访问的入口点
 - `undefined`
 - 布尔值
 - `double`
-- 字符串 - 必须为 UTF-8 编码。库必须定义入口点 [ESFreeMem()](#esfreemem)，ExtendScript 调用该入口点以释放返回的字符串指针。如果缺少此入口点，ExtendScript 不会尝试释放任何返回的字符串数据。
+- 字符串 - 必须为 UTF-8 编码。库必须定义入口函数 [ESFreeMem()](#esfreemem)，ExtendScript 调用该入口函数以释放返回的字符串指针。如果缺少此入口函数，ExtendScript 不会尝试释放任何返回的字符串数据。
 - `Script` - 由 ExtendScript 评估的字符串。用于返回定义任意复杂数据的小型 JavaScript 脚本。
 
 如果在调用函数时提供的参数未定义，ExtendScript 会将数据类型设置为 `undefined`，并且不会尝试将数据转换为请求的类型。
@@ -139,7 +139,7 @@ ExtendScript 调用 [ESInitialize()](#esinitialize) 来初始化库。
 | `f`        | 64 位浮点数                                                                                                   |
 | `s`        | 字符串                                                                                                                  |
 
-例如，假设您的库定义了以下两个入口点：
+例如，假设您的库定义了以下两个入口函数：
 
 ```javascript
 One (Integer a, String b);
@@ -157,6 +157,6 @@ Two ();
 
 ## 库终止
 
-定义入口点 [ESInitialize()](#esinitialize) 以在库卸载时释放您分配的任何内存。
+定义入口函数 [ESInitialize()](#esinitialize) 以在库卸载时释放您分配的任何内存。
 
 每当 JavaScript 函数调用库函数时，它会增加该库的引用计数。当库的引用计数达到 0 时，库会自动卸载；您的终止函数被调用，并且 `ExternalObject` 实例被删除。请注意，删除 `ExternalObject` 实例不会卸载库，如果仍有剩余的引用。

@@ -1,3 +1,6 @@
+---
+title: TextPath
+---
 # TextPath
 
 `textPath`
@@ -106,7 +109,7 @@ The fill color of the path.
 
 #### Type
 
-[Color](./Color.md)
+[Color](.././Color)
 
 ---
 
@@ -220,7 +223,7 @@ Read-only. The parent of this object.
 
 #### Type
 
-[Layer](./Layer.md) or [GroupItem](./GroupItem.md)
+[Layer](.././Layer) or [GroupItem](.././GroupItem)
 
 ---
 
@@ -234,7 +237,7 @@ Read-only. The path points contained in this path item.
 
 #### Type
 
-[PathPoints](./PathPoints.md)
+[PathPoints](.././PathPoints)
 
 ---
 
@@ -290,7 +293,7 @@ Read-only. All of the selected path points in the path.
 
 #### Type
 
-[PathPoints](./PathPoints.md)
+[PathPoints](.././PathPoints)
 
 ---
 
@@ -318,7 +321,7 @@ The stroke color for the path.
 
 #### Type
 
-[Color](./Color.md)
+[Color](.././Color)
 
 ---
 
@@ -485,7 +488,3 @@ Sets the path using the array of points specified as [x, y] coordinate pairs.
 #### Returns
 
 Nothing.
-
----
-
-## Example

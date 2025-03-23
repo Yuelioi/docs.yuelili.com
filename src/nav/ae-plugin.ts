@@ -1,5 +1,5 @@
 export const aePlugin = {
-  label: "AE Plugin Development",
+  label: "AE插件开发",
   link: "ae-plugin/intro/what-can-i-do",
   icon: "puzzle",
   items: [

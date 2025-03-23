@@ -1,3 +1,6 @@
+---
+title: Object Naming Conventions
+---
 # Object Naming Conventions
 
 There is one object model for the Illustrator scripting interface, but actual object names vary slightly in the different scripting languages:

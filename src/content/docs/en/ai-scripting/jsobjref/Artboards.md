@@ -1,10 +1,13 @@
+---
+title: Artboards
+---
 # Artboards
 
 `artboards`
 
 #### Description
 
-A collection of [Artboard](./Artboard.md) objects.
+A collection of [Artboard](.././Artboard) objects.
 
 ---
 
@@ -34,7 +37,7 @@ The name of the object that contains this dataset
 
 #### Type
 
-[Artboard](./Artboard.md); read-only.
+[Artboard](.././Artboard); read-only.
 
 ---
 
@@ -70,7 +73,7 @@ Creates a new Artboard object.
 
 #### Returns
 
-[Artboard](./Artboard.md)
+[Artboard](.././Artboard)
 
 ---
 
@@ -106,7 +109,7 @@ Gets the first element in the collection with the specified name.
 
 #### Returns
 
-[Artboard](./Artboard.md)
+[Artboard](.././Artboard)
 
 ---
 

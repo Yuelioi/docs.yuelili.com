@@ -1,10 +1,13 @@
+---
+title: Patterns
+---
 # Patterns
 
 `app.activeDocument.patterns`
 
 #### Description
 
-A collection of [Pattern](./Pattern.md) objects in a document.
+A collection of [Pattern](.././Pattern) objects in a document.
 
 ---
 
@@ -64,7 +67,7 @@ Creates a new object.
 
 #### Returns
 
-[Pattern](./Pattern.md)
+[Pattern](.././Pattern)
 
 ---
 
@@ -84,7 +87,7 @@ Get the first element in the collection with the provided name.
 
 #### Returns
 
-[Pattern](./Pattern.md)
+[Pattern](.././Pattern)
 
 ---
 
@@ -104,7 +107,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[Pattern](./Pattern.md)
+[Pattern](.././Pattern)
 
 ---
 

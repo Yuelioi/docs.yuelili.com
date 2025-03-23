@@ -1,3 +1,6 @@
+---
+title: Metadata object
+---
 # Metadata object
 
 `app.metadata`

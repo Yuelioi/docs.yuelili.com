@@ -1,3 +1,6 @@
+---
+title: Printer
+---
 # Printer
 
 `app.PrinterList[index]`
@@ -36,7 +39,7 @@ The printer information.
 
 #### Type
 
-[PrinterInfo](./PrinterInfo.md)
+[PrinterInfo](.././PrinterInfo)
 
 ---
 

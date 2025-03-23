@@ -1,10 +1,13 @@
+---
+title: Brushes
+---
 # Brushes
 
 `app.activeDocument.brushes`
 
 #### Description
 
-A collection of [Brush](./Brush.md) objects in a document.
+A collection of [Brush](.././Brush) objects in a document.
 
 ---
 
@@ -70,7 +73,7 @@ Gets the first element in the collection with the specified name.
 
 #### Returns
 
-[Brush](./Brush.md)
+[Brush](.././Brush)
 
 ---
 
@@ -90,7 +93,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[Brush](./Brush.md)
+[Brush](.././Brush)
 
 ---
 

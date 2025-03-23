@@ -1,10 +1,13 @@
+---
+title: Views
+---
 # Views
 
 `app.activeDocument.views`
 
 #### Description
 
-A collection of [View](./View.md) objects in a document.
+A collection of [View](.././View) objects in a document.
 
 ---
 
@@ -70,4 +73,4 @@ Gets an element from the collection.
 
 #### Returns
 
-[View](./View.md)
+[View](.././View)

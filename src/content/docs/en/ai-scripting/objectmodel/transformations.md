@@ -1,3 +1,6 @@
+---
+title: Transformations
+---
 # Transformations
 
 The `matrix` object provides access to the power of geometric-transformation matrices.

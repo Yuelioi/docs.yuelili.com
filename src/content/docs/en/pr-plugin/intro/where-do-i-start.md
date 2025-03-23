@@ -1,3 +1,6 @@
+---
+title: Where Do I Start
+---
 # Where Do I Start
 
 Read about the sample projects. Decide which one is closest to the functionality you want to provide. Build the plugin into the shared plugins folder.

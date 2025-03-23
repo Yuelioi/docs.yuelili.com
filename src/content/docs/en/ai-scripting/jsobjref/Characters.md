@@ -1,3 +1,6 @@
+---
+title: Characters
+---
 # Characters
 
 `app.activeDocument.textFrames[index].contents`
@@ -71,12 +74,12 @@ If a location is not specified, adds the new character to the containing text fr
 |      Parameter      |                                 Type                                  |      Description       |
 | ------------------- | --------------------------------------------------------------------- | ---------------------- |
 | `contents`          | String                                                                | Text contents to add   |
-| `relativeObject`    | [TextFrameItem](./TextFrameItem.md), optional                         | Object to add item to  |
+| `relativeObject`    | [TextFrameItem](.././TextFrameItem), optional                         | Object to add item to  |
 | `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement), optional | Location to place text |
 
 #### Returns
 
-[TextRange](./TextRange.md)
+[TextRange](.././TextRange)
 
 ---
 
@@ -96,7 +99,7 @@ Adds a character before the specified text selection.
 
 #### Returns
 
-[TextRange](./TextRange.md)
+[TextRange](.././TextRange)
 
 ---
 
@@ -116,7 +119,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[TextRange](./TextRange.md)
+[TextRange](.././TextRange)
 
 ---
 

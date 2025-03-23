@@ -1,3 +1,6 @@
+---
+title: Artboard
+---
 # Artboard
 
 `artboard`
@@ -48,7 +51,7 @@ The parent of this object.
 
 #### Type
 
-[Document](./Document.md); read-only.
+[Document](.././Document); read-only.
 
 ---
 

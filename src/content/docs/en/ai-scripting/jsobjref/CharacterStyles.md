@@ -1,10 +1,13 @@
+---
+title: CharacterStyles
+---
 # CharacterStyles
 
 `app.activeDocument.characterStyles`
 
 #### Description
 
-A collection of [CharacterStyle](./CharacterStyle.md) objects.
+A collection of [CharacterStyle](.././CharacterStyle) objects.
 
 ---
 
@@ -70,7 +73,7 @@ Creates a named character style.
 
 #### Returns
 
-[CharacterStyle](./CharacterStyle.md)
+[CharacterStyle](.././CharacterStyle)
 
 ---
 
@@ -90,7 +93,7 @@ Gets the first element in the collection with the provided name.
 
 #### Returns
 
-[CharacterStyle](./CharacterStyle.md)
+[CharacterStyle](.././CharacterStyle)
 
 ---
 
@@ -110,7 +113,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[CharacterStyle](./CharacterStyle.md)
+[CharacterStyle](.././CharacterStyle)
 
 ---
 

@@ -1,5 +1,5 @@
 export const javascriptTools = {
-  label: "javascript-tools",
+  label: "javascript工具",
   link: "javascript-tools/introduction/extendscript-overview",
   icon: "open-book",
   items: [

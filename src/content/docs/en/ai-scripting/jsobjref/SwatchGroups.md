@@ -1,10 +1,13 @@
+---
+title: SwatchGroups
+---
 # SwatchGroups
 
 `swatchGroups`
 
 #### Description
 
-A collection of [SwatchGroup](./SwatchGroup.md) objects.
+A collection of [SwatchGroup](.././SwatchGroup) objects.
 
 ---
 
@@ -64,7 +67,7 @@ Creates a swatch group.
 
 #### Returns
 
-[SwatchGroup](./SwatchGroup.md)
+[SwatchGroup](.././SwatchGroup)
 
 ---
 
@@ -84,7 +87,7 @@ Get the first element in the collection with the provided name.
 
 #### Returns
 
-[SwatchGroup](./SwatchGroup.md)
+[SwatchGroup](.././SwatchGroup)
 
 ---
 

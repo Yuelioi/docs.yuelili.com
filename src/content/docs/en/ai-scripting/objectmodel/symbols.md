@@ -1,3 +1,6 @@
+---
+title: Symbols
+---
 # Symbols
 
 In Illustrator, symbols are art items that are stored in the Symbols panel.

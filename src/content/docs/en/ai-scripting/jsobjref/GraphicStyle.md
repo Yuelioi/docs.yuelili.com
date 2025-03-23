@@ -1,3 +1,6 @@
+---
+title: GraphicStyle
+---
 # GraphicStyle
 
 `app.activeDocument.graphicStyles[index]`
@@ -34,7 +37,7 @@ The document that contains this graphic style.
 
 #### Type
 
-[Document](./Document.md); read-only.
+[Document](.././Document); read-only.
 
 ---
 
@@ -66,7 +69,7 @@ Applies this art style to a specified art item.
 
 | Parameter |           Type            |   Description   |
 | --------- | ------------------------- | --------------- |
-| `artItem` | [PageItem](./PageItem.md) | Target art item |
+| `artItem` | [PageItem](.././PageItem) | Target art item |
 
 #### Returns
 
@@ -86,7 +89,7 @@ Merges this art style into the current styles of a specified art item.
 
 | Parameter |           Type            |   Description   |
 | --------- | ------------------------- | --------------- |
-| `artItem` | [PageItem](./PageItem.md) | Target art item |
+| `artItem` | [PageItem](.././PageItem) | Target art item |
 
 #### Returns
 

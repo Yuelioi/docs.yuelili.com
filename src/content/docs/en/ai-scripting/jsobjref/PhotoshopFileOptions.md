@@ -1,3 +1,6 @@
+---
+title: PhotoshopFileOptions
+---
 # PhotoshopFileOptions
 
 `preferences.photoshopFileOptions`

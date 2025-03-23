@@ -1,10 +1,13 @@
+---
+title: Spots
+---
 # Spots
 
 `app.activeDocument.spots`
 
 #### Description
 
-A collection of [SpotColor](./SpotColor.md) objects in a document.
+A collection of [SpotColor](.././SpotColor) objects in a document.
 
 ---
 
@@ -64,7 +67,7 @@ Creates a new object.
 
 #### Returns
 
-[Spot](./Spot.md)
+[Spot](.././Spot)
 
 ---
 
@@ -84,7 +87,7 @@ Get the first element in the collection with the provided name.
 
 #### Returns
 
-[Spot](./Spot.md)
+[Spot](.././Spot)
 
 ---
 
@@ -104,7 +107,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[Spot](./Spot.md)
+[Spot](.././Spot)
 
 ---
 

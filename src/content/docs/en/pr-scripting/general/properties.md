@@ -1,3 +1,6 @@
+---
+title: Properties object
+---
 # Properties object
 
 `app.properties`
@@ -131,8 +134,10 @@ Boolean.
 
 Set property value.
 
-!!! note
-    For any file paths to be used in Premiere Pro's preferences, a trailing path seperator is mandatory.
+:::note
+For any file paths to be used in Premiere Pro's preferences, a trailing path seperator is mandatory.
+:::
+
 
 #### Parameters
 

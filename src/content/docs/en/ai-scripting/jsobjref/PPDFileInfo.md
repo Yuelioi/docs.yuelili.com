@@ -1,3 +1,6 @@
+---
+title: PPDFileInfo
+---
 # PPDFileInfo
 
 `app.PPDFileList[index].PPDInfo`
@@ -48,7 +51,7 @@ List of color separation screens.
 
 #### Type
 
-Array of [Screen](./Screen.md)
+Array of [Screen](.././Screen)
 
 ---
 
@@ -62,7 +65,7 @@ List of color separation screen spot functions.
 
 #### Type
 
-Array of [ScreenSpotFunction](./ScreenSpotFunction.md)
+Array of [ScreenSpotFunction](.././ScreenSpotFunction)
 
 ---
 

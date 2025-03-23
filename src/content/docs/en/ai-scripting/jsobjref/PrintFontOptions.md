@@ -1,3 +1,6 @@
+---
+title: PrintFontOptions
+---
 # PrintFontOptions
 
 `new PrintFontOptions()`

@@ -15,16 +15,21 @@ function processMarkdownFiles(dirPath, parentDepth = 0) {
       try {
         const fileName = path.basename(entry.name, ".md");
 
-        // 创建 Front Matter
-
         // 读取文件内容
         let originalContent = fs.readFileSync(fullPath, "utf8");
 
         let updatedContent = originalContent;
 
+        const pathArr = fullPath.split("\\").slice(-2);
+        const title = dataObj[pathArr.join("/")];
+
         // 更新frontmatter
         if (!updatedContent.startsWith("---")) {
-          updatedContent = frontMatter(updatedContent, fileName);
+          if (title) {
+            updatedContent = frontMatter(updatedContent, title);
+          } else {
+            updatedContent = frontMatter(updatedContent, fileName);
+          }
         }
 
         // 更新链接
@@ -38,7 +43,6 @@ function processMarkdownFiles(dirPath, parentDepth = 0) {
 
         // 处理table
         updatedContent = asciiTableToMarkdown(updatedContent, fileName);
-        // 写回文件
         writeOutput(fullPath, updatedContent);
       } catch (err) {
         console.error(`❌ 处理文件失败: ${fullPath}`, err);
@@ -114,14 +118,17 @@ function main(targetDirectories) {
   });
 }
 
-const aee = "E:\\Scripting\\projects\\docs.yuelili.com\\src\\content\\docs\\en\\ae-expression";
-const aep = "E:\\Scripting\\projects\\docs.yuelili.com\\src\\content\\docs\\en\\ae-plugin";
-const aes = "E:\\Scripting\\projects\\docs.yuelili.com\\src\\content\\docs\\en\\ae-scripting";
-const jst = "E:\\Scripting\\projects\\docs.yuelili.com\\src\\content\\docs\\en\\javascript-tools";
+const data = fs.readFileSync("./scripts/data/ai-scripting.json", "utf-8");
+const dataObj = JSON.parse(data);
 
-const test = "E:\\Scripting\\projects\\docs.yuelili.com\\scripts";
+// const aee = "E:\\Scripting\\projects\\docs.yuelili.com\\src\\content\\docs\\en\\ae-expression";
+// const aep = "E:\\Scripting\\projects\\docs.yuelili.com\\src\\content\\docs\\en\\ae-plugin";
+// const aes = "E:\\Scripting\\projects\\docs.yuelili.com\\src\\content\\docs\\en\\ae-scripting";
+// const jst = "E:\\Scripting\\projects\\docs.yuelili.com\\src\\content\\docs\\en\\javascript-tools";
 
-const targetDirectories = [aee, aep, aes, jst];
-// const targetDirectories = [test];
+// const test = "E:\\Scripting\\projects\\docs.yuelili.com\\src\\content\\docs\\en\\ai-scripting";
+
+// const targetDirectories = [aee, aep, aes, jst];
+const targetDirectories = [test];
 
 main(targetDirectories);

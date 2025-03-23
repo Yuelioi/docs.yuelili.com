@@ -1,10 +1,13 @@
+---
+title: NonNativeItems
+---
 # NonNativeItems
 
 `nonNativeItems`
 
 #### Description
 
-A collection of [NonNativeItem](./NonNativeItem.md) objects.
+A collection of [NonNativeItem](.././NonNativeItem) objects.
 
 ---
 
@@ -70,4 +73,4 @@ Gets the first element in the collection with the specified name.
 
 #### Returns
 
-[NonNativeItem](./NonNativeItem.md), [SymbolItem](./SymbolItem.md)
+[NonNativeItem](.././NonNativeItem), [SymbolItem](.././SymbolItem)

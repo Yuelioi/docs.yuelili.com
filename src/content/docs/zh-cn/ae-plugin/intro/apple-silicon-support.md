@@ -22,10 +22,10 @@ Adobe 现在支持在部分原生运行于 Apple Silicon 的产品中使用 Appl
 ![Mac 通用构建](../_static/mac_universal_build.png "Mac 通用构建")
 *Mac 通用构建*
 
-2. 告诉 After Effects Apple Silicon 构建的主入口点是什么。
+2. 告诉 After Effects Apple Silicon 构建的主入口函数是什么。
 
 > * 找到您的插件的 .r 资源文件。
-> * 在现有的 Intel Mac 入口点定义旁边添加 `CodeMacARM64 {"EffectMain"}`。
+> * 在现有的 Intel Mac 入口函数定义旁边添加 `CodeMacARM64 {"EffectMain"}`。
 >
 >   ```cpp
 >   #if defined(AE_OS_MAC)
@@ -34,7 +34,7 @@ Adobe 现在支持在部分原生运行于 Apple Silicon 的产品中使用 Appl
 >   #endif
 >   ```
 >
-> * 如果由于某些原因您需要在 x64 和 ARM 上使用不同的入口点，只需提供不同的入口点名称和字符串即可。
+> * 如果由于某些原因您需要在 x64 和 ARM 上使用不同的入口函数，只需提供不同的入口函数名称和字符串即可。
 
 3. 通过为“Any Mac (Apple Silicon, Intel)”目标构建或使用 Product -> Archive 来编译通用二进制文件。
 
@@ -48,7 +48,7 @@ Adobe 现在支持在部分原生运行于 Apple Silicon 的产品中使用 Appl
 
 在 Apple Silicon 上，ABI 已更改，因此当发生这种情况时，会调用 terminate() 而不是未定义行为。
 
-由于插件的主入口点始终是 extern "C" 调用约定，因此应将该代码包装在 try/catch 块中以防止程序终止。例如：
+由于插件的主入口函数始终是 extern "C" 调用约定，因此应将该代码包装在 try/catch 块中以防止程序终止。例如：
 
 ```cpp
 PF_Err EffectMain ( PF_Cmd cmd,

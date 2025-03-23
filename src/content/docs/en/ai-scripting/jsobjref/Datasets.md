@@ -1,10 +1,13 @@
+---
+title: Datasets
+---
 # Datasets
 
 `app.activeDocument.dataSets`
 
 #### Description
 
-A collection of [Dataset](./Dataset.md) objects.
+A collection of [Dataset](.././Dataset) objects.
 
 ---
 
@@ -34,7 +37,7 @@ The name of the object that contains this dataset.
 
 #### Type
 
-[Document](./Document.md); read-only.
+[Document](.././Document); read-only.
 
 ---
 
@@ -64,7 +67,7 @@ Creates a new dataset object.
 
 #### Returns
 
-[Dataset](./Dataset.md)
+[Dataset](.././Dataset)
 
 ---
 
@@ -84,7 +87,7 @@ Gets the first element in the collection with the specified name.
 
 #### Returns
 
-[Dataset](./Dataset.md)
+[Dataset](.././Dataset)
 
 ---
 
@@ -104,7 +107,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[Dataset](./Dataset.md)
+[Dataset](.././Dataset)
 
 ---
 

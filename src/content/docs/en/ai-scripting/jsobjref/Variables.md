@@ -1,10 +1,13 @@
+---
+title: Variables
+---
 # Variables
 
 `app.activeDocument.variables`
 
 #### Description
 
-The collection of [Variable](./Variable.md) objects in the document.
+The collection of [Variable](.././Variable) objects in the document.
 
 For an example of how to create variables, see [Using variables and datasets](Dataset.md#using-variables-and-datasets).
 
@@ -66,7 +69,7 @@ Adds a new variable to the collection.
 
 #### Returns
 
-[Variable](./Variable.md)
+[Variable](.././Variable)
 
 ---
 
@@ -86,7 +89,7 @@ Get the first element in the collection with the provided name.
 
 #### Returns
 
-[Variable](./Variable.md)
+[Variable](.././Variable)
 
 ---
 
@@ -106,7 +109,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[Variable](./Variable.md)
+[Variable](.././Variable)
 
 ---
 

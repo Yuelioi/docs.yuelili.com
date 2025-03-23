@@ -1,3 +1,6 @@
+---
+title: Hardware
+---
 # Hardware
 
 To integrate hardware with Premiere Pro, you may consider developing up to five types of plugins:

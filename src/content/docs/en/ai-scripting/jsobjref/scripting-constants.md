@@ -1,3 +1,6 @@
+---
+title: Scripting Constants
+---
 # Scripting Constants
 
 This chapter lists and describes the enumerations defined for use with Illustrator JavaScript properties and methods.

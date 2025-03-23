@@ -1,3 +1,6 @@
+---
+title: ExportOptionsGIF
+---
 # ExportOptionsGIF
 
 `exportOptionsGIF`
@@ -180,7 +183,7 @@ Default: `WHITE`.
 
 #### Type
 
-[RGBColor](./RGBColor.md)
+[RGBColor](.././RGBColor)
 
 ---
 

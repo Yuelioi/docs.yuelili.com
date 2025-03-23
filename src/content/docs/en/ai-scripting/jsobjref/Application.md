@@ -1,3 +1,6 @@
+---
+title: Application
+---
 # Application
 
 `app`
@@ -20,7 +23,7 @@ The active (frontmost) document in Illustrator.
 
 #### Type
 
-[Document](./Document.md)
+[Document](.././Document)
 
 ---
 
@@ -104,7 +107,7 @@ The documents in the application.
 
 #### Type
 
-[Documents](./Documents.md)
+[Documents](.././Documents)
 
 ---
 
@@ -230,7 +233,7 @@ Illustrator's preference settings.
 
 #### Type
 
-[Preferences](./Preferences.md)
+[Preferences](.././Preferences)
 
 ---
 
@@ -244,7 +247,7 @@ The list of installed printers.
 
 #### Type
 
-Array of [Printer](./Printer.md)
+Array of [Printer](.././Printer)
 
 ---
 
@@ -314,7 +317,7 @@ The installed fonts.
 
 #### Type
 
-[TextFonts](./TextFonts.md)
+[TextFonts](.././TextFonts)
 
 ---
 
@@ -416,8 +419,8 @@ Joins two matrices together.
 
 |   Parameter    |         Type          |  Description  |
 | -------------- | --------------------- | ------------- |
-| `matrix`       | [Matrix](./Matrix.md) | First matrix  |
-| `secondMatrix` | [Matrix](./Matrix.md) | Second matrix |
+| `matrix`       | [Matrix](.././Matrix) | First matrix  |
+| `secondMatrix` | [Matrix](.././Matrix) | Second matrix |
 
 #### Returns
 
@@ -464,7 +467,7 @@ Concatenates a scale translation to a transformation matrix.
 
 #### Returns
 
-[Matrix](./Matrix.md)
+[Matrix](.././Matrix)
 
 ---
 
@@ -486,7 +489,7 @@ Joins a translation to a transformation matrix.
 
 #### Returns
 
-[Matrix](./Matrix.md)
+[Matrix](.././Matrix)
 
 ---
 
@@ -582,7 +585,7 @@ Returns an identity matrix.
 
 #### Returns
 
-[Matrix](./Matrix.md)
+[Matrix](.././Matrix)
 
 ---
 
@@ -590,8 +593,10 @@ Returns an identity matrix.
 
 `app.getIsFileOpen(filePath)`
 
-!!! note
-    This functionality was added in Illustrator XX.X (CC2017)
+:::note
+This functionality was added in Illustrator XX.X (CC2017)
+:::
+
 
 #### Description
 
@@ -625,7 +630,7 @@ Gets detailed file information for specified PPD file.
 
 #### Returns
 
-[PPDFileInfo](./PPDFileInfo.md)
+[PPDFileInfo](.././PPDFileInfo)
 
 ---
 
@@ -665,7 +670,7 @@ Retrieves the tracing-option settings from the template with a given preset name
 
 #### Returns
 
-[DocumentPreset](./DocumentPreset.md)
+[DocumentPreset](.././DocumentPreset)
 
 ---
 
@@ -677,8 +682,10 @@ Retrieves the tracing-option settings from the template with a given preset name
 
 Returns a transformation matrix containing a single rotation.
 
-!!! note
-    Requires a value in degrees.
+:::note
+Requires a value in degrees.
+:::
+
 
 #### Parameters
 
@@ -688,7 +695,7 @@ Returns a transformation matrix containing a single rotation.
 
 #### Returns
 
-[Matrix](./Matrix.md)
+[Matrix](.././Matrix)
 
 #### Example
 
@@ -714,8 +721,10 @@ app.getRotationMatrix(-30);
 
 Returns a transformation matrix containing a single scale.
 
-!!! note
-    Requires a value in percentage.
+:::note
+Requires a value in percentage.
+:::
+
 
 #### Parameters
 
@@ -726,7 +735,7 @@ Returns a transformation matrix containing a single scale.
 
 #### Returns
 
-[Matrix](./Matrix.md)
+[Matrix](.././Matrix)
 
 #### Example
 
@@ -766,8 +775,10 @@ Variant
 
 Returns a transformation matrix containing a single translation.
 
-!!! note
-    Requires a value in points.
+:::note
+Requires a value in points.
+:::
+
 
 #### Parameters
 
@@ -778,7 +789,7 @@ Returns a transformation matrix containing a single translation.
 
 #### Returns
 
-[Matrix](./Matrix.md)
+[Matrix](.././Matrix)
 
 #### Example
 
@@ -808,11 +819,11 @@ Inverts a matrix.
 
 | Parameter |         Type          |   Description    |
 | --------- | --------------------- | ---------------- |
-| `matrix`  | [Matrix](./Matrix.md) | Matrix to invert |
+| `matrix`  | [Matrix](.././Matrix) | Matrix to invert |
 
 #### Returns
 
-[Matrix](./Matrix.md)
+[Matrix](.././Matrix)
 
 ---
 
@@ -828,8 +839,8 @@ Checks whether the two matrices are equal.
 
 |   Parameter    |         Type          |      Description       |
 | -------------- | --------------------- | ---------------------- |
-| `matrix`       | [Matrix](./Matrix.md) | First matrix to check  |
-| `secondMatrix` | [Matrix](./Matrix.md) | Second matrix to check |
+| `matrix`       | [Matrix](.././Matrix) | First matrix to check  |
+| `secondMatrix` | [Matrix](.././Matrix) | Second matrix to check |
 
 #### Returns
 
@@ -849,7 +860,7 @@ Checks whether a matrix is singular and cannot be inverted.
 
 | Parameter |         Type          |   Description   |
 | --------- | --------------------- | --------------- |
-| `matrix`  | [Matrix](./Matrix.md) | Matrix to check |
+| `matrix`  | [Matrix](.././Matrix) | Matrix to check |
 
 #### Returns
 
@@ -885,8 +896,10 @@ Nothing.
 
 Opens the specified document file.
 
-!!! note
-    If you open a pre-Illustrator 9 document that contains both RGB and CMYK colors and documentColorSpace is supplied, all colors are converted to the specified color space.
+:::note
+If you open a pre-Illustrator 9 document that contains both RGB and CMYK colors and documentColorSpace is supplied, all colors are converted to the specified color space.
+:::
+
 
 If the parameter is not supplied, Illustrator opens a dialog so the user can choose the color space.
 
@@ -900,7 +913,7 @@ If the parameter is not supplied, Illustrator opens a dialog so the user can cho
 
 #### Returns
 
-[Document](./Document.md)
+[Document](.././Document)
 
 ---
 
@@ -926,8 +939,10 @@ Nothing.
 
 Quits Illustrator.
 
-!!! note
-    If the clipboard contains data, Illustrator may show a dialog prompting the user to save the data for other applications.
+:::note
+If the clipboard contains data, Illustrator may show a dialog prompting the user to save the data for other applications.
+:::
+
 
 #### Returns
 

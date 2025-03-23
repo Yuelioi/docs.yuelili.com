@@ -1,10 +1,13 @@
+---
+title: Lines
+---
 # Lines
 
 `lines`
 
 #### Description
 
-A collection of [TextRange](./TextRange.md) objects representing lines of text in a text frame. The elements are not named; you must access them by index.
+A collection of [TextRange](.././TextRange) objects representing lines of text in a text frame. The elements are not named; you must access them by index.
 
 ---
 
@@ -70,7 +73,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[TextRange](./TextRange.md)
+[TextRange](.././TextRange)
 
 ---
 

@@ -1,3 +1,6 @@
+---
+title: OpenOptions
+---
 # OpenOptions
 
 `openOptions`

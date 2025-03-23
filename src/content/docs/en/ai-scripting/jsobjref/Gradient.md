@@ -1,3 +1,6 @@
+---
+title: Gradient
+---
 # Gradient
 
 `gradient`
@@ -20,7 +23,7 @@ The gradient stops contained in this gradient.
 
 #### Type
 
-[GradientStops](./GradientStops.md); read-only.
+[GradientStops](.././GradientStops); read-only.
 
 ---
 
@@ -48,7 +51,7 @@ The document that contains this gradient.
 
 #### Type
 
-[Document](./Document.md); read-only.
+[Document](.././Document); read-only.
 
 ---
 

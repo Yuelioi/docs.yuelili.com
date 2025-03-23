@@ -1,3 +1,6 @@
+---
+title: User-interaction levels
+---
 # User-interaction levels
 
 When user feedback is required, an application typically presents a dialog. This is called user interaction. It is useful and expected when you are directly interacting with the application; however, when a script is interacting with an application, a dialog brings the execution of the script to a halt until the dialog is dismissed. This can be a serious problem in an automation environment, where there is no one present to deal with dialogs.

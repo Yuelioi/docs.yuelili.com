@@ -1,10 +1,13 @@
+---
+title: GroupItems
+---
 # GroupItems
 
 `app.activeDocument.groupItems`
 
 #### Description
 
-The collection of [GroupItem](./GroupItem.md) objecst in a document.
+The collection of [GroupItem](.././GroupItem) objecst in a document.
 
 ---
 
@@ -64,7 +67,7 @@ Creates a new object.
 
 #### Returns
 
-[GroupItem](./GroupItem.md)
+[GroupItem](.././GroupItem)
 
 ---
 
@@ -84,7 +87,7 @@ Places an external vector art file as a group item in the document.
 
 #### Returns
 
-[GroupItem](./GroupItem.md)
+[GroupItem](.././GroupItem)
 
 ---
 
@@ -104,7 +107,7 @@ Gets the first element in the collection with the specified name.
 
 #### Returns
 
-[GroupItem](./GroupItem.md)
+[GroupItem](.././GroupItem)
 
 ---
 
@@ -124,7 +127,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[GroupItem](./GroupItem.md)
+[GroupItem](.././GroupItem)
 
 ---
 
@@ -148,8 +151,10 @@ Nothing.
 
 The following script shows how you can import a PDF document using the [GroupItems.createFromFile()](#groupitemscreatefromfile) function.
 
-!!! note
-    Before running this script you must create a one page PDF file and put it in the location `/temp/testfile1.pdf`.
+:::note
+Before running this script you must create a one page PDF file and put it in the location `/temp/testfile1.pdf`.
+:::
+
 
 ```javascript
 // Embeds a new group item in to the current document from a file specified by dest

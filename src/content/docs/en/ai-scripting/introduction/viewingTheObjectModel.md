@@ -1,3 +1,6 @@
+---
+title: Viewing the object model
+---
 # Viewing the object model
 
 Each of the supported scripting languages provides a facility for viewing the scripting objects defined by Illustrator, with reference details.
@@ -21,7 +24,7 @@ In a default Adobe installation, the ESTK is in the following location:
 
 Several extended sample scripts are in the `/Scripting/Sample Scripts/` folder in your Illustrator CC installation directory.
 
-You also can view script samples and information about individual classes, objects, properties, methods, and parameters in [Illustrator Scripting Reference: Javascript](../scriptingJavascript/forMoreInfo.md).
+You also can view script samples and information about individual classes, objects, properties, methods, and parameters in [Illustrator Scripting Reference: Javascript](../../scriptingJavascript/forMoreInfo).
 
 ---
 
@@ -31,8 +34,10 @@ Apple provides a Script Editor with all Mac OS systems. You can use Script Edito
 
 For details of how to use Script Editor, see Script Editor Help.
 
-!!! note
-    In a default Mac OS installation, Script Editor is in `Applications/AppleScript/Script Editor`
+:::note
+In a default Mac OS installation, Script Editor is in `Applications/AppleScript/Script Editor`
+:::
+
 
 If you cannot find the Script Editor application, you must reinstall it from your Mac OS system CD.
 
@@ -44,7 +49,7 @@ Script Editor displays a list of the Illustrator objects and commands, which inc
 
 Several extended sample scripts are in the `/Scripting/Sample Scripts/` folder in your Illustrator CC installation directory.
 
-You also can view script samples and information about individual classes, objects, properties, methods, and parameters in [Illustrator Scripting Reference: Applescript](../scriptingApplescript/forMoreInfo.md).
+You also can view script samples and information about individual classes, objects, properties, methods, and parameters in [Illustrator Scripting Reference: Applescript](../../scriptingApplescript/forMoreInfo).
 
 ---
 
@@ -60,4 +65,4 @@ VBScript provides a type library you can use to view Illustrator object properti
 
 Several extended sample scripts are in the `/Scripting/Sample Scripts/` folder in your lllustrator CC installation directory.
 
-You also can view script samples and information about individual classes, objects, properties, methods, and parameters in [Illustrator Scripting Reference: VBScript](../scriptingVBScript/forMoreInfo.md).
+You also can view script samples and information about individual classes, objects, properties, methods, and parameters in [Illustrator Scripting Reference: VBScript](../../scriptingVBScript/forMoreInfo).

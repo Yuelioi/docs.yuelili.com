@@ -1,10 +1,13 @@
+---
+title: MeshItems
+---
 # MeshItems
 
 `app.activeDocument.meshItems`
 
 #### Description
 
-A collection of [MeshItem](./MeshItem.md) objects.
+A collection of [MeshItem](.././MeshItem) objects.
 
 ---
 
@@ -70,7 +73,7 @@ Gets the first element in the collection with the specified name.
 
 #### Returns
 
-[MeshItem](./MeshItem.md)
+[MeshItem](.././MeshItem)
 
 ---
 
@@ -90,7 +93,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[MeshItem](./MeshItem.md)
+[MeshItem](.././MeshItem)
 
 ---
 

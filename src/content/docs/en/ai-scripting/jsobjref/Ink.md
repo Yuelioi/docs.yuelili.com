@@ -1,3 +1,6 @@
+---
+title: Ink
+---
 # Ink
 
 `app.activeDocument.inkLisk[index]`
@@ -20,7 +23,7 @@ The ink information
 
 #### Type
 
-[InkInfo](./InkInfo.md)
+[InkInfo](.././InkInfo)
 
 ---
 

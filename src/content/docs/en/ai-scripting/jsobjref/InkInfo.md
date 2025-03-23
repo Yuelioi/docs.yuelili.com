@@ -1,3 +1,6 @@
+---
+title: InkInfo
+---
 # InkInfo
 
 `app.activeDocument.inkList[index].inkInfo`
@@ -36,7 +39,7 @@ The color of the custom ink.
 
 #### Type
 
-[Color](./Color.md)
+[Color](.././Color)
 
 ---
 

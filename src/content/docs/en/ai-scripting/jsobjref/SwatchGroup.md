@@ -1,10 +1,13 @@
+---
+title: SwatchGroup
+---
 # SwatchGroup
 
 `swatchGroup`
 
 #### Description
 
-A group of [Swatch](./Swatch.md) objects.
+A group of [Swatch](.././Swatch) objects.
 
 ---
 
@@ -66,7 +69,7 @@ Adds a spot swatch to the swatch group.
 
 | Parameter |       Type        | Description |
 | --------- | ----------------- | ----------- |
-| `spot`    | [Spot](./Spot.md) | Spot to add |
+| `spot`    | [Spot](.././Spot) | Spot to add |
 
 #### Returns
 
@@ -86,7 +89,7 @@ Adds a swatch to the swatch group.
 
 | Parameter |         Type          |  Description  |
 | --------- | --------------------- | ------------- |
-| `swatch`  | [Swatch](./Swatch.md) | Swatch to add |
+| `swatch`  | [Swatch](.././Swatch) | Swatch to add |
 
 #### Returns
 
@@ -104,7 +107,7 @@ Gets a list of all swatches in the swatch group.
 
 #### Returns
 
-List of [Swatch](./Swatch.md)
+List of [Swatch](.././Swatch)
 
 ---
 

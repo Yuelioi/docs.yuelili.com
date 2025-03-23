@@ -1,3 +1,6 @@
+---
+title: Plug In Installation
+---
 # Plug In Installation
 
 Plug-ins must have an installer. This simplifies installation by the user, provides more compact distribution, and ensures all the pieces are installed correctly.
@@ -116,7 +119,7 @@ Following OS X Code Signing guidelines, plugins should be installed in this sepa
 
 **Effects presets:**
 
-`/Plugins/[language subdirectory]/Effect Presets/` (see [Localization](localization.md) for the list of language codes)
+`/Plugins/[language subdirectory]/Effect Presets/` (see [Localization](../localization) for the list of language codes)
 
 **Editing modes:**
 
@@ -136,8 +139,10 @@ While it is not required for your plugin to load, naming your plugins using the 
 
 Specific plugins can be blocked from being loaded by MediaCore in specific applications, using blocklists.
 
-!!! note
-    This does not work for After Effects plugins loaded by AE, although it does work for AE plugins loaded in Premiere Pro.
+:::note
+This does not work for After Effects plugins loaded by AE, although it does work for AE plugins loaded in Premiere Pro.
+:::
+
 
 In the plugins folder, look for the appropriate blacklist file, and append the the filename of the plugin to the file (e.g. BadPlugin, not BadPlugin.prm). If the file doesn't exist, create it first. "Blocklist.txt" contains names of plugins blacklisted from all apps. Plugins can be blocked from loading in specific apps by including them in "Blocklist Adobe Premiere Pro.txt", or "Blocklist After Effects.txt", etc.
 
@@ -192,5 +197,7 @@ If the enter keystroke seems to go to the wrong panel, this is an intermittent p
 
 Once enabled, the player displays the statistics as black text on a partially transparent background. This allows you to still see the underlying video (to some extent) and yet also read the text. When you turn off dog ears, the setting may not take effect until you switch or reopen your current sequence.
 
-!!! note
-    If you are developing a transmitter, displaying dog ears will result in duplicate calls to PushVideo for the same frame. This happens because the player routinely updates the dog ears on a timer even when the frame hasn't changed for updated stats. As of CS6, this triggers a PushVideo to active transmitters as a side effect.
+:::note
+If you are developing a transmitter, displaying dog ears will result in duplicate calls to PushVideo for the same frame. This happens because the player routinely updates the dog ears on a timer even when the frame hasn't changed for updated stats. As of CS6, this triggers a PushVideo to active transmitters as a side effect.
+:::
+

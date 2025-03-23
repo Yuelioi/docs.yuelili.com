@@ -1,3 +1,6 @@
+---
+title: ParagraphAttributes
+---
 # ParagraphAttributes
 
 `app.activeDocument.textFrames[index].paragraphs[index].paragraphAttributes`
@@ -6,8 +9,10 @@
 
 Specifies the properties and attributes of a paragraph contained in a text frame.
 
-!!! note
-    Paragraph attributes do not have default values, and are `undefined` until explicitly set.
+:::note
+Paragraph attributes do not have default values, and are `undefined` until explicitly set.
+:::
+
 
 ---
 
@@ -183,8 +188,10 @@ Number (double).
 
 The distance (in points) from the right edge of the paragraph that marks the part of the line where hyphenation is not allowed.
 
-!!! note
-    `0` allows all hyphenation. Valid only when [ParagraphAttributes.everyLineComposer](#paragraphattributeseverylinecomposer) is `false`.
+:::note
+`0` allows all hyphenation. Valid only when [ParagraphAttributes.everyLineComposer](#paragraphattributeseverylinecomposer) is `false`.
+:::
+
 
 #### Type
 
@@ -300,8 +307,10 @@ Maximum glyph scaling, expressed as a percentage of the default character width.
 
 Range: 50.0 to 200.0; at 100.0. The width of characters is not changed.
 
-!!! note
-    Valid only for justified paragraphs.
+:::note
+Valid only for justified paragraphs.
+:::
+
 
 #### Type
 
@@ -319,8 +328,10 @@ Maximum letter spacing, expressed as a percentage of the default kerning or trac
 
 Range: -100.0 to 500.0; at 0. No space is added between letters. At 100.0, an entire space width is added between letters.
 
-!!! note
-    Valid only for justified paragraphs.
+:::note
+Valid only for justified paragraphs.
+:::
+
 
 #### Type
 
@@ -338,8 +349,10 @@ Maximum word spacing, expressed as a percentage of the default space for the fon
 
 Range: 0.0 to 1000.0; at 100.00. No space is added between words.
 
-!!! note
-    Valid only for justified paragraphs.
+:::note
+Valid only for justified paragraphs.
+:::
+
 
 #### Type
 
@@ -385,8 +398,10 @@ Minimum glyph scaling, expressed as a percentage of the default character width.
 
 Range: 50.0 to 200.0. At 100.0, the width of characters is not changed.
 
-!!! note
-    Valid only for justified paragraphs.
+:::note
+Valid only for justified paragraphs.
+:::
+
 
 #### Type
 
@@ -416,8 +431,10 @@ Number (long).
 
 Minimum letter spacing, expressed as a percentage of the default kerning or tracking Range: -100.0 to 500.0; at 0. No space is added between letters. At 100.0, an entire space width is added between letters.
 
-!!! note
-    Valid only for justified paragraphs.
+:::note
+Valid only for justified paragraphs.
+:::
+
 
 #### Type
 
@@ -435,8 +452,10 @@ Minimum word spacing, expressed as a percentage of the default space for the fon
 
 Range: 0.0 to 1000.0; at 100.00. No space is added between words.
 
-!!! note
-    Valid only for justified paragraphs.
+:::note
+Valid only for justified paragraphs.
+:::
+
 
 #### Type
 
@@ -552,7 +571,7 @@ Tab stop settings.
 
 #### Type
 
-[TabStopInfo](./TabStopInfo.md)
+[TabStopInfo](.././TabStopInfo)
 
 ---
 

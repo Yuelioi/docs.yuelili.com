@@ -1,3 +1,6 @@
+---
+title: PrintPostScriptOptions
+---
 # PrintPostScriptOptions
 
 `new PrintPostScriptOptions()`

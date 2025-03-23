@@ -5,7 +5,7 @@ title: 跨多个版本的兼容性
 
 通常，您应该使用最新的 After Effects SDK 头文件编译您的插件。这使得最新的套件和 API 功能可用于您的插件。当新版本的 After Effects 发布时，通常不需要提供新版本的插件，除非您希望利用新 SDK 中提供的新功能。然而，在声明与新版本的兼容性之前，您应该始终在新版本的 After Effects 中测试您的插件。
 
-您应该在插件支持的每个 After Effects 版本中彻底测试您的插件。如果您需要添加仅在特定版本的 After Effects 中运行的代码块，您可以始终检查 [PF_InData](../../effect-basics/PF_InData).version 中的 API 版本（对于效果），或者在 [入口点](../aegps/implementation.md#entry-point) 中传递给您的 AEGP 的 major 和 minor_versionL。
+您应该在插件支持的每个 After Effects 版本中彻底测试您的插件。如果您需要添加仅在特定版本的 After Effects 中运行的代码块，您可以始终检查 [PF_InData](../../effect-basics/PF_InData).version 中的 API 版本（对于效果），或者在 [入口函数](../aegps/implementation.md#entry-point) 中传递给您的 AEGP 的 major 和 minor_versionL。
 
 为了进行更精确的版本检查，插件可以使用 `AEGP_ExecuteScript` ([AEGP_UtilitySuite6](../aegps/aegp-suites.md#aegp_utilitysuite6)) 运行脚本，查询以下属性之一：
 

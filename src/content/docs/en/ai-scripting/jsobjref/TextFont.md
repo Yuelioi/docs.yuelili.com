@@ -1,10 +1,13 @@
+---
+title: TextFont
+---
 # TextFont
 
 `app.textFonts[index]`
 
 #### Description
 
-Information about a font in the document, found in a [CharacterAttributes](./CharacterAttributes.md) object.
+Information about a font in the document, found in a [CharacterAttributes](.././CharacterAttributes) object.
 
 ---
 

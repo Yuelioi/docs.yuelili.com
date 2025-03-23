@@ -1,10 +1,13 @@
+---
+title: Paragraphs
+---
 # Paragraphs
 
 `app.activeDocument.textFrames[index].paragraphs`
 
 #### Description
 
-A collection of [TextRange](./TextRange.md) objects, with each `TextRange` representing a paragraph.
+A collection of [TextRange](.././TextRange) objects, with each `TextRange` representing a paragraph.
 
 The elements are not named; you must access them by index.
 
@@ -69,12 +72,12 @@ Adds a new paragraph with specified text contents at the specified location in t
 |      Parameter      |                                 Type                                  |      Description       |
 | ------------------- | --------------------------------------------------------------------- | ---------------------- |
 | `contents`          | String                                                                | Text contents to add   |
-| `relativeObject`    | [TextFrameItem](./TextFrameItem.md), optional                         | Object to add item to  |
+| `relativeObject`    | [TextFrameItem](.././TextFrameItem), optional                         | Object to add item to  |
 | `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement), optional | Location to place text |
 
 #### Returns
 
-[TextRange](./TextRange.md)
+[TextRange](.././TextRange)
 
 ---
 
@@ -94,7 +97,7 @@ Adds a new paragraph with specified text contents before the current text select
 
 #### Returns
 
-[TextRange](./TextRange.md)
+[TextRange](.././TextRange)
 
 ---
 
@@ -114,7 +117,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[TextRange](./TextRange.md)
+[TextRange](.././TextRange)
 
 ---
 

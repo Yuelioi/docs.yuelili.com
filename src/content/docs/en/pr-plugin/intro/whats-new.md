@@ -1,3 +1,6 @@
+---
+title: Whats New
+---
 # Whats New
 
 ## What's New in 24.0
@@ -28,11 +31,11 @@ The only significant change to Premiere Pro's C++ APIs for 13.0 is the addition 
 
 ### Effects and Transitions
 
-[GPU Effects & Transitions](../gpu-effects-transitions/gpu-effects-transitions.md) built using this SDK are now compatible with After Effects 15.0 and later. The sample GPU effect projects have been updated so that they load in both Premiere Pro and After Effects.
+[GPU Effects & Transitions](../../gpu-effects-transitions/gpu-effects-transitions) built using this SDK are now compatible with After Effects 15.0 and later. The sample GPU effect projects have been updated so that they load in both Premiere Pro and After Effects.
 
-The newly provided [PrGPU SDK Macros](../gpu-effects-transitions/PrGPU-SDK-macros.md) and device functions allow you to write kernels that will compile on CUDA, and Metal.
+The newly provided [PrGPU SDK Macros](../../gpu-effects-transitions/PrGPU-SDK-macros) and device functions allow you to write kernels that will compile on CUDA, and Metal.
 
-Multiple effects and transitions can now be implemented in a single plugin binary, by defining multiple entry points in software at runtime. The new method for registering entry points will be a replacement for the PiPL resource, and is currently only supported in Premiere Pro. The sample effects and transitions demonstrate this new method, while [Plug-In Property Lists (PiPL) Resource](../resources/pipl-resource.md) remains, for backwards-compatibility in PPro, and compatibility with AE.
+Multiple effects and transitions can now be implemented in a single plugin binary, by defining multiple entry points in software at runtime. The new method for registering entry points will be a replacement for the PiPL resource, and is currently only supported in Premiere Pro. The sample effects and transitions demonstrate this new method, while [Plug-In Property Lists (PiPL) Resource](../../resources/pipl-resource) remains, for backwards-compatibility in PPro, and compatibility with AE.
 
 [Sequence Info Suite](../universals/sweetpea-suites.md#sequence-info-suite) is now at version 5, adding the new call GetImmersiveVideoVRConfiguration(), which returns the VR video settings of the specified sequence.
 
@@ -292,14 +295,16 @@ You can think of this as the Export to Tape equivalent of the Capture panel for 
 
 ### New GPU Extensions for Effects and Transitions
 
-New GPU Extensions to existing APIs allow effects and transitions to access video frames in GPU memory, when using the Mercury Playback Engine in a GPU-accelerated mode. See [GPU Effects & Transitions](../gpu-effects-transitions/gpu-effects-transitions.md) for more information.
+New GPU Extensions to existing APIs allow effects and transitions to access video frames in GPU memory, when using the Mercury Playback Engine in a GPU-accelerated mode. See [GPU Effects & Transitions](../../gpu-effects-transitions/gpu-effects-transitions) for more information.
 
 ### Closed Captioning Support in Importer and Exporter APIs
 
 The importer and exporter APIs have been extended to support closed captioning embedded in media.
 
-!!! note
-    Premiere Pro can also import and export captions in a sidecar file (e.g. .mcc, .scc, or .xml) alongside any media file, regardless of the media file format.
+:::note
+Premiere Pro can also import and export captions in a sidecar file (e.g. .mcc, .scc, or .xml) alongside any media file, regardless of the media file format.
+:::
+
 
 ### Miscellaneous Improvements
 
@@ -329,7 +334,7 @@ CS6.0.1 gives device controllers a way to get the number of frames dropped durin
 
 ### Transmit API
 
-We are introducing the Transmit API as the preferred means for external hardware monitoring. This new API provides vastly simplified support for monitoring on external hardware. Transmit plugins offer more flexible usage, since they are not tied to the sequence Editing Mode, which cannot be changed once a sequence has been edited. Transmitters can be specified by the user in Preferences > Playback. Other plugins such as importers and effects with settings preview dialogs can send video out to the active transmitter, opening up new possibilities for hardware monitoring. See [Transmitters](../transmitters/transmitters.md) for more details.
+We are introducing the Transmit API as the preferred means for external hardware monitoring. This new API provides vastly simplified support for monitoring on external hardware. Transmit plugins offer more flexible usage, since they are not tied to the sequence Editing Mode, which cannot be changed once a sequence has been edited. Transmitters can be specified by the user in Preferences > Playback. Other plugins such as importers and effects with settings preview dialogs can send video out to the active transmitter, opening up new possibilities for hardware monitoring. See [Transmitters](../../transmitters/transmitters) for more details.
 
 ### Exporter Enhancements
 
@@ -341,7 +346,7 @@ Exporters can now set tooltip strings for parameters. Multiple exporters are now
 
 Exporters can now set events (error, warning, or info) for a specific encode in progress in the Adobe Media Encoder render queue, using the new [Exporter Utility Suite](../exporters/suites.md#exporter-utility-suite). These events are displayed in the application UI, and are also added to the AME encoding log.
 
-Make sure your presets go in the right location in the new AME Preset Browser. Read additional details of what's new in [Exporters](../exporters/exporters.md).
+Make sure your presets go in the right location in the new AME Preset Browser. Read additional details of what's new in [Exporters](../../exporters/exporters).
 
 ### Stereoscopic Video Pipeline
 
@@ -351,7 +356,7 @@ We are also adding API support for stereoscopic video throughout the render pipe
 
 #### Importers
 
-Importers can now support growing files in Premiere Pro. We have also added a way for importers to specify all their source files to be copied by Collect Files in After Effects. There is also a new function in the Media Accelerator Suite to validate the content state of a media accelerator. See additional details of what's new in [Importers](../importers/importers.md).
+Importers can now support growing files in Premiere Pro. We have also added a way for importers to specify all their source files to be copied by Collect Files in After Effects. There is also a new function in the Media Accelerator Suite to validate the content state of a media accelerator. See additional details of what's new in [Importers](../../importers/importers).
 
 #### Recorders
 
@@ -389,7 +394,7 @@ MPEG-4 pixel formats and full-range Rec. 709 MPEG-2 and MPEG-4 formats have now 
 
 #### Importers
 
-Importers can now support color management, when running in After Effects. Now, even nonsynthetic importers can explicitly provide peak audio data. And a new return value allows an importer to specify that it is dependent on a library that needs to be activated. See additional details of what's new in [Importers](../importers/importers.md).
+Importers can now support color management, when running in After Effects. Now, even nonsynthetic importers can explicitly provide peak audio data. And a new return value allows an importer to specify that it is dependent on a library that needs to be activated. See additional details of what's new in [Importers](../../importers/importers).
 
 #### Players
 
@@ -397,11 +402,11 @@ Players can now support closed captioning. See additional details of what's new 
 
 #### Exporters
 
-Exporters now have a call to request a rendered frame and then conform it to a specific pixel format. See additional details of what's new in [Exporters](../exporters/exporters.md).
+Exporters now have a call to request a rendered frame and then conform it to a specific pixel format. See additional details of what's new in [Exporters](../../exporters/exporters).
 
 #### Export Controller
 
-We have opened up a new Export Controller API that can drive any exporter to output a file in any format and perform custom post-processing operations. Developers wanting to integrate Premiere Pro with an asset management system will want to use this API instead of the exporter API. See [Export Controllers](../export-controllers/export-controllers.md) for more details.
+We have opened up a new Export Controller API that can drive any exporter to output a file in any format and perform custom post-processing operations. Developers wanting to integrate Premiere Pro with an asset management system will want to use this API instead of the exporter API. See [Export Controllers](../../export-controllers/export-controllers) for more details.
 
 A new pair of pixel formats was added to natively support full-range Rec. 601 4:2:0 YUV planar video, both progressive and interlaced: PrPixelFormat_YUV_420_MPEG2_FRAME_PICTURE_PLANAR_8u_601_FullRange and PrPixelFormat_YUV_420_MPEG2_FIELD_PICTURE_PLANAR_8u_601_FullRange.
 
@@ -422,7 +427,7 @@ The [Image Processing Suite](../universals/sweetpea-suites.md#image-processing-s
 
 #### Importers
 
-Importers now have access to the resolution, pixel aspect ratio, timebase, and audio sample rate of the source clip from a setup dialog. Custom importers can use a new call to update a clip after it has modified by the user in the setup dialog. Please refer to [Importers](../importers/importers.md) for more info on what's new.
+Importers now have access to the resolution, pixel aspect ratio, timebase, and audio sample rate of the source clip from a setup dialog. Custom importers can use a new call to update a clip after it has modified by the user in the setup dialog. Please refer to [Importers](../../importers/importers) for more info on what's new.
 
 #### Recorders
 
@@ -434,8 +439,10 @@ Exporters and players can automatically take advantage of GPU acceleration, if a
 
 Exporters and players can now handle any pixel format, with the new [Image Processing Suite](../universals/sweetpea-suites.md#image-processing-suite). Exporters and players that parse segments and perform their own rendering can now call the host for subtree rendering. See the [Video Segment Render Suite](../universals/sweetpea-suites.md#video-segment-render-suite) for details.
 
-!!! note
-    If you provide an installer for an exporter, custom presets created in Premiere Pro are now visible in AME and vice-versa.
+:::note
+If you provide an installer for an exporter, custom presets created in Premiere Pro are now visible in AME and vice-versa.
+:::
+
 
 ### Mac 64-Bit and Cocoa
 

@@ -1,3 +1,6 @@
+---
+title: CUDA, OpenCL, Metal, or OpenGL?
+---
 # CUDA, OpenCL, Metal, or OpenGL?
 
 As of Summer 2021, Premiere Pro will no longer support OpenCL. The GPU architecture of Premiere Pro is entirely CUDA/Metal, and this is what is exposed through the GPU extensions to the effect/transition APIs.

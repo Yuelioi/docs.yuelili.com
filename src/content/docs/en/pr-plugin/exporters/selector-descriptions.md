@@ -1,3 +1,6 @@
+---
+title: Selector Descriptions
+---
 # Selector Descriptions
 
 This section provides a brief overview of each selector and highlights implementation issues.

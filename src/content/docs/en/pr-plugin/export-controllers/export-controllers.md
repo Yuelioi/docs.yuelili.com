@@ -1,3 +1,6 @@
+---
+title: Export Controllers
+---
 # Export Controllers
 
 Starting in Premiere Pro 5.0.2, an export controller can drive any exporter to generate a file in any format and perform custom post-processing operations. Developers wanting to integrate Premiere Pro with an asset management system will want to use this API instead.

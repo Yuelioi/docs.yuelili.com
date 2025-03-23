@@ -1,10 +1,13 @@
+---
+title: CharacterStyle
+---
 # CharacterStyle
 
 `characterStyle`
 
 #### Description
 
-Associates character attributes with characters. For an example, see [CharacterStyles](./CharacterStyles.md).
+Associates character attributes with characters. For an example, see [CharacterStyles](.././CharacterStyles).
 
 ---
 
@@ -20,7 +23,7 @@ The character properties for the style.
 
 #### Type
 
-[CharacterAttributes](./CharacterAttributes.md); read-only.
+[CharacterAttributes](.././CharacterAttributes); read-only.
 
 ---
 

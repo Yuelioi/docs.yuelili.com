@@ -1,3 +1,6 @@
+---
+title: TextRange
+---
 # TextRange
 
 `app.activeDocument.textFrames[index].textRange`
@@ -20,7 +23,7 @@ The character properties for the text range.
 
 #### Type
 
-[CharacterAttributes](./CharacterAttributes.md); read-only.
+[CharacterAttributes](.././CharacterAttributes); read-only.
 
 ---
 
@@ -48,7 +51,7 @@ All the characters in this text range.
 
 #### Type
 
-[Characters](./Characters.md); read-only.
+[Characters](.././Characters); read-only.
 
 ---
 
@@ -62,7 +65,7 @@ All referenced character styles in the text range.
 
 #### Type
 
-[CharacterStyles](./CharacterStyles.md); read-only.
+[CharacterStyles](.././CharacterStyles); read-only.
 
 ---
 
@@ -104,7 +107,7 @@ All the insertion points in this text range.
 
 #### Type
 
-[InsertionPoints](./InsertionPoints.md); read-only.
+[InsertionPoints](.././InsertionPoints); read-only.
 
 ---
 
@@ -146,7 +149,7 @@ All the lines in this text range.
 
 #### Type
 
-[Lines](./Lines.md); read-only.
+[Lines](.././Lines); read-only.
 
 ---
 
@@ -160,7 +163,7 @@ The paragraph properties for the text range.
 
 #### Type
 
-[ParagraphAttributes](./ParagraphAttributes.md); read-only.
+[ParagraphAttributes](.././ParagraphAttributes); read-only.
 
 ---
 
@@ -174,7 +177,7 @@ All the paragraphs in this text range.
 
 #### Type
 
-[Paragraphs](./Paragraphs.md); read-only.
+[Paragraphs](.././Paragraphs); read-only.
 
 ---
 
@@ -188,7 +191,7 @@ All referenced paragraph styles in the text range.
 
 #### Type
 
-[ParagraphStyles](./ParagraphStyles.md); read-only.
+[ParagraphStyles](.././ParagraphStyles); read-only.
 
 ---
 
@@ -230,7 +233,7 @@ The story to which the text range belongs.
 
 #### Type
 
-[Story](./Story.md); read-only.
+[Story](.././Story); read-only.
 
 ---
 
@@ -244,7 +247,7 @@ All of the text in this text range.
 
 #### Type
 
-[TextRanges](./TextRanges.md); read-only.
+[TextRanges](.././TextRanges); read-only.
 
 ---
 
@@ -286,7 +289,7 @@ All the words contained in this text range.
 
 #### Type
 
-[Words](./Words.md); read-only.
+[Words](.././Words); read-only.
 
 ---
 

@@ -1,8 +1,11 @@
+---
+title: Getting Started
+---
 # Getting Started
 
 ## Setting up the Sample Projects
 
-If you are developing an effect, begin with one of the two GPU effect sample projects, progressively replacing its functionality with your own. Refer to [Introduction](../index.md) for general instructions on how to build the SDK projects.
+If you are developing an effect, begin with one of the two GPU effect sample projects, progressively replacing its functionality with your own. Refer to [Introduction](../../index) for general instructions on how to build the SDK projects.
 
 In addition to those general instructions, the sample project is also dependent on the After Effects plugin SDK. On Windows, create an environment variable pointing to it named AE_SDK_BASE_PATH, so that the compiler will find the AE headers that the project includes. On macOS, in *Xcode > Preferences > Locations > Custom Paths*, specify AE_SDK_BASE_PATH to be the root folder of the AE plugin SDK you have downloaded and unzipped.
 
@@ -64,14 +67,16 @@ For CUDA interoperability with OpenGL:
 - copy from the mapped address to CUDA with `cuMemcpyDtoDAsync`
 - unmap with `cuGraphicsUnmapResources`
 
-!!! note
-    On the Mac there is no real OpenGL/CUDA interoperability, and these calls will go through system memory.
+:::note
+On the Mac there is no real OpenGL/CUDA interoperability, and these calls will go through system memory.
+:::
+
 
 ---
 
 ## Entry Point
 
-The GPU entry point function will only be called if the current project is using GPU acceleration. Otherwise, the normal entry point function will be called as described in the After Effects SDK, or [GPU Effects & Transitions](gpu-effects-transitions.md) or [Video Filters](../video-filters/video-filters.md) in this SDK Guide.
+The GPU entry point function will only be called if the current project is using GPU acceleration. Otherwise, the normal entry point function will be called as described in the After Effects SDK, or [GPU Effects & Transitions](../gpu-effects-transitions) or [Video Filters](../../video-filters/video-filters) in this SDK Guide.
 
 Make sure GPU acceleration is activated in File > Project Settings > General > Video Rendering and Playback > Renderer. If a GPU option is not available, then you will need to install a suitable video card in your system.
 

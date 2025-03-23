@@ -1,10 +1,13 @@
+---
+title: NoColor
+---
 # NoColor
 
 `new NoColor()`
 
 #### Description
 
-Represents the "none" [Color](./Color.md) object.
+Represents the "none" [Color](.././Color) object.
 
 Assigning a `NoColor` object to the fill or stroke color of an art item is equivalent to setting the `filled` or `stroked` property to `false`.
 

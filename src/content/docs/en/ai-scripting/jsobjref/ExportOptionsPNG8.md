@@ -1,3 +1,6 @@
+---
+title: ExportOptionsPNG8
+---
 # ExportOptionsPNG8
 
 `exportOptionsPNG8`
@@ -172,7 +175,7 @@ Default: `white`.
 
 #### Type
 
-[RGBColor](./RGBColor.md)
+[RGBColor](.././RGBColor)
 
 ---
 

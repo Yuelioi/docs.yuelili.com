@@ -1,3 +1,6 @@
+---
+title: For more information
+---
 # For more information
 
 Several extended sample scripts are in the `/Scripting/Sample Scripts/` folder in your lllustrator installation directory.

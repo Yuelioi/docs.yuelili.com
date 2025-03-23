@@ -1,3 +1,6 @@
+---
+title: IllustratorSaveOptions
+---
 # IllustratorSaveOptions
 
 `illustratorSaveOptions`
@@ -46,8 +49,10 @@ Default: `Compatibility.ILLUSTRATOR19`.
 
 `illustratorSaveOptions.compressed`
 
-!!! note
-    This functionality was added in Illustrator version 10
+:::note
+This functionality was added in Illustrator version 10
+:::
+
 
 #### Description
 
@@ -65,8 +70,10 @@ Boolean.
 
 `illustratorSaveOptions.embedICCProfile`
 
-!!! note
-    This functionality was added in Illustrator version 9
+:::note
+This functionality was added in Illustrator version 9
+:::
+
 
 #### Description
 
@@ -84,8 +91,10 @@ Boolean.
 
 `illustratorSaveOptions.embedLinkedFiles`
 
-!!! note
-    This functionality was added in Illustrator version 7
+:::note
+This functionality was added in Illustrator version 7
+:::
+
 
 #### Description
 
@@ -103,8 +112,10 @@ Boolean.
 
 `illustratorSaveOptions.flattenOutput`
 
-!!! note
-    This functionality was added in Illustrator version 9
+:::note
+This functionality was added in Illustrator version 9
+:::
+
 
 #### Description
 
@@ -122,8 +133,10 @@ Default: `OutputFlattening.PRESERVEAPPEARANCE`.
 
 `illustratorSaveOptions.fontSubsetThreshold`
 
-!!! note
-    This functionality was added in Illustrator version 9
+:::note
+This functionality was added in Illustrator version 9
+:::
+
 
 #### Description
 
@@ -143,8 +156,10 @@ Number (double).
 
 `illustratorSaveOptions.pdfCompatible`
 
-!!! note
-    This functionality was added in Illustrator version 10
+:::note
+This functionality was added in Illustrator version 10
+:::
+
 
 #### Description
 

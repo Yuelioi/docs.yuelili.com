@@ -1,10 +1,13 @@
+---
+title: ParagraphStyles
+---
 # ParagraphStyles
 
 `app.activeDocument.paragraphStyles`
 
 #### Description
 
-A collection of [ParagraphStyle](./ParagraphStyle.md) objects.
+A collection of [ParagraphStyle](.././ParagraphStyle) objects.
 
 ---
 
@@ -70,7 +73,7 @@ Creates a named paragraph style.
 
 #### Returns
 
-[ParagraphStyle](./ParagraphStyle.md)
+[ParagraphStyle](.././ParagraphStyle)
 
 ---
 
@@ -90,7 +93,7 @@ Get the first element in the collection with the provided name.
 
 #### Returns
 
-[ParagraphStyle](./ParagraphStyle.md)
+[ParagraphStyle](.././ParagraphStyle)
 
 ---
 
@@ -110,7 +113,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[ParagraphStyle](./ParagraphStyle.md)
+[ParagraphStyle](.././ParagraphStyle)
 
 ---
 

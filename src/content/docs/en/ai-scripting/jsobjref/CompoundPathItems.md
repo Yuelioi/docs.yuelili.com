@@ -1,10 +1,13 @@
+---
+title: CompoundPathItems
+---
 # CompoundPathItems
 
 `app.activeDocument.activeLayer.compoundPathItems`
 
 #### Description
 
-A collection of [CompoundPathItem](./CompoundPathItem.md) objects.
+A collection of [CompoundPathItem](.././CompoundPathItem) objects.
 
 ---
 
@@ -64,7 +67,7 @@ Creates a new `CompoundPathItem`.
 
 #### Returns
 
-[CompoundPathItem](./CompoundPathItem.md)
+[CompoundPathItem](.././CompoundPathItem)
 
 ---
 
@@ -84,7 +87,7 @@ Gets the first element in the collection with the specified name.
 
 #### Returns
 
-[CompoundPathItem](./CompoundPathItem.md)
+[CompoundPathItem](.././CompoundPathItem)
 
 ---
 
@@ -104,7 +107,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[CompoundPathItem](./CompoundPathItem.md)
+[CompoundPathItem](.././CompoundPathItem)
 
 ---
 

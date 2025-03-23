@@ -1,3 +1,6 @@
+---
+title: Pattern
+---
 # Pattern
 
 `app.activeDocument.patterns[index]`
@@ -8,7 +11,7 @@ An Illustrator pattern definition contained in a document.
 
 Patterns are shown in the Swatches palette.
 
-Each pattern is referenced by a [PatternColor](./PatternColor.md) object, which defines the pattern's appearance.
+Each pattern is referenced by a [PatternColor](.././PatternColor) object, which defines the pattern's appearance.
 
 ---
 
@@ -38,7 +41,7 @@ The document that contains this pattern.
 
 #### Type
 
-[Document](./Document.md); read-only.
+[Document](.././Document); read-only.
 
 ---
 

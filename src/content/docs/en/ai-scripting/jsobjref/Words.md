@@ -1,10 +1,13 @@
+---
+title: Words
+---
 # Words
 
 `app.activeDocument.textFrames[index].words`
 
 #### Description
 
-A collection of words in a text item, where each word is a [TextRange](./TextRange.md) object.
+A collection of words in a text item, where each word is a [TextRange](.././TextRange) object.
 
 The elements are not named; you must access them by index.
 
@@ -71,12 +74,12 @@ If no location is specified, adds it to the containing text frame after the curr
 |      Parameter      |                                 Type                                  |       Description       |
 | ------------------- | --------------------------------------------------------------------- | ----------------------- |
 | `contents`          | String                                                                | Word to add             |
-| `relativeObject`    | [TextFrameItem](./TextFrameItem.md), optional                         | Object to add item to   |
+| `relativeObject`    | [TextFrameItem](.././TextFrameItem), optional                         | Object to add item to   |
 | `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement), optional | Location to insert text |
 
 #### Returns
 
-[TextRange](./TextRange.md)
+[TextRange](.././TextRange)
 
 ---
 
@@ -96,7 +99,7 @@ Adds a word before the current word selection or insertion point.
 
 #### Returns
 
-[TextRange](./TextRange.md)
+[TextRange](.././TextRange)
 
 ---
 
@@ -116,7 +119,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[TextRange](./TextRange.md)
+[TextRange](.././TextRange)
 
 ---
 

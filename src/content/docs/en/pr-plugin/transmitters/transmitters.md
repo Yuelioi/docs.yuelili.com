@@ -1,3 +1,6 @@
+---
+title: Transmitters
+---
 # Transmitters
 
 This API provides support for pushing video, audio, and closed captions to external hardware. Transmitters can be specified by the user in Preferences > Playback. Other plugins such as importers and effects with settings preview dialogs can send video out to the active transmitter, opening up new possibilities for hardware monitoring. Transmit plugins are supported in Premiere Pro, After Effects (starting in CC 2014), and Character Animator.

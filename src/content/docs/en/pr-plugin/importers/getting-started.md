@@ -1,3 +1,6 @@
+---
+title: Getting Started
+---
 # Getting Started
 
 ## The Basics of Import
@@ -173,8 +176,10 @@ Importers can optionally support two different quality modes, with the imDraftMo
 
 Starting in CC, importers can support closed captioning that is embedded in the source media. The built-in QuickTime importer provides this capability.
 
-!!! note
-    Premiere Pro can also import and export captions in a sidecar file (e.g. .mcc, .scc, or .xml) alongside any media file, regardless of the media file format. This does not require any specific work on the importer side.
+:::note
+Premiere Pro can also import and export captions in a sidecar file (e.g. .mcc, .scc, or .xml) alongside any media file, regardless of the media file format. This does not require any specific work on the importer side.
+:::
+
 
 To support embedded closed captioning, set `imImportInfoRec.canSupportClosedCaptions` to true. The importer should handle the following selectors: `imInitiateAsyncClosedCaptionScan`, `imGetNextClosedCaption`, and *imCompleteAsyncClosedCaptionScan*.
 
@@ -301,11 +306,9 @@ typedef struct {
 } imStdParms;
 ```
 
-+------------------+-------------------------------------------------+
 |      Member      |                   Description                   |
-+==================+=================================================+
+|------------------|-------------------------------------------------|
 | `imInterfaceVer` | Importer API version                            |
-|                  |                                                 |
 |                  | - Premiere Pro CC 2014 - `IMPORTMOD_VERSION_15` |
 |                  | - Premiere Pro CC - `IMPORTMOD_VERSION_14`      |
 |                  | - Premiere Pro CS6.0.2 - `IMPORTMOD_VERSION_13` |
@@ -313,11 +316,8 @@ typedef struct {
 |                  | - Premiere Pro CS5.5 - `IMPORTMOD_VERSION_11`   |
 |                  | - Premiere Pro CS5 - `IMPORTMOD_VERSION_10`     |
 |                  | - Premiere Pro CS4 - `IMPORTMOD_VERSION_9`      |
-+------------------+-------------------------------------------------+
 | `funcs`          | Pointers to callbacks for importers             |
-+------------------+-------------------------------------------------+
 | `piSuites`       | Pointer to universal callback suites            |
-+------------------+-------------------------------------------------+
 
 ---
 
@@ -336,16 +336,10 @@ typedef csSDK_int32 (*importProgressFunc){
 void *trimCallbackID};
 ```
 
-+----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 |       Function       |                                                                     Description                                                                      |
-+======================+======================================================================================================================================================+
-| `classFuncs`         | See [ClassData functions](../hardware/classdata-functions.md).                                                                                       |
-+----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `classFuncs`         | See [ClassData functions](../../hardware/classdata-functions).                                                                                       |
 | `importProgressFunc` | Available in `imSaveFileRec` and `imTrimFileRec` during *imSaveFile8* and *imTrimFile8*.                                                             |
-|                      |                                                                                                                                                      |
 |                      | Callback function pointer for use during project archiving or trimming to call into Premiere and update the progress bar and check for cancellation. |
-|                      |                                                                                                                                                      |
 |                      | Either `imProgressAbort` or `imProgressCon` tinue will be returned.                                                                                  |
-|                      |                                                                                                                                                      |
 |                      | The trimCallbackID parameter is passed in the same structures.                                                                                       |
-+----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+

@@ -1,3 +1,6 @@
+---
+title: SourceMonitor object
+---
 # SourceMonitor object
 
 `app.sourceMonitor`
@@ -66,7 +69,7 @@ None.
 
 #### Returns
 
-Returns a [Time object](../other/time.md) containing the position of the Source monitor's current time indicator.
+Returns a [Time object](../../other/time) containing the position of the Source monitor's current time indicator.
 
 ---
 
@@ -120,7 +123,7 @@ Open a project item in the Source monitor.
 
 |   Parameter   |                     Type                     |       Description       |
 | ------------- | -------------------------------------------- | ----------------------- |
-| `projectItem` | [ProjectItem object](../item/projectitem.md) | A project item to open. |
+| `projectItem` | [ProjectItem object](../../item/projectitem) | A project item to open. |
 
 #### Returns
 

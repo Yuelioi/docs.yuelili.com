@@ -1,3 +1,6 @@
+---
+title: Story
+---
 # Story
 
 `story`
@@ -20,7 +23,7 @@ All the characters in this story.
 
 #### Type
 
-[Characters](./Characters.md); read-only.
+[Characters](.././Characters); read-only.
 
 ---
 
@@ -34,7 +37,7 @@ All the insertion points in this story.
 
 #### Type
 
-[InsertionPoints](./InsertionPoints.md); read-only.
+[InsertionPoints](.././InsertionPoints); read-only.
 
 ---
 
@@ -62,7 +65,7 @@ All the lines in this story.
 
 #### Type
 
-[Lines](./Lines.md); read-only.
+[Lines](.././Lines); read-only.
 
 ---
 
@@ -76,7 +79,7 @@ All the paragraphs in this story.
 
 #### Type
 
-[Paragraphs](./Paragraphs.md); read-only.
+[Paragraphs](.././Paragraphs); read-only.
 
 ---
 
@@ -104,7 +107,7 @@ The text frame items in this story.
 
 #### Type
 
-[TextFrameItems](./TextFrameItems.md); read-only.
+[TextFrameItems](.././TextFrameItems); read-only.
 
 ---
 
@@ -118,7 +121,7 @@ The text range of the story.
 
 #### Type
 
-[TextRange](./TextRange.md); read-only.
+[TextRange](.././TextRange); read-only.
 
 ---
 
@@ -132,7 +135,7 @@ All the text ranges in the story.
 
 #### Type
 
-[TextRanges](./TextRanges.md); read-only.
+[TextRanges](.././TextRanges); read-only.
 
 ---
 
@@ -146,7 +149,7 @@ The selected text ranges in the story.
 
 #### Type
 
-Array of [TextRange](./TextRange.md); read-only.
+Array of [TextRange](.././TextRange); read-only.
 
 ---
 
@@ -174,7 +177,7 @@ All the words in the story.
 
 #### Type
 
-[Words](./Words.md); read-only.
+[Words](.././Words); read-only.
 
 ---
 

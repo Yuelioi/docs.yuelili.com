@@ -1,3 +1,6 @@
+---
+title: ImageCaptureOptions
+---
 # ImageCaptureOptions
 
 `imageCaptureOptions`
@@ -54,7 +57,7 @@ Default: white.
 
 #### Type
 
-[RGBColor](./RGBColor.md)
+[RGBColor](.././RGBColor)
 
 ---
 

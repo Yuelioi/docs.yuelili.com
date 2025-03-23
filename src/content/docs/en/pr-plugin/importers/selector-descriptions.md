@@ -1,3 +1,6 @@
+---
+title: Selector Descriptions
+---
 # Selector Descriptions
 
 This section provides a brief overview of each selector and highlights implementation issues.
@@ -187,8 +190,10 @@ Create an asynchronous importer object using the data provided, and store it in 
 - param1 - [imFileRef](structure-descriptions.md#imfileref)
 - param2 - [imImportImageRec\*](structure-descriptions.md#imimportimagerec)
 
-!!! note
-    In most cases, `imGetSourceVideo` is the better choice.
+:::note
+In most cases, `imGetSourceVideo` is the better choice.
+:::
+
 
 Before going down this route, read the discussion here.
 
@@ -209,7 +214,7 @@ Called to import audio using the new 32-bit float, uninterleaved audio format.
 
 Fill `imImportAudioRec7->buffer` with the number of sample frames specified in `imImportAudioRec7->size`, starting from `imImportAudioRec7->position`.
 
-Always return 32-bit float, uninterleaved samples as described in [Universals](../universals/universals.md).
+Always return 32-bit float, uninterleaved samples as described in [Universals](../../universals/universals).
 
 You may use the calls in the [Audio Suite](../universals/sweetpea-suites.md#audio-suite) to do some common conversions.
 
@@ -507,7 +512,7 @@ Sent after a capture completes, where timecode was provided by the recorder or d
 
 Use this to write timecode data and timecode rate to your file.
 
-See [Universals](../universals/universals.md) for more information on time in Premiere.
+See [Universals](../../universals/universals) for more information on time in Premiere.
 
 Supercedes `imSetTimeInfo`.
 

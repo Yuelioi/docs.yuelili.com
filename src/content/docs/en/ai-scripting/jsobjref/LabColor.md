@@ -1,10 +1,13 @@
+---
+title: LabColor
+---
 # LabColor
 
 `labColor`
 
 #### Description
 
-A color specification in the CIE Lab color space, used where a [Color](./Color.md) object is required.
+A color specification in the CIE Lab color space, used where a [Color](.././Color) object is required.
 
 ---
 

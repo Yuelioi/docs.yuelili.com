@@ -1,3 +1,6 @@
+---
+title: Transmitter Basics
+---
 # Transmitter Basics
 
 ## Basic Organization
@@ -64,8 +67,10 @@ When the user is scrubbing in the timeline, send the video frames as fast as pos
 
 Turn on dog ears to view statistics about the frames being sent to the transmitter. This is useful to view information such as pixel formats and much more.
 
-!!! note
-    This mode may result in duplicate PushVideo calls made for a single frame.
+:::note
+This mode may result in duplicate PushVideo calls made for a single frame.
+:::
+
 
 ---
 

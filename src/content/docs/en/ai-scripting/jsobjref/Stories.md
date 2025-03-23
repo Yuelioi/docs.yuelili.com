@@ -1,10 +1,13 @@
+---
+title: Stories
+---
 # Stories
 
 `stories`
 
 #### Description
 
-A collection of [Story](./Story.md) objects in a document.
+A collection of [Story](.././Story) objects in a document.
 
 ---
 
@@ -70,4 +73,4 @@ Gets an element from the collection.
 
 #### Returns
 
-[Story](./Story.md)
+[Story](.././Story)

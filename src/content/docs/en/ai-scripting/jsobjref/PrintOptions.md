@@ -1,3 +1,6 @@
+---
+title: PrintOptions
+---
 # PrintOptions
 
 `new PrintOptions()`
@@ -20,7 +23,7 @@ The printing color management options.
 
 #### Type
 
-[PrintColorManagementOptions](./PrintColorManagementOptions.md)
+[PrintColorManagementOptions](.././PrintColorManagementOptions)
 
 ---
 
@@ -34,7 +37,7 @@ The printing color separation options.
 
 #### Type
 
-[PrintColorSeparationOptions](./PrintColorSeparationOptions.md)
+[PrintColorSeparationOptions](.././PrintColorSeparationOptions)
 
 ---
 
@@ -48,7 +51,7 @@ The printing coordinate options.
 
 #### Type
 
-[PrintCoordinateOptions](./PrintCoordinateOptions.md)
+[PrintCoordinateOptions](.././PrintCoordinateOptions)
 
 ---
 
@@ -62,7 +65,7 @@ The printing flattener options.
 
 #### Type
 
-[PrintFlattenerOptions](./PrintFlattenerOptions.md)
+[PrintFlattenerOptions](.././PrintFlattenerOptions)
 
 ---
 
@@ -90,7 +93,7 @@ The printing font options.
 
 #### Type
 
-[PrintFontOptions](./PrintFontOptions.md)
+[PrintFontOptions](.././PrintFontOptions)
 
 ---
 
@@ -104,7 +107,7 @@ The printing job options.
 
 #### Type
 
-[PrintJobOptions](./PrintJobOptions.md)
+[PrintJobOptions](.././PrintJobOptions)
 
 ---
 
@@ -118,7 +121,7 @@ The printing page marks options.
 
 #### Type
 
-[PrintPageMarksOptions](./PrintPageMarksOptions.md)
+[PrintPageMarksOptions](.././PrintPageMarksOptions)
 
 ---
 
@@ -132,7 +135,7 @@ The paper options.
 
 #### Type
 
-[PrintPaperOptions](./PrintPaperOptions.md)
+[PrintPaperOptions](.././PrintPaperOptions)
 
 ---
 
@@ -146,7 +149,7 @@ The printing PostScript options.
 
 #### Type
 
-[PrintPostScriptOptions](./PrintPostScriptOptions.md)
+[PrintPostScriptOptions](.././PrintPostScriptOptions)
 
 ---
 

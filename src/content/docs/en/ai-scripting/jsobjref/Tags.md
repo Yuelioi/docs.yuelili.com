@@ -1,10 +1,13 @@
+---
+title: Tags
+---
 # Tags
 
 `app.activeDocument.selection[index].tags`
 
 #### Description
 
-A collection of [Tag](./Tag.md) objects.
+A collection of [Tag](.././Tag) objects.
 
 ---
 
@@ -60,11 +63,11 @@ String; read-only.
 
 #### Description
 
-Creates a new [Tag](./Tag.md) object.
+Creates a new [Tag](.././Tag) object.
 
 #### Returns
 
-[Tag](./Tag.md)
+[Tag](.././Tag)
 
 ---
 
@@ -84,7 +87,7 @@ Get the first element in the collection with the provided name.
 
 #### Returns
 
-[Tag](./Tag.md)
+[Tag](.././Tag)
 
 ---
 
@@ -104,7 +107,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[Tag](./Tag.md)
+[Tag](.././Tag)
 
 ---
 

@@ -26,3 +26,71 @@ const currentCategory = urlList[2];
 
   observer.observe(document.body, { childList: true, subtree: true });
 </script>
+
+<style is:global>
+  /* 隐藏页面顶部标题 */
+  .astro-esu6gcns .content-panel.astro-qbxdzo7o:first-child {
+    display: none;
+  }
+
+  @media (min-width: 72rem) {
+    .astro-uv6r5pg7:has(table) {
+      --sl-content-pad-x: 3rem;
+      --sl-content-width: max(65%, 45rem);
+      --sl-sidebar-width: max(15%, 20rem);
+    }
+    .content-panel .sl-container {
+      margin: 1rem auto;
+    }
+
+    .sl-markdown-content h1::before,
+    .sl-markdown-content h2::before,
+    .sl-markdown-content h3::before,
+    .sl-markdown-content h4::before,
+    .sl-markdown-content h5::before {
+      opacity: 0.5;
+      float: left;
+      padding-right: 0.25rem;
+      margin-left: -1.5rem;
+      font-size: 0.85rem;
+      font-weight: normal;
+      font-family:
+        -apple-system,
+        blinkmacsystemfont,
+        "Segoe UI",
+        "Microsoft YaHei Light",
+        roboto,
+        inter,
+        sans-serif,
+        ui-sans-serif,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Inter",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        sans-serif;
+    }
+
+    .sl-markdown-content h1::before {
+      content: "H1";
+    }
+    .sl-markdown-content h2::before {
+      content: "H2";
+    }
+
+    .sl-markdown-content h3::before {
+      content: "H3";
+    }
+
+    .sl-markdown-content h4::before {
+      content: "H4";
+    }
+
+    .sl-markdown-content h5::before {
+      content: "H5";
+    }
+  }
+</style>

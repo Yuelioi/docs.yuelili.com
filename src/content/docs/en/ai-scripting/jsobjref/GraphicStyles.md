@@ -1,10 +1,13 @@
+---
+title: GraphicStyles
+---
 # GraphicStyles
 
 `app.activeDocument.graphicStyles`
 
 #### Description
 
-A collection of [GraphicStyle](./GraphicStyle.md) objects in a document.
+A collection of [GraphicStyle](.././GraphicStyle) objects in a document.
 
 ---
 
@@ -34,7 +37,7 @@ The document that contains this graphic styles collection.
 
 #### Type
 
-[Document](./Document.md); read-only.
+[Document](.././Document); read-only.
 
 ---
 
@@ -70,7 +73,7 @@ Gets the first element in the collection with the specified name.
 
 #### Returns
 
-[GraphicStyle](./GraphicStyle.md)
+[GraphicStyle](.././GraphicStyle)
 
 ---
 
@@ -90,7 +93,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[GraphicStyle](./GraphicStyle.md)
+[GraphicStyle](.././GraphicStyle)
 
 ---
 

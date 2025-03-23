@@ -1,3 +1,6 @@
+---
+title: Screen
+---
 # Screen
 
 `PPDFileList[index].PPDInfo.screenList[index]`
@@ -34,7 +37,7 @@ The color separation screen information.
 
 #### Type
 
-[ScreenInfo](./ScreenInfo.md)
+[ScreenInfo](.././ScreenInfo)
 
 ---
 

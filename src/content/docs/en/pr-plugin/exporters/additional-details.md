@@ -1,3 +1,6 @@
+---
+title: Additional Details
+---
 # Additional Details
 
 ## Multiplexer Tab Ordering

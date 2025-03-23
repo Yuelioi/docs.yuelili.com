@@ -1,3 +1,6 @@
+---
+title: Layers
+---
 # Layers
 
 `app.activeDocument.layers`
@@ -64,7 +67,7 @@ Creates a new layer in the document.
 
 #### Returns
 
-[Layer](./Layer.md)
+[Layer](.././Layer)
 
 ---
 
@@ -84,7 +87,7 @@ Gets the first element in the collection with the specified name.
 
 #### Returns
 
-[Layer](./Layer.md)
+[Layer](.././Layer)
 
 ---
 
@@ -104,7 +107,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[Layer](./Layer.md)
+[Layer](.././Layer)
 
 ---
 

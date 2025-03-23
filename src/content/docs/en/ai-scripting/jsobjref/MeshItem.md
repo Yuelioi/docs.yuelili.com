@@ -1,3 +1,6 @@
+---
+title: MeshItem
+---
 # MeshItem
 
 `app.activeDocument.meshItems[index]`
@@ -134,7 +137,7 @@ The layer to which this item belongs.
 
 #### Type
 
-[Layer](./Layer.md); read-only.
+[Layer](.././Layer); read-only.
 
 ---
 
@@ -220,7 +223,7 @@ The parent of this object.
 
 #### Type
 
-[Layer](./Layer.md) or [GroupItem](./GroupItem.md); read-only.
+[Layer](.././Layer) or [GroupItem](.././GroupItem); read-only.
 
 ---
 
@@ -230,7 +233,7 @@ The parent of this object.
 
 #### Description
 
-The position (in points) of the top left corner of the [MeshItem](./MeshItem.md) object in the format [x, y].
+The position (in points) of the top left corner of the [MeshItem](.././MeshItem) object in the format [x, y].
 
 Does not include stroke weight.
 
@@ -280,7 +283,7 @@ The tags contained in this item.
 
 #### Type
 
-[Tags](./Tags.md); read-only.
+[Tags](.././Tags); read-only.
 
 ---
 
@@ -336,7 +339,7 @@ The visibility variable bound to the item.
 
 #### Type
 
-[Variable](./Variable.md)
+[Variable](.././Variable)
 
 ---
 
@@ -576,7 +579,7 @@ Transforms the art item by applying a transformation matrix.
 
 |       Parameter        |                               Type                                |                  Description                   |
 | ---------------------- | ----------------------------------------------------------------- | ---------------------------------------------- |
-| `transformationMatrix` | [Matrix](./Matrix.md)                                             | Transformation matrix to apply                 |
+| `transformationMatrix` | [Matrix](.././Matrix)                                             | Transformation matrix to apply                 |
 | `changePositions`      | Boolean, optional                                                 | Whether to change Positions                    |
 | `changeFillPatterns`   | Boolean, optional                                                 | Whether to change Fill Patterns                |
 | `changeFillGradients`  | Boolean, optional                                                 | Whether to change Fill Gradients               |

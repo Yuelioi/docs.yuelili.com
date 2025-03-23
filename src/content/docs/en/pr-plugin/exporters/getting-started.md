@@ -1,3 +1,6 @@
+---
+title: Getting Started
+---
 # Getting Started
 
 Start your plugin by modifying the SDK sample. Step through the code in your debugger to learn the order of events.
@@ -196,8 +199,10 @@ Which restricts the codec selection of the exporter to be only the single codec 
 
 ## Stereoscopic Video
 
-!!! note
-    Currently stereoscopic exporters must use the old "pull" model, and only receive stereoscopic video when exporting directly from Premiere Pro. In other words, when exports are queued to run in Adobe Media Encoder, they will not get stereoscopic video.
+:::note
+Currently stereoscopic exporters must use the old "pull" model, and only receive stereoscopic video when exporting directly from Premiere Pro. In other words, when exports are queued to run in Adobe Media Encoder, they will not get stereoscopic video.
+:::
+
 
 To get rendered frames for both left and right eye, use the [Video Segment Suite](../universals/sweetpea-suites.md#video-segment-suite) to request the left and right cutlists, and render frames from both. An exporter can tell if segments in both of them are identical (implying that they have nothing stereoscopic about them) by looking at the segment hashes, and you can tell if two frames are identical (by looking at the request identifiers).
 
@@ -254,19 +259,14 @@ typedef struct {
 } exportStdParms;
 ```
 
-+-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |      Member       |                                                                          Description                                                                          |
-+===================+===============================================================================================================================================================+
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `interfaceVer`    | Exporter API version, one of :                                                                                                                                |
-|                   |                                                                                                                                                               |
 |                   | - Premiere Pro CC - `prExportVersion400`                                                                                                                      |
 |                   | - Premiere Pro CS6 - `prExportVersion300`                                                                                                                     |
 |                   | - Premiere Pro CS5.5 - `prExportVersion250`                                                                                                                   |
 |                   | - Premiere Pro CS5 - `prExportVersion200`                                                                                                                     |
 |                   | - Premiere Pro 4.0.1 through 4.2.1 - `prExportVersion101`                                                                                                     |
 |                   | - Premiere Pro CS4 - `prExportVersion100`                                                                                                                     |
-+-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `getSPBasicSuite` | This very important call returns the SweetPea suite that allows plugins to acquire and release all other [SweetPea Suites](../universals/sweetpea-suites.md). |
-|                   |                                                                                                                                                               |
+| `getSPBasicSuite` | This very important call returns the SweetPea suite that allows plugins to acquire and release all other [SweetPea Suites](../../universals/sweetpea-suites). |
 |                   | ```SPBasicSuite* getSPBasicSuite();```                                                                                                                        |
-+-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+

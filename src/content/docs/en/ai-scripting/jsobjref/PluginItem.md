@@ -1,3 +1,6 @@
+---
+title: PluginItem
+---
 # PluginItem
 
 `app.activeDocument.pluginItems[index]`
@@ -150,7 +153,7 @@ The layer to which this item belongs.
 
 #### Type
 
-[Layer](./Layer.md); read-only.
+[Layer](.././Layer); read-only.
 
 ---
 
@@ -236,7 +239,7 @@ The parent of this object.
 
 #### Type
 
-[Layer](./Layer.md) or [GroupItem](./GroupItem.md)
+[Layer](.././Layer) or [GroupItem](.././GroupItem)
 
 ---
 
@@ -294,7 +297,7 @@ The tags contained in this item.
 
 #### Type
 
-[Tags](./Tags.md); read-only.
+[Tags](.././Tags); read-only.
 
 ---
 
@@ -322,7 +325,7 @@ When this plug-in group was created by tracing (`isTracing` is `true`), the trac
 
 #### Type
 
-[TracingObject](./TracingObject.md)
+[TracingObject](.././TracingObject)
 
 ---
 
@@ -364,7 +367,7 @@ The visibility variable bound to the item.
 
 #### Type
 
-[Variable](./Variable.md)
+[Variable](.././Variable)
 
 ---
 
@@ -606,7 +609,7 @@ Transforms the art item by applying a transformation matrix.
 
 |       Parameter        |                               Type                                |                  Description                   |
 | ---------------------- | ----------------------------------------------------------------- | ---------------------------------------------- |
-| `transformationMatrix` | [Matrix](./Matrix.md)                                             | Transformation matrix to apply                 |
+| `transformationMatrix` | [Matrix](.././Matrix)                                             | Transformation matrix to apply                 |
 | `changePositions`      | Boolean, optional                                                 | Whether to change Positions                    |
 | `changeFillPatterns`   | Boolean, optional                                                 | Whether to change Fill Patterns                |
 | `changeFillGradients`  | Boolean, optional                                                 | Whether to change Fill Gradients               |

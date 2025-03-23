@@ -1,10 +1,13 @@
+---
+title: PathPoints
+---
 # PathPoints
 
 `app.activeDocument.pathItems[index].pathPoints`
 
 #### Description
 
-A collection of [PathPoint](./PathPoint.md) objects in a specific path.
+A collection of [PathPoint](.././PathPoint) objects in a specific path.
 
 The elements are not named; you must access them by index.
 
@@ -66,7 +69,7 @@ Creates a new object.
 
 #### Returns
 
-[PathPoint](./PathPoint.md)
+[PathPoint](.././PathPoint)
 
 ---
 
@@ -86,7 +89,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[PathPoint](./PathPoint.md)
+[PathPoint](.././PathPoint)
 
 ---
 

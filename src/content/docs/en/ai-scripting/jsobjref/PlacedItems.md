@@ -1,10 +1,13 @@
+---
+title: PlacedItems
+---
 # PlacedItems
 
 `app.activeDocument.placedItems`
 
 #### Description
 
-A collection of [PlacedItem](./PlacedItem.md) objects in a document.
+A collection of [PlacedItem](.././PlacedItem) objects in a document.
 
 ---
 
@@ -62,11 +65,11 @@ String; read-only.
 
 Creates a new object.
 
-Use to place new art in a document. Use the `file` property of the resulting `placedItem` object to link the file containing the artwork. See [PlacedItem](./PlacedItem.md).
+Use to place new art in a document. Use the `file` property of the resulting `placedItem` object to link the file containing the artwork. See [PlacedItem](.././PlacedItem).
 
 #### Returns
 
-[PlacedItem](./PlacedItem.md)
+[PlacedItem](.././PlacedItem)
 
 ---
 
@@ -86,7 +89,7 @@ Get the first element in the collection with the provided name.
 
 #### Returns
 
-[PlacedItem](./PlacedItem.md)
+[PlacedItem](.././PlacedItem)
 
 ---
 
@@ -106,7 +109,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[PlacedItem](./PlacedItem.md)
+[PlacedItem](.././PlacedItem)
 
 ---
 

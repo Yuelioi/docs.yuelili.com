@@ -1,3 +1,6 @@
+---
+title: OpenOptionsPhotoshop
+---
 # OpenOptionsPhotoshop
 
 `openOptionsPhotoshop`

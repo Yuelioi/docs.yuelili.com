@@ -1,3 +1,6 @@
+---
+title: Whats New
+---
 # Whats New
 
 ## What's New in Premiere Pro CS5?

@@ -1,3 +1,6 @@
+---
+title: Swatch
+---
 # Swatch
 
 `app.activeDocument.swatches[index]`
@@ -24,7 +27,7 @@ The color information for this swatch.
 
 #### Type
 
-[Color](./Color.md)
+[Color](.././Color)
 
 ---
 
@@ -52,7 +55,7 @@ The object that contains this swatch.
 
 #### Type
 
-[Document](./Document.md); read-only.
+[Document](.././Document); read-only.
 
 ---
 

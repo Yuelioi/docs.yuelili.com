@@ -1,10 +1,13 @@
+---
+title: SymbolItems
+---
 # SymbolItems
 
 `app.activeDocument.symbolItems`
 
 #### Description
 
-The collection of [SymbolItem](./SymbolItem.md) objects in the document.
+The collection of [SymbolItem](.././SymbolItem) objects in the document.
 
 ---
 
@@ -66,11 +69,11 @@ Creates an instance of the specified symbol.
 
 | Parameter |         Type          |    Description     |
 | --------- | --------------------- | ------------------ |
-| `symbol`  | [Symbol](./Symbol.md) | Symbol to instance |
+| `symbol`  | [Symbol](.././Symbol) | Symbol to instance |
 
 #### Returns
 
-[SymbolItem](./SymbolItem.md)
+[SymbolItem](.././SymbolItem)
 
 ---
 
@@ -90,7 +93,7 @@ Get the first element in the collection with the provided name.
 
 #### Returns
 
-[SymbolItem](./SymbolItem.md)
+[SymbolItem](.././SymbolItem)
 
 ---
 
@@ -110,7 +113,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[SymbolItem](./SymbolItem.md)
+[SymbolItem](.././SymbolItem)
 
 ---
 

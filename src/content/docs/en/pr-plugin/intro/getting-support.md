@@ -1,3 +1,6 @@
+---
+title: Getting Support and Providing Feedback
+---
 # Getting Support and Providing Feedback
 
 Please read relevant sections of this document and view the included sample code before requesting assistance. Please direct questions regarding installation, configuration, or use of Adobe products to Adobe Technical Support.

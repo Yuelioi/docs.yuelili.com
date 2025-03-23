@@ -1,3 +1,6 @@
+---
+title: IMPT Resource
+---
 # IMPT Resource
 
 Premiere Pro looks for an IMPT resource to identify a plugin as an importer.

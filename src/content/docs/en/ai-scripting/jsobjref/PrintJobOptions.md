@@ -1,3 +1,6 @@
+---
+title: PrintJobOptions
+---
 # PrintJobOptions
 
 `new PrintJobOptions()`

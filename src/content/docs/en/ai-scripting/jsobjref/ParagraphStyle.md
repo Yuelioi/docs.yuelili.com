@@ -1,3 +1,6 @@
+---
+title: ParagraphStyle
+---
 # ParagraphStyle
 
 `app.activeDocument.paragraphStyles[index]`
@@ -20,7 +23,7 @@ The character properties for the text range.
 
 #### Type
 
-[CharacterAttributes](./CharacterAttributes.md); read-only.
+[CharacterAttributes](.././CharacterAttributes); read-only.
 
 ---
 
@@ -48,7 +51,7 @@ The paragraph properties for the text range.
 
 #### Type
 
-[CharacterAttributes](./CharacterAttributes.md); read-only.
+[CharacterAttributes](.././CharacterAttributes); read-only.
 
 ---
 

@@ -1,3 +1,6 @@
+---
+title: PrintFlattenerOptions
+---
 # PrintFlattenerOptions
 
 `new PrintFlattenerOptions()`

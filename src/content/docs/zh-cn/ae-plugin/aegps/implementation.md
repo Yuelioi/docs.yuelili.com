@@ -9,7 +9,7 @@ AEGP通过PICA函数套件与After Effects进行交互。
 
 AEGP没有特定的加载顺序。
 
-检查AEGP API的版本（从您的AEGP入口点函数内部）以确认某个套件是否可用。
+检查AEGP API的版本（从您的AEGP入口函数内部）以确认某个套件是否可用。
 
 AEGP还可以使用任何不需要PF_ProgPtr的效果API套件函数（效果从PF_InData获取）。
 
@@ -26,11 +26,11 @@ A_Err AEGP_PluginInitFuncPrototype(
     AEGP_GlobalRefcon    *global_refconP)
 ```
 
-插件的入口点，在[PiPL资源](../../intro/pipl-resources)中导出，仅在启动时调用一次；所有对AEGP的其他调用都会转到它注册的函数。
+插件的入口函数，在[PiPL资源](../../intro/pipl-resources)中导出，仅在启动时调用一次；所有对AEGP的其他调用都会转到它注册的函数。
 
-这与效果插件模型非常不同，后者所有的通信都通过同一个入口点进行。
+这与效果插件模型非常不同，后者所有的通信都通过同一个入口函数进行。
 
-由于插件加载顺序可能有所不同，因此在入口点函数中获取After Effects未提供的套件从来不是一个好主意。相反，应等待适当的钩子函数。
+由于插件加载顺序可能有所不同，因此在入口函数中获取After Effects未提供的套件从来不是一个好主意。相反，应等待适当的钩子函数。
 
 AEGP [API版本](../intro/compatibility-across-multiple-versions.md#api-versions)可以帮助区分不同版本的After Effects，以防AEGP需要表现不同或处理不同的行为。
 
@@ -48,7 +48,7 @@ AEIO和Artisans必须向After Effects注册才能接收它们所依赖的消息�
 
 ## 示例：添加菜单项
 
-在您的入口点函数期间，使用[Command Suite](aegp-suites.md#aegp_commandsuite1)中的`AEGP_GetUniqueCommand()`从After Effects获取命令ID以用于`AEGP_InsertMenuCommand`。为您添加的每个菜单项使用不同的ID。
+在您的入口函数期间，使用[Command Suite](aegp-suites.md#aegp_commandsuite1)中的`AEGP_GetUniqueCommand()`从After Effects获取命令ID以用于`AEGP_InsertMenuCommand`。为您添加的每个菜单项使用不同的ID。
 
 使用AEGP_RegisterSuite的`AEGP_RegisterCommandHook()`告诉After Effects当选择您的菜单项时要调用的函数。您使用`AEGP_RegisterUpdateMenuHook()`注册的函数启用和禁用您的菜单项。除非您注册了菜单更新功能否则您的菜单将永久禁用.
 

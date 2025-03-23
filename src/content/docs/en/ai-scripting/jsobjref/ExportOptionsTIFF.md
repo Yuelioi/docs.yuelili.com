@@ -1,3 +1,6 @@
+---
+title: ExportOptionsTIFF
+---
 # ExportOptionsTIFF
 
 `exportOptionsTIFF`
@@ -78,8 +81,10 @@ Default: `ImageColorSpace.RGB`.
 
 `exportOptionsTIFF.lZWCompression`
 
-!!! note
-    This property was erroneously written as "IZWCompression" (with a capital "I"), as opposed to "lzwCompression" (with a lowercase "L"). Note that the latter is correct, and this doc has been updated to reflect this.
+:::note
+This property was erroneously written as "IZWCompression" (with a capital "I"), as opposed to "lzwCompression" (with a lowercase "L"). Note that the latter is correct, and this doc has been updated to reflect this.
+:::
+
 
 #### Description
 

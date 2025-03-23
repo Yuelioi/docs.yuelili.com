@@ -1,3 +1,6 @@
+---
+title: Video Frames
+---
 # Video Frames
 
 Premiere stores each video frame in a PPix structure. A PPixHand is a handle to a PPix. This structure should not be accessed directly, but manipulated using various suites such as the [PPix Suite](sweetpea-suites.md#ppix-suite), [PPix 2 Suite](sweetpea-suites.md#ppix-2-suite), [PPix Creator Suite](sweetpea-suites.md#ppix-creator-suite), and [PPix Creator 2 Suite](sweetpea-suites.md#ppix-creator-2-suite).

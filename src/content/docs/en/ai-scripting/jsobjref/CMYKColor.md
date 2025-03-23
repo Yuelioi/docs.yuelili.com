@@ -1,10 +1,13 @@
+---
+title: CMYKColor
+---
 # CMYKColor
 
 `new cmykColor()`
 
 #### Description
 
-A CMYK color specification, used where a [Color](./Color.md) object is required.
+A CMYK color specification, used where a [Color](.././Color) object is required.
 
 If the color space of a document is `RGB` and you specify the color value for a page item in that document using CMYK, Illustrator will translate the CMYK color specification into an RGB color specification. The same thing happens if the document's color space is CMYK and you specify colors using RGB.
 

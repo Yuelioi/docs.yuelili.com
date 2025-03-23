@@ -1,3 +1,6 @@
+---
+title: Component object
+---
 # Component object
 
 `app.project.sequences[index].audioTracks[index].clips[index].components[index]`

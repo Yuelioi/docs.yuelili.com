@@ -1,10 +1,13 @@
+---
+title: AudioChannelMapping object
+---
 # AudioChannelMapping object
 
 `app.project.rootItem.children[index].getAudioChannelMapping`
 
 #### Description
 
-The AudioChannelMapping object defines the audio channel mapping applied to a given [ProjectItem object](../item/projectitem.md).
+The AudioChannelMapping object defines the audio channel mapping applied to a given [ProjectItem object](../../item/projectitem).
 
 ---
 

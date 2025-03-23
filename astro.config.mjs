@@ -10,6 +10,9 @@ import { aeExpression } from "./src/nav/ae-expression";
 import { aeScripting } from "./src/nav/ae-scripting";
 import { javascriptTools } from "./src/nav/javascript-tools";
 import { aePlugin } from "./src/nav/ae-plugin";
+import { aiScripting } from "./src/nav/ai-scripting";
+import { prScripting } from "./src/nav/pr-scripting";
+import { prPlugin } from "./src/nav/pr-plugin";
 
 import starlightGiscus from "starlight-giscus";
 
@@ -40,7 +43,7 @@ export default defineConfig({
           // {
           //   exclude: ["/ae-scripting/**/*"],
           // },
-          [aeExpression, aeScripting, javascriptTools, aePlugin]
+          [aeExpression, aeScripting, javascriptTools, aePlugin, prScripting, prPlugin, aiScripting]
         ),
 
         starlightGiscus({

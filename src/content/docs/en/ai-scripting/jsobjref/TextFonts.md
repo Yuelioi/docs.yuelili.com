@@ -1,10 +1,13 @@
+---
+title: TextFonts
+---
 # TextFonts
 
 `app.textFonts`
 
 #### Description
 
-A collection of [TextFont](./TextFont.md) objects.
+A collection of [TextFont](.././TextFont) objects.
 
 ---
 
@@ -70,7 +73,7 @@ Get the first element in the collection with the provided name.
 
 #### Returns
 
-[TextFont](./TextFont.md)
+[TextFont](.././TextFont)
 
 ---
 
@@ -90,7 +93,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[TextFont](./TextFont.md)
+[TextFont](.././TextFont)
 
 ---
 

@@ -12,8 +12,8 @@ title: 插件属性列表资源(PiPLs)
 | Kind                        | 插件类型。AEEffect 表示效果插件。                                                                                                                                                          |
 | Name                        | 显示名称，最多 47 个字符。                                                                                                                                                                 |
 | Category                    | 用于菜单和“效果与预设”面板的效果类别                                                                                                                                                     |
-| Entry Point (每个平台一个)  | 插件的入口点通过 PiPL 在 Windows 和 macOS 上导出。如果插件支持多个平台，则必须在 PiPL 中定义多个入口点。除非您还指定了其他特定于操作系统的入口点，否则不需要 Windows .def 文件或手动导出。 |
-|                             | entry.h 中定义的宏（位于\\SDKExamplesHeaders 目录）负责导出每个示例的入口点函数。所有示例项目的入口点函数对于效果插件是 `EffectMain()`，对于 AEGPs 是 `EntryPointFunc()`。             |
+| Entry Point (每个平台一个)  | 插件的入口函数通过 PiPL 在 Windows 和 macOS 上导出。如果插件支持多个平台，则必须在 PiPL 中定义多个入口函数。除非您还指定了其他特定于操作系统的入口函数，否则不需要 Windows .def 文件或手动导出。 |
+|                             | entry.h 中定义的宏（位于\\SDKExamplesHeaders 目录）负责导出每个示例的入口函数。所有示例项目的入口函数对于效果插件是 `EffectMain()`，对于 AEGPs 是 `EntryPointFunc()`。             |
 | AE_PiPL_Version             | 未使用                                                                                                                                                                                     |
 | AE_Effect_Spec_Version      | 效果插件构建时使用的 SDK 版本                                                                                                                                                              |
 | AE_Effect_Version           | 效果插件的版本                                                                                                                                                                             |

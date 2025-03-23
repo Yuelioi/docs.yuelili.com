@@ -1,3 +1,6 @@
+---
+title: Executing Scripts
+---
 # Executing Scripts
 
 The Illustrator interface includes a Scripts menu (File > Scripts) that provides quick and easy access to your scripts.

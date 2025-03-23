@@ -1,3 +1,6 @@
+---
+title: Production object
+---
 # Production object
 
 `app.production`
@@ -48,7 +51,7 @@ An array of the projects containined within the Production, which are currently 
 
 #### Type
 
-[ProjectCollection object](../collection/projectcollection.md), read-only.
+[ProjectCollection object](../../collection/projectcollection), read-only.
 
 ---
 
@@ -105,7 +108,7 @@ Returns the lock state of a single project within the Production.
 
 | Parameter |              Type              | Description |
 | --------- | ------------------------------ | ----------- |
-| `project` | [Project object](./project.md) | The project |
+| `project` | [Project object](.././project) | The project |
 
 #### Returns
 

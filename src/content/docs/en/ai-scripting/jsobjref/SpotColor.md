@@ -1,10 +1,13 @@
+---
+title: SpotColor
+---
 # SpotColor
 
 `new SpotColor()`
 
 #### Description
 
-Color class used to apply the color value of a spot at a specified tint value. Can be used in any property that takes a [Color](./Color.md) object.
+Color class used to apply the color value of a spot at a specified tint value. Can be used in any property that takes a [Color](.././Color) object.
 
 ---
 
@@ -20,7 +23,7 @@ A reference to the spot color object that defines the color.
 
 #### Type
 
-[Spot](./Spot.md)
+[Spot](.././Spot)
 
 ---
 

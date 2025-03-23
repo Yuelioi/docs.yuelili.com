@@ -1,5 +1,5 @@
 export const aeExpression = {
-  label: "ae-expression",
+  label: "Ae表达式",
   link: "ae-expression/introduction/changelog",
   icon: "open-book",
   items: [

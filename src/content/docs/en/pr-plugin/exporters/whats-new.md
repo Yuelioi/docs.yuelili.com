@@ -1,3 +1,6 @@
+---
+title: Whats New
+---
 # Whats New
 
 ## What's New in CC
@@ -22,8 +25,10 @@ The new [Export Standard Param Suite](suites.md#export-standard-param-suite) pro
 
 Stereoscopic video is now supported when exporting directly from Premiere Pro. In other words, when exports are queued to run in Adobe Media Encoder, they can not get stereoscopic video.
 
-!!! note
-    Currently, stereoscopic exporters must use the "pull" model and the new `MakeVideoRendererForTimelineWithStreamLabel()` to get rendered frames from multiple video streams.
+:::note
+Currently, stereoscopic exporters must use the "pull" model and the new `MakeVideoRendererForTimelineWithStreamLabel()` to get rendered frames from multiple video streams.
+:::
+
 
 [Export Param Suite](suites.md#export-param-suite) now adds SetParamDescription(), to set tooltip strings for parameters. For the three line Export Summary description in the Export Settings dialog, we've swapped the 2nd and 3rd lines so that the bitrate summary comes after the audio summary. We've renamed the structure to make developers aware of this during a recompile.
 

@@ -1,3 +1,6 @@
+---
+title: ExportOptionsPhotoshop
+---
 # ExportOptionsPhotoshop
 
 `exportOptionsPhotoshop`

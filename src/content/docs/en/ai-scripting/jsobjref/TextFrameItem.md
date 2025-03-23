@@ -1,3 +1,6 @@
+---
+title: TextFrameItem
+---
 # TextFrameItem
 
 `app.activeDocument.textFrames[index]`
@@ -6,7 +9,7 @@
 
 The basic art item for displaying text. From the user interface, this is text created with the Text tool. There are three types of text art in Illustrator: point text, path text, and area text. The type is indicated by the text frame's [kind](#textframeitemkind) property.
 
-When you create a text frame, you also create a [Story](./Story.md) object. However, threading text frames combines the frames into a single story object. To thread frames, use the [nextFrame](#textframeitemnextframe) or [previousFrame](#textframeitempreviousframe) property.
+When you create a text frame, you also create a [Story](.././Story) object. However, threading text frames combines the frames into a single story object. To thread frames, use the [nextFrame](#textframeitemnextframe) or [previousFrame](#textframeitempreviousframe) property.
 
 ---
 
@@ -50,7 +53,7 @@ All the characters in this text frame.
 
 #### Type
 
-[Characters](./Characters.md); read-only.
+[Characters](.././Characters); read-only.
 
 ---
 
@@ -106,7 +109,7 @@ The content variable bound to this text frame item.
 
 #### Type
 
-[Variable](./Variable.md)
+[Variable](.././Variable)
 
 ---
 
@@ -148,7 +151,7 @@ All the insertion points in this text range.
 
 #### Type
 
-[InsertionPoints](./InsertionPoints.md); read-only.
+[InsertionPoints](.././InsertionPoints); read-only.
 
 ---
 
@@ -176,7 +179,7 @@ All the lines in this text frame.
 
 #### Type
 
-[Lines](./Lines.md); read-only.
+[Lines](.././Lines); read-only.
 
 ---
 
@@ -190,7 +193,7 @@ The transformation matrix for this text frame.
 
 #### Type
 
-[Matrix](./Matrix.md); read-only.
+[Matrix](.././Matrix); read-only.
 
 ---
 
@@ -204,7 +207,7 @@ The linked text frame following this one.
 
 #### Type
 
-[TextFrameItem](./TextFrameItem.md)
+[TextFrameItem](.././TextFrameItem)
 
 ---
 
@@ -246,7 +249,7 @@ All the paragraphs in this text frame.
 
 #### Type
 
-[Paragraphs](./Paragraphs.md); read-only.
+[Paragraphs](.././Paragraphs); read-only.
 
 ---
 
@@ -260,7 +263,7 @@ The parent of this object.
 
 #### Type
 
-[Layer](./Layer.md) or [GroupItem](./GroupItem.md); read-only.
+[Layer](.././Layer) or [GroupItem](.././GroupItem); read-only.
 
 ---
 
@@ -344,7 +347,7 @@ The story to which the text frame belongs.
 
 #### Type
 
-[Story](./Story.md); read-only.
+[Story](.././Story); read-only.
 
 ---
 
@@ -358,7 +361,7 @@ The path item associated with the text frame. Note: Valid only when [kind](#text
 
 #### Type
 
-[TextPath](./TextPath.md)
+[TextPath](.././TextPath)
 
 ---
 
@@ -372,7 +375,7 @@ The text range of the text frame.
 
 #### Type
 
-[TextRange](./TextRange.md); read-only.
+[TextRange](.././TextRange); read-only.
 
 ---
 
@@ -386,7 +389,7 @@ All the text in this text frame.
 
 #### Type
 
-[TextRanges](./TextRanges.md); read-only.
+[TextRanges](.././TextRanges); read-only.
 
 ---
 
@@ -400,7 +403,7 @@ The selected text range(s) in the text frame.
 
 #### Type
 
-Array of [TextRange](./TextRange.md); read-only.
+Array of [TextRange](.././TextRange); read-only.
 
 ---
 
@@ -428,7 +431,7 @@ All the words in this text frame.
 
 #### Type
 
-[Words](./Words.md); read-only.
+[Words](.././Words); read-only.
 
 ---
 
@@ -472,7 +475,7 @@ Converts the text in the text frame to outlines.
 
 #### Returns
 
-[GroupItem](./GroupItem.md)
+[GroupItem](.././GroupItem)
 
 ---
 
@@ -493,7 +496,7 @@ Creates a duplicate of the selected object.
 
 #### Returns
 
-[TextRange](./TextRange.md)
+[TextRange](.././TextRange)
 
 ---
 
@@ -514,7 +517,7 @@ Moves the object.
 
 #### Returns
 
-[TextRange](./TextRange.md)
+[TextRange](.././TextRange)
 
 ---
 
@@ -626,7 +629,7 @@ Transforms the art item by applying a transformation matrix.
 
 |       Parameter        |                               Type                                |                  Description                   |
 | ---------------------- | ----------------------------------------------------------------- | ---------------------------------------------- |
-| `transformationMatrix` | [Matrix](./Matrix.md)                                             | Transformation matrix to apply                 |
+| `transformationMatrix` | [Matrix](.././Matrix)                                             | Transformation matrix to apply                 |
 | `changePositions`      | Boolean, optional                                                 | Whether to change Positions                    |
 | `changeFillPatterns`   | Boolean, optional                                                 | Whether to change Fill Patterns                |
 | `changeFillGradients`  | Boolean, optional                                                 | Whether to change Fill Gradients               |

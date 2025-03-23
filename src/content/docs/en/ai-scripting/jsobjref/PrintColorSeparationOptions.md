@@ -1,3 +1,6 @@
+---
+title: PrintColorSeparationOptions
+---
 # PrintColorSeparationOptions
 
 `new PrintColorSeparationOptions()`
@@ -52,7 +55,7 @@ The list of inks for color separation.
 
 #### Type
 
-Array of [Ink](./Ink.md)
+Array of [Ink](.././Ink)
 
 ---
 

@@ -1,3 +1,6 @@
+---
+title: ExportOptionsFlash
+---
 # ExportOptionsFlash
 
 `exportOptionsFlash`
@@ -54,7 +57,7 @@ The background color of the exported Flash frames.
 
 #### Type
 
-[RGBColor](./RGBColor.md)
+[RGBColor](.././RGBColor)
 
 ---
 
@@ -68,7 +71,7 @@ A list of layers to be included as the static background of the exported Flash f
 
 #### Type
 
-Array of [Layers](./Layers.md)
+Array of [Layers](.././Layers)
 
 ---
 

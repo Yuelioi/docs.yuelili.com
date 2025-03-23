@@ -1,6 +1,9 @@
+---
+title: Suites
+---
 # Suites
 
-For information on how to acquire and manage suites, see [SweetPea Suites](../universals/sweetpea-suites.md).
+For information on how to acquire and manage suites, see [SweetPea Suites](../../universals/sweetpea-suites).
 
 ---
 

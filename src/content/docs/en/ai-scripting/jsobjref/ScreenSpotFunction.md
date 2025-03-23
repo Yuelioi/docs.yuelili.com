@@ -1,3 +1,6 @@
+---
+title: ScreenSpotFunction
+---
 # ScreenSpotFunction
 
 `PPDFileList[index].PPDInfo.screenSpotFunctionList[index]`

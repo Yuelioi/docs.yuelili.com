@@ -1,3 +1,6 @@
+---
+title: PathPoint
+---
 # PathPoint
 
 `app.activeDocument.pathItems[index].pathPoints[index]`
@@ -50,7 +53,7 @@ The path item that contains this path point.
 
 #### Type
 
-[PathItem](./PathItem.md); read-only.
+[PathItem](.././PathItem); read-only.
 
 ---
 

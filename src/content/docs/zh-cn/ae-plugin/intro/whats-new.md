@@ -67,7 +67,7 @@ After Effects 现在支持之前在 Premiere Pro 中支持的 *GPU 效果渲染*
 
 Premiere Pro SDK 中的 GPU 效果示例项目已更新为在 AE 中注册为 GPU 效果，尽管渲染输出仍需改进。
 
-定义了一个新的入口点，允许效果在运行时向主机注册基本信息，而不依赖于传统的 PiPL 资源。通过这种方式，效果可以在单个二进制文件中注册多个入口点。Premiere Pro 是第一个支持此入口点的主机，After Effects 将在未来的版本中支持此功能。
+定义了一个新的入口函数，允许效果在运行时向主机注册基本信息，而不依赖于传统的 PiPL 资源。通过这种方式，效果可以在单个二进制文件中注册多个入口函数。Premiere Pro 是第一个支持此入口函数的主机，After Effects 将在未来的版本中支持此功能。
 
 效果示例项目已更新为使用此方法，同时保留 PiPL 以实现向后兼容性。
 
@@ -83,25 +83,25 @@ Premiere Pro SDK 中的 GPU 效果示例项目已更新为在 AE 中注册为 GP
 
 ## CC 2017.1 (14.2) 中的新功能
 
-- 图层参数可以包括遮罩和效果
+* 图层参数可以包括遮罩和效果
 
 使用图层作为输入的效果（如 Set Matte 和 Displacement Map）现在可以定位输入图层的遮罩和效果，而不仅仅是图层的源。这意味着不再需要预合成图层以便效果可以引用它们。
 
 在效果包含图层参数的情况下，图层选择器右侧的新菜单允许您选择是从图层的源、遮罩还是效果中定位输入图层：
 
-- 源：仅定位图层的源。忽略遮罩和效果。
-- 遮罩：定位应用了遮罩后的图层。忽略效果。
-- 效果和遮罩：定位应用了遮罩和效果后的图层。
+* 源：仅定位图层的源。忽略遮罩和效果。
+* 遮罩：定位应用了遮罩后的图层。忽略效果。
+* 效果和遮罩：定位应用了遮罩和效果后的图层。
 
 此控件类似于图层查看器面板底部的视图菜单，允许您从渲染顺序中的不同位置渲染图层：从其源、从其遮罩或从其各个效果。
 
 由于这是一个面向用户的选项，设计旨在对效果透明。从效果的角度来看，输入只是简单地包含了上游效果和遮罩，而无需对效果进行任何更改。对于任何使用图层参数的效果，以下是一些测试建议：
 
-- 效果继续按预期工作。
-- 在图层参数中使用新的源/遮罩/效果控件与效果一起工作。
-- 打开旧项目或保存回旧版本项目不会破坏效果。
-- 确认效果不能自引用；即不能使用同一图层上的效果作为同一图层的输入。
-- 套件增强
+* 效果继续按预期工作。
+* 在图层参数中使用新的源/遮罩/效果控件与效果一起工作。
+* 打开旧项目或保存回旧版本项目不会破坏效果。
+* 确认效果不能自引用；即不能使用同一图层上的效果作为同一图层的输入。
+* 套件增强
 
 `PF_AdvTimeSuite` 现在为版本 3，提供了一个修订的 [PF_GetTimeDisplayPref()](../effect-details/useful-utility-functions.md#pf_advtimesuite4) 调用，使用修订的 `PF_TimeDisplayPrefVersion` 参数，支持更高的帧速率。
 如果值超出结构支持的范围，版本 2 的调用现在可能会返回错误。
@@ -147,7 +147,7 @@ GLator 示例回来了！它已更新为演示效果插件中的正确 OpenGL �
 
 ## CC 2015 (13.5) 中的新功能
 
-- 分离 UI 和渲染线程
+* 分离 UI 和渲染线程
 
 此版本的 After Effects 包括将 UI（主）线程与渲染线程分离的重大架构更改。渲染线程发送诸如 `PF_Cmd_RENDER`、`PF_Cmd_SMART_PRERENDER` 和 `PF_Cmd_SMART_RENDER` 等选择器到效果插件。UI 线程发送诸如 `PF_Cmd_SEQUENCE_SETUP`、`PF_Cmd_USER_CHANGED_PARAM`、`PF_Cmd_DO_DIALOG` 和 `PF_EVENT_DRAW` 等选择器。`PF_Cmd_SEQUENCE_RESETUP` 在渲染和 UI 线程上都会发送。
 
@@ -166,7 +166,7 @@ GLator 示例回来了！它已更新为演示效果插件中的正确 OpenGL �
 
 通常，持久化或更新 UI 的计算现在必须从 UI 线程中提取，而不是从渲染线程中推送。这些情况可能需要使用新的 13.5 API 或与过去版本不同的解决方案。
 
-- 更高效的序列数据处理需求
+* 更高效的序列数据处理需求
 
 `PF_OutFlag2_SUPPORTS_GET_FLATTENED_SEQUENCE_DATA`
 
@@ -178,7 +178,7 @@ GLator 示例回来了！它已更新为演示效果插件中的正确 OpenGL �
 
 这最终将成为重建为线程安全的插件的要求（请参阅下面的 `PF_OutFlag2_AE13_5_THREADSAFE`）。传统的 `PF_Cmd_SEQUENCE_FLATTEN` 最终将在未来版本中不受支持。
 
-- `PF_OutFlag_FORCE_RERENDER` 更改
+* `PF_OutFlag_FORCE_RERENDER` 更改
 
 在可能的情况下，我们建议使用以下方法之一触发重新渲染：`GuidMixInPtr()`（在下一节中描述）、arb 数据或 `PF_ChangeFlag_CHANGED_VALUE`。所有这些都允许在撤消后重用缓存的帧。
 
@@ -192,7 +192,7 @@ GLator 示例回来了！它已更新为演示效果插件中的正确 OpenGL �
 
 `FORCE_RERENDER` 在 `PF_Cmd_USER_CHANGED_PARAM` 期间设置时有效。它也在 `CLICK` 和 `DRAG` 事件中有效，但仅在实现了 `PF_Cmd_GET_FLATTENED_SEQUENCE_DATA` 时有效。这是为了防止在鼠标操作中间扁平化和丢失 UI 状态。如果没有 `GET_FLATTENED`，新的 `FORCE_RERENDER` 行为将不会启用。
 
-- 缓存帧的 GUID
+* 缓存帧的 GUID
 
 `PF_OutFlag2_I_MIX_GUID_DEPENDENCIES`
 
@@ -202,7 +202,7 @@ GLator 示例回来了！它已更新为演示效果插件中的正确 OpenGL �
 
 这是对旧机制 `PF_OutFlag_FORCE_RERENDER` 和 `PF_Cmd_DO_DIALOG` 的改进，这些机制会从缓存中删除帧，因为主机不知道插件在渲染中还考虑了哪些其他因素。这也可以用来替代 `PF_OutFlag2_OUTPUT_IS_WATERMARKED`。
 
-- 异步请求帧而不阻塞 UI
+* 异步请求帧而不阻塞 UI
 
 `PF_OutFlag2_CUSTOM_UI_ASYNC_MANAGER`
 
@@ -214,11 +214,11 @@ GLator 示例回来了！它已更新为演示效果插件中的正确 OpenGL �
 
 SDK 中的新 HistoGrid 示例展示了如何在 UI 线程上完全异步处理自定义 UI DRAW 事件，当需要 1 个或多个帧渲染时。例如，用于计算显示在效果面板中的直方图。请注意，仍然存在一个已知的错误，即拖动更改上游参数可能不会刷新直方图绘制，直到鼠标悬停在其上。
 
-- 从效果的 UI 获取渲染输出
+* 从效果的 UI 获取渲染输出
 
 诸如键控器或绘制后处理视频直方图的效果可以使用 `AEGP_LayerRenderOptionsSuite` 中的新函数 `AEGP_NewFromDownstreamOfEffect()` 检索所需的 `AEGP_LayerRenderOptionsH`。此函数只能在 UI 线程上调用。
 
-- 渲染线程上的 AEGP 使用
+* 渲染线程上的 AEGP 使用
 
 我们加强了对 AEGP 调用何时可能被危险使用的验证（例如从错误的线程或在渲染中更改项目状态）。如果代码遇到此类情况，您可能会看到新的错误。例如，在渲染线程上执行以下调用将导致错误：
 
@@ -228,6 +228,6 @@ SDK 中的新 HistoGrid 示例展示了如何在 UI 线程上完全异步处理�
 
 另一个更严格要求的示例是 `AEGP_RegisterWithAEGP()`。文档一直指出此函数必须在 `PF_Cmd_GLOBAL_SETUP` 上调用。然而，在以前的版本中，插件能够在其他时间调用此函数而不会遇到问题。在 13.5 中不再如此！在其他时间调用此函数可能会导致崩溃！
 
-- `PF_Cmd_SEQUENCE_RESETUP` 在 UI 或渲染线程上调用？
+* `PF_Cmd_SEQUENCE_RESETUP` 在 UI 或渲染线程上调用？
 
 现在有一个 `PF_InFlag_PROJECT_IS_RENDER_ONLY` 标志，仅在 `PF_Cmd_SEQUENCE_RESETUP` 中有效，它将告诉您效果实例是否仅用于渲染目的。如果是，项目应被视为完全只读，您将不会在该效果实例上收到与 UI 相关的选择器。这可以

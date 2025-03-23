@@ -1,3 +1,6 @@
+---
+title: ScreenInfo
+---
 # ScreenInfo
 
 `PPDFileList[index].PPDInfo.screenList[index].screenInfo`

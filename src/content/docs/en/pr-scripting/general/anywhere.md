@@ -1,3 +1,6 @@
+---
+title: Anywhere object
+---
 # Anywhere object
 
 `app.anywhere`

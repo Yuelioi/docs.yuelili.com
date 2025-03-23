@@ -1,3 +1,6 @@
+---
+title: Selector Table
+---
 # Selector Table
 
 This table summarizes the various selector commands an exporter can receive.

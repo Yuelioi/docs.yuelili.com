@@ -1,10 +1,13 @@
+---
+title: Spot
+---
 # Spot
 
 `app.activeDocument.spots[index]`
 
 #### Description
 
-A custom color definition contained in a [SpotColor](./SpotColor.md) object.
+A custom color definition contained in a [SpotColor](.././SpotColor) object.
 
 If no properties are specified when creating a spot, default values are provided.
 
@@ -26,7 +29,7 @@ The color information for this spot color.
 
 #### Type
 
-[Color](./Color.md)
+[Color](.././Color)
 
 ---
 
@@ -68,7 +71,7 @@ The document that contains this spot color.
 
 #### Type
 
-[Document](./Document.md); read-only.
+[Document](.././Document); read-only.
 
 ---
 

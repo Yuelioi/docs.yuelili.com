@@ -1,3 +1,6 @@
+---
+title: PrintColorManagementOptions
+---
 # PrintColorManagementOptions
 
 `new PrintColorManagementOptions()`

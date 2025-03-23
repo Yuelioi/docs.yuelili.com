@@ -1,10 +1,13 @@
+---
+title: RGBColor
+---
 # RGBColor
 
 `new RGBColor()`
 
 #### Description
 
-An RGB [Color](./Color.md) specification, used to apply an RGB color to a layer or art item.
+An RGB [Color](.././Color) specification, used to apply an RGB color to a layer or art item.
 
 If the color space of a document is RGB and you specify the color value for a page item in that document using CMYK, Illustrator will translate the CMYK color specification into an RGB color specification. The same thing happens if the document's color space is CMYK and you specify colors using RGB. Since this translation can lose information, you should specify colors using the class that matches the document's actual color space.
 

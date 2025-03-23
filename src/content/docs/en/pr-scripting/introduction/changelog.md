@@ -1,3 +1,6 @@
+---
+title: Changelog
+---
 # Changelog
 
 What's new and changed for scripting?
@@ -6,8 +9,10 @@ What's new and changed for scripting?
 
 ## Adobe Premiere Pro 23.0
 
-!!! warning
-    Decision: No further changes or improvements to Premiere Pro's ExtendScript API are planned or scheduled. Any such changes will be reconsidered, once Premiere Pro moves to UXP-based extensibility.
+:::warning
+Decision: No further changes or improvements to Premiere Pro's ExtendScript API are planned or scheduled. Any such changes will be reconsidered, once Premiere Pro moves to UXP-based extensibility.
+:::
+
 
 ---
 

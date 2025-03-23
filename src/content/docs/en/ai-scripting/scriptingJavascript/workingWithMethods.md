@@ -1,3 +1,6 @@
+---
+title: Working with methods in JavaScript
+---
 # Working with methods in JavaScript
 
 When you work with methods that have multiple parameters, you may omit optional parameters at the end of the parameter list, but you may not omit parameters in the middle of the list.
@@ -17,8 +20,10 @@ rotate(
 )
 ```
 
-!!! tip
-    In the definition, optional parameters are enclosed in square brackets ( `[]` ).
+:::tip
+In the definition, optional parameters are enclosed in square brackets ( `[]` ).
+:::
+
 
 To rotate the object 30 degrees and change the `fillGradients`, you would use the following script statement
 

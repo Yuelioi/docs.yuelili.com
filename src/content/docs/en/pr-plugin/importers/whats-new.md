@@ -1,3 +1,6 @@
+---
+title: What's New
+---
 # What's New
 
 ## What's New in Premiere Pro CC 2019 (13.0)

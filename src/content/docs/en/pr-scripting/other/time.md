@@ -1,3 +1,6 @@
+---
+title: Time object
+---
 # Time object
 
 `myTime = new Time()`
@@ -50,13 +53,10 @@ Returns the value of the `Time` passed, as a string, formatted in the specified 
 
 #### Parameters
 
-+-----------------+------------------+-----------------------------------------------------------------------------+
 |    Parameter    |       Type       |                                 Description                                 |
-+=================+==================+=============================================================================+
+|-----------------|------------------|-----------------------------------------------------------------------------|
 | `frameRate`     | [Time object](#) | Time object with a duration of a single frame of the frame rate to be used. |
-+-----------------+------------------+-----------------------------------------------------------------------------+
 | `displayFormat` | Integer          | The display format to use. One of:                                          |
-|                 |                  |                                                                             |
 |                 |                  | - `TIMEDISPLAY_24Timecode = 100;`                                           |
 |                 |                  | - `TIMEDISPLAY_25Timecode = 101;`                                           |
 |                 |                  | - `TIMEDISPLAY_2997DropTimecode = 102;`                                     |
@@ -73,7 +73,6 @@ Returns the value of the `Time` passed, as a string, formatted in the specified 
 |                 |                  | - `TIMEDISPLAY_48Timecode = 113;`                                           |
 |                 |                  | - `TIMEDISPLAY_AudioSamplesTimecode = 200;`                                 |
 |                 |                  | - `TIMEDISPLAY_AudioMsTimecode = 201;`                                      |
-+-----------------+------------------+-----------------------------------------------------------------------------+
 
 #### Returns
 

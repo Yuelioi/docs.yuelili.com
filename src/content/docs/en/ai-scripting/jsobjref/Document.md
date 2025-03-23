@@ -1,10 +1,13 @@
+---
+title: Document
+---
 # Document
 
 `app.activeDocument`
 
 #### Description
 
-An Illustrator document. Documents are contained in the [Application](./Application.md) object.
+An Illustrator document. Documents are contained in the [Application](.././Application) object.
 
 The default document settings—those properties starting with the word "default"—are global settings that affect the current document. Be sure to modify these default properties only when a document is open. Note that if you set default properties to desired values before creating new objects, you can streamline your scripts, eliminating the need to specify specific properties such as `fillColor` and `stroked` that have default properties.
 
@@ -24,7 +27,7 @@ The currently opened dataset.
 
 #### Type
 
-[Dataset](./Dataset.md)
+[Dataset](.././Dataset)
 
 ---
 
@@ -38,7 +41,7 @@ The active layer in the document.
 
 #### Type
 
-[Layer](./Layer.md)
+[Layer](.././Layer)
 
 ---
 
@@ -52,7 +55,7 @@ The document's current view.
 
 #### Type
 
-[View](./View.md); read-only.
+[View](.././View); read-only.
 
 ---
 
@@ -66,7 +69,7 @@ All artboards in the document.
 
 #### Type
 
-[Artboards](./Artboards.md); read-only.
+[Artboards](.././Artboards); read-only.
 
 ---
 
@@ -80,7 +83,7 @@ The brushes contained in the document.
 
 #### Type
 
-[Brushes](./Brushes.md); read-only.
+[Brushes](.././Brushes); read-only.
 
 ---
 
@@ -94,7 +97,7 @@ The list of character styles in this document.
 
 #### Type
 
-[CharacterStyles](./CharacterStyles.md); read-only.
+[CharacterStyles](.././CharacterStyles); read-only.
 
 ---
 
@@ -108,7 +111,7 @@ The compound path items contained in the document.
 
 #### Type
 
-[CompoundPathItems](./CompoundPathItems.md); read-only.
+[CompoundPathItems](.././CompoundPathItems); read-only.
 
 ---
 
@@ -150,7 +153,7 @@ The datasets contained in the document.
 
 #### Type
 
-[Datasets](./Datasets.md); read-only.
+[Datasets](.././Datasets); read-only.
 
 ---
 
@@ -164,7 +167,7 @@ The color to use to fill new paths if `defaultFilled` is `true`.
 
 #### Type
 
-[Color](./Color.md)
+[Color](.././Color)
 
 ---
 
@@ -220,7 +223,7 @@ The stroke color for new paths if default stroked is `true`.
 
 #### Type
 
-[Color](./Color.md)
+[Color](.././Color)
 
 ---
 
@@ -378,7 +381,7 @@ The gradients contained in the document.
 
 #### Type
 
-[Gradients](./Gradients.md); read-only.
+[Gradients](.././Gradients); read-only.
 
 ---
 
@@ -392,7 +395,7 @@ The graphic styles defined in this document.
 
 #### Type
 
-[GraphicStyles](./GraphicStyles.md); read-only.
+[GraphicStyles](.././GraphicStyles); read-only.
 
 ---
 
@@ -406,7 +409,7 @@ The graph art items in this document.
 
 #### Type
 
-[GraphItems](./GraphItems.md); read-only.
+[GraphItems](.././GraphItems); read-only.
 
 ---
 
@@ -420,7 +423,7 @@ The group items contained in the document.
 
 #### Type
 
-[GroupItems](./GroupItems.md); read-only.
+[GroupItems](.././GroupItems); read-only.
 
 ---
 
@@ -476,7 +479,7 @@ The layers contained in the document.
 
 #### Type
 
-[Layers](./Layers.md); read-only.
+[Layers](.././Layers); read-only.
 
 ---
 
@@ -490,7 +493,7 @@ The legacy text items in the document.
 
 #### Type
 
-[LegacyTextItems](./LegacyTextItems.md); read-only.
+[LegacyTextItems](.././LegacyTextItems); read-only.
 
 ---
 
@@ -504,7 +507,7 @@ The mesh art items contained in the document.
 
 #### Type
 
-[MeshItems](./MeshItems.md); read-only.
+[MeshItems](.././MeshItems); read-only.
 
 ---
 
@@ -546,7 +549,7 @@ The non-native art items in this document.
 
 #### Type
 
-[NonNativeItems](./NonNativeItems.md); read-only.
+[NonNativeItems](.././NonNativeItems); read-only.
 
 ---
 
@@ -574,7 +577,7 @@ The page items (all art item classes) contained in the document.
 
 #### Type
 
-[PageItems](./PageItems.md); read-only.
+[PageItems](.././PageItems); read-only.
 
 ---
 
@@ -602,7 +605,7 @@ The list of paragraph styles in this document.
 
 #### Type
 
-[ParagraphStyles](./ParagraphStyles.md); read-only.
+[ParagraphStyles](.././ParagraphStyles); read-only.
 
 ---
 
@@ -616,7 +619,7 @@ The application that contains this document.
 
 #### Type
 
-[Application](./Application.md); read-only.
+[Application](.././Application); read-only.
 
 ---
 
@@ -644,7 +647,7 @@ The path items contained in this document.
 
 #### Type
 
-[PathItems](./PathItems.md); read-only.
+[PathItems](.././PathItems); read-only.
 
 ---
 
@@ -658,7 +661,7 @@ The patterns contained in this document.
 
 #### Type
 
-[Patterns](./Patterns.md); read-only.
+[Patterns](.././Patterns); read-only.
 
 ---
 
@@ -672,7 +675,7 @@ The placed items contained in this document.
 
 #### Type
 
-[PlacedItems](./PlacedItems.md); read-only.
+[PlacedItems](.././PlacedItems); read-only.
 
 ---
 
@@ -686,7 +689,7 @@ The plug-in items contained in this document.
 
 #### Type
 
-[PluginItems](./PluginItems.md); read-only.
+[PluginItems](.././PluginItems); read-only.
 
 ---
 
@@ -714,7 +717,7 @@ The document's raster effect settings.
 
 #### Type
 
-[RasterEffectOptions](./RasterEffectOptions.md); read-only.
+[RasterEffectOptions](.././RasterEffectOptions); read-only.
 
 ---
 
@@ -728,7 +731,7 @@ The raster items contained in this document.
 
 #### Type
 
-[RasterItems](./RasterItems.md); read-only.
+[RasterItems](.././RasterItems); read-only.
 
 ---
 
@@ -828,7 +831,7 @@ The spot colors contained in this document.
 
 #### Type
 
-[Spots](./Spots.md); read-only.
+[Spots](.././Spots); read-only.
 
 ---
 
@@ -856,7 +859,7 @@ The story items in this document.
 
 #### Type
 
-[Stories](./Stories.md); read-only.
+[Stories](.././Stories); read-only.
 
 ---
 
@@ -870,7 +873,7 @@ The swatches in this document.
 
 #### Type
 
-[Swatches](./Swatches.md); read-only.
+[Swatches](.././Swatches); read-only.
 
 ---
 
@@ -884,7 +887,7 @@ The swatch groups in this document.
 
 #### Type
 
-[SwatchGroups](./SwatchGroups.md); read-only.
+[SwatchGroups](.././SwatchGroups); read-only.
 
 ---
 
@@ -898,7 +901,7 @@ The art items in the document linked to symbols.
 
 #### Type
 
-[SymbolItems](./SymbolItems.md); read-only.
+[SymbolItems](.././SymbolItems); read-only.
 
 ---
 
@@ -912,7 +915,7 @@ The symbols in this document.
 
 #### Type
 
-[Symbols](./Symbols.md); read-only.
+[Symbols](.././Symbols); read-only.
 
 ---
 
@@ -926,7 +929,7 @@ The tags in this document.
 
 #### Type
 
-[Tags](./Tags.md); read-only.
+[Tags](.././Tags); read-only.
 
 ---
 
@@ -940,7 +943,7 @@ The text frames in this document.
 
 #### Type
 
-[TextFrameItems](./TextFrameItems.md); read-only.
+[TextFrameItems](.././TextFrameItems); read-only.
 
 ---
 
@@ -996,7 +999,7 @@ The variables defined in this document.
 
 #### Type
 
-[Variables](./Variables.md); read-only.
+[Variables](.././Variables); read-only.
 
 ---
 
@@ -1024,7 +1027,7 @@ The views contained in this document.
 
 #### Type
 
-[Views](./Views.md); read-only.
+[Views](.././Views); read-only.
 
 ---
 
@@ -1178,7 +1181,7 @@ Exports the document to the specified file using one of the predefined export fi
 | -------------- | ------------------------------------------------------------------------------------ | ------------------ |
 | `exportFile`   | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to save       |
 | `exportFormat` | [ExportType](scripting-constants.md#exporttype)                                      | Export file format |
-| `options`      | [Variable](./Variable.md), optional                                                  | todo               |
+| `options`      | [Variable](.././Variable), optional                                                  | todo               |
 
 #### Returns
 
@@ -1290,12 +1293,14 @@ Boolean.
 
 `app.activeDocument.getPageItemFromUuid(uuid)`
 
-!!! note
-    This functionality was added in Illustrator 24.0. (CC2020)
+:::note
+This functionality was added in Illustrator 24.0. (CC2020)
+:::
+
 
 #### Description
 
-Retrieves the [PageItem](./PageItem.md) using its Uuid.
+Retrieves the [PageItem](.././PageItem) using its Uuid.
 
 #### Parameters
 
@@ -1305,7 +1310,7 @@ Retrieves the [PageItem](./PageItem.md) using its Uuid.
 
 #### Returns
 
-[PageItem](./PageItem.md).
+[PageItem](.././PageItem).
 
 ---
 
@@ -1355,7 +1360,7 @@ If the bounds parameter is omitted, captures the entire artwork.
 | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------- | --------------- |
 | `imageFile`  [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | Image file to write to                                    |                 |
 | `clipBounds`                                                                                      | Rect, optional                                            | Clipping bounds |
-| `options`                                                                                         | [ImageCaptureOptions](./ImageCaptureOptions.md), optional | todo            |
+| `options`                                                                                         | [ImageCaptureOptions](.././ImageCaptureOptions), optional | todo            |
 
 #### Returns
 
@@ -1477,7 +1482,7 @@ Prints the document.
 
 | Parameter |                    Type                     | Description |
 | --------- | ------------------------------------------- | ----------- |
-| `options` | [PrintOptions](./PrintOptions.md), optional | todo        |
+| `options` | [PrintOptions](.././PrintOptions), optional | todo        |
 
 #### Returns
 
@@ -1497,13 +1502,13 @@ Rasterizes the source art(s) within the specified clip bounds. The source art(s)
 
 |  Parameter   |                        Type                         |       Description       |
 | ------------ | --------------------------------------------------- | ----------------------- |
-| `sourceArt`  | [Variable](./Variable.md)                           | Source art to rasterize |
+| `sourceArt`  | [Variable](.././Variable)                           | Source art to rasterize |
 | `clipBounds` | Rect, optional                                      | Clipping bounds         |
-| `options`    | [RasterizeOptions](./RasterizeOptions.md), optional | todo                    |
+| `options`    | [RasterizeOptions](.././RasterizeOptions), optional | todo                    |
 
 #### Returns
 
-[RasterItem](./RasterItem.md)
+[RasterItem](.././RasterItem)
 
 ---
 
@@ -1687,8 +1692,10 @@ Nothing.
 
 ### Deselecting all objects in the current document
 
-!!! note
-    The frontmost document can be referred to as either `activeDocument` or `documents[0`.
+:::note
+The frontmost document can be referred to as either `activeDocument` or `documents[0`.
+:::
+
 
 ```javascript
 var docRef = activeDocument;

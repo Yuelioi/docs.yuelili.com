@@ -1,3 +1,6 @@
+---
+title: ComponentCollection object
+---
 # ComponentCollection object
 
 `app.project.rootItem.children[index].videoComponents()`
@@ -7,8 +10,10 @@
 `app.project.sequences[index].videoTracks[index].clips[index].components`
 
 
-!!! info
-    ComponentCollection is a subclass of [Collection object](collection.md). All methods and attributes of Collection, in addition to those listed below, are available when working with ComponentCollection.
+:::info
+ComponentCollection is a subclass of [Collection object](../collection). All methods and attributes of Collection, in addition to those listed below, are available when working with ComponentCollection.
+:::
+
 
 ---
 

@@ -1,3 +1,6 @@
+---
+title: Application object
+---
 # Application object
 
 `app`
@@ -18,11 +21,11 @@ The single global object is always available by its name, `app`.
 
 #### Description
 
-An [Anywhere object](../general/anywhere.md), providing access to available Anywhere servers. Only available when running in Anywhere configuration (discontinued).
+An [Anywhere object](../../general/anywhere), providing access to available Anywhere servers. Only available when running in Anywhere configuration (discontinued).
 
 #### Type
 
-[Anywhere object](../general/anywhere.md).
+[Anywhere object](../../general/anywhere).
 
 ---
 
@@ -57,12 +60,14 @@ parseInt(app.build); // 45
 
 Provides access to Adobe Media Encoder (on the same system).
 
-!!! warning
-    `app.encoder` is broken on Premiere Pro 14.3.1 - 15 on Mac only. Fixed in 22 and up. [See this discussion](https://community.adobe.com/t5/premiere-pro-discussions/missing-the-object-app-encoder-14-3-1-15-0-15-1-15-2/m-p/12544488).
+:::warning
+`app.encoder` is broken on Premiere Pro 14.3.1 - 15 on Mac only. Fixed in 22 and up. [See this discussion](https://community.adobe.com/t5/premiere-pro-discussions/missing-the-object-app-encoder-14-3-1-15-0-15-1-15-2/m-p/12544488).
+:::
+
 
 #### Type
 
-[Encoder object](../general/encoder.md).
+[Encoder object](../../general/encoder).
 
 ---
 
@@ -214,7 +219,7 @@ Get applications Metadata object.
 
 #### Type
 
-[Metadata object](../general/metadata.md), read-only.
+[Metadata object](../../general/metadata), read-only.
 
 ---
 
@@ -251,7 +256,7 @@ The currently active production.
 
 #### Type
 
-[Production object](../general/production.md) if at least 1 production is open, `null` otherwise.
+[Production object](../../general/production) if at least 1 production is open, `null` otherwise.
 
 ---
 
@@ -265,7 +270,7 @@ The currently active project.
 
 #### Type
 
-[Project object](../general/project.md).
+[Project object](../../general/project).
 
 ---
 
@@ -279,7 +284,7 @@ Provides access to project management functions within Premiere Pro.
 
 #### Type
 
-[ProjectManager object](../general/projectmanager.md).
+[ProjectManager object](../../general/projectmanager).
 
 ---
 
@@ -293,7 +298,7 @@ An array referencing all open projects; `numProjects` contains size.
 
 #### Type
 
-[ProjectCollection object](../collection/projectcollection.md), read-only.
+[ProjectCollection object](../../collection/projectcollection), read-only.
 
 ---
 
@@ -307,7 +312,7 @@ The properties object provides methods to access and modify preference values.
 
 #### Type
 
-[Properties object](../general/properties.md), read-only;
+[Properties object](../../general/properties), read-only;
 
 ---
 
@@ -317,11 +322,11 @@ The properties object provides methods to access and modify preference values.
 
 #### Description
 
-Provides access to [SourceMonitor object](../general/sourcemonitor.md).
+Provides access to [SourceMonitor object](../../general/sourcemonitor).
 
 #### Type
 
-[SourceMonitor object](../general/sourcemonitor.md).
+[SourceMonitor object](../../general/sourcemonitor).
 
 ---
 
@@ -444,7 +449,7 @@ app.getWorkspaces();
 
 #### Description
 
-Determines whether the file at path can be opened as a Premiere Pro [project](../general/project.md).
+Determines whether the file at path can be opened as a Premiere Pro [project](../../general/project).
 
 #### Parameters
 
@@ -454,7 +459,7 @@ Determines whether the file at path can be opened as a Premiere Pro [project](..
 
 #### Returns
 
-Returns `true` if file can be opened as a Premiere Pro [project](../general/project.md).
+Returns `true` if file can be opened as a Premiere Pro [project](../../general/project).
 
 #### Example
 
@@ -475,7 +480,7 @@ app.isDocument('~/Desktop/imageFile.mov');    // false
 
 #### Description
 
-Determines whether there are any [projects](../general/project.md) currently open.
+Determines whether there are any [projects](../../general/project) currently open.
 
 #### Parameters
 
@@ -493,7 +498,7 @@ Returns `true` if at least 1 project is open; otherwise `false`.
 
 #### Description
 
-Creates a new .prproj [Project object](../general/project.md), at the specified path.
+Creates a new .prproj [Project object](../../general/project), at the specified path.
 
 #### Parameters
 
@@ -513,7 +518,7 @@ Returns `true` if successful.
 
 #### Description
 
-Opens the file at the specified path, as a Premiere Pro [Project object](../general/project.md).
+Opens the file at the specified path, as a Premiere Pro [Project object](../../general/project).
 
 #### Parameters
 
@@ -537,7 +542,7 @@ Returns `true` if file was successfully opened.
 
 #### Description
 
-Opens an FCP XML file as a Premiere Pro [Project object](../general/project.md) (specified in projPath).
+Opens an FCP XML file as a Premiere Pro [Project object](../../general/project) (specified in projPath).
 
 #### Parameters
 
@@ -548,7 +553,7 @@ Opens an FCP XML file as a Premiere Pro [Project object](../general/project.md) 
 
 #### Returns
 
-Returns `true` if file was successfully opened as a Premiere Pro [Project object](../general/project.md).
+Returns `true` if file was successfully opened as a Premiere Pro [Project object](../../general/project).
 
 ---
 
@@ -558,7 +563,7 @@ Returns `true` if file was successfully opened as a Premiere Pro [Project object
 
 #### Description
 
-Quits Premiere Pro; user will be prompted to save any changes to [Project object](../general/project.md).
+Quits Premiere Pro; user will be prompted to save any changes to [Project object](../../general/project).
 
 #### Parameters
 
@@ -633,13 +638,10 @@ Specifies the path to be used for one of Premiere Pro's scratch disk paths.
 #### Parameters
 
 
-+-------------------+------------------------+-------------------------------------------------+
 |     Parameter     |          Type          |                   Description                   |
-+===================+========================+=================================================+
+|-------------------|------------------------|-------------------------------------------------|
 | `path`            | String                 | The new path to be used.                        |
-+-------------------+------------------------+-------------------------------------------------+
 | `scratchDiskType` | `ScratchDiskType` enum | Enumerated value, must be one of the following: |
-|                   |                        |                                                 |
 |                   |                        | - `ScratchDiskType.FirstVideoCaptureFolder`     |
 |                   |                        | - `ScratchDiskType.FirstAudioCaptureFolder`     |
 |                   |                        | - `ScratchDiskType.FirstVideoPreviewFolder`     |
@@ -647,7 +649,6 @@ Specifies the path to be used for one of Premiere Pro's scratch disk paths.
 |                   |                        | - `ScratchDiskType.FirstAutoSaveFolder`         |
 |                   |                        | - `ScratchDiskType.FirstCCLibrariesFolder`      |
 |                   |                        | - `ScratchDiskType.FirstCapsuleMediaFolder`     |
-+-------------------+------------------------+-------------------------------------------------+
 
 #### Returns
 
@@ -674,17 +675,13 @@ Writes a string to Premiere Pro's Events panel.
 
 #### Parameters
 
-+-------------+--------+-----------------------+
 |  Parameter  |  Type  |      Description      |
-+=============+========+=======================+
+|-------------|--------|-----------------------|
 | `message`   | String | A message to display. |
-+-------------+--------+-----------------------+
 | `decorator` | String | Decorator, one of:    |
-|             |        |                       |
 |             |        | - `info`              |
 |             |        | - `warning`           |
 |             |        | - `error`             |
-+-------------+--------+-----------------------+
 
 #### Returns
 
@@ -778,7 +775,7 @@ if (allViewIDs){
 
 #### Description
 
-Returns the [Project](../general/project.md) associated with the provided View ID.
+Returns the [Project](../../general/project) associated with the provided View ID.
 
 #### Parameters
 
@@ -786,7 +783,7 @@ A View ID, obtained from `getProjectViewIDs`.
 
 #### Returns
 
-A [Project](../general/project.md) object, for the project associated with the provided View ID. Can be `null`.
+A [Project](../../general/project) object, for the project associated with the provided View ID. Can be `null`.
 
 #### Example
 
@@ -814,7 +811,7 @@ if (allViewIDs){
 
 #### Description
 
-Returns an array of [ProjectItems](../item/projectitem.md) selected, in the current active project view.
+Returns an array of [ProjectItems](../../item/projectitem) selected, in the current active project view.
 
 #### Parameters
 
@@ -822,7 +819,7 @@ None.
 
 #### Returns
 
-An array of [ProjectItems](../item/projectitem.md); can be null.
+An array of [ProjectItems](../../item/projectitem); can be null.
 
 #### Example
 

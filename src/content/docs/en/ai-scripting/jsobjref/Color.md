@@ -1,3 +1,6 @@
+---
+title: Color
+---
 # Color
 
 `color`
@@ -8,25 +11,25 @@ An abstract parent class for all color classes used in Illustrator.
 
 Subclasses are:
 
-- [CMYKColor](CMYKColor.md)
+- [CMYKColor](../CMYKColor)
     - [Properties](CMYKColor.md#properties)
     - [Example](CMYKColor.md#example)
-- [GradientColor](GradientColor.md)
+- [GradientColor](../GradientColor)
     - [Properties](GradientColor.md#properties)
     - [Example](GradientColor.md#example)
-- [GrayColor](GrayColor.md)
+- [GrayColor](../GrayColor)
     - [Properties](GrayColor.md#properties)
     - [Example](GrayColor.md#example)
-- [LabColor](LabColor.md)
+- [LabColor](../LabColor)
     - [Properties](LabColor.md#properties)
-- [NoColor](NoColor.md)
+- [NoColor](../NoColor)
     - [Properties](NoColor.md#properties)
     - [Example](NoColor.md#example)
-- [PatternColor](PatternColor.md)
+- [PatternColor](../PatternColor)
     - [Properties](PatternColor.md#properties)
     - [Example](PatternColor.md#example)
-- [RGBColor](RGBColor.md)
+- [RGBColor](../RGBColor)
     - [Properties](RGBColor.md#properties)
     - [Example](RGBColor.md#example)
-- [SpotColor](SpotColor.md)
+- [SpotColor](../SpotColor)
     - [Properties](SpotColor.md#properties)

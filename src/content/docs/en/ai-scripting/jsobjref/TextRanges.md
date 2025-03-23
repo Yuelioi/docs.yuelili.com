@@ -1,10 +1,13 @@
+---
+title: TextRanges
+---
 # TextRanges
 
 `textRanges`
 
 #### Description
 
-A collection of [TextRange](./TextRange.md) objects.
+A collection of [TextRange](.././TextRange) objects.
 
 ---
 
@@ -70,7 +73,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[TextRange](./TextRange.md)
+[TextRange](.././TextRange)
 
 ---
 

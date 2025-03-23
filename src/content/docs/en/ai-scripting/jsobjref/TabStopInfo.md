@@ -1,10 +1,13 @@
+---
+title: TabStopInfo
+---
 # TabStopInfo
 
 `app.activeDocument.textFrames[index].paragraphs[index].paragraphAttributes.tabStops`
 
 #### Description
 
-Information about the alignment, position, and other details for a tab stop in a [ParagraphAttributes](./ParagraphAttributes.md) object.
+Information about the alignment, position, and other details for a tab stop in a [ParagraphAttributes](.././ParagraphAttributes) object.
 
 ---
 

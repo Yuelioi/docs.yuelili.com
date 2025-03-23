@@ -1,3 +1,6 @@
+---
+title: View
+---
 # View
 
 `app.activeDocument.views[index]`
@@ -50,7 +53,7 @@ Read-only. The document that contains this view.
 
 #### Type
 
-[Document](./Document.md)
+[Document](.././Document)
 
 ---
 

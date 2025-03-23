@@ -1,3 +1,6 @@
+---
+title: FXGSaveOptions
+---
 # FXGSaveOptions
 
 `fxgSaveOptions`

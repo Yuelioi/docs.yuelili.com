@@ -1,10 +1,13 @@
+---
+title: GrayColor
+---
 # GrayColor
 
 `new GrayColor()`
 
 #### Description
 
-A grayscale color specification, used where a [Color](./Color.md) object is required.
+A grayscale color specification, used where a [Color](.././Color) object is required.
 
 ---
 

@@ -3,7 +3,7 @@ title: PF_EventExtra
 ---
 # PF_EventExtra
 
-此结构体为当前事件提供上下文信息。After Effects 在 [入口点](../../effect-basics/entry-point) 函数的 `extra` 参数中传递指向此结构体的指针。
+此结构体为当前事件提供上下文信息。After Effects 在 [入口函数](../../effect-basics/entry-point) 函数的 `extra` 参数中传递指向此结构体的指针。
 
 `PF_EventUnion`（通过 `PF_EventExtra` 发送）随事件类型而变化，并包含特定于该事件的信息。
 

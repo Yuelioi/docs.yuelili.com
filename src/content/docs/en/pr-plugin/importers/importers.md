@@ -1,3 +1,6 @@
+---
+title: Importers
+---
 # Importers
 
 Importers provide video, audio and/or closed captioning from the media source. This source can be a single file, a set of files, a communication link between another application, etc.
@@ -14,4 +17,4 @@ Custom importers are a special type of synthetic importer, implemented to better
 | Synthetic     | No              | Yes           | File > New               |
 | Custom        | Yes             | Yes           | File > New File > Import |
 
-If you've never developed an importer before, you can skip [What's New](whats-new.md), and go directly to [Getting Started](getting-started.md).
+If you've never developed an importer before, you can skip [What's New](../whats-new), and go directly to [Getting Started](../getting-started).

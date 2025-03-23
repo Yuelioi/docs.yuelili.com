@@ -1,3 +1,6 @@
+---
+title: Pixel Formats And Color Spaces
+---
 # Pixel Formats And Color Spaces
 
 As of CC, Premiere supports 69 different pixel formats, not including raw and custom formats.
@@ -175,8 +178,10 @@ The format doesn't need to be registered in any sense. They can just be used in 
 
 The first place the new pixel formats can appear in the render pipeline is at the importer level. Importers can advertise the availability of these pixel formats during *imGetIndPixelFormat*, just as they would for any other format.
 
-!!! note
-    Importers must also support a non-custom pixel format, for the case where the built-in renderer is used, which would not be prepared to handle an opaque pixel format added by a third-party.
+:::note
+Importers must also support a non-custom pixel format, for the case where the built-in renderer is used, which would not be prepared to handle an opaque pixel format added by a third-party.
+:::
+
 
 In the importer, use the new CreateCustomPPix call in the [PPix Creator 2 Suite](sweetpea-suites.md#ppix-creator-2-suite), and specify a custom pixel format and a memory buffer size, and the call will pass back a PPix of the requested format. These PPixes can then be returned from an importer, like any other. The memory for the PPix will be allocated by MediaCore, and must be a flat data structure as they will need to be copied between processes.
 

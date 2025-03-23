@@ -1,3 +1,6 @@
+---
+title: Structures
+---
 # Structures
 
 |                                        Structure                                         |                                                         Sent with selector                                                          |

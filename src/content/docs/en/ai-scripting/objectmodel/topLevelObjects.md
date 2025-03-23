@@ -1,3 +1,6 @@
+---
+title: Top-Level (containing) Objects
+---
 # Top-Level (containing) Objects
 
 Use these objects to access global information about the Illustrator application or an individual document.

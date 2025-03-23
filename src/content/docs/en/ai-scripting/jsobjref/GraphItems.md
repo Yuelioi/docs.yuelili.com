@@ -1,10 +1,13 @@
+---
+title: GraphItems
+---
 # GraphItems
 
 `app.activeDocument.graphItems`
 
 #### Description
 
-A collection [GraphItem](./GraphItem.md) objects, which gives you access to all the graph art items in an Illustrator document.
+A collection [GraphItem](.././GraphItem) objects, which gives you access to all the graph art items in an Illustrator document.
 
 ---
 
@@ -90,7 +93,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[GraphItem](./GraphItem.md)
+[GraphItem](.././GraphItem)
 
 ---
 

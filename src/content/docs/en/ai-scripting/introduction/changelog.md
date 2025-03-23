@@ -1,3 +1,6 @@
+---
+title: Changelog
+---
 # Changelog
 
 What's new and changed for scripting?

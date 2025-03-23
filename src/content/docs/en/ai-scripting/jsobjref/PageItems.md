@@ -1,58 +1,61 @@
+---
+title: PageItems
+---
 # PageItems
 
 `app.activeDocument.pageItems`
 
 #### Description
 
-A collection of [PageItem](./PageItem.md) objects. Provides complete access to all the art items in an Illustrator document in the following classes:
+A collection of [PageItem](.././PageItem) objects. Provides complete access to all the art items in an Illustrator document in the following classes:
 
-- [CompoundPathItem](CompoundPathItem.md)
+- [CompoundPathItem](../CompoundPathItem)
     - [Properties](CompoundPathItem.md#properties)
     - [Methods](CompoundPathItem.md#methods)
     - [Example](CompoundPathItem.md#example)
-- [GraphItem](GraphItem.md)
+- [GraphItem](../GraphItem)
     - [Properties](GraphItem.md#properties)
     - [Methods](GraphItem.md#methods)
-- [GroupItem](GroupItem.md)
+- [GroupItem](../GroupItem)
     - [Properties](GroupItem.md#properties)
     - [Methods](GroupItem.md#methods)
     - [Example](GroupItem.md#example)
-- [LegacyTextItem](LegacyTextItem.md)
+- [LegacyTextItem](../LegacyTextItem)
     - [Properties](LegacyTextItem.md#properties)
     - [Methods](LegacyTextItem.md#methods)
-- [MeshItem](MeshItem.md)
+- [MeshItem](../MeshItem)
     - [Properties](MeshItem.md#properties)
     - [Methods](MeshItem.md#methods)
     - [Example](MeshItem.md#example)
-- [NonNativeItem](NonNativeItem.md)
+- [NonNativeItem](../NonNativeItem)
     - [Properties](NonNativeItem.md#properties)
     - [Methods](NonNativeItem.md#methods)
-- [PathItem](PathItem.md)
+- [PathItem](../PathItem)
     - [Properties](PathItem.md#properties)
     - [Methods](PathItem.md#methods)
     - [Example](PathItem.md#example)
-- [PlacedItem](PlacedItem.md)
+- [PlacedItem](../PlacedItem)
     - [Properties](PlacedItem.md#properties)
     - [Methods](PlacedItem.md#methods)
     - [Example](PlacedItem.md#example)
-- [PluginItem](PluginItem.md)
+- [PluginItem](../PluginItem)
     - [Properties](PluginItem.md#properties)
     - [Methods](PluginItem.md#methods)
     - [Example](PluginItem.md#example)
-- [RasterItem](RasterItem.md)
+- [RasterItem](../RasterItem)
     - [Properties](RasterItem.md#properties)
     - [Methods](RasterItem.md#methods)
-- [SymbolItem](SymbolItem.md)
+- [SymbolItem](../SymbolItem)
     - [Properties](SymbolItem.md#properties)
     - [Methods](SymbolItem.md#methods)
-- [TextFrameItem](TextFrameItem.md)
+- [TextFrameItem](../TextFrameItem)
     - [Properties](TextFrameItem.md#properties)
     - [Methods](TextFrameItem.md#methods)
     - [Example](TextFrameItem.md#example)
 
-You can reference page items through the [PageItems](#pageitems) property in a [Document](./Document.md), [Layer](./Layer.md), or [GroupItem](./GroupItem.md).
+You can reference page items through the [PageItems](#pageitems) property in a [Document](.././Document), [Layer](.././Layer), or [GroupItem](.././GroupItem).
 
-When you access an individual item in one of these collections, the reference is a page item of one of a particular type. For example, if you use [PageItems](#pageitems) to reference a graph item, the typename value of that object is [GraphItem](./GraphItem.md).
+When you access an individual item in one of these collections, the reference is a page item of one of a particular type. For example, if you use [PageItems](#pageitems) to reference a graph item, the typename value of that object is [GraphItem](.././GraphItem).
 
 ---
 
@@ -118,7 +121,7 @@ Gets the first element in the collection with the specified name.
 
 #### Returns
 
-[PageItem](./PageItem.md)
+[PageItem](.././PageItem)
 
 ---
 
@@ -138,7 +141,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[PageItem](./PageItem.md)
+[PageItem](.././PageItem)
 
 ---
 

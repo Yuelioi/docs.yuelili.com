@@ -1,3 +1,6 @@
+---
+title: ProjectItem object
+---
 # ProjectItem object
 
 `app.project.rootItem.children[index]`
@@ -20,7 +23,7 @@ An array of project items, contained within the specified project item.
 
 #### Type
 
-[ProjectItemCollection object](../collection/projectitemcollection.md), read-only.
+[ProjectItemCollection object](../../collection/projectitemcollection), read-only.
 
 ---
 
@@ -108,8 +111,10 @@ if (item) {
 
 A unique ID assigned to the project item, upon its addition to the project.
 
-!!! note
-    Distinguish between references to the same source media.
+:::note
+Distinguish between references to the same source media.
+:::
+
 
 #### Type
 
@@ -533,48 +538,32 @@ None.
 
 A footage interpretation structure, or `0` if unsuccessful.
 
-+---------------------------+---------+----------------------------------------------------+
 |         Property          |  Type   |                    Description                     |
-+===========================+=========+====================================================+
+|---------------------------|---------|----------------------------------------------------|
 | `alphaUsage`              | Integer | Alpha, will be one of:                             |
-|                           |         |                                                    |
 |                           |         | - `0` - `ALPHACHANNEL_NONE`                        |
 |                           |         | - `1` - `ALPHACHANNEL_STRAIGHT`                    |
 |                           |         | - `2` - `ALPHACHANNEL_PREMULTIPLIED`               |
 |                           |         | - `3` - `ALPHACHANNEL_IGNORE`                      |
-+---------------------------+---------+----------------------------------------------------+
 | `fieldType`               | Integer | Field type, one of:                                |
-|                           |         |                                                    |
 |                           |         | - `-1` - `FIELDTYPE_DEFAULT`                       |
 |                           |         | - `0` - `FIELDTYPE_PROGRESSIVE`                    |
 |                           |         | - `1` - `FIELDTYPE_UPPERFIRST`                     |
 |                           |         | - `2` - `FIELDTYPE_LOWERFIRST`                     |
-+---------------------------+---------+----------------------------------------------------+
 | `ignoreAlpha`             | Boolean | `true` or `false`.                                 |
-+---------------------------+---------+----------------------------------------------------+
 | `invertAlpha`             | Boolean | `true` or `false`.                                 |
-+---------------------------+---------+----------------------------------------------------+
 | `frameRate`               | Float   | Frame rate as floating point value.                |
-+---------------------------+---------+----------------------------------------------------+
 | `pixelAspectRatio`        | Float   | Pixel aspect ratio as floating point value.        |
-+---------------------------+---------+----------------------------------------------------+
 | `removePulldown`          | Boolean | `true` or `false`.                                 |
-+---------------------------+---------+----------------------------------------------------+
 | `vrConformProjectionType` | Integer | The projection type in use, for VR footage. One of |
-|                           |         |                                                    |
 |                           |         | - `0` - `VR_CONFORM_PROJECTION_NONE`               |
 |                           |         | - `1` - `VR_CONFORM_PROJECTION_EQUIRECTANGULAR`    |
-+---------------------------+---------+----------------------------------------------------+
 | `vrLayoutType`            | Integer | The layout of footage in use, for VR. One of       |
-|                           |         |                                                    |
 |                           |         | - `0` - `VR_LAYOUT_MONOSCOPIC`                     |
 |                           |         | - `1` - `VR_LAYOUT_STEREO_OVER_UNDER`              |
 |                           |         | - `2` - `VR_LAYOUT_STEREO_SIDE_BY_SIDE`            |
-+---------------------------+---------+----------------------------------------------------+
 | `vrHorizontalView`        | String  | The horizontal view in use, for VR footage.        |
-+---------------------------+---------+----------------------------------------------------+
 | `vrVerticalView`          | String  | The vertical view in use, for VR footage.          |
-+---------------------------+---------+----------------------------------------------------+
 
 ---
 
@@ -592,7 +581,7 @@ None.
 
 #### Returns
 
-A [Time object](../other/time.md), containing the in point.
+A [Time object](../../other/time), containing the in point.
 
 ---
 
@@ -602,7 +591,7 @@ A [Time object](../other/time.md), containing the in point.
 
 #### Description
 
-Retrieves the [MarkerCollection object](../collection/markercollection.md) associated with this project item.
+Retrieves the [MarkerCollection object](../../collection/markercollection) associated with this project item.
 
 #### Parameters
 
@@ -610,7 +599,7 @@ None.
 
 #### Returns
 
-[MarkerCollection object](../collection/markercollection.md), read-only;
+[MarkerCollection object](../../collection/markercollection), read-only;
 
 ---
 
@@ -622,10 +611,11 @@ None.
 
 Returns the path associated with the project item's media, as a String.
 
-!!! note
-    This only works for atomic media; this call cannot provide meaningful paths for media which has no actual path (which will be the case for any media generated by synthetic importers, like Premiere Pro's own Universal Counting Leader).
+:::note
 
-    Also, for image sequences, only the path to the first image in the sequence will be returned.
+Also, for image sequences, only the path to the first image in the sequence will be returned.
+:::
+
 
 #### Parameters
 
@@ -647,17 +637,14 @@ Retrieves the current out point for specified media type.
 
 #### Parameters
 
-+-------------+---------+-------------------------------------------------------------------------+
 |  Parameter  |  Type   |                               Description                               |
-+=============+=========+=========================================================================+
+|-------------|---------|-------------------------------------------------------------------------|
 | `mediaType` | Integer | Pass `1` for video only, or `2` for audio only.                         |
-|             |         |                                                                         |
 |             |         | If no `mediaType` is passed, function gets the out point for all media. |
-+-------------+---------+-------------------------------------------------------------------------+
 
 #### Returns
 
-Returns a [Time object](../other/time.md).
+Returns a [Time object](../../other/time).
 
 ---
 
@@ -825,7 +812,7 @@ Boolean, `true` if offline.
 
 #### Description
 
-Indicates whether the project item refers to a [Sequence object](../sequence/sequence.md).
+Indicates whether the project item refers to a [Sequence object](../../sequence/sequence).
 
 #### Parameters
 
@@ -833,7 +820,7 @@ None.
 
 #### Returns
 
-Returns `true` if the project item is a [Sequence object](../sequence/sequence.md), or a multicam clip, or a merged clip. Returns `false` if it isn't any of those.
+Returns `true` if the project item is a [Sequence object](../../sequence/sequence), or a multicam clip, or a merged clip. Returns `false` if it isn't any of those.
 
 ---
 
@@ -1137,7 +1124,7 @@ Returns `0` if update was successful.
 
 #### Description
 
-Returns a [Time object](../other/time.md), representing start time.
+Returns a [Time object](../../other/time), representing start time.
 
 #### Parameters
 
@@ -1145,7 +1132,7 @@ None.
 
 #### Returns
 
-[Time object](../other/time.md).
+[Time object](../../other/time).
 
 ---
 
@@ -1159,4 +1146,4 @@ Video components for the 'Master Clip' of this project item.
 
 #### Type
 
-[ComponentCollection object](../collection/componentcollection.md), read-only.
+[ComponentCollection object](../../collection/componentcollection), read-only.

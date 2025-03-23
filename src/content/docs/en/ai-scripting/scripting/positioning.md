@@ -1,3 +1,6 @@
+---
+title: Page-item positioning and dimensions
+---
 # Page-item positioning and dimensions
 
 Illustrator uses simple, two-dimensional geometry in the form of points to record the position of page item objects in a document. Every page item object in a document has a position property that defines a fixed point as a pair of page coordinates in the format [x, y]. The fixed point is the top-left corner of the object's bounding box.

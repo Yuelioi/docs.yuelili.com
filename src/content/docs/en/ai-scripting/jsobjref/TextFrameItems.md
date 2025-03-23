@@ -1,10 +1,13 @@
+---
+title: TextFrameItems
+---
 # TextFrameItems
 
 `app.activeDocument.textFrames`
 
 #### Description
 
-The collection of [TextFrameItem](./TextFrameItem.md) objects in the document.
+The collection of [TextFrameItem](.././TextFrameItem) objects in the document.
 
 ---
 
@@ -64,7 +67,7 @@ Creates a point text frame item.
 
 #### Returns
 
-[TextFrameItem](./TextFrameItem.md)
+[TextFrameItem](.././TextFrameItem)
 
 ---
 
@@ -80,14 +83,14 @@ Creates an area text frame item.
 
 |   Parameter   |                                Type                                 |                 Description                 |
 | ------------- | ------------------------------------------------------------------- | ------------------------------------------- |
-| `textPath`    | [PathItem](./PathItem.md)                                           | Path item to use                            |
+| `textPath`    | [PathItem](.././PathItem)                                           | Path item to use                            |
 | `orientation` | [TextOrientation](scripting-constants.md#textorientation), optional | Orientation of text                         |
-| `baseFrame`   | [TextFrameItem](./TextFrameItem.md), optional                       | Text frame to use                           |
+| `baseFrame`   | [TextFrameItem](.././TextFrameItem), optional                       | Text frame to use                           |
 | `postFix`     | Boolean, optional                                                   | Whether to prefix or postfix the text frame |
 
 #### Returns
 
-[TextFrameItem](./TextFrameItem.md)
+[TextFrameItem](.././TextFrameItem)
 
 ---
 
@@ -107,7 +110,7 @@ Get the first element in the collection with the provided name.
 
 #### Returns
 
-[TextFrameItem](./TextFrameItem.md)
+[TextFrameItem](.././TextFrameItem)
 
 ---
 
@@ -127,7 +130,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[TextFrameItem](./TextFrameItem.md)
+[TextFrameItem](.././TextFrameItem)
 
 ---
 
@@ -143,16 +146,16 @@ Creates an on-path text frame item.
 
 |   Parameter   |                                Type                                 |                 Description                 |
 | ------------- | ------------------------------------------------------------------- | ------------------------------------------- |
-| `textPath`    | [PathItem](./PathItem.md)                                           | Path item to use                            |
+| `textPath`    | [PathItem](.././PathItem)                                           | Path item to use                            |
 | `startTValue` | Number (double)                                                     | Start position of text along the path       |
 | `endTValue`   | Number (double)                                                     | End position of text along the path         |
 | `orientation` | [TextOrientation](scripting-constants.md#textorientation), optional | Orientation of text                         |
-| `baseFrame`   | [TextFrameItem](./TextFrameItem.md), optional                       | Text frame to use                           |
+| `baseFrame`   | [TextFrameItem](.././TextFrameItem), optional                       | Text frame to use                           |
 | `postFix`     | Boolean, optional                                                   | Whether to prefix or postfix the text frame |
 
 #### Returns
 
-[TextFrameItem](./TextFrameItem.md)
+[TextFrameItem](.././TextFrameItem)
 
 ---
 
@@ -173,7 +176,7 @@ Creates a point text frame item.
 
 #### Returns
 
-[TextFrameItem](./TextFrameItem.md)
+[TextFrameItem](.././TextFrameItem)
 
 ---
 

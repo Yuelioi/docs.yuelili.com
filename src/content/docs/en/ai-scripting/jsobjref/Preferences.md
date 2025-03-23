@@ -1,3 +1,6 @@
+---
+title: Preferences
+---
 # Preferences
 
 `app.Preferences`
@@ -20,7 +23,7 @@ Options to use when opening or placing an AutoCAD file.
 
 #### Type
 
-[OpenOptionsAutoCAD](./OpenOptionsAutoCAD.md); read-only.
+[OpenOptionsAutoCAD](.././OpenOptionsAutoCAD); read-only.
 
 ---
 
@@ -34,7 +37,7 @@ Options to use when opening or placing a FreeHand file.
 
 #### Type
 
-[OpenOptionsFreeHand](./OpenOptionsFreeHand.md); read-only.
+[OpenOptionsFreeHand](.././OpenOptionsFreeHand); read-only.
 
 ---
 
@@ -62,7 +65,7 @@ Options to use when opening or placing a PDF file.
 
 #### Type
 
-[PDFFileOptions](./PDFFileOptions.md); read-only.
+[PDFFileOptions](.././PDFFileOptions); read-only.
 
 ---
 
@@ -76,7 +79,7 @@ Options to use when opening or placing a Photoshop file.
 
 #### Type
 
-[PhotoshopFileOptions](./PhotoshopFileOptions.md); read-only.
+[PhotoshopFileOptions](.././PhotoshopFileOptions); read-only.
 
 ---
 

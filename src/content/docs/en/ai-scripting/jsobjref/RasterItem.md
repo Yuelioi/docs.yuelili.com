@@ -1,3 +1,6 @@
+---
+title: RasterItem
+---
 # RasterItem
 
 `app.activeDocument.rasterItems[index]`
@@ -118,7 +121,7 @@ The content variable bound to the item.
 
 #### Type
 
-[Variable](./Variable.md)
+[Variable](.././Variable)
 
 ---
 
@@ -258,7 +261,7 @@ The layer to which this item belongs.
 
 #### Type
 
-[Layer](./Layer.md); read-only.
+[Layer](.././Layer); read-only.
 
 ---
 
@@ -300,7 +303,7 @@ The transformation matrix of the placed artwork.
 
 #### Type
 
-[Matrix](./Matrix.md)
+[Matrix](.././Matrix)
 
 ---
 
@@ -372,7 +375,7 @@ The parent of this object.
 
 #### Type
 
-[Layer](./Layer.md) or [GroupItem](./GroupItem.md)
+[Layer](.././Layer) or [GroupItem](.././GroupItem)
 
 ---
 
@@ -444,7 +447,7 @@ The tags contained in this item.
 
 #### Type
 
-[Tags](./Tags.md); read-only.
+[Tags](.././Tags); read-only.
 
 ---
 
@@ -514,7 +517,7 @@ The visibility variable bound to the item.
 
 #### Type
 
-[Variable](./Variable.md)
+[Variable](.././Variable)
 
 ---
 
@@ -616,7 +619,7 @@ Colorizes the raster item with a CMYK or RGB Color.
 
 |    Parameter     |        Type         |             Description             |
 | ---------------- | ------------------- | ----------------------------------- |
-| `rasterizeColor` | [Color](./Color.md) | CMYK or RGB Color to rasterize with |
+| `rasterizeColor` | [Color](.././Color) | CMYK or RGB Color to rasterize with |
 
 #### Returns
 
@@ -764,11 +767,11 @@ Converts the raster art for this object to vector art, using default options.
 
 Reorders the raster art into the source art of a plug-in group, and converts it into a group of filled and/or stroked paths that resemble the original image.
 
-Creates and returns a [PluginItem](./PluginItem.md) object that references a [TracingObject](./TracingObject.md) object.
+Creates and returns a [PluginItem](.././PluginItem) object that references a [TracingObject](.././TracingObject) object.
 
 #### Returns
 
-[PluginItem](./PluginItem.md)
+[PluginItem](.././PluginItem)
 
 ---
 
@@ -794,7 +797,7 @@ Transforms the art item by applying a transformation matrix.
 
 |       Parameter        |                               Type                                |                  Description                   |
 | ---------------------- | ----------------------------------------------------------------- | ---------------------------------------------- |
-| `transformationMatrix` | [Matrix](./Matrix.md)                                             | Transformation matrix to apply                 |
+| `transformationMatrix` | [Matrix](.././Matrix)                                             | Transformation matrix to apply                 |
 | `changePositions`      | Boolean, optional                                                 | Whether to change Positions                    |
 | `changeFillPatterns`   | Boolean, optional                                                 | Whether to change Fill Patterns                |
 | `changeFillGradients`  | Boolean, optional                                                 | Whether to change Fill Gradients               |

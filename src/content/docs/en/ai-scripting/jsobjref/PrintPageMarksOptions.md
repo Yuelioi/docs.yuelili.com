@@ -1,3 +1,6 @@
+---
+title: PrintPageMarksOptions
+---
 # PrintPageMarksOptions
 
 `new PrintPageMarksOptions()`

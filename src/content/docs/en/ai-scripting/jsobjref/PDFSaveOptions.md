@@ -1,3 +1,6 @@
+---
+title: PDFSaveOptions
+---
 # PDFSaveOptions
 
 `new PDFSaveOptions()`
@@ -340,7 +343,7 @@ Optional. The printing flattener options.
 
 #### Type
 
-[PrintFlattenerOptions](./PrintFlattenerOptions.md)
+[PrintFlattenerOptions](.././PrintFlattenerOptions)
 
 ---
 

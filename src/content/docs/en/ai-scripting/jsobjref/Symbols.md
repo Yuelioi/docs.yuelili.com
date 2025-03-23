@@ -1,10 +1,13 @@
+---
+title: Symbols
+---
 # Symbols
 
 `app.activeDocument.symbols`
 
 #### Description
 
-The collection of [Symbol](./Symbol.md) objects in the document.
+The collection of [Symbol](.././Symbol) objects in the document.
 
 ---
 
@@ -62,15 +65,15 @@ String; read-only.
 
 Returns a symbol object created from the source art item, any of the following:
 
-- [CompoundPathItems](./CompoundPathItems.md)
-- [GroupItems](./GroupItems.md)
-- [MeshItems](./MeshItems.md)
-- [NonNativeItems](./NonNativeItems.md)
-- [PageItems](./PageItems.md)
-- [PathItems](./PathItems.md)
-- [RasterItems](./RasterItems.md)
-- [SymbolItems](./SymbolItems.md)
-- [TextFrameItems](./TextFrameItems.md)
+- [CompoundPathItems](.././CompoundPathItems)
+- [GroupItems](.././GroupItems)
+- [MeshItems](.././MeshItems)
+- [NonNativeItems](.././NonNativeItems)
+- [PageItems](.././PageItems)
+- [PathItems](.././PathItems)
+- [RasterItems](.././RasterItems)
+- [SymbolItems](.././SymbolItems)
+- [TextFrameItems](.././TextFrameItems)
 
 The default registration point is `SymbolRegistrationPoint.SYMBOLCENTERPOINT`.
 
@@ -78,12 +81,12 @@ The default registration point is `SymbolRegistrationPoint.SYMBOLCENTERPOINT`.
 
 |      Parameter      |                                        Type                                         |           Description            |
 | ------------------- | ----------------------------------------------------------------------------------- | -------------------------------- |
-| `sourceArt`         | [PageItem](./PageItem.md)                                                           | Source art to create symbol from |
+| `sourceArt`         | [PageItem](.././PageItem)                                                           | Source art to create symbol from |
 | `registrationPoint` | [SymbolRegistrationPoint](scripting-constants.md#symbolregistrationpoint), optional | Registration point to use        |
 
 #### Returns
 
-[Symbol](./Symbol.md)
+[Symbol](.././Symbol)
 
 ---
 
@@ -103,7 +106,7 @@ Get the first element in the collection with the provided name.
 
 #### Returns
 
-[Symbol](./Symbol.md)
+[Symbol](.././Symbol)
 
 ---
 
@@ -123,7 +126,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[Symbol](./Symbol.md)
+[Symbol](.././Symbol)
 
 ---
 

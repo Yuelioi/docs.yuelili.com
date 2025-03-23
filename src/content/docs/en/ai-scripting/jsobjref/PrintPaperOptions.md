@@ -1,3 +1,6 @@
+---
+title: PrintPaperOptions
+---
 # PrintPaperOptions
 
 `new PrintPaperOptions()`

@@ -1,3 +1,6 @@
+---
+title: Working with objects
+---
 # Working with objects
 
 ## Getting the frontmost document or layer
@@ -119,7 +122,7 @@ To refer to a `path items` object in a layer
 Documents(1).Layers(1).PathItems(1)
 ```
 
-For more examples of collection-item containers, see the document object Elements table in Adobe lllustrator CC 2017 Scripting Reference: AppleScript or the Properties table in Adobe lllustrator CC 2017 Scripting Reference: JavaScript or Adobe lllustrator CC 2017 Scripting Reference: VBScript. A diagram of the lllustrator CC 2017 object model is in [The Illustrator Scripting Object Model](../objectmodel/objectModel.md).
+For more examples of collection-item containers, see the document object Elements table in Adobe lllustrator CC 2017 Scripting Reference: AppleScript or the Properties table in Adobe lllustrator CC 2017 Scripting Reference: JavaScript or Adobe lllustrator CC 2017 Scripting Reference: VBScript. A diagram of the lllustrator CC 2017 object model is in [The Illustrator Scripting Object Model](../../objectmodel/objectModel).
 
 ---
 

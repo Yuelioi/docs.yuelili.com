@@ -1,3 +1,6 @@
+---
+title: Selector Table
+---
 # Selector Table
 
 Before implementing a handler for a certain selector, make sure that it is really necessary for your importer. Many selectors are optional, and only useful for certain special needs.

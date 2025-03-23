@@ -1,10 +1,13 @@
+---
+title: Swatches
+---
 # Swatches
 
 `app.activeDocument.swatches`
 
 #### Description
 
-The collection of [Swatch](./Swatch.md) objects in the document.
+The collection of [Swatch](.././Swatch) objects in the document.
 
 ---
 
@@ -60,11 +63,11 @@ String; read-only.
 
 #### Description
 
-Creates a new [Swatch](./Swatch.md) object.
+Creates a new [Swatch](.././Swatch) object.
 
 #### Returns
 
-[Swatch](./Swatch.md)
+[Swatch](.././Swatch)
 
 ---
 
@@ -84,7 +87,7 @@ Get the first element in the collection with the provided name.
 
 #### Returns
 
-[Swatch](./Swatch.md)
+[Swatch](.././Swatch)
 
 ---
 
@@ -98,7 +101,7 @@ Gets selected swatches in the document.
 
 #### Returns
 
-List of [Swatch](./Swatch.md)
+List of [Swatch](.././Swatch)
 
 ---
 
@@ -118,7 +121,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[Swatch](./Swatch.md)
+[Swatch](.././Swatch)
 
 ---
 

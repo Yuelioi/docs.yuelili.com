@@ -1,10 +1,13 @@
+---
+title: PluginItems
+---
 # PluginItems
 
 `app.activeDocument.pluginItems`
 
 #### Description
 
-A collection of [PluginItem](./PluginItem.md) objects in a document.
+A collection of [PluginItem](.././PluginItem) objects in a document.
 
 See [Copying a plug-in item](PluginItem.md#copying-a-plug-in-item).
 
@@ -72,7 +75,7 @@ Get the first element in the collection with the provided name.
 
 #### Returns
 
-[PluginItem](./PluginItem.md)
+[PluginItem](.././PluginItem)
 
 ---
 
@@ -92,7 +95,7 @@ Gets an element from the collection.
 
 #### Returns
 
-[PluginItem](./PluginItem.md)
+[PluginItem](.././PluginItem)
 
 ---
 

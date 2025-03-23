@@ -1,3 +1,6 @@
+---
+title: ExportOptionsJPEG
+---
 # ExportOptionsJPEG
 
 `exportOptionsJPEG`
@@ -104,7 +107,7 @@ Default: `white`.
 
 #### Type
 
-[RGBColor](./RGBColor.md)
+[RGBColor](.././RGBColor)
 
 ---
 

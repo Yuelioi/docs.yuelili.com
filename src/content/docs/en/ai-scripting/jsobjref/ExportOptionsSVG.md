@@ -1,3 +1,6 @@
+---
+title: ExportOptionsSVG
+---
 # ExportOptionsSVG
 
 `exportOptionsSVG`

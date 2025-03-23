@@ -1,3 +1,6 @@
+---
+title: InsertionPoint
+---
 # InsertionPoint
 
 `app.activeDocument.textFrames[index].insertionPoints[index]`
@@ -20,7 +23,7 @@ All the characters in this text range.
 
 #### Type
 
-[Characters](./Characters.md); read-only.
+[Characters](.././Characters); read-only.
 
 ---
 
@@ -34,7 +37,7 @@ All the lines in this text range.
 
 #### Type
 
-[Lines](./Lines.md); read-only.
+[Lines](.././Lines); read-only.
 
 ---
 
@@ -48,7 +51,7 @@ All the paragraphs in this text range.
 
 #### Type
 
-[Paragraphs](./Paragraphs.md); read-only.
+[Paragraphs](.././Paragraphs); read-only.
 
 ---
 
@@ -62,7 +65,7 @@ The object's container.
 
 #### Type
 
-[TextRange](./TextRange.md); read-only.
+[TextRange](.././TextRange); read-only.
 
 ---
 
@@ -76,7 +79,7 @@ The story to which the text range belongs.
 
 #### Type
 
-[Story](./Story.md); read-only.
+[Story](.././Story); read-only.
 
 ---
 
@@ -90,7 +93,7 @@ All of the text in this text range.
 
 #### Type
 
-[TextRanges](./TextRanges.md); read-only.
+[TextRanges](.././TextRanges); read-only.
 
 ---
 
@@ -118,4 +121,4 @@ All the words contained in this text range.
 
 #### Type
 
-[Words](./Words.md); read-only.
+[Words](.././Words); read-only.
