@@ -36,7 +36,7 @@ export default defineConfig({
       },
       components: {
         Header: "./src/components/Header.astro",
-        MarkdownContent: "./src/components/MarkdownContent.astro",
+        TwoColumnContent: "./src/components/TwoColumnContent.astro",
       },
       plugins: [
         starlightSidebarTopics(
