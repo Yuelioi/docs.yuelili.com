@@ -307,7 +307,7 @@ String; 只读。
 
 | 参数      |                          类型                           |           描述           |
 | --------- | ------------------------------------------------------- | ------------------------ |
-| `type`    | [CaseChangeType](scripting-constants.md#casechangetype) | 要更改的大小写类型       |
+| `type`    | [CaseChangeType](../scripting-constants#casechangetype) | 要更改的大小写类型       |
 
 #### 返回值
 
@@ -342,7 +342,7 @@ String; 只读。
 | 参数                |                                 类型                                  |         描述         |
 | ------------------- | --------------------------------------------------------------------- | -------------------- |
 | `relativeObject`    | Object, 可选                                                         | 要复制到的对象       |
-| `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement), 可选    | 插入元素的位置       |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选    | 插入元素的位置       |
 
 #### 返回值
 
@@ -419,7 +419,7 @@ Int32
 | 参数                |                                 类型                                  |           描述           |
 | ------------------- | --------------------------------------------------------------------- | ------------------------ |
 | `relativeObject`    | Object                                                                | 要移动元素的对象         |
-| `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement), 可选    | 移动元素到的位置         |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选    | 移动元素到的位置         |
 
 #### 返回值
 

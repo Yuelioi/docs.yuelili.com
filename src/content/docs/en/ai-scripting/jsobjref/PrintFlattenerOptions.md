@@ -109,7 +109,7 @@ Default: `PDFOverprint.PRESERVEPDFOVERPRINT`
 
 #### Type
 
-[PDFOverprint](scripting-constants.md#pdfoverprint)
+[PDFOverprint](../scripting-constants#pdfoverprint)
 
 ---
 

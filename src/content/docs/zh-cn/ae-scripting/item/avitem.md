@@ -21,7 +21,7 @@ AVItem 是 CompItem 和 FootageItem 的基类，因此 AVItem 的属性和方法
 CompItems 和 FootageItems 虽然是 AVItem 的逻辑子类，但它们并不是 *真正的* AVItem 子类，因为 AVItem 在 Extendscript 中并不存在，即尝试检查 `item instanceof AVItem` 将会失败，因为 AVItem 是未定义的。对于 `Item` 本身也是如此。
 :::
 
-更多信息请参阅 [Javascript 类](../introduction/javascript.md#javascript-classes) 和 [After Effects 类层次结构](../../introduction/classhierarchy)。
+更多信息请参阅 [Javascript 类](../../introduction/javascript#javascript-classes) 和 [After Effects 类层次结构](../../introduction/classhierarchy)。
 
 ---
 
@@ -50,7 +50,7 @@ CompItems 和 FootageItems 虽然是 AVItem 的逻辑子类，但它们并不是
 
 #### 描述
 
-当为 `true` 时，AVItem 是一个占位符，或者表示源文件无法找到的素材。在这种情况下，缺失的源文件路径位于素材项目的源文件对象的 `missingFootagePath` 属性中。请参阅 [FootageItem.mainSource](footageitem.md#footageitemmainsource) 和 [FileSource.missingFootagePath](../sources/filesource.md#filesourcemissingfootagepath)。
+当为 `true` 时，AVItem 是一个占位符，或者表示源文件无法找到的素材。在这种情况下，缺失的源文件路径位于素材项目的源文件对象的 `missingFootagePath` 属性中。请参阅 [FootageItem.mainSource](../footageitem#footageitemmainsource) 和 [FileSource.missingFootagePath](../../sources/filesource#filesourcemissingfootagepath)。
 
 #### 类型
 
@@ -150,7 +150,7 @@ AVItem 的帧速率，以每秒帧数为单位。这是 `frameDuration` 的倒�
 
 #### 描述
 
-测试 AVItem 是否可以在调用 [Property.setAlternateSource()](../property/property.md#propertysetalternatesource) 时用作替代源。
+测试 AVItem 是否可以在调用 [Property.setAlternateSource()](../../property/property#propertysetalternatesource) 时用作替代源。
 
 如果项目可用，则返回 `true`，否则返回 `false`。
 
@@ -232,7 +232,7 @@ CompItem 或 FootageItem 可以用作图层的替代源，但有一些限制：
 
 #### 描述
 
-项目从项目面板直接预览时的当前时间。该值以秒为单位。使用全局方法 [timeToCurrentFormat()](../general/globals.md#timetocurrentformat) 将其转换为以帧表示时间的字符串值。对于 `mainSource` 是静态的 FootageItem（`item.mainSource.isStill` 为 `true`），设置此值是错误的。
+项目从项目面板直接预览时的当前时间。该值以秒为单位。使用全局方法 [timeToCurrentFormat()](../../general/globals#timetocurrentformat) 将其转换为以帧表示时间的字符串值。对于 `mainSource` 是静态的 FootageItem（`item.mainSource.isStill` 为 `true`），设置此值是错误的。
 
 #### 类型
 

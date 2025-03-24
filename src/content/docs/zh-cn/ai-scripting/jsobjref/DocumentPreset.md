@@ -7,7 +7,7 @@ title: DocumentPreset
 
 #### 描述
 
-创建新文档时使用的预设文档模板。请参阅 [Documents.addDocument()](Documents.md#documentsadddocument)。
+创建新文档时使用的预设文档模板。请参阅 [Documents.addDocument()](../Documents#documentsadddocument)。
 
 ---
 
@@ -25,7 +25,7 @@ title: DocumentPreset
 
 #### 类型
 
-[DocumentArtboardLayout](scripting-constants.md#documentartboardlayout)
+[DocumentArtboardLayout](../scripting-constants#documentartboardlayout)
 
 ---
 
@@ -73,7 +73,7 @@ Number (double)。
 
 #### 类型
 
-[DocumentColorSpace](scripting-constants.md#documentcolorspace)
+[DocumentColorSpace](../scripting-constants#documentcolorspace)
 
 ---
 
@@ -149,7 +149,7 @@ Number (long)。
 
 #### 类型
 
-[DocumentPreviewMode](scripting-constants.md#documentpreviewmode)
+[DocumentPreviewMode](../scripting-constants#documentpreviewmode)
 
 ---
 
@@ -163,7 +163,7 @@ Number (long)。
 
 #### 类型
 
-[DocumentRasterResolution](scripting-constants.md#documentrasterresolution)
+[DocumentRasterResolution](../scripting-constants#documentrasterresolution)
 
 ---
 
@@ -191,7 +191,7 @@ String。
 
 #### 类型
 
-[DocumentTransparencyGrid](scripting-constants.md#documenttransparencygrid)
+[DocumentTransparencyGrid](../scripting-constants#documenttransparencygrid)
 
 ---
 
@@ -219,7 +219,7 @@ String；只读。
 
 #### 类型
 
-[RulerUnits](scripting-constants.md#rulerunits)
+[RulerUnits](../scripting-constants#rulerunits)
 
 ---
 

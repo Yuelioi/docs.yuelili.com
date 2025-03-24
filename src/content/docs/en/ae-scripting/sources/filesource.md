@@ -32,8 +32,8 @@ FileSource is a subclass of [FootageSource object](../footagesource). All method
 
 The [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object for the file that defines this asset. To change the value:
 
-- If this FileSource is a [proxySource](../item/avitem.md#avitemproxysource) of an [AVItem](../../item/avitem), call [setProxy()](../item/avitem.md#avitemsetproxy) or [setProxyWithSequence()](../item/avitem.md#avitemsetproxywithsequence).
-- If this FileSource is a [mainSource](../item/footageitem.md#footageitemmainsource) of a [FootageItem](../../item/footageitem), call [replace()](../item/footageitem.md#footageitemreplace) or [replaceWithSequence()](../item/footageitem.md#footageitemreplacewithsequence).
+- If this FileSource is a [proxySource](../../item/avitem#avitemproxysource) of an [AVItem](../../item/avitem), call [setProxy()](../../item/avitem#avitemsetproxy) or [setProxyWithSequence()](../../item/avitem#avitemsetproxywithsequence).
+- If this FileSource is a [mainSource](../../item/footageitem#footageitemmainsource) of a [FootageItem](../../item/footageitem), call [replace()](../../item/footageitem#footageitemreplace) or [replaceWithSequence()](../../item/footageitem#footageitemreplacewithsequence).
 
 #### Type
 
@@ -50,7 +50,7 @@ The [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access
 
 #### Description
 
-The path and filename of footage that is missing from this asset. See also [AVItem.footageMissing](../item/avitem.md#avitemfootagemissing).
+The path and filename of footage that is missing from this asset. See also [AVItem.footageMissing](../../item/avitem#avitemfootagemissing).
 
 #### Type
 

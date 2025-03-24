@@ -27,7 +27,7 @@ Is this object used to create a knockout, and if so, what kind of knockout. You 
 
 #### Type
 
-[KnockoutState](scripting-constants.md#knockoutstate)
+[KnockoutState](../scripting-constants#knockoutstate)
 
 ---
 
@@ -41,7 +41,7 @@ The mode used when compositing an object.
 
 #### Type
 
-[BlendModes](scripting-constants.md#blendmodes)
+[BlendModes](../scripting-constants#blendmodes)
 
 ---
 
@@ -456,7 +456,7 @@ Moves the object.
 |      Parameter      |                                 Type                                  |          Description          |
 | ------------------- | --------------------------------------------------------------------- | ----------------------------- |
 | `relativeObject`    | Object                                                                | Object to move element within |
-| `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement), optional | Location to move element to   |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), optional | Location to move element to   |
 
 #### Returns
 
@@ -490,7 +490,7 @@ Arranges the layer's position in the stacking order of the containing layer or d
 
 |  Parameter  |                        Type                         |            Description            |
 | ----------- | --------------------------------------------------- | --------------------------------- |
-| `zOrderCmd` | [ZOrderMethod](scripting-constants.md#zordermethod) | Stacking order arrangement method |
+| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | Stacking order arrangement method |
 
 #### Returns
 

@@ -25,7 +25,7 @@ Default: `Left`
 
 #### Type
 
-[TabStopAlignment](scripting-constants.md#tabstopalignment)
+[TabStopAlignment](../scripting-constants#tabstopalignment)
 
 ---
 

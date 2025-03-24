@@ -299,7 +299,7 @@ Number; read-only.
 
 #### Description
 
-The name of a callback function that is called when an error occurs. By creating a function and assigning it to this attribute, you can respond to errors systematically; for example, you can close and restart the application, noting the error in a log file if it occurred during rendering. See [RenderQueue.render()](../renderqueue/renderqueue.md#renderqueuerender). The callback function is passed the error string and a severity string. It should not return any value.
+The name of a callback function that is called when an error occurs. By creating a function and assigning it to this attribute, you can respond to errors systematically; for example, you can close and restart the application, noting the error in a log file if it occurred during rendering. See [RenderQueue.render()](../../renderqueue/renderqueue#renderqueuerender). The callback function is passed the error string and a severity string. It should not return any value.
 
 #### Type
 
@@ -617,7 +617,7 @@ app.findMenuCommandId("Convert To Bezier Path")
 
 Creates a new project in After Effects, replicating the File > New > New Project menu command. If the current project has been edited, the user is prompted to save it. If the user cancels out of the Save dialog box, the new project is not created and the method returns `null`.
 
-Use `app.project.close(CloseOptions.DO_NOT_SAVE_CHANGES)` to close the current project before opening a new one. See [Project.close()](project.md#projectclose)
+Use `app.project.close(CloseOptions.DO_NOT_SAVE_CHANGES)` to close the current project before opening a new one. See [Project.close()](../project#projectclose)
 
 #### Parameters
 

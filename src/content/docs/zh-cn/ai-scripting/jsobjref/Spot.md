@@ -43,7 +43,7 @@ title: 专色
 
 #### 类型
 
-[ColorModel](scripting-constants.md#colormodel)
+[ColorModel](../scripting-constants#colormodel)
 
 ---
 
@@ -85,7 +85,7 @@ title: 专色
 
 #### 类型
 
-[SpotColorKind](scripting-constants.md#spotcolorkind); 只读。
+[SpotColorKind](../scripting-constants#spotcolorkind); 只读。
 
 ---
 

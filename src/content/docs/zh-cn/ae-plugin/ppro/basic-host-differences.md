@@ -57,13 +57,13 @@ Premiere中的多线程渲染也适用于AE效果。当渲染AE效果时，Premi
 
 Premiere Pro处理场渲染的方式与After Effects不同。在场渲染期间，`PF_InData>field`给出当前正在渲染的场，忽略是否设置了`PF_OutFlag_PIX_INDEPENDENT`标志。
 
-在Premiere Pro中，效果会接收监视器窗口的质量设置，位于[PF_InData>quality](../effect-basics/PF_InData.md#pf_indata-members)。这与After Effects不同，在After Effects中，这里提供的是源图层的质量设置。
+在Premiere Pro中，效果会接收监视器窗口的质量设置，位于[PF_InData>quality](../../effect-basics/PF_InData#pf_indata-members)。这与After Effects不同，在After Effects中，这里提供的是源图层的质量设置。
 
 ---
 
 ## 参数UI
 
-Premiere Pro不支持[PF_ParamFlag_START_COLLAPSED](../effect-basics/PF_ParamDef.md#parameter-flags)标志。参数始终以折叠状态初始化，并且不能通过参数监督自动展开。
+Premiere Pro不支持[PF_ParamFlag_START_COLLAPSED](../../effect-basics/PF_ParamDef#parameter-flags)标志。参数始终以折叠状态初始化，并且不能通过参数监督自动展开。
 
 Premiere Pro支持宏`PF_ADD_FLOAT_EXPONENTIAL_SLIDER()`，该宏允许您定义指数。尽管此宏是为CC 2015版本2 SDK新添加的，但Premiere Pro已经在Fast Color Corrector中的Input Grey Level参数中使用了此功能。指数用于使范围从0.10到10，但1.0大约位于滑块的中间位置。我们使用的指数为2.5。典型值范围为0.01到100。
 

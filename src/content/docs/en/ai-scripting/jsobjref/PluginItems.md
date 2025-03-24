@@ -9,7 +9,7 @@ title: PluginItems
 
 A collection of [PluginItem](.././PluginItem) objects in a document.
 
-See [Copying a plug-in item](PluginItem.md#copying-a-plug-in-item).
+See [Copying a plug-in item](../pluginitem#copying-a-plug-in-item).
 
 ---
 

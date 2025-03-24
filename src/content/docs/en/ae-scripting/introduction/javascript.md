@@ -129,7 +129,7 @@ The same idea exists in After Effects scripting. Many API-accessible elements ar
 
 For the same example above, [Layer object](../../layer/layer) (itself a subclass of [PropertyGroup object](../../property/propertygroup)) is the *base class* for [AVLayer object](../../layer/avlayer), [CameraLayer object](../../layer/cameralayer), and [LightLayer object](../../layer/lightlayer). This means that CameraLayer inherits everything from the Layer object, which inherits everything from the PropertyGroup object, which inherits everything from the PropertyBase object.
 
-This is why you won't see the `name` property on the Layer page, but you can still use `layer.name` in your script; `name` is inherited from [PropertyBase.name](../property/propertybase.md#propertybasename).
+This is why you won't see the `name` property on the Layer page, but you can still use `layer.name` in your script; `name` is inherited from [PropertyBase.name](../../property/propertybase#propertybasename).
 
 :::warning
 In a few specific cases, properties & methods are **removed** with inheritance, not just added. Those cases are noted on the relevant object page.

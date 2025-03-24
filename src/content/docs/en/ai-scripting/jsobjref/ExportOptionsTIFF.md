@@ -7,7 +7,7 @@ title: ExportOptionsTIFF
 
 #### Description
 
-Options for exporting a document as a TIFF file, used with the [Document.exportFile()](Document.md#documentexportfile) method. All properties are optional.
+Options for exporting a document as a TIFF file, used with the [Document.exportFile()](../document#documentexportfile) method. All properties are optional.
 
 When you export a document, the appropriate file extension is appended automatically. You should not include any file extension in the file specification.
 
@@ -57,7 +57,7 @@ The byte order to use in the new file.
 
 #### Type
 
-[TIFFByteOrder](scripting-constants.md#tiffbyteorder)
+[TIFFByteOrder](../scripting-constants#tiffbyteorder)
 
 ---
 
@@ -73,7 +73,7 @@ Default: `ImageColorSpace.RGB`.
 
 #### Type
 
-[ImageColorSpace](scripting-constants.md#imagecolorspace)
+[ImageColorSpace](../scripting-constants#imagecolorspace)
 
 ---
 

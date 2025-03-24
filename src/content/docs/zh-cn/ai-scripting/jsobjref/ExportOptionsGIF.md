@@ -7,7 +7,7 @@ title: ExportOptionsGIF
 
 #### 描述
 
-将文档导出为 GIF 文件的选项，与 [Document.exportFile()](Document.md#documentexportfile) 方法一起使用。所有属性都是可选的。
+将文档导出为 GIF 文件的选项，与 [Document.exportFile()](../Document#documentexportfile) 方法一起使用。所有属性都是可选的。
 
 导出文档时，会自动附加适当的文件扩展名。您不应在文件规范中包含任何文件扩展名。
 
@@ -77,7 +77,7 @@ title: ExportOptionsGIF
 
 #### 类型
 
-[ColorDitherMethod](scripting-constants.md#colordithermethod)
+[ColorDitherMethod](../scripting-constants#colordithermethod)
 
 ---
 
@@ -91,7 +91,7 @@ title: ExportOptionsGIF
 
 #### 类型
 
-[ColorReductionMethod](scripting-constants.md#colorreductionmethod)
+[ColorReductionMethod](../scripting-constants#colorreductionmethod)
 
 ---
 

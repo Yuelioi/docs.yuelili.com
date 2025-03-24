@@ -3,7 +3,7 @@ title: environment
 ---
 # Environment object
 
-This global object is available through the [ScriptUI.environment](scriptui-class.md#scriptuienvironment) property.
+This global object is available through the [ScriptUI.environment](../scriptui-class#scriptuienvironment) property.
 
 It defines attributes of the ScriptUI environment, and only contains one property.
 
@@ -21,7 +21,7 @@ This JavaScript object reports the active state of the keyboard at any time; tha
 
 This is independent of the event-handling system, which means that at any time in your script, you can use this object to check whether specific keys (such as keyboard modifiers) are pressed, and trigger alternative actions as a result.
 
-It is available through the [ScriptUI.environment](scriptui-class.md#scriptuienvironment) object:
+It is available through the [ScriptUI.environment](../scriptui-class#scriptuienvironment) object:
 
 ```javascript
 var myKeyState = ScriptUI.environment.keyboardState;
@@ -104,7 +104,7 @@ if (keyboardState.shiftKey && keyboardState.altKey) {
 }
 ```
 
-This can also be used within interface buttons as alternative to [checking the modifiers via keyboard events](event-handling.md#getmodifierstate), which can be more confusing and less user-intuitive, unless you're confident you're handling event states properly.
+This can also be used within interface buttons as alternative to [checking the modifiers via keyboard events](../event-handling#getmodifierstate), which can be more confusing and less user-intuitive, unless you're confident you're handling event states properly.
 
 For example:
 

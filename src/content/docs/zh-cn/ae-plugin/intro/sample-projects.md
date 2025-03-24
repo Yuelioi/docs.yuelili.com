@@ -24,11 +24,11 @@ title: 示例项目
 | Easy Cheese         | 一个关键帧助手（出现在“动画 > 关键帧助手”子菜单中），Easy Cheese展示了如何操作关键帧的各种特性（以一种与我们的内置插件Easy Ease非常相似的方式...） |
 | FBIO                | 练习After Effects输入/输出（AEIO）API。类似于IO示例，但支持基于帧的.ffk文件格式。                                                                                                 |
 |                     | !!! 注意                                                                                                                                                                                                                      |
-|                     |      我们现在建议开发[Premiere Pro导入器](other-integration-possibilities.md#premiere-pro-importers)代替。                                                                                               |
+|                     |      我们现在建议开发[Premiere Pro导入器](../other-integration-possibilities#premiere-pro-importers)代替。                                                                                               |
 | Grabba              | 从项目中的任何合成中获取帧（格式由插件请求）。                                                                                                                                          |
 | IO                  | 练习After Effects输入/输出（AEIO）API。支持虚构的.fak文件格式，并处理After Effects从这些文件检索数据或输出到这些文件的所有请求。                              |
 |                     | !!! 注意                                                                                                                                                                                                                      |
-|                     |      我们现在建议开发[Premiere Pro导入器](other-integration-possibilities.md#premiere-pro-importers)代替。                                                                                               |
+|                     |      我们现在建议开发[Premiere Pro导入器](../other-integration-possibilities#premiere-pro-importers)代替。                                                                                               |
 | Mangler             | Mangler是一个关键帧助手，展示了ADM调色板的使用，就像我们自己的插件一样。                                                                                                                                            |
 | Panelator           | 创建一个可以与其他标准面板一起停靠的面板。                                                                                                                                                |
 |                     | !!! 注意                                                                                                                                                                                                                      |

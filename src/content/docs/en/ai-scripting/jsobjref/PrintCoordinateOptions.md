@@ -75,7 +75,7 @@ Default: `PrintOrientation.PORTRAIT`
 
 #### Type
 
-[PrintOrientation](scripting-constants.md#printorientation)
+[PrintOrientation](../scripting-constants#printorientation)
 
 ---
 
@@ -91,7 +91,7 @@ Default: `PrintPosition.TRANSLATECENTER`
 
 #### Type
 
-[PrintPosition](scripting-constants.md#printposition)
+[PrintPosition](../scripting-constants#printposition)
 
 ---
 
@@ -107,7 +107,7 @@ Default: `PrintTiling.TILESINGLEFULLPAGE`
 
 #### Type
 
-[PrintTiling](scripting-constants.md#printtiling)
+[PrintTiling](../scripting-constants#printtiling)
 
 ---
 

@@ -27,7 +27,7 @@ BridgeTalk 类提供了以下静态属性，这些属性在全局命名空间中
 
 #### 描述
 
-由消息框架启动的应用程序的实例标识符，应用程序指定符的实例部分；请参阅 [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers)。
+由消息框架启动的应用程序的实例标识符，应用程序指定符的实例部分；请参阅 [应用程序指定符](../application-and-namespace-specifiers#application-specifiers)。
 
 仅适用于支持启动和运行多个实例的应用程序，例如 InDesign。
 
@@ -43,7 +43,7 @@ BridgeTalk 类提供了以下静态属性，这些属性在全局命名空间中
 
 #### 描述
 
-此应用程序的区域设置，应用程序指定符的区域设置部分；请参阅 [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers)。当发送消息时，这是发送应用程序的区域设置。
+此应用程序的区域设置，应用程序指定符的区域设置部分；请参阅 [应用程序指定符](../application-and-namespace-specifiers#application-specifiers)。当发送消息时，这是发送应用程序的区域设置。
 
 #### 类型
 
@@ -57,7 +57,7 @@ BridgeTalk 类提供了以下静态属性，这些属性在全局命名空间中
 
 #### 描述
 
-此应用程序的名称，应用程序指定符的应用程序名称部分；请参阅 [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers)。当发送消息时，这是发送应用程序的名称。
+此应用程序的名称，应用程序指定符的应用程序名称部分；请参阅 [应用程序指定符](../application-and-namespace-specifiers#application-specifiers)。当发送消息时，这是发送应用程序的名称。
 
 #### 类型
 
@@ -71,7 +71,7 @@ BridgeTalk 类提供了以下静态属性，这些属性在全局命名空间中
 
 #### 描述
 
-包含此应用程序完整指定符的小写字符串；请参阅 [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers)。
+包含此应用程序完整指定符的小写字符串；请参阅 [应用程序指定符](../application-and-namespace-specifiers#application-specifiers)。
 
 #### 类型
 
@@ -103,7 +103,7 @@ BridgeTalk 类提供了以下静态属性，这些属性在全局命名空间中
 
 #### 描述
 
-此应用程序的版本号，应用程序指定符的版本部分；请参阅 [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers)。当发送消息时，这是发送应用程序的版本。
+此应用程序的版本号，应用程序指定符的版本部分；请参阅 [应用程序指定符](../application-and-namespace-specifiers#application-specifiers)。当发送消息时，这是发送应用程序的版本。
 
 #### 类型
 
@@ -127,7 +127,7 @@ BridgeTalk.onReceive = function( bridgeTalkObject ) {
 };
 ```
 
-接收到的消息对象的 `body` 属性包含接收到的数据。该函数可以返回任何类型。请参阅 [处理未经请求的消息](communicating-through-messages.md#handling-unsolicited-messages)。
+接收到的消息对象的 `body` 属性包含接收到的数据。该函数可以返回任何类型。请参阅 [处理未经请求的消息](../communicating-through-messages#handling-unsolicited-messages)。
 
 :::note
 此函数不适用于从该应用程序发送的消息的响应消息。响应消息由与发送的消息关联的 `onResult`、`onReceived` 或 `onError` 回调处理。
@@ -157,7 +157,7 @@ BridgeTalk 类提供了以下静态方法，这些方法在全局命名空间中
 
 | 参数    | 类型                                                                          | 描述                 |
 | ------- | ----------------------------------------------------------------------------- | -------------------- |
-| `app` | [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers) | 目标应用程序的指定符 |
+| `app` | [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) | 目标应用程序的指定符 |
 
 #### 返回
 
@@ -177,7 +177,7 @@ BridgeTalk 类提供了以下静态方法，这些方法在全局命名空间中
 
 | 参数    | 类型                                                                          | 描述                 |
 | ------- | ----------------------------------------------------------------------------- | -------------------- |
-| `app` | [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers) | 目标应用程序的指定符 |
+| `app` | [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) | 目标应用程序的指定符 |
 
 #### 返回
 
@@ -197,7 +197,7 @@ BridgeTalk 类提供了以下静态方法，这些方法在全局命名空间中
 
 | 参数    | 类型                                                                          | 描述                 |
 | ------- | ----------------------------------------------------------------------------- | -------------------- |
-| `app` | [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers) | 目标应用程序的指定符 |
+| `app` | [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) | 目标应用程序的指定符 |
 
 #### 返回
 
@@ -234,7 +234,7 @@ BridgeTalk.getDisplayName("photoshop-10.0");
 
 #### 返回
 
-[应用程序指定符](application-and-namespace-specifiers.md#application-specifiers)，用于此计算机上安装的支持消息传递的应用程序版本，如果请求的应用程序版本未安装，则返回 `null`。
+[应用程序指定符](../application-and-namespace-specifiers#application-specifiers)，用于此计算机上安装的支持消息传递的应用程序版本，如果请求的应用程序版本未安装，则返回 `null`。
 
 #### 示例
 
@@ -271,7 +271,7 @@ BridgeTalk.getSpecifier ("photoshop", 8);
 
 | 参数           | 类型                                                                          | 描述                                                                   |
 | -------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `targetSpec` | [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers) | 可选。目标应用程序的指定符。如果未提供，则返回当前应用程序的处理状态。 |
+| `targetSpec` | [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) | 可选。目标应用程序的指定符。如果未提供，则返回当前应用程序的处理状态。 |
 
 #### 返回
 
@@ -308,11 +308,11 @@ BridgeTalk.getSpecifier ("photoshop", 8);
 
 #### 返回
 
-返回 [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers) 的数组。
+返回 [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) 的数组。
 
 - 如果提供了版本，指定符包括基本名称和版本信息。
 - 如果提供了区域设置，指定符包括完整名称，包含版本和区域设置信息。
-- 如果未提供版本和区域设置，则返回基本指定符，不包含版本和区域设置信息，但尝试找到最合适的版本和区域设置；请参阅 [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers)。
+- 如果未提供版本和区域设置，则返回基本指定符，不包含版本和区域设置信息，但尝试找到最合适的版本和区域设置；请参阅 [应用程序指定符](../application-and-namespace-specifiers#application-specifiers)。
 
 #### 示例
 
@@ -349,7 +349,7 @@ BridgeTalk.getTargets( null, null );
 
 | 参数          | 类型                                                                          | 描述                 |
 | ------------- | ----------------------------------------------------------------------------- | -------------------- |
-| `specifier` | [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers) | 目标应用程序的指定符 |
+| `specifier` | [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) | 目标应用程序的指定符 |
 
 #### 返回
 
@@ -369,7 +369,7 @@ BridgeTalk.getTargets( null, null );
 
 | 参数          | 类型                                                                          | 描述                                                                      |
 | ------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `specifier` | [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers) | 目标应用程序的指定符                                                      |
+| `specifier` | [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) | 目标应用程序的指定符                                                      |
 | `where`     | 未知。                                                                        | 可选。如果指定了值 "background"，则应用程序的主窗口不会置于屏幕的最前面。 |
 
 #### 返回
@@ -390,7 +390,7 @@ BridgeTalk.getTargets( null, null );
 
 | 参数          | 类型                                                                          | 描述                 |
 | ------------- | ----------------------------------------------------------------------------- | -------------------- |
-| `specifier` | [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers) | 目标应用程序的指定符 |
+| `specifier` | [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) | 目标应用程序的指定符 |
 
 #### 返回
 
@@ -410,7 +410,7 @@ BridgeTalk.getTargets( null, null );
 
 | 参数            | 类型                                                                          | 描述                 |
 | --------------- | ----------------------------------------------------------------------------- | -------------------- |
-| `specifier`   | [应用程序指定符](application-and-namespace-specifiers.md#application-specifiers) | 目标应用程序的指定符 |
+| `specifier`   | [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) | 目标应用程序的指定符 |
 | `pingRequest` | 标识键字符串，可能的值包括：                                                  | 特定类型的返回值。   |
 |                 | -`STATUS`：返回处理状态；请参阅 [getStatus()](#bridgetalkgetstatus)。          |                      |
 |                 | -`DIAGNOSTICS`：返回包含有效 ping 键列表的诊断报告。                        |                      |

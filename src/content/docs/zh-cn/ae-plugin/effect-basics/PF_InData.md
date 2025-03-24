@@ -33,7 +33,7 @@ After Effects 使用 `PF_InData` 来传递系统、项目、图层和音频信�
 | `num_params`                 | 输入参数的数量。                                                                                                                                                                                                                         |
 | `what_cpu`                   | 在 macOS 下，此字段包含 CPU 类型的 Gestalt 值（参见 Inside Macintosh, volume 6）。在 Windows 上未定义。                                                                                                                               |
 | `what_fpu`                   | 在 macOS 下，此字段包含 FPU 类型的 Gestalt 值。在 Windows 上未定义。                                                                                                                                                                |
-| `current_time`               | 当前渲染帧的时间，在 [PF_Cmd_RENDER](command-selectors.md#frame-selectors) 期间有效。                                                                                                                              |
+| `current_time`               | 当前渲染帧的时间，在 [PF_Cmd_RENDER](../command-selectors#frame-selectors) 期间有效。                                                                                                                              |
 |                              | 这是图层中的当前时间，而不是任何合成中的时间。                                                                                                                                                                                 |
 |                              | 如果图层不是从时间 0 开始或时间被拉伸，图层时间和合成时间是不同的。                                                                                                                                     |
 |                              | 当前帧号是 `current_time` 除以 `time_step`。                                                                                                                                                                             |
@@ -45,11 +45,11 @@ After Effects 使用 `PF_InData` 来传递系统、项目、图层和音频信�
 | `time_step`                  | 当前渲染源帧的持续时间。                                                                                                                                                                                       |
 |                              | 在嵌套合成的几种情况下，此源帧持续时间可能与图层中帧之间的时间跨度（`local_time_step`）不同。                                                                                |
 |                              | 此值可以通过除以 `time_scale` 转换为秒。                                                                                                                                                                              |
-|                              | 在计算其他源帧时间时，例如用于 [PF_CHECKOUT_PARAM](../effect-details/interaction-callback-functions.md#interaction-callbacks)，请使用此值而不是 `local_time_step`。                                           |
+|                              | 在计算其他源帧时间时，例如用于 [PF_CHECKOUT_PARAM](../../effect-details/interaction-callback-functions#interaction-callbacks)，请使用此值而不是 `local_time_step`。                                           |
 |                              | 如果图层时间反转，此值可以为负。如果时间重映射应用于嵌套合成，此值可以从一帧到下一帧变化。                                                                                                       |
 |                              | 当源材料在嵌套合成中被拉伸或重映射时，此值可能与 `local_time_step` 不同。                                                                                                                                         |
 |                              | 例如，当内部合成嵌套在具有不同帧率的外部合成中，或者时间重映射应用于外部合成时，可能会发生这种情况。                                                              |
-|                              | 如果此值在所有帧中不恒定，则在 [PF_Cmd_SEQUENCE_SETUP](command-selectors.md#sequence-selectors) 期间此值将为 0。                                                                                                             |
+|                              | 如果此值在所有帧中不恒定，则在 [PF_Cmd_SEQUENCE_SETUP](../command-selectors#sequence-selectors) 期间此值将为 0。                                                                                                             |
 |                              | 在 `PF_Cmd_FRAME_SETUP` 和 `PF_Cmd_FRAME_SETDOWN` 选择器期间，此值将被正确设置。                                                                                                                                                     |
 |                              | !!! 警告                                                                                                                                                                                                                                    |
 |                              |      此值可能为零，因此在除以之前请检查它。                                                                                                                                                                                          |
@@ -66,12 +66,12 @@ After Effects 使用 `PF_InData` 来传递系统、项目、图层和音频信�
 | `time_scale`                 | `current_time`、`time_step`、`local_time_step` 和 `total_time` 的单位每秒。                                                                                                                                              |
 |                              | 如果 `time_scale` 为 30，则 `current_time`、`time_step`、`local_time_step` 和 `total_time` 的单位为 1/30 秒。                                                                                                             |
 |                              | `time_step` 可能为 3，表示序列实际上以每秒 10 帧渲染。`total_time` 可能为 105，表示序列长度为 3.5 秒。                                                 |
-| `field`                      | 仅在 [PF_OutFlag_PIX_INDEPENDENT](PF_OutData.md#pf_outflags) 在 [PF_Cmd_GLOBAL_SETUP](command-selectors.md#global-selectors) 期间设置时有效。                                                                                             |
+| `field`                      | 仅在 [PF_OutFlag_PIX_INDEPENDENT](../PF_OutData#pf_outflags) 在 [PF_Cmd_GLOBAL_SETUP](../command-selectors#global-selectors) 期间设置时有效。                                                                                             |
 |                              | 检查此字段以查看是否可以仅处理上字段或下字段。                                                                                                                                                                      |
 | `shutter_angle`              | 运动模糊快门角度。值范围为 0 到 1，表示 360 度。                                                                                                                                                             |
 |                              | 除非为目标图层启用并检查了运动模糊，否则此值为零。                                                                                                                                                                   |
 |                              | `shutter_angle == 180` 表示 `current_time` 和 `current_time + 1/2 time_step` 之间的时间间隔。                                                                                                                                      |
-|                              | 仅在 [PF_OutFlag_I_USE_SHUTTER_ANGLE](PF_OutData.md#pf_outflags) 在 [PF_Cmd_GLOBAL_SETUP](command-selectors.md#global-selectors) 期间设置时有效。                                                                                         |
+|                              | 仅在 [PF_OutFlag_I_USE_SHUTTER_ANGLE](../PF_OutData#pf_outflags) 在 [PF_Cmd_GLOBAL_SETUP](../command-selectors#global-selectors) 期间设置时有效。                                                                                         |
 |                              | 有关如何在效果中实现运动模糊的详细信息，请参见 [运动模糊](../../effect-details/motion-blur) 部分。                                                                                                                 |
 | `width`                      | 源图层的尺寸，不一定与输入图像参数中的宽度和高度字段相同。                                                                                                                |
 |                              | 缓冲区调整效果可能导致此差异。不受下采样影响。                                                                                                                                                               |
@@ -84,10 +84,10 @@ After Effects 使用 `PF_InData` 来传递系统、项目、图层和音频信�
 |                              | 效果需要下采样因子来解释表示图像中像素距离的标量参数（如滑块）。                                                                                                                 |
 |                              | 例如，如果下采样因子在每个方向上为 1/2（下采样因子表示为比率），则 4 像素的模糊应解释为 2 像素的模糊。                                                                  |
 |                              | 仅在以下期间有效：                                                                                                                                                                                                                             |
-|                              | - [PF_Cmd_SEQUENCE_SETUP](command-selectors.md#sequence-selectors)                                                                                                                                                                             |
-|                              | - [PF_Cmd_SEQUENCE_RESETUP](command-selectors.md#sequence-selectors)                                                                                                                                                                           |
-|                              | - [PF_Cmd_FRAME_SETUP](command-selectors.md#frame-selectors)                                                                                                                                                                                   |
-|                              | - [PF_Cmd_RENDER](command-selectors.md#frame-selectors)                                                                                                                                                                                        |
+|                              | - [PF_Cmd_SEQUENCE_SETUP](../command-selectors#sequence-selectors)                                                                                                                                                                             |
+|                              | - [PF_Cmd_SEQUENCE_RESETUP](../command-selectors#sequence-selectors)                                                                                                                                                                           |
+|                              | - [PF_Cmd_FRAME_SETUP](../command-selectors#frame-selectors)                                                                                                                                                                                   |
+|                              | - [PF_Cmd_RENDER](../command-selectors#frame-selectors)                                                                                                                                                                                        |
 | `downsample_y`               |                                                                                                                                                                                                                                                |
 | `pixel_aspect_ratio`         | 像素宽高比（宽度除以高度）。                                                                                                                                                                                                        |
 | `in_flags`                   | 未使用。                                                                                                                                                                                                                                        |
@@ -118,7 +118,7 @@ After Effects 使用 `PF_InData` 来传递系统、项目、图层和音频信�
 
 使用 `extent_hint` 仅处理需要输出的像素；这是你可以进行的最简单的优化之一。
 
-通过在 [PF_OutData](PF_OutData.md#pf_outdata) 中设置 [PF_OutFlag_USE_OUTPUT_EXTENT](PF_OutData.md#pf_outflags) 来告诉 After Effects 你使用 `in_data>extent_hint`，在 [PF_Cmd_GLOBAL_SETUP](command-selectors.md#global-selectors) 期间（以及在你的 PiPL 中）。
+通过在 [PF_OutData](../PF_OutData#pf_outdata) 中设置 [PF_OutFlag_USE_OUTPUT_EXTENT](../PF_OutData#pf_outflags) 来告诉 After Effects 你使用 `in_data>extent_hint`，在 [PF_Cmd_GLOBAL_SETUP](../command-selectors#global-selectors) 期间（以及在你的 PiPL 中）。
 
 在测试 `extent_hint` 代码之前，请从首选项菜单中禁用缓存，以便 After Effects 在合成中的任何内容更改时渲染你的效果。
 
@@ -132,7 +132,7 @@ After Effects 使用 `PF_InData` 来传递系统、项目、图层和音频信�
 
 `in_data>extent_hint` 是这两个矩形（合成和遮罩）的交集，并且每当它们发生变化时都会改变。
 
-范围矩形在原始输入图层的坐标空间中计算，在调整大小和原点移动之前，以简化输入和输出范围之间的矩形交集，适用于设置了 [PF_OutFlag_PIX_INDEPENDENT](PF_OutData.md#pf_outflags) 的效果。
+范围矩形在原始输入图层的坐标空间中计算，在调整大小和原点移动之前，以简化输入和输出范围之间的矩形交集，适用于设置了 [PF_OutFlag_PIX_INDEPENDENT](../PF_OutData#pf_outflags) 的效果。
 
 要在输出缓冲区的坐标系中获取输出范围，请将 `extent_hint` 偏移 `PF_InData->output_origin_x` 和 `y` 字段。
 
@@ -146,7 +146,7 @@ After Effects 使用 `PF_InData` 来传递系统、项目、图层和音频信�
 
 `output>extent_hint` 被忽略，因此缓存会更频繁地使用。
 
-对于缓冲区扩展效果，在 [PF_Cmd_FRAME_SETUP](command-selectors.md#frame-selectors) 期间将 `output>extent_hint` 与插件的变换边界相交，并相应地设置大小。
+对于缓冲区扩展效果，在 [PF_Cmd_FRAME_SETUP](../command-selectors#frame-selectors) 期间将 `output>extent_hint` 与插件的变换边界相交，并相应地设置大小。
 
 ---
 
@@ -160,7 +160,7 @@ After Effects 使用 `PF_InData` 来传递系统、项目、图层和音频信�
 
 ## 点控制和缓冲区扩展
 
-扩展输出缓冲区的效果通过在 [PF_Cmd_FRAME_SETUP](command-selectors.md#frame-selectors) 期间设置 `PF_InData` 中的 `output_origin_x/y` 来定位原始图层的左上角。
+扩展输出缓冲区的效果通过在 [PF_Cmd_FRAME_SETUP](../command-selectors#frame-selectors) 期间设置 `PF_InData` 中的 `output_origin_x/y` 来定位原始图层的左上角。
 
 此偏移会通过 `pre_effect_source_origin_x/y` 报告给后续效果。点参数会自动调整此偏移。
 

@@ -9,7 +9,7 @@ title: Variables
 
 The collection of [Variable](.././Variable) objects in the document.
 
-For an example of how to create variables, see [Using variables and datasets](Dataset.md#using-variables-and-datasets).
+For an example of how to create variables, see [Using variables and datasets](../dataset#using-variables-and-datasets).
 
 ---
 

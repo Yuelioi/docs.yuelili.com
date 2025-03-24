@@ -75,7 +75,7 @@ If a location is not specified, adds the new character to the containing text fr
 | ------------------- | --------------------------------------------------------------------- | ---------------------- |
 | `contents`          | String                                                                | Text contents to add   |
 | `relativeObject`    | [TextFrameItem](.././TextFrameItem), optional                         | Object to add item to  |
-| `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement), optional | Location to place text |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), optional | Location to place text |
 
 #### Returns
 

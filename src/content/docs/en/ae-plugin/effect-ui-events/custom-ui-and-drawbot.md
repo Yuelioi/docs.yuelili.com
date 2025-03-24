@@ -31,10 +31,10 @@ Use the new [PF_EffectCustomUIOverlayThemeSuite](#pf_effectcustomuioverlaythemes
 
 In order to redraw a specific area of a pane, we recommend the following:
 
-1. Call `PF_InvalidateRect` (from [PF_AppSuite](../effect-details/useful-utility-functions.md#pf_appsuite)) from the effect. This will cause a lazy display redraw, and will update at the next available idle moment. This rect is in coordinates related to the associated pane. Using a NULL rect will update the entire pane.
+1. Call `PF_InvalidateRect` (from [PF_AppSuite](../../effect-details/useful-utility-functions#pf_appsuite)) from the effect. This will cause a lazy display redraw, and will update at the next available idle moment. This rect is in coordinates related to the associated pane. Using a NULL rect will update the entire pane.
 2. Set the [event outflag](../PF_EventExtra) to `PF_EO_UPDATE_NOW`, which will cause an immediate draw event for the specified pane when the current event returns.
 
-If an effect needs to update more than one window at a time, it should set `PF_OutFlag_REFRESH_UI` (from [PF_OutFlags](../effect-basics/PF_OutData.md#pf_outflags)), which will cause a redraw of the entire ECW, comp, and layer windows.
+If an effect needs to update more than one window at a time, it should set `PF_OutFlag_REFRESH_UI` (from [PF_OutFlags](../../effect-basics/pf_outdata#pf_outflags)), which will cause a redraw of the entire ECW, comp, and layer windows.
 
 ---
 

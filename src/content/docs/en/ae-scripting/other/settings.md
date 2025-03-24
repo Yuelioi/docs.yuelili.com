@@ -45,7 +45,7 @@ If the value is greater than 1999 bytes, `getSetting` that item will throw an er
 | ------------- | ------------------------------------------------- | --------------------------------------- |
 | `sectionName` | String                                            | The name of a settings section.         |
 | `keyName`     | String                                            | The key name of the setting item.       |
-| `prefType`    | [`PREFType` enum](./preferences.md#preftype-enum) | Optional. Which preference file to use. |
+| `prefType`    | [`PREFType` enum](../preferences#preftype-enum) | Optional. Which preference file to use. |
 
 
 #### Returns
@@ -77,7 +77,7 @@ Returns `true` if the specified script settings item exists and has a value.
 | ------------- | ------------------------------------------------- | --------------------------------------- |
 | `sectionName` | String                                            | The name of a settings section.         |
 | `keyName`     | String                                            | The key name of the setting item.       |
-| `prefType`    | [`PREFType` enum](./preferences.md#preftype-enum) | Optional. Which preference file to use. |
+| `prefType`    | [`PREFType` enum](../preferences#preftype-enum) | Optional. Which preference file to use. |
 
 #### Returns
 
@@ -105,7 +105,7 @@ If the value is greater than 1999 bytes, `saveSetting` that item will throw an e
 | `sectionName` | String                                            | The name of a settings section.         |
 | `keyName`     | String                                            | The key name of the setting item.       |
 | `value`       | String                                            | The new value.                          |
-| `prefType`    | [`PREFType` enum](./preferences.md#preftype-enum) | Optional. Which preference file to use. |
+| `prefType`    | [`PREFType` enum](../preferences#preftype-enum) | Optional. Which preference file to use. |
 
 #### Returns
 

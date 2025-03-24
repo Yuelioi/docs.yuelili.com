@@ -60,7 +60,7 @@ Creates a new [AVLayer object](../avlayer) containing the specified item, and ad
 
 #### Description
 
-Creates a new paragraph (box) text layer with [TextDocument.lineOrientation](../text/textdocument.md#textdocumentlineorientation) set to `LineOrientation.HORIZONTAL` and adds the new [TextLayer object](../textlayer) to this collection. To create a point text layer, use the [LayerCollection.addText()](#layercollectionaddtext) method.
+Creates a new paragraph (box) text layer with [TextDocument.lineOrientation](../../text/textdocument#textdocumentlineorientation) set to `LineOrientation.HORIZONTAL` and adds the new [TextLayer object](../textlayer) to this collection. To create a point text layer, use the [LayerCollection.addText()](#layercollectionaddtext) method.
 
 #### Parameters
 
@@ -187,7 +187,7 @@ Creates a new [SolidSource object](../../sources/solidsource), with values set a
 
 #### Description
 
-Creates a new point text layer with [TextDocument.lineOrientation](../text/textdocument.md#textdocumentlineorientation) set to `LineOrientation.HORIZONTAL` and adds the new [TextLayer object](../textlayer) to this collection. To create a paragraph (box) text layer, use [LayerCollection.addBoxText()](#layercollectionaddboxtext).
+Creates a new point text layer with [TextDocument.lineOrientation](../../text/textdocument#textdocumentlineorientation) set to `LineOrientation.HORIZONTAL` and adds the new [TextLayer object](../textlayer) to this collection. To create a paragraph (box) text layer, use [LayerCollection.addBoxText()](#layercollectionaddboxtext).
 
 #### Parameters
 
@@ -212,7 +212,7 @@ This functionality was added in After Effects 24.2
 
 #### Description
 
-Creates a new paragraph (box) text layer with [TextDocument.lineOrientation](../text/textdocument.md#textdocumentlineorientation) set to `LineOrientation.VERTICAL_RIGHT_TO_LEFT` and adds the new [TextLayer object](../textlayer) to this collection. To create a point text layer, use the [LayerCollection.addText()](#layercollectionaddtext) or [LayerCollection.addVerticalText()](#layercollectionaddverticaltext) methods.
+Creates a new paragraph (box) text layer with [TextDocument.lineOrientation](../../text/textdocument#textdocumentlineorientation) set to `LineOrientation.VERTICAL_RIGHT_TO_LEFT` and adds the new [TextLayer object](../textlayer) to this collection. To create a point text layer, use the [LayerCollection.addText()](#layercollectionaddtext) or [LayerCollection.addVerticalText()](#layercollectionaddverticaltext) methods.
 
 #### Parameters
 
@@ -238,7 +238,7 @@ This functionality was added in After Effects 24.2
 
 #### Description
 
-Creates a new point text layer with [TextDocument.lineOrientation](../text/textdocument.md#textdocumentlineorientation) set to `LineOrientation.VERTICAL_RIGHT_TO_LEFT` and adds the new [TextLayer object](../textlayer) to this collection. To create a paragraph (box) text layer, use the [LayerCollection.addBoxText()](#layercollectionaddboxtext) or [LayerCollection.addVerticalBoxText()](#layercollectionaddverticalboxtext) methods.
+Creates a new point text layer with [TextDocument.lineOrientation](../../text/textdocument#textdocumentlineorientation) set to `LineOrientation.VERTICAL_RIGHT_TO_LEFT` and adds the new [TextLayer object](../textlayer) to this collection. To create a paragraph (box) text layer, use the [LayerCollection.addBoxText()](#layercollectionaddboxtext) or [LayerCollection.addVerticalBoxText()](#layercollectionaddverticalboxtext) methods.
 
 #### Parameters
 

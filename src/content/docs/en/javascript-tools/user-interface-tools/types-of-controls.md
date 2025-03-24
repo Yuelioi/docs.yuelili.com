@@ -3,7 +3,7 @@ title: types-of-controls
 ---
 # Types of controls
 
-The following sections introduce the types of controls you can add to a `Window` or other container element (`panel` or `group`). For details of the properties and functions, and of how to create each type of element, see [Control object constructors](control-objects.md#control-object-constructors).
+The following sections introduce the types of controls you can add to a `Window` or other container element (`panel` or `group`). For details of the properties and functions, and of how to create each type of element, see [Control object constructors](../control-objects#control-object-constructors).
 
 ---
 
@@ -33,7 +33,7 @@ Used to visually organize related controls.
 
 Unlike `Panels`, `Groups` have no title or visible border.
 
-You can use them to create hierarchies of controls, and for fine control over layout attributes of certain groups of controls within a larger panel. For examples, see [Creating more complex arrangements](automatic-layout.md#creating-more-complex-arrangements).
+You can use them to create hierarchies of controls, and for fine control over layout attributes of certain groups of controls within a larger panel. For examples, see [Creating more complex arrangements](../automatic-layout#creating-more-complex-arrangements).
 
 ---
 
@@ -57,7 +57,7 @@ Its size and position are determined by the parent.
 
 ## User-interface controls
 
-These are types of `Control` objects that are contained in windows, panels, and groups, and that provide specific kinds of display and user interaction. Control instances are created by passing the corresponding `type` keyword to the `add()` method of a Window or container; see [Control types and creation parameters](control-objects.md#control-types-and-creation-parameters).
+These are types of `Control` objects that are contained in windows, panels, and groups, and that provide specific kinds of display and user interaction. Control instances are created by passing the corresponding `type` keyword to the `add()` method of a Window or container; see [Control types and creation parameters](../control-objects#control-types-and-creation-parameters).
 
 These examples do not set bounds explicitly on creation, because it is often more useful to set a preferred size, then allow the layout manager to set the bounds; see [Automatic layout](../automatic-layout).
 
@@ -84,7 +84,7 @@ dlg.show();
 A button that displays an icon, with or without a text label. Like a text button, typically initiates an action in response to a click.
 
 - The `image` property identifies the icon image; see [Displaying images](#displaying-images).
-- The `title` or `text` property provides an optional label; the [titleLayout](control-objects.md#titlelayout) property places the label with respect to the image.
+- The `title` or `text` property provides an optional label; the [titleLayout](../control-objects#titlelayout) property places the label with respect to the image.
 - The `onClick` callback method provides behavior.
 
 ---
@@ -94,7 +94,7 @@ A button that displays an icon, with or without a text label. Like a text button
 Displays an iconic image.
 
 - The `image` property identifies the icon image; see [Displaying images](#displaying-images).
-- The `title` property provides an optional label; the [titleLayout](control-objects.md#titlelayout) property places the label with respect to the image.
+- The `title` property provides an optional label; the [titleLayout](../control-objects#titlelayout) property places the label with respect to the image.
 
 ---
 
@@ -255,7 +255,7 @@ These controls display lists of items, which are represented by `ListItem` objec
 - A `ListBox` control displays a list of choices. When you create the object, you specify whether it allows the user to select only one or multiple items. If a list contains more items than can be displayed in the available area, a scrollbar may appear that allows the user to scroll through all the list items. A list box can display items in multiple columns; see [Creating multi-column lists](#creating-multi-column-lists).
 - A `DropDownList` control displays a single visible item. When you click the control, a list drops down and allows you to select one of the other items in the list. Drop-down lists can have nonselectable separator items for visually separating groups of related items, as in a menu.
 - A `TreeView` control is similar to a ListBox, except that the items can have child items. Items with children can be expanded or collapsed to show or hide the child items. Child items can in turn contain children.
-- The `title` property provides an optional label; the [titleLayout](control-objects.md#titlelayout) property places the label with respect to the list.
+- The `title` property provides an optional label; the [titleLayout](../control-objects#titlelayout) property places the label with respect to the list.
 
 You can specify the choice items on creation of the list object, or afterward using the list object's `add()` method. You can remove items programmatically with the list object's `remove()` and `removeAll()` methods.
 
@@ -275,17 +275,17 @@ Items added to or inserted into any type of list control are `ListItem` objects,
 
 ### FlashPlayer
 
-Runs a Flash movie within a ScriptUI window. Its control's methods allow you to load a movie from an SWF file and control the playback. See [FlashPlayer control functions](control-objects.md#flashplayer-control-functions).
+Runs a Flash movie within a ScriptUI window. Its control's methods allow you to load a movie from an SWF file and control the playback. See [FlashPlayer control functions](../control-objects#flashplayer-control-functions).
 
-You can also use the control object to communicate with the Flash application, calling ActionScript methods, and making JavaScript methods defined in your Adobe application script available to the Flash ActionScript code. See [Calling ActionScript functions from a ScriptUI script](communicating-with-the-flash-application.md#calling-actionscript-functions-from-a-scriptui-script).
+You can also use the control object to communicate with the Flash application, calling ActionScript methods, and making JavaScript methods defined in your Adobe application script available to the Flash ActionScript code. See [Calling ActionScript functions from a ScriptUI script](../communicating-with-the-flash-application#calling-actionscript-functions-from-a-scriptui-script).
 
-The `title` property provides an optional label; the [titleLayout](control-objects.md#titlelayout) property places the label with respect to the player.
+The `title` property provides an optional label; the [titleLayout](../control-objects#titlelayout) property places the label with respect to the player.
 
 ---
 
 ## Displaying images
 
-You can display icon images in `Image` or `IconButton` controls, or display images in place of strings or in addition to strings as the selectable items in a `Listbox` or `DropdownList` control. In each case, the image is defined by setting the element's `image` property. You can set it to a [ScriptUIImage object](graphic-customization-objects.md#scriptuiimage-object); a named icon resource; a [File object](../../file-system-access/file-object); or the pathname of a file containing the iconic image, or of an alias or shortcut to that file (see [Specifying paths](../file-system-access/using-file-and-folder-objects.md#specifying-paths)).
+You can display icon images in `Image` or `IconButton` controls, or display images in place of strings or in addition to strings as the selectable items in a `Listbox` or `DropdownList` control. In each case, the image is defined by setting the element's `image` property. You can set it to a [ScriptUIImage object](../graphic-customization-objects#scriptuiimage-object); a named icon resource; a [File object](../../file-system-access/file-object); or the pathname of a file containing the iconic image, or of an alias or shortcut to that file (see [Specifying paths](../../file-system-access/using-file-and-folder-objects#specifying-paths)).
 
 The image data for an icon can be in Portable Network Graphics (PNG) format, or in Joint Photographic Experts Group (JPEG) format. See [http://www.libpng.org](http://www.libpng.org) and [http://www.jpeg.org/](http://www.jpeg.org/) for detailed information on these formats.
 
@@ -312,13 +312,13 @@ If a script does not explicitly set the `preferredSize` or `size` property of an
 
 ## Creating multi-column lists
 
-In list controls ([ListBox, DropDownList and TreeView](#listbox-dropdownlist-and-treeview)), a set of [ListItem](#listitem) objects represents the individual choices in the list. Each choice can be labeled with a localizable string, an image, or both, as specified by the [text](control-objects.md#text) and [image](control-objects.md#image) properties of the [ListItem](#listitem) (see [Displaying images](#displaying-images)).
+In list controls ([ListBox, DropDownList and TreeView](#listbox-dropdownlist-and-treeview)), a set of [ListItem](#listitem) objects represents the individual choices in the list. Each choice can be labeled with a localizable string, an image, or both, as specified by the [text](../control-objects#text) and [image](../control-objects#image) properties of the [ListItem](#listitem) (see [Displaying images](#displaying-images)).
 
-You can define a [ListBox](control-objects.md#listbox) to have multiple columns, by specifying the `numberOfColumns` creation parameter. By default, the number of columns is 1. If you specify multiple columns, you can also use the creation parameters to specify whether headers are shown, and the header text for each column.
+You can define a [ListBox](../control-objects#listbox) to have multiple columns, by specifying the `numberOfColumns` creation parameter. By default, the number of columns is 1. If you specify multiple columns, you can also use the creation parameters to specify whether headers are shown, and the header text for each column.
 
-If you specify more than one column, each [ListItem](#listitem) object that you add to the box specifies one selectable row. The `text` and `image` of the [ListItem]() object specifies the label in the first column, and the [subitems](control-objects.md#subitems) property specifies labels that appear in that row for the remaining columns.
+If you specify more than one column, each [ListItem](#listitem) object that you add to the box specifies one selectable row. The `text` and `image` of the [ListItem]() object specifies the label in the first column, and the [subitems](../control-objects#subitems) property specifies labels that appear in that row for the remaining columns.
 
-The [subitems](control-objects.md#subitems) value is an array, whose length is one less than the number of columns. That is, the first member, `ListItem.subitems[0]`, specifies the label in the second column. Each member specifies one label, as a JavaScript object with two properties:
+The [subitems](../control-objects#subitems) value is an array, whose length is one less than the number of columns. That is, the first member, `ListItem.subitems[0]`, specifies the label in the second column. Each member specifies one label, as a JavaScript object with two properties:
 
 ```javascript
 { text : displayString , image : imageFileReference }

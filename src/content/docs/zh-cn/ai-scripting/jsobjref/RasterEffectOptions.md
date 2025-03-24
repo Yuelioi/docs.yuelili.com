@@ -57,7 +57,7 @@ title: RasterEffectOptions
 
 #### 类型
 
-[RasterizationColorModel](scripting-constants.md#rasterizationcolormodel)
+[RasterizationColorModel](../scripting-constants#rasterizationcolormodel)
 
 ---
 

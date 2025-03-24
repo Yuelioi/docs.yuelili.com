@@ -15,7 +15,7 @@ title: 新功能
 
 导入器现在可以选择它们渲染的格式，这允许导入器根据启用的硬件和其他剪辑源设置（如 HDR）更改像素格式和质量。为了处理协商，请实现 `imSelectClipFrameDescriptor`。
 
-`imSourceVideoRec` 现在包含一个质量属性。[PPix Cache Suite](../universals/sweetpea-suites.md#ppix-cache-suite) 现在为版本 6，添加了 `AddFrameToCacheWithColorProfile2()` 和 `GetFrameFromCacheWithColorProfile2()`，它们与版本 5 中添加的相同，但增加了一个 PrRenderQuality 参数。
+`imSourceVideoRec` 现在包含一个质量属性。[PPix Cache Suite](../../universals/sweetpea-suites#ppix-cache-suite) 现在为版本 6，添加了 `AddFrameToCacheWithColorProfile2()` 和 `GetFrameFromCacheWithColorProfile2()`，它们与版本 5 中添加的相同，但增加了一个 PrRenderQuality 参数。
 
 `imFileInfoRec8.highMemUsage` 不再受支持。
 
@@ -61,7 +61,7 @@ Media Accelerator Suite 现在为版本 4。`FindPathInDatabaseAndValidateConten
 
 ## Premiere Pro CS5.5 中的新功能
 
-导入器现在可以在 After Effects 中运行时支持色彩管理。导入器应将 `imImageInfoRec.colorProfileSupport` 设置为 `imColorProfileSupport_Fixed`，然后使用新的 `imGetIndColorProfile` 选择器描述剪辑支持的颜色配置文件。在导入帧时，在 `imSourceVideoRec.selectedColorProfileName` 中指定颜色配置文件。[PPix Cache Suite](../universals/sweetpea-suites.md#ppix-cache-suite) 也已更新以区分颜色配置文件。
+导入器现在可以在 After Effects 中运行时支持色彩管理。导入器应将 `imImageInfoRec.colorProfileSupport` 设置为 `imColorProfileSupport_Fixed`，然后使用新的 `imGetIndColorProfile` 选择器描述剪辑支持的颜色配置文件。在导入帧时，在 `imSourceVideoRec.selectedColorProfileName` 中指定颜色配置文件。[PPix Cache Suite](../../universals/sweetpea-suites#ppix-cache-suite) 也已更新以区分颜色配置文件。
 
 新的 `canProvidePeakAudio` 标志允许导入器通过响应 `imGetPeakAudio` 提供峰值音频数据。
 
@@ -82,7 +82,7 @@ Media Accelerator Suite 现在为版本 4。`FindPathInDatabaseAndValidateConten
 
 如果剪辑因离线或已删除而不再可用，可以从 `imQueryContentState` 返回新的返回值 `inFileNotAvailable`。
 
-为了方便起见，当文件打开时，导入器可以告诉 Premiere Pro 为导入器的使用保留多少内存，而不是调用 [Memory Manager Suite](../universals/sweetpea-suites.md#memory-manager-suite) 中的 ReserveMemory。导入器应在 `imFileOpenRec8.outExtraMemoryUsage` 中传回此值。
+为了方便起见，当文件打开时，导入器可以告诉 Premiere Pro 为导入器的使用保留多少内存，而不是调用 [Memory Manager Suite](../../universals/sweetpea-suites#memory-manager-suite) 中的 ReserveMemory。导入器应在 `imFileOpenRec8.outExtraMemoryUsage` 中传回此值。
 
 提供了几个新的返回值，用于更详细的错误报告：
 

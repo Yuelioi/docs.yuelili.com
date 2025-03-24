@@ -35,7 +35,7 @@ title: 像素格式与色彩空间
 
 导出器和传输器应请求最接近输出格式的帧格式。在 CS5 中新增，PrPixelFormat_Any 可以用于导出器渲染请求。
 
-任何接受像素格式列表的渲染函数现在都可以仅使用两种格式调用——所需的 4:4:4:4 像素格式和 PrPixelFormat_Any。这允许主机在许多常见情况下避免帧转换和解压缩。最好的部分是插件不需要理解所有可能的像素格式来利用这一点。它可以使用 [图像处理套件](sweetpea-suites.md#image-processing-suite) 从任何格式的 PPix 复制/转换到单独的内存缓冲区，这可能是无论如何都需要进行的复制。
+任何接受像素格式列表的渲染函数现在都可以仅使用两种格式调用——所需的 4:4:4:4 像素格式和 PrPixelFormat_Any。这允许主机在许多常见情况下避免帧转换和解压缩。最好的部分是插件不需要理解所有可能的像素格式来利用这一点。它可以使用 [图像处理套件](../sweetpea-suites#image-processing-suite) 从任何格式的 PPix 复制/转换到单独的内存缓冲区，这可能是无论如何都需要进行的复制。
 
 发出请求后，Premiere 会分析用于生成单个渲染帧的所有导入器和效果的偏好格式，以及请求的格式列表，并选择每个片段的最佳格式。
 
@@ -53,7 +53,7 @@ ARGB 格式可以在 After Effects 渲染管道中本地使用，并且由不支
 
 ## 字节顺序
 
-BGRA、ARGB 和 VUYA 按从左到右的内存地址递增顺序写入。未压缩格式具有左下角原点，这意味着缓冲区中的第一个像素描述图像左下角的像素。压缩格式具有特定格式的原点。使用 [图像处理套件](sweetpea-suites.md#image-processing-suite) 中的调用来获取任何格式的详细信息。
+BGRA、ARGB 和 VUYA 按从左到右的内存地址递增顺序写入。未压缩格式具有左下角原点，这意味着缓冲区中的第一个像素描述图像左下角的像素。压缩格式具有特定格式的原点。使用 [图像处理套件](../sweetpea-suites#image-processing-suite) 中的调用来获取任何格式的详细信息。
 
 8 位和 16 位 BGRA 格式不包含超白或超黑。
 
@@ -168,7 +168,7 @@ BGRA、ARGB 和 VUYA 按从左到右的内存地址递增顺序写入。未压�
 
 ## 自定义像素格式
 
-从CS4开始，支持自定义像素格式。插件可以定义一个像素格式，该格式可以通过我们管道的各个方面，但对内置渲染器保持完全不透明。请在[像素格式套件](sweetpea-suites.md#pixel-format-suite)中使用宏`MAKE_THIRD_PARTY_CUSTOM_PIXEL_FORMAT_FOURCC`。请使用唯一的名称以避免冲突。
+从CS4开始，支持自定义像素格式。插件可以定义一个像素格式，该格式可以通过我们管道的各个方面，但对内置渲染器保持完全不透明。请在[像素格式套件](../sweetpea-suites#pixel-format-suite)中使用宏`MAKE_THIRD_PARTY_CUSTOM_PIXEL_FORMAT_FOURCC`。请使用唯一的名称以避免冲突。
 
 该格式不需要以任何方式注册。它们可以像当前像素格式一样使用，尽管在许多情况下它们会被忽略。
 
@@ -178,15 +178,15 @@ BGRA、ARGB 和 VUYA 按从左到右的内存地址递增顺序写入。未压�
 导入器还必须支持非自定义像素格式，以便在使用内置渲染器的情况下使用，该渲染器不会准备处理由第三方添加的不透明像素格式。
 :::
 
-在导入器中，使用[PPix Creator 2套件](sweetpea-suites.md#ppix-creator-2-suite)中的新`CreateCustomPPix`调用，并指定自定义像素格式和内存缓冲区大小，调用将返回请求格式的PPix。然后可以像其他PPix一样从导入器返回这些PPix。PPix的内存将由MediaCore分配，并且必须是平面数据结构，因为它们需要在进程之间复制。
+在导入器中，使用[PPix Creator 2套件](../sweetpea-suites#ppix-creator-2-suite)中的新`CreateCustomPPix`调用，并指定自定义像素格式和内存缓冲区大小，调用将返回请求格式的PPix。然后可以像其他PPix一样从导入器返回这些PPix。PPix的内存将由MediaCore分配，并且必须是平面数据结构，因为它们需要在进程之间复制。
 
 然而，由于数据本身是完全不透明的，它可以很容易地引用另一个像素缓冲区，只要引用可以被复制。例如，缓冲区可以是一个恒定的16字节，包含一个GUID，该GUID可用于在另一个进程中按名称访问内存缓冲区。
 
-要从播放器查询可用的自定义像素格式，请使用[剪辑渲染套件](sweetpea-suites.md#clip-render-suite)中的`GetNumCustomPixelFormats`和`GetCustomPixelFormat`调用。自定义像素格式不会通过常规调用返回支持的帧格式，主要是为了防止它们被使用。
+要从播放器查询可用的自定义像素格式，请使用[剪辑渲染套件](../sweetpea-suites#clip-render-suite)中的`GetNumCustomPixelFormats`和`GetCustomPixelFormat`调用。自定义像素格式不会通过常规调用返回支持的帧格式，主要是为了防止它们被使用。
 
-其他[剪辑渲染套件](sweetpea-suites.md#clip-render-suite)函数将接受自定义像素格式的请求，并像其他格式一样返回这些自定义PPix。
+其他[剪辑渲染套件](../sweetpea-suites#clip-render-suite)函数将接受自定义像素格式的请求，并像其他格式一样返回这些自定义PPix。
 
-使用[剪辑渲染套件](sweetpea-suites.md#clip-render-suite)，第三方播放器可以直接从匹配的导入器访问这些自定义PPix。
+使用[剪辑渲染套件](../sweetpea-suites#clip-render-suite)，第三方播放器可以直接从匹配的导入器访问这些自定义PPix。
 
 ### 智能渲染
 
@@ -194,10 +194,10 @@ BGRA、ARGB 和 VUYA 按从左到右的内存地址递增顺序写入。未压�
 
 实现这一点的方法是在导入器、导出器和通常的渲染器之间传递自定义PPix。
 
-在导出单个剪辑的罕见情况下，使用导出器中的[剪辑渲染套件](sweetpea-suites.md#clip-render-suite)从导入器请求自定义PPix就足够了。但在更常见的导出序列的情况下，需要支持自定义像素格式的渲染器。
+在导出单个剪辑的罕见情况下，使用导出器中的[剪辑渲染套件](../sweetpea-suites#clip-render-suite)从导入器请求自定义PPix就足够了。但在更常见的导出序列的情况下，需要支持自定义像素格式的渲染器。
 
 当在Media Encoder中运行的导出器解析序列中的片段时，它只有一个非常高级别的视图。它将整个序列视为一个剪辑（实际上是一个使用Dynamic Link打开到PProHeadless进程的临时项目文件），并将任何可选的裁剪或滤镜视为应用的效果。
 
-因此，当导出器解析那个简单的高级序列时，如果没有效果，它应该使用MediaNode的ClipID与[剪辑渲染套件](sweetpea-suites.md#clip-render-suite)直接从PProHeadless进程获取帧。在PProHeadless进程中，渲染器可以介入并解析真实的序列。
+因此，当导出器解析那个简单的高级序列时，如果没有效果，它应该使用MediaNode的ClipID与[剪辑渲染套件](../sweetpea-suites#clip-render-suite)直接从PProHeadless进程获取帧。在PProHeadless进程中，渲染器可以介入并解析真实的序列。
 
-它可以使用[剪辑渲染套件](sweetpea-suites.md#clip-render-suite)直接从导入器获取自定义像素格式的帧，然后将自定义PPix设置为渲染结果。然后，这个自定义PPix就可以以原始的、压缩的PPix形式提供给导出器。
+它可以使用[剪辑渲染套件](../sweetpea-suites#clip-render-suite)直接从导入器获取自定义像素格式的帧，然后将自定义PPix设置为渲染结果。然后，这个自定义PPix就可以以原始的、压缩的PPix形式提供给导出器。

@@ -114,7 +114,7 @@ Premiere 将根据第一次调用 *imGetPrefs8* 时返回的 prefsLength 分配�
 
 从单个文件导入媒体的基本导入器可以依赖主机提供基本的文件处理。如果剪辑有子文件或自定义文件系统，导入器可以提供自己的文件处理。在 `imInit` 期间将 canOpen、canSave 和 canDelete 设置为 true，并响应 `imOpenFile8`、*imQuietFile*、*imCloseFile*、*imSaveFile8*、*imDeleteFile8*。
 
-使用 [异步文件读取器套件](suites.md#async-file-reader-suite) 进行跨平台文件操作。
+使用 [异步文件读取器套件](../suites#async-file-reader-suite) 进行跨平台文件操作。
 
 ### 静默与关闭文件
 
@@ -224,7 +224,7 @@ Premiere Pro 中的项目管理器允许用户归档项目、修剪未使用的�
 
 如果每个剪辑有多个源文件（例如音频通道在单独的文件中），导入器还应设置 canCopy 并支持 *imCopyFile*。否则，项目管理器将不知道其他源文件。
 
-外部文件，例如纹理、徽标等，由导入器实例使用但未在项目面板中显示为素材的文件，应在 *imGetInfo8* 或 *imGetPrefs8* 期间使用 [文件注册套件](../universals/sweetpea-suites.md#file-registration-suite) 注册到 Premiere Pro。注册的文件将在使用项目管理器修剪或复制项目时被考虑在内。
+外部文件，例如纹理、徽标等，由导入器实例使用但未在项目面板中显示为素材的文件，应在 *imGetInfo8* 或 *imGetPrefs8* 期间使用 [文件注册套件](../../universals/sweetpea-suites#file-registration-suite) 注册到 Premiere Pro。注册的文件将在使用项目管理器修剪或复制项目时被考虑在内。
 
 ---
 

@@ -46,7 +46,7 @@ The Edit > Bookmarks menu allows you to set and clear navigation points in your 
 
 When you navigate to a bookmark in a collapsed section of code, that section automatically opens.
 
-Bookmarks are marked with a blue, right-pointing arrow at the left of the line (to the right of the line number if it is shown). This is the same place where a breakpoint is marked with a dot (see [Setting breakpoints](debugging-in-the-toolkit.md#setting-breakpoints)). If you have both a breakpoint and a bookmark set in the same line, the blue arrow is superimposed on the breakpoint dot.
+Bookmarks are marked with a blue, right-pointing arrow at the left of the line (to the right of the line number if it is shown). This is the same place where a breakpoint is marked with a dot (see [Setting breakpoints](../debugging-in-the-toolkit#setting-breakpoints)). If you have both a breakpoint and a bookmark set in the same line, the blue arrow is superimposed on the breakpoint dot.
 
 ![Bookmarks](./_static/02_the-extendscript-toolkit_the-script-editor_navigation-aids_bookmarks.png)
 
@@ -179,7 +179,7 @@ The Find and Replace panel allows you to search through multiple documents for t
 - The current document, or the current selection in the current document
 - All open documents
 - All scripts made public by the current target application
-- Folders that you have defined as favorite locations; see [The Scripts panel and favorite script locations](selecting-scripts.md#the-scripts-panel-and-favorite-script-locations).
+- Folders that you have defined as favorite locations; see [The Scripts panel and favorite script locations](../selecting-scripts#the-scripts-panel-and-favorite-script-locations).
 
 ![Search](./_static/02_the-extendscript-toolkit_the-script-editor_searching-in-text_search.jpg)
 

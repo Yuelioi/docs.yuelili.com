@@ -11,7 +11,7 @@ title: 文档
 
 默认文档设置——那些以“default”开头的属性——是影响当前文档的全局设置。请确保仅在文档打开时修改这些默认属性。请注意，如果在创建新对象之前将默认属性设置为所需值，则可以简化脚本，无需指定诸如 `fillColor` 和 `stroked` 等具有默认属性的特定属性。
 
-文档的颜色空间、高度和宽度只能在创建文档时设置。您无法在现有文档中修改这些属性。有关如何处理文档颜色空间的更多信息，请参阅 [Application.open()](Application.md#applicationopen)。
+文档的颜色空间、高度和宽度只能在创建文档时设置。您无法在现有文档中修改这些属性。有关如何处理文档颜色空间的更多信息，请参阅 [Application.open()](../Application#applicationopen)。
 
 ---
 
@@ -139,7 +139,7 @@ title: 文档
 
 #### 类型
 
-[CropOptions](scripting-constants.md#cropoptions)
+[CropOptions](../scripting-constants#cropoptions)
 
 ---
 
@@ -209,7 +209,7 @@ title: 文档
 
 #### 类型
 
-[StrokeCap](scripting-constants.md#strokecap)
+[StrokeCap](../scripting-constants#strokecap)
 
 ---
 
@@ -279,7 +279,7 @@ title: 文档
 
 #### 类型
 
-[StrokeJoin](scripting-constants.md#strokejoin)
+[StrokeJoin](../scripting-constants#strokejoin)
 
 ---
 
@@ -339,7 +339,7 @@ title: 文档
 
 #### 类型
 
-[DocumentColorSpace](scripting-constants.md#documentcolorspace)
+[DocumentColorSpace](../scripting-constants#documentcolorspace)
 
 ---
 
@@ -759,7 +759,7 @@ title: 文档
 
 #### 类型
 
-[RulerUnits](scripting-constants.md#rulerunits); 只读。
+[RulerUnits](../scripting-constants#rulerunits); 只读。
 
 ---
 
@@ -1101,7 +1101,7 @@ title: 文档
 
 |   参数    |                                    类型                                     |               描述                |
 | --------- | --------------------------------------------------------------------------- | --------------------------------- |
-| `layoutStyle` | [DocumentLayoutStyle](scripting-constants.md#documentlayoutstyle), 可选 | 用于排列文档的布局样式 |
+| `layoutStyle` | [DocumentLayoutStyle](../scripting-constants#documentlayoutstyle), 可选 | 用于排列文档的布局样式 |
 
 #### 返回值
 
@@ -1123,7 +1123,7 @@ title: 文档
 
 |   参数    |                       类型                        |        描述         |
 | --------- | ------------------------------------------------- | ------------------- |
-| `saveOptions` | [SaveOptions](scripting-constants.md#saveoptions) | 关闭时的保存选项 |
+| `saveOptions` | [SaveOptions](../scripting-constants#saveoptions) | 关闭时的保存选项 |
 
 #### 返回值
 
@@ -1158,8 +1158,8 @@ title: 文档
 |   参数    |                            类型                             |         描述          |
 | --------- | ----------------------------------------------------------- | --------------------- |
 | `coordinate`  | 点                                                       | 要转换的点              |
-| `source`      | [CoordinateSystem](scripting-constants.md#coordinatesystem) | 源坐标系      |
-| `destination` | [CoordinateSystem](scripting-constants.md#coordinatesystem) | 目标坐标系 |
+| `source`      | [CoordinateSystem](../scripting-constants#coordinatesystem) | 源坐标系      |
+| `destination` | [CoordinateSystem](../scripting-constants#coordinatesystem) | 目标坐标系 |
 
 #### 返回值
 
@@ -1180,7 +1180,7 @@ title: 文档
 |    参数     |                                         类型                                          |    描述     |
 | ----------- | ------------------------------------------------------------------------------------ | ----------- |
 | `exportFile`   | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要保存的文件       |
-| `exportFormat` | [ExportType](scripting-constants.md#exporttype)                                      | 导出文件格式 |
+| `exportFormat` | [ExportType](../scripting-constants#exporttype)                                      | 导出文件格式 |
 | `options`      | [Variable](.././Variable), 可选                                                  | 待办事项               |
 
 #### 返回值
@@ -1323,7 +1323,7 @@ title: 文档
 
 #### 返回值
 
-[PerspectiveGridPlaneType](scripting-constants.md#perspectivegridplanetype)
+[PerspectiveGridPlaneType](../scripting-constants#perspectivegridplanetype)
 
 ---
 
@@ -1531,7 +1531,7 @@ title: 文档
 
 |       参数        |                                       类型                                        |                描述                |
 | ----------------- | --------------------------------------------------------------------------------- | ---------------------------------- |
-| `artboardLayout`  | [DocumentArtboardLayout](scripting-constants.md#documentartboardlayout)，可选     | 画板布局                           |
+| `artboardLayout`  | [DocumentArtboardLayout](../scripting-constants#documentartboardlayout)，可选     | 画板布局                           |
 | `artboardRowsOrCols` | 整数，可选                                                                 | 行数或列数                         |
 | `artboardSpacing` | 数字，可选                                                                  | 间距的像素数                       |
 | `artboardMoveArtwork` | 布尔值，可选                                                              | 是否将图稿随画板一起移动           |
@@ -1569,7 +1569,7 @@ title: 文档
 | 参数      |                                         类型                                         |         描述         |
 | --------- | ------------------------------------------------------------------------------------ | -------------------- |
 | `saveIn`  | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要保存文档的文件     |
-| `options` | [SaveOptions](scripting-constants.md#saveoptions)，可选                              | 保存选项             |
+| `options` | [SaveOptions](../scripting-constants#saveoptions)，可选                              | 保存选项             |
 
 #### 返回值
 
@@ -1623,7 +1623,7 @@ title: 文档
 
 | 参数        |                                    类型                                     |   描述   |
 | ----------- | --------------------------------------------------------------------------- | -------- |
-| `gridPlane` | [PerspectiveGridPlaneType](scripting-constants.md#perspectivegridplanetype) | 网格平面类型 |
+| `gridPlane` | [PerspectiveGridPlaneType](../scripting-constants#perspectivegridplanetype) | 网格平面类型 |
 
 #### 返回值
 
@@ -1643,7 +1643,7 @@ title: 文档
 
 | 参数         |                               类型                                |      描述      |
 | ------------ | ----------------------------------------------------------------- | -------------- |
-| `gridType`   | [PerspectiveGridType](scripting-constants.md#perspectivegridtype) | 网格类型       |
+| `gridType`   | [PerspectiveGridType](../scripting-constants#perspectivegridtype) | 网格类型       |
 | `presetName` | 字符串                                                            | 要选择的预设名称 |
 
 #### 返回值

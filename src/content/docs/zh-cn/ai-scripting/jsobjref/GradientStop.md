@@ -9,7 +9,7 @@ title: GradientStop
 
 渐变停止点定义，表示文档中定义的特定渐变上的一个点。每个渐变停止点指定包含渐变中的颜色变化。
 
-有关示例，请参阅[更改渐变停止点颜色](GradientColor.md#changing-a-gradient-stop-color)。
+有关示例，请参阅[更改渐变停止点颜色](../GradientColor#changing-a-gradient-stop-color)。
 
 ---
 

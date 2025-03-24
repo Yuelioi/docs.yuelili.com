@@ -7,7 +7,7 @@ title: IllustratorSaveOptions
 
 #### Description
 
-Options for saving a document as an Illustrator file, used with the [Document.saveAs()](Document.md#documentsaveas) method. All properties are optional.
+Options for saving a document as an Illustrator file, used with the [Document.saveAs()](../document#documentsaveas) method. All properties are optional.
 
 ---
 
@@ -41,7 +41,7 @@ Default: `Compatibility.ILLUSTRATOR19`.
 
 #### Type
 
-[Compatibility](scripting-constants.md#compatibility)
+[Compatibility](../scripting-constants#compatibility)
 
 ---
 
@@ -125,7 +125,7 @@ Default: `OutputFlattening.PRESERVEAPPEARANCE`.
 
 #### Type
 
-[OutputFlattening](scripting-constants.md#outputflattening)
+[OutputFlattening](../scripting-constants#outputflattening)
 
 ---
 

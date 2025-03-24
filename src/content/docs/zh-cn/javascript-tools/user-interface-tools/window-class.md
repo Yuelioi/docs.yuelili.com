@@ -16,7 +16,7 @@ Window 类定义了这些静态属性和函数。使用 `new Window()` 创建的
 #### 描述
 
 :::danger
-已弃用。请使用 [ScriptUI.frameworkName](./scriptui-class.md#scriptuiframeworkname) 代替。
+已弃用。请使用 [ScriptUI.frameworkName](../scriptui-class#scriptuiframeworkname) 代替。
 :::
 
 #### 类型
@@ -32,7 +32,7 @@ String
 #### 描述
 
 :::danger
-已弃用。请使用 [ScriptUI.version](./scriptui-class.md#scriptuiversion) 代替。
+已弃用。请使用 [ScriptUI.version](../scriptui-class#scriptuiversion) 代替。
 :::
 
 #### 类型
@@ -114,7 +114,7 @@ Boolean。如果用户点击“是”则返回 `true`，如果用户点击“否
 |   参数    |  类型  |                                                                                              描述                                                                                              |
 | -------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `resourceName` | String | 当前应用程序中可供 JavaScript 使用的预定义资源的名称。                                                                                                                 |
-| `type`         | String | 可选。窗口类型（参见 [Window 对象构造函数](window-object.md#window-object-constructor)），如果存在多个具有相同标题的窗口时使用。可以为 `null` 或空字符串。 |
+| `type`         | String | 可选。窗口类型（参见 [Window 对象构造函数](../window-object#window-object-constructor)），如果存在多个具有相同标题的窗口时使用。可以为 `null` 或空字符串。 |
 | `title`        | String | 窗口标题。                                                                                                                                                                                     |
 
 #### 返回

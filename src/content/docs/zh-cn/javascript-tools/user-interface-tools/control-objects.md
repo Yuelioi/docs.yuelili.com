@@ -24,7 +24,7 @@ title: 控制对象
 |    参数     |                         类型                         |                                                                                                                                    描述                                                                                                                                     |
 | ---------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `type`           | String                                               | 控件类型。参见 [控件类型和创建参数](#control-types-and-creation-parameters)。                                                                                                                                                                             |
-| `bounds`         | [Bounds 对象](size-and-location-objects.md#bounds) | 可选。描述新控件或容器的大小和位置的边界规范，相对于其父元素。如果提供，此值将创建一个新的 [Bounds](size-and-location-objects.md#bounds) 对象，并将其分配给新对象的 `bounds` 属性。 |
+| `bounds`         | [Bounds 对象](../size-and-location-objects#bounds) | 可选。描述新控件或容器的大小和位置的边界规范，相对于其父元素。如果提供，此值将创建一个新的 [Bounds](../size-and-location-objects#bounds) 对象，并将其分配给新对象的 `bounds` 属性。 |
 | `text`           | String                                               | 可选。控件中显示的初始文本，作为标题、标签或内容，具体取决于控件类型。如果提供，此值将分配给新对象的 `text` 属性。                                                                                    |
 | `creation_props` | Object                                               | 可选。此对象的属性指定创建参数，这些参数特定于每种对象类型。参见 [控件类型和创建参数](#control-types-and-creation-parameters)。                                                                                  |
 
@@ -54,7 +54,7 @@ title: 控制对象
 
 |       参数       |                         类型                         |                          描述                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`              | [Bounds 对象](size-and-location-objects.md#bounds) | 可选。控件的位置和大小。                     |
+| `bounds`              | [Bounds 对象](../size-and-location-objects#bounds) | 可选。控件的位置和大小。                     |
 | `text`                | String                                               | 可选。控件中显示的文本。                   |
 | `creation_properties` | Object                                               | 可选。包含以下任何属性的对象。 |
 
@@ -62,7 +62,7 @@ title: 控制对象
 
 | 属性 |  类型  |                                                                                                                        描述                                                                                                                        |
 | -------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`   | String | 控件的唯一名称。对于模态对话框，特殊名称 "ok" 使此控件成为 [defaultElement](window-object.md#defaultelement)，特殊名称 "cancel" 使此控件成为父对话框的 [cancelElement](window-object.md#cancelelement)。 |
+| `name`   | String | 控件的唯一名称。对于模态对话框，特殊名称 "ok" 使此控件成为 [defaultElement](../window-object#defaultelement)，特殊名称 "cancel" 使此控件成为父对话框的 [cancelElement](../window-object#cancelelement)。 |
 
 #### 示例
 
@@ -86,7 +86,7 @@ w.add("button"[, bounds, text, {creation_properties}]);
 
 |       参数       |                         类型                         |                          描述                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`              | [Bounds 对象](size-and-location-objects.md#bounds) | 可选。控件的位置和大小。                     |
+| `bounds`              | [Bounds 对象](../size-and-location-objects#bounds) | 可选。控件的位置和大小。                     |
 | `text`                | String                                               | 可选。控件中显示的文本。                   |
 | `creation_properties` | Object                                               | 可选。包含以下任何属性的对象。 |
 
@@ -118,7 +118,7 @@ w.add("checkbox"[, bounds, text, {creation_properties}]);
 
 |       参数       |                         类型                         |                                                                                                      描述                                                                                                       |
 | --------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `bounds`              | [Bounds 对象](size-and-location-objects.md#bounds) | 可选。控件的位置和大小。                                                                                                                                                                             |
+| `bounds`              | [Bounds 对象](../size-and-location-objects#bounds) | 可选。控件的位置和大小。                                                                                                                                                                             |
 | `items`               | Array of strings                                     | 可选。提供此参数或 `creation_properties` 参数，不要同时提供两者。每个列表项的文本。为每个项目创建一个 `ListItem` 对象。文本字符串为 `"-"` 的项目将创建一个分隔符项目。 |
 | `creation_properties` | Object                                               | 可选。包含以下任何属性的对象。                                                                                                                                                         |
 
@@ -161,7 +161,7 @@ w.add( "dropdownlist", bounds[, items, {creation_properties}] );
 
 |       参数       |                         类型                         |                          描述                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`              | [Bounds 对象](size-and-location-objects.md#bounds) | 可选。控件的位置和大小。                     |
+| `bounds`              | [Bounds 对象](../size-and-location-objects#bounds) | 可选。控件的位置和大小。                     |
 | `text`                | String                                               | 可选。控件中显示的文本。                   |
 | `minValue`            | Number                                               | 可选。允许输入的最小值。      |
 | `maxValue`            | Number                                               | 可选。允许输入的最大值。      |
@@ -201,7 +201,7 @@ w.add("editnumber"[, bounds, text, minValue, maxValue, {creation_properties}]);
 
 |       参数       |                         类型                         |                          描述                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`              | [Bounds 对象](size-and-location-objects.md#bounds) | 可选。控件的位置和大小。                     |
+| `bounds`              | [Bounds 对象](../size-and-location-objects#bounds) | 可选。控件的位置和大小。                     |
 | `text`                | String                                               | 可选。控件中显示的文本。                   |
 | `creation_properties` | Object                                               | 可选。包含以下任何属性的对象。 |
 
@@ -243,7 +243,7 @@ ScriptUI FlashPlayer 元素在 Adobe 应用程序中运行 Flash 应用程序。
 
 |       参数       |                             类型                              |                                   描述                                    |
 | --------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `bounds`              | [Bounds 对象](size-and-location-objects.md#bounds)          | 可选。控件的位置和大小。                                       |
+| `bounds`              | [Bounds 对象](../size-and-location-objects#bounds)          | 可选。控件的位置和大小。                                       |
 | `moveToLoad`          | String 或 [File 对象](../../file-system-access/file-object) | 可选。要加载到播放器中的 SWF 文件的路径或 URL 字符串或文件。 |
 | `creation_properties` | Object                                                        | 可选。包含以下任何属性的对象。                   |
 
@@ -269,7 +269,7 @@ w.add("flashplayer"[, bounds, movieToLoad, {creation_properties}]);
 
 #### 描述
 
-其他控件的容器。容器具有控制子元素的附加属性；参见 [容器属性](window-object.md#container-attributes)。
+其他控件的容器。容器具有控制子元素的附加属性；参见 [容器属性](../window-object#container-attributes)。
 
 隐藏组会隐藏其所有子元素。使其可见会使那些未单独隐藏的子元素可见。
 
@@ -277,7 +277,7 @@ w.add("flashplayer"[, bounds, movieToLoad, {creation_properties}]);
 
 |       参数       |                         类型                         |                          描述                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`              | [Bounds 对象](size-and-location-objects.md#bounds) | 可选。控件的位置和大小。                     |
+| `bounds`              | [Bounds 对象](../size-and-location-objects#bounds) | 可选。控件的位置和大小。                     |
 | `creation_properties` | Object                                               | 可选。包含以下任何属性的对象。 |
 
 #### 创建属性
@@ -308,7 +308,7 @@ w.add("group"[, bounds, {creation_properties}]);
 
 |       参数       |                                       类型                                       |                                                                             描述                                                                              |
 | --------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `bounds`              | [Bounds 对象](size-and-location-objects.md#bounds)                             | 可选。控件的位置和大小。                                                                                                                           |
+| `bounds`              | [Bounds 对象](../size-and-location-objects#bounds)                             | 可选。控件的位置和大小。                                                                                                                           |
 | `icon`                | Named resource, pathname, 或 [File 对象](../../file-system-access/file-object) | 可选。按钮控件中显示的图标或图标系列的命名资源，或图像文件的路径名或文件。图像必须为 PNG 格式。 |
 | `creation_properties` | Object                                                                           | 可选。包含以下任何属性的对象。                                                                                                       |
 

@@ -155,7 +155,7 @@ Floating-point value, in the range `[-10800.0..10800.0]` (minus or plus three ho
 `true` if the value of the name attribute has been set explicitly, rather than automatically from the source.
 
 :::tip
-This always returns `true` for layers that do not have a [AVLayer.source](avlayer.md#avlayersource)
+This always returns `true` for layers that do not have a [AVLayer.source](../avlayer#avlayersource)
 :::
 
 
@@ -204,7 +204,7 @@ Boolean; read/write.
 
 #### Description
 
-A [PropertyGroup object](../../property/propertygroup) that contains all a layer's markers. Layer marker scripting has the same functionality as [Comp markers](../item/compitem.md#compitemmarkerproperty).
+A [PropertyGroup object](../../property/propertygroup) that contains all a layer's markers. Layer marker scripting has the same functionality as [Comp markers](../../item/compitem#compitemmarkerproperty).
 
 See [MarkerValue object](../../other/markervalue).
 

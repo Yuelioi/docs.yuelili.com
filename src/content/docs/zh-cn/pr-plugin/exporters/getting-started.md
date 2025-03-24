@@ -15,15 +15,15 @@ title: 入门指南
 
 ## 添加参数
 
-从 CS6 开始，[Export Standard Param Suite](suites.md#export-standard-param-suite) 提供了一种添加几组基本参数的方式，无论是视频、音频、静态序列等。除了标准参数外，还可以使用 [Export Param Suite](suites.md#export-param-suite) 添加自定义参数。
+从 CS6 开始，[Export Standard Param Suite](../suites#export-standard-param-suite) 提供了一种添加几组基本参数的方式，无论是视频、音频、静态序列等。除了标准参数外，还可以使用 [Export Param Suite](../suites#export-param-suite) 添加自定义参数。
 
-首先在 `exSelGenerateDefaultParams` 期间注册参数。然后在 `exSelPostProcessParams` 期间提供本地化字符串和参数的最小/最大值。当导出器收到 `exSelExport` 进行导出时，使用 [Export Param Suite](suites.md#export-param-suite) 获取用户指定的参数值。
+首先在 `exSelGenerateDefaultParams` 期间注册参数。然后在 `exSelPostProcessParams` 期间提供本地化字符串和参数的最小/最大值。当导出器收到 `exSelExport` 进行导出时，使用 [Export Param Suite](../suites#export-param-suite) 获取用户指定的参数值。
 
 ---
 
 ## 动态更新参数
 
-参数可以根据用户与任何相关参数的交互动态更新。更新的时机是在 `exSelValidateParamChanged` 选择器中。使用 [Export Param Suite](suites.md#export-param-suite) 中的 ChangeParam 进行更改。然后，在返回之前将 `exParamChangedRec.rebuildAllParams` 设置为 true。如果不设置该标志，参数在更改后可能会显示顺序错乱。
+参数可以根据用户与任何相关参数的交互动态更新。更新的时机是在 `exSelValidateParamChanged` 选择器中。使用 [Export Param Suite](../suites#export-param-suite) 中的 ChangeParam 进行更改。然后，在返回之前将 `exParamChangedRec.rebuildAllParams` 设置为 true。如果不设置该标志，参数在更改后可能会显示顺序错乱。
 
 ---
 
@@ -41,13 +41,13 @@ title: 入门指南
 
 ### 推送模型
 
-使用推送模型，导出器主机可以简单地将帧推送到导出器指定的线程安全回调中。使用 [Exporter Utility Suite](suites.md#exporter-utility-suite) 中的 DoMultiPassExportLoop 注册回调。
+使用推送模型，导出器主机可以简单地将帧推送到导出器指定的线程安全回调中。使用 [Exporter Utility Suite](../suites#exporter-utility-suite) 中的 DoMultiPassExportLoop 注册回调。
 
 与拉取模型相比，这将减少以前所需的渲染循环管理代码。对于尚未优化多线程渲染的导出器，它还应该带来显著的性能提升。
 
 ### 拉取模型
 
-使用拉取模型获取视频和音频数据涉及向主机请求此数据。使用 [Sequence Render Suite](suites.md#sequence-render-suite) 获取单个视频帧，并使用 [Sequence Audio Suite](suites.md#sequence-audio-suite) 获取音频样本的缓冲区。
+使用拉取模型获取视频和音频数据涉及向主机请求此数据。使用 [Sequence Render Suite](../suites#sequence-render-suite) 获取单个视频帧，并使用 [Sequence Audio Suite](../suites#sequence-audio-suite) 获取音频样本的缓冲区。
 
 视频帧可以同步或异步请求。异步方法可以带来更好的性能，但导出器需要提供其异步渲染循环。
 
@@ -55,7 +55,7 @@ title: 入门指南
 
 ## 处理用户暂停或取消（仅限拉取模型）
 
-推送模型导出不需要任何特殊代码来处理用户的暂停或取消。对于拉取模型导出，检查用户是否暂停或取消导出的方法是调用 [Export Progress Suite](suites.md#export-progress-suite) 中的 UpdateProgressPercent，并检查返回值。如果返回值为 `suiteError_ExporterSuspended`，则用户按下了暂停按钮，该按钮仅在 Media Encoder UI 中可用。如果返回值为 `exportReturn_Abort`，则导出已被用户取消。
+推送模型导出不需要任何特殊代码来处理用户的暂停或取消。对于拉取模型导出，检查用户是否暂停或取消导出的方法是调用 [Export Progress Suite](../suites#export-progress-suite) 中的 UpdateProgressPercent，并检查返回值。如果返回值为 `suiteError_ExporterSuspended`，则用户按下了暂停按钮，该按钮仅在 Media Encoder UI 中可用。如果返回值为 `exportReturn_Abort`，则导出已被用户取消。
 
 如果 UpdateProgressPercent 返回 `suiteError_ExporterSuspended`，则导出器应接下来调用 `WaitForResume`，该调用将阻塞，直到用户取消暂停导出。
 
@@ -121,7 +121,7 @@ title: 入门指南
 
 ### 增加参数版本
 
-如果客户已经在使用旧版本的导出器，您需要使用参数版本控制。在 `exSelGenerateDefaultParams` 期间，您应该调用 [Export Param Suite](suites.md#export-param-suite) 中的 SetParamsVersion() 并增加版本号。
+如果客户已经在使用旧版本的导出器，您需要使用参数版本控制。在 `exSelGenerateDefaultParams` 期间，您应该调用 [Export Param Suite](../suites#export-param-suite) 中的 SetParamsVersion() 并增加版本号。
 
 之后，使用新的参数集创建新的预设和序列编码器预设（如果需要）。确保您的安装程序删除旧的预设并安装新的预设。
 
@@ -150,7 +150,7 @@ title: 入门指南
 
 ## 隐藏字幕
 
-从 CC 开始，导出设置包括一个新的字幕选项卡，用于隐藏字幕导出。对于所有格式，可以导出一个包含字幕的辅助文件。此外，导出器可以选择将隐藏字幕直接嵌入输出文件中。首先，导出器必须将 exExporterInfoRec.canEmbedCaptions 设置为 true。这将添加从字幕选项卡中的导出选项下拉菜单中将字幕嵌入输出文件的选项。如果在导出期间选择了此选项，exDoExportRec.embedCaptions 将为 true。导出器应使用 [Captioning Suite](../universals/sweetpea-suites.md#captioning-suite) 检索字幕。
+从 CC 开始，导出设置包括一个新的字幕选项卡，用于隐藏字幕导出。对于所有格式，可以导出一个包含字幕的辅助文件。此外，导出器可以选择将隐藏字幕直接嵌入输出文件中。首先，导出器必须将 exExporterInfoRec.canEmbedCaptions 设置为 true。这将添加从字幕选项卡中的导出选项下拉菜单中将字幕嵌入输出文件的选项。如果在导出期间选择了此选项，exDoExportRec.embedCaptions 将为 true。导出器应使用 [Captioning Suite](../../universals/sweetpea-suites#captioning-suite) 检索字幕。
 
 ---
 
@@ -201,7 +201,7 @@ title: 入门指南
 目前，立体导出器必须使用旧的“拉取”模型，并且仅在直接从 Premiere Pro 导出时接收立体视频。换句话说，当导出排队在 Adobe Media Encoder 中运行时，它们不会获得立体视频。
 :::
 
-要获取左右眼的渲染帧，请使用 [Video Segment Suite](../universals/sweetpea-suites.md#video-segment-suite) 请求左右剪辑列表，并从两者渲染帧。导出器可以通过查看片段哈希来判断两者中的片段是否相同（意味着它们没有任何立体内容），并且您可以通过查看请求标识符来判断两帧是否相同。
+要获取左右眼的渲染帧，请使用 [Video Segment Suite](../../universals/sweetpea-suites#video-segment-suite) 请求左右剪辑列表，并从两者渲染帧。导出器可以通过查看片段哈希来判断两者中的片段是否相同（意味着它们没有任何立体内容），并且您可以通过查看请求标识符来判断两帧是否相同。
 
 ---
 
@@ -209,7 +209,7 @@ title: 入门指南
 
 导出器可用的时间线片段并不总是完全描述正在导出的序列。为了始终获得完全描述序列的时间线片段，导出器需要与渲染器插件一起工作。
 
-在序列导出期间，Premiere Pro 会复制项目文件并将其传递给 Media Encoder。Media Encoder 使用 PProHeadless 进程生成渲染帧。因此，当在 Media Encoder 中运行的导出器解析序列时，它只有非常高级的视图。它将整个序列视为单个剪辑，并将任何可选的裁剪或滤镜视为应用的效果。因此，在解析该简单的高级序列时，如果没有效果，导出器可以仅使用 MediaNode 的 ClipID 与 [Clip Render Suite](../universals/sweetpea-suites.md#clip-render-suite) 直接从 PProHeadless 进程获取帧。在 PProHeadless 进程中，渲染器插件可以介入，解析真实的序列，并可选地以自定义像素格式提供帧。
+在序列导出期间，Premiere Pro 会复制项目文件并将其传递给 Media Encoder。Media Encoder 使用 PProHeadless 进程生成渲染帧。因此，当在 Media Encoder 中运行的导出器解析序列时，它只有非常高级的视图。它将整个序列视为单个剪辑，并将任何可选的裁剪或滤镜视为应用的效果。因此，在解析该简单的高级序列时，如果没有效果，导出器可以仅使用 MediaNode 的 ClipID 与 [Clip Render Suite](../../universals/sweetpea-suites#clip-render-suite) 直接从 PProHeadless 进程获取帧。在 PProHeadless 进程中，渲染器插件可以介入，解析真实的序列，并可选地以自定义像素格式提供帧。
 
 在渲染预览文件时，Premiere Pro 在没有 Media Encoder 的情况下进行渲染，因此导出器可以获取每个剪辑的各个片段，类似于以前。
 

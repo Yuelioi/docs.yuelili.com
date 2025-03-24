@@ -786,7 +786,7 @@ Floating-point value; read/write.
 The Text layer's font specified by its PostScript name.
 
 On write, there are very few resrictions on what can be supplied - if the underlying font management system does not have a matching [Font object](../fontobject) instance matching the supplied PostScript name a substitute instance will be created.
-The Font instance returned in the case of duplicate PostScript names will be the 0th element of the array returned from [FontsObject.getFontsByPostScriptName()](fontsobject.md#fontsobjectgetfontsbypostscriptname).
+The Font instance returned in the case of duplicate PostScript names will be the 0th element of the array returned from [FontsObject.getFontsByPostScriptName()](../fontsobject#fontsobjectgetfontsbypostscriptname).
 
 You should use the [Font object](../fontobject) attribute for precise control.
 
@@ -1696,7 +1696,7 @@ Returns an instance of the Text layer range accessor [ComposedLineRange object](
 
 The instance will remember the parameters passed in the constructor - they remain constant and changes to the [TextDocument](#textdocument-object) contents may cause the instance to throw exceptions on access until the [TextDocument](#textdocument-object) contents are changed which makes the range valid again.
 
-Use [ComposedLineRange.toString()](composedlinerange.md#composedlinerangetostring) to find out what the constructed parameters were.
+Use [ComposedLineRange.toString()](../composedlinerange#composedlinerangetostring) to find out what the constructed parameters were.
 
 #### Parameters
 
@@ -1759,7 +1759,7 @@ Returns an instance of the Text layer range accessor [ParagraphRange object](../
 
 The instance will remember the parameters passed in the constructor - they remain constant and changes to the [TextDocument](#textdocument-object) contents may cause the instance to throw exceptions on access until the [TextDocument](#textdocument-object) contents are changed which makes the range valid again.
 
-Use [ParagraphRange.toString()](paragraphrange.md#paragraphrangetostring) to find out what the constructed parameters were.
+Use [ParagraphRange.toString()](../paragraphrange#paragraphrangetostring) to find out what the constructed parameters were.
 
 #### Parameters
 

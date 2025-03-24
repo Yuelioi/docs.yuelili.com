@@ -25,7 +25,7 @@ Default: `PrintFontDownloadMode.DOWNLOADSUBSET`
 
 #### Type
 
-[PrintFontDownloadMode](scripting-constants.md#printfontdownloadmode)
+[PrintFontDownloadMode](../scripting-constants#printfontdownloadmode)
 
 ---
 
@@ -41,7 +41,7 @@ Default: `FontSubstitutionPolicy.SUBSTITUTEOBLIQUE`
 
 #### Type
 
-[FontSubstitutionPolicy](scripting-constants.md#fontsubstitutionpolicy)
+[FontSubstitutionPolicy](../scripting-constants#fontsubstitutionpolicy)
 
 ---
 

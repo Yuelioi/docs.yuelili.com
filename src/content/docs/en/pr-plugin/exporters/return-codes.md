@@ -25,9 +25,9 @@ title: Return Codes
 | `exportReturn_IterateExporterDone`          | Return value from `exSelStartup` to indicate there are no more exporters.                                               |
 | `exportReturn_InternalErrorSilent`          | Return error code from `exSelExport` to put a custom error message on screen just before returning control to the host. |
 | `exportReturn_ErrCodecBadInput`             | A video codec refused the input format.                                                                                 |
-| `exportReturn_ErrLastErrorSet`              | The exporter is returning an error using the [Error Suite](../universals/sweetpea-suites.md#error-suite).               |
-| `exportReturn_ErrLastWarningSet`            | The exporter is returning a warning using the [Error Suite](../universals/sweetpea-suites.md#error-suite).              |
-| `exportReturn_ErrLastInfoSet`               | The exporter is returning information using the [Error Suite](../universals/sweetpea-suites.md#error-suite).            |
+| `exportReturn_ErrLastErrorSet`              | The exporter is returning an error using the [Error Suite](../../universals/sweetpea-suites#error-suite).               |
+| `exportReturn_ErrLastWarningSet`            | The exporter is returning a warning using the [Error Suite](../../universals/sweetpea-suites#error-suite).              |
+| `exportReturn_ErrLastInfoSet`               | The exporter is returning information using the [Error Suite](../../universals/sweetpea-suites#error-suite).            |
 | `exportReturn_ErrExceedsMaxFormatDuration`  | The exporter (or the host) has deemed the duration of the export to be too large.                                       |
 | `exportReturn_VideoCodecNeedsActivation`    | The current video codec is not activated and cannot be used.                                                            |
 | `exportReturn_AudioCodecNeedsActivation`    | The current audio codec is not activated and cannot be used.                                                            |

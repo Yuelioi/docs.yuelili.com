@@ -37,9 +37,9 @@ Premiere Pro 的 C++ API 在 13.0 版本中唯一的重要变化是在 Importer 
 
 现在可以在单个插件二进制文件中实现多个效果和过渡，通过在运行时在软件中定义多个入口函数。注册入口函数的新方法将取代 PiPL 资源，目前仅在 Premiere Pro 中支持。示例效果和过渡展示了这种新方法，而 [插件属性列表 (PiPL) 资源](../../resources/pipl-resource) 仍然保留，以便在 PPro 中向后兼容，并与 AE 兼容。
 
-[序列信息套件](../universals/sweetpea-suites.md#sequence-info-suite) 现在为版本 5，添加了新的调用 GetImmersiveVideoVRConfiguration()，它返回指定序列的 VR 视频设置。
+[序列信息套件](../../universals/sweetpea-suites#sequence-info-suite) 现在为版本 5，添加了新的调用 GetImmersiveVideoVRConfiguration()，它返回指定序列的 VR 视频设置。
 
-[导出信息套件](../exporters/suites.md#export-info-suite) 现在有一个新的选择器：kExportInfo_SourceBitrate。它返回源的比特率（以 kbps 为单位），并且并非所有源类型都可用。exParamType 现在可以是 exParamType_thumbnail 类型。现在可以设置一个新的标志 exParamFlag_verticalAlignment，以便属性名称和值控件垂直显示而不是并排显示。
+[导出信息套件](../../exporters/suites#export-info-suite) 现在有一个新的选择器：kExportInfo_SourceBitrate。它返回源的比特率（以 kbps 为单位），并且并非所有源类型都可用。exParamType 现在可以是 exParamType_thumbnail 类型。现在可以设置一个新的标志 exParamFlag_verticalAlignment，以便属性名称和值控件垂直显示而不是并排显示。
 
 ---
 
@@ -57,7 +57,7 @@ Premiere Pro 的 C++ API 在 13.0 版本中唯一的重要变化是在 Importer 
 
 新增了 10 位和 12 位 RGB HLG 格式，以扩展 HDR 支持。
 
-在 [应用信息套件](../universals/sweetpea-suites.md#app-info-suite) 中，新增了一个用于 Character Animator 的标识符，它现在支持传输插件。
+在 [应用信息套件](../../universals/sweetpea-suites#app-info-suite) 中，新增了一个用于 Character Animator 的标识符，它现在支持传输插件。
 
 ### VR 视频支持
 
@@ -93,7 +93,7 @@ Playmod Immersive Video Suite 可用于查询 VR 视频设置中是否开启了 
 
 ### 杂项
 
-在 [视频片段渲染套件](../universals/sweetpea-suites.md#video-segment-render-suite) 中，添加了各种调用的新版本，其中包含一个额外的布尔值，允许渲染跳过非固有效果的渲染。
+在 [视频片段渲染套件](../../universals/sweetpea-suites#video-segment-render-suite) 中，添加了各种调用的新版本，其中包含一个额外的布尔值，允许渲染跳过非固有效果的渲染。
 
 ---
 
@@ -139,7 +139,7 @@ C:Program FilesAdobeCommonPluginsControlSurface
 
 ### 杂项
 
-使用 [序列信息套件](../universals/sweetpea-suites.md#sequence-info-suite)，添加了一个新的调用 GetProxyFlag()，以便插件知道代理模式是开启还是关闭。
+使用 [序列信息套件](../../universals/sweetpea-suites#sequence-info-suite)，添加了一个新的调用 GetProxyFlag()，以便插件知道代理模式是开启还是关闭。
 
 ---
 
@@ -193,11 +193,11 @@ imSourceSettingsCommandRec 和 PF 源设置套件允许效果直接与导入器�
 
 导出器现在可以使用标准参数进行音频通道配置，如内置 QuickTime 导出器所使用的。新的导出器参数 ADBEAudioChannelConfigurationGroup 和 ADBEAudioChannelConfiguration 取代了 ADBEAudioNumChannels。新的导出音频参数套件可用于查询/更改音频通道配置。
 
-[序列音频套件](../exporters/suites.md#sequence-audio-suite) 现在为版本 2，修订了 `MakeAudioRenderer()` 以接受 `PrAudioChannelLabel*` 作为参数。
+[序列音频套件](../../exporters/suites#sequence-audio-suite) 现在为版本 2，修订了 `MakeAudioRenderer()` 以接受 `PrAudioChannelLabel*` 作为参数。
 
 ### 传输器
 
-传输器可以获取一些新的信息以帮助 A/V 同步。在 [Playmod 音频套件](../transmitters/suites.md#playmod-audio-suite) 中，新的函数 GetNextAudioBuffer2() 返回渲染缓冲区的实际时间。
+传输器可以获取一些新的信息以帮助 A/V 同步。在 [Playmod 音频套件](../../transmitters/suites#playmod-audio-suite) 中，新的函数 GetNextAudioBuffer2() 返回渲染缓冲区的实际时间。
 
 此外，在 `tmPlaybackClock` 中，新增了 `inAudioOffset` 和 `inVideoOffset` 成员，用于指定用户在首选项中选择的偏移量。
 
@@ -219,7 +219,7 @@ imSourceSettingsCommandRec 和 PF 源设置套件允许效果直接与导入器�
 
 ## CC 2014 (8.2) 版本的新功能
 
-导入器现在对播放器在给定异步请求中的意图有更多的可见性，因为渲染上下文信息现在在 imSourceVideoRec.inRenderContext 中传递。异步导入器可以实现 *aiSelectEfficientRenderTime* 来指定帧请求是否在另一个帧时间（例如 I 帧边界）更有效。[视频片段渲染套件](../universals/sweetpea-suites.md#video-segment-render-suite) 已更新到版本 4，添加了包含 imRenderContext 作为参数的新调用。
+导入器现在对播放器在给定异步请求中的意图有更多的可见性，因为渲染上下文信息现在在 imSourceVideoRec.inRenderContext 中传递。异步导入器可以实现 *aiSelectEfficientRenderTime* 来指定帧请求是否在另一个帧时间（例如 I 帧边界）更有效。[视频片段渲染套件](../../universals/sweetpea-suites#video-segment-render-suite) 已更新到版本 4，添加了包含 imRenderContext 作为参数的新调用。
 
 ---
 
@@ -241,7 +241,7 @@ imSourceSettingsCommandRec 和 PF 源设置套件允许效果直接与导入器�
 
 导入器现在可以选择它们渲染的格式，这允许导入器根据启用的硬件和其他源设置（如 HDR）更改像素格式和质量。为了处理协商，实现 *imSelectClipFrameDescriptor*。
 
-imSourceVideoRec 现在包括一个质量属性。[PPix 缓存套件](../universals/sweetpea-suites.md#ppix-cache-suite) 现在为版本 6，添加了 AddFrameToCacheWithColorProfile2() 和 GetFrameFromCacheWithColorProfile2()，它们与版本 5 中添加的相同，但增加了 PrRenderQuality 参数。
+imSourceVideoRec 现在包括一个质量属性。[PPix 缓存套件](../../universals/sweetpea-suites#ppix-cache-suite) 现在为版本 6，添加了 AddFrameToCacheWithColorProfile2() 和 GetFrameFromCacheWithColorProfile2()，它们与版本 5 中添加的相同，但增加了 PrRenderQuality 参数。
 
 imFileInfoRec8.highMemUsage 不再受支持。
 
@@ -263,7 +263,7 @@ Premiere Pro 现在已本地化为俄语和巴西葡萄牙语。
 
 对于导入器，imInitiateAsyncClosedCaptionScanRec 现在提供了额外的字段，供导入器填写所有字幕的估计时长。这对于某些嵌入字幕包含许多空数据帧的情况很有用。
 
-我们添加了 [导出文件套件](../exporters/suites.md#export-file-suite) 的版本 2 以解决搜索模式不匹配的问题。
+我们添加了 [导出文件套件](../../exporters/suites#export-file-suite) 的版本 2 以解决搜索模式不匹配的问题。
 
 ---
 
@@ -296,12 +296,12 @@ Premiere Pro 还可以导入和导出与任何媒体文件一起的辅助文件�
 - 新增原生支持10位RGB的像素格式 - PrPixelFormat_RGB_444_10u，以及 `PrPixelFormat_UYVY_422_32f_*` 格式
 - VST 3 支持使得更多音频插件可以在 Premiere Pro 中运行
 - Windows 安装程序改进，新增预设和设置位置的注册表值
-- 通过 [App Info Suite](../universals/sweetpea-suites.md#app-info-suite) 获取当前构建号
+- 通过 [App Info Suite](../../universals/sweetpea-suites#app-info-suite) 获取当前构建号
 - 导入器现在可以支持超出基本单声道、立体声和5.1的音频，而无需实现多个流，导入器可以根据剪辑设置返回不同的像素格式。了解更多关于导入器的新功能。
 - 导出器可以获取源中的音频通道数量，并检查用户是否在导出设置对话框中勾选了“使用预览”。它们还可以将现有的设置参数移动到不同的位置。了解更多关于导出器的新功能。
-- [Sequence Info Suite](../universals/sweetpea-suites.md#sequence-info-suite) 可以检索场类型、零点以及时间码是否为丢帧
+- [Sequence Info Suite](../../universals/sweetpea-suites#sequence-info-suite) 可以检索场类型、零点以及时间码是否为丢帧
 - 新增过渡API的标志，用于在过渡仅在一侧有输入时优化渲染
-- [Video Segment Suite](../universals/sweetpea-suites.md#video-segment-suite) 提供了访问新属性的功能：Effect_ClipName
+- [Video Segment Suite](../../universals/sweetpea-suites#video-segment-suite) 提供了访问新属性的功能：Effect_ClipName
 
 Premiere Pro 现已支持中文本地化。
 
@@ -325,11 +325,11 @@ CS6.0.1 为设备控制器提供了一种获取插入编辑期间丢帧数的方
 
 导出器现在可以使用“推送”模型压缩。这可以简化导出代码并提高性能。“拉取”模型仍然受支持，并且是旧版本和 Encore 所必需的。
 
-我们新增了 [Export Standard Param Suite](../exporters/suites.md#export-standard-param-suite)，它提供了许多内置导出器中使用的标准参数。这可以大大减少管理典型导出器标准参数所需的代码量，并确保与内置导出器的一致性。
+我们新增了 [Export Standard Param Suite](../../exporters/suites#export-standard-param-suite)，它提供了许多内置导出器中使用的标准参数。这可以大大减少管理典型导出器标准参数所需的代码量，并确保与内置导出器的一致性。
 
 导出器现在可以为参数设置工具提示字符串。现在单个插件中支持多个导出器。并且最大渲染精度标志现在从导出器查询，而不是在导出器不知情的情况下处理。
 
-导出器现在可以使用新的 [Exporter Utility Suite](../exporters/suites.md#exporter-utility-suite) 为 Adobe Media Encoder 渲染队列中正在进行的特定编码设置事件（错误、警告或信息）。这些事件显示在应用程序 UI 中，并添加到 AME 编码日志中。
+导出器现在可以使用新的 [Exporter Utility Suite](../../exporters/suites#exporter-utility-suite) 为 Adobe Media Encoder 渲染队列中正在进行的特定编码设置事件（错误、警告或信息）。这些事件显示在应用程序 UI 中，并添加到 AME 编码日志中。
 
 确保您的预设在新 AME 预设浏览器中位于正确的位置。阅读更多关于 [导出器](../../exporters/exporters) 的新功能。
 
@@ -367,7 +367,7 @@ CS6.0.1 为设备控制器提供了一种获取插入编辑期间丢帧数的方
 - `kVideoSegmentProperty_Clip_EffectiveTrackItemStartAsTicks`,
 - `kVideoSegmentProperty_Clip_EffectiveTrackItemEndAsTicks`
 
-[Memory Manager Suite](../universals/sweetpea-suites.md#memory-manager-suite) 现在升级到版本 4。AdjustReservedMemorySize 提供了一种相对于当前大小调整保留内存大小的方法。这对于插件来说可能更容易，而不是维护绝对内存使用量并使用旧的 ReserveMemory 调用进行更新。
+[Memory Manager Suite](../../universals/sweetpea-suites#memory-manager-suite) 现在升级到版本 4。AdjustReservedMemorySize 提供了一种相对于当前大小调整保留内存大小的方法。这对于插件来说可能更容易，而不是维护绝对内存使用量并使用旧的 ReserveMemory 调用进行更新。
 
 MPEG-4 像素格式和全范围 Rec. 709 MPEG-2 和 MPEG-4 格式现已添加到渲染管道中的原生支持。
 
@@ -393,16 +393,16 @@ MPEG-4 像素格式和全范围 Rec. 709 MPEG-2 和 MPEG-4 格式现已添加到
 
 新增了一对像素格式，以原生支持全范围 Rec. 601 4:2:0 YUV 平面视频，包括逐行和隔行：PrPixelFormat_YUV_420_MPEG2_FRAME_PICTURE_PLANAR_8u_601_FullRange 和 PrPixelFormat_YUV_420_MPEG2_FIELD_PICTURE_PLANAR_8u_601_FullRange。
 
-[Video Segment Suite](../universals/sweetpea-suites.md#video-segment-suite) 现在提供了一个新的调用，用于检索请求时间的段节点。还有一些新的媒体节点属性：
+[Video Segment Suite](../../universals/sweetpea-suites#video-segment-suite) 现在提供了一个新的调用，用于检索请求时间的段节点。还有一些新的媒体节点属性：
 
 - `StreamIsContinuousTime`,
 - `ColorProfileName`,
 - `ColorProfileData`, 和
 - `ScanlineOffsetToImproveVerticalCentering`
 
-[Sequence Info Suite](../universals/sweetpea-suites.md#sequence-info-suite) 现在提供了一个调用，用于获取序列帧率，这可能对效果有用。
+[Sequence Info Suite](../../universals/sweetpea-suites#sequence-info-suite) 现在提供了一个调用，用于获取序列帧率，这可能对效果有用。
 
-[Image Processing Suite](../universals/sweetpea-suites.md#image-processing-suite) 新增了一个调用，用于设置 DV 帧的宽高比标志。
+[Image Processing Suite](../../universals/sweetpea-suites#image-processing-suite) 新增了一个调用，用于设置 DV 帧的宽高比标志。
 
 ---
 
@@ -418,9 +418,9 @@ MPEG-4 像素格式和全范围 Rec. 709 MPEG-2 和 MPEG-4 格式现已添加到
 
 #### 导出器和播放器
 
-导出器和播放器现在可以自动利用 GPU 加速（如果最终用户的系统支持）。每个项目现在都有一个渲染器设置，用户可以在项目设置对话框中选择。当通过 [Sequence Render Suite](../exporters/suites.md#sequence-render-suite) 或 Playmod Render Suite 进行渲染时，它们现在会通过为当前项目选择的渲染器进行渲染。这允许第三方导出器和播放器使用新的 Mercury Playback Engine 中内置的 GPU 加速。
+导出器和播放器现在可以自动利用 GPU 加速（如果最终用户的系统支持）。每个项目现在都有一个渲染器设置，用户可以在项目设置对话框中选择。当通过 [Sequence Render Suite](../../exporters/suites#sequence-render-suite) 或 Playmod Render Suite 进行渲染时，它们现在会通过为当前项目选择的渲染器进行渲染。这允许第三方导出器和播放器使用新的 Mercury Playback Engine 中内置的 GPU 加速。
 
-导出器和播放器现在可以处理任何像素格式，使用新的 [Image Processing Suite](../universals/sweetpea-suites.md#image-processing-suite)。解析段并执行自己渲染的导出器和播放器现在可以调用主机进行子树渲染。详见 [Video Segment Render Suite](../universals/sweetpea-suites.md#video-segment-render-suite)。
+导出器和播放器现在可以处理任何像素格式，使用新的 [Image Processing Suite](../../universals/sweetpea-suites#image-processing-suite)。解析段并执行自己渲染的导出器和播放器现在可以调用主机进行子树渲染。详见 [Video Segment Render Suite](../../universals/sweetpea-suites#video-segment-render-suite)。
 
 :::note
 如果您为导出器提供安装程序，Premiere Pro 中创建的自定义预设现在在 AME 中可见，反之亦然。

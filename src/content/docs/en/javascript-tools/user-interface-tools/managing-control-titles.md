@@ -5,29 +5,29 @@ title: managing-control-titles
 
 User interface elements often need a title or label to identify their purpose, with the title placed near the element it identifies. As shown by examples in [Automatic layout](../automatic-layout), you can use a `statictext` element as a title or label, and use the automatic layout mechanism to control the placement of such a title relative to the element it identifies.
 
-The title-layout mechanism provides a simpler way to accomplish this task for many common cases. It allows you to define an element's title and its spacial relationship with the graphic representation of the object it identifies, without the need for additional `statictext` and container elements. Title layout operates on an element's optional [title](control-objects.md#title) and [titleLayout](control-objects.md#titlelayout) properties.
+The title-layout mechanism provides a simpler way to accomplish this task for many common cases. It allows you to define an element's title and its spacial relationship with the graphic representation of the object it identifies, without the need for additional `statictext` and container elements. Title layout operates on an element's optional [title](../control-objects#title) and [titleLayout](../control-objects#titlelayout) properties.
 
 It treats this title and the element's graphic representation as two separate objects whose relative positions are controlled according to layout rules within a virtual container that encloses both objects. This is similar to the operation of the automatic layout mechanism, but within a more limited scope.
 
 Title layout is available for these types of UI elements:
 
-- [DropDownList](control-objects.md#dropdownlist)
-- [FlashPlayer](control-objects.md#flashplayer)
-- [IconButton](types-of-controls.md#iconbutton)
-- [Image](types-of-controls.md#image)
-- [TabbedPanel](control-objects.md#tabbedpanel)
+- [DropDownList](../control-objects#dropdownlist)
+- [FlashPlayer](../control-objects#flashplayer)
+- [IconButton](../types-of-controls#iconbutton)
+- [Image](../types-of-controls#image)
+- [TabbedPanel](../control-objects#tabbedpanel)
 
 For most of these element types, the title typically appears outside the element itself, and the virtual container is an imaginary line surrounding the title and the separate element. For the IconButton, the title appears inside the bounds of the button, and the virtual container is defined by the outer bounds of the element. The same principles apply in both cases.
 
-- The [title](control-objects.md#title) property is a String that defines a text label for a UI element. The title can appear to the left or right of the graphic element, above or below it, or superimposed over the center of the graphic element; the placement is controlled by the [titleLayout](control-objects.md#titlelayout) property.
-- The [titleLayout](control-objects.md#titlelayout) property is an Object containing properties that specify:
+- The [title](../control-objects#title) property is a String that defines a text label for a UI element. The title can appear to the left or right of the graphic element, above or below it, or superimposed over the center of the graphic element; the placement is controlled by the [titleLayout](../control-objects#titlelayout) property.
+- The [titleLayout](../control-objects#titlelayout) property is an Object containing properties that specify:
     - The title's character width;
     - The title's justification within the character width;
     - How the title should be truncated if necessary;
     - The orientation, alignment, and spacing of the title with respect to the object it identifies;
     - The margins within the virtual container that surrounds the title and its related object.
 
-All `titleLayout` properties are optional; the element types that use this mechanism have default values for each property. Complete details are provided in the reference section; see [titleLayout](control-objects.md#titlelayout).
+All `titleLayout` properties are optional; the element types that use this mechanism have default values for each property. Complete details are provided in the reference section; see [titleLayout](../control-objects#titlelayout).
 
 The following sections provide examples that show how to use title layout to achieve many different layouts.
 
@@ -35,7 +35,7 @@ The following sections provide examples that show how to use title layout to ach
 
 ## Title alignment and orientation
 
-Unlike automatic layout, title layout uses the [alignment](control-objects.md#alignment) property to specify the orientation of the title and graphic element, and how the title aligns to the graphic element. This property contains a 2-element array, where the first element specifies horizontal alignment and the second specifies vertical alignment. The allowed values for these are the same as those used by automatic layout (see [Aligning children](automatic-layout.md#aligning-children)), except that the `fill` value is not allowed.
+Unlike automatic layout, title layout uses the [alignment](../control-objects#alignment) property to specify the orientation of the title and graphic element, and how the title aligns to the graphic element. This property contains a 2-element array, where the first element specifies horizontal alignment and the second specifies vertical alignment. The allowed values for these are the same as those used by automatic layout (see [Aligning children](../automatic-layout#aligning-children)), except that the `fill` value is not allowed.
 
 - To achieve a row orientation where the title appears to the left or right of the graphic element, define horizontal alignment as left or right and vertical alignment as `center`, `top`, or `bottom`:
     ```javascript

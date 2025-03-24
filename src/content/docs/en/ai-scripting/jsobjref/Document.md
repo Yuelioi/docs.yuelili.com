@@ -11,7 +11,7 @@ An Illustrator document. Documents are contained in the [Application](.././Appli
 
 The default document settings—those properties starting with the word "default"—are global settings that affect the current document. Be sure to modify these default properties only when a document is open. Note that if you set default properties to desired values before creating new objects, you can streamline your scripts, eliminating the need to specify specific properties such as `fillColor` and `stroked` that have default properties.
 
-A document's color space, height, and width can only be set when the document is created. You cannot modify these properties in an existing document. See [Application.open()](Application.md#applicationopen) for more information on how document color spaces are handled.
+A document's color space, height, and width can only be set when the document is created. You cannot modify these properties in an existing document. See [Application.open()](../application#applicationopen) for more information on how document color spaces are handled.
 
 ---
 
@@ -139,7 +139,7 @@ The style of the document's cropping box.
 
 #### Type
 
-[CropOptions](scripting-constants.md#cropoptions)
+[CropOptions](../scripting-constants#cropoptions)
 
 ---
 
@@ -209,7 +209,7 @@ Default type of line capping for paths created.
 
 #### Type
 
-[StrokeCap](scripting-constants.md#strokecap)
+[StrokeCap](../scripting-constants#strokecap)
 
 ---
 
@@ -279,7 +279,7 @@ Default type of joints in new paths.
 
 #### Type
 
-[StrokeJoin](scripting-constants.md#strokejoin)
+[StrokeJoin](../scripting-constants#strokejoin)
 
 ---
 
@@ -339,7 +339,7 @@ The color specification system to use for this document's color space.
 
 #### Type
 
-[DocumentColorSpace](scripting-constants.md#documentcolorspace)
+[DocumentColorSpace](../scripting-constants#documentcolorspace)
 
 ---
 
@@ -759,7 +759,7 @@ The default measurement units for the rulers in the document.
 
 #### Type
 
-[RulerUnits](scripting-constants.md#rulerunits); read-only.
+[RulerUnits](../scripting-constants#rulerunits); read-only.
 
 ---
 
@@ -1101,7 +1101,7 @@ Arranges multiple documents in the given layout style.
 
 |   Parameter   |                                    Type                                     |               Description                |
 | ------------- | --------------------------------------------------------------------------- | ---------------------------------------- |
-| `layoutStyle` | [DocumentLayoutStyle](scripting-constants.md#documentlayoutstyle), optional | The layout style to arrange documents in |
+| `layoutStyle` | [DocumentLayoutStyle](../scripting-constants#documentlayoutstyle), optional | The layout style to arrange documents in |
 
 #### Returns
 
@@ -1123,7 +1123,7 @@ When you close a document, you should set your document reference to `null` to p
 
 |   Parameter   |                       Type                        |        Description         |
 | ------------- | ------------------------------------------------- | -------------------------- |
-| `saveOptions` | [SaveOptions](scripting-constants.md#saveoptions) | Save options to close with |
+| `saveOptions` | [SaveOptions](../scripting-constants#saveoptions) | Save options to close with |
 
 #### Returns
 
@@ -1158,8 +1158,8 @@ Converts the given point between artboard and document coordinate systems. Retur
 |   Parameter   |                            Type                             |          Description          |
 | ------------- | ----------------------------------------------------------- | ----------------------------- |
 | `coordinate`  | Point                                                       | Point to convert              |
-| `source`      | [CoordinateSystem](scripting-constants.md#coordinatesystem) | Source coordinate system      |
-| `destination` | [CoordinateSystem](scripting-constants.md#coordinatesystem) | Destination coordinate system |
+| `source`      | [CoordinateSystem](../scripting-constants#coordinatesystem) | Source coordinate system      |
+| `destination` | [CoordinateSystem](../scripting-constants#coordinatesystem) | Destination coordinate system |
 
 #### Returns
 
@@ -1180,7 +1180,7 @@ Exports the document to the specified file using one of the predefined export fi
 |   Parameter    |                                         Type                                         |    Description     |
 | -------------- | ------------------------------------------------------------------------------------ | ------------------ |
 | `exportFile`   | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to save       |
-| `exportFormat` | [ExportType](scripting-constants.md#exporttype)                                      | Export file format |
+| `exportFormat` | [ExportType](../scripting-constants#exporttype)                                      | Export file format |
 | `options`      | [Variable](.././Variable), optional                                                  | todo               |
 
 #### Returns
@@ -1324,7 +1324,7 @@ Retrieves the active plane of the active perspective grid of the document.
 
 #### Returns
 
-[PerspectiveGridPlaneType](scripting-constants.md#perspectivegridplanetype)
+[PerspectiveGridPlaneType](../scripting-constants#perspectivegridplanetype)
 
 ---
 
@@ -1532,7 +1532,7 @@ When last argument is true (the default), artwork is moved with the artboards.
 
 |       Parameter       |                                       Type                                        |                Description                 |
 | --------------------- | --------------------------------------------------------------------------------- | ------------------------------------------ |
-| `artboardLayout`      | [DocumentArtboardLayout](scripting-constants.md#documentartboardlayout), optional | Artboard layout                            |
+| `artboardLayout`      | [DocumentArtboardLayout](../scripting-constants#documentartboardlayout), optional | Artboard layout                            |
 | `artboardRowsOrCols`  | Integer, optional                                                                 | Number of rows or columns                  |
 | `artboardSpacing`     | Number, optional                                                                  | Number of pixels for spacing               |
 | `artboardMoveArtwork` | Boolean, optional                                                                 | Whether to move artwork with the artboards |
@@ -1570,7 +1570,7 @@ Saves the document in the specified file as an Illustrator, EPS, or PDF file.
 | Parameter |                                         Type                                         |         Description          |
 | --------- | ------------------------------------------------------------------------------------ | ---------------------------- |
 | `saveIn`  | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to save the document as |
-| `options` | [SaveOptions](scripting-constants.md#saveoptions), optional                          | Save options to close with   |
+| `options` | [SaveOptions](../scripting-constants#saveoptions), optional                          | Save options to close with   |
 
 #### Returns
 
@@ -1624,7 +1624,7 @@ Sets the active plane of the active perspective grid of the document. Returns `t
 
 |  Parameter  |                                    Type                                     |   Description   |
 | ----------- | --------------------------------------------------------------------------- | --------------- |
-| `gridPlane` | [PerspectiveGridPlaneType](scripting-constants.md#perspectivegridplanetype) | Grid plane type |
+| `gridPlane` | [PerspectiveGridPlaneType](../scripting-constants#perspectivegridplanetype) | Grid plane type |
 
 #### Returns
 
@@ -1644,7 +1644,7 @@ Selects a predefined preset to define grid for the current document. Returns `tr
 
 |  Parameter   |                               Type                                |      Description      |
 | ------------ | ----------------------------------------------------------------- | --------------------- |
-| `gridType`   | [PerspectiveGridType](scripting-constants.md#perspectivegridtype) | Grid type             |
+| `gridType`   | [PerspectiveGridType](../scripting-constants#perspectivegridtype) | Grid type             |
 | `presetName` | String                                                            | Preset name to select |
 
 #### Returns

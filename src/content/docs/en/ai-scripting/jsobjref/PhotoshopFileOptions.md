@@ -7,7 +7,7 @@ title: PhotoshopFileOptions
 
 #### Description
 
-Options for opening a Photoshop file, used with the [Application.open()](Application.md#applicationopen) method. All properties are optional.
+Options for opening a Photoshop file, used with the [Application.open()](../application#applicationopen) method. All properties are optional.
 
 ---
 

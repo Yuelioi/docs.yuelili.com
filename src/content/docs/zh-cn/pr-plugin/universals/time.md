@@ -25,4 +25,4 @@ title: 时间
 
 API 中较新的部分使用基于 ticks 的时间值，该值存储在有符号的 64 位整数中。使用这种新格式的变量类型为 PrTime。当帧速率表示为 PrTime 时，帧速率是帧持续时间内的 ticks 数量。
 
-每秒的 ticks 数量必须使用 [Time Suite](sweetpea-suites.md#time-suite) 中的回调函数来获取。此速率在应用程序运行期间保证是恒定的。
+每秒的 ticks 数量必须使用 [Time Suite](../sweetpea-suites#time-suite) 中的回调函数来获取。此速率在应用程序运行期间保证是恒定的。

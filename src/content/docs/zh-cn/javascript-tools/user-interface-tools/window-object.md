@@ -19,7 +19,7 @@ new Window (type [, title, bounds, {creation_properties}]);
 |                       |                                                         | - `"window"` - 创建一个简单窗口，可用作应用程序的主窗口。（Photoshop CC 不支持。）                                                                                     |
 |                       |                                                         | 此参数可以是 ScriptUI 资源规范；在这种情况下，所有其他参数将被忽略。请参阅 [资源规范](../resource-specifications)。 |
 | `title`               | String                                                  | 可选。窗口标题。可本地化的字符串。                                                                                                                 |
-| `bounds`              | [Bounds](./size-and-location-objects.md#bounds) object. | 可选。窗口的位置和大小。                                                                                                                         |
+| `bounds`              | [Bounds](../size-and-location-objects#bounds) object. | 可选。窗口的位置和大小。                                                                                                                         |
 | `creation_properties` | Object                                                  | 可选。包含以下任何属性的对象。                                                                                                    |
 
 #### 创建属性
@@ -110,7 +110,7 @@ Boolean
 
 #### 类型
 
-[Bounds](size-and-location-objects.md#bounds)。只读。
+[Bounds](../size-and-location-objects#bounds)。只读。
 
 ---
 
@@ -126,7 +126,7 @@ Boolean
 
 #### 类型
 
-[Point](size-and-location-objects.md#point)
+[Point](../size-and-location-objects#point)
 
 ---
 
@@ -140,7 +140,7 @@ Boolean
 
 #### 类型
 
-[Dimension](size-and-location-objects.md#dimension)。只读。
+[Dimension](../size-and-location-objects#dimension)。只读。
 
 ---
 
@@ -200,7 +200,7 @@ Number
 仅在 [Windows](#) 中有效。
 :::
 
-调用此窗口的 [ControlEvent.onShortcutKey](./control-objects.md#onshortcutkey) 回调的键序列。
+调用此窗口的 [ControlEvent.onShortcutKey](../control-objects#onshortcutkey) 回调的键序列。
 
 #### 类型
 
@@ -316,7 +316,7 @@ String 或 2 个 String 的数组
 
 #### 类型
 
-[Bounds](size-and-location-objects.md#bounds)。只读。
+[Bounds](../size-and-location-objects#bounds)。只读。
 
 ---
 
@@ -346,7 +346,7 @@ String 或 2 个 String 的数组
 
 #### 类型
 
-[ScriptUIGraphics 对象](graphic-customization-objects.md#scriptuigraphics-object)
+[ScriptUIGraphics 对象](../graphic-customization-objects#scriptuigraphics-object)
 
 ---
 
@@ -378,7 +378,7 @@ String 或 2 个 String 的数组
 
 #### 类型
 
-[Point](size-and-location-objects.md#point)
+[Point](../size-and-location-objects#point)
 
 ---
 
@@ -394,7 +394,7 @@ String 或 2 个 String 的数组
 
 #### 类型
 
-[Margins](size-and-location-objects.md#margins)
+[Margins](../size-and-location-objects#margins)
 
 ---
 
@@ -404,7 +404,7 @@ String 或 2 个 String 的数组
 
 #### 描述
 
-[Dimension](size-and-location-objects.md#dimension)
+[Dimension](../size-and-location-objects#dimension)
 
 一个 Dimension 对象，表示窗口可以调整到的最大矩形，用于自动布局和调整大小。
 
@@ -418,7 +418,7 @@ String 或 2 个 String 的数组
 
 #### 描述
 
-[Dimension](size-and-location-objects.md#dimension)
+[Dimension](../size-and-location-objects#dimension)
 
 一个 Dimension 对象，表示窗口可以调整到的最小矩形，用于自动布局和调整大小。
 
@@ -476,7 +476,7 @@ String
 
 #### 类型
 
-[Dimension](size-and-location-objects.md#dimension)
+[Dimension](../size-and-location-objects#dimension)
 
 ---
 
@@ -501,16 +501,16 @@ Object
 #### 描述
 
 :::info
-仅适用于 [TabbedPanel](./control-objects.md#tabbedpanel) 对象。
+仅适用于 [TabbedPanel](../control-objects#tabbedpanel) 对象。
 :::
 
-当前活动的 [Tab](control-objects.md#tab) 子元素。设置此属性会更改活动选项卡。仅当面板没有子元素时，值可以为 `null`；将其设置为 `null` 是错误的。
+当前活动的 [Tab](../control-objects#tab) 子元素。设置此属性会更改活动选项卡。仅当面板没有子元素时，值可以为 `null`；将其设置为 `null` 是错误的。
 
-当值更改时，无论是用户选择不同的选项卡，还是脚本设置属性，面板的 [onChange](control-objects.md#onchange) 回调都会被调用。
+当值更改时，无论是用户选择不同的选项卡，还是脚本设置属性，面板的 [onChange](../control-objects#onchange) 回调都会被调用。
 
 #### 类型
 
-[tab](control-objects.md#tab)
+[tab](../control-objects#tab)
 
 ---
 
@@ -524,7 +524,7 @@ Object
 
 #### 类型
 
-[Dimension](size-and-location-objects.md#dimension)
+[Dimension](../size-and-location-objects#dimension)
 
 ---
 

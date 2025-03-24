@@ -69,7 +69,7 @@ Setting the type to a corner forces the left and right direction points to be on
 
 #### Type
 
-[PointType](scripting-constants.md#pointtype)
+[PointType](../scripting-constants#pointtype)
 
 ---
 
@@ -97,7 +97,7 @@ Are points of this path point selected, and if so, which ones.
 
 #### Type
 
-[PathPointSelection](scripting-constants.md#pathpointselection)
+[PathPointSelection](../scripting-constants#pathpointselection)
 
 ---
 

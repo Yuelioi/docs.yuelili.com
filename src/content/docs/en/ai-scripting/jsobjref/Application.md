@@ -79,7 +79,7 @@ The coordinate system currently in use, document or artboard.
 
 #### Type
 
-[CoordinateSystem](scripting-constants.md#coordinatesystem)
+[CoordinateSystem](../scripting-constants#coordinatesystem)
 
 ---
 
@@ -359,7 +359,7 @@ What level of interaction with the user should be allowed when handling script c
 
 #### Type
 
-[UserInteractionLevel](scripting-constants.md#userinteractionlevel)
+[UserInteractionLevel](../scripting-constants#userinteractionlevel)
 
 ---
 
@@ -514,10 +514,10 @@ Converts a sample-component color from one color space to another.
 
 |       Parameter       |                               Type                                |            Description            |
 | --------------------- | ----------------------------------------------------------------- | --------------------------------- |
-| `sourceColorSpace`    | [ImageColorSpace](scripting-constants.md#imagecolorspace)         | Color space of source color       |
+| `sourceColorSpace`    | [ImageColorSpace](../scripting-constants#imagecolorspace)         | Color space of source color       |
 | `sourceColor`         | ColorComponents                                                   | Source color to convert           |
-| `destColorSpace`      | [ImageColorSpace](scripting-constants.md#imagecolorspace)         | Destination color space           |
-| `colorConvertPurpose` | [ColorConvertPurpose](scripting-constants.md#colorconvertpurpose) | The purpose of the convert        |
+| `destColorSpace`      | [ImageColorSpace](../scripting-constants#imagecolorspace)         | Destination color space           |
+| `colorConvertPurpose` | [ColorConvertPurpose](../scripting-constants#colorconvertpurpose) | The purpose of the convert        |
 | `sourceHasAlpha`      | Boolean, optional                                                 | Whether the source has alpha      |
 | `destHasAlpha`        | Boolean, optional                                                 | Whether the destination has alpha |
 
@@ -646,7 +646,7 @@ Returns the full path to the application's default document profile for the spec
 
 |  Parameter   |                              Type                               |        Description         |
 | ------------ | --------------------------------------------------------------- | -------------------------- |
-| `presetType` | [DocumentPresetType](scripting-constants.md#documentpresettype) | Preset type to get file of |
+| `presetType` | [DocumentPresetType](../scripting-constants#documentpresettype) | Preset type to get file of |
 
 #### Returns
 
@@ -908,7 +908,7 @@ If the parameter is not supplied, Illustrator opens a dialog so the user can cho
 |      Parameter       |                                         Type                                         |       Description       |
 | -------------------- | ------------------------------------------------------------------------------------ | ----------------------- |
 | `file`               | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to open            |
-| `documentColorSpace` | [DocumentColorSpace](scripting-constants.md#documentcolorspace), optional            | Color space of document |
+| `documentColorSpace` | [DocumentColorSpace](../scripting-constants#documentcolorspace), optional            | Color space of document |
 | `options`            | anything                                                                             | todo                    |
 
 #### Returns

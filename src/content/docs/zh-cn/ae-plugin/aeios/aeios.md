@@ -45,7 +45,7 @@ After Effects 支持 MediaCore 导入器插件。MediaCore 是一组源自 Premi
 
 ## 注册你的 AEIO
 
-在你的插件的入口函数中，填充一个描述 AEIO 支持的文件类型的 AEIO_ModuleInfo，以及一个指向你的文件处理函数的 AEIO_FunctionBlock 结构。对于其中一些函数，你可以通过返回 AEIO_Err_USE_DFLT_CALLBACK 来依赖 After Effects 的默认行为。但是，你仍然必须提供一个符合所需签名的函数来执行此操作。填写完这两个结构后，调用 [AEGP_RegisterSuites5](../aegps/aegp-suites.md#aegp_registersuites5) 中的 `AEGP_RegisterIO()`。
+在你的插件的入口函数中，填充一个描述 AEIO 支持的文件类型的 AEIO_ModuleInfo，以及一个指向你的文件处理函数的 AEIO_FunctionBlock 结构。对于其中一些函数，你可以通过返回 AEIO_Err_USE_DFLT_CALLBACK 来依赖 After Effects 的默认行为。但是，你仍然必须提供一个符合所需签名的函数来执行此操作。填写完这两个结构后，调用 [AEGP_RegisterSuites5](../../aegps/aegp-suites#aegp_registersuites5) 中的 `AEGP_RegisterIO()`。
 
 在你传递给注册调用的 AEIO_ModuleInfo 中，你提供了 After Effects 在导入对话框中使用的文件类型和描述信息，用于 Windows 上的“文件类型”下拉菜单或 MacOS 上的启用下拉菜单。自 CS6 以来，文件扩展名不能超过三个字符，即使我们有一些内置的导入器具有更长的扩展名。
 
@@ -55,7 +55,7 @@ After Effects 支持 MediaCore 导入器插件。MediaCore 是一组源自 Premi
 
 在大多数与导入相关的函数中，会传递一个 `AEIO_InSpecH`。在大多数与输出相关的函数中，会传递一个 `AEIO_OutSpecH`。
 
-这些神秘的句柄是什么？这些不透明的数据句柄可以与 [AEGP_IOInSuite5](new-kids-on-the-function-block.md#aegp_ioinsuite5) 和 [AEGPIOOutSuite4](new-kids-on-the-function-block.md#aegpiooutsuite4) 一起使用，以设置或查询有关导入或输出的信息。
+这些神秘的句柄是什么？这些不透明的数据句柄可以与 [AEGP_IOInSuite5](../new-kids-on-the-function-block#aegp_ioinsuite5) 和 [AEGPIOOutSuite4](../new-kids-on-the-function-block#aegpiooutsuite4) 一起使用，以设置或查询有关导入或输出的信息。
 
 例如，在导入时，你将在调用 AEGP_IOInSuite 中的 `AEGP_SetInSpecDimensions` 时使用 `AEIO_InSpecH`。
 

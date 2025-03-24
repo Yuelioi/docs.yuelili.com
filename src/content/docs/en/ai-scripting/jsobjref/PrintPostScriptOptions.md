@@ -73,7 +73,7 @@ Default: `PostScriptImageCompressionType.IMAGECOMPRESSIONNONE`
 
 #### Type
 
-[PostScriptImageCompressionType](scripting-constants.md#postscriptimagecompressiontype)
+[PostScriptImageCompressionType](../scripting-constants#postscriptimagecompressiontype)
 
 ---
 
@@ -105,7 +105,7 @@ Default: `PrinterPostScriptLevelEnum.LEVEL2`
 
 #### Type
 
-[PrinterPostScriptLevelEnum](scripting-constants.md#printerpostscriptlevelenum)
+[PrinterPostScriptLevelEnum](../scripting-constants#printerpostscriptlevelenum)
 
 ---
 

@@ -7,7 +7,7 @@ title: ExportOptionsSVG
 
 #### 描述
 
-将文档导出为 SVG 文件的选项，与 [Document.exportFile()](Document.md#documentexportfile) 方法一起使用。所有属性都是可选的。
+将文档导出为 SVG 文件的选项，与 [Document.exportFile()](../Document#documentexportfile) 方法一起使用。所有属性都是可选的。
 
 导出文档时，会自动附加适当的文件扩展名。您不应在文件规范中包含任何文件扩展名。
 
@@ -77,7 +77,7 @@ title: ExportOptionsSVG
 
 #### 类型
 
-[SVGCSSPropertyLocation](scripting-constants.md#svgcsspropertylocation)
+[SVGCSSPropertyLocation](../scripting-constants#svgcsspropertylocation)
 
 ---
 
@@ -93,7 +93,7 @@ title: ExportOptionsSVG
 
 #### 类型
 
-[SVGDocumentEncoding](scripting-constants.md#svgdocumentencoding)
+[SVGDocumentEncoding](../scripting-constants#svgdocumentencoding)
 
 ---
 
@@ -109,7 +109,7 @@ title: ExportOptionsSVG
 
 #### 类型
 
-[SVGDTDVersion](scripting-constants.md#svgdtdversion)
+[SVGDTDVersion](../scripting-constants#svgdtdversion)
 
 ---
 
@@ -141,7 +141,7 @@ title: ExportOptionsSVG
 
 #### 类型
 
-[SVGFontSubsetting](scripting-constants.md#svgfontsubsetting)
+[SVGFontSubsetting](../scripting-constants#svgfontsubsetting)
 
 ---
 
@@ -157,7 +157,7 @@ title: ExportOptionsSVG
 
 #### 类型
 
-[SVGFontType](scripting-constants.md#svgfonttype)
+[SVGFontType](../scripting-constants#svgfonttype)
 
 ---
 

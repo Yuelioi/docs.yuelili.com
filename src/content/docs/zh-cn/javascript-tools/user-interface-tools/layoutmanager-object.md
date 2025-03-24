@@ -13,7 +13,7 @@ title: 布局管理对象
 myWin.layout = new AutoLayoutManager( myWin );
 ```
 
-当您创建 `Window` 或容器（`group` 或 `panel`）对象时，会自动创建一个实例，并通过容器的 [layout](window-object.md#layout) 属性引用。除非您覆盖它，否则此实例将实现默认的布局行为。
+当您创建 `Window` 或容器（`group` 或 `panel`）对象时，会自动创建一个实例，并通过容器的 [layout](../window-object#layout) 属性引用。除非您覆盖它，否则此实例将实现默认的布局行为。
 
 ## AutoLayoutManager 对象属性
 

@@ -7,7 +7,7 @@ title: 属性组
 
 #### 描述
 
-PropertyGroup 对象表示一组属性。它可以包含 Property 对象和其他 PropertyGroup 对象。属性组可以嵌套以提供父子层次结构，从顶部的 Layer 对象（根）到单个 Property 对象，例如第三个遮罩的遮罩羽化。要遍历组层次结构，请使用 PropertyBase 方法和属性；请参阅 [PropertyBase.propertyGroup()](propertybase.md#propertybasepropertygroup)。有关如何访问属性和属性组的示例，请参阅 [PropertyBase 对象](../propertybase)。
+PropertyGroup 对象表示一组属性。它可以包含 Property 对象和其他 PropertyGroup 对象。属性组可以嵌套以提供父子层次结构，从顶部的 Layer 对象（根）到单个 Property 对象，例如第三个遮罩的遮罩羽化。要遍历组层次结构，请使用 PropertyBase 方法和属性；请参阅 [PropertyBase.propertyGroup()](../propertybase#propertybasepropertygroup)。有关如何访问属性和属性组的示例，请参阅 [PropertyBase 对象](../propertybase)。
 
 :::info
 PropertyGroup 是 [PropertyBase](../propertybase) 的子类。除了下面列出的方法和属性外，PropertyBase 的所有方法和属性在处理 PropertyGroup 时都可用。
@@ -49,7 +49,7 @@ PropertyGroup 是 [Layer](../../layer/layer) 和 [MaskPropertyGroup](../maskprop
 
 创建并返回具有指定名称的 PropertyBase 对象，并将其添加到此组中。
 
-通常，您只能向索引组（具有 `PropertyType.INDEXED_GROUP` 类型的属性组；请参阅 [PropertyBase.propertyType](propertybase.md#propertybasepropertytype)）添加属性。唯一的例外是文本动画器属性，它可以添加到命名组（具有 `PropertyType.NAMED_GROUP` 类型的属性组）。
+通常，您只能向索引组（具有 `PropertyType.INDEXED_GROUP` 类型的属性组；请参阅 [PropertyBase.propertyType](../propertybase#propertybasepropertytype)）添加属性。唯一的例外是文本动画器属性，它可以添加到命名组（具有 `PropertyType.NAMED_GROUP` 类型的属性组）。
 
 如果此方法无法创建具有指定名称的属性，则会生成异常。
 
@@ -88,7 +88,7 @@ var sliderProperty = effectsProperty.property(sliderIndex).property("ADBE Slider
 
 | 参数     | 类型   | 描述                                                                                                                                                                       |
 | -------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name` | String | 要添加的属性的显示名称或[matchName](propertybase.md#propertybasematchname)。支持以下名称：                                                                                    |
+| `name` | String | 要添加的属性的显示名称或[matchName](../propertybase#propertybasematchname)。支持以下名称：                                                                                    |
 |          |        | - 可以通过用户界面添加的任何属性的匹配名称。例如，`"ADBE Mask Atom`", `"ADBE Paint Atom`", `"ADBE Text Position`", `"ADBE Text Anchor Point`"。                    |
 |          |        | - 当添加到 ADBE Mask Parade 时：`"ADBE Mask Atom`", `"Mask`"。                                                                                                         |
 |          |        | - 当添加到 ADBE Effect Parade 时，任何效果的匹配名称，例如 `"ADBE Bulge`", `"ADBE Glo2`", `"APC Vegas`"。                                                            |

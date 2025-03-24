@@ -41,7 +41,7 @@ Default: `BlendsExpandPolicy.AUTOMATICALLYCONVERTBLENDS`.
 
 #### Type
 
-[BlendsExpandPolicy](scripting-constants.md#blendsexpandpolicy)
+[BlendsExpandPolicy](../scripting-constants#blendsexpandpolicy)
 
 ---
 
@@ -73,7 +73,7 @@ Default: `FiltersPreservePolicy.KEEPFILTERSEDITABLE`.
 
 #### Type
 
-[FiltersPreservePolicy](scripting-constants.md#filterspreservepolicy)
+[FiltersPreservePolicy](../scripting-constants#filterspreservepolicy)
 
 ---
 
@@ -89,7 +89,7 @@ Default: `GradientsPreservePolicy.AUTOMATICALLYCONVERTGRADIENTS`.
 
 #### Type
 
-[GradientsPreservePolicy](scripting-constants.md#gradientspreservepolicy)
+[GradientsPreservePolicy](../scripting-constants#gradientspreservepolicy)
 
 ---
 
@@ -153,7 +153,7 @@ Default: `TextPreservePolicy.AUTOMATICALLYCONVERTTEXT`.
 
 #### Type
 
-[TextPreservePolicy](scripting-constants.md#textpreservepolicy)
+[TextPreservePolicy](../scripting-constants#textpreservepolicy)
 
 ---
 
@@ -167,4 +167,4 @@ The version of the FXG file format to create. Default `FXGVersion.VERSION2PT0`.
 
 #### Type
 
-[FXGVersion](scripting-constants.md#fxgversion)
+[FXGVersion](../scripting-constants#fxgversion)

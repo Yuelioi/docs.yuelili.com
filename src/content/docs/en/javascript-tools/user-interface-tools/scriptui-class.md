@@ -13,11 +13,11 @@ The globally available ScriptUI class provides central information about the Scr
 
 `ScriptUI.Alignment`
 
-Collects the enumerated values that can be used in the [alignment](window-object.md#alignment) and [alignChildren](window-object.md#alignchildren) properties of controls and containers, and in the alignment property used to set a control's [titleLayout](control-objects.md#titlelayout) property.
+Collects the enumerated values that can be used in the [alignment](../window-object#alignment) and [alignChildren](../window-object#alignchildren) properties of controls and containers, and in the alignment property used to set a control's [titleLayout](../control-objects#titlelayout) property.
 
 Use these constants to set the alignment.
 
-When you query the [alignment](window-object.md#alignment) property, it returns index values that correspond to the constants as shown. Constant values are:
+When you query the [alignment](../window-object#alignment) property, it returns index values that correspond to the constants as shown. Constant values are:
 
 - `ScriptUI.Alignment.TOP` (1)
 - `ScriptUI.Alignment.BOTTOM` (2)
@@ -92,7 +92,7 @@ A JavaScript object that provides access to attributes of the ScriptUI environme
 
 #### Type
 
-[Environment object](environment.md#environment-object)
+[Environment object](../environment#environment-object)
 
 ---
 
@@ -173,9 +173,9 @@ String. Read only.
 
 This function is in the JavaScript object contained in the [events](#scriptuievents) property.
 
-This object is passed to a function that you register to respond to events of a certain type that occur in a window or control. Use [windowObj.addEventListener()](window-object.md#addeventlistener) or [controlObj.addEventListener()](control-objects.md#addeventlistener) to register a handler function.
+This object is passed to a function that you register to respond to events of a certain type that occur in a window or control. Use [windowObj.addEventListener()](../window-object#addeventlistener) or [controlObj.addEventListener()](../control-objects#addeventlistener) to register a handler function.
 
-See [Registering event listeners for windows or controls](defining-behavior-with-event-callbacks-and-listeners.md#registering-event-listeners-for-windows-or-controls).
+See [Registering event listeners for windows or controls](../defining-behavior-with-event-callbacks-and-listeners#registering-event-listeners-for-windows-or-controls).
 
 #### Parameters
 
@@ -191,9 +191,9 @@ See [Registering event listeners for windows or controls](defining-behavior-with
 
 It returns an event object of the appropriate type:
 
-- A [UIEvent base class](event-handling.md#uievent-base-class) encapsulates input event information for an event that propagates through a container and control hierarchy. This is a base class for the more specialized keyboard and mouse event types.
-- A [KeyboardEvent object](event-handling.md#keyboardevent-object) encapsulates information about keyboard input events.
-- A [MouseEvent object](event-handling.md#mouseevent-object) encapsulates information about mouse events.
+- A [UIEvent base class](../event-handling#uievent-base-class) encapsulates input event information for an event that propagates through a container and control hierarchy. This is a base class for the more specialized keyboard and mouse event types.
+- A [KeyboardEvent object](../event-handling#keyboardevent-object) encapsulates information about keyboard input events.
+- A [MouseEvent object](../event-handling#mouseevent-object) encapsulates information about mouse events.
 
 ---
 
@@ -235,7 +235,7 @@ Creates a new font object for use in text controls and titles.
 
 #### Returns
 
-[ScriptUIFont object](graphic-customization-objects.md#scriptuifont-object)
+[ScriptUIFont object](../graphic-customization-objects#scriptuifont-object)
 
 ---
 
@@ -258,4 +258,4 @@ Creates a new image object for use in controls that can display images, loading 
 
 #### Returns
 
-[ScriptUIImage object](graphic-customization-objects.md#scriptuiimage-object)
+[ScriptUIImage object](../graphic-customization-objects#scriptuiimage-object)

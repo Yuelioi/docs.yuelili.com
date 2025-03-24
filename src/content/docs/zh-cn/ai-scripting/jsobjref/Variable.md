@@ -29,7 +29,7 @@ title: 变量
 
 #### 类型
 
-[VariableKind](scripting-constants.md#variablekind)
+[VariableKind](../scripting-constants#variablekind)
 
 ---
 

@@ -16,31 +16,31 @@ title: SweetPea Suites
 | Accelerated Render Invocation Suite                                               | 导出器                        |
 | [App Info Suite](#app-info-suite)                                                 | 所有                          |
 | [Application Settings Suite](#application-settings-suite)                         | 所有                          |
-| [Async File Reader Suite](../importers/suites.md#async-file-reader-suite)         | 导入器                        |
+| [Async File Reader Suite](../../importers/suites#async-file-reader-suite)         | 导入器                        |
 | Async Operation Suite                                                             | 所有                          |
 | [Audio Suite](#audio-suite)                                                       | 导入器, 导出器                |
 | [Captioning Suite](#captioning-suite)                                             | 设备控制器, 导出器, 传输器    |
 | [Clip Render Suite](#clip-render-suite)                                           | 导出器                        |
-| [Deferred Processing Suite](../importers/suites.md#deferred-processing-suite)     | 导入器                        |
+| [Deferred Processing Suite](../../importers/suites#deferred-processing-suite)     | 导入器                        |
 | [Error Suite](#error-suite)                                                       | 除 CS6 开始的导出器外的所有    |
-| [Export File Suite](../exporters/suites.md#export-file-suite)                     | 导出器                        |
-| [Export Info Suite](../exporters/suites.md#export-info-suite)                     | 导出器                        |
-| [Export Param Suite](../exporters/suites.md#export-param-suite)                   | 导出器                        |
-| [Export Progress Suite](../exporters/suites.md#export-progress-suite)             | 导出器                        |
-| [Export Standard Param Suite](../exporters/suites.md#export-standard-param-suite) | 导出器                        |
-| [Exporter Utility Suite](../exporters/suites.md#exporter-utility-suite)           | 导出器                        |
+| [Export File Suite](../../exporters/suites#export-file-suite)                     | 导出器                        |
+| [Export Info Suite](../../exporters/suites#export-info-suite)                     | 导出器                        |
+| [Export Param Suite](../../exporters/suites#export-param-suite)                   | 导出器                        |
+| [Export Progress Suite](../../exporters/suites#export-progress-suite)             | 导出器                        |
+| [Export Standard Param Suite](../../exporters/suites#export-standard-param-suite) | 导出器                        |
+| [Exporter Utility Suite](../../exporters/suites#exporter-utility-suite)           | 导出器                        |
 | [File Registration Suite](#file-registration-suite)                               | 导入器, 转场, 视频滤镜        |
 | [Flash Cue Marker Data Suite](#flash-cue-marker-data-suite)                       | 导出器                        |
-| [GPU Device Suite](../gpu-effects-transitions/suites.md#gpu-device-suite)         | GPU 效果和转场                |
+| [GPU Device Suite](../../gpu-effects-transitions/suites#gpu-device-suite)         | GPU 效果和转场                |
 | [Image Processing Suite](#image-processing-suite)                                 | 所有                          |
 | Importer File Manager Suite                                                       | 导入器                        |
 | [Legacy Callback Suites](../legacy-callback-suites)                               | 所有                          |
 | [Marker Suite](#marker-suite)                                                     | 导出器                        |
 | Media Accelerator Suite                                                           | 导入器                        |
 | [Memory Manager Suite](#memory-manager-suite)                                     | 所有                          |
-| [Palette Suite](../exporters/suites.md#palette-suite)                             | 导出器                        |
+| [Palette Suite](../../exporters/suites#palette-suite)                             | 导出器                        |
 | [Pixel Format Suite](#pixel-format-suite)                                         | 所有                          |
-| [Playmod Audio Suite](../transmitters/suites.md#playmod-audio-suite)              | 传输器                        |
+| [Playmod Audio Suite](../../transmitters/suites#playmod-audio-suite)              | 传输器                        |
 | Playmod Device Control Suite                                                      | 无 (已弃用)                   |
 | [Playmod Overlay Suite](#playmod-overlay-suite)                                   | 传输器                        |
 | Playmod Render Suite                                                              | 无 (已弃用)                   |
@@ -52,14 +52,14 @@ title: SweetPea Suites
 | Quality Suite                                                                     | 无 (已弃用)                   |
 | [RollCrawl Suite](#rollcrawl-suite)                                               | 导出器                        |
 | Scope Render Suite                                                                | 无 (已弃用)                   |
-| [Sequence Audio Suite](../exporters/suites.md#sequence-audio-suite)               | 导出器                        |
+| [Sequence Audio Suite](../../exporters/suites#sequence-audio-suite)               | 导出器                        |
 | [Sequence Info Suite](#sequence-info-suite)                                       | 导入器, 转场, 视频滤镜        |
-| [Sequence Render Suite](../exporters/suites.md#sequence-render-suite)             | 导出器                        |
+| [Sequence Render Suite](../../exporters/suites#sequence-render-suite)             | 导出器                        |
 | Stock Image Suite                                                                 | 无 (已弃用)                   |
 | [String Suite](#string-suite)                                                     | 所有                          |
 | [Threaded Work Suite](#threaded-work-suite)                                       | 所有                          |
 | [Time Suite](#time-suite)                                                         | 所有                          |
-| [Transmit Invocation Suite](../transmitters/suites.md#transmit-invocation-suite)  | 所有                          |
+| [Transmit Invocation Suite](../../transmitters/suites#transmit-invocation-suite)  | 所有                          |
 | [Video Segment Render Suite](#video-segment-render-suite)                         | 导出器                        |
 | [Video Segment Suite](#video-segment-suite)                                       | 导出器                        |
 | [Window Suite](#window-suite)                                                     | 所有                          |
@@ -147,7 +147,7 @@ CS4 新增。此 Suite 提供了获取当前项目中定义的暂存盘文件夹
 
 使用单一回调处理错误、警告和信息。此回调将激活主应用程序窗口左下角的闪烁图标，点击该图标将打开包含错误信息的新事件窗口。请参阅 PrSDKErrorSuite.h。
 
-从 CS4 引入的 Suite 版本 3 开始，该 Suite 支持 UTF-16 字符串。从 CS6 开始，导出器应使用 [Exporter Utility Suite](../exporters/suites.md#exporter-utility-suite) 来报告事件。
+从 CS4 引入的 Suite 版本 3 开始，该 Suite 支持 UTF-16 字符串。从 CS6 开始，导出器应使用 [Exporter Utility Suite](../../exporters/suites#exporter-utility-suite) 来报告事件。
 
 ---
 
@@ -633,4 +633,4 @@ Segment
 
 ## 窗口
 
-CS4 中新增。这是获取主框架窗口句柄的新首选方式，特别是对于无法访问旧版 [piSuites](legacy-callback-suites.md#pisuites) 的导出器。
+CS4 中新增。这是获取主框架窗口句柄的新首选方式，特别是对于无法访问旧版 [piSuites](../legacy-callback-suites#pisuites) 的导出器。

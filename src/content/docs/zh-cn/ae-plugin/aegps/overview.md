@@ -17,7 +17,7 @@ AEGP还可以请求一个套件，如果该套件不存在，它们可以自己�
 
 虽然After Effects确实会调用在AEGP的PiPL中指定的入口函数（这仍然是必需的），但之后的所有通信都由AEGP注册的钩子函数处理。
 
-此注册必须在插件的入口函数内执行，使用[注册套件](aegp-suites.md#aegp_registersuites5)。
+此注册必须在插件的入口函数内执行，使用[注册套件](../aegp-suites#aegp_registersuites5)。
 
 ---
 
@@ -25,7 +25,7 @@ AEGP还可以请求一个套件，如果该套件不存在，它们可以自己�
 
 无论专业领域如何，AEGP的工作方式都是相同的。
 
-它们可以是简单的，只需[添加一个菜单项](implementation.md#example-adding-a-menu-item)来触发外部应用程序；也可以是复杂的，像Artisans那样复杂。
+它们可以是简单的，只需[添加一个菜单项](../implementation#example-adding-a-menu-item)来触发外部应用程序；也可以是复杂的，像Artisans那样复杂。
 
 虽然任何插件都可以访问任何功能套件，但只有适当类型的插件才能访问所有必需的参数。
 

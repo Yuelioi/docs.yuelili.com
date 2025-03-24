@@ -30,7 +30,7 @@ A mouse click or drag occurred within the custom UI's area.
 
 After Effects needs your custom UI to refresh.
 
-Note: when handling draw requests, use the image dimensions provided in [PF_InData](../../effect-basics/PF_InData) (rather that the dimensions of your input layer, as you would during [PF_Cmd_RENDER](../effect-basics/command-selectors.md#frame-selectors)).
+Note: when handling draw requests, use the image dimensions provided in [PF_InData](../../effect-basics/PF_InData) (rather that the dimensions of your input layer, as you would during [PF_Cmd_RENDER](../../effect-basics/command-selectors#frame-selectors)).
 
 ### PF_DrawEventInfo
 

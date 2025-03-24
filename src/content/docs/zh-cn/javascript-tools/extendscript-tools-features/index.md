@@ -14,4 +14,4 @@ title: 概述
 
 ExtendScript 还为所有支持 JavaScript 的 Adobe 应用程序提供了一个通用的脚本环境，并允许通过脚本进行应用程序间通信。
 
-有关这些功能的详细信息，请参阅 [使用脚本进行应用程序间通信](../interapplication-communication/index.md#interapplication-communication-with-scripts)。
+有关这些功能的详细信息，请参阅 [使用脚本进行应用程序间通信](../../interapplication-communication/index#interapplication-communication-with-scripts)。

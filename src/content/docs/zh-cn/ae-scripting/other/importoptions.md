@@ -9,7 +9,7 @@ title: 导入选项
 
 #### 描述
 
-`ImportOptions` 对象封装了用于通过 [Project.importFile()](../general/project.md#projectimportfile) 方法导入文件的选项。
+`ImportOptions` 对象封装了用于通过 [Project.importFile()](../../general/project#projectimportfile) 方法导入文件的选项。
 
 构造函数接受一个可选参数，即文件的 [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象。
 

@@ -6,7 +6,7 @@ title: Your first Illustrator script
 The traditional first project in any programming language is displaying the message "Hello World!" In this example, you create a new Illustrator document, then add a text frame containing this message. Follow
 these steps:
 
-For information on locating the ExtendScript Toolkit, see [Viewing the JavaScript object model](../introduction/viewingTheObjectModel.md#viewing-the-javascript-object-model).
+For information on locating the ExtendScript Toolkit, see [Viewing the JavaScript object model](../../introduction/viewingtheobjectmodel#viewing-the-javascript-object-model).
 
 1. Using any text editor (including Adobe^ InDesign® or the ESTK), enter the following text:
     ```javascript

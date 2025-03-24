@@ -105,7 +105,7 @@ Number
 
 Returns a higher-level property group relative to the property group on which the method is called.
 
-See [`propertyGroup()`](property.md#propertygroup) for additional details.
+See [`propertyGroup()`](../property#propertygroup) for additional details.
 
 #### Parameters
 

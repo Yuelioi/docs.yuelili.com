@@ -316,7 +316,7 @@ title: TracingOptions
 
 #### 类型
 
-[TracingModeType](scripting-constants.md#tracingmodetype)
+[TracingModeType](../scripting-constants#tracingmodetype)
 
 ---
 
@@ -344,7 +344,7 @@ title: TracingOptions
 
 #### 类型
 
-[ViewRasterType](scripting-constants.md#viewrastertype)
+[ViewRasterType](../scripting-constants#viewrastertype)
 
 ---
 
@@ -358,7 +358,7 @@ title: TracingOptions
 
 #### 类型
 
-[ViewVectorType](scripting-constants.md#viewvectortype)
+[ViewVectorType](../scripting-constants#viewvectortype)
 
 ---
 

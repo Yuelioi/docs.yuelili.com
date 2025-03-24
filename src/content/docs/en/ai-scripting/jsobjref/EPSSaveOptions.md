@@ -7,7 +7,7 @@ title: EPSSaveOptions
 
 #### Description
 
-Options for saving a document as an Illustrator EPS file, used with the [Document.saveAs()](Document.md#documentsaveas) method.
+Options for saving a document as an Illustrator EPS file, used with the [Document.saveAs()](../document#documentsaveas) method.
 
 All properties are optional.
 
@@ -57,7 +57,7 @@ Default: `Compatibility.ILLUSTRATOR1719`.
 
 #### Type
 
-[Compatibility](scripting-constants.md#compatibility)
+[Compatibility](../scripting-constants#compatibility)
 
 ---
 
@@ -117,7 +117,7 @@ How should transparency be flattened for file formats older than Illustrator 9.
 
 #### Type
 
-[OutputFlattening](scripting-constants.md#outputflattening)
+[OutputFlattening](../scripting-constants#outputflattening)
 
 ---
 
@@ -147,7 +147,7 @@ Default: `PDFOverprint.PRESERVEPDFOVERPRINT`.
 
 #### Type
 
-[PDFOverprint](scripting-constants.md#pdfoverprint)
+[PDFOverprint](../scripting-constants#pdfoverprint)
 
 ---
 
@@ -163,7 +163,7 @@ Default: `EPSPostScriptLevelEnum.LEVEL2`.
 
 #### Type
 
-[EPSPostScriptLevelEnum](scripting-constants.md#epspostscriptlevelenum)
+[EPSPostScriptLevelEnum](../scripting-constants#epspostscriptlevelenum)
 
 ---
 
@@ -177,7 +177,7 @@ The format for the EPS preview image.
 
 #### Type
 
-[EPSPreview](scripting-constants.md#epspreview)
+[EPSPreview](../scripting-constants#epspreview)
 
 ---
 

@@ -25,7 +25,7 @@ title: PrintFontOptions
 
 #### 类型
 
-[PrintFontDownloadMode](scripting-constants.md#printfontdownloadmode)
+[PrintFontDownloadMode](../scripting-constants#printfontdownloadmode)
 
 ---
 
@@ -41,7 +41,7 @@ title: PrintFontOptions
 
 #### 类型
 
-[FontSubstitutionPolicy](scripting-constants.md#fontsubstitutionpolicy)
+[FontSubstitutionPolicy](../scripting-constants#fontsubstitutionpolicy)
 
 ---
 

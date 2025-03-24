@@ -21,4 +21,4 @@ ExtendScript 工具包为所有支持 JavaScript 的 Adobe 应用程序中的 Ex
 
 当您在平台的窗口环境中双击一个 JSX 文件时，脚本会在工具包中运行，除非它使用 `#target` 指令指定了特定的目标应用程序。
 
-更多信息，请参阅 [选择调试目标](debugging-in-the-toolkit.md#选择调试目标) 和 [预处理器指令](../../extendscript-tools-features/preprocessor-directives)。
+更多信息，请参阅 [选择调试目标](../debugging-in-the-toolkit#选择调试目标) 和 [预处理器指令](../../extendscript-tools-features/preprocessor-directives)。

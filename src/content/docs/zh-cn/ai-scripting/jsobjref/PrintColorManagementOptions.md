@@ -25,7 +25,7 @@ title: PrintColorManagementOptions
 
 #### 类型
 
-[PrintColorProfile](scripting-constants.md#printcolorprofile)
+[PrintColorProfile](../scripting-constants#printcolorprofile)
 
 ---
 
@@ -41,7 +41,7 @@ title: PrintColorManagementOptions
 
 #### 类型
 
-[PrintColorIntent](scripting-constants.md#printcolorintent)
+[PrintColorIntent](../scripting-constants#printcolorintent)
 
 ---
 

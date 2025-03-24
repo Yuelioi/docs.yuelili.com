@@ -11,7 +11,7 @@ title: 有用的实用函数
 |-----------------------|------------------------------------------------------------------------------------------------------------|
 | `PF_SetOptionsButtonName` | 更改效果控制面板中选项按钮上的文本。                                                                       |
 |                       | !!! 注意                                                                                                  |
-|                       |      必须在 [PF_Cmd_PARAM_SETUP](../effect-basics/command-selectors.md#global-selectors) 期间调用此函数。 |
+|                       |      必须在 [PF_Cmd_PARAM_SETUP](../../effect-basics/command-selectors#global-selectors) 期间调用此函数。 |
 |                       | <pre lang="cpp">PF_SetOptionsButtonName(<br/>  PF_ProgPtr    effect_ref,<br/>  const A_char  \*nameZ);</pre> |
 |                       | `nameZ` 的长度最多为 `A_char[31]`。                                                                       |
 
@@ -21,7 +21,7 @@ title: 有用的实用函数
 
 大约 437 年前，当我们发布 After Effects 5.0 时，我们在 PF_AppSuite 中发布了一些有用的实用回调函数。它们今天仍然像那时一样有用。After Effects 具有用户可控制的 UI 亮度。
 
-除了用于效果中自定义 UI 的 [PF_EffectCustomUIOverlayThemeSuite](../effect-ui-events/custom-ui-and-drawbot.md#pf_effectcustomuioverlaythemesuite) 外，还可以使用这些调用来无缝集成到 After Effects UI 中。
+除了用于效果中自定义 UI 的 [PF_EffectCustomUIOverlayThemeSuite](../../effect-ui-events/custom-ui-and-drawbot#pf_effectcustomuioverlaythemesuite) 外，还可以使用这些调用来无缝集成到 After Effects UI 中。
 
 还有什么比将某人的个人信息放入水印中更能羞辱他们购买你的插件呢？或者将光标设置为添加遮罩顶点，只是为了迷惑人们？嘿嘿嘿。但那样做是不对的。
 
@@ -86,7 +86,7 @@ title: 有用的实用函数
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `PF_SetProjectDirty`    | 告诉 After Effects 项目自上次保存以来已更改。                                                                                                                                                                  |
 |                         | <pre lang="cpp">PF_SetProjectDirty(void);</pre>                                                                                                                                                                |
-| `PF_SaveProject`        | 将项目保存到当前路径。要将项目保存到其他地方，请使用 [AEGP_SaveProjectToPath()](../aegps/aegp-suites.md#aegp_projsuite6)。                                                                                    |
+| `PF_SaveProject`        | 将项目保存到当前路径。要将项目保存到其他地方，请使用 [AEGP_SaveProjectToPath()](../../aegps/aegp-suites#aegp_projsuite6)。                                                                                    |
 |                         | <pre lang="cpp">PF_SaveProject(void);</pre>                                                                                                                                                                    |
 | `PF_SaveBackgroundState`| 存储背景状态（After Effects 在打开的应用程序和窗口堆叠顺序中的位置）。                                                                                                                                        |
 |                         | <pre lang="cpp">PF_SaveBackgroundState(void);</pre>                                                                                                                                                            |
@@ -139,7 +139,7 @@ title: 有用的实用函数
 
 由于有许多 AEGP API 调用可用，这些函数使用不多，但它们仍然可用。
 
-不要将此套件与 [AEGP_ItemSuite](../aegps/aegp-suites.md#aegp_itemsuite9) 混淆。
+不要将此套件与 [AEGP_ItemSuite](../../aegps/aegp-suites#aegp_itemsuite9) 混淆。
 
 ---
 

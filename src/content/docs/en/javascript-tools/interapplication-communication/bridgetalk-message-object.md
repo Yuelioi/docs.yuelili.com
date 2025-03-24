@@ -30,7 +30,7 @@ Before you send a message to another application, you must set the target proper
 The data payload of the message.
 
 - If this is an unsolicited message to another application, typically contains a script packaged as a string. The target application's full document object model (DOM) is available within the script.
-- If this message is a result returned from the static BridgeTalk `onReceive` method of a target application, directed to an onResult callback in this object, contains the return result from that method flattened into a string. See [Passing values between applications](communicating-through-messages.md#passing-values-between-applications).
+- If this message is a result returned from the static BridgeTalk `onReceive` method of a target application, directed to an onResult callback in this object, contains the return result from that method flattened into a string. See [Passing values between applications](../communicating-through-messages#passing-values-between-applications).
 - If this message contains an error notification for the onError callback, contains the error message.
 
 #### Type
@@ -81,7 +81,7 @@ var error = bt.headers ["Error-Code"];
 
 #### Description
 
-The application specifier for the sending application (see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers)).
+The application specifier for the sending application (see [Application specifiers](../application-and-namespace-specifiers#application-specifiers)).
 
 #### Type
 
@@ -95,7 +95,7 @@ String
 
 #### Description
 
-The application specifier for the target, or receiving, application (see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers)).
+The application specifier for the target, or receiving, application (see [Application specifiers](../application-and-namespace-specifiers#application-specifiers)).
 
 #### Type
 
@@ -203,7 +203,7 @@ bridgeTalkObj.onResult = function( responseMsgObject ) {
 
 The target passes a new message object, with the body property set to the result string.
 
-This is the result of the target application's static BridgeTalk [onReceive](bridgetalk-class.md#bridgetalkonreceive) method, packaged as a UTF-8-encoded string. See [Passing values between applications](communicating-through-messages.md#passing-values-between-applications).
+This is the result of the target application's static BridgeTalk [onReceive](../bridgetalk-class#bridgetalkonreceive) method, packaged as a UTF-8-encoded string. See [Passing values between applications](../communicating-through-messages#passing-values-between-applications).
 
 ---
 
@@ -268,7 +268,7 @@ This allows you to send multiple responses to messages.
 
 | Parameter | Type |                                                                                                                                                     Description                                                                                                                                                      |
 | --------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `result`  | Any  | You can send data of any type as the result value. The messaging framework creates a BridgeTalk message object, and flattens this value into a string which it stores in the body of that message. See [Passing values between applications](communicating-through-messages.md#passing-values-between-applications). |
+| `result`  | Any  | You can send data of any type as the result value. The messaging framework creates a BridgeTalk message object, and flattens this value into a string which it stores in the body of that message. See [Passing values between applications](../communicating-through-messages#passing-values-between-applications). |
 
 #### Returns
 

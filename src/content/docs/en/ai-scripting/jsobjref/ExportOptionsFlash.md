@@ -7,7 +7,7 @@ title: ExportOptionsFlash
 
 #### Description
 
-Options for exporting a document as a Macromedia® Flash® (SWF) file, used with the [Document.exportFile()](Document.md#documentexportfile) method. All properties are optional.
+Options for exporting a document as a Macromedia® Flash® (SWF) file, used with the [Document.exportFile()](../document#documentexportfile) method. All properties are optional.
 
 When you export a document, the appropriate file extension is appended automatically. You should not include any file extension in the file specification.
 
@@ -27,7 +27,7 @@ Default: `ArtClippingOption.OUTPUTARTBOUNDS`.
 
 #### Type
 
-[ArtClippingOption](scripting-constants.md#artclippingoption)
+[ArtClippingOption](../scripting-constants#artclippingoption)
 
 ---
 
@@ -87,7 +87,7 @@ Default: `BlendAnimationType.NOBLENDANIMATION`.
 
 #### Type
 
-[BlendAnimationType](scripting-constants.md#blendanimationtype)
+[BlendAnimationType](../scripting-constants#blendanimationtype)
 
 ---
 
@@ -167,7 +167,7 @@ Default: `FlashExportStyle.ASFLASHFILE`.
 
 #### Type
 
-[FlashExportStyle](scripting-constants.md#flashexportstyle)
+[FlashExportStyle](../scripting-constants#flashexportstyle)
 
 ---
 
@@ -183,7 +183,7 @@ Default: `FlashExportVersion.FlashVersion9`.
 
 #### Type
 
-[FlashExportVersion](scripting-constants.md#flashexportversion)
+[FlashExportVersion](../scripting-constants#flashexportversion)
 
 ---
 
@@ -233,7 +233,7 @@ Default: `FlashImageFormat.LOSSLESS`.
 
 #### Type
 
-[FlashImageFormat](scripting-constants.md#flashimageformat)
+[FlashImageFormat](../scripting-constants#flashimageformat)
 
 ---
 
@@ -265,7 +265,7 @@ Default: `FlashJPEGMethod.Standard`.
 
 #### Type
 
-[FlashJPEGMethod](scripting-constants.md#flashjpegmethod)
+[FlashJPEGMethod](../scripting-constants#flashjpegmethod)
 
 ---
 
@@ -297,7 +297,7 @@ Default: `LayerOrderType.BOTTOMUP`.
 
 #### Type
 
-[LayerOrderType](scripting-constants.md#layerordertype)
+[LayerOrderType](../scripting-constants#layerordertype)
 
 ---
 
@@ -329,7 +329,7 @@ Default: `FlashPlaybackSecurity.PlaybackLocal`.
 
 #### Type
 
-[FlashPlaybackSecurity](scripting-constants.md#flashplaybacksecurity)
+[FlashPlaybackSecurity](../scripting-constants#flashplaybacksecurity)
 
 ---
 
@@ -377,7 +377,7 @@ Default: `SaveOptions.PROMPTTOSAVECHANGES`.
 
 #### Type
 
-[SaveOptions](scripting-constants.md#saveoptions)
+[SaveOptions](../scripting-constants#saveoptions)
 
 ---
 

@@ -221,7 +221,7 @@ This functionality was added in After Effects 13.8 (CC 2015.3)
 #### Description
 
 Get or set the current projects GPU Acceleration option.
-see [app.availableGPUAccelTypes](application.md#appavailablegpuacceltypes)
+see [app.availableGPUAccelTypes](../application#appavailablegpuacceltypes)
 
 #### Type
 
@@ -530,7 +530,7 @@ This functionality was added in After Effects 24.5
 
 Returns an Array of Objects containing references to used fonts and the Text Layers and times on which they appear in the current [Project](#project-object).
 
-Each object is composed of `font` which is a [Font object](../../text/fontobject), and `usedAt` which is an Array of Objects, each composed of `layerID`, a [Layer.id](../layer/layer.md#layerid), and `layerTimeD` for when. See [Project.layerByID()](#projectlayerbyid) to retrieve the layers.
+Each object is composed of `font` which is a [Font object](../../text/fontobject), and `usedAt` which is an Array of Objects, each composed of `layerID`, a [Layer.id](../../layer/layer#layerid), and `layerTimeD` for when. See [Project.layerByID()](#projectlayerbyid) to retrieve the layers.
 
 ```javascript
 var usedList = app.project.usedFonts;
@@ -808,7 +808,7 @@ This functionality was added in After Effects 13.0 (CC 2014)
 
 #### Description
 
-Retrieves an item by its [Item ID](../item/item.md#itemid)
+Retrieves an item by its [Item ID](../../item/item#itemid)
 
 #### Parameters
 

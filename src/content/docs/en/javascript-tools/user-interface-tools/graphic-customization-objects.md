@@ -98,7 +98,7 @@ The current position in the drawing path for this object
 
 ##### Type
 
-[Point object](./size-and-location-objects.md#point)
+[Point object](../size-and-location-objects#point)
 
 ---
 
@@ -270,7 +270,7 @@ Nothing
 
 Defines an elliptical path within a given rectangular area in the currentPath object, which can be filled using [`fillPath()`](#fillpath) or stroked using [`strokePath()`](#strokepath).
 
-Returns a [Point object](./size-and-location-objects.md#point) for the upper left corner of the area, which is the new [`currentPoint`](#currentpoint).
+Returns a [Point object](../size-and-location-objects#point) for the upper left corner of the area, which is the new [`currentPoint`](#currentpoint).
 
 ##### Parameters
 
@@ -281,7 +281,7 @@ Returns a [Point object](./size-and-location-objects.md#point) for the upper lef
 
 ##### Returns
 
-[Point object](./size-and-location-objects.md#point)
+[Point object](../size-and-location-objects#point)
 
 ---
 
@@ -314,7 +314,7 @@ Nothing
 
 Adds a path segment to the `currentPath`, from the `currentPoint` to the specified point.
 
-Returns a [Point object](./size-and-location-objects.md#point) for the upper left corner of the area, which is the new [`currentPoint`](#currentpoint).
+Returns a [Point object](../size-and-location-objects#point) for the upper left corner of the area, which is the new [`currentPoint`](#currentpoint).
 
 ##### Parameters
 
@@ -324,7 +324,7 @@ Returns a [Point object](./size-and-location-objects.md#point) for the upper lef
 
 ##### Returns
 
-[Point object](./size-and-location-objects.md#point)
+[Point object](../size-and-location-objects#point)
 
 ---
 
@@ -336,7 +336,7 @@ Returns a [Point object](./size-and-location-objects.md#point) for the upper lef
 
 Calculates the size needed to draw a text string in a given font.
 
-Returns a [Dimension object](./size-and-location-objects.md#dimension) object containing the height and width of the string in pixels.
+Returns a [Dimension object](../size-and-location-objects#dimension) object containing the height and width of the string in pixels.
 
 ##### Parameters
 
@@ -348,7 +348,7 @@ Returns a [Dimension object](./size-and-location-objects.md#dimension) object co
 
 ##### Returns
 
-[Dimension object](./size-and-location-objects.md#dimension)
+[Dimension object](../size-and-location-objects#dimension)
 
 ---
 
@@ -368,7 +368,7 @@ Adds a given point to the [`currentPath`](#currentpath), and makes it the [`curr
 
 ##### Returns
 
-[Point object](./size-and-location-objects.md#point)
+[Point object](../size-and-location-objects#point)
 
 ---
 
@@ -449,7 +449,7 @@ Creates a new drawing pen.
 
 Defines a rectangular path in the currentPath object, which can be filled using [`fillPath()`](#fillpath) or stroked using [`strokePath()`](#strokepath).
 
-Returns a [Point object](./size-and-location-objects.md#point) for the upper left corner of the rectangle, which is the new currentPoint.
+Returns a [Point object](../size-and-location-objects#point) for the upper left corner of the rectangle, which is the new currentPoint.
 
 ##### Parameters
 
@@ -460,7 +460,7 @@ Returns a [Point object](./size-and-location-objects.md#point) for the upper lef
 
 ##### Returns
 
-[Point object](./size-and-location-objects.md#point)
+[Point object](../size-and-location-objects#point)
 
 ---
 
@@ -510,7 +510,7 @@ The object contains the following properties:
 
 ## ScriptUIFont Object
 
-A helper object that encapsulates the qualities of a font used to draw text into a control. Create with the [`newFont()`](./scriptui-class.md#scriptuinewfont) method of the `ScriptUI` class.
+A helper object that encapsulates the qualities of a font used to draw text into a control. Create with the [`newFont()`](../scriptui-class#scriptuinewfont) method of the `ScriptUI` class.
 
 Used as a value of font.
 
@@ -540,7 +540,7 @@ A helper object that encapsulates a set of images that can be drawn into a contr
 
 An object of this type is created automatically when a script uses a pathname or File object to set the image property of an Image, IconButton, or ListItem object; the new object becomes the value of that property.
 
-You can create this object explicitly using the [`newImage()`](./scriptui-class.md#scriptuinewimage) method of the `ScriptUI` class. When you do this, you can specify alternate versions of the image to be used for different control states, such as enabled, disabled, and rollover.
+You can create this object explicitly using the [`newImage()`](../scriptui-class#scriptuinewimage) method of the `ScriptUI` class. When you do this, you can specify alternate versions of the image to be used for different control states, such as enabled, disabled, and rollover.
 
 This object is passed as an argument to [`drawImage()`](#drawimage).
 

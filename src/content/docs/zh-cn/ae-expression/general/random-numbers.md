@@ -6,7 +6,7 @@ title: 随机数
 这些条目处理表达式中的随机性。
 
 :::note
-[wiggle()](../objects/property.md#wiggle) 方法—用于随机地变化属性值—属于 [Property](../../objects/property) 属性和方法类别。
+[wiggle()](../../objects/property#wiggle) 方法—用于随机地变化属性值—属于 [Property](../../objects/property) 属性和方法类别。
 :::
 
 ---
@@ -161,7 +161,7 @@ Number or Array
 
 | 参数         | 类型    | 描述                                                                                                                          |
 | ------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `offset`   | Number  | 用于偏移种子的值。这也控制[`wiggle()`](../objects/property.md#wiggle) 函数的初始值                                             |
+| `offset`   | Number  | 用于偏移种子的值。这也控制[`wiggle()`](../../objects/property#wiggle) 函数的初始值                                             |
 | `timeless` | Boolean | 可选。若 `timeless` 为 `true`，则不使用当前时间作为随机种子的输入。这样可以生成一个与时间无关的随机数。默认值为 `false` |
 
 #### 返回

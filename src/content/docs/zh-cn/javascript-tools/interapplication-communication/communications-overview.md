@@ -12,9 +12,9 @@ title: 通信概述
 所有支持消息传递的应用程序都共享一组有限的基本函数（跨DOM函数），这些函数允许您的脚本通过调用其他应用程序的打开或打印函数来执行诸如打开或打印文件等操作。
 
 - [跨DOM函数](../cross-dom-functions) 描述了此功能的用法。
-- [跨DOM API参考](cross-dom-functions.md#cross-dom-api-reference) 提供了基本跨DOM函数的参考详细信息。
+- [跨DOM API参考](../cross-dom-functions#cross-dom-api-reference) 提供了基本跨DOM函数的参考详细信息。
 
-每个支持消息传递的应用程序还可以导出一组函数，以提供特定的应用程序功能；请参阅[应用程序特定的导出函数](cross-dom-functions.md#application-specific-exported-functions)。
+每个支持消息传递的应用程序还可以导出一组函数，以提供特定的应用程序功能；请参阅[应用程序特定的导出函数](../cross-dom-functions#application-specific-exported-functions)。
 
 例如，Adobe Bridge脚本可以通过调用 `photoshop.photomerge(files)` 请求在Photoshop中进行照片合并。每个应用程序可用的函数集差异很大。
 

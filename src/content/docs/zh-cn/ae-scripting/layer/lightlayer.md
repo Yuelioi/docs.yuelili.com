@@ -7,7 +7,7 @@ title: 灯光图层
 
 #### 描述
 
-LightLayer 对象表示合成中的一个灯光层。可以使用 [LayerCollection.addLight()](layercollection.md#layercollectionaddlight) 方法创建它。可以通过索引号或名称字符串在项目的图层集合中访问它。
+LightLayer 对象表示合成中的一个灯光层。可以使用 [LayerCollection.addLight()](../layercollection#layercollectionaddlight) 方法创建它。可以通过索引号或名称字符串在项目的图层集合中访问它。
 
 :::info
 LightLayer 是 [Layer 对象](../layer) 的子类。在使用 LightLayer 时，Layer 的所有方法和属性都可用。

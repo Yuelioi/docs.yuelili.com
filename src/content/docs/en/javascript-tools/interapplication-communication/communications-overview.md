@@ -12,9 +12,9 @@ Scripts written for any message-enabled application can communicate with other m
 A limited set of basic functions (the cross-DOM) are common across all message-enabled applications, and allow your script to, for example, open or print files in other applications, simply by calling the open or print function for that application.
 
 - [Cross-DOM functions](../cross-dom-functions) describes the usage of this feature.
-- [Cross-DOM API reference](cross-dom-functions.md#cross-dom-api-reference) provides reference details for the functions of the basic cross-DOM.
+- [Cross-DOM API reference](../cross-dom-functions#cross-dom-api-reference) provides reference details for the functions of the basic cross-DOM.
 
-Each message-enabled application can also export a set of functions to provide a selected set of application-specific functionality; see [Application-specific exported functions](cross-dom-functions.md#application-specific-exported-functions).
+Each message-enabled application can also export a set of functions to provide a selected set of application-specific functionality; see [Application-specific exported functions](../cross-dom-functions#application-specific-exported-functions).
 
 For example, an Adobe Bridge script can request a photo merge in Photoshop by calling `photoshop.photomerge(files)`. The set of functions available for each application varies widely.
 

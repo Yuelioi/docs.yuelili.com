@@ -98,7 +98,7 @@ Object
 
 ##### 类型
 
-[Point 对象](./size-and-location-objects.md#point)
+[Point 对象](../size-and-location-objects#point)
 
 ---
 
@@ -270,7 +270,7 @@ Object
 
 在 `currentPath` 对象中定义一个椭圆路径，该路径可以使用 [`fillPath()`](#fillpath) 填充或使用 [`strokePath()`](#strokepath) 描边。
 
-返回区域的左上角的 [Point 对象](./size-and-location-objects.md#point)，这是新的 [`currentPoint`](#currentpoint)。
+返回区域的左上角的 [Point 对象](../size-and-location-objects#point)，这是新的 [`currentPoint`](#currentpoint)。
 
 ##### 参数
 
@@ -281,7 +281,7 @@ Object
 
 ##### 返回
 
-[Point 对象](./size-and-location-objects.md#point)
+[Point 对象](../size-and-location-objects#point)
 
 ---
 
@@ -314,7 +314,7 @@ Object
 
 向 `currentPath` 添加一个路径段，从 `currentPoint` 到指定点。
 
-返回区域的左上角的 [Point 对象](./size-and-location-objects.md#point)，这是新的 [`currentPoint`](#currentpoint)。
+返回区域的左上角的 [Point 对象](../size-and-location-objects#point)，这是新的 [`currentPoint`](#currentpoint)。
 
 ##### 参数
 
@@ -324,7 +324,7 @@ Object
 
 ##### 返回
 
-[Point 对象](./size-and-location-objects.md#point)
+[Point 对象](../size-and-location-objects#point)
 
 ---
 
@@ -336,7 +336,7 @@ Object
 
 计算在给定字体中绘制文本字符串所需的大小。
 
-返回包含字符串高度和宽度的 [Dimension 对象](./size-and-location-objects.md#dimension)（以像素为单位）。
+返回包含字符串高度和宽度的 [Dimension 对象](../size-and-location-objects#dimension)（以像素为单位）。
 
 ##### 参数
 
@@ -348,7 +348,7 @@ Object
 
 ##### 返回
 
-[Dimension 对象](./size-and-location-objects.md#dimension)
+[Dimension 对象](../size-and-location-objects#dimension)
 
 ---
 
@@ -368,7 +368,7 @@ Object
 
 ##### 返回
 
-[Point 对象](./size-and-location-objects.md#point)
+[Point 对象](../size-and-location-objects#point)
 
 ---
 
@@ -449,7 +449,7 @@ Object
 
 在 `currentPath` 对象中定义一个矩形路径，该路径可以使用 [`fillPath()`](#fillpath) 填充或使用 [`strokePath()`](#strokepath) 描边。
 
-返回矩形左上角的 [Point 对象](./size-and-location-objects.md#point)，这是新的 currentPoint。
+返回矩形左上角的 [Point 对象](../size-and-location-objects#point)，这是新的 currentPoint。
 
 ##### 参数
 
@@ -460,7 +460,7 @@ Object
 
 ##### 返回
 
-[Point 对象](./size-and-location-objects.md#point)
+[Point 对象](../size-and-location-objects#point)
 
 ---
 

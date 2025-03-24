@@ -79,11 +79,11 @@ Creates a new document using optional parameters and returns a reference to the 
 
 |      Parameter       |                                       Type                                        |          Description          |
 | -------------------- | --------------------------------------------------------------------------------- | ----------------------------- |
-| `documentColorSpace` | [DocumentColorSpace](scripting-constants.md#documentcolorspace), optional         | Color space of document       |
+| `documentColorSpace` | [DocumentColorSpace](../scripting-constants#documentcolorspace), optional         | Color space of document       |
 | `width`              | Number (double), optional                                                         | Width of document to add      |
 | `height`             | Number (double), optional                                                         | Height of document to add     |
 | `numArtBoards`       | Number (long), optional                                                           | Number of artboards to create |
-| `artboardLayout`     | [DocumentArtboardLayout](scripting-constants.md#documentartboardlayout), optional | Artboard layout               |
+| `artboardLayout`     | [DocumentArtboardLayout](../scripting-constants#documentartboardlayout), optional | Artboard layout               |
 | `artboardSpacing`    | Number, optional                                                                  | Number of pixels for spacing  |
 | `artboardRowsOrCols` | Integer, optional                                                                 | Number of rows or columns     |
 

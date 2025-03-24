@@ -9,7 +9,7 @@ title: 使用枚举值
 
 要查找枚举的数字值，可以使用以下方法之一：
 
-- 脚本编辑器环境中的对象浏览器。请参阅 [查看 VBScript 对象模型](../introduction/viewingTheObjectModel.md#viewing-the-vbscript-object-model)。
+- 脚本编辑器环境中的对象浏览器。请参阅 [查看 VBScript 对象模型](../../introduction/viewingTheObjectModel#viewing-the-vbscript-object-model)。
 - Adobe Illustrator CC 2017 脚本参考：VBScript，该书末尾的“枚举”章节中直接在常量值后列出了数字值。以下示例来自该表格：
 
 | 枚举类型           | 值                                  | 含义                                     |

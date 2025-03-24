@@ -25,7 +25,7 @@ title: TabStopInfo
 
 #### 类型
 
-[TabStopAlignment](scripting-constants.md#tabstopalignment)
+[TabStopAlignment](../scripting-constants#tabstopalignment)
 
 ---
 

@@ -3,7 +3,7 @@ title: 环境
 ---
 # 环境对象
 
-此全局对象可通过 [ScriptUI.environment](scriptui-class.md#scriptuienvironment) 属性访问。
+此全局对象可通过 [ScriptUI.environment](../scriptui-class#scriptuienvironment) 属性访问。
 
 它定义了 ScriptUI 环境的属性，并且仅包含一个属性。
 
@@ -21,7 +21,7 @@ title: 环境
 
 这与事件处理系统无关，这意味着在脚本中的任何时间，您都可以使用此对象检查是否按下了特定键（例如键盘修饰键），并因此触发替代操作。
 
-它可通过 [ScriptUI.environment](scriptui-class.md#scriptuienvironment) 对象访问：
+它可通过 [ScriptUI.environment](../scriptui-class#scriptuienvironment) 对象访问：
 
 ```javascript
 var myKeyState = ScriptUI.environment.keyboardState;
@@ -102,7 +102,7 @@ if (keyboardState.shiftKey && keyboardState.altKey) {
 }
 ```
 
-这也可以在界面按钮中使用，作为 [通过键盘事件检查修饰键](event-handling.md#getmodifierstate) 的替代方案，除非您确信正确处理了事件状态，否则后者可能会更令人困惑且不太直观。
+这也可以在界面按钮中使用，作为 [通过键盘事件检查修饰键](../event-handling#getmodifierstate) 的替代方案，除非您确信正确处理了事件状态，否则后者可能会更令人困惑且不太直观。
 
 例如：
 

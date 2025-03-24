@@ -11,7 +11,7 @@ Paths differ from other parameter types, in that their values are not directly a
 
 ## Manipulating Path Data
 
-You can also use the [AEGP_MaskOutlineSuite3](../aegps/aegp-suites.md#aegp_maskoutlinesuite3) to manipulate paths. See [Cheating Effect Usage of AEGP Suites](../../aegps/cheating-effect-usage-of-aegp-suites). Path parameters are treated as opaque blobs of data; get and set functions must be used to access and manipulate them. Like layer parameters, they must be checked out (and in!) by effects which access them.
+You can also use the [AEGP_MaskOutlineSuite3](../../aegps/aegp-suites#aegp_maskoutlinesuite3) to manipulate paths. See [Cheating Effect Usage of AEGP Suites](../../aegps/cheating-effect-usage-of-aegp-suites). Path parameters are treated as opaque blobs of data; get and set functions must be used to access and manipulate them. Like layer parameters, they must be checked out (and in!) by effects which access them.
 
 ---
 

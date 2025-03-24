@@ -220,7 +220,7 @@ This functionality was added in After Effects 14.0 (CC 2017)
 
 #### Description
 
-A [PropertyGroup object](../../property/propertygroup) that contains all a composition's markers. Composition marker scripting has the same functionality as [Layer markers](../layer/layer.md#layermarker).
+A [PropertyGroup object](../../property/propertygroup) that contains all a composition's markers. Composition marker scripting has the same functionality as [Layer markers](../../layer/layer#layermarker).
 
 See [MarkerValue object](../../other/markervalue).
 
@@ -608,7 +608,7 @@ This functionality was added in After Effects 16.1 (CC 2019)
 Sets the name of a single property in the Essential Graphics panel.
 
 :::tip
-To rename a property as it is added to the EGP, see [Property.addToMotionGraphicsTemplateAs()](../property/property.md#propertyaddtomotiongraphicstemplateas).
+To rename a property as it is added to the EGP, see [Property.addToMotionGraphicsTemplateAs()](../../property/property#propertyaddtomotiongraphicstemplateas).
 :::
 
 

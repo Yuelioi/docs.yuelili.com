@@ -7,7 +7,7 @@ title: ExportOptionsTIFF
 
 #### 描述
 
-用于将文档导出为 TIFF 文件的选项，与 [Document.exportFile()](Document.md#documentexportfile) 方法一起使用。所有属性都是可选的。
+用于将文档导出为 TIFF 文件的选项，与 [Document.exportFile()](../Document#documentexportfile) 方法一起使用。所有属性都是可选的。
 
 导出文档时，会自动附加适当的文件扩展名。您不应在文件规范中包含任何文件扩展名。
 
@@ -57,7 +57,7 @@ title: ExportOptionsTIFF
 
 #### 类型
 
-[TIFFByteOrder](scripting-constants.md#tiffbyteorder)
+[TIFFByteOrder](../scripting-constants#tiffbyteorder)
 
 ---
 
@@ -73,7 +73,7 @@ title: ExportOptionsTIFF
 
 #### 类型
 
-[ImageColorSpace](scripting-constants.md#imagecolorspace)
+[ImageColorSpace](../scripting-constants#imagecolorspace)
 
 ---
 

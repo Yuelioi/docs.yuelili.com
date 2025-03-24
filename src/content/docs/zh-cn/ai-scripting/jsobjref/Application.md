@@ -79,7 +79,7 @@ Illustrator 中当前活动的（最前面的）文档。
 
 #### 类型
 
-[CoordinateSystem](scripting-constants.md#coordinatesystem)
+[CoordinateSystem](../scripting-constants#coordinatesystem)
 
 ---
 
@@ -359,7 +359,7 @@ Illustrator 的偏好设置。
 
 #### 类型
 
-[UserInteractionLevel](scripting-constants.md#userinteractionlevel)
+[UserInteractionLevel](../scripting-constants#userinteractionlevel)
 
 ---
 
@@ -526,10 +526,10 @@ app.convertSampleColor(
 
 |       参数       |                               类型                                |           描述            |
 | ---------------- | ----------------------------------------------------------------- | ------------------------- |
-| `sourceColorSpace` | [ImageColorSpace](scripting-constants.md#imagecolorspace) | 源颜色的颜色空间 |
+| `sourceColorSpace` | [ImageColorSpace](../scripting-constants#imagecolorspace) | 源颜色的颜色空间 |
 | `sourceColor` | ColorComponents | 要转换的源颜色 |
-| `destColorSpace` | [ImageColorSpace](scripting-constants.md#imagecolorspace) | 目标颜色空间 |
-| `colorConvertPurpose` | [ColorConvertPurpose](scripting-constants.md#colorconvertpurpose) | 转换的目的 |
+| `destColorSpace` | [ImageColorSpace](../scripting-constants#imagecolorspace) | 目标颜色空间 |
+| `colorConvertPurpose` | [ColorConvertPurpose](../scripting-constants#colorconvertpurpose) | 转换的目的 |
 | `sourceHasAlpha` | 布尔值，可选 | 源是否具有透明度 |
 | `destHasAlpha` | 布尔值，可选 | 目标是否具有透明度 |
 
@@ -657,7 +657,7 @@ ColorComponents 数组
 
 |  参数   |                             类型                               |       描述         |
 | ------- | --------------------------------------------------------------- | ------------------ |
-| `presetType` | [DocumentPresetType](scripting-constants.md#documentpresettype) | 要获取文件的预设类型 |
+| `presetType` | [DocumentPresetType](../scripting-constants#documentpresettype) | 要获取文件的预设类型 |
 
 #### 返回值
 
@@ -915,7 +915,7 @@ Boolean
 | 参数                |                                         类型                                          |       描述       |
 | ------------------- | ------------------------------------------------------------------------------------- | ---------------- |
 | `file`              | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象    | 要打开的文件      |
-| `documentColorSpace`| [DocumentColorSpace](scripting-constants.md#documentcolorspace), 可选                | 文档的颜色空间    |
+| `documentColorSpace`| [DocumentColorSpace](../scripting-constants#documentcolorspace), 可选                | 文档的颜色空间    |
 | `options`           | 任意类型                                                                              | 待办事项          |
 
 #### 返回值

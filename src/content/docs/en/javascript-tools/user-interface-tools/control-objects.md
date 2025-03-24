@@ -24,7 +24,7 @@ Creates and returns a new control or container object and adds it to the childre
 |    Parameter     |                         Type                         |                                                                                                                                    Description                                                                                                                                     |
 | ---------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `type`           | String                                               | The control type. See [Control types and creation parameters](#control-types-and-creation-parameters).                                                                                                                                                                             |
-| `bounds`         | [Bounds object](size-and-location-objects.md#bounds) | Optional. A bounds specification that describes the size and position of the new control or container, relative to its parent. If supplied, this value creates a new [Bounds](size-and-location-objects.md#bounds) object which is assigned to the new object's `bounds` property. |
+| `bounds`         | [Bounds object](../size-and-location-objects#bounds) | Optional. A bounds specification that describes the size and position of the new control or container, relative to its parent. If supplied, this value creates a new [Bounds](../size-and-location-objects#bounds) object which is assigned to the new object's `bounds` property. |
 | `text`           | String                                               | Optional. Initial text to be displayed in the control as the title, label, or contents, depending on the control type. If supplied, this value is assigned to the new object's `text` property.                                                                                    |
 | `creation_props` | Object                                               | Optional. The properties of this object specify creation parameters, which are specific to each object type. See [Control types and creation parameters](#control-types-and-creation-parameters).                                                                                  |
 
@@ -54,7 +54,7 @@ A pushbutton containing a mouse-sensitive text string. Calls the [onClick](#oncl
 
 |       Parameter       |                         Type                         |                          Description                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                     |
 | `text`                | String                                               | Optional. The text displayed in the control.                   |
 | `creation_properties` | Object                                               | Optional. An object that contains any of the properties below. |
 
@@ -62,7 +62,7 @@ A pushbutton containing a mouse-sensitive text string. Calls the [onClick](#oncl
 
 | Property |  Type  |                                                                                                                        Description                                                                                                                        |
 | -------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`   | String | A unique name for the control. For a modal dialog, the special name "ok" makes this [defaultElement](window-object.md#defaultelement), and the special name "cancel" makes this the [cancelElement](window-object.md#cancelelement) of the parent dialog. |
+| `name`   | String | A unique name for the control. For a modal dialog, the special name "ok" makes this [defaultElement](../window-object#defaultelement), and the special name "cancel" makes this the [cancelElement](../window-object#cancelelement) of the parent dialog. |
 
 #### Example
 
@@ -88,7 +88,7 @@ Calls the [onClick](#onclick) callback if the control is clicked or if its [noti
 
 |       Parameter       |                         Type                         |                          Description                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                     |
 | `text`                | String                                               | Optional. The text displayed in the control.                   |
 | `creation_properties` | Object                                               | Optional. An object that contains any of the properties below. |
 
@@ -120,7 +120,7 @@ A drop-down list with zero or more items. Calls the [onChange](#onchange) callba
 
 |       Parameter       |                         Type                         |                                                                                                      Description                                                                                                       |
 | --------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                                                                                                                                                                             |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                                                                                                                                                                             |
 | `items`               | Array of strings                                     | Optional. Supply this argument or the `creation_properties` argument, not both. The text of each list item. A `ListItem` object is created for each item. An item with the text string `"-"` creates a separator item. |
 | `creation_properties` | Object                                               | Optional. An object that contains any of the properties below.                                                                                                                                                         |
 
@@ -164,7 +164,7 @@ The `textselection` property contains currently selected text.
 
 |       Parameter       |                         Type                         |                          Description                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                     |
 | `text`                | String                                               | Optional. The text displayed in the control.                   |
 | `minValue`            | Number                                               | Optional. Minimum accepted value of number to be entered.      |
 | `maxValue`            | Number                                               | Optional. Maximum accepted value of number to be entered.      |
@@ -204,7 +204,7 @@ The `textselection` property contains currently selected text.
 
 |       Parameter       |                         Type                         |                          Description                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                     |
 | `text`                | String                                               | Optional. The text displayed in the control.                   |
 | `creation_properties` | Object                                               | Optional. An object that contains any of the properties below. |
 
@@ -246,7 +246,7 @@ A control object of this type contains functions that allow your script to load 
 
 |       Parameter       |                             Type                              |                                   Description                                    |
 | --------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds)          | Optional. The control's position and size.                                       |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds)          | Optional. The control's position and size.                                       |
 | `moveToLoad`          | String or [File object](../../file-system-access/file-object) | Optional. A path or URL string or File for the SWF file to load into the player. |
 | `creation_properties` | Object                                                        | Optional. An object that contains any of the properties below.                   |
 
@@ -272,7 +272,7 @@ Class Name: `Group`
 
 #### Description
 
-A container for other controls. Containers have additional properties that control the children; see [Container Attributes](window-object.md#container-attributes).
+A container for other controls. Containers have additional properties that control the children; see [Container Attributes](../window-object#container-attributes).
 
 Hiding a group hides all its children. Making it visible makes visible those children that are not individually hidden.
 
@@ -280,7 +280,7 @@ Hiding a group hides all its children. Making it visible makes visible those chi
 
 |       Parameter       |                         Type                         |                          Description                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                     |
 | `creation_properties` | Object                                               | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
@@ -311,7 +311,7 @@ A mouse-sensitive pushbutton containing an icon. Calls the [onClick](#onclick) c
 
 |       Parameter       |                                       Type                                       |                                                                             Description                                                                              |
 | --------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds)                             | Optional. The control's position and size.                                                                                                                           |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds)                             | Optional. The control's position and size.                                                                                                                           |
 | `icon`                | Named resource, pathname, or [File object](../../file-system-access/file-object) | Optional. The named resource for the icon or family of icons displayed in the button control, or a pathname or File for an image file. Images must be in PNG format. |
 | `creation_properties` | Object                                                                           | Optional. An object that contains any of the properties below.                                                                                                       |
 
@@ -347,7 +347,7 @@ Displays an icon or image.
 
 |       Parameter       |                                       Type                                       |                                                                             Description                                                                              |
 | --------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds)                             | Optional. The control's position and size.                                                                                                                           |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds)                             | Optional. The control's position and size.                                                                                                                           |
 | `icon`                | Named resource, pathname, or [File object](../../file-system-access/file-object) | Optional. The named resource for the icon or family of icons displayed in the button control, or a pathname or File for an image file. Images must be in PNG format. |
 | `creation_properties` | Object                                                                           | Optional. An object that contains any of the properties below.                                                                                                       |
 
@@ -399,8 +399,8 @@ A list box with zero or more items. Calls the [onChange](#onchange) callback if 
 
 |       Parameter       |                         Type                         |                                                                                                                                                                 Description                                                                                                                                                                  |     |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                                                                                                                                                                                                                                                                                                   |     |
-| `items`               | Array of Strings                                     | Optional. The text of each list item. A [ListItem](types-of-controls.md#listitem) object is created for each item. Supply this argument, or the items property in `creation_properties`, not both. A [ListItem](types-of-controls.md#listitem) object is created for each item. An item with the text string `"-"` creates a separator item. |     |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                                                                                                                                                                                                                                                                                                   |     |
+| `items`               | Array of Strings                                     | Optional. The text of each list item. A [ListItem](../types-of-controls#listitem) object is created for each item. Supply this argument, or the items property in `creation_properties`, not both. A [ListItem](../types-of-controls#listitem) object is created for each item. An item with the text string `"-"` creates a separator item. |     |
 | `creation_properties` | Object                                               | Optional. An object that contains any of the properties below.                                                                                                                                                                                                                                                                               |     |
 
 #### Creation Properties
@@ -410,7 +410,7 @@ A list box with zero or more items. Calls the [onChange](#onchange) callback if 
 | `name`            | String           | A unique name for the control.                                                                                                                                                                                                                                                                                                                       |
 | `multiselect`     | Boolean          | When `false` (the default), only one item can be selected. When `true`, multiple items can be selected.                                                                                                                                                                                                                                              |
 | `items`           | Array of Strings | The text of each list item. Supply this property, or the `items` argument, not both. This form is most useful for elements defined using [Resource specifications](../resource-specifications).                                                                                                                                                      |
-| `numberOfColumns` | Number           | A number of columns in which to display the items; default is 1. When there are multiple columns, each [ListItem](types-of-controls.md#listitem) object represents a single selectable row. Its [text](#text) and [image](#image) values supply the label for the first column, and the `subitems` property specifies labels for additional columns. |
+| `numberOfColumns` | Number           | A number of columns in which to display the items; default is 1. When there are multiple columns, each [ListItem](../types-of-controls#listitem) object represents a single selectable row. Its [text](#text) and [image](#image) values supply the label for the first column, and the `subitems` property specifies labels for additional columns. |
 | `showHeaders`     | Boolean          | `true` to display column titles.                                                                                                                                                                                                                                                                                                                     |
 | `columnWidths`    | Array of Numbers | An array of numbers for the preferred width in pixels of each column.                                                                                                                                                                                                                                                                                |
 | `columnTitles`    | Array of Strings | A corresponding array of strings for the title of each column, to be shown if `showHeaders` is `true`.                                                                                                                                                                                                                                               |
@@ -433,13 +433,13 @@ Class Name: `Panel`
 
 A container for other types of controls, with an optional frame.
 
-Containers have additional properties that control the children; see [Container Attributes](window-object.md#container-attributes). Hiding a panel hides all its children. Making it visible makes visible those children that are not individually hidden.
+Containers have additional properties that control the children; see [Container Attributes](../window-object#container-attributes). Hiding a panel hides all its children. Making it visible makes visible those children that are not individually hidden.
 
 #### Parameters
 
 |       Parameter       |                         Type                         |                          Description                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                     |
 | `text`                | String                                               | Optional. The text displayed in the border of the panel.       |
 | `creation_properties` | Object                                               | Optional. An object that contains any of the properties below. |
 
@@ -483,7 +483,7 @@ All `progressbar` controls have a horizontal orientation. The `value` property c
 
 |       Parameter       |                         Type                         |                                                            Description                                                            |
 | --------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                                                                                        |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                                                                                        |
 | `value`               | Number                                               | Optional. The initial position of the progress indicator. Default is 0.                                                           |
 | `minvalue`            | Number                                               | Optional. The minimum value that the `value` property can be set to. Default is 0. Together with `maxvalue`, defines the range.   |
 | `maxvalue`            | Number                                               | Optional. The maximum value that the `value` property can be set to. Default is 100. Together with `minvalue`, defines the range. |
@@ -519,7 +519,7 @@ All radiobuttons in a group must be created sequentially, with no intervening cr
 
 |       Parameter       |                         Type                         |                          Description                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                     |
 | `text`                | String                                               | Optional. The text displayed in the control.                   |
 | `creation_properties` | Object                                               | Optional. An object that contains any of the properties below. |
 
@@ -561,7 +561,7 @@ Calls the [onChange](#onchange) callback after the position of the indicator is 
 
 |       Parameter       |                         Type                         |                                                                 Description                                                                 |
 | --------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                                                                                                  |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                                                                                                  |
 | `value`               | Number                                               | Optional. The initial position of the scroll indicator. Default is 0.                                                                       |
 | `minvalue`            | Number                                               | Optional. The minimum value that the `value` property can be set to. Default is 0. Together with `maxvalue`, defines the scrolling range.   |
 | `maxvalue`            | Number                                               | Optional. The maximum value that the `value` property can be set to. Default is 100. Together with `minvalue`, defines the scrolling range. |
@@ -599,7 +599,7 @@ The `value` property contains the current position of the indicator within the r
 
 |       Parameter       |                         Type                         |                                                            Description                                                            |
 | --------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                                                                                        |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                                                                                        |
 | `value`               | Number                                               | Optional. The initial position of the scroll indicator. Default is 0.                                                             |
 | `minvalue`            | Number                                               | Optional. The minimum value that the `value` property can be set to. Default is 0. Together with `maxvalue`, defines the range.   |
 | `maxvalue`            | Number                                               | Optional. The maximum value that the `value` property can be set to. Default is 100. Together with `minvalue`, defines the range. |
@@ -633,7 +633,7 @@ A text field that the user cannot change.
 
 |       Parameter       |                         Type                         |                          Description                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                     |
 | `text`                | String                                               | Optional. The text displayed in the control.                   |
 | `creation_properties` | Object                                               | Optional. An object that contains any of the properties below. |
 
@@ -669,13 +669,13 @@ Class Name: `Tab`
 
 A container for other types of controls. Differs from a [panel](#panel) element in that is must be a direct child of a [tabbedpanel](#tabbedpanel) element, the title is shown in the selection tab, and it does not have a script-definable border. The currently active tab is the value of the parent's `selection` property.
 
-Containers have additional properties that control the children; see [Container Attributes](window-object.md#container-attributes). Hiding a panel hides all its children. Making it visible makes visible those children that are not individually hidden.
+Containers have additional properties that control the children; see [Container Attributes](../window-object#container-attributes). Hiding a panel hides all its children. Making it visible makes visible those children that are not individually hidden.
 
 #### Parameters
 
 |       Parameter       |                         Type                         |                          Description                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                     |
 | `text`                | String                                               | Optional. The text displayed in the control.                   |
 | `creation_properties` | Object                                               | Optional. An object that contains any of the properties below. |
 
@@ -703,7 +703,7 @@ Class Name: `TabbedPanel`
 
 A container for selectable [tab](#tab) containers. Differs from a [panel](#panel) element in that it can contain only [tab](#tab) elements as direct children.
 
-Containers have additional properties that control the children; see [Container Attributes](window-object.md#container-attributes). Hiding a panel hides all its children. Making it visible makes visible those children that are not individually hidden.
+Containers have additional properties that control the children; see [Container Attributes](../window-object#container-attributes). Hiding a panel hides all its children. Making it visible makes visible those children that are not individually hidden.
 
 The selected tab child is the value of the parent's `selection` property. One and only one of the `tab` children must be selected; selecting one deselects the others. When the value of the `selection` property changes, either by a user selecting a different tab, or by a script setting the property, the `tabbedpanel` receives an [onChange](#onchange) notification.
 
@@ -711,7 +711,7 @@ The selected tab child is the value of the parent's `selection` property. One an
 
 |       Parameter       |                         Type                         |                          Description                           |
 | --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                     |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                     |
 | `text`                | String                                               | Optional. The text displayed in the control.                   |
 | `creation_properties` | Object                                               | Optional. An object that contains any of the properties below. |
 
@@ -743,8 +743,8 @@ A hierarchical list whose items can contain child items. Items at any level of t
 
 |       Parameter       |                         Type                         |                                                                                                                            Description                                                                                                                             |
 | --------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                                                                                                                                                                                                                         |
-| `items`               | Array of Strings                                     | Optional. The text of each top-level list item. A [ListItem](types-of-controls.md#listitem) object is created for each item. An item with the type node can contain child items. Supply this argument, or the `items` property in `creation_properties`, not both. |
+| `bounds`              | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                                                                                                                                                                                                                         |
+| `items`               | Array of Strings                                     | Optional. The text of each top-level list item. A [ListItem](../types-of-controls#listitem) object is created for each item. An item with the type node can contain child items. Supply this argument, or the `items` property in `creation_properties`, not both. |
 | `creation_properties` | Object                                               | Optional. An object that contains any of the properties below.                                                                                                                                                                                                     |
 
 #### Creation Properties
@@ -752,7 +752,7 @@ A hierarchical list whose items can contain child items. Items at any level of t
 | Property |       Type       |                                                                                                                                                                 Description                                                                                                                                                                  |
 | -------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`   | String           | A unique name for the control.                                                                                                                                                                                                                                                                                                               |
-| `items`  | Array of Strings | The text of each top-level list item. A [ListItem](types-of-controls.md#listitem) object is created for each item. An item with the type `node` can contain child items. Supply this property, or the `items` argument, not both. This form is most useful for elements defined using [Resource specifications](../resource-specifications). |
+| `items`  | Array of Strings | The text of each top-level list item. A [ListItem](../types-of-controls#listitem) object is created for each item. An item with the type `node` can contain child items. Supply this property, or the `items` argument, not both. This form is most useful for elements defined using [Resource specifications](../resource-specifications). |
 
 #### Example
 
@@ -768,7 +768,7 @@ w.add("treeview"[, bounds, items, {creation_properties}])
 
 The following table shows the properties of ScriptUI control elements. Some values apply only to controls of particular types, as indicated.
 
-See [Container Attributes](./window-object.md#container-attributes) for properties that apply to container elements (controls of type panel, tabbedpanel, tab, and group).
+See [Container Attributes](../window-object#container-attributes) for properties that apply to container elements (controls of type panel, tabbedpanel, tab, and group).
 
 ### active
 
@@ -780,7 +780,7 @@ When `true`, the object is active, `false` otherwise. Set to `true` to make a gi
 
 - A modal dialog that is visible is by definition the active dialog.
 - An active palette is the front-most window.
-- An active control is the one with focus-that is, the one that accepts keystrokes, or in the case of a [Button](types-of-controls.md#button), be selected when the user types ENTER in Windows, or presses the spacebar in Mac OS.
+- An active control is the one with focus-that is, the one that accepts keystrokes, or in the case of a [Button](../types-of-controls#button), be selected when the user types ENTER in Windows, or presses the spacebar in Mac OS.
 
 #### Type
 
@@ -838,7 +838,7 @@ String or Array of 2 Strings
 
 #### Description
 
-A [Bounds](size-and-location-objects.md#bounds) object describing the boundaries of the element, in screen coordinates for Window elements, and parent-relative coordinates for child elements (compare [windowBounds](#windowbounds)). For windows, the bounds refer only to the window's content region.
+A [Bounds](../size-and-location-objects#bounds) object describing the boundaries of the element, in screen coordinates for Window elements, and parent-relative coordinates for child elements (compare [windowBounds](#windowbounds)). For windows, the bounds refer only to the window's content region.
 
 :::warning
 Setting an element's [`size`](#size) or [`location`](#location) changes its [`bounds`](#bounds) property, and vice-versa.
@@ -847,7 +847,7 @@ Setting an element's [`size`](#size) or [`location`](#location) changes its [`bo
 
 #### Type
 
-[Bounds](size-and-location-objects.md#bounds)
+[Bounds](../size-and-location-objects#bounds)
 
 ---
 
@@ -857,7 +857,7 @@ Setting an element's [`size`](#size) or [`location`](#location) changes its [`bo
 
 #### Description
 
-Used by the [LayoutManager object](../layoutmanager-object) to determine the default [preferredSize](#preferredsize) for a [StaticText](types-of-controls.md#statictext) or [EditText](types-of-controls.md#edittext) control.
+Used by the [LayoutManager object](../layoutmanager-object) to determine the default [preferredSize](#preferredsize) for a [StaticText](../types-of-controls#statictext) or [EditText](../types-of-controls#edittext) control.
 
 The control will be made wide enough to display the given number of `X` characters in the font used by the control. Setting this property is the best way to reserve space in a control for a maximum number of characters to display.
 
@@ -874,7 +874,7 @@ Number
 #### Description
 
 :::info
-For [ListItem](types-of-controls.md#listitem) objects only.
+For [ListItem](../types-of-controls#listitem) objects only.
 :::
 
 
@@ -924,7 +924,7 @@ Object
 - When `false`, control elements do not accept input, and all types of elements have a dimmed appearance.
 
 :::note
-A disabled [ListItem](types-of-controls.md#listitem) is not selectable in a [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) object.
+A disabled [ListItem](../types-of-controls#listitem) is not selectable in a [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview) object.
 :::
 
 
@@ -940,7 +940,7 @@ Boolean
 
 #### Description
 
-For [ListItem](types-of-controls.md#listitem) objects of type `node` in [TreeView](#treeview) list controls. When `true`, the item is in the expanded state and its children are shown, when `false`, it is collapsed and children are hidden.
+For [ListItem](../types-of-controls#listitem) objects of type `node` in [TreeView](#treeview) list controls. When `true`, the item is in the expanded state and its children are shown, when `false`, it is collapsed and children are hidden.
 
 #### Type
 
@@ -954,11 +954,11 @@ Boolean
 
 #### Description
 
-A [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object) that can be used to customize the control's appearance, in response to the [onDraw](#ondraw) event.
+A [ScriptUIGraphics object](../graphic-customization-objects#scriptuigraphics-object) that can be used to customize the control's appearance, in response to the [onDraw](#ondraw) event.
 
 #### Type
 
-[ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object)
+[ScriptUIGraphics object](../graphic-customization-objects#scriptuigraphics-object)
 
 ---
 
@@ -985,7 +985,7 @@ String
 #### Description
 
 :::danger
-Deprecated. Use [Image](types-of-controls.md#image) instead.
+Deprecated. Use [Image](../types-of-controls#image) instead.
 :::
 
 
@@ -1001,17 +1001,17 @@ String or [File](../../file-system-access/file-object) object
 
 #### Description
 
-A [ScriptUIImage object](graphic-customization-objects.md#scriptuiimage-object), or the name of an icon resource, or the pathname or [File object](../../file-system-access/file-object) for a file that contains a platform-specific image in PNG or JPEG format, or for a shortcut or alias to such a file.
+A [ScriptUIImage object](../graphic-customization-objects#scriptuiimage-object), or the name of an icon resource, or the pathname or [File object](../../file-system-access/file-object) for a file that contains a platform-specific image in PNG or JPEG format, or for a shortcut or alias to such a file.
 
-- For an [IconButton](types-of-controls.md#iconbutton), the icon appears as the content of the button.
-- For an [Image](types-of-controls.md#image), the image is the entire content of the image element.
-- For a [ListItem](types-of-controls.md#listitem), the image is displayed to the left of the text.
+- For an [IconButton](../types-of-controls#iconbutton), the icon appears as the content of the button.
+- For an [Image](../types-of-controls#image), the image is the entire content of the image element.
+- For a [ListItem](../types-of-controls#listitem), the image is displayed to the left of the text.
     - If the parent is a multi-column [ListBox](#listbox), this is the display image for the label in the first column, and labels for further columns are specified in the [subitems](#subitems) array.
-    - See [Creating multi-column lists](types-of-controls.md#creating-multi-column-lists).
+    - See [Creating multi-column lists](../types-of-controls#creating-multi-column-lists).
 
 #### Type
 
-[ScriptUIImage object](graphic-customization-objects.md#scriptuiimage-object)
+[ScriptUIImage object](../graphic-customization-objects#scriptuiimage-object)
 
 ---
 
@@ -1036,7 +1036,7 @@ Number
 #### Description
 
 :::info
-For [ListItem](types-of-controls.md#listitem) objects only.
+For [ListItem](../types-of-controls#listitem) objects only.
 :::
 
 
@@ -1059,7 +1059,7 @@ For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview)
 :::
 
 
-A collection of [ListItem](types-of-controls.md#listitem) objects for the items in the list. Access by 0-based index.
+A collection of [ListItem](../types-of-controls#listitem) objects for the items in the list. Access by 0-based index.
 
 :::tip
 To obtain the number of items in the list, use `items.length`.
@@ -1083,7 +1083,7 @@ For [ListBox](#listbox), [DropDownList](#dropdownlist), or [TreeView](#treeview)
 :::
 
 
-A [Dimension](./size-and-location-objects.md#dimension) object describing the width and height in pixels of each item in the list.
+A [Dimension](../size-and-location-objects#dimension) object describing the width and height in pixels of each item in the list.
 
 Used by auto-layout to determine the [`preferredSize`](#preferredsize) of the list, if not otherwise specified.
 
@@ -1091,7 +1091,7 @@ If not set explicitly, the size of each item is set to match the largest height 
 
 #### Type
 
-[Dimension](./size-and-location-objects.md#dimension) object
+[Dimension](../size-and-location-objects#dimension) object
 
 ---
 
@@ -1102,11 +1102,11 @@ If not set explicitly, the size of each item is set to match the largest height 
 #### Description
 
 :::info
-For [Scrollbar](types-of-controls.md#scrollbar) objects only.
+For [Scrollbar](../types-of-controls#scrollbar) objects only.
 :::
 
 
-The amount to increment or decrement a [Scrollbar](types-of-controls.md#scrollbar) indicator's position when the user clicks ahead or behind the moveable element.
+The amount to increment or decrement a [Scrollbar](../types-of-controls#scrollbar) indicator's position when the user clicks ahead or behind the moveable element.
 
 Default is 20% of the range between the [`maxvalue`](#maxvalue) and [`minvalue`](#minvalue) property values.
 
@@ -1147,7 +1147,7 @@ String
 
 #### Description
 
-A [Point](size-and-location-objects.md#point) object describing the location of the element as an array, `[x, y]`, representing the coordinates of the upper left corner of the element. These are screen coordinates for `Window` elements, and parent-relative coordinates for other elements.
+A [Point](../size-and-location-objects#point) object describing the location of the element as an array, `[x, y]`, representing the coordinates of the upper left corner of the element. These are screen coordinates for `Window` elements, and parent-relative coordinates for other elements.
 
 The `location` is defined as `[bounds.x, bounds.y]`.
 
@@ -1160,7 +1160,7 @@ Setting an element's [`size`](#size) or [`location`](#location) changes its [`bo
 
 #### Type
 
-[Point object](size-and-location-objects.md#point)
+[Point object](../size-and-location-objects#point)
 
 ---
 
@@ -1170,13 +1170,13 @@ Setting an element's [`size`](#size) or [`location`](#location) changes its [`bo
 
 #### Description
 
-A [Dimension](size-and-location-objects.md#dimension) object that specifies the maximum height and width for an element.
+A [Dimension](../size-and-location-objects#dimension) object that specifies the maximum height and width for an element.
 
 The default is 50 pixels less than the screen size in each dimension. In Windows, this can occupy the entire screen; you must define a `maximumSize` to be large enough for your intended usage.
 
 #### Type
 
-[Dimension object](size-and-location-objects.md#dimension)
+[Dimension object](../size-and-location-objects#dimension)
 
 ---
 
@@ -1186,11 +1186,11 @@ The default is 50 pixels less than the screen size in each dimension. In Windows
 
 #### Description
 
-A [Dimension](size-and-location-objects.md#dimension) object that specifies the minimum height and width for an element. Default is `[0,0]`.
+A [Dimension](../size-and-location-objects#dimension) object that specifies the minimum height and width for an element. Default is `[0,0]`.
 
 #### Type
 
-[Dimension object](size-and-location-objects.md#dimension)
+[Dimension object](../size-and-location-objects#dimension)
 
 ---
 
@@ -1248,13 +1248,13 @@ The immediate parent object of this element.
 
 #### Description
 
-A [Dimension](size-and-location-objects.md#dimension) object used by layout managers to determine the best size for each element. If not explicitly set by a script, value is established by the user-interface framework in which ScriptUI is employed, and is based on such attributes of the element as its text, font, font size, icon size, and other user-interface framework-specific attributes.
+A [Dimension](../size-and-location-objects#dimension) object used by layout managers to determine the best size for each element. If not explicitly set by a script, value is established by the user-interface framework in which ScriptUI is employed, and is based on such attributes of the element as its text, font, font size, icon size, and other user-interface framework-specific attributes.
 
 A script can explicitly set `preferredSize` before the layout manager is invoked in order to establish an element size other than the default. To set a specific value for only one dimension, specify the other dimension as `-1`.
 
 #### Type
 
-[Dimension object](size-and-location-objects.md#dimension)
+[Dimension object](../size-and-location-objects#dimension)
 
 ---
 
@@ -1279,7 +1279,7 @@ Object
 #### Description
 
 :::info
-For [ListItem](types-of-controls.md#listitem) objects only.
+For [ListItem](../types-of-controls#listitem) objects only.
 :::
 
 
@@ -1305,7 +1305,7 @@ For [ListBox](#listbox) objects only.
 :::
 
 
-For a [ListBox](#listbox), an array of [ListItem](types-of-controls.md#listitem) objects for the current selection in a multi-selection list. Setting this value causes the selected item to be highlighted and to be scrolled into view if necessary. If no items are selected, the value is `null`. Set to `null` to deselect all items.
+For a [ListBox](#listbox), an array of [ListItem](../types-of-controls#listitem) objects for the current selection in a multi-selection list. Setting this value causes the selected item to be highlighted and to be scrolled into view if necessary. If no items are selected, the value is `null`. Set to `null` to deselect all items.
 
 The value can also change because the user clicked or double-clicked an item, or because an item was removed with [remove()](#remove) or [removeAll()](#removeall). Whenever the value changes, the [onChange](#onchange) callback is called. If the value is changed by a double click, calls the [onDoubleClick](#ondoubleclick) callback.
 
@@ -1316,7 +1316,7 @@ You can set the value using the index of an item or an array of indices, rather 
 
 #### Type
 
-Array of [ListItem objects](./types-of-controls.md#listitem)
+Array of [ListItem objects](../types-of-controls#listitem)
 
 ---
 
@@ -1331,7 +1331,7 @@ For [DropDownList](#dropdownlist), or [TreeView](#treeview) objects only.
 :::
 
 
-The currently selected [ListItem](types-of-controls.md#listitem) object.
+The currently selected [ListItem](../types-of-controls#listitem) object.
 
 Setting this value causes the selected item to be highlighted and to be scrolled into view if necessary. If no item is selected, the value is `null`. Set to `null` to deselect all items.
 
@@ -1367,7 +1367,7 @@ String
 
 #### Description
 
-A [Dimension](size-and-location-objects.md#dimension) object that defines the actual dimensions of an element.
+A [Dimension](../size-and-location-objects#dimension) object that defines the actual dimensions of an element.
 
 Initially `undefined`, and unless explicitly set by a script, it is defined by a [LayoutManager object](.././layoutmanager-object).
 
@@ -1382,7 +1382,7 @@ Setting an element's [`size`](#size) or [`location`](#location) changes its [`bo
 
 #### Type
 
-[Dimension](size-and-location-objects.md#dimension) object
+[Dimension](../size-and-location-objects#dimension) object
 
 ---
 
@@ -1392,7 +1392,7 @@ Setting an element's [`size`](#size) or [`location`](#location) changes its [`bo
 
 #### Description
 
-The amount by which to increment or decrement a [Scrollbar](types-of-controls.md#scrollbar) element's position when the user clicks a stepper button.
+The amount by which to increment or decrement a [Scrollbar](../types-of-controls#scrollbar) element's position when the user clicks a stepper button.
 
 #### Type
 
@@ -1407,7 +1407,7 @@ Number
 #### Description
 
 :::info
-For [ListItem](types-of-controls.md#listitem) objects only.
+For [ListItem](../types-of-controls#listitem) objects only.
 :::
 
 
@@ -1440,7 +1440,7 @@ The title, label, or displayed text. Ignored for containers of type `group`.
 
 For controls, the meaning depends on the control type. Buttons use the `text` as a label, for example, while edit fields use the text to access the content.
 
-For [ListItem](types-of-controls.md#listitem) objects, this is the display string for the list choice. If the parent is a multi-column list box, this is the display string for the label in the first column, and labels for further columns are specified in the [subitems](#subitems) array. See [Creating multi-column lists](types-of-controls.md#creating-multi-column-lists).
+For [ListItem](../types-of-controls#listitem) objects, this is the display string for the list choice. If the parent is a multi-column list box, this is the display string for the label in the first column, and labels for further columns are specified in the [subitems](#subitems) array. See [Creating multi-column lists](../types-of-controls#creating-multi-column-lists).
 
 This is a localizable string: see [Localization in ScriptUI objects](../localization-in-scriptui-objects).
 
@@ -1461,7 +1461,7 @@ The currently selected text in a control that displays text, or the empty string
 Setting the value replaces the current text selection and modifies the value of the [`text`](#text) property. If there is no current selection, inserts the new value into the `text` string at the current insertion point. The `textselection` value is reset to an empty string after it modifies the `text` value.
 
 :::note
-Setting the `textselection` property before the [EditText](types-of-controls.md#edittext) control's parent Window exists is an undefined operation.
+Setting the `textselection` property before the [EditText](../types-of-controls#edittext) control's parent Window exists is an undefined operation.
 :::
 
 
@@ -1544,7 +1544,7 @@ String. Read only.
 #### Description
 
 :::info
-For [Checkbox](types-of-controls.md#checkbox) or [RadioButton](types-of-controls.md#radiobutton) objects only.
+For [Checkbox](../types-of-controls#checkbox) or [RadioButton](../types-of-controls#radiobutton) objects only.
 :::
 
 
@@ -1563,7 +1563,7 @@ Boolean
 #### Description
 
 :::info
-For [Scrollbar](types-of-controls.md#scrollbar) or [Slider](types-of-controls.md#slider) objects only.
+For [Scrollbar](../types-of-controls#scrollbar) or [Slider](../types-of-controls#slider) objects only.
 :::
 
 
@@ -1611,11 +1611,11 @@ The Window that contains this control.
 
 #### Description
 
-A [Bounds](size-and-location-objects.md#bounds) object that contains the bounds of this control in the containing window's coordinates. Compare to this control object's [`.bounds`](#bounds) property, in which coordinates are relative to the immediate parent container.
+A [Bounds](../size-and-location-objects#bounds) object that contains the bounds of this control in the containing window's coordinates. Compare to this control object's [`.bounds`](#bounds) property, in which coordinates are relative to the immediate parent container.
 
 #### Type
 
-[Bounds object](size-and-location-objects.md#bounds). Read only.
+[Bounds object](../size-and-location-objects#bounds). Read only.
 
 ---
 
@@ -1625,7 +1625,7 @@ A [Bounds](size-and-location-objects.md#bounds) object that contains the bounds 
 
 #### Description
 
-For the [FlashPlayer](types-of-controls.md#flashplayer) control, a function definition for a callback from the Flash ActionScript environment.
+For the [FlashPlayer](../types-of-controls#flashplayer) control, a function definition for a callback from the Flash ActionScript environment.
 
 There are no special naming requirements, but the function must take and return only the supported data types:
 
@@ -1683,7 +1683,7 @@ Registers an event handler for a particular type of event occurring in this cont
 |                |          | - `"keyup"`                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |                |          | - `"keydown"`                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |                |          | - `"click"` (detail = 1 for single, 2 for double)                                                                                                                                                                                                                                                                                                                                                                                                             |
-| `handler`      | Function | The function to register for the specified event in this target. This can be the name of a function defined in the extension, or a locally defined handler function to be executed when the event occurs. A handler function takes one argument, an object of the UIEvent base class. See [Registering event listeners for windows or controls](defining-behavior-with-event-callbacks-and-listeners.md#registering-event-listeners-for-windows-or-controls). |
+| `handler`      | Function | The function to register for the specified event in this target. This can be the name of a function defined in the extension, or a locally defined handler function to be executed when the event occurs. A handler function takes one argument, an object of the UIEvent base class. See [Registering event listeners for windows or controls](../defining-behavior-with-event-callbacks-and-listeners#registering-event-listeners-for-windows-or-controls). |
 | `capturePhase` | Boolean  | Optional. When `true`, the handler is called only in the capturing phase of the event propagation. Default is `false`, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target.                                                                                                                                                                   |
 
 #### Returns
@@ -1698,7 +1698,7 @@ Nothing
 
 #### Description
 
-Simulates the occurrence of an event in this target. A script can create an event object for a specific event, using [ScriptUI.events.createEvent()](scriptui-class.md#scriptuieventscreateevent), and pass it to this method to start the event propagation for the event.
+Simulates the occurrence of an event in this target. A script can create an event object for a specific event, using [ScriptUI.events.createEvent()](../scriptui-class#scriptuieventscreateevent), and pass it to this method to start the event propagation for the event.
 
 #### Parameters
 
@@ -1708,7 +1708,7 @@ Simulates the occurrence of an event in this target. A script can create an even
 
 #### Returns
 
-Boolean. `false` if any of the registered listeners that handled the event called the event object's [preventDefault()](event-handling.md#preventdefault) method, `true` otherwise.
+Boolean. `false` if any of the registered listeners that handled the event called the event object's [preventDefault()](../event-handling#preventdefault) method, `true` otherwise.
 
 ---
 
@@ -1742,7 +1742,7 @@ Sends a notification message, simulating the specified user interaction event.
 |           |        | - `"onClick"`                                                                                                                                                                      |
 |           |        | - `"onChange"`                                                                                                                                                                     |
 |           |        | - `"onChanging"`                                                                                                                                                                   |
-|           |        | By default, simulates the [onChange](#onchange) event for an [EditText](types-of-controls.md#edittext) control, an [onClick](#onclick) event for controls that support that event. |
+|           |        | By default, simulates the [onChange](#onchange) event for an [EditText](../types-of-controls#edittext) control, an [onClick](#onclick) event for controls that support that event. |
 
 #### Returns
 
@@ -1795,7 +1795,7 @@ Nothing
 #### Description
 
 :::info
-For [ListItem](types-of-controls.md#listitem) objects only.
+For [ListItem](../types-of-controls#listitem) objects only.
 :::
 
 
@@ -1814,7 +1814,7 @@ String
 #### Description
 
 :::info
-For [ListItem](types-of-controls.md#listitem) objects only.
+For [ListItem](../types-of-controls#listitem) objects only.
 :::
 
 
@@ -1880,7 +1880,7 @@ Looks in this object's `items` array for an item object with the given `text` va
 
 #### Returns
 
-The [ListItem](./types-of-controls.md#listitem) object if found; otherwise `null`.
+The [ListItem](../types-of-controls#listitem) object if found; otherwise `null`.
 
 ---
 
@@ -1985,7 +1985,7 @@ Invokes an ActionScript function defined in the Flash application.
 
 | Parameter |  Type  |                                                                                                                                              Description                                                                                                                                               |
 |-----------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `fnName`  | String | The name of a Flash ActionScript function that has been registered with the ExternalInterface object by the currently loaded SWF file; see [Calling ActionScript functions from a ScriptUI script](communicating-with-the-flash-application.md#calling-actionscript-functions-from-a-scriptui-script). |
+| `fnName`  | String | The name of a Flash ActionScript function that has been registered with the ExternalInterface object by the currently loaded SWF file; see [Calling ActionScript functions from a ScriptUI script](../communicating-with-the-flash-application#calling-actionscript-functions-from-a-scriptui-script). |
 | `args`    | Any    | Optional. One or more arguments to pass through to the function, of these types:                                                                                                                                                                                                                       |
 |           |        | - Array                                                                                                                                                                                                                                                                                                |
 |           |        | - Boolean                                                                                                                                                                                                                                                                                              |
@@ -2081,10 +2081,10 @@ Called when the user gives a control the keyboard focus by clicking it or tabbin
 
 Called when the user clicks one of the following control types:
 
-- [Button](types-of-controls.md#button)
-- [Checkbox](types-of-controls.md#checkbox)
-- [IconButton](types-of-controls.md#iconbutton)
-- [RadioButton](types-of-controls.md#radiobutton)
+- [Button](../types-of-controls#button)
+- [Checkbox](../types-of-controls#checkbox)
+- [IconButton](../types-of-controls#iconbutton)
+- [RadioButton](../types-of-controls#radiobutton)
 
 ---
 
@@ -2093,16 +2093,16 @@ Called when the user clicks one of the following control types:
 Called when the user finishes making a change in one of the following control types:
 
 - [DropDownList](#dropdownlist)
-- [EditNumber](types-of-controls.md#editnumber)
-- [EditText](types-of-controls.md#edittext)
+- [EditNumber](../types-of-controls#editnumber)
+- [EditText](../types-of-controls#edittext)
 - [ListBox](#listbox)
-- [Scrollbar](types-of-controls.md#scrollbar)
-- [Slider](types-of-controls.md#slider)
+- [Scrollbar](../types-of-controls#scrollbar)
+- [Slider](../types-of-controls#slider)
 - [TreeView](#treeview)
 
-- For [EditNumber](types-of-controls.md#editnumber) and [EditText](types-of-controls.md#edittext) controls, called only when the change is complete-that is, when focus moves to another control, or the user types `ENTER`.
+- For [EditNumber](../types-of-controls#editnumber) and [EditText](../types-of-controls#edittext) controls, called only when the change is complete-that is, when focus moves to another control, or the user types `ENTER`.
     - The exact behavior depends on the creation parameter `enterKeySignalsOnChange`; see the [EditText](#edittext) description.
-- For a [Slider](types-of-controls.md#slider) or [Scrollbar](types-of-controls.md#scrollbar), called when the user has finished dragging the position marker or has clicked the control.
+- For a [Slider](../types-of-controls#slider) or [Scrollbar](../types-of-controls#scrollbar), called when the user has finished dragging the position marker or has clicked the control.
 - For a [ListBox](#listbox), [DropDownList](#dropdownlist) or [TreeView](#treeview) control, called whenever the selection property changes.
     - This can happen when a script sets the property directly or removes a selected item from the list, or when the user changes the selection.
 
@@ -2112,13 +2112,13 @@ Called when the user finishes making a change in one of the following control ty
 
 Called for each incremental change in one of the following control types:
 
-- [EditNumber](types-of-controls.md#editnumber)
-- [EditText](types-of-controls.md#edittext)
-- [Scrollbar](types-of-controls.md#scrollbar)
-- [Slider](types-of-controls.md#slider)
+- [EditNumber](../types-of-controls#editnumber)
+- [EditText](../types-of-controls#edittext)
+- [Scrollbar](../types-of-controls#scrollbar)
+- [Slider](../types-of-controls#slider)
 
-- For [EditNumber](types-of-controls.md#editnumber) and [EditText](types-of-controls.md#edittext) controls, called for each keypress while the control has focus.
-- For a [Slider](types-of-controls.md#slider) or [Scrollbar](types-of-controls.md#scrollbar), called for any motion of the position marker.
+- For [EditNumber](../types-of-controls#editnumber) and [EditText](../types-of-controls#edittext) controls, called for each keypress while the control has focus.
+- For a [Slider](../types-of-controls#slider) or [Scrollbar](../types-of-controls#scrollbar), called for any motion of the position marker.
 
 ---
 
@@ -2126,7 +2126,7 @@ Called for each incremental change in one of the following control types:
 
 Called when the user collapses (closes) a node in a [TreeView](#treeview) control.
 
-The parameter to this function is the [ListItem](types-of-controls.md#listitem) node object that was collapsed.
+The parameter to this function is the [ListItem](../types-of-controls#listitem) node object that was collapsed.
 
 ---
 
@@ -2157,13 +2157,13 @@ Called when the user presses return or enter in a [EditText](#edittext) control.
 
 ### onDraw
 
-Called when a container or control is about to be drawn. Allows the script to modify or control the appearance, using the control's associated [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object). Handler takes one argument, a [DrawState object](#drawstate-object).
+Called when a container or control is about to be drawn. Allows the script to modify or control the appearance, using the control's associated [ScriptUIGraphics object](../graphic-customization-objects#scriptuigraphics-object). Handler takes one argument, a [DrawState object](#drawstate-object).
 
 ---
 
 ### onExpand
 
-Called when the user expands (opens) a node in a [TreeView](#treeview) control. The parameter to this function is the [ListItem](types-of-controls.md#listitem) node object that was expanded.
+Called when the user expands (opens) a node in a [TreeView](#treeview) control. The parameter to this function is the [ListItem](../types-of-controls#listitem) node object that was expanded.
 
 ---
 

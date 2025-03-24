@@ -7,7 +7,7 @@ title: cameralayer
 
 #### Description
 
-The CameraLayer object represents a camera layer within a composition. Create it using [LayerCollection.addCamera()](layercollection.md#layercollectionaddcamera). It can be accessed in an item's layer collection either by index number or by a name string.
+The CameraLayer object represents a camera layer within a composition. Create it using [LayerCollection.addCamera()](../layercollection#layercollectionaddcamera). It can be accessed in an item's layer collection either by index number or by a name string.
 
 :::info
 CameraLayer is a subclass of [Layer object](../layer). All methods and attributes of Layer are available when working with CameraLayer.

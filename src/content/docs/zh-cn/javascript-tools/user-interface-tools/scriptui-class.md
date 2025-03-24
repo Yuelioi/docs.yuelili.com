@@ -13,11 +13,11 @@ title: scriptui-class
 
 `ScriptUI.Alignment`
 
-收集了可用于控件和容器的 [alignment](window-object.md#alignment) 和 [alignChildren](window-object.md#alignchildren) 属性中的枚举值，以及用于设置控件的 [titleLayout](control-objects.md#titlelayout) 属性的对齐属性。
+收集了可用于控件和容器的 [alignment](../window-object#alignment) 和 [alignChildren](../window-object#alignchildren) 属性中的枚举值，以及用于设置控件的 [titleLayout](../control-objects#titlelayout) 属性的对齐属性。
 
 使用这些常量来设置对齐方式。
 
-当查询 [alignment](window-object.md#alignment) 属性时，它会返回与常量对应的索引值，如下所示。常量值为：
+当查询 [alignment](../window-object#alignment) 属性时，它会返回与常量对应的索引值，如下所示。常量值为：
 
 - `ScriptUI.Alignment.TOP` (1)
 - `ScriptUI.Alignment.BOTTOM` (2)
@@ -92,7 +92,7 @@ ScriptUI 组件的内部核心版本号。
 
 #### 类型
 
-[Environment 对象](environment.md#environment-object)
+[Environment 对象](../environment#environment-object)
 
 ---
 
@@ -173,9 +173,9 @@ ScriptUI 组件框架的主版本号。
 
 此函数位于 [events](#scriptuievents) 属性中包含的 JavaScript 对象中。
 
-该对象被传递给一个函数，您注册该函数以响应窗口或控件中发生的某种类型的事件。使用 [windowObj.addEventListener()](window-object.md#addeventlistener) 或 [controlObj.addEventListener()](control-objects.md#addeventlistener) 来注册处理函数。
+该对象被传递给一个函数，您注册该函数以响应窗口或控件中发生的某种类型的事件。使用 [windowObj.addEventListener()](../window-object#addeventlistener) 或 [controlObj.addEventListener()](../control-objects#addeventlistener) 来注册处理函数。
 
-请参阅 [为窗口或控件注册事件监听器](defining-behavior-with-event-callbacks-and-listeners.md#registering-event-listeners-for-windows-or-controls)。
+请参阅 [为窗口或控件注册事件监听器](../defining-behavior-with-event-callbacks-and-listeners#registering-event-listeners-for-windows-or-controls)。
 
 #### 参数
 
@@ -191,9 +191,9 @@ ScriptUI 组件框架的主版本号。
 
 返回一个适当类型的事件对象：
 
-- [UIEvent 基类](event-handling.md#uievent-base-class) 封装了在容器和控件层次结构中传播的事件的输入事件信息。这是更专业的键盘和鼠标事件类型的基类。
-- [KeyboardEvent 对象](event-handling.md#keyboardevent-object) 封装了键盘输入事件的信息。
-- [MouseEvent 对象](event-handling.md#mouseevent-object) 封装了鼠标事件的信息。
+- [UIEvent 基类](../event-handling#uievent-base-class) 封装了在容器和控件层次结构中传播的事件的输入事件信息。这是更专业的键盘和鼠标事件类型的基类。
+- [KeyboardEvent 对象](../event-handling#keyboardevent-object) 封装了键盘输入事件的信息。
+- [MouseEvent 对象](../event-handling#mouseevent-object) 封装了鼠标事件的信息。
 
 ---
 
@@ -235,7 +235,7 @@ ScriptUI 组件框架的主版本号。
 
 #### 返回
 
-[ScriptUIFont 对象](graphic-customization-objects.md#scriptuifont-object)
+[ScriptUIFont 对象](../graphic-customization-objects#scriptuifont-object)
 
 ---
 
@@ -258,4 +258,4 @@ ScriptUI 组件框架的主版本号。
 
 #### 返回
 
-[ScriptUIImage 对象](graphic-customization-objects.md#scriptuiimage-object)
+[ScriptUIImage 对象](../graphic-customization-objects#scriptuiimage-object)

@@ -44,9 +44,9 @@ PF_OutFlag2_MUTABLE_RENDER_SEQUENCE_DATA_SLOWER
 | 插件未设置 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING`                                                     | 无需更改。效果和 `sequence_data` 将继续像过去一样工作。                                                                                                                                                                                                                                            |
 | 插件设置了 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` 但在渲染期间既不读取也不写入 `sequence_data` | 使用 2021 年 3 月 SDK 重新编译插件，无需其他代码更改。                                                                                                                                                                                                                                                   |
 |                                                                                                                 | 如果插件未使用 2021 年 3 月 SDK 编译，则从 AE 22.0x6 开始，插件将停止使用 MFR。                                                                                                                                                                                                                  |
-| 插件设置了 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` 但在渲染期间仅读取 `sequence_data`                  | 使用 2021 年 3 月 SDK 重新编译插件，通过 `PF_EffectSequenceDataSuite1` 更新读取 `sequence_data` 以实现线程安全访问。有关更多信息，请参阅 [多帧渲染时在渲染时访问 sequence_data](global-sequence-frame-data.md#多帧渲染时在渲染时访问-sequence_data)。 |
+| 插件设置了 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` 但在渲染期间仅读取 `sequence_data`                  | 使用 2021 年 3 月 SDK 重新编译插件，通过 `PF_EffectSequenceDataSuite1` 更新读取 `sequence_data` 以实现线程安全访问。有关更多信息，请参阅 [多帧渲染时在渲染时访问 sequence_data](../global-sequence-frame-data#多帧渲染时在渲染时访问-sequence_data)。 |
 | 插件设置了 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` 并在渲染期间读取和写入 `sequence_data`         | 使用 2021 年 3 月 SDK 重新编译插件并修改插件以：                                                                                                                                                                                                                                                              |
-|                                                                                                                 | 1. 使用 [计算缓存 API](compute-cache-api.md#计算缓存-api) 进行线程安全的缓存访问，而不是直接读取/写入 `sequence_data`。有关更多信息，请参阅 [多帧渲染的计算缓存](#多帧渲染的计算缓存)。和/或                                               |
+|                                                                                                                 | 1. 使用 [计算缓存 API](../compute-cache-api#计算缓存-api) 进行线程安全的缓存访问，而不是直接读取/写入 `sequence_data`。有关更多信息，请参阅 [多帧渲染的计算缓存](#多帧渲染的计算缓存)。和/或                                               |
 |                                                                                                                 | 2. 添加 `PF_OutFlag2_MUTABLE_RENDER_SEQUENCE_DATA_SLOWER` 标志以恢复对 `sequence_data` 的直接读取/写入访问。                                                                                                                                                                                                    |
 
 :::note
@@ -92,13 +92,13 @@ UI 选择器仍然在主线程上发送，但 `PF_Cmd_SEQUENCE_SETUP`、`PF_Cmd_
 * 如果您的效果使用 `sequence_data` 并且需要在渲染期间写入或更新 `sequence_data`，尤其是当所需数据的计算耗时较长时，您应该使用计算缓存。
 * 如果没有计算缓存，效果将需要添加 `PF_OutFlag2_MUTABLE_RENDER_SEQUENCE_DATA_SLOWER` 标志，这将为每个渲染线程创建唯一的 `sequence_data` 副本。然后，每个渲染线程可能需要独立执行耗时的计算，并且无法在渲染线程之间共享结果。
 * 通过使用计算缓存，渲染线程可以共享计算数据的任务，并从中受益。
-* 计算缓存 API 支持根据效果的需求进行单次或多次签出计算任务。有关更多信息，请参阅 [计算缓存 API](compute-cache-api.md#计算缓存-api) 文档。
+* 计算缓存 API 支持根据效果的需求进行单次或多次签出计算任务。有关更多信息，请参阅 [计算缓存 API](../compute-cache-api#计算缓存-api) 文档。
 
 ### 如何启用计算缓存？
 
 计算缓存 API 从 2021 年 3 月 SDK 开始可用，并且在 After Effects 2022 及以上版本中默认启用。
 
-有关实现细节和示例代码，请参阅 [计算缓存 API](compute-cache-api.md#计算缓存-api) 文档。
+有关实现细节和示例代码，请参阅 [计算缓存 API](../compute-cache-api#计算缓存-api) 文档。
 
 ---
 

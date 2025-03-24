@@ -151,7 +151,7 @@ Layer 上的实例属性，返回一个唯一且持久的标识号，用于在�
 如果 name 属性的值已显式设置，而不是从源自动设置，则为 `true`。
 
 :::tip
-对于没有 [AVLayer.source](avlayer.md#avlayersource) 的图层，此值始终返回 `true`。
+对于没有 [AVLayer.source](../avlayer#avlayersource) 的图层，此值始终返回 `true`。
 :::
 
 #### 类型
@@ -198,7 +198,7 @@ Layer 上的实例属性，返回一个唯一且持久的标识号，用于在�
 
 #### 描述
 
-包含图层所有标记的 [PropertyGroup 对象](../../property/propertygroup)。图层标记脚本与 [Comp 标记](../item/compitem.md#compitemmarkerproperty) 具有相同的功能。
+包含图层所有标记的 [PropertyGroup 对象](../../property/propertygroup)。图层标记脚本与 [Comp 标记](../../item/compitem#compitemmarkerproperty) 具有相同的功能。
 
 请参阅 [MarkerValue 对象](../../other/markervalue)。
 

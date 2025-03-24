@@ -3,7 +3,7 @@ title: parameter-supervision
 ---
 # Parameter Supervision
 
-Supervision means dynamically changing the values of some parameters based on the values of others. To supervise a parameter, set [PF_ParamFlag_SUPERVISE](../effect-basics/PF_ParamDef.md#pf_paramdef) before adding it during *PF_Cmd_PARAM_SETUP*. Whenever it is changed, you will receive [PF_Cmd_USER_CHANGED_PARAM](../effect-basics/command-selectors.md#messaging). The index (into the plug-in's parameter array) of the changed parameter is sent in the PF_UserChangedParamExtra (extra) param. During *PF_Cmd_USER_CHANGED_PARAM*, you may change the values *and* appearance of any of your parameters.
+Supervision means dynamically changing the values of some parameters based on the values of others. To supervise a parameter, set [PF_ParamFlag_SUPERVISE](../../effect-basics/pf_paramdef#pf_paramdef) before adding it during *PF_Cmd_PARAM_SETUP*. Whenever it is changed, you will receive [PF_Cmd_USER_CHANGED_PARAM](../../effect-basics/command-selectors#messaging). The index (into the plug-in's parameter array) of the changed parameter is sent in the PF_UserChangedParamExtra (extra) param. During *PF_Cmd_USER_CHANGED_PARAM*, you may change the values *and* appearance of any of your parameters.
 
 ---
 
@@ -22,7 +22,7 @@ This is the only way to update the UI of `PF_PUI_STD_CONTROL_ONLY` parameters.
 
 ## Updating Parameter Values
 
-A parameter's value (not just UI) can be modified during [PF_Cmd_USER_CHANGED_PARAM](../effect-basics/command-selectors.md#messaging) and during [PF_Cmd_EVENT](../effect-basics/command-selectors.md#messaging) (*PF_Event_DO_CLICK*, *PF_Event_DRAG*, & *PF_Event_KEYDOWN*). After Effects will not honor changes made at other times.
+A parameter's value (not just UI) can be modified during [PF_Cmd_USER_CHANGED_PARAM](../../effect-basics/command-selectors#messaging) and during [PF_Cmd_EVENT](../../effect-basics/command-selectors#messaging) (*PF_Event_DO_CLICK*, *PF_Event_DRAG*, & *PF_Event_KEYDOWN*). After Effects will not honor changes made at other times.
 
 When changing parameter *values* (and not just the UI), modify the original parameter, and set `PF_Paramdef.uu.change_flags` to `PF_ChangeFlag_CHANGED_VALUE`.
 

@@ -7,7 +7,7 @@ title: 属性
 
 #### 描述
 
-属性对象包含有关图层特定AE属性的值、关键帧和表达式信息。AE属性是图层内效果、遮罩或变换的值，通常是可动画的。有关如何访问属性的示例，请参阅[PropertyBase对象](../propertybase)和[PropertyGroup.property()](propertygroup.md#propertygroupproperty)。
+属性对象包含有关图层特定AE属性的值、关键帧和表达式信息。AE属性是图层内效果、遮罩或变换的值，通常是可动画的。有关如何访问属性的示例，请参阅[PropertyBase对象](../propertybase)和[PropertyGroup.property()](../propertygroup#propertygroupproperty)。
 
 :::info
 属性是[PropertyBase](../propertybase)的子类。除了下面列出的方法和属性外，PropertyBase的所有方法和属性在处理属性时都可用。
@@ -134,7 +134,7 @@ myTextLayer.sourceText.setValue("foo");
 
 所有媒体替换图层都有一个可以设置的备用源项。
 
-当图层被添加到基本图形面板时，图层被“标记”为媒体替换（请参阅[AVLayer.addToMotionGraphicsTemplate()](../layer/avlayer.md#avlayeraddtomotiongraphicstemplate)或[AVLayer.addToMotionGraphicsTemplateAs()](../layer/avlayer.md#avlayeraddtomotiongraphicstemplateas)）。
+当图层被添加到基本图形面板时，图层被“标记”为媒体替换（请参阅[AVLayer.addToMotionGraphicsTemplate()](../../layer/avlayer#avlayeraddtomotiongraphicstemplate)或[AVLayer.addToMotionGraphicsTemplateAs()](../../layer/avlayer#avlayeraddtomotiongraphicstemplateas)）。
 
 - 如果存在，渲染工作流将在渲染图层时拾取备用源。
 - 如果未设置图层的备用源，则使用媒体替换控件的源图层进行渲染（这是正常的工作流）。

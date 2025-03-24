@@ -27,7 +27,7 @@ FootageItem is a subclass of [AVItem object](../avitem), which is a subclass of 
 
 The [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object for the footage's source file.
 
-If the FootageItem's `mainSource` is a FileSource, this is the same as [FootageItem.mainSource.file](../sources/filesource.md#filesourcefile). Otherwise it is `null`.
+If the FootageItem's `mainSource` is a FileSource, this is the same as [FootageItem.mainSource.file](../../sources/filesource#filesourcefile). Otherwise it is `null`.
 
 #### Type
 
@@ -47,7 +47,7 @@ The footage source, an object that contains all of the settings related to that 
 - [FileSource object](../../sources/filesource)
 - [PlaceholderSource object](../../sources/placeholdersource)
 
-If this is a FileSource object, and the [footageMissing](avitem.md#avitemfootagemissing) value is `true`, the path to the missing footage file is in the [FileSource.missingFootagePath](../sources/filesource.md#filesourcemissingfootagepath) attribute.
+If this is a FileSource object, and the [footageMissing](../avitem#avitemfootagemissing) value is `true`, the path to the missing footage file is in the [FileSource.missingFootagePath](../../sources/filesource#filesourcemissingfootagepath) attribute.
 
 #### Type
 

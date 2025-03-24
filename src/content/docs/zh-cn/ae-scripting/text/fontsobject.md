@@ -19,7 +19,7 @@ After Effects 维护了一个内部字体代理，指向字体生态系统中枚
 
 [Font 对象](../fontobject) 是对这些内部字体代理的软引用，因此不足以保持内部字体代理的存活。如果内部字体代理被移除，引用的 [Font 对象](../fontobject) 将在任何属性引用时抛出无效异常。
 
-在项目打开时，以及其他一些情况下，可能会发生持久化数据中引用的字体在当前字体生态系统中找不到的情况。在这些情况下，将创建一个内部字体代理，其中包含所需的属性，例如 PostScript 名称，并将为 [isSubstitute](fontobject.md#fontobjectissubstitute) 返回 `true`。将有一个底层的真实字体被选择来支持这个内部字体代理，但我们不会透露它是什么，也无法影响这个选择。
+在项目打开时，以及其他一些情况下，可能会发生持久化数据中引用的字体在当前字体生态系统中找不到的情况。在这些情况下，将创建一个内部字体代理，其中包含所需的属性，例如 PostScript 名称，并将为 [isSubstitute](../fontobject#fontobjectissubstitute) 返回 `true`。将有一个底层的真实字体被选择来支持这个内部字体代理，但我们不会透露它是什么，也无法影响这个选择。
 
 继续使用创建的替代字体进行打开过程，将尝试从 Creative Cloud Adobe Fonts 同步匹配的字体。这是一个异步活动，项目通常会在从 Adobe Fonts 下载任何字体之前完成打开并准备使用。根据同步的字体数量，它们可能会在不同的时间安装。无法禁用此尝试。
 
@@ -39,15 +39,15 @@ After Effects 维护了一个内部字体代理，指向字体生态系统中枚
 
 它们被分组为所谓的家族组，这些组是 [Font 对象](../fontobject) 的数组。
 
-组的家族名称只是组中任何 [Font 对象](../fontobject) 的 [familyName](fontobject.md#fontobjectfamilyname)。
+组的家族名称只是组中任何 [Font 对象](../fontobject) 的 [familyName](../fontobject#fontobjectfamilyname)。
 
-一个字体组的家族名称不保证与其他字体组具有唯一的名称——分组由多个因素决定，包括 [FontObject.technology](fontobject.md#fontobjecttechnology) 和 [FontObject.writingScripts](fontobject.md#fontobjectwritingscripts) 的返回值。
+一个字体组的家族名称不保证与其他字体组具有唯一的名称——分组由多个因素决定，包括 [FontObject.technology](../fontobject#fontobjecttechnology) 和 [FontObject.writingScripts](../fontobject#fontobjectwritingscripts) 的返回值。
 
 此外，完全允许多个字体具有相同的 PostScript 名称，尽管只有一个具有相同的（PostScript 名称、技术、主要书写脚本）元组。在真正重复的情况下，返回哪个字体以及哪个字体被抑制是未定义的。
 
-家族组和组中的 [Font 对象](../fontobject) 根据字符面板下拉菜单中的“以英文显示字体名称”设置进行排序。如果设置为 `true`，则使用 [familyName](fontobject.md#fontobjectfamilyname) 和 [styleName](fontobject.md#fontobjectstylename) 属性，否则使用 [nativeFamilyName](fontobject.md#fontobjectnativefamilyname) 和 [nativeStyleName](fontobject.md#fontobjectnativestylename) 属性。
+家族组和组中的 [Font 对象](../fontobject) 根据字符面板下拉菜单中的“以英文显示字体名称”设置进行排序。如果设置为 `true`，则使用 [familyName](../fontobject#fontobjectfamilyname) 和 [styleName](../fontobject#fontobjectstylename) 属性，否则使用 [nativeFamilyName](../fontobject#fontobjectnativefamilyname) 和 [nativeStyleName](../fontobject#fontobjectnativestylename) 属性。
 
-[Font 对象](../fontobject) 如果 [isSubstitute](fontobject.md#fontobjectissubstitute) 返回 `true`，则始终作为单独的家族组排序到最后。
+[Font 对象](../fontobject) 如果 [isSubstitute](../fontobject#fontobjectissubstitute) 返回 `true`，则始终作为单独的家族组排序到最后。
 
 #### 类型
 
@@ -80,7 +80,7 @@ alert(firstFontFamilyName+" "+firstFamilyStyle);
 
 #### 描述
 
-提供对字符面板和属性面板中显示的收藏列表的访问。要设置收藏列表，只需提供一个基于 [familyName](fontobject.md#fontobjectfamilyname) 的（未排序的）字符串数组。要清除列表，只需分配一个空数组。
+提供对字符面板和属性面板中显示的收藏列表的访问。要设置收藏列表，只需提供一个基于 [familyName](../fontobject#fontobjectfamilyname) 的（未排序的）字符串数组。要清除列表，只需分配一个空数组。
 
 #### 类型
 
@@ -98,7 +98,7 @@ alert(firstFontFamilyName+" "+firstFamilyStyle);
 
 #### 描述
 
-多个 [Font 对象](../fontobject) 返回相同的 [postScriptName](fontobject.md#fontobjectpostscriptname) 是完全合法且常见的，但由于这有时会导致在使用 [TextDocument.font](textdocument.md#textdocumentfont) 或 [CharacterRange 对象](../characterrange) 的 `.font` 属性时对实际使用的 [Font 对象](../fontobject) 产生混淆，此属性既用于揭示存在的重复项，也用于揭示它们的相对顺序。
+多个 [Font 对象](../fontobject) 返回相同的 [postScriptName](../fontobject#fontobjectpostscriptname) 是完全合法且常见的，但由于这有时会导致在使用 [TextDocument.font](../textdocument#textdocumentfont) 或 [CharacterRange 对象](../characterrange) 的 `.font` 属性时对实际使用的 [Font 对象](../fontobject) 产生混淆，此属性既用于揭示存在的重复项，也用于揭示它们的相对顺序。
 
 这将返回一个数组，其中每个元素是一个 [Font 对象](../fontobject) 的数组，其中第 0 个元素的 [Font 对象](../fontobject) 被视为给定 PostScript 名称的主要 [Font 对象](../fontobject)。
 
@@ -213,7 +213,7 @@ alert(variableFontList.length);
 
 #### 描述
 
-提供对字符面板和属性面板中显示的最近使用（MRU）列表的访问。要设置 MRU，只需提供一个基于 [familyName](fontobject.md#fontobjectfamilyname) 的（未排序的）字符串数组。要清除列表，只需分配一个空数组。
+提供对字符面板和属性面板中显示的最近使用（MRU）列表的访问。要设置 MRU，只需提供一个基于 [familyName](../fontobject#fontobjectfamilyname) 的（未排序的）字符串数组。要清除列表，只需分配一个空数组。
 
 #### 类型
 
@@ -239,10 +239,10 @@ alert(variableFontList.length);
 
 - `SubstitutedFontReplacementMatchPolicy.POSTSCRIPT_NAME` 是默认值；任何具有相同 PostScript 名称的 [Font 对象](../fontobject) 都是替代 [Font 对象](../fontobject) 的有效候选者。
 - `SubstitutedFontReplacementMatchPolicy.CTFI_EQUAL` 要求替代 [Font 对象](../fontobject) 的以下属性必须匹配才能被视为有效候选者：
-  - [postScriptName](fontobject.md#fontobjectpostscriptname)
-  - [technology](fontobject.md#fontobjecttechnology)
-  - [writingScripts](fontobject.md#fontobjectwritingscripts)（主要）
-  - [designVector](fontobject.md#fontobjectdesignvector)
+  - [postScriptName](../fontobject#fontobjectpostscriptname)
+  - [technology](../fontobject#fontobjecttechnology)
+  - [writingScripts](../fontobject#fontobjectwritingscripts)（主要）
+  - [designVector](../fontobject#fontobjectdesignvector)
 - `SubstitutedFontReplacementMatchPolicy.DISABLED` 表示没有 [Font 对象](../fontobject) 是替代 [Font 对象](../fontobject) 的可接受替换。
 
 ---
@@ -259,7 +259,7 @@ alert(variableFontList.length);
 
 #### 描述
 
-此函数将返回一个通用对象数组，描述范围内的字符数量以及分配给它们的 `CTScript` 枚举。有关 `CTScript` 枚举值的完整列表，请参阅 [FontObject.writingScripts](fontobject.md#fontobjectwritingscripts)。
+此函数将返回一个通用对象数组，描述范围内的字符数量以及分配给它们的 `CTScript` 枚举。有关 `CTScript` 枚举值的完整列表，请参阅 [FontObject.writingScripts](../fontobject#fontobjectwritingscripts)。
 
 如果一个字符被认为包含在一个或多个 `CTScript` 值中，第二个参数 `preferredCTScript` 指定的值将打破平局。
 
@@ -392,6 +392,6 @@ alert(fontList.length);
 
 此函数将基于之前找到的字体的 PostScript 名称返回一个 [Font 对象](../fontobject) 数组。
 
-完全允许多个 [Font 对象](../fontobject) 共享相同的 PostScript 名称，这些字体的顺序由它们在字体环境中的枚举顺序决定。`[0]` 处的条目将在设置 [TextDocument.fontObject](textdocument.md#textdocumentfontobject) 属性时使用。
+完全允许多个 [Font 对象](../fontobject) 共享相同的 PostScript 名称，这些字体的顺序由它们在字体环境中的枚举顺序决定。`[0]` 处的条目将在设置 [TextDocument.fontObject](../textdocument#textdocumentfontobject) 属性时使用。
 
 此外，此 API 对于可变字体有一个特殊属性。如果找不到与请求的 Post

@@ -75,7 +75,7 @@ If no location is specified, adds it to the containing text frame after the curr
 | ------------------- | --------------------------------------------------------------------- | ----------------------- |
 | `contents`          | String                                                                | Word to add             |
 | `relativeObject`    | [TextFrameItem](.././TextFrameItem), optional                         | Object to add item to   |
-| `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement), optional | Location to insert text |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), optional | Location to insert text |
 
 #### Returns
 

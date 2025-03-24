@@ -67,7 +67,7 @@ Illustrator 文档中的一个文档视图，表示文档的窗口视图。
 
 #### 类型
 
-[屏幕模式](scripting-constants.md#screenmode)
+[屏幕模式](../scripting-constants#screenmode)
 
 ---
 

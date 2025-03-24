@@ -37,7 +37,7 @@ title: PrinterInfo
 
 #### 类型
 
-[PrinterColorMode](scripting-constants.md#printercolormode)
+[PrinterColorMode](../scripting-constants#printercolormode)
 
 ---
 
@@ -247,7 +247,7 @@ PostScript 语言级别。
 
 #### 类型
 
-[PrinterPostScriptLevelEnum](scripting-constants.md#printerpostscriptlevelenum)
+[PrinterPostScriptLevelEnum](../scripting-constants#printerpostscriptlevelenum)
 
 ---
 
@@ -261,7 +261,7 @@ PostScript 语言级别。
 
 #### 类型
 
-[PrinterTypeEnum](scripting-constants.md#printertypeenum)
+[PrinterTypeEnum](../scripting-constants#printertypeenum)
 
 ---
 

@@ -15,7 +15,7 @@ Shape 对象封装了描述形状图层中的形状或遮罩轮廓形状的信�
 
 如果形状未闭合，则第一个顶点的 `inTangent` 和最后一个顶点的 `outTangent` 将被忽略。如果形状闭合，这两个向量指定从最后一个顶点返回到第一个顶点的最终连接段的切线手柄。
 
-RotoBezier 遮罩会自动计算其切线。（参见 [MaskPropertyGroup.rotoBezier](../property/maskpropertygroup.md#maskpropertygrouprotobezier)）如果形状用于 RotoBezier 遮罩，则切线值将被忽略。这意味着，对于 RotoBezier 遮罩，您可以通过仅设置 `vertices` 属性并将 `inTangents` 和 `outTangents` 设置为 `null` 来构造形状。当您访问新形状时，其切线值将填充为自动计算的切线值。
+RotoBezier 遮罩会自动计算其切线。（参见 [MaskPropertyGroup.rotoBezier](../../property/maskpropertygroup#maskpropertygrouprotobezier)）如果形状用于 RotoBezier 遮罩，则切线值将被忽略。这意味着，对于 RotoBezier 遮罩，您可以通过仅设置 `vertices` 属性并将 `inTangents` 和 `outTangents` 设置为 `null` 来构造形状。当您访问新形状时，其切线值将填充为自动计算的切线值。
 
 对于闭合的遮罩形状，可变宽度的遮罩羽化点可以存在于遮罩路径的任何位置。羽化点是遮罩路径属性的一部分。通过遮罩路径段（相邻顶点之间的路径部分）的编号引用特定的羽化点。
 

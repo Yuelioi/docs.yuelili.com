@@ -59,7 +59,7 @@ alert("添加后的图层数量为 " + layerCollection.length);
 
 #### 描述
 
-创建一个新的段落（框）文本图层，并将 [TextDocument.lineOrientation](../text/textdocument.md#textdocumentlineorientation) 设置为 `LineOrientation.HORIZONTAL`，然后将新的 [TextLayer 对象](../textlayer) 添加到此集合中。要创建点文本图层，请使用 [LayerCollection.addText()](#layercollectionaddtext) 方法。
+创建一个新的段落（框）文本图层，并将 [TextDocument.lineOrientation](../../text/textdocument#textdocumentlineorientation) 设置为 `LineOrientation.HORIZONTAL`，然后将新的 [TextLayer 对象](../textlayer) 添加到此集合中。要创建点文本图层，请使用 [LayerCollection.addText()](#layercollectionaddtext) 方法。
 
 #### 参数
 
@@ -186,7 +186,7 @@ ShapeLayer 对象。
 
 #### 描述
 
-创建一个新的点文本图层，并将 [TextDocument.lineOrientation](../text/textdocument.md#textdocumentlineorientation) 设置为 `LineOrientation.HORIZONTAL`，然后将新的 [TextLayer 对象](../textlayer) 添加到此集合中。要创建段落（框）文本图层，请使用 [LayerCollection.addBoxText()](#layercollectionaddboxtext)。
+创建一个新的点文本图层，并将 [TextDocument.lineOrientation](../../text/textdocument#textdocumentlineorientation) 设置为 `LineOrientation.HORIZONTAL`，然后将新的 [TextLayer 对象](../textlayer) 添加到此集合中。要创建段落（框）文本图层，请使用 [LayerCollection.addBoxText()](#layercollectionaddboxtext)。
 
 #### 参数
 
@@ -210,7 +210,7 @@ ShapeLayer 对象。
 
 #### 描述
 
-创建一个新的段落（框）文本图层，并将 [TextDocument.lineOrientation](../text/textdocument.md#textdocumentlineorientation) 设置为 `LineOrientation.VERTICAL_RIGHT_TO_LEFT`，然后将新的 [TextLayer 对象](../textlayer) 添加到此集合中。要创建点文本图层，请使用 [LayerCollection.addText()](#layercollectionaddtext) 或 [LayerCollection.addVerticalText()](#layercollectionaddverticaltext) 方法。
+创建一个新的段落（框）文本图层，并将 [TextDocument.lineOrientation](../../text/textdocument#textdocumentlineorientation) 设置为 `LineOrientation.VERTICAL_RIGHT_TO_LEFT`，然后将新的 [TextLayer 对象](../textlayer) 添加到此集合中。要创建点文本图层，请使用 [LayerCollection.addText()](#layercollectionaddtext) 或 [LayerCollection.addVerticalText()](#layercollectionaddverticaltext) 方法。
 
 #### 参数
 
@@ -234,7 +234,7 @@ TextLayer 对象。
 
 #### 描述
 
-创建一个新的点文本图层，并将 [TextDocument.lineOrientation](../text/textdocument.md#textdocumentlineorientation) 设置为 `LineOrientation.VERTICAL_RIGHT_TO_LEFT`，然后将新的 [TextLayer 对象](../textlayer) 添加到此集合中。要创建段落（框）文本图层，请使用 [LayerCollection.addBoxText()](#layercollectionaddboxtext) 或 [LayerCollection.addVerticalBoxText()](#layercollectionaddverticalboxtext) 方法。
+创建一个新的点文本图层，并将 [TextDocument.lineOrientation](../../text/textdocument#textdocumentlineorientation) 设置为 `LineOrientation.VERTICAL_RIGHT_TO_LEFT`，然后将新的 [TextLayer 对象](../textlayer) 添加到此集合中。要创建段落（框）文本图层，请使用 [LayerCollection.addBoxText()](#layercollectionaddboxtext) 或 [LayerCollection.addVerticalBoxText()](#layercollectionaddverticalboxtext) 方法。
 
 #### 参数
 

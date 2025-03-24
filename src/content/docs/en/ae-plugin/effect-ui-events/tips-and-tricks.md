@@ -43,6 +43,6 @@ During the click event, the plug-in converts the coordinates of the click into l
 
 The plug-in stores the color value in sequence data, and cancels the render, requesting a redraw of the affected parameter(s).
 
-Finally, during the draw, the plug-in adds appropriate keyframes to its color parameter stream using the [AEGP_KeyframeSuite](../aegps/aegp-suites.md#aegp_keyframesuite3).
+Finally, during the draw, the plug-in adds appropriate keyframes to its color parameter stream using the [AEGP_KeyframeSuite](../../aegps/aegp-suites#aegp_keyframesuite3).
 
 Yes, this means the effect needs to [Cheating Effect Usage of AEGP Suites](../../aegps/cheating-effect-usage-of-aegp-suites) and use the AEGP API.

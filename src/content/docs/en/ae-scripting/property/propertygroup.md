@@ -7,7 +7,7 @@ title: propertygroup
 
 #### Description
 
-The PropertyGroup object represents a group of properties. It can contain Property objects and other PropertyGroup objects. Property groups can be nested to provide a parent-child hierarchy, with a Layer object at the top (root) down to a single Property object, such as the mask feather of the third mask. To traverse the group hierarchy, use PropertyBase methods and attributes; see [PropertyBase.propertyGroup()](propertybase.md#propertybasepropertygroup). For examples of how to access properties and property groups, see [PropertyBase object](../propertybase).
+The PropertyGroup object represents a group of properties. It can contain Property objects and other PropertyGroup objects. Property groups can be nested to provide a parent-child hierarchy, with a Layer object at the top (root) down to a single Property object, such as the mask feather of the third mask. To traverse the group hierarchy, use PropertyBase methods and attributes; see [PropertyBase.propertyGroup()](../propertybase#propertybasepropertygroup). For examples of how to access properties and property groups, see [PropertyBase object](../propertybase).
 
 :::info
 PropertyGroup is a subclass of [PropertyBase](../propertybase). All methods and attributes of PropertyBase, in addition to those listed below, are available when working with PropertyGroup.
@@ -51,7 +51,7 @@ Integer; read-only.
 
 Creates and returns a PropertyBase object with the specified name, and adds it to this group.
 
-In general, you can only add properties to an indexed group (a property group that has the type `PropertyType.INDEXED_GROUP`; see [PropertyBase.propertyType](propertybase.md#propertybasepropertytype)).
+In general, you can only add properties to an indexed group (a property group that has the type `PropertyType.INDEXED_GROUP`; see [PropertyBase.propertyType](../propertybase#propertybasepropertytype)).
 The only exception is a text animator property, which can be added to a named group (a property group that has the type `PropertyType.NAMED_GROUP`).
 
 If this method cannot create a property with the specified name, it generates an exception.
@@ -93,7 +93,7 @@ var sliderProperty = effectsProperty.property(sliderIndex).property("ADBE Slider
 
 | Parameter |  Type  |                                                                                                Description                                                                                                |
 |-----------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `name`    | String | The display name or [matchName](propertybase.md#propertybasematchname) of the property to add. The following names are supported:                                                                         |
+| `name`    | String | The display name or [matchName](../propertybase#propertybasematchname) of the property to add. The following names are supported:                                                                         |
 |           |        | - Any match name for a property that can be added through the user interface. For example, `"ADBE Mask Atom`", `"ADBE Paint Atom`", `"ADBE Text Position`", `"ADBE Text Anchor Point`".                   |
 |           |        | - When adding to an ADBE Mask Parade: `"ADBE Mask Atom`", `"Mask`".                                                                                                                                       |
 |           |        | - When adding to an ADBE Effect Parade, any effect by match name, such as `"ADBE Bulge`", `"ADBE Glo2`", `"APC Vegas`".                                                                                   |

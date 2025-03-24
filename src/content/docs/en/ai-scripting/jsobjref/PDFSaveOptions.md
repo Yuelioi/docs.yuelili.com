@@ -7,7 +7,7 @@ title: PDFSaveOptions
 
 #### Description
 
-Options for saving a document as an Adobe PDF file, used with the [Document.saveAs()](Document.md#documentsave) method.
+Options for saving a document as an Adobe PDF file, used with the [Document.saveAs()](../document#documentsave) method.
 
 All properties are optional.
 
@@ -105,7 +105,7 @@ Default: `CompressionQuality.None`
 
 #### Type
 
-[CompressionQuality](scripting-constants.md#compressionquality)
+[CompressionQuality](../scripting-constants#compressionquality)
 
 ---
 
@@ -121,7 +121,7 @@ Default: `ColorConversion.None`
 
 #### Type
 
-[ColorConversion](scripting-constants.md#colorconversion)
+[ColorConversion](../scripting-constants#colorconversion)
 
 ---
 
@@ -137,7 +137,7 @@ Default: `ColorDestination.None`
 
 #### Type
 
-[ColorDestination](scripting-constants.md#colordestination)
+[ColorDestination](../scripting-constants#colordestination)
 
 ---
 
@@ -185,7 +185,7 @@ Default: `DownsampleMethod.NODOWNSAMPLE`
 
 #### Type
 
-[DownsampleMethod](scripting-constants.md#downsamplemethod)
+[DownsampleMethod](../scripting-constants#downsamplemethod)
 
 ---
 
@@ -201,7 +201,7 @@ Default: `ColorProfile.None`
 
 #### Type
 
-[ColorProfile](scripting-constants.md#colorprofile)
+[ColorProfile](../scripting-constants#colorprofile)
 
 ---
 
@@ -233,7 +233,7 @@ Default: `PDFCompatibility.Acrobat5`
 
 #### Type
 
-[PDFCompatibility](scripting-constants.md#pdfcompatibility)
+[PDFCompatibility](../scripting-constants#pdfcompatibility)
 
 ---
 
@@ -407,7 +407,7 @@ Default: `CompressionQuality.None`
 
 #### Type
 
-[CompressionQuality](scripting-constants.md#compressionquality)
+[CompressionQuality](../scripting-constants#compressionquality)
 
 ---
 
@@ -455,7 +455,7 @@ Default: `DownSampleMethod.NODOWNSAMPLE`
 
 #### Type
 
-[DownsampleMethod](scripting-constants.md#downsamplemethod)
+[DownsampleMethod](../scripting-constants#downsamplemethod)
 
 ---
 
@@ -487,7 +487,7 @@ Default: `MonochromeCompression.None`
 
 #### Type
 
-[MonochromeCompression](scripting-constants.md#monochromecompression)
+[MonochromeCompression](../scripting-constants#monochromecompression)
 
 ---
 
@@ -535,7 +535,7 @@ Default: `DownSampleMethod.NODOWNSAMPLE`
 
 #### Type
 
-[DownsampleMethod](scripting-constants.md#downsamplemethod)
+[DownsampleMethod](../scripting-constants#downsamplemethod)
 
 ---
 
@@ -631,7 +631,7 @@ Default: PageMarksType.Roman
 
 #### Type
 
-[PageMarksTypes](scripting-constants.md#pagemarkstypes)
+[PageMarksTypes](../scripting-constants#pagemarkstypes)
 
 ---
 
@@ -647,7 +647,7 @@ Default: `PDFPrintAllowedEnum.PRINT128HIGHRESOLUTION`
 
 #### Type
 
-[PDFPrintAllowedEnum](scripting-constants.md#pdfprintallowedenum)
+[PDFPrintAllowedEnum](../scripting-constants#pdfprintallowedenum)
 
 ---
 
@@ -663,7 +663,7 @@ Default: `PDFChangeAllowedEnum.CHANGE128ANYCHANGES`
 
 #### Type
 
-[PDFChangesAllowedEnum](scripting-constants.md#pdfchangesallowedenum)
+[PDFChangesAllowedEnum](../scripting-constants#pdfchangesallowedenum)
 
 ---
 
@@ -693,7 +693,7 @@ Default: `PDFXStandard.PDFXNONE`
 
 #### Type
 
-[PDFXStandard](scripting-constants.md#pdfxstandard)
+[PDFXStandard](../scripting-constants#pdfxstandard)
 
 ---
 
@@ -851,7 +851,7 @@ Default: `PDFTrimMarkWeight.TRIMMARKWEIGHT0125`
 
 #### Type
 
-[PDFTrimMarkWeight](scripting-constants.md#pdftrimmarkweight)
+[PDFTrimMarkWeight](../scripting-constants#pdftrimmarkweight)
 
 ---
 

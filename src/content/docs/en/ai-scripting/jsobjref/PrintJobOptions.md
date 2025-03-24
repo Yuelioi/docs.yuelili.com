@@ -89,7 +89,7 @@ Default: `PrintArtworkDesignation.VISIBLEPRINTABLELAYERS`
 
 #### Type
 
-[PrintArtworkDesignation](scripting-constants.md#printartworkdesignation)
+[PrintArtworkDesignation](../scripting-constants#printartworkdesignation)
 
 ---
 
@@ -149,7 +149,7 @@ Default: `PrintingBounds.ARTBOARDBOUNDS`
 
 #### Type
 
-[PrintingBounds](scripting-constants.md#printingbounds)
+[PrintingBounds](../scripting-constants#printingbounds)
 
 ---
 

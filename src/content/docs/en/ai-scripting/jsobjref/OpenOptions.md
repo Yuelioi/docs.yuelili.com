@@ -7,7 +7,7 @@ title: OpenOptions
 
 #### Description
 
-Options for opening a document, used with the [Application.open()](Application.md#applicationopen) method.
+Options for opening a document, used with the [Application.open()](../application#applicationopen) method.
 
 ---
 
@@ -73,7 +73,7 @@ Default: `LibraryType.IllustratorArtwork`.
 
 #### Type
 
-[LibraryType](scripting-constants.md#librarytype)
+[LibraryType](../scripting-constants#librarytype)
 
 ---
 

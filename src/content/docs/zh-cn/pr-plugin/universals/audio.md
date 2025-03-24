@@ -21,7 +21,7 @@ float* audio[2];
 sample16bit[n] = (short int) (sample32bit[n] * 32767.0)
 ```
 
-当读取使用不同格式的文件时，插件负责与 32 位非交错格式之间进行转换。[Audio Suite](sweetpea-suites.md#audio-suite) 中有用于格式之间转换的调用。为了在整数 <-> 浮点数转换中保持对称性，我们建议您使用提供的实用函数。
+当读取使用不同格式的文件时，插件负责与 32 位非交错格式之间进行转换。[Audio Suite](../sweetpea-suites#audio-suite) 中有用于格式之间转换的调用。为了在整数 <-> 浮点数转换中保持对称性，我们建议您使用提供的实用函数。
 
 ---
 

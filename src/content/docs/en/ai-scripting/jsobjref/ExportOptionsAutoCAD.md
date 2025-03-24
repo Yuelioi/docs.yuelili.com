@@ -7,7 +7,7 @@ title: ExportOptionsAutoCAD
 
 #### Description
 
-Options for exporting a document as an AutoCAD file, used with the [Document.exportFile()](Document.md#documentexportfile) method.
+Options for exporting a document as an AutoCAD file, used with the [Document.exportFile()](../document#documentexportfile) method.
 All properties are optional.
 
 When you export a document, a file extension is appended automatically. You should not include any file extension in the file specification.
@@ -44,7 +44,7 @@ The colors exported into the AutoCAD file.
 
 #### Type
 
-[AutoCADColors](scripting-constants.md#autocadcolors)
+[AutoCADColors](../scripting-constants#autocadcolors)
 
 ---
 
@@ -76,7 +76,7 @@ Default: `AutoCADExportFileFormat.DWG`.
 
 #### Type
 
-[AutoCADExportFileFormat](scripting-constants.md#autocadexportfileformat)
+[AutoCADExportFileFormat](../scripting-constants#autocadexportfileformat)
 
 ---
 
@@ -92,7 +92,7 @@ Default: `AutoCADExportOption.MaximizeEditability`.
 
 #### Type
 
-[AutoCADExportOption](scripting-constants.md#autocadexportoption)
+[AutoCADExportOption](../scripting-constants#autocadexportoption)
 
 ---
 
@@ -122,7 +122,7 @@ The format in which raster art is exported.
 
 #### Type
 
-[AutoCADRasterFormat](scripting-constants.md#autocadrasterformat)
+[AutoCADRasterFormat](../scripting-constants#autocadrasterformat)
 
 ---
 
@@ -166,7 +166,7 @@ The measurement units from which to map.
 
 #### Type
 
-[AutoCADUnit](scripting-constants.md#autocadunit)
+[AutoCADUnit](../scripting-constants#autocadunit)
 
 ---
 
@@ -198,4 +198,4 @@ Default: `AutoCADCompatibility.AutoCADRelease24`.
 
 #### Type
 
-[AutoCADCompatibility](scripting-constants.md#autocadcompatibility)
+[AutoCADCompatibility](../scripting-constants#autocadcompatibility)

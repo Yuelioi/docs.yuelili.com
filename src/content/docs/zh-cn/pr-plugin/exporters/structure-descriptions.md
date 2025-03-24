@@ -5,9 +5,9 @@ title: 结构描述
 
 ## exDoExportRec
 
-选择器: [exSelExport](selector-descriptions.md#exselexport)
+选择器: [exSelExport](../selector-descriptions#exselexport)
 
-提供通用的导出设置。导出器应从 [Export Param Suite](suites.md#export-param-suite) 中检索参数设置。
+提供通用的导出设置。导出器应从 [Export Param Suite](../suites#export-param-suite) 中检索参数设置。
 
 ```cpp
 typedef struct {
@@ -28,20 +28,20 @@ typedef struct {
 
 |         成员          |                                                                                                     描述                                                                                                     |
 |-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `exporterPluginID`    | 主机的内部标识符，用于此导出器，用于各种套件调用，例如在 [Sequence Render Suite](suites.md#sequence-render-suite) 和 [Sequence Audio Suite](suites.md#sequence-audio-suite) 中。 |
+| `exporterPluginID`    | 主机的内部标识符，用于此导出器，用于各种套件调用，例如在 [Sequence Render Suite](../suites#sequence-render-suite) 和 [Sequence Audio Suite](../suites#sequence-audio-suite) 中。 |
 | `privateData`         | 由导出器分配和管理的数据。                                                                                                                                                                                   |
-| `fileType`            | 导出器在 [exSelStartup](selector-descriptions.md#exselstartup) 期间设置的文件格式四字符代码。                                                                                                                 |
+| `fileType`            | 导出器在 [exSelStartup](../selector-descriptions#exselstartup) 期间设置的文件格式四字符代码。                                                                                                                 |
 |                       | 指示导出器应写入的格式，因为导出器可以支持多种格式。                                                                                                                                                         |
 | `exportAudio`         | 如果非零，则导出音频。                                                                                                                                                                                       |
 | `exportVideo`         | 如果非零，则导出视频。                                                                                                                                                                                       |
 | `startTime`           | 要导出的序列的开始时间。                                                                                                                                                                                     |
 | `endTime`             | 要导出的序列的结束时间。如果 startTime 为 0，则也是要导出的总持续时间。                                                                                                                                      |
 |                       | 指定的范围是 `[startTime, endTime)`，意味着 `endTime` 实际上不包含在范围内。                                                                                                                                 |
-| `fileObject`          | 用于 [Export File Suite](suites.md#export-file-suite)，以获取和操作用户指定的文件。                                                                                                                           |
+| `fileObject`          | 用于 [Export File Suite](../suites#export-file-suite)，以获取和操作用户指定的文件。                                                                                                                           |
 | `timelineData`        | 用于时间轴函数的句柄。                                                                                                                                                                                       |
 | `reserveMetaDataSpace`| 在文件中保留用于元数据存储的空间量。                                                                                                                                                                         |
 | `maximumRenderQuality`| 如果非零，导出器应将 `SequenceRender_ParamsRec.inRenderQuality` 和 `inDeinterlaceQuality` 设置为 `kPrRenderQuality_Max`。                                                                                     |
-| `embedCaptions`       | 新增于 CC。如果非零，导出器应嵌入从 [Captioning Suite](../universals/sweetpea-suites.md#captioning-suite) 获取的字幕。                                                                                       |
+| `embedCaptions`       | 新增于 CC。如果非零，导出器应嵌入从 [Captioning Suite](../../universals/sweetpea-suites#captioning-suite) 获取的字幕。                                                                                       |
 | `colorProfile`        | 在文件中保留用于元数据存储的空间量。                                                                                                                                                                         |
 | `exportColorSpaceID`  | 在文件中保留用于元数据存储的空间量。                                                                                                                                                                         |
 | `maximumFileSize`     | 在文件中保留用于元数据存储的空间量。                                                                                                                                                                         |
@@ -50,9 +50,9 @@ typedef struct {
 
 ## exDoExportRec2
 
-选择器: [exSelExport](selector-descriptions.md#exselexport)
+选择器: [exSelExport](../selector-descriptions#exselexport)
 
-提供通用的导出设置。导出器应从 [Export Param Suite](suites.md#export-param-suite) 中检索参数设置。
+提供通用的导出设置。导出器应从 [Export Param Suite](../suites#export-param-suite) 中检索参数设置。
 
 ```cpp
 typedef struct {
@@ -77,20 +77,20 @@ typedef struct {
 
 |         成员          |                                                                                                     描述                                                                                                     |
 |-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `exporterPluginID`    | 主机的内部标识符，用于此导出器，用于各种套件调用，例如在 [Sequence Render Suite](suites.md#sequence-render-suite) 和 [Sequence Audio Suite](suites.md#sequence-audio-suite) 中。 |
+| `exporterPluginID`    | 主机的内部标识符，用于此导出器，用于各种套件调用，例如在 [Sequence Render Suite](../suites#sequence-render-suite) 和 [Sequence Audio Suite](../suites#sequence-audio-suite) 中。 |
 | `privateData`         | 由导出器分配和管理的数据。                                                                                                                                                                                   |
-| `fileType`            | 导出器在 [exSelStartup](selector-descriptions.md#exselstartup) 期间设置的文件格式四字符代码。                                                                                                                 |
+| `fileType`            | 导出器在 [exSelStartup](../selector-descriptions#exselstartup) 期间设置的文件格式四字符代码。                                                                                                                 |
 |                       | 指示导出器应写入的格式，因为导出器可以支持多种格式。                                                                                                                                                         |
 | `exportAudio`         | 如果非零，则导出音频。                                                                                                                                                                                       |
 | `exportVideo`         | 如果非零，则导出视频。                                                                                                                                                                                       |
 | `startTime`           | 要导出的序列的开始时间。                                                                                                                                                                                     |
 | `endTime`             | 要导出的序列的结束时间。如果 startTime 为 0，则也是要导出的总持续时间。                                                                                                                                      |
 |                       | 指定的范围是 `[startTime, endTime)`，意味着 `endTime` 实际上不包含在范围内。                                                                                                                                 |
-| `fileObject`          | 用于 [Export File Suite](suites.md#export-file-suite)，以获取和操作用户指定的文件。                                                                                                                           |
+| `fileObject`          | 用于 [Export File Suite](../suites#export-file-suite)，以获取和操作用户指定的文件。                                                                                                                           |
 | `timelineData`        | 用于时间轴函数的句柄。                                                                                                                                                                                       |
 | `reserveMetaDataSpace`| 在文件中保留用于元数据存储的空间量。                                                                                                                                                                         |
 | `maximumRenderQuality`| 如果非零，导出器应将 `SequenceRender_ParamsRec.inRenderQuality` 和 `inDeinterlaceQuality` 设置为 `kPrRenderQuality_Max`。                                                                                     |
-| `embedCaptions`       | 新增于 CC。如果非零，导出器应嵌入从 [Captioning Suite](../universals/sweetpea-suites.md#captioning-suite) 获取的字幕。                                                                                       |
+| `embedCaptions`       | 新增于 CC。如果非零，导出器应嵌入从 [Captioning Suite](../../universals/sweetpea-suites#captioning-suite) 获取的字幕。                                                                                       |
 | `colorProfile`        | 新增于 13.1。颜色配置文件，根据格式标准嵌入输出。适用于将 `canEmbedColorProfile` 设置为 true 的格式。                                                                                                        |
 | `exportColorSpaceID`  | 新增于 13.1。要使用的颜色空间的 ID。不能为 `kPrSDKColorSpaceID_Invalid`。                                                                                                                                    |
 | `maximumFileSize`     | 新增于 15.x。如果非零，导出器应将其视为文件大小的上限，并根据需要重新压缩以满足该目标。                                                                                                                      |
@@ -100,13 +100,13 @@ typedef struct {
 
 ## exExporterInfoRec
 
-选择器: [exSelStartup](selector-descriptions.md#exselstartup) 和 [exSelShutdown](selector-descriptions.md#exselshutdown)（从 CS6 开始）
+选择器: [exSelStartup](../selector-descriptions#exselstartup) 和 [exSelShutdown](../selector-descriptions#exselshutdown)（从 CS6 开始）
 
-通过在 [exSelStartup](selector-descriptions.md#exselstartup) 期间填写此结构来描述导出器的功能。
+通过在 [exSelStartup](../selector-descriptions#exselstartup) 期间填写此结构来描述导出器的功能。
 
 对于每种文件类型，填充 exExporterInfoRec 并返回 `exportReturnIterateExporter`。
 
-然后会重新发送 [exSelStartup](selector-descriptions.md#exselstartup)。重复此过程，直到没有更多文件格式需要描述，然后返回 `exportReturn_IterateExporterDone`。
+然后会重新发送 [exSelStartup](../selector-descriptions#exselstartup)。重复此过程，直到没有更多文件格式需要描述，然后返回 `exportReturn_IterateExporterDone`。
 
 fileType 指示导出器在后续调用中应处理的格式。
 
@@ -163,7 +163,7 @@ typedef struct {
 
 ## exExporterInstanceRec
 
-选择器: [exSelBeginInstance](selector-descriptions.md#exselbegininstance) 和 [exSelEndInstance](selector-descriptions.md#exselendinstance)
+选择器: [exSelBeginInstance](../selector-descriptions#exselbegininstance) 和 [exSelEndInstance](../selector-descriptions#exselendinstance)
 
 提供对指定文件类型的 privateData 的访问，以便导出器可以分配 privateData 并将其传递给主机，或释放它。
 
@@ -178,14 +178,14 @@ typedef struct {
 |       成员        |                                                     描述                                                      |
 |-------------------|---------------------------------------------------------------------------------------------------------------|
 | `exporterPluginID`| 主机的内部标识符，用于此导出器。请勿修改。                                                                    |
-| `fileType`        | 导出器在 [exSelStartup](selector-descriptions.md#exselstartup) 期间设置的文件格式四字符代码。                  |
+| `fileType`        | 导出器在 [exSelStartup](../selector-descriptions#exselstartup) 期间设置的文件格式四字符代码。                  |
 | `privateData`     | 由导出器分配和管理的数据。                                                                                    |
 
 ---
 
 ## exGenerateDefaultParamRec
 
-选择器: [exSelGenerateDefaultParams](selector-descriptions.md#exselgeneratedefaultparams)
+选择器: [exSelGenerateDefaultParams](../selector-descriptions#exselgeneratedefaultparams)
 
 提供对指定文件类型的 privateData 的访问，以便导出器可以生成默认参数集。
 
@@ -201,13 +201,13 @@ typedef struct {
 |-------------------|---------------------------------------------------------------------------------------------------------------|
 | `exporterPluginID`| 主机的内部标识符，用于此导出器。请勿修改。                                                                    |
 | `privateData`     | 由导出器分配和管理的数据。                                                                                    |
-| `fileType`        | 导出器在 [exSelStartup](selector-descriptions.md#exselstartup) 期间设置的文件格式四字符代码。                  |
+| `fileType`        | 导出器在 [exSelStartup](../selector-descriptions#exselstartup) 期间设置的文件格式四字符代码。                  |
 
 ---
 
 ## exParamButtonRec
 
-选择器: [exSelParamButton](selector-descriptions.md#exselparambutton)
+选择器: [exSelParamButton](../selector-descriptions#exselparambutton)
 
 提供对指定文件类型的 privateData 的访问，并披露用户点击的特定按钮，因为可以有多个按钮参数。
 
@@ -227,7 +227,7 @@ typedef struct {
 |-----------------------|---------------------------------------------------------------------------------------------------------------|
 | `exporterPluginID`    | 主机的内部标识符，用于此导出器。请勿修改。                                                                    |
 | `privateData`         | 由导出器分配和管理的数据。                                                                                    |
-| `fileType`            | 导出器在 [exSelStartup](selector-descriptions.md#exselstartup) 期间设置的文件格式四字符代码。                  |
+| `fileType`            | 导出器在 [exSelStartup](../selector-descriptions#exselstartup) 期间设置的文件格式四字符代码。                  |
 | `exportAudio`         | 如果非零，则当前设置设置为导出音频。                                                                          |
 | `exportVideo`         | 如果非零，则当前设置设置为导出视频。                                                                          |
 | `multiGroupIndex`     | 披露包含用户点击的按钮的多组索引。                                                                            |
@@ -237,7 +237,7 @@ typedef struct {
 
 ## exParamChangedRec
 
-选择器: [exSelValidateParamChanged](selector-descriptions.md#exselvalidateparamchanged)
+选择器: [exSelValidateParamChanged](../selector-descriptions#exselvalidateparamchanged)
 
 提供对指定文件类型的 `privateData` 的访问，并披露用户更改的特定参数。
 
@@ -260,7 +260,7 @@ typedef struct {
 |-----------------------|----------------------------------------------------------------------------------------------------------------|
 | `exporterPluginID`    | 主机为此导出器分配的内部标识符。请勿修改。                                                                     |
 | `privateData`         | 由导出器分配和管理的数据。                                                                                     |
-| `fileType`            | 导出器在 [exSelStartup](selector-descriptions.md#exselstartup) 期间设置的文件格式四字符代码。                  |
+| `fileType`            | 导出器在 [exSelStartup](../selector-descriptions#exselstartup) 期间设置的文件格式四字符代码。                  |
 | `exportAudio`         | 如果为非零值，则当前设置将导出音频。                                                                           |
 | `exportVideo`         | 如果为非零值，则当前设置将导出视频。                                                                           |
 | `multiGroupIndex`     | 披露包含用户更改参数的多组索引。                                                                               |
@@ -273,7 +273,7 @@ typedef struct {
 
 ## exParamSummaryRec
 
-选择器: [exSelGetParamSummary](selector-descriptions.md#exselgetparamsummary)
+选择器: [exSelGetParamSummary](../selector-descriptions#exselgetparamsummary)
 
 提供对指定文件类型的 `privateData` 的访问，并为导出器提供缓冲区以填充参数的本地化摘要。
 
@@ -303,7 +303,7 @@ typedef struct {
 
 ## exPostProcessParamsRec
 
-选择器: [exSelPostProcessParams](selector-descriptions.md#exselpostprocessparams)
+选择器: [exSelPostProcessParams](../selector-descriptions#exselpostprocessparams)
 
 提供对指定文件类型的 `privateData` 的访问。
 
@@ -322,7 +322,7 @@ typedef struct {
 |-----------------------|----------------------------------------------------------------------------------------------------------------|
 | `exporterPluginID`    | 主机为此导出器分配的内部标识符。请勿修改。                                                                     |
 | `privateData`         | 由导出器分配和管理的数据。                                                                                     |
-| `fileType`            | 导出器在 [exSelStartup](selector-descriptions.md#exselstartup) 期间设置的文件格式四字符代码。                  |
+| `fileType`            | 导出器在 [exSelStartup](../selector-descriptions#exselstartup) 期间设置的文件格式四字符代码。                  |
 | `exportAudio`         | 如果为非零值，则当前设置将导出音频。                                                                           |
 | `exportVideo`         | 如果为非零值，则当前设置将导出视频。                                                                           |
 | `doConformToMatchParams` | 新增于 CC。                                                                                                   |
@@ -331,7 +331,7 @@ typedef struct {
 
 ## exQueryExportFileExtensionRec
 
-选择器: [exSelQueryExportFileExtension](selector-descriptions.md#exselqueryexportfileextension)
+选择器: [exSelQueryExportFileExtension](../selector-descriptions#exselqueryexportfileextension)
 
 提供对指定文件类型的 `privateData` 的访问，并为导出器提供缓冲区以填充文件扩展名。
 
@@ -348,14 +348,14 @@ typedef struct {
 |-----------------|----------------------------------------------------------------------------------------------------------------|
 | `exporterPluginID` | 主机为此导出器分配的内部标识符。请勿修改。                                                                     |
 | `privateData`      | 由导出器分配和管理的数据。                                                                                     |
-| `fileType`         | 导出器在 [exSelStartup](selector-descriptions.md#exselstartup) 期间设置的文件格式四字符代码。                  |
+| `fileType`         | 导出器在 [exSelStartup](../selector-descriptions#exselstartup) 期间设置的文件格式四字符代码。                  |
 | `outFileExtension` | 根据当前参数设置提供文件扩展名。                                                                               |
 
 ---
 
 ## exQueryOutputFileListRec
 
-选择器: [exSelQueryOutputFileList](selector-descriptions.md#exselqueryoutputfilelist)
+选择器: [exSelQueryOutputFileList](../selector-descriptions#exselqueryoutputfilelist)
 
 提供对指定文件类型的 `privateData` 的访问，并为导出器提供指向 `exOutputFileRecs` 数组的指针以填充文件路径。
 
@@ -374,7 +374,7 @@ typedef struct {
 |-----------------|-------------------------------------------------------------------------------------------------------------------|
 | `exporterPluginID` | 主机为此导出器分配的内部标识符。请勿修改。                                                                       |
 | `privateData`      | 由导出器分配和管理的数据。                                                                                       |
-| `fileType`         | 导出器在 [exSelStartup](selector-descriptions.md#exselstartup) 期间设置的文件格式四字符代码。                    |
+| `fileType`         | 导出器在 [exSelStartup](../selector-descriptions#exselstartup) 期间设置的文件格式四字符代码。                    |
 | `numOutputFiles`   | 在第一次调用 `exSelQueryOutputFileList` 时，提供文件路径的数量。                                                 |
 | `path`             | 新增于 CS5。包含主机提供的主要目标路径。                                                                         |
 | `outputFileRecs`   | `exOutputFileRecs` 数组。                                                                                         |
@@ -386,7 +386,7 @@ typedef struct {
 
 ## exQueryOutputSettingsRec
 
-选择器: [exSelQueryOutputSettings](selector-descriptions.md#exselqueryoutputsettings)
+选择器: [exSelQueryOutputSettings](../selector-descriptions#exselqueryoutputsettings)
 
 提供对指定文件类型的 `privateData` 的访问，并为导出器提供一组成员以填充当前导出设置。
 
@@ -416,11 +416,11 @@ typedef struct {
 |-----------------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | `exporterPluginID`          | 主机为此导出器分配的内部标识符。请勿修改。                                                                                          |
 | `privateData`               | 由导出器分配和管理的数据。                                                                                                          |
-| `fileType`                  | 导出器在 [exSelStartup](selector-descriptions.md#exselstartup) 期间设置的文件格式四字符代码。                                       |
+| `fileType`                  | 导出器在 [exSelStartup](../selector-descriptions#exselstartup) 期间设置的文件格式四字符代码。                                       |
 | `inMultiGroupIndex`         | 返回具有此索引的多组的参数设置。                                                                                                    |
 | `inExportVideo`             | 如果为非零值，则当前设置将导出视频。                                                                                                |
 | `inExportAudio`             | 如果为非零值，则当前设置将导出音频。                                                                                                |
-| `outVideoWidth`             | 通过使用 [Export Param Suite](suites.md#export-param-suite) 获取参数的当前值来返回每个参数设置。                                    |
+| `outVideoWidth`             | 通过使用 [Export Param Suite](../suites#export-param-suite) 获取参数的当前值来返回每个参数设置。                                    |
 | `outVideoHeight`            |                                                                                                                                   |
 |                             | 某些设置（如 `outVideoFieldType`）可能是隐式的，例如如果格式仅支持逐行帧。                                                         |
 | `outUseMaximumRenderPrecision` | 新增于 CS6。如果为非零值，渲染将始终以最大位深度进行。                                                                             |
@@ -429,7 +429,7 @@ typedef struct {
 
 ## exQueryStillSequenceRec
 
-选择器: [exSelQueryStillSequence](selector-descriptions.md#exselquerystillsequence)
+选择器: [exSelQueryStillSequence](../selector-descriptions#exselquerystillsequence)
 
 提供对指定文件类型的 `privateData` 的访问，并为导出器提供一组成员以提供有关如何导出静态图像序列的信息。
 
@@ -447,7 +447,7 @@ typedef struct {
 |----------------------|----------------------------------------------------------------------------------------------------------------|
 | `exporterPluginID`   | 主机为此导出器分配的内部标识符。请勿修改。                                                                     |
 | `privateData`        | 由导出器分配和管理的数据。                                                                                     |
-| `fileType`           | 导出器在 [exSelStartup](selector-descriptions.md#exselstartup) 期间设置的文件格式四字符代码。                  |
+| `fileType`           | 导出器在 [exSelStartup](../selector-descriptions#exselstartup) 期间设置的文件格式四字符代码。                  |
 | `exportAsStillSequence` | 将此设置为非零值以告诉主机导出器可以将静态图像导出为序列。                                                     |
 | `exportFrameRate`    | 将此设置为静态图像序列的帧率。                                                                                 |
 
@@ -455,7 +455,7 @@ typedef struct {
 
 ## exValidateOutputSettingsRec
 
-选择器: [exSelValidateOutputSettings](selector-descriptions.md#exselvalidateoutputsettings)
+选择器: [exSelValidateOutputSettings](../selector-descriptions#exselvalidateoutputsettings)
 
 提供对指定文件类型的 `privateData` 的访问，以便导出器可以验证当前参数设置。
 
@@ -471,13 +471,13 @@ typedef struct {
 |-----------------|----------------------------------------------------------------------------------------------------------------|
 | `exporterPluginID` | 主机为此导出器分配的内部标识符。请勿修改。                                                                     |
 | `privateData`      | 由导出器分配和管理的数据。                                                                                     |
-| `fileType`         | 导出器在 [exSelStartup](selector-descriptions.md#exselstartup) 期间设置的文件格式四字符代码。                  |
+| `fileType`         | 导出器在 [exSelStartup](../selector-descriptions#exselstartup) 期间设置的文件格式四字符代码。                  |
 
 ---
 
 ## exQueryExportColorSpaceRec
 
-选择器: [exSelQueryExportColorSpace](selector-descriptions.md#exselqueryexportcolorspace)
+选择器: [exSelQueryExportColorSpace](../selector-descriptions#exselqueryexportcolorspace)
 
 提供对指定文件类型的 `privateData` 的访问，以便导出器可以验证当前参数设置。
 

@@ -7,7 +7,7 @@ title: OpenOptionsAutoCAD
 
 #### Description
 
-Options for opening an AutoCAD drawing, used with the [Application.open()](Application.md#applicationopen) method.
+Options for opening an AutoCAD drawing, used with the [Application.open()](../application#applicationopen) method.
 
 ---
 
@@ -41,7 +41,7 @@ Default: `AutoCADGlobalScaleOption.FitArtboard`.
 
 #### Type
 
-[AutoCADGlobalScaleOption](scripting-constants.md#autocadglobalscaleoption)
+[AutoCADGlobalScaleOption](../scripting-constants#autocadglobalscaleoption)
 
 ---
 
@@ -147,7 +147,7 @@ Default: `AutoCADUnit.Millimeters`.
 
 #### Type
 
-[AutoCADUnit](scripting-constants.md#autocadunit)
+[AutoCADUnit](../scripting-constants#autocadunit)
 
 ---
 

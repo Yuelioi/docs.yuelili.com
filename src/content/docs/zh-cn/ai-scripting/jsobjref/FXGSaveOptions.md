@@ -41,7 +41,7 @@ FXG 用于扩展混合的策略。
 
 #### 类型
 
-[BlendsExpandPolicy](scripting-constants.md#blendsexpandpolicy)
+[BlendsExpandPolicy](../scripting-constants#blendsexpandpolicy)
 
 ---
 
@@ -73,7 +73,7 @@ FXG 用于保留滤镜的策略。
 
 #### 类型
 
-[FiltersPreservePolicy](scripting-constants.md#filterspreservepolicy)
+[FiltersPreservePolicy](../scripting-constants#filterspreservepolicy)
 
 ---
 
@@ -89,7 +89,7 @@ FXG 用于保留渐变的策略。
 
 #### 类型
 
-[GradientsPreservePolicy](scripting-constants.md#gradientspreservepolicy)
+[GradientsPreservePolicy](../scripting-constants#gradientspreservepolicy)
 
 ---
 
@@ -153,7 +153,7 @@ FXG 用于保留文本的策略。
 
 #### 类型
 
-[TextPreservePolicy](scripting-constants.md#textpreservepolicy)
+[TextPreservePolicy](../scripting-constants#textpreservepolicy)
 
 ---
 
@@ -167,4 +167,4 @@ FXG 用于保留文本的策略。
 
 #### 类型
 
-[FXGVersion](scripting-constants.md#fxgversion)
+[FXGVersion](../scripting-constants#fxgversion)

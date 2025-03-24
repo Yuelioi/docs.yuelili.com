@@ -139,7 +139,7 @@ alert(getEnumAsString(5220));
 
 #### 描述
 
-确定指定的 After Effects 对象（例如，合成、图层、遮罩等）是否仍然存在。某些操作，例如 [PropertyBase.moveTo()](https://../property/propertybase.md#propertybasemoveto)，可能会使现有变量赋值失效。此函数允许您在尝试访问这些赋值之前测试它们是否仍然有效。
+确定指定的 After Effects 对象（例如，合成、图层、遮罩等）是否仍然存在。某些操作，例如 [PropertyBase.moveTo()](.https://../property/propertybase#propertybasemoveto)，可能会使现有变量赋值失效。此函数允许您在尝试访问这些赋值之前测试它们是否仍然有效。
 
 #### 参数
 

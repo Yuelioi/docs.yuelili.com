@@ -7,7 +7,7 @@ title: ImageCaptureOptions
 
 #### Description
 
-Options for image capture, used with the [Document.imageCapture()](Document.md#documentimagecapture) method. All properties are optional.
+Options for image capture, used with the [Document.imageCapture()](../document#documentimagecapture) method. All properties are optional.
 
 ---
 

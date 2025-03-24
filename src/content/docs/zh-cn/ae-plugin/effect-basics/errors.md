@@ -44,7 +44,7 @@ After Effects 认为在插件执行期间遇到的操作系统错误是你的错
 
 内存不足错误永远不会由 After Effects 报告。在 RAM 预览期间以及 After Effects 以 -noui 模式运行时，错误报告总是被抑制。
 
-要从插件内部报告错误，请设置 `PF_OutFlag_DISPLAY_ERROR_MESSAGE`，并在 [PF_OutData>return_msg](PF_OutData.md#pf_outdata) 中描述错误。
+要从插件内部报告错误，请设置 `PF_OutFlag_DISPLAY_ERROR_MESSAGE`，并在 [PF_OutData>return_msg](../PF_OutData#pf_outdata) 中描述错误。
 
 这样做会将你的错误记录到渲染日志中，并防止由渲染引擎或脚本驱动的渲染中出现系统挂起。
 

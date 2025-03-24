@@ -7,7 +7,7 @@ title: OpenOptionsAutoCAD
 
 #### 描述
 
-用于打开 AutoCAD 绘图的选项，与 [Application.open()](Application.md#applicationopen) 方法一起使用。
+用于打开 AutoCAD 绘图的选项，与 [Application.open()](../Application#applicationopen) 方法一起使用。
 
 ---
 
@@ -41,7 +41,7 @@ title: OpenOptionsAutoCAD
 
 #### 类型
 
-[AutoCADGlobalScaleOption](scripting-constants.md#autocadglobalscaleoption)
+[AutoCADGlobalScaleOption](../scripting-constants#autocadglobalscaleoption)
 
 ---
 
@@ -147,7 +147,7 @@ title: OpenOptionsAutoCAD
 
 #### 类型
 
-[AutoCADUnit](scripting-constants.md#autocadunit)
+[AutoCADUnit](../scripting-constants#autocadunit)
 
 ---
 

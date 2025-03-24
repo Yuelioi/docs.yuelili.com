@@ -64,7 +64,7 @@ ExternalObject 类提供以下静态属性：
 
 一组用于搜索共享库文件的备用路径，是一个包含多个路径规范的字符串，路径之间用分号（;）分隔。
 
-路径可以是绝对路径，也可以是相对于 [Folder.startup](../file-system-access/folder-object.md#folderstartup) 位置的相对路径。
+路径可以是绝对路径，也可以是相对于 [Folder.startup](../../file-system-access/folder-object#folderstartup) 位置的相对路径。
 
 默认值为：
 
@@ -84,7 +84,7 @@ ExternalObject 类提供以下静态属性：
 
 #### 描述
 
-库的版本，由 [ESGetVersion()](defining-entry-points-for-direct-access.md#esgetversion) 返回。
+库的版本，由 [ESGetVersion()](../defining-entry-points-for-direct-access#esgetversion) 返回。
 
 #### 类型
 

@@ -20,7 +20,7 @@ The properties we report via the proxy [Font object](../fontobject) are the data
 
 A [Font object](../fontobject) is a soft reference to one of these internal font proxies and as a consequence is not sufficient to keep the internal font proxy alive. As a result if the internal font proxy is removed, the referencing [Font object](../fontobject) will throw an invalid exception for any property reference.
 
-On project open, and a few other situations, it may come to pass that the font which is being referenced in the persisted data cannot be found in the current font ecosystem. In these situations an internal font proxy will be created which will contain the desired properties, such as PostScript name, and will return `true` for [isSubstitute](fontobject.md#fontobjectissubstitute). There will be an underlying real font which will be selected to support this internal font proxy, but we do not reveal what it is and there is no way to influence this selection.
+On project open, and a few other situations, it may come to pass that the font which is being referenced in the persisted data cannot be found in the current font ecosystem. In these situations an internal font proxy will be created which will contain the desired properties, such as PostScript name, and will return `true` for [isSubstitute](../fontobject#fontobjectissubstitute). There will be an underlying real font which will be selected to support this internal font proxy, but we do not reveal what it is and there is no way to influence this selection.
 
 Continuing the open process with created substitute fonts, an attempt will be made to sync matching fonts from Creative Cloud Adobe Fonts. This is an asynchronous activity and the project will usually finish opening and be ready for use before any fonts are brought down from Adobe Fonts. Depending on how many fonts are being synced, they may be installed at different times. There is no way to disable this attempt.
 
@@ -40,15 +40,15 @@ The list of all the fonts currently available on your system.
 
 They are grouped into what is named a family group which are Arrays of [Font object](../fontobject).
 
-The Family Name of the group is simply the [familyName](fontobject.md#fontobjectfamilyname) of any of the [Font objects](../fontobject) in the group.
+The Family Name of the group is simply the [familyName](../fontobject#fontobjectfamilyname) of any of the [Font objects](../fontobject) in the group.
 
-The Family Name in one font group is not guaranteed to have unique name compared to different font groups - the grouping is determined by a number of factors including the returned value of [FontObject.technology](fontobject.md#fontobjecttechnology) and [FontObject.writingScripts](fontobject.md#fontobjectwritingscripts).
+The Family Name in one font group is not guaranteed to have unique name compared to different font groups - the grouping is determined by a number of factors including the returned value of [FontObject.technology](../fontobject#fontobjecttechnology) and [FontObject.writingScripts](../fontobject#fontobjectwritingscripts).
 
 In addition, it is perfectly acceptable to have multiple fonts with the same PostScript name, though only one will have the same (PostScript name, Technology, Primary Writing Script) tuple. In the case of true duplicates, it is undefined which will be returned and which will be suppressed.
 
-The family groups and [Font objects](../fontobject) in the group are sorted according to the setting in the Character Panel dropdown "Show Font Names in English". If set to `true`, the [familyName](fontobject.md#fontobjectfamilyname) and [styleName](fontobject.md#fontobjectstylename) property is used, otherwise the [nativeFamilyName](fontobject.md#fontobjectnativefamilyname) and [nativeStyleName](fontobject.md#fontobjectnativestylename) property is used.
+The family groups and [Font objects](../fontobject) in the group are sorted according to the setting in the Character Panel dropdown "Show Font Names in English". If set to `true`, the [familyName](../fontobject#fontobjectfamilyname) and [styleName](../fontobject#fontobjectstylename) property is used, otherwise the [nativeFamilyName](../fontobject#fontobjectnativefamilyname) and [nativeStyleName](../fontobject#fontobjectnativestylename) property is used.
 
-[Font object](../fontobject) for which [isSubstitute](fontobject.md#fontobjectissubstitute) returns `true` are always sorted to the end as individual family groups.
+[Font object](../fontobject) for which [isSubstitute](../fontobject#fontobjectissubstitute) returns `true` are always sorted to the end as individual family groups.
 
 #### Type
 
@@ -82,7 +82,7 @@ This functionality was added in After Effects 24.6
 
 #### Description
 
-Provides access to the Favorites list presented in the Character panel and Properties panel. To set the Favorites simply provide an (unsorted) array of strings based on the [familyName](fontobject.md#fontobjectfamilyname). To clear the list simply assign an empty Array.
+Provides access to the Favorites list presented in the Character panel and Properties panel. To set the Favorites simply provide an (unsorted) array of strings based on the [familyName](../fontobject#fontobjectfamilyname). To clear the list simply assign an empty Array.
 
 #### Type
 
@@ -101,7 +101,7 @@ This functionality was added in After Effects 24.6
 
 #### Description
 
-It is perfectly legal and common for more than one [Font object](../fontobject) to return the same value for [postScriptName](fontobject.md#fontobjectpostscriptname) but as this can sometimes lead to confusion about what [Font object](../fontobject) will actually be used when using [TextDocument.font](textdocument.md#textdocumentfont) or the `.font` attribute of a [CharacterRange object](../characterrange), this property exists to both reveal what duplicates exist and also their relative order.
+It is perfectly legal and common for more than one [Font object](../fontobject) to return the same value for [postScriptName](../fontobject#fontobjectpostscriptname) but as this can sometimes lead to confusion about what [Font object](../fontobject) will actually be used when using [TextDocument.font](../textdocument#textdocumentfont) or the `.font` attribute of a [CharacterRange object](../characterrange), this property exists to both reveal what duplicates exist and also their relative order.
 
 This returns an Array in which each element is an Array of [Font objects](../fontobject), where the 0th element [Font object](../fontobject) is considered the primary [Font object](../fontobject) for the given PostScript name.
 
@@ -221,7 +221,7 @@ This functionality was added in After Effects 24.6
 
 #### Description
 
-Provides access to the Most Recently Used (MRU) list presented in the Character panel and Properties panel. To set the MRU simply provide an (unsorted) array of strings based on the [familyName](fontobject.md#fontobjectfamilyname). To clear the list simply assign an empty Array.
+Provides access to the Most Recently Used (MRU) list presented in the Character panel and Properties panel. To set the MRU simply provide an (unsorted) array of strings based on the [familyName](../fontobject#fontobjectfamilyname). To clear the list simply assign an empty Array.
 
 #### Type
 
@@ -248,10 +248,10 @@ A `SubstitutedFontReplacementMatchPolicy` enumerated value; read/write. One of:
 
 - `SubstitutedFontReplacementMatchPolicy.POSTSCRIPT_NAME` is the default; any [Font object](../fontobject) which has the same PostScript name is a valid candidate for replacement of a substituted [Font object](../fontobject).
 - `SubstitutedFontReplacementMatchPolicy.CTFI_EQUAL` requires that the following properties of substituted [Font object](../fontobject) must match to be considered a valid candidate:
-    - [postScriptName](fontobject.md#fontobjectpostscriptname)
-    - [technology](fontobject.md#fontobjecttechnology)
-    - [writingScripts](fontobject.md#fontobjectwritingscripts) (primary)
-    - [designVector](fontobject.md#fontobjectdesignvector)
+    - [postScriptName](../fontobject#fontobjectpostscriptname)
+    - [technology](../fontobject#fontobjecttechnology)
+    - [writingScripts](../fontobject#fontobjectwritingscripts) (primary)
+    - [designVector](../fontobject#fontobjectdesignvector)
 - `SubstitutedFontReplacementMatchPolicy.DISABLED` means that no [Font object](../fontobject) is an acceptable replacement for a the substituted [Font object](../fontobject).
 
 ---
@@ -269,7 +269,7 @@ This functionality was added in After Effects (Beta) 25.0 and is subject to chan
 
 #### Description
 
-This function will return an array of generic objects describing the number of characters in the range and the `CTScript` enum assigned to them. See [FontObject.writingScripts](fontobject.md#fontobjectwritingscripts) for a full list of `CTScript` enumerated values.
+This function will return an array of generic objects describing the number of characters in the range and the `CTScript` enum assigned to them. See [FontObject.writingScripts](../fontobject#fontobjectwritingscripts) for a full list of `CTScript` enumerated values.
 
 If a character is deemed to be included in one or more `CTScript` values, the value specfied in the second argument `preferredCTScript` will break the tie.
 
@@ -411,7 +411,7 @@ Array of [Font objects](../fontobject); read-only.
 
 This function will return an array of [Font objects](../fontobject) based on the PostScript name of previously found Fonts.
 
-It is perfectly valid to have multiple [Font objects](../fontobject) which share the same PostScript name, the order of these is determined by the order in which they were enumerated in the font environment. The entry at `[0]` will be used when setting the [TextDocument.fontObject](textdocument.md#textdocumentfontobject) property.
+It is perfectly valid to have multiple [Font objects](../fontobject) which share the same PostScript name, the order of these is determined by the order in which they were enumerated in the font environment. The entry at `[0]` will be used when setting the [TextDocument.fontObject](../textdocument#textdocumentfontobject) property.
 
 In addition, there is a special property of this API with regards to Variable fonts. If no [Font object](../fontobject) matching the requested PostScript exists, but we find that there exist a variable font which matches the requested PostScript name prefix, then this Variable font instance will be requested to create a matching [Font object](../fontobject). This is the only way that we will return an instance which did not exist prior to invoking this method.
 

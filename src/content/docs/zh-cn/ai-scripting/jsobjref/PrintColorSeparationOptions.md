@@ -25,7 +25,7 @@ title: PrintColorSeparationOptions
 
 #### 类型
 
-[PrintColorSeparationMode](scripting-constants.md#printcolorseparationmode)
+[PrintColorSeparationMode](../scripting-constants#printcolorseparationmode)
 
 ---
 

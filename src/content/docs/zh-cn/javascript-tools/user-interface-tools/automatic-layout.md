@@ -190,7 +190,7 @@ myGroup.alignment = [ ScriptUI.Alignment.LEFT, ScriptUI.Alignment.TOP]
 
 您还可以为控件设置最大和/或最小大小值，以限制其调整大小的方式。有一个默认的最大大小，可防止自动布局创建大于屏幕的元素。
 
-您可以使用布局对象的 [resize()](layoutmanager-object.md#resize) 方法显式调整窗口中的控件大小以适应当前文本内容，或在用户调整窗口大小后进行调整。
+您可以使用布局对象的 [resize()](../layoutmanager-object#resize) 方法显式调整窗口中的控件大小以适应当前文本内容，或在用户调整窗口大小后进行调整。
 
 ---
 

@@ -70,7 +70,7 @@ Starting from the IO sample, it is best to leave the other functions defined too
 |   | <pre lang="cpp">AEIO_InitOutputSpec(<br/>  AEIO_BasicData  \*basic_dataP,<br/>  AEIO_OutSpecH   outH,<br/>  A_Boolean   \*user_interacted);</pre>  |   |   |
 |   | !!! note   |   |   |
 |   |  The first time your AEIO is used, After Effects caches the last-known-good `optionsH` in its preferences.   |   |   |
-|   | When testing this function, [delete your preferences](../intro/debugging-plug-ins.md#deleting-preferences) often.  |   |   |
+|   | When testing this function, [delete your preferences](../../intro/debugging-plug-ins#deleting-preferences) often.  |   |   |
 | `AEIO_GetFlatOutputOptions`   | Describe (in an `AEIO_Handle`) the output options for an `AEIO_OutSpecH`, in a disk-safe flat data structure (one that does not reference external memory).  | Output  | Yes   |
 |   | Note that your output options must be cross-platform, so pay attention to byte ordering issues.  |   |   |
 |   | <pre lang="cpp">AEIO_GetFlatOutputOptions(<br/>  AEIO_BasicData  \*basic_dataP,<br/>  AEIO_OutSpecH   outH,<br/>  AEIO_Handle   \*optionsH);</pre>   |   |   |
@@ -108,7 +108,7 @@ Starting from the IO sample, it is best to leave the other functions defined too
 | `AEIO_Idle`   | Optional. Do something with idle time. `AEIO_Err_USE_DFLT_CALLBACK` is not supported.  | Output  | No  |
 |   | <pre lang="cpp">AEIO_Idle(<br/>  AEIO_BasicData  \*basic_dataP,<br/>  AEIO_ModuleSignature  sig,<br/>  AEIO_IdleFlags  \*idle_flags0);</pre>   |   |   |
 | `AEIO_GetDepths`  | Set `AEIO_OptionsFlags` to indicate which pixel and color depths are valid for your output format.   | Output  | Yes   |
-|   | See the discussion on [Export Bit-Depth](implementation-details.md#implementation-details).  |   |   |
+|   | See the discussion on [Export Bit-Depth](../implementation-details#implementation-details).  |   |   |
 |   | <pre lang="cpp">AEIO_GetDepths(<br/>  AEIO_BasicData   \*basic_dataP,<br/>  AEIO_OutSpecH  outH,<br/>  AEIO_OptionsFlags  \*which);</pre>  |   |   |
 | `AEIO_GetOutputSuffix`  | `AEIO_Err_USE_DFLT_CALLBACK` allowed. Describe the three character extension for the output file.  | Output  | Yes   |
 |   | <pre lang="cpp">AEIO_GetOutputSuffix(<br/>  AEIO_BasicData  \*basic_dataP,<br/>  AEIO_OutSpecH   outH,<br/>  A_char  \*suffix);</pre>  |   |   |
@@ -169,7 +169,7 @@ Any image or audio data in After Effects (except solids) is obtained from an inp
 | `AEGP_GetInSpecOptionsHandle`  | Retrieves the options data (created by your AEIO) for the given `AEIO_InSpecH`.   |
 |  | <pre lang="cpp">AEGP_GetInSpecOptionsHandle(<br/>  AEIO_InSpecH  inH,<br/>  void  \*optionsPPV);</pre>  |
 | `AEGP_SetInSpecOptionsHandle`  | Sets the options data for the given `AEIO_InSpecH`.   |
-|  | Must be allocated using the [Memory Suite](../aegps/aegp-suites.md#aegp_memorysuite1).  |
+|  | Must be allocated using the [Memory Suite](../../aegps/aegp-suites#aegp_memorysuite1).  |
 |  | <pre lang="cpp">AEGP_SetInSpecOptionsHandle(<br/>  AEIO_InSpecH  inH,<br/>  void  \*optionsPV,<br/>  void  \*old_optionsPPV);</pre>   |
 | `AEGP_GetInSpecFilePath`   | Retrieves the file path for the `AEIO_InSpecH`.   |
 |  | The file path is a handle to a NULL-terminated A_UTF16Char string, and must be disposed with `AEGP_FreeMemHandle`.  |
@@ -230,7 +230,7 @@ Any image or audio data in After Effects (except solids) is obtained from an inp
 |  | <pre lang="cpp">AEGP_SetInSpecSoundChannels(<br/>  AEIO_InSpecH  inH,<br/>  AEIO_SndChannels  num_channels);</pre>  |
 | `AEGP_AddAuxExtMap`  | If your file format has auxiliary files which you want to prevent users from opening directly, pass it's extension, file type and creator to this function to keep it from appearing in input dialogs.  |
 |  | <pre lang="cpp">AEGP_AddAuxExtMap(<br/>  const A_char  \*extension,<br/>  A_long  file_type,<br/>  A_long  creator);</pre>  |
-| `AEGP_SetInSpecEmbeddedColorProfile`   | In case of RGB data, if there is an embedded icc profile, build an `AEGP_ColorProfile` out of this icc profile using `AEGP_GetNewColorProfileFromICCProfile` from [AEGP_ColorSettingsSuite5](../aegps/aegp-suites.md#aegp_colorsettingssuite5) and set the profile description set to NULL.   |
+| `AEGP_SetInSpecEmbeddedColorProfile`   | In case of RGB data, if there is an embedded icc profile, build an `AEGP_ColorProfile` out of this icc profile using `AEGP_GetNewColorProfileFromICCProfile` from [AEGP_ColorSettingsSuite5](../../aegps/aegp-suites#aegp_colorsettingssuite5) and set the profile description set to NULL.   |
 |  | In case of non-RGB data, if there is an embedded non-RGB icc profile or you know the color space the data is in, set the color profile set to NULL, and provide the description as a NULL-terminated unicode string. Doing this disables color management UI that allows user to affect profile choice in the application UI. |
 |  | If you are unpacking non-RGB data directly into working space (to get working space use `AEGP_GetNewWorkingSpaceColorProfile`), you are done.   |
 |  | If you are unpacking non-RGB data into specific RGB color space, you must pass the profile describing this space to `AEGP_SetInSpecAssignedColorProfile` below. Otherwise, your RGB data will be incorrectly interpreted as being in working space.   |

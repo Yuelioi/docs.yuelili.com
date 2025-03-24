@@ -27,7 +27,7 @@ Is this object used to create a knockout.
 
 #### Type
 
-[KnockoutState](scripting-constants.md#knockoutstate)
+[KnockoutState](../scripting-constants#knockoutstate)
 
 ---
 
@@ -41,7 +41,7 @@ The mode to use when compositing this object. An object is considered composited
 
 #### Type
 
-[BlendModes](scripting-constants.md#blendmodes)
+[BlendModes](../scripting-constants#blendmodes)
 
 ---
 
@@ -476,7 +476,7 @@ Places art object(s) in a perspective grid at a specified position and grid plan
 | ---------------------- | --------------------------------------------------------------------------- | ---------------------------------- |
 | `posX`                 | Number                                                                      | X position to place art at         |
 | `posY`                 | Number                                                                      | Y position to place art at         |
-| `perspectiveGridPlane` | [PerspectiveGridPlaneType](scripting-constants.md#perspectivegridplanetype) | Perspective grid plane type to use |
+| `perspectiveGridPlane` | [PerspectiveGridPlaneType](../scripting-constants#perspectivegridplanetype) | Perspective grid plane type to use |
 
 #### Returns
 
@@ -514,7 +514,7 @@ Scales the art item where `scaleX` is the horizontal scaling factor and `scaleY`
 | `changeFillGradients` | Boolean, optional                                                 | Whether to transform fill gradients                     |
 | `changeStrokePattern` | Boolean, optional                                                 | Whether to transform stroke patterns                    |
 | `changeLineWidths`    | Number (double), optional                                         | The amount to scale line widths                         |
-| `scaleAbout`          | [Transformation](scripting-constants.md#transformation), optional | The point to use as anchor, to transform about          |
+| `scaleAbout`          | [Transformation](../scripting-constants#transformation), optional | The point to use as anchor, to transform about          |
 
 #### Returns
 
@@ -548,7 +548,7 @@ Rotates the art item relative to the current rotation. The object is rotated cou
 | `changeFillPatterns`  | Boolean, optional                                                 | Whether to transform fill patterns                      |
 | `changeFillGradients` | Boolean, optional                                                 | Whether to transform fill gradients                     |
 | `changeStrokePattern` | Boolean, optional                                                 | Whether to transform stroke patterns                    |
-| `rotateAbout`         | [Transformation](scripting-constants.md#transformation), optional | The point to use as anchor, to transform about          |
+| `rotateAbout`         | [Transformation](../scripting-constants#transformation), optional | The point to use as anchor, to transform about          |
 
 #### Returns
 
@@ -584,7 +584,7 @@ Transforms the art item by applying a transformation matrix.
 | `changeFillGradients`  | Boolean, optional                                                 | Whether to change Fill Gradients               |
 | `changeStrokePattern`  | Boolean, optional                                                 | Whether to change Stroke Pattern               |
 | `changeLineWidths`     | Number (double), optional                                         | The amount to scale line widths                |
-| `transformAbout`       | [Transformation](scripting-constants.md#transformation), optional | The point to use as anchor, to transform about |
+| `transformAbout`       | [Transformation](../scripting-constants#transformation), optional | The point to use as anchor, to transform about |
 
 #### Returns
 
@@ -638,7 +638,7 @@ Arranges the art item's position in the stacking order of the group or layer (pa
 
 |  Parameter  |                        Type                         |            Description            |
 | ----------- | --------------------------------------------------- | --------------------------------- |
-| `zOrderCmd` | [ZOrderMethod](scripting-constants.md#zordermethod) | Stacking order arrangement method |
+| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | Stacking order arrangement method |
 
 #### Returns
 

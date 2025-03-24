@@ -13,7 +13,7 @@ title: 技巧与窍门
 
 ## 响应性
 
-使用[交互回调](interaction-callback-functions.md#interaction-callbacks)中的`PF_ABORT()`和`PF_PROGRESS()`，使你的插件尽可能响应迅速。
+使用[交互回调](../interaction-callback-functions#interaction-callbacks)中的`PF_ABORT()`和`PF_PROGRESS()`，使你的插件尽可能响应迅速。
 
 我们实际上测试了所有效果的中断能力；你会惊讶于用户等待你的缓慢效果处理完一个电影分辨率序列时会有多不耐烦！
 
@@ -64,7 +64,7 @@ PF_Pixel16 *sampleIntegral64(PF_EffectWorld &def, int x, int y){
 
 然而，子像素采样和区域采样回调实际上将(.0, .0)视为直接命中。为了补偿这一点，在调用这些函数之前从x和y值中减去0.5。
 
-矩阵函数（来自[PF_WorldTransformSuite1](graphics-utility-suites.md#pf_worldtransformsuite1)的`transform_world`）没有这个问题。
+矩阵函数（来自[PF_WorldTransformSuite1](../graphics-utility-suites#pf_worldtransformsuite1)的`transform_world`）没有这个问题。
 
 当以子像素量平移图像时，使输出层比其输入宽一个像素，并将原点保持在(0,0)。
 
@@ -101,9 +101,9 @@ if (!err) {
 
 ## 缓存行为
 
-After Effects提供了多种指定缓存行为的方式。`PF_OutFlag_NON_PARAM_VARY`、`PF_OutFlag_WIDE_TIME_INPUT`、`PF_OutFlag_I_USE_SHUTTER_ANGLE`、`PF_OutFlag_I_SYNTHESIZE_AUDIO`、`PF_OutFlag2_I_USE_3D_CAMERA`和`PF_OutFlag2_I_USE_3D_LIGHTS`（均来自[PF_OutFlags](../effect-basics/PF_OutData.md#pf_outflags)）都会影响缓存决策。
+After Effects提供了多种指定缓存行为的方式。`PF_OutFlag_NON_PARAM_VARY`、`PF_OutFlag_WIDE_TIME_INPUT`、`PF_OutFlag_I_USE_SHUTTER_ANGLE`、`PF_OutFlag_I_SYNTHESIZE_AUDIO`、`PF_OutFlag2_I_USE_3D_CAMERA`和`PF_OutFlag2_I_USE_3D_LIGHTS`（均来自[PF_OutFlags](../../effect-basics/PF_OutData#pf_outflags)）都会影响缓存决策。
 
-支持[动态outflags](../effect-basics/PF_OutData.md#pf_outflags)可以极大地提高性能，防止After Effects像其他情况下那样积极地使你的效果缓存失效。
+支持[动态outflags](../../effect-basics/PF_OutData#pf_outflags)可以极大地提高性能，防止After Effects像其他情况下那样积极地使你的效果缓存失效。
 
 确认你的插件在不同的After Effects缓存设置下表现良好。你的插件是否按预期被调用来更新，或者After Effects认为它有有效的像素而你认为没有？
 
@@ -181,6 +181,6 @@ time_scale是比例，使得total_time / time_scale是图层在其合成中的�
 
 尝试在RAM预览中使用你的插件，以确保你优雅地处理内存不足的情况。你的插件是否优雅地处理内存不足？
 
-如果你在请求内存时收到`PF_Err_OUT_OF_MEMORY`（来自[错误代码](../effect-basics/errors.md#error-codes)），你是否将其传递回After Effects？
+如果你在请求内存时收到`PF_Err_OUT_OF_MEMORY`（来自[错误代码](../../effect-basics/errors#error-codes)），你是否将其传递回After Effects？
 
 当你的视频效果应用于仅音频图层时会发生什么？使用旧版本的插件创建的项目进行测试。

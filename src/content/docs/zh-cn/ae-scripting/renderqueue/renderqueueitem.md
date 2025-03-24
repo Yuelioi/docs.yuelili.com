@@ -7,7 +7,7 @@ title: 渲染队列项
 
 #### 描述
 
-RenderQueueItem 对象表示渲染队列中的单个项目。它提供了对要渲染的项目的特定设置的访问。通过使用 [RQItemCollection 对象](../rqitemcollection) 将合成添加到渲染队列来创建该对象；请参阅 [RQItemCollection.add()](rqitemcollection.md#rqitemcollectionadd)。
+RenderQueueItem 对象表示渲染队列中的单个项目。它提供了对要渲染的项目的特定设置的访问。通过使用 [RQItemCollection 对象](../rqitemcollection) 将合成添加到渲染队列来创建该对象；请参阅 [RQItemCollection.add()](../rqitemcollection#rqitemcollectionadd)。
 
 ---
 
@@ -81,7 +81,7 @@ RenderQueueItem 对象表示渲染队列中的单个项目。它提供了对要�
 
 每当 [RenderQueueItem.status](#renderqueueitemstatus) 属性的值发生变化时调用的回调函数的名称。
 
-在渲染进行中或暂停时，您无法对渲染队列项目或应用程序进行更改；但是，您可以使用此回调来暂停或停止渲染过程。请参阅 [RenderQueue.pauseRendering()](renderqueue.md#renderqueuepauserendering) 和 [RenderQueue.stopRendering()](renderqueue.md#renderqueuestoprendering)。另请参阅 [app.onError](../general/application.md#apponerror)。
+在渲染进行中或暂停时，您无法对渲染队列项目或应用程序进行更改；但是，您可以使用此回调来暂停或停止渲染过程。请参阅 [RenderQueue.pauseRendering()](../renderqueue#renderqueuepauserendering) 和 [RenderQueue.stopRendering()](../renderqueue#renderqueuestoprendering)。另请参阅 [app.onError](../../general/application#apponerror)。
 
 #### 类型
 

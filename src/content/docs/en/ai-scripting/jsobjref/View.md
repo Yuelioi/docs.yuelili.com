@@ -67,7 +67,7 @@ The mode of display for this view.
 
 #### Type
 
-[ScreenMode](scripting-constants.md#screenmode)
+[ScreenMode](../scripting-constants#screenmode)
 
 ---
 

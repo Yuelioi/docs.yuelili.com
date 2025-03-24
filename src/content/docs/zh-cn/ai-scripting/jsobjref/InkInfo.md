@@ -97,7 +97,7 @@ title: InkInfo
 
 #### 类型
 
-[InkType](scripting-constants.md#inktype)
+[InkType](../scripting-constants#inktype)
 
 ---
 
@@ -111,7 +111,7 @@ title: InkInfo
 
 #### 类型
 
-[InkPrintStatus](scripting-constants.md#inkprintstatus)
+[InkPrintStatus](../scripting-constants#inkprintstatus)
 
 ---
 
@@ -125,7 +125,7 @@ title: InkInfo
 
 #### 类型
 
-[TrappingType](scripting-constants.md#trappingtype)
+[TrappingType](../scripting-constants#trappingtype)
 
 ---
 

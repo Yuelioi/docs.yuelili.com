@@ -65,7 +65,7 @@ The kind of the gradient, either radial or linear.
 
 #### Type
 
-[GradientType](scripting-constants.md#gradienttype)
+[GradientType](../scripting-constants#gradienttype)
 
 ---
 

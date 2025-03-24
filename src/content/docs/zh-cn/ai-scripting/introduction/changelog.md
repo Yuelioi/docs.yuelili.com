@@ -9,14 +9,14 @@ title: 更新日志
 
 ## [Illustrator 24.0 (CC 2020) <>]()
 
-- 新增: [Document.getPageItemFromUuid()](../jsobjref/Document.md#documentgetpageitemfromuuid)
-- 新增: [PageItem.uuid](../jsobjref/PageItem.md#pageitemuuid)
+- 新增: [Document.getPageItemFromUuid()](../../jsobjref/Document#documentgetpageitemfromuuid)
+- 新增: [PageItem.uuid](../../jsobjref/PageItem#pageitemuuid)
 
 ---
 
 ## [Illustrator XX.X (CC 2017) <>]()
 
-- 新增: [Application.getIsFileOpen()](../jsobjref/Application.md#applicationgetisfileopen)
+- 新增: [Application.getIsFileOpen()](../../jsobjref/Application#applicationgetisfileopen)
 
 ---
 

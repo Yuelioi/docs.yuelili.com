@@ -29,7 +29,7 @@ title: VS Code 扩展功能
 
 这与浏览器中基于 Javascript 的 `debugger;` 方法完全相同。
 
-更多信息请参阅 [bp()](../extendscript-tools-features/dollar-object.md#bp)。
+更多信息请参阅 [bp()](../../extendscript-tools-features/dollar-object#bp)。
 
 ---
 

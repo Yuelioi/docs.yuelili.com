@@ -9,7 +9,7 @@ title: Matrix
 
 A transformation matrix specification, used to transform the geometry of objects. Use it to specify and retrieve matrix information from an Illustrator document or from page items in a document.
 
-Matrices are used in conjunction with the `transform` method and as a property of a number of objects. A matrix specifies how to transform the geometry of an object. You can generate an original matrix using the [Application](.././Application) object methods [Application.getTranslationMatrix()](Application.md#applicationgettranslationmatrix), [Application.getScaleMatrix()](Application.md#applicationgetscalematrix), or [Application.getRotationMatrix()](Application.md#applicationgetrotationmatrix).
+Matrices are used in conjunction with the `transform` method and as a property of a number of objects. A matrix specifies how to transform the geometry of an object. You can generate an original matrix using the [Application](.././Application) object methods [Application.getTranslationMatrix()](../application#applicationgettranslationmatrix), [Application.getScaleMatrix()](../application#applicationgetscalematrix), or [Application.getRotationMatrix()](../application#applicationgetrotationmatrix).
 
 A `Matrix` is a record containing the matrix values, not a reference to a matrix object. The matrix commands operate on the values of a matrix record. If a command modifies a matrix, a modified matrix record is returned as the result of the command. The original matrix record passed to the command is not modified.
 

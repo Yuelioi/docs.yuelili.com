@@ -17,7 +17,7 @@ title: 附加细节
 
 在 `exSelGenerateDefaultParams` 期间，添加一个参数，并将 `exNewParamInfo.flags` 设置为 `exParamFlag_none`。
 
-然后在 `exSelPostProcessParams` 期间，调用 [导出参数套件](suites.md#export-param-suite) 中的 `AddConstrainedValuePair()`。
+然后在 `exSelPostProcessParams` 期间，调用 [导出参数套件](../suites#export-param-suite) 中的 `AddConstrainedValuePair()`。
 
 如果你只添加一个值对，那么该参数将是一个不可编辑的字符串。
 

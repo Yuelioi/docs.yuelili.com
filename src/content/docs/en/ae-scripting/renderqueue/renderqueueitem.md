@@ -7,7 +7,7 @@ title: renderqueueitem
 
 #### Description
 
-The RenderQueueItem object represents an individual item in the render queue. It provides access to the specific settings for an item to be rendered. Create the object by adding a composition to the Render Queue with the [RQItemCollection object](../rqitemcollection); see [RQItemCollection.add()](rqitemcollection.md#rqitemcollectionadd).
+The RenderQueueItem object represents an individual item in the render queue. It provides access to the specific settings for an item to be rendered. Create the object by adding a composition to the Render Queue with the [RQItemCollection object](../rqitemcollection); see [RQItemCollection.add()](../rqitemcollection#rqitemcollectionadd).
 
 ---
 
@@ -81,7 +81,7 @@ Integer; read-only.
 
 The name of a callback function that is called whenever the value of the [RenderQueueItem.status](#renderqueueitemstatus) attribute changes.
 
-You cannot make changes to render queue items or to the application while rendering is in progress or paused; you can, however, use this callback to pause or stop the rendering process. See [RenderQueue.pauseRendering()](renderqueue.md#renderqueuepauserendering) and [RenderQueue.stopRendering()](renderqueue.md#renderqueuestoprendering). See also [app.onError](../general/application.md#apponerror).
+You cannot make changes to render queue items or to the application while rendering is in progress or paused; you can, however, use this callback to pause or stop the rendering process. See [RenderQueue.pauseRendering()](../renderqueue#renderqueuepauserendering) and [RenderQueue.stopRendering()](../renderqueue#renderqueuestoprendering). See also [app.onError](../../general/application#apponerror).
 
 #### Type
 

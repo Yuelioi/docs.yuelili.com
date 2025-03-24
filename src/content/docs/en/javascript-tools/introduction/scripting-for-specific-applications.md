@@ -30,7 +30,7 @@ if ( BridgeTalk.appName == "bridge-2.0" ) {
 }
 ```
 
-For details of interapplication communication, see [Interapplication Communication with Scripts](../interapplication-communication/index.md#interapplication-communication-with-scripts).
+For details of interapplication communication, see [Interapplication Communication with Scripts](../../interapplication-communication/index#interapplication-communication-with-scripts).
 
 ## JavaScript variables
 

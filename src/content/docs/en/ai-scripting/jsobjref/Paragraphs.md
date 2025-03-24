@@ -73,7 +73,7 @@ Adds a new paragraph with specified text contents at the specified location in t
 | ------------------- | --------------------------------------------------------------------- | ---------------------- |
 | `contents`          | String                                                                | Text contents to add   |
 | `relativeObject`    | [TextFrameItem](.././TextFrameItem), optional                         | Object to add item to  |
-| `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement), optional | Location to place text |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), optional | Location to place text |
 
 #### Returns
 

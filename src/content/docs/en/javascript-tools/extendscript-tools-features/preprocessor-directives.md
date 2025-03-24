@@ -18,7 +18,7 @@ When a directive takes one or more arguments, and an argument contains any nonal
 
 ## #include file
 
-Includes a JavaScript source file from another location. Inserts the contents of the named file into this file at the location of this statement. The `file` argument is an Adobe portable file specification. See [Specifying paths](../file-system-access/using-file-and-folder-objects.md#specifying-paths).
+Includes a JavaScript source file from another location. Inserts the contents of the named file into this file at the location of this statement. The `file` argument is an Adobe portable file specification. See [Specifying paths](../../file-system-access/using-file-and-folder-objects#specifying-paths).
 
 As a convention, use the file extension .jsxinc for JavaScript include files. For example:
 
@@ -77,7 +77,7 @@ The `name` value is displayed in the Toolkit Editor tab. An unnamed script is as
 
 ## #strict on
 
-Turns on strict error checking. See the [Dollar ($) object](../dollar-object)'s [strict](dollar-object.md#strict) property.
+Turns on strict error checking. See the [Dollar ($) object](../dollar-object)'s [strict](../dollar-object#strict) property.
 
 ---
 

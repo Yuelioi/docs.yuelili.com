@@ -7,7 +7,7 @@ title: PDFFileOptions
 
 #### 描述
 
-用于打开 PDF 文件的选项，与 [Application.open()](Application.md#applicationopen) 方法一起使用。
+用于打开 PDF 文件的选项，与 [Application.open()](../Application#applicationopen) 方法一起使用。
 
 所有属性都是可选的。
 
@@ -57,7 +57,7 @@ Object; 只读。
 
 #### 类型
 
-[PDFBoxType](scripting-constants.md#pdfboxtype)
+[PDFBoxType](../scripting-constants#pdfboxtype)
 
 ---
 

@@ -35,7 +35,7 @@ The following resource string specifies a panel that contains grouped `StaticTex
 }"
 ```
 
-The property with name properties specifies creation `properties`; see [Creation properties](scriptui-programming-model.md#creation-properties).
+The property with name properties specifies creation `properties`; see [Creation properties](../scriptui-programming-model#creation-properties).
 
 A property value can be specified as `null`, `true`, `false`, a String, a Number, an inline Array, or an Object.
 

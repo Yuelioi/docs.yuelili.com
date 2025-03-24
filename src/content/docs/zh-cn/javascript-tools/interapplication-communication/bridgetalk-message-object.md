@@ -30,7 +30,7 @@ var bt = new BridgeTalk;
 消息的数据负载。
 
 - 如果这是发送给另一个应用程序的主动消息，通常包含一个打包为字符串的脚本。目标应用程序的完整文档对象模型（DOM）在脚本中可用。
-- 如果此消息是目标应用程序的静态 BridgeTalk `onReceive` 方法返回的结果，并定向到此对象的 `onResult` 回调，则包含从该方法返回的结果，并将其扁平化为字符串。请参阅 [在应用程序之间传递值](communicating-through-messages.md#passing-values-between-applications)。
+- 如果此消息是目标应用程序的静态 BridgeTalk `onReceive` 方法返回的结果，并定向到此对象的 `onResult` 回调，则包含从该方法返回的结果，并将其扁平化为字符串。请参阅 [在应用程序之间传递值](../communicating-through-messages#passing-values-between-applications)。
 - 如果此消息包含 `onError` 回调的错误通知，则包含错误消息。
 
 #### 类型
@@ -79,7 +79,7 @@ var error = bt.headers ["Error-Code"];
 
 #### 描述
 
-发送应用程序的应用程序标识符（请参阅 [应用程序标识符](application-and-namespace-specifiers.md#application-specifiers)）。
+发送应用程序的应用程序标识符（请参阅 [应用程序标识符](../application-and-namespace-specifiers#application-specifiers)）。
 
 #### 类型
 
@@ -93,7 +93,7 @@ var error = bt.headers ["Error-Code"];
 
 #### 描述
 
-目标或接收应用程序的应用程序标识符（请参阅 [应用程序标识符](application-and-namespace-specifiers.md#application-specifiers)）。
+目标或接收应用程序的应用程序标识符（请参阅 [应用程序标识符](../application-and-namespace-specifiers#application-specifiers)）。
 
 #### 类型
 
@@ -199,7 +199,7 @@ bridgeTalkObj.onResult = function( responseMsgObject ) {
 
 目标传递一个新的消息对象，`body` 属性设置为结果字符串。
 
-这是目标应用程序的静态 BridgeTalk [onReceive](bridgetalk-class.md#bridgetalkonreceive) 方法的结果，打包为 UTF-8 编码的字符串。请参阅 [在应用程序之间传递值](communicating-through-messages.md#passing-values-between-applications)。
+这是目标应用程序的静态 BridgeTalk [onReceive](../bridgetalk-class#bridgetalkonreceive) 方法的结果，打包为 UTF-8 编码的字符串。请参阅 [在应用程序之间传递值](../communicating-through-messages#passing-values-between-applications)。
 
 ---
 
@@ -264,7 +264,7 @@ bridgeTalkObj.onTimeout = function( timeoutMsgObject ) {
 
 | 参数       | 类型 | 描述                                                                                                                                                                                                                                |
 | ---------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `result` | 任意 | 您可以发送任何类型的数据作为结果值。消息框架会创建一个 BridgeTalk 消息对象，并将此值扁平化为字符串，存储在该消息的 `body` 中。请参阅 [在应用程序之间传递值](communicating-through-messages.md#passing-values-between-applications)。 |
+| `result` | 任意 | 您可以发送任何类型的数据作为结果值。消息框架会创建一个 BridgeTalk 消息对象，并将此值扁平化为字符串，存储在该消息的 `body` 中。请参阅 [在应用程序之间传递值](../communicating-through-messages#passing-values-between-applications)。 |
 
 #### 返回
 

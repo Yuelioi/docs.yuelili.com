@@ -109,7 +109,7 @@ title: PrintFlattenerOptions
 
 #### 类型
 
-[PDFOverprint](scripting-constants.md#pdfoverprint)
+[PDFOverprint](../scripting-constants#pdfoverprint)
 
 ---
 

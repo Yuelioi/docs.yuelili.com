@@ -90,7 +90,7 @@ The shared library can contain any number of additional functions. Each function
 
 Each function must accept the following arguments:
 
-- An array of [TaggedData](defining-entry-points-for-indirect-access.md#taggeddata).
+- An array of [TaggedData](../defining-entry-points-for-indirect-access#taggeddata).
 - An argument count.
 - A variant data structure that takes the return value.
 

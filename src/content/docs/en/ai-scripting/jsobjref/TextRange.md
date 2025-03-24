@@ -307,7 +307,7 @@ Changes the capitalization of text
 
 | Parameter |                          Type                           |           Description            |
 | --------- | ------------------------------------------------------- | -------------------------------- |
-| `type`    | [CaseChangeType](scripting-constants.md#casechangetype) | Capitalization case to change to |
+| `type`    | [CaseChangeType](../scripting-constants#casechangetype) | Capitalization case to change to |
 
 #### Returns
 
@@ -342,7 +342,7 @@ Creates a duplicate of this object.
 |      Parameter      |                                 Type                                  |        Description         |
 | ------------------- | --------------------------------------------------------------------- | -------------------------- |
 | `relativeObject`    | Object, optional                                                      | Object to duplicate to     |
-| `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement), optional | Location to insert element |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), optional | Location to insert element |
 
 #### Returns
 
@@ -419,7 +419,7 @@ Moves the object.
 |      Parameter      |                                 Type                                  |          Description          |
 | ------------------- | --------------------------------------------------------------------- | ----------------------------- |
 | `relativeObject`    | Object                                                                | Object to move element within |
-| `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement), optional | Location to move element to   |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), optional | Location to move element to   |
 
 #### Returns
 

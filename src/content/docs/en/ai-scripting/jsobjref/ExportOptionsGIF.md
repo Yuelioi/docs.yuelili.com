@@ -7,7 +7,7 @@ title: ExportOptionsGIF
 
 #### Description
 
-Options for exporting a document as a GIF file, used with the [Document.exportFile()](Document.md#documentexportfile) method. All properties are optional.
+Options for exporting a document as a GIF file, used with the [Document.exportFile()](../document#documentexportfile) method. All properties are optional.
 
 When you export a document, the appropriate file extension is appended automatically. You should not include any file extension in the file specification.
 
@@ -77,7 +77,7 @@ Default: `ColorDitherMethod.DIFFUSION`.
 
 #### Type
 
-[ColorDitherMethod](scripting-constants.md#colordithermethod)
+[ColorDitherMethod](../scripting-constants#colordithermethod)
 
 ---
 
@@ -91,7 +91,7 @@ The method used to reduce the number of colors in the exported image. `Default: 
 
 #### Type
 
-[ColorReductionMethod](scripting-constants.md#colorreductionmethod)
+[ColorReductionMethod](../scripting-constants#colorreductionmethod)
 
 ---
 

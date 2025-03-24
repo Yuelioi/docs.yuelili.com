@@ -7,7 +7,7 @@ title: OpenOptionsPhotoshop
 
 #### Description
 
-Options for opening a Photoshop document, used with the [Application.open()](Application.md#applicationopen) method.
+Options for opening a Photoshop document, used with the [Application.open()](../application#applicationopen) method.
 
 ---
 

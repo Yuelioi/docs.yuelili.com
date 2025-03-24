@@ -5,7 +5,7 @@ title: 实现细节
 
 ## 导出位深度
 
-在输出模块设置中，用户可以根据AEIO在[AEIO_FunctionBlock4](new-kids-on-the-function-block.md#new-kids-on-the-function-block)中的`AEIO_GetDepths()`声明的支持选项选择深度。
+在输出模块设置中，用户可以根据AEIO在[AEIO_FunctionBlock4](../new-kids-on-the-function-block#new-kids-on-the-function-block)中的`AEIO_GetDepths()`声明的支持选项选择深度。
 
 如果插件支持更高位深的导出，它应该能够处理在`AEIO_AddFrame()`或`AEIO_OutputFrame()`中传递的更高位深的PF_EffectWorlds，即使导出设置未设置为相同的深度。
 

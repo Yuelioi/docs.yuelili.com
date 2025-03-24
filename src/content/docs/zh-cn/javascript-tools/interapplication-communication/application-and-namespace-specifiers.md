@@ -88,4 +88,4 @@ Adobe Bridge（与许多 Adobe 应用程序集成）使用应用程序标识符�
 - 要在 Photoshop 中调用跨 DOM 函数 quit，使用 photoshop.quit()，在 Adobe Illustrator® 中调用，使用 illustrator.quit()。
 - 要调用为 Illustrator CS5 版本 15 定义的导出函数 place，使用 illustrator15.place(myFiles)。
 
-有关跨 DOM 和导出函数的信息，请参阅[远程函数调用](communications-overview.md#remote-function-calls)。
+有关跨 DOM 和导出函数的信息，请参阅[远程函数调用](../communications-overview#remote-function-calls)。

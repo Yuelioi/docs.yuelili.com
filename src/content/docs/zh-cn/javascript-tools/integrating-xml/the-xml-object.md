@@ -161,7 +161,7 @@ XML 对象与所有 ExtendScript 对象一样，具有 `toString` 方法，该�
     COOKINGCHILDRENCHILDRENMUSIC
 ```
 
-[toXMLString()](xml-object-reference.md#xmltoxmlstring) 方法将整个元素（包括标签）序列化为字符串。
+[toXMLString()](../xml-object-reference#xmltoxmlstring) 方法将整个元素（包括标签）序列化为字符串。
 
 例如，对于元素 `<x>text</x>`，该方法返回 `"<x>text</x>"`。
 
@@ -270,9 +270,9 @@ delete bookstoreXML.book[2].@category;
 
 `XML` 对象提供了允许你检索树中不同级别包含的元素的方法：
 
-- `XML.`[children()](xml-object-reference.md#xmlchildren) 获取直接子元素，包括文本元素。
-- `XML.`[elements()](xml-object-reference.md#xmlelements) 获取直接子元素中的 XML 标签，但不获取文本。
-- `XML.`[descendants()](xml-object-reference.md#xmldescendants) 允许你匹配特定标签，并获取任何嵌套级别的所有匹配元素。你还可以使用“双点”符号访问元素的后代。例如，以下语句是等效的：
+- `XML.`[children()](../xml-object-reference#xmlchildren) 获取直接子元素，包括文本元素。
+- `XML.`[elements()](../xml-object-reference#xmlelements) 获取直接子元素中的 XML 标签，但不获取文本。
+- `XML.`[descendants()](../xml-object-reference#xmldescendants) 允许你匹配特定标签，并获取任何嵌套级别的所有匹配元素。你还可以使用“双点”符号访问元素的后代。例如，以下语句是等效的：
 
   ```javascript
   xml..title
@@ -294,7 +294,7 @@ delete bookstoreXML.book[2].@category;
 
 以下是不同调用的结果。
 
-- `XML.`[children()](xml-object-reference.md#xmlchildren) 的结果包含 3 个元素，直接子标签 `<one>` 和 `<two>`，以及 `<top>` 标签的直接包含文本：
+- `XML.`[children()](../xml-object-reference#xmlchildren) 的结果包含 3 个元素，直接子标签 `<one>` 和 `<two>`，以及 `<top>` 标签的直接包含文本：
 
   ```xml
   **> x.children()**
@@ -309,7 +309,7 @@ delete bookstoreXML.book[2].@category;
       3
   ```
 
-- `XML.`[elements()](xml-object-reference.md#xmlelements) 的结果包含 2 个元素，直接子标签 `<one>` 和 `<two>`：
+- `XML.`[elements()](../xml-object-reference#xmlelements) 的结果包含 2 个元素，直接子标签 `<one>` 和 `<two>`：
 
   ```xml
   **> x.elements()**
@@ -322,7 +322,7 @@ delete bookstoreXML.book[2].@category;
       2
   ```
 
-- `XML.`[descendants()](xml-object-reference.md#xmldescendants) 的结果包含 7 个元素，直接子标签 `<one>` 和 `<two>`，下一级的 `<inside>` 标签，以及所有标签的文本内容：
+- `XML.`[descendants()](../xml-object-reference#xmldescendants) 的结果包含 7 个元素，直接子标签 `<one>` 和 `<two>`，下一级的 `<inside>` 标签，以及所有标签的文本内容：
 
   ```xml
   **> x.descendants()**
@@ -344,7 +344,7 @@ delete bookstoreXML.book[2].@category;
 
 ## 创建和访问命名空间
 
-简单的访问语句访问默认命名空间中的元素。如果你需要在多个命名空间中定义元素，则必须使用 [Namespace 对象](xml-object-reference.md#namespace-object) 来访问不在默认命名空间中的任何元素。
+简单的访问语句访问默认命名空间中的元素。如果你需要在多个命名空间中定义元素，则必须使用 [Namespace 对象](../xml-object-reference#namespace-object) 来访问不在默认命名空间中的任何元素。
 
 ### 在树中定义命名空间
 
@@ -369,9 +369,9 @@ delete bookstoreXML.book[2].@category;
 ...
 ```
 
-定义此命名空间后，简单的语句 `bookstoreXML.book` 不再返回 "The Wonderful Wizard of Oz"，因为该书不再位于默认命名空间中。要访问该书，你必须为命名空间定义一个 [Namespace 对象](xml-object-reference.md#namespace-object)，并使用它来访问元素。
+定义此命名空间后，简单的语句 `bookstoreXML.book` 不再返回 "The Wonderful Wizard of Oz"，因为该书不再位于默认命名空间中。要访问该书，你必须为命名空间定义一个 [Namespace 对象](../xml-object-reference#namespace-object)，并使用它来访问元素。
 
-例如，以下 JavaScript 代码为 `<bookstore>` 元素中定义的命名空间创建了一个 [Namespace 对象](xml-object-reference.md#namespace-object)，并通过该对象访问命名空间中的书籍：
+例如，以下 JavaScript 代码为 `<bookstore>` 元素中定义的命名空间创建了一个 [Namespace 对象](../xml-object-reference#namespace-object)，并通过该对象访问命名空间中的书籍：
 
 ```javascript
 var ns = new Namespace ("http://kids.mybookstore.com");
@@ -384,13 +384,13 @@ bookstoreXML.ns::book;
 
 默认情况下，默认命名空间是一个 URI 为空字符串的命名空间。可以设置默认命名空间；在这种情况下，简单的访问器访问该命名空间中的元素。
 
-要设置默认命名空间，请使用全局函数 [setDefaultXMLNamespace()](xml-object-reference.md#setdefaultxmlnamespace)，或以下语法：
+要设置默认命名空间，请使用全局函数 [setDefaultXMLNamespace()](../xml-object-reference#setdefaultxmlnamespace)，或以下语法：
 
 ```javascript
 default xml namespace = namespace_specifier;
 ```
 
-命名空间说明符可以是 [Namespace 对象](xml-object-reference.md#namespace-object) 或 URL 字符串。例如：
+命名空间说明符可以是 [Namespace 对象](../xml-object-reference#namespace-object) 或 URL 字符串。例如：
 
 ```javascript
 default xml namespace = "http://books.mybookstore.com";
@@ -399,17 +399,17 @@ default xml namespace = "http://books.mybookstore.com";
 设置默认命名空间后：
 
 - 默认命名空间中的元素（因此可以通过简单访问器访问）必须使用命名空间前缀。
-- 所有没有特定命名空间分配的元素都位于空命名空间中，而不是默认命名空间中。要访问它们，你必须使用 URI 为空字符串的 [Namespace 对象](xml-object-reference.md#namespace-object)。
+- 所有没有特定命名空间分配的元素都位于空命名空间中，而不是默认命名空间中。要访问它们，你必须使用 URI 为空字符串的 [Namespace 对象](../xml-object-reference#namespace-object)。
 
 ---
 
 ### 访问命名空间中的元素
 
-- 你可以直接访问默认命名空间中的元素，而无需使用 [Namespace 对象](xml-object-reference.md#namespace-object)。
+- 你可以直接访问默认命名空间中的元素，而无需使用 [Namespace 对象](../xml-object-reference#namespace-object)。
 
   - 如果你没有设置默认值，则可以对没有命名空间说明符的元素使用直接访问。
   - 如果你设置了默认值，则可以对位于该命名空间中的元素使用直接访问。
-- 如果你已将元素分配给命名空间，并且未将其设置为默认值，则必须使用 [Namespace 对象](xml-object-reference.md#namespace-object) 来访问这些元素。例如：
+- 如果你已将元素分配给命名空间，并且未将其设置为默认值，则必须使用 [Namespace 对象](../xml-object-reference#namespace-object) 来访问这些元素。例如：
 
   ```javascript
   var ns = new Namespace (**"http://kids.mybookstore.com"**);
@@ -417,7 +417,7 @@ default xml namespace = "http://books.mybookstore.com";
   ```
 
   这将返回所有已分配给 "kids" 命名空间的书籍。
-- 如果你设置了默认命名空间，你仍然可以通过使用 URI 为空字符串的 [Namespace 对象](xml-object-reference.md#namespace-object) 来访问所有没有特定命名空间分配的对象，这是默认创建情况：
+- 如果你设置了默认命名空间，你仍然可以通过使用 URI 为空字符串的 [Namespace 对象](../xml-object-reference#namespace-object) 来访问所有没有特定命名空间分配的对象，这是默认创建情况：
 
   ```javascript
   var emptyNS = new Namespace ();
@@ -473,7 +473,7 @@ makeXML ( "Jane", "Doe" );
 
 ## XML 列表
 
-ExtendScript 定义了一个 `XMLList` 对象，它与 [XML 对象](xml-object-reference.md#xml-object) 相同，只是你可以通过传递 XML 列表来创建它，并且它创建的是 XML 列表而不是 XML 标签。
+ExtendScript 定义了一个 `XMLList` 对象，它与 [XML 对象](../xml-object-reference#xml-object) 相同，只是你可以通过传递 XML 列表来创建它，并且它创建的是 XML 列表而不是 XML 标签。
 
 所有收集 XML 的 XML 语句和函数都将结果作为 `XMLList` 返回，如果没有匹配项，则可以为空。例如，以下语句返回一个空列表：
 

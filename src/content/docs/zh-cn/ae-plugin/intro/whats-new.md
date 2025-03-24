@@ -71,9 +71,9 @@ Premiere Pro SDK 中的 GPU 效果示例项目已更新为在 AE 中注册为 GP
 
 效果示例项目已更新为使用此方法，同时保留 PiPL 以实现向后兼容性。
 
-`AEGP_StreamSuite` 现在为版本 5，其中 [AEGP_GetExpression()](../aegps/aegp-suites.md#aegp_streamsuite5) 和 [AEGP_SetExpression()](../aegps/aegp-suites.md#aegp_streamsuite5) 已升级以支持 Unicode。
+`AEGP_StreamSuite` 现在为版本 5，其中 [AEGP_GetExpression()](../../aegps/aegp-suites#aegp_streamsuite5) 和 [AEGP_SetExpression()](../../aegps/aegp-suites#aegp_streamsuite5) 已升级以支持 Unicode。
 
-`PF_AdvTimeSuite` 现在为版本 4，新增了一个调用 [PF_TimeCountFrames()](../effect-details/useful-utility-functions.md#pf_advtimesuite4)，返回当前合成中帧的索引。
+`PF_AdvTimeSuite` 现在为版本 4，新增了一个调用 [PF_TimeCountFrames()](../../effect-details/useful-utility-functions#pf_advtimesuite4)，返回当前合成中帧的索引。
 
 新的 AEGP Math Suite 提供了用于矩阵乘法的有用调用。
 
@@ -103,17 +103,17 @@ Premiere Pro SDK 中的 GPU 效果示例项目已更新为在 AE 中注册为 GP
 * 确认效果不能自引用；即不能使用同一图层上的效果作为同一图层的输入。
 * 套件增强
 
-`PF_AdvTimeSuite` 现在为版本 3，提供了一个修订的 [PF_GetTimeDisplayPref()](../effect-details/useful-utility-functions.md#pf_advtimesuite4) 调用，使用修订的 `PF_TimeDisplayPrefVersion` 参数，支持更高的帧速率。
+`PF_AdvTimeSuite` 现在为版本 3，提供了一个修订的 [PF_GetTimeDisplayPref()](../../effect-details/useful-utility-functions#pf_advtimesuite4) 调用，使用修订的 `PF_TimeDisplayPrefVersion` 参数，支持更高的帧速率。
 如果值超出结构支持的范围，版本 2 的调用现在可能会返回错误。
 
-`Comp Suite` 现在为版本 11，新增了一个调用 [AEGP_ReorderCompSelection()](../aegps/aegp-suites.md#aegp_compsuite11)，用于将选择移动到某个图层索引。
+`Comp Suite` 现在为版本 11，新增了一个调用 [AEGP_ReorderCompSelection()](../../aegps/aegp-suites#aegp_compsuite11)，用于将选择移动到某个图层索引。
 应与 `AEGP_SetSelection()` 一起使用。
 
 ---
 
 ## CC 2017 (14.1) 中的新功能
 
-[AEGP Item Suite](../aegps/aegp-suites.md#aegp_itemsuite9) 和 [AEGP Render Queue Item Suite](../aegps/aegp-suites.md#render-queue-item-suite) 的 Unicode 支持。
+[AEGP Item Suite](../../aegps/aegp-suites#aegp_itemsuite9) 和 [AEGP Render Queue Item Suite](../../aegps/aegp-suites#render-queue-item-suite) 的 Unicode 支持。
 
 ---
 

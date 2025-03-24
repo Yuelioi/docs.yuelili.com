@@ -19,7 +19,7 @@ Adobe Bridge 提供了一个应用程序编程接口（API），定义了 Adobe 
 
 ### 步骤 1：检查目标应用程序是否已安装
 
-在您实际发送消息之前，必须检查目标应用程序的所需版本是否已安装。通过 [BridgeTalk 类](../bridgetalk-class) 在全局命名空间中可用的 [getSpecifier()](bridgetalk-class.md#bridgetalkgetspecifier) 函数提供了此信息。
+在您实际发送消息之前，必须检查目标应用程序的所需版本是否已安装。通过 [BridgeTalk 类](../bridgetalk-class) 在全局命名空间中可用的 [getSpecifier()](../bridgetalk-class#bridgetalkgetspecifier) 函数提供了此信息。
 
 例如，以下代码将向 Adobe Bridge CS5 发送消息，作为由 Photoshop CS5 执行的脚本的一部分，检查所需的 Adobe Bridge 版本是否已安装：
 
@@ -52,7 +52,7 @@ bt.body = "new Document('C:\\BridgeScripts');app.document.target.children.length
 
 ### 步骤 3：指定如何处理响应
 
-如果您想处理此消息的响应，或使用脚本评估返回的数据，则必须在发送消息之前设置响应处理机制。您可以通过在消息对象中定义 [onResult()](bridgetalk-message-object.md#onresult) 回调来实现。
+如果您想处理此消息的响应，或使用脚本评估返回的数据，则必须在发送消息之前设置响应处理机制。您可以通过在消息对象中定义 [onResult()](../bridgetalk-message-object#onresult) 回调来实现。
 
 :::note
 消息回调是可选的，并非所有支持消息的应用程序都实现了它们。消息的响应默认是该消息的 `body` 属性中包含的脚本的评估结果。目标应用程序可能会定义某种不同的响应；请参阅 [接收消息](#receiving-messages)。
@@ -68,7 +68,7 @@ bt.onResult = function(returnBtObj) {
 }
 ```
 
-如果您想处理脚本处理过程中可能出现的错误，可以在消息对象中定义一个 [onError()](bridgetalk-message-object.md#onerror) 回调。同样，您可以定义一个 [timeout](bridgetalk-message-object.md#timeout) 值和 [onTimeout()](bridgetalk-message-object.md#ontimeout) 回调来处理目标无法在给定时间内处理消息的情况。有关更多信息，请参阅 [处理来自消息目标的响应](#handling-responses-from-the-message-target)。
+如果您想处理脚本处理过程中可能出现的错误，可以在消息对象中定义一个 [onError()](../bridgetalk-message-object#onerror) 回调。同样，您可以定义一个 [timeout](../bridgetalk-message-object#timeout) 值和 [onTimeout()](../bridgetalk-message-object#ontimeout) 回调来处理目标无法在给定时间内处理消息的情况。有关更多信息，请参阅 [处理来自消息目标的响应](#handling-responses-from-the-message-target)。
 
 :::note
 如果您定义了回调来处理响应，则必须将消息存储在响应接收时仍然存在的变量中。否则，JavaScript 可能会垃圾回收消息对象，响应将丢失。
@@ -118,7 +118,7 @@ if( targetApp ) {
 
 ## 接收消息
 
-应用程序可以是消息的目标；也就是说，它可以从另一个应用程序接收未经请求的消息。未经请求的消息由目标应用程序中的静态 [BridgeTalk.onReceive](bridgetalk-class.md#bridgetalkonreceive) 回调函数处理。请参阅 [处理未经请求的消息](#handling-unsolicited-messages)。
+应用程序可以是消息的目标；也就是说，它可以从另一个应用程序接收未经请求的消息。未经请求的消息由目标应用程序中的静态 [BridgeTalk.onReceive](../bridgetalk-class#bridgetalkonreceive) 回调函数处理。请参阅 [处理未经请求的消息](#handling-unsolicited-messages)。
 
 发送消息的应用程序可以接收响应消息；也就是说，作为发送消息时请求响应的结果而收到的消息。这些可以是：
 
@@ -134,11 +134,11 @@ if( targetApp ) {
 
 ## 处理未经请求的消息
 
-要指定应用程序应如何处理未经请求的传入消息，请在 `BridgeTalk` 类的静态 [onReceive](bridgetalk-class.md#bridgetalkonreceive) 属性中定义一个回调处理函数。此函数接受一个参数，即 [BridgeTalk 消息对象](../bridgetalk-message-object)。
+要指定应用程序应如何处理未经请求的传入消息，请在 `BridgeTalk` 类的静态 [onReceive](../bridgetalk-class#bridgetalkonreceive) 属性中定义一个回调处理函数。此函数接受一个参数，即 [BridgeTalk 消息对象](../bridgetalk-message-object)。
 
-`onReceive` 处理程序的默认行为是使用 JavaScript 评估接收到的消息的 `body`，并返回该评估的结果。（评估脚本的结果是脚本的最后一行。）为了返回结果，它会创建一个新的消息对象，将该结果封装在该对象的 `body` 属性中的字符串中，并将该对象传递给原始消息中定义的 [onResult()](bridgetalk-message-object.md#onresult) 回调。
+`onReceive` 处理程序的默认行为是使用 JavaScript 评估接收到的消息的 `body`，并返回该评估的结果。（评估脚本的结果是脚本的最后一行。）为了返回结果，它会创建一个新的消息对象，将该结果封装在该对象的 `body` 属性中的字符串中，并将该对象传递给原始消息中定义的 [onResult()](../bridgetalk-message-object#onresult) 回调。
 
-如果评估时发生错误，默认的 `onReceive` 处理程序会使用类似的机制返回错误信息。它会创建一个新的消息对象，将错误信息封装在该对象的 `body` 属性中的字符串中，并将该对象传递给原始消息中定义的 [onError()](bridgetalk-message-object.md#onerror) 回调。
+如果评估时发生错误，默认的 `onReceive` 处理程序会使用类似的机制返回错误信息。它会创建一个新的消息对象，将错误信息封装在该对象的 `body` 属性中的字符串中，并将该对象传递给原始消息中定义的 [onError()](../bridgetalk-message-object#onerror) 回调。
 
 要更改默认行为，请将 `BridgeTalk.onReceive` 属性设置为以下形式的函数定义：
 
@@ -198,16 +198,16 @@ BridgeTalk.onReceive = function (message) {
 
 响应消息可以是：
 
-- 处理消息时出错的结果。这由 [onError()](bridgetalk-message-object.md#onerror) 回调处理。
-  - 如果在处理消息体时发生错误（例如由于 JavaScript 语法错误），目标应用程序会调用 [onError()](bridgetalk-message-object.md#onerror) 回调，传递包含错误代码和错误消息的响应消息。如果您没有定义 [onError()](bridgetalk-message-object.md#onerror) 回调，则错误是完全透明的。它可能看起来像是消息未被处理，因为从未返回结果给 [onResult()](bridgetalk-message-object.md#onresult) 回调。
-- 消息接收的通知。这由 [onReceived()](bridgetalk-message-object.md#onreceived) 回调处理。
-  - 消息发送是异步的。从 `send` 方法获得 `true` 结果并不能保证您的消息实际上已被目标应用程序接收。如果您想收到消息接收的通知，请在消息对象中定义 [onReceived()](bridgetalk-message-object.md#onreceived) 回调。目标会将原始消息对象发送回此回调，首先将 `body` 值替换为空字符串。
-- 超时的结果。这由 [onTimeout()](bridgetalk-message-object.md#ontimeout) 回调处理。
-  - 您可以在消息对象的 [timeout](bridgetalk-message-object.md#timeout) 属性中指定秒数。如果消息在时间到期之前未从输入队列中移除以进行处理，则会被丢弃。如果发送者为消息定义了 [onTimeout()](bridgetalk-message-object.md#ontimeout) 回调，则目标应用程序会向发送者发送超时消息。
-- 中间响应。这由 [onResult()](bridgetalk-message-object.md#onresult) 回调处理。
-  - 您发送的脚本可以通过调用原始消息对象的 [sendResult()](bridgetalk-message-object.md#sendresult) 方法发送回中间响应。它可以发送任何类型的数据，但该数据会被打包到一个新消息对象的 `body` 字符串中，并传递给您的回调。请参阅 [在应用程序之间传递值](#passing-values-between-applications)。
-- 处理消息的最终结果。这由 [onResult()](bridgetalk-message-object.md#onresult) 回调处理。
-  - 当它完成处理您的消息时，目标应用程序可以发送回任何类型的结果。如果您发送了脚本，并且目标应用程序使用默认的 `BridgeTalk` [onReceive](bridgetalk-class.md#bridgetalkonreceive) 回调来处理消息，则返回值是该脚本评估的最终结果。无论如何，返回值会被打包到一个新消息对象的 `body` 字符串中，并传递给您的回调。请参阅 [在应用程序之间传递值](#passing-values-between-applications)。
+- 处理消息时出错的结果。这由 [onError()](../bridgetalk-message-object#onerror) 回调处理。
+  - 如果在处理消息体时发生错误（例如由于 JavaScript 语法错误），目标应用程序会调用 [onError()](../bridgetalk-message-object#onerror) 回调，传递包含错误代码和错误消息的响应消息。如果您没有定义 [onError()](../bridgetalk-message-object#onerror) 回调，则错误是完全透明的。它可能看起来像是消息未被处理，因为从未返回结果给 [onResult()](../bridgetalk-message-object#onresult) 回调。
+- 消息接收的通知。这由 [onReceived()](../bridgetalk-message-object#onreceived) 回调处理。
+  - 消息发送是异步的。从 `send` 方法获得 `true` 结果并不能保证您的消息实际上已被目标应用程序接收。如果您想收到消息接收的通知，请在消息对象中定义 [onReceived()](../bridgetalk-message-object#onreceived) 回调。目标会将原始消息对象发送回此回调，首先将 `body` 值替换为空字符串。
+- 超时的结果。这由 [onTimeout()](../bridgetalk-message-object#ontimeout) 回调处理。
+  - 您可以在消息对象的 [timeout](../bridgetalk-message-object#timeout) 属性中指定秒数。如果消息在时间到期之前未从输入队列中移除以进行处理，则会被丢弃。如果发送者为消息定义了 [onTimeout()](../bridgetalk-message-object#ontimeout) 回调，则目标应用程序会向发送者发送超时消息。
+- 中间响应。这由 [onResult()](../bridgetalk-message-object#onresult) 回调处理。
+  - 您发送的脚本可以通过调用原始消息对象的 [sendResult()](../bridgetalk-message-object#sendresult) 方法发送回中间响应。它可以发送任何类型的数据，但该数据会被打包到一个新消息对象的 `body` 字符串中，并传递给您的回调。请参阅 [在应用程序之间传递值](#passing-values-between-applications)。
+- 处理消息的最终结果。这由 [onResult()](../bridgetalk-message-object#onresult) 回调处理。
+  - 当它完成处理您的消息时，目标应用程序可以发送回任何类型的结果。如果您发送了脚本，并且目标应用程序使用默认的 `BridgeTalk` [onReceive](../bridgetalk-class#bridgetalkonreceive) 回调来处理消息，则返回值是该脚本评估的最终结果。无论如何，返回值会被打包到一个新消息对象的 `body` 字符串中，并传递给您的回调。请参阅 [在应用程序之间传递值](#passing-values-between-applications)。
 
 以下示例演示了如何处理简单响应和多个响应，以及如何将错误处理与响应处理集成。
 

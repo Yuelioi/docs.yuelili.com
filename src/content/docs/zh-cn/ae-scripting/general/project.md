@@ -156,7 +156,7 @@ PlaceholderItem 对象。
 
 #### 描述
 
-通过 [Item ID](../item/item.md#itemid) 检索项。
+通过 [Item ID](../../item/item#itemid) 检索项。
 
 #### 参数
 

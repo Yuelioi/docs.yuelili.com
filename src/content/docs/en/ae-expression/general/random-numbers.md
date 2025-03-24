@@ -6,7 +6,7 @@ title: random-numbers
 These items deal with randomness in expressions.
 
 :::note
-The [wiggle()](../objects/property.md#wiggle) method—which is used to randomly vary a property value—is in the [Property](../../objects/property) attributes and methods category.
+The [wiggle()](../../objects/property#wiggle) method—which is used to randomly vary a property value—is in the [Property](../../objects/property) attributes and methods category.
 :::
 
 
@@ -163,7 +163,7 @@ The multiplication by `100` in this example converts the value in the range `0�
 
 | Parameter  |  Type   |                                                                                                           Description                                                                                                           |
 | ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `offset`   | Number  | The value with which to offset the seed. This is also used to control the initial value of the [`wiggle()`](../objects/property.md#wiggle) function.                                                                            |
+| `offset`   | Number  | The value with which to offset the seed. This is also used to control the initial value of the [`wiggle()`](../../objects/property#wiggle) function.                                                                            |
 | `timeless` | Boolean | Optional. Use `true` for the timeless argument to not use the current time as input to the random seed. This allows you to generate a random number that doesn't vary depending on the time of evaluation. Defaults to `false`. |
 
 #### Returns

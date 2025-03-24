@@ -127,7 +127,7 @@ title: 输出模块
 
 #### 示例
 
-请参阅 [RenderQueueItem.getSetting()](renderqueueitem.md#renderqueueitemgetsetting) 中的示例以获取结构参考。
+请参阅 [RenderQueueItem.getSetting()](../renderqueueitem#renderqueueitemgetsetting) 中的示例以获取结构参考。
 
 ---
 
@@ -230,7 +230,7 @@ var current_omFileTempalte = app.project.renderQueue.item(1).outputModule(1).get
 
 #### 示例
 
-请参阅 [RenderQueueItem.setSetting()](renderqueueitem.md#renderqueueitemsetsetting) 中的示例以获取结构参考。
+请参阅 [RenderQueueItem.setSetting()](../renderqueueitem#renderqueueitemsetsetting) 中的示例以获取结构参考。
 
 ---
 

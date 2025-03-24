@@ -667,7 +667,7 @@ typedef struct {
 | `intval`  | 整数和布尔数据值。类型为 `kTypeInteger`、`kTypeUInteger` 或 `kTypeBool`。                                                                                                                               |
 | `fltval`  | 浮点数值数据值。类型为 `kTypeDouble`。                                                                                                                                                                  |
 | `string`  | 字符串数据值。所有字符串均为 UTF-8 编码并以 null 结尾。类型为 `kTypeString` 或 `kTypeScript`。                                                                                                           |
-|           | - 库必须定义一个入口函数 [ESFreeMem()](defining-entry-points-for-direct-access.md#esfreemem)，ExtendScript 调用该入口函数以释放返回的字符串指针。如果缺少此入口函数，ExtendScript 不会尝试释放任何返回的字符串数据。 |
+|           | - 库必须定义一个入口函数 [ESFreeMem()](../defining-entry-points-for-direct-access#esfreemem)，ExtendScript 调用该入口函数以释放返回的字符串指针。如果缺少此入口函数，ExtendScript 不会尝试释放任何返回的字符串数据。 |
 |           | - 当函数返回类型为 `kTypeScript` 的字符串时，ExtendScript 会评估该脚本并返回评估结果作为函数调用的结果。                                                                                                  |
 | `hObject` | JavaScript 对象数据值的 C/C++ 表示形式。类型为 `kTypeLiveObject` 或 `kTypeLiveObjectRelease`。                                                                                                           |
 |           | - 当函数返回类型为 `kTypeLiveObject` 的对象时，ExtendScript 不会释放该对象。                                                                                                                             |

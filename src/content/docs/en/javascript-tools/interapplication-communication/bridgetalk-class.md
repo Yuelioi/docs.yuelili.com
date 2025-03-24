@@ -28,7 +28,7 @@ The BridgeTalk class provides these static properties, which are available in th
 
 #### Description
 
-The instance identifier of an application launched by the messaging framework, the instance portion of an application specifier; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).
+The instance identifier of an application launched by the messaging framework, the instance portion of an application specifier; see [Application specifiers](../application-and-namespace-specifiers#application-specifiers).
 
 Used only for those applications, such as InDesign, that support launching and running multiple instances.
 
@@ -44,7 +44,7 @@ String. Read only.
 
 #### Description
 
-The locale of this application, the locale portion of an application specifier; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers). When a message is sent, this is the locale of the sending application.
+The locale of this application, the locale portion of an application specifier; see [Application specifiers](../application-and-namespace-specifiers#application-specifiers). When a message is sent, this is the locale of the sending application.
 
 #### Type
 
@@ -58,7 +58,7 @@ String. Read only.
 
 #### Description
 
-The name of this application, the appname portion of an application specifier; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers). When a message is sent, this is the name of the sending application.
+The name of this application, the appname portion of an application specifier; see [Application specifiers](../application-and-namespace-specifiers#application-specifiers). When a message is sent, this is the name of the sending application.
 
 #### Type
 
@@ -72,7 +72,7 @@ String. Read only.
 
 #### Description
 
-A lower-case string containing the complete specifier for this application; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).
+A lower-case string containing the complete specifier for this application; see [Application specifiers](../application-and-namespace-specifiers#application-specifiers).
 
 #### Type
 
@@ -104,7 +104,7 @@ String. Read only.
 
 #### Description
 
-The version number of this application, the version portion of an application specifier; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers). When a message is sent, this is the version of the sending application.
+The version number of this application, the version portion of an application specifier; see [Application specifiers](../application-and-namespace-specifiers#application-specifiers). When a message is sent, this is the version of the sending application.
 
 #### Type
 
@@ -128,7 +128,7 @@ BridgeTalk.onReceive = function( bridgeTalkObject ) {
 };
 ```
 
-The body property of the received message object contains the received data. The function can return any type. See [Handling unsolicited messages](communicating-through-messages.md#handling-unsolicited-messages).
+The body property of the received message object contains the received data. The function can return any type. See [Handling unsolicited messages](../communicating-through-messages#handling-unsolicited-messages).
 
 :::note
 This function is not applied to a message that is received in response to a message sent from this application. Response messages are processed by the onResult, onReceived, or onError callbacks associated with the sent message.
@@ -159,7 +159,7 @@ In Mac OS, an application can be running but have no windows open. In this case,
 
 | Parameter |                                           Type                                           |              Description               |
 | --------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
-| `app`     | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
+| `app`     | [Application specifiers](../application-and-namespace-specifiers#application-specifiers) | A specifier for the target application |
 
 #### Returns
 
@@ -179,7 +179,7 @@ Retrieves the full path of the executable file for a specified application.
 
 | Parameter |                                           Type                                           |              Description               |
 | --------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
-| `app`     | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
+| `app`     | [Application specifiers](../application-and-namespace-specifiers#application-specifiers) | A specifier for the target application |
 
 #### Returns
 
@@ -199,7 +199,7 @@ Returns a localized display name for an application, or `null` if the applicatio
 
 | Parameter |                                           Type                                           |              Description               |
 | --------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
-| `app`     | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
+| `app`     | [Application specifiers](../application-and-namespace-specifiers#application-specifiers) | A specifier for the target application |
 
 #### Returns
 
@@ -236,7 +236,7 @@ Retrieves a complete application specifier.
 
 #### Returns
 
-[Application specifier](application-and-namespace-specifiers.md#application-specifiers) for a messaging-enabled application version installed on this computer, or `null` if the requested version of the application is not installed.
+[Application specifier](../application-and-namespace-specifiers#application-specifiers) for a messaging-enabled application version installed on this computer, or `null` if the requested version of the application is not installed.
 
 #### Example
 
@@ -273,7 +273,7 @@ Retrieves the processing status of an application.
 
 |  Parameter   |                                           Type                                           |                                                         Description                                                          |
 | ------------ | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `targetSpec` | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | Optional. A specifier for the target application. If not supplied, returns the processing status of the current application. |
+| `targetSpec` | [Application specifiers](../application-and-namespace-specifiers#application-specifiers) | Optional. A specifier for the target application. If not supplied, returns the processing status of the current application. |
 
 #### Returns
 
@@ -310,11 +310,11 @@ Retrieves a list of messaging-enabled applications installed on this computer.
 
 #### Returns
 
-Returns an array of [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).
+Returns an array of [Application specifiers](../application-and-namespace-specifiers#application-specifiers).
 
 - If version is supplied, specifiers include the base name plus the version information.
 - If locale is supplied, specifiers include the full name, with both version and locale information.
-- If neither version nor locale is supplied, returns base specifiers with neither version nor locale information, but tries to find the most appropriate version and locale; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).
+- If neither version nor locale is supplied, returns base specifiers with neither version nor locale information, but tries to find the most appropriate version and locale; see [Application specifiers](../application-and-namespace-specifiers#application-specifiers).
 
 #### Example
 
@@ -351,7 +351,7 @@ Checks whether a given application is running and active on the local computer.
 
 |  Parameter  |                                           Type                                           |              Description               |
 | ----------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
-| `specifier` | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
+| `specifier` | [Application specifiers](../application-and-namespace-specifiers#application-specifiers) | A specifier for the target application |
 
 #### Returns
 
@@ -371,7 +371,7 @@ Launches the given application on the local computer. It is not necessary to lau
 
 |  Parameter  |                                           Type                                           |                                                        Description                                                         |
 | ----------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `specifier` | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application                                                                                     |
+| `specifier` | [Application specifiers](../application-and-namespace-specifiers#application-specifiers) | A specifier for the target application                                                                                     |
 | `where`     | Unknown.                                                                                 | Optional. If the value "background" is specified, the application's main window is not brought to the front of the screen. |
 
 #### Returns
@@ -392,7 +392,7 @@ Loads the startup script for an application from the common StartupScripts folde
 
 |  Parameter  |                                           Type                                           |              Description               |
 | ----------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
-| `specifier` | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
+| `specifier` | [Application specifiers](../application-and-namespace-specifiers#application-specifiers) | A specifier for the target application |
 
 #### Returns
 
@@ -412,7 +412,7 @@ Sends a message to another application to determine whether it can be contacted.
 
 |   Parameter   |                                           Type                                           |              Description               |
 |---------------|------------------------------------------------------------------------------------------|----------------------------------------|
-| `specifier`   | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
+| `specifier`   | [Application specifiers](../application-and-namespace-specifiers#application-specifiers) | A specifier for the target application |
 | `pingRequest` | Identifying key string, one of:                                                          | Specific type of return value.         |
 |               | - `STATUS`: Returns the processing status; see [getStatus()](#bridgetalkgetstatus).      |                                        |
 |               | - `DIAGNOSTICS`: Returns a diagnostic report that includes a list of valid ping keys.    |                                        |

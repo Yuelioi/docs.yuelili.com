@@ -75,7 +75,7 @@ title: 字符
 | --------------- | --------------------------------------------------------------------- | ---------------- |
 | `contents`      | 字符串                                                                | 要添加的文本内容 |
 | `relativeObject`| [TextFrameItem](.././TextFrameItem), 可选                              | 要添加到的对象   |
-| `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement), 可选 | 放置文本的位置   |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 放置文本的位置   |
 
 #### 返回值
 

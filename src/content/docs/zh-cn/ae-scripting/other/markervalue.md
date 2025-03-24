@@ -15,9 +15,9 @@ MarkerValue 对象表示图层或合成标记，它将注释以及可选的章�
 
 脚本可以设置任意数量的参数对；顺序不会反映在应用程序中显示的顺序。
 
-要将标记与图层关联，请在图层的 [Layer.marker](../layer/layer.md#layermarker) 属性中设置 MarkerValue 对象：`layerObject.property("Marker").setValueAtTime(time, markerValueObject);`
+要将标记与图层关联，请在图层的 [Layer.marker](../../layer/layer#layermarker) 属性中设置 MarkerValue 对象：`layerObject.property("Marker").setValueAtTime(time, markerValueObject);`
 
-要将标记与合成关联，请在合成的 [CompItem.markerProperty](../item/compitem.md#compitemmarkerproperty) 属性中设置 MarkerValue 对象：`compObject.markerProperty.setValueAtTime(time, markerValueObject);`
+要将标记与合成关联，请在合成的 [CompItem.markerProperty](../../item/compitem#compitemmarkerproperty) 属性中设置 MarkerValue 对象：`compObject.markerProperty.setValueAtTime(time, markerValueObject);`
 
 有关标记的使用信息，请参阅 After Effects 帮助中的“使用标记”。
 

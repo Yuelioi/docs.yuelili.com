@@ -5,9 +5,9 @@ title: 事件处理
 
 多个辅助类提供了底层的事件处理能力。
 
-事件对象通常由 ScriptUI 创建并传递给事件处理程序。然而，你可以通过使用 [ScriptUI.events.createEvent()](scriptui-class.md#scriptuieventscreateevent) 构造一个事件对象，并将其发送到目标对象的 `controlobj-dispatchEvent` 函数来模拟用户操作。
+事件对象通常由 ScriptUI 创建并传递给事件处理程序。然而，你可以通过使用 [ScriptUI.events.createEvent()](../scriptui-class#scriptuieventscreateevent) 构造一个事件对象，并将其发送到目标对象的 `controlobj-dispatchEvent` 函数来模拟用户操作。
 
-一个辅助对象 [Keyboard state object](environment.md#keyboard-state-object) 提供了在函数执行期间全局访问键盘状态的能力，这在事件处理框架之外非常有用。
+一个辅助对象 [Keyboard state object](../environment#keyboard-state-object) 提供了在函数执行期间全局访问键盘状态的能力，这在事件处理框架之外非常有用。
 
 ---
 
@@ -366,7 +366,7 @@ title: 事件处理
 获取此事件中当前使用的修饰键。
 
 :::note
-如果你想检查脚本中任何时候是否按下了键盘修饰键（alt/ctrl/meta/shift），而不仅仅是在事件中，请参阅 [Keyboard state object](environment.md#keyboard-state-object)。
+如果你想检查脚本中任何时候是否按下了键盘修饰键（alt/ctrl/meta/shift），而不仅仅是在事件中，请参阅 [Keyboard state object](../environment#keyboard-state-object)。
 :::
 
 ##### 参数

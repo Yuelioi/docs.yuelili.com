@@ -130,7 +130,7 @@ title: javascript
 
 对于上面的例子，[Layer 对象](../../layer/layer)（本身是 [PropertyGroup 对象](../../property/propertygroup) 的子类）是 [AVLayer 对象](../../layer/avlayer)、[CameraLayer 对象](../../layer/cameralayer) 和 [LightLayer 对象](../../layer/lightlayer) 的*基类*。这意味着 CameraLayer 继承了 Layer 对象的所有内容，而 Layer 对象继承了 PropertyGroup 对象的所有内容，PropertyGroup 对象又继承了 PropertyBase 对象的所有内容。
 
-这就是为什么你不会在 Layer 页面上看到 `name` 属性，但你仍然可以在脚本中使用 `layer.name`；`name` 是从 [PropertyBase.name](../property/propertybase.md#propertybasename) 继承的。
+这就是为什么你不会在 Layer 页面上看到 `name` 属性，但你仍然可以在脚本中使用 `layer.name`；`name` 是从 [PropertyBase.name](../../property/propertybase#propertybasename) 继承的。
 
 :::warning
 在某些特定情况下，属性和方法在继承时会被**移除**，而不仅仅是添加。这些情况在相关对象页面上有注明。

@@ -7,7 +7,7 @@ title: ParagraphStyle
 
 #### Description
 
-Associates character and paragraph attributes with a style name. The style object can be used to apply those attributes to the text in a TextFrame object. See [Creating and applying a paragraph style](ParagraphStyles.md#creating-and-applying-a-paragraph-style) example.
+Associates character and paragraph attributes with a style name. The style object can be used to apply those attributes to the text in a TextFrame object. See [Creating and applying a paragraph style](../paragraphstyles#creating-and-applying-a-paragraph-style) example.
 
 ---
 

@@ -56,7 +56,7 @@ The character alignment type.
 
 #### Type
 
-[StyleRunAlignmentType](scripting-constants.md#stylerunalignmenttype)
+[StyleRunAlignmentType](../scripting-constants#stylerunalignmenttype)
 
 ---
 
@@ -70,7 +70,7 @@ The alternate glyphs form.
 
 #### Type
 
-[AlternateGlyphsForm](scripting-constants.md#alternateglyphsform)
+[AlternateGlyphsForm](../scripting-constants#alternateglyphsform)
 
 ---
 
@@ -98,7 +98,7 @@ The Japanese text baseline direction.
 
 #### Type
 
-[BaselineDirectionType](scripting-constants.md#baselinedirectiontype)
+[BaselineDirectionType](../scripting-constants#baselinedirectiontype)
 
 ---
 
@@ -112,7 +112,7 @@ The baseline position of text.
 
 #### Type
 
-[FontBaselineOption](scripting-constants.md#fontbaselineoption)
+[FontBaselineOption](../scripting-constants#fontbaselineoption)
 
 ---
 
@@ -140,7 +140,7 @@ The case of text.
 
 #### Type
 
-[FontCapsOption](scripting-constants.md#fontcapsoption)
+[FontCapsOption](../scripting-constants#fontcapsoption)
 
 ---
 
@@ -196,7 +196,7 @@ The number style in a OpenType font.
 
 #### Type
 
-[FigureStyleType](scripting-constants.md#figurestyletype)
+[FigureStyleType](../scripting-constants#figurestyletype)
 
 ---
 
@@ -266,7 +266,7 @@ The automatic kerning method to use.
 
 #### Type
 
-[AutoKernType](scripting-constants.md#autokerntype)
+[AutoKernType](../scripting-constants#autokerntype)
 
 ---
 
@@ -280,7 +280,7 @@ The language of text.
 
 #### Type
 
-[LanguageType](scripting-constants.md#languagetype)
+[LanguageType](../scripting-constants#languagetype)
 
 ---
 
@@ -336,7 +336,7 @@ The OpenType baseline position.
 
 #### Type
 
-[FontOpenTypePositionOption](scripting-constants.md#fontopentypepositionoption)
+[FontOpenTypePositionOption](../scripting-constants#fontopentypepositionoption)
 
 ---
 
@@ -700,7 +700,7 @@ The Wari-Chu justification.
 
 #### Type
 
-[WariChuJustificationType](scripting-constants.md#warichujustificationtype)
+[WariChuJustificationType](../scripting-constants#warichujustificationtype)
 
 ---
 

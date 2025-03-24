@@ -5,7 +5,7 @@ title: 你的第一个 Illustrator 脚本
 
 在任何编程语言中，传统的第一个项目都是显示消息“Hello World!”。在这个示例中，你将创建一个新的 Illustrator 文档，然后添加一个包含此消息的文本框。请按照以下步骤操作：
 
-有关如何找到 ExtendScript Toolkit 的信息，请参阅 [查看 JavaScript 对象模型](../introduction/viewingTheObjectModel.md#viewing-the-javascript-object-model)。
+有关如何找到 ExtendScript Toolkit 的信息，请参阅 [查看 JavaScript 对象模型](../../introduction/viewingTheObjectModel#viewing-the-javascript-object-model)。
 
 1. 使用任何文本编辑器（包括 Adobe^ InDesign® 或 ESTK），输入以下文本：
     ```javascript

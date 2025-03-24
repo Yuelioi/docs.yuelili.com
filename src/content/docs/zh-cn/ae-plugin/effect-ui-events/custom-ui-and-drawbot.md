@@ -31,10 +31,10 @@ Drawbot套件包括`DRAWBOT_DrawbotSuite`、`DRAWBOT_SupplierSuite`、`DRAWBOT_S
 
 为了重绘窗格的特定区域，我们建议以下步骤：
 
-1. 从效果中调用`PF_InvalidateRect`（来自[PF_AppSuite](../effect-details/useful-utility-functions.md#pf_appsuite)）。这将导致延迟显示重绘，并在下一个空闲时刻更新。此矩形与相关窗格的坐标相关。使用NULL矩形将更新整个窗格。
+1. 从效果中调用`PF_InvalidateRect`（来自[PF_AppSuite](../../effect-details/useful-utility-functions#pf_appsuite)）。这将导致延迟显示重绘，并在下一个空闲时刻更新。此矩形与相关窗格的坐标相关。使用NULL矩形将更新整个窗格。
 2. 将[event outflag](../PF_EventExtra)设置为`PF_EO_UPDATE_NOW`，这将在当前事件返回时立即触发指定窗格的绘制事件。
 
-如果效果需要同时更新多个窗口，则应设置`PF_OutFlag_REFRESH_UI`（来自[PF_OutFlags](../effect-basics/PF_OutData.md#pf_outflags)），这将导致整个ECW、comp和图层窗口的重绘。
+如果效果需要同时更新多个窗口，则应设置`PF_OutFlag_REFRESH_UI`（来自[PF_OutFlags](../../effect-basics/PF_OutData#pf_outflags)），这将导致整个ECW、comp和图层窗口的重绘。
 
 ---
 

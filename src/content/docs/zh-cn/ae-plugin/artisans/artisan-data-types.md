@@ -43,7 +43,7 @@ After Effects **不是** 3D 建模应用程序。用户在响应模式下工作�
 
 ## 注册 Artisan
 
-Artisan 是一个 AEGP，并且只有一个入口函数。Artisan 还必须注册自己的函数入口函数，并为此目的有一个特殊的回调。请参阅 [AEGP_RegisterSuites5](../aegps/aegp-suites.md#aegp_registersuites5) 中的 `AEGP_RegisterArtisan()`。
+Artisan 是一个 AEGP，并且只有一个入口函数。Artisan 还必须注册自己的函数入口函数，并为此目的有一个特殊的回调。请参阅 [AEGP_RegisterSuites5](../../aegps/aegp-suites#aegp_registersuites5) 中的 `AEGP_RegisterArtisan()`。
 
 此表显示了 Artisan 可以支持的函数，由 `PR_ArtisanEntryPoints` 定义：只有 `render_func` 是必需的。
 
@@ -236,7 +236,7 @@ Artisan 是一个 AEGP，并且只有一个入口函数。Artisan 还必须注�
 |                                         | <pre lang="cpp">AEGP_GetColorTransform(<br/>  const PR_RenderContextH  render_contextH,<br/>  A_Boolean                \*cms_onB,<br/>  A_u_long                 \*xform_keyLu,<br/>  void                      \*xformP);</pre>                |
 | `AEGP_GetCompShutterTime`               | 返回给定 `PR_RenderContextH` 的快门角度。                                                                                                                                                                                    |
 |                                         | <pre lang="cpp">AEGP_GetCompShutterTime(<br/>  PR_RenderContextH  render_contextH,<br/>  A_Time             \*shutter_time,<br/>  A_Time             \*shutter_dur);</pre>                                                                      |
-| `AEGP_MapCompToLayerTime`               | CC 新增功能。与 [AEGP_ConvertCompToLayerTime](../aegps/aegp-suites.md#aegp_layersuite9) 不同，此功能处理折叠或嵌套合成的时间重映射。                                                                                          |
+| `AEGP_MapCompToLayerTime`               | CC 新增功能。与 [AEGP_ConvertCompToLayerTime](../../aegps/aegp-suites#aegp_layersuite9) 不同，此功能处理折叠或嵌套合成的时间重映射。                                                                                          |
 |                                         | <pre lang="cpp">AEGP_MapCompToLayerTime(<br/>  PR_RenderContextH         render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  const A_Time              \*comp_timePT,<br/>  A_Time                    \*layer_timePT);</pre> |
 
 ---
@@ -441,6 +441,6 @@ After Effects 依赖工匠绘制 3D 图层句柄。如果您的工匠选择不�
 
 `AEGP_QueryXformGetTransformTime()` 和 `AEGP_QueryXformGetViewTime()` 都是 artisan 构建要渲染的场景表示所必需的。
 
-`AEGP_QueryXformGetTransformTime()` 获取变换的时间，然后传递给 [AEGP_CompSuite11](../aegps/aegp-suites.md#aegp_compsuite11) 中的 `AEGP_GetCompShutterFrameRange()`。
+`AEGP_QueryXformGetTransformTime()` 获取变换的时间，然后传递给 [AEGP_CompSuite11](../../aegps/aegp-suites#aegp_compsuite11) 中的 `AEGP_GetCompShutterFrameRange()`。
 
-`AEGP_QueryXformGetViewTime()` 获取视图的时间，用于调用 [AEGP_LayerSuite9](../aegps/aegp-suites.md#aegp_layersuite9) 中的 `AEGP_GetLayerToWorldXformFromView()`。
+`AEGP_QueryXformGetViewTime()` 获取视图的时间，用于调用 [AEGP_LayerSuite9](../../aegps/aegp-suites#aegp_layersuite9) 中的 `AEGP_GetLayerToWorldXformFromView()`。

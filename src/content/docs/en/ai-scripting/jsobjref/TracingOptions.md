@@ -316,7 +316,7 @@ The color mode for tracing.
 
 #### Type
 
-[TracingModeType](scripting-constants.md#tracingmodetype)
+[TracingModeType](../scripting-constants#tracingmodetype)
 
 ---
 
@@ -344,7 +344,7 @@ The view for previews of the raster image. (This setting is not captured in a pr
 
 #### Type
 
-[ViewRasterType](scripting-constants.md#viewrastertype)
+[ViewRasterType](../scripting-constants#viewrastertype)
 
 ---
 
@@ -358,7 +358,7 @@ The view for previews of the vector result. (This setting is not captured in a p
 
 #### Type
 
-[ViewVectorType](scripting-constants.md#viewvectortype)
+[ViewVectorType](../scripting-constants#viewvectortype)
 
 ---
 

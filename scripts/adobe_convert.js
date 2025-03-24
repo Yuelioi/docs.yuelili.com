@@ -33,9 +33,15 @@ function processMarkdownFiles(dirPath, parentDepth = 0) {
         }
 
         // 更新链接
-        updatedContent = updatedContent.replace(/\[([^\]]+)\]\(([^)]+)\.md\)/g, (match, text, link) => {
-          const adjustedLink = "../".repeat(parentDepth) + link;
-          return `[${text}](${adjustedLink})`;
+        updatedContent = updatedContent.replace(/(\]\()([^)]+?)(\.md)(?=[#)?]|$)([^)]*\))/g, (match, pre, link, md, suffix) => {
+          // console.log(pre, "__", link, "___", suffix);
+          // 如果不是http 并且不以.开头 不以../开头
+          if ((!link.startsWith(".") && !link.startsWith("http")) || link.startsWith("../")) {
+            return pre + "../" + link.toLowerCase() + suffix;
+          }
+
+          // 以./开头
+          return pre + "." + link.toLowerCase() + suffix;
         });
 
         // 处理annotations
@@ -126,7 +132,7 @@ const dataObj = JSON.parse(data);
 // const aes = "E:\\Scripting\\projects\\docs.yuelili.com\\src\\content\\docs\\en\\ae-scripting";
 // const jst = "E:\\Scripting\\projects\\docs.yuelili.com\\src\\content\\docs\\en\\javascript-tools";
 
-// const test = "E:\\Scripting\\projects\\docs.yuelili.com\\src\\content\\docs\\en\\ai-scripting";
+const test = "E:\\Scripting\\projects\\docs.yuelili.com\\src\\content\\docs\\en";
 
 // const targetDirectories = [aee, aep, aes, jst];
 const targetDirectories = [test];

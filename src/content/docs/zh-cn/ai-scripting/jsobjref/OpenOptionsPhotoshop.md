@@ -7,7 +7,7 @@ title: OpenOptionsPhotoshop
 
 #### 描述
 
-用于打开 Photoshop 文档的选项，与 [Application.open()](Application.md#applicationopen) 方法一起使用。
+用于打开 Photoshop 文档的选项，与 [Application.open()](../Application#applicationopen) 方法一起使用。
 
 ---
 

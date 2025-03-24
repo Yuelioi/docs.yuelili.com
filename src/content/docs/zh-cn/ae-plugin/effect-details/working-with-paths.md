@@ -11,7 +11,7 @@ title: 处理路径
 
 ## 操作路径数据
 
-您还可以使用 [AEGP_MaskOutlineSuite3](../aegps/aegp-suites.md#aegp_maskoutlinesuite3) 来操作路径。请参阅 [AEGP 套件的作弊效果用法](../../aegps/cheating-effect-usage-of-aegp-suites)。路径参数被视为不透明的数据块；必须使用获取和设置函数来访问和操作它们。与图层参数一样，访问它们的特效必须检查它们的状态（并返回！）。
+您还可以使用 [AEGP_MaskOutlineSuite3](../../aegps/aegp-suites#aegp_maskoutlinesuite3) 来操作路径。请参阅 [AEGP 套件的作弊效果用法](../../aegps/cheating-effect-usage-of-aegp-suites)。路径参数被视为不透明的数据块；必须使用获取和设置函数来访问和操作它们。与图层参数一样，访问它们的特效必须检查它们的状态（并返回！）。
 
 ---
 

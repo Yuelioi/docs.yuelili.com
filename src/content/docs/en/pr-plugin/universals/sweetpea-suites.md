@@ -16,31 +16,31 @@ Below is a table of all suites available in Premiere Pro:
 | Accelerated Render Invocation Suite                                               | Exporters                                   |
 | [App Info Suite](#app-info-suite)                                                 | All                                         |
 | [Application Settings Suite](#application-settings-suite)                         | All                                         |
-| [Async File Reader Suite](../importers/suites.md#async-file-reader-suite)         | Importers                                   |
+| [Async File Reader Suite](../../importers/suites#async-file-reader-suite)         | Importers                                   |
 | Async Operation Suite                                                             | All                                         |
 | [Audio Suite](#audio-suite)                                                       | Importers, Exporters                        |
 | [Captioning Suite](#captioning-suite)                                             | Device Controllers, Exporters, Transmitters |
 | [Clip Render Suite](#clip-render-suite)                                           | Exporters                                   |
-| [Deferred Processing Suite](../importers/suites.md#deferred-processing-suite)     | Importers                                   |
+| [Deferred Processing Suite](../../importers/suites#deferred-processing-suite)     | Importers                                   |
 | [Error Suite](#error-suite)                                                       | All except Exporters starting in CS6        |
-| [Export File Suite](../exporters/suites.md#export-file-suite)                     | Exporters                                   |
-| [Export Info Suite](../exporters/suites.md#export-info-suite)                     | Exporters                                   |
-| [Export Param Suite](../exporters/suites.md#export-param-suite)                   | Exporters                                   |
-| [Export Progress Suite](../exporters/suites.md#export-progress-suite)             | Exporters                                   |
-| [Export Standard Param Suite](../exporters/suites.md#export-standard-param-suite) | Exporters                                   |
-| [Exporter Utility Suite](../exporters/suites.md#exporter-utility-suite)           | Exporters                                   |
+| [Export File Suite](../../exporters/suites#export-file-suite)                     | Exporters                                   |
+| [Export Info Suite](../../exporters/suites#export-info-suite)                     | Exporters                                   |
+| [Export Param Suite](../../exporters/suites#export-param-suite)                   | Exporters                                   |
+| [Export Progress Suite](../../exporters/suites#export-progress-suite)             | Exporters                                   |
+| [Export Standard Param Suite](../../exporters/suites#export-standard-param-suite) | Exporters                                   |
+| [Exporter Utility Suite](../../exporters/suites#exporter-utility-suite)           | Exporters                                   |
 | [File Registration Suite](#file-registration-suite)                               | Importers, Transitions, Video Filters       |
 | [Flash Cue Marker Data Suite](#flash-cue-marker-data-suite)                       | Exporters                                   |
-| [GPU Device Suite](../gpu-effects-transitions/suites.md#gpu-device-suite)         | GPU Effects and Transitions                 |
+| [GPU Device Suite](../../gpu-effects-transitions/suites#gpu-device-suite)         | GPU Effects and Transitions                 |
 | [Image Processing Suite](#image-processing-suite)                                 | All                                         |
 | Importer File Manager Suite                                                       | Importers                                   |
 | [Legacy Callback Suites](../legacy-callback-suites)                               | All                                         |
 | [Marker Suite](#marker-suite)                                                     | Exporters                                   |
 | Media Accelerator Suite                                                           | Importers                                   |
 | [Memory Manager Suite](#memory-manager-suite)                                     | All                                         |
-| [Palette Suite](../exporters/suites.md#palette-suite)                             | Exporters                                   |
+| [Palette Suite](../../exporters/suites#palette-suite)                             | Exporters                                   |
 | [Pixel Format Suite](#pixel-format-suite)                                         | All                                         |
-| [Playmod Audio Suite](../transmitters/suites.md#playmod-audio-suite)              | Transmitters                                |
+| [Playmod Audio Suite](../../transmitters/suites#playmod-audio-suite)              | Transmitters                                |
 | Playmod Device Control Suite                                                      | None (Deprecated)                           |
 | [Playmod Overlay Suite](#playmod-overlay-suite)                                   | Transmitters                                |
 | Playmod Render Suite                                                              | None (Deprecated)                           |
@@ -52,14 +52,14 @@ Below is a table of all suites available in Premiere Pro:
 | Quality Suite                                                                     | None (Deprecated)                           |
 | [RollCrawl Suite](#rollcrawl-suite)                                               | Exporters                                   |
 | Scope Render Suite                                                                | None (Deprecated)                           |
-| [Sequence Audio Suite](../exporters/suites.md#sequence-audio-suite)               | Exporters                                   |
+| [Sequence Audio Suite](../../exporters/suites#sequence-audio-suite)               | Exporters                                   |
 | [Sequence Info Suite](#sequence-info-suite)                                       | Importers, Transitions, Video Filters       |
-| [Sequence Render Suite](../exporters/suites.md#sequence-render-suite)             | Exporters                                   |
+| [Sequence Render Suite](../../exporters/suites#sequence-render-suite)             | Exporters                                   |
 | Stock Image Suite                                                                 | None (Deprecated)                           |
 | [String Suite](#string-suite)                                                     | All                                         |
 | [Threaded Work Suite](#threaded-work-suite)                                       | All                                         |
 | [Time Suite](#time-suite)                                                         | All                                         |
-| [Transmit Invocation Suite](../transmitters/suites.md#transmit-invocation-suite)  | All                                         |
+| [Transmit Invocation Suite](../../transmitters/suites#transmit-invocation-suite)  | All                                         |
 | [Video Segment Render Suite](#video-segment-render-suite)                         | Exporters                                   |
 | [Video Segment Suite](#video-segment-suite)                                       | Exporters                                   |
 | [Window Suite](#window-suite)                                                     | All                                         |
@@ -148,7 +148,7 @@ An exporter can use this suite to request frames from the renderer in a compress
 
 Uses a single callback for errors, warnings, and info. This callback will activate a flashing icon in the lower left-hand corner of the main application window, which when clicked, will open up the new Events Window containing the error information. See PrSDKErrorSuite.h.
 
-Starting in version 3 of the suite, introduced in CS4, the suite supports UTF-16 strings. Starting in CS6, exporters should use the [Exporter Utility Suite](../exporters/suites.md#exporter-utility-suite) to report events.
+Starting in version 3 of the suite, introduced in CS4, the suite supports UTF-16 strings. Starting in CS6, exporters should use the [Exporter Utility Suite](../../exporters/suites#exporter-utility-suite) to report events.
 
 ---
 
@@ -643,4 +643,4 @@ See PrSDKVideoSegmentSuite.h and PrSDKVideoSegmentProperties.h.
 
 ## Window Suite
 
-New in CS4. This is the new preferred way to get the handle of the mainframe window, especially for exporters, who don't have access to the legacy [piSuites](legacy-callback-suites.md#pisuites).
+New in CS4. This is the new preferred way to get the handle of the mainframe window, especially for exporters, who don't have access to the legacy [piSuites](../legacy-callback-suites#pisuites).

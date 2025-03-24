@@ -97,7 +97,7 @@ The ink type.
 
 #### Type
 
-[InkType](scripting-constants.md#inktype)
+[InkType](../scripting-constants#inktype)
 
 ---
 
@@ -111,7 +111,7 @@ The ink printing status.
 
 #### Type
 
-[InkPrintStatus](scripting-constants.md#inkprintstatus)
+[InkPrintStatus](../scripting-constants#inkprintstatus)
 
 ---
 
@@ -125,7 +125,7 @@ The trapping type.
 
 #### Type
 
-[TrappingType](scripting-constants.md#trappingtype)
+[TrappingType](../scripting-constants#trappingtype)
 
 ---
 

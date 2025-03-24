@@ -29,7 +29,7 @@ The variable's type.
 
 #### Type
 
-[VariableKind](scripting-constants.md#variablekind)
+[VariableKind](../scripting-constants#variablekind)
 
 ---
 

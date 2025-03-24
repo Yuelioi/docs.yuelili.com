@@ -620,7 +620,7 @@ Makes the [Sequence object](../../sequence/sequence) with the provided sequence 
 
 |  Parameter   |                               Type                                |                Description                 |
 | ------------ | ----------------------------------------------------------------- | ------------------------------------------ |
-| `sequenceID` | [Sequence.sequenceID](../sequence/sequence.md#sequencesequenceid) | A valid sequence ID that should be opened. |
+| `sequenceID` | [Sequence.sequenceID](../../sequence/sequence#sequencesequenceid) | A valid sequence ID that should be opened. |
 
 #### Returns
 

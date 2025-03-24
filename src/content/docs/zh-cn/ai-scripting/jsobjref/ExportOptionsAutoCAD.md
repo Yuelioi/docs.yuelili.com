@@ -7,7 +7,7 @@ title: ExportOptionsAutoCAD
 
 #### 描述
 
-用于将文档导出为 AutoCAD 文件的选项，与 [Document.exportFile()](Document.md#documentexportfile) 方法一起使用。
+用于将文档导出为 AutoCAD 文件的选项，与 [Document.exportFile()](../Document#documentexportfile) 方法一起使用。
 所有属性都是可选的。
 
 导出文档时，文件扩展名会自动附加。您不应在文件规范中包含任何文件扩展名。
@@ -44,7 +44,7 @@ title: ExportOptionsAutoCAD
 
 #### 类型
 
-[AutoCADColors](scripting-constants.md#autocadcolors)
+[AutoCADColors](../scripting-constants#autocadcolors)
 
 ---
 
@@ -76,7 +76,7 @@ title: ExportOptionsAutoCAD
 
 #### 类型
 
-[AutoCADExportFileFormat](scripting-constants.md#autocadexportfileformat)
+[AutoCADExportFileFormat](../scripting-constants#autocadexportfileformat)
 
 ---
 
@@ -92,7 +92,7 @@ title: ExportOptionsAutoCAD
 
 #### 类型
 
-[AutoCADExportOption](scripting-constants.md#autocadexportoption)
+[AutoCADExportOption](../scripting-constants#autocadexportoption)
 
 ---
 
@@ -122,7 +122,7 @@ title: ExportOptionsAutoCAD
 
 #### 类型
 
-[AutoCADRasterFormat](scripting-constants.md#autocadrasterformat)
+[AutoCADRasterFormat](../scripting-constants#autocadrasterformat)
 
 ---
 
@@ -166,7 +166,7 @@ title: ExportOptionsAutoCAD
 
 #### 类型
 
-[AutoCADUnit](scripting-constants.md#autocadunit)
+[AutoCADUnit](../scripting-constants#autocadunit)
 
 ---
 
@@ -198,6 +198,6 @@ title: ExportOptionsAutoCAD
 
 #### 类型
 
-[AutoCADCompatibility](scripting-constants.md#autocadcompatibility)
+[AutoCADCompatibility](../scripting-constants#autocadcompatibility)
 
 ---

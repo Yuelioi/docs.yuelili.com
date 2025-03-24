@@ -7,7 +7,7 @@ title: markerkey
 
 You can access values for composition markers and layer markers using the same methods. Access layer markers through the thisLayer.marker object; access composition markers through the [Marker Property](.././marker-property) object.
 
-For the purpose of expressions, markers are a special type of [Key](.././key) object, so you can use methods such as [`nearestKey(time)`](./property.md#nearestkey) to access markers, and markers also have `time` and `index` attributes. The `index` attribute is not the number (name) of the marker; it is the keyframe *index* number, representing the order of the marker in the time ruler.
+For the purpose of expressions, markers are a special type of [Key](.././key) object, so you can use methods such as [`nearestKey(time)`](../property#nearestkey) to access markers, and markers also have `time` and `index` attributes. The `index` attribute is not the number (name) of the marker; it is the keyframe *index* number, representing the order of the marker in the time ruler.
 
 Expressions have access to all the values for a marker that you can set in the Composition Marker or Layer Marker dialog box.
 

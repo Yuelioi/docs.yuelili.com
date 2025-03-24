@@ -53,14 +53,14 @@ dlg.show();
 
 您的脚本可以访问这些值，并且（如果不使用自动布局）可以按如下方式设置它们：
 
-- 窗口的 `location` 由包含左上角（原点）坐标（`x` 和 `y`）的 [Point](./size-and-location-objects.md#point) 对象定义，坐标在屏幕坐标系中指定。窗口或其他容器内元素的位置定义为容器坐标系中指定的原点。也就是说，`x` 和 `y` 值是相对于容器的原点的。
+- 窗口的 `location` 由包含左上角（原点）坐标（`x` 和 `y`）的 [Point](../size-and-location-objects#point) 对象定义，坐标在屏幕坐标系中指定。窗口或其他容器内元素的位置定义为容器坐标系中指定的原点。也就是说，`x` 和 `y` 值是相对于容器的原点的。
     - 以下示例显示了将现有窗口的内容区域放置在屏幕坐标 [10, 50] 处的等效方法：
         ```javascript
         win.location = [ 10, 50 ];
         win.location = { x: 10, y: 50 };
         win.location = "x:10, y:50";
         ```
-- 元素区域的 `size` 由包含 `width` 和 `height`（以像素为单位）的 [Dimension](./size-and-location-objects.md#dimension) 对象定义。
+- 元素区域的 `size` 由包含 `width` 和 `height`（以像素为单位）的 [Dimension](../size-and-location-objects#dimension) 对象定义。
     - 以下示例显示了将现有窗口的宽度和高度更改为 200 和 100 的等效方法：
         ```javascript
         win.size = [ 200, 100 ];
@@ -112,7 +112,7 @@ dlg.btnPnl.testBtn = dlg.btnPnl.add("button", undefined, "Test");
 
 ### 创建属性
 
-某些元素类型具有只能在创建元素时指定的属性。这些不是元素的常规属性，因为在元素的生命周期内无法更改它们，并且它们只需要一次。对于这些元素类型，您可以向 `add` 方法提供可选的创建属性参数。此参数是一个对象，具有一个或多个控制元素外观的属性，或特殊功能，例如编辑文本元素是否可编辑或只读。有关详细信息，请参阅 [控件对象构造函数](control-objects.md#control-object-constructors)。
+某些元素类型具有只能在创建元素时指定的属性。这些不是元素的常规属性，因为在元素的生命周期内无法更改它们，并且它们只需要一次。对于这些元素类型，您可以向 `add` 方法提供可选的创建属性参数。此参数是一个对象，具有一个或多个控制元素外观的属性，或特殊功能，例如编辑文本元素是否可编辑或只读。有关详细信息，请参阅 [控件对象构造函数](../control-objects#control-object-constructors)。
 
 您还可以使用资源规范格式为新对象指定创建属性；有关详细信息，请参阅 [资源规范](../resource-specifications)。
 

@@ -43,6 +43,6 @@ After Effects 使用比自定义 UI 更丰富的消息流来管理参数。
 
 插件将颜色值存储在序列数据中，并取消渲染，请求重新绘制受影响的参数。
 
-最后，在绘制期间，插件使用 [AEGP_KeyframeSuite](../aegps/aegp-suites.md#aegp_keyframesuite3) 将其颜色参数流中添加适当的关键帧。
+最后，在绘制期间，插件使用 [AEGP_KeyframeSuite](../../aegps/aegp-suites#aegp_keyframesuite3) 将其颜色参数流中添加适当的关键帧。
 
 是的，这意味着效果需要 [Cheating Effect Usage of AEGP Suites](../../aegps/cheating-effect-usage-of-aegp-suites) 并使用 AEGP API。

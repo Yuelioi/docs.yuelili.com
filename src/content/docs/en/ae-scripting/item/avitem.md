@@ -24,7 +24,7 @@ CompItems and FootageItems, while logical descendants of AVItem, are not *really
 :::
 
 
-See [Javascript Classes](../introduction/javascript.md#javascript-classes) and [After Effects Class Hierarchy](../../introduction/classhierarchy) for more info.
+See [Javascript Classes](../../introduction/javascript#javascript-classes) and [After Effects Class Hierarchy](../../introduction/classhierarchy) for more info.
 
 ---
 
@@ -53,7 +53,7 @@ Floating-point value, in the range `[0.0..10800.0]`; read/write for a [CompItem]
 
 #### Description
 
-When `true`, the AVItem is a placeholder, or represents footage with a source file that cannot be found. In this case, the path of the missing source file is in the `missingFootagePath` attribute of the footage item's source-file object. See [FootageItem.mainSource](footageitem.md#footageitemmainsource) and [FileSource.missingFootagePath](../sources/filesource.md#filesourcemissingfootagepath).
+When `true`, the AVItem is a placeholder, or represents footage with a source file that cannot be found. In this case, the path of the missing source file is in the `missingFootagePath` attribute of the footage item's source-file object. See [FootageItem.mainSource](../footageitem#footageitemmainsource) and [FileSource.missingFootagePath](../../sources/filesource#filesourcemissingfootagepath).
 
 #### Type
 
@@ -154,7 +154,7 @@ This functionality was added in After Effects 18.0 (2021)
 
 #### Description
 
-Test whether the AVItem can be used as an alternate source when calling [Property.setAlternateSource()](../property/property.md#propertysetalternatesource).
+Test whether the AVItem can be used as an alternate source when calling [Property.setAlternateSource()](../../property/property#propertysetalternatesource).
 
 Returns `true` if the item can be used, or otherwise `false`.
 
@@ -235,7 +235,7 @@ The FootageSource being used as a proxy. The attribute is read-only; to change i
 
 #### Description
 
-The current time of the item when it is being previewed directly from the Project panel. This value is a number of seconds. Use the global method [timeToCurrentFormat()](../general/globals.md#timetocurrentformat) to convert it to a string value that expresses the time in terms of frames. It is an error to set this value for a FootageItem whose `mainSource` is still (`item.mainSource.isStill` is `true`).
+The current time of the item when it is being previewed directly from the Project panel. This value is a number of seconds. Use the global method [timeToCurrentFormat()](../../general/globals#timetocurrentformat) to convert it to a string value that expresses the time in terms of frames. It is an error to set this value for a FootageItem whose `mainSource` is still (`item.mainSource.isStill` is `true`).
 
 #### Type
 

@@ -7,11 +7,11 @@ title: TracingObject
 
 #### Description
 
-A tracing object, which associates source raster art item with a vector-art plug-in group created by tracing. Scripts can initiate tracing using [PlacedItem.trace](PlacedItem.md#placeditemtrace) or [RasterItem.trace()](RasterItem.md#rasteritemtrace).
+A tracing object, which associates source raster art item with a vector-art plug-in group created by tracing. Scripts can initiate tracing using [PlacedItem.trace](../placeditem#placeditemtrace) or [RasterItem.trace()](../rasteritem#rasteritemtrace).
 
 The resulting PluginItem object represents the vector art group, and has this object in its tracing property.
 
-A script can force the tracing operation by calling [Application.redraw()](Application.md#applicationredraw). The operation is asynchronous, so a script should call `redraw` after creating the tracing object, but before accessing its properties or expanding the tracing to convert it to an art item group.
+A script can force the tracing operation by calling [Application.redraw()](../application#applicationredraw). The operation is asynchronous, so a script should call `redraw` after creating the tracing object, but before accessing its properties or expanding the tracing to convert it to an art item group.
 
 The read-only properties that describe the tracing result have valid values only after the first tracing operation completes. A value of 0 indicates that the operation has not yet been completed.
 

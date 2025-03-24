@@ -33,7 +33,7 @@ Illustrator 界面包含一个脚本菜单（文件 > 脚本），可以快速�
 
 选择“其他脚本”会显示一个浏览对话框，您可以使用它导航到脚本文件。当您选择文件时，脚本将被执行。
 
-浏览对话框中仅显示支持的文件类型的文件。有关详细信息，请参阅[Adobe Illustrator CC 中的脚本语言支持](./scriptingLanguageSupport.md#scripting-language-support-in-adobe-illustrator-cc)。
+浏览对话框中仅显示支持的文件类型的文件。有关详细信息，请参阅[Adobe Illustrator CC 中的脚本语言支持](../scriptingLanguageSupport#scripting-language-support-in-adobe-illustrator-cc)。
 
 ---
 

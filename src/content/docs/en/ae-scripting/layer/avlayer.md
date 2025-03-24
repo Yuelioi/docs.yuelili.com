@@ -714,9 +714,9 @@ Media Replacement layers are recognized as AVLayers with an [AVLayer.source](#av
 
 The AVLayer needs to comply with the restrictions below in order to be treated as a Media Replacement layer:
 
-- [Layer.hasVideo](../layer/layer.md#layerhasvideo) should return `true`.
+- [Layer.hasVideo](../../layer/layer#layerhasvideo) should return `true`.
 - [AVLayer.adjustmentLayer](#avlayeradjustmentlayer) should return `false`.
-- [Layer.nullLayer](../layer/layer.md#layernulllayer) should return `false`.
+- [Layer.nullLayer](../../layer/layer#layernulllayer) should return `false`.
 - If the [AVLayer.source](#avlayersource) is a [FootageItem object](../../item/footageitem), then FootageItem.FootageSource should not be a [SolidSource object](../../sources/solidsource).
 - If the [AVLayer.source](#avlayersource) is a [FootageItem object](../../item/footageitem) and the FootageItem.FootageSource is a [FileSource object](../../sources/filesource) then that FileSource should not point to a non-media file e.g. a JSX script file.
 
@@ -835,7 +835,7 @@ If this method is performed on a null layer, the layers `isNull` attribute is no
 | `newSource`      | [AVItem object](../../item/avitem) | The new source AVItem object.                                                                                                                                                                                            |
 | `fixExpressions` | Boolean                            | `true` to adjust expressions for the new source, otherwise `false`.                                                                                                                                                      |
 |                  |                                    | !!! warning                                                                                                                                                                                                              |
-|                  |                                    |      This feature can be resource-intensive; if replacing a large amount of footage, do this only at the end of the operation. See also [Project.autoFixExpressions()](../general/project.md#projectautofixexpressions). |
+|                  |                                    |      This feature can be resource-intensive; if replacing a large amount of footage, do this only at the end of the operation. See also [Project.autoFixExpressions()](../../general/project#projectautofixexpressions). |
 
 #### Returns
 

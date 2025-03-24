@@ -39,7 +39,7 @@ The blend mode used when compositing an object.
 
 #### Type
 
-[BlendModes](scripting-constants.md#blendmodes)
+[BlendModes](../scripting-constants#blendmodes)
 
 ---
 
@@ -251,7 +251,7 @@ The polarity of the path.
 
 #### Type
 
-[PolarityValues](scripting-constants.md#polarityvalues)
+[PolarityValues](../scripting-constants#polarityvalues)
 
 ---
 
@@ -307,7 +307,7 @@ The type of line capping.
 
 #### Type
 
-[StrokeCap](scripting-constants.md#strokecap)
+[StrokeCap](../scripting-constants#strokecap)
 
 ---
 
@@ -377,7 +377,7 @@ Type of joints for the path.
 
 #### Type
 
-[StrokeJoin](scripting-constants.md#strokejoin)
+[StrokeJoin](../scripting-constants#strokejoin)
 
 ---
 

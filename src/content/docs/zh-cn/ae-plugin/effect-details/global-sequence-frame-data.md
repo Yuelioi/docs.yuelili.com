@@ -5,9 +5,9 @@ title: 全局、序列和帧数据
 
 After Effects 允许插件在三个范围内存储数据：全局、序列和帧。请仔细考虑信息的存储位置；选择不当可能会影响性能，或使您的插件对用户造成困惑。
 
-使用全局数据存储所有效果实例共有的信息：静态变量和数据、位图、指向其他 DLL 或外部应用程序的指针。如果您的效果支持多帧渲染，任何静态或全局变量必须避免竞态条件（有关更多信息，请参见[效果线程安全意味着什么？](multi-frame-rendering-in-ae.md#what-does-it-mean-for-an-effect-to-be-thread-safe)）。
+使用全局数据存储所有效果实例共有的信息：静态变量和数据、位图、指向其他 DLL 或外部应用程序的指针。如果您的效果支持多帧渲染，任何静态或全局变量必须避免竞态条件（有关更多信息，请参见[效果线程安全意味着什么？](../multi-frame-rendering-in-ae#what-does-it-mean-for-an-effect-to-be-thread-safe)）。
 
-将特定于插件实例的任何内容（UI 设置、文本字符串以及未存储在参数中的任何自定义数据）存储在序列数据中或新的[多帧渲染计算缓存](multi-frame-rendering-in-ae.md#compute-cache-for-multi-frame-rendering)中。
+将特定于插件实例的任何内容（UI 设置、文本字符串以及未存储在参数中的任何自定义数据）存储在序列数据中或新的[多帧渲染计算缓存](../multi-frame-rendering-in-ae#compute-cache-for-multi-frame-rendering)中。
 
 帧数据用于存储特定于渲染给定帧的信息。这种做法已经不再常见，因为大多数机器能够一次性将整个帧加载到内存中。当然，您的 IMAX 生成用户仍然会欣赏您所做的任何优化。
 
@@ -27,9 +27,9 @@ After Effects 将序列数据保存在项目文件中，但不保存全局或帧
 
 对于跨时间进行模拟的效果，序列数据的仔细验证非常重要，其中帧 N 依赖于帧 N-1，并且您在序列数据中使用计算数据的缓存。如果更改了参数，某些计算数据可能不再有效，但在每次更改后盲目地重新计算所有内容也是浪费的。
 
-当被要求渲染帧 N 时，假设您已经计算了到帧 N-1 的缓存数据，调用 `PF_GetCurrentState()` / `PF_AreStatesIdentical()`（来自 [PF_ParamUtilSuite3](parameter-supervision.md#pf_paramutilsuite3)）以查看在当前参数设置下，计算数据的缓存是否仍然有效。
+当被要求渲染帧 N 时，假设您已经计算了到帧 N-1 的缓存数据，调用 `PF_GetCurrentState()` / `PF_AreStatesIdentical()`（来自 [PF_ParamUtilSuite3](../parameter-supervision#pf_paramutilsuite3)）以查看在当前参数设置下，计算数据的缓存是否仍然有效。
 
-所有参数的状态（除了设置了 [PF_ParamFlag_EXCLUDE_FROM_HAVE_INPUTS_CHANGED](../effect-basics/PF_ParamDef.md#parameter-flags) 的参数），包括图层参数（包括 [param[0]](../effect-basics/PF_ParamDef.md#param-zero)）在传递的时间跨度内都会被检查。
+所有参数的状态（除了设置了 [PF_ParamFlag_EXCLUDE_FROM_HAVE_INPUTS_CHANGED](../../effect-basics/PF_ParamDef#parameter-flags) 的参数），包括图层参数（包括 [param[0]](../../effect-basics/PF_ParamDef#param-zero)）在传递的时间跨度内都会被检查。
 
 这是高效完成的，因为更改跟踪是通过时间戳完成的。
 
@@ -43,13 +43,13 @@ After Effects 将序列数据保存在项目文件中，但不保存全局或帧
 
 如果您的序列数据引用外部内存（通过指针或句柄），您必须对数据进行扁平化和反扁平化处理以实现磁盘安全存储。这类似于创建您自己的微型文件格式。
 
-在收到 [PF_Cmd_SEQUENCE_FLATTEN](../effect-basics/command-selectors.md#sequence-selectors) 时，将指针引用的数据放入一个连续的块中，以便稍后恢复旧结构。
+在收到 [PF_Cmd_SEQUENCE_FLATTEN](../../effect-basics/command-selectors#sequence-selectors) 时，将指针引用的数据放入一个连续的块中，以便稍后恢复旧结构。
 
 如果您的序列数据包含指向 long 的指针，请分配 4 个字节来存储扁平化数据。您必须处理平台特定的字节顺序。
 
 请记住，您的用户（那些购买了两份您的插件的用户）可能希望同一个项目在 macOS 和 Windows 上都能工作。
 
-After Effects 在重新加载数据时发送 [PF_Cmd_SEQUENCE_RESETUP](../effect-basics/command-selectors.md#sequence-selectors)，无论是扁平化还是非扁平化数据。
+After Effects 在重新加载数据时发送 [PF_Cmd_SEQUENCE_RESETUP](../../effect-basics/command-selectors#sequence-selectors)，无论是扁平化还是非扁平化数据。
 
 在两种结构中的公共偏移处使用标志来指示数据的状态。
 
@@ -71,7 +71,7 @@ typedef struct {
 
 ## 调整序列数据大小
 
-在 [PF_Cmd_SEQUENCE_SETUP](../effect-basics/command-selectors.md#sequence-selectors) 期间，为特定于效果实例的数据分配一个句柄。
+在 [PF_Cmd_SEQUENCE_SETUP](../../effect-basics/command-selectors#sequence-selectors) 期间，为特定于效果实例的数据分配一个句柄。
 
 您可以在任何选择器期间修改序列数据的内容，但不能修改其大小。
 

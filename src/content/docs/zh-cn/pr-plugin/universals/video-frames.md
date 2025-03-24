@@ -3,7 +3,7 @@ title: 视频帧
 ---
 # 视频帧
 
-Premiere 将每个视频帧存储在 PPix 结构中。PPixHand 是 PPix 的句柄。不应直接访问此结构，而应使用各种套件（如 [PPix 套件](sweetpea-suites.md#ppix-suite)、[PPix 2 套件](sweetpea-suites.md#ppix-2-suite)、[PPix Creator 套件](sweetpea-suites.md#ppix-creator-suite) 和 [PPix Creator 2 套件](sweetpea-suites.md#ppix-creator-2-suite)）来操作它。
+Premiere 将每个视频帧存储在 PPix 结构中。PPixHand 是 PPix 的句柄。不应直接访问此结构，而应使用各种套件（如 [PPix 套件](../sweetpea-suites#ppix-suite)、[PPix 2 套件](../sweetpea-suites#ppix-2-suite)、[PPix Creator 套件](../sweetpea-suites#ppix-creator-suite) 和 [PPix Creator 2 套件](../sweetpea-suites#ppix-creator-2-suite)）来操作它。
 
 PPix 远不仅仅是一个无聊的 RGB 数据缓冲区，它可以包含有关视频帧的大量信息，包括：矩形边界（宽度、高度）、像素宽高比、像素格式、场优势、Alpha 解释、色彩空间、伽马编码等。
 

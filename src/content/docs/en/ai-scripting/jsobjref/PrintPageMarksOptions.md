@@ -85,7 +85,7 @@ Default: `PageMarksType.Roman`
 
 #### Type
 
-[PageMarksTypes](scripting-constants.md#pagemarkstypes)
+[PageMarksTypes](../scripting-constants#pagemarkstypes)
 
 ---
 

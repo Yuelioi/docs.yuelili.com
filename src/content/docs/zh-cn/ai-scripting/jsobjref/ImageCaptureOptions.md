@@ -7,7 +7,7 @@ title: ImageCaptureOptions
 
 #### 描述
 
-图像捕获的选项，与 [Document.imageCapture()](Document.md#documentimagecapture) 方法一起使用。所有属性都是可选的。
+图像捕获的选项，与 [Document.imageCapture()](../Document#documentimagecapture) 方法一起使用。所有属性都是可选的。
 
 ---
 

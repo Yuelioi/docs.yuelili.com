@@ -7,7 +7,7 @@ title: property
 
 #### Description
 
-The Property object contains value, keyframe, and expression information about a particular AE property of a layer. An AE property is a value, often animatable, of an effect, mask, or transform within an individual layer. For examples of how to access properties, see [PropertyBase object](../propertybase) and [PropertyGroup.property()](propertygroup.md#propertygroupproperty).
+The Property object contains value, keyframe, and expression information about a particular AE property of a layer. An AE property is a value, often animatable, of an effect, mask, or transform within an individual layer. For examples of how to access properties, see [PropertyBase object](../propertybase) and [PropertyGroup.property()](../propertygroup#propertygroupproperty).
 
 :::info
 Property is a subclass of [PropertyBase](../propertybase). All methods and attributes of PropertyBase, in addition to those listed below, are available when working with Property.
@@ -136,7 +136,7 @@ Use [Property.canSetAlternateSource](#propertycansetalternatesource) to determin
 
 All Media Replacement Layers have an alternate source item that can be set.
 
-A layer is "marked" for media replacement when the layer is added to the Essential Graphics Panel (see [AVLayer.addToMotionGraphicsTemplate()](../layer/avlayer.md#avlayeraddtomotiongraphicstemplate) or [AVLayer.addToMotionGraphicsTemplateAs()](../layer/avlayer.md#avlayeraddtomotiongraphicstemplateas)).
+A layer is "marked" for media replacement when the layer is added to the Essential Graphics Panel (see [AVLayer.addToMotionGraphicsTemplate()](../../layer/avlayer#avlayeraddtomotiongraphicstemplate) or [AVLayer.addToMotionGraphicsTemplateAs()](../../layer/avlayer#avlayeraddtomotiongraphicstemplateas)).
 
 - If present, the render workflow will pick up the alternate source while rendering the layer.
 - If the alternate source for the layer is not set, then the source layer of the Media Replacement control is used for rendering (this is the normal workflow).
@@ -1075,7 +1075,7 @@ Finds the specified keyframe or marker and returns the time at which it occurs. 
 |    Parameter    |                 Type                 |                                                       Description                                                        |
 | --------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
 | `keyIndex`      | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
-| `markerComment` | String                               | The comment attached to a marker (see [MarkerValue.comment](../other/markervalue.md#markervaluecomment) attribute).      |
+| `markerComment` | String                               | The comment attached to a marker (see [MarkerValue.comment](../../other/markervalue#markervaluecomment) attribute).      |
 
 #### Returns
 
@@ -1099,7 +1099,7 @@ Finds the specified keyframe or marker and returns its current value. If no keyf
 |    Parameter    |                 Type                 |                                                       Description                                                        |
 | --------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
 | `keyIndex`      | Integer, in the range `[1..numKeys]` | The index for the keyframe, as returned by the [addKey](#propertyaddkey) or [nearestKeyIndex](#propertynearestkeyindex). |
-| `markerComment` | String                               | The comment attached to a marker (see [MarkerValue.comment](../other/markervalue.md#markervaluecomment) attribute).      |
+| `markerComment` | String                               | The comment attached to a marker (see [MarkerValue.comment](../../other/markervalue#markervaluecomment) attribute).      |
 
 #### Returns
 
@@ -1162,7 +1162,7 @@ Set the alternate source for this property.
 
 The Property object and the input parameters for the AVItem that is being called needs to be Media Replacement compatible for the action to go through.
 
-- Use the [AVItem.isMediaReplacementCompatible](../item/avitem.md#avitemismediareplacementcompatible) method to test whether the AVItem can be used as an alternate source for Media Replacement.
+- Use the [AVItem.isMediaReplacementCompatible](../../item/avitem#avitemismediareplacementcompatible) method to test whether the AVItem can be used as an alternate source for Media Replacement.
 - Use [Property.canSetAlternateSource](#propertycansetalternatesource) to test if the property allows Media Replacement.
 
 #### Parameters

@@ -7,7 +7,7 @@ title: 关键字
 
 #### 描述
 
-KeyframeEase 对象封装了图层 AE 属性的关键帧缓动设置。关键帧缓动由使用属性的 [setTemporalEaseAtKey](../property/property.md#propertysettemporaleaseatkey) 方法设置的速度和影响值决定。构造函数创建一个 KeyframeEase 对象。两个参数都是必需的。
+KeyframeEase 对象封装了图层 AE 属性的关键帧缓动设置。关键帧缓动由使用属性的 [setTemporalEaseAtKey](../../property/property#propertysettemporaleaseatkey) 方法设置的速度和影响值决定。构造函数创建一个 KeyframeEase 对象。两个参数都是必需的。
 
 - `speed`: 浮点值。设置 `speed` 属性。
 - `influence`: 浮点值，范围为 `[0.1..100.0]`。设置 `influence` 属性。

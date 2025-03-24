@@ -9,7 +9,7 @@ title: 矩阵
 
 一个变换矩阵的规范，用于变换对象的几何形状。使用它来指定和检索Illustrator文档或文档中的页面项的矩阵信息。
 
-矩阵与`transform`方法结合使用，并作为多个对象的属性。矩阵指定如何变换对象的几何形状。您可以使用[Application](.././Application)对象的方法[Application.getTranslationMatrix()](Application.md#applicationgettranslationmatrix)、[Application.getScaleMatrix()](Application.md#applicationgetscalematrix)或[Application.getRotationMatrix()](Application.md#applicationgetrotationmatrix)生成原始矩阵。
+矩阵与`transform`方法结合使用，并作为多个对象的属性。矩阵指定如何变换对象的几何形状。您可以使用[Application](.././Application)对象的方法[Application.getTranslationMatrix()](../Application#applicationgettranslationmatrix)、[Application.getScaleMatrix()](../Application#applicationgetscalematrix)或[Application.getRotationMatrix()](../Application#applicationgetrotationmatrix)生成原始矩阵。
 
 `Matrix`是一个包含矩阵值的记录，而不是对矩阵对象的引用。矩阵命令操作矩阵记录的值。如果命令修改了矩阵，则命令的结果将返回修改后的矩阵记录。传递给命令的原始矩阵记录不会被修改。
 

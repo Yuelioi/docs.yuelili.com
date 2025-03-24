@@ -33,7 +33,7 @@ The Other Scripts item at the end of the Scripts menu `(File > Scripts > Other S
 
 Selecting Other Scripts displays a Browse dialog, which you use to navigate to a script file. When you select the file, the script is executed.
 
-Only files that are of one of the supported file types are displayed in the browse dialog. For details, see [Scripting language support in Adobe Illustrator CC](./scriptingLanguageSupport.md#scripting-language-support-in-adobe-illustrator-cc).
+Only files that are of one of the supported file types are displayed in the browse dialog. For details, see [Scripting language support in Adobe Illustrator CC](../scriptinglanguagesupport#scripting-language-support-in-adobe-illustrator-cc).
 
 ---
 

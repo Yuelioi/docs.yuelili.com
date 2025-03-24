@@ -27,7 +27,7 @@ title: PageItem
 
 #### 类型
 
-[KnockoutState](scripting-constants.md#knockoutstate)
+[KnockoutState](../scripting-constants#knockoutstate)
 
 ---
 
@@ -41,7 +41,7 @@ title: PageItem
 
 #### 类型
 
-[BlendModes](scripting-constants.md#blendmodes)
+[BlendModes](../scripting-constants#blendmodes)
 
 ---
 
@@ -475,7 +475,7 @@ Number (long); 只读。
 | ----------------- | --------------------------------------------------------------------------- | --------------------------- |
 | `posX`            | Number                                                                      | 放置艺术的 X 位置           |
 | `posY`            | Number                                                                      | 放置艺术的 Y 位置           |
-| `perspectiveGridPlane` | [PerspectiveGridPlaneType](scripting-constants.md#perspectivegridplanetype) | 使用的透视网格平面类型      |
+| `perspectiveGridPlane` | [PerspectiveGridPlaneType](../scripting-constants#perspectivegridplanetype) | 使用的透视网格平面类型      |
 
 #### 返回值
 
@@ -513,7 +513,7 @@ app.activeDocument.pageItems[index].resize(
 | `changeFillGradients` | Boolean, 可选                                                     | 是否变换填充渐变                                 |
 | `changeStrokePattern` | Boolean, 可选                                                     | 是否变换描边图案                                 |
 | `changeLineWidths` | Number (double), 可选                                             | 缩放线宽的量                                     |
-| `scaleAbout`      | [Transformation](scripting-constants.md#transformation), 可选     | 用作锚点的点，以进行变换                         |
+| `scaleAbout`      | [Transformation](../scripting-constants#transformation), 可选     | 用作锚点的点，以进行变换                         |
 
 #### 返回值
 
@@ -547,7 +547,7 @@ app.activeDocument.pageItems[index].rotate(
 | `changeFillPatterns` | Boolean, 可选                                                     | 是否变换填充图案                                 |
 | `changeFillGradients` | Boolean, 可选                                                     | 是否变换填充渐变                                 |
 | `changeStrokePattern` | Boolean, 可选                                                     | 是否变换描边图案                                 |
-| `rotateAbout`     | [Transformation](scripting-constants.md#transformation), 可选     | 用作锚点的点，以进行变换                         |
+| `rotateAbout`     | [Transformation](../scripting-constants#transformation), 可选     | 用作锚点的点，以进行变换                         |
 
 #### 返回值
 
@@ -583,7 +583,7 @@ app.activeDocument.pageItems[index].transform(
 | `changeFillGradients` | Boolean, 可选                                                     | 是否更改填充渐变                         |
 | `changeStrokePattern` | Boolean, 可选                                                     | 是否更改描边图案                         |
 | `changeLineWidths`  | Number (double), 可选                                             | 缩放线宽的量                             |
-| `transformAbout`    | [Transformation](scripting-constants.md#transformation), 可选     | 用作锚点的点，以进行变换                 |
+| `transformAbout`    | [Transformation](../scripting-constants#transformation), 可选     | 用作锚点的点，以进行变换                 |
 
 #### 返回值
 
@@ -637,7 +637,7 @@ app.activeDocument.pageItems[index].translate(
 
 |  参数   |                        类型                         |           描述            |
 | ------- | --------------------------------------------------- | ------------------------- |
-| `zOrderCmd` | [ZOrderMethod](scripting-constants.md#zordermethod) | 堆叠顺序排列方法          |
+| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法          |
 
 #### 返回值
 

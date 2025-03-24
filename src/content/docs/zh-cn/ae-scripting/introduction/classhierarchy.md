@@ -3,7 +3,7 @@ title: 类层级结构
 ---
 ### After Effects 类层级结构
 
-本节列出了 After Effects API 相关元素的类层级结构。关于类的基础知识，请参阅 [JavaScript 类](javascript.md#javascript-classes)。
+本节列出了 After Effects API 相关元素的类层级结构。关于类的基础知识，请参阅 [JavaScript 类](../javascript#javascript-classes)。
 
 在使用本指南时，属于某个类层级的对象会标明它是另一个对象的子类、基类，或两者兼有。
 

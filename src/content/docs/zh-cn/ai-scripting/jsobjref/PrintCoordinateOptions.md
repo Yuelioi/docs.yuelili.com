@@ -75,7 +75,7 @@ title: PrintCoordinateOptions
 
 #### 类型
 
-[PrintOrientation](scripting-constants.md#printorientation)
+[PrintOrientation](../scripting-constants#printorientation)
 
 ---
 
@@ -91,7 +91,7 @@ title: PrintCoordinateOptions
 
 #### 类型
 
-[PrintPosition](scripting-constants.md#printposition)
+[PrintPosition](../scripting-constants#printposition)
 
 ---
 
@@ -107,7 +107,7 @@ title: PrintCoordinateOptions
 
 #### 类型
 
-[PrintTiling](scripting-constants.md#printtiling)
+[PrintTiling](../scripting-constants#printtiling)
 
 ---
 

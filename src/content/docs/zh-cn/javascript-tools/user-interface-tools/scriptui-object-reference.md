@@ -12,6 +12,6 @@ ScriptUI 是一个与 ExtendScript JavaScript 解释器协同工作的组件，�
 - [Window 类](.././window-class)
 - [Window 对象](.././window-object)
 - [控件对象](.././control-objects)
-- [UIEvent 基类](./event-handling.md#uievent-base-class)
+- [UIEvent 基类](../event-handling#uievent-base-class)
 - [图形自定义对象](.././graphic-customization-objects)
 - [LayoutManager 对象](.././layoutmanager-object)

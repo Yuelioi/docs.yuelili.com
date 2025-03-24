@@ -89,7 +89,7 @@ title: 定义直接访问的入口函数
 
 每个函数必须接受以下参数：
 
-- 一个 [TaggedData](defining-entry-points-for-indirect-access.md#taggeddata) 数组。
+- 一个 [TaggedData](../defining-entry-points-for-indirect-access#taggeddata) 数组。
 - 一个参数计数。
 - 一个用于接收返回值的变体数据结构。
 

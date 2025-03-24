@@ -280,7 +280,7 @@ if (lang === "en_US") {
 
 #### 描述
 
-错误发生时调用的回调函数名。通过创建函数并赋值给此属性，可以系统化响应错误（例如在渲染过程中发生错误时关闭并重启应用程序，或在日志中记录错误）。详见 [RenderQueue.render()](../renderqueue/renderqueue.md#renderqueuerender)。回调函数接收错误字符串和严重级别字符串，不应返回任何值。
+错误发生时调用的回调函数名。通过创建函数并赋值给此属性，可以系统化响应错误（例如在渲染过程中发生错误时关闭并重启应用程序，或在日志中记录错误）。详见 [RenderQueue.render()](../../renderqueue/renderqueue#renderqueuerender)。回调函数接收错误字符串和严重级别字符串，不应返回任何值。
 
 #### 类型
 

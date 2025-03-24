@@ -8,14 +8,14 @@ title: 使用事件回调和监听器定义行为
 - 当用户移动或调整窗口大小时，窗口会生成事件。为了处理这些事件，你需要为 `onMove`、`onMoving`、`onResize`、`onResizing` 定义回调函数。
     - 为了响应用户打开或关闭窗口，你需要为 `onShow` 和 `onClose` 定义回调函数。
 - 当用户点击控件边界内的区域时，按钮（Button）、单选按钮（RadioButton）和复选框（Checkbox）控件会生成事件。
-    - 为了处理该事件，你需要为 [onClick](control-objects.md#onclick) 定义一个回调函数。
-- 当内容或值发生变化时，EditNumber、EditText、Scrollbar 和 Slider 控件会生成事件，即当用户在编辑字段中输入内容或移动滚动条或滑块指示器时。为了处理这些事件，你需要为 [onChange](control-objects.md#onchange) 和 [onChanging](control-objects.md#onchanging) 定义回调函数。
-- 当列表中的选择发生变化时，ListBox、DropDownList 和 TreeView 控件会生成事件。为了处理该事件，你需要为 [onChange](control-objects.md#onchange) 定义一个回调函数。
-    - 当用户展开或折叠节点时，TreeView 控件也会生成事件，这些事件由 [onExpand](control-objects.md#onexpand) 和 [onCollapse](control-objects.md#oncollapse) 回调函数处理。
-- 当用户双击列表项时，ListBox 也会生成事件。为了处理该事件，你需要为 [onDoubleClick](control-objects.md#ondoubleclick) 事件定义一个回调函数。
-- 容器和控件在绘制之前都会生成事件，允许你自定义它们的外观。为了处理这些事件，你需要为 [onDraw](control-objects.md#ondraw) 定义一个回调函数。
-    - 你的处理函数可以使用控件关联的 [ScriptUIGraphics 对象](graphic-customization-objects.md#scriptuigraphics-object) 中定义的方法来修改或控制容器或控件的绘制方式。
-- 仅在 [Windows](.././window-object) 中，你可以将键序列注册为窗口或大多数类型控件的 [shortcutKey](control-objects.md#shortcutkey)。为了处理该键序列，你需要在控件中为 [onShortcutKey](control-objects.md#onshortcutkey) 定义一个回调函数。
+    - 为了处理该事件，你需要为 [onClick](../control-objects#onclick) 定义一个回调函数。
+- 当内容或值发生变化时，EditNumber、EditText、Scrollbar 和 Slider 控件会生成事件，即当用户在编辑字段中输入内容或移动滚动条或滑块指示器时。为了处理这些事件，你需要为 [onChange](../control-objects#onchange) 和 [onChanging](../control-objects#onchanging) 定义回调函数。
+- 当列表中的选择发生变化时，ListBox、DropDownList 和 TreeView 控件会生成事件。为了处理该事件，你需要为 [onChange](../control-objects#onchange) 定义一个回调函数。
+    - 当用户展开或折叠节点时，TreeView 控件也会生成事件，这些事件由 [onExpand](../control-objects#onexpand) 和 [onCollapse](../control-objects#oncollapse) 回调函数处理。
+- 当用户双击列表项时，ListBox 也会生成事件。为了处理该事件，你需要为 [onDoubleClick](../control-objects#ondoubleclick) 事件定义一个回调函数。
+- 容器和控件在绘制之前都会生成事件，允许你自定义它们的外观。为了处理这些事件，你需要为 [onDraw](../control-objects#ondraw) 定义一个回调函数。
+    - 你的处理函数可以使用控件关联的 [ScriptUIGraphics 对象](../graphic-customization-objects#scriptuigraphics-object) 中定义的方法来修改或控制容器或控件的绘制方式。
+- 仅在 [Windows](.././window-object) 中，你可以将键序列注册为窗口或大多数类型控件的 [shortcutKey](../control-objects#shortcutkey)。为了处理该键序列，你需要在控件中为 [onShortcutKey](../control-objects#onshortcutkey) 定义一个回调函数。
 
 ---
 
@@ -65,31 +65,31 @@ cancelBtn.onClick = function() {
 
 以下控件会生成 `onClick` 事件：
 
-- [`Button`](./control-objects.md#button)
-- [`Checkbox`](./control-objects.md#checkbox)
-- [`IconButton`](./control-objects.md#iconbutton)
-- [`RadioButton`](./control-objects.md#radiobutton)
+- [`Button`](../control-objects#button)
+- [`Checkbox`](../control-objects#checkbox)
+- [`IconButton`](../control-objects#iconbutton)
+- [`RadioButton`](../control-objects#radiobutton)
 
 以下控件会生成 `onChange` 事件：
 
-- [`DropDownList`](./control-objects.md#dropdownlist)
-- [`EditNumber`](./control-objects.md#editnumber)
-- [`EditText`](./control-objects.md#edittext)
-- [`ListBox`](./control-objects.md#listbox)
-- [`Scrollbar`](./control-objects.md#scrollbar)
-- [`Slider`](./control-objects.md#slider)
-- [`TreeView`](./control-objects.md#treeview)
+- [`DropDownList`](../control-objects#dropdownlist)
+- [`EditNumber`](../control-objects#editnumber)
+- [`EditText`](../control-objects#edittext)
+- [`ListBox`](../control-objects#listbox)
+- [`Scrollbar`](../control-objects#scrollbar)
+- [`Slider`](../control-objects#slider)
+- [`TreeView`](../control-objects#treeview)
 
 以下控件会生成 `onChanging` 事件：
 
-- [`EditNumber`](./control-objects.md#editnumber)
-- [`EditText`](./control-objects.md#edittext)
-- [`Scrollbar`](./control-objects.md#scrollbar)
-- [`Slider`](./control-objects.md#slider)
+- [`EditNumber`](../control-objects#editnumber)
+- [`EditText`](../control-objects#edittext)
+- [`Scrollbar`](../control-objects#scrollbar)
+- [`Slider`](../control-objects#slider)
 
-在 [ListBox](./control-objects.md#listbox) 中，双击某个项会生成 `onDoubleClick` 事件。
+在 [ListBox](../control-objects#listbox) 中，双击某个项会生成 `onDoubleClick` 事件。
 
-在 [`RadioButton`](./control-objects.md#radiobutton) 和 [`Checkbox`](./control-objects.md#checkbox) 控件中，布尔值属性会在用户点击控件时自动更改。如果你使用 `notify()` 来模拟点击，值会像用户点击一样发生变化。
+在 [`RadioButton`](../control-objects#radiobutton) 和 [`Checkbox`](../control-objects#checkbox) 控件中，布尔值属性会在用户点击控件时自动更改。如果你使用 `notify()` 来模拟点击，值会像用户点击一样发生变化。
 
 例如，如果复选框 `hasBtnsCb` 的值为 `true`，以下代码会将其值更改为 `false`：
 
@@ -105,7 +105,7 @@ if ( dlg.hasBtnsCb.value == true ) {
 
 另一种定义窗口和控件行为的方法是注册一个处理函数，以响应该窗口或控件中特定类型的事件。这种技术允许你响应事件在容器和控件层次结构中的传播。
 
-使用 [addEventListener()](window-object.md#addeventlistener) 或 [addEventListener()](control-objects.md#addeventlistener) 来注册处理程序。你注册的函数会接收一个事件对象（来自 [UIEvent 基类](event-handling.md#uievent-base-class)），该对象封装了事件信息。当事件在层次结构中向下传播并返回时，你的处理程序可以在任何级别响应，或者使用 UIEvent 对象的 [stopPropagation()](event-handling.md#stoppropagation) 方法在某个级别停止事件传播。
+使用 [addEventListener()](../window-object#addeventlistener) 或 [addEventListener()](../control-objects#addeventlistener) 来注册处理程序。你注册的函数会接收一个事件对象（来自 [UIEvent 基类](../event-handling#uievent-base-class)），该对象封装了事件信息。当事件在层次结构中向下传播并返回时，你的处理程序可以在任何级别响应，或者使用 UIEvent 对象的 [stopPropagation()](../event-handling#stoppropagation) 方法在某个级别停止事件传播。
 
 你可以注册：
 
@@ -119,9 +119,9 @@ if ( dlg.hasBtnsCb.value == true ) {
     myButton.addEventListener( "click", "function( e ) { /*处理代码*/ }" );
     ```
 
-当指定事件在目标中发生时，处理程序或注册的代码语句会被执行。脚本可以通过使用 [ScriptUI.events.createEvent()](scriptui-class.md#scriptuieventscreateevent) 创建事件对象，并将其传递给事件目标的 [dispatchEvent()](control-objects.md#dispatchevent) 函数来以编程方式模拟事件。
+当指定事件在目标中发生时，处理程序或注册的代码语句会被执行。脚本可以通过使用 [ScriptUI.events.createEvent()](../scriptui-class#scriptuieventscreateevent) 创建事件对象，并将其传递给事件目标的 [dispatchEvent()](../control-objects#dispatchevent) 函数来以编程方式模拟事件。
 
-你可以通过调用事件目标的 [removeEventListener()](control-objects.md#removeeventlistener) 函数来移除之前注册的处理程序。传递给此函数的参数必须与传递给 [addEventListener()](control-objects.md#addeventlistener) 调用的参数完全相同。通常，脚本会在初始化期间注册所有事件处理程序，并在终止时取消注册；然而，终止时取消注册处理程序并不是必需的。
+你可以通过调用事件目标的 [removeEventListener()](../control-objects#removeeventlistener) 函数来移除之前注册的处理程序。传递给此函数的参数必须与传递给 [addEventListener()](../control-objects#addeventlistener) 调用的参数完全相同。通常，脚本会在初始化期间注册所有事件处理程序，并在终止时取消注册；然而，终止时取消注册处理程序并不是必需的。
 
 你可以在实际目标的父对象或祖先对象中注册事件；请参阅以下部分。
 
@@ -129,18 +129,18 @@ if ( dlg.hasBtnsCb.value == true ) {
 
 |                        回调                         |      UIEvent 类型      |
 | --------------------------------------------------- | ---------------------- |
-| [`"onChange"`](./control-objects.md#onchange)       | `"change"`             |
-| [`"onChanging"`](./control-objects.md#onchanging)   | `"changing"`           |
-| [`"onClick"`](./control-objects.md#onclick)         | `"click"` (detail = 1) |
-| [`"onDoubleClick"`](./control-objects.md#ondoubleclick) | `"click"` (detail = 2) |
-| [`"onEnterKey"`](./control-objects.md#onenterkey)   | `"enterKey"`           |
-| [`"onMove"`](./window-object.md#onmove)             | `"move"`               |
-| [`"onMoving"`](./window-object.md#onmoving)         | `"moving"`             |
-| [`"onResize"`](./window-object.md#onresize)         | `"resize"`             |
-| [`"onResizing"`](./window-object.md#onresizing)     | `"resizing"`           |
-| [`"onShow"`](./window-object.md#onshow)             | `"show"`               |
-| [`"onActivate"`](./control-objects.md#onactivate)   | `"focus"`              |
-| [`"onDeactivate"`](./control-objects.md#ondeactivate) | `"blur"`               |
+| [`"onChange"`](../control-objects#onchange)       | `"change"`             |
+| [`"onChanging"`](../control-objects#onchanging)   | `"changing"`           |
+| [`"onClick"`](../control-objects#onclick)         | `"click"` (detail = 1) |
+| [`"onDoubleClick"`](../control-objects#ondoubleclick) | `"click"` (detail = 2) |
+| [`"onEnterKey"`](../control-objects#onenterkey)   | `"enterKey"`           |
+| [`"onMove"`](../window-object#onmove)             | `"move"`               |
+| [`"onMoving"`](../window-object#onmoving)         | `"moving"`             |
+| [`"onResize"`](../window-object#onresize)         | `"resize"`             |
+| [`"onResizing"`](../window-object#onresizing)     | `"resizing"`           |
+| [`"onShow"`](../window-object#onshow)             | `"show"`               |
+| [`"onActivate"`](../control-objects#onactivate)   | `"focus"`              |
+| [`"onDeactivate"`](../control-objects#ondeactivate) | `"blur"`               |
 
 此外，ScriptUI 根据 W3C DOM 级别 3 功能规范 [UI 事件](https://www.w3.org/TR/uievents/) 实现了所有类型的 W3C 事件，并进行了以下修改和例外：
 
@@ -176,7 +176,7 @@ ScriptUI 对 W3C 键盘事件的实现遵循 W3C DOM 级别 3 功能规范 [Keyb
 
 当用户点击按钮时，Window 对象的处理程序首先被调用（在捕获阶段），然后是按钮对象的处理程序（在目标阶段）。最后，ScriptUI 调用在组对象注册的处理程序（在冒泡阶段）。
 
-如果你在实际事件目标的祖先对象中注册处理程序，你可以指定 [addEventListener()](control-objects.md#addeventlistener) 的第三个参数，以便祖先的处理程序仅在捕获阶段响应，而不是在冒泡阶段。例如，以下点击处理程序在父对话框对象中注册，仅在捕获阶段响应：
+如果你在实际事件目标的祖先对象中注册处理程序，你可以指定 [addEventListener()](../control-objects#addeventlistener) 的第三个参数，以便祖先的处理程序仅在捕获阶段响应，而不是在冒泡阶段。例如，以下点击处理程序在父对话框对象中注册，仅在捕获阶段响应：
 
 ```javascript
 myDialog.addEventListener( "click", handleAllItems, true );
@@ -184,4 +184,4 @@ myDialog.addEventListener( "click", handleAllItems, true );
 
 默认情况下，此值为 `false`，因此如果未提供，处理程序只能在冒泡阶段响应，当对象的后代是目标时，或者当对象本身是事件的目标时（目标阶段）。
 
-为了区分在任何给定时间执行的多个注册处理程序，事件对象提供了 [eventPhase](event-handling.md#eventphase) 和 [currentTarget](event-handling.md#currenttarget)，在捕获和冒泡阶段，它包含当前执行处理程序注册的目标对象的祖先。
+为了区分在任何给定时间执行的多个注册处理程序，事件对象提供了 [eventPhase](../event-handling#eventphase) 和 [currentTarget](../event-handling#currenttarget)，在捕获和冒泡阶段，它包含当前执行处理程序注册的目标对象的祖先。

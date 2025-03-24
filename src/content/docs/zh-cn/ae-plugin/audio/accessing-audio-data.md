@@ -9,7 +9,7 @@ title: 访问音频数据
 
 与像素数据一样，重要的是您应尽快检入音频。
 
-如果您的效果需要输入的时间范围与输出的时间范围不同，请在[帧选择器](../effect-basics/command-selectors.md#frame-selectors)中的 `PF_Cmd_AUDIO_SETUP` 期间更新 `PF_OutData` 中的 `startsampL` 和 `endsampL` 字段。
+如果您的效果需要输入的时间范围与输出的时间范围不同，请在[帧选择器](../../effect-basics/command-selectors#frame-selectors)中的 `PF_Cmd_AUDIO_SETUP` 期间更新 `PF_OutData` 中的 `startsampL` 和 `endsampL` 字段。
 
 ---
 

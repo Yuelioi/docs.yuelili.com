@@ -122,7 +122,7 @@ Boolean; 只读.
 
 #### 描述
 
-暂停当前的渲染过程，或继续已暂停的渲染过程。这与在渲染过程中点击渲染队列面板中的“暂停”按钮相同。你可以从 [RenderQueueItem.onstatus](renderqueueitem.md#renderqueueitemonstatus) 或 [app.onError](../general/application.md#apponerror) 回调中调用此方法。
+暂停当前的渲染过程，或继续已暂停的渲染过程。这与在渲染过程中点击渲染队列面板中的“暂停”按钮相同。你可以从 [RenderQueueItem.onstatus](../renderqueueitem#renderqueueitemonstatus) 或 [app.onError](../../general/application#apponerror) 回调中调用此方法。
 
 #### 参数
 
@@ -144,8 +144,8 @@ Boolean; 只读.
 
 启动渲染过程。这与点击渲染队列面板中的“渲染”按钮相同。该方法在渲染过程完成之前不会返回。要暂停或停止渲染过程，请从 `onError` 或 `onstatus` 回调中调用 [RenderQueue.pauseRendering()](#renderqueuepauserendering) 或 [RenderQueue.stopRendering()](#renderqueuestoprendering)。
 
-- 要在渲染过程中响应错误，请在 [app.onError](../general/application.md#apponerror) 中定义一个回调函数。
-- 要在渲染过程中响应特定项目状态的变化，请在关联的 RenderQueueItem 对象中的 [RenderQueueItem.onstatus](renderqueueitem.md#renderqueueitemonstatus) 中定义一个回调函数。
+- 要在渲染过程中响应错误，请在 [app.onError](../../general/application#apponerror) 中定义一个回调函数。
+- 要在渲染过程中响应特定项目状态的变化，请在关联的 RenderQueueItem 对象中的 [RenderQueueItem.onstatus](../renderqueueitem#renderqueueitemonstatus) 中定义一个回调函数。
 
 #### 参数
 
@@ -183,7 +183,7 @@ Boolean; 只读.
 
 #### 描述
 
-停止渲染过程。这与在渲染过程中点击渲染队列面板中的“停止”按钮相同。你可以从 [RenderQueueItem.onstatus](renderqueueitem.md#renderqueueitemonstatus) 或 [app.onError](../general/application.md#apponerror) 回调中调用此方法。
+停止渲染过程。这与在渲染过程中点击渲染队列面板中的“停止”按钮相同。你可以从 [RenderQueueItem.onstatus](../renderqueueitem#renderqueueitemonstatus) 或 [app.onError](../../general/application#apponerror) 回调中调用此方法。
 
 #### 参数
 

@@ -65,7 +65,7 @@ title: 渐变
 
 #### 类型
 
-[GradientType](scripting-constants.md#gradienttype)
+[GradientType](../scripting-constants#gradienttype)
 
 ---
 

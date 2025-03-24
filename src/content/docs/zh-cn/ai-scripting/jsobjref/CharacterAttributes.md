@@ -55,7 +55,7 @@ Number (double)
 
 #### 类型
 
-[StyleRunAlignmentType](scripting-constants.md#stylerunalignmenttype)
+[StyleRunAlignmentType](../scripting-constants#stylerunalignmenttype)
 
 ---
 
@@ -69,7 +69,7 @@ Number (double)
 
 #### 类型
 
-[AlternateGlyphsForm](scripting-constants.md#alternateglyphsform)
+[AlternateGlyphsForm](../scripting-constants#alternateglyphsform)
 
 ---
 
@@ -97,7 +97,7 @@ Boolean
 
 #### 类型
 
-[BaselineDirectionType](scripting-constants.md#baselinedirectiontype)
+[BaselineDirectionType](../scripting-constants#baselinedirectiontype)
 
 ---
 
@@ -111,7 +111,7 @@ Boolean
 
 #### 类型
 
-[FontBaselineOption](scripting-constants.md#fontbaselineoption)
+[FontBaselineOption](../scripting-constants#fontbaselineoption)
 
 ---
 
@@ -139,7 +139,7 @@ Number (double)
 
 #### 类型
 
-[FontCapsOption](scripting-constants.md#fontcapsoption)
+[FontCapsOption](../scripting-constants#fontcapsoption)
 
 ---
 
@@ -195,7 +195,7 @@ OpenType 字体中的数字样式。
 
 #### 类型
 
-[FigureStyleType](scripting-constants.md#figurestyletype)
+[FigureStyleType](../scripting-constants#figurestyletype)
 
 ---
 
@@ -265,7 +265,7 @@ Boolean
 
 #### 类型
 
-[AutoKernType](scripting-constants.md#autokerntype)
+[AutoKernType](../scripting-constants#autokerntype)
 
 ---
 
@@ -279,7 +279,7 @@ Boolean
 
 #### 类型
 
-[LanguageType](scripting-constants.md#languagetype)
+[LanguageType](../scripting-constants#languagetype)
 
 ---
 
@@ -335,7 +335,7 @@ OpenType 基线位置。
 
 #### 类型
 
-[FontOpenTypePositionOption](scripting-constants.md#fontopentypepositionoption)
+[FontOpenTypePositionOption](../scripting-constants#fontopentypepositionoption)
 
 ---
 
@@ -699,7 +699,7 @@ Wari-Chu 对齐方式。
 
 #### 类型
 
-[WariChuJustificationType](scripting-constants.md#warichujustificationtype)
+[WariChuJustificationType](../scripting-constants#warichujustificationtype)
 
 ---
 

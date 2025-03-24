@@ -3,7 +3,7 @@ title: 参数监督
 ---
 # 参数监督
 
-监督意味着根据其他参数的值动态更改某些参数的值。要监督一个参数，在 *PF_Cmd_PARAM_SETUP* 期间添加参数之前设置 [PF_ParamFlag_SUPERVISE](../effect-basics/PF_ParamDef.md#pf_paramdef)。每当它被更改时，您将收到 [PF_Cmd_USER_CHANGED_PARAM](../effect-basics/command-selectors.md#messaging)。更改参数的索引（插入插件的参数数组）将在 PF_UserChangedParamExtra（额外）参数中发送。在 *PF_Cmd_USER_CHANGED_PARAM* 期间，您可以更改任何参数的值 *和* 外观。
+监督意味着根据其他参数的值动态更改某些参数的值。要监督一个参数，在 *PF_Cmd_PARAM_SETUP* 期间添加参数之前设置 [PF_ParamFlag_SUPERVISE](../../effect-basics/PF_ParamDef#pf_paramdef)。每当它被更改时，您将收到 [PF_Cmd_USER_CHANGED_PARAM](../../effect-basics/command-selectors#messaging)。更改参数的索引（插入插件的参数数组）将在 PF_UserChangedParamExtra（额外）参数中发送。在 *PF_Cmd_USER_CHANGED_PARAM* 期间，您可以更改任何参数的值 *和* 外观。
 
 ---
 
@@ -21,7 +21,7 @@ title: 参数监督
 
 ## 更新参数值
 
-可以在 [PF_Cmd_USER_CHANGED_PARAM](../effect-basics/command-selectors.md#messaging) 和 [PF_Cmd_EVENT](../effect-basics/command-selectors.md#messaging)（*PF_Event_DO_CLICK*、*PF_Event_DRAG* 和 *PF_Event_KEYDOWN*）期间修改参数的值（不仅仅是 UI）。After Effects 不会接受在其他时间所做的更改。
+可以在 [PF_Cmd_USER_CHANGED_PARAM](../../effect-basics/command-selectors#messaging) 和 [PF_Cmd_EVENT](../../effect-basics/command-selectors#messaging)（*PF_Event_DO_CLICK*、*PF_Event_DRAG* 和 *PF_Event_KEYDOWN*）期间修改参数的值（不仅仅是 UI）。After Effects 不会接受在其他时间所做的更改。
 
 当更改参数 *值*（而不仅仅是 UI）时，修改原始参数，并将 `PF_Paramdef.uu.change_flags` 设置为 `PF_ChangeFlag_CHANGED_VALUE`。
 

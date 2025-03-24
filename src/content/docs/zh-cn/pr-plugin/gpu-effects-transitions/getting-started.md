@@ -30,7 +30,7 @@ GetProperty(kVideoSegmentProperty_Transition_TransitionDuration, duration);
 
 ## GPU效果/过渡的生命周期
 
-当在时间轴中应用效果/过渡或更改效果参数时，会创建一个新的GPU效果实例。在渲染一系列帧时，它不会不必要地重新创建。[不透明效果数据套件](suites.md#opaque-effect-data-suite)应用于在同一轨道项上的相同效果实例之间共享未展平的序列数据。
+当在时间轴中应用效果/过渡或更改效果参数时，会创建一个新的GPU效果实例。在渲染一系列帧时，它不会不必要地重新创建。[不透明效果数据套件](../suites#opaque-effect-data-suite)应用于在同一轨道项上的相同效果实例之间共享未展平的序列数据。
 
 ---
 
@@ -38,9 +38,9 @@ GetProperty(kVideoSegmentProperty_Transition_TransitionDuration, duration);
 
 当创建新的GPU效果实例时，实例可以选择是否提供GPU渲染。GPU效果应合理确定如果选择提供GPU渲染，它有足够的资源来完成渲染，因为在渲染过程中没有API支持回退到软件渲染。
 
-调用[GPU设备套件](suites.md#gpu-device-suite)中的GetDeviceInfo()，并检查`outDeviceInfo.outMeetsMinimumRequirementsForAcceleration`，你可以查看是否支持加速的最低系统要求。如果未满足最低要求，请不要继续调用AcquireExclusiveDeviceAccess()。
+调用[GPU设备套件](../suites#gpu-device-suite)中的GetDeviceInfo()，并检查`outDeviceInfo.outMeetsMinimumRequirementsForAcceleration`，你可以查看是否支持加速的最低系统要求。如果未满足最低要求，请不要继续调用AcquireExclusiveDeviceAccess()。
 
-在紧急情况下，如果没有足够的GPU内存来完成渲染，效果可以调用[GPU设备套件](suites.md#gpu-device-suite)中的PurgeDeviceMemory来释放最初不可用的内存。这将影响性能，应仅在绝对必要时使用。
+在紧急情况下，如果没有足够的GPU内存来完成渲染，效果可以调用[GPU设备套件](../suites#gpu-device-suite)中的PurgeDeviceMemory来释放最初不可用的内存。这将影响性能，应仅在绝对必要时使用。
 
 ---
 

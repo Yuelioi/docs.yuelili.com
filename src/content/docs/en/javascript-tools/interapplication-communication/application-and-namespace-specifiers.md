@@ -88,4 +88,4 @@ For example:
 - To call the cross-DOM function quit in Photoshop, use photoshop.quit(), and to call it in Adobe Illustrator®, use illustrator.quit().
 - To call the exported function place, defined for Illustrator CS5 version 15 call illustrator15.place(myFiles).
 
-For information about the cross-DOM and exported functions, see [Remote function calls](communications-overview.md#remote-function-calls).
+For information about the cross-DOM and exported functions, see [Remote function calls](../communications-overview#remote-function-calls).

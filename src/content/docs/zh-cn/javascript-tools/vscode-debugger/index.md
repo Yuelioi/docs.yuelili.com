@@ -3,7 +3,7 @@ title: 概述
 ---
 # VS Code 调试器
 
-由于 [ExtendScript Toolkit](../extendscript-toolkit/index.md#the-extendscript-toolkit) 已被 Adobe 弃用（部分原因是 MacOS 不再支持 32 位应用程序），调试 Extendscript 的官方方法是使用 [VS Code](https://code.visualstudio.com/) 和 [Adobe Extendscript 扩展](https://marketplace.visualstudio.com/items?itemName=Adobe.extendscript-debug)。
+由于 [ExtendScript Toolkit](../../extendscript-toolkit/index#the-extendscript-toolkit) 已被 Adobe 弃用（部分原因是 MacOS 不再支持 32 位应用程序），调试 Extendscript 的官方方法是使用 [VS Code](https://code.visualstudio.com/) 和 [Adobe Extendscript 扩展](https://marketplace.visualstudio.com/items?itemName=Adobe.extendscript-debug)。
 
 它有些小问题，通常不太可靠，似乎更适合独立运行的脚本（而不是 ScriptUI 面板），但在某些情况下可能会有帮助。
 

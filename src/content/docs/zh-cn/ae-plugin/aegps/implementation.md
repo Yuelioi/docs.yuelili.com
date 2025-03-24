@@ -32,7 +32,7 @@ A_Err AEGP_PluginInitFuncPrototype(
 
 由于插件加载顺序可能有所不同，因此在入口函数中获取After Effects未提供的套件从来不是一个好主意。相反，应等待适当的钩子函数。
 
-AEGP [API版本](../intro/compatibility-across-multiple-versions.md#api-versions)可以帮助区分不同版本的After Effects，以防AEGP需要表现不同或处理不同的行为。
+AEGP [API版本](../../intro/compatibility-across-multiple-versions#api-versions)可以帮助区分不同版本的After Effects，以防AEGP需要表现不同或处理不同的行为。
 
 这些其他函数被注册为回调钩子。添加菜单项的AEGP必须注册一个UpdateMenuHook函数（具有AE_GeneralPlug.h中描述的函数签名），After Effects可以调用该函数来确定是否启用这些项。同样地，处理命令的插件会注册一个CommandHook（一个用于所有命令）。
 
@@ -48,7 +48,7 @@ AEIO和Artisans必须向After Effects注册才能接收它们所依赖的消息�
 
 ## 示例：添加菜单项
 
-在您的入口函数期间，使用[Command Suite](aegp-suites.md#aegp_commandsuite1)中的`AEGP_GetUniqueCommand()`从After Effects获取命令ID以用于`AEGP_InsertMenuCommand`。为您添加的每个菜单项使用不同的ID。
+在您的入口函数期间，使用[Command Suite](../aegp-suites#aegp_commandsuite1)中的`AEGP_GetUniqueCommand()`从After Effects获取命令ID以用于`AEGP_InsertMenuCommand`。为您添加的每个菜单项使用不同的ID。
 
 使用AEGP_RegisterSuite的`AEGP_RegisterCommandHook()`告诉After Effects当选择您的菜单项时要调用的函数。您使用`AEGP_RegisterUpdateMenuHook()`注册的函数启用和禁用您的菜单项。除非您注册了菜单更新功能否则您的菜单将永久禁用.
 

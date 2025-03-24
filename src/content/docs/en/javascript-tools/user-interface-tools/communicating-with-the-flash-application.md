@@ -5,7 +5,7 @@ title: communicating-with-the-flash-application
 
 ScriptUI supports a Flash Player, which runs the Flash application within a window in an Adobe application. The Flash application runs ActionScript, a different implementation of JavaScript from the ExtendScript version of JavaScript that Adobe applications run.
 
-To open a Flash Player, add a control of type [FlashPlayer](types-of-controls.md#flashplayer) to your ScriptUI window. A control object of this type contains functions that allow your script to load SWF files and control movie playback. It also contains functions that allow your Adobe application script to communicate with the ActionScript environment of the Flash application. See [FlashPlayer control functions](control-objects.md#flashplayer-control-functions).
+To open a Flash Player, add a control of type [FlashPlayer](../types-of-controls#flashplayer) to your ScriptUI window. A control object of this type contains functions that allow your script to load SWF files and control movie playback. It also contains functions that allow your Adobe application script to communicate with the ActionScript environment of the Flash application. See [FlashPlayer control functions](../control-objects#flashplayer-control-functions).
 
 A limited set of data types can be passed between the two scripting environments:
 
@@ -29,7 +29,7 @@ import flash.external.ExternalInterface;
 
 ## Calling ExtendScript functions from ActionScript
 
-The ActionScript `ExternalInterface` class allows you to call an ExtendScript function that has been defined in the `FlashPlayer` element in the Adobe application script, and run it in the ActionScript environment. You must define the method in your [FlashPlayer](types-of-controls.md#flashplayer) element with a matching function name.
+The ActionScript `ExternalInterface` class allows you to call an ExtendScript function that has been defined in the `FlashPlayer` element in the Adobe application script, and run it in the ActionScript environment. You must define the method in your [FlashPlayer](../types-of-controls#flashplayer) element with a matching function name.
 
 For example, in order for the SWF code to call an ExtendScript function named `myExtendScriptFunction`, define a function with the name `myExtendScriptFunction` as a method of your `FlashPlayer` control object. There are no special requirements for function names, but the function must take and return only data of the supported types.
 
@@ -45,7 +45,7 @@ When the Flash Player executes the ExternalInterface call, ScriptUI looks for a 
 
 ## Calling ActionScript functions from a ScriptUI script
 
-From the ExtendScript side, use the `FlashPlayer` method [invokePlayerFunction()](control-objects.md#invokeplayerfunction) to call ActionScript methods that have been defined within the Flash application:
+From the ExtendScript side, use the `FlashPlayer` method [invokePlayerFunction()](../control-objects#invokeplayerfunction) to call ActionScript methods that have been defined within the Flash application:
 
 ```javascript
 var result = flashElement.invokePlayerFunction( "ActionScript_function_name", [ arg1, ..., argN ] );

@@ -26,7 +26,7 @@ FootageItem 是 [AVItem 对象](../avitem) 的子类，而 AVItem 又是 [Item �
 
 素材源文件的 [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象。
 
-如果 FootageItem 的 `mainSource` 是 FileSource，则此属性与 [FootageItem.mainSource.file](../sources/filesource.md#filesourcefile) 相同。否则为 `null`。
+如果 FootageItem 的 `mainSource` 是 FileSource，则此属性与 [FootageItem.mainSource.file](../../sources/filesource#filesourcefile) 相同。否则为 `null`。
 
 #### 类型
 
@@ -46,7 +46,7 @@ FootageItem 是 [AVItem 对象](../avitem) 的子类，而 AVItem 又是 [Item �
 - [FileSource 对象](../../sources/filesource)
 - [PlaceholderSource 对象](../../sources/placeholdersource)
 
-如果这是一个 FileSource 对象，并且 [footageMissing](avitem.md#avitemfootagemissing) 值为 `true`，则缺失素材文件的路径位于 [FileSource.missingFootagePath](../sources/filesource.md#filesourcemissingfootagepath) 属性中。
+如果这是一个 FileSource 对象，并且 [footageMissing](../avitem#avitemfootagemissing) 值为 `true`，则缺失素材文件的路径位于 [FileSource.missingFootagePath](../../sources/filesource#filesourcemissingfootagepath) 属性中。
 
 #### 类型
 

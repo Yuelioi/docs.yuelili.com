@@ -29,8 +29,8 @@ FileSource 是 [FootageSource 对象](../footagesource) 的子类。除了下面
 
 定义此资产的文件的 [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象。要更改该值：
 
-- 如果此 FileSource 是 [AVItem](../../item/avitem) 的 [proxySource](../item/avitem.md#avitemproxysource)，请调用 [setProxy()](../item/avitem.md#avitemsetproxy) 或 [setProxyWithSequence()](../item/avitem.md#avitemsetproxywithsequence)。
-- 如果此 FileSource 是 [FootageItem](../../item/footageitem) 的 [mainSource](../item/footageitem.md#footageitemmainsource)，请调用 [replace()](../item/footageitem.md#footageitemreplace) 或 [replaceWithSequence()](../item/footageitem.md#footageitemreplacewithsequence)。
+- 如果此 FileSource 是 [AVItem](../../item/avitem) 的 [proxySource](../../item/avitem#avitemproxysource)，请调用 [setProxy()](../../item/avitem#avitemsetproxy) 或 [setProxyWithSequence()](../../item/avitem#avitemsetproxywithsequence)。
+- 如果此 FileSource 是 [FootageItem](../../item/footageitem) 的 [mainSource](../../item/footageitem#footageitemmainsource)，请调用 [replace()](../../item/footageitem#footageitemreplace) 或 [replaceWithSequence()](../../item/footageitem#footageitemreplacewithsequence)。
 
 #### 类型
 
@@ -46,7 +46,7 @@ FileSource 是 [FootageSource 对象](../footagesource) 的子类。除了下面
 
 #### 描述
 
-此资产中缺失素材的路径和文件名。另请参阅 [AVItem.footageMissing](../item/avitem.md#avitemfootagemissing)。
+此资产中缺失素材的路径和文件名。另请参阅 [AVItem.footageMissing](../../item/avitem#avitemfootagemissing)。
 
 #### 类型
 

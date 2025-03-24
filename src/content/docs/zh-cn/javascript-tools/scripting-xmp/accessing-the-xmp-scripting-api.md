@@ -16,8 +16,8 @@ if ( ExternalObject.AdobeXMPScript == undefined ) {
 
 |                             对象                             |                                                                                        描述                                                                                         |
 | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object) | 提供XMP Toolkit的核心服务。允许您创建和删除元数据属性，并检索和修改属性值。                                            |
-| [XMPFile对象](xmpscript-object-reference.md#xmpfile-object) | 提供对文件的主文档级别XMP的便捷I/O访问。允许您从文件中检索现有元数据，更新文件元数据，并向文件添加新元数据。 |
+| [XMPMeta对象](../xmpscript-object-reference#xmpmeta-object) | 提供XMP Toolkit的核心服务。允许您创建和删除元数据属性，并检索和修改属性值。                                            |
+| [XMPFile对象](../xmpscript-object-reference#xmpfile-object) | 提供对文件的主文档级别XMP的便捷I/O访问。允许您从文件中检索现有元数据，更新文件元数据，并向文件添加新元数据。 |
 
 其他顶级对象包括数组处理工具、日期时间对象以及包含命名空间常量的常量定义。顶级对象提供了对封装单个元数据属性、文件信息和XMP数据包信息的附加支持类的访问，以及允许遍历属性的工具。
 
@@ -27,17 +27,17 @@ if ( ExternalObject.AdobeXMPScript == undefined ) {
 
 ## 使用XMP脚本API
 
-[XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object)是访问XMP元数据包的命名空间和属性的主要方式。通过此对象，您可以创建和删除命名空间和属性，并检查和修改属性值。
+[XMPMeta对象](../xmpscript-object-reference#xmpmeta-object)是访问XMP元数据包的命名空间和属性的主要方式。通过此对象，您可以创建和删除命名空间和属性，并检查和修改属性值。
 
-您可以通过以下几种方式获取或创建[XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object)：
+您可以通过以下几种方式获取或创建[XMPMeta对象](../xmpscript-object-reference#xmpmeta-object)：
 
-- 您可以使用[XMPFile对象](xmpscript-object-reference.md#xmpfile-object)直接从文件中检索现有元数据。`XMPFile.`[getXMP()](xmpscript-object-reference.md#xmpfilegetxmp)方法会创建一个[XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object)，您可以使用它来检查或修改属性及其值。然后，您可以使用`XMPFile.`[putXMP()](xmpscript-object-reference.md#xmpfileputxmp)将修改后的元数据写回文件。
-- 您可以使用构造函数创建一个[XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object)，并使用在其他地方创建或获取的XMP数据包初始化它。
-- 您可以使用构造函数创建一个新的空[XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object)，并使用其方法创建全新的命名空间和属性。然后，您可以使用`XMPFile.`[putXMP()](xmpscript-object-reference.md#xmpfileputxmp)将新元数据注入文件。
+- 您可以使用[XMPFile对象](../xmpscript-object-reference#xmpfile-object)直接从文件中检索现有元数据。`XMPFile.`[getXMP()](../xmpscript-object-reference#xmpfilegetxmp)方法会创建一个[XMPMeta对象](../xmpscript-object-reference#xmpmeta-object)，您可以使用它来检查或修改属性及其值。然后，您可以使用`XMPFile.`[putXMP()](../xmpscript-object-reference#xmpfileputxmp)将修改后的元数据写回文件。
+- 您可以使用构造函数创建一个[XMPMeta对象](../xmpscript-object-reference#xmpmeta-object)，并使用在其他地方创建或获取的XMP数据包初始化它。
+- 您可以使用构造函数创建一个新的空[XMPMeta对象](../xmpscript-object-reference#xmpmeta-object)，并使用其方法创建全新的命名空间和属性。然后，您可以使用`XMPFile.`[putXMP()](../xmpscript-object-reference#xmpfileputxmp)将新元数据注入文件。
 
-在Adobe Bridge中，您可以使用序列化的XMP在内置的`Metadata`对象和XMPScript的[XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object)之间传递XMP元数据。
+在Adobe Bridge中，您可以使用序列化的XMP在内置的`Metadata`对象和XMPScript的[XMPMeta对象](../xmpscript-object-reference#xmpmeta-object)之间传递XMP元数据。
 
-- 您可以使用XMPScript通过从`Thumbnail`对象存储的元数据创建[XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object)来检查缩略图元数据，使用对象构造函数。为了确保元数据是最新的，请使用同步模式（默认情况下关闭）：
+- 您可以使用XMPScript通过从`Thumbnail`对象存储的元数据创建[XMPMeta对象](../xmpscript-object-reference#xmpmeta-object)来检查缩略图元数据，使用对象构造函数。为了确保元数据是最新的，请使用同步模式（默认情况下关闭）：
 
     ```javascript
     var thumb = new Thumbnail( new File( "/C/myImage.jpg") );
@@ -60,7 +60,7 @@ if ( ExternalObject.AdobeXMPScript == undefined ) {
     thumb.metadata = new Metadata( newPacket );
     ```
 
-- 要将元数据写回缩略图的文件，您可以访问缩略图的文件并创建一个[XMPFile对象](xmpscript-object-reference.md#xmpfile-object)对象以直接访问嵌入的元数据：
+- 要将元数据写回缩略图的文件，您可以访问缩略图的文件并创建一个[XMPFile对象](../xmpscript-object-reference#xmpfile-object)对象以直接访问嵌入的元数据：
 
     ```javascript
     var xmp = new XMPFile( thumb.spec.fsName, XMPConst.UNKNOWN, XMPConst.OPEN_FOR_UPDATE );
@@ -74,7 +74,7 @@ if ( ExternalObject.AdobeXMPScript == undefined ) {
 
 ### 创建新元数据
 
-此代码创建一个空的[XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object)，使用它设置元数据属性，并将其序列化为字符串，您可以将其传递给创作工具，或存储在文件中。
+此代码创建一个空的[XMPMeta对象](../xmpscript-object-reference#xmpmeta-object)，使用它设置元数据属性，并将其序列化为字符串，您可以将其传递给创作工具，或存储在文件中。
 
 ```javascript
 var xmp = new XMPMeta();
@@ -158,9 +158,9 @@ for ( var i = 0; i < pics.length; i++ ) {
 
 此脚本为缩略图的上下文菜单添加了一个命令，显示一些XMP属性。
 
-它演示了如何检索与`Thumbnail`对象一起存储的XMP元数据，并使用它创建一个[XMPMeta对象](xmpscript-object-reference.md#xmpmeta-object)，然后使用该对象检索不同类型的属性值。
+它演示了如何检索与`Thumbnail`对象一起存储的XMP元数据，并使用它创建一个[XMPMeta对象](../xmpscript-object-reference#xmpmeta-object)，然后使用该对象检索不同类型的属性值。
 
-要使用此脚本，请将其放置在Adobe Bridge的“启动脚本”文件夹中（请参阅[启动脚本](../introduction/scripting-for-specific-applications.md#startup-scripts)）。当您启动Adobe Bridge时，选择一个包含XMP元数据的文档的缩略图，右键单击，然后从菜单中选择**显示XMP属性**。
+要使用此脚本，请将其放置在Adobe Bridge的“启动脚本”文件夹中（请参阅[启动脚本](../../introduction/scripting-for-specific-applications#startup-scripts)）。当您启动Adobe Bridge时，选择一个包含XMP元数据的文档的缩略图，右键单击，然后从菜单中选择**显示XMP属性**。
 
 ```javascript
 $.writeln("XMPFiles批处理示例");

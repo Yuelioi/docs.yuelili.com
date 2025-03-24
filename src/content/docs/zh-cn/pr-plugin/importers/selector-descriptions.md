@@ -9,7 +9,7 @@ title: 选择器描述
 
 ## imInit
 
-- param1 - [imImportInfoRec\*](structure-descriptions.md#imimportinforec)
+- param1 - [imImportInfoRec\*](../structure-descriptions#imimportinforec)
 - param2 - `unused`
 
 在应用程序启动时发送。
@@ -58,7 +58,7 @@ addToMenu = imMenuNew;
 ## imGetIndFormat
 
 - param1 - `(int) index`
-- param2 - [imIndFormatRec\*](structure-descriptions.md#imindformatrec)
+- param2 - [imIndFormatRec\*](../structure-descriptions#imindformatrec)
 
 在 `imInit` 之后立即重复发送；通过填充 `imIndFormatRec` 枚举插件支持的文件类型。
 
@@ -94,8 +94,8 @@ addToMenu = imMenuNew;
 
 ## imGetInfo8
 
-- param1 - [imFileAccessRec8\*](structure-descriptions.md#imfileaccessrec8)
-- param2 - [imFileInfoRec8\*](structure-descriptions.md#imfileinforec8)
+- param1 - [imFileAccessRec8\*](../structure-descriptions#imfileaccessrec8)
+- param2 - [imFileInfoRec8\*](../structure-descriptions#imfileinforec8)
 
 描述剪辑，或如果剪辑有多个流，则描述剪辑的单个流。
 
@@ -111,7 +111,7 @@ addToMenu = imMenuNew;
 
 ## imCloseFile
 
-- param1 - [imFileRef\*](structure-descriptions.md#imfileref)
+- param1 - [imFileRef\*](../structure-descriptions#imfileref)
 - param2 - `(void*) PrivateData**`
 
 指定的文件不再需要；释放 `privateData`。
@@ -123,7 +123,7 @@ addToMenu = imMenuNew;
 ## imGetIndPixelFormat
 
 - param1 - `(int) index`
-- param2 - [imIndPixelFormatRec\*](structure-descriptions.md#imindpixelformatrec)
+- param2 - [imIndPixelFormatRec\*](../structure-descriptions#imindpixelformatrec)
 
 新的可选选择器，用于枚举特定文件可用的像素格式。
 
@@ -145,8 +145,8 @@ addToMenu = imMenuNew;
 
 ## imGetPreferredFrameSize
 
-- param1 - [imFileRef](structure-descriptions.md#imfileref)
-- param2 - [imPreferredFrameSizeRec\*](structure-descriptions.md#impreferredframesizerec)
+- param1 - [imFileRef](../structure-descriptions#imfileref)
+- param2 - [imPreferredFrameSizeRec\*](../structure-descriptions#impreferredframesizerec)
 
 提供导入器首选的帧大小。
 
@@ -154,8 +154,8 @@ addToMenu = imMenuNew;
 
 ## imSelectClipFrameDescriptor
 
-- param1 - [imFileRef](structure-descriptions.md#imfileref)
-- param2 - [imClipFrameDescriptorRec\*](structure-descriptions.md#imclipframedescriptorrec)
+- param1 - [imFileRef](../structure-descriptions#imfileref)
+- param2 - [imClipFrameDescriptorRec\*](../structure-descriptions#imclipframedescriptorrec)
 
 Premiere Pro CC 2014 新增。
 
@@ -167,8 +167,8 @@ Premiere Pro CC 2014 新增。
 
 ## imGetSourceVideo
 
-- param1 - [imFileRef](structure-descriptions.md#imfileref)
-- param2 - [imSourceVideoRec\*](structure-descriptions.md#imsourcevideorec)
+- param1 - [imFileRef](../structure-descriptions#imfileref)
+- param2 - [imSourceVideoRec\*](../structure-descriptions#imsourcevideorec)
 
 获取主机的未缩放视频帧。
 
@@ -178,7 +178,7 @@ Premiere Pro CC 2014 新增。
 
 ## imCreateAsyncImporter
 
-- param1 - [imAsyncImporterCreationRec\*](structure-descriptions.md#imasyncimportercreationrec)
+- param1 - [imAsyncImporterCreationRec\*](../structure-descriptions#imasyncimportercreationrec)
 - param2 - `unused`
 
 使用提供的数据创建异步导入器对象，并将其存储在 `imAsyncImporterCreationRec` 中。
@@ -187,8 +187,8 @@ Premiere Pro CC 2014 新增。
 
 ## imImportImage
 
-- param1 - [imFileRef](structure-descriptions.md#imfileref)
-- param2 - [imImportImageRec\*](structure-descriptions.md#imimportimagerec)
+- param1 - [imFileRef](../structure-descriptions#imfileref)
+- param2 - [imImportImageRec\*](../structure-descriptions#imimportimagerec)
 
 :::note
 在大多数情况下，`imGetSourceVideo` 是更好的选择。
@@ -204,8 +204,8 @@ Premiere Pro CC 2014 新增。
 
 ## imImportAudio7
 
-- param1 - [imFileRef](structure-descriptions.md#imfileref)
-- param2 - [imImportAudioRec7\*](structure-descriptions.md#imimportaudiorec7)
+- param1 - [imFileRef](../structure-descriptions#imfileref)
+- param2 - [imImportAudioRec7\*](../structure-descriptions#imimportaudiorec7)
 
 使用新的 `imAudioInfoRec7` 替换 `imImportAudio`。
 
@@ -215,14 +215,14 @@ Premiere Pro CC 2014 新增。
 
 始终返回 32 位浮点、非交错采样，如 [Universals](../../universals/universals) 中所述。
 
-您可以使用 [Audio Suite](../universals/sweetpea-suites.md#audio-suite) 中的调用进行一些常见转换。
+您可以使用 [Audio Suite](../../universals/sweetpea-suites#audio-suite) 中的调用进行一些常见转换。
 
 ---
 
 ## imGetPrefs8
 
-- param1 - [imFileAccessRec8\*](structure-descriptions.md#imfileaccessrec8)
-- param2 - [imGetPrefsRec\*](structure-descriptions.md#imgetprefsrec)
+- param1 - [imFileAccessRec8\*](../structure-descriptions#imfileaccessrec8)
+- param2 - [imGetPrefsRec\*](../structure-descriptions#imgetprefsrec)
 
 仅在剪辑文件类型使用 Premiere 中的设置对话框时发送。
 
@@ -262,8 +262,8 @@ Premiere 将使用此数据要求导入器打开它创建的文件。
 
 ## imOpenFile8
 
-- param1 - [imFileRef\*](structure-descriptions.md#imfileref)
-- param2 - [imFileOpenRec8\*](structure-descriptions.md#imfileopenrec8)
+- param1 - [imFileRef\*](../structure-descriptions#imfileref)
+- param2 - [imFileOpenRec8\*](../structure-descriptions#imfileopenrec8)
 
 打开文件并将其句柄提供给 Premiere。
 
@@ -287,7 +287,7 @@ Premiere 的文件管理器现在会跟踪导入器保持打开的文件数量�
 
 ## imQuietFile
 
-- param1 - [imFileRef\*](structure-descriptions.md#imfileref)
+- param1 - [imFileRef\*](../structure-descriptions#imfileref)
 - param2 - `(void*) PrivateData**`
 
 关闭 `imFileRef` 中的文件，并释放与其关联的任何硬件资源。
@@ -302,7 +302,7 @@ Premiere 的文件管理器现在会跟踪导入器保持打开的文件数量�
 
 ## imSaveFile8
 
-- param1 - [imSaveFileRec8\*](structure-descriptions.md#imsavefilerec8)
+- param1 - [imSaveFileRec8\*](../structure-descriptions#imsavefilerec8)
 - param2 - `unused`
 
 保存 `imSaveFileRec8` 中指定的文件。
@@ -313,7 +313,7 @@ Premiere 的文件管理器现在会跟踪导入器保持打开的文件数量�
 
 ## imDeleteFile
 
-- param1 - [imDeleteFileRec\*](structure-descriptions.md#imdeletefilerec)
+- param1 - [imDeleteFileRec\*](../structure-descriptions#imdeletefilerec)
 - param2 - `unused`
 
 仅在您有与文件关联的子文件或相关文件时请求此选择器（通过在 `imInit` 期间将 `canDelete` 设置为 `true`）。
@@ -326,8 +326,8 @@ Premiere 的文件管理器现在会跟踪导入器保持打开的文件数量�
 
 ## imCalcSize8
 
-- param1 - [imCalcSizeRec\*](structure-descriptions.md#imcalcsizerec)
-- param2 - [imFileAccessRec8\*](structure-descriptions.md#imfileaccessrec8)
+- param1 - [imCalcSizeRec\*](../structure-descriptions#imcalcsizerec)
+- param2 - [imFileAccessRec8\*](../structure-descriptions#imfileaccessrec8)
 
 在 Premiere 修剪剪辑之前调用，以获取剪辑使用的磁盘大小。
 
@@ -345,8 +345,8 @@ Premiere 的文件管理器现在会跟踪导入器保持打开的文件数量�
 
 ## imCheckTrim8
 
-- param1 - [imCheckTrimRec\*](structure-descriptions.md#imchecktrimrec)
-- param2 - [imFileAccessRec8\*](structure-descriptions.md#imfileaccessrec8)
+- param1 - [imCheckTrimRec\*](../structure-descriptions#imchecktrimrec)
+- param2 - [imFileAccessRec8\*](../structure-descriptions#imfileaccessrec8)
 
 在 Premiere 修剪剪辑之前调用，以检查剪辑是否可以在指定的边界修剪。
 
@@ -376,8 +376,8 @@ Premiere 的文件管理器现在会跟踪导入器保持打开的文件数量�
 
 ## imTrimFile8
 
-- param1 - [imFileAccessRec8\*](structure-descriptions.md#imfileaccessrec8)
-- param2 - [imTrimFileRec8\*](structure-descriptions.md#imtrimfilerec8)
+- param1 - [imFileAccessRec8\*](../structure-descriptions#imfileaccessrec8)
+- param2 - [imTrimFileRec8\*](../structure-descriptions#imtrimfilerec8)
 
 在 Premiere 修剪剪辑时调用。
 
@@ -401,7 +401,7 @@ Premiere 的文件管理器现在会跟踪导入器保持打开的文件数量�
 
 ## imCopyFile
 
-- param1 - [imCopyFileRec\*](structure-descriptions.md#imcopyfilerec)
+- param1 - [imCopyFileRec\*](../structure-descriptions#imcopyfilerec)
 - param2 - `unused`
 
 在使用项目管理器执行复制操作时，`imCopyFile` 会发送给设置了 `imImportInfoRec` 可以复制的导入器，而不是 `imSaveFile`。
@@ -412,7 +412,7 @@ Premiere 的文件管理器现在会跟踪导入器保持打开的文件数量�
 
 ## imRetargetAccelerator
 
-- param1 - [imAcceleratorRec\*](structure-descriptions.md#imacceleratorrec)
+- param1 - [imAcceleratorRec\*](../structure-descriptions#imacceleratorrec)
 - param2 - `unused`
 
 当项目管理器复制媒体及其加速器时，此选择器提供了更新加速器以引用复制的媒体的机会。
@@ -421,7 +421,7 @@ Premiere 的文件管理器现在会跟踪导入器保持打开的文件数量�
 
 ## imQueryDestinationPath
 
-- param1 - [imQueryDestinationPathRec\*](structure-descriptions.md#imquerydestinationpathrec)
+- param1 - [imQueryDestinationPathRec\*](../structure-descriptions#imquerydestinationpathrec)
 - param2 - `unused`
 
 CS5 新增。
@@ -432,8 +432,8 @@ CS5 新增。
 
 ## imInitiateAsyncClosedCaptionScan
 
-- param1 - [imFileRef](structure-descriptions.md#imfileref)
-- param2 - [imInitiateAsyncClosedCaptionScanRec\*](structure-descriptions.md#iminitiateasyncclosedcaptionscanrec)
+- param1 - [imFileRef](../structure-descriptions#imfileref)
+- param2 - [imInitiateAsyncClosedCaptionScanRec\*](../structure-descriptions#iminitiateasyncclosedcaptionscanrec)
 
 CC 新增。
 
@@ -445,8 +445,8 @@ CC 新增。
 
 ## imGetNextClosedCaption
 
-- param1 - [imFileRef](structure-descriptions.md#imfileref)
-- param2 - [imGetNextClosedCaptionRec\*](structure-descriptions.md#imgetnextclosedcaptionrec)
+- param1 - [imFileRef](../structure-descriptions#imfileref)
+- param2 - [imGetNextClosedCaptionRec\*](../structure-descriptions#imgetnextclosedcaptionrec)
 
 CC 新增。
 
@@ -458,8 +458,8 @@ CC 新增。
 
 ## imCompleteAsyncClosedCaptionScan
 
-- param1 - [imFileRef](structure-descriptions.md#imfileref)
-- param2 - [imCompleteAsyncClosedCaptionScanRec\*](structure-descriptions.md#imcompleteasyncclosedcaptionscanrec)
+- param1 - [imFileRef](../structure-descriptions#imfileref)
+- param2 - [imCompleteAsyncClosedCaptionScanRec\*](../structure-descriptions#imcompleteasyncclosedcaptionscanrec)
 
 CC 新增。
 
@@ -469,8 +469,8 @@ CC 新增。
 
 ## imAnalysis
 
-- param1 - [imFileRef](structure-descriptions.md#imfileref)
-- param2 - [imAnalysisRec\*](structure-descriptions.md#imanalysisrec)
+- param1 - [imFileRef](../structure-descriptions#imfileref)
+- param2 - [imAnalysisRec\*](../structure-descriptions#imanalysisrec)
 
 在 `imAnalysisRec` 中提供有关文件的信息；当用户查看文件的属性对话框时发送。
 
@@ -480,8 +480,8 @@ Premiere 显示一个包含文件信息的对话框，包括您提供的文本�
 
 ## imDataRateAnalysis
 
-- param1 - [imFileRef](structure-descriptions.md#imfileref)
-- param2 - [imDataRateAnalysisRec\*](structure-descriptions.md#imdatarateanalysisrec)
+- param1 - [imFileRef](../structure-descriptions#imfileref)
+- param2 - [imDataRateAnalysisRec\*](../structure-descriptions#imdatarateanalysisrec)
 
 为 Premiere 提供文件的数据速率分析。
 
@@ -493,8 +493,8 @@ Premiere 根据提供的数据生成数据速率分析图。
 
 ## imGetTimeInfo8
 
-- param1 - [imFileRef](structure-descriptions.md#imfileref)
-- param2 - [imTimeInfoRec8\*](structure-descriptions.md#imtimeinforec8)
+- param1 - [imFileRef](../structure-descriptions#imfileref)
+- param2 - [imTimeInfoRec8\*](../structure-descriptions#imtimeinforec8)
 
 读取文件中嵌入的任何时间码数据。
 
@@ -504,8 +504,8 @@ Premiere 根据提供的数据生成数据速率分析图。
 
 ## imSetTimeInfo8
 
-- param1 - [imFileRef](structure-descriptions.md#imfileref)
-- param2 - [imTimeInfoRec8\*](structure-descriptions.md#imtimeinforec8)
+- param1 - [imFileRef](../structure-descriptions#imfileref)
+- param2 - [imTimeInfoRec8\*](../structure-descriptions#imtimeinforec8)
 
 在捕获完成后发送，其中时间码由记录器或设备控制器提供。
 
@@ -525,7 +525,7 @@ Premiere 根据提供的数据生成数据速率分析图。
 
 ## imGetFileAttributes
 
-- param1 - [imFileAttributesRec\*](structure-descriptions.md#imfileattributesrec)
+- param1 - [imFileAttributesRec\*](../structure-descriptions#imfileattributesrec)
 
 可选。
 
@@ -535,8 +535,8 @@ Premiere 根据提供的数据生成数据速率分析图。
 
 ## imGetMetaData
 
-- param1 - [imFileRef](structure-descriptions.md#imfileref)
-- param2 - [imMetaDataRec\*](structure-descriptions.md#immetadatarec)
+- param1 - [imFileRef](../structure-descriptions#imfileref)
+- param2 - [imMetaDataRec\*](../structure-descriptions#immetadatarec)
 
 调用以获取由四字符代码指定的元数据块。
 
@@ -548,8 +548,8 @@ Premiere 将再次调用，并已分配适当的缓冲区。
 
 ## imSetMetaData
 
-- param1 - [imFileRef](structure-descriptions.md#imfileref)
-- param2 - [imMetaDataRec\*](structure-descriptions.md#immetadatarec)
+- param1 - [imFileRef](../structure-descriptions#imfileref)
+- param2 - [imMetaDataRec\*](../structure-descriptions#immetadatarec)
 
 调用以添加由四字符代码指定的元数据块。
 
@@ -557,7 +557,7 @@ Premiere 将再次调用，并已分配适当的缓冲区。
 
 ## imDeferredProcessing
 
-- param1 - [imDeferredProcessingRec\*](structure-descriptions.md#imdeferredprocessingrec)
+- param1 - [imDeferredProcessingRec\*](../structure-descriptions#imdeferredprocessingrec)
 - param2 - `未使用`
 
 描述剪辑上延迟处理的当前进度。
@@ -566,8 +566,8 @@ Premiere 将再次调用，并已分配适当的缓冲区。
 
 ## imGetAudioChannelLayout
 
-- param1 - [imFileRef](structure-descriptions.md#imfileref)
-- param2 - [imGetAudioChannelLayoutRec\*](structure-descriptions.md#imgetaudiochannellayoutrec)
+- param1 - [imFileRef](../structure-descriptions#imfileref)
+- param2 - [imGetAudioChannelLayoutRec\*](../structure-descriptions#imgetaudiochannellayoutrec)
 
 CC 新增。
 
@@ -577,8 +577,8 @@ CC 新增。
 
 ## imGetPeakAudio
 
-- param1 - [imFileRef](structure-descriptions.md#imfileref)
-- param2 - [imPeakAudioRec\*](structure-descriptions.md#impeakaudiorec)
+- param1 - [imFileRef](../structure-descriptions#imfileref)
+- param2 - [imPeakAudioRec\*](../structure-descriptions#impeakaudiorec)
 
 可选选择器允许 Premiere 直接从导入器获取音频峰值数据。
 
@@ -592,7 +592,7 @@ CC 新增。
 
 ## imQueryContentState
 
-- param1 - [imQueryContentStateRec\*](structure-descriptions.md#imquerycontentstaterec)
+- param1 - [imQueryContentStateRec\*](../structure-descriptions#imquerycontentstaterec)
 - param2 - `未使用`
 
 CS5 新增。
@@ -605,7 +605,7 @@ CS5 新增。
 
 ## imQueryStreamLabel
 
-- param1 - [imQueryStreamLabelRec\*](structure-descriptions.md#imquerystreamlabelrec)
+- param1 - [imQueryStreamLabelRec\*](../structure-descriptions#imquerystreamlabelrec)
 - param2 - `未使用`
 
 CS6 新增。
@@ -617,7 +617,7 @@ CS6 新增。
 ## imGetSubTypeNames
 
 - param1 - `(csSDK_int32) fileType`
-- param2 - [imSubTypeDescriptionRec\*](structure-descriptions.md#imsubtypedescriptionrec)
+- param2 - [imSubTypeDescriptionRec\*](../structure-descriptions#imsubtypedescriptionrec)
 
 After Effects CS3 新增的可选选择器。
 
@@ -634,7 +634,7 @@ After Effects CS3 新增的可选选择器。
 ## imGetIndColorProfile
 
 - param1 - `(int) index`
-- param2 - [imIndColorProfileRec\*](structure-descriptions.md#imindcolorprofilerec)
+- param2 - [imIndColorProfileRec\*](../structure-descriptions#imindcolorprofilerec)
 
 仅在导入器将 `imImageInfoRec.colorProfileSupport` 设置为 `imColorProfileSupport_Fixed` 时发送。
 
@@ -647,7 +647,7 @@ After Effects CS3 新增的可选选择器。
 ## imGetIndColorSpace
 
 - param1 - `(int) index`
-- param2 - [imIndColorSpaceRec\*](structure-descriptions.md#imindcolorspacerec)
+- param2 - [imIndColorSpaceRec\*](../structure-descriptions#imindcolorspacerec)
 
 这是用于枚举媒体颜色空间的新选择器。
 
@@ -661,7 +661,7 @@ After Effects CS3 新增的可选选择器。
 
 ## imQueryInputFileList
 
-- param1 - [imQueryInputFileListRec\*](structure-descriptions.md#imqueryinputfilelistrec)
+- param1 - [imQueryInputFileListRec\*](../structure-descriptions#imqueryinputfilelistrec)
 - param2 - `未使用`
 
 After Effects CS6 新增；未在 Premiere Pro 中使用。
@@ -679,6 +679,6 @@ After Effects CS6 新增；未在 Premiere Pro 中使用。
 这是用于枚举媒体中嵌入的 LUT 的选择器。
 
 - param1 - `(int) index`.
-- param2 - [EmbeddedLUTRec\*](structure-descriptions.md#embeddedlutrec)
+- param2 - [EmbeddedLUTRec\*](../structure-descriptions#embeddedlutrec)
 
 如果导入器报告其具有嵌入的 LUT，则发送。第一次调用时，inDestinationBuffer 将为 NULL。填写缓冲区所需的大小，设置正确的空间类型，Premiere Pro 将使用足够的内存再次调用您的导入器。

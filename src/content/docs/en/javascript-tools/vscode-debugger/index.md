@@ -3,7 +3,7 @@ title: index
 ---
 # The VS Code Debugger
 
-Since [The ExtendScript Toolkit](../extendscript-toolkit/index.md#the-extendscript-toolkit) has been deprecated by Adobe (in part due to MacOS dropping support for 32-bit apps), the official method of debugging Extendscript is by using [VS Code](https://code.visualstudio.com/) with the [Adobe Extendscript extension](https://marketplace.visualstudio.com/items?itemName=Adobe.extendscript-debug).
+Since [The ExtendScript Toolkit](../../extendscript-toolkit/index#the-extendscript-toolkit) has been deprecated by Adobe (in part due to MacOS dropping support for 32-bit apps), the official method of debugging Extendscript is by using [VS Code](https://code.visualstudio.com/) with the [Adobe Extendscript extension](https://marketplace.visualstudio.com/items?itemName=Adobe.extendscript-debug).
 
 It's semi-buggy, generally unreliable, and seems to be meant for self-contained instant-run scripts (as opposed to ScriptUI panels), but it can be helpful in some cases.
 

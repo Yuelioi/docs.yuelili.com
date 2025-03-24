@@ -18,7 +18,7 @@ ExtendScript 提供了预处理器指令，用于包含外部脚本、命名脚�
 
 ## #include 文件
 
-从其他位置包含一个 JavaScript 源文件。将指定文件的内容插入到该语句所在的位置。`file` 参数是一个 Adobe 可移植文件规范。请参阅 [指定路径](../file-system-access/using-file-and-folder-objects.md#specifying-paths)。
+从其他位置包含一个 JavaScript 源文件。将指定文件的内容插入到该语句所在的位置。`file` 参数是一个 Adobe 可移植文件规范。请参阅 [指定路径](../../file-system-access/using-file-and-folder-objects#specifying-paths)。
 
 作为惯例，JavaScript 包含文件使用 `.jsxinc` 文件扩展名。例如：
 
@@ -77,7 +77,7 @@ ExtendScript 提供了预处理器指令，用于包含外部脚本、命名脚�
 
 ## #strict on
 
-开启严格错误检查。请参阅 [Dollar ($) 对象](../dollar-object) 的 [strict](dollar-object.md#strict) 属性。
+开启严格错误检查。请参阅 [Dollar ($) 对象](../dollar-object) 的 [strict](../dollar-object#strict) 属性。
 
 ---
 

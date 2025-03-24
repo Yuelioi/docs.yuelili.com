@@ -9,7 +9,7 @@ title: PluginItem
 
 An art item created by an Illustrator plug-in.
 
-Scripts can create a plug-in item using [PlacedItem.trace](PlacedItem.md#placeditemtrace) or [RasterItem.trace()](RasterItem.md#rasteritemtrace), and can copy existing plug-in items using the `duplicate` method, but cannot create `PluginItem` objects directly.
+Scripts can create a plug-in item using [PlacedItem.trace](../placeditem#placeditemtrace) or [RasterItem.trace()](../rasteritem#rasteritemtrace), and can copy existing plug-in items using the `duplicate` method, but cannot create `PluginItem` objects directly.
 
 ---
 
@@ -25,7 +25,7 @@ Is this object used to create a knockout, and if so, what kind of knockout.
 
 #### Type
 
-[KnockoutState](scripting-constants.md#knockoutstate)
+[KnockoutState](../scripting-constants#knockoutstate)
 
 ---
 
@@ -39,7 +39,7 @@ The blend mode used when compositing an object.
 
 #### Type
 
-[BlendModes](scripting-constants.md#blendmodes)
+[BlendModes](../scripting-constants#blendmodes)
 
 ---
 
@@ -470,7 +470,7 @@ Creates a duplicate of the selected object.
 |      Parameter      |                                 Type                                  |        Description         |
 | ------------------- | --------------------------------------------------------------------- | -------------------------- |
 | `relativeObject`    | Object, optional                                                      | Object to duplicate to     |
-| `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement), optional | Location to insert element |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), optional | Location to insert element |
 
 #### Returns
 
@@ -491,7 +491,7 @@ Moves the object.
 |      Parameter      |                                 Type                                  |          Description          |
 | ------------------- | --------------------------------------------------------------------- | ----------------------------- |
 | `relativeObject`    | Object                                                                | Object to move element within |
-| `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement), optional | Location to move element to   |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), optional | Location to move element to   |
 
 #### Returns
 
@@ -543,7 +543,7 @@ Scales the art item where `scaleX` is the horizontal scaling factor and `scaleY`
 | `changeFillGradients` | Boolean, optional                                                 | Whether to transform fill gradients                     |
 | `changeStrokePattern` | Boolean, optional                                                 | Whether to transform stroke patterns                    |
 | `changeLineWidths`    | Number (double), optional                                         | The amount to scale line widths                         |
-| `scaleAbout`          | [Transformation](scripting-constants.md#transformation), optional | The point to use as anchor, to transform about          |
+| `scaleAbout`          | [Transformation](../scripting-constants#transformation), optional | The point to use as anchor, to transform about          |
 
 #### Returns
 
@@ -579,7 +579,7 @@ The object is rotated counter-clockwise if the `angle` value is positive, clockw
 | `changeFillPatterns`  | Boolean, optional                                                 | Whether to transform fill patterns                      |
 | `changeFillGradients` | Boolean, optional                                                 | Whether to transform fill gradients                     |
 | `changeStrokePattern` | Boolean, optional                                                 | Whether to transform stroke patterns                    |
-| `rotateAbout`         | [Transformation](scripting-constants.md#transformation), optional | The point to use as anchor, to transform about          |
+| `rotateAbout`         | [Transformation](../scripting-constants#transformation), optional | The point to use as anchor, to transform about          |
 
 #### Returns
 
@@ -615,7 +615,7 @@ Transforms the art item by applying a transformation matrix.
 | `changeFillGradients`  | Boolean, optional                                                 | Whether to change Fill Gradients               |
 | `changeStrokePattern`  | Boolean, optional                                                 | Whether to change Stroke Pattern               |
 | `changeLineWidths`     | Number (double), optional                                         | The amount to scale line widths                |
-| `transformAbout`       | [Transformation](scripting-constants.md#transformation), optional | The point to use as anchor, to transform about |
+| `transformAbout`       | [Transformation](../scripting-constants#transformation), optional | The point to use as anchor, to transform about |
 
 #### Returns
 
@@ -669,7 +669,7 @@ Arranges the art item's position in the stacking order of the group or layer (pa
 
 |  Parameter  |                        Type                         |            Description            |
 | ----------- | --------------------------------------------------- | --------------------------------- |
-| `zOrderCmd` | [ZOrderMethod](scripting-constants.md#zordermethod) | Stacking order arrangement method |
+| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | Stacking order arrangement method |
 
 #### Returns
 

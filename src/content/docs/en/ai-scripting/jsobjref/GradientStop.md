@@ -9,7 +9,7 @@ title: GradientStop
 
 A gradient stop definition that represents a point on a specific gradient defined in the document. Each gradient stop specifies a color change in the containing gradient.
 
-See [Changing a gradient stop color](GradientColor.md#changing-a-gradient-stop-color) for an example.
+See [Changing a gradient stop color](../gradientcolor#changing-a-gradient-stop-color) for an example.
 
 ---
 

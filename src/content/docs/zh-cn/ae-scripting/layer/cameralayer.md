@@ -7,7 +7,7 @@ title: 摄像机图层
 
 #### 描述
 
-CameraLayer 对象表示合成中的一个摄像机图层。可以使用 [LayerCollection.addCamera()](layercollection.md#layercollectionaddcamera) 创建它。可以通过索引号或名称字符串在项目的图层集合中访问它。
+CameraLayer 对象表示合成中的一个摄像机图层。可以使用 [LayerCollection.addCamera()](../layercollection#layercollectionaddcamera) 创建它。可以通过索引号或名称字符串在项目的图层集合中访问它。
 
 :::info
 CameraLayer 是 [Layer 对象](../layer) 的子类。在使用 CameraLayer 时，所有 Layer 的方法和属性都可用。

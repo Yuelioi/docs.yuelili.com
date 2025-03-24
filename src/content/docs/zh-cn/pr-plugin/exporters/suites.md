@@ -47,13 +47,13 @@ prSuiteError (*GetExportSourceInfo)(
 | `kExportInfo_SourceHasVideo`        | Bool        | 如果源有视频，则为非零值                                                                                                                                                                                     |
 | `kExportInfo_RenderAsPreview`       | Bool        | 如果当前正在渲染预览文件，则返回非零值。                                                                                                                                                                     |
 | `kExportInfo_SequenceGUID`          | Guid        | 一个 `PrPluginID`，它是序列的唯一 GUID。                                                                                                                                                                     |
-| `kExportInfo_SessionFilePath`       | PrMemoryPtr | 一个 `prUTF16Char` 数组。导出器应使用 [内存管理器套件](../universals/sweetpea-suites.md#memory-manager-suite) 释放指针。                                                                                     |
+| `kExportInfo_SessionFilePath`       | PrMemoryPtr | 一个 `prUTF16Char` 数组。导出器应使用 [内存管理器套件](../../universals/sweetpea-suites#memory-manager-suite) 释放指针。                                                                                     |
 | `kExportInfo_VideoPosterFrameTickTime` | Int64       | CS5 新增。PrTime 值。                                                                                                                                                                                       |
 | `kExportInfo_SourceTimecode`        | PrMemoryPtr | CS5.0.2 新增。源剪辑或序列的时间码。                                                                                                                                                                         |
 |                                     |             | 序列时间码由序列的起始时间设置，使用序列的右键菜单。指向 ExporterTimecodeRec 结构的指针。                                                                                                                    |
-|                                     |             | 导出器应使用 [内存管理器套件](../universals/sweetpea-suites.md#memory-manager-suite) 释放指针。                                                                                                             |
+|                                     |             | 导出器应使用 [内存管理器套件](../../universals/sweetpea-suites#memory-manager-suite) 释放指针。                                                                                                             |
 | `kExportInfo_UsePreviewFiles`       | Bool        | CC 新增。使用此选项检查用户是否在导出设置对话框中勾选了“使用预览”。                                                                                                                                           |
-|                                     |             | 如果勾选，尽可能重用已渲染的任何预览文件，可以使用 [视频片段套件](../universals/sweetpea-suites.md#video-segment-suite) 中的 `AcquireVideoSegmentsWithPreviewsID` 检索。                                     |
+|                                     |             | 如果勾选，尽可能重用已渲染的任何预览文件，可以使用 [视频片段套件](../../universals/sweetpea-suites#video-segment-suite) 中的 `AcquireVideoSegmentsWithPreviewsID` 检索。                                     |
 | `kExportInfo_NumAudioChannels`      | Int32       | CC 新增。获取给定源中的音频通道数。                                                                                                                                                                           |
 |                                     |             | 这可以用于自动初始化导出设置中音频选项卡中的音频通道参数以匹配源。                                                                                                                                           |
 
@@ -241,7 +241,7 @@ prSuiteError (*ReportEvent)(
 |       成员        |                                        描述                                         |
 |----------------------|------------------------------------------------------------------------------------|
 | `inExporterID`       | 传入 `exDoExportRec` 中的 `exporterPluginID`。                                     |
-| `inEventType`        | 使用 [错误套件](../universals/sweetpea-suites.md#error-suite) 中的类型之一：       |
+| `inEventType`        | 使用 [错误套件](../../universals/sweetpea-suites#error-suite) 中的类型之一：       |
 |                      | - `kEventTypeInformational`                                                        |
 |                      | - `kEventTypeWarning`                                                              |
 |                      | - `kEventTypeError`                                                                |
@@ -614,7 +614,7 @@ void (*PrSDKSequenceAsyncRenderCompletionProc)(
 | `inCallbackRef`    | 导出器使用 `SetAsyncRenderCompletionProc()` 设置的指针。                                                                                                              |
 |                    | 例如，这可以是指向导出器实例的指针。                                                                                                                                 |
 | `inTime`           | 请求的帧时间。                                                                                                                                                       |
-| `inRenderedFrame`  | 渲染后的帧。导出器负责使用 [PPix Suite](../universals/sweetpea-suites.md#ppix-suite) 中的 `Dispose()` 调用处理此 PPixHand。                                           |
+| `inRenderedFrame`  | 渲染后的帧。导出器负责使用 [PPix Suite](../../universals/sweetpea-suites#ppix-suite) 中的 `Dispose()` 调用处理此 PPixHand。                                           |
 | `inGetFrameReturn` | 一个结构，其中包含有关返回帧的信息，并且包括最初传递给 `QueueAsyncVideoFrameRender()` 的 `inAsyncCompletionData`。                                                   |
 
 ### QueueAsyncVideoFrameRender()

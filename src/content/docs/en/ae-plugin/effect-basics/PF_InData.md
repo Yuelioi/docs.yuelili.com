@@ -33,7 +33,7 @@ Also, don't worry; although `PF_InData` is dauntingly large, you need not memori
 | `num_params`                 | Input parameter count.                                                                                                                                                                                                                         |
 | `what_cpu`                   | Under macOS this contains the Gestalt value for CPU type (see Inside Macintosh, volume 6). Undefined on Windows.                                                                                                                               |
 | `what_fpu`                   | Under macOS this contains the Gestalt value for FPU type. Undefined on Windows.                                                                                                                                                                |
-| `current_time`               | The time of the current frame being rendered, valid during [PF_Cmd_RENDER](command-selectors.md#frame-selectors).                                                                                                                              |
+| `current_time`               | The time of the current frame being rendered, valid during [PF_Cmd_RENDER](../command-selectors#frame-selectors).                                                                                                                              |
 |                              | This is the current time in the layer, not in any composition.                                                                                                                                                                                 |
 |                              | If a layer starts at other than time 0 or is time-stretched, layer time and composition time are distinct.                                                                                                                                     |
 |                              | The current frame number is `current_time` divided by `time_step`.                                                                                                                                                                             |
@@ -45,11 +45,11 @@ Also, don't worry; although `PF_InData` is dauntingly large, you need not memori
 | `time_step`                  | The duration of the current source frame being rendered.                                                                                                                                                                                       |
 |                              | In several situations with nested compositions, this source frame duration may be different than the time span between frames in the layer (`local_time_step`).                                                                                |
 |                              | This value can be converted to seconds by dividing by time_scale.                                                                                                                                                                              |
-|                              | When calculating other source frame times, such as for [PF_CHECKOUT_PARAM](../effect-details/interaction-callback-functions.md#interaction-callbacks), use this value rather than `local_time_step`.                                           |
+|                              | When calculating other source frame times, such as for [PF_CHECKOUT_PARAM](../../effect-details/interaction-callback-functions#interaction-callbacks), use this value rather than `local_time_step`.                                           |
 |                              | Can be negative if the layer is time-reversed. Can vary from one frame to the next if time remapping is applied on a nested composition.                                                                                                       |
 |                              | Can differ from local_time_step when source material is stretched or remapped in a nested composition.                                                                                                                                         |
 |                              | For example, this could occur when an inner composition is nested within an outer composition with a different frame rate, or time remapping is applied to the outer composition.                                                              |
-|                              | This value will be 0 during [PF_Cmd_SEQUENCE_SETUP](command-selectors.md#sequence-selectors) if it is not constant for all frames.                                                                                                             |
+|                              | This value will be 0 during [PF_Cmd_SEQUENCE_SETUP](../command-selectors#sequence-selectors) if it is not constant for all frames.                                                                                                             |
 |                              | It will be set correctly during `PF_Cmd_FRAME_SETUP` and `PF_Cmd_FRAME_SETDOWN` selectors.                                                                                                                                                     |
 |                              | !!! warning                                                                                                                                                                                                                                    |
 |                              |      This can be zero, so check it before you divide.                                                                                                                                                                                          |
@@ -66,12 +66,12 @@ Also, don't worry; although `PF_InData` is dauntingly large, you need not memori
 | `time_scale`                 | The units per second that `current_time`, `time_step`, `local_time_step` and `total_time` are in.                                                                                                                                              |
 |                              | If `time_scale` is 30, then the units of `current_time`, `time_step`, `local_time_step` and `total_time` are in 30ths of a second.                                                                                                             |
 |                              | The `time_step` might then be 3, indicating that the sequence is actually being rendered at 10 frames per second. `total_time` might be 105, indicating that the sequence is 3.5 seconds long.                                                 |
-| `field`                      | Valid only if [PF_OutFlag_PIX_INDEPENDENT](PF_OutData.md#pf_outflags) was set during [PF_Cmd_GLOBAL_SETUP](command-selectors.md#global-selectors).                                                                                             |
+| `field`                      | Valid only if [PF_OutFlag_PIX_INDEPENDENT](../pf_outdata#pf_outflags) was set during [PF_Cmd_GLOBAL_SETUP](../command-selectors#global-selectors).                                                                                             |
 |                              | Check this field to see if you can process just the upper or lower field.                                                                                                                                                                      |
 | `shutter_angle`              | Motion blur shutter angle. Values range from 0 to 1, which represents 360 degrees.                                                                                                                                                             |
 |                              | Will be zero unless motion blur is enabled and checked for the target layer.                                                                                                                                                                   |
 |                              | `shutter_angle == 180` means the time interval between `current_time` and `current_time + 1/2 time_step`.                                                                                                                                      |
-|                              | Valid only if [PF_OutFlag_I_USE_SHUTTER_ANGLE](PF_OutData.md#pf_outflags) was set during [PF_Cmd_GLOBAL_SETUP](command-selectors.md#global-selectors).                                                                                         |
+|                              | Valid only if [PF_OutFlag_I_USE_SHUTTER_ANGLE](../pf_outdata#pf_outflags) was set during [PF_Cmd_GLOBAL_SETUP](../command-selectors#global-selectors).                                                                                         |
 |                              | See the section on [Motion Blur](../../effect-details/motion-blur) for details on how to implement motion blur in your effect.                                                                                                                 |
 | `width`                      | Dimensions of the source layer, which are not necessarily the same as the width and height fields in the input image parameter.                                                                                                                |
 |                              | Buffer resizing effects can cause this difference. Not affected by downsampling.                                                                                                                                                               |
@@ -84,10 +84,10 @@ Also, don't worry; although `PF_InData` is dauntingly large, you need not memori
 |                              | Effects need the downsampling factors to interpret scalar parameters representing pixel distances in the image (like sliders).                                                                                                                 |
 |                              | For example, a blur of 4 pixels should be interpreted as a blur of 2 pixels if the downsample factor is 1/2 in each direction (downsample factors are represented as ratios.)                                                                  |
 |                              | Valid only during:                                                                                                                                                                                                                             |
-|                              | - [PF_Cmd_SEQUENCE_SETUP](command-selectors.md#sequence-selectors)                                                                                                                                                                             |
-|                              | - [PF_Cmd_SEQUENCE_RESETUP](command-selectors.md#sequence-selectors)                                                                                                                                                                           |
-|                              | - [PF_Cmd_FRAME_SETUP](command-selectors.md#frame-selectors)                                                                                                                                                                                   |
-|                              | - [PF_Cmd_RENDER](command-selectors.md#frame-selectors)                                                                                                                                                                                        |
+|                              | - [PF_Cmd_SEQUENCE_SETUP](../command-selectors#sequence-selectors)                                                                                                                                                                             |
+|                              | - [PF_Cmd_SEQUENCE_RESETUP](../command-selectors#sequence-selectors)                                                                                                                                                                           |
+|                              | - [PF_Cmd_FRAME_SETUP](../command-selectors#frame-selectors)                                                                                                                                                                                   |
+|                              | - [PF_Cmd_RENDER](../command-selectors#frame-selectors)                                                                                                                                                                                        |
 | `downsample_y`               |                                                                                                                                                                                                                                                |
 | `pixel_aspect_ratio`         | Pixel aspect ratio (width over height).                                                                                                                                                                                                        |
 | `in_flags`                   | Unused.                                                                                                                                                                                                                                        |
@@ -119,7 +119,7 @@ Hint rectangles are much more effective...and complicated...for [SmartFX](../../
 
 Use `extent_hint` to process only those pixels for which output is required; this is one of the simplest optimizations you can make.
 
-Tell After Effects you use `in_data>extent_hint` by setting [PF_OutFlag_USE_OUTPUT_EXTENT](PF_OutData.md#pf_outflags) in [PF_OutData](PF_OutData.md#pf_outdata) during [PF_Cmd_GLOBAL_SETUP](command-selectors.md#global-selectors) (and in your PiPL).
+Tell After Effects you use `in_data>extent_hint` by setting [PF_OutFlag_USE_OUTPUT_EXTENT](../pf_outdata#pf_outflags) in [PF_OutData](../pf_outdata#pf_outdata) during [PF_Cmd_GLOBAL_SETUP](../command-selectors#global-selectors) (and in your PiPL).
 
 Disable caching from the preferences menu before testing `extent_hint` code, so After Effects renders your effect whenever anything in your composition changes.
 
@@ -133,7 +133,7 @@ This changes the `extent_hint`, which encloses all of the non-zero alpha areas o
 
 The `in_data>extent_hint` is the intersection of these two rectangles (the composition and the mask), and changes whenever they do.
 
-Extent rectangles are computed in the coordinate space of the original input layer, before resizing and origin shifting, to simplify rectangle intersection between the input and output extents for effects which set [PF_OutFlag_PIX_INDEPENDENT](PF_OutData.md#pf_outflags).
+Extent rectangles are computed in the coordinate space of the original input layer, before resizing and origin shifting, to simplify rectangle intersection between the input and output extents for effects which set [PF_OutFlag_PIX_INDEPENDENT](../pf_outdata#pf_outflags).
 
 To get the output extent in the coordinate system of the output buffer, offset the `extent_hint` by the `PF_InData->output_origin_x` and `y` fields.
 
@@ -147,7 +147,7 @@ Consider a drop shadow; users frequently apply a static drop shadow to a still i
 
 The `output>extent_hint` is ignored, so the cache is used more often.
 
-For buffer-expanding effects, intersect the `output>extent_hint` with your plug-in's transformed bounds and sets the size accordingly during [PF_Cmd_FRAME_SETUP](command-selectors.md#frame-selectors).
+For buffer-expanding effects, intersect the `output>extent_hint` with your plug-in's transformed bounds and sets the size accordingly during [PF_Cmd_FRAME_SETUP](../command-selectors#frame-selectors).
 
 ---
 
@@ -161,7 +161,7 @@ Numerous effects expand the buffer "just a touch", and After Effects often uses 
 
 ## Point Controls And Buffer Expansion
 
-Effects which expand the output buffer position the original layer's upper left corner by setting set `output_origin_x/y` in `PF_InData` during [PF_Cmd_FRAME_SETUP](command-selectors.md#frame-selectors).
+Effects which expand the output buffer position the original layer's upper left corner by setting set `output_origin_x/y` in `PF_InData` during [PF_Cmd_FRAME_SETUP](../command-selectors#frame-selectors).
 
 This shift is reported to subsequent effects in the `pre_effect_source_origin_x/y`. Point parameters are adjusted for this shift automatically.
 

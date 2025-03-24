@@ -5,29 +5,29 @@ title: 管理控件标题
 
 用户界面元素通常需要一个标题或标签来标识其用途，标题通常放置在它所标识的元素附近。如[自动布局](../automatic-layout)中的示例所示，您可以使用`statictext`元素作为标题或标签，并使用自动布局机制来控制此类标题相对于它所标识的元素的位置。
 
-标题布局机制为许多常见情况提供了一种更简单的方式来完成此任务。它允许您定义元素的标题及其与所标识对象的图形表示之间的空间关系，而无需额外的`statictext`和容器元素。标题布局操作依赖于元素的可选[title](control-objects.md#title)和[titleLayout](control-objects.md#titlelayout)属性。
+标题布局机制为许多常见情况提供了一种更简单的方式来完成此任务。它允许您定义元素的标题及其与所标识对象的图形表示之间的空间关系，而无需额外的`statictext`和容器元素。标题布局操作依赖于元素的可选[title](../control-objects#title)和[titleLayout](../control-objects#titlelayout)属性。
 
 它将此标题和元素的图形表示视为两个独立的对象，这两个对象的相对位置由包含它们的虚拟容器内的布局规则控制。这与自动布局机制的操作类似，但范围更有限。
 
 标题布局适用于以下类型的UI元素：
 
-- [DropDownList](control-objects.md#dropdownlist)
-- [FlashPlayer](control-objects.md#flashplayer)
-- [IconButton](types-of-controls.md#iconbutton)
-- [Image](types-of-controls.md#image)
-- [TabbedPanel](control-objects.md#tabbedpanel)
+- [DropDownList](../control-objects#dropdownlist)
+- [FlashPlayer](../control-objects#flashplayer)
+- [IconButton](../types-of-controls#iconbutton)
+- [Image](../types-of-controls#image)
+- [TabbedPanel](../control-objects#tabbedpanel)
 
 对于大多数这些元素类型，标题通常出现在元素本身之外，虚拟容器是围绕标题和独立元素的假想线。对于IconButton，标题出现在按钮的边界内，虚拟容器由元素的外部边界定义。两种情况下的原理相同。
 
-- [title](control-objects.md#title)属性是一个字符串，用于定义UI元素的文本标签。标题可以出现在图形元素的左侧或右侧、上方或下方，或者叠加在图形元素的中心；其位置由[titleLayout](control-objects.md#titlelayout)属性控制。
-- [titleLayout](control-objects.md#titlelayout)属性是一个对象，包含以下属性：
+- [title](../control-objects#title)属性是一个字符串，用于定义UI元素的文本标签。标题可以出现在图形元素的左侧或右侧、上方或下方，或者叠加在图形元素的中心；其位置由[titleLayout](../control-objects#titlelayout)属性控制。
+- [titleLayout](../control-objects#titlelayout)属性是一个对象，包含以下属性：
     - 标题的字符宽度；
     - 标题在字符宽度内的对齐方式；
     - 标题在必要时应如何截断；
     - 标题相对于所标识对象的朝向、对齐方式和间距；
     - 围绕标题及其相关对象的虚拟容器内的边距。
 
-所有`titleLayout`属性都是可选的；使用此机制的元素类型为每个属性提供了默认值。完整的详细信息请参阅参考部分；参见[titleLayout](control-objects.md#titlelayout)。
+所有`titleLayout`属性都是可选的；使用此机制的元素类型为每个属性提供了默认值。完整的详细信息请参阅参考部分；参见[titleLayout](../control-objects#titlelayout)。
 
 以下部分提供了示例，展示了如何使用标题布局来实现许多不同的布局。
 
@@ -35,7 +35,7 @@ title: 管理控件标题
 
 ## 标题对齐和朝向
 
-与自动布局不同，标题布局使用[alignment](control-objects.md#alignment)属性来指定标题和图形元素的朝向，以及标题如何与图形元素对齐。此属性包含一个2元素数组，其中第一个元素指定水平对齐，第二个元素指定垂直对齐。这些允许的值与自动布局使用的值相同（参见[对齐子元素](automatic-layout.md#aligning-children)），但不允许使用`fill`值。
+与自动布局不同，标题布局使用[alignment](../control-objects#alignment)属性来指定标题和图形元素的朝向，以及标题如何与图形元素对齐。此属性包含一个2元素数组，其中第一个元素指定水平对齐，第二个元素指定垂直对齐。这些允许的值与自动布局使用的值相同（参见[对齐子元素](../automatic-layout#aligning-children)），但不允许使用`fill`值。
 
 - 要实现标题出现在图形元素左侧或右侧的行朝向，将水平对齐定义为`left`或`right`，垂直对齐定义为`center`、`top`或`bottom`：
     ```javascript

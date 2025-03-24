@@ -30,7 +30,7 @@ PF_EventExtra 中的 PF_EventUnion 是以下四种结构的联合体。
 
 After Effects 需要刷新您的自定义 UI。
 
-注意：处理绘制请求时，请使用 [PF_InData](../../effect-basics/PF_InData) 中提供的图像尺寸（而不是输入图层的尺寸，如在 [PF_Cmd_RENDER](../effect-basics/command-selectors.md#frame-selectors) 期间那样）。
+注意：处理绘制请求时，请使用 [PF_InData](../../effect-basics/PF_InData) 中提供的图像尺寸（而不是输入图层的尺寸，如在 [PF_Cmd_RENDER](../../effect-basics/command-selectors#frame-selectors) 期间那样）。
 
 ### PF_DrawEventInfo
 

@@ -39,7 +39,7 @@ title: TextPath
 
 #### 类型
 
-[BlendModes](scripting-constants.md#blendmodes)
+[BlendModes](../scripting-constants#blendmodes)
 
 ---
 
@@ -251,7 +251,7 @@ title: TextPath
 
 #### 类型
 
-[PolarityValues](scripting-constants.md#polarityvalues)
+[PolarityValues](../scripting-constants#polarityvalues)
 
 ---
 
@@ -307,7 +307,7 @@ textPathItem 对象左上角的位置（以点为单位），格式为 [x, y]。
 
 #### 类型
 
-[StrokeCap](scripting-constants.md#strokecap)
+[StrokeCap](../scripting-constants#strokecap)
 
 ---
 
@@ -377,7 +377,7 @@ textPathItem 对象左上角的位置（以点为单位），格式为 [x, y]。
 
 #### 类型
 
-[StrokeJoin](scripting-constants.md#strokejoin)
+[StrokeJoin](../scripting-constants#strokejoin)
 
 ---
 

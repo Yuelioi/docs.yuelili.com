@@ -138,7 +138,7 @@ Mac OS 9 不再作为操作系统支持，但仍然支持使用冒号作为路�
 
 然而，Windows 允许文件及其快捷方式位于同一文件夹中。在这种情况下，`File` 对象始终访问原始文件。当快捷方式与其链接文件位于同一文件夹时，你无法创建 `File` 对象来访问快捷方式。
 
-脚本可以通过为磁盘上尚不存在的文件创建 `File` 对象，并使用其 [`createAlias`](../file-system-access/file-object.md#filecreatealias) 方法指定别名的目标来创建文件别名。
+脚本可以通过为磁盘上尚不存在的文件创建 `File` 对象，并使用其 [`createAlias`](../../file-system-access/file-object#filecreatealias) 方法指定别名的目标来创建文件别名。
 
 ### 可移植性问题
 

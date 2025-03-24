@@ -27,7 +27,7 @@ Default: `AntiAliasingMethod.ARTOPTIMIZED`
 
 #### Type
 
-[AntiAliasingMethod](scripting-constants.md#antialiasingmethod)
+[AntiAliasingMethod](../scripting-constants#antialiasingmethod)
 
 ---
 
@@ -75,7 +75,7 @@ Default: `RasterizationColorModel.DEFAULTCOLORMODEL`
 
 #### Type
 
-[RasterizationColorModel](scripting-constants.md#rasterizationcolormodel)
+[RasterizationColorModel](../scripting-constants#rasterizationcolormodel)
 
 ---
 

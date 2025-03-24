@@ -65,7 +65,7 @@ Boolean
 
 A set of alternate paths in which to search for the shared library files, a single string with multiple path specifications delimited by semicolons (;).
 
-Paths can be absolute or relative to the [Folder.startup](../file-system-access/folder-object.md#folderstartup) location.
+Paths can be absolute or relative to the [Folder.startup](../../file-system-access/folder-object#folderstartup) location.
 
 Default value is:
 
@@ -85,7 +85,7 @@ String
 
 #### Description
 
-The version of the library, as returned by [ESGetVersion()](defining-entry-points-for-direct-access.md#esgetversion).
+The version of the library, as returned by [ESGetVersion()](../defining-entry-points-for-direct-access#esgetversion).
 
 #### Type
 

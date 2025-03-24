@@ -74,7 +74,7 @@ And of course, unlock it when you're done.
 |         Function         |                                                                                                          Purpose                                                                                                           |
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `AEGP_NewMemHandle`      | Create a new memory handle. This memory is guaranteed to be 16-byte aligned.                                                                                                                                               |
-|                          | `plugin_id` is the ID passed in through the main [Entry Point](implementation.md#entry-point), or alternatively what you obtained from `AEGP_RegisterWithAEGP()` (from [AEGP_UtilitySuite6](#aegp_utilitysuite6)).         |
+|                          | `plugin_id` is the ID passed in through the main [Entry Point](../implementation#entry-point), or alternatively what you obtained from `AEGP_RegisterWithAEGP()` (from [AEGP_UtilitySuite6](#aegp_utilitysuite6)).         |
 |                          | Use `whatZ` to identify the memory you are asking for. After Effects uses the string to display any related error messages.                                                                                                |
 |                          | <pre lang="cpp">AEGP_NewMemHandle(<br/>  AEGP_PluginID   \*plugin_id,<br/>  const A_char    \*whatZ,<br/>  AEGP_MemSize    size,<br/>  AEGP_MemFlag    flags,<br/>  AEGP_MemHandle  \*memPH);</pre>                        |
 | `AEGP_FreeMemHandle`     | Release a handle you allocated using `AEGP_NewMemHandle()`.                                                                                                                                                                |
@@ -89,10 +89,10 @@ And of course, unlock it when you're done.
 |                          | <pre lang="cpp">AEGP_ResizeMemHandle(<br/>  const char      \*whatZ,<br/>  AEGP_MemSize    new_size,<br/>  AEGP_MemHandle  memH);</pre>                                                                                    |
 | `AEGP_SetMemReportingOn` | If After Effects runs into problems with the memory handling, the error should be reported to the user.                                                                                                                    |
 |                          | Make use of this during development!                                                                                                                                                                                       |
-|                          | Only memory allocated and then leaked using this suite is reported using this call, so for example memory allocated using [PF_HandleSuite1](../effect-details/memory-allocation.md#pf_handlesuite1) will not be reported.  |
+|                          | Only memory allocated and then leaked using this suite is reported using this call, so for example memory allocated using [PF_HandleSuite1](../../effect-details/memory-allocation#pf_handlesuite1) will not be reported.  |
 |                          | <pre lang="cpp">AEGP_SetMemReportingOn(<br/>  A_Boolean  turn_OnB);</pre>                                                                                                                                                  |
 | `AEGP_GetMemStats`       | Obtain information about the number of currently allocated handles and their total size.                                                                                                                                   |
-|                          | Only memory allocated using this suite is tracked and reported using this call, so for example memory allocated using [PF_HandleSuite1](../effect-details/memory-allocation.md#pf_handlesuite1) will not be reported here. |
+|                          | Only memory allocated using this suite is tracked and reported using this call, so for example memory allocated using [PF_HandleSuite1](../../effect-details/memory-allocation#pf_handlesuite1) will not be reported here. |
 |                          | <pre lang="cpp">AEGP_GetMemStats(<br/>  AEGP_MemID  mem_id,<br/>  A_long      \*countPL,<br/>  A_long      \*sizePL);</pre>                                                                                                |
 
 ---
@@ -1228,7 +1228,7 @@ Also note that, often, you can simply use [Stream Suite](#stream-suite) calls to
 |                                   | - `AEGP_DynStreamFlag_HIDDEN` means that, while the stream is still readable/writable, it may not currently be visible in the UI.                                                                             |
 |                                   | - `AEGP_DynStreamFlag_DISABLED` A read-only flag. Indicates whether the `AEGP_StreamRefH` is grayed out in the UI.                                                                                            |
 |                                   |      - Note that as of CS5, this flag will not be returned if a parameter is disabled.                                                                                                                        |
-|                                   |      - Instead, check `PF_PUI_DISABLED` in [Parameter UI Flags](../effect-basics/PF_ParamDef.md#parameter-ui-flags).                                                                                          |
+|                                   |      - Instead, check `PF_PUI_DISABLED` in [Parameter UI Flags](../../effect-basics/pf_paramdef#parameter-ui-flags).                                                                                          |
 |                                   | - `AEGP_DynStreamFlag_ELIDED` A read-only flag. Indicates that the `AEGP_StreamRefH` is read-only, the user never sees it. However, the children are still seen and not indented in the Timeline panel.       |
 |                                   | - `AEGP_DynStreamFlag_SHOWN_WHEN_EMPTY` New in CS6. A read-only flag. Indicates that this stream group should be shown when empty.                                                                            |
 |                                   | - `AEGP_DynStreamFlag_SKIP_REVEAL_WHEN_UNHIDDEN` New in CS6. A read-only flag. Indicates that this stream property will not be automatically revealed when un-hidden.                                         |
@@ -1615,7 +1615,7 @@ To get started, retrieve an ``AEGP_TextDocumentH`` by calling ``AEGP_GetLayerStr
 
 The `AEGP_TextLayerSuite` provides access to the actual outlines of the text used by text layers.
 
-Once you have a path, you can manipulate it with [PF_PathQuerySuite1](../effect-details/working-with-paths.md#pf_pathquerysuite1) and [PF_PathDataSuite](../effect-details/working-with-paths.md#pf_pathdatasuite).
+Once you have a path, you can manipulate it with [PF_PathQuerySuite1](../../effect-details/working-with-paths#pf_pathquerysuite1) and [PF_PathDataSuite](../../effect-details/working-with-paths#pf_pathdatasuite).
 
 ### AEGP_TextLayerSuite1
 
@@ -2394,7 +2394,7 @@ Utilizes multiple processors (if available) for your computations.
 |                       | <pre lang="cpp">AEGP_GetNumThreads(<br/>  A_long  \*num_threadsPL);</pre>                                                                                                                                                             |
 | `AEGP_IterateGeneric` | Specify a function for After Effects to manage on multiple processors.                                                                                                                                                                |
 |                       | Can be any function pointer specified by `fn_func`, taking the arguments listed below.                                                                                                                                                |
-|                       | See [Private Data](implementation.md#private-data) for a description of how `refconPV` is used.                                                                                                                                       |
+|                       | See [Private Data](../implementation#private-data) for a description of how `refconPV` is used.                                                                                                                                       |
 |                       | <pre lang="cpp">AEGP_IterateGeneric(<br/>  A_long  iterationsL,<br/>  void    \*refconPV,<br/>  A_Err   (*fn_func)<br/>    (void   \*refconPV,<br/>    A_long  thread_indexL,<br/>    A_long  i,<br/>    A_long  iterationsL));</pre> |
 
 ---

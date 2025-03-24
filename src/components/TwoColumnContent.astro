@@ -11,6 +11,22 @@ const currentCategory = urlList[2];
   {currentCategory}
 </span>
 
+<script>
+  // 拦截所有点击事件
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+    if (!link) return;
+
+    // 只处理站内链接（排除外部链接和锚点）
+    const href = link.getAttribute("href");
+    if (href && !href.startsWith("http")) {
+      e.preventDefault(); // 阻止默认跳转
+      const lowerCaseHref = href.toLowerCase();
+      window.location.href = lowerCaseHref; // 跳转到小写路径
+    }
+  });
+</script>
+
 <div class='lg:sl-flex two-column-content'>
   {
     Astro.locals.starlightRoute.toc && (

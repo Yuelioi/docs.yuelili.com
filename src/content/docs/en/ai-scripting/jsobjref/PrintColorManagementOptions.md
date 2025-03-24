@@ -25,7 +25,7 @@ Default: `PrintColorProfile.SOURCEPROFILE`
 
 #### Type
 
-[PrintColorProfile](scripting-constants.md#printcolorprofile)
+[PrintColorProfile](../scripting-constants#printcolorprofile)
 
 ---
 
@@ -41,7 +41,7 @@ Default: `PrintColorIntent.RELATIVECOLORIMETRIC`
 
 #### Type
 
-[PrintColorIntent](scripting-constants.md#printcolorintent)
+[PrintColorIntent](../scripting-constants#printcolorintent)
 
 ---
 

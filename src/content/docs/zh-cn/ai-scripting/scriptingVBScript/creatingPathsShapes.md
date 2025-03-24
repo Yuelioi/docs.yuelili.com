@@ -90,7 +90,7 @@ Set newPoint = myLine.PathPoints.Add
 请记住：
 
 - 脚本引擎将所有测量值和页面坐标处理为点。有关详细信息，请参阅 [测量单位](../../scripting/measurementUnits)。
-- x 和 y 坐标是从文档的左下角开始测量的，如 Illustrator 应用程序中的信息面板所示。有关详细信息，请参阅 [页面项目定位和尺寸](../scripting/positioning.md#page-item-positioning-and-dimensions)。
+- x 和 y 坐标是从文档的左下角开始测量的，如 Illustrator 应用程序中的信息面板所示。有关详细信息，请参阅 [页面项目定位和尺寸](../../scripting/positioning#page-item-positioning-and-dimensions)。
 
 ### 创建矩形
 

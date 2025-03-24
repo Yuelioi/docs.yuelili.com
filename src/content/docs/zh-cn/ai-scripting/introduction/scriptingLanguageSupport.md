@@ -45,7 +45,7 @@ Adobe Extension Builder 允许您使用 Flash Builder 的设计视图交互式�
 
 ### 脚本插件
 
-CC JavaScript 脚本接口允许对插件进行有限的脚本编写。插件可以定义一个命令，包含事件和通知器，以及执行某些操作的处理器。然后，JavaScript 脚本可以使用 [`app.sendScriptMessage()`](../jsobjref/Application.md#applicationsendscriptmessage) 方法向该插件定义的命令发送参数，并接收插件定义的响应。
+CC JavaScript 脚本接口允许对插件进行有限的脚本编写。插件可以定义一个命令，包含事件和通知器，以及执行某些操作的处理器。然后，JavaScript 脚本可以使用 [`app.sendScriptMessage()`](../../jsobjref/Application#applicationsendscriptmessage) 方法向该插件定义的命令发送参数，并接收插件定义的响应。
 
 例如，Adobe Custom Workspace 插件定义了一个命令“Switch Workspace”。脚本可以使用以下代码调用此命令：
 

@@ -19,7 +19,7 @@ new Window (type [, title, bounds, {creation_properties}]);
 |                       |                                                         | - `"window"` - Creates a simple window that can be used as a main window for an application. (Not supported by Photoshop CC.)                                     |
 |                       |                                                         | This argument can be a ScriptUI resource specification; in this case, all other arguments are ignored. See [Resource specifications](../resource-specifications). |
 | `title`               | String                                                  | Optional. The window title. A localizable string.                                                                                                                 |
-| `bounds`              | [Bounds](./size-and-location-objects.md#bounds) object. | Optional. The window's position and size.                                                                                                                         |
+| `bounds`              | [Bounds](../size-and-location-objects#bounds) object. | Optional. The window's position and size.                                                                                                                         |
 | `creation_properties` | Object                                                  | Optional. An object that contains any of the properties below.                                                                                                    |
 
 #### Creation Properties
@@ -110,7 +110,7 @@ The frame consists of the title bar and borders that enclose the content region 
 
 #### Type
 
-[Bounds](size-and-location-objects.md#bounds). Read only.
+[Bounds](../size-and-location-objects#bounds). Read only.
 
 ---
 
@@ -126,7 +126,7 @@ Set this value to move the window frame to the specified location on the screen.
 
 #### Type
 
-[Point](size-and-location-objects.md#point)
+[Point](../size-and-location-objects#point)
 
 ---
 
@@ -140,7 +140,7 @@ A Dimension object for the size and location of the Window's frame in screen coo
 
 #### Type
 
-[Dimension](size-and-location-objects.md#dimension). Read only.
+[Dimension](../size-and-location-objects#dimension). Read only.
 
 ---
 
@@ -201,7 +201,7 @@ In [Windows](#) only.
 :::
 
 
-The key sequence that invokes this window's [ControlEvent.onShortcutKey](./control-objects.md#onshortcutkey) callback.
+The key sequence that invokes this window's [ControlEvent.onShortcutKey](../control-objects#onshortcutkey) callback.
 
 #### Type
 
@@ -317,7 +317,7 @@ Does not apply to containers of type tab, whose bounds are determined by the par
 
 #### Type
 
-[Bounds](size-and-location-objects.md#bounds). Read only.
+[Bounds](../size-and-location-objects#bounds). Read only.
 
 ---
 
@@ -347,7 +347,7 @@ A ScriptUIGraphics object that can be used to customize the window's appearance,
 
 #### Type
 
-[ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object)
+[ScriptUIGraphics object](../graphic-customization-objects#scriptuigraphics-object)
 
 ---
 
@@ -379,7 +379,7 @@ The same as `[bounds.x, bounds.y]`.
 
 #### Type
 
-[Point](size-and-location-objects.md#point)
+[Point](../size-and-location-objects#point)
 
 ---
 
@@ -395,7 +395,7 @@ The default value is based on the type of container, and is chosen to match the 
 
 #### Type
 
-[Margins](size-and-location-objects.md#margins)
+[Margins](../size-and-location-objects#margins)
 
 ---
 
@@ -405,7 +405,7 @@ The default value is based on the type of container, and is chosen to match the 
 
 #### Description
 
-[Dimension](size-and-location-objects.md#dimension)
+[Dimension](../size-and-location-objects#dimension)
 
 A Dimension object for the largest rectangle to which the window can be resized, used in automatic layout and resizing.
 
@@ -419,7 +419,7 @@ A Dimension object for the largest rectangle to which the window can be resized,
 
 #### Description
 
-[Dimension](size-and-location-objects.md#dimension)
+[Dimension](../size-and-location-objects#dimension)
 
 A Dimension object for the smallest rectangle to which the window can be resized, used in automatic layout and resizing.
 
@@ -477,7 +477,7 @@ A Dimension object for the preferred size of the window, used in automatic layou
 
 #### Type
 
-[Dimension](size-and-location-objects.md#dimension)
+[Dimension](../size-and-location-objects#dimension)
 
 ---
 
@@ -502,17 +502,17 @@ Object
 #### Description
 
 :::info
-For [TabbedPanel](./control-objects.md#tabbedpanel) objects only.
+For [TabbedPanel](../control-objects#tabbedpanel) objects only.
 :::
 
 
-The currently active [Tab](control-objects.md#tab) child. Setting this property changes the active tab. The value can only be `null` when the panel has no children; setting it to `null` is an error.
+The currently active [Tab](../control-objects#tab) child. Setting this property changes the active tab. The value can only be `null` when the panel has no children; setting it to `null` is an error.
 
-When the value changes, either by a user selecting a different tab, or by a script setting the property, the [onChange](control-objects.md#onchange) callback for the panel is called.
+When the value changes, either by a user selecting a different tab, or by a script setting the property, the [onChange](../control-objects#onchange) callback for the panel is called.
 
 #### Type
 
-[tab](control-objects.md#tab)
+[tab](../control-objects#tab)
 
 ---
 
@@ -526,7 +526,7 @@ A Dimension object for the current size and location of a group or panel element
 
 #### Type
 
-[Dimension](size-and-location-objects.md#dimension)
+[Dimension](../size-and-location-objects#dimension)
 
 ---
 
@@ -602,7 +602,7 @@ A Bounds object for the size and location of this container relative to its top-
 
 #### Type
 
-[Bounds](size-and-location-objects.md#bounds)
+[Bounds](../size-and-location-objects#bounds)
 
 ---
 
@@ -624,10 +624,10 @@ Creates and returns a new control or container object and adds it to the childre
 
 |    Parameter     |                          Type                          |                                                                                                                                      Description                                                                                                                                       |
 | ---------------- | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `type`           | String                                                 | The control type. See [Control types and creation parameters](control-objects.md#control-types-and-creation-parameters).                                                                                                                                                               |
-| `bounds`         | [Bounds object](./size-and-location-objects.md#bounds) | Optional. A bounds specification that describes the size and position of the new control or container, relative to its parent. See Bounds object for specification formats. If supplied, this value creates a new Bounds object which is assigned to the new object's bounds property. |
+| `type`           | String                                                 | The control type. See [Control types and creation parameters](../control-objects#control-types-and-creation-parameters).                                                                                                                                                               |
+| `bounds`         | [Bounds object](../size-and-location-objects#bounds) | Optional. A bounds specification that describes the size and position of the new control or container, relative to its parent. See Bounds object for specification formats. If supplied, this value creates a new Bounds object which is assigned to the new object's bounds property. |
 | `text`           | String                                                 | Optional. Initial text to be displayed in the control as the title, label, or contents, depending on the control type. If supplied, this value is assigned to the new object's text property.                                                                                          |
-| `creation_props` | Object.                                                | Optional. The properties of this object specify creation parameters, which are specific to each object type. See [Control types and creation parameters](control-objects.md#control-types-and-creation-parameters).                                                                    |
+| `creation_props` | Object.                                                | Optional. The properties of this object specify creation parameters, which are specific to each object type. See [Control types and creation parameters](../control-objects#control-types-and-creation-parameters).                                                                    |
 
 #### Returns
 
@@ -664,7 +664,7 @@ Registers an event handler for a particular type of event occurring in this wind
 |                |          | - `"mouseover"`                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |                |          | - `"mouseout"`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |                |          | - `"click"` (detail = 1 for single, 2 for double)                                                                                                                                                                                                                                                                                                                                                                                                |
-| `handler`      | Function | The function to register for the specified event in this target. This can be the name of a function defined in the extension, or a locally defined handler function to be executed when the event occurs. A handler function takes one argument, the UIEvent base class. See [Registering event listeners for windows or controls](defining-behavior-with-event-callbacks-and-listeners.md#registering-event-listeners-for-windows-or-controls). |
+| `handler`      | Function | The function to register for the specified event in this target. This can be the name of a function defined in the extension, or a locally defined handler function to be executed when the event occurs. A handler function takes one argument, the UIEvent base class. See [Registering event listeners for windows or controls](../defining-behavior-with-event-callbacks-and-listeners#registering-event-listeners-for-windows-or-controls). |
 | `capturePhase` | Boolean  | Optional. When `true`, the handler is called only in the capturing phase of the event propagation. Default is `false`, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target.                                                                                                                                                      |
 
 #### Returns
@@ -725,11 +725,11 @@ Simulates the occurrence of an event in this target. A script can create a UIEve
 
 | Parameter  |                             Type                             |      Description      |
 | ---------- | ------------------------------------------------------------ | --------------------- |
-| `eventObj` | [UIEvent base class](./event-handling.md#uievent-base-class) | A UIEvent base class. |
+| `eventObj` | [UIEvent base class](../event-handling#uievent-base-class) | A UIEvent base class. |
 
 #### Returns
 
-Boolean. `false` if any of the registered listeners that handled the event called the event object's [preventDefault()](event-handling.md#preventdefault) method, `true` otherwise.
+Boolean. `false` if any of the registered listeners that handled the event called the event object's [preventDefault()](../event-handling#preventdefault) method, `true` otherwise.
 
 ---
 
@@ -905,7 +905,7 @@ Called when the user makes a previously active window inactive; for instance by 
 
 ### onDraw
 
-Called when a container or control is about to be drawn. Allows the script to modify or control the appearance, using the control's associated [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object) object. Handler takes one argument, a [DrawState object](control-objects.md#drawstate-object) object.
+Called when a container or control is about to be drawn. Allows the script to modify or control the appearance, using the control's associated [ScriptUIGraphics object](../graphic-customization-objects#scriptuigraphics-object) object. Handler takes one argument, a [DrawState object](../control-objects#drawstate-object) object.
 
 ---
 

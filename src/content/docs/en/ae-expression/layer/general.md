@@ -120,7 +120,7 @@ Boolean. `true` if the layer has audio or `false` if it doesn't.
 
 Returns the height of the layer, in pixels.
 
-If the layer has a [source](./sub-objects.md#layersource), this is the same as either the source [comp height](../objects/comp.md#compheight) or the source [footage height](../objects/footage.md#footageheight) (as applicable).
+If the layer has a [source](../sub-objects#layersource), this is the same as either the source [comp height](../../objects/comp#compheight) or the source [footage height](../../objects/footage#footageheight) (as applicable).
 
 #### Type
 
@@ -219,7 +219,7 @@ Number
 
 Returns the width of the layer, in pixels.
 
-If the layer has a [source](./sub-objects.md#layersource), this is the same as either the source [comp width](../objects/comp.md#compwidth) or the source [footage width](../objects/footage.md#footagewidth) (as applicable).
+If the layer has a [source](../sub-objects#layersource), this is the same as either the source [comp width](../../objects/comp#compwidth) or the source [footage width](../../objects/footage#footagewidth) (as applicable).
 
 #### Type
 

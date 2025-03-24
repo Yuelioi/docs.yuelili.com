@@ -14,4 +14,4 @@ In addition to the specific functional modules and development tools, ExtendScri
 
 ExtendScript also provides a common scripting environment for all Adobe JavaScript-enabled applications, and allows interapplication communication through scripts.
 
-For information on these features, see [Interapplication Communication with Scripts](../interapplication-communication/index.md#interapplication-communication-with-scripts).
+For information on these features, see [Interapplication Communication with Scripts](../../interapplication-communication/index#interapplication-communication-with-scripts).

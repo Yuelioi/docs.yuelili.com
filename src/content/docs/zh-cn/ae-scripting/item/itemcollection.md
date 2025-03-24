@@ -48,7 +48,7 @@ CompItem 对象。
 
 #### 描述
 
-创建一个新文件夹。创建并返回一个新的 FolderItem 对象，并将其添加到此集合中。如果 ItemCollection 属于项目或根文件夹，则新文件夹的 `parentFolder` 是根文件夹。如果 ItemCollection 属于任何其他文件夹，则新文件夹的 `parentFolder` 是该 `FolderItem`。要将项目放入文件夹中，请设置 [Item.parentFolder](item.md#itemparentfolder) 属性。
+创建一个新文件夹。创建并返回一个新的 FolderItem 对象，并将其添加到此集合中。如果 ItemCollection 属于项目或根文件夹，则新文件夹的 `parentFolder` 是根文件夹。如果 ItemCollection 属于任何其他文件夹，则新文件夹的 `parentFolder` 是该 `FolderItem`。要将项目放入文件夹中，请设置 [Item.parentFolder](../item#itemparentfolder) 属性。
 
 #### 参数
 

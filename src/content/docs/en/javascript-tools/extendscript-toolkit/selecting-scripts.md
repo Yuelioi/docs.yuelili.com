@@ -10,7 +10,7 @@ You can open multiple scripts (or text files, including programs in other langua
 - Create a new script using File > New JavaScript.
 - Drop files from the Explorer or the Finder onto the Toolkit to open them in a document window.
 - For JavaScript scripts in trusted locations (the user-script folders of installed Adobe applications), a double-click on the file runs it in the target application or in the Toolkit. For script files in other locations, you must confirm that you want to run the script.
-- Search for scripts containing particular text using Edit > Find and Replace. You can search in a particular document window, among all scripts open in document windows, or among scripts associated with an application, or kept in favorite locations. See [Searching in text](the-script-editor.md#searching-in-text).
+- Search for scripts containing particular text using Edit > Find and Replace. You can search in a particular document window, among all scripts open in document windows, or among scripts associated with an application, or kept in favorite locations. See [Searching in text](../the-script-editor#searching-in-text).
 - Use the Scripts panel to display and open scripts made available by loaded Adobe applications, or those kept in favorite locations.
 
 ---
@@ -27,7 +27,7 @@ When you choose the target Favorites, the right-hand list shows the default favo
 
 ![Scripts panel](./_static/02_the-extendscript-toolkit_selecting-scripts_scripts-panel_panel.png)
 
-The favorite script locations that you define are also available to the Find and Replace dialog; see [Searching in text](the-script-editor.md#searching-in-text).
+The favorite script locations that you define are also available to the Find and Replace dialog; see [Searching in text](../the-script-editor#searching-in-text).
 
 You can also examine and set favorite locations using the Favorites page of the Preferences dialog (Edit > Preferences). Use the Add, Modify, and Remove buttons to edit the list of folders.
 

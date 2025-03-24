@@ -11,7 +11,7 @@ Additional implementation details are at the end of the chapter.
 
 ## exSelStartup
 
-- param1 - [exExporterInfoRec\*](structure-descriptions.md#exexporterinforec)
+- param1 - [exExporterInfoRec\*](../structure-descriptions#exexporterinforec)
 - param2 - `unused`
 
 Sent during application launch, unless the exporter has been cached.
@@ -24,7 +24,7 @@ A single exporter can support multiple codecs and file extensions.
 
 ## exSelBeginInstance
 
-- param1 - [exExporterInstanceRec\*](structure-descriptions.md#exexporterinstancerec)
+- param1 - [exExporterInstanceRec\*](../structure-descriptions#exexporterinstancerec)
 - param2 - `unused`
 
 Allocate any private data.
@@ -33,16 +33,16 @@ Allocate any private data.
 
 ## exSelGenerateDefaultParams
 
-- param1 - [exGenerateDefaultParamRec\*](structure-descriptions.md#exgeneratedefaultparamrec)
+- param1 - [exGenerateDefaultParamRec\*](../structure-descriptions#exgeneratedefaultparamrec)
 - param2 - `unused`
 
-Set the exporter's default parameters using the [Export Param Suite](suites.md#export-param-suite).
+Set the exporter's default parameters using the [Export Param Suite](../suites#export-param-suite).
 
 ---
 
 ## exSelPostProcessParams
 
-- param1 - [exPostProcessParamsRec\*](structure-descriptions.md#expostprocessparamsrec)
+- param1 - [exPostProcessParamsRec\*](../structure-descriptions#expostprocessparamsrec)
 - param2 - `unused`
 
 Post process parameters. This is where the localized strings for the parameter UI must be provided.
@@ -51,10 +51,10 @@ Post process parameters. This is where the localized strings for the parameter U
 
 ## exSelValidateParamChanged
 
-- param1 - [exParamChangedRec\*](structure-descriptions.md#exparamchangedrec)
+- param1 - [exParamChangedRec\*](../structure-descriptions#exparamchangedrec)
 - param2 - `unused`
 
-Validate any parameters that have changed. Based on a change to a parameter value, the exporter may update other parameter values, or show/hide certain parameter controls, using the [Export Param Suite](suites.md#export-param-suite).
+Validate any parameters that have changed. Based on a change to a parameter value, the exporter may update other parameter values, or show/hide certain parameter controls, using the [Export Param Suite](../suites#export-param-suite).
 
 To notify the host that the plugin is changing other parameters, set `exParamChangedRec.rebuildAllParams` to a non-zero value.
 
@@ -62,7 +62,7 @@ To notify the host that the plugin is changing other parameters, set `exParamCha
 
 ## exSelGetParamSummary
 
-- param1 - [exParamSummaryRec\*](structure-descriptions.md#exparamsummaryrec)
+- param1 - [exParamSummaryRec\*](../structure-descriptions#exparamsummaryrec)
 - param2 - `unused`
 
 Provide a text summary of the current parameter settings, which will be displayed in the summary area of the Export Settings dialog.
@@ -71,7 +71,7 @@ Provide a text summary of the current parameter settings, which will be displaye
 
 ## exSelParamButton
 
-- param1 - [exParamButtonRec\*](structure-descriptions.md#exparambuttonrec)
+- param1 - [exParamButtonRec\*](../structure-descriptions#exparambuttonrec)
 - param2 - `unused`
 
 Sent if exporter has one or more buttons in its parameter UI, and the user clicks one of the buttons in the Export Settings.
@@ -86,12 +86,12 @@ If the user cancels the dialog, return `exportReturn_ParamButtonCancel` to signi
 
 ## exSelExport
 
-- param1 - [exDoExportRec\*](structure-descriptions.md#exdoexportrec)
+- param1 - [exDoExportRec\*](../structure-descriptions#exdoexportrec)
 - param2 - `unused`
 
 Do the export! Sent when the user starts an export to the format supported by the exporter, or if the exporter is used in an Editing Mode and the user renders the work area.
 
-Single file exporters are sent this selector only once per export (e.g. AVI, QuickTime). To create a single file, setup a loop where you request each frame in the startTime to endTime range using one of the render calls in the [Sequence Render Suite](suites.md#sequence-render-suite) and GetAudio in the [Sequence Audio Suite](suites.md#sequence-audio-suite). For better performance, you can use the asynchronous calls in the [Sequence Render Suite](suites.md#sequence-render-suite) to have the host render multiple frames on multiple threads.
+Single file exporters are sent this selector only once per export (e.g. AVI, QuickTime). To create a single file, setup a loop where you request each frame in the startTime to endTime range using one of the render calls in the [Sequence Render Suite](../suites#sequence-render-suite) and GetAudio in the [Sequence Audio Suite](../suites#sequence-audio-suite). For better performance, you can use the asynchronous calls in the [Sequence Render Suite](../suites#sequence-render-suite) to have the host render multiple frames on multiple threads.
 
 Still frame exporters are sent `exSelExport` for each frame in the sequence (e.g. numbered TIFFs). The host will name the files appropriately.
 
@@ -101,7 +101,7 @@ Save render time by checking to see if frames are repeated. Inspect the Sequence
 
 ## exSelExport2
 
-- param1 - [exDoExportRec2\*](structure-descriptions.md#exdoexportrec2)
+- param1 - [exDoExportRec2\*](../structure-descriptions#exdoexportrec2)
 - param2 - `unused`
 
 Do the export! Identical to exSelExport, except that exDoExportRec2 (which contains a LUT description) is passed.
@@ -114,7 +114,7 @@ In case LUT is specified, `ExportColorSpace` signifies the output color space of
 
 ## exSelQueryExportFileExtension
 
-- param1 - [exQueryExportFileExtensionRec\*](structure-descriptions.md#exqueryexportfileextensionrec)
+- param1 - [exQueryExportFileExtensionRec\*](../structure-descriptions#exqueryexportfileextensionrec)
 - param2 - `unused`
 
 For exporters that support more than one file extension, specify an extension given the file type.
@@ -125,7 +125,7 @@ If this selector is not supported by the exporter, the extension is specified by
 
 ## exSelQueryOutputFileList
 
-- param1 - [exQueryOutputFileListRec\*](structure-descriptions.md#exqueryoutputfilelistrec)
+- param1 - [exQueryOutputFileListRec\*](../structure-descriptions#exqueryoutputfilelistrec)
 - param2 - `unused`
 
 For exporters that export to more than one file. This is called before an export for the host to find out which files would need to be overwritten.
@@ -142,7 +142,7 @@ On the third call, the plugin fills in the path members of the outputFileRecs.
 
 ## exSelQueryStillSequence
 
-- param1 - [exQueryStillSequenceRec\*](structure-descriptions.md#exquerystillsequencerec)
+- param1 - [exQueryStillSequenceRec\*](../structure-descriptions#exquerystillsequencerec)
 - param2 - `unused`
 
 The host application asks a still-only exporter if it wants to export as a sequence, and at what frame rate.
@@ -151,7 +151,7 @@ The host application asks a still-only exporter if it wants to export as a seque
 
 ## exSelQueryOutputSettings
 
-- param1 - [exQueryOutputSettingsRec\*](structure-descriptions.md#exqueryoutputsettingsrec)
+- param1 - [exQueryOutputSettingsRec\*](../structure-descriptions#exqueryoutputsettingsrec)
 - param2 - `unused`
 
 The host application asks the exporter for general details about the current settings. This is a required selector.
@@ -160,7 +160,7 @@ The host application asks the exporter for general details about the current set
 
 ## exSelValidateOutputSettings
 
-- param1 - [exValidateOutputSettingsRec\*](structure-descriptions.md#exvalidateoutputsettingsrec)
+- param1 - [exValidateOutputSettingsRec\*](../structure-descriptions#exvalidateoutputsettingsrec)
 - param2 - `unused`
 
 The host application asks the exporter if it can export with the current settings.
@@ -171,7 +171,7 @@ The exporter should return `exportReturn_ErrLastErrorSet` if not, and the error 
 
 ## exSelEndInstance
 
-- param1 - [exExporterInstanceRec\*](structure-descriptions.md#exexporterinstancerec)
+- param1 - [exExporterInstanceRec\*](../structure-descriptions#exexporterinstancerec)
 - param2 - `unused`
 
 Deallocate any private data.
@@ -189,7 +189,7 @@ Sent immediately before shutdown. Free all remaining memory and close any open f
 
 ## exSelQueryExportColorSpace
 
-- param1 - [exExporterInstanceRec\*](structure-descriptions.md#exqueryexportcolorspacerec)
+- param1 - [exExporterInstanceRec\*](../structure-descriptions#exqueryexportcolorspacerec)
 - param2 - `unused`
 
 Describe the color space to be used during export.

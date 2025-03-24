@@ -57,7 +57,7 @@ Default: `RasterizationColorModel.DEFAULTCOLORMODEL`
 
 #### Type
 
-[RasterizationColorModel](scripting-constants.md#rasterizationcolormodel)
+[RasterizationColorModel](../scripting-constants#rasterizationcolormodel)
 
 ---
 

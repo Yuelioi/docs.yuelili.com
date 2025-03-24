@@ -12,6 +12,6 @@ This section provides the details of the ScriptUI classes and objects with their
 - [Window class](.././window-class)
 - [Window object](.././window-object)
 - [Control objects](.././control-objects)
-- [UIEvent base class](./event-handling.md#uievent-base-class)
+- [UIEvent base class](../event-handling#uievent-base-class)
 - [Graphic customization objects](.././graphic-customization-objects)
 - [LayoutManager object](.././layoutmanager-object)

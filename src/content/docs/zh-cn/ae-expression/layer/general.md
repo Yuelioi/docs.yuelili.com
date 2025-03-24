@@ -120,7 +120,7 @@ thisComp.layer(idx).position.wiggle(5,20)
 
 返回图层的高度，单位为像素。
 
-如果图层有 [源](../sub-objects.md#layersource)，则与源的 [合成高度](../objects/comp.md#compheight) 或源的 [素材高度](../objects/footage.md#footageheight) 相同（视情况而定）。
+如果图层有 [源](../../sub-objects#layersource)，则与源的 [合成高度](../../objects/comp#compheight) 或源的 [素材高度](../../objects/footage#footageheight) 相同（视情况而定）。
 
 #### 类型
 

@@ -23,4 +23,4 @@ title: 改变参数顺序
 
 瞧！立即引发支持电话。
 
-这是 [参数标志](../effect-basics/PF_ParamDef.md#parameter-flags) 中 `PF_ParamFlag_USE_VALUE_FOR_OLD_PROJECTS` 的另一个主要用例。
+这是 [参数标志](../../effect-basics/PF_ParamDef#parameter-flags) 中 `PF_ParamFlag_USE_VALUE_FOR_OLD_PROJECTS` 的另一个主要用例。

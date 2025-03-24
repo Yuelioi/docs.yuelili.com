@@ -9,7 +9,7 @@ title: PluginItems
 
 文档中的 [PluginItem](.././PluginItem) 对象集合。
 
-参见 [复制插件项](PluginItem.md#copying-a-plug-in-item)。
+参见 [复制插件项](../PluginItem#copying-a-plug-in-item)。
 
 ---
 

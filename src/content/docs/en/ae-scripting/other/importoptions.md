@@ -10,7 +10,7 @@ title: importoptions
 
 #### Description
 
-The ImportOptions object encapsulates the options used to import a file with the [Project.importFile()](../general/project.md#projectimportfile) methods.
+The ImportOptions object encapsulates the options used to import a file with the [Project.importFile()](../../general/project#projectimportfile) methods.
 
 The constructor takes an optional parameter, an [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object for the file.
 

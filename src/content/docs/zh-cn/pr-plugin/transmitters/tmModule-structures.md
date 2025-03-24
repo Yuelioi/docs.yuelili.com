@@ -139,7 +139,7 @@ typedef struct {
 |          成员           |                                                                                                                              描述                                                                                                                               |
 |------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `outAudioSampleRate`   | 首选音频采样率。                                                                                                                                                                                                                                               |
-| `outMaxBufferSize`     | 如果发射器使用基于插件的音频通过 [Playmod Audio Suite](suites.md#playmod-audio-suite) 请求音频缓冲区，则需要的最大音频缓冲区大小。                                                                                                                             |
+| `outMaxBufferSize`     | 如果发射器使用基于插件的音频通过 [Playmod Audio Suite](../suites#playmod-audio-suite) 请求音频缓冲区，则需要的最大音频缓冲区大小。                                                                                                                             |
 | `outNumChannels`       | 支持的最大音频通道数。                                                                                                                                                                                                                                         |
 | `outChannelLabels[16]` | 使用适当的标识符为每个音频通道设置输出硬件的音频通道配置。                                                                                                                                                                                                     |
 | `outLatency`           | 此值仅用于播放，而不是在擦洗时使用。                                                                                                                                                                                                                           |
@@ -147,7 +147,7 @@ typedef struct {
 |                       | 所有模式必须具有相同的延迟。                                                                                                                                                                                                                                   |
 |                       | 注意不要将此值设置得过高，因为播放开始将延迟此时间。建议使用相当于 5 个视频帧或更少的值。                                                                                                                                                                       |
 | `outAudioOutputNames[16]` | CS6.0.2 新增。这些必须是物理音频输出的可显示名称，如“XYZ HD Speaker 1”                                                                                                                                                                                         |
-|                       | tmAudioMode 中的音频输出名称应由插件使用 [String Suite](../universals/sweetpea-suites.md#string-suite) 分配，并且不由插件释放。主机将负责释放这些字符串。                                                                                                       |
+|                       | tmAudioMode 中的音频输出名称应由插件使用 [String Suite](../../universals/sweetpea-suites#string-suite) 分配，并且不由插件释放。主机将负责释放这些字符串。                                                                                                       |
 
 ---
 

@@ -7,11 +7,11 @@ title: TracingObject
 
 #### 描述
 
-一个追踪对象，它将源栅格艺术项与通过追踪创建的矢量艺术插件组关联起来。脚本可以使用 [PlacedItem.trace](PlacedItem.md#placeditemtrace) 或 [RasterItem.trace()](RasterItem.md#rasteritemtrace) 来启动追踪。
+一个追踪对象，它将源栅格艺术项与通过追踪创建的矢量艺术插件组关联起来。脚本可以使用 [PlacedItem.trace](../PlacedItem#placeditemtrace) 或 [RasterItem.trace()](../RasterItem#rasteritemtrace) 来启动追踪。
 
 生成的 PluginItem 对象代表矢量艺术组，并在其追踪属性中包含此对象。
 
-脚本可以通过调用 [Application.redraw()](Application.md#applicationredraw) 强制进行追踪操作。该操作是异步的，因此脚本应在创建追踪对象后但在访问其属性或扩展追踪以将其转换为艺术项组之前调用 `redraw`。
+脚本可以通过调用 [Application.redraw()](../Application#applicationredraw) 强制进行追踪操作。该操作是异步的，因此脚本应在创建追踪对象后但在访问其属性或扩展追踪以将其转换为艺术项组之前调用 `redraw`。
 
 描述追踪结果的只读属性仅在第一次追踪操作完成后才具有有效值。值为 0 表示操作尚未完成。
 

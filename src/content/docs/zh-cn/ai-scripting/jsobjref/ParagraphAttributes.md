@@ -55,7 +55,7 @@ Burasagari 类型。
 
 #### 类型
 
-[BurasagariTypeEnum](scripting-constants.md#burasagaritypeenum)
+[BurasagariTypeEnum](../scripting-constants#burasagaritypeenum)
 
 ---
 
@@ -207,7 +207,7 @@ Burasagari 类型。
 
 #### 类型
 
-[Justification](scripting-constants.md#justification)
+[Justification](../scripting-constants#justification)
 
 ---
 
@@ -235,7 +235,7 @@ Kinsoku Shori 名称。
 
 #### 类型
 
-[KinsokuOrderEnum](scripting-constants.md#kinsokuorderenum)
+[KinsokuOrderEnum](../scripting-constants#kinsokuorderenum)
 
 ---
 
@@ -263,7 +263,7 @@ Kinsoku Shori 名称。
 
 #### 类型
 
-[AutoLeadingType](scripting-constants.md#autoleadingtype)
+[AutoLeadingType](../scripting-constants#autoleadingtype)
 
 ---
 
@@ -521,7 +521,7 @@ Mojikumi 名称。
 
 #### 类型
 
-[Justification](scripting-constants.md#justification)
+[Justification](../scripting-constants#justification)
 
 ---
 

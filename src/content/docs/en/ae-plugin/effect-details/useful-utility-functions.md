@@ -11,7 +11,7 @@ Although not strictly concerned with parameters, this suite can change the name 
 |---------------------------|---------------------------------------------------------------------------------------------------------------|
 | `PF_SetOptionsButtonName` | Changes the text on the options button in the effect controls palette.                                        |
 |                           | !!! note                                                                                                      |
-|                           |      This must be called during [PF_Cmd_PARAM_SETUP](../effect-basics/command-selectors.md#global-selectors). |
+|                           |      This must be called during [PF_Cmd_PARAM_SETUP](../../effect-basics/command-selectors#global-selectors). |
 |                           | <pre lang="cpp">PF_SetOptionsButtonName(<br/>  PF_ProgPtr    effect_ref,<br/>  const A_char  \*nameZ);</pre>  |
 |                           | `nameZ` may be up to `A_char[31]` in length.                                                                  |
 
@@ -21,7 +21,7 @@ Although not strictly concerned with parameters, this suite can change the name 
 
 Roughly 437 years ago, when we released After Effects 5.0, we published some useful utility callbacks in PF_AppSuite. They're as useful today as they were then. After Effects has user-controllable UI brightness.
 
-In addition to the [PF_EffectCustomUIOverlayThemeSuite](../effect-ui-events/custom-ui-and-drawbot.md#pf_effectcustomuioverlaythemesuite) for custom UI in effects, use these calls to integrate seamlessly into the After Effects UI.
+In addition to the [PF_EffectCustomUIOverlayThemeSuite](../../effect-ui-events/custom-ui-and-drawbot#pf_effectcustomuioverlaythemesuite) for custom UI in effects, use these calls to integrate seamlessly into the After Effects UI.
 
 What better way to shame someone into purchasing a copy of your plug-in than by putting their personal information into a watermark, eh? Or set the cursor to add mask vertices, just to confuse people? Heh heh heh. But that would be wrong.
 
@@ -64,7 +64,7 @@ What better way to shame someone into purchasing a copy of your plug-in than by 
 |                           | <pre lang="cpp">PF_AppColorPickerDialog(<br/>  const A_char         \*dialog_titleZ0,<br/>  const PF_PixelFloat  \*sample_colorP,<br/>  PF_PixelFloat        \*result_colorP);</pre>                                                                                                                      |
 | `PF_GetMouse`             | Returns the position of the mouse in the custom UI coordinate space.                                                                                                                                                                                                                                      |
 |                           | <pre lang="cpp">PF_GetMouse(<br/>  PF_Point  \*pointP);</pre>                                                                                                                                                                                                                                             |
-| `PF_InvalidateRect`       | Queue up a [redraw](../effect-ui-events/custom-ui-and-drawbot.md#redrawing) of a specific area of the custom UI for an effect.                                                                                                                                                                            |
+| `PF_InvalidateRect`       | Queue up a [redraw](../../effect-ui-events/custom-ui-and-drawbot#redrawing) of a specific area of the custom UI for an effect.                                                                                                                                                                            |
 |                           | Only valid while handling a non-drawing event in the effect.                                                                                                                                                                                                                                              |
 |                           | Specify `rectP0` as `NULL` to invalidate the entire window. The redraw will happen at the next available idle moment after returning from the event.                                                                                                                                                      |
 |                           | Set the `PF_EO_UPDATE_NOW` event outflag to update the window immediately after the event returns.                                                                                                                                                                                                        |
@@ -86,7 +86,7 @@ What better way to shame someone into purchasing a copy of your plug-in than by 
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `PF_SetProjectDirty`        | Tells After Effects that the project has been changed since it was last saved.                                                                                                                                      |
 |                             | <pre lang="cpp">PF_SetProjectDirty(void);</pre>                                                                                                                                                                     |
-| `PF_SaveProject`            | Saves the project to the current path. To save the project elsewhere, use [AEGP_SaveProjectToPath()](../aegps/aegp-suites.md#aegp_projsuite6).                                                                      |
+| `PF_SaveProject`            | Saves the project to the current path. To save the project elsewhere, use [AEGP_SaveProjectToPath()](../../aegps/aegp-suites#aegp_projsuite6).                                                                      |
 |                             | <pre lang="cpp">PF_SaveProject(void);</pre>                                                                                                                                                                         |
 | `PF_SaveBackgroundState`    | Stores the background state (After Effects' position in the stacking order of open applications and windows).                                                                                                       |
 |                             | <pre lang="cpp">PF_SaveBackgroundState(void);</pre>                                                                                                                                                                 |
@@ -139,7 +139,7 @@ Long ago, we helped a developer integrate their stand-alone tracker with After E
 
 With the numerous AEGP API calls available, these aren't used much, but they're still available.
 
-Don't confuse this suite with [AEGP_ItemSuite](../aegps/aegp-suites.md#aegp_itemsuite9).
+Don't confuse this suite with [AEGP_ItemSuite](../../aegps/aegp-suites#aegp_itemsuite9).
 
 ---
 

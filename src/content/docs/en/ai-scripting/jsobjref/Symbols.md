@@ -82,7 +82,7 @@ The default registration point is `SymbolRegistrationPoint.SYMBOLCENTERPOINT`.
 |      Parameter      |                                        Type                                         |           Description            |
 | ------------------- | ----------------------------------------------------------------------------------- | -------------------------------- |
 | `sourceArt`         | [PageItem](.././PageItem)                                                           | Source art to create symbol from |
-| `registrationPoint` | [SymbolRegistrationPoint](scripting-constants.md#symbolregistrationpoint), optional | Registration point to use        |
+| `registrationPoint` | [SymbolRegistrationPoint](../scripting-constants#symbolregistrationpoint), optional | Registration point to use        |
 
 #### Returns
 

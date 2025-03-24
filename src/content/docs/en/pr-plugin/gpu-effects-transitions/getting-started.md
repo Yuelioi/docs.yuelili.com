@@ -30,7 +30,7 @@ GetProperty(kVideoSegmentProperty_Transition_TransitionDuration, duration);
 
 ## Lifetime of a GPU Effect / Transition
 
-A new GPU effect instance is created when an effect/transition is applied in the timeline, or when an effect parameter is changed. When rendering a series of frames it won't needlessly be recreated. The [Opaque Effect Data Suite](suites.md#opaque-effect-data-suite) should be used to share unflattened sequence data between instances of the same effect on a track item.
+A new GPU effect instance is created when an effect/transition is applied in the timeline, or when an effect parameter is changed. When rendering a series of frames it won't needlessly be recreated. The [Opaque Effect Data Suite](../suites#opaque-effect-data-suite) should be used to share unflattened sequence data between instances of the same effect on a track item.
 
 ---
 
@@ -38,11 +38,11 @@ A new GPU effect instance is created when an effect/transition is applied in the
 
 When a new GPU effect instance is created, the instance has the option of opting-in or out of providing GPU rendering. The GPU effect should be reasonably sure it has sufficient resources to complete the render if it opts-in, because there is no API support to fall back to software rendering in the middle of a render.
 
-Calling GetDeviceInfo() in the [GPU Device Suite](suites.md#gpu-device-suite), and checking `outDeviceInfo.outMeetsMinimumRequirementsForAcceleration`, you can see if supports the minimum system requirements for acceleration. Do not proceed with
+Calling GetDeviceInfo() in the [GPU Device Suite](../suites#gpu-device-suite), and checking `outDeviceInfo.outMeetsMinimumRequirementsForAcceleration`, you can see if supports the minimum system requirements for acceleration. Do not proceed with
 
 AcquireExclusiveDeviceAccess(), if the minimum requirements are not met.
 
-In emergency situations, when there is not enough GPU memory available to complete a render, an effect may call PurgeDeviceMemory in the [GPU Device Suite](suites.md#gpu-device-suite) to free up memory not initially available. This will impact performance, and should be used only if absolutely necessary.
+In emergency situations, when there is not enough GPU memory available to complete a render, an effect may call PurgeDeviceMemory in the [GPU Device Suite](../suites#gpu-device-suite) to free up memory not initially available. This will impact performance, and should be used only if absolutely necessary.
 
 ---
 

@@ -7,7 +7,7 @@ title: PDFSaveOptions
 
 #### 描述
 
-用于将文档保存为 Adobe PDF 文件的选项，与 [Document.saveAs()](Document.md#documentsave) 方法一起使用。
+用于将文档保存为 Adobe PDF 文件的选项，与 [Document.saveAs()](../Document#documentsave) 方法一起使用。
 
 所有属性都是可选的。
 
@@ -105,7 +105,7 @@ title: PDFSaveOptions
 
 #### 类型
 
-[CompressionQuality](scripting-constants.md#compressionquality)
+[CompressionQuality](../scripting-constants#compressionquality)
 
 ---
 
@@ -121,7 +121,7 @@ title: PDFSaveOptions
 
 #### 类型
 
-[ColorConversion](scripting-constants.md#colorconversion)
+[ColorConversion](../scripting-constants#colorconversion)
 
 ---
 
@@ -137,7 +137,7 @@ title: PDFSaveOptions
 
 #### 类型
 
-[ColorDestination](scripting-constants.md#colordestination)
+[ColorDestination](../scripting-constants#colordestination)
 
 ---
 
@@ -185,7 +185,7 @@ title: PDFSaveOptions
 
 #### 类型
 
-[DownsampleMethod](scripting-constants.md#downsamplemethod)
+[DownsampleMethod](../scripting-constants#downsamplemethod)
 
 ---
 
@@ -201,7 +201,7 @@ title: PDFSaveOptions
 
 #### 类型
 
-[ColorProfile](scripting-constants.md#colorprofile)
+[ColorProfile](../scripting-constants#colorprofile)
 
 ---
 
@@ -233,7 +233,7 @@ title: PDFSaveOptions
 
 #### 类型
 
-[PDFCompatibility](scripting-constants.md#pdfcompatibility)
+[PDFCompatibility](../scripting-constants#pdfcompatibility)
 
 ---
 
@@ -407,7 +407,7 @@ title: PDFSaveOptions
 
 #### 类型
 
-[CompressionQuality](scripting-constants.md#compressionquality)
+[CompressionQuality](../scripting-constants#compressionquality)
 
 ---
 
@@ -455,7 +455,7 @@ title: PDFSaveOptions
 
 #### 类型
 
-[DownsampleMethod](scripting-constants.md#downsamplemethod)
+[DownsampleMethod](../scripting-constants#downsamplemethod)
 
 ---
 
@@ -487,7 +487,7 @@ title: PDFSaveOptions
 
 #### 类型
 
-[MonochromeCompression](scripting-constants.md#monochromecompression)
+[MonochromeCompression](../scripting-constants#monochromecompression)
 
 ---
 
@@ -535,7 +535,7 @@ title: PDFSaveOptions
 
 #### 类型
 
-[DownsampleMethod](scripting-constants.md#downsamplemethod)
+[DownsampleMethod](../scripting-constants#downsamplemethod)
 
 ---
 
@@ -631,7 +631,7 @@ title: PDFSaveOptions
 
 #### 类型
 
-[PageMarksTypes](scripting-constants.md#pagemarkstypes)
+[PageMarksTypes](../scripting-constants#pagemarkstypes)
 
 ---
 
@@ -647,7 +647,7 @@ title: PDFSaveOptions
 
 #### 类型
 
-[PDFPrintAllowedEnum](scripting-constants.md#pdfprintallowedenum)
+[PDFPrintAllowedEnum](../scripting-constants#pdfprintallowedenum)
 
 ---
 
@@ -663,7 +663,7 @@ title: PDFSaveOptions
 
 #### 类型
 
-[PDFChangesAllowedEnum](scripting-constants.md#pdfchangesallowedenum)
+[PDFChangesAllowedEnum](../scripting-constants#pdfchangesallowedenum)
 
 ---
 
@@ -693,7 +693,7 @@ title: PDFSaveOptions
 
 #### 类型
 
-[PDFXStandard](scripting-constants.md#pdfxstandard)
+[PDFXStandard](../scripting-constants#pdfxstandard)
 
 ---
 
@@ -851,7 +851,7 @@ title: PDFSaveOptions
 
 #### 类型
 
-[PDFTrimMarkWeight](scripting-constants.md#pdftrimmarkweight)
+[PDFTrimMarkWeight](../scripting-constants#pdftrimmarkweight)
 
 ---
 

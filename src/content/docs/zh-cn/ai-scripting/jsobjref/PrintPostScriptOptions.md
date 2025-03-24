@@ -73,7 +73,7 @@ title: PrintPostScriptOptions
 
 #### 类型
 
-[PostScriptImageCompressionType](scripting-constants.md#postscriptimagecompressiontype)
+[PostScriptImageCompressionType](../scripting-constants#postscriptimagecompressiontype)
 
 ---
 
@@ -105,7 +105,7 @@ PostScript 语言级别。
 
 #### 类型
 
-[PrinterPostScriptLevelEnum](scripting-constants.md#printerpostscriptlevelenum)
+[PrinterPostScriptLevelEnum](../scripting-constants#printerpostscriptlevelenum)
 
 ---
 

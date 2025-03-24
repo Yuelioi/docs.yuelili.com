@@ -136,8 +136,8 @@ textDocument.characterRange(1,-1).fontSize = 40;
 
 这实际上报告的是手动字距调整值，而不是自动字距调整计算出的字距调整值。
 
-- 如果范围内的 [autoKernType](textdocument.md#textdocumentautokerntype) 设置为 `AutoKernType.METRIC_KERN`、`AutoKernType.OPTICAL_KERN` 或混合值，则此属性将返回 `undefined`。
-- 如果范围内的 [autoKernType](textdocument.md#textdocumentautokerntype) 设置为 `AutoKernType.NO_AUTO_KERN`，并且此属性具有混合值，则读取时将返回 `undefined`。
+- 如果范围内的 [autoKernType](../textdocument#textdocumentautokerntype) 设置为 `AutoKernType.METRIC_KERN`、`AutoKernType.OPTICAL_KERN` 或混合值，则此属性将返回 `undefined`。
+- 如果范围内的 [autoKernType](../textdocument#textdocumentautokerntype) 设置为 `AutoKernType.NO_AUTO_KERN`，并且此属性具有混合值，则读取时将返回 `undefined`。
 
 设置此值还会将 `AutoKernType.NO_AUTO_KERN` 设置为 `true`，应用于受影响的字符。
 
@@ -159,10 +159,10 @@ textDocument.characterRange(1,-1).fontSize = 40;
 
 如果此属性具有混合值，则读取时将返回 `undefined`。
 
-设置此值还会将 [applyStroke](textdocument.md#textdocumentapplystroke) 设置为 `true`，应用于受影响的字符。
+设置此值还会将 [applyStroke](../textdocument#textdocumentapplystroke) 设置为 `true`，应用于受影响的字符。
 
 :::warning
-与 TextDocument API 上的相同属性相比，如果 [applyStroke](textdocument.md#textdocumentapplystroke) 不是 `true`，我们 *不会* 在读取时抛出异常。
+与 TextDocument API 上的相同属性相比，如果 [applyStroke](../textdocument#textdocumentapplystroke) 不是 `true`，我们 *不会* 在读取时抛出异常。
 :::
 
 #### 类型
@@ -206,7 +206,7 @@ textDocument.characterRange(1,-1).fontSize = 40;
 
 写入时，范围内的字符将被替换为提供的字符串值。如果为空字符串，则范围内的字符将被有效删除。
 
-要在不删除任何现有字符的情况下插入字符，请调用 [TextDocument.characterRange()](textdocument.md#textdocumentcharacterrange)，并将起始值和结束值设置为相同值，以获得插入点范围。
+要在不删除任何现有字符的情况下插入字符，请调用 [TextDocument.characterRange()](../textdocument#textdocumentcharacterrange)，并将起始值和结束值设置为相同值，以获得插入点范围。
 
 #### 类型
 

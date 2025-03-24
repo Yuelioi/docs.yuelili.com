@@ -70,7 +70,7 @@ title: 函数块中的新成员
 |   | <pre lang="cpp">AEIO_InitOutputSpec(<br/>  AEIO_BasicData  \*basic_dataP,<br/>  AEIO_OutSpecH   outH,<br/>  A_Boolean   \*user_interacted);</pre>  |  |  |
 |   | !!! 注意  |  |  |
 |   |  首次使用您的 AEIO 时，After Effects 会在其首选项中缓存最后已知的良好 `optionsH`。  |  |  |
-|   | 在测试此函数时，请经常[删除您的首选项](../intro/debugging-plug-ins.md#deleting-preferences)。   |  |  |
+|   | 在测试此函数时，请经常[删除您的首选项](../../intro/debugging-plug-ins#deleting-preferences)。   |  |  |
 | `AEIO_GetFlatOutputOptions`   | 在 `AEIO_Handle` 中描述 `AEIO_OutSpecH` 的输出选项，以磁盘安全的扁平数据结构（不引用外部内存）。  | 输出   | 是   |
 |   | 请注意，您的输出选项必须是跨平台的，因此请注意字节顺序问题。  |  |  |
 |   | <pre lang="cpp">AEIO_GetFlatOutputOptions(<br/>  AEIO_BasicData  \*basic_dataP,<br/>  AEIO_OutSpecH   outH,<br/>  AEIO_Handle   \*optionsH);</pre>   |  |  |
@@ -108,7 +108,7 @@ title: 函数块中的新成员
 | `AEIO_Idle`   | 可选。在空闲时间执行某些操作。不支持 `AEIO_Err_USE_DFLT_CALLBACK`。  | 输出  | 否  |
 |   | <pre lang="cpp">AEIO_Idle(<br/>  AEIO_BasicData  \*basic_dataP,<br/>  AEIO_ModuleSignature  sig,<br/>  AEIO_IdleFlags  \*idle_flags0);</pre>   |   |   |
 | `AEIO_GetDepths`  | 设置 `AEIO_OptionsFlags` 以指示哪些像素和颜色深度对你的输出格式有效。   | 输出  | 是   |
-|   | 请参阅 [导出位深度](implementation-details.md#implementation-details) 的讨论。  |   |   |
+|   | 请参阅 [导出位深度](../implementation-details#implementation-details) 的讨论。  |   |   |
 |   | <pre lang="cpp">AEIO_GetDepths(<br/>  AEIO_BasicData   \*basic_dataP,<br/>  AEIO_OutSpecH  outH,<br/>  AEIO_OptionsFlags  \*which);</pre>  |   |   |
 | `AEIO_GetOutputSuffix`  | 允许 `AEIO_Err_USE_DFLT_CALLBACK`。描述输出文件的三字符扩展名。  | 输出  | 是   |
 |   | <pre lang="cpp">AEIO_GetOutputSuffix(<br/>  AEIO_BasicData  \*basic_dataP,<br/>  AEIO_OutSpecH   outH,<br/>  A_char  \*suffix);</pre>  |   |   |
@@ -169,7 +169,7 @@ After Effects 中的任何图像或音频数据（除了纯色）都是从输入
 | `AEGP_GetInSpecOptionsHandle`  | 获取给定 `AEIO_InSpecH` 的选项数据（由您的 AEIO 创建）。   |
 |  | <pre lang="cpp">AEGP_GetInSpecOptionsHandle(<br/>  AEIO_InSpecH  inH,<br/>  void  \*optionsPPV);</pre>  |
 | `AEGP_SetInSpecOptionsHandle`  | 设置给定 `AEIO_InSpecH` 的选项数据。   |
-|  | 必须使用 [Memory Suite](../aegps/aegp-suites.md#aegp_memorysuite1) 分配。  |
+|  | 必须使用 [Memory Suite](../../aegps/aegp-suites#aegp_memorysuite1) 分配。  |
 |  | <pre lang="cpp">AEGP_SetInSpecOptionsHandle(<br/>  AEIO_InSpecH  inH,<br/>  void  \*optionsPV,<br/>  void  \*old_optionsPPV);</pre>   |
 | `AEGP_GetInSpecFilePath`   | 获取 `AEIO_InSpecH` 的文件路径。   |
 |  | 文件路径是一个指向以 NULL 结尾的 A_UTF16Char 字符串的句柄，必须使用 `AEGP_FreeMemHandle` 释放。  |
@@ -230,7 +230,7 @@ After Effects 中的任何图像或音频数据（除了纯色）都是从输入
 |  | <pre lang="cpp">AEGP_SetInSpecSoundChannels(<br/>  AEIO_InSpecH  inH,<br/>  AEIO_SndChannels  num_channels);</pre>  |
 | `AEGP_AddAuxExtMap`  | 如果您的文件格式有辅助文件，并且您希望防止用户直接打开这些文件，请将其扩展名、文件类型和创建者传递给此函数，以防止其出现在输入对话框中。  |
 |  | <pre lang="cpp">AEGP_AddAuxExtMap(<br/>  const A_char  \*extension,<br/>  A_long  file_type,<br/>  A_long  creator);</pre>  |
-| `AEGP_SetInSpecEmbeddedColorProfile`   | 对于 RGB 数据，如果存在嵌入的 icc 配置文件，请使用 [AEGP_ColorSettingsSuite5](../aegps/aegp-suites.md#aegp_colorsettingssuite5) 中的 `AEGP_GetNewColorProfileFromICCProfile` 从此 icc 配置文件中构建 `AEGP_ColorProfile`，并将配置文件描述设置为 NULL。   |
+| `AEGP_SetInSpecEmbeddedColorProfile`   | 对于 RGB 数据，如果存在嵌入的 icc 配置文件，请使用 [AEGP_ColorSettingsSuite5](../../aegps/aegp-suites#aegp_colorsettingssuite5) 中的 `AEGP_GetNewColorProfileFromICCProfile` 从此 icc 配置文件中构建 `AEGP_ColorProfile`，并将配置文件描述设置为 NULL。   |
 |  | 对于非 RGB 数据，如果存在嵌入的非 RGB icc 配置文件，或者您知道数据的颜色空间，请将颜色配置文件设置为 NULL，并将描述作为以 NULL 结尾的 Unicode 字符串提供。这样做会禁用允许用户在应用程序 UI 中影响配置文件选择的颜色管理 UI。 |
 |  | 如果您直接将非 RGB 数据解包到工作空间（使用 `AEGP_GetNewWorkingSpaceColorProfile` 获取工作空间），则已完成。   |
 |  | 如果您将非 RGB 数据解包到特定的 RGB 颜色空间，则必须将描述此空间的配置文件传递给下面的 `AEGP_SetInSpecAssignedColorProfile`。否则，您的 RGB 数据将被错误地解释为在工作空间中。   |

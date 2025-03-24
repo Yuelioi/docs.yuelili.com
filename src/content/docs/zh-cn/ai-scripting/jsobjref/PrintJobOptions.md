@@ -89,7 +89,7 @@ title: PrintJobOptions
 
 #### 类型
 
-[PrintArtworkDesignation](scripting-constants.md#printartworkdesignation)
+[PrintArtworkDesignation](../scripting-constants#printartworkdesignation)
 
 ---
 
@@ -149,7 +149,7 @@ title: PrintJobOptions
 
 #### 类型
 
-[PrintingBounds](scripting-constants.md#printingbounds)
+[PrintingBounds](../scripting-constants#printingbounds)
 
 ---
 

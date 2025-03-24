@@ -27,7 +27,7 @@ title: RasterizeOptions
 
 #### 类型
 
-[AntiAliasingMethod](scripting-constants.md#antialiasingmethod)
+[AntiAliasingMethod](../scripting-constants#antialiasingmethod)
 
 ---
 
@@ -75,7 +75,7 @@ title: RasterizeOptions
 
 #### 类型
 
-[RasterizationColorModel](scripting-constants.md#rasterizationcolormodel)
+[RasterizationColorModel](../scripting-constants#rasterizationcolormodel)
 
 ---
 

@@ -5,7 +5,7 @@ title: 与Flash应用程序通信
 
 ScriptUI支持Flash Player，它可以在Adobe应用程序的窗口中运行Flash应用程序。Flash应用程序运行ActionScript，这是与Adobe应用程序运行的ExtendScript版本的JavaScript不同的JavaScript实现。
 
-要打开Flash Player，请在您的ScriptUI窗口中添加一个类型为[FlashPlayer](types-of-controls.md#flashplayer)的控件。这种类型的控件对象包含允许您的脚本加载SWF文件并控制电影播放的功能。它还包含允许您的Adobe应用程序脚本与Flash应用程序的ActionScript环境通信的功能。请参阅[FlashPlayer控件函数](control-objects.md#flashplayer-control-functions)。
+要打开Flash Player，请在您的ScriptUI窗口中添加一个类型为[FlashPlayer](../types-of-controls#flashplayer)的控件。这种类型的控件对象包含允许您的脚本加载SWF文件并控制电影播放的功能。它还包含允许您的Adobe应用程序脚本与Flash应用程序的ActionScript环境通信的功能。请参阅[FlashPlayer控件函数](../control-objects#flashplayer-control-functions)。
 
 可以在两个脚本环境之间传递有限的数据类型：
 
@@ -29,7 +29,7 @@ import flash.external.ExternalInterface;
 
 ## 从ActionScript调用ExtendScript函数
 
-ActionScript的`ExternalInterface`类允许您调用在Adobe应用程序脚本中定义的`FlashPlayer`元素中的ExtendScript函数，并在ActionScript环境中运行它。您必须在[FlashPlayer](types-of-controls.md#flashplayer)元素中定义一个具有匹配函数名称的方法。
+ActionScript的`ExternalInterface`类允许您调用在Adobe应用程序脚本中定义的`FlashPlayer`元素中的ExtendScript函数，并在ActionScript环境中运行它。您必须在[FlashPlayer](../types-of-controls#flashplayer)元素中定义一个具有匹配函数名称的方法。
 
 例如，为了让SWF代码调用名为`myExtendScriptFunction`的ExtendScript函数，请将名为`myExtendScriptFunction`的函数定义为`FlashPlayer`控件对象的方法。函数名称没有特殊要求，但函数必须仅接受和返回支持类型的数据。
 
@@ -45,7 +45,7 @@ var res = ExternalInterface.call( "myJavaScriptFunction" );
 
 ## 从ScriptUI脚本调用ActionScript函数
 
-在ExtendScript端，使用`FlashPlayer`方法[invokePlayerFunction()](control-objects.md#invokeplayerfunction)来调用在Flash应用程序中定义的ActionScript方法：
+在ExtendScript端，使用`FlashPlayer`方法[invokePlayerFunction()](../control-objects#invokeplayerfunction)来调用在Flash应用程序中定义的ActionScript方法：
 
 ```javascript
 var result = flashElement.invokePlayerFunction( "ActionScript_function_name", [ arg1, ..., argN ] );

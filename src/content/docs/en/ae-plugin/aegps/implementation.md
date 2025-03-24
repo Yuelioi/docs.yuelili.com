@@ -32,7 +32,7 @@ This is very different from the effect plug-in model, where all communication co
 
 Because plug-in load order may vary, it's never a good idea to acquire suites not provided by After Effects during your entry point function. Rather, wait until the appropriate hook function(s).
 
-The AEGP [API Versions](../intro/compatibility-across-multiple-versions.md#api-versions) can help distinguish between different versions of After Effects, in case the AEGP needs to behave differently or handle different behavior.
+The AEGP [API Versions](../../intro/compatibility-across-multiple-versions#api-versions) can help distinguish between different versions of After Effects, in case the AEGP needs to behave differently or handle different behavior.
 
 Those other functions are registered as callback hooks. An AEGP that adds menu items must register an UpdateMenuHook function (with a function signature as described in AE_GeneralPlug.h) which After Effects can call to determine whether or not to enable those items. Similarly, plug-ins which process commands register a CommandHook (one for all commands).
 
@@ -48,7 +48,7 @@ Like everything else in the AEGP API, this is done through a function suite; in 
 
 ## Example: Adding A Menu Item
 
-During your entry point function, use `AEGP_GetUniqueCommand()` from [Command Suite](aegp-suites.md#aegp_commandsuite1) to obtain a command ID from After Effects, for use with `AEGP_InsertMenuCommand`. Use a different ID for each menu item you add.
+During your entry point function, use `AEGP_GetUniqueCommand()` from [Command Suite](../aegp-suites#aegp_commandsuite1) to obtain a command ID from After Effects, for use with `AEGP_InsertMenuCommand`. Use a different ID for each menu item you add.
 
 Using AEGP_RegisterSuite's `AEGP_RegisterCommandHook()`, tell After Effects which function to call when your menu item(s) are selected. The function you register using `AEGP_RegisterUpdateMenuHook()` enables and disabling your menu item(s). Your menu item(s) will be permanently disabled unless you register a menu updating function.
 

@@ -25,9 +25,9 @@ title: 返回代码
 | `exportReturn_IterateExporterDone`       | 从 `exSelStartup` 返回的值，表示没有更多的导出器。                                                                   |
 | `exportReturn_InternalErrorSilent`       | 从 `exSelExport` 返回的错误代码，用于在将控制权返回给主机之前在屏幕上显示自定义错误消息。                             |
 | `exportReturn_ErrCodecBadInput`          | 视频编解码器拒绝了输入格式。                                                                                         |
-| `exportReturn_ErrLastErrorSet`           | 导出器正在使用 [错误套件](../universals/sweetpea-suites.md#error-suite) 返回错误。                                   |
-| `exportReturn_ErrLastWarningSet`         | 导出器正在使用 [错误套件](../universals/sweetpea-suites.md#error-suite) 返回警告。                                    |
-| `exportReturn_ErrLastInfoSet`            | 导出器正在使用 [错误套件](../universals/sweetpea-suites.md#error-suite) 返回信息。                                    |
+| `exportReturn_ErrLastErrorSet`           | 导出器正在使用 [错误套件](../../universals/sweetpea-suites#error-suite) 返回错误。                                   |
+| `exportReturn_ErrLastWarningSet`         | 导出器正在使用 [错误套件](../../universals/sweetpea-suites#error-suite) 返回警告。                                    |
+| `exportReturn_ErrLastInfoSet`            | 导出器正在使用 [错误套件](../../universals/sweetpea-suites#error-suite) 返回信息。                                    |
 | `exportReturn_ErrExceedsMaxFormatDuration` | 导出器（或主机）认为导出的持续时间过长。                                                                             |
 | `exportReturn_VideoCodecNeedsActivation` | 当前的视频编解码器未激活，无法使用。                                                                                 |
 | `exportReturn_AudioCodecNeedsActivation` | 当前的音频编解码器未激活，无法使用。                                                                                 |

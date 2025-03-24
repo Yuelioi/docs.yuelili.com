@@ -84,7 +84,7 @@ Creates an area text frame item.
 |   Parameter   |                                Type                                 |                 Description                 |
 | ------------- | ------------------------------------------------------------------- | ------------------------------------------- |
 | `textPath`    | [PathItem](.././PathItem)                                           | Path item to use                            |
-| `orientation` | [TextOrientation](scripting-constants.md#textorientation), optional | Orientation of text                         |
+| `orientation` | [TextOrientation](../scripting-constants#textorientation), optional | Orientation of text                         |
 | `baseFrame`   | [TextFrameItem](.././TextFrameItem), optional                       | Text frame to use                           |
 | `postFix`     | Boolean, optional                                                   | Whether to prefix or postfix the text frame |
 
@@ -149,7 +149,7 @@ Creates an on-path text frame item.
 | `textPath`    | [PathItem](.././PathItem)                                           | Path item to use                            |
 | `startTValue` | Number (double)                                                     | Start position of text along the path       |
 | `endTValue`   | Number (double)                                                     | End position of text along the path         |
-| `orientation` | [TextOrientation](scripting-constants.md#textorientation), optional | Orientation of text                         |
+| `orientation` | [TextOrientation](../scripting-constants#textorientation), optional | Orientation of text                         |
 | `baseFrame`   | [TextFrameItem](.././TextFrameItem), optional                       | Text frame to use                           |
 | `postFix`     | Boolean, optional                                                   | Whether to prefix or postfix the text frame |
 
@@ -172,7 +172,7 @@ Creates a point text frame item.
 |   Parameter   |                                Type                                 |     Description     |
 | ------------- | ------------------------------------------------------------------- | ------------------- |
 | `anchor`      | Array of 2 numbers                                                  | Point text anchor   |
-| `orientation` | [TextOrientation](scripting-constants.md#textorientation), optional | Orientation of text |
+| `orientation` | [TextOrientation](../scripting-constants#textorientation), optional | Orientation of text |
 
 #### Returns
 

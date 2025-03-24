@@ -79,11 +79,11 @@ app.documents.add(
 
 |      参数       |                                       类型                                        |          描述          |
 | --------------- | --------------------------------------------------------------------------------- | ---------------------- |
-| `documentColorSpace` | [DocumentColorSpace](scripting-constants.md#documentcolorspace), 可选         | 文档的颜色空间         |
+| `documentColorSpace` | [DocumentColorSpace](../scripting-constants#documentcolorspace), 可选         | 文档的颜色空间         |
 | `width`         | 数字 (double), 可选                                                              | 要添加的文档宽度       |
 | `height`        | 数字 (double), 可选                                                              | 要添加的文档高度       |
 | `numArtBoards`  | 数字 (long), 可选                                                                | 要创建的艺术板数量     |
-| `artboardLayout` | [DocumentArtboardLayout](scripting-constants.md#documentartboardlayout), 可选 | 艺术板布局             |
+| `artboardLayout` | [DocumentArtboardLayout](../scripting-constants#documentartboardlayout), 可选 | 艺术板布局             |
 | `artboardSpacing` | 数字, 可选                                                                     | 间距的像素数           |
 | `artboardRowsOrCols` | 整数, 可选                                                                 | 行数或列数             |
 

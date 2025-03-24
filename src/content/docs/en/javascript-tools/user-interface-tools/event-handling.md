@@ -5,9 +5,9 @@ title: event-handling
 
 Several helper classes provide low-level event-handling capabilities.
 
-Event objects are normally created by ScriptUI and passed to your event handler. However, you can simulate a user action by constructing an event object using [ScriptUI.events.createEvent()](scriptui-class.md#scriptuieventscreateevent), and sending it to a target object's controlobj-dispatchEvent function.
+Event objects are normally created by ScriptUI and passed to your event handler. However, you can simulate a user action by constructing an event object using [ScriptUI.events.createEvent()](../scriptui-class#scriptuieventscreateevent), and sending it to a target object's controlobj-dispatchEvent function.
 
-A helper object, [Keyboard state object](environment.md#keyboard-state-object), provides global access to the keyboard state during function execution, outside the event-handling framework.
+A helper object, [Keyboard state object](../environment#keyboard-state-object), provides global access to the keyboard state during function execution, outside the event-handling framework.
 
 ---
 
@@ -368,7 +368,7 @@ In addition to the functions defined for [UIEvent base class](#uievent-base-clas
 Get the current modifier keys being used in this event.
 
 :::note
-If you're trying to check whether keyboard modifier keys (alt/ctrl/meta/shift) are held down at any time in your script, not just in an event, see [Keyboard state object](environment.md#keyboard-state-object).
+If you're trying to check whether keyboard modifier keys (alt/ctrl/meta/shift) are held down at any time in your script, not just in an event, see [Keyboard state object](../environment#keyboard-state-object).
 :::
 
 

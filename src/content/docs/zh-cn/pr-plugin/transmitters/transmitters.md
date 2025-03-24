@@ -7,11 +7,11 @@ title: 发射器
 
 当创建新的发射器实例时，系统会要求其描述希望接收渲染视频的格式。发射器插件可以根据源剪辑或时间线格式请求不同的格式。宿主应用程序将处理所有转换为所需视频格式的操作。例如，发射器实例可能指定它只能处理固定的宽度和高度，但可以处理任何像素格式。除了视频转换外，宿主还负责调度媒体的预取和异步渲染。
 
-发射器可以选择让宿主通过系统的声音驱动程序（ASIO 或 CoreAudio）播放音频。或者，如果发射器希望自己处理音频并将其发送到外部硬件，则可以使用 [Playmod Audio Suite](suites.md#playmod-audio-suite) 中的 `GetNextAudioBuffer` 请求音频。
+发射器可以选择让宿主通过系统的声音驱动程序（ASIO 或 CoreAudio）播放音频。或者，如果发射器希望自己处理音频并将其发送到外部硬件，则可以使用 [Playmod Audio Suite](../suites#playmod-audio-suite) 中的 `GetNextAudioBuffer` 请求音频。
 
 在播放时，宿主会为发射器提供一个时钟回调，发射器必须在每一帧调用该回调以更新宿主的时间。这使得发射器能够协调音频/视频同步。
 
-发射器可以使用 [Captioning Suite](../universals/sweetpea-suites.md#captioning-suite) 获取序列的任何隐藏式字幕。
+发射器可以使用 [Captioning Suite](../../universals/sweetpea-suites#captioning-suite) 获取序列的任何隐藏式字幕。
 
 发射器不需要调用 Playmod Device Controller 套件来处理“导出到磁带”功能。这是在播放器级别处理的。
 

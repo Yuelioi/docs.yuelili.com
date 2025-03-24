@@ -7,7 +7,7 @@ title: ExportOptionsFlash
 
 #### 描述
 
-将文档导出为 Macromedia® Flash® (SWF) 文件的选项，与 [Document.exportFile()](Document.md#documentexportfile) 方法一起使用。所有属性都是可选的。
+将文档导出为 Macromedia® Flash® (SWF) 文件的选项，与 [Document.exportFile()](../Document#documentexportfile) 方法一起使用。所有属性都是可选的。
 
 导出文档时，会自动附加适当的文件扩展名。您不应在文件规范中包含任何文件扩展名。
 
@@ -27,7 +27,7 @@ title: ExportOptionsFlash
 
 #### 类型
 
-[ArtClippingOption](scripting-constants.md#artclippingoption)
+[ArtClippingOption](../scripting-constants#artclippingoption)
 
 ---
 
@@ -87,7 +87,7 @@ title: ExportOptionsFlash
 
 #### 类型
 
-[BlendAnimationType](scripting-constants.md#blendanimationtype)
+[BlendAnimationType](../scripting-constants#blendanimationtype)
 
 ---
 
@@ -167,7 +167,7 @@ title: ExportOptionsFlash
 
 #### 类型
 
-[FlashExportStyle](scripting-constants.md#flashexportstyle)
+[FlashExportStyle](../scripting-constants#flashexportstyle)
 
 ---
 
@@ -183,7 +183,7 @@ title: ExportOptionsFlash
 
 #### 类型
 
-[FlashExportVersion](scripting-constants.md#flashexportversion)
+[FlashExportVersion](../scripting-constants#flashexportversion)
 
 ---
 
@@ -233,7 +233,7 @@ title: ExportOptionsFlash
 
 #### 类型
 
-[FlashImageFormat](scripting-constants.md#flashimageformat)
+[FlashImageFormat](../scripting-constants#flashimageformat)
 
 ---
 
@@ -265,7 +265,7 @@ title: ExportOptionsFlash
 
 #### 类型
 
-[FlashJPEGMethod](scripting-constants.md#flashjpegmethod)
+[FlashJPEGMethod](../scripting-constants#flashjpegmethod)
 
 ---
 
@@ -297,7 +297,7 @@ title: ExportOptionsFlash
 
 #### 类型
 
-[LayerOrderType](scripting-constants.md#layerordertype)
+[LayerOrderType](../scripting-constants#layerordertype)
 
 ---
 
@@ -329,7 +329,7 @@ title: ExportOptionsFlash
 
 #### 类型
 
-[FlashPlaybackSecurity](scripting-constants.md#flashplaybacksecurity)
+[FlashPlaybackSecurity](../scripting-constants#flashplaybacksecurity)
 
 ---
 
@@ -377,7 +377,7 @@ title: ExportOptionsFlash
 
 #### 类型
 
-[SaveOptions](scripting-constants.md#saveoptions)
+[SaveOptions](../scripting-constants#saveoptions)
 
 ---
 

@@ -45,7 +45,7 @@ title: 脚本编辑器
 
 当您导航到代码折叠部分中的书签时，该部分会自动打开。
 
-书签在行的左侧（如果显示行号，则在行号的右侧）用蓝色右箭头标记。这与断点用点标记的位置相同（请参阅 [设置断点](debugging-in-the-toolkit.md#setting-breakpoints)）。如果同一行中同时设置了断点和书签，蓝色箭头会叠加在断点点上。
+书签在行的左侧（如果显示行号，则在行号的右侧）用蓝色右箭头标记。这与断点用点标记的位置相同（请参阅 [设置断点](../debugging-in-the-toolkit#setting-breakpoints)）。如果同一行中同时设置了断点和书签，蓝色箭头会叠加在断点点上。
 
 ![书签](./_static/02_the-extendscript-toolkit_the-script-editor_navigation-aids_bookmarks.png)
 
@@ -178,7 +178,7 @@ title: 脚本编辑器
 - 当前文档，或当前文档中的当前选择
 - 所有打开的文档
 - 当前目标应用程序公开的所有脚本
-- 您定义为收藏位置的文件夹；请参阅 [脚本面板和收藏脚本位置](selecting-scripts.md#the-scripts-panel-and-favorite-script-locations)。
+- 您定义为收藏位置的文件夹；请参阅 [脚本面板和收藏脚本位置](../selecting-scripts#the-scripts-panel-and-favorite-script-locations)。
 
 ![搜索](./_static/02_the-extendscript-toolkit_the-script-editor_searching-in-text_search.jpg)
 

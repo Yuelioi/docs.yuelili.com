@@ -3,7 +3,7 @@ title: 控件类型
 ---
 # 控件类型
 
-以下部分介绍了可以添加到 `Window` 或其他容器元素（`panel` 或 `group`）中的控件类型。有关属性和函数的详细信息，以及如何创建每种类型的元素，请参阅 [控件对象构造函数](control-objects.md#control-object-constructors)。
+以下部分介绍了可以添加到 `Window` 或其他容器元素（`panel` 或 `group`）中的控件类型。有关属性和函数的详细信息，以及如何创建每种类型的元素，请参阅 [控件对象构造函数](../control-objects#control-object-constructors)。
 
 ---
 
@@ -33,7 +33,7 @@ dlg.msgPnl = dlg.add( "panel", [ 25, 15, 355, 130 ], "Messages" );
 
 与 `Panel` 不同，`Group` 没有标题或可见的边框。
 
-你可以使用它们创建控件的层次结构，并在较大的面板内对某些控件组的布局属性进行精细控制。有关示例，请参阅 [创建更复杂的布局](automatic-layout.md#creating-more-complex-arrangements)。
+你可以使用它们创建控件的层次结构，并在较大的面板内对某些控件组的布局属性进行精细控制。有关示例，请参阅 [创建更复杂的布局](../automatic-layout#creating-more-complex-arrangements)。
 
 ---
 
@@ -57,7 +57,7 @@ dlg.msgPnl = dlg.add( "panel", [ 25, 15, 355, 130 ], "Messages" );
 
 ## 用户界面控件
 
-这些是包含在窗口、面板和组中的 `Control` 对象类型，提供特定类型的显示和用户交互。控件实例通过将相应的 `type` 关键字传递给 `Window` 或容器的 `add()` 方法来创建；请参阅 [控件类型和创建参数](control-objects.md#control-types-and-creation-parameters)。
+这些是包含在窗口、面板和组中的 `Control` 对象类型，提供特定类型的显示和用户交互。控件实例通过将相应的 `type` 关键字传递给 `Window` 或容器的 `add()` 方法来创建；请参阅 [控件类型和创建参数](../control-objects#control-types-and-creation-parameters)。
 
 这些示例在创建时没有显式设置边界，因为通常更有用的是设置首选大小，然后让布局管理器设置边界；请参阅 [自动布局](../automatic-layout)。
 
@@ -84,7 +84,7 @@ dlg.show();
 显示图标的按钮，可以带有或不带有文本标签。与文本按钮类似，通常在单击时启动操作。
 
 - `image` 属性标识图标图像；请参阅 [显示图像](#displaying-images)。
-- `title` 或 `text` 属性提供可选的标签；[titleLayout](control-objects.md#titlelayout) 属性将标签相对于图像放置。
+- `title` 或 `text` 属性提供可选的标签；[titleLayout](../control-objects#titlelayout) 属性将标签相对于图像放置。
 - `onClick` 回调方法提供行为。
 
 ---
@@ -94,7 +94,7 @@ dlg.show();
 显示图标图像。
 
 - `image` 属性标识图标图像；请参阅 [显示图像](#displaying-images)。
-- `title` 属性提供可选的标签；[titleLayout](control-objects.md#titlelayout) 属性将标签相对于图像放置。
+- `title` 属性提供可选的标签；[titleLayout](../control-objects#titlelayout) 属性将标签相对于图像放置。
 
 ---
 
@@ -252,7 +252,7 @@ dlg.sizePnl.widthEt = dlg.sizePnl.add( "edittext" );
 - `ListBox` 控件显示一个选择列表。创建对象时，你可以指定是否允许用户选择单个或多个项目。如果列表包含的项目多于可用区域中显示的项目，则可能会出现滚动条，允许用户滚动浏览所有列表项。列表框可以显示多列项目；请参阅 [创建多列列表](#creating-multi-column-lists)。
 - `DropDownList` 控件显示一个可见的项目。当你点击控件时，会下拉一个列表，允许你选择列表中的其他项目之一。下拉列表可以有不可选择的分隔符项目，用于视觉上分隔相关项目组，如菜单中所示。
 - `TreeView` 控件类似于 `ListBox`，不同之处在于项目可以有子项目。带有子项目的项目可以展开或折叠以显示或隐藏子项目。子项目又可以包含子项目。
-- `title` 属性提供了一个可选的标签；[titleLayout](control-objects.md#titlelayout) 属性将标签相对于列表放置。
+- `title` 属性提供了一个可选的标签；[titleLayout](../control-objects#titlelayout) 属性将标签相对于列表放置。
 
 你可以在创建列表对象时指定选择项目，或之后使用列表对象的 `add()` 方法。你可以使用列表对象的 `remove()` 和 `removeAll()` 方法以编程方式删除项目。
 
@@ -272,17 +272,17 @@ dlg.sizePnl.widthEt = dlg.sizePnl.add( "edittext" );
 
 ### Flash 播放器 (FlashPlayer)
 
-在 ScriptUI 窗口中运行 Flash 电影。其控件的方法允许你从 SWF 文件加载电影并控制播放。请参阅 [FlashPlayer 控件函数](control-objects.md#flashplayer-control-functions)。
+在 ScriptUI 窗口中运行 Flash 电影。其控件的方法允许你从 SWF 文件加载电影并控制播放。请参阅 [FlashPlayer 控件函数](../control-objects#flashplayer-control-functions)。
 
-你还可以使用控件对象与 Flash 应用程序通信，调用 ActionScript 方法，并使你在 Adobe 应用程序脚本中定义的 JavaScript 方法可供 Flash ActionScript 代码使用。请参阅 [从 ScriptUI 脚本调用 ActionScript 函数](communicating-with-the-flash-application.md#calling-actionscript-functions-from-a-scriptui-script)。
+你还可以使用控件对象与 Flash 应用程序通信，调用 ActionScript 方法，并使你在 Adobe 应用程序脚本中定义的 JavaScript 方法可供 Flash ActionScript 代码使用。请参阅 [从 ScriptUI 脚本调用 ActionScript 函数](../communicating-with-the-flash-application#calling-actionscript-functions-from-a-scriptui-script)。
 
-`title` 属性提供了一个可选的标签；[titleLayout](control-objects.md#titlelayout) 属性将标签相对于播放器放置。
+`title` 属性提供了一个可选的标签；[titleLayout](../control-objects#titlelayout) 属性将标签相对于播放器放置。
 
 ---
 
 ## 显示图像
 
-你可以在 `Image` 或 `IconButton` 控件中显示图标图像，或在 `Listbox` 或 `DropdownList` 控件中显示图像以代替字符串或与字符串一起显示为可选项目。在每种情况下，图像通过设置元素的 `image` 属性来定义。你可以将其设置为 [ScriptUIImage 对象](graphic-customization-objects.md#scriptuiimage-object)；命名的图标资源；[File 对象](../../file-system-access/file-object)；或包含图标图像的文件路径名，或该文件的别名或快捷方式（请参阅 [指定路径](../file-system-access/using-file-and-folder-objects.md#specifying-paths)）。
+你可以在 `Image` 或 `IconButton` 控件中显示图标图像，或在 `Listbox` 或 `DropdownList` 控件中显示图像以代替字符串或与字符串一起显示为可选项目。在每种情况下，图像通过设置元素的 `image` 属性来定义。你可以将其设置为 [ScriptUIImage 对象](../graphic-customization-objects#scriptuiimage-object)；命名的图标资源；[File 对象](../../file-system-access/file-object)；或包含图标图像的文件路径名，或该文件的别名或快捷方式（请参阅 [指定路径](../../file-system-access/using-file-and-folder-objects#specifying-paths)）。
 
 图标图像数据可以是便携式网络图形（PNG）格式或联合图像专家组（JPEG）格式。有关这些格式的详细信息，请参阅 [http://www.libpng.org](http://www.libpng.org) 和 [http://www.jpeg.org/](http://www.jpeg.org/)。
 

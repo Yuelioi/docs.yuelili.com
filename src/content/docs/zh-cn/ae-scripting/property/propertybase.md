@@ -16,7 +16,7 @@ var effect1againtoo = app.project.item(1).layer(1)("Effects").addGrain.viewingMo
 var effect1againtoo2 = app.project.item(1).layer(1)("Effects")("Add Grain")("Viewing Mode");
 ```
 
-另请参阅 [PropertyGroup.property()](propertygroup.md#propertygroupproperty)。
+另请参阅 [PropertyGroup.property()](../propertygroup#propertygroupproperty)。
 
 :::info
 PropertyBase 是 [Property](../property) 和 [PropertyGroup](../propertygroup) 的基类，因此在处理属性和属性组时，PropertyBase 的属性和方法都可用。
@@ -65,7 +65,7 @@ alert(effect2.name); // 无效引用，因为组索引位置已更改
 
 对于图层，这对应于眼球图标的设置。当为 `true` 时，图层的视频在当前时间处于活动状态。要使此值为 `true`，图层必须启用，除非此图层也被独奏，否则其他图层不能独奏，并且时间必须在此图层的 `inPoint` 和 `outPoint` 值之间。
 
-对于音频图层，此值永远不会为 `true`；AVLayer 对象中有一个单独的 `audioActive` 属性 [AVLayer.audioActive](../layer/avlayer.md#avlayeraudioactive)。
+对于音频图层，此值永远不会为 `true`；AVLayer 对象中有一个单独的 `audioActive` 属性 [AVLayer.audioActive](../../layer/avlayer#avlayeraudioactive)。
 
 对于效果和所有属性，它与 `enabled` 属性相同，只是它是只读的。
 
@@ -193,7 +193,7 @@ alert(effect2.name); // 无效引用，因为组索引位置已更改
 
 #### 描述
 
-对于图层，图层的名称。默认情况下，这与源名称相同，除非 [Layer.isNameSet](../layer/layer.md#layerisnameset) 返回 `false`。
+对于图层，图层的名称。默认情况下，这与源名称相同，除非 [Layer.isNameSet](../../layer/layer#layerisnameset) 返回 `false`。
 
 对于效果和所有属性，属性的显示名称。（比较 [PropertyBase.matchName](#propertybasematchname)。）如果属性不是索引组的子项（即属性组的类型为 `PropertyType.INDEXED_GROUP`；请参阅 [PropertyBase.propertyType](#propertybasepropertytype)），则设置 `name` 值会出错。
 
@@ -269,7 +269,7 @@ PropertyGroup 对象或 `null`；只读。
 
 #### 描述
 
-当为 `true` 时，此属性被选中。设置为 `true` 以选择该属性，或设置为 `false` 以取消选择。对大量属性重复采样此属性可能会降低系统性能。要读取合成或图层的完整选定属性集，请使用 [CompItem.selectedProperties](../item/compitem.md#compitemselectedproperties) 或 [Layer.selectedProperties](../layer/layer.md#layerselectedproperties)。
+当为 `true` 时，此属性被选中。设置为 `true` 以选择该属性，或设置为 `false` 以取消选择。对大量属性重复采样此属性可能会降低系统性能。要读取合成或图层的完整选定属性集，请使用 [CompItem.selectedProperties](../../item/compitem#compitemselectedproperties) 或 [Layer.selectedProperties](../../layer/layer#layerselectedproperties)。
 
 #### 类型
 

@@ -7,7 +7,7 @@ title: ExportOptionsSVG
 
 #### Description
 
-Options for exporting a document as a SVG file, used with the [Document.exportFile()](Document.md#documentexportfile) method. All properties are optional.
+Options for exporting a document as a SVG file, used with the [Document.exportFile()](../document#documentexportfile) method. All properties are optional.
 
 When you export a document, the appropriate file extension is appended automatically. You should not include any file extension in the file specification.
 
@@ -77,7 +77,7 @@ Default: `SVGCSSPropertyLocation.STYLEATTRIBUTES`.
 
 #### Type
 
-[SVGCSSPropertyLocation](scripting-constants.md#svgcsspropertylocation)
+[SVGCSSPropertyLocation](../scripting-constants#svgcsspropertylocation)
 
 ---
 
@@ -93,7 +93,7 @@ Default: `SVGDocumentEncoding.ASCII`.
 
 #### Type
 
-[SVGDocumentEncoding](scripting-constants.md#svgdocumentencoding)
+[SVGDocumentEncoding](../scripting-constants#svgdocumentencoding)
 
 ---
 
@@ -109,7 +109,7 @@ Default: `SVGDTDVersion.SVG1_1`.
 
 #### Type
 
-[SVGDTDVersion](scripting-constants.md#svgdtdversion)
+[SVGDTDVersion](../scripting-constants#svgdtdversion)
 
 ---
 
@@ -141,7 +141,7 @@ Default: `SVGFontSubsetting.ALLGLYPHS`.
 
 #### Type
 
-[SVGFontSubsetting](scripting-constants.md#svgfontsubsetting)
+[SVGFontSubsetting](../scripting-constants#svgfontsubsetting)
 
 ---
 
@@ -157,7 +157,7 @@ Default: `SVGFontType.CEFFONT`.
 
 #### Type
 
-[SVGFontType](scripting-constants.md#svgfonttype)
+[SVGFontType](../scripting-constants#svgfonttype)
 
 ---
 

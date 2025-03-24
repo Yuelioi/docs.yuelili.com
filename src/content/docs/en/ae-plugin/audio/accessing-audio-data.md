@@ -9,7 +9,7 @@ This layer is opaque; use `PF_GET_AUDIO_DATA` to access specific details about t
 
 As with pixel data, it's important that you check in the audio as soon as possible.
 
-If your effect requires as input a time span different from the output time span, update the `startsampL` and `endsampL` field in `PF_OutData` during `PF_Cmd_AUDIO_SETUP` from [Frame Selectors](../effect-basics/command-selectors.md#frame-selectors).
+If your effect requires as input a time span different from the output time span, update the `startsampL` and `endsampL` field in `PF_OutData` during `PF_Cmd_AUDIO_SETUP` from [Frame Selectors](../../effect-basics/command-selectors#frame-selectors).
 
 ---
 

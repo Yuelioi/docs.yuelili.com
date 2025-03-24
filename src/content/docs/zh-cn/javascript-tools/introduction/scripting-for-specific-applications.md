@@ -30,7 +30,7 @@ if ( BridgeTalk.appName == "bridge-2.0" ) {
 }
 ```
 
-有关应用程序间通信的详细信息，请参阅[使用脚本进行应用程序间通信](../interapplication-communication/index.md#interapplication-communication-with-scripts)。
+有关应用程序间通信的详细信息，请参阅[使用脚本进行应用程序间通信](../../interapplication-communication/index#interapplication-communication-with-scripts)。
 
 ## JavaScript 变量
 

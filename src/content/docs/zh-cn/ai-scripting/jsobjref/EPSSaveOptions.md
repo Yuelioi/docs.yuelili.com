@@ -7,7 +7,7 @@ title: EPSSaveOptions
 
 #### 描述
 
-用于将文档保存为 Illustrator EPS 文件的选项，与 [Document.saveAs()](Document.md#documentsaveas) 方法一起使用。
+用于将文档保存为 Illustrator EPS 文件的选项，与 [Document.saveAs()](../Document#documentsaveas) 方法一起使用。
 
 所有属性都是可选的。
 
@@ -57,7 +57,7 @@ title: EPSSaveOptions
 
 #### 类型
 
-[Compatibility](scripting-constants.md#compatibility)
+[Compatibility](../scripting-constants#compatibility)
 
 ---
 
@@ -117,7 +117,7 @@ title: EPSSaveOptions
 
 #### 类型
 
-[OutputFlattening](scripting-constants.md#outputflattening)
+[OutputFlattening](../scripting-constants#outputflattening)
 
 ---
 
@@ -147,7 +147,7 @@ title: EPSSaveOptions
 
 #### 类型
 
-[PDFOverprint](scripting-constants.md#pdfoverprint)
+[PDFOverprint](../scripting-constants#pdfoverprint)
 
 ---
 
@@ -163,7 +163,7 @@ title: EPSSaveOptions
 
 #### 类型
 
-[EPSPostScriptLevelEnum](scripting-constants.md#epspostscriptlevelenum)
+[EPSPostScriptLevelEnum](../scripting-constants#epspostscriptlevelenum)
 
 ---
 
@@ -177,7 +177,7 @@ EPS 预览图像的格式。
 
 #### 类型
 
-[EPSPreview](scripting-constants.md#epspreview)
+[EPSPreview](../scripting-constants#epspreview)
 
 ---
 

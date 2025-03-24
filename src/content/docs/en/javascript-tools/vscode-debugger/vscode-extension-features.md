@@ -30,7 +30,7 @@ You can add in `$.bp()` anywhere in your source file, and the debugger will catc
 
 This works identically to the `debugger;` method in browser-based Javascript.
 
-See [bp()](../extendscript-tools-features/dollar-object.md#bp) for more info.
+See [bp()](../../extendscript-tools-features/dollar-object#bp) for more info.
 
 ---
 

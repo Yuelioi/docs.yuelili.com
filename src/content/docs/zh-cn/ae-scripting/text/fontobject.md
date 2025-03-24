@@ -115,7 +115,7 @@ alert(firstAxis.name+"\n"+firstAxis.tag+"\n"+firstAxis.min+"\n"+firstAxis.max);
 
 可用于比较两个FontObject实例，以查看它们是否引用相同的底层原生字体实例。
 
-可以使用[getFontByID](fontsobject.md#fontsobjectgetfontbyid)通过fontID查找FontObjects。
+可以使用[getFontByID](../fontsobject#fontsobjectgetfontbyid)通过fontID查找FontObjects。
 
 #### 类型
 

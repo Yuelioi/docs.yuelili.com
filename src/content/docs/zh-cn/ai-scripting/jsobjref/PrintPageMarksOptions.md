@@ -85,7 +85,7 @@ title: PrintPageMarksOptions
 
 #### 类型
 
-[PageMarksTypes](scripting-constants.md#pagemarkstypes)
+[PageMarksTypes](../scripting-constants#pagemarkstypes)
 
 ---
 

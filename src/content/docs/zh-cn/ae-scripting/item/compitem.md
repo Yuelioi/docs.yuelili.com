@@ -213,7 +213,7 @@ LayerCollection 对象；只读。
 
 #### 描述
 
-一个 [PropertyGroup 对象](../../property/propertygroup)，包含合成的所有标记。合成标记脚本的功能与 [图层标记](../layer/layer.md#layermarker) 相同。
+一个 [PropertyGroup 对象](../../property/propertygroup)，包含合成的所有标记。合成标记脚本的功能与 [图层标记](../../layer/layer#layermarker) 相同。
 
 参见 [MarkerValue 对象](../../other/markervalue)。
 

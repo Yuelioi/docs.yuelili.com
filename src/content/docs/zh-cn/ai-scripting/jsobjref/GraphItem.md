@@ -7,7 +7,7 @@ title: GraphItem
 
 #### 描述
 
-任何图形对象。参见示例 [旋转图形项](GraphItems.md#rotating-graph-items)。
+任何图形对象。参见示例 [旋转图形项](../GraphItems#rotating-graph-items)。
 
 ---
 
@@ -23,7 +23,7 @@ title: GraphItem
 
 #### 类型
 
-[KnockoutState](scripting-constants.md#knockoutstate)
+[KnockoutState](../scripting-constants#knockoutstate)
 
 ---
 
@@ -37,7 +37,7 @@ title: GraphItem
 
 #### 类型
 
-[BlendModes](scripting-constants.md#blendmodes)
+[BlendModes](../scripting-constants#blendmodes)
 
 ---
 
@@ -458,7 +458,7 @@ title: GraphItem
 |      参数       |                                 类型                                  |        描述         |
 | --------------- | --------------------------------------------------------------------- | ------------------- |
 | `relativeObject` | 对象，可选                                                           | 要复制到的对象      |
-| `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement)，可选 | 插入元素的位置      |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 插入元素的位置      |
 
 #### 返回值
 
@@ -479,7 +479,7 @@ title: GraphItem
 |      参数       |                                 类型                                  |          描述           |
 | --------------- | --------------------------------------------------------------------- | ----------------------- |
 | `relativeObject` | 对象                                                                 | 要移动元素的对象        |
-| `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement)，可选 | 移动元素到的位置        |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 移动元素到的位置        |
 
 #### 返回值
 
@@ -531,7 +531,7 @@ app.activeDocument.graphItems[index].resize(
 | `changeFillGradients` | 布尔值，可选                                                     | 是否变换填充渐变                               |
 | `changeStrokePattern` | 布尔值，可选                                                     | 是否变换描边图案                               |
 | `changeLineWidths`  | 数字（双精度），可选                                             | 缩放线宽的量                                   |
-| `scaleAbout`        | [Transformation](scripting-constants.md#transformation)，可选     | 用作锚点的点，用于变换                         |
+| `scaleAbout`        | [Transformation](../scripting-constants#transformation)，可选     | 用作锚点的点，用于变换                         |
 
 #### 返回值
 
@@ -565,7 +565,7 @@ app.activeDocument.graphItems[index].rotate(
 | `changeFillPatterns` | 布尔值，可选                                                     | 是否变换填充图案                               |
 | `changeFillGradients` | 布尔值，可选                                                     | 是否变换填充渐变                               |
 | `changeStrokePattern` | 布尔值，可选                                                     | 是否变换描边图案                               |
-| `rotateAbout`       | [Transformation](scripting-constants.md#transformation)，可选     | 用作锚点的点，用于变换                         |
+| `rotateAbout`       | [Transformation](../scripting-constants#transformation)，可选     | 用作锚点的点，用于变换                         |
 
 #### 返回值
 
@@ -601,7 +601,7 @@ app.activeDocument.graphItems[index].transform(
 | `changeFillGradients` | 布尔值，可选                                                     | 是否改变填充渐变                      |
 | `changeStrokePattern` | 布尔值，可选                                                     | 是否改变描边图案                      |
 | `changeLineWidths`    | 数字（双精度），可选                                             | 缩放线宽的量                          |
-| `transformAbout`      | [Transformation](scripting-constants.md#transformation)，可选     | 用作锚点的点，用于变换                |
+| `transformAbout`      | [Transformation](../scripting-constants#transformation)，可选     | 用作锚点的点，用于变换                |
 
 #### 返回值
 
@@ -655,7 +655,7 @@ app.activeDocument.graphItems[index].translate(
 
 |    参数     |                        类型                         |           描述            |
 | ----------- | --------------------------------------------------- | ------------------------- |
-| `zOrderCmd` | [ZOrderMethod](scripting-constants.md#zordermethod) | 堆叠顺序排列方法          |
+| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法          |
 
 #### 返回值
 

@@ -620,7 +620,7 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 |  参数   |                              类型                                |               描述                 |
 | ------- | ----------------------------------------------------------------- | ---------------------------------- |
-| `sequenceID` | [Sequence.sequenceID](../sequence/sequence.md#sequencesequenceid) | 应打开的有效序列 ID。 |
+| `sequenceID` | [Sequence.sequenceID](../../sequence/sequence#sequencesequenceid) | 应打开的有效序列 ID。 |
 
 #### 返回值
 

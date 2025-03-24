@@ -69,7 +69,7 @@ title: PathPoint
 
 #### 类型
 
-[PointType](scripting-constants.md#pointtype)
+[PointType](../scripting-constants#pointtype)
 
 ---
 
@@ -97,7 +97,7 @@ title: PathPoint
 
 #### 类型
 
-[PathPointSelection](scripting-constants.md#pathpointselection)
+[PathPointSelection](../scripting-constants#pathpointselection)
 
 ---
 

@@ -5,7 +5,7 @@ title: 结构描述
 
 ## imAcceleratorRec
 
-选择器: [imRetargetAccelerator](selector-descriptions.md#imretargetaccelerator)
+选择器: [imRetargetAccelerator](../selector-descriptions#imretargetaccelerator)
 
 描述当项目管理器复制媒体及其加速器时创建的新媒体和新加速器的路径。
 
@@ -25,7 +25,7 @@ typedef struct {
 
 ## imAnalysisRec
 
-选择器: [imAnalysis](selector-descriptions.md#imanalysis)
+选择器: [imAnalysis](../selector-descriptions#imanalysis)
 
 发送回分析数据是一个两步过程。首先，将buffersize设置为字符缓冲区的大小并返回imNoErr。
 
@@ -53,7 +53,7 @@ typedef struct {
 
 ## imAsyncImporterCreationRec
 
-选择器: [imCreateAsyncImporter](selector-descriptions.md#imcreateasyncimporter)
+选择器: [imCreateAsyncImporter](../selector-descriptions#imcreateasyncimporter)
 
 使用提供的数据创建异步导入器对象，并将其存储在此处。
 
@@ -77,7 +77,7 @@ typedef struct {
 
 ## imAudioInfoRec7
 
-选择器: [imGetInfo8](selector-descriptions.md#imgetinfo8) ([imFileInfoRec8](#imfileinforec8)的成员)
+选择器: [imGetInfo8](../selector-descriptions#imgetinfo8) ([imFileInfoRec8](#imfileinforec8)的成员)
 
 文件的音频数据属性（或如果您生成的是合成数据，则为将生成的数据的属性）。
 
@@ -101,7 +101,7 @@ typedef struct {
 
 ## imCalcSizeRec
 
-选择器: [imCalcSize8](selector-descriptions.md#imcalcsize8)
+选择器: [imCalcSize8](../selector-descriptions#imcalcsize8)
 
 要求导入器根据提供的修剪边界估算剪辑使用的磁盘空间。
 
@@ -132,7 +132,7 @@ typedef struct {
 
 ## imCheckTrimRec
 
-选择器: [imCheckTrim8](selector-descriptions.md#imchecktrim8)
+选择器: [imCheckTrim8](../selector-descriptions#imchecktrim8)
 
 提供请求的修剪边界给导入器，并允许将调整后的修剪边界传递回Premiere。
 
@@ -168,7 +168,7 @@ typedef struct {
 
 ## imClipFrameDescriptorRec
 
-选择器: [imSelectClipFrameDescriptor](selector-descriptions.md#imselectclipframedescriptor)
+选择器: [imSelectClipFrameDescriptor](../selector-descriptions#imselectclipframedescriptor)
 
 根据`inDesiredClipFrameDescriptor`中的请求和导入器的源设置，根据需要修改`outBestFrameDescriptor`以描述导入器将提供的格式。
 
@@ -193,7 +193,7 @@ typedef struct {
 
 ## imCompleteAsyncClosedCaptionScanRec
 
-选择器: [imCompleteAsyncClosedCaptionScan](selector-descriptions.md#imcompleteasyncclosedcaptionscan)
+选择器: [imCompleteAsyncClosedCaptionScan](../selector-descriptions#imcompleteasyncclosedcaptionscan)
 
 此结构用于提供最后一次清理和处置`inAsyncCaptionScanPrivateData`的机会，并标记封闭字幕扫描是否无错误完成。
 
@@ -218,7 +218,7 @@ typedef struct {
 
 ## imIndColorProfileRec
 
-选择器: [imGetIndColorProfile](selector-descriptions.md#imgetindcolorprofile)
+选择器: [imGetIndColorProfile](../selector-descriptions#imgetindcolorprofile)
 
 自13.0起已弃用。描述剪辑支持的颜色配置文件。
 
@@ -239,7 +239,7 @@ typedef struct {
 
 ## imCopyFileRec
 
-选择器: [imCopyFile](selector-descriptions.md#imcopyfile)
+选择器: [imCopyFile](../selector-descriptions#imcopyfile)
 
 描述如何复制剪辑。还提供回调以更新进度条并检查用户是否取消。
 
@@ -268,7 +268,7 @@ typedef struct {
 
 ## imDataRateAnalysisRec
 
-选择器: [imDataRateAnalysis](selector-descriptions.md#imdatarateanalysis)
+选择器: [imDataRateAnalysis](../selector-descriptions#imdatarateanalysis)
 
 指定所需的buffersize，返回`imNoErr`给Premiere；在下一次调用时，用`imDataSamples`填充缓冲区，并指定音频的基本数据速率（如果有）。
 
@@ -308,7 +308,7 @@ typedef struct {
 
 ## imDeferredProcessingRec
 
-选择器: [imDeferredProcessing](selector-descriptions.md#imdeferredprocessing)
+选择器: [imDeferredProcessing](../selector-descriptions#imdeferredprocessing)
 
 描述由inPrivateData引用的剪辑的延迟处理的当前进度。
 
@@ -332,7 +332,7 @@ typedef struct {
 
 ## imDeleteFileRec
 
-选择器: [imDeleteFile](selector-descriptions.md#imdeletefile)
+选择器: [imDeleteFile](../selector-descriptions#imdeletefile)
 
 描述要删除的文件。
 
@@ -379,7 +379,7 @@ typedef struct {
 
 ## imFileAttributesRec
 
-选择器: [imGetFileAttributes](selector-descriptions.md#imgetfileattributes)
+选择器: [imGetFileAttributes](../selector-descriptions#imgetfileattributes)
 
 Premiere Pro 3.1新增。提供剪辑创建日期。
 
@@ -398,7 +398,7 @@ typedef struct {
 
 ## imFileOpenRec8
 
-选择器: [imOpenFile8](selector-descriptions.md#imopenfile8)
+选择器: [imOpenFile8](../selector-descriptions#imopenfile8)
 
 Premiere 希望导入器打开的文件。
 
@@ -421,7 +421,7 @@ typedef struct {
 | `reserved`         | 请勿使用。                                                                                                                                  |
 | `inReadWrite`      | 文件应以指定的访问模式打开：                                                                                                                 |
 |                    | 可以是 `kPrOpenFileAccess_ReadOnly` 或 `kPrOpenFileAccess_ReadWrite`                                                                         |
-| `inImporterID`     | 可用作 [PPix Cache Suite](../universals/sweetpea-suites.md#ppix-cache-suite) 中调用的 ID。                                                   |
+| `inImporterID`     | 可用作 [PPix Cache Suite](../../universals/sweetpea-suites#ppix-cache-suite) 中调用的 ID。                                                   |
 | `outExtraMemoryUsage` | 新增于 CS5。如果导入器仅因打开而使用内存，且无法在缓存中注册，请在此字段中填写大小（以字节为单位）。                                          |
 | `inStreamIdx`      | 新增于 CS6。如果剪辑有多个流（用于立体视频或其他用途），此 ID 用于区分它们。                                                                 |
 
@@ -431,15 +431,15 @@ typedef struct {
 
 选择器:
 
-- [imAnalysis](selector-descriptions.md#imanalysis),
-- [imDataRateAnalysis](selector-descriptions.md#imdatarateanalysis),
-- [imOpenFile8](selector-descriptions.md#imopenfile8),
-- [imQuietFile](selector-descriptions.md#imquietfile),
-- [imCloseFile](selector-descriptions.md#imclosefile),
-- [imGetTimeInfo8](selector-descriptions.md#imgettimeinfo8),
-- [imSetTimeInfo8](selector-descriptions.md#imsettimeinfo8),
-- [imImportImage](selector-descriptions.md#imimportimage),
-- [imImportAudio7](selector-descriptions.md#imimportaudio7)
+- [imAnalysis](../selector-descriptions#imanalysis),
+- [imDataRateAnalysis](../selector-descriptions#imdatarateanalysis),
+- [imOpenFile8](../selector-descriptions#imopenfile8),
+- [imQuietFile](../selector-descriptions#imquietfile),
+- [imCloseFile](../selector-descriptions#imclosefile),
+- [imGetTimeInfo8](../selector-descriptions#imgettimeinfo8),
+- [imSetTimeInfo8](../selector-descriptions#imsettimeinfo8),
+- [imImportImage](../selector-descriptions#imimportimage),
+- [imImportAudio7](../selector-descriptions#imimportaudio7)
 
 在 Windows 上是文件句柄，在 MacOS 上是 void\*。
 
@@ -451,7 +451,7 @@ typedef struct {
 
 ## imFrameFormat
 
-选择器: [imGetSourceVideo](selector-descriptions.md#imgetsourcevideo) (成员为 [imSourceVideoRec](#imsourcevideorec))
+选择器: [imGetSourceVideo](../selector-descriptions#imgetsourcevideo) (成员为 [imSourceVideoRec](#imsourcevideorec))
 
 描述帧的尺寸和像素格式。
 
@@ -473,7 +473,7 @@ typedef struct {
 
 ## imGetAudioChannelLayoutRec
 
-选择器: [imGetAudioChannelLayout](selector-descriptions.md#imgetaudiochannellayout)
+选择器: [imGetAudioChannelLayout](../selector-descriptions#imgetaudiochannellayout)
 
 导入器应为正在导入的剪辑中的每个音频通道标记标签。
 
@@ -490,13 +490,13 @@ typedef struct {
 |------------------|---------------------------------------------------------------------------------|
 | `inPrivatedata`    | 从 `imGetInfo8` 或 `imGetPrefs8` 收集的实例数据。                                |
 | `outChannelLabels` | 应为剪辑中的每个通道分配一个有效的音频通道标签。                                   |
-|                    | 标签在 [Audio Suite](../universals/sweetpea-suites.md#audio-suite) 中定义。      |
+|                    | 标签在 [Audio Suite](../../universals/sweetpea-suites#audio-suite) 中定义。      |
 
 ---
 
 ## imGetNextClosedCaptionRec
 
-选择器: [imGetNextClosedCaption](selector-descriptions.md#imgetnextclosedcaption)
+选择器: [imGetNextClosedCaption](../selector-descriptions#imgetnextclosedcaption)
 
 此结构提供了在 `imInitiateAsyncClosedCaptionScan` 中分配的私有数据，并应填写以返回一个隐藏字幕、其时间、格式、大小以及隐藏字幕扫描的总体进度。
 
@@ -540,7 +540,7 @@ typedef struct {
 
 ## imGetPrefsRec
 
-选择器: [imGetPrefs8](selector-descriptions.md#imgetprefs8)
+选择器: [imGetPrefs8](../selector-descriptions#imgetprefs8)
 
 包含从设置对话框收集的设置/首选项数据（或默认值填充）。
 
@@ -576,7 +576,7 @@ typedef struct {
 |                       | 如果尚未在 `imGetInfo8` 中分配，请使用 Premiere 的内存函数分配一个句柄并将其存储在此处。                                                                                                                                                                           |
 |                       | Premiere 将在后续选择器中返回该句柄。                                                                                                                                                                                                                              |
 | `tdbTimelineLocation` | *可以* 传递给 `getPreviewFrameEx` 回调以及 `timelineData` 以获取当前剪辑或时间轴位置下方的时间轴帧。这对于标题插件很有用。                                                                                                                                        |
-| `sessionPluginID`     | 此 ID 应用于 [File Registration Suite](../universals/sweetpea-suites.md#file-registration-suite) 中注册外部文件（例如纹理、徽标等），这些文件由导入器实例使用但不会作为素材出现在项目窗口中。                                                                     |
+| `sessionPluginID`     | 此 ID 应用于 [File Registration Suite](../../universals/sweetpea-suites#file-registration-suite) 中注册外部文件（例如纹理、徽标等），这些文件由导入器实例使用但不会作为素材出现在项目窗口中。                                                                     |
 |                       | 使用项目管理器修剪或复制项目时，将考虑已注册的文件。`sessionPluginID` 仅在传递它的调用中有效。                                                                                                                                                                     |
 | `imageWidth`          | 新增于 CS5。视频的原生分辨率。                                                                                                                                                                                                                                     |
 | `imageHeight`         |                                                                                                                                                                                                                                                                   |
@@ -590,7 +590,7 @@ typedef struct {
 
 ## imImageInfoRec
 
-选择器: [imGetInfo8](selector-descriptions.md#imgetinfo8) (成员为 [imFileInfoRec8](#imfileinforec8))
+选择器: [imGetInfo8](../selector-descriptions#imgetinfo8) (成员为 [imFileInfoRec8](#imfileinforec8))
 
 描述要导入的视频。
 
@@ -640,7 +640,7 @@ typedef struct {
 
 |          成员          |                                                   描述                                                    |
 |-----------------------|-----------------------------------------------------------------------------------------------------------|
-| `importerID`             | *可以* 用作 [PPix Cache Suite](../universals/sweetpea-suites.md#ppix-cache-suite) 中调用的 ID。            |
+| `importerID`             | *可以* 用作 [PPix Cache Suite](../../universals/sweetpea-suites#ppix-cache-suite) 中调用的 ID。            |
 | `supportsAsyncIO`        | 如果导入器支持 `imCreateAsyncImporter` 和 ai\* 选择器，请将此设置为 true。                                |
 | `supportsGetSourceVideo` | 如果导入器支持 `imGetSourceVideo` 选择器，请将此设置为 true。                                             |
 
@@ -667,7 +667,7 @@ typedef struct {
 |                   | - `imNoDurationNoDefault` - 导入器将提供自己的持续时间                                                                                                         |
 |                   | 这主要用于合成剪辑，但也可用于导入非顺序静止图像。                                                                                                             |
 | `isRollCrawl`     | 设置为非零值以指定此剪辑为滚动或爬行标题。                                                                                                                     |
-|                   | 这允许播放器可选地使用 [RollCrawl Suite](../universals/sweetpea-suites.md#rollcrawl-suite) 获取此标题的部分内容以进行实时播放。                                |
+|                   | 这允许播放器可选地使用 [RollCrawl Suite](../../universals/sweetpea-suites#rollcrawl-suite) 获取此标题的部分内容以进行实时播放。                                |
 | `hasPulldown`     | 如果剪辑包含 NTSC 胶片素材并带有 3:2 下拉，请将此设置为 true。                                                                                                 |
 | `pulldownCadence` | 将此设置为描述剪辑下拉的枚举值：                                                                                                                              |
 |                   | - `importer_PulldownPhase_NO_PULLDOWN`                                                                                                                        |
@@ -740,7 +740,7 @@ typedef struct {
 
 ## imImportAudioRec7
 
-选择器: [imImportAudio7](selector-descriptions.md#imimportaudio7)
+选择器: [imImportAudio7](../selector-descriptions#imimportaudio7)
 
 描述要返回的音频样本，并包含一个分配的缓冲区供导入器填充。
 
@@ -770,7 +770,7 @@ typedef struct {
 
 ## imImportImageRec
 
-选择器: [imImportImage](selector-descriptions.md#imimportimage)
+选择器: [imImportImage](../selector-descriptions#imimportimage)
 
 描述要返回的帧。
 
@@ -853,7 +853,7 @@ typedef struct {
 
 ## imImportInfoRec
 
-选择器: [imInit](selector-descriptions.md#iminit)
+选择器: [imInit](../selector-descriptions#iminit)
 
 描述导入器的功能给Premiere。
 
@@ -960,7 +960,7 @@ typedef struct {
 
 ## imIndFormatRec
 
-选择器: [imGetIndFormat](selector-descriptions.md#imgetindformat)
+选择器: [imGetIndFormat](../selector-descriptions#imgetindformat)
 
 描述导入器支持的格式。合成文件只能有一种格式。
 
@@ -1013,7 +1013,7 @@ typedef struct {
 
 ## imIndPixelFormatRec
 
-选择器: [imGetIndPixelFormat](selector-descriptions.md#imgetindpixelformat)
+选择器: [imGetIndPixelFormat](../selector-descriptions#imgetindpixelformat)
 
 描述导入器支持的像素格式。
 
@@ -1035,7 +1035,7 @@ typedef struct {
 
 ## imInitiateAsyncClosedCaptionScanRec
 
-选择器: [imInitiateAsyncClosedCaptionScan](selector-descriptions.md#iminitiateasyncclosedcaptionscan)
+选择器: [imInitiateAsyncClosedCaptionScan](../selector-descriptions#iminitiateasyncclosedcaptionscan)
 
 `imGetNextClosedCaption` 和 `imCompleteAsyncClosedCaptionScan` 可能会从与 `imInitiateAsyncClosedCaptionScan` 最初调用的线程不同的线程中调用。
 
@@ -1069,7 +1069,7 @@ typedef struct {
 
 ## imMetaDataRec
 
-选择器: [imGetMetaData](selector-descriptions.md#imgetmetadata) 和 [imSetMetaData](selector-descriptions.md#imsetmetadata)
+选择器: [imGetMetaData](../selector-descriptions#imgetmetadata) 和 [imSetMetaData](../selector-descriptions#imsetmetadata)
 
 描述特定于给定四字符代码的元数据。
 
@@ -1095,7 +1095,7 @@ typedef struct {
 
 ## imPeakAudioRec
 
-选择器: [imGetPeakAudio](selector-descriptions.md#imgetpeakaudio)
+选择器: [imGetPeakAudio](../selector-descriptions#imgetpeakaudio)
 
 描述指定位置的音频峰值。
 
@@ -1125,7 +1125,7 @@ typedef struct {
 
 ## imPreferredFrameSizeRec
 
-选择器: [imGetPreferredFrameSize](selector-descriptions.md#imgetpreferredframesize)
+选择器: [imGetPreferredFrameSize](../selector-descriptions#imgetpreferredframesize)
 
 描述导入器首选的帧大小。
 
@@ -1153,7 +1153,7 @@ typedef struct {
 
 ## imQueryContentStateRec
 
-选择器: [imQueryContentState](selector-descriptions.md#imquerycontentstate)
+选择器: [imQueryContentState](../selector-descriptions#imquerycontentstate)
 
 填写 `outContentStateID`，它应该是基于 `inSourcePath` 处剪辑内容状态计算的 GUID。
 
@@ -1170,7 +1170,7 @@ typedef struct {
 
 ## imQueryDestinationPathRec
 
-选择器: [imQueryDestinationPath](selector-descriptions.md#imquerydestinationpath)
+选择器: [imQueryDestinationPath](../selector-descriptions#imquerydestinationpath)
 
 根据 `inSourcePath` 和 `inSuggestedDestinationPath` 填写所需的 `outActualDestinationPath`。
 
@@ -1196,7 +1196,7 @@ typedef struct {
 
 ## imQueryInputFileListRec
 
-选择器: [imQueryInputFileList](selector-descriptions.md#imqueryinputfilelist)
+选择器: [imQueryInputFileList](../selector-descriptions#imqueryinputfilelist)
 
 填写 `outContentStateID`，它应该是基于 `inSourcePath` 处剪辑内容状态计算的 GUID。
 
@@ -1219,13 +1219,13 @@ typedef struct {
 | `inBasePath`      | 之前在 `imOpenFile` 中传递的主文件路径。                                                                                   |
 | `outNumFilePaths` | 第一次发送 `imQueryInputFileList` 时，填写媒体使用的文件数量。                                                             |
 | `outFilePaths`    | 第二次发送 `imQueryInputFileList` 时，这将预分配为 NULL 字符串数组。                                                       |
-|                   | 使用 [String Suite](../universals/sweetpea-suites.md#string-suite) 将数组填充为实际路径的 PrSDKStrings。                   |
+|                   | 使用 [String Suite](../../universals/sweetpea-suites#string-suite) 将数组填充为实际路径的 PrSDKStrings。                   |
 
 ---
 
 ## imQueryStreamLabelRec
 
-选择器: [imQueryStreamLabel](selector-descriptions.md#imquerystreamlabel)
+选择器: [imQueryStreamLabel](../selector-descriptions#imquerystreamlabel)
 
 CS6 新增。根据传入的流 ID，分配并返回流的标签。
 
@@ -1245,13 +1245,13 @@ typedef struct {
 | `privatedata`      | 从 `imGetInfo8` 或 `imGetPrefs8` 收集的实例数据。                                             |
 | `prefs`            | 从 `imGetPrefs8`（设置对话框信息）收集的剪辑源设置数据。                                       |
 | `inStreamIdx`      | 需要标记的流的 ID。                                                                           |
-| `outStreamLabel`   | 使用 [String Suite](../universals/sweetpea-suites.md#string-suite) 分配的流标签。             |
+| `outStreamLabel`   | 使用 [String Suite](../../universals/sweetpea-suites#string-suite) 分配的流标签。             |
 
 ---
 
 ## imSaveFileRec8
 
-选择器: [imSaveFile8](selector-descriptions.md#imsavefile8)
+选择器: [imSaveFile8](../selector-descriptions#imsavefile8)
 
 描述要保存的文件。
 
@@ -1281,7 +1281,7 @@ typedef struct {
 
 ## imSourceVideoRec
 
-选择器: [imGetSourceVideo](selector-descriptions.md#imgetsourcevideo), `aiInitiateAsyncRead`, `aiGetFrame`
+选择器: [imGetSourceVideo](../selector-descriptions#imgetsourcevideo), `aiInitiateAsyncRead`, `aiGetFrame`
 
 描述请求的帧，将在 `outFrame` 中传递回来。
 
@@ -1323,7 +1323,7 @@ typedef struct {
 
 ## imSubTypeDescriptionRec
 
-选择器: [imGetSubTypeNames](selector-descriptions.md#imgetsubtypenames)
+选择器: [imGetSubTypeNames](../selector-descriptions#imgetsubtypenames)
 
 Premiere Pro CS3 新增。描述与给定 fourcc 关联的编解码器名称。
 
@@ -1338,7 +1338,7 @@ typedef struct {
 
 ## imTimeInfoRec8
 
-选择器: [imGetTimeInfo8](selector-descriptions.md#imgettimeinfo8) 和 [imSetTimeInfo8](selector-descriptions.md#imsettimeinfo8)
+选择器: [imGetTimeInfo8](../selector-descriptions#imgettimeinfo8) 和 [imSetTimeInfo8](../selector-descriptions#imsettimeinfo8)
 
 描述与剪辑关联的时间码和时间码速率。
 
@@ -1380,7 +1380,7 @@ typedef struct {
 
 ## imTrimFileRec8
 
-选择器: [imTrimFile8](selector-descriptions.md#imtrimfile8)
+选择器: [imTrimFile8](../selector-descriptions#imtrimfile8)
 
 描述如何根据导入器在 `imCheckTrim8` 期间返回的信息修剪剪辑。
 
@@ -1421,7 +1421,7 @@ typedef struct {
 
 ## imIndColorSpaceRec
 
-选择器: [imGetIndColorSpace](selector-descriptions.md#imgetindcolorspace)
+选择器: [imGetIndColorSpace](../selector-descriptions#imgetindcolorspace)
 
 描述媒体的色彩空间。
 
@@ -1517,7 +1517,7 @@ typedef struct
 
 ## imRenderContext
 
-选择器: [imGetSourceVideo](selector-descriptions.md#imgetsourcevideo) ([imSourceVideoRec](#imsourcevideorec) 的成员)
+选择器: [imGetSourceVideo](../selector-descriptions#imgetsourcevideo) ([imSourceVideoRec](#imsourcevideorec) 的成员)
 
 描述渲染的上下文；渲染的原因以及使用的速率和比例。
 

@@ -15,9 +15,9 @@ title: 我能用这个SDK做什么
 
 *After Effects通用插件（AEGP）*可以读取和修改After Effects项目和偏好设置的几乎所有元素。它们可以添加菜单项，“挂钩”（注册自己以接收）并触发After Effects的内部命令，并添加在After Effects UI中停靠和调整大小的新面板。它们可以与标记和关键帧一起工作，并管理渲染队列。它们甚至可以运行脚本。内置AEGP的一些示例包括AAF导入器和SWF导出器。Automatic Duck Pro Import AE是另一个著名的AEGP。
 
-*After Effects输入/输出（AEIO）插件*为新的媒体文件类型提供支持。除非您需要一个自定义设置对话框来指定解释设置，否则[Premiere Pro导入器](other-integration-possibilities.md#premiere-pro-importers) API提供了类似的功能，并且在许多情况下更可取。AEIO使用AEGP API以及特定于AEIO的某些API。虽然After Effects仍然支持Photoshop格式插件和过滤器，以及外部项目格式（FPF）插件，但这些API早已被弃用，转而支持AEIO API。
+*After Effects输入/输出（AEIO）插件*为新的媒体文件类型提供支持。除非您需要一个自定义设置对话框来指定解释设置，否则[Premiere Pro导入器](../other-integration-possibilities#premiere-pro-importers) API提供了类似的功能，并且在许多情况下更可取。AEIO使用AEGP API以及特定于AEIO的某些API。虽然After Effects仍然支持Photoshop格式插件和过滤器，以及外部项目格式（FPF）插件，但这些API早已被弃用，转而支持AEIO API。
 
-*BlitHook*插件将视频输出到外部硬件，用于广播质量监控和磁带播放。EMP示例项目提供了一个起点。在After Effects CC 2014及更高版本中，[Mercury Transmit](other-integration-possibilities.md#mercury-transmit)是推荐的API。
+*BlitHook*插件将视频输出到外部硬件，用于广播质量监控和磁带播放。EMP示例项目提供了一个起点。在After Effects CC 2014及更高版本中，[Mercury Transmit](../other-integration-possibilities#mercury-transmit)是推荐的API。
 
 *Artisans*提供3D图层的渲染输出，接管After Effects的3D渲染（After Effects仍然处理所有2D图层的渲染）。Artisans使用AEGP API以及特定于Artisans的某些API。
 

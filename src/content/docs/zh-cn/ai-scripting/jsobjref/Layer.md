@@ -27,7 +27,7 @@ Illustrator 文档中的一个图层。图层可能包含嵌套的图层，这�
 
 #### 类型
 
-[KnockoutState](scripting-constants.md#knockoutstate)
+[KnockoutState](../scripting-constants#knockoutstate)
 
 ---
 
@@ -41,7 +41,7 @@ Illustrator 文档中的一个图层。图层可能包含嵌套的图层，这�
 
 #### 类型
 
-[BlendModes](scripting-constants.md#blendmodes)
+[BlendModes](../scripting-constants#blendmodes)
 
 ---
 
@@ -456,7 +456,7 @@ Illustrator 文档中的一个图层。图层可能包含嵌套的图层，这�
 |      参数       |                                 类型                                  |          描述          |
 | --------------- | --------------------------------------------------------------------- | ---------------------- |
 | `relativeObject` | 对象                                                                  | 要移动元素的对象       |
-| `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement), 可选 | 移动元素到的位置       |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 移动元素到的位置       |
 
 #### 返回值
 
@@ -490,7 +490,7 @@ Illustrator 文档中的一个图层。图层可能包含嵌套的图层，这�
 
 |  参数   |                        类型                         |            描述            |
 | ------- | --------------------------------------------------- | -------------------------- |
-| `zOrderCmd` | [ZOrderMethod](scripting-constants.md#zordermethod) | 堆叠顺序排列方法           |
+| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法           |
 
 #### 返回值
 

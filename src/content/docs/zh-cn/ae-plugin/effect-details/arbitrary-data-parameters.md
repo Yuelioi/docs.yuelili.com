@@ -24,7 +24,7 @@ title: 任意数据参数
 | `PF_Arbitrary_INTERP_FUNC`     | 您的插值函数将获得三个指向您的任意数据类型实例的句柄；一个包含初始值（0），一个包含最终值（1），第三个用于保存插值数据（介于 0 和 1 之间）。您还将获得一个浮点数，指示插值值应位于 0 和 1 之间的位置。 |
 |                                | 分配一个实例并填充插值数据。然后将插值实例放入传递的句柄中。在计算归一化时间值时，速度曲线已经被考虑在内。                                                                                              |
 |                                | !!! 注意                                                                                                                                                                                                                                                                                                                        |
-|                                |      如果 [in_data>effect_ref](../effect-basics/PF_InData.md#pf_indata-members) 为 NULL，切勿检出参数。                                                                                                                                                                                                           |
+|                                |      如果 [in_data>effect_ref](../../effect-basics/PF_InData#pf_indata-members) 为 NULL，切勿检出参数。                                                                                                                                                                                                           |
 | `PF_Arbitrary_COMPARE_FUNC`    | 您将获得两个任意数据的实例，以及一个指向比较结果的指针。使用 `PF_ArbCompareResult` 的值之一填充结果（参见 `AE_Effect.h`），以指示第一个实例是否等于、小于、大于或仅不等于第二个实例。                                        |
 | `PF_Arbitrary_PRINT_SIZE_FUNC` | 通过设置 `print_sizePLu`（`print_size_func_params` 的成员，属于 `PF_ArbParamsExtra` 结构的一部分）来指示打印参数当前值所需的缓冲区大小。                                                                                                                                   |
 | `PF_Arbitrary_PRINT_FUNC`      | 为基于文本的导出格式化您的任意数据，并将结果复制到缓冲区中。这可以像您希望的那样复杂。                                                                                                                                                                                                |
@@ -40,7 +40,7 @@ title: 任意数据参数
 
 实例化您的 arb data（当然，使用 After Effects 的内存分配函数），并将 `ParamDef.u.arb_d.dephault` 指向它。使用适当的默认值填充它。设置参数时不需要值变量；为了安全起见，将其置零。
 
-在插件的入口函数中，包含一个处理 [PF_Cmd_ARBITRARY_CALLBACK](../effect-basics/command-selectors.md#messaging) 的 case。
+在插件的入口函数中，包含一个处理 [PF_Cmd_ARBITRARY_CALLBACK](../../effect-basics/command-selectors#messaging) 的 case。
 
 调用一个次级事件处理程序 `HandleArbitrary`。它在 `extra` 中接收一个 `PF_ArbParamsExtra`，其中包含一个标识发送命令的 `PF_FunctionSelector`。
 

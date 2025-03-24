@@ -74,7 +74,7 @@ Premiere Elements 使用与 Premiere Pro 相同的核心库来支持插件，尽
 
 在宣传兼容性之前，始终需要在每个应用程序中全面测试插件。
 
-查看 [Premiere Elements 中导出器的指南](../exporters/additional-details.md#guidelines-for-exporters-in-premiere-elements) 以了解如何设置导出器以在 Premiere Elements 中使用。
+查看 [Premiere Elements 中导出器的指南](../../exporters/additional-details#guidelines-for-exporters-in-premiere-elements) 以了解如何设置导出器以在 Premiere Elements 中使用。
 
 ---
 

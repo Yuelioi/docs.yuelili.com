@@ -25,7 +25,7 @@ title: GroupItem
 
 #### 类型
 
-[KnockoutState](scripting-constants.md#knockoutstate)
+[KnockoutState](../scripting-constants#knockoutstate)
 
 ---
 
@@ -39,7 +39,7 @@ title: GroupItem
 
 #### 类型
 
-[BlendModes](scripting-constants.md#blendmodes)
+[BlendModes](../scripting-constants#blendmodes)
 
 ---
 
@@ -641,7 +641,7 @@ app.activeDocument.groupItems[index].duplicate(
 |      参数      |                                 类型                                  |        描述         |
 | -------------- | --------------------------------------------------------------------- | ------------------- |
 | `relativeObject` | 对象, 可选                                                           | 要复制到的对象      |
-| `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement), 可选 | 插入元素的位置      |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 插入元素的位置      |
 
 #### 返回
 
@@ -662,7 +662,7 @@ app.activeDocument.groupItems[index].duplicate(
 |      参数      |                                 类型                                  |          描述          |
 | -------------- | --------------------------------------------------------------------- | ---------------------- |
 | `relativeObject` | 对象                                                                | 要移动元素的对象       |
-| `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement), 可选 | 移动元素到的位置       |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 移动元素到的位置       |
 
 #### 返回
 
@@ -714,7 +714,7 @@ app.activeDocument.groupItems[index].resize(
 | `changeFillGradients` | 布尔值, 可选                                                     | 是否变换填充渐变                                 |
 | `changeStrokePattern` | 布尔值, 可选                                                     | 是否变换描边图案                                 |
 | `changeLineWidths` | 数字（双精度）, 可选                                             | 缩放线宽的量                                     |
-| `scaleAbout`      | [Transformation](scripting-constants.md#transformation), 可选     | 用作锚点的点，以进行变换                         |
+| `scaleAbout`      | [Transformation](../scripting-constants#transformation), 可选     | 用作锚点的点，以进行变换                         |
 
 #### 返回
 
@@ -748,7 +748,7 @@ app.activeDocument.groupItems[index].rotate(
 | `changeFillPatterns` | 布尔值, 可选                                                     | 是否变换填充图案                                 |
 | `changeFillGradients` | 布尔值, 可选                                                     | 是否变换填充渐变                                 |
 | `changeStrokePattern` | 布尔值, 可选                                                     | 是否变换描边图案                                 |
-| `rotateAbout`     | [Transformation](scripting-constants.md#transformation), 可选     | 用作锚点的点，以进行变换                         |
+| `rotateAbout`     | [Transformation](../scripting-constants#transformation), 可选     | 用作锚点的点，以进行变换                         |
 
 #### 返回
 
@@ -784,7 +784,7 @@ app.activeDocument.groupItems[index].transform(
 | `changeFillGradients` | 布尔值, 可选                                                     | 是否更改填充渐变                         |
 | `changeStrokePattern` | 布尔值, 可选                                                     | 是否更改描边图案                         |
 | `changeLineWidths`  | 数字（双精度）, 可选                                             | 缩放线宽的量                             |
-| `transformAbout`    | [Transformation](scripting-constants.md#transformation), 可选     | 用作锚点的点，以进行变换                 |
+| `transformAbout`    | [Transformation](../scripting-constants#transformation), 可选     | 用作锚点的点，以进行变换                 |
 
 #### 返回
 
@@ -838,7 +838,7 @@ app.activeDocument.groupItems[index].translate(
 
 |    参数     |                        类型                         |            描述            |
 | ----------- | --------------------------------------------------- | -------------------------- |
-| `zOrderCmd` | [ZOrderMethod](scripting-constants.md#zordermethod) | 堆叠顺序排列方法           |
+| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法           |
 
 #### 返回
 

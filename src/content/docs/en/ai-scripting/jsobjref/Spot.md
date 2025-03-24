@@ -43,7 +43,7 @@ The color model for this custom color.
 
 #### Type
 
-[ColorModel](scripting-constants.md#colormodel)
+[ColorModel](../scripting-constants#colormodel)
 
 ---
 
@@ -85,7 +85,7 @@ The kind of spot color (RGB, CMYK or LAB). This is the name of the color kind co
 
 #### Type
 
-[SpotColorKind](scripting-constants.md#spotcolorkind); read-only.
+[SpotColorKind](../scripting-constants#spotcolorkind); read-only.
 
 ---
 

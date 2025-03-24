@@ -56,7 +56,7 @@ The Burasagari type.
 
 #### Type
 
-[BurasagariTypeEnum](scripting-constants.md#burasagaritypeenum)
+[BurasagariTypeEnum](../scripting-constants#burasagaritypeenum)
 
 ---
 
@@ -209,7 +209,7 @@ Paragraph justification.
 
 #### Type
 
-[Justification](scripting-constants.md#justification)
+[Justification](../scripting-constants#justification)
 
 ---
 
@@ -237,7 +237,7 @@ The preferred Kinsoku order.
 
 #### Type
 
-[KinsokuOrderEnum](scripting-constants.md#kinsokuorderenum)
+[KinsokuOrderEnum](../scripting-constants#kinsokuorderenum)
 
 ---
 
@@ -265,7 +265,7 @@ Auto leading type.
 
 #### Type
 
-[AutoLeadingType](scripting-constants.md#autoleadingtype)
+[AutoLeadingType](../scripting-constants#autoleadingtype)
 
 ---
 
@@ -529,7 +529,7 @@ Single word justification.
 
 #### Type
 
-[Justification](scripting-constants.md#justification)
+[Justification](../scripting-constants#justification)
 
 ---
 

@@ -35,7 +35,7 @@ testBtn: Button { text: "Test" }
 }"
 ```
 
-名为 `properties` 的属性指定了创建 `properties`；请参阅[创建属性](scriptui-programming-model.md#creation-properties)。
+名为 `properties` 的属性指定了创建 `properties`；请参阅[创建属性](../scriptui-programming-model#creation-properties)。
 
 属性值可以指定为 `null`、`true`、`false`、字符串、数字、内联数组或对象。
 

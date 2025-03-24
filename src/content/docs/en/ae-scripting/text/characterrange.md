@@ -139,8 +139,8 @@ The Text layer range character attribute kerning option.
 
 This effectively reports the manual kerning value, and not the calculated kerning value from auto kerning.
 
-- If [autoKernType](textdocument.md#textdocumentautokerntype) in the range is set to `AutoKernType.METRIC_KERN`, `AutoKernType.OPTICAL_KERN`, or is mixed, then this attribute will be returned as `undefined`.
-- If [autoKernType](textdocument.md#textdocumentautokerntype) in the range is set to `AutoKernType.NO_AUTO_KERN`, and this attribute has a mixed value, it will be read as `undefined`.
+- If [autoKernType](../textdocument#textdocumentautokerntype) in the range is set to `AutoKernType.METRIC_KERN`, `AutoKernType.OPTICAL_KERN`, or is mixed, then this attribute will be returned as `undefined`.
+- If [autoKernType](../textdocument#textdocumentautokerntype) in the range is set to `AutoKernType.NO_AUTO_KERN`, and this attribute has a mixed value, it will be read as `undefined`.
 
 Setting this value will also set `AutoKernType.NO_AUTO_KERN` to `true` across the affected characters.
 
@@ -162,10 +162,10 @@ For example, in an 8-bpc project, a red value of 255 would be 1.0, and in a 32-b
 
 If this attribute has a mixed value, it will be read as `undefined`.
 
-Setting this value will also set [applyStroke](textdocument.md#textdocumentapplystroke) to `true` across the affected characters.
+Setting this value will also set [applyStroke](../textdocument#textdocumentapplystroke) to `true` across the affected characters.
 
 :::warning
-In contrast to the same attribute on the TextDocument API, we will *not* throw an exception on read if [applyStroke](textdocument.md#textdocumentapplystroke) is not `true`.
+In contrast to the same attribute on the TextDocument API, we will *not* throw an exception on read if [applyStroke](../textdocument#textdocumentapplystroke) is not `true`.
 :::
 
 
@@ -212,7 +212,7 @@ On read, the same number of characters as the span of the range will be returned
 
 On write, the characters in the range will be replaced with whatever string value is supplied. If an empty string, then the characters in the range will be effectively deleted.
 
-To insert characters without deleting any existing, call [TextDocument.characterRange()](textdocument.md#textdocumentcharacterrange) with the same value for start as end to get an insertion point range.
+To insert characters without deleting any existing, call [TextDocument.characterRange()](../textdocument#textdocumentcharacterrange) with the same value for start as end to get an insertion point range.
 
 #### Type
 

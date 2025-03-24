@@ -25,7 +25,7 @@ Default: `PrintColorSeparationMode.COMPOSITE`
 
 #### Type
 
-[PrintColorSeparationMode](scripting-constants.md#printcolorseparationmode)
+[PrintColorSeparationMode](../scripting-constants#printcolorseparationmode)
 
 ---
 

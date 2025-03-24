@@ -142,7 +142,7 @@ if (!(myFolder instanceof FolderItem)) {
 
 #### 描述
 
-包含此项目的文件夹的 FolderItem 对象。如果此项目位于项目的顶层，则这是项目的根文件夹 (`app.project.rootFolder`)。您可以使用 [ItemCollection.addFolder()](itemcollection.md#itemcollectionaddfolder) 添加一个新文件夹，并设置此值以将项目放入新文件夹中。
+包含此项目的文件夹的 FolderItem 对象。如果此项目位于项目的顶层，则这是项目的根文件夹 (`app.project.rootFolder`)。您可以使用 [ItemCollection.addFolder()](../itemcollection#itemcollectionaddfolder) 添加一个新文件夹，并设置此值以将项目放入新文件夹中。
 
 #### 类型
 

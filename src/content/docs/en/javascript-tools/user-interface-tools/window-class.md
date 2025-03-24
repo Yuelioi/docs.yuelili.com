@@ -16,7 +16,7 @@ The Window class defines these static properties and functions. Window instances
 #### Description
 
 :::danger
-Deprecated. Use [ScriptUI.frameworkName](./scriptui-class.md#scriptuiframeworkname) instead.
+Deprecated. Use [ScriptUI.frameworkName](../scriptui-class#scriptuiframeworkname) instead.
 :::
 
 
@@ -33,7 +33,7 @@ String
 #### Description
 
 :::danger
-Deprecated. Use [ScriptUI.version](./scriptui-class.md#scriptuiversion) instead.
+Deprecated. Use [ScriptUI.version](../scriptui-class#scriptuiversion) instead.
 :::
 
 
@@ -118,7 +118,7 @@ Not supported in all ScriptUI implementations.
 |   Parameter    |  Type  |                                                                                              Description                                                                                              |
 | -------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `resourceName` | String | The name of a predefined resource available to JavaScript in the current application.                                                                                                                 |
-| `type`         | String | Optional. The window type (see [Window object constructor](window-object.md#window-object-constructor)) used if there is more than one window with the same title. Can be `null` or the empty string. |
+| `type`         | String | Optional. The window type (see [Window object constructor](../window-object#window-object-constructor)) used if there is more than one window with the same title. Can be `null` or the empty string. |
 | `title`        | Strign | The window title.                                                                                                                                                                                     |
 
 #### Returns

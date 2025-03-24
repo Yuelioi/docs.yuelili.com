@@ -5,7 +5,7 @@ title: sourcetext
 
 `text.sourceText`
 
-These functions are accessible on the [Text.sourceText](text.md#textsourcetext) object in AE 17.0 and later.
+These functions are accessible on the [Text.sourceText](../text#textsourcetext) object in AE 17.0 and later.
 
 ---
 

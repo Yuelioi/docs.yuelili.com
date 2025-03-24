@@ -120,7 +120,7 @@ A unique number assigned to the FontObject instance when it is created, value is
 
 Can be used to compare two FontObject instances to see if they refer to the same underlying native font instance.
 
-FontObjects can be looked up by fontID with [getFontByID](fontsobject.md#fontsobjectgetfontbyid) .
+FontObjects can be looked up by fontID with [getFontByID](../fontsobject#fontsobjectgetfontbyid) .
 
 #### Type
 

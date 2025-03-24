@@ -11,7 +11,7 @@ title: 选择器描述
 
 ## exSelStartup
 
-- param1 - [exExporterInfoRec\*](structure-descriptions.md#exexporterinforec)
+- param1 - [exExporterInfoRec\*](../structure-descriptions#exexporterinforec)
 - param2 - `unused`
 
 在应用程序启动时发送，除非导出器已被缓存。
@@ -24,7 +24,7 @@ title: 选择器描述
 
 ## exSelBeginInstance
 
-- param1 - [exExporterInstanceRec\*](structure-descriptions.md#exexporterinstancerec)
+- param1 - [exExporterInstanceRec\*](../structure-descriptions#exexporterinstancerec)
 - param2 - `unused`
 
 分配任何私有数据。
@@ -33,16 +33,16 @@ title: 选择器描述
 
 ## exSelGenerateDefaultParams
 
-- param1 - [exGenerateDefaultParamRec\*](structure-descriptions.md#exgeneratedefaultparamrec)
+- param1 - [exGenerateDefaultParamRec\*](../structure-descriptions#exgeneratedefaultparamrec)
 - param2 - `unused`
 
-使用 [Export Param Suite](suites.md#export-param-suite) 设置导出器的默认参数。
+使用 [Export Param Suite](../suites#export-param-suite) 设置导出器的默认参数。
 
 ---
 
 ## exSelPostProcessParams
 
-- param1 - [exPostProcessParamsRec\*](structure-descriptions.md#expostprocessparamsrec)
+- param1 - [exPostProcessParamsRec\*](../structure-descriptions#expostprocessparamsrec)
 - param2 - `unused`
 
 后处理参数。这是必须为参数 UI 提供本地化字符串的地方。
@@ -51,10 +51,10 @@ title: 选择器描述
 
 ## exSelValidateParamChanged
 
-- param1 - [exParamChangedRec\*](structure-descriptions.md#exparamchangedrec)
+- param1 - [exParamChangedRec\*](../structure-descriptions#exparamchangedrec)
 - param2 - `unused`
 
-验证任何已更改的参数。根据参数值的更改，导出器可以使用 [Export Param Suite](suites.md#export-param-suite) 更新其他参数值，或显示/隐藏某些参数控件。
+验证任何已更改的参数。根据参数值的更改，导出器可以使用 [Export Param Suite](../suites#export-param-suite) 更新其他参数值，或显示/隐藏某些参数控件。
 
 要通知主机插件正在更改其他参数，请将 `exParamChangedRec.rebuildAllParams` 设置为非零值。
 
@@ -62,7 +62,7 @@ title: 选择器描述
 
 ## exSelGetParamSummary
 
-- param1 - [exParamSummaryRec\*](structure-descriptions.md#exparamsummaryrec)
+- param1 - [exParamSummaryRec\*](../structure-descriptions#exparamsummaryrec)
 - param2 - `unused`
 
 提供当前参数设置的文本摘要，该摘要将显示在导出设置对话框的摘要区域中。
@@ -71,7 +71,7 @@ title: 选择器描述
 
 ## exSelParamButton
 
-- param1 - [exParamButtonRec\*](structure-descriptions.md#exparambuttonrec)
+- param1 - [exParamButtonRec\*](../structure-descriptions#exparambuttonrec)
 - param2 - `unused`
 
 如果导出器在其参数 UI 中有一个或多个按钮，并且用户在导出设置中单击其中一个按钮，则会发送此选择器。
@@ -86,12 +86,12 @@ title: 选择器描述
 
 ## exSelExport
 
-- param1 - [exDoExportRec\*](structure-descriptions.md#exdoexportrec)
+- param1 - [exDoExportRec\*](../structure-descriptions#exdoexportrec)
 - param2 - `unused`
 
 执行导出！当用户开始导出到导出器支持的格式时，或者如果导出器在编辑模式下使用并且用户渲染工作区时发送。
 
-单文件导出器每次导出仅发送此选择器一次（例如 AVI、QuickTime）。要创建单个文件，请设置一个循环，在其中使用 [Sequence Render Suite](suites.md#sequence-render-suite) 中的渲染调用之一和 [Sequence Audio Suite](suites.md#sequence-audio-suite) 中的 GetAudio 请求 startTime 到 endTime 范围内的每一帧。为了获得更好的性能，您可以使用 [Sequence Render Suite](suites.md#sequence-render-suite) 中的异步调用来让主机在多个线程上渲染多帧。
+单文件导出器每次导出仅发送此选择器一次（例如 AVI、QuickTime）。要创建单个文件，请设置一个循环，在其中使用 [Sequence Render Suite](../suites#sequence-render-suite) 中的渲染调用之一和 [Sequence Audio Suite](../suites#sequence-audio-suite) 中的 GetAudio 请求 startTime 到 endTime 范围内的每一帧。为了获得更好的性能，您可以使用 [Sequence Render Suite](../suites#sequence-render-suite) 中的异步调用来让主机在多个线程上渲染多帧。
 
 静态帧导出器为序列中的每一帧发送 `exSelExport`（例如编号的 TIFF）。主机将适当地命名文件。
 
@@ -101,7 +101,7 @@ title: 选择器描述
 
 ## exSelExport2
 
-- param1 - [exDoExportRec2\*](structure-descriptions.md#exdoexportrec2)
+- param1 - [exDoExportRec2\*](../structure-descriptions#exdoexportrec2)
 - param2 - `unused`
 
 执行导出！与 exSelExport 相同，只是传递了 exDoExportRec2（其中包含 LUT 描述）。
@@ -114,7 +114,7 @@ title: 选择器描述
 
 ## exSelQueryExportFileExtension
 
-- param1 - [exQueryExportFileExtensionRec\*](structure-descriptions.md#exqueryexportfileextensionrec)
+- param1 - [exQueryExportFileExtensionRec\*](../structure-descriptions#exqueryexportfileextensionrec)
 - param2 - `unused`
 
 对于支持多个文件扩展名的导出器，根据文件类型指定扩展名。
@@ -125,7 +125,7 @@ title: 选择器描述
 
 ## exSelQueryOutputFileList
 
-- param1 - [exQueryOutputFileListRec\*](structure-descriptions.md#exqueryoutputfilelistrec)
+- param1 - [exQueryOutputFileListRec\*](../structure-descriptions#exqueryoutputfilelistrec)
 - param2 - `unused`
 
 对于导出到多个文件的导出器。这是在导出之前调用的，以便主机找出哪些文件需要被覆盖。
@@ -142,7 +142,7 @@ title: 选择器描述
 
 ## exSelQueryStillSequence
 
-- param1 - [exQueryStillSequenceRec\*](structure-descriptions.md#exquerystillsequencerec)
+- param1 - [exQueryStillSequenceRec\*](../structure-descriptions#exquerystillsequencerec)
 - param2 - `unused`
 
 主机应用程序询问仅支持静态图像的导出器是否希望以序列形式导出，以及以什么帧速率导出。
@@ -151,7 +151,7 @@ title: 选择器描述
 
 ## exSelQueryOutputSettings
 
-- param1 - [exQueryOutputSettingsRec\*](structure-descriptions.md#exqueryoutputsettingsrec)
+- param1 - [exQueryOutputSettingsRec\*](../structure-descriptions#exqueryoutputsettingsrec)
 - param2 - `unused`
 
 主机应用程序询问导出器有关当前设置的一般详细信息。这是一个必需的选择器。
@@ -160,7 +160,7 @@ title: 选择器描述
 
 ## exSelValidateOutputSettings
 
-- param1 - [exValidateOutputSettingsRec\*](structure-descriptions.md#exvalidateoutputsettingsrec)
+- param1 - [exValidateOutputSettingsRec\*](../structure-descriptions#exvalidateoutputsettingsrec)
 - param2 - `unused`
 
 主机应用程序询问导出器是否可以使用当前设置进行导出。
@@ -171,7 +171,7 @@ title: 选择器描述
 
 ## exSelEndInstance
 
-- param1 - [exExporterInstanceRec\*](structure-descriptions.md#exexporterinstancerec)
+- param1 - [exExporterInstanceRec\*](../structure-descriptions#exexporterinstancerec)
 - param2 - `unused`
 
 释放任何私有数据。
@@ -189,7 +189,7 @@ title: 选择器描述
 
 ## exSelQueryExportColorSpace
 
-- param1 - [exExporterInstanceRec\*](structure-descriptions.md#exqueryexportcolorspacerec)
+- param1 - [exExporterInstanceRec\*](../structure-descriptions#exqueryexportcolorspacerec)
 - param2 - `unused`
 
 描述导出期间要使用的颜色空间。

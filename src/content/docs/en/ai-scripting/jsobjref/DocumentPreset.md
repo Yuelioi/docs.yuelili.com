@@ -7,7 +7,7 @@ title: DocumentPreset
 
 #### Description
 
-A preset document template to use when creating a new document. See [Documents.addDocument()](Documents.md#documentsadddocument).
+A preset document template to use when creating a new document. See [Documents.addDocument()](../documents#documentsadddocument).
 
 ---
 
@@ -25,7 +25,7 @@ Default: `GridByRow`.
 
 #### Type
 
-[DocumentArtboardLayout](scripting-constants.md#documentartboardlayout)
+[DocumentArtboardLayout](../scripting-constants#documentartboardlayout)
 
 ---
 
@@ -73,7 +73,7 @@ The color space for the new document.
 
 #### Type
 
-[DocumentColorSpace](scripting-constants.md#documentcolorspace)
+[DocumentColorSpace](../scripting-constants#documentcolorspace)
 
 ---
 
@@ -149,7 +149,7 @@ The preview mode for the new document.
 
 #### Type
 
-[DocumentPreviewMode](scripting-constants.md#documentpreviewmode)
+[DocumentPreviewMode](../scripting-constants#documentpreviewmode)
 
 ---
 
@@ -163,7 +163,7 @@ The raster resolution for the new document.
 
 #### Type
 
-[DocumentRasterResolution](scripting-constants.md#documentrasterresolution)
+[DocumentRasterResolution](../scripting-constants#documentrasterresolution)
 
 ---
 
@@ -191,7 +191,7 @@ The transparency grid color for the new document.
 
 #### Type
 
-[DocumentTransparencyGrid](scripting-constants.md#documenttransparencygrid)
+[DocumentTransparencyGrid](../scripting-constants#documenttransparencygrid)
 
 ---
 
@@ -219,7 +219,7 @@ The ruler units for the new document.
 
 #### Type
 
-[RulerUnits](scripting-constants.md#rulerunits)
+[RulerUnits](../scripting-constants#rulerunits)
 
 ---
 

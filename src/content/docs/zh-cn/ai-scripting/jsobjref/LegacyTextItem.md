@@ -7,7 +7,7 @@ title: LegacyTextItem
 
 #### 描述
 
-在 Illustrator CS（版本 10）或更早版本中创建的文本对象，在转换之前不可编辑。要转换旧版文本，请参阅 [LegacyTextItems.convertToNative()](LegacyTextItems.md#legacytextitemsconverttonative)。
+在 Illustrator CS（版本 10）或更早版本中创建的文本对象，在转换之前不可编辑。要转换旧版文本，请参阅 [LegacyTextItems.convertToNative()](../LegacyTextItems#legacytextitemsconverttonative)。
 
 您可以查看、移动和打印旧版文本，但不能编辑它。选择旧版文本时，其边界框会显示一个“x”。
 
@@ -25,7 +25,7 @@ title: LegacyTextItem
 
 #### 类型
 
-[KnockoutState](scripting-constants.md#knockoutstate)
+[KnockoutState](../scripting-constants#knockoutstate)
 
 ---
 
@@ -39,7 +39,7 @@ title: LegacyTextItem
 
 #### 类型
 
-[BlendModes](scripting-constants.md#blendmodes)
+[BlendModes](../scripting-constants#blendmodes)
 
 ---
 
@@ -473,7 +473,7 @@ legacyTextItems[index].duplicate(
 |      参数      |                                 类型                                  |        描述        |
 | -------------- | -------------------------------------------------------------------- | ----------------- |
 | `relativeObject` | 对象，可选                                                           | 要复制到的对象     |
-| `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement)，可选 | 插入元素的位置     |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 插入元素的位置     |
 
 #### 返回值
 
@@ -494,7 +494,7 @@ legacyTextItems[index].duplicate(
 |      参数      |                                 类型                                  |          描述          |
 | -------------- | -------------------------------------------------------------------- | ---------------------- |
 | `relativeObject` | 对象                                                                 | 要在其中移动元素的对象 |
-| `insertionLocation` | [ElementPlacement](scripting-constants.md#elementplacement)，可选 | 移动元素到的位置       |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 移动元素到的位置       |
 
 #### 返回值
 
@@ -546,7 +546,7 @@ legacyTextItem.resize(
 | `changeFillGradients` | 布尔值，可选                                                      | 是否变换填充渐变                               |
 | `changeStrokePattern` | 布尔值，可选                                                      | 是否变换描边图案                               |
 | `changeLineWidths` | 数字（双精度），可选                                              | 缩放线宽的量                                   |
-| `scaleAbout`     | [Transformation](scripting-constants.md#transformation)，可选     | 用作锚点的点，以进行变换                       |
+| `scaleAbout`     | [Transformation](../scripting-constants#transformation)，可选     | 用作锚点的点，以进行变换                       |
 
 #### 返回值
 
@@ -580,7 +580,7 @@ legacyTextItem.rotate(
 | `changeFillPatterns` | 布尔值，可选                                                      | 是否变换填充图案                               |
 | `changeFillGradients` | 布尔值，可选                                                      | 是否变换填充渐变                               |
 | `changeStrokePattern` | 布尔值，可选                                                      | 是否变换描边图案                               |
-| `rotateAbout`    | [Transformation](scripting-constants.md#transformation)，可选     | 用作锚点的点，以进行变换                       |
+| `rotateAbout`    | [Transformation](../scripting-constants#transformation)，可选     | 用作锚点的点，以进行变换                       |
 
 #### 返回值
 
@@ -616,7 +616,7 @@ legacyTextItem.transform(
 | `changeFillGradients` | 布尔值，可选                                                      | 是否更改填充渐变                      |
 | `changeStrokePattern` | 布尔值，可选                                                      | 是否更改描边图案                      |
 | `changeLineWidths` | 数字（双精度），可选                                              | 缩放线宽的量                          |
-| `transformAbout`   | [Transformation](scripting-constants.md#transformation)，可选     | 用作锚点的点，以进行变换              |
+| `transformAbout`   | [Transformation](../scripting-constants#transformation)，可选     | 用作锚点的点，以进行变换              |
 
 #### 返回值
 
@@ -670,7 +670,7 @@ legacyTextItem.translate(
 
 |  参数  |                        类型                         |           描述           |
 | ------ | --------------------------------------------------- | ------------------------ |
-| `zOrderCmd` | [ZOrderMethod](scripting-constants.md#zordermethod) | 堆叠顺序排列方法         |
+| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法         |
 
 #### 返回值
 
