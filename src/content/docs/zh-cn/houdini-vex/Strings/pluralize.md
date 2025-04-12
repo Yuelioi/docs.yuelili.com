@@ -1,5 +1,5 @@
 ---
-title: 复数形式转换
+title: pluralize
 order: 23
 ---
 `string  pluralize(string noun)`

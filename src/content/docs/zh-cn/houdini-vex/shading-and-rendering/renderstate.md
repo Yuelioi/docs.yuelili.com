@@ -1,7 +1,8 @@
----  
-title: 渲染状态  
-order: 65  
----  
+---
+title: renderstate
+order: 65
+---
+  
 
 | 本页内容 | * [实用属性](#useful-properties) * [打包图元](#packed-primitives) * [示例](#examples) |  
 | --- | --- |  

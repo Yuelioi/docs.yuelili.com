@@ -1,5 +1,5 @@
 ---
-title: 亨尼-格林斯坦散射函数
+title: henyeygreenstein
 order: 13
 ---
 `bsdf henyeygreenstein(float anisotropic_bias, ...)`

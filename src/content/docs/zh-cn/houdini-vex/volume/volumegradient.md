@@ -1,5 +1,5 @@
 ---
-title: 体积梯度
+title: volumegradient
 order: 4
 ---
 `vector  volumegradient(<geometry>geometry, int primnum, vector pos)`

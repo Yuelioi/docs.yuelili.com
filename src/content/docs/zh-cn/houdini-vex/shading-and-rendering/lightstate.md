@@ -1,7 +1,8 @@
----  
-title: 光照状态  
-order: 50  
----  
+---
+title: lightstate
+order: 50
+---
+  
 
 | 本页内容 | * [实用属性](#useful-properties) * [打包图元](#packed-primitives) * [示例](#examples) |  
 | --- | --- |  

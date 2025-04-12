@@ -1,5 +1,5 @@
 ---
-title: 标题化处理
+title: titlecase
 order: 40
 ---
 `string  titlecase(string str)`

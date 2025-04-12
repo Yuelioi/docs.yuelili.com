@@ -1,5 +1,5 @@
 ---
-title: 通道名称
+title: chnames
 order: 10
 ---
 | 上下文环境 | [chop](../contexts/chop.html) |

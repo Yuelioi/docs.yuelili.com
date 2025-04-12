@@ -1,5 +1,5 @@
 ---
-title: 随机函数
+title: random
 order: 30
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 基元法线
+title: prim_normal
 order: 2
 ---
 `vector  prim_normal(<geometry>geometry, int prim_number, vector uvw)`

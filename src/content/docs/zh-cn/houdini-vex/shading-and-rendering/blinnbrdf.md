@@ -1,5 +1,5 @@
 ---
-title: blinnBRDF
+title: blinnbrdf
 order: 2
 ---
 

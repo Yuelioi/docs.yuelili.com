@@ -1,5 +1,5 @@
 ---
-title: 替换
+title: replace
 order: 31
 ---
 `string  replace(string str, string old, string new)`

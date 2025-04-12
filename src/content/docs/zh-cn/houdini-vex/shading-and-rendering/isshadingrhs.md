@@ -1,5 +1,5 @@
 ---
-title: isshadingRHS
+title: isshadingrhs
 order: 45
 ---
 | 上下文环境 | [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html)  [displace](../contexts/displace.html) |

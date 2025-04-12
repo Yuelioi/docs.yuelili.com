@@ -1,5 +1,5 @@
 ---
-title: acos反余弦函数
+title: acos
 order: 5
 ---
 `float  acos(float v)`

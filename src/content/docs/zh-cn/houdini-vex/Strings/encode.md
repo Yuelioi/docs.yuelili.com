@@ -1,5 +1,5 @@
 ---
-title: 编码函数
+title: encode
 order: 8
 ---
 | 始于版本 | 17.5 |

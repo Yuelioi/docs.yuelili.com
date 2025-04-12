@@ -1,5 +1,5 @@
 ---
-title: 纹理
+title: texture
 order: 13
 ---
 

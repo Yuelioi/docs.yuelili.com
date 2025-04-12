@@ -1,5 +1,5 @@
 ---
-title: 平滑过渡
+title: smooth
 order: 15
 ---
 `float  smooth(float value1, float value2, float amount)`

@@ -1,5 +1,5 @@
 ---
-title: 阿尔法通道名称
+title: alphaname
 order: 2
 ---
 

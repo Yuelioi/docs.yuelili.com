@@ -1,5 +1,5 @@
 ---
-title: 极分解
+title: polardecomp
 order: 16
 ---
 `matrix3  polardecomp(matrix3 transform)`

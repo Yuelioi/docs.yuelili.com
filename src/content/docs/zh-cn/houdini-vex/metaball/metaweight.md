@@ -1,5 +1,5 @@
 ---
-title: 元权重
+title: metaweight
 order: 5
 ---
 `float  metaweight(<geometry>geometry, vector p)`

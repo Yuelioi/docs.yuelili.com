@@ -1,5 +1,5 @@
 ---
-title: 对象状态
+title: objectstate
 order: 55
 ---
 | 本页内容 | * [实用属性](#useful-properties) * [打包图元](#packed-primitives) * [示例](#examples) |

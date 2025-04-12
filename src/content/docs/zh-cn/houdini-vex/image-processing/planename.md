@@ -1,5 +1,5 @@
 ---
-title: 平面名称
+title: planename
 order: 33
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 特征值
+title: eigenvalues
 order: 23
 ---
 `void  eigenvalues(int &nroot, matrix3 mat, vector &real, vector &imaginary)`

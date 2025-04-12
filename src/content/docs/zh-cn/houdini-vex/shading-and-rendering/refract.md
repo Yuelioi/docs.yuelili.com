@@ -1,5 +1,5 @@
 ---
-title: 折射
+title: refract
 order: 63
 ---
 `vector  refract(vector 方向, vector 法线, float 折射率)`

@@ -1,5 +1,5 @@
 ---
-title: fromNDC
+title: fromndc
 order: 2
 ---
 

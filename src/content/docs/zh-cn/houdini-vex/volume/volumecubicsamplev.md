@@ -1,5 +1,5 @@
 ---
-title: 体积立方采样函数
+title: volumecubicsamplev
 order: 3
 ---
 

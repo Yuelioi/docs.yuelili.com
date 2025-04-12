@@ -1,5 +1,5 @@
 ---
-title: 基本属性类型信息
+title: primattribtypeinfo
 order: 50
 ---
 `string  primattribtypeinfo(<geometry>geometry, string attribute_name)`

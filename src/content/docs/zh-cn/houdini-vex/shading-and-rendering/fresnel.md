@@ -1,7 +1,8 @@
----  
-title: 菲涅尔反射  
-order: 7  
----  
+---
+title: fresnel
+order: 7
+---
+  
 
 `void  fresnel(vector i, vector n, float eta, float &kr, float &kt)`  
 

@@ -1,5 +1,5 @@
 ---
-title: 顶点属性类型信息
+title: vertexattribtypeinfo
 order: 81
 ---
 `string  vertexattribtypeinfo(<geometry>geometry, string attribute_name)`

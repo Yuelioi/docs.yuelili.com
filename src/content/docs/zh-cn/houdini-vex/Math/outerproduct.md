@@ -1,5 +1,5 @@
 ---
-title: 外积
+title: outerproduct
 order: 50
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: tan（正切函数）
+title: tan
 order: 84
 ---
 

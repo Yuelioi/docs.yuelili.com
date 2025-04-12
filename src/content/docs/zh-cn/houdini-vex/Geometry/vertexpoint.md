@@ -1,5 +1,5 @@
 ---
-title: vertexpoint函数
+title: vertexpoint
 order: 42
 ---
 `int  vertexpoint(<geometry>geometry, int linearvertex)`

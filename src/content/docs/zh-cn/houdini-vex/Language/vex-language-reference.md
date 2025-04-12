@@ -1,5 +1,5 @@
 ---
-title: VEX语言参考
+title: vex language reference
 order: 7
 ---
 | 本页内容 | * [上下文](#contexts) * [语句](#statements) * [内置函数](#built-in-functions) * [用户定义函数](#functions)   + [注意事项](#notes) * [主(上下文)函数](#main-context-function)   + [用户界面编译指示](#user-interface-pragmas) * [运算符](#operators)   + [点运算符](#dot-operator)  + [比较运算](#comparisons)  + [优先级表](#precedence)  + [运算符类型交互](#operator-type-interactions) * [数据类型](#data-types) * [结构体](#structs)   + [结构体函数](#methods) * [Mantra专用类型](#mantratypes) * [类型转换](#type-casting)   + [变量类型转换](#variable-casting)  + [函数类型转换](#function-casting) * [注释](#comments) * [保留关键字](#reserved) |

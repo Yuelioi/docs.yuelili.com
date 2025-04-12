@@ -1,5 +1,5 @@
 ---
-title: 平滑旋转
+title: smoothrotation
 order: 25
 ---
 

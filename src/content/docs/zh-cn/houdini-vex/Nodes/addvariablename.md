@@ -1,5 +1,5 @@
 ---
-title: 添加变量名映射
+title: addvariablename
 order: 1
 ---
 

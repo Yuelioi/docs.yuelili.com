@@ -1,5 +1,5 @@
 ---
-title: 颜色名称
+title: colorname
 order: 7
 ---
 | 上下文 | [cop2](../contexts/cop2.html) |

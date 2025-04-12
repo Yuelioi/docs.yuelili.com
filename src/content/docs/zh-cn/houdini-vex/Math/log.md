@@ -1,5 +1,5 @@
 ---
-title: 对数函数
+title: log
 order: 39
 ---
 `float  log(float n)`

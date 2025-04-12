@@ -1,5 +1,5 @@
 ---
-title: 弧度转换
+title: radians
 order: 9
 ---
 `float  radians(float angle_in_degrees)`

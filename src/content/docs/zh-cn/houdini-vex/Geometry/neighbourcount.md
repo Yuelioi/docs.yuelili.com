@@ -1,5 +1,5 @@
 ---
-title: 邻点计数
+title: neighbourcount
 order: 15
 ---
 `int  neighbourcount(<geometry>geometry, int point_num)`

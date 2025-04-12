@@ -1,5 +1,5 @@
 ---
-title: 扩展图元组
+title: expandprimgroup
 order: 3
 ---
 `int [] expandprimgroup(<geometry>geometry, string groupname)`

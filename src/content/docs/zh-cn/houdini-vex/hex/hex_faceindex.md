@@ -1,5 +1,5 @@
 ---
-title: 六面体顶点索引
+title: hex_faceindex
 order: 2
 ---
 `int  hex_faceindex(int faceno, int vtxno)`

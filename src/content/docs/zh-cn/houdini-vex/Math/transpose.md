@@ -1,5 +1,5 @@
 ---
-title: 转置
+title: transpose
 order: 87
 ---
 `void  transpose(<matrix>&m)`

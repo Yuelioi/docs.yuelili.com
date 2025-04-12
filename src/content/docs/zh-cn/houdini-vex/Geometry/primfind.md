@@ -1,5 +1,5 @@
 ---
-title: primfind函数
+title: primfind
 order: 25
 ---
 `int [] primfind(<geometry>geometry, vector min, vector max)`

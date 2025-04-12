@@ -1,5 +1,5 @@
 ---
-title: 反弹遮罩
+title: bouncemask
 order: 4
 ---
 `int  bouncemask(string labels)`

@@ -1,5 +1,5 @@
 ---
-title: 平均值函数
+title: avg
 order: 9
 ---
 

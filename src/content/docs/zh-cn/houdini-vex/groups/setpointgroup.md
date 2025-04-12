@@ -1,5 +1,5 @@
 ---
-title: 设置点组
+title: setpointgroup
 order: 10
 ---
 

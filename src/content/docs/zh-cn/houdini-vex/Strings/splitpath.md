@@ -1,5 +1,5 @@
 ---
-title: 路径分割
+title: splitpath
 order: 35
 ---
 `void  splitpath(string fullpath, string &dir, string &name)`

@@ -1,5 +1,5 @@
 ---
-title: 序列化
+title: serialize
 order: 12
 ---
 `float [] serialize(<vector>vectors[])`

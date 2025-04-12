@@ -1,5 +1,5 @@
 ---
-title: 四元数
+title: quaternion
 order: 65
 ---
 [单位四元数用于表示旋转](http://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation)。该VEX函数可创建表示旋转的单位四元数。

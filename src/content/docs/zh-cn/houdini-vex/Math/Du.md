@@ -1,5 +1,5 @@
 ---
-title: Du
+title: du
 order: 1
 ---
 

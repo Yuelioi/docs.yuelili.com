@@ -1,5 +1,5 @@
 ---
-title: 反弹标签
+title: bouncelabel
 order: 3
 ---
 `string  bouncelabel(int mask)`

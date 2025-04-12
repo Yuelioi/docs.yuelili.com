@@ -1,5 +1,5 @@
 ---
-title: 颜色映射
+title: colormap
 order: 1
 ---
 该函数对像素值进行双线性插值。要获取未过滤的像素值，请使用[rawcolormap](rawcolormap.html "从纹理文件中查找未过滤的颜色")。

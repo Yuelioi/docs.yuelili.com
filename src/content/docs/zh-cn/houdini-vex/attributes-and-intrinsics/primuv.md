@@ -1,5 +1,5 @@
 ---
-title: primuv函数
+title: primuv
 order: 54
 ---
 

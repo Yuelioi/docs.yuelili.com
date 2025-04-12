@@ -1,5 +1,5 @@
 ---
-title: 噪声函数
+title: noise
 order: 23
 ---
 

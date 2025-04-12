@@ -1,5 +1,5 @@
 ---
-title: 顶点索引
+title: vertexindex
 order: 40
 ---
 `int  vertexindex(<geometry>geometry, int primnum, int vertex)`

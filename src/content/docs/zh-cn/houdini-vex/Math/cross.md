@@ -1,5 +1,5 @@
 ---
-title: 叉积
+title: cross
 order: 15
 ---
 `vector  cross(vector a, vector b)`

@@ -1,5 +1,5 @@
 ---
-title: length（长度）
+title: length
 order: 37
 ---
 要获取字符串的长度或数组中的元素数量，请使用[len](len.html "返回数组的长度")函数。

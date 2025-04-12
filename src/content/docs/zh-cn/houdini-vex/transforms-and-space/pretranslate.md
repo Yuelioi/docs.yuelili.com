@@ -1,5 +1,5 @@
 ---
-title: 预平移
+title: pretranslate
 order: 19
 ---
 | 始于版本 | 17.5 |

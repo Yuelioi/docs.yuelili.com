@@ -1,5 +1,5 @@
 ---
-title: primvertexcount（基元顶点计数）
+title: primvertexcount
 order: 29
 ---
 `int  primvertexcount(<geometry>geometry, int prim_num)`

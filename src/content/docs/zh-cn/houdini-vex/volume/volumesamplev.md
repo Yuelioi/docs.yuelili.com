@@ -1,5 +1,5 @@
 ---
-title: 体积采样向量
+title: volumesamplev
 order: 19
 ---
 `vector  volumesamplev(<geometry>geometry, int primnum, vector pos)`

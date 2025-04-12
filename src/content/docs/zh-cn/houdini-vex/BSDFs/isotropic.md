@@ -1,5 +1,5 @@
 ---
-title: 各向同性
+title: isotropic
 order: 14
 ---
 `bsdf  isotropic(...)`

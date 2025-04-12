@@ -1,5 +1,5 @@
 ---
-title: 散射
+title: scatter
 order: 67
 ---
 | 上下文环境 | [置换](../contexts/displace.html)  [雾效](../contexts/fog.html)  [光照](../contexts/light.html)  [阴影](../contexts/shadow.html)  [表面](../contexts/surface.html) |

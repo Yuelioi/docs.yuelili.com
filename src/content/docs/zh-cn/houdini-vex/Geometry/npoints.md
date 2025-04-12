@@ -1,5 +1,5 @@
 ---
-title: 点数量
+title: npoints
 order: 17
 ---
 `int  npoints(<geometry>geometry)`

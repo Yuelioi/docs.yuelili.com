@@ -1,7 +1,8 @@
----  
-title: usd_flattenediprimvarelement  
-order: 39  
----  
+---
+title: usd_flattenediprimvarelement
+order: 39
+---
+  
 
 | 始于版本 | 19.0 |  
 | --- | --- |  

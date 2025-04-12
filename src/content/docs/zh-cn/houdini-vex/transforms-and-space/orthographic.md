@@ -1,5 +1,5 @@
 ---
-title: 正交投影
+title: orthographic
 order: 10
 ---
 | 始于版本 | 17.5 |

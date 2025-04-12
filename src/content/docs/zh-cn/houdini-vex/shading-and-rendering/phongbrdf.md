@@ -1,5 +1,5 @@
 ---
-title: phongBRDF（Phong双向反射分布函数）
+title: phongbrdf
 order: 58
 ---
 `float  phongBRDF(vector L, vector N, vector V, float rough)`

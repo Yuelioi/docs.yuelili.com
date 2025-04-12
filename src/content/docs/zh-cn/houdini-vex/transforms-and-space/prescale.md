@@ -1,5 +1,5 @@
 ---
-title: 预缩放
+title: prescale
 order: 18
 ---
 | 始于 | 17.5 |

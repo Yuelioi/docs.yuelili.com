@@ -1,5 +1,5 @@
 ---
-title: isbound函数
+title: isbound
 order: 6
 ---
 `int  isbound(string variable_name)`

@@ -1,5 +1,5 @@
 ---
-title: 移除点
+title: removepoint
 order: 32
 ---
 

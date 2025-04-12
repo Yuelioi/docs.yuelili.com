@@ -1,5 +1,5 @@
 ---
-title: ceil（向上取整）
+title: ceil
 order: 11
 ---
 `float  ceil(float n)`

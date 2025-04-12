@@ -1,5 +1,5 @@
 ---
-title: 警告
+title: warning
 order: 22
 ---
 `void  warning(string format, ...)`

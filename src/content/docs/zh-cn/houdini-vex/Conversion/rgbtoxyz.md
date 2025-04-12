@@ -1,5 +1,5 @@
 ---
-title: rgb转xyz
+title: rgbtoxyz
 order: 11
 ---
 `vector  rgbtoxyz(vector rgb)`

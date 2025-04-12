@@ -1,5 +1,5 @@
 ---
-title: 立体角
+title: solid_angle
 order: 20
 ---
 `float  solid_angle(bsdf b, int mask)`

@@ -1,5 +1,5 @@
 ---
-title: 反照率
+title: albedo
 order: 1
 ---
 

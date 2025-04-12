@@ -1,5 +1,5 @@
 ---
-title: 旋度梯度噪声
+title: curlgxnoise
 order: 2
 ---
 

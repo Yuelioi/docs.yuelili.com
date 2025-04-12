@@ -1,5 +1,5 @@
 ---
-title: product 函数
+title: product
 order: 59
 ---
 

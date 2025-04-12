@@ -1,5 +1,5 @@
 ---
-title: forpoints循环
+title: forpoints
 order: 4
 ---
 在[image3d上下文](../contexts/image3d.html "已废弃。编写与i3dgen程序配合使用的程序来生成3D纹理")中，当指定了几何体（即元球几何体或粒子）时，您可以遍历影响空间中某点的所有元球。

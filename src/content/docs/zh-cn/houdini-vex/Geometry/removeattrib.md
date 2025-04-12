@@ -1,5 +1,5 @@
 ---
-title: removeattrib（移除属性）
+title: removeattrib
 order: 31
 ---
 `int  removeattrib(int geohandle, string attribclass, string name)`

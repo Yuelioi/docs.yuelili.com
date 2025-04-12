@@ -1,5 +1,5 @@
 ---
-title: chf函数
+title: chf
 order: 10
 ---
 

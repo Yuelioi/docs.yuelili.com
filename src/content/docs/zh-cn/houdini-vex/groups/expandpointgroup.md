@@ -1,5 +1,5 @@
 ---
-title: 扩展点组
+title: expandpointgroup
 order: 2
 ---
 `int [] expandpointgroup(<geometry>geometry, string groupname)`

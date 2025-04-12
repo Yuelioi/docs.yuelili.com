@@ -1,5 +1,5 @@
 ---
-title: 遮罩名称
+title: maskname
 order: 28
 ---
 | 上下文 | [cop2](../contexts/cop2.html) |

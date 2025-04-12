@@ -1,5 +1,5 @@
 ---
-title: cosh（双曲余弦函数）
+title: cosh
 order: 14
 ---
 `float  cosh(float n)`

@@ -1,5 +1,5 @@
 ---
-title: 代理通道名称
+title: agentchannelnames
 order: 3
 ---
 | 版本 | 18.0 |

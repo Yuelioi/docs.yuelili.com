@@ -1,5 +1,5 @@
 ---
-title: ch2函数
+title: ch2
 order: 3
 ---
 

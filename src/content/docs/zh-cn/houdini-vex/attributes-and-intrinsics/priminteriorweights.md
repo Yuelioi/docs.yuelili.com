@@ -1,5 +1,5 @@
 ---
-title: 基元内部权重
+title: priminteriorweights
 order: 52
 ---
 `int  priminteriorweights(<geometry>geometry, int prim_num, vector uvw, int &verts[], float &weights[])`

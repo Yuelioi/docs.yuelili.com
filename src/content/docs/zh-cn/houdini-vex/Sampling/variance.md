@@ -1,5 +1,5 @@
 ---
-title: 方差
+title: variance
 order: 32
 ---
 `float  variance(float variable, float &mean, int &sample_size)`

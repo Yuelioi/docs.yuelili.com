@@ -1,5 +1,5 @@
 ---
-title: 点积函数
+title: dot
 order: 22
 ---
 `float  dot(vector2 a, vector2 b)`

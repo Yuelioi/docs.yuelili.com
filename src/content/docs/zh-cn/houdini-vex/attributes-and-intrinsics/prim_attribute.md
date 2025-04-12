@@ -1,5 +1,5 @@
 ---
-title: 基元属性
+title: prim_attribute
 order: 45
 ---
 

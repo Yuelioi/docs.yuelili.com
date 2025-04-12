@@ -1,5 +1,5 @@
 ---
-title: 高光
+title: specular
 order: 21
 ---
 ![](../_static/rendering/specular.png)

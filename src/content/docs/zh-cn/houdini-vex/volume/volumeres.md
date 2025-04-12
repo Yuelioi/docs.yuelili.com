@@ -1,5 +1,5 @@
 ---
-title: 体积分辨率
+title: volumeres
 order: 14
 ---
 `vector  volumeres(<geometry>geometry, int primnum)`

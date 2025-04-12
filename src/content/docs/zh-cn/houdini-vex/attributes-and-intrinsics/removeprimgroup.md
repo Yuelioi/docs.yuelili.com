@@ -1,5 +1,5 @@
 ---
-title: 移除基元组
+title: removeprimgroup
 order: 60
 ---
 

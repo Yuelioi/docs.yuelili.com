@@ -1,5 +1,5 @@
 ---
-title: 代理层绑定
+title: agentlayerbindings
 order: 27
 ---
 `int [] agentlayerbindings(<geometry>geometry, int prim, string layername, string shapetype)`

@@ -1,5 +1,5 @@
 ---
-title: 唯一值
+title: uniquevals
 order: 75
 ---
 | 始于版本 | 17.0 |

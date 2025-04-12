@@ -1,5 +1,5 @@
 ---
-title: 正态分布采样
+title: sample_normal
 order: 24
 ---
 `float  sample_normal(float u)`

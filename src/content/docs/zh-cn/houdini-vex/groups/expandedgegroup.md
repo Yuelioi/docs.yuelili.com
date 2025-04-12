@@ -1,5 +1,5 @@
 ---
-title: 扩展边组
+title: expandedgegroup
 order: 1
 ---
 `int [] expandedgegroup(<geometry>geometry, string groupname)`

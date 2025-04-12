@@ -1,5 +1,5 @@
 ---
-title: 亮度计算函数
+title: luminance
 order: 3
 ---
 `float  luminance(vector rgb)`

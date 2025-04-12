@@ -1,5 +1,5 @@
 ---
-title: 圆锥反射
+title: cone
 order: 6
 ---
 

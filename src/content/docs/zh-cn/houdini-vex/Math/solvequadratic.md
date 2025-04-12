@@ -1,5 +1,5 @@
 ---
-title: 解二次方程
+title: solvequadratic
 order: 77
 ---
 `int  solvequadratic(float a, float b, float c, float &t1, float &t2)`

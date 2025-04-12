@@ -1,5 +1,5 @@
 ---
-title: 连接字符串
+title: join
 order: 17
 ---
 `string  join(string s[], string spacer)`

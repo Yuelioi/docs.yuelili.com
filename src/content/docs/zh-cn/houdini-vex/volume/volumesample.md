@@ -1,5 +1,5 @@
 ---
-title: volumesample（体积采样）
+title: volumesample
 order: 15
 ---
 `float  volumesample(<geometry>geometry, int primnum, vector pos)`

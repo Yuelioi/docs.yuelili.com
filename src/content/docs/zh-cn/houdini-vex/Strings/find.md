@@ -1,5 +1,5 @@
 ---
-title: find 函数
+title: find
 order: 13
 ---
 

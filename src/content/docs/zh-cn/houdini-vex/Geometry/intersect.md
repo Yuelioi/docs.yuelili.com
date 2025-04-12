@@ -1,7 +1,8 @@
----  
-title: 相交检测  
-order: 8  
----  
+---
+title: intersect
+order: 8
+---
+  
 
 要获取射线路径上*所有*相交点列表，请使用[intersect_all](intersect_all.html "计算指定射线与几何体的所有相交点")。  
 

@@ -1,5 +1,5 @@
 ---
-title: 点属性函数
+title: pointattrib
 order: 35
 ---
 

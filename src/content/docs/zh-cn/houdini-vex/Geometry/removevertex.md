@@ -1,5 +1,5 @@
 ---
-title: removevertex（移除顶点）
+title: removevertex
 order: 34
 ---
 

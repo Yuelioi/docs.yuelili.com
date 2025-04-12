@@ -1,5 +1,5 @@
 ---
-title: 环境光
+title: ambient
 order: 1
 ---
 | 上下文环境 | [置换](../contexts/displace.html)  [雾效](../contexts/fog.html)  [表面](../contexts/surface.html) |

@@ -1,5 +1,5 @@
 ---
-title: 黑体辐射
+title: blackbody
 order: 1
 ---
 `vector  blackbody(float temperature, float luminance)`

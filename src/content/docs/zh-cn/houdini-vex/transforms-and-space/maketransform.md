@@ -1,5 +1,5 @@
 ---
-title: 构建变换矩阵
+title: maketransform
 order: 7
 ---
 `matrix3  maketransform(vector z轴, vector y轴)`

@@ -1,5 +1,5 @@
 ---
-title: prim函数
+title: prim
 order: 44
 ---
 `<type> prim(<geometry>geometry, string attribute_name, int primnumber)`

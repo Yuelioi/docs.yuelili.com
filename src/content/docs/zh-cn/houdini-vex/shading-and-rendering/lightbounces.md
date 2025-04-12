@@ -1,5 +1,5 @@
 ---
-title: 光线反弹次数
+title: lightbounces
 order: 48
 ---
 | 上下文 | [着色](../contexts/shading.html) |

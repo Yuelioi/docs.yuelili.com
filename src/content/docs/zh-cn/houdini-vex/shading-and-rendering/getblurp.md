@@ -1,5 +1,5 @@
 ---
-title: getblurP
+title: getblurp
 order: 10
 ---
 | 上下文环境 | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |

@@ -1,5 +1,5 @@
 ---
-title: hsv转rgb
+title: hsvtorgb
 order: 6
 ---
 `vector  hsvtorgb(vector hsv)`

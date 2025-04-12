@@ -1,5 +1,5 @@
 ---
-title: 布林材质
+title: blinn
 order: 3
 ---
 

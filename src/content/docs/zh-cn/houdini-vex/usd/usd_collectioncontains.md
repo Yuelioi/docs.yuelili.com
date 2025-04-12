@@ -1,7 +1,8 @@
 ---
-title: usd_collectioncontains  
-order: 32  
----  
+title: usd_collectioncontains
+order: 32
+---
+  
 
 | Since | 18.0 |  
 | --- | --- |  

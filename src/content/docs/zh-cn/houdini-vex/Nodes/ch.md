@@ -1,5 +1,5 @@
 ---
-title: ch函数
+title: ch
 order: 2
 ---
 `float  ch(string channel)`

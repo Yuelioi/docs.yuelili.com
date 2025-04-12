@@ -1,5 +1,5 @@
 ---
-title: 点顶点
+title: pointvertices
 order: 23
 ---
 `int [] pointvertices(<geometry>geometry, int ptnum)`

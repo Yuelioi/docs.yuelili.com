@@ -1,5 +1,5 @@
 ---
-title: abs绝对值函数
+title: abs
 order: 4
 ---
 `int  abs(int n)`

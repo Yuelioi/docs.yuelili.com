@@ -1,5 +1,5 @@
 ---
-title: 点属性类型
+title: pointattribtype
 order: 37
 ---
 `int  pointattribtype(<geometry>geometry, string attribute_name)`

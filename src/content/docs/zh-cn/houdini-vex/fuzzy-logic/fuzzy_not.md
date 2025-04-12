@@ -1,5 +1,5 @@
 ---
-title: 模糊非运算
+title: fuzzy_not
 order: 6
 ---
 `int  fuzzy_not(int n)`

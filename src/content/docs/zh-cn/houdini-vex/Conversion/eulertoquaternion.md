@@ -1,5 +1,5 @@
 ---
-title: 欧拉角转四元数
+title: eulertoquaternion
 order: 5
 ---
 [单位四元数用于表示旋转](http://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation)。这个VEX函数会创建一个表示旋转的单位四元数。

@@ -1,5 +1,5 @@
 ---
-title: volumeindexi函数
+title: volumeindexi
 order: 7
 ---
 

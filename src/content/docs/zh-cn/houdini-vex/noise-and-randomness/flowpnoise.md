@@ -1,5 +1,5 @@
 ---
-title: 流动柏林噪声
+title: flowpnoise
 order: 10
 ---
 `float  flowpnoise(vector xyz, vector p, float flow)`

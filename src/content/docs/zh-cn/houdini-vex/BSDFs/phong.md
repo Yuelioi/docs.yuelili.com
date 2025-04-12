@@ -1,5 +1,5 @@
 ---
-title: phong光照模型
+title: phong
 order: 17
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 体积类型ID
+title: volumetypeid
 order: 22
 ---
 `int  volumetypeid(<geometry>geometry, int primnum)`

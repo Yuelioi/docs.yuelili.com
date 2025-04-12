@@ -1,5 +1,5 @@
 ---
-title: 指数函数
+title: exp
 order: 27
 ---
 

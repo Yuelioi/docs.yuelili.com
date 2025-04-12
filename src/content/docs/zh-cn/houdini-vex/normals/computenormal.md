@@ -1,5 +1,5 @@
 ---
-title: 计算法线
+title: computenormal
 order: 1
 ---
 `vector  computenormal(vector P, ...)`

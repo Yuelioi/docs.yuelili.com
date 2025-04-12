@@ -29,6 +29,7 @@
   "devDependencies": {
     "dotenv": "^16.4.7",
     "fs-extra": "^11.3.0",
+    "gray-matter": "^4.0.3",
     "ollama": "^0.5.14",
     "openai": "^4.87.4",
     "p-limit": "^6.2.0",

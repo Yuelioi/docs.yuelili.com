@@ -1,5 +1,5 @@
 ---
-title: 光子贴图
+title: photonmap
 order: 35
 ---
 

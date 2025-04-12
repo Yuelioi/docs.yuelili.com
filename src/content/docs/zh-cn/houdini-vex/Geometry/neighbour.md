@@ -1,7 +1,8 @@
 ---
-title: neighbour（相邻点）  
-order: 14  
----  
+title: neighbour
+order: 14
+---
+  
 
 此函数用于遍历与指定点相连的点（通过单条边连接）。若要一次性获取所有相连点的列表，请使用 [neighbours](neighbours.html "返回某点所有相邻点的编号数组")。  
 

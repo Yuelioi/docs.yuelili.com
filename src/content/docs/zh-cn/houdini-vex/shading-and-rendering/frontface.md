@@ -1,5 +1,5 @@
 ---
-title: 正面朝向函数
+title: frontface
 order: 8
 ---
 `vector  frontface(vector N, vector I)`

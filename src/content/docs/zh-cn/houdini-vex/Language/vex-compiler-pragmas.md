@@ -1,7 +1,8 @@
----  
-title: VEX编译器指令  
-order: 6  
----  
+---
+title: vex compiler pragmas
+order: 6
+---
+  
 
 | 本页内容 | * [#pragma c++rawstring](#pragma-c-rawstring) * [#pragma bindhandle](#pragma-bindhandle) * [#pragma bindhandlereserved](#pragma-bindhandlereserved) * [#pragma bindselector](#pragma-bindselector) * [#pragma bindselectorreserved](#pragma-bindselectorreserved) * [#pragma callback](#callback) * [#pragma disablewhen和#pragma hidewhen](#pragma-disablewhen-and-pragma-hidewhen) * [#pragma export](#pragma-export) * [#pragma group](#pragma-group) * [#pragma help和#pragma info](#pragma-help-and-pragma-info) * [#pragma hint](#pragma-hint) * [#pragma inputlabel](#pragma-inputlabel) * [#pragma label](#pragma-label) * [#pragma name "text"](#pragma-name-text) * [#pragma opicon](#opicon) * [#pragma opmininputs和#pragma opmaxinputs](#opinputs) * [#pragma opname和#pragma oplabel](#opname) * [#pragma opscript](#opscript) * [#pragma parmhelp parameter_name "text"](#pragma-parmhelp-parameter_name-text) * [#pragma parmtag](#pragma-parmtag) * [#pragma ramp](#ramp) * [#pragma range](#pragma-range) * [#pragma rendermask](#pragma-rendermask) * [#pragma optable](#pragma-optable) * [#pragma rename](#pragma-rename) * [如何为参数创建菜单](#how-to-create-menus-for-parameters) * [运算符列表过滤器](#operator-list-filters) |  
 | --- | --- |  

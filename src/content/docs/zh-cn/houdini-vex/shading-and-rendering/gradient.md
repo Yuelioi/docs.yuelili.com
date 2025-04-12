@@ -1,5 +1,5 @@
 ---
-title: 梯度
+title: gradient
 order: 35
 ---
 | 本页内容 | * [导数选项](#derivatives-options) * [示例](#examples) |

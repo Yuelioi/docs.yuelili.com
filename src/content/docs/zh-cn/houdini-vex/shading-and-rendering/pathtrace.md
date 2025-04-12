@@ -1,5 +1,5 @@
 ---
-title: 路径追踪
+title: pathtrace
 order: 57
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 镜面反射BRDF
+title: specularbrdf
 order: 74
 ---
 

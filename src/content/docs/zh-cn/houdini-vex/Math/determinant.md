@@ -1,5 +1,5 @@
 ---
-title: 行列式
+title: determinant
 order: 16
 ---
 `float  determinant(matrix2 m)`

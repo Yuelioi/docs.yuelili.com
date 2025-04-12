@@ -1,5 +1,5 @@
 ---
-title: 球面线性插值
+title: slerp
 order: 13
 ---
 `vector4  slerp(vector4 q1, vector4 q2, float bias)`

@@ -1,5 +1,5 @@
 ---
-title: erf_inv 反误差函数
+title: erf_inv
 order: 25
 ---
 `float  erf_inv(float v)`

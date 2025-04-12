@@ -1,5 +1,5 @@
 ---
-title: 裁剪
+title: clip
 order: 4
 ---
 `void  clip(int &result, vector &p0, vector &p1, vector4 plane)`

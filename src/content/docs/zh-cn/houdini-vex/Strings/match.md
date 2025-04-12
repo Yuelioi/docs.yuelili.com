@@ -1,5 +1,5 @@
 ---
-title: 匹配
+title: match
 order: 20
 ---
 `int  match(string pattern, string subject)`

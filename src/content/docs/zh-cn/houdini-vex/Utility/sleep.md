@@ -1,5 +1,5 @@
 ---
-title: 休眠
+title: sleep
 order: 19
 ---
 `void  sleep(int milliseconds)`

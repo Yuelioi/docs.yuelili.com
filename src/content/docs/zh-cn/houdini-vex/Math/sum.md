@@ -1,5 +1,5 @@
 ---
-title: 求和函数
+title: sum
 order: 82
 ---
 

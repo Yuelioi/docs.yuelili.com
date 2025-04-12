@@ -1,5 +1,5 @@
 ---
-title: 毛发
+title: hair
 order: 12
 ---
 

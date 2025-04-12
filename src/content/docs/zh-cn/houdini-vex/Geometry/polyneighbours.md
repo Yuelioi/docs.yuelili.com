@@ -1,5 +1,5 @@
 ---
-title: 多边形邻接关系
+title: polyneighbours
 order: 24
 ---
 

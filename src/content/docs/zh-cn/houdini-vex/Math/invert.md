@@ -1,5 +1,5 @@
 ---
-title: 矩阵求逆
+title: invert
 order: 32
 ---
 `<matrix> invert(<matrix>m)`

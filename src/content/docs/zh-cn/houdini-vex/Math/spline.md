@@ -1,5 +1,5 @@
 ---
-title: 样条曲线
+title: spline
 order: 79
 ---
 `float  spline(string basis, float sample_pos, float value1, ...)`

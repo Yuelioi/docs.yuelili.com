@@ -1,5 +1,5 @@
 ---
-title: 辐照度
+title: irradiance
 order: 41
 ---
 | 本页内容 | * [采样自适应选项](#sample-adaptation-options) * [光线选项](#ray-options) |

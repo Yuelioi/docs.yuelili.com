@@ -1,5 +1,5 @@
 ---
-title: inprimgroup函数
+title: inprimgroup
 order: 6
 ---
 

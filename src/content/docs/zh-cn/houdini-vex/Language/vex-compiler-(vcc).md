@@ -1,7 +1,8 @@
 ---
-title: VEX编译器(vcc)  
-order: 8  
----  
+title: vex compiler (vcc)
+order: 8
+---
+  
 
 | 本页内容 | * [命令行选项](#command-line-options)  
   + [编译器选项](#compiler-options)  

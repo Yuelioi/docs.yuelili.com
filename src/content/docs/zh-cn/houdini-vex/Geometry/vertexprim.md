@@ -1,5 +1,5 @@
 ---
-title: vertexprim函数
+title: vertexprim
 order: 44
 ---
 `int  vertexprim(<geometry>geometry, int linearvertex)`

@@ -1,5 +1,5 @@
 ---
-title: VEX函数
+title: vex functions
 order: 1
 ---
 

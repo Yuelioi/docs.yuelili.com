@@ -1,5 +1,5 @@
 ---
-title: primvertex函数
+title: primvertex
 order: 28
 ---
 `int  primvertex(<geometry>geometry, int primnum, int vertex)`

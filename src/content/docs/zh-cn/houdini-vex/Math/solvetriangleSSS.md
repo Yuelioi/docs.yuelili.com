@@ -1,5 +1,5 @@
 ---
-title: solvetriangleSSS
+title: solvetrianglesss
 order: 78
 ---
 | 始于版本 | 18.0 |

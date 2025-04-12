@@ -1,5 +1,5 @@
 ---
-title: 矩阵预乘
+title: premul
 order: 58
 ---
 | 自版本 | 18.0 |

@@ -1,5 +1,5 @@
 ---
-title: 旋度噪声
+title: curlnoise
 order: 4
 ---
 `vector  curlnoise(vector xyz)`

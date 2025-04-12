@@ -1,5 +1,5 @@
 ---
-title: sin（正弦函数）
+title: sin
 order: 72
 ---
 `float  sin(float n)`

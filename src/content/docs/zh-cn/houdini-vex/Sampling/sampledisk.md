@@ -1,5 +1,5 @@
 ---
-title: 圆盘采样
+title: sampledisk
 order: 31
 ---
 `void  sampledisk(float &x, float &y, float sx, float sy)`

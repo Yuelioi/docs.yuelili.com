@@ -1,5 +1,5 @@
 ---
-title: lerp（线性插值）
+title: lerp
 order: 10
 ---
 `float  lerp(float value1, float value2, float amount)`

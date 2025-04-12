@@ -1,7 +1,8 @@
 ---
-title: getsmoothP  
-order: 33  
----  
+title: getsmoothp
+order: 33
+---
+  
 
 | 本页内容 | * [可变参数](#variadic-arguments) * [示例](#examples) |  
 | --- | --- |  

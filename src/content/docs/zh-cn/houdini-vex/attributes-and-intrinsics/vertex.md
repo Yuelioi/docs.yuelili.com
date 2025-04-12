@@ -1,5 +1,5 @@
 ---
-title: 顶点
+title: vertex
 order: 77
 ---
 

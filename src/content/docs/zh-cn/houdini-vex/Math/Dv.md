@@ -1,5 +1,5 @@
 ---
-title: Dv
+title: dv
 order: 2
 ---
 `float  Dv(float n, ...)`

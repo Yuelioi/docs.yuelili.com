@@ -1,5 +1,5 @@
 ---
-title: 邻近点函数
+title: neighbours
 order: 16
 ---
 

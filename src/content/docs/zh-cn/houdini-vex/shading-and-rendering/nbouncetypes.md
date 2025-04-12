@@ -1,5 +1,5 @@
 ---
-title: 反弹类型数量
+title: nbouncetypes
 order: 54
 ---
 

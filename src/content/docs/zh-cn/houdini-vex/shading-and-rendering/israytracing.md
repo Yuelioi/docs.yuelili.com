@@ -1,5 +1,5 @@
 ---
-title: israytracing（是否光线追踪）
+title: israytracing
 order: 44
 ---
 

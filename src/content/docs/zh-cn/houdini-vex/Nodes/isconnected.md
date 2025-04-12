@@ -1,5 +1,5 @@
 ---
-title: 是否连接
+title: isconnected
 order: 24
 ---
 | 上下文 | [chop](../contexts/chop.html)  [cop2](../contexts/cop2.html)  [sop](../contexts/sop.html) |

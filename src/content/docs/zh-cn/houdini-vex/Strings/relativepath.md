@@ -1,5 +1,5 @@
 ---
-title: 相对路径
+title: relativepath
 order: 29
 ---
 `string  relativepath(string src, string dest)`

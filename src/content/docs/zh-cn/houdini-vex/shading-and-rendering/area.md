@@ -1,5 +1,5 @@
 ---
-title: 面积函数
+title: area
 order: 1
 ---
 

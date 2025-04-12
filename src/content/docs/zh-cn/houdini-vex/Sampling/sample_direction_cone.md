@@ -1,5 +1,5 @@
 ---
-title: 采样方向锥
+title: sample_direction_cone
 order: 13
 ---
 `vector  sample_direction_cone(vector center, float maxangle, vector2 u)`

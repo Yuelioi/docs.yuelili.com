@@ -1,5 +1,5 @@
 ---
-title: endswith（以...结尾）
+title: endswith
 order: 12
 ---
 `int  endswith(string haystack, string needle)`

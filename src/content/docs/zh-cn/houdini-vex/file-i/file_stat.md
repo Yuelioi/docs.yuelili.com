@@ -1,7 +1,8 @@
----  
-title: file_stat  
-order: 1  
----  
+---
+title: file_stat
+order: 1
+---
+  
 
 | 本页内容 | * [更优的file_stat函数](#better) * [示例](#examples) |  
 | --- | --- |  

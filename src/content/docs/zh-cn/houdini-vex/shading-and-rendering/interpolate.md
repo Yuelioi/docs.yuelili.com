@@ -1,5 +1,5 @@
 ---
-title: 插值
+title: interpolate
 order: 39
 ---
 `float  interpolate(float val, float sx, float sy)`

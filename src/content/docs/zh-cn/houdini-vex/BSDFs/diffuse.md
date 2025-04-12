@@ -1,5 +1,5 @@
 ---
-title: 漫反射
+title: diffuse
 order: 8
 ---
 ![](../_static/rendering/diffuse.png)

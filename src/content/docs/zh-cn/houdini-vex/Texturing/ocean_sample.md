@@ -1,5 +1,5 @@
 ---
-title: 海洋采样
+title: ocean_sample
 order: 7
 ---
 `vector  ocean_sample(string geometry, int phase, int frequency, int amplitude, float hscale, float time, int mode, int downsample, vector pos)`

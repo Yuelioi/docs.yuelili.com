@@ -1,5 +1,5 @@
 ---
-title: 法线平面名称
+title: normalname
 order: 31
 ---
 | 上下文 | [cop2](../contexts/cop2.html) |

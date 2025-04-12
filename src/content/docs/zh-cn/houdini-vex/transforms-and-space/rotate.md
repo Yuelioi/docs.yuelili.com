@@ -1,5 +1,5 @@
 ---
-title: 旋转
+title: rotate
 order: 21
 ---
 `void  rotate(matrix2 &m, float amount)`

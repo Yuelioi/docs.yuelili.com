@@ -1,5 +1,5 @@
 ---
-title: 元球步进
+title: metamarch
 order: 2
 ---
 `int  metamarch(int &index, string filename, vector &p0, vector &p1, float displace_bound)`

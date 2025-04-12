@@ -1,5 +1,5 @@
 ---
-title: 漫反射BRDF
+title: diffusebrdf
 order: 5
 ---
 `float  diffuseBRDF(vector L, vector N)`

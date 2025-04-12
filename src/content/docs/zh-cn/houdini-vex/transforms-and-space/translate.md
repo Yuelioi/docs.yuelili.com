@@ -1,5 +1,5 @@
 ---
-title: 平移
+title: translate
 order: 32
 ---
 `void  translate(matrix &m, vector amount)`

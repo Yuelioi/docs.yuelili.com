@@ -1,5 +1,5 @@
 ---
-title: 图元属性类型
+title: primattribtype
 order: 49
 ---
 `int  primattribtype(<geometry>geometry, string attribute_name)`

@@ -1,5 +1,5 @@
 ---
-title: 二面角
+title: dihedral
 order: 1
 ---
 

@@ -1,7 +1,8 @@
----  
-title: addvertex  
-order: 3  
----  
+---
+title: addvertex
+order: 3
+---
+  
 
 `int  addvertex(int geohandle, int prim_num, int point_num)`  
 

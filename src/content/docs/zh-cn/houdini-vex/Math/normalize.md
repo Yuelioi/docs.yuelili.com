@@ -1,5 +1,5 @@
 ---
-title: 归一化
+title: normalize
 order: 49
 ---
 `<vector> normalize(<vector>v)`

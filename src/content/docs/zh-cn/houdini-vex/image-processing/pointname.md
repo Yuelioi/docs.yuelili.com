@@ -1,5 +1,5 @@
 ---
-title: 点名称
+title: pointname
 order: 35
 ---
 | 上下文 | [cop2](../contexts/cop2.html) |

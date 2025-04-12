@@ -1,5 +1,5 @@
 ---
-title: 半透明材质
+title: translucent
 order: 78
 ---
 `bsdf  translucent(vector nml, vector ng, ...)`

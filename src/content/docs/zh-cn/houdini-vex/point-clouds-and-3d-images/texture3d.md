@@ -1,5 +1,5 @@
 ---
-title: 3D纹理
+title: texture3d
 order: 36
 ---
 `<type> texture3d(string filename, string channel, vector P, ...)`

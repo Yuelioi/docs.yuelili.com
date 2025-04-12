@@ -1,5 +1,5 @@
 ---
-title: 距离计算
+title: distance
 order: 1
 ---
 `float  distance(vector2 a, vector2 b)`

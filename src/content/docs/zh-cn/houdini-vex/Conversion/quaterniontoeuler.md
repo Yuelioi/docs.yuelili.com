@@ -1,5 +1,5 @@
 ---
-title: 四元数转欧拉角
+title: quaterniontoeuler
 order: 8
 ---
 | 版本 | 17.0 |

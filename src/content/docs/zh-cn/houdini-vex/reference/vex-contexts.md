@@ -1,7 +1,8 @@
----  
-title: VEX上下文  
-order: 2  
----  
+---
+title: vex contexts
+order: 2
+---
+  
 
 与C或C++不同，VEX需要针对不同的"上下文"编写程序。这些上下文定义了函数的使用方式。  
 
