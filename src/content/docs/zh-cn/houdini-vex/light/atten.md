@@ -1,7 +1,8 @@
 ---
-title: atten
+title: 衰减
 order: 2
 ---
+
 `float  atten(float attenuation, float distance)`
 
-Computes attenuated falloff. This is equivalent to  `attenuation / (attenuation + distance)`.
+计算衰减衰减值。等价于 `attenuation / (attenuation + distance)`。

@@ -2,8 +2,9 @@
 title: removedetailattrib
 order: 56
 ---
-If you don’t know the class of attribute until runtime, use [removeattrib](removeattrib.html "Removes an attribute or group from the geometry.").
 
-`int  removedetailattrib(int geohandle, string name)`
+如果在运行时才能确定属性的类别，请使用[removeattrib](removeattrib.html "从几何体中移除属性或属性组")。
 
-Removes a detail attribute from the given geometry.
+`int removedetailattrib(int geohandle, string name)`
+
+从给定的几何体中移除一个细节属性。

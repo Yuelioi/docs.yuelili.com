@@ -1,9 +1,10 @@
 ---
-title: removevertexgroup
+title: 移除顶点组
 order: 62
 ---
-If you don’t know the class of group until runtime, use [removeattrib](removeattrib.html "Removes an attribute or group from the geometry.").
+
+如果在运行时之前不知道组的类别，请使用[removeattrib](removeattrib.html "从几何体中移除属性或组")。
 
 `int  removevertexgroup(int geohandle, string name)`
 
-Removes a vertex group from the given geometry.
+从给定的几何体中移除一个顶点组。

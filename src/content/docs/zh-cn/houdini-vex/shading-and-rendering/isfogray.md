@@ -2,13 +2,11 @@
 title: isfogray
 order: 42
 ---
-| Context(s) | [light](../contexts/light.html)  [shadow](../contexts/shadow.html) |
+| 上下文环境 | [light](../contexts/light.html)  [shadow](../contexts/shadow.html) |
 | --- | --- |
 
 `int  isfogray()`
 
-Returns 1 if the shader is being called to evaluate illumination for fog
-objects, or 0 if the light or shadow shader is being called to evaluate
-surface illumination.
+当着色器被调用来计算雾对象的照明时返回1，当被调用来计算表面照明（光线或阴影着色器）时返回0。
 
-Use this function to simplify light shaders when evaluating for fog.
+该函数可用于简化针对雾效计算的灯光着色器。

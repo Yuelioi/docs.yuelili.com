@@ -2,114 +2,112 @@
 title: chattr
 order: 2
 ---
-| Context(s) | [chop](../contexts/chop.html) |
+
+| 上下文 | [chop](../contexts/chop.html) |
 | --- | --- |
 
 `<type> chattr(string attrname, int &success)`
 
 `<type> chattr(int opinput, string attrname, int &success)`
 
-Get the value of a clip-level attribute.
-The version without `opinput` assumes the first input (0).
+获取剪辑级别属性的值。
+不带`opinput`参数的版本默认使用第一个输入(0)。
 
 `<type> chattr(string attrname, int channel, int &success)`
 
 `<type> chattr(int opinput, string attrname, int channel, int &success)`
 
-Get the value of a channel-level attribute.
-The version without `opinput` assumes the first input (0).
+获取通道级别属性的值。
+不带`opinput`参数的版本默认使用第一个输入(0)。
 
 `<type> chattr(string attrname, int channel, int sample, int &success)`
 
 `<type> chattr(int opinput, string attrname, int channel, int sample, int &success)`
 
-Get the value of an attribute.
-The function guesses the attribute class from the other arguments.
-The version without `opinput` assumes the first input (0).
+获取属性的值。
+函数会根据其他参数猜测属性类别。
+不带`opinput`参数的版本默认使用第一个输入(0)。
 
 `<type> chattr(string attrclass, string attrname, int channel, int sample, int &success)`
 
 `<type> chattr(int opinput, string attribclass, string attrname, int channel, int sample, int &success)`
 
-Get the value of an attribute of a specific class.
-The version without `opinput` assumes the first input (0).
+获取特定类别属性的值。
+不带`opinput`参数的版本默认使用第一个输入(0)。
 
-CHOP attributes store metadata on clips, channels, samples, or channel/sample pairs.
+CHOP属性存储有关剪辑、通道、样本或通道/样本对的元数据。
 
-This function reads the value of a CHOP attribute. Use [chsetattr](chsetattr.html "Sets the value of a CHOP attribute.") to set CHOP attributes.
+此函数用于读取CHOP属性的值。使用[chsetattr](chsetattr.html "设置CHOP属性的值。")来设置CHOP属性。
 
 `opinput`
 
-The input number to read from, starting from 0. For example, the first input is 0, the second input is 1, and so on.
+要读取的输入编号，从0开始。例如，第一个输入是0，第二个输入是1，依此类推。
 
 `attribclass`
 
-The “level” of the attribute:
+属性的"级别":
 
 `"clip"`
 
-An attribute on a whole clip.
+整个剪辑的属性。
 
 `"channel"`
 
-An attribute on a whole channel.
+整个通道的属性。
 
 `"sample"`
 
-An attribute on a sample (across all channels).
+样本(跨所有通道)的属性。
 
 `"channelsample"`
 
-An attribute on a specific channel/sample pair.
+特定通道/样本对的属性。
 
 `""`
 
-Pass an empty string to have the function figure out the class based on the other arguments.
+传递空字符串让函数根据其他参数推断类别。
 
-Signatures that don’t have this parameter act the same as if you passed the empty string.
+没有此参数的签名与传递空字符串的行为相同。
 
 `attrname`
 
-The name of the attribute to read.
+要读取的属性名称。
 
 `channel`
 
-When reading a `channel` or `channelsample` attribute, this is the index of the channel.
-If you are reading a `clip` or `sample` attribute, use `-1` here.
+读取`channel`或`channelsample`属性时，这是通道的索引。
+如果读取`clip`或`sample`属性，请在此处使用`-1`。
 
 `sample`
 
-When reading a `sample` or `channelsample` attribute, this is the sample number.
-If you are reading a `clip` or `channel` attribute, use `-1` here.
+读取`sample`或`channelsample`属性时，这是样本编号。
+如果读取`clip`或`channel`属性，请在此处使用`-1`。
 
 `success`
 
-If the given attribute exists and can be read, the function sets this variable to `1`. Otherwise, it sets this variable to `0`.
+如果给定属性存在且可读，函数将此变量设置为`1`。否则设置为`0`。
 
-Returns
+返回值
 
-The value of the attribute.
+属性的值。
 
-Examples
+## 示例
 
-## examples
-
-Read the “export” attribute on a channel
+读取通道上的"export"属性
 
 ```vex
 int success = 0
 int input = 0;
 string attrname = "export";
 string attrclass = "channel";
-int channel = 0; // Or use C global variable for current channel index.
-int sample = -1; // Or use I global variable for current sample index.
+int channel = 0; // 或使用C全局变量表示当前通道索引
+int sample = -1; // 或使用I全局变量表示当前样本索引
 string s = chattr(input, attrname, attrclass, channel, sample, success )
 if (success) {
-    // Do something with s
+    // 对s进行处理
     printf("s=%s\n", s);
 } else {
-    // Couldn't read attribute, usually because an attribute with that
-    // name doesn't exist
+    // 无法读取属性，通常是因为该名称的属性不存在
 }
 
 ```

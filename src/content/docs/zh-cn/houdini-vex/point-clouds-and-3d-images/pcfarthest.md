@@ -4,6 +4,4 @@ order: 9
 ---
 `float  pcfarthest(int handle)`
 
-Returns the distance to the farthest point found in the search performed
-by pcopen. If no points were found, the function will return a very
-large value (1.0×10^37)
+返回由 pcopen 执行的搜索中找到的最远点的距离。如果未找到任何点，该函数将返回一个极大值（1.0×10^37）。

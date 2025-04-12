@@ -10,24 +10,18 @@ order: 25
 
 `vector4  nrandom(...)`
 
-Returns a random number between 0 and 1, or a random unit vector.
+返回一个0到1之间的随机数，或一个随机单位向量。
 
 `void  nrandom(float &x, float &y, ...)`
 
-Overwrites the given variables with random numbers between 0 and 1.
+用0到1之间的随机数覆盖给定的变量。
 
-These random generators will generate the same sequence of random numbers if called in precisely the same order. However, there is no seed involved so it is not possible to reproduce the same random number or sequence multiple times.
+这些随机数生成器如果以完全相同的顺序调用，将会生成相同的随机数序列。但由于不涉及种子值，因此无法多次重现相同的随机数或序列。
 
 `…`
 
-You can optionally specify a string argument to choose the random number
-generation method. The string may be one of:
+您可以选择性地指定一个字符串参数来选择随机数生成方法。该字符串可以是以下之一：
 
-- `default`: Efficient random number generation. This method is backward
-  compatible with previous releases of Houdini.
-- `mersenne` or `twister`: Uses the Mersenne Twister which has some very
-  nice properties. This code is based of the work of: Copyright (C) 1997
-- 2002, Makoto Matsumoto and Takuji Nishimura, All rights reserved.
-- `qstrat`: Uses a quasi-stratified random number generator. This tends
-  to distribute the random numbers evenly, reducing clumping and
-  spacing.
+- `default`：高效的随机数生成。此方法与Houdini先前版本保持向后兼容。
+- `mersenne` 或 `twister`：使用具有优良特性的梅森旋转算法。该代码基于Makoto Matsumoto和Takuji Nishimura 1997-2002年的工作，保留所有权利。
+- `qstrat`：使用准分层随机数生成器。这种方法倾向于均匀分布随机数，减少聚集和间距问题。

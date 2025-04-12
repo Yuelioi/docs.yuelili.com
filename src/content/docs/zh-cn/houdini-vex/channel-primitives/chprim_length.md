@@ -4,12 +4,12 @@ order: 9
 ---
 `float  chprim_length(<geometry>geometry, int prim)`
 
-Returns the length in seconds of a channel primitive.
+返回通道基元的长度（以秒为单位）。
 
 `geohandle`
 
-A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](geoself.html "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
+要写入的几何体句柄。目前唯一有效的值是 `0` 或 [geoself](geoself.html "返回当前几何体的句柄。")，表示节点中的当前几何体。（此参数未来可能用于允许写入其他几何体。）
 
 `prim`
 
-The primitive number of the channel primitive.
+通道基元的基元编号。

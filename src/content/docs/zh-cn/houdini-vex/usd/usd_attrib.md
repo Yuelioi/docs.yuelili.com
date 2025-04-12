@@ -2,7 +2,7 @@
 title: usd_attrib
 order: 16
 ---
-| Since | 17.5 |
+| 始于版本 | 17.5 |
 | --- | --- |
 
 `<type> usd_attrib(<stage>stage, string primpath, string name)`
@@ -13,40 +13,38 @@ order: 16
 
 `<type>[] usd_attrib(<stage>stage, string primpath, string name, float timecode)`
 
-This function returns a value of a given attribute on a given primitive.
+该函数返回指定图元上给定属性的值。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取对应输入的场景。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+也可以使用此参数引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已处理场景（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+图元路径。
 
 `name`
 
-Attribute name.
+属性名称。
 
 `timecode`
 
-The USD time code at which to evaluate the attribute. A USD time code roughly corresponds to a frame in Houdini. If not given, the time code corresponding to the current frame is used.
+用于评估属性的USD时间码。USD时间码大致对应于Houdini中的帧数。若未指定，则使用当前帧对应的时间码。
 
-Returns
+返回值
 
-The value of an existing attribute, or zero/empty value if the attribute does not exist. Use [usd_isattrib](usd_isattrib.html "Checks if the primitive has an attribute by the given name.") if you want to check whether the attribute exists.
+返回现有属性的值，若属性不存在则返回零值/空值。如需检查属性是否存在，请使用[usd_isattrib](usd_isattrib.html "检查指定名称的属性是否存在于图元上")。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the value of some attributes on the cube primitive.
+// 获取立方体图元上某些属性的值
 float a = usd_attrib("opinput:0", "/geo/cube", "attribute_name_a");
 vector b[] = usd_attrib(0, "/geo/cube", "attribute_name_b");
 
-// Get the value of attribute "bar" at various time codes.
+// 获取不同时间码下"bar"属性的值
 f[]@b_at_current_frame = usd_attrib(0, "/geo/sphere", "bar");
 f[]@b_at_frame_7       = usd_attrib(0, "/geo/sphere", "bar", 7.0);
 

@@ -1,14 +1,11 @@
 ---
-title: specularBRDF
+title: 镜面反射BRDF
 order: 74
 ---
+
 `float  specularBRDF(vector L, vector N, vector V, float rough)`
 
-`specularBRDF`, [phongBRDF](phongBRDF.html), [blinnBRDF](blinnBRDF.html),
-and [diffuseBRDF](diffuseBRDF.html) return the computed BRDF for the
-different lighting models used in VEX shading. You can use them in
-custom [illuminance](illuminance.html "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables.") loops to replicate the lighting models of the
-corresponding VEX lighting functions.
+`specularBRDF`、[phongBRDF](phongBRDF.html)、[blinnBRDF](blinnBRDF.html)和[diffuseBRDF](diffuseBRDF.html)函数用于返回VEX着色中不同光照模型计算的BRDF值。您可以在自定义的[illuminance](illuminance.html "遍历场景中所有光源，为每个光源调用光照着色器来设置Cl和L全局变量。")循环中使用这些函数，以复现对应VEX光照函数的光照模型。
 
 ```vex
 vector nn = normalize(frontface(N, I));
@@ -19,5 +16,4 @@ illuminance(P, nn)
     vector ll = normalize(L);
     Cf += Cl * (specularBRDF(ll, nn, ii, rough) + diffuseBRDF(ll, nn));
 }
-
 ```

@@ -1,364 +1,315 @@
 ---
-title: Vex compiler (vcc)
-order: 8
----
-| On this page | * [Command-line options](#command-line-options)   + [Compiler options](#compiler-options)  + [Preprocessor options](#preprocessor-options)  + [Diagnostic options](#diagnostic-options)  + [VEX Context options](#vex-context-options)  + [Asset options](#otl)  + [Dialog Script options](#ds) * [Pre-processor](#pre-processor)   + [Predefined macros](#predefined-macros) |
-| --- | --- |
-The `vcc` compiler compiles VEX source code into a form executable by
-Houdini. The VEX compiler (vcc) is capable of compiling VEX code,
-generating dialog scripts for VEX functions, and also giving quick help
-by listing the global variables and functions available in any given context.
-Command-line options
+title: VEX编译器(vcc)  
+order: 8  
+---  
 
-## command-line-options
+| 本页内容 | * [命令行选项](#command-line-options)  
+  + [编译器选项](#compiler-options)  
+  + [预处理器选项](#preprocessor-options)  
+  + [诊断选项](#diagnostic-options)  
+  + [VEX上下文选项](#vex-context-options)  
+  + [资产选项](#otl)  
+  + [对话框脚本选项](#ds)  
+* [预处理器](#pre-processor)  
+  + [预定义宏](#predefined-macros) |  
+| --- | --- |  
 
-Note
+`vcc`编译器将VEX源代码编译成Houdini可执行的形式。VEX编译器(vcc)能够编译VEX代码、为VEX函数生成对话框脚本，并通过列出任何给定上下文中可用的全局变量和函数来提供快速帮助。  
 
-Most options have a short and a long form. The long form is shown in
-square brackets after the short form.
+## 命令行选项  
 
-`-h [--help]`
+### command-line-options  
 
-Show help message for the compiler.
+注意  
 
-### Compiler options
+大多数选项都有短格式和长格式。长格式显示在短格式后的方括号中。  
 
-compiler-options
+`-h [--help]`  
 
-`-o [--vex-output] [file|-]`
+显示编译器帮助信息。  
 
-Specify that a VEX code output is required. If the filename given
-is 'stdout', then the output will be printed to the console.
-If none of `--hda-output`, `--otl-output`, or `--ds-output` are specified, this
-option is implied. By default the output filename is constructed from the
-context function. If no context function is defined, then the input
-filename is used as a base. If multiple input files are given, then the
-filename argument will be ignored, and the output filename constructed
-from the aforementioned rules.
+### 编译器选项  
 
-`-d [--compile-all]`
+compiler-options  
 
-Compile all functions into the VEX code, even if they're not used by the
-context function, either directly or indirectly. This option is useful for
-doing syntax checking on include files.
+`-o [--vex-output] [file|-]`  
 
-`-z [--no-optimize]`
+指定需要VEX代码输出。如果给定的文件名是'stdout'，则输出将打印到控制台。如果未指定`--hda-output`、`--otl-output`或`--ds-output`，则默认启用此选项。默认情况下，输出文件名根据上下文函数构造。如果未定义上下文函数，则使用输入文件名作为基础。如果给出多个输入文件，则忽略文件名参数，并根据上述规则构造输出文件名。  
 
-Generate unoptimized VEX code.
+`-d [--compile-all]`  
 
-`-V [--no-version-id]`
+将所有函数编译到VEX代码中，即使它们未被上下文函数直接或间接使用。此选项对检查包含文件的语法很有用。  
 
-Don’t embed a Houdini version identifier in the VEX code.
+`-z [--no-optimize]`  
 
-### Preprocessor options
+生成未优化的VEX代码。  
 
-preprocessor-options
+`-V [--no-version-id]`  
 
-`-E [--parse-only]`
+不在VEX代码中嵌入Houdini版本标识符。  
 
-Only parse the input files to the standard output. No compilation will take
-place.
+### 预处理器选项  
 
-`-D [--define] name[=value]`
+preprocessor-options  
 
-Define a macro for the pre-processor. If no value is given with the
-name, the name is defined as 1.
+`-E [--parse-only]`  
 
-`-I [--include-dir] path`
+仅将输入文件解析到标准输出。不进行编译。  
 
-Add the path specified to the include path (the list of directories
-search for files referenced by the `#include` directive to the
-pre-processor). The standard Houdini include path is under
-`vex/include`.
+`-D [--define] name[=value]`  
 
-### Diagnostic options
+为预处理器定义一个宏。如果未给出值，则名称定义为1。  
 
-diagnostic-options
+`-I [--include-dir] path`  
 
-`-w id[,id...]`
+将指定路径添加到包含路径（预处理器搜索`#include`指令引用文件的目录列表）。标准Houdini包含路径位于`vex/include`下。  
 
-Suppress printing of certain warnings and information messages.
-wlist is a comma-separated list of warning numbers to suppress.
+### 诊断选项  
 
-`-F [--Werror]`
+diagnostic-options  
 
-Treat all non-suppressed warnings as errors.
+`-w id[,id...]`  
 
-`-e [--Werror-output] file`
+禁止打印某些警告和信息消息。wlist是逗号分隔的警告编号列表。  
 
-Redirect all diagnostic output to the filename given, rather than print
-them to the standard error output.
+`-F [--Werror]`  
 
-`-q [--Wno-info]`
+将所有未禁止的警告视为错误。  
 
-Suppress informational messages.
+`-e [--Werror-output] file`  
 
-`-Q [--Werror-only]`
+将所有诊断输出重定向到给定的文件名，而不是打印到标准错误输出。  
 
-Suppress informational and warning messages. Overrides `--Wno-info`.
+`-q [--Wno-info]`  
 
-`--fmessage-limit <N>`
+禁止信息消息。  
 
-Set a maximum number of messages that will be printed before stopping.
-Set to 0 (the default) for no limit.
+`-Q [--Werror-only]`  
 
-### VEX Context options
+禁止信息和警告消息。覆盖`--Wno-info`。  
 
-vex-context-options
+`--fmessage-limit <N>`  
 
-`-c [--context] name`
+设置打印消息的最大数量，超过后将停止。设置为0（默认值）表示无限制。  
 
-If no context function is defined, this can be used to specify which
-VEX context to use when compiling the source(s).
+### VEX上下文选项  
 
-`-X [--list-context] context`
+vex-context-options  
 
-Print out global variables and function signatures defined for the given
-VEX context. The argument value of `contexts` can be used to list all
-available VEX contexts.
+`-c [--context] name`  
 
-### Asset options
+如果未定义上下文函数，此选项可用于指定编译源文件时使用的VEX上下文。  
 
-otl
+`-X [--list-context] context`  
 
-`-L [--hda-append] [file|-]`
+打印给定VEX上下文中定义的全局变量和函数签名。参数值`contexts`可用于列出所有可用的VEX上下文。  
 
-Append a digital asset generated from the VEX source to the specified operator type library file. If the file doesn’t exist, it will be created.
+### 资产选项  
 
-`-l [--hda-output] [file|-]`
+otl  
 
-Write a digital asset definition for the context function to the specified operator type library file. If the library file already exists, it will be overwritten.
+`-L [--hda-append] [file|-]`  
 
-`-K [--hda-vex-section] name`
+将VEX源生成的数字资产附加到指定的操作符类型库文件。如果文件不存在，将创建该文件。  
 
-Store the generated VEX code in the given section name in the HDA, rather
-than the standard section name for the given VEX context.
+`-l [--hda-output] [file|-]`  
 
-`-a [--hda-dialog-script] file`
+将上下文函数的数字资产定义写入指定的操作符类型库文件。如果库文件已存在，将被覆盖。  
 
-Use the parameter definitions in the given file instead of the ones
-automatically generated from the VEX source. The dialog script’s operator
-definition will still be taken from the VEX source.
+`-K [--hda-vex-section] name`  
 
-`-U [--hda-dialog-script-only]`
+将生成的VEX代码存储在HDA中的给定节名称中，而不是给定VEX上下文的标准节名称中。  
 
-Only embed the dialog script into the OTL. No VEX code will be added.
+`-a [--hda-dialog-script] file`  
 
-`-n [--op-name] name`
+使用给定文件中的参数定义，而不是从VEX源自动生成的参数定义。对话框脚本的操作符定义仍将取自VEX源。  
 
-Use the given name as the name for the operator. This overrides any
-[`#pragma opname`](pragmas.html#opname) statement in the code.
+`-U [--hda-dialog-script-only]`  
 
-`-S [--op-script-name] name`
+仅将对话框脚本嵌入到OTL中。不添加VEX代码。  
 
-Use the given name as the script name for the operator. This overrides any
-[`#pragma opscript`](pragmas.html#opscript) statement in the code.
+`-n [--op-name] name`  
 
-`-N [--op-label] name`
+使用给定名称作为操作符的名称。覆盖代码中的任何[`#pragma opname`](pragmas.html#opname)语句。  
 
-Use the given name as the UI label for the operator. This overides any
-[`#pragma oplabel`](pragmas.html#opname) statement in the code.
+`-S [--op-script-name] name`  
 
-`-C [--op-icon] name`
+使用给定名称作为操作符的脚本名称。覆盖代码中的任何[`#pragma opscript`](pragmas.html#opscript)语句。  
 
-Use the given name as the icon to use for the operator. This overides any
-[`#pragma opicon`](pragmas.html#opicon) statement in the code.
+`-N [--op-label] name`  
 
-`-t [--op-min-inputs] N`
+使用给定名称作为操作符的UI标签。覆盖代码中的任何[`#pragma oplabel`](pragmas.html#opname)语句。  
 
-Set the minimum number of inputs for the operator. This overides any
-[`#pragma opmininputs`](pragmas.html#opinputs) statement in the code. The minimum
-input value will be adjusted to fit the operator type being generated.
+`-C [--op-icon] name`  
 
-`-T [--op-max-inputs] N`
+使用给定名称作为操作符的图标。覆盖代码中的任何[`#pragma opicon`](pragmas.html#opicon)语句。  
 
-Set the maximum number of inputs for the operator. This overides any
-[`#pragma opmaxinputs`](pragmas.html#opinputs) statement in the code. The maximum
-input value will be adjusted to fit the operator type being generated.
+`-t [--op-min-inputs] N`  
 
-### Dialog Script options
+设置操作符的最小输入数。覆盖代码中的任何[`#pragma opmininputs`](pragmas.html#opinputs)语句。最小输入值将调整为适合生成的操作符类型。  
 
-ds
+`-T [--op-max-inputs] N`  
 
-`-u [--ds-output] [file|-]`
+设置操作符的最大输入数。覆盖代码中的任何[`#pragma opmaxinputs`](pragmas.html#opinputs)语句。最大输入值将调整为适合生成的操作符类型。  
 
-Write a dialog script to the filename given. As with `--vex-output` and
-`--hda-output`, if multiple input files are given, then the filename given
-is ignored and the output filename automatically constructed from either
-the context function name, or the input filename, if no context function is
-defined.
+### 对话框脚本选项  
 
-Pre-processor
+ds  
 
-## pre-processor
+`-u [--ds-output] [file|-]`  
 
-The compiler has a pre-processor which strips comments, reads include files,
-and expands macros.
+将对话框脚本写入给定的文件名。与`--vex-output`和`--hda-output`一样，如果给出多个输入文件，则忽略给定的文件名，并根据上下文函数名称或输入文件名（如果未定义上下文函数）自动构造输出文件名。  
 
-The pre-processor supports many of the usual C Pre-Processor
-directives:
+## 预处理器  
 
-`#define name token-string`
+pre-processor  
 
-Replace subsequent uses of name with token-string.
+编译器有一个预处理器，用于删除注释、读取包含文件并扩展宏。  
 
-`#define name(arg,...,arg) token-string`
+预处理器支持许多常见的C预处理器指令：  
 
-Replace subsequent instances of name with token-string. Each
-argument to name is replaced in token-string during
-expansion.
+`#define name token-string`  
 
-`#undef name`
+将后续使用的name替换为token-string。  
 
-“Undefine” the macro so subsequent uses of name are not
-expanded.
+`#define name(arg,...,arg) token-string`  
 
-`#include "filename"`
+将后续的name实例替换为token-string。在扩展过程中，name的每个参数都会在token-string中被替换。  
 
-Inserts the contents of the file at this point in the source code.
-When you use quotes, the directory containing the current file is
-searched for filename before the standard locations (including
-the path).
+`#undef name`  
 
-`#sinclude "filename"`
+“取消定义”宏，以便后续使用的name不会被扩展。  
 
-Like `include` but silent (no warnings or errors when the file isn’t found).
+`#include "filename"`  
 
-`#includeall "filename"`
+在此处插入文件内容到源代码中。使用引号时，将在标准位置（包括路径）之前搜索包含当前文件的目录以查找filename。  
 
-Like `include` but scans the include search path, including all files found.
+`#sinclude "filename"`  
 
-`#ifdef name`
+类似于`include`，但静默（文件未找到时不显示警告或错误）。  
 
-The following lines until the next `#endif` or `else` directive will
-be compiled if and only if name is a defined macro.
+`#includeall "filename"`  
 
-`#ifndef name`
+类似于`include`，但扫描包含搜索路径，包括找到的所有文件。  
 
-The lines following will be compiled if and only if name is *not* a
-defined macro.
+`#ifdef name`  
 
-`#if constant-expr`
+如果name是已定义的宏，则编译以下行直到下一个`#endif`或`else`指令。  
 
-The following lines until the next `#endif` or `#else` directive
-will be compiled if and only if constant-expr evaluates to
-non-zero.
+`#ifndef name`  
 
-The expression can use the following operators:
+如果name不是已定义的宏，则编译以下行。  
 
-- Comparisons (`==`, `!=`, `<=`, `>=`, `<`, `>`)
-- Logical AND (`&&`), OR (`||`), and NOT (`!`).
-- Bitwise AND (`&`), OR (`|`), exclusive OR (`^`), and NOT (`~`).
-- Arithmetic (`+`, `-`, `*`, `/`, `%`).
-- Parentheses.
+`#if constant-expr`  
 
-The expression can also use the following functions:
+如果constant-expr计算结果为非零，则编译以下行直到下一个`#endif`或`#else`指令。  
 
-`defined(name)`
+表达式可以使用以下运算符：  
 
-Returns 1 if the name is a defined macro, or 0 if it is
-not.
+- 比较（`==`、`!=`、`<=`、`>=`、`<`、`>`）  
+- 逻辑AND（`&&`）、OR（`||`）和NOT（`!`）。  
+- 位AND（`&`）、OR（`|`）、异或（`^`）和NOT（`~`）。  
+- 算术（`+`、`-`、`*`、`/`、`%`）。  
+- 括号。  
 
-```vex
-#if defined(foo) && defined(fum)
+表达式还可以使用以下函数：  
 
-```
+`defined(name)`  
 
-`environment(name)`
+如果name是已定义的宏，则返回1，否则返回0。  
 
-Returns 1 if name is a defined environment variable.
+```vex  
+#if defined(foo) && defined(fum)  
 
-`access(filename)`
+```  
 
-Returns 1 if filename can be read by the application, or 0
-if the file cannot be read.
+`environment(name)`  
 
-```vex
-#if access("/etc/passwd")
-#include </etc/passwd>
-#endif
+如果name是已定义的环境变量，则返回1。  
 
-```
+`access(filename)`  
 
-`strcmp(str1, str2)`
+如果应用程序可以读取filename，则返回1，否则返回0。  
 
-Works the same as the C/C++ function of the same name, if the
-two strings have the same contents, the function returns 0. Each
-argument should be a quoted string or a macro that expands to a
-quoted string.
+```vex  
+#if access("/etc/passwd")  
+#include </etc/passwd>  
+#endif  
 
-```vex
-#define VALUE "foo"
-#if strcmp(VALUE, "bar") != 0
-This statement is false since "foo" != "bar"
-#endif
-#if !strcmp(VALUE, "foo")
-This statement is TRUE since strcmp("foo", "bar") == 0
-#endif
+```  
 
-```
+`strcmp(str1, str2)`  
 
-Expressions are evaluated from left to right (**unlike the ANSI C
-standard of right to left**). As with the ANSI pre-procssor, all
-numbers must be integers.
+功能与同名的C/C++函数相同，如果两个字符串内容相同，则函数返回0。每个参数应为引号字符串或扩展为引号字符串的宏。  
 
-`#else`
+```vex  
+#define VALUE "foo"  
+#if strcmp(VALUE, "bar") != 0  
+此语句为假，因为"foo" != "bar"  
+#endif  
+#if !strcmp(VALUE, "foo")  
+此语句为真，因为strcmp("foo", "bar") == 0  
+#endif  
 
-The following lines until the next `#endif` directive will be
-compiled if and only if the previous `#if` directive evaluated to
-zero.
+```  
 
-`#endif`
+表达式从左到右求值（**与ANSI C标准的从右到左不同**）。与ANSI预处理器一样，所有数字必须为整数。  
 
-Marks the end of a section of conditional code. Every test directive
-must have a matching `#endif`.
+`#else`  
 
-`#pragma ...`
+如果先前的`#if`指令计算结果为零，则编译以下行直到下一个`#endif`指令。  
 
-Specifies extended language features. See the [list of pragmas](pragmas.html).
+`#endif`  
 
-### Predefined macros
+标记条件代码段的结束。每个测试指令必须有一个匹配的`#endif`。  
 
-predefined-macros
-The following macros are pre-defined:
+`#pragma ...`  
 
-`__vex`
+指定扩展语言特性。参见[pragma列表](pragmas.html)。  
 
-This symbol is always defined. You can use this in an `if` pre-processor directive to check that the program is being compiled by vcc.
+### 预定义宏  
 
-`__vex_major`
+predefined-macros  
 
-The major version number of the compiler (Houdini version number).
+以下宏是预定义的：  
 
-`__vex_minor`
+`__vex`  
 
-The minor version number of the compiler (Houdini version number).
+此符号始终定义。可以在`if`预处理器指令中使用此符号来检查程序是否由vcc编译。  
 
-`__vex_build`
+`__vex_major`  
 
-The build version number of the compiler (Houdini version number).
+编译器的主版本号（Houdini版本号）。  
 
-`__vex_patch`
+`__vex_minor`  
 
-The patch version number of the compiler (Houdini version number).
+编译器的次版本号（Houdini版本号）。  
 
-`__LINE__`
+`__vex_build`  
 
-The current line number of the source file.
+编译器的构建版本号（Houdini版本号）。  
 
-`__FILE__`
+`__vex_patch`  
 
-The file being compiled.
+编译器的补丁版本号（Houdini版本号）。  
 
-`__DATE__`
+`__LINE__`  
 
-The current date (as a quoted string). Example: `"Dec 31 1999"`
+源文件的当前行号。  
 
-`__TIME__`
+`__FILE__`  
 
-The current time (as a quoted string). Example: `"23:59:59"`
+正在编译的文件。  
 
-```vex
-printf("Starting shader %s at %s", __FILE__, __DATE__);
+`__DATE__`  
+
+当前日期（作为引号字符串）。例如：`"Dec 31 1999"`  
+
+`__TIME__`  
+
+当前时间（作为引号字符串）。例如：`"23:59:59"`  
+
+```vex  
+printf("Starting shader %s at %s", __FILE__, __DATE__);  
 
 ```

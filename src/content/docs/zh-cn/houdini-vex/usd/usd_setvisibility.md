@@ -2,49 +2,47 @@
 title: usd_setvisibility
 order: 142
 ---
-| Since | 19.0 |
+| 始于版本 | 19.0 |
 | --- | --- |
 
 `int  usd_setvisibility(int stagehandle, string primpath, int code)`
 
-This function makes the primitive visible or invisible, or configures it to inherit the visibility from the parent.
+此函数用于设置图元可见性（显示/隐藏）或配置其继承父级可见性。
 
-Making a primitive visible may require changing the visibility state of its ancestors, while making it invisible or configuring it to inherit the visibility from the parent only requires setting its attribute.
+设置图元可见可能需要修改其祖先节点的可见状态，而设置不可见或配置继承父级可见性只需设置其属性即可。
 
-NOTE: This function is similar to `usd_setvisible()` which, is equivalent to calling this function with either visibility or invisibility code.
+注意：本函数与`usd_setvisible()`类似，后者等效于使用可见或不可见代码调用本函数。
 
 `stagehandle`
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+要写入的舞台句柄。当前唯一有效值为`0`，表示节点中的当前舞台。（此参数未来可能用于支持写入其他舞台）
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `code`
 
-A numeric code for visibility
+可见性数值代码：
 
-- 0 - make the primitive invisible
-- 1 - configure the primitive to be visible
-- 2 - mark the primitive to inherit visibility from the parent
+- 0 - 设置图元不可见
+- 1 - 设置图元可见
+- 2 - 标记图元继承父级可见性
 
-Note, these numeric codes are reflected as defines in the “usd.h” header file, as USD_VISIBILITY_INVISIBLE, USD_VISIBILITY_VISIBLE, and USD_VISIBILITY_INHERIT.
+注意：这些数值代码在"usd.h"头文件中定义为USD_VISIBILITY_INVISIBLE、USD_VISIBILITY_VISIBLE和USD_VISIBILITY_INHERIT。
 
-Returns
+返回值
 
-The value of `stagehandle` on success or `-1` on failure.
+成功时返回`stagehandle`值，失败时返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 #include <usd.h>
-// Make the sphere primitive visible.
+// 设置球体图元可见
 usd_setvisibility(0, "/geo/sphere", USD_VISIBILITY_VISIBLE);
 
-// Configure the cube primitive to inherit visibility from parent.
+// 配置立方体图元继承父级可见性
 usd_setvisibility(0, "/geo/cube", USD_VISIBILITY_INHERIT);
 
 ```

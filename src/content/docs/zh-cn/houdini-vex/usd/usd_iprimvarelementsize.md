@@ -7,38 +7,36 @@ order: 53
 
 `int  usd_iprimvarelementsize(<stage>stage, string primpath, string name)`
 
-This function returns the element size of a primvar found directly on the given primitive or inherited from primitive’s ancestor.
+此函数返回在指定图元上直接找到或从其祖先继承的primvar的元素大小。
 
-The primvar element size applies to array primvars, but it does not encode the length of the array. It specifies how many consecutive array elements should be taken as an atomic element to be interpolated over a gprim. So, on a mesh, array length relates to element size like this `array_length = element_size * face_count`.
+primvar元素大小适用于数组primvars，但它并不编码数组的长度。它指定应将多少个连续的数组元素作为一个原子元素在几何图元(gprim)上进行插值。因此，在网格上，数组长度与元素大小的关系如下：`数组长度 = 元素大小 * 面数`。
 
-In most cases, the element size is `1`.
+在大多数情况下，元素大小为`1`。
 
-Note, element size is a USD concept and differs from the VEX tuple size obtained with [usd_iprimvarsize](usd_iprimvarsize.html "Returns the tuple size of the primvar directly on the USD primitive or on USD primitive’s ancestor.") or the VEX array length obtained with [usd_iprimvarlen](usd_iprimvarlen.html "Returns the length of the array primvar directly on the USD primitive or on USD primitive’s ancestor.").
+请注意，元素大小是USD概念，不同于通过[usd_iprimvarsize](usd_iprimvarsize.html "返回USD图元或其祖先上primvar的元组大小")获取的VEX元组大小，也不同于通过[usd_iprimvarlen](usd_iprimvarlen.html "返回USD图元或其祖先上数组primvar的长度")获取的VEX数组长度。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文(如wrangle LOP)中运行时，此参数可以是表示输入编号(从0开始)的整数，用于从中读取stage。该整数等同于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件(例如"/path/to/file.usd")，或使用`op:`作为路径前缀引用另一个LOP节点的已处理stage(例如"op:/stage/lop_node")。
 
 `primpath`
 
-The path to the primitive.
+图元的路径。
 
 `name`
 
-Primvar name (without namespace).
+primvar名称(不带命名空间)。
 
-Returns
+返回值
 
-The primvar’s element size.
+primvar的元素大小。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the element size of a primvar on the cube primitive or its ancestor.
+// 获取立方体图元或其祖先上primvar的元素大小
 int element_size = usd_iprimvarelementsize(0, "/geo/cube", "primvar_name");
 
 ```

@@ -2,50 +2,48 @@
 title: usd_attribelement
 order: 17
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `<type> usd_attribelement(<stage>stage, string primpath, string name, int index)`
 
 `<type> usd_attribelement(<stage>stage, string primpath, string name, int index, float timecode)`
 
-This function returns a value of an element in given array attribute on a given primitive.
+该函数返回指定图元上给定数组属性中某个元素的值。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，此参数可以是表示输入编号的整数（从0开始），用于读取对应输入的舞台。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已计算舞台（例如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `name`
 
-Attribute name.
+属性名称。
 
 `index`
 
-The element index in the array attribute.
+数组属性中的元素索引。
 
 `timecode`
 
-The USD time code at which to evaluate the attribute. A USD time code roughly corresponds to a frame in Houdini. If not given, the time code corresponding to the current frame is used.
+评估属性时使用的USD时间码。USD时间码大致对应Houdini中的帧数。若未指定，则使用当前帧对应的时间码。
 
-Returns
+返回值
 
-The value of an element in an existing attribute, or zero/empty value if the attribute does not exist. Use [usd_isattrib](usd_isattrib.html "Checks if the primitive has an attribute by the given name.") if you want to check whether the attribute exists.
+返回现有属性中某个元素的值，若属性不存在则返回零/空值。如需检查属性是否存在，请使用[usd_isattrib](usd_isattrib.html "检查指定图元是否具有给定名称的属性")。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the value of an element at index 3 in the array attribute.
+// 获取数组属性中索引3处元素的值
 float a = usd_attribelement("opinput:0", "/geo/cube", "array_attrib_name", 3);
 
-// Get the value of an element at index 2 of the "bar" array attribute.
+// 获取"bar"数组属性中索引2处元素的值
 @b_element_2_at_current_frame = usd_attribelement(0, "/geo/sphere", "bar", 2);
 @b_element_2_at_frame_11      = usd_attribelement(0, "/geo/sphere", "bar", 2, 11.0);
 

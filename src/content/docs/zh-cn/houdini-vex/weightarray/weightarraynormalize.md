@@ -2,6 +2,6 @@
 title: weightarraynormalize
 order: 3
 ---
-If the sum of the input array is 0.0, the weights are still normalized and all set to the same value of 1.0 divided by the number of values.
+如果输入数组的和为0.0，权重仍会被归一化，所有值将被设置为相同值，即1.0除以数值的数量。
 
 `void  weightarraynormalize(float &weights[])`

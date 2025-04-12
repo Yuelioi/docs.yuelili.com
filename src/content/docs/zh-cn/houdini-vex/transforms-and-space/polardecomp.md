@@ -1,30 +1,30 @@
 ---
-title: polardecomp
+title: 极分解
 order: 16
 ---
 `matrix3  polardecomp(matrix3 transform)`
 
-Computes the stretch matrix (S) and the orthogonal matrix (Q) such that `M = S*Q`.
-This is very useful for shape matching or blending of transforms.
+计算伸缩矩阵(S)和正交矩阵(Q)，使得 `M = S*Q`。
+这对于形变匹配或变换混合非常有用。
 
 `transform`
 
-The matrix (M) to undergo polar decomposition.
+需要进行极分解的矩阵(M)。
 
-Returns
+返回值
 
-'Q', the orthogonal matrix that best matches the given transform.
+'Q'，即最匹配给定变换的正交矩阵。
 
 `void  polardecomp(matrix3 transform, matrix3 &rot, matrix3 &stretch, int check_determinant=1)`
 
 `&rot`
 
-Returns the orthogonal matrix of the polar decomposition.
+返回极分解的正交矩阵。
 
 `&stretch`
 
-Returns the stretch matrix of the polar decomposition.
+返回极分解的伸缩矩阵。
 
 `check_determinant`
 
-Whether or not to check if there is a negative determinant (scale). If there is and this is not set to 0, the orthogonal and scale matrices will be negated.
+是否检查负行列式(缩放)。如果存在负行列式且此参数未设置为0，正交矩阵和缩放矩阵将被取反。

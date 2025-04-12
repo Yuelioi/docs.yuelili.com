@@ -2,22 +2,20 @@
 title: sample_circle_slice
 order: 11
 ---
-`vector2  sample_circle_slice(vector2 center, float maxangle, vector2 u)`
+
+`vector2 sample_circle_slice(vector2 center, float maxangle, vector2 u)`
 
 `center`
 
-Direction in the center of the slice. This does not need to be normalized.
+切片中心的方向向量。该向量不需要进行归一化处理。
 
 `maxangle`
 
-Maximum angle, in radians, away from `center` that any sample of the slice
-will be, so long as all `u` values are between 0 and 1.
+最大角度（以弧度为单位），表示采样点与`center`方向的最大偏离角度。只要所有`u`值在0到1之间，采样点都不会超过这个角度范围。
 
 `u`
 
-Pair of numbers between 0 and 1.
+介于0到1之间的一对数值。
 
-Returns a vector2 of length \< 1, based on `u`.
-Given uniform random `u` pairs of values in `[0,1)`, the returned vectors will be
-uniform random and continuous with respect to `u` inside the unit circle,
-in the slice within `maxangle` of the direction indicated by `center`.
+返回一个长度小于1的vector2向量，基于输入参数`u`生成。
+当给定均匀分布在`[0,1)`区间内的随机`u`值对时，返回的向量将在单位圆内均匀随机分布，且在`center`方向指示的`maxangle`角度切片范围内，这些向量相对于`u`是连续的。

@@ -2,11 +2,9 @@
 title: relpath
 order: 30
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `string  relpath(string abspath)`
 
-Returns the supplied path converted to a relative path, expressed as
-relative to Houdini’s current working directory. The file does not need to
-exist.
+将提供的绝对路径转换为相对于Houdini当前工作目录的相对路径。该文件不需要实际存在。

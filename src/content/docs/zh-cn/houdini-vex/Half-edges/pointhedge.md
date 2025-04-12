@@ -8,32 +8,30 @@ order: 19
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `point`
 
-The point number in the geometry for the source point of the returned half-edge. `0` is the first point.
+几何体中作为返回半边源点的点编号。`0`表示第一个点。
 
 `srcpoint`, `dstpoint`
 
-The point numbers in the geometry for source and destination of returned half-edge. `0` is the first point.
+几何体中作为返回半边的源点和目标点的点编号。`0`表示第一个点。
 
-Returns
+返回值
 
-The number of a half-edge that has `point` as source or has `srcpoint` as source and `dstpoint` as destination.
-In the former case, using `op:pointhedgenext` one can enumerate over all the half-edges that have `point` as source.
-Returns `-1` if the half-edge is not valid.
+返回以`point`为源点，或以`srcpoint`为源点、`dstpoint`为目标点的半边编号。
+在前一种情况下，可以使用`op:pointhedgenext`枚举所有以`point`为源点的半边。
+如果半边无效则返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 int edge_count = 0;
 
-// Count number of *edges* (not half-edges) incident to point number 23.
+// 计算与23号点相连的*边*数（非半边）
 int hout = pointhedge("defgeo.bgeo", 23);
 while ( hout != -1 )
 {

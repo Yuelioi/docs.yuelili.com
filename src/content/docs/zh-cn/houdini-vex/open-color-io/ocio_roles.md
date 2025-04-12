@@ -4,4 +4,4 @@ order: 5
 ---
 `string [] ocio_roles()`
 
-Returns a list of names of the roles supported by Open Color IO in Houdini.
+返回Houdini中Open Color IO支持的角色名称列表。

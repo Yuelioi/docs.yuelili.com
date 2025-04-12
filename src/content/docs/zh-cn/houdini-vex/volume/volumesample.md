@@ -1,5 +1,5 @@
 ---
-title: volumesample
+title: volumesample（体积采样）
 order: 15
 ---
 `float  volumesample(<geometry>geometry, int primnum, vector pos)`
@@ -8,15 +8,15 @@ order: 15
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
-Returns
+返回值
 
-The volume primitive’s sampled value at the given position. Values between voxels will be trilinearly interpolated.
+在给定位置处体积图元的采样值。体素之间的值将进行三线性插值。
 
-Returns 0 if `primnum` or `inputnum` is out of range, the geometry is invalid, or the given primitive is not a volume or vdb primitive.
+如果`primnum`或`inputnum`超出范围、几何体无效，或给定图元不是体积或VDB图元，则返回0。
 
 ![](../_static/vex/volumesample.png)
-Example of interpolation of one and two dimensional data using `volumesample`. The visualized normal is computed using the `volumegradient` function.
+使用`volumesample`对一维和二维数据进行插值的示例。可视化法线是使用`volumegradient`函数计算的。

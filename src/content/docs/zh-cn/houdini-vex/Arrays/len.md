@@ -12,17 +12,15 @@ order: 7
 
 `int  len(dict d)`
 
-Returns the number of items/components in the given object. For an array, this is the number of items in the array. For a matrix or vector, this is the number of components.
+返回给定对象中元素/分量的数量。对于数组，返回数组中的元素数量；对于矩阵或向量，返回其分量数量。
 
-For a string, this returns the number of *bytes* (not characters).
+对于字符串，返回其*字节*数（而非字符数）。
 
-For a dictionary, this returns the number of keys in the dictionary.
+对于字典，返回字典中的键数量。
 
-Don’t confuse this function with [length](length.html "Returns the magnitude of a vector."), which returns the magnitude of a vector.
+注意不要将此函数与 [length](length.html "返回向量的模长") 混淆，后者用于返回向量的模长。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 len("hello") == 5;

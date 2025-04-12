@@ -1,5 +1,5 @@
 ---
-title: pcfind
+title: pcfind函数
 order: 11
 ---
 `int [] pcfind(<geometry>geometry, string Pchannel, vector P, float radius, int maxpoints)`
@@ -12,22 +12,21 @@ order: 11
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文(如wrangle SOP)中运行时，此参数可以是表示输入编号(从0开始)的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件(例如`.bgeo`)的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
-These functions open a geometry file and return a list of points with the location P within radius, based on point positions found in Pchannel. Only the maxpoints closest points within the given radius will be returned. The file name may use the `op:` syntax to reference SOP geometry in the OP contexts. The Pchannel parameter indicates the attribute which contains the positions to be searched.
+这些函数会打开几何文件，并基于Pchannel中的点位置，返回位置P在半径范围内的点列表。仅返回给定半径内最近的maxpoints个点。文件名可以使用`op:`语法来引用OP上下文中的SOP几何体。Pchannel参数指定包含要搜索位置的属性。
 
-The `ptgroup` is a point group that limits the points to search. This is a SOP-style group pattern, so can be something like `0-10` or `@Cd.x>0.5`. A blank string is treated as matching all points.
+`ptgroup`是限制搜索点的点组。这是SOP样式的组模式，因此可以是类似`0-10`或`@Cd.x>0.5`的内容。空字符串被视为匹配所有点。
 
-The function also optionally takes a float array `distances`, which it modifies with the distances to each point.
+该函数还可以选择性地接受一个浮点数组`distances`，并用每个点的距离修改它。
 
-The closest point is in entry 0 of the returned array, and the other points are sorted by increasing distance.
-Examples
+最近的点位于返回数组的第0个条目中，其他点按距离递增排序。
 
-## examples
+## 示例
 
-Performing a proximity query:
+执行邻近查询：
 
 ```vex
 int closept[] = pcfind(filename, "P", P, maxdistance, maxpoints);
@@ -38,5 +37,4 @@ foreach (int ptnum; closept)
     P += closepos;
 }
 P /= len(closept);
-
 ```

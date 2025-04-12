@@ -2,9 +2,9 @@
 title: chreadbuf
 order: 17
 ---
-| Context(s) | [chop](../contexts/chop.html) |
+| 上下文 | [chop](../contexts/chop.html) |
 | --- | --- |
 
 `float  chreadbuf(int index)`
 
-Returns the value of a CHOP context temporary buffer at the specified index.
+返回指定索引处CHOP上下文临时缓冲区的值。

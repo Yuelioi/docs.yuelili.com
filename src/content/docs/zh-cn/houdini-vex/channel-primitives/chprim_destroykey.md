@@ -4,16 +4,16 @@ order: 2
 ---
 `int  chprim_destroykey(int geohandle, int prim, float time)`
 
-This function removes a key from a channel primitive.
+此函数用于移除通道基元中的关键帧。
 
 `geohandle`
 
-Handle to the geometry to write to. `geoself()` can be used to get a handle to the current geometry.
+要写入的目标几何体的句柄。可使用`geoself()`获取当前几何体的句柄。
 
 `prim`
 
-The primitive number of the channel primitive to be modified.
+待修改通道基元的基元编号。
 
 `time`
 
-The time in seconds of the key to remove.
+要移除的关键帧时间（以秒为单位）。

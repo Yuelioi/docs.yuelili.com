@@ -2,12 +2,13 @@
 title: wo_space
 order: 38
 ---
-`matrix  wo_space()`
 
-In [shading contexts](../contexts/shading_contexts.html), this transforms the current position.
+`matrix  wo_space()`
 
-`vector  wo_space(vector pos)`
+在[着色上下文](../contexts/shading_contexts.html)中，此函数会转换当前位置。
 
-`vector4  wo_space(vector4 pos)`
+`vector  wo_space(vector pos)`
 
-Transforms a position value from *World* to *Object* space.
+`vector4 wo_space(vector4 pos)`
+
+将位置值从*世界*空间转换到*对象*空间。

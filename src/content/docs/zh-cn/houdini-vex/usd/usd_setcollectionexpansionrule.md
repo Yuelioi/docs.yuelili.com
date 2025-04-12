@@ -2,41 +2,39 @@
 title: usd_setcollectionexpansionrule
 order: 126
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `int  usd_setcollectionexpansionrule(int stagehandle, string collectionpath, string rule)`
 
-This function sets the expansion rule on the collection.
+此函数用于设置集合的扩展规则。
 
 `stagehandle`
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+要写入的舞台句柄。当前唯一有效值是`0`，表示节点中的当前舞台。（此参数未来可能用于支持写入其他舞台）
 
 `collectionpath`
 
-The path to the collection.
+集合的路径。
 
 `rule`
 
-The expansion rule to set on the collection.
+要为集合设置的扩展规则。
 
-USD supports a few standard expansion rules
+USD支持几种标准扩展规则：
 
-- `explicitOnly` - only paths in the include list and not in the exclude list belong to the collection
-- `expandPrims` - all the primitives at or below the includes (but not excludes) belong to the collection
-- `expanPrimsAndProperties` - like `expandPrims` but also includes properties of matched primitives
+- `explicitOnly` - 仅包含列表中且不在排除列表中的路径属于该集合
+- `expandPrims` - 包含路径及其下级的所有图元（不包括排除项）属于该集合
+- `expanPrimsAndProperties` - 类似`expandPrims`，但还包含匹配图元的属性
 
-Returns
+返回值
 
-The value of `stagehandle` on success or `-1` on failure.
+成功时返回`stagehandle`的值，失败时返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Set the expansion rule on the cube's collection.
+// 为立方体的集合设置扩展规则
 string collection_path = usd_makecollectionpath(0, "/geo/cube", "some_collection");
 usd_setcollectionexpansionrule(0, collection_foo, "explicitOnly");
 

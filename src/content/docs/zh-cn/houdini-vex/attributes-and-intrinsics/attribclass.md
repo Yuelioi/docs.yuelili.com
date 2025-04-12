@@ -6,16 +6,16 @@ order: 8
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号的整数（从0开始）以读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如 `.bgeo`）的字符串。在Houdini内部运行时，可以是 `op:/path/to/sop`引用。
 
 `attribute_name`
 
-The name of the attribute to read.
+要读取的属性名称。
 
-If attributes with the same name exist at multiple “levels”, returns the *lowest level* at which the attribute exists. For example, if there is a primitive attribute `foo` and a vertex attribute `foo`, `attribclass(0, "foo")` will return `"vertex"`.
+如果同名属性存在于多个"层级"，则返回属性存在的*最低层级*。例如，如果存在基元属性 `foo`和顶点属性 `foo`，`attribclass(0, "foo")`将返回 `"vertex"`。
 
-Returns
+返回值
 
-A string describing the class (`"detail"`, `"prim"`, `"point"`, or `"vertex"`) of the given attribute. If the attribute does not exist, returns an empty string (`""`).
+描述给定属性类别（`"detail"`、`"prim"`、`"point"`或 `"vertex"`）的字符串。如果属性不存在，则返回空字符串（`""`）。

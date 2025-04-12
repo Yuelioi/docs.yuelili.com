@@ -2,19 +2,22 @@
 title: primhedge
 order: 21
 ---
+
 `int  primhedge(<geometry>geometry, int prim)`
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+当在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号（从0开始）的整数，用于指定读取几何体的输入源。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数也可以是一个指定几何体文件（例如`.bgeo`）的字符串路径。在Houdini内部运行时，可以是`op:/path/to/sop`这样的操作符路径引用。
 
 `prim`
 
-The primitive number in the geometry. `0` is the first primitive.
+几何体中的图元编号。`0`表示第一个图元。
 
-Returns
+返回值
 
-The number of an arbitrary half-edge contained in `prim`.
-Returns `-1` if the primitive number is not valid.
+返回包含在指定图元`prim`中的任意半边编号。
+如果图元编号无效，则返回`-1`。
+
+（注：保持所有代码格式和变量名不变，技术术语如"half-edge"保留专业译法"半边"）

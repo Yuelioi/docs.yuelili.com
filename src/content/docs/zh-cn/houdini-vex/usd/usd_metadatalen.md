@@ -2,41 +2,39 @@
 title: usd_metadatalen
 order: 94
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `int  usd_metadatalen(<stage>stage, string path, string name)`
 
-This function returns the length of a given metadata.
+此函数返回指定元数据的长度。
 
-For array metadata it is the length of the array, and for non-array metadata the length is 1.
+对于数组元数据返回数组长度，非数组元数据则返回1。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，该参数可以是表示输入编号的整数（从0开始），用于读取对应输入的场景。该整数等价于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+也可用此参数引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已处理场景（如"op:/stage/lop_node"）。
 
 `path`
 
-The path to the object. I.e, a primitive, an attribute, or a relationship.
+目标对象的路径，可以是图元、属性或关系。
 
 `name`
 
-The metadata name.
+元数据名称。
 
-The name can be namespaced to acces values inside (possibly nested) VtDictionaries, such as custom data dictionary, e.g., “customData:name” or “customData:name:subname”. For non-namespaced names, the object schema needs to declare a given metadata for it to be accessible, e.g., “active” or “documentation”.
+可通过命名空间访问（可能嵌套的）VtDictionary中的值，如自定义数据字典中的"customData:name"或"customData:name:subname"。对于非命名空间名称，对象模式需声明相应元数据才可访问，如"active"或"documentation"。
 
-Returns
+返回值
 
-The length of the array metadata, or 1 if the metadata is not an array. Use [usd_isarraymetadata](usd_isarraymetadata.html "Checks if the given metadata is an array.") if you want to check whether the metadata is an array.
+数组元数据的长度，若非数组则返回1。如需检查元数据是否为数组，可使用[usd_isarraymetadata](usd_isarraymetadata.html "检查给定元数据是否为数组。")。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the array length of metadata on the cube primitive.
+// 获取立方体图元上元数据的数组长度
 int length = usd_metadatalen(0, "/geo/cube", "customData:name");
 
 ```

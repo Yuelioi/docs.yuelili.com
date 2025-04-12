@@ -1,50 +1,45 @@
 ---
-title: Dictionaries
+title: 字典
 order: 2
 ---
-| On this page | * [Overview](#overview) * [Dictionary Literals](#dictionary-literals) * [Declaring dictionary types](#declaring-dictionary-types) * [Dictionary values](#dictionary-values) * [Accessing and setting dictionary values](#accessing-and-setting-dictionary-values) * [Working with dictionaries](#working-with-dictionaries) |
+| 本页内容 | * [概述](#概述) * [字典字面量](#字典字面量) * [声明字典类型](#声明字典类型) * [字典值](#字典值) * [访问和设置字典值](#访问和设置字典值) * [字典操作](#字典操作) |
 | --- | --- |
 
-Overview
+概述
 
-## overview
+## 概述
 
-VEX includes a dict datatype. Because VEX is strongly typed, it is difficult
-to work with parameter sets whose value and type will vary per parameter.
-The `dict` type provides a way to work with these.
+VEX包含字典(dict)数据类型。由于VEX是强类型语言，处理参数值和类型会随参数变化的参数集较为困难。`dict`类型为此提供了解决方案。
 
-The `dict` type will be considerably less efficient than expanding the
-dictionary as a variable per entry; so should only be used where the
-set of variables and types are varying.
+`dict`类型的效率远低于将字典展开为每个条目的变量，因此仅应在变量集合和类型变化的情况下使用。
 
-Dictionary Literals
+字典字面量
 
-## dictionary-literals
+## 字典字面量
 
-The only dictionary literal supported is the empty dictionary: `{}`.
+唯一支持的字典字面量是空字典：`{}`。
 
 ```vex
 dict s = {};
 
 ```
 
-Declaring dictionary types
+声明字典类型
 
-## declaring-dictionary-types
+## 声明字典类型
 
-To declare a dictionary variable, the general form is
-`dict var_name`:
+声明字典变量的通用形式为`dict 变量名`：
 
 ```vex
-// My string is a normal dictionary
+// 普通字典声明
 dict   mydict;
 
 ```
 
-To declare a function that returns a dictionary:
+声明返回字典的函数：
 
 ```vex
-// A function which returns a dictionary
+// 返回字典的函数
 dict rgb_table()
 {
 ...
@@ -52,45 +47,34 @@ dict rgb_table()
 
 ```
 
-Dictionary values
+字典值
 
-## dictionary-values
+## 字典值
 
-The index, or key, of a dictionary is always a string. The string
-can have any value, but for ease of processing it is recommended
-to avoid empty strings or strings with `.` in them.
+字典的索引或键(key)始终是字符串。字符串可以取任意值，但为便于处理，建议避免使用空字符串或包含`.`的字符串。
 
-The value of the dictionary can be most of the basic VEX types:
-`int`, `float`, `vector2`, `vector`, `vector4`, `matrix2`,
-`matrix3`, `matrix`, `string`, `int[]`, `float[]`, `string[]`,
-`dict`, `dict[]`.
+字典值可以是大多数基本VEX类型：`int`、`float`、`vector2`、`vector`、`vector4`、`matrix2`、`matrix3`、`matrix`、`string`、`int[]`、`float[]`、`string[]`、`dict`、`dict[]`。
 
-Accessing and setting dictionary values
+访问和设置字典值
 
-## accessing-and-setting-dictionary-values
+## 访问和设置字典值
 
-Use `dict[index]` to look up a value by its key in the dictionary.
+使用`dict[索引]`通过键查找字典中的值。
 
-The index is a string that is used to lookup the value. If they key
-isn’t in the dictionary, the result is a default-initialized value.
+索引是用于查找值的字符串。如果键不存在于字典中，则返回默认初始化的值。
 
-VEX requires type to be known at compile time, but the actual stored
-type may vary at run time. Thus you will often need an explicit function
-cast to select what type to extract. Where possible, the native type
-will be converted to the desired type.
+VEX要求类型在编译时已知，但实际存储类型可能在运行时变化。因此通常需要显式类型转换函数来指定提取类型。在可能的情况下，原生类型将被转换为所需类型。
 
 ```vex
-dict dictionary;        // Create empty dictionary
-dictionary['key'] = 3;        // Store 3 in the index key
-float three = dictionary['key'];        // Extract key
-dictionary['newkey'] = dictionary['key'];  // Error: Ambiguous type!
-dictionary['newkey'] = int(dictionary['key']);  // Extract key as int and copy
+dict dictionary;        // 创建空字典
+dictionary['key'] = 3;        // 在key索引处存储3
+float three = dictionary['key'];        // 提取key
+dictionary['newkey'] = dictionary['key'];  // 错误：类型不明确！
+dictionary['newkey'] = int(dictionary['key']);  // 以int类型提取key并复制
 
 ```
 
-The `getcomp` function can be used with a default argument to select the type
-and provide a different result if the key is missing. If it is present,
-but is the wrong type, the default initialization value is still used.
+`getcomp`函数可使用默认参数来指定类型，并在键缺失时提供不同结果。如果键存在但类型错误，仍会使用默认初始化值。
 
 ```vex
 dict dictionary;
@@ -100,9 +84,7 @@ int fiftytwo = getcomp(dictionary, 'nonkey', 52);
 
 ```
 
-The `typeid` function can be used to identify the dictionary value’s type. This
-id can be compared against the `typeid()` of a specific VEX data type, allowing
-you to take different code paths depending on the exact type of the value.
+`typeid`函数可用于识别字典值的类型。此ID可与特定VEX数据类型的`typeid()`比较，从而根据值的具体类型执行不同代码路径。
 
 ```vex
 dict dictionary;
@@ -111,33 +93,31 @@ dictionary['key'] = set(1, 2, 3);
 int value_type = typeid(dictionary, 'key');
 if (value_type == typeid(vector()))
 {
-    // This code path is taken since the key has a 'vector' type.
+    // 当key为'vector'类型时执行此路径
     vector val = dictionary['key'];
-    // ... do something with the vector value.
+    // ... 对向量值进行操作
 }
 else if (value_type == typeid(vector4()))
 {
     vector4 val = dictionary['key'];
-    // ... do something with the vector4 value.
+    // ... 对vector4值进行操作
 }
 
 ```
 
-The contents of a key in one dictionary can be copied into another
-without exposing the type to VEX through the `insert` command. This
-can also be used to join two dictionaries together.
+可通过`insert`命令将一个字典中键的内容复制到另一个字典，而无需向VEX暴露类型。此方法也可用于合并两个字典。
 
 ```vex
 dict a, b;
 a['key'] = 3;
 b['oldkey'] = 5;
-insert(b, 'newkey', a, 'key'); // Makes b['newkey'] == 3
-insert(b, 'oldkey', a, 'nonkey'); // Removes b['oldkey'] as nonkey missing in a.
-insert(b, a); // Adds all entries of a to b, overwriting on conflict.
+insert(b, 'newkey', a, 'key'); // 使b['newkey'] == 3
+insert(b, 'oldkey', a, 'nonkey'); // 删除b['oldkey']，因为a中缺少nonkey
+insert(b, a); // 将a的所有条目添加到b，冲突时覆盖
 
 ```
 
-Dictionaries can be built using the `set` command.
+可使用`set`命令构建字典。
 
 ```vex
 dict a;
@@ -145,34 +125,32 @@ a = set("key", 3.0, "nextkey", 5.0, "lastkey", "stringvalue");
 
 ```
 
-Working with dictionaries
+字典操作
 
-## working-with-dictionaries
+## 字典操作
 
-The following functions let you query and manipulate dictionaries.
+以下函数可用于查询和操作字典：
 
-[len](functions/len.html "Returns the length of an array.")
+[len](functions/len.html "返回数组长度")
 
-Returns the number of keys in a dictionary.
+返回字典中的键数量。
 
-[keys](functions/keys.html "Returns all the keys in a dictionary.")
+[keys](functions/keys.html "返回字典中所有键")
 
-Returns a string array of all the keys in a dictionary, sorted
-alphabetically.
+返回按字母排序的字典所有键的字符串数组。
 
-[isvalidindex](functions/isvalidindex.html "Checks if the index given is valid for the array or string given.")
+[isvalidindex](functions/isvalidindex.html "检查给定索引对数组或字符串是否有效")
 
-Returns if an key is in a dictionary or not.
+判断键是否存在于字典中。
 
-[insert](functions/insert.html "Inserts an item, array, or string into an array or string.")
+[insert](functions/insert.html "将项目、数组或字符串插入数组或字符串")
 
-Copies values from one dictionary to another. Also can merge
-all of one dictionary into another.
+将值从一个字典复制到另一个字典，也可合并整个字典。
 
-[removeindex](functions/removeindex.html "Removes an item at the given index from an array.")
+[removeindex](functions/removeindex.html "从数组中移除指定索引处的项目")
 
-Deletes a key from a dictionary.
+从字典中删除键。
 
-[set](functions/set.html "Creates a new value based on its arguments, such as creating a vector from its components.")
+[set](functions/set.html "根据参数创建新值，如从其分量创建向量")
 
-Builds a dictionary from an list of keys and values.
+通过键值列表构建字典。

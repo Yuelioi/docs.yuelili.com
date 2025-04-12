@@ -8,24 +8,22 @@ order: 5
 
 `geometry`
 
-The name of the geometry file to reference. Inside Houdini, this may be `op:full_path_to_sop` to reference a SOP.
+要引用的几何体文件名。在Houdini内部，可以使用`op:full_path_to_sop`来引用一个SOP节点。
 
 `hedge`
 
-The integer representing a half-edge.
+表示半边(半边缘)的整数值。
 
-Returns
+返回值
 
-`1` if `hedge` represents a primary half-edge in the referenced geometry, or `0` otherwise.
+如果`hedge`代表引用几何体中的主半边(primary half-edge)，则返回`1`，否则返回`0`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 int numedges;
 
-// Count the number of edges
+// 计算边的数量
 
 if (hedge_isprimary("defgeo.bgeo", 3))
 numedges++;

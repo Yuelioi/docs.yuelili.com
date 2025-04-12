@@ -1,7 +1,7 @@
 ---
-title: planepointdistance
+title: 平面点距离
 order: 14
 ---
 `float  planepointdistance(vector plane_pos, vector plane_normal, vector point_pos, vector &intersect_pos)`
 
-Given a 3D point `point_pos`, and a 3D plane with `plane_normal` normal vector passing through a 3D point `plane_pos`, return the closest distance and closest position between the plane and the point.
+给定一个3D点`point_pos`，以及一个通过3D点`plane_pos`且法向量为`plane_normal`的3D平面，返回该平面与点之间的最近距离和最近位置。

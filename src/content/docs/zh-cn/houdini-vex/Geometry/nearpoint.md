@@ -2,6 +2,7 @@
 title: nearpoint
 order: 11
 ---
+
 `int  nearpoint(<geometry>geometry, vector pt)`
 
 `int  nearpoint(<geometry>geometry, vector pt, float maxdist)`
@@ -10,28 +11,26 @@ order: 11
 
 `int  nearpoint(<geometry>geometry, string ptgroup, vector pt, float maxdist)`
 
-Returns the number of the closest point on the geometry.
-This will only search against points, not the surface locations
-of the geometry. Use [xyzdist](xyzdist.html "Finds the distance from a point to the closest location on surface geometry.") to find the closest point on surfaces or curves.
+返回几何体上最近点的编号。
+此函数仅搜索点，而不会搜索几何体表面位置。
+如需查找曲面或曲线上的最近点，请使用 [xyzdist](xyzdist.html "计算点到几何体表面最近位置的距离")。
 
--1 is returned if no point is found in the search distance.
+如果在搜索距离内未找到点，则返回-1。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号的整数（从0开始）以读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `ptgroup`
 
-A point group pattern to limit the search to. Can be a SOP-style group
-pattern such as `0-10` or `@Cd.x>0.5`. An empty string will match all points.
+用于限制搜索范围的点组模式。可以是SOP风格的组模式，如`0-10`或`@Cd.x>0.5`。空字符串将匹配所有点。
 
 `pt`
 
-The position in space to find the closest point on the geometry to.
+要在空间中查找几何体上最近点的位置。
 
 `maxdist`
 
-The maximum distance to search. The operation can be sped up if it
-is allowed to quit early.
+最大搜索距离。如果允许提前终止，可以加快操作速度。

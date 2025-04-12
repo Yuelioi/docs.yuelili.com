@@ -6,18 +6,15 @@ order: 19
 
 `center`
 
-Direction in the center of the cone. This does not need to be normalized.
+圆锥体中心轴的方向向量。该向量不需要归一化。
 
 `maxangle`
 
-Maximum angle, in radians, away from `center` that any sample of the cone
-will be, so long as all `u` values are between 0 and 1.
+最大角度（以弧度为单位），表示采样点与`center`的最大偏离角度。只要所有`u`值都在0到1之间，采样点就不会超过这个角度范围。
 
 `u`
 
-Four numbers between 0 and 1.
+四个介于0到1之间的数值。
 
-Returns a vector4 of length \< 1, based on `u`.
-Given uniform random `u` vectors of four values in `[0,1)`, the returned vectors will be
-uniform random and continuous with respect to `u` inside the unit hypersphere,
-in the hypervolume within `maxangle` of the direction indicated by `center`.
+返回一个长度小于1的vector4向量，基于输入参数`u`生成。
+当给定由四个`[0,1)`区间内数值组成的均匀随机`u`向量时，返回的向量将在单位超球体内、且在以`center`指示方向为中心的`maxangle`角度范围内的超体积中，呈现均匀随机且相对于`u`连续分布的特性。

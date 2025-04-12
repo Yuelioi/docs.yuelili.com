@@ -9,32 +9,30 @@ order: 83
 
 `int  usd_isvisible(<stage>stage, string primpath, float timecode)`
 
-This function checks whether the given primitive is visible.
+此函数用于检查指定图元是否可见。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，此参数可以是表示输入编号的整数（从0开始），用于读取舞台数据。该整数等同于以字符串形式引用特定输入，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已计算舞台（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+图元的路径。
 
 `timecode`
 
-The USD time code at which to evaluate the attribute. A USD time code roughly corresponds to a frame in Houdini. If not given, the time code corresponding to the current frame is used.
+评估属性时使用的USD时间码。USD时间码大致对应于Houdini中的帧数。若未指定，则使用当前帧对应的时间码。
 
-Returns
+返回值
 
-1 if the primitive is visible, and 0 otherwise.
+若图元可见则返回1，否则返回0。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Check if the sphere primitive is visible.
+// 检查球体图元是否可见
 int is_visible = usd_isvisible(0, "/geometry/sphere");
 
 ```

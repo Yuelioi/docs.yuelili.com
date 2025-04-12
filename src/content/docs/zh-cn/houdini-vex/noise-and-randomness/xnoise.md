@@ -18,15 +18,8 @@ order: 40
 
 `vector  xnoise(vector4 xyzt)`
 
-Simplex noise is very close to Perlin noise, except with the samples on a
-simplex mesh rather than a grid. This results in less grid artifacts. It also
-uses a higher order `bspline` to provide better derivatives.
+单纯形噪声与柏林噪声非常相似，不同之处在于采样点位于单纯形网格而非规则网格上。这样可以减少网格伪影。同时它使用了更高阶的`bspline`来提供更好的导数。
 
-The various functions return the noise value at a 4D (vector4 argument),
-3D (vector argument), 2D (two float arguments) or 1D (float argument)
-position. You can get a random float value or a vector of three random
-values.
+这些函数可以返回4D（vector4参数）、3D（vector参数）、2D（两个float参数）或1D（float参数）位置处的噪声值。您可以获取一个随机浮点值或包含三个随机值的向量。
 
-The noise is in the range 0-1 with a median of 0.5. The distribution of
-the noise depends on the dimension, with higher dimensions approaching a
-Gaussian distribution of noise values.
+噪声值范围在0-1之间，中位数为0.5。噪声的分布取决于维度，维度越高，噪声值的分布越接近高斯分布。

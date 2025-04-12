@@ -2,34 +2,32 @@
 title: usd_iprimvarnames
 order: 57
 ---
-| Since | 19.0 |
+
+| 始于版本 | 19.0 |
 | --- | --- |
 
 `string [] usd_iprimvarnames(<stage>stage, string primpath)`
 
-This function returns the primvar names that are available directly on the given
-primitive or are inherited from primitive’s ancestors.
+此函数返回可直接在指定图元上获取或从其祖先图元继承的primvar名称列表。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文(如wrangle LOP)中运行时，此参数可以是表示输入编号(从0开始)的整数，用于读取对应输入的stage。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+也可用此参数引用USD文件(如"/path/to/file.usd")，或通过`op:`路径前缀引用其他LOP节点处理完成的stage(如"op:/stage/lop_node")。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
-Returns
+返回值
 
-String array containing the names of the primvars of the primitive and its ancestors.
+包含该图元及其祖先图元primvar名称的字符串数组。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the primvar names from the primitive and its ancestors.
+// 获取图元及其祖先的primvar名称
 string primvar_names[] = usd_iprimvarnames(0, "/geo/src_sphere");
 
 ```

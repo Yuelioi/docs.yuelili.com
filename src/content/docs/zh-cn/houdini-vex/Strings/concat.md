@@ -4,7 +4,7 @@ order: 3
 ---
 `string  concat(string s1, string s2, ...)`
 
-Concatenate the arguments to form a single string.
+将参数连接成一个字符串。
 
-This is equivalent to `s1 + s2 + s3 ...`.
-However, `concat()` is slightly more efficient with more than 2 strings.
+这等同于 `s1 + s2 + s3 ...`。
+但当连接超过2个字符串时，`concat()` 效率会略高一些。

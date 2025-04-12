@@ -2,35 +2,33 @@
 title: usd_setdrawmode
 order: 128
 ---
-| Since | 17.5 |
+| 始于版本 | 17.5 |
 | --- | --- |
 
 `int  usd_setdrawmode(int stagehandle, string primpath, string mode)`
 
-This function sets the primitive’s draw mode.
+此函数用于设置图元的绘制模式。
 
 `stagehandle`
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+要写入的舞台句柄。当前唯一有效值是`0`，表示节点中的当前舞台。（此参数未来可能用于支持写入其他舞台）
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `mode`
 
-The draw mode to set the primitive to.
+要为图元设置的绘制模式。
 
-Returns
+返回值
 
-The value of `stagehandle` on success or `-1` on failure.
+成功时返回`stagehandle`的值，失败时返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Set the sphere to draw as bounds and the cube to draw as default.
+// 将球体设置为边界框绘制模式，立方体设置为默认绘制模式
 usd_setdrawmode(0, "/geo/sphere", "bounds");
 usd_setdrawmode(0, "/geo/cube", "default");
 

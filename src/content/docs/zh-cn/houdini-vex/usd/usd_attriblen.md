@@ -2,45 +2,43 @@
 title: usd_attriblen
 order: 18
 ---
-| Since | 17.5 |
+| 始于版本 | 17.5 |
 | --- | --- |
 
 `int  usd_attriblen(<stage>stage, string primpath, string name)`
 
 `int  usd_attriblen(<stage>stage, string primpath, string name, float timecode)`
 
-This function returns the length of a given attribute.
+此函数返回给定属性的长度。
 
-For array attributes it is the length of the array, and for non-array attributes the length is 1.
+对于数组属性返回数组长度，非数组属性则返回1。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号的整数（从0开始），用于读取对应的stage。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+也可用此参数引用USD文件（如"/path/to/file.usd"），或通过`op:`前缀引用其他LOP节点的已处理stage（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+图元路径。
 
 `name`
 
-Attribute name.
+属性名称。
 
 `timecode`
 
-The USD time code at which to evaluate the attribute. A USD time code roughly corresponds to a frame in Houdini. If not given, the time code corresponding to the current frame is used.
+评估属性时使用的USD时间码。USD时间码大致对应Houdini中的帧数。若未指定，则使用当前帧对应的时间码。
 
-Returns
+返回值
 
-The length of the array attribute, or 1 if the attribute is not an array. Use [usd_isarray](usd_isarray.html "Checks if the attribute is an array.") if you want to check whether the attribute is an array.
+数组属性的长度，若非数组属性则返回1。如需检查属性是否为数组，请使用[usd_isarray](usd_isarray.html "检查属性是否为数组")。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the array length of an attribute on the cube primitive.
+// 获取立方体图元上某个属性的数组长度
 int length = usd_attriblen(0, "/geo/cube", "attribute_name");
 
 ```

@@ -2,26 +2,25 @@
 title: json_loads
 order: 2
 ---
-| Since | 18.5 |
+
+| 始于版本 | 18.5 |
 | --- | --- |
 
 `dict  json_loads(string json, int flags)`
 
-Tries to create a dictionary out of a JSON-style string. If a parsing
-error occurs, an empty dictionary is created. There are two formats
-for JSON recognized. The fully typed format consists of maps for
-each element that stores the type and value. This allows proper
-round-tripping of VEX dictionaries, but is verbose. The compact
-format requires the dictionary to guess the type of JSON elements,
-so things like vectors will be created as float arrays.
+尝试从JSON格式字符串创建字典。如果解析出错，则创建空字典。
+系统可识别两种JSON格式：
 
-The VEX dictionaries need to have arrays of uniform type. If an
-array has varying type, the elements will be created as strings
-of the raw JSON values.
+1. **完全类型化格式**：每个元素都包含类型和值的映射，这种方式可以完整保留VEX字典的往返转换特性，但格式较为冗长。
+2. **紧凑格式**：需要字典自行推断JSON元素的类型，因此像向量这样的数据结构会被创建为浮点数组。
 
-The possible flag values are:
+注意：
+- VEX字典要求数组元素类型必须一致
+- 如果数组包含混合类型，元素将被创建为原始JSON值的字符串形式
 
-| `0` | Auto-detect if the string is a typed or typeless JSON |
+可选标志值：
+
+| `0` | 自动检测字符串是类型化还是无类型JSON |
 | --- | --- |
-| `1` | Require a fully typed JSON |
-| `2` | Require a typeless JSON. If a fully-typed JSON is read, an extra layer of dictionaries will be created. |
+| `1` | 要求必须是完全类型化JSON |
+| `2` | 要求必须是无类型JSON。如果读取到完全类型化JSON，会额外创建一层字典结构 |

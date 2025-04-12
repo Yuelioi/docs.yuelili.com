@@ -2,43 +2,42 @@
 title: usd_uniquetransformname
 order: 150
 ---
-| Since | 18.0 |
+
+| 版本 | 18.0 |
 | --- | --- |
 
 `string  usd_uniquetransformname(<stage>stage, string primpath, int transformtype, string suffix)`
 
-This function returns a unique full name for a transform operation, given its type and suffix, that is different from any name that currently exists on the given primitive. It can be useful to ensure that the suffix used for the operation name does not stomp on any existing one.
+该函数根据变换操作类型和后缀，返回一个在当前图元上不存在的唯一完整变换操作名称。可用于确保操作名称使用的后缀不会与任何现有名称冲突。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，此参数可以是表示输入编号的整数（从0开始），用于读取舞台。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+也可用此参数引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已处理舞台（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `transformtype`
 
-The numerical code for the transformation type. See the VEX “usd.h” header for defines, such as `USD_XFORM_TRANSLATE`, `USD_XFORM_TRANSFORM`, or `USD_XFORM_ROTATE_XYZ`.
+变换类型的数字编码。参见VEX头文件"usd.h"中的定义，如`USD_XFORM_TRANSLATE`、`USD_XFORM_TRANSFORM`或`USD_XFORM_ROTATE_XYZ`。
 
 `suffix`
 
-The transform operation suffix.
+变换操作的后缀。
 
-USD primitives are transformed in space by a series of transform operations whose full names are sequentially listed in the `xformOpOrder` attribute. Full names are namespaced, encode the operation transform type (e.g., translation or rotation), and can also contain a suffix. If primitive has a few operations of the same type, it’s necessary to specify the suffix to differentiate between them. This parameter specifies such a suffix.
+USD图元通过一系列变换操作进行空间变换，这些操作的完整名称按顺序列在`xformOpOrder`属性中。完整名称采用命名空间格式，编码了变换操作类型（如平移或旋转），并可包含后缀。若图元存在多个同类型操作，则需通过后缀加以区分。此参数即指定该后缀。
 
-Returns
+返回值
 
-A unique full name of transform operation.
+唯一的变换操作完整名称。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Construct a unique full name for a translation operation with suffix "cone_pivot"
+// 为带有"cone_pivot"后缀的平移操作构造唯一完整名称
 string unique_xform_name  = usd_uniquetransformname(0, "/geo/cone", USD_XFORM_TRANSLATE, "cone_pivot");
 
 ```

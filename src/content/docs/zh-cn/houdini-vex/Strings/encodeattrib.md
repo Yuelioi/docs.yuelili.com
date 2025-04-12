@@ -2,20 +2,11 @@
 title: encodeattrib
 order: 9
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `string  encodeattrib(string str)`
 
-Houdini geometry attributes and group names are only allowed to contain
-letters, numbers, and underscores, and must not begin with a number. This
-function takes any string, and encodes it into a string that obeys these
-restrictions. The original string can be recovered using the `decodeattrib`
-function. A string that already obeys the rules is returned unmodified.
+Houdini几何体属性和组名称仅允许包含字母、数字和下划线，且不能以数字开头。该函数接收任意字符串，并将其编码为符合这些限制条件的字符串。原始字符串可通过`decodeattrib`函数还原。若字符串本身已符合规则，则不作修改直接返回。
 
-One exception to this rule is that a string starting with `xn__` will be
-encoded even if it is already a valid attribute name. This is because `xn__`
-is the prefix used to identify an encoded string. In this case, an additional
-`xn__` prefix will be added. This means a string can be encoded any number of
-times, then decoded the same number of times to always return to the original
-string, regardless of its contents.
+该规则的一个例外情况是：以`xn__`开头的字符串即使已是有效属性名，仍会被编码。这是因为`xn__`是用于标识已编码字符串的前缀。这种情况下会额外添加一个`xn__`前缀。这意味着字符串可被多次编码，然后通过相同次数的解码总能还原为原始字符串，无论其内容如何。

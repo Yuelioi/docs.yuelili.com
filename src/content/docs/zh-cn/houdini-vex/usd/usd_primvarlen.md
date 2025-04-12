@@ -9,38 +9,36 @@ order: 111
 
 `int  usd_primvarlen(<stage>stage, string primpath, string name, float timecode)`
 
-This function returns the length of a given primvar found directly on the given primitive.
+此函数返回在指定图元上直接找到的给定primvar的长度。
 
-For array primvars it is the length of an array, and for non-array primvars the length is 1.
+对于数组型primvar，返回的是数组长度；对于非数组型primvar，长度始终为1。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，此参数可以是表示输入编号的整数（从0开始），用于读取对应输入的stage。该整数等同于通过字符串形式引用特定输入，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+也可以通过此参数引用USD文件（如"/path/to/file.usd"），或使用`op:`作为路径前缀引用其他LOP节点已烘焙的stage（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `name`
 
-Primvar name (without namespace).
+Primvar名称（不包含命名空间）。
 
 `timecode`
 
-The USD time code at which to evaluate the attribute. A USD time code roughly corresponds to a frame in Houdini. If not given, the time code corresponding to the current frame is used.
+评估属性时使用的USD时间码。USD时间码大致对应Houdini中的帧数。若未指定，则使用当前帧对应的时间码。
 
-Returns
+返回值
 
-The length of the array primvar, or `1` if the primvar is not an array, or `0` if the primvar does not exist. Use [usd_isarrayprimvar](usd_isarrayprimvar.html "Checks if there is an array primvar directly on the USD primitive.") to check if the primvar is an array.
+返回数组型primvar的长度，若非数组型primvar则返回`1`，若primvar不存在则返回`0`。可使用[usd_isarrayprimvar](usd_isarrayprimvar.html "检查USD图元上是否存在数组型primvar。")来验证primvar是否为数组类型。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the array length of the primvar on cube.
+// 获取cube图元上primvar的数组长度
 int array_length = usd_primvarlen(0, "/geo/cube", "array_primvar_name");
 
 ```

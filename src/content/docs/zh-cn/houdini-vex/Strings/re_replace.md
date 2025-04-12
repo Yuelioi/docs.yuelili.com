@@ -4,6 +4,6 @@ order: 27
 ---
 `string  re_replace(string regex, string replacement, string input, int maxreplace=0)`
 
-Returns a string where each non-overlapping match of `regex` is replaced with `replacement`. The `replacement` string can reference captured groups from the regex using `$1` syntax.
+返回一个新字符串，其中所有非重叠匹配`regex`的部分都被替换为`replacement`。`replacement`字符串可以使用`$1`语法引用正则表达式捕获的组。
 
-If `maxreplace` is given and not 0, it specifies the maximum number of replacements to do.
+如果指定了非零的`maxreplace`参数，则表示最大替换次数。

@@ -4,14 +4,14 @@ order: 5
 ---
 `vector  getbbox_max(<geometry>geometry)`
 
-Computes the maximum of the bounding box for the geometry.
+计算几何体的包围盒最大值。
 
 `vector  getbbox_max(<geometry>geometry, string primgroup)`
 
-Computes the maximum of the bounding box of the primitives in the given group.
+计算给定组中图元的包围盒最大值。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。

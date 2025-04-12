@@ -2,13 +2,13 @@
 title: chsop
 order: 17
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `string  chsop(string channel)`
 
 `string  chsop(string channel, float time)`
 
-Evaluates an operator path parameter and return the path to the operator.
+评估一个操作器路径参数并返回该操作器的路径。
 
-The time is specified in seconds, not in frames.
+时间以秒为单位指定，而不是帧数。

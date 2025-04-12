@@ -1,23 +1,24 @@
 ---
-title: smoothrotation
+title: 平滑旋转
 order: 25
 ---
-`vector  smoothrotation(int order, vector r, vector r_reference)`
 
-Returns the Euler rotations that have the closest values to r_reference while still describing the same orientation as r.
-Typically, r_reference will be the rotations from the previous sample or frame.
+`vector smoothrotation(int order, vector r, vector r_reference)`
 
-The angles are in radians. Use the `radians()` function to convert degrees into radians.
+返回与r描述相同朝向、且最接近r_reference值的欧拉旋转角。
+通常，r_reference会使用上一帧或上一采样点的旋转值。
+
+角度单位为弧度。可使用`radians()`函数将角度转换为弧度。
 
 `order`
 
-One of the rotation order constants listed below, which can be imported from `$HFS/houdini/vex/include/math.h`.
+旋转顺序常量（如下表所列），可从`$HFS/houdini/vex/include/math.h`导入。
 
-| Constant name | Rotation Order |
+| 常量名称 | 旋转顺序 |
 | --- | --- |
-| XFORM_XYZ | Rotate order X, Y, Z |
-| XFORM_XZY | Rotate order X, Z, Y |
-| XFORM_YXZ | Rotate order Y, X, Z |
-| XFORM_YZX | Rotate order Y, Z, X |
-| XFORM_ZXY | Rotate order Z, X, Y |
-| XFORM_ZYX | Rotate order Z, Y, X |
+| XFORM_XYZ | X, Y, Z顺序旋转 |
+| XFORM_XZY | X, Z, Y顺序旋转 |
+| XFORM_YXZ | Y, X, Z顺序旋转 |
+| XFORM_YZX | Y, Z, X顺序旋转 |
+| XFORM_ZXY | Z, X, Y顺序旋转 |
+| XFORM_ZYX | Z, Y, X顺序旋转 |

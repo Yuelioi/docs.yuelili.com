@@ -1,15 +1,10 @@
 ---
-title: decode
+title: 解码
 order: 4
 ---
-| Since | 17.5 |
+| 始于 | 17.5 |
 | --- | --- |
 
 `string  decode(string str)`
 
-Houdini VEX variable names are only allowed to contain letters, numbers, and
-underscores, and must not begin with a number. Arbitrary strings can be passed
-through the `encode` function to generate a string that obeys these
-restriction. This function takes one of these encoded strings, and returns the
-original string. A string that has not been encoded will be returned
-unmodified.
+Houdini VEX变量名只能包含字母、数字和下划线，且不能以数字开头。任意字符串可以通过`encode`函数生成符合这些限制的字符串。本函数接收一个经过编码的字符串，并返回原始字符串。未经编码的字符串将原样返回。

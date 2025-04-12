@@ -1,13 +1,13 @@
 ---
-title: primattribtype
+title: 图元属性类型
 order: 49
 ---
 `int  primattribtype(<geometry>geometry, string attribute_name)`
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+当在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号的整数（从0开始）以读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是用于指定要读取的几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
-See [attribtype](attribtype.html "Returns the type of a geometry attribute.") for more information.
+更多信息请参阅[attribtype](attribtype.html "返回几何属性的类型。")。

@@ -1,31 +1,21 @@
 ---
-title: metamarch
+title: 元球步进
 order: 2
 ---
 `int  metamarch(int &index, string filename, vector &p0, vector &p1, float displace_bound)`
 
-Takes the ray defined by p0 and p1 and partitions it into zero
-or more sub-intervals where each interval intersects a cluster of
-metaballs from filename. The interval may not actually intersect any
-metaballs, but will provide fairly tight bounds on the cluster.
+接收由p0和p1定义的射线，并将其划分为零个或多个子区间，每个子区间都与文件名指定的元球簇相交。该区间可能实际上不与任何元球相交，但会为元球簇提供相当紧密的边界。
 
-This allows a ray-marching algorithm to “skip” uninteresting areas and
-only focus on marching through areas where metaballs might be found.
+这使得光线步进算法能够"跳过"无趣区域，只专注于步进可能发现元球的区域。
 
-The first time you call the function, use index=-1 and set p0
-and p1 to the endpoints of the ray. If the function finds an
-interval, it returns 1 and sets p0 and p1 to the endpoints of
-the interval and increments index. Otherwise it returns 0 and
-doesn’t alter the arguments.
+首次调用该函数时，使用index=-1并将p0和p1设置为射线的端点。如果函数找到一个区间，则返回1并将p0和p1设置为该区间的端点，同时递增index。否则返回0且不修改任何参数。
 
-So, you can repeatedly call the function with variables for the
-index, index, and index arguments to ray-march through areas
-of interest, skipping the dead space:
+因此，您可以重复调用该函数，通过不断更新index、p0和p1参数来在感兴趣的区域进行光线步进，跳过空白区域：
 
 ```vex
 int    index;
 vector    p0, p1;
-// Initialize input values
+// 初始化输入值
 index = -1;
 p0 = Eye; p1 = P;
 result = 0;

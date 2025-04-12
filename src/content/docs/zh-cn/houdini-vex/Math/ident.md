@@ -1,7 +1,8 @@
 ---
-title: ident
+title: 单位矩阵
 order: 31
 ---
+
 `<matrix> ident()`
 
-Returns the identity matrix for the given matrix type.
+返回给定矩阵类型的单位矩阵。

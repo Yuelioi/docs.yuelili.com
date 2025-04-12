@@ -2,13 +2,9 @@
 title: getraylevel
 order: 29
 ---
-| Context(s) | [shading](../contexts/shading.html) |
+| 上下文 | [着色](../contexts/shading.html) |
 | --- | --- |
 
 `int  getraylevel()`
 
-Returns the depth of the ray tree for the current shading. If the
-returned value is 0, this represents a ray from the camera to the scene.
-If the ray level is 1, the ray represents either a reflection/refraction
-ray. If the level is 2, then this represents a reflection/refraction
-which appears in a previous reflection/refraction etc.
+返回当前着色光线树的深度。如果返回值为0，表示这是从相机直接射向场景的光线。如果光线层级为1，则表示这是反射/折射光线。若层级为2，则表示这是出现在前一次反射/折射中的反射/折射光线，以此类推。

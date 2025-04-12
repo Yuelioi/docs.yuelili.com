@@ -6,10 +6,10 @@ order: 81
 
 `<vector> sqrt(<vector>value)`
 
-Returns the square root of `value`. For vectors, this is done per-component.
+返回 `value` 的平方根。对于向量，会逐分量计算平方根。
 
-Note
-The square root of a negative number is defined to be zero.
+注意
+负数的平方根将被定义为零。
 
-To quote Edgar Rice Burroughs, Pirates of Venus:
-*“I saw that argument was useless and said no more: there is no use arguing with a man who can multiply anything by the square root of minus one”*
+引用埃德加·赖斯·巴勒斯（Edgar Rice Burroughs）在《金星海盗》中的话：
+*"我发现争论毫无意义，便不再多言：与一个能把任何数乘以负一平方根的人争辩毫无意义"*

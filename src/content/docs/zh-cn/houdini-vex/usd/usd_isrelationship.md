@@ -2,37 +2,35 @@
 title: usd_isrelationship
 order: 79
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `int  usd_isrelationship(<stage>stage, string primpath, string name)`
 
-This function checks whether the primitive has a relationship of a given name.
+该函数用于检查图元是否具有指定名称的关系。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取对应的stage。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已处理stage（例如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+图元的路径。
 
 `name`
 
-The relationship name.
+关系名称。
 
-Returns
+返回值
 
-`1` if the primitive has such a relationship, or `0` otherwise.
+如果图元具有该关系则返回`1`，否则返回`0`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Check if the cube has a relationship "some_relationship".
+// 检查立方体是否具有"some_relationship"关系
 int is_valid_relationship = usd_isrelationship(0, "/geo/cube", "some_relationship");
 
 ```

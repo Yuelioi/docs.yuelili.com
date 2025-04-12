@@ -1,8 +1,8 @@
 ---
-title: rgbtoxyz
+title: rgb转xyz
 order: 11
 ---
 `vector  rgbtoxyz(vector rgb)`
 
-Convert a linear sRGB (Rec. 709) triplet to CIE XYZ tristimulus values.
-XYZ can be thought of as a 'universal color space'.
+将线性sRGB（Rec. 709）三元组转换为CIE XYZ三刺激值。
+XYZ可以被视为一个"通用色彩空间"。

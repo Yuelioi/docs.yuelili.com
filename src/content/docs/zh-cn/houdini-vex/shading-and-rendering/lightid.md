@@ -2,9 +2,9 @@
 title: lightid
 order: 49
 ---
-| Context(s) | [shading](../contexts/shading.html) |
+| 上下文 | [着色](../contexts/shading.html) |
 | --- | --- |
 
 `int  lightid(light lp)`
 
-Returns the integer light identifier of the light struct passed in. The function returns -1 if the argument is invalid.
+返回传入的光源结构体的整型光源标识符。如果参数无效，该函数将返回-1。

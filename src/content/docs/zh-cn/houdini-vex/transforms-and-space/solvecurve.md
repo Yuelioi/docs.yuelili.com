@@ -2,7 +2,7 @@
 title: solvecurve
 order: 27
 ---
-| Since | 17.5 |
+| 起始版本 | 17.5 |
 | --- | --- |
 
 `vector [] solvecurve(float lengths[], int closed, int orienttonormal, vector tangent, vector points[], vector normals[])`
@@ -25,72 +25,72 @@ order: 27
 
 `matrix3 [] solvecurve(string op, float lengths[], int closed, int orienttonormal, vector tangent, int normalcalcmethod, matrix relmat, int primnum, float lod)`
 
-Returns a array of vectors or matrix3 representing local bone rotations. Angles are in degrees.
+返回表示局部骨骼旋转的向量或matrix3数组。角度单位为度。
 
 `op`
 
-The SOP path to a curve to evaluate.
+要评估曲线的SOP路径。
 
 `outlength`
 
-Return the length of the curve where the solution ends. This is different than the sum of all lengths array.
+返回解算结束处的曲线长度。这与所有长度数组的总和不同。
 
 `outpos`
 
-Return the computed position of the last joint.
+返回最后一个关节的计算位置。
 
 `lengths`
 
-The lengths of all the bones to solve.
+要解算的所有骨骼的长度。
 
 `closed`
 
-Close the curve.
+闭合曲线。
 
 `orienttonormal`
 
-Use the normals from the curve to orient the bones.
+使用曲线法线来定向骨骼。
 
 `normalmode`
 
-Define how the normals/twists are computed from the control points.
+定义如何从控制点计算法线/扭曲。
 
-Use the constants defined in `$HH/vex/include/math.h`.
+使用`$HH/vex/include/math.h`中定义的常量。
 
 `tangent`
 
-A tangent vector to orient the end tip of the curve.
+用于定向曲线末端的切线向量。
 
 `points`
 
-An array of vectors to use as points to define the curve.
+用于定义曲线的向量点数组。
 
 `normals`
 
-An array of vectors to use as normals to define the curve.
+用于定义曲线的法线向量数组。
 
 `twists`
 
-An optional array of floats to use as twist angles in degree to define the curve.
+可选的浮点数数组，作为定义曲线的扭曲角度（度）。
 
 `initialtwists`
 
-An optional array of floats to use as initial twist angles in degree define the curve.
+可选的浮点数数组，作为定义曲线的初始扭曲角度（度）。
 
 `normalcalcmethod`
 
-A normal calculation method when evaluating using a SOP. (0 default, 1 none, 2 interpolate with quaternions, 3 interpolate with twist angles in 0,180 range, 4 interpolate with twist angles in any range.)
+使用SOP评估时的法线计算方法。(0默认，1无，2使用四元数插值，3使用0-180范围内的扭曲角插值，4使用任意范围的扭曲角插值)
 
 `relmat`
 
-A relative matrix used to transform the points, normals and tangent relative to the origin.
-This is normally the invert matrix of the root of the chain.
+用于将点、法线和切线相对于原点进行变换的相对矩阵。
+这通常是链根的反转矩阵。
 
 `fmt`
 
-The curve type to create.
-Use constants defined in `$HH/vex/include/math.h`, or 0 to create a polygon curve, 1 to create a bezier curve or 2 to create a NURBS curve.
+要创建的曲线类型。
+使用`$HH/vex/include/math.h`中定义的常量，或0创建多边形曲线，1创建贝塞尔曲线，2创建NURBS曲线。
 
 `order`
 
-The curve order for NURBS or Bezier curves. This is ignored for polygon curves.
+NURBS或贝塞尔曲线的阶数。多边形曲线忽略此参数。

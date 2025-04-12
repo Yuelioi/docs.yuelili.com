@@ -6,7 +6,7 @@ order: 2
 
 `float  clamp(float value, float min, float max)`
 
-Returns value clamped between min and max.
+返回限制在最小值和最大值之间的值。
 
 `vector2  clamp(vector2 value, vector2 min, vector2 max)`
 
@@ -14,4 +14,4 @@ Returns value clamped between min and max.
 
 `vector4  clamp(vector4 value, vector4 min, vector4 max)`
 
-Returns a new vector containing the clamped value of each component.
+返回一个新向量，包含每个分量限制后的值。

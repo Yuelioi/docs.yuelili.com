@@ -2,37 +2,35 @@
 title: usd_setvisible
 order: 143
 ---
-| Since | 17.5 |
+| 始于版本 | 17.5 |
 | --- | --- |
 
 `int  usd_setvisible(int stagehandle, string primpath, int flag)`
 
-This function makes the primitive visible or invisible, depending on the given flag parameter.
+此函数根据给定的flag参数设置图元是否可见。
 
-NOTE: This function is similar to `usd_setvisibility()` which, in addition to making a primitive visible or invisible, can also configure it to inherit visibility from the parent.
+注意：该函数与`usd_setvisibility()`类似，但后者除了可以设置图元可见性外，还能配置其继承父级可见性。
 
 `stagehandle`
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+要写入的舞台句柄。当前唯一有效值是`0`，表示节点中的当前舞台。（此参数未来可能用于写入其他舞台）
 
 `primpath`
 
-The path to the primitive.
+图元的路径。
 
 `flag`
 
-Non-zero to make the primitive visible or 0 to make it invisible.
+非零值使图元可见，0值使图元不可见。
 
-Returns
+返回值
 
-The value of `stagehandle` on success or `-1` on failure.
+成功时返回`stagehandle`的值，失败时返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Set the sphere primitive as visible.
+// 将球体图元设置为可见
 usd_setvisible(0, "/geo/sphere", true);
 
 ```

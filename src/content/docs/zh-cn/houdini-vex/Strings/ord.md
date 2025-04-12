@@ -4,8 +4,10 @@ order: 22
 ---
 `int  ord(string value)`
 
-Returns the code point of the first UTF8 character in the given string.
+返回给定字符串中第一个UTF8字符的码点。
 
-If the prefix of the string isn’t a valid UTF8 encoding, or is empty, -1 is returned.
+如果字符串前缀不是有效的UTF8编码，或者为空字符串，则返回-1。
 
-Overlong UTF8 encodings will return -1.
+过长的UTF8编码将返回-1。
+
+（注：保持原有代码格式不变，仅翻译说明文本部分）

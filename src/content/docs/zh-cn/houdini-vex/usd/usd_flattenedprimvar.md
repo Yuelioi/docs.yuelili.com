@@ -2,48 +2,46 @@
 title: usd_flattenedprimvar
 order: 40
 ---
-| Since | 18.0 |
+
+| 始于版本 | 18.0 |
 | --- | --- |
 
-`<type>[] usd_flattenedprimvar(<stage>stage, string primpath, string name)`
+`<type>[] usd_flattenedprimvar(<stage>stage, string primpath, string name)`
 
-`<type>[] usd_flattenedprimvar(<stage>stage, string primpath, string name, float timecode)`
+`<type>[] usd_flattenedprimvar(<stage>stage, string primpath, string name, float timecode)`
 
-This function returns a value of a flattened primvar on a given primitive.
+此函数返回指定图元上展开后的primvar值。
 
-Some primvars can be indexed, where the primvar is a compacted array of unique values, and there is an index array to map an entity to the value element. This function expands the compacted array by using the index array, and returns the expanded array of values.
+某些primvar可能被索引，其中primvar是唯一值的压缩数组，并通过索引数组将实体映射到值元素。此函数使用索引数组展开压缩数组，并返回展开后的值数组。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取场景。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已处理场景（例如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+图元路径。
 
 `name`
 
-Primvar name (without namespace).
+Primvar名称（不带命名空间）。
 
 `timecode`
 
-The USD time code at which to evaluate the attribute. A USD time code roughly corresponds to a frame in Houdini. If not given, the time code corresponding to the current frame is used.
+评估属性时使用的USD时间码。USD时间码大致对应于Houdini中的帧数。若未指定，则使用当前帧对应的时间码。
 
-Returns
+返回值
 
-The flattened value of an existing primvar, or zero/empty value if the primvar does not exist. Use [usd_isprimvar](usd_isprimvar.html "Checks if the primitive has a primvar of the given name.") if you want to check whether the primvar exists.
+现有primvar的展开值，若primvar不存在则返回零/空值。如需检查primvar是否存在，请使用[usd_isprimvar](usd_isprimvar.html "检查图元是否具有指定名称的primvar")。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the value of a flattened primvar on the cube primitive.
+// 获取立方体图元上展开primvar的值
 float flat_values[] = usd_flattenedprimvar(0, "/geo/cube", "primvar_name");
 
 f[]@flat_primvar_at_current_frame = usd_flattenedprimvar(0, "/geo/sphere", "bar");
 f[]@flat_primvar_at_frame_7       = usd_flattenedprimvar(0, "/geo/sphere", "bar", 7.0);
-
 ```

@@ -1,7 +1,7 @@
 ---
-title: qdistance
+title: 四元数距离
 order: 61
 ---
 `float  qdistance(vector4 q1, vector4 q2)`
 
-Returns the approximate angle, in radians, between two quaternions.
+返回两个四元数之间的近似角度（以弧度为单位）。

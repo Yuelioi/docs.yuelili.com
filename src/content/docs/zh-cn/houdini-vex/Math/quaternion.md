@@ -1,21 +1,21 @@
 ---
-title: quaternion
+title: 四元数
 order: 65
 ---
-[Unit quaternions are used to represent rotations](http://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation). This VEX function creates a unit quaternion that represents a rotation.
+[单位四元数用于表示旋转](http://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation)。该VEX函数可创建表示旋转的单位四元数。
 
 `vector4  quaternion(matrix3 rotations)`
 
-Creates a vector4 representing a unit quaternion from a 3×3 rotational matrix.
+从3×3旋转矩阵创建表示单位四元数的vector4。
 
 `vector4  quaternion(float angle, vector axis)`
 
-Creates a vector4 representing a unit quaternion from an angle and a normalized axis. The angle is specified in radians.
+根据角度和归一化轴创建表示单位四元数的vector4。角度以弧度指定。
 
 `vector4  quaternion(vector angleaxis)`
 
-Creates a vector4 representing a unit quaternion from a combined angle/axis. This is the normalized rotation axis multiplied by the rotation angle in radians.
+从组合角度/轴创建表示单位四元数的vector4。这是归一化旋转轴乘以以弧度表示的旋转角度。
 
-There used to be a fourth form that took a rotation vector. It has been renamed to `eulertoquaternion` and now takes radians.
+曾经存在第四种形式可接受旋转向量。现已重命名为`eulertoquaternion`，并改为接受弧度制参数。
 
-For more information, see [Data types](../lang.html#data-types) and [Dot operator](../lang.html#dot-operator).
+更多信息请参阅[数据类型](../lang.html#data-types)和[点运算符](../lang.html#dot-operator)。

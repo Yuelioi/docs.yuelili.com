@@ -4,4 +4,4 @@ order: 9
 ---
 `float  chexprt(string channel, string new_expr_function, float time_in_seconds)`
 
-Evaluates a channel with a new segment expression at a given time and return its value.
+在指定时间使用新的片段表达式评估通道并返回其值。

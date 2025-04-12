@@ -2,9 +2,9 @@
 title: writepixel
 order: 82
 ---
-| Context(s) | [shading](../contexts/shading.html) |
+| 上下文 | [着色](../contexts/shading.html) |
 | --- | --- |
 
 `void  writepixel(string channel, float ndc_x, float ndc_y, vector clr)`
 
-This is an experimental function which can be used by the generator rendering engine to write pixel values into the image.
+这是一个实验性函数，生成器渲染引擎可以使用它将像素值写入图像。

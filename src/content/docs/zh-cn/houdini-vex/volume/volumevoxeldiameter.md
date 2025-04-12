@@ -8,13 +8,13 @@ order: 23
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号的整数（从0开始）以读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如 `.bgeo`）的字符串。在Houdini内部运行时，可以是 `op:/path/to/sop`引用。
 
-Returns
+返回值
 
-The diameter of a voxel in the given primitive.
-To find the length of a side of a voxel, divide by `sqrt(3)`.
+给定图元中体素的直径。
+要获取体素边长，请除以 `sqrt(3)`。
 
-Returns 0 if `primnum` or `inputnum` is out of range, the geometry is invalid, or the given primitive is not a vector volume primitive.
+如果 `primnum`或 `inputnum`超出范围、几何体无效或给定图元不是矢量体积图元，则返回0。

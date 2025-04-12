@@ -2,41 +2,39 @@
 title: usd_pointinstance_relbbox
 order: 103
 ---
-| Since | 18.0 |
+| 版本 | 18.0 |
 | --- | --- |
 
 `vector  usd_pointinstance_relbbox(<stage>stage, string primpath, int instance_index, string purpose, vector position)`
 
-Returns the relative position of the given point with respect to the bounding box of the instance in a point instancer.
+返回给定点相对于点实例化器中实例包围盒的相对位置。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取舞台。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或使用`op:`作为路径前缀引用其他LOP节点的已处理舞台（例如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+图元路径。
 
 `instance_index`
 
-The index of the instance whose bounding box to use.
+要使用其包围盒的实例索引。
 
 `purpose`
 
-The primitive’s purpose for which to use the bounding box (e.g., “render”).
+用于计算包围盒的图元用途（例如"render"）。
 
-Returns
+返回值
 
-The relative position of the given point with respect to the bounding box of the primitive.
+给定点相对于图元包围盒的相对位置。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the point's position relative to the bounding box of the first instance.
+// 获取点相对于第一个实例包围盒的位置
 vector pt = {1, 0, 0};
 vector rel_pt = usd_pointinstance_relbbox(0, "/src/instanced_spheres", 0, "render", pt);
 

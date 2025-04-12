@@ -2,8 +2,9 @@
 title: removepointgroup
 order: 58
 ---
-If you don’t know the class of group until runtime, use [removeattrib](removeattrib.html "Removes an attribute or group from the geometry.").
+
+如果在运行时之前不知道组的类别，请使用 [removeattrib](removeattrib.html "从几何体中移除属性或组。")。
 
 `int  removepointgroup(int geohandle, string name)`
 
-Removes a point group from the given geometry.
+从给定的几何体中移除一个点组。

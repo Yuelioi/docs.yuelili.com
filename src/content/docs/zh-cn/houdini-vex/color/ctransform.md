@@ -6,17 +6,18 @@ order: 2
 
 `vector  ctransform(string tospace, vector clr)`
 
-If you don’t give a fromspace, assumes `"cspace:rgb"`.
+如果未指定fromspace，则默认使用`"cspace:rgb"`。
 
-Transforms color tuple clr from one color space to another.
+将颜色元组clr从一个色彩空间转换到另一个色彩空间。
 
-The possible arguments for fromspace and tospace are
-`"cspace:rgb"`, `"cspace:hsl"`, `"cspace:hsv"`, `"cspace:XYZ"`,
-`"cspace:Lab"`, and `"cspace:tmi"`.
-Notes
+fromspace和tospace可用的参数包括：
+`"cspace:rgb"`、`"cspace:hsl"`、`"cspace:hsv"`、`"cspace:XYZ"`、
+`"cspace:Lab"`和`"cspace:tmi"`。
 
-## notes
+注意事项
 
-- The hue-based systems are normalized with the hue going from `0` to `1`. LAB and TMI are not normalized.
-- For `"cspace:rgb"`, the primaries are assumed to be in linear NTSC space (gamma 1.0), using C reference white.
-- C reference white is used for conversion when converting from XYZ to LAB space (and vice versa).
+## 注意事项
+
+- 基于色相的系统会进行归一化处理，色相值范围从`0`到`1`。LAB和TMI空间不做归一化处理。
+- 对于`"cspace:rgb"`，假定原色位于线性NTSC空间（gamma值为1.0），使用C标准白点。
+- 当在XYZ和LAB空间之间转换时，使用C标准白点作为转换参考。

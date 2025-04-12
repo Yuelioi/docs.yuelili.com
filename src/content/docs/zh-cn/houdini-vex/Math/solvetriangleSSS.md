@@ -2,13 +2,13 @@
 title: solvetriangleSSS
 order: 78
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `vector  solvetriangleSSS(vector sides)`
 
 `vector  solvetriangleSSS(float a, float b, float c)`
 
-Returns
+返回值
 
-The 3 angles of a triangle in radians given the value of its 3 sides using the Law of Cosines.
+根据余弦定理，给定三角形的三条边长（SSS），返回该三角形三个角的弧度值。

@@ -2,37 +2,35 @@
 title: usd_isattrib
 order: 67
 ---
-| Since | 17.5 |
+| 始于版本 | 17.5 |
 | --- | --- |
 
 `int  usd_isattrib(<stage>stage, string primpath, string name)`
 
-This function checks whether the given primitive has an attribute of a given name.
+此函数用于检查指定图元是否具有给定名称的属性。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，此参数可以是表示输入编号的整数（从0开始），用于读取对应输入的舞台。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或通过"op:"路径前缀引用其他LOP节点处理后的舞台（例如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `name`
 
-Attribute name.
+属性名称。
 
-Returns
+返回值
 
-`1` if the primitive has the given attribute, or `0` otherwise.
+如果图元具有指定属性则返回`1`，否则返回`0`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Check if the sphere has an attribute "some_attribute".
+// 检查球体是否具有"some_attribute"属性
 int is_valid_attrib = usd_isattrib(0, "/geometry/sphere", "some_attribute");
 
 ```

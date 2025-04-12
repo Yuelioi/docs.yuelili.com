@@ -2,11 +2,11 @@
 title: isuvrendering
 order: 47
 ---
-| Context(s) | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
+| 上下文环境 | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
 | --- | --- |
 
 `int  isuvrendering()`
 
-Returns 1 if the shader is being called while evaluating uv rendering (texture unwrapping), and 0 for normal rendering.
+当着色器在评估UV渲染（纹理展开）期间被调用时返回1，正常渲染时返回0。
 
-Use this function to evaluate shaders differently when baking illumination.
+此函数可用于在烘焙光照时以不同方式评估着色器。

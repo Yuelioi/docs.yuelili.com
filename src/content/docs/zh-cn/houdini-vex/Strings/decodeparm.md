@@ -2,14 +2,9 @@
 title: decodeparm
 order: 6
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `string  decodeparm(string str)`
 
-Houdini parameter names are only allowed to contain letters, numbers, hash
-characters (for multiparms), and underscores, and must not begin with a
-number. Arbitrary strings can be passed through the `encodeparm` function to
-generate a string that obeys these restriction. This function takes one of
-these encoded strings, and returns the original string. A string that has not
-been encoded will be returned unmodified.
+Houdini参数名称仅允许包含字母、数字（用于多重参数的）井号字符以及下划线，且不能以数字开头。任意字符串可通过`encodeparm`函数转换为符合这些限制的字符串。本函数接收一个经过编码的字符串，并返回原始字符串。若传入未编码的字符串，则原样返回该字符串。

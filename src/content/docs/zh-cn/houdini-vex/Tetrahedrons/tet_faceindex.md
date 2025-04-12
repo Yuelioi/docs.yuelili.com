@@ -4,17 +4,14 @@ order: 2
 ---
 `int  tet_faceindex(int faceno, int vtxno)`
 
-Returns `-1` if an invalid number is specified.
+如果指定了无效数字，则返回 `-1`。
 
-Returns `0` to `3` to refer to the four vertices of a generic tetrahedron.
+返回 `0` 到 `3` 以引用通用四面体的四个顶点。
 
 `faceno`
 
-The face on the tetrahedron. Face 0 is the triangle that doesn’t
-have vertex 0.
+四面体上的面。面 0 是不包含顶点 0 的三角形。
 
 `vtxno`
 
-Which vertex on the triangle to return, `0` to `2`. Starts with
-the lowest number and follows Houdini’s winding convention, ie,
-face 0 is vertices 1, 2, and 3.
+要返回的三角形上的顶点编号，范围从 `0` 到 `2`。从最小的编号开始，并遵循 Houdini 的环绕顺序，即面 0 由顶点 1、2 和 3 组成。

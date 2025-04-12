@@ -4,14 +4,14 @@ order: 11
 ---
 `string [] agentclipnames(<geometry>geometry, int prim)`
 
-Returns an empty array if `prim` is out of range or is not an agent primitive.
+如果`prim`超出范围或不是代理图元，则返回空数组。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个整数，表示要从中读取几何图形的输入编号（从0开始）。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是一个字符串，指定要读取的几何文件（例如`.bgeo`）。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `prim`
 
-The primitive number.
+图元编号。

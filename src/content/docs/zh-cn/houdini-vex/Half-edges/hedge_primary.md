@@ -4,31 +4,29 @@ order: 15
 ---
 `int  hedge_primary(<geometry>geometry, int hedge)`
 
-Each class of equivalent half-edges has precisely one primary half-edge. In particular, a half-edge which is equivalent to no other half-edges is always primary. Primary half-edges are useful for accounting for each edge exactly once as each edge may be realized by any number of equivalent half-edges.
+每组等价半边边中恰好有一个主半边边。特别地，不与任何其他半边边等价的半边边总是主半边边。主半边边可用于确保每条边只被统计一次，因为每条边可能由任意数量的等价半边边表示。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个整数，表示要读取几何体的输入编号（从0开始）。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是一个指定几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `hedge`
 
-Input half-edge.
+输入的半边边。
 
-Returns
+返回值
 
-The primary half-edge `hedge` that shares the source and destination of `hedge` (possibly in reverse order).
-Returns `-1` if the half-edge is not valid.
+返回与`hedge`共享源点和目标点（可能顺序相反）的主半边边。
+如果半边边无效，则返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 int primhedge;
 
-// Get the primary half-edge equivalent  to half-edge number 3.
+// 获取与3号半边边等价的主半边边
 primhedge = hedge_primary("defgeo.bgeo", 3);
 
 ```

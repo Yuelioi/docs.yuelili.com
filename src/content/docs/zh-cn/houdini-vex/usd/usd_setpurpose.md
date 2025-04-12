@@ -2,35 +2,33 @@
 title: usd_setpurpose
 order: 137
 ---
-| Since | 17.5 |
+| 版本 | 17.5 |
 | --- | --- |
 
 `int  usd_setpurpose(int stagehandle, string primpath, string purpose)`
 
-This function sets the primitive’s purpose, e.g., “default”, “render”, “proxy”, “guide”, etc.
+此函数用于设置图元（primitive）的用途（purpose），例如"default"（默认）、"render"（渲染）、"proxy"（代理）、"guide"（引导）等。
 
 `stagehandle`
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+要写入的舞台（stage）的句柄。当前唯一有效的值是`0`，表示节点中的当前舞台。（此参数未来可能用于允许写入其他舞台。）
 
 `primpath`
 
-The path to the primitive.
+图元的路径。
 
 `purpose`
 
-The primitive’s purpose to set.
+要设置的图元用途。
 
-Returns
+返回值
 
-The value of `stagehandle` on success or `-1` on failure.
+成功时返回`stagehandle`的值，失败时返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Set the sphere primitive to be traversable only for rendering.
+// 将球体图元设置为仅用于渲染时遍历
 usd_setpurpose(0, "/geo/sphere", "render");
 
 ```

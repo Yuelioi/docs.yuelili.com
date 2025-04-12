@@ -1,41 +1,39 @@
 ---
-title: agentlayerbindings
+title: 代理层绑定
 order: 27
 ---
 `int [] agentlayerbindings(<geometry>geometry, int prim, string layername, string shapetype)`
 
 `int [] agentlayerbindings(<geometry>geometry, int prim, int layerindex, string shapetype)`
 
-Returns an empty array if `layername` is not one of the agent’s [layers](agentlayers.html "Returns all of the layers that have been loaded for an agent primitive."), `shapetype` is invalid, `prim` is out of range, or `prim` is not an agent primitive.
+如果`layername`不是代理的[层](agentlayers.html "返回代理图元所有已加载的层")之一，`shapetype`无效，`prim`超出范围，或`prim`不是代理图元，则返回空数组。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `prim`
 
-The primitive number.
+图元编号。
 
 `layername`
 
-The name of one of the agent’s layers.
+代理某一层的名称。
 
 `layerindex`
 
-Index of a layer in the agent’s definition.
-A layer’s index can be obtained via [agentfindlayer](agentfindlayer.html "Finds the index of a layer in an agent’s definition.").
+代理定义中层的索引。
+可通过[agentfindlayer](agentfindlayer.html "查找代理定义中某层的索引")获取层的索引。
 
 `shapetype`
 
-Whether to inspect `"static"`, `"deforming"`, or `"all"` shapes from the specified layer.
+检查指定层中的`"static"`（静态）、`"deforming"`（变形）或`"all"`（全部）形状。
 
-Examples
+## 示例
 
-## examples
-
-Find the current world transform of each static shape in the collision layer.
+查找碰撞层中每个静态形状的当前世界变换。
 
 ```vex
 string layer = agentcollisionlayer(0, @primnum);

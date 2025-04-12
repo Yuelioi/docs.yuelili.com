@@ -2,47 +2,46 @@
 title: usd_addinversetotransformorder
 order: 4
 ---
-| Since | 18.0 |
+
+| 版本 | 18.0 |
 | --- | --- |
 
 `int  usd_addinversetotransformorder(int stagehandle, string primpath, string name)`
 
-This function appends an inversed transformation to the primitive’s transform order. Transform order is a sequence of transform operations, whose full names are stored in `xformOpOrder` attribute as a string array. Thus, this function appends a new operation name to that attribute.
+此函数将逆变换添加到图元的变换顺序中。变换顺序是一系列变换操作的序列，其完整名称以字符串数组形式存储在`xformOpOrder`属性中。因此，本函数会向该属性追加一个新的操作名称。
 
-Inverse transforms are used primary for rotating (or scaling) around a pivot that does not coincide with the origin. The usual practice is to apply a translation to the pivot point, then perform rotation, and finally apply an inverse of the original translation. This function is used for applying the inverse of the original translation.
+逆变换主要用于围绕非原点的枢轴点进行旋转（或缩放）操作。通常做法是先平移到枢轴点，然后执行旋转，最后应用原始平移的逆变换。本函数用于实现原始平移的逆变换。
 
-NOTE: unlike most VEX functions that deal with primitive transforms and take an operation suffix as a parameter, this function takes the full operation name. Use [usd_transformname](usd_transformname.html "Constructs a full name of a transform operation") to obtain the full name if you know the suffix.
+注意：与大多数处理图元变换并以操作后缀作为参数的VEX函数不同，本函数需要完整的操作名称。若已知操作后缀，可使用[usd_transformname](usd_transformname.html "构造变换操作的完整名称")获取完整名称。
 
 `stagehandle`
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+要写入的舞台句柄。当前唯一有效值为`0`，表示节点中的当前舞台。（此参数未来可能用于支持写入其他舞台）
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `name`
 
-The full name of the transform operation. Use [usd_transformname](usd_transformname.html "Constructs a full name of a transform operation") to obtain the full name from the operation suffix.
+变换操作的完整名称。使用[usd_transformname](usd_transformname.html "构造变换操作的完整名称")根据操作后缀获取完整名称。
 
-Returns
+返回值
 
-The value of `stagehandle` on success or `-1` on failure.
+成功时返回`stagehandle`值，失败时返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Note, the USD_XFORM_TRANSLATE and USD_AXIS_Z constants used below 
-// are defined in "usd.h" VEX header, so include it.
+// 注意：以下使用的USD_XFORM_TRANSLATE和USD_AXIS_Z常量
+// 定义在"usd.h" VEX头文件中，需先包含该文件
 #include <usd.h>
 
-// Construct the pivot translation operation suffix and name. 
+// 构造枢轴平移操作的后缀和名称
 string pivot_xform_suffix = "some_pivot";
 string pivot_xform_name   = usd_transformname(USD_XFORM_TRANSLATE, pivot_xform_suffix);
 
-// Rotate about z-axis that goes thru pivot (1,0,0).
+// 绕通过枢轴点(1,0,0)的z轴旋转
 usd_addtranslate(0, "/geo/cone", pivot_xform_suffix, {1, 0, 0});
 usd_addrotate(0, "/geo/cone", "some_rotation", USD_AXIS_Z, -90);
 usd_addinversetotransformorder(0, "/geo/cone", pivot_xform_name);

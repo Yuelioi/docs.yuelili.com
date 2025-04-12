@@ -1,424 +1,363 @@
 ---
-title: filterstep
+title: filterstep函数
 order: 6
 ---
-| On this page | * [Image filtering options](#image-filtering-options) * [Examples](#examples) |
+
+| 本页内容 | * [图像过滤选项](#图像过滤选项) * [示例](#示例) |
 | --- | --- |
 
 `float  filterstep(float edge, float x, ...)`
 
 `float  filterstep(float edge, float x0, float x1, ...)`
 
-Returns the anti-aliased weight of the step function. The
-step function returns 0 if x is less than edge and 1 if x is greater
-than edge. `filterstep` returns a fraction representing the
-filtered area under the step function. Filtering is computed using
-derivatives `Du()` and `Dv()` which are only non-zero in shading and COP
-contexts, so `filterstep` will not perform filtering in other contexts.
-Image filtering options
+返回阶梯函数的抗锯齿权重值。阶梯函数在x小于edge时返回0，在x大于edge时返回1。`filterstep`返回一个表示阶梯函数下过滤区域占比的分数值。过滤计算使用导数`Du()`和`Dv()`，这两个导数仅在着色和COP上下文中非零，因此`filterstep`在其他上下文中不会执行过滤操作。
 
-## image-filtering-options
+## 图像过滤选项
 
-Examples of specifying filter parameters:
+指定过滤参数的示例：
 
 ```vex
 colormap(map, u, v, "smode", "decal", "tmode", "repeat", "border", {.1,1,1});
 colormap(map, u, v, "mode", "clamp", "width", 1.3);
 colormap(map, u, v, "filter", "gauss", "width", 1.3, "mode", "repeat");
-
 ```
 
-If the texture is a deep `.rat` file, you can use the `"channel"` keyword argument
-to specify a channel in the file:
+如果纹理是深度`.rat`文件，可以使用`"channel"`关键字参数指定文件中的通道：
 
 ```vex
 string channelname = "N";
 cf = colormap(map, u, v, "channel", channelname);
 ```
 
-- When you read a texture in a format other than Houdini’s native `.pic` or `.rat`, Houdini uses [OpenImageIO](http://en.wikipedia.org/wiki/OpenImageIO) to read the image data from the file. In that case, some of the variadic arguments below may not have any effect.
+- 当读取非Houdini原生格式（如`.pic`或`.rat`）的纹理时，Houdini使用[OpenImageIO](http://en.wikipedia.org/wiki/OpenImageIO)来读取图像数据。在这种情况下，下面列出的一些可变参数可能不会生效。
 
-- When the texture function evaluates non-houdini format textures, Houdini switches to use OpenImageIO for texture evaluation. While there are corresponding values to many of the variadic keywords, some keywords don’t have an equivalent function in OpenImageIO.
+- 当纹理函数评估非Houdini格式纹理时，Houdini会切换使用OpenImageIO进行纹理评估。虽然许多可变关键字有对应的功能，但有些关键字在OpenImageIO中没有等效功能。
 
-  - OIIO will *not* create MIP maps for images that don’t have multi-resolution images by default. You can turn this on by adding `automip=1` to the content of the the `OPENIMAGEIO_IMAGECACHE_OPTIONS` environment variable.
+  - 默认情况下，OIIO*不会*为没有多分辨率图像的图像创建MIP贴图。您可以通过在`OPENIMAGEIO_IMAGECACHE_OPTIONS`环境变量中添加`automip=1`来启用此功能。
 
-Without MIP maps, blurring and filtering may not work as expected.
-\* You can also use `OPENIMAGEIO_IMAGECACHE_OPTIONS` to override the amount of memory OIIO uses for caching.
+没有MIP贴图时，模糊和过滤可能无法按预期工作。
+\* 您也可以使用`OPENIMAGEIO_IMAGECACHE_OPTIONS`来覆盖OIIO用于缓存的内存大小。
 
-By default, Houdini will set the cache memory to 1/8th of the physical computer memory. If you set the `OPENIMAGEIO_IMAGECACHE_OPTIONS` variable it overrides that computed cache size.
+默认情况下，Houdini会将缓存内存设置为计算机物理内存的1/8。如果设置了`OPENIMAGEIO_IMAGECACHE_OPTIONS`变量，它将覆盖计算得出的缓存大小。
 
 "`wrap`",
 `string`
 `="repeat"`
 
-`repeat` or `periodic`
+`repeat`或`periodic`
 
-The image map will repeat outside the range 0 to 1.
-Basically, the integer component of the texture
-coordinate is ignored. This is the default.
+图像贴图将在0到1范围外重复。
+基本上，纹理坐标的整数部分被忽略。这是默认设置。
 
-`clamp` or `edge` or `streak`
+`clamp`或`edge`或`streak`
 
-The texture coordinates will be clamped to the range 0
-to 1. This causes evaluations outside the range to
-evaluate to the color at the closest edge of the image
-(the border pixels are streaked outside the range).
+纹理坐标将被限制在0到1范围内。这会导致范围外的评估结果为图像最近边缘的颜色（边界像素在范围外延伸）。
 
-`black` or `decal` or `color`
+`black`或`decal`或`color`
 
-Coordinates outside the range 0 to 1 will evaluate to
-the border color (rather than a color in the image). The
-border color is black (i.e. 0) by default.
+0到1范围外的坐标将评估为边框颜色（而不是图像中的颜色）。默认边框颜色为黑色（即0）。
 
 "`uwrap`",
 `string`
 
-(AKA `swrap`)
-Specifies the behavior when the u coordinate is outside
-the range 0 to 1. The values are the same as with `wrap`.
+(又名`swrap`)
+指定u坐标在0到1范围外的行为。取值与`wrap`相同。
 
 "`vwrap`",
 `string`
 
-(AKA `twrap`)
-Specifies the behavior when the v coordinate is outside
-the range 0 to 1. The values are the same as with `wrap`.
+(又名`twrap`)
+指定v坐标在0到1范围外的行为。取值与`wrap`相同。
 
 "`border`",
 `float|vector|vector4`
 `=0`
 
-Specifies the border color when Black/Decal/Color wrapping is used.
-**Has no effect for OpenImageIO formats**.
+指定使用Black/Decal/Color包裹时的边框颜色。
+**对OpenImageIO格式无效**。
 
 "`default_color`",
 `float|vector|vector4`
 
-Specifies the color to use when the texture map cannot be found. If this
-argument is not given, the color is set by the
-HOUDINI_DEFAULT_TEXTURE_COLOR variable.
+指定找不到纹理贴图时使用的颜色。如果未提供此参数，颜色将由HOUDINI_DEFAULT_TEXTURE_COLOR变量设置。
 
 "`channel`",
 
-Specifies the color channel for textures that have multiple color
-planes (for example, `diffuse_indirect` or `N`).
-For ptex images, this specifies the index of the first channel
-(for example, `0` or `4`).
+为具有多个颜色通道的纹理（例如`diffuse_indirect`或`N`）指定颜色通道。
+对于ptex图像，这指定第一个通道的索引（例如`0`或`4`）。
 
 "`blur`",
 `float`
 
-Blurs in x and y directions. Blur is measured as a percentage
-of the image size - so a blur of 0.1 will blur 10% of the image
-width. Use `xblur` and `yblur` if you need different blur
-amounts in either dimension.
+在x和y方向进行模糊。模糊量以图像大小的百分比衡量 - 因此0.1的模糊量将模糊图像宽度的10%。如果需要不同维度的模糊量，请使用`xblur`和`yblur`。
 
 "`xblur`",
 
-(AKA `ublur`, `sblur`)
-Blur amount in the x image direction.
+(又名`ublur`, `sblur`)
+x图像方向的模糊量。
 
 "`yblur`",
 
-(AKA `vblur`, `tblur`)
-Blur amount in the y image direction.
+(又名`vblur`, `tblur`)
+y图像方向的模糊量。
 
 "`pixelblur`",
 `float`
 
-Blurs the texture by a floating point number of pixels.
-**Has no effect for OpenImageIO formats**.
+以像素数为单位模糊纹理。
+**对OpenImageIO格式无效**。
 
 ```vex
 Cf = texture("map.rat", ss, tt, "pixelblur", 2.0);
-
 ```
 
 "`xpixelblur`",
 `float`
 
-Blurs the texture by a floating point number of pixels in the X direction.
+在X方向以像素数为单位模糊纹理。
 
 "`ypixelblur`",
 `float`
 
-Blurs the texture by a floating point number of pixels in the Y direction.
+在Y方向以像素数为单位模糊纹理。
 
 "`filter`",
 `string`
 `="box"`
 
-Specifies the type of anti-aliasing filter to be used for
-evaluation.
+指定用于评估的抗锯齿过滤器类型。
 
-**For Houdini native formats**, the following value should be a string specifying one of:
+**对于Houdini原生格式**，应指定以下字符串之一：
 
 `"point"`
 
-Point sampling (i.e. no filtering)
+点采样（即无过滤）
 
 `"box"`
 
-Box filter (default)
+盒式过滤器（默认）
 
 `"gauss"`
 
-Gaussian filter
+高斯过滤器
 
 `"bartlett"`
 
-Bartlett/Triangular filter
+Bartlett/三角形过滤器
 
 `"sinc"`
 
-Sinc sharpening filter
+Sinc锐化过滤器
 
 `"hanning"`
 
-Hanning filter
+汉宁过滤器
 
 `"blackman"`
 
-Blackman filter
+布莱克曼过滤器
 
 `"catrom"`
 
-Catmull-Rom filter
+Catmull-Rom过滤器
 
-**For all other formats (loaded by OpenImageIO)**, specifying the `"point"` filter sets the OIIO interpolation mode to `"closest"` and disables MIP mapping. Any other value uses OIIO smart-bicubic interpolation. You can get finer control using the `"filtermode"` variadic argument (see below).
+**对于其他格式（由OpenImageIO加载）**，指定`"point"`过滤器会将OIIO插值模式设置为`"closest"`并禁用MIP贴图。任何其他值都使用OIIO智能双三次插值。您可以使用`"filtermode"`可变参数获得更精细的控制（见下文）。
 
 "`xfilter`",
 `string`
 
-(AKA `ufilter`, `sfilter`)
-Specifies the filter for the X direction. The filters are
-the same as with `filter`.
+(又名`ufilter`, `sfilter`)
+指定X方向的过滤器。过滤器与`filter`相同。
 
 "`yfilter`",
 `string`
 
-(AKA `vfilter`, `tfilter`)
-Specifies the filter for the Y direction. The filters are
-the same as with `filter`.
+(又名`vfilter`, `tfilter`)
+指定Y方向的过滤器。过滤器与`filter`相同。
 
 "`filtermode`",
 `string`
 
-**For Houdini native formats**, VEX also supports simpler filtering. The
-`filtermode` can be set to one of:
+**对于Houdini原生格式**，VEX还支持更简单的过滤。`filtermode`可设置为以下之一：
 
 `filter`
 
-Use the filter specified by the `filter` keyword argument.
+使用`filter`关键字参数指定的过滤器。
 
 `bilinear`
 
-Use simple bilinear filtering. This is the fastest specialized filtering mode, but provides the lowest quality filtering.
+使用简单的双线性过滤。这是最快的专用过滤模式，但提供的过滤质量最低。
 
 `biquadratic`
 
-Use simple quadratic filtering (order 3 filtering).
+使用简单的二次过滤（3阶过滤）。
 
 `bicubic`
 
-Use simple bicubic filtering.
+使用简单的双三次过滤。
 
-When the `filtermode` is set to `bilinear`, `biquadratic` or `bicubic`,
-several arguments (like `filter` and `width`) are ignored and a fixed
-interpolation filter is used instead. Other arguments (notably the `lerp`
-and `blur` keywords) are still valid.
+当`filtermode`设置为`bilinear`、`biquadratic`或`bicubic`时，
+会忽略几个参数（如`filter`和`width`），而使用固定的插值过滤器。
+其他参数（特别是`lerp`和`blur`关键字）仍然有效。
 
-**For all other formats (loaded by OpenImageIO)** you can set the `filtermode` to `"filter"` (see `"filter"` above), `"bilinear"`, `"biquadratic"`, or `"bicubic"`.
+**对于其他格式（由OpenImageIO加载）**，您可以将`filtermode`设置为`"filter"`（见上文`"filter"`）、`"bilinear"`、`"biquadratic"`或`"bicubic"`。
 
 "`width`",
 `float`
 `=1.0`
 
-**For Houdini native formats**, this sets the filter width in both X and Y directions.
+**对于Houdini原生格式**，这设置X和Y方向的过滤器宽度。
 
-**For all other formats (loaded by OpenImageIO)**, this sets the OIIO `swidth` and `twidth` options.
+**对于其他格式（由OpenImageIO加载）**，这设置OIIO的`swidth`和`twidth`选项。
 
 "`xwidth`",
 `float`
 
-(AKA `uwidth`, `swidth`)
-Filter width in the X direction.
+(又名`uwidth`, `swidth`)
+X方向的过滤器宽度。
 
 "`ywidth`",
 `float`
 
-(AKA `vwidth`, `twidth`)
-Filter width in the Y direction.
+(又名`vwidth`, `twidth`)
+Y方向的过滤器宽度。
 
 "`zwidth`",
 `float`
 
-Filter width in the Z direction (for shadow maps).
-This is measured in world space units, unlike the other width arguments.
+Z方向的过滤器宽度（用于阴影贴图）。
+与其他宽度参数不同，这是以世界空间单位衡量的。
 
 "`extrapolate`",
 `int`
 
-whether to use derivative extrapolation
-when computing anti-aliasing information. Extrapolation of
-derivatives is on by default. The argument should be either 0 or
-1\.
+是否在计算抗锯齿信息时使用导数外推。
+默认启用导数外推。参数应为0或1。
 
 "`lerp`",
 `int`
 
-**For Houdini native formats**, this specifies whether RAT files should interpolate between different MIP levels. By default, this is turned off. Turning interpolation on will help remove discontinuities when different
-MIP levels of a `.rat` file are accessed. However, the results of texture evaluation will be slightly softer (i.e. blurrier) and will take more time.
+**对于Houdini原生格式**，这指定RAT文件是否应在不同MIP级别之间插值。默认情况下，此功能关闭。启用插值将有助于消除访问`.rat`文件不同MIP级别时的不连续性。但是，纹理评估的结果会稍微模糊（即更柔和）并且需要更多时间。
 
-There are three possible values for this argument.
+此参数有三个可能的值：
 
 `0`
 
-Disable MIP map interpolation (fastest).
+禁用MIP贴图插值（最快）。
 
 `1`
 
-Approximate MIP map interpolation (fast).
+近似MIP贴图插值（快速）。
 
 `2`
 
-High Quality MIP map interpolation (slower but highest quality).
+高质量MIP贴图插值（较慢但质量最高）。
 
-**For all other formats (loaded by OpenImageIO)**, a value of 0 specifies a single MIP level, any other value specifies trilinear interpolation.
+**对于其他格式（由OpenImageIO加载）**，值为0表示单个MIP级别，任何其他值表示三线性插值。
 
 "`depthinterp`",
 `string`
 
-Specifies the depth interpolation mode for deep shadow maps,
-to control the opacity value that will be returned when the
-map is sampled between two z-records.
+为深度阴影贴图指定深度插值模式，
+控制在采样点位于两个z记录之间时返回的不透明度值。
 
-The argument must be a string.
+参数必须为字符串。
 
 `discrete`
 
-(default) Return the first z-record before the sample
-point.
+（默认）返回采样点前的第一个z记录。
 
 `linear`
 
-Linearly interpolate the opacities of the z-records
-before and after the sample point.
+线性插值采样点前后的z记录的不透明度。
 
-See [deep shadow maps](../../render/lights.html) for more on
-the difference between the two modes.
+有关两种模式差异的更多信息，请参见[深度阴影贴图](../../render/lights.html)。
 
 "`beerlambert`",
 `int`
 
-When evaluating volumetric deep shadow maps, this will enable Beer-Lambert
-interpolation of opacity. Beer-Lambert is more a accurate but more
-expensive form of interpolation.
+在评估体积深度阴影贴图时，这将启用Beer-Lambert不透明度插值。Beer-Lambert是一种更准确但更昂贵的插值形式。
 
-The argument should be either 0 or 1.
+参数应为0或1。
 
 "`srccolorspace`",
 `string`
 
-Specifies the color space in which the texture is stored.
-When texture values are accessed, they will be translated from
-this space into linear space for rendering if needed.
+指定纹理存储的颜色空间。
+访问纹理值时，如果需要，将从该空间转换为线性空间进行渲染。
 
 `auto`
 
-(default) Determine the source color space based on the
-file. Currently, this will assume sRGB color space for
-8-bit textures and linear for all other textures.
+（默认）根据文件确定源颜色空间。目前，这将假定8位纹理为sRGB颜色空间，其他所有纹理为线性。
 
 `linear`
 
-Transform to linear space. This currently only affects
-8-bit textures, since all others are assumed to be already
-in linear space. Use this option to force linear
-interpretation of textures used for bump or displacement
-maps.
+转换为线性空间。目前这仅影响8位纹理，因为其他所有纹理都被假定为已经在线性空间中。使用此选项可强制线性解释用于凹凸或位移贴图的纹理。
 
 `sRGB`
 
-Forcibly translate from sRGB color space to linear space regardless of
-the bit-depth or number of channels in the the texture.
+无论纹理的位深度或通道数如何，都强制从sRGB颜色空间转换为线性空间。
 
 `rec709`
 
-Convert from Rec709 color space to linear space.
+从Rec709颜色空间转换为线性空间。
 
 `gamma22`
 
-Convert from Gamma 2.2 color space to linear space.
+从Gamma 2.2颜色空间转换为线性空间。
 
 `raw`
 
-Use map colors untransformed
+直接使用贴图颜色，不进行转换
 
-The `srccolorspace` argument can also be any color space known to OpenColorIO.
+`srccolorspace`参数也可以是OpenColorIO已知的任何颜色空间。
 
 "`face`",
 
-When using a Ptex texture map, the `face` argument is used to specify the face for ptexture lookup.
-**Has no effect for OpenImageIO formats**.
+使用Ptex纹理贴图时，`face`参数用于指定ptexture查找的面。
+**对OpenImageIO格式无效**。
 
 "`ptexorient`",
 `int`
 
-When using Ptex textures, the implicit texture coordinates on
-polygons are used as the interpolants for texture lookup (combined
-with the `face`). However, different software may have different
-beliefs about winding and orientation. This keyword argument
-allows you to control the interpretation of orientation for Houdini
-polygons. The `ptexorient` expects an integer argument which is
-composed of a bit-field
+使用Ptex纹理时，多边形上的隐式纹理坐标用作纹理查找的插值（与`face`结合）。然而，不同的软件可能对缠绕和方向有不同的理解。此关键字参数允许您控制Houdini多边形方向的解释。`ptexorient`需要一个整数参数，该参数由位字段组成：
 
-- bit 0×01: Complement the `s` coordinate
-- bit 0×02: Complement the `t` coordinate
-- bit 0×04: Swap the `s` and `t` coordinates
+- 位0×01：补码`s`坐标
+- 位0×02：补码`t`坐标
+- 位0×04：交换`s`和`t`坐标
 
-For example, a value of 6 (0×4|0×2) is equivalent to calling
-`texture(map, 1-t, s)` instead of `texture(map, s, t)`.
+例如，值6（0×4|0×2）相当于调用`texture(map, 1-t, s)`而不是`texture(map, s, t)`。
 
-The default `ptexorient` is 0, which works correctly with the
-examples found at <http://ptex.us>.
+默认`ptexorient`为0，这与<http://ptex.us>上的示例正常工作。
 
-**Has no effect for OpenImageIO formats**.
+**对OpenImageIO格式无效**。
 
 "`iesnormalization`",
 `string`
 `="maxvalue"`
 
-Select different methods of normalizing IES map’s output values when
-querying via `environment()` function.
+通过`environment()`函数查询时，选择不同的IES贴图输出值归一化方法。
 
 `none`
 
-Use raw values scaled by the candela multiplier in the header.
+使用标头中坎德拉乘数缩放的原始值。
 
 `maxvalue`
 
-(default) Normalized by the maximum value. This is legacy behavior used
-by mantra’s default light shader.
+（默认）按最大值归一化。这是mantra默认灯光着色器使用的传统行为。
 
 `preserveenergy`
 
-Normalized by values integrated over coverage angles, so that IES
-profile affects shaping of the light while preserving its overall
-energy output.
+按覆盖角度上积分值归一化，因此IES轮廓影响光的形状，同时保留其总能量输出。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 f = filterstep(0.5, s+t, "filter", "gauss", "width", 2);
-
 ```
 
-The `filterstep(float edge, x, ...)` form is roughly equivalent to:
+`filterstep(float edge, x, ...)`形式大致等同于：
 
 ```vex
 f = filterstep(edge, x, x + abs(Du(x) + Dv(x)));
-
 ```

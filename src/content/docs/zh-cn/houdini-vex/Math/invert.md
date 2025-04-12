@@ -1,9 +1,9 @@
 ---
-title: invert
+title: 矩阵求逆
 order: 32
 ---
 `<matrix> invert(<matrix>m)`
 
-The matrix to [invert](http://en.wikipedia.org/wiki/Invertible_matrix).
+需要[求逆](http://en.wikipedia.org/wiki/Invertible_matrix)的矩阵。
 
-Returns the inverted matrix if the matrix is invertible. Otherwise, the return value is undefined.
+如果矩阵可逆，则返回其逆矩阵。否则返回值为未定义。

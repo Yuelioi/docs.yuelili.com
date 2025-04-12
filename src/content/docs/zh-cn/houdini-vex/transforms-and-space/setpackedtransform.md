@@ -2,31 +2,28 @@
 title: setpackedtransform
 order: 24
 ---
-| Since | 17.0 |
+| 版本 | 17.0 |
 | --- | --- |
 
 `void  setpackedtransform(int input, int primnum, matrix transform)`
 
-Sets the transform of a packed primitive. This modifies the `P` attribute of
-the primitive’s point as well as its intrinsic `transform`.
+设置打包图元的变换矩阵。这会同时修改该图元对应点的`P`属性及其固有属性`transform`。
 
-Warning
-This function replaces *only* the `P` (position) attribute and the `transform` intrinsic attribute. It ignores various details that the `packedfulltransform` intrinsic attribute includes:
+警告
+此函数仅替换`P`（位置）属性和`transform`固有属性。它会忽略`packedfulltransform`固有属性包含的多种细节：
 
-- The packed primitive’s `pivot` intrinsic attribute.
-- Instancing attributes such as `orient` (when the `pointinstancetransform` intrinsic attribute is on, as with crowd agents).
-- The `packedlocaltransform` intrinsic attribute (Alembic primitives).
+- 打包图元的`pivot`固有属性
+- 实例化属性（如`orient`，当`pointinstancetransform`固有属性启用时，例如人群代理）
+- `packedlocaltransform`固有属性（Alembic图元）
 
-So this function will not apply the expected transform in several different cases.
+因此在多种情况下，此函数不会应用预期的变换。
 
-The [getpackedtransform](getpackedtransform.html "Gets the transform of a packed primitive.") function has the same issues since it returns a transform *only* based on `P` and `transform`.
+[getpackedtransform](getpackedtransform.html "获取打包图元的变换矩阵。")函数存在相同问题，因为它返回的变换矩阵仅基于`P`和`transform`计算得出。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// matrix to transform by
+// 定义变换矩阵
 matrix tf = ident();
 rotate(tf, radians(45), {0,1,0});
 translate(tf, {0,1,0});

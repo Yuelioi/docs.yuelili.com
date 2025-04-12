@@ -2,37 +2,35 @@
 title: usd_isarray
 order: 63
 ---
-| Since | 17.5 |
+| 始于版本 | 17.5 |
 | --- | --- |
 
 `int  usd_isarray(<stage>stage, string primpath, string name)`
 
-This function checks whether the given attribute is an array.
+此函数用于检查给定属性是否为数组类型。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号的整数（从0开始）以读取对应阶段的USD数据。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已处理阶段（例如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `name`
 
-Attribute name.
+属性名称。
 
-Returns
+返回值
 
-`1` if the attribute exists and is an array, or `0` otherwise.
+如果属性存在且为数组类型则返回`1`，否则返回`0`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Check if attribute "some_attribute" is an array.
+// 检查属性"some_attribute"是否为数组类型
 int is_array = usd_isarray(0, "/geometry/sphere", "some_attribute");
 
 ```

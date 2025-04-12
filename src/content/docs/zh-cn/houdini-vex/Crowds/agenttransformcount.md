@@ -2,16 +2,17 @@
 title: agenttransformcount
 order: 40
 ---
+
 `int  agenttransformcount(<geometry>geometry, int prim)`
 
-Returns `-1` if `prim` is out of range or is not an agent primitive.
+如果`prim`超出范围或不是代理图元，则返回`-1`。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是一个指定要读取的几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `prim`
 
-The primitive number.
+图元编号。

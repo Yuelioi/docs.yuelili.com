@@ -2,9 +2,9 @@
 title: getfogname
 order: 13
 ---
-| Context(s) | [shading](../contexts/shading.html) |
+| 上下文 | [shading](../contexts/shading.html) |
 | --- | --- |
 
 `string  getfogname()`
 
-Returns the name of the current fog object whose shader is being run, or the empty string if there is no current fog object.
+返回当前正在运行其着色器的雾效对象名称，如果没有当前雾效对象则返回空字符串。

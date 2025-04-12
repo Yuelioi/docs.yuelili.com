@@ -2,13 +2,11 @@
 title: dsmpixel
 order: 9
 ---
+
 `int  dsmpixel(string map, string channel, int x, int y, <type>&values[])`
 
-Each pixel of a deep shadow map channel has multiple values. This function
-will extract the list of the values associated with the channel for the given
-pixel.
+深度阴影图(DSM)通道的每个像素都包含多个值。此函数将提取指定像素对应通道的值列表。
 
-Returns the number of values in the deep pixel (or -1 on failure).
+返回深度像素中的值的数量（失败时返回-1）。
 
-A DSM will always have `Pz` and `Of` channels. The `Pz` channel stores the
-z-depth associated with each record. The `Of` channel stores the opacity.
+DSM始终包含`Pz`和`Of`通道。`Pz`通道存储每个记录的z深度值，`Of`通道存储不透明度值。

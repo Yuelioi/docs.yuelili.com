@@ -2,32 +2,32 @@
 title: importance_remap
 order: 6
 ---
-| Since | 18.5 |
+| 始于版本 | 18.5 |
 | --- | --- |
 
 `vector2  importance_remap(string map, vector2 uv, ...)`
 
-This function remaps texture coordinates to new texture coordinates based on importance sampling of the texture.
+该函数基于纹理的重要性采样，将纹理坐标重新映射为新的纹理坐标。
 
 `map`
 
-The filename of the texture map to use to guide resampling.
+用于指导重采样的纹理贴图文件名。
 
 `uv`
 
-Components should be in the range `0` to `1`. The function remaps these coordinates so more “important” areas of the input text (that is, brighter areas) get more samples.
+坐标分量应在 `0` 到 `1` 范围内。函数会重新映射这些坐标，使输入纹理中更"重要"的区域（即更亮的区域）获得更多采样。
 
 "`maxres`",
 `int`
 `=0`
 
-While building lookup tables for importance sampling, the function resamples the texture for faster evaluation. This argument clamps the resolution of the resampled map. Depending on the use, importance sample tables can often be significantly smaller resolution than the source image with no perceptible loss.
+在构建重要性采样的查找表时，函数会对纹理进行重采样以加快计算速度。此参数用于限制重采样贴图的分辨率。根据使用情况，重要性采样表的分辨率通常可以远小于源图像而不会产生明显损失。
 
-A value of `0` (the default) just uses the original texture size.
+默认值 `0` 表示使用原始纹理尺寸。
 
-Note
-It’s a good idea to limit the lookup table size, since you typically don’t need much resolution for importance sampling, and a large texture can generate a huge LUT.
+注意
+建议限制查找表的大小，因为重要性采样通常不需要很高的分辨率，而大尺寸纹理可能会生成巨大的查找表(LUT)。
 
-Returns
+返回值
 
-The remapped texture coordinates.
+重新映射后的纹理坐标。

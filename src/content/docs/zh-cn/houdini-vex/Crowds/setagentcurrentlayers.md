@@ -2,7 +2,7 @@
 title: setagentcurrentlayers
 order: 59
 ---
-| Since | 19.0 |
+| 版本 | 19.0 |
 | --- | --- |
 
 `int  setagentcurrentlayers(int geohandle, int prim, string layernames[])`
@@ -11,16 +11,16 @@ order: 59
 
 `geohandle`
 
-Handle to the geometry to write to. `geoself()` can be used to get a handle to the current geometry.
+要写入的目标几何体句柄。可使用`geoself()`获取当前几何体的句柄。
 
 `prim`
 
-The primitive number.
+图元编号。
 
 `layernames`
 
-A list of agent layer names.
+代理层名称列表。
 
 `layer_ids`
 
-A list of agent layer indices, as returned by [agentfindlayer](agentfindlayer.html "Finds the index of a layer in an agent’s definition.").
+代理层索引列表，由[agentfindlayer](agentfindlayer.html "查找代理定义中某层的索引")函数返回。

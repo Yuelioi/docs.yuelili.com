@@ -1,28 +1,26 @@
 ---
-title: solid_angle
+title: 立体角
 order: 20
 ---
 `float  solid_angle(bsdf b, int mask)`
 
 `b`
 
-BSDF to sample.
+要采样的BSDF。
 
 `mask`
 
-A bitmask indicating which types of bounces to evaluate.
+指示要评估哪些类型反弹的位掩码。
 
-See [bouncemask](bouncemask.html) for information on component label bitmasks.
+有关组件标签位掩码的信息，请参见[bouncemask](bouncemask.html)。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Split BSDF into component lobes
+// 将BSDF拆分为分量波瓣
 bsdf lobes[] = split_bsdf(hitF);
 
-// Get solid angle of lobes
+// 获取波瓣的立体角
 float angles[];
 resize(angles, len(lobes));
 for (int i = 0; i < len(lobes); i++)
@@ -30,16 +28,16 @@ for (int i = 0; i < len(lobes); i++)
     angles[i] = solid_angle(lobes[i], PBR_ALL_MASK);
 }
 
-// Compute PDF from angles
+// 根据立体角计算PDF
 float pdf[] = compute_pdf(angles);
 
-// Compute CDF from PDF
+// 根据PDF计算CDF
 float cdf[] = compute_cdf(pdf);
 
-// Randomly select a BSDF based on albedo distribution
+// 基于反照率分布随机选择一个BSDF
 int id = sample_cdf(cdf, sx);
 
-// Do something with the selected BSDF
+// 对选中的BSDF进行操作
 // lobes[id] ...
 
 ```

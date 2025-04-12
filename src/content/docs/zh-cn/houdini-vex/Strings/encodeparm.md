@@ -2,21 +2,11 @@
 title: encodeparm
 order: 10
 ---
-| Since | 18.0 |
+| 版本 | 18.0 |
 | --- | --- |
 
 `string  encodeparm(string str)`
 
-Houdini parameter names are only allowed to contain letters, numbers, hash
-characters (for multiparms), and underscores, and must not begin with a
-number. This function takes any string, and encodes it into a string that
-obeys these restrictions. The original string can be recovered using the
-`decodeparm` function. A string that already obeys the rules is returned
-unmodified.
+Houdini参数名称仅允许包含字母、数字、井号（用于多重参数）和下划线，且不能以数字开头。该函数接收任意字符串，并将其编码为符合这些限制条件的字符串。原始字符串可通过`decodeparm`函数恢复。若字符串本身已符合规则，则直接返回原字符串。
 
-One exception to this rule is that a string starting with `xn__` will be
-encoded even if it is already a valid parameter name. This is because `xn__`
-is the prefix used to identify an encoded string. In this case, an additional
-`xn__` prefix will be added. This means a string can be encoded any number of
-times, then decoded the same number of times to always return to the original
-string, regardless of its contents.
+该规则的一个例外情况是：以`xn__`开头的字符串即使已经是合法参数名，仍会被编码。这是因为`xn__`是用于标识已编码字符串的前缀。在这种情况下，会额外添加一个`xn__`前缀。这意味着字符串可以被多次编码，然后通过相同次数的解码总能还原为原始字符串，无论其内容如何。

@@ -2,43 +2,41 @@
 title: usd_ismetadata
 order: 75
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `int  usd_ismetadata(<stage>stage, string path, string name)`
 
-This function checks whether the given object has metadata of a given name.
+此函数用于检查给定对象是否具有指定名称的元数据。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，此参数可以是表示输入编号的整数（从0开始），用于读取对应输入的stage。该整数等价于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+也可使用此参数引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已处理stage（如"op:/stage/lop_node"）。
 
 `path`
 
-The path to the object. I.e, a primitive, an attribute, or a relationship.
+对象路径。可以是图元(primitive)、属性(attribute)或关系(relationship)。
 
 `name`
 
-The metadata name.
+元数据名称。
 
-The name can be namespaced to acces values inside (possibly nested) VtDictionaries, such as custom data dictionary, e.g., “customData:name” or “customData:name:subname”. For non-namespaced names, the object schema needs to declare a given metadata for it to be accessible, e.g., “active” or “documentation”.
+名称可包含命名空间以访问（可能嵌套的）VtDictionary中的值，例如自定义数据字典中的"customData:name"或"customData:name:subname"。对于非命名空间名称，对象模式(schema)需声明相应元数据才可访问，如"active"或"documentation"。
 
-Returns
+返回值
 
-`1` if the primitive has the given metadata, or `0` otherwise.
+若图元具有指定元数据则返回`1`，否则返回`0`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Check if the primitives have various metadata:
+// 检查图元是否具有各种元数据：
 int has_doc = usd_ismetadata(0, "/geo/sphere", "documentation");
 int has_custom_foo_bar = usd_ismetadata(0, "/geo/cube", "customData:foo:bar");
 
-// Check if the attribute has custom data set
+// 检查属性是否设置了自定义数据
 string attrib_path = usd_makeattribpath(0, "/geo/sphere", "attrib_name");
 int has_attrib_foo = usd_ismetadata(0, attrib_path, "customData:foo");
 

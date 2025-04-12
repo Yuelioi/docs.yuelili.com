@@ -1,20 +1,15 @@
 ---
-title: isbound
+title: isbound函数
 order: 6
 ---
 `int  isbound(string variable_name)`
 
-Parameters in VEX can be overridden by geometry attributes (if the
-attributes exist on the surface being rendered). If the geometry
-overrides the default attribute, this function will return 1. Otherwise
-it will return 0.
+VEX中的参数可以被几何体属性覆盖（如果渲染的表面存在这些属性）。如果几何体覆盖了默认属性，该函数将返回1，否则返回0。
 
-Note
-Though this function is defined for all contexts, it is only useful in the Displacement, Surface, and SOP contexts. No other contexts
+注意
+虽然该函数在所有上下文中都有定义，但它仅在置换(Displacement)、表面(Surface)和SOP上下文中有效。目前其他上下文无法将几何体属性绑定到VEX变量。
 
-can currently bind geometry attributes to VEX variables.
-
-Example, in a SOP function:
+示例（在SOP函数中）：
 
 ```vex
 sop
@@ -22,17 +17,15 @@ mycolor(vector uv=0; string map="")
 {
 if (isbound("uv") && map != "")
 {
-    // User has texture coordinates here, so create
-    // velocity based on a texture map.
+    // 用户在此处有纹理坐标，因此基于纹理贴图创建速度
     v = colormap(map, uv);
 }
 else
 {
-    // No texture coordinates, so use a random value
+    // 没有纹理坐标，使用随机值
     v = random(id);
 }
-
 ```
 
-Note
-`isbound` does not tell you if the attribute exists. It tells you if the attribute is bound. If you added an `@a` to a wrangle to bind the `a`, then `isbound` will work as you expect in CVEX. Without an `@a`, there is no parameter in your CVEX function to bind the attribute to, so it will be unbound.
+注意
+`isbound`不会告诉你属性是否存在，而是告诉你属性是否被绑定。如果你在wrangle中添加了`@a`来绑定`a`属性，那么在CVEX中`isbound`会如预期工作。如果没有`@a`，你的CVEX函数中就没有参数来绑定属性，因此它将处于未绑定状态。

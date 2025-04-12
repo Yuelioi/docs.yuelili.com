@@ -2,35 +2,33 @@
 title: usd_settransformreset
 order: 140
 ---
-| Since | 18.0 |
+| 版本 | 18.0 |
 | --- | --- |
 
 `int  usd_settransformreset(int stagehandle, string primpath, int flag)`
 
-This function sets the primitive’s transform reset flag, i.e., whether the primitive uses the world co-ordinate system as the initial space, or whether it inherits the space transformation from the parent (default).
+此函数用于设置图元的变换重置标志，即决定图元是使用世界坐标系作为初始空间（重置状态），还是继承父级的空间变换（默认行为）。
 
 `stagehandle`
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+要写入的舞台句柄。当前唯一有效值是`0`，表示节点中的当前舞台。（此参数未来可能用于支持写入其他舞台）
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `flag`
 
-If `1`, the primitive will have its transform reset, i.e. will use the world co-ordinate system as the initial space. If `0` it will inherit the space transform from the parent.
+当设为`1`时，图元将重置变换，即使用世界坐标系作为初始空间；设为`0`时将继承父级的空间变换。
 
-Returns
+返回值
 
-The value of `stagehandle` on success or `-1` on failure.
+成功时返回`stagehandle`的值，失败时返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Ignore parent's transform.
+// 忽略父级变换
 usd_settransformreset(0, "/geo/cone", 1);
 
 ```

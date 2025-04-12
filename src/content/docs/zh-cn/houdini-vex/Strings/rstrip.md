@@ -6,5 +6,4 @@ order: 33
 
 `string  rstrip(string value, string whitespace)`
 
-Returns a string with the trailing whitespace removed. If
-whitespace is provided, it is a string of characters that will be stripped.
+返回移除末尾空白字符后的字符串。如果指定了whitespace参数，则移除该字符串中指定的字符。

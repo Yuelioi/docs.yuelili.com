@@ -2,7 +2,7 @@
 title: cregiondeformtransform
 order: 22
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `matrix  cregiondeformtransform(string path)`
@@ -13,9 +13,9 @@ order: 22
 
 `matrix  cregiondeformtransform(int op_id, float time)`
 
-Returns the deform transform associated with a Capture Region SOP.
-The transform is built from the parameters of the SOP without cooking the SOP.
-It is possible to specify the time to evaluate the transform at (in seconds, not frames).
+返回与捕获区域SOP相关联的形变变换矩阵。
+该变换矩阵是根据SOP的参数构建的，无需实际计算（cooking）该SOP。
+可以指定评估变换的时间（以秒为单位，而非帧数）。
 
-Note
-The op: syntax can be used to simulate this behavior using the standard transform functions.
+注意
+使用标准的变换函数配合op:语法可以模拟此行为。

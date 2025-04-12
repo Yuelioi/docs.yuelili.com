@@ -4,15 +4,14 @@ order: 16
 ---
 `vector  relpointbbox(<geometry>geometry, vector position)`
 
-Returns the relative position of the point given with respect to the
-bounding box of the points in the geometry.
+返回给定点相对于几何体中所有点包围盒的相对位置。
 
 `vector  relpointbbox(<geometry>geometry, string pointgroup, vector position)`
 
-Use the bounding box of the primitives in the named point group.
+使用指定点组中图元的包围盒进行计算。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号的整数（从0开始）以读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。

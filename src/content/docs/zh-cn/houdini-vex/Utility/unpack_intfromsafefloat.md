@@ -4,4 +4,4 @@ order: 21
 ---
 `int  unpack_intfromsafefloat(float f)`
 
-See [pack_inttosafefloat](pack_inttosafefloat.html "Reversibly packs an integer into a finite, non-denormal float.")
+参见 [pack_inttosafefloat](pack_inttosafefloat.html "将整数可逆地打包为有限、非规格化浮点数。")

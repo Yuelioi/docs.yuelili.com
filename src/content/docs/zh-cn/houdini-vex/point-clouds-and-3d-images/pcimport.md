@@ -2,29 +2,30 @@
 title: pcimport
 order: 14
 ---
-This function is only valid while looping with `pciterate` or `pcunshaded`.
+
+此函数仅在通过 `pciterate` 或 `pcunshaded` 进行循环时有效。
 
 `int  pcimport(int handle, string channel_name, <type>&value)`
 
-Imports data from the point cloud file into the given variable.
+将点云文件中的数据导入到给定变量中。
 
 `channel_name`
 
-There are two special channel names you can import:
+可以导入两种特殊通道名称：
 
 `point.number`
 
-The number of the point being processed.
+当前处理点的编号。
 
 `point.distance`
 
-The distance of the point being processed from the query point.
-This is only available when iterating over unshaded points.
+当前处理点与查询点之间的距离。
+此通道仅在遍历未着色点时可用。
 
 `value`
 
-If the import succeeds the function overwrites this variable with the channel value.
+如果导入成功，该函数会用通道值覆盖此变量。
 
-Returns
+返回值
 
-`1` if the import succeeded or `0` if the import failed (usually due to the given channel name not existing).
+导入成功返回 `1`，导入失败返回 `0`（通常是由于给定的通道名称不存在）。

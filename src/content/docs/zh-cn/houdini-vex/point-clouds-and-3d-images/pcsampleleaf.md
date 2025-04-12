@@ -4,30 +4,17 @@ order: 28
 ---
 `void  pcsampleleaf(int handle, float sample)`
 
-This function can only be used with the pcopenlod() function, and then only
-within a pciterate() loop. It replaces the current iteration point with an
-importance sampled leaf descendant of that point. The weighting used to
-select the leaf point is the “area” channel provided to the pcopenlod()
-function’s “measure” parameter, or a uniform weight if no area channel
-was specified when opening the point cloud. The sample parameter is
-expected to be a uniform random value between 0 and 1.
+此函数只能与 pcopenlod() 函数配合使用，并且只能在 pciterate() 循环内部调用。它会将当前迭代点替换为该点经过重要性采样的叶子后代节点。用于选择叶子点的权重是传递给 pcopenlod() 函数"measure"参数的"area"通道，如果在打开点云时未指定面积通道，则使用均匀权重。sample 参数应为0到1之间的均匀随机值。
 
-If the current iteration point is already a leaf point or the point cloud
-was not opened with pcopenlod(), pcsampleleaf() has no effect.
+如果当前迭代点已经是叶子点，或者点云不是用 pcopenlod() 打开的，则 pcsampleleaf() 不会产生任何效果。
 
-This function is useful when aggregate point information cannot be used in
-a meaningful way, and provides a mechanism to access the information
-contained in child nodes in the point tree. For example, it wouldn’t make
-sense to trace shadow rays from an averaged point position, but it is
-useful to choose one of the child points and then send the shadow ray to
-that point.
-Example: Shadow Rays
+当聚合点信息无法以有意义的方式使用时，此函数非常有用，它提供了一种访问点树中子节点信息的机制。例如，从平均点位置追踪阴影射线是没有意义的，但可以选择一个子点然后将阴影射线发送到该点就很有用。
+示例：阴影射线
 
 ## example-shadow-rays
 
 ```vex
-// Open a point cloud and retrieve a single aggregate point representing the
-// entire cloud
+// 打开一个点云并获取代表整个点云的单个聚合点
 string texturename = "points.pc";
 int handle = pcopenlod(texturename, "P", P, 8,
 "measure", "solidangle",
@@ -38,16 +25,16 @@ int handle = pcopenlod(texturename, "P", P, 8,
 
 Cf = 0;
 
-// This loop will iterate only once
+// 这个循环只会迭代一次
 while (pciterate(handle))
 {
-    // Query A from the averaged point
+    // 从平均点查询A值
     float        ptarea;
     pcimport(handle, "A", ptarea);
 
     pcsampleleaf(handle, nrandom());
 
-    // Query P from a sampled leaf point
+    // 从采样的叶子点查询P值
     vector        pos;
     pcimport(handle, "P", pos);
 

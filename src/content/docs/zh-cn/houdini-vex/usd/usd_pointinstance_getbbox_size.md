@@ -2,41 +2,39 @@
 title: usd_pointinstance_getbbox_size
 order: 102
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `vector  usd_pointinstance_getbbox_size(<stage>stage, string primpath, int instance_index, string purpose)`
 
-Computes the largest position of the bounding box for the instance geometry.
+计算实例几何体包围盒的最大位置。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，该参数可以是表示输入编号（从0开始）的整数，用于读取对应输入端的stage。该整数等价于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+也可用此参数引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点已烹饪的stage（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `instance_index`
 
-The index of the instance whose bounding box to return.
+需要返回包围盒的实例索引。
 
 `purpose`
 
-The primitive’s purpose for which to return the bounding box size (e.g., “render”).
+要返回包围盒尺寸的图元用途（如"render"）。
 
-Returns
+返回值
 
-The size of the instance’s bounding box.
+实例包围盒的尺寸。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the size of the first instance's boundsng box.
+// 获取第一个实例的包围盒尺寸
 vector size = usd_pointinstance_getbbox_size(0, "/src/instanced_spheres", 0, "render");
 
 ```

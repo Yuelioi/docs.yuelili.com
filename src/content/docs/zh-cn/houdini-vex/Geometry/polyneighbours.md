@@ -1,26 +1,24 @@
 ---
-title: polyneighbours
+title: 多边形邻接关系
 order: 24
 ---
-| Since | 17.0 |
+
+| 始于版本 | 17.0 |
 | --- | --- |
 
-`int [] polyneighbours(<geometry>geometry, int primnum)`
+`int [] polyneighbours(<geometry>geometry, int primnum)`
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号（从0开始）的整数，用于指定读取几何体的来源。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数也可以是一个指定几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`形式的引用路径。
 
-This returns an array of primitive numbers of polygons that share an
-edge with this polygon. It uses the Half-Edge data structure so will
-work with geometry that supports that (ie, polygons)
-Examples
+该函数返回与指定多边形共享边的所有多边形的图元编号数组。它使用半边（Half-Edge）数据结构，因此适用于支持该结构的几何体（即多边形）。
 
-## examples
+## 示例
 
-This is roughly equivalent to the following code:
+以下代码大致等效于该函数的功能：
 
 ```vex
 int[] polyneighbours(const string opname; const int primnum)
@@ -48,5 +46,4 @@ int[] polyneighbours(const string opname; const int primnum)
 
     return result;
 }
-
 ```

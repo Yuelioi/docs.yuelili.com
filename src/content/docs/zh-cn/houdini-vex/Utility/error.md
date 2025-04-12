@@ -1,21 +1,19 @@
 ---
-title: error
+title: 错误处理
 order: 3
 ---
+
 `void  error(string format, ...)`
 
-Reports a custom runtime VEX error. This uses the same format string syntax as [printf](printf.html "Prints values to the console which started the VEX program.").
+报告自定义的运行时VEX错误。该函数使用与[printf](printf.html "将值打印到启动VEX程序的控制台。")相同的格式化字符串语法。
 
-If something can still be done as an acceptable fallback, instead of outright failing,
-it may be worth reporting a [warning](warning.html "Reports a custom runtime VEX warning."), instead of an error.
+如果某些操作仍可作为可接受的备选方案执行，而非完全失败，则考虑使用[warning](warning.html "报告自定义的运行时VEX警告。")而非错误报告可能更为合适。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 if (!pointattribtype(0,chs("nameattrib")) != 2) {
-    error("Name attribute %s must be a string attribute!", chs("nameattrib"));
+    error("名称属性 %s 必须是字符串类型！", chs("nameattrib"));
     return;
 }
 if (chf("distance") < 0) {
@@ -24,7 +22,7 @@ if (chf("distance") < 0) {
 float minimumValue = chf("min");
 float maximumValue = chf("max");
 if (minimumValue >= maximumValue) {
-    error("Minimum (%f) must be strictly less than maximum (%f)!  It's unclear what should be done.", minimumValue, maximumValue);
+    error("最小值 (%f) 必须严格小于最大值 (%f)! 当前无法确定应执行的操作。", minimumValue, maximumValue);
     return;
 }
 

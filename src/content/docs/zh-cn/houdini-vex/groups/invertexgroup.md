@@ -8,19 +8,18 @@ order: 7
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `vertexnum`
 
-The linear vertex number of the vertex to test.
+要测试的顶点的线性顶点编号。
 
-To convert a primitive number and vertex number within that primitive to a linear vertex number for the `vertexnum` parameter, use the [vertexindex](vertexindex.html "Converts a primitive/vertex pair into a linear vertex.") function.
+要将基元编号和该基元内的顶点编号转换为`vertexnum`参数的线性顶点编号，请使用[vertexindex](vertexindex.html "将基元/顶点对转换为线性顶点。")函数。
 
-Returns
+返回值
 
-`1` if the group exists and the vertex is in the group, or `0` otherwise.
+如果组存在且顶点在组中，则返回`1`，否则返回`0`。
 
-This can use ad-hoc groups, like `42p0-2`. It matches the SOP group naming
-convention, in particular that an empty string means all vertices.
+此函数可以使用临时组，如`42p0-2`。它遵循SOP组命名约定，特别是空字符串表示所有顶点。

@@ -4,4 +4,4 @@ order: 26
 ---
 `float  erfc(float v)`
 
-Equal to `1 - erf(v)`.
+等于 `1 - erf(v)`。

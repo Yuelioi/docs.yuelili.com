@@ -2,43 +2,41 @@
 title: usd_pointinstancetransform
 order: 104
 ---
-| Since | 18.0 |
+| 版本 | 18.0 |
 | --- | --- |
 
 `matrix  usd_pointinstancetransform(<stage>stage, string primpath, int index)`
 
 `matrix  usd_pointinstancetransform(<stage>stage, string primpath, int index, float timecode)`
 
-This function returns point instance transform.
+此函数返回点实例的变换矩阵。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文环境中运行时（如wrangle LOP节点），该参数可以是表示输入编号的整数（从0开始），用于读取对应的stage。该整数等价于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点已处理的stage（例如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `index`
 
-The index of the instance within the point instancer.
+点实例化器中实例的索引号。
 
 `timecode`
 
-The USD time code at which to evaluate the attribute. A USD time code roughly corresponds to a frame in Houdini. If not given, the time code corresponding to the current frame is used.
+用于评估属性的USD时间码。USD时间码大致对应Houdini中的帧数。若未指定，则使用当前帧对应的时间码。
 
-Returns
+返回值
 
-The transform of the point instance.
+点实例的变换矩阵。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the transform of the third instance.
+// 获取第三个实例的变换矩阵
 matrix xform = usd_pointinstancetransform(0, "/src/instanced_cubes", 2);
 
 ```

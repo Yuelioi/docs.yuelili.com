@@ -83,3 +83,7 @@ func main() {
     fmt.Println("Hello, World!") // 打印字符串
 }
 ```
+
+#### inline code
+
+`<type>[] detail(<geometry>geometry, string attribute_name, int ignored=0)`

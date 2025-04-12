@@ -4,16 +4,16 @@ order: 5
 ---
 `int  chprim_insertkey(int geohandle, int prim, float time)`
 
-This function adds a key to a channel primitive.
+此函数用于向通道基元添加关键帧。
 
 `geohandle`
 
-Handle to the geometry to write to. `geoself()` can be used to get a handle to the current geometry.
+要写入的目标几何体的句柄。可使用`geoself()`获取当前几何体的句柄。
 
 `prim`
 
-The primitive number of the channel primitive to be modified.
+待修改的通道基元的图元编号。
 
 `time`
 
-The time in seconds at which to insert the key.
+插入关键帧的时间点（以秒为单位）。

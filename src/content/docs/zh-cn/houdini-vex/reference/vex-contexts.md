@@ -1,63 +1,39 @@
----
-title: VEX contexts
-order: 2
----
-Unlike C or C++, VEX has different “contexts” for which you write programs. These contexts define how the function is to be used.
+---  
+title: VEX上下文  
+order: 2  
+---  
 
-For example, one context is the “surface” context. Functions written in this context are used to calculate the color(s) of a surface during rendering. The global variables and functions provided for each context are slightly different.
-Subtopics
+与C或C++不同，VEX需要针对不同的"上下文"编写程序。这些上下文定义了函数的使用方式。  
 
-## subtopics
+例如，"surface"(表面)就是一个上下文。在此上下文中编写的函数用于计算渲染过程中表面的颜色。每个上下文提供的全局变量和函数略有不同。  
 
-Shading contexts
+## 子主题  
 
-## shading-contexts
+### 着色上下文  
 
-See [common shading context features](shading_contexts.html) for information specific to the shading contexts.
+详见[常见着色上下文特性](shading_contexts.html)获取着色上下文的具体信息。  
 
-- [displace](displace.html "Define a displacement shader with a program that moves a point on a
-  surface before the surface is rendered.")
-  Define a displacement shader with a program that moves a point on a
-  surface before the surface is rendered.
-- [fog](fog.html "Deprecated. Define a fog shader with a program that modifies the Cf, Of, or Af
-  values to simulate atmospheric effects.")
-  Deprecated. Define a fog shader with a program that modifies the Cf, Of, or Af
-  values to simulate atmospheric effects.
-- [light](light.html "Define a light shader with a program called from surface or fog
-  shaders to calculate the illumination of a surface.")
-  Define a light shader with a program called from surface or fog
-  shaders to calculate the illumination of a surface.
-- [shadow](shadow.html "Define a shadow shader by defining a program that’s called from
-  surface or fog shaders to calculate the occlusion on a surface from a
-  light source.")
-  Define a shadow shader by defining a program that’s called from
-  surface or fog shaders to calculate the occlusion on a surface from a
-  light source.
-- [surface](surface.html "Define a surface shader with a program that sets the final color,
-  opacity, and alpha of a surface being rendered.")
-  Define a surface shader with a program that sets the final color,
-  opacity, and alpha of a surface being rendered.
+- [置换着色器](displace.html "通过程序定义置换着色器，在表面渲染前移动表面上的点")  
+  通过程序定义置换着色器，在表面渲染前移动表面上的点。  
+- [雾效着色器](fog.html "已弃用。通过程序定义雾效着色器，修改Cf、Of或Af值来模拟大气效果")  
+  已弃用。通过程序定义雾效着色器，修改Cf、Of或Af值来模拟大气效果。  
+- [光照着色器](light.html "通过程序定义光照着色器，被表面或雾效着色器调用以计算表面光照")  
+  通过程序定义光照着色器，被表面或雾效着色器调用以计算表面光照。  
+- [阴影着色器](shadow.html "通过程序定义阴影着色器，被表面或雾效着色器调用以计算光源对表面的遮挡")  
+  通过程序定义阴影着色器，被表面或雾效着色器调用以计算光源对表面的遮挡。  
+- [表面着色器](surface.html "通过程序定义表面着色器，设置被渲染表面的最终颜色、不透明度和alpha值")  
+  通过程序定义表面着色器，设置被渲染表面的最终颜色、不透明度和alpha值。  
 
-Other contexts
+### 其他上下文  
 
-## other-contexts
+- [CVEX](cvex.html)  
+- [CHOP](chop.html "通过编辑通道值的程序定义自定义CHOP运算符")  
+  通过编辑通道值的程序定义自定义CHOP运算符。  
+- [COP](/vex/contexts/cop.html)  
 
-- [cvex](cvex.html)
-- [chop](chop.html "Define a custom CHOP operator with a program that edits channel
-  values.")
-  Define a custom CHOP operator with a program that edits channel
-  values.
-- [/vex/contexts/cop.html](cop.html)
+### 已废弃的上下文  
 
-Obsolete contexts
-
-## obsolete-contexts
-
-- [image3d](image3d.html "Obsolete. Write a program for use with the i3dgen program to generate 3D
-  textures.")
-  Obsolete. Write a program for use with the i3dgen program to generate 3D
-  textures.
-- [sop](sop.html "Obsolete. Define a custom SOP operator with a program that edits geometry point
-  attributes.")
-  Obsolete. Define a custom SOP operator with a program that edits geometry point
-  attributes.
+- [3D图像](image3d.html "已废弃。编写与i3dgen程序配合使用的程序来生成3D纹理")  
+  已废弃。编写与i3dgen程序配合使用的程序来生成3D纹理。  
+- [SOP](sop.html "已废弃。通过编辑几何体点属性的程序定义自定义SOP运算符")  
+  已废弃。通过编辑几何体点属性的程序定义自定义SOP运算符。

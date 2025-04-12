@@ -6,33 +6,25 @@ order: 39
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，该参数可以是表示输入编号的整数（从0开始）以读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `linearindex`
 
-The linear index of a vertex
+顶点的线性索引
 
-Returns
+返回值
 
-The parametric coordinate along the perimeter of the primitive. The
-primitive is assumed to be a polygon. This is in unit space (See
-[primuv](primuv.html "Interpolates the value of an attribute at a certain parametric (uvw) position.") for a distription of parameter spaces).
+沿着基元边界的参数坐标。该基元假定为多边形。这是在单位空间中的值（有关参数空间的描述，请参见[primuv](primuv.html "在特定参数（uvw）位置插值属性的值")）。
 
-For open polygons (polygon curves in other words), the returned value can
-be used directly with [primuv](primuv.html "Interpolates the value of an attribute at a certain parametric (uvw) position."). It is in the range of `[0,1]`.
+对于开放多边形（即多边形曲线），返回值可以直接与[primuv](primuv.html "在特定参数（uvw）位置插值属性的值")一起使用。其范围是`[0,1]`。
 
-For closed polygons the value is in the range of `[0, (numvtx-1)/numvtx]`, so
-there’s no vertex with value 1. The value cannot be used directly with
-[primuv](primuv.html "Interpolates the value of an attribute at a certain parametric (uvw) position."), but may be useful wherever you need a normalized value around
-the perimeter of a polygon.
+对于闭合多边形，该值的范围是`[0, (numvtx-1)/numvtx]`，因此没有值为1的顶点。该值不能直接与[primuv](primuv.html "在特定参数（uvw）位置插值属性的值")一起使用，但在需要多边形边界归一化值的场合可能有用。
 
-Examples
+## 示例
 
-## examples
-
-This is roughly equivalent to the following code:
+以下代码大致等效：
 
 ```vex
 int closed = primintrinsic(0, "closed", @primnum);
@@ -40,37 +32,32 @@ float u = float(vertexprimindex(opname, @vtxnum)) / (closed ? @numvtx : @numvtx-
 
 ```
 
-Look up a ramp using the current point’s location on the curve:
+使用当前点在曲线上的位置查找渐变：
 
 ```vex
-// Find the curve parameter of the current vertex and use it
-// to look up a ramp parameter.
-// Note that @vtxnum also works when iterating over points.
+// 查找当前顶点的曲线参数，并用它来查找渐变参数。
+// 注意，@vtxnum在迭代点时也适用。
 float u = vertexcurveparam(0, @vtxnum);
-// convert to unitlen space, to correct for points unevenly distributed along
-// the curve
+// 转换为单位长度空间，以校正沿曲线不均匀分布的点
 u = primuvconvert(0, u, @primnum, PRIMUV_UNIT_TO_UNITLEN);
 @width = chramp("width", u);
 
 ```
 
-Look up an attribute on another curve, at the equivalent location. This
-corrects for unevenly distributed points on either curve.
+在另一条曲线的等效位置查找属性。这会校正两条曲线上不均匀分布的点。
 
 ```vex
-// Note that @vtxnum also works when iterating over points.
+// 注意，@vtxnum在迭代点时也适用。
 float u = vertexcurveparam(0, @vtxnum);
-// convert to unit length space, to correct for points unevenly distributed
-// along the curve
+// 转换为单位长度空间，以校正沿曲线不均匀分布的点
 u = primuvconvert(0, u, @primnum, PRIMUV_UNIT_TO_UNITLEN);
 
-// convert back to unit space on another curve. We're using the equivalent
-// curve in the second input.
+// 在另一条曲线上转换回单位空间。我们使用第二个输入中的等效曲线。
 int otherinput = 1;
 int otherprim = @primnum;
 u = primuvconvert(otherinput, u, otherprim, PRIMUV_UNITLEN_TO_UNIT);
 
-// look up the value using the correct u coordinate.
+// 使用正确的u坐标查找值。
 @P = primuv(otherinput, "P", otherprim, u);
 
 ```

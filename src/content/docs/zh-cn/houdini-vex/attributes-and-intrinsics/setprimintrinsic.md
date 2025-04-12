@@ -2,33 +2,34 @@
 title: setprimintrinsic
 order: 72
 ---
+
 `int  setprimintrinsic(int geohandle, string name, int prim_num, <type>value, string mode="set")`
 
 `int  setprimintrinsic(int geohandle, string name, int prim_num, <type>value[], string mode="set")`
 
-Despite the name, some “intrinsic” attributes on primitives are writeable.
+尽管名称如此，但图元上的某些"固有"属性是可写的。
 
 `geohandle`
 
-A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](geoself.html "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
+要写入的几何体的句柄。目前唯一有效的值是`0`或[geoself](geoself.html "返回当前几何体的句柄")，表示节点中的当前几何体。(此参数将来可能用于允许写入其他几何体。)
 
 `name`
 
-The name of the intrinsic to set.
+要设置的固有属性名称。
 
 `prim_num`
 
-The number of the primitive to change the value on.
+要更改值的图元编号。
 
 `mode`
 
-(Optional) if given, this controls how the function modifies any existing value in the attribute.
+(可选)如果提供，此参数控制函数如何修改属性中的现有值。
 
-| `"set"` | Overwrite the attribute with the given value. |
+| `"set"` | 用给定值覆盖属性。 |
 | --- | --- |
-| `"add"` | Add to the attribute the value. |
-| `"min"`, `"minimum"` | Set the attribute to the minimum of itself and the value. |
-| `"max"`, `"maximum"` | Set the attribute to the maximum of itself and the value. |
-| `"mult"`, `"multiply"` | Multiply the attribute by the value. For matrices, this will do matrix multiplication. For vectors, component-wise. |
-| `"toggle"` | Toggles the attribute, independent of the source value. Useful for toggling group membership. |
-| `"append"` | Valid for string, dict, and array attributes. For strings and  arrays, appends the source value to the end of the original  value. For dictionaries, updates the original dictionary with  the source dictionary, replacing any matching keys. |
+| `"add"` | 将值添加到属性中。 |
+| `"min"`, `"minimum"` | 将属性设置为其本身和给定值中的较小值。 |
+| `"max"`, `"maximum"` | 将属性设置为其本身和给定值中的较大值。 |
+| `"mult"`, `"multiply"` | 将属性乘以给定值。对于矩阵，将执行矩阵乘法；对于向量，执行分量乘法。 |
+| `"toggle"` | 切换属性值，与源值无关。适用于切换组成员资格。 |
+| `"append"` | 适用于字符串、字典和数组属性。对于字符串和数组，将源值追加到原始值末尾。对于字典，用源字典更新原始字典，替换任何匹配的键。 |

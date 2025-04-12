@@ -2,7 +2,7 @@
 title: distance_pointsegment
 order: 21
 ---
-`float  distance_pointsegment(vector Q, vector P0, vector P1)`
 
-This function returns the closest distance between the point Q and a
-finite line segment between points P0 and P1.
+`float distance_pointsegment(vector Q, vector P0, vector P1)`
+
+该函数返回点Q与点P0和P1之间的有限线段之间的最近距离。

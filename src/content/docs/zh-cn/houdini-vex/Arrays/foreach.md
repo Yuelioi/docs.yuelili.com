@@ -2,55 +2,52 @@
 title: foreach
 order: 4
 ---
-| On this page | * [Simple form](#simple-form) * [Enumerated form](#enumerated-form) |
-| --- | --- |
+| 本页内容 | *[简单形式](#简单形式) * [枚举形式](#枚举形式) |
+| -------- | ---------------------------------------- |
 
-The length of the array is determined before the first iteration, so if the array is changed during the foreach this will not be reflected in the number of iterations.
+数组的长度在第一次迭代前就已确定，因此如果在foreach循环期间更改数组，这不会反映在迭代次数中。
 
-Simple form
+简单形式
 
-## simple-form
+## 简单形式
 
 ```vex
-foreach ([element_type] value; array) {
+foreach ([元素类型] 值; 数组) {
 
 }
 
 ```
 
-This loops over the members of array. For each iteration, it **copies**
-the current member to value and then executes statement. For example:
+这种形式会遍历数组的成员。每次迭代时，它会将当前成员**复制**到值变量中，然后执行语句。例如：
 
 ```vex
-int an_array[] = {1, 2}
-foreach (int num; an_array) {
-    printf("%d", num);
+int 数组[] = {1, 2}
+foreach (int 数字; 数组) {
+    printf("%d", 数字);
 }
 
 ```
 
-Enumerated form
+枚举形式
 
-## enumerated-form
+## 枚举形式
 
-The second form lets you specify an enumeration variable:
+第二种形式允许您指定一个枚举变量：
 
 ```vex
-foreach (index, value; array) statement;
-foreach (int index; element_type value; array) statement;
+foreach (索引, 值; 数组) 语句;
+foreach (int 索引; 元素类型 值; 数组) 语句;
 
 ```
 
-For each iteration, this form assigns the current *position* in the array
-to index, **copies** the current member to value, and executes
-statement. For example:
+每次迭代时，这种形式会将当前在数组中的**位置**赋给索引变量，将当前成员**复制**到值变量，然后执行语句。例如：
 
 ```vex
-string days[] = { "Mon", "Tue", "Wed", "Thu", "Fri" }
-foreach (int i; string name; days) {
-    printf("Day number %d is %s", i, name);
+string 星期[] = { "周一", "周二", "周三", "周四", "周五" }
+foreach (int i; string 名称; 星期) {
+    printf("第%d天是%s", i, 名称);
 }
 
 ```
 
-This is similar to the common Python idiom `for i, x in enumerate(xs):`.
+这类似于Python中常见的用法 `for i, x in enumerate(xs):`。

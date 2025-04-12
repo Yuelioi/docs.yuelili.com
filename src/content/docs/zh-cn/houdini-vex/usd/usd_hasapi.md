@@ -2,37 +2,35 @@
 title: usd_hasapi
 order: 49
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `int  usd_hasapi(<stage>stage, string primpath, string api)`
 
-This function checks whether the given primitive adheres to the given API. I.e., whether that API has been applied to this primitive.
+此函数用于检查指定图元是否遵循给定的API。即判断该API是否已应用于此图元。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，此参数可以是表示输入编号的整数（从0开始），用于读取对应的stage。该整数等同于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+也可用此参数引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点处理完成的stage（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `api`
 
-The name or an alias of the API schema to check.
+要检查的API模式名称或其别名。
 
-Returns
+返回值
 
-1 if the primitive has the given API, or 0 otherwise.
+若图元具有指定API则返回1，否则返回0。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Check if the primitive has a USD Geometry Model API applied.
+// 检查图元是否应用了USD几何模型API
 int has_geom_model_api_by_name  = usd_hasapi(0, "/geo/sphere", "UsdGeomModelAPI");
 int has_geom_model_api_by_alias = usd_hasapi(0, "/geo/sphere", "GeomModelAPI");
 

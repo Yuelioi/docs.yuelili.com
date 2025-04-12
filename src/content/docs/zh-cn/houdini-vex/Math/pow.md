@@ -6,6 +6,6 @@ order: 53
 
 `<vector> pow(<vector>v, float exponent)`
 
-Raises `n` to the power of `exponent`. For vectors, this is done per-component.
+将 `n` 的值提升到 `exponent` 的幂次方。对于向量，每个分量会分别进行此运算。
 
-When `n` is less than zero, the exponent will be rounded to the closest integer.
+当 `n` 小于零时，指数会被四舍五入到最接近的整数。

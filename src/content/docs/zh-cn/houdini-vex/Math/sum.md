@@ -1,16 +1,17 @@
 ---
-title: sum
+title: 求和函数
 order: 82
 ---
+
 `float  sum(float n)`
 
 `int  sum(int n)`
 
-Returns the argument.
+返回参数本身。
 
 `float  sum(<vector>v)`
 
-Returns the sum of the vector’s components.
+返回向量各分量的和。
 
 `float  sum(matrix2 m)`
 
@@ -18,17 +19,17 @@ Returns the sum of the vector’s components.
 
 `float  sum(matrix m)`
 
-Returns the sum of the matrix’s components.
+返回矩阵各分量的和。
 
 `int  sum(int nums[])`
 
 `float  sum(float nums[])`
 
-Returns the sum of the items of the array.
+返回数组所有元素的和。
 
 `<vector> sum(<vector>arr[])`
 
-Returns a vector where the components are the sums of the corresponding components in the vectors in the array.
+返回一个向量，其各分量是数组中各向量对应分量的和。
 
 `matrix2  sum(matrix2 arr[])`
 
@@ -36,4 +37,4 @@ Returns a vector where the components are the sums of the corresponding componen
 
 `matrix  sum(matrix arr[])`
 
-Returns a matrix where the components are the sums of the corresponding components in the matrices in the array.
+返回一个矩阵，其各分量是数组中各矩阵对应分量的和。

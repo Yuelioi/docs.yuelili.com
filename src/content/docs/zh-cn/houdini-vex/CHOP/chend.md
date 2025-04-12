@@ -2,12 +2,12 @@
 title: chend
 order: 4
 ---
-| Context(s) | [chop](../contexts/chop.html) |
+
+| 上下文 | [chop](../contexts/chop.html) |
 | --- | --- |
 
 `int  chend(int opinput=0)`
 
-Returns the index of the last sample in the channel data in the given CHOP input.
+返回指定CHOP输入中通道数据的最后一个样本的索引。
 
-To get the end frame, use [chendf](chendf.html "Returns the frame corresponding to the last sample of the input specified."). To get the end time in seconds, use [chendt](chendt.html "Returns the time corresponding to the last sample of the input
-specified.").
+要获取结束帧，请使用[chendf](chendf.html "返回指定输入最后一个样本对应的帧")。要获取以秒为单位的结束时间，请使用[chendt](chendt.html "返回指定输入最后一个样本对应的时间")。

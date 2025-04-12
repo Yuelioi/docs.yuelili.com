@@ -6,4 +6,4 @@ order: 6
 
 `<vector> fit01(<vector>value, <vector>nmin, <vector>nmax)`
 
-Takes the value in the range `(0, 1)` and shifts it to the corresponding value in the new range (nmin, nmax). For vectors it does this per-component.
+将值从范围`(0, 1)`映射到新范围(nmin, nmax)中的对应值。对于向量类型，会按分量进行映射。

@@ -2,11 +2,10 @@
 title: metastart
 order: 4
 ---
+
 `int  metastart(string filename, vector p)`
 
-Open a geometry file and return a “handle” for the metaballs of
-interest, at the position p. You can then use
-[metanext](metanext.html "Iterate to the next metaball in the list of metaballs returned by the metastart() function.") to move the handle to the next metaball for
-evaluation, and [metaimport](metaimport.html "Once you get a handle to a metaball using metastart and metanext, you
-can query attributes of the metaball with metaimport.") to query attributes of the
-metaball.
+打开一个几何体文件，并返回在位置p处感兴趣的元球的"句柄"。然后您可以使用
+[metanext](metanext.html "迭代到由metastart()函数返回的元球列表中的下一个元球。")将句柄移动到下一个待评估的元球，
+并使用[metaimport](metaimport.html "当您通过metastart和metanext获取到元球句柄后，可以通过metaimport查询该元球的属性。")
+来查询该元球的属性。

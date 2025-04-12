@@ -2,37 +2,35 @@
 title: usd_primvartypename
 order: 115
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `string  usd_primvartypename(<stage>stage, string primpath, string name)`
 
-This function returns the type name of a primvar found directly on the given primitive. The type name is taken from the USD value type registry, e.g., “float”, “vector3d”, “double3”, etc.
+此函数返回在指定图元上直接找到的primvar的类型名称。类型名称取自USD值类型注册表，例如"float"、"vector3d"、"double3"等。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号的整数（从0开始）以读取对应阶段。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+也可用此参数引用USD文件（如"/path/to/file.usd"），或使用`op:`作为路径前缀引用其他LOP节点的已处理阶段（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `name`
 
-Primvar name (without namespace).
+Primvar名称（不带命名空间）。
 
-Returns
+返回值
 
-The primvar type name used in the value type registry. E.g., “float”, “vector3d”, “double3”, etc.
+值类型注册表中使用的primvar类型名称。例如"float"、"vector3d"、"double3"等。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the type name of the primvar on cube.
+// 获取立方体上primvar的类型名称
 string type_name = usd_primvartypename(0, "/geo/cube", "primvar_name");
 
 ```

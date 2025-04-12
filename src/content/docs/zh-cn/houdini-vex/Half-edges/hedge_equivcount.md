@@ -4,33 +4,31 @@ order: 3
 ---
 `int  hedge_equivcount(<geometry>geometry, int hedge)`
 
-Note
-Equivalent half-edges may be oppositely oriented, i.e. the source of one can be the destination of the other and vice versa.
+注意
+等价半边可能方向相反，即一个的源可以是另一个的目标，反之亦然。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `hedge`
 
-Input half-edge.
+输入的半边。
 
-Returns
+返回值
 
-The number of half-edges that have the same endpoint as `hedge` (including `hedge`), or `-1` if the half-edge is not valid.
+与`hedge`具有相同端点（包括`hedge`）的半边数量，如果半边无效则返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 int is_boundary = 0;
 int is_interior = 0;
 int is_nonmanifold = 0;
 
-// Determine the type of edge represented by half-edge number 3:
+// 确定由半边编号3表示的边类型：
 int numeq;
 numeq = hedge_equivcount("defgeo.bgeo", 3);
 if (numeq == 1)

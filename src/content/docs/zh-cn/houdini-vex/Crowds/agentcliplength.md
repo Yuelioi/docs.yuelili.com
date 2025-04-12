@@ -2,27 +2,28 @@
 title: agentcliplength
 order: 10
 ---
+
 `float  agentcliplength(<geometry>geometry, int prim, string clipname)`
 
 `float  agentcliplength(<geometry>geometry, int prim, int clipindex)`
 
-Returns `0` if `prim` is out of range or is not an agent primitive, or if `clipname` is not one of the agent’s [animation clips](agentclipcatalog.html "Returns all of the animation clips that have been loaded for an agent primitive.").
+如果`prim`超出范围或不是代理图元，或者`clipname`不是该代理的[动画片段](agentclipcatalog.html "返回已为代理图元加载的所有动画片段")之一，则返回`0`。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `prim`
 
-The primitive number.
+图元编号。
 
 `clipname`
 
-The name of the animation clip.
+动画片段的名称。
 
 `clipindex`
 
-Index of a clip in the agent’s definition.
-A clip’s index can be obtained via [agentfindclip](agentfindclip.html "Finds the index of a clip in an agent’s definition.").
+代理定义中片段的索引。
+可以通过[agentfindclip](agentfindclip.html "查找代理定义中片段的索引")获取片段的索引。

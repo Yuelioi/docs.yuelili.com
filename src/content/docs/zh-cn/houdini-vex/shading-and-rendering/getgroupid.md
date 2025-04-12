@@ -2,11 +2,11 @@
 title: getgroupid
 order: 15
 ---
-| Context(s) | [shading](../contexts/shading.html) |
+| 上下文 | [着色](../contexts/shading.html) |
 | --- | --- |
 
 `int  getgroupid()`
 
-Returns the id of a primitive group containing the current face being shaded.
-The id is the index of the group in the detail. If the primitive belongs
-to several groups, their indices are added up to calculate the returned id.
+返回包含当前着色面的图元组的ID。
+该ID是该组在细节中的索引。如果图元属于
+多个组，则会将它们的索引相加来计算返回的ID。

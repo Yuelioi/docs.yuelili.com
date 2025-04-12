@@ -2,36 +2,37 @@
 title: setattribtypeinfo
 order: 64
 ---
+
 `int  setattribtypeinfo(int geohandle, string attribclass, string name, string typeinfo)`
 
 `geohandle`
 
-A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](geoself.html "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
+要写入的几何体句柄。目前唯一有效的值是 `0` 或 [geoself](geoself.html "返回当前节点几何体的句柄")，表示节点中的当前几何体。（此参数未来可能用于支持写入其他几何体。）
 
 `attribclass`
 
-One of `"detail"` (or `"global"`), `"point"`, `"prim"`, or `"vertex"`.
+可以是 `"detail"`（或 `"global"`）、`"point"`、`"prim"` 或 `"vertex"` 之一。
 
-You can also use `"primgroup"`, `"pointgroup"` or `"vertexgroup"` to [read from groups](../groups.html "You can read the contents of primitive/point/vertex groups in VEX as if they were attributes.").
+也可以使用 `"primgroup"`、`"pointgroup"` 或 `"vertexgroup"` 来[从组中读取](../groups.html "在VEX中，可以像读取属性一样读取基元/点/顶点组的内容。")。
 
 `name`
 
-The name of the attribute for which to change the transformation info.
+要更改变换信息的属性名称。
 
 `typeinfo`
 
-The meaning of the attribute, which is used by transform nodes to determine how to modify the attribute. It is one of:
+属性的含义，由变换节点用来确定如何修改该属性。可选值包括：
 
-| `"none"` | Don’t transform. |
+| `"none"` | 不进行变换。 |
 | --- | --- |
-| `"point"` | Apply scales, rotations, and transformations. |
-| `"hpoint"` | Apply scales, rotations, and transformations to this vector4. |
-| `"vector"` | Apply scales and rotations, but not transformations. |
-| `"normal"` | Apply rotations, apply scales with inverse-transpose. |
-| `"color"` | Don’t transform. |
-| `"matrix"` | Apply scales, rotations, and transformations to this matrix. |
-| `"quaternion"` | Apply rotations. |
-| `"indexpair"` | Don’t transform. |
-| `"integer"` | Do not blend this value when points are averaged. |
-| `"integer-blend"` | Integer values that blend when points are averaged. |
-| `"texturecoord"` | Don’t transform, and try to preserve seams when interpolating.  Attributes with this type will show up in the UV viewport menu. |
+| `"point"` | 应用缩放、旋转和变换。 |
+| `"hpoint"` | 对这个vector4应用缩放、旋转和变换。 |
+| `"vector"` | 应用缩放和旋转，但不应用变换。 |
+| `"normal"` | 应用旋转，缩放时使用逆转置。 |
+| `"color"` | 不进行变换。 |
+| `"matrix"` | 对这个矩阵应用缩放、旋转和变换。 |
+| `"quaternion"` | 应用旋转。 |
+| `"indexpair"` | 不进行变换。 |
+| `"integer"` | 在点平均时不混合此值。 |
+| `"integer-blend"` | 在点平均时会混合的整数值。 |
+| `"texturecoord"` | 不进行变换，并在插值时尝试保持接缝。具有此类型的属性会显示在UV视口菜单中。 |

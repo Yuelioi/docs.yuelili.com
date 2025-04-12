@@ -2,37 +2,35 @@
 title: makevalidvarname
 order: 19
 ---
-| Since | 19.5 |
+| 始于版本 | 19.5 |
 | --- | --- |
 
 `string  makevalidvarname(string name)`
 
 `string  makevalidvarname(string name, string safe_chars)`
 
-Variable names in languages such as VEX are only allowed to contain letters, numbers, and underscores, and must not begin with a number.
-Node names and attribute names in Houdini have similar requirements.
-This function takes any string, and converts it into a string that obeys these restrictions by replacing invalid characters with an underscore.
+在VEX等语言中，变量名只能包含字母、数字和下划线，且不能以数字开头。
+Houdini中的节点名称和属性名称也有类似要求。
+该函数接收任意字符串，通过将无效字符替换为下划线，将其转换为符合这些限制规则的字符串。
 
 `name`
 
-String that should be turned into a valid variable name.
+需要转换为有效变量名的字符串。
 
 `safe_chars`
 
-String specifying any extra characters to allow instead of replacing with underscores.
+指定允许保留的特殊字符（而不是替换为下划线）的字符串。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Returns "foo_bar"
+// 返回 "foo_bar"
 string s = makevalidvarname("foo:bar");
 
-// Returns "_123"
+// 返回 "_123"
 s = makevalidvarname("123");
 
-// Returns "foo:_bar"
+// 返回 "foo:_bar"
 s = makevalidvarname("foo:?bar", ":");
 
 ```

@@ -1,7 +1,7 @@
 ---
-title: endswith
+title: endswith（以...结尾）
 order: 12
 ---
 `int  endswith(string haystack, string needle)`
 
-Returns 1 if the string ends with the given string. 0 otherwise.
+如果字符串以给定字符串结尾则返回1，否则返回0。

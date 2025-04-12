@@ -2,9 +2,9 @@
 title: chdict
 order: 6
 ---
-| Since | 18.5 |
+| 始于版本 | 18.5 |
 | --- | --- |
 
 `dict  chdict(string channel)`
 
-Evaluates a key value dictionary parameter and return its value.
+评估一个键值字典参数并返回其值。

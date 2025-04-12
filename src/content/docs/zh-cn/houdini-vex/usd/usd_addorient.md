@@ -2,41 +2,39 @@
 title: usd_addorient
 order: 5
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `int  usd_addorient(int stagehandle, string primpath, string suffix, vector4 orient)`
 
-This function applies a quaternion orientation to the primitive. It creates and sets a value of a transform operation attribute that defines the orientation, and appends it to the primitive’s transform order.
+此函数将四元数方向应用于图元。它会创建并设置一个定义方向的变换操作属性值，并将其附加到图元的变换顺序中。
 
 `stagehandle`
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+要写入的舞台句柄。目前唯一有效值是`0`，表示节点中的当前舞台。（此参数未来可能用于支持写入其他舞台）
 
 `primpath`
 
-The path to the primitive.
+图元的路径。
 
 `suffix`
 
-The transform operation suffix.
+变换操作后缀。
 
-USD primitives are transformed in space by a series of transform operations whose full names are sequentially listed in the `xformOpOrder` attribute. Full names are namespaced, encode the operation transform type (e.g., translation or rotation), and can also contain a suffix. If primitive has a few operations of the same type, it’s necessary to specify the suffix to differentiate between them. This parameter specifies such a suffix.
+USD图元通过一系列变换操作在空间中进行变换，这些操作的全名按顺序列在`xformOpOrder`属性中。全名是命名空间化的，编码了操作变换类型（如平移或旋转），还可以包含后缀。如果图元有多个相同类型的操作，则需指定后缀以区分它们。此参数即指定此类后缀。
 
 `orient`
 
-The quaternion (in a vector4 format) representing the orientation.
+表示方向的四元数（以vector4格式）。
 
-Returns
+返回值
 
-The value of `stagehandle` on success or `-1` on failure.
+成功时返回`stagehandle`的值，失败时返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Orient the cube
+// 调整立方体方向
 vector4 quat = eulertoquaternion(radians({30,0,0}), XFORM_XYZ);
 usd_addorient(0, "/dst/cone", "my_orientation", quat);
 

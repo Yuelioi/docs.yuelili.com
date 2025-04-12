@@ -2,7 +2,7 @@
 title: chindex
 order: 7
 ---
-| Context(s) | [chop](../contexts/chop.html) |
+| 上下文 | [chop](../contexts/chop.html) |
 | --- | --- |
 
 `int  chindex(int opinput, string name)`
@@ -11,16 +11,16 @@ order: 7
 
 `int [] chindex(string names[])`
 
-Returns the channel index from a input given a channel name or -1 on failure.
+根据通道名称返回输入通道的索引，如果失败则返回-1。
 
 `opinput`
 
-CHOP Input index or -1 if omitted.
+CHOP输入索引，如果省略则为-1。
 
 `name`
 
-Channel name to lookup.
+要查找的通道名称。
 
 `names`
 
-Array of Channel names to lookup.
+要查找的通道名称数组。

@@ -7,42 +7,40 @@ order: 136
 
 `int  usd_setprimvarinterpolation(int stagehandle, string primpath, string name, string interpolation)`
 
-This function sets the interpolation style of the given primvar.
+此函数用于设置给定primvar的插值方式。
 
 `stagehandle`
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+要写入的舞台句柄。当前唯一有效值是`0`，表示节点中的当前舞台。（此参数未来可能用于支持写入其他舞台）
 
 `primpath`
 
-The path to the primitive.
+图元路径。
 
 `name`
 
-Primvar name (without namespace).
+Primvar名称（不带命名空间）。
 
 `interpolation`
 
-The new interpolation style for the primvar.
+primvar的新插值方式。
 
-The standard interpolation styles are
+标准插值方式包括：
 
-- “constant” - same value over the entire surface (i.e., detail)
-- “uniform” - one value for each uv patch or a face (i.e., primitive)
-- “vertex” - values interpolated between each vertex using surface’s basis function (i.e., point)
-- “varying” - four values interpolated over uv patch or a face (i.e., vertex)
-- “faceVarying” - for polygons and subdivision surfaces, four values are interpolated over each face of the mesh (i.e., vertex)
+- "constant" - 整个表面使用相同值（即detail级别）
+- "uniform" - 每个uv面片或面使用一个值（即primitive级别）
+- "vertex" - 使用表面基函数在顶点间插值（即point级别）
+- "varying" - 在uv面片或面上插值四个值（即vertex级别）
+- "faceVarying" - 对于多边形和细分曲面，在网格每个面上插值四个值（即vertex级别）
 
-Returns
+返回值
 
-The value of `stagehandle` on success, or `-1` on failure.
+成功时返回`stagehandle`的值，失败时返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Set the primvar's interpolation style.
+// 设置primvar的插值方式
 usd_setprimvarinterpolation(0, "/geo/mesh", "primvar_name", "faceVarying");
 
 ```

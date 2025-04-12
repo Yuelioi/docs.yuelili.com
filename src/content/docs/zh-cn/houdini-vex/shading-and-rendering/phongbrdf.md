@@ -1,13 +1,10 @@
 ---
-title: phongBRDF
+title: phongBRDF（Phong双向反射分布函数）
 order: 58
 ---
 `float  phongBRDF(vector L, vector N, vector V, float rough)`
 
-[specularBRDF](specularBRDF.html "Returns the computed BRDFs for the different lighting models used in VEX shading."), `phongBRDF`, [blinnBRDF](blinnBRDF.html),
-and [diffuseBRDF](diffuseBRDF.html) return the computed BRDF for the
-different lighting models used in VEX shading. You can use them in
-custom [illuminance](illuminance.html "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables.") loops to replicate the lighting models of the
-corresponding VEX lighting functions.
+[specularBRDF](specularBRDF.html "返回VEX着色中使用的不同光照模型计算出的BRDF值")、`phongBRDF`、[blinnBRDF](blinnBRDF.html)
+和[diffuseBRDF](diffuseBRDF.html)函数用于返回VEX着色中不同光照模型计算出的双向反射分布函数(BRDF)。您可以在自定义的[illuminance](illuminance.html "遍历场景中所有光源，为每个光源调用光照着色器来设置Cl和L全局变量")循环中使用这些函数，以复现对应VEX光照函数的光照模型效果。
 
-See [specularBRDF](specularBRDF.html "Returns the computed BRDFs for the different lighting models used in VEX shading.") for some example code.
+具体示例代码可参考[specularBRDF](specularBRDF.html "返回VEX着色中使用的不同光照模型计算出的BRDF值")文档。

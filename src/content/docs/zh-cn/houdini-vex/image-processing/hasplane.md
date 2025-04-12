@@ -2,9 +2,9 @@
 title: hasplane
 order: 12
 ---
-| Context(s) | [cop](../contexts/cop.html) |
+| 上下文 | [cop](../contexts/cop.html) |
 | --- | --- |
 
 `int  hasplane(string planename)`
 
-Returns 1 if the plane specified by the parameter exists in this COP.
+如果该COP中存在参数指定的平面，则返回1。

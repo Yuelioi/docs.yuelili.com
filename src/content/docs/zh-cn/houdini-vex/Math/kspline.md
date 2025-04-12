@@ -4,64 +4,61 @@ order: 36
 ---
 `float  kspline(string basis, float sample_pos, float value1, float key_pos1, ...)`
 
-Samples a curve defined by a series of value/position pairs.
-This is useful for specifying a 1D data ramp.
+通过一系列值/位置对定义的曲线进行采样。
+这对于指定一维数据渐变非常有用。
 
 `vector  kspline(string basis, float sample_pos, vector value1, float key_pos1, ...)`
 
 `vector4  kspline(string basis, float sample_pos, vector4 value1, float key_pos1, ...)`
 
-Samples a curve defined by a series of vector value/position pairs.
-This is useful for specifying a color ramp.
+通过一系列向量值/位置对定义的曲线进行采样。
+这对于指定颜色渐变非常有用。
 
-If you just want linearly spaced keys, or if you need to vary the basis, use [spline](spline.html "Samples a value along a polyline or spline curve.") instead.
+如果只需要线性间隔的关键点，或者需要变化基础曲线类型，请改用[spline](spline.html "沿折线或样条曲线采样值。")函数。
 
 `basis`, `bases`
 
-These are the same interpolations supported by ramp parameters.
+这些是与渐变参数支持的相同插值方式。
 
 `"constant"`
 
-Maintains each key value until the next key, creating a “stair step” curve.
+保持每个关键值直到下一个关键点，形成"阶梯"状曲线。
 
 `"linear"`
 
-Connects the key points with a polyline.
+用折线连接关键点。
 
-For example, if you specified four values:
+例如，如果指定四个值：
 
 ```vex
 spline("linear", t, v0, v1, v2, v3)
 
 ```
 
-…the function returns the height of the orange dot at position sample_pos.
+...该函数返回在sample_pos位置处橙色点的高度。
 
-`"cubic"` (or `"catmullrom"`, `"cspline"`)
+`"cubic"` (或 `"catmullrom"`, `"cspline"`)
 
-Connect the point values with a Catmull-Rom spline.
+使用Catmull-Rom样条连接点值。
 
-Note that the first and last values are outside the sample area to
-provide the slope of the curve at the second point (at the start of the
-sample range) and the second-to-last point (at the end of the sample
-range).
+注意第一个和最后一个值在采样区域外，
+用于提供曲线在第二个点(采样范围起点)和倒数第二个点(采样范围终点)处的斜率。
 
-For example, if you specified six values:
+例如，如果指定六个值：
 
 ```vex
 spline("catrom", t, v0, v1, v2, v3, v4, v5)
 
 ```
 
-…the function returns the height of the orange dot at position t.
+...该函数返回在位置t处橙色点的高度。
 
-(This image is for illustration only, it does not show the correct
-curve for the shown points.)
+(此图仅用于说明，并不显示所示点的正确曲线。)
 
-`"linearsolve"` (or `"solvelinear"`)
+`"linearsolve"` (或 `"solvelinear"`)
 
-Maps between a set of non-uniform positions and a set of values.
-The [kspline](kspline.html "Returns an interpolated value along a curve defined by a basis and key/position pairs.") function does this mapping implicitly.
+在一组非均匀位置和一组值之间进行映射。
+[kspline](kspline.html "返回由基础曲线和键/位置对定义的曲线上的插值。")函数隐式执行此映射。
 
 ```vex
 tk = spline("linearsolve", t, k0, k1, k2, k3, ...);
@@ -69,39 +66,38 @@ v = spline(basis, tk, v1, v2, v3, ...);
 
 ```
 
-(Technically, `linearsolve` interprets the values as key values, solves the
-intersection of the spline, and returns the intercept point.)
+(从技术上讲，`linearsolve`将值解释为键值，求解样条的交叉点，并返回截距点。)
 
 `"monotonecubic"`
 
-A cubic spline with no overshoot of the control values.
+无控制值超调的三次样条。
 
 `"bezier"`
 
-A bezier spline.
+贝塞尔样条。
 
 `"bspline"`
 
-A b-spline basis.
+B样条基。
 
 `"hermite"`
 
-A hermite spline.
+厄米特样条。
 
 `sample_pos`
 
-The position along the curve at which to sample the value.
+沿曲线采样的位置。
 
 `valuen`, `key_posn`
 
-To define the shape of the curve, you pass a number of value/position pairs specifying the key points through which the curve passes.
+要定义曲线形状，需要传递多个值/位置对来指定曲线通过的关键点。
 
-You must specify key positions in ascending order or the results will be unpredictable.
+必须按升序指定关键位置，否则结果将不可预测。
 
-Tip
-The [spline](spline.html "Samples a value along a polyline or spline curve.") function is a more flexible superset of this function.
+提示
+[spline](spline.html "沿折线或样条曲线采样值。")函数是本函数更灵活的超集。
 
-This function is the equivalent of:
+此函数等效于：
 
 ```vex
 type kspline(basis, t, v0, k0, v1, k1, v2, k2...)

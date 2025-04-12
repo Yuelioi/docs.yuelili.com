@@ -1,11 +1,12 @@
 ---
-title: dihedral
+title: 二面角
 order: 1
 ---
+
 `matrix3  dihedral(vector a, vector b)`
 
-Computes the rotation matrix which rotates the vector a onto the vector b.
+计算将向量a旋转到向量b的旋转矩阵。
 
 `vector4  dihedral(vector a, vector b)`
 
-Computes the normalized quaternion which rotates the vector a onto the vector b.
+计算将向量a旋转到向量b的归一化四元数。

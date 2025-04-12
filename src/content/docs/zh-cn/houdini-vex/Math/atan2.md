@@ -4,6 +4,4 @@ order: 8
 ---
 `float  atan2(float y, float x)`
 
-Returns the principal value of the inverse tangent of y/x, using the signs
-of the two arguments to determine the quadrant of the result. The return value
-is in the range -π to π.
+返回 y/x 的反正切的主值，使用两个参数的符号来确定结果的象限。返回值范围在 -π 到 π 之间。

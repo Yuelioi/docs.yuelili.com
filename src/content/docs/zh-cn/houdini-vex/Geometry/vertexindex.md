@@ -1,36 +1,34 @@
 ---
-title: vertexindex
+title: 顶点索引
 order: 40
 ---
 `int  vertexindex(<geometry>geometry, int primnum, int vertex)`
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是一个指定几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`这样的引用路径。
 
 `primnum`
 
-The primitive number to get a vertex from.
+要获取顶点的图元编号。
 
 `vertex`
 
-The vertex number inside of a primitive. 0 is the first vertex.
+图元内的顶点编号。0表示第一个顶点。
 
-Returns
+返回值
 
-The linear vertex index corresponding to the given primitive vertex.
-Returns `-1` if the function could not find the equivalent linear vertex index.
+返回与给定图元顶点对应的线性顶点索引。
+如果函数无法找到等效的线性顶点索引，则返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 int linearvtx;
 
-// Get the linear vertex value of vertex 2 of primitive 3.
+// 获取图元3中顶点2的线性顶点值
 linearvtx = vertexindex("defgeo.bgeo", 3, 2);
 
 ```

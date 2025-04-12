@@ -1,19 +1,16 @@
 ---
-title: getbounds
+title: 获取边界
 order: 8
 ---
+
 `int  getbounds(string filename, vector &min, vector &max)`
 
 `int  getbounds(string filename, string group, vector &min, vector &max)`
 
-Returns the bounding box of the geometry specified by the filename. The
-point corresponding to the minimum corner of the bounding box will be
-returned in min, while the maximum will be in max.
-Always returns 1.
+返回指定文件名对应几何体的边界框。边界框的最小角点坐标将通过min参数返回，最大角点坐标将通过max参数返回。
+该函数始终返回1。
 
-If a group is specified, only primitives in that group will be used.
-The group field’s behavior matches that in SOPs. An empty string
-will include all primitives. Ad-hoc patterns like `0-10` and
-`@Cd.x>0` are also valid.
+如果指定了group参数，则仅计算该组内的图元。group字段的行为与SOPs中的一致。空字符串表示包含所有图元。
+临时模式如`0-10`和`@Cd.x>0`同样有效。
 
-The `getbbox()` function should likely be used instead.
+建议优先考虑使用`getbbox()`函数。

@@ -2,37 +2,35 @@
 title: usd_makepropertypath
 order: 88
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `string  usd_makepropertypath(<stage>stage, string primpath, string name)`
 
-This function returns the full path of a given property.
+此函数返回给定属性的完整路径。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取对应输入中的stage。该整数等价于使用字符串形式引用特定输入，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+此参数也可用于引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点已处理的stage（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+图元(primitive)的路径。
 
 `name`
 
-Property name.
+属性名称。
 
-Returns
+返回值
 
-The full path of a given property.
+给定属性的完整路径。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Obtain the full path to the property "prop_name" on the cube primitive.
+// 获取立方体图元上"prop_name"属性的完整路径
 string prop_path = usd_makepropertypath(0, "/geo/cube", "prop_name");
 
 ```

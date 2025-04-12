@@ -7,32 +7,30 @@ order: 64
 
 `int  usd_isarrayiprimvar(<stage>stage, string primpath, string name)`
 
-This function checks whether the primvar is an array, if it’s found directly on the given primitive or is inherited from primitive’s ancestor.
+此函数用于检查primvar是否为数组类型，无论该primvar是直接定义在指定图元上还是从其祖先图元继承而来。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，此参数可以是表示输入编号的整数（从0开始），用于读取对应输入的stage。该整数等同于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+此参数也可用于引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点处理完成的stage（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `name`
 
-Primvar name (without namespace).
+Primvar名称（不包含命名空间）。
 
-Returns
+返回值
 
-`1` if the primvar exists and is an array, or `0` otherwise.
+当primvar存在且为数组类型时返回`1`，否则返回`0`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Check if primvar "some_primvar" is an array.
+// 检查primvar "some_primvar"是否为数组类型
 int is_array = usd_isarrayiprimvar(0, "/geometry/sphere", "some_primvar");
 
 ```

@@ -4,14 +4,14 @@ order: 30
 ---
 `int  idtoprim(<geometry>geometry, int id)`
 
-Returns the number of the primitive with the given value in the `id` attribute. Returns `-1` if no primitive has the given ID.
+返回具有指定`id`属性值的图元编号。如果没有图元具有该ID，则返回`-1`。
 
-If the geometry doesn’t have an `id` attribute, primitive numbers are used as ids. In this case, the function will return the given `id` value, unless it is greater than the number of points in the source geometry, in which case the function will return `-1`.
+如果几何体没有`id`属性，则使用图元编号作为ID。在这种情况下，函数将返回给定的`id`值，除非该值大于源几何体中的图元数量，此时函数将返回`-1`。
 
-To look up a primitive by its `name` attribute value, use [nametoprim](nametoprim.html "Finds a primitive by its name attribute."). To look up a primitive by an arbitrary string or int attribute value, use [findattribval](findattribval.html "Finds a primitive/point/vertex that has a certain attribute value.").
+要通过`name`属性值查找图元，请使用[nametoprim](nametoprim.html "根据name属性查找图元")。要通过任意字符串或整数属性值查找图元，请使用[findattribval](findattribval.html "查找具有特定属性值的图元/点/顶点")。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是一个指定几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。

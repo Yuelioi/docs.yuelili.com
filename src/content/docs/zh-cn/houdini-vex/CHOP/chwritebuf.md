@@ -2,12 +2,12 @@
 title: chwritebuf
 order: 29
 ---
-| Context(s) | [chop](../contexts/chop.html) |
+| 上下文 | [chop](../contexts/chop.html) |
 | --- | --- |
 
 `int  chwritebuf(int index, float value)`
 
 `int  chwritebuf(int index, vector t, vector r, vector s)`
 
-Writes a value of a CHOP context temporary buffer at the specified index.
-Return 1 if the write succeeded, 0 otherwise.
+在指定索引处写入CHOP上下文临时缓冲区的值。
+如果写入成功返回1，否则返回0。

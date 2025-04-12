@@ -1,10 +1,9 @@
 ---
-title: metaweight
+title: 元权重
 order: 5
 ---
 `float  metaweight(<geometry>geometry, vector p)`
 
-Returns the metaweight of the geometry at position p.
-This is the result of evaluating all the metaballs in the
-geometry at that position. Usually this is the sum of their
-values, but meta expressions can change that.
+返回几何体在位置p处的元权重。
+这是在该位置评估几何体中所有元球的结果。
+通常这是它们值的总和，但元表达式可以改变这一点。

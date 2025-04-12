@@ -2,12 +2,9 @@
 title: getptextureid
 order: 28
 ---
-| Context(s) | [shading](../contexts/shading.html) |
+| 上下文 | [着色](../contexts/shading.html) |
 | --- | --- |
 
 `int  getptextureid()`
 
-Returns the ptexture id for the current face being shaded. This will typically
-be the same as `getprimid()` except in the case of subdivision surfaces. For
-subdivision surfaces, mantra splits non-quadrilateral faces into multiple
-patches. Each of these split faces is assigned a unique ptexture id.
+返回当前着色面的ptexture id。通常这与`getprimid()`相同，但在细分曲面情况下例外。对于细分曲面，mantra会将非四边形面分割为多个面片。每个被分割的面都会被分配一个唯一的ptexture id。

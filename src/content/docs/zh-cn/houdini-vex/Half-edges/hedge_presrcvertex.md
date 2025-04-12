@@ -6,27 +6,25 @@ order: 12
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个整数，表示要读取几何体的输入编号（从0开始）。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数也可以是一个指定几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`这样的引用路径。
 
 `hedge`
 
-Input half-edge.
+输入的半边（half-edge）。
 
-Returns
+返回值
 
-The vertex number of the vertex that comes before the source vertex of the `hedge` in the primitive that contains `hedge`.
-Returns `-1` if the half-edge is not valid.
+返回包含`hedge`的图元中，位于`hedge`源顶点之前的前一个顶点的顶点编号。
+如果半边无效，则返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 int presrcvtx;
 
-// Get the pre-source vertex of half-edge number 3.
+// 获取编号为3的半边的源顶点前一个顶点
 presrcvtx = hedge_presrcvertex("defgeo.bgeo", 3);
 
 ```

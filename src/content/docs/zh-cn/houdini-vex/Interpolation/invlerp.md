@@ -2,20 +2,17 @@
 title: invlerp
 order: 9
 ---
-| Since | 18.5 |
+| 始于版本 | 18.5 |
 | --- | --- |
 
 `float  invlerp(float a, float min, float max)`
 
 `<vector> invlerp(<vector>a, <vector>min, <vector>max)`
 
-Returns the amount to mix `min` and `max` to generate the
-input value `a`. This is the inverse of the `lerp` function.
+返回混合 `min` 和 `max` 以生成输入值 `a` 所需的混合比例。这是 `lerp` 函数的逆运算。
 
-The vector version operates component-wise, so the resulting
-vector will be the independent mixing amount for each dimension.
+向量版本按分量独立运算，因此结果向量将是每个维度独立的混合比例。
 
-If `a` is outside the range `min` to `max`, values greater than
-`1` or less than `0` will be produced.
+如果 `a` 超出 `min` 到 `max` 的范围，将产生大于 `1` 或小于 `0` 的值。
 
-If `min` and `max` are equal, the mixing value is `0.5`.
+如果 `min` 和 `max` 相等，混合比例值为 `0.5`。

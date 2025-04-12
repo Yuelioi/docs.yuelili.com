@@ -2,83 +2,80 @@
 title: chiang_fur
 order: 5
 ---
-| Since | 20.0 |
+
+| 起始版本 | 20.0 |
 | --- | --- |
 
 `bsdf  chiang_fur(vector nn, vector tanV, float mask, float cuticle, float R_v, float R_s, float TT_v, float TT_s, float TRT_v, float TRT_s, float shift, vector absorption_coeff, float ior, float R2_v, float R2_s, vector R2_color, ...)`
 
-Creates a BSDF for computation of the physically based fur and hair
-model described in papers “A Practical and Controllable Hair
-and Fur Model for Production Path Tracing” by Chiang, “Physically-AccurAate
-Fur Reflectance: Modeling, Measurement and Rendering” by Ling-Qi Yan et al.
-Chiang Fur is an extension of the [Chiang model - shader](chiang.html "Returns a chiang BSDF.").
-This model considers a structural feature of fur and thick hair:
-the so-called medulla. Hair and fur have three main components:
+创建一个用于计算基于物理的毛发模型的BSDF，该模型基于Chiang的论文《生产级路径追踪中实用可控的毛发模型》以及Ling-Qi Yan等人的《物理精确的毛发反射：建模、测量与渲染》。Chiang Fur是[Chiang模型着色器](chiang.html "返回一个chiang BSDF")的扩展版本。
 
-Suitable only for curve geometry.
+该模型考虑了毛发和粗发丝的结构特征：即所谓的髓质层。毛发主要由三个组成部分构成：
 
-See [writing a PBR shader](../pbr.html) for information on BSDFs.
+仅适用于曲线几何体。
+
+有关BSDF的更多信息，请参阅[编写PBR着色器](../pbr.html)。
 
 `nn`
 
-bumped/shading normal
+凹凸/着色法线
 
 `tanV`
 
-tangent vector along V
+沿V方向的切向量
 
 `mask`
 
-Masking main lobes in favour of medulla
+遮蔽主反射瓣以突出髓质层效果
 
 `cuticle`
 
-Modulates fresnel factor of the hair’s outermost layer
+调节毛发最外层菲涅尔因子
 
 `R_v`
 
-Longitudinal roughness value “v” for lobe R (section 4.1 of the paper)
+R反射瓣的纵向粗糙度值"v"（论文第4.1节）
 
 `R_s`
 
-Azimuthal roughness value “s” for lobe R (section 4.1 of the paper)
+R反射瓣的方位角粗糙度值"s"（论文第4.1节）
 
 `TT_v`
 
-Longitudinal roughness value “v” for lobe TT (section 4.1 of the paper)
+TT反射瓣的纵向粗糙度值"v"（论文第4.1节）
 
 `TT_s`
 
-Azimuthal roughness value “s” for lobe TT (section 4.1 of the paper)
+TT反射瓣的方位角粗糙度值"s"（论文第4.1节）
 
 `TRT_v`
 
-Longitudinal roughness value “v” for lobe TRT (section 4.1 of the paper)
+TRT反射瓣的纵向粗糙度值"v"（论文第4.1节）
 
 `TRT_s`
 
-Azimuthal roughness value “s” for lobe TRT (section 4.1 of the paper)
+TRT反射瓣的方位角粗糙度值"s"（论文第4.1节）
 
 `shift`
 
-Represents the cuticle angle, which affects the position of the specular highlight. Input range of -1 to 1 is internally mapped to -90 to 90 (eg meaning 3-degrees would be 3/90 = 0.03333)
+表示毛小皮角度，影响高光位置。输入范围-1到1在内部映射为-90到90度（例如3度对应3/90=0.03333）
 
 `absorption_coeff`
 
-The absorption coefficient (section 4.2 of the paper)
+吸收系数（论文第4.2节）
 
 `ior`
 
-Index of refraction (eg 1.55)
+折射率（如1.55）
 
 `R2_v`
 
-Longitudinal roughness value “v” of extra lobe R2
+额外R2反射瓣的纵向粗糙度值"v"
 
 `R2_s`
 
-Azimuthal roughness value “s” of extra lobe R2
+额外R2反射瓣的方位角粗糙度值"s"
 
 `R2_color`
 
-Extra R2 lobes has a color input to colorize the reflection. This could be used to promote iridescence colors for example.
+额外R2反射瓣的颜色输入，可用于实现虹彩效果等特殊反射着色

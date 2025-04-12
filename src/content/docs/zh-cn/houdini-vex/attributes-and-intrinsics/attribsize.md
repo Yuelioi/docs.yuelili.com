@@ -2,40 +2,38 @@
 title: attribsize
 order: 10
 ---
-If you know the attribute class ahead of time, using [detailattribsize](detailattribsize.html "Returns the size of a geometry detail attribute."), [primattribsize](primattribsize.html "Returns the size of a geometry prim attribute."), [pointattribsize](pointattribsize.html "Returns the size of a geometry point attribute."), or [vertexattribsize](vertexattribsize.html "Returns the size of a geometry vertex attribute.") may be faster.
+如果事先知道属性类别，使用 [detailattribsize](detailattribsize.html "返回几何体细节属性的大小")、[primattribsize](primattribsize.html "返回几何体图元属性的大小")、[pointattribsize](pointattribsize.html "返回几何体点属性的大小") 或 [vertexattribsize](vertexattribsize.html "返回几何体顶点属性的大小") 可能会更快。
 
 `int  attribsize(<geometry>geometry, string attribclass, string attribute_name)`
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+当在节点上下文（如 wrangle SOP）中运行时，此参数可以是一个表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何体文件（例如 `.bgeo`）的字符串。在 Houdini 内部运行时，可以是 `op:/path/to/sop` 引用。
 
 `attribclass`
 
-One of `"detail"` (or `"global"`), `"point"`, `"prim"`, or `"vertex"`.
+可以是 `"detail"`（或 `"global"`）、`"point"`、`"prim"` 或 `"vertex"` 之一。
 
-You can also use `"primgroup"`, `"pointgroup"` or `"vertexgroup"` to [read from groups](../groups.html "You can read the contents of primitive/point/vertex groups in VEX as if they were attributes.").
+也可以使用 `"primgroup"`、`"pointgroup"` 或 `"vertexgroup"` 来[从组中读取](../groups.html "在 VEX 中，可以像读取属性一样读取图元/点/顶点组的内容")。
 
-Returns
+返回值
 
-The size of an attribute’s *type*.
+属性*类型*的大小。
 
-- For a vector type, this is the number of components.
-- For an integer, float, or string, this returns `1`.
-- For an array attribute, this returns the size of the tuples in the array. The tuple size is controlled by the **Size** parameter on the [Attribute Create node](../../nodes/sop/attribcreate.html "Adds or edits user defined attributes.").
+- 对于向量类型，返回其分量数量。
+- 对于整数、浮点数或字符串，返回 `1`。
+- 对于数组属性，返回数组中元组的大小。元组大小由 [Attribute Create 节点](../../nodes/sop/attribcreate.html "添加或编辑用户定义的属性")上的 **Size** 参数控制。
 
-If the attribute does not exist, returns `0`.
+如果属性不存在，返回 `0`。
 
-- This function works with the attribute’s *type*. It does not return the size of an attribute *value*. You can’t use this function to get the length of a string or array value.
+- 此函数处理属性的*类型*。它不会返回属性*值*的大小。不能使用此函数获取字符串或数组值的长度。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the size of the position attribute of "defgeo.bgeo"
+// 获取 "defgeo.bgeo" 中位置属性 P 的大小
 int size = attribsize("defgeo.bgeo", "point", "P");
 
 ```

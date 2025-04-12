@@ -2,60 +2,60 @@
 title: solveik
 order: 29
 ---
-| Since | 17.5 |
+| 始于版本 | 17.5 |
 | --- | --- |
 
 `vector [] solveik(float lengths[], vector targetpos, vector twistpos, float twist, int twistflag, float dampen, int resiststraight, float trackingthres, matrix relmat, vector constraints[])`
 
 `matrix3 [] solveik(float lengths[], vector targetpos, vector twistpos, float twist, int twistflag, float dampen, int resiststraight, float trackingthres, matrix relmat, vector constraints[])`
 
-Returns a array of local bone rotations in degrees.
+返回一个包含局部骨骼旋转角度（度数）的数组。
 
 `lengths`
 
-The lengths of all the bones to solve.
+所有待解算骨骼的长度数组。
 
 `targetpos`
 
-A target position in worldspace.
+世界空间中的目标位置。
 
 `twistpos`
 
-A twist affect position in worldspace.
+世界空间中的扭曲影响位置。
 
 `twist`
 
-A twist angle in degrees.
+扭曲角度（度数）。
 
 `twistflag`
 
-Apply twist using the twist affector or not.
+是否使用扭曲影响器应用扭曲。
 
 `dampen`
 
-Dampening factor for the whole chain.
+整个骨骼链的阻尼系数。
 
 `resiststraight`
 
-Resist straightening.
+抵抗伸直效果。
 
 `trackingthres`
 
-Tracking threshold.
+追踪阈值。
 
 `relmat`
 
-A relative matrix used to transform the target and twist positions relative to the origin.
-This is normally the invert matrix of the root of the chain.
+用于将目标和扭曲位置相对于原点进行变换的相对矩阵。
+通常这是骨骼链根节点的逆矩阵。
 
 `constraints`
 
-This is a vector array used to define the per bone restangles, dampening, minangles, maxangles, min damp, max damp, and rolloff.
-If the array is empty, same default values present in the bone objects are used.
-If the array size is equal to the number of input bones, the rest angles are defined.
-If the array size is equal to 2 times the number of input bones, the rest angles and the dampening are defined.
-If the array size is equal to 3 times the number of input bones, the rest angles, the dampening, the min/max angles are defined. Min/Max angles share the same values.
-If the array size is equal to 4 times the number of input bones, the rest angles, the dampening, the min/max angles are defined. Min/Max angles have different values.
-If the array size is equal to 5 times the number of input bones, the rest angles, the dampening, the min/max angles and damp angles are defined.
-If the array size is equal to 6 times the number of input bones, the rest angles, the dampening, the min/max angles, min/max damp angles are defined.
-If the array size is equal to 7 times the number of input bones, the rest angles, the dampening, the min/max angles, min/max damp angles, and rolloff are defined.
+这是一个用于定义每根骨骼的静止角度、阻尼、最小角度、最大角度、最小阻尼、最大阻尼和衰减系数的向量数组。
+如果数组为空，则使用骨骼对象中相同的默认值。
+如果数组大小等于输入骨骼数量，则定义了静止角度。
+如果数组大小等于输入骨骼数量的2倍，则定义了静止角度和阻尼。
+如果数组大小等于输入骨骼数量的3倍，则定义了静止角度、阻尼和最小/最大角度（最小/最大角度共享相同值）。
+如果数组大小等于输入骨骼数量的4倍，则定义了静止角度、阻尼和最小/最大角度（最小/最大角度具有不同值）。
+如果数组大小等于输入骨骼数量的5倍，则定义了静止角度、阻尼、最小/最大角度和阻尼角度。
+如果数组大小等于输入骨骼数量的6倍，则定义了静止角度、阻尼、最小/最大角度和最小/最大阻尼角度。
+如果数组大小等于输入骨骼数量的7倍，则定义了静止角度、阻尼、最小/最大角度、最小/最大阻尼角度和衰减系数。

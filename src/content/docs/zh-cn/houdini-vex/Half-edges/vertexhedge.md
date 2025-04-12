@@ -6,27 +6,25 @@ order: 22
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `vertex`
 
-The linear vertex number in the geometry. `0` is the first vertex.
+几何体中的线性顶点编号。`0`表示第一个顶点。
 
-Returns
+返回值
 
-The number for the half-edge that has `vertex` as source and the vertex following `vertex` in the primitive of `vertex` as destination.
-Returns `-1` if failed to find the corresponding vertex.
+返回以`vertex`为源点、以`vertex`所在图元中`vertex`的下一个顶点为目标点的半边编号。
+如果找不到对应顶点，则返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 int vtxhedge;
 
-// Get the hedge out of vertex vertex number 2.
+// 获取顶点编号2的出半边
 vtxhedge = vertexhedge("defgeo.bgeo", 2);
 
 ```

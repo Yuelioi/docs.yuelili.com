@@ -6,12 +6,10 @@ order: 13
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（例如 wrangle SOP）中运行时，此参数可以是一个整数，表示用于读取几何体的输入编号（从0开始）。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数也可以是一个指定几何文件（例如 `.bgeo`）的字符串。在 Houdini 内部运行时，可以是 `op:/path/to/sop` 这样的引用路径。
 
 `groupname`
 
-A group name or ad-hoc group, like `0` or `p0-1`. This matches the
-SOP group naming convention, in particular that an empty string means all
-edges.
+一个组名或临时组，例如 `0` 或 `p0-1`。这符合 SOP 组的命名约定，特别需要注意的是空字符串表示选择所有边。

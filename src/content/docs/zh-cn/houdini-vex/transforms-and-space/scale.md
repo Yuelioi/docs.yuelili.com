@@ -1,5 +1,5 @@
 ---
-title: scale
+title: 缩放
 order: 23
 ---
 `void  scale(matrix2 &m, vector2 scale_vector)`
@@ -8,5 +8,5 @@ order: 23
 
 `void  scale(matrix3 &m, vector scale_vector)`
 
-Scales the matrix in three directions simultaneously by the factors in the vector.
-This modifies the matrix in-place, rather than returning a new matrix.
+通过向量中的比例因子同时在三个方向上缩放矩阵。
+这会原地修改矩阵，而不是返回一个新矩阵。

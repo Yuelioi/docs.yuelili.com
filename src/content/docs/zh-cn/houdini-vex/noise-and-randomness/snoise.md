@@ -18,11 +18,6 @@ order: 37
 
 `vector  snoise(vector pos, int periodX, int periodY, int periodZ, int turbulence, float rough, float atten)`
 
-These functions are similar to [wnoise](wnoise.html "Generates Worley (cellular) noise."). The noise returned
-is based on the weights of all of the closest points, with each point’s
-contribution based on a meta-ball like rolloff curve. That is, if the
-sample point is close to the sphere, its contribution will be greater.
+这些函数类似于 [wnoise](wnoise.html "生成沃利（细胞）噪声")。返回的噪声值基于所有最近点的权重计算，每个点的贡献度采用类似元球衰减曲线的计算方式。也就是说，当采样点距离球体越近，其贡献度就越大。
 
-The bounds on the noise are roughly (-1.7, 1.7). Only 3D noise is
-supported. However, this noise has the ability to compute turbulence
-with roughness and attenuation on the noise.
+该噪声值的范围大致在(-1.7, 1.7)之间。仅支持3D噪声。不过，这种噪声具有计算湍流的功能，并可以设置噪声的粗糙度和衰减参数。

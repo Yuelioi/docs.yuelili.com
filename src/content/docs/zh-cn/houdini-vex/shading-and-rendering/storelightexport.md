@@ -2,22 +2,18 @@
 title: storelightexport
 order: 75
 ---
-| Context(s) | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [surface](../contexts/surface.html) |
+| 上下文 | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [surface](../contexts/surface.html) |
 | --- | --- |
 
 `void  storelightexport(string lightname, string exportname, <type>value)`
 
 `void  storelightexport(string lightname, string exportname, <type>value[])`
 
-Stores a per-light export to a shader export variable. This method should
-normally be called for each light to ensure that all light exports for the
-given variable are created, for example by placing the call in an
-illuminance() loop or a loop over the light array.
+将每盏灯光的导出值存储到着色器导出变量中。通常应该为每盏灯光调用此方法，以确保为给定变量创建所有灯光导出，例如将调用放在illuminance()循环或灯光数组循环中。
 
-This method replaced the `storelightexports()` method used in Houdini 12.5 and earlier.
-Examples
+此方法取代了Houdini 12.5及更早版本中使用的`storelightexports()`方法。
 
-## examples
+## 示例
 
 ```vex
 surface test(export vector perlight = {0,0,0})
@@ -29,5 +25,4 @@ surface test(export vector perlight = {0,0,0})
         storelightexport(getlightname(lights[i]), "perlight", val);
     }
 }
-
 ```

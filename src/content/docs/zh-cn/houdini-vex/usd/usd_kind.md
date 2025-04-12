@@ -2,33 +2,31 @@
 title: usd_kind
 order: 84
 ---
-| Since | 17.5 |
+| 始于版本 | 17.5 |
 | --- | --- |
 
 `string  usd_kind(<stage>stage, string primpath)`
 
-This function returns the given primitive’s kind, e.g., an assembly, component, etc.
+该函数返回指定图元的种类（kind），例如组件（component）、装配体（assembly）等。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，此参数可以是表示输入编号的整数（从0开始），用于读取对应的USD场景。该整数等价于使用字符串形式引用特定输入，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+此参数也可用于引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点已烹饪的场景（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
-Returns
+返回值
 
-The kind of the given primitive.
+指定图元的种类（kind）。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the sphere primitive's kind.
+// 获取球体图元的种类
 string kind = usd_kind(0, "/geo/sphere");
 
 ```

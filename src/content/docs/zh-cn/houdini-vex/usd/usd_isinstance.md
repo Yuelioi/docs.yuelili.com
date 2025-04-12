@@ -7,28 +7,26 @@ order: 72
 
 `int  usd_isinstance(<stage>stage, string primpath)`
 
-This function checks whether the given primitive is an instance.
+此函数用于检查给定图元是否为实例。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取对应输入端的stage。该整数等价于引用特定输入端的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已处理stage（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+图元的路径。
 
-Returns
+返回值
 
-1 if the primitive is an instance, and 0 otherwise.
+如果图元是实例则返回1，否则返回0。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Check if the sphere primitive is an instance.
+// 检查球体图元是否为实例
 int is_instance = usd_isinstance(0, "/geometry/sphere");
 
 ```

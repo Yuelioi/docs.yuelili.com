@@ -1,26 +1,19 @@
 ---
-title: match
+title: 匹配
 order: 20
 ---
 `int  match(string pattern, string subject)`
 
-This function returns 1 if the subject matches the pattern specified, or
-0 if the subject doesn’t match. The standard Houdini pattern matching is
-used. Multiple patterns may be separated by spaces or commas. The
-special characters for matching are:
+如果subject匹配指定的pattern，该函数返回1；如果不匹配则返回0。使用标准的Houdini模式匹配语法。多个模式可以用空格或逗号分隔。匹配的特殊字符包括：
 
-- `?` Match any character
-- `*` Match any substring
-- `[list]` Match any of the characters specified in the list.
-- If a pattern is prefixed by a caret (^), then subjects which match
-  this pattern will be excluded from the match.
+- `?` 匹配任意单个字符
+- `*` 匹配任意子字符串
+- `[list]` 匹配列表中指定的任意字符
+- 如果模式以脱字符(^)开头，则匹配该模式的subject将被排除在匹配结果之外
 
-Examples:
+示例：
 
-- `a*` - Match any string beginning with a.
-- `a*,^aardvark` - Match any string beginning with a except for
-  aardvark.
-- `[abc]*z` - Match any string beginning with a, b or c and ending with
-  z.
-- `g*,^geo*` - Match any string beginning with g, but not any string
-  beginning with geo.
+- `a*` - 匹配所有以a开头的字符串
+- `a*,^aardvark` - 匹配所有以a开头的字符串，除了aardvark
+- `[abc]*z` - 匹配所有以a、b或c开头并以z结尾的字符串
+- `g*,^geo*` - 匹配所有以g开头的字符串，但不匹配以geo开头的字符串

@@ -14,25 +14,25 @@ order: 22
 
 `&lobes`
 
-The function overwrites this array with the BSDFs for the component lobes.
+该函数会将BSDF分量波瓣写入此数组。
 
 `source`
 
-The BSDF to split.
+待拆分的BSDF。
 
 `weights`
 
-The function fills this array with the weights for the split lobes (same length as the returned `bsdf` array). When you sample Illumination using the returned lobes you must scale it by these weights.
+该函数会将拆分波瓣的权重填充到此数组（与返回的`bsdf`数组长度相同）。当您使用返回的波瓣采样光照时，必须按这些权重进行缩放。
 
 `mask`
 
-A bitmask indicating which types of bounces to evaluate.
+指示要评估哪些类型弹跳的位掩码。
 
-See [bouncemask](bouncemask.html) for information on component label bitmasks.
+有关组件标签位掩码的信息，请参阅[bouncemask](bouncemask.html)。
 
 `type`
 
-How to split the lobes. You can `#import "pbr.h"` to get constant values representing the different split types:
+波瓣拆分方式。可通过`#import "pbr.h"`获取表示不同拆分类型的常量值：
 
 - `PBR_SPLIT_FULL = 0`
 - `PBR_SPLIT_RANDOM = 1`
@@ -42,27 +42,25 @@ How to split the lobes. You can `#import "pbr.h"` to get constant values represe
 
 `u`
 
-Random value to sample the CDF at.
+用于在CDF上采样的随机值。
 
 `cdf`
 
-CDF used to control sampling among components of the BSDF.
+用于控制BSDF组件间采样的累积分布函数。
 
-Returns
+返回值
 
-An array of `bsdf` objects representing the lobes.
+表示波瓣的`bsdf`对象数组。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Split BSDF into component lobes
+// 将BSDF拆分为分量波瓣
 float weights[];
 bsdf lobes[];
 split_bsdf(lobes, hitF, weights);
 
-// Get albedos of lobes
+// 获取各波瓣的反照率
 float albedos[];
 resize(albedos, len(lobes));
 for (int i = 0; i < len(lobes); i++)
@@ -70,14 +68,14 @@ for (int i = 0; i < len(lobes); i++)
     albedos[i] = luminance(albedo(lobes[i], -hitnI)) * weights[i];
 }
 
-// Compute CDF
+// 计算CDF
 float cdf[] = compute_cdf(albedos);
 
-// Randomly select a BSDF based on albedo distribution
+// 根据反照率分布随机选择BSDF
 int index = 0;
 sample_cdf(cdf, s.x, index);
 
-// Do something with the selected BSDF
+// 对选中的BSDF进行操作
 // lobes[index] ...
 
 ```

@@ -6,4 +6,4 @@ order: 2
 
 `float  fuzzy_and(float a, float b, ...)`
 
-Returns the fuzzy “AND” (Zadeh AND) of the input fuzzy values.
+返回输入模糊值的模糊"与"(Zadeh AND)运算结果。

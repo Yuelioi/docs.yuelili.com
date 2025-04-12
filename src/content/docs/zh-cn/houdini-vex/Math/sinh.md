@@ -2,9 +2,10 @@
 title: sinh
 order: 73
 ---
+
 `float  sinh(float n)`
 
-Returns the hyperbolic sine of `n`.
+返回 `n` 的双曲正弦值。
 
 `vector2  sinh(vector2 v)`
 
@@ -12,4 +13,4 @@ Returns the hyperbolic sine of `n`.
 
 `vector4  sinh(vector4 v)`
 
-Returns a new vector with `sinh()` applied to each component.
+返回一个新向量，其中每个分量都应用了 `sinh()` 函数。

@@ -1,70 +1,56 @@
 ---
-title: maketransform
+title: 构建变换矩阵
 order: 7
 ---
-`matrix3  maketransform(vector zaxis, vector yaxis)`
+`matrix3  maketransform(vector z轴, vector y轴)`
 
-`matrix3  maketransform(int xyz, vector angles)`
+`matrix3  maketransform(int 旋转顺序, vector 角度)`
 
-`matrix  maketransform(vector zaxis, vector yaxis, vector translate)`
+`matrix  maketransform(vector z轴, vector y轴, vector 平移)`
 
-`matrix  maketransform(int trs, int xyz, vector t, vector r)`
+`matrix  maketransform(int 变换顺序, int 旋转顺序, vector 平移, vector 旋转)`
 
-`matrix  maketransform(int trs, int xyz, vector t, vector r, vector s)`
+`matrix  maketransform(int 变换顺序, int 旋转顺序, vector 平移, vector 旋转, vector 缩放)`
 
-`matrix  maketransform(int trs, int xyz, vector t, vector r, vector s, vector p)`
+`matrix  maketransform(int 变换顺序, int 旋转顺序, vector 平移, vector 旋转, vector 缩放, vector 枢轴)`
 
-`matrix  maketransform(int trs, int xyz, vector t, vector r, vector s, vector p, vector pr)`
+`matrix  maketransform(int 变换顺序, int 旋转顺序, vector 平移, vector 旋转, vector 缩放, vector 枢轴, vector 枢轴旋转)`
 
-`matrix  maketransform(int trs, int xyz, vector t, vector r, vector s, vector p, vector pr, vector shears)`
+`matrix  maketransform(int 变换顺序, int 旋转顺序, vector 平移, vector 旋转, vector 缩放, vector 枢轴, vector 枢轴旋转, vector 切变)`
 
-Builds a 3×3 or 4×4 transform matrix.
+构建3×3或4×4变换矩阵。
 
-`maketransform(int trs, ...)` builds a general 4×4 transform matrix
-given an order of transformations (trs), an order for rotations
-(xyz), a vector representing the translation (t), rotation
-(r), scale (s) (and optionally a pivot (p), pivot rotation
-(pr), and shears (shears)).
+`maketransform(int 变换顺序, ...)` 根据指定的变换顺序(trs)、旋转顺序(xyz)、表示平移(t)、旋转(r)、缩放(s)的向量（可选包括枢轴(p)、枢轴旋转(pr)和切变(shears)），构建通用的4×4变换矩阵。
 
-`maketransform(int xyz, vector angles)` builds a 3×3 rotation matrix
-using the same rules as `maketransform(int trs, ...)` but only using
-the rotation parameters.
+`maketransform(int 旋转顺序, vector 角度)` 使用与`maketransform(int 变换顺序, ...)`相同的规则构建3×3旋转矩阵，但仅使用旋转参数。
 
-`maketransform(vector zaxis, yaxis, ...)` builds either a 3×3 transform
-matrix or a 4×4 transform matrix. The matrix will be constructed so that the
-z-axis will be transformed to the z-axis specified with the given up vector
-(yaxis). Thus, maketransform({0,0,1}, {0,1,0}) will result in an identity
-matrix. The version which returns a 4×4 transform will apply the translation
-to the 4×4 matrix. This function is very similar to the [lookat](lookat.html "Computes a rotation matrix or angles to orient the negative z-axis along the vector (to-from) under the transformation.")
-function. The vectors passed in are *not* normalized meaning that scales
-should be preserved in construction of the transform.
+`maketransform(vector z轴, y轴, ...)` 构建3×3或4×4变换矩阵。矩阵将被构造为z轴将变换到指定的z轴方向，并使用给定的上向量(y轴)。因此，maketransform({0,0,1}, {0,1,0})将生成单位矩阵。返回4×4变换矩阵的版本会将平移应用到4×4矩阵中。此函数与[lookat](lookat.html "计算旋转矩阵或角度，使负z轴沿向量(to-from)在变换下定向")函数非常相似。传入的向量*不会*被归一化，意味着在构建变换时应保留缩放比例。
 
-Note
-Unlike most VEX functions, this function expects rotations
-in *degrees*, not radians.
+注意
+与大多数VEX函数不同，此函数期望旋转角度以*度*为单位，而不是弧度。
 
-`trs`
+`变换顺序`
 
-One of the transform order constants listed below, which can be imported from `$HFS/houdini/vex/include/math.h`.
+以下变换顺序常量之一，可从`$HFS/houdini/vex/include/math.h`导入。
 
-| Constant name | Transform Order |
+| 常量名称 | 变换顺序 |
 | --- | --- |
-| XFORM_SRT | Scale, Rotate, Translate |
-| XFORM_STR | Scale, Translate, Rotate |
-| XFORM_RST | Rotate, Scale, Translate |
-| XFORM_RTS | Rotate, Translate, Scale |
-| XFORM_TSR | Translate, Scale, Rotate |
-| XFORM_TRS | Translate, Rotate, Scale |
+| XFORM_SRT | 缩放、旋转、平移 |
+| XFORM_STR | 缩放、平移、旋转 |
+| XFORM_RST | 旋转、缩放、平移 |
+| XFORM_RTS | 旋转、平移、缩放 |
+| XFORM_TSR | 平移、缩放、旋转 |
+| XFORM_TRS | 平移、旋转、缩放 |
 
-`xyz`
+`旋转顺序`
 
-One of the rotation order constants listed below, which can be imported from `$HFS/houdini/vex/include/math.h`.
+以下旋转顺序常量之一，可从`$HFS/houdini/vex/include/math.h`导入。
 
-| Constant name | Rotation Order |
+| 常量名称 | 旋转顺序 |
 | --- | --- |
-| XFORM_XYZ | Rotate order X, Y, Z |
-| XFORM_XZY | Rotate order X, Z, Y |
-| XFORM_YXZ | Rotate order Y, X, Z |
-| XFORM_YZX | Rotate order Y, Z, X |
-| XFORM_ZXY | Rotate order Z, X, Y |
-| XFORM_ZYX | Rotate order Z, Y, X |
+| XFORM_XYZ | 旋转顺序 X, Y, Z |
+| XFORM_XZY | 旋转顺序 X, Z, Y |
+| XFORM_YXZ | 旋转顺序 Y, X, Z |
+| XFORM_YZX | 旋转顺序 Y, Z, X |
+| XFORM_ZXY | 旋转顺序 Z, X, Y |
+| XFORM_ZYX | 旋转顺序 Z, Y, X |

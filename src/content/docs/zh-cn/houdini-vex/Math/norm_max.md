@@ -4,4 +4,4 @@ order: 47
 ---
 `float  norm_max(<matrix>m)`
 
-Returns the max-norm of matrix m, which is the maximum absolute entry.
+返回矩阵 m 的最大范数，即矩阵元素中的最大绝对值。

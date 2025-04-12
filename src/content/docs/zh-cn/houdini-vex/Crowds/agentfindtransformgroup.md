@@ -4,19 +4,19 @@ order: 26
 ---
 `int  agentfindtransformgroup(<geometry>geometry, int prim, string transformgroup)`
 
-Returns the index of a transform group in the agent’s definition.
-Returns -1 if `prim` is out of range, `prim` is not an agent primitive, or the transform group does not exist.
+返回代理定义中变换组的索引。
+如果`prim`超出范围、`prim`不是代理图元或变换组不存在，则返回-1。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是一个指定几何体文件（例如`.bgeo`）的字符串以从中读取。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `prim`
 
-The primitive number.
+图元编号。
 
 `transformgroup`
 
-Name of a transform group in the agent’s definition.
+代理定义中变换组的名称。

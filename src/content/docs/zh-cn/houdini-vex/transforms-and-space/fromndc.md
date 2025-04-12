@@ -2,24 +2,25 @@
 title: fromNDC
 order: 2
 ---
+
 `vector  fromNDC(vector v)`
 
-Transforms the vector from NDC space to the current space.
+将向量从NDC空间转换到当前空间。
 
 `vector  fromNDC(string space, vector v)`
 
-Transforms the vector from NDC space to the named space.
+将向量从NDC空间转换到指定名称的空间。
 
 `space`
 
-The possible values for the space arguments are:
+space参数的可能取值包括：
 
-| An object path | Use the object space of an object specified by a path string.   Tip  In some cases, such as point instancing, mantra may  automatically mangle object paths. You can generate an `.ifd`  file and look inside to try to find what mantra is calling  the object you want. |
+| 对象路径 | 使用由路径字符串指定的对象空间。提示：在某些情况下（例如点实例化），mantra可能会自动修改对象路径。您可以生成一个`.ifd`文件并查看内容，以确定mantra对您所需对象的命名方式。 |
 | --- | --- |
-| `"space:object"` | Object space of the *current* object. |
-| `"space:light"` | Object space of the *current* light when executing a shadow or light shader. |
-| `"space:world"` | Houdini world space. |
-| `"space:camera"` | mantra camera space. |
-| `"space:ndc"` | Normal Device Coordinate space. |
-| `"space:lightndc"` | Normal Device Coordinate space for the *current* light when executing a shadow or light shader. |
-| `"space:current"` | The current space the vector is in. |
+| `"space:object"` | *当前*对象的对象空间。 |
+| `"space:light"` | 在执行阴影或光照着色器时，*当前*光源的对象空间。 |
+| `"space:world"` | Houdini世界空间。 |
+| `"space:camera"` | mantra相机空间。 |
+| `"space:ndc"` | 标准设备坐标空间。 |
+| `"space:lightndc"` | 在执行阴影或光照着色器时，*当前*光源的标准设备坐标空间。 |
+| `"space:current"` | 向量当前所在的空间。 |

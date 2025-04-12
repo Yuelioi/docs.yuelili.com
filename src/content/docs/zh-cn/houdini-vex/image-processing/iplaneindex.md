@@ -2,15 +2,15 @@
 title: iplaneindex
 order: 19
 ---
-| Context(s) | [cop2](../contexts/cop2.html) |
+| 上下文 | [cop2](../contexts/cop2.html) |
 | --- | --- |
 
 `int  iplaneindex(int opinput, string planename)`
 
 `opinput`
 
-The input number to read from, starting from 0. For example, the first input is 0, the second input is 1, and so on.
+要读取的输入编号，从0开始。例如第一个输入是0，第二个输入是1，依此类推。
 
-Returns
+返回值
 
-The index of the plane named 'planename' in the specified input.
+返回指定输入中名为'planename'的平面的索引。

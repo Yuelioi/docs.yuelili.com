@@ -4,15 +4,13 @@ order: 14
 ---
 `string  reverse(string str)`
 
-Returns a UTF-8 encoded string with the reversed *characters* (not bytes) from `str`. This is different from what `str[::-1]` returns.
+返回一个UTF-8编码的字符串，其中包含`str`中反转后的*字符*（不是字节）。这与`str[::-1]`返回的结果不同。
 
 `<type>[] reverse(<type>values[])`
 
-Returns a reversed copy of the given array.
+返回给定数组的反转副本。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 reverse("hello") == "olleh";

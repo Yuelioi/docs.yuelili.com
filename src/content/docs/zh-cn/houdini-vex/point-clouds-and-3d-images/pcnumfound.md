@@ -2,12 +2,11 @@
 title: pcnumfound
 order: 25
 ---
-This node returns the number of points found by a [pcopen](pcopen.html "Returns a handle to a point cloud file.") query.
 
-For example, if 10 points are being filtered, and 6 are within the
-search radius, `pcnumfound` will return 6.
+该节点返回通过[pcopen](pcopen.html "返回点云文件的句柄。")查询找到的点数量。
+
+例如，如果有10个点被筛选，其中6个在搜索半径内，`pcnumfound`将返回6。
 
 `int  pcnumfound(int handle)`
 
-Returns the number of found points from the search performed by
-[pcopen](pcopen.html "Returns a handle to a point cloud file.").
+返回由[pcopen](pcopen.html "返回点云文件的句柄。")执行的搜索所找到的点数量。

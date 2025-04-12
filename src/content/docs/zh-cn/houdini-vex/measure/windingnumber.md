@@ -1,37 +1,38 @@
 ---
-title: windingnumber
+title: 环绕数
 order: 19
 ---
+
 `float  windingnumber(<geometry>geometry, vector origin)`
 
 `float  windingnumber(<geometry>geometry, vector origin, float accuracy)`
 
-Computes the winding number of geometry around the point origin.
+计算几何体围绕原点(origin)的环绕数。
 
 `float  windingnumber(<geometry>geometry, string primgroup, vector origin)`
 
 `float  windingnumber(<geometry>geometry, string primgroup, vector origin, float accuracy)`
 
-Computes the winding number of primitive group primgroup around the point origin.
+计算基本体组(primgroup)围绕原点(origin)的环绕数。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文(如wrangle SOP)中运行时，此参数可以是表示输入编号(从0开始)的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件(例如`.bgeo`)的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `primgroup`
 
-Optionally compute winding number only for a subset of a mesh specified by a primitive group.
+可选地仅计算由基本体组指定的网格子集的环绕数。
 
 `origin`
 
-The position in space to compute winding number.
+计算环绕数的空间位置。
 
 `accuracy`
 
-The winding number is computed only approximately. The default value 2.0 is sufficient in most situations, setting accuracy to 12.0 should yield result accurate up to floating point precision.
+环绕数仅为近似计算。默认值2.0在大多数情况下已足够，将精度设置为12.0应能得到浮点精度范围内的准确结果。
 
-Returns
+返回值
 
-The winding number of geometry at a point.
+几何体在某点的环绕数。

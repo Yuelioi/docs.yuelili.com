@@ -2,37 +2,35 @@
 title: usd_variants
 order: 151
 ---
-| Since | 17.5 |
+| 始于版本 | 17.5 |
 | --- | --- |
 
 `string [] usd_variants(<stage>stage, string primpath, string variantset)`
 
-This function returns the variants available in the given variant set.
+此函数返回给定变体集中可用的变体选项。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+当在节点上下文（如wrangle LOP节点）中运行时，该参数可以是表示输入编号的整数（从0开始）以读取对应输入的舞台。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已处理舞台（例如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `variantset`
 
-The variant set name.
+变体集的名称。
 
-Returns
+返回值
 
-The names of the variants available in a given variant set on a given primitive.
+返回指定图元上给定变体集中可用的变体名称列表。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the variants in the variant set "shapes" on a "shape_shifter" primitive.
+// 获取"shape_shifter"图元上"shapes"变体集中的所有变体选项
 string variants[] = usd_variants(0, "/geo/shape_shifter", "shapes");
 
 ```

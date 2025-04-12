@@ -4,14 +4,13 @@ order: 21
 ---
 `float  xyzdist(<geometry>geometry, vector origin)`
 
-Finds the distance from origin to the closest location on the given geometry.
+计算从原点(origin)到给定几何体上最近位置的距离。
 
 `float  xyzdist(<geometry>geometry, vector origin, int &prim, vector &uv)`
 
 `float  xyzdist(<geometry>geometry, vector origin, int &prim, vector &uv, float maxdist)`
 
-Finds the distance from origin to the closest location on the geometry, and
-writes the primitive number and UV coordinates of the closest location into the output arguments.
+计算从原点(origin)到几何体上最近位置的距离，并将最近位置的图元编号和UV坐标写入输出参数。
 
 `float  xyzdist(<geometry>geometry, string primgroup, vector origin)`
 
@@ -19,44 +18,37 @@ writes the primitive number and UV coordinates of the closest location into the 
 
 `float  xyzdist(<geometry>geometry, string primgroup, vector origin, int &prim, vector &uv, float maxdist)`
 
-Finds the distance from origin to the closest location in the given primitive group on the given geometry,
-and writes the primitive number and UV coordinates of the closest location into the output arguments.
+计算从原点(origin)到给定几何体上指定图元组中最近位置的距离，并将最近位置的图元编号和UV坐标写入输出参数。
 
-Note: Distances to packed primitives and sphere/tube/circle primitives with
-non-uniform scales may not represent the actual closest point as the closest
-point is found in the untransformed space.
+注意：对于打包图元(packed primitives)和非均匀缩放的球体/管体/圆形图元，计算的距离可能不代表实际的最近点，因为最近点是在未变换空间中查找的。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文(如wrangle SOP)中运行时，此参数可以是表示输入编号(从0开始)的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定几何体文件(如`.bgeo`)的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `primgroup`
 
-The name of a primitive group or a pattern to generate a primitive
-group. Uses the same semantics as a SOP group, so empty strings
-will match all primitives. Attribute groups like `@Cd.x>0` can
-also be used, but note that the `@` may need to be escaped with
-a backslash in a [Snippet VOP](../../nodes/vop/snippet.html "Runs a VEX snippet to modify the incoming values.").
+图元组的名称或用于生成图元组的模式。使用与SOP组相同的语义，因此空字符串将匹配所有图元。也可以使用属性组如`@Cd.x>0`，但注意在[Snippet VOP](../../nodes/vop/snippet.html "运行VEX代码片段来修改输入值")中可能需要用反斜杠转义`@`符号。
 
 `origin`
 
-The position in space to find the closest position on the geometry to.
+在空间中查找几何体上最近点的位置坐标。
 
 `&prim`
 
-The function overwrites this variable with the number of the closest primitive, or `-1` if no primitive was found.
+函数会将此变量覆盖为最近图元的编号，如果未找到图元则为`-1`。
 
 `&uv`
 
-The function overwrites this variable with the UV coordinates of the closest point on the closest primitive.
-You can use [primuv](primuv.html "Interpolates the value of an attribute at a certain parametric (uvw) position.") to sample an attribute value at this location.
+函数会将此变量覆盖为最近图元上最近点的UV坐标。
+可以使用[primuv](primuv.html "在特定参数化(uvw)位置插值属性值")在此位置采样属性值。
 
 `maxdist`
 
-The maximum distance to search. Specifying this can speed up the function by allowing it to quit early.
+搜索的最大距离。指定此参数可以通过允许函数提前退出来加速计算。
 
-Returns
+返回值
 
-The distance from the origin point to the closest location on the geometry.
+从原点(origin)到几何体上最近位置的距离。

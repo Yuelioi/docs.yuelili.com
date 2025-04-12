@@ -4,31 +4,30 @@ order: 5
 ---
 `void  insert(string &str, int index, string value)`
 
-Inserts the `value` into the string `str` at the given `index`.
+将 `value` 插入到字符串 `str` 的指定 `index` 位置。
 
-If `index` is greater than the length of the string, the `value` will simply be appended to the existing `str`.
+如果 `index` 大于字符串长度，`value` 将被直接追加到原字符串 `str` 的末尾。
 
 `void  insert(<type>&array[], int index, <type>value)`
 
 `void  insert(<type>&array[], int index, <type>values[])`
 
-Inserts the items or items into the `array` starting at the given `index`.
+将单个或多个元素插入到 `array` 中，从指定的 `index` 位置开始。
 
-If `index` is greater than the length current length of the `array`, the function will fill the gaps with uninitialized values (for example, `0` or the empty string).
+如果 `index` 大于数组当前长度，函数会用未初始化值（如 `0` 或空字符串）填充空缺位置。
 
-- If the `index` is negative, it counts from the *end* of the string or array you're inserting into. (If the negative number is greater than the string/array length, it is clamped to `0`.)
+- 若 `index` 为负数，则从字符串或数组的*末尾*开始计算插入位置。（如果负数的绝对值超过字符串/数组长度，则会被限制为 `0`）
 
-For example, to insert the number `100` as the second-to-last item in an array:
+例如，要将数字 `100` 插入到数组的倒数第二个位置：
 
 ```vex
 insert(numbers; -1; 100)
-
 ```
 
 `int  insert(dict &dstdict, string dstkey, dict srcdict, string srckey)`
 
-Copies the value from `srcdict[srckey]` into `dstdict[dstkey]`. This will preserve the underlying type of the value. If the key is not in the source dictionary, it will be removed from the destination dictionary. The result is `1` if the key existed in the destination dictionary before the update, and `0` if it did not.
+将 `srcdict[srckey]` 的值复制到 `dstdict[dstkey]` 中，同时保留值的原始类型。如果源字典中不存在该键，则会从目标字典中移除对应键。返回值为 `1` 表示更新前目标字典中存在该键，`0` 表示不存在。
 
 `void  insert(dict &dstdict, dict srcdict)`
 
-Merges `srcdict` into `dstdict`. Keys that match will be overwritten by values in the source dictionary.
+将 `srcdict` 合并到 `dstdict` 中。匹配的键会被源字典中的值覆盖。

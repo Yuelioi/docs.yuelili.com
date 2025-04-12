@@ -1,10 +1,10 @@
 ---
-title: cosh
+title: cosh（双曲余弦函数）
 order: 14
 ---
 `float  cosh(float n)`
 
-Returns the hyperbolic cosine of the argument.
+返回参数的双曲余弦值。
 
 `vector2  cosh(vector2 v)`
 
@@ -12,4 +12,4 @@ Returns the hyperbolic cosine of the argument.
 
 `vector4  cosh(vector4 v)`
 
-Returns a new vector with `cosh()` applied to each component.
+返回一个新向量，其每个分量都是原向量对应分量应用`cosh()`函数的结果。

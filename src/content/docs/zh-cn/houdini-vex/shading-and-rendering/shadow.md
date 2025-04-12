@@ -2,15 +2,15 @@
 title: shadow
 order: 70
 ---
-| Context(s) | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [surface](../contexts/surface.html) |
+| 上下文 | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [surface](../contexts/surface.html) |
 | --- | --- |
-This function can only be called from within an [illuminance](illuminance.html "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables.") statement.
+此函数只能在[illuminance](illuminance.html "遍历场景中的所有光源，为每个光源调用光照着色器以设置Cl和L全局变量。")语句内部调用。
 
 `void  shadow(vector &Cl)`
 
 `vector  shadow(vector Cl)`
 
-Uses the `P` and `L` global variables.
+使用`P`和`L`全局变量。
 
 `void  shadow(vector &Cl, vector P, vector L)`
 

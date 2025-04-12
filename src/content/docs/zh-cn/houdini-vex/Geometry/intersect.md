@@ -1,80 +1,78 @@
----
-title: intersect
-order: 8
----
-To get a list of *all* intersections along a ray, use [intersect_all](intersect_all.html "Computes all intersections of the specified ray with geometry.").
+---  
+title: 相交检测  
+order: 8  
+---  
 
-`int  intersect(<geometry>geometry, vector orig, vector dir, vector &p, float &u, float &v)`
+要获取射线路径上*所有*相交点列表，请使用[intersect_all](intersect_all.html "计算指定射线与几何体的所有相交点")。  
 
-`int  intersect(<geometry>geometry, vector orig, vector dir, vector &p, float &u, float &v, ...)`
+`int  intersect(<geometry>geometry, vector orig, vector dir, vector &p, float &u, float &v)`  
 
-Computes the first intersection of the specified ray with the geometry.
-To get *all* intersections along a vector, use [intersect_all](intersect_all.html "Computes all intersections of the specified ray with geometry.") instead.
-The variadic argument `"farthest"` can be used to indicate whether to return the last intersection instead of the first.
+`int  intersect(<geometry>geometry, vector orig, vector dir, vector &p, float &u, float &v, ...)`  
 
-`int  intersect(<geometry>geometry, vector orig, vector dir, vector &p, vector &uvw)`
+计算指定射线与几何体的首个相交点。  
+若要获取沿向量的*所有*相交点，请改用[intersect_all](intersect_all.html "计算指定射线与几何体的所有相交点")。  
+可变参数`"farthest"`可用于指示是否返回最后一个相交点而非第一个。  
 
-Computes the first intersection of the specified ray with the geometry.
-To get *all* intersections along a vector, use [intersect_all](intersect_all.html "Computes all intersections of the specified ray with geometry.") instead.
+`int  intersect(<geometry>geometry, vector orig, vector dir, vector &p, vector &uvw)`  
 
-`int  intersect(<geometry>geometry, string group, vector orig, vector dir, vector &p, vector &uvw)`
+计算指定射线与几何体的首个相交点。  
+若要获取沿向量的*所有*相交点，请改用[intersect_all](intersect_all.html "计算指定射线与几何体的所有相交点")。  
 
-Computes the intersection of the specified ray with primitives in the given group.
+`int  intersect(<geometry>geometry, string group, vector orig, vector dir, vector &p, vector &uvw)`  
 
-`<geometry>`
+计算指定射线与给定组内图元的相交点。  
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+`<geometry>`  
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。  
 
-`group`
+或者，该参数可以是指定几何体文件（如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。  
 
-If given, only intersect primitives in this group.
+`group`  
 
-`orig`
+若指定，则仅检测该组内的图元。  
 
-The ray origin point.
+`orig`  
 
-`dir`
+射线原点坐标。  
 
-The ray direction *and maximum distance*.
-This function does not expect a normalized direction vector.
-Instead, it uses the length of the vector as the maximum distance to search.
+`dir`  
 
-`&p`
+射线方向*及最大距离*。  
+本函数不要求归一化的方向向量，而是使用向量长度作为最大检测距离。  
 
-If the ray intersects a primitive, this variable is overwritten with the intersection position in world space.
+`&p`  
 
-`&u`, `&v`, `&uvw`
+若射线与图元相交，此变量将被覆盖为世界空间中的相交位置。  
 
-If the ray intersects a primitive, this/these variable(s) is/are overwritten with the parametric intersection position on the primitive.
+`&u`, `&v`, `&uvw`  
 
-Returns
+若射线与图元相交，此变量将被覆盖为图元上的参数化相交位置。  
 
-The intersected primitive number, or `-1` if there was an error or the ray didn’t intersect anything.
+返回值  
 
-Note
-When intersections are performed against metaball geometry, it is
-impossible to determine the primitive number of the metaball which
-was hit. In this case, the function returns the number of primitives
-in the intersection geometry.
+相交图元的编号，若出现错误或未相交则返回`-1`。  
 
-Examples
+注意  
+当对元球几何体执行相交检测时，无法确定被击中的元球图元编号。  
+此时函数将返回相交几何体中的图元总数。  
 
-## examples
+示例  
 
-```vex
-// Intersect against the second input's geometry, using a ray at the current
-// point's position and in the direction of its velocity vector.
-vector origin = @P;
-float max_dist = 1000;
-vector dir = max_dist * normalize(@v);
+## 示例  
 
-vector isect_pos;
-float isect_u, isect_v;
-int isect_prim = intersect(@OpInput2, origin, dir, isect_pos, isect_u, isect_v);
+```vex  
+// 针对第二输入端的几何体执行相交检测，使用当前点位置作为射线原点  
+// 并以速度向量方向作为射线方向  
+vector origin = @P;  
+float max_dist = 1000;  
+vector dir = max_dist * normalize(@v);  
 
-// Return the farthest intersection instead.
-isect_prim = intersect(@OpInput2, origin, dir, isect_pos, isect_u, isect_v, "farthest", 1);
+vector isect_pos;  
+float isect_u, isect_v;  
+int isect_prim = intersect(@OpInput2, origin, dir, isect_pos, isect_u, isect_v);  
+
+// 改为返回最远相交点  
+isect_prim = intersect(@OpInput2, origin, dir, isect_pos, isect_u, isect_v, "farthest", 1);  
 
 ```

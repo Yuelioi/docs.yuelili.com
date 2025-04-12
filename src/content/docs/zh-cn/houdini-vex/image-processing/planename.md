@@ -1,10 +1,11 @@
 ---
-title: planename
+title: 平面名称
 order: 33
 ---
-| Context(s) | [cop2](../contexts/cop2.html) |
+
+| 上下文 | [cop2](../contexts/cop2.html) |
 | --- | --- |
 
 `string  planename(int planeindex)`
 
-Returns the name of the plane specified by the index (e.g. “C”, “A”).
+返回指定索引对应的平面名称（例如 "C"、"A"）。

@@ -4,22 +4,22 @@ order: 21
 ---
 `int  findattribvalcount(<geometry>geometry, string attribclass, string attribute_name, int|stringvalue)`
 
-Returns the number of elements that has that integer or string value set on the given attribute name.
+返回在给定属性名称上设置了该整数或字符串值的元素数量。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是一个指定几何体文件（例如`.bgeo`）的字符串以从中读取。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `attribclass`
 
-One of `"detail"` (or `"global"`), `"point"`, `"prim"`, or `"vertex"`.
+可以是`"detail"`（或`"global"`）、`"point"`、`"prim"`或`"vertex"`之一。
 
 `attribute_name`
 
-The name of the attribute to read.
+要读取的属性名称。
 
 `value`
 
-The value to match. Must be of the same type as the attribute.
+要匹配的值。必须与属性类型相同。

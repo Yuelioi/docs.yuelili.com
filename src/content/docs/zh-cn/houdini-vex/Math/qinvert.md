@@ -4,5 +4,4 @@ order: 62
 ---
 `vector4  qinvert(vector4 quaternion)`
 
-Creates the inverse quaternion to the supplied one. This will rotate points
-in the opposite direction.
+创建给定四元数的逆四元数。这将使点沿相反方向旋转。

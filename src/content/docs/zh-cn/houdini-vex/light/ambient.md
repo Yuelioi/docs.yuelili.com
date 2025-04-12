@@ -1,57 +1,52 @@
 ---
-title: ambient
+title: 环境光
 order: 1
 ---
-| Context(s) | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [surface](../contexts/surface.html) |
+| 上下文环境 | [置换](../contexts/displace.html)  [雾效](../contexts/fog.html)  [表面](../contexts/surface.html) |
 | --- | --- |
 
 `vector  ambient(...)`
 
-Returns the color of ambient light in the scene.
-Light inclusion/exclusion options
+返回场景中环境光的颜色。
+光源包含/排除选项
 
-## light-inclusion-exclusion-options
+## 光源包含排除选项
 
 "`categories`",
 `string`
 `="*"`
 
-Specifies lights to include/exclude by their “category” tags.
-This is the preferred include/exclude lights rather than pattern matching
-light names with the `"lightmask"` keyword argument.
+通过灯光的"类别"标签指定要包含/排除的光源。
+这是比使用`"lightmask"`关键字参数通过名称模式匹配来包含/排除光源更推荐的方式。
 
-For example:
+例如：
 
 ```vex
 diff = diffuse(nml, "lightmask", "hero | fill");
 
 ```
 
-See [light categories](../../render/lights.html#categories) for more information.
+更多信息请参阅[光源类别](../../render/lights.html#categories)。
 
 "`lightmask`",
 `string`
 `="*"`
 
-When evaluating light and shadow shaders, objects have pre-defined light
-masks. This mask is usually specified in the geometry object and
-specifies a list of lights which are used to illuminate a surface or fog
-shader. It is possible to override the default light mask by specifying
-a “lightmask” argument.
+在评估光照和阴影着色器时，对象有预定义的光照遮罩。这个遮罩通常在几何体对象中指定，
+定义了用于照亮表面或雾效着色器的光源列表。可以通过指定"lightmask"参数来覆盖默认的光照遮罩。
 
-For example:
+例如：
 
 ```vex
 diff = diffuse(nml, "lightmask", "light*,^light2");
 
 ```
 
-…will cause all lights whose names begin with “light” except for a
-light named “light2” to be considered for diffuse illumination.
+...这将使所有名称以"light"开头（除了名为"light2"的光源）的光源被考虑用于漫反射照明。
 
-All Houdini scoping patterns, excepting group expansion, are supported:
+支持所有Houdini作用域模式（组扩展除外）：
 
-- `*` - wild-card match
-- `?` - single character match
-- `^` - exclusion operator
-- `[list]` - character list match
+- `*` - 通配符匹配
+- `?` - 单字符匹配
+- `^` - 排除运算符
+- `[list]` - 字符列表匹配

@@ -1,8 +1,8 @@
 ---
-title: premul
+title: 矩阵预乘
 order: 58
 ---
-| Since | 18.0 |
+| 自版本 | 18.0 |
 | --- | --- |
 
 `void  premul(matrix2 &a, matrix2 b)`
@@ -17,4 +17,4 @@ order: 58
 
 `void  premul(matrix3 &m, matrix3 a, matrix3 b)`
 
-Multiplies two matrices and returns modify the first matrix.
+将两个矩阵相乘并修改第一个矩阵。

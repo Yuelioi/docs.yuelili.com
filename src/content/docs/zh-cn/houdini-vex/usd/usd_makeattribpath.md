@@ -2,37 +2,35 @@
 title: usd_makeattribpath
 order: 86
 ---
-| Since | 18.0 |
+| 版本 | 18.0 |
 | --- | --- |
 
 `string  usd_makeattribpath(<stage>stage, string primpath, string name)`
 
-This function returns the full path of a given attribute.
+此函数返回给定属性的完整路径。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取舞台。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或使用`op:`作为路径前缀引用其他LOP节点的已处理舞台（例如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+基元的路径。
 
 `name`
 
-Attribute name.
+属性名称。
 
-Returns
+返回值
 
-The full path of a given attribute.
+给定属性的完整路径。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Obtain the full path to the attribute "attrib_name" on the cube primitive.
+// 获取立方体基元上"attrib_name"属性的完整路径
 string attrib_path = usd_makeattribpath(0, "/geo/cube", "attrib_name");
 
 ```

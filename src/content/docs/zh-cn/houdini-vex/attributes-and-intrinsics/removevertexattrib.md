@@ -2,8 +2,9 @@
 title: removevertexattrib
 order: 61
 ---
-If you don’t know the class of attribute until runtime, use [removeattrib](removeattrib.html "Removes an attribute or group from the geometry.").
+
+如果在运行时才能确定属性的类别，请使用[removeattrib](removeattrib.html "从几何体中移除属性或属性组")。
 
 `int  removevertexattrib(int geohandle, string name)`
 
-Removes a vertex attribute from the given geometry.
+从给定的几何体中移除顶点属性。

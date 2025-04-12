@@ -1,16 +1,17 @@
 ---
-title: avg
+title: 平均值函数
 order: 9
 ---
+
 `int  avg(int a)`
 
 `float  avg(float a)`
 
-Returns `a`.
+返回参数 `a` 本身。
 
 `float  avg(float a, float b, ...)`
 
-Returns the average of the arguments.
+返回所有参数的平均值。
 
 `float  avg(vector2 v)`
 
@@ -18,7 +19,7 @@ Returns the average of the arguments.
 
 `float  avg(vector4 v)`
 
-Returns the average of the values in the components of `v`.
+返回向量 `v` 各分量的平均值。
 
 `vector2  avg(vector2 a, vector2 b, ...)`
 
@@ -26,8 +27,8 @@ Returns the average of the values in the components of `v`.
 
 `vector4  avg(vector4 a, vector4 b, ...)`
 
-Returns a new vector where each component is the average of the corresponding components in the arguments.
+返回一个新向量，其每个分量都是参数向量对应分量的平均值。
 
 `<type> avg(<type>arr[])`
 
-Returns the average of the values in the array.
+返回数组中所有元素的平均值。

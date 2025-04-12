@@ -7,40 +7,38 @@ order: 58
 
 `int  usd_iprimvarsize(<stage>stage, string primpath, string name)`
 
-This function returns the tuple size of a primvar found directly on the given primitive or inherited from primitive’s ancestor. If the primvar is an array, it returns the tuple size of the array element. E.g., for vector types, this is the number of components.
+此函数返回在指定图元上直接找到或从其祖先继承的primvar的元组大小。若primvar是数组类型，则返回数组元素的元组大小。例如对于矢量类型，返回的是分量数量。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号的整数（从0开始），用于读取对应输入的stage。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+也可用此参数引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点已处理的stage（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `name`
 
-Primvar name (without namespace).
+Primvar名称（不带命名空间）。
 
-Returns
+返回值
 
-The tuple size of the primvar.
+primvar的元组大小：
 
-- For a vector type, this is the number of components.
-- For an integer, float, or string, this returns `1`.
-- For an array primvar, this returns the tuple size of the elements.
+- 对于矢量类型，返回分量数量
+- 对于整数、浮点数或字符串，返回`1`
+- 对于数组primvar，返回元素的元组大小
 
-If the primvar does not exist, returns `0`.
+若primvar不存在，返回`0`。
 
-Use [usd_iprimvarlen](usd_iprimvarlen.html "Returns the length of the array primvar directly on the USD primitive or on USD primitive’s ancestor.") if you want to obtain the array primvar length.
+如需获取数组primvar的长度，请使用[usd_iprimvarlen](usd_iprimvarlen.html "返回USD图元或其祖先上数组primvar的长度")。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the tuple size of a primvar on the cube primitive or its ancestor.
+// 获取立方体图元或其祖先上primvar的元组大小
 int tuple_size = usd_iprimvarsize(0, "/geo/cube", "primvar_name");
 
 ```

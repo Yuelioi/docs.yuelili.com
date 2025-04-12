@@ -4,10 +4,10 @@ order: 8
 ---
 `<type> pop(<type>&array[])`
 
-Removes the last item from the array and returns it.
+移除数组中的最后一个元素并返回该元素。
 
 `<type> pop(<type>&array[], int index)`
 
-Removes the item at `index` from the array and returns its value.
+移除数组中指定`index`位置的元素并返回其值。
 
-A negative index counts from the end of the list, so `pop(array, -2)` would remove the second-to-last value.
+负索引从列表末尾开始计数，因此`pop(array, -2)`将移除倒数第二个值。

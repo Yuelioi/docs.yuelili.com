@@ -2,105 +2,47 @@
 title: pcopenlod
 order: 27
 ---
-| On this page | * [Distance Queries](#distance-queries) * [Solid Angle Queries](#solid-angle-queries) * [Aggregation](#aggregation) * [Example: Proximity Query](#example-proximity-query) * [Example: Threshold Solid-angle Query](#example-threshold-solid-angle-query) * [Example: Limited Solid-angle Query](#example-limited-solid-angle-query) |
+
+| 本页内容 | * [距离查询](#distance-queries) * [立体角查询](#solid-angle-queries) * [聚合](#aggregation) * [示例：邻近查询](#example-proximity-query) * [示例：阈值立体角查询](#example-threshold-solid-angle-query) * [示例：有限立体角查询](#example-limited-solid-angle-query) |
 | --- | --- |
 
 `int  pcopenlod(string filename, string Pchannel, vector P, int min_pts, ...)`
 
-This function opens a point cloud file (`.pc`) and queues up access to the
-points contained in it. You can then iterate over the points with
-[pcunshaded](pcunshaded.html "Iterate over all of the points of a read-write channel which haven’t
-had any data written to the channel yet.") or [pciterate](pciterate.html "This function can be used to iterate over all the points which were
-found in the pcopen query.") and add new data to the point cloud using
-[pcexport](pcexport.html "Writes data to a point cloud inside a pciterate or a pcunshaded loop.").
+此函数用于打开点云文件(`.pc`)并排队访问其中包含的点。然后您可以使用[pcunshaded](pcunshaded.html "迭代读写通道中尚未写入任何数据的点")或[pciterate](pciterate.html "用于迭代pcopen查询中找到的所有点")遍历这些点，并使用[pcexport](pcexport.html "在pciterate或pcunshaded循环中向点云写入数据")向点云添加新数据。
 
-While this function is similar to [pcopen](pcopen.html "Returns a handle to a point cloud file."), the major difference is the points that it queues up may be aggregates of entire groups of points. In
-other words, a single point may represent many points. This allows you to
-perform queries at any desired level of detail without ignoring points in the
-point cloud. For example, you can perform a query in which points
-near the query origin are queued up as usual, but points far from the origin
-are averaged. This can lead to dramatic performance increases because entire
-groups of points can be processed as if they are a single point.
+虽然此函数与[pcopen](pcopen.html "返回点云文件的句柄")类似，但主要区别在于它排队的点可能是整个点组的聚合。换句话说，单个点可能代表多个点。这允许您在任意细节级别执行查询而不忽略点云中的点。例如，您可以执行一个查询，其中靠近查询原点的点照常排队，而远离原点的点则被平均处理。这可以显著提高性能，因为整个点组可以像单个点一样被处理。
 
-As in [pcopen](pcopen.html "Returns a handle to a point cloud file."), P specifies the query origin and Pchannel
-specifies the position channel. During construction, the tree structure
-starts out as a single bounding box that encompasses all the points in a
-point cloud, and is recursively subdivided until there are fewer than
-min_pts points in a node - at which point subdivision stops and a leaf
-node is created. A good default for min_pts is 8.
+与[pcopen](pcopen.html "返回点云文件的句柄")一样，P指定查询原点，Pchannel指定位置通道。在构建过程中，树结构最初是包含点云中所有点的单个边界框，然后递归细分，直到节点中的点数少于min_pts - 此时停止细分并创建叶节点。min_pts的默认值建议为8。
 
-Queries are performed by descending the tree structure from the root node
-until some condition is met. Conceptually, you start with a coarse query
-and refine it until you decide that it is detailed enough. You use a
-`measure` to decide when the query has the desired level of detail. Two
-`measure` values are supported: `distance` and `solidangle`.
-Distance Queries
+查询通过从根节点向下遍历树结构直到满足某些条件来执行。从概念上讲，您从一个粗略查询开始，然后细化它，直到您认为它足够详细。您使用一个`measure`来决定查询何时具有所需的细节级别。支持两种`measure`值：`distance`和`solidangle`。
 
-## distance-queries
+## 距离查询
 
-`distance` mode is provided for compatibility with [pcopen](pcopen.html "Returns a handle to a point cloud file.") and does
-not queue up aggregate points. Distance queries take a threshold parameter
-that indicates the radius within which to accept points.
+`distance`模式是为了与[pcopen](pcopen.html "返回点云文件的句柄")兼容而提供的，不会排队聚合点。距离查询接受一个阈值参数，表示接受点的半径。
 
-The `threshold` argument specifies the radius within which points are
-accepted - identical to the radius passed to [pcopen](pcopen.html "Returns a handle to a point cloud file."). For example,
-calling `pcopenlod`(…, `"measure"`, `"distance"`, `"threshold"`, radius, …)
-queues up points that lie within the specified radius of the query origin.
+`threshold`参数指定接受点的半径 - 与传递给[pcopen](pcopen.html "返回点云文件的句柄")的半径相同。例如，调用`pcopenlod`(…, `"measure"`, `"distance"`, `"threshold"`, radius, …)会排队位于查询原点指定半径内的点。
 
-Solid Angle Queries
+## 立体角查询
 
-## solid-angle-queries
+立体角查询根据点与查询点的接近程度以及点的面积来优先处理点，因此靠近查询点且面积较大的点会被赋予更大的权重。查询过程倾向于通过排队其子节点来拆分贡献较大的点。
 
-Solid angle queries prioritize points by how close they are to the query
-point and also by the area of the point, so points that are close to the
-query point and that have a large area are given a greater weight. The
-query process will tend to split points with a larger contribution by
-queueing their children.
-
-The exact equation used to compute point contribution is the following:
+用于计算点贡献的精确方程如下：
 
 Ai / ||Pi - P||^2,
 
-where Ai is an aggregate area value, Pi is the closest point to P in the
-aggregate box, and P is the query origin. Calling `pcopenlod`(…,
-`"measure"`, `"solidangle"`, `"area"`, `"A"`, …) performs a solid-angle query
-in which the `A` channel is assumed to hold area values.
+其中Ai是聚合面积值，Pi是聚合框中最接近P的点，P是查询原点。调用`pcopenlod`(…, `"measure"`, `"solidangle"`, `"area"`, `"A"`, …)执行立体角查询，其中假定`A`通道保存面积值。
 
-There are two different ways to use the solid angle query - an unlimited
-(`threshold`) query which returns a different number of points depending on
-how many points meet the given threshold, and a limited (`samples`) query
-which always returns the same number of points. If a `samples` argument is
-present, a limited query is assumed.
+有两种不同的方式使用立体角查询 - 一种是无限(`threshold`)查询，根据满足给定阈值的点数返回不同数量的点；另一种是有限(`samples`)查询，总是返回相同数量的点。如果存在`samples`参数，则假定为有限查询。
 
-Limited queries work by prioritizing rather than thresholding samples - so
-that regardless of the total weight of the points being considered, the
-same number of points are returned. The algorithm works by iteratively
-picking the point that has the greatest contribution and splitting that
-point until enough points have been split to meet the desired sample count.
-Limited queries are useful when you need a fixed performance or minimum
-quality level for the query.
+有限查询通过优先处理而不是阈值化样本来工作 - 因此无论考虑的点的总权重如何，都会返回相同数量的点。算法通过迭代选择贡献最大的点并拆分该点，直到拆分足够多的点以满足所需的样本计数。有限查询在您需要固定性能或查询的最低质量水平时非常有用。
 
-Threshold queries work by comparing the point contribution to a fixed
-threshold - and accepting or rejecting the point based on this comparison.
-Since different query points lead to different point contributions, a
-variable number of points will be queued up for threshold queries.
-Threshold queries are useful when it is acceptable to use a lower number of
-points for query positions that are far from the point cloud.
+阈值查询通过将点贡献与固定阈值进行比较，并根据此比较接受或拒绝点。由于不同的查询点会导致不同的点贡献，因此阈值查询会排队不同数量的点。当可以接受对远离点云的查询位置使用较少的点时，阈值查询非常有用。
 
-Aggregation
+## 聚合
 
-## aggregation
+额外的字符串参数指示如何聚合点值。每个通道可以有不同的聚合模式：`mean`、`sum`或`weighted`。调用`pcopenlod`(…, `aggregate:P`, `sum`)将通过求和聚合通道`P`中的值。调用`pcopenlod`(…, `aggregate:A`, `weighted`, `weight`, `W`)将使用来自通道`W`的权重，通过加权平均聚合通道`A`中的值。
 
-Additional string parameters indicate how point values are aggregated. Each
-channel can have a different aggregation mode: `mean`, `sum`, or
-`weighted`. Calling `pcopenlod`(…, `aggregate:P`, `sum`) will aggregate
-the values in channel `P` by summing them. Calling `pcopenlod`(…,
-`aggregate:A`, `weighted`, `weight`, `W`) will aggregate the values in
-channel `A` using a weighted mean with weights from channel `W`.
-
-Example: Proximity Query
-
-## example-proximity-query
+## 示例：邻近查询
 
 ```vex
 int handle = pcopenlod(texturename, "P", P, 8,
@@ -114,12 +56,9 @@ pcimport(handle, "value", valueSum);
 Cf += valueSum;
 }
 pcclose(handle);
-
 ```
 
-Example: Threshold Solid-angle Query
-
-## example-threshold-solid-angle-query
+## 示例：阈值立体角查询
 
 ```vex
 handle = pcopenlod(texturename, "P", P, 8,
@@ -134,12 +73,9 @@ pcimport(handle, "irradiance", irradiance);
 Cf += irradiance;
 }
 pcclose(handle);
-
 ```
 
-Example: Limited Solid-angle Query
-
-## example-limited-solid-angle-query
+## 示例：有限立体角查询
 
 ```vex
 handle = pcopenlod(texturename, "P", P, 8,
@@ -154,5 +90,4 @@ pcimport(handle, "irradiance", irradiance);
 Cf += irradiance;
 }
 pcclose(handle);
-
 ```

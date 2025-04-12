@@ -8,12 +8,12 @@ order: 12
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（例如wrangle SOP）中运行时，此参数可以是一个整数，表示用于读取几何体的输入编号（从0开始）。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是一个指定几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
-Returns
+返回值
 
-The vector value of a specific voxel in a volume primitive.
+返回体积图元中特定体素的矢量值。
 
-Returns 0 if `primnum` or `inputnum` is out of range, the geometry is invalid, or the given primitive is not a vector volume primitive.
+如果`primnum`或`inputnum`超出范围、几何体无效，或给定的图元不是矢量体积图元，则返回0。

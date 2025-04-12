@@ -8,41 +8,30 @@ order: 3
 
 `vector4  Dw(vector4 p, ...)`
 
-Returns
+返回值
 
-Returns the derivative of `p` with respect to W.
+返回`p`相对于W的导数。
 
-When rendering surfaces, this function returns 0.
+在渲染表面时，此函数返回0。
 
-In shading contexts, this is the change in the variable over the volume being shaded.
-Derivatives options
+在着色上下文中，这是变量在着色体积上的变化量。
+导数选项
 
-## derivatives-options
+## 导数选项
 
-Functions which compute derivatives take additional arguments to
-allow tuning of the derivative computation.
+计算导数的函数接受额外参数以允许调整导数计算。
 
 "`extrapolate`",
 `int`
 `=0`
 
-Whether derivatives are
-“smooth” across patch boundaries. In most cases this is true and if
-extrapolation is turned on, derivative computation should be exact
-for C2 surfaces. However, when the VEX variables are changing with a
-high frequency (for example, a high frequency displacement map
-causing high frequency changes to the P variable), extrapolation of
-derivative computation may cause exaggeration of discontinuities
-between patch boundaries.
+是否在面片边界间保持导数"平滑"。在大多数情况下这是正确的，如果启用外推，对于C2曲面导数计算应该是精确的。然而当VEX变量高频变化时（例如高频位移贴图导致P变量高频变化），导数计算的外推可能会加剧面片边界间的不连续性。
 
 "`smooth`",
 `int`
 `=1`
 
-Adjust the magnitude of the
-differentials non-uniformly over patches. This will usually reduce
-patch discontinuities in displacement/textured shaders. However, in
-some odd cases you may want to turn this feature off.
+非均匀地调整面片上微分的幅度。这通常会减少位移/纹理着色器中的面片不连续性。但在某些特殊情况下，您可能需要关闭此功能。
 
 ```vex
 N = computenormal(P, "extrapolate", 1, "smooth", 0);

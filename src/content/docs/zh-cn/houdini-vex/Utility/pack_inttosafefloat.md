@@ -4,11 +4,9 @@ order: 10
 ---
 `float  pack_inttosafefloat(int i)`
 
-This is used to find the w component of a primitive uvw vector
-referring to a polygon soup primitive, from the inner polygon number.
+此函数用于根据内部多边形编号，找到指向多边形汤（polygon soup）图元的原始uvw向量的w分量。
 
-- Integers in the range `abs(i) <= (2^24) = 16,777,216` will be represented exactly by the floats of the same value.
-- Integers in the range `16,777,216 < abs(i) < (2^24) + 104*(2^23) = 889,192,448` will be represented by larger, non-infinite floats.
-- Integers in the range `889,192,448 <= abs(i) < (2^24) + 230*(2^23) = 1,946,157,056`
-  will be represented by small, non-denormal floats.
-- Any other integers, `abs(i) >= 1,946,157,056`, will not be represented correctly.
+- 在范围 `abs(i) <= (2^24) = 16,777,216` 内的整数将被相同值的浮点数精确表示。
+- 在范围 `16,777,216 < abs(i) < (2^24) + 104*(2^23) = 889,192,448` 内的整数将被更大的非无限浮点数表示。
+- 在范围 `889,192,448 <= abs(i) < (2^24) + 230*(2^23) = 1,946,157,056` 内的整数将被较小的非非正规浮点数表示。
+- 其他任何整数（`abs(i) >= 1,946,157,056`）将无法被正确表示。

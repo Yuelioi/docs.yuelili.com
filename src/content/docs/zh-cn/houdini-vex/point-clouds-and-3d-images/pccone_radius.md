@@ -2,7 +2,7 @@
 title: pccone_radius
 order: 6
 ---
-| Since | 18.0 |
+| 版本 | 18.0 |
 | --- | --- |
 
 `int [] pccone_radius(<geometry>geometry, string PChannel, string RadChannel, float radscale, vector P, vector dir, float angle, float max_distance, int maxpoints)`
@@ -11,12 +11,12 @@ order: 6
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
-These functions open a geometry file and return a list of points within the cone whose apex is P, opens in the vector direction dir, and with angle angle to dir. Additionally, it only returns the closest maxpoints points within distance max_distance of P. Each of the points will be expanded by their RadChannel attribute, which will be dilated by radscale.
+这些函数会打开一个几何文件，并返回位于以P为顶点、沿dir向量方向张开、与dir夹角为angle的锥体内的点列表。此外，它只返回距离P不超过max_distance的最多maxpoints个最近点。每个点将通过其RadChannel属性进行扩展，该属性将按radscale进行膨胀。
 
-Using a radius channel allows intersection detection between spheres of varying radii. In this case you cannot use only your own sphere radius, as the intersecting sphere may have a much larger radius so not be in your search window. Because of this, it is also sensible to use a 0.0 radius with this function just to find all the source spheres that your query position is inside of.
+使用半径通道可以检测不同半径球体之间的相交。在这种情况下，不能仅使用自己的球体半径，因为相交的球体可能具有更大的半径，从而不在搜索窗口内。因此，使用0.0半径调用此函数来查找查询位置所在的所有源球体也是合理的。
 
-The `ptgroup` is a point group that limits the points to search. This is a SOP-style group pattern, so can be something like `0-10` or `@Cd.x>0.5`. A blank string is treated as matching all points.
+`ptgroup`是一个限制搜索点的点组。这是一个SOP样式的组模式，可以是类似`0-10`或`@Cd.x>0.5`的形式。空字符串表示匹配所有点。

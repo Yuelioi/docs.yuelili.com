@@ -4,7 +4,7 @@ order: 13
 ---
 `float  cos(float n)`
 
-Returns the cosine of `n`, where `n` is in radians.
+返回`n`的余弦值，其中`n`以弧度为单位。
 
 `vector2  cos(vector2 n)`
 
@@ -12,4 +12,4 @@ Returns the cosine of `n`, where `n` is in radians.
 
 `vector4  cos(vector4 n)`
 
-Returns a new vector with `cos()` applied to each component.
+返回一个新向量，其中每个分量都应用了`cos()`函数。

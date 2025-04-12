@@ -1,29 +1,30 @@
 ---
-title: vertex
+title: 顶点
 order: 77
 ---
-`<type> vertex(<geometry>geometry, string attribute_name, int linear_vertex_index)`
 
-`<type>[] vertex(<geometry>geometry, string attribute_name, int linear_vertex_index)`
+`<type> vertex(<geometry>geometry, string attribute_name, int linear_vertex_index)`
 
-Specifies the vertex using the linear index into the list of all vertices.
+`<type>[] vertex(<geometry>geometry, string attribute_name, int linear_vertex_index)`
 
-`<type> vertex(<geometry>geometry, string attribute_name, int prim_num, int vertex_num)`
+使用顶点列表中的线性索引来指定顶点。
 
-`<type>[] vertex(<geometry>geometry, string attribute_name, int prim_num, int vertex_num)`
+`<type> vertex(<geometry>geometry, string attribute_name, int prim_num, int vertex_num)`
 
-Specifies the vertex as a primitive number and then an offset into the list of vertices on that primitive.
+`<type>[] vertex(<geometry>geometry, string attribute_name, int prim_num, int vertex_num)`
+
+通过基元编号和该基元上顶点列表的偏移量来指定顶点。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `attribute_name`
 
-The name of the attribute (or intrinsic) to read.
+要读取的属性（或固有属性）名称。
 
-Returns
+返回值
 
-The value of the given attribute on the given vertex, or `0` if the attribute or vertex do not exist.
+给定顶点上指定属性的值，如果属性或顶点不存在则返回`0`。

@@ -2,30 +2,29 @@
 title: usd_haspayload
 order: 50
 ---
-| Since | 18.0 |
+
+| 版本 | 18.0 |
 | --- | --- |
 
 `int  usd_haspayload(<stage>stage, string primpath)`
 
-Returns true if the primitive has payload.
+判断图元是否包含有效载荷。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，该参数可以是表示输入编号的整数（从0开始），用于读取对应输入的USD场景。该整数等效于使用字符串形式引用特定输入，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+此参数也可用于引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已处理场景（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
-Returns
+返回值
 
-1 if the primitive has payload, or 0 otherwise.
+若图元包含有效载荷则返回1，否则返回0。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 int has_payload  = usd_haspayload(0, "/geo/sphere" );

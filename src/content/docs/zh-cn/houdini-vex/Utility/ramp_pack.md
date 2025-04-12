@@ -2,7 +2,7 @@
 title: ramp_pack
 order: 14
 ---
-| Since | 19.0 |
+| 版本 | 19.0 |
 | --- | --- |
 
 `string  ramp_pack(string basis[], float pos[], float value[])`
@@ -11,6 +11,5 @@ order: 14
 
 `string  ramp_pack(string basis[], float pos[], vector4 value[])`
 
-Ramps are commonly packed as JSON formatted strings by Houdini operations.
-This will pack them three arrays of basis, position, and value into the
-corresponding string.
+Houdini操作通常将渐变(ramp)打包为JSON格式的字符串。
+该函数将三个数组（基础类型、位置和值）打包成对应的字符串。

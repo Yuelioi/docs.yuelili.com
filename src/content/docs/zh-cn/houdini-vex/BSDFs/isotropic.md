@@ -1,7 +1,7 @@
 ---
-title: isotropic
+title: 各向同性
 order: 14
 ---
 `bsdf  isotropic(...)`
 
-The isotropic function scatters light equally in all directions and is suitable for use in rendering dense volumetric materials such as smoke. Note that no normal vector is required to construct an isotropic bsdf since it has no directionality. The default albedo for an isotropic `bsdf` is 1, which means the isotropic() function scatters 100% of the incoming light.
+isotropic函数会将光线均匀地向所有方向散射，适用于渲染烟雾等致密体积材质。请注意，构造各向同性bsdf时不需要法线向量，因为它不具有方向性。isotropic `bsdf`的默认反照率为1，这意味着isotropic()函数会散射100%的入射光。

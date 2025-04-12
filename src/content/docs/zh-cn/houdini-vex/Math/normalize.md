@@ -1,7 +1,7 @@
 ---
-title: normalize
+title: 归一化
 order: 49
 ---
 `<vector> normalize(<vector>v)`
 
-Returns the [normalized](http://en.wikipedia.org/wiki/Unit_vector) version of `v`.
+返回向量 `v` 的[归一化](http://en.wikipedia.org/wiki/Unit_vector)版本。

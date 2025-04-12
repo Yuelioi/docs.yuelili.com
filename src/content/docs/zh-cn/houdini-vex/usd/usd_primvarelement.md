@@ -2,47 +2,45 @@
 title: usd_primvarelement
 order: 107
 ---
-| Since | 18.0 |
+| 版本 | 18.0 |
 | --- | --- |
 
 `<type> usd_primvarelement(<stage>stage, string primpath, string name, int index)`
 
 `<type> usd_primvarelement(<stage>stage, string primpath, string name, int index, float timecode)`
 
-This function returns a value of an element in given array primvar on a given primitive.
+此函数返回指定图元上给定数组型primvar中某个元素的值。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号的整数（从0开始），用于读取场景。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+也可用此参数引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已计算场景（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `name`
 
-Primvar name (without namespace).
+primvar名称（不含命名空间）。
 
 `index`
 
-The index into the array.
+数组索引值。
 
 `timecode`
 
-The USD time code at which to evaluate the attribute. A USD time code roughly corresponds to a frame in Houdini. If not given, the time code corresponding to the current frame is used.
+评估属性时使用的USD时间码。USD时间码大致对应Houdini中的帧数。若未指定，则使用当前帧对应的时间码。
 
-Returns
+返回值
 
-The value of an element in an existing array primvar, or zero/empty value if the primvar does not exist. Use [usd_isprimvar](usd_isprimvar.html "Checks if the primitive has a primvar of the given name.") if you want to check whether the primvar exists.
+返回现有数组型primvar中某个元素的值，若primvar不存在则返回零/空值。如需检查primvar是否存在，请使用[usd_isprimvar](usd_isprimvar.html "检查图元是否具有指定名称的primvar")。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the value of some primvars on the cube primitive.
+// 获取立方体图元上某些primvar的值
 float value    = usd_primvarelement(0, "/geo/cube", "primvar_name", 3);
 
 v@element_2_at_current_frame  = usd_primvarelement(0, "/geo/sphere", "foo", 2);

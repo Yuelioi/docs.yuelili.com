@@ -4,42 +4,40 @@ order: 74
 ---
 `int|string uniqueval(<geometry>geometry, string attribclass, string attribute_name, int which)`
 
-If any points/primitives/vertices in the geometry have the same value for the given attribute, the set of *unique* values will be smaller than the total number of points/primitives/vertices. This function lets you iterate through the set of unique values.
+如果几何体中任意点/图元/顶点在给定属性上具有相同的值，那么*唯一*值的集合将小于点/图元/顶点的总数。此函数允许您遍历唯一值集合。
 
-This function only works with string and integer attributes.
+此函数仅适用于字符串和整数属性。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `attribclass`
 
-One of `"detail"` (or `"global"`), `"point"`, `"prim"`, or `"vertex"`.
+可以是`"detail"`（或`"global"`）、`"point"`、`"prim"`或`"vertex"`之一。
 
-You can also use `"primgroup"`, `"pointgroup"` or `"vertexgroup"` to [read from groups](../groups.html "You can read the contents of primitive/point/vertex groups in VEX as if they were attributes.").
+您还可以使用`"primgroup"`、`"pointgroup"`或`"vertexgroup"`来[从组中读取](../groups.html "您可以在VEX中将图元/点/顶点组的内容当作属性来读取")。
 
 `attribute_name`
 
-The name of the attribute (or intrinsic) to read.
+要读取的属性（或固有属性）的名称。
 
 `which`
 
-Which one of the unique values to return.
-Use [nuniqueval](nuniqueval.html "Returns the number of unique values from an integer or string attribute.") to get how many unique values the attribute has.
+要返回的唯一值中的哪一个。
+使用[nuniqueval](nuniqueval.html "返回整数或字符串属性的唯一值数量。")获取该属性有多少个唯一值。
 
-Examples
+## 示例
 
-## examples
-
-Iterate through the unique values of the `@foo` point string attribute
+遍历点字符串属性`@foo`的唯一值
 
 ```vex
 int count = nuniqueval(0, "point", "foo");
 for (int i = 0; i < count; i++) {
     string val = uniqueval(0, "point", "foo", i);
-    // ...do something with the value...
+    // ...用该值做一些操作...
 }
 
 ```

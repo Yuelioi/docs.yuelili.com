@@ -2,7 +2,7 @@
 title: chop
 order: 12
 ---
-| Since | 17.0 |
+| 始于版本 | 17.0 |
 | --- | --- |
 
 `float  chop(string filename, int|stringchannel, float|intsample)`
@@ -15,22 +15,21 @@ order: 12
 
 `matrix  chop(string filename, int|stringchannel, float|intsample)`
 
-Read a sample from the channel at the given index.
+从指定索引的通道中读取一个采样值。
 
 `filename`
 
-The CHOP node path to query using the op: syntax.
-Doesn’t support reading directly from CHOP files yet.
+要查询的CHOP节点路径，使用op:语法。
+目前不支持直接从CHOP文件中读取。
 
 `channel`
 
-The channel index or channel name to query.
+要查询的通道索引或通道名称。
 
 `sample`
 
-If this is fractional, the value is linearly interpolated from the
-two nearest points.
+如果该值为小数，则会从最近的两个点进行线性插值计算。
 
-Returns
+返回值
 
-The value of a channel at the specified sample in a CHOP node.
+CHOP节点中指定采样点的通道值。

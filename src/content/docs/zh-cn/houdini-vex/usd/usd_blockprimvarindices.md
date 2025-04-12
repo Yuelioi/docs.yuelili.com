@@ -2,37 +2,36 @@
 title: usd_blockprimvarindices
 order: 25
 ---
-| Since | 18.0 |
+
+| 版本 | 18.0 |
 | --- | --- |
 
 `int  usd_blockprimvarindices(int stagehandle, string primpath, string name)`
 
-This function blocks the primvar indices. I.e., removes all time samples and sets the *block* as default value. It changes the indexed primvar into a non-indexed primvar.
+此函数用于阻塞primvar索引。即移除所有时间样本，并将*block*设为默认值。该操作会将索引型primvar转换为非索引型primvar。
 
-Note, you may also want to block the primvar itself with [usd_blockprimvar](usd_blockprimvar.html "Blocks the primvar.").
+注意：你可能还需要使用[usd_blockprimvar](usd_blockprimvar.html "阻塞primvar。")来阻塞primvar本身。
 
 `stagehandle`
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+要写入的stage句柄。当前唯一有效值是`0`，表示节点中的当前stage。（此参数未来可能用于支持写入其他stage）
 
 `primpath`
 
-The path to the primitive.
+图元路径。
 
 `name`
 
-Primvar name (without namespace).
+Primvar名称（不带命名空间）。
 
-Returns
+返回值
 
-The value of `stagehandle` on success, or `-1` on failure.
+成功时返回`stagehandle`的值，失败时返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Block the primvar indices.
+// 阻塞primvar索引
 usd_blockprimvarindices(0, "/geo/sphere", "primvar_name");
 
 ```

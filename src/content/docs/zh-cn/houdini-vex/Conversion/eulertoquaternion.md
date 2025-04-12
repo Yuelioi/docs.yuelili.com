@@ -1,24 +1,24 @@
 ---
-title: eulertoquaternion
+title: 欧拉角转四元数
 order: 5
 ---
-[Unit quaternions are used to represent rotations](http://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation). This VEX function creates a unit quaternion that represents a rotation.
+[单位四元数用于表示旋转](http://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation)。这个VEX函数会创建一个表示旋转的单位四元数。
 
 `vector4  eulertoquaternion(vector rotations, int order)`
 
-Creates a vector4 representing a unit quaternion from a vector representing Euler rotations in X, Y, and Z.
+从一个表示X、Y、Z欧拉旋转的向量创建一个表示单位四元数的vector4。
 
-The angles are in radians. Use the `radians()` function to convert degrees into radians.
+角度单位为弧度。使用`radians()`函数可将度数转换为弧度。
 
 `order`
 
-One of the rotation order constants listed below, which can be imported from `$HFS/houdini/vex/include/math.h`.
+以下旋转顺序常量之一，可从`$HFS/houdini/vex/include/math.h`导入。
 
-| Constant name | Rotation Order |
+| 常量名称 | 旋转顺序 |
 | --- | --- |
-| XFORM_XYZ | Rotate order X, Y, Z |
-| XFORM_XZY | Rotate order X, Z, Y |
-| XFORM_YXZ | Rotate order Y, X, Z |
-| XFORM_YZX | Rotate order Y, Z, X |
-| XFORM_ZXY | Rotate order Z, X, Y |
-| XFORM_ZYX | Rotate order Z, Y, X |
+| XFORM_XYZ | 旋转顺序 X, Y, Z |
+| XFORM_XZY | 旋转顺序 X, Z, Y |
+| XFORM_YXZ | 旋转顺序 Y, X, Z |
+| XFORM_YZX | 旋转顺序 Y, Z, X |
+| XFORM_ZXY | 旋转顺序 Z, X, Y |
+| XFORM_ZYX | 旋转顺序 Z, Y, X |

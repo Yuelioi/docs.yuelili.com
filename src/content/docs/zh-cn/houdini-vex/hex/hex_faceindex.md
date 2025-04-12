@@ -1,18 +1,17 @@
 ---
-title: hex_faceindex
+title: 六面体顶点索引
 order: 2
 ---
 `int  hex_faceindex(int faceno, int vtxno)`
 
-Returns `-1` if an invalid number is specified.
+如果指定了无效数字则返回 `-1`。
 
-Returns `0` to `7` to refer to the eight vertices of a generic hexahedron.
+返回 `0` 到 `7` 来表示通用六面体的八个顶点。
 
 `faceno`
 
-The face on the hexahedron. Ranges from `0` to `5`.
+六面体上的面。取值范围为 `0` 到 `5`。
 
 `vtxno`
 
-Which vertex on the quadrilateral to return, `0` to `3`. Starts with
-the lowest number and follows Houdini’s winding convention.
+要返回的四边形上的顶点编号，`0` 到 `3`。从最小编号开始，遵循Houdini的缠绕规则。

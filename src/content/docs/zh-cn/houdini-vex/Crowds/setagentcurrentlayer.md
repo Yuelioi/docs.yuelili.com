@@ -2,17 +2,18 @@
 title: setagentcurrentlayer
 order: 58
 ---
-Warning
-This function has been deprecated. Use [setagentcurrentlayers](setagentcurrentlayers.html "Sets the current display layers of an agent primitive.") instead.
+
+警告
+此函数已被弃用。请改用 [setagentcurrentlayers](setagentcurrentlayers.html "设置代理图元的当前显示层")。
 
 `geohandle`
 
-Handle to the geometry to write to. `geoself()` can be used to get a handle to the current geometry.
+要写入的几何体句柄。可使用 `geoself()` 获取当前几何体的句柄。
 
 `prim`
 
-The primitive number.
+图元编号。
 
 `layername`
 
-The name of one of the agent’s layers.
+代理层的名称之一。

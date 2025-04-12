@@ -1,156 +1,126 @@
----
-title: renderstate
-order: 65
----
-| On this page | * [Useful properties](#useful-properties) * [Packed Primitives](#packed-primitives) * [Examples](#examples) |
-| --- | --- |
-| Context(s) | [shading](../contexts/shading.html) |
+---  
+title: 渲染状态  
+order: 65  
+---  
 
-`int  renderstate(string query, <type>&value)`
+| 本页内容 | * [实用属性](#useful-properties) * [打包图元](#packed-primitives) * [示例](#examples) |  
+| --- | --- |  
+| 上下文 | [着色](../contexts/shading.html) |  
 
-`int  renderstate(string query, <type>&value[])`
+`int  renderstate(string query, <type>&value)`  
 
-`int  renderstate(material mat, string query, <type>&value)`
+`int  renderstate(string query, <type>&value[])`  
 
-Returns a non-zero value and sets value on success, or returns `0`
-if the renderer cannot evaluate the query.
+`int  renderstate(material mat, string query, <type>&value)`  
 
-The two-argument variations look up the property on the current object.
-If you pass a `material` as the first argument,
-the function looks up the property on the material instead of the current object.
+成功时返回非零值并设置value，若渲染器无法评估查询则返回`0`。  
 
-See the [list of IFD properties](../../props/mantra.html) you can query. Use
-the **IFD** name (e.g. `image:samples`),
-not the Houdini name (e.g. `vm_samples`).
-Useful properties
+双参数版本在当前对象上查找属性。  
+若第一个参数传入`material`，则函数将在材质而非当前对象上查找属性。  
 
-## useful-properties
+可查询的[IFD属性列表](../../props/mantra.html)请使用**IFD**名称（如`image:samples`），而非Houdini名称（如`vm_samples`）。  
 
-The following properties are commonly useful and are reproduced here
-for convenience, but you can query any property from the
-[the full list of IFD properties](../../props/mantra.html).
+实用属性  
 
-`image:name`
+## useful-properties  
 
-(string) The name of the image being rendered.
+以下为常用属性（完整列表参见[IFD属性列表](../../props/mantra.html)）：  
 
-`image:pixelaspect`
+`image:name`  
+(字符串) 正在渲染的图像名称。  
 
-(float) The pixel aspect ratio (X/Y) of the image.
+`image:pixelaspect`  
+(浮点) 图像的像素宽高比(X/Y)。  
 
-`image:resolution`
+`image:resolution`  
+(向量) 分辨率格式为{x_res, y_res, samples_per_pixel}。  
 
-(vector) Gives the resolution as {x_res, y_res, samples_per_pixel}.
+`image:samples`  
+(向量) 采样数格式为{x_samples, y_samples, 0}。  
 
-`image:samples`
+`image:raysamples`  
+(向量) 光线追踪采样数格式为{x_samples, y_samples, 0}。  
 
-(vector) Gives samples as {x_samples, y_samples, 0}.
+`light:name`  
+(字符串) [illuminance](illuminance.html "遍历场景中所有光源，为每个光源调用光照着色器以设置Cl和L全局变量。")循环中当前激活的光源对象名称。  
 
-`image:raysamples`
+`light:shadowscope`  
+(字符串) 光源投射阴影的对象列表。  
 
-(vector) Gives the raytracing samples as {x_samples, y_samples, 0}.
+`object:name`  
+(字符串) 当前着色对象的名称（在光照/阴影着色器中有效，可查询被光源照射/投影的对象）。  
 
-`light:name`
+`object:reflectscope`  
+(字符串) 当前着色对象的默认反射范围模式。  
 
-(string) The name of the light object which is currently active in the [illuminance](illuminance.html "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables.") loop.
+`object:refractscope`  
+(字符串) 当前着色对象的默认折射范围模式。  
 
-`light:shadowscope`
+`object:reflectlimit`  
+(浮点/整型) 当前着色对象的折射反弹次数硬限制。  
 
-(string) The list of objects casting shadows from a light.
+`object:shadingquality`  
+(浮点) 当前着色对象的着色质量。  
 
-`object:name`
+`object:lightmask`  
+(字符串) 对象的光照遮罩字符串。  
 
-(string) The name of the object being shaded. This is valid within light and shadow shaders and can be used to query which object is being lit (or shadowed) by the light source.
+`object:area`  
+(浮点) 对象的表面积。  
 
-`object:reflectscope`
+`object:materialname`  
+(字符串) 当前着色对象所赋材质的路径。  
+注意：仅用于信息展示，不影响材质分配或外观。  
 
-(string) The default reflection scope pattern for the object being shaded.
+`renderer:name`  
+(字符串) 渲染器名称。  
 
-`object:refractscope`
+`renderer:version`  
+字符串格式："主版本.次版本.构建号"  
+向量格式：{主版本, 次版本, 构建号}  
 
-(string) The default refraction scope pattern for the object being shaded.
+`renderer:renderengine`  
+(字符串) 使用的渲染方法（如`micropoly`或`raytrace`），完整值列表参见[属性列表](../../props/mantra.html)。  
 
-`object:reflectlimit`
+`shader:name`  
+(字符串) 当前运行着色器的名称。  
 
-(float or int) The hard limit for maximum refraction bounces for the object being shaded.
+打包图元  
 
-`object:shadingquality`
+## packed-primitives  
 
-(float) The shading quality for the object being shaded.
+当Mantra渲染打包图元时，几何体会在渲染前解包。这意味着打包图元上的图元属性对着色器不可用（因为这些属性不会传递到解包后的几何体）。  
 
-`object:lightmask`
+解包前，Mantra会自动将图元属性转换为自定义对象属性（参见[IFD文件格式](../../render/ifd.html)中的`ray_declare`）。属性命名格式为`packed:属性名`，可通过`renderstate()`函数访问这些属性。  
 
-(string) The object’s light mask string.
+示例：  
+```vex  
+vector Cd;  
+if (!renderstate("packed:Cd", Cd))  
+    Cd = 1;   // 打包几何体上没有Cd属性  
+```  
 
-`object:area`
+示例  
 
-(float) The object’s surface area.
+## examples  
 
-`object:materialname`
+```vex  
+surface showversion()   
+{  
+    string    rname, rversion;  
+    if (!renderstate("renderer:name", rname))  
+        rname = "未知渲染器";  
+    if (!renderstate("renderer:version", rversion))  
+        rversion = "未知版本";  
+    printf("图像由 %s (%s) 渲染\n", rname, rversion);  
+}  
 
-(string) Path to the material that’s assigned to the object being shaded.
-NOTE
-
-This is for informational purpose only and has no effect on material assignment or appearance.
-
-`renderer:name`
-
-(string) The name of the renderer.
-
-`renderer:version`
-
-As a string, gives the renderer version as “major.minor.build”
-As a vector, gives the renderer version as {major, minor, build}.
-
-`renderer:renderengine`
-
-(string) The render method in use, such as `micropoly` or `raytrace`.
-See the [properties list](../../props/mantra.html) for the full list of possible values.
-
-`shader:name`
-
-(string) The name of the current shader being run.
-
-Packed Primitives
-
-## packed-primitives
-
-When mantra renders packed primitives, the geometry gets unpacked before rendering. This means primitive attributes on the packed primitive aren’t available to shaders (since they aren’t passed down to the unpacked geometry).
-
-Before unpacking, mantra will automatically convert the primitive attributes to custom object properties (see `ray_declare` on the [IFD file format](../../render/ifd.html) page). The property will be named `packed:ATTRIBNAME` (where `ATTRIBNAME` is the name of the attribute). The `renderstate()` function can be used to access these properties, just like any other object property.
-
-For example:
-
-```vex
-vector Cd;
-if (!renderstate("packed:Cd", Cd))
-    Cd = 1;   // There was no Cd attribute on packed geometry
-
-```
-
-Examples
-
-## examples
-
-```vex
-surface showversion() 
-{
-    string    rname, rversion;
-    if (!renderstate("renderer:name", rname))
-        rname = "Unknown renderer";
-    if (!renderstate("renderer:version", rversion))
-        rversion = "Unknown version";
-    printf("Image rendered by %s (%s)\n", rname, rversion);
-}
-
-vector mapToScreen(vector NDC_P)
-{
-    // Given a point in NDC space, find out which pixel it
-    // maps to.
-    vector    result;
-    if (!renderstate("image:resolution", result))
-        result = {640, 486, 0};
-    return result * NDC_P;
-}
-
+vector mapToScreen(vector NDC_P)  
+{  
+    // 将NDC空间中的点映射到像素坐标  
+    vector    result;  
+    if (!renderstate("image:resolution", result))  
+        result = {640, 486, 0};  
+    return result * NDC_P;  
+}  
 ```

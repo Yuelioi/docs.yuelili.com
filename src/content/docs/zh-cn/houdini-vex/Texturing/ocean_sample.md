@@ -1,48 +1,46 @@
 ---
-title: ocean_sample
+title: 海洋采样
 order: 7
 ---
 `vector  ocean_sample(string geometry, int phase, int frequency, int amplitude, float hscale, float time, int mode, int downsample, vector pos)`
 
-Evaluates the input ocean spectrum at the given time and position and returns the value specified by `mode`. The input is typically the output of the [Ocean Spectrum](../../nodes/sop/oceanspectrum.html "Generates volumes containing information for simulating ocean waves.") SOP.
+在给定时间和位置评估输入的海洋频谱，并返回由`mode`指定的值。输入通常是[海洋频谱](../../nodes/sop/oceanspectrum.html "生成包含海浪模拟信息的体积。") SOP的输出。
 
 `geometry`
 
-The name of the geometry file to reference. Inside Houdini, this may be `op:full_path_to_sop` to reference a SOP.
+要引用的几何体文件名。在Houdini内部，可以是`op:full_path_to_sop`来引用一个SOP。
 
 `phase`
 
-The primitive number of the volume representing wave phase.
+表示波相位的体积的基元编号。
 
 `frequency`
 
-The primitive number of the volume representing wave frequency.
+表示波频率的体积的基元编号。
 
 `amplitude`
 
-The primitive number of the volume representing wave amplitude.
+表示波幅度的体积的基元编号。
 
 `hscale`
 
-The amount to scale any horizontal motion in the ocean waves.
+海浪中任何水平运动的缩放量。
 
 `mode`
 
-The type of value to sample from the ocean spectrum, where 0 means displacement, 1 means velocity, and 2 means horizontal spatial derivatives.
+从海洋频谱中采样的值类型，其中0表示位移，1表示速度，2表示水平空间导数。
 
 `downsample`
 
-The number of times to downsample the input spectrum before evaluation. Each downsample level halves the resolution of the input.
+在评估前对输入频谱进行下采样的次数。每个下采样级别会使输入的分辨率减半。
 
 `pos`
 
-The position in object space at which to sample the evaluated ocean.
+在对象空间中采样评估海洋的位置。
 
-Examples
+## 示例
 
-## examples
-
-Displace the point position by an ocean spectrum stored in a file.
+通过存储在文件中的海洋频谱来偏移点的位置。
 
 ```vex
 @P += ocean_sample("spectrum.bgeo", 0, 1, 2, 0.7, @Time, 0, 0, @P);

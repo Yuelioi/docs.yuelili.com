@@ -2,7 +2,8 @@
 title: ckspline
 order: 1
 ---
-To specify the curve using uniformly spaced value keys, use [cspline](cspline.html "Samples a Catmull-Rom (Cardinal) spline defined by uniformly spaced keys.").
+
+要使用均匀间隔的值键指定曲线，请使用[cspline](cspline.html "采样由均匀间隔键定义的Catmull-Rom（Cardinal）样条")。
 
 `float  ckspline(float t, float value, float pos, ...)`
 
@@ -12,44 +13,33 @@ To specify the curve using uniformly spaced value keys, use [cspline](cspline.ht
 
 `t`
 
-The position along the spline to sample.
+沿样条采样的位置。
 
 `value`, `pos`, `...`
 
-A series of pairs of key values and positions that defines the curve to sample.
+一系列键值和位置对，用于定义要采样的曲线。
 
-Returns
+返回值
 
-The interpolated value at position `t` along the curve.
+曲线在位置`t`处的插值。
 
-Computes a Catmull-Rom (Cardinal) spline between the key points
-specified. The values are spaced according to the keys given. The domain
-of the interpolant (t) should be between the second and second last key
-value specified. The keys should be specified in ascending order or
-results will be unpredictable.
+计算指定关键点之间的Catmull-Rom（Cardinal）样条。值根据给定的键进行间隔排列。插值器(t)的定义域应在第二个和倒数第二个指定键值之间。键应按升序指定，否则结果将不可预测。
 
-Because of the nature of the Cardinal spline, the value associated with
-the first and last keys will never be returned. However, these keys are
-used to determine the shape of the curve on entry and exit. For
-example:
-Examples
+由于Cardinal样条的特性，与第一个和最后一个键关联的值永远不会被返回。然而，这些键用于确定曲线入口和出口的形状。例如：
 
-## examples
+## 示例
 
-Find the value at position `t` along a curve
+在位置`t`处沿曲线查找值
 
 ```vex
 Cf = ckspline(t,
-    {1,1,1},    -0.25,    // First key
-    {.5,.5,.5},  0.0,    // Second key
-    {.5, 0,.5},  0.25,    // Third key
-    {0,0,.8},    1.0,    // Fourth key
-    {0,0,0},     1.25    // Fifth key
+    {1,1,1},    -0.25,    // 第一个键
+    {.5,.5,.5},  0.0,    // 第二个键
+    {.5, 0,.5},  0.25,    // 第三个键
+    {0,0,.8},    1.0,    // 第四个键
+    {0,0,0},     1.25    // 第五个键
 );
 
 ```
 
-The Catmull-Rom spline defined by the above keys would be valid for
-interpolants in the range 0 to 1. The first and last keys are used
-solely to determine the slope of the curve at the second and second last
-keys.
+由上述键定义的Catmull-Rom样条的有效插值范围是0到1。第一个和最后一个键仅用于确定曲线在第二个和倒数第二个键处的斜率。

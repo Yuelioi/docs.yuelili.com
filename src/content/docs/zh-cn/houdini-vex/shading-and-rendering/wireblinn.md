@@ -5,7 +5,7 @@ order: 80
 `bsdf  wireblinn(vector tangent, float exponent, ...)`
 
 ![](../_static/rendering/wireblinn.png)
-Blinn function defined around a tangent vector. You can use this to produce the average specular illumination for thin wire-like primitives such as hair.
+围绕切线向量定义的Blinn函数。您可以使用此函数为类似细线的基本元素（如头发）生成平均镜面反射光照。
 
-- `tangent` – tangent vector along the hair.
-- `exponent` – blinn exponent.
+- `tangent` – 沿头发的切线向量。
+- `exponent` – Blinn指数。

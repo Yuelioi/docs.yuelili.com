@@ -6,5 +6,4 @@ order: 10
 
 `vector  rgbtohsv(float r, float g, float b)`
 
-Convert RGB color space to HSV color space. A vector representing the
-HSV color is returned. The hue will be in the range 0 to 1.
+将RGB色彩空间转换为HSV色彩空间。返回一个表示HSV色彩的向量。色相(Hue)的取值范围为0到1。

@@ -2,30 +2,26 @@
 title: haslight
 order: 36
 ---
-| Context(s) | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
+| 适用上下文 | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
 | --- | --- |
 
 `int  haslight(material mat, vector P, int light, ...)`
 
-Returns 1 if the given light is used to illuminate the material at the point
-specified.
+如果指定光源被用于照亮给定材质在指定点的位置，则返回1。
 
-This function accepts PBR keyword arguments to specify sampling types. These
-options may exclude lights which don’t match the desired sampling paths.
+此函数接受PBR关键字参数来指定采样类型。这些选项可能会排除不符合所需采样路径的光源。
 
-The PBR sampling keywords include:
+PBR采样关键字包括：
 
 `label`
 
-A string specifying a specific label. This keyword argument may be specified multiple times.
+指定特定标签的字符串。此关键字参数可以多次指定。
 
 `direct`
 
-Expects an 0 or 1 integer value which will limit lights based on indirect or direct contribution categories.
+接受0或1整数值，将根据间接或直接贡献类别限制光源。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 haslight(material(), P, light_num, "direct", 0);

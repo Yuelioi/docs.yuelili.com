@@ -10,18 +10,8 @@ order: 11
 
 `float|vector|vector2 gxnoise(vector4 xyzt)`
 
-Simplex noise is similar to Perlin noise, except with samples on a simplex mesh
-rather than a grid. This family of simplex noise functions uses a different
-lattice structure and a cheaper accumulation method compared to
-[xnoise](xnoise.html "Simplex noise is very close to Perlin noise, except with the samples on a simplex mesh rather than a grid.  This results in less grid artifacts.  It also uses a higher order bspline to provide better derivatives.").
+单纯形噪声(Simplex noise)与柏林噪声(Perlin noise)类似，不同之处在于采样点位于单纯形网格而非规则网格上。这一系列单纯形噪声函数相比[xnoise](xnoise.html "单纯形噪声非常接近柏林噪声，不同之处在于采样点位于单纯形网格而非规则网格上。这可以减少网格伪影。同时它使用更高阶的B样条来提供更好的导数。")采用了不同的晶格结构和更高效的计算方法。
 
-The various functions return noise value at a 4D (`vector4` argument), 3D
-(`vector` argument), or 2D (a single `vector2` argument or two `float` inputs)
-position. You can also get a random floating point value or a vector of two or
-three entries.
+这些函数可以返回4D（`vector4`参数）、3D（`vector`参数）或2D（单个`vector2`参数或两个`float`输入）位置处的噪声值。您也可以获取随机浮点值或包含2-3个分量的向量。
 
-Noise values will be in the 0-1 range. Nature of the noise field depends on the
-number of input dimensions. Higher-dimensional noise uses tighter noise
-elements, and the resultant noise field appears more structured and less smooth.
-Consider using the slower [xnoise](xnoise.html "Simplex noise is very close to Perlin noise, except with the samples on a simplex mesh rather than a grid.  This results in less grid artifacts.  It also uses a higher order bspline to provide better derivatives.") function in higher dimensions if
-this function gives you undesirable results.
+噪声值范围在0-1之间。噪声场的特性取决于输入维度数量。更高维度的噪声会使用更密集的噪声元素，产生的噪声场会显得更有结构性但平滑度较低。如果在高维度下该函数效果不理想，可以考虑使用速度较慢的[xnoise](xnoise.html "单纯形噪声非常接近柏林噪声，不同之处在于采样点位于单纯形网格而非规则网格上。这可以减少网格伪影。同时它使用更高阶的B样条来提供更好的导数。")函数。

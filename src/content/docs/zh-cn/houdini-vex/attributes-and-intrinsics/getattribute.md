@@ -6,58 +6,54 @@ order: 23
 
 `int  getattribute(string geometry, <type>&value[], string attribclass, string attribute_name, int element_number, int vertex_number)`
 
-Warning
+警告
 
-This function does not allow reading from inputs in a node context, and is harder to use than the other attribute functions. You probably want to use one of the other attribute functions instead, such as [getattrib](getattrib.html "Reads an attribute value from geometry, with validity check.").
+此函数不允许在节点上下文中从输入读取数据，且比其他属性函数更难使用。您可能希望改用其他属性函数，例如[getattrib](getattrib.html "从几何体中读取属性值，并进行有效性检查")。
 
-Returns `0` if the attribute does not exist or cannot be read, `1` on success. If the function returns `0` (failed), the given variable may remain uninitialized.
+如果属性不存在或无法读取则返回`0`，成功时返回`1`。如果函数返回`0`（失败），给定的变量可能保持未初始化状态。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `value`
 
-The variable to overwrite with the attribute value.
+用于存储属性值的变量。
 
 `attribclass`
 
-One of `"detail"` (or `"global"`), `"point"`, `"prim"`, or `"vertex"`.
+可以是`"detail"`（或`"global"`）、`"point"`、`"prim"`或`"vertex"`之一。
 
-You can also use `"primgroup"`, `"pointgroup"` or `"vertexgroup"` to [read from groups](../groups.html "You can read the contents of primitive/point/vertex groups in VEX as if they were attributes.").
+您也可以使用`"primgroup"`、`"pointgroup"`或`"vertexgroup"`来[从组中读取数据](../groups.html "您可以在VEX中将图元/点/顶点组的内容当作属性来读取")。
 
 `attribute_name`
 
-The name of the attribute (or intrinsic) to read.
+要读取的属性（或固有属性）名称。
 
 `element_number`
 
-The point or primitive number. If you are reading a detail attribute, use `0` here.
+点或图元编号。如果读取的是detail属性，此处使用`0`。
 
 `vertex_number`
 
-- When reading a vertex attribute, you can specify the primitive number in the `element_number` argument and the primitive’s vertex number here.
-- To use a linear vertex index, use `-1` as the `element_number` and the vertex index here.
-- If you are not reading a vertex attribute, this argument is ignored.
+- 读取顶点属性时，可以在`element_number`参数中指定图元编号，在此处指定图元的顶点编号。
+- 要使用线性顶点索引，请在`element_number`中使用`-1`，并在此处指定顶点索引。
+- 如果不读取顶点属性，则忽略此参数。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 vector pos, uv, clr;
-// Get the position of point 3 in "defgeo.bgeo"
+// 从"defgeo.bgeo"中获取点3的位置
 getattribute("defgeo.bgeo", pos, "point", "P", 3, 0);
 
-// Get the value of the "uv" attribute for vertex 2 of primitive
-// number 3 in the file defgeo.bgeo
+// 从文件defgeo.bgeo中获取图元3的顶点2的"uv"属性值
 getattribute("defgeo.bgeo", uv, "vertex", "uv", 3, 2);
 
-// Get the value of the "Cd" attribute for primitive 7
-// in the SOP specified by the path "/obj/geo1/color1" (Houdini
-// only)
+// 获取路径"/obj/geo1/color1"指定的SOP中图元7的"Cd"属性值
+// （仅限Houdini）
 getattribute("op:/obj/geo1/color1", clr, "primitive", "Cd", 7);
 
 ```

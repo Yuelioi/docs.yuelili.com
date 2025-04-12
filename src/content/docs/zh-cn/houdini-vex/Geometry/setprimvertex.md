@@ -4,10 +4,10 @@ order: 36
 ---
 `int  setprimvertex(int geohandle, int prim, int vtxofprim, int pt)`
 
-Rewires a specified vertex to a point number.
+将指定顶点重新连接到点编号。
 
-If the point number is -1, no rewiring is done.
+如果点编号为-1，则不进行重新连接。
 
-If prim is -1, `vtxofprim` is treated as a linear index, and vice versa. Otherwise, the pair (`prim`, `vtxofprim`) is used to identify a vertex in a primitive’s vertex list.
+如果prim为-1，则`vtxofprim`被视为线性索引，反之亦然。否则，使用(`prim`, `vtxofprim`)这对参数来标识基元顶点列表中的某个顶点。
 
-Since this sets a vertex’s point, not a primitive’s vertex, it’s recommended to use the equivalent function [setvertexpoint](setvertexpoint.html "Rewires a vertex in the geometry to a different point.") for clarity, instead.
+由于此函数设置的是顶点的点连接关系，而非基元的顶点，因此建议改用功能相同的[setvertexpoint](setvertexpoint.html "将几何体中的顶点重新连接到不同的点。")函数以获得更清晰的表达。

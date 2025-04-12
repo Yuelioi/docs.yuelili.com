@@ -10,9 +10,8 @@ order: 14
 
 `vector  chramp(string channel, float ramppos, float time)`
 
-Evaluates a ramp parameter and return its value.
+评估一个渐变参数并返回其值。
 
-The ramppos is where on the ramp to evaluate. The ramppos is clamped to the range `[0,1]`.
+ramppos 参数表示在渐变上的评估位置，该值会被限制在 `[0,1]` 范围内。
 
-The time parameter can be used if the ramp is animated to evaluate
-at other than the current time.
+如果渐变是动态变化的，可以使用 time 参数来指定在当前时间之外的其他时间点进行评估。

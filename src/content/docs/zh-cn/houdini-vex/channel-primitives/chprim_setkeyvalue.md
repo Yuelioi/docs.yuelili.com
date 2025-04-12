@@ -6,26 +6,26 @@ order: 12
 
 `int  chprim_setkeyvalue(int geohandle, int prim, float time, float value, int half)`
 
-This function sets the value of an existing channel primitive key.
+此函数用于设置现有通道基元键的值。
 
 `geohandle`
 
-Handle to the geometry to write to. `geoself()` can be used to get a handle to the current geometry.
+要写入的几何体句柄。可使用`geoself()`获取当前几何体的句柄。
 
 `prim`
 
-The primitive number of the channel primitive to be modified.
+待修改通道基元的基元编号。
 
 `time`
 
-The time in seconds of the key to modify.
+要修改的键的时间（以秒为单位）。
 
 `value`
 
-The new value to apply to the key.
+要应用于键的新值。
 
 `half`
 
-Which half of the key to set, one of `CHPRIM_KEY_IN`, `CHPRIM_KEY_OUT`, or `CHPRIM_KEY_INOUT`. Defaults to `CHPRIM_KEY_INOUT`.
-These values are defined in the `chprim_utils.h` header.
-Note that setting this to anything other than `CHPRIM_KEY_INOUT` will create a discontinuity at the key.
+指定要设置的键的半部分，取值为`CHPRIM_KEY_IN`、`CHPRIM_KEY_OUT`或`CHPRIM_KEY_INOUT`之一。默认为`CHPRIM_KEY_INOUT`。
+这些值定义在`chprim_utils.h`头文件中。
+注意：将此参数设置为`CHPRIM_KEY_INOUT`以外的值将在键处创建不连续性。

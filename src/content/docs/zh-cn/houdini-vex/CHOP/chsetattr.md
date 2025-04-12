@@ -2,65 +2,66 @@
 title: chsetattr
 order: 22
 ---
-| Context(s) | [chop](../contexts/chop.html) |
+
+| 上下文 | [chop](../contexts/chop.html) |
 | --- | --- |
 
 `int  chsetattr(string attrclass, string attrname, int channel, int sample, <type>value)`
 
-Sets the attribute to the given value in the current CHOP.
+在当前CHOP中将属性设置为给定值。
 
 `int  chsetattr(string attrname, int channel, int sample, <type>value)`
 
-This version assumes the attribute class argument to be `""` (guess the class from the other arguments).
+此版本假设属性类参数为`""`（根据其他参数推测类别）。
 
-CHOP attributes store metadata on clips, channels, samples, or channel/sample pairs.
+CHOP属性存储有关片段、通道、采样或通道/采样对的元数据。
 
-This function sets the value of a CHOP attribute. Use [chattr](chattr.html "Reads from a CHOP attribute.") to read CHOP attributes.
+此函数用于设置CHOP属性的值。使用[chattr](chattr.html "读取CHOP属性。")来读取CHOP属性。
 
 `attribclass`
 
-The “level” of the attribute:
+属性的"级别"：
 
 `"clip"`
 
-An attribute on a whole clip.
+整个片段上的属性。
 
 `"channel"`
 
-An attribute on a whole channel.
+整个通道上的属性。
 
 `"sample"`
 
-An attribute on a sample (across all channels).
+采样上的属性（跨所有通道）。
 
 `"channelsample"`
 
-An attribute on a specific channel/sample pair.
+特定通道/采样对上的属性。
 
 `""`
 
-Pass an empty string to have the function figure out the class based on the other arguments.
+传递空字符串让函数根据其他参数推断类别。
 
-Signatures that don’t have this parameter act the same as if you passed the empty string.
+没有此参数的签名与传递空字符串的行为相同。
 
 `attrname`
 
-The name of the attribute to write.
+要写入的属性名称。
 
 `channel`
 
-When reading a `channel` or `channelsample` attribute, this is the index of the channel.
-If you are reading a `clip` or `sample` attribute, use `-1` here.
+当读取`channel`或`channelsample`属性时，这是通道的索引。
+如果读取`clip`或`sample`属性，此处使用`-1`。
 
 `sample`
 
-When reading a `sample` or `channelsample` attribute, this is the sample number.
-If you are reading a `clip` or `channel` attribute, use `-1` here.
+当读取`sample`或`channelsample`属性时，这是采样编号。
+如果读取`clip`或`channel`属性，此处使用`-1`。
 
 `value`
 
-The new attribute value. The type of the argment determines the type of the attribute.
+新的属性值。参数类型决定属性类型。
 
-Returns
+返回值
 
-Returns `1` if the write succeeded, or `0` otherwise.
+如果写入成功返回`1`，否则返回`0`。

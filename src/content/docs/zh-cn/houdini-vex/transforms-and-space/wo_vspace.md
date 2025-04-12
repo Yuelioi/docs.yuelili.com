@@ -4,4 +4,4 @@ order: 39
 ---
 `vector  wo_vspace(vector v)`
 
-Transforms a direction vector from *World* to *Object* space.
+将方向向量从*世界*空间转换到*物体*空间。

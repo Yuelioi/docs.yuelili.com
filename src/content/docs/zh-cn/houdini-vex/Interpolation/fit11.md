@@ -6,4 +6,4 @@ order: 8
 
 `<vector> fit11(<vector>value, <vector>nmin, <vector>nmax)`
 
-Takes the value in the range `(-1, 1)` and shifts it to the corresponding value in the new range (nmin, nmax). For vectors it does this per-component.
+将范围在 `(-1, 1)` 内的值转换到新的范围 (nmin, nmax) 中对应的值。对于向量，该操作会逐分量进行。

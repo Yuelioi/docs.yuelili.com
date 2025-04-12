@@ -2,20 +2,21 @@
 title: pointtransformrigid
 order: 41
 ---
-| Since | 18.5 |
+
+| 版本 | 18.5 |
 | --- | --- |
 
 `matrix  pointtransformrigid(<geometry>geometry, int pnt)`
 
-Returns a rigid transform associated with the point index.
-This function uses the [standard instancing point attributes](../../copy/instanceattrs.html) to build the matrix, and [polar decomposition](polardecomp.html "Computes the polar decomposition of a matrix.") is performed to make it rigid.
+返回与点索引关联的刚性变换矩阵。
+该函数使用[标准实例化点属性](../../copy/instanceattrs.html)来构建矩阵，并通过[极分解](polardecomp.html "计算矩阵的极分解")使其成为刚性变换。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号的整数（从0开始）以读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `pnt`
 
-The point index to query.
+要查询的点索引。

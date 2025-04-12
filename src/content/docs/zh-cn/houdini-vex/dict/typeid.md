@@ -2,26 +2,24 @@
 title: typeid
 order: 4
 ---
-| Since | 20.0 |
+| 始于版本 | 20.0 |
 | --- | --- |
 
 `int  typeid(<type>value)`
 
 `int  typeid(<type>value[])`
 
-Returns a numeric code identifying the value’s type.
+返回标识值类型的数字代码。
 
 `int  typeid(dict dictionary, string key)`
 
-Returns a numeric code identifying the type of the key’s value in the dictionary, or -1 if the key does not exist.
-This can be compared against the `typeid()` of a specific VEX data type.
+返回标识字典中键值类型的数字代码，如果键不存在则返回-1。
+可以与特定VEX数据类型的`typeid()`进行比较。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Check if the value for "foo" is a matrix.
+// 检查"foo"的值是否为矩阵类型
 int type = typeid(d, "foo");
 if (type == typeid(matrix())
 {

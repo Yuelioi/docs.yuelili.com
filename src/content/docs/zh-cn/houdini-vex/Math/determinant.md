@@ -1,5 +1,5 @@
 ---
-title: determinant
+title: 行列式
 order: 16
 ---
 `float  determinant(matrix2 m)`
@@ -8,4 +8,4 @@ order: 16
 
 `float  determinant(matrix m)`
 
-See [matrix determinant](http://en.wikipedia.org/wiki/Determinant).
+参见[矩阵行列式](http://en.wikipedia.org/wiki/Determinant)。

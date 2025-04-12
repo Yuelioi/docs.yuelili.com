@@ -8,4 +8,4 @@ order: 36
 
 `vector  vtransform(string fromspace, string tospace, vector v)`
 
-Transforms a vector representing a direction. See [ptransform](ptransform.html "Transforms a vector from one space to another.") for more information.
+变换一个表示方向的向量。更多信息请参见[ptransform](ptransform.html "将向量从一个空间变换到另一个空间。")。

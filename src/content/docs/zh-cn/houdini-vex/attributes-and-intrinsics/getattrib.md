@@ -6,35 +6,35 @@ order: 22
 
 `<type>[] getattrib(<geometry>geometry, string attribclass, string attribute_name, int elemnum, int &success)`
 
-This general form lets you specify the attribute “class” at run-time. This can be useful for writing general code that can work on different classes.
-If you know the class of attribute you want to read ahead of time, using [detailattrib](detailattrib.html "Reads a detail attribute value from a geometry."), [primattrib](primattrib.html "Reads a primitive attribute value from a geometry, outputting a success flag."), [pointattrib](pointattrib.html "Reads a point attribute value from a geometry and outputs a success/fail flag."), or [vertexattrib](vertexattrib.html "Reads a vertex attribute value from a geometry.") may be faster.
+这个通用形式允许您在运行时指定属性"类"。这对于编写可以处理不同类的通用代码非常有用。
+如果您提前知道要读取的属性类，使用[detailattrib](detailattrib.html "从几何体中读取细节属性值")、[primattrib](primattrib.html "从几何体中读取图元属性值，并输出成功标志")、[pointattrib](pointattrib.html "从几何体中读取点属性值并输出成功/失败标志")或[vertexattrib](vertexattrib.html "从几何体中读取顶点属性值")可能会更快。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文(如wrangle SOP)中运行时，此参数可以是一个表示输入编号(从0开始)的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件(例如`.bgeo`)的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `attribclass`
 
-One of `"detail"` (or `"global"`), `"point"`, `"prim"`, or `"vertex"`.
+可以是`"detail"`(或`"global"`)、`"point"`、`"prim"`或`"vertex"`之一。
 
-You can also use `"primgroup"`, `"pointgroup"` or `"vertexgroup"` to [read from groups](../groups.html "You can read the contents of primitive/point/vertex groups in VEX as if they were attributes.").
+您也可以使用`"primgroup"`、`"pointgroup"`或`"vertexgroup"`来[从组中读取](../groups.html "在VEX中，您可以像读取属性一样读取图元/点/顶点组的内容")。
 
 `attribute_name`
 
-The name of the attribute (or intrinsic) to read.
+要读取的属性(或固有属性)的名称。
 
 `elemnum`
 
-The point/primitive/vertex number to read the attribute value from. For detail attributes, use `0` here (the argument is ignored for detail attributes).
+要从中读取属性值的点/图元/顶点编号。对于细节属性，请在此处使用`0`(对于细节属性，此参数被忽略)。
 
-To get the linear vertex number given a primitive number and the vertex number on the primitive, use the [primvertex](primvertex.html "Converts a primitive/vertex pair into a linear vertex.") function.
+要获取给定图元编号和图元上顶点编号的线性顶点编号，请使用[primvertex](primvertex.html "将图元/顶点对转换为线性顶点")函数。
 
 `success`
 
-If the given attribute exists and can be read, the function sets this variable to `1`. Otherwise, it sets this variable to `0`.
+如果给定属性存在且可读，函数将此变量设置为`1`。否则，将此变量设置为`0`。
 
-Returns
+返回值
 
-The value of the attribute.
+属性的值。

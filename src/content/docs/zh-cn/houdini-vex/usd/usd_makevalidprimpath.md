@@ -2,30 +2,21 @@
 title: usd_makevalidprimpath
 order: 91
 ---
-| Since | 19.0 |
+| 始于版本 | 19.0 |
 | --- | --- |
 
 `string  usd_makevalidprimpath(string path, int allow_relative)`
 
-This function ensures that a string meets the requirements of a legal USD
-primitive path that can be passed to other USD functions.
+此函数确保字符串符合合法USD原始路径的要求，可以传递给其他USD函数使用。
 
 `path`
 
-String that should be turned into a valid primitive path.
+需要转换为有效原始路径的字符串。
 
 `allow_relative`
 
-If this value is non-zero, the string is allowed to represent a relative
-primitive path. A relative path is one that starts with `./` or `../`. If
-this argument is zero, only absolute paths (which start with `/`) are
-allowed. Relative prefixes are simply removed from the path and the
-returned path will always start with a `/`.
+若该值非零，则允许字符串表示相对原始路径。相对路径是指以`./`或`../`开头的路径。若该参数为零，则只允许绝对路径（以`/`开头）。相对前缀会从路径中直接移除，返回的路径始终以`/`开头。
 
-Returns
+返回值
 
-A possibly modified version of the original string which conforms to the
-requirements for USD primitive paths. Invalid characters such as spaces
-and most punctuation will be converted to underscores. Note that this means
-the translation is not reversible. If the original string is already a
-legal primitive path, the string is returned unchanged.
+返回原始字符串的修改版本，该版本符合USD原始路径的要求。空格和大多数标点符号等无效字符将被转换为下划线。请注意这意味着转换是不可逆的。如果原始字符串已经是合法的原始路径，则直接返回原字符串。

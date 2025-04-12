@@ -2,10 +2,9 @@
 title: encodeutf8
 order: 11
 ---
-| Since | 19.0 |
+| 版本 | 19.0 |
 | --- | --- |
 
 `string  encodeutf8(int codepoints[])`
 
-Converts a series of code points into a UTF8 string. VEX treats its strings as UTF8 by default, but this means indexing into strings can have unusual behavior. Generating code points ensures there
-is one index for each logical character.
+将一系列码点转换为UTF8字符串。VEX默认将其字符串视为UTF8，但这也意味着对字符串进行索引可能会产生异常行为。生成码点可以确保每个逻辑字符都有一个对应的索引。

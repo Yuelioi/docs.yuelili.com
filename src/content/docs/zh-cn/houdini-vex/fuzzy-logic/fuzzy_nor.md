@@ -6,4 +6,4 @@ order: 5
 
 `float  fuzzy_nor(float a, float b, ...)`
 
-Returns the fuzzy “NOR” (Zadeh NOR) of the input fuzzy values.
+返回输入模糊值的模糊"或非"(Zadeh或非)运算结果。

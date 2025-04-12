@@ -2,37 +2,36 @@
 title: usd_attribtypename
 order: 22
 ---
-| Since | 17.5 |
+
+| 版本 | 17.5 |
 | --- | --- |
 
 `string  usd_attribtypename(<stage>stage, string primpath, string name)`
 
-This function returns the attribute type name, as it is known to the USD value type registry. E.g., “float”, “vector3d”, “double3”, etc.
+此函数返回属性类型名称，该名称在USD值类型注册表中被识别。例如："float"、"vector3d"、"double3"等。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+当在节点上下文（如wrangle LOP）中运行时，此参数可以是一个表示输入编号的整数（从0开始）以读取stage。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或使用`op:`作为路径前缀引用其他LOP节点的已处理stage（例如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+图元路径。
 
 `name`
 
-Attribute name.
+属性名称。
 
-Returns
+返回值
 
-The attribute type name used in the value type registry. E.g., “float”, “vector3d”, “double3”, etc.
+值类型注册表中使用的属性类型名称。例如："float"、"vector3d"、"double3"等。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the type name of the attribute.
+// 获取属性的类型名称
 string type_name = usd_attribtypename(0, "/geo/cube", "attribute_name");
 
 ```

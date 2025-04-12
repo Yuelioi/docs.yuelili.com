@@ -1,15 +1,11 @@
 ---
-title: blackbody
+title: 黑体辐射
 order: 1
 ---
 `vector  blackbody(float temperature, float luminance)`
 
-Given a temperature, in Kelvin, and a luminance value, computes the
-color of an incandescent black body as CIE XYZ tristimulus values.
+给定一个以开尔文为单位的温度和亮度值，计算白炽黑体辐射的颜色，返回CIE XYZ三刺激值。
 
-The computation uses a fast approximation, which is valid for
-temperature values between 1666K and 25000K. Values outside of this
-range are clamped to the nearest valid in-range value.
+该计算使用快速近似方法，适用于温度值在1666K至25000K之间的范围。超出此范围的值将被钳制到最近的有效范围内值。
 
-The returned value can be converted to linear sRGB values using
-the [xyztorgb](xyztorgb.html "Convert CIE XYZ tristimulus values to a linear sRGB triplet.") function.
+返回值可通过[xyztorgb](xyztorgb.html "将CIE XYZ三刺激值转换为线性sRGB三元组")函数转换为线性sRGB值。

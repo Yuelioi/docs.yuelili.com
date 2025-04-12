@@ -1,20 +1,20 @@
 ---
-title: chnames
+title: 通道名称
 order: 10
 ---
-| Context(s) | [chop](../contexts/chop.html) |
+| 上下文环境 | [chop](../contexts/chop.html) |
 | --- | --- |
 
 `string [] chnames()`
 
-Uses `-1` as the `opinput`.
+默认使用 `-1` 作为 `opinput` 参数。
 
 `string [] chnames(int opinput)`
 
-Returns an array of channel names in the given input.
+返回指定输入中的通道名称数组。
 
 `opinput`
 
-The input number to read from, starting from 0. For example, the first input is 0, the second input is 1, and so on.
+要读取的输入编号，从0开始计数。例如，第一个输入是0，第二个输入是1，依此类推。
 
-If you specify `-1`, the function uses the current CHOP node or input `0` if it is connected.
+如果指定为 `-1`，该函数会使用当前CHOP节点或已连接的输入 `0`（如果有连接的话）。

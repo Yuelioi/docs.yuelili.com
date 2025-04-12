@@ -51,8 +51,8 @@ async function findMarkdownFiles(rootDir) {
 // 使用示例
 async function main() {
   try {
-    const startDir = process.argv[2] || "E:\\Scripting\\projects\\yuelili.com\\packages\\docs.yuelili.com\\translate\\test";
-    // const startDir = process.argv[2] || "E:\\Scripting\\projects\\docs.yuelili.com\\src\\content\\docs\\zh-CN\\ai-Scripting";
+    // const startDir = process.argv[2] || "E:\\Scripting\\projects\\yuelili.com\\packages\\docs.yuelili.com\\translate\\test";
+    const startDir = process.argv[2] || "E:\\Scripting\\projects\\yuelili.com\\packages\\docs.yuelili.com\\src\\content\\docs\\zh-cn\\houdini-vex";
     const mdFiles = await findMarkdownFiles(startDir);
   } catch (error) {
     console.error("发生错误:", error);

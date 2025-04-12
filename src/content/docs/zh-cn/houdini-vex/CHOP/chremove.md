@@ -2,7 +2,8 @@
 title: chremove
 order: 18
 ---
-| Context(s) | [chop](../contexts/chop.html) |
+
+| 上下文 | [chop](../contexts/chop.html) |
 | --- | --- |
 
 `int  chremove(int channel_index)`
@@ -13,22 +14,22 @@ order: 18
 
 `int  chremove(string channel_names[])`
 
-This function removes channels from a CHOP node. It works only when iterating over Clip, Channel or Samples, not when iterating over ChannelSample.
+该函数用于从CHOP节点中移除通道。仅在迭代Clip、Channel或Samples时有效，在迭代ChannelSample时无效。
 
-Returns 1 if all channels were removed or 0 otherwise.
+如果所有通道都被成功移除则返回1，否则返回0。
 
 `channel_index`
 
-The channel index to remove.
+要移除的通道索引。
 
 `channel_indices`
 
-The array of channel indices to remove.
+要移除的通道索引数组。
 
 `channel_name`
 
-The channel name to remove.
+要移除的通道名称。
 
 `channel_names`
 
-The array of channel names to remove.
+要移除的通道名称数组。

@@ -6,8 +6,7 @@ order: 71
 
 `float  sign(float n)`
 
-For a scalar value, returns `-1` for a negative number, `0` for the number zero,
-and `+1` for a positive number.
+对于标量值，负数返回 `-1`，零返回 `0`，正数返回 `+1`。
 
 `vector2  sign(vector2 v)`
 
@@ -15,4 +14,4 @@ and `+1` for a positive number.
 
 `vector4  sign(vector4 v)`
 
-For vector values the sign of the individual components is returned as a vector.
+对于向量值，返回各分量符号组成的向量。

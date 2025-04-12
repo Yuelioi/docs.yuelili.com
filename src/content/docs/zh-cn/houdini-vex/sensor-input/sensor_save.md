@@ -4,7 +4,6 @@ order: 5
 ---
 `int  sensor_save(int handle, string colorfile, string depthfile)`
 
-This will save to disk the image maps corresponding to the color and depth
-information recorded in the given sensor handle.
+该函数将把给定传感器句柄中记录的颜色和深度信息对应的图像映射保存到磁盘。
 
-Returns 1 if successfully saved, otherwise 0.
+如果成功保存则返回1，否则返回0。

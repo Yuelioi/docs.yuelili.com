@@ -4,9 +4,9 @@ order: 1
 ---
 `int  assert_enabled()`
 
-Returns 1 if the environment variable `HOUDINI_VEX_ASSERT` is set or 0 if the variable isn’t set.
+如果环境变量 `HOUDINI_VEX_ASSERT` 已设置则返回1，未设置则返回0。
 
-The `assert()` macro uses this function to only execute assertions when `HOUDINI_VEX_ASSERT` is set:
+`assert()` 宏使用此函数仅在 `HOUDINI_VEX_ASSERT` 设置时执行断言：
 
 ```vex
 #define assert(EXPR)    \
@@ -17,6 +17,6 @@ The `assert()` macro uses this function to only execute assertions when `HOUDINI
 
 ```
 
-You could use this function to write your own assert macro (for example, you might write a macro that used your studio’s logging infrastructure).
+您可以使用此函数编写自己的断言宏（例如，可以编写一个使用工作室日志记录基础设施的宏）。
 
-See [using assertions in VEX](../assertions.html "You can use the assert() macro to print information while you are debugging VEX code.") for more information.
+有关更多信息，请参阅[在VEX中使用断言](../assertions.html "您可以使用assert()宏在调试VEX代码时打印信息")。

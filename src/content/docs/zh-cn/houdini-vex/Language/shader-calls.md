@@ -1,130 +1,86 @@
----
-title: Shader Calls
-order: 4
----
-| On this page | * [The import keyword](#the-import-keyword) * [Invoking a shader](#invoking-a-shader) * [Context of the called shader](#context-of-the-called-shader) * [Examples](#examples) |
-| --- | --- |
-Beginning with Houdini 12.5, VEX shader functions can call other shader
-functions. This technique makes it possible to optimize VEX compiler and
-optimizer performance for large shaders, since code that is invoked
-multiple times within a shader or in other shaders can be built once and
-used many times without additional runtime overhead.
-The import keyword
+---  
+title: 着色器调用  
+order: 4  
+---  
 
-## the-import-keyword
+| 本页内容 | * [import关键字](#the-import-keyword) * [调用着色器](#invoking-a-shader) * [被调用着色器的上下文](#context-of-the-called-shader) * [示例](#examples) |  
+| --- | --- |  
 
-The `import` keyword introduces another shader function by name into the
-current shader. The imported shader must be accessible in the houdini path
-for compilation to succeed - if it isn’t found, shader compilation will
-fail. So when constructing shaders that call other shaders, you’ll need to
-build the shaders in dependency order - called shaders, then their callers.
-Circular calls are possible but you’ll need to add the import keyword to
-the callee after building the first caller.
+从Houdini 12.5开始，VEX着色器函数可以调用其他着色器函数。这项技术能够优化大型着色器的VEX编译器和优化器性能，因为在一个着色器内或跨着色器多次调用的代码只需编译一次，即可重复使用而无需额外运行时开销。  
 
-For example, importing the plastic shader:
+## the-import-keyword  
 
-```vex
-import plastic;
+`import`关键字用于将其他着色器函数按名称引入当前着色器。被导入的着色器必须位于Houdini路径中才能编译成功——如果找不到，着色器编译将失败。因此构建调用链时，需要按依赖顺序编译：先编译被调用的着色器，再编译调用者。虽然支持循环调用，但需要在首次编译调用者后，再向被调用者添加import关键字。  
 
-```
+例如导入plastic着色器：  
+```vex  
+import plastic;  
+```  
 
-Shaders can call themselves recursively - in this case, the import keyword
-isn’t required.
+着色器支持递归调用自身——这种情况不需要import关键字。  
 
-Invoking a shader
+## invoking-a-shader  
 
-## invoking-a-shader
+通过名称调用着色器时需传递关键字参数（字符串/值对），用于指定要传递或接收的参数。可以仅绑定部分参数，此时未绑定的参数将使用默认值。此外只需绑定被调用着色器的部分导出参数，VEX优化器会剔除计算无关导出的冗余代码以提升性能。  
 
-Shaders are invoked by name and are passed keyword arguments - string/value
-pairs that identify the arguments to be passed or received from the invoked
-shader. It’s possible to only bind some parameters, in which case the
-called shader will use it’s default values for the parameters that are not
-bound. Additionally, only a subset of the exports from the called shader
-need to be bound. In this case, the VEX optimizer will strip out any dead
-code that computes the exports that are not required, leading to improved
-performance.
+例如以下代码调用plastic着色器，请求`Cf`导出并传入`diff`输入：  
+```vex  
+import plastic;  
 
-For example, this code invokes the plastic shader asking for the `Cf`
-export and providing the `diff` input:
+surface caller(vector diff = {1,0.5,0})  
+{  
+    plastic("diff", diff, "Cf", Cf);  
+}  
+```  
 
-```vex
-import plastic;
+vcc会检查所有可变参数，确保它们与被调用着色器的参数列表匹配——若类型或访问模式不匹配将报错。  
 
-surface caller(vector diff = {1,0.5,0})
-{
-    plastic("diff", diff, "Cf", Cf);
-}
+## context-of-the-called-shader  
 
-```
+当前着色器只能调用上下文类型匹配的其他着色器。对于含全局变量的上下文，未显式传递的全局变量会从调用者复制到被调用者。对于携带不透明状态信息的上下文（如包含命中曲面信息的surface上下文），这些状态也会保留，使得`getraylevel()`等方法在调用双方返回相同结果。  
 
-vcc will check all variadic arguments passed to a called shader to ensure
-that they correspond with an argument or export that exists in the called
-shader’s parameter list - if the type or access mode doesn’t match, an
-error will be reported.
+## examples  
 
-Context of the called shader
+被调用着色器：  
+```vex  
+cvex callee(export int mval = 0;  
+        int rval = 0;  
+        export int wval = 0;  
+        float castval = 0)  
+{  
+    mval *= 2;  
+    wval = rval;  
+}  
+```  
 
-## context-of-the-called-shader
+调用者着色器：  
+```vex  
+import callee;  
 
-Shaders can currently only call shaders that have a matching context type.
-For contexts with global variables, any global variables that are not
-provided explicitly to the shader as keyword arguments are copied unchanged
-from the calling shader to the called shader. For contexts that carry
-additional opaque state information (such as the surface context, which
-maintains state about the hit surface), this information is also maintained
-in the called shader so that calling methods like `getraylevel()` will
-produce the same result in the caller and callee.
+cvex caller()  
+{  
+    int mval = 1;  
+    int rval = 2;  
+    int wval = 1;  
+    callee("mval", mval, "rval", rval, "wval", wval, "castval",  
+            1);  
+    printf("%d %d %d\n", mval, rval, wval);  
+}  
+```  
 
-Examples
-
-## examples
-
-The called shader:
-
-```vex
-cvex callee(export int mval = 0;
-        int rval = 0;
-        export int wval = 0;
-        float castval = 0)
-{
-    mval *= 2;
-    wval = rval;
-}
-
-```
-
-The calling shader:
-
-```vex
-import callee;
-
-cvex caller()
-{
-    int mval = 1;
-    int rval = 2;
-    int wval = 1;
-    callee("mval", mval, "rval", rval, "wval", wval, "castval",
-            1);
-    printf("%d %d %d\n", mval, rval, wval);
-}
-
-```
-
-A recursive shader:
-
-```vex
-cvex fib(int i = 0; export int rval = 0)
-{
-    if (i >= 2)
-    {
-        int v1, v2;
-        fib("i", i-1, "rval", v1);
-        fib("i", i-2, "rval", v2);
-        rval = v1 + v2;
-    }
-    else
-        rval = i;
-    printf("%d: %d\n", i, rval);
-}
-
+递归着色器示例：  
+```vex  
+cvex fib(int i = 0; export int rval = 0)  
+{  
+    if (i >= 2)  
+    {  
+        int v1, v2;  
+        fib("i", i-1, "rval", v1);  
+        fib("i", i-2, "rval", v2);  
+        rval = v1 + v2;  
+    }  
+    else  
+        rval = i;  
+    printf("%d: %d\n", i, rval);  
+}  
 ```

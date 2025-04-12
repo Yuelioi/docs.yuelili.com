@@ -4,7 +4,6 @@ order: 33
 ---
 `int  isfinite(float x)`
 
-Returns 1 if the given value is a normal, finite, number.
+如果给定值是正常的有限数字，则返回1。
 
-Returns 0 if it is a NAN or infinite. Note that VEX generally
-will not produce these: 3/0 is defined as 0, for example.
+如果是NAN（非数字）或无限值，则返回0。注意VEX通常不会产生这些情况：例如3/0被定义为0。

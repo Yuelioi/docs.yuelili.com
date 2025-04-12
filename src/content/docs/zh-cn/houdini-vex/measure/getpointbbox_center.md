@@ -6,10 +6,10 @@ order: 10
 
 `vector  getpointbbox_center(<geometry>geometry, string pointgroup)`
 
-This is the same as [getbbox_center](getbbox_center.html "Returns the center of the bounding box for the geometry.") except it only computes the bounding box of the *points*. So if a primitive has extents that don’t have points (for example, the boundary of a primitive sphere), they will not be included in the box.
+该函数与 [getbbox_center](getbbox_center.html "返回几何体边界框的中心点") 功能相同，但仅计算*点*的边界框。因此，如果图元存在不包含点的延伸部分（例如原始球体的边界），这些部分将不会被包含在边界框内。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如 wrangle SOP）中运行时，此参数可以是表示输入编号的整数（从0开始）以读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数也可以是指定几何文件（例如 `.bgeo`）的字符串。在 Houdini 内部运行时，可以是 `op:/path/to/sop` 形式的引用。

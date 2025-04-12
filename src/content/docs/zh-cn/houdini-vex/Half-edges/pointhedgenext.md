@@ -6,31 +6,29 @@ order: 20
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号（从0开始）的整数，用于指定从哪个输入读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数也可以是一个指定几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`形式的引用。
 
 `point`
 
-The point number in the geometry. `0` is the first point.
+几何体中的点编号。`0`表示第一个点。
 
-Returns
+返回值
 
-The next half-edge that has the same source as `hedge`.
+返回与`hedge`具有相同源点的下一条半边。
 
-Successive calls to this function iterate over all outgoing half-edges out of the same point.
-The iteration order does not necessarily agree with the order of the edges around a point in a manifold setting.
+连续调用此函数可以遍历从同一点出发的所有出站半边。
+注意遍历顺序不一定与流形设置中围绕某点的边顺序一致。
 
-Returns `-1` if `hedge` is not valid, or the there are no more shared vertices with the source vertex of this hedge (same as `op:vertexnext`).
+如果`hedge`无效，或者没有更多与该半边源点共享的顶点时返回`-1`（与`op:vertexnext`行为相同）。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 int edge_count = 0;
 
-// Count number of *edges* (not half-edges) incident to point number 23.
+// 计算与23号点关联的*边*数（不是半边数）
 int hout = pointhedge("defgeo.bgeo", 23);
 while ( hout != -1 )
 {

@@ -6,20 +6,18 @@ order: 15
 
 `b`
 
-BSDF to mask.
+需要遮罩的BSDF。
 
 `mask`
 
-A bitmask indicating which types of shading component bounces to evaluate.
+一个位掩码，指示需要评估哪些类型的着色组件反弹。
 
-See [bouncemask](bouncemask.html) for information on component label bitmasks.
+关于组件标签位掩码的信息，请参阅[bouncemask](bouncemask.html)。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// outF will have every component from inF except refraction
+// outF 将包含 inF 的所有组件，除了折射
 bsdf outF = mask_bsdf(inF, PBR_ALL_MASK & ~PBR_REFRACT_MASK);
 
 ```

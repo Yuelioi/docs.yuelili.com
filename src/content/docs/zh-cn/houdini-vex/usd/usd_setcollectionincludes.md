@@ -2,35 +2,33 @@
 title: usd_setcollectionincludes
 order: 127
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `int  usd_setcollectionincludes(int stagehandle, string collectionpath, string includes[])`
 
-This function sets the includes list on the collection.
+此函数用于设置集合的包含列表。
 
 `stagehandle`
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+要写入的舞台句柄。当前唯一有效值是`0`，表示节点中的当前舞台。（此参数未来可能用于支持写入其他舞台）
 
 `collectionpath`
 
-The path to the collection.
+集合的路径。
 
 `includes`
 
-A list of object paths to set as an includes list on the collection.
+要设置为集合包含列表的对象路径数组。
 
-Returns
+返回值
 
-The value of `stagehandle` on success or `-1` on failure.
+成功时返回`stagehandle`的值，失败时返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Set the exludes list on the cube's collection.
+// 设置立方体集合的排除列表
 string collection_path = usd_makecollectionpath(0, "/geo/cube", "some_collection");
 usd_setcollectionincludes(0, collection_path, array("/geo/sphere1", "/geo/sphere2"));
 

@@ -4,8 +4,8 @@ order: 1
 ---
 `float  atof(string str)`
 
-Converts a string to a floating point value.
+将字符串转换为浮点数值。
 
-- This function ignores whitespace around the number.
-- Returns `0.0` if the string does not contain a number.
-- The string can contain exponential notation (for example `"1.25e+5"`).
+- 该函数会忽略数字周围的空白字符。
+- 如果字符串不包含数字，则返回 `0.0`。
+- 字符串可以包含指数表示法（例如 `"1.25e+5"`）。

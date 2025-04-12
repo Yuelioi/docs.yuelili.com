@@ -2,10 +2,9 @@
 title: planeindex
 order: 32
 ---
-| Context(s) | [cop2](../contexts/cop2.html) |
+| 上下文 | [cop2](../contexts/cop2.html) |
 | --- | --- |
 
 `int  planeindex(string planename)`
 
-Returns the index of the plane specified by the parameter, starting at
-zero.
+返回参数指定平面的索引值（从0开始计数）。

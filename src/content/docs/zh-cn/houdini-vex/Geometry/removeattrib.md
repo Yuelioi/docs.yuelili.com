@@ -1,19 +1,19 @@
 ---
-title: removeattrib
+title: removeattrib（移除属性）
 order: 31
 ---
 `int  removeattrib(int geohandle, string attribclass, string name)`
 
 `geohandle`
 
-A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](geoself.html "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
+要写入的几何体句柄。目前唯一有效的值是 `0` 或 [geoself](geoself.html "返回当前几何体的句柄")，表示节点中的当前几何体。（此参数未来可能用于支持写入其他几何体。）
 
 `attribclass`
 
-One of `"detail"` (or `"global"`), `"point"`, `"prim"`, or `"vertex"`.
+可以是 `"detail"`（或 `"global"`）、`"point"`、`"prim"` 或 `"vertex"` 之一。
 
-You can also use `"primgroup"`, `"pointgroup"` or `"vertexgroup"` to [read from groups](../groups.html "You can read the contents of primitive/point/vertex groups in VEX as if they were attributes.").
+你也可以使用 `"primgroup"`、`"pointgroup"` 或 `"vertexgroup"` 来[从组中读取](../groups.html "在VEX中，你可以像读取属性一样读取基元/点/顶点组的内容。")。
 
 `name`
 
-The name of the attribute or group to remove.
+要移除的属性或组的名称。

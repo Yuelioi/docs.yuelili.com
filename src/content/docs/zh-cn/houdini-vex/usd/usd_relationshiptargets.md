@@ -2,37 +2,36 @@
 title: usd_relationshiptargets
 order: 119
 ---
-| Since | 18.0 |
+
+| 版本 | 18.0 |
 | --- | --- |
 
 `string [] usd_relationshiptargets(<stage>stage, string primpath, string name)`
 
-This function returns the list of targets of a given relationship.
+此函数返回指定关系的目标列表。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取对应输入的stage。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已处理stage（例如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+图元路径。
 
 `name`
 
-The relationship name.
+关系名称。
 
-Returns
+返回值
 
-List of targets in a relationship.
+关系中的目标列表。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the list of targets in cube's "some_relationship" relationship.
+// 获取立方体"some_relationship"关系中的目标列表
 string targets[] = usd_relationshiptargets(0, "/geo/cube", "some_relationship");
 
 ```

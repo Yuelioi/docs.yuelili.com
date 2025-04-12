@@ -1,21 +1,21 @@
 ---
-title: pointvertices
+title: 点顶点
 order: 23
 ---
 `int [] pointvertices(<geometry>geometry, int ptnum)`
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是用于指定要读取的几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `ptnum`
 
-The point number to get a vertex from.
+要获取顶点的点编号。
 
-Returns
+返回值
 
-An array of vertices that are wired to the given point. You should not rely on the numbers being in a particular order.
+连接到给定点的顶点数组。不应依赖这些数字的特定顺序。
 
-If the given point contains no vertices, the array will be empty.
+如果给定点不包含任何顶点，则该数组将为空。

@@ -2,37 +2,35 @@
 title: usd_getbbox_max
 order: 44
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `vector  usd_getbbox_max(<stage>stage, string primpath, string purpose)`
 
-Computes the maximum of the bounding box for the geometry.
+计算几何体包围盒的最大点。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号的整数（从0开始）以读取对应输入中的stage。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+也可用此参数引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已处理stage（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `purpose`
 
-The primitive’s purpose for which to return the bounding box (e.g., “render”).
+要返回包围盒的图元用途（如"render"）。
 
-Returns
+返回值
 
-The maximum point of the primitive’s bounding box.
+图元包围盒的最大点。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the sphere's bounding box.
+// 获取球体的包围盒
 vector max = usd_getbbox_max(0, "/src/sphere", "render");
 
 ```

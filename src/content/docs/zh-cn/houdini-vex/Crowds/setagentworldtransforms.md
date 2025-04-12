@@ -4,16 +4,16 @@ order: 63
 ---
 `void  setagentworldtransforms(int geohandle, int prim, matrix transforms[])`
 
-When modifying a single transform, using [setagentworldtransform](setagentworldtransform.html "Overrides the world space transform of an agent primitive’s bone.") instead can be significantly faster.
+当只需要修改单个变换时，使用[setagentworldtransform](setagentworldtransform.html "覆盖代理基元骨骼的世界空间变换。")可能会显著提高性能。
 
 `geohandle`
 
-Handle to the geometry to write to. `geoself()` can be used to get a handle to the current geometry.
+要写入的几何体句柄。可以使用`geoself()`获取当前几何体的句柄。
 
 `prim`
 
-The primitive number.
+基元编号。
 
 `transforms`
 
-The new transform (in world space) of each bone in the agent’s rig.
+代理骨骼装配中每个骨骼的新变换（世界空间坐标系下）。

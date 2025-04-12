@@ -4,4 +4,4 @@ order: 8
 ---
 `float  chexprf(string channel, string new_expr_function, float frame)`
 
-Evaluates a channel with a new segment expression at a given frame and return its value.
+在指定帧数处使用新的分段表达式评估通道，并返回其值。

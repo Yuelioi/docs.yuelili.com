@@ -10,4 +10,4 @@ order: 66
 
 `vector4 [] resample_linear(vector4 input[], int new_length)`
 
-Returns a new array of size new_length, uniformly sampled from the input array. Array elements are linearly interpolated from the input array.
+返回一个大小为 new_length 的新数组，该数组从输入数组中均匀采样。数组元素通过输入数组的线性插值计算得出。

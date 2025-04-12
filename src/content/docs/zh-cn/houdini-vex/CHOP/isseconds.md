@@ -2,10 +2,9 @@
 title: isseconds
 order: 32
 ---
-| Context(s) | [chop](../contexts/chop.html) |
+| 上下文 | [chop](../contexts/chop.html) |
 | --- | --- |
 
 `int  isseconds()`
 
-Returns 1 if the Vex CHOP’s Unit Menu is currently set to 'seconds', 0
-otherwise.
+如果Vex CHOP的单位菜单当前设置为"秒"，则返回1，否则返回0。

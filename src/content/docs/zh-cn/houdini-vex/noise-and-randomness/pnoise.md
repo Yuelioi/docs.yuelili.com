@@ -14,33 +14,21 @@ order: 27
 
 `float|vector pnoise(vector4 xyzt, int px, int py, int pz, int pt)`
 
-There are two forms of Perlin-style noise: a non-periodic noise which
-changes randomly throughout N-dimensional space, and a periodic form
-which repeats over a given range of space.
+Perlin噪声有两种形式：一种是在N维空间中随机变化的非周期性噪声，另一种是在给定空间范围内重复的周期性噪声。
 
-This function generates periodic noise. Use the [noise](noise.html "There are two forms of Perlin-style noise: a non-periodic noise which
-changes randomly throughout N-dimensional space, and a periodic form
-which repeats over a given range of space.")
-function to generate non-periodic Perlin noise.
+此函数生成周期性噪声。如需生成非周期性Perlin噪声，请使用[noise](noise.html "Perlin噪声有两种形式：一种是在N维空间中随机变化的非周期性噪声，另一种是在给定空间范围内重复的周期性噪声。")函数。
 
-The various functions return the noise value at a 4D (vector4 argument),
-3D (vector argument), 2D (two float arguments) or 1D (float argument)
-position. You can get a random float value or a vector of three random
-values.
+这些函数可返回4D（vector4参数）、3D（vector参数）、2D（两个float参数）或1D（float参数）位置处的噪声值。您可以获取一个随机浮点值或包含三个随机值的向量。
 
-The “p” int or vector arguments specify the range of periodicity. For
-example, if you're making a 2D image and you want it to tile:
+"p"整型或向量参数指定周期性范围。例如，当您创建2D图像并希望其平铺时：
 
 ```vex
 clr = pnoise(X * 4, Y * 5, _4, 5_)
 
 ```
 
-In this example, X is in the range 0-4, Y is in the range 0-5, and the
-noise is periodic within that segment.
+在此示例中，X的范围是0-4，Y的范围是0-5，噪声在该区间内呈周期性变化。
 
-If a period argument is 0, VEX treats that as *no* periodicity. Use
-this to make the noise periodic in one dimension but not another.
+如果周期参数为0，VEX会将其视为*无*周期性。您可以通过此特性使噪声在某一维度上具有周期性，而在另一维度上不具有周期性。
 
-The distribution of the noise depends on the dimension, with higher
-dimensions approaching a Gaussian distribution of noise values.
+噪声的分布取决于维度，维度越高，噪声值的分布越接近高斯分布。

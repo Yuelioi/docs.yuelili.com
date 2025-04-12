@@ -6,8 +6,7 @@ order: 20
 
 `u`
 
-Four numbers between 0 and 1.
+四个介于0到1之间的数值。
 
-Returns a vector4 of length \< 1, based on `u`.
-Given uniform random `u` vectors of four values in `[0,1)`, the returned vectors will be
-uniform random and continuous with respect to `u` inside the unit hypersphere.
+返回一个基于`u`的长度<1的vector4向量。
+给定在`[0,1)`区间内四个值的均匀随机`u`向量，返回的向量将在单位超球体内呈现均匀随机分布，并且相对于`u`保持连续性。

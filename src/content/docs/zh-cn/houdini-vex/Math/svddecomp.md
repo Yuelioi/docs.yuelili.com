@@ -2,7 +2,7 @@
 title: svddecomp
 order: 83
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `void  svddecomp(matrix2 input_M, matrix2 &output_U, vector2 &output_S, matrix2 &output_V)`
@@ -11,10 +11,7 @@ order: 83
 
 `void  svddecomp(matrix input_M, matrix &output_U, vector4 &output_S, matrix &output_V)`
 
-Computes the [singular value decomposition](http://en.wikipedia.org/wiki/Singular_value_decomposition) of a
-given matrix. More precisely, computes `U`, `S`, `V` such that
-`M = U*T*transpose(V)`, where `T` is the diagonal matrix constructed from `S`,
-the vector of singular values.
+计算给定矩阵的[奇异值分解](http://en.wikipedia.org/wiki/Singular_value_decomposition)。更准确地说，计算`U`、`S`、`V`使得`M = U*T*transpose(V)`，其中`T`是由奇异值向量`S`构造的对角矩阵。
 
 `vector2  svddecomp(matrix2 input_M)`
 
@@ -22,4 +19,4 @@ the vector of singular values.
 
 `vector4  svddecomp(matrix input_M)`
 
-The second form of this function simply returns the vector of singular values.
+此函数的第二种形式仅返回奇异值向量。

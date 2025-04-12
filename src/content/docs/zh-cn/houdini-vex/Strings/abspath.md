@@ -2,12 +2,9 @@
 title: abspath
 order: 1
 ---
-| Since | 18.0 |
+| 版本 | 18.0 |
 | --- | --- |
 
 `string  abspath(string relpath)`
 
-Returns the supplied path converted to an absolute path. Relative paths
-are treated as relative to Houdini’s current working directory. If the
-supplied path is already absolute, the path is returned unchanged. The file
-does not need to exist.
+将提供的相对路径转换为绝对路径。相对路径会被视为相对于Houdini当前工作目录的路径。如果提供的路径已经是绝对路径，则直接返回原路径。该文件不需要实际存在。

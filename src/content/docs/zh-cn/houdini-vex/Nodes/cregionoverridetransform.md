@@ -2,7 +2,7 @@
 title: cregionoverridetransform
 order: 23
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `matrix  cregionoverridetransform(string path)`
@@ -13,9 +13,9 @@ order: 23
 
 `matrix  cregionoverridetransform(int op_id, float time)`
 
-Returns the capture or deform transform associated with a Capture Region SOP based on the global capture override flag.
-The transform is built from the parameters of the SOP without cooking the SOP.
-It is possible to specify the time to evaluate the transform at (in seconds, not frames).
+根据全局捕获覆盖标志，返回与捕获区域SOP关联的捕获或变形变换矩阵。
+该变换矩阵直接从SOP参数构建，无需实际执行SOP运算。
+可以指定评估变换矩阵的时间（以秒为单位，而非帧数）。
 
-Note
-The op: syntax can be used to simulate this behavior using the standard transform functions.
+注意
+使用标准变换函数时，可通过op:语法模拟此行为。

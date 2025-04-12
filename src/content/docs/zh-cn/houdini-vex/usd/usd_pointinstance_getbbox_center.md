@@ -2,41 +2,39 @@
 title: usd_pointinstance_getbbox_center
 order: 99
 ---
-| Since | 18.0 |
+| 版本 | 18.0 |
 | --- | --- |
 
 `vector  usd_pointinstance_getbbox_center(<stage>stage, string primpath, int instance_index, string purpose)`
 
-Computes the center of the bounding box for the instance geometry.
+计算实例几何体的包围盒中心点。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取对应的stage。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+也可以使用此参数引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点已处理的stage（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `instance_index`
 
-The index of the instance whose bounding box to return.
+需要返回包围盒的实例索引。
 
 `purpose`
 
-The primitive’s purpose for which to return the bounding box center (e.g., “render”).
+指定返回包围盒中心点的图元用途（如"render"）。
 
-Returns
+返回值
 
-The center of the instance’s bounding box.
+实例包围盒的中心点坐标。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the center of the first instance's boundsng box.
+// 获取第一个实例的包围盒中心
 vector center = usd_pointinstance_getbbox_center(0, "/src/instanced_spheres", 0, "render");
 
 ```

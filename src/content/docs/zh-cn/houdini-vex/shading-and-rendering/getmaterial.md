@@ -2,9 +2,9 @@
 title: getmaterial
 order: 22
 ---
-| Context(s) | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
+| 上下文 | [置换](../contexts/displace.html)  [雾效](../contexts/fog.html)  [光照](../contexts/light.html)  [阴影](../contexts/shadow.html)  [表面](../contexts/surface.html) |
 | --- | --- |
 
 `material  getmaterial()`
 
-The material handle returned is opaque, but can be used by other functions to query information about the material (see details on the [mantra specific type](../lang.html#mantratypes)).
+返回的材质句柄是不透明的，但可以被其他函数用来查询材质信息（详见[特定于Mantra的类型](../lang.html#mantratypes)）。

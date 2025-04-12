@@ -1,11 +1,10 @@
 ---
-title: getcomponents
+title: 获取组件
 order: 11
 ---
-| Context(s) | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
+| 上下文环境 | [置换](../contexts/displace.html)  [雾效](../contexts/fog.html)  [光照](../contexts/light.html)  [阴影](../contexts/shadow.html)  [表面](../contexts/surface.html) |
 | --- | --- |
 
 `string [] getcomponents()`
 
-Returns an array of strings containing the components specified by the
-[/vex/functions/vm_exportcomponents.html](vm_exportcomponents.html) rendering property.
+返回一个字符串数组，包含由[/vex/functions/vm_exportcomponents.html](vm_exportcomponents.html)渲染属性指定的组件。

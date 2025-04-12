@@ -2,85 +2,74 @@
 title: getderiv
 order: 12
 ---
-| On this page | * [Derivatives options](#derivatives-options) * [Examples](#examples) |
+| 本页内容 | * [导数选项](#derivatives-options) * [示例](#examples) |
 | --- | --- |
-| Context(s) | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
+| 上下文 | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
 
 `void  getderiv(float attr, string attrName, int isVertexAttr, float s, float t, float &du, float &dv, ...)`
 
 `void  getderiv(<vector>attr, string attrName, int isVertexAttr, float s, float t, <vector>&du, <vector>&dv, ...)`
 
-Note
-If derivatives are queried for a polygonal mesh it is interally sampled as a Subdivision Surface.
+注意
+如果对多边形网格查询导数，系统会将其内部采样为细分曲面。
 
 `attr`
 
-Attribute value.
+属性值。
 
 `attrName`
 
-Name of attribute to evaluate.
+要计算的属性名称。
 
 `isVertexAttr`
 
-Set to `1` to indicate the attribute is a vertex type.
+设置为`1`表示该属性是顶点类型。
 
 `s`
 
-Parametric S shading value. This should be passed from the `s` global variable.
+参数化S着色值。应从全局变量`s`传入。
 
 `t`
 
-Parametric <type> shading value. This should be passed from the `t` global variable.
+参数化<type>着色值。应从全局变量`t`传入。
 
 `du`
 
-Derivative of attribute in U direction.
+属性在U方向的导数。
 
 `dv`
 
-Derivative of attribute in V direction.
+属性在V方向的导数。
 
-Derivatives options
+导数选项
 
 ## derivatives-options
 
-Functions which compute derivatives take additional arguments to
-allow tuning of the derivative computation.
+计算导数的函数接受额外参数以允许调整导数计算方式。
 
-"`extrapolate`",
+"`extrapolate`"，
 `int`
 `=0`
 
-Whether derivatives are
-“smooth” across patch boundaries. In most cases this is true and if
-extrapolation is turned on, derivative computation should be exact
-for C2 surfaces. However, when the VEX variables are changing with a
-high frequency (for example, a high frequency displacement map
-causing high frequency changes to the P variable), extrapolation of
-derivative computation may cause exaggeration of discontinuities
-between patch boundaries.
+是否在面片边界保持导数"平滑"。在大多数情况下应启用此选项，如果开启外推，对于C2连续曲面导数计算将是精确的。但当VEX变量高频变化时（例如高频位移贴图导致P变量高频变化），导数计算的外推可能会加剧面片边界的不连续性。
 
-"`smooth`",
+"`smooth`"，
 `int`
 `=1`
 
-Adjust the magnitude of the
-differentials non-uniformly over patches. This will usually reduce
-patch discontinuities in displacement/textured shaders. However, in
-some odd cases you may want to turn this feature off.
+非均匀调整面片上微分量的幅度。这通常会减少位移/纹理着色器中面片的不连续性。但在某些特殊情况下可能需要关闭此功能。
 
 ```vex
 N = computenormal(P, "extrapolate", 1, "smooth", 0);
 
 ```
 
-Examples
+示例
 
 ## examples
 
 ```vex
-// Get derivatives of point attribute 'N'
+// 获取点属性'N'的导数
 vector dNdu, dNdv;
 getderiv(N, "N", 0, s, t, dNdu, dNdv);
 

@@ -7,8 +7,8 @@ order: 4
 
 `string  ocio_parsecolorspace(string input)`
 
-Use OCIO to detect the color space in an input string. The input string is typically a filename.
+使用OCIO检测输入字符串中的色彩空间。输入字符串通常是文件名。
 
 `input`
 
-The string to scan for a color space string. This is typically an image filename that has the color space encoded in the name.
+需要扫描色彩空间字符串的输入字符串。通常是一个在名称中编码了色彩空间的图像文件名。

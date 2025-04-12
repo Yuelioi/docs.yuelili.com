@@ -1,10 +1,9 @@
 ---
-title: hsvtorgb
+title: hsv转rgb
 order: 6
 ---
 `vector  hsvtorgb(vector hsv)`
 
-`vector  hsvtorgb(float hue, float sat, float val)`
+`vector  hsvtorgb(float 色相, float 饱和度, float 明度)`
 
-Convert HSV color space into RGB color space. A vector representing the
-RGB triple is returned. The hue should be in the range 0 to 1.
+将HSV色彩空间转换为RGB色彩空间。返回一个表示RGB三元组的向量。色相值应在0到1范围内。

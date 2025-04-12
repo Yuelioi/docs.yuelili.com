@@ -6,12 +6,12 @@ order: 31
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文中运行时（例如wrangle SOP），此参数可以是一个表示输入编号的整数（从0开始）以读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是一个指定几何体文件（例如 `.bgeo`）的字符串以从中读取。在Houdini内部运行时，可以是 `op:/path/to/sop`引用。
 
-Returns
+返回值
 
-The number of the point with the given value in the `name` attribute. Returns `-1` if no primitive has the given ID, or if the geometry has no `name` attribute.
+具有 `name`属性中给定值的点的编号。如果没有图元具有给定ID，或者几何体没有 `name`属性，则返回 `-1`。
 
-To look up a primitive by its `id` attribute value, use [idtoprim](idtoprim.html "Finds a primitive by its id attribute."). To look up a point by an arbitrary string or int attribute value, use [findattribval](findattribval.html "Finds a primitive/point/vertex that has a certain attribute value.").
+要通过 `id`属性值查找图元，请使用[idtoprim](idtoprim.html "通过id属性查找图元")。要通过任意字符串或整数属性值查找点，请使用[findattribval](findattribval.html "查找具有特定属性值的图元/点/顶点")。

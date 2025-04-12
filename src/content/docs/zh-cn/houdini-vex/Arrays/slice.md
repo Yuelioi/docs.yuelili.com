@@ -6,29 +6,27 @@ order: 15
 
 `string  slice(string s, int start, int end, int step)`
 
-Extracts a string from a larger string.
+从较长的字符串中提取子字符串。
 
 `<type>[] slice(<type>s[], int start, int end)`
 
 `<type>[] slice(<type>s[], int start, int end, int step)`
 
-Extracts a sub-array from a larger array.
+从较大的数组中提取子数组。
 
 `string  slice(string s, int hasstart, int start, int hasend, int end, int hasstep, int step)`
 
 `<type>[] slice(<type>array[], int hasstart, int start, int hasend, int end, int hasstep, int step)`
 
-A general-purpose signature to support the slicing syntax. If `hasstart` is `0`, it ignores `start` and uses `0`. If `hasend` is `0` it ignores `end` and uses the length of the array. If `hasstep` is `0` it ignores `step` and uses `1`.
+支持切片语法的通用签名。如果`hasstart`为`0`，则忽略`start`并使用`0`；如果`hasend`为`0`则忽略`end`并使用数组长度；如果`hasstep`为`0`则忽略`step`并使用`1`。
 
-- This is the function equivalent of using `value[start:end:step]` slicing syntax.
-- If `start` or `end` are negative, they count from the end of the string/array.
-- The computed range is clamped to the bounds of the original string/array.
-- If step is zero, the function returns an empty string/array.
-- If step is negative, the items are returned in reverse, and `end` should be less than `start`.
+- 此函数等效于使用`value[start:end:step]`切片语法。
+- 如果`start`或`end`为负数，则从字符串/数组末尾开始计数。
+- 计算得到的范围会被限制在原始字符串/数组的边界内。
+- 如果步长(step)为零，函数返回空字符串/数组。
+- 如果步长为负数，则按相反顺序返回元素，此时`end`应小于`start`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 int[] nums = {10, 20, 30, 40, 50, 60};
@@ -36,5 +34,4 @@ slice(nums, 1, 3) == {20, 30};  // nums[1:3]
 slice(nums, 1, -1) == {20, 30, 30, 40, 50};  // nums[1:-1]
 slice(nums, 0, len(nums), 2) == {20, 40, 60};  // nums[0:len(nums):2]
 slice(nums, 0, 0, 0, 0, 1, 2) == {20, 40, 60};  // nums[::2]
-
 ```

@@ -2,10 +2,9 @@
 title: mdensity
 order: 2
 ---
-| Context(s) | [image3d](../contexts/image3d.html) |
+| 上下文环境 | [image3d](../contexts/image3d.html) |
 | --- | --- |
 
 `float  mdensity(vector P)`
 
-Returns the density of the metaball field if metaball geometry is
-specified to i3dgen.
+如果为i3dgen指定了metaball几何体，则返回metaball场的密度值。

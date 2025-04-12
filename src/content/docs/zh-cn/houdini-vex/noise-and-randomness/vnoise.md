@@ -4,88 +4,85 @@ order: 38
 ---
 `void  vnoise(float position, float jitter, int &seed, float &f1, float &f2, float &pos1, float &pos2)`
 
-Generates 1D noise.
+生成一维噪声。
 
 `void  vnoise(float position, float jitter, int &seed, float &f1, float &f2, float &pos1, float &pos2, int period)`
 
-Generates periodic 1D noise.
+生成周期性一维噪声。
 
 `void  vnoise(float posx, float posy, float jittx, float jitty, int &seed, float &f1, float &f2, float &pos1x, float &pos1y, float &pos2x, float &pos2y)`
 
-Generates 2D noise. This is similar to the other forms but uses pairs of floats instead of a vector.
+生成二维噪声。与其他形式类似，但使用浮点数对而非向量。
 
 `void  vnoise(float posx, float posy, float jittx, float jitty, int &seed, float &f1, float &f2, float &pos1x, float &pos1y, float &pos2x, float &pos2, int periodx, int periody)`
 
-Generates periodic 2D noise.
+生成周期性二维噪声。
 
 `void  vnoise(vector position, vector jitter, int &seed, float &f1, float &f2, vector &pos1, vector &pos2)`
 
-Generates 3D noise.
+生成三维噪声。
 
 `void  vnoise(vector position, vector jitter, int &seed, float &f1, float &f2, vector &pos1, vector &pos2, int periodx, int periody, int periodz)`
 
 `void  vnoise(vector position, vector jitter, int &seed, float &f1, float &f2, vector &pos1, vector &pos2, vector period)`
 
-Generates periodic 3D noise.
+生成周期性三维噪声。
 
 `void  vnoise(vector4 position, vector4 jitter, int &seed, float &f1, float &f2, vector4 &pos1, vector4 &pos2)`
 
-Generates 4D noise.
+生成四维噪声。
 
 `void  vnoise(vector4 position, vector4 jitter, int &seed, float &f1, float &f2, vector4 &pos1, vector4 &pos2, int periodx, int periody, int periodz, int periodw)`
 
 `void  vnoise(vector4 position, vector4 jitter, int &seed, float &f1, float &f2, vector4 &pos1, vector4 &pos2, vector4 period)`
 
-Generates periodic 4D noise.
+生成周期性四维噪声。
 
 `position`
 
-The position at which to sample the noise.
+采样噪声的位置坐标。
 
 `jitter`
 
-The amount of randomness to add to the noise in each axis.
+各轴上添加的随机扰动强度。
 
 `seed`
 
-Outputs an integer value associated with the nearest seed point. This seed is pretty much guaranteed to be unique for every point (meaning that it’s unlikely that two points close by have the same seed associated with them).
+输出与最近种子点关联的整数值。该种子值几乎能保证每个点都具有唯一性（即相邻两点不太可能具有相同种子值）。
 
 `pos1`, `pos2`
 
-These variables are overwritten with the positions of the two nearest seed points, in order of closeness.
+这两个变量会被覆写为按距离排序的两个最近种子点的位置坐标。
 
 `f1`, `f2`
 
-These variables are overwritten with the distances to the nearest seed points, in order of closeness.
+这两个变量会被覆写为按距离排序的到最近种子点的距离值。
 
-You can combine these distances to generate noise patterns. The noise generated tends to be very “cellular” in nature. In fact, one of the nice things is that you can determine “cell” boundaries by using the expression: `if (f2 - f1)` which will be true if the point in space is crossing the boundary between two cells.
+可通过组合这些距离值来生成噪声图案。生成的噪声本质上具有明显的"细胞"特征。特别地，您可以使用表达式 `if (f2 - f1)` 来确定"细胞"边界，当空间中的点跨越两个细胞边界时该表达式为真。
 
 `period`, `periodx`, `periody`, `periodz`, `periodw`
 
-If you include the period argument(s), the function generates repeating (periodic) noise.
+当包含周期参数时，函数会生成重复（周期性）噪声。
 
-Voronoi noise gives almost identical results to the Worley noise function ([wnoise](wnoise.html "Generates Worley (cellular) noise.")). However, this function has controls over jittering (i.e. how randomly the points are scattered through space) and also return the actual locations of the two nearest seed points, whereas [wnoise](wnoise.html "Generates Worley (cellular) noise.") only returns the distances to the two nearest seed points.
+Voronoi噪声与Worley噪声函数([wnoise](wnoise.html "生成Worley（细胞）噪声。"))的结果几乎相同。但本函数提供了扰动控制（即空间中点的随机散布程度），并返回两个最近种子点的实际位置，而[wnoise](wnoise.html "生成Worley（细胞）噪声。")仅返回到最近种子点的距离。
 
-Though this function is slightly more expensive than [wnoise](wnoise.html "Generates Worley (cellular) noise."), since it returns the actual point positions, you can overcome some of the artifacts of Worley noise. For example, to get even boundaries along the cell boundaries:
+虽然本函数比[wnoise](wnoise.html "生成Worley（细胞）噪声。")稍耗资源，但由于返回实际点位置，可以克服Worley噪声的一些伪影。例如，要获得沿细胞边界的均匀边界：
 
 ```vex
 if (f2 - f1 < tolerance * (distance(p1, p2) / (f1 + f2)) ...
-
 ```
 
-This will “normalize” the boundary width based on the distance between the two random points in space.
+这将根据空间中两个随机点之间的距离"标准化"边界宽度。
 
-There are also periodic forms of vnoise().
-Examples
+vnoise()也有周期性形式。
 
-## examples
+## 示例
 
 ```vex
-// 1D noise
+// 一维噪声
 float    fp0, fp1, p1x, p1y, p2x, p2y;
 vector    vp0, vp1;
 vnoise(s*10, 0.8, seed, f1, f2, fp0, fp1);
 vnoise(s*10, t*10, 0.8, 0.8, seed, f1, f2, p1x, p1y, p2x, p2y);
 vnoise(P*10, {.8, .8, .8}, seed, f1, f2, vp0, vp1);
-
 ```

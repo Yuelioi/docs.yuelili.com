@@ -1,50 +1,50 @@
 ---
-title: getsmoothP
-order: 33
----
-| On this page | * [Variadic arguments](#variadic-arguments) * [Examples](#examples) |
-| --- | --- |
-| Context(s) | [shading](../contexts/shading.html) |
-Returns a modified surface position based on a smoothing function.
+title: getsmoothP  
+order: 33  
+---  
 
-`int  getsmoothP(vector &smoothP, vector ray_origin, ...)`
+| 本页内容 | * [可变参数](#variadic-arguments) * [示例](#examples) |  
+| --- | --- |  
+| 上下文 | [着色](../contexts/shading.html) |  
 
-Overwrites the `smoothP` variable with the modified surface position.
-This function is only meaningful for some primitive types (such as polygons).
+基于平滑函数返回修改后的表面位置。  
 
-`vector  getsmoothP(...)`
+`int  getsmoothP(vector &smoothP, vector ray_origin, ...)`  
 
-Uses the global variables `Eye` and `I` to fill in the ray origin and direction.
+用修改后的表面位置覆盖 `smoothP` 变量。  
+此函数仅对某些图元类型（如多边形）有意义。  
 
-Variadic arguments
+`vector  getsmoothP(...)`  
 
-## variadic-arguments
+使用全局变量 `Eye` 和 `I` 来填充光线起点和方向。  
 
-"style",
-`string`
+可变参数  
 
-`none`
+## variadic-arguments  
 
-No smoothing.
+"style",  
+`string`  
 
-`shadow`
+`none`  
 
-Apply a smoothing function appropriate to elimination of the shadow
-terminator issue for polygons.
+无平滑。  
 
-Examples
+`shadow`  
 
-## examples
+应用适合消除多边形阴影终止问题的平滑函数。  
 
-```vex
-shadow
-fastshadow()
-{
-    vector        surfP;
-    if (!getsmoothP(surfP, Eye, I))
-        surfP = Ps;                // Set to the Ps (surface P) variable
-    vector shad = trace(surfP, normalize(L), Time, "raystyle", "shadow");
-    Cl *= ({1,1,1} - shad);
-}
+示例  
 
+## examples  
+
+```vex  
+shadow  
+fastshadow()  
+{  
+    vector        surfP;  
+    if (!getsmoothP(surfP, Eye, I))  
+        surfP = Ps;                // 设置为 Ps（表面位置）变量  
+    vector shad = trace(surfP, normalize(L), Time, "raystyle", "shadow");  
+    Cl *= ({1,1,1} - shad);  
+}  
 ```

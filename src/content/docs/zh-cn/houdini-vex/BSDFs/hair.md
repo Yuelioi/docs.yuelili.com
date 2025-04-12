@@ -1,22 +1,21 @@
 ---
-title: hair
+title: 毛发
 order: 12
 ---
+
 `bsdf  hair(vector N, vector tip, float lobe_shift, float lobe_width_lon, ...)`
 
 `bsdf  hair(vector N, vector tip, float lobe_shift, float lobe_width_lon, float lobe_with_azi, ...)`
 
 `bsdf  hair(vector N, vector tip, float lobe_shift, float lobe_width_lon, float lobe_with_azi, float glint_shift, float glint_intensity, ...)`
 
-Details of the hair BSDF can be found in the source file (`hair_eval.vfl`).
+毛发BSDF的详细实现可在源文件(`hair_eval.vfl`)中找到。
 
-Any variadic arguments to the functions are passed through to the CVEX evaluation function.
+函数的任何可变参数都会传递给CVEX评估函数。
 
-Examples
+## 示例
 
-## examples
-
-These different signatures are equivalent to the following code:
+这些不同的函数签名等同于以下代码：
 
 ```vex
 bsdf hair(vector N; vector tip; float lobe_shift; float lobe_width_lon, ...)
@@ -51,5 +50,4 @@ bsdf hair(vector N; vector tip; float lobe_shift; float lobe_width_lon, float gl
         "glint_intensity", glint_intensity,
     ...);
 }
-
 ```

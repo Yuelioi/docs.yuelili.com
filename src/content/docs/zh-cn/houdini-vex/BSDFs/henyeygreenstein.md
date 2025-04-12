@@ -1,10 +1,10 @@
 ---
-title: henyeygreenstein
+title: 亨尼-格林斯坦散射函数
 order: 13
 ---
-`bsdf  henyeygreenstein(float anisotropic_bias, ...)`
+`bsdf henyeygreenstein(float anisotropic_bias, ...)`
 
-The Henyey-Greenstein function scatters light either forward or in reverse depending on the `anisotropic_bias` provided to the function which must be a floating point value between -1 and 1. A value of 0 will cause isotropic scattering (identical to the `isotropic()` bsdf) while positive values produce forward scattering and negative values produce reverse scattering. The extrema of -1 and 1 cause all light to be scattered in a single direction, back toward the light for -1 and without any directional change for 1.
+亨尼-格林斯坦函数根据提供的`anisotropic_bias`参数值（必须是介于-1到1之间的浮点数）来决定光线是向前散射还是反向散射。当值为0时会产生各向同性散射（与`isotropic()` bsdf相同），正值产生前向散射，负值则产生反向散射。当参数为极值-1或1时，所有光线将沿单一方向散射：-1时完全反向光源方向散射，1时则完全不改变光线方向。
 
-Note
-No normal vector is required to construct a Henyey-Greenstein BSDF since it has no directionality. The default albedo for the BSDF is 1, which means it scatters 100% of the incoming light.
+注意：
+构建亨尼-格林斯坦BSDF时不需要法线向量，因为该函数本身不具有方向性。该BSDF的默认反照率为1，意味着它会散射100%的入射光。

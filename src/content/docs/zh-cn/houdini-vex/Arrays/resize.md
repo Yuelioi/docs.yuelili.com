@@ -4,8 +4,8 @@ order: 13
 ---
 `void  resize(<type>&array[], int size)`
 
-Changes the size of the given array. If `size` is greater than the current length of the array, the extra items at the end of the array will be initialized to default values of the given type (for example, `0`, empty string, `{0,0,0}`, etc.).
+改变给定数组的大小。如果 `size` 大于数组当前长度，数组末尾的额外项将被初始化为该类型的默认值（例如 `0`、空字符串、`{0,0,0}` 等）。
 
 `void  resize(<type>&array[], int size, <type>val)`
 
-Changes the size of the given array. If `size` is greater than the current length of the array, the extra items at the end of the array will be initialized to `val`.
+改变给定数组的大小。如果 `size` 大于数组当前长度，数组末尾的额外项将被初始化为 `val`。

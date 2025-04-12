@@ -2,16 +2,16 @@
 title: random_poisson
 order: 34
 ---
-| Since | 17.0 |
+| 始于版本 | 17.0 |
 | --- | --- |
 
 `int  random_poisson(int seed, float mean)`
 
 `int  random_poisson(int seed, float mean, int minvalue, int maxvalue)`
 
-Creates a random number given the mean of the Poisson distribution. The seed is given to allow for the generation of different numbers with the same mean.
+根据泊松分布的均值生成随机数。通过指定种子值，可以在相同均值下生成不同的随机数。
 
-When `minvalue` and `maxvalue` are specified the numbers generated will be limited to the specified range.
+当指定`minvalue`和`maxvalue`参数时，生成的随机数将被限制在指定范围内。
 
-Warning
-The specified range should not be farther apart from the mean than 3 standard deviations, which in the case of Poisson distribution is equal to `sqrt(mean)`.
+警告
+指定的范围不应偏离均值超过3个标准差，对于泊松分布而言，标准差等于`sqrt(mean)`。

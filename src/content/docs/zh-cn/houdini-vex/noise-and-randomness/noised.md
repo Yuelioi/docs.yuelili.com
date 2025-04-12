@@ -1,7 +1,8 @@
 ---
-title: noised
+title: 噪声函数
 order: 24
 ---
+
 `void  noised(float x, float &v, float &dvdx)`
 
 `void  noised(float x, vector &v, vector &dvdx)`
@@ -18,9 +19,6 @@ order: 24
 
 `void  noised(vector4 xyzw, vector &v, vector &dvdx, vector &dvdy, vector &dvdz, vector &dvdw)`
 
-This computes both the perlin noise value, and the derivatives of the
-noise along each axis. This can be performed quite efficiently as
-there are analytic derivatives available.
+该函数同时计算柏林噪声值以及噪声沿各轴的导数。由于存在解析导数，这一计算过程可以非常高效地完成。
 
-See [noise and randomness](../random.html) in the VEX language
-guide for more information.
+更多信息请参阅VEX语言指南中的[噪声与随机性](../random.html)章节。

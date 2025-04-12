@@ -4,8 +4,8 @@ order: 88
 ---
 `float  trunc(float x)`
 
-If the argument is negative, this returns [ceil(x)](ceil.html "Returns the smallest integer greater than or equal to the argument."), otherwise it returns
-[floor(x)](floor.html "Returns the largest integer less than or equal to the argument.").
+如果参数为负数，则返回 [ceil(x)](ceil.html "返回大于或等于参数的最小整数")，否则返回
+[floor(x)](floor.html "返回小于或等于参数的最大整数")。
 
 `vector2  trunc(vector2 x)`
 
@@ -13,4 +13,4 @@ If the argument is negative, this returns [ceil(x)](ceil.html "Returns the small
 
 `vector4  trunc(vector4 x)`
 
-Returns a new vector with the `trunc()` of each component.
+返回一个新向量，其每个分量都是原向量对应分量的`trunc()`结果。

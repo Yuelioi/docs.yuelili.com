@@ -6,9 +6,8 @@ order: 19
 
 `vector2  chu(string channel, float time)`
 
-Evaluates a channel or parameter, and return its value.
+计算通道或参数的值，并返回其数值。
 
-If the parameter is a vector parameter, the base parameter name
-can be used to return the all components as a vector.
+如果参数是矢量参数，可以使用基础参数名称来返回所有分量作为一个矢量。
 
-The time is specified in seconds, not in frames.
+时间以秒为单位指定，而非帧数。

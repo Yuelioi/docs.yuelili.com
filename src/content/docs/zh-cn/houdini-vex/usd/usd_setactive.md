@@ -7,30 +7,28 @@ order: 122
 
 `int  usd_setactive(int stagehandle, string primpath, int flag)`
 
-This function sets the primitive’s active state.
+此函数用于设置图元的激活状态。
 
 `stagehandle`
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+要写入的舞台句柄。目前唯一有效的值是`0`，表示节点中的当前舞台。（此参数未来可能用于支持写入其他舞台。）
 
 `primpath`
 
-The path to the primitive.
+图元的路径。
 
 `flag`
 
-Non-zero to make the primitive active or 0 to make it inactive.
+非零值表示激活图元，0表示取消激活。
 
-Returns
+返回值
 
-The value of `stagehandle` on success or `-1` on failure.
+成功时返回`stagehandle`的值，失败时返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Set the sphere primitive as active.
+// 将球体图元设置为激活状态
 usd_setactive(0, "/geo/sphere", true);
 
 ```

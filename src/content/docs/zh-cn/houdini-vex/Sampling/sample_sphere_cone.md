@@ -6,18 +6,15 @@ order: 28
 
 `center`
 
-Direction in the center of the cone. This does not need to be normalized.
+圆锥中心轴的方向向量。该向量不需要归一化。
 
 `maxangle`
 
-Maximum angle, in radians, away from `center` that any sample of the cone
-will be, so long as all `u` values are between 0 and 1.
+最大角度（以弧度为单位），表示采样点与`center`方向的最大偏离角度。只要所有`u`值都在0到1之间，采样点就不会超过这个角度范围。
 
 `u`
 
-Three numbers between 0 and 1.
+三个介于0到1之间的数值。
 
-Returns a vector of length \< 1, based on `u`.
-Given uniform random `u` vectors of three values in `[0,1)`, the returned vectors will be
-uniform random and continuous with respect to `u` inside the unit sphere,
-in the volume within `maxangle` of the direction indicated by `center`.
+返回一个长度小于1的向量，基于输入参数`u`。
+当给定三个值在`[0,1)`区间内均匀随机的`u`向量时，返回的向量将在单位球体内、且与`center`方向夹角不超过`maxangle`的锥形区域内均匀随机分布，并且相对于`u`是连续的。

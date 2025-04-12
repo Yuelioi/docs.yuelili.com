@@ -6,7 +6,6 @@ order: 7
 
 `int  inedgegroup(int input, string groupname, int pointnum0, int pointnum1)`
 
-Returns 1 if the edge specified by the point pair is in the group specified by the string. This function returns 0 if the group does not exist or if the edge is not contained in the group.
+如果由点对指定的边位于字符串指定的组中，则返回1。如果组不存在或边不包含在组中，则此函数返回0。
 
-This can use ad-hoc groups, like `p29-30`. It matches the SOP group naming
-convention, in particular that an empty string means all edges.
+可以使用临时组，例如`p29-30`。它遵循SOP组的命名约定，特别是空字符串表示所有边。

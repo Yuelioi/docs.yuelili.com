@@ -1,12 +1,10 @@
 ---
-title: pointname
+title: 点名称
 order: 35
 ---
-| Context(s) | [cop2](../contexts/cop2.html) |
+| 上下文 | [cop2](../contexts/cop2.html) |
 | --- | --- |
 
 `string  pointname()`
 
-Returns the default name of the point plane (as it appears in the
-compositor preferences). Using this instead of hardcoding the default
-makes your code more portable. Default is “P”.
+返回点平面的默认名称（如合成器首选项中显示的名称）。使用此函数而非硬编码默认值可使您的代码更具可移植性。默认值为"P"。

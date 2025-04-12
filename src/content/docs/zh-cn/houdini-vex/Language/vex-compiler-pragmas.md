@@ -1,1234 +1,510 @@
----
-title: VEX compiler pragmas
-order: 6
----
-| On this page | * [#pragma c++rawstring](#pragma-c-rawstring) * [#pragma bindhandle](#pragma-bindhandle) * [#pragma bindhandlereserved](#pragma-bindhandlereserved) * [#pragma bindselector](#pragma-bindselector) * [#pragma bindselectorreserved](#pragma-bindselectorreserved) * [#pragma callback](#callback) * [#pragma disablewhen and #pragma hidewhen](#pragma-disablewhen-and-pragma-hidewhen) * [#pragma export](#pragma-export) * [#pragma group](#pragma-group) * [#pragma help and #pragma info](#pragma-help-and-pragma-info) * [#pragma hint](#pragma-hint) * [#pragma inputlabel](#pragma-inputlabel) * [#pragma label](#pragma-label) * [#pragma name “text”](#pragma-name-text) * [#pragma opicon](#opicon) * [#pragma opmininputs and #pragma opmaxinputs](#opinputs) * [#pragma opname and #pragma oplabel](#opname) * [#pragma opscript](#opscript) * [#pragma parmhelp parameter_name “text”](#pragma-parmhelp-parameter_name-text) * [#pragma parmtag](#pragma-parmtag) * [#pragma ramp](#ramp) * [#pragma range](#pragma-range) * [#pragma rendermask](#pragma-rendermask) * [#pragma optable](#pragma-optable) * [#pragma rename](#pragma-rename) * [How to create menus for parameters](#how-to-create-menus-for-parameters) * [Operator list filters](#operator-list-filters) |
-| --- | --- |
-The [VEX compiler (vcc)](vcc.html "Overview of how to use the VEX language compiler vcc and its
-pre-processor and pragma statements.") supports pragmas for automatically building UI
-dialog scripts. These pragmas are typically ignored unless the -u option
-is specified on the vcc command line. The pragmas let you specify
-help, hints for how to represent the parameter, organization, and other
-information.
+---  
+title: VEX编译器指令  
+order: 6  
+---  
 
-Pragmas can be specified in one of two ways: As a `#pragma` preprocessor
-directive, or as a `_Pragma` VEX statement. The second form allows for
-bundling up multiple pragmas in a single macro.
+| 本页内容 | * [#pragma c++rawstring](#pragma-c-rawstring) * [#pragma bindhandle](#pragma-bindhandle) * [#pragma bindhandlereserved](#pragma-bindhandlereserved) * [#pragma bindselector](#pragma-bindselector) * [#pragma bindselectorreserved](#pragma-bindselectorreserved) * [#pragma callback](#callback) * [#pragma disablewhen和#pragma hidewhen](#pragma-disablewhen-and-pragma-hidewhen) * [#pragma export](#pragma-export) * [#pragma group](#pragma-group) * [#pragma help和#pragma info](#pragma-help-and-pragma-info) * [#pragma hint](#pragma-hint) * [#pragma inputlabel](#pragma-inputlabel) * [#pragma label](#pragma-label) * [#pragma name "text"](#pragma-name-text) * [#pragma opicon](#opicon) * [#pragma opmininputs和#pragma opmaxinputs](#opinputs) * [#pragma opname和#pragma oplabel](#opname) * [#pragma opscript](#opscript) * [#pragma parmhelp parameter_name "text"](#pragma-parmhelp-parameter_name-text) * [#pragma parmtag](#pragma-parmtag) * [#pragma ramp](#ramp) * [#pragma range](#pragma-range) * [#pragma rendermask](#pragma-rendermask) * [#pragma optable](#pragma-optable) * [#pragma rename](#pragma-rename) * [如何为参数创建菜单](#how-to-create-menus-for-parameters) * [运算符列表过滤器](#operator-list-filters) |  
+| --- | --- |  
 
-The following preprocessor form:
+[VEX编译器(vcc)](vcc.html "概述VEX语言编译器vcc及其预处理器和指令语句的使用方法")支持用于自动构建UI对话框脚本的指令。除非在vcc命令行中指定了-u选项，这些指令通常会被忽略。这些指令允许您指定帮助信息、参数表示方式的提示、组织结构以及其他信息。  
 
-```vex
-#pragma label parm "Parameter Label"
+指令可以通过两种方式指定：作为`#pragma`预处理器指令，或作为`_Pragma` VEX语句。第二种形式允许在单个宏中捆绑多个指令。  
 
-```
+以下预处理器形式：  
 
-is functionally equivalent to this VEX statement:
+```vex  
+#pragma label parm "参数标签"  
+```  
 
-```vex
-_Pragma("label parm \"Parameter Label\"");
+在功能上等同于以下VEX语句：  
 
-```
+```vex  
+_Pragma("label parm \"参数标签\"");  
+```  
 
-Note that the pragma arguments are enclosed in quotes, with the original set
-of quotes escaped.
+请注意，指令参数需要用引号括起来，原始引号需要转义。  
 
-# pragma c++rawstring
+# pragma c++rawstring  
 
-## pragma-c-rawstring
+## pragma-c-rawstring  
 
-`#pragma c++rawstring 0|1`
+`#pragma c++rawstring 0|1`  
 
-VEX supports C++ style raw strings. The `c++rawstring` pragma can be used to
-disable or re-enable raw string support. For example:
+VEX支持C++风格的原始字符串。`c++rawstring`指令可用于禁用或重新启用原始字符串支持。例如：  
 
-```vex
-string a = R"(Hello world\n)";
-string b = "Hello world\\n";
-#pragma c++rawstrings 0        // Disable C++ style raw string support
-string b = R"(This will generate an error!)";
-#pragma c++rawstrings 1        // Re-enable C++ style raw string support
-```
+```vex  
+string a = R"(Hello world\n)";  
+string b = "Hello world\\n";  
+#pragma c++rawstrings 0        // 禁用C++风格原始字符串支持  
+string b = R"(这将产生错误!)";  
+#pragma c++rawstrings 1        // 重新启用C++风格原始字符串支持  
+```  
 
-# pragma bindhandle
+# pragma bindhandle  
 
-## pragma-bindhandle
+## pragma-bindhandle  
 
-`#pragma bindhandle channel_name h_name h_label h_index h_settings`
+`#pragma bindhandle channel_name h_name h_label h_index h_settings`  
 
-Binds handles to specific parameters by default (users can override
-bindings).
+默认将句柄绑定到特定参数（用户可以覆盖绑定）。  
 
-`channel_name`
+`channel_name`  
 
-The name of the channel in the VEX operator to bind to the handle.
+要绑定到句柄的VEX运算符中的通道名称。  
 
-`h_name`
+`h_name`  
 
-Handle name. This is one of the pre-defined Houdini handles (for
-example `ladder`). You can use the [omls](../commands/omls.html "Lists the available handles for an operator type.") HScript command
-for a full list of available handles.
+句柄名称。这是预定义的Houdini句柄之一（例如`ladder`）。您可以使用[omls](../commands/omls.html "列出运算符类型的可用句柄。") HScript命令获取可用句柄的完整列表。  
 
-`h_label`
+`h_label`  
 
-A brief description of the handle.
+句柄的简短描述。  
 
-`h_index`
+`h_index`  
 
-Many handles (for example xform) have multiple parameters associated
-with them. This allows you to choose which handle parameter gets
-bound to the VEX parameter.
+许多句柄（例如xform）有多个关联参数。这允许您选择哪个句柄参数绑定到VEX参数。  
 
-`h_settings`
+`h_settings`  
 
-An optional handle-specific string that can be used to set some
-default behavior for the handle.
+可选的句柄特定字符串，可用于设置句柄的某些默认行为。  
 
-```vex
-#pragma bindhandle offset1 xform "Translate" tx "invisible(1)"
-#pragma bindhandle offset2 xform "Translate" ty
-#pragma bindhandle offset3 xform "Translate" tz
-sop translate(vector offset=0) { P += offset; }
+```vex  
+#pragma bindhandle offset1 xform "平移" tx "invisible(1)"  
+#pragma bindhandle offset2 xform "平移" ty  
+#pragma bindhandle offset3 xform "平移" tz  
+sop translate(vector offset=0) { P += offset; }  
+```  
 
-```
+# pragma bindhandlereserved  
 
-# pragma bindhandlereserved
+## pragma-bindhandlereserved  
 
-## pragma-bindhandlereserved
+`#pragma bindhandlereserved reserved_channel_name h_name h_label h_index h_settings`  
 
-`#pragma bindhandlereserved reserved_channel_name h_name h_label h_index h_settings`
+每个脚本化运算符类型都有一些参数，这些参数会添加到该类型的每个运算符中（无论对话框脚本文件的内容如何）。要将句柄绑定到这些参数之一，必须使用bindhandlereserved指令。此指令的参数与bindhandle指令完全相同。唯一的例外是通道名称参数必须指定保留参数的名称。  
 
-Each scripted operator type has a number of parameters that are added to
-every operator of that type (regardless of the contents of the dialog
-script file). To bind a handle to one of these parameters, you must use
-the bindhandlereserved pragma. This pragma takes exactly the same
-arguments as the bindhandle pragma. The only exception is that the
-channel name argument must specify the name of a reserved parameter.
+# pragma bindselector  
 
-# pragma bindselector
+## pragma-bindselector  
 
-## pragma-bindselector
+`#pragma bindselector [parm_name] sel_type sel_name sel_prompt sel_mask allow_dragging group_type_parm asterisk_sel_all [input_index input_required]`  
 
-`#pragma bindselector [parm_name] sel_type sel_name sel_prompt sel_mask allow_dragging group_type_parm asterisk_sel_all [input_index input_required]`
+当在Houdini中交互式创建运算符时，可以提示用户选择要处理的数据。这些提示由选择器处理。选择器可以基于每个OP或每个参数定义。  
 
-When an operator is created interactively in Houdini, the user can be
-prompted for the data to work on. These prompts are handled by
-selectors. Selectors can be defined on a per-OP basis, or a
-per-parameter basis.
+对于基于OP的选择器，bindselector指令需要7个参数。对于基于参数的选择器，需要10个参数。  
 
-For per-OP selectors, the bindselector pragma expects 7 arguments. For
-per-parameter selectors, it expects 10 arguments.
+parm_name  
 
-parm_name
+要绑定选择器的VEX参数（用于基于参数的选择器）。  
 
-The VEX parameter to bind the selector to (for per-parameter
-selectors).
+sel_type  
 
-sel_type
+要选择的实体。使用[omsls](../commands/omsls.html "列出运算符类型的可用选择器。") HScript命令打印可能值的列表。  
 
-The entity to select. Use the [omsls](../commands/omsls.html "Lists the available selectors for an operator type.") HScript command to
-print a list of possible values.
+sel_name  
 
-sel_name
+选择器的简短描述。  
 
-A brief description of the selector.
+sel_prompt  
 
-sel_prompt
+提示用户选择几何体的文本。  
 
-the prompt presented to the user to select geometry.
+sel_mask  
 
-sel_mask
+允许选择特定基元类型的模式。可能的基元类型包括：  
 
-a pattern which allows selection of specific primitive types. The
-list of possible primitive types are:
+all  
 
-all
+所有基元类型  
 
-all primitive types
+face  
 
-face
+多边形、NURBs或Bezier曲线。  
 
-Polygons, NURBs or Bezier curves.
+surface  
 
-surface
+网格、NURBs或Bezier曲面  
 
-Mesh, NURBs or Bezier surfaces
+quadric  
 
-quadric
+基本圆、球体或管状体。  
 
-Primitive circles, spheres or tubes.
+poly  
 
-poly
+多边形  
 
-Polygons
+nurbscurve  
 
-nurbscurve
+NURBS曲线  
 
-NURBS curves
+bezcurve  
 
-bezcurve
+Bezier曲线  
 
-Bezier curves
+mesh  
 
-mesh
+网格  
 
-Meshes
+nurbs  
 
-nurbs
+NURBS曲面  
 
-NURBS surfaces
+bezier  
 
-bezier
+Bezier曲面  
 
-Bezier surfaces
+circle  
 
-circle
+基本圆  
 
-Primitive circles
+sphere  
 
-sphere
+基本球体  
 
-Primitive spheres
+tube  
 
-tube
+基本管状体  
 
-Primitive tubes
+meta  
 
-meta
+元球  
 
-Metaballs
+particle  
 
-particle
+粒子系统  
 
-Particle systems
+基元类型可以使用标准的Houdini分组机制组合。例如：  
 
-The primitive types can be combined in standard Houdini grouping
-mechanisms. For example:
+- `all,^p*`: 选择除多边形和粒子外的所有基元类型。  
+- `face,surface`: 选择面和曲面基元。  
+- `*,^quad*,^meta`: 选择除二次曲面和元球外的任何基元。  
 
-- `all,^p*`: select all primitive types except polygons and
-  particles.
-- `face,surface`: select face and surface primitives.
-- `*,^quad*,^meta`: Select any primitive but quadrics or metaballs.
+allow_dragging  
 
-allow_dragging
+如果设置为1，可以在不强制用户点击`RMB`完成选择的情况下修改选择。  
 
-If set to 1, the selection can be modified without forcing the user
-to click `RMB` to complete the selection.
+这允许用户在一个步骤中选择和修改（拖动鼠标完成选择并将鼠标移动传递给运算符句柄）。  
 
-This lets the user select and modify in one step (dragging with the
-mouse finishes selection and passes the mouse movements to the
-operator handles).
+group_type_parm  
 
-group_type_parm
+指示选择组将具有的几何类型的参数名称。通常，此值将命名一个带有菜单的参数，用于选择“点”、“基元”或“从组猜测”。请参阅[Blast SOP](../nodes/sop/blast.html "删除基元、点、边或断点。")的OMbindings文件。  
 
-The name of a parameter which indicates the geometry type the
-selection group will have. Typically this value will name a
-parameter with a menu for choosing “Points”, “Primitives”, or “Guess
-from group”. See the OMbindings file for the [Blast
-SOP](../nodes/sop/blast.html "Deletes primitives, points, edges or breakpoints.").
+asterisk_sel_all  
 
-asterisk_sel_all
+如果设置为1，选择器需要将选择字符串设置为“\*”以指示选择了所有几何体。如果为0，选择器假定空组参数表示选择了所有几何体。  
 
-If set to 1, the selector needs to set the selection string to “\*”
-to indicate all geometry was selected. If 0, the selector assumes an
-empty group parameter means all geometry was selected.
+input_index  
 
-input_index
+用于基于参数的选择器。当用户选择几何体时，选择器必须将所选运算符的输出连接到此运算符的输入。此参数指定应连接运算符的输入编号索引。如果选择器需要将多个输入运算符连接到此运算符，请使用-1。  
 
-For per-parameter selectors. When the user selects geometry, the
-selector must connect the output from the selected operator to the
-input of this operator. This parameter specifies the index of the
-input number where the operator should be connected. Use -1 if the
-selector needs to connect multiple input operators into this
-operator.
+input_required  
 
-input_required
+用于基于参数的选择器。如果用户必须为此输入选择几何体，则设置为1。  
 
-For per-parameter selectors. Set to 1 if the user must select
-geometry for this input.
+```vex  
+#pragma bindselector prims "切换几何体" \  
+    "选择要切换的几何体" \  
+    all 0 "" 0  
+#pragma bindhandle input_number 0 ladder 输入 parm0  
+sop switcher(int input_number=0) { import("P", P, input_number) }  
+```  
 
-```vex
-#pragma bindselector prims "Switch Geometry" \
-    "Choose the geometry to switch between" \
-    all 0 "" 0
-#pragma bindhandle input_number 0 ladder Input parm0
-sop switcher(int input_number=0) { import("P", P, input_number) }
+# pragma bindselectorreserved  
 
-```
+## pragma-bindselectorreserved  
 
-# pragma bindselectorreserved
+`#pragma bindselectorreserved reserved_parm_name sel_type sel_name sel_prompt sel_mask allow_dragging group_type_parm asterisk_sel_all input_index input_required`  
 
-## pragma-bindselectorreserved
+类似于bindhandlereserved指令，这将选择器绑定到脚本化运算符中的保留参数。此指令的参数与传递给bindselector指令的参数相同。唯一的区别是参数名称参数必须指定保留参数。  
 
-`#pragma bindselectorreserved reserved_parm_name sel_type sel_name sel_prompt sel_mask allow_dragging group_type_parm asterisk_sel_all input_index input_required`
+# pragma callback  
 
-Similar to the bindhandlereserved pragma, this binds selectors to
-reserved parameters in your scripted operators. The arguments to this
-pragma are the same as those passed to the bindselector pragma. The only
-difference is that the parameter name argument must specify a reserved
-parameter.
+## callback  
 
-# pragma callback
+`#pragma callback name "script"`  
 
-## callback
+将回调HScript脚本或Python函数绑定到名称参数。当参数更改时，Houdini执行脚本字符串。  
 
-`#pragma callback name "script"`
+由于Houdini的架构限制，参数和脚本必须满足某些条件：  
 
-Binds a callback HScript script or Python function to the name
-parameter. When the parameter changes, Houdini executes the script
-string.
+- 对话框脚本需要绑定到Houdini节点（例如SHOP、SOP等）。  
+- 参数必须是切换按钮，或具有绑定到它的菜单（请参阅`#pragma hint`和`#pragma choice`）。  
 
-Because of architectural limitations in Houdini, the parameter and
-script must meet certain conditions:
+要指示回调的语言（`hscript`或`python`），请使用`#pragma parmtag`。如果不为回调使用`#pragma parmtag`，则默认为`hscript`。但是，编程回调脚本的推荐方法是`python`。  
 
-- The dialog script needs to be bound to a Houdini node (e.g. SHOP,
-  SOP, etc.).
-- The parameter must be either a toggle button, or have a menu bound to
-  it (see `#pragma hint` and `#pragma choice`).
+```vex  
+#pragma callback parm1 "message $script_parm"  
+#pragma parmtag parm1 script_callback_language hscript  
 
-To indicate the language of the callback (`hscript` or `python`), use `#pragma parmtag`. If you don’t use a `#pragma parmtag` for a callback the default is `hscript`. However, the recommended method for programming callback scripts is `python`.
+#pragma callback parm2 "import hou; hou.ui.displayMessage(kwargs)"  
+#pragma parmtag initialize_menu script_callback_language hscript  
+```  
 
-```vex
-#pragma callback parm1 "message $script_parm"
-#pragma parmtag parm1 script_callback_language hscript
+- 对于HScript回调，脚本可以是HScript语句或`$HOUDINI_PATH/scripts`路径上的脚本名称。  
+- 对于Python回调，脚本应为Python源代码。  
 
-#pragma callback parm2 "import hou; hou.ui.displayMessage(kwargs)"
-#pragma parmtag initialize_menu script_callback_language hscript
-```
+Houdini在具有某些可用变量的上下文中执行脚本，这些变量指示哪个参数已更改。  
 
-- For HScript callbacks, script can be an HScript statement or the
-  name of a script on the `$HOUDINI_PATH/scripts` path.
-- For Python callbacks, script should be Python source code.
+- 对于HScript回调，Houdini创建变量，如`$node`，其中包含参数更改的节点路径。  
+- 对于Python回调，Houdini创建`kwargs`变量，其中包含有关已更改参数的信息字典。  
 
-Houdini executes script in a context with certain variables available
-indicating which parameter changed.
+有关更多信息，请参阅[回调脚本](../hom/locations.html#parameter_callback_scripts)。  
 
-- For HScript callbacks, Houdini creates variables such as `$node`
-  containing the path to the node on which the parameter changed.
-- For Python callbacks, Houdini creates a `kwargs` variable containing a
-  dictionary of information about the parameter that changed.
+# pragma disablewhen和#pragma hidewhen  
 
-See [callback scripts](../hom/locations.html#parameter_callback_scripts) for
-more information.
+## pragma-disablewhen-and-pragma-hidewhen  
 
-# pragma disablewhen and #pragma hidewhen
+`#pragma disablewhen parm_name conditional_expression`  
 
-## pragma-disablewhen-and-pragma-hidewhen
+当conditional_expression评估为true时，禁用parm_name。  
 
-`#pragma disablewhen parm_name conditional_expression`
+`#pragma hidewhen parm_name conditional_expression`  
 
-Disables parm_name when the conditional_expression evaluates to true.
+当conditional_expression评估为true时，从UI中隐藏parm_name。  
 
-`#pragma hidewhen parm_name conditional_expression`
+conditional_expression的语法与参数上的**禁用条件**和**隐藏条件**选项相同。有关条件语法的更多信息，请参阅[条件规则帮助](../ref/windows/optype.html#conditionals)。  
 
-Hides parm_name from the UI when the conditional_expression evaluates to true.
+```vex  
+// 当'enable'参数切换为关闭时，禁用'samples'参数  
+#pragma disablewhen samples { enable == 0 }  
 
-The syntax of the conditional_expression is the same as for the **Disable when** and
-**Hide when** options on parameters. See the [help for conditional rules](../ref/windows/optype.html#conditionals)
-for more information on the conditional syntax.
+// 当字符串菜单'choice'设置为'off'时，隐藏'choice_dep1'参数。  
+#pragma hidewhen choice_dep1 { choice == "off" }  
+```  
 
-```vex
-// Disable 'samples' parameter when 'enable' parameter is toggled off
-#pragma disablewhen samples { enable == 0 }
+# pragma export  
 
-// Hide 'choice_dep1' parameter when string menu 'choice' is set to 'off'.
-#pragma hidewhen choice_dep1 { choice == "off" }
+## pragma-export  
 
-```
+`#pragma export parm_name (none | dialog | all)`  
 
-# pragma export
+将参数UI添加到操作参数对话框，并可选择添加到运算符工具栏。  
 
-## pragma-export
+`none`或0  
 
-`#pragma export parm_name (none | dialog | all)`
+不导出。参数仅出现在运算符的标准对话框中。  
 
-Adds the parameter UI to the operation parameters dialog, and optionally
-also the operator toolbar.
+`dialog`或1  
 
-`none` or 0
+参数出现在运算符的参数窗口中。  
 
-No export. The parameter only appears in the operator’s standard
-dialog.
+`all`或2  
 
-`dialog` or 1
+参数出现在运算符的参数窗口和运算符工具栏中。  
 
-The parameter appears in the operator’s parameter window.
+您可以结合使用`#pragma hint hidden`和此指令。  
 
-`all` or 2
+# pragma group  
 
-The parameter appears in the operator’s parameter window and the
-operator toolbar.
+## pragma-group  
 
-You can use `#pragma hint hidden` in combination with this pragma.
+`#pragma group group_name parameter_name1 parameter_name2 ...`  
 
-# pragma group
+将命名参数分组到UI中的选项卡中。  
 
-## pragma-group
+```vex  
+// 将Ka、Kd、Ks、roughness分组到名为BRDF的文件夹中  
+#pragma group BRDF Ka Kd Ks  
+#pragma group BRDF roughness  
+```  
 
-`#pragma group group_name parameter_name1 parameter_name2 ...`
+注意  
+您可以在组名中使用`/`创建嵌套组。例如，以下创建一个带有两个子选项卡的`Group`选项卡。  
 
-Groups the named parameters into a tab in the UI.
+```vex  
+#pragma group "Group/子组1" p1 p2  
+#pragma group "Group/子组2" p3 p4  
+```  
 
-```vex
-// Group Ka, Kd, Ks, roughness into a folder called BRDF
-#pragma group BRDF Ka Kd Ks
-#pragma group BRDF roughness
+# pragma help和#pragma info  
 
-```
+## pragma-help-and-pragma-info  
 
-Note
-You can put `/` in your group name to create nested groups. For example, the following creates a `Group` tab with two sub-tabs.
+`#pragma help "text"`  
 
-```vex
-#pragma group "Group/Sub Group 1" p1 p2
-#pragma group "Group/Sub Group 2" p3 p4
+将文本添加到对话框脚本的帮助中。您可以使用此功能为最终用户记录函数和参数。  
 
-```
+```vex  
+#pragma help "这是VEX函数的帮助。"  
+#pragma help "它会自动添加到帮助文本中"  
+```  
 
-# pragma help and #pragma info
+与`#pragma help`类似，`#pragma info`文本会添加到对话框脚本的帮助中。但是，信息文本位于帮助开头的单独部分中。您可以使用此功能指定版权、版本信息等。  
 
-## pragma-help-and-pragma-info
+```vex  
+#pragma info "由Bob Loblaw创建 - (c) 2006"  
+```  
 
-`#pragma help "text"`
+目前，只有SOP显示信息文本。  
 
-Adds text to the help in the dialog script. You can use this to
-document functions and parameters for end-users.
+# pragma hint  
 
-```vex
-#pragma help "This is help for the VEX function."
-#pragma help "It gets added automatically to the help text"
+## pragma-hint  
 
-```
+`#pragma hint parameter_name hint_type`  
 
-Like `#pragma help`, `#pragma info` text is added to the help in the
-dialog script. However, the info text is in a separate section at the
-beginning of the help. You can use this to specify copyrights, version
-information, etc.
+添加有关参数表示的值类型的信息（例如，VEX向量可以表示空间中的点、颜色或方向）。提示用于专门化编辑值的UI。  
 
-```vex
-#pragma info "Created by Bob Loblaw - (c) 2006"
+hint_type可以是以下之一：  
 
-```
+`none`  
 
-Currently, only SOPs display info text.
+无提示。  
 
-# pragma hint
+`toggle`  
 
-## pragma-hint
+整数或浮点数表示开/关切换（其中1为开，0为关）。  
 
-`#pragma hint parameter_name hint_type`
+`color`  
 
-Adds information about what type of value a parameter represents (for
-example, a VEX vector may represent a point in space, a color, or a
-direction). The hint is used to specialize the UI for editing the
-value.
+参数是颜色。UI将提供颜色滑块。  
 
-The hint_type can be one of the following:
+`direction`  
 
-`none`
+参数是方向。UI将提供指定方向的小工具。  
 
-No hint.
+`vector`  
 
-`toggle`
+参数是空间中的3D向量。UI与具有3个浮点数的参数的默认UI相同，但通道名称将以x、y、z结尾，而不是1、2、3。  
 
-The integer or float represents an on/off switch (where 1 is on and 0
-is off).
+`vector`  
 
-`color`
+参数是空间中的4D向量。UI与具有4个浮点数的参数的默认UI相同，但通道名称将以x、y、z、w结尾，而不是1、2、3、4。  
 
-The parameter is a color. The UI will provide color sliders.
+`uv`  
 
-`direction`
+向量参数是UV坐标。UI是两个输入字段而不是三个（传递给VEX的第三个分量始终为0），通道名称将以u、v结尾，而不是1、2。  
 
-The parameter is a direction. The UI will provide a gadget for
-specifying direction.
+`uvw`  
 
-`vector`
+向量参数是UV坐标。UI是两个输入字段而不是三个（传递给VEX的第三个分量始终为0），通道名称将以u、v结尾，而不是1、2。  
 
-The parameter is a 3D vector in space. The UI is the same as the
-default UI for a parameter with 3 floats, but the channel names will
-end with x, y, z instead of 1, 2, 3.
+`angle`  
 
-`vector`
+参数是方向向量。UI将提供方向小工具。  
 
-The parameter is a 4D vector in space. The UI is the same as the
-default UI for a parameter with 4 floats, but the channel names will
-end with x, y, z, w instead of 1, 2, 3, 4.
+`file`  
 
-`uv`
+字符串参数是文件名。UI添加用于指定文件的浏览器按钮。（另请参阅下面的`image`和`geometry`。）  
 
-The vector parameter is UV coordinates. The UI is two entry fields
-instead of three (the third component passed to VEX is always 0),
-and the channel names will end with u, v instead of 1, 2.
+`image`  
 
-`uvw`
+字符串参数是图像文件的文件名。UI添加用于指定文件的浏览器按钮，浏览器仅显示图像文件类型。  
 
-The vector parameter is UV coordinates. The UI is two entry fields
-instead of three (the third component passed to VEX is always 0),
-and the channel names will end with u, v instead of 1, 2.
+`geometry`  
 
-`angle`
+字符串参数是几何文件的文件名。UI添加用于指定文件的浏览器按钮，浏览器仅显示几何文件类型。  
 
-The parameter is a direction vector. The UI will provide a direction
-gadget.
+`hidden`  
 
-`file`
+不要在参数列表中包含此参数。当您希望参数被几何属性覆盖时，这很有用。这与`invisible`不同，因为不会创建底层场景参数。  
 
-The string parameter is a filename. The UI adds a browser button for
-specifying the file. (See also `image` and `geometry` below.)
+`invisible`  
 
-`image`
+创建的参数将存在于运算符中，但对用户界面隐藏。与`hidden`不同，将创建一个实际的场景参数，只是不显示。  
 
-The string parameter is a filename of an image file. The UI adds a
-browser button for specifying the file, and the browser only
-displays image file types.
+`inputinvisible`  
 
-`geometry`
+对于使用`#pragma optable vop`构建的VOP运算符，此提示指示在创建新节点时默认情况下应隐藏VOP输入连接器。输入仍可通过VOP底部的`更多...`连接器访问。此提示在构建非VOP运算符类型或导出参数时无效。  
 
-The string parameter is a filename of a geometry file. The UI adds a
-browser button for specifying the file, and the browser only
-displays geometry file types.
+`oplist [opfilter]`  
 
-`hidden`
+参数是对象列表。您可以可选地指定opfilter以限制列表中允许的运算符类型。使用`#pragma parmtag`解析对象列表中的任何捆绑包或组。  
 
-Don’t include this parameter in the parameter list. This is useful when
-you intend a parameter to be overridden by a geometry attribute. This
-is distinct from `invisible`, as no underlying scene parameter will
-be created.
+请参阅下面可能的运算符过滤器列表。  
 
-`invisible`
+`oppath [opfilter]`  
 
-The created parameter will exist in the operator but hidden from the
-user interface. Unlike `hidden`, an actual scene parameter will get
-created, just not shown.
+参数是对象路径。您可以可选地指定opfilter以限制可以选择的运算符类型。  
 
-`inputinvisible`
+请参阅下面可能的运算符过滤器列表。  
 
-For VOP operators built using `#pragma optable vop`, this hint
-indicates that the VOP input connector should be hidden by default when
-creating new nodes. The input will still be accessible through the
-`more...` connector at the bottom of the VOP. This hint has no effect
-when building non-VOP operator types or for export parameters.
+`joinnext`  
 
-`oplist [opfilter]`
+将此参数后面的参数放在GUI中的同一行上。对于窄控件，这可以节省参数编辑器中的空间。  
 
-The parameter is a list of objects. You can optionally specify
-opfilter to limit the types of
-operators allowed in the list. Use `#pragma parmtag` to resolve any
-bundles or groups in the list of objects.
+示例：`#pragma hint myParm joinnext`  
 
-See the list of possible operator filters below.
+```vex  
+#pragma hint __nondiffuse toggle // 定义为切换按钮  
+#pragma hint specularcolor color // 这表示颜色  
+#pragma hint rest hidden         // 不在UI中显示rest参数  
+#pragma hint mapname image       // 这表示图像文件  
+#pragma hint nullobject oppath "obj/null" // 仅空对象  
+```  
 
-`oppath [opfilter]`
+# pragma inputlabel  
 
-The parameter is an object path. You can optionally specify
-opfilter to limit the types of
-operators that can be chosen.
+## pragma-inputlabel  
 
-See the list of possible operator filters below.
+`#pragma inputlabel inputnum "label"`  
 
-`joinnext`
+对于VEX运算符类型，设置运算符输入的标签。当用户在其中一个运算符输入上按下鼠标中键时，此标签会出现。inputnum是输入的索引，从1开始。  
 
-Put the parameter after this one on the same row in the GUI.
-For narrow controls this can save space in the parameter editor.
+```vex  
+#pragma inputlabel 1 "要修改的几何体"  
+```  
 
-Example: `#pragma hint myParm joinnext`
+# pragma label  
 
-```vex
-#pragma hint __nondiffuse toggle // Define as a toggle button
-#pragma hint specularcolor color // This represents a color
-#pragma hint rest hidden         // Don't show rest parameter in UI
-#pragma hint mapname image       // This represents an image file
-#pragma hint nullobject oppath "obj/null" // Only null objects
+## pragma-label  
 
-```
+`#pragma label parameter_name "text"`  
 
-# pragma inputlabel
+指定参数的描述性标签。  
 
-## pragma-inputlabel
+```vex  
+#pragma label amp    "噪声幅度"  
+displacement bumpy(float amp=0) {  
+...  
+}  
+```  
 
-`#pragma inputlabel inputnum "label"`
+# pragma name "text"  
 
-For VEX operator types, sets the label for an operator input. This label
-appears when the user presses the middle mouse button on one of the
-operator inputs. The inputnum is the index of the input, starting at
-1\.
+## pragma-name-text  
 
-```vex
-#pragma inputlabel 1 "Geometry to Modify"
+设置出现在UI中的标签。此指令已过时，因为标签现在在运算符表定义中定义。  
 
-```
+# pragma opicon  
 
-# pragma label
+## opicon  
 
-## pragma-label
+`#pragma opicon "text"`  
 
-`#pragma label parameter_name "text"`
+使用此指令设置此运算符类型使用的图标。它可以是外部.icon或.bicon文件的路径，或标准图标之一的名称。  
 
-Specifies a descriptive label for a parameter.
+vcc的`-C` [命令行选项](vcc.html#otl)覆盖此指令。  
 
-```vex
-#pragma label amp    "Noise Amplitude"
-displacement bumpy(float amp=0) {
-...
-}
+# pragma opmininputs和#pragma opmaxinputs  
 
-```
+## opinputs  
 
-# pragma name “text”
+`#pragma opmininputs num`  
 
-## pragma-name-text
+对于VEX运算符类型，这设置必须连接到运算符的*最小*输入数。此值对于SHOPs（不接受输入）被忽略。如果连接的输入节点少于这个数量，运算符将生成错误。`-t` [命令行选项](vcc.html#otl)覆盖此指令。  
 
-Sets the label that appears in the UI. This pragma is obsolete since the
-label is now defined in the operator table definition.
+`#pragma opmaxinputs num`  
 
-# pragma opicon
+对于VEX运算符类型，这设置可以连接到运算符的*最大*输入数。此值对于SHOPs（不接受输入）被忽略。`-T` [命令行选项](vcc.html#otl)覆盖此指令。  
 
-## opicon
+```vex  
+#pragma opmininputs 1  
+#pragma opmaxinputs 4  
+```  
 
-`#pragma opicon "text"`
+# pragma opname和#pragma oplabel  
 
-Use this pragma to set the icon to use for this operator type. It can be
-a path to an external .icon or .bicon file, or the name of one of the
-standard icons.
+## opname  
 
-vcc’s `-C` [command line option](vcc.html#otl)
-overrides this pragma.
+`#pragma opname "text"`  
 
-# pragma opmininputs and #pragma opmaxinputs
+指定此运算符类型的内部运算符名称。默认情况下，编译器使用源文件的名称。vcc的`-n` [命令行选项](vcc.html#otl)覆盖此指令。  
 
-## opinputs
+`#pragma oplabel "text"`  
 
-`#pragma opmininputs num`
+指定此运算符类型的描述性名称。默认情况下，编译器使用内部运算符名称。vcc的`-N` [命令行选项](vcc.html#otl)覆盖此指令。  
 
-For VEX operator types, this sets the *minimum* number of inputs that
-must be connected to the operator. This value is ignored for SHOPs,
-which take no inputs. The operator will generate an error if fewer than
-this many nodes are connected as inputs. The `-t` [command line
-option](vcc.html#otl) overrides this pragma.
-
-`#pragma opmaxinputs num`
-
-For VEX operator types, this sets the *maximum* number of inputs that
-can be connected to the operator. This value is ignored for SHOPs, which
-take no inputs. The `-T` [command line option](vcc.html#otl)
-overrides this pragma.
-
-```vex
-#pragma opmininputs 1
-#pragma opmaxinputs 4
-
-```
-
-# pragma opname and #pragma oplabel
-
-## opname
-
-`#pragma opname "text"`
-
-Specifies the internal operator name of this operator type. By default
-the compiler uses the name of the source file. vcc’s `-n` [command line
-option](vcc.html#otl) overrides this pragma.
-
-`#pragma oplabel "text"`
-
-Specifies a descriptive name for this operator type. By default the
-compiler uses internal operator name. vcc’s `-N` [command line
-option](vcc.html#otl) overrides this pragma.
-
-```vex
-#pragma opname "myshop"
-#pragma oplabel "My New Shop"
-
-```
-
-# pragma opscript
-
-## opscript
-
-`#pragma opscript "text"`
-
-If this operator type is a shader that can be used from renderers other
-than mantra, this pragma lets you set the name of the shader file that
-the renderer should look for. If you use this pragma, the operator type
-name does not need to match the shader file name. vcc’s `-S`
-[command line option](vcc.html#otl) overrides this pragma.
-
-```vex
-#pragma opscript "rman_myshader"
-
-```
-
-# pragma parmhelp parameter_name “text”
-
-## pragma-parmhelp-parameter_name-text
-
-`#pragma parmhelp parameter_name "text"`
-
-Sets the tooltip that appears when the user hovers over
-parameter_name.
-
-```vex
-#pragma parmhelp amp "Increase this value to add more noise."
-displacement bumpy(float amp=0) {
-...
-}
-
-```
-
-# pragma parmtag
-
-## pragma-parmtag
-
-`#pragma parmtag parmName token value`
-
-Each parameter defined in an operator has a set of token/value tags
-associated with it. This pragma adds a token/value pair to a parameter.
-
-The following tokens are available:
-
-autoscope
-
-A *string* of ones or zeros (for example “1011”) corresponding
-to each component of the parameter. 1 means the parameter is
-auto-added to the channel list when the node is selected.
-
-If there aren’t enough characters in the string for the number of
-components, the last character will be extended for the remaining
-components. This lets you specify “1” to autoscope all components and “0” to autoscope no components.
-
-If this tag is not defined for a parameter, Houdini guesses if a
-parameter should be scoped or not.
-
-editor
-
-For string parameters, this can be used to show a multi-line editor
-instead of a single-line input field. Specify “1” to enable.
-
-editorlines
-
-If the multi-line editor is shown, this can be used to specify how many
-lines of text are shown. The default value is `10`.
-
-opfilter
-
-For parameters referring to object paths, this provides a filter for
-which types of OPs will be presented in the OP chooser. If you set
-this tag, you should also set the oprelative tag.
-
-This tag is also set by the  `[#pragma hint  oppath|/vex/pragmas]`  pragma, but using a different
-format.
-
-Possible values are:
-
-!!OBJ!!
-
-Only show objects
-
-!!OBJ/GEOMETRY!!
-
-Only show geometry objects
-
-!!OBJ/LIGHT!!
-
-Only show light objects
-
-!!OBJ/CAMERA!!
-
-Only show camera objects (lights are considered cameras)
-
-!!OBJ/BONE!!
-
-Only show bone objects
-
-!!OBJ/FORCE!!
-
-Only show force objects
-
-!!SOP!!
-
-Only show SOPs
-
-!!CHOP!!
-
-Only show CHOPs
-
-!!COP2!!
-
-Only show COPs
-
-!!VOP!!
-
-Only show VOPs
-
-!!ROP!!
-
-Only show output drivers (ROPs)
-
-!!DOP!!
-
-Only show DOPs
-
-!!SHOP!!
-
-Only show SHOPs
-
-!!SHOP/ATMOSPHERE!!
-
-Only show atmosphere shader SHOPs
-
-!!SHOP/BACKGROUND!!
-
-Only show background shader SHOPs
-
-!!SHOP/CONTOUR!!
-
-Only show contour shader SHOPs
-
-!!SHOP/CONTOUR_CONTRAST!!
-
-Only show contour-contrast shader SHOPs
-
-!!SHOP/CONTOUR_STORE!!
-
-Only show contour-store shader SHOPs
-
-!!SHOP/DISPLACEMENT!!
-
-Only show displacement shader SHOPs
-
-!!SHOP/EMITTER!!
-
-Only show emitter shader SHOPs
-
-!!SHOP/GEOMETRY!!
-
-Only show geometry shader SHOPs
-
-!!SHOP/IMAGE3D!!
-
-Only show image3d shader SHOPs
-
-!!SHOP/LENS!!
-
-Only show lens shader SHOPs
-
-!!SHOP/LIGHT!!
-
-Only show light shader SHOPs
-
-!!SHOP/LIGHT_SHADOW!!
-
-Only show light-shadow shader SHOPs
-
-!!SHOP/OUTPUT!!
-
-Only show output shader SHOPs
-
-!!SHOP/PHOTON!!
-
-Only show photon shader SHOPs
-
-!!SHOP/PHOTON_VOLUME!!
-
-Only show photon volume shader SHOPs
-
-!!SHOP/SURFACE!!
-
-Only show surface shader SHOPs
-
-!!SHOP/SURFACE_SHADOW!!
-
-Only show surface-shadow shader SHOPs
-
-oprelative
-
-How paths should be resolved. Typically, the value of this token is
-“.” so that paths are resolved relative to the current operator.
-However, when referencing objects you can set the tag to “/obj”. See
-the example below.
-
-opexpand
-
-In SHOPs, causes “oplist” parameters to be expanded to the full path
-names. If a bundle or pattern is chosen, the pattern will be
-expanded before it’s sent to the renderer. See the example below.
-
-opfullpath
-
-When used in conjunction with the opexpand tag, causes the path
-names of the objects to be fully qualified rather than relative to
-the value of the oprelative tag. See the example below.
-
-rampshowcontrolsdefault
-
-Allows you to automatically hide ramp parameter controls, using a value of `1` or `0`.
-
-script_callback
-
-The callback script associated with the parameter. See [#pragma
-callback](pragmas.html#callback).
-
-script_ritype
-
-Used when generating RIB streams and mapping the parameter to an
-appropriate renderman type specification. The value should be a
-valid renderman type (for example, “uniform color”).
-
-script_unquoted
-
-In VOP definitions, indicates the string parameter should be used in
-an unquoted form. This allows strings from menus to be placed
-verbatim in the code block (see the trig VOP).
-
-sop_input
-
-Used internally by SOPs to determine the place to search for groups
-when building a group menu of points/primitives.
-
-```vex
-#pragma parmtag lightmask opfilter "!!OBJ/LIGHT!!"
-#pragma parmtag lightmask oprelative "/obj"
-#pragma parmtag lightmask opexpand 1
-#pragma parmtag reflectmask opfilter "!!OBJ/GEOMETRY!!"
-#pragma parmtag reflectmask opexpand 1
-#pragma parmtag reflectmask opfullpath 1
-
-```
-
-# pragma ramp
-
-## ramp
-
-Creates a [ramp parameter](../network/ramps.html "Explains the tricks to working with ramp parameters.") and connects it to shader
-function arguments.
-
-- `#pragma ramp_rgb ramp_parm basis_parm keys_parm values_parm`
-- `#pragma ramp_flt ramp_parm basis_parm keys_parm values_parm`
-
-```vex
-#pragma ramp_rgb color color_the_basis_strings color_the_key_positions color_the_key_values
-
-surface
-sky(
-    string color_the_basis_strings[] = { "linear", "linear" };
-    float color_the_key_positions[] = { 0, 1};
-    vector color_the_key_values[] = { {0,0,0}, {0,0,1} };
-) { ... }
-
-```
-
-Unlike most other pragmas which set up UI for parameters defined in the shader,
-the ramp pragma creates a new UI element in Houdini.
-
-ramp_parm
-
-The name of the ramp parameter in the Houdini UI. It cannot conflict with any
-parameters defined on the shader (or other ramps of course).
-
-basis_parm
-
-A parameter containing an array of strings. These strings determine the basis
-values for each key (i.e. “linear”, “constant”). If a constant basis is to be
-specified, then the basis_parm argument can be given as an empty string
-(i.e. “”). However, the UI may not necessarily reflect this fact.
-
-keys_parm
-
-A parameter containing an array of floats. If the spline is uniform
-(i.e. has no keys), the keys_parm argument may be given as an empty string
-(i.e. “”). However, the UI may not necessarily reflect this fact.
-
-values_parm
-
-A parameter containing an array of floats or an array of vectors.
-Unlike the basis or key parameter, this is mandatory.
-
-Default values are currently not supported by Houdini ramp parameters, so the
-initial values given are not passed through to the UI.
-
-Although the values aren’t passed, the number of keys given in the values
-parameter will be used to set the initial number of keys in the ramp.
-
-See [ramp parameters](../network/ramps.html "Explains the tricks to working with ramp parameters.") for more information.
-
-# pragma range
-
-## pragma-range
-
-`#pragma range parameter_name[!] min_value max_value[!]`
-
-Defines the ideal range for the parameter. If you append `!`
-to a value, the parameter value will be clamped at that range.
-The UI also uses this information to set the range of the slider.
-
-```vex
-#pragma range seed    0 10
-#pragma range roughness 0.001! 1!
-#pragma range gamma     0.001! 10
-
-```
-
-# pragma rendermask
-
-## pragma-rendermask
-
-`#pragma rendermask (VMantra | RIB | OGL)`
-
-This pragma is only useful for SHOP dialog generation. Each SHOP has a
-mask defining which renderers can use the SHOP. It is possible to have a
-similar shader written in the RenderMan shading language and also in VEX
-(or another shading language). In this case, the rendermask can be
-specified to include more than just VMantra.
-
-The rendermask parameter is closely bound to the code which generates
-scene descriptions for a renderer. Thus, the renderer names are quite
-specific. The renderers which support SHOPs are…
-
-RIB
-
-RIB generation for RenderMan compliant renderers.
-
-VMantra
-
-The version of mantra which uses VEX for shading.
-
-OGL
-
-OpenGL rendering. This is a special renderer which automatically
-adds itself to most render masks. There is currently no way to
-prevent this.
-
-# pragma optable
-
-## pragma-optable
-
-`#pragma optable vop`
-
-This pragma can be used to indicate which operator type to generate.
-Currently the only supported option is `vop` meaning to create a VOP
-operator.
-
-VOP otls generated using this option have a very specific structure:
-
-- The inputs on the VOP are generated from non-export shader parameters
-- The outputs on the VOP are generated from export shader parameters
-- The parameters on the VOP are created for all non-export shader parameters, with UI generation working the same way it does for SHOP operators
-- The outer code imports the shader function from an external file using the [import](shadercalls.html) directive
-- The inner code calls this shader using the [shader call](shadercalls.html) syntax
-
-Since the implementation of the shader is not actually stored in the
-generated VOP, it must be accessible through an external .vfl or .vex file
-for the VOP to work correctly. Placing the .vfl or compiled .vex file for
-the shader in a location accessible to the VEX search path will meet this
-requirement.
-
-# pragma rename
-
-## pragma-rename
-
-`#pragma rename oldname newname`
-
-Specify a different name for the operator parameter than is used in the
-shader interface. This directive should occur after all other `#pragmas`
-referring to that parameter.
-
-When using `#pragma optable vop`, this can be useful to allow a VOP input
-or output to use the same name as a VEX global variable, since such a name
-collision is valid in VOPs but not in VEX.
-
-How to create menus for parameters
-
-## how-to-create-menus-for-parameters
-
-You can define choice pragmas to create a menu UI for a parameter.
-
-You build the list for a parameter by doing one of the following:
-
-- Use multiple choice pragmas for a parameter to create menu items
-  (`choice`, `choicescript`, `choicereplace`, `choicetoggle`).
-- Use one choicescript pragmas for a parameter to create a
-  script that creates the menu items (`choicescript`,
-  `choicereplacescript`, `choicetogglescript`).
-  This script is run whenever Houdini needs to generate the menu entries
-  (i.e. the generated values are not cached) so this script should be as
-  efficient as possible. The output of the script must be a series of
-  value/label pairs, which have the same meaning as the value and label
-  fields in the choice pragma.
-
-The plain `choice` pragma creates a UI that only allows the user to
-choose values from the menu. The `choicereplace` pragma creates UI with
-a menu but also lets the user enter a different value manually. The
-`choicetoggle` pragma allows user input, but also provides a menu where
-choosing a menu item adds or removes it to/from the input.
-
-`#pragma choice parameter_name "value" "label"`
-
-Adds a menu item for parameter_name. Displays a menu of mutually exclusive choices.
-
-`#pragma choicescript parameter_name language "scriptline"`
-
-Defines a script that will generate menu items for
-parameter_name. language can be either `python` or
-`hscript`. Displays a menu of mutually exclusive choices.
-
-`#pragma choicereplace parameter_name "value" "label"`
-
-Adds a menu item for parameter_name.
-Displays a UI where the user can choose an item from the menu or input their own.
-
-`#pragma choicereplacescript parameter_name "scriptline"`
-
-Defines a line in a script that will generate menu items for parameter_name.
-Displays a UI where the user can choose an item from the menu or input their own.
-
-`#pragma choicetoggle parameter_name "value" "label"`
-
-Adds a menu item for parameter_name.
-Displays a menu of choices that add/remove items to/from the user input.
-
-`#pragma choicetogglescript parameter_name "scriptline"`
-
-Defines a line in a script that will generate menu items for parameter_name.
-Displays a menu of choices that add/remove items to/from the user input.
-
-```vex
-#pragma choice operation "over"    "Composite A Over B"
-#pragma choice operation "under"    "Composite A Under B"
-#pragma choice operation "add"    "Add A and B"
-#pragma choice operation "sub"    "Subtract A from B"
-cop texture(string operation="over")
-{
-if (operation == "over") ...    // texture coordinates
-if (operation == "under") ...    // parametric coordinates
-if (operation == "add")     ...    // orthographic
-if (operation == "sub")     ...    // polar
-}
-
-```
-
-This would define a menu for the parameter “operation”. The menu would
-consist of 4 entries. The values for the string parameter would be one
-of “over”, “under”, “add” or “sub”. However, the user would be presented
-with more meaningful labels for the operation types.
-
-```vex
-#pragma choice operation "0"    "Use texture coordinates"
-#pragma choice operation "1"    "Use parametric coordinates"
-#pragma choice operation "2"    "Orthographic Projection"
-#pragma choice operation "3"    "Polar Projection"
-sop texture(int operation=0)
-{
-if (operation == 0) ...    // texture coordinates
-if (operation == 1) ...    // parametric coordinates
-if (operation == 2) ...    // orthographic
-if (operation == 3) ...    // polar
-}
-
-```
-
-Note
-You can use pragmas other than choicereplace and choicetoggle to
-create menus for integer parameters, but the menu items ignore the
-labels and simply number the choices starting at 0. The
-choicereplace and choicetoggle pragmas are only valid for string
-parameters.
-
-`#pragma ophidewhen 1`
-
-Adding this pragma to a VOP’s outer code makes the VOP input visibility
-follow parameter visibility defined by the hidewhen conditionnals. Inputs
-must have parameter with matching names.
-
-`#pragma opextraparm type name_format parm_name0 parm_name1 ...`
-
-Add this pragma to a VOP’s outer code to define an external parameter binding.
-type is a vex variable type.
-name_format is a simple formatting string without spaces that can include %d or %s special character to refer to node parameter values.
-parm_name0 and other trailing arguments are parameter names to use to fill the %d and %s special characters in name_format.
-
-Operator list filters
-
-## operator-list-filters
-
-These are the parameters you can use for the opfilter argument of
-certain pragmas.
-
-obj
-
-Any object.
-
-sop
-
-Any SOP.
-
-chop
-
-Any CHOP.
-
-cop
-
-Any COP.
-
-vop
-
-Any VOP.
-
-rop
-
-Any ROP.
-
-obj/geo
-
-Any Geometry object.
-
-obj/null
-
-Any Null object.
-
-obj/light
-
-Any light.
-
-obj/camera
-
-Any camera.
-
-obj/fog
-
-Any Fog object.
-
-obj/bone
-
-Any bone.
-
-shop/surface
-
-Any surface SHOP.
-
-shop/displace
-
-Any Displace SHOP.
-
-shop/interior
-
-Any Interior SHOP.
-
-shop/light
-
-Any Light SHOP.
-
-shop/shadow
-
-Any Shadow SHOP.
-
-shop/fog
-
-Any Atmosphere SHOP.
-
-shop/photon
-
-Any Photon SHOP.
-
-shop/image3d
-
-Any Image3D SHOP.
+```vex  
+#pragma opname "myshop"  
+#pragma oplabel "我的新商店

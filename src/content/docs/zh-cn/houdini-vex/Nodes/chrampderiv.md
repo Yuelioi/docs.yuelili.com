@@ -2,7 +2,7 @@
 title: chrampderiv
 order: 15
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `float  chrampderiv(string channel, float ramppos)`
@@ -13,10 +13,9 @@ order: 15
 
 `vector  chrampderiv(string channel, float ramppos, float time)`
 
-Evaluates the derivative of a parm parameter with respect to position.
+计算参数相对于位置的导数。
 
-The ramppos is where on the ramp to evaluate. The ramppos is clamped to the range `[0,1]`
+ramppos 表示在渐变上的求值位置，该值会被限制在 `[0,1]` 范围内。
 
-The time parameter can be used if the ramp is animated to evaluate
-at other than the current time.
-Note that this does not take a derivative with respect to time.
+如果渐变是动态变化的，可以使用 time 参数来指定非当前时间的求值时刻。
+注意：这里的导数不是相对于时间的导数。

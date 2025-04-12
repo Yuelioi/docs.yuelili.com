@@ -7,18 +7,12 @@ order: 1
 
 `string  json_dumps(dict d, int flags)`
 
-Converts the dictionary into a JSON-compatible string. Because JSON
-is not typed, but VEX dictionaries are, there are two formats to convert
-to. The fully-typed format has each dictionary value correspond to
-a map with a “type” and “value” explicitly provided, allowing full
-round tripping. The compact format omits this, which means when
-converting back guesses have to be performed, so things like vectors
-will become float arrays.
+将字典转换为JSON兼容的字符串。由于JSON是无类型的，而VEX字典是有类型的，因此有两种转换格式。完全类型化的格式会使每个字典值对应一个明确提供"type"和"value"的映射，允许完整的往返转换。紧凑格式会省略这些信息，这意味着在转换回来时必须进行猜测，因此像向量这样的内容会变成浮点数组。
 
-The possible flag values are:
+可用的标志值包括：
 
-| `0` | Fully typed JSON on a single line. |
+| `0` | 单行完全类型化JSON |
 | --- | --- |
-| `1` | Fully typed JSON on multiple lines. |
-| `2` | Compact typeless JSON on a single line. |
-| `3` | Compact typeless JSON on multiple lines. |
+| `1` | 多行完全类型化JSON |
+| `2` | 单行紧凑无类型JSON |
+| `3` | 多行紧凑无类型JSON |

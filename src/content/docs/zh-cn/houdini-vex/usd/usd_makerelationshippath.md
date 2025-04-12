@@ -2,37 +2,35 @@
 title: usd_makerelationshippath
 order: 89
 ---
-| Since | 18.0 |
+| 版本 | 18.0 |
 | --- | --- |
 
 `string  usd_makerelationshippath(<stage>stage, string primpath, string name)`
 
-This function returns the full path of a given relationship.
+该函数返回指定关系的完整路径。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，该参数可以是表示输入编号的整数（从0开始）以读取对应输入的舞台。该整数等价于使用字符串形式引用特定输入，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+该参数也可用于引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已烹饪舞台（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+图元路径。
 
 `name`
 
-Relationship name.
+关系名称。
 
-Returns
+返回值
 
-The full path of a given relationship.
+给定关系的完整路径。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Obtain the full path to the relationship "relationship_name" on the cube primitive.
+// 获取立方体图元上"relationship_name"关系的完整路径
 string relationship_path = usd_makerelationshippath(0, "/geo/cube", "relationship_name");
 
 ```

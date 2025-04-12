@@ -2,33 +2,32 @@
 title: usd_collectionincludes
 order: 35
 ---
-| Since | 18.0 |
+
+| 版本 | 18.0 |
 | --- | --- |
 
 `string [] usd_collectionincludes(<stage>stage, string collectionpath)`
 
-This function returns the collection’s include list.
+此函数返回集合的包含列表。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取对应输入的stage。该整数等同于以字符串形式引用特定输入，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的cooked stage（例如"op:/stage/lop_node"）。
 
 `collectionpath`
 
-The path to the collection.
+集合的路径。
 
-Returns
+返回值
 
-The collection’s include list.
+集合的包含列表。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get collection's include list.
+// 获取集合的包含列表
 string collection_path = usd_makecollectionpath(0, "/geo/cube", "some_collection");
 string include_list[]  = usd_collectionincludes(0, collection_path);
 

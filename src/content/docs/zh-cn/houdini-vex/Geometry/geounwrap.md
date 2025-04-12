@@ -4,11 +4,11 @@ order: 6
 ---
 `string  geounwrap(<geometry>geometry, string unwrap_attribute)`
 
-Returns an oppath string that will cause the file or geometry to be unwrapped inplace based on a vector attribute.
-This function adds an “unwrap:attrname” prefix followed by the unwrap_attribute to the path.
-path can be a filename, an oppath with the “op:” prefix or an opinput.
-An input index can be supplied instead of a string.
+返回一个oppath字符串，该字符串将基于矢量属性使文件或几何体在原地展开。
+此函数会在路径前添加"unwrap:attrname"前缀，后接unwrap_attribute。
+路径可以是文件名、带有"op:"前缀的oppath或opinput。
+也可以提供输入索引代替字符串。
 
-Adding an “unwrap:attrname” prefix to an oppath will create a copy of the geometry and overwrite the point positions based on the unwrap attribute. The topology can change, if the attribute is a vertex attribute.
+在oppath前添加"unwrap:attrname"前缀会创建几何体的副本，并根据展开属性覆盖点位置。如果该属性是顶点属性，拓扑结构可能会发生变化。
 
-This then enables all the vex functions working on the point positions to work in a custom space such as UV space or Color space.
+这使得所有处理点位置的VEX函数都能在自定义空间(如UV空间或颜色空间)中工作。

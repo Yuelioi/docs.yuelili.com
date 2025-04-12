@@ -2,24 +2,20 @@
 title: dimport
 order: 1
 ---
-| Context(s) | [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
+
+| 上下文环境 | [雾效](../contexts/fog.html)  [光照](../contexts/light.html)  [阴影](../contexts/shadow.html)  [表面](../contexts/surface.html) |
 | --- | --- |
 
 `int  dimport(string name, <type>&out)`
 
-Reads a variable from the displacement shader for the surface.
+从表面着色器的置换着色器中读取变量。
 
-Mantra runs the shaders for a surface in a fixed order:
+Mantra 按照固定顺序运行表面着色器：
 
-1. Displacement
-1. Surface (possibly calling light shaders in `illuminance` loops)
-1. Fog (possibly calling light shaders in `illuminance` loops)
+1. 置换着色器
+2. 表面着色器（可能在 `illuminance` 循环中调用光照着色器）
+3. 雾效着色器（可能在 `illuminance` 循环中调用光照着色器）
 
-Once the displacement shader has run, you can use `dimport`
-to retrieve exported variables from it. Once the surface shader
-has run, you can use [simport](simport.html "Imports a variable sent by a surface shader in an illuminance loop.") to retrieve exported variables
-from it.
+当置换着色器运行完成后，可以使用 `dimport` 从中检索导出的变量。当表面着色器运行完成后，可以使用 [simport](simport.html "导入在illuminance循环中由表面着色器发送的变量。") 从中检索导出的变量。
 
-If the shader variable named by the first argument is defined and
-exported, the function returns 1 and puts the value in the second
-argument. Otherwise, it returns 0.
+如果第一个参数指定的着色器变量已定义且已导出，该函数将返回 1 并将值存入第二个参数。否则返回 0。

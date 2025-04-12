@@ -4,14 +4,14 @@ order: 29
 ---
 `int  idtopoint(<geometry>geometry, int id)`
 
-Returns the number of the point with the given value in the `id` attribute. Returns `-1` if no point has the given ID.
+返回具有给定`id`属性值的点的编号。如果没有点具有该ID，则返回`-1`。
 
-If the geometry doesn’t have an `id` attribute, point numbers are used as ids. In this case, the function will return the given `id` value, unless it is greater than the number of points in the source geometry, in which case the function will return `-1`.
+如果几何体没有`id`属性，则使用点编号作为id。在这种情况下，函数将返回给定的`id`值，除非该值大于源几何体中的点数，此时函数将返回`-1`。
 
-To look up a point by its `name` attribute value, use [nametopoint](nametopoint.html "Finds a point by its name attribute."). To look up a point by an arbitrary string or int attribute value, use [findattribval](findattribval.html "Finds a primitive/point/vertex that has a certain attribute value.").
+要通过`name`属性值查找点，请使用[nametopoint](nametopoint.html "通过name属性查找点")。要通过任意字符串或整数属性值查找点，请使用[findattribval](findattribval.html "查找具有特定属性值的图元/点/顶点")。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个整数，表示要从中读取几何体的输入编号（从0开始）。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是一个字符串，指定要从中读取的几何体文件（例如`.bgeo`）。在Houdini内部运行时，可以是`op:/path/to/sop`引用。

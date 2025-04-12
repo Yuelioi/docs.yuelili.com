@@ -6,27 +6,25 @@ order: 10
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号的整数（从0开始）以读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何体文件（例如`.bgeo`文件）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `hedge`
 
-Input half-edge.
+输入半边。
 
-Returns
+返回值
 
-The vertex number of the vertex that comes after the destination vertex of the half-edge `hedge` in the primitive that contains `hedge`.
-Returns `-1` if the half-edge is not valid.
+返回包含半边`hedge`的图元中，该半边目标顶点之后的下一个顶点的顶点编号。
+如果半边无效，则返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 int postdstvtx;
 
-// Get the destination vertex half-edge number 3.
+// 获取半边3的目标顶点之后的下一个顶点编号
 postdstvtx = hedge_postdstvertex("defgeo.bgeo", 3);
 
 ```

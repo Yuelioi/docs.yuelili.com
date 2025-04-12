@@ -2,36 +2,34 @@
 title: usd_metadatanames
 order: 95
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `string [] usd_metadatanames(<stage>stage, string path)`
 
-This function returns the metadata names that are available on the given USD object.
+此函数返回给定USD对象上可用的元数据名称。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，此参数可以是表示输入编号的整数（从0开始）以读取对应的stage。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或使用`op:`作为路径前缀引用其他LOP节点已处理的stage（例如"op:/stage/lop_node"）。
 
 `path`
 
-The path to the object. I.e, a primitive, an attribute, or a relationship.
+目标对象的路径。即可以是基元(primitive)、属性(attribute)或关系(relationship)。
 
-Returns
+返回值
 
-String array containing the names of the object’s metadata.
+包含对象元数据名称的字符串数组。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the metadata names from the primitive.
+// 从基元获取元数据名称
 string prim_metadata_names[] = usd_metadatanames(0, "/geo/sphere");
 
-// Get the metadata names from the attribute.
+// 从属性获取元数据名称
 string attrib_path = usd_makeattribpath(0, "/geo/sphere", "attrib_name");
 string attrib_metadata_names[] = usd_metadatanames(0, attrib_path);
 

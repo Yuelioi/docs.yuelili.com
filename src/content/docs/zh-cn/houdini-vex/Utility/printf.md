@@ -4,79 +4,64 @@ order: 12
 ---
 `void  printf(string format, ...)`
 
-The format string is a simpler version of the C `printf` format string.
-When a `%` symbol is found in the string, an argument will be printed
-out in a format specified by the characters following the `%` symbol.
-The conversion of the argument is specified by a single letter: `g`, `f`,
-`s`, `d`, `x`, `c`, `p`.
+格式字符串是C语言`printf`格式字符串的简化版本。
+当字符串中出现`%`符号时，将按照`%`符号后的字符指定的格式输出参数。
+参数转换由单个字母指定：`g`、`f`、`s`、`d`、`x`、`c`、`p`。
 
-You can prefix the format option with an optional prefix characters to control
-the formatting of the output. The general form of a prefix is
-`[flags][width][.precision][format]`, where Flags can be:
+您可以在格式选项前添加可选的前缀字符来控制输出格式。前缀的一般形式为
+`[标志][宽度][.精度][格式]`，其中标志可以是：
 
-- `-`: The result will be left justified in the field
-- `+`: A numeric value will be prefixed with either `+` for positive
-  values. A non-standard behavior of this flag is that string
-  arguments will be quoted when the `+` flag is set.
-- `0`: For numeric values, leading zeros are used to pad the field.
+- `-`：结果将在字段中左对齐
+- `+`：数值前将添加`+`表示正值。该标志的一个非标准行为是，当设置`+`标志时，字符串参数将被引号包围。
+- `0`：对于数值，使用前导零填充字段。
 
-Width
+宽度
 
-The width can be specified by one or more decimal digits. Alternately, if
-an asterisk (`*`) is given, the width will be taken from the next value
-in the `printf` argument list.
+宽度可以通过一个或多个十进制数字指定。或者，如果给出星号（`*`），宽度将从`printf`参数列表中的下一个值获取。
 
-Precision
+精度
 
-The precision can be specified by one or more decimal digits. Alternately,
-if an asterisk (`*`) is given, the width will be taken from the next value
-in the `printf` argument list.
+精度可以通过一个或多个十进制数字指定。或者，如果给出星号（`*`），宽度将从`printf`参数列表中的下一个值获取。
 
-The different format characters supported are
+支持的不同格式字符有：
 
-`%g`, `%p`, `%c`
+`%g`、`%p`、`%c`
 
-Print an integer float, vector, vector4, matrix3, matrix or string
-in “general” form.
+以"通用"形式打印整数、浮点数、向量、vector4、matrix3、矩阵或字符串。
 
-`%f`, `%e`, `%E`
+`%f`、`%e`、`%E`
 
-Print a float, vector, vector4, matrix3 or matrix in floating point
-form.
+以浮点数形式打印浮点数、向量、vector4、matrix3或矩阵。
 
 `%s`
 
-Print a string.
+打印字符串。
 
-`%d`, `%i`
+`%d`、`%i`
 
-Print an integer variable in decimal.
+以十进制形式打印整数变量。
 
-`%x`, `%X`
+`%x`、`%X`
 
-Print an integer variable in hexidecimal. The value will be prefixed with
-“0x” (i.e. 0×42).
+以十六进制形式打印整数变量。值前将添加"0x"前缀（例如0×42）。
 
 `%o`
 
-Print an integer variable in octal.
+以八进制形式打印整数变量。
 
 `%%`
 
-Print a percent sign (%).
+打印百分号（%）。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 printf("P = %g, dot(N, P) = %g, %d = %x\n", P, dot(N, P), ptnum, ptnum);
 printf("RGB = {%g,%g,%g}\n", clr.r, clr.g, clr.b);
 printf("P = %20s\n", "20 chars");
-printf("%-+20s\n", "Left justified and quoted");
+printf("%-+20s\n", "左对齐并加引号");
 printf("%+08.3g\n", velocity);
 printf("%*.*g\n", width, precision, value);
 Cf = texture(sprintf("/maps/map%d.rat", i));
 Cf = texture(sprintf("/maps/map%04d.rat", i));
-
 ```

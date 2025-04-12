@@ -1,5 +1,5 @@
 ---
-title: abs
+title: abs绝对值函数
 order: 4
 ---
 `int  abs(int n)`
@@ -8,27 +8,25 @@ order: 4
 
 `<vector> abs(<vector>v)`
 
-Returns the absolute (positive) equivalent of the number. For vectors, this is done per-component.
+返回数字的绝对（正）值。对于向量，会逐分量计算绝对值。
 
-Examples
+## 示例
 
-## examples
-
-Scalar example
+标量示例
 
 ```vex
 if (abs(n) > 1) {
-    // n is greater than 1 or less than -1
+    // n大于1或小于-1
 }
 
 ```
 
-Vector example
+向量示例
 
 ```vex
 vector v = {1.0, -0.5, 1.1}
 if (abs(v) > 1.0) {
-    // vector is greater than unit scale
+    // 向量的绝对值大于单位尺度
 }
 
 ```

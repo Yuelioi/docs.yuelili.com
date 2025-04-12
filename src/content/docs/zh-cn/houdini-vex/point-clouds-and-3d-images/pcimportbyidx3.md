@@ -4,7 +4,6 @@ order: 15
 ---
 `matrix3  pcimportbyidx3(int handle, string channel_name, int idx)`
 
-After a [pcopen](pcopen.html "Returns a handle to a point cloud file.") and a [pcnumfound](pcnumfound.html "This node returns the number of points found by pcopen."), this can be used to extract
-specific search results from the found points.
+在[pcopen](pcopen.html "返回点云文件的句柄")和[pcnumfound](pcnumfound.html "该节点返回pcopen找到的点数")之后，可以使用此函数从找到的点中提取特定的搜索结果。
 
-This will return 0 if the channel doesn’t exist.
+如果通道不存在，将返回0。

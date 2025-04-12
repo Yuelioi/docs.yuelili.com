@@ -2,9 +2,9 @@
 title: getscope
 order: 32
 ---
-| Context(s) | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
+| 上下文环境 | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
 | --- | --- |
 
 `void  getscope(material mat, string raystyle, string &scope, string &categories)`
 
-Given a material handle, determine the objects which are visible for a given raystyle (“diffuse”, “reflect”, or “refract”). The object selection is given by the scope/categories returned.
+给定一个材质句柄，确定特定光线类型（"diffuse"漫反射、"reflect"反射或"refract"折射）下可见的对象。对象选择由返回的scope/categories参数决定。

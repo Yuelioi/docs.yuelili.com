@@ -8,4 +8,4 @@ order: 25
 
 `string [] re_findall(string regex, string input, int start, int end)`
 
-Returns an array of all strings that match the entire `regex` expression (no capture groups).
+返回所有匹配整个`regex`表达式（无捕获组）的字符串数组。

@@ -6,20 +6,20 @@ order: 43
 
 `float  min(float value1, float value2, ...)`
 
-Returns the minimum of the arguments.
+返回参数中的最小值。
 
 `<vector> min(<vector>value1, <vector>value2, ...)`
 
-Returns a vector where each component is the minimum of the corresponding components in the arguments.
+返回一个向量，其每个分量是参数中对应分量的最小值。
 
 `<type> min(<type>values[])`
 
-Returns the minimum value in the array.
+返回数组中的最小值。
 
 `float  min(<vector>v)`
 
-Returns the minimum of the vector’s components.
+返回向量各分量中的最小值。
 
 `<type> min(<type>value)`
 
-Returns the argument.
+返回参数本身。

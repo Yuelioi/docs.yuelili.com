@@ -2,7 +2,7 @@
 title: random_brj
 order: 31
 ---
-| Since | 18.5 |
+| 始于版本 | 18.5 |
 | --- | --- |
 
 `float  random_brj(float seed, int offset)`
@@ -29,11 +29,10 @@ order: 31
 
 `vector  random_brj(vector seed, int offset)`
 
-When generating a sequence of random numbers you will notice that it tends to
-clump. However, sometimes you want a bunch of samples that are better distributed. A binary random jittered (BRJ) sample is a series of random numbers which are relatively evenly distributed, similar to `random_sobol()`.
+在生成随机数序列时，您可能会注意到它们往往会出现聚集现象。然而，有时您需要一组分布更均匀的样本。二进制随机抖动（BRJ）样本是一系列相对均匀分布的随机数，类似于`random_sobol()`。
 
-The seed allows you to generate different sequences. If it is a floating point seed, note very small differences will select very different sequences.
+种子参数允许您生成不同的序列。如果使用浮点数作为种子，请注意微小的差异会导致生成完全不同的序列。
 
-The offset is which entry in the sequence to extract. This should be an integer sequence, like `ptnum`, in order for the distribution property to work.
+偏移量参数表示要从序列中提取的条目位置。为了保持分布特性，这应该是一个整数序列，例如`ptnum`。
 
-Each number is in the `[0..1)` range.
+每个数字的取值范围是`[0..1)`。

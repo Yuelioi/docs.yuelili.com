@@ -6,8 +6,4 @@ order: 41
 
 `void  makebasis(vector &xaxis, vector &yaxis, vector zaxis, vector u)`
 
-Completes an orthonormal basis for the given `zaxis` vector consisting of
-the `xaxis` and `yaxis` basis vectors. When only the `zaxis` vector is
-given, the basis will have an arbitrary orientation. When a second vector
-`u` is provided, the `yaxis` vector will be constrained so that it is aligned
-with that vector.
+为给定的 `zaxis` 向量补全一个由 `xaxis` 和 `yaxis` 基向量组成的标准正交基。当仅提供 `zaxis` 向量时，基的朝向将是任意的。当提供第二个向量 `u` 时，`yaxis` 向量将被约束为与该向量对齐。

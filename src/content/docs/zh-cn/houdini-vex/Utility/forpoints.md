@@ -1,9 +1,8 @@
 ---
-title: forpoints
+title: forpoints循环
 order: 4
 ---
-In the [image3d context](../contexts/image3d.html "Obsolete. Write a program for use with the i3dgen program to generate 3D
-textures."), when geometry is specified (i.e. metaball geometry or particles), you can iterate over the metaballs which affect a point in space.
+在[image3d上下文](../contexts/image3d.html "已废弃。编写与i3dgen程序配合使用的程序来生成3D纹理")中，当指定了几何体（即元球几何体或粒子）时，您可以遍历影响空间中某点的所有元球。
 
 ```vex
 forpoints ( position [, distance] ) {
@@ -12,15 +11,13 @@ forpoints ( position [, distance] ) {
 
 ```
 
-…where the position is a vector representing a point in space. The statement will be executed once for each metaball/particle at the position passed in.
+...其中position是表示空间点的向量。该语句会对传入位置处的每个元球/粒子执行一次。
 
-If you specify the distance, all metaballs/particles within the distance of the point specified will be iterated through. The distance parameter is optional and may result in slower execution of the shader.
+如果指定了distance参数，则会遍历指定点距离范围内的所有元球/粒子。distance参数是可选的，可能会导致着色器执行速度变慢。
 
-Inside the loop, you can call the [mdensity](mdensity.html "Returns the density of the metaball field if metaball geometry is
-specified to i3dgen.") and [mattrib](mattrib.html "Returns the value of the point attribute for the metaballs if
-metaball geometry is specified to i3dgen.") functions to query the contribution of the current point instead of getting a “blended” value.
+在循环内部，您可以调用[mdensity](mdensity.html "如果向i3dgen指定了元球几何体，则返回元球场的密度")和[mattrib](mattrib.html "如果向i3dgen指定了元球几何体，则返回元球点属性的值")函数来查询当前点的贡献值，而不是获取"混合"值。
 
-For example, the following code will take the point color of the metaball which contributes the maximum weight to the point in space:
+例如，以下代码将获取对空间中某点贡献权重最大的元球的点颜色：
 
 ```vex
 float d = 0, max = 0;
@@ -38,5 +35,4 @@ forpoints ( P ) {
 
 ```
 
-Note that when you call [mattrib](mattrib.html "Returns the value of the point attribute for the metaballs if
-metaball geometry is specified to i3dgen.") inside a `forpoints` loop, the attribute is not pre-blended by the density of the metaball.
+请注意，当您在`forpoints`循环内调用[mattrib](mattrib.html "如果向i3dgen指定了元球几何体，则返回元球点属性的值")时，该属性不会被元球密度预先混合。

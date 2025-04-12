@@ -1,37 +1,37 @@
 ---
-title: perspective
+title: 透视投影
 order: 15
 ---
-| Since | 17.5 |
+| 版本 | 17.5 |
 | --- | --- |
 
 `matrix  perspective(float zoom, float image_aspect, float pixel_aspect, float clip_near, float clip_far)`
 
 `matrix  perspective(float zoom, float image_aspect, float pixel_aspect, float clip_near, float clip_far, vector4 window)`
 
-Create a perspective projection matrix with the given parameters. This can be used to project points onto the so-called NDC coordinates of a camera.
+根据给定参数创建透视投影矩阵。该矩阵可用于将点投影到相机的NDC坐标系中。
 
-To make a single transform from world space to NDC space given a camera matrix and a projection matrix, you would use, `worldToNDC = worldToCamera * projection;`
+若要通过相机矩阵和投影矩阵实现从世界空间到NDC空间的单次变换，可使用公式：`worldToNDC = worldToCamera * projection;`
 
 `zoom`
 
-The zoom for the lens. Sometimes the zoom is expressed in terms of focal and aperture. In this case, `zoom = focal/aperture`.
+镜头缩放值。有时缩放值会以焦距和光圈来表示，此时`zoom = focal/aperture`。
 
 arg:image_aspect
 
-The aspect ratio of the image. Sometimes the image_aspect is expressed in terms of `xres` and `yres`. In this case, `image_aspect = xres / yres`.
+图像宽高比。有时图像宽高比会以`xres`和`yres`表示，此时`image_aspect = xres / yres`。
 
 arg::clip_near
 
-The near clipping plane.
+近裁剪平面距离。
 
 arg::clip_far
 
-The far clipping plane.
+远裁剪平面距离。
 
 arg::window
 
-The offset for the projection window encoded in a vector4.
-window.x and window.y are the window min xy coordinates and
-window.z, window.w are the window max xy coordinates.
-This argument is optional and defaults to {0,0,1,1} when not given.
+以vector4格式编码的投影窗口偏移量。
+window.x和window.y表示窗口最小xy坐标，
+window.z和window.w表示窗口最大xy坐标。
+该参数为可选参数，未指定时默认为{0,0,1,1}。

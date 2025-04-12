@@ -6,10 +6,10 @@ order: 8
 
 `vector  volumeindexorigin(<geometry>geometry, string volumename)`
 
-Returns
+返回值
 
-The index of the bottom left of a volume primitive.
-For Volume primitives, this is always zero. However, for VDB primitives,
-this represents the bottom left of their active bounding box of voxels.
+返回体积图元左下角的索引。
+对于Volume图元，该值始终为零。但对于VDB图元，
+该值表示其有效体素包围盒的左下角。
 
-Returns 0 if `primnum` is out of range, the geometry is invalid, or the given primitive is not a volume primitive.
+如果`primnum`超出范围、几何体无效或给定的图元不是体积图元，则返回0。

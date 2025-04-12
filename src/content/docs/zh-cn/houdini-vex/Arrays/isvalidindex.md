@@ -6,10 +6,10 @@ order: 6
 
 `int  isvalidindex(string str, int index)`
 
-Returns `1` if `index` is within range for the given string/array, or `0` otherwise.
+如果给定的字符串/数组的`index`在有效范围内则返回`1`，否则返回`0`。
 
-This is equivalent to `index < len(array) && index >= -len(array)`.
+这相当于`index < len(array) && index >= -len(array)`。
 
 `int  isvalidindex(dict d, string key)`
 
-Returns `1` if the key is in the dictionary, or `0` otherwise.
+如果键存在于字典中则返回`1`，否则返回`0`。

@@ -1,38 +1,30 @@
 ---
-title: reflectlight
+title: 反射光
 order: 62
 ---
-| On this page | * [Area sampling options](#area-sampling-options) * [Ray options](#ray-options) * [Image filtering options](#image-filtering-options) * [Examples](#examples) |
+| 本页内容 | * [区域采样选项](#区域采样选项) * [光线选项](#光线选项) * [图像过滤选项](#图像过滤选项) * [示例](#示例) |
 | --- | --- |
-| Context(s) | [shading](../contexts/shading.html) |
+| 上下文 | [着色](../contexts/shading.html) |
 
 `vector  reflectlight(float bias, float max_contrib, ...)`
 
-bias is typically a small number (for example 0.005) used to help
-eliminate self-reflection. If bias is less than 0, the default
-ray tracing bias specified with the `vm_raybias` setting will be used
-instead.
+bias通常是一个小数值（例如0.005），用于帮助消除自反射。如果bias小于0，则将使用`vm_raybias`设置指定的默认光线追踪偏置值。
 
-max_contrib tells the renderer how much the reflected light will
-contribute to the final color of the pixel. This is typically the
-maximum of the reflection component of a lighting model. This has no
-effect on the resultant color. This value should typically be less than
-1\.
+max_contrib告诉渲染器反射光对像素最终颜色的贡献程度。这通常是光照模型反射分量的最大值。这对结果颜色没有影响。该值通常应小于1。
 
 `vector  reflectlight(vector P, vector D, float bias, float max_contrib, ...)`
 
-A general form which takes a position P and a direction D.
+通用形式，接收位置P和方向D。
 
 `vector  reflectlight(vector P, vector N, vector I, float bias, float max_contrib, ...)`
 
-A general form which takes a position P, direction D, and
-incident angle I and returns the reflection vector.
+通用形式，接收位置P、方向D和入射角I，并返回反射向量。
 
-Area sampling options
+区域采样选项
 
-## area-sampling-options
+## 区域采样选项
 
-For area sampling, you must specify both the angle and sample variadic parameters. For example:
+对于区域采样，必须同时指定角度和采样可变参数。例如：
 
 ```vex
 surface
@@ -43,142 +35,115 @@ blurry_mirror(float angle = 3; int samples = 16; float bias=0.05)
 
 ```
 
-Ray options
+光线选项
 
-## ray-options
+## 光线选项
 
-Tip
-When you specify a texture, such as with the `"environment"` keyword,
-you can also use the image filtering keyword arguments. See [environment](environment.html "Returns the color of the environment texture.")
-for a listing of the image filter keyword arguments.
+提示
+当指定纹理时（例如使用`"environment"`关键字），也可以使用图像过滤关键字参数。参见[environment](environment.html "返回环境纹理的颜色")了解图像过滤关键字参数的列表。
 
-"`scope`",
+"`scope`"，
 `string`
 
-A list of objects which can be hit by the rays. When specified, `scope` overrides the default scope that would have been selected for the given `raystyle`. The `"scope:default"` value will cause the `scope` argument to use the default scope for the current context - as if the argument were not specified.
+可以被光线击中的对象列表。当指定时，`scope`会覆盖给定`raystyle`的默认作用域。`"scope:default"`值将使`scope`参数使用当前上下文的默认作用域——就像没有指定该参数一样。
 
-Allows an override of the [scope](../contexts/shading_contexts.html#scope) for ray-intersections.
-A special scope argument, `scope:self`, will match the currently
-shading object.
+允许覆盖光线相交的[作用域](../contexts/shading_contexts.html#scope)。
+特殊的作用域参数`scope:self`将匹配当前着色对象。
 
-"`currentobject`",
+"`currentobject`"，
 `material`
 
-Used to specify what the current shading object is. For example, when used with the scope argument, `scope:self` will match the object passed in by this argument.
+用于指定当前着色对象是什么。例如，当与作用域参数一起使用时，`scope:self`将匹配通过此参数传入的对象。
 
-"`maxdist`",
+"`maxdist`"，
 `float`
 `=-1`
 
-The maximum distance to search for objects. This can be used to limit the search of objects to nearby objects only. If the `maxdist` given is negative, then it will act as if there is no maximum distance.
+搜索对象的最大距离。这可以用于将对象搜索限制在附近对象。如果给定的`maxdist`为负值，则视为没有最大距离。
 
-Allows an override of the maximum distance the ray can
-travel when testing for intersections. Some functions (such as
-[fastshadow](fastshadow.html "Sends a ray from the position P along the direction specified by the
-direction D.")) have the maximum distance implicitly defined (by
-the length of the ray) and should probably avoid using this
-option. However, this option can be used effectively when
-computing reflections, global illumination, refraction etc.
+允许覆盖测试相交时光线可以行进的最大距离。
+某些函数（如[fastshadow](fastshadow.html "从位置P沿方向D发送光线")）隐式定义了最大距离（由光线长度决定），可能应避免使用此选项。
+然而，此选项在计算反射、全局光照、折射等时可以有效地使用。
 
-"`variancevar`",
+"`variancevar`"，
 `string`
 
-The name of a VEX export variable to use for variance anti-aliasing. The renderer compares the value with adjacent micropolygons in micropolygon rendering to decide what shading points need additional samples (using `vm_variance` [property](../../props/index.html "Properties let you set up flexible and powerful hierarchies of rendering, shading, lighting, and camera parameters.") as a threshold). If more samples are required, the algorithm takes samples up to the specified maximum ray samples.
+用于方差抗锯齿的VEX导出变量名称。渲染器将此值与微多边形渲染中的相邻微多边形进行比较，以决定哪些着色点需要额外采样（使用`vm_variance`[属性](../../props/index.html "属性允许您设置灵活且强大的渲染、着色、光照和相机参数层次结构")作为阈值）。如果需要更多采样，算法会采用指定的最大光线采样数。
 
-This variable must be imported from the hit surface, so it must be in the list of imported names (see “importing information back from the ray” below). If the named variable is not imported, this option will be ignored.
+此变量必须从击中表面导入，因此它必须在导入名称列表中（见下文“从光线导入信息”）。如果未导入命名变量，此选项将被忽略。
 
-Variance antialiasing puts more samples in areas of the image with high variance, for example a sharp shadow edge. It is only used when `vm_dorayvariance` is enabled. Otherwise, only the min ray samples (or an explicitly supplied `"samples"` value) are used for antialiasing of the gather loop.
+方差抗锯齿将更多采样放在图像中高方差区域，例如锐利的阴影边缘。仅在启用`vm_dorayvariance`时使用。否则，仅使用最小光线采样数（或显式提供的`"samples"`值）进行聚集循环的抗锯齿。
 
-Overrides the global variance control (mantra’s -v option)
-which is used to determine anti-aliasing quality of ray tracing.
-For more information please refer to the documentation on
-mantra.
+覆盖全局方差控制（mantra的-v选项），用于确定光线追踪的抗锯齿质量。
+更多信息请参考mantra文档。
 
-"`angle`",
+"`angle`"，
 `float`
 `=0`
 
-The distribution angle (specified in radians). For gather(), rays will be distributed over this angle. For trace(), the angle is used to indicate the rate at which the filter width should increase with increasing intersection distance. Larger angles will cause farther hit surfaces to use larger derivatives, leading to improved texturing and displacement performance.
+分布角度（以弧度指定）。对于gather()，光线将分布在此角度上。对于trace()，该角度用于指示滤波器宽度应随相交距离增加而增加的速率。较大的角度会导致更远的击中表面使用更大的导数，从而提高纹理和位移性能。
 
-To be effective, the samples parameter should also be specified.
+要有效，还应指定samples参数。
 
-"`samples`",
+"`samples`"，
 `int|float`
 `=1`
 
-How many samples should be sent out to filter rays. For the
-irradiance and occlusion functions, specifying a samples
-parameter will override the default irradiance sampling.
+应发送多少采样以过滤光线。对于
+辐照度和遮挡函数，指定samples
+参数将覆盖默认的辐照度采样。
 
-"`environment`",
+"`environment`"，
 `string`
 
-If the ray sent out to the scene misses everything, then
-it’s possible to specify an environment map to evaluate.
+如果发送到场景的光线未击中任何物体，则可以指定一个环境贴图进行评估。
 
-Using the ray’s direction, the environment map specified
-will be evaluated and the resulting color will be returned.
-Most likely, it will be necessary to specify a transform
-space for the environment map evaluations.
+使用光线的方向，将评估指定的环境贴图并返回结果颜色。
+很可能需要为环境贴图评估指定一个变换空间。
 
-In the case of refractlight and trace the Of and Af
-variables will be set to 0 regardless of the background
-color specified. the resulting color.
+对于refractlight和trace，无论指定的背景颜色如何，Of和Af变量都将设置为0。
 
-When an environment map is specified, the filtering options
-from texture() are also supported.
+当指定环境贴图时，也支持texture()的过滤选项。
 
-See [how to create an environment/reflection map](../../render/envmaps.html).
+参见[如何创建环境/反射贴图](../../render/envmaps.html)。
 
-"`envobject`",
+"`envobject`"，
 `string`
 
-If an environment map is used, the orientation of the
-environment map can be specified by transforming the ray
-into the space of another object, light or fog object in the
-scene. In Houdini, null objects can be used to specify the
-orientation. For example:
+如果使用环境贴图，可以通过将光线变换到场景中另一个对象、灯光或雾对象的空间来指定环境贴图的方向。在Houdini中，可以使用空对象来指定方向。例如：
 
 ```vex
 Cf = R*reflectlight(bias, max(R), "environment", "map.rat", "envobject", "null_object_name");
 
 ```
 
-"`envlight`",
+"`envlight`"，
 `string`
 
-If an environment map is used, the orientation of the
-environment map can be specified by transforming the ray
-into the space of a light in the scene.
+如果使用环境贴图，可以通过将光线变换到场景中灯光空间来指定环境贴图的方向。
 
-"`envtint`",
+"`envtint`"，
 `vector`
 
-If an environment map is used, tint it with this color.
+如果使用环境贴图，用此颜色为其着色。
 
-"`background`",
+"`background`"，
 `vector`
 
-If a ray misses all objects, use this as the
-background color of the scene. In the case of refractlight and
-trace the Of and Af variables will be set to 0 regardless of the
-background color specified.
+如果光线未击中任何物体，使用此作为场景的背景颜色。对于refractlight和trace，无论指定的背景颜色如何，Of和Af变量都将设置为0。
 
-"`distribution`",
+"`distribution`"，
 `string`
 
-**Functions**: [irradiance](irradiance.html "Computes irradiance (global illumination) at the point P with the normal N."), [occlusion](occlusion.html "Computes ambient occlusion.")
+**函数**：[irradiance](irradiance.html "在点P处计算辐照度（全局光照），法线为N。"), [occlusion](occlusion.html "计算环境遮挡。")
 
-Distribution for computing irradiance. The default is to use
-a cosine distribution (diffuse illumination). The possible
-values for the style are `"nonweighted"` for uniform sampling
-or `"cosine"` for cosine weighted sampling.
+计算辐照度的分布。默认使用余弦分布（漫反射光照）。样式的可能值为`"nonweighted"`用于均匀采样或`"cosine"`用于余弦加权采样。
 
-Image filtering options
+图像过滤选项
 
-## image-filtering-options
+## 图像过滤选项
 
-Examples of specifying filter parameters:
+指定过滤参数的示例：
 
 ```vex
 colormap(map, u, v, "smode", "decal", "tmode", "repeat", "border", {.1,1,1});
@@ -187,393 +152,268 @@ colormap(map, u, v, "filter", "gauss", "width", 1.3, "mode", "repeat");
 
 ```
 
-If the texture is a deep `.rat` file, you can use the `"channel"` keyword argument
-to specify a channel in the file:
+如果纹理是深层的`.rat`文件，可以使用`"channel"`关键字参数指定文件中的通道：
 
 ```vex
 string channelname = "N";
 cf = colormap(map, u, v, "channel", channelname);
 ```
 
-- When you read a texture in a format other than Houdini’s native `.pic` or `.rat`, Houdini uses [OpenImageIO](http://en.wikipedia.org/wiki/OpenImageIO) to read the image data from the file. In that case, some of the variadic arguments below may not have any effect.
+- 当读取非Houdini原生格式（如`.pic`或`.rat`）的纹理时，Houdini使用[OpenImageIO](http://en.wikipedia.org/wiki/OpenImageIO)从文件中读取图像数据。在这种情况下，下面的一些可变参数可能不起作用。
 
-- When the texture function evaluates non-houdini format textures, Houdini switches to use OpenImageIO for texture evaluation. While there are corresponding values to many of the variadic keywords, some keywords don’t have an equivalent function in OpenImageIO.
+- 当纹理函数评估非Houdini格式纹理时，Houdini切换到使用OpenImageIO进行纹理评估。虽然许多可变关键字有对应的值，但有些关键字在OpenImageIO中没有等效功能。
 
-  - OIIO will *not* create MIP maps for images that don’t have multi-resolution images by default. You can turn this on by adding `automip=1` to the content of the the `OPENIMAGEIO_IMAGECACHE_OPTIONS` environment variable.
+  - 默认情况下，OIIO*不会*为没有多分辨率图像的图像创建MIP映射。您可以通过在`OPENIMAGEIO_IMAGECACHE_OPTIONS`环境变量内容中添加`automip=1`来启用此功能。
 
-Without MIP maps, blurring and filtering may not work as expected.
-\* You can also use `OPENIMAGEIO_IMAGECACHE_OPTIONS` to override the amount of memory OIIO uses for caching.
+没有MIP映射，模糊和过滤可能无法按预期工作。
+\* 您也可以使用`OPENIMAGEIO_IMAGECACHE_OPTIONS`覆盖OIIO用于缓存的内存量。
 
-By default, Houdini will set the cache memory to 1/8th of the physical computer memory. If you set the `OPENIMAGEIO_IMAGECACHE_OPTIONS` variable it overrides that computed cache size.
+默认情况下，Houdini会将缓存内存设置为计算机物理内存的1/8。如果设置了`OPENIMAGEIO_IMAGECACHE_OPTIONS`变量，它将覆盖计算出的缓存大小。
 
-"`wrap`",
+"`wrap`"，
 `string`
 `="repeat"`
 
-`repeat` or `periodic`
+`repeat`或`periodic`
 
-The image map will repeat outside the range 0 to 1.
-Basically, the integer component of the texture
-coordinate is ignored. This is the default.
+图像贴图将在0到1范围外重复。
+基本上，纹理坐标的整数部分被忽略。这是默认值。
 
-`clamp` or `edge` or `streak`
+`clamp`或`edge`或`streak`
 
-The texture coordinates will be clamped to the range 0
-to 1. This causes evaluations outside the range to
-evaluate to the color at the closest edge of the image
-(the border pixels are streaked outside the range).
+纹理坐标将被限制在0到1范围内。这导致范围外的评估结果为图像最接近边缘的颜色（边界像素在范围外延伸）。
 
-`black` or `decal` or `color`
+`black`或`decal`或`color`
 
-Coordinates outside the range 0 to 1 will evaluate to
-the border color (rather than a color in the image). The
-border color is black (i.e. 0) by default.
+范围0到1外的坐标将评估为边框颜色（而不是图像中的颜色）。边框颜色默认为黑色（即0）。
 
-"`uwrap`",
+"`uwrap`"，
 `string`
 
-(AKA `swrap`)
-Specifies the behavior when the u coordinate is outside
-the range 0 to 1. The values are the same as with `wrap`.
+（又名`swrap`）
+指定u坐标在0到1范围外的行为。值与`wrap`相同。
 
-"`vwrap`",
+"`vwrap`"，
 `string`
 
-(AKA `twrap`)
-Specifies the behavior when the v coordinate is outside
-the range 0 to 1. The values are the same as with `wrap`.
+（又名`twrap`）
+指定v坐标在0到1范围外的行为。值与`wrap`相同。
 
-"`border`",
+"`border`"，
 `float|vector|vector4`
 `=0`
 
-Specifies the border color when Black/Decal/Color wrapping is used.
-**Has no effect for OpenImageIO formats**.
+指定使用Black/Decal/Color包裹时的边框颜色。
+**对OpenImageIO格式无效**。
 
-"`default_color`",
+"`default_color`"，
 `float|vector|vector4`
 
-Specifies the color to use when the texture map cannot be found. If this
-argument is not given, the color is set by the
-HOUDINI_DEFAULT_TEXTURE_COLOR variable.
+指定找不到纹理贴图时使用的颜色。如果未给出此参数，颜色由HOUDINI_DEFAULT_TEXTURE_COLOR变量设置。
 
-"`channel`",
+"`channel`"，
 
-Specifies the color channel for textures that have multiple color
-planes (for example, `diffuse_indirect` or `N`).
-For ptex images, this specifies the index of the first channel
-(for example, `0` or `4`).
+指定具有多个颜色平面（例如`diffuse_indirect`或`N`）的纹理的颜色通道。
+对于ptex图像，这指定第一个通道的索引（例如`0`或`4`）。
 
-"`blur`",
+"`blur`"，
 `float`
 
-Blurs in x and y directions. Blur is measured as a percentage
-of the image size - so a blur of 0.1 will blur 10% of the image
-width. Use `xblur` and `yblur` if you need different blur
-amounts in either dimension.
+在x和y方向模糊。模糊量以图像大小的百分比测量——因此0.1的模糊将模糊图像宽度的10%。如果需要不同维度的模糊量，请使用`xblur`和`yblur`。
 
-"`xblur`",
+"`xblur`"，
 
-(AKA `ublur`, `sblur`)
-Blur amount in the x image direction.
+（又名`ublur`，`sblur`）
+x图像方向的模糊量。
 
-"`yblur`",
+"`yblur`"，
 
-(AKA `vblur`, `tblur`)
-Blur amount in the y image direction.
+（又名`vblur`，`tblur`）
+y图像方向的模糊量。
 
-"`pixelblur`",
+"`pixelblur`"，
 `float`
 
-Blurs the texture by a floating point number of pixels.
-**Has no effect for OpenImageIO formats**.
+以浮点数像素模糊纹理。
+**对OpenImageIO格式无效**。
 
 ```vex
 Cf = texture("map.rat", ss, tt, "pixelblur", 2.0);
 
 ```
 
-"`xpixelblur`",
+"`xpixelblur`"，
 `float`
 
-Blurs the texture by a floating point number of pixels in the X direction.
+以浮点数像素在X方向模糊纹理。
 
-"`ypixelblur`",
+"`ypixelblur`"，
 `float`
 
-Blurs the texture by a floating point number of pixels in the Y direction.
+以浮点数像素在Y方向模糊纹理。
 
-"`filter`",
+"`filter`"，
 `string`
 `="box"`
 
-Specifies the type of anti-aliasing filter to be used for
-evaluation.
+指定用于评估的抗锯齿过滤器类型。
 
-**For Houdini native formats**, the following value should be a string specifying one of:
+**对于Houdini原生格式**，以下值应为指定以下之一的字符串：
 
 `"point"`
 
-Point sampling (i.e. no filtering)
+点采样（即无过滤）
 
 `"box"`
 
-Box filter (default)
+盒式过滤器（默认）
 
 `"gauss"`
 
-Gaussian filter
+高斯过滤器
 
 `"bartlett"`
 
-Bartlett/Triangular filter
+巴特利特/三角过滤器
 
 `"sinc"`
 
-Sinc sharpening filter
+Sinc锐化过滤器
 
 `"hanning"`
 
-Hanning filter
+汉宁过滤器
 
 `"blackman"`
 
-Blackman filter
+布莱克曼过滤器
 
 `"catrom"`
 
-Catmull-Rom filter
+Catmull-Rom过滤器
 
-**For all other formats (loaded by OpenImageIO)**, specifying the `"point"` filter sets the OIIO interpolation mode to `"closest"` and disables MIP mapping. Any other value uses OIIO smart-bicubic interpolation. You can get finer control using the `"filtermode"` variadic argument (see below).
+**对于所有其他格式（由OpenImageIO加载）**，指定`"point"`过滤器将OIIO插值模式设置为`"closest"`并禁用MIP映射。任何其他值使用OIIO智能双三次插值。您可以使用`"filtermode"`可变参数获得更精细的控制（见下文）。
 
-"`xfilter`",
+"`xfilter`"，
 `string`
 
-(AKA `ufilter`, `sfilter`)
-Specifies the filter for the X direction. The filters are
-the same as with `filter`.
+（又名`ufilter`，`sfilter`）
+指定X方向的过滤器。过滤器与`filter`相同。
 
-"`yfilter`",
+"`yfilter`"，
 `string`
 
-(AKA `vfilter`, `tfilter`)
-Specifies the filter for the Y direction. The filters are
-the same as with `filter`.
+（又名`vfilter`，`tfilter`）
+指定Y方向的过滤器。过滤器与`filter`相同。
 
-"`filtermode`",
+"`filtermode`"，
 `string`
 
-**For Houdini native formats**, VEX also supports simpler filtering. The
-`filtermode` can be set to one of:
+**对于Houdini原生格式**，VEX还支持更简单的过滤。`filtermode`可以设置为以下之一：
 
 `filter`
 
-Use the filter specified by the `filter` keyword argument.
+使用`filter`关键字参数指定的过滤器。
 
 `bilinear`
 
-Use simple bilinear filtering. This is the fastest specialized filtering mode, but provides the lowest quality filtering.
+使用简单的双线性过滤。这是最快的专用过滤模式，但提供的过滤质量最低。
 
 `biquadratic`
 
-Use simple quadratic filtering (order 3 filtering).
+使用简单的二次过滤（3阶过滤）。
 
 `bicubic`
 
-Use simple bicubic filtering.
+使用简单的双三次过滤。
 
-When the `filtermode` is set to `bilinear`, `biquadratic` or `bicubic`,
-several arguments (like `filter` and `width`) are ignored and a fixed
-interpolation filter is used instead. Other arguments (notably the `lerp`
-and `blur` keywords) are still valid.
+当`filtermode`设置为`bilinear`、`biquadratic`或`bicubic`时，忽略几个参数（如`filter`和`width`），改用固定的插值过滤器。其他参数（特别是`lerp`和`blur`关键字）仍然有效。
 
-**For all other formats (loaded by OpenImageIO)** you can set the `filtermode` to `"filter"` (see `"filter"` above), `"bilinear"`, `"biquadratic"`, or `"bicubic"`.
+**对于所有其他格式（由OpenImageIO加载）**，您可以将`filtermode`设置为`"filter"`（见上文`"filter"`）、`"bilinear"`、`"biquadratic"`或`"bicubic"`。
 
-"`width`",
+"`width`"，
 `float`
 `=1.0`
 
-**For Houdini native formats**, this sets the filter width in both X and Y directions.
+**对于Houdini原生格式**，这设置X和Y方向的过滤器宽度。
 
-**For all other formats (loaded by OpenImageIO)**, this sets the OIIO `swidth` and `twidth` options.
+**对于所有其他格式（由OpenImageIO加载）**，这设置OIIO的`swidth`和`twidth`选项。
 
-"`xwidth`",
+"`xwidth`"，
 `float`
 
-(AKA `uwidth`, `swidth`)
-Filter width in the X direction.
+（又名`uwidth`，`swidth`）
+X方向的过滤器宽度。
 
-"`ywidth`",
+"`ywidth`"，
 `float`
 
-(AKA `vwidth`, `twidth`)
-Filter width in the Y direction.
+（又名`vwidth`，`twidth`）
+Y方向的过滤器宽度。
 
-"`zwidth`",
+"`zwidth`"，
 `float`
 
-Filter width in the Z direction (for shadow maps).
-This is measured in world space units, unlike the other width arguments.
+Z方向的过滤器宽度（用于阴影贴图）。
+与其他宽度参数不同，这是以世界空间单位测量的。
 
-"`extrapolate`",
+"`extrapolate`"，
 `int`
 
-whether to use derivative extrapolation
-when computing anti-aliasing information. Extrapolation of
-derivatives is on by default. The argument should be either 0 or
-1\.
+是否在计算抗锯齿信息时使用导数外推。
+默认启用导数外推。参数应为0或1。
 
-"`lerp`",
+"`lerp`"，
 `int`
 
-**For Houdini native formats**, this specifies whether RAT files should interpolate between different MIP levels. By default, this is turned off. Turning interpolation on will help remove discontinuities when different
-MIP levels of a `.rat` file are accessed. However, the results of texture evaluation will be slightly softer (i.e. blurrier) and will take more time.
+**对于Houdini原生格式**，这指定RAT文件是否应在不同MIP级别之间插值。默认情况下，此功能关闭。启用插值将有助于消除访问`.rat`文件的不同MIP级别时的不连续性。然而，纹理评估的结果会稍微柔和（即更模糊）并且需要更多时间。
 
-There are three possible values for this argument.
+此参数有三个可能的值。
 
 `0`
 
-Disable MIP map interpolation (fastest).
+禁用MIP映射插值（最快）。
 
 `1`
 
-Approximate MIP map interpolation (fast).
+近似MIP映射插值（快速）。
 
 `2`
 
-High Quality MIP map interpolation (slower but highest quality).
+高质量MIP映射插值（较慢但质量最高）。
 
-**For all other formats (loaded by OpenImageIO)**, a value of 0 specifies a single MIP level, any other value specifies trilinear interpolation.
+**对于所有其他格式（由OpenImageIO加载）**，值为0指定单个MIP级别，任何其他值指定三线性插值。
 
-"`depthinterp`",
+"`depthinterp`"，
 `string`
 
-Specifies the depth interpolation mode for deep shadow maps,
-to control the opacity value that will be returned when the
-map is sampled between two z-records.
+指定深度阴影贴图的深度插值模式，以控制在采样点之间两个z记录之间返回的不透明度值。
 
-The argument must be a string.
+参数必须为字符串。
 
 `discrete`
 
-(default) Return the first z-record before the sample
-point.
+（默认）返回采样点之前的第一个z记录。
 
 `linear`
 
-Linearly interpolate the opacities of the z-records
-before and after the sample point.
+线性插值采样点前后的z记录的不透明度。
 
-See [deep shadow maps](../../render/lights.html) for more on
-the difference between the two modes.
+参见[深度阴影贴图](../../render/lights.html)了解两种模式之间的区别。
 
-"`beerlambert`",
+"`beerlambert`"，
 `int`
 
-When evaluating volumetric deep shadow maps, this will enable Beer-Lambert
-interpolation of opacity. Beer-Lambert is more a accurate but more
-expensive form of interpolation.
+评估体积深度阴影贴图时，这将启用Beer-Lambert不透明度插值。Beer-Lambert是一种更准确但更昂贵的插值形式。
 
-The argument should be either 0 or 1.
+参数应为0或1。
 
-"`srccolorspace`",
+"`srccolorspace`"，
 `string`
 
-Specifies the color space in which the texture is stored.
-When texture values are accessed, they will be translated from
-this space into linear space for rendering if needed.
+指定纹理存储的颜色空间。
+当访问纹理值时，如果需要，它们将从该空间转换为线性空间进行渲染。
 
 `auto`
 
-(default) Determine the source color space based on the
-file. Currently, this will assume sRGB color space for
-8-bit textures and linear for all other textures.
-
-`linear`
-
-Transform to linear space. This currently only affects
-8-bit textures, since all others are assumed to be already
-in linear space. Use this option to force linear
-interpretation of textures used for bump or displacement
-maps.
-
-`sRGB`
-
-Forcibly translate from sRGB color space to linear space regardless of
-the bit-depth or number of channels in the the texture.
-
-`rec709`
-
-Convert from Rec709 color space to linear space.
-
-`gamma22`
-
-Convert from Gamma 2.2 color space to linear space.
-
-`raw`
-
-Use map colors untransformed
-
-The `srccolorspace` argument can also be any color space known to OpenColorIO.
-
-"`face`",
-
-When using a Ptex texture map, the `face` argument is used to specify the face for ptexture lookup.
-**Has no effect for OpenImageIO formats**.
-
-"`ptexorient`",
-`int`
-
-When using Ptex textures, the implicit texture coordinates on
-polygons are used as the interpolants for texture lookup (combined
-with the `face`). However, different software may have different
-beliefs about winding and orientation. This keyword argument
-allows you to control the interpretation of orientation for Houdini
-polygons. The `ptexorient` expects an integer argument which is
-composed of a bit-field
-
-- bit 0×01: Complement the `s` coordinate
-- bit 0×02: Complement the `t` coordinate
-- bit 0×04: Swap the `s` and `t` coordinates
-
-For example, a value of 6 (0×4|0×2) is equivalent to calling
-`texture(map, 1-t, s)` instead of `texture(map, s, t)`.
-
-The default `ptexorient` is 0, which works correctly with the
-examples found at <http://ptex.us>.
-
-**Has no effect for OpenImageIO formats**.
-
-"`iesnormalization`",
-`string`
-`="maxvalue"`
-
-Select different methods of normalizing IES map’s output values when
-querying via `environment()` function.
-
-`none`
-
-Use raw values scaled by the candela multiplier in the header.
-
-`maxvalue`
-
-(default) Normalized by the maximum value. This is legacy behavior used
-by mantra’s default light shader.
-
-`preserveenergy`
-
-Normalized by values integrated over coverage angles, so that IES
-profile affects shaping of the light while preserving its overall
-energy output.
-
-Examples
-
-## examples
-
-```vex
-surface mirror(vector refl_color=1; float bias=.005)
-{
-    Cf = refl_color * reflectlight(bias, max(refl_color));
-}
-
-```
+（默认）根据文件确定源颜色

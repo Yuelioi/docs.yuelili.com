@@ -4,29 +4,27 @@ order: 35
 ---
 `int [] agentrigchildren(<geometry>geometry, int prim, int transform)`
 
-Returns a list of the direct children of the given transform.
+返回给定变换节点的直接子节点列表。
 
-Returns an empty array if `transform` is [out of range](agenttransformcount.html "Returns the number of transforms in an agent primitive’s rig."), `prim` is out of range, or `prim` is not an agent primitive.
+如果`transform`[超出范围](agenttransformcount.html "返回代理基元骨骼中的变换数量")、`prim`超出范围或`prim`不是代理基元，则返回空数组。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文(如wrangle SOP)中运行时，此参数可以是表示输入编号(从0开始)的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何体文件(例如`.bgeo`)的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `prim`
 
-The primitive number.
+基元编号。
 
 `transform`
 
-Index of a transform in the agent’s rig.
+代理骨骼中变换节点的索引。
 
-Examples
+## 示例
 
-## examples
-
-Visit all of the children of a given transform.
+遍历给定变换节点的所有子节点。
 
 ```vex
 int[] queue = { transform };

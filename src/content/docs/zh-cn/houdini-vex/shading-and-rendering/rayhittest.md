@@ -1,37 +1,31 @@
 ---
-title: rayhittest
+title: 射线命中测试
 order: 59
 ---
-| On this page | * [Area sampling options](#area-sampling-options) * [Ray options](#ray-options) |
+| 本页内容 | * [区域采样选项](#区域采样选项) * [射线选项](#射线选项) |
 | --- | --- |
-| Context(s) | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
+| 上下文 | [置换](../contexts/displace.html) [雾效](../contexts/fog.html) [光照](../contexts/light.html) [阴影](../contexts/shadow.html) [表面](../contexts/surface.html) |
 
-`float  rayhittest(vector P, vector D, float bias, ...)`
+`float rayhittest(vector P, vector D, float bias, ...)`
 
-`float  rayhittest(vector P, vector D, vector &pHit, vector &nHit, float bias, ...)`
+`float rayhittest(vector P, vector D, vector &pHit, vector &nHit, float bias, ...)`
 
-Sends a ray from the position P along the direction D. The
-length of the D vector represents the farthest distance considered
-when check for occlusion.
+从位置P沿方向D发射射线。向量D的长度表示检测遮挡时考虑的最远距离。
 
-Returns the distance to the object intersected. If no object is hit,
-returns less than 0.
+返回与物体相交的距离。如果没有命中物体，则返回小于0的值。
 
-If you specify pHit and nHit, they get the position and normal
-of the hit surface.
+如果指定了pHit和nHit，它们将获取命中表面的位置和法线。
 
-In many cases, the area sampling features will not produce usable
-results with the `rayhittest()` function.
+在许多情况下，区域采样功能与`rayhittest()`函数配合使用时不会产生可用结果。
 
-Tip
-When hit testing polygons you can get lots of rays missing.
-In these cases triangulating the geometry can improves hits.
+提示
+测试多边形命中时可能会遇到大量射线未命中的情况。此时对几何体进行三角化处理可以提高命中率。
 
-Area sampling options
+区域采样选项
 
-## area-sampling-options
+## 区域采样选项
 
-For area sampling, you must specify both the angle and sample variadic parameters. For example:
+进行区域采样时，必须同时指定角度和采样可变参数。例如：
 
 ```vex
 surface
@@ -39,136 +33,101 @@ blurry_mirror(float angle = 3; int samples = 16; float bias=0.05)
 {
     Cf = reflectlight(bias, 1, "angle", angle, "samples", samples);
 }
-
 ```
 
-Ray options
+射线选项
 
-## ray-options
+## 射线选项
 
-Tip
-When you specify a texture, such as with the `"environment"` keyword,
-you can also use the image filtering keyword arguments. See [environment](environment.html "Returns the color of the environment texture.")
-for a listing of the image filter keyword arguments.
+提示
+当指定纹理时（如使用`"environment"`关键字），也可以使用图像过滤关键字参数。详见[环境贴图](environment.html "返回环境纹理的颜色")中关于图像过滤关键字参数的说明。
 
 "`scope`",
 `string`
 
-A list of objects which can be hit by the rays. When specified, `scope` overrides the default scope that would have been selected for the given `raystyle`. The `"scope:default"` value will cause the `scope` argument to use the default scope for the current context - as if the argument were not specified.
+可被射线命中的物体列表。指定后，`scope`将覆盖给定`raystyle`的默认作用域。`"scope:default"`值将使`scope`参数使用当前上下文的默认作用域——就像未指定该参数一样。
 
-Allows an override of the [scope](../contexts/shading_contexts.html#scope) for ray-intersections.
-A special scope argument, `scope:self`, will match the currently
-shading object.
+允许覆盖射线相交的[作用域](../contexts/shading_contexts.html#scope)。
+特殊作用域参数`scope:self`将匹配当前着色对象。
 
 "`currentobject`",
 `material`
 
-Used to specify what the current shading object is. For example, when used with the scope argument, `scope:self` will match the object passed in by this argument.
+用于指定当前着色对象。例如，与scope参数配合使用时，`scope:self`将匹配通过此参数传入的对象。
 
 "`maxdist`",
 `float`
 `=-1`
 
-The maximum distance to search for objects. This can be used to limit the search of objects to nearby objects only. If the `maxdist` given is negative, then it will act as if there is no maximum distance.
+搜索物体的最大距离。可用于将物体搜索限制在附近物体范围内。如果给定的`maxdist`为负值，则表示没有最大距离限制。
 
-Allows an override of the maximum distance the ray can
-travel when testing for intersections. Some functions (such as
-[fastshadow](fastshadow.html "Sends a ray from the position P along the direction specified by the
-direction D.")) have the maximum distance implicitly defined (by
-the length of the ray) and should probably avoid using this
-option. However, this option can be used effectively when
-computing reflections, global illumination, refraction etc.
+允许覆盖测试相交时射线可以行进的最大距离。某些函数（如[快速阴影](fastshadow.html "从位置P沿方向D发射射线")）已隐式定义了最大距离（通过射线长度），应避免使用此选项。但在计算反射、全局光照、折射等时，此选项可以有效地使用。
 
 "`variancevar`",
 `string`
 
-The name of a VEX export variable to use for variance anti-aliasing. The renderer compares the value with adjacent micropolygons in micropolygon rendering to decide what shading points need additional samples (using `vm_variance` [property](../../props/index.html "Properties let you set up flexible and powerful hierarchies of rendering, shading, lighting, and camera parameters.") as a threshold). If more samples are required, the algorithm takes samples up to the specified maximum ray samples.
+用于方差抗锯齿的VEX导出变量名称。渲染器会将该值与微多边形渲染中的相邻微多边形进行比较，以决定哪些着色点需要额外采样（使用`vm_variance`[属性](../../props/index.html "属性允许您设置灵活强大的渲染、着色、光照和相机参数层次结构")作为阈值）。如果需要更多样本，算法将采集样本直至达到指定的最大射线样本数。
 
-This variable must be imported from the hit surface, so it must be in the list of imported names (see “importing information back from the ray” below). If the named variable is not imported, this option will be ignored.
+此变量必须从命中表面导入，因此必须位于导入名称列表中（见下文"从射线导入信息"）。如果未导入命名变量，此选项将被忽略。
 
-Variance antialiasing puts more samples in areas of the image with high variance, for example a sharp shadow edge. It is only used when `vm_dorayvariance` is enabled. Otherwise, only the min ray samples (or an explicitly supplied `"samples"` value) are used for antialiasing of the gather loop.
+方差抗锯齿会在图像高方差区域（如锐利阴影边缘）放置更多样本。仅当启用`vm_dorayvariance`时使用。否则，仅使用最小射线样本数（或显式提供的`"samples"`值）进行采集循环的抗锯齿处理。
 
-Overrides the global variance control (mantra’s -v option)
-which is used to determine anti-aliasing quality of ray tracing.
-For more information please refer to the documentation on
-mantra.
+覆盖用于确定光线追踪抗锯齿质量的全局方差控制（mantra的-v选项）。更多信息请参考mantra文档。
 
 "`angle`",
 `float`
 `=0`
 
-The distribution angle (specified in radians). For gather(), rays will be distributed over this angle. For trace(), the angle is used to indicate the rate at which the filter width should increase with increasing intersection distance. Larger angles will cause farther hit surfaces to use larger derivatives, leading to improved texturing and displacement performance.
+分布角度（以弧度指定）。对于gather()，射线将分布在此角度范围内。对于trace()，该角度用于指示滤波宽度应随相交距离增加而增大的速率。较大的角度会使更远的命中表面使用更大的导数，从而提高纹理和置换性能。
 
-To be effective, the samples parameter should also be specified.
+要生效，还应指定samples参数。
 
 "`samples`",
 `int|float`
 `=1`
 
-How many samples should be sent out to filter rays. For the
-irradiance and occlusion functions, specifying a samples
-parameter will override the default irradiance sampling.
+应发送多少样本以过滤射线。对于辐照度和遮挡函数，指定samples参数将覆盖默认的辐照度采样。
 
 "`environment`",
 `string`
 
-If the ray sent out to the scene misses everything, then
-it’s possible to specify an environment map to evaluate.
+如果发射到场景中的射线未命中任何物体，则可以指定要评估的环境贴图。
 
-Using the ray’s direction, the environment map specified
-will be evaluated and the resulting color will be returned.
-Most likely, it will be necessary to specify a transform
-space for the environment map evaluations.
+使用射线的方向，将评估指定的环境贴图并返回结果颜色。很可能需要为环境贴图评估指定变换空间。
 
-In the case of refractlight and trace the Of and Af
-variables will be set to 0 regardless of the background
-color specified. the resulting color.
+对于refractlight和trace，无论指定的背景颜色如何，Of和Af变量都将设置为0。
 
-When an environment map is specified, the filtering options
-from texture() are also supported.
+指定环境贴图时，还支持texture()的过滤选项。
 
-See [how to create an environment/reflection map](../../render/envmaps.html).
+参见[如何创建环境/反射贴图](../../render/envmaps.html)。
 
 "`envobject`",
 `string`
 
-If an environment map is used, the orientation of the
-environment map can be specified by transforming the ray
-into the space of another object, light or fog object in the
-scene. In Houdini, null objects can be used to specify the
-orientation. For example:
+如果使用环境贴图，可以通过将射线变换到场景中其他对象、光源或雾效对象的空间来指定环境贴图的方向。在Houdini中，可以使用空对象来指定方向。例如：
 
 ```vex
 Cf = R*reflectlight(bias, max(R), "environment", "map.rat", "envobject", "null_object_name");
-
 ```
 
 "`envlight`",
 `string`
 
-If an environment map is used, the orientation of the
-environment map can be specified by transforming the ray
-into the space of a light in the scene.
+如果使用环境贴图，可以通过将射线变换到场景中光源的空间来指定环境贴图的方向。
 
 "`envtint`",
 `vector`
 
-If an environment map is used, tint it with this color.
+如果使用环境贴图，用此颜色对其进行着色。
 
 "`background`",
 `vector`
 
-If a ray misses all objects, use this as the
-background color of the scene. In the case of refractlight and
-trace the Of and Af variables will be set to 0 regardless of the
-background color specified.
+如果射线未命中任何物体，则使用此颜色作为场景背景色。对于refractlight和trace，无论指定的背景颜色如何，Of和Af变量都将设置为0。
 
 "`distribution`",
 `string`
 
-**Functions**: [irradiance](irradiance.html "Computes irradiance (global illumination) at the point P with the normal N."), [occlusion](occlusion.html "Computes ambient occlusion.")
+**函数**: [辐照度](irradiance.html "计算点P处法线为N的辐照度（全局光照）"), [遮挡](occlusion.html "计算环境光遮挡")
 
-Distribution for computing irradiance. The default is to use
-a cosine distribution (diffuse illumination). The possible
-values for the style are `"nonweighted"` for uniform sampling
-or `"cosine"` for cosine weighted sampling.
+计算辐照度的分布方式。默认使用余弦分布（漫反射照明）。样式可能值为`"nonweighted"`表示均匀采样，或`"cosine"`表示余弦加权采样。

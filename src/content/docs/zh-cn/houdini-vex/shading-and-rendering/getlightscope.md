@@ -2,9 +2,9 @@
 title: getlightscope
 order: 20
 ---
-| Context(s) | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
+| 上下文 | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
 | --- | --- |
 
 `void  getlightscope(material mat, string &scope, string &categories)`
 
-Given a material handle, determine the lights illuminating the surface. The light selection is given by the scope/categories returned.
+给定一个材质句柄，确定照亮表面的光源。光源选择由返回的scope/categories参数指定。

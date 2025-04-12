@@ -2,23 +2,23 @@
 title: setagentchannelvalue
 order: 50
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `int  setagentchannelvalue(int geohandle, int prim, float value, int channel)`
 
 `geohandle`
 
-Handle to the geometry to write to. `geoself()` can be used to get a handle to the current geometry.
+要写入的目标几何体句柄。可以使用`geoself()`获取当前几何体的句柄。
 
 `prim`
 
-The primitive number.
+图元编号。
 
 `value`
 
-The new value for the channel.
+通道的新数值。
 
 `index`
 
-Index of a channel in the agent’s rig.
+代理骨骼系统中通道的索引号。

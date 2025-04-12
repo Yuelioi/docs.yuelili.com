@@ -2,9 +2,9 @@
 title: ninputs
 order: 33
 ---
-| Context(s) | [chop](../contexts/chop.html) |
+| 上下文 | [chop](../contexts/chop.html) |
 | --- | --- |
 
 `int  ninputs()`
 
-Returns the number of inputs on the current node.
+返回当前节点的输入数量。

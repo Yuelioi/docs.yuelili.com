@@ -2,63 +2,49 @@
 title: surfacedist
 order: 17
 ---
-| Since | 17.0 |
+| 版本 | 17.0 |
 | --- | --- |
 
 `float  surfacedist(<geometry>geometry, string ptgroup, string P_attribute, int search_pt, int &closest_pt, string distance_metric)`
 
 `float  surfacedist(<geometry>geometry, string ptgroup, string P_attribute, int search_pt, float max_radius, int &closest_pt, string distance_metric)`
 
-Returns the distance from the search point to the closest point in the point
-group.
+返回搜索点到点组中最近点的距离。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，该参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `ptgroup`
 
-The name of a point group or a pattern to generate a point
-group. Uses the same semantics as a SOP group, so empty strings
-will match all points. Attribute groups like `@Cd.x>0` can
-also be used, but note that the `@` may need to be escaped with
-a backslash in a [Snippet VOP](../../nodes/vop/snippet.html "Runs a VEX snippet to modify the incoming values.").
+点组名称或用于生成点组的模式。使用与SOP组相同的语义，因此空字符串将匹配所有点。也可以使用像`@Cd.x>0`这样的属性组，但请注意在[Snippet VOP](../../nodes/vop/snippet.html "运行VEX代码片段来修改传入值。")中可能需要用反斜杠转义`@`符号。
 
 `P_attribute`
 
-The name of the vector attribute to use to measure distance between
-connected points. Using “P” will give the world distance along the surface,
-but a custom attribute can be used to measure along a different metric.
+用于测量连接点之间距离的向量属性名称。使用"P"将给出沿表面的世界距离，但可以使用自定义属性来测量不同的度量标准。
 
 `search_pt`
 
-The point to measure the distance for.
+要测量距离的点。
 
 `max_radius`
 
-The maximum distance to measure the surface distance. This can speed things
-up by allowing the search to quit early if the point is not within the
-radius. Points outside the radius will return a value of `-1` for both the
-distance and the lead point.
+测量表面距离的最大距离。如果点不在半径范围内，这可以通过允许搜索提前终止来加快速度。超出半径的点将返回距离和前导点的值`-1`。
 
 `&closest_pt`
 
-Index of the closest point in the source group.
+源组中最近点的索引。
 
-`-1` if no closest point was found.
+如果未找到最近点，则为`-1`。
 
 `distance_metric`
 
-The method to use to measure distance. Accepted values are `edge` and
-`surface`. Edge distance is measured along the edges of the model, while
-surface distance is measured along edges and across single polygons. Surface
-distance is a better approximation of the true geodesic distance, but is
-also more expensive to compute.
+用于测量距离的方法。可接受的值为`edge`和`surface`。边缘距离沿模型的边缘测量，而表面距离沿边缘和跨单个多边形测量。表面距离更接近真实测地距离，但计算成本也更高。
 
-Returns
+返回值
 
-The distance from the search point to the closest point in the point group.
+从搜索点到点组中最近点的距离。
 
-Returns `-1` if no closest point was found.
+如果未找到最近点，则返回`-1`。

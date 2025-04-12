@@ -1,19 +1,13 @@
 ---
-title: smooth
+title: 平滑过渡
 order: 15
 ---
 `float  smooth(float value1, float value2, float amount)`
 
 `float  smooth(float value1, float value2, float amount, float rolloff)`
 
-Computes a number between zero and one. Returns 0 if the amount passed
-in is less than or equal to value1, 1 if the amount is greater than or
-equal to value2.
+计算一个介于0和1之间的数值。当传入的amount小于等于value1时返回0，当amount大于等于value2时返回1。
 
-If the amount is between value1 and value2, a smooth (easin/easeout)
-interpolation is computed. If a rolloff is specified, the inflection
-point of the blend will be shifted.
+如果amount介于value1和value2之间，则计算平滑（缓入/缓出）插值。如果指定了rolloff参数，混合的拐点将会发生偏移。
 
-If the rolloff is greater than 1, the shift will be to the right, if the
-rolloff is less than 1 (and greater than 0), the shift will be to the
-left.
+当rolloff大于1时，拐点会向右偏移；当rolloff小于1（且大于0）时，拐点会向左偏移。

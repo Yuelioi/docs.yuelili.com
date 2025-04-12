@@ -2,21 +2,21 @@
 title: setagentchannelvalues
 order: 51
 ---
-| Since | 18.0 |
+| 版本 | 18.0 |
 | --- | --- |
 
 `void  setagentchannelvalues(int geohandle, int prim, float values[])`
 
-When modifying a single channel, using [setagentchannelvalue](setagentchannelvalue.html "Overrides the value of an agent primitive’s channel.") instead can be significantly faster.
+当只需修改单个通道时，使用 [setagentchannelvalue](setagentchannelvalue.html "覆盖代理体元通道的值") 可以显著提高效率。
 
 `geohandle`
 
-Handle to the geometry to write to. `geoself()` can be used to get a handle to the current geometry.
+要写入的目标几何体句柄。可使用 `geoself()` 获取当前几何体的句柄。
 
 `prim`
 
-The primitive number.
+元编号。
 
 `values`
 
-The new value of each channel in the agent’s rig.
+代理骨骼中每个通道的新值数组。

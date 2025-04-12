@@ -6,6 +6,6 @@ order: 14
 
 `vector  slerpv(vector v1, vector v2, float bias)`
 
-Blends between vectors v1 and v2 based on the bias.
+基于偏置值在向量v1和v2之间进行混合插值。
 
-The directions are interpolated spherically and the magnitudes are interpolated linearly.
+方向采用球面插值，而幅度则采用线性插值。

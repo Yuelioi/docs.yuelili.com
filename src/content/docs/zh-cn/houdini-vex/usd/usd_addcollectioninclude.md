@@ -2,35 +2,34 @@
 title: usd_addcollectioninclude
 order: 3
 ---
-| Since | 18.0 |
+
+| 版本 | 18.0 |
 | --- | --- |
 
 `int  usd_addcollectioninclude(int stagehandle, string collectionpath, string path)`
 
-This function includes the object in the collection. This is usually achieved by adding an explicit path to the collection’s include list, but it may just remove a path from the collection’s exclude list, if it’s sufficient.
+此函数将对象包含到集合中。通常通过向集合的包含列表添加显式路径实现，但如果足够的话，也可能只是从集合的排除列表中移除某个路径。
 
 `stagehandle`
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+要写入的舞台句柄。当前唯一有效值是`0`，表示节点中的当前舞台。（此参数未来可能用于支持写入其他舞台。）
 
 `collectionpath`
 
-The path to the collection.
+集合的路径。
 
 `path`
 
-The path to the object. I.e, a primitive, an attribute, or a relationship.
+对象的路径。即可以是基元、属性或关系。
 
-Returns
+返回值
 
-The value of `stagehandle` on success or `-1` on failure.
+成功时返回`stagehandle`的值，失败时返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Include sphere4 in cube's collection.
+// 将sphere4包含到cube的集合中
 string collection_path = usd_makecollectionpath(0, "/geo/cube", "some_collection");
 usd_addcollectioninclude(0, collection_path, "/geo/sphere4");
 

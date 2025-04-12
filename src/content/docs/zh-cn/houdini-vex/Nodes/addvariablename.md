@@ -1,20 +1,18 @@
 ---
-title: addvariablename
+title: 添加变量名映射
 order: 1
 ---
-`void  addvariablename(string aname, string vname)`
 
-In contexts with current geometry, this adds a mapping to the geometry.
+`void addvariablename(string aname, string vname)`
 
-`int  addvariablename(int geohandle, string aname, string vname)`
+在当前几何体上下文中，为几何体添加一个映射关系。
 
-Adds the mapping to the given geometry. Returns the `geohandle` on success.
+`int addvariablename(int geohandle, string aname, string vname)`
+
+为指定几何体添加映射关系。成功时返回`geohandle`。
 
 `geohandle`
 
-A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](geoself.html "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
+要写入的几何体句柄。目前唯一有效的值是`0`或[geoself](geoself.html "返回当前几何体的句柄")，表示节点中的当前几何体。(此参数未来可能用于支持写入其他几何体)
 
-Adds the mapping of the attribute `aname` to the local variable `vname`. In
-SOPs that support this, you will then have the
-local variable `$vname` referencing the attribute aname. This
-emulates the behavior of the [AttribCreate SOP](../../nodes/sop/attribcreate.html "Adds or edits user defined attributes.").
+添加属性`aname`到局部变量`vname`的映射。在支持此功能的SOP中，您将可以使用局部变量`$vname`来引用属性aname。这模拟了[AttribCreate SOP](../../nodes/sop/attribcreate.html "添加或编辑用户定义属性")的行为。

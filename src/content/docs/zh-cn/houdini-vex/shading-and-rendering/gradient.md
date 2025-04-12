@@ -1,58 +1,43 @@
 ---
-title: gradient
+title: 梯度
 order: 35
 ---
-| On this page | * [Derivatives options](#derivatives-options) * [Examples](#examples) |
+| 本页内容 | * [导数选项](#derivatives-options) * [示例](#examples) |
 | --- | --- |
 
 `vector  gradient(float val, ...)`
 
 `vector  gradient(vector P, float val, ...)`
 
-This method computes the derivative of a volume field using the partial
-derivatives with respect to a given position (`Du`, `Dv`, and `Dw`). If no
-position is provided, `P` is assumed in shading contexts. If only `Du` and
-`Dv` are defined, the derivative will be tangent to the surface being
-rendered.
-Derivatives options
+该方法通过给定位置(`Du`、`Dv`和`Dw`)的偏导数来计算体积场的导数。如果未提供位置参数，在着色上下文中默认使用`P`。如果只定义了`Du`和`Dv`，导数将与渲染表面相切。
+导数选项
 
 ## derivatives-options
 
-Functions which compute derivatives take additional arguments to
-allow tuning of the derivative computation.
+计算导数的函数可接受额外参数来调整导数计算方式。
 
 "`extrapolate`",
 `int`
 `=0`
 
-Whether derivatives are
-“smooth” across patch boundaries. In most cases this is true and if
-extrapolation is turned on, derivative computation should be exact
-for C2 surfaces. However, when the VEX variables are changing with a
-high frequency (for example, a high frequency displacement map
-causing high frequency changes to the P variable), extrapolation of
-derivative computation may cause exaggeration of discontinuities
-between patch boundaries.
+控制导数是否在面片边界"平滑"过渡。多数情况下应启用此选项，若开启外推，对C2连续曲面导数计算将更精确。但当VEX变量高频变化时(例如高频位移贴图导致P变量高频变化)，导数计算的外推可能加剧面片边界的不连续性。
 
 "`smooth`",
 `int`
 `=1`
 
-Adjust the magnitude of the
-differentials non-uniformly over patches. This will usually reduce
-patch discontinuities in displacement/textured shaders. However, in
-some odd cases you may want to turn this feature off.
+非均匀调整面片上微分量的幅值。通常可减少位移/纹理着色器中面片间的不连续性。但在某些特殊情况下可能需要关闭此功能。
 
 ```vex
 N = computenormal(P, "extrapolate", 1, "smooth", 0);
 
 ```
 
-Examples
+示例
 
 ## examples
 
-Return the gradient of the density field:
+返回密度场的梯度：
 
 ```vex
 surface test_grad(float density = 0)

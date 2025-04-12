@@ -2,11 +2,9 @@
 title: getmaterialid
 order: 23
 ---
-| Context(s) | [shading](../contexts/shading.html) |
+| 上下文 | [着色](../contexts/shading.html) |
 | --- | --- |
 
 `int  getmaterialid()`
 
-Returns the material id of the primitive being shaded. The id corresponds to
-the material being evaluated and accounts for overrides from style sheets and
-detail assignments.
+返回当前着色图元的材质ID。该ID对应于正在被评估的材质，并考虑了样式表和详细属性赋值带来的覆盖。

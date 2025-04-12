@@ -7,28 +7,26 @@ order: 106
 
 `string  usd_primvarattribname(<stage>stage, string name)`
 
-This function returns the namespaced attribute name corresponding to the given primvar name.
+此函数返回与给定primvar名称对应的带命名空间的属性名称。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取stage。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或使用`op:`作为路径前缀引用其他LOP节点的已处理stage（例如"op:/stage/lop_node"）。
 
 `name`
 
-Primvar name (without namespace).
+Primvar名称（不带命名空间）。
 
-Returns
+返回值
 
-The namespaced name of an attribute corresponding to the given primvar name.
+与给定primvar名称对应的属性带命名空间名称。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the attribute name for the given primvar.
+// 获取给定primvar对应的属性名称
 string attrib_name  = usd_primvarattribname(0, "some_primvar");
 int is_attrib = usd_isattrib(0, "/geo/sphere", attrib_name);
 

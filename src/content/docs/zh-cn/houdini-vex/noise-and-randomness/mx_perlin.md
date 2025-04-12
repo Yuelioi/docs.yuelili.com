@@ -10,4 +10,4 @@ order: 20
 
 `float|vector mx_perlin(vector2 pos, int periodx, int periody)`
 
-Returns a noise value that matches the values as in the standard MaterialX library.
+返回一个与标准MaterialX库中数值匹配的噪声值。

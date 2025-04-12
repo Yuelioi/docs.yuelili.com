@@ -2,18 +2,18 @@
 title: chname
 order: 5
 ---
-| Context(s) | [cop2](../contexts/cop2.html)  [chop](../contexts/chop.html) |
+| 上下文 | [cop2](../contexts/cop2.html)  [chop](../contexts/chop.html) |
 | --- | --- |
 
-COPs
+COPs（合成操作器）
 
 ## cops
 
 `string  chname(int plane_index, int chindex)`
 
-Returns the name of the channel on the plane (for example, `"r"`, or `"x"`).
+返回指定平面上的通道名称（例如 `"r"` 或 `"x"`）。
 
-CHOPs
+CHOPs（通道操作器）
 
 ## chops
 
@@ -21,11 +21,11 @@ CHOPs
 
 `string  chname(int opinput, int channel_index)`
 
-Returns the name of the channel, for example `"tx"`.
-To get a list of all channel names, use [chnames](chnames.html "Returns all the CHOP channel names of a given CHOP input.").
+返回通道名称，例如 `"tx"`。
+要获取所有通道名称列表，请使用 [chnames](chnames.html "返回指定CHOP输入的所有通道名称")。
 
 `opinput`
 
-The input number to read from, starting from 0. For example, the first input is 0, the second input is 1, and so on.
+要读取的输入编号，从0开始。例如，第一个输入是0，第二个输入是1，依此类推。
 
-If you specify `-1`, the function uses the current CHOP node or input `0` if it is connected.
+如果指定 `-1`，该函数将使用当前CHOP节点或已连接的输入 `0`。

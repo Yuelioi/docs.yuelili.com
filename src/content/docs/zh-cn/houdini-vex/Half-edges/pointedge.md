@@ -4,30 +4,28 @@ order: 18
 ---
 `int  pointedge(<geometry>geometry, int point1, int point2)`
 
-Returns `-1` if no such half-edge exists. Otherwise returns the number of a half-edge that either has `point1` as source or has `point2` as desination, or the other way around.
+如果不存在这样的半边（half-edge），则返回 `-1`。否则返回一个半边的编号，该半边要么以 `point1` 为起点，要么以 `point2` 为终点，或者反之。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点（如 wrangle SOP）上下文中运行时，此参数可以是一个整数，表示要读取几何体的输入编号（从 0 开始）。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是一个字符串，指定要读取的几何体文件（例如 `.bgeo`）。在 Houdini 内部运行时，可以是 `op:/path/to/sop` 引用。
 
 `point1`, `point2`
 
-The point numbers in the geometry for the two endpoints of the returned half-edge. `0` is the first point.
+几何体中返回半边的两个端点的点编号。`0` 表示第一个点。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 int edge_count = 0;
 
-// Determine if there is an edge between points 23 and 25:
+// 判断点 23 和 25 之间是否存在边：
 int h0 = pointedge("defgeo.bgeo", 23, 25);
 if (h0 != -1)
 {
-// Edge exists!
+// 边存在！
 }
 
 ```

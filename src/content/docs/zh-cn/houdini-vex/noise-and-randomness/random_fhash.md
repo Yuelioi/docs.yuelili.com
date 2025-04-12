@@ -12,5 +12,4 @@ order: 32
 
 `int  random_fhash(vector2 seed)`
 
-Hashes the given number into an integer value. The hash may vary
-for even the smallest differences in inputs.
+将给定的数字哈希为整数值。即使输入存在极微小的差异，哈希结果也可能不同。

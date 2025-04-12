@@ -1,5 +1,5 @@
 ---
-title: volumeres
+title: 体积分辨率
 order: 14
 ---
 `vector  volumeres(<geometry>geometry, int primnum)`
@@ -8,15 +8,15 @@ order: 14
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，该参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
-Returns
+返回值
 
-The resolution of the volume primitive.
+体积图元的分辨率。
 
-For VDBs, the valid range of indices is not `0..res-1`, but
+对于VDB，有效索引范围不是`0..res-1`，而是
 `volumeindexorigin..volumeindexorigin+res-1`
 
-Returns 0 if `primnum` or `inputnum` is out of range, the geometry is invalid, or the given primitive is not a vector volume primitive.
+如果`primnum`或`inputnum`超出范围、几何体无效，或给定图元不是矢量体积图元，则返回0。

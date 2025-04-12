@@ -1,12 +1,13 @@
 ---
-title: product
+title: product 函数
 order: 59
 ---
+
 `float  product(float n)`
 
 `int  product(int n)`
 
-Returns the argument.
+返回参数本身。
 
 `float  product(vector2 v)`
 
@@ -14,14 +15,14 @@ Returns the argument.
 
 `float  product(vector4 v)`
 
-Returns the product of the vector’s components.
+返回向量各分量的乘积。
 
 `int  product(int arr[])`
 
 `float  product(float arr[])`
 
-Returns the product of the items of the array.
+返回数组各元素的乘积。
 
 `<vector> product(<vector>arr[])`
 
-Returns a vector where the components are the products of the corresponding components in the vectors in the array.
+返回一个向量，其各分量是数组中对应向量分量的乘积。

@@ -1,8 +1,7 @@
 ---
-title: reflect
+title: 反射
 order: 61
 ---
 `vector  reflect(vector direction, vector normal)`
 
-Returns the vector representing the reflection of the direction
-against the normal.
+返回表示方向向量相对于法向量的反射向量。

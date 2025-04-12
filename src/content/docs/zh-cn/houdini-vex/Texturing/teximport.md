@@ -2,132 +2,124 @@
 title: teximport
 order: 11
 ---
-| On this page | * [Queryable attributes](#queryable-attributes) * [Examples](#examples) |
+| 本页内容 | * [可查询属性](#queryable-attributes) * [示例](#examples) |
 | --- | --- |
 
 `int  teximport(string map, string attribute, <type>&value)`
 
-Reads a single value. Returns `1` on success or `0` on failure.
+读取单个值。成功返回`1`，失败返回`0`。
 
 `int  teximport(string map, string token, int|string&values[])`
 
-Returns the number of strings in the array.
+返回数组中的字符串数量。
 
-Note that if the values cannot be imported, `values` will not be written to and may remain uninitialized.
+注意：如果无法导入值，`values`将不会被写入，可能保持未初始化状态。
 
-This function queries metadata stored in an image file, and works with most texture formats.
+此函数查询存储在图像文件中的元数据，适用于大多数纹理格式。
 
-You can choose what properties are stored using the `vm_saveoptions`
-Houdini property on a camera or light
-(`image:saveoptions` in [IFD](../../render/ifd.html)).
-However, the defaults probably contain all the information you'd want.
-See [rendering properties](../../props/index.html "Properties let you set up flexible and powerful hierarchies of rendering, shading, lighting, and camera parameters.").
-Queryable attributes
+您可以通过在相机或灯光上设置`vm_saveoptions` Houdini属性（在[IFD](../../render/ifd.html)中使用`image:saveoptions`）来选择存储哪些属性。不过默认值可能已包含您需要的所有信息。详见[渲染属性](../../props/index.html "属性让您可以设置灵活强大的渲染、着色、灯光和相机参数层级结构")。
 
-## queryable-attributes
+## 可查询属性
 
-There are several generic attributes you can always query:
+### queryable-attributes
+
+有几个通用属性始终可以查询：
 
 `int texture:xres`
 
-X resolution of the texture map.
+纹理贴图的X分辨率。
 
 `int texture:yres`
 
-Y resolution of the texture map.
+纹理贴图的Y分辨率。
 
 `int texture:channels`
 
-Number of channels in the texture map.
+纹理贴图的通道数。
 
 `vector texture:resolution`
 
-Resolution of the texture as the vector `(xres, yres, channels)`.
+纹理分辨率，向量形式为`(xres, yres, channels)`。
 
 `matrix texture:worldtoview`
 
-The transform matrix that will take world space points into the camera
-space used to generate the image.
+将世界空间点转换到生成图像所用相机空间的变换矩阵。
 
 `matrix texture:projection`
 
-The transform matrix representing the projection matrix of the camera
-used to generate the image.
+代表生成图像所用相机投影矩阵的变换矩阵。
 
 `matrix texture:worldtondc`
 
-The transform matrix that will transform world spaced points into the NDC (Normalized Device Coordinates) space of the camera used to make the image. The points are generated in homogeneous coordinates. That is, to get the values in the range 0 to 1:
+将世界空间点转换到生成图像所用相机的NDC（标准化设备坐标）空间的变换矩阵。点以齐次坐标形式生成。即要获得0到1范围内的值：
 
 ```vex
 matrix ndc;
 if (teximport(map, "texture:worldtoNDC", ndc))
 {
     vector P_ndc = pos * ndc;
-    // If the camera is a perspective camera,
-    // dehomogenize the point
+    // 如果是透视相机
+    // 对点进行去齐次化
     if (getcomp(ndc, 2, 3) != 0)
     {
         P_ndc.x = P_ndc.x / P_ndc.z;
         P_ndc.y = P_ndc.y / P_ndc.z;
     }
-    // Finally, scale and offset XY
-    // from [-1,1] to [0,1]
+    // 最后将XY从[-1,1]缩放偏移到[0,1]
     P_ndc *= {.5, .5, 1};
     P_ndc += {.5, .5, 0};
 }
-
 ```
 
 `string texture:tokens`
 
-A space separated list of all attribute names you can query.
+所有可查询属性名的空格分隔列表。
 
-The `string &values[]` version can query the following
+`string &values[]`版本可查询以下内容：
 
 `texture:channelnames`
 
-List of all the raster plane channel names.
+所有栅格平面通道名称列表。
 
 `texture:channelsize`
 
-This returns an array of the number of floats in each image channel.
+返回每个图像通道中浮点数的数量数组。
 
 `texture:channelstorage`
 
-This returns an array with a string for the underlying storage type for
-each channel (i.e. `uint8` or `real16`).
+返回每个通道底层存储类型的字符串数组（如`uint8`或`real16`）。
 
 `texture:channelcolorspace`
 
-An array of the color space associated with each channel.
+每个通道关联的色彩空间数组。
 
 `texture:tokens`
 
-List of all the built-in tokens understood by `teximport()`.
+`teximport()`理解的所有内置标记列表。
 
 `string texture:device`
 
-The device that’s used to evaluate the texture. Possible values are:
+用于评估纹理的设备。可能值为：
 
-- `native` - Evaluated using the built-in Houdini texture engine
-- `oiio` - Evaluated using OpenImageIO
-- `ptex` - Evaluated using Ptex
+- `native` - 使用Houdini内置纹理引擎评估
+- `oiio` - 使用OpenImageIO评估
+- `ptex` - 使用Ptex评估
 
 `string: texture:colorspace`
 
-This is the color space the texture library will use by default. That is, when the `srccolorspace` keyword argument isn’t provided.
+纹理库默认使用的色彩空间（即未提供`srccolorspace`关键字参数时）。
 
 `string: texture:swrap`
 
-Some texture formats store metadata that provides the default wrap mode for texture coordinates. This key will lookup the value in the metadata for wrapping in s (or an empty string).
+某些纹理格式存储的元数据提供了纹理坐标的默认包裹模式。此键将查找s方向的包裹模式元数据值（或空字符串）。
 
 `string: texture:twrap`
 
-Some texture formats store metadata that provides the default wrap mode for texture coordinates. This key will lookup the value in the metadata for wrapping in t (or an empty string).
+某些纹理格式存储的元数据提供了纹理坐标的默认包裹模式。此键将查找t方向的包裹模式元数据值（或空字符串）。
 
-Examples
+## 示例
 
-## examples
+### examples
 
 ```vex
 cvex
@@ -156,5 +148,4 @@ cvex
             printf("'%s' = %g\n", token, mval);
     }
 }
-
 ```

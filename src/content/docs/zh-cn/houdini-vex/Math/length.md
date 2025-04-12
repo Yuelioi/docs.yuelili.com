@@ -1,12 +1,12 @@
 ---
-title: length
+title: length（长度）
 order: 37
 ---
-To get the length of a string, or number of items in an array, use [len](len.html "Returns the length of an array.").
+要获取字符串的长度或数组中的元素数量，请使用[len](len.html "返回数组的长度")函数。
 
 `float  length(float f)`
 
-Simply returns the given number.
+直接返回给定的数字。
 
 `float  length(vector2 v)`
 
@@ -14,13 +14,11 @@ Simply returns the given number.
 
 `float  length(vector4 v)`
 
-Returns the distance of the vector or vector4 from the origin.
+返回向量或vector4到原点的距离。
 
-If you want the squared length, using [length2](length2.html "Returns the squared distance of the vector or vector4.") is faster than squaring the result of this function.
+如果需要平方长度，使用[length2](length2.html "返回向量或vector4的平方距离")比将此函数结果平方运算更快。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 length({1.0, 0, 0}) == 1.0;

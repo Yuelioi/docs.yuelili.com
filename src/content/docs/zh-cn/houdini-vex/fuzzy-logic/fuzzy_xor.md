@@ -6,4 +6,4 @@ order: 9
 
 `float  fuzzy_xor(float a, float b, ...)`
 
-Returns the fuzzy “XOR” (Zadeh XOR) of the input fuzzy values.
+返回输入模糊值的模糊"异或"（Zadeh XOR）运算结果。

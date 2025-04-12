@@ -4,9 +4,9 @@ order: 8
 ---
 `int [] osd_patches(<geometry>geometry, int face_id)`
 
-Each face in a subdivision hull may create one or more patches. This function lists the patch ids for a corresponding face.
+细分外壳中的每个面可能会创建一个或多个补丁。此函数列出对应面的补丁ID。
 
-This is implemented using the following algorithm:
+该功能通过以下算法实现：
 
 ```vex
 int []

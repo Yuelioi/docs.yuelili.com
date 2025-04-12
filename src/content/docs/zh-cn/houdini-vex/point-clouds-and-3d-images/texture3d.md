@@ -1,23 +1,15 @@
 ---
-title: texture3d
+title: 3D纹理
 order: 36
 ---
 `<type> texture3d(string filename, string channel, vector P, ...)`
 
-Returns the value of the 3d image at the position specified by P. If P
-is outside of the bounding box of the image, the value returned will be
-0\. If the channel specified contains more values than the return type
-(i.e. a vector channel when a float return type is desired), the first
-component of the vector will be returned. If the channel specified
-contains fewer values than the return type, the missing components will
-be filled with the last valid channel.
+返回指定位置P处的3D图像值。如果P位于图像边界框之外，则返回值为0。如果指定的通道包含的值多于返回类型（例如当需要浮点返回类型时却指定了矢量通道），则将返回矢量的第一个分量。如果指定的通道包含的值少于返回类型，则缺失的分量将用最后一个有效通道填充。
 
-Texture files will be searched for in the path specified by the
-`HOUDINI_TEXTURE_PATH` environment variable.
+纹理文件将在`HOUDINI_TEXTURE_PATH`环境变量指定的路径中搜索。
 
-You can pass additional arguments to control the evaluation (see
-[colormap](colormap.html "Looks up a (filtered) color from a texture file.")):
+您可以传递额外参数来控制评估（参见[colormap](colormap.html "从纹理文件中查找（过滤后的）颜色")）：
 
-| `"filter"` | Specifies the filter for evaluation. |
+| `"filter"` | 指定评估使用的过滤器 |
 | --- | --- |
-| `"width"` | Specifies the filter width for evaluation. |
+| `"width"` | 指定评估使用的过滤器宽度 |

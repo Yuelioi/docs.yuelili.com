@@ -1,96 +1,83 @@
 ---
-title: Strings
+title: 字符串
 order: 5
 ---
-| On this page | * [Overview](#overview) * [String Literals](#string-literals) * [Escape sequences in wrangles and VEXpressions](#escape-sequences-in-wrangles-and-vexpressions) * [Declaring string types](#declaring-string-types) * [Accessing and setting string values](#accessing-and-setting-string-values) * [Looping over a string](#looping-over-a-string) * [Working with strings](#working-with-strings) |
+| 本页内容 | * [概述](#概述) * [字符串字面量](#字符串字面量) * [Wrangle和VEX表达式中的转义序列](#wrangle和vex表达式中的转义序列) * [声明字符串类型](#声明字符串类型) * [访问和设置字符串值](#访问和设置字符串值) * [遍历字符串](#遍历字符串) * [字符串操作](#字符串操作) |
 | --- | --- |
 
-Overview
+概述
 
-## overview
+## 概述
 
-VEX includes a string datatype. This is useful in several places:
+VEX包含字符串数据类型，在以下场景中非常有用：
 
-- Manipulating text
-- Referencing filenames and op node names
-- Manipulating binary data
+- 文本处理
+- 引用文件名和操作节点名称
+- 处理二进制数据
 
-String Literals
+字符串字面量
 
-## string-literals
+## 字符串字面量
 
-String literals can be enclosed in either single quotes (') or double quotes ("). Strings may also be specified using the Python or C++ raw-string format.
+字符串字面量可以用单引号(')或双引号(")括起来。也可以使用Python或C++的原始字符串格式来指定字符串。
 
 ```vex
 string s = 'foo';
 string t = "bar";
-string py = r"Hello world\n";        // Python style, equivalent to "Hello world\\n"
-string cpp = R"(Hello world\n)";   // C++ style, equivalent to "Hello world\\n"
+string py = r"Hello world\n";        // Python风格，等价于"Hello world\\n"
+string cpp = R"(Hello world\n)";   // C++风格，等价于"Hello world\\n"
 
 ```
 
-Escaped strings (non-raw strings) automatically convert known escape sequences
-to their representative byte sequences. For example “\\n” will convert to the
-ASCII byte to emit a newline.
+转义字符串（非原始字符串）会自动将已知的转义序列转换为对应的字节序列。例如"\\n"会被转换为ASCII换行符。
 
-Raw strings ignore escape sequences. For a raw string, the “\\n” will be
-interpreted literally as a backslash and the lower case `n`.
+原始字符串会忽略转义序列。对于原始字符串，"\\n"会被字面解释为反斜杠和小写字母`n`。
 
-The syntax for strings can be summarized
+字符串语法可以总结为：
 
-- Escaped strings `"text"` or `'text'`
-- Python raw-strings `r"raw text"`
-- C++ raw-string `R"delimiter(raw text)delimiter"`
-  Where the `delimiter` is an optional string of 0 to 16 characters. Unlike
-  Python raw-strings, C++ style raw strings can contain multi-line text and
-  even binary data.
+- 转义字符串 `"文本"` 或 `'文本'`
+- Python原始字符串 `r"原始文本"`
+- C++原始字符串 `R"分隔符(原始文本)分隔符"`
+  其中`分隔符`是0到16个字符的可选字符串。与Python原始字符串不同，C++风格的原始字符串可以包含多行文本甚至二进制数据。
 
 ```vex
 string escaped = 'Line 1\nLine 2';
 string raw = r"Line 1\nLine 1 continues";        // "Line 1\\nLine 1 continues"
 string cppraw = R"(Line 1\nLine 1 continues)";        // "Line 1\\nLine 1 continues"
-string cppmultiline = R"multi(This is a long
-    string which has multiple lines.  The string
-    also contains an embedded raw string R"(raw string)"
-    But since the delimiter doesn't match, the string isn't
-    actually ended until here.)multi";
+string cppmultiline = R"multi(这是一个很长的
+    多行字符串。字符串
+    还包含一个内嵌的原始字符串 R"(原始字符串)"
+    但由于分隔符不匹配，字符串实际上
+    直到这里才结束。)multi";
 
 ```
 
-Escape sequences in wrangles and VEXpressions
+Wrangle和VEX表达式中的转义序列
 
-## escape-sequences-in-wrangles-and-vexpressions
+## wrangle和vex表达式中的转义序列
 
-It is important to note that inside Houdini one rarely writes VEX code
-directly. Instead, the snippet written will be channel-referenced into
-a VOP and then used to generate code. The sequence of transformations
-from an Attribute Wrangle into the final VEX will result in a lot of
-substitutions.
+需要注意，在Houdini中很少直接编写VEX代码。相反，编写的代码片段会被通道引用到VOP中，然后用于生成代码。从属性Wrangle到最终VEX的转换过程会进行大量替换。
 
-In particular, '$' will start an environment variable expansion and ''
-will trigger escape sequences **before** VEX receives the code. Use the
-View Code option in VEX to see the complete result of the transformation.
+特别是，'$'会触发环境变量扩展，'\'会触发转义序列，这些操作都发生在VEX接收到代码之前。可以使用VEX中的"查看代码"选项来查看转换的完整结果。
 
-You can generate a backslash with `chr(92)` and a dollar sign with
-`chr(36)`.
+可以使用`chr(92)`生成反斜杠，使用`chr(36)`生成美元符号。
 
-Declaring string types
+声明字符串类型
 
-## declaring-string-types
+## 声明字符串类型
 
-To declare a string variable, the general form is
-`string var_name`:
+声明字符串变量的一般形式是`string 变量名`：
 
 ```vex
-// My string is a normal string
+// 我的字符串是一个普通字符串
 string   mystring;
 
 ```
 
-To declare a function that returns a string:
+声明返回字符串的函数：
 
 ```vex
-// A function which returns a string
+// 返回字符串的函数
 string rgb_name()
 {
 ...
@@ -98,7 +85,7 @@ string rgb_name()
 
 ```
 
-To specify a literal array, use double quotes or single quotes.
+要指定字面量数组，请使用双引号或单引号。
 
 ```vex
 string a_string = "hello world!";
@@ -106,30 +93,19 @@ string another_string = 'good-bye!'
 
 ```
 
-Accessing and setting string values
+访问和设置字符串值
 
-## accessing-and-setting-string-values
+## 访问和设置字符串值
 
-Use `string[index]` to look up a character by its position in the
-array.
+使用`string[索引]`通过位置查找字符。
 
-The index is a byte offset into the string, not a character offset. This is an
-important distinction when you deal with Unicode strings. VEX assumes a UTF-8
-encoding for all strings. If the given offset isn’t a valid UTF-8 character,
-an empty string is returned. Otherwise, the full UTF-8 character is returned -
-this may be a string of length greater than one!
+索引是字符串中的字节偏移量，而不是字符偏移量。在处理Unicode字符串时，这是一个重要的区别。VEX假设所有字符串都使用UTF-8编码。如果给定的偏移量不是有效的UTF-8字符，则返回空字符串。否则，返回完整的UTF-8字符——这可能是一个长度大于1的字符串！
 
-String bounds are checked at run time. Reading out of bounds will result in an
-empty string. This may generate a warning or optional run-time error in the
-future.
+字符串边界在运行时检查。越界读取将导致空字符串。未来可能会生成警告或可选的运行时错误。
 
-Python-style indexing is used. This means negative indices refer to positions
-from the end of the array.
+使用Python风格的索引。这意味着负索引表示从数组末尾开始的位置。
 
-The slice notation can be used with the square brackets to extract ranges of a
-string. This will operate on byte sequences, side stepping the UTF-8
-requirements of the normal square bracket operation. Thus if you want the
-third byte, regardless of whether it is a valid UTF-8 or not, use:
+可以使用切片符号与方括号一起提取字符串的范围。这将操作字节序列，绕开普通方括号操作的UTF-8要求。因此，如果你想要第三个字节，无论它是否是有效的UTF-8，都可以使用：
 
 ```vex
 string a_string = "hello world!";
@@ -137,37 +113,36 @@ string thirdbyte = a_string[2:3];
 
 ```
 
-You cannot assign values to an array using square brackets.
+不能使用方括号为数组赋值。
 
-(The [getcomp](functions/getcomp.html "Extracts a single component of a vector type, matrix type, or array.") function is the equivalent for using
-the square brackets notation.)
+（[getcomp](functions/getcomp.html "提取向量类型、矩阵类型或数组的单个分量。")函数相当于使用方括号表示法。）
 
-Looping over a string
+遍历字符串
 
-## looping-over-a-string
+## 遍历字符串
 
-See [foreach](functions/foreach.html "Loops over the items in an array, with optional enumeration.").
+参见[foreach](functions/foreach.html "遍历数组中的项，可选择枚举。")。
 
-Note you will get empty strings for the offsets which do not correspond to valid unicode characters.
+注意，对于不对应有效Unicode字符的偏移量，你将得到空字符串。
 
-Working with strings
+字符串操作
 
-## working-with-strings
+## 字符串操作
 
-The following functions let you query and manipulate arrays.
+以下函数允许你查询和操作数组。
 
-[len](functions/len.html "Returns the length of an array.")
+[len](functions/len.html "返回数组的长度。")
 
-Returns the length of a string.
+返回字符串的长度。
 
-[append](functions/append.html "Adds an item to an array or string.")
+[append](functions/append.html "向数组或字符串添加项。")
 
-Adds another array to the end of this one.
+将另一个数组添加到此数组的末尾。
 
-[ord](functions/ord.html "Converts an UTF8 string into a codepoint.")
+[ord](functions/ord.html "将UTF8字符串转换为码位。")
 
-Converts a UTF-8 string to a codepoint.
+将UTF-8字符串转换为码位。
 
-[chr](functions/chr.html "Converts an unicode codepoint to a UTF8 string.")
+[chr](functions/chr.html "将Unicode码位转换为UTF8字符串。")
 
-Converts a codepoint to a UTF-8 string.
+将码位转换为UTF-8字符串。

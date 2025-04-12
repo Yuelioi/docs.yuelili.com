@@ -4,4 +4,4 @@ order: 17
 ---
 `int  detailattribtype(<geometry>geometry, string attribute_name)`
 
-See [attribtype](attribtype.html "Returns the type of a geometry attribute.") for more information.
+更多信息请参阅 [attribtype](attribtype.html "返回几何属性的类型")。

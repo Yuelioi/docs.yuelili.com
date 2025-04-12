@@ -6,16 +6,15 @@ order: 76
 
 `coef`
 
-An array of coefficients of the polynomial.
+多项式系数的数组。
 
-You must order the coefficients such that `coef[i]` should be `x^i`.
-**This is reverse of the order you would write the polynomial out normally**.
+必须将系数排序，使得 `coef[i]` 对应 `x^i` 项。
+**这与通常书写多项式时的顺序相反**。
 
 `&roots`
 
-The function overwrites this array with the real roots of the polynomial,
-in ascending order.
+该函数会将多项式的实数根按升序写入此数组。
 
-Returns
+返回值
 
-The number of real roots.
+实数根的个数。

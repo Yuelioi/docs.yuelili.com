@@ -2,16 +2,15 @@
 title: npointsgroup
 order: 8
 ---
+
 `int  npointsgroup(<geometry>geometry, string groupname)`
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `groupname`
 
-A group name or ad-hoc group, like `0-3` or `@Cd.x>0.5`. This matches the
-SOP group naming convention, in particular that an empty string means all
-points.
+组名或临时组，如`0-3`或`@Cd.x>0.5`。这符合SOP组命名约定，特别是空字符串表示所有点。

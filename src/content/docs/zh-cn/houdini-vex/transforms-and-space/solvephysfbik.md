@@ -2,173 +2,173 @@
 title: solvephysfbik
 order: 30
 ---
-| Since | 18.5 |
+| 始于版本 | 18.5 |
 | --- | --- |
 
 `matrix [] solvephysfbik(matrix xforms[], int parents[], dict jointoptions[], matrix targetxforms[], int targets[], dict targetoptions[], int iters, float damping, float tolerance)`
 
-This solver uses a different algorithm than [solvefbik](solvefbik.html "Applies a full-body inverse kinematics algorithm to a skeleton.") - it typically performs somewhat slower, but provides more control over the skeleton’s behavior and can produce higher-quality results.
-The solver can also use the optional per-joint masses and center of mass positions to achieve a target position for the skeleton’s center of mass, allowing for physics-based behavior such as maintaining balance.
+该求解器采用与[solvefbik](solvefbik.html "对骨骼应用全身逆向运动学算法")不同的算法——通常性能稍慢，但能提供更精细的骨骼行为控制，并产生更高质量的结果。
+求解器还可通过可选参数使用各关节的质量和质心位置来实现骨骼质心的目标位置，从而实现基于物理的行为（如保持平衡）。
 
-Compared to [solvefbik](solvefbik.html "Applies a full-body inverse kinematics algorithm to a skeleton."), this solver has more stable behavior when joint limits are enabled, and produces more accurate results when there are targets at different priority levels.
-This solver also tends to distribute joint angle changes more evenly along the chain (particularly when orientation targets are being used), rather than producing large joint angle changes for one or two joints.
+相比[solvefbik](solvefbik.html "对骨骼应用全身逆向运动学算法")，本求解器在启用关节限制时表现更稳定，且在存在不同优先级目标时能产生更精确的结果。
+该求解器还会更均匀地沿骨骼链分配关节角度变化（特别是使用旋转目标时），而不会在少数关节上产生大幅角度变化。
 
-The rotation and translation weight parameters provide control over how each joint axis behaves during the solve. This can be used to ensure that certain joints rotate more than others, to lock a specific joint axis, or to enable translating (stretchy) joints.
+旋转和平移权重参数可控制求解过程中各关节轴的行为。这可用于确保特定关节旋转幅度大于其他关节、锁定特定关节轴或启用可平移（弹性）关节。
 
-Returns an empty array if:
+以下情况返回空数组：
 
-- `xforms` or `jointoptions` are not the same size as `parents`.
-- `targetxforms` or `targetoptions` are not the same size as `targets`.
+- `xforms`或`jointoptions`与`parents`长度不一致
+- `targetxforms`或`targetoptions`与`targets`长度不一致
 
 `xforms`
 
-The world transforms of all the transforms in the rig being solved.
+待解算装置中所有变换的世界空间变换矩阵。
 
 `parents`
 
-The parent transform index for each transform. A value of -1 indicates a root.
+各变换的父级变换索引。-1表示根节点。
 
 `jointoptions`
 
-Specifies optional parameters for the joints. The valid keys are:
+指定关节的可选参数，有效键如下：
 
 `rotation_weights`
 
-A `vector` specifying weights for the joint’s rotation axes.
-Given a larger relative weight, the solution will tend to be achieved by rotating around that axis.
-A weight of zero will disable the rotation axis.
-The default value is `{1,1,1}`.
+`vector`类型，指定关节旋转轴的权重。
+权重值越大，求解器越倾向于绕该轴旋转来实现解算。
+零权重将禁用该旋转轴。
+默认值为`{1,1,1}`。
 
 `translation_weights`
 
-A `vector` specifying weights for the joint’s translation axes.
-Given a larger relative weight, the solution will tend to be achieved by translating along that axis.
-A weight of zero will disable the translation axis.
-To achieve an unpinned root joint, the root’s translation weight should be non-zero (e.g. `{1,1,1}`).
-The default value is `{0,0,0}`.
+`vector`类型，指定关节平移轴的权重。
+权重值越大，求解器越倾向于沿该轴平移来实现解算。
+零权重将禁用该平移轴。
+要使根关节非固定，其平移权重应设为非零值（如`{1,1,1}`）。
+默认值为`{0,0,0}`。
 
 `rotation_order`
 
-An `int` specifying the joint’s rotation order.
+`int`类型，指定关节旋转顺序。
 
-One of the rotation order constants listed below, which can be imported from `$HFS/houdini/vex/include/math.h`.
+可选用以下旋转顺序常量（可从`$HFS/houdini/vex/include/math.h`导入）：
 
-| Constant name | Rotation Order |
+| 常量名称 | 旋转顺序 |
 | --- | --- |
-| XFORM_XYZ | Rotate order X, Y, Z |
-| XFORM_XZY | Rotate order X, Z, Y |
-| XFORM_YXZ | Rotate order Y, X, Z |
-| XFORM_YZX | Rotate order Y, Z, X |
-| XFORM_ZXY | Rotate order Z, X, Y |
-| XFORM_ZYX | Rotate order Z, Y, X |
+| XFORM_XYZ | X, Y, Z顺序旋转 |
+| XFORM_XZY | X, Z, Y顺序旋转 |
+| XFORM_YXZ | Y, X, Z顺序旋转 |
+| XFORM_YZX | Y, Z, X顺序旋转 |
+| XFORM_ZXY | Z, X, Y顺序旋转 |
+| XFORM_ZYX | Z, Y, X顺序旋转 |
 
 `rotation_lower_limits`
 
-A `vector` specifying the lower rotation limits (in radians) for the joint’s rotation axes.
-The rotation limits are applied relative to the joint’s local rest transform, if specified.
+`vector`类型，指定关节旋转轴的下限（弧度制）。
+若指定了关节的局部静止变换，旋转限制将相对于该变换应用。
 
-Note
-To prevent a particular axis from rotating, it is much more efficient to set its weight to zero instead of setting its rotation limits to zero.
+注意
+要禁止某轴旋转，将其权重设为零比将旋转限制设为零更高效。
 
 `rotation_upper_limits`
 
-A `vector` specifying the upper rotation limits (in radians) for the joint’s rotation axes.
+`vector`类型，指定关节旋转轴的上限（弧度制）。
 
 `translation_lower_limits`
 
-A `vector` specifying the lower translation limits for the joint’s translation axes.
+`vector`类型，指定关节平移轴的下限。
 
 `translation_upper_limits`
 
-A `vector` specifying the upper translation limits for the joint’s translation axes.
+`vector`类型，指定关节平移轴的上限。
 
 `rest_xform`
 
-A local space `matrix` specifying the joint’s rest pose.
-The default value is the identity matrix.
+局部空间`matrix`，指定关节的静止姿势。
+默认值为单位矩阵。
 
 `rest_rotation_weights`
 
-A `vector` specifying how strongly the solver attempts to match the rest transform for the rotation axes.
-This has a priority lower than any of the end effector targets.
-A value of `0.1` is typically a suitable value when enabling the rest transform constraint, and a value of 0 will disable it.
-The default value is `{0,0,0}`.
+`vector`类型，指定求解器对旋转轴匹配静止变换的强度。
+该约束优先级低于所有末端效应器目标。
+启用静止变换约束时，`0.1`是典型推荐值，设为0则禁用该约束。
+默认值为`{0,0,0}`。
 
 `rest_translation_weights`
 
-A `vector` specifying how strongly the solver attempts to match the rest transform for the translation axes.
-This has a priority lower than any of the end effector targets.
-A value of `0.1` is typically a suitable value when enabling the rest transform constraint, and a value of 0 will disable it.
-The default value is `{0,0,0}`.
+`vector`类型，指定求解器对平移轴匹配静止变换的强度。
+该约束优先级低于所有末端效应器目标。
+启用静止变换约束时，`0.1`是典型推荐值，设为0则禁用该约束。
+默认值为`{0,0,0}`。
 
 `mass`
 
-A `float` specifying the mass of the body associated with the joint.
-This parameter is only used when a center of mass target is provided.
-The default value is `1.0`.
+`float`类型，指定关节关联肢体的质量。
+仅当提供质心目标时使用此参数。
+默认值为`1.0`。
 
 `local_com`
 
-A `vector` specifying the position of the joint’s center of mass, in local space.
-An value of `{0,0,0}` (default) will position the center of mass at the joint’s position.
+`vector`类型，指定关节质心的局部空间位置。
+`{0,0,0}`（默认值）表示质心位于关节位置。
 
 `targets`
 
-A list of the transform indices of the end effectors in the skeleton.
+骨骼中末端效应器的变换索引列表。
 
 `targetxforms`
 
-A list of the target world transforms for the end effectors, in the same order as `targets`.
+末端效应器的目标世界变换矩阵列表，顺序与`targets`对应。
 
 `targetoptions`
 
-Specifies optional parameters for the targets. The valid keys are:
+指定目标的可选参数，有效键如下：
 
 `weight`
 
-A `float` specifying the importance of the target.
-When multiple targets have the same priority level, targets with a higher relative weight are more likely to be reached.
-The default value is `1.0`.
+`float`类型，指定目标的重要性。
+当多个目标优先级相同时，权重较高的目标更可能被达成。
+默认值为`1.0`。
 
 `priority`
 
-An `int` specifying the target’s priority level.
-Targets from a lower priority level cannot interfere with targets from a higher priority level.
-For example, priority levels can be used to ensure that the feet remain planted when manipulating the upper body of a skeleton.
-The default value is `0`.
+`int`类型，指定目标优先级。
+低优先级目标不会干扰高优先级目标。
+例如可确保操作骨骼上半身时双脚保持固定。
+默认值为`0`。
 
 `depth`
 
-An `int` specifying the number of parent joints that can be adjusted to achieve the goal transform.
-A negative depth indicates that the entire chain can be affected.
-The default value is `-1`.
+`int`类型，指定为实现目标变换可调整的父关节数量。
+负值表示整条骨骼链都可受影响。
+默认值为`-1`。
 
 `target_type`
 
-An `int` specifying how the end effector matches the position or orientation of its target transform.
-A value of `0` (default) indicates a position-only target, `1` indicates an orientation-only target, and `2` matches both position and orientation.
-A value of `3` indicates a target that controls the center of mass of the skeleton (the transform index from `targets` is not used).
-Only one center of mass target can be provided.
+`int`类型，指定末端效应器如何匹配目标变换的位置/朝向：
+`0`（默认）表示仅位置目标，`1`表示仅旋转目标，`2`匹配位置和旋转。
+`3`表示控制骨骼质心的目标（此时忽略`targets`中的变换索引）。
+只能提供一个质心目标。
 
 `joint_offset`
 
-A `matrix` specifying a local space transform that is combined with the joint transform to produce the transform that the solver attempts to align with the goal transform.
-This can be used to place the target at an offset from the joint (for example, at the end of a bone).
+`matrix`类型，指定与关节变换组合的局部空间变换，求解器会尝试将该组合变换与目标对齐。
+可用于在关节偏移处设置目标（如骨骼末端）。
 
 `iters`
 
-The maximum number of iterations to perform.
-The solver may terminate early if the `tolerance` parameter is used.
+最大迭代次数。
+若使用`tolerance`参数，求解器可能提前终止。
 
 `damping`
 
-Damping factor for the solver.
-Larger values will produce more stable results when, for example, a target is unreachable.
-A value that is too large, however, will require more iterations to converge.
-Around 0.5 is typically a suitable initial value.
+求解器阻尼系数。
+较大值在目标不可达等情况下会产生更稳定的结果。
+但过大的值需要更多迭代次数收敛。
+通常0.5是合适的初始值。
 
 `tolerance`
 
-The tolerance to use when checking for convergence, defaults to 1e-5.
-If positions converge to within this tolerance, the algorithm will stop.
-If 0, the solver will always perform exactly `iters` iterations.
+收敛检查的容差值，默认为1e-5。
+若位置收敛至该容差范围内，算法将停止。
+若为0，求解器将严格执行`iters`次迭代。

@@ -2,16 +2,15 @@
 title: chstartf
 order: 27
 ---
-| Context(s) | [chop](../contexts/chop.html) |
+| 上下文 | [chop](../contexts/chop.html) |
 | --- | --- |
 
 `float  chstartf()`
 
-Uses `-1` as the `opinput`.
+使用 `-1` 作为 `opinput` 参数。
 
 `float  chstartf(int opinput)`
 
-Returns the frame corresponding to the first sample of the given CHOP input.
+返回给定CHOP输入第一个样本对应的帧数。
 
-To get the first sample number, use [chstart](chstart.html "Returns the start sample of the input specified."). To get the start time in seconds, use [chstartt](chstartt.html "Returns the time corresponding to the first sample of the input
-specified.").
+要获取第一个样本编号，请使用[chstart](chstart.html "返回指定输入的起始样本")。要获取以秒为单位的起始时间，请使用[chstartt](chstartt.html "返回指定输入第一个样本对应的时间")。

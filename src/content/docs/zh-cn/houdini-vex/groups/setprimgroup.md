@@ -2,26 +2,27 @@
 title: setprimgroup
 order: 11
 ---
+
 `int  setprimgroup(int geohandle, string name, int prim_num, int value, string mode="set")`
 
 `geohandle`
 
-A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](geoself.html "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
+要写入的几何体句柄。目前唯一有效的值是`0`或[geoself](geoself.html "返回当前几何体的句柄")，表示节点中的当前几何体。（此参数未来可能用于支持写入其他几何体。）
 
 `name`
 
-The name of the group to modify.
+要修改的组名称。
 
 `prim_num`
 
-The primitive number to add or remove from the group.
+要从组中添加或移除的基元编号。
 
 `value`
 
-`1` to put the primitive in the group, `0` to remove the primitive from the group.
-This is ignored if `mode` is `"toggle"`.
+`1`表示将基元加入组，`0`表示从组中移除基元。
+如果`mode`为`"toggle"`，则忽略此参数。
 
 `mode`
 
-Use `"set"` to set the primitive’s membership according to the `value`.
-Use `"toggle"` to toggle the primitive’s membership, regardless of the `value`.
+使用`"set"`根据`value`值设置基元的成员关系。
+使用`"toggle"`切换基元的成员关系，忽略`value`值。

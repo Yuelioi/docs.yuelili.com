@@ -7,22 +7,20 @@ order: 148
 
 `int  usd_transformtype(string name)`
 
-This function returns the transform operation type implied by the full name.
+此函数返回由完整名称隐含的变换操作类型。
 
 `name`
 
-The full name of the transform operation, which includes the standard namespace, encodes transformation type, and optionally contains the suffix.
+变换操作的完整名称，包含标准命名空间、编码的变换类型，并可选择性地包含后缀。
 
-Returns
+返回值
 
-The the numerical code for the inferred transform operation type implied by the transform operation name. See the VEX “usd.h” header for defines, such as `USD_XFORM_TRANSLATE`, `USD_XFORM_TRANSFORM`, or `USD_XFORM_ROTATE_XYZ`.
+由变换操作名称推断出的变换操作类型的数字代码。可参考VEX头文件"usd.h"中的定义，如`USD_XFORM_TRANSLATE`、`USD_XFORM_TRANSFORM`或`USD_XFORM_ROTATE_XYZ`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the type of the first transform operation on the cube
+// 获取立方体上的第一个变换操作类型
 string cube_xform_ops[] = usd_transformorder(0, "/geo/cube");
 int type = usd_transformtype(cube_xform_ops[0]);
 

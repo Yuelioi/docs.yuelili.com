@@ -1,19 +1,18 @@
 ---
-title: inprimgroup
+title: inprimgroup函数
 order: 6
 ---
+
 `int  inprimgroup(<geometry>geometry, string groupname, int primnum)`
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+当在节点上下文（如wrangle SOP）中运行时，此参数可以是一个整数，表示要从中读取几何图形的输入编号（从0开始）。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是一个字符串，指定要读取的几何文件（例如`.bgeo`文件）。在Houdini内部运行时，可以是`op:/path/to/sop`这样的引用路径。
 
-Returns
+返回值
 
-`1` if the groups exists and the primitive is in the group, or `0` otherwise.
+如果组存在且指定图元在该组中，则返回`1`；否则返回`0`。
 
-This can use ad-hoc groups, like `0-3` or `@Cd.x>0.5`. It matches the SOP
-group naming convention, in particular that an empty string means all
-primitives.
+该函数支持临时组（ad-hoc groups）语法，如`0-3`或`@Cd.x>0.5`。它遵循SOP组的命名约定，特别需要注意的是空字符串表示所有图元。

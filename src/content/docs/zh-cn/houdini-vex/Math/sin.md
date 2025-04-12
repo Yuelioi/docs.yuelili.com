@@ -1,11 +1,11 @@
 ---
-title: sin
+title: sin（正弦函数）
 order: 72
 ---
 `float  sin(float n)`
 
-Returns the sine of `n`, where `n` is in radians.
+返回`n`的正弦值，其中`n`以弧度为单位。
 
 `<vector> sin(<vector>n)`
 
-Returns a new vector with `sin()` applied to each component.
+返回一个新向量，其中每个分量都应用了`sin()`函数。

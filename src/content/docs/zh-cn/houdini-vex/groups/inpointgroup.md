@@ -6,13 +6,12 @@ order: 5
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号的整数（从0开始）以读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是一个指定几何文件的字符串（例如`.bgeo`）以从中读取。在Houdini内部运行时，这可以是一个`op:/path/to/sop`引用。
 
-Returns
+返回值
 
-`1` if the group exists and the point is in the group, or `0` otherwise.
+如果组存在且点在组中，则返回`1`，否则返回`0`。
 
-This can use ad-hoc groups, like `0-3` or `@Cd.x>0.5`. It matches the SOP
-group naming convention, in particular that an empty string means all points.
+可以使用临时组，如`0-3`或`@Cd.x>0.5`。它匹配SOP组命名约定，特别是空字符串表示所有点。

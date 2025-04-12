@@ -2,59 +2,60 @@
 title: getuvtangents
 order: 34
 ---
-| Context(s) | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
+
+| 上下文 | [置换](../contexts/displace.html)  [雾效](../contexts/fog.html)  [光照](../contexts/light.html)  [阴影](../contexts/shadow.html)  [表面](../contexts/surface.html) |
 | --- | --- |
 
 `void  getuvtangents(string objName, vector P, vector dir, vector &Tu, vector &Tv)`
 
-This variant additionally sets Tn to the evaluation point’s surface normal:
+此变体还会将Tn设置为评估点的表面法线：
 
 `void  getuvtangents(string objName, vector P, vector dir, vector &Tu, vector &Tv, vector &Tn)`
 
-Note
-The object must have a vector attribute named “uv”.
+注意
+对象必须具有名为"uv"的向量属性。
 
-Tip
-Passing “” as the `objName` parameter will cause the function to use the current shaded object.
+提示
+将""作为`objName`参数传递将使函数使用当前着色对象。
 
 `objName`
 
-Name of object to evaluate UV tangents for.
+要计算UV切线的对象名称。
 
 `P`
 
-Point at which to evaluate UV tangents.
+评估UV切线的点位置。
 
 `dir`
 
-The direction to use for searching the object’s surface.
+用于搜索对象表面的方向。
 
-The surface of the object is searched for by casting rays from `P` in this direction as well as the opposite direction.
+通过从`P`点沿此方向及其相反方向投射射线来搜索对象表面。
 
-When available, it makes sense to use the normal at the point being evaluated.
+当可用时，使用评估点处的法线是有意义的。
 
 `Tu`
 
-UV tangent in U direction.
+U方向的UV切线。
 
 `Tv`
 
-UV tangent in V direction.
+V方向的UV切线。
 
 `Tn`
 
-The surface normal at the point where tangents are evaluated.
+评估切线处的表面法线。
 
 ```vex
-// Get UV tangent at 'P', searching the surface in the direction of 'N'
+// 在'P'点获取UV切线，沿'N'方向搜索表面
 vector Tu, Tv;
 getuvtangents("/obj/geo1", P, N, Tu, Tv);
 
 ```
 
 ```vex
-// Find a surface location using an arbitrary ray.
-// In this case the surface normal isn't known beforehand and can be fetched via 'Tn'.
+// 使用任意射线查找表面位置。
+// 这种情况下表面法线事先未知，可以通过'Tn'获取。
 vector Tu, Tv, Tn;
 getuvtangents("/obj/geo1", ray_orig, ray_dir, Tu, Tv, Tn);
 

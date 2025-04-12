@@ -6,4 +6,4 @@ order: 7
 
 `<vector> fit10(<vector>value, <vector>nmin, <vector>nmax)`
 
-Takes the value in the range `(1, 0)` and shifts it to the corresponding value in the new range (nmin, nmax). For vectors it does this per-component.
+将取值范围在 `(1, 0)` 内的数值映射到新的取值范围 (nmin, nmax) 中。对于向量类型，该操作会逐分量进行映射。

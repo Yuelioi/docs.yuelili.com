@@ -12,19 +12,17 @@ order: 6
 
 `vector  lookat(vector from, vector to, vector up, int xyz)`
 
-Computes a rotation matrix or angles to orient the negative z-axis along the
-vector (to-from) under the transformation. If an up vector is specified, this
-will determine the roll.
+计算一个旋转矩阵或角度，使变换后的负z轴沿着向量(to-from)方向对齐。如果指定了上向量(up)，这将决定滚转角度。
 
 `xyz`
 
-One of the rotation order constants listed below, which can be imported from `$HFS/houdini/vex/include/math.h`.
+以下旋转顺序常量之一，可从`$HFS/houdini/vex/include/math.h`导入。
 
-| Constant name | Rotation Order |
+| 常量名称 | 旋转顺序 |
 | --- | --- |
-| XFORM_XYZ | Rotate order X, Y, Z |
-| XFORM_XZY | Rotate order X, Z, Y |
-| XFORM_YXZ | Rotate order Y, X, Z |
-| XFORM_YZX | Rotate order Y, Z, X |
-| XFORM_ZXY | Rotate order Z, X, Y |
-| XFORM_ZYX | Rotate order Z, Y, X |
+| XFORM_XYZ | 旋转顺序 X, Y, Z |
+| XFORM_XZY | 旋转顺序 X, Z, Y |
+| XFORM_YXZ | 旋转顺序 Y, X, Z |
+| XFORM_YZX | 旋转顺序 Y, Z, X |
+| XFORM_ZXY | 旋转顺序 Z, X, Y |
+| XFORM_ZYX | 旋转顺序 Z, Y, X |

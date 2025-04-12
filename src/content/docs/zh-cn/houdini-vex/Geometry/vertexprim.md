@@ -1,37 +1,35 @@
 ---
-title: vertexprim
+title: vertexprim函数
 order: 44
 ---
 `int  vertexprim(<geometry>geometry, int linearvertex)`
 
-Note
-To convert the linear index into a primitive number and primitive vertex number,
-use [vertexprim](vertexprim.html "Returns the number of the primitive containing a given vertex.") and [vertexprimindex](vertexprimindex.html "Converts a linear vertex index into a primitive vertex number.").
+注意
+要将线性索引转换为基元编号和基元顶点编号，
+请使用[vertexprim](vertexprim.html "返回包含给定顶点的基元编号。")和[vertexprimindex](vertexprimindex.html "将线性顶点索引转换为基元顶点编号。")函数。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `linearvertex`
 
-The linear index of a vertex.
-If you have a point number and point vertex number, you can use [vertexindex](vertexindex.html "Converts a primitive/vertex pair into a linear vertex.") to convert them to a linear index.
+顶点的线性索引。
+如果您有点编号和点顶点编号，可以使用[vertexindex](vertexindex.html "将基元/顶点对转换为线性顶点。")函数将它们转换为线性索引。
 
-Returns
+返回值
 
-The primitive number of the primitive containing the vertex,
-or `-1` if the vertex has no primitive.
+包含该顶点的基元编号，
+如果顶点没有基元则返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 int        pt;
 
-// Get the primitive of vertex 3
+// 获取顶点3所属的基元
 pt = vertexprim("defgeo.bgeo", 3);
 
 ```

@@ -4,4 +4,4 @@ order: 76
 ---
 `bsdf  switch(bsdf direct, bsdf indirect)`
 
-This makes it possible to use a different bsdf for direct and indirect lighting.
+这使得可以为直接光照和间接光照使用不同的bsdf。

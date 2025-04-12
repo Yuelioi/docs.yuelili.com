@@ -8,4 +8,4 @@ order: 41
 
 `vector4  wt_space(vector4 v)`
 
-Transforms a position value from *World* to *Texture* space.
+将位置值从*世界*空间转换到*纹理*空间。

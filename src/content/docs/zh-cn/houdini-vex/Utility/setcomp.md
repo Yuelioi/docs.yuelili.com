@@ -2,44 +2,43 @@
 title: setcomp
 order: 18
 ---
+
 `float|void setcomp(<vector>&target, float value, int index)`
 
-Modifies the `target` vector in-place by changing the component at `index` to `value`.
+通过将`index`处的分量修改为`value`，原地修改`target`向量。
 
-Returns `value` if called with a `float` return type.
+如果以`float`返回类型调用，则返回`value`。
 
 `float|void setcomp(<matrix>&target, float value, int row, int column)`
 
-Modifies the `target` matrix in-place by changing the component specified by `row` and `column` to `value`.
+通过将`row`和`column`指定的分量修改为`value`，原地修改`target`矩阵。
 
-Returns `value` if called with a `float` return type.
+如果以`float`返回类型调用，则返回`value`。
 
 `<type> setcomp(<type>&array[], <type>value, int index)`
 
-Sets the item at `index` in `array` to `value`, and returns `value`.
+将`array`中`index`处的项设置为`value`，并返回`value`。
 
-This is the same as `array[index] = value`.
+这等同于`array[index] = value`。
 
 `float  setcomp(<vector>&array[], float value, int i, int j)`
 
-Modifies the `array[i]` vector in-place by changing the component at `j` to `value`, and returns `value`.
+通过将`j`处的分量修改为`value`，原地修改`array[i]`向量，并返回`value`。
 
-This is the same as `setcomp(array[i], value, j)`.
+这等同于`setcomp(array[i], value, j)`。
 
 `float  setcomp(<matrix>&array[], float value, int i, int j, int k)`
 
-Modifies the `array[i]` matrix in-place by changing the component specified by `j` and `k` to `value`, and returns `value`.
+通过将`j`和`k`指定的分量修改为`value`，原地修改`array[i]`矩阵，并返回`value`。
 
-This is the same as `setcomp(array[i], value, j, k)`.
+这等同于`setcomp(array[i], value, j, k)`。
 
 `<type> setcomp(dict &d, <type>value, string index)`
 
 `<type>[] setcomp(dict &d, <type>value[], string index)`
 
-Sets the item at `index` in `d` to `value`, and returns `value`.
+将字典`d`中`index`处的项设置为`value`，并返回`value`。
 
-This is the same as `d[index] = value`.
+这等同于`d[index] = value`。
 
-Note that because the type to set isn’t determined by the left
-hand side, you may have to fully specify the type of value to
-avoid ambiguity.
+注意：由于要设置的类型不是由左侧决定的，可能需要完整指定`value`的类型以避免歧义。

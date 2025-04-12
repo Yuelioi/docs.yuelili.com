@@ -2,9 +2,9 @@
 title: getprimid
 order: 27
 ---
-| Context(s) | [shading](../contexts/shading.html) |
+| 上下文 | [着色](../contexts/shading.html) |
 | --- | --- |
 
 `int  getprimid()`
 
-Returns the primitive number for the current geometric primitive being shaded.
+返回当前正在着色的几何图元的基元编号。

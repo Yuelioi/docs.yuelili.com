@@ -2,58 +2,49 @@
 title: pcfind_radius
 order: 12
 ---
-`int [] pcfind_radius(<geometry>geometry, string Pchannel, string RadChannel, float radscale, vector P, float radius, int maxpoints)`
+`int [] pcfind_radius(<geometry>几何体, string 位置通道, string 半径通道, float 半径缩放, vector 位置, float 半径, int 最大点数)`
 
-`int [] pcfind_radius(<geometry>geometry, string ptgroup, string Pchannel, string RadChannel, float radscale, vector P, float radius, int maxpoints)`
+`int [] pcfind_radius(<geometry>几何体, string 点组, string 位置通道, string 半径通道, float 半径缩放, vector 位置, float 半径, int 最大点数)`
 
-`int [] pcfind_radius(<geometry>geometry, string Pchannel, string RadChannel, float radscale, vector P, float radius, int maxpoints, float &distances[])`
+`int [] pcfind_radius(<geometry>几何体, string 位置通道, string 半径通道, float 半径缩放, vector 位置, float 半径, int 最大点数, float &距离数组[])`
 
-`int [] pcfind_radius(<geometry>geometry, string ptgroup, string Pchannel, string RadChannel, float radscale, vector P, float radius, int maxpoints, float &distances[])`
+`int [] pcfind_radius(<geometry>几何体, string 点组, string 位置通道, string 半径通道, float 半径缩放, vector 位置, float 半径, int 最大点数, float &距离数组[])`
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
-These functions open a geometry file and return a list of points with the
-location P within radius, based on point positions found in
-Pchannel. Each of the points will be expanded by their RadChannel
-attribute, which will be dilated by radscale. radscale scales the sizes of the `pscale` attribute to scale the spheres you calculate the distance to. A value of `0` turns the spheres into points and distance can only be positive.
+这些函数会打开几何体文件，并基于位置通道中的点位置，返回位于指定半径范围内位置P的点列表。每个点将通过其半径通道属性进行扩展，该属性将通过半径缩放进行膨胀。半径缩放会缩放`pscale`属性的大小，以调整计算距离的球体大小。值为`0`时，球体会变成点，距离只能为正数。
 
-Using a radius channel allows intersection detection between spheres of varying radii. In this case you cannot use only your own sphere radius, as the intersecting sphere may have a much larger radius so not be in your search window. Because of this, it is also sensible to use a 0.0 radius with this function just find all the source spheres that your query position is inside of.
+使用半径通道可以检测不同半径球体之间的相交情况。在这种情况下，不能仅使用自身的球体半径，因为相交的球体可能具有更大的半径，从而不在搜索范围内。因此，使用0.0半径调用此函数仅查找查询位置所在的所有源球体也是合理的。
 
-Only the maxpoints closest points within the given radius
-will be returned. The file name may use the `op:` syntax to reference SOP
-geometry in the OP contexts. The Pchannel parameter indicates the
-attribute which contains the positions to be searched.
+仅返回给定半径内最近的maxpoints个点。文件名可以使用`op:`语法引用OP上下文中的SOP几何体。位置通道参数指示包含要搜索位置的属性。
 
-You can also query is the distance to the surface of the found particle. If the particle has a radius, you either clamp at zero when you are inside the particle, or go negative like with a signed distance field. The latter gives you a lot more flexibility for interpreting the results.
+您还可以查询到找到粒子表面的距离。如果粒子有半径，您可以在粒子内部时将其限制为零，或者像有符号距离场一样使用负值。后者为您提供了更多解释结果的灵活性。
 
-The ptgroup is a point group that limits the points to search. This is a [SOP-style group pattern](../../model/groups.html#manual), so can be something like `0-10` or `@Cd.x>0.5`. A blank string is treated as matching all points.
+点组是一个限制搜索点的点组。这是一个[SOP样式组模式](../../model/groups.html#manual)，可以是类似`0-10`或`@Cd.x>0.5`的内容。空字符串被视为匹配所有点。
 
-The function also optionally takes a float array `distances`, which it modifies with the distances to each point.
+该函数还可以选择接受一个浮点数组`distances`，并用每个点的距离修改它。
 
-Note
-The radius attribute and radius scale apply to the points being searched, not to the point you are doing the searching with!
+注意
+半径属性和半径缩放适用于被搜索的点，而不是用于搜索的点！
 
-Note
-If the radius attribute does not exist, this becomes equivalent to `pcfind`.
+注意
+如果半径属性不存在，则等同于`pcfind`。
 
-Examples
+## 示例
 
-## examples
-
-Performing a proximity query:
+执行邻近查询：
 
 ```vex
-int closept[] = pcfind_radius(filename, "P", "pscale", 1.0, P, maxdistance, maxpoints);
+int 邻近点[] = pcfind_radius(文件名, "P", "pscale", 1.0, P, 最大距离, 最大点数);
 P = 0;
-foreach (int ptnum; closept)
+foreach (int 点编号; 邻近点)
 {
-    vector closepos = point(filename, "P", ptnum);
-    P += closepos;
+    vector 邻近位置 = point(文件名, "P", 点编号);
+    P += 邻近位置;
 }
-P /= len(closept);
-
+P /= len(邻近点);
 ```

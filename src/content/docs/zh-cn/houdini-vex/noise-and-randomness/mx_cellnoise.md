@@ -34,4 +34,4 @@ order: 19
 
 `float  mx_cellnoise(vector4 pos, int periodx, int periody, int periodz, int periodw)`
 
-Returns a random number between 0 and 1. This function will produce the same values as the standard MaterialX library.
+返回一个介于0到1之间的随机数。该函数产生的数值将与标准MaterialX库保持一致。

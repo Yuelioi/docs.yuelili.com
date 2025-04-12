@@ -2,10 +2,9 @@
 title: getobjectname
 order: 25
 ---
-| Context(s) | [shading](../contexts/shading.html) |
+| 上下文 | [着色](../contexts/shading.html) |
 | --- | --- |
 
 `string  getobjectname()`
 
-Returns the name of the current object whose shader is being run, or the
-empty string if there is no current object.
+返回当前正在运行着色器的对象名称，如果没有当前对象则返回空字符串。

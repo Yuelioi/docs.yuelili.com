@@ -2,34 +2,31 @@
 title: usd_isprim
 order: 77
 ---
-| Since | 17.5 |
+| 始于版本 | 17.5 |
 | --- | --- |
 
 `int  usd_isprim(<stage>stage, string primpath)`
 
-This function checks whether the path points to a valid USD primitive.
+此函数用于检查指定路径是否指向有效的USD图元。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，此参数可以是表示输入编号的整数（从0开始）以读取对应阶段的USD数据。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点已处理的阶段（例如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+图元的路径。
 
-Returns
+返回值
 
-1 if the primitive at the given path is valid, and 0 otherwise.
+如果给定路径的图元有效则返回1，否则返回0。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Check if the stage coming on the first input has a sphere primitive 
-// at scene graph location "/geometry/sphere".
+// 检查第一个输入端的阶段是否在场景图位置"/geometry/sphere"处存在球体图元
 int is_valid_primitive = usd_isprim(0, "/geometry/sphere");
 
 ```

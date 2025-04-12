@@ -2,45 +2,46 @@
 title: chattrnames
 order: 3
 ---
-| Context(s) | [chop](../contexts/chop.html) |
+
+| 上下文 | [chop](../contexts/chop.html) |
 | --- | --- |
 
 `string [] chattrnames(int opinput, string attribclass)`
 
 `string [] chattrnames(string attrclass)`
 
-Returns all the CHOP attribute names of a given attribute class from a CHOP input.
+返回从CHOP输入中获取的指定属性类别的所有CHOP属性名称。
 
-CHOP attributes store metadata on clips, channels, samples, or channel/sample pairs.
+CHOP属性存储有关片段、通道、采样或通道/采样对的元数据。
 
 `opinput`
 
-The input number to read from, starting from 0. For example, the first input is 0, the second input is 1, and so on.
+要读取的输入编号，从0开始。例如，第一个输入是0，第二个输入是1，依此类推。
 
 `attribclass`
 
-The “level” of the attribute:
+属性的"级别"：
 
 `"clip"`
 
-An attribute on a whole clip.
+整个片段上的属性。
 
 `"channel"`
 
-An attribute on a whole channel.
+整个通道上的属性。
 
 `"sample"`
 
-An attribute on a sample (across all channels).
+采样上的属性（跨所有通道）。
 
 `"channelsample"`
 
-An attribute on a specific channel/sample pair.
+特定通道/采样对上的属性。
 
 `""`
 
-Pass an empty string to have the function figure out the class based on the other arguments.
+传递空字符串让函数根据其他参数自动判断类别。
 
-Returns
+返回值
 
-The attribute names as a string array.
+以字符串数组形式返回属性名称。

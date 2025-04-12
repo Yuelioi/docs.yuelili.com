@@ -1,24 +1,20 @@
 ---
-title: unserialize
+title: 反序列化
 order: 13
 ---
 `<vector>[] unserialize(float values[])`
 
 `<matrix>[] unserialize(float values[])`
 
-The inverse operation to [serialize](serialize.html "Flattens an array of vector or matrix types into an array of floats."). This operation takes an array of float values
-and creates a new array of vectors or floats by taking each float and assigning it to the
-next component of the vector or matrix in the output array. For example:
+这是[serialize](serialize.html "将向量或矩阵类型数组展平为浮点数数组")操作的逆运算。该操作接收一个浮点数值数组，并通过将每个浮点数分配到输出数组中向量或矩阵的下一个分量来创建新的向量或浮点数数组。例如：
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 vector v[]
 float  f[] = { 1, 2, 3,  7, 8, 9 };
 
 v = vector(unserialize(f));
-// Now v has a length of 2 and contains { {1,2,3}, {7,8,9} }
+// 现在v的长度为2，包含{ {1,2,3}, {7,8,9} }
 
 ```

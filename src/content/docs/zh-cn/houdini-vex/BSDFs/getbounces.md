@@ -4,6 +4,6 @@ order: 10
 ---
 `int  getbounces(bsdf b)`
 
-Returns the bounce mask for the specified `bsdf`.
+返回指定 `bsdf` 的反弹遮罩。
 
-See [bouncemask](bouncemask.html) for information on component label bitmasks.
+关于组件标签位掩码的信息，请参阅 [bouncemask](bouncemask.html)。

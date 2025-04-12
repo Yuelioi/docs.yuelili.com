@@ -6,21 +6,21 @@ order: 8
 
 `<type> ptexture(string map, int face_id, float s, float t, ...)`
 
-This function is deprecated since ptex support has been integrated into the `texture()` function.
-Optional arguments
+该函数已被弃用，因为ptex支持已集成到`texture()`函数中。
+可选参数
 
-## optional-arguments
+## 可选参数
 
-| Keyword | Values |
+| 关键字 | 取值 |
 | --- | --- |
 |  |`channel`
 td>>
-An integer value indicating which channel of the ptex image to use.
+一个整数值，表示要使用的ptex图像通道。
 
 |  |`filter`
 td>>
 
-| `filtersharp` | A floating point value indicating the filter sharpness. This is only valid for the bicubic filter. The range is 0-1 (the default is 1.0). |
-| `lerp` | An boolean value indicating whether to interpolate between Mip maps. The default is true. |
-| `blur` | The texture blur value used for evaluation (default 0). |
-| `width` | The texture width value used for evaluation (default 1). |
+| `filtersharp` | 一个浮点值，表示滤镜锐度。仅对双三次滤镜有效。范围为0-1（默认为1.0）。 |
+| `lerp` | 一个布尔值，表示是否在Mip贴图之间进行插值。默认为true。 |
+| `blur` | 用于评估的纹理模糊值（默认为0）。 |
+| `width` | 用于评估的纹理宽度值（默认为1）。 |

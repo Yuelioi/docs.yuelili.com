@@ -6,29 +6,29 @@ order: 7
 
 `<type>[] attrib(<geometry>geometry, string attribclass, string name, int elemnum)`
 
-This general form lets you specify the attribute “class” at run-time. This can be useful for writing general code that can work on different classes.
-If you know the class of attribute you want to read ahead of time, using [detail](detail.html "Reads the value of a detail attribute value from a geometry."), [prim](prim.html "Reads a primitive attribute value from a geometry."), [point](point.html "Reads a point attribute value from a geometry."), or [vertex](vertex.html "Reads a vertex attribute value from a geometry.") may be faster.
+这个通用形式允许您在运行时指定属性的"类别"。这对于编写能处理不同类别的通用代码非常有用。
+如果您提前知道要读取的属性类别，使用[detail](detail.html "从几何体中读取细节属性值")、[prim](prim.html "从几何体中读取图元属性值")、[point](point.html "从几何体中读取点属性值")或[vertex](vertex.html "从几何体中读取顶点属性值")可能会更快。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文(如wrangle SOP)中运行时，此参数可以是一个表示输入编号(从0开始)的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何体文件(例如.bgeo)的字符串。在Houdini内部运行时，可以是 `op:/path/to/sop`引用。
 
 `attribclass`
 
-One of `"detail"` (or `"global"`), `"point"`, `"prim"`, or `"vertex"`.
+可以是 `"detail"`(或 `"global"`)、`"point"`、`"prim"`或 `"vertex"`之一。
 
-You can also use `"primgroup"`, `"pointgroup"` or `"vertexgroup"` to [read from groups](../groups.html "You can read the contents of primitive/point/vertex groups in VEX as if they were attributes.").
+您也可以使用 `"primgroup"`、`"pointgroup"`或 `"vertexgroup"`来[从组中读取](../groups.html "您可以在VEX中将图元/点/顶点组的内容当作属性来读取")。
 
 `name`
 
-The name of the attribute, group, or intrinsic to read from.
+要读取的属性、组或固有属性的名称。
 
 `elemnum`
 
-Which element (e.g. point number, primitive number, vertex number) to read from. Ignored for detail attributes. You can use [vertexindex](vertexindex.html "Converts a primitive/vertex pair into a linear vertex.") to convert a primitive/point pair into a vertex number.
+要读取的元素编号(如点编号、图元编号、顶点编号)。对于细节属性会被忽略。您可以使用[vertexindex](vertexindex.html "将图元/顶点对转换为线性顶点编号")将图元/点对转换为顶点编号。
 
-Returns
+返回值
 
-Zero/empty value if the attribute does not exist. Use [getattrib](getattrib.html "Reads an attribute value from geometry, with validity check.") if you want to check whether the attribute existed.
+如果属性不存在则返回零/空值。如果您想检查属性是否存在，请使用[getattrib](getattrib.html "从几何体中读取属性值，并检查有效性")。

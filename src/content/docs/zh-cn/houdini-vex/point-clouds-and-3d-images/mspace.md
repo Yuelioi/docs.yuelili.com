@@ -2,17 +2,14 @@
 title: mspace
 order: 3
 ---
-| Context(s) | [image3d](../contexts/image3d.html) |
+| 上下文 | [image3d](../contexts/image3d.html) |
 | --- | --- |
 
 `vector  mspace(vector P)`
 
-Transforms the position specified into the “local” space of the
-metaball. This function is only valid inside the [forpoints](forpoints.html) loop
-construct.
+将指定位置转换到元球的"局部"空间。此函数仅在[forpoints](forpoints.html)循环结构内有效。
 
-An example use of this function would be to compute noise based on a
-“rest” position… For example:
+该函数的典型应用场景是基于"静止"位置计算噪波...例如：
 
 ```vex
 forpoints(P) {

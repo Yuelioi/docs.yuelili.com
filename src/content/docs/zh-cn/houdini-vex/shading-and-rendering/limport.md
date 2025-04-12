@@ -2,22 +2,22 @@
 title: limport
 order: 51
 ---
-| Context(s) | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
+| 适用上下文 | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
 | --- | --- |
 
-Note
-This function is only valid inside an [illuminance](illuminance.html "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables.") loop.
+注意
+此函数仅在 [illuminance](illuminance.html "遍历场景中所有光源，为每个光源调用光照着色器以设置Cl和L全局变量。") 循环内部有效。
 
 `int  limport(string name, <type>&value)`
 
 `name`
 
-The name of the shader variable to read.
+要读取的着色器变量名称。
 
 `&value`
 
-If the named variable is defined and exported, the function overwrites this variable with the variable’s value.
+如果指定变量已定义且导出，该函数将用变量的值覆盖此变量。
 
-Returns
+返回值
 
-Returns `1` if the shader variable is defined and exported, or `0` otherwise.
+如果着色器变量已定义且导出则返回 `1`，否则返回 `0`。

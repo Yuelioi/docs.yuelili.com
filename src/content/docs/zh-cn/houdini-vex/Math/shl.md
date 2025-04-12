@@ -4,4 +4,4 @@ order: 68
 ---
 `int  shl(int a, int bits)`
 
-Bit-shifts `a` to the left by `bits`.
+将 `a` 向左位移 `bits` 位。

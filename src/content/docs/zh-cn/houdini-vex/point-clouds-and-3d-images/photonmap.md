@@ -1,34 +1,31 @@
 ---
-title: photonmap
+title: 光子贴图
 order: 35
 ---
-| On this page | * [Variadic arguments](#variadic-arguments) * [Examples](#examples) |
+
+| 本页内容 | * [可变参数](#variadic-arguments) * [示例](#examples) |
 | --- | --- |
 
 `vector  photonmap(string mapname, vector position, vector normal, ...)`
 
 `void  photonmap(string mapname, vector position, vector normal, vector &color, float &area, ...)`
 
-Variadic arguments
+可变参数
 
 ## variadic-arguments
 
-You can specify additional keyword,value argument pairs to set the
-behavior of the evaluation. These arguments must be defined at load
-time (literals or parameters).
+您可以指定额外的关键字-值参数对来设置评估行为。这些参数必须在加载时定义（字面量或参数）。
 
-To specify one of the additional arguments, pass the keyword as a
-string, with the next argument being the value for the keyword. For
-example `..., "wrap", "clamp", "border", {.1,1,1})`.
+要指定额外参数，请将关键字作为字符串传递，下一个参数是该关键字的值。例如 `..., "wrap", "clamp", "border", {.1,1,1})`。
 
-| Keyword | Type | Value |
+| 关键字 | 类型 | 值 |
 | --- | --- | --- |
-| `"nphotons"` | `int` | Maximum number of photons to filter to produce the final color.  Default is `50`. |
-| `"type"` | `string` | How to interpret the photons.   `"diffuse"` (the default)    Scale each photon by the Lambertian cosine law.    `"irradiance"`   Use the raw energy of each photon without filtering. |
-| `"error"` | `float` | The amount of error allowed in the evaluation.  Larger numbers give less accurate evaluations (i.e. smaller areas of the map will be scanned),  while smaller number will result in larger areas of the map being scanned.  Render time goes up as the error tolerance goes down. Default `0.001`. |
-| `"filter"` | `string` | Specifies the “filter” for computing the irradiance from  photons. When evaluating photon contributions, the incoming  radiance is divided by the area that the photons cover (to  determine the flux). The area can be computed in three  different fashions:   `sphere` (default)    The minimum bounding sphere of all photons will be used  to estimate the area. This estimator will result in soft  blobby looking photon evaluation. It can be inaccurate  near edges of primitives.    `volume`   Like sphere, but uses the volume of the minimum bounding  sphere rather than area to normalize photon tracing  results. When using volume filtering it is usually  necessary to divide the photon lookup result by the volume  density to correct for the density-weighted photon  distribution that occurs in volumes. When using volume filtering, the normal passed to the  `photonmap` function is ignored.    `convex`   Use the convex hull of all photons is to estimate the  area. This estimator will result in slightly “sharper”  edges in the photon evaluation, and can be more accurate  near edges of primitives. However, since there are  sharper edges, this estimator can produce very noisy  evaluations.    `direct`   This filter should be used for photon maps that have been  pre-filtered (for example, for maps that have already been  filtered by the pcfilter utility). It will cause the  photon energies to be averaged without area estimation. |
+| `"nphotons"` | `int` | 用于生成最终颜色的最大光子过滤数量。默认值为 `50`。 |
+| `"type"` | `string` | 如何解释光子。<br>`"diffuse"`（默认值）<br>    根据朗伯余弦定律缩放每个光子。<br>`"irradiance"`<br>    使用每个光子的原始能量而不进行过滤。 |
+| `"error"` | `float` | 评估中允许的误差量。较大的数值会导致评估精度降低（即扫描贴图的较小区域），而较小的数值会导致扫描贴图的较大区域。渲染时间随着误差容限的降低而增加。默认值为 `0.001`。 |
+| `"filter"` | `string` | 指定从光子计算辐照度的"过滤器"。在评估光子贡献时，入射辐射度除以光子覆盖的面积（以确定通量）。面积可以通过三种不同方式计算：<br>`sphere`（默认值）<br>    使用所有光子的最小包围球来估计面积。此估计器会导致光子评估看起来柔和模糊。在基元边缘附近可能不准确。<br>`volume`<br>    类似于sphere，但使用最小包围球的体积而不是面积来归一化光子追踪结果。使用体积过滤时，通常需要将光子查找结果除以体积密度，以校正体积中发生的密度加权光子分布。使用体积过滤时，传递给`photonmap`函数的法线将被忽略。<br>`convex`<br>    使用所有光子的凸包来估计面积。此估计器会导致光子评估的边缘略微"锐利"，并且在基元边缘附近更准确。然而，由于边缘更锐利，此估计器可能产生非常嘈杂的评估。<br>`direct`<br>    此过滤器应用于已预过滤的光子贴图（例如，已由pcfilter实用程序过滤的贴图）。它将导致光子能量在不进行面积估计的情况下取平均值。 |
 
-Examples
+示例
 
 ## examples
 

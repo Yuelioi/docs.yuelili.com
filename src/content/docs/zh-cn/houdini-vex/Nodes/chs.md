@@ -6,6 +6,6 @@ order: 16
 
 `string  chs(string channel, float time)`
 
-Evaluates a channel (or parameter) and return its value.
+评估一个通道（或参数）并返回其值。
 
-The time is specified in seconds, not in frames.
+时间以秒为单位指定，而非帧数。

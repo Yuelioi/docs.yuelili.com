@@ -2,22 +2,18 @@
 title: usd_makevalidprimname
 order: 90
 ---
-| Since | 19.0 |
+
+| 版本 | 19.0 |
 | --- | --- |
 
 `string  usd_makevalidprimname(string name)`
 
-This function ensures that a string meets the requirements of a legal USD
-primitive name that can be used as part of a valid primitive path.
+该函数确保字符串符合合法USD原始名称的要求，可用作有效原始路径的一部分。
 
 `name`
 
-String that should be turned into a valid primitive name.
+需要转换为有效原始名称的字符串。
 
-Returns
+返回值
 
-A possibly modified version of the original string which conforms to the
-requirements for naming USD primitives. Invalid characters such as spaces
-and most punctuation will be converted to underscores. Note that this means
-the translation is not reversible. If the original string is already a
-legal primitive name, the string is returned unchanged.
+原始字符串的可能修改版本，该版本符合USD原始命名的要求。无效字符（如空格和大多数标点符号）将被转换为下划线。请注意这意味着转换是不可逆的。如果原始字符串已经是合法的原始名称，则直接返回原字符串。

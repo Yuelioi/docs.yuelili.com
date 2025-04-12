@@ -1,23 +1,20 @@
 ---
-title: neighbourcount
+title: 邻点计数
 order: 15
 ---
 `int  neighbourcount(<geometry>geometry, int point_num)`
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号的整数（从0开始）以读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `point_num`
 
-The number of the point whose neighbours you want to count.
+需要计算邻点的顶点编号。
 
-Returns
+返回值
 
-The number of points that are connected to the specified point.
-A point is connected if it is adjacent in some polygon, is one of the
-four surrounding points in a grid or NURBs surface, or in some other
-manner directly shares an edge with `point_num`. Returns 0 if there
-is no input, or if the point number is out of range.
+连接到指定顶点的邻点数量。
+如果顶点在多边形中相邻、位于网格或NURBs曲面中的四个周围顶点之一，或以其他方式直接与`point_num`共享边，则视为连接。如果没有输入或顶点编号超出范围，则返回0。

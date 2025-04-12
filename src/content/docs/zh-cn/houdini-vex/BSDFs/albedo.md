@@ -1,7 +1,8 @@
 ---
-title: albedo
+title: 反照率
 order: 1
 ---
+
 `vector  albedo(bsdf b, ...)`
 
 `vector  albedo(bsdf b, int mask, ...)`
@@ -12,10 +13,10 @@ order: 1
 
 `viewer`
 
-Vector toward viewer.
+指向观察者的向量。
 
 `mask`
 
-A bitmask composed from values representing different shading components.
+由代表不同着色分量的值组成的位掩码。
 
-See [bouncemask](bouncemask.html) for information on component label bitmasks.
+有关分量标签位掩码的信息，请参阅[bouncemask](bouncemask.html)。

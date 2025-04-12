@@ -1,58 +1,43 @@
 ---
-title: VEX language reference
+title: VEX语言参考
 order: 7
 ---
-| On this page | * [Contexts](#contexts) * [Statements](#statements) * [Built-in functions](#built-in-functions) * [User-defined functions](#functions)   + [Notes](#notes) * [Main (context) function](#main-context-function)   + [User interface pragmas](#user-interface-pragmas) * [Operators](#operators)   + [Dot operator](#dot-operator)  + [Comparisons](#comparisons)  + [Precedence table](#precedence)  + [Operator type interactions](#operator-type-interactions) * [Data types](#data-types) * [Structs](#structs)   + [Struct functions](#methods) * [Mantra Specific Types](#mantratypes) * [Type casting](#type-casting)   + [Variable casting](#variable-casting)  + [Function casting](#function-casting) * [Comments](#comments) * [Reserved Keywords](#reserved) |
+| 本页内容 | * [上下文](#contexts) * [语句](#statements) * [内置函数](#built-in-functions) * [用户定义函数](#functions)   + [注意事项](#notes) * [主(上下文)函数](#main-context-function)   + [用户界面编译指示](#user-interface-pragmas) * [运算符](#operators)   + [点运算符](#dot-operator)  + [比较运算](#comparisons)  + [优先级表](#precedence)  + [运算符类型交互](#operator-type-interactions) * [数据类型](#data-types) * [结构体](#structs)   + [结构体函数](#methods) * [Mantra专用类型](#mantratypes) * [类型转换](#type-casting)   + [变量类型转换](#variable-casting)  + [函数类型转换](#function-casting) * [注释](#comments) * [保留关键字](#reserved) |
 | --- | --- |
 
-Contexts
+上下文
 
 ## contexts
 
-VEX programs are written for a specific *context*. For example, a shader that
-controls the surface color of an object is written for the `surface` context.
-A shader that determines the illuminance from a light is written for the
-`light` context. A VEX program that creates or filters channel data is
-written for the `chop` context.
+VEX程序是为特定*上下文*编写的。例如，控制对象表面颜色的着色器是为`surface`上下文编写的。确定光源照明的着色器是为`light`上下文编写的。创建或过滤通道数据的VEX程序是为`chop`上下文编写的。
 
-The context affects which functions, statements, and global variables are
-available.
+上下文决定了哪些函数、语句和全局变量可用。
 
-See [VEX contexts](contexts/index.html "Guide to the different contexts in which you can write VEX
-programs.") for an overview of the ways in which
-you can use VEX.
+参见[VEX上下文](contexts/index.html "编写VEX程序的不同上下文指南")了解使用VEX的不同方式概述。
 
-If you are writing for a shading context (surface, displacement, light, etc.),
-you should also read the [shading context specific information](contexts/shading_contexts.html).
+如果您正在为着色上下文(表面、置换、光源等)编写代码，还应阅读[着色上下文特定信息](contexts/shading_contexts.html)。
 
-Statements
+语句
 
 ## statements
 
-VEX supports the usual [statements](statement.html) familiar from C. It also supports
-shading-specific statements such as the [illuminance](functions/illuminance.html "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables.") and [gather](functions/gather.html "Sends rays into the scene and returns information from the shaders of
-surfaces hit by the rays.") loops
-that are only available in certain contexts.
+VEX支持类似C语言的常用[语句](statement.html)。它还支持特定于着色的语句，如仅在特定上下文中可用的[illuminance](functions/illuminance.html "循环遍历场景中的所有光源，为每个光源调用光源着色器以设置Cl和L全局变量。")和[gather](functions/gather.html "向场景发送光线，并从被光线击中的表面着色器返回信息。")循环。
 
-Built-in functions
+内置函数
 
 ## built-in-functions
 
-VEX contains a large library of [built-in functions](functions/index.html). Some functions
-are only available in certain contexts.
+VEX包含一个大型的[内置函数库](functions/index.html)。某些函数仅在特定上下文中可用。
 
-See [VEX functions](functions/index.html).
+参见[VEX函数](functions/index.html)。
 
-User-defined functions
+用户定义函数
 
 ## functions
 
-Functions are defined similarly to C: specify the return type,
-the function name, and parenthesized list of arguments, followed by
-the code block.
+函数的定义方式与C类似：指定返回类型、函数名称、带括号的参数列表，然后是代码块。
 
-Arguments of the same type can be declared in a comma separated list without
-re-declaring the type. Other arguments must be separated by a semi-colon.
+相同类型的参数可以在逗号分隔的列表中声明，无需重新声明类型。其他参数必须用分号分隔。
 
 ```vex
 int test(int a, b; string c) {
@@ -60,13 +45,11 @@ int test(int a, b; string c) {
         printf(c);
     }
 }
-
 ```
 
-You can *overload* functions with the same name but different argument
-signatures *and/or return type*.
+您可以*重载*具有相同名称但不同参数签名*和/或返回类型*的函数。
 
-You can introduce a function definition with the optional `function` keyword to avoid type ambiguity.
+可以使用可选的`function`关键字引入函数定义以避免类型歧义。
 
 ```vex
 function int test(int a, b; string c) {
@@ -74,7 +57,6 @@ function int test(int a, b; string c) {
         printf(c);
     }
 }
-
 ```
 
 ```vex
@@ -104,54 +86,31 @@ basis rotate(basis b; vector axis; float amount) {
 void rotate(basis b; vector axis; float amount) { 
     b = rotate(b, axis, amount); 
 } 
-
 ```
 
-### Notes
+### 注意事项
 
 notes
 
-- User functions must be declared before they are referenced.
-- The functions are in-lined automatically by the [compiler](vcc.html "Overview of how to use the VEX language compiler vcc and its
-  pre-processor and pragma statements."), so
-  **recursion will not work**. To write a recursive algorithm, you should use
-  [shader calls](shadercalls.html) instead.
-- As in RenderMan Shading Language, parameters to user functions are always
-  passed **by reference**, so modifications in a user function affect the variable
-  the function was called with. You can force a shader parameter to be read-only
-  by prefixing it with the `const` keyword. To ensure that the user function
-  writes to an output parameter, prefix it with the `export` keyword.
-- There is no limit on the number of user functions.
-- You can have more than one return statement in a function.
-- You can access global variables directly (unlike RenderMan Shading
-  Language, you do not need to declare them with `extern`). However, we
-  recommend you avoid accessing global variables, since this limits your
-  function to only work in one context (where those globals exist).
-  Instead, pass the global(s) to the function as parameters.
-- Functions can be defined inside of a function (nested functions).
+- 用户函数必须在被引用之前声明。
+- 函数由[编译器](vcc.html "VEX语言编译器vcc及其预处理器和编译指示语句的使用概述")自动内联，因此**递归将不起作用**。要编写递归算法，应改用[着色器调用](shadercalls.html)。
+- 与RenderMan着色语言一样，用户函数的参数总是**通过引用传递**，因此在用户函数中的修改会影响调用该函数的变量。可以通过在参数前添加`const`关键字来强制着色参数为只读。为确保用户函数写入输出参数，可在其前添加`export`关键字。
+- 用户函数的数量没有限制。
+- 一个函数中可以有多个return语句。
+- 可以直接访问全局变量(与RenderMan着色语言不同，不需要用`extern`声明它们)。但是，建议避免访问全局变量，因为这会将函数限制在仅在一个上下文中工作(存在这些全局变量的地方)。相反，应将全局变量作为参数传递给函数。
+- 函数可以在函数内部定义(嵌套函数)。
 
-Main (context) function
+主(上下文)函数
 
 ## main-context-function
 
-A VEX program must contain one function whose return type is the name of
-the context. This is the main function of the program that is called by mantra.
-The compiler expects one context function per file.
+VEX程序必须包含一个返回类型为上下文名称的函数。这是程序的主函数，由mantra调用。编译器期望每个文件有一个上下文函数。
 
-This function should do the work (by calling out to built-in and/or
-user-defined functions) of calculating any required information and modifying
-global variables. You do not use the `return` statement to return a value from
-the context function. See the specific [context](contexts/index.html "Guide to the different contexts in which you can write VEX
-programs.") pages for the global
-variables available in each context.
+此函数应通过调用内置和/或用户定义的函数来完成计算所需信息和修改全局变量的工作。您不使用`return`语句从上下文函数返回值。请参阅特定[上下文](contexts/index.html "编写VEX程序的不同上下文指南")页面了解每个上下文中可用的全局变量。
 
-The arguments to the context function, if any, become the user interface for
-the program, for example the parameters of a shading node that references
-the VEX program.
+上下文函数的参数(如果有)成为程序的用户界面，例如引用VEX程序的着色节点的参数。
 
-If a geometry attribute exists with the same name as a parameter of the context
-function, the attribute overrides the parameter’s value. This lets you paint
-attributes onto geometry to control VEX code.
+如果存在与上下文函数参数同名的几何属性，则该属性会覆盖参数的值。这允许您将属性绘制到几何体上以控制VEX代码。
 
 ```vex
 surface
@@ -161,35 +120,24 @@ noise_surf(vector clr = {1,1,1}; float frequency = 1;
     Cf = clr * (float(noise(frequency * P)) + 0.5) * diffuse(normalize(N));
     nml = normalize(N)*0.5 + 0.5;
 }
-
 ```
 
-Note
-Parameters to context functions are dealt with in a special way with
-VEX. It is possible to override a parameter’s value using a geometry
-attribute with the same name as the variable. Aside from this
-special case, parameters should be considered “const” within the
-scope of the shader. This means that it is illegal to modify a
-parameter value. The compiler will generate errors if this occurs.
+注意
+VEX对上下文函数的参数有特殊处理。可以使用与变量同名的几何属性覆盖参数的值。除了这种特殊情况外，参数在着色器范围内应被视为"const"。这意味着修改参数值是非法的。如果发生这种情况，编译器将生成错误。
 
-You can used the `export` keyword to flag parameters you do wish
-to modify on the original geometry.
+您可以使用`export`关键字标记您希望修改原始几何体的参数。
 
-### User interface pragmas
+### 用户界面编译指示
 
 user-interface-pragmas
-The user interface generated from this program by Houdini will be minimal,
-basically just the variable name and a generic text field based on the datatype.
-For example, you might want to specify that `frequency` should be a slider
-with a certain range, and that `clr` should be treated as a color (giving it a
-color picker UI). You can do this with [user interface compiler pragmas](pragmas.html).
+Houdini从此程序生成的用户界面将是最小的，基本上只是变量名和基于数据类型的通用文本字段。例如，您可能希望指定`frequency`应该是一个具有特定范围的滑块，而`clr`应该被视为颜色(给它一个颜色选择器UI)。您可以使用[用户界面编译器编译指示](pragmas.html)来实现这一点。
 
 ```vex
 #pragma opname        noise_surf
-#pragma oplabel        "Noisy Surface"
+#pragma oplabel        "噪波表面"
 
-#pragma label    clr            "Color"
-#pragma label    frequency    "Frequency"
+#pragma label    clr            "颜色"
+#pragma label    frequency    "频率"
 
 #pragma hint    clr            color
 #pragma range    frequency    0.1 10
@@ -200,387 +148,143 @@ surface noise_surf(vector clr = {1,1,1}; float frequency = 1;
     Cf = clr * (float(noise(frequency * P)) + 0.5) * diffuse(normalize(N));
     nml = normalize(N)*0.5 + 0.5;
 }
-
 ```
 
-Operators
+运算符
 
 ## operators
 
-VEX has the standard C operators with C precedence, with the following
-differences.
+VEX具有标准C运算符和C优先级，但有以下差异。
 
-Multiplication is defined between two vectors or points. The multiplication performs an element by element multiplication (rather than a dot or cross product; see [cross](functions/cross.html "Returns the cross product between the two vectors.") and [dot](functions/dot.html "Returns the dot product between the arguments.")).
+乘法定义在两个向量或点之间。乘法执行逐元素乘法(而不是点积或叉积；参见[cross](functions/cross.html "返回两个向量之间的叉积。")和[dot](functions/dot.html "返回参数之间的点积。"))。
 
-Many operators are defined for non-scalar data types (i.e. a vector multiplied by a matrix will transform the vector by the matrix).
+许多运算符为非标量数据类型定义(即向量乘以矩阵将用矩阵变换向量)。
 
-In ambiguous situations where you combine two different types with an operator, the result has the type of the second (right hand side) value, for example
+在将两种不同类型与运算符组合的模糊情况下，结果具有第二个(右侧)值的类型，例如
 
 ```vex
 int + vector = vector
 ```
 
-### Dot operator
+### 点运算符
 
 dot-operator
-You can use the dot operator (`.`) to reference individual
-components of a vector, matrix or `struct`.
+您可以使用点运算符(`.`)引用向量、矩阵或`结构体`的各个组件。
 
-For vectors, the component names are fixed.
+对于向量，组件名称是固定的。
 
-- `.x` or `.u` to reference the first element of `vector2`.
-- `.x` or `.r` to reference the first element of `vector` and `vector4`.
-- `.y` or `.v` to reference the second element of `vector2`.
-- `.y` or `.g` to reference the second element of `vector` and `vector4`.
-- `.z` or `.b` to reference the third element. of `vector` and `vector4`
-- `.w` or `.a` to reference the fourth element of a `vector4`.
+- `.x`或`.u`引用`vector2`的第一个元素。
+- `.x`或`.r`引用`vector`和`vector4`的第一个元素。
+- `.y`或`.v`引用`vector2`的第二个元素。
+- `.y`或`.g`引用`vector`和`vector4`的第二个元素。
+- `.z`或`.b`引用`vector`和`vector4`的第三个元素。
+- `.w`或`.a`引用`vector4`的第四个元素。
 
-The choice
-of the letters u,v/x,y,z/r,g,b is arbitrary; the same letters apply even
-if the vector doesn’t hold a point or color.
+选择u,v/x,y,z/r,g,b字母是任意的；即使向量不包含点或颜色，也适用相同的字母。
 
-For matrices, you can use a pair of letters:
+对于矩阵，您可以使用一对字母：
 
-- `.xx` to reference the `[0][0]` element
-- `.zz` to reference the `[2][2]` element
-- `.ax` to reference the `[3][0]` element
+- `.xx`引用`[0][0]`元素
+- `.zz`引用`[2][2]`元素
+- `.ax`引用`[3][0]`元素
 
-In addition, the dot operator can be used to “swizzle” components of a vector. For example
+此外，点运算符可用于"混合"向量的组件。例如
 
-- `v.zyx` is equivalent to `set(v.z, v.y, v.x)`
-- `v4.bgab` is equivalent to `set(v4.b, v4.g, v4.a, v4.b)`
+- `v.zyx`等同于`set(v.z, v.y, v.x)`
+- `v4.bgab`等同于`set(v4.b, v4.g, v4.a, v4.b)`
 
-Note
-You cannot assign to a swizzled vector, only read from them. So you cannot do `v.zyx = b`, but instead must do `v = b.zyx`.
+注意
+您不能赋值给混合向量，只能从中读取。因此不能执行`v.zyx = b`，而必须执行`v = b.zyx`。
 
-### Comparisons
+### 比较运算
 
 comparisons
-The comparison operators (==, !=, \<, \<=, >, >=) are defined when the
-left hand of the operator is the same type as the right hand side,
-for string, float and integer types only. The operations result in
-integer types.
+比较运算符(==, !=, <, <=, >, >=)在运算符左侧与右侧类型相同时定义，仅适用于字符串、浮点和整数类型。运算结果为整数类型。
 
-The string matching operator (~=) is only defined when there is a string
-on both sides of the operator, and is equivalent to calling the
-[match](functions/match.html "This function returns 1 if the subject matches the pattern specified,
-or 0 if the subject doesn’t match.") function with those two values.
+字符串匹配运算符(~=)仅在运算符两侧都是字符串时定义，等同于调用[match](functions/match.html "如果主题匹配指定的模式，此函数返回1，否则返回0。")函数。
 
-The logical (&&, ||, and !) and bitwise (& |, ^, and ~) operators
-are only defined for integers.
+逻辑(&&, ||, !)和位运算(& |, ^, ~)运算符仅对整数定义。
 
-### Precedence table
+### 优先级表
 
 precedence
-Operators higher in the table have higher precedence.
+表中位置越高的运算符优先级越高。
 
-| Order | Operator | Associativity | Description |
+| 顺序 | 运算符 | 结合性 | 描述 |
 | --- | --- | --- | --- |
-| 15 | `()` | LtR | Function call, expression grouping, structure member. |
-| 13 | `!` | LtR | Logical negation |
-| 13 | `~` | LtR | One’s complement |
-| 13 | `+` | LtR | Unary plus (for example, `+5`) |
-| 13 | `-` | LtR | Unary minus (for example, `-5`) |
-| 13 | `++` | LtR | Increment (for example, `x++`) |
-| 13 | `--` | LtR | Decrememt (for example, `x--`) |
-| 13 | `(type)` | LtR | Type cast (for example, `(int)x`). |
-| 12 | `*` | LtR | Multiplication |
-| 12 | `/` | LtR | Division |
-| 12 | `%` | LtR | Modulus |
-| 11 | `+` | LtR | Addition |
-| 11 | `-` | LtR | Subtraction |
-| 10 | `<` | LtR | Less-than |
-| 10 | `>` | LtR | Greater than |
-| 10 | `<=` | LtR | Less-than or equal |
-| 10 | `>=` | LtR | Greater than or equal |
-| 9 | `==` | LtR | Equal |
-| 9 | `!=` | LtR | NOT Equal |
-| 9 | `~=` | LtR | String matches |
-| 8 | `&` | LtR | Bitwise AND |
-| 7 | `^` | LtR | Bitwise XOR |
-| 6 | `|` | LtR | Bitwise OR |
-| 5 | `&&` | LtR | Logical AND |
-| 4 | `||` | LtR | Logical OR |
-| 3 | `?:` | LtR | Ternary conditional (for example, `x ? "true" : "false"`) |
-| 2 | `=` `+=` `-=` `*=` `/=` `%=` `&=` ```vex |=``^= ``` | RtL | Variable assignment |
-| 1 | `,` | LtR | Argument separator |
+| 15 | `()` | 从左到右 | 函数调用、表达式分组、结构成员。 |
+| 13 | `!` | 从左到右 | 逻辑非 |
+| 13 | `~` | 从左到右 | 按位取反 |
+| 13 | `+` | 从左到右 | 一元加(例如`+5`) |
+| 13 | `-` | 从左到右 | 一元减(例如`-5`) |
+| 13 | `++` | 从左到右 | 递增(例如`x++`) |
+| 13 | `--` | 从左到右 | 递减(例如`x--`) |
+| 13 | `(type)` | 从左到右 | 类型转换(例如`(int)x`)。 |
+| 12 | `*` | 从左到右 | 乘法 |
+| 12 | `/` | 从左到右 | 除法 |
+| 12 | `%` | 从左到右 | 取模 |
+| 11 | `+` | 从左到右 | 加法 |
+| 11 | `-` | 从左到右 | 减法 |
+| 10 | `<` | 从左到右 | 小于 |
+| 10 | `>` | 从左到右 | 大于 |
+| 10 | `<=` | 从左到右 | 小于等于 |
+| 10 | `>=` | 从左到右 | 大于等于 |
+| 9 | `==` | 从左到右 | 等于 |
+| 9 | `!=` | 从左到右 | 不等于 |
+| 9 | `~=` | 从左到右 | 字符串匹配 |
+| 8 | `&` | 从左到右 | 按位与 |
+| 7 | `^` | 从左到右 | 按位异或 |
+| 6 | `|` | 从左到右 | 按位或 |
+| 5 | `&&` | 从左到右 | 逻辑与 |
+| 4 | `||` | 从左到右 | 逻辑或 |
+| 3 | `?:` | 从左到右 | 三元条件(例如`x ? "true" : "false"`) |
+| 2 | `=` `+=` `-=` `*=` `/=` `%=` `&=` ```vex |=``^= ``` | 从右到左 | 变量赋值 |
+| 1 | `,` | 从左到右 | 参数分隔符 |
 
-### Operator type interactions
+### 运算符类型交互
 
 operator-type-interactions
 
-- When you apply an operation to a `float` and an `int`, the result is the type to the left of the operator. That is, `float * int = float`, while `int * float = int`.
-- If you add, multiply, divide, or subtract a vector with a scalar value (`int` or `float`), VEX returns a vector of the same size, with the operation applied component-wise. For example:
+- 当您对`float`和`int`应用运算时，结果是运算符左侧的类型。即`float * int = float`，而`int * float = int`。
+- 如果将向量与标量值(`int`或`float`)相加、相乘、相除或相减，VEX返回相同大小的向量，运算按分量执行。例如：
 
 ```
 {1.0, 2.0, 3.0} * 2.0 == {2.0, 4.0, 6.0}
-
-```vex
-
-- If you add, multiply, divide, or subtract vectors of different size, VEX returns a vector of the larger size. The operation is applied component-wise.
-  **Important**: the “missing” component(s) on the smaller vector are filled in as `{0.0, 0.0, 0.0, 1.0}`
-
 ```
 
+- 如果对不同大小的向量进行加、乘、除或减运算，VEX返回较大大小的向量。运算按分量执行。
+  **重要**：较小向量上的"缺失"分量填充为`{0.0, 0.0, 0.0, 1.0}`
+
+```
 {1.0, 2.0, 3.0} * {2.0, 3.0, 4.0, 5.0} == {2.0, 6.0, 12.0, 5.0}
-
-```vex
-
-This can give surprising results if you're not expecting it, for example:
-
 ```
 
-// Third element of the vector2 is treated as 0,
-// but fourth element is treated as 1.0
+如果您不期望这一点，可能会得到令人惊讶的结果，例如：
+
+```
+// vector2的第三个元素被视为0，
+// 但第四个元素被视为1.0
 {1.0, 2.0} + {1.0, 2.0, 3.0, 4.0} == {2.0, 4.0, 3.0, 5.0}
+```
 
-```vex
+如果您要组合不同大小的向量，可能需要手动分解组件并进行运算，以获得预期结果而不出现意外。
 
-If you're combining different-sized vectors, you might want to break out the components and operate on them “manually” to get the results you want without surprises.
-
-Data types
+数据类型
 
 ## data-types
 
-Warning
-By default, VEX uses 32 bit integers. If you use the [AttribCast SOP](../nodes/sop/attribcast.html "Changes the size/precision Houdini uses to store an attribute.") to cast a geometry attribute to 64 bits, VEX will silently discard the extra bits if you manipulate the attribute in VEX code.
+警告
+默认情况下，VEX使用32位整数。如果您使用[AttribCast SOP](../nodes/sop/attribcast.html "更改Houdini用于存储属性的大小/精度。")将几何属性转换为64位，VEX将在VEX代码中操作该属性时静默丢弃多余的位。
 
-The VEX engine runs in either 32bit or 64bit mode. In 32bit mode, all
-floats, vectors, and integers are 32bit. In 64bit mode, they are 64bit.
-There is no `double` or `long` type to allow mixed precision math.
+VEX引擎以32位或64位模式运行。在32位模式下，所有浮点数、向量和整数都是32位。在64位模式下，它们是64位。没有`double`或`long`类型来允许混合精度数学。
 
-You can use underscores to break up long numbers.
+您可以使用下划线分隔长数字。
 
-| Type | Definition | Example |
+| 类型 | 定义 | 示例 |
 | --- | --- | --- |
-| `int` | Integer values | `21, -3, 0x31, 0b1001, 0212, 1_000_000` |
-| `float` | Floating point scalar values | `21.3, -3.2, 1.0, 0.000_000_1` |
-| `vector2` | Two floating point values. You might use this to represent texture coordinates (though usually Houdini uses vectors) or complex numbers | `{0,0}, {0.3,0.5}` |
-| `vector` | Three floating point values. You can use this to represent positions, directions, normals or colors (RGB or HSV) | `{0,0,0}, {0.3,0.5,-0.5}` |
-| `vector4` | Four floating point values. You can use this to represent positions in homogeneous coordinates, or color with alpha (RGBA). It is often used to represent a quaternion. Quaternions in VEX are laid out in `x/y/z/w` order, not `w/x/y/z`. This applies both to both quaternions and positions with homogeneous coordinates. | `{0,0,0,1}, {0.3,0.5,-0.5,0.2}` |
-| `array` | A list of values. See [arrays](arrays.html) for more information. | `{ 1, 2, 3, 4, 5, 6, 7, 8 }` |
-| `struct` | A fixed set of named values. See [structs](lang.html#structs) for more information. |
-| `matrix2` | Four floating point values representing a 2D rotation matrix | `{ {1,0}, {0,1} }` |
-| `matrix3` | Nine floating point values representing a 3D rotation matrix or a 2D transformation matrix | `{ {1,0,0}, {0,1,0}, {0,0,1} }` |
-| `matrix` | Sixteen floating point values representing a 3D transformation matrix | `{ {1,0,0,0}, {0,1,0,0}, {0,0,1,0}, {0,0,0,1} }` |
-| `string` | A string of characters. See [strings](strings.html) for more information. | `"hello world"` |
-| `dict` | A dictionary mapping `string`s to other VEX data types. See [dicts](dicts.html) for more information. |
-| `bsdf` | A *bidirectional scattering distribution function*. See [writing PBR shaders](pbr.html) for information on BSDFs. |
-
-Structs
-
-## structs
-
-As of Houdini 12, you can define new structured types using the `struct` keyword.
-
-Member data can be assigned default values in the struct definition similar to C++11 member initialization.
-
-Two implicit constructor functions are created for each struct. The first takes initialization arguments in the order they are declared in the struct, the second takes no arguments but sets all members to their default values.
-
-```
-
-# include <math.h>
-
-struct basis {
-    vector i, j, k;
-}
-
-struct bases {
-    basis m, n, o;
-    string description;
-}
-
-struct values {
-    int uninitialized;        // Uninitialized member data
-    int        ival = 3;
-    float fval = 3.14;
-    float aval[] = { 1, 2, 3, 4.5 };
-}
-
-basis rotate(basis b; vector axis; float amount) {
-    matrix m = 1;
-    rotate(m, amount, axis);
-    basis result = b;
-    result.i *= m;
-    result.j *= m;
-    result.k *= m;
-    return result;
-}
-
-// Declare struct variables
-basis b0;        // Initialize using default values (i.e. 0 in this case)
-basis b1 = basis({1,0,0}, {0,1,0}, {0,0,1});        // Initialize using constructor
-basis b2 = { {1,0,0}, {0,1,0}, {0,0,1} };         // Initialize as explicit struct
-
-// You can use M_PI or PI
-b1 = rotate(b1, {0,0,1}, M_PI/6);
-
-```vex
-
-Note
-You must define structs before using them in the source file.
-
-### Struct functions
-
-methods
-You can define functions inside structs to organize your code and
-allow a limited form of object-oriented programming.
-
-- Inside a struct function, you can use `this` to refer to the struct instance.
-- Inside a struct function, you can refer to struct fields by name as if they were variables
-  (for example, `basis` is a shortcut for `this.basis`).
-- You can call struct functions on a struct instance using the `->` arrow operator,
-  for example `sampler->sample()`.
-  Note inside a struct function that you can call other methods on the struct using `this->method()`.
-
-```
-
-struct randsampler {
-    // Fields
-    int        seed;
-
-    // Methods
-    float sample()
-    {
-        // Struct functions can refer to fields by name
-        return random(seed++);
-    }
-}
-
-cvex shader()
-{
-    randsampler sampler = randsampler(11);
-    for (int i = 0; i < 10; i++)
-    {
-        // Use -> to call methods on struct instances
-        printf("%f\n", sampler->sample());
-    }
-}
-
-```vex
-
-Mantra Specific Types
-
-## mantratypes
-
-Mantra has some pre-defined struct types that are used in shading-specific functions.
-
-| `light` | Defined in mantra shading contexts only. This is a struct representing a  handle to a light source. The struct has methods:\* illuminate(…)  Invokes the VEX surface shader bound to the `vm_illumshader` property of  the light source.  In an IFD, you may see lines like `ray_property light illumshader diffuselighting`  or `ray_property light illumshader mislighting misbias 1.000000`. These statements define the shader invoked when the `illuminate()` method  is called on a light object. |
-| --- | --- |
-| `material` | Defined in mantra shading contexts only. This is opaque struct  representing the material assigned to an object. |
-| `lpeaccumulator` | Defined in mantra shading contexts only. This is a struct representing an  accumulator for Light Path Expressions. The struct has methods:\* begin() - Construct and initialize accumulator. * end() - Finalize and destroy. * move(string eventtype; string scattertype; string tag, string bsdflabel) - Modifies internal state based on current event. If an empty string is  passed in, it’s assumed to be 'any'. * pushstate() - Push internal state onto stack. * popstate() - Pop internal state from stack. Used to pushstate() to “undo” move(). * int matches() - Returns non-zero if the current internal state matches any of the light  path expressions defined by user. * accum(vector color, …) - Accumulates input color onto intermediate buffer. Also takes in optional prefix strings to be compared against prefixes that were declared with LPE image plane. All prefixes must match in order to accumulate. * flush(vector multiplier) - Multiply the intermediate buffer by the multiplier and add it onto image planes. The intermediate buffer exists to allow for variance anti-aliasing (i.e. the multiplier would be 1/number_of_samples). * int getid() - Returns an integer id assigned to lpeaccumulator. * lpeaccumulator getlpeaccumulator(int id) - Returns lpeaccumulator based on id. Used with getid() to pass lpeaccumulator across shader boundaries. |
-
-Type casting
-
-## type-casting
-
-### Variable casting
-
-variable-casting
-This is similar to type casting in C++ or Java: you transform a
-value of one type into another (for example, an int into a float).
-
-This is sometimes necessary, as when you have the following:
-
-```
-
-int a, b;
-float c;
-c = a / b;
-
-```vex
-
-In this example, the compiler will do integer division (see [type
-resolution](lang.html#typeres) ). If you wanted to do floating
-point division instead, you need to explicitly cast `a` and `b` as
-floats:
-
-```
-
-int a, b;
-float c;
-c = (float)a / (float)b;
-
-```vex
-
-This generates additional instructions to perform the casts. This
-may be an issue in performance-sensitive sections of your code.
-
-### Function casting
-
-function-casting
-VEX dispatches functions based not only on the types of the
-arguments (like C++ or Java), but also on the return type. To
-disambiguate calls to functions with the same argument types but
-different return types, you can *cast the function*.
-
-For example, the [noise](functions/noise.html "There are two forms of Perlin-style noise: a non-periodic noise which
-changes randomly throughout N-dimensional space, and a periodic form
-which repeats over a given range of space.") function can take different
-parameter types, but can also return different types: `noise` can
-return either a float or vector.
-
-In the code:
-
-```
-
-float n;
-n = noise(noise(P));
-
-```vex
-
-…VEX could dispatch to either `float noise(vector)` or
-`vector noise(vector)`.
-
-To cast a function call, surround it with `typename( ... )`, as
-in:
-
-```
-
-n = noise( vector( noise(P) ) );
-
-```vex
-
-While this looks like a function call, it does nothing but disambiguate the
-function call inside and has no performance overhead.
-
-Function casting is implied when you assign a function call directly to a
-variable of a specified type. So the following expressions are equivalent,
-and the function cast may be omitted for more concise code:
-
-```
-
-vector n = vector( noise(P) );        // Unnecessary function cast
-vector n = noise(P);
-
-```vex
-
-Note
-If VEX is unable to determine which signature of a function you are
-trying to call, it will trigger an ambiguity error and print out the
-candidate functions. You should then choose the appropriate return
-value and add a function cast to select it.
-
-Since function casting does not generate any type conversions (it simply
-chooses a function to call), there is no performance penalty to using it.
-A good rule of thumb is to use function casting wherever possible and to
-use variable casting only when an explicit type conversion is required.
-
-Comments
-
-## comments
-
-VEX uses C++ style comments:
-
-- One-line comments are preceded by `//`
-- Freeform comments begin with `/*` and end with `*/`
-
-Reserved Keywords
-
-## reserved
-
-`break`, `bsdf`, `char`, `color`, `const`, `continue`, `do`, `dict`, `else`,
-`export`, `false`, `float`, `for`, `forpoints`, `foreach`, `gather`,
-`hpoint`, `if`, `illuminance`, `import`, `int`, `integer`, `matrix`,
-`matrix2`, `matrix3`, `normal`, `point`, `return`, `string`, `struct`, `true`,
-`typedef`, `union`, `vector`, `vector2`, `vector4`, `void`, `while`
+| `int` | 整数值 | `21, -3, 0x31, 0b1001, 0212, 1_000_000` |
+| `float` | 浮点标量值 | `21.3, -3.2, 1.0, 0.000_000_1` |
+| `vector2` | 两个浮点值。您可能使用它来表示纹理坐标(尽管通常Houdini使用向量)或复数 | `{0,0}, {0.3,0.5}` |
+| `vector` | 三个浮点值。您可以使用它来表示位置、方向、法线或颜色(RGB或HSV) | `{0,0,0}, {0.3,0.5,-0.5}` |
+| `vector4` | 四个浮点值。您可以使用它来表示齐次坐标中的位置，或带alpha的颜色(RGBA)。它通常用于表示四元数。VEX中的四元数按`x/y/z/w`顺序排列，而不是`w/x/y/z`。这适用于四元数和具有齐次坐标的位置。 | `{0,0,0,1}, {0.3,0.5,-0.5,0.2}` |
+| `array` | 值列表。有关更多信息，请参见

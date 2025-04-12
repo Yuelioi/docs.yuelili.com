@@ -2,8 +2,9 @@
 title: weightarrayfromname
 order: 2
 ---
-The weight of the entry is initialized to 1.0.
+
+该条目的权重初始化为1.0。
 
 `void  weightarrayfromname(string &names[], float &weights[], string name)`
 
-Sets `names` to `{name}` and `weights` to `{1.0}`.
+将`names`设置为`{name}`，并将`weights`设置为`{1.0}`。

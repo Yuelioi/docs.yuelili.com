@@ -2,7 +2,8 @@
 title: setsamplestore
 order: 69
 ---
-| Context(s) | [shading](../contexts/shading.html) |
+
+| 上下文 | [着色](../contexts/shading.html) |
 | --- | --- |
 
 `int  setsamplestore(string channel, vector P, int value)`
@@ -13,25 +14,19 @@ order: 69
 
 `int  setsamplestore(string channel, vector P, vector4 value)`
 
-Stores a value in a named channel at a specified point.
-Returns a non-zero value on success, or returns 0 if the data could not be set.
+在指定点的命名通道中存储一个值。
+成功时返回非零值，如果数据无法设置则返回0。
 
-The sample store can be thought of as an in-memory point cloud, storing
-shading data at points. This allows data to be accessed across shader
-boundaries, unlike the internal export/import system. For example,
-a lens shader could store data to be passed to the surface shader,
-an operation that is not supported using export variables due to the
-layout of the shading pipeline.
+采样存储可以被视为内存中的点云，在点处存储着色数据。这使得数据可以跨着色器边界访问，与内部导出/导入系统不同。例如，
+镜头着色器可以存储要传递给表面着色器的数据，由于着色管线的布局，这种操作不支持使用导出变量。
 
-Please note that the stored samples can only be accessed within the same render
-tile.
-Example
+请注意，存储的样本只能在同一个渲染图块内访问。
 
-## example
+## 示例
 
 ```vex
 cvex displacedlens(
-    // Inputs
+    // 输入
     float x = 0;
     float y = 0;
     float Time = 0;
@@ -42,7 +37,7 @@ cvex displacedlens(
     float displaceScale = 1.0;
     float displaceGain = 0.1;
 
-    // Outputs
+    // 输出
     export vector P = 0;
     export vector I = 0;
 )
@@ -53,13 +48,13 @@ cvex displacedlens(
     vector displace = noise(P * displaceScale) * displaceGain;
     I += displace;
 
-    // Store the displacement at the eye point, 'P'
+    // 在眼点 'P' 处存储位移
     int status = setsamplestore("displacedlens_d", P, displace);
 }
 
 surface mysurface()
 {
-    // Get the displacement at the eye point, 'Eye'
+    // 在眼点 'Eye' 处获取位移
     vector displace = 0;
     int status = getsamplestore("displacedlens_d", Eye, displace);
 

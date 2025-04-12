@@ -4,4 +4,4 @@ order: 7
 ---
 `float  chexpr(string channel, string new_expr_function)`
 
-Evaluates a channel with a new segment expression and return its value.
+使用新的分段表达式评估通道并返回其值。

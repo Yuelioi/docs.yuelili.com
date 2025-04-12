@@ -2,27 +2,26 @@
 title: diagonalizesymmetric
 order: 18
 ---
-| Since | 17.0 |
+
+| 版本 | 17.0 |
 | --- | --- |
 
-`matrix2  diagonalizesymmetric(matrix2 symmat, vector2 &diag)`
+`matrix2  diagonalizesymmetric(matrix2  symmat, vector2  &diag)`
 
-`matrix3  diagonalizesymmetric(matrix3 symmat, vector &diag)`
+`matrix3  diagonalizesymmetric(matrix3  symmat, vector  &diag)`
 
-`matrix  diagonalizesymmetric(matrix symmat, vector4 &diag)`
+`matrix  diagonalizesymmetric(matrix  symmat, vector4  &diag)`
 
-[Diagonalize](http://en.wikipedia.org/wiki/Diagonalizable_matrix) a [symmetric matrix](http://en.wikipedia.org/wiki/Symmetric_matrix).
+对角化一个[对称矩阵](http://en.wikipedia.org/wiki/Symmetric_matrix)。
 
-Returns the orthogonal matrix which, combined with the diagonal matrix
-implicit in the second argument, will form the original symmetric matrix.
+返回一个正交矩阵，该矩阵与第二个参数隐含的对角矩阵组合后，将构成原始对称矩阵。
 
-This can be useful for analyzing the result of summing a series of
-outerproduct updates.
+这对于分析一系列外积更新求和的结果很有用。
 
 `symmat`
 
-The symmetric matrix to diagonalize.
+要对角化的对称矩阵。
 
 `diag`
 
-The diagonal elements of the diagonal matrix.
+对角矩阵的对角元素。

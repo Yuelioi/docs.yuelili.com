@@ -2,20 +2,22 @@
 title: shimport
 order: 72
 ---
-| Context(s) | [fog](../contexts/fog.html)  [surface](../contexts/surface.html) |
+
+| 上下文环境 | [fog](../contexts/fog.html)  [surface](../contexts/surface.html) |
 | --- | --- |
-This function is only valid inside an [illuminance](illuminance.html "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables.") loop.
+
+此函数仅在[illuminance](illuminance.html "循环遍历场景中的所有光源，为每个光源调用光照着色器以设置Cl和L全局变量。")循环内部有效。
 
 `int  shimport(string variable_name, <type>&value)`
 
 `variable_name`
 
-The variable to import from the shadow shader.
+要从阴影着色器导入的变量名。
 
 `value`
 
-If the variable is successfully read, the value is copied into this variable.
+如果变量读取成功，其值将被复制到此变量中。
 
-Returns
+返回值
 
-`1` if the variable is defined and exported, `0` otherwise.
+如果变量已定义且可导出则返回`1`，否则返回`0`。

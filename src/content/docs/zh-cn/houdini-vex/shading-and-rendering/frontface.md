@@ -1,12 +1,11 @@
 ---
-title: frontface
+title: 正面朝向函数
 order: 8
 ---
 `vector  frontface(vector N, vector I)`
 
-This form (which doesn’t take a reference vector) is only available in
-the shading contexts, where the Ng variable is used.
+这种形式（不接收参考向量）仅在着色上下文中可用，其中使用Ng变量。
 
 `vector  frontface(vector N, vector I, vector Nref)`
 
-If [dot](dot.html "Returns the dot product between the arguments.")(I, Nref) is less than zero, N will be negated.
+如果[点积](dot.html "返回参数之间的点积")(I, Nref)小于零，则N将被取反。

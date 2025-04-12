@@ -4,43 +4,41 @@ order: 5
 ---
 `int  osd_lookupface(<geometry>geometry, int patch_id, float patch_u, float patch_v, int &face_id, float &face_u, float &face_v)`
 
-If you don’t specify a texture attribute, the function uses intrinsic polygon interpolants.
+如果不指定纹理属性，该函数将使用多边形固有插值。
 
 `int  osd_lookupface(<geometry>geometry, int patch_id, float patch_u, float patch_v, int &face_id, float &face_u, float &face_v, string attribute)`
 
-If you specify a texture attribute, the function uses the UVs in that attribute to translate the patch coordinates onto the Houdini geometry.
+如果指定了纹理属性，该函数将使用该属性中的UV坐标将面片坐标转换到Houdini几何体上。
 
-Each polygon in a piece of geometry will generate one or more Catmull-Clark subdivision patches. A quadrilateral will generate a single patch, while a pentagon will generate five patches. This function helps map between the subdivision patch id and the Houdini polygon (face). The reverse function to map from face to patch is [osd_lookuppatch](osd_lookuppatch.html "Outputs the OSD patch and UV coordinates corresponding to the given coordinates on a Houdini polygon face.").
+几何体中的每个多边形都会生成一个或多个Catmull-Clark细分面片。四边形会生成单个面片，而五边形会生成五个面片。此函数帮助在细分面片ID和Houdini多边形（面）之间建立映射。反向映射（从面到面片）的函数是[osd_lookuppatch](osd_lookuppatch.html "输出与Houdini多边形面上给定坐标对应的OSD面片和UV坐标")。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `patch_id`
 
-The ID number of the OSD patch.
+OSD面片的ID编号。
 
 `patch_u`, `patch_v`
 
-The coordinates in the subdivision patch to map onto a Houdini primitive. These values should be in the range 0 to 1.
+要映射到Houdini图元上的细分面片中的坐标。这些值应在0到1范围内。
 
 `&face_id`
 
-The function overwrites this variable with the Houdini primitive number of the corresponding face.
+该函数会用对应面的Houdini图元编号覆盖此变量。
 
 `&face_u`, `&face_v`
 
-The function overwrites these variables with the corresponding U/V coordinates on the Houdini face. The output coordinates will have values in the range 0 to 1.
+该函数会用Houdini面上对应的U/V坐标覆盖这些变量。输出坐标的值将在0到1范围内。
 
-Returns
+返回值
 
-`1` on success or `0` on an error.
+成功时返回`1`，错误时返回`0`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 void
@@ -59,7 +57,7 @@ scatterOnLimitSurface(string file, texmap; int geo_handle; int npts)
             vector clr = texture(texmap, face_u, face_v);
             vector P;
             osd_limitsurface(file, "P", patch_id, patch_s, patch_t, P);
-            int ptnum = addpoint(geo_handle, P);        // add a scattered point.
+            int ptnum = addpoint(geo_handle, P);        // 添加一个散点
             if (ptnum >= 0)
             {
                 addpointattrib(geo_handle, "Cd", clr);

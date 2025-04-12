@@ -4,4 +4,4 @@ order: 31
 ---
 `int  pcsize(int handle)`
 
-Returns the total number of points in the point cloud specified by `handle`, where `handle` was returned by a prior call to [pcopen](pcopen.html "Returns a handle to a point cloud file.").
+返回由`handle`指定的点云中的总点数，其中`handle`是通过先前调用[pcopen](pcopen.html "返回点云文件的句柄。")获得的。

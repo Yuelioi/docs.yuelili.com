@@ -5,8 +5,8 @@ order: 81
 `bsdf  wirediffuse(vector tangent, ...)`
 
 ![](../_static/rendering/wirediffuse.png)
-Diffuse function defined around a tangent vector. This can be used to produce the average diffuse illumination for thin wire-like primitives such as hair.
+基于切线向量定义的漫反射函数。可用于为类似细线的图元（如毛发）生成平均漫反射照明效果。
 
 `tangent`
 
-tangent vector along the hair.
+沿着毛发方向的切线向量。

@@ -6,29 +6,27 @@ order: 43
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号的整数（从0开始）以读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `linearvertex`
 
-The linear index of a vertex.
-If you have a point number and point vertex number, you can use [vertexindex](vertexindex.html "Converts a primitive/vertex pair into a linear vertex.") to convert them to a linear index.
+顶点的线性索引。
+如果您有点编号和点顶点编号，可以使用[vertexindex](vertexindex.html "将基元/顶点对转换为线性顶点。")将其转换为线性索引。
 
-Returns
+返回值
 
-The linear index of the previous vertex sharing the same point with the given vertex,
-or `-1` if the vertex has no earlier shared vertices.
-(To go in the other direction, use [vertexnext](vertexnext.html "Returns the linear vertex number of the next vertex sharing a point with a given vertex.").)
+与给定顶点共享同一点的上一个顶点的线性索引，
+如果该顶点没有更早的共享顶点，则返回`-1`。
+（要向另一个方向遍历，请使用[vertexnext](vertexnext.html "返回与给定顶点共享点的下一个顶点的线性顶点编号。")。）
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 int        vtx;
 
-// Get the previous vertex of vertex 3
+// 获取顶点3的前一个顶点
 vtx = vertexprev("defgeo.bgeo", 3);
 
 ```

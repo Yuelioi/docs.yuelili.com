@@ -42,16 +42,11 @@ order: 29
 
 `vector4  rand(vector4 seed)`
 
-Creates a random number based on the provided seed. The number will
-be in the range of 0 to 1. In particular, it will be in the half-open interval `[0, 1)`. The same number is produced for the same
-seed, so to vary the random number the seed should be varied.
+基于提供的种子值生成随机数。生成的数字范围在0到1之间，具体来说是半开区间`[0, 1)`。相同的种子会产生相同的随机数，因此要获得不同的随机数需要改变种子值。
 
-Note that even the smallest changes in the seed value will produce
-completely different numbers, so it may produce different results
-on different operating systems or compilers.
+需要注意的是，即使种子值发生最微小的变化，也会产生完全不同的随机数。因此在不同操作系统或编译器上可能会产生不同的结果。
 
-If the result is a vector2, vector, or vector4, each component will be a
-different random number. Thus, if you have the code:
+如果返回值是vector2、vector或vector4类型，每个分量都会是不同的随机数。例如以下代码：
 
 ```vex
 vector        pos = 1;
@@ -61,7 +56,7 @@ pos *= rand(seed);
 
 ```
 
-`pos` will get different values in its `.x`, `.y`, and `.z` components. If you wish a uniform scale, use the `float()` cast:
+`pos`的`.x`、`.y`和`.z`分量将会获得不同的值。如果需要均匀缩放，请使用`float()`类型转换：
 
 ```vex
 vector        pos = 1;

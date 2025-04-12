@@ -1,10 +1,11 @@
 ---
-title: tan
+title: tan（正切函数）
 order: 84
 ---
+
 `float  tan(float n)`
 
-Returns the trigonometric tangent of `n`, where `n` is in radians.
+返回`n`的三角正切值，其中`n`以弧度为单位。
 
 `vector2  tan(vector2 v)`
 
@@ -12,4 +13,4 @@ Returns the trigonometric tangent of `n`, where `n` is in radians.
 
 `vector4  tan(vector4 v)`
 
-Returns a new vector with `tan()` applied to each component.
+返回一个新向量，其中每个分量都应用了`tan()`函数。

@@ -1,9 +1,9 @@
 ---
-title: transpose
+title: 转置
 order: 87
 ---
 `void  transpose(<matrix>&m)`
 
 `<matrix> transpose(<matrix>m)`
 
-[Transposes](http://en.wikipedia.org/wiki/Transpose) the given matrix.
+对给定矩阵进行[转置](http://en.wikipedia.org/wiki/Transpose)操作。

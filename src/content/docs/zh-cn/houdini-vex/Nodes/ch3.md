@@ -2,21 +2,21 @@
 title: ch3
 order: 4
 ---
+
 `matrix3  ch3(string channel)`
 
 `matrix3  ch3(string channel, float time)`
 
-If the node parameter referenced by `channel` is a matrix type, the base parameter name
-can be used to return the all components as a matrix.
+如果`channel`引用的节点参数是矩阵类型，可以使用基础参数名来返回所有分量作为一个矩阵。
 
-Evaluates a channel (or parameter) and return its value. The time is specified in *seconds*, not in frames. If you don’t specify the time, the function returns the value at the current time.
+评估一个通道（或参数）并返回其值。时间以*秒*为单位指定，而不是帧数。如果不指定时间，函数将返回当前时间的值。
 
-Houdini includes several functions to evaluate channels/parameters of different types.
+Houdini包含多个函数用于评估不同类型的通道/参数：
 
-- To get a float or string without needing to know the parameter type, use [ch](ch.html "Evaluates a channel (or parameter) and return its value.").
-- To get a float, use [chf](chf.html "Evaluates a channel (or parameter) and return its value.").
-- To get a string, use [chs](chs.html "Evaluates a channel (or parameter) and return its value.").
-- For integer parameters, use [chi](chi.html "Evaluates a channel (or parameter) and return its value.")
-- For matrix type parameters, use [ch3](ch3.html "Evaluates a channel (or parameter) and return its value.") or [ch4](ch4.html "Evaluates a channel (or parameter) and return its value.").
-- For a ramp parameter, use [chramp](chramp.html "Evaluates a ramp parameter and return its value.") or [chrampderiv](chrampderiv.html "Evaluates the derivative of a parm parameter with respect to position.").
-- Use [chid](chid.html "Resolves a channel string (or parameter) and return op_id, parm_index and vector_index.") to get an `op_id`, `parm_index` and `vector_index` to evaluate the channel without having to do string resolution.
+- 要获取浮点数或字符串而不需要知道参数类型，使用[ch](ch.html "评估一个通道（或参数）并返回其值。")。
+- 要获取浮点数，使用[chf](chf.html "评估一个通道（或参数）并返回其值。")。
+- 要获取字符串，使用[chs](chs.html "评估一个通道（或参数）并返回其值。")。
+- 对于整数参数，使用[chi](chi.html "评估一个通道（或参数）并返回其值。")
+- 对于矩阵类型参数，使用[ch3](ch3.html "评估一个通道（或参数）并返回其值。")或[ch4](ch4.html "评估一个通道（或参数）并返回其值。")。
+- 对于渐变参数，使用[chramp](chramp.html "评估一个渐变参数并返回其值。")或[chrampderiv](chrampderiv.html "评估一个参数相对于位置的导数。")。
+- 使用[chid](chid.html "解析通道字符串（或参数）并返回op_id、parm_index和vector_index。")来获取`op_id`、`parm_index`和`vector_index`，从而无需字符串解析即可评估通道。

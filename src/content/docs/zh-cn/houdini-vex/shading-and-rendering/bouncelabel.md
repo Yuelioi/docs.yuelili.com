@@ -1,7 +1,7 @@
 ---
-title: bouncelabel
+title: 反弹标签
 order: 3
 ---
 `string  bouncelabel(int mask)`
 
-Returns the label associated with the given bounce mask.
+返回与给定反弹掩码相关联的标签。

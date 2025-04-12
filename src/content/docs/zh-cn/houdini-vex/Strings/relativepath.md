@@ -1,12 +1,11 @@
 ---
-title: relativepath
+title: 相对路径
 order: 29
 ---
 `string  relativepath(string src, string dest)`
 
-Computes the relative path required to get from the `src` path to the `dest` path.
-Examples
+计算从`src`路径到`dest`路径所需的相对路径。
 
-## examples
+## 示例
 
-- `relativepath("/obj/geo1/box", "/obj/ropnet1/mantra1")` - returns `../../ropnet1/mantra1`
+- `relativepath("/obj/geo1/box", "/obj/ropnet1/mantra1")` - 返回 `../../ropnet1/mantra1`

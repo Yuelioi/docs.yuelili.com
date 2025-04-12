@@ -2,14 +2,13 @@
 title: ihasplane
 order: 17
 ---
-| Context(s) | [cop2](../contexts/cop2.html) |
+| 上下文 | [cop2](../contexts/cop2.html) |
 | --- | --- |
 
 `int  ihasplane(int opinput, string planename)`
 
-Returns 1 if the specified input has a plane named `planename`. Input
-numbers start at 0.
+如果指定输入中存在名为`planename`的平面，则返回1。输入编号从0开始计数。
 
 `opinput`
 
-The input number to read from, starting from 0. For example, the first input is 0, the second input is 1, and so on.
+要读取的输入编号，从0开始。例如，第一个输入是0，第二个输入是1，依此类推。

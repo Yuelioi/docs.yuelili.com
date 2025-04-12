@@ -4,4 +4,4 @@ order: 11
 ---
 `vector  ow_nspace(vector v)`
 
-Transforms a normal vector from *Object* to *World* space.
+将法线向量从*对象空间*转换到*世界空间*。

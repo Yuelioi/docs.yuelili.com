@@ -1,30 +1,31 @@
 ---
-title: agentclipchannelnames
+title: 代理剪辑通道名称
 order: 8
 ---
+
 `string [] agentclipchannelnames(<geometry>geometry, int prim, string clipname)`
 
 `string [] agentclipchannelnames(<geometry>geometry, int prim, int clipindex)`
 
-Returns an empty array if `clipname` is not one of the agent’s [animation clips](agentclipcatalog.html "Returns all of the animation clips that have been loaded for an agent primitive."), `prim` is out of range, or `prim` is not an agent primitive.
+如果 `clipname` 不是代理的[动画剪辑](agentclipcatalog.html "返回代理基元加载的所有动画剪辑")之一，`prim` 超出范围，或 `prim` 不是代理基元，则返回空数组。
 
-For a list of the agent’s transforms, use [agenttransformnames](agenttransformnames.html "Returns the name of each transform in an agent primitive’s rig.").
+要获取代理的变换列表，请使用 [agenttransformnames](agenttransformnames.html "返回代理基元骨骼中每个变换的名称")。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如 wrangle SOP）中运行时，此参数可以是一个整数，表示要读取几何体的输入编号（从0开始）。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如 `.bgeo`）的字符串。在 Houdini 内部运行时，可以是 `op:/path/to/sop` 引用。
 
 `prim`
 
-The primitive number.
+基元编号。
 
 `clipname`
 
-The name of the animation clip.
+动画剪辑的名称。
 
 `clipindex`
 
-Index of a clip in the agent’s definition.
-A clip’s index can be obtained via [agentfindclip](agentfindclip.html "Finds the index of a clip in an agent’s definition.").
+代理定义中剪辑的索引。
+剪辑的索引可通过 [agentfindclip](agentfindclip.html "查找代理定义中剪辑的索引") 获取。

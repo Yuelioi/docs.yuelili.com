@@ -2,29 +2,29 @@
 title: agenttransformgroupmemberchannel
 order: 42
 ---
-| Since | 18.0 |
+| 版本 | 18.0 |
 | --- | --- |
-See [Transform Groups](../../crowds/agents.html#xformgroups) for more information.
+更多信息请参阅[变换组](../../crowds/agents.html#xformgroups)。
 
 `int  agenttransformgroupmemberchannel(<geometry>geometry, int prim, int transformgroupidx, int channel)`
 
-Returns a non-zero value if the channel is a member of the specified transform group, and zero otherwise.
+如果指定通道属于该变换组则返回非零值，否则返回零。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `prim`
 
-The primitive number.
+图元编号。
 
 `transformgroupidx`
 
-Index of a transform group in the agent’s definition.
-A transform group’s index can be obtained via [agentfindtransformgroup](agentfindtransformgroup.html "Finds the index of a transform group in an agent’s definition.").
+代理定义中变换组的索引。
+可通过[agentfindtransformgroup](agentfindtransformgroup.html "查找代理定义中变换组的索引")获取变换组的索引。
 
 `channel`
 
-Index of a channel in the agent’s rig.
+代理骨骼中通道的索引。

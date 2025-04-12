@@ -1,5 +1,5 @@
 ---
-title: prim_normal
+title: 基元法线
 order: 2
 ---
 `vector  prim_normal(<geometry>geometry, int prim_number, vector uvw)`
@@ -10,14 +10,14 @@ order: 2
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个整数，表示要读取几何体的输入编号（从0开始）。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是一个指定几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `uvw`, `u`, `v`, `w`
 
-When w is not given, it is treated as zero.
+当未提供w时，默认视为零。
 
-Returns
+返回值
 
-The normal of the primitive (prim_number) at parametric location u, v, w.
+在参数位置u、v、w处的基元（prim_number）的法线向量。

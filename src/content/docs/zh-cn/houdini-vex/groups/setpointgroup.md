@@ -1,27 +1,28 @@
 ---
-title: setpointgroup
+title: 设置点组
 order: 10
 ---
+
 `int  setpointgroup(int geohandle, string name, int point_num, int value, string mode="set")`
 
 `geohandle`
 
-A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](geoself.html "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
+要写入的几何体句柄。目前唯一有效的值是 `0` 或 [geoself](geoself.html "返回当前几何体的句柄")，表示节点中的当前几何体。（此参数未来可能用于支持写入其他几何体。）
 
 `name`
 
-The name of the group to modify.
+要修改的组名称。
 
 `point_num`
 
-The point number to add or remove from the group.
+要添加或从组中移除的点的编号。
 
 `value`
 
-`1` to put the point in the group, `0` to remove the point from the group.
-This is ignored if `mode` is `"toggle"`.
+`1` 表示将点加入组，`0` 表示将点从组中移除。
+如果 `mode` 为 `"toggle"`，则忽略此参数。
 
 `mode`
 
-Use `"set"` to set the point’s membership according to the `value`.
-Use `"toggle"` to toggle the point’s membership, regardless of the `value`.
+使用 `"set"` 根据 `value` 设置点的成员资格。
+使用 `"toggle"` 切换点的成员资格，无论 `value` 为何值。

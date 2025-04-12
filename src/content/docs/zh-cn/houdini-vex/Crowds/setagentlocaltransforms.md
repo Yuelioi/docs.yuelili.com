@@ -4,16 +4,16 @@ order: 61
 ---
 `void  setagentlocaltransforms(int geohandle, int prim, matrix transforms[])`
 
-When modifying a single transform, using [setagentlocaltransform](setagentlocaltransform.html "Overrides the local space transform of an agent primitive’s bone.") instead can be significantly faster.
+当只需修改单个变换时，使用[setagentlocaltransform](setagentlocaltransform.html "覆盖代理图元骨骼的局部空间变换。")可能会显著提高效率。
 
 `geohandle`
 
-Handle to the geometry to write to. `geoself()` can be used to get a handle to the current geometry.
+要写入的目标几何体句柄。可使用`geoself()`获取当前几何体的句柄。
 
 `prim`
 
-The primitive number.
+图元编号。
 
 `transforms`
 
-The new transform (in local space) of each bone in the agent’s rig.
+代理骨骼系统中每个骨骼的新变换矩阵（基于局部空间坐标系）。

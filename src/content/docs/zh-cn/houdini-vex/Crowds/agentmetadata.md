@@ -1,21 +1,22 @@
 ---
-title: agentmetadata
+title: 代理元数据
 order: 32
 ---
-| Since | 18.5 |
+
+| 版本 | 18.5 |
 | --- | --- |
 
 `dict  agentmetadata(<geometry>geometry, int prim)`
 
-Returns the shared [metadata dictionary](../../crowds/agents.html#metadata) from the agent’s definition.
-Returns an empty dictionary if `prim` is out of range or is not an agent primitive.
+返回代理定义中的共享[元数据字典](../../crowds/agents.html#metadata)。
+如果`prim`超出范围或不是代理图元，则返回空字典。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `prim`
 
-The primitive number.
+图元编号。

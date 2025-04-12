@@ -8,24 +8,22 @@ order: 15
 
 `nvalues`
 
-The returned integer will be uniform in the range `[0,nvalues-1]`,
-returning 0 if `u==0`, and returning `nvalues-1` if `u==1`. The
-output will be clamped to that range in case `u` is out of the range
-`[0,1)`, to reduce the risk of roundoff on `u` causing problems.
+返回的整数将在 `[0,nvalues-1]` 范围内均匀分布，
+当 `u==0` 时返回 0，当 `u==1` 时返回 `nvalues-1`。
+如果 `u` 超出 `[0,1)` 范围，输出将被限制在该范围内，
+以减少 `u` 的舍入误差导致的问题。
 
 `weights`
 
-Relative weights, (the sum does not need to be 1), of each integer
-value in the range `[0,len(weights)-1]`.
+相对权重数组（总和不需要为 1），对应 `[0,len(weights)-1]` 范围内每个整数值的权重。
 
 `u`
 
-A number between 0 and 1.
+一个介于 0 和 1 之间的数。
 
-Returns an integer, based on `u`, either uniformly weighted from 0 to
-`nvalues-1`, or weighted based on the `weights` array from 0 to
-`len(weights)-1`.
-Given uniform random `u` values in `[0,1)`, the version taking `nvalues`
-will return uniform random integers in `[0,nvalues-1]`, and the version
-taking `weights` will return random integers in `[0,len(weights)-1]`, where
-the probability of `i` is `weights[i]/sum_of_weights`.
+根据 `u` 返回一个整数，要么是从 0 到 `nvalues-1` 均匀加权，
+要么是基于 `weights` 数组从 0 到 `len(weights)-1` 加权返回。
+给定 `[0,1)` 范围内均匀随机的 `u` 值，接受 `nvalues` 的版本
+将返回 `[0,nvalues-1]` 范围内的均匀随机整数，而接受 `weights` 的版本
+将返回 `[0,len(weights)-1]` 范围内的随机整数，其中
+`i` 的概率为 `weights[i]/sum_of_weights`。

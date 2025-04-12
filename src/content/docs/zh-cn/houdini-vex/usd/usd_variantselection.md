@@ -2,37 +2,35 @@
 title: usd_variantselection
 order: 152
 ---
-| Since | 17.5 |
+| 始于版本 | 17.5 |
 | --- | --- |
 
 `string  usd_variantselection(<stage>stage, string primpath, string variantset)`
 
-This function returns the current variant in a given variant set on a given primitive.
+此函数返回指定图元上给定变体集中当前选中的变体。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取对应输入中的舞台。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已烹饪舞台（例如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `variantset`
 
-The variant set name.
+变体集名称。
 
-Returns
+返回值
 
-The currently selected variant in a given variant set on a given primitive.
+返回指定图元上给定变体集中当前选中的变体。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the currently selected variant in the variant set "shapes" on a "shape_shifter" primitive.
+// 获取"/geo/shape_shifter"图元上"shapes"变体集中当前选中的变体
 string selected_variant = usd_variantselection(0, "/geo/shape_shifter", "shapes");
 
 ```

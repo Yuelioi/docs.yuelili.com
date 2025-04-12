@@ -2,6 +2,7 @@
 title: metanext
 order: 3
 ---
+
 `int  metanext(int handle)`
 
-This iterates through the list of metaballs returned by `metastart()`. The function returns `0` if there are no further metaballs in selected by `metastart()`.
+该函数用于遍历由 `metastart()` 返回的元球列表。如果 `metastart()` 选中的元球列表中没有更多元球，则返回 `0`。

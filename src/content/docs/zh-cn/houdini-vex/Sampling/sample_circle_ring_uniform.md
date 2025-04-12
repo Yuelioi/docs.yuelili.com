@@ -2,22 +2,21 @@
 title: sample_circle_ring_uniform
 order: 10
 ---
-| Since | 17.0 |
+| 始于版本 | 17.0 |
 | --- | --- |
 
 `vector2  sample_circle_ring_uniform(vector2 u, float alpha)`
 
 `u`
 
-Pair of numbers between 0 and 1.
+介于0到1之间的数字对。
 
 `alpha`
 
-The inner radius to be bounded by. A number between 0 and 1.
+内半径边界值。介于0到1之间的数字。
 
-Returns a vector2 of length \< 1, based on `u`.
-Given uniform random `u` pairs of values in `[0,1)`,
-and value `alpha` in `[0,1]`, the returned vectors will be
-uniform random and continuous with respect to `u` inside the unit circle ring with inner radius of `alpha`.
-Specifically, it returns `scale*(cos(angle),sin(angle))`, where `angle` is `2*pi*u.x`
-and `scale` is `sqrt((1-alpha^2)*u.y+alpha^2)`.
+返回一个基于`u`的长度<1的vector2向量。
+给定在`[0,1)`区间内均匀随机的`u`数值对，
+以及`[0,1]`区间内的`alpha`值，返回的向量将在内半径为`alpha`的单位圆环内保持均匀随机分布，并且相对于`u`是连续的。
+具体而言，返回值为`scale*(cos(angle),sin(angle))`，其中`angle`为`2*pi*u.x`，
+而`scale`为`sqrt((1-alpha^2)*u.y+alpha^2)`。

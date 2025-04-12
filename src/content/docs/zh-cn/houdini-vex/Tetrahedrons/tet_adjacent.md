@@ -6,22 +6,21 @@ order: 1
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `primindex`
 
-The primitive number.
+基元编号。
 
 `faceno`
 
-The face on the tetrahedron. Face 0 is the triangle that doesn’t
-have vertex 0.
+四面体上的面编号。面0是不包含顶点0的三角形面。
 
-Returns
+返回值
 
-The primitive number of the tetrahedron opposite the given vertex.
-Returns `-1` f the primitive is not a tet or doesn’t have an adjacent tetrahedron.
+与给定顶点相对的四面体的基元编号。
+如果基元不是四面体或没有相邻四面体，则返回`-1`。
 
-Use [tet_faceindex](tet_faceindex.html "Returns vertex indices of each face of a tetrahedron.") to get the vertex indices of each face of a tetrahedron.
+使用[tet_faceindex](tet_faceindex.html "返回四面体每个面的顶点索引。")可获取四面体每个面的顶点索引。

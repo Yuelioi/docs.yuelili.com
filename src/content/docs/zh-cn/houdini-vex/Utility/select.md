@@ -6,9 +6,6 @@ order: 16
 
 `<type>[] select(int conditional, <type>a[], <type>b[])`
 
-Returns `a` if the conditional is true, and returns `b` if it is false.
+如果条件为真则返回 `a`，为假则返回 `b`。
 
-The difference between select and an `if` statement is that select will
-evaluate both a and b, regardless of the value of the conditional. Judicious
-use of `select` can avoid comparisons, allowing larger sections of code to be
-converted to native code.
+`select` 与 `if` 语句的区别在于：无论条件值如何，`select` 都会同时计算 a 和 b 的值。合理使用 `select` 可以避免比较操作，从而允许将更大的代码段转换为原生代码。

@@ -2,43 +2,41 @@
 title: usd_iprimvarindices
 order: 54
 ---
-| Since | 19.0 |
+| 始于版本 | 19.0 |
 | --- | --- |
 
 `int [] usd_iprimvarindices(<stage>stage, string primpath, string name)`
 
 `int [] usd_iprimvarindices(<stage>stage, string primpath, string name, float timecode)`
 
-This function returns the index array of an indexed primvar found directly on the given primitive or inherited from primitive’s ancestor.
+此函数返回在指定图元上直接找到或从其祖先继承的索引化primvar的索引数组。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取对应输入中的stage。该整数等同于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+也可以使用此参数引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点已处理的stage（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `name`
 
-Primvar name (without namespace).
+Primvar名称（不带命名空间）。
 
 `timecode`
 
-The USD time code at which to evaluate the attribute. A USD time code roughly corresponds to a frame in Houdini. If not given, the time code corresponding to the current frame is used.
+评估属性时使用的USD时间码。USD时间码大致对应Houdini中的帧数。若未指定，则使用当前帧对应的时间码。
 
-Returns
+返回值
 
-The index array of an indexed primvar, or zero/empty value if the primvar does not exist or is not indexed. Use [usd_isiprimvar](usd_isiprimvar.html "Checks if the primitive or its ancestor has a primvar of the given name.") if you want to check whether the primvar exists and [usd_isindexediprimvar](usd_isindexediprimvar.html "Checks if there is an indexed primvar directly on the USD primitive or on USD primitive’s ancestor.") to check whether it is indexed.
+索引化primvar的索引数组，若primvar不存在或未被索引则返回零/空值。如需检查primvar是否存在，请使用[usd_isiprimvar](usd_isiprimvar.html "检查指定名称的primvar是否存在于图元或其祖先上")；如需检查是否被索引，请使用[usd_isindexediprimvar](usd_isindexediprimvar.html "检查USD图元或其祖先上是否存在索引化primvar")。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the index array of an indexed primvar.
+// 获取索引化primvar的索引数组
 int indices[] = usd_iprimvarindices(0, "/geo/cube", "indexed_primvar_name");
 
 ```

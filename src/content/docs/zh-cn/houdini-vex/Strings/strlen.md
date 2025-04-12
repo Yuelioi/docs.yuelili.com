@@ -4,4 +4,4 @@ order: 39
 ---
 `int  strlen(string string)`
 
-Returns the length of the string in bytes.
+返回字符串的字节长度。

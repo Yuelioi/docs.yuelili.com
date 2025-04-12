@@ -2,16 +2,13 @@
 title: sample_photon
 order: 27
 ---
-| Context(s) | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
+| 上下文 | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
 | --- | --- |
 
 `int  sample_photon(light lp, vector &pos, vector &dir, float &scale, float time)`
 
-Spawns a photon from the given light source and returns the information for the
-first intersection in the scene. The `pos`, `dir` and `scale` are filled out
-with the information about where the photon hit in the scene.
+从给定光源发射光子，并返回场景中首次相交的信息。参数`pos`、`dir`和`scale`将被填充关于光子在场景中击中位置的相关信息。
 
-The returned integer represents the bounce type mask (this is determined by the
-types of illumination labels on the light source).
+返回的整数表示反弹类型掩码（这由光源上的照明标签类型决定）。
 
-The function returns 0 if the photon didn’t intersect any geometry.
+如果光子未与任何几何体相交，则函数返回0。

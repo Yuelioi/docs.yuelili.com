@@ -4,4 +4,4 @@ order: 42
 ---
 `vector  wt_vspace(vector v)`
 
-Transforms a direction vector from *World* to *Texture* space.
+将方向向量从*世界*空间转换到*纹理*空间。

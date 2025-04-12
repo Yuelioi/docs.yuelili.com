@@ -2,12 +2,12 @@
 title: volumepostoindex
 order: 13
 ---
-`vector  volumepostoindex(<geometry>geometry, int primnum, vector position)`
+`vector volumepostoindex(<geometry>geometry, int primnum, vector position)`
 
-`vector  volumepostoindex(<geometry>geometry, string volumename, vector position)`
+`vector volumepostoindex(<geometry>geometry, string volumename, vector position)`
 
-Returns
+返回值
 
-The index of a voxel at the given position.
+返回给定位置处体素（voxel）的索引值。
 
-Returns 0 if `primnum` or `inputnum` is out of range, the geometry is invalid, or the given primitive is not a vector volume primitive.
+如果`primnum`或`inputnum`超出范围、几何体无效，或给定图元不是矢量体积图元时，返回0。

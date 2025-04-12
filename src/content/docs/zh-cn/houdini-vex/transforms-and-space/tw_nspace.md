@@ -4,4 +4,4 @@ order: 33
 ---
 `vector  tw_nspace(vector v)`
 
-Transforms a normal vector from *Texture* to *World* space.
+将法线向量从*纹理*空间转换到*世界*空间。

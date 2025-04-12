@@ -2,10 +2,9 @@
 title: osd_limitsurface
 order: 3
 ---
-`osd_limitsurface` evaluates the point attribute in the geometry specified as a
-subdivision surface.
+`osd_limitsurface` 用于评估指定为细分曲面的几何体中的点属性。
 
-For vertex attributes, use [osd_limitsurfacevertex](osd_limitsurfacevertex.html "Evaluates a vertex attribute at the subdivision limit surface using Open Subdiv.").
+对于顶点属性，请使用 [osd_limitsurfacevertex](osd_limitsurfacevertex.html "使用Open Subdiv在细分极限曲面上评估顶点属性")。
 
 `int  osd_limitsurface(<geometry>geometry, string attrib_name, int patch_id, float u, float v, <type>&result)`
 
@@ -13,30 +12,28 @@ For vertex attributes, use [osd_limitsurfacevertex](osd_limitsurfacevertex.html 
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个整数，表示要读取几何体的输入编号（从0开始）。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是一个字符串，指定要读取的几何体文件（例如`.bgeo`）。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `&result`
 
-The computed attribute value is stored in the variable you pass to this argument.
-The type of the variable should match the type of the attribute you are reading.
+计算得到的属性值将存储在你传递给此参数的变量中。
+变量的类型应与要读取的属性类型匹配。
 
-Returns
+返回值
 
-`1` if computing the attribute was successful, `0` if it failed.
+如果成功计算属性则返回`1`，失败则返回`0`。
 
-Possible reasons for failure are:
+可能失败的原因包括：
 
-- The geometry contains no polygons or the topology can’t be converted using Open Subdiv
-- The attribute doesn’t exist on the input geometry.
-- The attribute size/type doesn’t match the VEX type of the `result` argument.
+- 几何体不包含多边形或拓扑无法使用Open Subdiv转换
+- 输入几何体上不存在该属性
+- 属性大小/类型与`result`参数的VEX类型不匹配
 
-Examples
+## 示例
 
-## examples
-
-Generate a point cloud on the limit surface of a subdivision mesh.
+在细分网格的极限曲面上生成点云。
 
 ```vex
 int npatches = osd_patchcount(file);

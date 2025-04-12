@@ -1,9 +1,9 @@
 ---
-title: curlnoise
+title: 旋度噪声
 order: 4
 ---
 `vector  curlnoise(vector xyz)`
 
 `vector  curlnoise(vector4 xyzt)`
 
-Computes a divergence free vector field based on the cross product of the derivatives of two Perlin noise functions.
+基于两个Perlin噪声函数导数的叉积，计算一个无散度的向量场。

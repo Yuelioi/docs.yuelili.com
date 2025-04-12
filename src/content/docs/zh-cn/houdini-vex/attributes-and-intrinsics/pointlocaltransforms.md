@@ -1,20 +1,20 @@
 ---
-title: pointlocaltransforms
+title: 点局部变换
 order: 39
 ---
-| Since | 18.5 |
+| 版本 | 18.5 |
 | --- | --- |
 
 `matrix [] pointlocaltransforms(<geometry>geometry, int pnts[])`
 
-Returns an array of local transforms associated with the point indices. This function queries the `4@localtransform` attribute.
+返回与点索引关联的局部变换矩阵数组。该函数查询的是 `4@localtransform` 属性。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如 wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数也可以是指定几何文件（例如 `.bgeo`）的字符串。在 Houdini 内部运行时，可以是 `op:/path/to/sop` 形式的引用。
 
 `pnts`
 
-The array of point indices to query.
+要查询的点索引数组。

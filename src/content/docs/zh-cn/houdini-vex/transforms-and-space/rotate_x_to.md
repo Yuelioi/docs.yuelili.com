@@ -10,22 +10,16 @@ order: 22
 
 `direction`
 
-Direction to which a vector along the positive x-axis, e.g. (1,0,0),
-would be rotated. This does not need to be normalized.
+要将正x轴向量（如(1,0,0)）旋转到的目标方向。该向量不需要归一化。
 
 `v`
 
-Vector to which to apply the rotation.
+需要应用旋转的向量。
 
-Applies to `v`, the rotation that would move (1,0), (1,0,0), or (1,0,0,0) to
-`direction` most directly.
+对向量`v`施加一个旋转，该旋转会将(1,0)、(1,0,0)或(1,0,0,0)最直接地移动到`direction`方向。
 
-In the case of `direction` being (-1,0,0), there are multiple distinct
-rotations that would move (1,0,0) to (-1,0,0) with a
-half turn rotation, so one is chosen arbitrarily, negating `v.x` and `v.z`.
-In 2D, there is only one distinct rotation that moves (1,0) to (-1,0),
-equivalent to negating `v`. In 4D, the rotation where `v` is negated
-is also chosen.
+当`direction`为(-1,0,0)时，存在多个不同的旋转可以将(1,0,0)旋转到(-1,0,0)（半圈旋转），此时会任意选择其中一个旋转，即对`v.x`和`v.z`取反。
+在2D情况下，将(1,0)旋转到(-1,0)只有一种旋转方式，相当于对`v`取反。
+在4D情况下，同样会选择对`v`取反的旋转方式。
 
-This is used by functions like `sample_direction_cone` and `sample_sphere_cone`
-to rotate the cone centre from (1,0,0) to a given direction vector.
+该函数被诸如`sample_direction_cone`和`sample_sphere_cone`等函数使用，用于将圆锥中心从(1,0,0)旋转到给定的方向向量。

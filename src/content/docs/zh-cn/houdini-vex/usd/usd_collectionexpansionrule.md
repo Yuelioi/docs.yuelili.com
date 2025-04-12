@@ -2,39 +2,38 @@
 title: usd_collectionexpansionrule
 order: 34
 ---
-| Since | 18.0 |
+
+| 版本 | 18.0 |
 | --- | --- |
 
 `string  usd_collectionexpansionrule(<stage>stage, string collectionpath)`
 
-This function returns the collection’s expansion rule.
+此函数返回集合的扩展规则。
 
-USD supports a few standard expansion rules
+USD支持几种标准扩展规则：
 
-- `explicitOnly` - only paths in the include list and not in the exclude list belong to the collection
-- `expandPrims` - all the primitives at or below the includes (but not excludes) belong to the collection
-- `expanPrimsAndProperties` - like `expandPrims` but also includes properties of matched primitives
+- `explicitOnly` - 仅包含在包含列表中且不在排除列表中的路径属于该集合
+- `expandPrims` - 包含路径下及其子级的所有图元（但不包括排除路径）属于该集合
+- `expanPrimsAndProperties` - 类似`expandPrims`，但还包含匹配图元的属性
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取舞台。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或使用`op:`作为路径前缀引用其他LOP节点的已处理舞台（例如"op:/stage/lop_node"）。
 
 `collectionpath`
 
-The path to the collection.
+集合的路径。
 
-Returns
+返回值
 
-The collection’s expansion rule.
+集合的扩展规则。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get collection's expansion rule.
+// 获取集合的扩展规则
 string collection_path = usd_makecollectionpath(0, "/geo/cube", "some_collection");
 string expansion_rule  = usd_collectionexpansionrule(0, collection_path);
 

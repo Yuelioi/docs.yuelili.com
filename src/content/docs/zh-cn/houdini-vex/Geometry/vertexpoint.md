@@ -1,33 +1,29 @@
 ---
-title: vertexpoint
+title: vertexpoint函数
 order: 42
 ---
 `int  vertexpoint(<geometry>geometry, int linearvertex)`
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号的整数（从0开始），用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数也可以是一个指定几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`形式的引用。
 
 `linearvertex`
 
-The linear vertex number. The `vertexindex` function can be used
-to compute a linear vertex from a primitive number and vertex
-number pair.
+线性顶点编号。可以使用`vertexindex`函数通过基元编号和顶点编号对来计算线性顶点。
 
-Returns
+返回值
 
-The point number associated with the vertex, or `-1` if the vertex has no point.
+与该顶点关联的点编号，如果该顶点没有关联点则返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 int        pt;
 
-// Get the point of vertex 3
+// 获取顶点3对应的点
 pt = vertexpoint("defgeo.bgeo", 3);
 
 ```

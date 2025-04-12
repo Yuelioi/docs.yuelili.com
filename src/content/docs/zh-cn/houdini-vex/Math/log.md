@@ -1,9 +1,9 @@
 ---
-title: log
+title: 对数函数
 order: 39
 ---
 `float  log(float n)`
 
 `<vector> log(<vector>v)`
 
-Returns the natural logarithm of `n`. For vectors, this is done per-component.
+返回`n`的自然对数。对于向量，该操作是按分量进行的。

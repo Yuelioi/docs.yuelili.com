@@ -1,50 +1,41 @@
 ---
-title: primfind
+title: primfind函数
 order: 25
 ---
 `int [] primfind(<geometry>geometry, vector min, vector max)`
 
-Find all the primitives whose bounding boxes overlap the given box.
+查找所有边界框与给定框重叠的图元。
 
 `int [] primfind(<geometry>geometry, string group, vector min, vector max)`
 
-Find all primitives in a group whose bounding boxes overlap the given box.
+查找指定组中所有边界框与给定框重叠的图元。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，该参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `min`, `max`
 
-These vectors define the minimum and maximum corners of the bounding box to search.
+这两个向量定义了要搜索的边界框的最小和最大角点。
 
 `group`
 
-If given, only match primitives in this group.
-An empty group string will include all primitives.
-The string supports Ad-hoc patterns like `0-10` and `@Cd.x>0`.
+如果指定，则只匹配该组中的图元。
+空组字符串将包含所有图元。
+字符串支持临时模式，如`0-10`和`@Cd.x>0`。
 
-Returns
+返回值
 
-An array of primitive numbers.
+图元编号数组。
 
-Note
-These functions are intended to be used as an optimization to finding primitives
-in a particular area for processing. For instance, to find all the curves
-from one input intersecting polygons on another input, we may naively iterate
-over all polygons for each curve to determine their intersection. To speed this
-process, we may find which primitives may intersect a particular curve using
-these functions, and iterate solely over the potentially intersecting
-primitives. This significantly improves performance since `primfind` uses an
-underlying tree structure to speed up search.
+注意
+这些函数旨在作为优化手段，用于查找特定区域中待处理的图元。例如，要查找一个输入中与另一个输入中的多边形相交的所有曲线，我们可能会天真地遍历所有多边形来确定它们的交点。为了加速这个过程，我们可以使用这些函数找到可能与特定曲线相交的图元，并仅遍历可能相交的图元。这显著提高了性能，因为`primfind`使用底层树结构来加速搜索。
 
-Examples
+## 示例
 
-## examples
-
-Remove primitives that may be intersecting the unit box centered at the origin:
+移除可能与原点为中心的单位框相交的图元：
 
 ```vex
 int[] prims = primfind(geometry, {-0.5, -0.5, -0.5}, {0.5, 0.5, 0.5});
@@ -55,7 +46,7 @@ foreach ( int prim; prims )
 
 ```
 
-Alternatively, we can use a query bounding box from an auxiliary source:
+或者，我们可以使用辅助源的查询边界框：
 
 ```vex
 vector min, max;
@@ -68,8 +59,7 @@ foreach ( int prim; prims )
 
 ```
 
-To see the performance benefit of `primfind`, compare it to the following equivalent
-implementation of the function above:
+要了解`primfind`的性能优势，可以将其与以下等效实现进行比较：
 
 ```vex
 float tol = 1e-5;
@@ -80,7 +70,7 @@ for ( int prim = 0; prim < n; ++prim )
 {
     int[] verts = primvertices("primitives.bgeo", prim);
 
-    // compute primitive bounding box and store it in prim_min and prim_max
+    // 计算图元边界框并存储在prim_min和prim_max中
     vector vert_pos = point("primitives.bgeo", "P", vertexpoint("primitives.bgeo", verts[0]));
     vector prim_min = vert_pos, prim_max = vert_pos;
     for ( int v = 1; v < len(verts); ++v )
@@ -90,7 +80,7 @@ for ( int prim = 0; prim < n; ++prim )
         prim_max = max(prim_max, vert_pos);
     }
 
-    // bounding box intersection test
+    // 边界框相交测试
     if ( prim_max.x - min.x < -tol ) continue;
     if ( prim_max.y - min.y < -tol ) continue;
     if ( prim_max.z - min.z < -tol ) continue;

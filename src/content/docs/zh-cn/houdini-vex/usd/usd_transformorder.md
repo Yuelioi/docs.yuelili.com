@@ -2,33 +2,31 @@
 title: usd_transformorder
 order: 146
 ---
-| Since | 17.5 |
+| 版本 | 17.5 |
 | --- | --- |
 
 `string [] usd_transformorder(<stage>stage, string primpath)`
 
-This function returns primitive’s local transform. Transform order is a sequence of transform operations, whose full names are stored in `xformOpOrder` attribute as a string array. Thus, this function returns the value of that attribute.
+此函数返回图元的局部变换顺序。变换顺序是一系列变换操作的序列，其完整名称以字符串数组形式存储在`xformOpOrder`属性中。因此，本函数返回该属性的值。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取对应输入的stage。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点处理后的stage（例如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
-Returns
+返回值
 
-The primitive’s transform order.
+图元的变换顺序。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the cube's transform order.
+// 获取立方体的变换顺序
 string cube_xform_ops[] = usd_transformorder(0, "/geo/cube");
 
 ```

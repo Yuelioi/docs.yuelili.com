@@ -2,25 +2,25 @@
 title: usd_applyapi
 order: 15
 ---
-| Since | 20.0 |
+| 始于版本 | 20.0 |
 | --- | --- |
 
 `int  usd_applyapi(int stagehandle, string primpath, string apischemaname)`
 
-This function applies an API schema to a primitive. This function will only work for single-apply API schemas (such as GeomModelAPI), not for multiple-apply API schemas (such as CollectionAPI).
+此函数用于向图元应用API模式。该函数仅适用于单次应用的API模式（如GeomModelAPI），不适用于多次应用的API模式（如CollectionAPI）。
 
 `stagehandle`
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+要写入的舞台句柄。当前唯一有效值为`0`，表示节点中的当前舞台。（此参数未来可能用于支持写入其他舞台。）
 
 `primpath`
 
-The path to the primitive.
+图元路径。
 
 `apischemaname`
 
-API schema name.
+API模式名称。
 
-Returns
+返回值
 
-The value of `stagehandle` on success, or `-1` on failure.
+成功时返回`stagehandle`的值，失败时返回`-1`。

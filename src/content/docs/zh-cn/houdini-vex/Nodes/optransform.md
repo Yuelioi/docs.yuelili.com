@@ -10,10 +10,6 @@ order: 35
 
 `matrix  optransform(int op_id, float time)`
 
-Returns the transform associated with an OP. If the OP specified has no
-transform associated with it (for example a COP), then an identity
-matrix is returned. It is possible to specify the time to evaluate the
-transform at (in seconds, not frames).
+返回与操作符(OP)关联的变换矩阵。如果指定的操作符没有关联的变换矩阵(例如COP节点)，则返回单位矩阵。可以指定评估变换的时间(以秒为单位，而非帧数)。
 
-NOTE: The op: syntax can be used to simulate this behavior using the
-standard transform functions.
+注意：可以使用 op: 语法配合标准变换函数来模拟此行为。

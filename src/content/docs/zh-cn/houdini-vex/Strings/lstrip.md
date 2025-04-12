@@ -6,4 +6,4 @@ order: 18
 
 `string  lstrip(string value, string whitespace)`
 
-Returns a string with the leading whitespace removed. If whitespace is provided, it is a string of characters that will be stripped.
+返回移除前导空白字符后的字符串。如果提供了whitespace参数，则移除该字符串中指定的字符。

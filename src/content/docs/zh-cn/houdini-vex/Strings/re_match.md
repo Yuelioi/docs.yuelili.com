@@ -4,4 +4,4 @@ order: 26
 ---
 `int  re_match(string regex, string input)`
 
-Returns `1` if the entire `input` string matches the `regex`, or `0` if it doesn’t match.
+如果整个 `input` 字符串与 `regex` 匹配则返回 `1`，否则返回 `0`。

@@ -2,7 +2,8 @@
 title: cspline
 order: 3
 ---
-To specify the curve using unevenly spaced keys, use [ckspline](ckspline.html "Samples a Catmull-Rom (Cardinal) spline defined by position/value keys.").
+
+要使用非均匀间隔的关键点指定曲线，请使用[ckspline](ckspline.html "对由位置/值关键点定义的Catmull-Rom（Cardinal）样条进行采样")。
 
 `float  cspline(float t, float val1, ...)`
 
@@ -12,19 +13,16 @@ To specify the curve using unevenly spaced keys, use [ckspline](ckspline.html "S
 
 `t`
 
-The position along the spline to sample.
+要采样的样条曲线上的位置。
 
 `val1`, `val2`, `...`
 
-A series of of key values. The keys are assumed to be uniformly spaced along a range from 0 to 1.
+一系列关键值。假设这些关键点在0到1范围内均匀分布。
 
-Returns
+返回值
 
-The interpolated value at position `t` along the curve.
+在曲线`t`位置处的插值。
 
-Computes a Catmull-Rom (Cardinal) spline between the key points
-specified.
+计算指定关键点之间的Catmull-Rom（Cardinal）样条曲线。
 
-Because of the nature of the Cardinal spline, the value associated with
-the first and last keys will never be returned. However, these keys are
-used to determine the shape of the curve on entry and exit.
+由于Cardinal样条的特性，与第一个和最后一个关键点关联的值永远不会被返回。然而，这些关键点用于确定曲线入口和出口的形状。

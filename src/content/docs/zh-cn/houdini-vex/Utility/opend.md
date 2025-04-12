@@ -2,15 +2,16 @@
 title: opend
 order: 8
 ---
-| Context(s) | [shading](../contexts/shading.html) |
+
+| 上下文 | [着色](../contexts/shading.html) |
 | --- | --- |
 
 `void  opend(int handle)`
 
-Informs mantra that a long operation begun with [opstart](opstart.html "Start a long operation.") has completed. Pass in the value returned by [opstart](opstart.html "Start a long operation.").
+通知mantra一个由[opstart](opstart.html "开始一个长时间操作")启动的长时间操作已完成。传入[opstart](opstart.html "开始一个长时间操作")返回的值。
 
 ```vex
-int op_handle = opstart("Performing long operation");
+int op_handle = opstart("正在执行长时间操作");
 perform_long_operation();
 if (op_handle >= 0)
     opend(op_handle);

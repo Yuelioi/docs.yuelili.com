@@ -2,11 +2,12 @@
 title: addprim
 order: 2
 ---
+
 `int  addprim(int geohandle, string type)`
 
-Create a polygon or polyline without any points. You can then add vertices to the primitive with [addvertex](addvertex.html "Adds a vertex to a primitive in a geometry.").
+创建一个不含任何点的多边形或多段线。之后可以使用[addvertex](addvertex.html "向几何体中的图元添加顶点")为图元添加顶点。
 
-Make sure to add at least one vertex to the created primitive. While we attempt to make sure Houdini’s code can deal with empty polygons, it’s possible they could cause strange results or failures.
+请确保至少为创建的图元添加一个顶点。虽然我们尽力确保Houdini的代码能够处理空多边形，但它们仍可能导致异常结果或错误。
 
 `int  addprim(int geohandle, string type, int pt0)`
 
@@ -18,11 +19,11 @@ Make sure to add at least one vertex to the created primitive. While we attempt 
 
 `int  addprim(int geohandle, string type, int pt0, int pt1, int pt2, int pt3, int pt4, int pt5, int pt6, int pt7)`
 
-Create a primitive using points specified by point numbers.
+使用点编号指定的点创建图元。
 
 `int  addprim(int geohandle, string type, int points[])`
 
-Create a primitive using points specified in an array of point numbers.
+使用点编号数组创建图元。
 
 `void  addprim(int &prim_num, int geohandle, string type, int pt0, int &vertices[])`
 
@@ -36,36 +37,36 @@ Create a primitive using points specified in an array of point numbers.
 
 `void  addprim(int &prim_num, int geohandle, string type, int points[], int &vertices[])`
 
-These signatures fill the given `vertices` array with the new primitive’s vertex numbers corresponding to the given points. You can use these numbers with [setvertexattrib](setvertexattrib.html "Sets a vertex attribute in a geometry.") to set attributes on the vertices, however they may not be the final numbers of the vertices.
+这些函数签名会将新图元对应给定点的顶点编号填充到指定的`vertices`数组中。您可以使用[setvertexattrib](setvertexattrib.html "设置几何体中顶点属性")通过这些编号设置顶点属性，但这些编号可能不是顶点的最终编号。
 
-If the primitive was created, but any points were invalid, the corresponding vertex numbers in the array will be `-1`.
+如果图元创建成功但某些点无效，数组中对应的顶点编号将为`-1`。
 
-These signatures overwrite the `primnum` variable with the new primitive number instead of returning it.
+这些函数签名会将新图元编号覆盖到`primnum`变量中，而不是返回它。
 
 `geohandle`
 
-A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](geoself.html "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
+要写入的几何体句柄。目前唯一有效的值是`0`或[geoself](geoself.html "返回当前几何体的句柄")，表示节点中的当前几何体。(此参数未来可能用于支持写入其他几何体。)
 
 `type`
 
-One of the following strings:
+以下字符串之一：
 
-| `"poly"` | Closed polygon. Can use 0 or more points. |
+| `"poly"` | 闭合多边形。可使用0个或多个点。 |
 | --- | --- |
-| `"polyline"` | Open polygon. Can use 0 or more points. |
-| `"tet"` | Tetrahedron primitive. A triangular pyramid. Requires exactly 4 points. You cannot add vertices to this primitive. |
-| “hex” | Hexahedron primitive. A distorted cube. Requires eactly 8 points. You cannot add vertices to this primitive. |
-| `"sphere"`, `"circle"`, `"tube"`, `"metaball"`, `"metasquad"` | Sphere, circle, tube, metaball, or metasuperquadric primitive. The radius and shape are controled by transform primitive intrinsics. Require exactly 1 point. You cannot add vertices to these primitives. |
-| `"channel"` | Channel Primitive. Stores channel data in a primitive. Can use 0 or more points. |
-| `"AlembicRef"`, `"PackedDisk"` | Packed Alembic or packed disk primitive. Require exactly 1 point. You cannot add vertices to these primitives. |
+| `"polyline"` | 开放多边形。可使用0个或多个点。 |
+| `"tet"` | 四面体图元。三角锥体。需要恰好4个点。无法为此图元添加顶点。 |
+| "hex" | 六面体图元。变形立方体。需要恰好8个点。无法为此图元添加顶点。 |
+| `"sphere"`, `"circle"`, `"tube"`, `"metaball"`, `"metasquad"` | 球体、圆形、管状体、元球或元超二次曲面图元。半径和形状由变换图元固有属性控制。需要恰好1个点。无法为这些图元添加顶点。 |
+| `"channel"` | 通道图元。在图元中存储通道数据。可使用0个或多个点。 |
+| `"AlembicRef"`, `"PackedDisk"` | 打包的Alembic或打包磁盘图元。需要恰好1个点。无法为这些图元添加顶点。 |
 
-Returns
+返回值
 
-A primitive number for the created primitive, or `-1` if the point could not be created.
+创建的图元的编号，如果无法创建则返回`-1`。
 
-You can use the return value with [setprimattrib](setprimattrib.html "Sets a primitive attribute in a geometry.") to set attributes on the new point, however it may not be the final number of the point.
+您可以使用返回值通过[setprimattrib](setprimattrib.html "设置几何体中图元属性")为新点设置属性，但这可能不是该点的最终编号。
 
-You can set a primitive’s transforms using [setprimintrinsic](setprimintrinsic.html "Sets the value of a writeable primitive intrinsic attribute."), for example:
+您可以使用[setprimintrinsic](setprimintrinsic.html "设置可写图元固有属性的值")设置图元的变换，例如：
 
 ```vex
 matrix3 transform_value = {{0, 0, 0}, {0, 0, 0}, {1, 1, 1}};
@@ -73,7 +74,7 @@ setprimintrinsic(geoself(), "transform", prim, transform_value);
 
 ```
 
-You can also set Alembic and packed primitive intrinsics, for example:
+您也可以设置Alembic和打包图元的固有属性，例如：
 
 ```vex
 setprimintrinsic(geoself(), "unexpandedfilename", prim, "test.bgeo");`

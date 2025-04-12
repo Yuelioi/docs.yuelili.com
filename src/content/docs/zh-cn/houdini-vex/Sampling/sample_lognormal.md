@@ -8,29 +8,21 @@ order: 22
 
 `mu`
 
-The mean of the underlying normal distribution.
+基础正态分布的平均值。
 
 `sigma`
 
-The standard deviation of the underlying normal distribution.
+基础正态分布的标准差。
 
 `u`
 
-A number in the range `[0,1)`.
+范围在 `[0,1)` 之间的数值。
 
 `minvalue`,`maxvalue`
 
-When given, instead of sampling the full log-normal distribution,
-the distribution with its range limited to `[minvalue,maxvalue]` will be
-sampled.
+当提供时，不会对整个对数正态分布进行采样，而是采样范围限制在 `[minvalue,maxvalue]` 内的分布。
 
-Samples the log-normal distribution with the specified `mu` and `sigma`, optionally
-with a `minvalue` and `maxvalue`. To use parameters that are more understandable,
-`median` and `stddev`, please use `sample_lognormal_by_median`.
-Given uniform random `u` values in `[0,1)`, this will return log-normally
-distributed random numbers. The return value will be monotone increasing
-with respect to `u`.
+使用指定的 `mu` 和 `sigma` 采样对数正态分布，可选地使用 `minvalue` 和 `maxvalue`。如需使用更直观的参数 `median`（中位数）和 `stddev`（标准差），请使用 `sample_lognormal_by_median`。
+给定均匀随机的 `u` 值在 `[0,1)` 范围内，此函数将返回对数正态分布的随机数。返回值将相对于 `u` 单调递增。
 
-The log-normal distribution is sampled by sampling a normal distribution
-and exponentiating the result, giving a value that is always positive, so
-this distribution is often used for generating random point scales.
+对数正态分布是通过采样正态分布并对结果取指数来采样的，因此结果总是正数，所以该分布常用于生成随机点尺度。

@@ -4,7 +4,6 @@ order: 15
 ---
 `int  isdigit(string str)`
 
-Returns 1 if all the characters in the string are numeric (0-9). No alphabetic characters,
-punctuation or other special characters. If any are present then returns 0.
+如果字符串中的所有字符都是数字（0-9），则返回1。不允许包含字母、标点符号或其他特殊字符。如果存在任何非数字字符，则返回0。
 
-If passed the string “543.34”, this function will return 0 because “.” is not a digit.
+如果传入字符串"543.34"，该函数将返回0，因为"."不是数字。

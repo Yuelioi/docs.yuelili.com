@@ -1,28 +1,25 @@
 ---
-title: removevertex
+title: removevertex（移除顶点）
 order: 34
 ---
-| Since | 18.0 |
+
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `int  removevertex(int geohandle, int linear_vertex_index)`
 
 `geohandle`
 
-A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](geoself.html "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
+要写入的几何体句柄。目前唯一有效的值是`0`或[geoself](geoself.html "返回当前几何体的句柄")，表示节点中的当前几何体。（此参数未来可能用于支持写入其他几何体。）
 
 `linear_vertex_index`
 
-If this is `-1`, the function has no effect. This is a linear
-vertex index, so `vertexindex` may be needed to convert from
-a primitive and vertex number.
+如果值为`-1`，则该函数无效。这是一个线性顶点索引，因此可能需要使用`vertexindex`来从基元和顶点编号进行转换。
 
-This removes the given vertex from the geometry. Note: This is done as
-a post process, not immediately when invoked.
+该函数会从几何体中移除指定顶点。注意：此操作是作为后处理执行的，并非调用时立即生效。
 
-Only polygons currently support the removal of vertices.
+目前仅多边形支持顶点移除操作。
 
-This can result in degenerate (0 vertex) polygons, as the primitive
-is not deleted.
+此操作可能导致生成退化的（0顶点）多边形，因为基元本身不会被删除。
 
-Removing many vertices from polygons with high vertex counts can be slow.
+从具有大量顶点的多边形中移除多个顶点时，操作可能会较慢。

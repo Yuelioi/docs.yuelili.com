@@ -4,61 +4,57 @@ order: 33
 ---
 `int  pcwrite(string filename, ...)`
 
-Writes data for the current shading point out to a point cloud file.
+将当前着色点的数据写入点云文件。
 
 `filename`
 
-The name of the file to write to. You can read the resulting file into a geometry network with the [File surface node](../../nodes/sop/file.html "Reads, writes, or caches geometry on disk."). This file should have a `.pc` extension (Houdini will use the extension to determine how to import the file).
+要写入的文件名。您可以通过[文件表面节点](../../nodes/sop/file.html "读取、写入或缓存磁盘上的几何体")将生成的文件读入几何网络。该文件应具有`.pc`扩展名（Houdini将使用扩展名来确定如何导入文件）。
 
 `…`
 
-Subsequent arguments specify one or more pairs of a channel name (a string naming the attribute you're saving, such as `"P"`, `"N"`, `"v"`, `"area"`, `"u"`, etc.) and value (the value you wish to store).
+后续参数指定一个或多个通道名称（字符串，命名您要保存的属性，如`"P"`、`"N"`、`"v"`、`"area"`、`"u"`等）和值（您希望存储的值）的对。
 
 ```vex
 pcwrite("out.pc", "P", P, "N", N)
 
 ```
 
-To write a variable as a vector type instead of a triple, append `:vector` to the channel name.
+要将变量作为向量类型而不是三元组写入，请在通道名称后附加`:vector`。
 
 ```vex
 pcwrite("out.pc", "P", P, "N:vector", N)
 
 ```
 
-In micropolygon rendering, points are interpolated with neighbor points so that duplicate vertices on corners and edges are eliminated in the point cloud. If you want to disable this behavior, use the `"interpolate"` argument described below.
+在微多边形渲染中，点会与相邻点进行插值，以便在点云中消除角和边上的重复顶点。如果要禁用此行为，请使用下面描述的`"interpolate"`参数。
 
 "interpolate",
 `int`
 `=1`
 
-When you pass this argument a value of `1` (the default), one interpolated point is written representing the four corners of a micropolygon. This prevents writing out overlapping values.
+当您将此参数传递为`1`（默认值）时，将写入一个代表微多边形四个角的插值点。这样可以防止写入重叠值。
 
 ```vex
 pcwrite("out.pc", "P", P, "interpolate", 1)
 
 ```
 
-Using a value of `0` will disable interpolation, which can be useful when writing points that are not based on `P`. Interpolation will have no effect in ray tracing mode.
+使用值`0`将禁用插值，这在写入不基于`P`的点时非常有用。插值在光线追踪模式下无效。
 
-(Note that this means you can’t use `interpolate` as the name of a data channel.)
+（请注意，这意味着您不能使用`interpolate`作为数据通道的名称。）
 
 "countphotons",
 `int`
 
-For photon generation modes, add the number of points stored
-to the total number of photons, for the purposes of progress reporting and termination
-of photon map generation.
+对于光子生成模式，将存储的点数添加到光子总数中，用于进度报告和光子图生成的终止。
 
 "mkdir",
 `int`
 `=0`
 
-When you pass an argument of `1`, the function will automatically create missing sub-directories/paths.
+当您传递参数`1`时，函数将自动创建缺失的子目录/路径。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 surface
@@ -66,7 +62,7 @@ dumpsomepoints(string fname = "points.$F4.pc"; int do_cull = 0; float keepamt = 
 {
     vector    nn = normalize(frontface(N, I));
     int       rval=0;
-    float     A = area(P,"smooth",0);  // area without smoothed derivs
+    float     A = area(P,"smooth",0);  // 不使用平滑导数的面积
 
     if( !do_cull  ||  do_cull & (nrandom()<keepamt) )
     {
@@ -77,7 +73,7 @@ dumpsomepoints(string fname = "points.$F4.pc"; int do_cull = 0; float keepamt = 
         rval = pcwrite(fname, "interpolate", 1,
         "P", ptransform("space:camera","space:world", P),
         "N", ntransform("space:camera","space:world", normalize(N)),
-        "area", A);  // output an "area" channel in pc
+        "area", A);  // 在pc中输出一个"area"通道
     }
     Cf =abs(nn)*rval;
 }

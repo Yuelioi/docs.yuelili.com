@@ -2,35 +2,33 @@
 title: usd_setkind
 order: 129
 ---
-| Since | 17.5 |
+| 始于版本 | 17.5 |
 | --- | --- |
 
 `int  usd_setkind(int stagehandle, string primpath, string kind)`
 
-This function sets the primitive’s kind.
+此函数用于设置图元(primitive)的类型(kind)。
 
 `stagehandle`
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+要写入的stage的句柄。目前唯一有效的值是`0`，表示节点中的当前stage。(此参数未来可能用于支持写入其他stage)
 
 `primpath`
 
-The path to the primitive.
+图元的路径。
 
 `kind`
 
-The kind to set the primitive to.
+要为图元设置的类型。
 
-Returns
+返回值
 
-The value of `stagehandle` on success or `-1` on failure.
+成功时返回`stagehandle`的值，失败时返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Set the sphere primitive to be an assembly.
+// 将球体图元设置为assembly类型
 usd_setkind(0, "/geo/sphere", "assembly");
 
 ```

@@ -4,4 +4,4 @@ order: 37
 ---
 `vector  wo_nspace(vector v)`
 
-Transforms a normal vector from *World* to *Object* space.
+将法线向量从*世界*空间转换到*对象*空间。

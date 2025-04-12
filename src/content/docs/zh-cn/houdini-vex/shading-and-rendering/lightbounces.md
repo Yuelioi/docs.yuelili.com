@@ -1,10 +1,10 @@
 ---
-title: lightbounces
+title: 光线反弹次数
 order: 48
 ---
-| Context(s) | [shading](../contexts/shading.html) |
+| 上下文 | [着色](../contexts/shading.html) |
 | --- | --- |
 
 `int  lightbounces(light lp)`
 
-Returns the bounce mask for the light struct passed in. The bounce mask is based on the light object’s **Lighting contribution** parameter.
+返回传入光源结构的反弹掩码。该反弹掩码基于光源对象的**光照贡献**参数。

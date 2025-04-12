@@ -8,16 +8,14 @@ order: 16
 
 `string [] sort(string values[])`
 
-Returns a version of the given array sorted in increasing order.
+返回按升序排列的给定数组版本。
 
-- [argsort](argsort.html "Returns the indices of a sorted version of an array.") and [sort](sort.html "Returns the array sorted in increasing order.") use a stable sort.
-- Use [reverse](reverse.html "Returns an array or string in reverse order.") to reverse the order of the sort.
+- [argsort](argsort.html "返回排序后数组的索引") 和 [sort](sort.html "返回按升序排列的数组") 使用稳定排序算法。
+- 使用 [reverse](reverse.html "返回逆序排列的数组或字符串") 可以反转排序顺序。
 
-Examples
+## 示例
 
-## examples
-
-Sort an array of numbers in descending order
+对数字数组进行降序排序
 
 ```vex
 int numbers[] = {5, 2, 90, 3, 1};

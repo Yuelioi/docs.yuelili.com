@@ -4,16 +4,16 @@ order: 1
 ---
 `void  append(string &array, string value)`
 
-Appends the second string to the first.
+将第二个字符串追加到第一个字符串末尾。
 
 `void  append(<type>&array[], <type>value)`
 
-Appends the given value to the end of the array. Increases the size of `array` by 1. This is the same as [push(array, value)](push.html "Adds an item to an array.").
+将给定值追加到数组末尾。会使`array`的长度增加1。该操作与[push(array, value)](push.html "向数组添加元素")功能相同。
 
 `void  append(<type>&array[], <type>values[])`
 
-Concatenates the values from the `values` array to the end of `array`. Increases the size of `array` by `len(values)`. This is the same as [push(array, values)](push.html "Adds an item to an array.").
+将`values`数组中的值连接到`array`数组末尾。会使`array`的长度增加`len(values)`。该操作与[push(array, values)](push.html "向数组添加元素")功能相同。
 
-Tip
+提示
 
-You can set an individual item in an array using `array[n] = x`.
+您可以使用`array[n] = x`语法来设置数组中的单个元素。

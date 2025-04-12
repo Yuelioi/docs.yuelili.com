@@ -2,43 +2,41 @@
 title: attribtype
 order: 11
 ---
-If you know the attribute class ahead of time, using [detailattribtype](detailattribtype.html "Returns the type of a geometry detail attribute."), [primattribtype](primattribtype.html "Returns the type of a geometry prim attribute."), [pointattribtype](pointattribtype.html "Returns the type of a geometry point attribute."), or [vertexattribtype](vertexattribtype.html "Returns the type of a geometry vertex attribute.") may be faster.
+如果提前知道属性类别，使用 [detailattribtype](detailattribtype.html "返回几何体细节属性的类型")、[primattribtype](primattribtype.html "返回几何体图元属性的类型")、[pointattribtype](pointattribtype.html "返回几何体点属性的类型") 或 [vertexattribtype](vertexattribtype.html "返回几何体顶点属性的类型") 可能会更快。
 
 `int  attribtype(<geometry>geometry, string attribclass, string attribute_name)`
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如 wrangle SOP）中运行时，此参数可以是一个整数，表示要读取几何体的输入编号（从0开始）。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数也可以是一个指定几何体文件（例如 `.bgeo`）的字符串。在 Houdini 内部运行时，可以是 `op:/path/to/sop` 引用。
 
 `attribclass`
 
-One of `"detail"` (or `"global"`), `"point"`, `"prim"`, or `"vertex"`.
+可以是 `"detail"`（或 `"global"`）、`"point"`、`"prim"` 或 `"vertex"` 之一。
 
-You can also use `"primgroup"`, `"pointgroup"` or `"vertexgroup"` to [read from groups](../groups.html "You can read the contents of primitive/point/vertex groups in VEX as if they were attributes.").
+也可以使用 `"primgroup"`、`"pointgroup"` 或 `"vertexgroup"` 来[从组中读取](../groups.html "在 VEX 中，可以像读取属性一样读取图元/点/顶点组的内容")。
 
-Returns
+返回值
 
-A numeric code indicating the attribute type:
+表示属性类型的数字代码：
 
-| `-1` | Attribute not found, or unknown type. |
-| --- | --- |
-| `0` | Integer |
-| `1` | Float or vector |
-| `2` | String |
-| `3` | Array of integers (or integer tuples) |
-| `4` | Array of floats (or float tuples) |
-| `5` | Array of strings. |
-| `6` | Dictionary |
-| `7` | Array of Dictionaries |
+| `-1` | 未找到属性或未知类型       |
+| ------ | -------------------------- |
+| `0`  | 整数                       |
+| `1`  | 浮点数或向量               |
+| `2`  | 字符串                     |
+| `3`  | 整数数组（或整数元组）     |
+| `4`  | 浮点数数组（或浮点数元组） |
+| `5`  | 字符串数组                 |
+| `6`  | 字典                       |
+| `7`  | 字典数组                   |
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the type of the position attribute of "defgeo.bgeo"
+// 获取 "defgeo.bgeo" 中位置属性 P 的类型
 int type = attribtype("defgeo.bgeo", "point", "P");
 
 ```

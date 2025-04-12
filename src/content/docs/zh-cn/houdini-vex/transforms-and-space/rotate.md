@@ -1,5 +1,5 @@
 ---
-title: rotate
+title: 旋转
 order: 21
 ---
 `void  rotate(matrix2 &m, float amount)`
@@ -16,6 +16,5 @@ order: 21
 
 `void  rotate(matrix &m, float angle, int axis)`
 
-Applies a rotation to the given matrix. The angles must be given in
-radians and the axis must be normalized. The xyz argument is the rotate order.
-The axis can also be given as an integer where XAXIS=1, YAXIS=2 and ZAXIS=4.
+对给定矩阵应用旋转。角度必须以弧度给出，且旋转轴必须已归一化。xyz参数表示旋转顺序。
+旋转轴也可以使用整数表示，其中XAXIS=1，YAXIS=2，ZAXIS=4。

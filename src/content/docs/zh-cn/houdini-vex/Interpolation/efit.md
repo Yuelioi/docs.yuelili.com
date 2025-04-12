@@ -2,20 +2,19 @@
 title: efit
 order: 4
 ---
+
 `float  efit(float value, float omin, float omax, float nmin, float nmax)`
 
-Takes the value in the range (omin, omax) and shifts it to the corresponding value in the new range (nmin, nmax).
-Unlike [fit](fit.html "Takes the value in one range and shifts it to the corresponding value in a new range."), this function does not clamp values to the given range.
+将处于范围(omin, omax)内的值转换到新范围(nmin, nmax)中的对应值。
+与[fit](fit.html "将某个范围内的值转换到新范围中的对应值")不同，此函数不会将值限制在给定范围内。
 
 `<vector> efit(<vector>value, <vector>omin, <vector>omax, <vector>nmin, <vector>nmax)`
 
 `<vector> efit(<vector>value, <vector>omin, <vector>omax, float nmin, float nmax)`
 
-The vector versions fit per-component. You can specify per-component min/max values using vectors, or common min/max values using floats.
+向量版本会按分量进行拟合。您可以使用向量指定每个分量的最小/最大值，或使用浮点数指定统一的最小/最大值。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 efit(.3, 0, 1, 10, 20) == 13

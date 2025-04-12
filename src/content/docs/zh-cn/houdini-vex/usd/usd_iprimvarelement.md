@@ -9,40 +9,38 @@ order: 52
 
 `<type> usd_iprimvarelement(<stage>stage, string primpath, string name, int index, float timecode)`
 
-This function returns a value of an element in given array primvar on a given primitive or inherited from primitive’s ancestor.
+此函数返回给定图元上数组型primvar中某个元素的值，或继承自该图元祖先primvar的值。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号的整数（从0开始），用于读取对应输入端的stage。该整数等效于以字符串形式引用特定输入，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点已烹饪的stage（例如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `name`
 
-Primvar name (without namespace).
+Primvar名称（不包含命名空间）。
 
 `index`
 
-The index into the array.
+数组中的索引位置。
 
 `timecode`
 
-The USD time code at which to evaluate the attribute. A USD time code roughly corresponds to a frame in Houdini. If not given, the time code corresponding to the current frame is used.
+评估属性时使用的USD时间码。USD时间码大致对应Houdini中的帧数。若未指定，则使用当前帧对应的时间码。
 
-Returns
+返回值
 
-The value of an element in an existing array primvar, or zero/empty value if the primvar does not exist. Use [usd_isiprimvar](usd_isiprimvar.html "Checks if the primitive or its ancestor has a primvar of the given name.") if you want to check whether the primvar exists.
+返回现有数组型primvar中指定元素的值。若primvar不存在，则返回零值/空值。如需检查primvar是否存在，请使用[usd_isiprimvar](usd_isiprimvar.html "检查图元或其祖先是否具有指定名称的primvar。")。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the value of some primvars on the cube primitive or its ancestor.
+// 获取立方体图元或其祖先上某些primvar的值
 float value    = usd_iprimvarelement(0, "/geo/cube", "primvar_name", 3);
 
 v@element_2_at_current_frame  = usd_iprimvarelement(0, "/geo/sphere", "foo", 2);

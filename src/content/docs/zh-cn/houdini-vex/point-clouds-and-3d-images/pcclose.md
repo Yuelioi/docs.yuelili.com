@@ -4,8 +4,4 @@ order: 4
 ---
 `void  pcclose(int &handle)`
 
-This function closes the handle associated with a pcopen function. VEX
-will close handles automatically, however, it’s good practice to call
-pcclose. When there are pcopen calls made from within a loop, VEX may
-consume additional memory if pcclose isn’t called when the handle is no
-longer required.
+此函数用于关闭与 pcopen 函数关联的句柄。虽然 VEX 会自动关闭句柄，但最佳实践是主动调用 pcclose。当在循环内执行 pcopen 调用时，如果不再需要句柄却不调用 pcclose，VEX 可能会消耗额外的内存。

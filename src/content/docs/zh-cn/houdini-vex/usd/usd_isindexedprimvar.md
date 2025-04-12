@@ -7,34 +7,32 @@ order: 71
 
 `int  usd_isindexedprimvar(<stage>stage, string primpath, string name)`
 
-This function checks whether the given primvar is indexed, if it’s found directly on the given primitive.
+此函数检查给定的primvar是否为索引类型，前提是该primvar直接存在于指定图元上。
 
-Some primvars may contain a compacted array of unique values, and an additional array of indices into the value array. They are called indexed primvars. The length of the value array depends on the number of unique elements, but the length of the index array corresponds to the number of entities the primvar applies to.
+某些primvar可能包含一个压缩的唯一值数组，以及一个指向该值数组的额外索引数组。这类primvar被称为索引primvar。值数组的长度取决于唯一元素的数量，而索引数组的长度则对应于primvar所应用的实体数量。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号的整数（从0开始），用于读取舞台。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（例如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已处理舞台（例如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+图元的路径。
 
 `name`
 
-Primvar name (without namespace).
+Primvar名称（不带命名空间）。
 
-Returns
+返回值
 
-`1` if the primvar exists and is indexed, or `0` otherwise.
+如果primvar存在且为索引类型则返回`1`，否则返回`0`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Check if primvar "some_primvar" on sphere is indexed.
+// 检查球体上的primvar"some_primvar"是否为索引类型
 int is_indexed = usd_isindexedprimvar(0, "/geometry/sphere", "some_primvar");
 
 ```

@@ -2,13 +2,9 @@
 title: getrayweight
 order: 30
 ---
-| Context(s) | [shading](../contexts/shading.html) |
+| 上下文 | [着色](../contexts/shading.html) |
 | --- | --- |
 
 `float  getrayweight()`
 
-Returns an approximation to the contribution of the ray to the final
-pixel color. Often, this is a better metric for judging contribution to
-the final pixel color than [getraylevel](getraylevel.html "Returns the depth of the ray tree for the current shading."). However, this
-relies on prior shaders giving good estimates on the contribution to
-their shading (see [reflectlight](reflectlight.html "Computes the amount of reflected light which hits the surface.")).
+返回该光线对最终像素颜色贡献的近似值。通常，这比[getraylevel](getraylevel.html "返回当前着色光线树的深度")更能有效衡量对最终像素颜色的贡献。不过，该方法的准确性依赖于前序着色器能提供良好的着色贡献估计（参见[reflectlight](reflectlight.html "计算照射到表面的反射光量")）。

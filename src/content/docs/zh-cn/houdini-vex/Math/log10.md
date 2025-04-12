@@ -6,4 +6,4 @@ order: 40
 
 `<vector> log10(<vector>n)`
 
-Returns the base 10 logarithm of `n`. For vectors, this is done per-component.
+返回以10为底的`n`的对数。对于向量，会逐分量进行计算。

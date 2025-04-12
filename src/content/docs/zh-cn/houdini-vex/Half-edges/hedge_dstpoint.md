@@ -4,24 +4,22 @@ order: 1
 ---
 `int  hedge_dstpoint(<geometry>geometry, int hedge)`
 
-Returns `-1` if the half-edge hedge is invalid. Otherwise, returns the point number of the destination point of the half-edge `hedge`.
+如果半边(hedge)无效则返回`-1`。否则返回半边`hedge`目标顶点的点编号。
 
 `geometry`
 
-The name of the geometry file to reference. Inside Houdini, this may be `op:full_path_to_sop` to reference a SOP.
+要引用的几何体文件名。在Houdini内部，可以使用`op:full_path_to_sop`来引用一个SOP节点。
 
 `hedge`
 
-Input half-edge.
+输入的半边。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 int dstpt;
 
-// Get vertex number of half-edge number 3.
+// 获取编号为3的半边的目标顶点编号
 dstpt = hedge_dstpoint("defgeo.bgeo", 3);
 
 ```

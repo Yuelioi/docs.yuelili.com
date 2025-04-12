@@ -6,8 +6,7 @@ order: 30
 
 `u`
 
-Three numbers between 0 and 1.
+0到1之间的三个数字。
 
-Returns a vector of length \< 1, based on `u`.
-Given uniform random `u` vectors of three values in `[0,1)`, the returned vectors will be
-uniform random and continuous with respect to `u` inside the unit sphere.
+返回一个基于`u`的长度小于1的向量。
+给定在`[0,1)`区间内三个值的均匀随机`u`向量，返回的向量将在单位球体内相对于`u`是均匀随机且连续的。

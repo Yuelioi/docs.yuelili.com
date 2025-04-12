@@ -6,8 +6,9 @@ order: 7
 
 `int  isvarying(<type>x[])`
 
-Returns 1 when the given variable is varying, or 0 when it is uniform. A
-variable is varying when it may have a different value for each processor
-in the VEX SIMD array. If a value is varying, shader execution will
-generally be slower - so this function can be useful when debugging shader
-performance. Any variable type can be passed to the `isvarying()` function.
+当给定变量是varying（变化）时返回1，当它是uniform（统一）时返回0。
+
+当变量可能在VEX SIMD数组中每个处理器有不同值时，该变量就是varying的。
+如果值是varying的，着色器执行通常会变慢 - 因此这个函数在调试着色器性能时很有用。
+
+任何变量类型都可以传递给`isvarying()`函数。

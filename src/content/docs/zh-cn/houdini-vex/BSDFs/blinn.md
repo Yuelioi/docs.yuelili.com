@@ -1,31 +1,32 @@
 ---
-title: blinn
+title: 布林材质
 order: 3
 ---
+
 `bsdf  blinn(float exponent, ...)`
 
 `bsdf  blinn(vector nml, float exponent, ...)`
 
-Returns a Blinn BSDF.
+返回一个布林双向散射分布函数(BSDF)。
 
-See [writing a PBR shader](../pbr.html) for information on BSDFs.
+关于BSDF的更多信息，请参阅[编写PBR着色器](../pbr.html)。
 
 `vector  blinn(vector nml, vector V, float roughness, ...)`
 
-Computes Blinn shading.
+计算布林着色效果。
 
 `nml`
 
-The normal of the surface to use for evaluate.
+用于评估的表面法线向量。
 
 `V`
 
-The incidence vector.
+入射向量。
 
 `exponent`
 
-The exponent value. The higher the value, the tighter the specular lobe.
+指数值。数值越大，高光区域越集中。
 
-Each of the functions can also take an optional light mask.
+每个函数还可以接受一个可选的光照遮罩参数。
 
 ![](../_static/rendering/blinn.png)

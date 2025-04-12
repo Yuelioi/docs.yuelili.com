@@ -2,7 +2,8 @@
 title: cinput
 order: 6
 ---
-| Context(s) | [cop2](../contexts/cop2.html) |
+
+| 上下文 | [cop2](../contexts/cop2.html) |
 | --- | --- |
 
 `vector  cinput(int u, int v, ...)`
@@ -41,4 +42,4 @@ order: 6
 
 `float  cinput(int opinput, int planeindex, int arrayindex, int component, float u, float v, int frame, ...)`
 
-See [COP pixel sampling functions](../cop2_sample_suite.html) for more information.
+更多信息请参阅[COP像素采样函数](../cop2_sample_suite.html)。

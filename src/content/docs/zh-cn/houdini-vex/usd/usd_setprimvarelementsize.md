@@ -1,42 +1,43 @@
 ---
-title: usd_setprimvarelementsize
-order: 134
----
-| Since | 18.0 |
-| --- | --- |
+title: usd_setprimvarelementsize  
+order: 134  
+---  
 
-`int  usd_setprimvarelementsize(int stagehandle, string primpath, string name, int size)`
+| Since | 18.0 |  
+| --- | --- |  
 
-This function sets the element size of a given primvar.
+`int  usd_setprimvarelementsize(int stagehandle, string primpath, string name, int size)`  
 
-The primvar element size applies to array primvars, but it does not encode the length of the array. It specifies how many consecutive array elements should be taken as an atomic element to be interpolated over a gprim. So, on a mesh, array length relates to element size like this `array_length = element_size * face_count`.
+此函数用于设置指定primvar的元素大小。  
 
-`stagehandle`
+primvar元素大小适用于数组类型的primvar，但它并不编码数组的长度。它指定应将多少个连续的数组元素作为一个原子元素，在几何图元（gprim）上进行插值。因此，在网格上，数组长度与元素大小的关系如下：`array_length = element_size * face_count`。  
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+`stagehandle`  
 
-`primpath`
+要写入的舞台句柄。当前唯一有效的值是`0`，表示节点中的当前舞台。（此参数未来可能用于支持写入其他舞台。）  
 
-The path to the primitive.
+`primpath`  
 
-`name`
+图元的路径。  
 
-Primvar name (without namespace).
+`name`  
 
-`size`
+Primvar名称（不带命名空间）。  
 
-The new element size for the primvar.
+`size`  
 
-Returns
+primvar的新元素大小。  
 
-The value of `stagehandle` on success, or `-1` on failure.
+返回值  
 
-Examples
+成功时返回`stagehandle`的值，失败时返回`-1`。  
 
-## examples
+示例  
 
-```vex
-// Set the primvar's element size to 2.
-usd_setprimvarelementsize(0, "/geo/mesh", "primvar_name", 2);
+## 示例  
+
+```vex  
+// 将primvar的元素大小设置为2。  
+usd_setprimvarelementsize(0, "/geo/mesh", "primvar_name", 2);  
 
 ```

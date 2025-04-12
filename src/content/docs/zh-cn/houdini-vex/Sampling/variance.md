@@ -1,9 +1,9 @@
 ---
-title: variance
+title: 方差
 order: 32
 ---
 `float  variance(float variable, float &mean, int &sample_size)`
 
-This function will compute the mean and variance from nearby samples. Similar to the way that VEX is able to compute derivatives, this function is able to inspect the `variable` for a nearby area and compute the mean and variance of the `variable`.
+此函数将根据邻近样本计算平均值和方差。类似于VEX能够计算导数的方式，该函数能够检查`variable`在邻近区域的值，并计算该`variable`的平均值和方差。
 
-The function returns the `variance` (σ2). The `mean` value will also be returned along with the `sample_size` indicating how many nearby samples were considered.
+函数返回`variance`（σ2）。同时也会返回`mean`值以及`sample_size`，表示考虑了附近多少个样本。

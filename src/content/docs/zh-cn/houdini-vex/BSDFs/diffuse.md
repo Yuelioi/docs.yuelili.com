@@ -1,86 +1,68 @@
 ---
-title: diffuse
+title: 漫反射
 order: 8
 ---
 ![](../_static/rendering/diffuse.png)
 
 `bsdf  diffuse(...)`
 
-`bsdf  diffuse(float roughness, ...)`
+`bsdf  diffuse(float 粗糙度, ...)`
 
-`bsdf  diffuse(vector nml, ...)`
+`bsdf  diffuse(vector 法线, ...)`
 
-`bsdf  diffuse(vector nml, float roughness, ...)`
+`bsdf  diffuse(vector 法线, float 粗糙度, ...)`
 
-`bsdf  diffuse(vector nml, vector geo_normal, ...)`
+`bsdf  diffuse(vector 法线, vector 几何法线, ...)`
 
-`bsdf  diffuse(vector nml, vector geo_normal, float roughness, ...)`
+`bsdf  diffuse(vector 法线, vector 几何法线, float 粗糙度, ...)`
 
-Diffuse reflections. This BSDF has an albedo of 0.5. If your shader or
-geometry has smooth normals (N and Ng differ) you should avoid the
-signature `diffuse(vector nml)` since it assumes that the
-shading normal matches the geometric normal.
+漫反射。该BSDF的反照率为0.5。如果您的着色器或几何体具有平滑法线（N与Ng不同），则应避免使用`diffuse(vector 法线)`签名，因为它假定着色法线与几何法线匹配。
 
-See [writing a PBR shader](../pbr.html) for information on BSDFs.
+有关BSDF的信息，请参阅[编写PBR着色器](../pbr.html)。
 
-`vector  diffuse(vector nml, ...)`
+`vector  diffuse(vector 法线, ...)`
 
-`vector  diffuse(vector nml, vector V, float roughness, ...)`
+`vector  diffuse(vector 法线, vector 视线向量, float 粗糙度, ...)`
 
-This form uses the
-Oren-Nayar lighting model to compute the diffuse illumination for the
-surface. The Oren-Nayar lighting model is a more sophisticated lighting
-model than Lambertian lighting. The V vector represents a vector from
-the surface to the eye (i.e. -normalize(I)). With a roughness of 0, the
-Oren-Nayar lighting model is equivalent to the Lambertian model. As
-roughness increases toward 1, the illumination changes to mimic rougher
-materials (like clay). The Oren-Nayar form of diffuse() is more
-expensive than Lambertian diffuse lighting.
+此形式使用Oren-Nayar光照模型计算表面的漫反射照明。Oren-Nayar光照模型比Lambertian光照模型更复杂。视线向量V表示从表面指向眼睛的向量（即-normalize(I)）。当粗糙度为0时，Oren-Nayar光照模型等同于Lambertian模型。随着粗糙度向1增加，照明效果会模拟更粗糙的材料（如粘土）。Oren-Nayar形式的diffuse()比Lambertian漫反射照明更耗费计算资源。
 
-Light inclusion/exclusion options
+光源包含/排除选项
 
-## light-inclusion-exclusion-options
+## 光源包含排除选项
 
 "`categories`",
 `string`
 `="*"`
 
-Specifies lights to include/exclude by their “category” tags.
-This is the preferred include/exclude lights rather than pattern matching
-light names with the `"lightmask"` keyword argument.
+通过光源的"category"标签指定要包含/排除的光源。这是首选的包含/排除光源方式，而不是使用`"lightmask"`关键字参数通过模式匹配光源名称。
 
-For example:
+例如：
 
 ```vex
 diff = diffuse(nml, "lightmask", "hero | fill");
 
 ```
 
-See [light categories](../../render/lights.html#categories) for more information.
+更多信息请参阅[光源分类](../../render/lights.html#categories)。
 
 "`lightmask`",
 `string`
 `="*"`
 
-When evaluating light and shadow shaders, objects have pre-defined light
-masks. This mask is usually specified in the geometry object and
-specifies a list of lights which are used to illuminate a surface or fog
-shader. It is possible to override the default light mask by specifying
-a “lightmask” argument.
+在评估光照和阴影着色器时，对象具有预定义的光照遮罩。此遮罩通常在几何对象中指定，定义了用于照亮表面或雾着色器的光源列表。可以通过指定"lightmask"参数来覆盖默认的光照遮罩。
 
-For example:
+例如：
 
 ```vex
 diff = diffuse(nml, "lightmask", "light*,^light2");
 
 ```
 
-…will cause all lights whose names begin with “light” except for a
-light named “light2” to be considered for diffuse illumination.
+...将考虑所有名称以"light"开头（除了名为"light2"的光源）的光源进行漫反射照明。
 
-All Houdini scoping patterns, excepting group expansion, are supported:
+支持所有Houdini作用域模式（组扩展除外）：
 
-- `*` - wild-card match
-- `?` - single character match
-- `^` - exclusion operator
-- `[list]` - character list match
+- `*` - 通配符匹配
+- `?` - 单字符匹配
+- `^` - 排除运算符
+- `[list]` - 字符列表匹配

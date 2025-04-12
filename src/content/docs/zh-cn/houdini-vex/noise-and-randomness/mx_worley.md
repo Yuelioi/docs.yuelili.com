@@ -10,13 +10,13 @@ order: 22
 
 `float|vector|vector2 mx_worley(vector pos, float jitter, int periodx, int periody, int periodz, int periodw)`
 
-Returns a Worley Noise value that matches the values as in the standard MaterialX library.
+返回与标准MaterialX库中值匹配的Worley噪声值。
 
-Jitter should normally be clamped between 0 and 1.
+Jitter（抖动值）通常应限制在0到1之间。
 
-The metric is an integer representing how the distance is measured for Worley noise
+metric（度量标准）是一个整数，表示Worley噪声的距离测量方式：
 
-- 0 - Euclidean Distance
-- 1 - Distance Squared
-- 2 - Manhattan Distance
-- 3 - Chebyshev Distance
+- 0 - 欧几里得距离
+- 1 - 平方距离
+- 2 - 曼哈顿距离
+- 3 - 切比雪夫距离

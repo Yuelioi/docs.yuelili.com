@@ -2,17 +2,13 @@
 title: getlightname
 order: 18
 ---
-| Context(s) | [shading](../contexts/shading.html) |
+| 上下文 | [着色](../contexts/shading.html) |
 | --- | --- |
 
 `string  getlightname()`
 
-Returns the name of the current light when called from within an
-[illuminance](illuminance.html "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables.") loop or when a current light has been set using
-[setcurrentlight](setcurrentlight.html "Sets the current light").
+当在[illuminance](illuminance.html "遍历场景中所有光源，为每个光源调用光照着色器来设置Cl和L全局变量")循环内调用时，或当使用[setcurrentlight](setcurrentlight.html "设置当前光源")设置了当前光源时，返回当前光源的名称。
 
 `string  getlightname(int lightid)`
 
-Returns the name of the light referred to by the given integer
-light ID. Integer light IDs are used by some low-level VEX functions
-instead of strings for efficiency.
+返回给定整数光源ID所指向的光源名称。某些底层VEX函数出于效率考虑会使用整数光源ID而非字符串来标识光源。

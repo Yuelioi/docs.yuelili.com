@@ -1,5 +1,5 @@
 ---
-title: distance
+title: 距离计算
 order: 1
 ---
 `float  distance(vector2 a, vector2 b)`
@@ -8,4 +8,4 @@ order: 1
 
 `float  distance(vector4 a, vector4 b)`
 
-If you want the squared distance, use [distance2](distance2.html "Returns the squared distance between the two points.") instead of using this and [pow](pow.html "Raises the first argument to the power of the second argument.").
+如果需要计算平方距离，请使用[distance2](distance2.html "返回两点之间的平方距离")函数，而不是先使用本函数再配合[pow](pow.html "将第一个参数的值提升至第二个参数指定的幂次方")函数计算。

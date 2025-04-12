@@ -1,30 +1,28 @@
 ---
-title: setpointtransforms
+title: 设置点变换
 order: 70
 ---
-| Since | 18.5 |
+| 版本 | 18.5 |
 | --- | --- |
 
 `int  setpointtransforms(int geohandle, int pnts[], matrix transforms[])`
 
 `int  setpointtransforms(int geohandle, int pnts[], matrix transforms[], int constrain)`
 
-Sets an array of transforms associated with the point indices. This function set the `v@P` and the `3@transform` attributes.
+设置与点索引关联的变换矩阵数组。此函数会设置 `v@P` 和 `3@transform` 属性。
 
 `geohandle`
 
-A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](geoself.html "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
+要写入的几何体句柄。目前唯一有效的值是 `0` 或 [geoself](geoself.html "返回当前几何体的句柄")，表示节点中的当前几何体。（此参数未来可能用于支持写入其他几何体。）
 
 `pnts`
 
-The array of point indices to set.
+要设置的点索引数组。
 
 `transforms`
 
-The array of transforms to set.
+要设置的变换矩阵数组。
 
 `constrain`
 
-When True, update the children point transforms when modifying a point world
-transform. When False, the children points stay in place like when using
-Child Compensation on a transform handle. Defaults to True;
+当为 True 时，在修改点世界变换时会更新子点变换。当为 False 时，子点会保持原位，就像在变换手柄上使用子级补偿一样。默认为 True。

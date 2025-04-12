@@ -4,7 +4,7 @@ order: 10
 ---
 `float  cbrt(float n)`
 
-Returns the cube-root of `n`.
+返回 `n` 的立方根。
 
 `vector2  cbrt(vector2 v)`
 
@@ -12,4 +12,4 @@ Returns the cube-root of `n`.
 
 `vector4  cbrt(vector4 v)`
 
-Returns a new vector where each component is the cube-root of the corresponding component in `v`.
+返回一个新向量，其中每个分量都是 `v` 中对应分量的立方根。

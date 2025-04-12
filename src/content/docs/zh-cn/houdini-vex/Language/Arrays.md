@@ -1,28 +1,27 @@
 ---
-title: Arrays
+title: 数组
 order: 1
 ---
-| On this page | * [Overview](#overview) * [Declaring array types](#declaring-array-types) * [Accessing and setting array values](#accessing-and-setting-array-values) * [Slicing Arrays](#slicing-arrays) * [Copying between arrays and vectors/matrices](#copying-between-arrays-and-vectors-matrices) * [Looping over an array](#looping-over-an-array) * [Working with arrays](#working-with-arrays) * [VCC pragmas](#vcc-pragmas) * [Limitations](#limitations) |
+| 本页内容 | * [概述](#概述) * [声明数组类型](#声明数组类型) * [访问和设置数组值](#访问和设置数组值) * [数组切片](#数组切片) * [数组与向量/矩阵间的复制](#数组与向量矩阵间的复制) * [遍历数组](#遍历数组) * [数组操作](#数组操作) * [VCC编译指令](#vcc编译指令) * [限制](#限制) |
 | --- | --- |
 
-Overview
+概述
 
-## overview
+## 概述
 
-VEX includes an array datatype. This is useful in several places:
+VEX包含数组数据类型，在以下场景中非常有用：
 
-- Supporting ramp parameters.
-- Reading capture data from surface nodes using the [import()](functions/import.html) function.
-- General programming, wherever arrays would be useful.
+- 支持渐变参数
+- 使用[import()](functions/import.html)函数从表面节点读取捕捉数据
+- 常规编程中需要数组的场景
 
-Note
-Currently VEX does not support multi-dimensional arrays.
+注意
+当前VEX不支持多维数组。
 
-Note
-A function that returns an array defined inside a Snippet,
-Wrangle, or other function should have the function keyword.
+注意
+在Snippet、Wrangle或其他函数内部定义的返回数组的函数需要使用function关键字。
 
-This example shows off some of the crazy things that you can do with arrays:
+以下示例展示了数组的一些高级用法：
 
 ```vex
 surface
@@ -42,63 +41,54 @@ crazy(
     Cf = spline("linear", s, av);
     alength = len(av);
 }
-
 ```
 
-Declaring array types
+声明数组类型
 
-## declaring-array-types
+## 声明数组类型
 
-To declare an array variable, the general form is
-`member_type var_name[]`:
+声明数组变量的通用格式为`成员类型 变量名[]`：
 
 ```vex
-// my_array is an array of floats
+// my_array是浮点数数组
 float   my_array[];
 
-// v is a single vector, vector_array is an array of vectors
+// v是单个向量，vector_array是向量数组
 vector  v, vector_array[];
 
-// str_array is an array of strings
+// str_array是字符串数组
 string  str_array[];
-
 ```
 
-You can optionally put a size inside the square brackets, but the
-VEX compiler currently ignores it.
+可以在方括号内指定大小，但VEX编译器目前会忽略该值。
 
-To declare a function that returns an array:
+声明返回数组的函数：
 
 ```vex
-// A function which returns an array of vectors
-// DOES NOT WORK IN A WRANGLE/SNIPPET: use function keyword then.
+// 返回向量数组的函数
+// 在WRANGLE/SNIPPET中无效：需使用function关键字
 vector[] rgb_array()
 {
 ...
 };    
-
 ```
 
-It is ambiguous if you are a nested function, however. Note that
-Wrangles and Snippets are always implicitly nested. To declare a
-nested function that returns an array:
+嵌套函数存在类型歧义。注意Wrangles和Snippets总是隐式嵌套。声明嵌套的返回数组函数：
 
 ```vex
-// A function which returns an array of vectors
+// 返回向量数组的函数
 cvex
 foo()
 {
-    // Use the optional 'function' keyword to avoid type ambiguity
+    // 使用可选的'function'关键字避免类型歧义
     function vector[] rgb_array()
     {
     ...
     };    
 }
-
 ```
 
-To specify a literal array, use curly braces, with the array members
-separated by commas:
+指定字面量数组时，使用花括号并用逗号分隔数组成员：
 
 ```vex
 vector an_array[] = { {1, 2, 3}, {2, 3, 4}, {4, 5, 6} };
@@ -107,104 +97,86 @@ vector[] rgb_array()
 {
     return { {1, 0, 0}, {0, 1, 0}, {0, 0, 1} };
 }
-
 ```
 
-Note
-Literal arrays are constructed *at compile time*, so they **cannot
-include variables**.
+注意
+字面量数组在编译时构造，因此不能包含变量。
 
-For example, this is an error:
+例如，以下代码会报错：
 
 ```vex
-int arr[] = { my_var, other_var + 2 }; // Error
-
+int arr[] = { my_var, other_var + 2 }; // 错误
 ```
 
-To avoid this error, use the `array()` function which constructs
-the array at runtime from any number of arguments:
+要避免此错误，可使用运行时构造数组的`array()`函数：
 
 ```vex
 int arr[] = array( my_var, other_var + 2 );
-
 ```
 
-If you specify scalars where a vector is expected, the compiler assigns
-the scalar value to all components of the vector:
+当向量预期位置指定标量时，编译器会将标量值赋给向量的所有分量：
 
 ```vex
 vector an_array[] = { 1, 2, 3};
 // an_array[] == { {1, 1, 1}, {2, 2, 2}, {3, 3, 3} }
-
 ```
 
-The `array()` function creates an array from its arguments.
+`array()`函数从其参数创建数组：
 
 ```vex
 int my_array[] = array(1, 2, 3, 4, 5);
-
 ```
 
-You can use `array()` to generate an array of any type.
-To force `array()` to generate vectors (for example):
+可以使用`array()`生成任何类型的数组。
+强制生成向量数组（例如）：
 
 ```vex
 vector (array (value1, value2, ...) );
-
 ```
 
-Accessing and setting array values
+访问和设置数组值
 
-## accessing-and-setting-array-values
+## 访问和设置数组值
 
-Use `arrayname[index]` to look up a value by its position in the
-array.
+使用`数组名[索引]`通过位置查找数组中的值。
 
 ```vex
 vector bw[] = { 0, 1 };
 // bw[] == { {0, 0, 0}, {1, 1, 1} }
 Cf = bw[index];
-
 ```
 
-Array bounds are checked at run time. Reading out of bounds will return `0` or
-`""`. This may generate a warning or optional run-time error in the future.
-Writing past the end of an array will resize the array to include the
-index written to. The new entries will be set to `0` or `""`.
+数组边界在运行时检查。越界读取将返回`0`或`""`。未来可能生成警告或可选的运行时错误。
+向数组末尾之后写入会调整数组大小以包含写入索引，新条目将设为`0`或`""`。
 
-Python-style indexing is used. This means negative indices refer to positions
-from the end of the array.
+使用Python风格索引，负索引表示从数组末尾开始的位置。
 
 ```vex
 int nums[] = { 0, 1, 2, 3, 4, 5 };
-int n = nums[10];  // Returns 0
-int b = nums[-2];  // Returns 4
+int n = nums[10];  // 返回0
+int b = nums[-2];  // 返回4
 
 string strs[] = { };
-string s = strs[20];  // Returns ""
-
+string s = strs[20];  // 返回""
 ```
 
-You can also assign values using the square brackets notation:
+也可以使用方括号表示法赋值：
 
 ```vex
 float nums[] = { };
 nums[0] = 3.14;
-
 ```
 
-(The [getcomp](functions/getcomp.html "Extracts a single component of a vector type, matrix type, or array.") and [setcomp](functions/setcomp.html "Sets a single component of a vector or matrix type, or an item in an array.") functions are equivalents for using
-the square brackets notation.)
+（[getcomp](functions/getcomp.html "提取向量类型、矩阵类型或数组的单个组件。")和[setcomp](functions/setcomp.html "设置向量或矩阵类型的单个组件，或数组中的项。")函数等同于使用方括号表示法。）
 
-Note
-The square-brackets operator also works on vectors. You can use it with
-matrices as well using a pair of brackets: `float a = m3[0][1];`
+注意
+方括号运算符也适用于向量。可以用于矩阵：`float a = m3[0][1];`
 
-Slicing Arrays
+数组切片
 
-## slicing-arrays
+## 数组切片
 
-The square-brackets can be used to extract sub-arrays using the Python slicing notation.
+方括号可以使用Python切片表示法提取子数组。
 
 ```vex
 int nums[] = { 0, 1, 2, 3, 4, 5 };
@@ -212,41 +184,33 @@ int start[] = nums[0:2];  // { 0, 1 }
 int end[] = nums[-2:];  // { 4, 5 }
 int rev[] = nums[::-1];  // { 5, 4, 3, 2, 1, 0 }
 int odd[] = nums[1::2]; // { 1, 3, 5 }
-
 ```
 
-The [slice](functions/slice.html "Slices a sub-string or sub-array of a string or array.") function is the equivalent for using the slice-based square
-brackets notation.
+[slice](functions/slice.html "切片字符串或数组的子字符串或子数组。")函数等同于使用基于切片的方括号表示法。
 
-Copying between arrays and vectors/matrices
+数组与向量/矩阵间的复制
 
-## copying-between-arrays-and-vectors-matrices
+## 数组与向量矩阵间的复制
 
-The assignment operator supports assigning values between vector types and
-arrays of floats:
+赋值运算符支持在向量类型和浮点数数组之间赋值：
 
 ```vex
 float x[];
-// Cf and P are vectors
+// Cf和P是向量
 
-x = set(P);   // Assigns the components of P to the corresponding
-              // members of the array x
+x = set(P);   // 将P的分量赋给数组x的对应成员
 
-Cf = set(x);  // Assigns the first 3 members of x as the
-              // components of the vector Cf
-
+Cf = set(x);  // 将x的前3个成员作为向量Cf的分量
 ```
 
-If the array is not long enough to fill the vector/matrix, the last member is
-repeated as often as necessary.
+如果数组长度不足以填充向量/矩阵，最后一个成员会重复填充。
 
 ```vex
-float x[] = {1, 2} // Not long enough to fill a vector
+float x[] = {1, 2} // 长度不足以填充向量
 Cf = set(x);  // Cf == {1, 2, 2}
-
 ```
 
-You can also assign between matrix types and arrays of `vector2`/`vector`/`vector4`:
+也可以在矩阵类型和`vector2`/`vector`/`vector4`数组之间赋值：
 
 ```vex
 vector2     v2[];
@@ -256,128 +220,120 @@ matrix2     m2 = 1;
 matrix3     m3 = 1;
 matrix      m4 = 1;
 
-v = set(m3);   // Each row of the 3x3 matrix is put into a vector
-m3 = set(v);   // Copy the vectors into the row vectors of the matrix
-v4 = set(m4);  // Extract the rows of the matrix into the vector4 array
-m4 = set(v4);  // Create a matrix using the vector4's in the array as row vectors
-
+v = set(m3);   // 将3x3矩阵的每行放入一个向量
+m3 = set(v);   // 将向量复制到矩阵的行向量中
+v4 = set(m4);  // 将矩阵的行提取到vector4数组
+m4 = set(v4);  // 使用数组中的vector4作为行向量创建矩阵
 ```
 
-In summary:
+总结：
 
-| Left side = | Right side | Notes |
+| 左侧 = | 右侧 | 说明 |
 | --- | --- | --- |
-| `vector2` | `float[]` | E.g. `vector2 v = {1,2}` |
-| `vector` | `float[]` | E.g. `vector v = {1,2,3}` |
-| `vector4` | `float[]` | E.g. `vector4 v = {1,2,3,4};` |
-| `matrix2` | `float[]` | E.g. `matrix2 m = {1,2,3,4};` |
-| `matrix2` | `vector2[]` | E.g. `matrix2 m = { {1,2}, {4,5} };` |
-| `matrix3` | `float[]` | E.g. `matrix3 m = {1,2,3,4,5,6,7,8,9};` |
-| `matrix3` | `vector[]` | E.g. `matrix3 m = { {1,2,3}, {4,5,6}, {7,8,9}};` |
-| `matrix` | `float[]` | E.g. `matrix m = {1,2,3,4,5,6,7,8,9.., 16};` |
-| `matrix` | `vector4[]` | E.g. `matrix m = { {1,2,3,4}, {5,6,7,8}, ... {13,14,15,16}};` |
-| `float[]` | `vector2` | Create an array of 2 floats from the components |
-| `float[]` | `vector` | Create an array of 3 floats from the components |
-| `float[]` | `vector4` | Create an array of 4 floats from the components |
-| `float[]` | `matrix2` | Create an array of 4 floats from the matrix2 |
-| `vector2[]` | `matrix2` | Create an array of 2 vector2s from the matrix2 |
-| `float[]` | `matrix3` | Create an array of 9 floats from the matrix3 |
-| `vector[]` | `matrix3` | Create an array of 3 vectors from the matrix3 |
-| `float[]` | `matrix4` | Create an array of 16 floats |
-| `vector4[]` | `matrix4` | Create an array of 4 `vector4`s. |
+| `vector2` | `float[]` | 例如 `vector2 v = {1,2}` |
+| `vector` | `float[]` | 例如 `vector v = {1,2,3}` |
+| `vector4` | `float[]` | 例如 `vector4 v = {1,2,3,4};` |
+| `matrix2` | `float[]` | 例如 `matrix2 m = {1,2,3,4};` |
+| `matrix2` | `vector2[]` | 例如 `matrix2 m = { {1,2}, {4,5} };` |
+| `matrix3` | `float[]` | 例如 `matrix3 m = {1,2,3,4,5,6,7,8,9};` |
+| `matrix3` | `vector[]` | 例如 `matrix3 m = { {1,2,3}, {4,5,6}, {7,8,9}};` |
+| `matrix` | `float[]` | 例如 `matrix m = {1,2,3,4,5,6,7,8,9.., 16};` |
+| `matrix` | `vector4[]` | 例如 `matrix m = { {1,2,3,4}, {5,6,7,8}, ... {13,14,15,16}};` |
+| `float[]` | `vector2` | 从分量创建2个浮点数的数组 |
+| `float[]` | `vector` | 从分量创建3个浮点数的数组 |
+| `float[]` | `vector4` | 从分量创建4个浮点数的数组 |
+| `float[]` | `matrix2` | 从matrix2创建4个浮点数的数组 |
+| `vector2[]` | `matrix2` | 从matrix2创建2个vector2的数组 |
+| `float[]` | `matrix3` | 从matrix3创建9个浮点数的数组 |
+| `vector[]` | `matrix3` | 从matrix3创建3个向量的数组 |
+| `float[]` | `matrix4` | 创建16个浮点数的数组 |
+| `vector4[]` | `matrix4` | 创建4个`vector4`的数组 |
 
-Looping over an array
+遍历数组
 
-## looping-over-an-array
+## 遍历数组
 
-See [foreach](functions/foreach.html "Loops over the items in an array, with optional enumeration.").
+参见[foreach](functions/foreach.html "遍历数组中的项，可选枚举。")。
 
-Working with arrays
+数组操作
 
-## working-with-arrays
+## 数组操作
 
-The following functions let you query and manipulate arrays.
+以下函数用于查询和操作数组：
 
-[resize](functions/resize.html "Sets the length of an array.")
+[resize](functions/resize.html "设置数组长度。")
 
-Sets the length of the array. If the array is enlarged, intermediate values
-will be `0` or `""`.
+设置数组长度。如果数组扩大，中间值将为`0`或`""`。
 
-[len](functions/len.html "Returns the length of an array.")
+[len](functions/len.html "返回数组长度。")
 
-Returns the length of an array.
+返回数组长度。
 
-[pop](functions/pop.html "Removes the last element of an array and returns it.")
+[pop](functions/pop.html "移除数组最后一个元素并返回。")
 
-Removes the last item from the array (decreasing the size of the array by 1)
-and returns it.
+移除数组最后一项（数组大小减1）并返回。
 
-[removevalue](functions/removevalue.html "Removes an item from an array.")
+[removevalue](functions/removevalue.html "从数组中移除项。")
 
-Removes the first instance of a value in the array. Returns `1` if an item was removed, or `0` otherwise.
+移除数组中第一个匹配的值。如果移除了项返回`1`，否则返回`0`。
 
-[removeindex](functions/removeindex.html "Removes an item at the given index from an array.")
+[removeindex](functions/removeindex.html "移除给定索引处的项。")
 
-Removes an item at the given index and returns it.
+移除给定索引处的项并返回。
 
-[push](functions/push.html "Adds an item to an array.")
+[push](functions/push.html "向数组添加项。")
 
-Adds an item to the end of an array (increasing the size of the array by 1).
+向数组末尾添加项（数组大小加1）。
 
-[getcomp](functions/getcomp.html "Extracts a single component of a vector type, matrix type, or array.")
+[getcomp](functions/getcomp.html "提取向量类型、矩阵类型或数组的单个组件。")
 
-Gets the value of an array component, the same as `array[num]`.
+获取数组组件的值，等同于`数组[编号]`。
 
-[setcomp](functions/setcomp.html "Sets a single component of a vector or matrix type, or an item in an array.")
+[setcomp](functions/setcomp.html "设置向量或矩阵类型的单个组件，或数组中的项。")
 
-Sets the value of an array component, the same as `array[num] = value`.
+设置数组组件的值，等同于`数组[编号] = 值`。
 
-[array](functions/array.html "Efficiently creates an array from its arguments.")
+[array](functions/array.html "高效地从参数创建数组。")
 
-Efficiently creates an array from its arguments.
+高效地从参数创建数组。
 
-[serialize](functions/serialize.html "Flattens an array of vector or matrix types into an array of floats.")
+[serialize](functions/serialize.html "将向量或矩阵类型的数组展平为浮点数数组。")
 
-Flattens an array of vectors or matrices into an array of floats.
+将向量或矩阵数组展平为浮点数数组。
 
-[unserialize](functions/unserialize.html "Turns a flat array of floats into an array of vectors or matrices.")
+[unserialize](functions/unserialize.html "将浮点数平面数组转换为向量或矩阵数组。")
 
-Reverses the effect of [serialize](functions/serialize.html "Flattens an array of vector or matrix types into an array of floats."): assembles a flat array of floats
-into an array of vectors or matrices.
+反转[serialize](functions/serialize.html "将向量或矩阵类型的数组展平为浮点数数组。")的效果：将浮点数平面数组组装为向量或矩阵数组。
 
-[neighbours](functions/neighbours.html "Returns an array of the point numbers of the neighbours of a point.")
+[neighbours](functions/neighbours.html "返回点邻居的点编号数组。")
 
-An array-based replacement for the [neighbourcount](functions/neighbourcount.html "Returns the number of points that are connected to the specified point.")/[neighbour](functions/neighbour.html "Returns the point number of the next point connected to a given point.")
-combo. Returns an array of the point numbers of the
-neighbors of a given point.
+替代[neighbourcount](functions/neighbourcount.html "返回连接到指定点的点数。")/[neighbour](functions/neighbour.html "返回连接到给定点的下一个点的点编号。")组合的基于数组的方案。返回给定点的邻居点编号数组。
 
-In addition, the following functions work with arrays:
+此外，以下函数也适用于数组：
 
 - [min](functions/min.html)
-- [avg](functions/avg.html "Returns the average value of the input(s)")
-- [spline](functions/spline.html "Samples a value along a polyline or spline curve.")
+- [avg](functions/avg.html "返回输入的平均值")
+- [spline](functions/spline.html "沿折线或样条曲线采样值。")
 - [import()](functions/import.html)
 - [addattribute()](functions/addattribute.html)
-- [metaimport](functions/metaimport.html "Once you get a handle to a metaball using metastart and metanext, you
-  can query attributes of the metaball with metaimport.")
+- [metaimport](functions/metaimport.html "使用metastart和metanext获取元球句柄后，可以通过metaimport查询元球属性。")
 
-VCC pragmas
+VCC编译指令
 
-## vcc-pragmas
+## vcc编译指令
 
-The `ramp` pragma lets you specify a ramp user interface for a set of
-parameters.
+`ramp`编译指令可为一组参数指定渐变用户界面。
 
 ```vex
-#pragma ramp <ramp_parm> <basis_parm> <keys_parm> <values_parm>
+#pragma ramp <渐变参数> <基础参数> <键参数> <值参数>
 ```
 
-See [VCC pragmas](pragmas.html) for more information.
+详见[VCC编译指令](pragmas.html)。
 
-Limitations
+限制
 
-## limitations
+## 限制
 
-- Currently VEX does not support multi-dimensional arrays.
-- Arrays cannot be passed between shaders (through [simport](functions/simport.html "Imports a variable sent by a surface shader in an illuminance loop."), etc.).
-- Arrays cannot be written to image planes.
+- 当前VEX不支持多维数组
+- 数组不能在着色器之间传递（通过[simport](functions/simport.html "导入光照循环中表面着色器发送的变量。")等）
+- 数组不能写入图像平面

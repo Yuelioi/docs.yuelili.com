@@ -2,37 +2,35 @@
 title: usd_getbbox
 order: 42
 ---
-| Since | 18.0 |
+| 版本 | 18.0 |
 | --- | --- |
 
 `int  usd_getbbox(<stage>stage, string primpath, string purpose, vector &min, vector &max)`
 
-This function returns primitive’s axis-aligned bounding box. The point corresponding to the minimum corner of the bounding box will be returned in min, while the maximum will be in max. Always returns 1.
+此函数返回图元的轴对齐边界框。边界框的最小角点坐标将通过min参数返回，最大角点坐标将通过max参数返回。该函数始终返回1。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取对应输入的stage。该整数等同于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+也可以使用此参数引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已处理stage（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `purpose`
 
-The primitive’s purpose for which to return the bounding box (e.g., “render”).
+需要返回边界框的图元用途（如"render"）。
 
-Returns
+返回值
 
-Always 1.
+始终返回1。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the sphere's bounding box.
+// 获取球体的边界框
 vector min, max;
 usd_getbbox(0, "/src/sphere", "render", min, max);
 

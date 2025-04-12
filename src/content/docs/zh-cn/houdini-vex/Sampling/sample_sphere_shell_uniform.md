@@ -2,19 +2,18 @@
 title: sample_sphere_shell_uniform
 order: 29
 ---
-| Since | 17.0 |
+| 始于版本 | 17.0 |
 | --- | --- |
 
-`vector  sample_sphere_shell_uniform(vector u, float alpha)`
+`vector sample_sphere_shell_uniform(vector u, float alpha)`
 
 `u`
 
-Three numbers between 0 and 1.
+三个介于0到1之间的数值。
 
 `alpha`
 
-The inner radius to be bounded by. A number between 0 and 1.
+限定内半径。一个介于0到1之间的数值。
 
-Returns a vector of length \< 1, based on `u`.
-Given uniform random `u` vectors of three values in `[0,1)`, and a number in `[0,1]`, the returned vectors will be
-uniform random and continuous with respect to `u` inside the unit sphere shell with the inner raidus alpha.
+返回一个基于`u`的长度<1的向量。
+给定在`[0,1)`区间内三个值的均匀随机`u`向量，以及一个`[0,1]`区间内的数值，返回的向量将在以alpha为内半径的单位球壳内相对于`u`保持均匀随机和连续性。

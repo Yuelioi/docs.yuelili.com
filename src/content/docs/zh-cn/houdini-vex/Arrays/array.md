@@ -4,10 +4,9 @@ order: 3
 ---
 `<type>[] array(...)`
 
-Returns an array of items of the given type.
+返回给定类型的项目数组。
 
-You should use function-style casting to ensure the array members have the
-correct type:
+您应该使用函数式类型转换来确保数组成员具有正确的类型：
 
 ```vex
 vector v[] = vector[](array( 1, {1,2,3}, 3, s, t, Cl, P, N));

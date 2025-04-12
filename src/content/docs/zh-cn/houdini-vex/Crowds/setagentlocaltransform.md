@@ -6,16 +6,16 @@ order: 60
 
 `geohandle`
 
-Handle to the geometry to write to. `geoself()` can be used to get a handle to the current geometry.
+要写入的目标几何体的句柄。可以使用`geoself()`获取当前几何体的句柄。
 
 `prim`
 
-The primitive number.
+图元编号。
 
 `transform`
 
-The new transform (in local space) of the bone.
+骨骼的新变换矩阵（局部空间坐标系下）。
 
 `index`
 
-Index of a transform in the agent’s rig.
+代理骨骼装配系统中变换矩阵的索引号。

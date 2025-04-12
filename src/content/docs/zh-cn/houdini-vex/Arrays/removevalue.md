@@ -4,11 +4,9 @@ order: 11
 ---
 `int  removevalue(<type>&array[], <type>value)`
 
-Removes the first instance of `value` found from the array. Returns `1` if an item was removed, or `0` otherwise.
+从数组中移除找到的第一个`value`实例。如果成功移除则返回`1`，否则返回`0`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 float nums[] = {0, 1, 2, 3, 1, 2, 3};

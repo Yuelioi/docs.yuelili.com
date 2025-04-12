@@ -2,10 +2,11 @@
 title: ntransform
 order: 9
 ---
+
 `vector  ntransform(vector v, matrix transform)`
 
 `vector  ntransform(string tospace, vector v)`
 
 `vector  ntransform(string fromspace, string tospace, vector v)`
 
-Transforms a vector representing a normal. See [ptransform](ptransform.html "Transforms a vector from one space to another.") for more information.
+转换表示法线的向量。更多信息请参见 [ptransform](ptransform.html "将向量从一个空间转换到另一个空间。")。

@@ -1,5 +1,5 @@
 ---
-title: swizzle
+title: 分量重排
 order: 20
 ---
 `vector2  swizzle(vector2 v, int i0, int i1)`
@@ -8,12 +8,11 @@ order: 20
 
 `vector4  swizzle(vector4 v, int i0, int i1, int i2, int i3)`
 
-The integer arguments specify which component of the original vector to put in each place in the returned vector. So, for example, if `i0` is `3`, the third component of the original vector is copied to the zeroth component of the returned vector.
+整数参数指定了原始向量的哪个分量应该被放置到返回向量的对应位置。例如，如果`i0`是`3`，那么原始向量的第三个分量会被复制到返回向量的第零个分量位置。
 
-Integer arguments less than `0` or greater than the number of components are clamped.
-Examples
+小于`0`或大于向量分量数量的整数参数会被自动截断到有效范围内。
 
-## examples
+## 示例
 
 ```vex
 swizzle({10, 20, 30, 40}, 3, 2, 1, 0) == {40, 30, 20, 10}

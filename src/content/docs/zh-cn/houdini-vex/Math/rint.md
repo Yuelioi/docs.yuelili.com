@@ -6,4 +6,4 @@ order: 67
 
 `<vector> rint(<vector>v)`
 
-Returns the closest whole number to `n`. For vectors, this is done per-component.
+返回最接近`n`的整数。对于向量，会逐分量进行计算。

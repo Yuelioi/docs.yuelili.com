@@ -8,11 +8,9 @@ order: 38
 
 `float  length2(vector4 v)`
 
-Returns the squared distance of the vector.
+返回向量的平方距离。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 length2({0.5, 0.75, 0}) == 0.8125;

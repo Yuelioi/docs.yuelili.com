@@ -1,129 +1,110 @@
----
-title: Loops and flow control
-order: 3
----
-| On this page | * [{}](#) * [do loop](#do-loop) * [for loop](#for-loop) * [foreach loop](#foreach-loop) * [while loop](#while-loop) * [Other looping statements](#other-looping-statements) * [if](#if) * [return](#return) * [break](#break) * [continue](#continue) |
-| --- | --- |
-See also [VEX functions](functions/index.html). Most of the work in VEX is done with function calls. Most of the statements are looping constructs, many of which may be familiar from other languages such as C. While `print` is a statement in some languages (such as Python), in VEX you print using [the printf function](functions/printf.html "Prints values to the console which started the VEX program.").
-{}
+---  
+title: 循环与流程控制  
+order: 3  
+---  
 
-## [¶](#)
+| 本页内容 | * [代码块](#) * [do循环](#do-loop) * [for循环](#for-loop) * [foreach循环](#foreach-loop) * [while循环](#while-loop) * [其他循环语句](#other-looping-statements) * [条件判断](#if) * [返回](#return) * [中断](#break) * [继续](#continue) |  
+| --- | --- |  
 
-As in C and many other languages, you can enclose multiple statements inside curly braces to act as a block.
+另请参阅 [VEX函数](functions/index.html)。VEX中的大部分工作通过函数调用完成，其语句多为循环结构，其中许多与C等语言的循环结构类似。虽然`print`在某些语言（如Python）中是语句，但在VEX中需使用[printf函数](functions/printf.html "将值打印到启动VEX程序的控制台。")进行输出。  
 
-For example, the `if` statement can execute one statement:
+## [¶](#)  
 
-```vex
-if ( needs_zapping() ) zap()
+与C等语言类似，可用花括号包裹多个语句形成代码块。  
 
-```
+例如，`if`语句可执行单条语句：  
 
-…or a block inside curly braces:
+```vex  
+if ( needs_zapping() ) zap()  
+```  
 
-```vex
-if ( needs_zapping() ) {
-    zap()
-    disintegrate()
-    remove_dust()
-}
+...或执行花括号内的代码块：  
 
-```
+```vex  
+if ( needs_zapping() ) {  
+    zap()  
+    disintegrate()  
+    remove_dust()  
+}  
+```  
 
-do loop
+## do循环  
 
-## do-loop
+`do statement [while (condition)]`  
 
-`do statement [while (condition)]`
+先执行语句，若条件为真则循环。与`while`不同，`do`保证至少执行一次语句。  
 
-Executes statement, and then loops if condition is true. Unlike `while`, `do` is guaranteed to execute the statement at least once.
+## for循环  
 
-for loop
+`for (init; condition; change) statement`  
 
-## for-loop
+标准C风格`for`循环。先执行初始化语句，当条件为真时重复执行语句，每轮迭代结束时执行变更语句。  
 
-`for (init; condition; change) statement`
+## foreach循环  
 
-Standard C-style `for` loop. Performs the init statement, then executes statement repeatedly while condition is true, executing the change statement at the end of each iteration.
+`foreach (value; array) statement`  
+`foreach (index, value; array) statement`  
 
-foreach loop
+遍历数组每个元素执行语句（可选地将索引设为当前数组位置）。详见[foreach](functions/foreach.html "遍历数组元素，可选枚举索引。")。  
 
-## foreach-loop
+## while循环  
 
-`foreach (value; array) statement`
+`while (condition) statement`  
 
-`foreach (index, value; array) statement`
+当条件为真时重复执行语句。  
 
-Executes statement for each member of array (optionally sets
-index to the current position in the array). See [foreach](functions/foreach.html "Loops over the items in an array, with optional enumeration.").
+## 其他循环语句  
 
-while loop
+[forpoints](functions/forpoints.html)、[illuminance](functions/illuminance.html "遍历场景中所有光源，调用各光源的着色器设置Cl和L全局变量。")和[gather](functions/gather.html "向场景投射光线并返回射线命中表面的着色器信息。")语句可用于遍历VEX处理的数据。  
 
-## while-loop
+## 条件判断  
 
-`while (condition) statement`
+`if (condition) statement_if_true [else statement_if_false]`  
 
-Executes statement repeatedly while condition is true.
+若条件为真则执行statement_if_true。  
 
-Other looping statements
+若包含`else`子句，则条件为假时执行statement_if_false。  
 
-## other-looping-statements
+## 返回  
 
-The [forpoints](functions/forpoints.html), [illuminance](functions/illuminance.html "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables."), and [gather](functions/gather.html "Sends rays into the scene and returns information from the shaders of
-surfaces hit by the rays.") statements let you loop over data being processed by VEX.
+`return`  
 
-if
+带可选返回值退出函数。  
 
-## if
+```vex  
+int max(int a, b) {  
+    if (a > b) {  
+        return a;  
+    }  
+    return b;  
+}  
+```  
 
-`if (condition) statement_if_true [else statement_if_false]`
+## 中断  
 
-Executes statement_if_true if condition is true.
+`break`  
 
-If the `else` clause is included, statement_if_false is executed if condition is false.
+立即退出循环。常与`if`配合在满足条件时提前终止循环。  
 
-return
+```vex  
+for (int i = 0; i < sizes; i++)  
+{  
+    mixamount += getAmount(roughness);  
+    if (mixamount > 1) {  
+        break;  
+    }  
+}  
+```  
 
-## return
+## 继续  
 
-Exits the function with an optional return value.
+`continue`  
 
-```vex
-int max(int a, b) {
-    if (a > b) {
-        return a;
-    }
-    return b;
-}
+立即跳转至下一次循环迭代。  
 
-```
-
-break
-
-## break
-
-`break` immediately exits the loop. It is useful with the `if` statement to stop looping early when some condition is reached.
-
-```vex
-for (int i = 0; i < sizes; i++)
-{
-    mixamount += getAmount(roughness);
-    if (mixamount > 1) {
-        break;
-    }
-}
-
-```
-
-continue
-
-## continue
-
-`continue` jumps immediately to the next iteration of the loop.
-
-```vex
-foreach (x; myarray) {
-    if (x < 10) continue;
-    ...
-}
-
+```vex  
+foreach (x; myarray) {  
+    if (x < 10) continue;  
+    ...  
+}  
 ```

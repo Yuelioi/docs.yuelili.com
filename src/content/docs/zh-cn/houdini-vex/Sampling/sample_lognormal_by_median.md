@@ -2,46 +2,36 @@
 title: sample_lognormal_by_median
 order: 23
 ---
+
 `float  sample_lognormal_by_median(float median, float stddev, float u)`
 
 `float  sample_lognormal_by_median(float origmedian, float origstddev, float minvalue, float maxvalue, float u)`
 
 `median`
 
-The median of the distribution.
+该分布的中位数。
 
 `origmedian`
 
-The median the distribution would have, were it not for `minvalue`
-and `maxvalue`, limiting the range.
+如果没有`minvalue`和`maxvalue`限制范围时，该分布原本应该具有的中位数。
 
 `stddev`
 
-The standard deviation of the distribution.
+该分布的标准差。
 
 `origstddev`
 
-The standard deviation (scale) the distribution would have, were it
-not for `minvalue` and `maxvalue`, limiting the range.
+如果没有`minvalue`和`maxvalue`限制范围时，该分布原本应该具有的标准差（尺度参数）。
 
 `u`
 
-A number in the range `[0,1)`.
+一个范围在`[0,1)`之间的数字。
 
 `minvalue`,`maxvalue`
 
-When given, instead of sampling the full log-normal distribution,
-the distribution with its range limited to `[minvalue,maxvalue]` will be
-sampled.
+当提供这两个参数时，将不会对整个对数正态分布进行采样，而是采样范围限制在`[minvalue,maxvalue]`之间的分布。
 
-Samples the log-normal distribution with the specified `median` and `stddev`,
-optionally with a `minvalue` and `maxvalue`. To use parameters `mu` and `sigma`
-of the underlying normal distribution instead of `median` and `stddev`,
-use `sample_lognormal`.
-Given uniform random `u` values in `[0,1)`, this will return log-normally
-distributed random numbers. The return value will be monotone increasing
-with respect to `u`.
+使用指定的`median`和`stddev`采样对数正态分布，可选择性地使用`minvalue`和`maxvalue`参数。若要使用基础正态分布的参数`mu`和`sigma`而非`median`和`stddev`，请使用`sample_lognormal`函数。
+给定在`[0,1)`范围内均匀随机的`u`值，该函数将返回对数正态分布的随机数。返回值将相对于`u`单调递增。
 
-The log-normal distribution is sampled by sampling a normal distribution
-and exponentiating the result, giving a value that is always positive, so
-this distribution is often used for generating random point scales.
+对数正态分布是通过对正态分布采样并对结果取指数得到的，因此该分布总是产生正值，所以常被用于生成随机点尺度。

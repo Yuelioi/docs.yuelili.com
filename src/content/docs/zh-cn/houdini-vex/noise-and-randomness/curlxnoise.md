@@ -2,11 +2,11 @@
 title: curlxnoise
 order: 6
 ---
+
 `vector  curlxnoise(vector xyz)`
 
 `vector  curlxnoise(vector4 xyzt)`
 
-Computes a divergence free vector field based on the cross product of the derivatives of two simplex noise functions.
+基于两个单纯形噪声函数导数的叉积，计算一个无散度的向量场。
 
-See [noise and randomness](../random.html) in the VEX language
-guide for more information.
+更多信息请参阅VEX语言指南中的[噪声与随机性](../random.html)部分。

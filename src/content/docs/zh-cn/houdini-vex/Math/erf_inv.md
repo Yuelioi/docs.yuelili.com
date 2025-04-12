@@ -1,14 +1,13 @@
 ---
-title: erf_inv
+title: erf_inv 反误差函数
 order: 25
 ---
 `float  erf_inv(float v)`
 
-The inverse of the [Gauss error function](http://en.wikipedia.org/wiki/Error_function).
+[高斯误差函数](http://en.wikipedia.org/wiki/Error_function)的反函数。
 
 `erf_inv(erf(v)) = v = erf(erf_inv(v))`
 
-To generate a normally-distributed random number, `n`, with mean `mu` and standard deviation `sigma`,
-from a uniformly-distributed random number, `u`, between 0 and 1,
+要从一个均匀分布在0到1之间的随机数`u`生成一个均值为`mu`、标准差为`sigma`的正态分布随机数`n`，可使用公式：
 
 `n = mu + sqrt(2)*sigma*erf_inv(2*u - 1)`

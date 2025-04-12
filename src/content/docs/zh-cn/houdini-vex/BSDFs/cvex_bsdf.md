@@ -2,175 +2,153 @@
 title: cvex_bsdf
 order: 7
 ---
-| On this page | * [Evaluation Function](#eval_fn) * [Sampling Function](#sample_fn) * [Component mask implicit argument](#component-mask-implicit-argument) * [Custom variadic arguments](#custom-variadic-arguments) * [Validation](#validation) * [Examples](#examples)   + [Example: Diffuse](#example-diffuse)  + [Example: Specular](#example-specular) |
+
+| 本页内容 | * [评估函数](#eval_fn) * [采样函数](#sample_fn) * [组件掩码隐式参数](#component-mask-implicit-argument) * [自定义可变参数](#custom-variadic-arguments) * [验证](#validation) * [示例](#examples)   + [示例：漫反射](#example-diffuse)  + [示例：镜面反射](#example-specular) |
 | --- | --- |
 
 `bsdf  cvex_bsdf(string eval_cvex_shader, string sampler_cvex_shader, ...)`
 
-This function lets you define a BSDF reflectance function through a pair of `cvex` shaders:
-One to [evaluate the reflectance function](cvex_bsdf.html#eval_fn) and another to [sample](cvex_bsdf.html#sample_fn) it.
+该函数允许您通过一对`cvex`着色器定义BSDF反射函数：一个用于[评估反射函数](cvex_bsdf.html#eval_fn)，另一个用于[采样](cvex_bsdf.html#sample_fn)。
 
-You pass the shaders as VEX source strings in the first two arguments.
-You can then use variadic arguments to define arbitrary data that will be passed to the shaders when they are invoked.
+您可以将着色器作为VEX源代码字符串传递到前两个参数中。然后，您可以使用可变参数定义任意数据，这些数据将在调用着色器时传递给它们。
 
-Warning
-This interface is subject to change in future versions of Houdini,
-though any potential changes will likely not require fundamental
-changes to the structure of your shaders.
+警告
+此接口可能会在Houdini的未来版本中更改，不过任何潜在的更改可能不需要对您的着色器结构进行根本性修改。
 
-Evaluation Function
+评估函数
 
 ## eval_fn
 
-The evaluation function must accept the following arguments:
+评估函数必须接受以下参数：
 
 ```vex
 (vector u, vector v, int bounces, int reverse, vector &refl, vector &eval, float &pdf)
-
 ```
 
 `u`
 
-Outgoing light direction, from the surface to the viewer.
+出射光方向，从表面指向观察者。
 
 `v`
 
-Incoming light direction, from the surface to the light.
+入射光方向，从表面指向光源。
 
 `bounces`
 
-A mask specifying the type of reflections that should be evaluated.
+指定应评估的反射类型的掩码。
 
 `reverse`
 
-Whether evaluating from the camera (`0`) or the light source (`1`).
+是从相机(`0`)还是光源(`1`)进行评估。
 
 `refl`
 
-The function must overwrite this variable with the reflectivity (albedo) of the BSDF.
+函数必须用BSDF的反射率（反照率）覆盖此变量。
 
-This should not be dependent on the `v` vector, since it is used as an average reflectivity over all lighting directions. This is the value that the [albedo](albedo.html "Returns the albedo (percentage of reflected light) for a bsdf given the outgoing light direction.") function will return.
+这不依赖于`v`向量，因为它用作所有光照方向上的平均反射率。这是[albedo](albedo.html "返回给定出射光方向的bsdf的反照率（反射光百分比）。")函数将返回的值。
 
 `eval`
 
-The function must overwrite this variable with the evaluated reflectance for the given directions.
+函数必须用给定方向的评估反射率覆盖此变量。
 
-Set this to `0` to indicates to mantra whether the BSDF is a delta function. Delta functions reflect light in specific directions or lines, and are handled as a special case in the lighting algorithm to produce less noisy results. The behavior of a delta BSDF is determined by the sampling function (below).
+将其设置为`0`以指示mantra BSDF是否为delta函数。Delta函数在特定方向或线上反射光，并在光照算法中作为特殊情况处理以产生较少噪声的结果。Delta BSDF的行为由采样函数（如下）决定。
 
 `pdf`
 
-The function must overwrite this variable with the sampling pdf for the given directions. The integral of this value over the sphere should be equal to `luminance(refl)*2*PI`. For perfect importance sampling, `pdf == luminance(eval)`.
+函数必须用给定方向的采样pdf覆盖此变量。此值在球面上的积分应等于`luminance(refl)*2*PI`。对于完美的重要性采样，`pdf == luminance(eval)`。
 
-Sampling Function
+采样函数
 
 ## sample_fn
 
-The sampling function is responsible for selecting a random reflection direction that is importance sampled from the distribution defined by the evaluation function (above).
+采样函数负责选择从评估函数（如上）定义的分布中重要性采样的随机反射方向。
 
-The sampling function must accept the following arguments:
+采样函数必须接受以下参数：
 
 ```vex
 (vector u, float sx, float sy, int bounces, vector &refl, vector &v, int &bouncetype, float &pdf)
-
 ```
 
-If the evaluation function is a delta function (indicated by the evaluation function setting `eval` to `0`), you are free to choose the sampling directions in any way you want. Otherwise, you should choose directions from a distribution that either matches the evaluation function or is close to it. The `sx` and `sy` inputs are available to help produce high quality sample distributions. These values are initialized directly from mantra’s pixel sampling patterns.
+如果评估函数是delta函数（由评估函数将`eval`设置为`0`指示），您可以自由选择任何采样方向。否则，您应该从与评估函数匹配或接近的分布中选择方向。`sx`和`sy`输入可用于帮助生成高质量的采样分布。这些值直接从mantra的像素采样模式初始化。
 
 `u`
 
-Outgoing light direction, from the surface to the viewer.
+出射光方向，从表面指向观察者。
 
 `sx`
 
-Uniform random value between 0 and 1, correlated with sy in a 2D sampling pattern.
+0到1之间的均匀随机值，与sy在2D采样模式中相关。
 
 `sy`
 
-Uniform random value between 0 and 1, correlated with sx in a 2D sampling pattern.
+0到1之间的均匀随机值，与sx在2D采样模式中相关。
 
 `bounces`
 
-A mask specifying the type of reflections that should be evaluated.
+指定应评估的反射类型的掩码。
 
 `refl`
 
-The reflectivity (albedo) of the BSDF, tinted by the color of the light in the sampled direction. The luminance of this value should match `refl` from the evaluation function. If the sampling distribution does not match the evaluation function exactly, this value should be scaled by the ratio of the evaluation distribution to the sampling distribution.
+BSDF的反射率（反照率），由采样方向的光的颜色着色。此值的亮度应与评估函数中的`refl`匹配。如果采样分布与评估函数不完全匹配，则应按评估分布与采样分布的比率缩放此值。
 
 `v`
 
-Sampled light direction, from the surface to the light.
+采样光方向，从表面指向光源。
 
 `bouncetype`
 
-The specific component type selected by sampling.
+采样选择的特定组件类型。
 
 `pdf`
 
-The sampling pdf. The integral of this value over the sphere should be a constant `2*PI`. Note that this differs from the `pdf` produced by the evaluation function by a factor of `luminance(refl)`.
+采样pdf。此值在球面上的积分应为常数`2*PI`。请注意，这与评估函数产生的`pdf`相差`luminance(refl)`的因子。
 
-Since Houdini 13, it is not necessary for the sampling function to directly sample from the evaluation function’s distribution. To use a different sampling function, adjust the `pdf` outputs from both the evaluation and sampling shaders so that they reflect the distribution being sampled.
+从Houdini 13开始，采样函数不需要直接从评估函数的分布中采样。要使用不同的采样函数，调整评估和采样着色器的`pdf`输出，使其反映被采样的分布。
 
-Component mask implicit argument
+组件掩码隐式参数
 
 ## component-mask-implicit-argument
 
-If you add an `int mybounces` output argument to your evaluation or sample shader, it will be filled in with the component mask for the BSDF. You can check this against an extra `"label"` variadic argument passed to the `cvex_bsdf()` function to see if it should apply. This allows you to use the same CVEX shader source code for different component types.
+如果您在评估或采样着色器中添加`int mybounces`输出参数，它将填充BSDF的组件掩码。您可以将其与传递给`cvex_bsdf()`函数的额外`"label"`可变参数进行检查，以查看是否应应用。这允许您为不同的组件类型使用相同的CVEX着色器源代码。
 
-See [bouncemask](bouncemask.html) for information on component label bitmasks.
+有关组件标签位掩码的信息，请参见[bouncemask](bouncemask.html)。
 
-Custom variadic arguments
+自定义可变参数
 
 ## custom-variadic-arguments
 
-Any extra `"key", value` pairs passed to the `cvex_bsdf()` after the shader strings define custom arguments that will be passed to the shaders when they are invoked.
+在着色器字符串之后传递给`cvex_bsdf()`的任何额外`"key", value`对定义了在调用着色器时将传递给它们的自定义参数。
 
 ```vex
 F = cvex_bsdf("...", "...", "label", "diffuse", "N", N);
-
 ```
 
-In particular, you should provide a “label” keyword argument to specify the type of component for the new BSDF (for example, `"diffuse"` or `"reflect"`). You can specify multiple labels in a space-separated list (for example, `"label", "reflect refract"`).
+特别是，您应提供一个“label”关键字参数来指定新BSDF的组件类型（例如，`"diffuse"`或`"reflect"`）。您可以在空格分隔的列表中指定多个标签（例如，`"label", "reflect refract"`）。
 
-Validation
+验证
 
 ## validation
 
-There are 2 main approaches available to verify whether you have implemented the `cvex_bsdf` evaluation and sampling functions correctly.
+有两种主要方法可用于验证您是否正确实现了`cvex_bsdf`评估和采样函数。
 
-- You can use mantra’s multiple importance sampling algorithm to
-  ensure that renders match in brightness apart from noise for different
-  sampling techniques. To do this, create an environment light (with a
-  map assigned) and render with different values of the **MIS Bias**
-  parameter. You will need to add the **MIS Bias** parameter from the
-  rendering properties dialog, since it is not available on the light by
-  default. A value of -1 means to sample only from the BSDF while a value
-  of 1 means to sample only from light source. To verify the `refl` value
-  in the sampling function, set the environment light rendering mode to
-  **Ray Tracing Background**. If the rendered results are the same
-  (apart from noise) with values of -1, 0, 1, and for ray tracing
-  background, your shader is bias-free.
-- Second, the [Verify BSDF](../../nodes/obj/verifybsdf.html) object can be used to
-  verify that the albedo, pdf, and sampling function all align correctly
-  and that they integrate to the correct values. This approach uses
-  point-based random sampling in SOPs and additionally will show the
-  shape of the BSDF visually as a polar point cloud.
+- 您可以使用mantra的多重重要性采样算法来确保渲染在不同采样技术下亮度匹配（除了噪声）。为此，创建一个环境光（分配了贴图）并使用**MIS Bias**参数的不同值进行渲染。您需要从渲染属性对话框中添加**MIS Bias**参数，因为默认情况下它在灯光上不可用。值为-1表示仅从BSDF采样，而值为1表示仅从光源采样。要验证采样函数中的`refl`值，将环境光渲染模式设置为**Ray Tracing Background**。如果渲染结果在值为-1、0、1和光线追踪背景时相同（除了噪声），则您的着色器是无偏的。
+- 其次，可以使用[Verify BSDF](../../nodes/obj/verifybsdf.html)对象来验证反照率、pdf和采样函数是否正确对齐，并且它们是否积分到正确的值。此方法在SOP中使用基于点的随机采样，并另外将BSDF的形状可视化为极坐标点云。
 
-Examples
+示例
 
 ## examples
 
-Example: Diffuse
+示例：漫反射
 
 ## example-diffuse
 
-Creation:
+创建：
 
 ```vex
 F = cvex_bsdf("diffuse_eval", "diffuse_sample", "label", "diffuse", "N", N);
-
 ```
 
-Evaluation shader:
+评估着色器：
 
 ```vex
 #include "pbr.h"
@@ -189,19 +167,17 @@ cvex diffuse_eval(
 {
     if (bounces & mybounces)
     {
-        // If evaluating reversed, the incoming light direction is needed for
-        // evaluation rather than the outgoing direction.  The select statement
-        // swaps based on the value of the "reverse" toggle.
+        // 如果评估反向，则需要入射光方向而不是出射方向进行评估。
+        // select语句根据"reverse"切换的值进行交换。
         vector vvec = select(reverse, u, v);
         pdf = max(dot(vvec, normalize(N)), 0);
         eval = pdf;
         refl = 0.5;
     }
 }
-
 ```
 
-Sample shader:
+采样着色器：
 
 ```vex
 #include "math.h"
@@ -231,31 +207,29 @@ cvex diffuse_sample(
 
         pdf = 2*v.z;
 
-        // Transform v into the reference frame for nml
+        // 将v转换为nml的参考系
         vector framex = normalize(cross(nml, u));
         vector framey = cross(nml, framex);
 
         v = framex * v.x + framey * v.y + nml*v.z;
 
         bouncetype = mybounces;
-        refl = 0.5; // Luminance needs to match albedo
+        refl = 0.5; // 亮度需要匹配反照率
     }
 }
-
 ```
 
-Example: Specular
+示例：镜面反射
 
 ## example-specular
 
-Creation:
+创建：
 
 ```vex
 F = cvex_bsdf("specular_eval", "specular_sample", "label", "reflect", "dir", reflect(I, N));
-
 ```
 
-Evaluation shader:
+评估着色器：
 
 ```vex
 #include "pbr.h"
@@ -274,10 +248,9 @@ cvex specular_eval(
     if (bounces & mybounces)
         refl = 1;
 }
-
 ```
 
-Sample shader:
+采样着色器：
 
 ```vex
 #include "math.h"
@@ -302,8 +275,7 @@ cvex specular_sample(
         pdf = 1e6F;
         v = dir;
         bouncetype = mybounces;
-        refl = 1; // Needs to match albedo
+        refl = 1; // 需要匹配反照率
     }
 }
-
 ```

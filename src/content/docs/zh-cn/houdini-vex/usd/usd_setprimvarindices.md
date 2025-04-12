@@ -7,34 +7,32 @@ order: 135
 
 `int  usd_setprimvarindices(int stagehandle, string primpath, string name, int indices[])`
 
-This function sets the indices for a given primvar, thus making it an indexed primvar if it was not already.
+此函数为给定的primvar设置索引，从而使其成为索引primvar（如果原本不是的话）。
 
 `stagehandle`
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+要写入的stage的句柄。目前唯一有效的值是`0`，表示节点中的当前stage。（此参数未来可能用于允许写入其他stage。）
 
 `primpath`
 
-The path to the primitive.
+图元的路径。
 
 `name`
 
-Primvar name (without namespace).
+Primvar名称（不带命名空间）。
 
 `indices`
 
-The index array to set.
+要设置的索引数组。
 
-Returns
+返回值
 
-The value of `stagehandle` on success, or `-1` on failure.
+成功时返回`stagehandle`的值，失败时返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Set the primvar's value and indices.
+// 设置primvar的值和索引。
 float values[]  = array(0, 100, 200, 300, 400, 500);
 int   indices[] = array(5,5,4,4,3,3,2,2,1,1,0,0);
 usd_setprimvar(0, "/geo/mesh", "primvar_name", values); 

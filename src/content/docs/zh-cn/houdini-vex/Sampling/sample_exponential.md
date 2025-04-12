@@ -10,25 +10,19 @@ order: 16
 
 `u`
 
-A number in the range `[0,1)`.
+范围在 `[0,1)` 之间的数值。
 
 `mean`
 
-The mean of the distribution, or 1 if not specified.
+分布的均值，若未指定则默认为1。
 
 `origmean`
 
-The mean the distribution would have, were it not for `maxvalue`,
-limiting the range.
+在没有 `maxvalue` 限制范围的情况下，分布应有的均值。
 
 `maxvalue`
 
-When given, instead of sampling the full exponential distribution,
-the distribution with its range limited to `[0,maxvalue]` will be
-sampled.
+当给定该参数时，将不对完整的指数分布进行采样，而是采样范围限制在 `[0,maxvalue]` 的分布。
 
-Samples the exponential distribution with the specified `mean`, optionally
-with a `maxvalue`.
-Given uniform random `u` values in `[0,1)`, this will return exponentially
-distributed random numbers. The return value will be monotone increasing
-with respect to `u`.
+对具有指定 `mean` 的指数分布进行采样，可选择使用 `maxvalue` 参数。
+给定均匀随机数 `u` 的值在 `[0,1)` 范围内时，该函数将返回指数分布的随机数。返回值相对于 `u` 是单调递增的。

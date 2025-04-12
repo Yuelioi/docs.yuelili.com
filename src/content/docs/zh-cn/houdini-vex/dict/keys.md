@@ -1,12 +1,10 @@
 ---
-title: keys
+title: 键值
 order: 3
 ---
-| Since | 18.5 |
+| 自版本 | 18.5 |
 | --- | --- |
 
 `string [] keys(dict d)`
 
-Returns all the keys in the dictionary. Returns an empty string array
-if the dictionary is empty. The returned keys are always sorted
-alphabetically.
+返回字典中的所有键。如果字典为空，则返回空字符串数组。返回的键总是按字母顺序排序。

@@ -1,5 +1,5 @@
 ---
-title: volumetypeid
+title: 体积类型ID
 order: 22
 ---
 `int  volumetypeid(<geometry>geometry, int primnum)`
@@ -8,14 +8,13 @@ order: 22
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个整数，表示要读取几何体的输入编号（从0开始）。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是一个指定几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
-Returns
+返回值
 
-The integer typeid for the data stored in the volume or VDB. This
-will match the result of the VEX typeid() function with the same
-type.
+存储在体积或VDB中的数据的整数类型ID。
+这将与具有相同类型的VEX typeid()函数的结果匹配。
 
-Returns -1 if it isn’t a volume or VDB, or isn’t a VEX compatible type.
+如果不是体积或VDB，或者不是VEX兼容类型，则返回-1。

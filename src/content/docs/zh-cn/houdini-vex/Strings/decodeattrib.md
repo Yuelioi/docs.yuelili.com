@@ -2,14 +2,10 @@
 title: decodeattrib
 order: 5
 ---
-| Since | 18.0 |
+
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `string  decodeattrib(string str)`
 
-Houdini geometry attributes and group names are only allowed to contain
-letters, numbers, and underscores, and must not begin with a number. Arbitrary
-strings can be passed through the `encodeattrib` function to generate a string
-that obeys these restriction. This function takes one of these encoded
-strings, and returns the original string. A string that has not been encoded
-will be returned unmodified.
+Houdini几何体属性和组名称仅允许包含字母、数字和下划线，且不能以数字开头。任意字符串可以通过`encodeattrib`函数生成符合这些限制的字符串。本函数接收一个经过编码的字符串，并返回原始字符串。未经编码的字符串将原样返回。

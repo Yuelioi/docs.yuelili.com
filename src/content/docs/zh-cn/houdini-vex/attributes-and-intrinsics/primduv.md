@@ -6,22 +6,22 @@ order: 51
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`的引用。
 
 `prim_number`
 
-The number of the primitive on which to measure the derivative.
+要测量导数的基元编号。
 
 `uv`
 
-The parametric coordinates on the primitive at which to measure the derivative.
+在基元上测量导数的参数坐标。
 
 `du`, `dv`
 
-Represent the derivative order to query.
+表示要查询的导数阶数。
 
-On a curve, the curve direction is given by `du==1` and the curvature is given by `du==2`.
+在曲线上，曲线方向由`du==1`给出，曲率由`du==2`给出。
 
-`dv` is used for parametric surfaces.
+`dv`用于参数化曲面。

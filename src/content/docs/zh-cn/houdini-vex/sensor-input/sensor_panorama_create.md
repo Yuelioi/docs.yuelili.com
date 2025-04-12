@@ -4,46 +4,44 @@ order: 1
 ---
 `int  sensor_panorama_create(float time, vector pos, int size, float near, float far, string candidateobj, string includeobj, string excludeobj, int uselit)`
 
-This function will render the surrounding environment using the GL render and
-provides a handle to use for querying the results.
+此函数将使用GL渲染器渲染周围环境，并提供一个用于查询结果的句柄。
 
-Note
-Because this needs to render the scene, it only works in interactive sessions of Houdini.
+注意
+由于需要渲染场景，此功能仅在Houdini的交互会话中有效。
 
 `time`
 
-The period in time when the render should be performed.
+执行渲染的时间点。
 
 `pos`
 
-The location in world space coordinates where the render should be performed.
+执行渲染的世界空间坐标位置。
 
 `size`
 
-The resolution of the performed render.
+执行渲染的分辨率。
 
 `near`
 
-The near plane restriction.
+近平面限制。
 
 `far`
 
-The far plane restriction.
+远平面限制。
 
 `candidateobj`
 
-A bundle, group, or expression that represents what objects will be displayed if their display setting is enabled.
+表示当显示设置启用时会被显示的对象的捆绑包、组或表达式。
 
 `includeobj`
 
-A bundle, group, or expression that represents what objects will always be displayed.
+表示始终会被显示的对象的捆绑包、组或表达式。
 
 `excludeobj`
 
-A bundle, group, or expression that represents what objects will never be displayed.
+表示永远不会被显示的对象的捆绑包、组或表达式。
 
 `uselit`
 
-Usually for AI purposes you want to not have any lighting as you are using
-color as a key to differentiate actors. However, if you want to display
-what a creature sees, lighting makes things more visually accurate.
+通常出于AI目的，您可能不希望有任何光照，因为您使用颜色作为区分角色的关键。
+但是，如果您想显示生物看到的内容，光照会使视觉效果更准确。

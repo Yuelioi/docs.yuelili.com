@@ -1,7 +1,8 @@
 ---
-title: instance
+title: 实例化矩阵
 order: 5
 ---
+
 `matrix  instance(vector P, vector N)`
 
 `matrix  instance(vector P, vector N, vector scale)`
@@ -16,16 +17,6 @@ order: 5
 
 `matrix  instance(vector P, vector N, vector scale, vector4 rotate, vector4 orient, vector pivot)`
 
-Creates a transform matrix from the given arguments, using the same
-method that the [Copy SOP](../../nodes/sop/copy.html) uses to transform its
-output instances. The instance is placed at point `P`, oriented
-along the normal direction `N`, and, optionally, scaled by `scale`. An
-optional `pivot` parameter can be supplied as the local transformation point
-for the instance.
+根据给定参数创建变换矩阵，使用与[复制SOP节点](../../nodes/sop/copy.html)相同的实例变换方法。实例会被放置在点`P`处，沿法线方向`N`定向，并可选择性地按`scale`缩放。可选参数`pivot`可作为实例的局部变换基准点。
 
-The function supports two methods for setting rotation. The first method
-requires an explicit `up` vector, which should be tangent to `N`. This
-`up` vector, along with `N`, is used to construct an orthonormal frame
-in which the rotation takes place.
-The second method uses an explicit orientation relative to the XYZ axis
-to construct the frame.
+该函数支持两种旋转设置方法：第一种方法需要显式指定与`N`相切的`up`向量，该向量将与`N`共同构建用于旋转的正交坐标系。第二种方法使用相对于XYZ轴的显式方向来构建坐标系。

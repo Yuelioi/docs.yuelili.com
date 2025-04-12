@@ -2,11 +2,11 @@
 title: chendt
 order: 6
 ---
-| Context(s) | [chop](../contexts/chop.html) |
+| 上下文 | [chop](../contexts/chop.html) |
 | --- | --- |
 
 `float  chendt(int opinput=0)`
 
-Returns the time (in seconds) corresponding to the last sample in the given CHOP input.
+返回给定CHOP输入中最后一个样本对应的时间（以秒为单位）。
 
-To get the end sample number, use [chend](chend.html "Returns the sample number of the last sample in a given CHOP input."). To get the end frame, use [chendf](chendf.html "Returns the frame corresponding to the last sample of the input specified.").
+要获取结束样本编号，请使用[chend](chend.html "返回给定CHOP输入中最后一个样本的样本编号。")。要获取结束帧，请使用[chendf](chendf.html "返回指定输入最后一个样本对应的帧。")。

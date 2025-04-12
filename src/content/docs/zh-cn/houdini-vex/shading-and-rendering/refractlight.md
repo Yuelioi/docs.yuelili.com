@@ -1,90 +1,72 @@
 ---
-title: refractlight
+title: 折射光
 order: 64
 ---
-| On this page | * [Light inclusion/exclusion options](#light-inclusion-exclusion-options) * [Area sampling options](#area-sampling-options) * [Ray options](#ray-options) * [Examples](#examples) |
+
+| 本页内容 | * [光源包含/排除选项](#光源包含排除选项) * [区域采样选项](#区域采样选项) * [光线选项](#光线选项) * [示例](#示例) |
 | --- | --- |
-| Context(s) | [shading](../contexts/shading.html) |
+| 上下文 | [着色](../contexts/shading.html) |
 
 `void  refractlight(vector &cf, vector &of, float &af, vector P, vector D, float bias, float max_contrib, ...)`
 
 `void  refractlight(vector &cf, vector &of, float &af, vector P, vector N, vector I, float eta, float bias, float max_contrib, ...)`
 
-Computes the illumination of surfaces refracted by the current surface.
-Computes and outputs the output color (cf), opacity (of) and
-alpha (af). See [opacity vs. alpha](../contexts/shading_contexts.html#opacity) .
+计算被当前表面折射的表面的光照。
+计算并输出颜色(cf)、不透明度(of)和透明度(af)。参见[不透明度与透明度](../contexts/shading_contexts.html#opacity)。
 
-bias is typically a small number (for example 0.005) used to help
-eliminate self-reflection.
+bias通常是一个小数值(例如0.005)，用于帮助消除自反射。
 
-max_contrib tells the renderer how much the reflected light will
-contribute to the final color of the pixel. This has no effect on the
-resultant color.
+max_contrib告诉渲染器反射光对像素最终颜色的贡献程度。这对结果颜色没有影响。
 
-The first form of the refractlight() function takes a position and
-direction, typically computed by the [refract](refract.html "Returns the refraction ray given an incoming direction, the
-normalized normal and an index of refraction.") or
-[fresnel](fresnel.html "Computes the fresnel reflection/refraction contributions given an
-incoming vector, surface normal (both normalized), and an index of
-refraction (eta).") functions.
+第一种形式的refractlight()函数接受位置和方向，通常由[refract](refract.html "给定入射方向、归一化法线和折射率，返回折射光线")或[fresnel](fresnel.html "给定归一化的入射向量、表面法线和折射率(eta)，计算菲涅耳反射/折射贡献")函数计算得出。
 
-To prevent the renderer from computing standard transparency (i.e.
-non-refracted transparency), the Of variable must be set to {1,1,1} to
-make the surface “opaque”. The Af variable can be set to any arbitrary
-value.
-Light inclusion/exclusion options
+为防止渲染器计算标准透明度(即非折射透明度)，必须将Of变量设置为{1,1,1}以使表面"不透明"。Af变量可以设置为任意值。
 
-## light-inclusion-exclusion-options
+光源包含/排除选项
+
+## 光源包含排除选项
 
 "`categories`",
 `string`
 `="*"`
 
-Specifies lights to include/exclude by their “category” tags.
-This is the preferred include/exclude lights rather than pattern matching
-light names with the `"lightmask"` keyword argument.
+通过光源的"类别"标签指定要包含/排除的光源。
+这是比使用`"lightmask"`关键字参数通过模式匹配光源名称更优的包含/排除光源方式。
 
-For example:
+例如：
 
 ```vex
 diff = diffuse(nml, "lightmask", "hero | fill");
-
 ```
 
-See [light categories](../../render/lights.html#categories) for more information.
+更多信息请参见[光源类别](../../render/lights.html#categories)。
 
 "`lightmask`",
 `string`
 `="*"`
 
-When evaluating light and shadow shaders, objects have pre-defined light
-masks. This mask is usually specified in the geometry object and
-specifies a list of lights which are used to illuminate a surface or fog
-shader. It is possible to override the default light mask by specifying
-a “lightmask” argument.
+在评估光照和阴影着色器时，对象有预定义的光照遮罩。此遮罩通常在几何对象中指定，列出了用于照亮表面或雾着色器的光源。可以通过指定"lightmask"参数来覆盖默认的光照遮罩。
 
-For example:
+例如：
 
 ```vex
 diff = diffuse(nml, "lightmask", "light*,^light2");
-
 ```
 
-…will cause all lights whose names begin with “light” except for a
-light named “light2” to be considered for diffuse illumination.
+...将使所有名称以"light"开头(除了名为"light2"的光源)的光源被考虑用于漫反射照明。
 
-All Houdini scoping patterns, excepting group expansion, are supported:
+支持除组扩展外的所有Houdini范围模式：
 
-- `*` - wild-card match
-- `?` - single character match
-- `^` - exclusion operator
-- `[list]` - character list match
+- `*` - 通配符匹配
+- `?` - 单字符匹配
+- `^` - 排除操作符
+- `[list]` - 字符列表匹配
 
-Area sampling options
+区域采样选项
 
-## area-sampling-options
+## 区域采样选项
 
-For area sampling, you must specify both the angle and sample variadic parameters. For example:
+对于区域采样，必须同时指定角度和采样可变参数。例如：
 
 ```vex
 surface
@@ -92,143 +74,106 @@ blurry_mirror(float angle = 3; int samples = 16; float bias=0.05)
 {
     Cf = reflectlight(bias, 1, "angle", angle, "samples", samples);
 }
-
 ```
 
-Ray options
+光线选项
 
-## ray-options
+## 光线选项
 
-Tip
-When you specify a texture, such as with the `"environment"` keyword,
-you can also use the image filtering keyword arguments. See [environment](environment.html "Returns the color of the environment texture.")
-for a listing of the image filter keyword arguments.
+提示
+当指定纹理时(例如使用`"environment"`关键字)，也可以使用图像过滤关键字参数。参见[environment](environment.html "返回环境纹理的颜色")了解图像过滤关键字参数的列表。
 
 "`scope`",
 `string`
 
-A list of objects which can be hit by the rays. When specified, `scope` overrides the default scope that would have been selected for the given `raystyle`. The `"scope:default"` value will cause the `scope` argument to use the default scope for the current context - as if the argument were not specified.
+可以被光线击中的对象列表。当指定时，`scope`会覆盖给定`raystyle`的默认范围。`"scope:default"`值将使`scope`参数使用当前上下文的默认范围 - 就像没有指定该参数一样。
 
-Allows an override of the [scope](../contexts/shading_contexts.html#scope) for ray-intersections.
-A special scope argument, `scope:self`, will match the currently
-shading object.
+允许覆盖光线交点的[范围](../contexts/shading_contexts.html#scope)。
+特殊的范围参数`scope:self`将匹配当前着色对象。
 
 "`currentobject`",
 `material`
 
-Used to specify what the current shading object is. For example, when used with the scope argument, `scope:self` will match the object passed in by this argument.
+用于指定当前着色对象是什么。例如，当与scope参数一起使用时，`scope:self`将匹配由此参数传入的对象。
 
 "`maxdist`",
 `float`
 `=-1`
 
-The maximum distance to search for objects. This can be used to limit the search of objects to nearby objects only. If the `maxdist` given is negative, then it will act as if there is no maximum distance.
+搜索对象的最大距离。这可以用于将对象搜索限制在附近对象。如果给定的`maxdist`为负值，则将视为没有最大距离。
 
-Allows an override of the maximum distance the ray can
-travel when testing for intersections. Some functions (such as
-[fastshadow](fastshadow.html "Sends a ray from the position P along the direction specified by the
-direction D.")) have the maximum distance implicitly defined (by
-the length of the ray) and should probably avoid using this
-option. However, this option can be used effectively when
-computing reflections, global illumination, refraction etc.
+允许覆盖测试交点时光线可以行进的最大距离。某些函数(如[fastshadow](fastshadow.html "从位置P沿方向D发送光线"))隐式定义了最大距离(由光线长度决定)，应避免使用此选项。然而，在计算反射、全局光照、折射等时，此选项可以有效地使用。
 
 "`variancevar`",
 `string`
 
-The name of a VEX export variable to use for variance anti-aliasing. The renderer compares the value with adjacent micropolygons in micropolygon rendering to decide what shading points need additional samples (using `vm_variance` [property](../../props/index.html "Properties let you set up flexible and powerful hierarchies of rendering, shading, lighting, and camera parameters.") as a threshold). If more samples are required, the algorithm takes samples up to the specified maximum ray samples.
+用于方差抗锯齿的VEX导出变量名称。渲染器将此值与微多边形渲染中的相邻微多边形进行比较，以决定哪些着色点需要额外采样(使用`vm_variance`[属性](../../props/index.html "属性允许您设置渲染、着色、照明和相机参数的灵活而强大的层次结构")作为阈值)。如果需要更多样本，算法将采样到指定的最大光线样本数。
 
-This variable must be imported from the hit surface, so it must be in the list of imported names (see “importing information back from the ray” below). If the named variable is not imported, this option will be ignored.
+此变量必须从击中表面导入，因此它必须在导入名称列表中(见下文"从光线导入信息")。如果未导入命名变量，此选项将被忽略。
 
-Variance antialiasing puts more samples in areas of the image with high variance, for example a sharp shadow edge. It is only used when `vm_dorayvariance` is enabled. Otherwise, only the min ray samples (or an explicitly supplied `"samples"` value) are used for antialiasing of the gather loop.
+方差抗锯齿在高方差区域(如锐利的阴影边缘)放置更多样本。仅当`vm_dorayvariance`启用时使用。否则，仅使用最小光线样本(或显式提供的`"samples"`值)进行收集循环的抗锯齿。
 
-Overrides the global variance control (mantra’s -v option)
-which is used to determine anti-aliasing quality of ray tracing.
-For more information please refer to the documentation on
-mantra.
+覆盖用于确定光线追踪抗锯齿质量的全局方差控制(mantra的-v选项)。更多信息请参考mantra文档。
 
 "`angle`",
 `float`
 `=0`
 
-The distribution angle (specified in radians). For gather(), rays will be distributed over this angle. For trace(), the angle is used to indicate the rate at which the filter width should increase with increasing intersection distance. Larger angles will cause farther hit surfaces to use larger derivatives, leading to improved texturing and displacement performance.
+分布角度(以弧度指定)。对于gather()，光线将分布在此角度上。对于trace()，该角度用于指示滤波器宽度应随交点距离增加而增加的速率。较大的角度会使更远的击中表面使用更大的导数，从而提高纹理和置换性能。
 
-To be effective, the samples parameter should also be specified.
+要有效，还应指定samples参数。
 
 "`samples`",
 `int|float`
 `=1`
 
-How many samples should be sent out to filter rays. For the
-irradiance and occlusion functions, specifying a samples
-parameter will override the default irradiance sampling.
+应发送多少样本以过滤光线。对于辐照度和遮挡函数，指定samples参数将覆盖默认的辐照度采样。
 
 "`environment`",
 `string`
 
-If the ray sent out to the scene misses everything, then
-it’s possible to specify an environment map to evaluate.
+如果发送到场景的光线未击中任何物体，则可以指定要评估的环境贴图。
 
-Using the ray’s direction, the environment map specified
-will be evaluated and the resulting color will be returned.
-Most likely, it will be necessary to specify a transform
-space for the environment map evaluations.
+使用光线的方向，将评估指定的环境贴图并返回结果颜色。很可能需要为环境贴图评估指定变换空间。
 
-In the case of refractlight and trace the Of and Af
-variables will be set to 0 regardless of the background
-color specified. the resulting color.
+对于refractlight和trace，无论指定的背景颜色如何，Of和Af变量都将设置为0。结果颜色。
 
-When an environment map is specified, the filtering options
-from texture() are also supported.
+当指定环境贴图时，还支持来自texture()的过滤选项。
 
-See [how to create an environment/reflection map](../../render/envmaps.html).
+参见[如何创建环境/反射贴图](../../render/envmaps.html)。
 
 "`envobject`",
 `string`
 
-If an environment map is used, the orientation of the
-environment map can be specified by transforming the ray
-into the space of another object, light or fog object in the
-scene. In Houdini, null objects can be used to specify the
-orientation. For example:
+如果使用环境贴图，可以通过将光线变换到场景中另一个对象、光源或雾对象的空间来指定环境贴图的方向。在Houdini中，可以使用空对象来指定方向。例如：
 
 ```vex
 Cf = R*reflectlight(bias, max(R), "environment", "map.rat", "envobject", "null_object_name");
-
 ```
 
 "`envlight`",
 `string`
 
-If an environment map is used, the orientation of the
-environment map can be specified by transforming the ray
-into the space of a light in the scene.
+如果使用环境贴图，可以通过将光线变换到场景中光源的空间来指定环境贴图的方向。
 
 "`envtint`",
 `vector`
 
-If an environment map is used, tint it with this color.
+如果使用环境贴图，用此颜色为其着色。
 
 "`background`",
 `vector`
 
-If a ray misses all objects, use this as the
-background color of the scene. In the case of refractlight and
-trace the Of and Af variables will be set to 0 regardless of the
-background color specified.
+如果光线未击中任何对象，则使用此作为场景的背景颜色。对于refractlight和trace，无论指定的背景颜色如何，Of和Af变量都将设置为0。
 
 "`distribution`",
 `string`
 
-**Functions**: [irradiance](irradiance.html "Computes irradiance (global illumination) at the point P with the normal N."), [occlusion](occlusion.html "Computes ambient occlusion.")
+**函数**: [irradiance](irradiance.html "在点P处计算具有法线N的辐照度(全局光照)"), [occlusion](occlusion.html "计算环境遮挡")
 
-Distribution for computing irradiance. The default is to use
-a cosine distribution (diffuse illumination). The possible
-values for the style are `"nonweighted"` for uniform sampling
-or `"cosine"` for cosine weighted sampling.
+计算辐照度的分布。默认为使用余弦分布(漫反射照明)。样式可能值为`"nonweighted"`表示均匀采样，或`"cosine"`表示余弦加权采样。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 surface
@@ -245,5 +190,4 @@ glass(float eta=1.3, bias = 0.005)
     Af = clamp(Kr + af*Kt, 0, 1);
     Of = 1;
 }
-
 ```

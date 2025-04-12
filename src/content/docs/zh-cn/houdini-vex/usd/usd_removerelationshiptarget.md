@@ -2,39 +2,38 @@
 title: usd_removerelationshiptarget
 order: 121
 ---
-| Since | 18.0 |
+
+| 版本 | 18.0 |
 | --- | --- |
 
 `int  usd_removerelationshiptarget(int stagehandle, string primpath, string name, string target)`
 
-This function removes a target from the primitive’s relationship.
+此函数用于从图元的关联关系中移除一个目标。
 
 `stagehandle`
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+要写入的舞台句柄。当前唯一有效值是`0`，表示节点中的当前舞台。（此参数未来可能用于支持写入其他舞台。）
 
 `primpath`
 
-The path to the primitive.
+图元的路径。
 
 `name`
 
-The relationship name.
+关联关系名称。
 
 `target`
 
-The the target path to remove.
+要移除的目标路径。
 
-Returns
+返回值
 
-The value of `stagehandle` on success or `-1` on failure.
+成功时返回`stagehandle`的值，失败时返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Remove the sphere from cube's relationship.
+// 从立方体的关联关系中移除球体
 usd_removerelationshiptarget(0, "/geo/cube", "relationship_name", "/geo/sphere");
 
 ```

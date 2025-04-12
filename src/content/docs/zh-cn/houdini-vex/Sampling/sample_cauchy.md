@@ -12,52 +12,45 @@ order: 6
 
 `<vector> sample_cauchy(<vector>u)`
 
-Sample multivariate Cauchy distributions with median 0 and scale 1. The
-distribution of these vectors is forced to be isotropic, i.e. rotating
-the distribution won’t change it, which can be useful in simulations.
-This wouldn’t be the case if one generated components of the vectors as
-independent samples of the univariate Cauchy distribution.
+从均值为0、尺度参数为1的多元柯西分布中采样。
+这些向量的分布被强制为各向同性，即旋转分布不会改变它，这在模拟中很有用。
+如果像单变量柯西分布那样独立采样向量分量，就不会保持这种特性。
 
 `u`
 
-A number, or multiple numbers, in the range `[0,1)`.
+一个或多个在`[0,1)`范围内的数值。
 
 `scale`
 
-The scale of the distribution, or 1 if not specified.
-This is the difference between the 50th percentile and the 75th percentile.
+分布的尺度参数，未指定时默认为1。
+这是第50百分位数与第75百分位数之间的差值。
 
 `origscale`
 
-The scale the distribution would have, were it not for `minvalue`
-and `maxvalue`, limiting the range.
+不考虑`minvalue`和`maxvalue`范围限制时的原始尺度参数。
 
 `minvalue`,`maxvalue`
 
-When given, instead of sampling the full Cauchy distribution,
-the distribution with its range limited to `[minvalue,maxvalue]` will be
-sampled.
+当给定这些参数时，将不采样完整的柯西分布，
+而是采样范围限制在`[minvalue,maxvalue]`内的分布。
 
-Returns
+返回值
 
-Monotonically increasing value with respect to `u`.
+相对于`u`单调递增的值。
 
-Samples the Cauchy distribution with median zero and the specified `scale`,
-optionally with a `minvalue` and `maxvalue`.
-Given uniform random `u` values in `[0,1)`, this will return Cauchy
-distributed random numbers.
+从均值为零、指定`scale`的柯西分布中采样，
+可选择带有`minvalue`和`maxvalue`限制。
+给定`[0,1)`范围内的均匀随机值`u`，将返回柯西分布的随机数。
 
-Note that without limits, the Cauchy distribution has
-no defined mean or variance, which can cause statistical problems if not
-dealt with carefully.
+注意，在没有限制的情况下，柯西分布没有定义均值或方差，
+如果不谨慎处理可能会导致统计问题。
 
-To add a maximum distance from the origin, while keeping the distribution
-isotropic, use:
+要添加距原点的最大距离限制，同时保持分布的各向同性，可使用：
 
 ```vex
 !vex
 sample_cauchy(1,0,maxdist,u.x) * sample_direction_uniform(set(u.y,u.z))
 ```
 
-The 2D Cauchy distribution is the distribution of photons hitting a plane,
-coming from a point light that is distance `scale` from the plane.
+二维柯西分布是光子击中平面的分布，
+这些光子来自距离平面`scale`处的点光源。

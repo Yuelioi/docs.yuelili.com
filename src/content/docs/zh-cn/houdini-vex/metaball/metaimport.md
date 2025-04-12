@@ -2,38 +2,33 @@
 title: metaimport
 order: 1
 ---
+
 `int  metaimport(int handle, string attrib, vector P, <type>&value)`
 
 `<type>[] metaimport(string file, string attribute, vector P)`
 
-Rather than iterating over all the values, this form imports the values from all metaballs simultaneously. As with the scalar form, you can use the keywords…
+这种形式不是逐个迭代所有值，而是同时从所有元球中导入值。与标量形式一样，您可以使用以下关键字...
 
 - `meta:density`
 - `meta:prim`
 - `meta:transform`
 
-…to import non-attribute information from the metaballs.
+...来从元球中导入非属性信息。
 
-Once you get a handle to a metaball using [metastart](metastart.html "Open a geometry file and return a handle for the metaballs of
-interest, at the position p.") and
-[metanext](metanext.html "Iterate to the next metaball in the list of metaballs returned by the metastart() function."), you can query attributes of the metaball with
-`metaimport`.
+当您使用[metastart](metastart.html "打开几何体文件并返回在位置p处感兴趣的元球的句柄。")和[metanext](metanext.html "迭代到由metastart()函数返回的元球列表中的下一个元球。")获取元球句柄后，就可以用`metaimport`查询元球的属性。
 
-There are three “special” attributes you can query:
+有三种"特殊"属性可以查询：
 
-`float meta:density` :
-The density of the current metaball
+`float meta:density`：
+当前元球的密度
 
-`float meta:prim` :
-The primitive number of the current metaball
+`float meta:prim`：
+当前元球的图元编号
 
-`matrix meta:transform` :
-The transform associated with the current metaball. Applying the
-inverse of this transform will transform a point into the “space” of
-the metaball.
+`matrix meta:transform`：
+与当前元球关联的变换矩阵。应用此变换的逆矩阵可以将点转换到元球的"空间"中。
 
-For example, the [metaweight](metaweight.html "Returns the metaweight of the geometry at position p.") function can be expressed in the following
-way:
+例如，[metaweight](metaweight.html "返回几何体在位置p处的元权重。")函数可以用以下方式表示：
 
 ```vex
 float
@@ -51,13 +46,9 @@ density += tmp;
 }
 return density;
 }
-
 ```
 
-The attributes evaluated are un-premultiplied by the weight of the
-metaball at the position and must be multiplied for blending. For
-example, to evaluate a vector attribute (say color) on metaballs, the
-following function could be used:
+评估的属性不会被该位置元球权重预乘，必须进行乘法运算才能混合。例如，要评估元球上的矢量属性（比如颜色），可以使用以下函数：
 
 ```vex
 vector
@@ -78,9 +69,6 @@ result += density * tmp;
 }
 return result;
 }
-
 ```
 
-In the i3d context, there is a default metaball geometry (specified
-by the `-g` option on the command line to the i3dgen program). If the
-filename is an empty string, the default geometry will be used.
+在i3d上下文中，有一个默认的元球几何体（由i3dgen程序的命令行`-g`选项指定）。如果文件名为空字符串，则将使用默认几何体。

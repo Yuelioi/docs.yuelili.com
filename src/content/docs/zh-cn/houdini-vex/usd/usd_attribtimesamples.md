@@ -2,44 +2,41 @@
 title: usd_attribtimesamples
 order: 21
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `float [] usd_attribtimesamples(<stage>stage, string primpath, string name)`
 
-This function returns an array of time codes at which the attribute values are
-authored.
+此函数返回记录属性值的时间码数组。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号的整数（从0开始）以读取对应输入的场景。该整数等效于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+也可用此参数引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已处理场景（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+图元路径。
 
 `name`
 
-Attribute name.
+属性名称。
 
-Returns
+返回值
 
-The array of time codes at which the attribute values are authored, or an empty array if the attribute does not exist or has no time samples.
+记录属性值的时间码数组，若属性不存在或无时间采样则返回空数组。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the time codes of a foo attribute.
+// 获取foo属性的时间码
 float time_codes[] = usd_attribtimesamples(0, "/geo/cube", "foo");
 
 ```
 
 ```vex
-// Get attribute values at authored time samples.
+// 获取已记录时间采样点的属性值
 float[] usd_attribtimesamplevalues(const int input; const string primpath, attribname)
 {
     float result[];

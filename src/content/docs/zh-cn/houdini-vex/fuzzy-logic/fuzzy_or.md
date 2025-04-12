@@ -6,4 +6,4 @@ order: 8
 
 `float  fuzzy_or(float a, float b, ...)`
 
-Returns the fuzzy “OR” (Zadeh OR) of the input fuzzy values.
+返回输入模糊值的模糊"或"（Zadeh OR）运算结果。

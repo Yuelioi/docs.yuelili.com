@@ -4,6 +4,4 @@ order: 20
 ---
 `float  distance_pointray(vector Q, vector O, vector D)`
 
-This function returns the closest distance between the point Q and the
-semi-finite ray parallel to D starting at point O. The direction
-vector D does not have to be normalized.
+该函数返回点Q与从点O出发、平行于向量D的半无限射线之间的最短距离。方向向量D无需归一化。

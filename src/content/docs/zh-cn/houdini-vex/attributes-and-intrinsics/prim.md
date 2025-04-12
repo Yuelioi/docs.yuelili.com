@@ -1,5 +1,5 @@
 ---
-title: prim
+title: prim函数
 order: 44
 ---
 `<type> prim(<geometry>geometry, string attribute_name, int primnumber)`
@@ -8,18 +8,18 @@ order: 44
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数也可以是一个指定几何体文件（例如`.bgeo`）的字符串路径。在Houdini内部运行时，可以是`op:/path/to/sop`形式的操作符路径引用。
 
 `attribute_name`
 
-The name of the attribute (or intrinsic) to read.
+要读取的属性（或固有属性）名称。
 
 `primnumber`
 
-The primitive number to read the attribute on.
+要读取属性的图元编号。
 
-Returns
+返回值
 
-The value of the given attribute on the given point number, or `0` if the attribute or point do not exist.
+返回指定图元编号上对应属性的值，如果属性或图元不存在则返回`0`。

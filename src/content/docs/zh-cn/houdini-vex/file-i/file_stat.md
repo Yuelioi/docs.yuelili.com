@@ -1,87 +1,87 @@
----
-title: file_stat
-order: 1
----
-| On this page | * [Better file_stat functions](#better) * [Examples](#examples) |
-| --- | --- |
+---  
+title: file_stat  
+order: 1  
+---  
 
-`int  file_stat(string filename, int &stat_data[], ...)`
+| 本页内容 | * [更优的file_stat函数](#better) * [示例](#examples) |  
+| --- | --- |  
 
-Overwrites an integer array with data representing the file system
-information for the given file.
+`int  file_stat(string filename, int &stat_data[], ...)`  
 
-**Do not use this function**. The `file.h` include file has [more convenient versions of this function](file_stat.html#better) which return a struct.
+用表示给定文件系统信息的整型数组覆盖原数组。  
 
-"`usecache`",
-`int`
-`=0`
+**请勿使用此函数**。`file.h`头文件提供了[更便捷的版本](file_stat.html#better)，该版本会返回结构体。  
 
-If this option is on, the function will use a persistent cache to store results of the function. The cache is persistent over the entire run of the application.
+"`usecache`",  
+`int`  
+`=0`  
 
-Returns
+若启用此选项，函数将使用持久化缓存存储结果。该缓存在整个应用程序运行期间持续有效。  
 
-`1` if the path is valid or `0` otherwise.
+返回值  
 
-Better file_stat functions
+路径有效时返回`1`，否则返回`0`。  
 
-## better
+更优的file_stat函数  
 
-Instead of using the built-in `file_stat`, add this line at the top of the file:
+## better  
 
-```vex
-#include <file.h>
+建议在文件顶部添加以下代码替代内置的`file_stat`：  
 
-```
+```vex  
+#include <file.h>  
 
-Then use the `file_stat` or `cached_file_stat` functions from that file. They take a file path string and return a struct (defined in `file.h`) with the following members:
+```  
 
-| `.st_size` | The size of the file in bytes. |
-| --- | --- |
-| `.st_sizemb` | The size of the file in megabytes. |
-| `.st_mtime` | The last modified time of this file. |
-| `->isValid()` | Return 1 if the file path refers to a valid file. |
-| `->isFile()` | Returns 1 if the file path refers to a file (rather than a directory). |
-| `->isDir()` | Returns 1 if the file path refers to a directory (rather than a file). |
-| `->isRead()` | Returns 1 if the file is readable. |
-| `->isWrite()` | Returns 1 if the file is writable. |
-| `->isExecute()` | Returns 1 if the file is executable. |
+随后使用该文件中的`file_stat`或`cached_file_stat`函数。这些函数接收文件路径字符串，并返回包含以下成员的结构体（定义于`file.h`）：  
 
-Examples
+| `.st_size` | 文件字节大小 |  
+| --- | --- |  
+| `.st_sizemb` | 文件兆字节大小 |  
+| `.st_mtime` | 文件最后修改时间 |  
+| `->isValid()` | 当文件路径有效时返回1 |  
+| `->isFile()` | 当路径指向文件（而非目录）时返回1 |  
+| `->isDir()` | 当路径指向目录（而非文件）时返回1 |  
+| `->isRead()` | 当文件可读时返回1 |  
+| `->isWrite()` | 当文件可写时返回1 |  
+| `->isExecute()` | 当文件可执行时返回1 |  
 
-## examples
+示例  
 
-This simple [snippet](../snippets.html) checks if a texture file exists, and if so, colors points green instead of red:
+## examples  
 
-```vex
-#include <file.h>
+这个简单的[代码片段](../snippets.html)检查纹理文件是否存在，若存在则将点颜色从红色改为绿色：  
 
-v@Cd = {1,0,0};
-stat s = file_stat("$HH/pic/Mandril.pic");
-if (s->isValid())
-   v@Cd = {0,1,0};
+```vex  
+#include <file.h>  
 
-```
+v@Cd = {1,0,0};  
+stat s = file_stat("$HH/pic/Mandril.pic");  
+if (s->isValid())  
+   v@Cd = {0,1,0};  
 
-This example defines `file_size`, `file_exists`, and `file_isdir` convenience functions using the information from `file_stat`.
+```  
 
-```vex
-#include <file.h>
+此示例利用`file_stat`信息定义了`file_size`、`file_exists`和`file_isdir`便捷函数：  
 
-int file_size(string name)
-{
-    stat        info(name);
-    return file_stat(name)->st_size;
-}
+```vex  
+#include <file.h>  
 
-int file_exists(string name)
-{
-    // Use cached file_stat() results
-    return cached_file_stat(name)->isValid();
-}
+int file_size(string name)  
+{  
+    stat        info(name);  
+    return file_stat(name)->st_size;  
+}  
 
-int file_isdir(string name)
-{
-    return file_stat(name)->isDir();
-}
+int file_exists(string name)  
+{  
+    // 使用缓存的file_stat()结果  
+    return cached_file_stat(name)->isValid();  
+}  
+
+int file_isdir(string name)  
+{  
+    return file_stat(name)->isDir();  
+}  
 
 ```

@@ -6,10 +6,10 @@ order: 31
 
 `vector  toNDC(string camera_name, vector point)`
 
-Transforms a position to the normal device coordinates for a camera.
-The point should be in the local space of the object (i.e. not in the space of the camera).
+将位置转换为相机的标准化设备坐标。
+该点应位于对象的局部空间中（即不在相机空间中）。
 
-toNDC() will return values above and below the 0-1 range outside the view of the camera or light. To the right of the camera are values of 1+ and to the left are values of 0-. The same goes for the range above and below the camera or light.
+toNDC() 会返回超出相机或灯光视野范围外的0-1范围之外的值。相机右侧的值大于1，左侧的值小于0。同理适用于相机或灯光上方和下方的范围。
 
-Transforms a position into normal device coordinates. This space is only
-well-defined for the [shading contexts](../contexts/shading_contexts.html).
+将位置转换为标准化设备坐标。该空间仅
+在[着色上下文](../contexts/shading_contexts.html)中有明确定义。

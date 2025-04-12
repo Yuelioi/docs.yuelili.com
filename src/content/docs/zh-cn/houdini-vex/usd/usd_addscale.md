@@ -2,41 +2,39 @@
 title: usd_addscale
 order: 10
 ---
-| Since | 18.0 |
+| 版本 | 18.0 |
 | --- | --- |
 
 `int  usd_addscale(int stagehandle, string primpath, string suffix, vector scale)`
 
-This function applies a scale to the primitive. It creates and sets a value of a transform operation attribute that defines the scale, and appends it to the primitive’s transform order.
+此函数为图元应用缩放变换。它会创建并设置一个定义缩放操作的变换属性值，并将其附加到图元的变换顺序中。
 
 `stagehandle`
 
-A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)
+要写入的舞台句柄。目前唯一有效值是`0`，表示节点中的当前舞台。（此参数未来可能用于支持写入其他舞台）
 
 `primpath`
 
-The path to the primitive.
+图元的路径。
 
 `suffix`
 
-The transform operation suffix.
+变换操作后缀。
 
-USD primitives are transformed in space by a series of transform operations whose full names are sequentially listed in the `xformOpOrder` attribute. Full names are namespaced, encode the operation transform type (e.g., translation or rotation), and can also contain a suffix. If primitive has a few operations of the same type, it’s necessary to specify the suffix to differentiate between them. This parameter specifies such a suffix.
+USD图元通过一系列变换操作在空间中进行变换，这些操作的全名按顺序列在`xformOpOrder`属性中。全名采用命名空间格式，编码了变换操作类型（如平移或旋转），并可包含后缀。如果图元有多个相同类型的操作，则需要指定后缀以区分它们。此参数即用于指定该后缀。
 
 `scale`
 
-The the scale factors along each of the principle axes.
+沿各主轴方向的缩放因子。
 
-Returns
+返回值
 
-The value of `stagehandle` on success or `-1` on failure.
+成功时返回`stagehandle`的值，失败时返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Scale the cube
+// 缩放立方体
 usd_addscale(0, "/geo/cube", "my_scale", {0.25, 0.5, 2});
 
 ```

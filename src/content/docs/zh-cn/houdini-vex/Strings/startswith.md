@@ -4,4 +4,4 @@ order: 37
 ---
 `int  startswith(string str, string startswith)`
 
-Returns 1 if the string starts with the given string. 0 otherwise.
+如果字符串以给定字符串开头则返回1，否则返回0。

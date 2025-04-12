@@ -2,7 +2,7 @@
 title: cregioncapturetransform
 order: 21
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `matrix  cregioncapturetransform(string path)`
@@ -13,9 +13,9 @@ order: 21
 
 `matrix  cregioncapturetransform(int op_id, float time)`
 
-Returns the capture transform associated with a Capture Region SOP.
-The transform is built from the parameters of the SOP without cooking the SOP.
-It is possible to specify the time to evaluate the transform at (in seconds, not frames).
+返回与捕获区域SOP关联的捕获变换矩阵。
+该变换矩阵直接从SOP的参数构建，无需实际计算该SOP。
+可以指定评估变换的时间点（以秒为单位，而非帧数）。
 
-Note
-The op: syntax can be used to simulate this behavior using the standard transform functions.
+注意
+使用标准的变换函数配合op:语法可以模拟此行为。

@@ -2,17 +2,18 @@
 title: agentcurrentlayer
 order: 22
 ---
-Warning
-This function has been deprecated. Use [agentcurrentlayers](agentcurrentlayers.html "Returns the names of an agent primitive’s current layers.") instead.
 
-Returns an empty string if `prim` is out of range or is not an agent primitive.
+警告
+该函数已被弃用。请改用 [agentcurrentlayers](agentcurrentlayers.html "返回代理基元当前图层的名称")。
+
+如果`prim`超出范围或不是代理基元，则返回空字符串。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `prim`
 
-The primitive number.
+基元编号。

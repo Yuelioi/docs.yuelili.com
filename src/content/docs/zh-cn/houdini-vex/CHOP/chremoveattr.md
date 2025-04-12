@@ -2,7 +2,8 @@
 title: chremoveattr
 order: 19
 ---
-| Context(s) | [chop](../contexts/chop.html) |
+
+| 上下文 | [chop](../contexts/chop.html) |
 | --- | --- |
 
 `int  chremoveattr(string attrclass, string attrname)`
@@ -13,44 +14,44 @@ order: 19
 
 `int  chremoveattr(string attrnames[])`
 
-CHOP attributes store metadata on clips, channels, samples, or channel/sample pairs.
+CHOP属性用于存储片段(Clip)、通道(Channel)、采样(Sample)或通道/采样对(Channel/Sample Pair)的元数据。
 
-This function removes CHOP attribute.
+此函数用于移除CHOP属性。
 
 `attribclass`
 
-The “level” of the attribute:
+属性的"级别"：
 
 `"clip"`
 
-An attribute on a whole clip.
+整个片段上的属性。
 
 `"channel"`
 
-An attribute on a whole channel.
+整个通道上的属性。
 
 `"sample"`
 
-An attribute on a sample (across all channels).
+采样上的属性(跨所有通道)。
 
 `"channelsample"`
 
-An attribute on a specific channel/sample pair.
+特定通道/采样对上的属性。
 
 `""`
 
-Pass an empty string to have the function figure out the class based on the other arguments.
+传入空字符串让函数根据其他参数自动判断类别。
 
-Signatures that don’t have this parameter act the same as if you passed the empty string.
+不包含此参数的签名与传入空字符串的行为相同。
 
 `attrname`
 
-The name of the attribute to remove.
+要移除的属性名称。
 
 `attrnames`
 
-The names of the attributes to remove.
+要移除的属性名称数组。
 
-Returns
+返回值
 
-Returns `1` if the operation succeeded, or `0` otherwise.
+操作成功返回`1`，否则返回`0`。

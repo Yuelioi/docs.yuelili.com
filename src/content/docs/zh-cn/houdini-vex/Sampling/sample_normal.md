@@ -1,5 +1,5 @@
 ---
-title: sample_normal
+title: 正态分布采样
 order: 24
 ---
 `float  sample_normal(float u)`
@@ -16,43 +16,32 @@ order: 24
 
 `u`
 
-A number, or multiple numbers, in the range `[0,1)`.
+一个或多个在 `[0,1)` 范围内的数值。
 
 `mean`
 
-The mean of the distribution, or 0 if not specified.
+分布的均值，未指定时默认为0。
 
 `origmean`
 
-The mean the distribution would have, were it not for `minvalue`
-and `maxvalue`, limiting the range.
+不考虑 `minvalue` 和 `maxvalue` 范围限制时的原始分布均值。
 
 `stddev`
 
-The standard deviation (scale) of the distribution, or 1 if not specified.
+分布的标准差（尺度参数），未指定时默认为1。
 
 `origstddev`
 
-The standard deviation (scale) the distribution would have, were it
-not for `minvalue` and `maxvalue`, limiting the range.
+不考虑 `minvalue` 和 `maxvalue` 范围限制时的原始分布标准差。
 
 `minvalue`,`maxvalue`
 
-When given, instead of sampling the full normal distribution,
-the distribution with its range limited to `[minvalue,maxvalue]` will be
-sampled.
+当提供这两个参数时，将采样范围限制在 `[minvalue,maxvalue]` 内的正态分布。
 
-Samples the normal distribution with the specified `mean` and `stddev`, optionally
-with a `minvalue` and `maxvalue`.
-Given uniform random `u` values in `[0,1)`, this will return normally
-distributed random numbers. The return value will be monotone increasing
-with respect to `u`.
+根据指定的 `mean` 和 `stddev` 参数采样正态分布，可选择性地使用 `minvalue` 和 `maxvalue` 限制范围。
+给定 `[0,1)` 区间内的均匀随机数 `u`，该函数将返回符合正态分布的随机数。返回值相对于 `u` 是单调递增的。
 
-The `vector2`, `vector`, and `vector4` versions
-return multiple samples with mean 0 and standard deviation 1. The
-distribution of these vectors is naturally isotropic, i.e. rotating
-the distribution won’t change it, which can be useful in simulations.
-To add a maximum distance from the origin, while keeping the distribution
-isotropic, use:
+`vector2`、`vector` 和 `vector4` 版本返回均值为0、标准差为1的多个采样值。这些向量的分布具有天然的等向性（isotropic），即旋转分布不会改变其特性，这在模拟中很有用。
+若要在保持分布等向性的同时限制与原点的最大距离，可使用：
 
 `sample_normal(0,1,0,maxdist,u.x) * sample_direction_uniform(set(u.y,u.z))`

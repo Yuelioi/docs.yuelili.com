@@ -4,4 +4,4 @@ order: 16
 ---
 `string  itoa(int number)`
 
-Converts an integer to a string.
+将整数转换为字符串。

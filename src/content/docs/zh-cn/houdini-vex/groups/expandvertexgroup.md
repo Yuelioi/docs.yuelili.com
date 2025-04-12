@@ -1,18 +1,19 @@
 ---
-title: expandvertexgroup
+title: 扩展顶点组
 order: 4
 ---
-| Since | 17.0 |
+
+| 始于版本 | 17.0 |
 | --- | --- |
 
-`int [] expandvertexgroup(<geometry>geometry, string groupname)`
+`int [] expandvertexgroup(<geometry>几何体, string 组名)`
 
-`int [] expandvertexgroup(<geometry>geometry, string groupname, string mode)`
+`int [] expandvertexgroup(<geometry>几何体, string 组名, string 模式)`
 
-This can use ad-hoc groups, like `0v3 1v2`.
-This uses the SOP group naming convention, in particular that an empty string means *all*.
+该函数可使用临时组，例如 `0v3 1v2`。
+使用SOP组命名约定，特别说明空字符串表示*所有*。
 
-`mode` can be `ordered`, `unordered` or `split`.
-`ordered` is the default mode and will return numbers in the order of appearance in the string, but only for numbers. The order won’t be kept when using expressions such as `@Cd.x>0.5`. The same number won’t appear twice in returned array.
-`unordered` mode returns the resolved group following sorted point numbers order.
-`split` mode starts by splitting the `groupname` string on `@` characters and then does one resolution per sub string. The order is kept between the sub strings, but will fallback to unordered when resolving a group expression. This same number can appear multiple time when resolving using this mode.
+`模式` 可以是 `ordered`（有序）、`unordered`（无序）或 `split`（分割）。
+`ordered` 是默认模式，将按照字符串中出现的顺序返回数字（仅限数字）。当使用类似 `@Cd.x>0.5` 的表达式时不会保持顺序。返回的数组中不会出现重复数字。
+`unordered` 模式会按照点编号排序顺序返回解析后的组。
+`split` 模式会先将 `组名` 字符串按 `@` 字符分割，然后对每个子字符串进行单独解析。子字符串之间的顺序会保留，但在解析组表达式时会回退到无序模式。使用此模式解析时，同一个数字可能出现多次。

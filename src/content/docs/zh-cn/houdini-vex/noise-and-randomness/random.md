@@ -1,7 +1,8 @@
 ---
-title: random
+title: 随机函数
 order: 30
 ---
+
 `float  random(float|intposition)`
 
 `vector  random(float|intposition)`
@@ -10,7 +11,7 @@ order: 30
 
 `vector4  random(float|intposition)`
 
-Generate 1D, 2D, 3D, or 4D noise based on a 1D position.
+基于一维位置生成1D、2D、3D或4D噪声。
 
 `float  random(float|intxpos, float|intypos)`
 
@@ -18,7 +19,7 @@ Generate 1D, 2D, 3D, or 4D noise based on a 1D position.
 
 `vector4  random(float|intxpos, float|intypos)`
 
-Specify a 2D position in the noise field using two numbers.
+使用两个数字指定噪声场中的二维位置。
 
 `float  random(vector position)`
 
@@ -26,7 +27,7 @@ Specify a 2D position in the noise field using two numbers.
 
 `vector4  random(vector position)`
 
-Specify a 3D position in the noise field using a vector.
+使用向量指定噪声场中的三维位置。
 
 `float  random(vector4 position)`
 
@@ -34,16 +35,10 @@ Specify a 3D position in the noise field using a vector.
 
 `vector4  random(vector4 position)`
 
-Specify a 4D position in the noise field using a vector4.
+使用vector4指定噪声场中的四维位置。
 
-Generate a random number based on the integer position in `N` dimensional space
-(where N is 1 to 4 dimensions). Unlike the noise functions, the random
-functions do not smoothly interpolate the random values between integer
-lattice points. The `random()` functions are very efficient ways of doing
-something like `noise(floor(position))`.
+基于N维空间(1到4维)中的整数位置生成随机数。与噪声函数不同，随机函数不会在整数格点之间平滑插值随机值。`random()`函数是实现类似`noise(floor(position))`功能的高效方式。
 
-While `random()` takes floats, it only varies the random effect for
-integer changes. To have a random result that varies with even the
-smallest float changes, use `rand()`.
+虽然`random()`接受浮点数，但只有整数变化才会改变随机效果。若需要随机结果随任意微小浮点变化而变化，请使用`rand()`。
 
-The result of this is in the half-open interval `[0, 1)`.
+该函数的结果在半开区间`[0, 1)`内。

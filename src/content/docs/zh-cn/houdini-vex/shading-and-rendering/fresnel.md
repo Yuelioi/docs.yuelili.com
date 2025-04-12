@@ -1,20 +1,14 @@
----
-title: fresnel
-order: 7
----
-`void  fresnel(vector i, vector n, float eta, float &kr, float &kt)`
+---  
+title: 菲涅尔反射  
+order: 7  
+---  
 
-`void  fresnel(vector i, vector n, float eta, float &kr, float &kt, vector &R, vector &T)`
+`void  fresnel(vector i, vector n, float eta, float &kr, float &kt)`  
 
-Computes the fresnel reflection/refraction contributions given an
-incoming vector, surface normal (both normalized), and an index of
-refraction (eta). The amount of reflected light will be returned in
-kr, and the amount of transmitted light will be returned in kt.
-Optionally, the reflection and transmission vectors can be returned in
-the R and T variables. The R and <type> variables will be normalized
-vectors on exit.
+`void  fresnel(vector i, vector n, float eta, float &kr, float &kt, vector &R, vector &T)`  
 
-eta is a relative index of refraction, the ratio between
-the interior and exterior index of refraction, where the exterior
-is defined by the direction of the normals (normals point away from
-the interior).
+根据入射向量、表面法线（均已归一化）和折射率（eta），计算菲涅尔反射/折射的贡献值。反射光量将通过kr参数返回，透射光量将通过kt参数返回。  
+
+可选地，反射向量和透射向量可以通过R和T变量返回。退出时，R和<type>变量将是归一化的向量。  
+
+eta是相对折射率，即内部折射率与外部折射率的比值，其中外部由法线方向定义（法线指向远离内部的方向）。

@@ -2,37 +2,35 @@
 title: usd_isprimvar
 order: 78
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `int  usd_isprimvar(<stage>stage, string primpath, string name)`
 
-This function checks whether the primitive has a primvar of the given name.
+此函数检查图元是否具有指定名称的primvar属性。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+当在节点上下文（如wrangle LOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取对应输入的stage。该整数等价于引用特定输入的字符串形式，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点的已处理stage（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+图元路径。
 
 `name`
 
-Primvar name (without namespace).
+Primvar属性名（不包含命名空间）。
 
-Returns
+返回值
 
-`1` if the primvar exists directly on the given primitive, or `0` otherwise.
+如果primvar直接存在于指定图元上则返回`1`，否则返回`0`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Check if the sphere primitive has a primvar "some_primvar".
+// 检查球体图元是否具有名为"some_primvar"的primvar属性
 int is_primvar = usd_isprimvar(0, "/geometry/sphere", "some_primvar");
 
 ```

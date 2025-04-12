@@ -2,41 +2,40 @@
 title: usd_pointinstance_getbbox
 order: 98
 ---
-| Since | 18.0 |
+
+| 版本 | 18.0 |
 | --- | --- |
 
 `int  usd_pointinstance_getbbox(<stage>stage, string primpath, int instance_index, string purpose, vector &min, vector &max)`
 
-This function returns an axis-aligned bounding box for the given instance. The point corresponding to the minimum corner of the bounding box will be returned in min, while the maximum will be in max. Always returns 1.
+该函数返回指定实例的轴对齐边界框。边界框的最小角点坐标将通过min参数返回，最大角点坐标通过max参数返回。该函数始终返回1。
 
 `<stage>`
 
-When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.
+在节点上下文（如wrangle LOP节点）中运行时，此参数可以是表示输入编号的整数（从0开始），用于读取对应输入的stage。该整数等价于使用字符串形式引用特定输入，例如"opinput:0"。
 
-You can also use this argument to refer to a USD file (e.g., “/path/to/file.usd”), or to another LOP node’s cooked stage using the `op:` as the path prefix (e.g., “op:/stage/lop_node”).
+您也可以使用此参数引用USD文件（如"/path/to/file.usd"），或通过`op:`路径前缀引用其他LOP节点处理完成的stage（如"op:/stage/lop_node"）。
 
 `primpath`
 
-The path to the primitive.
+目标图元的路径。
 
 `instance_index`
 
-The index of the instance whose bounding box to return.
+需要获取边界框的实例索引。
 
 `purpose`
 
-The primitive’s purpose for which to return the bounding box (e.g., “render”).
+需要获取边界框的图元用途（例如"render"）。
 
-Returns
+返回值
 
-Always 1.
+始终返回1。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
-// Get the bounding box of the first instanced sphere.
+// 获取第一个实例化球体的边界框
 vector min, max;
 usd_pointinstance_getbbox(0, "/src/instanced_spheres", 0, "render", min, max);
 

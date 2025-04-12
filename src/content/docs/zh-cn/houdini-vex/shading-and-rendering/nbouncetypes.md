@@ -1,9 +1,10 @@
 ---
-title: nbouncetypes
+title: 反弹类型数量
 order: 54
 ---
+
 `int  nbouncetypes()`
 
-Return the number of different bounce types supported by the renderer.
+返回渲染器支持的不同反弹类型的数量。
 
-See [bouncemask](bouncemask.html) for information on component label bitmasks.
+关于组件标签位掩码的信息，请参阅[bouncemask](bouncemask.html)。

@@ -1,36 +1,34 @@
 ---
-title: primvertex
+title: primvertex函数
 order: 28
 ---
 `int  primvertex(<geometry>geometry, int primnum, int vertex)`
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数也可以是一个指定几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`这样的引用路径。
 
 `primnum`
 
-The primitive number to get a vertex from.
+要获取顶点的基元编号。
 
 `vertex`
 
-The vertex number inside the primitive. 0 is the first vertex.
+基元内部的顶点编号。0表示第一个顶点。
 
-Returns
+返回值
 
-The linear vertex index corresponding to the given primitive vertex.
-Returns `-1` if the function cannot find the linear vertex index.
+返回与给定基元顶点对应的线性顶点索引。
+如果函数无法找到线性顶点索引，则返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 int linearvtx;
 
-// Get the linear vertex value of vertex 2 of primitive 3.
+// 获取基元3中顶点2的线性顶点值
 linearvtx = primvertex("defgeo.bgeo", 3, 2);
 
 ```

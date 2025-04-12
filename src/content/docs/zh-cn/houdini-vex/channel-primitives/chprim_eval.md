@@ -4,16 +4,16 @@ order: 4
 ---
 `float  chprim_eval(<geometry>geometry, int prim, float time)`
 
-Returns the evaluated value of the channel primitive at the given time.
+返回通道图元在指定时间的评估值。
 
 `geohandle`
 
-A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](geoself.html "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
+要写入的几何体句柄。当前唯一有效值是 `0` 或 [geoself](geoself.html "返回当前节点几何体的句柄")，表示节点中的当前几何体。（该参数未来可能用于支持写入其他几何体。）
 
 `prim`
 
-The primitive number of the channel primitive to evaluate.
+要评估的通道图元的图元编号。
 
 `time`
 
-The time in seconds at which to evaluate.
+评估时间（以秒为单位）。

@@ -2,18 +2,18 @@
 title: hasmetadata
 order: 11
 ---
-| Context(s) | [cop2](../contexts/cop2.html) |
+
+| 上下文 | [cop2](../contexts/cop2.html) |
 | --- | --- |
 
 `int  hasmetadata(int opinput, string name)`
 
-This function checks if metadata named `name` exists on the COP attached to
-the VEX COP’s input `opinput`. If it exists then 1 is returned, otherwise 0.
+此函数用于检查VEX COP输入`opinput`所连接的COP上是否存在名为`name`的元数据。如果存在则返回1，否则返回0。
 
 `opinput`
 
-The input number to read from, starting from 0. For example, the first input is 0, the second input is 1, and so on.
+要读取的输入编号，从0开始计数。例如，第一个输入为0，第二个输入为1，依此类推。
 
 `name`
 
-The name of the metadata to check.
+要检查的元数据名称。

@@ -2,10 +2,10 @@
 title: mattrib
 order: 1
 ---
-| Context(s) | [image3d](../contexts/image3d.html) |
+| 上下文 | [image3d](../contexts/image3d.html) |
 | --- | --- |
 
 `<type> mattrib(string name, vector P)`
 
-Note
-The `image3d` context is deprecated. Use volumes instead.
+注意
+`image3d` 上下文已弃用。请改用体积(volumes)。

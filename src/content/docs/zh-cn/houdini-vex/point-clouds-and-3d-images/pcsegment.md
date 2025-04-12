@@ -2,7 +2,7 @@
 title: pcsegment
 order: 29
 ---
-| Since | 18.0 |
+| 始于版本 | 18.0 |
 | --- | --- |
 
 `int [] pcsegment(<geometry>geometry, string PChannel, vector P0, vector P1, float max_distance, int maxpoints)`
@@ -15,12 +15,12 @@ order: 29
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号的整数（从0开始）以读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
-These functions open a geometry file and return a list of points within max_distance of the line segment passing from P0 to P1.
+这些函数会打开一个几何体文件，并返回距离从P0到P1的线段不超过max_distance的点列表。
 
-The `ptgroup` is a point group that limits the points to search. This is a SOP-style group pattern, so can be something like `0-10` or `@Cd.x>0.5`. A blank string is treated as matching all points.
+`ptgroup`是一个限制搜索范围的点组。这是SOP风格的组模式，因此可以是类似`0-10`或`@Cd.x>0.5`的内容。空字符串被视为匹配所有点。
 
-The function also optionally takes a float array `distances`, which it modifies with the distances to each point.
+该函数还可以选择性地接受一个浮点数组`distances`，并用每个点的距离来修改它。

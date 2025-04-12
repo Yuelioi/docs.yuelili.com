@@ -2,8 +2,9 @@
 title: osd_limitsurfacevertex
 order: 4
 ---
-This is like [osd_limitsurface](osd_limitsurface.html "Evaluates a point attribute at the subdivision limit surface using Open Subdiv.") but for vertex attributes instead of point attributes.
-See [osd_limitsurface](osd_limitsurface.html "Evaluates a point attribute at the subdivision limit surface using Open Subdiv.") for more information.
+
+该函数类似于 [osd_limitsurface](osd_limitsurface.html "使用Open Subdiv在细分极限曲面上评估点属性。")，但针对的是顶点属性而非点属性。
+更多信息请参阅 [osd_limitsurface](osd_limitsurface.html "使用Open Subdiv在细分极限曲面上评估点属性。")。
 
 `int  osd_limitsurfacevertex(<geometry>geometry, string attrib_name, int face_id, float u, float v, <type>&result)`
 
@@ -11,6 +12,6 @@ See [osd_limitsurface](osd_limitsurface.html "Evaluates a point attribute at the
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。

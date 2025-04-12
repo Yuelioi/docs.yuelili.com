@@ -6,12 +6,12 @@ order: 54
 
 `geohandle`
 
-Handle to the geometry to write to. `geoself()` can be used to get a handle to the current geometry.
+要写入的目标几何体的句柄。可使用`geoself()`获取当前几何体的句柄。
 
 `prim`
 
-The primitive number.
+图元编号。
 
 `cliptimes`
 
-A list of clip times (in seconds).
+剪辑时间列表（以秒为单位）。

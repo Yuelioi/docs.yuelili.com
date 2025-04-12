@@ -1,64 +1,54 @@
 ---
-title: volume
+title: 体积
 order: 1
 ---
-| On this page | * [Derivatives options](#derivatives-options) * [Examples](#examples) |
+| 本页内容 | * [导数选项](#derivatives-options) * [示例](#examples) |
 | --- | --- |
 
 `float  volume(vector pos, ...)`
 
-Note
-This function relies on the fact that VEX “knows” that `pos` has
-derivatives (`dPdu`, `dPdv`, and `dPdz`).
-Passing a literal vector instead of a special variables such as `P`
-will return `0` since VEX will not be able to access the derivatives.
+注意
+此函数依赖于VEX"知道"`pos`具有导数(`dPdu`、`dPdv`和`dPdz`)这一事实。
+如果传递字面量向量而非特殊变量(如`P`)，将返回`0`，因为VEX无法访问导数。
 
-Derivatives options
+导数选项
 
 ## derivatives-options
 
-Functions which compute derivatives take additional arguments to
-allow tuning of the derivative computation.
+计算导数的函数接受额外参数以允许调整导数计算。
 
 "`extrapolate`",
 `int`
 `=0`
 
-Whether derivatives are
-“smooth” across patch boundaries. In most cases this is true and if
-extrapolation is turned on, derivative computation should be exact
-for C2 surfaces. However, when the VEX variables are changing with a
-high frequency (for example, a high frequency displacement map
-causing high frequency changes to the P variable), extrapolation of
-derivative computation may cause exaggeration of discontinuities
-between patch boundaries.
+控制导数是否在面片边界间保持"平滑"。大多数情况下应启用此选项，
+若开启外推，对于C2曲面导数计算将是精确的。但当VEX变量高频变化时
+(例如高频位移贴图导致P变量高频变化)，导数计算的外推可能会放大面片边界间的不连续性。
 
 "`smooth`",
 `int`
 `=1`
 
-Adjust the magnitude of the
-differentials non-uniformly over patches. This will usually reduce
-patch discontinuities in displacement/textured shaders. However, in
-some odd cases you may want to turn this feature off.
+非均匀地调整微分幅度在面片上的分布。这通常会减少
+位移/纹理着色器中面片间的不连续性。但在某些特殊情况下可能需要关闭此功能。
 
 ```vex
 N = computenormal(P, "extrapolate", 1, "smooth", 0);
 
 ```
 
-Examples
+示例
 
 ## examples
 
-Return the volume of the current micro-voxel in camera space:
+返回当前微体素在相机空间中的体积：
 
 ```vex
 volume(P)
 
 ```
 
-Returns `0`, since the argument is not a variable VEX knows the derivatives for:
+返回`0`，因为参数不是VEX已知导数的变量：
 
 ```vex
 volume({0.1, 2.3, 4.5})

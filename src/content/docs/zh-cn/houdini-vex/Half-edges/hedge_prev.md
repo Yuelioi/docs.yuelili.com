@@ -4,32 +4,29 @@ order: 13
 ---
 `int  hedge_prev(<geometry>geometry, int hedge)`
 
-Returns `-1` if `hedge` is invalid. Otherwise, returns the number of the half-edge
-that precedes (its destination is the source of) `hedge` in the polygon that contains it.
+如果`hedge`无效则返回`-1`。否则返回包含该半边的多边形中前驱（其终点是当前半边起点）的半边编号。
 
 `<geometry>`
 
-When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.
+在节点上下文（如wrangle SOP）中运行时，此参数可以是一个表示输入编号（从0开始）的整数，用于读取几何体。
 
-Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
+或者，该参数可以是指定要读取的几何文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
 `hedge`
 
-Input half-edge.
+输入的半边。
 
-Returns
+返回值
 
-The number of the half-edge that precedes (its destination is the source of) `hedge` in the polygon that contains it.
-Returns `-1` if the half-edge is not valid.
+返回包含该半边的多边形中前驱（其终点是当前半边起点）的半边编号。
+如果半边无效则返回`-1`。
 
-Examples
-
-## examples
+## 示例
 
 ```vex
 int prev;
 
-// Get the previous half-edge of half-edge number 3.
+// 获取编号为3的半边的上一个半边
 prevhedge = hedge_prev("defgeo.bgeo", 3);
 
 ```

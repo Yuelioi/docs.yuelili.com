@@ -1,23 +1,22 @@
 ---
-title: serialize
+title: 序列化
 order: 12
 ---
 `float [] serialize(<vector>vectors[])`
 
 `float [] serialize(<matrix>matrices[])`
 
-These functions will serialize the arrays of tuple values.
-That is, the values of the tuples are extracted one by one into a
-flat floating point array.
-Examples
+这些函数会将元组值数组序列化。
+也就是说，将元组的值逐个提取到一个
+平坦的浮点数数组中。
 
-## examples
+## 示例
 
 ```vex
-vector v[] = { {1,2,3}, {7,8,9} }; // A vector[] of length 2
+vector v[] = { {1,2,3}, {7,8,9} }; // 长度为2的vector[]
 float  f[];
 
 f = serialize(v);
-// Now f[] has a length of 6 and equals { 1,2,3,7,8,9 }
+// 现在f[]的长度为6，等于{ 1,2,3,7,8,9 }
 
 ```

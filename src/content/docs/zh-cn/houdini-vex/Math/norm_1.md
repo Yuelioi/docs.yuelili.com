@@ -4,4 +4,4 @@ order: 44
 ---
 `float  norm_1(<matrix>m)`
 
-Returns the induced 1-norm of matrix m, assuming a row vector convention, which is the maximum absolute row sum.
+返回矩阵 m 的诱导1-范数（假设采用行向量约定），即最大绝对行和。

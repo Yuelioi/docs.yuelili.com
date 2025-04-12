@@ -6,7 +6,6 @@ order: 38
 
 `string  strip(string value, string whitespace)`
 
-Returns a string with the leading and trailing whitespace removed. If
-whitespace is provided, it is a string of characters that will be stripped.
+返回去除首尾空白字符的字符串。如果指定了whitespace参数，则只去除该参数字符串中包含的字符。
 
-This is also equivalent of doing both [rstrip](rstrip.html "Strips trailing whitespace from a string.") and [lstrip](lstrip.html "Strips leading whitespace from a string.") on a string.
+该函数等效于对字符串同时执行[rstrip](rstrip.html "去除字符串末尾的空白字符")和[lstrip](lstrip.html "去除字符串开头的空白字符")操作。

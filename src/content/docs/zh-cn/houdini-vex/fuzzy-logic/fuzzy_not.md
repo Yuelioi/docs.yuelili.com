@@ -1,9 +1,9 @@
 ---
-title: fuzzy_not
+title: 模糊非运算
 order: 6
 ---
 `int  fuzzy_not(int n)`
 
 `float  fuzzy_not(float n)`
 
-Returns the fuzzy “NOT” (Zadeh NOT) of the input fuzzy value.
+返回输入模糊值的模糊"非"(Zadeh非)运算结果。

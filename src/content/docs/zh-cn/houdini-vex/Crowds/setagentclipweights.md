@@ -2,16 +2,17 @@
 title: setagentclipweights
 order: 55
 ---
+
 `void  setagentclipweights(int geohandle, int prim, float clipweights[])`
 
 `geohandle`
 
-Handle to the geometry to write to. `geoself()` can be used to get a handle to the current geometry.
+要写入的几何体句柄。可以使用`geoself()`获取当前几何体的句柄。
 
 `prim`
 
-The primitive number.
+图元编号。
 
 `clipweights`
 
-A list of weights.
+权重列表。

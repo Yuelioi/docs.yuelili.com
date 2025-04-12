@@ -1,8 +1,8 @@
 ---
-title: join
+title: 连接字符串
 order: 17
 ---
 `string  join(string s[], string spacer)`
 
-Concatenate all the strings in the array to form a single string.
-The spacer will be placed between each pair of strings.
+将数组中的所有字符串连接成一个单独的字符串。
+分隔符会被放置在每对字符串之间。

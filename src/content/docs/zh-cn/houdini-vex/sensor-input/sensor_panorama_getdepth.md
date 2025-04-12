@@ -2,7 +2,7 @@
 title: sensor_panorama_getdepth
 order: 4
 ---
+
 `float  sensor_panorama_getdepth(int handle, vector dir)`
 
-This function will return the depth in the given direction from the
-scene rendered previously with `sensor_panorama_create`.
+此函数将返回先前使用 `sensor_panorama_create` 渲染的场景中给定方向的深度值。

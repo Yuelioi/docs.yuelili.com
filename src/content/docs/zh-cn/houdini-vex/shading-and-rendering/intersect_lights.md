@@ -2,50 +2,48 @@
 title: intersect_lights
 order: 40
 ---
-| Context(s) | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [surface](../contexts/surface.html) |
+| 上下文 | [置换](../contexts/displace.html)  [雾效](../contexts/fog.html)  [表面](../contexts/surface.html) |
 | --- | --- |
 
-Note
-This function only works with area lights.
+注意
+此函数仅适用于区域光。
 
 `int  intersect_lights(int lightids[], vector pos, vector dir, float time, int &idx, float &dist, vector &clr, float &scale, ...)`
 
 `lightids`
 
-An array of light IDs, as returned by [getlights](getlights.html "Returns an array of light identifiers for the currently shaded surface.").
+灯光ID数组，由[getlights](getlights.html "返回当前着色表面的灯光标识符数组")返回。
 
 `pos`
 
-The origin of the ray (such as the global variable `P`).
+光线起点（如全局变量`P`）。
 
 `dir`
 
-Direction vector from the origin. The length of this vector does not affect
-the distance the ray will travel.
+从起点出发的方向向量。该向量的长度不会影响光线传播距离。
 
 `time`
 
-Time to send the ray at.
+发射光线的时间点。
 
-The function modifies the values of the following arguments:
+该函数会修改以下参数的值：
 
 `idx`
 
-The light index for the light that was hit by the ray, or -1 if no intersection was found.
+被光线击中的灯光索引，若未找到交点则为-1。
 
 `dist`
 
-The distance to the nearest intersected light.
+到最近相交灯光的距离。
 
 `clr`
 
-The light color set by the light shader.
+由灯光着色器设置的灯光颜色。
 
 `scale`
 
-The light average hemispherical intensity (for area lights).
+灯光平均半球强度（针对区域光）。
 
-Returns
+返回值
 
-A [component bitmask](bouncemask.html) indicating what types of component bounces the light affects,
-or `0` if the ray did not hit a light.
+表示灯光影响哪些类型组件反弹的[组件位掩码](bouncemask.html)，若光线未击中灯光则返回`0`。

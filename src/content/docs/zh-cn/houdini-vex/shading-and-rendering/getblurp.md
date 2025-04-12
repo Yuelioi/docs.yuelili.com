@@ -2,18 +2,18 @@
 title: getblurP
 order: 10
 ---
-| Context(s) | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
+| 上下文环境 | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [light](../contexts/light.html)  [shadow](../contexts/shadow.html)  [surface](../contexts/surface.html) |
 | --- | --- |
 
 `vector  getblurP(float delta)`
 
-Returns the position (`P`) of the current shading point at fractional time delta within the motion blur exposure. When motion blur is disabled, `getblurP()` will always return the shading position `P`. When motion blur is enabled, `getblurP(0)` and `getblurP(1)` will return the positions at the extent of the shading position’s motion path, with fractional values between 0 and 1 generating other intermediate shading positions. For example, `getblurP(0.5)` returns the point’s blurred position half-way through the current exposure.
+返回当前着色点在运动模糊曝光时间内，指定时间增量delta处的位置(`P`)。当运动模糊被禁用时，`getblurP()`始终返回着色位置`P`。当运动模糊启用时，`getblurP(0)`和`getblurP(1)`将返回着色点运动路径两端的位置，而0到1之间的分数值将生成其他中间着色位置。例如，`getblurP(0.5)`返回当前曝光时间中点处的模糊位置。
 
-When shading micropolygons, `P` will always store the initial position of the point (at time = 0). For raytracing, `P` will store the final position after motion transformation for the sample being shaded - at the time given by the `Time` global variable in the VEX shading context. If you want to determine the shading position at other times it is necessary to use `getblurP`.
+在着色微多边形时，`P`始终存储点的初始位置(时间=0时)。对于光线追踪，`P`将存储经过运动变换后的最终位置 - 即VEX着色上下文中`Time`全局变量指定的时间点的位置。如果需要确定其他时间点的着色位置，必须使用`getblurP`函数。
 
-When using point clouds that were generated at time = 0, you should use `getblurP(0)` to find the position at the start of the frame’s exposure and then use this position to look up in the point cloud.
+当使用在时间=0时生成的点云时，应该使用`getblurP(0)`获取帧曝光开始时的位置，然后用这个位置查询点云。
 
-For example:
+例如：
 
 ```vex
 vector p0 = getblurP(0);

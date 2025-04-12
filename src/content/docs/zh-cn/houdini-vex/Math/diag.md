@@ -8,7 +8,7 @@ order: 17
 
 `vector4  diag(matrix m)`
 
-Extracts the [main diagonal](http://en.wikipedia.org/wiki/Main_diagonal) of the input matrix.
+提取输入矩阵的[主对角线](http://en.wikipedia.org/wiki/Main_diagonal)。
 
 `matrix2  diag(vector2 v)`
 
@@ -16,4 +16,4 @@ Extracts the [main diagonal](http://en.wikipedia.org/wiki/Main_diagonal) of the 
 
 `matrix  diag(vector4 v)`
 
-Constructs a [diagonal matrix](http://en.wikipedia.org/wiki/Diagonal_matrix) with the input vector as its main diagonal.
+以输入向量为主对角线构造一个[对角矩阵](http://en.wikipedia.org/wiki/Diagonal_matrix)。

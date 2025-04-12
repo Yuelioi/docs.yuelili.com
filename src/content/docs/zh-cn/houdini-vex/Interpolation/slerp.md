@@ -1,27 +1,27 @@
 ---
-title: slerp
+title: 球面线性插值
 order: 13
 ---
 `vector4  slerp(vector4 q1, vector4 q2, float bias)`
 
-Blends between quaternions q1 and q2 based on the bias.
+基于偏置值在四元数q1和q2之间进行混合插值。
 
 `vector4  slerp(vector4 qs[], float weights[], int normalize=0)`
 
-Blends between any number of quaternions with the specified corresponding weights. `slerp(q1,q2,bias)` is equivalent to `slerp(array(q1,q2), array(1.0-bias,bias))`.
+使用指定的对应权重在任意数量的四元数之间进行混合插值。`slerp(q1,q2,bias)`等价于`slerp(array(q1,q2), array(1.0-bias,bias))`。
 
-By default, the weights are assumed to be normalized. If this is not the case, pass 1 for the normalize parameter to normalize them prior to interpolation or else undefined results will be returned.
+默认情况下，假定权重已归一化。若未归一化，可将normalize参数设为1以在插值前进行归一化处理，否则将返回未定义结果。
 
 `matrix3  slerp(matrix3 m1, matrix3 m2, float bias)`
 
 `matrix  slerp(matrix m1, matrix m2, float bias)`
 
-Blends between matrix m1 and m2 based on the bias.
+基于偏置值在矩阵m1和m2之间进行混合插值。
 
 `matrix3  slerp(matrix3 ms[], float weights[], int normalize=1)`
 
 `matrix  slerp(matrix ms[], float weights[], int normalize=1)`
 
-Blends between any number of matrices with the specified corresponding weights via blending of their components via polar decomposition.
+通过极分解方式，使用指定对应权重在任意数量矩阵的各个分量之间进行混合插值。
 
-By default, the weights are normalized before blending. If the weights are already normalized, you can pass 0 for the normalize parameter.
+默认情况下，权重会在混合前进行归一化。若权重已归一化，可将normalize参数设为0。

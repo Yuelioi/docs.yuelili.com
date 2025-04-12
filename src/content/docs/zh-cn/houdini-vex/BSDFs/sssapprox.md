@@ -6,20 +6,20 @@ order: 23
 
 `albedo`
 
-Average surface reflectance.
+表面平均反射率。
 
 `meanFreePath`
 
-Average distance between scattering events.
+散射事件之间的平均距离。
 
 `roughness`
 
-A value from '0.0' to '1.0' blending to an ideal diffuse transmission reflectance profile.
+从'0.0'到'1.0'的值，混合到理想的漫透射反射剖面。
 
 `scale`
 
-Physical scale of the material. Smaller scale values will make the material more transmissive.
+材质的物理尺寸。较小的scale值会使材质更具透射性。
 
-See [writing a PBR shader](../pbr.html) for information on BSDFs.
+有关BSDF的信息，请参阅[编写PBR着色器](../pbr.html)。
 
-Models SSS illumination based on an approximate reflectance profile.
+基于近似反射剖面模拟SSS(次表面散射)光照效果。

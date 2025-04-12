@@ -1,13 +1,13 @@
 ---
-title: prescale
+title: 预缩放
 order: 18
 ---
-| Since | 17.5 |
+| 始于 | 17.5 |
 | --- | --- |
 
 `void  prescale(matrix &m, vector scale_vector)`
 
 `void  prescale(matrix3 &m, vector scale_vector)`
 
-Prescales the matrix in three directions simultaneously by the factors in the vector.
-This modifies the matrix in-place, rather than returning a new matrix.
+通过向量中的因子同时在三个方向上对矩阵进行预缩放。
+此操作会原地修改矩阵，而不是返回一个新矩阵。
