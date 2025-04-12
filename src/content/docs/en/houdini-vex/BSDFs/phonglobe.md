@@ -10,7 +10,7 @@ order: 18
 
 `bsdf  phonglobe(vector nml, vector dir, float exponentx, float exponenty, vector framex, vector framey, ...)`
 
-![](../../images/rendering/phonglobe.png)
+![](../_static/rendering/phonglobe.png)
 A phong (blurred) reflection along a given direction vector. This will produce the same result as `phong()` when the direction vector is the reflection vector, but with this function you can also gather illumination from other directions (such as transmission).
 
 It is possible to create anisotropic phong lobes by providing x and y exponents and tangent vectors.

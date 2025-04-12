@@ -30,4 +30,4 @@ The exponent value. The higher the value, the tighter the specular lobe.
 
 Each of the functions can also take an optional light mask.
 
-![](../../images/rendering/blinn.png)
+![](../_static/rendering/blinn.png)

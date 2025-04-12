@@ -2,7 +2,7 @@
 title: diffuse
 order: 8
 ---
-![](../../images/rendering/diffuse.png)
+![](../_static/rendering/diffuse.png)
 
 `bsdf  diffuse(...)`
 

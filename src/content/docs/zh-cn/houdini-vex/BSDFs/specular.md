@@ -2,7 +2,7 @@
 title: specular
 order: 21
 ---
-![](../../images/rendering/specular.png)
+![](../_static/rendering/specular.png)
 
 `bsdf  specular(vector dir, ...)`
 

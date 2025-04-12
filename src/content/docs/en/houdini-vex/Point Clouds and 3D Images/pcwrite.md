@@ -10,7 +10,7 @@ Show/hide arguments
 
 `filename`
 
-The name of the file to write to. You can read the resulting file into a geometry network with the [![](../../icons/COMMON/file.svg)File surface node](../../nodes/sop/file.html "Reads, writes, or caches geometry on disk."). This file should have a `.pc` extension (Houdini will use the extension to determine how to import the file).
+The name of the file to write to. You can read the resulting file into a geometry network with the [File surface node](../../nodes/sop/file.html "Reads, writes, or caches geometry on disk."). This file should have a `.pc` extension (Houdini will use the extension to determine how to import the file).
 
 `…`
 

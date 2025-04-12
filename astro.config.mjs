@@ -13,6 +13,7 @@ import { aePlugin } from "./src/nav/ae-plugin";
 import { aiScripting } from "./src/nav/ai-scripting";
 import { prScripting } from "./src/nav/pr-scripting";
 import { prPlugin } from "./src/nav/pr-plugin";
+// import { houdiniVexNav } from "./src/nav/houdini-vex";
 
 import starlightGiscus from "starlight-giscus";
 
@@ -27,6 +28,7 @@ export default defineConfig({
         actionscript: "actionscript-3",
         vbscript: "vb",
         none: "text",
+        vex: "cpp",
       },
       defaultColor: false,
     },
@@ -35,19 +37,17 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "月离文档",
-      defaultLocale: "zh-cn",
+      defaultLocale: "zh-CN",
       locales: {
         en: {
           label: "English",
         },
-        "zh-cn": {
+        "zh-CN": {
           label: "简体中文",
           lang: "zh-CN",
         },
       },
-      social: {
-        github: "https://github.com/Yuelioi/docs.yuelili.com",
-      },
+      social: [{ icon: "github", label: "GitHub", href: "https://github.com/Yuelioi/docs.yuelili.comt" }],
       components: {
         Header: "./src/components/Header.astro",
         TwoColumnContent: "./src/components/TwoColumnContent.astro",

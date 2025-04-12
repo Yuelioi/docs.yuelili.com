@@ -27,7 +27,7 @@ The name of a primitive group or a pattern to generate a primitive
 group. Uses the same semantics as a SOP group, so empty strings
 will match all primitives. Attribute groups like `@Cd.x>0` can
 also be used, but note that the `@` may need to be escaped with
-a backslash in a [![](../../icons/COMMON/wrangle.svg)Snippet VOP](../../nodes/vop/snippet.html "Runs a VEX snippet to modify the incoming values.").
+a backslash in a [Snippet VOP](../../nodes/vop/snippet.html "Runs a VEX snippet to modify the incoming values.").
 
 `uvname`
 

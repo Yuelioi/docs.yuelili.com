@@ -11,7 +11,7 @@ surfaces hit by the rays.") or [irradiance](irradiance.html "Computes irradiance
 
 In shading contexts, fills in the current surface normal automatically.
 
-![](../../images/rendering/cone.png)
+![](../_static/rendering/cone.png)
 Show/hide arguments
 
 `normal`

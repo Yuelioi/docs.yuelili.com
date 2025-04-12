@@ -5,7 +5,7 @@ order: 17
 | Context(s) | [shading](../contexts/shading.html) |
 | --- | --- |
 
-![](../../images/rendering/phong.png)
+![](../_static/rendering/phong.png)
 
 `bsdf  phong(float exponent, ...)`
 

@@ -25,7 +25,7 @@ Returns an empty array if:
 - `targets` is not the same size as `targetxforms`
 - The `goalxforms`, `constrainedxforms`, and `jointlimits` arrays aren’t empty, but are not the same size as `xforms`
 
-The `goalxforms`, `constrainedxforms`, and `jointlimits` parameters should be in the form produced by the [![](../../icons/SOP/agentconfigurejoints.svg)Agent Configure Joints SOP](../../nodes/sop/agentconfigurejoints.html "Creates point attributes that specify the rotation limits of an agent’s joints.").
+The `goalxforms`, `constrainedxforms`, and `jointlimits` parameters should be in the form produced by the [Agent Configure Joints SOP](../../nodes/sop/agentconfigurejoints.html "Creates point attributes that specify the rotation limits of an agent’s joints.").
 
 Show/hide arguments
 
@@ -44,17 +44,17 @@ Specifies optional parameters for the joints. The valid keys are:
 `limit_goalxform`
 
 A `matrix` specifying the position and orientation of the cone in the space of the parent transform.
-This can be set from the attributes produced by [![](../../icons/SOP/agentconfigurejoints.svg)Agent Configure Joints](../../nodes/sop/agentconfigurejoints.html "Creates point attributes that specify the rotation limits of an agent’s joints.").
+This can be set from the attributes produced by [Agent Configure Joints](../../nodes/sop/agentconfigurejoints.html "Creates point attributes that specify the rotation limits of an agent’s joints.").
 
 `limit_constrainedxform`
 
 A `vector4` (quaternion) specifying the orientation of the twist axis, up axis, and out axis in the space of the child transform.
-This can be set from the attributes produced by [![](../../icons/SOP/agentconfigurejoints.svg)Agent Configure Joints](../../nodes/sop/agentconfigurejoints.html "Creates point attributes that specify the rotation limits of an agent’s joints.").
+This can be set from the attributes produced by [Agent Configure Joints](../../nodes/sop/agentconfigurejoints.html "Creates point attributes that specify the rotation limits of an agent’s joints.").
 
 `limit_angles`
 
 A `vector` specifying the maximum rotation around each axis, in degrees.
-This can be set from the attributes produced by [![](../../icons/SOP/agentconfigurejoints.svg)Agent Configure Joints](../../nodes/sop/agentconfigurejoints.html "Creates point attributes that specify the rotation limits of an agent’s joints.").
+This can be set from the attributes produced by [Agent Configure Joints](../../nodes/sop/agentconfigurejoints.html "Creates point attributes that specify the rotation limits of an agent’s joints.").
 
 `targets`
 
@@ -149,15 +149,15 @@ This can be used to place the target at an offset from the joint (for example, a
 
 `goalxforms`
 
-Part of the joint constraints as produced by [![](../../icons/SOP/agentconfigurejoints.svg)Agent Configure Joints](../../nodes/sop/agentconfigurejoints.html "Creates point attributes that specify the rotation limits of an agent’s joints.").
+Part of the joint constraints as produced by [Agent Configure Joints](../../nodes/sop/agentconfigurejoints.html "Creates point attributes that specify the rotation limits of an agent’s joints.").
 An empty array indicates no joint constraints.
 
 `constrainedxforms`
 
-Part of the joint constraints as produced by [![](../../icons/SOP/agentconfigurejoints.svg)Agent Configure Joints](../../nodes/sop/agentconfigurejoints.html "Creates point attributes that specify the rotation limits of an agent’s joints.").
+Part of the joint constraints as produced by [Agent Configure Joints](../../nodes/sop/agentconfigurejoints.html "Creates point attributes that specify the rotation limits of an agent’s joints.").
 An empty array indicates no joint constraints.
 
 `jointlimits`
 
-Part of the joint constraints as produced by [![](../../icons/SOP/agentconfigurejoints.svg)Agent Configure Joints](../../nodes/sop/agentconfigurejoints.html "Creates point attributes that specify the rotation limits of an agent’s joints.").
+Part of the joint constraints as produced by [Agent Configure Joints](../../nodes/sop/agentconfigurejoints.html "Creates point attributes that specify the rotation limits of an agent’s joints.").
 An empty array indicates no joint constraints.

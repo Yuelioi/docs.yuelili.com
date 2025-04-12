@@ -6,7 +6,7 @@ Warning
 This function has been deprecated. Use [hou.AgentDefinition.addClip](../../hom/hou/AgentDefinition.html#addClip) and [hou.crowds.replaceAgentDefinitions](../../hom/hou/crowds.html#replaceAgentDefinitions) instead to edit agent definitions.
 
 This function adds a `.clip` or `.bclip` file saved from a CHOP (or generated
-by an [![](../../icons/CROWDS/agent.svg)Agent](../../nodes/out/agent.html "This output operator is used to write agent definition files.") ROP) to the definition of the given agent primitive.
+by an [Agent](../../nodes/out/agent.html "This output operator is used to write agent definition files.") ROP) to the definition of the given agent primitive.
 Clips in an agent definition contains transform animation for driving the
 agent’s skeleton.
 
@@ -38,7 +38,7 @@ unique names.
 `clippath`
 
 The filename of the `.clip` or `.bclip` file saved from a CHOP or generated
-by the [![](../../icons/CROWDS/agent.svg)Agent](../../nodes/out/agent.html "This output operator is used to write agent definition files.") ROP. Use `op:full_path_to_chop` to directly refer
+by the [Agent](../../nodes/out/agent.html "This output operator is used to write agent definition files.") ROP. Use `op:full_path_to_chop` to directly refer
 to a CHOP in the scene.
 
 `keepref`

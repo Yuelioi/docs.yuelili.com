@@ -6,8 +6,8 @@ order: 2
 
 `bsdf  ashikhmin(vector nml, float exponentx, float exponenty, vector framex, vector framey, ...)`
 
-![](../../images/rendering/ashikhmin1.png)
-![](../../images/rendering/ashikhmin2.png)
+![](../_static/rendering/ashikhmin1.png)
+![](../_static/rendering/ashikhmin2.png)
 An anisotropic `bsdf` similar to `phong()` but with independent controls for the highlight size along 2 tangent vectors.
 
 Show/hide arguments

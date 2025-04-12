@@ -1,3 +1,7 @@
+/**
+ * 此脚本用于转换adobe 官方文档后遗症
+ */
+
 import fs from "fs";
 import path from "path";
 
@@ -10,7 +14,7 @@ function processMarkdownFiles(dirPath, parentDepth = 0) {
     const fullPath = path.join(dirPath, entry.name);
 
     if (entry.isDirectory()) {
-      processMarkdownFiles(fullPath, parentDepth + 1); // 递归处理子目录
+      processMarkdownFiles(fullPath, parentDepth + 1);
     } else if (entry.isFile() && path.extname(entry.name).toLowerCase() === ".md") {
       try {
         const fileName = path.basename(entry.name, ".md");

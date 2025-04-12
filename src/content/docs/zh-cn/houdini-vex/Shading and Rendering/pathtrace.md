@@ -14,7 +14,7 @@ rendering (PBR) engine to do secondary bounces.
 PBR rendering engine from micro-polygon rendering. It uses path tracing and
 the `F` (BSDF) output, not `Cf`/`Of` on the hit shaders. Maximum path depth
 is controlled by the “diffuse bounces” parameter on the PBR tab of the
-[![](../../icons/ROP/mantra.svg)mantra output driver](../../nodes/out/ifd.html "Renders the scene using Houdini’s standard mantra renderer and generates IFD files.").
+[mantra output driver](../../nodes/out/ifd.html "Renders the scene using Houdini’s standard mantra renderer and generates IFD files.").
 
 Irradiance caching works the same way it works with [occlusion](occlusion.html "Computes ambient occlusion.").
 Ray options

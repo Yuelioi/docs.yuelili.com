@@ -19,7 +19,7 @@ order: 39
 
 Returns `-1` if `prim` is out of range or is not an agent primitive, or targets and targetxforms are not the same length.
 
-If “agent_jointgoalxforms”, “agent_jointconstrainedxforms”, and “agent_jointlimits” attributes are present on the agent, as produced by the [![](../../icons/SOP/agentconfigurejoints.svg)Agent Configure Joints SOP](../../nodes/sop/agentconfigurejoints.html "Creates point attributes that specify the rotation limits of an agent’s joints."), then they will be interpreted as joint limits to use while solving.
+If “agent_jointgoalxforms”, “agent_jointconstrainedxforms”, and “agent_jointlimits” attributes are present on the agent, as produced by the [Agent Configure Joints SOP](../../nodes/sop/agentconfigurejoints.html "Creates point attributes that specify the rotation limits of an agent’s joints."), then they will be interpreted as joint limits to use while solving.
 
 Show/hide arguments
 

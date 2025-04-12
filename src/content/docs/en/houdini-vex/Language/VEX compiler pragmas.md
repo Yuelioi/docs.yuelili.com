@@ -223,7 +223,7 @@ group_type_parm
 The name of a parameter which indicates the geometry type the
 selection group will have. Typically this value will name a
 parameter with a menu for choosing “Points”, “Primitives”, or “Guess
-from group”. See the OMbindings file for the [![](../icons/SOP/blast.svg)Blast
+from group”. See the OMbindings file for the [Blast
 SOP](../nodes/sop/blast.html "Deletes primitives, points, edges or breakpoints.").
 
 asterisk_sel_all

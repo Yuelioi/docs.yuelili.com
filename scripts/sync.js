@@ -1,3 +1,7 @@
+/**
+ * 此脚本用于syncthing同步 在build之后运行即可
+ */
+
 import fs from "fs";
 import path from "path";
 import { promisify } from "util";

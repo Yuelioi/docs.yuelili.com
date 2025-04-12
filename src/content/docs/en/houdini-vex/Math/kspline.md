@@ -37,7 +37,6 @@ spline("linear", t, v0, v1, v2, v3)
 
 ```
 
-![](../../images/vex/spline_linear.svg)
 …the function returns the height of the orange dot at position sample_pos.
 
 `"cubic"` (or `"catmullrom"`, `"cspline"`)
@@ -56,7 +55,6 @@ spline("catrom", t, v0, v1, v2, v3, v4, v5)
 
 ```
 
-![](../../images/vex/spline_catrom.svg)
 …the function returns the height of the orange dot at position t.
 
 (This image is for illustration only, it does not show the correct

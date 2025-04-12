@@ -30,7 +30,7 @@ The `grad` and `hess` arguments return the gradient or the hessian of this sampl
 
 Returns 0 if `primnum` or `inputnum` is out of range, the geometry is invalid, or the given primitive is not a volume or vdb primitive.
 
-![](../../images/vex/volumecubicsample.png)
+![](../_static/vex/volumecubicsample.png)
 Example of interpolation of one and two dimensional data using `volumecubicsample`. The visualized normal is computed using the `grad` parameter.
 Examples
 

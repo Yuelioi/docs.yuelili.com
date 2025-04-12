@@ -321,6 +321,7 @@ operator-type-interactions
   **Important**: the “missing” component(s) on the smaller vector are filled in as `{0.0, 0.0, 0.0, 1.0}`
 
 ```
+
 {1.0, 2.0, 3.0} * {2.0, 3.0, 4.0, 5.0} == {2.0, 6.0, 12.0, 5.0}
 
 ```vex
@@ -328,6 +329,7 @@ operator-type-interactions
 This can give surprising results if you're not expecting it, for example:
 
 ```
+
 // Third element of the vector2 is treated as 0,
 // but fourth element is treated as 1.0
 {1.0, 2.0} + {1.0, 2.0, 3.0, 4.0} == {2.0, 4.0, 3.0, 5.0}
@@ -341,7 +343,7 @@ Data types
 ## data-types
 
 Warning
-By default, VEX uses 32 bit integers. If you use the [![](../icons/SOP/attribcast.svg)AttribCast SOP](../nodes/sop/attribcast.html "Changes the size/precision Houdini uses to store an attribute.") to cast a geometry attribute to 64 bits, VEX will silently discard the extra bits if you manipulate the attribute in VEX code.
+By default, VEX uses 32 bit integers. If you use the [AttribCast SOP](../nodes/sop/attribcast.html "Changes the size/precision Houdini uses to store an attribute.") to cast a geometry attribute to 64 bits, VEX will silently discard the extra bits if you manipulate the attribute in VEX code.
 
 The VEX engine runs in either 32bit or 64bit mode. In 32bit mode, all
 floats, vectors, and integers are 32bit. In 64bit mode, they are 64bit.
@@ -376,16 +378,17 @@ Member data can be assigned default values in the struct definition similar to C
 Two implicit constructor functions are created for each struct. The first takes initialization arguments in the order they are declared in the struct, the second takes no arguments but sets all members to their default values.
 
 ```
-#include <math.h> 
 
-struct basis { 
-    vector i, j, k; 
-} 
+# include <math.h>
 
-struct bases { 
-    basis m, n, o; 
-    string description; 
-} 
+struct basis {
+    vector i, j, k;
+}
+
+struct bases {
+    basis m, n, o;
+    string description;
+}
 
 struct values {
     int uninitialized;        // Uninitialized member data
@@ -394,14 +397,14 @@ struct values {
     float aval[] = { 1, 2, 3, 4.5 };
 }
 
-basis rotate(basis b; vector axis; float amount) { 
-    matrix m = 1; 
-    rotate(m, amount, axis); 
-    basis result = b; 
-    result.i *= m; 
-    result.j *= m; 
-    result.k *= m; 
-    return result; 
+basis rotate(basis b; vector axis; float amount) {
+    matrix m = 1;
+    rotate(m, amount, axis);
+    basis result = b;
+    result.i *= m;
+    result.j *= m;
+    result.k *= m;
+    return result;
 }
 
 // Declare struct variables
@@ -431,6 +434,7 @@ allow a limited form of object-oriented programming.
   Note inside a struct function that you can call other methods on the struct using `this->method()`.
 
 ```
+
 struct randsampler {
     // Fields
     int        seed;
@@ -441,7 +445,7 @@ struct randsampler {
         // Struct functions can refer to fields by name
         return random(seed++);
     }
-} 
+}
 
 cvex shader()
 {
@@ -479,6 +483,7 @@ value of one type into another (for example, an int into a float).
 This is sometimes necessary, as when you have the following:
 
 ```
+
 int a, b;
 float c;
 c = a / b;
@@ -491,6 +496,7 @@ point division instead, you need to explicitly cast `a` and `b` as
 floats:
 
 ```
+
 int a, b;
 float c;
 c = (float)a / (float)b;
@@ -517,6 +523,7 @@ return either a float or vector.
 In the code:
 
 ```
+
 float n;
 n = noise(noise(P));
 
@@ -529,6 +536,7 @@ To cast a function call, surround it with `typename( ... )`, as
 in:
 
 ```
+
 n = noise( vector( noise(P) ) );
 
 ```vex
@@ -541,6 +549,7 @@ variable of a specified type. So the following expressions are equivalent,
 and the function cast may be omitted for more concise code:
 
 ```
+
 vector n = vector( noise(P) );        // Unnecessary function cast
 vector n = noise(P);
 

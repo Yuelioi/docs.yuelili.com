@@ -4,7 +4,7 @@ order: 7
 ---
 `vector  ocean_sample(string geometry, int phase, int frequency, int amplitude, float hscale, float time, int mode, int downsample, vector pos)`
 
-Evaluates the input ocean spectrum at the given time and position and returns the value specified by `mode`. The input is typically the output of the [![](../../icons/SHELF/wave.svg)Ocean Spectrum](../../nodes/sop/oceanspectrum.html "Generates volumes containing information for simulating ocean waves.") SOP.
+Evaluates the input ocean spectrum at the given time and position and returns the value specified by `mode`. The input is typically the output of the [Ocean Spectrum](../../nodes/sop/oceanspectrum.html "Generates volumes containing information for simulating ocean waves.") SOP.
 
 Show/hide arguments
 

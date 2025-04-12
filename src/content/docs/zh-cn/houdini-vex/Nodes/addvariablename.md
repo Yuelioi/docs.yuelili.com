@@ -19,4 +19,4 @@ A handle to the geometry to write to. Currently the only valid value is `0` or [
 Adds the mapping of the attribute `aname` to the local variable `vname`. In
 SOPs that support this, you will then have the
 local variable `$vname` referencing the attribute aname. This
-emulates the behavior of the [![](../../icons/SOP/attribcreate.svg)AttribCreate SOP](../../nodes/sop/attribcreate.html "Adds or edits user defined attributes.").
+emulates the behavior of the [AttribCreate SOP](../../nodes/sop/attribcreate.html "Adds or edits user defined attributes.").

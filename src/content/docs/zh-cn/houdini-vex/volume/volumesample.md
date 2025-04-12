@@ -20,5 +20,5 @@ The volume primitive’s sampled value at the given position. Values between vox
 
 Returns 0 if `primnum` or `inputnum` is out of range, the geometry is invalid, or the given primitive is not a volume or vdb primitive.
 
-![](../../images/vex/volumesample.png)
+![](../_static/vex/volumesample.png)
 Example of interpolation of one and two dimensional data using `volumesample`. The visualized normal is computed using the `volumegradient` function.

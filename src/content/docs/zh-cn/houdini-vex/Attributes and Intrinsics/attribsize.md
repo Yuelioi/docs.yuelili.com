@@ -26,7 +26,7 @@ The size of an attribute’s *type*.
 
 - For a vector type, this is the number of components.
 - For an integer, float, or string, this returns `1`.
-- For an array attribute, this returns the size of the tuples in the array. The tuple size is controlled by the **Size** parameter on the [![](../../icons/SOP/attribcreate.svg)Attribute Create node](../../nodes/sop/attribcreate.html "Adds or edits user defined attributes.").
+- For an array attribute, this returns the size of the tuples in the array. The tuple size is controlled by the **Size** parameter on the [Attribute Create node](../../nodes/sop/attribcreate.html "Adds or edits user defined attributes.").
 
 If the attribute does not exist, returns `0`.
 
