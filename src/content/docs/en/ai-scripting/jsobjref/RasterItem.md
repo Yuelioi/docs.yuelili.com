@@ -723,7 +723,7 @@ Nothing.
 
 ### RasterItem.rotate()
 
-```javascsript
+```javascript
 app.activeDocument.rasterItems[index].rotate(
     angle
     [,changePositions]

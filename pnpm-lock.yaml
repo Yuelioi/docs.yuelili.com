@@ -20,6 +20,9 @@ importers:
       astro:
         specifier: ^5.1.5
         version: 5.5.2(@types/node@18.19.81)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2)
+      astro-expressive-code:
+        specifier: ^0.40.2
+        version: 0.40.2(astro@5.5.2(@types/node@18.19.81)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.36.0)(typescript@5.8.2))
       daisyui:
         specifier: ^5.0.6
         version: 5.0.6

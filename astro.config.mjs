@@ -18,6 +18,20 @@ import starlightGiscus from "starlight-giscus";
 
 // https://astro.build/config
 export default defineConfig({
+  markdown: {
+    shikiConfig: {
+      theme: "dracula",
+      langs: ["applescript", "vb", "actionscript-3", "javascsript"],
+      langAlias: {
+        applescript: "applescript",
+        actionscript: "actionscript-3",
+        vbscript: "vb",
+        none: "text",
+      },
+      defaultColor: false,
+    },
+  },
+
   integrations: [
     starlight({
       title: "月离文档",
