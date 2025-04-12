@@ -4,8 +4,6 @@ order: 26
 ---
 `vector4  sample_orientation_uniform(vector u)`
 
-Show/hide arguments
-
 `u`
 
 Three numbers between 0 and 1.

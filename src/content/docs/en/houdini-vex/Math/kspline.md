@@ -16,8 +16,6 @@ This is useful for specifying a color ramp.
 
 If you just want linearly spaced keys, or if you need to vary the basis, use [spline](spline.html "Samples a value along a polyline or spline curve.") instead.
 
-Show/hide arguments
-
 `basis`, `bases`
 
 These are the same interpolations supported by ramp parameters.

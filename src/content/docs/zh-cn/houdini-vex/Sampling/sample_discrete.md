@@ -6,8 +6,6 @@ order: 15
 
 `int  sample_discrete(float weights[], float u)`
 
-Show/hide arguments
-
 `nvalues`
 
 The returned integer will be uniform in the range `[0,nvalues-1]`,

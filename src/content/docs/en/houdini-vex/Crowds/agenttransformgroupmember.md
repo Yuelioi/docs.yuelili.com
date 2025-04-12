@@ -10,8 +10,6 @@ See [Transform Groups](../../crowds/agents.html#xformgroups) for more informatio
 
 Returns a non-zero value if the transform is a member of the specified transform group, and zero otherwise.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

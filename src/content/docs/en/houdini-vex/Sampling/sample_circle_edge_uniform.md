@@ -4,8 +4,6 @@ order: 9
 ---
 `vector2  sample_circle_edge_uniform(float u)`
 
-Show/hide arguments
-
 `u`
 
 Number between 0 and 1.

@@ -13,8 +13,6 @@ Uses `-1` for `opinput`
 
 Returns the number of channels in the input specified.
 
-Show/hide arguments
-
 `opinput`
 
 The input number to read from, starting from 0. For example, the first input is 0, the second input is 1, and so on.

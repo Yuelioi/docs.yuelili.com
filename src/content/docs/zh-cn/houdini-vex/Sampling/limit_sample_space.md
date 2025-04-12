@@ -6,8 +6,6 @@ order: 3
 
 `float  limit_sample_space(float maxu, float u)`
 
-Show/hide arguments
-
 `minu`
 
 Minimum desired value of `u`. `minu` will be clamped to between 0 and 1.

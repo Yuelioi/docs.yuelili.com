@@ -4,8 +4,6 @@ order: 23
 ---
 `bsdf  sssapprox(vector albedo, float meanFreePath, float roughness, float scale, ...)`
 
-Show/hide arguments
-
 `albedo`
 
 Average surface reflectance.

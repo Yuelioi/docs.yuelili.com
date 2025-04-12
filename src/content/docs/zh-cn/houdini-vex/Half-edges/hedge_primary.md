@@ -6,8 +6,6 @@ order: 15
 
 Each class of equivalent half-edges has precisely one primary half-edge. In particular, a half-edge which is equivalent to no other half-edges is always primary. Primary half-edges are useful for accounting for each edge exactly once as each edge may be realized by any number of equivalent half-edges.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

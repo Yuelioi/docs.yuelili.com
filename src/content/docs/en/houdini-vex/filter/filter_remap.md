@@ -10,8 +10,6 @@ order: 1
 This function maps a uv coordinate to a pixel offset based on the importance
 sampling of the filter.
 
-Show/hide arguments
-
 `uv`
 
 Components should be in the range `0` to `1`. The function remaps these coordinates into a point in the filter’s kernel, mapping more points to areas with higher weights. The returned points will be in a box of given width centered around `0`.

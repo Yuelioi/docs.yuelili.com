@@ -9,8 +9,6 @@ order: 140
 
 This function sets the primitive’s transform reset flag, i.e., whether the primitive uses the world co-ordinate system as the initial space, or whether it inherits the space transformation from the parent (default).
 
-Show/hide arguments
-
 `stagehandle`
 
 A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)

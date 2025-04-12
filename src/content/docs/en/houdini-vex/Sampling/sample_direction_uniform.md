@@ -4,8 +4,6 @@ order: 14
 ---
 `vector  sample_direction_uniform(vector2 u)`
 
-Show/hide arguments
-
 `u`
 
 Pair of numbers between 0 and 1.

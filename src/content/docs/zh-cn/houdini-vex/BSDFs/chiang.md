@@ -15,8 +15,6 @@ Suitable only for curve geometry.
 
 See [writing a PBR shader](../pbr.html) for information on BSDFs.
 
-Show/hide arguments
-
 `nn`
 
 bumped/shading normal

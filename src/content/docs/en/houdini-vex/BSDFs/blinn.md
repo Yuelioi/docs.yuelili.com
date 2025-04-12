@@ -14,8 +14,6 @@ See [writing a PBR shader](../pbr.html) for information on BSDFs.
 
 Computes Blinn shading.
 
-Show/hide arguments
-
 `nml`
 
 The normal of the surface to use for evaluate.

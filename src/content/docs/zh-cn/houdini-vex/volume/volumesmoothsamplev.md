@@ -14,8 +14,6 @@ order: 21
 
 `vector  volumesmoothsamplev(<geometry>geometry, string volumename, vector pos, matrix3 &grad, matrix3 &hessX, matrix3 &hessY, matrix3 &hessZ)`
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

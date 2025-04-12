@@ -11,8 +11,6 @@ This function returns the name of the given primitive.
 
 Note, while this function takes the stage as an argument for consistency, it does not access the stage, but rather it extracts the name from the path.
 
-Show/hide arguments
-
 `<stage>`
 
 When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.

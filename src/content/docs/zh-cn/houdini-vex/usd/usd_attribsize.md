@@ -9,8 +9,6 @@ order: 20
 
 This function returns the tuple size of a given attribute. If the attribute is an array, it returns the tuple size of the array element. E.g., for vector types,this is the number of components.
 
-Show/hide arguments
-
 `<stage>`
 
 When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.

@@ -16,8 +16,6 @@ of the geometry. Use [xyzdist](xyzdist.html "Finds the distance from a point to 
 
 -1 is returned if no point is found in the search distance.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

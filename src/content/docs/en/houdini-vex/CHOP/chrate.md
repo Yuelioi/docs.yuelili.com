@@ -13,8 +13,6 @@ Uses `-1` as the `opinput`.
 
 Returns the sample rate of the given input.
 
-Show/hide arguments
-
 `opinput`
 
 The input number to read from, starting from 0. For example, the first input is 0, the second input is 1, and so on.

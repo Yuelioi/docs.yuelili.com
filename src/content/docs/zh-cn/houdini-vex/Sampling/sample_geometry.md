@@ -57,7 +57,6 @@ Details
 ### Light inclusion/exclusion options
 
 light-inclusion-exclusion-options
-Show/hide arguments
 
 "`categories`",
 `string`
@@ -111,8 +110,6 @@ Tip
 When you specify a texture, such as with the `"environment"` keyword,
 you can also use the image filtering keyword arguments. See [environment](environment.html "Returns the color of the environment texture.")
 for a listing of the image filter keyword arguments.
-
-Show/hide arguments
 
 "`scope`",
 `string`
@@ -239,7 +236,6 @@ or `"cosine"` for cosine weighted sampling.
 ### Ray sending options
 
 ray-sending-options
-Show/hide arguments
 
 "`width`",
 `float`
@@ -349,8 +345,6 @@ gather(P, dir, "bias", 0.01, "Cf", hitcf) {...}
 
 In addition, you can import the following special keywords to get information about the ray itself:
 
-Show/hide arguments
-
 "`ray:origin`",
 `&vector`
 
@@ -402,8 +396,6 @@ trace(P, dir, Time,
 
 sample-filtering-options
 By default, Houdini composites the global variables using opacity blending. In some cases, it’s more useful to get the value from the closest surface (regardless of whether it’s transparent). You can use the special `samplefilter` keyword with a string value of either `closest` or `opacity` to control whether the value of a global is from the closest surface or opacity blended.
-
-Show/hide arguments
 
 "`samplefilter`",
 `string`
@@ -470,7 +462,6 @@ gather(P, dir,
 ### Pipeline options
 
 pipeline-options
-Show/hide arguments
 
 "`pipeline`",
 `string`

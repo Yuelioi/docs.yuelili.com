@@ -11,8 +11,6 @@ bounding box of the points in the geometry.
 
 Use the bounding box of the primitives in the named point group.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

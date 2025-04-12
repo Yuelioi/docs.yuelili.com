@@ -9,8 +9,6 @@ order: 6
 
 This function remaps texture coordinates to new texture coordinates based on importance sampling of the texture.
 
-Show/hide arguments
-
 `map`
 
 The filename of the texture map to use to guide resampling.

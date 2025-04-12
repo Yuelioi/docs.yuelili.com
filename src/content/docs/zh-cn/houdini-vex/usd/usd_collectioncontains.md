@@ -9,8 +9,6 @@ order: 32
 
 This function returns `1` if the given objects belongs to the collection, otherwise returns `0`.
 
-Show/hide arguments
-
 `<stage>`
 
 When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.

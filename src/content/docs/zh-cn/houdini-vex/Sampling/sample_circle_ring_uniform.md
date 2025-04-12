@@ -7,8 +7,6 @@ order: 10
 
 `vector2  sample_circle_ring_uniform(vector2 u, float alpha)`
 
-Show/hide arguments
-
 `u`
 
 Pair of numbers between 0 and 1.

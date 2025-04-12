@@ -19,8 +19,6 @@ implicit in the second argument, will form the original symmetric matrix.
 This can be useful for analyzing the result of summing a series of
 outerproduct updates.
 
-Show/hide arguments
-
 `symmat`
 
 The symmetric matrix to diagonalize.

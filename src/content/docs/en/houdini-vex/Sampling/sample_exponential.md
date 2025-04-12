@@ -8,8 +8,6 @@ order: 16
 
 `float  sample_exponential(float origmean, float maxvalue, float u)`
 
-Show/hide arguments
-
 `u`
 
 A number in the range `[0,1)`.

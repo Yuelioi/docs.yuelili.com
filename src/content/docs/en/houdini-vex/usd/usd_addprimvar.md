@@ -11,8 +11,6 @@ order: 7
 
 This function adds a primvar of a given type to the primitive, if such primvar is not part of a schema. It is useful for controlling the exact type of a custom primvar. For primvars defined by primitive’s schema, this call has no effect, because the schema already determines their type.
 
-Show/hide arguments
-
 `stagehandle`
 
 A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)

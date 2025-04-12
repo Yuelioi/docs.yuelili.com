@@ -6,8 +6,6 @@ order: 23
 
 Computes the [eigenvalues](http://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) of a 3×3 matrix.
 
-Show/hide arguments
-
 `nroot`
 
 The function overwrites this variable with the number of real roots.

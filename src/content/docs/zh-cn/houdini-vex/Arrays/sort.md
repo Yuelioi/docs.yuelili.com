@@ -1,41 +1,26 @@
 ---
 title: sort
-order: 17
+order: 16
 ---
+`int [] sort(int values[])`
 
-# sort
+`float [] sort(float values[])`
 
-## 描述
-
-Returns the array sorted in increasing order.
-
-```c
-int [] sort(int values[])
-float [] sort(float values[])
-string [] sort(string values[])
-```
+`string [] sort(string values[])`
 
 Returns a version of the given array sorted in increasing order.
 
-返回一个按递增顺序排序的给定数组的版本。
+- [argsort](argsort.html "Returns the indices of a sorted version of an array.") and [sort](sort.html "Returns the array sorted in increasing order.") use a stable sort.
+- Use [reverse](reverse.html "Returns an array or string in reverse order.") to reverse the order of the sort.
 
-- argsort and sort use a stable sort.
-- Use reverse to reverse the order of the sort.
+Examples
 
-- argsort and sort 使用一个稳定的排序。
-- 使用 reverse 来逆转排顺序。
+## examples
 
-## 示例
+Sort an array of numbers in descending order
 
-```c
+```vex
 int numbers[] = {5, 2, 90, 3, 1};
-int descending_nums[] = reverse (sort (numbers)); // {90, 5, 3, 2, 1}
+int descending_nums[] = reverse(sort(numbers));  // {90, 5, 3, 2, 1}
 
-int arr1[] = {1,4,3};
-int arr2[]  = sort(arr1);
-printf("%s", arr2);  // {1, 3, 4}
-
-string s[] = {"alice","david","cici"};
-string s2[] = sort(s);
-printf("%s", s2); // {alice, cici, david}
 ```

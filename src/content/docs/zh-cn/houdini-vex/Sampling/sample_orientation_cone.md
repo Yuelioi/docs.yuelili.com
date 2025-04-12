@@ -4,8 +4,6 @@ order: 25
 ---
 `vector4  sample_orientation_cone(vector4 center, float maxangle, vector u)`
 
-Show/hide arguments
-
 `center`
 
 Orientation in the center of the cone. This does not need to be normalized.

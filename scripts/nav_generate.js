@@ -20,7 +20,7 @@ function generateNav(rootDir) {
 
     // 处理目录
     entries
-      .filter((entry) => entry.isDirectory())
+      .filter((entry) => entry.isDirectory() && !entry.name.startsWith("_"))
       .sort((a, b) => a.name.localeCompare(b.name))
       .forEach((dir) => {
         const dirPath = path.join(currentDir, dir.name);
@@ -29,7 +29,6 @@ function generateNav(rootDir) {
 
         navItems.push({
           label: formatLabel(dir.name),
-          link: children[0]?.toLowerCase() || "", // 取第一个子项作为链接
           items: children,
         });
       });
@@ -37,7 +36,6 @@ function generateNav(rootDir) {
     return navItems;
   }
 
-  // 格式化目录名为标题格式
   function formatLabel(name) {
     return name
       .split("-")

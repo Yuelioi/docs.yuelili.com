@@ -14,8 +14,6 @@ Samples the texture at the given S and T coordinates, using a filter width based
 
 Takes an explicit sampling quadrilateral with corners (s0, t0), (s1, t1), (s2, t2), and (s3, t3).
 
-Show/hide arguments
-
 Returns
 
 A sampled color value from the texture.
@@ -53,8 +51,6 @@ Without MIP maps, blurring and filtering may not work as expected.
 \* You can also use `OPENIMAGEIO_IMAGECACHE_OPTIONS` to override the amount of memory OIIO uses for caching.
 
 By default, Houdini will set the cache memory to 1/8th of the physical computer memory. If you set the `OPENIMAGEIO_IMAGECACHE_OPTIONS` variable it overrides that computed cache size.
-
-Show/hide arguments
 
 "`wrap`",
 `string`

@@ -6,8 +6,6 @@ order: 18
 
 Returns `-1` if no such half-edge exists. Otherwise returns the number of a half-edge that either has `point1` as source or has `point2` as desination, or the other way around.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

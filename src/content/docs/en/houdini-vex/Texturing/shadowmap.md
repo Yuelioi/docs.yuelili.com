@@ -16,8 +16,6 @@ deep shadow maps. In both cases it returns a vector where each color
 component has the visibility of the light source to the point for that
 color.
 
-Show/hide arguments
-
 `filename`
 
 A path to the shadow or depth map.

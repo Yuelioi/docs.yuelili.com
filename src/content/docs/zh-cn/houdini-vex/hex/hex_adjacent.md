@@ -4,8 +4,6 @@ order: 1
 ---
 `int  hex_adjacent(<geometry>geometry, int primindex, int faceno)`
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

@@ -7,8 +7,6 @@ order: 9
 
 `int  chinputlimits(int opinput, int channel, float &channel_min, float &channel_max)`
 
-Show/hide arguments
-
 `opinput`
 
 CHOP Input index or -1 if omitted.

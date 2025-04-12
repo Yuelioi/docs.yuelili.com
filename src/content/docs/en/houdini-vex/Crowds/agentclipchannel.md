@@ -11,8 +11,6 @@ Returns -1 if `clipname` is not one of the agent’s [animation clips](agentclip
 
 For sampling the clip’s transform channels, use [agentrigfind](agentrigfind.html "Finds the index of a transform in an agent primitive’s rig.") and either [agentclipsamplelocal](agentclipsamplelocal.html "Samples an agent’s animation clip at a specific time.") or [agentclipsampleworld](agentclipsampleworld.html "Samples an agent’s animation clip at a specific time.").
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

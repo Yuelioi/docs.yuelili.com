@@ -13,8 +13,6 @@ order: 7
 
 Returns the channel index from a input given a channel name or -1 on failure.
 
-Show/hide arguments
-
 `opinput`
 
 CHOP Input index or -1 if omitted.

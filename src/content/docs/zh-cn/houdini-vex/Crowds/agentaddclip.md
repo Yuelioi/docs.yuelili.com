@@ -19,8 +19,6 @@ transforms will be treated as *local* transforms, such as those returned by
 [agentlocaltransform](agentlocaltransform.html "Returns the current local space transform of an agent primitive’s bone.") (ie. they are relative to the corresponding parent
 transform in the agent’s skeleton).
 
-Show/hide arguments
-
 `geohandle`
 
 A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](geoself.html "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)

@@ -4,8 +4,6 @@ order: 12
 ---
 `vector2  sample_circle_uniform(vector2 u)`
 
-Show/hide arguments
-
 `u`
 
 Pair of numbers between 0 and 1.

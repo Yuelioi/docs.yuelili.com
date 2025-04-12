@@ -10,8 +10,6 @@ Creates a vector4 representing a unit quaternion from a vector representing Eule
 
 The angles are in radians. Use the `radians()` function to convert degrees into radians.
 
-Show/hide arguments
-
 `order`
 
 One of the rotation order constants listed below, which can be imported from `$HFS/houdini/vex/include/math.h`.

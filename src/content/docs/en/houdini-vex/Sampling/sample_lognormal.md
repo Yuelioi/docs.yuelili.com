@@ -6,8 +6,6 @@ order: 22
 
 `float  sample_lognormal(float mu, float sigma, float minvalue, float maxvalue, float u)`
 
-Show/hide arguments
-
 `mu`
 
 The mean of the underlying normal distribution.

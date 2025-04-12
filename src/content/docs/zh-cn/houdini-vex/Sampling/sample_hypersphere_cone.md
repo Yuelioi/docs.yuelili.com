@@ -4,8 +4,6 @@ order: 19
 ---
 `vector4  sample_hypersphere_cone(vector4 center, float maxangle, vector4 u)`
 
-Show/hide arguments
-
 `center`
 
 Direction in the center of the cone. This does not need to be normalized.

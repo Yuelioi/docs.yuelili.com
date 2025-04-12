@@ -8,8 +8,6 @@ order: 2
 
 `vector  prim_normal(<geometry>geometry, int prim_number, float u, float v, float w)`
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

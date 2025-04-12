@@ -8,8 +8,6 @@ order: 3
 
 `vector4  Dw(vector4 p, ...)`
 
-Show/hide arguments
-
 Returns
 
 Returns the derivative of `p` with respect to W.
@@ -23,8 +21,6 @@ Derivatives options
 
 Functions which compute derivatives take additional arguments to
 allow tuning of the derivative computation.
-
-Show/hide arguments
 
 "`extrapolate`",
 `int`

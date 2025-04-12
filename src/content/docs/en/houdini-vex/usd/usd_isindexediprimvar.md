@@ -11,8 +11,6 @@ This function checks whether the given primvar is indexed, if it’s found direc
 
 Some primvars may contain a compacted array of unique values, and an additional array of indices into the value array. They are called indexed primvars. The length of the value array depends on the number of unique elements, but the length of the index array corresponds to the number of entities the primvar applies to.
 
-Show/hide arguments
-
 `<stage>`
 
 When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.

@@ -4,8 +4,6 @@ order: 20
 ---
 `vector4  sample_hypersphere_uniform(vector4 u)`
 
-Show/hide arguments
-
 `u`
 
 Four numbers between 0 and 1.

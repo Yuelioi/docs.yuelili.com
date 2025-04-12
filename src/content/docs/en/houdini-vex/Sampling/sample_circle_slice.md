@@ -4,8 +4,6 @@ order: 11
 ---
 `vector2  sample_circle_slice(vector2 center, float maxangle, vector2 u)`
 
-Show/hide arguments
-
 `center`
 
 Direction in the center of the slice. This does not need to be normalized.

@@ -13,8 +13,6 @@ This function adds new channels to a CHOP node. It works only when iterating ove
 
 Returns 1 on success, 0 otherwise.
 
-Show/hide arguments
-
 `channel_names`
 
 The names of the attributes to add. Can be an array or a space separated list of channel names.

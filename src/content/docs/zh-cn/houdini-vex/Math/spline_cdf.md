@@ -26,8 +26,6 @@ to build the CDF with. Function samples the spline according to the resolution,
 then creates and returns a CDF from said samples. Note that there is only support
 for single dimension splines.
 
-Show/hide arguments
-
 `bases`
 
 An array of strings describing how to interpret the corresponding `values`: each string can be `"constant"`, `"linear"`, `"cubic"` (or `"catmullrom"`, `"cspline"`), `"linearsolve"` (or `"solvelinear"`), or `"monotonecubic"`. See the [spline](spline.html "Samples a value along a polyline or spline curve.") function docs for information on how these options control the interpretation of the values.

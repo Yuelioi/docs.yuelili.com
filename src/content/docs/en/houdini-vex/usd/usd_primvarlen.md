@@ -13,8 +13,6 @@ This function returns the length of a given primvar found directly on the given 
 
 For array primvars it is the length of an array, and for non-array primvars the length is 1.
 
-Show/hide arguments
-
 `<stage>`
 
 When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.

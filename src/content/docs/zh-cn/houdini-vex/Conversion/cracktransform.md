@@ -20,8 +20,6 @@ For example: `vector angles = radians(cracktransform(XFORM_TRS, XFORM_XYZ, 1, {0
 Note
 Rotation angles (when `c=4`) are returned in radians.
 
-Show/hide arguments
-
 `trs`
 
 One of the transform order constants listed below, which can be imported from `$HFS/houdini/vex/include/math.h`.

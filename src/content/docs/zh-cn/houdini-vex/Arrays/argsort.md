@@ -1,59 +1,43 @@
 ---
-order: 3
 title: argsort
+order: 2
 ---
+`int [] argsort(<type>value[])`
 
-# argsort
+Returns a list of indices that, if applied to the given array, will give a sorted sequence in increasing order.
 
-## 描述
+This lets sort an array by some property of the items in the array rather than by the values themselves.
 
-Returns the indices of a sorted version of an array.
+- [argsort](argsort.html "Returns the indices of a sorted version of an array.") and [sort](sort.html "Returns the array sorted in increasing order.") use a stable sort.
+- Use [reverse](reverse.html "Returns an array or string in reverse order.") to reverse the order of the sort.
 
-返回数组有序排列下的索引列表
+Examples
 
-arg = 参数、属性 argument
-sort = 排序
-加起来 = 基于数组元素的属性排序
+## examples
 
-```c
-int [] argsort(<type>value[])
-```
+Sort strings by their length
 
-Returns a list of indices that, if applied to the given array, will give a
-sorted sequence in increasing order.
+```vex
+cvex main()
+{
+    // Given an array of strings...
+    string colors[] = {"Red", "Green", "Blue", "Orange", "Violet", "Indigo"};
 
-返回索引列表，如果应用于给定的数组，将给出一个按递增顺序排序的序列。
+    // Create an array with the corresponding lengths
+    int[] lengths = {};
+    foreach (string name; colors) {
+        push(lengths, len(name));
+    }
 
-This lets sort an array by some property of the items in the array rather than
-by the values themselves.
+    // Sort the lengths and return an array containing the new ordering
+    int[] ordering = argsort(lengths);
 
-这样可以通过数组元素某些属性来排序（比如元素长度），而不是基于数值本身。
+    // Get the array of color names but sorted by name length
+    string colors_by_len[] = reorder(colors, ordering);
 
-- argsort and sort use a stable sort. | argsort 和 [[sort]] 使用稳定排序。
-- Use to reverse the order of the sort. | 使用 [[../../Houdini/Houdini/SOP/Polygon/reverse]] 来反转排序。
-
-## 示例：数组自定义排序
-
-```c
-// 原数组：字符串数组
-string colors[] = {"Red", "Green", "Blue", "Orange", "Violet", "Indigo"};
-
-
-// 基于元素长度，创建新数组（{3, 5, 4, 6, 6, 6}）
-int lengths[] = {};
-foreach (string name; colors) {
- push(lengths, len(name));
+    printf("%s\n", colors_by_len);
 }
 
-
-// 获取索引列表（{0, 2, 1, 3, 4, 5}）
-int ordering[] = argsort(lengths);
-
-
-// 基于排序规则 给原来的数组排序
-string colors_by_len[] = reorder(colors, ordering);
-
-
-printf("%s\n", colors_by_len); // {Red, Blue, Green, Orange, Violet, Indigo}
+// Prints {Red, Blue, Green, Orange, Violet, Indigo}
 
 ```

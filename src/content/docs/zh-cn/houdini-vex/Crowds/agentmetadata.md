@@ -10,8 +10,6 @@ order: 32
 Returns the shared [metadata dictionary](../../crowds/agents.html#metadata) from the agent’s definition.
 Returns an empty dictionary if `prim` is out of range or is not an agent primitive.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

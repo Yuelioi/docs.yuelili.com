@@ -8,8 +8,6 @@ order: 53
 
 This function can provide improved performance compared to using a combination of [setagentclipnames](setagentclipnames.html "Sets the current animation clips for an agent primitive."), [setagentcliptimes](setagentcliptimes.html "Sets the current times for an agent primitive’s animation clips."), and [setagentclipweights](setagentclipweights.html "Sets the blend weights for an agent primitive’s animation clips."), and also modifies the [primitive intrinsics used for layering animation clips](../../crowds/agents.html#currentclips).
 
-Show/hide arguments
-
 `geohandle`
 
 Handle to the geometry to write to. `geoself()` can be used to get a handle to the current geometry.

@@ -13,8 +13,6 @@ The angles are in radians. Use the `degrees()` function to convert radians into 
 
 For more information, see [Data types](../lang.html#data-types) and [Dot operator](../lang.html#dot-operator).
 
-Show/hide arguments
-
 `order`
 
 One of the rotation order constants listed below, which can be imported from `$HFS/houdini/vex/include/math.h`.

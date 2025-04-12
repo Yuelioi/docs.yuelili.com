@@ -13,8 +13,6 @@ This function returns a value of a flattened primvar on a given primitive.
 
 Some primvars can be indexed, where the primvar is a compacted array of unique values, and there is an index array to map an entity to the value element. This function expands the compacted array by using the index array, and returns the expanded array of values.
 
-Show/hide arguments
-
 `<stage>`
 
 When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.

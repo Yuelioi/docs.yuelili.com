@@ -9,8 +9,6 @@ order: 117
 
 This function returns the list of forwarded targets of a given relationship. This is a convenience function to expand all the nested relationships, since a target in a relationship can be another relationship.
 
-Show/hide arguments
-
 `<stage>`
 
 When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.

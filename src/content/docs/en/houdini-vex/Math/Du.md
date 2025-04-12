@@ -8,8 +8,6 @@ order: 1
 
 `vector4  Du(vector4 n, ...)`
 
-Show/hide arguments
-
 Returns
 
 The derivative of `n` with respect to U.
@@ -22,8 +20,6 @@ Derivatives options
 
 Functions which compute derivatives take additional arguments to
 allow tuning of the derivative computation.
-
-Show/hide arguments
 
 "`extrapolate`",
 `int`

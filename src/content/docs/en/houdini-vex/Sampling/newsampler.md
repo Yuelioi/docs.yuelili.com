@@ -12,8 +12,6 @@ order: 4
 Returns an initialized sampler sequence for use as the first argument
 to the [nextsample](nextsample.html) function.
 
-Show/hide arguments
-
 `seed`
 
 You can specify a seed value for the sequence.

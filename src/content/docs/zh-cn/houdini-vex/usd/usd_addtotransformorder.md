@@ -11,8 +11,6 @@ This function appends a transformation to the primitive’s transform order. Tra
 
 NOTE: unlike most VEX functions that deal with primitive transforms and take an operation suffix as a parameter, this function takes the full operation name. Use [usd_transformname](usd_transformname.html "Constructs a full name of a transform operation") to obtain the full name if you know the suffix.
 
-Show/hide arguments
-
 `stagehandle`
 
 A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)

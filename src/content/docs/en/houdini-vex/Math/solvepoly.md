@@ -4,8 +4,6 @@ order: 76
 ---
 `int  solvepoly(float coef[], float &roots[], int maxiter=0)`
 
-Show/hide arguments
-
 `coef`
 
 An array of coefficients of the polynomial.

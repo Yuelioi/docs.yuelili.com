@@ -9,8 +9,6 @@ order: 150
 
 This function returns a unique full name for a transform operation, given its type and suffix, that is different from any name that currently exists on the given primitive. It can be useful to ensure that the suffix used for the operation name does not stomp on any existing one.
 
-Show/hide arguments
-
 `<stage>`
 
 When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.

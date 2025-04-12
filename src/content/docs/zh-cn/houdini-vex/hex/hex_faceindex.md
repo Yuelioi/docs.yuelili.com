@@ -8,8 +8,6 @@ Returns `-1` if an invalid number is specified.
 
 Returns `0` to `7` to refer to the eight vertices of a generic hexahedron.
 
-Show/hide arguments
-
 `faceno`
 
 The face on the hexahedron. Ranges from `0` to `5`.

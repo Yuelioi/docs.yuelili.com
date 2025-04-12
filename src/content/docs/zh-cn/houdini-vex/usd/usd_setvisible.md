@@ -11,8 +11,6 @@ This function makes the primitive visible or invisible, depending on the given f
 
 NOTE: This function is similar to `usd_setvisibility()` which, in addition to making a primitive visible or invisible, can also configure it to inherit visibility from the parent.
 
-Show/hide arguments
-
 `stagehandle`
 
 A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)

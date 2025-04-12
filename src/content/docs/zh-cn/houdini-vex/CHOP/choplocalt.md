@@ -9,8 +9,6 @@ order: 14
 
 Read a sample from the local transform channel at the given index.
 
-Show/hide arguments
-
 `filename`
 
 The CHOP node path to query using the op: syntax.

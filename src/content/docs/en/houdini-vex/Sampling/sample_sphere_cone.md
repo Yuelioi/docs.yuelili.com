@@ -4,8 +4,6 @@ order: 28
 ---
 `vector  sample_sphere_cone(vector center, float maxangle, vector u)`
 
-Show/hide arguments
-
 `center`
 
 Direction in the center of the cone. This does not need to be normalized.

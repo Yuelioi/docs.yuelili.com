@@ -4,8 +4,6 @@ order: 8
 ---
 `vector2  sample_circle_arc(vector2 center, float maxangle, float u)`
 
-Show/hide arguments
-
 `center`
 
 Direction in the center of the arc. This does not need to be normalized.

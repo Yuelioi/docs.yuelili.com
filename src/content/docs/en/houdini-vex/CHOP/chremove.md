@@ -17,8 +17,6 @@ This function removes channels from a CHOP node. It works only when iterating ov
 
 Returns 1 if all channels were removed or 0 otherwise.
 
-Show/hide arguments
-
 `channel_index`
 
 The channel index to remove.

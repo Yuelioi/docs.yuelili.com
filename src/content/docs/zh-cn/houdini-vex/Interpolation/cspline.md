@@ -10,8 +10,6 @@ To specify the curve using unevenly spaced keys, use [ckspline](ckspline.html "S
 
 `vector4  cspline(float t, vector4 val1, ...)`
 
-Show/hide arguments
-
 `t`
 
 The position along the spline to sample.

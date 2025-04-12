@@ -17,8 +17,6 @@ CHOP attributes store metadata on clips, channels, samples, or channel/sample pa
 
 This function sets the value of a CHOP attribute. Use [chattr](chattr.html "Reads from a CHOP attribute.") to read CHOP attributes.
 
-Show/hide arguments
-
 `attribclass`
 
 The “level” of the attribute:

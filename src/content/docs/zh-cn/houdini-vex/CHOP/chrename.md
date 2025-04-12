@@ -13,8 +13,6 @@ This function renames a CHOP channel . It works only when iterating over Clip, C
 
 Returns 1 if channel was renamed or 0 otherwise.
 
-Show/hide arguments
-
 `channel_index`
 
 The channel index to rename.

@@ -9,8 +9,6 @@ order: 1
 
 This function adds an attribute of a given type to the primitive, if such attribute is not part of a schema. It is useful for controlling the exact type of a custom attribute. For attributes defined by primitive’s schema, this call has no effect, because the schema already determines their type. To create an attribute but mark it as not being a custm attribute, use [usd_addschemaattrib](usd_addschemaattrib.html "Creates an attribute of a given type on a primitive, and sets the custom metadata flag to False.").
 
-Show/hide arguments
-
 `stagehandle`
 
 A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)

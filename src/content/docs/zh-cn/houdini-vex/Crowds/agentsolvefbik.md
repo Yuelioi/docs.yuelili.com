@@ -21,8 +21,6 @@ Returns `-1` if `prim` is out of range or is not an agent primitive, or targets 
 
 If “agent_jointgoalxforms”, “agent_jointconstrainedxforms”, and “agent_jointlimits” attributes are present on the agent, as produced by the [Agent Configure Joints SOP](../../nodes/sop/agentconfigurejoints.html "Creates point attributes that specify the rotation limits of an agent’s joints."), then they will be interpreted as joint limits to use while solving.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

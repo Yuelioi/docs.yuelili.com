@@ -8,8 +8,6 @@ Note
 To convert the linear index into a primitive number and primitive vertex number,
 use [vertexprim](vertexprim.html "Returns the number of the primitive containing a given vertex.") and [vertexprimindex](vertexprimindex.html "Converts a linear vertex index into a primitive vertex number.").
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

@@ -9,8 +9,6 @@ order: 55
 
 This function returns the interpolation style of the primvar found directly on the given primitive or inherited from primitive’s ancestor. E.g. “constant”, “varying”, etc.
 
-Show/hide arguments
-
 `<stage>`
 
 When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.

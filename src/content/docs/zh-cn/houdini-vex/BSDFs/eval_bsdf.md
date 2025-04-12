@@ -17,8 +17,6 @@ order: 9
 
 `vector  eval_bsdf(bsdf b, vector viewer, vector light, vector normal, float &pdf, int mask, ...)`
 
-Show/hide arguments
-
 `b`
 
 BSDF to evaluate.

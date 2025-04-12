@@ -17,8 +17,6 @@ CHOP attributes store metadata on clips, channels, samples, or channel/sample pa
 
 This function removes CHOP attribute.
 
-Show/hide arguments
-
 `attribclass`
 
 The “level” of the attribute:

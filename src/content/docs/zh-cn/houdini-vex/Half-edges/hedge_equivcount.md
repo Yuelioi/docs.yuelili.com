@@ -7,8 +7,6 @@ order: 3
 Note
 Equivalent half-edges may be oppositely oriented, i.e. the source of one can be the destination of the other and vice versa.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

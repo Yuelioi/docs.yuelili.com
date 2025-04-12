@@ -18,8 +18,6 @@ the distribution won’t change it, which can be useful in simulations.
 This wouldn’t be the case if one generated components of the vectors as
 independent samples of the univariate Cauchy distribution.
 
-Show/hide arguments
-
 `u`
 
 A number, or multiple numbers, in the range `[0,1)`.

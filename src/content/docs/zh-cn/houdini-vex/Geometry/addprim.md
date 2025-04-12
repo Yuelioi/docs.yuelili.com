@@ -42,8 +42,6 @@ If the primitive was created, but any points were invalid, the corresponding ver
 
 These signatures overwrite the `primnum` variable with the new primitive number instead of returning it.
 
-Show/hide arguments
-
 `geohandle`
 
 A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](geoself.html "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)

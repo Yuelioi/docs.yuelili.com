@@ -7,8 +7,6 @@ order: 13
 Returns `-1` if `hedge` is invalid. Otherwise, returns the number of the half-edge
 that precedes (its destination is the source of) `hedge` in the polygon that contains it.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

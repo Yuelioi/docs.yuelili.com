@@ -31,8 +31,6 @@ Takes samples number of stochastic samples (unless the image is a .rat file).
 Uses the quadrilateral formed by `(uv0)-(uv1)-(uv2)-(uv3)` to area sample the texture file.
 Takes samples number of stochastic samples (unless the image is a .rat file).
 
-Show/hide arguments
-
 Returns
 
 If you call the function with a `vector4` return type, the fourth component is the alpha channel of the texture. If the image does not have alpha, the fourth component is always `1`.
@@ -68,8 +66,6 @@ Without MIP maps, blurring and filtering may not work as expected.
 \* You can also use `OPENIMAGEIO_IMAGECACHE_OPTIONS` to override the amount of memory OIIO uses for caching.
 
 By default, Houdini will set the cache memory to 1/8th of the physical computer memory. If you set the `OPENIMAGEIO_IMAGECACHE_OPTIONS` variable it overrides that computed cache size.
-
-Show/hide arguments
 
 "`wrap`",
 `string`

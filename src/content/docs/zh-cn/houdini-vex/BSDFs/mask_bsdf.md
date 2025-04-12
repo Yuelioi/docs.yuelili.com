@@ -4,8 +4,6 @@ order: 15
 ---
 `bsdf  mask_bsdf(bsdf b, int mask)`
 
-Show/hide arguments
-
 `b`
 
 BSDF to mask.

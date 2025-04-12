@@ -7,8 +7,6 @@ order: 29
 
 `vector  sample_sphere_shell_uniform(vector u, float alpha)`
 
-Show/hide arguments
-
 `u`
 
 Three numbers between 0 and 1.

@@ -6,8 +6,6 @@ This function lets you walk the points connected to a point (separated by a sing
 
 `int  neighbour(<geometry>geometry, int point_num, int neighbour_num)`
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

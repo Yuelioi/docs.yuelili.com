@@ -6,8 +6,6 @@ order: 38
 
 `int  uvintersect(<geometry>geometry, string primgroup, string uvname, vector orig, vector dir, vector &pos, vector &primuv)`
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

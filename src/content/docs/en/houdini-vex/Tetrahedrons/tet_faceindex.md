@@ -8,8 +8,6 @@ Returns `-1` if an invalid number is specified.
 
 Returns `0` to `3` to refer to the four vertices of a generic tetrahedron.
 
-Show/hide arguments
-
 `faceno`
 
 The face on the tetrahedron. Face 0 is the triangle that doesn’t

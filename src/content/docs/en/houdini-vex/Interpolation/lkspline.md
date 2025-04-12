@@ -16,8 +16,6 @@ This is useful for specifying a color ramp.
 
 If you just want linearly spaced keys, use [lspline](lspline.html "Samples a polyline defined by linearly spaced values.") instead.
 
-Show/hide arguments
-
 `sample_pos`
 
 The position along the curve at which to sample.

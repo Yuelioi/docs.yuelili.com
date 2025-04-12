@@ -7,8 +7,6 @@ order: 22
 Use this to find linear vertex number of the first vertex to share this point.
 Then you can use [vertexnext](vertexnext.html "Returns the linear vertex number of the next vertex sharing a point with a given vertex.") to iterate over the other vertices in the point.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

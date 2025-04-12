@@ -13,8 +13,6 @@ This function returns the length of a given attribute.
 
 For array attributes it is the length of the array, and for non-array attributes the length is 1.
 
-Show/hide arguments
-
 `<stage>`
 
 When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.

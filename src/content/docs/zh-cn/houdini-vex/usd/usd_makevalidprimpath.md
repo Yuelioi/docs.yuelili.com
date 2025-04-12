@@ -10,8 +10,6 @@ order: 91
 This function ensures that a string meets the requirements of a legal USD
 primitive path that can be passed to other USD functions.
 
-Show/hide arguments
-
 `path`
 
 String that should be turned into a valid primitive path.

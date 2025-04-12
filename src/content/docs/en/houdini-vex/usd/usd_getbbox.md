@@ -9,8 +9,6 @@ order: 42
 
 This function returns primitive’s axis-aligned bounding box. The point corresponding to the minimum corner of the bounding box will be returned in min, while the maximum will be in max. Always returns 1.
 
-Show/hide arguments
-
 `<stage>`
 
 When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.

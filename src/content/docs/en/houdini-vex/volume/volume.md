@@ -20,8 +20,6 @@ Derivatives options
 Functions which compute derivatives take additional arguments to
 allow tuning of the derivative computation.
 
-Show/hide arguments
-
 "`extrapolate`",
 `int`
 `=0`

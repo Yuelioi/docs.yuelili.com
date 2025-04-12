@@ -60,8 +60,6 @@ Without MIP maps, blurring and filtering may not work as expected.
 
 By default, Houdini will set the cache memory to 1/8th of the physical computer memory. If you set the `OPENIMAGEIO_IMAGECACHE_OPTIONS` variable it overrides that computed cache size.
 
-Show/hide arguments
-
 "`wrap`",
 `string`
 `="repeat"`

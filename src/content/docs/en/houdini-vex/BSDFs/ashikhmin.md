@@ -10,8 +10,6 @@ order: 2
 ![](../_static/rendering/ashikhmin2.png)
 An anisotropic `bsdf` similar to `phong()` but with independent controls for the highlight size along 2 tangent vectors.
 
-Show/hide arguments
-
 `exponentx`
 
 Phong exponent along the `framex` vector.

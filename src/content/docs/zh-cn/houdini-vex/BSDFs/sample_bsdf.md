@@ -12,8 +12,6 @@ order: 19
 
 `void  sample_bsdf(bsdf b, vector viewer_u, vector normal_v, int &flags, vector &dir, vector &eval, float &pdf, int &type, float sx, float sy, int mask, ...)`
 
-Show/hide arguments
-
 `F`
 
 The BSDF to sample.

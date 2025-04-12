@@ -16,8 +16,6 @@ This is useful for specifying a color ramp.
 
 If you need variably-spaced keys, use [lkspline](lkspline.html "Samples a polyline between the key points.") instead.
 
-Show/hide arguments
-
 `sample_pos`
 
 The position along the curve at which to sample the value.

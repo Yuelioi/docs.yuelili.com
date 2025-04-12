@@ -29,8 +29,6 @@ Writes the index of the sampled CDF and value to output arguments.
 
 Writes the index of the sampled CDF, the sampled value, and the corresponding PDF to output arguments.
 
-Show/hide arguments
-
 `cdf`
 
 The CDF to sample from (create this using [create_cdf](create_cdf.html "Creates a cumulative distribution function (CDF) from an array of probability density function (PDF) values.")).

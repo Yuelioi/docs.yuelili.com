@@ -10,8 +10,6 @@ Returns an empty array if `clipname` is not one of the agent’s [animation clip
 
 For a list of the agent’s transforms, use [agenttransformnames](agenttransformnames.html "Returns the name of each transform in an agent primitive’s rig.").
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

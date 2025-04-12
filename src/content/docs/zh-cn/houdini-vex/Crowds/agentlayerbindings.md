@@ -8,8 +8,6 @@ order: 27
 
 Returns an empty array if `layername` is not one of the agent’s [layers](agentlayers.html "Returns all of the layers that have been loaded for an agent primitive."), `shapetype` is invalid, `prim` is out of range, or `prim` is not an agent primitive.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

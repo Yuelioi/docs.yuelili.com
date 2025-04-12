@@ -15,8 +15,6 @@ This method can generate either 2D or 3D sampling patterns. To generate 2D sampl
 
 You can add an extra argument, `"mode"`, followed by one of the following:
 
-Show/hide arguments
-
 `“qstrat”`
 
 Advances to the next sample in the pattern. You should use this mode when using [newsampler](newsampler.html "Initializes a sampling sequence for the nextsample function.").

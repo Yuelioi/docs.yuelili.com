@@ -40,8 +40,6 @@ When you specify a texture, such as with the `"environment"` keyword,
 you can also use the image filtering keyword arguments. See [environment](environment.html "Returns the color of the environment texture.")
 for a listing of the image filter keyword arguments.
 
-Show/hide arguments
-
 "`scope`",
 `string`
 

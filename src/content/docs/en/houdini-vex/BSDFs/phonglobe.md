@@ -15,8 +15,6 @@ A phong (blurred) reflection along a given direction vector. This will produce t
 
 It is possible to create anisotropic phong lobes by providing x and y exponents and tangent vectors.
 
-Show/hide arguments
-
 `dir`
 
 the direction of specularity.

@@ -15,8 +15,6 @@ USD supports a few standard expansion rules
 - `expandPrims` - all the primitives at or below the includes (but not excludes) belong to the collection
 - `expanPrimsAndProperties` - like `expandPrims` but also includes properties of matched primitives
 
-Show/hide arguments
-
 `<stage>`
 
 When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.

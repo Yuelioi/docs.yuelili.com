@@ -9,8 +9,6 @@ order: 57
 
 `int  setagentcollisionlayers(int geohandle, int prim, int layer_ids[])`
 
-Show/hide arguments
-
 `geohandle`
 
 Handle to the geometry to write to. `geoself()` can be used to get a handle to the current geometry.

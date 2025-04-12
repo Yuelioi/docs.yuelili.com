@@ -9,8 +9,6 @@ order: 115
 
 This function returns the type name of a primvar found directly on the given primitive. The type name is taken from the USD value type registry, e.g., “float”, “vector3d”, “double3”, etc.
 
-Show/hide arguments
-
 `<stage>`
 
 When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.

@@ -13,12 +13,30 @@ import { aePlugin } from "./src/nav/ae-plugin";
 import { aiScripting } from "./src/nav/ai-scripting";
 import { prScripting } from "./src/nav/pr-scripting";
 import { prPlugin } from "./src/nav/pr-plugin";
-// import { houdiniVexNav } from "./src/nav/houdini-vex";
+import { houdiniVexNav } from "./src/nav/houdini-vex";
 
 import starlightGiscus from "starlight-giscus";
 
 // https://astro.build/config
 export default defineConfig({
+  i18n: {
+    defaultLocale: "zh-cn",
+    locales: [
+      {
+        codes: ["en"],
+        path: "en",
+      },
+      {
+        codes: ["zh-CN"],
+        path: "zh-cn",
+      },
+    ],
+    routing: {
+      prefixDefaultLocale: true,
+      redirectToDefaultLocale: false,
+      fallbackType: "redirect",
+    },
+  },
   markdown: {
     shikiConfig: {
       theme: "dracula",
@@ -37,16 +55,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "月离文档",
-      defaultLocale: "zh-CN",
-      locales: {
-        en: {
-          label: "English",
-        },
-        "zh-CN": {
-          label: "简体中文",
-          lang: "zh-CN",
-        },
-      },
+
       social: [{ icon: "github", label: "GitHub", href: "https://github.com/Yuelioi/docs.yuelili.comt" }],
       components: {
         Header: "./src/components/Header.astro",
@@ -57,7 +66,7 @@ export default defineConfig({
           // {
           //   exclude: ["/ae-scripting/**/*"],
           // },
-          [aeExpression, aeScripting, javascriptTools, aePlugin, prScripting, prPlugin, aiScripting]
+          [aeExpression, aeScripting, javascriptTools, aePlugin, prScripting, prPlugin, aiScripting, houdiniVexNav]
         ),
 
         starlightGiscus({

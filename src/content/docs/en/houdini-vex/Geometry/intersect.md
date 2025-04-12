@@ -21,8 +21,6 @@ To get *all* intersections along a vector, use [intersect_all](intersect_all.htm
 
 Computes the intersection of the specified ray with primitives in the given group.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

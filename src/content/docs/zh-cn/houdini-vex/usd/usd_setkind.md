@@ -9,8 +9,6 @@ order: 129
 
 This function sets the primitive’s kind.
 
-Show/hide arguments
-
 `stagehandle`
 
 A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)

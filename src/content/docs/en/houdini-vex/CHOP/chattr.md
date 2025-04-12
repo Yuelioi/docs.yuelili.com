@@ -38,8 +38,6 @@ CHOP attributes store metadata on clips, channels, samples, or channel/sample pa
 
 This function reads the value of a CHOP attribute. Use [chsetattr](chsetattr.html "Sets the value of a CHOP attribute.") to set CHOP attributes.
 
-Show/hide arguments
-
 `opinput`
 
 The input number to read from, starting from 0. For example, the first input is 0, the second input is 1, and so on.

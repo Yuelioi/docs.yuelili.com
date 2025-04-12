@@ -9,8 +9,6 @@ order: 145
 
 This function returns the full name of a transform operation for the given type and suffix.
 
-Show/hide arguments
-
 `transformtype`
 
 The numerical code for the transformation type. See the VEX “usd.h” header for defines, such as `USD_XFORM_TRANSLATE`, `USD_XFORM_TRANSFORM`, or `USD_XFORM_ROTATE_XYZ`.

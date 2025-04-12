@@ -6,8 +6,6 @@ order: 34
 
 Returns an identity matrix if `transform` is [out of range](agenttransformcount.html "Returns the number of transforms in an agent primitive’s rig."), `prim` is out of range, or `prim` is not an agent primitive.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

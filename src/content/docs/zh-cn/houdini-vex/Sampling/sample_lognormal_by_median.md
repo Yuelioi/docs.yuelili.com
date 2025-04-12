@@ -6,8 +6,6 @@ order: 23
 
 `float  sample_lognormal_by_median(float origmedian, float origstddev, float minvalue, float maxvalue, float u)`
 
-Show/hide arguments
-
 `median`
 
 The median of the distribution.

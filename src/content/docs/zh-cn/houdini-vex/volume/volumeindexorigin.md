@@ -6,8 +6,6 @@ order: 8
 
 `vector  volumeindexorigin(<geometry>geometry, string volumename)`
 
-Show/hide arguments
-
 Returns
 
 The index of the bottom left of a volume primitive.

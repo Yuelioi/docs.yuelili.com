@@ -14,8 +14,6 @@ Computes the winding number of the curve geometry around the point origin.
 
 Computes the winding number of primitive group primgroup around the point origin.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

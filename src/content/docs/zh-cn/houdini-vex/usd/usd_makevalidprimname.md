@@ -10,8 +10,6 @@ order: 90
 This function ensures that a string meets the requirements of a legal USD
 primitive name that can be used as part of a valid primitive path.
 
-Show/hide arguments
-
 `name`
 
 String that should be turned into a valid primitive name.

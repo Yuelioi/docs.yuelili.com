@@ -10,8 +10,6 @@ order: 1
 
 `vector  albedo(bsdf b, vector viewer, int mask, ...)`
 
-Show/hide arguments
-
 `viewer`
 
 Vector toward viewer.

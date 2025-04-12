@@ -13,8 +13,6 @@ order: 18
 Returns the distance to the closest uv coordinate on the geometry in uv space. This will find
 positions on the surfaces of the geometry, not just point positions.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

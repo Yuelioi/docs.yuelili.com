@@ -8,8 +8,6 @@ order: 31
 
 Returns a copy of the string with all occurrences of the string `old` replaced with the string `new`.
 
-Show/hide arguments
-
 `count`
 
 If specified, only the first `count` occurrences are replaced.

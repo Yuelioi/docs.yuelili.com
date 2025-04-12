@@ -12,8 +12,6 @@ order: 22
 
 `void  split_bsdf(bsdf &lobes[], bsdf source, float &weights[], int mask, int type, float u, float cdf[])`
 
-Show/hide arguments
-
 `&lobes`
 
 The function overwrites this array with the BSDFs for the component lobes.

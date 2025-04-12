@@ -6,8 +6,6 @@ order: 5
 
 `int  hedge_isprimary(int opinput, int hendge)`
 
-Show/hide arguments
-
 `geometry`
 
 The name of the geometry file to reference. Inside Houdini, this may be `op:full_path_to_sop` to reference a SOP.

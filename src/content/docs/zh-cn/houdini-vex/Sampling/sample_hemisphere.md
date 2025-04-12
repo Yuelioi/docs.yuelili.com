@@ -10,8 +10,6 @@ order: 18
 
 `vector  sample_hemisphere(vector center, float bias, vector2 u)`
 
-Show/hide arguments
-
 `center`
 
 Direction in the center of the hemisphere. This does not need to be normalized.

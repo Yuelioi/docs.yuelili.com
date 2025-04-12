@@ -9,8 +9,6 @@ order: 3
 
 This function includes the object in the collection. This is usually achieved by adding an explicit path to the collection’s include list, but it may just remove a path from the collection’s exclude list, if it’s sufficient.
 
-Show/hide arguments
-
 `stagehandle`
 
 A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)

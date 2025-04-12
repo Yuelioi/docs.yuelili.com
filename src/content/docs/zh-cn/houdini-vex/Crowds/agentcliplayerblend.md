@@ -9,8 +9,6 @@ order: 9
 This function blends the input values according to the blend tree described by the other parameters (the same format used for [layering agent clips](../../crowds/agents.html#currentclips)).
 This can be useful for blending custom values that correspond to each of an agent’s assigned clips.
 
-Show/hide arguments
-
 `values`
 
 A list of the input values to blend.

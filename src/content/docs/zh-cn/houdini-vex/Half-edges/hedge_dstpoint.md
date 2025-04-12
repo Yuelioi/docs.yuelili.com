@@ -6,8 +6,6 @@ order: 1
 
 Returns `-1` if the half-edge hedge is invalid. Otherwise, returns the point number of the destination point of the half-edge `hedge`.
 
-Show/hide arguments
-
 `geometry`
 
 The name of the geometry file to reference. Inside Houdini, this may be `op:full_path_to_sop` to reference a SOP.

@@ -17,8 +17,6 @@ Warning
 This form of `relbbox` is deprecated and may be removed in the future.
 Use the other forms as needed.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

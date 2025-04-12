@@ -12,8 +12,6 @@ for rough specular reflection and refraction.
 
 See [writing a PBR shader](../pbr.html) for information on BSDFs.
 
-Show/hide arguments
-
 `ng`
 
 Normalized geometry normal
@@ -81,8 +79,6 @@ Amount of dispersion
 Light inclusion/exclusion options
 
 ## light-inclusion-exclusion-options
-
-Show/hide arguments
 
 "`categories`",
 `string`

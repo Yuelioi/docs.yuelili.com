@@ -13,8 +13,6 @@ Returns all the CHOP attribute names of a given attribute class from a CHOP inpu
 
 CHOP attributes store metadata on clips, channels, samples, or channel/sample pairs.
 
-Show/hide arguments
-
 `opinput`
 
 The input number to read from, starting from 0. For example, the first input is 0, the second input is 1, and so on.

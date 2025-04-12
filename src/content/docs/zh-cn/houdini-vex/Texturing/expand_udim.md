@@ -12,8 +12,6 @@ This is similar to [texprintf](texprintf.html "Similar to sprintf, but does expa
 - There are no variadic print arguments. Only UDIM/UVTILE expansion is performed.
 - If UDIM/UVTILE expansion was performed, the function checks to see if the texture exists and is accessible.
 
-Show/hide arguments
-
 `u`, `v`
 
 The texture coordinates to translate into a UDIM tile specification.

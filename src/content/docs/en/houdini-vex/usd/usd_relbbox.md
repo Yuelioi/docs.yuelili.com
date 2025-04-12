@@ -9,8 +9,6 @@ order: 120
 
 Returns the relative position of the given point with respect to the bounding box of the primitive.
 
-Show/hide arguments
-
 `<stage>`
 
 When running in the context of a node (such as a wrangle LOP), this argument can be an integer representing the input number (starting at 0) to read the stage from. The integer is equivalent to the string form referencing a particular input, e.g., “opinput:0”.

@@ -28,8 +28,6 @@ Queryable attributes
 
 There are several generic attributes you can always query:
 
-Show/hide arguments
-
 `int texture:xres`
 
 X resolution of the texture map.
@@ -106,8 +104,6 @@ An array of the color space associated with each channel.
 `texture:tokens`
 
 List of all the built-in tokens understood by `teximport()`.
-
-Show/hide arguments
 
 `string texture:device`
 

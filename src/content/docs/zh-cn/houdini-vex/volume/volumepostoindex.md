@@ -6,8 +6,6 @@ order: 13
 
 `vector  volumepostoindex(<geometry>geometry, string volumename, vector position)`
 
-Show/hide arguments
-
 Returns
 
 The index of a voxel at the given position.

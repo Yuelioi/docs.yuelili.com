@@ -11,8 +11,6 @@ order: 9
 
 This function applies a rotation to the primitive. It creates and sets a value of a transform operation attribute that defines the rotation, and appends it to the primitive’s transform order.
 
-Show/hide arguments
-
 `stagehandle`
 
 A handle to the stage to write to. Currently the only valid value is `0`, which means the current stage in a node. (This argument may be used in the future to allow writing to other stages.)

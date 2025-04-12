@@ -13,8 +13,6 @@ Returns a new local transform given its world and new parent transforms.
 
 Returns a new world transform given its local and parent world transforms. The local transform including any inherited scales is stored in the effective_local_transform matrix;
 
-Show/hide arguments
-
 `scale_inherit_mode`
 
 Specifies how scale inheritance from the parent transform is applied to the result. It is one of the following defines from `math.h`:

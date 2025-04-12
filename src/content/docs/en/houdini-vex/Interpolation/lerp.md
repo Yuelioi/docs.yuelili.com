@@ -18,8 +18,6 @@ Performs linear interpolation between corresponding components by specific amoun
 
 Returns a BSDF that linearly interpolates between the output of the two given BSDFS.
 
-Show/hide arguments
-
 `amount`
 
 If the amount is outside the range 0 to 1, the values will be extrapolated linearly.

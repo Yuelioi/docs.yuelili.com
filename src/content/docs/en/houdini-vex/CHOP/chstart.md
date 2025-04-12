@@ -13,8 +13,6 @@ Uses `-1` as the `opinput`.
 
 Returns the index of the first sample in the channel data in the given CHOP input.
 
-Show/hide arguments
-
 `opinput`
 
 The input number to read from, starting from 0. For example, the first input is 0, the second input is 1, and so on.

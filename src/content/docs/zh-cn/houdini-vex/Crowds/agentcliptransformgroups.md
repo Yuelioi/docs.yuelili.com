@@ -8,8 +8,6 @@ See [Transform Groups](../../crowds/agents.html#xformgroups) for more informatio
 
 Returns an empty array if `prim` is out of range or is not an agent primitive.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

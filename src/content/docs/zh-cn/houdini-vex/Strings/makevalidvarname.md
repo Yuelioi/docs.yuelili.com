@@ -13,8 +13,6 @@ Variable names in languages such as VEX are only allowed to contain letters, num
 Node names and attribute names in Houdini have similar requirements.
 This function takes any string, and converts it into a string that obeys these restrictions by replacing invalid characters with an underscore.
 
-Show/hide arguments
-
 `name`
 
 String that should be turned into a valid variable name.

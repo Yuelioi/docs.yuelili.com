@@ -14,8 +14,6 @@ order: 24
 
 `vector4  sample_normal(vector4 u)`
 
-Show/hide arguments
-
 `u`
 
 A number, or multiple numbers, in the range `[0,1)`.

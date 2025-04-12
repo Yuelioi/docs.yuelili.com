@@ -26,8 +26,6 @@ Note: Distances to packed primitives and sphere/tube/circle primitives with
 non-uniform scales may not represent the actual closest point as the closest
 point is found in the untransformed space.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

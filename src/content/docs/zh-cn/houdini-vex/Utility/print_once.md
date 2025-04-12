@@ -7,8 +7,6 @@ order: 11
 Prints the string passed to the function exactly one time, even in a loop.
 This is useful to print a message before the first iteration of a loop, without having to count iterations.
 
-Show/hide arguments
-
 `msg`
 
 The string to print. This string does support interpolating values.

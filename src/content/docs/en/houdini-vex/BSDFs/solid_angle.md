@@ -4,8 +4,6 @@ order: 20
 ---
 `float  solid_angle(bsdf b, int mask)`
 
-Show/hide arguments
-
 `b`
 
 BSDF to sample.

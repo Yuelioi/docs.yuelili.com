@@ -8,8 +8,6 @@ This function warps uniform sample values so that they are equally
 distributed on a disk. The transformation attempts to preserve
 stratification properties from the original samples.
 
-Show/hide arguments
-
 `x`, `y`
 
 The function overwrites these variables with uniform distributed points within the unit disk.

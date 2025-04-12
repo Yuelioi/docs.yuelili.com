@@ -21,8 +21,6 @@ Usage
 
 Returns a CDF for the input PDF as an array of floats.
 
-Show/hide arguments
-
 `pdf`
 
 Array of PDF values to create the CDF for.

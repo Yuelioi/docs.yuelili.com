@@ -37,8 +37,6 @@ The samples are returned in the 3 vector output arguments.
 Returns 1 on success or 0 on failure.
 The version without `opinput` assumes the first input (0).
 
-Show/hide arguments
-
 `opinput`
 
 The input number to read from, starting from 0. For example, the first input is 0, the second input is 1, and so on.

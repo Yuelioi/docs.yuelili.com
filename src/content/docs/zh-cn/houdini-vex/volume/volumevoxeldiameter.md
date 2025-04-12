@@ -6,8 +6,6 @@ order: 23
 
 `float  volumevoxeldiameter(<geometry>geometry, string primname)`
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

@@ -14,8 +14,6 @@ Evaluates the clip at the given time and returns the local transforms of the age
 Returns an empty array if `clipname` is not one of the agent’s [animation clips](agentclipcatalog.html "Returns all of the animation clips that have been loaded for an agent primitive."), `prim` is out of range, `prim` is not an agent primitive, or `transform` is [out of range](agenttransformcount.html "Returns the number of transforms in an agent primitive’s rig.").
 The `matrix` signature is more efficient than the `matrix[]` signature for sampling a single transform.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

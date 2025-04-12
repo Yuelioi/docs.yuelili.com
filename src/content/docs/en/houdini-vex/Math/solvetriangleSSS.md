@@ -9,8 +9,6 @@ order: 78
 
 `vector  solvetriangleSSS(float a, float b, float c)`
 
-Show/hide arguments
-
 Returns
 
 The 3 angles of a triangle in radians given the value of its 3 sides using the Law of Cosines.

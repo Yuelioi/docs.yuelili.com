@@ -10,8 +10,6 @@ To specify the curve using uniformly spaced value keys, use [cspline](cspline.ht
 
 `vector4  ckspline(float t, vector4 value, float pos, ...)`
 
-Show/hide arguments
-
 `t`
 
 The position along the spline to sample.

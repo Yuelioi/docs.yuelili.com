@@ -10,8 +10,6 @@ order: 12
 
 `int [] nearpoints(<geometry>geometry, string ptgroup, vector pt, float maxdist, int maxpts)`
 
-Show/hide arguments
-
 `opinput`
 
 The number of the input to the current node, starting with `0` being the first input.

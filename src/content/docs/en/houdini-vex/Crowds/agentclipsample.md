@@ -15,8 +15,6 @@ Returns zero if `clipname` is not one of the agent’s [animation clips](agentcl
 
 For sampling the clip’s transform channels, use [agentclipsamplelocal](agentclipsamplelocal.html "Samples an agent’s animation clip at a specific time.") or [agentclipsampleworld](agentclipsampleworld.html "Samples an agent’s animation clip at a specific time.") instead.
 
-Show/hide arguments
-
 `<geometry>`
 
 When running in the context of a node (such as a wrangle SOP), this argument can be an integer representing the input number (starting at 0) to read the geometry from.

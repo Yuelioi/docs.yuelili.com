@@ -6,8 +6,6 @@ order: 63
 
 When modifying a single transform, using [setagentworldtransform](setagentworldtransform.html "Overrides the world space transform of an agent primitive’s bone.") instead can be significantly faster.
 
-Show/hide arguments
-
 `geohandle`
 
 Handle to the geometry to write to. `geoself()` can be used to get a handle to the current geometry.

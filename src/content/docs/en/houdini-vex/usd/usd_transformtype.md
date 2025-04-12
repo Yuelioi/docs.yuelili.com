@@ -9,8 +9,6 @@ order: 148
 
 This function returns the transform operation type implied by the full name.
 
-Show/hide arguments
-
 `name`
 
 The full name of the transform operation, which includes the standard namespace, encodes transformation type, and optionally contains the suffix.

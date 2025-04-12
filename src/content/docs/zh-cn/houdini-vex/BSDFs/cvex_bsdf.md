@@ -29,8 +29,6 @@ The evaluation function must accept the following arguments:
 
 ```
 
-Show/hide arguments
-
 `u`
 
 Outgoing light direction, from the surface to the viewer.
@@ -77,8 +75,6 @@ The sampling function must accept the following arguments:
 ```
 
 If the evaluation function is a delta function (indicated by the evaluation function setting `eval` to `0`), you are free to choose the sampling directions in any way you want. Otherwise, you should choose directions from a distribution that either matches the evaluation function or is close to it. The `sx` and `sy` inputs are available to help produce high quality sample distributions. These values are initialized directly from mantra’s pixel sampling patterns.
-
-Show/hide arguments
 
 `u`
 

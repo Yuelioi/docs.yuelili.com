@@ -41,8 +41,6 @@ the control points (keys) if the adjoining segments have the same basis, even if
 the key positions are not evenly spaced (i.e., are non-uniform and the distances
 between them are not equal).
 
-Show/hide arguments
-
 `basis`, `bases`
 
 These are the same interpolations supported by ramp parameters.

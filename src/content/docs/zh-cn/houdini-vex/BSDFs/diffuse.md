@@ -41,8 +41,6 @@ Light inclusion/exclusion options
 
 ## light-inclusion-exclusion-options
 
-Show/hide arguments
-
 "`categories`",
 `string`
 `="*"`
