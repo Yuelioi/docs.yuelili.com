@@ -20,7 +20,7 @@ import starlightGiscus from "starlight-giscus";
 // https://astro.build/config
 export default defineConfig({
   i18n: {
-    defaultLocale: "zh-cn",
+    defaultLocale: "en",
     locales: [
       {
         codes: ["en"],
@@ -62,12 +62,7 @@ export default defineConfig({
         TwoColumnContent: "./src/components/TwoColumnContent.astro",
       },
       plugins: [
-        starlightSidebarTopics(
-          // {
-          //   exclude: ["/ae-scripting/**/*"],
-          // },
-          [aeExpression, aeScripting, javascriptTools, aePlugin, prScripting, prPlugin, aiScripting, houdiniVexNav]
-        ),
+        starlightSidebarTopics([aeExpression, aeScripting, javascriptTools, aePlugin, prScripting, prPlugin, aiScripting, houdiniVexNav]),
 
         starlightGiscus({
           repo: "Yuelioi/docs.yuelili.com",
@@ -81,8 +76,8 @@ export default defineConfig({
   outDir: "dist/astro",
   vite: {
     plugins: [tailwindcss()],
-    build: {
-      emptyOutDir: false, // 禁止清空输出目录
-    },
+    // build: {
+    //   emptyOutDir: false,
+    // },
   },
 });

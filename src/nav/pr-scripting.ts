@@ -5,58 +5,169 @@ export const prScripting = {
   items: [
     {
       label: "Introduction",
+      translations: { "zh-CN": "介绍" },
       items: [
-        "pr-scripting/introduction/extendscript-overview",
-        "pr-scripting/introduction/changelog",
-        "pr-scripting/introduction/how-to-execute-scripts",
+        {
+          label: "ExtendScript Overview",
+          link: "/pr-scripting/introduction/extendscript-overview",
+          translations: { "zh-CN": "ExtendScript 概述" },
+        },
+        {
+          label: "Changelog",
+          link: "/pr-scripting/introduction/changelog",
+          translations: { "zh-CN": "更新日志" },
+        },
+        {
+          label: "How to Execute Scripts",
+          link: "/pr-scripting/introduction/how-to-execute-scripts",
+          translations: { "zh-CN": "如何执行脚本" },
+        },
       ],
     },
     {
       label: "Application",
-      items: ["pr-scripting/application/application"],
+      items: [
+        {
+          label: "Application",
+          link: "/pr-scripting/application/application",
+        },
+      ],
     },
     {
       label: "General",
+      translations: { "zh-CN": "通用" },
       items: [
-        "pr-scripting/general/anywhere",
-        "pr-scripting/general/encoder",
-        "pr-scripting/general/marker",
-        "pr-scripting/general/metadata",
-        "pr-scripting/general/production",
-        "pr-scripting/general/project",
-        "pr-scripting/general/projectmanager",
-        "pr-scripting/general/properties",
-        "pr-scripting/general/sourcemonitor",
+        {
+          label: "Anywhere",
+          link: "/pr-scripting/general/anywhere",
+        },
+        {
+          label: "Encoder",
+          link: "/pr-scripting/general/encoder",
+        },
+        {
+          label: "Marker",
+          link: "/pr-scripting/general/marker",
+          translations: { "zh-CN": "标记" },
+        },
+        {
+          label: "Metadata",
+          link: "/pr-scripting/general/metadata",
+          translations: { "zh-CN": "元数据" },
+        },
+        {
+          label: "Production",
+          link: "/pr-scripting/general/production",
+          translations: { "zh-CN": "制作流程" },
+        },
+        {
+          label: "Project",
+          link: "/pr-scripting/general/project",
+        },
+        {
+          label: "ProjectManager",
+          link: "/pr-scripting/general/projectmanager",
+        },
+        {
+          label: "Properties",
+          link: "/pr-scripting/general/properties",
+          translations: { "zh-CN": "属性" },
+        },
+        {
+          label: "SourceMonitor",
+          link: "/pr-scripting/general/sourcemonitor",
+          translations: { "zh-CN": "源监视器" },
+        },
       ],
     },
     {
       label: "Item",
-      items: ["pr-scripting/item/projectitem", "pr-scripting/item/trackitem"],
+      items: [
+        {
+          label: "ProjectItem",
+          link: "/pr-scripting/item/projectitem",
+        },
+        {
+          label: "TrackItem",
+          link: "/pr-scripting/item/trackitem",
+        },
+      ],
     },
     {
       label: "Sequence",
+      translations: { "zh-CN": "序列" },
       items: [
-        "pr-scripting/sequence/component",
-        "pr-scripting/sequence/componentparam",
-        "pr-scripting/sequence/sequence",
-        "pr-scripting/sequence/track",
+        {
+          label: "Component",
+          link: "/pr-scripting/sequence/component",
+        },
+        {
+          label: "ComponentParam",
+          link: "/pr-scripting/sequence/componentparam",
+        },
+        {
+          label: "Sequence",
+          link: "/pr-scripting/sequence/sequence",
+        },
+        {
+          label: "Track",
+          link: "/pr-scripting/sequence/track",
+          translations: { "zh-CN": "轨道" },
+        },
       ],
     },
     {
       label: "Other",
-      items: ["pr-scripting/other/audiochannelmapping", "pr-scripting/other/time"],
+      translations: { "zh-CN": "其他" },
+      items: [
+        {
+          label: "AudioChannelMapping",
+          link: "/pr-scripting/other/audiochannelmapping",
+          translations: { "zh-CN": "音频通道映射" },
+        },
+        {
+          label: "Time",
+          link: "/pr-scripting/other/time",
+          translations: { "zh-CN": "时间处理" },
+        },
+      ],
     },
     {
       label: "Collection",
+      translations: { "zh-CN": "集合" },
       items: [
-        "pr-scripting/collection/collection",
-        "pr-scripting/collection/componentcollection",
-        "pr-scripting/collection/markercollection",
-        "pr-scripting/collection/projectcollection",
-        "pr-scripting/collection/projectitemcollection",
-        "pr-scripting/collection/sequencecollection",
-        "pr-scripting/collection/trackcollection",
-        "pr-scripting/collection/trackitemcollection",
+        {
+          label: "Collection",
+          link: "/pr-scripting/collection/collection",
+        },
+        {
+          label: "ComponentCollection",
+          link: "/pr-scripting/collection/componentcollection",
+        },
+        {
+          label: "MarkerCollection",
+          link: "/pr-scripting/collection/markercollection",
+        },
+        {
+          label: "ProjectCollection",
+          link: "/pr-scripting/collection/projectcollection",
+        },
+        {
+          label: "ProjectItemCollection",
+          link: "/pr-scripting/collection/projectitemcollection",
+        },
+        {
+          label: "SequenceCollection",
+          link: "/pr-scripting/collection/sequencecollection",
+        },
+        {
+          label: "TrackCollection",
+          link: "/pr-scripting/collection/trackcollection",
+        },
+        {
+          label: "TrackItemCollection",
+          link: "/pr-scripting/collection/trackitemcollection",
+        },
       ],
     },
   ],
