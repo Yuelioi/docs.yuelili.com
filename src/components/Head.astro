@@ -1,0 +1,40 @@
+---
+const { head } = Astro.locals.starlightRoute;
+---
+
+<link
+  rel='sitemap'
+  href='/sitemap-index.xml'
+/>
+{
+  head.map(({ tag: Tag, attrs, content }) => (
+    <Tag
+      {...attrs}
+      set:html={content}
+    />
+  ))
+}
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?58690154a48cc49a6d222cca403e13bc";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script
+  async
+  src='https://www.googletagmanager.com/gtag/js?id=G-GZVRD7FGNB'>
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-GZVRD7FGNB");
+</script>

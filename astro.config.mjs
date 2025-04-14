@@ -17,8 +17,13 @@ import { houdiniVexNav } from "./src/nav/houdini-vex";
 
 import starlightGiscus from "starlight-giscus";
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
+  site: "https://docs.yuelili.com",
+  title: "月离文档",
+  description: "月离文档，专注于Adobe系列软件的脚本开发、插件开发、Houdini Vex等技术的分享与教程。",
   i18n: {
     defaultLocale: "en",
     locales: [
@@ -52,27 +57,26 @@ export default defineConfig({
     },
   },
 
-  integrations: [
-    starlight({
-      title: "月离文档",
+  integrations: [starlight({
+    title: "月离文档",
 
-      social: [{ icon: "github", label: "GitHub", href: "https://github.com/Yuelioi/docs.yuelili.comt" }],
-      components: {
-        Header: "./src/components/Header.astro",
-        TwoColumnContent: "./src/components/TwoColumnContent.astro",
-      },
-      plugins: [
-        starlightSidebarTopics([aeExpression, aeScripting, javascriptTools, aePlugin, prScripting, prPlugin, aiScripting, houdiniVexNav]),
+    social: [{ icon: "github", label: "GitHub", href: "https://github.com/Yuelioi/docs.yuelili.comt" }],
+    components: {
+      Head: "./src/components/Head.astro",
+      Header: "./src/components/Header.astro",
+      TwoColumnContent: "./src/components/TwoColumnContent.astro",
+    },
+    plugins: [
+      starlightSidebarTopics([aeExpression, aeScripting, javascriptTools, aePlugin, prScripting, prPlugin, aiScripting, houdiniVexNav]),
 
-        starlightGiscus({
-          repo: "Yuelioi/docs.yuelili.com",
-          repoId: "R_kgDOOKmEWg",
-          category: "Comments",
-          categoryId: "DIC_kwDOOKmEWs4CoQZJ",
-        }),
-      ],
-    }),
-  ],
+      starlightGiscus({
+        repo: "Yuelioi/docs.yuelili.com",
+        repoId: "R_kgDOOKmEWg",
+        category: "Comments",
+        categoryId: "DIC_kwDOOKmEWs4CoQZJ",
+      }),
+    ],
+  }), sitemap()],
   outDir: "dist/astro",
   vite: {
     plugins: [tailwindcss()],
