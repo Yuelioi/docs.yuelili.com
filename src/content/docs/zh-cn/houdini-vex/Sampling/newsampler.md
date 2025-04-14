@@ -9,7 +9,7 @@ order: 4
 
 `int  newsampler(int seed, ...)`
 
-返回一个初始化后的采样器序列，用作[nextsample](nextsample.html)函数的第一个参数。
+返回一个初始化后的采样器序列，用作[nextsample](./nextsample)函数的第一个参数。
 
 `seed`
 

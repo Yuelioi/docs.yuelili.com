@@ -8,7 +8,7 @@ order: 23
 
 Warning
 
-This function does not allow reading from inputs in a node context, and is harder to use than the other attribute functions. You probably want to use one of the other attribute functions instead, such as [getattrib](getattrib.html "Reads an attribute value from geometry, with validity check.").
+This function does not allow reading from inputs in a node context, and is harder to use than the other attribute functions. You probably want to use one of the other attribute functions instead, such as [getattrib](./getattrib "Reads an attribute value from geometry, with validity check.").
 
 Returns `0` if the attribute does not exist or cannot be read, `1` on success. If the function returns `0` (failed), the given variable may remain uninitialized.
 

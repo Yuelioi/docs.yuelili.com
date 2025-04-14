@@ -12,8 +12,8 @@ order: 26
 
 This function opens a point cloud file (`.pc`) and queues up access to the
 points contained in it. You can then iterate over the points with
-[pcunshaded](pcunshaded.html "Iterate over all of the points of a read-write channel which haven’t
-had any data written to the channel yet.") or [pciterate](pciterate.html "This function can be used to iterate over all the points which were
+[pcunshaded](./pcunshaded "Iterate over all of the points of a read-write channel which haven’t
+had any data written to the channel yet.") or [pciterate](./pciterate "This function can be used to iterate over all the points which were
 found in the pcopen query.").
 
 The first two versions of this function queue up points centered around a
@@ -24,14 +24,14 @@ be sorted from nearest to farthest. The file name may use the `op:` syntax
 to reference SOP geometry in the OP contexts. The Pchannel parameter
 indicates the channel in the texture which contains the positions to be
 searched. Pchannel will be made read-only if it is not already. Any
-subsequent attempts to use the channel with [pcexport](pcexport.html "Writes data to a point cloud inside a pciterate or a pcunshaded loop.") or
-[pcunshaded](pcunshaded.html "Iterate over all of the points of a read-write channel which haven’t
+subsequent attempts to use the channel with [pcexport](./pcexport "Writes data to a point cloud inside a pciterate or a pcunshaded loop.") or
+[pcunshaded](./pcunshaded "Iterate over all of the points of a read-write channel which haven’t
 had any data written to the channel yet.") will fail. Optionally, the Nchannel specifies a
 direction channel and the N vector specifies a search direction. Only
 points which are pointed in the same direction (i.e. `dot(N, Npoint) > 0`)
 will be queued.
 
-In some cases, you may need to add additional channels to a point cloud. You can do this by using [pcexport](pcexport.html "Writes data to a point cloud inside a pciterate or a pcunshaded loop.") and [pcunshaded](pcunshaded.html "Iterate over all of the points of a read-write channel which haven’t
+In some cases, you may need to add additional channels to a point cloud. You can do this by using [pcexport](./pcexport "Writes data to a point cloud inside a pciterate or a pcunshaded loop.") and [pcunshaded](./pcunshaded "Iterate over all of the points of a read-write channel which haven’t
 had any data written to the channel yet."). Often,
 you will not need to add extra channel data to every point in the point cloud. For example, if only part of the point cloud is inside the camera’s frustum.
 In these cases, it is best to only add channel data to points returned by

@@ -28,7 +28,7 @@ order: 20
 
 如果多个元素在属性中具有给定值，此参数控制返回哪个匹配项。
 
-如果要查找具有相同属性值的多个元素，可以使用[findattribvalcount](findattribvalcount.html "返回具有特定值的整数或字符串属性的元素数量。")获取匹配总数，然后通过在循环中增加此函数的`which`参数来遍历它们。请参见下面的示例。
+如果要查找具有相同属性值的多个元素，可以使用[findattribvalcount](./findattribvalcount "返回具有特定值的整数或字符串属性的元素数量。")获取匹配总数，然后通过在循环中增加此函数的`which`参数来遍历它们。请参见下面的示例。
 数组签名也可用于返回所有匹配元素的列表。
 
 返回值
@@ -38,7 +38,7 @@ order: 20
 
 提示
 
-最常见的用例（通过`name`或`id`属性查找点/基元）有更易用的专用包装函数：[nametopoint](nametopoint.html "通过name属性查找点")、[nametoprim](nametoprim.html "通过name属性查找基元")、[idtopoint](idtopoint.html "通过id属性查找点")和[idtoprim](idtoprim.html "通过id属性查找基元")。
+最常见的用例（通过`name`或`id`属性查找点/基元）有更易用的专用包装函数：[nametopoint](./nametopoint "通过name属性查找点")、[nametoprim](./nametoprim "通过name属性查找基元")、[idtopoint](./idtopoint "通过id属性查找点")和[idtoprim](./idtoprim "通过id属性查找基元")。
 
 - 只能搜索整数或字符串值。
 
@@ -62,7 +62,7 @@ for (int point_num : findattribval(0, "point", "age", 10))
 
 ```
 
-使用[findattribvalcount](findattribvalcount.html "返回具有特定值的整数或字符串属性的元素数量。")查找所有`@age` == 10的点。
+使用[findattribvalcount](./findattribvalcount "返回具有特定值的整数或字符串属性的元素数量。")查找所有`@age` == 10的点。
 
 ```vex
 int count = findattribvalcount(0, "point", "age", 10);

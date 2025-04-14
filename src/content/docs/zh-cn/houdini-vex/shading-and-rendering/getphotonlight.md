@@ -9,4 +9,4 @@ order: 26
 
 如果着色器不是从光源生成光子，则返回`-1`。
 
-返回值是一个标识光源的整数。您可以使用[getlightname](getlightname.html "当在illuminance循环内调用时返回当前光源名称，或将整数光源ID转换为光源名称。")将此整数ID转换为光源名称。
+返回值是一个标识光源的整数。您可以使用[getlightname](./getlightname "当在illuminance循环内调用时返回当前光源名称，或将整数光源ID转换为光源名称。")将此整数ID转换为光源名称。

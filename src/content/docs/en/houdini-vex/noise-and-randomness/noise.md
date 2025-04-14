@@ -32,7 +32,7 @@ which repeats over a given range of space.
 
 Note
 This function generates non-periodic noise. Use the
-[pnoise](pnoise.html "There are two forms of Perlin-style noise: a non-periodic noise which
+[pnoise](./pnoise "There are two forms of Perlin-style noise: a non-periodic noise which
 changes randomly throughout N-dimensional space, and a periodic form
 which repeats over a given range of space.") function to generate periodic Perlin noise.
 

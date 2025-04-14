@@ -10,7 +10,7 @@ If you don’t specify a texture attribute, the function uses intrinsic polygon 
 
 If you specify a texture attribute, the function uses the UVs in that attribute to translate the face coordinates onto the OSD patch.
 
-Given the `face_id` and texture coordinates for a point inside the face (`face_u` and`face_v`), this function will return the corresponding `patch_id` (Catmull-Clark subdivision face) and the patch interpolants (`patch_u` and `patch_v`). The reverse function to map from patch to face is [osd_lookupface](osd_lookupface.html "Outputs the Houdini face and UV coordinates corresponding to the given coordinates on an OSD patch.").
+Given the `face_id` and texture coordinates for a point inside the face (`face_u` and`face_v`), this function will return the corresponding `patch_id` (Catmull-Clark subdivision face) and the patch interpolants (`patch_u` and `patch_v`). The reverse function to map from patch to face is [osd_lookupface](./osd_lookupface "Outputs the Houdini face and UV coordinates corresponding to the given coordinates on an OSD patch.").
 
 `<geometry>`
 

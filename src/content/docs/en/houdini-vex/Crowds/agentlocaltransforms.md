@@ -4,7 +4,7 @@ order: 31
 ---
 `matrix [] agentlocaltransforms(<geometry>geometry, int prim)`
 
-If only a single transform is needed, using [agentlocaltransform](agentlocaltransform.html "Returns the current local space transform of an agent primitive’s bone.") instead can be significantly faster.
+If only a single transform is needed, using [agentlocaltransform](./agentlocaltransform "Returns the current local space transform of an agent primitive’s bone.") instead can be significantly faster.
 
 Returns an empty array if `prim` is out of range or is not an agent primitive.
 

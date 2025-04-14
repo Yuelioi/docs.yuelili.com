@@ -10,8 +10,8 @@ order: 16
 
 Returns a version of the given array sorted in increasing order.
 
-- [argsort](argsort.html "Returns the indices of a sorted version of an array.") and [sort](sort.html "Returns the array sorted in increasing order.") use a stable sort.
-- Use [reverse](reverse.html "Returns an array or string in reverse order.") to reverse the order of the sort.
+- [argsort](./argsort "Returns the indices of a sorted version of an array.") and [sort](./sort "Returns the array sorted in increasing order.") use a stable sort.
+- Use [reverse](./reverse "Returns an array or string in reverse order.") to reverse the order of the sort.
 
 Examples
 

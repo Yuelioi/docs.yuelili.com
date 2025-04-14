@@ -2,7 +2,7 @@
 title: prim_attribute
 order: 45
 ---
-This function specifies the position using *intrinsic primitive UVs*. To use UVs stored in UV attribute, use [uvsample](uvsample.html "Interpolates the value of an attribute at certain UV coordinates using a UV attribute.") instead.
+This function specifies the position using *intrinsic primitive UVs*. To use UVs stored in UV attribute, use [uvsample](./uvsample "Interpolates the value of an attribute at certain UV coordinates using a UV attribute.") instead.
 
 `int  prim_attribute(<geometry>geometry, <type>&value, string attribute_name, int prim_number, float u, float v)`
 
@@ -16,7 +16,7 @@ Samples the attribute value at the given UV coordinates on the primitive.
 
 Specify the UVW coordinates using a vector instead of two floats.
 
-If you don’t need to test for errors, you can use [primuv](primuv.html "Interpolates the value of an attribute at a certain parametric (uvw) position.") instead.
+If you don’t need to test for errors, you can use [primuv](./primuv "Interpolates the value of an attribute at a certain parametric (uvw) position.") instead.
 This function does not work with certain primitive types such as tetrahedra and polysoups.
 
 `<geometry>`

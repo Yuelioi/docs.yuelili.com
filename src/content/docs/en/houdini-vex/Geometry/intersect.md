@@ -2,20 +2,20 @@
 title: intersect
 order: 8
 ---
-To get a list of *all* intersections along a ray, use [intersect_all](intersect_all.html "Computes all intersections of the specified ray with geometry.").
+To get a list of *all* intersections along a ray, use [intersect_all](./intersect_all "Computes all intersections of the specified ray with geometry.").
 
 `int  intersect(<geometry>geometry, vector orig, vector dir, vector &p, float &u, float &v)`
 
 `int  intersect(<geometry>geometry, vector orig, vector dir, vector &p, float &u, float &v, ...)`
 
 Computes the first intersection of the specified ray with the geometry.
-To get *all* intersections along a vector, use [intersect_all](intersect_all.html "Computes all intersections of the specified ray with geometry.") instead.
+To get *all* intersections along a vector, use [intersect_all](./intersect_all "Computes all intersections of the specified ray with geometry.") instead.
 The variadic argument `"farthest"` can be used to indicate whether to return the last intersection instead of the first.
 
 `int  intersect(<geometry>geometry, vector orig, vector dir, vector &p, vector &uvw)`
 
 Computes the first intersection of the specified ray with the geometry.
-To get *all* intersections along a vector, use [intersect_all](intersect_all.html "Computes all intersections of the specified ray with geometry.") instead.
+To get *all* intersections along a vector, use [intersect_all](./intersect_all "Computes all intersections of the specified ray with geometry.") instead.
 
 `int  intersect(<geometry>geometry, string group, vector orig, vector dir, vector &p, vector &uvw)`
 

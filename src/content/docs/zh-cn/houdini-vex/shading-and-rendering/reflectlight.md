@@ -40,7 +40,7 @@ blurry_mirror(float angle = 3; int samples = 16; float bias=0.05)
 ## 光线选项
 
 提示
-当指定纹理时（例如使用`"environment"`关键字），也可以使用图像过滤关键字参数。参见[environment](environment.html "返回环境纹理的颜色")了解图像过滤关键字参数的列表。
+当指定纹理时（例如使用`"environment"`关键字），也可以使用图像过滤关键字参数。参见[environment](../texturing/environment "返回环境纹理的颜色")了解图像过滤关键字参数的列表。
 
 "`scope`"，
 `string`
@@ -62,7 +62,7 @@ blurry_mirror(float angle = 3; int samples = 16; float bias=0.05)
 搜索对象的最大距离。这可以用于将对象搜索限制在附近对象。如果给定的`maxdist`为负值，则视为没有最大距离。
 
 允许覆盖测试相交时光线可以行进的最大距离。
-某些函数（如[fastshadow](fastshadow.html "从位置P沿方向D发送光线")）隐式定义了最大距离（由光线长度决定），可能应避免使用此选项。
+某些函数（如[fastshadow](../light/fastshadow "从位置P沿方向D发送光线")）隐式定义了最大距离（由光线长度决定），可能应避免使用此选项。
 然而，此选项在计算反射、全局光照、折射等时可以有效地使用。
 
 "`variancevar`"，
@@ -135,7 +135,7 @@ Cf = R*reflectlight(bias, max(R), "environment", "map.rat", "envobject", "null_o
 "`distribution`"，
 `string`
 
-**函数**：[irradiance](irradiance.html "在点P处计算辐照度（全局光照），法线为N。"), [occlusion](occlusion.html "计算环境遮挡。")
+**函数**：[irradiance](./irradiance "在点P处计算辐照度（全局光照），法线为N。"), [occlusion](./occlusion "计算环境遮挡。")
 
 计算辐照度的分布。默认使用余弦分布（漫反射光照）。样式的可能值为`"nonweighted"`用于均匀采样或`"cosine"`用于余弦加权采样。
 

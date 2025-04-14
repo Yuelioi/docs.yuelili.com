@@ -51,7 +51,7 @@ The function overwrites this variable with the number of the closest primitive, 
 `&uv`
 
 The function overwrites this variable with the UV coordinates of the closest point on the closest primitive.
-You can use [primuv](primuv.html "Interpolates the value of an attribute at a certain parametric (uvw) position.") to sample an attribute value at this location.
+You can use [primuv](../attributes-and-intrinsics/primuv "Interpolates the value of an attribute at a certain parametric (uvw) position.") to sample an attribute value at this location.
 
 `maxdist`
 

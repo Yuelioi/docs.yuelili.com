@@ -29,7 +29,7 @@ order: 41
 ## ray-options
 
 提示
-当指定纹理时（如使用`"environment"`关键字），也可以使用图像过滤关键字参数。详见[环境贴图](environment.html "返回环境纹理的颜色")中列出的图像过滤关键字参数。
+当指定纹理时（如使用`"environment"`关键字），也可以使用图像过滤关键字参数。详见[环境贴图](../texturing/environment "返回环境纹理的颜色")中列出的图像过滤关键字参数。
 
 "`scope`",
 `string`
@@ -50,7 +50,7 @@ order: 41
 
 搜索对象的最大距离。可用于将对象搜索限制在附近对象。如果`maxdist`为负值，则表示没有最大距离限制。
 
-允许覆盖测试相交时光线能传播的最大距离。某些函数（如[快速阴影](fastshadow.html "从位置P沿方向D发送光线")）已隐式定义了最大距离（由光线长度决定），应避免使用此选项。但在计算反射、全局光照、折射等时，此选项可有效使用。
+允许覆盖测试相交时光线能传播的最大距离。某些函数（如[快速阴影](../light/fastshadow "从位置P沿方向D发送光线")）已隐式定义了最大距离（由光线长度决定），应避免使用此选项。但在计算反射、全局光照、折射等时，此选项可有效使用。
 
 "`variancevar`",
 `string`
@@ -118,6 +118,6 @@ Cf = R*reflectlight(bias, max(R), "environment", "map.rat", "envobject", "null_o
 "`distribution`",
 `string`
 
-**函数**: [辐照度](irradiance.html "计算点P处法线为N的辐照度（全局光照）"), [遮挡](occlusion.html "计算环境光遮挡")
+**函数**: [辐照度](./irradiance "计算点P处法线为N的辐照度（全局光照）"), [遮挡](./occlusion "计算环境光遮挡")
 
 计算辐照度的分布方式。默认使用余弦分布（漫射照明）。可能的样式值为：`"nonweighted"`表示均匀采样，`"cosine"`表示余弦加权采样。

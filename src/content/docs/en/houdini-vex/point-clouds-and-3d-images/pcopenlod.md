@@ -9,12 +9,12 @@ order: 27
 
 This function opens a point cloud file (`.pc`) and queues up access to the
 points contained in it. You can then iterate over the points with
-[pcunshaded](pcunshaded.html "Iterate over all of the points of a read-write channel which haven’t
-had any data written to the channel yet.") or [pciterate](pciterate.html "This function can be used to iterate over all the points which were
+[pcunshaded](./pcunshaded "Iterate over all of the points of a read-write channel which haven’t
+had any data written to the channel yet.") or [pciterate](./pciterate "This function can be used to iterate over all the points which were
 found in the pcopen query.") and add new data to the point cloud using
-[pcexport](pcexport.html "Writes data to a point cloud inside a pciterate or a pcunshaded loop.").
+[pcexport](./pcexport "Writes data to a point cloud inside a pciterate or a pcunshaded loop.").
 
-While this function is similar to [pcopen](pcopen.html "Returns a handle to a point cloud file."), the major difference is the points that it queues up may be aggregates of entire groups of points. In
+While this function is similar to [pcopen](./pcopen "Returns a handle to a point cloud file."), the major difference is the points that it queues up may be aggregates of entire groups of points. In
 other words, a single point may represent many points. This allows you to
 perform queries at any desired level of detail without ignoring points in the
 point cloud. For example, you can perform a query in which points
@@ -22,7 +22,7 @@ near the query origin are queued up as usual, but points far from the origin
 are averaged. This can lead to dramatic performance increases because entire
 groups of points can be processed as if they are a single point.
 
-As in [pcopen](pcopen.html "Returns a handle to a point cloud file."), P specifies the query origin and Pchannel
+As in [pcopen](./pcopen "Returns a handle to a point cloud file."), P specifies the query origin and Pchannel
 specifies the position channel. During construction, the tree structure
 starts out as a single bounding box that encompasses all the points in a
 point cloud, and is recursively subdivided until there are fewer than
@@ -38,12 +38,12 @@ Distance Queries
 
 ## distance-queries
 
-`distance` mode is provided for compatibility with [pcopen](pcopen.html "Returns a handle to a point cloud file.") and does
+`distance` mode is provided for compatibility with [pcopen](./pcopen "Returns a handle to a point cloud file.") and does
 not queue up aggregate points. Distance queries take a threshold parameter
 that indicates the radius within which to accept points.
 
 The `threshold` argument specifies the radius within which points are
-accepted - identical to the radius passed to [pcopen](pcopen.html "Returns a handle to a point cloud file."). For example,
+accepted - identical to the radius passed to [pcopen](./pcopen "Returns a handle to a point cloud file."). For example,
 calling `pcopenlod`(…, `"measure"`, `"distance"`, `"threshold"`, radius, …)
 queues up points that lie within the specified radius of the query origin.
 

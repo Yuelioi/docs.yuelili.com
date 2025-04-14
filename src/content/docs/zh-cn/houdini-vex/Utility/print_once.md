@@ -10,7 +10,7 @@ order: 11
 `msg`
 
 要打印的字符串。该字符串支持插值。
-如需包含变量值，可使用[sprintf](sprintf.html "类似printf格式化字符串，但以字符串形式返回结果而非直接打印")生成msg字符串。
+如需包含变量值，可使用[sprintf](../strings/sprintf "类似printf格式化字符串，但以字符串形式返回结果而非直接打印")生成msg字符串。
 
 "global",
 `int`

@@ -4,7 +4,7 @@ order: 36
 ---
 `string  sprintf(string format, ...)`
 
-Formats a string like [printf](printf.html "Prints values to the console which started the VEX program.") but returns the result as a
+Formats a string like [printf](../utility/printf "Prints values to the console which started the VEX program.") but returns the result as a
 string instead of printing it.
 
 Tip

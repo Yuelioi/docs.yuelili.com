@@ -7,7 +7,7 @@ order: 5
 
 `float [] agentchannelvalues(<geometry>geometry, int prim)`
 
-If only a single channel value is needed, using [agentchannelvalue](agentchannelvalue.html "Returns the current value of an agent primitive’s channel.") instead can be significantly faster.
+If only a single channel value is needed, using [agentchannelvalue](./agentchannelvalue "Returns the current value of an agent primitive’s channel.") instead can be significantly faster.
 
 Returns an empty array if `prim` is out of range or is not an agent primitive.
 

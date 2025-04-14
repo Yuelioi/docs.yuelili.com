@@ -49,7 +49,7 @@ The number of divisions per segment to use or 10 if not supplied.
 
 `primuvmode`
 
-Define the uv1 and uv2 coordinates units. See [primuvconvert](primuvconvert.html "Convert parametric UV locations on curve primitives between different spaces.") for the list of modes.
+Define the uv1 and uv2 coordinates units. See [primuvconvert](./primuvconvert "Convert parametric UV locations on curve primitives between different spaces.") for the list of modes.
 
 `primuvtol`
 

@@ -5,7 +5,7 @@ order: 30
 
 `matrix  agentlocaltransform(<geometry>geometry, int prim, int transform)`
 
-如果`transform`[超出范围](agenttransformcount.html "返回代理基元骨骼中的变换数量")，或`prim`超出范围，或`prim`不是代理基元，则返回单位矩阵。
+如果`transform`[超出范围](./agenttransformcount "返回代理基元骨骼中的变换数量")，或`prim`超出范围，或`prim`不是代理基元，则返回单位矩阵。
 
 `<geometry>`
 

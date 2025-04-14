@@ -11,9 +11,9 @@ order: 12
 `float  agentclipsample(<geometry>geometry, int prim, int clipindex, float time, string channel)`
 
 Evaluates the clip at the given time and returns the value of the specified channel.
-Returns zero if `clipname` is not one of the agent’s [animation clips](agentclipcatalog.html "Returns all of the animation clips that have been loaded for an agent primitive."), `prim` is out of range, `prim` is not an agent primitive, `channel_index` is out of range, or `channel` does not exist.
+Returns zero if `clipname` is not one of the agent’s [animation clips](./agentclipcatalog "Returns all of the animation clips that have been loaded for an agent primitive."), `prim` is out of range, `prim` is not an agent primitive, `channel_index` is out of range, or `channel` does not exist.
 
-For sampling the clip’s transform channels, use [agentclipsamplelocal](agentclipsamplelocal.html "Samples an agent’s animation clip at a specific time.") or [agentclipsampleworld](agentclipsampleworld.html "Samples an agent’s animation clip at a specific time.") instead.
+For sampling the clip’s transform channels, use [agentclipsamplelocal](./agentclipsamplelocal "Samples an agent’s animation clip at a specific time.") or [agentclipsampleworld](./agentclipsampleworld "Samples an agent’s animation clip at a specific time.") instead.
 
 `<geometry>`
 
@@ -32,15 +32,15 @@ The name of the animation clip.
 `clipindex`
 
 Index of a clip in the agent’s definition.
-A clip’s index can be obtained via [agentfindclip](agentfindclip.html "Finds the index of a clip in an agent’s definition.").
+A clip’s index can be obtained via [agentfindclip](./agentfindclip "Finds the index of a clip in an agent’s definition.").
 
 `time`
 
-The time (in seconds) to evaluate the clip at. If this time is greater than the [clip’s length](agentcliplength.html "Returns the length (in seconds) of an agent’s animation clip."), it will be wrapped around.
+The time (in seconds) to evaluate the clip at. If this time is greater than the [clip’s length](./agentcliplength "Returns the length (in seconds) of an agent’s animation clip."), it will be wrapped around.
 
 `channel_index`
 
-Index of a channel in the animation clip, as returned by [agentclipchannel](agentclipchannel.html "Finds the index of a channel in an agent’s animation clip.").
+Index of a channel in the animation clip, as returned by [agentclipchannel](./agentclipchannel "Finds the index of a channel in an agent’s animation clip.").
 
 `channel`
 

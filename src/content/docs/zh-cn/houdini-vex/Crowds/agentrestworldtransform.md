@@ -4,7 +4,7 @@ order: 34
 ---
 `matrix  agentrestworldtransform(<geometry>geometry, int prim, int transform)`
 
-如果`transform`超出范围（参见[agenttransformcount](agenttransformcount.html "返回代理体素骨骼中的变换数量")），或`prim`超出范围，或`prim`不是代理体素，则返回单位矩阵。
+如果`transform`超出范围（参见[agenttransformcount](./agenttransformcount "返回代理体素骨骼中的变换数量")），或`prim`超出范围，或`prim`不是代理体素，则返回单位矩阵。
 
 `<geometry>`
 

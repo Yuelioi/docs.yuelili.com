@@ -10,9 +10,9 @@ order: 80
 
 ## 概述
 
-[create_cdf](create_cdf.html "从概率密度函数(PDF)值数组创建累积分布函数(CDF)。")函数通过样本值创建CDF，而本函数则通过对由`values`和对应`positions`列表定义的曲线（类似于Ramp参数）进行随机采样来创建CDF。
+[create_cdf](../sampling/create_cdf "从概率密度函数(PDF)值数组创建累积分布函数(CDF)。")函数通过样本值创建CDF，而本函数则通过对由`values`和对应`positions`列表定义的曲线（类似于Ramp参数）进行随机采样来创建CDF。
 
-关于使用CDF的示例代码，请参阅[create_cdf](create_cdf.html "从概率密度函数(PDF)值数组创建累积分布函数(CDF)。")函数的文档。
+关于使用CDF的示例代码，请参阅[create_cdf](../sampling/create_cdf "从概率密度函数(PDF)值数组创建累积分布函数(CDF)。")函数的文档。
 
 用法
 
@@ -24,7 +24,7 @@ order: 80
 
 `bases`
 
-描述如何解释对应`values`的字符串数组：每个字符串可以是`"constant"`、`"linear"`、`"cubic"`（或`"catmullrom"`、`"cspline"`）、`"linearsolve"`（或`"solvelinear"`）、`"monotonecubic"`。关于这些选项如何控制值解释的信息，请参阅[spline](spline.html "沿折线或样条曲线采样值。")函数文档。
+描述如何解释对应`values`的字符串数组：每个字符串可以是`"constant"`、`"linear"`、`"cubic"`（或`"catmullrom"`、`"cspline"`）、`"linearsolve"`（或`"solvelinear"`）、`"monotonecubic"`。关于这些选项如何控制值解释的信息，请参阅[spline](./spline "沿折线或样条曲线采样值。")函数文档。
 
 "res",
 
@@ -34,4 +34,4 @@ order: 80
 
 返回值
 
-表示CDF的浮点数数组（类似于[create_cdf](create_cdf.html "从概率密度函数(PDF)值数组创建累积分布函数(CDF)。")函数返回的数组）。
+表示CDF的浮点数数组（类似于[create_cdf](../sampling/create_cdf "从概率密度函数(PDF)值数组创建累积分布函数(CDF)。")函数返回的数组）。

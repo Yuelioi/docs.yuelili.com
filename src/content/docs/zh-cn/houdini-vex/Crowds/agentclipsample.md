@@ -12,9 +12,9 @@ order: 12
 `float  agentclipsample(<geometry>geometry, int prim, int clipindex, float time, string channel)`
 
 在给定时间评估动画片段并返回指定通道的值。
-如果`clipname`不是代理的[动画片段](agentclipcatalog.html "返回已加载到代理图元的所有动画片段")之一、`prim`超出范围、`prim`不是代理图元、`channel_index`超出范围或`channel`不存在，则返回零。
+如果`clipname`不是代理的[动画片段](./agentclipcatalog "返回已加载到代理图元的所有动画片段")之一、`prim`超出范围、`prim`不是代理图元、`channel_index`超出范围或`channel`不存在，则返回零。
 
-要采样动画片段的变换通道，请改用[agentclipsamplelocal](agentclipsamplelocal.html "在特定时间采样代理的动画片段")或[agentclipsampleworld](agentclipsampleworld.html "在特定时间采样代理的动画片段")。
+要采样动画片段的变换通道，请改用[agentclipsamplelocal](./agentclipsamplelocal "在特定时间采样代理的动画片段")或[agentclipsampleworld](./agentclipsampleworld "在特定时间采样代理的动画片段")。
 
 `<geometry>`
 
@@ -33,15 +33,15 @@ order: 12
 `clipindex`
 
 代理定义中动画片段的索引。
-可通过[agentfindclip](agentfindclip.html "查找代理定义中动画片段的索引")获取片段的索引。
+可通过[agentfindclip](./agentfindclip "查找代理定义中动画片段的索引")获取片段的索引。
 
 `time`
 
-评估动画片段的时间(以秒为单位)。如果该时间大于[片段长度](agentcliplength.html "返回代理动画片段的长度(以秒为单位)")，将会循环播放。
+评估动画片段的时间(以秒为单位)。如果该时间大于[片段长度](./agentcliplength "返回代理动画片段的长度(以秒为单位)")，将会循环播放。
 
 `channel_index`
 
-动画片段中通道的索引，由[agentclipchannel](agentclipchannel.html "查找代理动画片段中通道的索引")返回。
+动画片段中通道的索引，由[agentclipchannel](./agentclipchannel "查找代理动画片段中通道的索引")返回。
 
 `channel`
 

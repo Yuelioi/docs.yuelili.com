@@ -8,7 +8,7 @@ order: 17
 
 `int  sample_geometry(vector origin, vector sample, float time, ...)`
 
-VEX中的sample_geometry操作用于在场景中的几何体对象上分布单个采样点，并在该点执行表面着色器。此操作类似于[trace](trace.html "从P点沿归一化向量D发送光线。")和[gather](gather.html "向场景中发送光线，并从光线击中的表面着色器返回信息。")函数，因为它接受一个可变参数列表，这些参数是操作要导出的着色器输出。然而，`sample_geometry`与光线追踪函数的不同之处在于它实际上并不向场景中发送光线来确定应该在何处运行着色器。origin和sample参数的含义取决于分布类型。time可以与运动模糊一起使用，在时间和空间上分布采样点。
+VEX中的sample_geometry操作用于在场景中的几何体对象上分布单个采样点，并在该点执行表面着色器。此操作类似于[trace](../shading-and-rendering/trace "从P点沿归一化向量D发送光线。")和[gather](../shading-and-rendering/gather "向场景中发送光线，并从光线击中的表面着色器返回信息。")函数，因为它接受一个可变参数列表，这些参数是操作要导出的着色器输出。然而，`sample_geometry`与光线追踪函数的不同之处在于它实际上并不向场景中发送光线来确定应该在何处运行着色器。origin和sample参数的含义取决于分布类型。time可以与运动模糊一起使用，在时间和空间上分布采样点。
 
 面积分布
 
@@ -78,7 +78,7 @@ diff = diffuse(nml, "lightmask", "light*,^light2");
 光线选项
 
 提示
-当您指定纹理时（例如使用`"environment"`关键字），您也可以使用图像过滤关键字参数。请参阅[environment](environment.html "返回环境纹理的颜色。")以获取图像过滤关键字参数的列表。
+当您指定纹理时（例如使用`"environment"`关键字），您也可以使用图像过滤关键字参数。请参阅[environment](../texturing/environment "返回环境纹理的颜色。")以获取图像过滤关键字参数的列表。
 
 "`scope`",
 `string`
@@ -99,7 +99,7 @@ diff = diffuse(nml, "lightmask", "light*,^light2");
 
 搜索对象的最大距离。这可以用于将对象搜索限制在附近对象。如果给定的`maxdist`为负，则将表现为没有最大距离。
 
-允许覆盖测试相交时光线可以行进的最大距离。某些函数（例如[fastshadow](fastshadow.html "从位置P沿方向D指定的方向发送光线。")）具有隐式定义的最大距离（由光线长度决定），可能应避免使用此选项。但是，此选项可以在计算反射、全局照明、折射等时有效使用。
+允许覆盖测试相交时光线可以行进的最大距离。某些函数（例如[fastshadow](../light/fastshadow "从位置P沿方向D指定的方向发送光线。")）具有隐式定义的最大距离（由光线长度决定），可能应避免使用此选项。但是，此选项可以在计算反射、全局照明、折射等时有效使用。
 
 "`variancevar`",
 `string`
@@ -171,7 +171,7 @@ Cf = R*reflectlight(bias, max(R), "environment", "map.rat", "envobject", "null_o
 "`distribution`",
 `string`
 
-**函数**: [irradiance](irradiance.html "计算点P处法线N的辐照度（全局照明）。"), [occlusion](occlusion.html "计算环境光遮蔽。")
+**函数**: [irradiance](../shading-and-rendering/irradiance "计算点P处法线N的辐照度（全局照明）。"), [occlusion](../shading-and-rendering/occlusion "计算环境光遮蔽。")
 
 计算辐照度的分布。默认使用余弦分布（漫反射照明）。样式的可能值为`"nonweighted"`用于均匀采样或`"cosine"`用于余弦加权采样。
 
@@ -191,12 +191,12 @@ Cf = R*reflectlight(bias, max(R), "environment", "map.rat", "envobject", "null_o
 
 确定采样分布。
 
-对于[gather](gather.html "向场景中发送光线，并从光线击中的表面着色器返回信息。"):
+对于[gather](../shading-and-rendering/gather "向场景中发送光线，并从光线击中的表面着色器返回信息。"):
 
 - `cosine` – 光线按余弦（漫反射）函数分布在半球上。
 - `uniform` – 光线均匀分布在半球上
 
-对于[sample_geometry](sample_geometry.html "采样场景中的几何体，并从采样的表面着色器返回信息。"):
+对于[sample_geometry](./sample_geometry "采样场景中的几何体，并从采样的表面着色器返回信息。"):
 
 - `area` – 采样按图元面积分布
 - `parametric` – 采样按图元ID、细分ID和参数化表面坐标（s, t）分布。
@@ -267,7 +267,7 @@ gather(P, dir, "send:N", normalize(N)) { ... }
 
 ```
 
-您可以在接收端（即被光线击中的表面）使用[rayimport](rayimport.html "导入由gather循环中的着色器发送的值。")函数提取此传递的数据。第一个参数是名称（不带`send:`前缀），第二个参数是存储导入值的变量。
+您可以在接收端（即被光线击中的表面）使用[rayimport](../shading-and-rendering/rayimport "导入由gather循环中的着色器发送的值。")函数提取此传递的数据。第一个参数是名称（不带`send:`前缀），第二个参数是存储导入值的变量。
 
 `int rayimport(string name, <type> &value)`
 
@@ -311,7 +311,7 @@ gather(P, dir, "bias", 0.01, "Cf", hitcf) {...}
 
 光线追踪范围内所有几何体所对的估计立体角。对于靠近或包围光线原点的大型对象，这可能是一个非常差的估计，而对于单个图元，估计可以非常好。
 
-您可以通过在数组变量中请求数据来检索沿光线多个击中点的信息。当导入值为数组类型时，[trace](trace.html "从P点沿归一化向量D发送光线。")函数将自动为光线追踪期间合成的每个单独击中点在数组中附加一个条目。对于`opacity`采样过滤器（见下文），将为遇到的每个半透明采样创建一个数组条目，直到达到完全不透明度。使用数组输出时，使用`all`采样过滤器也可能有用，这将导致沿光线的所有击中点都被插入，无论是否超过不透明度限制。
+您可以通过在数组变量中请求数据来检索沿光线多个击中点的信息。当导入值为数组类型时，[trace](../shading-and-rendering/trace "从P点沿归一化向量D发送光线。")函数将自动为光线追踪期间合成的每个单独击中点在数组中附加一个条目。对于`opacity`采样过滤器（见下文），将为遇到的每个半透明采样创建一个数组条目，直到达到完全不透明度。使用数组输出时，使用`all`采样过滤器也可能有用，这将导致沿光线的所有击中点都被插入，无论是否超过不透明度限制。
 
 ```vex
 // 查找沿光线所有击中点的位置和法线，无论可见性如何。

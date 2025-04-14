@@ -15,7 +15,7 @@ This version assumes the attribute class argument to be `""` (guess the class fr
 
 CHOP attributes store metadata on clips, channels, samples, or channel/sample pairs.
 
-This function sets the value of a CHOP attribute. Use [chattr](chattr.html "Reads from a CHOP attribute.") to read CHOP attributes.
+This function sets the value of a CHOP attribute. Use [chattr](./chattr "Reads from a CHOP attribute.") to read CHOP attributes.
 
 `attribclass`
 

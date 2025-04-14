@@ -10,6 +10,6 @@ order: 36
 
 或者，该参数可以是一个字符串，指定要读取的几何体文件（例如`.bgeo`）。在Houdini内部运行时，可以是一个`op:/path/to/sop`引用。
 
-更多信息请参阅[attribsize](attribsize.html "返回几何属性的尺寸")。
+更多信息请参阅[attribsize](./attribsize "返回几何属性的尺寸")。
 
 如果找不到该属性，则返回`0`。

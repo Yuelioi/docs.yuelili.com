@@ -8,7 +8,7 @@ order: 3
 `vector  mspace(vector P)`
 
 Transforms the position specified into the “local” space of the
-metaball. This function is only valid inside the [forpoints](forpoints.html) loop
+metaball. This function is only valid inside the [forpoints](../utility/forpoints) loop
 construct.
 
 An example use of this function would be to compute noise based on a

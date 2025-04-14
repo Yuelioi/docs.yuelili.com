@@ -4,7 +4,7 @@ order: 10
 ---
 `<type> pcfilter(int handle, string channel_name, ...)`
 
-Filters the points queued up by [pcopen](pcopen.html "Returns a handle to a point cloud file.")
+Filters the points queued up by [pcopen](./pcopen "Returns a handle to a point cloud file.")
 using a simple reconstruction filter.
 
 This function is roughly equivalent to:

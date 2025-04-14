@@ -15,7 +15,7 @@ order: 1
 
 ...来从元球中导入非属性信息。
 
-当您使用[metastart](metastart.html "打开几何体文件并返回在位置p处感兴趣的元球的句柄。")和[metanext](metanext.html "迭代到由metastart()函数返回的元球列表中的下一个元球。")获取元球句柄后，就可以用`metaimport`查询元球的属性。
+当您使用[metastart](./metastart "打开几何体文件并返回在位置p处感兴趣的元球的句柄。")和[metanext](./metanext "迭代到由metastart()函数返回的元球列表中的下一个元球。")获取元球句柄后，就可以用`metaimport`查询元球的属性。
 
 有三种"特殊"属性可以查询：
 
@@ -28,7 +28,7 @@ order: 1
 `matrix meta:transform`：
 与当前元球关联的变换矩阵。应用此变换的逆矩阵可以将点转换到元球的"空间"中。
 
-例如，[metaweight](metaweight.html "返回几何体在位置p处的元权重。")函数可以用以下方式表示：
+例如，[metaweight](./metaweight "返回几何体在位置p处的元权重。")函数可以用以下方式表示：
 
 ```vex
 float

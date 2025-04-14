@@ -4,7 +4,7 @@ order: 49
 ---
 `matrix [] agentworldtransforms(<geometry>geometry, int prim)`
 
-If only a single transform is needed, using [agentworldtransform](agentworldtransform.html "Returns the current world space transform of an agent primitive’s bone.") instead can be significantly faster.
+If only a single transform is needed, using [agentworldtransform](./agentworldtransform "Returns the current world space transform of an agent primitive’s bone.") instead can be significantly faster.
 
 Returns an empty array if `prim` is out of range or is not an agent primitive.
 

@@ -8,7 +8,7 @@ Returns the inverse tangent of `n`, where `n` is in radians. The return value is
 
 `float  atan(float y, float x)`
 
-Alias for [atan2](atan2.html "Returns the inverse tangent of y/x.").
+Alias for [atan2](./atan2 "Returns the inverse tangent of y/x.").
 
 `<vector> atan(<vector>v)`
 

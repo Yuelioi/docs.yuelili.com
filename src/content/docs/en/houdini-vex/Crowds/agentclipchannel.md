@@ -7,9 +7,9 @@ order: 7
 `int  agentclipchannel(<geometry>geometry, int prim, int clipindex, string channel)`
 
 Returns the index of a channel in the specified animation clip.
-Returns -1 if `clipname` is not one of the agent’s [animation clips](agentclipcatalog.html "Returns all of the animation clips that have been loaded for an agent primitive."), `prim` is out of range, `prim` is not an agent primitive, or `channel` does not exist.
+Returns -1 if `clipname` is not one of the agent’s [animation clips](./agentclipcatalog "Returns all of the animation clips that have been loaded for an agent primitive."), `prim` is out of range, `prim` is not an agent primitive, or `channel` does not exist.
 
-For sampling the clip’s transform channels, use [agentrigfind](agentrigfind.html "Finds the index of a transform in an agent primitive’s rig.") and either [agentclipsamplelocal](agentclipsamplelocal.html "Samples an agent’s animation clip at a specific time.") or [agentclipsampleworld](agentclipsampleworld.html "Samples an agent’s animation clip at a specific time.").
+For sampling the clip’s transform channels, use [agentrigfind](./agentrigfind "Finds the index of a transform in an agent primitive’s rig.") and either [agentclipsamplelocal](./agentclipsamplelocal "Samples an agent’s animation clip at a specific time.") or [agentclipsampleworld](./agentclipsampleworld "Samples an agent’s animation clip at a specific time.").
 
 `<geometry>`
 
@@ -28,7 +28,7 @@ The name of the animation clip.
 `clipindex`
 
 Index of a clip in the agent’s definition.
-A clip’s index can be obtained via [agentfindclip](agentfindclip.html "Finds the index of a clip in an agent’s definition.").
+A clip’s index can be obtained via [agentfindclip](./agentfindclip "Finds the index of a clip in an agent’s definition.").
 
 `channel`
 

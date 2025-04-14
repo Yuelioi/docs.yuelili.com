@@ -3,7 +3,7 @@ title: setagentcurrentlayer
 order: 58
 ---
 Warning
-This function has been deprecated. Use [setagentcurrentlayers](setagentcurrentlayers.html "Sets the current display layers of an agent primitive.") instead.
+This function has been deprecated. Use [setagentcurrentlayers](./setagentcurrentlayers "Sets the current display layers of an agent primitive.") instead.
 
 `geohandle`
 

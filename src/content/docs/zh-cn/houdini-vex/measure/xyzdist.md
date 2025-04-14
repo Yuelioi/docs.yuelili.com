@@ -43,7 +43,7 @@ order: 21
 `&uv`
 
 函数会将此变量覆盖为最近图元上最近点的UV坐标。
-可以使用[primuv](primuv.html "在特定参数化(uvw)位置插值属性值")在此位置采样属性值。
+可以使用[primuv](../attributes-and-intrinsics/primuv "在特定参数化(uvw)位置插值属性值")在此位置采样属性值。
 
 `maxdist`
 

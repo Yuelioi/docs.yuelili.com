@@ -16,7 +16,7 @@ Texture files will be searched for in the path specified by the
 `HOUDINI_TEXTURE_PATH` environment variable.
 
 You can pass additional arguments to control the evaluation (see
-[colormap](colormap.html "Looks up a (filtered) color from a texture file.")):
+[colormap](../texturing/colormap "Looks up a (filtered) color from a texture file.")):
 
 | `"filter"` | Specifies the filter for evaluation. |
 | --- | --- |

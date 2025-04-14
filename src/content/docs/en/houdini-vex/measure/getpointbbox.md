@@ -6,7 +6,7 @@ order: 9
 
 `void  getpointbbox(<geometry>geometry, string pointgroup, vector &min, vector &max)`
 
-This is the same as [getbbox](getbbox.html "Sets two vectors to the minimum and maximum corners of the bounding box for the geometry.") except it only computes the bounding box of the *points*. So if a primitive has extents that don’t have points (for example, the boundary of a primitive sphere), they will not be included in the box.
+This is the same as [getbbox](./getbbox "Sets two vectors to the minimum and maximum corners of the bounding box for the geometry.") except it only computes the bounding box of the *points*. So if a primitive has extents that don’t have points (for example, the boundary of a primitive sphere), they will not be included in the box.
 
 `<geometry>`
 

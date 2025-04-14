@@ -23,4 +23,4 @@ A list of agent layer names.
 
 `layer_ids`
 
-A list of agent layer indices, as returned by [agentfindlayer](agentfindlayer.html "Finds the index of a layer in an agent’s definition.").
+A list of agent layer indices, as returned by [agentfindlayer](./agentfindlayer "Finds the index of a layer in an agent’s definition.").

@@ -8,7 +8,7 @@ order: 36
 
 纹理文件将在`HOUDINI_TEXTURE_PATH`环境变量指定的路径中搜索。
 
-您可以传递额外参数来控制评估（参见[colormap](colormap.html "从纹理文件中查找（过滤后的）颜色")）：
+您可以传递额外参数来控制评估（参见[colormap](../texturing/colormap "从纹理文件中查找（过滤后的）颜色")）：
 
 | `"filter"` | 指定评估使用的过滤器 |
 | --- | --- |

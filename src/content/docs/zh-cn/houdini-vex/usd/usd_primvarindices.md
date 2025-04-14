@@ -31,7 +31,7 @@ Primvar名称（不带命名空间）。
 
 返回值
 
-索引化primvar的索引数组，若primvar不存在或未被索引则返回零/空值。如需检查primvar是否存在，请使用[usd_isprimvar](usd_isprimvar.html "检查图元是否具有指定名称的primvar。")；如需检查是否被索引，请使用[usd_isindexedprimvar](usd_isindexedprimvar.html "检查USD图元上是否直接存在索引化primvar。")。
+索引化primvar的索引数组，若primvar不存在或未被索引则返回零/空值。如需检查primvar是否存在，请使用[usd_isprimvar](./usd_isprimvar "检查图元是否具有指定名称的primvar。")；如需检查是否被索引，请使用[usd_isindexedprimvar](./usd_isindexedprimvar "检查USD图元上是否直接存在索引化primvar。")。
 
 ## 示例
 

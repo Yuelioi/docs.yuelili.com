@@ -4,7 +4,7 @@ order: 12
 ---
 `string  texprintf(float u, float v, string format, ...)`
 
-Formats a string like [sprintf](sprintf.html "Formats a string like printf but returns the result as a string
+Formats a string like [sprintf](../strings/sprintf "Formats a string like printf but returns the result as a string
 instead of printing it."), but scans for special conversion
 characters to perform either UDIM or UVTILE style filename expansion.
 

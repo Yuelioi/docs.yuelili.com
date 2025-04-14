@@ -7,7 +7,7 @@ order: 22
 `<type>[] getattrib(<geometry>geometry, string attribclass, string attribute_name, int elemnum, int &success)`
 
 这个通用形式允许您在运行时指定属性"类"。这对于编写可以处理不同类的通用代码非常有用。
-如果您提前知道要读取的属性类，使用[detailattrib](detailattrib.html "从几何体中读取细节属性值")、[primattrib](primattrib.html "从几何体中读取图元属性值，并输出成功标志")、[pointattrib](pointattrib.html "从几何体中读取点属性值并输出成功/失败标志")或[vertexattrib](vertexattrib.html "从几何体中读取顶点属性值")可能会更快。
+如果您提前知道要读取的属性类，使用[detailattrib](./detailattrib "从几何体中读取细节属性值")、[primattrib](./primattrib "从几何体中读取图元属性值，并输出成功标志")、[pointattrib](./pointattrib "从几何体中读取点属性值并输出成功/失败标志")或[vertexattrib](./vertexattrib "从几何体中读取顶点属性值")可能会更快。
 
 `<geometry>`
 
@@ -29,7 +29,7 @@ order: 22
 
 要从中读取属性值的点/图元/顶点编号。对于细节属性，请在此处使用`0`(对于细节属性，此参数被忽略)。
 
-要获取给定图元编号和图元上顶点编号的线性顶点编号，请使用[primvertex](primvertex.html "将图元/顶点对转换为线性顶点")函数。
+要获取给定图元编号和图元上顶点编号的线性顶点编号，请使用[primvertex](../geometry/primvertex "将图元/顶点对转换为线性顶点")函数。
 
 `success`
 

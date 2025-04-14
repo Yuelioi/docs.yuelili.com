@@ -16,7 +16,7 @@ order: 7
 
 要测试的顶点的线性顶点编号。
 
-要将基元编号和该基元内的顶点编号转换为`vertexnum`参数的线性顶点编号，请使用[vertexindex](vertexindex.html "将基元/顶点对转换为线性顶点。")函数。
+要将基元编号和该基元内的顶点编号转换为`vertexnum`参数的线性顶点编号，请使用[vertexindex](../geometry/vertexindex "将基元/顶点对转换为线性顶点。")函数。
 
 返回值
 

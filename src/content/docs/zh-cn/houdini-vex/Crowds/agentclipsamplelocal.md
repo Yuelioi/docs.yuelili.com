@@ -11,7 +11,7 @@ order: 13
 `matrix  agentclipsamplelocal(<geometry>geometry, int prim, int clipindex, float time, int transform)`
 
 在给定时间评估动画片段，并返回代理骨骼的局部变换矩阵。
-如果`clipname`不是代理的[动画片段](agentclipcatalog.html "返回已加载到代理图元的所有动画片段")之一，或`prim`超出范围，或`prim`不是代理图元，或`transform`[超出范围](agenttransformcount.html "返回代理图元骨骼中的变换数量")，则返回空数组。
+如果`clipname`不是代理的[动画片段](./agentclipcatalog "返回已加载到代理图元的所有动画片段")之一，或`prim`超出范围，或`prim`不是代理图元，或`transform`[超出范围](./agenttransformcount "返回代理图元骨骼中的变换数量")，则返回空数组。
 对于采样单个变换，`matrix`签名比`matrix[]`签名更高效。
 
 `<geometry>`
@@ -31,11 +31,11 @@ order: 13
 `clipindex`
 
 代理定义中动画片段的索引。
-可以通过[agentfindclip](agentfindclip.html "查找代理定义中动画片段的索引")获取片段的索引。
+可以通过[agentfindclip](./agentfindclip "查找代理定义中动画片段的索引")获取片段的索引。
 
 `time`
 
-评估片段的时间（以秒为单位）。如果该时间超过[片段长度](agentcliplength.html "返回代理动画片段的长度（秒）")，将会循环播放。
+评估片段的时间（以秒为单位）。如果该时间超过[片段长度](./agentcliplength "返回代理动画片段的长度（秒）")，将会循环播放。
 
 `transform`
 

@@ -10,6 +10,6 @@ order: 79
 
 或者，该参数可以是用于指定要读取的几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
-更多信息请参阅[attribsize](attribsize.html "返回几何属性的尺寸大小")。
+更多信息请参阅[attribsize](./attribsize "返回几何属性的尺寸大小")。
 
 如果找不到该属性，则返回`0`。

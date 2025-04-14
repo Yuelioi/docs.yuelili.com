@@ -11,7 +11,7 @@ When running in the context of a node (such as a wrangle SOP), this argument can
 Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
 
 This is a simpler, array-based replacement for the combination of
-[neighbourcount](neighbourcount.html "Returns the number of points that are connected to the specified point.") and [neighbour](neighbour.html "Returns the point number of the next point connected to a given point."). The array contains the numbers
+[neighbourcount](./neighbourcount "Returns the number of points that are connected to the specified point.") and [neighbour](./neighbour "Returns the point number of the next point connected to a given point."). The array contains the numbers
 of all points that share an edge with `ptnum`. The point numbers are in no particular order.
 Examples
 

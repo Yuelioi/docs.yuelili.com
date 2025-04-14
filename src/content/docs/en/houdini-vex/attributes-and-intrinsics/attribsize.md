@@ -2,7 +2,7 @@
 title: attribsize
 order: 10
 ---
-If you know the attribute class ahead of time, using [detailattribsize](detailattribsize.html "Returns the size of a geometry detail attribute."), [primattribsize](primattribsize.html "Returns the size of a geometry prim attribute."), [pointattribsize](pointattribsize.html "Returns the size of a geometry point attribute."), or [vertexattribsize](vertexattribsize.html "Returns the size of a geometry vertex attribute.") may be faster.
+If you know the attribute class ahead of time, using [detailattribsize](./detailattribsize "Returns the size of a geometry detail attribute."), [primattribsize](./primattribsize "Returns the size of a geometry prim attribute."), [pointattribsize](./pointattribsize "Returns the size of a geometry point attribute."), or [vertexattribsize](./vertexattribsize "Returns the size of a geometry vertex attribute.") may be faster.
 
 `int  attribsize(<geometry>geometry, string attribclass, string attribute_name)`
 

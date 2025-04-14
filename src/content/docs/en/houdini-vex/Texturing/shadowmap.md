@@ -43,7 +43,7 @@ reaches the sample point. For example, if the point is fully in
 shadow, the return value will be 0, if it is fully illuminated, the
 return value will be 1.
 
-The shadowmap() VEX function takes the same variadic arguments as texture(). For additional information, see [texture](texture.html "Computes a filtered sample of the texture map specified.").
+The shadowmap() VEX function takes the same variadic arguments as texture(). For additional information, see [texture](./texture "Computes a filtered sample of the texture map specified.").
 Deep camera map channels
 
 ## deep-camera-map-channels

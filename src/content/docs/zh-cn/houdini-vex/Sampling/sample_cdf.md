@@ -9,9 +9,9 @@ order: 7
 
 ## overview
 
-此函数用于从通过[create_cdf](create_cdf.html "从概率密度函数(PDF)值数组创建累积分布函数(CDF)")函数创建的CDF数组中采样值。更多信息请参阅[create_cdf](create_cdf.html "从概率密度函数(PDF)值数组创建累积分布函数(CDF)")。
+此函数用于从通过[create_cdf](./create_cdf "从概率密度函数(PDF)值数组创建累积分布函数(CDF)")函数创建的CDF数组中采样值。更多信息请参阅[create_cdf](./create_cdf "从概率密度函数(PDF)值数组创建累积分布函数(CDF)")。
 
-示例代码请参考[create_cdf](create_cdf.html "从概率密度函数(PDF)值数组创建累积分布函数(CDF)")函数文档。
+示例代码请参考[create_cdf](./create_cdf "从概率密度函数(PDF)值数组创建累积分布函数(CDF)")函数文档。
 
 使用方法
 
@@ -31,7 +31,7 @@ order: 7
 
 `cdf`
 
-待采样的CDF数组（使用[create_cdf](create_cdf.html "从概率密度函数(PDF)值数组创建累积分布函数(CDF)")创建）。
+待采样的CDF数组（使用[create_cdf](./create_cdf "从概率密度函数(PDF)值数组创建累积分布函数(CDF)")创建）。
 
 `uniform_rand`
 

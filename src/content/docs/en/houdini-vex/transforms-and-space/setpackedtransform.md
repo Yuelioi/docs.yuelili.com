@@ -19,7 +19,7 @@ This function replaces *only* the `P` (position) attribute and the `transform` i
 
 So this function will not apply the expected transform in several different cases.
 
-The [getpackedtransform](getpackedtransform.html "Gets the transform of a packed primitive.") function has the same issues since it returns a transform *only* based on `P` and `transform`.
+The [getpackedtransform](./getpackedtransform "Gets the transform of a packed primitive.") function has the same issues since it returns a transform *only* based on `P` and `transform`.
 
 Examples
 

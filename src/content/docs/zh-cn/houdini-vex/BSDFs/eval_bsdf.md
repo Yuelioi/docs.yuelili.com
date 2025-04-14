@@ -38,7 +38,7 @@ order: 9
 
 位掩码，指示要评估哪些类型的着色组件反弹。
 
-有关组件标签位掩码的信息，请参见[bouncemask](bouncemask.html)。
+有关组件标签位掩码的信息，请参见[bouncemask](../shading-and-rendering/bouncemask)。
 
 `&pdf`
 

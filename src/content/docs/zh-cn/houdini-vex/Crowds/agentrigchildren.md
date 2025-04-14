@@ -6,7 +6,7 @@ order: 35
 
 返回给定变换节点的直接子节点列表。
 
-如果`transform`[超出范围](agenttransformcount.html "返回代理基元骨骼中的变换数量")、`prim`超出范围或`prim`不是代理基元，则返回空数组。
+如果`transform`[超出范围](./agenttransformcount "返回代理基元骨骼中的变换数量")、`prim`超出范围或`prim`不是代理基元，则返回空数组。
 
 `<geometry>`
 

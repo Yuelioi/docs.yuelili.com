@@ -14,4 +14,4 @@ Returns
 
 The number of the point with the given value in the `name` attribute. Returns `-1` if no primitive has the given ID, or if the geometry has no `name` attribute.
 
-To look up a primitive by its `id` attribute value, use [idtoprim](idtoprim.html "Finds a primitive by its id attribute."). To look up a point by an arbitrary string or int attribute value, use [findattribval](findattribval.html "Finds a primitive/point/vertex that has a certain attribute value.").
+To look up a primitive by its `id` attribute value, use [idtoprim](./idtoprim "Finds a primitive by its id attribute."). To look up a point by an arbitrary string or int attribute value, use [findattribval](./findattribval "Finds a primitive/point/vertex that has a certain attribute value.").

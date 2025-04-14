@@ -9,7 +9,7 @@ order: 79
 
 此函数**仅在Mantra渲染环境下有效**，用于**纹理烘焙**或**镜头着色器**。由于该函数必须是"无上下文"的以便CVEX镜头着色器使用，但在其他任何上下文中都会失败并返回`0`。
 
-对于其他类型的纹理采样，请使用更优的[uvsample](uvsample.html "使用UV属性在特定UV坐标处插值属性值")或[uvintersect](uvintersect.html "此函数计算指定光线与UV空间中几何体的交点")函数替代此函数。
+对于其他类型的纹理采样，请使用更优的[uvsample](../attributes-and-intrinsics/uvsample "使用UV属性在特定UV坐标处插值属性值")或[uvintersect](../geometry/uvintersect "此函数计算指定光线与UV空间中几何体的交点")函数替代此函数。
 
 `object_path`
 

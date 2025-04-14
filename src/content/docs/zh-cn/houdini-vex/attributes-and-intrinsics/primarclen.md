@@ -35,7 +35,7 @@ order: 46
 
 `primuvmode`
 
-定义uv1和uv2坐标的单位。可用模式列表请参阅[primuvconvert](primuvconvert.html "在不同空间之间转换曲线图元上的参数化UV位置")。
+定义uv1和uv2坐标的单位。可用模式列表请参阅[primuvconvert](./primuvconvert "在不同空间之间转换曲线图元上的参数化UV位置")。
 
 `primuvtol`
 

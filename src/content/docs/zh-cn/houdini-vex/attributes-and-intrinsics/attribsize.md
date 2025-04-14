@@ -2,7 +2,7 @@
 title: attribsize
 order: 10
 ---
-如果事先知道属性类别，使用 [detailattribsize](detailattribsize.html "返回几何体细节属性的大小")、[primattribsize](primattribsize.html "返回几何体图元属性的大小")、[pointattribsize](pointattribsize.html "返回几何体点属性的大小") 或 [vertexattribsize](vertexattribsize.html "返回几何体顶点属性的大小") 可能会更快。
+如果事先知道属性类别，使用 [detailattribsize](./detailattribsize "返回几何体细节属性的大小")、[primattribsize](./primattribsize "返回几何体图元属性的大小")、[pointattribsize](./pointattribsize "返回几何体点属性的大小") 或 [vertexattribsize](./vertexattribsize "返回几何体顶点属性的大小") 可能会更快。
 
 `int  attribsize(<geometry>geometry, string attribclass, string attribute_name)`
 

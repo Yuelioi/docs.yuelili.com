@@ -9,7 +9,7 @@ order: 24
 
 此函数用于阻断primvar。即移除所有时间样本并将*block*设为默认值。
 
-注意：如果primvar是索引化的，您可能还需要使用[usd_blockprimvarindices](usd_blockprimvarindices.html "阻断primvar索引")来阻断索引。
+注意：如果primvar是索引化的，您可能还需要使用[usd_blockprimvarindices](./usd_blockprimvarindices "阻断primvar索引")来阻断索引。
 
 `stagehandle`
 

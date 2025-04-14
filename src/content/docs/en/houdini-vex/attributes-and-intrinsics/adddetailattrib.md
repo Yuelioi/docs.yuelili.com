@@ -2,7 +2,7 @@
 title: adddetailattrib
 order: 2
 ---
-If you don’t know the class of attribute until runtime, use [addattrib](addattrib.html "Adds an attribute to a geometry.").
+If you don’t know the class of attribute until runtime, use [addattrib](./addattrib "Adds an attribute to a geometry.").
 
 `int  adddetailattrib(int geohandle, string name, <type>defvalue)`
 
@@ -14,11 +14,11 @@ Adds a detail attribute to the given geometry.
 
 `int  adddetailattrib(int geohandle, string name, <type>defvalue[], string typeinfo)`
 
-Adds a detail attribute with the given transformation info. See [attribtypeinfo](attribtypeinfo.html "Returns the transformation metadata of a geometry attribute.") for more details.
+Adds a detail attribute with the given transformation info. See [attribtypeinfo](./attribtypeinfo "Returns the transformation metadata of a geometry attribute.") for more details.
 
 `geohandle`
 
-A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](geoself.html "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
+A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](../geometry/geoself "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
 
 `name`
 

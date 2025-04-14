@@ -5,7 +5,7 @@ order: 2
 
 `int  addprim(int geohandle, string type)`
 
-创建一个不含任何点的多边形或多段线。之后可以使用[addvertex](addvertex.html "向几何体中的图元添加顶点")为图元添加顶点。
+创建一个不含任何点的多边形或多段线。之后可以使用[addvertex](./addvertex "向几何体中的图元添加顶点")为图元添加顶点。
 
 请确保至少为创建的图元添加一个顶点。虽然我们尽力确保Houdini的代码能够处理空多边形，但它们仍可能导致异常结果或错误。
 
@@ -37,7 +37,7 @@ order: 2
 
 `void  addprim(int &prim_num, int geohandle, string type, int points[], int &vertices[])`
 
-这些函数签名会将新图元对应给定点的顶点编号填充到指定的`vertices`数组中。您可以使用[setvertexattrib](setvertexattrib.html "设置几何体中顶点属性")通过这些编号设置顶点属性，但这些编号可能不是顶点的最终编号。
+这些函数签名会将新图元对应给定点的顶点编号填充到指定的`vertices`数组中。您可以使用[setvertexattrib](../attributes-and-intrinsics/setvertexattrib "设置几何体中顶点属性")通过这些编号设置顶点属性，但这些编号可能不是顶点的最终编号。
 
 如果图元创建成功但某些点无效，数组中对应的顶点编号将为`-1`。
 
@@ -45,7 +45,7 @@ order: 2
 
 `geohandle`
 
-要写入的几何体句柄。目前唯一有效的值是`0`或[geoself](geoself.html "返回当前几何体的句柄")，表示节点中的当前几何体。(此参数未来可能用于支持写入其他几何体。)
+要写入的几何体句柄。目前唯一有效的值是`0`或[geoself](./geoself "返回当前几何体的句柄")，表示节点中的当前几何体。(此参数未来可能用于支持写入其他几何体。)
 
 `type`
 
@@ -64,9 +64,9 @@ order: 2
 
 创建的图元的编号，如果无法创建则返回`-1`。
 
-您可以使用返回值通过[setprimattrib](setprimattrib.html "设置几何体中图元属性")为新点设置属性，但这可能不是该点的最终编号。
+您可以使用返回值通过[setprimattrib](../attributes-and-intrinsics/setprimattrib "设置几何体中图元属性")为新点设置属性，但这可能不是该点的最终编号。
 
-您可以使用[setprimintrinsic](setprimintrinsic.html "设置可写图元固有属性的值")设置图元的变换，例如：
+您可以使用[setprimintrinsic](../attributes-and-intrinsics/setprimintrinsic "设置可写图元固有属性的值")设置图元的变换，例如：
 
 ```vex
 matrix3 transform_value = {{0, 0, 0}, {0, 0, 0}, {1, 1, 1}};

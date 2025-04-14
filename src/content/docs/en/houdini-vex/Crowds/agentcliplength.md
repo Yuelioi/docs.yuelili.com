@@ -6,7 +6,7 @@ order: 10
 
 `float  agentcliplength(<geometry>geometry, int prim, int clipindex)`
 
-Returns `0` if `prim` is out of range or is not an agent primitive, or if `clipname` is not one of the agent’s [animation clips](agentclipcatalog.html "Returns all of the animation clips that have been loaded for an agent primitive.").
+Returns `0` if `prim` is out of range or is not an agent primitive, or if `clipname` is not one of the agent’s [animation clips](./agentclipcatalog "Returns all of the animation clips that have been loaded for an agent primitive.").
 
 `<geometry>`
 
@@ -25,4 +25,4 @@ The name of the animation clip.
 `clipindex`
 
 Index of a clip in the agent’s definition.
-A clip’s index can be obtained via [agentfindclip](agentfindclip.html "Finds the index of a clip in an agent’s definition.").
+A clip’s index can be obtained via [agentfindclip](./agentfindclip "Finds the index of a clip in an agent’s definition.").

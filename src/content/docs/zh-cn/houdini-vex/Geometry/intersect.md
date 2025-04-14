@@ -4,20 +4,20 @@ order: 8
 ---
   
 
-要获取射线路径上*所有*相交点列表，请使用[intersect_all](intersect_all.html "计算指定射线与几何体的所有相交点")。  
+要获取射线路径上*所有*相交点列表，请使用[intersect_all](./intersect_all "计算指定射线与几何体的所有相交点")。  
 
 `int  intersect(<geometry>geometry, vector orig, vector dir, vector &p, float &u, float &v)`  
 
 `int  intersect(<geometry>geometry, vector orig, vector dir, vector &p, float &u, float &v, ...)`  
 
 计算指定射线与几何体的首个相交点。  
-若要获取沿向量的*所有*相交点，请改用[intersect_all](intersect_all.html "计算指定射线与几何体的所有相交点")。  
+若要获取沿向量的*所有*相交点，请改用[intersect_all](./intersect_all "计算指定射线与几何体的所有相交点")。  
 可变参数`"farthest"`可用于指示是否返回最后一个相交点而非第一个。  
 
 `int  intersect(<geometry>geometry, vector orig, vector dir, vector &p, vector &uvw)`  
 
 计算指定射线与几何体的首个相交点。  
-若要获取沿向量的*所有*相交点，请改用[intersect_all](intersect_all.html "计算指定射线与几何体的所有相交点")。  
+若要获取沿向量的*所有*相交点，请改用[intersect_all](./intersect_all "计算指定射线与几何体的所有相交点")。  
 
 `int  intersect(<geometry>geometry, string group, vector orig, vector dir, vector &p, vector &uvw)`  
 

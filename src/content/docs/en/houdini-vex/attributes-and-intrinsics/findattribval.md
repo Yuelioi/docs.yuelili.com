@@ -28,7 +28,7 @@ The value to look for in the attribute.
 
 If multiple elements have the given value in the attribute, this controls which match to return.
 
-If you're searching for multiple elements with the same attribute value, you can use [findattribvalcount](findattribvalcount.html "Returns number of elements where an integer or string attribute has a certain value.") to get the total number of matches and then iterate through them by increasing the `which` argument to this function in a loop. See the examples below.
+If you're searching for multiple elements with the same attribute value, you can use [findattribvalcount](./findattribvalcount "Returns number of elements where an integer or string attribute has a certain value.") to get the total number of matches and then iterate through them by increasing the `which` argument to this function in a loop. See the examples below.
 The array signature can also be used to return a list of all of the matching elements.
 
 Returns
@@ -38,7 +38,7 @@ The array signature returns the numbers of all of the points/primitives/vertices
 
 Tip
 
-The most common use cases (finding an point/primitive by its `name` or `id` attribute) have easier-to-use dedicated wrapper functions: [nametopoint](nametopoint.html "Finds a point by its name attribute."), [nametoprim](nametoprim.html "Finds a primitive by its name attribute."), [idtopoint](idtopoint.html "Finds a point by its id attribute."), and [idtoprim](idtoprim.html "Finds a primitive by its id attribute.").
+The most common use cases (finding an point/primitive by its `name` or `id` attribute) have easier-to-use dedicated wrapper functions: [nametopoint](./nametopoint "Finds a point by its name attribute."), [nametoprim](./nametoprim "Finds a primitive by its name attribute."), [idtopoint](./idtopoint "Finds a point by its id attribute."), and [idtoprim](./idtoprim "Finds a primitive by its id attribute.").
 
 - You can only search for integer or string values.
 
@@ -64,7 +64,7 @@ for (int point_num : findattribval(0, "point", "age", 10))
 
 ```
 
-Find all points with `@age` == 10, using [findattribvalcount](findattribvalcount.html "Returns number of elements where an integer or string attribute has a certain value.").
+Find all points with `@age` == 10, using [findattribvalcount](./findattribvalcount "Returns number of elements where an integer or string attribute has a certain value.").
 
 ```vex
 int count = findattribvalcount(0, "point", "age", 10);

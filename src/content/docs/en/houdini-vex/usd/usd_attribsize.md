@@ -33,7 +33,7 @@ The tuple size of the attribute.
 
 If the attribute does not exist, returns `0`.
 
-Use [usd_attriblen](usd_attriblen.html "Returns the length of the array attribute.") if you want to obtain the array attribute length.
+Use [usd_attriblen](./usd_attriblen "Returns the length of the array attribute.") if you want to obtain the array attribute length.
 
 Examples
 

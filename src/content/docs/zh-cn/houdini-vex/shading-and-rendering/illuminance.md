@@ -22,7 +22,7 @@ illuminance(position, [axis], [angle], [light_typemask], [lightmask])
 }  
 ```  
 
-除非显式调用，否则不会执行阴影着色器。但一旦调用过阴影着色器，`Cl`的值将在表面着色器执行期间被修改。使用任何内置光照调用（如[diffuse](diffuse.html "返回漫反射BSDF或计算漫反射着色")、[specular](specular.html "返回镜面反射BSDF或计算镜面反射着色")、[ambient](ambient.html "返回场景中的环境光颜色")）时，系统会自动调用阴影着色器。  
+除非显式调用，否则不会执行阴影着色器。但一旦调用过阴影着色器，`Cl`的值将在表面着色器执行期间被修改。使用任何内置光照调用（如[diffuse](../bsdfs/diffuse "返回漫反射BSDF或计算漫反射着色")、[specular](../bsdfs/specular "返回镜面反射BSDF或计算镜面反射着色")、[ambient](../light/ambient "返回场景中的环境光颜色")）时，系统会自动调用阴影着色器。  
 
 轴的默认值为表面法线。角度的默认值为PI/2。光照遮罩的默认值为LIGHT_DIFFUSE|LIGHT_SPECULAR（详见shading.h中的光照定义）。  
 
@@ -75,7 +75,7 @@ illuminance (P, nf, M_PI/2, "orgN", N) {
 }  
 ```  
 
-在光源着色器中，可通过[simport](simport.html "导入表面着色器在illuminance循环中发送的变量")函数接收该值：  
+在光源着色器中，可通过[simport](./simport "导入表面着色器在illuminance循环中发送的变量")函数接收该值：  
 ```vex  
 vector orgN;  
 simport("orgN", orgN);  
@@ -110,9 +110,9 @@ Cl = orgN;
 
 ## 消息传递  
 
-在illuminance循环中，可通过[limport](limport.html "从光源着色器导入表面变量")函数获取光源着色器的值。  
+在illuminance循环中，可通过[limport](./limport "从光源着色器导入表面变量")函数获取光源着色器的值。  
 
-光源着色器可通过[simport](simport.html "导入表面着色器在illuminance循环中发送的变量")函数获取传递给illuminance语句的任何"关键字"参数。  
+光源着色器可通过[simport](./simport "导入表面着色器在illuminance循环中发送的变量")函数获取传递给illuminance语句的任何"关键字"参数。  
 
 例如，将向量变量`uv`传递给光源着色器：  
 ```vex  

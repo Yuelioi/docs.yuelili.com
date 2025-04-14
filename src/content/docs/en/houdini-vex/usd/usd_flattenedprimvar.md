@@ -33,7 +33,7 @@ The USD time code at which to evaluate the attribute. A USD time code roughly co
 
 Returns
 
-The flattened value of an existing primvar, or zero/empty value if the primvar does not exist. Use [usd_isprimvar](usd_isprimvar.html "Checks if the primitive has a primvar of the given name.") if you want to check whether the primvar exists.
+The flattened value of an existing primvar, or zero/empty value if the primvar does not exist. Use [usd_isprimvar](./usd_isprimvar "Checks if the primitive has a primvar of the given name.") if you want to check whether the primvar exists.
 
 Examples
 

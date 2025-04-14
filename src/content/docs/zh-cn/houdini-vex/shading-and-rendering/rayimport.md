@@ -9,11 +9,11 @@ order: 60
 
 `int  rayimport(string name, <type>&value[])`
 
-提取当表面被[gather](gather.html "向场景发射光线并返回被光线击中的表面着色器信息")发射的光线击中时传递的任何信息。
+提取当表面被[gather](./gather "向场景发射光线并返回被光线击中的表面着色器信息")发射的光线击中时传递的任何信息。
 
 `name`
 
-变量名，即在[gather](gather.html "向场景发射光线并返回被光线击中的表面着色器信息")中使用`"send:name", value`参数对传递的名称（不带`send:`前缀）。
+变量名，即在[gather](./gather "向场景发射光线并返回被光线击中的表面着色器信息")中使用`"send:name", value`参数对传递的名称（不带`send:`前缀）。
 
 `value`
 

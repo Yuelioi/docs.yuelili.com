@@ -18,7 +18,7 @@ order: 3
 
 因此在多种不同情况下，此函数不会返回预期的变换矩阵。
 
-[setpackedtransform](setpackedtransform.html "设置打包图元的变换矩阵。")函数存在相同问题，因为它仅覆盖`P`和`transform`属性。例如，当存在非零打包轴心点时，或上述其他情况下，`packedfulltransform`将不会包含您期望的矩阵。
+[setpackedtransform](./setpackedtransform "设置打包图元的变换矩阵。")函数存在相同问题，因为它仅覆盖`P`和`transform`属性。例如，当存在非零打包轴心点时，或上述其他情况下，`packedfulltransform`将不会包含您期望的矩阵。
 
 ## 示例
 

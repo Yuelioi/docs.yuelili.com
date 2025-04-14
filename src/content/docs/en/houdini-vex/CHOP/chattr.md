@@ -36,7 +36,7 @@ The version without `opinput` assumes the first input (0).
 
 CHOP attributes store metadata on clips, channels, samples, or channel/sample pairs.
 
-This function reads the value of a CHOP attribute. Use [chsetattr](chsetattr.html "Sets the value of a CHOP attribute.") to set CHOP attributes.
+This function reads the value of a CHOP attribute. Use [chsetattr](./chsetattr "Sets the value of a CHOP attribute.") to set CHOP attributes.
 
 `opinput`
 

@@ -3,7 +3,7 @@ title: agentcollisionlayer
 order: 20
 ---
 Warning
-This function has been deprecated. Use [agentcollisionlayers](agentcollisionlayers.html "Returns the names of an agent primitive’s collision layers.") instead.
+This function has been deprecated. Use [agentcollisionlayers](./agentcollisionlayers "Returns the names of an agent primitive’s collision layers.") instead.
 
 Returns an empty string if `prim` is out of range or is not an agent primitive.
 

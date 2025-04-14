@@ -33,7 +33,7 @@ The USD time code at which to evaluate the attribute. A USD time code roughly co
 
 Returns
 
-The length of the array primvar, or `1` if the primvar is not an array, or `0` if the primvar does not exist. Use [usd_isarrayprimvar](usd_isarrayprimvar.html "Checks if there is an array primvar directly on the USD primitive.") to check if the primvar is an array.
+The length of the array primvar, or `1` if the primvar is not an array, or `0` if the primvar does not exist. Use [usd_isarrayprimvar](./usd_isarrayprimvar "Checks if there is an array primvar directly on the USD primitive.") to check if the primvar is an array.
 
 Examples
 

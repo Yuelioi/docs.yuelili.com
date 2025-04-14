@@ -6,7 +6,7 @@ order: 51
 | --- | --- |
 
 Note
-This function is only valid inside an [illuminance](illuminance.html "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables.") loop.
+This function is only valid inside an [illuminance](./illuminance "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables.") loop.
 
 `int  limport(string name, <type>&value)`
 

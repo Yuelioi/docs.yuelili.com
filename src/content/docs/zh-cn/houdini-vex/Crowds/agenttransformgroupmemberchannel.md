@@ -23,7 +23,7 @@ order: 42
 `transformgroupidx`
 
 代理定义中变换组的索引。
-可通过[agentfindtransformgroup](agentfindtransformgroup.html "查找代理定义中变换组的索引")获取变换组的索引。
+可通过[agentfindtransformgroup](./agentfindtransformgroup "查找代理定义中变换组的索引")获取变换组的索引。
 
 `channel`
 

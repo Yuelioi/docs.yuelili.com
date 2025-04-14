@@ -2,7 +2,7 @@
 title: addattrib
 order: 1
 ---
-If you know the class of attribute you want to add ahead of time, using [adddetailattrib](adddetailattrib.html "Adds a detail attribute to a geometry."), [addprimattrib](addprimattrib.html "Adds a primitive attribute to a geometry."), [addpointattrib](addpointattrib.html "Adds a point attribute to a geometry."), or [addvertexattrib](addvertexattrib.html "Adds a vertex attribute to a geometry.") may be faster.
+If you know the class of attribute you want to add ahead of time, using [adddetailattrib](./adddetailattrib "Adds a detail attribute to a geometry."), [addprimattrib](./addprimattrib "Adds a primitive attribute to a geometry."), [addpointattrib](./addpointattrib "Adds a point attribute to a geometry."), or [addvertexattrib](./addvertexattrib "Adds a vertex attribute to a geometry.") may be faster.
 
 `int  addattrib(int geohandle, string attribclass, string name, <type>defvalue)`
 
@@ -10,7 +10,7 @@ If you know the class of attribute you want to add ahead of time, using [adddeta
 
 `geohandle`
 
-A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](geoself.html "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
+A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](../geometry/geoself "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
 
 `attribclass`
 

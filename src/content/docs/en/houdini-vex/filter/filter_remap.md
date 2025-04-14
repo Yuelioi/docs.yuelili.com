@@ -71,4 +71,4 @@ Returns
 
 The returned vector’s `x` and `y` components are the given uv coordinate remapped to pixel coordinates (centered around zero). The `z` component is the approximate weight of the kernel at the returned sample.
 
-Note that some filters (`"sinc"`, `"mitchell"`, `"catrom"`), have negative weights in some areas. When importance sampling, you cannot use negative values, so you should use the absolute value of the weight (using [abs](abs.html "Returns the absolute value of the argument.")). However, some applications need to know whether the returned sample had a negative weight.
+Note that some filters (`"sinc"`, `"mitchell"`, `"catrom"`), have negative weights in some areas. When importance sampling, you cannot use negative values, so you should use the absolute value of the weight (using [abs](../math/abs "Returns the absolute value of the argument.")). However, some applications need to know whether the returned sample had a negative weight.

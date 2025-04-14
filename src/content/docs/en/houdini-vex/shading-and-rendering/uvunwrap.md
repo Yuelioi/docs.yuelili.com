@@ -8,7 +8,7 @@ order: 79
 
 This function **only makes sense in a Mantra context**, for use in **texture baking** or in a **lens shader**. The function unfortunately must be “context-less” so it’s available to the CVEX lens shader, but in any other context it will fail and return `0`.
 
-For any other kind of texture sampling, use the superior [uvsample](uvsample.html "Interpolates the value of an attribute at certain UV coordinates using a UV attribute.") or [uvintersect](uvintersect.html "This function computes the intersection of the specified ray with the geometry in uv space.") functions instead of this.
+For any other kind of texture sampling, use the superior [uvsample](../attributes-and-intrinsics/uvsample "Interpolates the value of an attribute at certain UV coordinates using a UV attribute.") or [uvintersect](../geometry/uvintersect "This function computes the intersection of the specified ray with the geometry in uv space.") functions instead of this.
 
 `object_path`
 

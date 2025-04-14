@@ -7,7 +7,7 @@ order: 78
 
 `<type>[] vertexattrib(<geometry>geometry, string attribute_name, int linear_vertex_index, int &success)`
 
-与 [vertex](vertex.html "从几何体中读取顶点属性值") 函数不同，此函数没有接受基元编号和基元顶点编号的版本。如果您有基元编号和基元顶点编号，可以使用 [vertexindex](vertexindex.html "将基元/顶点对转换为线性顶点") 将其转换为线性索引。
+与 [vertex](./vertex "从几何体中读取顶点属性值") 函数不同，此函数没有接受基元编号和基元顶点编号的版本。如果您有基元编号和基元顶点编号，可以使用 [vertexindex](../geometry/vertexindex "将基元/顶点对转换为线性顶点") 将其转换为线性索引。
 
 `<geometry>`
 
@@ -21,7 +21,7 @@ order: 78
 
 `linear_vertex_index`
 
-所有顶点列表中的线性索引。如果您有基元编号和基元顶点编号，可以使用 [vertexindex](vertexindex.html "将基元/顶点对转换为线性顶点") 将其转换为线性索引。
+所有顶点列表中的线性索引。如果您有基元编号和基元顶点编号，可以使用 [vertexindex](../geometry/vertexindex "将基元/顶点对转换为线性顶点") 将其转换为线性索引。
 
 `success`
 

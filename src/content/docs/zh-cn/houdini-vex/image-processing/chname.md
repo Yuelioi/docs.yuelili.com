@@ -22,7 +22,7 @@ CHOPs（通道操作器）
 `string  chname(int opinput, int channel_index)`
 
 返回通道名称，例如 `"tx"`。
-要获取所有通道名称列表，请使用 [chnames](chnames.html "返回指定CHOP输入的所有通道名称")。
+要获取所有通道名称列表，请使用 [chnames](../chop/chnames "返回指定CHOP输入的所有通道名称")。
 
 `opinput`
 

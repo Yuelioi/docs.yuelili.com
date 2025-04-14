@@ -3,7 +3,7 @@ title: setprimattrib
 order: 71
 ---
 
-如果事先不知道属性类别，请使用 [setattrib](setattrib.html "向几何体写入属性值")。
+如果事先不知道属性类别，请使用 [setattrib](./setattrib "向几何体写入属性值")。
 
 `int  setprimattrib(int geohandle, string name, int prim_num, <type>value, string mode="set")`
 
@@ -13,14 +13,14 @@ order: 71
 
 注意
 如果属性不存在，此函数会**创建该属性**，默认值为零、空字符串或空数组。
-如果要控制数值属性的默认值，请在设置属性前使用 [addattrib](addattrib.html "向几何体添加属性")。
+如果要控制数值属性的默认值，请在设置属性前使用 [addattrib](./addattrib "向几何体添加属性")。
 
 如果属性尚不存在，对于具有[标准名称](../snippets.html#known)（如 `Cd` 和 `orient`）的属性，其类型信息会自动设置。
-如果要控制数值属性的类型信息，请在设置属性前使用 [setattribtypeinfo](setattribtypeinfo.html "设置几何体中属性的含义")。
+如果要控制数值属性的类型信息，请在设置属性前使用 [setattribtypeinfo](./setattribtypeinfo "设置几何体中属性的含义")。
 
 `geohandle`
 
-要写入的几何体的句柄。目前唯一有效的值是 `0` 或 [geoself](geoself.html "返回当前几何体的句柄")，表示节点中的当前几何体。（此参数未来可能用于允许写入其他几何体。）
+要写入的几何体的句柄。目前唯一有效的值是 `0` 或 [geoself](../geometry/geoself "返回当前几何体的句柄")，表示节点中的当前几何体。（此参数未来可能用于允许写入其他几何体。）
 
 `name`
 

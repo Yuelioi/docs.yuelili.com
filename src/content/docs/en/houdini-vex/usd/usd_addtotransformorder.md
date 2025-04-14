@@ -9,7 +9,7 @@ order: 12
 
 This function appends a transformation to the primitive’s transform order. Transform order is a sequence of transform operations, whose full names are stored in `xformOpOrder` attribute as a string array. Thus, this function appends a new operation name to that attribute.
 
-NOTE: unlike most VEX functions that deal with primitive transforms and take an operation suffix as a parameter, this function takes the full operation name. Use [usd_transformname](usd_transformname.html "Constructs a full name of a transform operation") to obtain the full name if you know the suffix.
+NOTE: unlike most VEX functions that deal with primitive transforms and take an operation suffix as a parameter, this function takes the full operation name. Use [usd_transformname](./usd_transformname "Constructs a full name of a transform operation") to obtain the full name if you know the suffix.
 
 `stagehandle`
 
@@ -21,7 +21,7 @@ The path to the primitive.
 
 `name`
 
-The full name of the transform operation. Use [usd_transformname](usd_transformname.html "Constructs a full name of a transform operation") to obtain the full name from the operation suffix.
+The full name of the transform operation. Use [usd_transformname](./usd_transformname "Constructs a full name of a transform operation") to obtain the full name from the operation suffix.
 
 Returns
 

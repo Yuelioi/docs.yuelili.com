@@ -7,7 +7,7 @@ order: 1
 
 `int  usd_addattrib(int stagehandle, string primpath, string name, string typename)`
 
-This function adds an attribute of a given type to the primitive, if such attribute is not part of a schema. It is useful for controlling the exact type of a custom attribute. For attributes defined by primitive’s schema, this call has no effect, because the schema already determines their type. To create an attribute but mark it as not being a custm attribute, use [usd_addschemaattrib](usd_addschemaattrib.html "Creates an attribute of a given type on a primitive, and sets the custom metadata flag to False.").
+This function adds an attribute of a given type to the primitive, if such attribute is not part of a schema. It is useful for controlling the exact type of a custom attribute. For attributes defined by primitive’s schema, this call has no effect, because the schema already determines their type. To create an attribute but mark it as not being a custm attribute, use [usd_addschemaattrib](./usd_addschemaattrib "Creates an attribute of a given type on a primitive, and sets the custom metadata flag to False.").
 
 `stagehandle`
 

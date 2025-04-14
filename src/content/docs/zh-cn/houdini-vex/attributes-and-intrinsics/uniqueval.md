@@ -27,7 +27,7 @@ order: 74
 `which`
 
 要返回的唯一值中的哪一个。
-使用[nuniqueval](nuniqueval.html "返回整数或字符串属性的唯一值数量。")获取该属性有多少个唯一值。
+使用[nuniqueval](./nuniqueval "返回整数或字符串属性的唯一值数量。")获取该属性有多少个唯一值。
 
 ## 示例
 

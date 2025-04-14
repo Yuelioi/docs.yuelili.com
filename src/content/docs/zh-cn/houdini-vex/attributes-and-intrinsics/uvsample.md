@@ -2,7 +2,7 @@
 title: uvsample
 order: 76
 ---
-此函数使用UV属性中的UV坐标来指定位置。如需使用*固有基元UV*，请改用[primuv](primuv.html "在特定参数化(uvw)位置对属性值进行插值")。
+此函数使用UV属性中的UV坐标来指定位置。如需使用*固有基元UV*，请改用[primuv](./primuv "在特定参数化(uvw)位置对属性值进行插值")。
 
 `<type> uvsample(<geometry>geometry, string attr_name, string uv_attr_name, vector uvw)`
 

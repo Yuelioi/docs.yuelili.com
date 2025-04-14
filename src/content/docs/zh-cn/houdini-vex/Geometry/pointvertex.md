@@ -5,7 +5,7 @@ order: 22
 `int  pointvertex(<geometry>geometry, int point_num)`
 
 此函数用于查找共享该点的第一个顶点的线性顶点编号。
-然后可以使用 [vertexnext](vertexnext.html "返回与给定顶点共享点的下一个顶点的线性顶点编号。") 遍历该点上的其他顶点。
+然后可以使用 [vertexnext](./vertexnext "返回与给定顶点共享点的下一个顶点的线性顶点编号。") 遍历该点上的其他顶点。
 
 `<geometry>`
 

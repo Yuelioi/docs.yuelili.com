@@ -18,7 +18,7 @@ order: 37
 
 `vector  snoise(vector pos, int periodX, int periodY, int periodZ, int turbulence, float rough, float atten)`
 
-These functions are similar to [wnoise](wnoise.html "Generates Worley (cellular) noise."). The noise returned
+These functions are similar to [wnoise](./wnoise "Generates Worley (cellular) noise."). The noise returned
 is based on the weights of all of the closest points, with each point’s
 contribution based on a meta-ball like rolloff curve. That is, if the
 sample point is close to the sphere, its contribution will be greater.

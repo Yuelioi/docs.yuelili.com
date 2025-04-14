@@ -35,7 +35,7 @@ primvar名称（不含命名空间）。
 
 返回值
 
-返回现有数组型primvar中某个元素的值，若primvar不存在则返回零/空值。如需检查primvar是否存在，请使用[usd_isprimvar](usd_isprimvar.html "检查图元是否具有指定名称的primvar")。
+返回现有数组型primvar中某个元素的值，若primvar不存在则返回零/空值。如需检查primvar是否存在，请使用[usd_isprimvar](./usd_isprimvar "检查图元是否具有指定名称的primvar")。
 
 ## 示例
 

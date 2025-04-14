@@ -8,7 +8,7 @@ order: 41
 `matrix  pointtransformrigid(<geometry>geometry, int pnt)`
 
 Returns a rigid transform associated with the point index.
-This function uses the [standard instancing point attributes](../../copy/instanceattrs.html) to build the matrix, and [polar decomposition](polardecomp.html "Computes the polar decomposition of a matrix.") is performed to make it rigid.
+This function uses the [standard instancing point attributes](../../copy/instanceattrs.html) to build the matrix, and [polar decomposition](../transforms-and-space/polardecomp "Computes the polar decomposition of a matrix.") is performed to make it rigid.
 
 `<geometry>`
 

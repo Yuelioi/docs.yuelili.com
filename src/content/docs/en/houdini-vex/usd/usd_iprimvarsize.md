@@ -33,7 +33,7 @@ The tuple size of the primvar.
 
 If the primvar does not exist, returns `0`.
 
-Use [usd_iprimvarlen](usd_iprimvarlen.html "Returns the length of the array primvar directly on the USD primitive or on USD primitive’s ancestor.") if you want to obtain the array primvar length.
+Use [usd_iprimvarlen](./usd_iprimvarlen "Returns the length of the array primvar directly on the USD primitive or on USD primitive’s ancestor.") if you want to obtain the array primvar length.
 
 Examples
 

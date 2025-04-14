@@ -10,4 +10,4 @@ order: 49
 
 或者，该参数可以是用于指定要读取的几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
-更多信息请参阅[attribtype](attribtype.html "返回几何属性的类型。")。
+更多信息请参阅[attribtype](./attribtype "返回几何属性的类型。")。

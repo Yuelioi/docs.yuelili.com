@@ -13,5 +13,5 @@ Uses `-1` as the `opinput`.
 
 Returns the time (in seconds) corresponding to the first sample of the given CHOP input.
 
-To get the start sample number, use [chstart](chstart.html "Returns the start sample of the input specified."). To get the start sample frame number, use [chstartf](chstartf.html "Returns the frame corresponding to the first sample of the input
+To get the start sample number, use [chstart](./chstart "Returns the start sample of the input specified."). To get the start sample frame number, use [chstartf](./chstartf "Returns the frame corresponding to the first sample of the input
 specified.").

@@ -18,7 +18,7 @@ bias通常是一个小数值(例如0.005)，用于帮助消除自反射。
 
 max_contrib告诉渲染器反射光对像素最终颜色的贡献程度。这对结果颜色没有影响。
 
-第一种形式的refractlight()函数接受位置和方向，通常由[refract](refract.html "给定入射方向、归一化法线和折射率，返回折射光线")或[fresnel](fresnel.html "给定归一化的入射向量、表面法线和折射率(eta)，计算菲涅耳反射/折射贡献")函数计算得出。
+第一种形式的refractlight()函数接受位置和方向，通常由[refract](./refract "给定入射方向、归一化法线和折射率，返回折射光线")或[fresnel](./fresnel "给定归一化的入射向量、表面法线和折射率(eta)，计算菲涅耳反射/折射贡献")函数计算得出。
 
 为防止渲染器计算标准透明度(即非折射透明度)，必须将Of变量设置为{1,1,1}以使表面"不透明"。Af变量可以设置为任意值。
 
@@ -81,7 +81,7 @@ blurry_mirror(float angle = 3; int samples = 16; float bias=0.05)
 ## 光线选项
 
 提示
-当指定纹理时(例如使用`"environment"`关键字)，也可以使用图像过滤关键字参数。参见[environment](environment.html "返回环境纹理的颜色")了解图像过滤关键字参数的列表。
+当指定纹理时(例如使用`"environment"`关键字)，也可以使用图像过滤关键字参数。参见[environment](../texturing/environment "返回环境纹理的颜色")了解图像过滤关键字参数的列表。
 
 "`scope`",
 `string`
@@ -102,7 +102,7 @@ blurry_mirror(float angle = 3; int samples = 16; float bias=0.05)
 
 搜索对象的最大距离。这可以用于将对象搜索限制在附近对象。如果给定的`maxdist`为负值，则将视为没有最大距离。
 
-允许覆盖测试交点时光线可以行进的最大距离。某些函数(如[fastshadow](fastshadow.html "从位置P沿方向D发送光线"))隐式定义了最大距离(由光线长度决定)，应避免使用此选项。然而，在计算反射、全局光照、折射等时，此选项可以有效地使用。
+允许覆盖测试交点时光线可以行进的最大距离。某些函数(如[fastshadow](../light/fastshadow "从位置P沿方向D发送光线"))隐式定义了最大距离(由光线长度决定)，应避免使用此选项。然而，在计算反射、全局光照、折射等时，此选项可以有效地使用。
 
 "`variancevar`",
 `string`
@@ -169,7 +169,7 @@ Cf = R*reflectlight(bias, max(R), "environment", "map.rat", "envobject", "null_o
 "`distribution`",
 `string`
 
-**函数**: [irradiance](irradiance.html "在点P处计算具有法线N的辐照度(全局光照)"), [occlusion](occlusion.html "计算环境遮挡")
+**函数**: [irradiance](./irradiance "在点P处计算具有法线N的辐照度(全局光照)"), [occlusion](./occlusion "计算环境遮挡")
 
 计算辐照度的分布。默认为使用余弦分布(漫反射照明)。样式可能值为`"nonweighted"`表示均匀采样，或`"cosine"`表示余弦加权采样。
 

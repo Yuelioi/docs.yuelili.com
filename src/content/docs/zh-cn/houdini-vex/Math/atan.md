@@ -9,7 +9,7 @@ order: 7
 
 `float  atan(float y, float x)`
 
-[atan2](atan2.html "返回 y/x 的反正切值。") 的别名。
+[atan2](./atan2 "返回 y/x 的反正切值。") 的别名。
 
 `<vector> atan(<vector>v)`
 

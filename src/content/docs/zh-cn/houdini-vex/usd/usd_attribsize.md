@@ -33,7 +33,7 @@ order: 20
 
 如果属性不存在，返回`0`。
 
-如需获取数组属性长度，请使用[usd_attriblen](usd_attriblen.html "返回数组属性的长度")。
+如需获取数组属性长度，请使用[usd_attriblen](./usd_attriblen "返回数组属性的长度")。
 
 ## 示例
 

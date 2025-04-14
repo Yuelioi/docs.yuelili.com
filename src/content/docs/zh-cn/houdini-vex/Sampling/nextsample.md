@@ -9,7 +9,7 @@ order: 5
 
 `void  nextsample(int &sid, vector &svec, ...)`
 
-[newsampler](newsampler.html "为nextsample函数初始化采样序列。")和本函数公开了mantra用于像素抗锯齿的高质量确定性采样模式。在光线追踪模式下渲染时，可以通过使用`SID`全局变量初始化采样序列，使用`nextsample`例程生成确定性2D样本。
+[newsampler](./newsampler "为nextsample函数初始化采样序列。")和本函数公开了mantra用于像素抗锯齿的高质量确定性采样模式。在光线追踪模式下渲染时，可以通过使用`SID`全局变量初始化采样序列，使用`nextsample`例程生成确定性2D样本。
 
 此方法可以生成2D或3D采样模式。要生成2D样本，请使用带有2个float只写参数的签名。要生成3D样本，请使用带有vector只写参数的签名。
 
@@ -17,7 +17,7 @@ order: 5
 
 `"qstrat"`
 
-前进到模式中的下一个样本。当使用[newsampler](newsampler.html "为nextsample函数初始化采样序列。")时应使用此模式。
+前进到模式中的下一个样本。当使用[newsampler](./newsampler "为nextsample函数初始化采样序列。")时应使用此模式。
 
 `"nextpixel"`
 

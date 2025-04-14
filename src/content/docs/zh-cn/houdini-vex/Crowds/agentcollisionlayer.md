@@ -4,7 +4,7 @@ order: 20
 ---
 
 警告
-此函数已被弃用。请改用 [agentcollisionlayers](agentcollisionlayers.html "返回代理图元碰撞层的名称")。
+此函数已被弃用。请改用 [agentcollisionlayers](./agentcollisionlayers "返回代理图元碰撞层的名称")。
 
 如果`prim`超出范围或不是代理图元，则返回空字符串。
 

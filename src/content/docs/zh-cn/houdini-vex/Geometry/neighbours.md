@@ -11,7 +11,7 @@ order: 16
 
 或者，该参数可以是指定几何体文件（例如`.bgeo`）的字符串。在Houdini内部运行时，可以是`op:/path/to/sop`引用。
 
-这是一个基于数组的简化替代方案，用于替代[neighbourcount](neighbourcount.html "返回连接到指定点的点数")和[neighbour](neighbour.html "返回连接到给定点的下一个点的编号")的组合。该数组包含所有与`ptnum`共享边的点编号。点编号没有特定顺序。
+这是一个基于数组的简化替代方案，用于替代[neighbourcount](./neighbourcount "返回连接到指定点的点数")和[neighbour](./neighbour "返回连接到给定点的下一个点的编号")的组合。该数组包含所有与`ptnum`共享边的点编号。点编号没有特定顺序。
 
 ## 示例
 

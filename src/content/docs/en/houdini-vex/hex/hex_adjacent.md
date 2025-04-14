@@ -23,4 +23,4 @@ Returns
 The primitive number of the hexahedron attached to the given face.
 Returns `-1` f the primitive is not a hex or doesn’t have an adjacent hexahedron.
 
-Use [hex_faceindex](hex_faceindex.html "Returns vertex indices of each face of a hexahedron.") to get the vertex indices of each face of a hexahedron.
+Use [hex_faceindex](./hex_faceindex "Returns vertex indices of each face of a hexahedron.") to get the vertex indices of each face of a hexahedron.

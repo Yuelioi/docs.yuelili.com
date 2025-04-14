@@ -6,7 +6,7 @@ order: 12
 
 `vector  getpointbbox_min(<geometry>geometry, string pointgroup)`
 
-此函数与 [getbbox_min](getbbox_min.html "返回几何体的包围盒最小值") 相同，但仅计算*点*的包围盒。因此，如果图元有不包含点的范围（例如原始球体的边界），这些范围将不会包含在包围盒内。
+此函数与 [getbbox_min](./getbbox_min "返回几何体的包围盒最小值") 相同，但仅计算*点*的包围盒。因此，如果图元有不包含点的范围（例如原始球体的边界），这些范围将不会包含在包围盒内。
 
 `<geometry>`
 

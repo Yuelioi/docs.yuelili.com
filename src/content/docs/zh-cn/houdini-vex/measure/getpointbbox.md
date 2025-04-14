@@ -6,7 +6,7 @@ order: 9
 
 `void  getpointbbox(<geometry>geometry, string pointgroup, vector &min, vector &max)`
 
-这与 [getbbox](getbbox.html "设置两个向量为几何体包围盒的最小和最大角点。") 功能相同，区别在于它仅计算*点*的包围盒。因此，如果某个图元有超出点范围的部分（例如原始球体的边界），这些部分将不会被包含在包围盒内。
+这与 [getbbox](./getbbox "设置两个向量为几何体包围盒的最小和最大角点。") 功能相同，区别在于它仅计算*点*的包围盒。因此，如果某个图元有超出点范围的部分（例如原始球体的边界），这些部分将不会被包含在包围盒内。
 
 `<geometry>`
 

@@ -28,7 +28,7 @@ The function fills this array with the weights for the split lobes (same length 
 
 A bitmask indicating which types of bounces to evaluate.
 
-See [bouncemask](bouncemask.html) for information on component label bitmasks.
+See [bouncemask](../shading-and-rendering/bouncemask) for information on component label bitmasks.
 
 `type`
 

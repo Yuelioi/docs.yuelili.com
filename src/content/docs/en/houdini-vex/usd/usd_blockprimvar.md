@@ -10,7 +10,7 @@ order: 24
 This function blocks the primvar. I.e., removes all time samples and sets the *block* as default value.
 
 Note, if primvar is indexed, you may also want to block the indices with
-[usd_blockprimvarindices](usd_blockprimvarindices.html "Blocks the primvar.").
+[usd_blockprimvarindices](./usd_blockprimvarindices "Blocks the primvar.").
 
 `stagehandle`
 

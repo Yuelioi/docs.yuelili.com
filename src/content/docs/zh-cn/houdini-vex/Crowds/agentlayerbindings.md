@@ -6,7 +6,7 @@ order: 27
 
 `int [] agentlayerbindings(<geometry>geometry, int prim, int layerindex, string shapetype)`
 
-如果`layername`不是代理的[层](agentlayers.html "返回代理图元所有已加载的层")之一，`shapetype`无效，`prim`超出范围，或`prim`不是代理图元，则返回空数组。
+如果`layername`不是代理的[层](./agentlayers "返回代理图元所有已加载的层")之一，`shapetype`无效，`prim`超出范围，或`prim`不是代理图元，则返回空数组。
 
 `<geometry>`
 
@@ -25,7 +25,7 @@ order: 27
 `layerindex`
 
 代理定义中层的索引。
-可通过[agentfindlayer](agentfindlayer.html "查找代理定义中某层的索引")获取层的索引。
+可通过[agentfindlayer](./agentfindlayer "查找代理定义中某层的索引")获取层的索引。
 
 `shapetype`
 

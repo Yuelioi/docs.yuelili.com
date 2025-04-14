@@ -46,7 +46,7 @@ for convenience, but you can query any property from the
 
 `light:name`
 
-(string) The name of the light object which is currently active in the [illuminance](illuminance.html "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables.") loop.
+(string) The name of the light object which is currently active in the [illuminance](./illuminance "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables.") loop.
 
 `light:shadowscope`
 

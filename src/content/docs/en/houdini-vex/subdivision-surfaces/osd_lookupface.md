@@ -10,7 +10,7 @@ If you don’t specify a texture attribute, the function uses intrinsic polygon 
 
 If you specify a texture attribute, the function uses the UVs in that attribute to translate the patch coordinates onto the Houdini geometry.
 
-Each polygon in a piece of geometry will generate one or more Catmull-Clark subdivision patches. A quadrilateral will generate a single patch, while a pentagon will generate five patches. This function helps map between the subdivision patch id and the Houdini polygon (face). The reverse function to map from face to patch is [osd_lookuppatch](osd_lookuppatch.html "Outputs the OSD patch and UV coordinates corresponding to the given coordinates on a Houdini polygon face.").
+Each polygon in a piece of geometry will generate one or more Catmull-Clark subdivision patches. A quadrilateral will generate a single patch, while a pentagon will generate five patches. This function helps map between the subdivision patch id and the Houdini polygon (face). The reverse function to map from face to patch is [osd_lookuppatch](./osd_lookuppatch "Outputs the OSD patch and UV coordinates corresponding to the given coordinates on a Houdini polygon face.").
 
 `<geometry>`
 

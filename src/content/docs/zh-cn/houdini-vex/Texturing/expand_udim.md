@@ -6,7 +6,7 @@ order: 4
 
 扫描输入路径中的特殊转换字符，执行UDIM或UVTILE风格的文件名扩展。
 
-这与[texprintf](texprintf.html "类似于sprintf，但执行UDIM或UVTILE纹理文件名扩展。")类似，但有两点显著区别：
+这与[texprintf](./texprintf "类似于sprintf，但执行UDIM或UVTILE纹理文件名扩展。")类似，但有两点显著区别：
 
 - 没有可变打印参数。仅执行UDIM/UVTILE扩展。
 - 如果执行了UDIM/UVTILE扩展，该函数会检查纹理是否存在且可访问。

@@ -34,9 +34,9 @@ order: 20
 | `"space:lightndc"` | 在执行阴影或光照着色器时，当前光源的标准化设备坐标空间。 |
 | `"space:current"` | 向量当前所在的空间。 |
 
-- [ptransform](ptransform.html "将向量从一个空间变换到另一个空间。")将向量解释为位置。
-- [vtransform](vtransform.html "变换方向向量。")将向量解释为方向向量，因此不应用矩阵中的平移变换。
-- [ntransform](ntransform.html "变换法线向量。")将向量解释为法线向量，因此乘以矩阵的逆转置（忽略平移变换）。
+- [ptransform](./ptransform "将向量从一个空间变换到另一个空间。")将向量解释为位置。
+- [vtransform](./vtransform "变换方向向量。")将向量解释为方向向量，因此不应用矩阵中的平移变换。
+- [ntransform](./ntransform "变换法线向量。")将向量解释为法线向量，因此乘以矩阵的逆转置（忽略平移变换）。
 
   ## 示例
 

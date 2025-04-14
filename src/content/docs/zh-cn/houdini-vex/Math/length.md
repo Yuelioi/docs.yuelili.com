@@ -2,7 +2,7 @@
 title: length
 order: 37
 ---
-要获取字符串的长度或数组中的元素数量，请使用[len](len.html "返回数组的长度")函数。
+要获取字符串的长度或数组中的元素数量，请使用[len](../arrays/len "返回数组的长度")函数。
 
 `float  length(float f)`
 
@@ -16,7 +16,7 @@ order: 37
 
 返回向量或vector4到原点的距离。
 
-如果需要平方长度，使用[length2](length2.html "返回向量或vector4的平方距离")比将此函数结果平方运算更快。
+如果需要平方长度，使用[length2](./length2 "返回向量或vector4的平方距离")比将此函数结果平方运算更快。
 
 ## 示例
 

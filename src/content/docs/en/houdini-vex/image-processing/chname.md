@@ -22,7 +22,7 @@ CHOPs
 `string  chname(int opinput, int channel_index)`
 
 Returns the name of the channel, for example `"tx"`.
-To get a list of all channel names, use [chnames](chnames.html "Returns all the CHOP channel names of a given CHOP input.").
+To get a list of all channel names, use [chnames](../chop/chnames "Returns all the CHOP channel names of a given CHOP input.").
 
 `opinput`
 

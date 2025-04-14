@@ -8,4 +8,4 @@ order: 1
 
 该计算使用快速近似方法，适用于温度值在1666K至25000K之间的范围。超出此范围的值将被钳制到最近的有效范围内值。
 
-返回值可通过[xyztorgb](xyztorgb.html "将CIE XYZ三刺激值转换为线性sRGB三元组")函数转换为线性sRGB值。
+返回值可通过[xyztorgb](../conversion/xyztorgb "将CIE XYZ三刺激值转换为线性sRGB三元组")函数转换为线性sRGB值。

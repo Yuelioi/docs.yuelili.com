@@ -66,6 +66,7 @@ export const aeScripting = {
         {
           label: "Item",
           link: "/ae-scripting/item/item",
+          translations: { "zh-CN": "项目" },
         },
         {
           label: "ItemCollection",
@@ -100,6 +101,7 @@ export const aeScripting = {
         {
           label: "Layer",
           link: "/ae-scripting/layer/layer",
+          translations: { "zh-CN": "图层" },
         },
         {
           label: "LayerCollection",
@@ -144,6 +146,7 @@ export const aeScripting = {
         {
           label: "Property",
           link: "/ae-scripting/property/property",
+          translations: { "zh-CN": "属性" },
         },
         {
           label: "PropertyBase",
@@ -158,7 +161,7 @@ export const aeScripting = {
         {
           label: "MaskPropertyGroup",
           link: "/ae-scripting/property/maskpropertygroup",
-          translations: { "zh-CN": "遮罩属性组" },
+          translations: { "zh-CN": "蒙版属性组" },
         },
       ],
     },
@@ -168,6 +171,7 @@ export const aeScripting = {
       items: [
         {
           label: "RenderQueue",
+          translations: { "zh-CN": "渲染队列" },
           link: "/ae-scripting/renderqueue/renderqueue",
         },
         {

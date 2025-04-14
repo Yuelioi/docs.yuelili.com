@@ -9,7 +9,7 @@ order: 5
 
 `void  nextsample(int &sid, vector &svec, ...)`
 
-[newsampler](newsampler.html "Initializes a sampling sequence for the nextsample function.") and this function expose the high-quality deterministic sampling patterns used by mantra for pixel anti-aliasing. When rendering in raytracing mode, it’s possible to generate deterministic 2D samples with `nextsample` routine by initializing the sampling sequence with the `SID` global variable.
+[newsampler](./newsampler "Initializes a sampling sequence for the nextsample function.") and this function expose the high-quality deterministic sampling patterns used by mantra for pixel anti-aliasing. When rendering in raytracing mode, it’s possible to generate deterministic 2D samples with `nextsample` routine by initializing the sampling sequence with the `SID` global variable.
 
 This method can generate either 2D or 3D sampling patterns. To generate 2D samples, use the signature with 2 float write-only arguments. To generate 3D samples, use the signature with a vector write-only argument.
 
@@ -17,7 +17,7 @@ You can add an extra argument, `"mode"`, followed by one of the following:
 
 `“qstrat”`
 
-Advances to the next sample in the pattern. You should use this mode when using [newsampler](newsampler.html "Initializes a sampling sequence for the nextsample function.").
+Advances to the next sample in the pattern. You should use this mode when using [newsampler](./newsampler "Initializes a sampling sequence for the nextsample function.").
 
 `“nextpixel”`
 

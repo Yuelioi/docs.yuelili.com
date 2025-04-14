@@ -2,7 +2,7 @@
 title: hasattrib
 order: 24
 ---
-If you know the attribute class ahead of time, using [hasdetailattrib](hasdetailattrib.html "Returns if a geometry detail attribute exists."), [hasprimattrib](hasprimattrib.html "Returns if a geometry prim attribute exists."), [haspointattrib](haspointattrib.html "Returns if a geometry point attribute exists."), or [hasvertexattrib](hasvertexattrib.html "Returns if a geometry vertex attribute exists.") may be faster.
+If you know the attribute class ahead of time, using [hasdetailattrib](./hasdetailattrib "Returns if a geometry detail attribute exists."), [hasprimattrib](./hasprimattrib "Returns if a geometry prim attribute exists."), [haspointattrib](./haspointattrib "Returns if a geometry point attribute exists."), or [hasvertexattrib](./hasvertexattrib "Returns if a geometry vertex attribute exists.") may be faster.
 
 `int  hasattrib(<geometry>geometry, string attribclass, string attribute_name)`
 

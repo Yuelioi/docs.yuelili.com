@@ -6,4 +6,4 @@ order: 54
 
 Return the number of different bounce types supported by the renderer.
 
-See [bouncemask](bouncemask.html) for information on component label bitmasks.
+See [bouncemask](./bouncemask) for information on component label bitmasks.

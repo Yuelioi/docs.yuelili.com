@@ -2,7 +2,7 @@
 title: attribtype
 order: 11
 ---
-If you know the attribute class ahead of time, using [detailattribtype](detailattribtype.html "Returns the type of a geometry detail attribute."), [primattribtype](primattribtype.html "Returns the type of a geometry prim attribute."), [pointattribtype](pointattribtype.html "Returns the type of a geometry point attribute."), or [vertexattribtype](vertexattribtype.html "Returns the type of a geometry vertex attribute.") may be faster.
+If you know the attribute class ahead of time, using [detailattribtype](./detailattribtype "Returns the type of a geometry detail attribute."), [primattribtype](./primattribtype "Returns the type of a geometry prim attribute."), [pointattribtype](./pointattribtype "Returns the type of a geometry point attribute."), or [vertexattribtype](./vertexattribtype "Returns the type of a geometry vertex attribute.") may be faster.
 
 `int  attribtype(<geometry>geometry, string attribclass, string attribute_name)`
 

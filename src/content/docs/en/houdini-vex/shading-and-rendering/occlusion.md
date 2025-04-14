@@ -9,7 +9,7 @@ order: 56
 `vector  occlusion(vector P, vector N, ...)`
 
 Computes ambient occlusion at the point P with the normal N. Just as
-in the [irradiance](irradiance.html "Computes irradiance (global illumination) at the point P with the normal N.") function, the hemisphere is
+in the [irradiance](./irradiance "Computes irradiance (global illumination) at the point P with the normal N.") function, the hemisphere is
 sampled. However, unlike irradiance, surfaces intersected during the
 hemisphere sampling are not shaded. For this function to work
 properly, either a constant background color or an environment map
@@ -46,7 +46,7 @@ Ray options
 
 Tip
 When you specify a texture, such as with the `"environment"` keyword,
-you can also use the image filtering keyword arguments. See [environment](environment.html "Returns the color of the environment texture.")
+you can also use the image filtering keyword arguments. See [environment](../texturing/environment "Returns the color of the environment texture.")
 for a listing of the image filter keyword arguments.
 
 "`scope`",
@@ -71,7 +71,7 @@ The maximum distance to search for objects. This can be used to limit the search
 
 Allows an override of the maximum distance the ray can
 travel when testing for intersections. Some functions (such as
-[fastshadow](fastshadow.html "Sends a ray from the position P along the direction specified by the
+[fastshadow](../light/fastshadow "Sends a ray from the position P along the direction specified by the
 direction D.")) have the maximum distance implicitly defined (by
 the length of the ray) and should probably avoid using this
 option. However, this option can be used effectively when
@@ -164,7 +164,7 @@ background color specified.
 "`distribution`",
 `string`
 
-**Functions**: [irradiance](irradiance.html "Computes irradiance (global illumination) at the point P with the normal N."), [occlusion](occlusion.html "Computes ambient occlusion.")
+**Functions**: [irradiance](./irradiance "Computes irradiance (global illumination) at the point P with the normal N."), [occlusion](./occlusion "Computes ambient occlusion.")
 
 Distribution for computing irradiance. The default is to use
 a cosine distribution (diffuse illumination). The possible

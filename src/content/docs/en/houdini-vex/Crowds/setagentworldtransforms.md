@@ -4,7 +4,7 @@ order: 63
 ---
 `void  setagentworldtransforms(int geohandle, int prim, matrix transforms[])`
 
-When modifying a single transform, using [setagentworldtransform](setagentworldtransform.html "Overrides the world space transform of an agent primitive’s bone.") instead can be significantly faster.
+When modifying a single transform, using [setagentworldtransform](./setagentworldtransform "Overrides the world space transform of an agent primitive’s bone.") instead can be significantly faster.
 
 `geohandle`
 

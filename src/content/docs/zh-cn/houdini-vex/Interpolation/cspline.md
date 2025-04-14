@@ -3,7 +3,7 @@ title: cspline
 order: 3
 ---
 
-要使用非均匀间隔的关键点指定曲线，请使用[ckspline](ckspline.html "对由位置/值关键点定义的Catmull-Rom（Cardinal）样条进行采样")。
+要使用非均匀间隔的关键点指定曲线，请使用[ckspline](./ckspline "对由位置/值关键点定义的Catmull-Rom（Cardinal）样条进行采样")。
 
 `float  cspline(float t, float val1, ...)`
 

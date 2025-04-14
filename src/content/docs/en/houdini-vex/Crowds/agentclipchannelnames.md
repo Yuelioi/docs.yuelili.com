@@ -6,9 +6,9 @@ order: 8
 
 `string [] agentclipchannelnames(<geometry>geometry, int prim, int clipindex)`
 
-Returns an empty array if `clipname` is not one of the agent’s [animation clips](agentclipcatalog.html "Returns all of the animation clips that have been loaded for an agent primitive."), `prim` is out of range, or `prim` is not an agent primitive.
+Returns an empty array if `clipname` is not one of the agent’s [animation clips](./agentclipcatalog "Returns all of the animation clips that have been loaded for an agent primitive."), `prim` is out of range, or `prim` is not an agent primitive.
 
-For a list of the agent’s transforms, use [agenttransformnames](agenttransformnames.html "Returns the name of each transform in an agent primitive’s rig.").
+For a list of the agent’s transforms, use [agenttransformnames](./agenttransformnames "Returns the name of each transform in an agent primitive’s rig.").
 
 `<geometry>`
 
@@ -27,4 +27,4 @@ The name of the animation clip.
 `clipindex`
 
 Index of a clip in the agent’s definition.
-A clip’s index can be obtained via [agentfindclip](agentfindclip.html "Finds the index of a clip in an agent’s definition.").
+A clip’s index can be obtained via [agentfindclip](./agentfindclip "Finds the index of a clip in an agent’s definition.").

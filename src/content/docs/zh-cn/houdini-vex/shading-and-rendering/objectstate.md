@@ -41,7 +41,7 @@ order: 55
 
 `light:name`
 
-(string) [illuminance](illuminance.html "循环遍历场景中所有光源，为每个光源调用光照着色器以设置Cl和L全局变量。")循环中当前激活的光源对象名称。
+(string) [illuminance](./illuminance "循环遍历场景中所有光源，为每个光源调用光照着色器以设置Cl和L全局变量。")循环中当前激活的光源对象名称。
 
 `light:shadowscope`
 

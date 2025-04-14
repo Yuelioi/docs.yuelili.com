@@ -37,7 +37,7 @@ order: 2
 
 CHOP属性存储有关剪辑、通道、样本或通道/样本对的元数据。
 
-此函数用于读取CHOP属性的值。使用[chsetattr](chsetattr.html "设置CHOP属性的值。")来设置CHOP属性。
+此函数用于读取CHOP属性的值。使用[chsetattr](./chsetattr "设置CHOP属性的值。")来设置CHOP属性。
 
 `opinput`
 

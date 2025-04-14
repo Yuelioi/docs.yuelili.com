@@ -7,7 +7,7 @@ order: 13
 
 `vector  getpointbbox_size(<geometry>geometry, string pointgroup)`
 
-该函数与 [getbbox_size](getbbox_size.html "返回几何体的边界框尺寸") 功能相同，但仅计算*点*的边界框。因此，如果图元存在不包含点的延伸部分（例如原始球体的边界），这些部分将不会包含在边界框内。
+该函数与 [getbbox_size](./getbbox_size "返回几何体的边界框尺寸") 功能相同，但仅计算*点*的边界框。因此，如果图元存在不包含点的延伸部分（例如原始球体的边界），这些部分将不会包含在边界框内。
 
 `<geometry>`
 

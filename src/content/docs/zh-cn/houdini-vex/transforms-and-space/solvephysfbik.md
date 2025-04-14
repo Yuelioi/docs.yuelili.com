@@ -7,10 +7,10 @@ order: 30
 
 `matrix [] solvephysfbik(matrix xforms[], int parents[], dict jointoptions[], matrix targetxforms[], int targets[], dict targetoptions[], int iters, float damping, float tolerance)`
 
-该求解器采用与[solvefbik](solvefbik.html "对骨骼应用全身逆向运动学算法")不同的算法——通常性能稍慢，但能提供更精细的骨骼行为控制，并产生更高质量的结果。
+该求解器采用与[solvefbik](./solvefbik "对骨骼应用全身逆向运动学算法")不同的算法——通常性能稍慢，但能提供更精细的骨骼行为控制，并产生更高质量的结果。
 求解器还可通过可选参数使用各关节的质量和质心位置来实现骨骼质心的目标位置，从而实现基于物理的行为（如保持平衡）。
 
-相比[solvefbik](solvefbik.html "对骨骼应用全身逆向运动学算法")，本求解器在启用关节限制时表现更稳定，且在存在不同优先级目标时能产生更精确的结果。
+相比[solvefbik](./solvefbik "对骨骼应用全身逆向运动学算法")，本求解器在启用关节限制时表现更稳定，且在存在不同优先级目标时能产生更精确的结果。
 该求解器还会更均匀地沿骨骼链分配关节角度变化（特别是使用旋转目标时），而不会在少数关节上产生大幅角度变化。
 
 旋转和平移权重参数可控制求解过程中各关节轴的行为。这可用于确保特定关节旋转幅度大于其他关节、锁定特定关节轴或启用可平移（弹性）关节。

@@ -10,4 +10,4 @@ order: 26
 Returns `-1` if the shader is not generating photons from a light.
 
 The return value is an integer identifying a light. You can get convert this
-integer ID to the light name with [getlightname](getlightname.html "Returns the name of the current light when called from within an illuminance loop, or converts an integer light ID into the light’s name.")
+integer ID to the light name with [getlightname](./getlightname "Returns the name of the current light when called from within an illuminance loop, or converts an integer light ID into the light’s name.")

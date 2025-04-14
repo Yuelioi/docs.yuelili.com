@@ -3,7 +3,7 @@ title: ckspline
 order: 1
 ---
 
-要使用均匀间隔的值键指定曲线，请使用[cspline](cspline.html "采样由均匀间隔键定义的Catmull-Rom（Cardinal）样条")。
+要使用均匀间隔的值键指定曲线，请使用[cspline](./cspline "采样由均匀间隔键定义的Catmull-Rom（Cardinal）样条")。
 
 `float  ckspline(float t, float value, float pos, ...)`
 

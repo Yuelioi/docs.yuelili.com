@@ -4,7 +4,7 @@ order: 22
 ---
 
 警告
-该函数已被弃用。请改用 [agentcurrentlayers](agentcurrentlayers.html "返回代理基元当前图层的名称")。
+该函数已被弃用。请改用 [agentcurrentlayers](./agentcurrentlayers "返回代理基元当前图层的名称")。
 
 如果`prim`超出范围或不是代理基元，则返回空字符串。
 

@@ -33,7 +33,7 @@ The USD time code at which to evaluate the attribute. A USD time code roughly co
 
 Returns
 
-The length of the array attribute, or 1 if the attribute is not an array. Use [usd_isarray](usd_isarray.html "Checks if the attribute is an array.") if you want to check whether the attribute is an array.
+The length of the array attribute, or 1 if the attribute is not an array. Use [usd_isarray](./usd_isarray "Checks if the attribute is an array.") if you want to check whether the attribute is an array.
 
 Examples
 

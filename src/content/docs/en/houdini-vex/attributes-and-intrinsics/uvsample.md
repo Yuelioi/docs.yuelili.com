@@ -2,7 +2,7 @@
 title: uvsample
 order: 76
 ---
-This function specifies the position using UVs from a UV attribute. To use *intrinsic primitive UVs*, use [primuv](primuv.html "Interpolates the value of an attribute at a certain parametric (uvw) position.") instead.
+This function specifies the position using UVs from a UV attribute. To use *intrinsic primitive UVs*, use [primuv](./primuv "Interpolates the value of an attribute at a certain parametric (uvw) position.") instead.
 
 `<type> uvsample(<geometry>geometry, string attr_name, string uv_attr_name, vector uvw)`
 

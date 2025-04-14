@@ -12,8 +12,8 @@ version of pcexport taking a radius) the point being exported is at a
 distance less than the specified radius from a point that is already in the
 point cloud.
 
-This function writes to the channels of points opened with [pcopen](pcopen.html "Returns a handle to a point cloud file.") or
-[pcgenerate](pcgenerate.html "Generates a point cloud."). The second version of this function takes a radius parameter and uses it to accept or reject the point being exported according to its distance to the points that are already in the point cloud. It must be separated from all other points by at least the specified radius. To write new point data into a point cloud file, use [pcwrite](pcwrite.html "Writes data to a point cloud file.").
+This function writes to the channels of points opened with [pcopen](./pcopen "Returns a handle to a point cloud file.") or
+[pcgenerate](./pcgenerate "Generates a point cloud."). The second version of this function takes a radius parameter and uses it to accept or reject the point being exported according to its distance to the points that are already in the point cloud. It must be separated from all other points by at least the specified radius. To write new point data into a point cloud file, use [pcwrite](./pcwrite "Writes data to a point cloud file.").
 Storage type
 
 ## storage-type

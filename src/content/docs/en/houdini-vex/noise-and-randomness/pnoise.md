@@ -18,7 +18,7 @@ There are two forms of Perlin-style noise: a non-periodic noise which
 changes randomly throughout N-dimensional space, and a periodic form
 which repeats over a given range of space.
 
-This function generates periodic noise. Use the [noise](noise.html "There are two forms of Perlin-style noise: a non-periodic noise which
+This function generates periodic noise. Use the [noise](./noise "There are two forms of Perlin-style noise: a non-periodic noise which
 changes randomly throughout N-dimensional space, and a periodic form
 which repeats over a given range of space.")
 function to generate non-periodic Perlin noise.

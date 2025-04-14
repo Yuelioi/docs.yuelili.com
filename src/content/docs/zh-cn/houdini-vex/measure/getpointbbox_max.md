@@ -6,7 +6,7 @@ order: 11
 
 `vector  getpointbbox_max(<geometry>geometry, string pointgroup)`
 
-此函数与 [getbbox_max](getbbox_max.html "返回几何体的包围盒最大值") 功能相同，但仅计算*点*的包围盒。因此，如果图元存在不包含点的延伸部分（例如原始球体的边界），这些部分将不会被包含在包围盒内。
+此函数与 [getbbox_max](./getbbox_max "返回几何体的包围盒最大值") 功能相同，但仅计算*点*的包围盒。因此，如果图元存在不包含点的延伸部分（例如原始球体的边界），这些部分将不会被包含在包围盒内。
 
 `<geometry>`
 

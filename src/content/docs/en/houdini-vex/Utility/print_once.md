@@ -10,7 +10,7 @@ This is useful to print a message before the first iteration of a loop, without 
 `msg`
 
 The string to print. This string does support interpolating values.
-Use [sprintf](sprintf.html "Formats a string like printf but returns the result as a string
+Use [sprintf](../strings/sprintf "Formats a string like printf but returns the result as a string
 instead of printing it.") to generate the msg string if you need to include values.
 
 "global",

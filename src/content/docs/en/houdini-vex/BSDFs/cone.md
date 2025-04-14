@@ -4,8 +4,8 @@ order: 6
 ---
 `bsdf  cone(vector normal, vector dir, float angle, ...)`
 
-Returns a `bsdf` representing a cone reflection along a given direction vector. This BSDF is constant within the given angle, producing a similar result to the [gather](gather.html "Sends rays into the scene and returns information from the shaders of
-surfaces hit by the rays.") or [irradiance](irradiance.html "Computes irradiance (global illumination) at the point P with the normal N.") loops.
+Returns a `bsdf` representing a cone reflection along a given direction vector. This BSDF is constant within the given angle, producing a similar result to the [gather](../shading-and-rendering/gather "Sends rays into the scene and returns information from the shaders of
+surfaces hit by the rays.") or [irradiance](../shading-and-rendering/irradiance "Computes irradiance (global illumination) at the point P with the normal N.") loops.
 
 `bsdf  cone(vector dir, float angle, ...)`
 

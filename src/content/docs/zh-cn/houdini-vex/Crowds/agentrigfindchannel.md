@@ -8,7 +8,7 @@ order: 37
 `int  agentrigfindchannel(<geometry>geometry, int prim, string channelname)`
 
 如果在骨骼中未找到`channelname`，或`prim`超出范围，或`prim`不是代理体元时返回`-1`。
-该索引可用于通过[agentchannelvalue](agentchannelvalue.html "返回代理体元通道的当前值")和[setagentchannelvalue](setagentvalue.html "覆盖代理体元通道的值")访问代理的当前通道值，或通过[agentclipsample](agentclipsample.html "在指定时间采样代理动画剪辑的通道值")从任意剪辑中采样通道值。
+该索引可用于通过[agentchannelvalue](./agentchannelvalue "返回代理体元通道的当前值")和[setagentchannelvalue](setagentvalue.html "覆盖代理体元通道的值")访问代理的当前通道值，或通过[agentclipsample](./agentclipsample "在指定时间采样代理动画剪辑的通道值")从任意剪辑中采样通道值。
 
 `<geometry>`
 

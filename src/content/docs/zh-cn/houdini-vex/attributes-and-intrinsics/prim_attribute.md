@@ -3,7 +3,7 @@ title: prim_attribute
 order: 45
 ---
 
-此函数使用*内禀基元UV*来指定位置。若要使用存储在UV属性中的UV坐标，请改用[uvsample](uvsample.html "使用UV属性在特定UV坐标处插值属性值")。
+此函数使用*内禀基元UV*来指定位置。若要使用存储在UV属性中的UV坐标，请改用[uvsample](./uvsample "使用UV属性在特定UV坐标处插值属性值")。
 
 `int  prim_attribute(<geometry>geometry, <type>&value, string attribute_name, int prim_number, float u, float v)`
 
@@ -17,7 +17,7 @@ order: 45
 
 使用向量而非两个浮点数来指定UVW坐标。
 
-若无需检测错误，可改用[primuv](primuv.html "在特定参数化(uvw)位置插值属性值")。
+若无需检测错误，可改用[primuv](./primuv "在特定参数化(uvw)位置插值属性值")。
 此函数不适用于某些基元类型，如四面体和多边形汤。
 
 `<geometry>`

@@ -4,7 +4,7 @@ order: 31
 ---
 `matrix [] agentlocaltransforms(<geometry>geometry, int prim)`
 
-如果只需要单个变换矩阵，使用[agentlocaltransform](agentlocaltransform.html "返回代理体素骨骼的当前局部空间变换矩阵")可能会显著提高效率。
+如果只需要单个变换矩阵，使用[agentlocaltransform](./agentlocaltransform "返回代理体素骨骼的当前局部空间变换矩阵")可能会显著提高效率。
 
 当`prim`超出范围或不是代理体素时，返回空数组。
 

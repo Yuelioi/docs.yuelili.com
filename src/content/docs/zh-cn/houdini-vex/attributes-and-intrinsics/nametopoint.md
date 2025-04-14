@@ -14,4 +14,4 @@ order: 31
 
 具有 `name`属性中给定值的点的编号。如果没有图元具有给定ID，或者几何体没有 `name`属性，则返回 `-1`。
 
-要通过 `id`属性值查找图元，请使用[idtoprim](idtoprim.html "通过id属性查找图元")。要通过任意字符串或整数属性值查找点，请使用[findattribval](findattribval.html "查找具有特定属性值的图元/点/顶点")。
+要通过 `id`属性值查找图元，请使用[idtoprim](./idtoprim "通过id属性查找图元")。要通过任意字符串或整数属性值查找点，请使用[findattribval](./findattribval "查找具有特定属性值的图元/点/顶点")。

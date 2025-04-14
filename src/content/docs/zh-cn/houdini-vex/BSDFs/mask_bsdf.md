@@ -12,7 +12,7 @@ order: 15
 
 一个位掩码，指示需要评估哪些类型的着色组件反弹。
 
-关于组件标签位掩码的信息，请参阅[bouncemask](bouncemask.html)。
+关于组件标签位掩码的信息，请参阅[bouncemask](../shading-and-rendering/bouncemask)。
 
 ## 示例
 

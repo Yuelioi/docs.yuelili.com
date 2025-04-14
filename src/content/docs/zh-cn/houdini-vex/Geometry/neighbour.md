@@ -4,7 +4,7 @@ order: 14
 ---
   
 
-此函数用于遍历与指定点相连的点（通过单条边连接）。若要一次性获取所有相连点的列表，请使用 [neighbours](neighbours.html "返回某点所有相邻点的编号数组")。  
+此函数用于遍历与指定点相连的点（通过单条边连接）。若要一次性获取所有相连点的列表，请使用 [neighbours](./neighbours "返回某点所有相邻点的编号数组")。  
 
 `int  neighbour(<geometry>geometry, int point_num, int neighbour_num)`  
 
@@ -20,7 +20,7 @@ order: 14
 
 `neighbour_num`  
 
-指定要查找的相邻点序号。相邻点的顺序是任意的。使用 [neighbourcount](neighbourcount.html "返回与指定点相连的点的总数") 可获取相连点的总数。  
+指定要查找的相邻点序号。相邻点的顺序是任意的。使用 [neighbourcount](./neighbourcount "返回与指定点相连的点的总数") 可获取相连点的总数。  
 
 返回值  
 

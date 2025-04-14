@@ -2,7 +2,7 @@
 title: removeprimgroup
 order: 60
 ---
-If you don’t know the class of group until runtime, use [removeattrib](removeattrib.html "Removes an attribute or group from the geometry.").
+If you don’t know the class of group until runtime, use [removeattrib](../geometry/removeattrib "Removes an attribute or group from the geometry.").
 
 `int  removeprimgroup(int geohandle, string name)`
 

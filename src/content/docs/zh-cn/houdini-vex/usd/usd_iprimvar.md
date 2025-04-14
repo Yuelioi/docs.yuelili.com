@@ -35,7 +35,7 @@ Primvar名称（不带命名空间）。
 
 返回值
 
-现有primvar的值，若primvar不存在则返回零/空值。如需检查primvar是否存在，请使用[usd_isiprimvar](usd_isiprimvar.html "检查图元或其祖先是否具有指定名称的primvar")。
+现有primvar的值，若primvar不存在则返回零/空值。如需检查primvar是否存在，请使用[usd_isiprimvar](./usd_isiprimvar "检查图元或其祖先是否具有指定名称的primvar")。
 
 ## 示例
 

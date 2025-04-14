@@ -4,7 +4,7 @@ order: 56
 ---
 
 警告
-此函数已被弃用。请改用 [setagentcollisionlayers](setagentcollisionlayers.html "设置代理图元的碰撞层")。
+此函数已被弃用。请改用 [setagentcollisionlayers](./setagentcollisionlayers "设置代理图元的碰撞层")。
 
 `geohandle`
 

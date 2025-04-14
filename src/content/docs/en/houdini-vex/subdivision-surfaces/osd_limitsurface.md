@@ -5,7 +5,7 @@ order: 3
 `osd_limitsurface` evaluates the point attribute in the geometry specified as a
 subdivision surface.
 
-For vertex attributes, use [osd_limitsurfacevertex](osd_limitsurfacevertex.html "Evaluates a vertex attribute at the subdivision limit surface using Open Subdiv.").
+For vertex attributes, use [osd_limitsurfacevertex](./osd_limitsurfacevertex "Evaluates a vertex attribute at the subdivision limit surface using Open Subdiv.").
 
 `int  osd_limitsurface(<geometry>geometry, string attrib_name, int patch_id, float u, float v, <type>&result)`
 

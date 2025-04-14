@@ -4,7 +4,7 @@ order: 10
 ---
 `<type> pcfilter(int handle, string channel_name, ...)`
 
-使用简单的重建过滤器对[pcopen](pcopen.html "返回点云文件的句柄")排队的点进行过滤。
+使用简单的重建过滤器对[pcopen](./pcopen "返回点云文件的句柄")排队的点进行过滤。
 
 该函数大致等同于：
 

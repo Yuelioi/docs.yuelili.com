@@ -4,7 +4,7 @@ order: 3
 ---
 `osd_limitsurface` 用于评估指定为细分曲面的几何体中的点属性。
 
-对于顶点属性，请使用 [osd_limitsurfacevertex](osd_limitsurfacevertex.html "使用Open Subdiv在细分极限曲面上评估顶点属性")。
+对于顶点属性，请使用 [osd_limitsurfacevertex](./osd_limitsurfacevertex "使用Open Subdiv在细分极限曲面上评估顶点属性")。
 
 `int  osd_limitsurface(<geometry>geometry, string attrib_name, int patch_id, float u, float v, <type>&result)`
 

@@ -10,9 +10,9 @@ Overview
 
 ## overview
 
-Whereas the [create_cdf](create_cdf.html "Creates a cumulative distribution function (CDF) from an array of probability density function (PDF) values.") function creates a CDF from sample values, this functions creates a CDF by randomly sampling a curve defined by a list of `values` and corresponding `positions` (similar to a Ramp parameter).
+Whereas the [create_cdf](../sampling/create_cdf "Creates a cumulative distribution function (CDF) from an array of probability density function (PDF) values.") function creates a CDF from sample values, this functions creates a CDF by randomly sampling a curve defined by a list of `values` and corresponding `positions` (similar to a Ramp parameter).
 
-See the [create_cdf](create_cdf.html "Creates a cumulative distribution function (CDF) from an array of probability density function (PDF) values.") function docs for example code using a CDF.
+See the [create_cdf](../sampling/create_cdf "Creates a cumulative distribution function (CDF) from an array of probability density function (PDF) values.") function docs for example code using a CDF.
 
 Usage
 
@@ -28,7 +28,7 @@ for single dimension splines.
 
 `bases`
 
-An array of strings describing how to interpret the corresponding `values`: each string can be `"constant"`, `"linear"`, `"cubic"` (or `"catmullrom"`, `"cspline"`), `"linearsolve"` (or `"solvelinear"`), or `"monotonecubic"`. See the [spline](spline.html "Samples a value along a polyline or spline curve.") function docs for information on how these options control the interpretation of the values.
+An array of strings describing how to interpret the corresponding `values`: each string can be `"constant"`, `"linear"`, `"cubic"` (or `"catmullrom"`, `"cspline"`), `"linearsolve"` (or `"solvelinear"`), or `"monotonecubic"`. See the [spline](./spline "Samples a value along a polyline or spline curve.") function docs for information on how these options control the interpretation of the values.
 
 "res",
 
@@ -38,4 +38,4 @@ When building a CDF, some splines may require more samples to accurately represe
 
 Returns
 
-A float array representing a CDF (like the array returned by [create_cdf](create_cdf.html "Creates a cumulative distribution function (CDF) from an array of probability density function (PDF) values.")).
+A float array representing a CDF (like the array returned by [create_cdf](../sampling/create_cdf "Creates a cumulative distribution function (CDF) from an array of probability density function (PDF) values.")).

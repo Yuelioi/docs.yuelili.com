@@ -7,7 +7,7 @@ order: 53
 
 `int  setagentclips(int geohandle, int prim, int clip_ids[], float clip_times[], float clip_weights[], int clip_transform_group_ids[], int clip_layer_ids[], int layer_blend_modes[], float layer_weights[], int layer_parent_ids[])`
 
-相比使用[setagentclipnames](setagentclipnames.html "设置代理图元的当前动画剪辑")、[setagentcliptimes](setagentcliptimes.html "设置代理图元动画剪辑的当前时间")和[setagentclipweights](setagentclipweights.html "设置代理图元动画剪辑的混合权重")的组合，此函数能提供更好的性能，同时还会修改[用于动画剪辑分层的基本体内部属性](../../crowds/agents.html#currentclips)。
+相比使用[setagentclipnames](./setagentclipnames "设置代理图元的当前动画剪辑")、[setagentcliptimes](./setagentcliptimes "设置代理图元动画剪辑的当前时间")和[setagentclipweights](./setagentclipweights "设置代理图元动画剪辑的混合权重")的组合，此函数能提供更好的性能，同时还会修改[用于动画剪辑分层的基本体内部属性](../../crowds/agents.html#currentclips)。
 
 `geohandle`
 
@@ -24,7 +24,7 @@ order: 53
 `clip_ids`
 
 代理定义中的动画剪辑索引列表。
-可通过[agentfindclip](agentfindclip.html "查找代理定义中剪辑的索引")获取剪辑的索引。
+可通过[agentfindclip](./agentfindclip "查找代理定义中剪辑的索引")获取剪辑的索引。
 
 `clip_times`
 
@@ -41,7 +41,7 @@ order: 53
 `clip_transform_group_ids`
 
 代理定义中的变换组索引列表。
-可通过[agentfindtransformgroup](agentfindtransformgroup.html "查找代理定义中变换组的索引")获取变换组的索引。
+可通过[agentfindtransformgroup](./agentfindtransformgroup "查找代理定义中变换组的索引")获取变换组的索引。
 
 `clip_layer_ids`
 

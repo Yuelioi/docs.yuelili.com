@@ -72,7 +72,7 @@ diff = diffuse(法线, "lightmask", "light*,^light2");
 ## 光线选项
 
 提示
-当指定纹理时（如使用`"environment"`关键字），也可以使用图像过滤关键字参数。详见[environment](environment.html "返回环境纹理的颜色")中列出的图像过滤关键字参数。
+当指定纹理时（如使用`"environment"`关键字），也可以使用图像过滤关键字参数。详见[environment](../texturing/environment "返回环境纹理的颜色")中列出的图像过滤关键字参数。
 
 "`scope`",
 `string`
@@ -93,7 +93,7 @@ diff = diffuse(法线, "lightmask", "light*,^light2");
 
 搜索对象的最大距离。可用于将对象搜索限制在附近对象。如果`maxdist`为负值，则表示没有最大距离限制。
 
-允许覆盖测试相交时光线能传播的最大距离。某些函数（如[fastshadow](fastshadow.html "从位置P沿方向D发送光线")）有隐式定义的最大距离（由光线长度决定），应避免使用此选项。但在计算反射、全局光照、折射等时，此选项可以有效地使用。
+允许覆盖测试相交时光线能传播的最大距离。某些函数（如[fastshadow](../light/fastshadow "从位置P沿方向D发送光线")）有隐式定义的最大距离（由光线长度决定），应避免使用此选项。但在计算反射、全局光照、折射等时，此选项可以有效地使用。
 
 "`variancevar`",
 `string`
@@ -160,7 +160,7 @@ Cf = R*reflectlight(偏移, max(R), "environment", "map.rat", "envobject", "空�
 "`distribution`",
 `string`
 
-**函数**: [irradiance](irradiance.html "计算点P处法线N的辐照度（全局光照）"), [occlusion](occlusion.html "计算环境光遮蔽")
+**函数**: [irradiance](./irradiance "计算点P处法线N的辐照度（全局光照）"), [occlusion](./occlusion "计算环境光遮蔽")
 
 计算辐照度的分布方式。默认使用余弦分布（漫反射照明）。可能的样式值为`"nonweighted"`表示均匀采样，或`"cosine"`表示余弦加权采样。
 
@@ -180,12 +180,12 @@ Cf = R*reflectlight(偏移, max(R), "environment", "map.rat", "envobject", "空�
 
 确定采样分布方式。
 
-对于[gather](gather.html "向场景发送光线并返回被光线命中表面着色器的信息"):
+对于[gather](./gather "向场景发送光线并返回被光线命中表面着色器的信息"):
 
 - `cosine` – 光线按余弦（漫反射）函数分布在半球上
 - `uniform` – 光线均匀分布在半球上
 
-对于[sample_geometry](sample_geometry.html "采样场景中的几何体并返回被采样表面着色器的信息"):
+对于[sample_geometry](../sampling/sample_geometry "采样场景中的几何体并返回被采样表面着色器的信息"):
 
 - `area` – 采样按图元面积分布
 - `parametric` – 采样按图元ID、细分ID和参数化表面坐标(s, t)分布
@@ -256,7 +256,7 @@ scope和categories参数的交叉部分用于选择可被光线命中的对象�
 gather(P, 方向, "send:N", normalize(N)) { ... }
 ```
 
-您可以在接收端（即被光线命中的表面）使用[rayimport](rayimport.html "导入gather循环中着色器发送的值")函数提取这些传递的数据。第一个参数是名称（不带`send:`前缀），第二个参数是存储导入值的变量。
+您可以在接收端（即被光线命中的表面）使用[rayimport](./rayimport "导入gather循环中着色器发送的值")函数提取这些传递的数据。第一个参数是名称（不带`send:`前缀），第二个参数是存储导入值的变量。
 
 `int rayimport(string 名称, <type> &值)`
 
@@ -300,7 +300,7 @@ gather(P, 方向, "bias", 0.01, "Cf", 命中颜色) {...}
 
 光线追踪作用域中所有几何体所对立体角的估计值。对于靠近或包围光线起点的大物体，这可能是一个非常粗略的估计，而对于单个图元，估计可以非常准确。
 
-您可以通过在数组变量中请求数据来检索沿光线多个命中点的信息。当导入值是数组类型时，[trace](trace.html "从P沿归一化向量D发送光线")函数会自动为光线追踪期间合成的每个单独命中点在数组中追加条目。对于`opacity`采样过滤器（见下文），将为遇到的每个半透明采样创建数组条目，直到达到完全不透明度。使用数组输出时，也可以使用`all`采样过滤器，这将导致沿光线的所有命中点都被插入，无论是否超过不透明度限制。
+您可以通过在数组变量中请求数据来检索沿光线多个命中点的信息。当导入值是数组类型时，[trace](./trace "从P沿归一化向量D发送光线")函数会自动为光线追踪期间合成的每个单独命中点在数组中追加条目。对于`opacity`采样过滤器（见下文），将为遇到的每个半透明采样创建数组条目，直到达到完全不透明度。使用数组输出时，也可以使用`all`采样过滤器，这将导致沿光线的所有命中点都被插入，无论是否超过不透明度限制。
 
 ```vex
 // 查找沿光线所有命中点的位置和法线，不考虑可见性
@@ -358,7 +358,7 @@ trace(P, 方向, 时间,
 返回每个采样倒数的总和。
 
 注意
-当使用[sample_geometry](sample_geometry.html "采样场景中的几何体并返回被采样表面着色器的信息")时，默认`samplefilter`设置为`closest`，因为不透明度混合仅在沿光线合成数据时有效。
+当使用[sample_geometry](../sampling/sample_geometry "采样场景中的几何体并返回被采样表面着色器的信息")时，默认`samplefilter`设置为`closest`，因为不透明度混合仅在沿光线合成数据时有效。
 
 ```vex
 gather(P, 方向,

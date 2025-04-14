@@ -5,7 +5,7 @@ order: 77
 | On this page | * [Light inclusion/exclusion options](#light-inclusion-exclusion-options) * [Area sampling options](#area-sampling-options) * [Ray options](#ray-options) * [Ray sending options](#ray-sending-options) * [Sending information to the surface’s shader](#sending-information-to-the-surface-s-shader) * [Importing information from the ray](#importing-information-from-the-ray) * [Sample filtering options](#sample-filtering-options) * [Pipeline options](#pipeline-options) |
 | --- | --- |
 | Context(s) | [shading](../contexts/shading.html) |
-Disambiguation: The VEX function to compute the trace of input matrix is [tr](tr.html "Returns the trace of the given matrix.").
+Disambiguation: The VEX function to compute the trace of input matrix is [tr](../math/tr "Returns the trace of the given matrix.").
 
 `void  trace(vector &cv, vector &of, float &af, vector P, vector D, float shadow_bias, float max_contrib, ...)`
 
@@ -93,7 +93,7 @@ Ray options
 
 Tip
 When you specify a texture, such as with the `"environment"` keyword,
-you can also use the image filtering keyword arguments. See [environment](environment.html "Returns the color of the environment texture.")
+you can also use the image filtering keyword arguments. See [environment](../texturing/environment "Returns the color of the environment texture.")
 for a listing of the image filter keyword arguments.
 
 "`scope`",
@@ -118,7 +118,7 @@ The maximum distance to search for objects. This can be used to limit the search
 
 Allows an override of the maximum distance the ray can
 travel when testing for intersections. Some functions (such as
-[fastshadow](fastshadow.html "Sends a ray from the position P along the direction specified by the
+[fastshadow](../light/fastshadow "Sends a ray from the position P along the direction specified by the
 direction D.")) have the maximum distance implicitly defined (by
 the length of the ray) and should probably avoid using this
 option. However, this option can be used effectively when
@@ -211,7 +211,7 @@ background color specified.
 "`distribution`",
 `string`
 
-**Functions**: [irradiance](irradiance.html "Computes irradiance (global illumination) at the point P with the normal N."), [occlusion](occlusion.html "Computes ambient occlusion.")
+**Functions**: [irradiance](./irradiance "Computes irradiance (global illumination) at the point P with the normal N."), [occlusion](./occlusion "Computes ambient occlusion.")
 
 Distribution for computing irradiance. The default is to use
 a cosine distribution (diffuse illumination). The possible
@@ -234,13 +234,13 @@ Specifies the filter width at the source of the ray. If `angle` is also specifie
 
 Determines the sampling distribution.
 
-For [gather](gather.html "Sends rays into the scene and returns information from the shaders of
+For [gather](./gather "Sends rays into the scene and returns information from the shaders of
 surfaces hit by the rays."):
 
 - `cosine` – Rays are distributed by the cosine (diffuse) function over the hemisphere.
 - `uniform` – Rays are distributed uniformly over the hemisphere
 
-For [sample_geometry](sample_geometry.html "Samples geometry in the scene and returns information from the shaders of surfaces that were sampled."):
+For [sample_geometry](../sampling/sample_geometry "Samples geometry in the scene and returns information from the shaders of surfaces that were sampled."):
 
 - `area` – Samples are distributed by primitive area
 - `parametric` – Samples are distributed by primitive ID, subdivision ID, and parametric surface coordinates (s, t).
@@ -312,7 +312,7 @@ gather(P, dir, "send:N", normalize(N)) { ... }
 
 ```
 
-You can extract this passed data on the receiving end (that is, in the surface being hit by the ray) with the [rayimport](rayimport.html "Imports a value sent by a shader in a gather loop.") function. The first argument is the name (without the `send:` prefix) and the second argument is a variable in which to store the imported value.
+You can extract this passed data on the receiving end (that is, in the surface being hit by the ray) with the [rayimport](./rayimport "Imports a value sent by a shader in a gather loop.") function. The first argument is the name (without the `send:` prefix) and the second argument is a variable in which to store the imported value.
 
 `int rayimport(string name, <type> &value)`
 
@@ -359,7 +359,7 @@ The estimated solid angle subtended by all geometry in the raytracing scope. For
 
 You can retrieve information about more than one hit along
 the ray by requesting data in an array variable. When an imported
-value is of an array type, the [trace](trace.html "Sends a ray from P along the normalized vector D.") function will automatically append
+value is of an array type, the [trace](./trace "Sends a ray from P along the normalized vector D.") function will automatically append
 an entry in the array for each individual hit point that was composited
 during ray tracing. For the `opacity` sample filter (see below), an entry will be
 created in the array for each semi-transparent sample encountered until
@@ -425,7 +425,7 @@ Return the sum of the squares of the values of all samples.
 Return the sum of the reciprocals of each sample.
 
 Note
-When using [sample_geometry](sample_geometry.html "Samples geometry in the scene and returns information from the shaders of surfaces that were sampled."), the default `samplefilter` is set to `closest` by default, since opacity blending only works when compositing data along a ray.
+When using [sample_geometry](../sampling/sample_geometry "Samples geometry in the scene and returns information from the shaders of surfaces that were sampled."), the default `samplefilter` is set to `closest` by default, since opacity blending only works when compositing data along a ray.
 
 ```vex
 gather(P, dir,

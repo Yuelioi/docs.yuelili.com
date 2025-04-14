@@ -2,7 +2,7 @@
 title: length
 order: 37
 ---
-To get the length of a string, or number of items in an array, use [len](len.html "Returns the length of an array.").
+To get the length of a string, or number of items in an array, use [len](../arrays/len "Returns the length of an array.").
 
 `float  length(float f)`
 
@@ -16,7 +16,7 @@ Simply returns the given number.
 
 Returns the distance of the vector or vector4 from the origin.
 
-If you want the squared length, using [length2](length2.html "Returns the squared distance of the vector or vector4.") is faster than squaring the result of this function.
+If you want the squared length, using [length2](./length2 "Returns the squared distance of the vector or vector4.") is faster than squaring the result of this function.
 
 Examples
 

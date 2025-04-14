@@ -4,7 +4,7 @@ order: 70
 ---
 | 上下文 | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [surface](../contexts/surface.html) |
 | --- | --- |
-此函数只能在[illuminance](illuminance.html "遍历场景中的所有光源，为每个光源调用光照着色器以设置Cl和L全局变量。")语句内部调用。
+此函数只能在[illuminance](./illuminance "遍历场景中的所有光源，为每个光源调用光照着色器以设置Cl和L全局变量。")语句内部调用。
 
 `void  shadow(vector &Cl)`
 

@@ -7,7 +7,7 @@ order: 4
 Scans the input path for special conversion characters to perform either UDIM
 or UVTILE style filename expansion.
 
-This is similar to [texprintf](texprintf.html "Similar to sprintf, but does expansion of UDIM or UVTILE texture filename expansion."), with two significant differences:
+This is similar to [texprintf](./texprintf "Similar to sprintf, but does expansion of UDIM or UVTILE texture filename expansion."), with two significant differences:
 
 - There are no variadic print arguments. Only UDIM/UVTILE expansion is performed.
 - If UDIM/UVTILE expansion was performed, the function checks to see if the texture exists and is accessible.
