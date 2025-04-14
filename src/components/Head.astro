@@ -6,6 +6,12 @@ const { head } = Astro.locals.starlightRoute;
   rel='sitemap'
   href='/sitemap-index.xml'
 />
+<meta
+  name='baidu-site-verification'
+  content='codeva-O8q3LaKAWc'
+/>
+
+<!-- baidu tongji -->
 {
   head.map(({ tag: Tag, attrs, content }) => (
     <Tag
@@ -25,10 +31,7 @@ const { head } = Astro.locals.starlightRoute;
 </script>
 
 <!-- Google tag (gtag.js) -->
-<script
-  async
-  src='https://www.googletagmanager.com/gtag/js?id=G-GZVRD7FGNB'>
-</script>
+<script async src='https://www.googletagmanager.com/gtag/js?id=G-GZVRD7FGNB'></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
