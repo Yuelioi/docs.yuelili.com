@@ -170,5 +170,43 @@ export const prScripting = {
         },
       ],
     },
+    {
+      "label": "QE Dom",
+      "translations": { "zh-CN": "QE Dom" },
+      "items": [
+        {
+          "label": "QEApplication",
+          "link": "/pr-scripting/qe/qeapplication",
+          "translations": { "zh-CN": "QE应用" }
+        },
+        {
+          "label": "QEEA",
+          "link": "/pr-scripting/qe/qeea",
+          "translations": { "zh-CN": "协作功能" }
+        },
+        {
+          "label": "QEProject",
+          "link": "/pr-scripting/qe/qeproject",
+          "translations": { "zh-CN": "QE项目" }
+        },
+        {
+          "label": "QEProjectItem",
+          "link": "/pr-scripting/qe/qeprojectitem",
+          "translations": { "zh-CN": "项目素材项" }
+        },
+
+        {
+          "label": "Sequence",
+          "link": "/pr-scripting/qe/sequence",
+          "translations": { "zh-CN": "序列操作" }
+        },
+        {
+          "label": "Track",
+          "link": "/pr-scripting/qe/track",
+          "translations": { "zh-CN": "音视频轨道" }
+        }
+      ]
+    }
+
   ],
 };
