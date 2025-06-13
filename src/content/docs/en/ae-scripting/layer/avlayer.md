@@ -13,11 +13,9 @@ The AVLayer object provides an interface to those layers that contain AVItem obj
 AVLayer is a subclass of [Layer object](../layer). All methods and attributes of Layer, in addition to those listed below, are available when working with AVLayer.
 :::
 
-
 :::info
 AVLayer is a base class for [TextLayer object](../textlayer), so AVLayer attributes and methods are available when working with TextLayer objects.
 :::
-
 
 #### AE Properties
 
@@ -29,35 +27,35 @@ Different types of layers have different AE properties. AVLayer has the followin
 - Masks
 - Effects
 - Transform
-    - Anchor Point
-    - Position
-    - Scale
-    - Orientation
-    - X Rotation
-    - Y Rotation
-    - Rotation
-    - Opacity
+  - Anchor Point
+  - Position
+  - Scale
+  - Orientation
+  - X Rotation
+  - Y Rotation
+  - Rotation
+  - Opacity
 - Layer Styles
 - Geometry Options // Ray-traced 3D
 - Material Options
-    - Casts Shadows
-    - Light Transmission
-    - Accepts Shadows
-    - Accepts Lights
-    - Appears in Reflections // Ray-traced 3D
-    - Ambient
-    - Diffuse
-    - Specular Intensity
-    - Specular Shininess
-    - Metal
-    - Reflection Intensity // Ray-traced 3D
-    - Reflection Sharpness // Ray-traced 3D
-    - Reflection Rolloff // Ray-traced 3D
-    - Transparency // Ray-traced 3D
-    - Transparency Rolloff // Ray-traced 3D
-    - Index of Refraction // Ray-traced 3D
+  - Casts Shadows
+  - Light Transmission
+  - Accepts Shadows
+  - Accepts Lights
+  - Appears in Reflections // Ray-traced 3D
+  - Ambient
+  - Diffuse
+  - Specular Intensity
+  - Specular Shininess
+  - Metal
+  - Reflection Intensity // Ray-traced 3D
+  - Reflection Sharpness // Ray-traced 3D
+  - Reflection Rolloff // Ray-traced 3D
+  - Transparency // Ray-traced 3D
+  - Transparency Rolloff // Ray-traced 3D
+  - Index of Refraction // Ray-traced 3D
 - Audio
-    - AudioLevels
+  - AudioLevels
 
 #### Example
 
@@ -309,7 +307,6 @@ Boolean; read-only.
 This functionality was updated in After Effects 23.0. Track Matte is no longer dependent on layer order.
 :::
 
-
 #### Description
 
 `true` if this layer has track matte. When `true`, this layer's `trackMatteType` value controls how the matte is applied.
@@ -357,7 +354,6 @@ Boolean; read-only.
 :::note
 This functionality was updated in After Effects 23.0. Track Matte is no longer dependent on layer order.
 :::
-
 
 #### Description
 
@@ -422,7 +418,6 @@ A `LayerQuality` enumerated value; read/write. One of:
 :::note
 This functionality was added in After Effects 12.0 (CC)
 :::
-
 
 #### Description
 
@@ -501,7 +496,6 @@ Boolean; read/write.
 This functionality was added in After Effects 23.0
 :::
 
-
 #### Description
 
 Returns the track matte layer for this layer. Returns `null` if this layer has no track matte layer.
@@ -520,11 +514,9 @@ AVLayer object; read only.
 This functionality was updated in After Effects 23.0
 :::
 
-
 :::warning
 This is a Legacy API we don't recommend using for setting Track Matte Type in new scripts. Please consider using the latest track matte APIs [AVLayer.setTrackMatte()](#avlayersettrackmatte) and [AVLayer.removeTrackMatte()](#avlayerremovetrackmatte) for your tasks.
 :::
-
 
 #### Description
 
@@ -582,7 +574,6 @@ Floating-point value; read-only.
 This functionality was added in After Effects 18.0 (2021)
 :::
 
-
 #### Description
 
 Adds the layer to the Essential Graphics Panel for the specified composition.
@@ -612,7 +603,6 @@ Boolean.
 :::note
 This functionality was added in After Effects 18.0 (2021)
 :::
-
 
 #### Description
 
@@ -701,7 +691,6 @@ for (var sel in transform) {
 This functionality was added in After Effects 18.0 (2021)
 :::
 
-
 #### Description
 
 Test whether or not the layer can be added to the Essential Graphics Panel for the specified composition.
@@ -740,7 +729,6 @@ Boolean.
 This functionality was added in After Effects 13.2 (CC 2014.2)
 :::
 
-
 #### Description
 
 Converts composition coordinates, such as `sourcePointToComp`, to layer coordinates.
@@ -748,7 +736,6 @@ Converts composition coordinates, such as `sourcePointToComp`, to layer coordina
 :::warning
 This value only reflects the first character in the text layer at the current time.
 :::
-
 
 #### Parameters
 
@@ -788,7 +775,6 @@ Viewer object for the Layer panel, or `null` if the layer could not be opened (e
 This functionality was added in After Effects 23.0
 :::
 
-
 #### Description
 
 Removes the track matte for this layer while preserving the TrackMatteType.
@@ -827,7 +813,6 @@ Replaces the source for this layer.
 If this method is performed on a null layer, the layers `isNull` attribute is not changed from `true`. This causes the layer not to be visible in comp viewer and renders.
 :::
 
-
 #### Parameters
 
 |    Parameter     |                Type                |                                                                                                       Description                                                                                                        |
@@ -851,7 +836,6 @@ Nothing.
 This functionality was added in After Effects 23.0
 :::
 
-
 #### Description
 
 Sets the track matte layer and type for this layer. Passing in `null` to trackMatteLayer parameter removes the track matte.
@@ -867,7 +851,6 @@ See [AVLayer.removeTrackMatte()](#avlayerremovetrackmatte) for another way of re
 :::warning
 Passing in `TrackMatteType.NO_TRACK_MATTE` as type is invalid and will result in no-op.
 :::
-
 
 #### Returns
 
@@ -903,7 +886,6 @@ myLayer.setTrackMatte(otherLayer, TrackMatteType.NO_TRACK_MATTE);
 This functionality was added in After Effects 13.2 (CC 2014.2)
 :::
 
-
 #### Description
 
 Converts layer coordinates, such as `boxTextPos`, to composition coordinates.
@@ -911,7 +893,6 @@ Converts layer coordinates, such as `boxTextPos`, to composition coordinates.
 :::warning
 This value only reflects the first character in the text layer at the current time.
 :::
-
 
 #### Parameters
 
