@@ -38,7 +38,7 @@ order: 20
 - [vtransform](./vtransform "变换方向向量。")将向量解释为方向向量，因此不应用矩阵中的平移变换。
 - [ntransform](./ntransform "变换法线向量。")将向量解释为法线向量，因此乘以矩阵的逆转置（忽略平移变换）。
 
-  ## 示例
+ ## 示例
 
 仅包含tospace参数的版本假设fromspace为`"space:current"`。例如：
 

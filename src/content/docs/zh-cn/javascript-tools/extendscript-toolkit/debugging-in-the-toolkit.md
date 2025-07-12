@@ -17,10 +17,10 @@ title: 工具包中的调试
 
 每个引擎名称旁边的图标指示其状态是运行中、暂停还是等待输入：
 
-|         图标   | 状态  |
-| --------------------------------------------------------------------------------------------------------- | ------- |
+| 图标 | 状态 |
+| --- | --- |
 | ![running](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_running.jpg) | 运行中 |
-| ![halted](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_halted.jpg)   | 暂停  |
+| ![halted](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_halted.jpg) | 暂停 |
 | ![waiting](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_waiting.jpg) | 等待 |
 
 当前引擎是其数据和状态显示在工具包窗格中的引擎。如果应用程序只有一个引擎，当您选择该应用程序作为目标时，其引擎将成为当前引擎。如果目标应用程序中有多个引擎可用，您可以在列表中选择一个引擎使其成为当前引擎。
@@ -61,20 +61,20 @@ JavaScript 控制台是当前选定的 JavaScript 引擎的命令外壳和输出
 
 调试命令可从 **调试** 菜单、文档窗口的右键单击上下文菜单、键盘快捷键和工具栏按钮中获得。当 JavaScript 调试器处于活动状态时，使用这些菜单命令和按钮来控制代码的执行。
 
-|      图标       |    操作    |       快捷键   |      描述       |
-| --------------------------------------------------------------------------------------------------------------------------- | ------------ | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![run-continue](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_run-continue.jpg) | 运行/继续 | F5 (Windows)   | 启动或恢复脚本的执行。          |
-|      |   | Ctrl R (Mac OS)     | 当脚本正在执行时禁用。   |
-| ![break](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_break.jpg)    | 中断   | Ctrl F5 (Windows)   | 暂时停止当前正在执行的脚本并重新激活 JavaScript 调试器。          |
-|      |   | Cmd . (Mac OS)      | 当脚本正在执行时启用。          |
-| ![stop](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_stop.jpg)       | 停止    | Shift F5 (Windows)  | 停止脚本的执行并生成运行时错误。    |
-|      |   | Ctrl K (Mac OS)     | 当脚本正在执行时启用。          |
-| ![step-over](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-over.jpg)       | 单步跳过    | F10 (Windows)       | 在执行脚本中的单行 JavaScript 后暂停。如果该语句调用了 JavaScript 函数，则在停止之前完整执行该函数（不进入函数内部）。 |
-|      |   | Ctrl S (Mac OS)     |      |
-| ![step-into](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-into.jpg)       | 单步进入    | F11 (Windows)       | 在执行脚本中的单行 JavaScript 语句后暂停，或在脚本调用的任何 JavaScript 函数中执行单行语句后暂停。    |
-|      |   | Ctrl T (Mac OS)     |      |
-| ![step-out](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-out.jpg)    | 单步跳出     | Shift F11 (Windows) | 当在 JavaScript 函数体内暂停时，恢复脚本执行直到函数返回。         |
-|      |   | Ctrl U (Mac OS)     | 当在函数体外暂停时，恢复脚本执行直到脚本终止。       |
+| 图标 | 操作 | 快捷键 | 描述 |
+| --- | --- | --- | --- |
+| ![run-continue](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_run-continue.jpg) | 运行/继续 | F5 (Windows) | 启动或恢复脚本的执行。 |
+| | | Ctrl R (Mac OS) | 当脚本正在执行时禁用。 |
+| ![break](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_break.jpg) | 中断 | Ctrl F5 (Windows) | 暂时停止当前正在执行的脚本并重新激活 JavaScript 调试器。 |
+| | | Cmd . (Mac OS) | 当脚本正在执行时启用。 |
+| ![stop](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_stop.jpg) | 停止 | Shift F5 (Windows) | 停止脚本的执行并生成运行时错误。 |
+| | | Ctrl K (Mac OS) | 当脚本正在执行时启用。 |
+| ![step-over](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-over.jpg) | 单步跳过 | F10 (Windows) | 在执行脚本中的单行 JavaScript 后暂停。如果该语句调用了 JavaScript 函数，则在停止之前完整执行该函数（不进入函数内部）。 |
+| | | Ctrl S (Mac OS) | |
+| ![step-into](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-into.jpg) | 单步进入 | F11 (Windows) | 在执行脚本中的单行 JavaScript 语句后暂停，或在脚本调用的任何 JavaScript 函数中执行单行语句后暂停。 |
+| | | Ctrl T (Mac OS) | |
+| ![step-out](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-out.jpg) | 单步跳出 | Shift F11 (Windows) | 当在 JavaScript 函数体内暂停时，恢复脚本执行直到函数返回。 |
+| | | Ctrl U (Mac OS) | 当在函数体外暂停时，恢复脚本执行直到脚本终止。 |
 
 ---
 
@@ -122,12 +122,12 @@ JavaScript 控制台是当前选定的 JavaScript 引擎的命令外壳和输出
 
 每个断点在文档窗口中的行号左侧和断点面板中的图标和行号处指示。文档窗口和断点面板中使用不同的图标。
 
-|         文档窗口         |       断点面板       |       描述        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| ![unconditional-document](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-document.jpg)        | ![unconditional-bppanel](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-bppanel.jpg)      | 无条件断点。执行在此处停止。   |
-| ![unconditional-disabled-document](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-disabled-document.jpg) | ![unconditional-disabled-bppanel](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-disabled-bppanel.jpg) | 无条件断点，已禁用。执行不会停止。       |
-| ![conditional-document](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-document.jpg)       | ![conditional-bppanel](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-bppanel.jpg)    | 条件断点。如果附加的 JavaScript 表达式评估为 `true`，则执行停止。 |
-| ![conditional-disabled-document](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-disabled-document.jpg) | ![conditional-disabled-bppanel](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-disabled-bppanel.jpg) | 条件断点，已禁用。执行不会停止。   |
+| 文档窗口 | 断点面板 | 描述 |
+| --- | --- | --- |
+| ![unconditional-document](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-document.jpg) | ![unconditional-bppanel](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-bppanel.jpg) | 无条件断点。执行在此处停止。 |
+| ![unconditional-disabled-document](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-disabled-document.jpg) | ![unconditional-disabled-bppanel](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-disabled-bppanel.jpg) | 无条件断点，已禁用。执行不会停止。 |
+| ![conditional-document](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-document.jpg) | ![conditional-bppanel](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-bppanel.jpg) | 条件断点。如果附加的 JavaScript 表达式评估为 `true`，则执行停止。 |
+| ![conditional-disabled-document](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-disabled-document.jpg) | ![conditional-disabled-bppanel](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-disabled-bppanel.jpg) | 条件断点，已禁用。执行不会停止。 |
 
 ---
 
@@ -157,14 +157,14 @@ JavaScript 控制台是当前选定的 JavaScript 引擎的命令外壳和输出
 
 每个变量都有一个指示数据类型的小图标。无效对象（即对已删除对象的引用）显示为图标上带有红色叉号。未定义的值没有图标。
 
-|       图标        | 状态  |
-| ---------------------------------------------------------------------------------------------------- | ------- |
+| 图标 | 状态 |
+| --- | --- |
 | ![Boolean](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_boolean.jpg) | 布尔值 |
-| ![Number](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_number.jpg)   | 数字  |
-| ![String](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_string.jpg)   | 字符串  |
-| ![Object](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_object.jpg)   | 对象  |
-| ![Method](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_method.jpg)   | 方法  |
-| ![Null](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_null.jpg)       | null    |
+| ![Number](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_number.jpg) | 数字 |
+| ![String](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_string.jpg) | 字符串 |
+| ![Object](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_object.jpg) | 对象 |
+| ![Method](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_method.jpg) | 方法 |
+| ![Null](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_null.jpg) | null |
 
 您可以通过单击对象的图标来检查其内容。列表展开以显示对象的属性（如果启用了函数显示，则显示方法），并且三角形指向下方以指示对象已打开。
 

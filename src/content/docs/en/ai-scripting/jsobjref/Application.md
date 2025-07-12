@@ -417,9 +417,9 @@ Joins two matrices together.
 
 #### Parameters
 
-|   Parameter    |         Type          |  Description  |
-| -------------- | --------------------- | ------------- |
-| `matrix`       | [Matrix](.././Matrix) | First matrix  |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `matrix` | [Matrix](.././Matrix) | First matrix |
 | `secondMatrix` | [Matrix](.././Matrix) | Second matrix |
 
 #### Returns
@@ -438,10 +438,10 @@ Joins a rotation translation to a transformation matrix.
 
 #### Parameters
 
-| Parameter |      Type       | Description |
-| --------- | --------------- | ----------- |
-| `matrix`  | Matrix          | Matrix      |
-| `angle`   | Number (double) | Angle       |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `matrix` | Matrix | Matrix |
+| `angle` | Number (double) | Angle |
 
 #### Returns
 
@@ -459,11 +459,11 @@ Concatenates a scale translation to a transformation matrix.
 
 #### Parameters
 
-| Parameter |           Type            | Description |
-| --------- | ------------------------- | ----------- |
-| `matrix`  | Matrix                    | Matrix      |
-| `scaleX`  | Number (double), optional | X Scale     |
-| `scaleY`  | Number (dobule), optional | Y Scale     |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `matrix` | Matrix | Matrix |
+| `scaleX` | Number (double), optional | X Scale |
+| `scaleY` | Number (dobule), optional | Y Scale |
 
 #### Returns
 
@@ -481,11 +481,11 @@ Joins a translation to a transformation matrix.
 
 #### Parameters
 
-| Parameter |           Type            | Description |
-| --------- | ------------------------- | ----------- |
-| `matrix`  | Matrix                    | Matrix      |
-| `deltaX`  | Number (double), optional | X Delta     |
-| `deltaY`  | Number (dobule), optional | Y Delta     |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `matrix` | Matrix | Matrix |
+| `deltaX` | Number (double), optional | X Delta |
+| `deltaY` | Number (dobule), optional | Y Delta |
 
 #### Returns
 
@@ -497,12 +497,12 @@ Joins a translation to a transformation matrix.
 
 ```javascript
 app.convertSampleColor(
-    sourceColorSpace,
-    sourceColor,
-    destColorSpace,
-    colorConvertPurpose
-    [, sourceHasAlpha]
-    [, destHasAlpha]
+ sourceColorSpace,
+ sourceColor,
+ destColorSpace,
+ colorConvertPurpose
+ [, sourceHasAlpha]
+ [, destHasAlpha]
 )
 ```
 
@@ -512,14 +512,14 @@ Converts a sample-component color from one color space to another.
 
 #### Parameters
 
-|       Parameter       |                               Type                                |            Description            |
-| --------------------- | ----------------------------------------------------------------- | --------------------------------- |
-| `sourceColorSpace`    | [ImageColorSpace](../scripting-constants#imagecolorspace)         | Color space of source color       |
-| `sourceColor`         | ColorComponents                                                   | Source color to convert           |
-| `destColorSpace`      | [ImageColorSpace](../scripting-constants#imagecolorspace)         | Destination color space           |
-| `colorConvertPurpose` | [ColorConvertPurpose](../scripting-constants#colorconvertpurpose) | The purpose of the convert        |
-| `sourceHasAlpha`      | Boolean, optional                                                 | Whether the source has alpha      |
-| `destHasAlpha`        | Boolean, optional                                                 | Whether the destination has alpha |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sourceColorSpace` | [ImageColorSpace](../scripting-constants#imagecolorspace) | Color space of source color |
+| `sourceColor` | ColorComponents | Source color to convert |
+| `destColorSpace` | [ImageColorSpace](../scripting-constants#imagecolorspace) | Destination color space |
+| `colorConvertPurpose` | [ColorConvertPurpose](../scripting-constants#colorconvertpurpose) | The purpose of the convert |
+| `sourceHasAlpha` | Boolean, optional | Whether the source has alpha |
+| `destHasAlpha` | Boolean, optional | Whether the destination has alpha |
 
 #### Returns
 
@@ -565,8 +565,8 @@ Deletes an existing workspace.
 
 #### Parameters
 
-|    Parameter    |  Type  |         Description         |
-| --------------- | ------ | --------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `workspaceName` | String | Name of workspace to delete |
 
 #### Returns
@@ -597,15 +597,14 @@ Returns an identity matrix.
 This functionality was added in Illustrator XX.X (CC2017)
 :::
 
-
 #### Description
 
 Returns whether the specified filePath is open
 
 #### Parameters
 
-| Parameter  |  Type  |    Description     |
-| ---------- | ------ | ------------------ |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `filePath` | String | File path to check |
 
 #### Returns
@@ -624,9 +623,9 @@ Gets detailed file information for specified PPD file.
 
 #### Parameters
 
-| Parameter |  Type  |        Description        |
-| --------- | ------ | ------------------------- |
-| `name`    | String | File name to get info for |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | File name to get info for |
 
 #### Returns
 
@@ -644,8 +643,8 @@ Returns the full path to the application's default document profile for the spec
 
 #### Parameters
 
-|  Parameter   |                              Type                               |        Description         |
-| ------------ | --------------------------------------------------------------- | -------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `presetType` | [DocumentPresetType](../scripting-constants#documentpresettype) | Preset type to get file of |
 
 #### Returns
@@ -664,9 +663,9 @@ Retrieves the tracing-option settings from the template with a given preset name
 
 #### Parameters
 
-| Parameter |  Type  |           Description            |
-| --------- | ------ | -------------------------------- |
-| `preset`  | String | Preset name to get settings from |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `preset` | String | Preset name to get settings from |
 
 #### Returns
 
@@ -686,12 +685,11 @@ Returns a transformation matrix containing a single rotation.
 Requires a value in degrees.
 :::
 
-
 #### Parameters
 
-| Parameter |           Type            |      Description       |
-| --------- | ------------------------- | ---------------------- |
-| `angle`   | Number (double), optional | Angle to get matrix of |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `angle` | Number (double), optional | Angle to get matrix of |
 
 #### Returns
 
@@ -725,13 +723,12 @@ Returns a transformation matrix containing a single scale.
 Requires a value in percentage.
 :::
 
-
 #### Parameters
 
-| Parameter |           Type            |       Description        |
-| --------- | ------------------------- | ------------------------ |
-| `scaleX`  | Number (double), optional | X scale to get matrix of |
-| `scaleY`  | Number (double), optional | Y scale to get matrix of |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `scaleX` | Number (double), optional | X scale to get matrix of |
+| `scaleY` | Number (double), optional | Y scale to get matrix of |
 
 #### Returns
 
@@ -779,13 +776,12 @@ Returns a transformation matrix containing a single translation.
 Requires a value in points.
 :::
 
-
 #### Parameters
 
-| Parameter |           Type            | Description |
-| --------- | ------------------------- | ----------- |
-| `deltaX`  | Number (double), optional | X Delta     |
-| `deltaY`  | Number (dobule), optional | Y Delta     |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `deltaX` | Number (double), optional | X Delta |
+| `deltaY` | Number (dobule), optional | Y Delta |
 
 #### Returns
 
@@ -817,9 +813,9 @@ Inverts a matrix.
 
 #### Parameters
 
-| Parameter |         Type          |   Description    |
-| --------- | --------------------- | ---------------- |
-| `matrix`  | [Matrix](.././Matrix) | Matrix to invert |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `matrix` | [Matrix](.././Matrix) | Matrix to invert |
 
 #### Returns
 
@@ -837,9 +833,9 @@ Checks whether the two matrices are equal.
 
 #### Parameters
 
-|   Parameter    |         Type          |      Description       |
-| -------------- | --------------------- | ---------------------- |
-| `matrix`       | [Matrix](.././Matrix) | First matrix to check  |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `matrix` | [Matrix](.././Matrix) | First matrix to check |
 | `secondMatrix` | [Matrix](.././Matrix) | Second matrix to check |
 
 #### Returns
@@ -858,9 +854,9 @@ Checks whether a matrix is singular and cannot be inverted.
 
 #### Parameters
 
-| Parameter |         Type          |   Description   |
-| --------- | --------------------- | --------------- |
-| `matrix`  | [Matrix](.././Matrix) | Matrix to check |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `matrix` | [Matrix](.././Matrix) | Matrix to check |
 
 #### Returns
 
@@ -878,8 +874,8 @@ Loads color settings from specified file, or, if file is empty, turns color mana
 
 #### Parameters
 
-| Parameter  |                                         Type                                         |        Description         |
-| ---------- | ------------------------------------------------------------------------------------ | -------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `fileSpec` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to load settings from |
 
 #### Returns
@@ -900,16 +896,15 @@ Opens the specified document file.
 If you open a pre-Illustrator 9 document that contains both RGB and CMYK colors and documentColorSpace is supplied, all colors are converted to the specified color space.
 :::
 
-
 If the parameter is not supplied, Illustrator opens a dialog so the user can choose the color space.
 
 #### Parameters
 
-|      Parameter       |                                         Type                                         |       Description       |
-| -------------------- | ------------------------------------------------------------------------------------ | ----------------------- |
-| `file`               | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to open            |
-| `documentColorSpace` | [DocumentColorSpace](../scripting-constants#documentcolorspace), optional            | Color space of document |
-| `options`            | anything                                                                             | todo                    |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `file` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to open |
+| `documentColorSpace` | [DocumentColorSpace](../scripting-constants#documentcolorspace), optional | Color space of document |
+| `options` | anything | todo |
 
 #### Returns
 
@@ -942,7 +937,6 @@ Quits Illustrator.
 :::note
 If the clipboard contains data, Illustrator may show a dialog prompting the user to save the data for other applications.
 :::
-
 
 #### Returns
 
@@ -1002,8 +996,8 @@ Saves a new workspace.
 
 #### Parameters
 
-|    Parameter    |  Type  |         Description          |
-| --------------- | ------ | ---------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `workspaceName` | String | Name of workspace to save as |
 
 #### Returns
@@ -1022,11 +1016,11 @@ Sends a plug-in-defined command message to a plug-in with given input arguments,
 
 #### Parameters
 
-|     Parameter     |  Type  |            Description            |
-| ----------------- | ------ | --------------------------------- |
-| `pluginName`      | String | Name of plugin to send message to |
-| `messageSelector` | String | Message to send to the plugin     |
-| `inputString`     | String | Data to pass into the command     |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `pluginName` | String | Name of plugin to send message to |
+| `messageSelector` | String | Message to send to the plugin |
+| `inputString` | String | Data to pass into the command |
 
 #### Returns
 
@@ -1044,8 +1038,8 @@ Gets presets from the file.
 
 #### Parameters
 
-| Parameter  |                                         Type                                         |       Description        |
-| ---------- | ------------------------------------------------------------------------------------ | ------------------------ |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `fileSpec` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to get presets from |
 
 #### Returns
@@ -1064,8 +1058,8 @@ Switches to the specified workspace.
 
 #### Parameters
 
-|    Parameter    |  Type  |    Description    |
-| --------------- | ------ | ----------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `workspaceName` | String | Name to switch to |
 
 #### Returns
@@ -1084,9 +1078,9 @@ Translates the placeholder text to regular text (a way to enter Unicode points i
 
 #### Parameters
 
-| Parameter |  Type  |     Description     |
-| --------- | ------ | ------------------- |
-| `text`    | String | String to translate |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `text` | String | String to translate |
 
 #### Returns
 
@@ -1120,18 +1114,18 @@ var newItem;
 var docSelected = app.activeDocument.selection;
 
 if (docSelected.length > 0) {
-    // Create a new document and move the selected items to it.
-    var newDoc = app.documents.add();
-    if (docSelected.length > 0) {
-        for (var i = 0; i < docSelected.length; i++) {
-        docSelected[i].selected = false;
-        newItem = docSelected[i].duplicate(newDoc, ElementPlacement.PLACEATEND);
-        }
-    } else {
-        docSelected.selected = false;
-        newItem = docSelected.parent.duplicate(newDoc, ElementPlacement.PLACEATEND);
-    }
+ // Create a new document and move the selected items to it.
+ var newDoc = app.documents.add();
+ if (docSelected.length > 0) {
+ for (var i = 0; i < docSelected.length; i++) {
+ docSelected[i].selected = false;
+ newItem = docSelected[i].duplicate(newDoc, ElementPlacement.PLACEATEND);
+ }
+ } else {
+ docSelected.selected = false;
+ newItem = docSelected.parent.duplicate(newDoc, ElementPlacement.PLACEATEND);
+ }
 } else {
-    alert("Please select one or more art objects");
+ alert("Please select one or more art objects");
 }
 ```

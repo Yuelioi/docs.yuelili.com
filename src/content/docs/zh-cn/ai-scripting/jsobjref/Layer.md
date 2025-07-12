@@ -453,10 +453,10 @@ Illustrator 文档中的一个图层。图层可能包含嵌套的图层，这�
 
 #### 参数
 
-|      参数       |       类型        |    描述    |
-| --------------- | --------------------------------------------------------------------- | ---------------------- |
-| `relativeObject` | 对象        | 要移动元素的对象       |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 移动元素到的位置       |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `relativeObject` | 对象 | 要移动元素的对象 |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 移动元素到的位置 |
 
 #### 返回值
 
@@ -488,9 +488,9 @@ Illustrator 文档中的一个图层。图层可能包含嵌套的图层，这�
 
 #### 参数
 
-|  参数   |    类型     |      描述      |
-| ------- | --------------------------------------------------- | -------------------------- |
-| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法 |
 
 #### 返回值
 
@@ -506,12 +506,12 @@ Illustrator 文档中的一个图层。图层可能包含嵌套的图层，这�
 // 将最底层的图层移动到最顶层
 
 if (documents.length > 0) {
-    var countOfLayers = activeDocument.layers.length;
-    if (countOfLayers > 1) {
-        var bottomLayer = activeDocument.layers[countOfLayers - 1];
-        bottomLayer.zOrder(ZOrderMethod.BRINGTOFRONT);
-    } else {
-        alert("活动文档只有一个图层");
-    }
+ var countOfLayers = activeDocument.layers.length;
+ if (countOfLayers > 1) {
+ var bottomLayer = activeDocument.layers[countOfLayers - 1];
+ bottomLayer.zOrder(ZOrderMethod.BRINGTOFRONT);
+ } else {
+ alert("活动文档只有一个图层");
+ }
 }
 ```

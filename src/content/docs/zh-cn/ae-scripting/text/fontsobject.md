@@ -239,10 +239,10 @@ alert(variableFontList.length);
 
 - `SubstitutedFontReplacementMatchPolicy.POSTSCRIPT_NAME` 是默认值；任何具有相同 PostScript 名称的 [Font 对象](../fontobject) 都是替代 [Font 对象](../fontobject) 的有效候选者。
 - `SubstitutedFontReplacementMatchPolicy.CTFI_EQUAL` 要求替代 [Font 对象](../fontobject) 的以下属性必须匹配才能被视为有效候选者：
-  - [postScriptName](../fontobject#fontobjectpostscriptname)
-  - [technology](../fontobject#fontobjecttechnology)
-  - [writingScripts](../fontobject#fontobjectwritingscripts)（主要）
-  - [designVector](../fontobject#fontobjectdesignvector)
+ - [postScriptName](../fontobject#fontobjectpostscriptname)
+ - [technology](../fontobject#fontobjecttechnology)
+ - [writingScripts](../fontobject#fontobjectwritingscripts)（主要）
+ - [designVector](../fontobject#fontobjectdesignvector)
 - `SubstitutedFontReplacementMatchPolicy.DISABLED` 表示没有 [Font 对象](../fontobject) 是替代 [Font 对象](../fontobject) 的可接受替换。
 
 ---
@@ -265,19 +265,19 @@ alert(variableFontList.length);
 
 ```javascript
 var scriptsV = app.fonts.getCTScriptForString("ABヂ", CTScript.CT_ROMAN_SCRIPT);
-var str = "[0] chars:" + scriptsV[0].chars +   // 2
-    " ctScript:" + getEnumAsString(scriptsV[0].ctScript) +
-    "\n[1] chars:" + scriptsV[1].chars + // 1
-    " ctScript:" + getEnumAsString(scriptsV[1].ctScript);
+var str = "[0] chars:" + scriptsV[0].chars + // 2
+ " ctScript:" + getEnumAsString(scriptsV[0].ctScript) +
+ "\n[1] chars:" + scriptsV[1].chars + // 1
+ " ctScript:" + getEnumAsString(scriptsV[1].ctScript);
 alert(str);
 ```
 
 #### 参数
 
-| 参数      | 类型    | 描述      |
-| --------------------- | ----------------- | ------------------------------------------ |
-| `charString`      | 字符串        | 要检查的字符。如果为空，将返回一个空数组。 |
-| `preferredCTScript` | `CTScript` 枚举 | 首选的 CT 脚本       |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `charString` | 字符串 | 要检查的字符。如果为空，将返回一个空数组。 |
+| `preferredCTScript` | `CTScript` 枚举 | 首选的 CT 脚本 |
 
 #### 返回
 
@@ -312,8 +312,8 @@ var font = app.fonts.getDefaultFontForCTScript(CTScript.CT_JAPANESE_SCRIPT);
 
 #### 参数
 
-| 参数       | 类型    | 描述      |
-| ------------ | ----------------- | ------------------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `ctScript` | `CTScript` 枚举 | 要获取默认字体的对应 CTScript。 |
 
 #### 返回
@@ -344,8 +344,8 @@ alert(font1.fontID == font2.fontID);
 
 #### 参数
 
-| 参数   | 类型 | 描述      |
-| ------ | ---- | ----------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | fontID | 整数 | 字体的 ID。 |
 
 #### 返回
@@ -373,10 +373,10 @@ alert(fontList.length);
 
 #### 参数
 
-| 参数     | 类型   | 描述   |
-| ---------- | ------ | ---------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | FamilyName | 字符串 | 字体的家族名称。 |
-| StyleName  | 字符串 | 字体的样式名称。 |
+| StyleName | 字符串 | 字体的样式名称。 |
 
 #### 返回
 

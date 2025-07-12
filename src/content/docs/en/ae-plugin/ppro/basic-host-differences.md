@@ -75,12 +75,12 @@ Starting in CC 2015, effects will not be sent `PF_Cmd_UPDATE_PARAMS_UI` or `PF_E
 
 Many suites supported by After Effects are not implemented in the Premiere Pro host. In several cases, even if a suite is missing in Premiere Pro, an equivalent macro function is available. Here are a few examples:
 
-|        After Effects suite call         | Premiere Pro equivalent function |
-| --------------------------------------- | -------------------------------- |
-| `WorldTransformSuite1()->copy()`        | `PF_COPY()`      |
-| `WorldTransformSuite1()->convolve()`    | `in_data->utils->convolve()`     |
-| `FillMatteSuite2()->fill()`     | `PF_FILL()`      |
-| `PF_PixelDataSuite1->get_pixel_data8()` | `PF_GET_PIXEL_DATA8()`   |
+| After Effects suite call | Premiere Pro equivalent function |
+| --- | --- |
+| `WorldTransformSuite1()->copy()` | `PF_COPY()` |
+| `WorldTransformSuite1()->convolve()` | `in_data->utils->convolve()` |
+| `FillMatteSuite2()->fill()` | `PF_FILL()` |
+| `PF_PixelDataSuite1->get_pixel_data8()` | `PF_GET_PIXEL_DATA8()` |
 
 The sample projects demonstrate alternate ways of handling a missing suite, by checking for the host application and version. The Portable sample project demonstrates both host application and version checking.
 

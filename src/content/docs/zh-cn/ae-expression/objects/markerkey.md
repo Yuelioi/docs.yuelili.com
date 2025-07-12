@@ -170,20 +170,20 @@ thisComp.marker.nearestKey(time).parameters["background color"];
 ```js
 const m = thisLayer.marker.nearestKey(time);
 const s = [
-    "time:" + timeToCurrentFormat(m.time),
-    "duration: " + m.duration,
-    "key index: " + m.index,
-    "comment:" + m.comment,
-    "chapter:" + m.chapter,
-    "URL:" + m.url,
-    "frame target: " + m.frameTarget,
-    "cue point name: " + m.cuePointName,
-    "Event cue point? " + m.eventCuePoint,
-    ""
+ "time:" + timeToCurrentFormat(m.time),
+ "duration: " + m.duration,
+ "key index: " + m.index,
+ "comment:" + m.comment,
+ "chapter:" + m.chapter,
+ "URL:" + m.url,
+ "frame target: " + m.frameTarget,
+ "cue point name: " + m.cuePointName,
+ "Event cue point? " + m.eventCuePoint,
+ ""
 ];
 
 for (let param in m.parameters){
-    s.push("parameter: " + param + " value: " + m.parameters[param]);
+ s.push("parameter: " + param + " value: " + m.parameters[param]);
 }
 
 s.join("\n");

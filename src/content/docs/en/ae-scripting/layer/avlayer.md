@@ -27,35 +27,35 @@ Different types of layers have different AE properties. AVLayer has the followin
 - Masks
 - Effects
 - Transform
-  - Anchor Point
-  - Position
-  - Scale
-  - Orientation
-  - X Rotation
-  - Y Rotation
-  - Rotation
-  - Opacity
+ - Anchor Point
+ - Position
+ - Scale
+ - Orientation
+ - X Rotation
+ - Y Rotation
+ - Rotation
+ - Opacity
 - Layer Styles
 - Geometry Options // Ray-traced 3D
 - Material Options
-  - Casts Shadows
-  - Light Transmission
-  - Accepts Shadows
-  - Accepts Lights
-  - Appears in Reflections // Ray-traced 3D
-  - Ambient
-  - Diffuse
-  - Specular Intensity
-  - Specular Shininess
-  - Metal
-  - Reflection Intensity // Ray-traced 3D
-  - Reflection Sharpness // Ray-traced 3D
-  - Reflection Rolloff // Ray-traced 3D
-  - Transparency // Ray-traced 3D
-  - Transparency Rolloff // Ray-traced 3D
-  - Index of Refraction // Ray-traced 3D
+ - Casts Shadows
+ - Light Transmission
+ - Accepts Shadows
+ - Accepts Lights
+ - Appears in Reflections // Ray-traced 3D
+ - Ambient
+ - Diffuse
+ - Specular Intensity
+ - Specular Shininess
+ - Metal
+ - Reflection Intensity // Ray-traced 3D
+ - Reflection Sharpness // Ray-traced 3D
+ - Reflection Rolloff // Ray-traced 3D
+ - Transparency // Ray-traced 3D
+ - Transparency Rolloff // Ray-traced 3D
+ - Index of Refraction // Ray-traced 3D
 - Audio
-  - AudioLevels
+ - AudioLevels
 
 #### Example
 
@@ -586,9 +586,9 @@ Use the [AVLayer.canAddToMotionGraphicsTemplate()](#avlayercanaddtomotiongraphic
 
 #### Parameters
 
-| Parameter |                  Type                   |                          Description                           |
-| --------- | --------------------------------------- | -------------------------------------------------------------- |
-| `comp`    | [CompItem object](../../item/compitem) | The composition where you wish to add the property to the EGP. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `comp` | [CompItem object](../../item/compitem) | The composition where you wish to add the property to the EGP. |
 
 #### Returns
 
@@ -616,10 +616,10 @@ Use the [AVLayer.canAddToMotionGraphicsTemplate()](#avlayercanaddtomotiongraphic
 
 #### Parameters
 
-| Parameter |                  Type                   |                          Description                           |
-| --------- | --------------------------------------- | -------------------------------------------------------------- |
-| `comp`    | [CompItem object](../../item/compitem) | The composition where you wish to add the property to the EGP. |
-| `name`    | String                                  | The new name.                                                  |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `comp` | [CompItem object](../../item/compitem) | The composition where you wish to add the property to the EGP. |
+| `name` | String | The new name. |
 
 #### Returns
 
@@ -639,9 +639,9 @@ For this method to return `true`, `audioEnabled` must be `true`, no other layer 
 
 #### Parameters
 
-| Parameter |         Type         |      Description      |
-| --------- | -------------------- | --------------------- |
-| `time`    | Floating-point value | The time, in seconds. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `time` | Floating-point value | The time, in seconds. |
 
 #### Returns
 
@@ -659,10 +659,10 @@ Calculates a transformation from a set of points in this layer.
 
 #### Parameters
 
-|     Parameter      |                    Type                     |             Description             |
-| ------------------ | ------------------------------------------- | ----------------------------------- |
-| `pointTopLeft`     | Array of floating-point values, `[x, y, z]` | The top left point coordinates.     |
-| `pointTopRight`    | Array of floating-point values, `[x, y, z]` | The top right point coordinates.    |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `pointTopLeft` | Array of floating-point values, `[x, y, z]` | The top left point coordinates. |
+| `pointTopRight` | Array of floating-point values, `[x, y, z]` | The top right point coordinates. |
 | `pointBottomRight` | Array of floating-point values, `[x, y, z]` | The bottom right point coordinates. |
 
 #### Returns
@@ -677,7 +677,7 @@ newLayer.threeDLayer = true;
 newLayer.blendingMode = BlendingMode.ALPHA_ADD;
 var transform = newLayer.calculateTransformFromPoints(tl, tr, bl);
 for (var sel in transform) {
-    newLayer.transform[sel].setValue(transform[sel]);
+ newLayer.transform[sel].setValue(transform[sel]);
 }
 ```
 
@@ -711,9 +711,9 @@ The AVLayer needs to comply with the restrictions below in order to be treated a
 
 #### Parameters
 
-| Parameter |                  Type                   |                          Description                           |
-| --------- | --------------------------------------- | -------------------------------------------------------------- |
-| `comp`    | [CompItem object](../../item/compitem) | The composition where you wish to add the property to the EGP. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `comp` | [CompItem object](../../item/compitem) | The composition where you wish to add the property to the EGP. |
 
 #### Returns
 
@@ -739,8 +739,8 @@ This value only reflects the first character in the text layer at the current ti
 
 #### Parameters
 
-|      Parameter      |                   Type                   |                Description                |
-| ------------------- | ---------------------------------------- | ----------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `sourcePointToComp` | Array of floating-point values, `[x, y]` | Position array of composition coordinates |
 
 #### Returns
@@ -815,12 +815,12 @@ If this method is performed on a null layer, the layers `isNull` attribute is no
 
 #### Parameters
 
-|    Parameter     |                Type                |                                                                                                       Description                                                                                                        |
-|------------------|------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `newSource`      | [AVItem object](../../item/avitem) | The new source AVItem object.                                                                                                                                                                                            |
-| `fixExpressions` | Boolean                            | `true` to adjust expressions for the new source, otherwise `false`.                                                                                                                                                      |
-|                  |                                    | !!! warning                                                                                                                                                                                                              |
-|                  |                                    |      This feature can be resource-intensive; if replacing a large amount of footage, do this only at the end of the operation. See also [Project.autoFixExpressions()](../../general/project#projectautofixexpressions). |
+| Parameter | Type | Description |
+|---|---|---|
+| `newSource` | [AVItem object](../../item/avitem) | The new source AVItem object. |
+| `fixExpressions` | Boolean | `true` to adjust expressions for the new source, otherwise `false`. |
+| | | !!! warning |
+| | | This feature can be resource-intensive; if replacing a large amount of footage, do this only at the end of the operation. See also [Project.autoFixExpressions()](../../general/project#projectautofixexpressions). |
 
 #### Returns
 
@@ -843,10 +843,10 @@ See [AVLayer.removeTrackMatte()](#avlayerremovetrackmatte) for another way of re
 
 #### Parameters
 
-|     Parameter     |                     Type                      |                  Description                   |
-| ----------------- | --------------------------------------------- | ---------------------------------------------- |
-| `trackMatteLayer` | [AVLayer](../../layer/avlayer)               | The layer to be used as the track matte layer. |
-| `trackMatteType`  | [TrackMatteType](#avlayertrackmattetype) enum | The type of the track matte to be used.        |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `trackMatteLayer` | [AVLayer](../../layer/avlayer) | The layer to be used as the track matte layer. |
+| `trackMatteType` | [TrackMatteType](#avlayertrackmattetype) enum | The type of the track matte to be used. |
 
 :::warning
 Passing in `TrackMatteType.NO_TRACK_MATTE` as type is invalid and will result in no-op.
@@ -896,8 +896,8 @@ This value only reflects the first character in the text layer at the current ti
 
 #### Parameters
 
-|  Parameter   |                   Type                   |              Description               |
-| ------------ | ---------------------------------------- | -------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `boxTextPos` | Array of floating-point values, `[x, y]` | A position array of layer coordinates. |
 
 #### Returns
@@ -924,10 +924,10 @@ Retrieves the rectangle bounds of the layer at the specified time index, correct
 
 #### Parameters
 
-| Parameter |         Type         |                                                              Description                                                               |
-| --------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `timeT`   | Floating-point value | The time index, in seconds.                                                                                                            |
-| `extents` | Boolean              | `true` to include the extents, otherwise `false`. Extents apply to shape layers, increasing the size of the layer bounds as necessary. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `timeT` | Floating-point value | The time index, in seconds. |
+| `extents` | Boolean | `true` to include the extents, otherwise `false`. Extents apply to shape layers, increasing the size of the layer bounds as necessary. |
 
 #### Returns
 

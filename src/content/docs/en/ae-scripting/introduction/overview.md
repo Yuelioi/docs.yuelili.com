@@ -18,7 +18,6 @@ The After Effects object model is composed of a project, items, compositions, la
 JavaScript objects normally referred to as "properties" are consistently called "attributes" in this guide, to avoid confusion with After Effects' own definition of a property (an animatable value of an effect, mask, or transform within an individual layer).
 :::
 
-
 Nearly all of what scripting can accomplish replicates what can be done by means of the After Effects graphical user interface. A thorough knowledge of the application itself and its graphical user interface is essential to understanding how to use scripting in After Effects.
 
 ---
@@ -129,7 +128,7 @@ In the first example, you copy your After Effects script directly into the Scrip
 
 ```applescript
 tell application "Adobe After Effects CS6"
-    DoScript "alert(\"You just sent an alert to After Effects\")"
+ DoScript "alert(\"You just sent an alert to After Effects\")"
 end tell
 ```
 
@@ -138,7 +137,7 @@ Alternatively, you could display a dialog box asking for the location of the JSX
 ```applescript
 set theFile to choose file
 tell application "Adobe After Effects CS6"
-    DoScriptFile theFile
+ DoScriptFile theFile
 end tell
 ```
 
@@ -152,11 +151,11 @@ This script sends the current selection to After Effects as a script.
 *)
 
 tell application "TextEdit"
-    set the_script to text of front document
+ set the_script to text of front document
 end tell
 
 tell application "Adobe After Effects CS6" activate
-    DoScript the_script
+ DoScript the_script
 end tell
 ```
 
@@ -187,9 +186,9 @@ If your script creates its user interface in a function, you cannot use `this` a
 
 ```javascript
 function createUI(thisObj) {
-    var myPanel = thisObj;
-    myPanel.add("button", [10, 10, 100, 30], "Tool #1");
-    return myPanel;
+ var myPanel = thisObj;
+ myPanel.add("button", [10, 10, 100, 30], "Tool #1");
+ return myPanel;
 }
 var myToolsPanel = createUI(this);
 ```
@@ -198,10 +197,10 @@ You cannot use the File > Scripts > Run Script File menu command to run a script
 
 ```javascript
 function createUI(thisObj) {
-    var myPanel = (thisObj instanceof Panel) ? thisObj : new Window("palette", "My Tools",
-    [100, 100, 300, 300]);
-    myPanel.add("button", [10, 10, 100, 30], "Tool #1");
-    return myPanel;
+ var myPanel = (thisObj instanceof Panel) ? thisObj : new Window("palette", "My Tools",
+ [100, 100, 300, 300]);
+ myPanel.add("button", [10, 10, 100, 30], "Tool #1");
+ return myPanel;
 }
 var myToolsPanel = createUI(this);
 ```

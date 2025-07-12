@@ -451,8 +451,8 @@ The character order does not matter, and in the case of a parameter string with 
 
 #### Parameters
 
-|  Parameter   |  Type  |            Description            |
-| ------------ | ------ | ------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `charString` | String | Text that will be checked for support in the [Font object](#font-object). |
 
 #### Returns
@@ -475,8 +475,8 @@ Can only return `true` when called on a variable [Font object](#font-object) wit
 
 #### Parameters
 
-|  Parameter   |            Type   |   Description   |
-| ------------ | --------------------------- | --------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `fontObject` | [Font object](#font-object) | Object to check |
 
 #### Returns
@@ -501,8 +501,8 @@ Will return an empty Array if the argument is not a Variable font, or the Variab
 
 #### Parameters
 
-|  Parameter   |            Type   |   Description   |
-| ------------ | --------------------------- | --------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `fontObject` | [Font object](#font-object) | Object to check |
 
 #### Returns
@@ -521,8 +521,8 @@ This function will return the postscript name of the variable font for the speci
 
 #### Parameters
 
-|   Parameter    |    Type    |             Description             |
-| -------------- | ------------------------------ | ----------------------------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `vectorValues` | Array of floating-point values | Values to check [FontObject.designVector](#fontobjectdesignvector) for the given variable font. |
 
 #### Returns

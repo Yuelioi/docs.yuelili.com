@@ -13,7 +13,6 @@ Composition (comp) and world space are the same for 2D layers. For 3D layers, ho
 On this page, we're going to use `thisLayer` as a sample on how to call these items, however note that any method that returns a [Layer](.././layer) will work.
 :::
 
-
 #### "From" & "To" Methods
 
 The `from` methods transform values from the named space (composition or world) to the layer space.
@@ -40,10 +39,10 @@ Transforms a point from layer space to composition space.
 
 #### Parameters
 
-| Parameter |            Type             |                               Description                               |
-| --------- | --------------------------- | ----------------------------------------------------------------------- |
-| `point`   | Array (2- or 3-dimensional) | The point to convert                                                    |
-| `t`       | Number                      | Optional. The time at which to sample the point at. Defaults to `time`. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `point` | Array (2- or 3-dimensional) | The point to convert |
+| `t` | Number | Optional. The time at which to sample the point at. Defaults to `time`. |
 
 #### Type
 
@@ -61,10 +60,10 @@ Transforms a point from composition space to layer space. The resulting point in
 
 #### Parameters
 
-| Parameter |            Type             |                               Description                               |
-| --------- | --------------------------- | ----------------------------------------------------------------------- |
-| `point`   | Array (2- or 3-dimensional) | The point to convert                                                    |
-| `t`       | Number                      | Optional. The time at which to sample the point at. Defaults to `time`. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `point` | Array (2- or 3-dimensional) | The point to convert |
+| `t` | Number | Optional. The time at which to sample the point at. Defaults to `time`. |
 
 #### Type
 
@@ -90,18 +89,16 @@ Transforms a point from layer space to view-independent world space.
 Dan Ebberts provides an expression on his [MotionScript website](http://www.motionscript.com/design-guide/auto-orient-y-only.html) that uses the `toWorld` method to auto-orient a layer along only one axis. This is useful, for example, for having characters turn from side to side to follow the camera while remaining upright.
 :::
 
-
 :::tip
 Rich Young provides a set of expressions on his [AE Portal website](http://aeportal.blogspot.com/2010/02/fly-around-cc-sphered-layer-in-after.html) that use the toWorld method link a camera and light to a layer with the CC Sphere effect.
 :::
 
-
 #### Parameters
 
-| Parameter |            Type             |                               Description                               |
-| --------- | --------------------------- | ----------------------------------------------------------------------- |
-| `point`   | Array (2- or 3-dimensional) | The point to convert                                                    |
-| `t`       | Number                      | Optional. The time at which to sample the point at. Defaults to `time`. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `point` | Array (2- or 3-dimensional) | The point to convert |
+| `t` | Number | Optional. The time at which to sample the point at. Defaults to `time`. |
 
 #### Type
 
@@ -125,10 +122,10 @@ Transforms a point from world space to layer space.
 
 #### Parameters
 
-| Parameter |            Type             |                               Description                               |
-| --------- | --------------------------- | ----------------------------------------------------------------------- |
-| `point`   | Array (2- or 3-dimensional) | The point to convert                                                    |
-| `t`       | Number                      | Optional. The time at which to sample the point at. Defaults to `time`. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `point` | Array (2- or 3-dimensional) | The point to convert |
+| `t` | Number | Optional. The time at which to sample the point at. Defaults to `time`. |
 
 #### Type
 
@@ -152,10 +149,10 @@ Transforms a vector from layer space to composition space.
 
 #### Parameters
 
-| Parameter |            Type             | Description |
-| --------- | --------------------------- | ----------- |
-| `vec`     | Array (2- or 3-dimensional) |             |
-| `t`       | Number                      |             |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `vec` | Array (2- or 3-dimensional) | |
+| `t` | Number | |
 
 #### Type
 
@@ -179,10 +176,10 @@ Transforms a vector from composition space to layer space.
 
 #### Parameters
 
-| Parameter |            Type             | Description |
-| --------- | --------------------------- | ----------- |
-| `vec`     | Array (2- or 3-dimensional) |             |
-| `t`       | Number                      |             |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `vec` | Array (2- or 3-dimensional) | |
+| `t` | Number | |
 
 #### Type
 
@@ -209,10 +206,10 @@ Transforms a vector from layer space to world space.
 
 #### Parameters
 
-| Parameter |            Type             | Description |
-| --------- | --------------------------- | ----------- |
-| `vec`     | Array (2- or 3-dimensional) |             |
-| `t`       | Number                      |             |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `vec` | Array (2- or 3-dimensional) | |
+| `t` | Number | |
 
 #### Type
 
@@ -241,10 +238,10 @@ Transforms a vector from world space to layer space.
 
 #### Parameters
 
-| Parameter |            Type             | Description |
-| --------- | --------------------------- | ----------- |
-| `vec`     | Array (2- or 3-dimensional) |             |
-| `t`       | Number                      |             |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `vec` | Array (2- or 3-dimensional) | |
+| `t` | Number | |
 
 #### Type
 
@@ -272,13 +269,12 @@ Projects a point located in composition space to a point on the surface of the l
 Use with 3D layers only.
 :::
 
-
 #### Parameters
 
-| Parameter |            Type             |                               Description                               |
-| --------- | --------------------------- | ----------------------------------------------------------------------- |
-| `point`   | Array (2- or 3-dimensional) | The point to convert                                                    |
-| `t`       | Number                      | Optional. The time at which to sample the point at. Defaults to `time`. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `point` | Array (2- or 3-dimensional) | The point to convert |
+| `t` | Number | Optional. The time at which to sample the point at. Defaults to `time`. |
 
 #### Type
 

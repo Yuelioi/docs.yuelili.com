@@ -26,7 +26,7 @@ Examples
 ## examples
 
 ```vex
-int        vtx;
+int vtx;
 
 // Get the next vertex of vertex 3
 vtx = vertexnext("defgeo.bgeo", 3);

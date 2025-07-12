@@ -451,8 +451,8 @@ alert(firstAxis.name+"\n"+firstAxis.tag+"\n"+firstAxis.min+"\n"+firstAxis.max);
 
 #### 参数
 
-|  参数   |  类型  |   描述   |
-| ------- | ------ | ------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `charString` | 字符串 | 将在[字体对象](#font-object)中检查支持的文本。 |
 
 #### 返回
@@ -475,8 +475,8 @@ alert(firstAxis.name+"\n"+firstAxis.tag+"\n"+firstAxis.min+"\n"+firstAxis.max);
 
 #### 参数
 
-|  参数   |      类型       |   描述   |
-| ------- | ------- | ----- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `fontObject` | [字体对象](#font-object) | 要检查的对象 |
 
 #### 返回
@@ -501,8 +501,8 @@ alert(firstAxis.name+"\n"+firstAxis.tag+"\n"+firstAxis.min+"\n"+firstAxis.max);
 
 #### 参数
 
-|    参数     |       类型        |      描述      |
-| ----------- | --------------------------- | -------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `fontObject` | [字体对象](#font-object) | 要检查的对象 |
 
 #### 返回值
@@ -521,8 +521,8 @@ alert(firstAxis.name+"\n"+firstAxis.tag+"\n"+firstAxis.min+"\n"+firstAxis.max);
 
 #### 参数
 
-|     参数      |   类型   |      描述      |
-| ------------- | ------------------------------ | --------------------------------------------------------------------------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `vectorValues` | 浮点数值数组 | 要检查给定可变字体的[FontObject.designVector](#fontobjectdesignvector)的设计向量值。 |
 
 #### 返回值

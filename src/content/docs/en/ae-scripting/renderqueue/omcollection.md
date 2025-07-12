@@ -13,7 +13,6 @@ The OMCollection contains all of the output modules in a render queue. The colle
 OMCollection is a subclass of [Collection object](../../other/collection). All methods and attributes of Collection are available when working with OMCollection.
 :::
 
-
 ---
 
 ## Methods

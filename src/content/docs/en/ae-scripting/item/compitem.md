@@ -537,20 +537,20 @@ Use the `motionGraphicsTemplateName` attribute to set the name.
 Optionally specify the path to the folder where the Motion Graphics template file is saved. If not specified, the file will be saved in the current
 user's Motion Graphics Templates folder:
 
-|   OS    |                                        Path                                         |
-| ------- | ----------------------------------------------------------------------------------- |
-| macOS   | `/Users/<name>/Library/Application Support/Adobe/Common/Motion Graphics Templates/` |
-| Windows | `C:\Users\<name>\AppData\Roaming\Adobe\Common\Motion Graphics Templates\`           |
+| OS | Path |
+| --- | --- |
+| macOS | `/Users/<name>/Library/Application Support/Adobe/Common/Motion Graphics Templates/` |
+| Windows | `C:\Users\<name>\AppData\Roaming\Adobe\Common\Motion Graphics Templates\` |
 
 If the project has been changed since the last time it was saved, After Effects will prompt the user to save the project. To avoid this, use the
 project `save()` method before exporting the Motion Graphics template.
 
 #### Parameters
 
-|          Parameter          |  Type   |                        Description                         |
-| --------------------------- | ------- | ---------------------------------------------------------- |
-| `doOverWriteFileIfExisting` | Boolean | Whether to overwrite an existing file of the same name.    |
-| `file_path`                 | String  | Optional. Path to the folder where the file will be saved. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `doOverWriteFileIfExisting` | Boolean | Whether to overwrite an existing file of the same name. |
+| `file_path` | String | Optional. Path to the folder where the file will be saved. |
 
 #### Returns
 
@@ -572,9 +572,9 @@ Gets the name of a single property in the Essential Graphics panel.
 
 #### Parameters
 
-| Parameter |  Type   |                        Description                         |
-| --------- | ------- | ---------------------------------------------------------- |
-| `index`   | Integer | The index of the EGP property whose name will be returned. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | Integer | The index of the EGP property whose name will be returned. |
 
 #### Returns
 
@@ -600,10 +600,10 @@ To rename a property as it is added to the EGP, see [Property.addToMotionGraphic
 
 #### Parameters
 
-| Parameter |  Type   |                 Description                  |
-| --------- | ------- | -------------------------------------------- |
-| `index`   | Integer | The index of the EGP property to be renamed. |
-| `newName` | String  | The new name for the EGP property.           |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | Integer | The index of the EGP property to be renamed. |
+| `newName` | String | The new name for the EGP property. |
 
 #### Returns
 
@@ -625,22 +625,22 @@ Returns a Layer object, which can be specified by name, an index position in thi
 
 #### Parameters
 
-| Parameter |                                                 Type                                                 |                        Description                         |
-| --------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| `index`   | Integer, in the range `[1..numLayers]`, where `numLayers` is the number of layers in the composition | The index number of the desired layer in this composition. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | Integer, in the range `[1..numLayers]`, where `numLayers` is the number of layers in the composition | The index number of the desired layer in this composition. |
 
 or:
 
-|  Parameter   |                                                                     Type                                                                      |                                                                           Description                                                                           |
-| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `otherLayer` | [Layer object](../../layer/layer) in this composition.                                                                                       | The `relIndex` value is added to the index value of this layer to find the position of the desired layer.                                                       |
-| `relIndex`   | Integer, in the range `[1 - otherLayer.index .. numLayers - otherLayer.index]`, where `numLayers` is the number of layers in the composition. | The position of the desired layer, relative to `otherLayer`. This value is added to the `otherLayer` value to derive the absolute index of the layer to return. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `otherLayer` | [Layer object](../../layer/layer) in this composition. | The `relIndex` value is added to the index value of this layer to find the position of the desired layer. |
+| `relIndex` | Integer, in the range `[1 - otherLayer.index .. numLayers - otherLayer.index]`, where `numLayers` is the number of layers in the composition. | The position of the desired layer, relative to `otherLayer`. This value is added to the `otherLayer` value to derive the absolute index of the layer to return. |
 
 or:
 
-| Parameter |  Type  |          Description           |
-| --------- | ------ | ------------------------------ |
-| `name`    | String | The name of the desired layer. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | The name of the desired layer. |
 
 #### Returns
 

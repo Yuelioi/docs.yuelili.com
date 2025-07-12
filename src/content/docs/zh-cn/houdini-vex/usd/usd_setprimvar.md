@@ -35,7 +35,7 @@ usd_setprimvar(0, "/geo/sphere", "float_primvar", 0.25);
 usd_setprimvar(0, "/geo/sphere", "string_primvar", "foo bar baz");
 usd_setprimvar(0, "/geo/sphere", "vector_primvar", {1.25, 1.50, 1.75});
 
-float  f_arr[] = {0, 0.25, 0.5, 0.75, 1};
+float f_arr[] = {0, 0.25, 0.5, 0.75, 1};
 usd_setprimvar(0, "/geo/sphere", "float_array_primvar", f_arr);
 
 ```

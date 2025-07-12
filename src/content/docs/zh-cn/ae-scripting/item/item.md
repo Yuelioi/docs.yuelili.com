@@ -22,21 +22,21 @@ title: 项目对象
 ```javascript
 var myFolder = app.project.item(2);
 if (!(myFolder instanceof FolderItem)) {
-  alert("错误：第二个项目不是文件夹");
+ alert("错误：第二个项目不是文件夹");
 } else {
-  var numInFolder = myFolder.numItems;
-  // 删除内容时始终向后循环：
-  for (var i = numInFolder; i >= 1; i--) {
-    var curItem = myFolder.item(i);
-    if (curItem.parentFolder !== myFolder) {
-      alert("AE 内部错误：parentFolder 未正确设置");
-    } else {
-      if (!curItem.selected) {
-        // 找到一个未选择的实体。
-        curItem.remove();
-      }
-    }
-  }
+ var numInFolder = myFolder.numItems;
+ // 删除内容时始终向后循环：
+ for (var i = numInFolder; i >= 1; i--) {
+ var curItem = myFolder.item(i);
+ if (curItem.parentFolder !== myFolder) {
+ alert("AE 内部错误：parentFolder 未正确设置");
+ } else {
+ if (!curItem.selected) {
+ // 找到一个未选择的实体。
+ curItem.remove();
+ }
+ }
+ }
 }
 ```
 
@@ -158,9 +158,9 @@ var compFolder = app.project.items.addFolder("comps");
 
 // 通过将 compItem 的 parentFolder 设置为 "comps" 文件夹，将所有合成移动到新文件夹中
 for (var i = 1; i <= app.project.numItems; i++){
-  if (app.project.item(i) instanceof CompItem) {
-    app.project.item(i).parentFolder = compFolder;
-  }
+ if (app.project.item(i) instanceof CompItem) {
+ app.project.item(i).parentFolder = compFolder;
+ }
 }
 ```
 
@@ -194,26 +194,26 @@ for (var i = 1; i <= app.project.numItems; i++){
 
 #### 本地化字符串
 
-| 区域设置  |  合成   |   文件夹   |     素材      |
-| ------- | ---- | ----- | ---- |
-| `en_US` | Composition  | Folder   | Footage       |
-| `de_DE` | Komposition  | Ordner   | Footage       |
-| `es_ES` | Composición  | Carpeta  | Material de archivo |
-| `fr_FR` | Composition  | Dossier  | Métrage       |
-| `it_IT` | Composizione   | Cartella   | Metraggio       |
-| `ja_JP` | コンポジション | フォルダー | フッテージ      |
-| `ko_KR` | 컴포지션     | 폴더     | 푸티지        |
-| `pt_BR` | Composição   | Pasta    | Gravação      |
-| `ru_ru` | Композиция   | Папка    | Видеоряд      |
-| `zh_CN` | 合成       | 文件夹   | 素材        |
+| 区域设置 | 合成 | 文件夹 | 素材 |
+| --- | --- | --- | --- |
+| `en_US` | Composition | Folder | Footage |
+| `de_DE` | Komposition | Ordner | Footage |
+| `es_ES` | Composición | Carpeta | Material de archivo |
+| `fr_FR` | Composition | Dossier | Métrage |
+| `it_IT` | Composizione | Cartella | Metraggio |
+| `ja_JP` | コンポジション | フォルダー | フッテージ |
+| `ko_KR` | 컴포지션 | 폴더 | 푸티지 |
+| `pt_BR` | Composição | Pasta | Gravação |
+| `ru_ru` | Композиция | Папка | Видеоряд |
+| `zh_CN` | 合成 | 文件夹 | 素材 |
 
 #### 示例
 
 ```javascript
 if (/Composition|Komposition|Composición|Composizione|コンポジション|컴포지션|Composição|Композиция|合成/.test(app.project.item(index).typeName)) {
-  // 项目是一个合成
+ // 项目是一个合成
 } else if (/Folder|Ordner|Carpeta|Dossier|Cartella|フォルダー|폴더|Pasta|Папка|文件夹/.test(app.project.item(index).typeName)) {
-  // 项目是一个文件夹
+ // 项目是一个文件夹
 }
 ```
 
@@ -235,10 +235,10 @@ if (/Composition|Komposition|Composición|Composizione|コンポジション|컴
 
 #### 参数
 
-|   参数   |  类型   |         描述         |
-| ------- | ------- | ------------------ |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `orientationType` | 整数 | `0` 表示水平参考线，`1` 表示垂直参考线。任何其他值默认为水平。 |
-| `position`    | 整数 | 参考线的 X 或 Y 坐标位置（以像素为单位），具体取决于其 `orientationType`。  |
+| `position` | 整数 | 参考线的 X 或 Y 坐标位置（以像素为单位），具体取决于其 `orientationType`。 |
 
 #### 返回
 
@@ -286,8 +286,8 @@ app.project.activeItem.addGuide(1, 500);
 
 #### 参数
 
-|  参数   |  类型   |        描述        |
-| ------- | ------- | ------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `guideIndex` | 整数 | 要删除的参考线的索引。 |
 
 #### 返回
@@ -324,10 +324,10 @@ app.project.activeItem.removeGuide(0);
 
 #### 参数
 
-|  参数   |  类型   |    描述    |
-| ------- | ------- | ------------------ |
-| `position`   | 整数 | 参考线的新 X 或 Y 坐标位置（以像素为单位），具体取决于其现有的 `orientationType`。 |
-| `guideIndex` | 整数 | 要修改的参考线的索引。        |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `position` | 整数 | 参考线的新 X 或 Y 坐标位置（以像素为单位），具体取决于其现有的 `orientationType`。 |
+| `guideIndex` | 整数 | 要修改的参考线的索引。 |
 
 #### 返回
 

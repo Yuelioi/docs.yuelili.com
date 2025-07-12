@@ -29,7 +29,6 @@ Stereoscopic video is now supported when exporting directly from Premiere Pro. I
 Currently, stereoscopic exporters must use the "pull" model and the new `MakeVideoRendererForTimelineWithStreamLabel()` to get rendered frames from multiple video streams.
 :::
 
-
 [Export Param Suite](../suites#export-param-suite) now adds SetParamDescription(), to set tooltip strings for parameters. For the three line Export Summary description in the Export Settings dialog, we've swapped the 2nd and 3rd lines so that the bitrate summary comes after the audio summary. We've renamed the structure to make developers aware of this during a recompile.
 
 Adobe Media Encoder now includes a Preset Browser that provides more organization for presets. Make sure your presets take advantage of this organization, and are shown in your desired proper location in the Preset Browser.

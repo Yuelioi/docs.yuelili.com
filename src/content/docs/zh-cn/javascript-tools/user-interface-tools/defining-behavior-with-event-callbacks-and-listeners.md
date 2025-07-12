@@ -6,15 +6,15 @@ title: 使用事件回调和监听器定义行为
 为了让控件能够响应用户交互，你必须定义它们的行为。你可以通过将事件处理回调函数定义为控件或窗口的一部分来实现这一点。为了响应特定事件，你需要为该事件定义一个处理函数，并将该函数的引用分配给窗口或控件对象的相应属性。不同类型的窗口和控件会响应不同的操作或事件：
 
 - 当用户移动或调整窗口大小时，窗口会生成事件。为了处理这些事件，你需要为 `onMove`、`onMoving`、`onResize`、`onResizing` 定义回调函数。
-  - 为了响应用户打开或关闭窗口，你需要为 `onShow` 和 `onClose` 定义回调函数。
+ - 为了响应用户打开或关闭窗口，你需要为 `onShow` 和 `onClose` 定义回调函数。
 - 当用户点击控件边界内的区域时，按钮（Button）、单选按钮（RadioButton）和复选框（Checkbox）控件会生成事件。
-  - 为了处理该事件，你需要为 [onClick](../control-objects#onclick) 定义一个回调函数。
+ - 为了处理该事件，你需要为 [onClick](../control-objects#onclick) 定义一个回调函数。
 - 当内容或值发生变化时，EditNumber、EditText、Scrollbar 和 Slider 控件会生成事件，即当用户在编辑字段中输入内容或移动滚动条或滑块指示器时。为了处理这些事件，你需要为 [onChange](../control-objects#onchange) 和 [onChanging](../control-objects#onchanging) 定义回调函数。
 - 当列表中的选择发生变化时，ListBox、DropDownList 和 TreeView 控件会生成事件。为了处理该事件，你需要为 [onChange](../control-objects#onchange) 定义一个回调函数。
-  - 当用户展开或折叠节点时，TreeView 控件也会生成事件，这些事件由 [onExpand](../control-objects#onexpand) 和 [onCollapse](../control-objects#oncollapse) 回调函数处理。
+ - 当用户展开或折叠节点时，TreeView 控件也会生成事件，这些事件由 [onExpand](../control-objects#onexpand) 和 [onCollapse](../control-objects#oncollapse) 回调函数处理。
 - 当用户双击列表项时，ListBox 也会生成事件。为了处理该事件，你需要为 [onDoubleClick](../control-objects#ondoubleclick) 事件定义一个回调函数。
 - 容器和控件在绘制之前都会生成事件，允许你自定义它们的外观。为了处理这些事件，你需要为 [onDraw](../control-objects#ondraw) 定义一个回调函数。
-  - 你的处理函数可以使用控件关联的 [ScriptUIGraphics 对象](../graphic-customization-objects#scriptuigraphics-object) 中定义的方法来修改或控制容器或控件的绘制方式。
+ - 你的处理函数可以使用控件关联的 [ScriptUIGraphics 对象](../graphic-customization-objects#scriptuigraphics-object) 中定义的方法来修改或控制容器或控件的绘制方式。
 - 仅在 [Windows](.././window-object) 中，你可以将键序列注册为窗口或大多数类型控件的 [shortcutKey](../control-objects#shortcutkey)。为了处理该键序列，你需要在控件中为 [onShortcutKey](../control-objects#onshortcutkey) 定义一个回调函数。
 
 ---
@@ -25,16 +25,16 @@ title: 使用事件回调和监听器定义行为
 
 - 如果你定义了一个命名函数，请将其名称作为相应回调属性的值。例如：
 
-   ```javascript
-   function hasBtnsCbOnClick() { /* 做一些有趣的事情 */ }
-   hasBtnsCb.onClick = hasBtnsCbOnClick;
-   ```
+ ```javascript
+ function hasBtnsCbOnClick() { /* 做一些有趣的事情 */ }
+ hasBtnsCb.onClick = hasBtnsCbOnClick;
+ ```
 
 - 对于简单的未命名函数，直接将属性值设置为函数定义：
 
-   ```javascript
-   UI-element.callback-name = function () { handler-definition };
-   ```
+ ```javascript
+ UI-element.callback-name = function () { handler-definition };
+ ```
 
 事件处理函数不接受任何参数。
 
@@ -42,7 +42,7 @@ title: 使用事件回调和监听器定义行为
 
 ```javascript
 hasBtnsCb.onClick = function () {
-   this.parent.alertBtnsPnl.enabled = this.value;
+ this.parent.alertBtnsPnl.enabled = this.value;
 };
 ```
 
@@ -50,11 +50,11 @@ hasBtnsCb.onClick = function () {
 
 ```javascript
 buildBtn.onClick = function() {
-   this.parent.parent.close( 1 );
+ this.parent.parent.close( 1 );
 };
 
 cancelBtn.onClick = function() {
-   this.parent.parent.close( 2 );
+ this.parent.parent.close( 2 );
 };
 ```
 
@@ -98,7 +98,7 @@ cancelBtn.onClick = function() {
 
 ```javascript
 if ( dlg.hasBtnsCb.value == true ) {
-   dlg.hasBtnsCb.notify(); // dlg.hasBtnsCb.value 现在为 `false`
+ dlg.hasBtnsCb.notify(); // dlg.hasBtnsCb.value 现在为 `false`
 }
 ```
 
@@ -114,15 +114,15 @@ if ( dlg.hasBtnsCb.value == true ) {
 
 - 扩展中定义的处理函数的名称，该函数接受一个参数，即事件对象。例如：
 
-   ```javascript
-   myButton.addEventListener( "click", myFunction );
-   ```
+ ```javascript
+ myButton.addEventListener( "click", myFunction );
+ ```
 
 - 本地定义的处理函数，该函数接受一个参数，即事件对象。例如：
 
-   ```javascript
-   myButton.addEventListener( "click", "function( e ) { /*处理代码*/ }" );
-   ```
+ ```javascript
+ myButton.addEventListener( "click", "function( e ) { /*处理代码*/ }" );
+ ```
 
 当指定事件在目标中发生时，处理程序或注册的代码语句会被执行。脚本可以通过使用 [ScriptUI.events.createEvent()](../scriptui-class#scriptuieventscreateevent) 创建事件对象，并将其传递给事件目标的 [dispatchEvent()](../control-objects#dispatchevent) 函数来以编程方式模拟事件。
 
@@ -132,20 +132,20 @@ if ( dlg.hasBtnsCb.value == true ) {
 
 预定义的 `UIEvent` 类型与事件回调对应如下：
 
-|      回调       |   UIEvent 类型   |
-| --------------------------------------------------- | ---------------------- |
-| [`"onChange"`](../control-objects#onchange)    | `"change"`   |
-| [`"onChanging"`](../control-objects#onchanging)   | `"changing"`    |
-| [`"onClick"`](../control-objects#onclick)     | `"click"` (detail = 1) |
+| 回调 | UIEvent 类型 |
+| --- | --- |
+| [`"onChange"`](../control-objects#onchange) | `"change"` |
+| [`"onChanging"`](../control-objects#onchanging) | `"changing"` |
+| [`"onClick"`](../control-objects#onclick) | `"click"` (detail = 1) |
 | [`"onDoubleClick"`](../control-objects#ondoubleclick) | `"click"` (detail = 2) |
-| [`"onEnterKey"`](../control-objects#onenterkey)   | `"enterKey"`    |
-| [`"onMove"`](../window-object#onmove)   | `"move"`     |
-| [`"onMoving"`](../window-object#onmoving)     | `"moving"`   |
-| [`"onResize"`](../window-object#onresize)     | `"resize"`   |
-| [`"onResizing"`](../window-object#onresizing)    | `"resizing"`    |
-| [`"onShow"`](../window-object#onshow)   | `"show"`     |
-| [`"onActivate"`](../control-objects#onactivate)   | `"focus"`    |
-| [`"onDeactivate"`](../control-objects#ondeactivate) | `"blur"`     |
+| [`"onEnterKey"`](../control-objects#onenterkey) | `"enterKey"` |
+| [`"onMove"`](../window-object#onmove) | `"move"` |
+| [`"onMoving"`](../window-object#onmoving) | `"moving"` |
+| [`"onResize"`](../window-object#onresize) | `"resize"` |
+| [`"onResizing"`](../window-object#onresizing) | `"resizing"` |
+| [`"onShow"`](../window-object#onshow) | `"show"` |
+| [`"onActivate"`](../control-objects#onactivate) | `"focus"` |
+| [`"onDeactivate"`](../control-objects#ondeactivate) | `"blur"` |
 
 此外，ScriptUI 根据 W3C DOM 级别 3 功能规范 [UI 事件](https://www.w3.org/TR/uievents/) 实现了所有类型的 W3C 事件，并进行了以下修改和例外：
 

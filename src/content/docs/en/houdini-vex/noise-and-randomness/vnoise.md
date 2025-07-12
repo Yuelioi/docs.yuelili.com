@@ -82,8 +82,8 @@ Examples
 
 ```vex
 // 1D noise
-float    fp0, fp1, p1x, p1y, p2x, p2y;
-vector    vp0, vp1;
+float fp0, fp1, p1x, p1y, p2x, p2y;
+vector vp0, vp1;
 vnoise(s*10, 0.8, seed, f1, f2, fp0, fp1);
 vnoise(s*10, t*10, 0.8, 0.8, seed, f1, f2, p1x, p1y, p2x, p2y);
 vnoise(P*10, {.8, .8, .8}, seed, f1, f2, vp0, vp1);

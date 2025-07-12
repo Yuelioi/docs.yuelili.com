@@ -10,6 +10,6 @@ order: 3
 
 ```vex
 vector v[] = vector[](array( 1, {1,2,3}, 3, s, t, Cl, P, N));
-float  f[] = float[](array(1, 2, s, t, length(P-L), length(N)));
+float f[] = float[](array(1, 2, s, t, length(P-L), length(N)));
 
 ```

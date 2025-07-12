@@ -81,9 +81,9 @@ Get the first element in the collection with the provided name.
 
 #### Parameters
 
-| Parameter |  Type  |      Description       |
-| --------- | ------ | ---------------------- |
-| `name`    | String | Name of element to get |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Name of element to get |
 
 #### Returns
 

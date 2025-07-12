@@ -101,9 +101,9 @@ Open a file in the Source monitor.
 
 #### Parameters
 
-| Parameter |  Type  |         Description         |
-| --------- | ------ | --------------------------- |
-| `path`    | String | A path to the file to open. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `path` | String | A path to the file to open. |
 
 #### Returns
 
@@ -121,8 +121,8 @@ Open a project item in the Source monitor.
 
 #### Parameters
 
-|   Parameter   |           Type           |       Description       |
-| ------------- | -------------------------------------------- | ----------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `projectItem` | [ProjectItem object](../../item/projectitem) | A project item to open. |
 
 #### Returns
@@ -141,8 +141,8 @@ Begins playing back the Source monitor, at the specified playback speed.
 
 #### Parameters
 
-|    Parameter    | Type  |     Description     |
-| --------------- | ----- | ------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `playbackSpeed` | Float | The playback speed. |
 
 #### Returns

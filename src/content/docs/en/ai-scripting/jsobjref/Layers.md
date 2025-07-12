@@ -81,9 +81,9 @@ Gets the first element in the collection with the specified name.
 
 #### Parameters
 
-| Parameter |  Type  |      Description       |
-| --------- | ------ | ---------------------- |
-| `name`    | String | Name of element to get |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Name of element to get |
 
 #### Returns
 
@@ -101,8 +101,8 @@ Gets an element from the collection.
 
 #### Parameters
 
-| Parameter |      Type      |     Description      |
-| --------- | -------------- | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `itemKey` | String, Number | String or number key |
 
 #### Returns
@@ -134,18 +134,18 @@ Nothing.
 
 var layersDeleted = 0;
 for (var i = 0; i < app.documents.length; i++) {
-    var targetDocument = app.documents[i];
-    var layerCount = targetDocument.layers.length;
+ var targetDocument = app.documents[i];
+ var layerCount = targetDocument.layers.length;
 
-    // Loop through layers from the back, to preserve index
-    // of remaining layers when we remove one
-    for (var ii = layerCount - 1; ii >= 0; ii--) {
-        var targetLayer = targetDocument.layers[ii];
-        var layerName = new String(targetLayer.name);
-        if (layerName.indexOf("Temp") == 0) {
-            targetDocument.layers[ii].remove();
-            layersDeleted++;
-        }
-    }
+ // Loop through layers from the back, to preserve index
+ // of remaining layers when we remove one
+ for (var ii = layerCount - 1; ii >= 0; ii--) {
+ var targetLayer = targetDocument.layers[ii];
+ var layerName = new String(targetLayer.name);
+ if (layerName.indexOf("Temp") == 0) {
+ targetDocument.layers[ii].remove();
+ layersDeleted++;
+ }
+ }
 }
 ```

@@ -113,7 +113,7 @@ order: 55
 ```vex
 vector Cd;
 if (!objectstate("packed:Cd", Cd))
-    Cd = 1;   // 打包几何体上没有Cd属性
+ Cd = 1; // 打包几何体上没有Cd属性
 
 ```
 
@@ -124,21 +124,21 @@ if (!objectstate("packed:Cd", Cd))
 ```vex
 surface showversion() 
 {
-    string    rname, rversion;
-    if (!objectstate("renderer:name", rname))
-    rname = "未知渲染器";
-    if (!objectstate("renderer:version", rversion))
-    rversion = "未知版本";
-    printf("图像由 %s (%s) 渲染\n", rname, rversion);
+ string rname, rversion;
+ if (!objectstate("renderer:name", rname))
+ rname = "未知渲染器";
+ if (!objectstate("renderer:version", rversion))
+ rversion = "未知版本";
+ printf("图像由 %s (%s) 渲染\n", rname, rversion);
 }
 
 vector mapToScreen(vector NDC_P)
 {
-    // 给定NDC空间中的点，计算其映射到的像素坐标
-    vector    result;
-    if (!objectstate("image:resolution", result))
-    result = {640, 486, 0};
-    return result * NDC_P;
+ // 给定NDC空间中的点，计算其映射到的像素坐标
+ vector result;
+ if (!objectstate("image:resolution", result))
+ result = {640, 486, 0};
+ return result * NDC_P;
 }
 
 ```

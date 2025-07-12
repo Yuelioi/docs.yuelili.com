@@ -59,7 +59,7 @@ Find all points with `@age` == 10
 ```vex
 for (int point_num : findattribval(0, "point", "age", 10))
 {
-    // ...do something with the point...
+ // ...do something with the point...
 }
 
 ```
@@ -70,8 +70,8 @@ Find all points with `@age` == 10, using [findattribvalcount](./findattribvalcou
 int count = findattribvalcount(0, "point", "age", 10);
 int point_num;
 for (int i = 0; i < count; i++) {
-    point_num = findattribval(0, "point", "age", 10, i);
-    // ...do something with the point...
+ point_num = findattribval(0, "point", "age", 10, i);
+ // ...do something with the point...
 }
 
 ```

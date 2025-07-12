@@ -72,12 +72,12 @@ mydoc.hidePerspectiveGrid();
 
 透视网格平面类型包括：
 
-|     平面     |   类型      |
-| ------------ | ------------------------------------- |
-| 左平面       | `PerspectiveGridPlaneType.LEFTPLANE`  |
-| 右平面       | `PerspectiveGridPlaneType.RIGHTPLANE` |
-| 地面平面     | `PerspectiveGridPlaneType.FLOORPLANE` |
-| 无效平面     | `PerspectiveGridPlaneType.NOPLANE`    |
+| 平面 | 类型 |
+| --- | --- |
+| 左平面 | `PerspectiveGridPlaneType.LEFTPLANE` |
+| 右平面 | `PerspectiveGridPlaneType.RIGHTPLANE` |
+| 地面平面 | `PerspectiveGridPlaneType.FLOORPLANE` |
+| 无效平面 | `PerspectiveGridPlaneType.NOPLANE` |
 
 对于一点透视网格，只有左平面和地面平面是有效的。
 
@@ -112,7 +112,7 @@ mydoc.showPerspectiveGrid();
 
 //检查活动平面是否设置为左平面；如果没有，则设置为左平面
 if (mydoc.getPerspectiveActivePlane() != PerspectiveGridPlaneType.LEFTPLANE) {
-    mydoc.setPerspectiveActivePlane(PerspectiveGridPlaneType.LEFTPLANE);
+ mydoc.setPerspectiveActivePlane(PerspectiveGridPlaneType.LEFTPLANE);
 }
 
 //以透视方式绘制矩形，然后调整大小为200%并移动
@@ -171,7 +171,7 @@ mydoc.showPerspectiveGrid();
 
 //检查活动平面是否设置为左平面；如果没有，则设置为左平面
 if (mydoc.getPerspectiveActivePlane() != PerspectiveGridPlaneType.LEFTPLANE) {
-    mydoc.setPerspectiveActivePlane(PerspectiveGridPlaneType.LEFTPLANE);
+ mydoc.setPerspectiveActivePlane(PerspectiveGridPlaneType.LEFTPLANE);
 }
 
 //将椭圆带入活动平面（左平面）

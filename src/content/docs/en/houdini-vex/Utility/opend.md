@@ -13,6 +13,6 @@ Informs mantra that a long operation begun with [opstart](./opstart "Start a lon
 int op_handle = opstart("Performing long operation");
 perform_long_operation();
 if (op_handle >= 0)
-    opend(op_handle);
+ opend(op_handle);
 
 ```

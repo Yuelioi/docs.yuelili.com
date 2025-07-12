@@ -135,10 +135,10 @@ The call to `open()` and the call to `listen()` are mutually exclusive. Call one
 
 #### Parameters
 
-| Parameter  |  Type   |                                                                     Description                                                                     |
-| ---------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `port`     | Number. | The TCP/IP port number to listen on. Valid port numbers are `[1..65535]`. Typical values are 80 for a Web server, 23 for a Telnet server and so on. |
-| `encoding` | String  | Optional. The encoding to be used for the connection. Typical values are `"ASCII"`, `"binary"`, or `"UTF-8"`. Default is `"ASCII"`                  |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `port` | Number. | The TCP/IP port number to listen on. Valid port numbers are `[1..65535]`. Typical values are 80 for a Web server, 23 for a Telnet server and so on. |
+| `encoding` | String | Optional. The encoding to be used for the connection. Typical values are `"ASCII"`, `"binary"`, or `"UTF-8"`. Default is `"ASCII"` |
 
 #### Returns
 
@@ -158,10 +158,10 @@ The call to open() and the call to listen() are mutually exclusive. Call one fun
 
 #### Parameters
 
-| Parameter  |  Type  |                                                                                                       Description                                                                                                       |
-| ---------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `host`     | String | The name or IP address of the remote computer, followed by a colon and the port number to connect to. The port number is required. Valid computer names are, for example, `"www.adobe.com:80"` or `"192.150.14.12:80"`. |
-| `encoding` | String | Optional. The encoding to be used for the connection. Typical values are `"ASCII"`, `"binary"`, or `"UTF-8"`. Default is `"ASCII"`                                                                                      |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `host` | String | The name or IP address of the remote computer, followed by a colon and the port number to connect to. The port number is required. Valid computer names are, for example, `"www.adobe.com:80"` or `"192.150.14.12:80"`. |
+| `encoding` | String | Optional. The encoding to be used for the connection. Typical values are `"ASCII"`, `"binary"`, or `"UTF-8"`. Default is `"ASCII"` |
 
 #### Returns
 
@@ -199,9 +199,9 @@ Ignores CR characters unless encoding is set to `BINARY`.
 
 #### Parameters
 
-| Parameter |  Type  |                                                  Description                                                   |
-| --------- | ------ | -------------------------------------------------------------------------------------------------------------- |
-| `count`   | Number | Optional. The number of characters to read. If negative, the call is equivalent to `readln()`. Default is `0`. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `count` | Number | Optional. The number of characters to read. If negative, the call is equivalent to `readln()`. Default is `0`. |
 
 #### Returns
 
@@ -239,9 +239,9 @@ CRLF sequences are converted to LFs unless encoding is set to `BINARY.`
 
 #### Parameters
 
-| Parameter |  Type   |                                          Description                                          |
-| --------- | ------- | --------------------------------------------------------------------------------------------- |
-| `text`    | String. | Any number of string values. All arguments are concatenated to form the string to be written. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `text` | String. | Any number of string values. All arguments are concatenated to form the string to be written. |
 
 #### Returns
 
@@ -259,9 +259,9 @@ Concatenates all arguments into a single string, appends a Line Feed character, 
 
 #### Parameters
 
-| Parameter |  Type   |                                          Description                                          |
-| --------- | ------- | --------------------------------------------------------------------------------------------- |
-| `text`    | String. | Any number of string values. All arguments are concatenated to form the string to be written. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `text` | String. | Any number of string values. All arguments are concatenated to form the string to be written. |
 
 #### Returns
 

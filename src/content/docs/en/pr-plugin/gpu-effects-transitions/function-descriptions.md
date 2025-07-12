@@ -7,7 +7,7 @@ title: Function Descriptions
 
 ```cpp
 prSuiteError (*CreateInstance)(
-  PrGPUFilterInstance*  ioInstanceData);
+ PrGPUFilterInstance* ioInstanceData);
 ```
 
 Creates a GPU filter instance representing an effect or transition on a track item.
@@ -24,7 +24,7 @@ This allows an effect have more flexibility about opting-in for GPU rendering, d
 
 ```cpp
 prSuiteError (*DisposeInstance)(
-  PrGPUFilterInstance*  ioInstanceData);
+ PrGPUFilterInstance* ioInstanceData);
 ```
 
 Cleanup any resources allocated during CreateInstance.
@@ -35,10 +35,10 @@ Cleanup any resources allocated during CreateInstance.
 
 ```cpp
 prSuiteError (*GetFrameDependencies)(
-  PrGPUFilterInstance*            inInstanceData,
-  const PrGPUFilterRenderParams*  inRenderParams,
-  csSDK_int32*                    ioQueryIndex,
-  PrGPUFilterFrameDependency*     outFrameDependencies);
+ PrGPUFilterInstance* inInstanceData,
+ const PrGPUFilterRenderParams* inRenderParams,
+ csSDK_int32* ioQueryIndex,
+ PrGPUFilterFrameDependency* outFrameDependencies);
 ```
 
 Return dependency information about a render, or nothing if only the current frame is required.
@@ -51,10 +51,10 @@ Increment `ioQueryIndex` for additional dependencies.
 
 ```cpp
 prSuiteError (*Precompute)(
-  PrGPUFilterInstance*            inInstanceData,
-  const PrGPUFilterRenderParams*  inRenderParams,
-  csSDK_int32                     inIndex,
-  PPixHand                        inFrame);
+ PrGPUFilterInstance* inInstanceData,
+ const PrGPUFilterRenderParams* inRenderParams,
+ csSDK_int32 inIndex,
+ PPixHand inFrame);
 ```
 
 Precompute a result into preallocated uninitialized host (pinned) memory.
@@ -73,11 +73,11 @@ If `outPrecomputePixelFormat` is not custom, frames will be converted to the GPU
 
 ```cpp
 prSuiteError (*Render)(
-  PrGPUFilterInstance*            inInstanceData,
-  const PrGPUFilterRenderParams*  inRenderParams,
-  const PPixHand*                 inFrames,
-  csSDK_size_t                    inFrameCount,
-  PPixHand*                       outFrame);
+ PrGPUFilterInstance* inInstanceData,
+ const PrGPUFilterRenderParams* inRenderParams,
+ const PPixHand* inFrames,
+ csSDK_size_t inFrameCount,
+ PPixHand* outFrame);
 ```
 
 Render into an allocated outFrame allocated with `PrSDKGPUDeviceSuite` or operate in place.

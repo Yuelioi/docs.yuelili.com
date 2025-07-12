@@ -104,10 +104,10 @@ int channel = 0; // 或使用C全局变量表示当前通道索引
 int sample = -1; // 或使用I全局变量表示当前样本索引
 string s = chattr(input, attrname, attrclass, channel, sample, success )
 if (success) {
-    // 对s进行处理
-    printf("s=%s\n", s);
+ // 对s进行处理
+ printf("s=%s\n", s);
 } else {
-    // 无法读取属性，通常是因为该名称的属性不存在
+ // 无法读取属性，通常是因为该名称的属性不存在
 }
 
 ```

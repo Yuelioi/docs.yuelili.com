@@ -21,7 +21,6 @@ After Effects saves sequence data in the project file, but not global or frame d
 The Compute Cache does not store its contents to the project file. The data stored in the cache must be recreated during render.
 :::
 
-
 ---
 
 ## Validating Sequence Data
@@ -56,15 +55,15 @@ Use a flag at a common offset within both structures to indicate the data's stat
 
 ```cpp
 typedef struct {
-    A_char*    messageZ;
-    PF_FpLong  big_numF;
-    void*      temp_storage;
+ A_char* messageZ;
+ PF_FpLong big_numF;
+ void* temp_storage;
 } non_flat_data;
 
 typedef struct {
-    char       message[256];
-    PF_FpLong  big_numF;
-    A_Boolean  big_endianB;
+ char message[256];
+ PF_FpLong big_numF;
+ A_Boolean big_endianB;
 } flat_data;
 ```
 
@@ -98,32 +97,32 @@ When enabling Multi-Frame Rendering on an effect, the `sequence_data` object wil
 
 ### PF_EffectSequenceDataSuite1
 
-|         Function          |                                                            Purpose                                                             |
-|---------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| Function | Purpose |
+|---|---|
 | `PF_GetConstSequenceData` | Retrieves the read-only const sequence_data object for a rendering thread when Multi-Frame Rendering is enabled for an effect. |
-|                           | <pre lang="cpp">PF_Err(*PF_GetConstSequenceData)(<br/>  PF_ProgPtr effect_ref,<br/>  PF_ConstHandle \*sequence_data);</pre>    |
+| | <pre lang="cpp">PF_Err(*PF_GetConstSequenceData)(<br/>  PF_ProgPtr effect_ref,<br/>  PF_ConstHandle \*sequence_data);</pre> |
 
 ```cpp
 static PF_Err Render(
-    PF_InData   *in_dataP,
-    PF_OutData  *out_dataP,
-    PF_ParamDef *params[],
-    PF_LayerDef *output )
+ PF_InData *in_dataP,
+ PF_OutData *out_dataP,
+ PF_ParamDef *params[],
+ PF_LayerDef *output )
 {
-    PF_ConstHandle seq_handle;
+ PF_ConstHandle seq_handle;
 
-    AEFX_SuiteScoper<PF_EffectSequenceDataSuite1> seqdata_suite =
-        AEFX_SuiteScoper<PF_EffectSequenceDataSuite1>(
-            in_dataP,
-            kPFEffectSequenceDataSuite,
-            kPFEffectSequenceDataSuiteVersion1,
-            out_dataP);
+ AEFX_SuiteScoper<PF_EffectSequenceDataSuite1> seqdata_suite =
+ AEFX_SuiteScoper<PF_EffectSequenceDataSuite1>(
+ in_dataP,
+ kPFEffectSequenceDataSuite,
+ kPFEffectSequenceDataSuiteVersion1,
+ out_dataP);
 
-    PF_ConstHandle const_seq;
-    seqdata_suite->PF_GetConstSequenceData(in_data->effect_ref, &const_seq);
+ PF_ConstHandle const_seq;
+ seqdata_suite->PF_GetConstSequenceData(in_data->effect_ref, &const_seq);
 
-    // cast const_seq to the type used when storing to sequence_data
+ // cast const_seq to the type used when storing to sequence_data
 
-    // rest of render function code...
+ // rest of render function code...
 }
 ```

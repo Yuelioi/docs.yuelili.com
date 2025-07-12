@@ -81,9 +81,9 @@ title: 标签
 
 #### 参数
 
-| 参数      | 类型   | 描述         |
-| --------- | ------ | ------------------ |
-| `name`    | 字符串 | 要获取的元素的名称 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `name` | 字符串 | 要获取的元素的名称 |
 
 #### 返回值
 
@@ -101,9 +101,9 @@ title: 标签
 
 #### 参数
 
-| 参数      | 类型     | 描述         |
-| --------- | -------------- | ------------------ |
-| `itemKey` | 字符串, 数字   | 字符串或数字键     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `itemKey` | 字符串, 数字 | 字符串或数字键 |
 
 #### 返回值
 
@@ -132,22 +132,22 @@ title: 标签
 ```javascript
 // 为当前文档中的所有 RasterItems 和 PlacedItems 添加标签
 if ( app.documents.length > 0 ) {
-    var doc = app.activeDocument;
+ var doc = app.activeDocument;
 
-    if ( doc.placedItems.length + doc.rasterItems.length > 0 ) {
-        for ( i = 0; i < doc.pageItems.length; i++ ) {
-      var imageArt = doc.pageItems[i];
+ if ( doc.placedItems.length + doc.rasterItems.length > 0 ) {
+ for ( i = 0; i < doc.pageItems.length; i++ ) {
+ var imageArt = doc.pageItems[i];
 
       if ( imageArt.typename == "PlacedItem" || imageArt.typename == "RasterItem") {
-          // 创建一个名为 AdobeURL 的新标签，并设置其值为 www 链接
+ // 创建一个名为 AdobeURL 的新标签，并设置其值为 www 链接
 
-          var urlTAG = imageArt.tags.add();
-          urlTAG.name = "AdobeWebSite";
-          urlTAG.value = "http://www.adobe.com/";
-      }
-        }
-    } else {
-        alert( "文档中没有放置或栅格化的项目" );
-    }
+ var urlTAG = imageArt.tags.add();
+ urlTAG.name = "AdobeWebSite";
+ urlTAG.value = "http://www.adobe.com/";
+ }
+ }
+ } else {
+ alert( "文档中没有放置或栅格化的项目" );
+ }
 }
 ```

@@ -15,20 +15,20 @@ title: 错误处理
 
 ## 错误代码
 
-|         错误         |        含义          |
-|-------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| `PF_Err_NONE`         | 成功。       |
-| `PF_Err_OUT_OF_MEMORY`       | 内存分配失败。     |
-|        | 注意，RAM 预览会导致这种情况，因此 After Effects 会期望从你的插件中收到此错误。 |
-| `PF_Err_INTERNAL_STRUCT_DAMAGED`    | 使用数据结构时出现问题。     |
-| `PF_Err_INVALID_INDEX`       | 查找/使用数组成员时出现问题。         |
-| `PF_Err_UNRECOGNIZED_PARAM_TYPE`    | 参数数据出现问题。          |
-| `PF_Err_INVALID_CALLBACK`    | 通过指针访问函数时出现问题。         |
-| `PF_Err_BAD_CALLBACK_PARAM`         | 使用传递给回调的参数时出现问题。   |
-| `PF_Interrupt_CANCEL`        | 如果用户操作中止渲染，效果和 AEGP 回调都可以将此返回给效果。    |
-|        | 如果效果从回调中收到此错误，它应停止处理帧并将错误返回给主机。         |
-|        | 未能传递错误可能会导致缓存渲染错误的帧。   |
-| `PF_Err_CANNOT_PARSE_KEYFRAME_TEXT` | 当解析剪贴板到关键帧数据时出现问题，从 `PF_Arbitrary_SCAN_FUNC` 返回此错误。        |
+| 错误 | 含义 |
+|---|---|
+| `PF_Err_NONE` | 成功。 |
+| `PF_Err_OUT_OF_MEMORY` | 内存分配失败。 |
+| | 注意，RAM 预览会导致这种情况，因此 After Effects 会期望从你的插件中收到此错误。 |
+| `PF_Err_INTERNAL_STRUCT_DAMAGED` | 使用数据结构时出现问题。 |
+| `PF_Err_INVALID_INDEX` | 查找/使用数组成员时出现问题。 |
+| `PF_Err_UNRECOGNIZED_PARAM_TYPE` | 参数数据出现问题。 |
+| `PF_Err_INVALID_CALLBACK` | 通过指针访问函数时出现问题。 |
+| `PF_Err_BAD_CALLBACK_PARAM` | 使用传递给回调的参数时出现问题。 |
+| `PF_Interrupt_CANCEL` | 如果用户操作中止渲染，效果和 AEGP 回调都可以将此返回给效果。 |
+| | 如果效果从回调中收到此错误，它应停止处理帧并将错误返回给主机。 |
+| | 未能传递错误可能会导致缓存渲染错误的帧。 |
+| `PF_Err_CANNOT_PARSE_KEYFRAME_TEXT` | 当解析剪贴板到关键帧数据时出现问题，从 `PF_Arbitrary_SCAN_FUNC` 返回此错误。 |
 
 ---
 

@@ -23,7 +23,6 @@ Set to change the default encoding for the application. The returned value can d
 
 String
 
-
 ---
 
 ### $.build
@@ -146,7 +145,6 @@ Gets or sets low-level debug output flags. A logical AND of the following bit fl
 Other bit values are not public and should not be used.
 :::
 
-
 ---
 
 ### $.global
@@ -267,7 +265,6 @@ Gets or sets the ExtendScript memory cache size in bytes.
 
 Number
 
-
 ---
 
 ### $.os
@@ -298,13 +295,13 @@ Array of objects
 
 #### Properties
 
-| Property  |    Type    |                    Description                     |
-| --------- | ---------- | -------------------------------------------------- |
-| `left`    | Coordinate | The left corner of the drawable area               |
-| `top`     | Coordinate | The top corner of the drawable area                |
-| `right`   | Coordinate | The right corner of the drawable area              |
-| `bottom`  | Coordinate | The bottom corner of the drawable area             |
-| `primary` | Boolean    | `true` if the object describes the primary display |
+| Property | Type | Description |
+| --- | --- | --- |
+| `left` | Coordinate | The left corner of the drawable area |
+| `top` | Coordinate | The top corner of the drawable area |
+| `right` | Coordinate | The right corner of the drawable area |
+| `bottom` | Coordinate | The bottom corner of the drawable area |
+| `primary` | Boolean | `true` if the object describes the primary display |
 
 ---
 
@@ -380,8 +377,8 @@ If no condition is needed, it is recommended that you use the JavaScript `debugg
 
 #### Parameters
 
-|  Parameter  |  Type  |                                                                        Description                                                                         |
-| ----------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `condition` | String | Optional. The JavaScript statement to be used as a condition. If the statement evaluates to `true` or nonzero when this point is reached, execution stops. |
 
 #### Returns
@@ -400,10 +397,9 @@ Invokes the platform-specific color selection dialog
 
 #### Parameters
 
-| Parameter |                Type                |                                 Description                                  |
-| --------- | ---------------------------------- | ---------------------------------------------------------------------------- |
-| `name`    | Hexadecimal RGB value (`0xRRGGBB`) | The color to be preselected in the dialog, or `-1` for the platform default. |
-
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | Hexadecimal RGB value (`0xRRGGBB`) | The color to be preselected in the dialog, or `-1` for the platform default. |
 
 #### Returns
 
@@ -421,9 +417,9 @@ Loads a JavaScript script file from disk, evaluates it, and returns the result o
 
 #### Parameters
 
-| Parameter |  Type  |                                                          Description                                                           |
-| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `path`    | String | The name and location of the file.                                                                                             |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `path` | String | The name and location of the file. |
 | `timeout` | Number | Optional. A number of milliseconds to wait before returning undefined, if the script cannot be evaluated. Defaults to `10000`. |
 
 #### Returns
@@ -458,13 +454,12 @@ Retrieves the value of the specified environment variable, or null if no such va
 - Custom environment variables created with `launchctl setenv CUSTOM_VAR "custom_value"`
 :::
 
-
 Any env vars set in .bash_profile, .bashrc, .profile, .zshenv, or .zshrc will be ignored.
 
 #### Parameters
 
-| Parameter |  Type  |              Description              |
-| --------- | ------ | ------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `envname` | String | The name of the environment variable. |
 
 #### Returns
@@ -483,10 +478,10 @@ Sets the value of the specified environment variable, if no such variable is def
 
 #### Parameters
 
-| Parameter |  Type  |              Description              |
-| --------- | ------ | ------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `envname` | String | The name of the environment variable. |
-| `value`   | String | The new value, a string.              |
+| `value` | String | The new value, a string. |
 
 #### Returns
 
@@ -506,8 +501,8 @@ During a sleep period, checks at `100` millisecond intervals to see whether the 
 
 #### Parameters
 
-|   Parameter    |  Type  |             Description             |
-| -------------- | ------ | ----------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `milliseconds` | Number | The number of milliseconds to wait. |
 
 #### Returns
@@ -526,9 +521,9 @@ Writes the specified text to the JavaScript Console.
 
 #### Parameters
 
-| Parameter |  Type  |                                  Description                                  |
-| --------- | ------ | ----------------------------------------------------------------------------- |
-| `text`    | String | One or more strings to write, which are concatenated to form a single string. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `text` | String | One or more strings to write, which are concatenated to form a single string. |
 
 #### Returns
 
@@ -546,9 +541,9 @@ Writes the specified text to the JavaScript Console and appends a linefeed seque
 
 #### Parameters
 
-| Parameter |  Type  |                                  Description                                  |
-| --------- | ------ | ----------------------------------------------------------------------------- |
-| `text`    | String | One or more strings to write, which are concatenated to form a single string. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `text` | String | One or more strings to write, which are concatenated to form a single string. |
 
 #### Returns
 

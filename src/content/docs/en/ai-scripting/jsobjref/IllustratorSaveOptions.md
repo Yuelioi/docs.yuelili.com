@@ -53,7 +53,6 @@ Default: `Compatibility.ILLUSTRATOR19`.
 This functionality was added in Illustrator version 10
 :::
 
-
 #### Description
 
 If `true`, the saved file is compressed.
@@ -73,7 +72,6 @@ Boolean.
 :::note
 This functionality was added in Illustrator version 9
 :::
-
 
 #### Description
 
@@ -95,7 +93,6 @@ Boolean.
 This functionality was added in Illustrator version 7
 :::
 
-
 #### Description
 
 If `true`, the linked image files is embedded in the saved file.
@@ -116,7 +113,6 @@ Boolean.
 This functionality was added in Illustrator version 9
 :::
 
-
 #### Description
 
 How transparency should be flattened for older file format versions.
@@ -136,7 +132,6 @@ Default: `OutputFlattening.PRESERVEAPPEARANCE`.
 :::note
 This functionality was added in Illustrator version 9
 :::
-
 
 #### Description
 
@@ -159,7 +154,6 @@ Number (double).
 :::note
 This functionality was added in Illustrator version 10
 :::
-
 
 #### Description
 
@@ -210,13 +204,13 @@ String; read-only.
 // dest specifies the full path and file name of the new file
 
 function exportFileToAI(dest) {
-    if (app.documents.length > 0) {
-        var ai8Doc = new File(dest);
-        var saveOptions = new IllustratorSaveOptions();
-        saveOptions.compatibility = Compatibility.ILLUSTRATOR8;
-        saveOptions.flattenOutput = OutputFlattening.PRESERVEAPPEARANCE;
+ if (app.documents.length > 0) {
+ var ai8Doc = new File(dest);
+ var saveOptions = new IllustratorSaveOptions();
+ saveOptions.compatibility = Compatibility.ILLUSTRATOR8;
+ saveOptions.flattenOutput = OutputFlattening.PRESERVEAPPEARANCE;
 
-        app.activeDocument.saveAs(ai8Doc, saveOptions);
-    }
+ app.activeDocument.saveAs(ai8Doc, saveOptions);
+ }
 }
 ```

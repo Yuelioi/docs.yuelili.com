@@ -17,7 +17,7 @@ Viewer 对象表示一个合成、图层或素材面板。
 var activeViewer = app.activeViewer;
 activeViewer.maximized = true;
 if (activeViewer.type === ViewerType.VIEWER_COMPOSITION) {
-  alert("Composition panel is active.");
+ alert("Composition panel is active.");
 }
 ```
 

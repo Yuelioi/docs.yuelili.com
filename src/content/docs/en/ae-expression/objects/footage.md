@@ -13,7 +13,6 @@ You can also access a footage object using the source attribute on a layer whose
 On this page, we're going to use `footage("myFile")` as a sample on how to call these items, however note that any method that returns a [Footage object](#) will work.
 :::
 
-
 ---
 
 ## Attributes
@@ -81,7 +80,6 @@ String
 :::note
 This functionality was added in After Effects CS5.5
 :::
-
 
 #### Description
 
@@ -191,8 +189,8 @@ Accepts a single array value to define the path in the hierarchy to the desired 
 
 #### Parameters
 
-| Parameter  | Type  |                               Description                               |
-| ---------- | ----- | ----------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `dataPath` | Array | Required. The path in the hierarchy to a static or dynamic data stream. |
 
 #### Returns
@@ -229,11 +227,11 @@ Accepts a single array value to define the path in the hierarchy to the desired 
 
 #### Parameters
 
-| Parameter  |  Type  |                                               Description                                                |
-| ---------- | ------ | -------------------------------------------------------------------------------------------------------- |
-| `dataPath` | Array  | Required. The path in the hierarchy to a static or dynamic data stream.                                  |
-| `t0`       | Number | Optional. The start time, in seconds, of the span from which to return samples. Defaults to `startTime`. |
-| `t1`       | Number | Optional. The end time, in seconds, of the span from which to return samples. Defaults to `endTime`.     |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `dataPath` | Array | Required. The path in the hierarchy to a static or dynamic data stream. |
+| `t0` | Number | Optional. The start time, in seconds, of the span from which to return samples. Defaults to `startTime`. |
+| `t1` | Number | Optional. The end time, in seconds, of the span from which to return samples. Defaults to `endTime`. |
 
 #### Returns
 
@@ -263,11 +261,11 @@ Accepts a single array value to define the path in the hierarchy to the desired 
 
 #### Parameters
 
-| Parameter  |  Type  |                                               Description                                                |
-| ---------- | ------ | -------------------------------------------------------------------------------------------------------- |
-| `dataPath` | Array  | Required. The path in the hierarchy to a static or dynamic data stream.                                  |
-| `t0`       | Number | Optional. The start time, in seconds, of the span from which to return samples. Defaults to `startTime`. |
-| `t1`       | Number | Optional. The end time, in seconds, of the span from which to return samples. Defaults to `endTime`.     |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `dataPath` | Array | Required. The path in the hierarchy to a static or dynamic data stream. |
+| `t0` | Number | Optional. The start time, in seconds, of the span from which to return samples. Defaults to `startTime`. |
+| `t1` | Number | Optional. The end time, in seconds, of the span from which to return samples. Defaults to `endTime`. |
 
 #### Returns
 
@@ -295,8 +293,8 @@ Accepts a single array value to define the path in the hierarchy to the desired 
 
 #### Parameters
 
-| Parameter  | Type  |                               Description                               |
-| ---------- | ----- | ----------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `dataPath` | Array | Required. The path in the hierarchy to a static or dynamic data stream. |
 
 #### Returns

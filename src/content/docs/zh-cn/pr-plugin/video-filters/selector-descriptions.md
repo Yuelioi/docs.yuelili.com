@@ -59,11 +59,11 @@ Premiere Pro CS3 新增。可选。通过返回 `fsHasNoSetupDialog` 或 `fsNoEr
 
 PiPL 位 `anyPixelAspectRatio` 和 `unityPixelAspectRatio` 不能设置。
 
-|     标志     |   描述   |
-| ------------------------- | --------------------------------------------------------------------------- |
-| `prEffectCanHandlePAR`   | Premiere 不应为补偿 PAR 而对源图像进行任何调整      |
-| `prEffectUnityPARSetup`   | Premiere 应在 `fsSetup` 期间将源图像渲染为方形像素      |
-| `prEffectUnityPARExecute` | Premiere 应在 `fsExecute` 期间将源图像渲染为方形像素   |
+| 标志 | 描述 |
+| --- | --- |
+| `prEffectCanHandlePAR` | Premiere 不应为补偿 PAR 而对源图像进行任何调整 |
+| `prEffectUnityPARSetup` | Premiere 应在 `fsSetup` 期间将源图像渲染为方形像素 |
+| `prEffectUnityPARExecute` | Premiere 应在 `fsExecute` 期间将源图像渲染为方形像素 |
 
 ---
 

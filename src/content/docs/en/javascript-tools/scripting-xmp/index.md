@@ -12,4 +12,3 @@ Adobe Bridge CS5 makes the XMP library available in its libraries folder. Script
 :::note
 Adobe Bridge provides a means of embedding metadata values in a script (to describe the script file itself) using XML delimited by special tags within a comment block. This is not related to metadata access for files and thumbnails. For details, see the *Adobe Bridge JavaScript Guide*.
 :::
-

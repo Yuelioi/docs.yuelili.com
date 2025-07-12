@@ -13,10 +13,10 @@ To view the JavaScript object model for Illustrator, follow these steps:
 
 In a default Adobe installation, the ESTK is in the following location:
 
-|   OS    |                                       Path                                        |
-| ------- | --------------------------------------------------------------------------------- |
-| Windows | `\system drive\Program Files\Adobe\Adobe Utilities CC\ExtendScript Toolkit CC`    |
-| Mac OS  | `\system drive\Applications\Utilities\Adobe Utilities CC\ExtendScript Toolkit CC` |
+| OS | Path |
+| --- | --- |
+| Windows | `\system drive\Program Files\Adobe\Adobe Utilities CC\ExtendScript Toolkit CC` |
+| Mac OS | `\system drive\Applications\Utilities\Adobe Utilities CC\ExtendScript Toolkit CC` |
 
 1. Start the ESTK.
 2. In the ESTK, choose Help > Object Model Viewer.
@@ -37,7 +37,6 @@ For details of how to use Script Editor, see Script Editor Help.
 :::note
 In a default Mac OS installation, Script Editor is in `Applications/AppleScript/Script Editor`
 :::
-
 
 If you cannot find the Script Editor application, you must reinstall it from your Mac OS system CD.
 

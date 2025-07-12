@@ -26,7 +26,7 @@ For example, this code, which will send a message to Adobe Bridge CS5 as part of
 ```javascript
 var targetApp = BridgeTalk.getSpecifier( "bridge-3.0");
 if( targetApp ) {
-    // construct and send message
+ // construct and send message
 }
 ```
 
@@ -64,7 +64,7 @@ This handler, for example, processes the returned result using a script-defined 
 
 ```javascript`
 bt.onResult = function(returnBtObj) {
-    processResult(returnBtObj.body);
+ processResult(returnBtObj.body);
 }
 
 ```
@@ -74,7 +74,6 @@ If you want to handle errors that might arise during script processing, you can 
 :::note
 If you define callbacks to handle a response, you must store the message in a variable that still exists when the response is received. Otherwise, JavaScript might garbage-collect the message object, and the response would be lost.
 :::
-
 
 ### Step 4: Send the message
 
@@ -98,21 +97,21 @@ The complete script looks like this:
 var targetApp = BridgeTalk.getSpecifier( "bridge-3.0");
 
 if( targetApp ) {
-    // construct a message object
-    var bt = new BridgeTalk;
+ // construct a message object
+ var bt = new BridgeTalk;
 
-    // the message is intended for Adobe Bridge CS4
-    bt.target = targetApp;
+ // the message is intended for Adobe Bridge CS4
+ bt.target = targetApp;
 
-    // the script to evaluate is contained in a string in the "body" property
-    bt.body = "new Document('C:\\BridgeScripts');app.document.target.children.length;"
+ // the script to evaluate is contained in a string in the "body" property
+ bt.body = "new Document('C:\\BridgeScripts');app.document.target.children.length;"
 
-    // define result handler callback
-    bt.onResult = function(returnBtObj) {
-    processResult(returnBtObj.body); } //fn defined elsewhere
+ // define result handler callback
+ bt.onResult = function(returnBtObj) {
+ processResult(returnBtObj.body); } //fn defined elsewhere
 
-    // send the message asynchronously
-    bt.send();
+ // send the message asynchronously
+ bt.send();
 }
 ```
 
@@ -146,7 +145,7 @@ To change the default behavior set the `BridgeTalk.onReceive` property to a func
 
 ```javascript
 BridgeTalk.onReceive = function( bridgeTalkObject ) {
-    // callback definition here
+ // callback definition here
 };
 ```
 
@@ -168,7 +167,7 @@ This example shows the default mechanism for handling unsolicited messages recei
 
 ```javascript
 BridgeTalk.onReceive = function (message) {
-    return eval( message.body );
+ return eval( message.body );
 }
 ```
 
@@ -176,13 +175,13 @@ This example shows how you might extend the receive handler to process a new typ
 
 ```javascript
 BridgeTalk.onReceive = function (message) {
-    switch (message.type) {
-        case "Data":
-            return processData( message );
-            break;
-        default: //"ExtendScript"
-            return eval( mesage.body );
-    }
+ switch (message.type) {
+ case "Data":
+ return processData( message );
+ break;
+ default: //"ExtendScript"
+ return eval( mesage.body );
+ }
 }
 ```
 
@@ -201,15 +200,15 @@ When your message is received by its target, the target application's static Bri
 A response message can be:
 
 - The result of an error in processing the message. This is handled by the [onError()](../bridgetalk-message-object#onerror) callback.
-  - If an error occurs in processing the message body (as the result of a JavaScript syntax error, for instance), the target application invokes the [onError()](../bridgetalk-message-object#onerror) callback, passing a response message that contains the error code and error message. If you do not have an [onError()](../bridgetalk-message-object#onerror) callback defined, the error is completely transparent. It can appear that the message has not been processed, since no result is ever returned to the [onResult()](../bridgetalk-message-object#onresult) callback.
+ - If an error occurs in processing the message body (as the result of a JavaScript syntax error, for instance), the target application invokes the [onError()](../bridgetalk-message-object#onerror) callback, passing a response message that contains the error code and error message. If you do not have an [onError()](../bridgetalk-message-object#onerror) callback defined, the error is completely transparent. It can appear that the message has not been processed, since no result is ever returned to the [onResult()](../bridgetalk-message-object#onresult) callback.
 - A notification of receipt of the message. This is handled by the [onReceived()](../bridgetalk-message-object#onreceived) callback.
-  - Message sending is asynchronous. Getting a `true` result from the send method does not guarantee that your message was actually received by the target application. If you want to be notified of the receipt of your message, define the [onReceived()](../bridgetalk-message-object#onreceived) callback in the message object. The target sends back the original message object to this callback, first replacing the body value with an empty string.
+ - Message sending is asynchronous. Getting a `true` result from the send method does not guarantee that your message was actually received by the target application. If you want to be notified of the receipt of your message, define the [onReceived()](../bridgetalk-message-object#onreceived) callback in the message object. The target sends back the original message object to this callback, first replacing the body value with an empty string.
 - The result of a time-out. This is handled by the [onTimeout()](../bridgetalk-message-object#ontimeout) callback.
-  - You can specify a number of seconds in a message object's [timeout](../bridgetalk-message-object#timeout) property. If the message is not removed from the input queue for processing before the time elapses, it is discarded. If the sender has defined an [onTimeout()](../bridgetalk-message-object#ontimeout) callback for the message, the target application sends a time-out message back to the sender.
+ - You can specify a number of seconds in a message object's [timeout](../bridgetalk-message-object#timeout) property. If the message is not removed from the input queue for processing before the time elapses, it is discarded. If the sender has defined an [onTimeout()](../bridgetalk-message-object#ontimeout) callback for the message, the target application sends a time-out message back to the sender.
 - Intermediate responses. These are handled by the [onResult()](../bridgetalk-message-object#onresult) callback.
-  - The script that you send can send back intermediate responses by invoking the original message object's [sendResult()](../bridgetalk-message-object#sendresult) method. It can send data of any type, but that data is packaged into a body string in a new message object, which is passed to your callback. See [Passing values between applications](#passing-values-between-applications).
+ - The script that you send can send back intermediate responses by invoking the original message object's [sendResult()](../bridgetalk-message-object#sendresult) method. It can send data of any type, but that data is packaged into a body string in a new message object, which is passed to your callback. See [Passing values between applications](#passing-values-between-applications).
 - The final result of processing the message. This is handled by the [onResult()](../bridgetalk-message-object#onresult) callback.
-  - When it finishes processing your message, the target application can send back a result of any type. If you have sent a script, and the target application is using the default BridgeTalk [onReceive](../bridgetalk-class#bridgetalkonreceive) callback to process messages, the return value is the final result of evaluating that script. In any case, the return value is packaged into a body string in a new message object, which is passed to your callback. See [Passing values between applications](#passing-values-between-applications).
+ - When it finishes processing your message, the target application can send back a result of any type. If you have sent a script, and the target application is using the default BridgeTalk [onReceive](../bridgetalk-class#bridgetalkonreceive) callback to process messages, the return value is the final result of evaluating that script. In any case, the return value is packaged into a body string in a new message object, which is passed to your callback. See [Passing values between applications](#passing-values-between-applications).
 
 The following examples demonstrate how to handle simple responses and multiple responses, and how to integrate error handling with response handling.
 
@@ -224,7 +223,7 @@ var bt = new BridgeTalk;
 bt.target = "bridge-3.0";
 bt.body = "new Document('C:\\BridgeScripts');app.document.target.children.length;"
 bt.onResult = function( retObj ) {
-    processFileCount(retObj.body);
+ processFileCount(retObj.body);
 }
 
 bt.send();
@@ -237,8 +236,8 @@ In this example, the onError handler re-throws the error message within the send
 ```javascript
 var bt = new BridgeTalk;
 bt.onError = function (btObj) {
-    var errorCode = parseInt (btObj.headers ["Error-Code"]);
-    throw new Error (errorCode, btObj.body);
+ var errorCode = parseInt (btObj.headers ["Error-Code"]);
+ throw new Error (errorCode, btObj.body);
 }
 ```
 
@@ -251,12 +250,12 @@ var bt = new BridgeTalk;
 bt.target = "bridge-3.0";
 bt.body = "var tn = new Thumbnail('C/MyPhotos/temp.gif'); tn.core.immediate.size;"
 bt.onResult = function( resultMsg ) {
-    processFileSize(resultMsg.body);
+ processFileSize(resultMsg.body);
 }
 
 bt.onError = function( errorMsg ) {
-    var errCode = parseInt (errorMsg.headers ["Error-Code"]);
-    throw new Error (errCode, errorMsg.body);
+ var errCode = parseInt (errorMsg.headers ["Error-Code"]);
+ throw new Error (errCode, errorMsg.body);
 }
 
 bt.send();
@@ -272,22 +271,22 @@ The target application (Adobe Bridge) defines a static onReceive method to allow
 // Code for processing the message and sending intermediate responses
 // in the target application (Adobe Bridge)
 BridgeTalk.onReceive = function (message){
-    switch (message.type) {
-        case "iterator":
-            done = false;
-            i = 0;
-            while (!done) {
-      // the message.body uses "i" to produce different results
-      // for each execution of the message.
-      // when done, the message.body sets "done" to `true`
-      // so this onReceive method breaks out of the loop.
-      message.sendResult(eval(message.body));
-      i++;
-            }
-            break;
-        default: //"ExtendScript"
-            return eval( message.body );
-    }
+ switch (message.type) {
+ case "iterator":
+ done = false;
+ i = 0;
+ while (!done) {
+ // the message.body uses "i" to produce different results
+ // for each execution of the message.
+ // when done, the message.body sets "done" to `true`
+ // so this onReceive method breaks out of the loop.
+ message.sendResult(eval(message.body));
+ i++;
+ }
+ break;
+ default: //"ExtendScript"
+ return eval( message.body );
+ }
 }
 ```
 
@@ -321,13 +320,13 @@ else md = -1;
 
 // store intermediate results
 bt.onResult = function(rObj) {
-    resArr[idx] = rObj.body;
-    processInterResult(resArr[idx]);
-    idx++;
+ resArr[idx] = rObj.body;
+ processInterResult(resArr[idx]);
+ idx++;
 };
 
 bt.onError = function(eObj) {
-    bt.error = eObj.body
+ bt.error = eObj.body
 };
 
 bt.send();
@@ -343,13 +342,13 @@ The BridgeTalk.onReceive static callback function can return values of any type.
 
 When your message object's onResult callback receives a response, it must interpret the string it finds in the body of the response message to obtain a result of the correct type. Results of various types can be identified and processed as follows:
 
-|  Type   |                                                               Description                                                               |
-| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Number  | JavaScript allows you to access a string that contains a number directly as a number, without doing any type conversion. However, be careful when using the plus operator (+), which works with either strings or numbers. If one of the operands is a string, both operands are converted to strings and concatenated.                                             |
-| String  | No conversion is required.                                                                                                              |
-| Boolean | The result string is either "true" or "false." You can convert it to a true boolean by evaluating it with the `eval` method.                                                                                            |
-| Date    | The result string contains the date in the form: `"dow mmm dd yyyy hh:mm:ss GMT-nnnn".` For example "Wed Jun 23 2004 00:00:00 GMT-0700".                                                                                          |
-| Array   | The result string contains a comma delimited list of the elements of the array. For example, If the result array is `[12, "test", 432]`, the messaging framework flattens this into the string `"12,test,432"`. As an alternative to simply returning the array, the message target can use the `toSource` method to return the code used to create the array. In this case, the sender must reconstitute the array by using the `eval` method on the result string in the response body. See discussion below. |
+| Type | Description |
+| --- | --- |
+| Number | JavaScript allows you to access a string that contains a number directly as a number, without doing any type conversion. However, be careful when using the plus operator (+), which works with either strings or numbers. If one of the operands is a string, both operands are converted to strings and concatenated. |
+| String | No conversion is required. |
+| Boolean | The result string is either "true" or "false." You can convert it to a true boolean by evaluating it with the `eval` method. |
+| Date | The result string contains the date in the form: `"dow mmm dd yyyy hh:mm:ss GMT-nnnn".` For example "Wed Jun 23 2004 00:00:00 GMT-0700". |
+| Array | The result string contains a comma delimited list of the elements of the array. For example, If the result array is `[12, "test", 432]`, the messaging framework flattens this into the string `"12,test,432"`. As an alternative to simply returning the array, the message target can use the `toSource` method to return the code used to create the array. In this case, the sender must reconstitute the array by using the `eval` method on the result string in the response body. See discussion below. |
 
 ### Passing complex types
 
@@ -372,12 +371,12 @@ bt.target = "bridge-3.0";
 bt.body = "var arr = [10, this string, 324]; arr.toSource()";
 
 bt.onResult = function(resObj) {
-    // use eval to reconstruct the array
-    arr = eval(resObj.body);
+ // use eval to reconstruct the array
+ arr = eval(resObj.body);
 
-    // now you can access the returned array
-    for (i=0; i< arr.length(); i++)
-        doSomething(arr[i]);
+ // now you can access the returned array
+ for (i=0; i< arr.length(); i++)
+ doSomething(arr[i]);
 }
 
 // send the message
@@ -401,9 +400,9 @@ md.toSource();"
 
 //For the result, use eval to reconstruct the object
 bt.onResult = function(resObj) {
-    md = bt.result = eval(resObj.body);
-    // now you can access fname and fsize properties
-    doSomething (md.fname, md.fsize);
+ md = bt.result = eval(resObj.body);
+ // now you can access fname and fsize properties
+ doSomething (md.fname, md.fsize);
 }
 
 // send the message
@@ -426,11 +425,11 @@ tn.toSource();"
 
 //For the result, use eval to reconstruct the object
 bt.onResult = function(resObj) {
-    // use eval to reconstruct the object
-    tn = eval(resObj.body);
-    // now the script can access tn.path and tn.uri,
-    // but no other properties of the Adobe Bridge DOM Thumbnail object
-    doSomething (tn.path, tn.uri);
+ // use eval to reconstruct the object
+ tn = eval(resObj.body);
+ // now the script can access tn.path and tn.uri,
+ // but no other properties of the Adobe Bridge DOM Thumbnail object
+ doSomething (tn.path, tn.uri);
 }
 
 // send the message

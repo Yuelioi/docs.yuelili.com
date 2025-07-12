@@ -16,8 +16,8 @@ the formatting of the output. The general form of a prefix is
 
 - `-`: The result will be left justified in the field
 - `+`: A numeric value will be prefixed with either `+` for positive
-  values. A non-standard behavior of this flag is that string
-  arguments will be quoted when the `+` flag is set.
+ values. A non-standard behavior of this flag is that string
+ arguments will be quoted when the `+` flag is set.
 - `0`: For numeric values, leading zeros are used to pad the field.
 
 Width

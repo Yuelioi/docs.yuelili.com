@@ -122,7 +122,7 @@ When the application loses focus, importers receive *imQuietFile* for each file 
 
 ### Growing Files
 
-When Premiere Pro attempts to refresh a growing file (after N seconds, as determined by the preferences value), it quiets the existing importer instance, and opens a new one pointing to the same file. In response, the Importer should report the current (new) duration and, once it's determined whether the file is still growing, set  `imFileInfoRec.mayBeGrowing` appropriately.
+When Premiere Pro attempts to refresh a growing file (after N seconds, as determined by the preferences value), it quiets the existing importer instance, and opens a new one pointing to the same file. In response, the Importer should report the current (new) duration and, once it's determined whether the file is still growing, set `imFileInfoRec.mayBeGrowing` appropriately.
 
 ### Importing from Streaming Sources
 
@@ -179,7 +179,6 @@ Starting in CC, importers can support closed captioning that is embedded in the 
 :::note
 Premiere Pro can also import and export captions in a sidecar file (e.g. .mcc, .scc, or .xml) alongside any media file, regardless of the media file format. This does not require any specific work on the importer side.
 :::
-
 
 To support embedded closed captioning, set `imImportInfoRec.canSupportClosedCaptions` to true. The importer should handle the following selectors: `imInitiateAsyncClosedCaptionScan`, `imGetNextClosedCaption`, and *imCompleteAsyncClosedCaptionScan*.
 
@@ -282,10 +281,10 @@ Importers must contain a IMPT resource. Premiere uses this to identify the plugi
 
 ```cpp
 csSDK_int32 xImportEntry (
-  csSDK_int32  selector,
-  imStdParms   *stdParms,
-  void         *param1,
-  void         *param2)
+ csSDK_int32 selector,
+ imStdParms *stdParms,
+ void *param1,
+ void *param2)
 ```
 
 *selector* is the action Premiere wants the importer to perform. stdParms provides callbacks to obtain additional information from Premiere or to have Premiere perform tasks.
@@ -300,24 +299,24 @@ A pointer to this structure is sent from the host application to the plugin with
 
 ```cpp
 typedef struct {
-  csSDK_int32      imInterfaceVer;
-  imCallbackFuncs  *funcs;
-  piSuitesPtr      piSuites;
+ csSDK_int32 imInterfaceVer;
+ imCallbackFuncs *funcs;
+ piSuitesPtr piSuites;
 } imStdParms;
 ```
 
-|      Member      |                   Description                   |
-|------------------|-------------------------------------------------|
-| `imInterfaceVer` | Importer API version                            |
-|                  | - Premiere Pro CC 2014 - `IMPORTMOD_VERSION_15` |
-|                  | - Premiere Pro CC - `IMPORTMOD_VERSION_14`      |
-|                  | - Premiere Pro CS6.0.2 - `IMPORTMOD_VERSION_13` |
-|                  | - Premiere Pro CS6 - `IMPORTMOD_VERSION_12`     |
-|                  | - Premiere Pro CS5.5 - `IMPORTMOD_VERSION_11`   |
-|                  | - Premiere Pro CS5 - `IMPORTMOD_VERSION_10`     |
-|                  | - Premiere Pro CS4 - `IMPORTMOD_VERSION_9`      |
-| `funcs`          | Pointers to callbacks for importers             |
-| `piSuites`       | Pointer to universal callback suites            |
+| Member | Description |
+|---|---|
+| `imInterfaceVer` | Importer API version |
+| | - Premiere Pro CC 2014 - `IMPORTMOD_VERSION_15` |
+| | - Premiere Pro CC - `IMPORTMOD_VERSION_14` |
+| | - Premiere Pro CS6.0.2 - `IMPORTMOD_VERSION_13` |
+| | - Premiere Pro CS6 - `IMPORTMOD_VERSION_12` |
+| | - Premiere Pro CS5.5 - `IMPORTMOD_VERSION_11` |
+| | - Premiere Pro CS5 - `IMPORTMOD_VERSION_10` |
+| | - Premiere Pro CS4 - `IMPORTMOD_VERSION_9` |
+| `funcs` | Pointers to callbacks for importers |
+| `piSuites` | Pointer to universal callback suites |
 
 ---
 
@@ -325,21 +324,21 @@ typedef struct {
 
 ```cpp
 typedef struct {
-  ClassDataFuncsPtr  classFuncs;
-  csSDK_int32        unused1;
-  csSDK_int32        unused2;
+ ClassDataFuncsPtr classFuncs;
+ csSDK_int32 unused1;
+ csSDK_int32 unused2;
 } imCallbackFuncs;
 
 typedef csSDK_int32 (*importProgressFunc){
-  csSDK_int32  partDone;
-  csSDK_int32  totalToDo;
+ csSDK_int32 partDone;
+ csSDK_int32 totalToDo;
 void *trimCallbackID};
 ```
 
-|       Function       |                                                                     Description                                                                      |
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `classFuncs`         | See [ClassData functions](../../hardware/classdata-functions).                                                                                       |
-| `importProgressFunc` | Available in `imSaveFileRec` and `imTrimFileRec` during *imSaveFile8* and *imTrimFile8*.                                                             |
-|                      | Callback function pointer for use during project archiving or trimming to call into Premiere and update the progress bar and check for cancellation. |
-|                      | Either `imProgressAbort` or `imProgressCon` tinue will be returned.                                                                                  |
-|                      | The trimCallbackID parameter is passed in the same structures.                                                                                       |
+| Function | Description |
+|---|---|
+| `classFuncs` | See [ClassData functions](../../hardware/classdata-functions). |
+| `importProgressFunc` | Available in `imSaveFileRec` and `imTrimFileRec` during *imSaveFile8* and *imTrimFile8*. |
+| | Callback function pointer for use during project archiving or trimming to call into Premiere and update the progress bar and check for cancellation. |
+| | Either `imProgressAbort` or `imProgressCon` tinue will be returned. |
+| | The trimCallbackID parameter is passed in the same structures. |

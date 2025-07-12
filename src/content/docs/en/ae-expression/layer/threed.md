@@ -11,7 +11,6 @@ These attributes are related to the 3d properties of layers.
 On this page, we're going to use `thisLayer` as a sample on how to call these items, however note that any method that returns a [Layer](.././layer) will work.
 :::
 
-
 ---
 
 ## Attributes

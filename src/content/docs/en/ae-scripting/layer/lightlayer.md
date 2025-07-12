@@ -13,29 +13,28 @@ The LightLayer object represents a light layer within a composition. Create it u
 LightLayer is a subclass of [Layer object](../layer). All methods and attributes of Layer are available when working with Light-Layer.
 :::
 
-
 #### AE Properties
 
 LightLayer defines no additional attributes, but has different AE properties than other layer types. It has thefollowing properties and property groups:
 
 - `Marker`
 - `Transform`:
-    - `PointofInterest`
-    - `Position`
-    - `Scale`
-    - `Orientation`
-    - `XRotation`
-    - `YRotation`
-    - `Rotation`
-    - `Opacity`
+ - `PointofInterest`
+ - `Position`
+ - `Scale`
+ - `Orientation`
+ - `XRotation`
+ - `YRotation`
+ - `Rotation`
+ - `Opacity`
 - `LightOptions`:
-    - `Intensity`
-    - `Color`
-    - `ConeAngle`
-    - `ConeFeather`
-    - `CastsShadows`
-    - `ShadowDarkness`
-    - `ShadowDiffusion`
+ - `Intensity`
+ - `Color`
+ - `ConeAngle`
+ - `ConeFeather`
+ - `CastsShadows`
+ - `ShadowDarkness`
+ - `ShadowDiffusion`
 
 ---
 
@@ -49,7 +48,6 @@ LightLayer defines no additional attributes, but has different AE properties tha
 
 In After Effects (Beta) 25.2.0.098, it was updated to allow any 2D layer type as a source.
 :::
-
 
 #### Description
 
@@ -66,7 +64,6 @@ For a light layer, the layer to use as a light source when `LightLayer.lightType
 :::note
 `LightType.ENVIRONMENT` was added in After Effects 24.3
 :::
-
 
 #### Description
 

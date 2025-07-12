@@ -36,16 +36,16 @@ title: 插件属性列表 (PiPL) 资源
 resource 'PiPL' (16000) {
 {
 
-  // 插件类型
-  Kind {PrImporter},
+ // 插件类型
+ Kind {PrImporter},
 
-  // 出现在 Premiere 菜单中的名称，可以本地化
-  Name {plugInName},
+ // 出现在 Premiere 菜单中的名称，可以本地化
+ Name {plugInName},
 
-  // 此插件的内部名称 - 不要本地化此名称。此名称用于 Premiere 和 After Effects 插件。
-  AE_Effect_Match_Name {plugInMatchName}
+ // 此插件的内部名称 - 不要本地化此名称。此名称用于 Premiere 和 After Effects 插件。
+ AE_Effect_Match_Name {plugInMatchName}
 
-  // 转场和视频滤镜在此定义更多的 PiPL 属性
+ // 转场和视频滤镜在此定义更多的 PiPL 属性
 }
 
 };

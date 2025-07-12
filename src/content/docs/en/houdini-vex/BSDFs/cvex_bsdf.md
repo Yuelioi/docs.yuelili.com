@@ -138,22 +138,22 @@ Validation
 There are 2 main approaches available to verify whether you have implemented the `cvex_bsdf` evaluation and sampling functions correctly.
 
 - You can use mantra’s multiple importance sampling algorithm to
-  ensure that renders match in brightness apart from noise for different
-  sampling techniques. To do this, create an environment light (with a
-  map assigned) and render with different values of the **MIS Bias**
-  parameter. You will need to add the **MIS Bias** parameter from the
-  rendering properties dialog, since it is not available on the light by
-  default. A value of -1 means to sample only from the BSDF while a value
-  of 1 means to sample only from light source. To verify the `refl` value
-  in the sampling function, set the environment light rendering mode to
-  **Ray Tracing Background**. If the rendered results are the same
-  (apart from noise) with values of -1, 0, 1, and for ray tracing
-  background, your shader is bias-free.
+ ensure that renders match in brightness apart from noise for different
+ sampling techniques. To do this, create an environment light (with a
+ map assigned) and render with different values of the **MIS Bias**
+ parameter. You will need to add the **MIS Bias** parameter from the
+ rendering properties dialog, since it is not available on the light by
+ default. A value of -1 means to sample only from the BSDF while a value
+ of 1 means to sample only from light source. To verify the `refl` value
+ in the sampling function, set the environment light rendering mode to
+ **Ray Tracing Background**. If the rendered results are the same
+ (apart from noise) with values of -1, 0, 1, and for ray tracing
+ background, your shader is bias-free.
 - Second, the [Verify BSDF](../../nodes/obj/verifybsdf.html) object can be used to
-  verify that the albedo, pdf, and sampling function all align correctly
-  and that they integrate to the correct values. This approach uses
-  point-based random sampling in SOPs and additionally will show the
-  shape of the BSDF visually as a polar point cloud.
+ verify that the albedo, pdf, and sampling function all align correctly
+ and that they integrate to the correct values. This approach uses
+ point-based random sampling in SOPs and additionally will show the
+ shape of the BSDF visually as a polar point cloud.
 
 Examples
 
@@ -176,27 +176,27 @@ Evaluation shader:
 #include "pbr.h"
 
 cvex diffuse_eval(
-    vector u = 0;
-    vector v = 0;
-    int bounces = 0;
-    int reverse = 0;
-    export vector refl = 0;
-    export vector eval = 0;
-    export float pdf = 0;
+ vector u = 0;
+ vector v = 0;
+ int bounces = 0;
+ int reverse = 0;
+ export vector refl = 0;
+ export vector eval = 0;
+ export float pdf = 0;
 
-    int mybounces = 0;
-    vector N = 0)
+ int mybounces = 0;
+ vector N = 0)
 {
-    if (bounces & mybounces)
-    {
-        // If evaluating reversed, the incoming light direction is needed for
-        // evaluation rather than the outgoing direction.  The select statement
-        // swaps based on the value of the "reverse" toggle.
-        vector vvec = select(reverse, u, v);
-        pdf = max(dot(vvec, normalize(N)), 0);
-        eval = pdf;
-        refl = 0.5;
-    }
+ if (bounces & mybounces)
+ {
+ // If evaluating reversed, the incoming light direction is needed for
+ // evaluation rather than the outgoing direction. The select statement
+ // swaps based on the value of the "reverse" toggle.
+ vector vvec = select(reverse, u, v);
+ pdf = max(dot(vvec, normalize(N)), 0);
+ eval = pdf;
+ refl = 0.5;
+ }
 }
 
 ```
@@ -208,38 +208,38 @@ Sample shader:
 #include "pbr.h"
 
 cvex diffuse_sample(
-    vector u = 0;
-    float sx = 0;
-    float sy = 0;
-    int bounces = 0;
+ vector u = 0;
+ float sx = 0;
+ float sy = 0;
+ int bounces = 0;
 
-    export vector refl = 0;
-    export vector v = 0;
-    export int bouncetype = 0;
-    export float pdf = 0;
+ export vector refl = 0;
+ export vector v = 0;
+ export int bouncetype = 0;
+ export float pdf = 0;
 
-    int mybounces = 0;
-    vector N = 0)
+ int mybounces = 0;
+ vector N = 0)
 {
-    if (bounces & mybounces)
-    {
-        vector nml = normalize(N);
+ if (bounces & mybounces)
+ {
+ vector nml = normalize(N);
 
-        v = set(cos(sx*PI*2), sin(sx*PI*2), 0);
-        v *= sqrt(sy);
-        v.z = sqrt(1-sy);
+ v = set(cos(sx*PI*2), sin(sx*PI*2), 0);
+ v *= sqrt(sy);
+ v.z = sqrt(1-sy);
 
-        pdf = 2*v.z;
+ pdf = 2*v.z;
 
-        // Transform v into the reference frame for nml
-        vector framex = normalize(cross(nml, u));
-        vector framey = cross(nml, framex);
+ // Transform v into the reference frame for nml
+ vector framex = normalize(cross(nml, u));
+ vector framey = cross(nml, framex);
 
-        v = framex * v.x + framey * v.y + nml*v.z;
+ v = framex * v.x + framey * v.y + nml*v.z;
 
-        bouncetype = mybounces;
-        refl = 0.5; // Luminance needs to match albedo
-    }
+ bouncetype = mybounces;
+ refl = 0.5; // Luminance needs to match albedo
+ }
 }
 
 ```
@@ -261,18 +261,18 @@ Evaluation shader:
 #include "pbr.h"
 
 cvex specular_eval(
-    vector u = 0;
-    vector v = 0;
-    int bounces = 0;
-    int reverse = 1;
-    export vector refl = 0;
-    export vector eval = 0; // Delta bsdf
+ vector u = 0;
+ vector v = 0;
+ int bounces = 0;
+ int reverse = 1;
+ export vector refl = 0;
+ export vector eval = 0; // Delta bsdf
 
-    int mybounces = 0;
-    vector dir = 0)
+ int mybounces = 0;
+ vector dir = 0)
 {
-    if (bounces & mybounces)
-        refl = 1;
+ if (bounces & mybounces)
+ refl = 1;
 }
 
 ```
@@ -284,26 +284,26 @@ Sample shader:
 #include "pbr.h"
 
 cvex specular_sample(
-    vector u = 0;
-    float sx = 0;
-    float sy = 0;
-    int bounces = 0;
+ vector u = 0;
+ float sx = 0;
+ float sy = 0;
+ int bounces = 0;
 
-    export vector refl = 0;
-    export vector v = 0;
-    export int bouncetype = 0;
-    export float pdf = 0;
+ export vector refl = 0;
+ export vector v = 0;
+ export int bouncetype = 0;
+ export float pdf = 0;
 
-    int mybounces = 0;
-    vector dir = 0)
+ int mybounces = 0;
+ vector dir = 0)
 {
-    if (bounces & mybounces)
-    {
-        pdf = 1e6F;
-        v = dir;
-        bouncetype = mybounces;
-        refl = 1; // Needs to match albedo
-    }
+ if (bounces & mybounces)
+ {
+ pdf = 1e6F;
+ v = dir;
+ bouncetype = mybounces;
+ refl = 1; // Needs to match albedo
+ }
 }
 
 ```

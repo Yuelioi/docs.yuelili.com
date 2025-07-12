@@ -13,7 +13,6 @@ The RQItemCollection contains all of the render-queue items in a project, as sho
 RQItemCollection is a subclass of [Collection object](../../other/collection). All methods and attributes of Collection are available when working with RQItemCollection.
 :::
 
-
 ---
 
 ## Methods
@@ -28,9 +27,9 @@ Adds a composition to the Render Queue, creating a RenderQueueItem.
 
 #### Parameters
 
-| Parameter |                  Type                   |         Description          |
-| --------- | --------------------------------------- | ---------------------------- |
-| `comp`    | [CompItem object](../../item/compitem) | The composition to be added. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `comp` | [CompItem object](../../item/compitem) | The composition to be added. |
 
 #### Returns
 

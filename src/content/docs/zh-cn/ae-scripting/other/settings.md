@@ -41,11 +41,11 @@ title: 设置
 
 #### 参数
 
-|   参数   |     类型    |         描述         |
-| --- | --------- | --------- |
-| `sectionName` | 字符串         | 设置部分的名称。     |
-| `keyName`   | 字符串         | 设置项的键名。     |
-| `prefType`  | [`PREFType` 枚举](../preferences#preftype-enum) | 可选。指定要使用的偏好文件。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `sectionName` | 字符串 | 设置部分的名称。 |
+| `keyName` | 字符串 | 设置项的键名。 |
+| `prefType` | [`PREFType` 枚举](../preferences#preftype-enum) | 可选。指定要使用的偏好文件。 |
 
 #### 返回
 
@@ -72,11 +72,11 @@ alert("设置值为: " + trimPrecompsSetting);
 
 #### 参数
 
-|   参数   |     类型    |         描述         |
-| --- | --------- | --------- |
-| `sectionName` | 字符串         | 设置部分的名称。     |
-| `keyName`   | 字符串         | 设置项的键名。     |
-| `prefType`  | [`PREFType` 枚举](../preferences#preftype-enum) | 可选。指定要使用的偏好文件。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `sectionName` | 字符串 | 设置部分的名称。 |
+| `keyName` | 字符串 | 设置项的键名。 |
+| `prefType` | [`PREFType` 枚举](../preferences#preftype-enum) | 可选。指定要使用的偏好文件。 |
 
 #### 返回
 
@@ -98,12 +98,12 @@ alert("设置值为: " + trimPrecompsSetting);
 
 #### 参数
 
-|   参数   |     类型    |         描述         |
-| --- | --------- | --------- |
-| `sectionName` | 字符串         | 设置部分的名称。     |
-| `keyName`   | 字符串         | 设置项的键名。     |
-| `value`     | 字符串         | 新值。      |
-| `prefType`  | [`PREFType` 枚举](../preferences#preftype-enum) | 可选。指定要使用的偏好文件。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `sectionName` | 字符串 | 设置部分的名称。 |
+| `keyName` | 字符串 | 设置项的键名。 |
+| `value` | 字符串 | 新值。 |
+| `prefType` | [`PREFType` 枚举](../preferences#preftype-enum) | 可选。指定要使用的偏好文件。 |
 
 #### 返回
 

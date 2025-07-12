@@ -138,9 +138,9 @@ Gets the marker color index.
 
 #### Parameters
 
-| Parameter |  Type   |           Description           |
-| --------- | ------- | ------------------------------- |
-| `index`   | Integer | Index of the marker to be read. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | Integer | Index of the marker to be read. |
 
 #### Returns
 
@@ -213,10 +213,10 @@ Sets the marker color by index. Color indices listed below.
 
 #### Parameters
 
-|   Parameter   |  Type   |      Description       |
-| ------------- | ------- | ------------------------------------------ |
-| `colorIndex`  | Integer | Index of the color to apply to the marker. |
-| `markerIndex` | Integer | Index of the marker to be set.   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `colorIndex` | Integer | Index of the color to apply to the marker. |
+| `markerIndex` | Integer | Index of the marker to be set. |
 
 #### Returns
 

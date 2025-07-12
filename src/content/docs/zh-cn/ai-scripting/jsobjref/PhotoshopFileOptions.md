@@ -117,6 +117,6 @@ psdOptions.pixelAspectRatioCorrection = false;
 // 使用这些首选项打开文件
 var fileRef = File(psdFilePath);
 if (fileRef != null) {
-    var docRef = open(fileRef, DocumentColorSpace.RGB);
+ var docRef = open(fileRef, DocumentColorSpace.RGB);
 }
 ```

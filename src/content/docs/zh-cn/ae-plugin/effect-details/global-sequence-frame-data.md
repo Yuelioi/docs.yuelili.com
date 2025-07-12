@@ -55,15 +55,15 @@ After Effects 在重新加载数据时发送 [PF_Cmd_SEQUENCE_RESETUP](../../eff
 
 ```cpp
 typedef struct {
-    A_char*    messageZ;
-    PF_FpLong  big_numF;
-    void*      temp_storage;
+ A_char* messageZ;
+ PF_FpLong big_numF;
+ void* temp_storage;
 } non_flat_data;
 
 typedef struct {
-    char       message[256];
-    PF_FpLong  big_numF;
-    A_Boolean  big_endianB;
+ char message[256];
+ PF_FpLong big_numF;
+ A_Boolean big_endianB;
 } flat_data;
 ```
 
@@ -97,32 +97,32 @@ typedef struct {
 
 ### PF_EffectSequenceDataSuite1
 
-| 函数          | 用途    |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `PF_GetConstSequenceData` | 在为效果启用多帧渲染时，检索渲染线程的只读常量 sequence_data 对象。        |
-|       | `<pre lang="cpp">`PF_Err(*PF_GetConstSequenceData)(``PF_ProgPtr effect_ref,``  PF_ConstHandle \*sequence_data);`</pre>` |
+| 函数 | 用途 |
+| --- | --- |
+| `PF_GetConstSequenceData` | 在为效果启用多帧渲染时，检索渲染线程的只读常量 sequence_data 对象。 |
+| | `<pre lang="cpp">`PF_Err(*PF_GetConstSequenceData)(``PF_ProgPtr effect_ref,``  PF_ConstHandle \*sequence_data);`</pre>` |
 
 ```cpp
 static PF_Err Render(
-    PF_InData   *in_dataP,
-    PF_OutData  *out_dataP,
-    PF_ParamDef *params[],
-    PF_LayerDef *output )
+ PF_InData *in_dataP,
+ PF_OutData *out_dataP,
+ PF_ParamDef *params[],
+ PF_LayerDef *output )
 {
-    PF_ConstHandle seq_handle;
+ PF_ConstHandle seq_handle;
 
-    AEFX_SuiteScoper<PF_EffectSequenceDataSuite1> seqdata_suite =
-        AEFX_SuiteScoper<PF_EffectSequenceDataSuite1>(
-     in_dataP,
-     kPFEffectSequenceDataSuite,
-     kPFEffectSequenceDataSuiteVersion1,
-     out_dataP);
+ AEFX_SuiteScoper<PF_EffectSequenceDataSuite1> seqdata_suite =
+ AEFX_SuiteScoper<PF_EffectSequenceDataSuite1>(
+ in_dataP,
+ kPFEffectSequenceDataSuite,
+ kPFEffectSequenceDataSuiteVersion1,
+ out_dataP);
 
-    PF_ConstHandle const_seq;
-    seqdata_suite->PF_GetConstSequenceData(in_data->effect_ref, &const_seq);
+ PF_ConstHandle const_seq;
+ seqdata_suite->PF_GetConstSequenceData(in_data->effect_ref, &const_seq);
 
-    // 将 const_seq 转换为存储到 sequence_data 时使用的类型
+ // 将 const_seq 转换为存储到 sequence_data 时使用的类型
 
-    // 渲染函数的其余代码...
+ // 渲染函数的其余代码...
 }
 ```

@@ -62,15 +62,15 @@ VS Code 扩展允许你通过命令行导出单个文件或整个目录，但这
 所有文件都保存在同一目录中，并使用相同的文件名（尽管后缀为 .jsxbin）。任何传递的目录都将被递归遍历。
 
 1. 在扩展安装目录中，有一个 `exportToJSX.js` 脚本文件，它接受要转换的文件路径或目录。我们需要获取此路径。
-   - 注意，你需要将 X.X.X 替换为当前版本号
-   - MacOS: `$HOME/.vscode/extensions/adobe.extendscript-debug-X.X.X/public-scripts/exportToJSX.js`
-   - Windows: `%USERPROFILE%\.vscode\extensions\adobe.extendscript-debug-X.X.X\public-scripts\exportToJSX.js`
+ - 注意，你需要将 X.X.X 替换为当前版本号
+ - MacOS: `$HOME/.vscode/extensions/adobe.extendscript-debug-X.X.X/public-scripts/exportToJSX.js`
+ - Windows: `%USERPROFILE%\.vscode\extensions\adobe.extendscript-debug-X.X.X\public-scripts\exportToJSX.js`
 2. 此脚本接受几个参数；
-   - `-f`, `--force`: 如果 '.jsxbin' 文件已存在，则覆盖它
-   - `-n`, `--name`: '.js/.jsx' 脚本路径或包含这些文件的目录路径。
-   - `h`, `--help`: 显示帮助信息并退出
+ - `-f`, `--force`: 如果 '.jsxbin' 文件已存在，则覆盖它
+ - `-n`, `--name`: '.js/.jsx' 脚本路径或包含这些文件的目录路径。
+ - `h`, `--help`: 显示帮助信息并退出
 3. 运行脚本
-   - 在命令行中运行 `node path/to/exportToJSX.js [options] [file/directory]`
+ - 在命令行中运行 `node path/to/exportToJSX.js [options] [file/directory]`
 
 #### 示例
 

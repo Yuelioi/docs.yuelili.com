@@ -36,16 +36,16 @@ For more information on the `ANIM_FilterInfo` and `ANIM_ParamAtom`, see the reso
 resource 'PiPL' (16000) {
 {
 
-  // The plugin type
-  Kind {PrImporter},
+ // The plugin type
+ Kind {PrImporter},
 
-  // The name as it will appear in a Premiere menu, this can be localized
-  Name {plugInName},
+ // The name as it will appear in a Premiere menu, this can be localized
+ Name {plugInName},
 
-  // The internal name of this plugin - do not localize this. This is used for both Premiere and After Effects plugins.
-  AE_Effect_Match_Name {plugInMatchName}
+ // The internal name of this plugin - do not localize this. This is used for both Premiere and After Effects plugins.
+ AE_Effect_Match_Name {plugInMatchName}
 
-  // Transitions and video filters define more PiPL attributes here
+ // Transitions and video filters define more PiPL attributes here
 }
 
 };

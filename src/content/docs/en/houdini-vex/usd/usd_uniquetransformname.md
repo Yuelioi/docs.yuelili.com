@@ -39,6 +39,6 @@ Examples
 
 ```vex
 // Construct a unique full name for a translation operation with suffix "cone_pivot"
-string unique_xform_name  = usd_uniquetransformname(0, "/geo/cone", USD_XFORM_TRANSLATE, "cone_pivot");
+string unique_xform_name = usd_uniquetransformname(0, "/geo/cone", USD_XFORM_TRANSLATE, "cone_pivot");
 
 ```

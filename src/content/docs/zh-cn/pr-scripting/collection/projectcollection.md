@@ -7,13 +7,11 @@ title: ProjectCollection 对象
 
 `app.production.projects`
 
-
 ProjectCollection 对象表示 [Project 对象](../../general/project) 的集合。
 
 :::info
 ProjectCollection 是 [Collection 对象](../collection) 的子类。除了下面列出的方法和属性外，Collection 的所有方法和属性在操作 ProjectCollection 时都可用。
 :::
-
 
 ---
 
@@ -24,7 +22,6 @@ ProjectCollection 是 [Collection 对象](../collection) 的子类。除了下�
 `app.projects.numProjects`
 
 `app.production.projects.numProjects`
-
 
 #### 描述
 

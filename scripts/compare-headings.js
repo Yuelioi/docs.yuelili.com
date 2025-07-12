@@ -1,3 +1,9 @@
+/**
+ * 对比英文和中文文档的标题数量 判断是否少翻译
+ */
+
+
+
 import fs from 'fs/promises';
 import path from 'path';
 import fg from 'fast-glob';

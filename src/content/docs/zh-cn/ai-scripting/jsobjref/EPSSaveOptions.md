@@ -220,18 +220,18 @@ EPS 预览图像的格式。
 // destFile 包含完整路径和文件名
 
 function exportFileAsEPS(destFile) {
-    var newFile = new File(destFile);
-    var saveDoc;
-    if (app.documents.length == 0) {
-        saveDoc = app.documents.add();
-    } else {
-        saveDoc = app.activeDocument;
-    }
+ var newFile = new File(destFile);
+ var saveDoc;
+ if (app.documents.length == 0) {
+ saveDoc = app.documents.add();
+ } else {
+ saveDoc = app.activeDocument;
+ }
 
-    var saveOpts = new ePSSaveOptions();
-    saveOpts.cmykPostScript = true;
-    saveOpts.embedAllFonts = true;
+ var saveOpts = new ePSSaveOptions();
+ saveOpts.cmykPostScript = true;
+ saveOpts.embedAllFonts = true;
 
-    saveDoc.saveAs(newFile, saveOpts);
+ saveDoc.saveAs(newFile, saveOpts);
 }
 ```

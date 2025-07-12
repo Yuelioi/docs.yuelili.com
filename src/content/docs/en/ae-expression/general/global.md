@@ -127,9 +127,9 @@ Retrieves another composition by name.
 
 #### Parameters
 
-| Parameter |  Type  |            Description             |
-| --------- | ------ | ---------------------------------- |
-| `name`    | String | The name of the composition to get |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | The name of the composition to get |
 
 #### Returns
 
@@ -147,9 +147,9 @@ Retrieves a footage item by name.
 
 #### Parameters
 
-| Parameter |  Type  |             Description             |
-| --------- | ------ | ----------------------------------- |
-| `name`    | String | The name of the footage item to get |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | The name of the footage item to get |
 
 #### Returns
 
@@ -167,8 +167,8 @@ This expression allows you to set the frame rate for a property to be lower than
 
 #### Parameters
 
-|     Parameter      |  Type  |                           Description                           |
-| ------------------ | ------ | --------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `updatesPerSecond` | Number | The *number of times per second* the expression should evaluate |
 
 #### Returns

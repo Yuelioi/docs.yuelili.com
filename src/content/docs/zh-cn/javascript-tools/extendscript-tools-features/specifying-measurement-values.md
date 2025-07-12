@@ -21,23 +21,23 @@ myVal = new UnitValue (value, "unit");
 
 `value` 是一个数字，`unit` 用一个字符串指定，可以是缩写、单数或复数形式，如下表所示。
 
-| 缩写   | 单数形式   | 复数形式   | 备注   |
-| ---------- | ------------------- | ------------------- | ------------------- |
-| `"in"`     | `"inch"`   | `"inches"`      | 2.54 厘米       |
-| `"ft"`     | `"foot"`   | `"feet"`   | 30.48 厘米      |
-| `"yd"`     | `"yard"`   | `"yards"`       | 91.44 厘米      |
-| `"mi"`     | `"mile"`   | `"miles"`       | 1609.344 米     |
-| `"mm"`     | `"millimeter"`      | `"millimeters"`     |    |
-| `"cm"`     | `"centintimeter"`   | `"centimeters"`     |    |
-| `"m"`      | `"meter"`       | `"meters"`      |    |
-| `"km"`     | `"kilometer"`   | `"kilometers"`      |    |
-| `"pt"`     | `"point"`       | `"points"`      | 英寸 / 72       |
-| `"pc"`     | `"pica"`   | `"picas"`       | 点数 * 12       |
-| `"tpt"`    | `"traditional point"` | `"traditional points"` | 英寸 / 72.27   |
-| `"tpc"`    | `"traditional pica"` | `"traditional picas"` | 12 tpt    |
-| `"ci"`     | `"cicero"`      | `"ciceros"`     | 12.7872 点      |
-| `"px"`     | `"pixel"`       | `"pixels"`      | 无基准（见下文）    |
-| `"%"`      | `"percent"`     | `"percent"`     | 无基准（见下文）    |
+| 缩写 | 单数形式 | 复数形式 | 备注 |
+| --- | --- | --- | --- |
+| `"in"` | `"inch"` | `"inches"` | 2.54 厘米 |
+| `"ft"` | `"foot"` | `"feet"` | 30.48 厘米 |
+| `"yd"` | `"yard"` | `"yards"` | 91.44 厘米 |
+| `"mi"` | `"mile"` | `"miles"` | 1609.344 米 |
+| `"mm"` | `"millimeter"` | `"millimeters"` | |
+| `"cm"` | `"centintimeter"` | `"centimeters"` | |
+| `"m"` | `"meter"` | `"meters"` | |
+| `"km"` | `"kilometer"` | `"kilometers"` | |
+| `"pt"` | `"point"` | `"points"` | 英寸 / 72 |
+| `"pc"` | `"pica"` | `"picas"` | 点数 * 12 |
+| `"tpt"` | `"traditional point"` | `"traditional points"` | 英寸 / 72.27 |
+| `"tpc"` | `"traditional pica"` | `"traditional picas"` | 12 tpt |
+| `"ci"` | `"cicero"` | `"ciceros"` | 12.7872 点 |
+| `"px"` | `"pixel"` | `"pixels"` | 无基准（见下文） |
+| `"%"` | `"percent"` | `"percent"` | 无基准（见下文） |
 
 如果提供了未知的单位类型，类型将设置为 `"?"`，并且 `UnitValue` 对象将打印为 `"UnitValue 0.00000"`。
 
@@ -113,8 +113,8 @@ Number
 
 #### 参数
 
-| 参数   | 类型   | 描述        |
-| ------ | ------ | -------------------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `unit` | String | 单位类型的缩写形式；例如，`"cm"` 或 `"in"`。 |
 
 #### 返回
@@ -135,8 +135,8 @@ Number
 
 #### 参数
 
-| 参数   | 类型   | 描述        |
-| ------ | ------ | -------------------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `unit` | String | 单位类型的缩写形式；例如，`"cm"` 或 `"in"`。 |
 
 #### 返回
@@ -211,12 +211,12 @@ myVal.convert ("px"); // => value=72 type=px
 
 ### 一元操作符 `(~, !, +, -)`
 
-| 操作符   | 行为        |
-| ------------ | -------------------------------------------------------------------- |
+| 操作符 | 行为 |
+| --- | --- |
 | `~unitValue` | 结果是一个新的 `UnitValue`，具有相同的类型，但值转换为 32 位整数并按位取反。 |
-| `!unitValue` | 如果数值非零，则结果为 `true`，否则为 `false`。     |
-| `+unitValue` | 结果是一个新的 `UnitValue`，具有与原始对象相同的类型和值。       |
-| `-unitValue` | 结果是一个新的 `UnitValue`，具有与原始对象相同的类型和取反的值。     |
+| `!unitValue` | 如果数值非零，则结果为 `true`，否则为 `false`。 |
+| `+unitValue` | 结果是一个新的 `UnitValue`，具有与原始对象相同的类型和值。 |
+| `-unitValue` | 结果是一个新的 `UnitValue`，具有与原始对象相同的类型和取反的值。 |
 
 ### 二元操作符 `(+, -, *, /, %)`
 
@@ -254,7 +254,7 @@ b + a;
 ```javascript
 a = new UnitValue ("98 cm");
 b = new UnitValue ("1 m");
-a < b;   // => true
-a < 1;   // => false
+a < b; // => true
+a < 1; // => false
 a == 98; // => true
 ```

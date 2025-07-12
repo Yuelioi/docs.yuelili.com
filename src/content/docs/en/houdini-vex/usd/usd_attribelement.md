@@ -47,6 +47,6 @@ float a = usd_attribelement("opinput:0", "/geo/cube", "array_attrib_name", 3);
 
 // Get the value of an element at index 2 of the "bar" array attribute.
 @b_element_2_at_current_frame = usd_attribelement(0, "/geo/sphere", "bar", 2);
-@b_element_2_at_frame_11      = usd_attribelement(0, "/geo/sphere", "bar", 2, 11.0);
+@b_element_2_at_frame_11 = usd_attribelement(0, "/geo/sphere", "bar", 2, 11.0);
 
 ```

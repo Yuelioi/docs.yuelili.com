@@ -21,7 +21,6 @@ These are typically accessed in a few ways, most commonly:
 On this page, we're going to use `thisComp` as a sample on how to call these items, however note that any method that returns a [Comp](#) will work.
 :::
 
-
 ---
 
 ## Attributes
@@ -125,7 +124,6 @@ Returns a given composition's [Marker](.././marker-property) property.
 If you have a project created in a previous version of After Effects that uses composition marker numbers in expressions, you must change those calls to use `marker.key(name)` instead. Because the default name of a composition marker is a number, converting the reference to use the name is often just a matter of surrounding the number with quotation marks.
 :::
 
-
 #### Type
 
 [Marker Property](.././marker-property)
@@ -153,7 +151,6 @@ String
 :::note
 This functionality was added in After Effects CS5.5
 :::
-
 
 #### Description
 
@@ -267,12 +264,12 @@ If using the `otherLayer, relIndex` call, this retrieves the layer that is `relI
 
 #### Parameters
 
-|  Parameter   |            Type            |                         Description                          |
-|--------------|----------------------------|--------------------------------------------------------------|
-| `index`      | Number                     | Layer name or index to get.                                  |
-| `name`       | String                     |                                                              |
-| `otherLayer` | [Layer](../../layer/layer) | The "other" layer to start getting layers relative to        |
-| `relIndex`   | Number                     | The number of layers to move above or below the `otherLayer` |
+| Parameter | Type | Description |
+|---|---|---|
+| `index` | Number | Layer name or index to get. |
+| `name` | String | |
+| `otherLayer` | [Layer](../../layer/layer) | The "other" layer to start getting layers relative to |
+| `relIndex` | Number | The number of layers to move above or below the `otherLayer` |
 
 #### Returns
 
@@ -313,8 +310,8 @@ The matches are simple text matches. They will match partial words, and are case
 
 #### Parameters
 
-| Parameter |  Type  |           Description            |
-| --------- | ------ | -------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `comment` | String | The comment to find a layer from |
 
 #### Returns

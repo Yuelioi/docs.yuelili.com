@@ -7,14 +7,14 @@ ScriptUI allows you to draw directly on controls to customize their appearance. 
 
 These methods take as parameters a number of helper objects that encapsulate drawing information, including the following:
 
-|                                     Object                                     |                                                                Description                                                                |
-| ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Object | Description |
+| --- | --- |
 | [ScriptUIGraphics](../graphic-customization-objects#scriptuigraphics-object) | Encapsulates the drawing methods. The graphics object is associated with each control is found in the control object's graphics property. |
-| [ScriptUIBrush](../graphic-customization-objects#scriptuibrush-object)       | Describes the brush used to paint textures in a control.                                                                                  |
-| [ScriptUIFont](../graphic-customization-objects#scriptuifont-object)         | Describes the font used to write text into a control.                                                                                     |
-| [ScriptUIImage](../graphic-customization-objects#scriptuiimage-object)       | Describes an image to be drawn in a control.                                                                                              |
-| [ScriptUIPath](../graphic-customization-objects#scriptuipath-object)         | Describes a drawing path for a figure to be drawn into a control.                                                                         |
-| [ScriptUIPen](../graphic-customization-objects#scriptuipen-object)           | Describes the pen used to draw lines in a control.                                                                                        |
+| [ScriptUIBrush](../graphic-customization-objects#scriptuibrush-object) | Describes the brush used to paint textures in a control. |
+| [ScriptUIFont](../graphic-customization-objects#scriptuifont-object) | Describes the font used to write text into a control. |
+| [ScriptUIImage](../graphic-customization-objects#scriptuiimage-object) | Describes an image to be drawn in a control. |
+| [ScriptUIPath](../graphic-customization-objects#scriptuipath-object) | Describes a drawing path for a figure to be drawn into a control. |
+| [ScriptUIPen](../graphic-customization-objects#scriptuipen-object) | Describes the pen used to draw lines in a control. |
 
 For details of these objects, see [Graphic customization objects](.././graphic-customization-objects).
 
@@ -30,9 +30,9 @@ g.backgroundColor = myBrush;
 
 These examples in the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) demonstrates how to use graphic customization objects:
 
-|                                                                Example                                                                |                                                          Description                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| [ColorSelector.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/ColorSelector.jsx) | Uses graphic objects to change the background color of a window as the user selects the color value with a slider.            |
-| [ColorPicker.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/ColorPicker.jsx)     | A more complex version of the color-selection dialog shows how to use additional graphics objects, including fonts and paths. |
+| Example | Description |
+| --- | --- |
+| [ColorSelector.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/ColorSelector.jsx) | Uses graphic objects to change the background color of a window as the user selects the color value with a slider. |
+| [ColorPicker.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/ColorPicker.jsx) | A more complex version of the color-selection dialog shows how to use additional graphics objects, including fonts and paths. |
 
 In addition, the [Custom element class](../graphic-customization-objects#custom-element-class) allows you to define completely customized elements of several types (ranges, buttons, lists), whose appearance is rendered entirely by your [onDraw](../control-objects#ondraw) implementation.

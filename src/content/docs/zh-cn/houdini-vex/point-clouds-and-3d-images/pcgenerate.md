@@ -25,15 +25,15 @@ int ohandle, ghandle, rval;
 ghandle = pcgenerate(texturename, npoints);
 while (pcunshaded(ghandle, "P"))
 {
-    // 计算'position'...
-    rval = pcexport(ghandle, "P", position);
+ // 计算'position'...
+ rval = pcexport(ghandle, "P", position);
 }
 
 ohandle = pcopen(texturename, "P", P, maxdistance, maxpoints);
 while (pciterate(ohandle))
 {
-    rval = pcimport(ohandle, "P", position);
-    // 对'position'进行处理...
+ rval = pcimport(ohandle, "P", position);
+ // 对'position'进行处理...
 }
 
 pcclose(ohandle);

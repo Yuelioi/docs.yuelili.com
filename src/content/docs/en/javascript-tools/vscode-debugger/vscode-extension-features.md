@@ -9,7 +9,6 @@ Once you have the Extendscript VS Code Extension up and running, there are a few
 This guide is meant to give insight on how to use specific Extendscript for VS Code features.
 :::
 
-
 If you're looking on how to get up and running with the extension, see [Getting Started with the VS Code Debugger](../getting-started-with-vscode-debugger).
 
 ---
@@ -56,7 +55,6 @@ The VS Code extension allows you to export either single files or entire directo
 While there is a built-in way to do it, it can be a fairly unfriendly process. As an alternative, consider the gulp-accessible [npm package jsxbin](https://www.npmjs.com/package/jsxbin). It does the same as below, but with much less user involvement.
 :::
 
-
 There are reports that this package has issues on Windows. As an alternative gulp task, you can try [this script](https://bitbucket.org/motiondesign/workspace/snippets/aLzaX5) from [Justin Taylor](http://justintaylor.tv/).
 
 Both methods above require the VS Code extension be installed.
@@ -64,15 +62,15 @@ Both methods above require the VS Code extension be installed.
 All of the files are saved in the same directory with the same filename (though the suffix will be .jsxbin). Any passed directories will be recursively traversed.
 
 1. Within the Extension install directory, there's a `exportToJSX.js` script file that accepts a file path or directory to convert. We need to get this path.
-    - Note that you'll need to swap X.X.X with the current version #
-    - MacOS: `$HOME/.vscode/extensions/adobe.extendscript-debug-X.X.X/public-scripts/exportToJSX.js`
-    - Windows: `%USERPROFILE%\.vscode\extensions\adobe.extendscript-debug-X.X.X\public-scripts\exportToJSX.js`
+ - Note that you'll need to swap X.X.X with the current version #
+ - MacOS: `$HOME/.vscode/extensions/adobe.extendscript-debug-X.X.X/public-scripts/exportToJSX.js`
+ - Windows: `%USERPROFILE%\.vscode\extensions\adobe.extendscript-debug-X.X.X\public-scripts\exportToJSX.js`
 2. This script accepts a few arguments;
-    - `-f`, `--force`: Overwrite the '.jsxbin' file/files if already exists
-    - `-n`, `--name`: The '.js/.jsx' script path or path to some directory having these files.
-    - `h`, `--help`: Show this help and exit
+ - `-f`, `--force`: Overwrite the '.jsxbin' file/files if already exists
+ - `-n`, `--name`: The '.js/.jsx' script path or path to some directory having these files.
+ - `h`, `--help`: Show this help and exit
 3. Running the script
-    - From your command line, run `node path/to/exportToJSX.js [options] [file/directory]`
+ - From your command line, run `node path/to/exportToJSX.js [options] [file/directory]`
 
 #### Examples
 

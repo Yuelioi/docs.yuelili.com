@@ -16,27 +16,27 @@ Shading contexts
 See [common shading context features](shading_contexts.html) for information specific to the shading contexts.
 
 - [displace](displace.html "Define a displacement shader with a program that moves a point on a
-  surface before the surface is rendered.")
-  Define a displacement shader with a program that moves a point on a
-  surface before the surface is rendered.
+ surface before the surface is rendered.")
+ Define a displacement shader with a program that moves a point on a
+ surface before the surface is rendered.
 - [fog](fog.html "Deprecated. Define a fog shader with a program that modifies the Cf, Of, or Af
-  values to simulate atmospheric effects.")
-  Deprecated. Define a fog shader with a program that modifies the Cf, Of, or Af
-  values to simulate atmospheric effects.
+ values to simulate atmospheric effects.")
+ Deprecated. Define a fog shader with a program that modifies the Cf, Of, or Af
+ values to simulate atmospheric effects.
 - [light](light.html "Define a light shader with a program called from surface or fog
-  shaders to calculate the illumination of a surface.")
-  Define a light shader with a program called from surface or fog
-  shaders to calculate the illumination of a surface.
+ shaders to calculate the illumination of a surface.")
+ Define a light shader with a program called from surface or fog
+ shaders to calculate the illumination of a surface.
 - [shadow](../shading-and-rendering/shadow "Define a shadow shader by defining a program that’s called from
-  surface or fog shaders to calculate the occlusion on a surface from a
-  light source.")
-  Define a shadow shader by defining a program that’s called from
-  surface or fog shaders to calculate the occlusion on a surface from a
-  light source.
+ surface or fog shaders to calculate the occlusion on a surface from a
+ light source.")
+ Define a shadow shader by defining a program that’s called from
+ surface or fog shaders to calculate the occlusion on a surface from a
+ light source.
 - [surface](surface.html "Define a surface shader with a program that sets the final color,
-  opacity, and alpha of a surface being rendered.")
-  Define a surface shader with a program that sets the final color,
-  opacity, and alpha of a surface being rendered.
+ opacity, and alpha of a surface being rendered.")
+ Define a surface shader with a program that sets the final color,
+ opacity, and alpha of a surface being rendered.
 
 Other contexts
 
@@ -44,9 +44,9 @@ Other contexts
 
 - [cvex](cvex.html)
 - [chop](../chop/chop "Define a custom CHOP operator with a program that edits channel
-  values.")
-  Define a custom CHOP operator with a program that edits channel
-  values.
+ values.")
+ Define a custom CHOP operator with a program that edits channel
+ values.
 - [/vex/contexts/cop.html](cop.html)
 
 Obsolete contexts
@@ -54,10 +54,10 @@ Obsolete contexts
 ## obsolete-contexts
 
 - [image3d](image3d.html "Obsolete. Write a program for use with the i3dgen program to generate 3D
-  textures.")
-  Obsolete. Write a program for use with the i3dgen program to generate 3D
-  textures.
+ textures.")
+ Obsolete. Write a program for use with the i3dgen program to generate 3D
+ textures.
 - [sop](sop.html "Obsolete. Define a custom SOP operator with a program that edits geometry point
-  attributes.")
-  Obsolete. Define a custom SOP operator with a program that edits geometry point
-  attributes.
+ attributes.")
+ Obsolete. Define a custom SOP operator with a program that edits geometry point
+ attributes.

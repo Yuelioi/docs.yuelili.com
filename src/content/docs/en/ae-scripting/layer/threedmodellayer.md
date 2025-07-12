@@ -9,7 +9,6 @@ title: threedmodellayer
 This functionality was added in After Effects 24.4
 :::
 
-
 #### Description
 
 The ThreeDModelLayer object represents a 3D Model layer within a composition.
@@ -18,7 +17,6 @@ The ThreeDModelLayer object represents a 3D Model layer within a composition.
 ThreeDModelLayer is a subclass of [AVLayer object](../avlayer). All methods and attributes of AVLayer are available when working with ThreeDModelLayer.
 :::
 
-
 #### AE Properties
 
 ThreeDModelLayer inherits the following properties and property groups from [AVLayer object](../avlayer):
@@ -26,17 +24,17 @@ ThreeDModelLayer inherits the following properties and property groups from [AVL
 - Marker
 - Time Remap
 - Transform
-    - Anchor Point
-    - Position
-    - Scale
-    - Orientation
-    - X Rotation
-    - Y Rotation
-    - Rotation
-    - Opacity
+ - Anchor Point
+ - Position
+ - Scale
+ - Orientation
+ - X Rotation
+ - Y Rotation
+ - Rotation
+ - Opacity
 - Layer Styles
 - Audio
-    - AudioLevels
+ - AudioLevels
 
 #### Example
 
@@ -46,6 +44,6 @@ If the first item in the project is a CompItem, and the first layer of that Comp
 var modelLayer = app.project.item(1).layer(1);
 if (modelLayer instanceof ThreeDModelLayer)
 {
-    // do something
+ // do something
 }
 ```

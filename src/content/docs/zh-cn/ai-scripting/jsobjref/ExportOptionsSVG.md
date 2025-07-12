@@ -327,16 +327,16 @@ title: ExportOptionsSVG
 // 将当前文档导出为指定选项的 SVG 文件，dest 包含完整路径和文件名
 
 function exportFileToSVG(dest) {
-    if (app.documents.length > 0) {
-        var exportOptions = new ExportOptionsSVG();
-        exportOptions.embedRasterImages = true;
-        exportOptions.embedAllFonts = false;
-        exportOptions.fontSubsetting = SVGFontSubsetting.GLYPHSUSED;
+ if (app.documents.length > 0) {
+ var exportOptions = new ExportOptionsSVG();
+ exportOptions.embedRasterImages = true;
+ exportOptions.embedAllFonts = false;
+ exportOptions.fontSubsetting = SVGFontSubsetting.GLYPHSUSED;
 
-        var type = ExportType.SVG;
-        var fileSpec = new File(dest);
+ var type = ExportType.SVG;
+ var fileSpec = new File(dest);
 
-        app.activeDocument.exportFile(fileSpec, type, exportOptions);
-    }
+ app.activeDocument.exportFile(fileSpec, type, exportOptions);
+ }
 }
 ```

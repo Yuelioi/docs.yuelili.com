@@ -20,12 +20,11 @@ The constructor returns the XML object representing the root node of an XML tree
 
 `[new] XML (xmlCode);`
 
-| Property  |     Type      |                                                                    Description                                                                     |
-|-----------|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| `xmlCode` | String or XML | A string containing valid XML code, or an existing XML object.                                                                                     |
-|           |               | - If a valid string is supplied, returns a new XML object encapsulating the XML code. If the XML code cannot be parsed, throws a JavaScript error. |
-|           |               | - If an existing object is supplied and the `new` operator is used, returns a copy of the object; otherwise, returns the object itself.            |
-
+| Property | Type | Description |
+|---|---|---|
+| `xmlCode` | String or XML | A string containing valid XML code, or an existing XML object. |
+| | | - If a valid string is supplied, returns a new XML object encapsulating the XML code. If the XML code cannot be parsed, throws a JavaScript error. |
+| | | - If an existing object is supplied and the `new` operator is used, returns a copy of the object; otherwise, returns the object itself. |
 
 ---
 
@@ -33,13 +32,13 @@ The constructor returns the XML object representing the root node of an XML tree
 
 These static properties are available through the XML class. They control how XML is parsed and generated:
 
-|            Property            |  Type   |                                                             Description                                                             |
-| ------------------------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `ignoreComments`               | Boolean | Description When `true`, comments are stripped from the XML during parsing. Default is `false`.                                     |
+| Property | Type | Description |
+| --- | --- | --- |
+| `ignoreComments` | Boolean | Description When `true`, comments are stripped from the XML during parsing. Default is `false`. |
 | `ignoreProcessingInstructions` | Boolean | Description When `true`, processing instructions (`<?xxx?>` elements) are stripped from the XML during parsing. Default is `false`. |
-| `ignoreWhitespace`             | Boolean | Description When `true`, white-space characters are stripped from the XML during parsing. Default is `true`.                        |
-| `prettyIndent`                 | Number  | Description The number of spaces to use for indenting when pretty-printing. Default is 2.                                           |
-| `prettyPrinting`               | Boolean | Description When `true`, `toXMLString()` uses indenting and line feeds to create the XML string. Default is `true`.                 |
+| `ignoreWhitespace` | Boolean | Description When `true`, white-space characters are stripped from the XML during parsing. Default is `true`. |
+| `prettyIndent` | Number | Description The number of spaces to use for indenting when pretty-printing. Default is 2. |
+| `prettyPrinting` | Boolean | Description When `true`, `toXMLString()` uses indenting and line feeds to create the XML string. Default is `true`. |
 
 ---
 
@@ -85,9 +84,9 @@ Sets the global option settings that control how XML is parsed and generated. Yo
 
 #### Parameters
 
-| Parameter |  Type  |                                                Description                                                 |
-| --------- | ------ | ---------------------------------------------------------------------------------------------------------- |
-| `object`  | Object | A JavaScript object containing five properties, which correspond to the five [XML Settings](#xml-settings) |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `object` | Object | A JavaScript object containing five properties, which correspond to the five [XML Settings](#xml-settings) |
 
 #### Returns
 
@@ -139,9 +138,9 @@ Adds a namespace declaration to this node.
 
 #### Parameters
 
-| Parameter |                 Type                  |         Description          |
-| --------- | ------------------------------------- | ---------------------------- |
-| `ns`      | [Namespace object](#namespace-object) | Namespace declaration to add |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `ns` | [Namespace object](#namespace-object) | Namespace declaration to add |
 
 #### Returns
 
@@ -159,9 +158,9 @@ Appends a child element to this node, after any existing children. If the argume
 
 #### Parameters
 
-| Parameter |                                            Type                                             |       Description       |
-| --------- | ------------------------------------------------------------------------------------------- | ----------------------- |
-| `child`   | [XML object](#xml-object), or any value that can be converted to a String with `toString()` | Child element to append |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `child` | [XML object](#xml-object), or any value that can be converted to a String with `toString()` | Child element to append |
 
 #### Returns
 
@@ -179,9 +178,9 @@ Retrieves a list of the named attribute elements contained in this node.
 
 #### Parameters
 
-| Parameter |  Type  |     Description     |
-| --------- | ------ | ------------------- |
-| `name`    | String | Ahe attribute name. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Ahe attribute name. |
 
 #### Returns
 
@@ -199,9 +198,9 @@ Retrieves a list of all child elements of this node of a given type.
 
 #### Parameters
 
-| Parameter |       Type       |                                 Description                                  |
-| --------- | ---------------- | ---------------------------------------------------------------------------- |
-| `which`   | String or Number | The element name, or a Number, a 0-based index into this node's child array. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `which` | String or Number | The element name, or a Number, a 0-based index into this node's child array. |
 
 #### Returns
 
@@ -261,8 +260,8 @@ Reports whether an element is contained in this node at any level of nesting.
 
 #### Parameters
 
-| Parameter |           Type            |   Description    |
-| --------- | ------------------------- | ---------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `element` | [XML object](#xml-object) | Element to check |
 
 #### Returns
@@ -295,9 +294,9 @@ Retrieves all descendent elements of this node of a given element type, or all X
 
 #### Parameters
 
-| Parameter |  Type  |                                 Description                                 |
-| --------- | ------ | --------------------------------------------------------------------------- |
-| `name`    | String | Optional. The element name to match. If not provided, matches all elements. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Optional. The element name to match. If not provided, matches all elements. |
 
 #### Returns
 
@@ -315,9 +314,9 @@ Retrieves all of the immediate child elements of this node of the given type, or
 
 #### Parameters
 
-| Parameter |  Type  |                                 Description                                 |
-| --------- | ------ | --------------------------------------------------------------------------- |
-| `name`    | String | Optional. The element name to match. If not provided, matches all elements. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Optional. The element name to match. If not provided, matches all elements. |
 
 #### Returns
 
@@ -379,10 +378,10 @@ Inserts a new child element or text node into this node, after another existing 
 
 #### Parameters
 
-| Parameter |           Type            |                                                    Description                                                     |
-| --------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `child1`  | [XML object](#xml-object) | The existing child element after which to place the new child, or `null` to insert the new child at the beginning. |
-| `child2`  | [XML object](#xml-object) | The new child element, or any value that can be converted to a String with `toString()`.                           |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `child1` | [XML object](#xml-object) | The existing child element after which to place the new child, or `null` to insert the new child at the beginning. |
+| `child2` | [XML object](#xml-object) | The new child element, or any value that can be converted to a String with `toString()`. |
 
 #### Returns
 
@@ -400,10 +399,10 @@ Inserts a new child element or text node into this node, before another existing
 
 #### Parameters
 
-| Parameter |                                                                 Type                                                                  | Description |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `child1`  | [XML object](#xml-object) The existing child element before which to place the new child, or null to insert the new child at the end. |             |
-| `child2`  | [XML object](#xml-object) The new child element, or any value that can be converted to a String with `toString()`.                    |             |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `child1` | [XML object](#xml-object) The existing child element before which to place the new child, or null to insert the new child at the end. | |
+| `child2` | [XML object](#xml-object) The new child element, or any value that can be converted to a String with `toString()`. | |
 
 #### Returns
 
@@ -539,9 +538,9 @@ Prepends a child element to this node, before any existing children. If you prep
 
 #### Parameters
 
-| Parameter |                Type                 |       Description        |
-| --------- | ----------------------------------- | ------------------------ |
-| `child`   | [XML object](#xml-object) or String | Child element to prepend |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `child` | [XML object](#xml-object) or String | Child element to prepend |
 
 #### Returns
 
@@ -577,12 +576,12 @@ If the named element does not exist, appends the given value as a text element.
 
 #### Parameters
 
-| Parameter |                                            Type                                            |                                                                                 Description                                                                                  |
-|-----------|--------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `name`    | String                                                                                     | An element or attribute name, with or without the 0-based position index of a specific element, or the wildcard string `"*"`.                                                |
-|           |                                                                                            | - If no position index is supplied, replaces the value of all matching elements.                                                                                             |
-|           |                                                                                            | - If the wildcard is supplied, replaces the value of all contained elements. When an element contain subelements, those are removed, and only the replacement value remains. |
-| `value`   | [XML object](#xml-object) or any value that can be converted to a String with `toString()` | Value to replace with                                                                                                                                                        |
+| Parameter | Type | Description |
+|---|---|---|
+| `name` | String | An element or attribute name, with or without the 0-based position index of a specific element, or the wildcard string `"*"`. |
+| | | - If no position index is supplied, replaces the value of all matching elements. |
+| | | - If the wildcard is supplied, replaces the value of all contained elements. When an element contain subelements, those are removed, and only the replacement value remains. |
+| `value` | [XML object](#xml-object) or any value that can be converted to a String with `toString()` | Value to replace with |
 
 #### Returns
 
@@ -600,9 +599,9 @@ Replaces all of the XML-valued properties in this object with a new value, which
 
 #### Parameters
 
-| Parameter |                                            Type                                             |      Description      |
-| --------- | ------------------------------------------------------------------------------------------- | --------------------- |
-| `value`   | [XML object](#xml-object) or any value that can be converted to a String with `toString()`. | Value to replace with |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `value` | [XML object](#xml-object) or any value that can be converted to a String with `toString()`. | Value to replace with |
 
 #### Returns
 
@@ -620,9 +619,9 @@ Replaces the local name of this object; that is, the element name without any na
 
 #### Parameters
 
-| Parameter |  Type  |  Description  |
-| --------- | ------ | ------------- |
-| `name`    | String | The new name. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | The new name. |
 
 #### Returns
 
@@ -640,9 +639,9 @@ Replaces the full name of this object; that is, the element name and its namespa
 
 #### Parameters
 
-| Parameter |  Type  |  Description  |
-| --------- | ------ | ------------- |
-| `name`    | String | The new name. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | The new name. |
 
 #### Returns
 
@@ -660,9 +659,9 @@ Sets the namespace for this XML element. If the namespace has not been declared 
 
 #### Parameters
 
-| Parameter |       Type       |                           Description                            |
-| --------- | ---------------- | ---------------------------------------------------------------- |
-| `ns`      | Namespace object | Namespace that has been declared in the tree above this element. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `ns` | Namespace object | Namespace that has been declared in the tree above this element. |
 
 #### Returns
 
@@ -728,12 +727,12 @@ If the XPath expression does not evaluate to a node list, throws a JavaScript ex
 
 #### Parameters
 
-|  Parameter   |  Type  |                                                                                                                       Description                                                                                                                        |
-|--------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `expression` | String | A String containing an XPath expression.                                                                                                                                                                                                                 |
-|              |        | !!! note                                                                                                                                                                                                                                                 |
-|              |        |     In this context, include the actual top level element. For example, an expression for the example XML must start with "/bookstore". This is unlike JavaScript property access, where the top level element is implied.                               |
-| `variables`  | Object | Optional. A JavaScript object containing variable definitions. The properties are used to look up XPath variables contained in the expression. For example, if the expression contains the variable `$abc`, the value is in the object's `abc` property. |
+| Parameter | Type | Description |
+|---|---|---|
+| `expression` | String | A String containing an XPath expression. |
+| | | !!! note |
+| | | In this context, include the actual top level element. For example, an expression for the example XML must start with "/bookstore". This is unlike JavaScript property access, where the top level element is implied. |
+| `variables` | Object | Optional. A JavaScript object containing variable definitions. The properties are used to look up XPath variables contained in the expression. For example, if the expression contains the variable `$abc`, the value is in the object's `abc` property. |
 
 #### Returns
 
@@ -758,12 +757,11 @@ Reports whether a string contains a name that conforms to valid XML syntax.
 It does not follow the W3C definition of an XML name, which adds more Unicode characters to the valid set of characters.
 :::
 
-
 #### Parameters
 
-| Parameter |  Type  |            Description            |
-| --------- | ------ | --------------------------------- |
-| `name`    | String | Whether the string is an XML Name |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Whether the string is an XML Name |
 
 #### Returns
 
@@ -786,9 +784,9 @@ default xml namespace = URL_string
 
 #### Parameters
 
-| Parameter |       Type       |                   Description                    |
-| --------- | ---------------- | ------------------------------------------------ |
-| `ns`      | Namespace object | Object to set as default. Any prefix is ignored. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `ns` | Namespace object | Object to set as default. Any prefix is ignored. |
 
 #### Returns
 
@@ -813,12 +811,12 @@ new QName (uri, name)
 
 When no arguments are supplies, creates a `QName` object with an empty local name and no URI.
 
-| Parameter |   Type    |                                                                                                      Description                                                                                                       |
-| --------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name      | String    | Creates a `QName` object with the given local name and the URI of the default namespace. Can be the wildcard character, "\*".                                                                                          |
-| name      | QName     | Creates a copy of an existing [QName object](#qname-object).                                                                                                                                                           |
-| ns        | Namespace | Creates a `QName` object with an empty local name and the URI of the [Namespace object](#namespace-object).                                                                                                            |
-| uri, name | String    | Create a `QName` object with the given namespace URI and local name. If the local name is supplied as the wildcard character, "\*", the `uri` argument is ignored, and the URI value is that of the default namespace. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| name | String | Creates a `QName` object with the given local name and the URI of the default namespace. Can be the wildcard character, "\*". |
+| name | QName | Creates a copy of an existing [QName object](#qname-object). |
+| ns | Namespace | Creates a `QName` object with an empty local name and the URI of the [Namespace object](#namespace-object). |
+| uri, name | String | Create a `QName` object with the given namespace URI and local name. If the local name is supplied as the wildcard character, "\*", the `uri` argument is ignored, and the URI value is that of the default namespace. |
 
 ---
 
@@ -882,12 +880,12 @@ When no argument is supplied, creates a namespace with an empty prefix and URI.
 
 #### Parameters
 
-|   Parameter   |   Type    |                                                                                                                         Description                                                                                                                         |
-| ------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `uri`         | String    | Creates a Namespace object with an empty prefix and the given URI.                                                                                                                                                                                          |
-| `prefix`      | QName     | Creates a namespace with an empty prefix and the URI set to the URI of the [QName object](#qname-object) (if the QName object contains a URI).                                                                                                              |
-| `ns`          | Namespace | Creates a copy of the given [Namespace object](#namespace-object). If the `Namespace()` function is called without the `new` operator, and the only argument is a `Namespace` object, the function simply returns that object, rather than creating a copy. |
-| `prefix, uri` | String    | Creates a `Namespace` object with the given prefix and the given URI.                                                                                                                                                                                       |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `uri` | String | Creates a Namespace object with an empty prefix and the given URI. |
+| `prefix` | QName | Creates a namespace with an empty prefix and the URI set to the URI of the [QName object](#qname-object) (if the QName object contains a URI). |
+| `ns` | Namespace | Creates a copy of the given [Namespace object](#namespace-object). If the `Namespace()` function is called without the `new` operator, and the only argument is a `Namespace` object, the function simply returns that object, rather than creating a copy. |
+| `prefix, uri` | String | Creates a `Namespace` object with the given prefix and the given URI. |
 
 ---
 

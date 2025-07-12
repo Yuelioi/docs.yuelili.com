@@ -9,7 +9,6 @@ These items deal with randomness in expressions.
 The [wiggle()](../../objects/property#wiggle) method—which is used to randomly vary a property value—is in the [Property](../../objects/property) attributes and methods category.
 :::
 
-
 ---
 
 ## Methods
@@ -28,8 +27,8 @@ The results have a Gaussian (bell-shaped) distribution.
 
 #### Parameters
 
-|    Parameter    |      Type       |                                          Description                                          |
-| --------------- | --------------- | --------------------------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `maxValOrArray` | Number or Array | Optional. The max value (or array) to generate a random number to, from `0`. Defaults to `1`. |
 
 #### Returns
@@ -52,10 +51,10 @@ The results have a Gaussian (bell-shaped) distribution.
 
 #### Parameters
 
-|    Parameter    |      Type       |                        Description                         |
-| --------------- | --------------- | ---------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `minValOrArray` | Number or Array | The min value (or array) to generate a random number from. |
-| `maxValOrArray` | Number or Array | The max value (or array) to generate a random number to.   |
+| `maxValOrArray` | Number or Array | The max value (or array) to generate a random number to. |
 
 #### Returns
 
@@ -77,8 +76,8 @@ This type of noise is useful when you want a sequence of seemingly random number
 
 #### Parameters
 
-|  Parameter   |                   Type                   |                           Description                            |
-| ------------ | ---------------------------------------- | ---------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `valOrArray` | Number or an Array (2- or 3-dimensional) | The input value (or array) to use to generate the random number. |
 
 #### Returns
@@ -107,11 +106,10 @@ If `maxValOrArray` is an Array, this method returns an Array with the same dimen
 In After Effects CC and CS6, the behavior of random() is changed to be more random when layer IDs are close together. The wiggle() expression is not affected.
 :::
 
-
 #### Parameters
 
-|    Parameter    |      Type       |                                          Description                                          |
-| --------------- | --------------- | --------------------------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `maxValOrArray` | Number or Array | Optional. The max value (or array) to generate a random number to, from `0`. Defaults to `1`. |
 
 #### Returns
@@ -134,10 +132,10 @@ For example, the expression `random([100, 200], [300, 400])` returns an Array wh
 
 #### Parameters
 
-|    Parameter    |      Type       |                        Description                         |
-| --------------- | --------------- | ---------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `minValOrArray` | Number or Array | The min value (or array) to generate a random number from. |
-| `maxValOrArray` | Number or Array | The max value (or array) to generate a random number to.   |
+| `maxValOrArray` | Number or Array | The max value (or array) to generate a random number to. |
 
 #### Returns
 
@@ -161,9 +159,9 @@ The multiplication by `100` in this example converts the value in the range `0�
 
 #### Parameters
 
-| Parameter  |  Type   |                                                                                                           Description                                                                                                           |
-| ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `offset`   | Number  | The value with which to offset the seed. This is also used to control the initial value of the [`wiggle()`](../../objects/property#wiggle) function.                                                                            |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `offset` | Number | The value with which to offset the seed. This is also used to control the initial value of the [`wiggle()`](../../objects/property#wiggle) function. |
 | `timeless` | Boolean | Optional. Use `true` for the timeless argument to not use the current time as input to the random seed. This allows you to generate a random number that doesn't vary depending on the time of evaluation. Defaults to `false`. |
 
 #### Returns

@@ -8,16 +8,16 @@ title: 全局函数
 
 这些全局可用的函数是 After Effects 特有的。任何 JavaScript 对象或函数都可以调用这些函数，它们允许您在信息面板的一个小区域（3行）显示文本，将数字时间值与字符串值相互转换，或生成随机数。
 
-| 全局函数           | 描述      |
-| ------ | ---------- |
-| `clearOutput()`      | 清除信息面板中的文本。           |
-| `currentFormatToTime()`  | 将字符串时间值转换为数字时间值。     |
-| `generateRandomNumber()` | 生成一个随机数。    |
-| `getEnumAsString()`    | 将枚举值转换为其字符串名称。       |
-| `timeToCurrentFormat()`  | 将数字时间值转换为字符串时间值。     |
-| `write()`        | 将文本写入信息面板，不添加换行符。     |
-| `writeLn()`        | 将文本写入信息面板，并在末尾添加换行符。 |
-| `isValid()`        | 当为 `true` 时，指定的对象存在。     |
+| 全局函数 | 描述 |
+| --- | --- |
+| `clearOutput()` | 清除信息面板中的文本。 |
+| `currentFormatToTime()` | 将字符串时间值转换为数字时间值。 |
+| `generateRandomNumber()` | 生成一个随机数。 |
+| `getEnumAsString()` | 将枚举值转换为其字符串名称。 |
+| `timeToCurrentFormat()` | 将数字时间值转换为字符串时间值。 |
+| `write()` | 将文本写入信息面板，不添加换行符。 |
+| `writeLn()` | 将文本写入信息面板，并在末尾添加换行符。 |
+| `isValid()` | 当为 `true` 时，指定的对象存在。 |
 
 ExtendScript 还定义了用于标准用户 I/O 的额外全局函数（`alert`、`confirm` 和 `prompt`）以及用于文件 I/O 的静态函数；有关详细参考信息，请参阅 [JavaScript 工具指南](https://extendscript.docsforadobe.dev/)。
 
@@ -53,11 +53,11 @@ ExtendScript 还定义了用于标准用户 I/O 的额外全局函数（`alert`�
 
 #### 参数
 
-| 参数        | 描述          |
-| ------- | ---------------------- |
-| `formattedTime` | 帧时间值，指定项目当前时间显示格式中帧数的字符串。        |
-| `fps`       | 帧速率，浮点值。    |
-| `isDuration`  | 可选。当为 `true` 时，时间为持续时间（从第 0 帧开始测量）。当为 `false`（默认值）时，时间从项目的起始帧开始测量。 |
+| 参数 | 描述 |
+| --- | --- |
+| `formattedTime` | 帧时间值，指定项目当前时间显示格式中帧数的字符串。 |
+| `fps` | 帧速率，浮点值。 |
+| `isDuration` | 可选。当为 `true` 时，时间为持续时间（从第 0 帧开始测量）。当为 `false`（默认值）时，时间从项目的起始帧开始测量。 |
 
 #### 返回
 
@@ -92,13 +92,13 @@ var myComp = app.project.activeItem;
 var x = 0;
 
 for (var i = 1; i <= myComp.numLayers; i++) {
-  // 如果使用 Math.random()，这将不起作用
-  // x = 400 * (Math.random()) - 200;
-  // 使用新的 generateRandomNumber() 代替
+ // 如果使用 Math.random()，这将不起作用
+ // x = 400 * (Math.random()) - 200;
+ // 使用新的 generateRandomNumber() 代替
 
-  x = 400 * generateRandomNumber() - 200;
-  var currentPos = myComp.layer(i).property("Position").value;
-  myComp.layer(i).property("Position").setValue([currentPos[0] + x, currentPos[1]]);
+ x = 400 * generateRandomNumber() - 200;
+ var currentPos = myComp.layer(i).property("Position").value;
+ myComp.layer(i).property("Position").setValue([currentPos[0] + x, currentPos[1]]);
 }
 ```
 
@@ -143,8 +143,8 @@ alert(getEnumAsString(5220));
 
 #### 参数
 
-| 参数  | 描述   |
-| ------- | ---------- |
+| 参数 | 描述 |
+| --- | --- |
 | `obj` | 要检查有效性的 After Effects 对象。 |
 
 #### 返回
@@ -175,10 +175,10 @@ alert(isValid(mask1)); // 显示 "false"; mask2 和 mask3 也是如此
 
 #### 参数
 
-| 参数       | 描述          |
-| ---- | ---------------------- |
-| `time`     | 秒数，浮点值。    |
-| `fps`    | 帧速率，浮点值。    |
+| 参数 | 描述 |
+| --- | --- |
+| `time` | 秒数，浮点值。 |
+| `fps` | 帧速率，浮点值。 |
 | `isDuration` | 可选。当为 `true` 时，时间为持续时间（从第 0 帧开始测量）。当为 `false`（默认值）时，时间从项目的起始帧开始测量。 |
 
 #### 返回
@@ -197,8 +197,8 @@ alert(isValid(mask1)); // 显示 "false"; mask2 和 mask3 也是如此
 
 #### 参数
 
-| 参数   | 描述   |
-| --- | ---------- |
+| 参数 | 描述 |
+| --- | --- |
 | `text` | 要显示的字符串。如果信息面板空间不足，则会被截断。 |
 
 #### 返回
@@ -224,8 +224,8 @@ write("更多内容在同一行。");
 
 #### 参数
 
-| 参数   | 描述       |
-| --- | ------ |
+| 参数 | 描述 |
+| --- | --- |
 | `text` | 要显示的字符串。 |
 
 #### 返回

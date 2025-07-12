@@ -66,26 +66,26 @@ The Keyboard Shortcuts page in the Preferences dialog **(Edit > Preferences)** a
 
 In addition to the keyboard shortcuts specified for menu commands, and the usual keyboard input, the document window accepts these special movement keys. You can also select text by using a movement key while pressing `SHIFT`.
 
-|       Shortcut       |                           Behaviour                            |
-| -------------------- | -------------------------------------------------------------- |
-| `ENTER`              | Insert a Line Feed character                                   |
-| `Backspace`          | Delete character to the left                                   |
-| `DELETE`             | Delete character to the right                                  |
-| `Left arrow`         | Move insertion point left one character                        |
-| `Right arrow`        | Move insertion point right one character                       |
-| `Up arrow`           | Move insertion point up one line; stay in column if possible   |
-| `Down arrow`         | Move insertion point down one line; stay in column if possible |
-| `Page up`            | Move insertion point one page up                               |
-| `Page down`          | Move insertion point one page down                             |
-| `CTRL + Up arrow`    | Scroll up one line without moving the insertion point          |
-| `CTRL + Down arrow`  | Scroll down one line without moving the insertion point        |
-| `CTRL + Page up`     | Scroll one page up without moving the insertion point          |
-| `CTRL + page down`   | Scroll one page down without moving the insertion point        |
-| `CTRL + Left arrow`  | Move insertion point one word to the left                      |
-| `CTRL + right arrow` | Move insertion point one word to the right                     |
-| `HOME`               | Move insertion point to start of line                          |
-| `END`                | Move insertion point to end of line                            |
-| `CTRL + HOME`        | Move insertion point to start of text                          |
+| Shortcut | Behaviour |
+| --- | --- |
+| `ENTER` | Insert a Line Feed character |
+| `Backspace` | Delete character to the left |
+| `DELETE` | Delete character to the right |
+| `Left arrow` | Move insertion point left one character |
+| `Right arrow` | Move insertion point right one character |
+| `Up arrow` | Move insertion point up one line; stay in column if possible |
+| `Down arrow` | Move insertion point down one line; stay in column if possible |
+| `Page up` | Move insertion point one page up |
+| `Page down` | Move insertion point one page down |
+| `CTRL + Up arrow` | Scroll up one line without moving the insertion point |
+| `CTRL + Down arrow` | Scroll down one line without moving the insertion point |
+| `CTRL + Page up` | Scroll one page up without moving the insertion point |
+| `CTRL + page down` | Scroll one page down without moving the insertion point |
+| `CTRL + Left arrow` | Move insertion point one word to the left |
+| `CTRL + right arrow` | Move insertion point one word to the right |
+| `HOME` | Move insertion point to start of line |
+| `END` | Move insertion point to end of line |
+| `CTRL + HOME` | Move insertion point to start of text |
 
 The Script Editor supports extended keyboard input via IME (Windows) or TMS (Mac OS). This is especially important for Far Eastern characters.
 
@@ -152,19 +152,19 @@ Before running the new script or saving the text as a script file, use **Edit > 
 The Script Editor supports triple-quote syntax to allow strings to span several source code lines. When entering a very long string, you can:
 
 - Enter it all on one line:
-    ```javascript
-    var myString = "This very long string might wrap onto a second line visually, but you typed no CR character when entering it."
-    ```
+ ```javascript
+ var myString = "This very long string might wrap onto a second line visually, but you typed no CR character when entering it."
+ ```
 - Enter on multiple lines, using a backslash () continuation character at the end of each line:
-    ```javascript
-    var myString = "This string spans \
-    two lines."
-    ```
+ ```javascript
+ var myString = "This string spans \
+ two lines."
+ ```
 - Use triple quotes around the entire string on multiple lines:
-    ```javascript
-    var myString = """This "quoted" word is inside the
-    multiline string enclosed by triple quotes."""
-    ```
+ ```javascript
+ var myString = """This "quoted" word is inside the
+ multiline string enclosed by triple quotes."""
+ ```
 
 The triple-quote option allows the string to contain embedded quotes.
 
@@ -193,19 +193,19 @@ Double-click a result line in the Find Results panel to jump directly to the doc
 
 The Toolkit supports a limited set of Regular Expression syntax for the Find and Replace dialog:
 
-| RegEx Token |                                                                            Behaviour                                                                            |
-| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `.`         | Matches any character                                                                                                                                           |
-| `(`         | Marks the start of a region for capturing a match.                                                                                                              |
-| `)`         | Marks the end of a capturing region.                                                                                                                            |
-| `\<`        | Matches the start of a word using the editor's current definition of words.                                                                                     |
-| `\>`        | Matches the end of a word using the editor's current definition of words.                                                                                       |
-| `\x`        | Escapes a character x that would otherwise have a special meaning. For example, `[` is interpreted as a left bracket, rather than the start of a character set. |
-| `[...]`     | A set of characters; for example, [abc] means any of the characters a, b or c. You can also use ranges, for example [a-z] for any lower case character.         |
-| `[^...]`    | The complement of the characters in a set. For example, [^A-Za-z] means any character except an alphabetic character.                                           |
-| `^`         | Matches the start of a line (unless used inside a set).                                                                                                         |
-| `$`         | Matches the end of a line.                                                                                                                                      |
-| `*`         | Matches 0 or more times. For example, Sa\*m matches Sm, Sam, Saam, Saaam etc.                                                                                   |
+| RegEx Token | Behaviour |
+| --- | --- |
+| `.` | Matches any character |
+| `(` | Marks the start of a region for capturing a match. |
+| `)` | Marks the end of a capturing region. |
+| `\<` | Matches the start of a word using the editor's current definition of words. |
+| `\>` | Matches the end of a word using the editor's current definition of words. |
+| `\x` | Escapes a character x that would otherwise have a special meaning. For example, `[` is interpreted as a left bracket, rather than the start of a character set. |
+| `[...]` | A set of characters; for example, [abc] means any of the characters a, b or c. You can also use ranges, for example [a-z] for any lower case character. |
+| `[^...]` | The complement of the characters in a set. For example, [^A-Za-z] means any character except an alphabetic character. |
+| `^` | Matches the start of a line (unless used inside a set). |
+| `$` | Matches the end of a line. |
+| `*` | Matches 0 or more times. For example, Sa\*m matches Sm, Sam, Saam, Saaam etc. |
 
 In a replace operation, you can use the captured regions of a match in the replacement expression by using the placeholders `\1` through `\9`, where `\1` refers to the first captured region, `\2` to the second, and so on.
 

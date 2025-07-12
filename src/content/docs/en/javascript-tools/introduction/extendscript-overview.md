@@ -11,7 +11,6 @@ This document describes JavaScript modules, tools, utilities, and features that 
 Some modules, and features of some modules, are optional. Check the product documentation for each application for details of which modules and features are implemented.
 :::
 
-
 ## Example code
 
 The [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit), which contains this document, also contains a set of code samples that demonstrate how to use features of ScriptUI, interapplication communication, and external communication. This book refers to these samples by name for illustration of concepts and techniques.
@@ -80,9 +79,9 @@ For complete details, see [Integrating External Libraries](../../integrating-ext
 ExtendScript provides these utilities and features:
 
 - JavaScript language enhancements
-    - Tools for combining scripts, such as a `#include` directive. See [Preprocessor directives](../../extendscript-tools-features/preprocessor-directives).
-    - Support for extending or overriding math and logical operator behavior on a class-by-class basis. See [Operator overloading](../../extendscript-tools-features/operator-overloading).
-    - For complete details, see [ExtendScript Tools and Features](../../extendscript-tools-features/index#extendscript-tools-and-features).
+ - Tools for combining scripts, such as a `#include` directive. See [Preprocessor directives](../../extendscript-tools-features/preprocessor-directives).
+ - Support for extending or overriding math and logical operator behavior on a class-by-class basis. See [Operator overloading](../../extendscript-tools-features/operator-overloading).
+ - For complete details, see [ExtendScript Tools and Features](../../extendscript-tools-features/index#extendscript-tools-and-features).
 - JavaScript compilation, through the ExtendScript Toolkit. See [The ExtendScript Toolkit](../../extendscript-toolkit/index#the-extendscript-toolkit).
 - XML integration: ExtendScript defines the XML object, which allows you to process XML with your JavaScript scripts. For complete details, see [Integrating XML into JavaScript](../../integrating-xml/index#integrating-xml-into-javascript).
 - Scripting support for XMP metadata manipulation: XMPScript provides a JavaScript API for the Adobe

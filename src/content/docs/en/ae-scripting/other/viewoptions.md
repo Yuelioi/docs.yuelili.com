@@ -86,7 +86,6 @@ Floating-point value, in the range `[-40..40]`
 This functionality was added in After Effects 12.0 (CC)
 :::
 
-
 #### Description
 
 The state of the Fast Previews menu. This is a read/write attribute using an enumerated value:
@@ -95,11 +94,9 @@ The state of the Fast Previews menu. This is a read/write attribute using an enu
 If you try to get or set the attribute's value in the Layer or Footage panel, you'll get an error message.
 :::
 
-
 :::tip
 The Draft preview mode is only available in ray-traced 3D compositions. If you try to use it in a Classic 3D composition, you'll get an error: "Cannot set Draft fast preview mode in a Classic 3D composition."
 :::
-
 
 #### Type
 
@@ -131,7 +128,6 @@ app.activeViewer.views[0].options.fastPreview === FastPreviewType.FP_WIREFRAME;
 This functionality was added in After Effects 16.1 (CC 2019)
 :::
 
-
 #### Description
 
 When `true`, indicates guides are locked in the view.
@@ -155,7 +151,6 @@ app.activeViewer.views[0].options.guidesLocked;
 :::note
 This functionality was added in After Effects 16.1 (CC 2019)
 :::
-
 
 #### Description
 
@@ -181,7 +176,6 @@ app.activeViewer.views[0].options.guidesSnap;
 This functionality was added in After Effects 16.1 (CC 2019)
 :::
 
-
 #### Description
 
 When `true`, indicates guides are visible in the view.
@@ -205,7 +199,6 @@ app.activeViewer.views[0].options.guidesVisibility;
 :::note
 This functionality was added in After Effects 16.1 (CC 2019)
 :::
-
 
 #### Description
 

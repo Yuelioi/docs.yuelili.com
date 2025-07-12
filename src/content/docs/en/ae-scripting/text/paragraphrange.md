@@ -9,7 +9,6 @@ title: paragraphrange
 This functionality was added in After Effects 24.3
 :::
 
-
 #### Description
 
 The ParagraphRange object is an accessor to a paragraph range of the [TextDocument object](../textdocument) instance it was created from.

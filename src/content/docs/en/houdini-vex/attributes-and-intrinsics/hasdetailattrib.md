@@ -17,7 +17,7 @@ Examples
 ## examples
 
 ```vex
-int        exists;
+int exists;
 // Determine if the P attribute exists.
 exists = hasdetailattrib("defgeo.bgeo", "P");
 

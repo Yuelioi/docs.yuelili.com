@@ -154,26 +154,26 @@ F = cvex_bsdf("diffuse_eval", "diffuse_sample", "label", "diffuse", "N", N);
 #include "pbr.h"
 
 cvex diffuse_eval(
-    vector u = 0;
-    vector v = 0;
-    int bounces = 0;
-    int reverse = 0;
-    export vector refl = 0;
-    export vector eval = 0;
-    export float pdf = 0;
+ vector u = 0;
+ vector v = 0;
+ int bounces = 0;
+ int reverse = 0;
+ export vector refl = 0;
+ export vector eval = 0;
+ export float pdf = 0;
 
-    int mybounces = 0;
-    vector N = 0)
+ int mybounces = 0;
+ vector N = 0)
 {
-    if (bounces & mybounces)
-    {
-        // 如果评估反向，则需要入射光方向而不是出射方向进行评估。
-        // select语句根据"reverse"切换的值进行交换。
-        vector vvec = select(reverse, u, v);
-        pdf = max(dot(vvec, normalize(N)), 0);
-        eval = pdf;
-        refl = 0.5;
-    }
+ if (bounces & mybounces)
+ {
+ // 如果评估反向，则需要入射光方向而不是出射方向进行评估。
+ // select语句根据"reverse"切换的值进行交换。
+ vector vvec = select(reverse, u, v);
+ pdf = max(dot(vvec, normalize(N)), 0);
+ eval = pdf;
+ refl = 0.5;
+ }
 }
 ```
 
@@ -184,38 +184,38 @@ cvex diffuse_eval(
 #include "pbr.h"
 
 cvex diffuse_sample(
-    vector u = 0;
-    float sx = 0;
-    float sy = 0;
-    int bounces = 0;
+ vector u = 0;
+ float sx = 0;
+ float sy = 0;
+ int bounces = 0;
 
-    export vector refl = 0;
-    export vector v = 0;
-    export int bouncetype = 0;
-    export float pdf = 0;
+ export vector refl = 0;
+ export vector v = 0;
+ export int bouncetype = 0;
+ export float pdf = 0;
 
-    int mybounces = 0;
-    vector N = 0)
+ int mybounces = 0;
+ vector N = 0)
 {
-    if (bounces & mybounces)
-    {
-        vector nml = normalize(N);
+ if (bounces & mybounces)
+ {
+ vector nml = normalize(N);
 
-        v = set(cos(sx*PI*2), sin(sx*PI*2), 0);
-        v *= sqrt(sy);
-        v.z = sqrt(1-sy);
+ v = set(cos(sx*PI*2), sin(sx*PI*2), 0);
+ v *= sqrt(sy);
+ v.z = sqrt(1-sy);
 
-        pdf = 2*v.z;
+ pdf = 2*v.z;
 
-        // 将v转换为nml的参考系
-        vector framex = normalize(cross(nml, u));
-        vector framey = cross(nml, framex);
+ // 将v转换为nml的参考系
+ vector framex = normalize(cross(nml, u));
+ vector framey = cross(nml, framex);
 
-        v = framex * v.x + framey * v.y + nml*v.z;
+ v = framex * v.x + framey * v.y + nml*v.z;
 
-        bouncetype = mybounces;
-        refl = 0.5; // 亮度需要匹配反照率
-    }
+ bouncetype = mybounces;
+ refl = 0.5; // 亮度需要匹配反照率
+ }
 }
 ```
 
@@ -235,18 +235,18 @@ F = cvex_bsdf("specular_eval", "specular_sample", "label", "reflect", "dir", ref
 #include "pbr.h"
 
 cvex specular_eval(
-    vector u = 0;
-    vector v = 0;
-    int bounces = 0;
-    int reverse = 1;
-    export vector refl = 0;
-    export vector eval = 0; // Delta bsdf
+ vector u = 0;
+ vector v = 0;
+ int bounces = 0;
+ int reverse = 1;
+ export vector refl = 0;
+ export vector eval = 0; // Delta bsdf
 
-    int mybounces = 0;
-    vector dir = 0)
+ int mybounces = 0;
+ vector dir = 0)
 {
-    if (bounces & mybounces)
-        refl = 1;
+ if (bounces & mybounces)
+ refl = 1;
 }
 ```
 
@@ -257,25 +257,25 @@ cvex specular_eval(
 #include "pbr.h"
 
 cvex specular_sample(
-    vector u = 0;
-    float sx = 0;
-    float sy = 0;
-    int bounces = 0;
+ vector u = 0;
+ float sx = 0;
+ float sy = 0;
+ int bounces = 0;
 
-    export vector refl = 0;
-    export vector v = 0;
-    export int bouncetype = 0;
-    export float pdf = 0;
+ export vector refl = 0;
+ export vector v = 0;
+ export int bouncetype = 0;
+ export float pdf = 0;
 
-    int mybounces = 0;
-    vector dir = 0)
+ int mybounces = 0;
+ vector dir = 0)
 {
-    if (bounces & mybounces)
-    {
-        pdf = 1e6F;
-        v = dir;
-        bouncetype = mybounces;
-        refl = 1; // 需要匹配反照率
-    }
+ if (bounces & mybounces)
+ {
+ pdf = 1e6F;
+ v = dir;
+ bouncetype = mybounces;
+ refl = 1; // 需要匹配反照率
+ }
 }
 ```

@@ -28,18 +28,18 @@ Cf = 0;
 // 这个循环只会迭代一次
 while (pciterate(handle))
 {
-    // 从平均点查询A值
-    float    ptarea;
-    pcimport(handle, "A", ptarea);
+ // 从平均点查询A值
+ float ptarea;
+ pcimport(handle, "A", ptarea);
 
-    pcsampleleaf(handle, nrandom());
+ pcsampleleaf(handle, nrandom());
 
-    // 从采样的叶子点查询P值
-    vector    pos;
-    pcimport(handle, "P", pos);
+ // 从采样的叶子点查询P值
+ vector pos;
+ pcimport(handle, "P", pos);
 
-    if (trace(pos, P-pos, Time))
-    Cf += ptarea / length2(P-pos);
+ if (trace(pos, P-pos, Time))
+ Cf += ptarea / length2(P-pos);
 }
 
 ```

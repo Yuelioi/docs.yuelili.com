@@ -239,10 +239,10 @@ A `SubstitutedFontReplacementMatchPolicy` enumerated value; read/write. One of:
 
 - `SubstitutedFontReplacementMatchPolicy.POSTSCRIPT_NAME` is the default; any [Font object](../fontobject) which has the same PostScript name is a valid candidate for replacement of a substituted [Font object](../fontobject).
 - `SubstitutedFontReplacementMatchPolicy.CTFI_EQUAL` requires that the following properties of substituted [Font object](../fontobject) must match to be considered a valid candidate:
-  - [postScriptName](../fontobject#fontobjectpostscriptname)
-  - [technology](../fontobject#fontobjecttechnology)
-  - [writingScripts](../fontobject#fontobjectwritingscripts) (primary)
-  - [designVector](../fontobject#fontobjectdesignvector)
+ - [postScriptName](../fontobject#fontobjectpostscriptname)
+ - [technology](../fontobject#fontobjecttechnology)
+ - [writingScripts](../fontobject#fontobjectwritingscripts) (primary)
+ - [designVector](../fontobject#fontobjectdesignvector)
 - `SubstitutedFontReplacementMatchPolicy.DISABLED` means that no [Font object](../fontobject) is an acceptable replacement for a the substituted [Font object](../fontobject).
 
 ---
@@ -265,19 +265,19 @@ If a character is deemed to be included in one or more `CTScript` values, the va
 
 ```javascript
 var scriptsV = app.fonts.getCTScriptForString("ABヂ", CTScript.CT_ROMAN_SCRIPT);
-var str = "[0] chars:" + scriptsV[0].chars +   // 2
-            " ctScript:" + getEnumAsString(scriptsV[0].ctScript) +
-            "\n[1] chars:" + scriptsV[1].chars + // 1
-            " ctScript:" + getEnumAsString(scriptsV[1].ctScript);
+var str = "[0] chars:" + scriptsV[0].chars + // 2
+ " ctScript:" + getEnumAsString(scriptsV[0].ctScript) +
+ "\n[1] chars:" + scriptsV[1].chars + // 1
+ " ctScript:" + getEnumAsString(scriptsV[1].ctScript);
 alert(str);
 ```
 
 #### Parameters
 
-|      Parameter      |      Type       |              Description               |
-| ------------------- | --------------- | ---------------------------------------------------------- |
-| `charString`        | String          | Characters to check. If empty, will return an empty array. |
-| `preferredCTScript` | `CTScript` enum | CT Script to prefer          |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `charString` | String | Characters to check. If empty, will return an empty array. |
+| `preferredCTScript` | `CTScript` enum | CT Script to prefer |
 
 #### Returns
 
@@ -318,8 +318,8 @@ var font = app.fonts.getDefaultFontForCTScript(CTScript.CT_JAPANESE_SCRIPT);
 
 #### Parameters
 
-| Parameter  |      Type       |         Description          |
-| ---------- | --------------- | ------------------------------------------------ |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `ctScript` | `CTScript` enum | Corresponding CTScript to get default font from. |
 
 #### Returns
@@ -350,9 +350,9 @@ alert(font1.fontID == font2.fontID);
 
 #### Parameters
 
-| Parameter |  Type   |     Description     |
-| --------- | ------- | ------------------- |
-| fontID    | Integer | The ID of the font. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| fontID | Integer | The ID of the font. |
 
 #### Returns
 
@@ -379,10 +379,10 @@ alert(fontList.length);
 
 #### Parameters
 
-| Parameter  |  Type  |         Description          |
-| ---------- | ------ | ---------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | FamilyName | String | The Family Name of the font. |
-| StyleName  | String | The Style Name of the font.  |
+| StyleName | String | The Style Name of the font. |
 
 #### Returns
 
@@ -411,8 +411,8 @@ alert(fontList.length);
 
 #### Parameters
 
-|   Parameter    |  Type  |           Description            |
-| -------------- | ------ | -------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | postscriptName | String | The PostScript Name of the font. |
 
 #### Returns
@@ -490,10 +490,10 @@ alert("set:" + ret);
 
 #### Parameters
 
-| Parameter  |   Type   |       Description        |
-| ---------- | ---------------------------- | ---------------------------------------------------------------- |
-| `ctScript` | `CTScript` enum    | CTScript for font to be mapped               |
-| `font`     | [Font object](../fontobject) | The font to be mapped. If `null`, then current mapping is reset. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `ctScript` | `CTScript` enum | CTScript for font to be mapped |
+| `font` | [Font object](../fontobject) | The font to be mapped. If `null`, then current mapping is reset. |
 
 #### Returns
 

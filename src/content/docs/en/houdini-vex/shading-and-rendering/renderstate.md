@@ -124,7 +124,7 @@ For example:
 ```vex
 vector Cd;
 if (!renderstate("packed:Cd", Cd))
-    Cd = 1;   // There was no Cd attribute on packed geometry
+ Cd = 1; // There was no Cd attribute on packed geometry
 
 ```
 
@@ -135,22 +135,22 @@ Examples
 ```vex
 surface showversion() 
 {
-    string    rname, rversion;
-    if (!renderstate("renderer:name", rname))
-        rname = "Unknown renderer";
-    if (!renderstate("renderer:version", rversion))
-        rversion = "Unknown version";
-    printf("Image rendered by %s (%s)\n", rname, rversion);
+ string rname, rversion;
+ if (!renderstate("renderer:name", rname))
+ rname = "Unknown renderer";
+ if (!renderstate("renderer:version", rversion))
+ rversion = "Unknown version";
+ printf("Image rendered by %s (%s)\n", rname, rversion);
 }
 
 vector mapToScreen(vector NDC_P)
 {
-    // Given a point in NDC space, find out which pixel it
-    // maps to.
-    vector    result;
-    if (!renderstate("image:resolution", result))
-        result = {640, 486, 0};
-    return result * NDC_P;
+ // Given a point in NDC space, find out which pixel it
+ // maps to.
+ vector result;
+ if (!renderstate("image:resolution", result))
+ result = {640, 486, 0};
+ return result * NDC_P;
 }
 
 ```

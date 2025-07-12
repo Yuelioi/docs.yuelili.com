@@ -21,7 +21,7 @@ order: 42
 ## 示例
 
 ```vex
-int    pt;
+int pt;
 
 // 获取顶点3对应的点
 pt = vertexpoint("defgeo.bgeo", 3);

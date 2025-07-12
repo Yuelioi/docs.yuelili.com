@@ -72,7 +72,7 @@ diff = diffuse(nml, "lightmask", "light*,^light2");
 surface
 blurry_mirror(float angle = 3; int samples = 16; float bias=0.05)
 {
-    Cf = reflectlight(bias, 1, "angle", angle, "samples", samples);
+ Cf = reflectlight(bias, 1, "angle", angle, "samples", samples);
 }
 
 ```
@@ -281,7 +281,7 @@ gather(P, dir, "send:N", normalize(N)) { ... }
 您可以指定要从击中着色器导入的全局或导出变量名称，形式为`"varname", &var`，通常包括`Cf`（击中表面的颜色向量）和`Of`（击中表面的不透明度向量）。
 
 ```vex
-vector  hitcf;
+vector hitcf;
 gather(P, dir, "bias", 0.01, "Cf", hitcf) {...}
 
 ```
@@ -320,9 +320,9 @@ gather(P, dir, "bias", 0.01, "Cf", hitcf) {...}
 vector a_pos[];
 vector a_nml[];
 trace(P, dir, Time,
-    "samplefilter", "all",
-      "P", a_pos,
-      "N", a_nml);
+ "samplefilter", "all",
+ "P", a_pos,
+ "N", a_nml);
 
 ```
 
@@ -376,20 +376,20 @@ trace(P, dir, Time,
 
 ```vex
 gather(P, dir,
-    "samplefilter", "opacity",
-      "Cf", hitCf,
-      "Of", hitOf,
-    "samplefilter", "closest",
-      "P", hitP,
-      "N", hitN)
+ "samplefilter", "opacity",
+ "Cf", hitCf,
+ "Of", hitOf,
+ "samplefilter", "closest",
+ "P", hitP,
+ "N", hitN)
 {
-    trace(pos, dir, time,
-      // 使用随机透明度合成命中表面的bsdf
-      "samplefilter", "screendoor",
-      "F", hitF,
-      // 但找到最近样本的位置
-      "samplefilter", "closest",
-      "P", hitP);
+ trace(pos, dir, time,
+ // 使用随机透明度合成命中表面的bsdf
+ "samplefilter", "screendoor",
+ "F", hitF,
+ // 但找到最近样本的位置
+ "samplefilter", "closest",
+ "P", hitP);
 }
 
 ```
@@ -405,6 +405,6 @@ gather(P, dir,
 
 ```vex
 gather(p, d, "pipeline", "surface", "Cf", surfCf,
-       "pipeline", "atmosphere" "Cf", fogCf, "P", hitP)
+ "pipeline", "atmosphere" "Cf", fogCf, "P", hitP)
 
 ```

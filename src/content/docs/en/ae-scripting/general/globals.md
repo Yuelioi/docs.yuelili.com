@@ -7,16 +7,16 @@ title: globals
 
 These globally available functions that are specific to After Effects. Any JavaScript object or function can call these functions, which allow you to display text in a small (3-line) area of the Info panel, to convert numeric time values to and from string values, or to generate a random number.
 
-|     Global function      |                          Description                           |
-| ------------------------ | -------------------------------------------------------------- |
-| `clearOutput()`          | Clears text from the Info panel.                               |
-| `currentFormatToTime()`  | Converts string time value to a numeric time value.            |
-| `generateRandomNumber()` | Generates a random number.                                     |
-| `getEnumAsString()`      | Converts an Enum value to it's string name.                    |
-| `timeToCurrentFormat()`  | Converts a numeric time value to a string time value.          |
-| `write()`                | Writes text to the Info panel, with no line break added.       |
-| `writeLn()`              | Writes text to the Info panel, adding a line break at the end. |
-| `isValid()`              | When `true`, the specified object exists.                      |
+| Global function | Description |
+| --- | --- |
+| `clearOutput()` | Clears text from the Info panel. |
+| `currentFormatToTime()` | Converts string time value to a numeric time value. |
+| `generateRandomNumber()` | Generates a random number. |
+| `getEnumAsString()` | Converts an Enum value to it's string name. |
+| `timeToCurrentFormat()` | Converts a numeric time value to a string time value. |
+| `write()` | Writes text to the Info panel, with no line break added. |
+| `writeLn()` | Writes text to the Info panel, adding a line break at the end. |
+| `isValid()` | When `true`, the specified object exists. |
 
 Additional global functions for standard user I/O (`alert`, `confirm` , and `prompt`) and static functions for file I/O, are defined by ExtendScript; for detailed reference information, see the [JavaScript Tools Guide](https://extendscript.docsforadobe.dev/).
 
@@ -52,11 +52,11 @@ Converts a formatted string for a frame time value to a number of seconds, given
 
 #### Parameters
 
-|    Parameter    |                                                                        Description                                                                         |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `formattedTime` | The frame time value, a string specifying a number of frames in the project's current time display format.                                                 |
-| `fps`           | The frames-per-second, a floating-point value.                                                                                                             |
-| `isDuration`    | Optional. When `true`, the time is a duration (measured from frame 0). When `false` (the default), the time is measured from the project's starting frame. |
+| Parameter | Description |
+| --- | --- |
+| `formattedTime` | The frame time value, a string specifying a number of frames in the project's current time display format. |
+| `fps` | The frames-per-second, a floating-point value. |
+| `isDuration` | Optional. When `true`, the time is a duration (measured from frame 0). When `false` (the default), the time is measured from the project's starting frame. |
 
 #### Returns
 
@@ -71,7 +71,6 @@ Floating-point value, the number of seconds.
 :::note
 This functionality was added in After Effects 13.6 (CC 2015)
 :::
-
 
 #### Description
 
@@ -92,13 +91,13 @@ var myComp = app.project.activeItem;
 var x = 0;
 
 for (var i = 1; i <= myComp.numLayers; i++) {
-    // If you use Math.random(), this does not work
-    // x = 400 * (Math.random()) - 200;
-    // use new generateRandomNumber() instead
+ // If you use Math.random(), this does not work
+ // x = 400 * (Math.random()) - 200;
+ // use new generateRandomNumber() instead
 
-    x = 400 * generateRandomNumber() - 200;
-    var currentPos = myComp.layer(i).property("Position").value;
-    myComp.layer(i).property("Position").setValue([currentPos[0] + x, currentPos[1]]);
+ x = 400 * generateRandomNumber() - 200;
+ var currentPos = myComp.layer(i).property("Position").value;
+ myComp.layer(i).property("Position").setValue([currentPos[0] + x, currentPos[1]]);
 }
 ```
 
@@ -111,7 +110,6 @@ for (var i = 1; i <= myComp.numLayers; i++) {
 :::note
 This functionality was added in After Effects 24.0
 :::
-
 
 #### Description
 
@@ -144,9 +142,9 @@ Determines if the specified After Effects object (e.g., composition, layer, mask
 
 #### Parameters
 
-| Parameter |                   Description                   |
-| --------- | ----------------------------------------------- |
-| `obj`     | The After Effects object to check for validity. |
+| Parameter | Description |
+| --- | --- |
+| `obj` | The After Effects object to check for validity. |
 
 #### Returns
 
@@ -176,10 +174,10 @@ Converts a numeric time value (a number of seconds) to a frame time value; that 
 
 #### Parameters
 
-|  Parameter   |                                                                      Description                                                                       |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `time`       | The number of seconds, a floating-point value.                                                                                                         |
-| `fps`        | The frames-per-second, a floating-point value.                                                                                                         |
+| Parameter | Description |
+| --- | --- |
+| `time` | The number of seconds, a floating-point value. |
+| `fps` | The frames-per-second, a floating-point value. |
 | `isDuration` | Optional. When `true`, the time is a duration (measured from frame 0). When `false` (the default), the time is measured from the project's starting frame. |
 
 #### Returns
@@ -198,9 +196,9 @@ Writes output to the Info panel, with no line break added.
 
 #### Parameters
 
-| Parameter |                           Description                            |
-| --------- | ---------------------------------------------------------------- |
-| `text`    | The string to display. Truncated if too long for the Info panel. |
+| Parameter | Description |
+| --- | --- |
+| `text` | The string to display. Truncated if too long for the Info panel. |
 
 #### Returns
 
@@ -225,9 +223,9 @@ Writes output to the Info panel and adds a line break at the end.
 
 #### Parameters
 
-| Parameter |      Description       |
-| --------- | ---------------------- |
-| `text`    | The string to display. |
+| Parameter | Description |
+| --- | --- |
+| `text` | The string to display. |
 
 #### Returns
 

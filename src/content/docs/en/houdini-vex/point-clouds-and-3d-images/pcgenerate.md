@@ -39,15 +39,15 @@ int ohandle, ghandle, rval;
 ghandle = pcgenerate(texturename, npoints);
 while (pcunshaded(ghandle, "P"))
 {
-    // Compute 'position'...
-    rval = pcexport(ghandle, "P", position);
+ // Compute 'position'...
+ rval = pcexport(ghandle, "P", position);
 }
 
 ohandle = pcopen(texturename, "P", P, maxdistance, maxpoints);
 while (pciterate(ohandle))
 {
-    rval = pcimport(ohandle, "P", position);
-    // Do something with 'position'...
+ rval = pcimport(ohandle, "P", position);
+ // Do something with 'position'...
 }
 
 pcclose(ohandle);

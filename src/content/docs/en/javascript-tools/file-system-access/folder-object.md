@@ -16,16 +16,16 @@ new Folder( [path] ); // Always returns a Folder object
 
 To create a Folder object, use the Folder function or the new operator. The constructor accepts full or partial path names, and returns the new object.
 
-| Parameter |  Type  |                                                                                                                           Description                                                                                                                            |
-|-----------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `path`    | String | Optional. The absolute or relative path to the Folder associated with this object, specified in platform-specific or URI format; see [Specifying paths](../using-file-and-folder-objects#specifying-paths). The value stored in the object is the absolute path. |
-|           |        | The path need not refer to an existing Folder. If not supplied, a temporary name is generated.                                                                                                                                                                   |
-|           |        | If the path refers to an existing file:                                                                                                                                                                                                                          |
-|           |        | - The Folder function returns a File object instead of a File object.                                                                                                                                                                                            |
-|           |        | - The new operator returns a Folder object for a nonexisting folder with the same name.                                                                                                                                                                          |
-|           |        | !!! warning                                                                                                                                                                                                                                                      |
-|           |        |     In After Effects on MacOS, if `path.length` is more than 1002, After Effects crashes.                                                                                                                                                                        |
-|           |        |     This has been reported on MacOS 10.11.6 and After Effects 13.8 and 14.0.                                                                                                                                                                                     |
+| Parameter | Type | Description |
+|---|---|---|
+| `path` | String | Optional. The absolute or relative path to the Folder associated with this object, specified in platform-specific or URI format; see [Specifying paths](../using-file-and-folder-objects#specifying-paths). The value stored in the object is the absolute path. |
+| | | The path need not refer to an existing Folder. If not supplied, a temporary name is generated. |
+| | | If the path refers to an existing file: |
+| | | - The Folder function returns a File object instead of a File object. |
+| | | - The new operator returns a Folder object for a nonexisting folder with the same name. |
+| | | !!! warning |
+| | | In After Effects on MacOS, if `path.length` is more than 1002, After Effects crashes. |
+| | | This has been reported on MacOS 10.11.6 and After Effects 13.8 and 14.0. |
 
 ---
 
@@ -249,9 +249,9 @@ All special characters must be encoded in UTF-8 and stored as escaped characters
 
 #### Parameters
 
-| Parameter |  Type  |          Description          |
-| --------- | ------ | ----------------------------- |
-| `uri`     | String | The encoded string to decode. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `uri` | String | The encoded string to decode. |
 
 #### Returns
 
@@ -275,9 +275,9 @@ All special characters must be encoded in UTF-8 and stored as escaped characters
 
 #### Parameters
 
-| Parameter |  Type  |      Description      |
-| --------- | ------ | --------------------- |
-| `name`    | String | The string to encode. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | The string to encode. |
 
 #### Returns
 
@@ -295,9 +295,9 @@ Checks whether a given encoding is available.
 
 #### Parameters
 
-| Parameter |  Type  |                                                                               Description                                                                                |
-| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `name`    | String | The encoding name. Typical values are `"ASCII"`, `"binary"`, or `"UTF-8"`. See [File- and Folder-supported encoding names](../file-and-folder-supported-encoding-names). |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | The encoding name. Typical values are `"ASCII"`, `"binary"`, or `"UTF-8"`. See [File- and Folder-supported encoding names](../file-and-folder-supported-encoding-names). |
 
 #### Returns
 
@@ -315,9 +315,9 @@ Opens the built-in platform-specific file-browsing dialog, and creates a new Fil
 
 #### Parameters
 
-| Parameter |  Type  |          Description          |
-| --------- | ------ | ----------------------------- |
-| `prompt`   | String | Optional. The prompt text, if the dialog allows a prompt.   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `prompt` | String | Optional. The prompt text, if the dialog allows a prompt. |
 
 #### Returns
 
@@ -541,9 +541,9 @@ These functions are available for Folder objects.
 
 #### Parameters
 
-| Parameter |  Type  |                           Description                            |
-| --------- | ------ | ---------------------------------------------------------------- |
-| `path`    | String | The new path, absolute or relative to the current parent folder. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `path` | String | The new path, absolute or relative to the current parent folder. |
 
 Changes the path specification of the referenced folder.
 
@@ -591,15 +591,14 @@ Retrieves the contents of this folder, filtered by the supplied mask.
 
 #### Parameters
 
-| Parameter |        Type        |                                                                                                                                             Description                                                                                                                                             |
-|-----------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `mask`    | String or Function | Optional. A search mask for file names.                                                                                                                                                                                                                                                             |
-|           |                    | A string that can contain question mark (`?`) and asterisk (`*`) wild cards. Default is "`*`", which matches all file names.                                                                                                                                                                        |
-|           |                    | Can also be the name of a function that takes a File or Folder object as its argument.                                                                                                                                                                                                              |
-|           |                    | It is called for each file or folder found in the search; if it returns `true`, the object is added to the return array.                                                                                                                                                                            |
-|           |                    | !!! note                                                                                                                                                                                                                                                                                            |
-|           |                    |     In Windows, all aliases end with the extension `.lnk`; ExtendScript strips this from the file name when found, in order to preserve compatibility with other operating systems. You can search for all aliases by supplying the search mask `"*.lnk"`, but note that such code is not portable. |
-
+| Parameter | Type | Description |
+|---|---|---|
+| `mask` | String or Function | Optional. A search mask for file names. |
+| | | A string that can contain question mark (`?`) and asterisk (`*`) wild cards. Default is "`*`", which matches all file names. |
+| | | Can also be the name of a function that takes a File or Folder object as its argument. |
+| | | It is called for each file or folder found in the search; if it returns `true`, the object is added to the return array. |
+| | | !!! note |
+| | | In Windows, all aliases end with the extension `.lnk`; ExtendScript strips this from the file name when found, in order to preserve compatibility with other operating systems. You can search for all aliases by supplying the search mask `"*.lnk"`, but note that such code is not portable. |
 
 #### Returns
 
@@ -617,8 +616,8 @@ Retrieves the path for this folder relative to the specified base path or the cu
 
 #### Parameters
 
-| Parameter  |  Type  |                                 Description                                  |
-| ---------- | ------ | ---------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `basePath` | String | Optional. The base path for the relative URI. Default is the current folder. |
 
 #### Returns
@@ -641,7 +640,6 @@ Folders must be empty before they can be deleted. Does not resolve aliases; inst
 Cannot be undone. It is recommended that you prompt the user for permission before deleting.
 :::
 
-
 #### Returns
 
 Boolean. `true` if the folder is deleted successfully.
@@ -656,8 +654,8 @@ Boolean. `true` if the folder is deleted successfully.
 
 #### Parameters
 
-| Parameter |  Type  |            Description             |
-| --------- | ------ | ---------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `newName` | String | The new folder name, with no path. |
 
 Renames the associated folder. Does not resolve aliases; instead, renames the referenced alias or shortcut file itself.
@@ -694,9 +692,9 @@ Differs from the class method [`selectDialog()`](#folderselectdialog) in that it
 
 #### Parameters
 
-| Parameter |  Type  |                   Description                   |
-| --------- | ------ | ----------------------------------------------- |
-| `prompt`  | String | The prompt text, if the dialog allows a prompt. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `prompt` | String | The prompt text, if the dialog allows a prompt. |
 
 #### Returns
 

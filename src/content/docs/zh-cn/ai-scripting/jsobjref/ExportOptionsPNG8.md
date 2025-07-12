@@ -265,15 +265,15 @@ title: ExportOptionsPNG8
 // 将当前文档导出为PNG8文件到指定路径，dest包含完整路径和文件名
 
 function exportFileToPNG8(dest) {
-    if (app.documents.length > 0) {
-        var exportOptions = new ExportOptionsPNG8();
-        exportOptions.colorCount = 8;
-        exportOptions.transparency = false;
+ if (app.documents.length > 0) {
+ var exportOptions = new ExportOptionsPNG8();
+ exportOptions.colorCount = 8;
+ exportOptions.transparency = false;
 
-        var type = ExportType.PNG8;
-        var fileSpec = new File(dest);
+ var type = ExportType.PNG8;
+ var fileSpec = new File(dest);
 
-        app.activeDocument.exportFile(fileSpec, type, exportOptions);
-    }
+ app.activeDocument.exportFile(fileSpec, type, exportOptions);
+ }
 }
 ```

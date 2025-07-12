@@ -38,7 +38,7 @@ For area sampling, you must specify both the angle and sample variadic parameter
 surface
 blurry_mirror(float angle = 3; int samples = 16; float bias=0.05)
 {
-    Cf = reflectlight(bias, 1, "angle", angle, "samples", samples);
+ Cf = reflectlight(bias, 1, "angle", angle, "samples", samples);
 }
 
 ```
@@ -199,7 +199,7 @@ cf = colormap(map, u, v, "channel", channelname);
 
 - When the texture function evaluates non-houdini format textures, Houdini switches to use OpenImageIO for texture evaluation. While there are corresponding values to many of the variadic keywords, some keywords don’t have an equivalent function in OpenImageIO.
 
-  - OIIO will *not* create MIP maps for images that don’t have multi-resolution images by default. You can turn this on by adding `automip=1` to the content of the the `OPENIMAGEIO_IMAGECACHE_OPTIONS` environment variable.
+ - OIIO will *not* create MIP maps for images that don’t have multi-resolution images by default. You can turn this on by adding `automip=1` to the content of the the `OPENIMAGEIO_IMAGECACHE_OPTIONS` environment variable.
 
 Without MIP maps, blurring and filtering may not work as expected.
 \* You can also use `OPENIMAGEIO_IMAGECACHE_OPTIONS` to override the amount of memory OIIO uses for caching.
@@ -573,7 +573,7 @@ Examples
 ```vex
 surface mirror(vector refl_color=1; float bias=.005)
 {
-    Cf = refl_color * reflectlight(bias, max(refl_color));
+ Cf = refl_color * reflectlight(bias, max(refl_color));
 }
 
 ```

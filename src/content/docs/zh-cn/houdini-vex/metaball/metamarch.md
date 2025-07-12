@@ -13,8 +13,8 @@ order: 2
 因此，您可以重复调用该函数，通过不断更新index、p0和p1参数来在感兴趣的区域进行光线步进，跳过空白区域：
 
 ```vex
-int    index;
-vector    p0, p1;
+int index;
+vector p0, p1;
 // 初始化输入值
 index = -1;
 p0 = Eye; p1 = P;

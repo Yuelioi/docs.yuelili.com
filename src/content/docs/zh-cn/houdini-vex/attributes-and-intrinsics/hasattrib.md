@@ -25,7 +25,7 @@ order: 24
 ```vex
 // 检查点组 "pointstouse" 是否存在
 if (hasattrib("defgeo.bgeo", "pointgroup", "pointstouse")) {
-    // 对点组进行某些操作
+ // 对点组进行某些操作
 }
 
 ```

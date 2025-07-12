@@ -32,7 +32,7 @@ dict s = {};
 
 ```vex
 // 普通字典声明
-dict   mydict;
+dict mydict;
 
 ```
 
@@ -43,7 +43,7 @@ dict   mydict;
 dict rgb_table()
 {
 ...
-};    
+}; 
 
 ```
 
@@ -66,11 +66,11 @@ dict rgb_table()
 VEX要求类型在编译时已知，但实际存储类型可能在运行时变化。因此通常需要显式类型转换函数来指定提取类型。在可能的情况下，原生类型将被转换为所需类型。
 
 ```vex
-dict dictionary;    // 创建空字典
-dictionary['key'] = 3;    // 在key索引处存储3
-float three = dictionary['key'];    // 提取key
-dictionary['newkey'] = dictionary['key'];  // 错误：类型不明确！
-dictionary['newkey'] = int(dictionary['key']);  // 以int类型提取key并复制
+dict dictionary; // 创建空字典
+dictionary['key'] = 3; // 在key索引处存储3
+float three = dictionary['key']; // 提取key
+dictionary['newkey'] = dictionary['key']; // 错误：类型不明确！
+dictionary['newkey'] = int(dictionary['key']); // 以int类型提取key并复制
 
 ```
 
@@ -93,14 +93,14 @@ dictionary['key'] = set(1, 2, 3);
 int value_type = typeid(dictionary, 'key');
 if (value_type == typeid(vector()))
 {
-    // 当key为'vector'类型时执行此路径
-    vector val = dictionary['key'];
-    // ... 对向量值进行操作
+ // 当key为'vector'类型时执行此路径
+ vector val = dictionary['key'];
+ // ... 对向量值进行操作
 }
 else if (value_type == typeid(vector4()))
 {
-    vector4 val = dictionary['key'];
-    // ... 对vector4值进行操作
+ vector4 val = dictionary['key'];
+ // ... 对vector4值进行操作
 }
 
 ```

@@ -24,17 +24,17 @@ ThreeDModelLayer 从 [AVLayer 对象](../avlayer) 继承了以下属性和属性
 - 标记
 - 时间重映射
 - 变换
-  - 锚点
-  - 位置
-  - 缩放
-  - 方向
-  - X 旋转
-  - Y 旋转
-  - 旋转
-  - 不透明度
+ - 锚点
+ - 位置
+ - 缩放
+ - 方向
+ - X 旋转
+ - Y 旋转
+ - 旋转
+ - 不透明度
 - 图层样式
 - 音频
-  - 音频电平
+ - 音频电平
 
 #### 示例
 
@@ -44,6 +44,6 @@ ThreeDModelLayer 从 [AVLayer 对象](../avlayer) 继承了以下属性和属性
 var modelLayer = app.project.item(1).layer(1);
 if (modelLayer instanceof ThreeDModelLayer)
 {
-  // 执行某些操作
+ // 执行某些操作
 }
 ```

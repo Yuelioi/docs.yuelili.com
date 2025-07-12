@@ -23,8 +23,8 @@ The resulting value is an Array of hue, saturation, lightness, and alpha channel
 
 #### Parameters
 
-|  Parameter  |               Type               |              Description               |
-| ----------- | -------------------------------- | -------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `rgbaArray` | Array of numbers (4-dimensional) | RGBA values, in the range `[0.0..1.0]` |
 
 #### Returns
@@ -51,8 +51,8 @@ This conversion is the opposite of the conversion performed by the [rgbToHsl()](
 
 #### Parameters
 
-|  Parameter  |               Type               |              Description               |
-| ----------- | -------------------------------- | -------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `hslaArray` | Array of numbers (4-dimensional) | HSLA values, in the range `[0.0..1.0]` |
 
 #### Returns
@@ -69,7 +69,6 @@ RGBA Array (4-dimensional)
 This functionality was added in After Effects 16.0.
 :::
 
-
 #### Description
 
 Converts a color in hex triplet space to RGB space, or in hex quartet space to RGBA space.
@@ -78,10 +77,10 @@ For hex triplets, the alpha channel defaults to 1.0.
 
 #### Parameters
 
-|                                               Parameter                                               |  Type  |                                                            Description                                                             |
-|-------------------------------------------------------------------------------------------------------|--------|------------------------------------------------------------------------------------------------------------------------------------|
-| `hexString`                                                                                           | String | Hex triplet (6 digits, no alpha channel) or quartet (8 digits, includes alpha channel) containing only numerals or characters A–F. |
-| Optional leading characters 0x, 0X, or # will be ignored. Characters beyond 8 digits will be ignored. |        |                                                                                                                                    |
+| Parameter | Type | Description |
+|---|---|---|
+| `hexString` | String | Hex triplet (6 digits, no alpha channel) or quartet (8 digits, includes alpha channel) containing only numerals or characters A–F. |
+| Optional leading characters 0x, 0X, or # will be ignored. Characters beyond 8 digits will be ignored. | | |
 
 #### Returns
 
@@ -95,4 +94,4 @@ Any of the following will return `[1.0, 0.0, 1.0, 1.0]`:
 - `hexToRgb("#FF00FF")`
 - `hexToRgb("0xFF00FF")`
 - `hexToRgb("0XFF00FFFF")`
-    - **Note:** This inputs an 8-digit hex quartet; the last two digits set alpha channel to 1.0.
+ - **Note:** This inputs an 8-digit hex quartet; the last two digits set alpha channel to 1.0.

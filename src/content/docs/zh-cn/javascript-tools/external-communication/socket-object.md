@@ -18,13 +18,13 @@ var conn = new Socket;
 // 访问 Adobe 的主页
 if (conn.open ("www.adobe.com:80")) {
 
-   // 发送 HTTP GET 请求
-   conn.write ("GET /index.html HTTP/1.0\n\n");
+ // 发送 HTTP GET 请求
+ conn.write ("GET /index.html HTTP/1.0\n\n");
 
-   // 并读取服务器的响应
-   reply = conn.read(999999);
+ // 并读取服务器的响应
+ reply = conn.read(999999);
 
-   conn.close();
+ conn.close();
 }
 ```
 
@@ -42,25 +42,25 @@ if (conn.open ("www.adobe.com:80")) {
 conn = new Socket;
 // 监听端口 80
 if (conn.listen (80)) {
-   // 永远等待连接
-   var incoming;
-   do incoming = conn.poll();
-   while (incoming == null);
+ // 永远等待连接
+ var incoming;
+ do incoming = conn.poll();
+ while (incoming == null);
 
-   // 丢弃请求
-   conn.read();
+ // 丢弃请求
+ conn.read();
 
-   // 回复 HTTP 头
-   incoming.writeln ("HTTP/1.0 200 OK");
-   incoming.writeln ("Content-Type: text/html");
-   incoming.writeln();
+ // 回复 HTTP 头
+ incoming.writeln ("HTTP/1.0 200 OK");
+ incoming.writeln ("Content-Type: text/html");
+ incoming.writeln();
 
-   // 传输虚拟主页
-   incoming.writeln ("<html><body><h1>Homepage</h1></body></html>");
+ // 传输虚拟主页
+ incoming.writeln ("<html><body><h1>Homepage</h1></body></html>");
 
-   // 完成！
-   incoming.close();
-   delete incoming;
+ // 完成！
+ incoming.close();
+ delete incoming;
 }
 ```
 
@@ -79,64 +79,64 @@ Socket 对象使您可以轻松实现通过互联网相互通信的软件。例�
 ```javascript
 // 一个简单的聊天服务器，监听端口 1234
 function chatServer() {
-   var tcp = new Socket;
+ var tcp = new Socket;
 
-   // 监听端口 1234
-   writeln ("聊天服务器正在监听端口 1234");
-   if (tcp.listen (1234)) {
-      for (;;) {
-     // 轮询新连接
-     var connection = tcp.poll();
-     if (connection != null) {
-   writeln ("来自 " + connection.host + " 的连接");
+ // 监听端口 1234
+ writeln ("聊天服务器正在监听端口 1234");
+ if (tcp.listen (1234)) {
+ for (;;) {
+ // 轮询新连接
+ var connection = tcp.poll();
+ if (connection != null) {
+ writeln ("来自 " + connection.host + " 的连接");
 
-   // 我们有一个新连接，所以欢迎并聊天
-   // 直到客户端终止会话
-   connection.writeln ("欢迎来到小聊天室！");
-   chat (connection);
-   connection.writeln ( "*** 再见 ***");
-   connection.close();
-   delete connection;
-   writeln ("连接已关闭");
-     }
-      }
-   }
+ // 我们有一个新连接，所以欢迎并聊天
+ // 直到客户端终止会话
+ connection.writeln ("欢迎来到小聊天室！");
+ chat (connection);
+ connection.writeln ( "*** 再见 ***");
+ connection.close();
+ delete connection;
+ writeln ("连接已关闭");
+ }
+ }
+ }
 }
 
 function chatClient() {
-   var connection = new Socket;
+ var connection = new Socket;
 
-   // 连接到示例服务器
-   if (connection.open ("remote-pc.corp.adobe.com:1234")) {
-      // 然后与服务器聊天
-      chat (connection);
-      connection.close();
-      delete connection;
-   }
+ // 连接到示例服务器
+ if (connection.open ("remote-pc.corp.adobe.com:1234")) {
+ // 然后与服务器聊天
+ chat (connection);
+ connection.close();
+ delete connection;
+ }
 }
 
 function chat (c) {
-   // 设置较长的超时时间
-   c.timeout=1000;
+ // 设置较长的超时时间
+ c.timeout=1000;
 
-   while (true) {
-      // 获取一行并回显
-      writeln (c.read());
+ while (true) {
+ // 获取一行并回显
+ writeln (c.read());
 
-      // 如果连接断开则停止
-      if (!c.connected)
-     break;
+ // 如果连接断开则停止
+ if (!c.connected)
+ break;
 
-      // 读取一行文本
-      write ("聊天: ");
-      var text = readln();
+ // 读取一行文本
+ write ("聊天: ");
+ var text = readln();
 
-      if (text == "bye")
-     // 如果用户输入 "bye" 则停止对话
-     break;
-      else
-     // 否则传输到服务器
-     c.writeln (text);
-   }
+ if (text == "bye")
+ // 如果用户输入 "bye" 则停止对话
+ break;
+ else
+ // 否则传输到服务器
+ c.writeln (text);
+ }
 }
 ```

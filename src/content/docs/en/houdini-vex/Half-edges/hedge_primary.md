@@ -28,7 +28,7 @@ Examples
 ```vex
 int primhedge;
 
-// Get the primary half-edge equivalent  to half-edge number 3.
+// Get the primary half-edge equivalent to half-edge number 3.
 primhedge = hedge_primary("defgeo.bgeo", 3);
 
 ```

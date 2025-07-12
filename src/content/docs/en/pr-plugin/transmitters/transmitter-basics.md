@@ -71,7 +71,6 @@ Turn on dog ears to view statistics about the frames being sent to the transmitt
 This mode may result in duplicate PushVideo calls made for a single frame.
 :::
 
-
 ---
 
 ## Closed Captioning
@@ -92,10 +91,10 @@ This entry point function will be called once on load, and once on unload.
 
 ```cpp
 tmResult (*tmEntryFunc)(
-  csSDK_int32  inInterfaceVersion,
-  prBool       inLoadModule,
-  piSuitesPtr  piSuites,
-  tmModule*    outModule)
+ csSDK_int32 inInterfaceVersion,
+ prBool inLoadModule,
+ piSuitesPtr piSuites,
+ tmModule* outModule)
 ```
 
 A tmModule is a structure of function pointers, which the transmitter implements.

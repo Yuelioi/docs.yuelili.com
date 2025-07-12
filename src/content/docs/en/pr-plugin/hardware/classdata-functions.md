@@ -13,8 +13,8 @@ It then calls setClassData to store information about the current context. Use h
 
 ```c++
 typedef struct {
-  SetClassDataFunc  setClassData;
-  GetClassDataFunc  getClassData;
+ SetClassDataFunc setClassData;
+ GetClassDataFunc getClassData;
 } ClassDataFuncs, *ClassDataFuncsPtr;
 ```
 
@@ -34,16 +34,16 @@ Note that all plugins that share the data must use the same data structure.
 
 ```cpp
 int setClassData (
-    unsigned int  theClass,
-    void          *info);
+ unsigned int theClass,
+ void *info);
 ```
 
 #### Parameters
 
-| Parameter  |       Type        |                            Description                             |
-| ---------- | ----------------- | ------------------------------------------------------------------ |
-| `theClass` | Unsigned int      | The class being set. Use a unique 4-byte code.                     |
-| `info`     | Pointer or handle | the class data to be set. It can be used as a pointer or a handle. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `theClass` | Unsigned int | The class being set. Use a unique 4-byte code. |
+| `info` | Pointer or handle | the class data to be set. It can be used as a pointer or a handle. |
 
 ---
 
@@ -57,11 +57,11 @@ Retrieves the class data for the given class.
 
 ```cpp
 int getClassData (
-    unsigned int  theClass);
+ unsigned int theClass);
 ```
 
 #### Parameters
 
-| Parameter  |       Type       |              Description              |
-| ---------- | ---------------- | ------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `theClass` | Unsigned integer | The class for which to retrieve data. |

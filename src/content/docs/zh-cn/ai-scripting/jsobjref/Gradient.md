@@ -107,39 +107,39 @@ title: 渐变
 // 在当前文档中创建一个新渐变，然后将渐变应用到最前面的路径项
 
 if (app.documents.length > 0) {
-    // 为渐变的两个端点创建颜色
-    var startColor = new RGBColor();
-    startColor.red = 0;
-    startColor.green = 100;
-    startColor.blue = 255;
+ // 为渐变的两个端点创建颜色
+ var startColor = new RGBColor();
+ startColor.red = 0;
+ startColor.green = 100;
+ startColor.blue = 255;
 
-    var endColor = new RGBColor();
-    endColor.red = 220;
-    endColor.green = 0;
-    endColor.blue = 100;
+ var endColor = new RGBColor();
+ endColor.red = 220;
+ endColor.green = 0;
+ endColor.blue = 100;
 
-    // 创建一个新渐变
-    // 新渐变始终有2个停止点
-    var newGradient = app.activeDocument.gradients.add();
-    newGradient.name = "NewGradient";
-    newGradient.type = GradientType.LINEAR;
+ // 创建一个新渐变
+ // 新渐变始终有2个停止点
+ var newGradient = app.activeDocument.gradients.add();
+ newGradient.name = "NewGradient";
+ newGradient.type = GradientType.LINEAR;
 
-    // 修改第一个渐变停止点
-    newGradient.gradientStops[0].rampPoint = 30;
-    newGradient.gradientStops[0].midPoint = 60;
-    newGradient.gradientStops[0].color = startColor;
+ // 修改第一个渐变停止点
+ newGradient.gradientStops[0].rampPoint = 30;
+ newGradient.gradientStops[0].midPoint = 60;
+ newGradient.gradientStops[0].color = startColor;
 
-    // 修改最后一个渐变停止点
-    newGradient.gradientStops[1].rampPoint = 80;
-    newGradient.gradientStops[1].color = endColor;
+ // 修改最后一个渐变停止点
+ newGradient.gradientStops[1].rampPoint = 80;
+ newGradient.gradientStops[1].color = endColor;
 
-    // 构造一个引用新创建的渐变的 Illustrator.GradientColor 对象
-    var colorOfGradient = new GradientColor();
-    colorOfGradient.gradient = newGradient;
+ // 构造一个引用新创建的渐变的 Illustrator.GradientColor 对象
+ var colorOfGradient = new GradientColor();
+ colorOfGradient.gradient = newGradient;
 
-    // 获取第一个路径项，将新渐变应用为其填充
-    var topPath = app.activeDocument.pathItems[0];
-    topPath.filled = true;
-    topPath.fillColor = colorOfGradient;
+ // 获取第一个路径项，将新渐变应用为其填充
+ var topPath = app.activeDocument.pathItems[0];
+ topPath.filled = true;
+ topPath.fillColor = colorOfGradient;
 }
 ```

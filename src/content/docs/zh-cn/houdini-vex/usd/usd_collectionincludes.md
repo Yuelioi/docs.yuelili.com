@@ -29,6 +29,6 @@ order: 35
 ```vex
 // 获取集合的包含列表
 string collection_path = usd_makecollectionpath(0, "/geo/cube", "some_collection");
-string include_list[]  = usd_collectionincludes(0, collection_path);
+string include_list[] = usd_collectionincludes(0, collection_path);
 
 ```

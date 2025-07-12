@@ -265,11 +265,11 @@ After Effects 在合成中显示和渲染的有效帧率。如果 [removePulldow
 
 #### 参数
 
-| 参数 |      类型      |   描述   |
-|------|----|--------|
-| `method`  | `PulldownMethod` 枚举值。 | 用于估计的方法。可选值为： |
-|       |       | - `PulldownMethod.PULLDOWN_3_2`       |
-|       |       | - `PulldownMethod.ADVANCE_24P`      |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `method` | `PulldownMethod` 枚举值。 | 用于估计的方法。可选值为： |
+| | | - `PulldownMethod.PULLDOWN_3_2` |
+| | | - `PulldownMethod.ADVANCE_24P` |
 
 #### 返回
 

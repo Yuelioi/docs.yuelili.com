@@ -21,12 +21,12 @@ Creates and returns a new control or container object and adds it to the childre
 
 #### Parameters
 
-|    Parameter     |               Type               |                                Description                                 |
-| ---------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `type`           | String                 | The control type. See [Control types and creation parameters](#control-types-and-creation-parameters).                                           |
-| `bounds`         | [Bounds object](../size-and-location-objects#bounds) | Optional. A bounds specification that describes the size and position of the new control or container, relative to its parent. If supplied, this value creates a new [Bounds](../size-and-location-objects#bounds) object which is assigned to the new object's `bounds` property. |
-| `text`           | String                 | Optional. Initial text to be displayed in the control as the title, label, or contents, depending on the control type. If supplied, this value is assigned to the new object's `text` property.                        |
-| `creation_props` | Object                 | Optional. The properties of this object specify creation parameters, which are specific to each object type. See [Control types and creation parameters](#control-types-and-creation-parameters).                      |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `type` | String | The control type. See [Control types and creation parameters](#control-types-and-creation-parameters). |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. A bounds specification that describes the size and position of the new control or container, relative to its parent. If supplied, this value creates a new [Bounds](../size-and-location-objects#bounds) object which is assigned to the new object's `bounds` property. |
+| `text` | String | Optional. Initial text to be displayed in the control as the title, label, or contents, depending on the control type. If supplied, this value is assigned to the new object's `text` property. |
+| `creation_props` | Object | Optional. The properties of this object specify creation parameters, which are specific to each object type. See [Control types and creation parameters](#control-types-and-creation-parameters). |
 
 #### Returns
 
@@ -52,17 +52,17 @@ A pushbutton containing a mouse-sensitive text string. Calls the [onClick](#oncl
 
 #### Parameters
 
-|       Parameter       |               Type               |      Description       |
-| --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.           |
-| `text`      | String                 | Optional. The text displayed in the control.         |
-| `creation_properties` | Object                 | Optional. An object that contains any of the properties below. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. |
+| `text` | String | Optional. The text displayed in the control. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-| Property |  Type  |                              Description                              |
-| -------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`   | String | A unique name for the control. For a modal dialog, the special name "ok" makes this [defaultElement](../window-object#defaultelement), and the special name "cancel" makes this the [cancelElement](../window-object#cancelelement) of the parent dialog. |
+| Property | Type | Description |
+| --- | --- | --- |
+| `name` | String | A unique name for the control. For a modal dialog, the special name "ok" makes this [defaultElement](../window-object#defaultelement), and the special name "cancel" makes this the [cancelElement](../window-object#cancelelement) of the parent dialog. |
 
 #### Example
 
@@ -86,17 +86,17 @@ Calls the [onClick](#onclick) callback if the control is clicked or if its [noti
 
 #### Parameters
 
-|       Parameter       |               Type               |      Description       |
-| --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.           |
-| `text`      | String                 | Optional. The text displayed in the control.         |
-| `creation_properties` | Object                 | Optional. An object that contains any of the properties below. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. |
+| `text` | String | Optional. The text displayed in the control. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
-| -------- | ------ | ------------------------------ |
-| `name`   | String | A unique name for the control. |
+| Property | Type | Description |
+| --- | --- | --- |
+| `name` | String | A unique name for the control. |
 
 #### Example
 
@@ -118,18 +118,18 @@ A drop-down list with zero or more items. Calls the [onChange](#onchange) callba
 
 #### Parameters
 
-|       Parameter       |               Type               |                                Description                                 |
-| --------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                                           |
-| `items`     | Array of strings                 | Optional. Supply this argument or the `creation_properties` argument, not both. The text of each list item. A `ListItem` object is created for each item. An item with the text string `"-"` creates a separator item. |
-| `creation_properties` | Object                 | Optional. An object that contains any of the properties below.                                           |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. |
+| `items` | Array of strings | Optional. Supply this argument or the `creation_properties` argument, not both. The text of each list item. A `ListItem` object is created for each item. An item with the text string `"-"` creates a separator item. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-| Property |       Type       |         Description         |
-| -------- | ---------------- | ------------------------------------------------------------------- |
-| `name`   | String           | A unique name for the control.                  |
-| `items`  | Array of strings | The text of each list item. See the Parameters table for more info. |
+| Property | Type | Description |
+| --- | --- | --- |
+| `name` | String | A unique name for the control. |
+| `items` | Array of strings | The text of each list item. See the Parameters table for more info. |
 
 #### Example
 
@@ -161,23 +161,23 @@ The `textselection` property contains currently selected text.
 
 #### Parameters
 
-|       Parameter       |               Type               |      Description       |
-| --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.           |
-| `text`      | String                 | Optional. The text displayed in the control.         |
-| `minValue`            | Number                 | Optional. Minimum accepted value of number to be entered.      |
-| `maxValue`            | Number                 | Optional. Maximum accepted value of number to be entered.      |
-| `creation_properties` | Object                 | Optional. An object that contains any of the properties below. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. |
+| `text` | String | Optional. The text displayed in the control. |
+| `minValue` | Number | Optional. Minimum accepted value of number to be entered. |
+| `maxValue` | Number | Optional. Maximum accepted value of number to be entered. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-|         Property          |  Type   |                                                     Description                                                     |
-| ------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`          | String  | A unique name for the control.                                                                                                |
-| `readonly`      | Boolean | Optional. When `false` (the default), the control accepts text input. When `true`, the control does not accept input but only displays the contents of the `text` property.                                                                 |
-| `noecho`        | Boolean | Optional. When `false` (the default), the control displays input text. When `true`, the control does not display input text (used for password input fields).                                                                     |
+| Property | Type | Description |
+| --- | --- | --- |
+| `name` | String | A unique name for the control. |
+| `readonly` | Boolean | Optional. When `false` (the default), the control accepts text input. When `true`, the control does not accept input but only displays the contents of the `text` property. |
+| `noecho` | Boolean | Optional. When `false` (the default), the control displays input text. When `true`, the control does not display input text (used for password input fields). |
 | `enterKeySignalsOnChange` | Boolean | Optional. When `false` (the default), the control signals an [onChange](#onchange) event when the editable text is changed and the control loses the keyboard focus (that is, the user tabs to another control, clicks outside the control, or types `ENTER`). When `true`, the control only signals an `onChange` event when the editable text is changed and the user types `ENTER`; other changes to the keyboard focus do not signal the event. |
-| `borderless`    | Boolean | Optional. When `true`, the control is drawn with no border. Default is `false`.                                                                                       |
+| `borderless` | Boolean | Optional. When `true`, the control is drawn with no border. Default is `false`. |
 
 #### Example
 
@@ -201,23 +201,23 @@ The `textselection` property contains currently selected text.
 
 #### Parameters
 
-|       Parameter       |               Type               |      Description       |
-| --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.           |
-| `text`      | String                 | Optional. The text displayed in the control.         |
-| `creation_properties` | Object                 | Optional. An object that contains any of the properties below. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. |
+| `text` | String | Optional. The text displayed in the control. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-|         Property          |  Type   |                                                Description                                                |
-| ------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`          | String  | A unique name for the control.                                                                                                |
-| `readonly`      | Boolean | When `false` (the default), the control accepts text input. When `true`, the control does not accept input but only displays the contents of the `text` property.                                                                 |
-| `noecho`        | Boolean | When `false` (the default), the control displays input text. When `true`, the control does not display input text (used for password input fields).                                                                     |
+| Property | Type | Description |
+| --- | --- | --- |
+| `name` | String | A unique name for the control. |
+| `readonly` | Boolean | When `false` (the default), the control accepts text input. When `true`, the control does not accept input but only displays the contents of the `text` property. |
+| `noecho` | Boolean | When `false` (the default), the control displays input text. When `true`, the control does not display input text (used for password input fields). |
 | `enterKeySignalsOnChange` | Boolean | When `false` (the default), the control signals an [onChange](#onchange) event when the editable text is changed and the control loses the keyboard focus (that is, the user tabs to another control, clicks outside the control, or types `ENTER`). When `true`, the control only signals an `onChange` event when the editable text is changed and the user types `ENTER`; other changes to the keyboard focus do not signal the event. |
-| `borderless`    | Boolean | When `true`, the control is drawn with no border. Default is `false`.                                                                                       |
-| `multiline`     | Boolean | When `false` (the default), the control accepts a single line of text. When `true`, the control accepts multiple lines, in which case the text wraps within the width of the control.                                                                 |
-| `scrollable`    | Boolean | (For multiline elements only) When `true` (the default), the text field has a vertical scrollbar that is enabled when the element contains more text than fits in the visible area. When `false`, no vertical scrollbar appears; if the element contains more text than fits in the visible area, the arrow keys can be used to scroll the text up and down.                  |
+| `borderless` | Boolean | When `true`, the control is drawn with no border. Default is `false`. |
+| `multiline` | Boolean | When `false` (the default), the control accepts a single line of text. When `true`, the control accepts multiple lines, in which case the text wraps within the width of the control. |
+| `scrollable` | Boolean | (For multiline elements only) When `true` (the default), the text field has a vertical scrollbar that is enabled when the element contains more text than fits in the visible area. When `false`, no vertical scrollbar appears; if the element contains more text than fits in the visible area, the arrow keys can be used to scroll the text up and down. |
 
 #### Example
 
@@ -243,17 +243,17 @@ A control object of this type contains functions that allow your script to load 
 
 #### Parameters
 
-|       Parameter       |         Type          |               Description                |
-| --------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds)          | Optional. The control's position and size.         |
-| `moveToLoad`          | String or [File object](../../file-system-access/file-object) | Optional. A path or URL string or File for the SWF file to load into the player. |
-| `creation_properties` | Object                | Optional. An object that contains any of the properties below.         |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. |
+| `moveToLoad` | String or [File object](../../file-system-access/file-object) | Optional. A path or URL string or File for the SWF file to load into the player. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
-| -------- | ------ | ------------------------------ |
-| `name`   | String | A unique name for the control. |
+| Property | Type | Description |
+| --- | --- | --- |
+| `name` | String | A unique name for the control. |
 
 #### Example
 
@@ -277,16 +277,16 @@ Hiding a group hides all its children. Making it visible makes visible those chi
 
 #### Parameters
 
-|       Parameter       |               Type               |      Description       |
-| --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.           |
-| `creation_properties` | Object                 | Optional. An object that contains any of the properties below. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
-| -------- | ------ | ------------------------------ |
-| `name`   | String | A unique name for the control. |
+| Property | Type | Description |
+| --- | --- | --- |
+| `name` | String | A unique name for the control. |
 
 #### Example
 
@@ -308,20 +308,20 @@ A mouse-sensitive pushbutton containing an icon. Calls the [onClick](#onclick) c
 
 #### Parameters
 
-|       Parameter       |         Type         |                           Description                  |
-| --------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds)         | Optional. The control's position and size.                                 |
-| `icon`      | Named resource, pathname, or [File object](../../file-system-access/file-object) | Optional. The named resource for the icon or family of icons displayed in the button control, or a pathname or File for an image file. Images must be in PNG format. |
-| `creation_properties` | Object                         | Optional. An object that contains any of the properties below.                                 |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. |
+| `icon` | Named resource, pathname, or [File object](../../file-system-access/file-object) | Optional. The named resource for the icon or family of icons displayed in the button control, or a pathname or File for an image file. Images must be in PNG format. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-| Property |  Type   |                                Description                                 |
-|----------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `name`   | String  | A unique name for the control.                                                       |
-| `style`  | String  | A string for the visual style, one of:                                                         |
-|          |         | - `button`: Has a visible border with a raised or 3D appearance.                                                   |
-|          |         | - `toolbutton`: Has a flat appearance, appropriate for inclusion in a toolbar                                                |
+| Property | Type | Description |
+|---|---|---|
+| `name` | String | A unique name for the control. |
+| `style` | String | A string for the visual style, one of: |
+| | | - `button`: Has a visible border with a raised or 3D appearance. |
+| | | - `toolbutton`: Has a flat appearance, appropriate for inclusion in a toolbar |
 | `toggle` | Boolean | For a button-style control, a value of `true` causes it to get a button-pressed appearance the first time it is clicked, and alternate with the unpressed appearance each time it is clicked. The toggle state is reflected in the control's `value` property. |
 
 #### Example
@@ -344,17 +344,17 @@ Displays an icon or image.
 
 #### Parameters
 
-|       Parameter       |         Type         |                           Description                  |
-| --------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds)         | Optional. The control's position and size.                                 |
-| `icon`      | Named resource, pathname, or [File object](../../file-system-access/file-object) | Optional. The named resource for the icon or family of icons displayed in the button control, or a pathname or File for an image file. Images must be in PNG format. |
-| `creation_properties` | Object                         | Optional. An object that contains any of the properties below.                                 |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. |
+| `icon` | Named resource, pathname, or [File object](../../file-system-access/file-object) | Optional. The named resource for the icon or family of icons displayed in the button control, or a pathname or File for an image file. Images must be in PNG format. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
-| -------- | ------ | ------------------------------ |
-| `name`   | String | A unique name for the control. |
+| Property | Type | Description |
+| --- | --- | --- |
+| `name` | String | A unique name for the control. |
 
 #### Example
 
@@ -396,23 +396,23 @@ A list box with zero or more items. Calls the [onChange](#onchange) callback if 
 
 #### Parameters
 
-|       Parameter       |               Type               |                                         Description                                          |     |
-| --------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                                                                       |     |
-| `items`     | Array of Strings                 | Optional. The text of each list item. A [ListItem](../types-of-controls#listitem) object is created for each item. Supply this argument, or the items property in `creation_properties`, not both. A [ListItem](../types-of-controls#listitem) object is created for each item. An item with the text string `"-"` creates a separator item. |     |
-| `creation_properties` | Object                 | Optional. An object that contains any of the properties below.                                                                       |     |
+| Parameter | Type | Description | |
+| --- | --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. | |
+| `items` | Array of Strings | Optional. The text of each list item. A [ListItem](../types-of-controls#listitem) object is created for each item. Supply this argument, or the items property in `creation_properties`, not both. A [ListItem](../types-of-controls#listitem) object is created for each item. An item with the text string `"-"` creates a separator item. | |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. | |
 
 #### Creation Properties
 
-|     Property      |       Type       |                                             Description                                              |
-| ----------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`            | String           | A unique name for the control.                                                                                 |
-| `multiselect`     | Boolean          | When `false` (the default), only one item can be selected. When `true`, multiple items can be selected.                                                          |
-| `items`           | Array of Strings | The text of each list item. Supply this property, or the `items` argument, not both. This form is most useful for elements defined using [Resource specifications](../resource-specifications).                                        |
-| `numberOfColumns` | Number           | A number of columns in which to display the items; default is 1. When there are multiple columns, each [ListItem](../types-of-controls#listitem) object represents a single selectable row. Its [text](#text) and [image](#image) values supply the label for the first column, and the `subitems` property specifies labels for additional columns. |
-| `showHeaders`     | Boolean          | `true` to display column titles.                                                                               |
-| `columnWidths`    | Array of Numbers | An array of numbers for the preferred width in pixels of each column.                                                                        |
-| `columnTitles`    | Array of Strings | A corresponding array of strings for the title of each column, to be shown if `showHeaders` is `true`.                                                           |
+| Property | Type | Description |
+| --- | --- | --- |
+| `name` | String | A unique name for the control. |
+| `multiselect` | Boolean | When `false` (the default), only one item can be selected. When `true`, multiple items can be selected. |
+| `items` | Array of Strings | The text of each list item. Supply this property, or the `items` argument, not both. This form is most useful for elements defined using [Resource specifications](../resource-specifications). |
+| `numberOfColumns` | Number | A number of columns in which to display the items; default is 1. When there are multiple columns, each [ListItem](../types-of-controls#listitem) object represents a single selectable row. Its [text](#text) and [image](#image) values supply the label for the first column, and the `subitems` property specifies labels for additional columns. |
+| `showHeaders` | Boolean | `true` to display column titles. |
+| `columnWidths` | Array of Numbers | An array of numbers for the preferred width in pixels of each column. |
+| `columnTitles` | Array of Strings | A corresponding array of strings for the title of each column, to be shown if `showHeaders` is `true`. |
 
 #### Example
 
@@ -436,26 +436,26 @@ Containers have additional properties that control the children; see [Container 
 
 #### Parameters
 
-|       Parameter       |               Type               |      Description       |
-| --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.           |
-| `text`      | String                 | Optional. The text displayed in the border of the panel.       |
-| `creation_properties` | Object                 | Optional. An object that contains any of the properties below. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. |
+| `text` | String | Optional. The text displayed in the border of the panel. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-|       Property        |  Type   |                                    Description                                     |
-|-----------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `name`      | String  | A unique name for the control.                                                               |
-| `borderStyle`         | String  | A string that specifies the appearance of the border drawn around the panel. Default is `etched`. One of:                                      |
-|             |         | - `black`                                                                |
-|             |         | - `etched`                                                               |
-|             |         | - `gray`                                                                 |
-|             |         | - `raised`                                                               |
-|             |         | - `sunken`                                                               |
-|             |         | - `topDivider`: draws a horizonal line at the top of the panel only.                                             |
-|             |         | !!! warning                                                              |
-|             |         | The `topDivider` property is officially undocumented and was found via research. Please contribute if you have more information on it!                                       |
+| Property | Type | Description |
+|---|---|---|
+| `name` | String | A unique name for the control. |
+| `borderStyle` | String | A string that specifies the appearance of the border drawn around the panel. Default is `etched`. One of: |
+| | | - `black` |
+| | | - `etched` |
+| | | - `gray` |
+| | | - `raised` |
+| | | - `sunken` |
+| | | - `topDivider`: draws a horizonal line at the top of the panel only. |
+| | | !!! warning |
+| | | The `topDivider` property is officially undocumented and was found via research. Please contribute if you have more information on it! |
 | `subPanelCoordinates` | Boolean | When `true`, this panel automatically adjusts the positions of its children for compatability with Photoshop CS. Default is `false`, meaning that the panel does not adjust the positions of its children, even if the parent window has automatic adjustment enabled. |
 
 #### Example
@@ -480,19 +480,19 @@ All `progressbar` controls have a horizontal orientation. The `value` property c
 
 #### Parameters
 
-|       Parameter       |               Type               |                    Description                    |
-| --------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                            |
-| `value`     | Number                 | Optional. The initial position of the progress indicator. Default is 0.                   |
-| `minvalue`            | Number                 | Optional. The minimum value that the `value` property can be set to. Default is 0. Together with `maxvalue`, defines the range.   |
-| `maxvalue`            | Number                 | Optional. The maximum value that the `value` property can be set to. Default is 100. Together with `minvalue`, defines the range. |
-| `creation_properties` | Object                 | Optional. An object that contains any of the properties below.                  |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. |
+| `value` | Number | Optional. The initial position of the progress indicator. Default is 0. |
+| `minvalue` | Number | Optional. The minimum value that the `value` property can be set to. Default is 0. Together with `maxvalue`, defines the range. |
+| `maxvalue` | Number | Optional. The maximum value that the `value` property can be set to. Default is 100. Together with `minvalue`, defines the range. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
-| -------- | ------ | ------------------------------ |
-| `name`   | String | A unique name for the control. |
+| Property | Type | Description |
+| --- | --- | --- |
+| `name` | String | A unique name for the control. |
 
 #### Example
 
@@ -516,17 +516,17 @@ All radiobuttons in a group must be created sequentially, with no intervening cr
 
 #### Parameters
 
-|       Parameter       |               Type               |      Description       |
-| --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.           |
-| `text`      | String                 | Optional. The text displayed in the control.         |
-| `creation_properties` | Object                 | Optional. An object that contains any of the properties below. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. |
+| `text` | String | Optional. The text displayed in the control. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
-| -------- | ------ | ------------------------------ |
-| `name`   | String | A unique name for the control. |
+| Property | Type | Description |
+| --- | --- | --- |
+| `name` | String | A unique name for the control. |
 
 #### Example
 
@@ -550,27 +550,27 @@ Calls the [onChange](#onchange) callback after the position of the indicator is 
 
 #### Properties
 
-|  Property   |  Type  |                  Description                  |
-| ----------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `value`     | Number | Contains the current position of the scrollbar's indicator within the scrolling area, within the range of `minvalue` and `maxvalue`.              |
-| `stepdelta` | Number | Determines the scrolling unit for the up or down arrow. Default is `1`.                         |
+| Property | Type | Description |
+| --- | --- | --- |
+| `value` | Number | Contains the current position of the scrollbar's indicator within the scrolling area, within the range of `minvalue` and `maxvalue`. |
+| `stepdelta` | Number | Determines the scrolling unit for the up or down arrow. Default is `1`. |
 | `jumpdelta` | Number | Determines the scrolling unit for a jump (as when the bar is clicked outside the indicator or arrows); default is 20% of the range between `minvalue` and `maxvalue`. |
 
 #### Parameters
 
-|       Parameter       |               Type               |               Description               |
-| --------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                            |
-| `value`     | Number                 | Optional. The initial position of the scroll indicator. Default is 0.                     |
-| `minvalue`            | Number                 | Optional. The minimum value that the `value` property can be set to. Default is 0. Together with `maxvalue`, defines the scrolling range.   |
-| `maxvalue`            | Number                 | Optional. The maximum value that the `value` property can be set to. Default is 100. Together with `minvalue`, defines the scrolling range. |
-| `creation_properties` | Object                 | Optional. An object that contains any of the properties below.                  |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. |
+| `value` | Number | Optional. The initial position of the scroll indicator. Default is 0. |
+| `minvalue` | Number | Optional. The minimum value that the `value` property can be set to. Default is 0. Together with `maxvalue`, defines the scrolling range. |
+| `maxvalue` | Number | Optional. The maximum value that the `value` property can be set to. Default is 100. Together with `minvalue`, defines the scrolling range. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
-| -------- | ------ | ------------------------------ |
-| `name`   | String | A unique name for the control. |
+| Property | Type | Description |
+| --- | --- | --- |
+| `name` | String | A unique name for the control. |
 
 #### Example
 
@@ -596,19 +596,19 @@ The `value` property contains the current position of the indicator within the r
 
 #### Parameters
 
-|       Parameter       |               Type               |                    Description                    |
-| --------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                            |
-| `value`     | Number                 | Optional. The initial position of the scroll indicator. Default is 0.                     |
-| `minvalue`            | Number                 | Optional. The minimum value that the `value` property can be set to. Default is 0. Together with `maxvalue`, defines the range.   |
-| `maxvalue`            | Number                 | Optional. The maximum value that the `value` property can be set to. Default is 100. Together with `minvalue`, defines the range. |
-| `creation_properties` | Object                 | Optional. An object that contains any of the properties below.                  |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. |
+| `value` | Number | Optional. The initial position of the scroll indicator. Default is 0. |
+| `minvalue` | Number | Optional. The minimum value that the `value` property can be set to. Default is 0. Together with `maxvalue`, defines the range. |
+| `maxvalue` | Number | Optional. The maximum value that the `value` property can be set to. Default is 100. Together with `minvalue`, defines the range. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
-| -------- | ------ | ------------------------------ |
-| `name`   | String | A unique name for the control. |
+| Property | Type | Description |
+| --- | --- | --- |
+| `name` | String | A unique name for the control. |
 
 #### Example
 
@@ -630,25 +630,25 @@ A text field that the user cannot change.
 
 #### Parameters
 
-|       Parameter       |               Type               |      Description       |
-| --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.           |
-| `text`      | String                 | Optional. The text displayed in the control.         |
-| `creation_properties` | Object                 | Optional. An object that contains any of the properties below. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. |
+| `text` | String | Optional. The text displayed in the control. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-|  Property   |  Type   |                           Description                            |
-|-------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `name`      | String  | A unique name for the control.                                             |
-| `multiline` | Boolean | When `false` (the default), the control displays a single line of text. When `true`, the control displays multiple lines, in which case the text wraps within the width of the control.  |
+| Property | Type | Description |
+|---|---|---|
+| `name` | String | A unique name for the control. |
+| `multiline` | Boolean | When `false` (the default), the control displays a single line of text. When `true`, the control displays multiple lines, in which case the text wraps within the width of the control. |
 | `scrolling` | Boolean | When `false` (the default), the displayed text cannot be scrolled. When `true`, the displayed text can be vertically scrolled using scrollbars; this case implies `multiline` is `true`. |
-| `truncate`  | String  | Truncate behaviour, one of:                                      |
-|   |         | - `middle`                                             |
-|   |         | - `end`                                                |
-|   |         | - `none`                                               |
-|   |         | If `middle` or `end`, defines where to remove characters from the text and replace them with an ellipsis if the specified title does not fit within the space reserved for it.           |
-|   |         | If `none`, and the text does not fit, characters are removed from the end, without any replacement ellipsis character.                 |
+| `truncate` | String | Truncate behaviour, one of: |
+| | | - `middle` |
+| | | - `end` |
+| | | - `none` |
+| | | If `middle` or `end`, defines where to remove characters from the text and replace them with an ellipsis if the specified title does not fit within the space reserved for it. |
+| | | If `none`, and the text does not fit, characters are removed from the end, without any replacement ellipsis character. |
 
 #### Example
 
@@ -672,17 +672,17 @@ Containers have additional properties that control the children; see [Container 
 
 #### Parameters
 
-|       Parameter       |               Type               |      Description       |
-| --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.           |
-| `text`      | String                 | Optional. The text displayed in the control.         |
-| `creation_properties` | Object                 | Optional. An object that contains any of the properties below. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. |
+| `text` | String | Optional. The text displayed in the control. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
-| -------- | ------ | ------------------------------ |
-| `name`   | String | A unique name for the control. |
+| Property | Type | Description |
+| --- | --- | --- |
+| `name` | String | A unique name for the control. |
 
 #### Example
 
@@ -708,17 +708,17 @@ The selected tab child is the value of the parent's `selection` property. One an
 
 #### Parameters
 
-|       Parameter       |               Type               |      Description       |
-| --------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.           |
-| `text`      | String                 | Optional. The text displayed in the control.         |
-| `creation_properties` | Object                 | Optional. An object that contains any of the properties below. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. |
+| `text` | String | Optional. The text displayed in the control. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-| Property |  Type  |          Description           |
-| -------- | ------ | ------------------------------ |
-| `name`   | String | A unique name for the control. |
+| Property | Type | Description |
+| --- | --- | --- |
+| `name` | String | A unique name for the control. |
 
 #### Example
 
@@ -740,18 +740,18 @@ A hierarchical list whose items can contain child items. Items at any level of t
 
 #### Parameters
 
-|       Parameter       |               Type               |                                  Description                                   |
-| --------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `bounds`    | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size.                                                         |
-| `items`     | Array of Strings                 | Optional. The text of each top-level list item. A [ListItem](../types-of-controls#listitem) object is created for each item. An item with the type node can contain child items. Supply this argument, or the `items` property in `creation_properties`, not both. |
-| `creation_properties` | Object                 | Optional. An object that contains any of the properties below.                                               |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. The control's position and size. |
+| `items` | Array of Strings | Optional. The text of each top-level list item. A [ListItem](../types-of-controls#listitem) object is created for each item. An item with the type node can contain child items. Supply this argument, or the `items` property in `creation_properties`, not both. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-| Property |       Type       |                                         Description                                          |
-| -------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`   | String           | A unique name for the control.                                                                         |
-| `items`  | Array of Strings | The text of each top-level list item. A [ListItem](../types-of-controls#listitem) object is created for each item. An item with the type `node` can contain child items. Supply this property, or the `items` argument, not both. This form is most useful for elements defined using [Resource specifications](../resource-specifications). |
+| Property | Type | Description |
+| --- | --- | --- |
+| `name` | String | A unique name for the control. |
+| `items` | Array of Strings | The text of each top-level list item. A [ListItem](../types-of-controls#listitem) object is created for each item. An item with the type `node` can contain child items. Supply this property, or the `items` argument, not both. This form is most useful for elements defined using [Resource specifications](../resource-specifications). |
 
 #### Example
 
@@ -797,22 +797,22 @@ Applies to child elements of a container. If defined, this value overrides the `
 
 For a single string value, allowed values depend on the `orientation` value in the parent container.
 
-| `orientation` Value |     Allowed values     |
-|---------------------|------------------------|
-| `"row"`   | - `"bottom"`           |
-|           | - `"center"` (default) |
-|           | - `"fill"`   |
-|           | - `"top"`    |
-| `"column"`          | - `"center"` (default) |
-|           | - `"fill"`   |
-|           | - `"left"`   |
-|           | - `"right"`            |
-| `"stack"`           | - `"bottom"`           |
-|           | - `"center"` (default) |
-|           | - `"fill"`   |
-|           | - `"left"`   |
-|           | - `"right"`            |
-|           | - `"top"`    |
+| `orientation` Value | Allowed values |
+|---|---|
+| `"row"` | - `"bottom"` |
+| | - `"center"` (default) |
+| | - `"fill"` |
+| | - `"top"` |
+| `"column"` | - `"center"` (default) |
+| | - `"fill"` |
+| | - `"left"` |
+| | - `"right"` |
+| `"stack"` | - `"bottom"` |
+| | - `"center"` (default) |
+| | - `"fill"` |
+| | - `"left"` |
+| | - `"right"` |
+| | - `"top"` |
 
 For an array value, the first string element defines the horizontal alignment and the second element defines the vertical alignment.
 
@@ -898,10 +898,10 @@ A JavaScript object with two read-only properties whose values are set by the cr
 
 #### Properties
 
-|     Property      |       Type       |               Description               |
-| ----------------- | ---------------- | --------------------------------------------------------------------------------------------------- |
-| `titles`          | Array of Strings | An array of column title strings, whose length matches the number of columns specified at creation. |
-| `preferredWidths` | Array of Numbers | An array of column widths, whose length matches the number of columns specified at creation.        |
+| Property | Type | Description |
+| --- | --- | --- |
+| `titles` | Array of Strings | An array of column title strings, whose length matches the number of columns specified at creation. |
+| `preferredWidths` | Array of Numbers | An array of column widths, whose length matches the number of columns specified at creation. |
 
 #### Type
 
@@ -999,8 +999,8 @@ A [ScriptUIImage object](../graphic-customization-objects#scriptuiimage-object),
 - For an [IconButton](../types-of-controls#iconbutton), the icon appears as the content of the button.
 - For an [Image](../types-of-controls#image), the image is the entire content of the image element.
 - For a [ListItem](../types-of-controls#listitem), the image is displayed to the left of the text.
-  - If the parent is a multi-column [ListBox](#listbox), this is the display image for the label in the first column, and labels for further columns are specified in the [subitems](#subitems) array.
-  - See [Creating multi-column lists](../types-of-controls#creating-multi-column-lists).
+ - If the parent is a multi-column [ListBox](#listbox), this is the display image for the label in the first column, and labels for further columns are specified in the [subitems](#subitems) array.
+ - See [Creating multi-column lists](../types-of-controls#creating-multi-column-lists).
 
 #### Type
 
@@ -1400,10 +1400,10 @@ This contains an array of JavaScript objects, whose length is one less than the 
 
 Each object has two properties, of which one or both can be supplied:
 
-| Property |  Type  |       Description        |
-| -------- | ------ | -------------------------------------------- |
-| `text`   | String | A localizable display string for this label. |
-| `image`  | Image  | An Image object for this label.    |
+| Property | Type | Description |
+| --- | --- | --- |
+| `text` | String | A localizable display string for this label. |
+| `image` | Image | An Image object for this label. |
 
 #### Type
 
@@ -1483,14 +1483,14 @@ For a control with a title value, the way the text label is shown in relation to
 
 #### Properties
 
-|   Property   |            Type            |                                                                                                             Description                                                                                                                                                     |
-| ------------ | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `alignment`  | Array or Numbers                               | The position of the title relative to the element, an array of [horizontal_alignment, vertical_alignment]. For possible alignment values, see [alignment](#alignment). Note that `fill` is not a valid alignment value for either horizontal or vertical alignment in this context.                                 |
-| `characters` | Number                                         | If `1` or greater, reserves a title width wide enough to hold the specified number of "X" characters in the font for this element. If 0, the title width is calculated based on the value of the `title` property during layout operations.                                                                         |
-| `spacing`    | Number                                         | `0` or greater. The number of pixels separating the title from the element.                                                                                                                                                                                                                                         |
-| `margins`    | Array of Numbers, `[left, top, right, bottom]` | The number of pixels separating each edge of an element and the visible content within that element. This overrides the default margins.                                                                                                                                                                            |
-| `justify`    | String                                         | One of `"left"`, `"center"`, or `"right"`, how to justify the text when the space allocated for the title width is greater than the actual width of the text.                                                                                                                                                       |
-| `truncate`   | String                                         | If `"middle"` or `"end"`, defines where to remove characters from the text and replace them with an ellipsis ("...") if the specified title does not fit within the space reserved for it. If `"none"`, and the text does not fit, characters are removed from the end, without any replacement ellipsis character. |
+| Property | Type | Description |
+| --- | --- | --- |
+| `alignment` | Array or Numbers | The position of the title relative to the element, an array of [horizontal_alignment, vertical_alignment]. For possible alignment values, see [alignment](#alignment). Note that `fill` is not a valid alignment value for either horizontal or vertical alignment in this context. |
+| `characters` | Number | If `1` or greater, reserves a title width wide enough to hold the specified number of "X" characters in the font for this element. If 0, the title width is calculated based on the value of the `title` property during layout operations. |
+| `spacing` | Number | `0` or greater. The number of pixels separating the title from the element. |
+| `margins` | Array of Numbers, `[left, top, right, bottom]` | The number of pixels separating each edge of an element and the visible content within that element. This overrides the default margins. |
+| `justify` | String | One of `"left"`, `"center"`, or `"right"`, how to justify the text when the space allocated for the title width is greater than the actual width of the text. |
+| `truncate` | String | If `"middle"` or `"end"`, defines where to remove characters from the text and replace them with an ellipsis ("...") if the specified title does not fit within the space reserved for it. If `"none"`, and the text does not fit, characters are removed from the end, without any replacement ellipsis character. |
 
 #### Type
 
@@ -1637,29 +1637,29 @@ Registers an event handler for a particular type of event occurring in this cont
 
 #### Parameter
 
-|   Parameter    |   Type   |                                                                                                                                                                                                                          Description                                                                                                                                                                                                                          |
-|----------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `eventName`    | String   | The event name string. Predefined event names include:                                                                                                                                                                                                                                                                                                                                                                                                        |
-|                |          | - `"change"`                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                |          | - `"changing"`                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|                |          | - `"move"`                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|                |          | - `"moving"`                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                |          | - `"resize"`                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                |          | - `"resizing"`                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|                |          | - `"show"`                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|                |          | - `"enterKey"`                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|                |          | - `"focus"`                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|                |          | - `"blur"`                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|                |          | - `"mousedown"`                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|                |          | - `"mouseup"`                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|                |          | - `"mousemove"`                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|                |          | - `"mouseover"`                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|                |          | - `"mouseout"`                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|                |          | - `"keyup"`                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|                |          | - `"keydown"`                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|                |          | - `"click"` (detail = 1 for single, 2 for double)                                                                                                                                                                                                                                                                                                                                                                                                             |
-| `handler`      | Function | The function to register for the specified event in this target. This can be the name of a function defined in the extension, or a locally defined handler function to be executed when the event occurs. A handler function takes one argument, an object of the UIEvent base class. See [Registering event listeners for windows or controls](../defining-behavior-with-event-callbacks-and-listeners#registering-event-listeners-for-windows-or-controls). |
-| `capturePhase` | Boolean  | Optional. When `true`, the handler is called only in the capturing phase of the event propagation. Default is `false`, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target.                                                                                                                                                                   |
+| Parameter | Type | Description |
+|---|---|---|
+| `eventName` | String | The event name string. Predefined event names include: |
+| | | - `"change"` |
+| | | - `"changing"` |
+| | | - `"move"` |
+| | | - `"moving"` |
+| | | - `"resize"` |
+| | | - `"resizing"` |
+| | | - `"show"` |
+| | | - `"enterKey"` |
+| | | - `"focus"` |
+| | | - `"blur"` |
+| | | - `"mousedown"` |
+| | | - `"mouseup"` |
+| | | - `"mousemove"` |
+| | | - `"mouseover"` |
+| | | - `"mouseout"` |
+| | | - `"keyup"` |
+| | | - `"keydown"` |
+| | | - `"click"` (detail = 1 for single, 2 for double) |
+| `handler` | Function | The function to register for the specified event in this target. This can be the name of a function defined in the extension, or a locally defined handler function to be executed when the event occurs. A handler function takes one argument, an object of the UIEvent base class. See [Registering event listeners for windows or controls](../defining-behavior-with-event-callbacks-and-listeners#registering-event-listeners-for-windows-or-controls). |
+| `capturePhase` | Boolean | Optional. When `true`, the handler is called only in the capturing phase of the event propagation. Default is `false`, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target. |
 
 #### Returns
 
@@ -1677,8 +1677,8 @@ Simulates the occurrence of an event in this target. A script can create an even
 
 #### Parameters
 
-| Parameter  |  Type  |             Description              |
-| ---------- | ------ | ------------------------------------ |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `eventObj` | Object | An object of the UIEvent base class. |
 
 #### Returns
@@ -1711,13 +1711,13 @@ Sends a notification message, simulating the specified user interaction event.
 
 #### Parameters
 
-| Parameter |  Type  |                                                                                    Description                                                                                     |
-|-----------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `event`   | String | Optional. The name of the control event handler to call. One of:                                                                                                                   |
-|           |        | - `"onClick"`                                                                                                                                                                      |
-|           |        | - `"onChange"`                                                                                                                                                                     |
-|           |        | - `"onChanging"`                                                                                                                                                                   |
-|           |        | By default, simulates the [onChange](#onchange) event for an [EditText](../types-of-controls#edittext) control, an [onClick](#onclick) event for controls that support that event. |
+| Parameter | Type | Description |
+|---|---|---|
+| `event` | String | Optional. The name of the control event handler to call. One of: |
+| | | - `"onClick"` |
+| | | - `"onChange"` |
+| | | - `"onChanging"` |
+| | | By default, simulates the [onChange](#onchange) event for an [EditText](../types-of-controls#edittext) control, an [onClick](#onclick) event for controls that support that event. |
 
 #### Returns
 
@@ -1735,11 +1735,11 @@ Unregisters an event handler for a particular type of event occurring in this co
 
 #### Parameters
 
-|   Parameter    |   Type   |                               Description                               |
-| -------------- | -------- | ----------------------------------------------------------------------- |
-| `eventName`    | String   | The event name.                                                         |
-| `handler`      | Function | The function that was registered to handle the event.                   |
-| `capturePhase` | Boolean  | Optional. Whether the handler was to respond only in the capture phase. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `eventName` | String | The event name. |
+| `handler` | Function | The function that was registered to handle the event. |
+| `capturePhase` | Boolean | Optional. Whether the handler was to respond only in the capture phase. |
 
 #### Returns
 
@@ -1817,13 +1817,13 @@ Adds an `item` to the items array at the given index.
 
 #### Parameters
 
-| Parameter |  Type  |                                                                                  Description                                                                                  |
-|-----------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`    | String | The type of item to add. One of:                                                                                                                                              |
-|           |        | - `item`: A basic, selectable item with a text label.                                                                                                                         |
-|           |        | - `separator`: A separator. For [DropDownList](#dropdownlist) objects only. In this case, the text value is ignored, and the method returns `null`.                           |
-| `text`    | String | The localizable text label for the item.                                                                                                                                      |
-| `index`   | Number | Optional. The index into the current item list after which this item is inserted. If not supplied, or greater than the current list length, the new item is added at the end. |
+| Parameter | Type | Description |
+|---|---|---|
+| `type` | String | The type of item to add. One of: |
+| | | - `item`: A basic, selectable item with a text label. |
+| | | - `separator`: A separator. For [DropDownList](#dropdownlist) objects only. In this case, the text value is ignored, and the method returns `null`. |
+| `text` | String | The localizable text label for the item. |
+| `index` | Number | Optional. The index into the current item list after which this item is inserted. If not supplied, or greater than the current list length, the new item is added at the end. |
 
 #### Returns
 
@@ -1845,9 +1845,9 @@ Looks in this object's `items` array for an item object with the given `text` va
 
 #### Parameters
 
-| Parameter |  Type  |          Description          |
-| --------- | ------ | ----------------------------- |
-| `text`    | String | The text of the item to find. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `text` | String | The text of the item to find. |
 
 #### Returns
 
@@ -1872,8 +1872,8 @@ No error results if the item does not exist.
 
 #### Parameters
 
-|        Parameter         |                          Type                          |                                            Description                                             |
-| ------------------------ | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `index`, `text`, `child` | Number of String or [Control](#control-objects) object | The item or child to remove, specified by `0`-based index, `text` value, or as a `control` object. |
 
 #### Returns
@@ -1914,9 +1914,9 @@ Scrolls the list to make the specified item visible, if necessary.
 
 #### Parameters
 
-| Parameter |                  Type                  |                  Description                   |
-| --------- | -------------------------------------- | ---------------------------------------------- |
-| `item`    | [Control](.././control-objects) object | The item or child to reveal, a control object. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `item` | [Control](.././control-objects) object | The item or child to reveal, a control object. |
 
 #### Returns
 
@@ -1951,17 +1951,17 @@ Invokes an ActionScript function defined in the Flash application.
 
 #### Parameters
 
-| Parameter |  Type  |                                                                                                                                              Description                                                                                                                                               |
-|-----------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `fnName`  | String | The name of a Flash ActionScript function that has been registered with the ExternalInterface object by the currently loaded SWF file; see [Calling ActionScript functions from a ScriptUI script](../communicating-with-the-flash-application#calling-actionscript-functions-from-a-scriptui-script). |
-| `args`    | Any    | Optional. One or more arguments to pass through to the function, of these types:                                                                                                                                                                                                                       |
-|           |        | - Array                                                                                                                                                                                                                                                                                                |
-|           |        | - Boolean                                                                                                                                                                                                                                                                                              |
-|           |        | - `null`                                                                                                                                                                                                                                                                                               |
-|           |        | - Number                                                                                                                                                                                                                                                                                               |
-|           |        | - Object                                                                                                                                                                                                                                                                                               |
-|           |        | - String                                                                                                                                                                                                                                                                                               |
-|           |        | - `undefined`                                                                                                                                                                                                                                                                                          |
+| Parameter | Type | Description |
+|---|---|---|
+| `fnName` | String | The name of a Flash ActionScript function that has been registered with the ExternalInterface object by the currently loaded SWF file; see [Calling ActionScript functions from a ScriptUI script](../communicating-with-the-flash-application#calling-actionscript-functions-from-a-scriptui-script). |
+| `args` | Any | Optional. One or more arguments to pass through to the function, of these types: |
+| | | - Array |
+| | | - Boolean |
+| | | - `null` |
+| | | - Number |
+| | | - Object |
+| | | - String |
+| | | - `undefined` |
 
 #### Returns
 
@@ -1979,9 +1979,9 @@ Loads a movie into the Flash Player, and begins playing it. If you do not specif
 
 #### Parameters
 
-| Parameter |                        Type                         |      Description      |
-| --------- | --------------------------------------------------- | --------------------- |
-| `file`    | [File object](../../file-system-access/file-object) | The SWF file to load. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `file` | [File object](../../file-system-access/file-object) | The SWF file to load. |
 
 #### Returns
 
@@ -2003,9 +2003,9 @@ Do not call when a movie is currently playing.
 
 #### Parameters
 
-| Parameter |  Type   |                                                    Description                                                     |
-| --------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
-| `rewind`  | Boolean | When `true`, restarts the movie from the beginning; otherwise, starts playing from the point where it was stopped. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `rewind` | Boolean | When `true`, restarts the movie from the beginning; otherwise, starts playing from the point where it was stopped. |
 
 #### Returns
 
@@ -2067,10 +2067,10 @@ Called when the user finishes making a change in one of the following control ty
 - [TreeView](#treeview)
 
 - For [EditNumber](../types-of-controls#editnumber) and [EditText](../types-of-controls#edittext) controls, called only when the change is complete-that is, when focus moves to another control, or the user types `ENTER`.
-  - The exact behavior depends on the creation parameter `enterKeySignalsOnChange`; see the [EditText](#edittext) description.
+ - The exact behavior depends on the creation parameter `enterKeySignalsOnChange`; see the [EditText](#edittext) description.
 - For a [Slider](../types-of-controls#slider) or [Scrollbar](../types-of-controls#scrollbar), called when the user has finished dragging the position marker or has clicked the control.
 - For a [ListBox](#listbox), [DropDownList](#dropdownlist) or [TreeView](#treeview) control, called whenever the selection property changes.
-  - This can happen when a script sets the property directly or removes a selected item from the list, or when the user changes the selection.
+ - This can happen when a script sets the property directly or removes a selected item from the list, or when the user changes the selection.
 
 ---
 
@@ -2152,17 +2152,17 @@ There is no object constructor.
 
 The object contains the following read-only properties:
 
-|       Property        |  Type   |                                           Behaviour                                           |
-| --------------------- | ------- | --------------------------------------------------------------------------------------------- |
-| `altKeyPressed`       | Boolean | When `true`, the ALT key was pressed. (In Windows OS only.)                                   |
-| `capsLockKeyPressed`  | Boolean | When `true`, the CAPSLOCK key was pressed.                                                    |
-| `cmdKeyPressed`       | Boolean | When `true`, the CMD key was pressed. (In Mac OS only.)                                       |
-| `ctrlKeyPressed`      | Boolean | When `true`, the CTRL key was pressed.                                                        |
-| `hasFocus`            | Boolean | When `true`, the control containing this object has the input focus.                          |
-| `leftButtonPressed`   | Boolean | When `true`, the left mouse button was pressed.                                               |
-| `middleButtonPressed` | Boolean | When `true`, the middle mouse button was pressed.                                             |
-| `mouseOver`           | Boolean | When `true`, the cursor position was within the bounds of the control containing this object. |
-| `numLockKeyPressed`   | Boolean | When `true`, the NUMLOCK key was pressed.                                                     |
-| `optKeyPressed`       | Boolean | When `true`, the OPT key was pressed. (In Mac OS only.)                                       |
-| `rightButtonPressed`  | Boolean | When `true`, the right mouse button was pressed.                                              |
-| `shiftKeyPressed`     | Boolean | When `true`, the SHIFT key was pressed.                                                       |
+| Property | Type | Behaviour |
+| --- | --- | --- |
+| `altKeyPressed` | Boolean | When `true`, the ALT key was pressed. (In Windows OS only.) |
+| `capsLockKeyPressed` | Boolean | When `true`, the CAPSLOCK key was pressed. |
+| `cmdKeyPressed` | Boolean | When `true`, the CMD key was pressed. (In Mac OS only.) |
+| `ctrlKeyPressed` | Boolean | When `true`, the CTRL key was pressed. |
+| `hasFocus` | Boolean | When `true`, the control containing this object has the input focus. |
+| `leftButtonPressed` | Boolean | When `true`, the left mouse button was pressed. |
+| `middleButtonPressed` | Boolean | When `true`, the middle mouse button was pressed. |
+| `mouseOver` | Boolean | When `true`, the cursor position was within the bounds of the control containing this object. |
+| `numLockKeyPressed` | Boolean | When `true`, the NUMLOCK key was pressed. |
+| `optKeyPressed` | Boolean | When `true`, the OPT key was pressed. (In Mac OS only.) |
+| `rightButtonPressed` | Boolean | When `true`, the right mouse button was pressed. |
+| `shiftKeyPressed` | Boolean | When `true`, the SHIFT key was pressed. |

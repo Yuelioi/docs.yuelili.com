@@ -91,7 +91,7 @@ A function name string, or `null` if no function is assigned.
 
 ```javascript
 function myStatusChanged() {
-    alert(app.project.renderQueue.item(1).status);
+ alert(app.project.renderQueue.item(1).status);
 }
 
 app.project.renderQueue.item(1).onstatus = myStatusChanged();
@@ -121,7 +121,6 @@ The collection of Output Modules for the item.
 :::note
 This functionality was added in After Effects 22.0 (2022)
 :::
-
 
 #### Description
 
@@ -255,8 +254,8 @@ Applies a Render Settings template to the item. See also [RenderQueueItem.saveAs
 
 #### Parameters
 
-|   Parameter    |  Type  |            Description             |
-| -------------- | ------ | ---------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `templateName` | String | The name of the template to apply. |
 
 #### Returns
@@ -277,7 +276,6 @@ Creates a duplicate of this item and adds it this render queue.
 Duplicating an item whose status is "Done" sets the new item's status to "Queued".
 :::
 
-
 #### Parameters
 
 None.
@@ -295,7 +293,6 @@ RenderQueueItem object.
 :::note
 This functionality was added in After Effects 13.0 (CC 2014)
 :::
-
 
 #### Description
 
@@ -324,7 +321,6 @@ var rqItem1_proxyUse_str = app.project.renderQueue.item(1).getSetting("Proxy Use
 :::note
 This functionality was added in After Effects 13.0 (CC 2014)
 :::
-
 
 #### Description
 
@@ -355,9 +351,9 @@ Gets an output module with the specified index position.
 
 #### Parameters
 
-| Parameter |                     Type                      |               Description                |
-| --------- | --------------------------------------------- | ---------------------------------------- |
-| `index`   | Integer, in the range `[1..numOutputModules]` | The position index of the output module. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | Integer, in the range `[1..numOutputModules]` | The position index of the output module. |
 
 #### Returns
 
@@ -393,10 +389,9 @@ Saves the item's current render settings as a new template with the specified na
 
 #### Parameters
 
-| Parameter |  Type  |          Description          |
-| --------- | ------ | ----------------------------- |
-| `name`    | String | The name of the new template. |
-
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | The name of the new template. |
 
 #### Returns
 
@@ -411,7 +406,6 @@ Nothing.
 :::note
 This functionality was added in After Effects 13.0 (CC 2014)
 :::
-
 
 #### Description
 
@@ -444,7 +438,6 @@ app.project.renderQueue.item(1).setSetting("Proxy Use", 1);
 This functionality was added in After Effects 13.0 (CC 2014)
 :::
 
-
 #### Description
 
 Sets a multiple settings for a given Render Queue Item.
@@ -470,11 +463,11 @@ app.project.renderQueue.item(2).setSettings( rqItem1_settable_str );
 // Set render queue item 3 with values you create.
 
 var my_renderSettings = {
-    "Color Depth":        "32 bits per channel",
-    "Quality":            "Best",
-    "Effects":            "All On",
-    "Time Span Duration": "1.0",
-    "Time Span Start":    "2.0"
+ "Color Depth": "32 bits per channel",
+ "Quality": "Best",
+ "Effects": "All On",
+ "Time Span Duration": "1.0",
+ "Time Span Start": "2.0"
 };
 
 app.project.renderQueue.item(2).setSettings( my_renderSettings );

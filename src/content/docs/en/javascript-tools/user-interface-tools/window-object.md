@@ -11,36 +11,36 @@ The constructor creates and returns a new Window object, or null if window creat
 new Window (type [, title, bounds, {creation_properties}]);
 ```
 
-|       Parameter       |                          Type                           |                                                                            Description                                                                            |
-|-----------------------|---------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`                | String                                                  | The window type. One of:                                                                                                                                          |
-|                       |                                                         | - `"dialog"` - Creates a modal dialog.                                                                                                                            |
-|                       |                                                         | - `"palette"` - Creates a modeless dialog, also called a floating palette. (Not supported by Photoshop CC.)                                                       |
-|                       |                                                         | - `"window"` - Creates a simple window that can be used as a main window for an application. (Not supported by Photoshop CC.)                                     |
-|                       |                                                         | This argument can be a ScriptUI resource specification; in this case, all other arguments are ignored. See [Resource specifications](../resource-specifications). |
-| `title`               | String                                                  | Optional. The window title. A localizable string.                                                                                                                 |
-| `bounds`              | [Bounds](../size-and-location-objects#bounds) object. | Optional. The window's position and size.                                                                                                                         |
-| `creation_properties` | Object                                                  | Optional. An object that contains any of the properties below.                                                                                                    |
+| Parameter | Type | Description |
+|---|---|---|
+| `type` | String | The window type. One of: |
+| | | - `"dialog"` - Creates a modal dialog. |
+| | | - `"palette"` - Creates a modeless dialog, also called a floating palette. (Not supported by Photoshop CC.) |
+| | | - `"window"` - Creates a simple window that can be used as a main window for an application. (Not supported by Photoshop CC.) |
+| | | This argument can be a ScriptUI resource specification; in this case, all other arguments are ignored. See [Resource specifications](../resource-specifications). |
+| `title` | String | Optional. The window title. A localizable string. |
+| `bounds` | [Bounds](../size-and-location-objects#bounds) object. | Optional. The window's position and size. |
+| `creation_properties` | Object | Optional. An object that contains any of the properties below. |
 
 #### Creation Properties
 
-|       Parameter       |  Type   |                                                                                                           Description                                                                                                            |
-|-----------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `resizeable`          | Boolean | When `true`, the window can be resized by the user.                                                                                                                                                                              |
-|                       |         | Default is `false`.                                                                                                                                                                                                              |
-| `su1PanelCoordinates` | Boolean | (Photoshop only) When `true`, the child panels of this window automatically adjust the positions of their children for compatability with Photoshop CS (in which the vertical coordinate was measured from outside the frame).   |
-|                       |         | Individual panels can override the parent window's setting.                                                                                                                                                                      |
-|                       |         | Default is `false`.                                                                                                                                                                                                              |
-| `closeButton`         | Boolean | When `true`, the title bar includes a button to close the window, if the platform and window type allow it.                                                                                                                      |
-|                       |         | When `false`, it does not. Not used for dialogs.                                                                                                                                                                                 |
-|                       |         | Default is `true`.                                                                                                                                                                                                               |
-| `maximizeButton`      | Boolean | When `true`, the title bar includes a button to expand the window to its maximum size (typically, the entire screen), if the platform and window type allow it. When `false`, it does not. Not used for dialogs.                 |
-|                       |         | Default is `false` for type palette, `true` for type window.                                                                                                                                                                     |
-| `minimizeButton`      | Boolean | When `true`, the title bar includes a button to minimize or iconify the window, if the platform and window type allow it. When `false`, it does not. Main windows cannot have a minimize button in Mac OS. Not used for dialogs. |
-|                       |         | Default is `false` for type palette, `true` for type window.                                                                                                                                                                     |
-| `independent`         | Boolean | When `true`, a window of type window is independent of other application windows, and can be hidden behind them in Windows. In Mac OS, has no effect.                                                                            |
-|                       |         | Default is `false`.                                                                                                                                                                                                              |
-| `borderless`          | Boolean | When `true`, the window has no title bar or borders. Properties that control those features are ignored.                                                                                                                         |
+| Parameter | Type | Description |
+|---|---|---|
+| `resizeable` | Boolean | When `true`, the window can be resized by the user. |
+| | | Default is `false`. |
+| `su1PanelCoordinates` | Boolean | (Photoshop only) When `true`, the child panels of this window automatically adjust the positions of their children for compatability with Photoshop CS (in which the vertical coordinate was measured from outside the frame). |
+| | | Individual panels can override the parent window's setting. |
+| | | Default is `false`. |
+| `closeButton` | Boolean | When `true`, the title bar includes a button to close the window, if the platform and window type allow it. |
+| | | When `false`, it does not. Not used for dialogs. |
+| | | Default is `true`. |
+| `maximizeButton` | Boolean | When `true`, the title bar includes a button to expand the window to its maximum size (typically, the entire screen), if the platform and window type allow it. When `false`, it does not. Not used for dialogs. |
+| | | Default is `false` for type palette, `true` for type window. |
+| `minimizeButton` | Boolean | When `true`, the title bar includes a button to minimize or iconify the window, if the platform and window type allow it. When `false`, it does not. Main windows cannot have a minimize button in Mac OS. Not used for dialogs. |
+| | | Default is `false` for type palette, `true` for type window. |
+| `independent` | Boolean | When `true`, a window of type window is independent of other application windows, and can be hidden behind them in Windows. In Mac OS, has no effect. |
+| | | Default is `false`. |
+| `borderless` | Boolean | When `true`, the window has no title bar or borders. Properties that control those features are ignored. |
 
 ---
 
@@ -199,7 +199,6 @@ Number
 :::note
 In [Windows](#) only.
 :::
-
 
 The key sequence that invokes this window's [ControlEvent.onShortcutKey](../control-objects#onshortcutkey) callback.
 
@@ -505,7 +504,6 @@ Object
 For [TabbedPanel](../control-objects#tabbedpanel) objects only.
 :::
 
-
 The currently active [Tab](../control-objects#tab) child. Setting this property changes the active tab. The value can only be `null` when the panel has no children; setting it to `null` is an error.
 
 When the value changes, either by a user selecting a different tab, or by a script setting the property, the [onChange](../control-objects#onchange) callback for the panel is called.
@@ -622,12 +620,12 @@ Creates and returns a new control or container object and adds it to the childre
 
 #### Parameters
 
-|    Parameter     |                          Type                          |                                                                                                                                      Description                                                                                                                                       |
-| ---------------- | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `type`           | String                                                 | The control type. See [Control types and creation parameters](../control-objects#control-types-and-creation-parameters).                                                                                                                                                               |
-| `bounds`         | [Bounds object](../size-and-location-objects#bounds) | Optional. A bounds specification that describes the size and position of the new control or container, relative to its parent. See Bounds object for specification formats. If supplied, this value creates a new Bounds object which is assigned to the new object's bounds property. |
-| `text`           | String                                                 | Optional. Initial text to be displayed in the control as the title, label, or contents, depending on the control type. If supplied, this value is assigned to the new object's text property.                                                                                          |
-| `creation_props` | Object.                                                | Optional. The properties of this object specify creation parameters, which are specific to each object type. See [Control types and creation parameters](../control-objects#control-types-and-creation-parameters).                                                                    |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `type` | String | The control type. See [Control types and creation parameters](../control-objects#control-types-and-creation-parameters). |
+| `bounds` | [Bounds object](../size-and-location-objects#bounds) | Optional. A bounds specification that describes the size and position of the new control or container, relative to its parent. See Bounds object for specification formats. If supplied, this value creates a new Bounds object which is assigned to the new object's bounds property. |
+| `text` | String | Optional. Initial text to be displayed in the control as the title, label, or contents, depending on the control type. If supplied, this value is assigned to the new object's text property. |
+| `creation_props` | Object. | Optional. The properties of this object specify creation parameters, which are specific to each object type. See [Control types and creation parameters](../control-objects#control-types-and-creation-parameters). |
 
 #### Returns
 
@@ -645,27 +643,27 @@ Registers an event handler for a particular type of event occurring in this wind
 
 #### Parameters
 
-|   Parameter    |   Type   |                                                                                                                                                                                                                   Description                                                                                                                                                                                                                    |
-|----------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `eventName`    | String   | The event name string. Predefined event names include:                                                                                                                                                                                                                                                                                                                                                                                           |
-|                |          | - `"change"`                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|                |          | - `"changing"`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|                |          | - `"move"`                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|                |          | - `"moving"`                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|                |          | - `"resize"`                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|                |          | - `"resizing"`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|                |          | - `"show"`                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|                |          | - `"enterKey"`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|                |          | - `"focus"`                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|                |          | - `"blur"`                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|                |          | - `"mousedown"`                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                |          | - `"mouseup"`                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|                |          | - `"mousemove"`                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                |          | - `"mouseover"`                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                |          | - `"mouseout"`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|                |          | - `"click"` (detail = 1 for single, 2 for double)                                                                                                                                                                                                                                                                                                                                                                                                |
-| `handler`      | Function | The function to register for the specified event in this target. This can be the name of a function defined in the extension, or a locally defined handler function to be executed when the event occurs. A handler function takes one argument, the UIEvent base class. See [Registering event listeners for windows or controls](../defining-behavior-with-event-callbacks-and-listeners#registering-event-listeners-for-windows-or-controls). |
-| `capturePhase` | Boolean  | Optional. When `true`, the handler is called only in the capturing phase of the event propagation. Default is `false`, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target.                                                                                                                                                      |
+| Parameter | Type | Description |
+|---|---|---|
+| `eventName` | String | The event name string. Predefined event names include: |
+| | | - `"change"` |
+| | | - `"changing"` |
+| | | - `"move"` |
+| | | - `"moving"` |
+| | | - `"resize"` |
+| | | - `"resizing"` |
+| | | - `"show"` |
+| | | - `"enterKey"` |
+| | | - `"focus"` |
+| | | - `"blur"` |
+| | | - `"mousedown"` |
+| | | - `"mouseup"` |
+| | | - `"mousemove"` |
+| | | - `"mouseover"` |
+| | | - `"mouseout"` |
+| | | - `"click"` (detail = 1 for single, 2 for double) |
+| `handler` | Function | The function to register for the specified event in this target. This can be the name of a function defined in the extension, or a locally defined handler function to be executed when the event occurs. A handler function takes one argument, the UIEvent base class. See [Registering event listeners for windows or controls](../defining-behavior-with-event-callbacks-and-listeners#registering-event-listeners-for-windows-or-controls). |
+| `capturePhase` | Boolean | Optional. When `true`, the handler is called only in the capturing phase of the event propagation. Default is `false`, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target. |
 
 #### Returns
 
@@ -683,9 +681,9 @@ Centers this window on the screen, or with respect to another specified window.
 
 #### Parameters
 
-| Parameter |                Type                 |        Description         |
-| --------- | ----------------------------------- | -------------------------- |
-| `window`  | [Window object](.././window-object) | Optional. A Window object. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `window` | [Window object](.././window-object) | Optional. A Window object. |
 
 #### Returns
 
@@ -703,9 +701,9 @@ Closes this window. If an `onClose` callback is defined for the window, calls th
 
 #### Parameters
 
-| Parameter |  Type  |                                            Description                                             |
-| --------- | ------ | -------------------------------------------------------------------------------------------------- |
-| `result`  | Number | Optional. A number to be returned from the show method that invoked this window as a modal dialog. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `result` | Number | Optional. A number to be returned from the show method that invoked this window as a modal dialog. |
 
 #### Returns
 
@@ -723,8 +721,8 @@ Simulates the occurrence of an event in this target. A script can create a UIEve
 
 #### Parameters
 
-| Parameter  |                             Type                             |      Description      |
-| ---------- | ------------------------------------------------------------ | --------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `eventObj` | [UIEvent base class](../event-handling#uievent-base-class) | A UIEvent base class. |
 
 #### Returns
@@ -743,9 +741,9 @@ Searches for the named element among the children of this window or container, a
 
 #### Parameters
 
-| Parameter |  Type  |                             Description                              |
-| --------- | ------ | -------------------------------------------------------------------- |
-| `name`    | String | The name of the element, as specified in the name creation property. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | The name of the element, as specified in the name creation property. |
 
 #### Returns
 
@@ -777,15 +775,15 @@ Sends a notification message, simulating the specified user interaction event.
 
 #### Parameters
 
-| Parameter |  Type  |                           Description                           |
-|-----------|--------|-----------------------------------------------------------------|
-| `event`   | String | Optional. The name of the window event handler to call. One of: |
-|           |        | - `onClose`                                                     |
-|           |        | - `onMove`                                                      |
-|           |        | - `onMoving`                                                    |
-|           |        | - `onResize`                                                    |
-|           |        | - `onResizing`                                                  |
-|           |        | - `onShow`                                                      |
+| Parameter | Type | Description |
+|---|---|---|
+| `event` | String | Optional. The name of the window event handler to call. One of: |
+| | | - `onClose` |
+| | | - `onMove` |
+| | | - `onMoving` |
+| | | - `onResize` |
+| | | - `onResizing` |
+| | | - `onShow` |
 
 #### Returns
 
@@ -815,8 +813,8 @@ Removes the specified child control from this window's or container's children a
 
 #### Parameters
 
-|       Parameter        |                           Type                            |                                                Description                                                 |
-| ---------------------- | --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `index`/`text`/`child` | Number, String, or [Control object](.././control-objects) | The child control to remove, specified by 0-based index, the contained text value, or as a control object. |
 
 #### Returns
@@ -835,11 +833,11 @@ Unregisters an event handler for a particular type of event occurring in this wi
 
 #### Parameters
 
-|   Parameter    |   Type   |                               Description                               |
-| -------------- | -------- | ----------------------------------------------------------------------- |
-| `eventName`    | String   | The event name string.                                                  |
-| `handler`      | Function | The function that was registered to handle the event.                   |
-| `capturePhase` | Boolean  | Optional. Whether the handler was to respond only in the capture phase. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `eventName` | String | The event name string. |
+| `handler` | Function | The function that was registered to handle the event. |
+| `capturePhase` | Boolean | Optional. Whether the handler was to respond only in the capture phase. |
 
 #### Returns
 

@@ -8,15 +8,15 @@ title: 访问XMP脚本API
 ```javascript
 // 加载库
 if ( ExternalObject.AdobeXMPScript == undefined ) {
-    ExternalObject.AdobeXMPScript = new ExternalObject( "lib:AdobeXMPScript");
+ ExternalObject.AdobeXMPScript = new ExternalObject( "lib:AdobeXMPScript");
 }
 ```
 
 加载库后，以下主要的XMP类将在全局JavaScript命名空间中可用：
 
-|       对象       |         描述   |
-| -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [XMPMeta对象](../xmpscript-object-reference#xmpmeta-object) | 提供XMP Toolkit的核心服务。允许您创建和删除元数据属性，并检索和修改属性值。       |
+| 对象 | 描述 |
+| --- | --- |
+| [XMPMeta对象](../xmpscript-object-reference#xmpmeta-object) | 提供XMP Toolkit的核心服务。允许您创建和删除元数据属性，并检索和修改属性值。 |
 | [XMPFile对象](../xmpscript-object-reference#xmpfile-object) | 提供对文件的主文档级别XMP的便捷I/O访问。允许您从文件中检索现有元数据，更新文件元数据，并向文件添加新元数据。 |
 
 其他顶级对象包括数组处理工具、日期时间对象以及包含命名空间常量的常量定义。顶级对象提供了对封装单个元数据属性、文件信息和XMP数据包信息的附加支持类的访问，以及允许遍历属性的工具。
@@ -39,32 +39,32 @@ if ( ExternalObject.AdobeXMPScript == undefined ) {
 
 - 您可以使用XMPScript通过从`Thumbnail`对象存储的元数据创建[XMPMeta对象](../xmpscript-object-reference#xmpmeta-object)来检查缩略图元数据，使用对象构造函数。为了确保元数据是最新的，请使用同步模式（默认情况下关闭）：
 
-    ```javascript
-    var thumb = new Thumbnail( new File( "/C/myImage.jpg") );
-    app.synchronousMode = true;
+ ```javascript
+ var thumb = new Thumbnail( new File( "/C/myImage.jpg") );
+ app.synchronousMode = true;
 
-    var xmp = new XMPMeta( thumb.metadata.serialize() );
-    ```
+ var xmp = new XMPMeta( thumb.metadata.serialize() );
+ ```
 
-    或：
+ 或：
 
-    ```javascript
-    var xmp = new XMPMeta( thumb.synchronousMetadata.serialize() );
-    ```
+ ```javascript
+ var xmp = new XMPMeta( thumb.synchronousMetadata.serialize() );
+ ```
 
 - 您可以通过使用序列化的XMP创建一个新的`Metadata`对象来修改Adobe Bridge缩略图中的元数据。继续前面的示例：
 
-    ```javascript
-    // 创建一个紧凑的XMP数据包
+ ```javascript
+ // 创建一个紧凑的XMP数据包
     var newPacket = xmp.serialize( XMPConst.SERIALIZE_OMIT_PACKET_WRAPPER | XMPConst.SERIALIZE_USE_COMPACT_FORMAT ) );
-    thumb.metadata = new Metadata( newPacket );
-    ```
+ thumb.metadata = new Metadata( newPacket );
+ ```
 
 - 要将元数据写回缩略图的文件，您可以访问缩略图的文件并创建一个[XMPFile对象](../xmpscript-object-reference#xmpfile-object)对象以直接访问嵌入的元数据：
 
-    ```javascript
-    var xmp = new XMPFile( thumb.spec.fsName, XMPConst.UNKNOWN, XMPConst.OPEN_FOR_UPDATE );
-    ```
+ ```javascript
+ var xmp = new XMPFile( thumb.spec.fsName, XMPConst.UNKNOWN, XMPConst.OPEN_FOR_UPDATE );
+ ```
 
 :::注意
 `XMPFile`对象不支持Adobe Bridge支持的所有文件格式。
@@ -84,8 +84,8 @@ var xmpStr = xmp.serialize(); // 将XMP数据包序列化为XML
 // 检索属性
 var prop = xmp.getProperty(XMPConst.NS_XMP, "CreatorTool");
 $.writeln( "命名空间: " + prop.namespace + "\n" +
-    "属性路径 + 名称: " + prop.path + "\n" +
-    "值: " + prop ); // 与prop.value相同
+ "属性路径 + 名称: " + prop.path + "\n" +
+ "值: " + prop ); // 与prop.value相同
 ```
 
 ---
@@ -124,31 +124,31 @@ var picFolder = "/c/temp/photos";
 
 // 加载XMPScript库
 if ( ExternalObject.AdobeXMPScript == undefined ) {
-    ExternalObject.AdobeXMPScript = new ExternalObject( "lib:AdobeXMPScript" );
+ ExternalObject.AdobeXMPScript = new ExternalObject( "lib:AdobeXMPScript" );
 }
 
 // 遍历文件夹中的照片
 var pics = Folder(picFolder).getFiles();
 for ( var i = 0; i < pics.length; i++ ) {
-    var file = pics[i];
-    $.writeln( "处理文件: " + file.fsName );
+ var file = pics[i];
+ $.writeln( "处理文件: " + file.fsName );
 
-    // 仅适用于文件，不适用于文件夹
-    if ( file instanceof File ) {
-     var xmpFile = new XMPFile( file.fsName, XMPConst.UNKNOWN, XMPConst.OPEN_FOR_UPDATE );
-     var xmp = xmpFile.getXMP();
+ // 仅适用于文件，不适用于文件夹
+ if ( file instanceof File ) {
+ var xmpFile = new XMPFile( file.fsName, XMPConst.UNKNOWN, XMPConst.OPEN_FOR_UPDATE );
+ var xmp = xmpFile.getXMP();
 
-     // 删除现有作者并添加一个新作者
-     // 现有元数据保持不变
-     xmp.deleteProperty( XMPConst.NS_DC, "creator" );
-     xmp.appendArrayItem( XMPConst.NS_DC, "creator", "Judy", 0, XMPConst.ARRAY_IS_ORDERED );
+ // 删除现有作者并添加一个新作者
+ // 现有元数据保持不变
+ xmp.deleteProperty( XMPConst.NS_DC, "creator" );
+ xmp.appendArrayItem( XMPConst.NS_DC, "creator", "Judy", 0, XMPConst.ARRAY_IS_ORDERED );
 
-     // 将更新后的元数据写入文件
-     if ( xmpFile.canPutXMP( xmp ) ) {
-      xmpFile.putXMP( xmp );
-     }
-     xmpFile.closeFile( XMPConst.CLOSE_UPDATE_SAFELY );
-    }
+ // 将更新后的元数据写入文件
+ if ( xmpFile.canPutXMP( xmp ) ) {
+ xmpFile.putXMP( xmp );
+ }
+ xmpFile.closeFile( XMPConst.CLOSE_UPDATE_SAFELY );
+ }
 }
 ```
 
@@ -173,7 +173,7 @@ $.writeln("XMPScript Adobe Bridge集成示例");
 
 // 加载XMPScript库
 if ( ExternalObject.AdobeXMPScript == undefined ) {
-    ExternalObject.AdobeXMPScript = new ExternalObject( "lib:AdobeXMPScript" );
+ ExternalObject.AdobeXMPScript = new ExternalObject( "lib:AdobeXMPScript" );
 }
 // 为缩略图添加上下文菜单项
 var xmpCommand = new MenuElement( "command", "显示XMP属性", "在缩略图末尾", "showProperties" );
@@ -187,29 +187,29 @@ var thumb = app.document.selections[0];
 // 如果存在且包含元数据
 if ( thumb && thumb.metadata ) {
 
-    // 从缩略图检索元数据到XMPMeta对象中`
-    // （如果app.synchronousMode已设置，则使用thumb.metadata）
+ // 从缩略图检索元数据到XMPMeta对象中`
+ // （如果app.synchronousMode已设置，则使用thumb.metadata）
 
-    var xmp = new XMPMeta( thumb.synchronousMetadata.serialize() );
+ var xmp = new XMPMeta( thumb.synchronousMetadata.serialize() );
 
-    // 检索一些XMP属性值
-    // 一个带有本地化字符串值的简单属性
-    var msg = "标题: " + xmp.getLocalizedText( XMPConst.NS_DC, "title", null, "en" ) + "\n";
+ // 检索一些XMP属性值
+ // 一个带有本地化字符串值的简单属性
+ var msg = "标题: " + xmp.getLocalizedText( XMPConst.NS_DC, "title", null, "en" ) + "\n";
 
-    // 一个数组属性
-    msg += "文档的作者:\n";
-    var num = xmp.countArrayItems( XMPConst.NS_DC, "creator" );
+ // 一个数组属性
+ msg += "文档的作者:\n";
+ var num = xmp.countArrayItems( XMPConst.NS_DC, "creator" );
 
-    for ( var i = 1; i <= num; i++ ) {}
-     msg += "* " + xmp.getArrayItem( XMPConst.NS_DC, "creator", i ) + "\n";
-    }
+ for ( var i = 1; i <= num; i++ ) {}
+ msg += "* " + xmp.getArrayItem( XMPConst.NS_DC, "creator", i ) + "\n";
+ }
 
-    // 一个带有日期值的简单属性
-    msg += "创建日期: " + xmp.getProperty( XMPConst.NS_XMP, "CreateDate" )
+ // 一个带有日期值的简单属性
+ msg += "创建日期: " + xmp.getProperty( XMPConst.NS_XMP, "CreateDate" )
 
-    // 显示值
-    Window.alert( msg );
+ // 显示值
+ Window.alert( msg );
 } else {
-    Window.alert( "未选择缩略图或不包含XMP" );
+ Window.alert( "未选择缩略图或不包含XMP" );
 }
 ```

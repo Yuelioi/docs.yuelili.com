@@ -13,14 +13,14 @@ special characters for matching are:
 - `*` Match any substring
 - `[list]` Match any of the characters specified in the list.
 - If a pattern is prefixed by a caret (^), then subjects which match
-  this pattern will be excluded from the match.
+ this pattern will be excluded from the match.
 
 Examples:
 
 - `a*` - Match any string beginning with a.
 - `a*,^aardvark` - Match any string beginning with a except for
-  aardvark.
+ aardvark.
 - `[abc]*z` - Match any string beginning with a, b or c and ending with
-  z.
+ z.
 - `g*,^geo*` - Match any string beginning with g, but not any string
-  beginning with geo.
+ beginning with geo.

@@ -453,10 +453,10 @@ title: CompoundPathItem
 
 #### 参数
 
-|      参数      |      类型        |        描述        |
-| -------------- | ------------------------------------------------------------------- | ----------------- |
-| `relativeObject`    | 对象，可选          | 要复制到的对象     |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 插入元素的位置     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `relativeObject` | 对象，可选 | 要复制到的对象 |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 插入元素的位置 |
 
 #### 返回值
 
@@ -474,10 +474,10 @@ title: CompoundPathItem
 
 #### 参数
 
-|      参数      |      类型        |    描述    |
-| -------------- | ------------------------------------------------------------------- | ---------------------- |
-| `relativeObject`    | 对象      | 要移动元素的对象       |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 移动元素到的位置       |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `relativeObject` | 对象 | 要移动元素的对象 |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 移动元素到的位置 |
 
 #### 返回值
 
@@ -503,14 +503,14 @@ title: CompoundPathItem
 
 ```javascript
 app.activeDocument.activeLayer.compoundPathItems[index].resize(
-    scaleX,
-    scaleY
-    [,changePositions]
-    [,changeFillPatterns]
-    [,changeFillGradients]
-    [,changeStrokePattern]
-    [,changeLineWidths]
-    [,scaleAbout]
+ scaleX,
+ scaleY
+ [,changePositions]
+ [,changeFillPatterns]
+ [,changeFillGradients]
+ [,changeStrokePattern]
+ [,changeLineWidths]
+ [,scaleAbout]
 )
 ```
 
@@ -520,16 +520,16 @@ app.activeDocument.activeLayer.compoundPathItems[index].resize(
 
 #### 参数
 
-|       参数       |     类型      |          描述          |
-| ---------------- | ----------------------------------------------------------------- | ---------------------------------------------- |
-| `scaleX`        | 数字（双精度）    | 水平缩放因子         |
-| `scaleY`        | 数字（双精度）    | 垂直缩放因子         |
-| `changePositions`     | 布尔值，可选           | 是否影响艺术对象的位置和方向       |
-| `changeFillPatterns`  | 布尔值，可选           | 是否变换填充图案     |
-| `changeFillGradients` | 布尔值，可选           | 是否变换填充渐变     |
-| `changeStrokePattern` | 布尔值，可选           | 是否变换描边图案     |
-| `changeLineWidths`    | 数字（双精度），可选         | 缩放线宽的量         |
-| `scaleAbout`    | [Transformation](../scripting-constants#transformation)，可选 | 用作锚点的点，用于变换     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `scaleX` | 数字（双精度） | 水平缩放因子 |
+| `scaleY` | 数字（双精度） | 垂直缩放因子 |
+| `changePositions` | 布尔值，可选 | 是否影响艺术对象的位置和方向 |
+| `changeFillPatterns` | 布尔值，可选 | 是否变换填充图案 |
+| `changeFillGradients` | 布尔值，可选 | 是否变换填充渐变 |
+| `changeStrokePattern` | 布尔值，可选 | 是否变换描边图案 |
+| `changeLineWidths` | 数字（双精度），可选 | 缩放线宽的量 |
+| `scaleAbout` | [Transformation](../scripting-constants#transformation)，可选 | 用作锚点的点，用于变换 |
 
 #### 返回值
 
@@ -541,12 +541,12 @@ app.activeDocument.activeLayer.compoundPathItems[index].resize(
 
 ```javascript
 app.activeDocument.activeLayer.compoundPathItems[index].rotate(
-    angle
-    [,changePositions]
-    [,changeFillPatterns]
-    [,changeFillGradients]
-    [,changeStrokePattern]
-    [,rotateAbout]
+ angle
+ [,changePositions]
+ [,changeFillPatterns]
+ [,changeFillGradients]
+ [,changeStrokePattern]
+ [,rotateAbout]
 )
 ```
 
@@ -556,14 +556,14 @@ app.activeDocument.activeLayer.compoundPathItems[index].rotate(
 
 #### 参数
 
-|       参数       |     类型      |          描述          |
-| ---------------- | ----------------------------------------------------------------- | ---------------------------------------------- |
-| `angle`         | 数字（双精度）    | 旋转元素的角度量     |
-| `changePositions`     | 布尔值，可选           | 是否影响艺术对象的位置和方向       |
-| `changeFillPatterns`  | 布尔值，可选           | 是否变换填充图案     |
-| `changeFillGradients` | 布尔值，可选           | 是否变换填充渐变     |
-| `changeStrokePattern` | 布尔值，可选           | 是否变换描边图案     |
-| `rotateAbout`   | [Transformation](../scripting-constants#transformation)，可选 | 用作锚点的点，用于变换     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `angle` | 数字（双精度） | 旋转元素的角度量 |
+| `changePositions` | 布尔值，可选 | 是否影响艺术对象的位置和方向 |
+| `changeFillPatterns` | 布尔值，可选 | 是否变换填充图案 |
+| `changeFillGradients` | 布尔值，可选 | 是否变换填充渐变 |
+| `changeStrokePattern` | 布尔值，可选 | 是否变换描边图案 |
+| `rotateAbout` | [Transformation](../scripting-constants#transformation)，可选 | 用作锚点的点，用于变换 |
 
 #### 返回值
 
@@ -575,13 +575,13 @@ app.activeDocument.activeLayer.compoundPathItems[index].rotate(
 
 ```javascript
 app.activeDocument.activeLayer.compoundPathItems[index].transform(
-    transformationMatrix
-    [,changePositions]
-    [,changeFillPatterns]
-    [,changeFillGradients]
-    [,changeStrokePattern]
-    [,changeLineWidths]
-    [,transformAbout]
+ transformationMatrix
+ [,changePositions]
+ [,changeFillPatterns]
+ [,changeFillGradients]
+ [,changeStrokePattern]
+ [,changeLineWidths]
+ [,transformAbout]
 )
 ```
 
@@ -591,15 +591,15 @@ app.activeDocument.activeLayer.compoundPathItems[index].transform(
 
 #### 参数
 
-|        参数   |     类型      |   描述      |
-| ------------------- | ----------------------------------------------------------------- | ------------------------------------- |
-| `transformationMatrix` | [Matrix](.././Matrix)       | 要应用的变换矩阵          |
-| `changePositions`      | 布尔值，可选           | 是否改变位置      |
-| `changeFillPatterns`   | 布尔值，可选           | 是否改变填充图案          |
-| `changeFillGradients`  | 布尔值，可选           | 是否改变填充渐变          |
-| `changeStrokePattern`  | 布尔值，可选           | 是否改变描边图案          |
-| `changeLineWidths`     | 数字（双精度），可选         | 缩放线宽的量      |
-| `transformAbout`       | [Transformation](../scripting-constants#transformation)，可选 | 用作锚点的点，用于变换          |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `transformationMatrix` | [Matrix](.././Matrix) | 要应用的变换矩阵 |
+| `changePositions` | 布尔值，可选 | 是否改变位置 |
+| `changeFillPatterns` | 布尔值，可选 | 是否改变填充图案 |
+| `changeFillGradients` | 布尔值，可选 | 是否改变填充渐变 |
+| `changeStrokePattern` | 布尔值，可选 | 是否改变描边图案 |
+| `changeLineWidths` | 数字（双精度），可选 | 缩放线宽的量 |
+| `transformAbout` | [Transformation](../scripting-constants#transformation)，可选 | 用作锚点的点，用于变换 |
 
 #### 返回值
 
@@ -611,12 +611,12 @@ app.activeDocument.activeLayer.compoundPathItems[index].transform(
 
 ```javascript
 app.activeDocument.activeLayer.compoundPathItems[index].translate(
-    deltaX
-    [,deltaY]
-    [,transformObjects]
-    [,transformFillPatterns]
-    [,transformFillGradients]
-    [,transformStrokePatterns]
+ deltaX
+ [,deltaY]
+ [,transformObjects]
+ [,transformFillPatterns]
+ [,transformFillGradients]
+ [,transformStrokePatterns]
 )
 ```
 
@@ -626,14 +626,14 @@ app.activeDocument.activeLayer.compoundPathItems[index].translate(
 
 #### 参数
 
-|    参数    |     类型      |       描述        |
-| ---------------------- | ------------------------- | ----------------------------- |
-| `deltaX`      | 数字（双精度），可选 | 水平偏移量        |
-| `deltaY`      | 数字（双精度），可选 | 垂直偏移量        |
-| `transformObjects`        | 布尔值，可选   | 是否变换对象      |
-| `transformFillPatterns`   | 布尔值，可选   | 是否变换填充图案        |
-| `transformFillGradients`  | 布尔值，可选   | 是否变换填充渐变        |
-| `transformStrokePatterns` | 布尔值，可选   | 是否变换描边图案        |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `deltaX` | 数字（双精度），可选 | 水平偏移量 |
+| `deltaY` | 数字（双精度），可选 | 垂直偏移量 |
+| `transformObjects` | 布尔值，可选 | 是否变换对象 |
+| `transformFillPatterns` | 布尔值，可选 | 是否变换填充图案 |
+| `transformFillGradients` | 布尔值，可选 | 是否变换填充渐变 |
+| `transformStrokePatterns` | 布尔值，可选 | 是否变换描边图案 |
 
 #### 返回值
 
@@ -651,9 +651,9 @@ app.activeDocument.activeLayer.compoundPathItems[index].translate(
 
 #### 参数
 
-|   参数    |    类型     |     描述      |
-| --------- | --------------------------------------------------- | ------------------------- |
-| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法 |
 
 #### 返回值
 
@@ -668,18 +668,18 @@ app.activeDocument.activeLayer.compoundPathItems[index].translate(
 ```javascript
 // 选择所有不属于复合路径的路径
 if ( app.documents.length > 0 ) {
-    var doc = app.activeDocument;
-    var count = 0;
-    if ( doc.pathItems.length > 0 ) {
-        var thePaths = doc.pathItems;
-        var numPaths = thePaths.length;
-        for ( var i = 0; i < doc.pathItems.length; i++ ) {
-        var pathArt = doc.pathItems[i];
-        if ( pathArt.parent.typename != "compoundPathItem" ) {
-      pathArt.selected = true;
-      count++;
-        }
-    }
+ var doc = app.activeDocument;
+ var count = 0;
+ if ( doc.pathItems.length > 0 ) {
+ var thePaths = doc.pathItems;
+ var numPaths = thePaths.length;
+ for ( var i = 0; i < doc.pathItems.length; i++ ) {
+ var pathArt = doc.pathItems[i];
+ if ( pathArt.parent.typename != "compoundPathItem" ) {
+ pathArt.selected = true;
+ count++;
+ }
+ }
 }
 ```
 
@@ -690,22 +690,22 @@ if ( app.documents.length > 0 ) {
 // 然后设置复合路径中所有项的描边宽度和颜色
 
 if (app.documents.length > 0) {
-    var doc = app.activeDocument;
-    var newCompoundPath = doc.activeLayer.compoundPathItems.add();
+ var doc = app.activeDocument;
+ var newCompoundPath = doc.activeLayer.compoundPathItems.add();
 
-    // 创建路径项
-    var newPath = newCompoundPath.pathItems.add();
-    newPath.setEntirePath(Array(Array(30, 50), Array(30, 100)));
+ // 创建路径项
+ var newPath = newCompoundPath.pathItems.add();
+ newPath.setEntirePath(Array(Array(30, 50), Array(30, 100)));
 
-    newPath = newCompoundPath.pathItems.add();
-    newPath.setEntirePath(Array(Array(40, 100), Array(100, 100)));
+ newPath = newCompoundPath.pathItems.add();
+ newPath.setEntirePath(Array(Array(40, 100), Array(100, 100)));
 
-    newPath = newCompoundPath.pathItems.add();
-    newPath.setEntirePath(Array(Array(100, 110), Array(100, 300)));
+ newPath = newCompoundPath.pathItems.add();
+ newPath.setEntirePath(Array(Array(100, 110), Array(100, 300)));
 
-    // 设置复合路径的描边和宽度属性
-    newPath.stroked = true;
-    newPath.strokeWidth = 3.5;
-    newPath.strokeColor = app.activeDocument.swatches[3].color;
+ // 设置复合路径的描边和宽度属性
+ newPath.stroked = true;
+ newPath.strokeWidth = 3.5;
+ newPath.strokeColor = app.activeDocument.swatches[3].color;
 }
 ```

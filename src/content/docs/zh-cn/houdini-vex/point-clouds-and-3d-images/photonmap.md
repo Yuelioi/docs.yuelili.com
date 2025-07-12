@@ -39,8 +39,8 @@ Cf = photonmap(map, P, normalize(frontface(N, I)),
 ```
 
 ```vex
-vector      clr;
-float      area;
+vector clr;
+float area;
 photonmap(map, P, normalize(frontface(N, I)), clr, area,
 "nphotons", 100,
 "type", "diffuse",

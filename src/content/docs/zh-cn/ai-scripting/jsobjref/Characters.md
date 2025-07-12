@@ -71,11 +71,11 @@ title: 字符
 
 #### 参数
 
-|      参数       |       类型        |       描述       |
-| --------------- | --------------------------------------------------------------------- | ---------------- |
-| `contents`      | 字符串      | 要添加的文本内容 |
-| `relativeObject`| [TextFrameItem](.././TextFrameItem), 可选    | 要添加到的对象   |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 放置文本的位置   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `contents` | 字符串 | 要添加的文本内容 |
+| `relativeObject`| [TextFrameItem](.././TextFrameItem), 可选 | 要添加到的对象 |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 放置文本的位置 |
 
 #### 返回值
 
@@ -93,8 +93,8 @@ title: 字符
 
 #### 参数
 
-| 参数       | 类型   |       描述       |
-| ---------- | ------ | ---------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `contents` | 字符串 | 要添加的文本内容 |
 
 #### 返回值
@@ -113,9 +113,9 @@ title: 字符
 
 #### 参数
 
-| 参数      |      类型      |       描述       |
-| --------- | -------------- | ---------------- |
-| `itemKey` | 字符串, 数字   | 字符串或数字键   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `itemKey` | 字符串, 数字 | 字符串或数字键 |
 
 #### 返回值
 
@@ -146,11 +146,11 @@ title: 字符
 // 包括空白字符，并存储在numChars中
 
 if (app.documents.length > 0) {
-    var doc = app.activeDocument;
-    var numChars = 0;
-    for (var i = 0; i < doc.textFrames.length; i++) {
-        var textArtRange = doc.textFrames[i].contents;
-        numChars += textArtRange.length;
-    }
+ var doc = app.activeDocument;
+ var numChars = 0;
+ for (var i = 0; i < doc.textFrames.length; i++) {
+ var textArtRange = doc.textFrames[i].contents;
+ numChars += textArtRange.length;
+ }
 }
 ```

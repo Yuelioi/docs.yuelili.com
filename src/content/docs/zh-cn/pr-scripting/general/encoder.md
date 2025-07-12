@@ -33,18 +33,18 @@ title: 编码器对象
 
 #### 参数
 
-|   参数    |    类型    |     描述   |
-|-------------------|---------------------------------|------------------------------------------|
-| `filePath`    | String    | 要渲染的文件的路径。   |
-| `outputPath`   | String    | 输出文件的路径。    |
-| `presetPath`   | String    | 预设文件（.epr）的路径。     |
-| `workArea`    | Integer    | 表示要使用的工作区域的整数：    |
-|   |     | - `0` - `ENCODE_ENTIRE`     |
-|   |     | - `1` - `ENCODE_IN_TO_OUT`    |
-|   |     | - `2` - `ENCODE_WORK_AREA`    |
-| `removeUponCompletion` | Integer   | 如果为 `1`，任务完成后将被移除。   |
-| `inPoint`   | [时间对象](../../other/time)   | 新文件的入点时间对象。   |
-| `outPoint`    | [时间对象](../../other/time)   | 新文件的出点时间对象。   |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `filePath` | String | 要渲染的文件的路径。 |
+| `outputPath` | String | 输出文件的路径。 |
+| `presetPath` | String | 预设文件（.epr）的路径。 |
+| `workArea` | Integer | 表示要使用的工作区域的整数： |
+| | | - `0` - `ENCODE_ENTIRE` |
+| | | - `1` - `ENCODE_IN_TO_OUT` |
+| | | - `2` - `ENCODE_WORK_AREA` |
+| `removeUponCompletion` | Integer | 如果为 `1`，任务完成后将被移除。 |
+| `inPoint` | [时间对象](../../other/time) | 新文件的入点时间对象。 |
+| `outPoint` | [时间对象](../../other/time) | 新文件的出点时间对象。 |
 
 #### 返回值
 
@@ -62,16 +62,16 @@ title: 编码器对象
 
 #### 参数
 
-|   参数    |   类型    |    描述     |
-|-------------------|-----------------------------------------------|--------------------------------------|
-| `projectItem`   | [ProjectItem 对象](../../item/projectitem)   | 要渲染的项目项。   |
-| `outputPath`   | String   | 输出文件的路径。   |
-| `presetPath`   | String   | 预设文件（.epr）的路径。    |
-| `workArea`    | Integer      | 表示要使用的工作区域的整数：   |
-|   |    | - `0` - `ENCODE_ENTIRE`    |
-|   |    | - `1` - `ENCODE_IN_TO_OUT`   |
-|   |    | - `2` - `ENCODE_WORK_AREA`   |
-| `removeUponCompletion` | Integer     | 如果为 `1`，任务完成后将被移除。   |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `projectItem` | [ProjectItem 对象](../../item/projectitem) | 要渲染的项目项。 |
+| `outputPath` | String | 输出文件的路径。 |
+| `presetPath` | String | 预设文件（.epr）的路径。 |
+| `workArea` | Integer | 表示要使用的工作区域的整数： |
+| | | - `0` - `ENCODE_ENTIRE` |
+| | | - `1` - `ENCODE_IN_TO_OUT` |
+| | | - `2` - `ENCODE_WORK_AREA` |
+| `removeUponCompletion` | Integer | 如果为 `1`，任务完成后将被移除。 |
 
 #### 返回值
 
@@ -89,16 +89,16 @@ title: 编码器对象
 
 #### 参数
 
-|   参数    |     类型   |    描述     |
-|-------------------|---------------------------------------------|--------------------------------------|
-| `sequence`    | [Sequence 对象](../../sequence/sequence)   | 要渲染的序列。    |
-| `outputPath`   | String   | 输出文件的路径。   |
-| `presetPath`   | String   | 预设文件（.epr）的路径。    |
-| `workArea`    | Integer   | 表示要使用的工作区域的整数：   |
-|   |   | - `0` - `ENCODE_ENTIRE`    |
-|   |   | - `1` - `ENCODE_IN_TO_OUT`   |
-|   |   | - `2` - `ENCODE_WORK_AREA`   |
-| `removeUponCompletion` | Integer     | 如果为 `1`，任务完成后将被移除。   |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `sequence` | [Sequence 对象](../../sequence/sequence) | 要渲染的序列。 |
+| `outputPath` | String | 输出文件的路径。 |
+| `presetPath` | String | 预设文件（.epr）的路径。 |
+| `workArea` | Integer | 表示要使用的工作区域的整数： |
+| | | - `0` - `ENCODE_ENTIRE` |
+| | | - `1` - `ENCODE_IN_TO_OUT` |
+| | | - `2` - `ENCODE_WORK_AREA` |
+| `removeUponCompletion` | Integer | 如果为 `1`，任务完成后将被移除。 |
 
 #### 返回值
 
@@ -134,9 +134,9 @@ title: 编码器对象
 
 #### 参数
 
-| 参数   |  类型   |     描述   |
-|-----------|---------|---------------------------------------------|
-| `enabled` | Integer | 传递 `1` 启用嵌入输出，`0` 禁用。   |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `enabled` | Integer | 传递 `1` 启用嵌入输出，`0` 禁用。 |
 
 #### 返回值
 
@@ -159,9 +159,9 @@ title: 编码器对象
 
 #### 参数
 
-| 参数   |  类型   |     描述   |
-|-----------|---------|---------------------------------------------|
-| `enabled` | Integer | 传递 `1` 启用侧文件输出，`0` 禁用。   |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `enabled` | Integer | 传递 `1` 启用侧文件输出，`0` 禁用。 |
 
 #### 返回值
 

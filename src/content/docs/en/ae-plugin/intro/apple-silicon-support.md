@@ -11,7 +11,6 @@ Not all Adobe products have native Apple Silicon versions yet, but in those that
 In order to build a Mac Universal binary, you will need Xcode 12.2 or greater. Adobe is currently using Xcode 12.4.
 :::
 
-
 To learn more about Universal binaries, please visit [https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary](https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary)
 
 ---
@@ -27,12 +26,12 @@ To learn more about Universal binaries, please visit [https://developer.apple.co
 
 > * Find the .r resource file for your plugin.
 > * Add `CodeMacARM64 {"EffectMain"}` next to your existing Intel Mac entry point definition.
->   ```cpp
->   #if defined(AE_OS_MAC)
->     CodeMacARM64 {"EffectMain"},
->     CodeMacIntel64 {"EffectMain"},
->   #endif
->   ```
+> ```cpp
+> #if defined(AE_OS_MAC)
+> CodeMacARM64 {"EffectMain"},
+> CodeMacIntel64 {"EffectMain"},
+> #endif
+> ```
 > * If for some reason you need different entry points on x64 and ARM just provide a different entry point name and string.
 
 3. Compile the Universal binary by building for the Any Mac (Apple Silicon, Intel) Target, or by using Product -> Archive.
@@ -51,18 +50,18 @@ Since the main entry point of a plugin is always an extern "C" calling conventio
 
 ```cpp
 PF_Err EffectMain ( PF_Cmd cmd,
-    PF_InData *in_data,
-    PF_OutData *out_data,
-    PF_ParamDef *params[],
-    PF_LayerDef *output )
+ PF_InData *in_data,
+ PF_OutData *out_data,
+ PF_ParamDef *params[],
+ PF_LayerDef *output )
 {
-    try
-    {
-        /* Your code here */
-    }
-    catch
-    {
-        /* return most appropriate PF_Err */
-    }
+ try
+ {
+ /* Your code here */
+ }
+ catch
+ {
+ /* return most appropriate PF_Err */
+ }
 }
 ```

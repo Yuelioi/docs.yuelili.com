@@ -12,7 +12,6 @@ These pages reflect the organization of the Expression fly-out menu within After
 Layer is also a subclass of [PropertyGroup](../../objects/propertygroup), so all methods of PropertyGroup, in addition to those listed in the below pages, are available when working with Layer.
 :::
 
-
 Those categories are:
 
 - [Layer Sub-objects](.././sub-objects) is for items that give you *other objects* based on the current layer; things like the source (for precomps or footage), effects, masks, sourceRect, etc.

@@ -63,16 +63,16 @@ var newType = GpuAccelType.METAL;
 var canSet = false;
 var currentOptions = app.availableGPUAccelTypes;
 for (var op in currentOptions) {
-    if (currentOptions[op] === newType) {
-        canSet = true;
-    }
+ if (currentOptions[op] === newType) {
+ canSet = true;
+ }
 }
 
 if (canSet) {
-    // Set the GPU acceleration type.
-    app.project.gpuAccelType = newType;
+ // Set the GPU acceleration type.
+ app.project.gpuAccelType = newType;
 } else {
-    alert("Metal is not available on this OS.");
+ alert("Metal is not available on this OS.");
 }
 ```
 
@@ -136,12 +136,12 @@ The effects available in the application.
 
 Array, with each element containing the following properties; read-only:
 
-|   Property    |  Type  |                                                                           Description                                                                           |
-| ------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `displayName` | String | A string representing the localized display name of the effect as seen in the Effect menu.                                                                      |
-| `category`    | String | A string representing the localized category label as seen in the Effect menu. This can be `""` for synthetic effects that aren't normally shown to the user.   |
-| `matchName`   | String | A string representing the internal unique name for the effect. This name does not change between versions of After Effects. Use this value to apply the effect. |
-| `version`     | String | Effect's internal version string. This value might be different than the version number the plug-in vendor decides to show in the effect's about box.           |
+| Property | Type | Description |
+| --- | --- | --- |
+| `displayName` | String | A string representing the localized display name of the effect as seen in the Effect menu. |
+| `category` | String | A string representing the localized category label as seen in the Effect menu. This can be `""` for synthetic effects that aren't normally shown to the user. |
+| `matchName` | String | A string representing the internal unique name for the effect. This name does not change between versions of After Effects. Use this value to apply the effect. |
+| `version` | String | Effect's internal version string. This value might be different than the version number the plug-in vendor decides to show in the effect's about box. |
 
 #### Example
 
@@ -238,11 +238,11 @@ String; read-only. Some common values include:
 ```javascript
 var lang = app.isoLanguage;
 if (lang === "en_US") {
-    alert("After Effects is running in English.");
+ alert("After Effects is running in English.");
 } else if (lang === "fr_FR") {
-    alert("After Effects is running in French.");
+ alert("After Effects is running in French.");
 } else {
-    alert("After Effects is running not in English or French.");
+ alert("After Effects is running not in English or French.");
 }
 ```
 
@@ -306,7 +306,7 @@ A function name string, or `null` if no function is assigned; read/write.
 
 ```javascript
 function err(errString) {
-    alert(errString) ;
+ alert(errString) ;
 }
 app.onError = err;
 ```
@@ -446,8 +446,8 @@ Marks the beginning of an undo group, which allows a script to logically group a
 
 #### Parameters
 
-|  Parameter   |  Type  |                                    Description                                    |
-| ------------ | ------ | --------------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `undoString` | String | The text that will appear for the Undo command in the Edit menu (that is, "Undo") |
 
 #### Returns
@@ -466,9 +466,9 @@ Removes the specified task from the queue of tasks scheduled for delayed executi
 
 #### Parameters
 
-| Parameter |  Type   |                                         Description                                         |
-| --------- | ------- | ------------------------------------------------------------------------------------------- |
-| `taskID`  | Integer | An integer that identifies the task, as returned by [app.scheduleTask()](#appscheduletask). |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `taskID` | Integer | An integer that identifies the task, as returned by [app.scheduleTask()](#appscheduletask). |
 
 #### Returns
 
@@ -486,9 +486,9 @@ Ends the suppression of script error dialog boxes in the user interface. Error d
 
 #### Parameters
 
-| Parameter |  Type   |                                                     Description                                                      |
-| --------- | ------- | -------------------------------------------------------------------------------------------------------------------- |
-| `alert`   | Boolean | When `true`, errors that have occurred following the call to `beginSuppressDialogs()` are displayed in a dialog box. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `alert` | Boolean | When `true`, errors that have occurred following the call to `beginSuppressDialogs()` are displayed in a dialog box. |
 
 #### Returns
 
@@ -555,9 +555,9 @@ These web sites have more information and lists of the known numbers:
 
 #### Parameters
 
-| Parameter |  Type   |          Description          |
-| --------- | ------- | ----------------------------- |
-| `id`      | Integer | The ID number of the command. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `id` | Integer | The ID number of the command. |
 
 #### Returns
 
@@ -589,8 +589,8 @@ These web sites have more information and lists of the known numbers:
 
 #### Parameters
 
-| Parameter |  Type  |                           Description                           |
-| --------- | ------ | --------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `command` | String | The text of the menu command, exactly as it is shown in the UI. |
 
 #### Returns
@@ -644,9 +644,9 @@ Opens a project.
 
 #### Parameters
 
-| Parameter |                                              Type                                              |                                              Description                                               |
-| --------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| `file`    | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) | Optional. Project file to open. If not supplied, the method prompts the user to select a project file. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `file` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) | Optional. Project file to open. If not supplied, the method prompts the user to select a project file. |
 
 #### Returns
 
@@ -657,10 +657,10 @@ A new Project object for the specified project, or `null` if the user cancels th
 ```javascript
 var my_file = new File("../my_folder/my_test.aep");
 if (my_file.exists) {
-    var new_project = app.open(my_file);
-    if (new_project) {
-        alert(new_project.file.name);
-    }
+ var new_project = app.open(my_file);
+ if (new_project) {
+ alert(new_project.file.name);
+ }
 }
 ```
 
@@ -680,9 +680,9 @@ Opens a project faster than `app.open()` by skipping some checks.
 
 #### Parameters
 
-| Parameter |                                              Type                                              |      Description      |
-| --------- | ---------------------------------------------------------------------------------------------- | --------------------- |
-| `file`    | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) | Project file to open. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `file` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) | Project file to open. |
 
 #### Returns
 
@@ -706,8 +706,8 @@ var normalEnd = $.hiresTimer / 1000;
 app.project.close(CloseOptions.DO_NOT_SAVE_CHANGES);
 
 alert( "The difference is " + parseInt(normalEnd-fastEnd) + " ms" +
-        "\n\nFast: " + fastEnd + " ms" +
-        "\nNormal:" + normalEnd + " ms" );
+ "\n\nFast: " + fastEnd + " ms" +
+ "\nNormal:" + normalEnd + " ms" );
 ```
 
 ---
@@ -722,34 +722,34 @@ Loads color swatch data from an Adobe Swatch Exchange (ASE) file.
 
 #### Parameters
 
-| Parameter |                                              Type                                              |      Description       |
-| --------- | ---------------------------------------------------------------------------------------------- | ---------------------- |
-| `file`    | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) | The ASE file to parse. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `file` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) | The ASE file to parse. |
 
 #### Returns
 
 The swatch data, in this format:
 
-|      Property       |                            Description                            |
-|---------------------|-------------------------------------------------------------------|
-| `data.majorVersion` | The ASE version number.                                           |
-| `data.minorVersion` |                                                                   |
-| `data.values`       | An array of Swatch Value.                                         |
-| `SwatchValue.type`  | One of "RGB", "CMYK", "LAB", "Gray"                               |
-| `SwatchValue.r`     | When `type = "RGB"`, the color values in the range `[0.0..1.0]`.  |
-| `SwatchValue.g`     |                                                                   |
-| `SwatchValue.b`     | `[0, 0, 0]` is Black.                                             |
-| `SwatchValue.c`     | When `type = "CMYK"`, the color values in the range `[0.0..1.0]`. |
-| `SwatchValue.m`     |                                                                   |
-| `SwatchValue.y`     | `[0, 0, 0, 0]` is White.                                          |
-| `SwatchValue.k`     |                                                                   |
-| `SwatchValue.L`     | When `type = "LAB"`, the color values.                            |
-| `SwatchValue.a`     |                                                                   |
-| `SwatchValue.b`     | - `L` is in the range `[0.0..1.0]`                                |
-|                     | - `a` and `b`are in the range `[-128.0..+128.0]`                  |
-|                     | `[0, 0, 0]` is Black.                                             |
-| `SwatchValue.value` | When `type = "Gray"`, the `value` range is `[0.0..1.0]`.          |
-|                     | `0.0` is Black.                                                   |
+| Property | Description |
+|---|---|
+| `data.majorVersion` | The ASE version number. |
+| `data.minorVersion` | |
+| `data.values` | An array of Swatch Value. |
+| `SwatchValue.type` | One of "RGB", "CMYK", "LAB", "Gray" |
+| `SwatchValue.r` | When `type = "RGB"`, the color values in the range `[0.0..1.0]`. |
+| `SwatchValue.g` | |
+| `SwatchValue.b` | `[0, 0, 0]` is Black. |
+| `SwatchValue.c` | When `type = "CMYK"`, the color values in the range `[0.0..1.0]`. |
+| `SwatchValue.m` | |
+| `SwatchValue.y` | `[0, 0, 0, 0]` is White. |
+| `SwatchValue.k` | |
+| `SwatchValue.L` | When `type = "LAB"`, the color values. |
+| `SwatchValue.a` | |
+| `SwatchValue.b` | - `L` is in the range `[0.0..1.0]` |
+| | - `a` and `b`are in the range `[-128.0..+128.0]` |
+| | `[0, 0, 0]` is Black. |
+| `SwatchValue.value` | When `type = "Gray"`, the `value` range is `[0.0..1.0]`. |
+| | `0.0` is Black. |
 
 ---
 
@@ -763,9 +763,9 @@ Pauses or resumes the search of the target watch folder for items to render.
 
 #### Parameters
 
-| Parameter |  Type   |             Description             |
-| --------- | ------- | ----------------------------------- |
-| `pause`   | Boolean | `true` to pause, `false` to resume. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `pause` | Boolean | `true` to pause, `false` to resume. |
 
 #### Returns
 
@@ -793,14 +793,14 @@ Purges unused data of the specified types. Replicates the Purge options in the E
 
 #### Parameters
 
-| Parameter |        Type        |                                               Description                                                |
-|-----------|--------------------|----------------------------------------------------------------------------------------------------------|
-| `target`  | `PurgeTarget` enum | The type of elements to purge from memory. One of:                                                       |
-|           |                    | - `PurgeTarget.ALL_CACHES`: Purges all data that After Effects has cached to both RAM and disk cache.    |
-|           |                    | - `PurgeTarget.ALL_MEMORY_CACHES`: Purges all data that After Effects has cached to RAM. *(new in 24.3)* |
-|           |                    | - `PurgeTarget.UNDO_CACHES`: Purges all data saved in the undo cache.                                    |
-|           |                    | - `PurgeTarget.SNAPSHOT_CACHES`: Purges all data cached as composition/layer snapshots.                  |
-|           |                    | - `PurgeTarget.IMAGE_CACHES`: Purges all saved image data.                                               |
+| Parameter | Type | Description |
+|---|---|---|
+| `target` | `PurgeTarget` enum | The type of elements to purge from memory. One of: |
+| | | - `PurgeTarget.ALL_CACHES`: Purges all data that After Effects has cached to both RAM and disk cache. |
+| | | - `PurgeTarget.ALL_MEMORY_CACHES`: Purges all data that After Effects has cached to RAM. *(new in 24.3)* |
+| | | - `PurgeTarget.UNDO_CACHES`: Purges all data saved in the undo cache. |
+| | | - `PurgeTarget.SNAPSHOT_CACHES`: Purges all data cached as composition/layer snapshots. |
+| | | - `PurgeTarget.IMAGE_CACHES`: Purges all saved image data. |
 
 #### Returns
 
@@ -836,11 +836,11 @@ Schedules the specified JavaScript for delayed execution.
 
 #### Parameters
 
-|     Parameter     |  Type   |                                                                 Description                                                                  |
-| ----------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `stringToExecute` | String  | A string containing JavaScript to be executed.                                                                                               |
-| `delay`           | Float   | A number of milliseconds to wait before executing the JavaScript.                                                                            |
-| `repeat`          | Boolean | When `true`, execute the script repeatedly, with the specified delay between each execution. When `false`, the script is executed only once. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `stringToExecute` | String | A string containing JavaScript to be executed. |
+| `delay` | Float | A number of milliseconds to wait before executing the JavaScript. |
+| `repeat` | Boolean | When `true`, execute the script repeatedly, with the specified delay between each execution. When `false`, the script is executed only once. |
 
 #### Returns
 
@@ -858,10 +858,10 @@ Sets memory usage limits as in the Memory & Cache preferences area. For both val
 
 #### Parameters
 
-|         Parameter         | Type  |                    Description                    |
-| ------------------------- | ----- | ------------------------------------------------- |
-| `imageCachePercentage`    | Float | The percentage of memory assigned to image cache. |
-| `maximumMemoryPercentage` | Float | The maximum usable percentage of memory.          |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `imageCachePercentage` | Float | The percentage of memory assigned to image cache. |
+| `maximumMemoryPercentage` | Float | The maximum usable percentage of memory. |
 
 #### Returns
 
@@ -884,9 +884,9 @@ After execution of the script is complete, these settings will be reset to what 
 
 #### Parameters
 
-|   Parameter    |                     Type                      |                                                 Description                                                  |
-| -------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `mfr_on`       | Boolean                                       | Set to `true` to enable Multi-Frame Rendering.                                                               |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `mfr_on` | Boolean | Set to `true` to enable Multi-Frame Rendering. |
 | `max_cpu_perc` | Floating-point value, in the range `[1..100]` | The maximum CPU percentage Multi-Frame Rendering should utilize. If `mfr_on` is set to `false`, pass in 100. |
 
 #### Returns
@@ -905,9 +905,9 @@ Set or clears the flag that determines whether preferences are saved when the ap
 
 #### Parameters
 
-| Parameter |  Type   |                            Description                             |
-| --------- | ------- | ------------------------------------------------------------------ |
-| `doSave`  | Boolean | When `true`, preferences saved on quit, when `false` they are not. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `doSave` | Boolean | When `true`, preferences saved on quit, when `false` they are not. |
 
 #### Returns
 
@@ -925,8 +925,8 @@ Starts a Watch Folder (network rendering) process pointed at a specified folder.
 
 #### Parameters
 
-|        Parameter         |                                                Type                                                |     Description      |
-| ------------------------ | -------------------------------------------------------------------------------------------------- | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `folder_object_to_watch` | [Extendscript Folder](https://extendscript.docsforadobe.dev/file-system-access/folder-object.html) | The folder to watch. |
 
 #### Returns

@@ -25,43 +25,43 @@ title: 套件
 
 ```cpp
 prSuiteError (*GetExportSourceInfo)(
-  csSDK_uint32   inExporterPluginID,
-  PrExportSourceInfoSelector  inSelector,
-  PrParam    *outSourceInfo);
+ csSDK_uint32 inExporterPluginID,
+ PrExportSourceInfoSelector inSelector,
+ PrParam *outSourceInfo);
 ```
 
-|    值     |    类型     |        描述        |
-|-------------------------------------|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `kExportInfo_VideoWidth`   | Int32   | 源视频的宽度          |
-| `kExportInfo_VideoHeight`       | Int32   | 源视频的高度          |
-| `kExportInfo_VideoFrameRate`    | PrTime      | 帧率         |
-| `kExportInfo_VideoFieldType`    | Int32   | prFieldType 值之一        |
-| `kExportInfo_VideoDuration`     | Int64   | PrTime 值      |
-| `kExportInfo_PixelAspectNumerator`  | Int32   | 像素宽高比（PAR）分子     |
-| `kExportInfo_PixelAspectDenominator`| Int32   | 像素宽高比分母        |
-| `kExportInfo_AudioDuration`     | Int64   | PrTime 值      |
-| `kExportInfo_AudioChannelsType`     | Int32   | `PrAudioChannelType` 值之一。      |
-|       |    | 如果没有音频，则返回 `0`（未定义）。   |
-| `kExportInfo_AudioSampleRate`   | Float64     |         |
-| `kExportInfo_SourceHasAudio`    | Bool    | 如果源有音频，则为非零值      |
-| `kExportInfo_SourceHasVideo`    | Bool    | 如果源有视频，则为非零值      |
-| `kExportInfo_RenderAsPreview`   | Bool    | 如果当前正在渲染预览文件，则返回非零值。   |
-| `kExportInfo_SequenceGUID`      | Guid    | 一个 `PrPluginID`，它是序列的唯一 GUID。   |
-| `kExportInfo_SessionFilePath`   | PrMemoryPtr | 一个 `prUTF16Char` 数组。导出器应使用 [内存管理器套件](../../universals/sweetpea-suites#memory-manager-suite) 释放指针。    |
-| `kExportInfo_VideoPosterFrameTickTime` | Int64   | CS5 新增。PrTime 值。         |
-| `kExportInfo_SourceTimecode`    | PrMemoryPtr | CS5.0.2 新增。源剪辑或序列的时间码。   |
-|       |    | 序列时间码由序列的起始时间设置，使用序列的右键菜单。指向 ExporterTimecodeRec 结构的指针。   |
-|       |    | 导出器应使用 [内存管理器套件](../../universals/sweetpea-suites#memory-manager-suite) 释放指针。       |
-| `kExportInfo_UsePreviewFiles`   | Bool    | CC 新增。使用此选项检查用户是否在导出设置对话框中勾选了“使用预览”。   |
-|       |    | 如果勾选，尽可能重用已渲染的任何预览文件，可以使用 [视频片段套件](../../universals/sweetpea-suites#video-segment-suite) 中的 `AcquireVideoSegmentsWithPreviewsID` 检索。       |
-| `kExportInfo_NumAudioChannels`      | Int32   | CC 新增。获取给定源中的音频通道数。     |
-|       |    | 这可以用于自动初始化导出设置中音频选项卡中的音频通道参数以匹配源。   |
+| 值 | 类型 | 描述 |
+|---|---|---|
+| `kExportInfo_VideoWidth` | Int32 | 源视频的宽度 |
+| `kExportInfo_VideoHeight` | Int32 | 源视频的高度 |
+| `kExportInfo_VideoFrameRate` | PrTime | 帧率 |
+| `kExportInfo_VideoFieldType` | Int32 | prFieldType 值之一 |
+| `kExportInfo_VideoDuration` | Int64 | PrTime 值 |
+| `kExportInfo_PixelAspectNumerator` | Int32 | 像素宽高比（PAR）分子 |
+| `kExportInfo_PixelAspectDenominator`| Int32 | 像素宽高比分母 |
+| `kExportInfo_AudioDuration` | Int64 | PrTime 值 |
+| `kExportInfo_AudioChannelsType` | Int32 | `PrAudioChannelType` 值之一。 |
+| | | 如果没有音频，则返回 `0`（未定义）。 |
+| `kExportInfo_AudioSampleRate` | Float64 | |
+| `kExportInfo_SourceHasAudio` | Bool | 如果源有音频，则为非零值 |
+| `kExportInfo_SourceHasVideo` | Bool | 如果源有视频，则为非零值 |
+| `kExportInfo_RenderAsPreview` | Bool | 如果当前正在渲染预览文件，则返回非零值。 |
+| `kExportInfo_SequenceGUID` | Guid | 一个 `PrPluginID`，它是序列的唯一 GUID。 |
+| `kExportInfo_SessionFilePath` | PrMemoryPtr | 一个 `prUTF16Char` 数组。导出器应使用 [内存管理器套件](../../universals/sweetpea-suites#memory-manager-suite) 释放指针。 |
+| `kExportInfo_VideoPosterFrameTickTime` | Int64 | CS5 新增。PrTime 值。 |
+| `kExportInfo_SourceTimecode` | PrMemoryPtr | CS5.0.2 新增。源剪辑或序列的时间码。 |
+| | | 序列时间码由序列的起始时间设置，使用序列的右键菜单。指向 ExporterTimecodeRec 结构的指针。 |
+| | | 导出器应使用 [内存管理器套件](../../universals/sweetpea-suites#memory-manager-suite) 释放指针。 |
+| `kExportInfo_UsePreviewFiles` | Bool | CC 新增。使用此选项检查用户是否在导出设置对话框中勾选了“使用预览”。 |
+| | | 如果勾选，尽可能重用已渲染的任何预览文件，可以使用 [视频片段套件](../../universals/sweetpea-suites#video-segment-suite) 中的 `AcquireVideoSegmentsWithPreviewsID` 检索。 |
+| `kExportInfo_NumAudioChannels` | Int32 | CC 新增。获取给定源中的音频通道数。 |
+| | | 这可以用于自动初始化导出设置中音频选项卡中的音频通道参数以匹配源。 |
 
 ```cpp
 typedef struct {
-  csSDK_int64  mTimecodeTicks;
-  csSDK_int64  mTicksPerFrame;
-  bool     mTimecodeStartPrefersDropFrame;
+ csSDK_int64 mTimecodeTicks;
+ csSDK_int64 mTicksPerFrame;
+ bool mTimecodeStartPrefersDropFrame;
 } ExporterTimecodeRec;
 ```
 
@@ -113,15 +113,15 @@ CS6 新增。用于注册一组常见参数集的套件，减少插件端的参�
 
 ```cpp
 prSuiteError (*AddStandardParams)(
-  csSDK_uint32   inExporterID,
-  PrSDKStdParamType  inSDKStdParamType);
+ csSDK_uint32 inExporterID,
+ PrSDKStdParamType inSDKStdParamType);
 ```
 
-|   成员    |       描述        |
-|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `inExporterID`    | 传入 `exDoExportRec` 中的 `exporterPluginID`。        |
-| `inSDKStdParamType` | 使用以下之一：       |
-|    | <pre lang="cpp">enum PrSDKStdParamType {<br/>  SDKStdParams_Video,<br/>  SDKStdParams_Audio,<br/>  SDKStdParams_Still,<br/>  SDKStdParams_VideoBitrateGroup,<br/>  SDKStdParams_Video_NoRenderMax,<br/>  SDKStdParams_Video_AddRenderMax,<br/>  SDKStdParams_AudioTabOnly,<br/>  SDKStdParams_AudioBitrateGroup,<br/>  SDKStdParams_VideoWithSizePopup<br/>};</pre> |
+| 成员 | 描述 |
+|---|---|
+| `inExporterID` | 传入 `exDoExportRec` 中的 `exporterPluginID`。 |
+| `inSDKStdParamType` | 使用以下之一： |
+| | <pre lang="cpp">enum PrSDKStdParamType {<br/>  SDKStdParams_Video,<br/>  SDKStdParams_Audio,<br/>  SDKStdParams_Still,<br/>  SDKStdParams_VideoBitrateGroup,<br/>  SDKStdParams_Video_NoRenderMax,<br/>  SDKStdParams_Video_AddRenderMax,<br/>  SDKStdParams_AudioTabOnly,<br/>  SDKStdParams_AudioBitrateGroup,<br/>  SDKStdParams_VideoWithSizePopup<br/>};</pre> |
 
 ### PostProcessParamNames
 
@@ -129,14 +129,14 @@ prSuiteError (*AddStandardParams)(
 
 ```cpp
 prSuiteError (*PostProcessParamNames)(
-  csSDK_uint32    inExporterID,
-  PrAudioChannelType  inSourceAudioChannelType);
+ csSDK_uint32 inExporterID,
+ PrAudioChannelType inSourceAudioChannelType);
 ```
 
-|       成员   |        描述         |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `inExporterID`    | 传入 `exDoExportRec` 中的 `exporterPluginID`。    |
-| `inSourceAudioChannelType` | 传入源音频通道类型，可以从 [导出信息套件](#export-info-suite) 中的 `GetExportSourceInfo` 查询。      |
+| 成员 | 描述 |
+| --- | --- |
+| `inExporterID` | 传入 `exDoExportRec` 中的 `exporterPluginID`。 |
+| `inSourceAudioChannelType` | 传入源音频通道类型，可以从 [导出信息套件](#export-info-suite) 中的 `GetExportSourceInfo` 查询。 |
 
 ### QueryOutputSettings
 
@@ -144,14 +144,14 @@ prSuiteError (*PostProcessParamNames)(
 
 ```cpp
 prSuiteError (*QueryOutputSettings)(
-  csSDK_uint32       inExporterID,
-  exQueryOutputSettingsRec*  outOutputSettings);
+ csSDK_uint32 inExporterID,
+ exQueryOutputSettingsRec* outOutputSettings);
 ```
 
-|   成员    |       描述        |
-| ------------------- | --------------------------------------------------------------------- |
-| `inExporterID`      | 传入 `exDoExportRec` 中的 `exporterPluginID`。       |
-| `outOutputSettings` | 此结构将根据标准参数设置填充。    |
+| 成员 | 描述 |
+| --- | --- |
+| `inExporterID` | 传入 `exDoExportRec` 中的 `exporterPluginID`。 |
+| `outOutputSettings` | 此结构将根据标准参数设置填充。 |
 
 ### MakeParamSummary
 
@@ -159,20 +159,20 @@ prSuiteError (*QueryOutputSettings)(
 
 ```cpp
 prSuiteError (*MakeParamSummary)(
-  csSDK_uint32  inExporterID,
-  csSDK_int32   inDoVideo,
-  csSDK_int32   inDoAudio,
-  prUTF16Char*  outVideoDescription,
-  prUTF16Char*  outAudioDescription);
+ csSDK_uint32 inExporterID,
+ csSDK_int32 inDoVideo,
+ csSDK_int32 inDoAudio,
+ prUTF16Char* outVideoDescription,
+ prUTF16Char* outAudioDescription);
 ```
 
-|    成员     |       描述        |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `inExporterID`    | 传入 `exDoExportRec` 中的 `exporterPluginID`。    |
-| `inDoVideo`       | 传入 `exParamSummaryRec.exportVideo` / `exportAudio`，以便根据是否导出视频/音频来设置摘要。    |
-| `inDoAudio`       |   |
-| `outVideoDescription` | 这些将根据标准参数设置填充。   |
-| `outAudioDescription` |   |
+| 成员 | 描述 |
+| --- | --- |
+| `inExporterID` | 传入 `exDoExportRec` 中的 `exporterPluginID`。 |
+| `inDoVideo` | 传入 `exParamSummaryRec.exportVideo` / `exportAudio`，以便根据是否导出视频/音频来设置摘要。 |
+| `inDoAudio` | |
+| `outVideoDescription` | 这些将根据标准参数设置填充。 |
+| `outAudioDescription` | |
 
 ---
 
@@ -186,26 +186,26 @@ CS6 新增。为推送模型的导出器提供功能，并提供一种方式注�
 
 ```cpp
 prSuiteError (*DoMultiPassExportLoop)(
-  csSDK_uint32       inExporterID,
-  const ExportLoopRenderParams*       inRenderParams,
-  csSDK_uint32       inNumberOfPasses,
-  PrSDKMultipassExportLoopFrameCompletionFunction  inCompletionFunction,
-  void*    inCompletionParam);
+ csSDK_uint32 inExporterID,
+ const ExportLoopRenderParams* inRenderParams,
+ csSDK_uint32 inNumberOfPasses,
+ PrSDKMultipassExportLoopFrameCompletionFunction inCompletionFunction,
+ void* inCompletionParam);
 ```
 
-|     成员      |        描述         |
-|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `inExporterID`     | 传入 `exDoExportRec` 中的 `exporterPluginID`。         |
-| `inRenderParams`   | 传入将用于渲染循环的参数，该循环将通过提供的回调 `inCompletionFunction` 推送渲染的帧。          |
-|       | `inReservedProgressPreRender` 和 `inReservedProgressPostRender` 应设置为在开始渲染循环之前显示在进度条中的进度量，以及在完成渲染循环后剩余的进度量。      |
-|       | 这些值默认为零。      |
-|       | <pre lang="cpp">typedef struct {<br/>  csSDK_int32    inRenderParamsSize;<br/>  csSDK_int32    inRenderParamsVersion;<br/>  PrPixelFormat  inFinalPixelFormat;<br/>  PrTime     inStartTime;<br/>  PrTime     inEndTime;<br/>  float      inReservedProgressPreRender;<br/>  float      inReservedProgressPostRender;<br/>  bool       inHardwareResidentFrameOutputSupported;  // new in 14.x<br/>} ExportLoopRenderParams;</pre> |
-| `inNumberOfPasses`     | 设置为 1，除非您需要多通道编码，例如两通道或三通道编码。         |
-| `inCompletionFunction` | 在此处提供您自己的回调，当主机推送渲染的帧时将调用该回调。使用以下函数签名：        |
-|       | <pre lang="cpp">typedef prSuiteError (\*PrSDKMultipassExportLoop FrameCompletionFunction)(<br/>  csSDK_uint32  inWhichPass,<br/>  csSDK_uint32  inFrameNumber,<br/>  csSDK_uint32  inFrameRepeatCount,<br/>  PPixHand      inRenderedFrame,<br/>  void*     inCallbackData);</pre>    |
-|       | 目前，没有简单的方法确保推送的帧在函数调用生命周期之外存活。    |
-|       | 如果您对此功能感兴趣，请联系我们并解释您的需求。         |
-| `inCompletionParam`    | 传入一个 void \* 到您希望发送到 `inCompletionFunction` 的数据，在 `inCallbackData` 中。   |
+| 成员 | 描述 |
+|---|---|
+| `inExporterID` | 传入 `exDoExportRec` 中的 `exporterPluginID`。 |
+| `inRenderParams` | 传入将用于渲染循环的参数，该循环将通过提供的回调 `inCompletionFunction` 推送渲染的帧。 |
+| | `inReservedProgressPreRender` 和 `inReservedProgressPostRender` 应设置为在开始渲染循环之前显示在进度条中的进度量，以及在完成渲染循环后剩余的进度量。 |
+| | 这些值默认为零。 |
+| | <pre lang="cpp">typedef struct {<br/>  csSDK_int32    inRenderParamsSize;<br/>  csSDK_int32    inRenderParamsVersion;<br/>  PrPixelFormat  inFinalPixelFormat;<br/>  PrTime     inStartTime;<br/>  PrTime     inEndTime;<br/>  float      inReservedProgressPreRender;<br/>  float      inReservedProgressPostRender;<br/>  bool       inHardwareResidentFrameOutputSupported;  // new in 14.x<br/>} ExportLoopRenderParams;</pre> |
+| `inNumberOfPasses` | 设置为 1，除非您需要多通道编码，例如两通道或三通道编码。 |
+| `inCompletionFunction` | 在此处提供您自己的回调，当主机推送渲染的帧时将调用该回调。使用以下函数签名： |
+| | <pre lang="cpp">typedef prSuiteError (\*PrSDKMultipassExportLoop FrameCompletionFunction)(<br/>  csSDK_uint32  inWhichPass,<br/>  csSDK_uint32  inFrameNumber,<br/>  csSDK_uint32  inFrameRepeatCount,<br/>  PPixHand      inRenderedFrame,<br/>  void*     inCallbackData);</pre> |
+| | 目前，没有简单的方法确保推送的帧在函数调用生命周期之外存活。 |
+| | 如果您对此功能感兴趣，请联系我们并解释您的需求。 |
+| `inCompletionParam` | 传入一个 void \* 到您希望发送到 `inCompletionFunction` 的数据，在 `inCallbackData` 中。 |
 
 ### ReportIntermediateProgressForRepeatedVideoFrame
 
@@ -215,14 +215,14 @@ prSuiteError (*DoMultiPassExportLoop)(
 
 ```cpp
 prSuiteError (*ReportIntermediateProgressForRepeatedVideoFrame)(
-  csSDK_uint32  inExporterID,
-  csSDK_uint32  inRepetitionsProcessedSinceLastUpdate);
+ csSDK_uint32 inExporterID,
+ csSDK_uint32 inRepetitionsProcessedSinceLastUpdate);
 ```
 
-|    成员     |        描述   |
-| --------------------------------------- | ------------------------------------------------------------------------------ |
-| `inExporterID`   | 传入 `exDoExportRec` 中的 `exporterPluginID`。       |
-| `inRepetitionsProcessedSinceLastUpdate` | 传入自上次调用以来处理的重复帧数（如果有）。    |
+| 成员 | 描述 |
+| --- | --- |
+| `inExporterID` | 传入 `exDoExportRec` 中的 `exporterPluginID`。 |
+| `inRepetitionsProcessedSinceLastUpdate` | 传入自上次调用以来处理的重复帧数（如果有）。 |
 
 ### ReportEvent
 
@@ -232,21 +232,21 @@ prSuiteError (*ReportIntermediateProgressForRepeatedVideoFrame)(
 
 ```cpp
 prSuiteError (*ReportEvent)(
-  csSDK_uint32    inExporterID,
-  csSDK_uint32    inEventType,
-  const prUTF16Char*  inEventTitle,
-  const prUTF16Char*  inEventDescription);
+ csSDK_uint32 inExporterID,
+ csSDK_uint32 inEventType,
+ const prUTF16Char* inEventTitle,
+ const prUTF16Char* inEventDescription);
 ```
 
-|   成员    |    描述     |
-|----------------------|------------------------------------------------------------------------------------|
-| `inExporterID`   | 传入 `exDoExportRec` 中的 `exporterPluginID`。       |
-| `inEventType`    | 使用 [错误套件](../../universals/sweetpea-suites#error-suite) 中的类型之一：   |
-|     | - `kEventTypeInformational`   |
-|     | - `kEventTypeWarning`         |
-|     | - `kEventTypeError`       |
-| `inEventTitle`   | 为用户提供有关事件的信息。    |
-| `inEventDescription` |   |
+| 成员 | 描述 |
+|---|---|
+| `inExporterID` | 传入 `exDoExportRec` 中的 `exporterPluginID`。 |
+| `inEventType` | 使用 [错误套件](../../universals/sweetpea-suites#error-suite) 中的类型之一： |
+| | - `kEventTypeInformational` |
+| | - `kEventTypeWarning` |
+| | - `kEventTypeError` |
+| `inEventTitle` | 为用户提供有关事件的信息。 |
+| `inEventDescription` | |
 
 ---
 
@@ -266,22 +266,22 @@ prSuiteError (*ReportEvent)(
 
 ```cpp
 prSuiteError (*MakeAudioRenderer)(
-  csSDK_uint32    inPluginID,
-  PrTime      inStartTime,
-  PrAudioChannelType  inChannelType,
-  PrAudioSampleType   inSampleType,
-  float       inSampleRate,
-  csSDK_uint32*   outAudioRenderID);
+ csSDK_uint32 inPluginID,
+ PrTime inStartTime,
+ PrAudioChannelType inChannelType,
+ PrAudioSampleType inSampleType,
+ float inSampleRate,
+ csSDK_uint32* outAudioRenderID);
 ```
 
-|   成员    |       描述        |
-| ------------------ | ----------------------------------------------------------------------------- |
-| `inPluginID`   | 传入 `exDoExportRec` 中的 `exporterPluginID`。      |
-| `inStartTime`      | 音频请求的开始时间。     |
-| `inChannelType`    | 所需通道类型的 `PrAudioChannelType` 枚举值。        |
-| `inSampleType`     | 这应始终为 `kPrAudioSampleType_32BitFloat`。其他类型不受支持。   |
-| `inSampleRate`     | 每秒采样数。         |
-| `outAudioRenderID` | 此 ID 传回后，需要用于后续调用此套件。    |
+| 成员 | 描述 |
+| --- | --- |
+| `inPluginID` | 传入 `exDoExportRec` 中的 `exporterPluginID`。 |
+| `inStartTime` | 音频请求的开始时间。 |
+| `inChannelType` | 所需通道类型的 `PrAudioChannelType` 枚举值。 |
+| `inSampleType` | 这应始终为 `kPrAudioSampleType_32BitFloat`。其他类型不受支持。 |
+| `inSampleRate` | 每秒采样数。 |
+| `outAudioRenderID` | 此 ID 传回后，需要用于后续调用此套件。 |
 
 ### ReleaseAudioRenderer
 
@@ -289,14 +289,14 @@ prSuiteError (*MakeAudioRenderer)(
 
 ```cpp
 prSuiteError (*ReleaseAudioRenderer)(
-  csSDK_uint32  inPluginID,
-  csSDK_uint32  inAudioRenderID);
+ csSDK_uint32 inPluginID,
+ csSDK_uint32 inAudioRenderID);
 ```
 
-|      成员   |     描述      |
-| ----------------- | ----------------------------------------------- |
-| `inPluginID`      | 传入 `exDoExportRec` 中的 `exporterPluginID`。  |
-| `inAudioRenderID` | 此调用将释放具有此 ID 的音频渲染器。   |
+| 成员 | 描述 |
+| --- | --- |
+| `inPluginID` | 传入 `exDoExportRec` 中的 `exporterPluginID`。 |
+| `inAudioRenderID` | 此调用将释放具有此 ID 的音频渲染器。 |
 
 ### GetAudio
 
@@ -310,21 +310,21 @@ prSuiteError (*ReleaseAudioRenderer)(
 
 ```cpp
 prSuiteError (*GetAudio)(
-  csSDK_uint32  inAudioRenderID,
-  csSDK_uint32  inFrameCount,
-  float**   inBuffer,
-  char      inClipAudio);
+ csSDK_uint32 inAudioRenderID,
+ csSDK_uint32 inFrameCount,
+ float** inBuffer,
+ char inClipAudio);
 ```
 
-|      成员   |      描述       |
-|-------------------|--------------------------------------------------------------------------------------------------------|
-| `inAudioRenderID` | 传入从 `MakeAudioRenderer()` 返回的 `outAudioRenderID`。   |
-|      | 这为主机提供了音频渲染的上下文。   |
-| `inFrameCount`    | 返回 `inBuffer` 中的音频帧数。       |
-|      | 除非刚刚调用了 `ResetAudioToBeginning`，否则始终返回下一个连续的音频帧。    |
-| `inBuffer`    | 由导出器分配的浮点数组数组。         |
-|      | 主机返回每个音频通道的采样在单独的数组中。        |
-| `inClipAudio`     | 当为 true 时，`GetAudio` 将返回在 +/- 1.0 处裁剪的音频。否则，它将返回未裁剪的音频。      |
+| 成员 | 描述 |
+|---|---|
+| `inAudioRenderID` | 传入从 `MakeAudioRenderer()` 返回的 `outAudioRenderID`。 |
+| | 这为主机提供了音频渲染的上下文。 |
+| `inFrameCount` | 返回 `inBuffer` 中的音频帧数。 |
+| | 除非刚刚调用了 `ResetAudioToBeginning`，否则始终返回下一个连续的音频帧。 |
+| `inBuffer` | 由导出器分配的浮点数组数组。 |
+| | 主机返回每个音频通道的采样在单独的数组中。 |
+| `inClipAudio` | 当为 true 时，`GetAudio` 将返回在 +/- 1.0 处裁剪的音频。否则，它将返回未裁剪的音频。 |
 
 ### ResetAudioToBeginning
 
@@ -332,7 +332,7 @@ prSuiteError (*GetAudio)(
 
 ```cpp
 prSuiteError (*ResetAudioToBeginning)(
-  csSDK_uint32  inAudioRenderID);
+ csSDK_uint32 inAudioRenderID);
 ```
 
 ### GetMaxBlip
@@ -341,9 +341,9 @@ prSuiteError (*ResetAudioToBeginning)(
 
 ```cpp
 prSuiteError (*GetMaxBlip)(
-  csSDK_uint32  inAudioRenderID,
-  PrTime    inTicksPerFrame,
-  csSDK_uint32*  maxBlipSize);
+ csSDK_uint32 inAudioRenderID,
+ PrTime inTicksPerFrame,
+ csSDK_uint32* maxBlipSize);
 ```
 
 ---
@@ -360,16 +360,16 @@ prSuiteError (*GetMaxBlip)(
 
 ```cpp
 prSuiteError (*MakeVideoRenderer)(
-  csSDK_uint32   pluginID,
-  csSDK_uint32*  outVideoRenderID
-  PrTime     inFrameRate);
+ csSDK_uint32 pluginID,
+ csSDK_uint32* outVideoRenderID
+ PrTime inFrameRate);
 ```
 
-|   成员    |       描述       |
-| ----------------- | --------------------------------------------------------- |
-| `pluginID`    | 传入 `exDoExportRec` 中的 `exporterPluginID`。   |
-| `outVideoRenderID` | 返回的 ID 用于后续调用此套件。       |
-| `inFrameRate`     | 帧率，以 ticks 为单位。    |
+| 成员 | 描述 |
+| --- | --- |
+| `pluginID` | 传入 `exDoExportRec` 中的 `exporterPluginID`。 |
+| `outVideoRenderID` | 返回的 ID 用于后续调用此套件。 |
+| `inFrameRate` | 帧率，以 ticks 为单位。 |
 
 ### ReleaseVideoRenderer()
 
@@ -377,14 +377,14 @@ prSuiteError (*MakeVideoRenderer)(
 
 ```cpp
 prSuiteError (*ReleaseVideoRenderer)(
-  csSDK_uint32  pluginID,
-  csSDK_uint32  inVideoRenderID);
+ csSDK_uint32 pluginID,
+ csSDK_uint32 inVideoRenderID);
 ```
 
-|      成员   |    描述     |
-| --------------- | -------------------------------------------- |
-| `pluginID`      | 传入 `exDoExportRec` 中的 `exporterPluginID`。|
-| `inVideoRenderID` | 调用将释放具有此 ID 的视频渲染器。       |
+| 成员 | 描述 |
+| --- | --- |
+| `pluginID` | 传入 `exDoExportRec` 中的 `exporterPluginID`。|
+| `inVideoRenderID` | 调用将释放具有此 ID 的视频渲染器。 |
 
 ### struct SequenceRender_ParamsRec
 
@@ -396,33 +396,33 @@ prSuiteError (*ReleaseVideoRenderer)(
 
 ```cpp
 typedef struct {
-  const PrPixelFormat*  inRequestedPixelFormatArray;
-  csSDK_int32       inRequestedPixelFormatArrayCount;
-  csSDK_int32       inWidth;
-  csSDK_int32       inHeight;
-  csSDK_int32       inPixelAspectRatioNumerator;
-  csSDK_int32       inPixelAspectRatioDenominator;
-  PrRenderQuality   inRenderQuality;
-  prFieldType       inFieldType;
-  csSDK_int32       inDeinterlace;
-  PrRenderQuality   inDeinterlaceQuality;
-  csSDK_int32       inCompositeOnBlack;
+ const PrPixelFormat* inRequestedPixelFormatArray;
+ csSDK_int32 inRequestedPixelFormatArrayCount;
+ csSDK_int32 inWidth;
+ csSDK_int32 inHeight;
+ csSDK_int32 inPixelAspectRatioNumerator;
+ csSDK_int32 inPixelAspectRatioDenominator;
+ PrRenderQuality inRenderQuality;
+ prFieldType inFieldType;
+ csSDK_int32 inDeinterlace;
+ PrRenderQuality inDeinterlaceQuality;
+ csSDK_int32 inCompositeOnBlack;
 } SequenceRender_ParamsRec;
 ```
 
-|       成员   |      描述      |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `inRequestedPixelFormatArray`     | 一个 PrPixelFormats 数组，按顺序列出您的格式偏好。   |
-| `inRequestedPixelFormatArrayCount` | 像素格式数组的大小。       |
-| `inWidth`        | 渲染的宽度。     |
-| `inHeight`       | 渲染的高度。     |
-| `inPixelAspectRatioNumerator`     | 像素宽高比的分子。   |
-| `inPixelAspectRatioDenominator`   | 像素宽高比的分母。   |
-| `inRenderQuality`    | 使用 PrRenderQuality 枚举值之一。         |
-| `inFieldType`    | 使用 prFieldType 常量之一。     |
-| `inDeinterlace`      | 设置为非零以强制显式去隔行。否则，渲染器将使用输出字段设置来确定是否自动去隔行任何隔行源。   |
-| `inDeinterlaceQuality`   | 使用 PrRenderQuality 枚举值之一。         |
-| `inCompositeOnBlack`      | 设置为非零以在黑色背景上合成渲染。      |
+| 成员 | 描述 |
+| --- | --- |
+| `inRequestedPixelFormatArray` | 一个 PrPixelFormats 数组，按顺序列出您的格式偏好。 |
+| `inRequestedPixelFormatArrayCount` | 像素格式数组的大小。 |
+| `inWidth` | 渲染的宽度。 |
+| `inHeight` | 渲染的高度。 |
+| `inPixelAspectRatioNumerator` | 像素宽高比的分子。 |
+| `inPixelAspectRatioDenominator` | 像素宽高比的分母。 |
+| `inRenderQuality` | 使用 PrRenderQuality 枚举值之一。 |
+| `inFieldType` | 使用 prFieldType 常量之一。 |
+| `inDeinterlace` | 设置为非零以强制显式去隔行。否则，渲染器将使用输出字段设置来确定是否自动去隔行任何隔行源。 |
+| `inDeinterlaceQuality` | 使用 PrRenderQuality 枚举值之一。 |
+| `inCompositeOnBlack` | 设置为非零以在黑色背景上合成渲染。 |
 
 ### struct SequenceRender_ParamsRecExt
 
@@ -434,35 +434,35 @@ typedef struct {
 
 ```cpp
 typedef struct {
-  const PrPixelFormat*  inRequestedPixelFormatArray;
-  csSDK_int32       inRequestedPixelFormatArrayCount;
-  csSDK_int32       inWidth;
-  csSDK_int32       inHeight;
-  csSDK_int32       inPixelAspectRatioNumerator;
-  csSDK_int32       inPixelAspectRatioDenominator;
-  PrRenderQuality   inRenderQuality;
-  prFieldType       inFieldType;
-  csSDK_int32       inDeinterlace;
-  PrRenderQuality   inDeinterlaceQuality;
-  csSDK_int32       inCompositeOnBlack;
-  PrSDKColorSpaceID   inPrSDKColorSpaceID;
+ const PrPixelFormat* inRequestedPixelFormatArray;
+ csSDK_int32 inRequestedPixelFormatArrayCount;
+ csSDK_int32 inWidth;
+ csSDK_int32 inHeight;
+ csSDK_int32 inPixelAspectRatioNumerator;
+ csSDK_int32 inPixelAspectRatioDenominator;
+ PrRenderQuality inRenderQuality;
+ prFieldType inFieldType;
+ csSDK_int32 inDeinterlace;
+ PrRenderQuality inDeinterlaceQuality;
+ csSDK_int32 inCompositeOnBlack;
+ PrSDKColorSpaceID inPrSDKColorSpaceID;
 } SequenceRender_ParamsRecExt;
 ```
 
-|       成员   |      描述      |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `inRequestedPixelFormatArray`     | 一个 PrPixelFormats 数组，按顺序列出您的格式偏好。   |
-| `inRequestedPixelFormatArrayCount` | 像素格式数组的大小。       |
-| `inWidth`        | 渲染的宽度。     |
-| `inHeight`       | 渲染的高度。     |
-| `inPixelAspectRatioNumerator`     | 像素宽高比的分子。   |
-| `inPixelAspectRatioDenominator`   | 像素宽高比的分母。   |
-| `inRenderQuality`    | 使用 PrRenderQuality 枚举值之一。         |
-| `inFieldType`    | 使用 prFieldType 常量之一。     |
-| `inDeinterlace`      | 设置为非零以强制显式去隔行。否则，渲染器将使用输出字段设置来确定是否自动去隔行任何隔行源。   |
-| `inDeinterlaceQuality`   | 使用 PrRenderQuality 枚举值之一。         |
-| `inCompositeOnBlack`      | 设置为非零以在黑色背景上合成渲染。      |
-| `inPrSDKColorSpaceID`    | 标识正在使用的色彩空间。       |
+| 成员 | 描述 |
+| --- | --- |
+| `inRequestedPixelFormatArray` | 一个 PrPixelFormats 数组，按顺序列出您的格式偏好。 |
+| `inRequestedPixelFormatArrayCount` | 像素格式数组的大小。 |
+| `inWidth` | 渲染的宽度。 |
+| `inHeight` | 渲染的高度。 |
+| `inPixelAspectRatioNumerator` | 像素宽高比的分子。 |
+| `inPixelAspectRatioDenominator` | 像素宽高比的分母。 |
+| `inRenderQuality` | 使用 PrRenderQuality 枚举值之一。 |
+| `inFieldType` | 使用 prFieldType 常量之一。 |
+| `inDeinterlace` | 设置为非零以强制显式去隔行。否则，渲染器将使用输出字段设置来确定是否自动去隔行任何隔行源。 |
+| `inDeinterlaceQuality` | 使用 PrRenderQuality 枚举值之一。 |
+| `inCompositeOnBlack` | 设置为非零以在黑色背景上合成渲染。 |
+| `inPrSDKColorSpaceID` | 标识正在使用的色彩空间。 |
 
 ### struct SequenceRender_ParamsRecExt2
 
@@ -474,37 +474,37 @@ typedef struct {
 
 ```cpp
 typedef struct {
-  const PrPixelFormat*  inRequestedPixelFormatArray;
-  csSDK_int32       inRequestedPixelFormatArrayCount;
-  csSDK_int32       inWidth;
-  csSDK_int32       inHeight;
-  csSDK_int32       inPixelAspectRatioNumerator;
-  csSDK_int32       inPixelAspectRatioDenominator;
-  PrRenderQuality   inRenderQuality;
-  prFieldType       inFieldType;
-  csSDK_int32       inDeinterlace;
-  PrRenderQuality   inDeinterlaceQuality;
-  csSDK_int32       inCompositeOnBlack;
-  PrSDKColorSpaceID   inPrSDKColorSpaceID;
-      PrSDKLUTID     inPrSDKLUTID;      // 新增以支持导出 LUT
+ const PrPixelFormat* inRequestedPixelFormatArray;
+ csSDK_int32 inRequestedPixelFormatArrayCount;
+ csSDK_int32 inWidth;
+ csSDK_int32 inHeight;
+ csSDK_int32 inPixelAspectRatioNumerator;
+ csSDK_int32 inPixelAspectRatioDenominator;
+ PrRenderQuality inRenderQuality;
+ prFieldType inFieldType;
+ csSDK_int32 inDeinterlace;
+ PrRenderQuality inDeinterlaceQuality;
+ csSDK_int32 inCompositeOnBlack;
+ PrSDKColorSpaceID inPrSDKColorSpaceID;
+ PrSDKLUTID inPrSDKLUTID; // 新增以支持导出 LUT
 } SequenceRender_ParamsRecExt2;
 ```
 
-|       成员   |      描述      |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `inRequestedPixelFormatArray`     | 一个 PrPixelFormats 数组，按顺序列出您的格式偏好。   |
-| `inRequestedPixelFormatArrayCount` | 像素格式数组的大小。       |
-| `inWidth`        | 渲染的宽度。     |
-| `inHeight`       | 渲染的高度。     |
-| `inPixelAspectRatioNumerator`     | 像素宽高比的分子。   |
-| `inPixelAspectRatioDenominator`   | 像素宽高比的分母。   |
-| `inRenderQuality`    | 使用 PrRenderQuality 枚举值之一。         |
-| `inFieldType`    | 使用 prFieldType 常量之一。     |
-| `inDeinterlace`      | 设置为非零以强制显式去隔行。否则，渲染器将使用输出字段设置来确定是否自动去隔行任何隔行源。   |
-| `inDeinterlaceQuality`   | 使用 PrRenderQuality 枚举值之一。         |
-| `inCompositeOnBlack`      | 设置为非零以在黑色背景上合成渲染。      |
-| `inPrSDKColorSpaceID`    | 新增于 13.0。标识正在使用的色彩空间。       |
-| `inPrSDKLUTID`       | 新增于 14.4。标识正在使用的色彩空间。       |
+| 成员 | 描述 |
+| --- | --- |
+| `inRequestedPixelFormatArray` | 一个 PrPixelFormats 数组，按顺序列出您的格式偏好。 |
+| `inRequestedPixelFormatArrayCount` | 像素格式数组的大小。 |
+| `inWidth` | 渲染的宽度。 |
+| `inHeight` | 渲染的高度。 |
+| `inPixelAspectRatioNumerator` | 像素宽高比的分子。 |
+| `inPixelAspectRatioDenominator` | 像素宽高比的分母。 |
+| `inRenderQuality` | 使用 PrRenderQuality 枚举值之一。 |
+| `inFieldType` | 使用 prFieldType 常量之一。 |
+| `inDeinterlace` | 设置为非零以强制显式去隔行。否则，渲染器将使用输出字段设置来确定是否自动去隔行任何隔行源。 |
+| `inDeinterlaceQuality` | 使用 PrRenderQuality 枚举值之一。 |
+| `inCompositeOnBlack` | 设置为非零以在黑色背景上合成渲染。 |
+| `inPrSDKColorSpaceID` | 新增于 13.0。标识正在使用的色彩空间。 |
+| `inPrSDKLUTID` | 新增于 14.4。标识正在使用的色彩空间。 |
 
 ### struct SequenceRender_GetFrameReturnRec
 
@@ -512,23 +512,23 @@ typedef struct {
 
 ```cpp
 typedef struct {
-  void*    asyncCompletionData;
-  csSDK_int32  returnVal;
-  csSDK_int32  repeatCount;
-  csSDK_int32  onMarker;
-  PPixHand     outFrame;
+ void* asyncCompletionData;
+ csSDK_int32 returnVal;
+ csSDK_int32 repeatCount;
+ csSDK_int32 onMarker;
+ PPixHand outFrame;
 } SequenceRender_GetFrameReturnRec;
 ```
 
-|    成员     |   描述   |
-|--------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| `asyncCompletionData` | 从 `QueueAsyncVideoFrameRender()` 传递给 `PrSDKSequenceAsyncRenderCompletionProc()`。    |
-|    | 不被 `RenderVideoFrame()` 使用。        |
-| `returnVal`     | `ErrNone`、`Abort`、`Done` 或错误代码。        |
-| `repeatCount`   | 从此帧开始的重复帧数。         |
-|    | 在输出文件中，这可能是写入 NULL 帧、更改当前帧的持续时间，或根据编解码器适当的任何操作。      |
-| `onMarker`      | 如果非零，则此帧上有标记。         |
-| `outFrame`      | 从 `RenderVideoFrame()` 返回。不从 `PrSDKSequenceAsyncRenderCompletionProc()` 返回。     |
+| 成员 | 描述 |
+|---|---|
+| `asyncCompletionData` | 从 `QueueAsyncVideoFrameRender()` 传递给 `PrSDKSequenceAsyncRenderCompletionProc()`。 |
+| | 不被 `RenderVideoFrame()` 使用。 |
+| `returnVal` | `ErrNone`、`Abort`、`Done` 或错误代码。 |
+| `repeatCount` | 从此帧开始的重复帧数。 |
+| | 在输出文件中，这可能是写入 NULL 帧、更改当前帧的持续时间，或根据编解码器适当的任何操作。 |
+| `onMarker` | 如果非零，则此帧上有标记。 |
+| `outFrame` | 从 `RenderVideoFrame()` 返回。不从 `PrSDKSequenceAsyncRenderCompletionProc()` 返回。 |
 
 ### RenderVideoFrame()
 
@@ -543,21 +543,21 @@ typedef struct {
 
 ```cpp
 prSuiteError (*RenderVideoFrame)(
-  csSDK_uint32      inVideoRenderID,
-  PrTime        inTime,
-  SequenceRender_ParamsRec*      inRenderParams,
-  PrRenderCacheType     inCacheFlags,
-  SequenceRender_GetFrameReturnRec*  getFrameReturn);
+ csSDK_uint32 inVideoRenderID,
+ PrTime inTime,
+ SequenceRender_ParamsRec* inRenderParams,
+ PrRenderCacheType inCacheFlags,
+ SequenceRender_GetFrameReturnRec* getFrameReturn);
 ```
 
-|      成员   |     描述      |
-|----------------|-----------------------------------------------------------------------------------------------|
-| `inVideoRenderID` | 传入从 `MakeVideoRenderer()` 返回的 `outVideoRenderID`。   |
-|    | 这为主机提供了视频渲染的上下文。         |
-| `inTime`    | 请求的帧时间。   |
-| `inRenderParams` | 渲染的详细信息。        |
-| `inCacheFlags`  | 一个或多个缓存标志。        |
-| `getFrameReturn` | 传递回一个结构，其中包含有关返回帧的信息以及渲染后的帧本身。        |
+| 成员 | 描述 |
+|---|---|
+| `inVideoRenderID` | 传入从 `MakeVideoRenderer()` 返回的 `outVideoRenderID`。 |
+| | 这为主机提供了视频渲染的上下文。 |
+| `inTime` | 请求的帧时间。 |
+| `inRenderParams` | 渲染的详细信息。 |
+| `inCacheFlags` | 一个或多个缓存标志。 |
+| `getFrameReturn` | 传递回一个结构，其中包含有关返回帧的信息以及渲染后的帧本身。 |
 
 ### GetFrameInfo()
 
@@ -567,9 +567,9 @@ prSuiteError (*RenderVideoFrame)(
 
 ```cpp
 prSuiteError (*GetFrameInfo)(
-  csSDK_uint32    inVideoRenderID,
-  PrTime      inTime,
-  SequenceRender_FrameInfoRec*  outFrameInfo);
+ csSDK_uint32 inVideoRenderID,
+ PrTime inTime,
+ SequenceRender_FrameInfoRec* outFrameInfo);
 ```
 
 ### SetAsyncRenderCompletionProc()
@@ -580,18 +580,18 @@ prSuiteError (*GetFrameInfo)(
 
 ```cpp
 prSuiteError (*SetAsyncRenderCompletionProc)(
-  csSDK_uint32       inVideoRenderID,
-  PrSDKSequenceAsyncRenderCompletionProc  asyncGetFrameCallback,
-  long      callbackRef);
+ csSDK_uint32 inVideoRenderID,
+ PrSDKSequenceAsyncRenderCompletionProc asyncGetFrameCallback,
+ long callbackRef);
 ```
 
-|     成员      |        描述         |
-|----------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| `inVideoRenderID`    | 传入从 `MakeVideoRenderer()` 返回的 `outVideoRenderID`。       |
-|     | 这将传递给 `PrSDKSequenceAsyncRenderCompletionProc`。   |
-| `asyncGetFrameCallback` | 通知回调。       |
-| `inCallbackRef`      | 一个指针，保存导出器的私有数据。         |
-|     | 例如，这可以是指向导出器实例的指针。这也将传递给 `PrSDKSequenceAsyncRenderCompletionProc`。       |
+| 成员 | 描述 |
+|---|---|
+| `inVideoRenderID` | 传入从 `MakeVideoRenderer()` 返回的 `outVideoRenderID`。 |
+| | 这将传递给 `PrSDKSequenceAsyncRenderCompletionProc`。 |
+| `asyncGetFrameCallback` | 通知回调。 |
+| `inCallbackRef` | 一个指针，保存导出器的私有数据。 |
+| | 例如，这可以是指向导出器实例的指针。这也将传递给 `PrSDKSequenceAsyncRenderCompletionProc`。 |
 
 ### PrSDKSequenceAsyncRenderCompletionProc()
 
@@ -601,21 +601,21 @@ prSuiteError (*SetAsyncRenderCompletionProc)(
 
 ```cpp
 void (*PrSDKSequenceAsyncRenderCompletionProc)(
-  csSDK_uint32     inVideoRenderID,
-  void*   inCallbackRef,
-  PrTime       inTime,
-  PPixHand   inRenderedFrame,
-  SequenceRender_GetFrameReturnRec  *inGetFrameReturn);
+ csSDK_uint32 inVideoRenderID,
+ void* inCallbackRef,
+ PrTime inTime,
+ PPixHand inRenderedFrame,
+ SequenceRender_GetFrameReturnRec *inGetFrameReturn);
 ```
 
-|   成员    |    描述      |
-|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `inVideoRenderID`  | 导出器之前传递给 `SetAsyncRenderCompletionProc` 的 `outVideoRenderID`。      |
-| `inCallbackRef`    | 导出器使用 `SetAsyncRenderCompletionProc()` 设置的指针。        |
-|       | 例如，这可以是指向导出器实例的指针。   |
-| `inTime`       | 请求的帧时间。         |
-| `inRenderedFrame`  | 渲染后的帧。导出器负责使用 [PPix Suite](../../universals/sweetpea-suites#ppix-suite) 中的 `Dispose()` 调用处理此 PPixHand。   |
-| `inGetFrameReturn` | 一个结构，其中包含有关返回帧的信息，并且包括最初传递给 `QueueAsyncVideoFrameRender()` 的 `inAsyncCompletionData`。       |
+| 成员 | 描述 |
+|---|---|
+| `inVideoRenderID` | 导出器之前传递给 `SetAsyncRenderCompletionProc` 的 `outVideoRenderID`。 |
+| `inCallbackRef` | 导出器使用 `SetAsyncRenderCompletionProc()` 设置的指针。 |
+| | 例如，这可以是指向导出器实例的指针。 |
+| `inTime` | 请求的帧时间。 |
+| `inRenderedFrame` | 渲染后的帧。导出器负责使用 [PPix Suite](../../universals/sweetpea-suites#ppix-suite) 中的 `Dispose()` 调用处理此 PPixHand。 |
+| `inGetFrameReturn` | 一个结构，其中包含有关返回帧的信息，并且包括最初传递给 `QueueAsyncVideoFrameRender()` 的 `inAsyncCompletionData`。 |
 
 ### QueueAsyncVideoFrameRender()
 
@@ -627,23 +627,23 @@ void (*PrSDKSequenceAsyncRenderCompletionProc)(
 
 ```cpp
 prSuiteError (*QueueAsyncVideoFrameRender)(
-  csSDK_uint32       inVideoRenderID,
-  PrTime    inTime,
-  csSDK_uint32*      outRequestID,
-  SequenceRender_ParamsRec*  inRenderParams,
-  PrRenderCacheType      inCacheFlags,
-  void*     inAsyncCompletionData);
+ csSDK_uint32 inVideoRenderID,
+ PrTime inTime,
+ csSDK_uint32* outRequestID,
+ SequenceRender_ParamsRec* inRenderParams,
+ PrRenderCacheType inCacheFlags,
+ void* inAsyncCompletionData);
 ```
 
-|     成员      |    描述     |
-|----------------------|-------------------------------------------------------------------------------------------------------------|
-| `inVideoRenderID`    | 传入从 `MakeVideoRenderer()` 返回的 `outVideoRenderID`。    |
-|     | 这为主机提供了视频渲染的上下文。   |
-| `inTime`    | 请求的帧时间。    |
-| `outRequestID`   | 传递回一个请求 ID，这…似乎没有用处。      |
-| `inRenderParams`     | 渲染的详细信息。         |
-| `inCacheFlags`   | 一个或多个缓存标志。         |
-| `inAsyncCompletionData` | 此数据将传递给 `PrSDKSequenceAsyncRenderCompletionProc` 中的 `inGetFrameReturn.asyncCompletionData`。   |
+| 成员 | 描述 |
+|---|---|
+| `inVideoRenderID` | 传入从 `MakeVideoRenderer()` 返回的 `outVideoRenderID`。 |
+| | 这为主机提供了视频渲染的上下文。 |
+| `inTime` | 请求的帧时间。 |
+| `outRequestID` | 传递回一个请求 ID，这…似乎没有用处。 |
+| `inRenderParams` | 渲染的详细信息。 |
+| `inCacheFlags` | 一个或多个缓存标志。 |
+| `inAsyncCompletionData` | 此数据将传递给 `PrSDKSequenceAsyncRenderCompletionProc` 中的 `inGetFrameReturn.asyncCompletionData`。 |
 
 ### PrefetchMedia()
 
@@ -651,8 +651,8 @@ prSuiteError (*QueueAsyncVideoFrameRender)(
 
 ```cpp
 prSuiteError (*PrefetchMedia)(
-  csSDK_uint32  inVideoRenderID,
-  PrTime    inFrame);
+ csSDK_uint32 inVideoRenderID,
+ PrTime inFrame);
 ```
 
 ### PrefetchMediaWithRenderParameters()
@@ -663,9 +663,9 @@ prSuiteError (*PrefetchMedia)(
 
 ```cpp
 prSuiteError (*PrefetchMediaWithRenderParameters)(
-  csSDK_uint32       inVideoRenderID,
-  PrTime    inTime,
-  SequenceRender_ParamsRec*  inRenderParams);
+ csSDK_uint32 inVideoRenderID,
+ PrTime inTime,
+ SequenceRender_ParamsRec* inRenderParams);
 ```
 
 ### CancelAllOutstandingMediaPrefetches()
@@ -674,7 +674,7 @@ prSuiteError (*PrefetchMediaWithRenderParameters)(
 
 ```cpp
 prSuiteError (*PrefetchMedia)(
-  csSDK_uint32  inVideoRenderID);
+ csSDK_uint32 inVideoRenderID);
 ```
 
 ### IsPrefetchedMediaReady()
@@ -683,9 +683,9 @@ prSuiteError (*PrefetchMedia)(
 
 ```cpp
 prSuiteError (*IsPrefetchedMediaReady)(
-  csSDK_uint32  inVideoRenderID,
-  PrTime    inTime,
-  prBool*   outMediaReady);
+ csSDK_uint32 inVideoRenderID,
+ PrTime inTime,
+ prBool* outMediaReady);
 ```
 
 ### MakeVideoRendererForTimeline()
@@ -698,8 +698,8 @@ prSuiteError (*IsPrefetchedMediaReady)(
 
 ```cpp
 prSuiteError (*MakeVideoRendererForTimeline)(
-  PrTimelineID   inTimeline,
-  csSDK_uint32*  outVideoRendererID);
+ PrTimelineID inTimeline,
+ csSDK_uint32* outVideoRendererID);
 ```
 
 ### MakeVideoRendererForTimelineWithFrameRate()
@@ -710,9 +710,9 @@ prSuiteError (*MakeVideoRendererForTimeline)(
 
 ```cpp
 prSuiteError (*MakeVideoRendererForTimelineWithFrameRate)(
-  PrTimelineID   inTimeline,
-  PrTime     inFrameRate,
-  csSDK_uint32*  outVideoRendererID);
+ PrTimelineID inTimeline,
+ PrTime inFrameRate,
+ csSDK_uint32* outVideoRendererID);
 ```
 
 ### ReleaseVideoRendererForTimeline()
@@ -721,7 +721,7 @@ prSuiteError (*MakeVideoRendererForTimelineWithFrameRate)(
 
 ```cpp
 prSuiteError (*ReleaseVideoRendererForTimeline)(
-  csSDK_uint32  inVideoRendererID);
+ csSDK_uint32 inVideoRendererID);
 ```
 
 ### **RenderVideoFrameAndConformToPixelFormat()**
@@ -732,12 +732,12 @@ CS5.5 新增。类似于 `RenderVideoFrame`，但会将生成的帧转换为特�
 
 ```cpp
 prSuiteError (*RenderVideoFrameAndConformToPixelFormat)(
-  csSDK_uint32      inVideoRenderID,
-  PrTime        inTime,
-  SequenceRender_ParamsRec*      inRenderParams,
-  PrRenderCacheType     inCacheFlags,
-  PrPixelFormat     inConformToFormat,
-  SequenceRender_GetFrameReturnRec*  getFrameReturn);
+ csSDK_uint32 inVideoRenderID,
+ PrTime inTime,
+ SequenceRender_ParamsRec* inRenderParams,
+ PrRenderCacheType inCacheFlags,
+ PrPixelFormat inConformToFormat,
+ SequenceRender_GetFrameReturnRec* getFrameReturn);
 ```
 
 ### **MakeVideoRendererForTimelineWithStreamLabel()**
@@ -748,9 +748,9 @@ CS6 新增。类似于 `MakeVideoRenderer`，但支持流标签。
 
 ```cpp
 prSuiteError (*MakeVideoRendererForTimelineWithStreamLabel)(
-  PrTimelineID      inTimeline,
-  PrSDKStreamLabel  inStreamLabel,
-  csSDK_uint32*     outVideoRendererID);
+ PrTimelineID inTimeline,
+ PrSDKStreamLabel inStreamLabel,
+ csSDK_uint32* outVideoRendererID);
 ```
 
 ### **RenderColorManagedVideoFrame()**
@@ -759,11 +759,11 @@ prSuiteError (*MakeVideoRendererForTimelineWithStreamLabel)(
 
 ```cpp
 prSuiteError (*RenderColorManagedVideoFrame)(
-    csSDK_uint32      inVideoRenderID,
-    PrTime      inTime,
-    SequenceRender_ParamsRecExt*    inRenderParamsExt,
-    PrRenderCacheType    inCacheFlags,
-    SequenceRender_GetFrameReturnRec*   getFrameReturn);
+ csSDK_uint32 inVideoRenderID,
+ PrTime inTime,
+ SequenceRender_ParamsRecExt* inRenderParamsExt,
+ PrRenderCacheType inCacheFlags,
+ SequenceRender_GetFrameReturnRec* getFrameReturn);
 ```
 
 ### **QueueAsyncColorManagedVideoFrameRender()**
@@ -772,12 +772,12 @@ prSuiteError (*RenderColorManagedVideoFrame)(
 
 ```cpp
 prSuiteError (*QueueAsyncColorManagedVideoFrameRender)(
-    csSDK_uint32      inVideoRenderID,
-    PrTime      inTime,
-    csSDK_uint32*    outRequestID,
-    SequenceRender_ParamsRecExt*    inRenderParamsExt,
-    PrRenderCacheType    inCacheFlags,
-    void*       inAsyncCompletionData);
+ csSDK_uint32 inVideoRenderID,
+ PrTime inTime,
+ csSDK_uint32* outRequestID,
+ SequenceRender_ParamsRecExt* inRenderParamsExt,
+ PrRenderCacheType inCacheFlags,
+ void* inAsyncCompletionData);
 ```
 
 ### **PrefetchColorManagedMedia()**
@@ -786,9 +786,9 @@ prSuiteError (*QueueAsyncColorManagedVideoFrameRender)(
 
 ```cpp
 prSuiteError (*PrefetchColorManagedMedia)(
-    csSDK_uint32   inVideoRenderID,
-    PrTime   inFrame,
-    PrSDKColorSpaceID inPrSDKColorSpaceID);
+ csSDK_uint32 inVideoRenderID,
+ PrTime inFrame,
+ PrSDKColorSpaceID inPrSDKColorSpaceID);
 ```
 
 ### **PrefetchColorManagedMediaWithRenderParameters()**
@@ -797,9 +797,9 @@ prSuiteError (*PrefetchColorManagedMedia)(
 
 ```cpp
 prSuiteError (*PrefetchColorManagedMediaWithRenderParameters)(
-    csSDK_uint32      inVideoRenderID,
-    PrTime      inTime,
-    SequenceRender_ParamsRecExt*    inRenderParamsExt);
+ csSDK_uint32 inVideoRenderID,
+ PrTime inTime,
+ SequenceRender_ParamsRecExt* inRenderParamsExt);
 ```
 
 ### **RenderColorManagedVideoFrameAndConformToPixelFormat()**
@@ -808,12 +808,12 @@ prSuiteError (*PrefetchColorManagedMediaWithRenderParameters)(
 
 ```cpp
 prSuiteError (*RenderColorManagedVideoFrameAndConformToPixelFormat)(
-    csSDK_uint32      inVideoRenderID,
-    PrTime      inTime,
-    SequenceRender_ParamsRecExt*    inRenderParamsExt,
-    PrRenderCacheType    inCacheFlags,
-    PrPixelFormat    inConformToFormat,
-    SequenceRender_GetFrameReturnRec*   getFrameReturn);
+ csSDK_uint32 inVideoRenderID,
+ PrTime inTime,
+ SequenceRender_ParamsRecExt* inRenderParamsExt,
+ PrRenderCacheType inCacheFlags,
+ PrPixelFormat inConformToFormat,
+ SequenceRender_GetFrameReturnRec* getFrameReturn);
 ```
 
 ### **RenderColorManagedVideoFrame2()**
@@ -822,11 +822,11 @@ prSuiteError (*RenderColorManagedVideoFrameAndConformToPixelFormat)(
 
 ```cpp
 prSuiteError (*RenderColorManagedVideoFrame2)(
-    csSDK_uint32       inVideoRenderID,
-    PrTime   inTime,
-    SequenceRender_ParamsRecExt2*   inRenderParamsExt2,
-    PrRenderCacheType       inCacheFlags,
-    SequenceRender_GetFrameReturnRec*   outGetFrameReturn);
+ csSDK_uint32 inVideoRenderID,
+ PrTime inTime,
+ SequenceRender_ParamsRecExt2* inRenderParamsExt2,
+ PrRenderCacheType inCacheFlags,
+ SequenceRender_GetFrameReturnRec* outGetFrameReturn);
 ```
 
 ### **QueueAsyncColorManagedVideoFrameRender2()**
@@ -835,12 +835,12 @@ prSuiteError (*RenderColorManagedVideoFrame2)(
 
 ```cpp
 prSuiteError (*QueueAsyncColorManagedVideoFrameRender2)(
-    csSDK_uint32       inVideoRenderID,
-    PrTime   inTime,
-    csSDK_uint32*      outRequestID,
-    SequenceRender_ParamsRecExt2*   inRenderParamsExt2,
-    PrRenderCacheType       inCacheFlags,
-    void*    inAsyncCompletionData);
+ csSDK_uint32 inVideoRenderID,
+ PrTime inTime,
+ csSDK_uint32* outRequestID,
+ SequenceRender_ParamsRecExt2* inRenderParamsExt2,
+ PrRenderCacheType inCacheFlags,
+ void* inAsyncCompletionData);
 ```
 
 ### **PrefetchColorManagedMediaWithRenderParameters2()**
@@ -849,9 +849,9 @@ prSuiteError (*QueueAsyncColorManagedVideoFrameRender2)(
 
 ```cpp
 prSuiteError(*PrefetchColorManagedMediaWithRenderParameters2)(
-    csSDK_uint32       inVideoRenderID,
-    PrTime   inTime,
-    SequenceRender_ParamsRecExt2*   inRenderParamsExt2);
+ csSDK_uint32 inVideoRenderID,
+ PrTime inTime,
+ SequenceRender_ParamsRecExt2* inRenderParamsExt2);
 ```
 
 ### **RenderColorManagedVideoFrameAndConformToPixelFormat2()**
@@ -860,15 +860,15 @@ prSuiteError(*PrefetchColorManagedMediaWithRenderParameters2)(
 
 ```cpp
 prSuiteError (*RenderColorManagedVideoFrameAndConformToPixelFormat2)(
-    csSDK_uint32       inVideoRenderID,
-    PrTime   inTime,
-    SequenceRender_ParamsRecExt2*   inRenderParamsExt2,
-    PrRenderCacheType       inCacheFlags,
-    PrPixelFormat      inConformToFormat,
-    SequenceRender_GetFrameReturnRec*   outGetFrameReturn);
+ csSDK_uint32 inVideoRenderID,
+ PrTime inTime,
+ SequenceRender_ParamsRecExt2* inRenderParamsExt2,
+ PrRenderCacheType inCacheFlags,
+ PrPixelFormat inConformToFormat,
+ SequenceRender_GetFrameReturnRec* outGetFrameReturn);
 ```
 
-----
+---
 
 ## **PF Utility Suite**
 
@@ -882,8 +882,8 @@ prSuiteError (*RenderColorManagedVideoFrameAndConformToPixelFormat2)(
 
 ```cpp
 prSuiteError(*GetFilterInstanceID)(
-  PF_ProgPtr    effect_ref,
-  A_long*   outFilterInstanceID);
+ PF_ProgPtr effect_ref,
+ A_long* outFilterInstanceID);
 ```
 
 ### **GetMediaTimecode()**
@@ -892,9 +892,9 @@ prSuiteError(*GetFilterInstanceID)(
 
 ```cpp
 prSuiteError(*GetMediaTimecode)(
-  PF_ProgPtr      effect_ref,
-  A_long*     outCurrentFrame,
-  PF_TimeDisplay* outTimeDisplay);
+ PF_ProgPtr effect_ref,
+ A_long* outCurrentFrame,
+ PF_TimeDisplay* outTimeDisplay);
 ```
 
 ### **GetClipSpeed()**
@@ -903,8 +903,8 @@ prSuiteError(*GetMediaTimecode)(
 
 ```cpp
 prSuiteError(*GetClipSpeed)(
-      PF_ProgPtr effect_ref,
-      double* speed);
+ PF_ProgPtr effect_ref,
+ double* speed);
 ```
 
 ### **GetClipDuration()**
@@ -913,8 +913,8 @@ prSuiteError(*GetClipSpeed)(
 
 ```cpp
 prSuiteError(*GetClipDuration)(
-      PF_ProgPtr effect_ref,
-      A_long* frameDuration);
+ PF_ProgPtr effect_ref,
+ A_long* frameDuration);
 ```
 
 ### **GetClipStart()**
@@ -923,8 +923,8 @@ prSuiteError(*GetClipDuration)(
 
 ```cpp
 prSuiteError(*GetClipStart)(
-    PF_ProgPtr effect_ref,
-    A_long* frameDuration);
+ PF_ProgPtr effect_ref,
+ A_long* frameDuration);
 ```
 
 ### **GetUnscaledClipDuration()**
@@ -933,8 +933,8 @@ prSuiteError(*GetClipStart)(
 
 ```cpp
 prSuiteError(*GetUnscaledClipDuration)(
-      PF_ProgPtr effect_ref,
-      A_long* frameDuration);
+ PF_ProgPtr effect_ref,
+ A_long* frameDuration);
 ```
 
 ### **GetUnscaledClipStart()**
@@ -943,8 +943,8 @@ prSuiteError(*GetUnscaledClipDuration)(
 
 ```cpp
 prSuiteError(*GetUnscaledClipStart)(
-      PF_ProgPtr effect_ref,
-      A_long* frameDuration);
+ PF_ProgPtr effect_ref,
+ A_long* frameDuration);
 ```
 
 ### **GetTrackItemStart()**
@@ -953,8 +953,8 @@ prSuiteError(*GetUnscaledClipStart)(
 
 ```cpp
 prSuiteError(*GetTrackItemStart)(
-      PF_ProgPtr    effect_ref,
-      A_long*   frameDuration);
+ PF_ProgPtr effect_ref,
+ A_long* frameDuration);
 ```
 
 ### **GetMediaFieldType()**
@@ -963,8 +963,8 @@ prSuiteError(*GetTrackItemStart)(
 
 ```cpp
 prSuiteError(*GetMediaFieldType)(
-      PF_ProgPtr    effect_ref,
-      prFieldType*  outFieldType); // prFieldsNone, prFieldsUpperFirst, prFieldsLowerFirst, prFieldsUnknown
+ PF_ProgPtr effect_ref,
+ prFieldType* outFieldType); // prFieldsNone, prFieldsUpperFirst, prFieldsLowerFirst, prFieldsUnknown
 ```
 
 ### **GetMediaFrameRate()**
@@ -973,8 +973,8 @@ prSuiteError(*GetMediaFieldType)(
 
 ```cpp
 prSuiteError(*GetMediaFrameRate)(
-  PF_ProgPtr  effect_ref,
-  PrTime*     outTicksPerFrame);
+ PF_ProgPtr effect_ref,
+ PrTime* outTicksPerFrame);
 ```
 
 ### **GetContainingTimelineID()**
@@ -983,8 +983,8 @@ prSuiteError(*GetMediaFrameRate)(
 
 ```cpp
 prSuiteError(*GetContainingTimelineID)(
-      PF_ProgPtr    effect_ref,
-      PrTimelineID* outTimelineID);
+ PF_ProgPtr effect_ref,
+ PrTimelineID* outTimelineID);
 ```
 
 ### **GetClipName()**
@@ -993,9 +993,9 @@ prSuiteError(*GetContainingTimelineID)(
 
 ```cpp
 prSuiteError(*GetClipName)(
-      PF_ProgPtr    effect_ref,
-      A_Boolean     inGetMasterClipName,
-      PrSDKString*  outSDKString);
+ PF_ProgPtr effect_ref,
+ A_Boolean inGetMasterClipName,
+ PrSDKString* outSDKString);
 ```
 
 ### **EffectWantsCheckedOutFramesToMatchRenderPixelFormat()**
@@ -1004,7 +1004,7 @@ prSuiteError(*GetClipName)(
 
 ```cpp
 prSuiteError(*EffectWantsCheckedOutFramesToMatchRenderPixelFormat)(
-    PF_ProgPtr  effect_ref);
+ PF_ProgPtr effect_ref);
 ```
 
 ### **EffectDependsOnClipName()**
@@ -1013,16 +1013,16 @@ prSuiteError(*EffectWantsCheckedOutFramesToMatchRenderPixelFormat)(
 
 ```cpp
 prSuiteError(*EffectDependsOnClipName)(
-      PF_ProgPtr    effect_ref,
-      A_Boolean     inDependsOnClipName);
+ PF_ProgPtr effect_ref,
+ A_Boolean inDependsOnClipName);
 ```
 
 ### **SetEffectInstanceName()**
 
 ```cpp
 prSuiteError(*SetEffectInstanceName)(
-      PF_ProgPtr effect_ref,
-      const PrSDKString* inSDKString);
+ PF_ProgPtr effect_ref,
+ const PrSDKString* inSDKString);
 ```
 
 ### **GetFileName()**
@@ -1031,8 +1031,8 @@ prSuiteError(*SetEffectInstanceName)(
 
 ```cpp
 prSuiteError(*GetFileName)(
-      PF_ProgPtr      effect_ref,
-      PrSDKString*    outSDKString);
+ PF_ProgPtr effect_ref,
+ PrSDKString* outSDKString);
 ```
 
 ### **GetOriginalClipFrameRate()**
@@ -1041,8 +1041,8 @@ prSuiteError(*GetFileName)(
 
 ```cpp
 prSuiteError(*GetOriginalClipFrameRate)(
-      PF_ProgPtr    effect_ref,
-      PrTime*   outTicksPerFrame);
+ PF_ProgPtr effect_ref,
+ PrTime* outTicksPerFrame);
 ```
 
 ### **GetSourceTrackMediaTimecode()**
@@ -1051,11 +1051,11 @@ prSuiteError(*GetOriginalClipFrameRate)(
 
 ```cpp
 prSuiteError(*GetSourceTrackMediaTimecode)(
-      PF_ProgPtr      effect_ref,
-      csSDK_uint32    inLayerParamIndex,
-      bool   inApplyTransform,
-      bool   inAddStartTimeOffset,
-      A_long*     outCurrentFrame);
+ PF_ProgPtr effect_ref,
+ csSDK_uint32 inLayerParamIndex,
+ bool inApplyTransform,
+ bool inAddStartTimeOffset,
+ A_long* outCurrentFrame);
 ```
 
 ### **GetSourceTrackClipName()**
@@ -1064,10 +1064,10 @@ prSuiteError(*GetSourceTrackMediaTimecode)(
 
 ```cpp
 prSuiteError(*GetSourceTrackClipName)(
-      PF_ProgPtr      effect_ref,
-      csSDK_uint32    inLayerParamIndex,
-      A_Boolean   inGetMasterClipName,
-      PrSDKString*    outSDKString);
+ PF_ProgPtr effect_ref,
+ csSDK_uint32 inLayerParamIndex,
+ A_Boolean inGetMasterClipName,
+ PrSDKString* outSDKString);
 ```
 
 ### **GetSourceTrackFileName()**
@@ -1076,9 +1076,9 @@ prSuiteError(*GetSourceTrackClipName)(
 
 ```cpp
 prSuiteError(*GetSourceTrackFileName)(
-      PF_ProgPtr      effect_ref,
-      csSDK_uint32    inLayerParamIndex,
-      PrSDKString*    outSDKString);
+ PF_ProgPtr effect_ref,
+ csSDK_uint32 inLayerParamIndex,
+ PrSDKString* outSDKString);
 ```
 
 ### **EffectDependsOnClipName2()**
@@ -1087,9 +1087,9 @@ prSuiteError(*GetSourceTrackFileName)(
 
 ```cpp
 prSuiteError(*EffectDependsOnClipName2)(
-      PF_ProgPtr    effect_ref,
-      A_Boolean     inDependsOnClipName,
-      csSDK_uint32  inLayerParamIndex);
+ PF_ProgPtr effect_ref,
+ A_Boolean inDependsOnClipName,
+ csSDK_uint32 inLayerParamIndex);
 ```
 
 ### **GetMediaTimecode2()**
@@ -1098,10 +1098,10 @@ prSuiteError(*EffectDependsOnClipName2)(
 
 ```cpp
 prSuiteError(*GetMediaTimecode2)(
-      PF_ProgPtr      effect_ref,
-      bool   inApplyTrim,
-      A_long*     outCurrentFrame,
-      PF_TimeDisplay* outTimeDisplay);
+ PF_ProgPtr effect_ref,
+ bool inApplyTrim,
+ A_long* outCurrentFrame,
+ PF_TimeDisplay* outTimeDisplay);
 ```
 
 ### **GetSourceTrackMediaTimecode2()**
@@ -1110,12 +1110,12 @@ prSuiteError(*GetMediaTimecode2)(
 
 ```cpp
 prSuiteError(*GetSourceTrackMediaTimecode2)(
-      PF_ProgPtr      effect_ref,
-      csSDK_uint32    inLayerParamIndex,
-      bool   inApplyTransform,
-      bool   inAddStartTimeOffset,
-      PrTime      inSequenceTime,
-      A_long*     outCurrentFrame);
+ PF_ProgPtr effect_ref,
+ csSDK_uint32 inLayerParamIndex,
+ bool inApplyTransform,
+ bool inAddStartTimeOffset,
+ PrTime inSequenceTime,
+ A_long* outCurrentFrame);
 ```
 
 ### **GetSourceTrackClipName2()**
@@ -1124,11 +1124,11 @@ prSuiteError(*GetSourceTrackMediaTimecode2)(
 
 ```cpp
 prSuiteError(*GetSourceTrackClipName2)(
-      PF_ProgPtr      effect_ref,
-      csSDK_uint32    inLayerParamIndex,
-      A_Boolean   inGetMasterClipName,
-      PrSDKString*    outSDKString,
-      PrTime      inSequenceTime);
+ PF_ProgPtr effect_ref,
+ csSDK_uint32 inLayerParamIndex,
+ A_Boolean inGetMasterClipName,
+ PrSDKString* outSDKString,
+ PrTime inSequenceTime);
 ```
 
 ### **GetSourceTrackFileName2()**
@@ -1137,10 +1137,10 @@ prSuiteError(*GetSourceTrackClipName2)(
 
 ```cpp
 prSuiteError(*GetSourceTrackFileName2)(
-      PF_ProgPtr    effect_ref,
-      csSDK_uint32  inLayerParamIndex,
-      PrSDKString*  outSDKString,
-      PrTime    inSequenceTime);
+ PF_ProgPtr effect_ref,
+ csSDK_uint32 inLayerParamIndex,
+ PrSDKString* outSDKString,
+ PrTime inSequenceTime);
 ```
 
 ### **GetCommentString()**
@@ -1149,10 +1149,10 @@ prSuiteError(*GetSourceTrackFileName2)(
 
 ```cpp
 prSuiteError(*GetCommentString)(
-      PF_ProgPtr    inEffectRef,
-      int32_t   inSourceTrack,
-      PrTime    inSequenceTime,
-      PrSDKString*  outSDKString);
+ PF_ProgPtr inEffectRef,
+ int32_t inSourceTrack,
+ PrTime inSequenceTime,
+ PrSDKString* outSDKString);
 ```
 
 ### **GetLogNoteString()**
@@ -1161,10 +1161,10 @@ prSuiteError(*GetCommentString)(
 
 ```cpp
 prSuiteError(*GetLogNoteString)(
-      PF_ProgPtr    inEffectRef,
-      int32_t   inSourceTrack,
-      PrTime    inSequenceTime,
-      PrSDKString*  outSDKString);
+ PF_ProgPtr inEffectRef,
+ int32_t inSourceTrack,
+ PrTime inSequenceTime,
+ PrSDKString* outSDKString);
 ```
 
 ### **GetCameraRollString()**
@@ -1173,10 +1173,10 @@ prSuiteError(*GetLogNoteString)(
 
 ```cpp
 prSuiteError(*GetCameraRollString)(
-      PF_ProgPtr    inEffectRef,
-      int32_t   inSourceTrack,
-      PrTime    inSequenceTime,
-      PrSDKString*  outSDKString);
+ PF_ProgPtr inEffectRef,
+ int32_t inSourceTrack,
+ PrTime inSequenceTime,
+ PrSDKString* outSDKString);
 ```
 
 ### **GetClientMetadataString()**
@@ -1185,10 +1185,10 @@ prSuiteError(*GetCameraRollString)(
 
 ```cpp
 prSuiteError(*GetClientMetadataString)(
-      PF_ProgPtr    inEffectRef,
-      int32_t   inSourceTrack,
-      PrTime    inSequenceTime,
-      PrSDKString*  outSDKString);
+ PF_ProgPtr inEffectRef,
+ int32_t inSourceTrack,
+ PrTime inSequenceTime,
+ PrSDKString* outSDKString);
 ```
 
 ### **GetDailyRollString()**
@@ -1197,10 +1197,10 @@ prSuiteError(*GetClientMetadataString)(
 
 ```cpp
 prSuiteError(*GetDailyRollString)(
-      PF_ProgPtr    inEffectRef,
-      int32_t   inSourceTrack,
-      PrTime    inSequenceTime,
-      PrSDKString*  outSDKString);
+ PF_ProgPtr inEffectRef,
+ int32_t inSourceTrack,
+ PrTime inSequenceTime,
+ PrSDKString* outSDKString);
 ```
 
 ### **GetDescriptionString()**
@@ -1209,10 +1209,10 @@ prSuiteError(*GetDailyRollString)(
 
 ```cpp
 prSuiteError(*GetDescriptionString)(
-      PF_ProgPtr    inEffectRef,
-      int32_t   inSourceTrack,
-      PrTime    inSequenceTime,
-      PrSDKString*  outSDKString);
+ PF_ProgPtr inEffectRef,
+ int32_t inSourceTrack,
+ PrTime inSequenceTime,
+ PrSDKString* outSDKString);
 ```
 
 ### **GetLabRollString()**
@@ -1221,10 +1221,10 @@ prSuiteError(*GetDescriptionString)(
 
 ```cpp
 prSuiteError(*GetLabRollString)(
-      PF_ProgPtr    inEffectRef,
-      int32_t   inSourceTrack,
-      PrTime    inSequenceTime,
-      PrSDKString*  outSDKString);
+ PF_ProgPtr inEffectRef,
+ int32_t inSourceTrack,
+ PrTime inSequenceTime,
+ PrSDKString* outSDKString);
 ```
 
 ### **GetSceneString()**
@@ -1233,10 +1233,10 @@ prSuiteError(*GetLabRollString)(
 
 ```cpp
 prSuiteError(*GetSceneString)(
-      PF_ProgPtr    inEffectRef,
-      int32_t   inSourceTrack,
-      PrTime    inSequenceTime,
-      PrSDKString*  outSDKString);
+ PF_ProgPtr inEffectRef,
+ int32_t inSourceTrack,
+ PrTime inSequenceTime,
+ PrSDKString* outSDKString);
 ```
 
 ### **GetShotString()**
@@ -1245,10 +1245,10 @@ prSuiteError(*GetSceneString)(
 
 ```cpp
 prSuiteError(*GetShotString)(
-      PF_ProgPtr    inEffectRef,
-      int32_t   inSourceTrack,
-      PrTime    inSequenceTime,
-      PrSDKString*  outSDKString);
+ PF_ProgPtr inEffectRef,
+ int32_t inSourceTrack,
+ PrTime inSequenceTime,
+ PrSDKString* outSDKString);
 ```
 
 ### **GetTapeNameString()**
@@ -1257,10 +1257,10 @@ prSuiteError(*GetShotString)(
 
 ```cpp
 prSuiteError(*GetTapeNameString)(
-      PF_ProgPtr    inEffectRef,
-      int32_t   inSourceTrack,
-      PrTime    inSequenceTime,
-      PrSDKString*  outSDKString);
+ PF_ProgPtr inEffectRef,
+ int32_t inSourceTrack,
+ PrTime inSequenceTime,
+ PrSDKString* outSDKString);
 ```
 
 ### **GetVideoCodecString()**
@@ -1269,10 +1269,10 @@ prSuiteError(*GetTapeNameString)(
 
 ```cpp
 prSuiteError(*GetVideoCodecString)(
-      PF_ProgPtr    inEffectRef,
-      int32_t   inSourceTrack,
-      PrTime    inSequenceTime,
-      PrSDKString*  outSDKString);
+ PF_ProgPtr inEffectRef,
+ int32_t inSourceTrack,
+ PrTime inSequenceTime,
+ PrSDKString* outSDKString);
 ```
 
 ### **GetGoodMetadataString()**
@@ -1281,10 +1281,10 @@ prSuiteError(*GetVideoCodecString)(
 
 ```cpp
 prSuiteError(*GetGoodMetadataString)(
-      PF_ProgPtr    inEffectRef,
-      int32_t   inSourceTrack,
-      PrTime    inSequenceTime,
-      PrSDKString*  outSDKString);
+ PF_ProgPtr inEffectRef,
+ int32_t inSourceTrack,
+ PrTime inSequenceTime,
+ PrSDKString* outSDKString);
 ```
 
 ### **GetSoundRollString()**
@@ -1293,10 +1293,10 @@ prSuiteError(*GetGoodMetadataString)(
 
 ```cpp
 prSuiteError(*GetSoundRollString)(
-      PF_ProgPtr    inEffectRef,
-      int32_t   inSourceTrack,
-      PrTime    inSequenceTime,
-      PrSDKString*  outSDKString);
+ PF_ProgPtr inEffectRef,
+ int32_t inSourceTrack,
+ PrTime inSequenceTime,
+ PrSDKString* outSDKString);
 ```
 
 ### **GetSequenceTime()**
@@ -1305,8 +1305,8 @@ prSuiteError(*GetSoundRollString)(
 
 ```cpp
 prSuiteError(*GetSequenceTime)(
-      PF_ProgPtr  inEffectRef,
-      PrTime*     outSequenceTime);
+ PF_ProgPtr inEffectRef,
+ PrTime* outSequenceTime);
 ```
 
 ### **GetSoundTimecode()**
@@ -1315,10 +1315,10 @@ prSuiteError(*GetSequenceTime)(
 
 ```cpp
 prSuiteError(*GetSoundTimecode)(
-      PF_ProgPtr    inEffectRef,
-      int32_t   inSourceTrack,
-      PrTime    inSequenceTime,
-      A_long*   outCurrentFrame);
+ PF_ProgPtr inEffectRef,
+ int32_t inSourceTrack,
+ PrTime inSequenceTime,
+ A_long* outCurrentFrame);
 ```
 
 ### **GetOriginalClipFrameRateForSourceTrack()**
@@ -1327,9 +1327,9 @@ prSuiteError(*GetSoundTimecode)(
 
 ```cpp
 prSuiteError(*GetOriginalClipFrameRateForSourceTrack)(
-      PF_ProgPtr    inEffectRef,
-      int32_t   inSourceTrack,
-      PrTime*   outTicksPerFrame);
+ PF_ProgPtr inEffectRef,
+ int32_t inSourceTrack,
+ PrTime* outTicksPerFrame);
 ```
 
 ### **GetMediaFrameRateForSourceTrack()**
@@ -1338,10 +1338,10 @@ prSuiteError(*GetOriginalClipFrameRateForSourceTrack)(
 
 ```cpp
 prSuiteError(*GetMediaFrameRateForSourceTrack)(
-      PF_ProgPtr    inEffectRef,
-      int32_t   inSourceTrack,
-      PrTime    inSequenceTime,
-      PrTime*   outTicksPerFrame);
+ PF_ProgPtr inEffectRef,
+ int32_t inSourceTrack,
+ PrTime inSequenceTime,
+ PrTime* outTicksPerFrame);
 ```
 
 ### **GetSourceTrackMediaActualStartTime()**
@@ -1350,10 +1350,10 @@ prSuiteError(*GetMediaFrameRateForSourceTrack)(
 
 ```cpp
 prSuiteError(*GetSourceTrackMediaActualStartTime)(
-      PF_ProgPtr      inEffectRef,
-      csSDK_uint32    inLayerParamIndex,
-      PrTime      inSequenceTime,
-      PrTime*     outClipActualStartTime);
+ PF_ProgPtr inEffectRef,
+ csSDK_uint32 inLayerParamIndex,
+ PrTime inSequenceTime,
+ PrTime* outClipActualStartTime);
 ```
 
 ### IsSourceTrackMediaTrimmed()
@@ -1362,10 +1362,10 @@ prSuiteError(*GetSourceTrackMediaActualStartTime)(
 
 ```cpp
 prSuiteError(*IsSourceTrackMediaTrimmed)(
-      PF_ProgPtr      inEffectRef,
-      csSDK_uint32    inLayerParamIndex,
-      PrTime      inSequenceTime,
-      bool*       outTrimApplied);
+ PF_ProgPtr inEffectRef,
+ csSDK_uint32 inLayerParamIndex,
+ PrTime inSequenceTime,
+ bool* outTrimApplied);
 ```
 
 ### IsMediaTrimmed()
@@ -1374,9 +1374,9 @@ prSuiteError(*IsSourceTrackMediaTrimmed)(
 
 ```cpp
 prSuiteError(*IsMediaTrimmed)(
-      PF_ProgPtr    inEffectRef,
-      PrTime    inSequenceTime,
-      bool*     outTrimApplied);
+ PF_ProgPtr inEffectRef,
+ PrTime inSequenceTime,
+ bool* outTrimApplied);
 ```
 
 ### IsTrackEmpty()
@@ -1385,10 +1385,10 @@ prSuiteError(*IsMediaTrimmed)(
 
 ```cpp
 prSuiteError(*IsTrackEmpty)(
-      PF_ProgPtr      inEffectRef,
-      csSDK_uint32    inLayerParamIndex,
-      PrTime      inSequenceTime,
-      bool*       outIsTrackEmpty);
+ PF_ProgPtr inEffectRef,
+ csSDK_uint32 inLayerParamIndex,
+ PrTime inSequenceTime,
+ bool* outIsTrackEmpty);
 ```
 
 ### IsTrackItemEffectAppliedToSynthetic()
@@ -1397,8 +1397,8 @@ prSuiteError(*IsTrackEmpty)(
 
 ```cpp
 prSuiteError(*IsTrackItemEffectAppliedToSynthetic)(
-      PF_ProgPtr    inEffectRef,
-      bool*     outIsTrackItemEffectAppliedToSynthetic);
+ PF_ProgPtr inEffectRef,
+ bool* outIsTrackItemEffectAppliedToSynthetic);
 ```
 
 ### GetSourceTrackCurrentMediaTimeInfo()
@@ -1407,13 +1407,13 @@ prSuiteError(*IsTrackItemEffectAppliedToSynthetic)(
 
 ```cpp
 prSuiteError(*GetSourceTrackCurrentMediaTimeInfo)(
-      PF_ProgPtr      effect_ref,
-      csSDK_uint32    inLayerParamIndex,
-      bool   inUseSoundTimecodeAsStartTime,
-      PrTime      inSequenceTime,
-      PrTime*     outCurrentMediaTime,
-      PrTime*     outMediaTicksPerFrame,
-      PF_TimeDisplay* outMediaTimeDisplay);
+ PF_ProgPtr effect_ref,
+ csSDK_uint32 inLayerParamIndex,
+ bool inUseSoundTimecodeAsStartTime,
+ PrTime inSequenceTime,
+ PrTime* outCurrentMediaTime,
+ PrTime* outMediaTicksPerFrame,
+ PF_TimeDisplay* outMediaTimeDisplay);
 ```
 
 ### GetSequenceZeroPoint()
@@ -1422,8 +1422,8 @@ prSuiteError(*GetSourceTrackCurrentMediaTimeInfo)(
 
 ```cpp
 prSuiteError(*GetSequenceZeroPoint)(
-      PF_ProgPtr    inEffectRef,
-      PrTime*   outZeroPointTime);
+ PF_ProgPtr inEffectRef,
+ PrTime* outZeroPointTime);
 ```
 
 ### GetSourceTrackCurrentClipDuration()
@@ -1432,10 +1432,10 @@ prSuiteError(*GetSequenceZeroPoint)(
 
 ```cpp
 prSuiteError(*GetSourceTrackCurrentClipDuration)(
-      PF_ProgPtr    inEffectRef,
-      csSDK_uint32      inLayerParamIndex,
-      PrTime   inSequenceTime,
-      PrTime*       outClipDuration);
+ PF_ProgPtr inEffectRef,
+ csSDK_uint32 inLayerParamIndex,
+ PrTime inSequenceTime,
+ PrTime* outClipDuration);
 ```
 
 ### GetSequenceDuration()
@@ -1444,15 +1444,15 @@ prSuiteError(*GetSourceTrackCurrentClipDuration)(
 
 ```cpp
 prSuiteError(*GetSequenceDuration)(
-      PF_ProgPtr    inEffectRef,
-      PrTime*   outSequenceDuration);
+ PF_ProgPtr inEffectRef,
+ PrTime* outSequenceDuration);
 
-      /*
-      ** 获取视频分辨率字符串，格式为 '宽度 x 高度'，
-      ** 表示在 `inSequenceTime` 时间点的 `inSourceTrack` 上的剪辑（即轨道项）的分辨率。
-      ** 将 `inSourceTrack` 设置为 -1 以查询在 `inSequenceTime` 时间点的最顶层剪辑
-      ** （仅当效果应用于调整图层时）
-      */
+ /*
+ ** 获取视频分辨率字符串，格式为 '宽度 x 高度'，
+ ** 表示在 `inSequenceTime` 时间点的 `inSourceTrack` 上的剪辑（即轨道项）的分辨率。
+ ** 将 `inSourceTrack` 设置为 -1 以查询在 `inSequenceTime` 时间点的最顶层剪辑
+ ** （仅当效果应用于调整图层时）
+ */
 ```
 
 ### GetVideoResolutionString()
@@ -1461,8 +1461,8 @@ prSuiteError(*GetSequenceDuration)(
 
 ```cpp
 prSuiteError(*GetVideoResolutionString)(
-      PF_ProgPtr    inEffectRef,
-      int32_t   inSourceTrack,
-      PrTime    inSequenceTime,
-      PrSDKString*  outSDKString);
+ PF_ProgPtr inEffectRef,
+ int32_t inSourceTrack,
+ PrTime inSequenceTime,
+ PrSDKString* outSDKString);
 ```

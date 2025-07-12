@@ -69,7 +69,6 @@ If `true`, result is LivePaint art. If `false`, it is classic art.
 A script should only set this value in preparation for a subsequent expand operation. Leaving a tracing on the artboard when this property is `true` can lead to unexpected application behavior.
 :::
 
-
 #### Type
 
 Boolean
@@ -374,8 +373,8 @@ Loads a set of options from the specified preset, as found in the `Application.t
 
 #### Parameters
 
-|  Parameter   |  Type  |     Description     |
-| ------------ | ------ | ------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `presetName` | String | Preset name to load |
 
 #### Returns
@@ -400,8 +399,8 @@ Returns `false` if the preset is locked.
 
 #### Parameters
 
-|  Parameter   |  Type  |      Description       |
-| ------------ | ------ | ---------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `presetName` | String | Preset name to save as |
 
 #### Returns

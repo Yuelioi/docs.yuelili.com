@@ -13,23 +13,22 @@ The CameraLayer object represents a camera layer within a composition. Create it
 CameraLayer is a subclass of [Layer object](../layer). All methods and attributes of Layer are available when working with CameraLayer.
 :::
 
-
 #### AE Properties
 
 CameraLayer defines no additional attributes, but has different AE properties than other layer types. It has the following properties and property groups:
 
 - `Marker`
 - `Transform`
-    - `PointofInterest`
-    - `Position`
-    - `Scale`
-    - `Orientation`
-    - `XRotation`
-    - `YRotation`
-    - `Rotation`
-    - `Opacity`
+ - `PointofInterest`
+ - `Position`
+ - `Scale`
+ - `Orientation`
+ - `XRotation`
+ - `YRotation`
+ - `Rotation`
+ - `Opacity`
 - `CameraOptions`
-    - `Zoom`
-    - `DepthofField`
-    - `FocusDistance`
-    - `BlurLevel`
+ - `Zoom`
+ - `DepthofField`
+ - `FocusDistance`
+ - `BlurLevel`

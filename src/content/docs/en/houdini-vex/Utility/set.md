@@ -48,7 +48,7 @@ vector4 v = set(nums);
 If you set a vector or matrix type from a single value, the vector/matrix is filled in with that value for all components.
 
 ```vex
-vector4 v = set(2.0);  // -> {2.0, 2.0, 2.0, 2.0}
+vector4 v = set(2.0); // -> {2.0, 2.0, 2.0, 2.0}
 
 ```
 
@@ -79,7 +79,7 @@ Creates an array of vectors from the rows of a matrix of the same size.
 
 ```vex
 matrix3 m3 = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0};
-vector[] vs = set(m3);  // -> array [ {1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}, {7.0, 8.0, 9.0} ]
+vector[] vs = set(m3); // -> array [ {1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}, {7.0, 8.0, 9.0} ]
 
 ```
 
@@ -99,7 +99,7 @@ If you set a larger vector or matrix type from a smaller type, the extra compone
 
 ```vex
 vector2 v2 = {1.0, 2.0};
-vector4 v4 = set(v2);  // -> {1.0, 2.0, 0.0, 0.0}
+vector4 v4 = set(v2); // -> {1.0, 2.0, 0.0, 0.0}
 
 ```
 
@@ -117,7 +117,7 @@ If you set a smaller vector with a larger vector, the smaller type will take com
 
 ```vex
 vector4 v4 = {1.0, 2.0, 3.0, 4.0};
-vector2 v2 = set(v4)  // -> {1.0, 2.0}
+vector2 v2 = set(v4) // -> {1.0, 2.0}
 
 ```
 
@@ -131,7 +131,7 @@ If you set a smaller matrix with a larger matrix, the smaller type will take the
 
 ```vex
 matrix3 m3 = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0};
-matrix2 m2 = set(m3);  // -> {1.0, 2.0, 4.0, 5.0}
+matrix2 m2 = set(m3); // -> {1.0, 2.0, 4.0, 5.0}
 
 ```
 
@@ -143,7 +143,7 @@ Creates an array of floats from the components of a vector or matrix type.
 
 ```vex
 matrix3 m3 = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0};
-float[] nums = set(m3);  // -> array [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0 ]
+float[] nums = set(m3); // -> array [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0 ]
 
 ```
 
@@ -155,7 +155,7 @@ Creates an array of vector/matrix types by taking one component at a time from a
 
 ```vex
 float[] nums = {1.0, 2.0, 3.0, 4.0};
-vector2[] vs = set(nums);  // -> [ {1.0, 2.0}, {3.0, 4.0} ]
+vector2[] vs = set(nums); // -> [ {1.0, 2.0}, {3.0, 4.0} ]
 
 ```
 
@@ -171,7 +171,7 @@ You can set a float from an int, or an int from a float, or an array of floats f
 
 ```vex
 float[] fracs = { 1.1, 2.2, 3.3, 4.4, 5.5, 6.6 };
-int[] floored = set(fracs);  // -> array [ 1, 2, 3, 4, 5, 6 ]
+int[] floored = set(fracs); // -> array [ 1, 2, 3, 4, 5, 6 ]
 
 ```
 
@@ -195,6 +195,6 @@ be a string for the key and be followed by the value for that key.
 If you call `set()` with the same argument type and return type, it simply returns the argument value.
 
 ```vex
-string s = set("Hello");  // -> "Hello"
+string s = set("Hello"); // -> "Hello"
 
 ```

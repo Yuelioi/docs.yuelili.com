@@ -163,9 +163,9 @@ Deletes this object and its associated [PluginItem](.././PluginItem) object. Any
 
 #### Parameters
 
-| Parameter |       Type        | Description |
-| --------- | ----------------- | ----------- |
-| `viewed`  | Boolean, optional | todo        |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `viewed` | Boolean, optional | todo |
 
 #### Returns
 

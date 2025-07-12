@@ -44,6 +44,6 @@ usd_setprimvar(0, "/geo/sphere", "half_primvar", {1.25, 1.50, 1.75});
 
 // 添加一个采用'vertex'插值的颜色图元
 usd_addprimvar(0, pp, "color_primvar", "color3d[]", "vertex");
-usd_setprimvar(0, pp, "color_primvar",  vector[](array({1,0,0}, {0,1,0}, {0,0,1})));
+usd_setprimvar(0, pp, "color_primvar", vector[](array({1,0,0}, {0,1,0}, {0,0,1})));
 
 ```

@@ -38,8 +38,8 @@ Iterate through the unique values of the `@foo` point string attribute
 ```vex
 int count = nuniqueval(0, "point", "foo");
 for (int i = 0; i < count; i++) {
-    string val = uniqueval(0, "point", "foo", i);
-    // ...do something with the value...
+ string val = uniqueval(0, "point", "foo", i);
+ // ...do something with the value...
 }
 
 ```

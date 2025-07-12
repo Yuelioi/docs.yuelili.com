@@ -41,18 +41,18 @@ Cf = 0;
 // This loop will iterate only once
 while (pciterate(handle))
 {
-    // Query A from the averaged point
-    float        ptarea;
-    pcimport(handle, "A", ptarea);
+ // Query A from the averaged point
+ float ptarea;
+ pcimport(handle, "A", ptarea);
 
-    pcsampleleaf(handle, nrandom());
+ pcsampleleaf(handle, nrandom());
 
-    // Query P from a sampled leaf point
-    vector        pos;
-    pcimport(handle, "P", pos);
+ // Query P from a sampled leaf point
+ vector pos;
+ pcimport(handle, "P", pos);
 
-    if (trace(pos, P-pos, Time))
-        Cf += ptarea / length2(P-pos);
+ if (trace(pos, P-pos, Time))
+ Cf += ptarea / length2(P-pos);
 }
 
 ```

@@ -100,8 +100,8 @@ Applies the specified existing output-module template.
 
 #### Parameters
 
-|   Parameter    |  Type  |               Description               |
-| -------------- | ------ | --------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `templateName` | String | The name of the template to be applied. |
 
 #### Returns
@@ -117,7 +117,6 @@ Nothing.
 :::note
 This functionality was added in After Effects 13.0 (CC 2014)
 :::
-
 
 #### Description
 
@@ -139,7 +138,6 @@ See the example in [RenderQueueItem.getSetting()](../renderqueueitem#renderqueue
 :::note
 This functionality was added in After Effects 13.0 (CC 2014)
 :::
-
 
 #### Description
 
@@ -209,9 +207,9 @@ Saves this output module as a template and adds it to the te mpl ate s array.
 
 #### Parameters
 
-| Parameter |  Type  |          Description          |
-| --------- | ------ | ----------------------------- |
-| `name`    | String | The name of the new template. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | The name of the new template. |
 
 #### Returns
 
@@ -226,7 +224,6 @@ Nothing.
 :::note
 This functionality was added in After Effects 13.0 (CC 2014)
 :::
-
 
 #### Description
 
@@ -249,7 +246,6 @@ See the example in [RenderQueueItem.setSetting()](../renderqueueitem#renderqueue
 This functionality was added in After Effects 13.0 (CC 2014)
 :::
 
-
 #### Description
 
 - Depreciated Source: [https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva](https://blogs.adobe.com/creativecloud/new-changed-after-effects-cc-2014/?segment=dva)
@@ -258,7 +254,6 @@ This functionality was added in After Effects 13.0 (CC 2014)
 :::warning
 There is a bug that causes OutputModule object to be invalidated after the output module setting is modified, so you need to retrieve the Output Module again after you modify it.
 :::
-
 
 #### Examples
 
@@ -280,11 +275,11 @@ Set output module item 1 of render queue item 3 with values that you create:
 
 ```javascript
 var crop_data = {
-    "Crop":        true,
-    "Crop Bottom": 0,
-    "Crop Left":   0,
-    "Crop Right":  8,
-    "Crop Top":    10
+ "Crop": true,
+ "Crop Bottom": 0,
+ "Crop Left": 0,
+ "Crop Right": 8,
+ "Crop Top": 10
 };
 
 app.project.renderQueue.item(1).outputModule(3).setSettings( crop_data );
@@ -299,11 +294,11 @@ var new_dir = new Folder( "~/new_output" );
 var new_path = new_dir.fsName;
 
 var new_data = {
-    "Output File Info": {
-        "Base Path":      new_path,
-        "Subfolder Path": "draft",
-        "File Name":      file_name
-    }
+ "Output File Info": {
+ "Base Path": new_path,
+ "Subfolder Path": "draft",
+ "File Name": file_name
+ }
 };
 
 om1.setSettings( new_data );
@@ -320,14 +315,14 @@ var new_path = "/Users/myAccount/new_output";
 var separator = "/";
 
 if ($.os.indexOf("Mac") == -1) {
-    new_path = "C:\Users\myAccount\new_output";
-    separator = "\\";
+ new_path = "C:\Users\myAccount\new_output";
+ separator = "\\";
 }
 
 var new_data = {
-    "Output File Info": {
-        "Full Flat Path": new_path + separator + file_name
-    }
+ "Output File Info": {
+ "Full Flat Path": new_path + separator + file_name
+ }
 };
 
 om1.setSettings( new_data );

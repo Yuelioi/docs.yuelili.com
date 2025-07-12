@@ -30,15 +30,15 @@ Because CharacterRange is an accessor of [TextDocument object](../textdocument),
 
 The following attributes and methods are **not** available on instances of CharacterRange:
 
-|    Attributes     |            Methods            |
-| ----------------- | ----------------------------- |
-| `baselineLocs`    | `characterRange`    |
-| `boxText`         | `paragraphCharacterIndexesAt` |
-| `boxTextPos`      | `paragraphRange`    |
-| `boxTextSize`     |           |
-| `lineOrientation` |           |
-| `paragraphCount`  |           |
-| `pointText`       |           |
+| Attributes | Methods |
+| --- | --- |
+| `baselineLocs` | `characterRange` |
+| `boxText` | `paragraphCharacterIndexesAt` |
+| `boxTextPos` | `paragraphRange` |
+| `boxTextSize` | |
+| `lineOrientation` | |
+| `paragraphCount` | |
+| `pointText` | |
 
 #### Examples
 
@@ -239,8 +239,8 @@ As the span of the [CharacterRange object](#characterrange-object) is not adjust
 
 #### Parameters
 
-|    Parameter     |            Type             |             Description              |
-| ---------------- | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `characterRange` | [CharacterRange object](#characterrange-object) | Object whose text and styling will be pasted in place of the callee [CharacterRange object](#characterrange-object). |
 
 #### Returns

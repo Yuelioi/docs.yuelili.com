@@ -8,15 +8,15 @@ To use the XMP objects, you must load the XMP library as an ExtendScript Externa
 ```javascript
 // load the library
 if ( ExternalObject.AdobeXMPScript == undefined ) {
-    ExternalObject.AdobeXMPScript = new ExternalObject( "lib:AdobeXMPScript");
+ ExternalObject.AdobeXMPScript = new ExternalObject( "lib:AdobeXMPScript");
 }
 ```
 
 After the library has been loaded, these primary XMP classes are available in the global JavaScript namespace:
 
-|                             Object                             |                                                                                        Description                                                                                         |
-| -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [XMPMeta object](../xmpscript-object-reference#xmpmeta-object) | Provides the core services of the XMP Toolkit. Allows you to create and delete metadata properties, and to retrieve and modify property values.                                            |
+| Object | Description |
+| --- | --- |
+| [XMPMeta object](../xmpscript-object-reference#xmpmeta-object) | Provides the core services of the XMP Toolkit. Allows you to create and delete metadata properties, and to retrieve and modify property values. |
 | [XMPFile object](../xmpscript-object-reference#xmpfile-object) | Provides convenient I/O access to the main, or document level, XMP for a file. Allows you to retrieve existing metadata from a file, update file metadata, and add new metadata to a file. |
 
 Additional top-level objects include array-handling utilities, a date-time object, and constant definitions that include namespace constants. The top-level objects provide access to additional support classes that encapsulate individual metadata properties, file information, and XMP packet information, and a utility that allows iteration through properties.
@@ -38,34 +38,33 @@ You can obtain or create an [XMPMeta object](../xmpscript-object-reference#xmpme
 In Adobe Bridge, you can pass XMP metadata between the built-in `Metadata` object and the XMPScript [XMPMeta object](../xmpscript-object-reference#xmpmeta-object) using serialized XMP.
 
 - You can use XMPScript to examine thumbnail metadata by creating the [XMPMeta object](../xmpscript-object-reference#xmpmeta-object) from the metadata stored with a `Thumbnail` object, using the object constructor. To ensure that the metadata is up-to-date, use synchronous mode (which is off by default):
-    ```javascript
-    var thumb = new Thumbnail( new File( "/C/myImage.jpg") );
-    app.synchronousMode = true;
+ ```javascript
+ var thumb = new Thumbnail( new File( "/C/myImage.jpg") );
+ app.synchronousMode = true;
 
-    var xmp = new XMPMeta( thumb.metadata.serialize() );
-    ```
+ var xmp = new XMPMeta( thumb.metadata.serialize() );
+ ```
 
-    or:
-    ```javascript
-    var xmp = new XMPMeta( thumb.synchronousMetadata.serialize() );
-    ```
+ or:
+ ```javascript
+ var xmp = new XMPMeta( thumb.synchronousMetadata.serialize() );
+ ```
 
 - You can modify the metadata in an Adobe Bridge thumbnail by creating a new `Metadata` object with serialized XMP. Continuing the previous example:
-    ```javascript
-    // Create a compact XMP packet
+ ```javascript
+ // Create a compact XMP packet
     var newPacket = xmp.serialize( XMPConst.SERIALIZE_OMIT_PACKET_WRAPPER | XMPConst.SERIALIZE_USE_COMPACT_FORMAT ) );
-    thumb.metadata = new Metadata( newPacket );
-    ```
+ thumb.metadata = new Metadata( newPacket );
+ ```
 
 - To write metadata back to the file for a thumbnail, you can access the thumbnail's file and create an [XMPFile object](../xmpscript-object-reference#xmpfile-object) object to access the embedded metadata directly:
-    ```javascript
-    var xmp = new XMPFile( thumb.spec.fsName, XMPConst.UNKNOWN, XMPConst.OPEN_FOR_UPDATE );
-    ```
+ ```javascript
+ var xmp = new XMPFile( thumb.spec.fsName, XMPConst.UNKNOWN, XMPConst.OPEN_FOR_UPDATE );
+ ```
 
 :::note
 The `XMPFile` object does not support all of the file formats that Adobe Bridge supports.
 :::
-
 
 ---
 
@@ -81,8 +80,8 @@ var xmpStr = xmp.serialize(); // Serialize the XMP packet to XML
 // Retrieve property
 var prop = xmp.getProperty(XMPConst.NS_XMP, "CreatorTool");
 $.writeln( "namespace: " + prop.namespace + "\n" +
-    "property path + name: " + prop.path + "\n" +
-    "value: " + prop ); // same as prop.value
+ "property path + name: " + prop.path + "\n" +
+ "value: " + prop ); // same as prop.value
 ```
 
 ---
@@ -121,31 +120,31 @@ var picFolder = "/c/temp/photos";
 
 // Load the XMPScript library
 if ( ExternalObject.AdobeXMPScript == undefined ) {
-    ExternalObject.AdobeXMPScript = new ExternalObject( "lib:AdobeXMPScript" );
+ ExternalObject.AdobeXMPScript = new ExternalObject( "lib:AdobeXMPScript" );
 }
 
 // Iterate through the photos in the folder
 var pics = Folder(picFolder).getFiles();
 for ( var i = 0; i < pics.length; i++ ) {
-    var file = pics[i];
-    $.writeln( "Process file: " + file.fsName );
+ var file = pics[i];
+ $.writeln( "Process file: " + file.fsName );
 
-    // Applies only to files, not to folders
-    if ( file instanceof File ) {
-        var xmpFile = new XMPFile( file.fsName, XMPConst.UNKNOWN, XMPConst.OPEN_FOR_UPDATE );
-        var xmp = xmpFile.getXMP();
+ // Applies only to files, not to folders
+ if ( file instanceof File ) {
+ var xmpFile = new XMPFile( file.fsName, XMPConst.UNKNOWN, XMPConst.OPEN_FOR_UPDATE );
+ var xmp = xmpFile.getXMP();
 
-        // Delete existing authors and add a new one
-        // Existing metadata stays untouched
-        xmp.deleteProperty( XMPConst.NS_DC, "creator" );
-        xmp.appendArrayItem( XMPConst.NS_DC, "creator", "Judy", 0, XMPConst.ARRAY_IS_ORDERED );
+ // Delete existing authors and add a new one
+ // Existing metadata stays untouched
+ xmp.deleteProperty( XMPConst.NS_DC, "creator" );
+ xmp.appendArrayItem( XMPConst.NS_DC, "creator", "Judy", 0, XMPConst.ARRAY_IS_ORDERED );
 
-        // Write updated metadata into the file
-        if ( xmpFile.canPutXMP( xmp ) ) {
-            xmpFile.putXMP( xmp );
-        }
-        xmpFile.closeFile( XMPConst.CLOSE_UPDATE_SAFELY );
-    }
+ // Write updated metadata into the file
+ if ( xmpFile.canPutXMP( xmp ) ) {
+ xmpFile.putXMP( xmp );
+ }
+ xmpFile.closeFile( XMPConst.CLOSE_UPDATE_SAFELY );
+ }
 }
 ```
 
@@ -170,7 +169,7 @@ $.writeln("XMPScript Adobe Bridge Integration Example");
 
 // Load the XMPScript library
 if ( ExternalObject.AdobeXMPScript == undefined ) {
-    ExternalObject.AdobeXMPScript = new ExternalObject( "lib:AdobeXMPScript" );
+ ExternalObject.AdobeXMPScript = new ExternalObject( "lib:AdobeXMPScript" );
 }
 // Add a context menu item to Thumbnails
 var xmpCommand = new MenuElement( "command", "Show XMP Properties", "at the end of Thumbnail", "showProperties" );
@@ -184,29 +183,29 @@ var thumb = app.document.selections[0];
 // If there is one, and it has metadata
 if ( thumb && thumb.metadata ) {
 
-    // Retrieve metadata from the thumbnail into an XMPMeta object`
-    // ( if app.synchronousMode is set, use thumb.metadata )
+ // Retrieve metadata from the thumbnail into an XMPMeta object`
+ // ( if app.synchronousMode is set, use thumb.metadata )
 
-    var xmp = new XMPMeta( thumb.synchronousMetadata.serialize() );
+ var xmp = new XMPMeta( thumb.synchronousMetadata.serialize() );
 
-    // Retrieve some of the XMP property values
-    // A simple property with a localized string value
-    var msg = "Title: " + xmp.getLocalizedText( XMPConst.NS_DC, "title", null, "en" ) + "\n";
+ // Retrieve some of the XMP property values
+ // A simple property with a localized string value
+ var msg = "Title: " + xmp.getLocalizedText( XMPConst.NS_DC, "title", null, "en" ) + "\n";
 
-    // An array property
-    msg += "Authors of the document:\n";
-    var num = xmp.countArrayItems( XMPConst.NS_DC, "creator" );
+ // An array property
+ msg += "Authors of the document:\n";
+ var num = xmp.countArrayItems( XMPConst.NS_DC, "creator" );
 
-    for ( var i = 1; i <= num; i++ ) {}
-        msg += "* " + xmp.getArrayItem( XMPConst.NS_DC, "creator", i ) + "\n";
-    }
+ for ( var i = 1; i <= num; i++ ) {}
+ msg += "* " + xmp.getArrayItem( XMPConst.NS_DC, "creator", i ) + "\n";
+ }
 
-    // A simple property with a date value
-    msg += "Creation Date: " + xmp.getProperty( XMPConst.NS_XMP, "CreateDate" )
+ // A simple property with a date value
+ msg += "Creation Date: " + xmp.getProperty( XMPConst.NS_XMP, "CreateDate" )
 
-    // Display the values
-    Window.alert( msg );
+ // Display the values
+ Window.alert( msg );
 } else {
-    Window.alert( "No thumbnail selected or no XMP contained" );
+ Window.alert( "No thumbnail selected or no XMP contained" );
 }
 ```

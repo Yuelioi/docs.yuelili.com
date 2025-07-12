@@ -77,12 +77,12 @@ docRef.HidePerspectiveGrid();
 
 透视网格平面类型包括：
 
-|     平面     |        类型        |
-| ------------ | ------------------ |
-| 左平面       | `aiLEFTPLANE (1)`  |
-| 右平面       | `aiRIGHTPLANE (2)` |
-| 地面平面     | `aiFLOORPLANE (3)` |
-| 无效平面     | `aiNOPLANE (4)`    |
+| 平面 | 类型 |
+| --- | --- |
+| 左平面 | `aiLEFTPLANE (1)` |
+| 右平面 | `aiRIGHTPLANE (2)` |
+| 地面平面 | `aiFLOORPLANE (3)` |
+| 无效平面 | `aiNOPLANE (4)` |
 
 对于一点透视网格，只有左平面和地面平面是有效的。
 
@@ -118,7 +118,7 @@ docRef.ShowPerspectiveGrid()
 
 Rem 检查活动平面是否设置为左平面，否则设置为左平面
 If docRef.GetPerspectiveActivePlane() <> 1 Then
-    docRef.SetPerspectiveActivePlane(1) 'aiLEFTPLANE
+ docRef.SetPerspectiveActivePlane(1) 'aiLEFTPLANE
 End If
 
 Rem 以透视方式绘制矩形，然后调整大小为 200% 并移动
@@ -175,7 +175,7 @@ docRef.ShowPerspectiveGrid()
 
 Rem 检查活动平面是否设置为左平面，否则设置为左平面
 If docRef.GetPerspectiveActivePlane() <> 1 Then
-    docRef.SetPerspectiveActivePlane(1) 'aiLEFTPLANE
+ docRef.SetPerspectiveActivePlane(1) 'aiLEFTPLANE
 End If
 
 Rem 将椭圆带入活动平面（左平面）

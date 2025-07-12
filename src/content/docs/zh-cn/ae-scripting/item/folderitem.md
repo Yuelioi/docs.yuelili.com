@@ -16,11 +16,11 @@ FolderItem 对象对应于项目面板中的一个文件夹。它可以包含各
 ```javascript
 var secondItem = app.project.item(2);
 if (!(secondItem instanceof FolderItem)) {
-  alert("问题：第二个项目不是一个文件夹");
+ alert("问题：第二个项目不是一个文件夹");
 } else {
-  for (var i = 1; i <= secondItem.numItems; i++) {
-    alert("文件夹中的第 " + i + " 个项目名为 " + secondItem.item(i).name);
-  }
+ for (var i = 1; i <= secondItem.numItems; i++) {
+ alert("文件夹中的第 " + i + " 个项目名为 " + secondItem.item(i).name);
+ }
 }
 ```
 
@@ -74,8 +74,8 @@ items 集合中包含的项目数量（`folderItem.items.length`）。
 
 #### 参数
 
-| 参数         | 类型 | 描述          |
-| ------------ | ---- | ---------------------------------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `subIndex` | 整数 | 要检索的项目的位置索引。第一个项目的索引为 1。 |
 
 #### 返回

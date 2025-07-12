@@ -13,7 +13,6 @@ The TextLayer object represents a text layer within a composition. Create it usi
 TextLayer is a subclass of [AVLayer](../avlayer), which is a subclass of [Layer](../layer). All methods and attributes of AVLayer and Layer are available when working with TextLayer.
 :::
 
-
 #### AE Properties
 
 TextLayer defines no additional attributes, but has the following AE properties and property groups, in addition to those inherited from AVLayer:

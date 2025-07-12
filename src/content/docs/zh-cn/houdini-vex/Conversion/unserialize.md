@@ -12,7 +12,7 @@ order: 13
 
 ```vex
 vector v[]
-float  f[] = { 1, 2, 3,  7, 8, 9 };
+float f[] = { 1, 2, 3, 7, 8, 9 };
 
 v = vector(unserialize(f));
 // 现在v的长度为2，包含{ {1,2,3}, {7,8,9} }

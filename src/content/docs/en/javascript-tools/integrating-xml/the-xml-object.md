@@ -11,12 +11,12 @@ For example, suppose you have the following, minimal XML code:
 
 ```xml
 <rootElement>
-    <elementA>
-        <elementB></elementB>
-    </elementA>
-    <elementA>
-        <elementB></elementB>
-    </elementA>
+ <elementA>
+ <elementB></elementB>
+ </elementA>
+ <elementA>
+ <elementB></elementB>
+ </elementA>
 </rootElement>
 ```
 
@@ -30,12 +30,12 @@ You can assign a constant to an XML value directly. The following implicitly cre
 
 ```javascript
 var myRoot = <rootElement>
-    <elementA>
-        <elementB></elementB>
-    </elementA>
-    <elementA>
-        <elementB></elementB>
-    </elementA>
+ <elementA>
+ <elementB></elementB>
+ </elementA>
+ <elementA>
+ <elementB></elementB>
+ </elementA>
 </rootElement>;
 ```
 
@@ -55,32 +55,32 @@ This sample XML code is used for examples throughout this chapter:
 
 ```xml
 <bookstore>
-    <book category="COOKING">
-        <title lang="en">The Boston Cooking-School Cookbook</title>
-        <author>Fannie Merrit Farmer</author>
-        <year>1896</year>
-        <price>49.99</price>
-    </book>
-    <book category="CHILDREN">
-        <title lang="en">The Wonderful Wizard of Oz</title>
-        <author>L. Frank Baum</author>
-        <year>1900</year>
-        <price>39.95</price>
-    </book>
-    <book category="CHILDREN">
-        <title lang="en">Alice's Adventures in Wonderland</title>
-        <author>Charles "Lewis Carroll" Dodgeson</author>
-        <author>Charles Dodgeson</author>
-        <author>Lewis Carroll</author>
-        <year>1865</year>
-        <price>29.99</price>
-    </book>
-    <book category="MUSIC">
-        <title lang="en">Gilbert and Sullivan Opera; A History and a Comment</title>
-        <author>H. M. Walbrook</author>
-        <year>1922</year>
-        <price>30.00</price>
-    </book>
+ <book category="COOKING">
+ <title lang="en">The Boston Cooking-School Cookbook</title>
+ <author>Fannie Merrit Farmer</author>
+ <year>1896</year>
+ <price>49.99</price>
+ </book>
+ <book category="CHILDREN">
+ <title lang="en">The Wonderful Wizard of Oz</title>
+ <author>L. Frank Baum</author>
+ <year>1900</year>
+ <price>39.95</price>
+ </book>
+ <book category="CHILDREN">
+ <title lang="en">Alice's Adventures in Wonderland</title>
+ <author>Charles "Lewis Carroll" Dodgeson</author>
+ <author>Charles Dodgeson</author>
+ <author>Lewis Carroll</author>
+ <year>1865</year>
+ <price>29.99</price>
+ </book>
+ <book category="MUSIC">
+ <title lang="en">Gilbert and Sullivan Opera; A History and a Comment</title>
+ <author>H. M. Walbrook</author>
+ <year>1922</year>
+ <price>30.00</price>
+ </book>
 </bookstore>
 ```
 
@@ -139,26 +139,26 @@ This method is called when you evaluate the object in the JavaScript Console of 
 
 ```xml
 > bookstoreXML.book[1];
-    <book category="CHILDREN">
-        <title lang="en">The Wonderful Wizard of Oz</title>
-        <author>L. Frank Baum</author>
-        <year>1900</year>
-        <price>39.95</price>
-    </book>
+ <book category="CHILDREN">
+ <title lang="en">The Wonderful Wizard of Oz</title>
+ <author>L. Frank Baum</author>
+ <year>1900</year>
+ <price>39.95</price>
+ </book>
 ```
 
 If you evaluate an object with a text value, you see the text value. For example:
 
 ```xml
 > bookstoreXML.book[1].@category;
-    CHILDREN
+ CHILDREN
 ```
 
 If you access multiple values, the values are concatenated:
 
 ```xml
 > bookstoreXML.book.@category
-    COOKINGCHILDRENCHILDRENMUSIC
+ COOKINGCHILDRENCHILDRENMUSIC
 ```
 
 The [toXMLString()](../xml-object-reference#xmltoxmlstring) method serializes the entire element, including the tags, into a string.
@@ -189,10 +189,10 @@ The result is this XML:
 
 ```xml
 <book category="CHILDREN">
-    <title lang="en">Alice's Adventures in Wonderland</title>
-    <author>Charles 'Lewis Carroll' Dodgeson</author>
-    <year>1865</year>
-    <price>29.99</price>
+ <title lang="en">Alice's Adventures in Wonderland</title>
+ <author>Charles 'Lewis Carroll' Dodgeson</author>
+ <year>1865</year>
+ <price>29.99</price>
 </book>
 ```
 
@@ -216,11 +216,11 @@ The result is this XML:
 
 ```xml
 <book category="CHILDREN">
-    <title lang="en">The Wonderful Wizard of Oz</title>
-    <author>L. Frank Baum</author>
-    <year>1900</year>
-    <price>39.95</price>
-    <rating>*****</rating>
+ <title lang="en">The Wonderful Wizard of Oz</title>
+ <author>L. Frank Baum</author>
+ <year>1900</year>
+ <price>39.95</price>
+ <rating>*****</rating>
 </book>
 ```
 
@@ -273,66 +273,66 @@ The `XML` object provides methods that allow you to retrieve elements contained 
 - `XML.`[children()](../xml-object-reference#xmlchildren) gets the direct child elements, including text elements.
 - `XML.`[elements()](../xml-object-reference#xmlelements) gets the direct child elements that are XML tags, but does not get text.
 - `XML.`[descendants()](../xml-object-reference#xmldescendants) allows you to match a specific tag, and gets all matching elements at any level of nesting. You can also use a "double dot" notation to access descendants of an element. For example, these statements are equivalent:
-    ```javascript
-    xml..title
-    xml.descendants("title")
-    ```
+ ```javascript
+ xml..title
+ xml.descendants("title")
+ ```
 
 For example, consider this XML code loaded into a top-level `XML` object named `x`:
 
 ```xml
 <top>
-    <one>one text</one>
-    <two>
-        two text
-        <inside>inside text</inside>
-    </two>
-    top text
+ <one>one text</one>
+ <two>
+ two text
+ <inside>inside text</inside>
+ </two>
+ top text
 </top>
 ```
 
 Here are the results of the different calls.
 
 - The result of `XML.`[children()](../xml-object-reference#xmlchildren) contains 3 elements, the direct child tags `<one>` and `<two>`, and the directly contained text of the `<top>` tag:
-    ```xml
-    **> x.children()**
-        <one>one text</one>
-        <two>
-        two text
-        <inside>inside text</inside>
-        </two>
-        top text
+ ```xml
+ **> x.children()**
+ <one>one text</one>
+ <two>
+ two text
+ <inside>inside text</inside>
+ </two>
+ top text
 
-    **> x.children().length()**
-        3
-    ```
+ **> x.children().length()**
+ 3
+ ```
 - The result of `XML.`[elements()](../xml-object-reference#xmlelements) contains 2 elements, the direct child tags `<one>` and `<two>`:
-    ```xml
-    **> x.elements()**
-        <one>one text</one>
-        <two>
-            two text
-            <inside>inside text</inside>
-        </two>
-    **> x.elements().length()**
-        2
-    ```
+ ```xml
+ **> x.elements()**
+ <one>one text</one>
+ <two>
+ two text
+ <inside>inside text</inside>
+ </two>
+ **> x.elements().length()**
+ 2
+ ```
 - The result of `XML.`[descendants()](../xml-object-reference#xmldescendants) contains 7 elements, the direct child tags `<one>` and `<two>`, the `<inside>` tag one level down, and the text contents of all the tags:
-    ```xml
-    **> x.descendants()**
-        <one>one text</one>
-        one text
-        <two>
-            two text
-            <inside>inside text</inside>
-        </two>
-        two text
-        <inside>inside text</inside>
-        inside text
-        top text
-    **> x.descendants().length()**
-        7
-    ```
+ ```xml
+ **> x.descendants()**
+ <one>one text</one>
+ one text
+ <two>
+ two text
+ <inside>inside text</inside>
+ </two>
+ two text
+ <inside>inside text</inside>
+ inside text
+ top text
+ **> x.descendants().length()**
+ 7
+ ```
 
 ---
 
@@ -348,17 +348,17 @@ You can define a namespace within an XML element using the xmlns attribute, and 
 <bookstore **xmlns:kids="http://kids.mybookstore.com"**>
 
 <book category="COOKING">
-    <title lang="en">The Boston Cooking-School Cookbook</title>
-    <author>Fannie Merrit Farmer</author>
-    <year>1896</year>
-    <price>49.99</price>
+ <title lang="en">The Boston Cooking-School Cookbook</title>
+ <author>Fannie Merrit Farmer</author>
+ <year>1896</year>
+ <price>49.99</price>
 </book>
 
 <**kids:**book category="CHILDREN">
-    <title lang="en">The Wonderful Wizard of Oz</title>
-    <author>L. Frank Baum</author>
-    <year>1900</year>
-    <price>39.95</price>
+ <title lang="en">The Wonderful Wizard of Oz</title>
+ <author>L. Frank Baum</author>
+ <year>1900</year>
+ <price>39.95</price>
 </**kids:**book>
 ...
 ```
@@ -400,33 +400,33 @@ Once you have set the default namespace:
 ### Accessing elements in namespaces
 
 - You can access elements that are in the default namespace directly, without using a [Namespace object](../xml-object-reference#namespace-object).
-    - If you have not set a default, you can use direct access for elements with no namespace specifier.
-    - If you have set a default, you can use direct access for elements in that namespace.
+ - If you have not set a default, you can use direct access for elements with no namespace specifier.
+ - If you have set a default, you can use direct access for elements in that namespace.
 - If you have assigned an element to a namespace, and have not made it the default, you must use a [Namespace object](../xml-object-reference#namespace-object) to access those elements. For example:
-    ```javascript
-    var ns = new Namespace (**"http://kids.mybookstore.com"**);
-    bookstoreXML.**ns::book**;
-    ```
+ ```javascript
+ var ns = new Namespace (**"http://kids.mybookstore.com"**);
+ bookstoreXML.**ns::book**;
+ ```
 
-    This returns all books that have been assigned to the "kids" namespace.
+ This returns all books that have been assigned to the "kids" namespace.
 - If you have set a default namespace, you can still access all objects that do not have any specific namespace assignment by using a [Namespace object](../xml-object-reference#namespace-object) for the empty string, which is the default creation case:
-    ```javascript
-    var emptyNS = new Namespace ();
-    bookstoreXML.emptyNS::book;
-    ```
+ ```javascript
+ var emptyNS = new Namespace ();
+ bookstoreXML.emptyNS::book;
+ ```
 
-    This returns all books that have not been assigned to any namespace.
+ This returns all books that have not been assigned to any namespace.
 - To access all elements, regardless of the namespace assignment, you can use an asterisk (\*) wild-card
-    character or null as the namespace name:
-    ```javascript
-    bookstoreXML.*::book;
-    ```
+ character or null as the namespace name:
+ ```javascript
+ bookstoreXML.*::book;
+ ```
 
-    or
-    ```js
-    var nullNS = null;
-    bookstoreXML.nullNS::book;
-    ```
+ or
+ ```js
+ var nullNS = null;
+ bookstoreXML.nullNS::book;
+ ```
 
 ---
 
@@ -438,7 +438,7 @@ For example, this function returns an XML value, in which embedded JavaScript va
 
 ```javascript
 function makeXML (first, last) {
-    return <person first={first} last={last}>{first + " " + last}</person>;
+ return <person first={first} last={last}>{first + " " + last}</person>;
 }
 ```
 

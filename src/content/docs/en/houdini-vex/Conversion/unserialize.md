@@ -16,7 +16,7 @@ Examples
 
 ```vex
 vector v[]
-float  f[] = { 1, 2, 3,  7, 8, 9 };
+float f[] = { 1, 2, 3, 7, 8, 9 };
 
 v = vector(unserialize(f));
 // Now v has a length of 2 and contains { {1,2,3}, {7,8,9} }

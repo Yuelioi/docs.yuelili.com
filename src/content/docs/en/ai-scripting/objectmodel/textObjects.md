@@ -53,7 +53,6 @@ While the three kinds of text frames have common characteristics, like `orientat
 A text path is not the same as a path art item. Text paths are associated with path art items that can be accessed and manipulated to modify the appearance of the associated text frame.
 :::
 
-
 ---
 
 ## Objects that represent text content
@@ -92,7 +91,6 @@ The `text frame` object's properties also include the defining features of the t
 :::note
 A `line` object cannot be created in a script. Your script can create `character`, `paragraph`, and `word` objects.
 :::
-
 
 ### Text ranges
 

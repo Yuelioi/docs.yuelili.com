@@ -15,7 +15,7 @@ order: 25
 ## 示例
 
 ```vex
-int        exists;
+int exists;
 // 判断P属性是否存在
 exists = hasdetailattrib("defgeo.bgeo", "P");
 

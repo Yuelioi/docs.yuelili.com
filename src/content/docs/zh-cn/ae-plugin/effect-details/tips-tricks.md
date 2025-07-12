@@ -41,16 +41,16 @@ After Effects的迭代函数本身提供了这种功能；你不需要担心在�
 
 ```cpp
 PF_Pixel *sampleIntegral32(PF_EffectWorld &def, int x, int y){
-    return (PF_Pixel*)((char*)def.data +
-        (y * def.rowbytes) +
-        (x * sizeof(PF_Pixel)));
+ return (PF_Pixel*)((char*)def.data +
+ (y * def.rowbytes) +
+ (x * sizeof(PF_Pixel)));
 }
 
 PF_Pixel16 *sampleIntegral64(PF_EffectWorld &def, int x, int y){
-    assert(PF_WORLD_IS_DEEP(&def));
-    return (PF_Pixel16*)((char*)def.data +
-        (y * def.rowbytes) +
-        (x * sizeof(PF_Pixel16)));
+ assert(PF_WORLD_IS_DEEP(&def));
+ return (PF_Pixel16*)((char*)def.data +
+ (y * def.rowbytes) +
+ (x * sizeof(PF_Pixel16)));
 }
 ```
 
@@ -85,15 +85,15 @@ PF_Pixel16 *sampleIntegral64(PF_EffectWorld &def, int x, int y){
 你不一定从干净的输出画布开始效果处理。我们的高斯模糊滤镜为了做到这一点，在渲染之前执行以下操作：
 
 ```cpp
-src_rect.left   = in_data>output_origin_x;
-src_rect.right  = src_rect.left + input>width;
-src_rect.top    = in_data>output_origin_y;
+src_rect.left = in_data>output_origin_x;
+src_rect.right = src_rect.left + input>width;
+src_rect.top = in_data>output_origin_y;
 src_rect.bottom = src_rect.top + input>height;
 
 err = PF_FILL(NULL, NULL, output);
 
 if (!err) {
-    err = PF_COPY(&params[0]>u.ld, output, NULL, &src_rect);
+ err = PF_COPY(&params[0]>u.ld, output, NULL, &src_rect);
 }
 ```
 

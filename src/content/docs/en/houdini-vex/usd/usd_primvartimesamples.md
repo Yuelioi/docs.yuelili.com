@@ -41,16 +41,16 @@ float time_codes[] = usd_primvartimesamples(0, "/geo/cube", "foo");
 // Get primvar values at authored time samples on the given primitive.
 float[] usd_primvartimesamplevalues(const int input; const string primpath, primvarname)
 {
-    float result[];
+ float result[];
 
-    float time_samples[] = usd_primvartimesamples( input, primpath, primvarname );
-    foreach( float time_code ; time_samples ) 
-    {
-        float value = usd_primvar( input, primpath, primvarname, time_code );
-        push( result, value );
-    }
+ float time_samples[] = usd_primvartimesamples( input, primpath, primvarname );
+ foreach( float time_code ; time_samples ) 
+ {
+ float value = usd_primvar( input, primpath, primvarname, time_code );
+ push( result, value );
+ }
 
-    return result;
+ return result;
 }
 
 ```

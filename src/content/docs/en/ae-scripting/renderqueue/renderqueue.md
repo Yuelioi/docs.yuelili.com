@@ -21,7 +21,6 @@ The RenderQueue object represents the render automation process, the data and fu
 This functionality was added in After Effects 14.0 (CC 2017)
 :::
 
-
 #### Description
 
 indicates whether or not there are queued render items in the After Effects render queue. Only queued items can be added to the AME queue.
@@ -41,7 +40,6 @@ Boolean; read-only.
 :::note
 This functionality was added in After Effects 22.0 (2022)
 :::
-
 
 #### Description
 
@@ -108,9 +106,9 @@ Gets a specified item from the ite ms collection.
 
 #### Parameters
 
-| Parameter |                 Type                  |           Description           |
-| --------- | ------------------------------------- | ------------------------------- |
-| `index`   | Integer, in the range `[0..numItems]` | The position index of the item. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | Integer, in the range `[0..numItems]` | The position index of the item. |
 
 #### Returns
 
@@ -128,9 +126,9 @@ Pauses the current rendering process, or continues a paused rendering process. T
 
 #### Parameters
 
-| Parameter |  Type   |                                  Description                                   |
-| --------- | ------- | ------------------------------------------------------------------------------ |
-| `pause`   | Boolean | `true` to pause a current render process, `false` to continue a paused render. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `pause` | Boolean | `true` to pause a current render process, `false` to continue a paused render. |
 
 #### Returns
 
@@ -169,9 +167,9 @@ Shows or hides the Render Queue panel.
 
 #### Parameters
 
-| Parameter |  Type   |                           Description                            |
-| --------- | ------- | ---------------------------------------------------------------- |
-| `doShow`  | Boolean | When `true`, show the Render Queue panel. When `false`, hide it. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `doShow` | Boolean | When `true`, show the Render Queue panel. When `false`, hide it. |
 
 #### Returns
 
@@ -205,7 +203,6 @@ Nothing.
 This functionality was added in After Effects 14.0 (CC 2017)
 :::
 
-
 #### Description
 
 Calls the Queue In AME command. This method requires passing a boolean value, telling AME whether to only queue the render items (`false`) or if AME should also start processing its queue (`true`).
@@ -214,16 +211,14 @@ Calls the Queue In AME command. This method requires passing a boolean value, te
 This requires Adobe Media Encoder CC 2017 (11.0) or later.
 :::
 
-
 :::tip
 When AME receives the queued items, it applies the most recently used encoding preset. If `render_immediately_in_AME` is set to `true`, you will not have an opportunity to change the encoding settings.
 :::
 
-
 #### Parameters
 
-|          Parameter          |  Type   |                                                       Description                                                       |
-| --------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `render_immediately_in_AME` | Boolean | Telling AME whether to only queue the render items (`false`) or if AME should also start processing its queue (`true`). |
 
 #### Returns
@@ -238,9 +233,9 @@ The following sample code checks to see if there are queued items in the render 
 // Scripting support for Queue in AME.
 // Requires Adobe Media Encoder 11.0.
 if (app.project.renderQueue.canQueueInAME === true) {
-    // Send queued items to AME, but do not start rendering.
-    app.project.renderQueue.queueInAME(false);
+ // Send queued items to AME, but do not start rendering.
+ app.project.renderQueue.queueInAME(false);
 } else {
-    alert("There are no queued item in the Render Queue.");
+ alert("There are no queued item in the Render Queue.");
 }
 ```

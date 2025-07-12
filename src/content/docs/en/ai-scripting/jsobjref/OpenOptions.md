@@ -135,9 +135,9 @@ Boolean.
 
 var fileRef = filePath;
 if (fileRef != null) {
-    var openOptions = new OpenOptions();
-    openOptions.updateLegacyText = true;
+ var openOptions = new OpenOptions();
+ openOptions.updateLegacyText = true;
 
-    var docRef = open(fileRef, DocumentColorSpace.RGB, openOptions);
+ var docRef = open(fileRef, DocumentColorSpace.RGB, openOptions);
 }
 ```

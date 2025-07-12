@@ -13,7 +13,6 @@ The MaskPropertyGroup object encapsulates mask attributes in a layer.
 MaskPropertyGroup is a subclass of [PropertyGroup object](../propertygroup). All methods and attributes of [PropertyBase object](../propertybase) and PropertyGroup, in addition to those listed below, are available when working with MaskPropertyGroup.
 :::
 
-
 ---
 
 ## Attributes

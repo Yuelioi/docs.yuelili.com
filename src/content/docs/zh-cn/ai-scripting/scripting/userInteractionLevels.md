@@ -13,12 +13,12 @@ title: 用户交互级别
 
 使用 AppleScript，可以从一台机器向另一台机器发送命令，因此可以实现更多类型的交互。在 AppleScript 中，`user interaction` 级别属性有四个可能的值：
 
-| 属性值         | 结果   |
-|----------------------|---------------------------------------------------------------------------|
-| `never interact`     | 不允许任何交互。      |
-| `interact with self` | 仅允许与从脚本菜单（文件 > 脚本）执行的脚本交互。     |
-| `interact with local`| 允许与在本地机器上执行的脚本交互（包括自身）。          |
-| `interact with all`  | 允许与所有脚本交互。          |
+| 属性值 | 结果 |
+|---|---|
+| `never interact` | 不允许任何交互。 |
+| `interact with self` | 仅允许与从脚本菜单（文件 > 脚本）执行的脚本交互。 |
+| `interact with local`| 允许与在本地机器上执行的脚本交互（包括自身）。 |
+| `interact with all` | 允许与所有脚本交互。 |
 
 这四个值允许你根据脚本命令的来源控制交互。例如，如果应用程序作为远程用户的服务器，远程用户很难关闭对话框，但对于坐在机器前的人来说则没有问题。在这种情况下，将交互级别设置为 `interact with local` 可以防止对话框中断远程脚本，但允许为本地脚本显示对话框。
 
@@ -28,10 +28,10 @@ title: 用户交互级别
 
 在 JavaScript 中，`app.userInteractionLevel` 属性有两个可能的值：
 
-| 属性值        | 结果         |
-|---------------------|--------------------------|
-| `DISPLAYALERTS`     | 允许交互。         |
-| `DONTDISPLAYALERTS` | 不允许交互。       |
+| 属性值 | 结果 |
+|---|---|
+| `DISPLAYALERTS` | 允许交互。 |
+| `DONTDISPLAYALERTS` | 不允许交互。 |
 
 ---
 
@@ -39,7 +39,7 @@ title: 用户交互级别
 
 在 VBScript 中，`Application` 对象的 `UserInteractionLevel` 属性有两个可能的值：
 
-| 属性值         | 结果         |
-|----------------------|--------------------------|
-| `aiDisplayAlerts`    | 允许交互。         |
-| `aiDontDisplayAlerts`| 不允许交互。       |
+| 属性值 | 结果 |
+|---|---|
+| `aiDisplayAlerts` | 允许交互。 |
+| `aiDontDisplayAlerts`| 不允许交互。 |

@@ -3,13 +3,13 @@ title: agentclipsample
 order: 12
 ---
 
-`float  agentclipsample(<geometry>geometry, int prim, string clipname, float time, int channel_index)`
+`float agentclipsample(<geometry>geometry, int prim, string clipname, float time, int channel_index)`
 
-`float  agentclipsample(<geometry>geometry, int prim, string clipname, float time, string channel)`
+`float agentclipsample(<geometry>geometry, int prim, string clipname, float time, string channel)`
 
-`float  agentclipsample(<geometry>geometry, int prim, int clipindex, float time, int channel_index)`
+`float agentclipsample(<geometry>geometry, int prim, int clipindex, float time, int channel_index)`
 
-`float  agentclipsample(<geometry>geometry, int prim, int clipindex, float time, string channel)`
+`float agentclipsample(<geometry>geometry, int prim, int clipindex, float time, string channel)`
 
 在给定时间评估动画片段并返回指定通道的值。
 如果`clipname`不是代理的[动画片段](./agentclipcatalog "返回已加载到代理图元的所有动画片段")之一、`prim`超出范围、`prim`不是代理图元、`channel_index`超出范围或`channel`不存在，则返回零。

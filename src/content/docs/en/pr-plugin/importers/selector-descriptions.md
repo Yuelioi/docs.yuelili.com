@@ -37,9 +37,9 @@ To create a custom importer, the following capabilities must be set.
 See Additional Details for more info on custom importers.
 
 ```cpp
-noFile    = kPrTrue;
-hasSetup  = kPrTrue;
-canOpen   = kPrTrue;
+noFile = kPrTrue;
+hasSetup = kPrTrue;
+canOpen = kPrTrue;
 canCreate = kPrTrue;
 addToMenu = imMenuNew;
 ```
@@ -193,7 +193,6 @@ Create an asynchronous importer object using the data provided, and store it in 
 :::note
 In most cases, `imGetSourceVideo` is the better choice.
 :::
-
 
 Before going down this route, read the discussion here.
 

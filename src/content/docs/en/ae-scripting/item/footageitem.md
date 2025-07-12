@@ -14,7 +14,6 @@ The FootageItem object represents a footage item imported into a project, which 
 FootageItem is a subclass of [AVItem object](../avitem), which is a subclass of [Item object](../item). All methods and attributes of AVItem and Item, in addition to those listed below, are available when working with FootageItem.
 :::
 
-
 ---
 
 ## Attributes
@@ -69,7 +68,6 @@ Opens the footage in a Footage panel, and moves the Footage panel to front and g
 Missing and placeholder footage can be opened using this method, but cannot manually (via double-clicking it).
 :::
 
-
 #### Parameters
 
 None.
@@ -96,9 +94,9 @@ If the specified file has an unlabeled alpha channel, the method estimates the a
 
 #### Parameters
 
-| Parameter |                                                 Type                                                  |                   Description                   |
-| --------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
-| `file`    | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object | The file to be used as the footage main source. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `file` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object | The file to be used as the footage main source. |
 
 ---
 
@@ -112,13 +110,13 @@ Changes the source of this FootageItem to the specified placeholder. Creates a n
 
 #### Parameters
 
-|  Parameter  |                        Type                         |                 Description                 |
-| ----------- | --------------------------------------------------- | ------------------------------------------- |
-| `name`      | String                                              | The name of the placeholder.                |
-| `width`     | Integer, in the range `[4..30000]`                  | The width of the placeholder in pixels.     |
-| `height`    | Integer, in the range `[4..30000]`                  | The height of the placeholder in pixels.    |
-| `frameRate` | Floating-point value, in the range `[1.0..99.0]`    | The frame rate of the placeholder.          |
-| `duration`  | Floating-point value, in the range `[0.0..10800.0]` | The duration of the placeholder in seconds. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | The name of the placeholder. |
+| `width` | Integer, in the range `[4..30000]` | The width of the placeholder in pixels. |
+| `height` | Integer, in the range `[4..30000]` | The height of the placeholder in pixels. |
+| `frameRate` | Floating-point value, in the range `[1.0..99.0]` | The frame rate of the placeholder. |
+| `duration` | Floating-point value, in the range `[0.0..10800.0]` | The duration of the placeholder in seconds. |
 
 ---
 
@@ -136,10 +134,10 @@ The method preserves interpretation parameters from the previous `mainSource` ob
 
 #### Parameters
 
-|      Parameter      |                                                 Type                                                  |                              Description                              |
-| ------------------- | ----------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| `file`              | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object | The first file in the sequence to be used as the footage main source. |
-| `forceAlphabetical` | Boolean                                                                                               | When `true`, use the "Force alphabetical order" option.               |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `file` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object | The first file in the sequence to be used as the footage main source. |
+| `forceAlphabetical` | Boolean | When `true`, use the "Force alphabetical order" option. |
 
 ---
 
@@ -153,10 +151,10 @@ Changes the source of this FootageItem to the specified solid. Creates a new Sol
 
 #### Parameters
 
-|   Parameter   |                                     Type                                      |             Description              |
-| ------------- | ----------------------------------------------------------------------------- | ------------------------------------ |
-| `color`       | Array of three floating-point values, `[R, G, B]`, in the range `[0.0..1.0]`. | The color of the solid.              |
-| `name`        | String                                                                        | The name of the solid.               |
-| `width`       | Integer, in the range `[4..30000]`                                            | The width of the solid in pixels.    |
-| `height`      | Integer, in the range `[4..30000]`                                            | The height of the solid in pixels.   |
-| `pixelAspect` | Floating-point value, in the range `[0.01..100.0]`                            | The pixel aspect ratio of the solid. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `color` | Array of three floating-point values, `[R, G, B]`, in the range `[0.0..1.0]`. | The color of the solid. |
+| `name` | String | The name of the solid. |
+| `width` | Integer, in the range `[4..30000]` | The width of the solid in pixels. |
+| `height` | Integer, in the range `[4..30000]` | The height of the solid in pixels. |
+| `pixelAspect` | Floating-point value, in the range `[0.01..100.0]` | The pixel aspect ratio of the solid. |

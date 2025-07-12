@@ -76,9 +76,9 @@ Examples
 
 ```vex
 sample_bsdf(F, inI, outI, eval, type, sx, sy,
-    "direct", 0,        // Specify indirect illumination
-    "import:sssmfp", sssmfp,        // Read the exported sssmfp parameter
-    ...
+ "direct", 0, // Specify indirect illumination
+ "import:sssmfp", sssmfp, // Read the exported sssmfp parameter
+ ...
 );
 
 ```

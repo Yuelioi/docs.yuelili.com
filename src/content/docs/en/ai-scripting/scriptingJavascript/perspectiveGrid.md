@@ -7,7 +7,6 @@ title: Working with the perspective grid
 This functionality was added in Illustrator CC 2017
 :::
 
-
 The Perspective Grid is a feature that enables you to create and manipulate art in a spatial environment using established laws of perspective. Enable Perspective Grid using the View > Perspective Grid menu or the perspective tools in the toolbar.
 
 The SDK provides an API for working with the perspective grid programmatically, and your scripts have some access to this API. A script can:
@@ -73,12 +72,12 @@ mydoc.hidePerspectiveGrid();
 
 The perspective grid plane types are:
 
-|     Plane     |                 Type                  |
-| ------------- | ------------------------------------- |
-| Left plane    | `PerspectiveGridPlaneType.LEFTPLANE`  |
-| Right plane   | `PerspectiveGridPlaneType.RIGHTPLANE` |
-| Floor plane   | `PerspectiveGridPlaneType.FLOORPLANE` |
-| Invalid plane | `PerspectiveGridPlaneType.NOPLANE`    |
+| Plane | Type |
+| --- | --- |
+| Left plane | `PerspectiveGridPlaneType.LEFTPLANE` |
+| Right plane | `PerspectiveGridPlaneType.RIGHTPLANE` |
+| Floor plane | `PerspectiveGridPlaneType.FLOORPLANE` |
+| Invalid plane | `PerspectiveGridPlaneType.NOPLANE` |
 
 For a one-point perspective grid, only the left and floor plane are valid.
 
@@ -114,7 +113,7 @@ mydoc.showPerspectiveGrid();
 
 //Check if active plane is set to left; if not, set it to left
 if (mydoc.getPerspectiveActivePlane() != PerspectiveGridPlaneType.LEFTPLANE) {
-    mydoc.setPerspectiveActivePlane(PerspectiveGridPlaneType.LEFTPLANE);
+ mydoc.setPerspectiveActivePlane(PerspectiveGridPlaneType.LEFTPLANE);
 }
 
 //Draw rectangle in perspective, then resize to 200% and move
@@ -173,7 +172,7 @@ mydoc.showPerspectiveGrid();
 
 //Check if active plane is set to left; if not, set it to left
 if (mydoc.getPerspectiveActivePlane() != PerspectiveGridPlaneType.LEFTPLANE) {
-    mydoc.setPerspectiveActivePlane(PerspectiveGridPlaneType.LEFTPLANE);
+ mydoc.setPerspectiveActivePlane(PerspectiveGridPlaneType.LEFTPLANE);
 }
 
 //Bring the ellipse to the active plane (left plane)

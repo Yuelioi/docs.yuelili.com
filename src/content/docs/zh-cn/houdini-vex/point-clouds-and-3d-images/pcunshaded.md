@@ -13,5 +13,5 @@ order: 32
 警告：
 
 - 在多线程 OP 中使用此函数时可能无法正常工作。
-  不能对同一个句柄嵌套使用 `pcunshaded` 或 [pciterate](./pciterate "此函数可用于遍历pcopen查询中找到的所有点。") 循环。也就是说，对于单个 [pcopen](./pcopen "返回点云文件的句柄。") 调用，只能进入一个 `pcunshaded` 或 [pciterate](./pciterate "此函数可用于遍历pcopen查询中找到的所有点。") 循环。
+ 不能对同一个句柄嵌套使用 `pcunshaded` 或 [pciterate](./pciterate "此函数可用于遍历pcopen查询中找到的所有点。") 循环。也就是说，对于单个 [pcopen](./pcopen "返回点云文件的句柄。") 调用，只能进入一个 `pcunshaded` 或 [pciterate](./pciterate "此函数可用于遍历pcopen查询中找到的所有点。") 循环。
 - 在 `pcunshaded` 循环内涉及导数的计算可能会得到略微不同的结果。如果需要对未被 [pcimport](./pcimport "在pciterate或pcunshaded循环中从点云导入通道数据。") 设置的变量求导数，最好在进入 `pcunshaded` 循环之前预先计算导数。

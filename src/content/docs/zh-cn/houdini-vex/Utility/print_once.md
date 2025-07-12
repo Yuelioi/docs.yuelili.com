@@ -25,7 +25,7 @@ order: 11
 ```vex
 // 仅打印一次"Hello world"
 for (int i = 0; i < 100; ++i)
-    print_once("Hello world\n");
+ print_once("Hello world\n");
 
 // 在所有着色器中仅打印一次缺失纹理警告
 print_once( sprintf("缺失纹理贴图: %s\n", texture_map), "global", 1);

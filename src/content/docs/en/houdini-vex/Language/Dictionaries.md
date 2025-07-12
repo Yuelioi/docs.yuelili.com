@@ -37,7 +37,7 @@ To declare a dictionary variable, the general form is
 
 ```vex
 // My string is a normal dictionary
-dict   mydict;
+dict mydict;
 
 ```
 
@@ -48,7 +48,7 @@ To declare a function that returns a dictionary:
 dict rgb_table()
 {
 ...
-};    
+}; 
 
 ```
 
@@ -80,11 +80,11 @@ cast to select what type to extract. Where possible, the native type
 will be converted to the desired type.
 
 ```vex
-dict dictionary;        // Create empty dictionary
-dictionary['key'] = 3;        // Store 3 in the index key
-float three = dictionary['key'];        // Extract key
-dictionary['newkey'] = dictionary['key'];  // Error: Ambiguous type!
-dictionary['newkey'] = int(dictionary['key']);  // Extract key as int and copy
+dict dictionary; // Create empty dictionary
+dictionary['key'] = 3; // Store 3 in the index key
+float three = dictionary['key']; // Extract key
+dictionary['newkey'] = dictionary['key']; // Error: Ambiguous type!
+dictionary['newkey'] = int(dictionary['key']); // Extract key as int and copy
 
 ```
 
@@ -111,14 +111,14 @@ dictionary['key'] = set(1, 2, 3);
 int value_type = typeid(dictionary, 'key');
 if (value_type == typeid(vector()))
 {
-    // This code path is taken since the key has a 'vector' type.
-    vector val = dictionary['key'];
-    // ... do something with the vector value.
+ // This code path is taken since the key has a 'vector' type.
+ vector val = dictionary['key'];
+ // ... do something with the vector value.
 }
 else if (value_type == typeid(vector4()))
 {
-    vector4 val = dictionary['key'];
-    // ... do something with the vector4 value.
+ vector4 val = dictionary['key'];
+ // ... do something with the vector4 value.
 }
 
 ```

@@ -53,20 +53,20 @@ Returns an object, containing similar data
 
 ```javascript
 {
-    value: [
-        sRGB,
-        BT.601 (NTSC),
-        BT.601 (PAL),
-        BT.709,
-        BT.709 (Scene),
-        BT.2020,
-        BT.2020 (Scene),
-        BT.2100 PQ,
-        BT.2100 PQ (Scene),
-        BT.2100 HLG,
-        BT.2100 HLG (Scene),
-        DCDM XYZ,
-    ]
+ value: [
+ sRGB,
+ BT.601 (NTSC),
+ BT.601 (PAL),
+ BT.709,
+ BT.709 (Scene),
+ BT.2020,
+ BT.2020 (Scene),
+ BT.2100 PQ,
+ BT.2100 PQ (Scene),
+ BT.2100 HLG,
+ BT.2100 HLG (Scene),
+ DCDM XYZ,
+ ]
 };
 ```
 
@@ -95,9 +95,9 @@ Rename first project item.
 ```javascript
 var item = app.project.rootItem.children[0];
 if (item) {
-    item.name = item.name + ', updated by PProPanel.';
+ item.name = item.name + ', updated by PProPanel.';
 } else {
-    alert('Could not rename project item');
+ alert('Could not rename project item');
 }
 ```
 
@@ -182,10 +182,10 @@ Attaches the media at `newMediaPath` to the project item, as either hi-res or pr
 
 #### Parameters
 
-|  Parameter  |  Type   |         Description          |
-| ----------- | ------- | ---------------------------------------------------------------------------------------- |
-| `mediaPath` | String  | The path to the the newly-assigned media.                  |
-| `isHiRes`   | Integer | Whether the new media should be attached as the proxy `0`, or high resolution `1` media. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `mediaPath` | String | The path to the the newly-assigned media. |
+| `isHiRes` | Integer | Whether the new media should be attached as the proxy `0`, or high resolution `1` media. |
 
 #### Returns
 
@@ -239,9 +239,9 @@ Updates the project item to point to a new media path.
 
 #### Parameters
 
-|    Parameter     |  Type   |          Description          |
-| ---------------- | ------- | ----------------------------- |
-| `newPath`        | String  | A new path to the media file. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `newPath` | String | A new path to the media file. |
 | `overrideChecks` | Boolean | Override any safety concerns. |
 
 #### Returns
@@ -278,9 +278,9 @@ Creates an empty bin, within the project item. Only works within bins.
 
 #### Parameters
 
-| Parameter |  Type  |     Description      |
-| --------- | ------ | -------------------- |
-| `name`    | String | A name of a new bin. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | A name of a new bin. |
 
 #### Returns
 
@@ -298,9 +298,9 @@ Creates a search bin; only works for bin project items.
 
 #### Parameters
 
-|   Parameter   |  Type  |       Description        |
-| ------------- | ------ | ------------------------ |
-| `name`        | String | A name of a new bin.     |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | A name of a new bin. |
 | `queryString` | String | Query string for search. |
 
 #### Returns
@@ -319,14 +319,14 @@ Creates a new project item for a sub-clip of the existing project item.
 
 #### Parameters
 
-|      Parameter      |  Type   |      Description       |
-| ------------------- | ------- | ------------------------------------------ |
-| `name`    | String  | A name of a new subclip.         |
-| `startTime`         | String  | Start time of subclip, in ticks.           |
-| `endTime`           | String  | End time of subclip, in ticks.   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | A name of a new subclip. |
+| `startTime` | String | Start time of subclip, in ticks. |
+| `endTime` | String | End time of subclip, in ticks. |
 | `hasHardBoundaries` | Integer | If `1`, the user cannot extend in and out. |
-| `takeVideo`         | Integer | If `1`, use video from source.   |
-| `takeAudio`         | Integer | If `1`, use audio from source.   |
+| `takeVideo` | Integer | If `1`, use video from source. |
+| `takeAudio` | Integer | If `1`, use audio from source. |
 
 #### Returns
 
@@ -362,9 +362,9 @@ Returns an array of project items, all of which reference the same media path.
 
 #### Parameters
 
-|    Parameter     |  Type   |    Description    |
-| ---------------- | ------- | ------------------------------------- |
-| `pathToMatch`    | String  | A path to match.            |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `pathToMatch` | String | A path to match. |
 | `ignoreSubClips` | Integer | If `1`, no subclips will be returned. |
 
 #### Returns
@@ -540,32 +540,32 @@ None.
 
 A footage interpretation structure, or `0` if unsuccessful.
 
-|         Property          |  Type   |          Description           |
-|---------------------------|---------|----------------------------------------------------|
-| `alphaUsage`    | Integer | Alpha, will be one of:         |
-|       |         | - `0` - `ALPHACHANNEL_NONE`              |
-|       |         | - `1` - `ALPHACHANNEL_STRAIGHT`          |
-|       |         | - `2` - `ALPHACHANNEL_PREMULTIPLIED`     |
-|       |         | - `3` - `ALPHACHANNEL_IGNORE`            |
-| `fieldType`     | Integer | Field type, one of:            |
-|       |         | - `-1` - `FIELDTYPE_DEFAULT`             |
-|       |         | - `0` - `FIELDTYPE_PROGRESSIVE`          |
-|       |         | - `1` - `FIELDTYPE_UPPERFIRST`           |
-|       |         | - `2` - `FIELDTYPE_LOWERFIRST`           |
-| `ignoreAlpha`   | Boolean | `true` or `false`.             |
-| `invertAlpha`   | Boolean | `true` or `false`.             |
-| `frameRate`     | Float   | Frame rate as floating point value.      |
-| `pixelAspectRatio`        | Float   | Pixel aspect ratio as floating point value.        |
-| `removePulldown`          | Boolean | `true` or `false`.             |
+| Property | Type | Description |
+|---|---|---|
+| `alphaUsage` | Integer | Alpha, will be one of: |
+| | | - `0` - `ALPHACHANNEL_NONE` |
+| | | - `1` - `ALPHACHANNEL_STRAIGHT` |
+| | | - `2` - `ALPHACHANNEL_PREMULTIPLIED` |
+| | | - `3` - `ALPHACHANNEL_IGNORE` |
+| `fieldType` | Integer | Field type, one of: |
+| | | - `-1` - `FIELDTYPE_DEFAULT` |
+| | | - `0` - `FIELDTYPE_PROGRESSIVE` |
+| | | - `1` - `FIELDTYPE_UPPERFIRST` |
+| | | - `2` - `FIELDTYPE_LOWERFIRST` |
+| `ignoreAlpha` | Boolean | `true` or `false`. |
+| `invertAlpha` | Boolean | `true` or `false`. |
+| `frameRate` | Float | Frame rate as floating point value. |
+| `pixelAspectRatio` | Float | Pixel aspect ratio as floating point value. |
+| `removePulldown` | Boolean | `true` or `false`. |
 | `vrConformProjectionType` | Integer | The projection type in use, for VR footage. One of |
-|       |         | - `0` - `VR_CONFORM_PROJECTION_NONE`     |
-|       |         | - `1` - `VR_CONFORM_PROJECTION_EQUIRECTANGULAR`    |
-| `vrLayoutType`            | Integer | The layout of footage in use, for VR. One of       |
-|       |         | - `0` - `VR_LAYOUT_MONOSCOPIC`           |
-|       |         | - `1` - `VR_LAYOUT_STEREO_OVER_UNDER`    |
-|       |         | - `2` - `VR_LAYOUT_STEREO_SIDE_BY_SIDE`            |
-| `vrHorizontalView`        | String  | The horizontal view in use, for VR footage.        |
-| `vrVerticalView`          | String  | The vertical view in use, for VR footage.          |
+| | | - `0` - `VR_CONFORM_PROJECTION_NONE` |
+| | | - `1` - `VR_CONFORM_PROJECTION_EQUIRECTANGULAR` |
+| `vrLayoutType` | Integer | The layout of footage in use, for VR. One of |
+| | | - `0` - `VR_LAYOUT_MONOSCOPIC` |
+| | | - `1` - `VR_LAYOUT_STEREO_OVER_UNDER` |
+| | | - `2` - `VR_LAYOUT_STEREO_SIDE_BY_SIDE` |
+| `vrHorizontalView` | String | The horizontal view in use, for VR footage. |
+| `vrVerticalView` | String | The vertical view in use, for VR footage. |
 
 ---
 
@@ -638,10 +638,10 @@ Retrieves the current out point for specified media type.
 
 #### Parameters
 
-|  Parameter  |  Type   |           Description           |
-|-------------|---------|-------------------------------------------------------------------------|
-| `mediaType` | Integer | Pass `1` for video only, or `2` for audio only.               |
-|   |         | If no `mediaType` is passed, function gets the out point for all media. |
+| Parameter | Type | Description |
+|---|---|---|
+| `mediaType` | Integer | Pass `1` for video only, or `2` for audio only. |
+| | | If no `mediaType` is passed, function gets the out point for all media. |
 
 #### Returns
 
@@ -690,12 +690,12 @@ This generates a list of objects, each object representing a column. Each object
 
 For example:
 
-|      Key      |        Value        |       Description        |
-| ------------- | ----------------------------------------------------------- | ------------------------ |
-| `ColumnName`  | `"Name"`            | Name of the column       |
-| `ColumnValue` | `"A014C003_180620_R205.mov"`            | Example of colummn value |
-| `ColumnID`    | `"Column.Intrinsic.Name"`               | ID of the colummn        |
-| `ColumnPath`  | `"http://ns.adobe.com/premierePrivateProjectMetaData/1.0/"` | Path of the column       |
+| Key | Value | Description |
+| --- | --- | --- |
+| `ColumnName` | `"Name"` | Name of the column |
+| `ColumnValue` | `"A014C003_180620_R205.mov"` | Example of colummn value |
+| `ColumnID` | `"Column.Intrinsic.Name"` | ID of the colummn |
+| `ColumnPath` | `"http://ns.adobe.com/premierePrivateProjectMetaData/1.0/"` | Path of the column |
 
 ---
 
@@ -871,8 +871,8 @@ Changes name of bin. Only works on project items which are bins.
 
 #### Parameters
 
-| Parameter |  Type  |   Description   |
-| --------- | ------ | --------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `newName` | String | A new bin name. |
 
 #### Returns
@@ -909,8 +909,8 @@ Sets the project item's color label.
 
 #### Parameters
 
-|  Parameter   |  Type   |             Description              |
-| ------------ | ------- | ---------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `labelColor` | Integer | A label color; see [ProjectItem.getColorLabel()](#projectitemgetcolorlabel). |
 
 #### Returns
@@ -929,9 +929,9 @@ Returns a structure describing the current interpretation of the projectItem.
 
 #### Parameters
 
-|    Parameter     | Type |   Description   |
-| ---------------- | ---- | ----------------------------------- |
-| `interpretation` |      | A footage interpretation structure. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `interpretation` | | A footage interpretation structure. |
 
 #### Returns
 
@@ -949,9 +949,9 @@ Sets the in point to `timeInTicks`, for specified media types.
 
 #### Parameters
 
-|  Parameter  |  Type   |                     Description            |
-| ----------- | ------- | ---------------------------------------------------------------------------------------------------------------- |
-| `time`      | String  | A time in ticks.                           |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `time` | String | A time in ticks. |
 | `mediaType` | Integer | Determining which media type to affect; pass `1` for video only, `2` for audio only, or `4` for all media types. |
 
 #### Returns
@@ -988,9 +988,9 @@ Sets the out point to `timeInTicks`, for specified media types.
 
 #### Parameters
 
-|  Parameter  |  Type   |                     Description            |
-| ----------- | ------- | ---------------------------------------------------------------------------------------------------------------- |
-| `time`      | String  | A time in ticks.                           |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `time` | String | A time in ticks. |
 | `mediaType` | Integer | Determining which media type to affect; pass `1` for video only, `2` for audio only, or `4` for all media types. |
 
 #### Returns
@@ -1009,8 +1009,8 @@ Sets the frame rate of the project item.
 
 #### Parameters
 
-|   Parameter    | Type  |     Description     |
-| -------------- | ----- | ------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `newFrameRate` | Float | The new frame rate. |
 
 #### Returns
@@ -1029,9 +1029,9 @@ Sets the pixel aspect ratio for the project item.
 
 #### Parameters
 
-|   Parameter   |  Type   |    Description     |
-| ------------- | ------- | ------------------ |
-| `numerator`   | Integer | A new numerator.   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `numerator` | Integer | A new numerator. |
 | `denominator` | Integer | A new denominator. |
 
 #### Returns
@@ -1050,9 +1050,9 @@ Sets the private project metadata associated with the project item.
 
 #### Parameters
 
-|    Parameter    |       Type       |              Description               |
-| --------------- | ---------------- | ---------------------------------------------------------- |
-| `newMetadata`   | String           | A new, serialized private project metadata.      |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `newMetadata` | String | A new, serialized private project metadata. |
 | `updatedFields` | Array of strings | An array containing the names of the fields to be updated. |
 
 #### Returns
@@ -1089,9 +1089,9 @@ Assigns a new start time to the project item
 
 #### Parameters
 
-| Parameter |  Type  |      Description       |
-| --------- | ------ | ------------------------------------------ |
-| `time`    | String | A new starting time, represented in ticks. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `time` | String | A new starting time, represented in ticks. |
 
 #### Returns
 
@@ -1109,9 +1109,9 @@ Sets the XMP metadata associated with the project item.
 
 #### Parameters
 
-| Parameter |  Type  |           Description           |
-| --------- | ------ | ------------------------------- |
-| `newXMP`  | String | A new, serialized XMP metadata. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `newXMP` | String | A new, serialized XMP metadata. |
 
 #### Returns
 

@@ -27,7 +27,7 @@ Examples
 ```vex
 // Check whether the point group "pointstouse" exists.
 if (hasattrib("defgeo.bgeo", "pointgroup", "pointstouse")) {
-    // Do something with the point group
+ // Do something with the point group
 }
 
 ```

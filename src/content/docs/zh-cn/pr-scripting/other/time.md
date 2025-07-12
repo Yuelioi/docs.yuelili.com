@@ -53,26 +53,26 @@ title: 时间对象
 
 #### 参数
 
-|   参数   |   类型   |     描述      |
-|------------|------------------|-----------------------------------------------------------------------|
-| `frameRate`   | [时间对象](#) | 时间对象，表示要使用的帧率的单帧持续时间。 |
-| `displayFormat` | 整数    | 要使用的显示格式。可选值之一：      |
-|     |     | - `TIMEDISPLAY_24Timecode = 100;`   |
-|     |     | - `TIMEDISPLAY_25Timecode = 101;`   |
-|     |     | - `TIMEDISPLAY_2997DropTimecode = 102;`   |
-|     |     | - `TIMEDISPLAY_2997NonDropTimecode = 103;`      |
-|     |     | - `TIMEDISPLAY_30Timecode = 104;`   |
-|     |     | - `TIMEDISPLAY_50Timecode = 105;`   |
-|     |     | - `TIMEDISPLAY_5994DropTimecode = 106;`   |
-|     |     | - `TIMEDISPLAY_5994NonDropTimecode = 107;`      |
-|     |     | - `TIMEDISPLAY_60Timecode = 108;`   |
-|     |     | - `TIMEDISPLAY_Frames = 109;`    |
-|     |     | - `TIMEDISPLAY_23976Timecode = 110;`   |
-|     |     | - `TIMEDISPLAY_16mmFeetFrames = 111;`      |
-|     |     | - `TIMEDISPLAY_35mmFeetFrames = 112;`      |
-|     |     | - `TIMEDISPLAY_48Timecode = 113;`   |
-|     |     | - `TIMEDISPLAY_AudioSamplesTimecode = 200;`     |
-|     |     | - `TIMEDISPLAY_AudioMsTimecode = 201;`   |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `frameRate` | [时间对象](#) | 时间对象，表示要使用的帧率的单帧持续时间。 |
+| `displayFormat` | 整数 | 要使用的显示格式。可选值之一： |
+| | | - `TIMEDISPLAY_24Timecode = 100;` |
+| | | - `TIMEDISPLAY_25Timecode = 101;` |
+| | | - `TIMEDISPLAY_2997DropTimecode = 102;` |
+| | | - `TIMEDISPLAY_2997NonDropTimecode = 103;` |
+| | | - `TIMEDISPLAY_30Timecode = 104;` |
+| | | - `TIMEDISPLAY_50Timecode = 105;` |
+| | | - `TIMEDISPLAY_5994DropTimecode = 106;` |
+| | | - `TIMEDISPLAY_5994NonDropTimecode = 107;` |
+| | | - `TIMEDISPLAY_60Timecode = 108;` |
+| | | - `TIMEDISPLAY_Frames = 109;` |
+| | | - `TIMEDISPLAY_23976Timecode = 110;` |
+| | | - `TIMEDISPLAY_16mmFeetFrames = 111;` |
+| | | - `TIMEDISPLAY_35mmFeetFrames = 112;` |
+| | | - `TIMEDISPLAY_48Timecode = 113;` |
+| | | - `TIMEDISPLAY_AudioSamplesTimecode = 200;` |
+| | | - `TIMEDISPLAY_AudioMsTimecode = 201;` |
 
 #### 返回值
 

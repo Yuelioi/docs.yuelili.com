@@ -25,7 +25,7 @@ Examples
 ## examples
 
 ```vex
-int        pt;
+int pt;
 
 // Get the point of vertex 3
 pt = vertexpoint("defgeo.bgeo", 3);

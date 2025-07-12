@@ -52,10 +52,10 @@ Illustrator 界面包含一个脚本菜单（文件 > 脚本），可以快速�
 
 例如，当 IllustratorCC 安装到默认位置时，您将在以下位置创建 Startup Scripts 文件夹：
 
-|   操作系统   |   路径    |
-| ----------- | ------------------------------------------------------------- |
-| Windows     | `C:\Program Files\Adobe\Adobe lllustratorCC\Startup Scripts\` |
-| Mac OS      | `/Applications/Adobe lllustrator CC/Startup Scripts/`   |
+| 操作系统 | 路径 |
+| --- | --- |
+| Windows | `C:\Program Files\Adobe\Adobe lllustratorCC\Startup Scripts\` |
+| Mac OS | `/Applications/Adobe lllustrator CC/Startup Scripts/` |
 
 放置在 Startup Scripts 文件夹中的扩展名为 .jsx 的 JavaScript 脚本将在以下情况下自动运行：
 
@@ -68,15 +68,15 @@ Illustrator 界面包含一个脚本菜单（文件 > 脚本），可以快速�
 
 您可以在以下位置创建该文件夹：
 
-|   操作系统   |      路径       |
-| ----------- | ------------------------------------------------------------------- |
-| Windows     | `/Program Files/Common Files/Adobe/Startup Scripts CC/Illustrator`  |
-| Mac OS      | `/Library/Application Support/Adobe/Startup Scripts CC/Illustrator` |
+| 操作系统 | 路径 |
+| --- | --- |
+| Windows | `/Program Files/Common Files/Adobe/Startup Scripts CC/Illustrator` |
+| Mac OS | `/Library/Application Support/Adobe/Startup Scripts CC/Illustrator` |
 
 如果通用启动文件夹中的脚本仅由 Illustrator 执行，则脚本必须包含 ExtendScript #target 指令（`#target illustrator`）或类似以下代码：
 
 ```javascript
 if (BridgeTalk.appName == "illustrator") {
-    // 继续执行脚本
+ // 继续执行脚本
 }
 ```

@@ -232,19 +232,19 @@ textProp.setValue(textDocument);
 
 ```javascript
 [
-  line0.start_x,
-  line0.start_y,
-  line0.end_x,
-  line0.end_y,
-  line1.start_x,
-  line1.start_y,
-  line1.end_x,
-  line1.end_y,
-  ...
-  lineN-1.start_x,
-  lineN-1.start_y,
-  lineN-1.end_x,
-  lineN-1.end_y
+ line0.start_x,
+ line0.start_y,
+ line0.end_x,
+ line0.end_y,
+ line1.start_x,
+ line1.start_y,
+ line1.end_x,
+ line1.end_y,
+ ...
+ lineN-1.start_x,
+ lineN-1.start_y,
+ lineN-1.end_x,
+ lineN-1.end_y
 ]
 ```
 

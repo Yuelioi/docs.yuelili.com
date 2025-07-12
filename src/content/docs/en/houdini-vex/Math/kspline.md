@@ -106,8 +106,8 @@ This function is the equivalent of:
 ```vex
 type kspline(basis, t, v0, k0, v1, k1, v2, k2...)
 {
-    float tk = spline("linearsolve", t, k0, k1, k2, ...);
-    return spline(basis, tk, v0, v1, v2, ...);
+ float tk = spline("linearsolve", t, k0, k1, k2, ...);
+ return spline(basis, tk, v0, v1, v2, ...);
 }
 
 ```

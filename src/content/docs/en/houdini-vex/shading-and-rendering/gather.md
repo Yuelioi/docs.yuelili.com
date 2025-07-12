@@ -9,9 +9,9 @@ You can use VEX’s `gather` loop statement to send rays into the scene and gath
 ```vex
 gather(vector origin, vector direction, ...)
 {
-    // Statements for rays that hit other surfaces
+ // Statements for rays that hit other surfaces
 } else {
-    // Statements for rays which didn't hit any surface
+ // Statements for rays which didn't hit any surface
 }
 
 ```
@@ -20,7 +20,7 @@ After the origin and direction arguments, any additional arguments are interpret
 
 ```vex
 gather(origin, dir, "samples", 100) {
-    ...
+ ...
 }
 
 ```
@@ -314,7 +314,7 @@ Importing information from the ray
 You can specify names of global or exported variables to import from the hit shader in the form `"varname", &var`, typically including `Cf` (color vector of surface hit) and `Of` (opacity vector of surface hit).
 
 ```vex
-vector  hitcf;
+vector hitcf;
 gather(P, dir, "bias", 0.01, "Cf", hitcf) {...}
 
 ```
@@ -362,9 +362,9 @@ be inserted regardless of whether the opacity limit was exceeded.
 vector a_pos[];
 vector a_nml[];
 trace(P, dir, Time,
-        "samplefilter", "all",
-    "P", a_pos,
-    "N", a_nml);
+ "samplefilter", "all",
+ "P", a_pos,
+ "N", a_nml);
 
 ```
 
@@ -418,20 +418,20 @@ When using [sample_geometry](../sampling/sample_geometry "Samples geometry in th
 
 ```vex
 gather(P, dir,
-        "samplefilter", "opacity",
-    "Cf", hitCf,
-    "Of", hitOf,
-        "samplefilter", "closest",
-    "P", hitP,
-    "N", hitN)
+ "samplefilter", "opacity",
+ "Cf", hitCf,
+ "Of", hitOf,
+ "samplefilter", "closest",
+ "P", hitP,
+ "N", hitN)
 {
-    trace(pos, dir, time,
-    // Composite the bsdf of the hit surfaces using stochastic transparency
-    "samplefilter", "screendoor",
-    "F", hitF,
-    // But find the closest sample's position
-    "samplefilter", "closest",
-    "P", hitP);
+ trace(pos, dir, time,
+ // Composite the bsdf of the hit surfaces using stochastic transparency
+ "samplefilter", "screendoor",
+ "F", hitF,
+ // But find the closest sample's position
+ "samplefilter", "closest",
+ "P", hitP);
 }
 
 ```
@@ -447,7 +447,7 @@ As you specify variables, you can intersperse `pipeline` keyword options to cont
 
 ```vex
 gather(p, d, "pipeline", "surface", "Cf", surfCf,
-     "pipeline", "atmosphere" "Cf", fogCf, "P", hitP)
+ "pipeline", "atmosphere" "Cf", fogCf, "P", hitP)
 
 ```
 
@@ -463,30 +463,30 @@ This shader sends rays into the scene. It sends `1.234` in a message labeled `ex
 surface
 sendray(vector background=0; int nsamples=16)
 {
-    float   amp;
+ float amp;
 
-    amp = 0;
-    Cf = 0;
+ amp = 0;
+ Cf = 0;
 
-    gather(P, N,
-        "bias", 0.01,
-        "angle", radians(15),
-        "samples", nsamples,
-        "samplebase", 1,
-        "distribution", "cosine",
-        "send:exportvalue", 0.8,
-        "amp", amp)
-    {
-        Cf += amp;
-        amp = 0;
-    }
-    else
-    {
-        Cf += background;
-    }
+ gather(P, N,
+ "bias", 0.01,
+ "angle", radians(15),
+ "samples", nsamples,
+ "samplebase", 1,
+ "distribution", "cosine",
+ "send:exportvalue", 0.8,
+ "amp", amp)
+ {
+ Cf += amp;
+ amp = 0;
+ }
+ else
+ {
+ Cf += background;
+ }
 
-    Cf *= 1.0 / nsamples;
-    Of = 1;
+ Cf *= 1.0 / nsamples;
+ Of = 1;
 }
 
 ```
@@ -497,15 +497,15 @@ The following shader imports values which were sent to it by the gather loop. Th
 surface
 hitsurf(export float amp=1)
 {
-    float   sendvalue = 0;
+ float sendvalue = 0;
 
-    if (!rayimport("exportvalue", sendvalue))
-        printf("Error importing the send:exportvalue\n");
+ if (!rayimport("exportvalue", sendvalue))
+ printf("Error importing the send:exportvalue\n");
 
-    amp = sendvalue;
+ amp = sendvalue;
 
-    Cf = 1;
-    Of = 1;
+ Cf = 1;
+ Of = 1;
 }
 
 ```

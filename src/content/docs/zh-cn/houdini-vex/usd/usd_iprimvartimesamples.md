@@ -39,16 +39,16 @@ float time_codes[] = usd_primvartimesamples(0, "/geo/cube", "foo");
 // 获取指定图元或其祖先图元上记录的时间采样primvar值
 float[] usd_iprimvartimesamplevalues(const int input; const string primpath, primvarname)
 {
-    float result[];
+ float result[];
 
-    float time_samples[] = usd_iprimvartimesamples( input, primpath, primvarname );
-    foreach( float time_code ; time_samples ) 
-    {
-    float value = usd_iprimvar( input, primpath, primvarname, time_code );
-    push( result, value );
-    }
+ float time_samples[] = usd_iprimvartimesamples( input, primpath, primvarname );
+ foreach( float time_code ; time_samples ) 
+ {
+ float value = usd_iprimvar( input, primpath, primvarname, time_code );
+ push( result, value );
+ }
 
-    return result;
+ return result;
 }
 
 ```

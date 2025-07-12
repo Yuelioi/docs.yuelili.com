@@ -21,6 +21,6 @@ Sort an array of numbers in descending order
 
 ```vex
 int numbers[] = {5, 2, 90, 3, 1};
-int descending_nums[] = reverse(sort(numbers));  // {90, 5, 3, 2, 1}
+int descending_nums[] = reverse(sort(numbers)); // {90, 5, 3, 2, 1}
 
 ```

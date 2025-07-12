@@ -43,9 +43,9 @@ Examples
 
 ```vex
 // Get the value of some primvars on the cube primitive or its ancestor.
-float value    = usd_iprimvarelement(0, "/geo/cube", "primvar_name", 3);
+float value = usd_iprimvarelement(0, "/geo/cube", "primvar_name", 3);
 
-v@element_2_at_current_frame  = usd_iprimvarelement(0, "/geo/sphere", "foo", 2);
-v@element_2_at_frame_8        = usd_iprimvarelement(0, "/geo/sphere", "foo", 2, 8.0);
+v@element_2_at_current_frame = usd_iprimvarelement(0, "/geo/sphere", "foo", 2);
+v@element_2_at_frame_8 = usd_iprimvarelement(0, "/geo/sphere", "foo", 2, 8.0);
 
 ```

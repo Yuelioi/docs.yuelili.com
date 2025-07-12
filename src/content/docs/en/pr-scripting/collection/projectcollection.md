@@ -7,13 +7,11 @@ title: ProjectCollection object
 
 `app.production.projects`
 
-
 The ProjectCollection object represents a collection of [Project objects](../../general/project).
 
 :::info
 ProjectCollection is a subclass of [Collection object](../collection). All methods and attributes of Collection, in addition to those listed below, are available when working with ProjectCollection.
 :::
-
 
 ---
 
@@ -24,7 +22,6 @@ ProjectCollection is a subclass of [Collection object](../collection). All metho
 `app.projects.numProjects`
 
 `app.production.projects.numProjects`
-
 
 #### Description
 

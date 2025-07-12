@@ -29,11 +29,11 @@ Also, you can use the group `item` object to reference a grouped set of art item
 
 You can create new art objects using the `make` command (AppleScript) or add method of an artwork item collection object. For example, to create a new `path item` object:
 
-|  Language   |                          Command                           |
-| ----------- | ---------------------------------------------------------- |
+| Language | Command |
+| --- | --- |
 | AppleScript | `set myPathItem to make new path item in current document` |
-| JavaScript  | `var myPathItem = activeDocument.pathItems.add();`         |
-| VBScript    | `Set myPathItem = appRef.ActiveDocument.PathItems.Add()`   |
+| JavaScript | `var myPathItem = activeDocument.pathItems.add();` |
+| VBScript | `Set myPathItem = appRef.ActiveDocument.PathItems.Add()` |
 
 The following artwork collections do not allow the creation of new objects using the `make` command or add method:
 

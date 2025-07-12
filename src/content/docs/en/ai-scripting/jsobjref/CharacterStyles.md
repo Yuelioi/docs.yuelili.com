@@ -67,9 +67,9 @@ Creates a named character style.
 
 #### Parameters
 
-| Parameter |  Type  |      Description       |
-| --------- | ------ | ---------------------- |
-| `name`    | String | Element name to create |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Element name to create |
 
 #### Returns
 
@@ -87,9 +87,9 @@ Gets the first element in the collection with the provided name.
 
 #### Parameters
 
-| Parameter |  Type  |      Description       |
-| --------- | ------ | ---------------------- |
-| `name`    | String | Name of element to get |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Name of element to get |
 
 #### Returns
 
@@ -107,8 +107,8 @@ Gets an element from the collection.
 
 #### Parameters
 
-| Parameter |      Type      |     Description      |
-| --------- | -------------- | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `itemKey` | String, Number | String or number key |
 
 #### Returns

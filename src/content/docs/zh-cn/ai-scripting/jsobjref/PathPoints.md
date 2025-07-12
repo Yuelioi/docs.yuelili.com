@@ -83,9 +83,9 @@ title: PathPoints
 
 #### 参数
 
-| 参数      | 类型     | 描述         |
-| --------- | -------------- | ------------------ |
-| `itemKey` | 字符串, 数字   | 字符串或数字键     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `itemKey` | 字符串, 数字 | 字符串或数字键 |
 
 #### 返回值
 
@@ -115,17 +115,17 @@ title: PathPoints
 // 向现有路径追加一个新的 PathPoint
 // 并初始化其锚点和控制点。
 if (app.documents.length > 0) {
-    var doc = app.activeDocument;
+ var doc = app.activeDocument;
 
-    var line = doc.pathItems.add();
-    line.stroked = true;
-    line.setEntirePath(Array(Array(220, 475), Array(375, 300)));
+ var line = doc.pathItems.add();
+ line.stroked = true;
+ line.setEntirePath(Array(Array(220, 475), Array(375, 300)));
 
-    // 向线条追加另一个点
-    var newPoint = doc.pathItems[0].pathPoints.add();
-    newPoint.anchor = Array(220, 300);
-    newPoint.leftDirection = newPoint.anchor;
-    newPoint.rightDirection = newPoint.anchor;
-    newPoint.pointType = PointType.CORNER;
+ // 向线条追加另一个点
+ var newPoint = doc.pathItems[0].pathPoints.add();
+ newPoint.anchor = Array(220, 300);
+ newPoint.leftDirection = newPoint.anchor;
+ newPoint.rightDirection = newPoint.anchor;
+ newPoint.pointType = PointType.CORNER;
 }
 ```

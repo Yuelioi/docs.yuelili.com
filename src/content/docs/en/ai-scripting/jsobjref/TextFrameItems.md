@@ -81,12 +81,12 @@ Creates an area text frame item.
 
 #### Parameters
 
-|   Parameter   |                                Type                                 |                 Description                 |
-| ------------- | ------------------------------------------------------------------- | ------------------------------------------- |
-| `textPath`    | [PathItem](.././PathItem)                                           | Path item to use                            |
-| `orientation` | [TextOrientation](../scripting-constants#textorientation), optional | Orientation of text                         |
-| `baseFrame`   | [TextFrameItem](.././TextFrameItem), optional                       | Text frame to use                           |
-| `postFix`     | Boolean, optional                                                   | Whether to prefix or postfix the text frame |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `textPath` | [PathItem](.././PathItem) | Path item to use |
+| `orientation` | [TextOrientation](../scripting-constants#textorientation), optional | Orientation of text |
+| `baseFrame` | [TextFrameItem](.././TextFrameItem), optional | Text frame to use |
+| `postFix` | Boolean, optional | Whether to prefix or postfix the text frame |
 
 #### Returns
 
@@ -104,9 +104,9 @@ Get the first element in the collection with the provided name.
 
 #### Parameters
 
-| Parameter |  Type  |      Description       |
-| --------- | ------ | ---------------------- |
-| `name`    | String | Name of element to get |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Name of element to get |
 
 #### Returns
 
@@ -124,8 +124,8 @@ Gets an element from the collection.
 
 #### Parameters
 
-| Parameter |      Type      |     Description      |
-| --------- | -------------- | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `itemKey` | String, Number | String or number key |
 
 #### Returns
@@ -144,14 +144,14 @@ Creates an on-path text frame item.
 
 #### Parameters
 
-|   Parameter   |                                Type                                 |                 Description                 |
-| ------------- | ------------------------------------------------------------------- | ------------------------------------------- |
-| `textPath`    | [PathItem](.././PathItem)                                           | Path item to use                            |
-| `startTValue` | Number (double)                                                     | Start position of text along the path       |
-| `endTValue`   | Number (double)                                                     | End position of text along the path         |
-| `orientation` | [TextOrientation](../scripting-constants#textorientation), optional | Orientation of text                         |
-| `baseFrame`   | [TextFrameItem](.././TextFrameItem), optional                       | Text frame to use                           |
-| `postFix`     | Boolean, optional                                                   | Whether to prefix or postfix the text frame |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `textPath` | [PathItem](.././PathItem) | Path item to use |
+| `startTValue` | Number (double) | Start position of text along the path |
+| `endTValue` | Number (double) | End position of text along the path |
+| `orientation` | [TextOrientation](../scripting-constants#textorientation), optional | Orientation of text |
+| `baseFrame` | [TextFrameItem](.././TextFrameItem), optional | Text frame to use |
+| `postFix` | Boolean, optional | Whether to prefix or postfix the text frame |
 
 #### Returns
 
@@ -169,9 +169,9 @@ Creates a point text frame item.
 
 #### Parameters
 
-|   Parameter   |                                Type                                 |     Description     |
-| ------------- | ------------------------------------------------------------------- | ------------------- |
-| `anchor`      | Array of 2 numbers                                                  | Point text anchor   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `anchor` | Array of 2 numbers | Point text anchor |
 | `orientation` | [TextOrientation](../scripting-constants#textorientation), optional | Orientation of text |
 
 #### Returns

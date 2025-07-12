@@ -29,11 +29,11 @@ Illustrator 文档的内容被称为艺术作品树。艺术作品由以下对�
 
 您可以使用 `make` 命令（AppleScript）或艺术作品项集合对象的 `add` 方法创建新的艺术对象。例如，创建一个新的 `path item` 对象：
 
-|  语言      |      命令         |
-| ----------- | ---------------------------------------------------------- |
+| 语言 | 命令 |
+| --- | --- |
 | AppleScript | `set myPathItem to make new path item in current document` |
-| JavaScript  | `var myPathItem = activeDocument.pathItems.add();`   |
-| VBScript    | `Set myPathItem = appRef.ActiveDocument.PathItems.Add()`   |
+| JavaScript | `var myPathItem = activeDocument.pathItems.add();` |
+| VBScript | `Set myPathItem = appRef.ActiveDocument.PathItems.Add()` |
 
 以下艺术作品集合不允许使用 `make` 命令或 `add` 方法创建新对象：
 

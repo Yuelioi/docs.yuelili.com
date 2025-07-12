@@ -204,13 +204,13 @@ title: IllustratorSaveOptions
 // dest 指定新文件的完整路径和文件名
 
 function exportFileToAI(dest) {
-    if (app.documents.length > 0) {
-        var ai8Doc = new File(dest);
-        var saveOptions = new IllustratorSaveOptions();
-        saveOptions.compatibility = Compatibility.ILLUSTRATOR8;
-        saveOptions.flattenOutput = OutputFlattening.PRESERVEAPPEARANCE;
+ if (app.documents.length > 0) {
+ var ai8Doc = new File(dest);
+ var saveOptions = new IllustratorSaveOptions();
+ saveOptions.compatibility = Compatibility.ILLUSTRATOR8;
+ saveOptions.flattenOutput = OutputFlattening.PRESERVEAPPEARANCE;
 
-        app.activeDocument.saveAs(ai8Doc, saveOptions);
-    }
+ app.activeDocument.saveAs(ai8Doc, saveOptions);
+ }
 }
 ```

@@ -25,7 +25,7 @@ Examples
 int type = typeid(d, "foo");
 if (type == typeid(matrix())
 {
-    matrix m = d["foo"];
+ matrix m = d["foo"];
 }
 
 ```

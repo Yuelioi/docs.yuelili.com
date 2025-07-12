@@ -9,17 +9,16 @@ Here is an example using AEFX_SuiteScope to access the PF_GPUDeviceSuite1 suite:
 
 ```cpp
 AEFX_SuiteScoper<PF_GPUDeviceSuite1> gpu_suite = AEFX_SuiteScoper<PF_GPUDeviceSuite1>(
-    in_dataP,
-    kPFGPUDeviceSuite,
-    kPFGPUDeviceSuiteVersion1,
-    out_dataP);
+ in_dataP,
+ kPFGPUDeviceSuite,
+ kPFGPUDeviceSuiteVersion1,
+ out_dataP);
 ```
 
 :::note
 
 If `ALLOW_NO_SUITE` is set to `true`, then you should check the returned pointer is not NULL before using it.
 :::
-
 
 Once you have the suite you may make calls to any function in the suite list so:
 

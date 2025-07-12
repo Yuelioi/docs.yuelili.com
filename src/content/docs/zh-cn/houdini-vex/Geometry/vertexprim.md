@@ -27,7 +27,7 @@ order: 44
 ## 示例
 
 ```vex
-int    pt;
+int pt;
 
 // 获取顶点3所属的基元
 pt = vertexprim("defgeo.bgeo", 3);

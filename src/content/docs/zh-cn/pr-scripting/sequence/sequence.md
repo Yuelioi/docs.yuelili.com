@@ -259,10 +259,10 @@ title: 序列对象
 
 #### 参数
 
-|   参数   |  类型  |    描述    |
-| ---------- | ------ | ------------------ |
-| `propertyID`   | 字符串 | 自定义属性的 ID。   |
-| `propertyValue` | 字符串 | 自定义属性的值。   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `propertyID` | 字符串 | 自定义属性的 ID。 |
+| `propertyValue` | 字符串 | 自定义属性的值。 |
 
 #### 返回值
 
@@ -280,16 +280,16 @@ title: 序列对象
 
 #### 参数
 
-|   参数   |  类型   |    描述     |
-|----------------|---------|------------------------------------|
-| `numerator`    | 整数 | 所需帧宽高比的分子。   |
-| `denominator`    | 整数 | 所需帧宽高比的分母。 |
-| `motionPreset`   | 字符串  | 取值为：      |
-|    |   | - `slower`     |
-|    |   | - `default`     |
-|    |   | - `faster`     |
-| `newName`   | 字符串  | 新创建序列的名称。   |
-| `useNestedSequences` | 布尔值 | 是否尊重嵌套序列。    |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `numerator` | 整数 | 所需帧宽高比的分子。 |
+| `denominator` | 整数 | 所需帧宽高比的分母。 |
+| `motionPreset` | 字符串 | 取值为： |
+| | | - `slower` |
+| | | - `default` |
+| | | - `faster` |
+| `newName` | 字符串 | 新创建序列的名称。 |
+| `useNestedSequences` | 布尔值 | 是否尊重嵌套序列。 |
 
 #### 返回值
 
@@ -300,21 +300,21 @@ title: 序列对象
 ```javascript
 var sequence = app.project.activeSequence;
 if (sequence) {
-   var numerator = 1;
-   var denominator = 1;
-   var motionPreset = 'default'; // 'default', 'faster', 'slower'
-   var newName = sequence.name + ', auto-reframed.';
-   var useNestedSequences  = false;
+ var numerator = 1;
+ var denominator = 1;
+ var motionPreset = 'default'; // 'default', 'faster', 'slower'
+ var newName = sequence.name + ', auto-reframed.';
+ var useNestedSequences = false;
 
-   var newSequence = sequence.autoReframeSequence(numerator, denominator, motionPreset, newName, useNestedSequences);
+ var newSequence = sequence.autoReframeSequence(numerator, denominator, motionPreset, newName, useNestedSequences);
 
-   if (newSequence) {
-    alert('Created reframed sequence: ' + newName + '.');
-   } else {
-    alert('Failed to create re-framed sequence: ' + newName + '.');
-   }
+ if (newSequence) {
+ alert('Created reframed sequence: ' + newName + '.');
+ } else {
+ alert('Failed to create re-framed sequence: ' + newName + '.');
+ }
 } else {
-   alert('No active sequence');
+ alert('No active sequence');
 }
 ```
 
@@ -366,18 +366,18 @@ if (sequence) {
 
 #### 参数
 
-|   参数   |   类型   |   描述   |
-|------------|----------------------------------------------|--------------------------------------------------------------------------------------------|
-| `projectItem`   | [ProjectItem 对象](../../item/projectitem) | 字幕源剪辑（例如 .srt 文件）。     |
-| `startAtTime`   | 浮点数   | 从序列开始的偏移时间（秒）。   |
-| `captionFormat` | `Sequence.CAPTION_FORMAT_` 枚举    | 新轨道的字幕格式。可选，默认为 `Sequence.CAPTION_FORMAT_SUBTITLE`。取值为： |
-|     |   | - `Sequence.CAPTION_FORMAT_SUBTITLE` - 字幕      |
-|     |   | - `Sequence.CAPTION_FORMAT_608` - CEA-608   |
-|     |   | - `Sequence.CAPTION_FORMAT_708` - CEA-708   |
-|     |   | - `Sequence.CAPTION_FORMAT_TELETEXT` - 图文电视      |
-|     |   | - `Sequence.CAPTION_FORMAT_OPEN_EBU` - EBU 字幕    |
-|     |   | - `Sequence.CAPTION_FORMAT_OP42` - OP-42   |
-|     |   | - `Sequence.CAPTION_FORMAT_OP47` - OP-47   |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `projectItem` | [ProjectItem 对象](../../item/projectitem) | 字幕源剪辑（例如 .srt 文件）。 |
+| `startAtTime` | 浮点数 | 从序列开始的偏移时间（秒）。 |
+| `captionFormat` | `Sequence.CAPTION_FORMAT_` 枚举 | 新轨道的字幕格式。可选，默认为 `Sequence.CAPTION_FORMAT_SUBTITLE`。取值为： |
+| | | - `Sequence.CAPTION_FORMAT_SUBTITLE` - 字幕 |
+| | | - `Sequence.CAPTION_FORMAT_608` - CEA-608 |
+| | | - `Sequence.CAPTION_FORMAT_708` - CEA-708 |
+| | | - `Sequence.CAPTION_FORMAT_TELETEXT` - 图文电视 |
+| | | - `Sequence.CAPTION_FORMAT_OPEN_EBU` - EBU 字幕 |
+| | | - `Sequence.CAPTION_FORMAT_OP42` - OP-42 |
+| | | - `Sequence.CAPTION_FORMAT_OP47` - OP-47 |
 
 #### 返回值
 
@@ -401,8 +401,8 @@ app.project.activeSequence.createCaptionTrack(projectItem, 0, Sequence.CAPTION_F
 
 #### 参数
 
-|   参数    |  类型   |      描述   |
-| ----------------- | ------- | ----------------------------------------------------------------------------------------------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `ignoreTrackTargeting` | 布尔值 | 新序列是否应忽略原始序列中的轨道目标。可选，默认为 `false` |
 
 #### 返回值
@@ -417,28 +417,28 @@ app.project.activeSequence.createCaptionTrack(projectItem, 0, Sequence.CAPTION_F
 
 ```javascript
 function nestSelection() {
-   var activeSequence = app.project.activeSequence;
-   var selection = activeSequence.getSelection();
+ var activeSequence = app.project.activeSequence;
+ var selection = activeSequence.getSelection();
 
-   if (!selection.length) {
-    return;
-   }
+ if (!selection.length) {
+ return;
+ }
 
-   var trackId = selection[0].parentTrackIndex;
-   var originalInPoint = activeSequence.getInPointAsTime();
-   var originalOutPoint = activeSequence.getOutPointAsTime();
-   var start = selection[0].start;
-   var end = selection[selection.length - 1].end;
-   activeSequence.setInPoint(start.seconds);
-   activeSequence.setOutPoint(end.seconds);
+ var trackId = selection[0].parentTrackIndex;
+ var originalInPoint = activeSequence.getInPointAsTime();
+ var originalOutPoint = activeSequence.getOutPointAsTime();
+ var start = selection[0].start;
+ var end = selection[selection.length - 1].end;
+ activeSequence.setInPoint(start.seconds);
+ activeSequence.setOutPoint(end.seconds);
 
-   var nestedSequence = activeSequence.createSubsequence(true);
+ var nestedSequence = activeSequence.createSubsequence(true);
 
-   activeSequence.videoTracks[trackId].overwriteClip(nestedSequence.projectItem, start.seconds);
-   activeSequence.setInPoint(originalInPoint.seconds);
-   activeSequence.setOutPoint(originalOutPoint.seconds);
+ activeSequence.videoTracks[trackId].overwriteClip(nestedSequence.projectItem, start.seconds);
+ activeSequence.setInPoint(originalInPoint.seconds);
+ activeSequence.setOutPoint(originalOutPoint.seconds);
 
-   return nestedSequence;
+ return nestedSequence;
 }
 ```
 
@@ -454,8 +454,8 @@ function nestSelection() {
 
 #### 参数
 
-|  参数   |  类型  |    描述    |
-| ------- | ------ | ---------------------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `outputPath` | 字符串 | 新 FCP XML 文件的输出路径。 |
 
 #### 返回值
@@ -474,14 +474,14 @@ function nestSelection() {
 
 #### 参数
 
-|  参数   |  类型   |     描述     |
-|----------|---------|-------------------------------------------------------------------|
-| `outputPath`   | 字符串  | 渲染媒体的输出路径。     |
-| `presetPath`   | 字符串  | 包含编码设置的预设文件（.epr 文件）的路径。 |
-| `workAreaType` | 整数 | 要渲染的工作区域类型（见下文）。取值为：     |
-|    |   | - `0` - 渲染整个序列。   |
-|    |   | - `1` - 渲染序列的入点和出点之间的部分。    |
-|    |   | - `2` - 渲染序列的工作区域。    |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `outputPath` | 字符串 | 渲染媒体的输出路径。 |
+| `presetPath` | 字符串 | 包含编码设置的预设文件（.epr 文件）的路径。 |
+| `workAreaType` | 整数 | 要渲染的工作区域类型（见下文）。取值为： |
+| | | - `0` - 渲染整个序列。 |
+| | | - `1` - 渲染序列的入点和出点之间的部分。 |
+| | | - `2` - 渲染序列的工作区域。 |
 
 #### 返回值
 
@@ -499,8 +499,8 @@ function nestSelection() {
 
 #### 参数
 
-|  参数   |  类型  |    描述    |
-| ------- | ------ | ----------------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `outputPath` | 字符串 | 新项目的输出路径。 |
 
 #### 返回值
@@ -519,8 +519,8 @@ function nestSelection() {
 
 #### 参数
 
-|   参数   |  类型  |    描述    |
-| ------------- | ------ | ---------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `outputPresetPath` | 字符串 | 要使用的输出预设。 |
 
 #### 返回值
@@ -653,61 +653,61 @@ function nestSelection() {
 
 返回一个对象；序列设置结构。
 
-|    属性   |    类型    |      描述     |
-|---------------------|---------------------------------|------------------------------------------------------------------------|
-| `audioChannelCount` | 整数    | 序列中的音频通道数。      |
-| `audioChannelType`  | 整数    | 音频通道类型。取值为：      |
-|   |     | - `0` - 单声道   |
-|   |     | - `1` - 立体声   |
-|   |     | - `2` - 5.1   |
-|   |     | - `3` - 多声道   |
-|   |     | - `4` - 4 声道   |
-|   |     | - `5` - 8 声道   |
-| `audioDisplayFormat`| 整数    | 音频时间码显示格式。取值为：   |
-|   |     | - `200` - 音频采样   |
-|   |     | - `201` - 毫秒   |
-| `audioSampleRate`   | [时间对象](../../other/time)   | 音频采样率。   |
-| `autoToneMapEnabled`| 布尔值    | 是否启用了自动色调映射媒体。   |
-| `compositeLinearColor`| 布尔值    | 序列是否以线性颜色合成。    |
-| `editingMode`   | 字符串    | 编辑模式的 GUID。      |
-| `maximumBitDepth`   | 布尔值    | 序列是否以最大深度合成。    |
-| `maximumRenderQuality`| 布尔值    | 序列是否以最高质量渲染。    |
-| `previewCodec`   | 字符串    | 使用的预览编解码器的四字符代码。      |
-| `previewFrameWidth` | 整数    | 预览帧的宽度。   |
-| `previewFrameHeight`| 整数    | 预览帧的高度。   |
-| `previewFileFormat` | 整数    | 用于预览文件渲染的输出预设路径（.epr 文件）。    |
-| `videoDisplayFormat`| 整数    | 视频时间显示格式。取值为：   |
-|   |     | - `100` - 24 时间码      |
-|   |     | - `101` - 25 时间码      |
-|   |     | - `102` - 29.97 丢帧时间码   |
-|   |     | - `103` - 29.97 非丢帧时间码   |
-|   |     | - `104` - 30 时间码      |
-|   |     | - `105` - 50 时间码      |
-|   |     | - `106` - 59.94 丢帧时间码   |
-|   |     | - `107` - 59.94 非丢帧时间码   |
-|   |     | - `108` - 60 时间码      |
-|   |     | - `109` - 帧数   |
-|   |     | - `110` - 23.976 时间码      |
-|   |     | - `111` - 16mm 英尺 + 帧数   |
-|   |     | - `112` - 35mm 英尺 + 帧数   |
-|   |     | - `113` - 48 时间码      |
-| `videoFieldType`   | 整数    | 视频场类型。取值为：      |
-|   |     | - `-1` - 默认   |
-|   |     | - `0` - 无场（逐行扫描）    |
-|   |     | - `1` - 上场优先   |
-|   |     | - `2` - 下场优先   |
-| `videoFrameHeight`  | 整数    | 序列视频帧的高度。   |
-| `videoFrameWidth`   | 整数    | 序列视频帧的宽度。   |
-| `videoPixelAspectRatio`| 字符串    | 像素宽高比。   |
-| `vrHorzCapturedView`| 整数    | VR 的水平捕捉视角，单位为度。      |
-| `vrVertCapturedView`| 整数    | VR 的垂直捕捉视角，单位为度。      |
-| `vrLayout`    | 整数    | 使用的素材布局，用于 VR。取值为：   |
-|   |     | - `0` - 单视   |
-|   |     | - `1` - 立体 - 上下      |
-|   |     | - `2` - 立体 - 左右      |
-| `vrProjection`   | 整数    | 使用的投影类型，用于 VR 素材。取值为：     |
-|   |     | - `0` - 无   |
-|   |     | - `1` - 等距圆柱投影      |
+| 属性 | 类型 | 描述 |
+|---|---|---|
+| `audioChannelCount` | 整数 | 序列中的音频通道数。 |
+| `audioChannelType` | 整数 | 音频通道类型。取值为： |
+| | | - `0` - 单声道 |
+| | | - `1` - 立体声 |
+| | | - `2` - 5.1 |
+| | | - `3` - 多声道 |
+| | | - `4` - 4 声道 |
+| | | - `5` - 8 声道 |
+| `audioDisplayFormat`| 整数 | 音频时间码显示格式。取值为： |
+| | | - `200` - 音频采样 |
+| | | - `201` - 毫秒 |
+| `audioSampleRate` | [时间对象](../../other/time) | 音频采样率。 |
+| `autoToneMapEnabled`| 布尔值 | 是否启用了自动色调映射媒体。 |
+| `compositeLinearColor`| 布尔值 | 序列是否以线性颜色合成。 |
+| `editingMode` | 字符串 | 编辑模式的 GUID。 |
+| `maximumBitDepth` | 布尔值 | 序列是否以最大深度合成。 |
+| `maximumRenderQuality`| 布尔值 | 序列是否以最高质量渲染。 |
+| `previewCodec` | 字符串 | 使用的预览编解码器的四字符代码。 |
+| `previewFrameWidth` | 整数 | 预览帧的宽度。 |
+| `previewFrameHeight`| 整数 | 预览帧的高度。 |
+| `previewFileFormat` | 整数 | 用于预览文件渲染的输出预设路径（.epr 文件）。 |
+| `videoDisplayFormat`| 整数 | 视频时间显示格式。取值为： |
+| | | - `100` - 24 时间码 |
+| | | - `101` - 25 时间码 |
+| | | - `102` - 29.97 丢帧时间码 |
+| | | - `103` - 29.97 非丢帧时间码 |
+| | | - `104` - 30 时间码 |
+| | | - `105` - 50 时间码 |
+| | | - `106` - 59.94 丢帧时间码 |
+| | | - `107` - 59.94 非丢帧时间码 |
+| | | - `108` - 60 时间码 |
+| | | - `109` - 帧数 |
+| | | - `110` - 23.976 时间码 |
+| | | - `111` - 16mm 英尺 + 帧数 |
+| | | - `112` - 35mm 英尺 + 帧数 |
+| | | - `113` - 48 时间码 |
+| `videoFieldType` | 整数 | 视频场类型。取值为： |
+| | | - `-1` - 默认 |
+| | | - `0` - 无场（逐行扫描） |
+| | | - `1` - 上场优先 |
+| | | - `2` - 下场优先 |
+| `videoFrameHeight` | 整数 | 序列视频帧的高度。 |
+| `videoFrameWidth` | 整数 | 序列视频帧的宽度。 |
+| `videoPixelAspectRatio`| 字符串 | 像素宽高比。 |
+| `vrHorzCapturedView`| 整数 | VR 的水平捕捉视角，单位为度。 |
+| `vrVertCapturedView`| 整数 | VR 的垂直捕捉视角，单位为度。 |
+| `vrLayout` | 整数 | 使用的素材布局，用于 VR。取值为： |
+| | | - `0` - 单视 |
+| | | - `1` - 立体 - 上下 |
+| | | - `2` - 立体 - 左右 |
+| `vrProjection` | 整数 | 使用的投影类型，用于 VR 素材。取值为： |
+| | | - `0` - 无 |
+| | | - `1` - 等距圆柱投影 |
 
 ---
 
@@ -793,10 +793,10 @@ function nestSelection() {
 
 #### 参数
 
-|   参数   |  类型  |      描述   |
-|-------------|--------|-----------------------------------------------------------------------------|
-| `path`   | 字符串 | 有效的 MOGRT 文件的完整路径（.mogrt 文件），在 After Effects 中创建。   |
-| `time`   | 字符串 | 插入 .mogrt 的时间，单位为 ticks。      |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `path` | 字符串 | 有效的 MOGRT 文件的完整路径（.mogrt 文件），在 After Effects 中创建。 |
+| `time` | 字符串 | 插入 .mogrt 的时间，单位为 ticks。 |
 | `vidTrackOffset` | 整数 | 从第零个视频轨道开始的轨道偏移量，用于插入 .mogrt 内容。 |
 | `audTrackOffset` | 整数 | 从第零个音频轨道开始的轨道偏移量，用于插入 .mogrt 内容。 |
 
@@ -816,11 +816,11 @@ function nestSelection() {
 
 #### 参数
 
-|   参数   |  类型  |      描述   |
-|-------------|--------|-----------------------------------------------------------------------------|
-| `libraryName` | 字符串 | 库的名称（来自当前 PPro 用户的 Creative Cloud 库）。    |
-| `mgtName`   | 字符串 | 该库中的 .mogrt 名称。      |
-| `time`   | 字符串 | 插入 .mogrt 的时间，单位为 ticks。      |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `libraryName` | 字符串 | 库的名称（来自当前 PPro 用户的 Creative Cloud 库）。 |
+| `mgtName` | 字符串 | 该库中的 .mogrt 名称。 |
+| `time` | 字符串 | 插入 .mogrt 的时间，单位为 ticks。 |
 | `vidTrackOffset` | 整数 | 从第零个视频轨道开始的轨道偏移量，用于插入 .mogrt 内容。 |
 | `audTrackOffset` | 整数 | 从第零个音频轨道开始的轨道偏移量，用于插入 .mogrt 内容。 |
 
@@ -840,12 +840,12 @@ function nestSelection() {
 
 #### 参数
 
-|   参数   |     类型   |    描述    |
-|-------------|---------------------------------------------|-------------------------------------------------|
-| `projectItem` | [ProjectItem 对象](../../item/projectitem) | 从中获取媒体的项目项。   |
-| `time`   | 时间   | 添加项目项的时间。     |
-| `vTrackIndex` | 整数   | 插入视频的（从零开始的）轨道索引。    |
-| `aTrackIndex` | 整数   | 插入音频的（从零开始的）轨道索引。    |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `projectItem` | [ProjectItem 对象](../../item/projectitem) | 从中获取媒体的项目项。 |
+| `time` | 时间 | 添加项目项的时间。 |
+| `vTrackIndex` | 整数 | 插入视频的（从零开始的）轨道索引。 |
+| `aTrackIndex` | 整数 | 插入音频的（从零开始的）轨道索引。 |
 
 #### 返回值
 
@@ -921,12 +921,12 @@ function nestSelection() {
 
 #### 参数
 
-|   参数   |     类型   |    描述    |
-|-------------|---------------------------------------------|-------------------------------------------------|
-| `projectItem` | [ProjectItem 对象](../../item/projectitem) | 从中获取媒体的项目项。   |
-| `time`   | 字符串   | 添加项目项的时间，单位为秒。   |
-| `vTrackIndex` | 整数   | 插入视频的（从零开始的）轨道索引。    |
-| `aTrackIndex` | 整数   | 插入音频的（从零开始的）轨道索引。    |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `projectItem` | [ProjectItem 对象](../../item/projectitem) | 从中获取媒体的项目项。 |
+| `time` | 字符串 | 添加项目项的时间，单位为秒。 |
+| `vTrackIndex` | 整数 | 插入视频的（从零开始的）轨道索引。 |
+| `aTrackIndex` | 整数 | 插入音频的（从零开始的）轨道索引。 |
 
 #### 返回值
 
@@ -944,16 +944,16 @@ function nestSelection() {
 
 #### 参数
 
-|    参数   |  类型  |     描述   |
-|---------------------|--------|-----------------------------------------|
-| `actionDesired`   | 字符串 | 取值为：     |
-|   |    | - `CreateMarkers`    |
-|   |    | - `ApplyCuts`   |
-| `applyCutsToLinkedAudio` | 布尔值 | 是否将检测到的剪切应用于链接的音频。   |
-| `sensitivity`   | 字符串 | 取值为：     |
-|   |    | - `LowSensitivity`    |
-|   |    | - `MediumSensitivity`   |
-|   |    | - `HighSensitivity`   |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `actionDesired` | 字符串 | 取值为： |
+| | | - `CreateMarkers` |
+| | | - `ApplyCuts` |
+| `applyCutsToLinkedAudio` | 布尔值 | 是否将检测到的剪切应用于链接的音频。 |
+| `sensitivity` | 字符串 | 取值为： |
+| | | - `LowSensitivity` |
+| | | - `MediumSensitivity` |
+| | | - `HighSensitivity` |
 
 #### 返回值
 
@@ -971,9 +971,9 @@ function nestSelection() {
 
 #### 参数
 
-| 参数  |     类型   |   描述   |
-|-------|---------------------------------------------|----------------|
-| `time` | 整数或 [时间对象](../../other/time)    | 新的时间，单位为秒。 |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `time` | 整数或 [时间对象](../../other/time) | 新的时间，单位为秒。 |
 
 #### 返回值
 
@@ -991,9 +991,9 @@ function nestSelection() {
 
 #### 参数
 
-| 参数  |     类型   |   描述   |
-|-------|---------------------------------------------|----------------|
-| `time` | 整数或 [时间对象](../../other/time)    | 新的时间，单位为秒。 |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `time` | 整数或 [时间对象](../../other/time) | 新的时间，单位为秒。 |
 
 #### 返回值
 
@@ -1011,8 +1011,8 @@ function nestSelection() {
 
 #### 参数
 
-| 参数  |  类型  |   描述   |
-|-------|--------|---------------|
+| 参数 | 类型 | 描述 |
+|---|---|---|
 | `time` | 字符串 | 新的时间，单位为 ticks。 |
 
 #### 返回值
@@ -1031,8 +1031,8 @@ function nestSelection() {
 
 #### 参数
 
-|   参数   |  类型  |   描述   |
-|-----------------|--------|---------------------------------------------------------------------------------|
+| 参数 | 类型 | 描述 |
+|---|---|---|
 | `sequenceSettings` | `对象` | 序列设置对象，通过 [Sequence.getSettings()](#sequencegetsettings) 获取。 |
 
 #### 返回值
@@ -1051,9 +1051,9 @@ function nestSelection() {
 
 #### 参数
 
-| 参数  |     类型   |   描述   |
-|-------|---------------------------------------------|----------------|
-| `time` | 整数或 [时间对象](../../other/time)    | 新的时间，单位为秒。 |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `time` | 整数或 [时间对象](../../other/time) | 新的时间，单位为秒。 |
 
 #### 返回值
 
@@ -1071,9 +1071,9 @@ function nestSelection() {
 
 #### 参数
 
-| 参数  |     类型   |   描述   |
-|-------|---------------------------------------------|----------------|
-| `time` | 整数或 [时间对象](../../other/time)    | 新的时间，单位为秒。 |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `time` | 整数或 [时间对象](../../other/time) | 新的时间，单位为秒。 |
 
 #### 返回值
 
@@ -1109,8 +1109,8 @@ function nestSelection() {
 
 #### 参数
 
-|   参数   |  类型  |    描述    |
-|-------------|--------|----------------------|
+| 参数 | 类型 | 描述 |
+|---|---|---|
 | `newZeroPoint` | 字符串 | 新的零点，单位为 ticks。 |
 
 #### 返回值

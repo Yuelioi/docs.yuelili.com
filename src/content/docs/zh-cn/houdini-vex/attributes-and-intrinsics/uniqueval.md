@@ -36,8 +36,8 @@ order: 74
 ```vex
 int count = nuniqueval(0, "point", "foo");
 for (int i = 0; i < count; i++) {
-    string val = uniqueval(0, "point", "foo", i);
-    // ...用该值做一些操作...
+ string val = uniqueval(0, "point", "foo", i);
+ // ...用该值做一些操作...
 }
 
 ```

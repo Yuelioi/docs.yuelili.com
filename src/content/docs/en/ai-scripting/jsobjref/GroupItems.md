@@ -81,8 +81,8 @@ Places an external vector art file as a group item in the document.
 
 #### Parameters
 
-|  Parameter  |                                         Type                                         |       Description        |
-| ----------- | ------------------------------------------------------------------------------------ | ------------------------ |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `imageFile` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | Vector art file to place |
 
 #### Returns
@@ -101,9 +101,9 @@ Gets the first element in the collection with the specified name.
 
 #### Parameters
 
-| Parameter |  Type  |      Description       |
-| --------- | ------ | ---------------------- |
-| `name`    | String | Name of element to get |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Name of element to get |
 
 #### Returns
 
@@ -121,8 +121,8 @@ Gets an element from the collection.
 
 #### Parameters
 
-| Parameter |      Type      |     Description      |
-| --------- | -------------- | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `itemKey` | String, Number | String or number key |
 
 #### Returns
@@ -155,16 +155,15 @@ The following script shows how you can import a PDF document using the [GroupIte
 Before running this script you must create a one page PDF file and put it in the location `/temp/testfile1.pdf`.
 :::
 
-
 ```javascript
 // Embeds a new group item in to the current document from a file specified by dest
 // dest should contain the full path and file name
 
 function embedPDF(dest) {
-    var embedDoc = new File(dest);
-    if (app.documents.length > 0 && embedDoc.exists) {
-        var doc = app.activeDocument;
-        var placed = doc.groupItems.createFromFile(embedDoc);
-    }
+ var embedDoc = new File(dest);
+ if (app.documents.length > 0 && embedDoc.exists) {
+ var doc = app.activeDocument;
+ var placed = doc.groupItems.createFromFile(embedDoc);
+ }
 }
 ```

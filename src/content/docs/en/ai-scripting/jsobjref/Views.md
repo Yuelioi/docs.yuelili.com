@@ -67,8 +67,8 @@ Gets an element from the collection.
 
 #### Parameters
 
-| Parameter |      Type      |     Description      |
-| --------- | -------------- | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `itemKey` | String, Number | String or number key |
 
 #### Returns

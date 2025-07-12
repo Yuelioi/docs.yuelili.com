@@ -81,9 +81,9 @@ title: 专色
 
 #### 参数
 
-| 参数      | 类型   | 描述         |
-| --------- | ------ | ------------------ |
-| `name`    | 字符串 | 要获取的元素的名称 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `name` | 字符串 | 要获取的元素的名称 |
 
 #### 返回值
 
@@ -101,9 +101,9 @@ title: 专色
 
 #### 参数
 
-| 参数      | 类型     | 描述         |
-| --------- | -------------- | ------------------ |
-| `itemKey` | 字符串, 数字   | 要获取的元素的键   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `itemKey` | 字符串, 数字 | 要获取的元素的键 |
 
 #### 返回值
 
@@ -132,11 +132,11 @@ title: 专色
 ```javascript
 // 从当前文档中删除所有专色
 if ( app.documents.length > 0 ) {
-    var spotCount = app.activeDocument.spots.length;
+ var spotCount = app.activeDocument.spots.length;
 
-    if (spotCount > 0) {
-        app.activeDocument.spots.removeAll();
-    }
+ if (spotCount > 0) {
+ app.activeDocument.spots.removeAll();
+ }
 }
 ```
 
@@ -148,29 +148,29 @@ if ( app.documents.length > 0 ) {
 // 在当前文档中定义并应用一个新的专色，
 // 然后将该颜色应用到第一个路径项
 if (app.documents.length > 0 && app.activeDocument.pathItems.length > 0) {
-    // 定义新的颜色值
-    var newRGBColor = new RGBColor();
-    newRGBColor.red = 255;
-    newRGBColor.green = 0;
-    newRGBColor.blue = 0;
+ // 定义新的颜色值
+ var newRGBColor = new RGBColor();
+ newRGBColor.red = 255;
+ newRGBColor.green = 0;
+ newRGBColor.blue = 0;
 
-    // 创建新的专色
-    var newSpot = app.activeDocument.spots.add();
+ // 创建新的专色
+ var newSpot = app.activeDocument.spots.add();
 
-    // 将新的 SpotColor 定义为 RGB 颜色的 80%
-    newSpot.name = "Scripted Red spot";
-    newSpot.tint = 80;
-    newSpot.color = newRGBColor;
+ // 将新的 SpotColor 定义为 RGB 颜色的 80%
+ newSpot.name = "Scripted Red spot";
+ newSpot.tint = 80;
+ newSpot.color = newRGBColor;
 
-    // 将新专色的 50% 色调应用到最前面的路径项。
-    // 创建一个 spotcolor 对象，设置色调值，
-    var newSpotColor = new SpotColor();
-    newSpotColor.spot = newSpot;
-    newSpotColor.tint = 50;
+ // 将新专色的 50% 色调应用到最前面的路径项。
+ // 创建一个 spotcolor 对象，设置色调值，
+ var newSpotColor = new SpotColor();
+ newSpotColor.spot = newSpot;
+ newSpotColor.tint = 50;
 
-    // 使用专色设置填充颜色
-    var frontPath = app.activeDocument.pathItems[0];
-    frontPath.filled = true;
-    frontPath.fillColor = newSpotColor;
+ // 使用专色设置填充颜色
+ var frontPath = app.activeDocument.pathItems[0];
+ frontPath.filled = true;
+ frontPath.fillColor = newSpotColor;
 }
 ```

@@ -92,9 +92,9 @@ title: 文本字体
 if ( app.documents.length > 0 ) {
 
 // 遍历所有文本艺术并应用字体 0
-    for ( i = 0; i< app.activeDocument.textFrames.length; i++) {
-        textArtRange = app.activeDocument.textFrames[i].textRange;
-        textArtRange.characterAttributes.textFont = app.textFonts[0];
-    }
+ for ( i = 0; i< app.activeDocument.textFrames.length; i++) {
+ textArtRange = app.activeDocument.textFrames[i].textRange;
+ textArtRange.characterAttributes.textFont = app.textFonts[0];
+ }
 }
 ```

@@ -6,11 +6,11 @@ order: 18
 | 版本 | 17.0 |
 | --- | --- |
 
-`matrix2  diagonalizesymmetric(matrix2  symmat, vector2  &diag)`
+`matrix2 diagonalizesymmetric(matrix2 symmat, vector2 &diag)`
 
-`matrix3  diagonalizesymmetric(matrix3  symmat, vector  &diag)`
+`matrix3 diagonalizesymmetric(matrix3 symmat, vector &diag)`
 
-`matrix  diagonalizesymmetric(matrix  symmat, vector4  &diag)`
+`matrix diagonalizesymmetric(matrix symmat, vector4 &diag)`
 
 对角化一个[对称矩阵](http://en.wikipedia.org/wiki/Symmetric_matrix)。
 

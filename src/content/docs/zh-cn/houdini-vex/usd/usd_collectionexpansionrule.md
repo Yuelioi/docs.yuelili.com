@@ -35,6 +35,6 @@ USD支持几种标准扩展规则：
 ```vex
 // 获取集合的扩展规则
 string collection_path = usd_makecollectionpath(0, "/geo/cube", "some_collection");
-string expansion_rule  = usd_collectionexpansionrule(0, collection_path);
+string expansion_rule = usd_collectionexpansionrule(0, collection_path);
 
 ```

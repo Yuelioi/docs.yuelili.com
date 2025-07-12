@@ -46,6 +46,6 @@ usd_setprimvar(0, "/geo/sphere", "half_primvar", {1.25, 1.50, 1.75});
 
 // Adds a color primitive with 'vertex' interpolation.
 usd_addprimvar(0, pp, "color_primvar", "color3d[]", "vertex");
-usd_setprimvar(0, pp, "color_primvar",  vector[](array({1,0,0}, {0,1,0}, {0,0,1})));
+usd_setprimvar(0, pp, "color_primvar", vector[](array({1,0,0}, {0,1,0}, {0,0,1})));
 
 ```

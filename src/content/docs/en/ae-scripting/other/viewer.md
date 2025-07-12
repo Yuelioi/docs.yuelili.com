@@ -17,7 +17,7 @@ This maximizes the active viewer panel, and displays its type if it contains a c
 var activeViewer = app.activeViewer;
 activeViewer.maximized = true;
 if (activeViewer.type === ViewerType.VIEWER_COMPOSITION) {
-    alert("Composition panel is active.");
+ alert("Composition panel is active.");
 }
 ```
 

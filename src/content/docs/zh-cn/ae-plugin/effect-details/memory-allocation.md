@@ -13,17 +13,17 @@ After Effects 传递给你的句柄在你被调用之前会被锁定，并在你
 
 ## PF_HandleSuite1
 
-|        函数     |    用途      |       替代函数       |
-|-----------------------|-------------------------------------------------------------------------------------------------------|----------------------|
-| `host_new_handle`      | 分配一个新的句柄。       | `PF_NEW_HANDLE`      |
-|    | <pre lang="cpp">PF_Handle (*host_new_handle)(<br/>  A_HandleSize size);</pre>      |   |
-| `host_lock_handle`     | 锁定一个句柄。    | `PF_LOCK_HANDLE`     |
-|    | <pre lang="cpp">void (*host_lock_handle)(<br/>  PF_Handle pf_handle);</pre>         |   |
-| `host_unlock_handle`   | 解锁一个句柄。    | `PF_UNLOCK_HANDLE`   |
-|    | <pre lang="cpp">void (*host_unlock_handle)(<br/>  PF_Handle pf_handle);</pre>      |   |
-| `host_dispose_handle`  | 释放一个句柄。    | `PF_DISPOSE_HANDLE`  |
-|    | <pre lang="cpp">void (*host_dispose_handle)(<br/>  PF_Handle pf_handle);</pre>     |   |
-| `host_get_handle_size` | 返回传入句柄所指向的可重新分配块的大小（以字节为单位）。        | `PF_GET_HANDLE_SIZE` |
-|    | <pre lang="cpp">A_HandleSize (*host_get_handle_size)(<br/>  PF_Handle pf_handle);</pre>         |   |
-| `host_resize_handle`   | 调整句柄的大小。          | `PF_RESIZE_HANDLE`   |
-|    | <pre lang="cpp">PF_Err (*host_resize_handle)(<br/>  A_HandleSize new_sizeL, PF_Handle \*handlePH);</pre> |   |
+| 函数 | 用途 | 替代函数 |
+|---|---|---|
+| `host_new_handle` | 分配一个新的句柄。 | `PF_NEW_HANDLE` |
+| | <pre lang="cpp">PF_Handle (*host_new_handle)(<br/>  A_HandleSize size);</pre> | |
+| `host_lock_handle` | 锁定一个句柄。 | `PF_LOCK_HANDLE` |
+| | <pre lang="cpp">void (*host_lock_handle)(<br/>  PF_Handle pf_handle);</pre> | |
+| `host_unlock_handle` | 解锁一个句柄。 | `PF_UNLOCK_HANDLE` |
+| | <pre lang="cpp">void (*host_unlock_handle)(<br/>  PF_Handle pf_handle);</pre> | |
+| `host_dispose_handle` | 释放一个句柄。 | `PF_DISPOSE_HANDLE` |
+| | <pre lang="cpp">void (*host_dispose_handle)(<br/>  PF_Handle pf_handle);</pre> | |
+| `host_get_handle_size` | 返回传入句柄所指向的可重新分配块的大小（以字节为单位）。 | `PF_GET_HANDLE_SIZE` |
+| | <pre lang="cpp">A_HandleSize (*host_get_handle_size)(<br/>  PF_Handle pf_handle);</pre> | |
+| `host_resize_handle` | 调整句柄的大小。 | `PF_RESIZE_HANDLE` |
+| | <pre lang="cpp">PF_Err (*host_resize_handle)(<br/>  A_HandleSize new_sizeL, PF_Handle \*handlePH);</pre> | |

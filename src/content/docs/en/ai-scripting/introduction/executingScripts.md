@@ -52,10 +52,10 @@ You must place application-specific startup scripts in a folder named **Startup 
 
 For example, when IllustratorCC is installed to its default location, you would create the Startup Scripts folder at the following location:
 
-|   OS    |                             Path                              |
-| ------- | ------------------------------------------------------------- |
+| OS | Path |
+| --- | --- |
 | Windows | `C:\Program Files\Adobe\Adobe lllustratorCC\Startup Scripts\` |
-| Mac OS  | `/Applications/Adobe lllustrator CC/Startup Scripts/`         |
+| Mac OS | `/Applications/Adobe lllustrator CC/Startup Scripts/` |
 
 JavaScript scripts with a .jsx extension placed in the Startup Scripts folder run automatically when:
 
@@ -68,15 +68,15 @@ The general startup scripts folder contains scripts that run automatically when 
 
 You create the folder in the following location:
 
-|   OS    |                                Path                                 |
-| ------- | ------------------------------------------------------------------- |
-| Windows | `/Program Files/Common Files/Adobe/Startup Scripts CC/Illustrator`  |
-| Mac OS  | `/Library/Application Support/Adobe/Startup Scripts CC/Illustrator` |
+| OS | Path |
+| --- | --- |
+| Windows | `/Program Files/Common Files/Adobe/Startup Scripts CC/Illustrator` |
+| Mac OS | `/Library/Application Support/Adobe/Startup Scripts CC/Illustrator` |
 
 If a script in the general startup folder is meant to be executed only by Illustrator, the script must include the ExtendScript #target directive ( `#target illustrator` ) or code like the following
 
 ```javascript
 if (BridgeTalk.appName == "illustrator") {
-    // continue executing script
+ // continue executing script
 }
 ```

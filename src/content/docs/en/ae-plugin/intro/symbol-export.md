@@ -13,9 +13,9 @@ An example can be found in the SDK samples in entry.h:
 
 ```cpp
 #ifdef AE_OS_WIN
-        #define DllExport   __declspec( dllexport )
+ #define DllExport __declspec( dllexport )
 #elif defined AE_OS_MAC
-        #define DllExport   __attribute__ ((visibility ("default")))
+ #define DllExport __attribute__ ((visibility ("default")))
 #endif
 ```
 
@@ -24,23 +24,23 @@ and then this is applied to the entry point function, for example:
 ```cpp
 extern "C" DllExport
 PF_Err PluginDataEntryFunction(
-    PF_PluginDataPtr inPtr,
-    PF_PluginDataCB inPluginDataCallBackPtr,
-    SPBasicSuite* inSPBasicSuitePtr,
-    const char* inHostName,
-    const char* inHostVersion)
+ PF_PluginDataPtr inPtr,
+ PF_PluginDataCB inPluginDataCallBackPtr,
+ SPBasicSuite* inSPBasicSuitePtr,
+ const char* inHostName,
+ const char* inHostVersion)
 {
-    PF_Err result = PF_Err_INVALID_CALLBACK;
+ PF_Err result = PF_Err_INVALID_CALLBACK;
 
-    result = PF_REGISTER_EFFECT(
-        inPtr,
-        inPluginDataCallBackPtr,
-        "ColorGrid", // Name
-        "ADBE ColorGrid", // Match Name
-        "Sample Plug-ins", // Category
-        AE_RESERVED_INFO); // Reserved Info
+ result = PF_REGISTER_EFFECT(
+ inPtr,
+ inPluginDataCallBackPtr,
+ "ColorGrid", // Name
+ "ADBE ColorGrid", // Match Name
+ "Sample Plug-ins", // Category
+ AE_RESERVED_INFO); // Reserved Info
 
-    return result;
+ return result;
 }
 ```
 

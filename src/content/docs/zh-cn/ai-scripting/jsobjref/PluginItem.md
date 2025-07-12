@@ -467,10 +467,10 @@ title: PluginItem
 
 #### 参数
 
-|      参数      |       类型        |        描述        |
-| -------------- | --------------------------------------------------------------------- | ------------------ |
-| `relativeObject`    | 对象，可选          | 要复制到的对象     |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 插入元素的位置     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `relativeObject` | 对象，可选 | 要复制到的对象 |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 插入元素的位置 |
 
 #### 返回
 
@@ -488,10 +488,10 @@ title: PluginItem
 
 #### 参数
 
-|      参数      |       类型        |    描述    |
-| -------------- | --------------------------------------------------------------------- | ---------------------- |
-| `relativeObject`    | 对象      | 要移动元素的对象       |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 移动元素到的位置       |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `relativeObject` | 对象 | 要移动元素的对象 |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 移动元素到的位置 |
 
 #### 返回
 
@@ -517,14 +517,14 @@ title: PluginItem
 
 ```javascript
 app.activeDocument.pluginItems[index].resize(
-    scaleX,
-    scaleY
-    [,changePositions]
-    [,changeFillPatterns]
-    [,changeFillGradients]
-    [,changeStrokePattern]
-    [,changeLineWidths]
-    [,scaleAbout]
+ scaleX,
+ scaleY
+ [,changePositions]
+ [,changeFillPatterns]
+ [,changeFillGradients]
+ [,changeStrokePattern]
+ [,changeLineWidths]
+ [,scaleAbout]
 )
 ```
 
@@ -534,16 +534,16 @@ app.activeDocument.pluginItems[index].resize(
 
 #### 参数
 
-|       参数       |     类型      |          描述          |
-| ---------------- | ----------------------------------------------------------------- | ---------------------------------------------- |
-| `scaleX`        | 数字（双精度）    | 水平缩放因子         |
-| `scaleY`        | 数字（双精度）    | 垂直缩放因子         |
-| `changePositions`     | 布尔值，可选           | 是否影响艺术对象的位置和方向       |
-| `changeFillPatterns`  | 布尔值，可选           | 是否变换填充图案     |
-| `changeFillGradients` | 布尔值，可选           | 是否变换填充渐变     |
-| `changeStrokePattern` | 布尔值，可选           | 是否变换描边图案     |
-| `changeLineWidths`    | 数字（双精度），可选         | 缩放线宽的量         |
-| `scaleAbout`    | [Transformation](../scripting-constants#transformation)，可选 | 用作锚点的点，用于围绕其进行变换         |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `scaleX` | 数字（双精度） | 水平缩放因子 |
+| `scaleY` | 数字（双精度） | 垂直缩放因子 |
+| `changePositions` | 布尔值，可选 | 是否影响艺术对象的位置和方向 |
+| `changeFillPatterns` | 布尔值，可选 | 是否变换填充图案 |
+| `changeFillGradients` | 布尔值，可选 | 是否变换填充渐变 |
+| `changeStrokePattern` | 布尔值，可选 | 是否变换描边图案 |
+| `changeLineWidths` | 数字（双精度），可选 | 缩放线宽的量 |
+| `scaleAbout` | [Transformation](../scripting-constants#transformation)，可选 | 用作锚点的点，用于围绕其进行变换 |
 
 #### 返回
 
@@ -555,12 +555,12 @@ app.activeDocument.pluginItems[index].resize(
 
 ```javascript
 app.activeDocument.pluginItems[index].rotate(
-    angle
-    [,changePositions]
-    [,changeFillPatterns]
-    [,changeFillGradients]
-    [,changeStrokePattern]
-    [,rotateAbout]
+ angle
+ [,changePositions]
+ [,changeFillPatterns]
+ [,changeFillGradients]
+ [,changeStrokePattern]
+ [,rotateAbout]
 )
 ```
 
@@ -572,14 +572,14 @@ app.activeDocument.pluginItems[index].rotate(
 
 #### 参数
 
-|       参数       |     类型      |          描述          |
-| ---------------- | ----------------------------------------------------------------- | ---------------------------------------------- |
-| `angle`         | 数字（双精度）    | 旋转元素的旋转角度   |
-| `changePositions`     | 布尔值，可选           | 是否影响艺术对象的位置和方向       |
-| `changeFillPatterns`  | 布尔值，可选           | 是否变换填充图案     |
-| `changeFillGradients` | 布尔值，可选           | 是否变换填充渐变     |
-| `changeStrokePattern` | 布尔值，可选           | 是否变换描边图案     |
-| `rotateAbout`   | [Transformation](../scripting-constants#transformation)，可选 | 用作锚点的点，用于围绕其进行变换         |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `angle` | 数字（双精度） | 旋转元素的旋转角度 |
+| `changePositions` | 布尔值，可选 | 是否影响艺术对象的位置和方向 |
+| `changeFillPatterns` | 布尔值，可选 | 是否变换填充图案 |
+| `changeFillGradients` | 布尔值，可选 | 是否变换填充渐变 |
+| `changeStrokePattern` | 布尔值，可选 | 是否变换描边图案 |
+| `rotateAbout` | [Transformation](../scripting-constants#transformation)，可选 | 用作锚点的点，用于围绕其进行变换 |
 
 #### 返回
 
@@ -591,13 +591,13 @@ app.activeDocument.pluginItems[index].rotate(
 
 ```javascript
 app.activeDocument.pluginItems[index].transform(
-    transformationMatrix
-    [, changePositions]
-    [, changeFillPatterns]
-    [, changeFillGradients]
-    [, changeStrokePattern]
-    [, changeLineWidths]
-    [, transformAbout]
+ transformationMatrix
+ [, changePositions]
+ [, changeFillPatterns]
+ [, changeFillGradients]
+ [, changeStrokePattern]
+ [, changeLineWidths]
+ [, transformAbout]
 )
 ```
 
@@ -607,15 +607,15 @@ app.activeDocument.pluginItems[index].transform(
 
 #### 参数
 
-|        参数   |     类型      |   描述      |
-| ------------------- | ----------------------------------------------------------------- | ------------------------------------- |
-| `transformationMatrix` | [Matrix](.././Matrix)       | 要应用的变换矩阵          |
-| `changePositions`      | 布尔值，可选           | 是否改变位置      |
-| `changeFillPatterns`   | 布尔值，可选           | 是否改变填充图案          |
-| `changeFillGradients`  | 布尔值，可选           | 是否改变填充渐变          |
-| `changeStrokePattern`  | 布尔值，可选           | 是否改变描边图案          |
-| `changeLineWidths`     | 数字（双精度），可选         | 缩放线宽的量      |
-| `transformAbout`       | [Transformation](../scripting-constants#transformation)，可选 | 用作锚点的点，用于围绕其进行变换      |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `transformationMatrix` | [Matrix](.././Matrix) | 要应用的变换矩阵 |
+| `changePositions` | 布尔值，可选 | 是否改变位置 |
+| `changeFillPatterns` | 布尔值，可选 | 是否改变填充图案 |
+| `changeFillGradients` | 布尔值，可选 | 是否改变填充渐变 |
+| `changeStrokePattern` | 布尔值，可选 | 是否改变描边图案 |
+| `changeLineWidths` | 数字（双精度），可选 | 缩放线宽的量 |
+| `transformAbout` | [Transformation](../scripting-constants#transformation)，可选 | 用作锚点的点，用于围绕其进行变换 |
 
 #### 返回
 
@@ -627,12 +627,12 @@ app.activeDocument.pluginItems[index].transform(
 
 ```javascript
 app.activeDocument.pluginItems[index].translate(
-    [deltaX]
-    [, deltaY]
-    [, transformObjects]
-    [, transformFillPatterns]
-    [, transformFillGradients]
-    [, transformStrokePatterns]
+ [deltaX]
+ [, deltaY]
+ [, transformObjects]
+ [, transformFillPatterns]
+ [, transformFillGradients]
+ [, transformStrokePatterns]
 )
 ```
 
@@ -642,14 +642,14 @@ app.activeDocument.pluginItems[index].translate(
 
 #### 参数
 
-|   参数    |     类型      |       描述       |
-| --------------------- | ------------------------- | ---------------------------- |
-| `deltaX`      | 数字（双精度），可选 | 水平偏移量       |
-| `deltaY`      | 数字（双精度），可选 | 垂直偏移量       |
-| `transformObjects`        | 布尔值，可选   | 是否变换对象   |
-| `transformFillPatterns`   | 布尔值，可选   | 是否变换填充图案       |
-| `transformFillGradients`  | 布尔值，可选   | 是否变换填充渐变       |
-| `transformStrokePatterns` | 布尔值，可选   | 是否变换描边图案       |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `deltaX` | 数字（双精度），可选 | 水平偏移量 |
+| `deltaY` | 数字（双精度），可选 | 垂直偏移量 |
+| `transformObjects` | 布尔值，可选 | 是否变换对象 |
+| `transformFillPatterns` | 布尔值，可选 | 是否变换填充图案 |
+| `transformFillGradients` | 布尔值，可选 | 是否变换填充渐变 |
+| `transformStrokePatterns` | 布尔值，可选 | 是否变换描边图案 |
 
 #### 返回
 
@@ -667,9 +667,9 @@ app.activeDocument.pluginItems[index].translate(
 
 #### 参数
 
-|  参数  |    类型     |     描述     |
-| ------ | --------------------------------------------------- | ------------------------ |
-| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法 |
 
 #### 返回
 
@@ -684,8 +684,8 @@ app.activeDocument.pluginItems[index].translate(
 ```javascript
 // 通过复制现有的插件艺术项创建新的插件艺术
 if (app.documents.length > 0 && app.activeDocument.pluginItems.length > 0) {
-    var doc = app.activeDocument;
-    var pluginArt = doc.pluginItems[0];
-    pluginArt.duplicate(pluginArt.parent, ElementPlacement.PLACEATBEGINNING);
+ var doc = app.activeDocument;
+ var pluginArt = doc.pluginItems[0];
+ pluginArt.duplicate(pluginArt.parent, ElementPlacement.PLACEATBEGINNING);
 }
 ```

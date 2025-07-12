@@ -30,8 +30,8 @@ Because the replacement occurs after the localized string is chosen, the variabl
 
 ```javascript
 today = {
-    en: "Today is %1/%2.",
-    de: "Heute ist der %2.%1."
+ en: "Today is %1/%2.",
+ de: "Heute ist der %2.%1."
 };
 d = new Date();
 alert (localize (today, d.getMonth()+1, d.getDate()));
@@ -78,9 +78,9 @@ This object defines one message for British English, another for all other flavo
 
 ```javascript
 message = {
-    en_GB: "Please select a colour."
-    en: "Please select a colour."
-    de: "Bitte wählen Sie eine Farbe."
+ en_GB: "Please select a colour."
+ en: "Please select a colour."
+ de: "Bitte wählen Sie eine Farbe."
 };
 ```
 
@@ -88,9 +88,9 @@ If you need to specify different messages for different platforms, you can appen
 
 ```javascript
 pressMsg = {
-    en_GB_Mac: "Press Cmd-S to select a colour.",
-    en_Mac: "Press Cmd-S to select a color.",
-    en: "Press Ctrl-S to select a color."
+ en_GB_Mac: "Press Cmd-S to select a colour.",
+ en_Mac: "Press Cmd-S to select a color.",
+ en: "Press Ctrl-S to select a color."
 };
 ```
 
@@ -137,22 +137,22 @@ The function takes a specially formatted set of localized versions of a display 
 
 #### Parameters
 
-|    Parameter     |  Type   |                                                                                                                                            Description                                                                                                                                             |
-|------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| localization_obj | Object  | A JavaScript object literal whose property names are locale names, and whose property values are the localized text strings. The locale name is an identifier as specified in the ISO 3166 standard, a set of two-letter language abbreviations, such as `"en"` for English and `"de"` for German. |
-|                  |         | For example: `btnText = { en: "Yes", de: "Ja", fr: "Oui" }; b1 = w.add ("button", undefined, localize (btnText));`                                                                                                                                                                                 |
-|                  |         | The string value of each property can contain variables in the form %1, %2, and so on, corresponding to additional arguments. The variable is replaced with the result of evaluating the corresponding argument in the returned string.                                                            |
-| args             | Any     | Optional. Additional JavaScript expressions matching variables in the string values supplied in the localization object. The first argument corresponds to the variable `%1`, the second to `%2`, and so on.                                                                                       |
-|                  |         | Each expression is evaluated and the result inserted in the variable's positionin the returned string.                                                                                                                                                                                             |
-| ZString          | ZString | Internal use only. A ZString is an internal Adobe format for localized strings, which you might see in Adobe scripts. It is a string that begins with `$$$` and contains a path to the localized string in an installed ZString dictionary.                                                        |
-|                  |         | For example: `w = new Window ("dialog", localize ("$$$/UI/title1=Sample"));`                                                                                                                                                                                                                       |
+| Parameter | Type | Description |
+|---|---|---|
+| localization_obj | Object | A JavaScript object literal whose property names are locale names, and whose property values are the localized text strings. The locale name is an identifier as specified in the ISO 3166 standard, a set of two-letter language abbreviations, such as `"en"` for English and `"de"` for German. |
+| | | For example: `btnText = { en: "Yes", de: "Ja", fr: "Oui" }; b1 = w.add ("button", undefined, localize (btnText));` |
+| | | The string value of each property can contain variables in the form %1, %2, and so on, corresponding to additional arguments. The variable is replaced with the result of evaluating the corresponding argument in the returned string. |
+| args | Any | Optional. Additional JavaScript expressions matching variables in the string values supplied in the localization object. The first argument corresponds to the variable `%1`, the second to `%2`, and so on. |
+| | | Each expression is evaluated and the result inserted in the variable's positionin the returned string. |
+| ZString | ZString | Internal use only. A ZString is an internal Adobe format for localized strings, which you might see in Adobe scripts. It is a string that begins with `$$$` and contains a path to the localized string in an installed ZString dictionary. |
+| | | For example: `w = new Window ("dialog", localize ("$$$/UI/title1=Sample"));` |
 
 For example:
 
 ```javascript
 today = {
-    en: "Today is %1/%2",
-    de: "Heute ist der %2.%1."
+ en: "Today is %1/%2",
+ de: "Heute ist der %2.%1."
 };
 d = new Date();
 alert (localize (today, d.getMonth()+1, d.getDate()));

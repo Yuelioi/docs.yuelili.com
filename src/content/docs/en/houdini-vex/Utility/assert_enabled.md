@@ -9,11 +9,11 @@ Returns 1 if the environment variable `HOUDINI_VEX_ASSERT` is set or 0 if the va
 The `assert()` macro uses this function to only execute assertions when `HOUDINI_VEX_ASSERT` is set:
 
 ```vex
-#define assert(EXPR)    \
-    if (assert_enabled()) { \
-        if (!(EXPR)) print_once(sprintf('VEX Assertion Failed %s:%d - (%s)\n', \
-        __FILE__, __LINE__, #EXPR)); \
-    }
+#define assert(EXPR) \
+ if (assert_enabled()) { \
+ if (!(EXPR)) print_once(sprintf('VEX Assertion Failed %s:%d - (%s)\n', \
+ __FILE__, __LINE__, #EXPR)); \
+ }
 
 ```
 

@@ -24,10 +24,10 @@ You can optionally specify a string argument to choose the random number
 generation method. The string may be one of:
 
 - `default`: Efficient random number generation. This method is backward
-  compatible with previous releases of Houdini.
+ compatible with previous releases of Houdini.
 - `mersenne` or `twister`: Uses the Mersenne Twister which has some very
-  nice properties. This code is based of the work of: Copyright (C) 1997
+ nice properties. This code is based of the work of: Copyright (C) 1997
 - 2002, Makoto Matsumoto and Takuji Nishimura, All rights reserved.
 - `qstrat`: Uses a quasi-stratified random number generator. This tends
-  to distribute the random numbers evenly, reducing clumping and
-  spacing.
+ to distribute the random numbers evenly, reducing clumping and
+ spacing.

@@ -7,7 +7,6 @@ title: item
 
 `app.project.items[index]`
 
-
 #### Description
 
 The Item object represents an item that can appear in the Project panel. The first item is at index 1.
@@ -16,7 +15,6 @@ The Item object represents an item that can appear in the Project panel. The fir
 Item is the base class for [AVItem object](../avitem) and for [FolderItem object](../folderitem), which are in turn the base classes for various other item types, so Item attributes and methods are available when working with all of these item types.
 :::
 
-
 #### Example
 
 This example gets the second item from the project and checks that it is a folder. It then removes from the folder any top-level item that is not currently selected. It also checks to make sure that, for each item in the folder, the parent is properly set to the correct folder.
@@ -24,21 +22,21 @@ This example gets the second item from the project and checks that it is a folde
 ```javascript
 var myFolder = app.project.item(2);
 if (!(myFolder instanceof FolderItem)) {
-    alert("error: second item is not a folder");
+ alert("error: second item is not a folder");
 } else {
-    var numInFolder = myFolder.numItems;
-    //Always run loops backwards when deleting things:
-    for (var i = numInFolder; i >= 1; i--) {
-        var curItem = myFolder.item(i);
-        if (curItem.parentFolder !== myFolder) {
-            alert("error within AE: the parentFolder is not set correctly");
-        } else {
-            if (!curItem.selected) {
-                //found an unselected solid.
-                curItem.remove();
-            }
-        }
-    }
+ var numInFolder = myFolder.numItems;
+ //Always run loops backwards when deleting things:
+ for (var i = numInFolder; i >= 1; i--) {
+ var curItem = myFolder.item(i);
+ if (curItem.parentFolder !== myFolder) {
+ alert("error within AE: the parentFolder is not set correctly");
+ } else {
+ if (!curItem.selected) {
+ //found an unselected solid.
+ curItem.remove();
+ }
+ }
+ }
 }
 ```
 
@@ -82,7 +80,6 @@ String; read-only.
 This functionality was added in After Effects 16.1 (CC 2019)
 :::
 
-
 #### Description
 
 An array of `guide` objects, containing `orientationType`, `positionType`, and `position` attributes.
@@ -118,7 +115,6 @@ The label color for the item. Colors are represented by their number (0 for None
 :::tip
 Custom label colors cannot be set programmatically.
 :::
-
 
 #### Type
 
@@ -163,9 +159,9 @@ var compFolder = app.project.items.addFolder("comps");
 //move all compositions into new folder by setting
 //compItem's parentFolder to "comps" folder
 for (var i = 1; i <= app.project.numItems; i++){
-    if (app.project.item(i) instanceof CompItem) {
-        app.project.item(i).parentFolder = compFolder;
-    }
+ if (app.project.item(i) instanceof CompItem) {
+ app.project.item(i).parentFolder = compFolder;
+ }
 }
 ```
 
@@ -199,26 +195,26 @@ String; read-only.
 
 #### Localized strings
 
-| Locale  |  Composition   |   Folder   |       Footage       |
-| ------- | -------------- | ---------- | ------------------- |
-| `en_US` | Composition    | Folder     | Footage             |
-| `de_DE` | Komposition    | Ordner     | Footage             |
-| `es_ES` | Composición    | Carpeta    | Material de archivo |
-| `fr_FR` | Composition    | Dossier    | Métrage             |
-| `it_IT` | Composizione   | Cartella   | Metraggio           |
-| `ja_JP` | コンポジション | フォルダー | フッテージ          |
-| `ko_KR` | 컴포지션       | 폴더       | 푸티지              |
-| `pt_BR` | Composição     | Pasta      | Gravação            |
-| `ru_ru` | Композиция     | Папка      | Видеоряд            |
-| `zh_CN` | 合成           | 文件夹     | 素材                |
+| Locale | Composition | Folder | Footage |
+| --- | --- | --- | --- |
+| `en_US` | Composition | Folder | Footage |
+| `de_DE` | Komposition | Ordner | Footage |
+| `es_ES` | Composición | Carpeta | Material de archivo |
+| `fr_FR` | Composition | Dossier | Métrage |
+| `it_IT` | Composizione | Cartella | Metraggio |
+| `ja_JP` | コンポジション | フォルダー | フッテージ |
+| `ko_KR` | 컴포지션 | 폴더 | 푸티지 |
+| `pt_BR` | Composição | Pasta | Gravação |
+| `ru_ru` | Композиция | Папка | Видеоряд |
+| `zh_CN` | 合成 | 文件夹 | 素材 |
 
 #### Example
 
 ```javascript
 if (/Composition|Komposition|Composición|Composizione|コンポジション|컴포지션|Composição|Композиция|合成/.test(app.project.item(index).typeName)) {
-    // item is a composition
+ // item is a composition
 } else if (/Folder|Ordner|Carpeta|Dossier|Cartella|フォルダー|폴더|Pasta|Папка|文件夹/.test(app.project.item(index).typeName)) {
-    // item is a folder
+ // item is a folder
 }
 ```
 
@@ -234,17 +230,16 @@ if (/Composition|Komposition|Composición|Composizione|コンポジション|컴
 This functionality was added in After Effects 16.1 (CC 2019)
 :::
 
-
 #### Description
 
 Creates a new guide and adds it to the `guides` object of the Item.
 
 #### Parameters
 
-|     Parameter     |  Type   |                                          Description                                          |
-| ----------------- | ------- | --------------------------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `orientationType` | Integer | `0` for a horizontal guide, `1` for a vertical guide. Any other value defaults to horizontal. |
-| `position`        | Integer | The X or Y coordinate position of the guide in pixels, depending on its `orientationType`.    |
+| `position` | Integer | The X or Y coordinate position of the guide in pixels, depending on its `orientationType`. |
 
 #### Returns
 
@@ -286,15 +281,14 @@ Nothing.
 This functionality was added in After Effects 16.1 (CC 2019)
 :::
 
-
 #### Description
 
 Removes an existing guide. Choose the guide based on its index inside the `Item.guides` object.
 
 #### Parameters
 
-|  Parameter   |  Type   |              Description              |
-| ------------ | ------- | ------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `guideIndex` | Integer | The index of the guide to be removed. |
 
 #### Returns
@@ -313,7 +307,6 @@ app.project.activeItem.removeGuide(0);
 Removing a guide will cause all higher guide indexes to shift downward.
 :::
 
-
 ---
 
 ### Item.setGuide()
@@ -324,7 +317,6 @@ Removing a guide will cause all higher guide indexes to shift downward.
 This functionality was added in After Effects 16.1 (CC 2019)
 :::
 
-
 #### Description
 
 Modifies the `position` of an existing guide. Choose the guide based on its `guideIndex` inside the `Item.guides` array.
@@ -333,10 +325,10 @@ A guide's `orientationType` may not be changed after it is created.
 
 #### Parameters
 
-|  Parameter   |  Type   |                                               Description                                               |
-| ------------ | ------- | ------------------------------------------------------------------------------------------------------- |
-| `position`   | Integer | The new X or Y coordinate position of the guide in pixels, depending on its existing `orientationType`. |
-| `guideIndex` | Integer | The index of the guide to be modified.                                                                  |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `position` | Integer | The new X or Y coordinate position of the guide in pixels, depending on its existing `orientationType`. |
+| `guideIndex` | Integer | The index of the guide to be modified. |
 
 #### Returns
 

@@ -9,7 +9,6 @@ title: general
 On this page, we're going to use `thisLayer` as a sample on how to call these items, however note that any method that returns a [Layer](.././layer) will work.
 :::
 
-
 ---
 
 ## Attributes
@@ -91,7 +90,7 @@ If the layer is given a parent later, then the behavior of the layer changes acc
 ```js
 idx = index;
 if (hasParent) {
-        idx = parent.index;
+ idx = parent.index;
 }
 thisComp.layer(idx).position.wiggle(5,20)
 ```
@@ -153,7 +152,6 @@ Returns the In point of the layer, in seconds.
 :::note
 In general, the value of outPoint is greater than the value of inPoint. However, if a layer is reversed in time, the value of inPoint is greater than the value of outPoint. Similarly, the value of startTime can be greater than the value of inPoint.
 :::
-
 
 #### Type
 
@@ -241,16 +239,14 @@ Samples the color and alpha channel values of a layer and returns the average al
 Using `sampleImage()` in an expression no longer disables multiprocessing.
 :::
 
-
 #### Parameters
 
-|  Parameter   |            Type            |                                                                                                   Description                                                                                                   |
-| ------------ | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `point`      | 2-dimensional Number array | Required. The point at which to sample, im layer space. The point `[0, 0]` is the center of the upper-left pixel in the layer.                                                                                  |
-| `radius`     | 2-dimensional Number array | Optional. Specifies the horizontal and vertical distance from the sample center to the edges of the sampled rectangle. The default value samples one pixel. Defaults to `[0.5, 0.5]`.                           |
-| `postEffect` | Boolean                    | Optional. If `true`, to sample the values *after* layer masks and effects **directly applied to the layer** have been rendered. If `false`, sample values *before* layer masks and effects. Defaults to `true`. |
-| `t`          | Number                     | Optional. Defaults to `time`.                                                                                                                                                                                   |
-
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `point` | 2-dimensional Number array | Required. The point at which to sample, im layer space. The point `[0, 0]` is the center of the upper-left pixel in the layer. |
+| `radius` | 2-dimensional Number array | Optional. Specifies the horizontal and vertical distance from the sample center to the edges of the sampled rectangle. The default value samples one pixel. Defaults to `[0.5, 0.5]`. |
+| `postEffect` | Boolean | Optional. If `true`, to sample the values *after* layer masks and effects **directly applied to the layer** have been rendered. If `false`, sample values *before* layer masks and effects. Defaults to `true`. |
+| `t` | Number | Optional. Defaults to `time`. |
 
 #### Type
 

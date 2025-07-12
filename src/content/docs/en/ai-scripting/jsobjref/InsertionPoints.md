@@ -67,8 +67,8 @@ Gets an element from the collection.
 
 #### Parameters
 
-| Parameter |      Type      |     Description      |
-| --------- | -------------- | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `itemKey` | String, Number | String or number key |
 
 #### Returns
@@ -97,7 +97,7 @@ redraw();
 // Add a space between each character using insertion points.
 var ip;
 for (var i = 0; i < textRef.insertionPoints.length; i += 2) {
-    ip = textRef.insertionPoints[i];
-    ip.characters.add(" ");
+ ip = textRef.insertionPoints[i];
+ ip.characters.add(" ");
 }
 ```

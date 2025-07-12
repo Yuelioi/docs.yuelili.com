@@ -22,16 +22,16 @@ testBtn: Button { text: "Test" }
 
 ```javascript
 "msgPnl: Panel { orientation:'column', alignChildren:['right', 'top'],\
-   text: 'Messages', \
-   title: Group { \
-    st: StaticText { text:'Alert box title:' }, \
-    et: EditText { text:'Sample Alert', characters:35 } \
-   }
-   msg: Group { \
-    st: StaticText { text:'Alert message:' }, \
-    et: EditText { properties:{multiline:true}, \
-    text:'<your message here>' \
-   } \
+ text: 'Messages', \
+ title: Group { \
+ st: StaticText { text:'Alert box title:' }, \
+ et: EditText { text:'Sample Alert', characters:35 } \
+ }
+ msg: Group { \
+ st: StaticText { text:'Alert message:' }, \
+ et: EditText { properties:{multiline:true}, \
+ text:'<your message here>' \
+ } \
 }"
 ```
 
@@ -41,22 +41,22 @@ testBtn: Button { text: "Test" }
 
 - 内联数组包含一个或多个值，形式如下：
 
-   ```javascript
-   [ value, value, ... ]
-   ```
+ ```javascript
+ [ value, value, ... ]
+ ```
 
 - 对象可以是内联对象或命名对象，形式如下：
 
-   ```javascript
-   { classname inlineObject }
-   ```
+ ```javascript
+ { classname inlineObject }
+ ```
 
-   在这种情况下，`classname` 必须是[控件类型](../types-of-controls)中列出的控件类名之一。
+ 在这种情况下，`classname` 必须是[控件类型](../types-of-controls)中列出的控件类名之一。
 - 内联对象包含一个或多个属性，形式如下：
 
-   ```javascript
-   { propertyName: propertyValue, propertyName: propertyValue, ... }
-   ```
+ ```javascript
+ { propertyName: propertyValue, propertyName: propertyValue, ... }
+ ```
 
 ---
 
@@ -64,9 +64,9 @@ testBtn: Button { text: "Test" }
 
 [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) 中的这些示例演示了如何使用资源规范字符串：
 
-| [AlertBoxBuilder1.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/AlertBoxBuilder1.jsx)   | 演示了一种使用资源字符串的方式，创建一个允许用户输入一些值的对话框，然后使用这些值构建可自定义的警告对话框的资源字符串。   |
-|-----------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [AlertBoxBuilder2.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/AlertBoxBuilder2.jsx)   | 使用资源字符串（而不是 `add()` 方法）指定用户输入对话框的所有内容，构建相同的对话框。        |
+| [AlertBoxBuilder1.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/AlertBoxBuilder1.jsx) | 演示了一种使用资源字符串的方式，创建一个允许用户输入一些值的对话框，然后使用这些值构建可自定义的警告对话框的资源字符串。 |
+|---|---|
+| [AlertBoxBuilder2.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/AlertBoxBuilder2.jsx) | 使用资源字符串（而不是 `add()` 方法）指定用户输入对话框的所有内容，构建相同的对话框。 |
 
 这两个 Alert Box Builder 示例创建了相同的对话框来从用户那里收集值。
 
@@ -78,10 +78,10 @@ Build 按钮的事件处理程序根据收集的值构建资源字符串，并�
 
 ```javascript
 var btnPnlResource = "btnPnl: Panel { orientation:'row', \
-   text: 'Build it', \
-   testBtn: Button { text:'Test' }, \
-   buildBtn: Button { text:'Build', properties:{name:'ok'} }, \
-   cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
+ text: 'Build it', \
+ testBtn: Button { text:'Test' }, \
+ buildBtn: Button { text:'Build', properties:{name:'ok'} }, \
+ cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
 }";
 
 dlg = new Window( alertBuilderResource );

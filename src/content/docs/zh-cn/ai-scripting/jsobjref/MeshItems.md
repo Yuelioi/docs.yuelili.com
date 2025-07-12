@@ -67,9 +67,9 @@ title: MeshItems
 
 #### 参数
 
-| 参数     | 类型   | 描述         |
-| -------- | ------ | ------------------ |
-| `name`   | 字符串 | 要获取的元素的名称 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `name` | 字符串 | 要获取的元素的名称 |
 
 #### 返回值
 
@@ -87,9 +87,9 @@ title: MeshItems
 
 #### 参数
 
-| 参数      | 类型     | 描述         |
-| --------- | -------------- | ------------------ |
-| `itemKey` | 字符串, 数字   | 字符串或数字键     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `itemKey` | 字符串, 数字 | 字符串或数字键 |
 
 #### 返回值
 
@@ -120,16 +120,16 @@ title: MeshItems
 ```javascript
 // 将所有网格项从一个文档复制到新文档
 if (app.documents.length > 0) {
-    var srcDoc = documents[0];
-    var locationOffset = 0;
-    var targetDoc = documents.add();
-    for (var i = 0; i < srcDoc.meshItems.length; i++) {
-        var srcItem = srcDoc.meshItems[i];
-        var dupItem = srcDoc.meshItems[i].duplicate(targetDoc, ElementPlacement.PLACEATEND);
+ var srcDoc = documents[0];
+ var locationOffset = 0;
+ var targetDoc = documents.add();
+ for (var i = 0; i < srcDoc.meshItems.length; i++) {
+ var srcItem = srcDoc.meshItems[i];
+ var dupItem = srcDoc.meshItems[i].duplicate(targetDoc, ElementPlacement.PLACEATEND);
 
-        // 在 y 轴上偏移复制的项的位置
-        dupItem.position = Array(100, 50 + locationOffset);
-        locationOffset += 50;
-    }
+ // 在 y 轴上偏移复制的项的位置
+ dupItem.position = Array(100, 50 + locationOffset);
+ locationOffset += 50;
+ }
 }
 ```

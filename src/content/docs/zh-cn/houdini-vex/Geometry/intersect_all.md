@@ -5,7 +5,7 @@ order: 9
 
 要仅获取*第一个*交点，请使用[intersect](./intersect "此函数计算射线与几何体的第一个交点")。
 
-`int  intersect_all(<geometry>geometry, string group, vector orig, vector dir, vector &pos[], int &prim[], vector &uvw[], float tol=0.01, float ttol=0.01 )`
+`int intersect_all(<geometry>geometry, string group, vector orig, vector dir, vector &pos[], int &prim[], vector &uvw[], float tol=0.01, float ttol=0.01 )`
 
 `<geometry>`
 

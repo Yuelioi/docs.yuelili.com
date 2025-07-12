@@ -39,15 +39,15 @@ PF_OutFlag2_MUTABLE_RENDER_SEQUENCE_DATA_SLOWER
 
 下表概述了效果需要进行的更改以支持新行为：
 
-|        MFR 和 Sequence Data 使用情况        |      2021 年 3 月 SDK 所需更改       |
-|-----------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 插件未设置 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING`          | 无需更改。效果和 `sequence_data` 将继续像过去一样工作。         |
-| 插件设置了 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` 但在渲染期间既不读取也不写入 `sequence_data` | 使用 2021 年 3 月 SDK 重新编译插件，无需其他代码更改。         |
-|   | 如果插件未使用 2021 年 3 月 SDK 编译，则从 AE 22.0x6 开始，插件将停止使用 MFR。    |
-| 插件设置了 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` 但在渲染期间仅读取 `sequence_data`   | 使用 2021 年 3 月 SDK 重新编译插件，通过 `PF_EffectSequenceDataSuite1` 更新读取 `sequence_data` 以实现线程安全访问。有关更多信息，请参阅 [多帧渲染时在渲染时访问 sequence_data](../global-sequence-frame-data#多帧渲染时在渲染时访问-sequence_data)。 |
-| 插件设置了 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` 并在渲染期间读取和写入 `sequence_data`         | 使用 2021 年 3 月 SDK 重新编译插件并修改插件以：    |
-|   | 1. 使用 [计算缓存 API](../compute-cache-api#计算缓存-api) 进行线程安全的缓存访问，而不是直接读取/写入 `sequence_data`。有关更多信息，请参阅 [多帧渲染的计算缓存](#多帧渲染的计算缓存)。和/或           |
-|   | 2. 添加 `PF_OutFlag2_MUTABLE_RENDER_SEQUENCE_DATA_SLOWER` 标志以恢复对 `sequence_data` 的直接读取/写入访问。    |
+| MFR 和 Sequence Data 使用情况 | 2021 年 3 月 SDK 所需更改 |
+|---|---|
+| 插件未设置 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` | 无需更改。效果和 `sequence_data` 将继续像过去一样工作。 |
+| 插件设置了 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` 但在渲染期间既不读取也不写入 `sequence_data` | 使用 2021 年 3 月 SDK 重新编译插件，无需其他代码更改。 |
+| | 如果插件未使用 2021 年 3 月 SDK 编译，则从 AE 22.0x6 开始，插件将停止使用 MFR。 |
+| 插件设置了 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` 但在渲染期间仅读取 `sequence_data` | 使用 2021 年 3 月 SDK 重新编译插件，通过 `PF_EffectSequenceDataSuite1` 更新读取 `sequence_data` 以实现线程安全访问。有关更多信息，请参阅 [多帧渲染时在渲染时访问 sequence_data](../global-sequence-frame-data#多帧渲染时在渲染时访问-sequence_data)。 |
+| 插件设置了 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` 并在渲染期间读取和写入 `sequence_data` | 使用 2021 年 3 月 SDK 重新编译插件并修改插件以： |
+| | 1. 使用 [计算缓存 API](../compute-cache-api#计算缓存-api) 进行线程安全的缓存访问，而不是直接读取/写入 `sequence_data`。有关更多信息，请参阅 [多帧渲染的计算缓存](#多帧渲染的计算缓存)。和/或 |
+| | 2. 添加 `PF_OutFlag2_MUTABLE_RENDER_SEQUENCE_DATA_SLOWER` 标志以恢复对 `sequence_data` 的直接读取/写入访问。 |
 
 :::note
 使用 2021 年 3 月 SDK 编译并使用 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` 标志以及可选的 `PF_OutFlag2_MUTABLE_RENDER_SEQUENCE_DATA_SLOWER` 标志的效果将从 AE beta 版本 18.0 开始工作，此时引入了 `PF_EffectSequeceDataSuite1`。如果需要支持两种 `sequence_data` 行为，请检查此套件是否存在。
@@ -130,28 +130,28 @@ UI 选择器仍然在主线程上发送，但 `PF_Cmd_SEQUENCE_SETUP`、`PF_Cmd_
 3. 导航到插件或效果的包内容中并找到二进制文件。（例如，**Curves.plugin** 的二进制文件位于：`/Applications/Adobe After Effects [您的 AE 版本]/Plug-ins/Effects/Curves.plugin/Contents/MacOS/Curves`）
 4. 要分析二进制文件，请运行：
 
-    ```sh
-    check_symbols_for_thread_safety.sh [二进制文件位置]
-    例如，check_symbols_for_thread_safety.sh /Applications/Adobe After Effects [您的 AE 版本]/Plug-ins/Effects/Curves.plugin/Contents/MacOS/Curves)
-    ```
+ ```sh
+ check_symbols_for_thread_safety.sh [二进制文件位置]
+ 例如，check_symbols_for_thread_safety.sh /Applications/Adobe After Effects [您的 AE 版本]/Plug-ins/Effects/Curves.plugin/Contents/MacOS/Curves)
+ ```
 
 5. 您将看到工具的输出，格式如下：
 
-    ```sh
-    [符号类型]; [符号名称]
-    ```
+ ```sh
+ [符号类型]; [符号名称]
+ ```
 
 6. `[符号类型]` 是一个区分大小写的字母，表示变量的类型。您可以在此处找到所有类型信息：[https://linux.die.net/man/1/nm](https://linux.die.net/man/1/nm)
 7. 以下是输出示例：
 
-    ```cpp
-    b; Deform::FindSilEdges()::new_kInfinite
-    ```
+ ```cpp
+ b; Deform::FindSilEdges()::new_kInfinite
+ ```
 
-    * `b` 显示此符号位于未初始化数据部分，表明它可能是一个静态变量。
-    * `Deform::FindSilEdges()::new_kInfinite` 是符号名称，其中 `Deform` 是变量所在的命名空间名称。
-    * `FindSilEdges()` 是变量所在的函数名称。
-    * `new_kInfinite` 是实际的变量名称。根据变量的位置，可能不会显示命名空间和函数名称。
+ * `b` 显示此符号位于未初始化数据部分，表明它可能是一个静态变量。
+ * `Deform::FindSilEdges()::new_kInfinite` 是符号名称，其中 `Deform` 是变量所在的命名空间名称。
+ * `FindSilEdges()` 是变量所在的函数名称。
+ * `new_kInfinite` 是实际的变量名称。根据变量的位置，可能不会显示命名空间和函数名称。
 8. 在代码中搜索每个符号，修复它（请参阅 [此处](#如何定位效果中的静态和全局变量) 了解如何修复），并对解决方案中的每个二进制文件重复此操作
 
 ### 在 Windows 上
@@ -174,50 +174,50 @@ UI 选择器仍然在主线程上发送，但 `PF_Cmd_SEQUENCE_SETUP`、`PF_Cmd_
 2. 以 **Debug** 模式编译您的效果并找到其 **.pdb** 文件
 3. 如果您未修改项目构建设置，还应在同一构建目录中找到一些 **.obj** 文件
 4. 您有 **两种选择** 来扫描内容：二进制文件或源文件，使用 `-objfile` 或 `-source` 标志。
-    * 注意：您可以从任一选项中获得相同的符号。
-        * 如果您不确定源代码最终位于哪些二进制文件中，或者如果您希望按源文件跟踪线程安全性，请使用 `-source` 选项。
-        * 如果您希望对项目的扫描部分进行更精细的控制，请使用 `-objfile` 选项。
+ * 注意：您可以从任一选项中获得相同的符号。
+ * 如果您不确定源代码最终位于哪些二进制文件中，或者如果您希望按源文件跟踪线程安全性，请使用 `-source` 选项。
+ * 如果您希望对项目的扫描部分进行更精细的控制，请使用 `-objfile` 选项。
 5. 要分析对象文件中的符号，请运行：
 
-    ```bat
-    CheckThreadSafeSymbols.exe -objfile [要分析的二进制文件的绝对路径] [.pdb 的绝对路径]
-    ```
+ ```bat
+ CheckThreadSafeSymbols.exe -objfile [要分析的二进制文件的绝对路径] [.pdb 的绝对路径]
+ ```
 
 6. 要分析源文件中的符号，请运行：
 
-    ```bat
-    CheckThreadSafeSymbols.exe -source [要分析的源文件的绝对路径] [.pdb 的绝对路径]
-    ```
+ ```bat
+ CheckThreadSafeSymbols.exe -source [要分析的源文件的绝对路径] [.pdb 的绝对路径]
+ ```
 
 7. 全局变量不限于 pdb 中的一个文件或二进制文件的范围，因此您必须检查所有项目全局变量的列表而不进行过滤。使用 `-g` 输出获取所有全局变量的列表：
 
-    ```bat
-    CheckThreadSafeSymbols.exe -g [.pdb 的绝对路径]
-    ```
+ ```bat
+ CheckThreadSafeSymbols.exe -g [.pdb 的绝对路径]
+ ```
 
 8. 如果您不确定效果输出的二进制文件，该工具还可以输出一个 **（嘈杂的）** 二进制文件列表，以及每个二进制文件从中提取数据的源文件。您更改的文件可能位于顶部附近。要查看列表，请运行：
 
-    ```bat
-    CheckThreadSafeSymbols.exe -sf [.pdb 的绝对路径]
-    ```
+ ```bat
+ CheckThreadSafeSymbols.exe -sf [.pdb 的绝对路径]
+ ```
 
 9. 输出符号将采用以下形式：
 
-    ```cpp
-    [符号名称], [符号类型], [数据类型], ([数据位置的部分类型], [二进制地址][二进制地址偏移量])
-    ```
+ ```cpp
+ [符号名称], [符号类型], [数据类型], ([数据位置的部分类型], [二进制地址][二进制地址偏移量])
+ ```
 
 10. 以下是输出示例：
 
-    ```cpp
-    menuBuf, Type: char[0x1000], File Static, (static, [0008FCD0][0003:00001CD0])
-    ```
+ ```cpp
+ menuBuf, Type: char[0x1000], File Static, (static, [0008FCD0][0003:00001CD0])
+ ```
 
-    * `menuBuf` 是实际的变量名称。
-    * `Type: char[0x1000]` 显示变量的类型。此处数据为 `char`。
-    * `File Static` 显示数据的类型。此处数据为 **文件范围的静态变量**。您可以在此页面上找到所有数据类型及其含义：[https://docs.microsoft.com/en-us/visualstudio/debugger/debug-interface-access/datakind?view=vs-2019](https://docs.microsoft.com/en-us/visualstudio/debugger/debug-interface-access/datakind?view=vs-2019)
-    * `static` 显示数据位于内存的静态部分。
-    * `[0008FCD0][0003:00001CD0]` 显示数据的二进制地址和二进制地址偏移量。
+ * `menuBuf` 是实际的变量名称。
+ * `Type: char[0x1000]` 显示变量的类型。此处数据为 `char`。
+ * `File Static` 显示数据的类型。此处数据为 **文件范围的静态变量**。您可以在此页面上找到所有数据类型及其含义：[https://docs.microsoft.com/en-us/visualstudio/debugger/debug-interface-access/datakind?view=vs-2019](https://docs.microsoft.com/en-us/visualstudio/debugger/debug-interface-access/datakind?view=vs-2019)
+ * `static` 显示数据位于内存的静态部分。
+ * `[0008FCD0][0003:00001CD0]` 显示数据的二进制地址和二进制地址偏移量。
 11. 在代码中搜索每个符号，修复它（请参阅 [此处](#如何定位效果中的静态和全局变量) 了解如何修复），并对解决方案中的每个二进制文件/源文件重复此操作
 
 ---
@@ -235,12 +235,12 @@ UI 选择器仍然在主线程上发送，但 `PF_Cmd_SEQUENCE_SETUP`、`PF_Cmd_
 static int should_just_be_local;
 
 void UseState() {
-    DoComputation(should_just_be_local);
+ DoComputation(should_just_be_local);
 }
 
 void SetAndUseState() {
-    should_just_be_local = DoComputation();
-    UseState();
+ should_just_be_local = DoComputation();
+ UseState();
 }
 ```
 
@@ -250,12 +250,12 @@ void SetAndUseState() {
 // 我们可以通过将 should_just_be_local 变量通过函数参数传递来修复上述代码
 
 void UseState(int should_just_be_local) {
-    DoComputation(should_just_be_local);
+ DoComputation(should_just_be_local);
 }
 
 void SetAndUseState() {
-    int should_just_be_local = DoComputation();
-    UseState(should_just_be_local);
+ int should_just_be_local = DoComputation();
+ UseState(should_just_be_local);
 }
 ```
 
@@ -269,17 +269,17 @@ static int state_with_initializer[64];
 static bool state_was_initialized = false;
 
 void InitializeState() {
-    for (int i = 0; i < 64; ++i) {
-        state_with_initializer[i] = i * i;
-    }
-    state_was_initialized = true;
+ for (int i = 0; i < 64; ++i) {
+ state_with_initializer[i] = i * i;
+ }
+ state_was_initialized = true;
 }
 
 void Main() {
-    if (!state_was_initialized) {
-        InitializeState();
-    }
-    DoComputation(state_with_initializer);
+ if (!state_was_initialized) {
+ InitializeState();
+ }
+ DoComputation(state_with_initializer);
 }
 ```
 
@@ -287,19 +287,19 @@ void Main() {
 
 ```cpp
 std::array<int, 64> InitializeState() {
-    std::array<int, 64> temp;
+ std::array<int, 64> temp;
 
-    for (int i = 0; i < 64; ++i) {
-        temp[i] = i * i;
-    }
-    return temp;
+ for (int i = 0; i < 64; ++i) {
+ temp[i] = i * i;
+ }
+ return temp;
 }
 
 // 我们可以通过将此表设为 const 并在使用前初始化它来修复上述代码
 static const std::array<int, 64> state_with_initializer = InitializeState();
 
 void Main() {
-    DoComputation(state_with_initializer);
+ DoComputation(state_with_initializer);
 }
 ```
 
@@ -310,12 +310,12 @@ void Main() {
 static int depends_on_unchanging_runtime_state;
 
 void UseState() {
-    DoComputation(depends_on_unchanging_runtime_state);
+ DoComputation(depends_on_unchanging_runtime_state);
 }
 
 void SetAndUseState() {
-    depends_on_unchanging_runtime_state = DoComputationThatNeedsStateOnlyOnce();
-    UseState();
+ depends_on_unchanging_runtime_state = DoComputationThatNeedsStateOnlyOnce();
+ UseState();
 }
 ```
 
@@ -323,14 +323,14 @@ void SetAndUseState() {
 
 ```cpp
 void UseState(int depends_on_unchanging_runtime_state) {
-    DoComputation(depends_on_unchanging_runtime_state);
+ DoComputation(depends_on_unchanging_runtime_state);
 }
 
 void SetAndUseState() {
-    // 我们可以通过将变量设为 const static 局部变量来修复上述代码
-    static const int depends_on_unchanging_runtime_state = DoComputationThatNeedsStateOnlyOnce();
+ // 我们可以通过将变量设为 const static 局部变量来修复上述代码
+ static const int depends_on_unchanging_runtime_state = DoComputationThatNeedsStateOnlyOnce();
 
-    UseState(depends_on_unchanging_runtime_state);
+ UseState(depends_on_unchanging_runtime_state);
 }
 ```
 
@@ -341,11 +341,11 @@ void SetAndUseState() {
 static int this_thread_needs_access;
 
 void SetState(int new_state) {
-    this_thread_needs_access = new_state;
+ this_thread_needs_access = new_state;
 }
 
 void UseState() {
-    DoComputation(this_thread_needs_access);
+ DoComputation(this_thread_needs_access);
 }
 ```
 
@@ -356,11 +356,11 @@ void UseState() {
 thread_local static int this_thread_needs_access;
 
 void SetState(int new_state) {
-    this_thread_needs_access = new_state;
+ this_thread_needs_access = new_state;
 }
 
 void UseState() {
-    DoComputation(this_thread_needs_access);
+ DoComputation(this_thread_needs_access);
 }
 ```
 
@@ -372,11 +372,11 @@ void UseState() {
 static int every_thread_needs_latest_state;
 
 void SetState(int new_state) {
-    every_thread_needs_latest_state = new_state;
+ every_thread_needs_latest_state = new_state;
 }
 
 void UseState() {
-    DoComputation(every_thread_needs_latest_state);
+ DoComputation(every_thread_needs_latest_state);
 }
 ```
 
@@ -389,21 +389,21 @@ static std::mutex ex_lock;
 static int every_thread_needs_latest_state;
 
 void SetState(int new_state) {
-    {
-        // 使用互斥锁（锁）保护访问
-        std::lock_guard<std::mutex> lock(ex_lock);
-        every_thread_needs_latest_state = new_state;
-    }
+ {
+ // 使用互斥锁（锁）保护访问
+ std::lock_guard<std::mutex> lock(ex_lock);
+ every_thread_needs_latest_state = new_state;
+ }
 }
 
 void UseState() {
-    int state_capture;
-    {
-        // 使用互斥锁（锁）保护访问
-        std::lock_guard<std::mutex> lock(ex_lock);
-        state_capture = every_thread_needs_latest_state;
-    }
-    DoComputation(state_capture);
+ int state_capture;
+ {
+ // 使用互斥锁（锁）保护访问
+ std::lock_guard<std::mutex> lock(ex_lock);
+ state_capture = every_thread_needs_latest_state;
+ }
+ DoComputation(state_capture);
 }
 ```
 

@@ -24,7 +24,7 @@ the current member to value and then executes statement. For example:
 ```vex
 int an_array[] = {1, 2}
 foreach (int num; an_array) {
-    printf("%d", num);
+ printf("%d", num);
 }
 
 ```
@@ -48,7 +48,7 @@ statement. For example:
 ```vex
 string days[] = { "Mon", "Tue", "Wed", "Thu", "Fri" }
 foreach (int i; string name; days) {
-    printf("Day number %d is %s", i, name);
+ printf("Day number %d is %s", i, name);
 }
 
 ```

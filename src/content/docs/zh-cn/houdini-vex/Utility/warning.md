@@ -15,18 +15,18 @@ order: 22
 
 ```vex
 if (primintrinsic(0,"typeid",@primnum) != 1) {
-    warning("非多边形图元将被忽略。");
-    return;
+ warning("非多边形图元将被忽略。");
+ return;
 }
 if (primintrinsic(0,"closed",@primnum) == 0 || @numvtx < 3) {
-    warning("开放或退化的多边形将被忽略。");
-    return;
+ warning("开放或退化的多边形将被忽略。");
+ return;
 }
 float minimumValue = chf("min");
 float maximumValue = chf("max");
 if (minimumValue > maximumValue) {
-    warning("最小值(%f)不能大于最大值(%f)；将最小值替换为最大值。", minimumValue, maximumValue);
-    minimumValue = maximumValue;
+ warning("最小值(%f)不能大于最大值(%f)；将最小值替换为最大值。", minimumValue, maximumValue);
+ minimumValue = maximumValue;
 }
 
 ```

@@ -11,13 +11,11 @@ title: path-property
 This functionality was added in After Effects 15.0 (CC)
 :::
 
-
 This category contains information relating to mask & shape *paths*.
 
 :::info
 On this page, we're going to use `thisLayer.mask("Mask 1").maskPath` as a sample on how to call these items, however note that any method that returns a [Path](#) will work.
 :::
-
 
 ---
 
@@ -53,13 +51,13 @@ The points and tangents of the same path can be passed into `createPath()` with 
 
 #### Parameters
 
-|   Parameter   |            Type             |                                                                                                         Description                                                                                                         |
-|---------------|-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `points`      | Array of number pair arrays | Optional. An array of number pair arrays representing the `[x, y]` coordinates of the points. The array must contain at least 1 item, and can be of any greater length. Defaults to `[[0,0], [100,0], [100,100], [0,100]]`. |
-| `inTangents`  | Array of number pair arrays | Optional. An array of number pair arrays representing their `[x, y]` *offset* coordinates. The length of this array must be exactly the same as the `points` parameter. Defaults to `[]`.                                   |
-|               |                             | Coordinate values are offset relative to the parent point's coordinates. i.e. The value `[0, 0]` creates no curvature at the incoming tangent.                                                                              |
-| `outTangents` | Array of number pair arrays | Optional. See `inTangents`. Defaults to `[]`.                                                                                                                                                                               |
-| `is_closed`   | Boolean                     | Optional. Defaults to `true`.                                                                                                                                                                                               |
+| Parameter | Type | Description |
+|---|---|---|
+| `points` | Array of number pair arrays | Optional. An array of number pair arrays representing the `[x, y]` coordinates of the points. The array must contain at least 1 item, and can be of any greater length. Defaults to `[[0,0], [100,0], [100,100], [0,100]]`. |
+| `inTangents` | Array of number pair arrays | Optional. An array of number pair arrays representing their `[x, y]` *offset* coordinates. The length of this array must be exactly the same as the `points` parameter. Defaults to `[]`. |
+| | | Coordinate values are offset relative to the parent point's coordinates. i.e. The value `[0, 0]` creates no curvature at the incoming tangent. |
+| `outTangents` | Array of number pair arrays | Optional. See `inTangents`. Defaults to `[]`. |
+| `is_closed` | Boolean | Optional. Defaults to `true`. |
 
 #### Returns
 
@@ -95,12 +93,11 @@ Tangent coordinate values are offset relative to the parent point's coordinates 
 
 This method can be passed into the [`createPath()`](#pathpropertycreatepath) method for the `inTangents` parameter when duplicating a path.
 
-
 #### Parameters
 
-| Parameter |  Type  |                                                          Description                                                           |
-| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `t`       | Number | Optional. The specified time (in comp seconds) to sample the tangents. Defaults to `time` (the current comp time, in seconds). |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `t` | Number | Optional. The specified time (in comp seconds) to sample the tangents. Defaults to `time` (the current comp time, in seconds). |
 
 #### Returns
 
@@ -140,10 +137,10 @@ The linear distance between the parent point's coordinates and `normalOnPath()` 
 
 #### Parameters
 
-|  Parameter   |  Type  |                                                        Description                                                         |
-| ------------ | ------ | -------------------------------------------------------------------------------------------------------------------------- |
-| `percentage` | Number | Optional. The percentage along the path at which to sample the normal. Defaults to `0.5` (50%).                            |
-| `t`          | Number | Optional. The specified time (in comp seconds) to sample the path. Defaults to `time` (the current comp time, in seconds). |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `percentage` | Number | Optional. The percentage along the path at which to sample the normal. Defaults to `0.5` (50%). |
+| `t` | Number | Optional. The specified time (in comp seconds) to sample the path. Defaults to `time` (the current comp time, in seconds). |
 
 #### Returns
 
@@ -173,9 +170,9 @@ This method can be passed into the [`createPath()`](#pathpropertycreatepath) met
 
 #### Parameters
 
-| Parameter |  Type  |                                                          Description                                                           |
-| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `t`       | Number | Optional. The specified time (in comp seconds) to sample the tangents. Defaults to `time` (the current comp time, in seconds). |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `t` | Number | Optional. The specified time (in comp seconds) to sample the tangents. Defaults to `time` (the current comp time, in seconds). |
 
 #### Returns
 
@@ -198,11 +195,10 @@ The point is expressed as a percentage of the arc-length of the path. `0.0` (0%)
 This also means that for an open path and closed path with identical points, the percentage along the open path will not return the same coordinates as the closed path due to the additional length of the closed path.
 :::
 
-
-|  Parameter   |  Type  |                                                        Description                                                         |
-| ------------ | ------ | -------------------------------------------------------------------------------------------------------------------------- |
-| `percentage` | Number | Optional. The percentage along the path at which to sample the point. Defaults to `0.5` (50%).                             |
-| `t`          | Number | Optional. The specified time (in comp seconds) to sample the path. Defaults to `time` (the current comp time, in seconds). |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `percentage` | Number | Optional. The percentage along the path at which to sample the point. Defaults to `0.5` (50%). |
+| `t` | Number | Optional. The specified time (in comp seconds) to sample the path. Defaults to `time` (the current comp time, in seconds). |
 
 #### Returns
 
@@ -221,15 +217,15 @@ Get the x,y coordinates of all points on a path.
 The returned values are relative, depending on the context:
 - Coordinates for **layer mask path points** are relative to the layer's origin in its upper-left hand corner.
 - Coordinates for **Bezier shape path points** are are relative to the anchor point of the path's shape group
-    - (ex., "Transform: Shape 1 > Anchor Point").
+ - (ex., "Transform: Shape 1 > Anchor Point").
 - Coordinates for **brush stroke path points** are relative to the **start of the stroke**; the first point is `[0,0]`.
-    - This method can be passed into the [`createPath()`](#pathpropertycreatepath) method for the points parameter when duplicating a path.
+ - This method can be passed into the [`createPath()`](#pathpropertycreatepath) method for the points parameter when duplicating a path.
 
 #### Parameters
 
-| Parameter |  Type  |                                                        Description                                                         |
-| --------- | ------ | -------------------------------------------------------------------------------------------------------------------------- |
-| `t`       | Number | Optional. The specified time (in comp seconds) to sample the path. Defaults to `time` (the current comp time, in seconds). |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `t` | Number | Optional. The specified time (in comp seconds) to sample the path. Defaults to `time` (the current comp time, in seconds). |
 
 #### Returns
 
@@ -268,11 +264,10 @@ The linear distance between the parent point's coordinates and `tangentOnPath()`
 
 #### Parameters
 
-
-|  Parameter   |  Type  |                                                        Description                                                         |
-| ------------ | ------ | -------------------------------------------------------------------------------------------------------------------------- |
-| `percentage` | Number | Optional. The percentage along the path at which to sample the tangent. Defaults to `0.5` (50%).                           |
-| `t`          | Number | Optional. The specified time (in comp seconds) to sample the path. Defaults to `time` (the current comp time, in seconds). |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `percentage` | Number | Optional. The percentage along the path at which to sample the tangent. Defaults to `0.5` (50%). |
+| `t` | Number | Optional. The specified time (in comp seconds) to sample the path. Defaults to `time` (the current comp time, in seconds). |
 
 #### Returns
 
@@ -300,7 +295,7 @@ const sampleTime = 0;
 const myShape = thisComp.layer("Shape Layer 1").content("Shape 1").content("Path 1").path;
 
 for (i = 0; i < myShape.points(sampleTime).length; i++) {
-    pointsList += "c: " + myShape.points(sampleTime)[i].toString() + " i: " + myShape.inTangents(sampleTime)[i].toString() + " o: " + myShape.outTangents(sampleTime)[i].toString() + "\n";
+ pointsList += "c: " + myShape.points(sampleTime)[i].toString() + " i: " + myShape.inTangents(sampleTime)[i].toString() + " o: " + myShape.outTangents(sampleTime)[i].toString() + "\n";
 }
 
 pointsList;

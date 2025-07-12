@@ -37,12 +37,12 @@ int edge_count = 0;
 int hout = pointhedge("defgeo.bgeo", 23);
 while ( hout != -1 )
 {
-    if (hedge_isprimary("defgeo.bgeo", hout))
-        edge_count++;
-    int hin = hedge_prev("defgeo.bgeo", hout);
-    if (hedge_isprimary("defgeo.bgeo", hin))
-        edge_count++;
-    hout = pointhedgenext("defgeo", hout);
+ if (hedge_isprimary("defgeo.bgeo", hout))
+ edge_count++;
+ int hin = hedge_prev("defgeo.bgeo", hout);
+ if (hedge_isprimary("defgeo.bgeo", hin))
+ edge_count++;
+ hout = pointhedgenext("defgeo", hout);
 };
 
 ```

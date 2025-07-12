@@ -7,23 +7,23 @@ title: xmpscript 对象参考
 
 加载库后，这些 XMP 类在全局 JavaScript 命名空间中可用：
 
-|   对象   |   描述   |
-| -------------------------------------- | ------------------------------------------------------------------------------ |
-| [XMPMeta 对象](#xmpmeta-object)   | 提供 XMP Toolkit 的核心服务。   |
-| [XMPFile 对象](#xmpfile-object)   | 提供对文件的主或文档级 XMP 的便捷 I/O 访问。   |
-| [XMPUtils 对象](#xmputils-object)   | 提供用于数组处理的附加实用函数。   |
-| [XMPDateTime 对象](#xmpdatetime-object)| 表示日期时间值。   |
-| [XMPConst 对象](#xmpconst-object)   | 包含用于 JavaScript API 的数字和字符串常量值。   |
+| 对象 | 描述 |
+| --- | --- |
+| [XMPMeta 对象](#xmpmeta-object) | 提供 XMP Toolkit 的核心服务。 |
+| [XMPFile 对象](#xmpfile-object) | 提供对文件的主或文档级 XMP 的便捷 I/O 访问。 |
+| [XMPUtils 对象](#xmputils-object) | 提供用于数组处理的附加实用函数。 |
+| [XMPDateTime 对象](#xmpdatetime-object)| 表示日期时间值。 |
+| [XMPConst 对象](#xmpconst-object) | 包含用于 JavaScript API 的数字和字符串常量值。 |
 
 这些顶级对象提供了对附加支持类的访问：
 
-|   对象   |   描述   |
-| ------------------------------------------ | ---------------------------------------------------------------------------- |
-| [XMPIterator 对象](#xmpiterator-object)   | 允许遍历 [XMPMeta 对象](#xmpmeta-object) 中的属性。   |
-| [XMPProperty 对象](#xmpproperty-object)   | 描述元数据属性。   |
-| [XMPAliasInfo 对象](#xmpaliasinfo-object)  | 描述元数据别名。   |
-| [XMPFileInfo 对象](#xmpfileinfo-object)   | 描述文件。   |
-| [XMPPacketInfo 对象](#xmppacketinfo-object)| 描述文件中的原始 XMP 数据包。   |
+| 对象 | 描述 |
+| --- | --- |
+| [XMPIterator 对象](#xmpiterator-object) | 允许遍历 [XMPMeta 对象](#xmpmeta-object) 中的属性。 |
+| [XMPProperty 对象](#xmpproperty-object) | 描述元数据属性。 |
+| [XMPAliasInfo 对象](#xmpaliasinfo-object) | 描述元数据别名。 |
+| [XMPFileInfo 对象](#xmpfileinfo-object) | 描述文件。 |
+| [XMPPacketInfo 对象](#xmppacketinfo-object)| 描述文件中的原始 XMP 数据包。 |
 
 ---
 
@@ -33,16 +33,16 @@ title: xmpscript 对象参考
 
 ### XMPAliasInfo 对象属性
 
-| 属性   |  类型  |   描述   |
-|-----------|--------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| arrayForm | Number | 描述解析别名的属性类型的常量，0 表示简单属性。常量为：   |
-|   |   | - `XMPConst.ALIAS_TO_SIMPLE_PROP`：直接映射。可以是简单到简单、数组到数组或结构到结构。   |
-|   |   | - `XMPConst.ALIAS_TO_ARRAY`：实际属性是无序数组；别名指向第一个元素。   |
-|   |   | - `XMPConst.ALIAS_TO_ORDERED_ARRAY`：实际属性是有序数组；别名指向第一个元素。   |
-|   |   | - `XMPConst.ALIAS_TO_ALT_ARRAY`：实际属性是替代数组；别名指向第一个元素。   |
-|   |   | - `XMPConst.ALIAS_TO_ALT_TEXT`：实际属性是替代文本数组；别名指向 `x-default` 元素。   |
-| name   | String | 别名解析到的属性名称。   |
-| namespace | String | 别名解析到的属性命名空间。参见 [Schema 命名空间字符串常量](#schema-namespace-string-constants)。   |
+| 属性 | 类型 | 描述 |
+|---|---|---|
+| arrayForm | Number | 描述解析别名的属性类型的常量，0 表示简单属性。常量为： |
+| | | - `XMPConst.ALIAS_TO_SIMPLE_PROP`：直接映射。可以是简单到简单、数组到数组或结构到结构。 |
+| | | - `XMPConst.ALIAS_TO_ARRAY`：实际属性是无序数组；别名指向第一个元素。 |
+| | | - `XMPConst.ALIAS_TO_ORDERED_ARRAY`：实际属性是有序数组；别名指向第一个元素。 |
+| | | - `XMPConst.ALIAS_TO_ALT_ARRAY`：实际属性是替代数组；别名指向第一个元素。 |
+| | | - `XMPConst.ALIAS_TO_ALT_TEXT`：实际属性是替代文本数组；别名指向 `x-default` 元素。 |
+| name | String | 别名解析到的属性名称。 |
+| namespace | String | 别名解析到的属性命名空间。参见 [Schema 命名空间字符串常量](#schema-namespace-string-constants)。 |
 
 ---
 
@@ -54,32 +54,32 @@ title: xmpscript 对象参考
 
 用于所有获取和设置属性操作的命名空间 URI 字符串的常量值。参见 [XMPMeta 对象](#xmpmeta-object)。
 
-|   命名空间   |   描述   |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `NS_DC`   | Dublin Core 模式的 XML 命名空间，[http://purl.org/dc/elements/1.1](http://purl.org/dc/elements/1.1)   |
-| `NS_IPTC_CORE`   | IPTC Core 模式的 XML 命名空间。   |
-| `NS_RDF`   | RDF 的 XML 命名空间。   |
-| `NS_XML`   | XML 的 XML 命名空间。   |
-| `NS_XMP`   | XMP 基本模式的 XML 命名空间。   |
-| `NS_XMP_RIGHTS`   | XMP 版权模式的 XML 命名空间。   |
-| `NS_XMP_MM`   | XMP 数字资产管理模式的 XML 命名空间。   |
-| `NS_XMP_BJ`   | 作业管理模式的 XML 命名空间。   |
-| `NS_XMP_NOTE`   | XMP 注释模式的 XML 命名空间。Adobe 私有命名空间；请勿创建新属性。   |
-| `NS_PDF`   | PDF 模式的 XML 命名空间。   |
-| `NS_PDFX`   | PDFX 模式的 XML 命名空间。Adobe 私有命名空间；请勿创建新属性。   |
-| `NS_PHOTOSHOP`   | Adobe Photoshop 自定义模式的 XML 命名空间。   |
-| `NS_PS_ALBUM`   | Adobe Photoshop Album 自定义模式的 XML 命名空间。   |
-| `NS_EXIF`   | Adobe 的 EXIF 模式的 XML 命名空间。   |
-| `NS_EXIF_AUX`   | Adobe 的 EXIF 辅助模式的 XML 命名空间。   |
-| `NS_TIFF`   | Adobe 的 TIFF 模式的 XML 命名空间。   |
-| `NS_PNG`   | PNG 模式的 XML 命名空间。   |
-| `NS_JPEG`   | JPEG 模式的 XML 命名空间。   |
-| `NS_SWF`   | Flash 小型网页格式模式的 XML 命名空间。   |
-| `NS_JPK`   | JPK 模式的 XML 命名空间。   |
-| `NS_CAMERA_RAW`   | Camera Raw 模式的 XML 命名空间。   |
-| `NS_DM`   | DM 模式的 XML 命名空间。   |
-| `NS_ADOBE_STOCK_PHOTO` | Adobe Stock Photos 模式的 XML 命名空间。   |
-| `NS_ASF`   | Microsoft 高级流格式模式的 XML 命名空间。   |
+| 命名空间 | 描述 |
+| --- | --- |
+| `NS_DC` | Dublin Core 模式的 XML 命名空间，[http://purl.org/dc/elements/1.1](http://purl.org/dc/elements/1.1) |
+| `NS_IPTC_CORE` | IPTC Core 模式的 XML 命名空间。 |
+| `NS_RDF` | RDF 的 XML 命名空间。 |
+| `NS_XML` | XML 的 XML 命名空间。 |
+| `NS_XMP` | XMP 基本模式的 XML 命名空间。 |
+| `NS_XMP_RIGHTS` | XMP 版权模式的 XML 命名空间。 |
+| `NS_XMP_MM` | XMP 数字资产管理模式的 XML 命名空间。 |
+| `NS_XMP_BJ` | 作业管理模式的 XML 命名空间。 |
+| `NS_XMP_NOTE` | XMP 注释模式的 XML 命名空间。Adobe 私有命名空间；请勿创建新属性。 |
+| `NS_PDF` | PDF 模式的 XML 命名空间。 |
+| `NS_PDFX` | PDFX 模式的 XML 命名空间。Adobe 私有命名空间；请勿创建新属性。 |
+| `NS_PHOTOSHOP` | Adobe Photoshop 自定义模式的 XML 命名空间。 |
+| `NS_PS_ALBUM` | Adobe Photoshop Album 自定义模式的 XML 命名空间。 |
+| `NS_EXIF` | Adobe 的 EXIF 模式的 XML 命名空间。 |
+| `NS_EXIF_AUX` | Adobe 的 EXIF 辅助模式的 XML 命名空间。 |
+| `NS_TIFF` | Adobe 的 TIFF 模式的 XML 命名空间。 |
+| `NS_PNG` | PNG 模式的 XML 命名空间。 |
+| `NS_JPEG` | JPEG 模式的 XML 命名空间。 |
+| `NS_SWF` | Flash 小型网页格式模式的 XML 命名空间。 |
+| `NS_JPK` | JPK 模式的 XML 命名空间。 |
+| `NS_CAMERA_RAW` | Camera Raw 模式的 XML 命名空间。 |
+| `NS_DM` | DM 模式的 XML 命名空间。 |
+| `NS_ADOBE_STOCK_PHOTO` | Adobe Stock Photos 模式的 XML 命名空间。 |
+| `NS_ASF` | Microsoft 高级流格式模式的 XML 命名空间。 |
 
 ---
 
@@ -87,26 +87,26 @@ title: xmpscript 对象参考
 
 用于所有结构化属性操作的字段类型命名空间 URI 字符串的常量值。参见 [XMPMeta 对象](#xmpmeta-object)。
 
-|   命名空间   |   描述   |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `TYPE_IDENTIFIER_QUAL` | 用于 xmp:Identifier 属性的限定符的 XML 命名空间。   |
-| `TYPE_DIMENSIONS`   | 用于 Dimensions 类型字段的 XML 命名空间。   |
-| `TYPE_TEXT`   | XMP 文本文档模式的 XML 命名空间。   |
-| `TYPE_PAGEDFILE`   | XMP 分页文档模式的 XML 命名空间。   |
-| `TYPE_GRAPHICS`   | 包含文档中使用的着色剂（色板）特征的结构体的 XML 命名空间。   |
-| `TYPE_IMAGE`   | 用于图形图像字段的 XML 命名空间。用于 Thumbnail 类型。   |
-| `TYPE_FONT`   | 包含文档中使用的字体特征的结构体的 XML 命名空间。   |
-| `TYPE_RESOURCE_EVENT`  | 用于 ResourceEvent 类型字段的 XML 命名空间。   |
-| `TYPE_RESOURCE_REF`   | 用于 ResourceRef 类型字段的 XML 命名空间。   |
-| `TYPE_ST_VERSION`   | 用于 Version 类型字段的 XML 命名空间。   |
-| `TYPE_ST_JOB`   | 用于 JobRef 类型字段的 XML 命名空间。   |
-| `TYPE_MANIFEST_ITEM`   | 用于清单数组元素的 XML 命名空间。   |
-| `TYPE_PDFA_SCHEMA`   |   |
-| `TYPE_PDFA_PROPERTY`   |   |
-| `TYPE_PDFA_TYPE`   |   |
-| `TYPE_PDFA_FIELD`   |   |
-| `TYPE_PDFA_ID`   |   |
-| `TYPE_PDFA_EXTENSION`  | 用于 PDF 子类型的 XML 命名空间   |
+| 命名空间 | 描述 |
+| --- | --- |
+| `TYPE_IDENTIFIER_QUAL` | 用于 xmp:Identifier 属性的限定符的 XML 命名空间。 |
+| `TYPE_DIMENSIONS` | 用于 Dimensions 类型字段的 XML 命名空间。 |
+| `TYPE_TEXT` | XMP 文本文档模式的 XML 命名空间。 |
+| `TYPE_PAGEDFILE` | XMP 分页文档模式的 XML 命名空间。 |
+| `TYPE_GRAPHICS` | 包含文档中使用的着色剂（色板）特征的结构体的 XML 命名空间。 |
+| `TYPE_IMAGE` | 用于图形图像字段的 XML 命名空间。用于 Thumbnail 类型。 |
+| `TYPE_FONT` | 包含文档中使用的字体特征的结构体的 XML 命名空间。 |
+| `TYPE_RESOURCE_EVENT` | 用于 ResourceEvent 类型字段的 XML 命名空间。 |
+| `TYPE_RESOURCE_REF` | 用于 ResourceRef 类型字段的 XML 命名空间。 |
+| `TYPE_ST_VERSION` | 用于 Version 类型字段的 XML 命名空间。 |
+| `TYPE_ST_JOB` | 用于 JobRef 类型字段的 XML 命名空间。 |
+| `TYPE_MANIFEST_ITEM` | 用于清单数组元素的 XML 命名空间。 |
+| `TYPE_PDFA_SCHEMA` | |
+| `TYPE_PDFA_PROPERTY` | |
+| `TYPE_PDFA_TYPE` | |
+| `TYPE_PDFA_FIELD` | |
+| `TYPE_PDFA_ID` | |
+| `TYPE_PDFA_EXTENSION` | 用于 PDF 子类型的 XML 命名空间 |
 
 ---
 
@@ -114,44 +114,44 @@ title: xmpscript 对象参考
 
 用于 I/O 操作的受支持文件类型的常量值。参见 [XMPFile 对象](#xmpfile-object)。
 
-|   常量   |   描述   |
-| ---------------------- | ------------------------------------------------ |
-| `FILE_UNKNOWN`   | 未知文件格式。   |
-| `FILE_PDF`   | PDF   |
-| `FILE_POSTSCRIPT`   | PS，遵循 DSC 约定的通用 PostScript   |
-| `FILE_EPS`   | EPS，封装的 PostScript   |
-| `FILE_JPEG`   | JPEG   |
-| `FILE_JPEG2K`   | JPX，JPEG 2000 文件   |
-| `FILE_TIFF`   | TIFF   |
-| `FILE_GIF`   | GIF   |
-| `FILE_PNG`   | PNG   |
-| `FILE_SWF`   | SWF，Flash 文件   |
-| `FILE_FLA`   | FLA，Flash 创作文件   |
-| `FILE_FLV`   | FLV，Flash 视频文件   |
-| `FILE_MOV`   | MOV，Quicktime   |
-| `FILE_AVI`   | AVI   |
-| `FILE_CIN`   | CIN，Cineon   |
-| `FILE_WAV`   | WAV   |
-| `FILE_MP3`   | MP3   |
-| `FILE_SES`   | SES，Audition 会话   |
-| `FILE_CEL`   | CEL，Audition 循环   |
-| `FILE_MPEG`   | MPEG   |
-| `FILE_MPEG2`   | MP2   |
-| `FILE_MPEG4`   | MP4   |
-| `FILE_WMAV`   | WMAV，Windows Media 音频和视频   |
-| `FILE_AIFF`   | AIFF   |
-| `FILE_HTML`   | HTML   |
-| `FILE_XML`   | XML   |
-| `FILE_TEXT`   | TEXT   |
-| `FILE_PHOTOSHOP`   | PSD，Photoshop   |
-| `FILE_ILLUSTRATOR`   | AI，Illustrator   |
-| `FILE_INDESIGN`   | INDD，Indesign   |
-| `FILE_AE_PROJECT`   | AE，After Effects   |
-| `FILE_AE_PROJECT_TEMPLATE` | AET，After Effects 项目模板   |
-| `FILE_AE_FILTER_PRESET`| FFX，After Effects 滤镜预设文件   |
-| `FILE_ENCORE_PROJECT`  | NCOR，Encore DVD 项目文件   |
-| `FILE_PREMIERE_PROJECT`| PRPJ，Premiere 项目文件   |
-| `FILE_PREMIERE_TITLE`  | PRTL，Premiere 标题文件   |
+| 常量 | 描述 |
+| --- | --- |
+| `FILE_UNKNOWN` | 未知文件格式。 |
+| `FILE_PDF` | PDF |
+| `FILE_POSTSCRIPT` | PS，遵循 DSC 约定的通用 PostScript |
+| `FILE_EPS` | EPS，封装的 PostScript |
+| `FILE_JPEG` | JPEG |
+| `FILE_JPEG2K` | JPX，JPEG 2000 文件 |
+| `FILE_TIFF` | TIFF |
+| `FILE_GIF` | GIF |
+| `FILE_PNG` | PNG |
+| `FILE_SWF` | SWF，Flash 文件 |
+| `FILE_FLA` | FLA，Flash 创作文件 |
+| `FILE_FLV` | FLV，Flash 视频文件 |
+| `FILE_MOV` | MOV，Quicktime |
+| `FILE_AVI` | AVI |
+| `FILE_CIN` | CIN，Cineon |
+| `FILE_WAV` | WAV |
+| `FILE_MP3` | MP3 |
+| `FILE_SES` | SES，Audition 会话 |
+| `FILE_CEL` | CEL，Audition 循环 |
+| `FILE_MPEG` | MPEG |
+| `FILE_MPEG2` | MP2 |
+| `FILE_MPEG4` | MP4 |
+| `FILE_WMAV` | WMAV，Windows Media 音频和视频 |
+| `FILE_AIFF` | AIFF |
+| `FILE_HTML` | HTML |
+| `FILE_XML` | XML |
+| `FILE_TEXT` | TEXT |
+| `FILE_PHOTOSHOP` | PSD，Photoshop |
+| `FILE_ILLUSTRATOR` | AI，Illustrator |
+| `FILE_INDESIGN` | INDD，Indesign |
+| `FILE_AE_PROJECT` | AE，After Effects |
+| `FILE_AE_PROJECT_TEMPLATE` | AET，After Effects 项目模板 |
+| `FILE_AE_FILTER_PRESET`| FFX，After Effects 滤镜预设文件 |
+| `FILE_ENCORE_PROJECT` | NCOR，Encore DVD 项目文件 |
+| `FILE_PREMIERE_PROJECT`| PRPJ，Premiere 项目文件 |
+| `FILE_PREMIERE_TITLE` | PRTL，Premiere 标题文件 |
 
 ---
 
@@ -162,17 +162,17 @@ title: xmpscript 对象参考
 ### XMPDateTime 对象构造函数
 
 ```javascript
-new XMPDateTime();   // 创建一个包含 0 日期的对象
-new XMPDateTime(date);   // 使用 JavaScript 日期初始化对象
+new XMPDateTime(); // 创建一个包含 0 日期的对象
+new XMPDateTime(date); // 使用 JavaScript 日期初始化对象
 new XMPDateTime(iso8601Date); // 使用 ISO 日期初始化对象
 ```
 
 #### 参数
 
-|  参数  |   类型   |   描述   |
-| ----------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| date   | JavaScript `Date` 对象。   | 时区设置为本地操作系统的时区值。XMP Toolkit 中的时间可以具有纳秒级精度；但是，当与 JavaScript Date 值相互转换时，时间精度会降低到毫秒级。   |
-| iso8601Date | String   | ISO 8601 格式的日期时间；例如：`"2007-04-10T17:54:50+01:00"`   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| date | JavaScript `Date` 对象。 | 时区设置为本地操作系统的时区值。XMP Toolkit 中的时间可以具有纳秒级精度；但是，当与 JavaScript Date 值相互转换时，时间精度会降低到毫秒级。 |
+| iso8601Date | String | ISO 8601 格式的日期时间；例如：`"2007-04-10T17:54:50+01:00"` |
 
 ---
 
@@ -180,21 +180,21 @@ new XMPDateTime(iso8601Date); // 使用 ISO 日期初始化对象
 
 所有属性都是可读写的，允许您修改日期时间值。如果设置的值超出允许范围，则自动设置为最小或最大允许值。
 
-|   属性   |  类型  |   描述   |
-|--------------|--------|-------------------------------------------------------------------------------|
-| `year`   | Number | 年份，范围为 `[0000...9999]`。   |
-| `month`   | Number | 月份，范围为 `[1...12]`。   |
-| `day`   | Number | 日期，范围为 `[1...31]`。   |
-| `hour`   | Number | 小时，范围为 `[1...23]`。   |
-| `minute`   | Number | 分钟，范围为 `[1...59]`。   |
-| `second`   | Number | 秒，范围为 `[1...59]`。   |
-| `nanosecond` | Number | 纳秒，范围为 `[0...1e+9 -1]`。   |
-| `tzSign`   | Number | 时区偏移方向。   |
-|   |   | - `0`：UTC   |
-|   |   | - `-1`：西区   |
-|   |   | - `1`：东区   |
-| `tzHour`   | Number | 时区与格林威治标准时间的小时偏移，范围为 `[1...23]`。   |
-| `tzMinute`   | Number | 时区与格林威治标准时间的分钟偏移，范围为 `[1...59]`。 |
+| 属性 | 类型 | 描述 |
+|---|---|---|
+| `year` | Number | 年份，范围为 `[0000...9999]`。 |
+| `month` | Number | 月份，范围为 `[1...12]`。 |
+| `day` | Number | 日期，范围为 `[1...31]`。 |
+| `hour` | Number | 小时，范围为 `[1...23]`。 |
+| `minute` | Number | 分钟，范围为 `[1...59]`。 |
+| `second` | Number | 秒，范围为 `[1...59]`。 |
+| `nanosecond` | Number | 纳秒，范围为 `[0...1e+9 -1]`。 |
+| `tzSign` | Number | 时区偏移方向。 |
+| | | - `0`：UTC |
+| | | - `-1`：西区 |
+| | | - `1`：东区 |
+| `tzHour` | Number | 时区与格林威治标准时间的小时偏移，范围为 `[1...23]`。 |
+| `tzMinute` | Number | 时区与格林威治标准时间的分钟偏移，范围为 `[1...59]`。 |
 
 ---
 
@@ -210,8 +210,8 @@ new XMPDateTime(iso8601Date); // 使用 ISO 日期初始化对象
 
 ##### 参数
 
-|  参数  |   类型   |   描述   |
-| ----------- | ------------------ | -------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | xmpDataTime | XMPDateTime 对象 | 要比较的对象 |
 
 ##### 返回
@@ -300,18 +300,18 @@ XMP Toolkit 还提供数据包扫描器作为不支持文件格式的备用解�
 
 `new XMPFile(filePath, format, openFlags)`
 
-| 属性   | 类型   | 描述   |
-|-------------|----------------------------------------------------------------------|--------------------|
-| `filePath`  | String   | 文件路径   |
-| `format`   | [文件格式数字常量](#file-format-numeric-constants)   | 要创建的文件格式   |
-| `openFlags` | 常量值，可选以下之一：   | 文件打开选项   |
-|   | - `XMPConst.OPEN_FOR_READ` - 以只读方式打开   |
-|   | - `XMPConst.OPEN_FOR_UPDATE` - 以读写方式打开   |
-|   | - `XMPConst.OPEN_ONLY_XMP` - 仅需要 XMP，允许空间/时间优化   |
-|   | - `XMPConst.OPEN_STRICTLY` - 严格定位 XMP 并与其他格式协调   |
-|   | - `XMPConst.OPEN_USE_SMART_HANDLER` - 要求使用智能处理器，不执行数据包扫描 |
-|   | - `XMPConst.OPEN_USE_PACKET_SCANNING` - 强制数据包扫描，不使用智能处理器 |
-|   | - `XMPConst.OPEN_LIMITED_SCANNING` - 仅扫描已知需要扫描的文件   |
+| 属性 | 类型 | 描述 |
+|---|---|---|
+| `filePath` | String | 文件路径 |
+| `format` | [文件格式数字常量](#file-format-numeric-constants) | 要创建的文件格式 |
+| `openFlags` | 常量值，可选以下之一： | 文件打开选项 |
+| | - `XMPConst.OPEN_FOR_READ` - 以只读方式打开 |
+| | - `XMPConst.OPEN_FOR_UPDATE` - 以读写方式打开 |
+| | - `XMPConst.OPEN_ONLY_XMP` - 仅需要 XMP，允许空间/时间优化 |
+| | - `XMPConst.OPEN_STRICTLY` - 严格定位 XMP 并与其他格式协调 |
+| | - `XMPConst.OPEN_USE_SMART_HANDLER` - 要求使用智能处理器，不执行数据包扫描 |
+| | - `XMPConst.OPEN_USE_PACKET_SCANNING` - 强制数据包扫描，不使用智能处理器 |
+| | - `XMPConst.OPEN_LIMITED_SCANNING` - 仅扫描已知需要扫描的文件 |
 
 ---
 
@@ -319,8 +319,8 @@ XMP Toolkit 还提供数据包扫描器作为不支持文件格式的备用解�
 
 此属性作为 XMPFile 类的静态属性提供，无需创建实例即可访问。
 
-| 属性   | 类型   | 描述   |
-|-----------|--------|-------------------------------|
+| 属性 | 类型 | 描述 |
+|---|---|---|
 | `version` | String | 当前 XMP Toolkit 版本的描述字符串 |
 
 ---
@@ -339,9 +339,9 @@ XMP Toolkit 还提供数据包扫描器作为不支持文件格式的备用解�
 
 ##### 参数
 
-| 参数   | 类型   | 描述   |
-|-----------|----------------------------------------------------------------|----------------|
-| `format`  | [文件格式数字常量](#file-format-numeric-constants)   | 要获取信息的格式 |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `format` | [文件格式数字常量](#file-format-numeric-constants) | 要获取信息的格式 |
 
 ##### 返回值
 
@@ -380,11 +380,11 @@ XMP Toolkit 还提供数据包扫描器作为不支持文件格式的备用解�
 
 ##### 参数
 
-| 参数   | 类型   | 描述   |
-|-------------|--------------------------|--------------------|
-| `xmpObj`   | [XMPMeta 对象](#xmpmeta-object) | 要检查的 XMP 元数据 |
-| `xmpPacket` | String   | 包含 XMP 数据包的字符串 |
-| `xmpBuffer` | Number 数组   | 原始 XMP 数据包数据 |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `xmpObj` | [XMPMeta 对象](#xmpmeta-object) | 要检查的 XMP 元数据 |
+| `xmpPacket` | String | 包含 XMP 数据包的字符串 |
+| `xmpBuffer` | Number 数组 | 原始 XMP 数据包数据 |
 
 ##### 返回值
 
@@ -402,10 +402,10 @@ XMP Toolkit 还提供数据包扫描器作为不支持文件格式的备用解�
 
 ##### 参数
 
-| 参数   | 类型   | 描述   |
-|--------------|--------------------------|----------------|
+| 参数 | 类型 | 描述 |
+|---|---|---|
 | `closeFlags` | 关闭选项常量或 `0`，可选以下之一： | 关闭使用的标志 |
-|   | - `XMPConst.CLOSE_UPDATE_SAFELY` - 写入临时文件然后交换以确保崩溃安全 |
+| | - `XMPConst.CLOSE_UPDATE_SAFELY` - 写入临时文件然后交换以确保崩溃安全 |
 
 ##### 返回值
 
@@ -469,11 +469,11 @@ XMP Toolkit 还提供数据包扫描器作为不支持文件格式的备用解�
 
 ##### 参数
 
-| 参数   | 类型   | 描述   |
-|-------------|----------------|--------------------------|
-| `xmpObj`   | XMPMeta 对象   | 作为 XMPMeta 对象的 XMP 元数据 |
-| `xmpPacket` | String   | 包含 XMP 数据包的字符串   |
-| `xmpBuffer` | Number 数组   | 包含原始 XMP 数据包数据的数组 |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `xmpObj` | XMPMeta 对象 | 作为 XMPMeta 对象的 XMP 元数据 |
+| `xmpPacket` | String | 包含 XMP 数据包的字符串 |
+| `xmpBuffer` | Number 数组 | 包含原始 XMP 数据包数据的数组 |
 
 ##### 返回值
 
@@ -493,29 +493,29 @@ XMP Toolkit 还提供数据包扫描器作为不支持文件格式的备用解�
 
 ### XMPFileInfo 对象属性
 
-| 属性   | 类型   | 描述   |
-|---------------|--------|----------------------------------------------------------------------|
-| `filePath`   | String | 文件的绝对路径（JavaScript 表示法）   |
-| `format`   | Number | 文件格式常量之一。参见 [文件格式数字常量](#file-format-numeric-constants) |
-| `handlerFlags`| Number | 此格式支持的特性。位标志常量的逻辑或值：   |
-|   |   | - `XMPConst.HANDLER_CAN_INJECT_XMP` - 可向现有文件首次注入 XMP   |
-|   |   | - `XMPConst.HANDLER_CAN_EXPAND` - 可扩展现有文件中的 XMP 或其他元数据 |
-|   |   | - `XMPConst.HANDLER_CAN_REWRITE` - 可复制文件并写入新元数据   |
-|   |   | - `XMPConst.HANDLER_PPEFERS_IN_PLACE` - 可扩展但偏好就地更新   |
-|   |   | - `XMPConst.HANDLER_CAN_RECONCILE` - 支持 XMP 与其他格式的协调   |
-|   |   | - `XMPConst.HANDLER_ALLOWS_ONLY_XMP` - 仅允许访问 XMP，忽略其他格式   |
-|   |   | - `XMPConst.HANDLER_RETURNS_RAW_PACKETS` - 返回原始 XMP 数据包信息   |
-|   |   | - `XMPConst.HANDLER_RETURNS_TNAIL` - 返回原生缩略图   |
-|   |   | - `XMPConst.HANDLER_OWNS_FILE` - 处理器负责文件的打开和关闭   |
-|   |   | - `XMPConst.HANDLER_ALLOWS_SAFE_UPDATE` - 允许崩溃安全的文件更新   |
-| `openFlags`   | Number | 打开此文件时的选项。可选以下常量之一：   |
-|   |   | - `XMPConst.OPEN_FOR_READ` - 以只读方式打开   |
-|   |   | - `XMPConst.OPEN_FOR_UPDATE` - 以读写方式打开   |
-|   |   | - `XMPConst.OPEN_ONLY_XMP` - 仅需要 XMP，允许空间/时间优化   |
-|   |   | - `XMPConst.OPEN_STRICTLY` - 严格定位 XMP 并与其他格式协调   |
-|   |   | - `XMPConst.OPEN_USE_SMART_HANDLER` - 要求使用智能处理器，不扫描数据包 |
-|   |   | - `XMPConst.OPEN_USE_PACKET_SCANNING` - 强制数据包扫描，不使用智能处理器 |
-|   |   | - `XMPConst.OPEN_LIMITED_SCANNING` - 仅扫描已知需要扫描的文件   |
+| 属性 | 类型 | 描述 |
+|---|---|---|
+| `filePath` | String | 文件的绝对路径（JavaScript 表示法） |
+| `format` | Number | 文件格式常量之一。参见 [文件格式数字常量](#file-format-numeric-constants) |
+| `handlerFlags`| Number | 此格式支持的特性。位标志常量的逻辑或值： |
+| | | - `XMPConst.HANDLER_CAN_INJECT_XMP` - 可向现有文件首次注入 XMP |
+| | | - `XMPConst.HANDLER_CAN_EXPAND` - 可扩展现有文件中的 XMP 或其他元数据 |
+| | | - `XMPConst.HANDLER_CAN_REWRITE` - 可复制文件并写入新元数据 |
+| | | - `XMPConst.HANDLER_PPEFERS_IN_PLACE` - 可扩展但偏好就地更新 |
+| | | - `XMPConst.HANDLER_CAN_RECONCILE` - 支持 XMP 与其他格式的协调 |
+| | | - `XMPConst.HANDLER_ALLOWS_ONLY_XMP` - 仅允许访问 XMP，忽略其他格式 |
+| | | - `XMPConst.HANDLER_RETURNS_RAW_PACKETS` - 返回原始 XMP 数据包信息 |
+| | | - `XMPConst.HANDLER_RETURNS_TNAIL` - 返回原生缩略图 |
+| | | - `XMPConst.HANDLER_OWNS_FILE` - 处理器负责文件的打开和关闭 |
+| | | - `XMPConst.HANDLER_ALLOWS_SAFE_UPDATE` - 允许崩溃安全的文件更新 |
+| `openFlags` | Number | 打开此文件时的选项。可选以下常量之一： |
+| | | - `XMPConst.OPEN_FOR_READ` - 以只读方式打开 |
+| | | - `XMPConst.OPEN_FOR_UPDATE` - 以读写方式打开 |
+| | | - `XMPConst.OPEN_ONLY_XMP` - 仅需要 XMP，允许空间/时间优化 |
+| | | - `XMPConst.OPEN_STRICTLY` - 严格定位 XMP 并与其他格式协调 |
+| | | - `XMPConst.OPEN_USE_SMART_HANDLER` - 要求使用智能处理器，不扫描数据包 |
+| | | - `XMPConst.OPEN_USE_PACKET_SCANNING` - 强制数据包扫描，不使用智能处理器 |
+| | | - `XMPConst.OPEN_LIMITED_SCANNING` - 仅扫描已知需要扫描的文件 |
 
 ---
 
@@ -595,10 +595,10 @@ new XMPMeta ( buffer );
 
 ##### 参数
 
-| 参数   | 类型   | 描述   |
-|-----------|----------------|----------------------------------------------------------------------|
-| `packet`  | String   | XML 文件或 XMP 数据包   |
-| `buffer`  | Number 数组   | XML 文件或 XMP 数据包的 UTF-8 或 UTF-16 编码字节。此数组是 [XMPMeta.serializeToArray](#xmpmetaserializetoarray) 的结果 |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `packet` | String | XML 文件或 XMP 数据包 |
+| `buffer` | Number 数组 | XML 文件或 XMP 数据包的 UTF-8 或 UTF-16 编码字节。此数组是 [XMPMeta.serializeToArray](#xmpmetaserializetoarray) 的结果 |
 
 ---
 
@@ -608,8 +608,8 @@ new XMPMeta ( buffer );
 
 ##### 属性
 
-| 属性   | 类型   | 描述   |
-|-----------|--------|-------------------------------|
+| 属性 | 类型 | 描述 |
+|---|---|---|
 | `version` | String | 当前 XMP Toolkit 版本的描述字符串 |
 
 ---
@@ -634,10 +634,10 @@ XMP Toolkit 中尚未实现。
 
 ##### 参数
 
-| 参数   | 类型   | 描述   |
-|-------------|----------------------------------------------------------------|--------------------|
-| `aliasNS`   | String   | 命名空间 URI 字符串。参见 [模式命名空间字符串常量](#schema-namespace-string-constants) |
-| `aliasProp` | String   | 别名属性字符串   |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `aliasNS` | String | 命名空间 URI 字符串。参见 [模式命名空间字符串常量](#schema-namespace-string-constants) |
+| `aliasProp` | String | 别名属性字符串 |
 
 ##### 返回值
 
@@ -659,9 +659,9 @@ XMP Toolkit 中尚未实现。
 
 ##### 参数
 
-| 参数   | 类型   | 描述   |
-|----------------|----------------------------------------------------------------|--------------------|
-| `namespaceURI` | String   | 命名空间 URI 字符串。参见 [模式命名空间字符串常量](#schema-namespace-string-constants) |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `namespaceURI` | String | 命名空间 URI 字符串。参见 [模式命名空间字符串常量](#schema-namespace-string-constants) |
 
 ##### 返回值
 
@@ -707,9 +707,9 @@ XMP Toolkit 中尚未实现。
 
 ##### 参数
 
-| 参数   | 类型   | 描述   |
-|----------------|----------------------------------------------------------------|--------------------|
-| `namespaceURI` | String   | 命名空间 URI 字符串。参见 [模式命名空间字符串常量](#schema-namespace-string-constants) |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `namespaceURI` | String | 命名空间 URI 字符串。参见 [模式命名空间字符串常量](#schema-namespace-string-constants) |
 
 ##### 返回值
 
@@ -727,8 +727,8 @@ XMP Toolkit 中尚未实现。
 
 ##### 参数
 
-| 参数   | 类型   | 描述   |
-|-------------------|--------|--------------------|
+| 参数 | 类型 | 描述 |
+|---|---|---|
 | `namespacePrefix` | String | 命名空间前缀字符串 |
 
 ##### 返回值
@@ -749,18 +749,18 @@ URI 字符串。
 
 ##### 参数
 
-| 参数名   | 类型   | 描述    |
-|---------------|--------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| `aliasNS`   | 字符串   | 别名命名空间字符串。参见[模式命名空间字符串常量](#schema-namespace-string-constants)。   |
-| `aliasProp`   | 字符串   | 别名属性，简单名称字符串。   |
-| `actualNS`   | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 被别名属性的命名空间字符串。   |
-| `actualProp`  | 字符串   | 被别名的属性，简单名称字符串。   |
-| `arrayForm`   | 数字   | 简单别名到数组项的数组形式，控制如果首次通过别名设置数组时如何创建数组。取以下常量之一：   |
-|   |   | - `XMPConst.ALIAS_TO_SIMPLE_PROP`（默认）- 直接映射。可以是简单到简单、数组到数组或结构到结构。   |
-|   |   | - `XMPConst.ALIAS_TO_ARRAY` - 实际是无序数组，别名指向数组的第一个元素。   |
-|   |   | - `XMPConst.ALIAS_TO_ORDERED_ARRAY` - 实际是有序数组，别名指向数组的第一个元素。   |
-|   |   | - `XMPConst.ALIAS_TO_ALT_ARRAY` - 实际是替代数组，别名指向数组的第一个元素。   |
-|   |   | - `XMPConst.ALIAS_TO_ALT_TEXT` - 实际是替代文本数组（本地化属性），别名指向数组的x-default元素。   |
+| 参数名 | 类型 | 描述 |
+|---|---|---|
+| `aliasNS` | 字符串 | 别名命名空间字符串。参见[模式命名空间字符串常量](#schema-namespace-string-constants)。 |
+| `aliasProp` | 字符串 | 别名属性，简单名称字符串。 |
+| `actualNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 被别名属性的命名空间字符串。 |
+| `actualProp` | 字符串 | 被别名的属性，简单名称字符串。 |
+| `arrayForm` | 数字 | 简单别名到数组项的数组形式，控制如果首次通过别名设置数组时如何创建数组。取以下常量之一： |
+| | | - `XMPConst.ALIAS_TO_SIMPLE_PROP`（默认）- 直接映射。可以是简单到简单、数组到数组或结构到结构。 |
+| | | - `XMPConst.ALIAS_TO_ARRAY` - 实际是无序数组，别名指向数组的第一个元素。 |
+| | | - `XMPConst.ALIAS_TO_ORDERED_ARRAY` - 实际是有序数组，别名指向数组的第一个元素。 |
+| | | - `XMPConst.ALIAS_TO_ALT_ARRAY` - 实际是替代数组，别名指向数组的第一个元素。 |
+| | | - `XMPConst.ALIAS_TO_ALT_TEXT` - 实际是替代文本数组（本地化属性），别名指向数组的x-default元素。 |
 
 #### 返回值
 
@@ -778,10 +778,10 @@ URI 字符串。
 
 ##### 参数
 
-| 参数名   | 类型   | 描述   |
-|------------------|--------------------------------------------------------------------------|-----------------------|
-| namespaceURI   | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 命名空间URI字符串。   |
-| suggestedPrefix  | 字符串   | 建议的命名空间前缀字符串。 |
+| 参数名 | 类型 | 描述 |
+|---|---|---|
+| namespaceURI | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| suggestedPrefix | 字符串 | 建议的命名空间前缀字符串。 |
 
 ##### 返回值
 
@@ -799,10 +799,10 @@ URI 字符串。
 
 ##### 参数
 
-| 参数名   | 类型   | 描述   |
-|-------------|--------------------------------------------------------------------------|-----------------------|
-| schemaNS   | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 别名命名空间URI字符串。 |
-| aliasProp   | 别名属性字符串。   |   |
+| 参数名 | 类型 | 描述 |
+|---|---|---|
+| schemaNS | [模式命名空间字符串常量](#schema-namespace-string-constants) | 别名命名空间URI字符串。 |
+| aliasProp | 别名属性字符串。 | |
 
 #### 返回值
 
@@ -822,18 +822,18 @@ URI 字符串。
 
 ##### 参数
 
-| 参数名   | 类型   | 描述   |
-|-----------------|--------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
-| `schemaNS`   | [模式命名空间字符串常量](#schema-namespace-string-constants)。   | 命名空间URI字符串。   |
-| `arrayName`   | 字符串   | 数组类型属性名称字符串。可以是通用路径表达式。   |
-| `itemOptions`   | 数字   | 可选。描述新项的标志（如果正在创建）。取以下值之一：   |
-|   |   | - `0`：默认值。简单项，或由arrayOptions值隐含的类型。   |
-|   |   | - `XMPConst.PROP_IS_ARRAY`：项是数组（alt、bag或seq类型）。   |
-|   |   | - `XMPConst.PROP_IS_STRUCT`：项是具有嵌套字段的结构。   |
-| `itemValue`   | 字符串   | 新项值字符串。对于没有值的数组项，传递`null`。   |
-| `arrayOptions`  | 数字   | 可选。描述数组形式的标志。如果正在创建数组，则必须提供；如果数组已存在，则忽略。取以下值之一：   |
-|   |   | - `XMPConst.ARRAY_IS_ORDERED` - 项顺序有意义。隐含`XMPConst.PROP_IS_ARRAY`。   |
-|   |   | - `XMPConst.ARRAY_IS_ALTERNATIVE` - 项是互斥的替代项。隐含`XMPConst.PROP_IS_ARRAY`和`XMPConst.ARRAY_IS_ORDERED`。   |
+| 参数名 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants)。 | 命名空间URI字符串。 |
+| `arrayName` | 字符串 | 数组类型属性名称字符串。可以是通用路径表达式。 |
+| `itemOptions` | 数字 | 可选。描述新项的标志（如果正在创建）。取以下值之一： |
+| | | - `0`：默认值。简单项，或由arrayOptions值隐含的类型。 |
+| | | - `XMPConst.PROP_IS_ARRAY`：项是数组（alt、bag或seq类型）。 |
+| | | - `XMPConst.PROP_IS_STRUCT`：项是具有嵌套字段的结构。 |
+| `itemValue` | 字符串 | 新项值字符串。对于没有值的数组项，传递`null`。 |
+| `arrayOptions` | 数字 | 可选。描述数组形式的标志。如果正在创建数组，则必须提供；如果数组已存在，则忽略。取以下值之一： |
+| | | - `XMPConst.ARRAY_IS_ORDERED` - 项顺序有意义。隐含`XMPConst.PROP_IS_ARRAY`。 |
+| | | - `XMPConst.ARRAY_IS_ALTERNATIVE` - 项是互斥的替代项。隐含`XMPConst.PROP_IS_ARRAY`和`XMPConst.ARRAY_IS_ORDERED`。 |
 
 ##### 返回值
 
@@ -851,10 +851,10 @@ URI 字符串。
 
 ##### 参数
 
-| 参数名   | 类型   | 描述   |
-|--------------|--------------------------------------------------------------------------|-----------------------------------------|
-| `schemaNS`   | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 命名空间URI字符串。   |
-| `arrayName`  | 字符串   | 数组类型属性名称字符串。可以是通用路径表达式。 |
+| 参数名 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| `arrayName` | 字符串 | 数组类型属性名称字符串。可以是通用路径表达式。 |
 
 ##### 返回值
 
@@ -872,11 +872,11 @@ URI 字符串。
 
 ##### 参数
 
-| 参数名   | 类型   | 描述   |
-|--------------|--------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
-| `schemaNS`   | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 命名空间URI字符串。   |
-| `arrayName`  | 字符串   | 数组类型属性名称字符串。可以是通用路径表达式。   |
-| `itemIndex`  | 数字   | 项的1-based位置索引。使用`XMPConst.ARRAY_LAST_ITEM`引用数组中最后一个现有项。   |
+| 参数名 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| `arrayName` | 字符串 | 数组类型属性名称字符串。可以是通用路径表达式。 |
+| `itemIndex` | 数字 | 项的1-based位置索引。使用`XMPConst.ARRAY_LAST_ITEM`引用数组中最后一个现有项。 |
 
 ##### 返回值
 
@@ -894,10 +894,10 @@ URI 字符串。
 
 ##### 参数
 
-| 参数名   | 类型   | 描述   |
-|-------------|--------------------------------------------------------------------------|-----------------------------------------|
-| `schemaNS`  | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 命名空间URI字符串。   |
-| `propName`  | 字符串   | 属性名称字符串。可以是通用路径表达式。   |
+| 参数名 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| `propName` | 字符串 | 属性名称字符串。可以是通用路径表达式。 |
 
 ##### 返回值
 
@@ -915,12 +915,12 @@ URI 字符串。
 
 ##### 参数
 
-| 参数名   | 类型   | 描述   |
-|---------------|--------------------------------------------------------------------------|-----------------------------------------|
-| `schemaNS`   | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 命名空间URI字符串。   |
-| `structName`  | 字符串   | 结构名称字符串。可以是通用路径表达式。   |
-| `fieldNS`   | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 字段类型命名空间字符串。   |
-| `fieldName`   | 字符串   | 字段名称字符串。必须是简单XML名称。   |
+| 参数名 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| `structName` | 字符串 | 结构名称字符串。可以是通用路径表达式。 |
+| `fieldNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 字段类型命名空间字符串。 |
+| `fieldName` | 字符串 | 字段名称字符串。必须是简单XML名称。 |
 
 ##### 返回值
 
@@ -938,12 +938,12 @@ URI 字符串。
 
 ##### 参数
 
-| 参数名   | 类型   | 描述   |
-|-------------|--------------------------------------------------------------------------|-----------------------------------------|
-| `schemaNS`  | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 命名空间URI字符串。   |
-| structName  | 字符串   | 结构名称字符串。可以是通用路径表达式。   |
-| qualNS   | 字符串   | 限定符命名空间的URI字符串。   |
-| qualName   | 字符串   | 限定符名称字符串。必须是简单XML名称。   |
+| 参数名 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| structName | 字符串 | 结构名称字符串。可以是通用路径表达式。 |
+| qualNS | 字符串 | 限定符命名空间的URI字符串。 |
+| qualName | 字符串 | 限定符名称字符串。必须是简单XML名称。 |
 
 ##### 返回值
 
@@ -961,11 +961,11 @@ URI 字符串。
 
 ##### 参数
 
-| 参数名   | 类型   | 描述   |
-|--------------|--------------------------------------------------------------------------|-----------------------------------------|
-| `schemaNS`   | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 命名空间URI字符串。   |
-| `arrayName`  | 字符串   | 数组名称字符串。可以是通用路径表达式。   |
-| `itemIndex`  | 数字   | 项的1-based位置索引。   |
+| 参数名 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| `arrayName` | 字符串 | 数组名称字符串。可以是通用路径表达式。 |
+| `itemIndex` | 数字 | 项的1-based位置索引。 |
 
 ##### 返回值
 
@@ -983,10 +983,10 @@ URI 字符串。
 
 ##### 参数
 
-| 参数名   | 类型   | 描述   |
-|-------------|--------------------------------------------------------------------------|-----------------------------------------|
-| `schemaNS`  | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 命名空间URI字符串。   |
-| `propName`  | 字符串   | 属性名称字符串。可以是通用路径表达式。   |
+| 参数名 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| `propName` | 字符串 | 属性名称字符串。可以是通用路径表达式。 |
 
 ##### 返回值
 
@@ -1004,12 +1004,12 @@ URI 字符串。
 
 ##### 参数
 
-| 参数名   | 类型   | 描述   |
-|-------------|--------------------------------------------------------------------------|-----------------------------------------|
-| schemaNS   | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 命名空间URI字符串。   |
-| structName  | 字符串   | 结构名称字符串。可以是通用路径表达式。   |
-| fieldNS   | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 字段类型命名空间字符串。   |
-| fieldName   | 字符串   | 字段名称字符串。必须是简单XML名称。   |
+| 参数名 | 类型 | 描述 |
+|---|---|---|
+| schemaNS | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| structName | 字符串 | 结构名称字符串。可以是通用路径表达式。 |
+| fieldNS | [模式命名空间字符串常量](#schema-namespace-string-constants) | 字段类型命名空间字符串。 |
+| fieldName | 字符串 | 字段名称字符串。必须是简单XML名称。 |
 
 ##### 返回值
 
@@ -1027,12 +1027,12 @@ URI 字符串。
 
 ##### 参数
 
-| 参数名   | 类型   | 描述   |
-|-------------|--------------------------------------------------------------------------|-----------------------------------------|
-| `schemaNS`  | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 命名空间URI字符串。   |
-| structName  | 字符串   | 结构名称字符串。可以是通用路径表达式。   |
-| qualNS   | 字符串   | 限定符命名空间的URI字符串。   |
-| qualName   | 字符串   | 限定符名称字符串。必须是简单XML名称。   |
+| 参数名 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| structName | 字符串 | 结构名称字符串。可以是通用路径表达式。 |
+| qualNS | 字符串 | 限定符命名空间的URI字符串。 |
+| qualName | 字符串 | 限定符名称字符串。必须是简单XML名称。 |
 
 ##### 返回值
 
@@ -1064,11 +1064,11 @@ URI 字符串。
 
 ##### 参数
 
-| 参数名   | 类型   | 描述   |
-|--------------|--------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
-| `schemaNS`   | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 命名空间URI字符串。   |
-| `arrayName`  | 字符串   | 数组名称字符串。可以是通用路径表达式。   |
-| `itemIndex`  | 数字   | 项的1-based位置索引。使用`XMPConst.ARRAY_LAST_ITEM`引用数组中最后一个现有项。   |
+| 参数名 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| `arrayName` | 字符串 | 数组名称字符串。可以是通用路径表达式。 |
+| `itemIndex` | 数字 | 项的1-based位置索引。使用`XMPConst.ARRAY_LAST_ITEM`引用数组中最后一个现有项。 |
 
 ##### 返回值
 
@@ -1086,12 +1086,12 @@ URI 字符串。
 
 ##### 参数
 
-| 参数名   | 类型   | 描述   |
-|-----------------|--------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
-| `schemaNS`   | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 命名空间URI字符串。   |
-| `altTextName`   | 字符串   | 替代文本数组名称字符串。可以是通用路径表达式。   |
-| `genericLang`   | 字符串   | 通用语言名称，作为RFC 3066主标签。可以为`null`或空字符串。   |
-| `specificLang`  | 字符串   | 特定语言名称，作为RFC 3066主标签；例如en-US。必须指定。   |
+| 参数名 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| `altTextName` | 字符串 | 替代文本数组名称字符串。可以是通用路径表达式。 |
+| `genericLang` | 字符串 | 通用语言名称，作为RFC 3066主标签。可以为`null`或空字符串。 |
+| `specificLang` | 字符串 | 特定语言名称，作为RFC 3066主标签；例如en-US。必须指定。 |
 
 ##### 返回值
 
@@ -1109,16 +1109,16 @@ URI 字符串。
 
 ##### 参数
 
-| 参数名   | 类型   | 描述   |
-|--------------|--------------------------------------------------------------------------|-----------------------------------------|
-| `schemaNS`   | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 命名空间URI字符串。   |
-| `propName`   | 字符串   | 属性名称字符串。可以是通用路径表达式。   |
-| `valueType`  | 字符串   | 可选。属性数据类型，取以下值之一：   |
-|   |   | - `XMPConst.STRING`   |
-|   |   | - `XMPConst.INTEGER`   |
-|   |   | - `XMPConst.NUMBER`   |
-|   |   | - `XMPConst.BOOLEAN`   |
-|   |   | - `XMPConst.XMPDATE`   |
+| 参数名 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| `propName` | 字符串 | 属性名称字符串。可以是通用路径表达式。 |
+| `valueType` | 字符串 | 可选。属性数据类型，取以下值之一： |
+| | | - `XMPConst.STRING` |
+| | | - `XMPConst.INTEGER` |
+| | | - `XMPConst.NUMBER` |
+| | | - `XMPConst.BOOLEAN` |
+| | | - `XMPConst.XMPDATE` |
 
 ##### 返回值
 
@@ -1136,12 +1136,12 @@ URI 字符串。
 
 ##### 参数
 
-| 参数名   | 类型   | 描述   |
-|---------------|--------------------------------------------------------------------------|-----------------------------------------|
-| `schemaNS`   | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 命名空间URI字符串。   |
-| `structName`  | 字符串   | 结构名称字符串。可以是通用路径表达式。   |
-| `fieldNS`   | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 字段类型命名空间字符串。   |
-| `fieldName`   | 字符串   | 字段名称字符串。必须是简单XML名称。   |
+| 参数名 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| `structName` | 字符串 | 结构名称字符串。可以是通用路径表达式。 |
+| `fieldNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 字段类型命名空间字符串。 |
+| `fieldName` | 字符串 | 字段名称字符串。必须是简单XML名称。 |
 
 ##### 返回值
 
@@ -1159,12 +1159,12 @@ URI 字符串。
 
 ##### 参数
 
-| 参数名   | 类型   | 描述   |
-|---------------|--------------------------------------------------------------------------|-----------------------------------------|
-| `schemaNS`   | [模式命名空间字符串常量](#schema-namespace-string-constants)   | 命名空间URI字符串。   |
-| `structName`  | 字符串   | 结构名称字符串。可以是通用路径表达式。   |
-| `qualNS`   | 字符串   | 限定符命名空间的URI字符串。   |
-| `qualName`   | 字符串   | 限定符名称字符串。必须是简单XML名称。   |
+| 参数名 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| `structName` | 字符串 | 结构名称字符串。可以是通用路径表达式。 |
+| `qualNS` | 字符串 | 限定符命名空间的URI字符串。 |
+| `qualName` | 字符串 | 限定符名称字符串。必须是简单XML名称。 |
 
 ##### 返回值
 

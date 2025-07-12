@@ -24,8 +24,8 @@ VEX包含字符串数据类型，在以下场景中非常有用：
 ```vex
 string s = 'foo';
 string t = "bar";
-string py = r"Hello world\n";      // Python风格，等价于"Hello world\\n"
-string cpp = R"(Hello world\n)";   // C++风格，等价于"Hello world\\n"
+string py = r"Hello world\n"; // Python风格，等价于"Hello world\\n"
+string cpp = R"(Hello world\n)"; // C++风格，等价于"Hello world\\n"
 
 ```
 
@@ -38,17 +38,17 @@ string cpp = R"(Hello world\n)";   // C++风格，等价于"Hello world\\n"
 - 转义字符串 `"文本"` 或 `'文本'`
 - Python原始字符串 `r"原始文本"`
 - C++原始字符串 `R"分隔符(原始文本)分隔符"`
-  其中`分隔符`是0到16个字符的可选字符串。与Python原始字符串不同，C++风格的原始字符串可以包含多行文本甚至二进制数据。
+ 其中`分隔符`是0到16个字符的可选字符串。与Python原始字符串不同，C++风格的原始字符串可以包含多行文本甚至二进制数据。
 
 ```vex
 string escaped = 'Line 1\nLine 2';
-string raw = r"Line 1\nLine 1 continues";      // "Line 1\\nLine 1 continues"
-string cppraw = R"(Line 1\nLine 1 continues)";      // "Line 1\\nLine 1 continues"
+string raw = r"Line 1\nLine 1 continues"; // "Line 1\\nLine 1 continues"
+string cppraw = R"(Line 1\nLine 1 continues)"; // "Line 1\\nLine 1 continues"
 string cppmultiline = R"multi(这是一个很长的
-    多行字符串。字符串
-    还包含一个内嵌的原始字符串 R"(原始字符串)"
-    但由于分隔符不匹配，字符串实际上
-    直到这里才结束。)multi";
+ 多行字符串。字符串
+ 还包含一个内嵌的原始字符串 R"(原始字符串)"
+ 但由于分隔符不匹配，字符串实际上
+ 直到这里才结束。)multi";
 
 ```
 
@@ -70,7 +70,7 @@ Wrangle和VEX表达式中的转义序列
 
 ```vex
 // 我的字符串是一个普通字符串
-string   mystring;
+string mystring;
 
 ```
 
@@ -81,7 +81,7 @@ string   mystring;
 string rgb_name()
 {
 ...
-};    
+}; 
 
 ```
 

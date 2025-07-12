@@ -64,22 +64,22 @@ Examples
 surface
 dumpsomepoints(string fname = "points.$F4.pc"; int do_cull = 0; float keepamt = 0.05)
 {
-    vector    nn = normalize(frontface(N, I));
-    int       rval=0;
-    float     A = area(P,"smooth",0);  // area without smoothed derivs
+ vector nn = normalize(frontface(N, I));
+ int rval=0;
+ float A = area(P,"smooth",0); // area without smoothed derivs
 
-    if( !do_cull  ||  do_cull & (nrandom()<keepamt) )
-    {
-        if( do_cull && keepamt > 0 )
-        {
-    A = A/keepamt;
-        }
-        rval = pcwrite(fname, "interpolate", 1,
-        "P", ptransform("space:camera","space:world", P),
-        "N", ntransform("space:camera","space:world", normalize(N)),
-        "area", A);  // output an "area" channel in pc
-    }
-    Cf =abs(nn)*rval;
+    if( !do_cull || do_cull & (nrandom()<keepamt) )
+ {
+ if( do_cull && keepamt > 0 )
+ {
+ A = A/keepamt;
+ }
+ rval = pcwrite(fname, "interpolate", 1,
+ "P", ptransform("space:camera","space:world", P),
+ "N", ntransform("space:camera","space:world", normalize(N)),
+ "area", A); // output an "area" channel in pc
+ }
+ Cf =abs(nn)*rval;
 }
 
 ```

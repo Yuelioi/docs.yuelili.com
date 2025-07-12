@@ -54,8 +54,8 @@ If the result is a vector2, vector, or vector4, each component will be a
 different random number. Thus, if you have the code:
 
 ```vex
-vector        pos = 1;
-float        seed = 0;
+vector pos = 1;
+float seed = 0;
 
 pos *= rand(seed);
 
@@ -64,8 +64,8 @@ pos *= rand(seed);
 `pos` will get different values in its `.x`, `.y`, and `.z` components. If you wish a uniform scale, use the `float()` cast:
 
 ```vex
-vector        pos = 1;
-float        seed = 0;
+vector pos = 1;
+float seed = 0;
 
 pos *= float(rand(seed));
 

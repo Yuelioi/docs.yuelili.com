@@ -19,22 +19,22 @@ LightLayer 没有定义额外的属性，但与其他图层类型相比，它具
 
 - `Marker`
 - `Transform`:
-  - `PointofInterest`
-  - `Position`
-  - `Scale`
-  - `Orientation`
-  - `XRotation`
-  - `YRotation`
-  - `Rotation`
-  - `Opacity`
+ - `PointofInterest`
+ - `Position`
+ - `Scale`
+ - `Orientation`
+ - `XRotation`
+ - `YRotation`
+ - `Rotation`
+ - `Opacity`
 - `LightOptions`:
-  - `Intensity`
-  - `Color`
-  - `ConeAngle`
-  - `ConeFeather`
-  - `CastsShadows`
-  - `ShadowDarkness`
-  - `ShadowDiffusion`
+ - `Intensity`
+ - `Color`
+ - `ConeAngle`
+ - `ConeFeather`
+ - `CastsShadows`
+ - `ShadowDarkness`
+ - `ShadowDiffusion`
 
 ---
 

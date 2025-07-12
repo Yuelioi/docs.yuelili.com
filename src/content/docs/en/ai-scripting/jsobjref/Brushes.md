@@ -67,9 +67,9 @@ Gets the first element in the collection with the specified name.
 
 #### Parameters
 
-| Parameter |  Type  |      Description       |
-| --------- | ------ | ---------------------- |
-| `name`    | String | Name of element to get |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Name of element to get |
 
 #### Returns
 
@@ -87,8 +87,8 @@ Gets an element from the collection.
 
 #### Parameters
 
-| Parameter |      Type      |     Description      |
-| --------- | -------------- | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `itemKey` | String, Number | String or number key |
 
 #### Returns
@@ -105,6 +105,6 @@ Gets an element from the collection.
 // Counts all brushes in the active document
 
 if (app.documents.length > 0) {
-    var numberOfBrushes = app.activeDocument.brushes.length;
+ var numberOfBrushes = app.activeDocument.brushes.length;
 }
 ```

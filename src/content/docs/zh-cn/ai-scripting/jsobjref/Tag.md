@@ -92,32 +92,32 @@ title: 标签
 // 在一个单独的文档中显示名称和值
 
 if ( app.documents.length > 0 ) {
-    doc = app.activeDocument;
+ doc = app.activeDocument;
 
-    if ( doc.selection.length > 0 ) {
-        for ( i = 0; i < selection.length; i++ ) {
-      selectedArt = selection[0];
-      tagList = selectedArt.tags;
+ if ( doc.selection.length > 0 ) {
+ for ( i = 0; i < selection.length; i++ ) {
+ selectedArt = selection[0];
+ tagList = selectedArt.tags;
 
-      if (tagList.length == 0) {
-          var tempTag = tagList.add();
-          tempTag.name = "OneWord";
-          tempTag.value = "anything you want";
-      }
+ if (tagList.length == 0) {
+ var tempTag = tagList.add();
+ tempTag.name = "OneWord";
+ tempTag.value = "anything you want";
+ }
 
-      // 创建一个文档并为每个标签添加一行文本
-      reportDocument = app.documents.add();
-      top_offset = 400;
+ // 创建一个文档并为每个标签添加一行文本
+ reportDocument = app.documents.add();
+ top_offset = 400;
 
-      for ( i = 0; i < tagList.length; i++ ) {
-          tagText = tagList[i].value;
-          newItem = reportDocument.textFrames.add();
-          newItem.contents = "标签: (" + tagList[i].name + " , " + tagText + ")";
-          newItem.position = Array(100, top_offset);
-          newItem.textRange.size = 24;
-          top_offset = top_offset - 20;
-      }
-        }
-    }
+ for ( i = 0; i < tagList.length; i++ ) {
+ tagText = tagList[i].value;
+ newItem = reportDocument.textFrames.add();
+ newItem.contents = "标签: (" + tagList[i].name + " , " + tagText + ")";
+ newItem.position = Array(100, top_offset);
+ newItem.textRange.size = 24;
+ top_offset = top_offset - 20;
+ }
+ }
+ }
 }
 ```

@@ -11,7 +11,6 @@ Like an array, a collection associates a set of objects or values as a logical g
 The index numbering of a collection starts with 1, not 0.
 :::
 
-
 ## Objects
 
 - [ItemCollection object](../../item/itemcollection) All of the items (imported files, folders, solids, and so on) found in the Project panel.
@@ -23,14 +22,14 @@ The index numbering of a collection starts with 1, not 0.
 
 ## Attributes
 
-| Attribute |  Type   |               Description                |
-| --------- | ------- | ---------------------------------------- |
-| `length`  | Integer | The number of objects in the collection. |
+| Attribute | Type | Description |
+| --- | --- | --- |
+| `length` | Integer | The number of objects in the collection. |
 
 ---
 
 ## Methods
 
-| Method | Return Type |                                        Description                                         |
-| ------ | ----------- | ------------------------------------------------------------------------------------------ |
-| `[]`   | Object      | Retrieves an object in the collection by its index number. The first object is at index 1. |
+| Method | Return Type | Description |
+| --- | --- | --- |
+| `[]` | Object | Retrieves an object in the collection by its index number. The first object is at index 1. |

@@ -137,7 +137,6 @@ dlg.show();
 The creation property on the second EditText field, `multiline: true`, indicates a field in which a long text string can be entered. The text wraps to appear as multiple lines.
 :::
 
-
 ---
 
 ### EditNumber
@@ -147,7 +146,6 @@ Allows users to enter a decimal number, which is returned to the script when the
 :::note
 This functionality was added in Photoshop 20.0 (CC 2019), and may not exist in other hosts.
 :::
-
 
 - Set the `text` property to assign the initial displayed number in the element, and read it to obtain the current number value, as entered or modified by the user.
 - Set the `textselection` property to replace the current selection with new text, or to insert text at the cursor (insertion point). Read this property to obtain the current selection, if any.
@@ -167,7 +165,6 @@ dlg.show();
 :::note
 Decimal numbers like `2.5` are accepted for minimum and maximum values.
 :::
-
 
 ---
 
@@ -265,11 +262,11 @@ You can specify the choice items on creation of the list object, or afterward us
 
 Items added to or inserted into any type of list control are `ListItem` objects, with properties that can be manipulated from a script. ListItem elements can be of the following types:
 
-|    Type     |                                                                                         Description                                                                                          |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `item`      | The typical item in any type of list. It displays text or an image, and can be selected. To display an image, set the item object's image property; [Displaying images](#displaying-images). |
-| `separator` | A separator is a nonselectable visual element in a drop-down list. Although it has a text property, the value is ignored, and the item is displayed as a horizontal line.                    |
-| `node`      | A displayable and selectable item in a `TreeView` control which can contain other `ListItem` objects, including other items of type node.                                                    |
+| Type | Description |
+| --- | --- |
+| `item` | The typical item in any type of list. It displays text or an image, and can be selected. To display an image, set the item object's image property; [Displaying images](#displaying-images). |
+| `separator` | A separator is a nonselectable visual element in a drop-down list. Although it has a text property, the value is ignored, and the item is displayed as a horizontal line. |
+| `node` | A displayable and selectable item in a `TreeView` control which can contain other `ListItem` objects, including other items of type node. |
 
 ---
 

@@ -28,11 +28,11 @@ CUDA SDK 也是 CUDA 渲染开发所需的。
 ### CUDA 运行时 API 与驱动 API
 
 1. 使用 CUDA 驱动 API
-   - 为了获得最佳兼容性，我们强烈建议仅使用 CUDA 驱动 API。与运行时 API 不同，驱动 API 直接向后兼容未来的驱动程序。请注意，CUDA 运行时 API 旨在处理/自动化一些在驱动 API 中暴露并需要处理的管理工作，因此从运行时 API 迁移到驱动 API 可能需要学习并实现一些新的步骤/代码。
+ - 为了获得最佳兼容性，我们强烈建议仅使用 CUDA 驱动 API。与运行时 API 不同，驱动 API 直接向后兼容未来的驱动程序。请注意，CUDA 运行时 API 旨在处理/自动化一些在驱动 API 中暴露并需要处理的管理工作，因此从运行时 API 迁移到驱动 API 可能需要学习并实现一些新的步骤/代码。
 2. 静态链接到 CUDA 运行时
-   - 如果您必须坚持使用 CUDA 运行时 API，我们建议您静态链接到 CUDA 运行时。这是利用驱动程序向后兼容性的一种替代方法。可以通过链接 `cudart_static.lib` 来实现。
+ - 如果您必须坚持使用 CUDA 运行时 API，我们建议您静态链接到 CUDA 运行时。这是利用驱动程序向后兼容性的一种替代方法。可以通过链接 `cudart_static.lib` 来实现。
 3. 动态链接到 CUDA 运行时
-   - 这种方法也有效，但容易出现兼容性问题。用户系统上需要有一个兼容的 CUDA 运行时 DLL，以便驱动程序能够理解并向后兼容。目前 Premiere Pro 附带了我们推荐的 CUDA SDK 版本的 CUDA 运行时 DLL。未来可能会发生变化。如果您必须动态链接到 CUDA 运行时，我们建议您随插件一起提供 CUDA 运行时 DLL 的副本，并使用 `dlopen/LoadLibrary` 显式加载所需的运行时。有关更多详细信息，请参阅 NVIDIA 的 GPU 管理和部署指南中的 CUDA 兼容性部分：[https://docs.nvidia.com/deploy/cuda-compatibility/](https://docs.nvidia.com/deploy/cuda-compatibility/)
+ - 这种方法也有效，但容易出现兼容性问题。用户系统上需要有一个兼容的 CUDA 运行时 DLL，以便驱动程序能够理解并向后兼容。目前 Premiere Pro 附带了我们推荐的 CUDA SDK 版本的 CUDA 运行时 DLL。未来可能会发生变化。如果您必须动态链接到 CUDA 运行时，我们建议您随插件一起提供 CUDA 运行时 DLL 的副本，并使用 `dlopen/LoadLibrary` 显式加载所需的运行时。有关更多详细信息，请参阅 NVIDIA 的 GPU 管理和部署指南中的 CUDA 兼容性部分：[https://docs.nvidia.com/deploy/cuda-compatibility/](https://docs.nvidia.com/deploy/cuda-compatibility/)
 
 ---
 

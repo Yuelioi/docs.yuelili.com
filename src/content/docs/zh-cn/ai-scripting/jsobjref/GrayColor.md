@@ -51,14 +51,14 @@ title: GrayColor
 // 将活动文档中第一个单词的颜色设置为灰色
 
 if (app.documents.length > 0 && app.activeDocument.textFrames.length > 0) {
-    var text = app.activeDocument.textFrames[0].textRange;
-    var firstWord = text.words[0];
+ var text = app.activeDocument.textFrames[0].textRange;
+ var firstWord = text.words[0];
 
-    // 创建新颜色
-    var textColor = new GrayColor();
-    textColor.gray = 45;
+ // 创建新颜色
+ var textColor = new GrayColor();
+ textColor.gray = 45;
 
-    firstWord.filled = true;
-    firstWord.fillColor = textColor;
+ firstWord.filled = true;
+ firstWord.fillColor = textColor;
 }
 ```

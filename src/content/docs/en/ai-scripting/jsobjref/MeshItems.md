@@ -67,9 +67,9 @@ Gets the first element in the collection with the specified name.
 
 #### Parameters
 
-| Parameter |  Type  |      Description       |
-| --------- | ------ | ---------------------- |
-| `name`    | String | Name of element to get |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Name of element to get |
 
 #### Returns
 
@@ -87,8 +87,8 @@ Gets an element from the collection.
 
 #### Parameters
 
-| Parameter |      Type      |     Description      |
-| --------- | -------------- | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `itemKey` | String, Number | String or number key |
 
 #### Returns
@@ -120,16 +120,16 @@ To run this script, have two open documents. One document should contain at leas
 ```javascript
 // Copies all mesh items from one document to a new document
 if (app.documents.length > 0) {
-    var srcDoc = documents[0];
-    var locationOffset = 0;
-    var targetDoc = documents.add();
-    for (var i = 0; i < srcDoc.meshItems.length; i++) {
-        var srcItem = srcDoc.meshItems[i];
-        var dupItem = srcDoc.meshItems[i].duplicate(targetDoc, ElementPlacement.PLACEATEND);
+ var srcDoc = documents[0];
+ var locationOffset = 0;
+ var targetDoc = documents.add();
+ for (var i = 0; i < srcDoc.meshItems.length; i++) {
+ var srcItem = srcDoc.meshItems[i];
+ var dupItem = srcDoc.meshItems[i].duplicate(targetDoc, ElementPlacement.PLACEATEND);
 
-        // offset the copied items' position on the y axis
-        dupItem.position = Array(100, 50 + locationOffset);
-        locationOffset += 50;
-    }
+ // offset the copied items' position on the y axis
+ dupItem.position = Array(100, 50 + locationOffset);
+ locationOffset += 50;
+ }
 }
 ```

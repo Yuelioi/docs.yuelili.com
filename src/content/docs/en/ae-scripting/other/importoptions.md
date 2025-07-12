@@ -7,7 +7,6 @@ title: importoptions
 
 `new ImportOptions(file);`
 
-
 #### Description
 
 The ImportOptions object encapsulates the options used to import a file with the [Project.importFile()](../../general/project#projectimportfile) methods.
@@ -79,7 +78,6 @@ An `ImportAsType` enumerated value; read/write. One of:
 This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
 :::
 
-
 #### Description
 
 Sets the end clipping range of the sequence, that is going to be imported.
@@ -103,7 +101,6 @@ Integer; read/write.
 This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
 :::
 
-
 #### Description
 
 Sets the start clipping range of the sequence, that is going to be imported.
@@ -121,7 +118,7 @@ Integer; read/write.
 
 ```javascript
 /*
-    Import 20 frames of the sequence, starting at frame 10 and ending at frame 30
+ Import 20 frames of the sequence, starting at frame 10 and ending at frame 30
  */
 var mySequence = '~/Desktop/sequence/image_000.png';
 
@@ -163,13 +160,13 @@ Reports whether the file can be imported as the source of a particular object ty
 
 #### Parameters
 
-| Parameter |         Type         |                  Description                   |
-|-----------|----------------------|------------------------------------------------|
-| `type`    | `ImportAsType` enum. | The type of file that can be imported. One of: |
-|           |                      | - `ImportAsType.COMP`                          |
-|           |                      | - `ImportAsType.FOOTAGE`                       |
-|           |                      | - `ImportAsType.COMP_CROPPED_LAYERS`           |
-|           |                      | - `ImportAsType.PROJECT`                       |
+| Parameter | Type | Description |
+|---|---|---|
+| `type` | `ImportAsType` enum. | The type of file that can be imported. One of: |
+| | | - `ImportAsType.COMP` |
+| | | - `ImportAsType.FOOTAGE` |
+| | | - `ImportAsType.COMP_CROPPED_LAYERS` |
+| | | - `ImportAsType.PROJECT` |
 
 #### Returns
 
@@ -180,7 +177,7 @@ Boolean.
 ```javascript
 var io = new ImportOptions(new File("c:\\myFile.psd"));
 if (io.canImportAs(ImportAsType.COMP)) {
-    io.importAs = ImportAsType.COMP;
+ io.importAs = ImportAsType.COMP;
 }
 ```
 
@@ -194,16 +191,15 @@ if (io.canImportAs(ImportAsType.COMP)) {
 This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
 :::
 
-
 #### Description
 
 Reports whether the file object is numbered, i.e. file name has a digit.
 
 #### Parameters
 
-| Parameter |                                                 Type                                                  |    Description    |
-| --------- | ----------------------------------------------------------------------------------------------------- | ----------------- |
-| `file`    | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object | The file to check |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `file` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object | The file to check |
 
 #### Returns
 
@@ -216,8 +212,8 @@ Object, containing 2 keys:
 
 ```javascript
 var importOptions = new ImportOptions();
-importOptions.isFileNameNumbered('image.png');     // "isNumbered": false, "num": 0
-importOptions.isFileNameNumbered('003image.png');  // "isNumbered": true, "num": 3
+importOptions.isFileNameNumbered('image.png'); // "isNumbered": false, "num": 0
+importOptions.isFileNameNumbered('003image.png'); // "isNumbered": true, "num": 3
 importOptions.isFileNameNumbered('ima0102ge.png'); // "isNumbered": true, "num": 102
 importOptions.isFileNameNumbered('image0120.png'); // "isNumbered": true, "num": 120
 ```

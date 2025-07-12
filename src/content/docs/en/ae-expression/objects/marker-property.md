@@ -19,7 +19,6 @@ It contains a special version of some of the same attributes and methods as the 
 On this page, we're going to use `thisComp.marker` as a sample on how to call these items, however note that any method that returns a [Marker Property](#) will work.
 :::
 
-
 ---
 
 ## Attributes
@@ -58,11 +57,11 @@ If more than one marker has the same name, this method returns the marker that o
 
 #### Parameters
 
-| Parameter |  Type  |                Description                |
-|-----------|--------|-------------------------------------------|
-| `index`   | Number | The marker index to get                   |
-| `name`    | String | Marker name or index to access marker by. |
-| `index`   | Number |                                           |
+| Parameter | Type | Description |
+|---|---|---|
+| `index` | Number | The marker index to get |
+| `name` | String | Marker name or index to access marker by. |
+| `index` | Number | |
 
 #### Type
 
@@ -102,9 +101,9 @@ Returns the marker that is nearest in comp or layer time to the provided time `t
 
 #### Parameters
 
-| Parameter |  Type  |               Description                |
-| --------- | ------ | ---------------------------------------- |
-| `t`       | Number | The time to find the nearest marker from |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `t` | Number | The time to find the nearest marker from |
 
 #### Returns
 

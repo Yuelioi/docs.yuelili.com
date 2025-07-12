@@ -58,7 +58,7 @@ This simple [snippet](../snippets.html) checks if a texture file exists, and if 
 v@Cd = {1,0,0};
 stat s = file_stat("$HH/pic/Mandril.pic");
 if (s->isValid())
-   v@Cd = {0,1,0};
+ v@Cd = {0,1,0};
 
 ```
 
@@ -69,19 +69,19 @@ This example defines `file_size`, `file_exists`, and `file_isdir` convenience fu
 
 int file_size(string name)
 {
-    stat        info(name);
-    return file_stat(name)->st_size;
+ stat info(name);
+ return file_stat(name)->st_size;
 }
 
 int file_exists(string name)
 {
-    // Use cached file_stat() results
-    return cached_file_stat(name)->isValid();
+ // Use cached file_stat() results
+ return cached_file_stat(name)->isValid();
 }
 
 int file_isdir(string name)
 {
-    return file_stat(name)->isDir();
+ return file_stat(name)->isDir();
 }
 
 ```

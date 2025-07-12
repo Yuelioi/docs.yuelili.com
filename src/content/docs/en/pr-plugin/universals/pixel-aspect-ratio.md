@@ -9,7 +9,6 @@ Pixel Aspect Ratio (PAR) is usually represented as a rational number, with a num
 Several PAR values were changed in CS4 to match broadcast standards.
 :::
 
-
 Here are some examples of pixel aspect ratios:
 
 - NTSC DV 0.9091 PAR is (10, 11)

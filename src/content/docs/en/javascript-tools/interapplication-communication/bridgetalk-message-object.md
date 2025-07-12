@@ -153,7 +153,7 @@ To define error-response behavior, set this to a function definition in the foll
 
 ```javascript
 bridgeTalkObj.onError = function( errorMsgObject ) {
-    // error handler defined here
+ // error handler defined here
 };
 ```
 
@@ -173,7 +173,7 @@ To define a response to receipt notification, set this to a function definition 
 
 ```javascript
 bridgeTalkObj.onReceived = function( origMsgObject ) {
-    // handler defined here
+ // handler defined here
 };
 ```
 
@@ -193,7 +193,7 @@ To handle the response, set this to a function definition in the following form:
 
 ```javascript
 bridgeTalkObj.onResult = function( responseMsgObject ) {
-    // handler defined here
+ // handler defined here
 };
 ```
 
@@ -217,7 +217,7 @@ To define a response to the timeout event, set this to a function definition in 
 
 ```javascript
 bridgeTalkObj.onTimeout = function( timeoutMsgObject ) {
-    // handler defined here
+ // handler defined here
 };
 ```
 
@@ -239,10 +239,10 @@ Sending the message does not guarantee that the target actually receives it. You
 
 #### Parameters
 
-|     Parameter      |  Type  |                                                  Description                                                   |
-| ------------------ | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `timoutInSecs`     | Number | Optional. A maximum number of seconds to wait for a result before returning from this function. The message is sent synchronously, and the function does not return until the target has processed the message or this number of seconds have passed. If not supplied or 0, the message is sent asynchronously, and the function returns immediately without waiting for a result. |
-| `launchParameters` | String | Optional. A string of parameters to append to the name of the target application when launching it, if the application is not already running. If the target application is already running, this value is ignored.                                        |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `timoutInSecs` | Number | Optional. A maximum number of seconds to wait for a result before returning from this function. The message is sent synchronously, and the function does not return until the target has processed the message or this number of seconds have passed. If not supplied or 0, the message is sent asynchronously, and the function returns immediately without waiting for a result. |
+| `launchParameters` | String | Optional. A string of parameters to append to the name of the target application when launching it, if the application is not already running. If the target application is already running, this value is ignored. |
 
 #### Returns
 
@@ -262,9 +262,9 @@ This allows you to send multiple responses to messages.
 
 #### Parameters
 
-| Parameter | Type |                                       Description                                        |
-| --------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `result`  | Any  | You can send data of any type as the result value. The messaging framework creates a BridgeTalk message object, and flattens this value into a string which it stores in the body of that message. See [Passing values between applications](../communicating-through-messages#passing-values-between-applications). |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `result` | Any | You can send data of any type as the result value. The messaging framework creates a BridgeTalk message object, and flattens this value into a string which it stores in the body of that message. See [Passing values between applications](../communicating-through-messages#passing-values-between-applications). |
 
 #### Returns
 

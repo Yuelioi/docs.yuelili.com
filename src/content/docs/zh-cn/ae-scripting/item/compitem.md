@@ -536,19 +536,19 @@ Essential Graphics 面板中的名称用于 Motion Graphics 模板的文件名�
 
 可以选择指定保存 Motion Graphics 模板文件的文件夹路径。如果未指定，文件将保存在当前用户的 Motion Graphics 模板文件夹中：
 
-| 操作系统 | 路径        |
-| -------- | ------------------------------------------------------------------------------------- |
-| macOS    | `/Users/<name>/Library/Application Support/Adobe/Common/Motion Graphics Templates/` |
-| Windows  | `C:\Users\<name>\AppData\Roaming\Adobe\Common\Motion Graphics Templates\`   |
+| 操作系统 | 路径 |
+| --- | --- |
+| macOS | `/Users/<name>/Library/Application Support/Adobe/Common/Motion Graphics Templates/` |
+| Windows | `C:\Users\<name>\AppData\Roaming\Adobe\Common\Motion Graphics Templates\` |
 
 如果项目自上次保存以来已更改，After Effects 将提示用户保存项目。为避免此情况，请在导出 Motion Graphics 模板之前使用项目的 `save()` 方法。
 
 #### 参数
 
-| 参数          | 类型   | 描述         |
-| ----------------------------- | ------ | ---------------------------- |
-| `doOverWriteFileIfExisting` | 布尔值 | 是否覆盖同名的现有文件。     |
-| `file_path`         | 字符串 | 可选。保存文件的文件夹路径。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `doOverWriteFileIfExisting` | 布尔值 | 是否覆盖同名的现有文件。 |
+| `file_path` | 字符串 | 可选。保存文件的文件夹路径。 |
 
 #### 返回
 
@@ -570,9 +570,9 @@ Essential Graphics 面板中的名称用于 Motion Graphics 模板的文件名�
 
 #### 参数
 
-| 参数      | 类型    | 描述         |
-| --------- | ------- | ---------------------------- |
-| `index`   | 整数    | 要返回名称的EGP属性索引      |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `index` | 整数 | 要返回名称的EGP属性索引 |
 
 #### 返回值
 
@@ -598,10 +598,10 @@ Essential Graphics 面板中的名称用于 Motion Graphics 模板的文件名�
 
 #### 参数
 
-| 参数      | 类型    | 描述           |
-| --------- | ------- | ---------------------- |
-| `index`   | 整数    | 要重命名的EGP属性索引  |
-| `newName` | 字符串  | EGP属性的新名称        |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `index` | 整数 | 要重命名的EGP属性索引 |
+| `newName` | 字符串 | EGP属性的新名称 |
 
 #### 返回值
 
@@ -623,22 +623,22 @@ Essential Graphics 面板中的名称用于 Motion Graphics 模板的文件名�
 
 #### 参数
 
-| 参数      | 类型 (范围 `[1..numLayers]`，其中`numLayers`是合成中的图层数量) | 描述         |
-| --------- | --------------------------------------------------------------- | ---------------------------- |
-| `index`   | 整数           | 该合成中所需图层的索引编号   |
+| 参数 | 类型 (范围 `[1..numLayers]`，其中`numLayers`是合成中的图层数量) | 描述 |
+| --- | --- | --- |
+| `index` | 整数 | 该合成中所需图层的索引编号 |
 
 或：
 
-| 参数          | 类型 (本合成中的[图层对象](../../layer/layer)) | 描述       |
-| ------------- | ---------------------------------------------- | -------------------------------------------------------------------- |
-| `otherLayer`  | 图层对象      | `relIndex`值将添加到此图层的索引值以查找所需图层的位置       |
-| `relIndex`    | 整数 (范围 `[1 - otherLayer.index .. numLayers - otherLayer.index]`) | 所需图层相对于`otherLayer`的位置。此值将添加到`otherLayer`值以派生绝对索引 |
+| 参数 | 类型 (本合成中的[图层对象](../../layer/layer)) | 描述 |
+| --- | --- | --- |
+| `otherLayer` | 图层对象 | `relIndex`值将添加到此图层的索引值以查找所需图层的位置 |
+| `relIndex` | 整数 (范围 `[1 - otherLayer.index .. numLayers - otherLayer.index]`) | 所需图层相对于`otherLayer`的位置。此值将添加到`otherLayer`值以派生绝对索引 |
 
 或：
 
-| 参数    | 类型    | 描述   |
-| ------- | ------- | -------------- |
-| `name`  | 字符串  | 所需图层名称   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `name` | 字符串 | 所需图层名称 |
 
 #### 返回值
 

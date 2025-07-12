@@ -67,9 +67,9 @@ Copies a project from some other location, into the Production directory.
 
 #### Parameters
 
-|     Parameter     |  Type  |    Description    |
-| ----------------- | ------ | ------------------------------------- |
-| `srcProjectPath`  | String | A path to the source project.         |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `srcProjectPath` | String | A path to the source project. |
 | `destProjectPath` | String | A destination path for added project. |
 
 #### Returns
@@ -106,8 +106,8 @@ Returns the lock state of a single project within the Production.
 
 #### Parameters
 
-| Parameter |    Type    | Description |
-| --------- | ------------------------------ | ----------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `project` | [Project object](.././project) | The project |
 
 #### Returns
@@ -126,11 +126,11 @@ Moves the specified path ("bin") or .prproj into the Production's Trash folder.
 
 #### Parameters
 
-|       Parameter       |  Type   |       Description        |
-| --------------------- | ------- | -------------------------------------------- |
-| `projectOrFolderPath` | String  | A path to the source project.      |
-| `suppressUI`          | Boolean | Whether to suppress any resultant dialogues. |
-| `saveProject`         | Boolean | Whether to save the project(s) first.        |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `projectOrFolderPath` | String | A path to the source project. |
+| `suppressUI` | Boolean | Whether to suppress any resultant dialogues. |
+| `saveProject` | Boolean | Whether to save the project(s) first. |
 
 #### Returns
 
@@ -148,10 +148,10 @@ Sets the lock state of the specified project within the Production.
 
 #### Parameters
 
-| Parameter |       Type       |     Description      |
-| --------- | ---------------- | ---------------------------------------- |
-| `project` | `Project object` | The project          |
-| `locked`  | Boolean          | `True` for locked, `false` for unlocked. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `project` | `Project object` | The project |
+| `locked` | Boolean | `True` for locked, `false` for unlocked. |
 
 #### Returns
 

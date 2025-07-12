@@ -27,12 +27,12 @@ Adobe 现在支持在部分原生运行于 Apple Silicon 的产品中使用 Appl
 > * 找到您的插件的 .r 资源文件。
 > * 在现有的 Intel Mac 入口函数定义旁边添加 `CodeMacARM64 {"EffectMain"}`。
 >
->   ```cpp
->   #if defined(AE_OS_MAC)
->     CodeMacARM64 {"EffectMain"},
->     CodeMacIntel64 {"EffectMain"},
->   #endif
->   ```
+> ```cpp
+> #if defined(AE_OS_MAC)
+> CodeMacARM64 {"EffectMain"},
+> CodeMacIntel64 {"EffectMain"},
+> #endif
+> ```
 >
 > * 如果由于某些原因您需要在 x64 和 ARM 上使用不同的入口函数，只需提供不同的入口函数名称和字符串即可。
 
@@ -52,18 +52,18 @@ Adobe 现在支持在部分原生运行于 Apple Silicon 的产品中使用 Appl
 
 ```cpp
 PF_Err EffectMain ( PF_Cmd cmd,
-    PF_InData *in_data,
-    PF_OutData *out_data,
-    PF_ParamDef *params[],
-    PF_LayerDef *output )
+ PF_InData *in_data,
+ PF_OutData *out_data,
+ PF_ParamDef *params[],
+ PF_LayerDef *output )
 {
-    try
-    {
-        /* 您的代码在这里 */
-    }
-    catch
-    {
-        /* 返回最合适的 PF_Err */
-    }
+ try
+ {
+ /* 您的代码在这里 */
+ }
+ catch
+ {
+ /* 返回最合适的 PF_Err */
+ }
 }
 ```

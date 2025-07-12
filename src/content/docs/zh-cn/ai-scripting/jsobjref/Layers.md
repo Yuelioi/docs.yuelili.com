@@ -81,9 +81,9 @@ title: 图层
 
 #### 参数
 
-| 参数      | 类型   | 描述         |
-| --------- | ------ | ------------------ |
-| `name`    | 字符串 | 要获取的元素的名称 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `name` | 字符串 | 要获取的元素的名称 |
 
 #### 返回值
 
@@ -101,9 +101,9 @@ title: 图层
 
 #### 参数
 
-| 参数      | 类型     | 描述         |
-| --------- | -------------- | ------------------ |
-| `itemKey` | 字符串, 数字   | 字符串或数字键     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `itemKey` | 字符串, 数字 | 字符串或数字键 |
 
 #### 返回值
 
@@ -134,18 +134,18 @@ title: 图层
 
 var layersDeleted = 0;
 for (var i = 0; i < app.documents.length; i++) {
-    var targetDocument = app.documents[i];
-    var layerCount = targetDocument.layers.length;
+ var targetDocument = app.documents[i];
+ var layerCount = targetDocument.layers.length;
 
-    // 从后向前遍历图层，以保留剩余图层的索引
-    // 当我们删除一个图层时
-    for (var ii = layerCount - 1; ii >= 0; ii--) {
-        var targetLayer = targetDocument.layers[ii];
-        var layerName = new String(targetLayer.name);
-        if (layerName.indexOf("Temp") == 0) {
-      targetDocument.layers[ii].remove();
-      layersDeleted++;
-        }
-    }
+ // 从后向前遍历图层，以保留剩余图层的索引
+ // 当我们删除一个图层时
+ for (var ii = layerCount - 1; ii >= 0; ii--) {
+ var targetLayer = targetDocument.layers[ii];
+ var layerName = new String(targetLayer.name);
+ if (layerName.indexOf("Temp") == 0) {
+ targetDocument.layers[ii].remove();
+ layersDeleted++;
+ }
+ }
 }
 ```

@@ -23,9 +23,9 @@ Examples
 ## examples
 
 ```vex
-int        vtx;
+int vtx;
 
-// Get the linear vertex  of point 3
+// Get the linear vertex of point 3
 vtx = pointvertex("defgeo.bgeo", 3);
 
 ```

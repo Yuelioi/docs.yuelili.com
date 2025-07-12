@@ -91,7 +91,7 @@ RenderQueueItem 对象表示渲染队列中的单个项目。它提供了对要�
 
 ```javascript
 function myStatusChanged() {
-  alert(app.project.renderQueue.item(1).status);
+ alert(app.project.renderQueue.item(1).status);
 }
 
 app.project.renderQueue.item(1).onstatus = myStatusChanged();
@@ -253,8 +253,8 @@ Date 对象，如果项目尚未开始渲染则为 `null`; 只读.
 
 #### 参数
 
-| 参数       | 类型   | 描述         |
-| ---------------- | ------ | ------------------ |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `templateName` | 字符串 | 要应用的模板名称。 |
 
 #### 返回
@@ -349,8 +349,8 @@ var rqItem1_spec_str_json = rqItem1_spec_str.toSource();
 
 #### 参数
 
-| 参数      | 类型          | 描述    |
-| --------- | -------------------------------------- | -------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `index` | 整数，范围为 `[1..numOutputModules]` | 输出模块的位置索引。 |
 
 #### 返回
@@ -387,8 +387,8 @@ OutputModule 对象。
 
 #### 参数
 
-| 参数     | 类型   | 描述     |
-| -------- | ------ | -------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `name` | 字符串 | 新模板的名称。 |
 
 #### 返回
@@ -458,11 +458,11 @@ app.project.renderQueue.item(2).setSettings( rqItem1_settable_str );
 // 使用您创建的值设置渲染队列项目3。
 
 var my_renderSettings = {
-  "Color Depth":    "32 bits per channel",
-  "Quality":      "Best",
-  "Effects":      "All On",
-  "Time Span Duration": "1.0",
-  "Time Span Start":  "2.0"
+ "Color Depth": "32 bits per channel",
+ "Quality": "Best",
+ "Effects": "All On",
+ "Time Span Duration": "1.0",
+ "Time Span Start": "2.0"
 };
 
 app.project.renderQueue.item(2).setSettings( my_renderSettings );

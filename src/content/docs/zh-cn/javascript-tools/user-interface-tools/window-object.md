@@ -11,36 +11,36 @@ title: window-object
 new Window (type [, title, bounds, {creation_properties}]);
 ```
 
-|    参数    |      类型       |    描述    |
-|-----------------------|---------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`     | String       | 窗口类型。可选值如下：        |
-|      |    | - `"dialog"` - 创建一个模态对话框。         |
-|      |    | - `"palette"` - 创建一个非模态对话框，也称为浮动面板。（Photoshop CC 不支持。）      |
-|      |    | - `"window"` - 创建一个简单窗口，可用作应用程序的主窗口。（Photoshop CC 不支持。）      |
-|      |    | 此参数可以是 ScriptUI 资源规范；在这种情况下，所有其他参数将被忽略。请参阅 [资源规范](../resource-specifications)。 |
-| `title`     | String       | 可选。窗口标题。可本地化的字符串。      |
-| `bounds`    | [Bounds](../size-and-location-objects#bounds) object. | 可选。窗口的位置和大小。       |
-| `creation_properties` | Object       | 可选。包含以下任何属性的对象。   |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `type` | String | 窗口类型。可选值如下： |
+| | | - `"dialog"` - 创建一个模态对话框。 |
+| | | - `"palette"` - 创建一个非模态对话框，也称为浮动面板。（Photoshop CC 不支持。） |
+| | | - `"window"` - 创建一个简单窗口，可用作应用程序的主窗口。（Photoshop CC 不支持。） |
+| | | 此参数可以是 ScriptUI 资源规范；在这种情况下，所有其他参数将被忽略。请参阅 [资源规范](../resource-specifications)。 |
+| `title` | String | 可选。窗口标题。可本地化的字符串。 |
+| `bounds` | [Bounds](../size-and-location-objects#bounds) object. | 可选。窗口的位置和大小。 |
+| `creation_properties` | Object | 可选。包含以下任何属性的对象。 |
 
 #### 创建属性
 
-|    参数    |  类型   |    描述    |
-|-----------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `resizeable`   | Boolean | 当为 `true` 时，用户可调整窗口大小。         |
-|      |     | 默认值为 `false`。      |
-| `su1PanelCoordinates` | Boolean | （仅限 Photoshop）当为 `true` 时，此窗口的子面板会自动调整其子元素的位置以兼容 Photoshop CS（在 Photoshop CS 中，垂直坐标是从框架外部测量的）。   |
-|      |     | 单个面板可以覆盖父窗口的设置。       |
-|      |     | 默认值为 `false`。      |
-| `closeButton`     | Boolean | 当为 `true` 时，标题栏包含一个关闭窗口的按钮（如果平台和窗口类型允许）。       |
-|      |     | 当为 `false` 时，不包含。不用于对话框。    |
-|      |     | 默认值为 `true`。       |
-| `maximizeButton`   | Boolean | 当为 `true` 时，标题栏包含一个将窗口扩展到最大尺寸（通常是整个屏幕）的按钮（如果平台和窗口类型允许）。当为 `false` 时，不包含。不用于对话框。      |
-|      |     | 默认值为 `false`（类型为 `palette` 时），`true`（类型为 `window` 时）。         |
-| `minimizeButton`   | Boolean | 当为 `true` 时，标题栏包含一个最小化或图标化窗口的按钮（如果平台和窗口类型允许）。当为 `false` 时，不包含。主窗口在 Mac OS 中不能有最小化按钮。不用于对话框。 |
-|      |     | 默认值为 `false`（类型为 `palette` 时），`true`（类型为 `window` 时）。         |
-| `independent`     | Boolean | 当为 `true` 时，类型为 `window` 的窗口独立于其他应用程序窗口，并且可以在 Windows 中隐藏在其他窗口后面。在 Mac OS 中无效。    |
-|      |     | 默认值为 `false`。      |
-| `borderless`   | Boolean | 当为 `true` 时，窗口没有标题栏或边框。控制这些功能的属性将被忽略。       |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `resizeable` | Boolean | 当为 `true` 时，用户可调整窗口大小。 |
+| | | 默认值为 `false`。 |
+| `su1PanelCoordinates` | Boolean | （仅限 Photoshop）当为 `true` 时，此窗口的子面板会自动调整其子元素的位置以兼容 Photoshop CS（在 Photoshop CS 中，垂直坐标是从框架外部测量的）。 |
+| | | 单个面板可以覆盖父窗口的设置。 |
+| | | 默认值为 `false`。 |
+| `closeButton` | Boolean | 当为 `true` 时，标题栏包含一个关闭窗口的按钮（如果平台和窗口类型允许）。 |
+| | | 当为 `false` 时，不包含。不用于对话框。 |
+| | | 默认值为 `true`。 |
+| `maximizeButton` | Boolean | 当为 `true` 时，标题栏包含一个将窗口扩展到最大尺寸（通常是整个屏幕）的按钮（如果平台和窗口类型允许）。当为 `false` 时，不包含。不用于对话框。 |
+| | | 默认值为 `false`（类型为 `palette` 时），`true`（类型为 `window` 时）。 |
+| `minimizeButton` | Boolean | 当为 `true` 时，标题栏包含一个最小化或图标化窗口的按钮（如果平台和窗口类型允许）。当为 `false` 时，不包含。主窗口在 Mac OS 中不能有最小化按钮。不用于对话框。 |
+| | | 默认值为 `false`（类型为 `palette` 时），`true`（类型为 `window` 时）。 |
+| `independent` | Boolean | 当为 `true` 时，类型为 `window` 的窗口独立于其他应用程序窗口，并且可以在 Windows 中隐藏在其他窗口后面。在 Mac OS 中无效。 |
+| | | 默认值为 `false`。 |
+| `borderless` | Boolean | 当为 `true` 时，窗口没有标题栏或边框。控制这些功能的属性将被忽略。 |
 
 ---
 

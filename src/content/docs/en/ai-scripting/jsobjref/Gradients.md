@@ -81,9 +81,9 @@ Gets the first element in the collection with the specified name.
 
 #### Parameters
 
-| Parameter |  Type  |      Description       |
-| --------- | ------ | ---------------------- |
-| `name`    | String | Name of element to get |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Name of element to get |
 
 #### Returns
 
@@ -101,8 +101,8 @@ Gets an element from the collection.
 
 #### Parameters
 
-| Parameter |      Type      |     Description      |
-| --------- | -------------- | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `itemKey` | String, Number | String or number key |
 
 #### Returns
@@ -132,6 +132,6 @@ Nothing.
 ```javascript
 // Deletes the first gradient from the current document
 if (app.documents.length > 0) {
-    app.activeDocument.gradients[0].remove();
+ app.activeDocument.gradients[0].remove();
 }
 ```

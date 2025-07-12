@@ -25,7 +25,7 @@ float angles[];
 resize(angles, len(lobes));
 for (int i = 0; i < len(lobes); i++)
 {
-    angles[i] = solid_angle(lobes[i], PBR_ALL_MASK);
+ angles[i] = solid_angle(lobes[i], PBR_ALL_MASK);
 }
 
 // 根据立体角计算PDF

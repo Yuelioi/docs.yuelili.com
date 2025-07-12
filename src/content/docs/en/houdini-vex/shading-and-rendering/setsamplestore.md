@@ -31,39 +31,39 @@ Example
 
 ```vex
 cvex displacedlens(
-    // Inputs
-    float x = 0;
-    float y = 0;
-    float Time = 0;
-    float dofx = 0;
-    float dofy = 0;
-    float aspect = 1;
+ // Inputs
+ float x = 0;
+ float y = 0;
+ float Time = 0;
+ float dofx = 0;
+ float dofy = 0;
+ float aspect = 1;
 
-    float displaceScale = 1.0;
-    float displaceGain = 0.1;
+ float displaceScale = 1.0;
+ float displaceGain = 0.1;
 
-    // Outputs
-    export vector P = 0;
-    export vector I = 0;
+ // Outputs
+ export vector P = 0;
+ export vector I = 0;
 )
 {
-    P = {x, y, 0};
-    I = {1, 0, 0};
+ P = {x, y, 0};
+ I = {1, 0, 0};
 
-    vector displace = noise(P * displaceScale) * displaceGain;
-    I += displace;
+ vector displace = noise(P * displaceScale) * displaceGain;
+ I += displace;
 
-    // Store the displacement at the eye point, 'P'
-    int status = setsamplestore("displacedlens_d", P, displace);
+ // Store the displacement at the eye point, 'P'
+ int status = setsamplestore("displacedlens_d", P, displace);
 }
 
 surface mysurface()
 {
-    // Get the displacement at the eye point, 'Eye'
-    vector displace = 0;
-    int status = getsamplestore("displacedlens_d", Eye, displace);
+ // Get the displacement at the eye point, 'Eye'
+ vector displace = 0;
+ int status = getsamplestore("displacedlens_d", Eye, displace);
 
-    //...
+ //...
 }
 
 ```

@@ -8,12 +8,12 @@ ExtendScript 允许你通过在类中定义一个与运算符同名的方法来�
 ```javascript
 // 定义构造函数
 function MyClass (initialValue) {
-    this.value = initialValue;
+ this.value = initialValue;
 }
 
 // 定义加法运算符
 MyClass.prototype ["+"] = function (operand) {
-    return this.value + operand;
+ return this.value + operand;
 }
 ```
 
@@ -28,13 +28,13 @@ Result: 15
 
 你可以重载以下运算符：
 
-| 类别     |     运算符      |
-|----------|-----------------|
-| 一元运算符 | `+, ~`      |
+| 类别 | 运算符 |
+|---|---|
+| 一元运算符 | `+, ~` |
 | 二元运算符 | - `+, *, /, %, ^` |
-|      | - `<, <=, ==`   |
-|      | - `<<, >>, >>>` |
-|      | - `&, \|, ===`  |
+| | - `<, <=, ==` |
+| | - `<<, >>, >>>` |
+| | - `&, \|, ===` |
 
 - 运算符 `>` 和 `>=` 是通过执行 NOT 运算符 `<=` 和 NOT 运算符 `<` 来实现的。
 - 不支持组合赋值运算符，例如 `*=`。
@@ -47,11 +47,11 @@ Result: 15
 
 ```javascript
 this ["/"] = function (operand, rev) {
-    if (rev) {
-    // 不解析 operand / this
-    return;
-    } else {
-    // 解析 this / operand
-    return this.value / operand;
+ if (rev) {
+ // 不解析 operand / this
+ return;
+ } else {
+ // 解析 this / operand
+ return this.value / operand;
 }
 ```

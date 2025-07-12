@@ -9,11 +9,9 @@ title: ComponentCollection object
 
 `app.project.sequences[index].videoTracks[index].clips[index].components`
 
-
 :::info
 ComponentCollection is a subclass of [Collection object](../collection). All methods and attributes of Collection, in addition to those listed below, are available when working with ComponentCollection.
 :::
-
 
 ---
 
@@ -26,7 +24,6 @@ ComponentCollection is a subclass of [Collection object](../collection). All met
 `app.project.sequences[index].audioTracks[index].clips[index].components.numItems`
 
 `app.project.sequences[index].videoTracks[index].clips[index].components.numItems`
-
 
 #### Description
 

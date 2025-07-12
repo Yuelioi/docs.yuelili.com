@@ -22,7 +22,6 @@ See also [PropertyGroup.property()](../propertygroup#propertygroupproperty).
 PropertyBase is the base class for both [Property](../property) and [PropertyGroup](../propertygroup), so PropertyBase attributes and methods are available when working with properties and property groups.
 :::
 
-
 #### Reference invalidation
 
 When something occurs that changes an object sufficiently for the reference to become invalid, script references to that object can generate errors. In simple cases this is straightforward. For example, if you delete anobject, a reference to the deleted object generates the warning "Object is Invalid":
@@ -61,7 +60,6 @@ alert(effect2.name); // invalid reference because group index positions have cha
 `app.project.item(index).layer(index).active`
 
 `app.project.item(index).layer(index).propertySpec.active`
-
 
 #### Description
 
@@ -118,7 +116,6 @@ Boolean; read-only.
 `app.project.item(index).layer(index).enabled`
 
 `app.project.item(index).layer(index).propertySpec.enabled`
-
 
 #### Description
 
@@ -193,7 +190,6 @@ String; read-only.
 `app.project.item(index).layer(index).name`
 
 `app.project.item(index).layer(index).propertySpec.name`
-
 
 #### Description
 
@@ -311,11 +307,10 @@ Moves this property to a new position in its parent property group. This method 
 Using this method invalidates existing references to other children in the same indexed group. For example, if you have three effects on a layer, each effect assigned to a different variable, moving one of the effects invalidates the references for all of these variables. You will need to reassign them.
 :::
 
-
 #### Parameters
 
-| Parameter  |  Type   |                             Description                              |
-| ---------- | ------- | -------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `newIndex` | Integer | The new index position at which to place this property in its group. |
 
 #### Returns
@@ -334,8 +329,8 @@ Gets the PropertyGroup object for an ancestor group of this property at a specif
 
 #### Parameters
 
-| Parameter |                    Type                    |                                                        Description                                                         |
-| --------- | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `countUp` | Integer, in the range `[1..propertyDepth]` | Optional. The number of levels to ascend within the parent-child hierarchy. Default is 1, which gets the immediate parent. |
 
 #### Returns

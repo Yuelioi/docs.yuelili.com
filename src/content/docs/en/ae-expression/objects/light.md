@@ -11,11 +11,9 @@ This category is for items specific to Light Layers.
 - all the material properties
 :::
 
-
 :::note
 David Van Brink provides an instructional article and sample project on his [omino pixel blog](http://www.adobe.com/go/learn_ae_ominoflashing) that shows how to use expressions with lights.
 :::
-
 
 ---
 

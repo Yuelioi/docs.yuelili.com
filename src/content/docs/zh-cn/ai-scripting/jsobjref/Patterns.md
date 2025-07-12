@@ -81,9 +81,9 @@ title: 图案
 
 #### 参数
 
-| 参数     | 类型   | 描述         |
-| -------- | ------ | ------------------ |
-| `name`   | 字符串 | 要获取的元素的名称 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `name` | 字符串 | 要获取的元素的名称 |
 
 #### 返回值
 
@@ -101,9 +101,9 @@ title: 图案
 
 #### 参数
 
-| 参数      | 类型   | 描述       |
-| --------- | ------------ | ---------------- |
-| `itemKey` | 字符串, 数字 | 字符串或数字键   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `itemKey` | 字符串, 数字 | 字符串或数字键 |
 
 #### 返回值
 
@@ -132,13 +132,13 @@ title: 图案
 ```javascript
 // 从当前文档中删除最后一个图案。
 if (app.documents.length > 0) {
-    var lastIndex = app.activeDocument.patterns.length - 1;
+ var lastIndex = app.activeDocument.patterns.length - 1;
 
-    var patternToRemove = app.activeDocument.patterns[lastIndex];
-    var patternName = patternToRemove.name;
-    patternToRemove.remove();
+ var patternToRemove = app.activeDocument.patterns[lastIndex];
+ var patternName = patternToRemove.name;
+ patternToRemove.remove();
 
-    // 注意：删除 Illustrator 对象后，将引用已删除对象的变量设置为 null，因为它现在无效。
-    patternToRemove = null;
+ // 注意：删除 Illustrator 对象后，将引用已删除对象的变量设置为 null，因为它现在无效。
+ patternToRemove = null;
 }
 ```

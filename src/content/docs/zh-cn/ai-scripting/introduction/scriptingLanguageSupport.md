@@ -11,11 +11,11 @@ Illustrator 脚本支持 Windows 上的 VBScript 和 JavaScript 脚本，以及 
 
 为了使 Adobe Illustrator CC 2017 能够识别文件为有效的脚本文件，文件必须具有正确的文件扩展名：
 
-| 脚本类型          | 文件类型（扩展名）    | 平台    |
-|-------------------------|------------------------------------------------|---------------|
-| AppleScript       | 编译脚本 ( .scpt ) 或 OSAS 文件（无扩展名）    | Mac OS        |
-| JavaScript 或 ExtendScript | 文本文件 ( .js 或 .jsx )          | Windows 和 Mac OS |
-| VBScript          | 文本文件 ( .vbs )    | Windows       |
+| 脚本类型 | 文件类型（扩展名） | 平台 |
+|---|---|---|
+| AppleScript | 编译脚本 ( .scpt ) 或 OSAS 文件（无扩展名） | Mac OS |
+| JavaScript 或 ExtendScript | 文本文件 ( .js 或 .jsx ) | Windows 和 Mac OS |
+| VBScript | 文本文件 ( .vbs ) | Windows |
 
 ---
 
@@ -51,9 +51,9 @@ CC JavaScript 脚本接口允许对插件进行有限的脚本编写。插件可
 
 ```javascript
 result = app.sendScriptMessage (
-    "Adobe Custom Workspace",
-    "Switch Workspace",
-    '<workspace="Essentials" >'
+ "Adobe Custom Workspace",
+ "Switch Workspace",
+ '<workspace="Essentials" >'
 );
 ```
 

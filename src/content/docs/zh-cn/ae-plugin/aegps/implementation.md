@@ -19,11 +19,11 @@ AEGP还可以使用任何不需要PF_ProgPtr的效果API套件函数（效果从
 
 ```cpp
 A_Err AEGP_PluginInitFuncPrototype(
-    struct SPBasicSuite  *pica_basicP,
-    A_long       major_versionL,
-    A_long       minor_versionL,
-    AEGP_PluginID        aegp_plugin_id,
-    AEGP_GlobalRefcon    *global_refconP)
+ struct SPBasicSuite *pica_basicP,
+ A_long major_versionL,
+ A_long minor_versionL,
+ AEGP_PluginID aegp_plugin_id,
+ AEGP_GlobalRefcon *global_refconP)
 ```
 
 插件的入口函数，在[PiPL资源](../../intro/pipl-resources)中导出，仅在启动时调用一次；所有对AEGP的其他调用都会转到它注册的函数。

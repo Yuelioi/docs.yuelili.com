@@ -79,10 +79,10 @@ title: 符号
 
 #### 参数
 
-|      参数      |        类型         |     描述     |
-| -------------- | ----------------------------------------------------------------------------------- | ------------------------ |
-| `sourceArt`    | [PageItem](.././PageItem)       | 用于创建符号的源图稿     |
-| `registrationPoint` | [SymbolRegistrationPoint](../scripting-constants#symbolregistrationpoint), 可选 | 使用的注册点       |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `sourceArt` | [PageItem](.././PageItem) | 用于创建符号的源图稿 |
+| `registrationPoint` | [SymbolRegistrationPoint](../scripting-constants#symbolregistrationpoint), 可选 | 使用的注册点 |
 
 #### 返回值
 
@@ -100,8 +100,8 @@ title: 符号
 
 #### 参数
 
-| 参数   |  类型  |       描述       |
-| ------ | ------ | ---------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `name` | 字符串 | 要获取的元素名称 |
 
 #### 返回值
@@ -120,8 +120,8 @@ title: 符号
 
 #### 参数
 
-| 参数     |      类型      |      描述      |
-| -------- | -------------- | -------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `itemKey` | 字符串, 数字 | 字符串或数字键 |
 
 #### 返回值
@@ -160,16 +160,16 @@ var iCount = docRef.graphicStyles.length;
 
 for (var i=0; i<iCount; i++) {
 
-    var pathRef = docRef.pathItems.rectangle( y, x, 20, 20 );
-    docRef.graphicStyles[i].applyTo(pathRef);
+ var pathRef = docRef.pathItems.rectangle( y, x, 20, 20 );
+ docRef.graphicStyles[i].applyTo(pathRef);
 
-    // 是否到达底部？
-    if ( (y-=60) <= 60 ) {
-        y = 750; // 回到顶部
-        x+= 200
-    }
+ // 是否到达底部？
+ if ( (y-=60) <= 60 ) {
+ y = 750; // 回到顶部
+ x+= 200
+ }
 
-    redraw();
-    docRef.symbols.add(pathRef);
+ redraw();
+ docRef.symbols.add(pathRef);
 }
 ```

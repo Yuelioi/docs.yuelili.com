@@ -7,7 +7,6 @@ title: filesource
 
 `app.project.item(index).proxySource`
 
-
 #### Description
 
 The FileSource object describes footage that comes from a file.
@@ -15,7 +14,6 @@ The FileSource object describes footage that comes from a file.
 :::info
 FileSource is a subclass of [FootageSource object](../footagesource). All methods and attributes of FootageSource, in addition to those listed below, are available when working with FileSource.
 :::
-
 
 ---
 
@@ -26,7 +24,6 @@ FileSource is a subclass of [FootageSource object](../footagesource). All method
 `app.project.item(index).mainSource.file`
 
 `app.project.item(index).proxySource.file`
-
 
 #### Description
 
@@ -46,7 +43,6 @@ The [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access
 `app.project.item(index).mainSource.missingFootagePath`
 
 `app.project.item(index).proxySource.missingFootagePath`
-
 
 #### Description
 

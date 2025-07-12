@@ -893,17 +893,17 @@ title: PDFSaveOptions
 // 将当前文档保存为 PDF 到 dest，并指定选项
 // dest 包含保存的完整路径和文件名
 function saveFileToPDF(dest) {
-    var doc = app.activeDocument;
+ var doc = app.activeDocument;
 
-    if (app.documents.length > 0) {
-        var saveName = new File(dest);
-        saveOpts = new PDFSaveOptions();
+ if (app.documents.length > 0) {
+ var saveName = new File(dest);
+ saveOpts = new PDFSaveOptions();
 
-        saveOpts.compatibility = PDFCompatibility.ACROBAT5;
-        saveOpts.generateThumbnails = true;
-        saveOpts.preserveEditability = true;
+ saveOpts.compatibility = PDFCompatibility.ACROBAT5;
+ saveOpts.generateThumbnails = true;
+ saveOpts.preserveEditability = true;
 
-        doc.saveAs(saveName, saveOpts);
-    }
+ doc.saveAs(saveName, saveOpts);
+ }
 }
 ```

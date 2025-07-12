@@ -67,9 +67,9 @@ Adds a spot swatch to the swatch group.
 
 #### Parameters
 
-| Parameter |       Type        | Description |
-| --------- | ----------------- | ----------- |
-| `spot`    | [Spot](.././Spot) | Spot to add |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `spot` | [Spot](.././Spot) | Spot to add |
 
 #### Returns
 
@@ -87,9 +87,9 @@ Adds a swatch to the swatch group.
 
 #### Parameters
 
-| Parameter |         Type          |  Description  |
-| --------- | --------------------- | ------------- |
-| `swatch`  | [Swatch](.././Swatch) | Swatch to add |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `swatch` | [Swatch](.././Swatch) | Swatch to add |
 
 #### Returns
 

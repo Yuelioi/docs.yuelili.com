@@ -31,7 +31,7 @@ order: 49
 
 ```vex
 // 检查图元是否应用了USD几何模型API
-int has_geom_model_api_by_name  = usd_hasapi(0, "/geo/sphere", "UsdGeomModelAPI");
+int has_geom_model_api_by_name = usd_hasapi(0, "/geo/sphere", "UsdGeomModelAPI");
 int has_geom_model_api_by_alias = usd_hasapi(0, "/geo/sphere", "GeomModelAPI");
 
 ```

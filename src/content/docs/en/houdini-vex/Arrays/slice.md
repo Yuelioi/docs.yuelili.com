@@ -32,9 +32,9 @@ Examples
 
 ```vex
 int[] nums = {10, 20, 30, 40, 50, 60};
-slice(nums, 1, 3) == {20, 30};  // nums[1:3]
-slice(nums, 1, -1) == {20, 30, 30, 40, 50};  // nums[1:-1]
-slice(nums, 0, len(nums), 2) == {20, 40, 60};  // nums[0:len(nums):2]
-slice(nums, 0, 0, 0, 0, 1, 2) == {20, 40, 60};  // nums[::2]
+slice(nums, 1, 3) == {20, 30}; // nums[1:3]
+slice(nums, 1, -1) == {20, 30, 30, 40, 50}; // nums[1:-1]
+slice(nums, 0, len(nums), 2) == {20, 40, 60}; // nums[0:len(nums):2]
+slice(nums, 0, 0, 0, 0, 1, 2) == {20, 40, 60}; // nums[::2]
 
 ```

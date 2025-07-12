@@ -37,7 +37,7 @@ For area sampling, you must specify both the angle and sample variadic parameter
 surface
 blurry_mirror(float angle = 3; int samples = 16; float bias=0.05)
 {
-    Cf = reflectlight(bias, 1, "angle", angle, "samples", samples);
+ Cf = reflectlight(bias, 1, "angle", angle, "samples", samples);
 }
 
 ```

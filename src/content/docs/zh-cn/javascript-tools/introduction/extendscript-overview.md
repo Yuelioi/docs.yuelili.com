@@ -79,9 +79,9 @@ ExtendScript 提供了使用标准协议与其他计算机或互联网通信的�
 ExtendScript 提供了以下实用工具和功能：
 
 - JavaScript 语言增强
-    - 用于组合脚本的工具，例如 `#include` 指令。请参阅 [预处理器指令](../../extendscript-tools-features/preprocessor-directives)。
-    - 支持按类扩展或覆盖数学和逻辑运算符行为。请参阅 [运算符重载](../../extendscript-tools-features/operator-overloading)。
-    - 有关完整详细信息，请参阅 [ExtendScript 工具和功能](../../extendscript-tools-features/index#extendscript-tools-and-features)。
+ - 用于组合脚本的工具，例如 `#include` 指令。请参阅 [预处理器指令](../../extendscript-tools-features/preprocessor-directives)。
+ - 支持按类扩展或覆盖数学和逻辑运算符行为。请参阅 [运算符重载](../../extendscript-tools-features/operator-overloading)。
+ - 有关完整详细信息，请参阅 [ExtendScript 工具和功能](../../extendscript-tools-features/index#extendscript-tools-and-features)。
 - 通过 ExtendScript Toolkit 进行 JavaScript 编译。请参阅 [ExtendScript Toolkit](../../extendscript-toolkit/index#the-extendscript-toolkit)。
 - XML 集成：ExtendScript 定义了 XML 对象，允许你使用 JavaScript 脚本处理 XML。有关完整详细信息，请参阅 [将 XML 集成到 JavaScript 中](../../integrating-xml/index#integrating-xml-into-javascript)。
 - 支持 XMP 元数据操作的脚本：XMPScript 提供了一个用于 Adobe 的 JavaScript API。

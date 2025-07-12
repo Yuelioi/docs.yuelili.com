@@ -125,15 +125,15 @@ title: 矩阵
 // 使用平移和旋转矩阵变换文档中的所有艺术对象，
 // 将艺术对象向右移动0.5英寸，向上移动1.5英寸
 if (app.documents.length > 0) {
-    var moveMatrix = app.getTranslationMatrix(0.5, 1.5);
+ var moveMatrix = app.getTranslationMatrix(0.5, 1.5);
 
-    // 在平移基础上添加旋转，逆时针旋转10度
-    var totalMatrix = concatenateRotationMatrix(moveMatrix, 10);
+ // 在平移基础上添加旋转，逆时针旋转10度
+ var totalMatrix = concatenateRotationMatrix(moveMatrix, 10);
 
-    // 对所有艺术对象应用变换
-    var doc = app.activeDocument;
-    for (var i = 0; i < doc.pageItems.length; i++) {
-        doc.pageItems[i].transform(totalMatrix);
-    }
+ // 对所有艺术对象应用变换
+ var doc = app.activeDocument;
+ for (var i = 0; i < doc.pageItems.length; i++) {
+ doc.pageItems[i].transform(totalMatrix);
+ }
 }
 ```

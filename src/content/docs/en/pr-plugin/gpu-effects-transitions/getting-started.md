@@ -71,7 +71,6 @@ For CUDA interoperability with OpenGL:
 On the Mac there is no real OpenGL/CUDA interoperability, and these calls will go through system memory.
 :::
 
-
 ---
 
 ## Entry Point
@@ -82,12 +81,12 @@ Make sure GPU acceleration is activated in File > Project Settings > General > V
 
 ```cpp
 prSuiteError xGPUFilterEntry (
-  csSDK_uint32      inHostInterfaceVersion,
-  csSDK_int32*      ioIndex,
-  prBool            inStartup,
-  piSuitesPtr       piSuites,
-  PrGPUFilter*      outFilter,
-  PrGPUFilterInfo*  outFilterInfo)
+ csSDK_uint32 inHostInterfaceVersion,
+ csSDK_int32* ioIndex,
+ prBool inStartup,
+ piSuitesPtr piSuites,
+ PrGPUFilter* outFilter,
+ PrGPUFilterInfo* outFilterInfo)
 ```
 
 If `inStartup` is non-zero, the effect/transition should startup and initialize the functions needed to implement PrGPUFilter, as well as the info in PrGPUFilterInfo.

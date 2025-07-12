@@ -11,7 +11,6 @@ This category is for items specific to Camera Layers.
 - all the 3d material properties
 :::
 
-
 ---
 
 ## Attributes
@@ -205,7 +204,6 @@ Returns the iris shape value from 1-10, corresponding to the selected dropdown v
 :::note
 Value `2` is reserved for the divider.
 :::
-
 
 #### Type
 

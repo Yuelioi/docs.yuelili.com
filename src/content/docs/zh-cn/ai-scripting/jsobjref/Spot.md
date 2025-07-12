@@ -140,26 +140,26 @@ title: 专色
 ```javascript
 // 在当前文档中创建一个新的专色，然后将 80% 的色调应用于该颜色
 if ( app.documents.length > 0 ) {
-    var doc = app.activeDocument;
+ var doc = app.activeDocument;
 
-    // 创建新的专色
-    var newSpot = doc.spots.add();
+ // 创建新的专色
+ var newSpot = doc.spots.add();
 
-    // 定义新的颜色值
-    var newColor = new CMYKColor();
-    newColor.cyan = 35;
-    newColor.magenta = 0;
-    newColor.yellow = 50;
-    newColor.black = 0;
+ // 定义新的颜色值
+ var newColor = new CMYKColor();
+ newColor.cyan = 35;
+ newColor.magenta = 0;
+ newColor.yellow = 50;
+ newColor.black = 0;
 
-    // 定义一个新的 SpotColor，使用新专色的 80% 色调
-    // 该专色可以像其他颜色一样应用于艺术项目。
-    newSpot.name = "豌豆绿";
-    newSpot.colorType = ColorModel.SPOT;
-    newSpot.color = newColor;
+ // 定义一个新的 SpotColor，使用新专色的 80% 色调
+ // 该专色可以像其他颜色一样应用于艺术项目。
+ newSpot.name = "豌豆绿";
+ newSpot.colorType = ColorModel.SPOT;
+ newSpot.color = newColor;
 
-    var newSpotColor = new SpotColor();
-    newSpotColor.spot = newSpot;
-    newSpotColor.tint = 80;
+ var newSpotColor = new SpotColor();
+ newSpotColor.spot = newSpot;
+ newSpotColor.tint = 80;
 }
 ```

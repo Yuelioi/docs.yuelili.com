@@ -11,12 +11,12 @@ title: 在 JavaScript 中使用方法
 
 ```javascript
 rotate(
-    angle
-    [,changePositions]
-    [,changeFillPatterns]
-    [,changeFillGradients]
-    [,changeStrokePattern]
-    [,rotateAbout]
+ angle
+ [,changePositions]
+ [,changeFillPatterns]
+ [,changeFillGradients]
+ [,changeStrokePattern]
+ [,rotateAbout]
 )
 ```
 

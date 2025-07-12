@@ -10,48 +10,48 @@ title: PageItems
 A collection of [PageItem](.././PageItem) objects. Provides complete access to all the art items in an Illustrator document in the following classes:
 
 - [CompoundPathItem](../CompoundPathItem)
-    - [Properties](../compoundpathitem#properties)
-    - [Methods](../compoundpathitem#methods)
-    - [Example](../compoundpathitem#example)
+ - [Properties](../compoundpathitem#properties)
+ - [Methods](../compoundpathitem#methods)
+ - [Example](../compoundpathitem#example)
 - [GraphItem](../GraphItem)
-    - [Properties](../graphitem#properties)
-    - [Methods](../graphitem#methods)
+ - [Properties](../graphitem#properties)
+ - [Methods](../graphitem#methods)
 - [GroupItem](../GroupItem)
-    - [Properties](../groupitem#properties)
-    - [Methods](../groupitem#methods)
-    - [Example](../groupitem#example)
+ - [Properties](../groupitem#properties)
+ - [Methods](../groupitem#methods)
+ - [Example](../groupitem#example)
 - [LegacyTextItem](../LegacyTextItem)
-    - [Properties](../legacytextitem#properties)
-    - [Methods](../legacytextitem#methods)
+ - [Properties](../legacytextitem#properties)
+ - [Methods](../legacytextitem#methods)
 - [MeshItem](../MeshItem)
-    - [Properties](../meshitem#properties)
-    - [Methods](../meshitem#methods)
-    - [Example](../meshitem#example)
+ - [Properties](../meshitem#properties)
+ - [Methods](../meshitem#methods)
+ - [Example](../meshitem#example)
 - [NonNativeItem](../NonNativeItem)
-    - [Properties](../nonnativeitem#properties)
-    - [Methods](../nonnativeitem#methods)
+ - [Properties](../nonnativeitem#properties)
+ - [Methods](../nonnativeitem#methods)
 - [PathItem](../PathItem)
-    - [Properties](../pathitem#properties)
-    - [Methods](../pathitem#methods)
-    - [Example](../pathitem#example)
+ - [Properties](../pathitem#properties)
+ - [Methods](../pathitem#methods)
+ - [Example](../pathitem#example)
 - [PlacedItem](../PlacedItem)
-    - [Properties](../placeditem#properties)
-    - [Methods](../placeditem#methods)
-    - [Example](../placeditem#example)
+ - [Properties](../placeditem#properties)
+ - [Methods](../placeditem#methods)
+ - [Example](../placeditem#example)
 - [PluginItem](../PluginItem)
-    - [Properties](../pluginitem#properties)
-    - [Methods](../pluginitem#methods)
-    - [Example](../pluginitem#example)
+ - [Properties](../pluginitem#properties)
+ - [Methods](../pluginitem#methods)
+ - [Example](../pluginitem#example)
 - [RasterItem](../RasterItem)
-    - [Properties](../rasteritem#properties)
-    - [Methods](../rasteritem#methods)
+ - [Properties](../rasteritem#properties)
+ - [Methods](../rasteritem#methods)
 - [SymbolItem](../SymbolItem)
-    - [Properties](../symbolitem#properties)
-    - [Methods](../symbolitem#methods)
+ - [Properties](../symbolitem#properties)
+ - [Methods](../symbolitem#methods)
 - [TextFrameItem](../TextFrameItem)
-    - [Properties](../textframeitem#properties)
-    - [Methods](../textframeitem#methods)
-    - [Example](../textframeitem#example)
+ - [Properties](../textframeitem#properties)
+ - [Methods](../textframeitem#methods)
+ - [Example](../textframeitem#example)
 
 You can reference page items through the [PageItems](#pageitems) property in a [Document](.././Document), [Layer](.././Layer), or [GroupItem](.././GroupItem).
 
@@ -115,9 +115,9 @@ Gets the first element in the collection with the specified name.
 
 #### Parameters
 
-| Parameter |  Type  |      Description       |
-| --------- | ------ | ---------------------- |
-| `name`    | String | Name of element to get |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Name of element to get |
 
 #### Returns
 
@@ -135,8 +135,8 @@ Gets an element from the collection.
 
 #### Parameters
 
-| Parameter |      Type      |     Description      |
-| --------- | -------------- | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `itemKey` | String, Number | String or number key |
 
 #### Returns
@@ -168,35 +168,35 @@ Nothing.
 // then displays them in a new document
 
 if (app.documents.length > 0) {
-    var fileReferences = new Array();
-    var sourceDoc = app.activeDocument;
+ var fileReferences = new Array();
+ var sourceDoc = app.activeDocument;
 
-    for (var i = 0; i < sourceDoc.pageItems.length; i++) {
-        var artItem = sourceDoc.pageItems[i];
-        switch (artItem.typename) {
-        case "PlacedItem":
-            fileReferences.push(artItem.file.fsName);
-            break;
-        case "RasterItem":
-            if (!artItem.embedded) {
-                fileReferences.push(artItem.file.fsName);
-            }
-            break;
-        }
-    }
+ for (var i = 0; i < sourceDoc.pageItems.length; i++) {
+ var artItem = sourceDoc.pageItems[i];
+ switch (artItem.typename) {
+ case "PlacedItem":
+ fileReferences.push(artItem.file.fsName);
+ break;
+ case "RasterItem":
+ if (!artItem.embedded) {
+ fileReferences.push(artItem.file.fsName);
+ }
+ break;
+ }
+ }
 
-    // Write the file references to a new document
-    var reportDoc = documents.add();
-    var areaTextPath = reportDoc.pathItems.rectangle(reportDoc.height, 0, reportDoc.width, reportDoc.height);
-    var fileNameText = reportDoc.textFrames.areaText(areaTextPath);
-    fileNameText.textRange.size = 24;
-    var paragraphCount = 3;
-    var sourceName = sourceDoc.name;
-    var text = "File references in \'" + sourceName + "\':\r\r";
-    for (i = 0; i < fileReferences.length; i++) {
-        text += (fileReferences[i] + "\r");
-        paragraphCount++;
-    }
-    fileNameText.contents = text;
+ // Write the file references to a new document
+ var reportDoc = documents.add();
+ var areaTextPath = reportDoc.pathItems.rectangle(reportDoc.height, 0, reportDoc.width, reportDoc.height);
+ var fileNameText = reportDoc.textFrames.areaText(areaTextPath);
+ fileNameText.textRange.size = 24;
+ var paragraphCount = 3;
+ var sourceName = sourceDoc.name;
+ var text = "File references in \'" + sourceName + "\':\r\r";
+ for (i = 0; i < fileReferences.length; i++) {
+ text += (fileReferences[i] + "\r");
+ paragraphCount++;
+ }
+ fileNameText.contents = text;
 }
 ```

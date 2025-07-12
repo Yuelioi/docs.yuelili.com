@@ -44,9 +44,9 @@ disable or re-enable raw string support. For example:
 ```vex
 string a = R"(Hello world\n)";
 string b = "Hello world\\n";
-#pragma c++rawstrings 0        // Disable C++ style raw string support
+#pragma c++rawstrings 0 // Disable C++ style raw string support
 string b = R"(This will generate an error!)";
-#pragma c++rawstrings 1        // Re-enable C++ style raw string support
+#pragma c++rawstrings 1 // Re-enable C++ style raw string support
 ```
 
 # pragma bindhandle
@@ -205,7 +205,7 @@ The primitive types can be combined in standard Houdini grouping
 mechanisms. For example:
 
 - `all,^p*`: select all primitive types except polygons and
-  particles.
+ particles.
 - `face,surface`: select face and surface primitives.
 - `*,^quad*,^meta`: Select any primitive but quadrics or metaballs.
 
@@ -248,8 +248,8 @@ geometry for this input.
 
 ```vex
 #pragma bindselector prims "Switch Geometry" \
-    "Choose the geometry to switch between" \
-    all 0 "" 0
+ "Choose the geometry to switch between" \
+ all 0 "" 0
 #pragma bindhandle input_number 0 ladder Input parm0
 sop switcher(int input_number=0) { import("P", P, input_number) }
 
@@ -281,9 +281,9 @@ Because of architectural limitations in Houdini, the parameter and
 script must meet certain conditions:
 
 - The dialog script needs to be bound to a Houdini node (e.g. SHOP,
-  SOP, etc.).
+ SOP, etc.).
 - The parameter must be either a toggle button, or have a menu bound to
-  it (see `#pragma hint` and `#pragma choice`).
+ it (see `#pragma hint` and `#pragma choice`).
 
 To indicate the language of the callback (`hscript` or `python`), use `#pragma parmtag`. If you don’t use a `#pragma parmtag` for a callback the default is `hscript`. However, the recommended method for programming callback scripts is `python`.
 
@@ -296,16 +296,16 @@ To indicate the language of the callback (`hscript` or `python`), use `#pragma p
 ```
 
 - For HScript callbacks, script can be an HScript statement or the
-  name of a script on the `$HOUDINI_PATH/scripts` path.
+ name of a script on the `$HOUDINI_PATH/scripts` path.
 - For Python callbacks, script should be Python source code.
 
 Houdini executes script in a context with certain variables available
 indicating which parameter changed.
 
 - For HScript callbacks, Houdini creates variables such as `$node`
-  containing the path to the node on which the parameter changed.
+ containing the path to the node on which the parameter changed.
 - For Python callbacks, Houdini creates a `kwargs` variable containing a
-  dictionary of information about the parameter that changed.
+ dictionary of information about the parameter that changed.
 
 See [callback scripts](../hom/locations.html#parameter_callback_scripts) for
 more information.
@@ -536,8 +536,8 @@ Example: `#pragma hint myParm joinnext`
 ```vex
 #pragma hint __nondiffuse toggle // Define as a toggle button
 #pragma hint specularcolor color // This represents a color
-#pragma hint rest hidden         // Don't show rest parameter in UI
-#pragma hint mapname image       // This represents an image file
+#pragma hint rest hidden // Don't show rest parameter in UI
+#pragma hint mapname image // This represents an image file
 #pragma hint nullobject oppath "obj/null" // Only null objects
 
 ```
@@ -567,7 +567,7 @@ operator inputs. The inputnum is the index of the input, starting at
 Specifies a descriptive label for a parameter.
 
 ```vex
-#pragma label amp    "Noise Amplitude"
+#pragma label amp "Noise Amplitude"
 displacement bumpy(float amp=0) {
 ...
 }
@@ -910,9 +910,9 @@ function arguments.
 
 surface
 sky(
-    string color_the_basis_strings[] = { "linear", "linear" };
-    float color_the_key_positions[] = { 0, 1};
-    vector color_the_key_values[] = { {0,0,0}, {0,0,1} };
+ string color_the_basis_strings[] = { "linear", "linear" };
+ float color_the_key_positions[] = { 0, 1};
+ vector color_the_key_values[] = { {0,0,0}, {0,0,1} };
 ) { ... }
 
 ```
@@ -962,9 +962,9 @@ to a value, the parameter value will be clamped at that range.
 The UI also uses this information to set the range of the slider.
 
 ```vex
-#pragma range seed    0 10
+#pragma range seed 0 10
 #pragma range roughness 0.001! 1!
-#pragma range gamma     0.001! 10
+#pragma range gamma 0.001! 10
 
 ```
 
@@ -1045,15 +1045,15 @@ You can define choice pragmas to create a menu UI for a parameter.
 You build the list for a parameter by doing one of the following:
 
 - Use multiple choice pragmas for a parameter to create menu items
-  (`choice`, `choicescript`, `choicereplace`, `choicetoggle`).
+ (`choice`, `choicescript`, `choicereplace`, `choicetoggle`).
 - Use one choicescript pragmas for a parameter to create a
-  script that creates the menu items (`choicescript`,
-  `choicereplacescript`, `choicetogglescript`).
-  This script is run whenever Houdini needs to generate the menu entries
-  (i.e. the generated values are not cached) so this script should be as
-  efficient as possible. The output of the script must be a series of
-  value/label pairs, which have the same meaning as the value and label
-  fields in the choice pragma.
+ script that creates the menu items (`choicescript`,
+ `choicereplacescript`, `choicetogglescript`).
+ This script is run whenever Houdini needs to generate the menu entries
+ (i.e. the generated values are not cached) so this script should be as
+ efficient as possible. The output of the script must be a series of
+ value/label pairs, which have the same meaning as the value and label
+ fields in the choice pragma.
 
 The plain `choice` pragma creates a UI that only allows the user to
 choose values from the menu. The `choicereplace` pragma creates UI with
@@ -1092,16 +1092,16 @@ Defines a line in a script that will generate menu items for parameter_name.
 Displays a menu of choices that add/remove items to/from the user input.
 
 ```vex
-#pragma choice operation "over"    "Composite A Over B"
-#pragma choice operation "under"    "Composite A Under B"
-#pragma choice operation "add"    "Add A and B"
-#pragma choice operation "sub"    "Subtract A from B"
+#pragma choice operation "over" "Composite A Over B"
+#pragma choice operation "under" "Composite A Under B"
+#pragma choice operation "add" "Add A and B"
+#pragma choice operation "sub" "Subtract A from B"
 cop texture(string operation="over")
 {
-if (operation == "over") ...    // texture coordinates
-if (operation == "under") ...    // parametric coordinates
-if (operation == "add")     ...    // orthographic
-if (operation == "sub")     ...    // polar
+if (operation == "over") ... // texture coordinates
+if (operation == "under") ... // parametric coordinates
+if (operation == "add") ... // orthographic
+if (operation == "sub") ... // polar
 }
 
 ```
@@ -1112,16 +1112,16 @@ of “over”, “under”, “add” or “sub”. However, the user would be p
 with more meaningful labels for the operation types.
 
 ```vex
-#pragma choice operation "0"    "Use texture coordinates"
-#pragma choice operation "1"    "Use parametric coordinates"
-#pragma choice operation "2"    "Orthographic Projection"
-#pragma choice operation "3"    "Polar Projection"
+#pragma choice operation "0" "Use texture coordinates"
+#pragma choice operation "1" "Use parametric coordinates"
+#pragma choice operation "2" "Orthographic Projection"
+#pragma choice operation "3" "Polar Projection"
 sop texture(int operation=0)
 {
-if (operation == 0) ...    // texture coordinates
-if (operation == 1) ...    // parametric coordinates
-if (operation == 2) ...    // orthographic
-if (operation == 3) ...    // polar
+if (operation == 0) ... // texture coordinates
+if (operation == 1) ... // parametric coordinates
+if (operation == 2) ... // orthographic
+if (operation == 3) ... // polar
 }
 
 ```

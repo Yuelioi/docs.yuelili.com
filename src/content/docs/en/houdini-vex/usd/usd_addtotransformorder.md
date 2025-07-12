@@ -41,7 +41,7 @@ string step_suffix = "step";
 usd_addtranslate(0, "/geo/cone", step_suffix, {1, 0, 0});
 
 // Now repeat the same step translation by adding it to the transform order
-string step_name   = usd_transformname(USD_XFORM_TRANSLATE, step_suffix);
+string step_name = usd_transformname(USD_XFORM_TRANSLATE, step_suffix);
 usd_addrotate(0, "/geo/cone", "first_rotation", USD_AXIS_Z, -30);
 usd_addtotransformorder(0, "/geo/cone", step_name);
 usd_addrotate(0, "/geo/cone", "second_rotation", USD_AXIS_Z, 45);

@@ -44,14 +44,14 @@ JavaScript 中的所有数字集合引用都是基于零的：集合中的第一
 要访问 `graphic styles` 集合中的第一个样式，你可以使用前面脚本示例中声明的变量，或者使用包含层次结构来引用集合：
 
 - 使用 `myStyles` 变量：
-    ```javascript
-    var firstStyle = myStyles[0];
-    ```
+ ```javascript
+ var firstStyle = myStyles[0];
+ ```
 
 - 使用包含层次结构：
-    ```javascript
-    var firstStyle = app.activeDocument.graphicStyles[0];
-    ```
+ ```javascript
+ var firstStyle = app.activeDocument.graphicStyles[0];
+ ```
 
 以下语句将集合中第一个图形样式的名称分配给一个变量。你可以互换使用这些语句。
 

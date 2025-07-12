@@ -29,6 +29,6 @@ order: 33
 ```vex
 // 获取集合的排除列表
 string collection_path = usd_makecollectionpath(0, "/geo/cube", "some_collection");
-string exclude_list[]  = usd_collectionexcludes(0, collection_path);
+string exclude_list[] = usd_collectionexcludes(0, collection_path);
 
 ```

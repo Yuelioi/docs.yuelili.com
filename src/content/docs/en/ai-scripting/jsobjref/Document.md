@@ -1099,8 +1099,8 @@ Arranges multiple documents in the given layout style.
 
 #### Parameters
 
-|   Parameter   |                                    Type                                     |               Description                |
-| ------------- | --------------------------------------------------------------------------- | ---------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `layoutStyle` | [DocumentLayoutStyle](../scripting-constants#documentlayoutstyle), optional | The layout style to arrange documents in |
 
 #### Returns
@@ -1121,8 +1121,8 @@ When you close a document, you should set your document reference to `null` to p
 
 #### Parameters
 
-|   Parameter   |                       Type                        |        Description         |
-| ------------- | ------------------------------------------------- | -------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `saveOptions` | [SaveOptions](../scripting-constants#saveoptions) | Save options to close with |
 
 #### Returns
@@ -1155,10 +1155,10 @@ Converts the given point between artboard and document coordinate systems. Retur
 
 #### Parameters
 
-|   Parameter   |                            Type                             |          Description          |
-| ------------- | ----------------------------------------------------------- | ----------------------------- |
-| `coordinate`  | Point                                                       | Point to convert              |
-| `source`      | [CoordinateSystem](../scripting-constants#coordinatesystem) | Source coordinate system      |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `coordinate` | Point | Point to convert |
+| `source` | [CoordinateSystem](../scripting-constants#coordinatesystem) | Source coordinate system |
 | `destination` | [CoordinateSystem](../scripting-constants#coordinatesystem) | Destination coordinate system |
 
 #### Returns
@@ -1177,11 +1177,11 @@ Exports the document to the specified file using one of the predefined export fi
 
 #### Parameters
 
-|   Parameter    |                                         Type                                         |    Description     |
-| -------------- | ------------------------------------------------------------------------------------ | ------------------ |
-| `exportFile`   | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to save       |
-| `exportFormat` | [ExportType](../scripting-constants#exporttype)                                      | Export file format |
-| `options`      | [Variable](.././Variable), optional                                                  | todo               |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `exportFile` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to save |
+| `exportFormat` | [ExportType](../scripting-constants#exporttype) | Export file format |
+| `options` | [Variable](.././Variable), optional | todo |
 
 #### Returns
 
@@ -1199,9 +1199,9 @@ Exports the current PDF preset values to the file.
 
 #### Parameters
 
-| Parameter |                                         Type                                         |       Description        |
-| --------- | ------------------------------------------------------------------------------------ | ------------------------ |
-| `file`    | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | Preset file to export to |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `file` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | Preset file to export to |
 
 #### Returns
 
@@ -1219,9 +1219,9 @@ Exports the current perspective grid preset values to the file.
 
 #### Parameters
 
-| Parameter |                                         Type                                         |       Description        |
-| --------- | ------------------------------------------------------------------------------------ | ------------------------ |
-| `file`    | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | Preset file to export to |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `file` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | Preset file to export to |
 
 #### Returns
 
@@ -1239,9 +1239,9 @@ Exports the current print preset values to the file.
 
 #### Parameters
 
-| Parameter |                                         Type                                         |       Description        |
-| --------- | ------------------------------------------------------------------------------------ | ------------------------ |
-| `file`    | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | Preset file to export to |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `file` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | Preset file to export to |
 
 #### Returns
 
@@ -1259,8 +1259,8 @@ Saves datasets into an XML library. The datasets contain variables and their ass
 
 #### Parameters
 
-| Parameter  |                                         Type                                         |          Description          |
-| ---------- | ------------------------------------------------------------------------------------ | ----------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `fileSpec` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | XML Library file to export to |
 
 #### Returns
@@ -1279,9 +1279,9 @@ Resizes the artboard at the given index to fit currently selected art. Index def
 
 #### Parameters
 
-| Parameter |          Type           |       Description        |
-| --------- | ----------------------- | ------------------------ |
-| `index`   | Number (long), optional | Artboard index to resize |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | Number (long), optional | Artboard index to resize |
 
 #### Returns
 
@@ -1297,16 +1297,15 @@ Boolean.
 This functionality was added in Illustrator 24.0. (CC2020)
 :::
 
-
 #### Description
 
 Retrieves the [PageItem](.././PageItem) using its Uuid.
 
 #### Parameters
 
-| Parameter |  Type  |      Description      |
-| --------- | ------ | --------------------- |
-| `uuid`    | String | uuid of item to fetch |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `uuid` | String | uuid of item to fetch |
 
 #### Returns
 
@@ -1356,11 +1355,11 @@ If the bounds parameter is omitted, captures the entire artwork.
 
 #### Parameters
 
-|                                             Parameter                                             |                           Type                            |   Description   |
-| ------------------------------------------------------------------------------------------------- | --------------------------------------------------------- | --------------- |
-| `imageFile`  [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | Image file to write to                                    |                 |
-| `clipBounds`                                                                                      | Rect, optional                                            | Clipping bounds |
-| `options`                                                                                         | [ImageCaptureOptions](.././ImageCaptureOptions), optional | todo            |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `imageFile`  [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | Image file to write to | |
+| `clipBounds` | Rect, optional | Clipping bounds |
+| `options` | [ImageCaptureOptions](.././ImageCaptureOptions), optional | todo |
 
 #### Returns
 
@@ -1378,9 +1377,9 @@ Loads the character styles from the Illustrator file.
 
 #### Parameters
 
-|                                            Parameter                                             |                Type                | Description |
-| ------------------------------------------------------------------------------------------------ | ---------------------------------- | ----------- |
-| `fileSpec`  [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to load character styles from |             |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `fileSpec`  [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to load character styles from | |
 
 #### Returns
 
@@ -1398,8 +1397,8 @@ Loads the paragraph styles from the Illustrator file.
 
 #### Parameters
 
-| Parameter  |                                         Type                                         |            Description             |
-| ---------- | ------------------------------------------------------------------------------------ | ---------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `fileSpec` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to load paragraph styles from |
 
 #### Returns
@@ -1418,10 +1417,10 @@ Loads all PDF presets from a file.
 
 #### Parameters
 
-|     Parameter     |                                         Type                                         |             Description             |
-| ----------------- | ------------------------------------------------------------------------------------ | ----------------------------------- |
-| `fileSpec`        | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to load PDF presets from       |
-| `replacingPreset` | String, optional                                                                     | Whether to replace existing presets |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `fileSpec` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to load PDF presets from |
+| `replacingPreset` | String, optional | Whether to replace existing presets |
 
 #### Returns
 
@@ -1439,10 +1438,10 @@ Loads the named print preset from the file.
 
 #### Parameters
 
-|   Parameter   |                                         Type                                         |           Description           |
-| ------------- | ------------------------------------------------------------------------------------ | ------------------------------- |
-| `printPreset` | String                                                                               | Name of preset to load          |
-| `fileSpec`    | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to load print presets from |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `printPreset` | String | Name of preset to load |
+| `fileSpec` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to load print presets from |
 
 #### Returns
 
@@ -1460,8 +1459,8 @@ Imports a library containing datasets, variables, and their associated dynamic d
 
 #### Parameters
 
-| Parameter  |                                         Type                                         |          Description          |
-| ---------- | ------------------------------------------------------------------------------------ | ----------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `fileSpec` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to import variables from |
 
 #### Returns
@@ -1480,9 +1479,9 @@ Prints the document.
 
 #### Parameters
 
-| Parameter |                    Type                     | Description |
-| --------- | ------------------------------------------- | ----------- |
-| `options` | [PrintOptions](.././PrintOptions), optional | todo        |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `options` | [PrintOptions](.././PrintOptions), optional | todo |
 
 #### Returns
 
@@ -1500,11 +1499,11 @@ Rasterizes the source art(s) within the specified clip bounds. The source art(s)
 
 #### Parameters
 
-|  Parameter   |                        Type                         |       Description       |
-| ------------ | --------------------------------------------------- | ----------------------- |
-| `sourceArt`  | [Variable](.././Variable)                           | Source art to rasterize |
-| `clipBounds` | Rect, optional                                      | Clipping bounds         |
-| `options`    | [RasterizeOptions](.././RasterizeOptions), optional | todo                    |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sourceArt` | [Variable](.././Variable) | Source art to rasterize |
+| `clipBounds` | Rect, optional | Clipping bounds |
+| `options` | [RasterizeOptions](.././RasterizeOptions), optional | todo |
 
 #### Returns
 
@@ -1530,12 +1529,12 @@ When last argument is true (the default), artwork is moved with the artboards.
 
 #### Parameters
 
-|       Parameter       |                                       Type                                        |                Description                 |
-| --------------------- | --------------------------------------------------------------------------------- | ------------------------------------------ |
-| `artboardLayout`      | [DocumentArtboardLayout](../scripting-constants#documentartboardlayout), optional | Artboard layout                            |
-| `artboardRowsOrCols`  | Integer, optional                                                                 | Number of rows or columns                  |
-| `artboardSpacing`     | Number, optional                                                                  | Number of pixels for spacing               |
-| `artboardMoveArtwork` | Boolean, optional                                                                 | Whether to move artwork with the artboards |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `artboardLayout` | [DocumentArtboardLayout](../scripting-constants#documentartboardlayout), optional | Artboard layout |
+| `artboardRowsOrCols` | Integer, optional | Number of rows or columns |
+| `artboardSpacing` | Number, optional | Number of pixels for spacing |
+| `artboardMoveArtwork` | Boolean, optional | Whether to move artwork with the artboards |
 
 #### Returns
 
@@ -1567,10 +1566,10 @@ Saves the document in the specified file as an Illustrator, EPS, or PDF file.
 
 #### Parameters
 
-| Parameter |                                         Type                                         |         Description          |
-| --------- | ------------------------------------------------------------------------------------ | ---------------------------- |
-| `saveIn`  | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to save the document as |
-| `options` | [SaveOptions](../scripting-constants#saveoptions), optional                          | Save options to close with   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `saveIn` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to save the document as |
+| `options` | [SaveOptions](../scripting-constants#saveoptions), optional | Save options to close with |
 
 #### Returns
 
@@ -1588,9 +1587,9 @@ Saves the non-UI document at the specified path
 
 #### Parameters
 
-| Parameter |                                         Type                                         |         Description          |
-| --------- | ------------------------------------------------------------------------------------ | ---------------------------- |
-| `saveIn`  | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to save the document as |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `saveIn` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | File to save the document as |
 
 #### Returns
 
@@ -1622,8 +1621,8 @@ Sets the active plane of the active perspective grid of the document. Returns `t
 
 #### Parameters
 
-|  Parameter  |                                    Type                                     |   Description   |
-| ----------- | --------------------------------------------------------------------------- | --------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `gridPlane` | [PerspectiveGridPlaneType](../scripting-constants#perspectivegridplanetype) | Grid plane type |
 
 #### Returns
@@ -1642,10 +1641,10 @@ Selects a predefined preset to define grid for the current document. Returns `tr
 
 #### Parameters
 
-|  Parameter   |                               Type                                |      Description      |
-| ------------ | ----------------------------------------------------------------- | --------------------- |
-| `gridType`   | [PerspectiveGridType](../scripting-constants#perspectivegridtype) | Grid type             |
-| `presetName` | String                                                            | Preset name to select |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `gridType` | [PerspectiveGridType](../scripting-constants#perspectivegridtype) | Grid type |
+| `presetName` | String | Preset name to select |
 
 #### Returns
 
@@ -1677,10 +1676,10 @@ Captures the current document window to the target TIFF image file.
 
 #### Parameters
 
-|  Parameter   |                                         Type                                         |      Description      |
-| ------------ | ------------------------------------------------------------------------------------ | --------------------- |
-| `imageFile`  | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | Image file to save as |
-| `windowSize` | Array of 2 numbers                                                                   | Window size           |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `imageFile` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) object | Image file to save as |
+| `windowSize` | Array of 2 numbers | Window size |
 
 #### Returns
 
@@ -1696,7 +1695,6 @@ Nothing.
 The frontmost document can be referred to as either `activeDocument` or `documents[0`.
 :::
 
-
 ```javascript
 var docRef = activeDocument;
 docRef.selection = null;
@@ -1709,9 +1707,9 @@ docRef.selection = null;
 ```javascript
 // Closes the active document without saving changes
 if ( app.documents.length > 0 ) {
-    var aiDocument = app.activeDocument;
-    aiDocument.close( SaveOptions.DONOTSAVECHANGES );
-    aiDocument = null;
+ var aiDocument = app.activeDocument;
+ aiDocument.close( SaveOptions.DONOTSAVECHANGES );
+ aiDocument = null;
 }
 ```
 
@@ -1723,9 +1721,9 @@ if ( app.documents.length > 0 ) {
 // Creates a new document if none exists then sets fill and stroke defaults to true
 var doc;
 if (app.documents.length == 0) {
-    doc = app.documents.add();
+ doc = app.documents.add();
 } else {
-    doc = app.activeDocument;
+ doc = app.activeDocument;
 }
 
 doc.defaultFilled = true;

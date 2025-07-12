@@ -22,14 +22,14 @@ mycolor(vector uv=0; string map="")
 {
 if (isbound("uv") && map != "")
 {
-    // User has texture coordinates here, so create
-    // velocity based on a texture map.
-    v = colormap(map, uv);
+ // User has texture coordinates here, so create
+ // velocity based on a texture map.
+ v = colormap(map, uv);
 }
 else
 {
-    // No texture coordinates, so use a random value
-    v = random(id);
+ // No texture coordinates, so use a random value
+ v = random(id);
 }
 
 ```

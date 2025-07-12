@@ -46,27 +46,27 @@ Examples
 void
 scatterOnLimitSurface(string file, texmap; int geo_handle; int npts)
 {
-    int npatches = osd_patchcount(file);
-    for (int i = 0; i < npts; ++i)
-    {
-        int patch_id = nrandom() * npatches;
-        float patch_s = nrandom();
-        float patch_t = nrandom();
-        int face_id;
-        float face_u, face_v;
-        if (osd_lookupface(file, patch_id, patch_s, patch_t, face_id, face_u, face_v, "uv"))
-        {
-    vector clr = texture(texmap, face_u, face_v);
-    vector P;
-    osd_limitsurface(file, "P", patch_id, patch_s, patch_t, P);
-    int ptnum = addpoint(geo_handle, P);        // add a scattered point.
-    if (ptnum >= 0)
-    {
-        addpointattrib(geo_handle, "Cd", clr);
-        addpointattrib(geo_handle, "face_id", face_id);
-    }
-        }
-    }
+ int npatches = osd_patchcount(file);
+ for (int i = 0; i < npts; ++i)
+ {
+ int patch_id = nrandom() * npatches;
+ float patch_s = nrandom();
+ float patch_t = nrandom();
+ int face_id;
+ float face_u, face_v;
+ if (osd_lookupface(file, patch_id, patch_s, patch_t, face_id, face_u, face_v, "uv"))
+ {
+ vector clr = texture(texmap, face_u, face_v);
+ vector P;
+ osd_limitsurface(file, "P", patch_id, patch_s, patch_t, P);
+ int ptnum = addpoint(geo_handle, P); // add a scattered point.
+ if (ptnum >= 0)
+ {
+ addpointattrib(geo_handle, "Cd", clr);
+ addpointattrib(geo_handle, "face_id", face_id);
+ }
+ }
+ }
 }
 
 ```

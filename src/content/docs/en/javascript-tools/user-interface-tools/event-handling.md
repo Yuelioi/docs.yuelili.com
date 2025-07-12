@@ -96,7 +96,6 @@ The element object where the event occurred.
 
 Object
 
-
 ---
 
 #### timeStamp
@@ -168,13 +167,13 @@ Ignored at all other phases.
 
 ##### Parameters
 
-|   Parameter    |                                   Type                                    |                                                                   Description                                                                   |
-| -------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `eventName`    | String                                                                    | The event name string.                                                                                                                          |
-| `bubble`       | Boolean                                                                   | When `true`, the event should be triggered in ancestors of the target object during the bubbling phase.                                         |
-| `isCancelable` | Boolean                                                                   | When `true`, the event can be cancelled.                                                                                                        |
-| `view`         | [Container](.././window-object) or [Control](.././control-objects) object | The container or control object that dispatched the event.                                                                                      |
-| `detail`       | Any                                                                       | Details of the event, which vary according to the event type. The value is `1` or `2` for the click event, indicating a single or double click. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `eventName` | String | The event name string. |
+| `bubble` | Boolean | When `true`, the event should be triggered in ancestors of the target object during the bubbling phase. |
+| `isCancelable` | Boolean | When `true`, the event can be cancelled. |
+| `view` | [Container](.././window-object) or [Control](.././control-objects) object | The container or control object that dispatched the event. |
+| `detail` | Any | Details of the event, which vary according to the event type. The value is `1` or `2` for the click event, indicating a single or double click. |
 
 ##### Returns
 
@@ -219,7 +218,6 @@ This type of object is passed to your registered event handler when a keyboard-i
 :::info
 All properties are read only.
 :::
-
 
 ### KeyboardEvent Object Methods
 
@@ -371,19 +369,18 @@ Get the current modifier keys being used in this event.
 If you're trying to check whether keyboard modifier keys (alt/ctrl/meta/shift) are held down at any time in your script, not just in an event, see [Keyboard state object](../environment#keyboard-state-object).
 :::
 
-
 ##### Parameters
 
-|    Parameter    |  Type  |                      Description                       |
-|-----------------|--------|--------------------------------------------------------|
+| Parameter | Type | Description |
+|---|---|---|
 | `keyIdentifier` | String | A string containing a modifier key identifier, one of: |
-|                 |        | - `Alt`                                                |
-|                 |        | - `CapsLock`                                           |
-|                 |        | - `Control`                                            |
-|                 |        | - `Meta`                                               |
-|                 |        | - `NumLock`                                            |
-|                 |        | - `Scroll`                                             |
-|                 |        | - `Shift`                                              |
+| | | - `Alt` |
+| | | - `CapsLock` |
+| | | - `Control` |
+| | | - `Meta` |
+| | | - `NumLock` |
+| | | - `Scroll` |
+| | | - `Shift` |
 
 ##### Returns
 
@@ -401,15 +398,15 @@ Reinitializes the object, allowing you to change the event properties after cons
 
 ##### Parameters
 
-|    Parameter    |                                   Type                                    |                                               Description                                               |
-| --------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `eventName`     | String                                                                    | The event name string.                                                                                  |
-| `bubble`        | Boolean                                                                   | When `true`, the event should be triggered in ancestors of the target object during the bubbling phase. |
-| `isCancelable`  | Boolean                                                                   | When `true`, the event can be cancelled.                                                                |
-| `view`          | [Container](.././window-object) or [Control](.././control-objects) object | The container or control object that dispatched the event.                                              |
-| `keyID`         | String                                                                    | Sets the `keyIdentifier` value.                                                                         |
-| `keyLocation`   | String                                                                    | Sets the `keyLocation`. value.                                                                          |
-| `modifiersList` | String                                                                    | A whitespace-separated string of modifier key names, such as "Control Alt".                             |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `eventName` | String | The event name string. |
+| `bubble` | Boolean | When `true`, the event should be triggered in ancestors of the target object during the bubbling phase. |
+| `isCancelable` | Boolean | When `true`, the event can be cancelled. |
+| `view` | [Container](.././window-object) or [Control](.././control-objects) object | The container or control object that dispatched the event. |
+| `keyID` | String | Sets the `keyIdentifier` value. |
+| `keyLocation` | String | Sets the `keyLocation`. value. |
+| `modifiersList` | String | A whitespace-separated string of modifier key names, such as "Control Alt". |
 
 ##### Returns
 
@@ -430,7 +427,6 @@ In addition to the properties defined for [UIEvent base class](#uievent-base-cla
 :::info
 All properties are read only.
 :::
-
 
 ---
 
@@ -624,16 +620,16 @@ Get the current modifier keys being used in this event.
 
 #### Parameters
 
-|    Parameter    |  Type  |                      Description                       |
-|-----------------|--------|--------------------------------------------------------|
+| Parameter | Type | Description |
+|---|---|---|
 | `keyIdentifier` | String | A string containing a modifier key identifier, one of: |
-|                 |        | - `"Alt"`                                              |
-|                 |        | - `"CapsLock"`                                         |
-|                 |        | - `"Control"`                                          |
-|                 |        | - `"Meta"`                                             |
-|                 |        | - `"NumLock"`                                          |
-|                 |        | - `"Scroll"`                                           |
-|                 |        | - `"Shift"`                                            |
+| | | - `"Alt"` |
+| | | - `"CapsLock"` |
+| | | - `"Control"` |
+| | | - `"Meta"` |
+| | | - `"NumLock"` |
+| | | - `"Scroll"` |
+| | | - `"Shift"` |
 
 ##### Returns
 
@@ -645,21 +641,21 @@ Boolean. `true` if the given modifier was active when the event occurred, `false
 
 ```javascript
 eventObj.initMouseEvent(
-    eventName,
-    bubble,
-    isCancelable,
-    view,
-    detail,
-    screenX,
-    screenY,
-    clientX,
-    clientY,
-    ctrlKey,
-    altKey,
-    shiftKey,
-    metaKey,
-    button,
-    relatedTarge
+ eventName,
+ bubble,
+ isCancelable,
+ view,
+ detail,
+ screenX,
+ screenY,
+ clientX,
+ clientY,
+ ctrlKey,
+ altKey,
+ shiftKey,
+ metaKey,
+ button,
+ relatedTarge
 )
 ```
 
@@ -669,18 +665,18 @@ Reinitializes the object, allowing you to change the event properties after cons
 
 ##### Parameters
 
-|         Parameter          |                                   Type                                    |                                                                  Description                                                                  |
-| -------------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `eventName`                | String                                                                    | The event name string.                                                                                                                        |
-| `bubble`                   | Boolean                                                                   | When `true`, the event should be triggered in ancestors of the target object during the bubbling phase.                                       |
-| `isCancelable`             | Boolean                                                                   | When `true`, the event can be cancelled.                                                                                                      |
-| `view`                     | [Container](.././window-object) or [Control](.././control-objects) object | The container or control object that dispatched the event.                                                                                    |
-| `detail`                   | Number                                                                    | Sets the single-double click value for the `click` event.                                                                                     |
-| `screenX, screenY`         | Number                                                                    | Sets the event coordinates relative to the screen.                                                                                            |
-| `clientX, clientY`         | Number                                                                    | Sets the event coordinates relative to the target object. The origin is the top left of the control or window, inside any border decorations. |
-| `ctrlKey, altKey, metaKey` | Boolean                                                                   | Sets the modifier key states.                                                                                                                 |
-| `button`                   | Number                                                                    | Sets the mouse button.                                                                                                                        |
-| `relatedTarget`            | Object                                                                    | Optional. Sets the related target, if any, for a `mouseover` or `mouseout` event.                                                             |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `eventName` | String | The event name string. |
+| `bubble` | Boolean | When `true`, the event should be triggered in ancestors of the target object during the bubbling phase. |
+| `isCancelable` | Boolean | When `true`, the event can be cancelled. |
+| `view` | [Container](.././window-object) or [Control](.././control-objects) object | The container or control object that dispatched the event. |
+| `detail` | Number | Sets the single-double click value for the `click` event. |
+| `screenX, screenY` | Number | Sets the event coordinates relative to the screen. |
+| `clientX, clientY` | Number | Sets the event coordinates relative to the target object. The origin is the top left of the control or window, inside any border decorations. |
+| `ctrlKey, altKey, metaKey` | Boolean | Sets the modifier key states. |
+| `button` | Number | Sets the mouse button. |
+| `relatedTarget` | Object | Optional. Sets the related target, if any, for a `mouseover` or `mouseout` event. |
 
 ##### Returns
 

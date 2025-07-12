@@ -118,7 +118,7 @@ new ImportOptions().file = new File("myfile.psd");
 
 ```javascript
 /*
-  导入序列的 20 帧，从第 10 帧开始，到第 30 帧结束
+ 导入序列的 20 帧，从第 10 帧开始，到第 30 帧结束
  */
 var mySequence = '~/Desktop/sequence/image_000.png';
 
@@ -160,13 +160,13 @@ var item = app.project.importFile(importOptions);
 
 #### 参数
 
-| 参数     | 类型   | 描述          |
-| -------- | ----------------------- | ------------------------------------- |
-| `type` | `ImportAsType` 枚举值 | 可以导入的文件类型。可选值包括：      |
-|          |         | -`ImportAsType.COMP`        |
-|          |         | -`ImportAsType.FOOTAGE`     |
-|          |         | -`ImportAsType.COMP_CROPPED_LAYERS` |
-|          |         | -`ImportAsType.PROJECT`     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `type` | `ImportAsType` 枚举值 | 可以导入的文件类型。可选值包括： |
+| | | -`ImportAsType.COMP` |
+| | | -`ImportAsType.FOOTAGE` |
+| | | -`ImportAsType.COMP_CROPPED_LAYERS` |
+| | | -`ImportAsType.PROJECT` |
 
 #### 返回
 
@@ -177,7 +177,7 @@ var item = app.project.importFile(importOptions);
 ```javascript
 var io = new ImportOptions(new File("c:\\myFile.psd"));
 if (io.canImportAs(ImportAsType.COMP)) {
-  io.importAs = ImportAsType.COMP;
+ io.importAs = ImportAsType.COMP;
 }
 ```
 
@@ -197,8 +197,8 @@ if (io.canImportAs(ImportAsType.COMP)) {
 
 #### 参数
 
-| 参数     | 类型           | 描述         |
-| -------- | ------------------------------------------------------------------------------------------------ | ------------ |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `file` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象 | 要检查的文件 |
 
 #### 返回
@@ -212,8 +212,8 @@ if (io.canImportAs(ImportAsType.COMP)) {
 
 ```javascript
 var importOptions = new ImportOptions();
-importOptions.isFileNameNumbered('image.png');   // "isNumbered": false, "num": 0
-importOptions.isFileNameNumbered('003image.png');  // "isNumbered": true, "num": 3
+importOptions.isFileNameNumbered('image.png'); // "isNumbered": false, "num": 0
+importOptions.isFileNameNumbered('003image.png'); // "isNumbered": true, "num": 3
 importOptions.isFileNameNumbered('ima0102ge.png'); // "isNumbered": true, "num": 102
 importOptions.isFileNameNumbered('image0120.png'); // "isNumbered": true, "num": 120
 ```

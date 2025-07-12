@@ -41,16 +41,16 @@ Sometimes, instead of just processing every pixel, you'll want to get to a speci
 
 ```cpp
 PF_Pixel *sampleIntegral32(PF_EffectWorld &def, int x, int y){
-    return (PF_Pixel*)((char*)def.data +
-        (y * def.rowbytes) +
-        (x * sizeof(PF_Pixel)));
+ return (PF_Pixel*)((char*)def.data +
+ (y * def.rowbytes) +
+ (x * sizeof(PF_Pixel)));
 }
 
 PF_Pixel16 *sampleIntegral64(PF_EffectWorld &def, int x, int y){
-    assert(PF_WORLD_IS_DEEP(&def));
-    return (PF_Pixel16*)((char*)def.data +
-        (y * def.rowbytes) +
-        (x * sizeof(PF_Pixel16)));
+ assert(PF_WORLD_IS_DEEP(&def));
+ return (PF_Pixel16*)((char*)def.data +
+ (y * def.rowbytes) +
+ (x * sizeof(PF_Pixel16)));
 }
 ```
 
@@ -85,15 +85,15 @@ Look at where the default anchor point location is. The transform is not at the 
 You don't necessarily begin effect processing with a clean output slate. Our Gaussian blur filter, in an effort to do so, performs the following before rendering:
 
 ```cpp
-src_rect.left   = in_data>output_origin_x;
-src_rect.right  = src_rect.left + input>width;
-src_rect.top    = in_data>output_origin_y;
+src_rect.left = in_data>output_origin_x;
+src_rect.right = src_rect.left + input>width;
+src_rect.top = in_data>output_origin_y;
 src_rect.bottom = src_rect.top + input>height;
 
 err = PF_FILL(NULL, NULL, output);
 
 if (!err) {
-    err = PF_COPY(&params[0]>u.ld, output, NULL, &src_rect);
+ err = PF_COPY(&params[0]>u.ld, output, NULL, &src_rect);
 }
 ```
 

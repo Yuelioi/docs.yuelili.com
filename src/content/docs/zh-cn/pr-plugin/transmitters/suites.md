@@ -29,19 +29,19 @@ title: 套件
 
 ```cpp
 prSuiteError (*GetNextAudioBuffer)(
-  csSDK_int32   inPlayID,
-  float**   inInBuffers,
-  float**   outOutBuffers,
-  unsigned int  inNumSampleFrames);
+ csSDK_int32 inPlayID,
+ float** inInBuffers,
+ float** outOutBuffers,
+ unsigned int inNumSampleFrames);
 ```
 
-|     参数     |    描述    |
-|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| `inInBuffers`  | 目前在 CS6 中未使用。   |
-|      | 指向一个缓冲区的数组，每个缓冲区中保存 `inNumSampleFrames` 个输入音频采样帧，对应于可用的输入通道总数。   |
-| `outOutBuffers`| 指向一个长度为 `inNumSampleFrames` 的缓冲区数组，主机将在此数组中写入输出音频。       |
-|      | 必须有 N 个缓冲区，其中 N 是在 `InitPluginAudio` 中指定的输出通道类型的输出通道数。        |
-| `inNumSampleFrames` | `inInBuffers` 和 `outOutBuffers` 中每个缓冲区的大小。       |
+| 参数 | 描述 |
+|---|---|
+| `inInBuffers` | 目前在 CS6 中未使用。 |
+| | 指向一个缓冲区的数组，每个缓冲区中保存 `inNumSampleFrames` 个输入音频采样帧，对应于可用的输入通道总数。 |
+| `outOutBuffers`| 指向一个长度为 `inNumSampleFrames` 的缓冲区数组，主机将在此数组中写入输出音频。 |
+| | 必须有 N 个缓冲区，其中 N 是在 `InitPluginAudio` 中指定的输出通道类型的输出通道数。 |
+| `inNumSampleFrames` | `inInBuffers` 和 `outOutBuffers` 中每个缓冲区的大小。 |
 
 ---
 

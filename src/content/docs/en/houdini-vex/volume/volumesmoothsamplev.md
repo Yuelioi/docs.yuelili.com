@@ -37,7 +37,7 @@ Examples
 Approximating a volume value at the point `P + u` using volume values at the point `P`.
 
 ```vex
-vector  P = {1.0, 2.0, 3.0};
+vector P = {1.0, 2.0, 3.0};
 matrix3 grad, hessX, hessY, hessZ;
 vector val1 = volumesmoothsamplev(0, "vel", P, grad, hessX, hessY, hessZ);
 

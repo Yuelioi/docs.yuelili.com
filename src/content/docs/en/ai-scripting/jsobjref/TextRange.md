@@ -305,9 +305,9 @@ Changes the capitalization of text
 
 #### Parameters
 
-| Parameter |                          Type                           |           Description            |
-| --------- | ------------------------------------------------------- | -------------------------------- |
-| `type`    | [CaseChangeType](../scripting-constants#casechangetype) | Capitalization case to change to |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `type` | [CaseChangeType](../scripting-constants#casechangetype) | Capitalization case to change to |
 
 #### Returns
 
@@ -339,9 +339,9 @@ Creates a duplicate of this object.
 
 #### Parameters
 
-|      Parameter      |                                 Type                                  |        Description         |
-| ------------------- | --------------------------------------------------------------------- | -------------------------- |
-| `relativeObject`    | Object, optional                                                      | Object to duplicate to     |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `relativeObject` | Object, optional | Object to duplicate to |
 | `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), optional | Location to insert element |
 
 #### Returns
@@ -416,10 +416,10 @@ Moves the object.
 
 #### Parameters
 
-|      Parameter      |                                 Type                                  |          Description          |
-| ------------------- | --------------------------------------------------------------------- | ----------------------------- |
-| `relativeObject`    | Object                                                                | Object to move element within |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), optional | Location to move element to   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `relativeObject` | Object | Object to move element within |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), optional | Location to move element to |
 
 #### Returns
 
@@ -451,8 +451,8 @@ Selects the text range.
 
 #### Parameters
 
-|    Parameter    |       Type        |                 Description                 |
-| --------------- | ----------------- | ------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `addToDocument` | Boolean, optional | Whether to add or replace current selection |
 
 #### Returns
@@ -470,18 +470,18 @@ Nothing
 // current document by changing the size attribute of each character
 
 if ( app.documents.length > 0 ) {
-    for ( i = 0; i < app.activeDocument.textFrames.length; i++ ) {
-        var text = app.activeDocument.textFrames[i].textRange;
-        for ( j = 0 ; j < text.words.length; j++ ) {
-            //each word is a textRange object
-            var textWord = text.words[j];
+ for ( i = 0; i < app.activeDocument.textFrames.length; i++ ) {
+ var text = app.activeDocument.textFrames[i].textRange;
+ for ( j = 0 ; j < text.words.length; j++ ) {
+ //each word is a textRange object
+ var textWord = text.words[j];
 
-            // Characters are textRanges too.
-            // Get the first character of each word and increase it's size.
+ // Characters are textRanges too.
+ // Get the first character of each word and increase it's size.
 
-            var firstChars = textWord.characters[0];
-            firstChars.size = firstChars.size * 1.5;
-        }
-    }
+ var firstChars = textWord.characters[0];
+ firstChars.size = firstChars.size * 1.5;
+ }
+ }
 }
 ```

@@ -33,12 +33,12 @@ PrGPU SDK 宏和设备函数允许您编写可在多种 GPU 计算语言（CUDA�
 您还需要定义一个符号，以告诉头文件在编译内核时要处理哪个 API：
 
 - Metal:
-  - `DGF_DEVICE_TARGET_METAL=1`
+ - `DGF_DEVICE_TARGET_METAL=1`
 - OpenCL:
-  - `DGF_DEVICE_TARGET_OPENCL=1`
-  - `DGF_OPENCL_SUPPORTS_16F=1` 或 `0`，具体取决于您是否支持此设备的半精度（16 位浮点）访问。一些较旧的显卡在半精度支持方面非常慢，或者根本不支持。
+ - `DGF_DEVICE_TARGET_OPENCL=1`
+ - `DGF_OPENCL_SUPPORTS_16F=1` 或 `0`，具体取决于您是否支持此设备的半精度（16 位浮点）访问。一些较旧的显卡在半精度支持方面非常慢，或者根本不支持。
 - CUDA:
-  - `KernelCore.h` 头文件会自动感知 cuda 编译器，并为您 `#define GF_DEVICE_TARGET_CUDA 1`。
+ - `KernelCore.h` 头文件会自动感知 cuda 编译器，并为您 `#define GF_DEVICE_TARGET_CUDA 1`。
 
 在任何给定的编译中，只有一个设备目标标志会处于活动状态。头文件会将非活动 API 的设备目标宏定义为 0。您可以随意在代码中使用这些宏进行任何 API 特殊化。在头文件之外，我们不需要做太多。
 
@@ -113,7 +113,7 @@ GF_KERNEL_FUNCTION(RemoveFlicker,
 //在第三个逗号之后，位置参数。
 ((uint2)(inBlockID)(BLOCK_ID)))
 {
-  // <在这里做一些有趣的事情>
+ // <在这里做一些有趣的事情>
 }
 ```
 

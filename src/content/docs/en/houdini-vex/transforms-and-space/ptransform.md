@@ -36,11 +36,11 @@ The possible values for the space arguments are:
 
 - [ptransform](./ptransform "Transforms a vector from one space to another.") interprets the vector as a position.
 - [vtransform](./vtransform "Transforms a directional vector.") interprets the vector as a direction
-  vector, and so doesn’t apply the translations from the matrix.
+ vector, and so doesn’t apply the translations from the matrix.
 - [ntransform](./ntransform "Transforms a normal vector.") interprets the vector as a normal vector,
-  and so multiplies by the inverse transpose of the matrix (ignoring the
-  translations).
-  Examples
+ and so multiplies by the inverse transpose of the matrix (ignoring the
+ translations).
+ Examples
 
 ## examples
 

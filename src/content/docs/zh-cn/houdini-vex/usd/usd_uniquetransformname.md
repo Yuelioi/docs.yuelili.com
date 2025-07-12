@@ -38,6 +38,6 @@ USD图元通过一系列变换操作进行空间变换，这些操作的完整�
 
 ```vex
 // 为带有"cone_pivot"后缀的平移操作构造唯一完整名称
-string unique_xform_name  = usd_uniquetransformname(0, "/geo/cone", USD_XFORM_TRANSLATE, "cone_pivot");
+string unique_xform_name = usd_uniquetransformname(0, "/geo/cone", USD_XFORM_TRANSLATE, "cone_pivot");
 
 ```

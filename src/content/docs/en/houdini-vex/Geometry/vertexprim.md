@@ -29,7 +29,7 @@ Examples
 ## examples
 
 ```vex
-int        pt;
+int pt;
 
 // Get the primitive of vertex 3
 pt = vertexprim("defgeo.bgeo", 3);

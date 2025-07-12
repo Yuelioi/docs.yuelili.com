@@ -25,11 +25,11 @@ Displays a platform-standard dialog containing a short message and an **OK** but
 
 #### Parameters
 
-| Parameter |  Type   |                                                                                        Description                                                                                         |
-| --------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| message   | String  | The string for the displayed message.                                                                                                                                                      |
-| title     | String  | Optional. A string to appear as the title of the dialog, if the platform supports a title. Mac OS does not support titles for alert dialogs. The default title string is `"Script Alert"`. |
-| errorIcon | Boolean | Optional. When `true`, the platform-standard alert icon is replaced by the platform-standard error icon in the dialog. Default is `false`.                                                 |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| message | String | The string for the displayed message. |
+| title | String | Optional. A string to appear as the title of the dialog, if the platform supports a title. Mac OS does not support titles for alert dialogs. The default title string is `"Script Alert"`. |
+| errorIcon | Boolean | Optional. When `true`, the platform-standard alert icon is replaced by the platform-standard error icon in the dialog. Default is `false`. |
 
 #### Returns
 
@@ -60,11 +60,11 @@ Displays a platform-standard dialog containing a short message and two buttons l
 
 #### Parameters
 
-| Parameter |  Type   |                                                                                            Description                                                                                            |
-| --------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| message   | String  | The string for the displayed message.                                                                                                                                                             |
-| noAsDflt  | Boolean | Optional. When `true`, the **No** button is the default choice, selected when the user types `ENTER`. Default is `false`, meaning that **Yes** is the default choice.                             |
-| title     | String  | Optional. A string to appear as the title of the dialog, if the platform supports a title. Mac OS does not support titles for confirmation dialogs. The default title string is `"Script Alert"`. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| message | String | The string for the displayed message. |
+| noAsDflt | Boolean | Optional. When `true`, the **No** button is the default choice, selected when the user types `ENTER`. Default is `false`, meaning that **Yes** is the default choice. |
+| title | String | Optional. A string to appear as the title of the dialog, if the platform supports a title. Mac OS does not support titles for confirmation dialogs. The default title string is `"Script Alert"`. |
 
 #### Returns
 
@@ -94,11 +94,11 @@ Displays a platform-standard dialog containing a short message, a text edit fiel
 
 #### Parameters
 
-| Parameter |  Type  |                                                                                            Description                                                                                            |
-| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| message   | String | The string for the displayed message.                                                                                                                                                             |
-| preset    | String | The initial value to be displayed in the text edit field.                                                                                                                                         |
-| title     | String | Optional. A string to appear as the title of the dialog, if the platform supports a title. Mac OS does not support titles for confirmation dialogs. The default title string is `"Script Alert"`. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| message | String | The string for the displayed message. |
+| preset | String | The initial value to be displayed in the text edit field. |
+| title | String | Optional. A string to appear as the title of the dialog, if the platform supports a title. Mac OS does not support titles for confirmation dialogs. The default title string is `"Script Alert"`. |
 
 #### Returns
 

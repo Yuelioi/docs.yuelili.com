@@ -14,10 +14,10 @@ Overview
 ```vex
 illuminance(position, [axis], [angle], [light_typemask], [lightmask])
 {
-    // Here, Cl and L will be set to the value/direction for the
-    // current light source.
-    // To force the shadow shader to be called, use:
-    // shadow(Cl);
+ // Here, Cl and L will be set to the value/direction for the
+ // current light source.
+ // To force the shadow shader to be called, use:
+ // shadow(Cl);
 }
 
 ```
@@ -137,7 +137,7 @@ statement with the [simport](./simport "Imports a variable sent by a surface sha
 For example, to send down the vector variable `uv` to the light shader…
 
 ```vex
-vector      uv = set(s, t, 0);
+vector uv = set(s, t, 0);
 illuminance(P, dir, "uv", uv) { ... }
 
 ```
@@ -145,7 +145,7 @@ illuminance(P, dir, "uv", uv) { ... }
 The light shader would be able to read this using…
 
 ```vex
-vector      uv;
+vector uv;
 if (simport("uv", uv))
 printf("Imported: %g from surface\n", uv);
 
@@ -173,9 +173,9 @@ surface
 light_export_test(export vector diff=0;
 export vector spec=0)
 {
-vector     nn = normalize(frontface(N, I));
-vector     vv = -normalize(I);
-vector     clr;
+vector nn = normalize(frontface(N, I));
+vector vv = -normalize(I);
+vector clr;
 
 Cf = 0;
 // This illuminance loop only exports to the "diff" variable

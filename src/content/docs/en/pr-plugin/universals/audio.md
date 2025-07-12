@@ -31,23 +31,23 @@ Since 32-bit floats are the only audio format ever passed, there is no option of
 
 These formats are used to set members in structures passed to Premiere to define the user interface, and do not affect the format of the audio passed to and from Premiere.
 
-|            PrAudioSampleType             |                  Description                  |
-| ---------------------------------------- | --------------------------------------------- |
-| `kPrAudioSampleType_8BitInt`             | 8-bit integer                                 |
-| `kPrAudioSampleType_8BitTwosInt`         | 8-bit integer, two's complement               |
-| `kPrAudioSampleType_16BitInt`            | 16-bit integer                                |
-| `kPrAudioSampleType_24BitInt`            | 24-bit integer                                |
-| `kPrAudioSampleType_32BitInt`            | 32-bit integer                                |
-| `kPrAudioSampleType_32BitFloat`          | 32-bit floating point                         |
-| `kPrAudioSampleType_64BitFloat`          | 64-bit floating point                         |
-| `kPrAudioSampleType_16BitIntBigEndian`   | 16-bit integer, big endian                    |
-| `kPrAudioSampleType_24BitIntBigEndian`   | 24-bit integer, big endian                    |
-| `kPrAudioSampleType_32BitIntBigEndian`   | 32-bit integer, big endian                    |
-| `kPrAudioSampleType_32BitFloatBigEndian` | 32-bit floating point, big endian             |
-| `kPrAudioSampleType_Compressed`          | Any non-PCM format                            |
-| `kPrAudioSampleType_Packed`              | Any PCM format with mixed sample types        |
-| `kPrAudioSampleType_Other`               | A sample type not in this list                |
-| `kPrAudioSampleType_Any`                 | Any available sample type (used by exporters) |
+| PrAudioSampleType | Description |
+| --- | --- |
+| `kPrAudioSampleType_8BitInt` | 8-bit integer |
+| `kPrAudioSampleType_8BitTwosInt` | 8-bit integer, two's complement |
+| `kPrAudioSampleType_16BitInt` | 16-bit integer |
+| `kPrAudioSampleType_24BitInt` | 24-bit integer |
+| `kPrAudioSampleType_32BitInt` | 32-bit integer |
+| `kPrAudioSampleType_32BitFloat` | 32-bit floating point |
+| `kPrAudioSampleType_64BitFloat` | 64-bit floating point |
+| `kPrAudioSampleType_16BitIntBigEndian` | 16-bit integer, big endian |
+| `kPrAudioSampleType_24BitIntBigEndian` | 24-bit integer, big endian |
+| `kPrAudioSampleType_32BitIntBigEndian` | 32-bit integer, big endian |
+| `kPrAudioSampleType_32BitFloatBigEndian` | 32-bit floating point, big endian |
+| `kPrAudioSampleType_Compressed` | Any non-PCM format |
+| `kPrAudioSampleType_Packed` | Any PCM format with mixed sample types |
+| `kPrAudioSampleType_Other` | A sample type not in this list |
+| `kPrAudioSampleType_Any` | Any available sample type (used by exporters) |
 
 ---
 
@@ -73,22 +73,22 @@ In CS6, 16-channel audio export was added.
 
 Starting in CC, the audio channel support is increased to 32 channels.
 
-|        PrAudioChannelType        |                        Description                        |
-|----------------------------------|-----------------------------------------------------------|
-| `kPrAudioChannelType_Mono`       | Mono                                                      |
-| `kPrAudioChannelType_Stereo`     | Stereo. The order of the stereo channels is:              |
-|                                  | - `kPrAudioChannelLabel_FrontLeft`                        |
-|                                  | - `kPrAudioChannelLabel_FrontRight`                       |
-| `kPrAudioChannelType_51`         | 5.1 audio.                                                |
-|                                  | The order of the 5.1 channels is:                         |
-|                                  | - `kPrAudioChannelLabel_FrontLeft`                        |
-|                                  | - `kPrAudioChannelLabel_FrontRight`                       |
-|                                  | - `kPrAudioChannelLabel_BackLeft`                         |
-|                                  | - `kPrAudioChannelLabel_BackRight`                        |
-|                                  | - `kPrAudioChannelLabel_FrontCenter`                      |
-|                                  | - `kPrAudioChannelLabel_LowFrequency`                     |
-|                                  | - `kPrAudioChannelLabel_BackLeft`                         |
-|                                  | - `kPrAudioChannelLabel_BackRight`                        |
-| `kPrAudioChannelType_MaxChannel` | New in CC.                                                |
-|                                  | `kMaxAudioChannelCount`, defined as 32 channels as of CC. |
-|                                  | All channels use `kPrAudioChannelLabel_Discrete`.         |
+| PrAudioChannelType | Description |
+|---|---|
+| `kPrAudioChannelType_Mono` | Mono |
+| `kPrAudioChannelType_Stereo` | Stereo. The order of the stereo channels is: |
+| | - `kPrAudioChannelLabel_FrontLeft` |
+| | - `kPrAudioChannelLabel_FrontRight` |
+| `kPrAudioChannelType_51` | 5.1 audio. |
+| | The order of the 5.1 channels is: |
+| | - `kPrAudioChannelLabel_FrontLeft` |
+| | - `kPrAudioChannelLabel_FrontRight` |
+| | - `kPrAudioChannelLabel_BackLeft` |
+| | - `kPrAudioChannelLabel_BackRight` |
+| | - `kPrAudioChannelLabel_FrontCenter` |
+| | - `kPrAudioChannelLabel_LowFrequency` |
+| | - `kPrAudioChannelLabel_BackLeft` |
+| | - `kPrAudioChannelLabel_BackRight` |
+| `kPrAudioChannelType_MaxChannel` | New in CC. |
+| | `kMaxAudioChannelCount`, defined as 32 channels as of CC. |
+| | All channels use `kPrAudioChannelLabel_Discrete`. |

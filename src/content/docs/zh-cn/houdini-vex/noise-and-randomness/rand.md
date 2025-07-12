@@ -49,8 +49,8 @@ order: 29
 如果返回值是vector2、vector或vector4类型，每个分量都会是不同的随机数。例如以下代码：
 
 ```vex
-vector    pos = 1;
-float    seed = 0;
+vector pos = 1;
+float seed = 0;
 
 pos *= rand(seed);
 
@@ -59,8 +59,8 @@ pos *= rand(seed);
 `pos`的`.x`、`.y`和`.z`分量将会获得不同的值。如果需要均匀缩放，请使用`float()`类型转换：
 
 ```vex
-vector    pos = 1;
-float    seed = 0;
+vector pos = 1;
+float seed = 0;
 
 pos *= float(rand(seed));
 

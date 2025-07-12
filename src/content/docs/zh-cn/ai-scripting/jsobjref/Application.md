@@ -417,8 +417,8 @@ Illustrator 的偏好设置。
 
 #### 参数
 
-|   参数   |        类型    |  描述  |
-| -------- | --------------------- | ------ |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `matrix` | [Matrix](.././Matrix) | 第一个矩阵 |
 | `secondMatrix` | [Matrix](.././Matrix) | 第二个矩阵 |
 
@@ -442,8 +442,8 @@ jsobjref/Matrix。
 
 #### 参数
 
-| 参数 |      类型       | 描述 |
-| ---- | --------------- | ---- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `matrix` | Matrix | 矩阵 |
 | `angle` | 数字（双精度），可选 | 角度 |
 
@@ -467,8 +467,8 @@ jsobjref/Matrix。
 
 #### 参数
 
-| 参数 |     类型      | 描述 |
-| ---- | ------------------------- | ---- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `matrix` | Matrix | 矩阵 |
 | `scaleX` | 数字（双精度），可选 | X 缩放 |
 | `scaleY` | 数字（双精度），可选 | Y 缩放 |
@@ -493,8 +493,8 @@ jsobjref/Matrix。
 
 #### 参数
 
-| 参数 |     类型      | 描述 |
-| ---- | ------------------------- | ---- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `matrix` | Matrix | 矩阵 |
 | `deltaX` | 数字（双精度），可选 | X 平移 |
 | `deltaY` | 数字（双精度），可选 | Y 平移 |
@@ -509,12 +509,12 @@ jsobjref/Matrix。
 
 ```javascript
 app.convertSampleColor(
-    sourceColorSpace,
-    sourceColor,
-    destColorSpace,
-    colorConvertPurpose
-    [, sourceHasAlpha]
-    [, destHasAlpha]
+ sourceColorSpace,
+ sourceColor,
+ destColorSpace,
+ colorConvertPurpose
+ [, sourceHasAlpha]
+ [, destHasAlpha]
 )
 ```
 
@@ -524,8 +524,8 @@ app.convertSampleColor(
 
 #### 参数
 
-|       参数       |     类型      |     描述      |
-| ---------------- | ----------------------------------------------------------------- | ------------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `sourceColorSpace` | [ImageColorSpace](../scripting-constants#imagecolorspace) | 源颜色的颜色空间 |
 | `sourceColor` | ColorComponents | 要转换的源颜色 |
 | `destColorSpace` | [ImageColorSpace](../scripting-constants#imagecolorspace) | 目标颜色空间 |
@@ -577,8 +577,8 @@ ColorComponents 数组
 
 #### 参数
 
-|    参数    | 类型  |   描述    |
-| ---------- | ----- | --------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `workspaceName` | 字符串 | 要删除的工作区名称 |
 
 #### 返回值
@@ -615,8 +615,8 @@ ColorComponents 数组
 
 #### 参数
 
-| 参数  | 类型  |    描述     |
-| ----- | ----- | ----------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `filePath` | 字符串 | 要检查的文件路径 |
 
 #### 返回值
@@ -635,8 +635,8 @@ ColorComponents 数组
 
 #### 参数
 
-| 参数 | 类型  |       描述        |
-| ---- | ----- | ----------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `name` | 字符串 | 要获取信息的文件名 |
 
 #### 返回值
@@ -655,8 +655,8 @@ ColorComponents 数组
 
 #### 参数
 
-|  参数   |   类型     |       描述   |
-| ------- | --------------------------------------------------------------- | ------------------ |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `presetType` | [DocumentPresetType](../scripting-constants#documentpresettype) | 要获取文件的预设类型 |
 
 #### 返回值
@@ -675,8 +675,8 @@ ColorComponents 数组
 
 #### 参数
 
-| 参数 | 类型  |     描述      |
-| ---- | ----- | ------------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `preset` | 字符串 | 要从中获取设置的预设名称 |
 
 #### 返回值
@@ -699,8 +699,8 @@ ColorComponents 数组
 
 #### 参数
 
-| 参数 |     类型      |      描述       |
-| ---- | ------------------------- | --------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `angle` | 数字（双精度），可选 | 要获取矩阵的角度 |
 
 #### 返回值
@@ -737,8 +737,8 @@ app.getRotationMatrix(-30);
 
 #### 参数
 
-| 参数 |     类型      |       描述        |
-| ---- | ------------------------- | ----------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `scaleX` | 数字（双精度），可选 | 要获取矩阵的 X 缩放 |
 | `scaleY` | 数字（双精度），可选 | 要获取矩阵的 Y 缩放 |
 
@@ -790,10 +790,10 @@ Variant
 
 #### 参数
 
-| 参数      |     类型      | 描述   |
-| --------- | ------------------------- | ------ |
-| `deltaX`  | Number (double), 可选     | X 增量 |
-| `deltaY`  | Number (double), 可选     | Y 增量 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `deltaX` | Number (double), 可选 | X 增量 |
+| `deltaY` | Number (double), 可选 | Y 增量 |
 
 #### 返回值
 
@@ -825,9 +825,9 @@ app.getTranslationMatrix(-100, -200);
 
 #### 参数
 
-| 参数      |   类型    |   描述   |
-| --------- | --------------------- | -------- |
-| `matrix`  | [Matrix](.././Matrix) | 要反转的矩阵 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `matrix` | [Matrix](.././Matrix) | 要反转的矩阵 |
 
 #### 返回值
 
@@ -845,9 +845,9 @@ app.getTranslationMatrix(-100, -200);
 
 #### 参数
 
-| 参数    |   类型    |       描述       |
-| ------------- | --------------------- | ---------------- |
-| `matrix`      | [Matrix](.././Matrix) | 要检查的第一个矩阵 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `matrix` | [Matrix](.././Matrix) | 要检查的第一个矩阵 |
 | `secondMatrix`| [Matrix](.././Matrix) | 要检查的第二个矩阵 |
 
 #### 返回值
@@ -866,9 +866,9 @@ Boolean
 
 #### 参数
 
-| 参数      |   类型    |   描述   |
-| --------- | --------------------- | -------- |
-| `matrix`  | [Matrix](.././Matrix) | 要检查的矩阵 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `matrix` | [Matrix](.././Matrix) | 要检查的矩阵 |
 
 #### 返回值
 
@@ -886,9 +886,9 @@ Boolean
 
 #### 参数
 
-| 参数        |         类型          |   描述   |
-| ----------- | ------------------------------------------------------------------------------------- | -------------------- |
-| `fileSpec`  | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象    | 要加载设置的文件      |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `fileSpec` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要加载设置的文件 |
 
 #### 返回值
 
@@ -912,11 +912,11 @@ Boolean
 
 #### 参数
 
-| 参数          |         类型          |       描述       |
-| ------------------- | ------------------------------------------------------------------------------------- | ---------------- |
-| `file`        | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象    | 要打开的文件      |
-| `documentColorSpace`| [DocumentColorSpace](../scripting-constants#documentcolorspace), 可选          | 文档的颜色空间    |
-| `options`     | 任意类型     | 待办事项    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `file` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要打开的文件 |
+| `documentColorSpace`| [DocumentColorSpace](../scripting-constants#documentcolorspace), 可选 | 文档的颜色空间 |
+| `options` | 任意类型 | 待办事项 |
 
 #### 返回值
 
@@ -1008,9 +1008,9 @@ Boolean
 
 #### 参数
 
-| 参数      | 类型   |   描述   |
-| --------------- | ------ | -------------------- |
-| `workspaceName` | String | 要保存的工作区名称    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `workspaceName` | String | 要保存的工作区名称 |
 
 #### 返回值
 
@@ -1028,11 +1028,11 @@ Boolean
 
 #### 参数
 
-| 参数        | 类型   |     描述     |
-| ----------------- | ------ | ------------------------ |
-| `pluginName`      | String | 要发送消息的插件名称      |
-| `messageSelector` | String | 要发送给插件的消息        |
-| `inputString`     | String | 传递给命令的数据    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `pluginName` | String | 要发送消息的插件名称 |
+| `messageSelector` | String | 要发送给插件的消息 |
+| `inputString` | String | 传递给命令的数据 |
 
 #### 返回值
 
@@ -1050,9 +1050,9 @@ String
 
 #### 参数
 
-| 参数        |         类型          |       描述       |
-| ----------- | ------------------------------------------------------------------------------------- | ---------------- |
-| `fileSpec`  | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象    | 要获取预设的文件  |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `fileSpec` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要获取预设的文件 |
 
 #### 返回值
 
@@ -1070,8 +1070,8 @@ PrintPresetList
 
 #### 参数
 
-| 参数      | 类型   |     描述     |
-| --------------- | ------ | ------------ |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `workspaceName` | String | 要切换到的名称 |
 
 #### 返回值
@@ -1090,9 +1090,9 @@ Boolean
 
 #### 参数
 
-| 参数    | 类型   |       描述       |
-| ------- | ------ | ---------------- |
-| `text`  | String | 要转换的字符串    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `text` | String | 要转换的字符串 |
 
 #### 返回值
 
@@ -1125,18 +1125,18 @@ var newItem;
 var docSelected = app.activeDocument.selection;
 
 if (docSelected.length > 0) {
-    // 创建一个新文档并将选定的项移动到其中。
-    var newDoc = app.documents.add();
-    if (docSelected.length > 0) {
-        for (var i = 0; i < docSelected.length; i++) {
-        docSelected[i].selected = false;
-        newItem = docSelected[i].duplicate(newDoc, ElementPlacement.PLACEATEND);
-        }
-    } else {
-        docSelected.selected = false;
-        newItem = docSelected.parent.duplicate(newDoc, ElementPlacement.PLACEATEND);
-    }
+ // 创建一个新文档并将选定的项移动到其中。
+ var newDoc = app.documents.add();
+ if (docSelected.length > 0) {
+ for (var i = 0; i < docSelected.length; i++) {
+ docSelected[i].selected = false;
+ newItem = docSelected[i].duplicate(newDoc, ElementPlacement.PLACEATEND);
+ }
+ } else {
+ docSelected.selected = false;
+ newItem = docSelected.parent.duplicate(newDoc, ElementPlacement.PLACEATEND);
+ }
 } else {
-    alert("请选择一个或多个艺术对象");
+ alert("请选择一个或多个艺术对象");
 }
 ```

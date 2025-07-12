@@ -23,12 +23,12 @@ This is roughly equivalent to the following code:
 int []
 neighbours(int opinput, int ptnum)
 {
-    int     i, n;
-    int     result[];
-    n = neighbourcount(input, ptnum);
-    resize(result, n);
-    for (i = 0; i < n; i++)
-        result[i] = neighbour(input, ptnum, i);
+ int i, n;
+ int result[];
+ n = neighbourcount(input, ptnum);
+ resize(result, n);
+ for (i = 0; i < n; i++)
+ result[i] = neighbour(input, ptnum, i);
 }
 
 ```

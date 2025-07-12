@@ -179,13 +179,13 @@ See [Registering event listeners for windows or controls](../defining-behavior-w
 
 #### Parameters
 
-|  Parameter  |  Type  |        Description         |
-|-------------|--------|----------------------------|
+| Parameter | Type | Description |
+|---|---|---|
 | `eventType` | String | The type of event, one of: |
-|             |        | - `UIEvent`                |
-|             |        | - `KeyboardEvent`          |
-|             |        | - `MouseEvent`             |
-| ----------- | ------ | -------------------------- |
+| | | - `UIEvent` |
+| | | - `KeyboardEvent` |
+| | | - `MouseEvent` |
+| --- | --- | --- |
 
 #### Returns
 
@@ -207,9 +207,9 @@ Finds and returns the resource for a given text string from the host application
 
 #### Parameters
 
-| Parameter |  Type  |    Description     |
-| --------- | ------ | ------------------ |
-| `text`    | String | The text to match. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `text` | String | The text to match. |
 
 #### Returns
 
@@ -227,11 +227,11 @@ Creates a new font object for use in text controls and titles.
 
 #### Parameters
 
-| Parameter |  Type  |                                        Description                                         |
-| --------- | ------ | ------------------------------------------------------------------------------------------ |
-| `name`    | String | The font or font family name string.                                                       |
-| `style`   | String | The font style string or an enumerated value from [ScriptUI.FontStyle](#scriptuifontstyle) |
-| `size`    | Number | The font size in points, a number.                                                         |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | The font or font family name string. |
+| `style` | String | The font style string or an enumerated value from [ScriptUI.FontStyle](#scriptuifontstyle) |
+| `size` | Number | The font size in points, a number. |
 
 #### Returns
 
@@ -249,12 +249,12 @@ Creates a new image object for use in controls that can display images, loading 
 
 #### Parameter
 
-| Parameter  |  Type  |                                                                  Description                                                                   |
-| ---------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `normal`   | String | The resource name or path to the image to use for the normal or default state.                                                                 |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `normal` | String | The resource name or path to the image to use for the normal or default state. |
 | `disabled` | String | The resource name or path to the image to use for the disabled state, shown when the control containing the image is disabled (enabled=false). |
-| `pressed`  | String | The resource name or path to the image to use for the pressed state, shown when the user clicks on the image.                                  |
-| `rollover` | String | The resource name or path to the image to use for the rollover state, which is shown when the cursor moves over the image.                     |
+| `pressed` | String | The resource name or path to the image to use for the pressed state, shown when the user clicks on the image. |
+| `rollover` | String | The resource name or path to the image to use for the rollover state, which is shown when the cursor moves over the image. |
 
 #### Returns
 

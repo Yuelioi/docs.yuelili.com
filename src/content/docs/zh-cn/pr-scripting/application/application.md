@@ -426,17 +426,17 @@ app.version; // 14.3.1
 ```js
 app.getWorkspaces();
 /* [
-   "All Panels",
-   "Assembly",
-   "Audio",
-   "Color",
-   "Editing",
-   "Effects",
-   "Graphics",
-   "Learning",
-   "Libraries",
-   "Metalogging",
-   "Production"
+ "All Panels",
+ "Assembly",
+ "Audio",
+ "Color",
+ "Editing",
+ "Effects",
+ "Graphics",
+ "Learning",
+ "Libraries",
+ "Metalogging",
+ "Production"
 ]; */
 ```
 
@@ -452,8 +452,8 @@ app.getWorkspaces();
 
 #### 参数
 
-| 参数   | 类型   | 描述   |
-| ------ | ------ | ------------ |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `path` | 字符串 | 文件的路径。 |
 
 #### 返回值
@@ -466,9 +466,9 @@ app.getWorkspaces();
 
 ```js
 app.isDocument('~/Desktop/myProject.prproj'); // true
-app.isDocument('~/Desktop/textFile.txt');   // false
-app.isDocument('~/Desktop/footageFile.mov');  // false
-app.isDocument('~/Desktop/imageFile.mov');   // false
+app.isDocument('~/Desktop/textFile.txt'); // false
+app.isDocument('~/Desktop/footageFile.mov'); // false
+app.isDocument('~/Desktop/imageFile.mov'); // false
 ```
 
 ---
@@ -501,8 +501,8 @@ app.isDocument('~/Desktop/imageFile.mov');   // false
 
 #### 参数
 
-| 参数   | 类型   | 描述     |
-| ------ | ------ | -------------------------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `path` | 字符串 | 新项目的完整路径；不会添加 .prproj 扩展名。 |
 
 #### 返回值
@@ -521,13 +521,13 @@ app.isDocument('~/Desktop/imageFile.mov');   // false
 
 #### 参数
 
-| 参数    | 类型   | 描述     |
-| ------------------------- | ------- | -------------------------------------- |
-| `path`     | 字符串  | 要打开的文件的完整路径。    |
-| `suppressConversionDialog` | 布尔值  | 可选。抑制项目转换对话框。    |
-| `bypassLocateFileDialog`  | 布尔值  | 可选。绕过定位文件对话框。    |
-| `bypassWarningDialog`   | 布尔值  | 可选。绕过警告对话框。     |
-| `doNotAddToMRUList`   | 布尔值  | 可选。跳过将此文件添加到最近使用的列表。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `path` | 字符串 | 要打开的文件的完整路径。 |
+| `suppressConversionDialog` | 布尔值 | 可选。抑制项目转换对话框。 |
+| `bypassLocateFileDialog` | 布尔值 | 可选。绕过定位文件对话框。 |
+| `bypassWarningDialog` | 布尔值 | 可选。绕过警告对话框。 |
+| `doNotAddToMRUList` | 布尔值 | 可选。跳过将此文件添加到最近使用的列表。 |
 
 #### 返回值
 
@@ -545,10 +545,10 @@ app.isDocument('~/Desktop/imageFile.mov');   // false
 
 #### 参数
 
-| 参数   | 类型   | 描述 |
-| --------- | ------ | ---- |
-| `path`   | 字符串 |   |
-| `projPath` | 字符串 |   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `path` | 字符串 | |
+| `projPath` | 字符串 | |
 
 #### 返回值
 
@@ -584,9 +584,9 @@ app.isDocument('~/Desktop/imageFile.mov');   // false
 
 #### 参数
 
-| 参数   | 类型   | 描述   |
-| --------- | ------- | ---------------------- |
-| `enabled` | 整数   | `1` 启用代理，`0` 禁用代理。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `enabled` | 整数 | `1` 启用代理，`0` 禁用代理。 |
 
 #### 返回值
 
@@ -604,10 +604,10 @@ app.isDocument('~/Desktop/imageFile.mov');   // false
 
 #### 参数
 
-| 参数    | 类型   | 描述     |
-| ------------- | ------- | -------------------------------------- |
-| `extensionID` | 字符串  | 要修改的扩展。    |
-| `persistent`  | 整数   | 传递 `1` 以保持扩展在内存中，`0` 以允许卸载。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `extensionID` | 字符串 | 要修改的扩展。 |
+| `persistent` | 整数 | 传递 `1` 以保持扩展在内存中，`0` 以允许卸载。 |
 
 #### 返回值
 
@@ -636,17 +636,17 @@ app.setExtensionPersistent(extensionID, persistent);
 
 #### 参数
 
-| 参数    | 类型    | 描述     |
-| ----------------- | ------------------- | -------------------------------------- |
-| `path`   | 字符串    | 要使用的新路径。    |
-| `scratchDiskType` | `ScratchDiskType` 枚举 | 枚举值，必须为以下之一：    |
-|   |   | - `ScratchDiskType.FirstVideoCaptureFolder`   |
-|   |   | - `ScratchDiskType.FirstAudioCaptureFolder`   |
-|   |   | - `ScratchDiskType.FirstVideoPreviewFolder`   |
-|   |   | - `ScratchDiskType.FirstAudioPreviewFolder`   |
-|   |   | - `ScratchDiskType.FirstAutoSaveFolder`   |
-|   |   | - `ScratchDiskType.FirstCCLibrariesFolder`   |
-|   |   | - `ScratchDiskType.FirstCapsuleMediaFolder`   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `path` | 字符串 | 要使用的新路径。 |
+| `scratchDiskType` | `ScratchDiskType` 枚举 | 枚举值，必须为以下之一： |
+| | | - `ScratchDiskType.FirstVideoCaptureFolder` |
+| | | - `ScratchDiskType.FirstAudioCaptureFolder` |
+| | | - `ScratchDiskType.FirstVideoPreviewFolder` |
+| | | - `ScratchDiskType.FirstAudioPreviewFolder` |
+| | | - `ScratchDiskType.FirstAutoSaveFolder` |
+| | | - `ScratchDiskType.FirstCCLibrariesFolder` |
+| | | - `ScratchDiskType.FirstCapsuleMediaFolder` |
 
 #### 返回值
 
@@ -657,7 +657,7 @@ app.setExtensionPersistent(extensionID, persistent);
 ```js
 var scratchPath = Folder.selectDialog('选择新的暂存盘文件夹');
 if (scratchPath && scratchPath.exists) {
-   app.setScratchDiskPath(scratchPath.fsName, ScratchDiskType.FirstAutoSaveFolder);
+ app.setScratchDiskPath(scratchPath.fsName, ScratchDiskType.FirstAutoSaveFolder);
 }
 ```
 
@@ -673,13 +673,13 @@ if (scratchPath && scratchPath.exists) {
 
 #### 参数
 
-| 参数    | 类型   | 描述   |
-| ----------- | ------- | ---------------------- |
-| `message`   | 字符串  | 要显示的消息。   |
-| `decorator` | 字符串  | 装饰器，以下之一：   |
-|    |   | - `info`    |
-|    |   | - `warning`   |
-|    |   | - `error`    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `message` | 字符串 | 要显示的消息。 |
+| `decorator` | 字符串 | 装饰器，以下之一： |
+| | | - `info` |
+| | | - `warning` |
+| | | - `error` |
 
 #### 返回值
 
@@ -697,9 +697,9 @@ if (scratchPath && scratchPath.exists) {
 
 #### 参数
 
-| 参数    | 类型   | 描述   |
-| ----------- | ------- | -------------- |
-| `workspace` | 字符串  | 工作区的名称。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `workspace` | 字符串 | 工作区的名称。 |
 
 #### 返回值
 
@@ -712,9 +712,9 @@ if (scratchPath && scratchPath.exists) {
 ```js
 var workspace = 'Editing';
 if (app.setWorkspace(workspace)) {
-   alert('工作区已更改为 "' + workspace + '"');
+ alert('工作区已更改为 "' + workspace + '"');
 } else {
-   alert('无法设置 "' + workspace + '" 工作区');
+ alert('无法设置 "' + workspace + '" 工作区');
 }
 ```
 
@@ -759,9 +759,9 @@ if (app.setWorkspace(workspace)) {
 ```js
 var allViewIDs = app.getProjectViewIDs();
 if (allViewIDs){
-   var firstOne = allViewIDs[0];
+ var firstOne = allViewIDs[0];
 } else {
-   // 没有打开的视图。
+ // 没有打开的视图。
 }
 ```
 
@@ -788,16 +788,16 @@ if (allViewIDs){
 ```js
 var allViewIDs = app.getProjectViewIDs();
 if (allViewIDs){
-   var firstOne = allViewIDs[0];
-   if (firstOne){
-    var thisProject = getProjectFromViewID(firstOne);
-    if (thisProject){
-   var name = thisProject.name;
-    } else {
-   // 没有与该视图 ID 关联的项目。
-    }
+ var firstOne = allViewIDs[0];
+ if (firstOne){
+ var thisProject = getProjectFromViewID(firstOne);
+ if (thisProject){
+ var name = thisProject.name;
+ } else {
+ // 没有与该视图 ID 关联的项目。
+ }
 } else {
-   // 没有打开的视图。
+ // 没有打开的视图。
 }
 ```
 
@@ -824,8 +824,8 @@ if (allViewIDs){
 ```js
 var selectedItems = app.getCurrentProjectViewSelection();
 if (selectedItems){
-   var firstOne = selectedItems[0];
+ var firstOne = selectedItems[0];
 } else {
-   // 没有选择的 ProjectItems。
+ // 没有选择的 ProjectItems。
 }
 ```

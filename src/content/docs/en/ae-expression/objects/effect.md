@@ -11,7 +11,6 @@ This category contains information relating to Effects.
 On this page, we're going to use `thisLayer.effect("Bulge")` as a sample on how to call these items, however note that any method that returns an [Effect](#) will work.
 :::
 
-
 ---
 
 ## Attributes
@@ -46,10 +45,10 @@ This method can be called using *either* the property's `name` or its `index`.
 
 #### Parameters
 
-| Parameter |  Type  |                  Description                  |
-|-----------|--------|-----------------------------------------------|
-| `name`    | String | Property name or index to access property by. |
-| `index`   | Number |                                               |
+| Parameter | Type | Description |
+|---|---|---|
+| `name` | String | Property name or index to access property by. |
+| `index` | Number | |
 
 #### Returns
 

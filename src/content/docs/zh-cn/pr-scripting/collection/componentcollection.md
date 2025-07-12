@@ -9,11 +9,9 @@ title: ComponentCollection 对象
 
 `app.project.sequences[index].videoTracks[index].clips[index].components`
 
-
 :::info
 ComponentCollection 是 [Collection 对象](../collection) 的子类。在使用 ComponentCollection 时，除了下面列出的方法和属性外，Collection 的所有方法和属性都可用。
 :::
-
 
 ---
 
@@ -26,7 +24,6 @@ ComponentCollection 是 [Collection 对象](../collection) 的子类。在使用
 `app.project.sequences[index].audioTracks[index].clips[index].components.numItems`
 
 `app.project.sequences[index].videoTracks[index].clips[index].components.numItems`
-
 
 #### 描述
 

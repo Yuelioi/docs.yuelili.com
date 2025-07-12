@@ -85,7 +85,6 @@ title: ExportOptionsTIFF
 此属性错误地写为 "IZWCompression"（大写 "I"），而不是 "lzwCompression"（小写 "L"）。请注意，后者是正确的，本文档已更新以反映这一点。
 :::
 
-
 #### 描述
 
 如果为 `true`，则在新文件中使用 IZW 压缩。
@@ -139,16 +138,16 @@ title: ExportOptionsTIFF
 // dest 包含完整路径，包括文件名
 
 function exportFileToPSD(dest) {
-    if (app.documents.length > 0) {
-        var exportOptions = new ExportOptionsTIFF();
-        exportOptions.resolution = 150;
-        exportOptions.byteOrder = TIFFByteOrder.IBMPC;
-        exportOptions.lZWCompression = false;
+ if (app.documents.length > 0) {
+ var exportOptions = new ExportOptionsTIFF();
+ exportOptions.resolution = 150;
+ exportOptions.byteOrder = TIFFByteOrder.IBMPC;
+ exportOptions.lZWCompression = false;
 
-        var type = ExportType.TIFF;
-        var fileSpec = new File(dest);
+ var type = ExportType.TIFF;
+ var fileSpec = new File(dest);
 
-        app.activeDocument.exportFile(fileSpec, type, exportOptions);
-    }
+ app.activeDocument.exportFile(fileSpec, type, exportOptions);
+ }
 }
 ```

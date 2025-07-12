@@ -10,9 +10,9 @@ order: 9
 ```vex
 gather(vector 起点, vector 方向, ...)
 {
-    // 命中其他表面的光线处理语句
+ // 命中其他表面的光线处理语句
 } else {
-    // 未命中任何表面的光线处理语句
+ // 未命中任何表面的光线处理语句
 }
 ```
 
@@ -20,7 +20,7 @@ gather(vector 起点, vector 方向, ...)
 
 ```vex
 gather(起点, 方向, "samples", 100) {
-    ...
+ ...
 }
 ```
 
@@ -269,7 +269,7 @@ gather(P, 方向, "send:N", normalize(N)) { ... }
 您可以指定要从命中着色器导入的全局或导出变量的名称，形式为`"变量名", &变量`，通常包括`Cf`（命中表面的颜色向量）和`Of`（命中表面的不透明度向量）。
 
 ```vex
-vector  命中颜色;
+vector 命中颜色;
 gather(P, 方向, "bias", 0.01, "Cf", 命中颜色) {...}
 ```
 
@@ -307,9 +307,9 @@ gather(P, 方向, "bias", 0.01, "Cf", 命中颜色) {...}
 vector 所有位置[];
 vector 所有法线[];
 trace(P, 方向, 时间,
-    "samplefilter", "all",
-      "P", 所有位置,
-      "N", 所有法线);
+ "samplefilter", "all",
+ "P", 所有位置,
+ "N", 所有法线);
 ```
 
 采样过滤选项
@@ -362,20 +362,20 @@ trace(P, 方向, 时间,
 
 ```vex
 gather(P, dir,
-    "samplefilter", "opacity",
-      "Cf", hitCf,
-      "Of", hitOf,
-    "samplefilter", "closest",
-      "P", hitP,
-      "N", hitN)
+ "samplefilter", "opacity",
+ "Cf", hitCf,
+ "Of", hitOf,
+ "samplefilter", "closest",
+ "P", hitP,
+ "N", hitN)
 {
-    trace(pos, dir, time,
-      // 使用随机透明度合成命中表面的bsdf
-      "samplefilter", "screendoor",
-      "F", hitF,
-      // 但找到最近样本的位置
-      "samplefilter", "closest",
-      "P", hitP);
+ trace(pos, dir, time,
+ // 使用随机透明度合成命中表面的bsdf
+ "samplefilter", "screendoor",
+ "F", hitF,
+ // 但找到最近样本的位置
+ "samplefilter", "closest",
+ "P", hitP);
 }
 
 ```
@@ -391,7 +391,7 @@ gather(P, dir,
 
 ```vex
 gather(p, d, "pipeline", "surface", "Cf", surfCf,
-       "pipeline", "atmosphere" "Cf", fogCf, "P", hitP)
+ "pipeline", "atmosphere" "Cf", fogCf, "P", hitP)
 
 ```
 
@@ -407,30 +407,30 @@ gather(p, d, "pipeline", "surface", "Cf", surfCf,
 surface
 sendray(vector background=0; int nsamples=16)
 {
-    float   amp;
+ float amp;
 
-    amp = 0;
-    Cf = 0;
+ amp = 0;
+ Cf = 0;
 
-    gather(P, N,
-    "bias", 0.01,
-    "angle", radians(15),
-    "samples", nsamples,
-    "samplebase", 1,
-    "distribution", "cosine",
-    "send:exportvalue", 0.8,
-    "amp", amp)
-    {
-    Cf += amp;
-    amp = 0;
-    }
-    else
-    {
-    Cf += background;
-    }
+ gather(P, N,
+ "bias", 0.01,
+ "angle", radians(15),
+ "samples", nsamples,
+ "samplebase", 1,
+ "distribution", "cosine",
+ "send:exportvalue", 0.8,
+ "amp", amp)
+ {
+ Cf += amp;
+ amp = 0;
+ }
+ else
+ {
+ Cf += background;
+ }
 
-    Cf *= 1.0 / nsamples;
-    Of = 1;
+ Cf *= 1.0 / nsamples;
+ Of = 1;
 }
 
 ```
@@ -441,15 +441,15 @@ sendray(vector background=0; int nsamples=16)
 surface
 hitsurf(export float amp=1)
 {
-    float   sendvalue = 0;
+ float sendvalue = 0;
 
-    if (!rayimport("exportvalue", sendvalue))
-    printf("导入send:exportvalue时出错\n");
+ if (!rayimport("exportvalue", sendvalue))
+ printf("导入send:exportvalue时出错\n");
 
-    amp = sendvalue;
+ amp = sendvalue;
 
-    Cf = 1;
-    Of = 1;
+ Cf = 1;
+ Of = 1;
 }
 
 ```

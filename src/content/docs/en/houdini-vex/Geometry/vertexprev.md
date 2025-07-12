@@ -26,7 +26,7 @@ Examples
 ## examples
 
 ```vex
-int        vtx;
+int vtx;
 
 // Get the previous vertex of vertex 3
 vtx = vertexprev("defgeo.bgeo", 3);

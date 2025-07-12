@@ -101,21 +101,21 @@ var sData = "找到的制表符 \\r制表符前导符\t\t制表符位置\r";
 var textRef = docRef.textFrames;
 
 for( var i=0 ; i < textRef.length; i++ ) {
-    // 获取文本框中的所有段落
-    var paraRef = textRef[i].paragraphs;
+ // 获取文本框中的所有段落
+ var paraRef = textRef[i].paragraphs;
 
-    for ( p=0 ; p < paraRef.length ; p++ ) {
-        // 获取段落中所有文本范围的段落属性
-        var attrRef = paraRef[p].paragraphAttributes;
-        var tabRef = attrRef.tabStops;
+ for ( p=0 ; p < paraRef.length ; p++ ) {
+ // 获取段落中所有文本范围的段落属性
+ var attrRef = paraRef[p].paragraphAttributes;
+ var tabRef = attrRef.tabStops;
 
-        if ( tabRef.length > 0 ) {
-      for(var t=0; t<tabRef.length; t++){
-          sData += "\t" + tabRef[t].leader + "\t\t";
-          sData += "\t\t" + tabRef[t].position + "\r";
-      } // end for
-        } // end if
-    } // end for
+ if ( tabRef.length > 0 ) {
+ for(var t=0; t<tabRef.length; t++){
+ sData += "\t" + tabRef[t].leader + "\t\t";
+ sData += "\t\t" + tabRef[t].position + "\r";
+ } // end for
+ } // end if
+ } // end for
 } // end for
 
 var newTF = docRef.textFrames.add();

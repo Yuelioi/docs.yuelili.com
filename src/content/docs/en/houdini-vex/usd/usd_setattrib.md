@@ -37,7 +37,7 @@ usd_setattrib(0, "/geo/sphere", "float_attrib", 0.25);
 usd_setattrib(0, "/geo/sphere", "string_attrib", "foo bar baz");
 usd_setattrib(0, "/geo/sphere", "vector_attrib", {1.25, 1.50, 1.75});
 
-float  f_arr[] = {0, 0.25, 0.5, 0.75, 1};
+float f_arr[] = {0, 0.25, 0.5, 0.75, 1};
 usd_setattrib(0, "/geo/sphere", "float_array_attrib", f_arr);
 
 ```

@@ -11,11 +11,9 @@ This category describes items that give you *other objects* based on the current
 On this page, we're going to use `thisLayer` as a sample on how to call these items, however note that any method that returns a [Layer](.././layer) will work.
 :::
 
-
 :::note
 For After Effects CC and CS6, the Expression language menu, the "Layer Sub-objects", "Layer General", "Layer Properties", "Layer 3D", and "Layer Space Transforms" have been arranged into a "Layer" submenu.
 :::
-
 
 ---
 
@@ -59,10 +57,10 @@ The `index` value will have After Effects finds the effect by its index in the E
 
 #### Parameters
 
-| Parameter |  Type  |         Description          |
-|-----------|--------|------------------------------|
-| `name`    | String | Effect name or index to get. |
-| `index`   | Number |                              |
+| Parameter | Type | Description |
+|---|---|---|
+| `name` | String | Effect name or index to get. |
+| `index` | Number | |
 
 #### Returns
 
@@ -98,10 +96,10 @@ The `index` value will have After Effects finds the mask by its index in the Tim
 
 #### Parameters
 
-| Parameter |  Type  |         Description          |
-|-----------|--------|------------------------------|
-| `name`    | String | Effect name or index to get. |
-| `index`   | Number |                              |
+| Parameter | Type | Description |
+|---|---|---|
+| `name` | String | Effect name or index to get. |
+| `index` | Number | |
 
 #### Returns
 
@@ -131,19 +129,18 @@ thisLayer.mask(1)
 Paragraph text extents was added in After Effects 15.1.
 :::
 
-
 #### Description
 
 Returns the bounding box of the layer (or the layer's source).
 
 #### Parameters
 
-|    Parameter     |  Type   |                                                               Description                                                                |
-|------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------|
-| `t`              | Number  | Optional. The specified time (in comp seconds) to apply the smoothing filter to. Defaults to `time` (the current comp time, in seconds). |
-| `includeExtents` | Boolean | Optional. Only applies to shape layers and paragraph text layers. Defaults to `false`.                                                   |
-|                  |         | - For shape layers: Increases the size of the layer bounds as necessary.                                                                 |
-|                  |         | - For paragraph text layers: Returns the bounds of the paragraph box                                                                     |
+| Parameter | Type | Description |
+|---|---|---|
+| `t` | Number | Optional. The specified time (in comp seconds) to apply the smoothing filter to. Defaults to `time` (the current comp time, in seconds). |
+| `includeExtents` | Boolean | Optional. Only applies to shape layers and paragraph text layers. Defaults to `false`. |
+| | | - For shape layers: Increases the size of the layer bounds as necessary. |
+| | | - For paragraph text layers: Returns the bounds of the paragraph box |
 
 #### Returns
 
@@ -161,11 +158,9 @@ myTextLayer.sourceRectAtTime().width
 
 `thisLayer.sourceTime([t=time])`
 
-
 :::note
 This functionality was added in After Effects CS5.5
 :::
-
 
 #### Description
 
@@ -173,9 +168,9 @@ Returns the layer source corresponding to time `t`.
 
 #### Parameters
 
-| Parameter |  Type  |                                                               Description                                                                |
-| --------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `t`       | Number | Optional. The specified time (in comp seconds) to apply the smoothing filter to. Defaults to `time` (the current comp time, in seconds). |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `t` | Number | Optional. The specified time (in comp seconds) to apply the smoothing filter to. Defaults to `time` (the current comp time, in seconds). |
 
 #### Returns
 

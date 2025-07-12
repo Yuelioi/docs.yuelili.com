@@ -51,8 +51,8 @@ int closept[] = pcfind_radius(filename, "P", "pscale", 1.0, P, maxdistance, maxp
 P = 0;
 foreach (int ptnum; closept)
 {
-    vector closepos = point(filename, "P", ptnum);
-    P += closepos;
+ vector closepos = point(filename, "P", ptnum);
+ P += closepos;
 }
 P /= len(closept);
 

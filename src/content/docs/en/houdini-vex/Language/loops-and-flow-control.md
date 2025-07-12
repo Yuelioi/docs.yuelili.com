@@ -22,9 +22,9 @@ if ( needs_zapping() ) zap()
 
 ```vex
 if ( needs_zapping() ) {
-    zap()
-    disintegrate()
-    remove_dust()
+ zap()
+ disintegrate()
+ remove_dust()
 }
 
 ```
@@ -89,10 +89,10 @@ Exits the function with an optional return value.
 
 ```vex
 int max(int a, b) {
-    if (a > b) {
-        return a;
-    }
-    return b;
+ if (a > b) {
+ return a;
+ }
+ return b;
 }
 
 ```
@@ -106,10 +106,10 @@ break
 ```vex
 for (int i = 0; i < sizes; i++)
 {
-    mixamount += getAmount(roughness);
-    if (mixamount > 1) {
-        break;
-    }
+ mixamount += getAmount(roughness);
+ if (mixamount > 1) {
+ break;
+ }
 }
 
 ```
@@ -122,8 +122,8 @@ continue
 
 ```vex
 foreach (x; myarray) {
-    if (x < 10) continue;
-    ...
+ if (x < 10) continue;
+ ...
 }
 
 ```

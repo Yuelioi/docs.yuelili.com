@@ -67,9 +67,9 @@ title: 图形样式
 
 #### 参数
 
-| 参数     | 类型   | 描述         |
-| -------- | ------ | ------------------ |
-| `name`   | 字符串 | 要获取的元素的名称 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `name` | 字符串 | 要获取的元素的名称 |
 
 #### 返回值
 
@@ -87,9 +87,9 @@ title: 图形样式
 
 #### 参数
 
-| 参数      | 类型     | 描述         |
-| --------- | -------------- | ------------------ |
-| `itemKey` | 字符串, 数字   | 字符串或数字键     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `itemKey` | 字符串, 数字 | 字符串或数字键 |
 
 #### 返回值
 
@@ -120,6 +120,6 @@ title: 图形样式
 // 并将结果存储在 numberOfStyles 中
 
 if (app.documents.length > 0) {
-    var numberOfStyles = app.activeDocument.graphicStyles.length;
+ var numberOfStyles = app.activeDocument.graphicStyles.length;
 }
 ```

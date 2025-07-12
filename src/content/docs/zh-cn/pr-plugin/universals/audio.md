@@ -31,23 +31,23 @@ sample16bit[n] = (short int) (sample32bit[n] * 32767.0)
 
 这些格式用于设置传递给 Premiere 的结构中的成员，以定义用户界面，并且不会影响传递给和从 Premiere 传递的音频格式。
 
-|     PrAudioSampleType      |      描述      |
-| ---------------------------------------- | -------------------------------------- |
-| `kPrAudioSampleType_8BitInt`      | 8位整数       |
-| `kPrAudioSampleType_8BitTwosInt`    | 8位整数，补码表示    |
-| `kPrAudioSampleType_16BitInt`     | 16位整数      |
-| `kPrAudioSampleType_24BitInt`     | 24位整数      |
-| `kPrAudioSampleType_32BitInt`     | 32位整数      |
-| `kPrAudioSampleType_32BitFloat`   | 32位浮点数      |
-| `kPrAudioSampleType_64BitFloat`   | 64位浮点数      |
-| `kPrAudioSampleType_16BitIntBigEndian`   | 16位整数，大端序     |
-| `kPrAudioSampleType_24BitIntBigEndian`   | 24位整数，大端序     |
-| `kPrAudioSampleType_32BitIntBigEndian`   | 32位整数，大端序     |
-| `kPrAudioSampleType_32BitFloatBigEndian` | 32位浮点数，大端序   |
-| `kPrAudioSampleType_Compressed`   | 任何非PCM格式      |
-| `kPrAudioSampleType_Packed`   | 任何混合样本类型的PCM格式   |
-| `kPrAudioSampleType_Other`      | 不在此列表中的样本类型    |
-| `kPrAudioSampleType_Any`    | 任何可用的样本类型（用于导出器）     |
+| PrAudioSampleType | 描述 |
+| --- | --- |
+| `kPrAudioSampleType_8BitInt` | 8位整数 |
+| `kPrAudioSampleType_8BitTwosInt` | 8位整数，补码表示 |
+| `kPrAudioSampleType_16BitInt` | 16位整数 |
+| `kPrAudioSampleType_24BitInt` | 24位整数 |
+| `kPrAudioSampleType_32BitInt` | 32位整数 |
+| `kPrAudioSampleType_32BitFloat` | 32位浮点数 |
+| `kPrAudioSampleType_64BitFloat` | 64位浮点数 |
+| `kPrAudioSampleType_16BitIntBigEndian` | 16位整数，大端序 |
+| `kPrAudioSampleType_24BitIntBigEndian` | 24位整数，大端序 |
+| `kPrAudioSampleType_32BitIntBigEndian` | 32位整数，大端序 |
+| `kPrAudioSampleType_32BitFloatBigEndian` | 32位浮点数，大端序 |
+| `kPrAudioSampleType_Compressed` | 任何非PCM格式 |
+| `kPrAudioSampleType_Packed` | 任何混合样本类型的PCM格式 |
+| `kPrAudioSampleType_Other` | 不在此列表中的样本类型 |
+| `kPrAudioSampleType_Any` | 任何可用的样本类型（用于导出器） |
 
 ---
 
@@ -73,22 +73,22 @@ Premiere 目前支持四种不同的音频通道类型：单声道、立体声�
 
 从 CC 开始，音频通道支持增加到 32 通道。
 
-|   PrAudioChannelType   |      描述      |
-|----------------------------------|---------------------------------------------------|
-| `kPrAudioChannelType_Mono`     | 单声道       |
-| `kPrAudioChannelType_Stereo`   | 立体声。立体声通道的顺序为：     |
-|    | - `kPrAudioChannelLabel_FrontLeft`   |
-|    | - `kPrAudioChannelLabel_FrontRight`      |
-| `kPrAudioChannelType_51`    | 5.1 音频。    |
-|    | 5.1 通道的顺序为：   |
-|    | - `kPrAudioChannelLabel_FrontLeft`   |
-|    | - `kPrAudioChannelLabel_FrontRight`      |
-|    | - `kPrAudioChannelLabel_BackLeft`    |
-|    | - `kPrAudioChannelLabel_BackRight`   |
-|    | - `kPrAudioChannelLabel_FrontCenter`   |
-|    | - `kPrAudioChannelLabel_LowFrequency`      |
-|    | - `kPrAudioChannelLabel_BackLeft`    |
-|    | - `kPrAudioChannelLabel_BackRight`   |
-| `kPrAudioChannelType_MaxChannel` | CC 新增。      |
-|    | `kMaxAudioChannelCount`，在 CC 中定义为 32 通道。 |
-|    | 所有通道使用 `kPrAudioChannelLabel_Discrete`。    |
+| PrAudioChannelType | 描述 |
+|---|---|
+| `kPrAudioChannelType_Mono` | 单声道 |
+| `kPrAudioChannelType_Stereo` | 立体声。立体声通道的顺序为： |
+| | - `kPrAudioChannelLabel_FrontLeft` |
+| | - `kPrAudioChannelLabel_FrontRight` |
+| `kPrAudioChannelType_51` | 5.1 音频。 |
+| | 5.1 通道的顺序为： |
+| | - `kPrAudioChannelLabel_FrontLeft` |
+| | - `kPrAudioChannelLabel_FrontRight` |
+| | - `kPrAudioChannelLabel_BackLeft` |
+| | - `kPrAudioChannelLabel_BackRight` |
+| | - `kPrAudioChannelLabel_FrontCenter` |
+| | - `kPrAudioChannelLabel_LowFrequency` |
+| | - `kPrAudioChannelLabel_BackLeft` |
+| | - `kPrAudioChannelLabel_BackRight` |
+| `kPrAudioChannelType_MaxChannel` | CC 新增。 |
+| | `kMaxAudioChannelCount`，在 CC 中定义为 32 通道。 |
+| | 所有通道使用 `kPrAudioChannelLabel_Discrete`。 |

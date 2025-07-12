@@ -15,7 +15,7 @@ Every object has a reflect property that returns a Reflection Object that report
 var f = new File ("myfile");
 var props = f.reflect.properties;
 for (var i = 0; i < props.length; i++) {
-    $.writeln('this property ' + props[i].name + ' is ' + f[props[i].name]);
+ $.writeln('this property ' + props[i].name + ' is ' + f[props[i].name]);
 }
 ```
 
@@ -24,7 +24,6 @@ for (var i = 0; i < props.length; i++) {
 :::info
 All properties are read only.
 :::
-
 
 #### description
 
@@ -112,9 +111,9 @@ Use this method to get information about dynamic properties that have not yet be
 
 ##### Parameters
 
-| Parameter |  Type  |                   Description                   |
-| --------- | ------ | ----------------------------------------------- |
-| name      | String | The property for which to retrieve information. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| name | String | The property for which to retrieve information. |
 
 #### Examples
 
@@ -200,8 +199,8 @@ String. One of:
 - `"number"`
 - `"string"`
 - `"Classname"`: The class name of an object.
-    !!! note
-        Class names start with a capital letter. Thus, the value `String` stands for a JavaScript string, while String is a JavaScript String wrapper object.
+ !!! note
+ Class names start with a capital letter. Thus, the value `String` stands for a JavaScript string, while String is a JavaScript String wrapper object.
 - `*`: Any type. This is the default.
 - `null`
 - `undefined`: Return data type for a function that does not return any value.

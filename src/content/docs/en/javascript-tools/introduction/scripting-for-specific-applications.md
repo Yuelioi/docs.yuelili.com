@@ -15,7 +15,7 @@ A script in a startup directory might be executed on startup by multiple applica
 
 ```javascript
 if ( BridgeTalk.appName == "bridge" ) {
-    //continue executing script
+ //continue executing script
 }
 ```
 
@@ -23,10 +23,10 @@ If a script that is run by one application will communicate with another applica
 
 ```javascript
 if ( BridgeTalk.appName == "bridge-2.0" ) {
-    // Check to see that Photoshop is installed.
-    if ( BridgeTalk.getSpecifier( "photoshop", 10 ) ){
-        // Add the Photoshop automate menu to the Adobe Bridge UI.
-    }
+ // Check to see that Photoshop is installed.
+ if ( BridgeTalk.getSpecifier( "photoshop", 10 ) ){
+ // Add the Photoshop automate menu to the Adobe Bridge UI.
+ }
 }
 ```
 

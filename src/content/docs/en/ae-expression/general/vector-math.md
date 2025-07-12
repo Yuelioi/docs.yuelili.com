@@ -31,10 +31,10 @@ Adds two vectors.
 
 #### Parameters
 
-| Parameter | Type  |      Description      |
-| --------- | ----- | --------------------- |
-| `vec1`    | Array | First vector to add.  |
-| `vec2`    | Array | Second vector to add. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `vec1` | Array | First vector to add. |
+| `vec2` | Array | Second vector to add. |
 
 #### Returns
 
@@ -52,11 +52,11 @@ The value of each component of `value` is constrained to fall between the values
 
 #### Parameters
 
-| Parameter |      Type       |             Description             |
-| --------- | --------------- | ----------------------------------- |
-| `value`   | Number or Array | Value to clamp.                     |
-| `limit1`  | Number or Array | Minimum amount to clamp `value` to. |
-| `limit2`  | Number or Array | Maximum amount to clamp `value` to. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `value` | Number or Array | Value to clamp. |
+| `limit1` | Number or Array | Minimum amount to clamp `value` to. |
+| `limit2` | Number or Array | Maximum amount to clamp `value` to. |
 
 #### Returns
 
@@ -85,10 +85,10 @@ Refer to a math reference or JavaScript guide for more information.
 
 #### Parameters
 
-| Parameter |            Type             |                 Description                  |
-| --------- | --------------------------- | -------------------------------------------- |
-| `vec1`    | Array (2- or 3-dimensional) | First vector to calculate cross product of.  |
-| `vec2`    | Array (2- or 3-dimensional) | Second vector to calculate cross product of. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `vec1` | Array (2- or 3-dimensional) | First vector to calculate cross product of. |
+| `vec2` | Array (2- or 3-dimensional) | Second vector to calculate cross product of. |
 
 #### Returns
 
@@ -106,10 +106,10 @@ Divides every element of the vector by the amount.
 
 #### Parameters
 
-| Parameter |  Type  |       Description       |
-| --------- | ------ | ----------------------- |
-| `vec`     | Array  | The vector to divide    |
-| `amount`  | Number | The amount to divide by |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `vec` | Array | The vector to divide |
+| `amount` | Number | The amount to divide by |
 
 #### Returns
 
@@ -127,10 +127,10 @@ Returns the dot (inner) product of the vector arguments.
 
 #### Parameters
 
-| Parameter | Type  |                Description                 |
-| --------- | ----- | ------------------------------------------ |
-| `vec1`    | Array | First vector to calculate dot product of.  |
-| `vec2`    | Array | Second vector to calculate dot product of. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `vec1` | Array | First vector to calculate dot product of. |
+| `vec2` | Array | Second vector to calculate dot product of. |
 
 #### Returns
 
@@ -152,13 +152,12 @@ If a second argument is provided, instead treats the first argument as a point a
 Using `length()` with two arguments is the same as `length(sub(vec, point2))`.
 :::
 
-
 #### Parameters
 
-| Parameter | Type  |                         Description                          |
-| --------- | ----- | ------------------------------------------------------------ |
-| `vec`     | Array | The vector to normalize, or the first point to measure from. |
-| `point2`  | Array | Optional. The second point to measure to.                    |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `vec` | Array | The vector to normalize, or the first point to measure from. |
+| `point2` | Array | Optional. The second point to measure to. |
 
 #### Returns
 
@@ -190,13 +189,12 @@ This method is especially useful for cameras and lights.
 If you use this expression on a camera, turn off auto-orientation.
 :::
 
-
 #### Parameters
 
-|  Parameter  |         Type          |                        Description                         |
-| ----------- | --------------------- | ---------------------------------------------------------- |
-| `fromPoint` | Array (3-dimensional) | The location (in world space) of the layer to orient.      |
-| `atPoint`   | Array (3-dimensional) | The point (in world space) you want to point the layer at. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `fromPoint` | Array (3-dimensional) | The location (in world space) of the layer to orient. |
+| `atPoint` | Array (3-dimensional) | The point (in world space) you want to point the layer at. |
 
 #### Returns
 
@@ -222,10 +220,10 @@ Multiplies every element of the vector by the amount.
 
 #### Parameters
 
-| Parameter |  Type  |        Description        |
-| --------- | ------ | ------------------------- |
-| `vec`     | Array  | The vector to multiply    |
-| `amount`  | Number | The amount to multiply by |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `vec` | Array | The vector to multiply |
+| `amount` | Number | The amount to multiply by |
 
 #### Returns
 
@@ -245,9 +243,9 @@ Using the normalize method is a short way of performing the operation `div(vec, 
 
 #### Parameters
 
-| Parameter | Type  |       Description       |
-| --------- | ----- | ----------------------- |
-| `vec`     | Array | The vector to normalize |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `vec` | Array | The vector to normalize |
 
 #### Returns
 
@@ -265,10 +263,10 @@ Subtracts two vectors.
 
 #### Parameters
 
-| Parameter | Type  |    Description    |
-| --------- | ----- | ----------------- |
-| `vec1`    | Array | The first vector  |
-| `vec2`    | Array | The second vector |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `vec1` | Array | The first vector |
+| `vec2` | Array | The second vector |
 
 #### Returns
 

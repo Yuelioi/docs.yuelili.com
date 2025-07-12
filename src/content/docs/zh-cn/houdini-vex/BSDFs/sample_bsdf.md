@@ -70,9 +70,9 @@ BSDF的标志位字段，定义在`pbr.h`中。函数可能会设置如`PBR_BSDF
 
 ```vex
 sample_bsdf(F, inI, outI, eval, type, sx, sy,
-    "direct", 0,     // 指定间接照明
-    "import:sssmfp", sssmfp,        // 读取导出的sssmfp参数
-    ...
+ "direct", 0, // 指定间接照明
+ "import:sssmfp", sssmfp, // 读取导出的sssmfp参数
+ ...
 );
 
 ```

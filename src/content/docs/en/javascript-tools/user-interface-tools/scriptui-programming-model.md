@@ -54,32 +54,32 @@ When a script creates a `Window` and adds various user-interface elements to it,
 Your script can access these values, and (if not using auto-layout) set them as follows:
 
 - The `location` of a window is defined by a [Point](../size-and-location-objects#point) object containing a pair of coordinates (`x` and `y`) for the top left corner (the origin), specified in the screen coordinate system. The location of an element within a window or other container is defined as the origin point specified in the container's coordinate system. That is, the x and y values are relative to the origin of the container.
-    - The following examples show equivalent ways of placing the content region of an existing window at screen coordinates [10, 50]:
-        ```javascript
-        win.location = [ 10, 50 ];
-        win.location = { x: 10, y: 50 };
-        win.location = "x:10, y:50";
-        ```
+ - The following examples show equivalent ways of placing the content region of an existing window at screen coordinates [10, 50]:
+ ```javascript
+ win.location = [ 10, 50 ];
+ win.location = { x: 10, y: 50 };
+ win.location = "x:10, y:50";
+ ```
 - The `size` of an element's region is defined by a [Dimension](../size-and-location-objects#dimension) object containing a `width` and `height` in pixels.
-    - The following examples show equivalent ways of changing an existing window's width and height to 200 and 100:
-        ```javascript
-        win.size = [ 200, 100 ];
-        win.size = { width: 200, height: 100 };
-        win.size = "width:200, height:100";
-        ```
-    - This example shows how to change a window's height to 100, leaving its location and width unchanged:
-        ```javascript
-        win.size.height = 100;
-        ```
+ - The following examples show equivalent ways of changing an existing window's width and height to 200 and 100:
+ ```javascript
+ win.size = [ 200, 100 ];
+ win.size = { width: 200, height: 100 };
+ win.size = "width:200, height:100";
+ ```
+ - This example shows how to change a window's height to 100, leaving its location and width unchanged:
+ ```javascript
+ win.size.height = 100;
+ ```
 - The `bounds` of an element are defined by a `Bounds` object containing both the origin point (`x`, `y`) and size (`width`, `height`) To define the size and location of windows and controls in one step, use the bounds property.
-    - The value of the `bounds` property can be a string with appropriate contents, an inline JavaScript `Bounds` object, or a four-element array. The following examples show equivalent ways of placing a 380 by 390 pixel window near the upper left corner of the screen:
-        ```javascript
-        var dlg = new Window( "dialog", "Alert Box Builder", [ 100, 100, 480, 490] );
-        dlg.bounds = [ 100, 100, 480, 490 ];
-        dlg.bounds = { x: 100, y: 100, width: 380, height: 390 };
-        dlg.bounds = { left: 100, top: 100, right: 480, bottom: 490 };
-        dlg.bounds = "left:100, top:100, right:480, bottom:490";
-        ```
+ - The value of the `bounds` property can be a string with appropriate contents, an inline JavaScript `Bounds` object, or a four-element array. The following examples show equivalent ways of placing a 380 by 390 pixel window near the upper left corner of the screen:
+ ```javascript
+ var dlg = new Window( "dialog", "Alert Box Builder", [ 100, 100, 480, 490] );
+ dlg.bounds = [ 100, 100, 480, 490 ];
+ dlg.bounds = { x: 100, y: 100, width: 380, height: 390 };
+ dlg.bounds = { left: 100, top: 100, right: 480, bottom: 490 };
+ dlg.bounds = "left:100, top:100, right:480, bottom:490";
+ ```
 
 The `window` dimensions define the size of the *content region* of the window, or that portion of the window that a script can directly control. The actual window size is typically larger, because the host platform's window system typically adds title bars and borders. The `bounds` property for a `Window` refers only to its content region. To determine the bounds of the frame surrounding the content region of a window, use the `Window.frameBounds` property.
 
@@ -125,7 +125,6 @@ dlg.btnPnl.buildBtn = dlg.btnPnl.add("button", undefined, "Build", {name: "ok"})
 :::note
 In Photoshop CS, panel coordinates were measured from outside the frame (including the title bar), but in Photoshop CS2, panel coordinates are measured from the inside the frame (the content area). This means that if you use the same values to set the vertical positions of child controls in a panel, the positions are slightly different in the two versions. When you add a panel to a window, you can choose to set a creation property (su1PanelCoordinates), which causes that panel to automatically adjust the positions of its children; see the add method for panel. When automatic adjustment is enabled, you provide position values that were correct for Photoshop CS, and the result is the same in Photoshop CS2, CS3, CS4, CS5, or CC. You can also set automatic adjustment for a window; in this case, it applies to all child panels of that window unless it is explicitly disabled in the child panel. See Window object constructor.
 :::
-
 
 ---
 

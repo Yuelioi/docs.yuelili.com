@@ -9,10 +9,10 @@ title: 访问函数套件
 
 ```cpp
 AEFX_SuiteScoper<PF_GPUDeviceSuite1> gpu_suite = AEFX_SuiteScoper<PF_GPUDeviceSuite1>(
-    in_dataP,
-    kPFGPUDeviceSuite,
-    kPFGPUDeviceSuiteVersion1,
-    out_dataP);
+ in_dataP,
+ kPFGPUDeviceSuite,
+ kPFGPUDeviceSuiteVersion1,
+ out_dataP);
 ```
 
 :::note

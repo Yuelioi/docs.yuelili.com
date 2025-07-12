@@ -29,10 +29,10 @@ preload选项会将整个点云加载到内存中。禁用此选项将使用瓦�
 int handle = pcopen(texturename, "P", P, maxdistance, maxpoints);
 while (pcunshaded(handle, "irradiance"))
 {
-    pcimport(handle, "P", cloudP);
-    pcimport(handle, "N", cloudN);
-    ir = computeIrraciance(cloudP, cloudN);
-    pcexport(handle, "irradiance", ir);
+ pcimport(handle, "P", cloudP);
+ pcimport(handle, "N", cloudN);
+ ir = computeIrraciance(cloudP, cloudN);
+ pcexport(handle, "irradiance", ir);
 }
 pcfilter(handle, radius, "irradiance", ir);
 
@@ -47,14 +47,14 @@ int rval, handle;
 handle = pcopen(texturename, "P", 0);
 while (pcunshaded(handle, "P"))
 {
-    sample = set(nrandom("qstrat"), nrandom("qstrat"), 0.0);
-    rval = sample_geometry(
-    sample, sample, Time,
-    "scope", getobjectname(),
-    "pipeline", "displacement",
-    "P", pos);
-    if (rval)
-    rval = pcexport(handle, "P", pos);
+ sample = set(nrandom("qstrat"), nrandom("qstrat"), 0.0);
+ rval = sample_geometry(
+ sample, sample, Time,
+ "scope", getobjectname(),
+ "pipeline", "displacement",
+ "P", pos);
+ if (rval)
+ rval = pcexport(handle, "P", pos);
 }
 pcclose(handle);
 

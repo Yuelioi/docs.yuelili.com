@@ -59,11 +59,11 @@ The clip must not be a solid color.
 
 The PiPL bits `anyPixelAspectRatio` and `unityPixelAspectRatio` must not be set.
 
-|   Flag    |            Description            |
-| ------------------------- | --------------------------------------------------------------------------------- |
-| `prEffectCanHandlePAR`    | Premiere should not make any adjustment to the source image to compensate for PAR |
-| `prEffectUnityPARSetup`   | Premiere should render the source image to square pixels during `fsSetup`         |
-| `prEffectUnityPARExecute` | Premiere should render the source image to square pixels during `fsExecute`       |
+| Flag | Description |
+| --- | --- |
+| `prEffectCanHandlePAR` | Premiere should not make any adjustment to the source image to compensate for PAR |
+| `prEffectUnityPARSetup` | Premiere should render the source image to square pixels during `fsSetup` |
+| `prEffectUnityPARExecute` | Premiere should render the source image to square pixels during `fsExecute` |
 
 ---
 

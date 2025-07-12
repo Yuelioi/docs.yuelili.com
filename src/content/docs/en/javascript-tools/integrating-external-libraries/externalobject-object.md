@@ -18,16 +18,15 @@ Before loading the library, the current folder is temporarily switched to the lo
 
 `obj = new ExternalObject ("lib:" + filespec, arg1, ...argn);`
 
-|   Parameter   |                                                                                  Description                                                                                   |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `filespec`    | The specifier "lib:" is case sensitive, and serves as the marker for dynamic libraries. Concatenate this to the base name of the shared library, with or without an extension. |
-|               | ExtendScript appends a file extension if necessary, according to the operating system:                                                                                         |
-|               | - `.dll` in Windows                                                                                                                                                            |
-|               | - `.bundle` or `.framework` in Mac OS (only Mach-O bundles are supported)                                                                                                      |
-|               | - `.so` in UNIX (except for HP/UX, where the extension is `.sl`)                                                                                                               |
-|               |     - The name of the library is case sensitive in UNIX.                                                                                                                       |
-| `arg1...argn` | Optional. Any number of arguments to pass to the library's initialization routine.                                                                                             |
-
+| Parameter | Description |
+|---|---|
+| `filespec` | The specifier "lib:" is case sensitive, and serves as the marker for dynamic libraries. Concatenate this to the base name of the shared library, with or without an extension. |
+| | ExtendScript appends a file extension if necessary, according to the operating system: |
+| | - `.dll` in Windows |
+| | - `.bundle` or `.framework` in Mac OS (only Mach-O bundles are supported) |
+| | - `.so` in UNIX (except for HP/UX, where the extension is `.sl`) |
+| | - The name of the library is case sensitive in UNIX. |
+| `arg1...argn` | Optional. Any number of arguments to pass to the library's initialization routine. |
 
 For example:
 
@@ -107,9 +106,9 @@ Reports whether a compiled C/C++ library can be found, but does not load it. If 
 
 #### Parameters
 
-| Parameter |  Type  |                                    Description                                     |
-| --------- | ------ | ---------------------------------------------------------------------------------- |
-| `spec`    | String | The file specification for the compiled library, with or without path information. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `spec` | String | The file specification for the compiled library, with or without path information. |
 
 #### Returns
 

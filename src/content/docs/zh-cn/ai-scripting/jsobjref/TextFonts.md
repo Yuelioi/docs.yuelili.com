@@ -67,9 +67,9 @@ title: 文本字体
 
 #### 参数
 
-| 参数      | 类型   | 描述         |
-| --------- | ------ | ------------------ |
-| `name`    | 字符串 | 要获取的元素的名称 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `name` | 字符串 | 要获取的元素的名称 |
 
 #### 返回值
 
@@ -87,9 +87,9 @@ title: 文本字体
 
 #### 参数
 
-| 参数      | 类型     | 描述         |
-| --------- | -------------- | ------------------ |
-| `itemKey` | 字符串, 数字   | 字符串或数字键     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `itemKey` | 字符串, 数字 | 字符串或数字键 |
 
 #### 返回值
 
@@ -118,30 +118,30 @@ var y = (docRef.height - edgeSpacing);
 var iCount = textFonts.length;
 
 for (var i=0; i<iCount; i++) {
-    sFontName = textFonts[i].name;
-    sFontName += " ";
-    sFontNames = sFontName + textFonts[i].style;
+ sFontName = textFonts[i].name;
+ sFontName += " ";
+ sFontNames = sFontName + textFonts[i].style;
 
-    var textRef = docRef.textFrames.add();
-    textRef.textRange.characterAttributes.size = 10;
-    textRef.contents = sFontNames;
-    textRef.top = y;
-    textRef.left = x;
+ var textRef = docRef.textFrames.add();
+ textRef.textRange.characterAttributes.size = 10;
+ textRef.contents = sFontNames;
+ textRef.top = y;
+ textRef.left = x;
 
-    // 检查文本框是否会超出文档边缘
-    if ((x + textRef.width)> docRef.width) {
-        textRef.remove();
-        iCount = i;
-        break;
-    } else {
-        // 显示文本框
-        textRef.textRange.characterAttributes.textFont = textFonts.getByName(textFonts[i].name);
-        redraw();
+ // 检查文本框是否会超出文档边缘
+ if ((x + textRef.width)> docRef.width) {
+ textRef.remove();
+ iCount = i;
+ break;
+ } else {
+ // 显示文本框
+ textRef.textRange.characterAttributes.textFont = textFonts.getByName(textFonts[i].name);
+ redraw();
 
-        if ((y-=(textRef.height)) <= 20) {
-      y = (docRef.height - edgeSpacing);
-      x += columnSpacing;
-        }
-    }
+ if ((y-=(textRef.height)) <= 20) {
+ y = (docRef.height - edgeSpacing);
+ x += columnSpacing;
+ }
+ }
 }
 ```

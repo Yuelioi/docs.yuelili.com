@@ -35,7 +35,6 @@ Property Groups can have a fixed number of properties (e.g. an individual effect
 On this page, we're going to use `thisLayer("ADBE Effect Parade")` (the "Effects" group) as a sample on how to call these items, however note that any method that returns a [PropertyGroup](#) will work.
 :::
 
-
 ---
 
 ## Attributes
@@ -65,7 +64,6 @@ Returns the number of properties or groups directly within a group.
 :::note
 This does not include properties nested inside child groups.
 :::
-
 
 #### Type
 
@@ -109,10 +107,9 @@ See [`propertyGroup()`](../property#propertygroup) for additional details.
 
 #### Parameters
 
-| Parameter |  Type  |                                      Description                                      |
-| --------- | ------ | ------------------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `countUp` | Number | Optional. The number of property groups "up" the hierarchy to climb. Defaults to `1`. |
-
 
 #### Returns
 

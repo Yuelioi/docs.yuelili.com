@@ -28,6 +28,6 @@ Examples
 ## examples
 
 ```vex
-int has_payload  = usd_haspayload(0, "/geo/sphere" );
+int has_payload = usd_haspayload(0, "/geo/sphere" );
 
 ```

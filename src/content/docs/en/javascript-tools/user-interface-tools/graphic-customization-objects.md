@@ -192,10 +192,10 @@ In Windows, it is typically a dashed-line rectangle around some part of the cont
 
 ##### Parameters
 
-|     Parameter     |  Type  |                                                      Description                                                       |
-| ----------------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
-| `left`, `top`     | Number | Defines the top left corner of the region, in the coordinate system of the control that contains this graphics object. |
-| `width`, `height` | Number | Optional. The width and height of the region in pixels.                                                                |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `left`, `top` | Number | Defines the top left corner of the region, in the coordinate system of the control that contains this graphics object. |
+| `width`, `height` | Number | Optional. The width and height of the region in pixels. |
 
 ##### Returns
 
@@ -213,11 +213,11 @@ Draws an image within the given rectangular region, using the image file from th
 
 ##### Parameters
 
-|     Parameter     |                     Type                      |                                                                                                   Description                                                                                                    |
-| ----------------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `image`           | [ScriptUIImage object](#scriptuiimage-object) | The ScriptUIImage object containing the images to be drawn.                                                                                                                                                      |
-| `left`, `top`     | Number                                        | Defines the top left corner of the drawing region, in the coordinate system of the control that contains this graphics object.                                                                                   |
-| `width`, `height` | Number                                        | Optional. The width and height of the drawing region in pixels. If specified, the image is stretched or shrunk to fit into the given rectangular area. If omitted, the image's original width or height is used. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `image` | [ScriptUIImage object](#scriptuiimage-object) | The ScriptUIImage object containing the images to be drawn. |
+| `left`, `top` | Number | Defines the top left corner of the drawing region, in the coordinate system of the control that contains this graphics object. |
+| `width`, `height` | Number | Optional. The width and height of the drawing region in pixels. If specified, the image is stretched or shrunk to fit into the given rectangular area. If omitted, the image's original width or height is used. |
 
 ##### Returns
 
@@ -249,12 +249,12 @@ Draws a string of text starting at a given point, using the given pen and font.
 
 ##### Parameters
 
-| Parameter |                    Type                     |                                                       Description                                                        |
-| --------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `text`    | String                                      | The text string.                                                                                                         |
-| `pen`     | [ScriptUIPen object](#scriptuipen-object)   | The [ScriptUIPen object](#scriptuipen-object) for the drawing pen to use.                                                |
-| `x`, `y`  | Number                                      | The origin point of the drawn text, in the coordinate system of the control that contains this graphics object.          |
-| `font`    | [ScriptUIFont object](#scriptuifont-object) | Optional. The [ScriptUIFont object](#scriptuifont-object) for the font to use. Default is the font value in this object. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `text` | String | The text string. |
+| `pen` | [ScriptUIPen object](#scriptuipen-object) | The [ScriptUIPen object](#scriptuipen-object) for the drawing pen to use. |
+| `x`, `y` | Number | The origin point of the drawn text, in the coordinate system of the control that contains this graphics object. |
+| `font` | [ScriptUIFont object](#scriptuifont-object) | Optional. The [ScriptUIFont object](#scriptuifont-object) for the font to use. Default is the font value in this object. |
 
 ##### Returns
 
@@ -274,10 +274,10 @@ Returns a [Point object](../size-and-location-objects#point) for the upper left 
 
 ##### Parameters
 
-|     Parameter     |  Type  |                                                      Description                                                       |
-| ----------------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
-| `left`, `top`     | Number | Defines the top left corner of the region, in the coordinate system of the control that contains this graphics object. |
-| `width`, `height` | Number | The width and height of the region in pixels.                                                                          |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `left`, `top` | Number | Defines the top left corner of the region, in the coordinate system of the control that contains this graphics object. |
+| `width`, `height` | Number | The width and height of the region in pixels. |
 
 ##### Returns
 
@@ -295,10 +295,10 @@ Fills a path using a given painting brush.
 
 ##### Parameters
 
-| Parameter |                     Type                      |                                                      Description                                                      |
-| --------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `brush`   | [ScriptUIBrush object](#scriptuibrush-object) | The ScriptUIBrush object that defines the fill color.                                                                 |
-| `path`    | [ScriptUIPath object](#scriptuipath-object)   | Optional, the [ScriptUIPath object](#scriptuipath-object) for the path. If not supplied, operates on the currentPath. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `brush` | [ScriptUIBrush object](#scriptuibrush-object) | The ScriptUIBrush object that defines the fill color. |
+| `path` | [ScriptUIPath object](#scriptuipath-object) | Optional, the [ScriptUIPath object](#scriptuipath-object) for the path. If not supplied, operates on the currentPath. |
 
 ##### Returns
 
@@ -318,9 +318,9 @@ Returns a [Point object](../size-and-location-objects#point) for the upper left 
 
 ##### Parameters
 
-| Parameter |  Type  |                                                  Description                                                   |
-| --------- | ------ | -------------------------------------------------------------------------------------------------------------- |
-| `x`, `y`  | Number | The destination point of the line, in the coordinate system of the control that contains this graphics object. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `x`, `y` | Number | The destination point of the line, in the coordinate system of the control that contains this graphics object. |
 
 ##### Returns
 
@@ -340,11 +340,11 @@ Returns a [Dimension object](../size-and-location-objects#dimension) object cont
 
 ##### Parameters
 
-|    Parameter    |                    Type                     |                                                                                 Description                                                                                 |
-| --------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `text`          | Text                                        | The text string to measure.                                                                                                                                                 |
-| `font`          | [ScriptUIFont object](#scriptuifont-object) | Optional. The [ScriptUIFont object](#scriptuifont-object) for the font to use. Default is the font value in this object.                                                    |
-| `boundingWidth` | Number                                      | Optional. A number that specifies the maximum width in pixels of the area in which the text might be placed. Use when wrapping a long string of text across multiple lines. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `text` | Text | The text string to measure. |
+| `font` | [ScriptUIFont object](#scriptuifont-object) | Optional. The [ScriptUIFont object](#scriptuifont-object) for the font to use. Default is the font value in this object. |
+| `boundingWidth` | Number | Optional. A number that specifies the maximum width in pixels of the area in which the text might be placed. Use when wrapping a long string of text across multiple lines. |
 
 ##### Returns
 
@@ -362,9 +362,9 @@ Adds a given point to the [`currentPath`](#currentpath), and makes it the [`curr
 
 ##### Parameters
 
-| Parameter |  Type  |                                           Description                                            |
-| --------- | ------ | ------------------------------------------------------------------------------------------------ |
-| `x`, `y`  | Number | The new coordinates, in the coordinate system of the control that contains this graphics object. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `x`, `y` | Number | The new coordinates, in the coordinate system of the control that contains this graphics object. |
 
 ##### Returns
 
@@ -382,16 +382,16 @@ Creates a new painting brush.
 
 ##### Parameters
 
-| Parameter |          Type           |                                                                                                             Description                                                                                                              |
-|-----------|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| type      | [BrushType](#brushtype) | The brush type, one of these constants:                                                                                                                                                                                              |
-|           |                         | - `ScriptUIGraphics.BrushType.SOLID_COLOR`                                                                                                                                                                                           |
-|           |                         | - `ScriptUIGraphics.BrushType.THEME_COLOR`                                                                                                                                                                                           |
-| color     | Array of Numbers        | The brush color. If type is `SOLID_COLOR`, the color expressed as an array of three or four values, in the form `[R, B, G, A]` specifying the red, green, and blue values of the color and, optionally, the opacity (alpha channel). |
-|           |                         | All values are numbers in the range `[0.0...1.0]`.                                                                                                                                                                                   |
-|           |                         | An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.                                                                                                                                                           |
-|           |                         | If the type is `THEME_COLOR`, the name string of the theme.                                                                                                                                                                          |
-|           |                         | Theme colors are defined by the host application.                                                                                                                                                                                    |
+| Parameter | Type | Description |
+|---|---|---|
+| type | [BrushType](#brushtype) | The brush type, one of these constants: |
+| | | - `ScriptUIGraphics.BrushType.SOLID_COLOR` |
+| | | - `ScriptUIGraphics.BrushType.THEME_COLOR` |
+| color | Array of Numbers | The brush color. If type is `SOLID_COLOR`, the color expressed as an array of three or four values, in the form `[R, B, G, A]` specifying the red, green, and blue values of the color and, optionally, the opacity (alpha channel). |
+| | | All values are numbers in the range `[0.0...1.0]`. |
+| | | An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque. |
+| | | If the type is `THEME_COLOR`, the name string of the theme. |
+| | | Theme colors are defined by the host application. |
 
 ##### Returns
 
@@ -423,17 +423,17 @@ Creates a new drawing pen.
 
 ##### Parameters
 
-|  Parameter  |        Type         |                                                                                                                   Description                                                                                                                   |
-|-------------|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| type        | [PenType](#pentype) | The pen type, one of these constants:                                                                                                                                                                                                           |
-|             |                     | - `ScriptUIGraphics.PenType.SOLID_COLOR`                                                                                                                                                                                                        |
-|             |                     | - `ScriptUIGraphics.PenType.THEME_COLOR`                                                                                                                                                                                                        |
-| `color`     | Array of Numbers    | The pen color. If type is SOLID_COLOR, the color expressed as an array of three or four values, in the form `[R, B, G, A]` specifying the red, green, and blue values of the color and, optionally, the opacity (alpha channel).                |
-|             |                     | All values are numbers in the range `[0.0...1.0]`.                                                                                                                                                                                              |
-|             |                     | An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.                                                                                                                                                                      |
-|             |                     | If the type is `THEME_COLOR`, the name string of the theme.                                                                                                                                                                                     |
-|             |                     | Theme colors are defined by the host application.                                                                                                                                                                                               |
-| `lineWidth` | Pixels              | The width in pixels of the line this pen will draw. The line is centered around the current point. For example, if lineWidth is 2, drawing a line from (0, 10) to (5, 10) paints the two rows of pixels directly above and below y-position 10. |
+| Parameter | Type | Description |
+|---|---|---|
+| type | [PenType](#pentype) | The pen type, one of these constants: |
+| | | - `ScriptUIGraphics.PenType.SOLID_COLOR` |
+| | | - `ScriptUIGraphics.PenType.THEME_COLOR` |
+| `color` | Array of Numbers | The pen color. If type is SOLID_COLOR, the color expressed as an array of three or four values, in the form `[R, B, G, A]` specifying the red, green, and blue values of the color and, optionally, the opacity (alpha channel). |
+| | | All values are numbers in the range `[0.0...1.0]`. |
+| | | An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque. |
+| | | If the type is `THEME_COLOR`, the name string of the theme. |
+| | | Theme colors are defined by the host application. |
+| `lineWidth` | Pixels | The width in pixels of the line this pen will draw. The line is centered around the current point. For example, if lineWidth is 2, drawing a line from (0, 10) to (5, 10) paints the two rows of pixels directly above and below y-position 10. |
 
 ##### Returns
 
@@ -453,10 +453,10 @@ Returns a [Point object](../size-and-location-objects#point) for the upper left 
 
 ##### Parameters
 
-|     Parameter     |  Type  |                                                      Description                                                       |
-| ----------------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
-| `left`, `top`     | Number | Defines the top left corner of the region, in the coordinate system of the control that contains this graphics object. |
-| `width`, `height` | Number | The width and height of the region in pixels.                                                                          |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `left`, `top` | Number | Defines the top left corner of the region, in the coordinate system of the control that contains this graphics object. |
+| `width`, `height` | Number | The width and height of the region in pixels. |
 
 ##### Returns
 
@@ -474,10 +474,10 @@ Strokes the path segments of a path with a given drawing pen.
 
 ##### Parameters
 
-| Parameter |                    Type                     |                                                      Description                                                      |
-| --------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `pen`     | [ScriptUIPen object](#scriptuipen-object)   | The [ScriptUIPen object](#scriptuipen-object) that defines the color and line width.                                  |
-| `path`    | [ScriptUIPath object](#scriptuipath-object) | Optional, the [ScriptUIPath object](#scriptuipath-object) for the path. If not supplied, operates on the currentPath. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `pen` | [ScriptUIPen object](#scriptuipen-object) | The [ScriptUIPen object](#scriptuipen-object) that defines the color and line width. |
+| `path` | [ScriptUIPath object](#scriptuipath-object) | Optional, the [ScriptUIPath object](#scriptuipath-object) for the path. If not supplied, operates on the currentPath. |
 
 ##### Returns
 
@@ -497,14 +497,14 @@ Passed as an argument to `fillPath()`.
 
 The object contains the following properties:
 
-| Property |      Type       |                                                                                                       Description                                                                                                       |
-|----------|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `color`  | Array of Number | The paint color to use when the type is `SOLID_COLOR`. An array in the form [R, B, G, A] specifying the red, green, blue values of the color and the opacity (alpha channel) value as numbers in the range [0.0...1.0]. |
-|          |                 | An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.                                                                                                                                              |
-| `theme`  | String          | The name of a color theme to use as a painting texture when the type is `THEME_COLOR`. Theme colors are defined by the host application.                                                                                |
-| `type`   | Number          | The brush type, one of these constants:                                                                                                                                                                                 |
-|          |                 | - `ScriptUIGraphics.BrushType.SOLID_COLOR`                                                                                                                                                                              |
-|          |                 | - `ScriptUIGraphics.BrushType.THEME_COLOR`                                                                                                                                                                              |
+| Property | Type | Description |
+|---|---|---|
+| `color` | Array of Number | The paint color to use when the type is `SOLID_COLOR`. An array in the form [R, B, G, A] specifying the red, green, blue values of the color and the opacity (alpha channel) value as numbers in the range [0.0...1.0]. |
+| | | An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque. |
+| `theme` | String | The name of a color theme to use as a painting texture when the type is `THEME_COLOR`. Theme colors are defined by the host application. |
+| `type` | Number | The brush type, one of these constants: |
+| | | - `ScriptUIGraphics.BrushType.SOLID_COLOR` |
+| | | - `ScriptUIGraphics.BrushType.THEME_COLOR` |
 
 ---
 
@@ -520,16 +520,16 @@ Passed as an argument to [`drawString()`](#drawstring) and [`measureString()`](#
 
 The object contains the following properties:
 
-|   Property   |  Type  |                                                             Description                                                              |
-|--------------|--------|--------------------------------------------------------------------------------------------------------------------------------------|
-| `family`     | String | The font family name.                                                                                                                |
-| `name`       | String | The complete font name, consisting of the family and style, if specified.                                                            |
-| `size`       | Number | The font point size.                                                                                                                 |
-| `style`      | Object | The font style. One of these constants:                                                                                              |
-|              |        | - `ScriptUI.FontStyle.REGULAR`                                                                                                       |
-|              |        | - `ScriptUI.FontStyle.BOLD`                                                                                                          |
-|              |        | - `ScriptUI.FontStyle.ITALIC`                                                                                                        |
-|              |        | - `ScriptUI.FontStyle.BOLDITALIC`                                                                                                    |
+| Property | Type | Description |
+|---|---|---|
+| `family` | String | The font family name. |
+| `name` | String | The complete font name, consisting of the family and style, if specified. |
+| `size` | Number | The font point size. |
+| `style` | Object | The font style. One of these constants: |
+| | | - `ScriptUI.FontStyle.REGULAR` |
+| | | - `ScriptUI.FontStyle.BOLD` |
+| | | - `ScriptUI.FontStyle.ITALIC` |
+| | | - `ScriptUI.FontStyle.BOLDITALIC` |
 | `substitute` | String | The name of a substitution font, a fallback font to substitute for this font if the requested font family or style is not available. |
 
 ---
@@ -548,12 +548,12 @@ This object is passed as an argument to [`drawImage()`](#drawimage).
 
 The object contains the following read-only properties:
 
-|  Property  |   Type    |                                                           Description                                                            |
-| ---------- | --------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `format`   | String    | The image format. Scripts can define images in `JPEG` and `PNG` format. Applications can define images in the `resource` format. |
-| `name`     | String    | The image name, either a file name or resource name.                                                                             |
-| `pathname` | String    | The full path to the file that contains the image.                                                                               |
-| `size`     | Dimension | A Dimension object that defines the size of the image in pixels.                                                                 |
+| Property | Type | Description |
+| --- | --- | --- |
+| `format` | String | The image format. Scripts can define images in `JPEG` and `PNG` format. Applications can define images in the `resource` format. |
+| `name` | String | The image name, either a file name or resource name. |
+| `pathname` | String | The full path to the file that contains the image. |
+| `size` | Dimension | A Dimension object that defines the size of the image in pixels. |
 
 ---
 
@@ -581,15 +581,15 @@ Passed as an argument to [`drawString()`](#drawstring) and [`strokePath()`](#str
 
 The object contains the following properties:
 
-|  Property   |      Type       |                                                                                                      Description                                                                                                      |
-|-------------|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `color`     | Array of Number | The paint color to use when the type is SOLID_COLOR. An array in the form [R, B, G, A] specifying the red, green, blue values of the color and the opacity (alpha channel) value as numbers in the range [0.0...1.0]. |
-|             |                 | An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.                                                                                                                                            |
-| `lineWidth` | Number          | The pixel width of the drawing line.                                                                                                                                                                                  |
-| `theme`     | String          | The name of a color theme to use for drawing when the type is `THEME_COLOR`. Theme colors are defined by the host application.                                                                                        |
-| `type`      | Number          | The pen type, one of these constants:                                                                                                                                                                                 |
-|             |                 | - `ScriptUIGraphics.PenType.SOLID_COLOR`                                                                                                                                                                              |
-|             |                 | - `ScriptUIGraphics.PenType.THEME_COLOR`                                                                                                                                                                              |
+| Property | Type | Description |
+|---|---|---|
+| `color` | Array of Number | The paint color to use when the type is SOLID_COLOR. An array in the form [R, B, G, A] specifying the red, green, blue values of the color and the opacity (alpha channel) value as numbers in the range [0.0...1.0]. |
+| | | An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque. |
+| `lineWidth` | Number | The pixel width of the drawing line. |
+| `theme` | String | The name of a color theme to use for drawing when the type is `THEME_COLOR`. Theme colors are defined by the host application. |
+| `type` | Number | The pen type, one of these constants: |
+| | | - `ScriptUIGraphics.PenType.SOLID_COLOR` |
+| | | - `ScriptUIGraphics.PenType.THEME_COLOR` |
 
 ---
 
@@ -601,21 +601,21 @@ Custom elements have the same common properties that other types of control elem
 
 The Custom element class has the following types of elements:
 
-|       Element        |                                                                                          Description                                                                                           |     |
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
-| `customBoundedValue` | Can be used to implement controls whose 'value' can vary within minimum and maximum bounds, like the Progressbar, Slider, and Scrollbar. Has the same additional properties as those controls: |     |
-|                      | - `value`                                                                                                                                                                                      |     |
-|                      | - `minvalue`                                                                                                                                                                                   |     |
-|                      | - `maxvalue`                                                                                                                                                                                   |     |
-|                      | - `shortcutKey`                                                                                                                                                                                |     |
-|                      | If the value property is changed, the control receives an onChange event notification, followed by an onDraw event notification, so the element can redraw itself with the changed state.      |     |
-| `customButton`       | Can be used to implement various types of button controls, like the `Button`, `IconButton` with text, `Checkbox`, and so on. Additional properties are:                                        |     |
-|                      | - `image`                                                                                                                                                                                      |     |
-|                      | - `shortcutKey`                                                                                                                                                                                |     |
-|                      | - `text`                                                                                                                                                                                       |     |
-|                      | - `value`                                                                                                                                                                                      |     |
-| `customView`         | Has an `image` property that allows a script to define an image to display.                                                                                                                    |     |
-|                      | If no `onDraw` function is defined and the image property is set, the default appearance is simply the specified image, rendered centered in the bounds of the element.                        |     |
+| Element | Description | |
+|---|---|---|
+| `customBoundedValue` | Can be used to implement controls whose 'value' can vary within minimum and maximum bounds, like the Progressbar, Slider, and Scrollbar. Has the same additional properties as those controls: | |
+| | - `value` | |
+| | - `minvalue` | |
+| | - `maxvalue` | |
+| | - `shortcutKey` | |
+| | If the value property is changed, the control receives an onChange event notification, followed by an onDraw event notification, so the element can redraw itself with the changed state. | |
+| `customButton` | Can be used to implement various types of button controls, like the `Button`, `IconButton` with text, `Checkbox`, and so on. Additional properties are: | |
+| | - `image` | |
+| | - `shortcutKey` | |
+| | - `text` | |
+| | - `value` | |
+| `customView` | Has an `image` property that allows a script to define an image to display. | |
+| | If no `onDraw` function is defined and the image property is set, the default appearance is simply the specified image, rendered centered in the bounds of the element. | |
 
 A custom element's onDraw event handler function is not called when the mouse enters or leaves the screen region occupied by the element.
 
@@ -626,16 +626,16 @@ In the following example, the script forces a visual update for a customButton e
 ```javascript
 var res =
 """palette {
-    text:'Custom elements demo',
-    properties:{ closeOnKey:'OSCmnd+W', resizeable:true },
-    customBtn: Custom {
-        type:'customButton',
-        text:'Redraw original image'
-    },
-    customImageViewer: Custom {
-        type:'customView',
-        alignment:['fill','fill']
-    }
+ text:'Custom elements demo',
+ properties:{ closeOnKey:'OSCmnd+W', resizeable:true },
+ customBtn: Custom {
+ type:'customButton',
+ text:'Redraw original image'
+ },
+ customImageViewer: Custom {
+ type:'customView',
+ alignment:['fill','fill']
+ }
 }""";
 
 var w = new Window (res);
@@ -646,16 +646,16 @@ w.customBtn.addEventListener ("mouseout", btnMouseEventHandler, false);
 // ...
 
 function btnMouseEventHandler (event) {
-    try {
-        //
-        Redraw the button on mouseover and mouseout
-        event.target.notify("onDraw");
-    } catch (e) {
-        ...
-    }
+ try {
+ //
+ Redraw the button on mouseover and mouseout
+ event.target.notify("onDraw");
+ } catch (e) {
+ ...
+ }
 }
 
 function drawButton (drawingState) {
-    ...
+ ...
 }
 ```

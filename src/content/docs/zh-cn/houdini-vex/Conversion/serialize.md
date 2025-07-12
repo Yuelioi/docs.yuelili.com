@@ -14,7 +14,7 @@ order: 12
 
 ```vex
 vector v[] = { {1,2,3}, {7,8,9} }; // 长度为2的vector[]
-float  f[];
+float f[];
 
 f = serialize(v);
 // 现在f[]的长度为6，等于{ 1,2,3,7,8,9 }

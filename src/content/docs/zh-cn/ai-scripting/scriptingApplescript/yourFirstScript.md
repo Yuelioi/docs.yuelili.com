@@ -11,19 +11,19 @@ title: 你的第一个 Illustrator 脚本
 
 1. 打开脚本编辑器。
 2. 输入以下脚本：
-    ```applescript
-    -- 将以下命令发送到 Illustrator
-    tell application "Adobe Illustrator"
+ ```applescript
+ -- 将以下命令发送到 Illustrator
+ tell application "Adobe Illustrator"
 
-    -- 创建一个新文档
-    set docRef to make new document
+ -- 创建一个新文档
+ set docRef to make new document
 
-    -- 创建一个包含字符串 "Hello World" 的新文本框
-    set textRef to make new text frame in docRef
-    with properties { contents: "Hello World!", position:{200, 200} }
+ -- 创建一个包含字符串 "Hello World" 的新文本框
+ set textRef to make new text frame in docRef
+ with properties { contents: "Hello World!", position:{200, 200} }
 
-    end tell
-    ```
+ end tell
+ ```
 3. 在脚本编辑器工具栏中，点击“运行”。
 
 ---
@@ -42,19 +42,19 @@ title: 你的第一个 Illustrator 脚本
 
 1. 在脚本编辑器中，选择“文件”>“新建”以创建一个新脚本。
 2. 输入以下代码：
-    ```applescript
-    tell application "Adobe Illustrator"
+ ```applescript
+ tell application "Adobe Illustrator"
 
-    -- 当前文档始终是活动文档
-    set docRef to the current document
-    set docWidth to the width of docRef
+ -- 当前文档始终是活动文档
+ set docRef to the current document
+ set docWidth to the width of docRef
 
-    -- 调整文本框的大小以匹配页面宽度
-    set width of text frame 1 of docRef to docWidth
+ -- 调整文本框的大小以匹配页面宽度
+ set width of text frame 1 of docRef to docWidth
 
-    -- 或者，可以直接引用项目，如下所示：
-    set width of text frame 1 of current document to docWidth
+ -- 或者，可以直接引用项目，如下所示：
+ set width of text frame 1 of current document to docWidth
 
-    end tell
-    ```
+ end tell
+ ```
 3. 运行脚本。

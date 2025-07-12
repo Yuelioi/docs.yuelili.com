@@ -27,7 +27,7 @@ Primvar名称（不带命名空间）。
 
 ```vex
 // 获取给定primvar对应的属性名称
-string attrib_name  = usd_primvarattribname(0, "some_primvar");
+string attrib_name = usd_primvarattribname(0, "some_primvar");
 int is_attrib = usd_isattrib(0, "/geo/sphere", attrib_name);
 
 ```

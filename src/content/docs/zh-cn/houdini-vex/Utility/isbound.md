@@ -17,13 +17,13 @@ mycolor(vector uv=0; string map="")
 {
 if (isbound("uv") && map != "")
 {
-    // 用户在此处有纹理坐标，因此基于纹理贴图创建速度
-    v = colormap(map, uv);
+ // 用户在此处有纹理坐标，因此基于纹理贴图创建速度
+ v = colormap(map, uv);
 }
 else
 {
-    // 没有纹理坐标，使用随机值
-    v = random(id);
+ // 没有纹理坐标，使用随机值
+ v = random(id);
 }
 ```
 

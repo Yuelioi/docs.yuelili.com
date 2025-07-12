@@ -128,7 +128,7 @@ afterfx.exe -r c:\myDocuments\Scripts\yourAEScriptHere.jsx afterfx.exe -r "c:\my
 
 ```applescript
 tell application "Adobe After Effects CS6"
-  DoScript "alert(\"You just sent an alert to After Effects\")"
+ DoScript "alert(\"You just sent an alert to After Effects\")"
 end tell
 ```
 
@@ -137,7 +137,7 @@ end tell
 ```applescript
 set theFile to choose file
 tell application "Adobe After Effects CS6"
-  DoScriptFile theFile
+ DoScriptFile theFile
 end tell
 ```
 
@@ -151,11 +151,11 @@ end tell
 *)
 
 tell application "TextEdit"
-  set the_script to text of front document
+ set the_script to text of front document
 end tell
 
 tell application "Adobe After Effects CS6" activate
-  DoScript the_script
+ DoScript the_script
 end tell
 ```
 
@@ -186,9 +186,9 @@ myPanel.add("button", [10, 10, 100, 30], "Tool #1");
 
 ```javascript
 function createUI(thisObj) {
-  var myPanel = thisObj;
-  myPanel.add("button", [10, 10, 100, 30], "Tool #1");
-  return myPanel;
+ var myPanel = thisObj;
+ myPanel.add("button", [10, 10, 100, 30], "Tool #1");
+ return myPanel;
 }
 var myToolsPanel = createUI(this);
 ```
@@ -197,10 +197,10 @@ var myToolsPanel = createUI(this);
 
 ```javascript
 function createUI(thisObj) {
-  var myPanel = (thisObj instanceof Panel) ? thisObj : new Window("palette", "My Tools",
-  [100, 100, 300, 300]);
-  myPanel.add("button", [10, 10, 100, 30], "Tool #1");
-  return myPanel;
+ var myPanel = (thisObj instanceof Panel) ? thisObj : new Window("palette", "My Tools",
+ [100, 100, 300, 300]);
+ myPanel.add("button", [10, 10, 100, 30], "Tool #1");
+ return myPanel;
 }
 var myToolsPanel = createUI(this);
 ```

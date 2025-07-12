@@ -117,9 +117,9 @@ title: 源文本
 
 ```js
 text.sourceText
-    .createStyle()
-    .setFontSize(300)
-    .setFont("Impact");
+ .createStyle()
+ .setFontSize(300)
+ .setFont("Impact");
 ```
 
 ---
@@ -140,10 +140,10 @@ text.sourceText
 
 #### 参数
 
-| 参数      | 类型 | 描述      |
-| --------- | ---- | ------------------------------------------- |
-| `index` | 数字 | 需要样式的字母或字符的索引          |
-| `time`  | 数字 | 可选。获取样式的合成时间。默认为 `time`。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `index` | 数字 | 需要样式的字母或字符的索引 |
+| `time` | 数字 | 可选。获取样式的合成时间。默认为 `time`。 |
 
 #### 返回
 

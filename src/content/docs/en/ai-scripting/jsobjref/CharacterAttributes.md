@@ -13,7 +13,6 @@ Specifies the properties of a character contained in a text frame. A `CharacterS
 Character attributes do not have default values, and are undefined until explicitly set.
 :::
 
-
 ---
 
 ## Properties
@@ -765,7 +764,7 @@ textRef.left = 100;
 var charCount = textRef.textRange.characters.length;
 var size = 100;
 for (var i = 0; i < charCount; i++, size *= 1.2) {
-    textRef.textRange.characters[i].characterAttributes.horizontalScale = size;
-    textRef.textRange.characters[i].characterAttributes.verticalScale = size;
+ textRef.textRange.characters[i].characterAttributes.horizontalScale = size;
+ textRef.textRange.characters[i].characterAttributes.verticalScale = size;
 }
 ```

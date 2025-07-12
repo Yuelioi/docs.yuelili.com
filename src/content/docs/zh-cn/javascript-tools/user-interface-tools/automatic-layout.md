@@ -43,11 +43,11 @@ myWin.layout = new AutoLayoutManager( myWin );
 
 ```javascript
 var w = new Window( "window { \
-    orientation: 'row', \
-    st: StaticText { }, \
-    pb: Button { text: 'OK' }, \
+ orientation: 'row', \
+ st: StaticText { }, \
+ pb: Button { text: 'OK' }, \
 
-    et: EditText { characters:4, justify:'right' } \
+ et: EditText { characters:4, justify:'right' } \
 }");
 
 w.show();
@@ -61,17 +61,17 @@ w.show();
 
 容器的 `orientation` 属性指定其子元素的组织方式。它可以具有以下值：
 
-|  值   |     行为     |
-| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `row`    | 子元素排列在容器中的单行中，从左到右排列。容器的高度基于行中最高的子元素的高度，容器的宽度基于所有子元素的宽度之和。   |
-| `column` | 子元素排列在容器中的单列中，从上到下排列。容器的高度基于所有子元素的高度之和，容器的宽度基于列中最宽的子元素的宽度。   |
-| `stack`  | 子元素重叠排列，就像一叠纸一样。元素在容器的同一区域中重叠。只有最上面的元素完全可见。容器的高度基于堆栈中最高的子元素的高度，容器的宽度基于堆栈中最宽的子元素的宽度。 |
+| 值 | 行为 |
+| --- | --- |
+| `row` | 子元素排列在容器中的单行中，从左到右排列。容器的高度基于行中最高的子元素的高度，容器的宽度基于所有子元素的宽度之和。 |
+| `column` | 子元素排列在容器中的单列中，从上到下排列。容器的高度基于所有子元素的高度之和，容器的宽度基于列中最宽的子元素的宽度。 |
+| `stack` | 子元素重叠排列，就像一叠纸一样。元素在容器的同一区域中重叠。只有最上面的元素完全可见。容器的高度基于堆栈中最高的子元素的高度，容器的宽度基于堆栈中最宽的子元素的宽度。 |
 
 下图显示了使用这些方向布局示例窗口的结果：
 
-![Orientation = Row](./_static/04_user-interface-tools_automatic-layout_container-orientation_row.jpg)  
-![Orientation = Column](./_static/04_user-interface-tools_automatic-layout_container-orientation_column.jpg)  
-![Orientation = Stack](./_static/04_user-interface-tools_automatic-layout_container-orientation_stack.jpg)  
+![Orientation = Row](./_static/04_user-interface-tools_automatic-layout_container-orientation_row.jpg) 
+![Orientation = Column](./_static/04_user-interface-tools_automatic-layout_container-orientation_column.jpg) 
+![Orientation = Stack](./_static/04_user-interface-tools_automatic-layout_container-orientation_stack.jpg) 
 
 ---
 
@@ -91,47 +91,47 @@ myGroup.alignment = [ ScriptUI.Alignment.LEFT, ScriptUI.Alignment.TOP]
 
 行中的元素可以沿垂直轴对齐，方式如下：
 
-|  值   |    行为    |
-| -------- | -------------------------------------------------------------------------------------------------------- |
-| `top`    | 元素的顶部边缘位于其容器的顶部边距处。        |
-| `bottom` | 元素的底部边缘位于其容器的底部边距处。    |
-| `center` | 元素在其容器的顶部和底部边距之间居中。    |
-| `fill`   | 元素的高度调整为填充容器在顶部和底部边距之间的高度。 |
+| 值 | 行为 |
+| --- | --- |
+| `top` | 元素的顶部边缘位于其容器的顶部边距处。 |
+| `bottom` | 元素的底部边缘位于其容器的底部边距处。 |
+| `center` | 元素在其容器的顶部和底部边距之间居中。 |
+| `fill` | 元素的高度调整为填充容器在顶部和底部边距之间的高度。 |
 
 列中的元素可以沿水平轴对齐，方式如下：
 
-|  值   |   行为   |
-| -------- | ------------------------------------------------------------------------------------------------------ |
-| `left`   | 元素的左边缘位于其容器的左边距处。       |
-| `right`  | 元素的右边缘位于其容器的右边距处。    |
-| `center` | 元素在其容器的右边和左边距之间居中。      |
-| `fill`   | 元素的宽度调整为填充容器在右边和左边距之间的宽度。 |
+| 值 | 行为 |
+| --- | --- |
+| `left` | 元素的左边缘位于其容器的左边距处。 |
+| `right` | 元素的右边缘位于其容器的右边距处。 |
+| `center` | 元素在其容器的右边和左边距之间居中。 |
+| `fill` | 元素的宽度调整为填充容器在右边和左边距之间的宽度。 |
 
 堆栈中的元素可以沿垂直或水平轴对齐，方式如下：
 
-|  值   |   行为   |
-| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `top`    | 元素的顶部边缘位于其容器的顶部边距处，并且元素在其容器的右边和左边距之间居中。        |
-| `bottom` | 元素的底部边缘位于其容器的底部边距处，并且元素在其容器的右边和左边距之间居中。   |
-| `left`   | 元素的左边缘位于其容器的左边距处，并且元素在其容器的顶部和底部边距之间居中。      |
-| `right`  | 元素的右边缘位于其容器的右边距处，并且元素在其容器的顶部和底部边距之间居中。-      |
-| `center` | 元素在其容器的顶部、底部、右边和左边距之间居中。      |
-| `fill`   | 元素的高度调整为填充容器在顶部和底部边距之间的高度，并且元素的宽度调整为填充容器在右边和左边距之间的宽度。 |
+| 值 | 行为 |
+| --- | --- |
+| `top` | 元素的顶部边缘位于其容器的顶部边距处，并且元素在其容器的右边和左边距之间居中。 |
+| `bottom` | 元素的底部边缘位于其容器的底部边距处，并且元素在其容器的右边和左边距之间居中。 |
+| `left` | 元素的左边缘位于其容器的左边距处，并且元素在其容器的顶部和底部边距之间居中。 |
+| `right` | 元素的右边缘位于其容器的右边距处，并且元素在其容器的顶部和底部边距之间居中。- |
+| `center` | 元素在其容器的顶部、底部、右边和左边距之间居中。 |
+| `fill` | 元素的高度调整为填充容器在顶部和底部边距之间的高度，并且元素的宽度调整为填充容器在右边和左边距之间的宽度。 |
 
 下图显示了创建具有行方向的示例窗口并在父容器的 `alignChildren` 属性中设置 `bottom` 和 `top` 对齐设置的结果：
 
-![alignChildren = bottom](./_static/04_user-interface-tools_automatic-layout_aligning-children_bottom.jpg)  
-![alignChildren = top](./_static/04_user-interface-tools_automatic-layout_aligning-children_top.jpg)  
+![alignChildren = bottom](./_static/04_user-interface-tools_automatic-layout_aligning-children_bottom.jpg) 
+![alignChildren = top](./_static/04_user-interface-tools_automatic-layout_aligning-children_top.jpg) 
 
 下图显示了创建具有列方向的示例窗口并在父容器的 `alignChildren` 属性中设置 `right`、`left` 和 `fill` 对齐设置的结果。请注意在 `fill` 情况下，每个元素的宽度都调整为容器中最宽元素的宽度：
 
-![alignChildren = left](./_static/04_user-interface-tools_automatic-layout_aligning-children_left.jpg)  
-![alignChildren = right](./_static/04_user-interface-tools_automatic-layout_aligning-children_right.jpg)  
-![alignChildren = fill](./_static/04_user-interface-tools_automatic-layout_aligning-children_fill.jpg)  
+![alignChildren = left](./_static/04_user-interface-tools_automatic-layout_aligning-children_left.jpg) 
+![alignChildren = right](./_static/04_user-interface-tools_automatic-layout_aligning-children_right.jpg) 
+![alignChildren = fill](./_static/04_user-interface-tools_automatic-layout_aligning-children_fill.jpg) 
 
 您可以通过设置特定子元素的 `alignment` 属性来覆盖容器的子元素对齐方式（由 `alignChildren` 指定）。下图显示了当父容器的 `alignChildren` 值为 `left` 时，将 `EditText` 元素的 `alignment` 设置为 `right` 的结果：
 
-![override alignChildren = left](./_static/04_user-interface-tools_automatic-layout_aligning-children_override-left.jpg)  
+![override alignChildren = left](./_static/04_user-interface-tools_automatic-layout_aligning-children_override-left.jpg) 
 
 ---
 
@@ -142,9 +142,9 @@ myGroup.alignment = [ ScriptUI.Alignment.LEFT, ScriptUI.Alignment.TOP]
 下图显示了示例脚本 [SnpAlignElements.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SnpAlignElements.jsx) 的结果，该脚本演示了如何指定二维对齐。
 
 - 在第一个图中，每个控件在其行中垂直居中，并使用诸如 `["left", "center"]` 的对齐值将每个元素放置在特定的水平位置：
-    ![Horizontal Alignment](./_static/04_user-interface-tools_automatic-layout_alignment-in-2d_horizontal.jpg)  
+ ![Horizontal Alignment](./_static/04_user-interface-tools_automatic-layout_alignment-in-2d_horizontal.jpg) 
 - 垂直对齐示例创建了四列，并将控件沿垂直轴放置在每列中。它使用诸如 `["fill", "top"]` 的对齐值在列中分布控件，同时仍然控制相对垂直位置：
-    ![Vertical Alignment](./_static/04_user-interface-tools_automatic-layout_alignment-in-2d_vertical.jpg)  
+ ![Vertical Alignment](./_static/04_user-interface-tools_automatic-layout_alignment-in-2d_vertical.jpg) 
 
 ---
 
@@ -154,12 +154,12 @@ myGroup.alignment = [ ScriptUI.Alignment.LEFT, ScriptUI.Alignment.TOP]
 
 下图显示了创建具有行方向和 5 和 15 像素边距的示例窗口的结果：
 
-![margins = 5](./_static/04_user-interface-tools_automatic-layout_margins_margin5.jpg)  
-![margins = 15](./_static/04_user-interface-tools_automatic-layout_margins_margin15.jpg)  
+![margins = 5](./_static/04_user-interface-tools_automatic-layout_margins_margin5.jpg) 
+![margins = 15](./_static/04_user-interface-tools_automatic-layout_margins_margin15.jpg) 
 
 此图显示了创建具有列方向、顶部边距为 0 像素、底部边距为 20 像素以及左右边距为 15 像素的示例窗口的结果：
 
-![margins = 15,0,15,20](./_static/04_user-interface-tools_automatic-layout_margins_mixed.jpg)  
+![margins = 15,0,15,20](./_static/04_user-interface-tools_automatic-layout_margins_mixed.jpg) 
 
 ---
 
@@ -169,12 +169,12 @@ myGroup.alignment = [ ScriptUI.Alignment.LEFT, ScriptUI.Alignment.TOP]
 
 此图显示了创建具有行方向和 15 和 5 像素间距的示例窗口的结果：
 
-![spacing = 5](./_static/04_user-interface-tools_automatic-layout_spacing_spacing5.jpg)  
-![spacing = 15](./_static/04_user-interface-tools_automatic-layout_spacing_spacing15.jpg)  
+![spacing = 5](./_static/04_user-interface-tools_automatic-layout_spacing_spacing5.jpg) 
+![spacing = 15](./_static/04_user-interface-tools_automatic-layout_spacing_spacing15.jpg) 
 
 此图显示了创建具有列方向和 20 像素间距的示例窗口的结果：
 
-![spacing = 20](./_static/04_user-interface-tools_automatic-layout_spacing_spacing20.jpg)  
+![spacing = 20](./_static/04_user-interface-tools_automatic-layout_spacing_spacing20.jpg) 
 
 ---
 
@@ -202,28 +202,28 @@ myGroup.alignment = [ ScriptUI.Alignment.LEFT, ScriptUI.Alignment.TOP]
 
 ```javascript
 var res = "dialog { \
-    info: Panel { orientation: 'column', \
-     text: 'Personal Info', \
-     name: Group { orientation: 'row', \
-      s: StaticText { text:'Name:' }, \
-      e: EditText { characters: 30 } \
-     }, \
-     addr: Group { orientation: 'row', \
-      s: StaticText { text:'Street / City:' }, \
-      e: EditText { characters: 30 } \
-     } \
-    }, \
-    buttons: Group { orientation: 'row', \
-     okBtn: Button { text:'OK', properties:{name:'ok'} }, \
-     cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
-    } \
+ info: Panel { orientation: 'column', \
+ text: 'Personal Info', \
+ name: Group { orientation: 'row', \
+ s: StaticText { text:'Name:' }, \
+ e: EditText { characters: 30 } \
+ }, \
+ addr: Group { orientation: 'row', \
+ s: StaticText { text:'Street / City:' }, \
+ e: EditText { characters: 30 } \
+ } \
+ }, \
+ buttons: Group { orientation: 'row', \
+ okBtn: Button { text:'OK', properties:{name:'ok'} }, \
+ cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
+ } \
 }";
 win = new Window( res );
 win.center();
 win.show();
 ```
 
-![Unaligned](./_static/04_user-interface-tools_automatic-layout_complex-arrangements_unaligned.jpg)  
+![Unaligned](./_static/04_user-interface-tools_automatic-layout_complex-arrangements_unaligned.jpg) 
 
 在这个最简单的示例中，列没有垂直对齐。当您在行中使用固定宽度的控件时，一种简单的方法是将 `StaticText` 标签对齐到面板的右侧。在示例中，将以下内容添加到 `Panel` 规范中：
 
@@ -233,37 +233,37 @@ info: Panel { orientation: 'column', alignChildren:'right', \
 
 这将创建以下结果：
 
-![Aligned](./_static/04_user-interface-tools_automatic-layout_complex-arrangements_aligned.jpg)  
+![Aligned](./_static/04_user-interface-tools_automatic-layout_complex-arrangements_aligned.jpg) 
 
 假设现在您需要两个面板，并且希望每个面板在对话框中具有相同的宽度。您可以在对话框窗口对象级别指定这一点，即两个面板的父级。指定 `alignChildren="fill"`，这会使对话框的每个子元素匹配其宽度到最宽的子元素。
 
 ```javascript
 var res = "dialog { alignChildren: 'fill', \
-    info: Panel { orientation: 'column', alignChildren:'right', \
-     text: 'Personal Info', \
-     name: Group { orientation: 'row', \
-      s: StaticText { text:'Name:' }, \
-      e: EditText { characters: 30 } \
-     } \
-    }, \
-    workInfo: Panel { orientation: 'column', \
-     text: 'Work Info', \
-     name: Group { orientation: 'row', \
-      s: StaticText { text:'Company name:' }, \
-      e: EditText { characters: 30 } \
-     } \
-    }, \
-    buttons: Group { orientation: 'row', alignment: 'right', \
-     okBtn: Button { text:'OK', properties:{name:'ok'} }, \
-     cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
-    } \
+ info: Panel { orientation: 'column', alignChildren:'right', \
+ text: 'Personal Info', \
+ name: Group { orientation: 'row', \
+ s: StaticText { text:'Name:' }, \
+ e: EditText { characters: 30 } \
+ } \
+ }, \
+ workInfo: Panel { orientation: 'column', \
+ text: 'Work Info', \
+ name: Group { orientation: 'row', \
+ s: StaticText { text:'Company name:' }, \
+ e: EditText { characters: 30 } \
+ } \
+ }, \
+ buttons: Group { orientation: 'row', alignment: 'right', \
+ okBtn: Button { text:'OK', properties:{name:'ok'} }, \
+ cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
+ } \
 }";
 win = new Window( res );
 win.center();
 win.show();
 ```
 
-![Groups](./_static/04_user-interface-tools_automatic-layout_complex-arrangements_groups.jpg)  
+![Groups](./_static/04_user-interface-tools_automatic-layout_complex-arrangements_groups.jpg) 
 
 为了使按钮出现在对话框的右侧，`buttons` 组覆盖了其父级（对话框）的 `fill` 对齐方式，并指定 `alignment="right"`。
 
@@ -277,8 +277,8 @@ win.show();
 
 例如，此对话框根据用户在 `DropDownList` 中的选择动态更改。
 
-![Personal Info](./_static/04_user-interface-tools_automatic-layout_dynamic-content_personalInfo.jpg)  
-![Work Info](./_static/04_user-interface-tools_automatic-layout_dynamic-content_workInfo.jpg)  
+![Personal Info](./_static/04_user-interface-tools_automatic-layout_dynamic-content_personalInfo.jpg) 
+![Work Info](./_static/04_user-interface-tools_automatic-layout_dynamic-content_workInfo.jpg) 
 
 以下脚本创建此对话框。它将前面示例中的“Personal Info”和“Work Info”面板压缩为一个具有两个 `Group` 的 `Panel`，这些 `Group` 排列在堆栈中。`DropDownList` 允许用户选择要查看的信息集。当用户在列表中进行选择时，其 `onChange` 函数显示一个组并隐藏另一个组。
 

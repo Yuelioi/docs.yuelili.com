@@ -55,17 +55,17 @@ order: 11
 matrix ndc;
 if (teximport(map, "texture:worldtoNDC", ndc))
 {
-    vector P_ndc = pos * ndc;
-    // 如果是透视相机
-    // 对点进行去齐次化
-    if (getcomp(ndc, 2, 3) != 0)
-    {
-    P_ndc.x = P_ndc.x / P_ndc.z;
-    P_ndc.y = P_ndc.y / P_ndc.z;
-    }
-    // 最后将XY从[-1,1]缩放偏移到[0,1]
-    P_ndc *= {.5, .5, 1};
-    P_ndc += {.5, .5, 0};
+ vector P_ndc = pos * ndc;
+ // 如果是透视相机
+ // 对点进行去齐次化
+ if (getcomp(ndc, 2, 3) != 0)
+ {
+ P_ndc.x = P_ndc.x / P_ndc.z;
+ P_ndc.y = P_ndc.y / P_ndc.z;
+ }
+ // 最后将XY从[-1,1]缩放偏移到[0,1]
+ P_ndc *= {.5, .5, 1};
+ P_ndc += {.5, .5, 0};
 }
 ```
 
@@ -121,27 +121,27 @@ if (teximport(map, "texture:worldtoNDC", ndc))
 cvex
  test(string map="Mandril.rat")
 {
-    for (string token : {
-   "texture:xres",
-   "texture:yres",
-   "texture:channels",
-   "texture:resolution",
-   "texture:tokens",
-   "image:pixelaspect",
-   "space:world"
-      })
-    {
-    float fval;
-    vector vval;
-    matrix mval;
+ for (string token : {
+ "texture:xres",
+ "texture:yres",
+ "texture:channels",
+ "texture:resolution",
+ "texture:tokens",
+ "image:pixelaspect",
+ "space:world"
+ })
+ {
+ float fval;
+ vector vval;
+ matrix mval;
 
-    printf("----------------- %s ---------------------\n", token);
-    if (teximport(map, token, fval))
-      printf("'%s' = %g\n", token, fval);
-    else if (teximport(map, token, vval))
-      printf("'%s' = %g\n", token, vval);
-    else if (teximport(map, token, mval))
-      printf("'%s' = %g\n", token, mval);
-    }
+ printf("----------------- %s ---------------------\n", token);
+ if (teximport(map, token, fval))
+ printf("'%s' = %g\n", token, fval);
+ else if (teximport(map, token, vval))
+ printf("'%s' = %g\n", token, vval);
+ else if (teximport(map, token, mval))
+ printf("'%s' = %g\n", token, mval);
+ }
 }
 ```

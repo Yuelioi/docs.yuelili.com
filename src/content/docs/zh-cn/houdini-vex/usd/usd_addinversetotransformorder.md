@@ -39,7 +39,7 @@ order: 4
 
 // 构造枢轴平移操作的后缀和名称
 string pivot_xform_suffix = "some_pivot";
-string pivot_xform_name   = usd_transformname(USD_XFORM_TRANSLATE, pivot_xform_suffix);
+string pivot_xform_name = usd_transformname(USD_XFORM_TRANSLATE, pivot_xform_suffix);
 
 // 绕通过枢轴点(1,0,0)的z轴旋转
 usd_addtranslate(0, "/geo/cone", pivot_xform_suffix, {1, 0, 0});

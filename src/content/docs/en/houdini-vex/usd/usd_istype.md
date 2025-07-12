@@ -34,8 +34,8 @@ Examples
 
 ```vex
 // Check if the primitive is a Cube and is boundable
-int is_cube_by_alias     = usd_istype(0, "/geo/cube", "Cube");
-int is_cube_by_name      = usd_istype(0, "/geo/cube", "UsdGeomCube");
+int is_cube_by_alias = usd_istype(0, "/geo/cube", "Cube");
+int is_cube_by_name = usd_istype(0, "/geo/cube", "UsdGeomCube");
 int is_boundable_by_name = usd_istype(0, "/geo/cube", "UsdGeomBoundable");
 
 ```

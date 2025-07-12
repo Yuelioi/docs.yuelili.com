@@ -7,7 +7,7 @@ title: 函数描述
 
 ```cpp
 prSuiteError (*CreateInstance)(
-  PrGPUFilterInstance*  ioInstanceData);
+ PrGPUFilterInstance* ioInstanceData);
 ```
 
 创建一个表示轨道项上的效果或过渡的 GPU 过滤器实例。
@@ -24,7 +24,7 @@ prSuiteError (*CreateInstance)(
 
 ```cpp
 prSuiteError (*DisposeInstance)(
-  PrGPUFilterInstance*  ioInstanceData);
+ PrGPUFilterInstance* ioInstanceData);
 ```
 
 清理在 `CreateInstance` 期间分配的任何资源。
@@ -35,10 +35,10 @@ prSuiteError (*DisposeInstance)(
 
 ```cpp
 prSuiteError (*GetFrameDependencies)(
-  PrGPUFilterInstance*   inInstanceData,
-  const PrGPUFilterRenderParams*  inRenderParams,
-  csSDK_int32*       ioQueryIndex,
-  PrGPUFilterFrameDependency*     outFrameDependencies);
+ PrGPUFilterInstance* inInstanceData,
+ const PrGPUFilterRenderParams* inRenderParams,
+ csSDK_int32* ioQueryIndex,
+ PrGPUFilterFrameDependency* outFrameDependencies);
 ```
 
 返回渲染的依赖信息，如果只需要当前帧，则返回空。
@@ -51,10 +51,10 @@ prSuiteError (*GetFrameDependencies)(
 
 ```cpp
 prSuiteError (*Precompute)(
-  PrGPUFilterInstance*   inInstanceData,
-  const PrGPUFilterRenderParams*  inRenderParams,
-  csSDK_int32    inIndex,
-  PPixHand       inFrame);
+ PrGPUFilterInstance* inInstanceData,
+ const PrGPUFilterRenderParams* inRenderParams,
+ csSDK_int32 inIndex,
+ PPixHand inFrame);
 ```
 
 将结果预计算到预分配的未初始化主机（固定）内存中。
@@ -73,11 +73,11 @@ prSuiteError (*Precompute)(
 
 ```cpp
 prSuiteError (*Render)(
-  PrGPUFilterInstance*   inInstanceData,
-  const PrGPUFilterRenderParams*  inRenderParams,
-  const PPixHand*    inFrames,
-  csSDK_size_t       inFrameCount,
-  PPixHand*      outFrame);
+ PrGPUFilterInstance* inInstanceData,
+ const PrGPUFilterRenderParams* inRenderParams,
+ const PPixHand* inFrames,
+ csSDK_size_t inFrameCount,
+ PPixHand* outFrame);
 ```
 
 渲染到使用 `PrSDKGPUDeviceSuite` 分配的 `outFrame` 中，或就地操作。

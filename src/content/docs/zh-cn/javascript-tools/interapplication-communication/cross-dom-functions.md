@@ -13,8 +13,8 @@ title: 跨DOM函数
 
 [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit)分发的示例代码包括以下代码示例，这些示例专门演示了跨DOM函数的使用：
 
-|        示例        |   描述    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- |
+| 示例 | 描述 |
+| --- | --- |
 | [OpenImageInPhotoshop.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/OpenImageInPhotoshop.jsx) | 展示如何将图像文件发送到Photoshop中打开。 |
 
 ---
@@ -78,9 +78,9 @@ photoshop.executeScript (myPSScript)
 
 #### 参数
 
-| 参数 |  类型  |      描述      |
-| --------- | ------ | --------------------------- |
-| `script`  | String | 要评估的脚本。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `script` | String | 要评估的脚本。 |
 
 #### 返回
 
@@ -98,9 +98,9 @@ photoshop.executeScript (myPSScript)
 
 #### 参数
 
-| 参数 |      类型       |    描述    |
-| --------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `files`   | [文件对象](../../file-system-access/file-object) 或文件对象数组。 | 要打开的文件。对于使用复合文档的应用程序，这应该是一个项目文件。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `files` | [文件对象](../../file-system-access/file-object) 或文件对象数组。 | 要打开的文件。对于使用复合文档的应用程序，这应该是一个项目文件。 |
 
 #### 返回
 
@@ -118,13 +118,13 @@ photoshop.executeScript (myPSScript)
 
 #### 参数
 
-| 参数 |      类型   |      描述      |
-|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|
-| `options` | 应用程序特定的创建选项：        | 可选。创建选项。 |
-|    | - Adobe Bridge: 无       |    |
-|    | - Photoshop: 无    |    |
-|    | - InDesign: 创建选项为：`(Boolean:showingWindow, ObjectOrString:documentPresets)`。请参阅Adobe InDesign CS5脚本参考中的`documents.add()`参数。     |    |
-|    | - Illustrator: 创建选项为：`([DocumentColorSpace:colorspace][, Number:width, Number:height])`。请参阅Adobe Illustrator CS5 JavaScript参考中的`documents.add()`参数。 |    |
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `options` | 应用程序特定的创建选项： | 可选。创建选项。 |
+| | - Adobe Bridge: 无 | |
+| | - Photoshop: 无 | |
+| | - InDesign: 创建选项为：`(Boolean:showingWindow, ObjectOrString:documentPresets)`。请参阅Adobe InDesign CS5脚本参考中的`documents.add()`参数。 | |
+| | - Illustrator: 创建选项为：`([DocumentColorSpace:colorspace][, Number:width, Number:height])`。请参阅Adobe Illustrator CS5 JavaScript参考中的`documents.add()`参数。 | |
 
 #### 返回
 
@@ -142,9 +142,9 @@ photoshop.executeScript (myPSScript)
 
 #### 参数
 
-| 参数 |      类型       |    描述     |
-| --------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `files`   | [文件对象](../../file-system-access/file-object) 或文件对象数组。 | 要打印的文件。对于使用复合文档的应用程序，这应该是一个项目文件。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `files` | [文件对象](../../file-system-access/file-object) 或文件对象数组。 | 要打印的文件。对于使用复合文档的应用程序，这应该是一个项目文件。 |
 
 #### 返回
 
@@ -180,9 +180,9 @@ photoshop.executeScript (myPSScript)
 
 #### 参数
 
-| 参数 |    类型       |     描述     |
-| --------- | ------------------------------------------------------------- | ------------------- |
-| `file`    | [文件对象](../../file-system-access/file-object) 或字符串 | 要显示的文件信息 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `file` | [文件对象](../../file-system-access/file-object) 或字符串 | 要显示的文件信息 |
 
 #### 返回
 

@@ -26,7 +26,7 @@ Adobe Bridge 提供了一个应用程序编程接口（API），定义了 Adobe 
 ```javascript
 var targetApp = BridgeTalk.getSpecifier( "bridge-3.0");
 if( targetApp ) {
-    // 构造并发送消息
+ // 构造并发送消息
 }
 ```
 
@@ -64,7 +64,7 @@ bt.body = "new Document('C:\\BridgeScripts');app.document.target.children.length
 
 ```javascript
 bt.onResult = function(returnBtObj) {
-    processResult(returnBtObj.body);
+ processResult(returnBtObj.body);
 }
 ```
 
@@ -96,21 +96,21 @@ bt.send();
 var targetApp = BridgeTalk.getSpecifier( "bridge-3.0");
 
 if( targetApp ) {
-    // 构造消息对象
-    var bt = new BridgeTalk;
+ // 构造消息对象
+ var bt = new BridgeTalk;
 
-    // 消息的目标是 Adobe Bridge CS4
-    bt.target = targetApp;
+ // 消息的目标是 Adobe Bridge CS4
+ bt.target = targetApp;
 
-    // 要评估的脚本包含在 "body" 属性中的字符串中
-    bt.body = "new Document('C:\\BridgeScripts');app.document.target.children.length;"
+ // 要评估的脚本包含在 "body" 属性中的字符串中
+ bt.body = "new Document('C:\\BridgeScripts');app.document.target.children.length;"
 
-    // 定义结果处理回调
-    bt.onResult = function(returnBtObj) {
-    processResult(returnBtObj.body); } //fn 在其他地方定义
+ // 定义结果处理回调
+ bt.onResult = function(returnBtObj) {
+ processResult(returnBtObj.body); } //fn 在其他地方定义
 
-    // 异步发送消息
-    bt.send();
+ // 异步发送消息
+ bt.send();
 }
 ```
 
@@ -144,7 +144,7 @@ if( targetApp ) {
 
 ```javascript
 BridgeTalk.onReceive = function( bridgeTalkObject ) {
-    // 在此处定义回调
+ // 在此处定义回调
 };
 ```
 
@@ -166,7 +166,7 @@ BridgeTalk.onReceive = function( bridgeTalkObject ) {
 
 ```javascript
 BridgeTalk.onReceive = function (message) {
-    return eval( message.body );
+ return eval( message.body );
 }
 ```
 
@@ -174,13 +174,13 @@ BridgeTalk.onReceive = function (message) {
 
 ```javascript
 BridgeTalk.onReceive = function (message) {
-    switch (message.type) {
-     case "Data":
-      return processData( message );
-      break;
-     default: //"ExtendScript"
-      return eval( mesage.body );
-    }
+ switch (message.type) {
+ case "Data":
+ return processData( message );
+ break;
+ default: //"ExtendScript"
+ return eval( mesage.body );
+ }
 }
 ```
 
@@ -199,15 +199,15 @@ BridgeTalk.onReceive = function (message) {
 响应消息可以是：
 
 - 处理消息时出错的结果。这由 [onError()](../bridgetalk-message-object#onerror) 回调处理。
-  - 如果在处理消息体时发生错误（例如由于 JavaScript 语法错误），目标应用程序会调用 [onError()](../bridgetalk-message-object#onerror) 回调，传递包含错误代码和错误消息的响应消息。如果您没有定义 [onError()](../bridgetalk-message-object#onerror) 回调，则错误是完全透明的。它可能看起来像是消息未被处理，因为从未返回结果给 [onResult()](../bridgetalk-message-object#onresult) 回调。
+ - 如果在处理消息体时发生错误（例如由于 JavaScript 语法错误），目标应用程序会调用 [onError()](../bridgetalk-message-object#onerror) 回调，传递包含错误代码和错误消息的响应消息。如果您没有定义 [onError()](../bridgetalk-message-object#onerror) 回调，则错误是完全透明的。它可能看起来像是消息未被处理，因为从未返回结果给 [onResult()](../bridgetalk-message-object#onresult) 回调。
 - 消息接收的通知。这由 [onReceived()](../bridgetalk-message-object#onreceived) 回调处理。
-  - 消息发送是异步的。从 `send` 方法获得 `true` 结果并不能保证您的消息实际上已被目标应用程序接收。如果您想收到消息接收的通知，请在消息对象中定义 [onReceived()](../bridgetalk-message-object#onreceived) 回调。目标会将原始消息对象发送回此回调，首先将 `body` 值替换为空字符串。
+ - 消息发送是异步的。从 `send` 方法获得 `true` 结果并不能保证您的消息实际上已被目标应用程序接收。如果您想收到消息接收的通知，请在消息对象中定义 [onReceived()](../bridgetalk-message-object#onreceived) 回调。目标会将原始消息对象发送回此回调，首先将 `body` 值替换为空字符串。
 - 超时的结果。这由 [onTimeout()](../bridgetalk-message-object#ontimeout) 回调处理。
-  - 您可以在消息对象的 [timeout](../bridgetalk-message-object#timeout) 属性中指定秒数。如果消息在时间到期之前未从输入队列中移除以进行处理，则会被丢弃。如果发送者为消息定义了 [onTimeout()](../bridgetalk-message-object#ontimeout) 回调，则目标应用程序会向发送者发送超时消息。
+ - 您可以在消息对象的 [timeout](../bridgetalk-message-object#timeout) 属性中指定秒数。如果消息在时间到期之前未从输入队列中移除以进行处理，则会被丢弃。如果发送者为消息定义了 [onTimeout()](../bridgetalk-message-object#ontimeout) 回调，则目标应用程序会向发送者发送超时消息。
 - 中间响应。这由 [onResult()](../bridgetalk-message-object#onresult) 回调处理。
-  - 您发送的脚本可以通过调用原始消息对象的 [sendResult()](../bridgetalk-message-object#sendresult) 方法发送回中间响应。它可以发送任何类型的数据，但该数据会被打包到一个新消息对象的 `body` 字符串中，并传递给您的回调。请参阅 [在应用程序之间传递值](#passing-values-between-applications)。
+ - 您发送的脚本可以通过调用原始消息对象的 [sendResult()](../bridgetalk-message-object#sendresult) 方法发送回中间响应。它可以发送任何类型的数据，但该数据会被打包到一个新消息对象的 `body` 字符串中，并传递给您的回调。请参阅 [在应用程序之间传递值](#passing-values-between-applications)。
 - 处理消息的最终结果。这由 [onResult()](../bridgetalk-message-object#onresult) 回调处理。
-  - 当它完成处理您的消息时，目标应用程序可以发送回任何类型的结果。如果您发送了脚本，并且目标应用程序使用默认的 `BridgeTalk` [onReceive](../bridgetalk-class#bridgetalkonreceive) 回调来处理消息，则返回值是该脚本评估的最终结果。无论如何，返回值会被打包到一个新消息对象的 `body` 字符串中，并传递给您的回调。请参阅 [在应用程序之间传递值](#passing-values-between-applications)。
+ - 当它完成处理您的消息时，目标应用程序可以发送回任何类型的结果。如果您发送了脚本，并且目标应用程序使用默认的 `BridgeTalk` [onReceive](../bridgetalk-class#bridgetalkonreceive) 回调来处理消息，则返回值是该脚本评估的最终结果。无论如何，返回值会被打包到一个新消息对象的 `body` 字符串中，并传递给您的回调。请参阅 [在应用程序之间传递值](#passing-values-between-applications)。
 
 以下示例演示了如何处理简单响应和多个响应，以及如何将错误处理与响应处理集成。
 
@@ -222,7 +222,7 @@ var bt = new BridgeTalk;
 bt.target = "bridge-3.0";
 bt.body = "new Document('C:\\BridgeScripts');app.document.target.children.length;"
 bt.onResult = function( retObj ) {
-    processFileCount(retObj.body);
+ processFileCount(retObj.body);
 }
 
 bt.send();
@@ -235,8 +235,8 @@ bt.send();
 ```javascript
 var bt = new BridgeTalk;
 bt.onError = function (btObj) {
-    var errorCode = parseInt (btObj.headers ["Error-Code"]);
-    throw new Error (errorCode, btObj.body);
+ var errorCode = parseInt (btObj.headers ["Error-Code"]);
+ throw new Error (errorCode, btObj.body);
 }
 ```
 
@@ -249,12 +249,12 @@ var bt = new BridgeTalk;
 bt.target = "bridge-3.0";
 bt.body = "var tn = new Thumbnail('C/MyPhotos/temp.gif'); tn.core.immediate.size;"
 bt.onResult = function( resultMsg ) {
-    processFileSize(resultMsg.body);
+ processFileSize(resultMsg.body);
 }
 
 bt.onError = function( errorMsg ) {
-    var errCode = parseInt (errorMsg.headers ["Error-Code"]);
-    throw new Error (errCode, errorMsg.body);
+ var errCode = parseInt (errorMsg.headers ["Error-Code"]);
+ throw new Error (errCode, errorMsg.body);
 }
 
 bt.send();
@@ -269,21 +269,21 @@ bt.send();
 ```javascript
 // 在目标应用程序（Adobe Bridge）中处理消息并发送中间响应的代码
 BridgeTalk.onReceive = function (message){
-    switch (message.type) {
-     case "iterator":
-      done = false;
-      i = 0;
-      while (!done) {
-      // message.body 使用 "i" 在每次执行消息时生成不同的结果
-      // 当完成时，message.body 将 "done" 设置为 `true`
-      // 以便此 onReceive 方法跳出循环。
-      message.sendResult(eval(message.body));
-      i++;
-      }
-      break;
-     default: //"ExtendScript"
-      return eval( message.body );
-    }
+ switch (message.type) {
+ case "iterator":
+ done = false;
+ i = 0;
+ while (!done) {
+ // message.body 使用 "i" 在每次执行消息时生成不同的结果
+ // 当完成时，message.body 将 "done" 设置为 `true`
+ // 以便此 onReceive 方法跳出循环。
+ message.sendResult(eval(message.body));
+ i++;
+ }
+ break;
+ default: //"ExtendScript"
+ return eval( message.body );
+ }
 }
 ```
 
@@ -317,13 +317,13 @@ else md = -1;
 
 // 存储中间结果
 bt.onResult = function(rObj) {
-    resArr[idx] = rObj.body;
-    processInterResult(resArr[idx]);
-    idx++;
+ resArr[idx] = rObj.body;
+ processInterResult(resArr[idx]);
+ idx++;
 };
 
 bt.onError = function(eObj) {
-    bt.error = eObj.body
+ bt.error = eObj.body
 };
 
 bt.send();
@@ -339,13 +339,13 @@ BridgeTalk.onReceive静态回调函数可以返回任何类型的值。然而，
 
 当消息对象的onResult回调接收到响应时，它必须解释响应消息体中的字符串以获取正确类型的结果。各种类型的结果可以按如下方式识别和处理：
 
-| 类型    | 描述     |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 数字    | JavaScript允许您直接访问包含数字的字符串作为数字，无需进行任何类型转换。但是，在使用加号运算符（+）时要小心，因为它可以用于字符串或数字。如果其中一个操作数是字符串，则两个操作数都会转换为字符串并连接。      |
-| 字符串  | 无需转换。      |
-| 布尔值  | 结果字符串为"true"或"false"。可以使用`eval`方法将其转换为真正的布尔值。         |
-| 日期    | 结果字符串包含以下格式的日期：`"dow mmm dd yyyy hh:mm:ss GMT-nnnn"`。例如"Wed Jun 23 2004 00:00:00 GMT-0700"。        |
-| 数组    | 结果字符串包含数组元素的逗号分隔列表。例如，如果结果数组是`[12, "test", 432]`，消息传递框架会将其扁平化为字符串`"12,test,432"`。作为简单返回数组的替代方法，消息目标可以使用`toSource`方法返回用于创建数组的代码。在这种情况下，发送方必须使用`eval`方法对响应体中的结果字符串进行重新构造。详见下文讨论。       |
+| 类型 | 描述 |
+| --- | --- |
+| 数字 | JavaScript允许您直接访问包含数字的字符串作为数字，无需进行任何类型转换。但是，在使用加号运算符（+）时要小心，因为它可以用于字符串或数字。如果其中一个操作数是字符串，则两个操作数都会转换为字符串并连接。 |
+| 字符串 | 无需转换。 |
+| 布尔值 | 结果字符串为"true"或"false"。可以使用`eval`方法将其转换为真正的布尔值。 |
+| 日期 | 结果字符串包含以下格式的日期：`"dow mmm dd yyyy hh:mm:ss GMT-nnnn"`。例如"Wed Jun 23 2004 00:00:00 GMT-0700"。 |
+| 数组 | 结果字符串包含数组元素的逗号分隔列表。例如，如果结果数组是`[12, "test", 432]`，消息传递框架会将其扁平化为字符串`"12,test,432"`。作为简单返回数组的替代方法，消息目标可以使用`toSource`方法返回用于创建数组的代码。在这种情况下，发送方必须使用`eval`方法对响应体中的结果字符串进行重新构造。详见下文讨论。 |
 
 ### 传递复杂类型
 
@@ -368,12 +368,12 @@ bt.target = "bridge-3.0";
 bt.body = "var arr = [10, this string, 324]; arr.toSource()";
 
 bt.onResult = function(resObj) {
-    // 使用eval重新构造数组
-    arr = eval(resObj.body);
+ // 使用eval重新构造数组
+ arr = eval(resObj.body);
 
-    // 现在可以访问返回的数组
-    for (i=0; i< arr.length(); i++)
-     doSomething(arr[i]);
+ // 现在可以访问返回的数组
+ for (i=0; i< arr.length(); i++)
+ doSomething(arr[i]);
 }
 
 // 发送消息
@@ -397,9 +397,9 @@ md.toSource();"
 
 //对于结果，使用eval重新构造对象
 bt.onResult = function(resObj) {
-    md = bt.result = eval(resObj.body);
-    // 现在可以访问fname和fsize属性
-    doSomething (md.fname, md.fsize);
+ md = bt.result = eval(resObj.body);
+ // 现在可以访问fname和fsize属性
+ doSomething (md.fname, md.fsize);
 }
 
 // 发送消息
@@ -422,11 +422,11 @@ tn.toSource();"
 
 //对于结果，使用eval重新构造对象
 bt.onResult = function(resObj) {
-    // 使用eval重新构造对象
-    tn = eval(resObj.body);
-    // 现在脚本可以访问tn.path和tn.uri，
-    // 但不能访问Adobe Bridge DOM缩略图对象的其他属性
-    doSomething (tn.path, tn.uri);
+ // 使用eval重新构造对象
+ tn = eval(resObj.body);
+ // 现在脚本可以访问tn.path和tn.uri，
+ // 但不能访问Adobe Bridge DOM缩略图对象的其他属性
+ doSomething (tn.path, tn.uri);
 }
 
 // 发送消息

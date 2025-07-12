@@ -12,15 +12,15 @@ order: 8
 int []
 osd_patches(const string file; const face_id)
 {
-    int    patches[] = {};
-    int    first = osd_firstpatch(file, face_id);
-    if (first >= 0)
-    {
-    int    npatches = osd_patchcount(file, face_id);
-    for (int i = 0; i < npatches; i++)
-      append(patches, first+i);
-    }
-    return patches;
+ int patches[] = {};
+ int first = osd_firstpatch(file, face_id);
+ if (first >= 0)
+ {
+ int npatches = osd_patchcount(file, face_id);
+ for (int i = 0; i < npatches; i++)
+ append(patches, first+i);
+ }
+ return patches;
 }
 
 ```

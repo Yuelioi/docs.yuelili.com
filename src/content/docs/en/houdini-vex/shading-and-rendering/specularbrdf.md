@@ -16,8 +16,8 @@ vector ii = normalize(-I);
 Cf = 0;
 illuminance(P, nn)
 {
-    vector ll = normalize(L);
-    Cf += Cl * (specularBRDF(ll, nn, ii, rough) + diffuseBRDF(ll, nn));
+ vector ll = normalize(L);
+ Cf += Cl * (specularBRDF(ll, nn, ii, rough) + diffuseBRDF(ll, nn));
 }
 
 ```

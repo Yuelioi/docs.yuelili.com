@@ -9,7 +9,6 @@ Unlike the ExtendScript Toolkit, the VS Code debugger takes some work to get up 
 This guide is meant to walk you through how to install and run the Extendscript for VS Code debugger.
 :::
 
-
 If you're looking on how to use specific features of the extension, see [VS Code Extension Features](../vscode-extension-features).
 
 Generally, you'll need to follow these steps:
@@ -50,14 +49,14 @@ In your project directory:
 
 ```json
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "extendscript-debug",
-            "request": "attach",
-            "name": "extendScript-Debug attach",
-        }
-    ]
+ "version": "0.2.0",
+ "configurations": [
+ {
+ "type": "extendscript-debug",
+ "request": "attach",
+ "name": "extendScript-Debug attach",
+ }
+ ]
 }
 ```
 
@@ -86,7 +85,6 @@ Once you've set up your environment and built your script:
 :::note
 If you're compiling the end jsx file from a number of source files, the debugger will catch errors in the *compiled* script, not the source files - you'll need to backtrack yourself to figure out what source file the error came from, unless you're building source maps in some way.
 :::
-
 
 This may not apply to compiled files using #include
 

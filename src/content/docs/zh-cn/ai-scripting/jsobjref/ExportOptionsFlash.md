@@ -438,14 +438,14 @@ title: ExportOptionsFlash
 // destFile 包含完整路径和文件名
 
 function exportToFlashFile(destFile) {
-    if (app.documents.length > 0) {
-        var exportOptions = new ExportOptionsFlash();
-        exportOptions.resolution = 150;
+ if (app.documents.length > 0) {
+ var exportOptions = new ExportOptionsFlash();
+ exportOptions.resolution = 150;
 
-        var type = ExportType.FLASH;
-        var fileSpec = new File(destFile);
+ var type = ExportType.FLASH;
+ var fileSpec = new File(destFile);
 
-        app.activeDocument.exportFile(fileSpec, type, exportOptions);
-    }
+ app.activeDocument.exportFile(fileSpec, type, exportOptions);
+ }
 }
 ```

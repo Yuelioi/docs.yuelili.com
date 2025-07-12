@@ -11,12 +11,12 @@ XML 对象表示 XML 树中的 XML 元素节点。XML 文件的顶层 `XML` 对�
 
 ```xml
 <rootElement>
-    <elementA>
-   <elementB></elementB>
-    </elementA>
-    <elementA>
-   <elementB></elementB>
-    </elementA>
+ <elementA>
+ <elementB></elementB>
+ </elementA>
+ <elementA>
+ <elementB></elementB>
+ </elementA>
 </rootElement>
 ```
 
@@ -30,12 +30,12 @@ var myRoot = new XML( "<rootElement> <elementA> <elementB></elementB> </elementA
 
 ```javascript
 var myRoot = <rootElement>
-    <elementA>
-   <elementB></elementB>
-    </elementA>
-    <elementA>
-   <elementB></elementB>
-    </elementA>
+ <elementA>
+ <elementB></elementB>
+ </elementA>
+ <elementA>
+ <elementB></elementB>
+ </elementA>
 </rootElement>;
 ```
 
@@ -55,32 +55,32 @@ var elemB1 = myRoot.elementA[0].elementB[0];
 
 ```xml
 <bookstore>
-    <book category="COOKING">
-   <title lang="en">The Boston Cooking-School Cookbook</title>
-   <author>Fannie Merrit Farmer</author>
-   <year>1896</year>
-   <price>49.99</price>
-    </book>
-    <book category="CHILDREN">
-   <title lang="en">The Wonderful Wizard of Oz</title>
-   <author>L. Frank Baum</author>
-   <year>1900</year>
-   <price>39.95</price>
-    </book>
-    <book category="CHILDREN">
-   <title lang="en">Alice's Adventures in Wonderland</title>
-   <author>Charles "Lewis Carroll" Dodgeson</author>
-   <author>Charles Dodgeson</author>
-   <author>Lewis Carroll</author>
-   <year>1865</year>
-   <price>29.99</price>
-    </book>
-    <book category="MUSIC">
-   <title lang="en">Gilbert and Sullivan Opera; A History and a Comment</title>
-   <author>H. M. Walbrook</author>
-   <year>1922</year>
-   <price>30.00</price>
-    </book>
+ <book category="COOKING">
+ <title lang="en">The Boston Cooking-School Cookbook</title>
+ <author>Fannie Merrit Farmer</author>
+ <year>1896</year>
+ <price>49.99</price>
+ </book>
+ <book category="CHILDREN">
+ <title lang="en">The Wonderful Wizard of Oz</title>
+ <author>L. Frank Baum</author>
+ <year>1900</year>
+ <price>39.95</price>
+ </book>
+ <book category="CHILDREN">
+ <title lang="en">Alice's Adventures in Wonderland</title>
+ <author>Charles "Lewis Carroll" Dodgeson</author>
+ <author>Charles Dodgeson</author>
+ <author>Lewis Carroll</author>
+ <year>1865</year>
+ <price>29.99</price>
+ </book>
+ <book category="MUSIC">
+ <title lang="en">Gilbert and Sullivan Opera; A History and a Comment</title>
+ <author>H. M. Walbrook</author>
+ <year>1922</year>
+ <price>30.00</price>
+ </book>
 </bookstore>
 ```
 
@@ -139,26 +139,26 @@ XML 对象与所有 ExtendScript 对象一样，具有 `toString` 方法，该�
 
 ```xml
 > bookstoreXML.book[1];
-    <book category="CHILDREN">
-   <title lang="en">The Wonderful Wizard of Oz</title>
-   <author>L. Frank Baum</author>
-   <year>1900</year>
-   <price>39.95</price>
-    </book>
+ <book category="CHILDREN">
+ <title lang="en">The Wonderful Wizard of Oz</title>
+ <author>L. Frank Baum</author>
+ <year>1900</year>
+ <price>39.95</price>
+ </book>
 ```
 
 如果你评估具有文本值的对象，你将看到文本值。例如：
 
 ```xml
 > bookstoreXML.book[1].@category;
-    CHILDREN
+ CHILDREN
 ```
 
 如果你访问多个值，这些值将被连接起来：
 
 ```xml
 > bookstoreXML.book.@category
-    COOKINGCHILDRENCHILDRENMUSIC
+ COOKINGCHILDRENCHILDRENMUSIC
 ```
 
 [toXMLString()](../xml-object-reference#xmltoxmlstring) 方法将整个元素（包括标签）序列化为字符串。
@@ -189,10 +189,10 @@ bookstoreXML.book[2].author = "Charles 'Lewis Carroll' Dodgeson";
 
 ```xml
 <book category="CHILDREN">
-    <title lang="en">Alice's Adventures in Wonderland</title>
-    <author>Charles 'Lewis Carroll' Dodgeson</author>
-    <year>1865</year>
-    <price>29.99</price>
+ <title lang="en">Alice's Adventures in Wonderland</title>
+ <author>Charles 'Lewis Carroll' Dodgeson</author>
+ <year>1865</year>
+ <price>29.99</price>
 </book>
 ```
 
@@ -216,11 +216,11 @@ bookstoreXML.book[1].year = 1901;
 
 ```xml
 <book category="CHILDREN">
-    <title lang="en">The Wonderful Wizard of Oz</title>
-    <author>L. Frank Baum</author>
-    <year>1900</year>
-    <price>39.95</price>
-    <rating>*****</rating>
+ <title lang="en">The Wonderful Wizard of Oz</title>
+ <author>L. Frank Baum</author>
+ <year>1900</year>
+ <price>39.95</price>
+ <rating>*****</rating>
 </book>
 ```
 
@@ -274,21 +274,21 @@ delete bookstoreXML.book[2].@category;
 - `XML.`[elements()](../xml-object-reference#xmlelements) 获取直接子元素中的 XML 标签，但不获取文本。
 - `XML.`[descendants()](../xml-object-reference#xmldescendants) 允许你匹配特定标签，并获取任何嵌套级别的所有匹配元素。你还可以使用“双点”符号访问元素的后代。例如，以下语句是等效的：
 
-  ```javascript
-  xml..title
-  xml.descendants("title")
-  ```
+ ```javascript
+ xml..title
+ xml.descendants("title")
+ ```
 
 例如，考虑以下 XML 代码加载到名为 `x` 的顶层 `XML` 对象中：
 
 ```xml
 <top>
-    <one>one text</one>
-    <two>
-   two text
-   <inside>inside text</inside>
-    </two>
-    top text
+ <one>one text</one>
+ <two>
+ two text
+ <inside>inside text</inside>
+ </two>
+ top text
 </top>
 ```
 
@@ -296,49 +296,49 @@ delete bookstoreXML.book[2].@category;
 
 - `XML.`[children()](../xml-object-reference#xmlchildren) 的结果包含 3 个元素，直接子标签 `<one>` 和 `<two>`，以及 `<top>` 标签的直接包含文本：
 
-  ```xml
-  **> x.children()**
-      <one>one text</one>
-      <two>
-      two text
-      <inside>inside text</inside>
-      </two>
-      top text
+ ```xml
+ **> x.children()**
+ <one>one text</one>
+ <two>
+ two text
+ <inside>inside text</inside>
+ </two>
+ top text
 
-  **> x.children().length()**
-      3
-  ```
+ **> x.children().length()**
+ 3
+ ```
 
 - `XML.`[elements()](../xml-object-reference#xmlelements) 的结果包含 2 个元素，直接子标签 `<one>` 和 `<two>`：
 
-  ```xml
-  **> x.elements()**
-      <one>one text</one>
-      <two>
-     two text
-     <inside>inside text</inside>
-      </two>
-  **> x.elements().length()**
-      2
-  ```
+ ```xml
+ **> x.elements()**
+ <one>one text</one>
+ <two>
+ two text
+ <inside>inside text</inside>
+ </two>
+ **> x.elements().length()**
+ 2
+ ```
 
 - `XML.`[descendants()](../xml-object-reference#xmldescendants) 的结果包含 7 个元素，直接子标签 `<one>` 和 `<two>`，下一级的 `<inside>` 标签，以及所有标签的文本内容：
 
-  ```xml
-  **> x.descendants()**
-      <one>one text</one>
-      one text
-      <two>
-     two text
-     <inside>inside text</inside>
-      </two>
-      two text
-      <inside>inside text</inside>
-      inside text
-      top text
-  **> x.descendants().length()**
-      7
-  ```
+ ```xml
+ **> x.descendants()**
+ <one>one text</one>
+ one text
+ <two>
+ two text
+ <inside>inside text</inside>
+ </two>
+ two text
+ <inside>inside text</inside>
+ inside text
+ top text
+ **> x.descendants().length()**
+ 7
+ ```
 
 ---
 
@@ -354,17 +354,17 @@ delete bookstoreXML.book[2].@category;
 <bookstore **xmlns:kids="http://kids.mybookstore.com"**>
 
 <book category="COOKING">
-    <title lang="en">The Boston Cooking-School Cookbook</title>
-    <author>Fannie Merrit Farmer</author>
-    <year>1896</year>
-    <price>49.99</price>
+ <title lang="en">The Boston Cooking-School Cookbook</title>
+ <author>Fannie Merrit Farmer</author>
+ <year>1896</year>
+ <price>49.99</price>
 </book>
 
 <**kids:**book category="CHILDREN">
-    <title lang="en">The Wonderful Wizard of Oz</title>
-    <author>L. Frank Baum</author>
-    <year>1900</year>
-    <price>39.95</price>
+ <title lang="en">The Wonderful Wizard of Oz</title>
+ <author>L. Frank Baum</author>
+ <year>1900</year>
+ <price>39.95</price>
 </**kids:**book>
 ...
 ```
@@ -407,36 +407,36 @@ default xml namespace = "http://books.mybookstore.com";
 
 - 你可以直接访问默认命名空间中的元素，而无需使用 [Namespace 对象](../xml-object-reference#namespace-object)。
 
-  - 如果你没有设置默认值，则可以对没有命名空间说明符的元素使用直接访问。
-  - 如果你设置了默认值，则可以对位于该命名空间中的元素使用直接访问。
+ - 如果你没有设置默认值，则可以对没有命名空间说明符的元素使用直接访问。
+ - 如果你设置了默认值，则可以对位于该命名空间中的元素使用直接访问。
 - 如果你已将元素分配给命名空间，并且未将其设置为默认值，则必须使用 [Namespace 对象](../xml-object-reference#namespace-object) 来访问这些元素。例如：
 
-  ```javascript
-  var ns = new Namespace (**"http://kids.mybookstore.com"**);
-  bookstoreXML.**ns::book**;
-  ```
+ ```javascript
+ var ns = new Namespace (**"http://kids.mybookstore.com"**);
+ bookstoreXML.**ns::book**;
+ ```
 
-  这将返回所有已分配给 "kids" 命名空间的书籍。
+ 这将返回所有已分配给 "kids" 命名空间的书籍。
 - 如果你设置了默认命名空间，你仍然可以通过使用 URI 为空字符串的 [Namespace 对象](../xml-object-reference#namespace-object) 来访问所有没有特定命名空间分配的对象，这是默认创建情况：
 
-  ```javascript
-  var emptyNS = new Namespace ();
-  bookstoreXML.emptyNS::book;
-  ```
+ ```javascript
+ var emptyNS = new Namespace ();
+ bookstoreXML.emptyNS::book;
+ ```
 
-  这将返回所有未分配给任何命名空间的书籍。
+ 这将返回所有未分配给任何命名空间的书籍。
 - 要访问所有元素，无论命名空间分配如何，你可以使用星号 (\*) 通配符或 `null` 作为命名空间名称：
 
-  ```javascript
-  bookstoreXML.*::book;
-  ```
+ ```javascript
+ bookstoreXML.*::book;
+ ```
 
-  或
+ 或
 
-  ```js
-  var nullNS = null;
-  bookstoreXML.nullNS::book;
-  ```
+ ```js
+ var nullNS = null;
+ bookstoreXML.nullNS::book;
+ ```
 
 ---
 
@@ -448,7 +448,7 @@ default xml namespace = "http://books.mybookstore.com";
 
 ```javascript
 function makeXML (first, last) {
-    return <person first={first} last={last}>{first + " " + last}</person>;
+ return <person first={first} last={last}>{first + " " + last}</person>;
 }
 ```
 

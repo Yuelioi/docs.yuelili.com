@@ -11,12 +11,9 @@ When you access a Key object, you can get `time`, `index`, and `value` propertie
 In expressions, "Key" refers to Keyframes.
 :::
 
-
-
 :::info
 On this page, we're going to use `thisProperty.key(1)` as a sample on how to call these items, however note that any method that returns a [Key](#) will work.
 :::
-
 
 ---
 

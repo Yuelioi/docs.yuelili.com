@@ -9,7 +9,6 @@ A library to be loaded and accessed directly through an [ExternalObject instance
 These must be exported as C functions, not C++ functions
 :::
 
-
 ---
 
 ## Entry Points
@@ -26,8 +25,8 @@ Called when your library is loaded into memory.
 
 #### Parameters
 
-|  Parameter   |                                         Description                                          |
-| ------------ | -------------------------------------------------------------------------------------------- |
+| Parameter | Description |
+| --- | --- |
 | `argv, argc` | The pointer to and number of arguments passed to the constructor, in the form of TaggedData. |
 
 #### Returns
@@ -60,9 +59,9 @@ Long integer
 
 Called to free memory allocated for a null-terminated string passed to or from library functions.
 
-| Parameter |       Description        |
-| --------- | ------------------------ |
-| `p`       | A pointer to the string. |
+| Parameter | Description |
+| --- | --- |
+| `p` | A pointer to the string. |
 
 #### Returns
 
@@ -109,7 +108,6 @@ If, when a function is invoked, a supplied parameter is undefined, ExtendScript 
 The called function is free to return any of the listed data types.
 :::
 
-
 ---
 
 ## Library initialization
@@ -132,14 +130,14 @@ For each function, the string begins with the function name, followed by an unde
 
 The characters that indicate data types are:
 
-| Characeter |                                                       Description                                                       |
-| ---------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `a`        | Any type. The argument is not converted. This is the default, if no type is supplied or if a type code is unrecognized. |
-| `b`        | Boolean                                                                                                                 |
-| `d`        | signed 32 bit integer                                                                                                   |
-| `u`        | unsigned 32 bit integer                                                                                                 |
-| `f`        | 64 bit floating point                                                                                                   |
-| `s`        | String                                                                                                                  |
+| Characeter | Description |
+| --- | --- |
+| `a` | Any type. The argument is not converted. This is the default, if no type is supplied or if a type code is unrecognized. |
+| `b` | Boolean |
+| `d` | signed 32 bit integer |
+| `u` | unsigned 32 bit integer |
+| `f` | 64 bit floating point |
+| `s` | String |
 
 For example, suppose your library defines these two entry points:
 
@@ -154,7 +152,6 @@ The signature strings for these two functions would be `"One_ds"`, `"Two"`.
 
 Attempting to do so produces undefined results.
 :::
-
 
 ---
 

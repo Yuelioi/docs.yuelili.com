@@ -30,7 +30,7 @@ max_contrib告诉渲染器反射光对像素最终颜色的贡献程度。这通
 surface
 blurry_mirror(float angle = 3; int samples = 16; float bias=0.05)
 {
-    Cf = reflectlight(bias, 1, "angle", angle, "samples", samples);
+ Cf = reflectlight(bias, 1, "angle", angle, "samples", samples);
 }
 
 ```
@@ -163,7 +163,7 @@ cf = colormap(map, u, v, "channel", channelname);
 
 - 当纹理函数评估非Houdini格式纹理时，Houdini切换到使用OpenImageIO进行纹理评估。虽然许多可变关键字有对应的值，但有些关键字在OpenImageIO中没有等效功能。
 
-  - 默认情况下，OIIO*不会*为没有多分辨率图像的图像创建MIP映射。您可以通过在`OPENIMAGEIO_IMAGECACHE_OPTIONS`环境变量内容中添加`automip=1`来启用此功能。
+ - 默认情况下，OIIO*不会*为没有多分辨率图像的图像创建MIP映射。您可以通过在`OPENIMAGEIO_IMAGECACHE_OPTIONS`环境变量内容中添加`automip=1`来启用此功能。
 
 没有MIP映射，模糊和过滤可能无法按预期工作。
 \* 您也可以使用`OPENIMAGEIO_IMAGECACHE_OPTIONS`覆盖OIIO用于缓存的内存量。
@@ -484,6 +484,6 @@ Z方向的过滤器宽度（用于阴影贴图）。
 ```vex
 surface mirror(vector refl_color=1; float bias=.005)
 {
-    Cf = refl_color * reflectlight(bias, max(refl_color));
+ Cf = refl_color * reflectlight(bias, max(refl_color));
 }
 ```

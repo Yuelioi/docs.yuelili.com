@@ -30,7 +30,7 @@ Examples
 ```vex
 // Only print "Hello world" one time
 for (int i = 0; i < 100; ++i)
-    print_once("Hello world\n");
+ print_once("Hello world\n");
 
 // Print a missing texture warning, just one time across all shaders
 print_once( sprintf("Missing texture map: %s\n", texture_map), "global", 1);

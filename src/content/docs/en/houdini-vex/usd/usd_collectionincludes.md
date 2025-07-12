@@ -30,6 +30,6 @@ Examples
 ```vex
 // Get collection's include list.
 string collection_path = usd_makecollectionpath(0, "/geo/cube", "some_collection");
-string include_list[]  = usd_collectionincludes(0, collection_path);
+string include_list[] = usd_collectionincludes(0, collection_path);
 
 ```

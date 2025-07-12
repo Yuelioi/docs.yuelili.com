@@ -27,7 +27,7 @@ Set appRef = CreateObject("Illustrator.Application")
 Set myDoc = appRef.Documents.Add
 Set myPathItem1 = myDoc.PathItems.Rectangle(244, 64, 82, 76)
 Set myTextFrame1 = myDoc.TextFrames.AreaText(myPathItem1)
-    myTextFrame1.Contents = "这是两个文本框架链接在一起作为一个故事，文本从第一个框架流向最后一个框架。"
+ myTextFrame1.Contents = "这是两个文本框架链接在一起作为一个故事，文本从第一个框架流向最后一个框架。"
 Set myPathItem2 = myDoc.PathItems.Rectangle(144, 144, 42, 116)
 Set myTextFrame2 = myDoc.TextFrames.AreaText(myPathItem2)
 

@@ -357,7 +357,7 @@ String; read-only.
 
 #### Example
 
-Get a version of a current application  *(Adobe Premiere Pro version 14.3.1 (Build 45))*
+Get a version of a current application *(Adobe Premiere Pro version 14.3.1 (Build 45))*
 
 ```js
 app.version; // 14.3.1
@@ -426,17 +426,17 @@ Get a list of available workspaces.
 ```js
 app.getWorkspaces();
 /* [
-    "All Panels",
-    "Assembly",
-    "Audio",
-    "Color",
-    "Editing",
-    "Effects",
-    "Graphics",
-    "Learning",
-    "Libraries",
-    "Metalogging",
-    "Production"
+ "All Panels",
+ "Assembly",
+ "Audio",
+ "Color",
+ "Editing",
+ "Effects",
+ "Graphics",
+ "Learning",
+ "Libraries",
+ "Metalogging",
+ "Production"
 ]; */
 ```
 
@@ -452,9 +452,9 @@ Determines whether the file at path can be opened as a Premiere Pro [project](..
 
 #### Parameters
 
-| Parameter |  Type  |    Description    |
-| --------- | ------ | ----------------- |
-| `path`    | String | A path to a file. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `path` | String | A path to a file. |
 
 #### Returns
 
@@ -466,9 +466,9 @@ Test for valid project files
 
 ```js
 app.isDocument('~/Desktop/myProject.prproj'); // true
-app.isDocument('~/Desktop/textFile.txt');     // false
-app.isDocument('~/Desktop/footageFile.mov');  // false
-app.isDocument('~/Desktop/imageFile.mov');    // false
+app.isDocument('~/Desktop/textFile.txt'); // false
+app.isDocument('~/Desktop/footageFile.mov'); // false
+app.isDocument('~/Desktop/imageFile.mov'); // false
 ```
 
 ---
@@ -501,9 +501,9 @@ Creates a new .prproj [Project object](../../general/project), at the specified 
 
 #### Parameters
 
-| Parameter |  Type  |         Description          |
-| --------- | ------ | -------------------------------------------------------------------- |
-| `path`    | String | A full path to new project; a .prproj extension will *not* be added. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `path` | String | A full path to new project; a .prproj extension will *not* be added. |
 
 #### Returns
 
@@ -521,13 +521,13 @@ Opens the file at the specified path, as a Premiere Pro [Project object](../../g
 
 #### Parameters
 
-|         Parameter          |  Type   |       Description       |
-| -------------------------- | ------- | --------------------------------------------------------------- |
-| `path`           | String  | Full path to the document to be opened.               |
-| `suppressConversionDialog` | Boolean | Optional. Suppress project conversion dialog.         |
-| `bypassLocateFileDialog`   | Boolean | Optional. Bypass the locate file dialog.              |
-| `bypassWarningDialog`      | Boolean | Optional. Bypass warning dialog.            |
-| `doNotAddToMRUList`        | Boolean | Optional. Skip adding this file to the Most Recently Used List. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `path` | String | Full path to the document to be opened. |
+| `suppressConversionDialog` | Boolean | Optional. Suppress project conversion dialog. |
+| `bypassLocateFileDialog` | Boolean | Optional. Bypass the locate file dialog. |
+| `bypassWarningDialog` | Boolean | Optional. Bypass warning dialog. |
+| `doNotAddToMRUList` | Boolean | Optional. Skip adding this file to the Most Recently Used List. |
 
 #### Returns
 
@@ -545,10 +545,10 @@ Opens an FCP XML file as a Premiere Pro [Project object](../../general/project) 
 
 #### Parameters
 
-| Parameter  |  Type  | Description |
-| ---------- | ------ | ----------- |
-| `path`     | String |   |
-| `projPath` | String |   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `path` | String | |
+| `projPath` | String | |
 
 #### Returns
 
@@ -584,8 +584,8 @@ Determines whether proxy usage is currently enabled.
 
 #### Parameters
 
-| Parameter |  Type   |      Description      |
-| --------- | ------- | ----------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `enabled` | Integer | `1` turns proxies on, `0` turns them off. |
 
 #### Returns
@@ -604,10 +604,10 @@ Whether extension with the given extensionID persists, within this session.
 
 #### Parameters
 
-|   Parameter   |  Type   |      Description      |
-| ------------- | ------- | ------------------------------------------------------------- |
-| `extensionID` | String  | Which extension to modify.                |
-| `persistent`  | Integer | Pass `1` to keep extension in memory, `0` to allow unloading. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `extensionID` | String | Which extension to modify. |
+| `persistent` | Integer | Pass `1` to keep extension in memory, `0` to allow unloading. |
 
 #### Returns
 
@@ -636,17 +636,17 @@ Specifies the path to be used for one of Premiere Pro's scratch disk paths.
 
 #### Parameters
 
-|     Parameter     |          Type          |         Description         |
-|-------------------|------------------------|-------------------------------------------------|
-| `path`            | String       | The new path to be used.              |
+| Parameter | Type | Description |
+|---|---|---|
+| `path` | String | The new path to be used. |
 | `scratchDiskType` | `ScratchDiskType` enum | Enumerated value, must be one of the following: |
-|         |              | - `ScratchDiskType.FirstVideoCaptureFolder`     |
-|         |              | - `ScratchDiskType.FirstAudioCaptureFolder`     |
-|         |              | - `ScratchDiskType.FirstVideoPreviewFolder`     |
-|         |              | - `ScratchDiskType.FirstAudioPreviewFolder`     |
-|         |              | - `ScratchDiskType.FirstAutoSaveFolder`         |
-|         |              | - `ScratchDiskType.FirstCCLibrariesFolder`      |
-|         |              | - `ScratchDiskType.FirstCapsuleMediaFolder`     |
+| | | - `ScratchDiskType.FirstVideoCaptureFolder` |
+| | | - `ScratchDiskType.FirstAudioCaptureFolder` |
+| | | - `ScratchDiskType.FirstVideoPreviewFolder` |
+| | | - `ScratchDiskType.FirstAudioPreviewFolder` |
+| | | - `ScratchDiskType.FirstAutoSaveFolder` |
+| | | - `ScratchDiskType.FirstCCLibrariesFolder` |
+| | | - `ScratchDiskType.FirstCapsuleMediaFolder` |
 
 #### Returns
 
@@ -657,7 +657,7 @@ Returns `true` if successful.
 ```js
 var scratchPath = Folder.selectDialog('Choose new scratch disk folder');
 if (scratchPath && scratchPath.exists) {
-    app.setScratchDiskPath(scratchPath.fsName, ScratchDiskType.FirstAutoSaveFolder);
+ app.setScratchDiskPath(scratchPath.fsName, ScratchDiskType.FirstAutoSaveFolder);
 }
 ```
 
@@ -673,13 +673,13 @@ Writes a string to Premiere Pro's Events panel.
 
 #### Parameters
 
-|  Parameter  |  Type  |      Description      |
-|-------------|--------|-----------------------|
-| `message`   | String | A message to display. |
-| `decorator` | String | Decorator, one of:    |
-|   |        | - `info`    |
-|   |        | - `warning`           |
-|   |        | - `error`   |
+| Parameter | Type | Description |
+|---|---|---|
+| `message` | String | A message to display. |
+| `decorator` | String | Decorator, one of: |
+| | | - `info` |
+| | | - `warning` |
+| | | - `error` |
 
 #### Returns
 
@@ -697,8 +697,8 @@ Set workspace as active. Use [app.getWorkspaces()](#appgetworkspaces) to get a l
 
 #### Parameters
 
-|  Parameter  |  Type  |        Description         |
-| ----------- | ------ | -------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `workspace` | String | The name of the workspace. |
 
 #### Returns
@@ -712,9 +712,9 @@ Activate "Editing" workspace.
 ```js
 var workspace = 'Editing';
 if (app.setWorkspace(workspace)) {
-    alert('Workspace changed to "' + workspace + '"');
+ alert('Workspace changed to "' + workspace + '"');
 } else {
-    alert('Could not set "' + workspace + '" workspace');
+ alert('Could not set "' + workspace + '" workspace');
 }
 ```
 
@@ -759,9 +759,9 @@ An array of view IDs; can be null.
 ```js
 var allViewIDs = app.getProjectViewIDs();
 if (allViewIDs){
-    var firstOne = allViewIDs[0];
+ var firstOne = allViewIDs[0];
 } else {
-    // No views open.
+ // No views open.
 }
 ```
 
@@ -788,16 +788,16 @@ A [Project](../../general/project) object, for the project associated with the p
 ```js
 var allViewIDs = app.getProjectViewIDs();
 if (allViewIDs){
-    var firstOne = allViewIDs[0];
-    if (firstOne){
-        var thisProject = getProjectFromViewID(firstOne);
-        if (thisProject){
-            var name = thisProject.name;
-        } else {
-            // no project associated with that view ID.
-        }
+ var firstOne = allViewIDs[0];
+ if (firstOne){
+ var thisProject = getProjectFromViewID(firstOne);
+ if (thisProject){
+ var name = thisProject.name;
+ } else {
+ // no project associated with that view ID.
+ }
 } else {
-    // No views open.
+ // No views open.
 }
 ```
 
@@ -824,8 +824,8 @@ An array of [ProjectItems](../../item/projectitem); can be null.
 ```js
 var selectedItems = app.getCurrentProjectViewSelection();
 if (selectedItems){
-    var firstOne = selectedItems[0];
+ var firstOne = selectedItems[0];
 } else {
-    // No projectItems selected.
+ // No projectItems selected.
 }
 ```

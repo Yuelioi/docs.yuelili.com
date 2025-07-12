@@ -88,7 +88,7 @@ alert(currentPressedKey); // "A"
 var shiftHeld = ScriptUI.environment.keyboardState.shiftKey;
 
 if (shiftHeld) {
-   alert("用户按住了 Shift 键！");
+ alert("用户按住了 Shift 键！");
 }
 ```
 
@@ -98,7 +98,7 @@ if (shiftHeld) {
 var keyboardState = ScriptUI.environment.keyboardState;
 
 if (keyboardState.shiftKey && keyboardState.altKey) {
-   alert("Shift 和 Alt 键被按住！");
+ alert("Shift 和 Alt 键被按住！");
 }
 ```
 
@@ -108,11 +108,11 @@ if (keyboardState.shiftKey && keyboardState.altKey) {
 
 ```javascript
 button.onClick = function () {
-   if (ScriptUI.environment.keyboardState.shiftKey) {
-    // 此处为 'Shift' 键的特殊功能
-    return;
-   }
+ if (ScriptUI.environment.keyboardState.shiftKey) {
+ // 此处为 'Shift' 键的特殊功能
+ return;
+ }
 
-   // 此处为正常按钮行为
+ // 此处为正常按钮行为
 }
 ```

@@ -36,7 +36,7 @@ order: 20
 使用点`P`处的体积值近似计算点`P + u`处的体积值。
 
 ```vex
-vector  P = {1.0, 2.0, 3.0};
+vector P = {1.0, 2.0, 3.0};
 vector grad;
 matrix3 hess;
 float val1 = volumesmoothsample(0, "density", P, grad, hess);

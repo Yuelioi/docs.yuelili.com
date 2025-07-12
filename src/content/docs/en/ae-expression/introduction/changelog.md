@@ -12,65 +12,65 @@ What's new and changed for expressions?
 Added many new text style properties and methods for both characters and paragraphs, as well as the ability to control per-character styling through expressions.
 
 - New attributes of .sourceText:
-    - Added: [SourceText.isPointText](../../text/sourcetext#sourcetextispointtext)
-    - Added: [SourceText.isParagraphText](../../text/sourcetext#sourcetextisparagraphtext)
-    - Added: [SourceText.isHorizontalText](../../text/sourcetext#sourcetextishorizontaltext)
-    - Added: [SourceText.isVerticalText](../../text/sourcetext#sourcetextisverticaltext)
+ - Added: [SourceText.isPointText](../../text/sourcetext#sourcetextispointtext)
+ - Added: [SourceText.isParagraphText](../../text/sourcetext#sourcetextisparagraphtext)
+ - Added: [SourceText.isHorizontalText](../../text/sourcetext#sourcetextishorizontaltext)
+ - Added: [SourceText.isVerticalText](../../text/sourcetext#sourcetextisverticaltext)
 - New per-character style properties and methods:
-    - Added: [TextStyle.replaceText()](../../text/style#textstylereplacetext)
-    - Added: [TextStyle.baselineDirection](../../text/style#textstylebaselinedirection)
-    - Added: [TextStyle.setBaselineDirection()](../../text/style#textstylesetbaselinedirection)
-    - Added: [TextStyle.baselineOption](../../text/style#textstylebaselineoption)
-    - Added: [TextStyle.setBaselineOption()](../../text/style#textstylesetbaselineoption)
-    - Added: [TextStyle.digitSet](../../text/style#textstyledigitset)
-    - Added: [TextStyle.setDigitSet()](../../text/style#textstylesetdigitset)
-    - Added: [TextStyle.isLigature](../../text/style#textstyleisligature)
-    - Added: [TextStyle.setLigature()](../../text/style#textstylesetligature)
-    - Added: [TextStyle.tsume](../../text/style#textstyletsume)
-    - Added: [TextStyle.setTsume()](../../text/style#textstylesettsume)
-    - Added: [TextStyle.verticalScaling](../../text/style#textstyleverticalscaling)
-    - Added: [TextStyle.setVerticalScaling()](../../text/style#textstylesetverticalscaling)
-    - Added: [TextStyle.horizontalScaling](../../text/style#textstylehorizontalscaling)
-    - Added: [TextStyle.setHorizontalScaling()](../../text/style#textstylesethorizontalscaling)
-    - Added: [TextStyle.lineJoin](../../text/style#textstylelinejoin)
-    - Added: [TextStyle.setLineJoin()](../../text/style#textstylesetlinejoin)
+ - Added: [TextStyle.replaceText()](../../text/style#textstylereplacetext)
+ - Added: [TextStyle.baselineDirection](../../text/style#textstylebaselinedirection)
+ - Added: [TextStyle.setBaselineDirection()](../../text/style#textstylesetbaselinedirection)
+ - Added: [TextStyle.baselineOption](../../text/style#textstylebaselineoption)
+ - Added: [TextStyle.setBaselineOption()](../../text/style#textstylesetbaselineoption)
+ - Added: [TextStyle.digitSet](../../text/style#textstyledigitset)
+ - Added: [TextStyle.setDigitSet()](../../text/style#textstylesetdigitset)
+ - Added: [TextStyle.isLigature](../../text/style#textstyleisligature)
+ - Added: [TextStyle.setLigature()](../../text/style#textstylesetligature)
+ - Added: [TextStyle.tsume](../../text/style#textstyletsume)
+ - Added: [TextStyle.setTsume()](../../text/style#textstylesettsume)
+ - Added: [TextStyle.verticalScaling](../../text/style#textstyleverticalscaling)
+ - Added: [TextStyle.setVerticalScaling()](../../text/style#textstylesetverticalscaling)
+ - Added: [TextStyle.horizontalScaling](../../text/style#textstylehorizontalscaling)
+ - Added: [TextStyle.setHorizontalScaling()](../../text/style#textstylesethorizontalscaling)
+ - Added: [TextStyle.lineJoin](../../text/style#textstylelinejoin)
+ - Added: [TextStyle.setLineJoin()](../../text/style#textstylesetlinejoin)
 - New paragraph style properties and methods:
-    - Added: [TextStyle.direction](../../text/style#textstyledirection)
-    - Added: [TextStyle.setDirection()](../../text/style#textstylesetdirection)
-    - Added: [TextStyle.isEveryLineComposer](../../text/style#textstyleiseverylinecomposer)
-    - Added: [TextStyle.setEveryLineComposer()](../../text/style#textstyleseteverylinecomposer)
-    - Added: [TextStyle.firstLineIndent](../../text/style#textstylefirstlineindent)
-    - Added: [TextStyle.setFirstLineIndent()](../../text/style#textstylesetfirstlineindent)
-    - Added: [TextStyle.isHangingRoman](../../text/style#textstyleishangingroman)
-    - Added: [TextStyle.setHangingRoman()](../../text/style#textstylesethangingroman)
-    - Added: [TextStyle.justification](../../text/style#textstylejustification)
-    - Added: [TextStyle.setJustification()](../../text/style#textstylesetjustification)
-    - Added: [TextStyle.leadingType](../../text/style#textstyleleadingtype)
-    - Added: [TextStyle.setLeadingType()](../../text/style#textstylesetleadingtype)
-    - Added: [TextStyle.leftMargin](../../text/style#textstyleleftmargin)
-    - Added: [TextStyle.setLeftMargin()](../../text/style#textstylesetleftmargin)
-    - Added: [TextStyle.rightMargin](../../text/style#textstylerightmargin)
-    - Added: [TextStyle.setRightMargin()](../../text/style#textstylesetrightmargin)
-    - Added: [TextStyle.spaceAfter](../../text/style#textstylespaceafter)
-    - Added: [TextStyle.setSpaceAfter()](../../text/style#textstylesetspaceafter)
-    - Added: [TextStyle.spaceBefore](../../text/style#textstylespacebefore)
-    - Added: [TextStyle.setSpaceBefore()](../../text/style#textstylesetspacebefore)
+ - Added: [TextStyle.direction](../../text/style#textstyledirection)
+ - Added: [TextStyle.setDirection()](../../text/style#textstylesetdirection)
+ - Added: [TextStyle.isEveryLineComposer](../../text/style#textstyleiseverylinecomposer)
+ - Added: [TextStyle.setEveryLineComposer()](../../text/style#textstyleseteverylinecomposer)
+ - Added: [TextStyle.firstLineIndent](../../text/style#textstylefirstlineindent)
+ - Added: [TextStyle.setFirstLineIndent()](../../text/style#textstylesetfirstlineindent)
+ - Added: [TextStyle.isHangingRoman](../../text/style#textstyleishangingroman)
+ - Added: [TextStyle.setHangingRoman()](../../text/style#textstylesethangingroman)
+ - Added: [TextStyle.justification](../../text/style#textstylejustification)
+ - Added: [TextStyle.setJustification()](../../text/style#textstylesetjustification)
+ - Added: [TextStyle.leadingType](../../text/style#textstyleleadingtype)
+ - Added: [TextStyle.setLeadingType()](../../text/style#textstylesetleadingtype)
+ - Added: [TextStyle.leftMargin](../../text/style#textstyleleftmargin)
+ - Added: [TextStyle.setLeftMargin()](../../text/style#textstylesetleftmargin)
+ - Added: [TextStyle.rightMargin](../../text/style#textstylerightmargin)
+ - Added: [TextStyle.setRightMargin()](../../text/style#textstylesetrightmargin)
+ - Added: [TextStyle.spaceAfter](../../text/style#textstylespaceafter)
+ - Added: [TextStyle.setSpaceAfter()](../../text/style#textstylesetspaceafter)
+ - Added: [TextStyle.spaceBefore](../../text/style#textstylespacebefore)
+ - Added: [TextStyle.setSpaceBefore()](../../text/style#textstylesetspacebefore)
 - Existing style methods updated to allow per-character styles:
-    - Changed: [TextStyle.setFontSize()](../../text/style#textstylesetfontsize)
-    - Changed: [TextStyle.setFont()](../../text/style#textstylesetfont)
-    - Changed: [TextStyle.setFauxBold()](../../text/style#textstylesetfauxbold)
-    - Changed: [TextStyle.setFauxItalic()](../../text/style#textstylesetfauxitalic)
-    - Changed: [TextStyle.setAllCaps()](../../text/style#textstylesetallcaps)
-    - Changed: [TextStyle.setSmallCaps()](../../text/style#textstylesetsmallcaps)
-    - Changed: [TextStyle.setTracking()](../../text/style#textstylesettracking)
-    - Changed: [TextStyle.setLeading()](../../text/style#textstylesetleading)
-    - Changed: [TextStyle.setAutoLeading()](../../text/style#textstylesetautoleading)
-    - Changed: [TextStyle.setBaselineShift()](../../text/style#textstylesetbaselineshift)
-    - Changed: [TextStyle.setApplyFill()](../../text/style#textstylesetapplyfill)
-    - Changed: [TextStyle.setFillColor()](../../text/style#textstylesetfillcolor)
-    - Changed: [TextStyle.setApplyStroke()](../../text/style#textstylesetapplystroke)
-    - Changed: [TextStyle.setStrokeColor()](../../text/style#textstylesetstrokecolor)
-    - Changed: [TextStyle.setStrokeWidth()](../../text/style#textstylesetstrokewidth)
+ - Changed: [TextStyle.setFontSize()](../../text/style#textstylesetfontsize)
+ - Changed: [TextStyle.setFont()](../../text/style#textstylesetfont)
+ - Changed: [TextStyle.setFauxBold()](../../text/style#textstylesetfauxbold)
+ - Changed: [TextStyle.setFauxItalic()](../../text/style#textstylesetfauxitalic)
+ - Changed: [TextStyle.setAllCaps()](../../text/style#textstylesetallcaps)
+ - Changed: [TextStyle.setSmallCaps()](../../text/style#textstylesetsmallcaps)
+ - Changed: [TextStyle.setTracking()](../../text/style#textstylesettracking)
+ - Changed: [TextStyle.setLeading()](../../text/style#textstylesetleading)
+ - Changed: [TextStyle.setAutoLeading()](../../text/style#textstylesetautoleading)
+ - Changed: [TextStyle.setBaselineShift()](../../text/style#textstylesetbaselineshift)
+ - Changed: [TextStyle.setApplyFill()](../../text/style#textstylesetapplyfill)
+ - Changed: [TextStyle.setFillColor()](../../text/style#textstylesetfillcolor)
+ - Changed: [TextStyle.setApplyStroke()](../../text/style#textstylesetapplystroke)
+ - Changed: [TextStyle.setStrokeColor()](../../text/style#textstylesetstrokecolor)
+ - Changed: [TextStyle.setStrokeWidth()](../../text/style#textstylesetstrokewidth)
 
 ---
 
@@ -114,18 +114,18 @@ Added many new text style properties and methods for both characters and paragra
 
 - Implemented Dropdown Menu Expression Control
 - Expression Editor improvements:
-    - You can now use the new scrolling functionality to prevent the scroll from adjusting incorrectly when the box is resized by typing the return character.
-    - Prevent numbers from matching in an autocomplete list if the variable begins with a number. Smarter autocomplete prevents from overriding closing brackets and quotes.
-    - You can now scale font size for Hi-DPI displays.
-    - Graph editor now commits changes in preferences for all the open graph editors.
-    - If you enable syntax highlight, the folding icon buttons in the UI now respect the default and background color, or the line numbers color and background color.
+ - You can now use the new scrolling functionality to prevent the scroll from adjusting incorrectly when the box is resized by typing the return character.
+ - Prevent numbers from matching in an autocomplete list if the variable begins with a number. Smarter autocomplete prevents from overriding closing brackets and quotes.
+ - You can now scale font size for Hi-DPI displays.
+ - Graph editor now commits changes in preferences for all the open graph editors.
+ - If you enable syntax highlight, the folding icon buttons in the UI now respect the default and background color, or the line numbers color and background color.
 - Expression performance improvements:
-    - After Effects now attempts to detect an expression that does not change throughout a comp and calculates the expression only once. Load your favorite expression-filled comp and experience the improved performance.
-    - Any expression using [posterizeTime()](../../general/global#posterizetime) now calculates only once for the entire comp, not on every frame.
+ - After Effects now attempts to detect an expression that does not change throughout a comp and calculates the expression only once. Load your favorite expression-filled comp and experience the improved performance.
+ - Any expression using [posterizeTime()](../../general/global#posterizetime) now calculates only once for the entire comp, not on every frame.
 - Added: Extended expressions access to Text properties.
-    - Added: [Text.Font...](../../text/text#textfont)
-    - Added: [Source Text](../../text/sourcetext)
-    - Added: [Text Style](../../text/style)
+ - Added: [Text.Font...](../../text/text#textfont)
+ - Added: [Source Text](../../text/sourcetext)
+ - Added: [Text Style](../../text/style)
 
 ---
 
@@ -179,30 +179,30 @@ Added many new text style properties and methods for both characters and paragra
 - Added: Property Link pick whip
 - Added: Support for custom expression function libraries
 - Added: Expression access to [Project](../../objects/project)
-    - Added: [Project.fullPath](../../objects/project#projectfullpath)
-    - Added: [Project.bitsPerChannel](../../objects/project#projectbitsperchannel)
-    - Added: [Project.linearBlending](../../objects/project#projectlinearblending)
+ - Added: [Project.fullPath](../../objects/project#projectfullpath)
+ - Added: [Project.bitsPerChannel](../../objects/project#projectbitsperchannel)
+ - Added: [Project.linearBlending](../../objects/project#projectlinearblending)
 
 ---
 
 ## [After Effects 15.0 (CC)](https://community.adobe.com/t5/after-effects/expression-and-scripting-improvements-in-after-effects-october-2017-pdf/td-p/4787866) (Oct 18 2017)
 
 - Added: Expression access to data in JSON files
-    - Added: [footage sourceText](../../objects/footage#footagesourcetext) attribute
-    - Added: [footage sourceData](../../objects/footage#footagesourcedata) attribute
-    - Added: [footage dataValue](../../objects/footage#footagedatavalue) method
-    - Added: [footage dataKeyCount](../../objects/footage#footagedatakeycount) method
-    - Added: [footage dataKeyTimes](../../objects/footage#footagedatakeytimes) method
-    - Added: [footage dataKeyValues](../../objects/footage#footagedatakeyvalues) method
+ - Added: [footage sourceText](../../objects/footage#footagesourcetext) attribute
+ - Added: [footage sourceData](../../objects/footage#footagesourcedata) attribute
+ - Added: [footage dataValue](../../objects/footage#footagedatavalue) method
+ - Added: [footage dataKeyCount](../../objects/footage#footagedatakeycount) method
+ - Added: [footage dataKeyTimes](../../objects/footage#footagedatakeytimes) method
+ - Added: [footage dataKeyValues](../../objects/footage#footagedatakeyvalues) method
 - Added: Expression access to path points on masks, Bezier shapes, and brush strokes
-    - Added: [path points](../../objects/path-property#pathpropertypoints) method
-    - Added: [path inTangents](../../objects/path-property#pathpropertyintangents) method
-    - Added: [path outTangents](../../objects/path-property#pathpropertyouttangents) method
-    - Added: [path isClosed](../../objects/path-property#pathpropertyisclosed) method
-    - Added: [path pointOnPath](../../objects/path-property#pathpropertypointonpath) method
-    - Added: [path tangentOnPath](../../objects/path-property#pathpropertytangentonpath) method
-    - Added: [path normalOnPath](../../objects/path-property#pathpropertynormalonpath) method
-    - Added: [path createPath](../../objects/path-property#pathpropertycreatepath) method
+ - Added: [path points](../../objects/path-property#pathpropertypoints) method
+ - Added: [path inTangents](../../objects/path-property#pathpropertyintangents) method
+ - Added: [path outTangents](../../objects/path-property#pathpropertyouttangents) method
+ - Added: [path isClosed](../../objects/path-property#pathpropertyisclosed) method
+ - Added: [path pointOnPath](../../objects/path-property#pathpropertypointonpath) method
+ - Added: [path tangentOnPath](../../objects/path-property#pathpropertytangentonpath) method
+ - Added: [path normalOnPath](../../objects/path-property#pathpropertynormalonpath) method
+ - Added: [path createPath](../../objects/path-property#pathpropertycreatepath) method
 
 ---
 
@@ -232,13 +232,13 @@ Added many new text style properties and methods for both characters and paragra
 
 - Added iris and highlight properties for camera layers to the expression language menu
 - - Added: [Camera.irisShape](../../objects/camera#camerairisshape)
-    - Added: [Camera.irisRotation](../../objects/camera#camerairisrotation)
-    - Added: [Camera.irisRoundness](../../objects/camera#camerairisroundness)
-    - Added: [Camera.irisAspectRatio](../../objects/camera#camerairisaspectratio)
-    - Added: [Camera.irisDiffractionFringe](../../objects/camera#camerairisdiffractionfringe)
-    - Added: [Camera.highlightGain](../../objects/camera#camerahighlightgain)
-    - Added: [Camera.highlightThreshold](../../objects/camera#camerahighlightthreshold)
-    - Added: [Camera.highlightSaturation](../../objects/camera#camerahighlightsaturation)
+ - Added: [Camera.irisRotation](../../objects/camera#camerairisrotation)
+ - Added: [Camera.irisRoundness](../../objects/camera#camerairisroundness)
+ - Added: [Camera.irisAspectRatio](../../objects/camera#camerairisaspectratio)
+ - Added: [Camera.irisDiffractionFringe](../../objects/camera#camerairisdiffractionfringe)
+ - Added: [Camera.highlightGain](../../objects/camera#camerahighlightgain)
+ - Added: [Camera.highlightThreshold](../../objects/camera#camerahighlightthreshold)
+ - Added: [Camera.highlightSaturation](../../objects/camera#camerahighlightsaturation)
 
 ---
 

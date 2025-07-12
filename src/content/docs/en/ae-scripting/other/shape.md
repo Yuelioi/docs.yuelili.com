@@ -23,38 +23,37 @@ For closed mask shapes, variable-width mask feather points can exist anywhere al
 The feather points on a mask are listed in an array in the order that they were created.
 :::
 
-
 #### Examples
 
 - Create a square mask. A square is a closed shape with 4 vertices. The `inTangents` and `outTangents` for connected straight-line segments are 0, the default, and do not need to be explicitly set.
-    ```javascript
-    var myShape = new Shape();
-    myShape.vertices = [[0,0], [0,100], [100,100], [100,0]];
-    myShape.closed = true;
-    ```
+ ```javascript
+ var myShape = new Shape();
+ myShape.vertices = [[0,0], [0,100], [100,100], [100,0]];
+ myShape.closed = true;
+ ```
 - Create a "U" shaped mask. A "U" is an open shape with the same 4 vertices used in the square.
-    ```javascript
-    var myShape = new Shape();
-    myShape.vertices = [[0,0], [0,100], [100,100], [100,0]];
-    myShape.closed = false;
-    ```
+ ```javascript
+ var myShape = new Shape();
+ myShape.vertices = [[0,0], [0,100], [100,100], [100,0]];
+ myShape.closed = false;
+ ```
 - Create an oval. An oval is a closed shape with 4 vertices and with inTangent and outTangent values.
-    ```javascript
-    var myShape = new Shape();
-    myShape.vertices = [[300,50], [200,150],[300,250],[400,150]];
-    myShape.inTangents = [[55.23,0],[0,-55.23],[-55.23,0],[0,55.23]];
-    myShape.outTangents = [[-55.23,0],[0,55.23],[55.23,0],[0,-55.23]];
-    myShape.closed = true;
-    ```
+ ```javascript
+ var myShape = new Shape();
+ myShape.vertices = [[300,50], [200,150],[300,250],[400,150]];
+ myShape.inTangents = [[55.23,0],[0,-55.23],[-55.23,0],[0,55.23]];
+ myShape.outTangents = [[-55.23,0],[0,55.23],[55.23,0],[0,-55.23]];
+ myShape.closed = true;
+ ```
 - Create a square mask with two feather points. A large square mask with two feather points, one closer to the left end the second mask segment (off the bottom edge) with a radius of 30 pixels and the other one centered the third mask segment (off the right edge) with a larger radius of 100 pixels.
-    ```javascript
-    var myShape = new Shape();
-    myShape.vertices = [[100,100], [100,400], [400,400], [400,100]]; // segments drawn counter clockwise
-    myShape.closed = true;
-    myShape.featherSegLocs = [1, 2]; // segments are numbered starting at 0, so second segment is 1
-    myShape.featherRelSegLocs = [0.15, 0.5]; // 0.15 is closer to the lower-left corner of the square
-    myShape.featherRadii = [30, 100]; // second feather point (onright-sidesegment) has a larger radius
-    ```
+ ```javascript
+ var myShape = new Shape();
+ myShape.vertices = [[100,100], [100,400], [400,400], [400,100]]; // segments drawn counter clockwise
+ myShape.closed = true;
+ myShape.featherSegLocs = [1, 2]; // segments are numbered starting at 0, so second segment is 1
+ myShape.featherRelSegLocs = [0.15, 0.5]; // 0.15 is closer to the lower-left corner of the square
+ myShape.featherRadii = [30, 100]; // second feather point (onright-sidesegment) has a larger radius
+ ```
 
 ---
 
@@ -86,7 +85,6 @@ An array containing each feather point's radius interpolation type (0 for non-Ho
 Values are stored in the array in the order that feather points are created.
 :::
 
-
 #### Type
 
 Array of integers (0 or 1); read/write.
@@ -104,7 +102,6 @@ An array containing each feather point's radius (feather amount); inner feather 
 :::tip
 Values are stored in the array in the order that feather points are created.
 :::
-
 
 #### Type
 
@@ -124,7 +121,6 @@ An array containing each feather point's relative angle percentage between the t
 Values are stored in the array in the order that feather points are created.
 :::
 
-
 #### Type
 
 Array of floating-point percentage values (0 to 100); read/write.
@@ -143,7 +139,6 @@ An array containing each feather point's relative position, from 0 to 1, on its 
 Values are stored in the array in the order that feather points are created. To move a feather point to a different mask path segment, first change the [featherSegLocs](#shapefeatherseglocs) attribute value, then this attribute.
 :::
 
-
 #### Type
 
 Array of floating-point values (0 to 1); read/write.
@@ -161,7 +156,6 @@ An array containing each feather point's mask path segment number (section of th
 :::tip
 Values are stored in the array in the order that feather points are created. Move a feather point to a different segment by changing both its segment number (this attribute) and, optionally, its [featherRelSegLocs](#shapefeatherrelseglocs) attribute value.
 :::
-
 
 #### Type
 
@@ -201,7 +195,6 @@ An array containing each feather point's tension amount, from 0 (0% tension) to 
 Values are stored in the array in the order that feather points are created.
 :::
 
-
 #### Type
 
 Array of floating-point values (0 to 1); read/write.
@@ -219,7 +212,6 @@ An array containing each feather point's direction, either 0 (outer feather poin
 :::tip
 Values are stored in the array in the order that feather points are created.
 :::
-
 
 #### Type
 

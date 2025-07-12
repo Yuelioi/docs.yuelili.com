@@ -18,10 +18,10 @@ path item 1 of layer 2 of document 1
 ```applescript
 -- 创建 2 个新对象并尝试同时选择它们
 tell application "Adobe Illustrator"
-    set newDocument to make new document
-    set rectPath to make new rectangle in newDocument
-    set starPath to make new star in newDocument
-    set selection of newDocument to {rectPath, starPath}
+ set newDocument to make new document
+ set rectPath to make new rectangle in newDocument
+ set starPath to make new star in newDocument
+ set selection of newDocument to {rectPath, starPath}
 end tell
 ```
 
@@ -29,19 +29,19 @@ end tell
 
 ```applescript
 set selection of document 1 to {path item 1 of layer 1 of document 1,
-    path item 1 of layer 1 of document 1}
+ path item 1 of layer 1 of document 1}
 ```
 
 更好的方法是通过名称引用对象：
 
 ```applescript
 tell application "Adobe Illustrator"
-    set newDocument to make new document
-    make new rectangle in newDocument with properties {name:"rectangle"}
-    make new star in newDocument with properties {name:"star"}
-    set selection of newDocument to
-    {path item "rectangle" of newDocument,
-    path item "star" of newDocument}
+ set newDocument to make new document
+ make new rectangle in newDocument with properties {name:"rectangle"}
+ make new star in newDocument with properties {name:"star"}
+ set selection of newDocument to
+ {path item "rectangle" of newDocument,
+ path item "star" of newDocument}
 end tell
 ```
 
@@ -56,7 +56,7 @@ end tell
 ```applescript
 -- 获取文档 1 的第一个页面项的引用
 tell application "Adobe Illustrator"
-    set pageItemRef to page item 1 of document 1
+ set pageItemRef to page item 1 of document 1
 end tell
 ```
 
@@ -65,7 +65,7 @@ end tell
 ```applescript
 -- 获取文档 1 的第 1 层的第一个页面项的引用
 tell application "Adobe Illustrator"
-    set pageItemRef to page item 1 of layer 1 of document 1
+ set pageItemRef to page item 1 of layer 1 of document 1
 end tell
 ```
 
@@ -83,8 +83,8 @@ end tell
 
 ```applescript
 tell application "Adobe Illustrator"
-    set myDoc to current document
-    set selectedObjects to selection of myDoc
+ set myDoc to current document
+ set selectedObjects to selection of myDoc
 end tell
 ```
 
@@ -94,10 +94,10 @@ end tell
 
 ```applescript
 tell application "Adobe Illustrator"
-    set myDoc to current document
-    set selectedObjects to selection of myDoc
-    set topObject to item 1 of selectedObjects
-    display dialog (class of topObject)
+ set myDoc to current document
+ set selectedObjects to selection of myDoc
+ set topObject to item 1 of selectedObjects
+ display dialog (class of topObject)
 end tell
 ```
 

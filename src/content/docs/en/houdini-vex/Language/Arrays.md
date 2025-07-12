@@ -27,20 +27,20 @@ This example shows off some of the crazy things that you can do with arrays:
 ```vex
 surface
 crazy(
-      string maps[] = { "Mandril.rat", "default.pic" };
-      export float alength = 0;
-      )
+ string maps[] = { "Mandril.rat", "default.pic" };
+ export float alength = 0;
+ )
 {
-    vector texclr, av[];
+ vector texclr, av[];
 
-    texclr = texture(maps[s+t > 1], s, t);
-    av = array( {1,0,0}, vector(nrandom()), t, texclr, {.5,0,0});
+ texclr = texture(maps[s+t > 1], s, t);
+ av = array( {1,0,0}, vector(nrandom()), t, texclr, {.5,0,0});
 
-    if (fit(noise(s*8), 0, 1, .3, .7) > t)
-        av = array(1, {0,1,0}, 0);
+ if (fit(noise(s*8), 0, 1, .3, .7) > t)
+ av = array(1, {0,1,0}, 0);
 
-    Cf = spline("linear", s, av);
-    alength = len(av);
+ Cf = spline("linear", s, av);
+ alength = len(av);
 }
 
 ```
@@ -54,13 +54,13 @@ To declare an array variable, the general form is
 
 ```vex
 // my_array is an array of floats
-float   my_array[];
+float my_array[];
 
 // v is a single vector, vector_array is an array of vectors
-vector  v, vector_array[];
+vector v, vector_array[];
 
 // str_array is an array of strings
-string  str_array[];
+string str_array[];
 
 ```
 
@@ -75,7 +75,7 @@ To declare a function that returns an array:
 vector[] rgb_array()
 {
 ...
-};    
+}; 
 
 ```
 
@@ -88,11 +88,11 @@ nested function that returns an array:
 cvex
 foo()
 {
-    // Use the optional 'function' keyword to avoid type ambiguity
-    function vector[] rgb_array()
-    {
-    ...
-    };    
+ // Use the optional 'function' keyword to avoid type ambiguity
+ function vector[] rgb_array()
+ {
+ ...
+ }; 
 }
 
 ```
@@ -105,7 +105,7 @@ vector an_array[] = { {1, 2, 3}, {2, 3, 4}, {4, 5, 6} };
 
 vector[] rgb_array()
 {
-    return { {1, 0, 0}, {0, 1, 0}, {0, 0, 1} };
+ return { {1, 0, 0}, {0, 1, 0}, {0, 0, 1} };
 }
 
 ```
@@ -177,11 +177,11 @@ from the end of the array.
 
 ```vex
 int nums[] = { 0, 1, 2, 3, 4, 5 };
-int n = nums[10];  // Returns 0
-int b = nums[-2];  // Returns 4
+int n = nums[10]; // Returns 0
+int b = nums[-2]; // Returns 4
 
 string strs[] = { };
-string s = strs[20];  // Returns ""
+string s = strs[20]; // Returns ""
 
 ```
 
@@ -208,9 +208,9 @@ The square-brackets can be used to extract sub-arrays using the Python slicing n
 
 ```vex
 int nums[] = { 0, 1, 2, 3, 4, 5 };
-int start[] = nums[0:2];  // { 0, 1 }
-int end[] = nums[-2:];  // { 4, 5 }
-int rev[] = nums[::-1];  // { 5, 4, 3, 2, 1, 0 }
+int start[] = nums[0:2]; // { 0, 1 }
+int end[] = nums[-2:]; // { 4, 5 }
+int rev[] = nums[::-1]; // { 5, 4, 3, 2, 1, 0 }
 int odd[] = nums[1::2]; // { 1, 3, 5 }
 
 ```
@@ -229,11 +229,11 @@ arrays of floats:
 float x[];
 // Cf and P are vectors
 
-x = set(P);   // Assigns the components of P to the corresponding
-      // members of the array x
+x = set(P); // Assigns the components of P to the corresponding
+ // members of the array x
 
-Cf = set(x);  // Assigns the first 3 members of x as the
-      // components of the vector Cf
+Cf = set(x); // Assigns the first 3 members of x as the
+ // components of the vector Cf
 
 ```
 
@@ -242,24 +242,24 @@ repeated as often as necessary.
 
 ```vex
 float x[] = {1, 2} // Not long enough to fill a vector
-Cf = set(x);  // Cf == {1, 2, 2}
+Cf = set(x); // Cf == {1, 2, 2}
 
 ```
 
 You can also assign between matrix types and arrays of `vector2`/`vector`/`vector4`:
 
 ```vex
-vector2     v2[];
-vector      v[];
-vector4     v4[];
-matrix2     m2 = 1;
-matrix3     m3 = 1;
-matrix      m4 = 1;
+vector2 v2[];
+vector v[];
+vector4 v4[];
+matrix2 m2 = 1;
+matrix3 m3 = 1;
+matrix m4 = 1;
 
-v = set(m3);   // Each row of the 3x3 matrix is put into a vector
-m3 = set(v);   // Copy the vectors into the row vectors of the matrix
-v4 = set(m4);  // Extract the rows of the matrix into the vector4 array
-m4 = set(v4);  // Create a matrix using the vector4's in the array as row vectors
+v = set(m3); // Each row of the 3x3 matrix is put into a vector
+m3 = set(v); // Copy the vectors into the row vectors of the matrix
+v4 = set(m4); // Extract the rows of the matrix into the vector4 array
+m4 = set(v4); // Create a matrix using the vector4's in the array as row vectors
 
 ```
 
@@ -359,7 +359,7 @@ In addition, the following functions work with arrays:
 - [import()](functions/import.html)
 - [addattribute()](functions/addattribute.html)
 - [metaimport](functions/metaimport.html "Once you get a handle to a metaball using metastart and metanext, you
-  can query attributes of the metaball with metaimport.")
+ can query attributes of the metaball with metaimport.")
 
 VCC pragmas
 

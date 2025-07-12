@@ -15,17 +15,17 @@ Examples
 
 ```vex
 if (!pointattribtype(0,chs("nameattrib")) != 2) {
-    error("Name attribute %s must be a string attribute!", chs("nameattrib"));
-    return;
+ error("Name attribute %s must be a string attribute!", chs("nameattrib"));
+ return;
 }
 if (chf("distance") < 0) {
-    error("")
+ error("")
 }
 float minimumValue = chf("min");
 float maximumValue = chf("max");
 if (minimumValue >= maximumValue) {
-    error("Minimum (%f) must be strictly less than maximum (%f)!  It's unclear what should be done.", minimumValue, maximumValue);
-    return;
+ error("Minimum (%f) must be strictly less than maximum (%f)! It's unclear what should be done.", minimumValue, maximumValue);
+ return;
 }
 
 ```

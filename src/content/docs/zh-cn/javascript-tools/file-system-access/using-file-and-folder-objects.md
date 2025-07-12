@@ -44,13 +44,13 @@ URI 表示法中的相对路径名称附加到当前目录的路径中，该路�
 
 例如，以下路径描述了文件 `myFile.jsx` 的各种相对位置：
 
-|    文件引用    |   位置   |
-| -------------- | ------------------------------------------------- |
-| `myFile.jsx`   | 在当前目录中。   |
-| `./myFile.jsx` |   |
-| `../myFile.jsx`| 在当前目录的父目录中。       |
-| `../../myFile.jsx` | 在当前目录的祖父目录中。     |
-| `../dir1/myFile.jsx` | 在 `dir1` 中，与当前目录平行。     |
+| 文件引用 | 位置 |
+| --- | --- |
+| `myFile.jsx` | 在当前目录中。 |
+| `./myFile.jsx` | |
+| `../myFile.jsx`| 在当前目录的父目录中。 |
+| `../../myFile.jsx` | 在当前目录的祖父目录中。 |
+| `../dir1/myFile.jsx` | 在 `dir1` 中，与当前目录平行。 |
 
 相对路径名称独立于不同机器和操作系统上的不同卷名，因此使你的代码更具可移植性。例如，你可以使用绝对路径进行单个操作，以在 `Folder.current` 属性中设置当前目录，并对所有其他操作使用相对路径。然后，你只需要一次代码更改即可更新到新平台或文件位置。
 
@@ -100,12 +100,12 @@ UNIX 和 Mac OS 根据用户登录分配 `HOME` 环境变量。在 Mac OS 上，
 
 Mac OS 9 不再作为操作系统支持，但仍然支持使用冒号作为路径分隔符，并且与 URI 和 Mac OS X 路径对应，如下表所示。这些示例假设启动卷为 `MacOSX`，并且有一个挂载的卷 `Remote`。
 
-|   URI 路径名称    | Mac OS 9 路径名称 |     Mac OS X 路径名称     |
-| ----------------- | ----------------- | ------------------------ |
-| `/MacOSX/dir/file` | `MacOSX:dir:file`  | `/dir/file`   |
-| `/Remote/dir/file` | `Remote:dir:file`  | `/Volumes/Remote/dir/file` |
-| `/root/dir/file`   | `Root:dir:file`    | `/root/dir/file`    |
-| `~/dir/file`       |    | `/Users/jdoe/dir/file`   |
+| URI 路径名称 | Mac OS 9 路径名称 | Mac OS X 路径名称 |
+| --- | --- | --- |
+| `/MacOSX/dir/file` | `MacOSX:dir:file` | `/dir/file` |
+| `/Remote/dir/file` | `Remote:dir:file` | `/Volumes/Remote/dir/file` |
+| `/root/dir/file` | `Root:dir:file` | `/root/dir/file` |
+| `~/dir/file` | | `/Users/jdoe/dir/file` |
 
 #### Windows 驱动器
 
@@ -119,12 +119,12 @@ Mac OS 9 不再作为操作系统支持，但仍然支持使用冒号作为路�
 
 要访问远程卷，请使用统一命名约定（UNC）路径名称，形式为 `//servername/sharename`。这些路径名称是可移植的，因为 Mac OS X 和 UNIX 都会忽略多个斜杠字符。请注意，在 Windows 上，UNC 名称不适用于本地卷。这些示例假设当前驱动器为 `D:`。
 
-|   URI 路径名称    |      Windows 路径名称       |
-| ----------------- | -------------------------- |
-| `/c/dir/file`     | `c:\\dir\\file`       |
-| `/remote/dir/file`| `D:\\remote\\dir\\file`    |
-| `/root/dir/file`  | `D:\\root\\dir\\file`      |
-| `~/dir/file`      | `C:\\Users\\jdoe\\dir\\file` |
+| URI 路径名称 | Windows 路径名称 |
+| --- | --- |
+| `/c/dir/file` | `c:\\dir\\file` |
+| `/remote/dir/file`| `D:\\remote\\dir\\file` |
+| `/root/dir/file` | `D:\\root\\dir\\file` |
+| `~/dir/file` | `C:\\Users\\jdoe\\dir\\file` |
 
 ### 别名
 

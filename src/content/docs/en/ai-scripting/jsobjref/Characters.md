@@ -71,10 +71,10 @@ If a location is not specified, adds the new character to the containing text fr
 
 #### Parameters
 
-|      Parameter      |                                 Type                                  |      Description       |
-| ------------------- | --------------------------------------------------------------------- | ---------------------- |
-| `contents`          | String                                                                | Text contents to add   |
-| `relativeObject`    | [TextFrameItem](.././TextFrameItem), optional                         | Object to add item to  |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `contents` | String | Text contents to add |
+| `relativeObject` | [TextFrameItem](.././TextFrameItem), optional | Object to add item to |
 | `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), optional | Location to place text |
 
 #### Returns
@@ -93,8 +93,8 @@ Adds a character before the specified text selection.
 
 #### Parameters
 
-| Parameter  |  Type  |     Description      |
-| ---------- | ------ | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `contents` | String | Text contents to add |
 
 #### Returns
@@ -113,8 +113,8 @@ Gets an element from the collection.
 
 #### Parameters
 
-| Parameter |      Type      |     Description      |
-| --------- | -------------- | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `itemKey` | String, Number | String or number key |
 
 #### Returns
@@ -146,11 +146,11 @@ Nothing.
 // including whitespace, and stores in numChars
 
 if (app.documents.length > 0) {
-    var doc = app.activeDocument;
-    var numChars = 0;
-    for (var i = 0; i < doc.textFrames.length; i++) {
-        var textArtRange = doc.textFrames[i].contents;
-        numChars += textArtRange.length;
-    }
+ var doc = app.activeDocument;
+ var numChars = 0;
+ for (var i = 0; i < doc.textFrames.length; i++) {
+ var textArtRange = doc.textFrames[i].contents;
+ numChars += textArtRange.length;
+ }
 }
 ```

@@ -48,8 +48,6 @@ You can edit or run scripts in multiple document windows simultaneously. The cur
 For example, if one script opens a modal dialog in Photoshop, and you run another script that targets Photoshop while the dialog is still open, the second script is likely to generate an error.
 :::
 
-
-
 ![Split-Document Button](./_static/02_the-extendscript-toolkit_configuring-the-toolkit-window_document-windows_split-documents.png)
 
 *A button in the upper right corner of the document window allows you to split that window.*
@@ -66,8 +64,8 @@ The Toolkit saves the current layout when you exit, and restores it at the next 
 
 - The Startup page in the Preferences dialog (Edit > Preferences) offers a choice of whether to open a blank document window, no document window, or display a previously opened document on startup.
 - The Tookit defines a number of workspace configurations that are suitable for specific usage types. To choose a predefined or user-defined workspace, use the workspace menu that drops down from the upper right corner of the Toolkit.
-    - When you choose a workspace, its name appears here. You can also add and remove workspaces from this menu.
-    ![Current Workspace Name](./_static/02_the-extendscript-toolkit_configuring-the-toolkit-window_workspaces_current-workspace-name.png)
+ - When you choose a workspace, its name appears here. You can also add and remove workspaces from this menu.
+ ![Current Workspace Name](./_static/02_the-extendscript-toolkit_configuring-the-toolkit-window_workspaces_current-workspace-name.png)
 - You can save any configuration as a named workspace, using the Create new Workspace menu command, or the Add button on the Workspaces page in the Preferences dialog (Edit > Preferences).
 - You can remove workspaces you have defined, either individually using the menu or the Workspaces page in the Preferences dialog, or all at once using the Default button at the bottom of the Workspace page.
 - The Keyboard Shortcuts page in the Preferences dialog (Edit > Preferences) allows you to set or modify keyboard shortcuts for all menu commands. There is a warning if you assign a key combination that is already in use. If you assign the combination to a new command, it is removed from the previous command.

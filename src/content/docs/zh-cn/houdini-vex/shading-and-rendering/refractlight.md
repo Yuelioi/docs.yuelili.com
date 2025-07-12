@@ -72,7 +72,7 @@ diff = diffuse(nml, "lightmask", "light*,^light2");
 surface
 blurry_mirror(float angle = 3; int samples = 16; float bias=0.05)
 {
-    Cf = reflectlight(bias, 1, "angle", angle, "samples", samples);
+ Cf = reflectlight(bias, 1, "angle", angle, "samples", samples);
 }
 ```
 
@@ -179,15 +179,15 @@ Cf = R*reflectlight(bias, max(R), "environment", "map.rat", "envobject", "null_o
 surface
 glass(float eta=1.3, bias = 0.005)
 {
-    float    Kr, Kt;
-    vector    R, T;
-    vector    cf, of;
-    float    af;
-    frensel(normalize(I), normalize(N), eta, Kr, Kt, R, T);
-    Cf  = Kr * reflectlight(P, R, bias, Kr);
-    refractlight(cf, of, af, P, T, bias, Kt);
-    Cf += Kt * cf;
-    Af = clamp(Kr + af*Kt, 0, 1);
-    Of = 1;
+ float Kr, Kt;
+ vector R, T;
+ vector cf, of;
+ float af;
+ frensel(normalize(I), normalize(N), eta, Kr, Kt, R, T);
+ Cf = Kr * reflectlight(P, R, bias, Kr);
+ refractlight(cf, of, af, P, T, bias, Kt);
+ Cf += Kt * cf;
+ Af = clamp(Kr + af*Kt, 0, 1);
+ Of = 1;
 }
 ```

@@ -46,7 +46,6 @@ The name of the operating system on which After Effects is running.
 As of Windows 7, this attribute returns a blank value. Use $.os instead.
 :::
 
-
 #### Type
 
 String; read-only.
@@ -98,8 +97,8 @@ alert("Current time is " + timeStr);
 
 #### Parameters
 
-|     Parameter      |  Type  |           Description           |
-| ------------------ | ------ | ------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `cmdLineToExecute` | String | The command and its parameters. |
 
 #### Returns

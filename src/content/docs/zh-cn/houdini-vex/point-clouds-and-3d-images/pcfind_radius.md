@@ -43,8 +43,8 @@ int 邻近点[] = pcfind_radius(文件名, "P", "pscale", 1.0, P, 最大距离, 
 P = 0;
 foreach (int 点编号; 邻近点)
 {
-    vector 邻近位置 = point(文件名, "P", 点编号);
-    P += 邻近位置;
+ vector 邻近位置 = point(文件名, "P", 点编号);
+ P += 邻近位置;
 }
 P /= len(邻近点);
 ```

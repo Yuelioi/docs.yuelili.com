@@ -13,16 +13,13 @@ The AVItem object provides access to attributes and methods of audio/visual file
 AVItem is a subclass of Item. All methods and attributes of Item, in addition to those listed below, are available when working with AVItem. See [Item object](../item)
 :::
 
-
 :::info
 AVItem is the base class for both CompItem and FootageItem, so AVItem attributes and methods are also available when working with CompItem and FootageItem objects. See [CompItem object](../compitem) and [FootageItem object](../footageitem).
 :::
 
-
 :::warning
 CompItems and FootageItems, while logical descendants of AVItem, are not *really* subclasses of AVItem as AVItem doesn't exist in Extendscript, ie. attempting to check if `item instanceof AVItem` will fail because AVItem is undefined. This is also true for `Item` itself.
 :::
-
 
 See [Javascript Classes](../../introduction/javascript#javascript-classes) and [After Effects Class Hierarchy](../../introduction/classhierarchy) for more info.
 
@@ -151,7 +148,6 @@ Integer, in the range `[1..30000]`; read/write, except as noted.
 This functionality was added in After Effects 18.0 (2021)
 :::
 
-
 #### Description
 
 Test whether the AVItem can be used as an alternate source when calling [Property.setAlternateSource()](../../property/property#propertysetalternatesource).
@@ -200,15 +196,15 @@ The pixel aspect ratio (PAR) of the item.
 The value you retrieve after setting may be slightly different from the value you supplied. The following table compares the value as it appears in the UI with the more accurate value returned by this attribute.
 
 | PAR in the After Effects UI | PAR returned by the pixelAspect attribute |
-| --------------------------- | ----------------------------------------- |
-| 0.91                        | 0.909091                                  |
-| 1                           | 1                                         |
-| 1.5                         | 1.5                                       |
-| 1.09                        | 1.09402                                   |
-| 1.21                        | 1.21212                                   |
-| 1.33                        | 1.33333                                   |
-| 1.46                        | 1.45869                                   |
-| 2                           | 2                                         |
+| --- | --- |
+| 0.91 | 0.909091 |
+| 1 | 1 |
+| 1.5 | 1.5 |
+| 1.09 | 1.09402 |
+| 1.21 | 1.21212 |
+| 1.33 | 1.33333 |
+| 1.46 | 1.45869 |
+| 2 | 2 |
 
 #### Type
 
@@ -306,9 +302,9 @@ This differs from setting a FootageItem's `mainSource`, but both actions are per
 
 #### Parameters
 
-| Parameter |                                                 Type                                                  |           Description           |
-| --------- | ----------------------------------------------------------------------------------------------------- | ------------------------------- |
-| `file`    | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object | The file to be used as a proxy. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `file` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object | The file to be used as a proxy. |
 
 #### Returns
 
@@ -346,16 +342,15 @@ Creates a PlaceholderSource object with specified values, sets this as the value
 There is no direct way to set a placeholder as a proxy in the user interface; this behavior occurs when a proxy has been set and then moved or deleted.
 :::
 
-
 #### Parameters
 
-|  Parameter  |                  Type                  |                 Description                 |
-| ----------- | -------------------------------------- | ------------------------------------------- |
-| `name`      | String                                 | The name of the new object.                 |
-| `width`     | Integer, in the range `[4..30000]`     | The pixel dimensions of the placeholder.    |
-| `height`    | Integer, in the range `[4..30000]`     | The pixel dimensions of the placeholder.    |
-| `frameRate` | Integer, in the range `[1..99]`        | Frame rate for the proxy.                   |
-| `duration`  | Integer, in the range `[0.0..10800.0]` | The total length in seconds, up to 3 hours. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | The name of the new object. |
+| `width` | Integer, in the range `[4..30000]` | The pixel dimensions of the placeholder. |
+| `height` | Integer, in the range `[4..30000]` | The pixel dimensions of the placeholder. |
+| `frameRate` | Integer, in the range `[1..99]` | Frame rate for the proxy. |
+| `duration` | Integer, in the range `[0.0..10800.0]` | The total length in seconds, up to 3 hours. |
 
 #### Returns
 
@@ -377,10 +372,10 @@ If any file has an unlabeled alpha channel, and the user preference says to ask 
 
 #### Parameters
 
-|      Parameter      |                                                 Type                                                  |                       Description                       |
-| ------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| `file`              | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object | The first file in the sequence.                         |
-| `forceAlphabetical` | Boolean                                                                                               | When `true`, use the "Force alphabetical order" option. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `file` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object | The first file in the sequence. |
+| `forceAlphabetical` | Boolean | When `true`, use the "Force alphabetical order" option. |
 
 #### Returns
 
@@ -400,15 +395,14 @@ Creates a [SolidSource object](../../sources/solidsource) with specified values,
 There is no way, using the user interface, to set a solid as a proxy; this feature is available only through scripting.
 :::
 
-
 #### Parameters
 
-|     Parameter     |                                     Type                                      |               Description                |
-| ----------------- | ----------------------------------------------------------------------------- | ---------------------------------------- |
-| `color`           | Array of three floating-point values, `[R, G, B]`, in the range `[0.0..1.0]`. | The color of the solid.                  |
-| `name`            | String                                                                        | The name of the new object.              |
-| `width`, `height` | Integer, in the range `[1..30000]`                                            | The pixel dimensions of the placeholder. |
-| `pixelAspect`     | Floating-point value, in the range `[0.01..100.0]`                            | The pixel aspect ratio of the solid.     |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `color` | Array of three floating-point values, `[R, G, B]`, in the range `[0.0..1.0]`. | The color of the solid. |
+| `name` | String | The name of the new object. |
+| `width`, `height` | Integer, in the range `[1..30000]` | The pixel dimensions of the placeholder. |
+| `pixelAspect` | Floating-point value, in the range `[0.01..100.0]` | The pixel aspect ratio of the solid. |
 
 #### Returns
 

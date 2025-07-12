@@ -9,9 +9,9 @@ Each class listing includes the following:
 
 - Properties of the class, including value type, read-only status, and an explanation.
 - Methods for the class.
-    - Constants and value types needed by the method are shown in bold face.
-    - Required terms are shown in plain face.
-    - All items surrounded by brackets `[ ]` are optional.
+ - Constants and value types needed by the method are shown in bold face.
+ - Required terms are shown in plain face.
+ - All items surrounded by brackets `[ ]` are optional.
 - Notes to explain special issues.
 - Sample code to help illustrate the syntax and typical workflow usage of the object class.
 

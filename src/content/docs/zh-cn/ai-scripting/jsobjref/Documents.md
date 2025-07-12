@@ -61,13 +61,13 @@ title: 文档
 
 ```javascript
 app.documents.add(
-    [documentColorSpace]
-    [, width]
-    [, height]
-    [, numArtBoards]
-    [, artboardLayout]
-    [, artboardSpacing]
-    [, artboardRowsOrCols]
+ [documentColorSpace]
+ [, width]
+ [, height]
+ [, numArtBoards]
+ [, artboardLayout]
+ [, artboardSpacing]
+ [, artboardRowsOrCols]
 )
 ```
 
@@ -77,15 +77,15 @@ app.documents.add(
 
 #### 参数
 
-|      参数       |       类型        |    描述    |
-| --------------- | --------------------------------------------------------------------------------- | ---------------------- |
-| `documentColorSpace` | [DocumentColorSpace](../scripting-constants#documentcolorspace), 可选   | 文档的颜色空间   |
-| `width`   | 数字 (double), 可选          | 要添加的文档宽度       |
-| `height`        | 数字 (double), 可选          | 要添加的文档高度       |
-| `numArtBoards`  | 数字 (long), 可选      | 要创建的艺术板数量     |
-| `artboardLayout` | [DocumentArtboardLayout](../scripting-constants#documentartboardlayout), 可选 | 艺术板布局       |
-| `artboardSpacing` | 数字, 可选           | 间距的像素数     |
-| `artboardRowsOrCols` | 整数, 可选       | 行数或列数       |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `documentColorSpace` | [DocumentColorSpace](../scripting-constants#documentcolorspace), 可选 | 文档的颜色空间 |
+| `width` | 数字 (double), 可选 | 要添加的文档宽度 |
+| `height` | 数字 (double), 可选 | 要添加的文档高度 |
+| `numArtBoards` | 数字 (long), 可选 | 要创建的艺术板数量 |
+| `artboardLayout` | [DocumentArtboardLayout](../scripting-constants#documentartboardlayout), 可选 | 艺术板布局 |
+| `artboardSpacing` | 数字, 可选 | 间距的像素数 |
+| `artboardRowsOrCols` | 整数, 可选 | 行数或列数 |
 
 #### 返回值
 
@@ -103,11 +103,11 @@ app.documents.add(
 
 #### 参数
 
-|      参数      |          类型   |    描述     |
-| -------------- | ----------------------------------------------- | ----------------------- |
-| `startupPreset` | 字符串          | 使用的启动预设    |
-| `presetSettings` | [DocumentPreset](.././DocumentPreset), 可选 | 预设文档模板      |
-| `showOptionsDialog` | 布尔值, 可选     | 是否显示选项对话框      |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `startupPreset` | 字符串 | 使用的启动预设 |
+| `presetSettings` | [DocumentPreset](.././DocumentPreset), 可选 | 预设文档模板 |
+| `showOptionsDialog` | 布尔值, 可选 | 是否显示选项对话框 |
 
 #### 返回值
 
@@ -125,8 +125,8 @@ app.documents.add(
 
 #### 参数
 
-|    参数    |  类型  |      描述      |
-| ---------- | ------ | -------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `startupPreset` | 字符串 | 使用的启动预设 |
 
 #### 返回值
@@ -145,8 +145,8 @@ app.documents.add(
 
 #### 参数
 
-| 参数  |  类型  |       描述       |
-| ----- | ------ | ---------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `name` | 字符串 | 要获取的元素名称 |
 
 #### 返回值
@@ -165,8 +165,8 @@ app.documents.add(
 
 #### 参数
 
-| 参数    |      类型      |      描述      |
-| ------- | -------------- | -------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `itemKey` | 字符串, 数字 | 字符串或数字键 |
 
 #### 返回值

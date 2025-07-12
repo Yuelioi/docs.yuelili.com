@@ -21,15 +21,15 @@ title: 定义间接访问的入口函数
 
 #### 参数
 
-| 参数 |         描述          |
-|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `kReason` | 此调用的原因，以下常量之一：   |
-|      | - `kSoCClient_init`: 函数在加载时被调用以进行初始化。       |
-|      | - `kSoCClient_term`.: 函数在卸载时被调用以进行终止。       |
+| 参数 | 描述 |
+|---|---|
+| `kReason` | 此调用的原因，以下常量之一： |
+| | - `kSoCClient_init`: 函数在加载时被调用以进行初始化。 |
+| | - `kSoCClient_term`.: 函数在卸载时被调用以进行终止。 |
 | `pServer` | 指向 [SoServerInterface](#soserverinterface) 的指针，包含入口函数的函数指针，使共享库代码能够调用 JavaScript 以创建和访问 JavaScript 类和对象。 |
-|      | 共享库代码负责在初始化和终止调用之间存储此结构，并在访问函数时检索它。     |
-| `hServer` | 此共享库的 [支持结构](#support-structures) 引用。服务器是一个对象工厂，用于创建和管理 [支持结构](#support-structures) 对象。        |
-|      | 共享库代码负责在初始化和终止调用之间存储此结构。您必须将其传递给 [taggedDataInit()](#taggeddatainit) 和 [taggedDataFree()](#taggeddatafree)。    |
+| | 共享库代码负责在初始化和终止调用之间存储此结构，并在访问函数时检索它。 |
+| `hServer` | 此共享库的 [支持结构](#support-structures) 引用。服务器是一个对象工厂，用于创建和管理 [支持结构](#support-structures) 对象。 |
+| | 共享库代码负责在初始化和终止调用之间存储此结构。您必须将其传递给 [taggedDataInit()](#taggeddatainit) 和 [taggedDataFree()](#taggeddatafree)。 |
 
 #### 返回
 
@@ -47,9 +47,9 @@ title: 定义间接访问的入口函数
 
 #### 参数
 
-| 参数 |      描述       |
-| --------- | -------------------------------- |
-| `nbytes`  | 要分配的字节数。 |
+| 参数 | 描述 |
+| --- | --- |
+| `nbytes` | 要分配的字节数。 |
 
 #### 返回
 
@@ -73,42 +73,42 @@ SoServerInterface 结构包含以下函数指针：
 
 ```cpp
 SoServerInterface {
-    SoServerDumpServer_f
-    SoServerDumpObject_f
+ SoServerDumpServer_f
+ SoServerDumpObject_f
 
-    dumpServer; //调试，在控制台中显示服务器
-    dumpObject; //调试，在控制台中显示对象
+ dumpServer; //调试，在控制台中显示服务器
+ dumpObject; //调试，在控制台中显示对象
 
-    SoServerAddClass_f
+ SoServerAddClass_f
 
-    addClass; //定义一个 JS 类
+ addClass; //定义一个 JS 类
 
-    SoServerAddMethod_f
-    SoServerAddMethods_f
-    SoServerAddProperty_f
-    SoServerAddProperties_f
+ SoServerAddMethod_f
+ SoServerAddMethods_f
+ SoServerAddProperty_f
+ SoServerAddProperties_f
 
-    addMethod; // 定义一个方法
-    addMethods; // 定义一组方法
-    addProperty; // 定义一个属性
-    addProperties; // 定义一组属性
+ addMethod; // 定义一个方法
+ addMethods; // 定义一组方法
+ addProperty; // 定义一个属性
+ addProperties; // 定义一组属性
 
-    SoServerGetClass_f
-    SoServerGetServer_f
+ SoServerGetClass_f
+ SoServerGetServer_f
 
-    getClass; // 获取实例的类
-    getServer; // 获取实例的服务器
+ getClass; // 获取实例的类
+ getServer; // 获取实例的服务器
 
-    SoServerSetClientData_f
-    SoServerGetClientData_f
+ SoServerSetClientData_f
+ SoServerGetClientData_f
 
-    setClientData; //在实例中设置数据
-    getClientData; //从实例中获取数据
+ setClientData; //在实例中设置数据
+ getClientData; //从实例中获取数据
 
-    SoServerEval_f
-    eval; // 调用 JavaScript 解释器
-    SoServerTaggedDataInit_f taggedDataInit; // 初始化标记数据
-    SoServerTaggedDataFree_f taggedDataFree; // 释放标记数据
+ SoServerEval_f
+ eval; // 调用 JavaScript 解释器
+ SoServerTaggedDataInit_f taggedDataInit; // 初始化标记数据
+ SoServerTaggedDataFree_f taggedDataFree; // 释放标记数据
 }
 ```
 
@@ -124,8 +124,8 @@ SoServerInterface {
 
 ##### 参数
 
-| 参数 |        描述        |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 参数 | 描述 |
+| --- | --- |
 | `hServer` | 此共享库的 [支持结构](#support-structures) 引用，作为初始化时传递给全局 [ESClientInterface()](#esclientinterface) 函数的参数。 |
 
 ##### 返回
@@ -144,8 +144,8 @@ SoServerInterface {
 
 ##### 参数
 
-| 参数 |      描述       |
-| --------- | -------------------------------------------------------------------------------------- |
+| 参数 | 描述 |
+| --- | --- |
 | `hObject` | 此类的实例的 [支持结构](#support-structures) 引用。 |
 
 ##### 返回
@@ -164,11 +164,11 @@ SoServerInterface {
 
 ##### 参数
 
-|     参数      |        描述        |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `hServer`     | 此共享库的 [支持结构](#support-structures) 引用，作为初始化时传递给全局 [ESClientInterface()](#esclientinterface) 函数的参数。 |
-| `name`        | 字符串。新类的唯一名称。名称必须以大写字母开头。     |
-| `pObjectInterface` | 指向 [SoObjectInterface](#soobjectinterface) 的指针。包含此类的实例的对象接口方法的结构。      |
+| 参数 | 描述 |
+| --- | --- |
+| `hServer` | 此共享库的 [支持结构](#support-structures) 引用，作为初始化时传递给全局 [ESClientInterface()](#esclientinterface) 函数的参数。 |
+| `name` | 字符串。新类的唯一名称。名称必须以大写字母开头。 |
+| `pObjectInterface` | 指向 [SoObjectInterface](#soobjectinterface) 的指针。包含此类的实例的对象接口方法的结构。 |
 
 ##### 返回
 
@@ -186,12 +186,12 @@ SoServerInterface {
 
 ##### 参数
 
-| 参数 |      描述       |
-| --------- | -------------------------------------------------------------------------------------- |
+| 参数 | 描述 |
+| --- | --- |
 | `hObject` | 此类的实例的 [支持结构](#support-structures) 引用。 |
-| `name`    | 字符串。新方法的唯一名称。        |
-| `id`      | 数字。新方法的唯一标识符。      |
-| `desc`    | 字符串。新方法的描述性字符串。       |
+| `name` | 字符串。新方法的唯一名称。 |
+| `id` | 数字。新方法的唯一标识符。 |
+| `desc` | 字符串。新方法的描述性字符串。 |
 
 ##### 返回
 
@@ -209,9 +209,9 @@ SoServerInterface {
 
 ##### 参数
 
-| 参数  |      描述      |
-| ---------- | --------------------------------------------------------------------------------------------------------- |
-| `hObject`  | 此类的实例的 [支持结构](#support-structures) 引用。    |
+| 参数 | 描述 |
+| --- | --- |
+| `hObject` | 此类的实例的 [支持结构](#support-structures) 引用。 |
 | `pNames[]` | [SoCClientName](#socclientname)。包含要添加的方法的名称和标识符的结构。 |
 
 ##### 返回
@@ -230,12 +230,12 @@ SoServerInterface {
 
 ##### 参数
 
-| 参数 |      描述       |
-| --------- | -------------------------------------------------------------------------------------- |
+| 参数 | 描述 |
+| --- | --- |
 | `hObject` | 此类的实例的 [支持结构](#support-structures) 引用。 |
-| `name`    | 字符串。新属性的唯一名称。      |
-| `id`      | 数字。新属性的唯一标识符。   |
-| `desc`    | 字符串。可选。新属性的描述性字符串，或 null。        |
+| `name` | 字符串。新属性的唯一名称。 |
+| `id` | 数字。新属性的唯一标识符。 |
+| `desc` | 字符串。可选。新属性的描述性字符串，或 null。 |
 
 ##### 返回
 
@@ -253,9 +253,9 @@ SoServerInterface {
 
 ##### 参数
 
-| 参数  |       描述        |
-| ---------- | ------------------------------------------------------------------------------------------------------------ |
-| `hObject`  | 此类的实例的 [支持结构](#support-structures) 引用。       |
+| 参数 | 描述 |
+| --- | --- |
+| `hObject` | 此类的实例的 [支持结构](#support-structures) 引用。 |
 | `pNames[]` | [SoCClientName](#socclientname)。包含要添加的属性的名称和标识符的结构。 |
 
 ##### 返回
@@ -274,11 +274,11 @@ SoServerInterface {
 
 ##### 参数
 
-| 参数 |      描述       |
-| --------- | -------------------------------------------------------------------------------------- |
+| 参数 | 描述 |
+| --- | --- |
 | `hObject` | 此类的实例的 [支持结构](#support-structures) 引用。 |
-| `name`    | 字符串。用于返回类的唯一名称的缓冲区。      |
-| `name_1`  | 数字。名称缓冲区的大小。         |
+| `name` | 字符串。用于返回类的唯一名称的缓冲区。 |
+| `name_1` | 数字。名称缓冲区的大小。 |
 
 ##### 返回
 
@@ -296,11 +296,11 @@ SoServerInterface {
 
 ##### 参数
 
-|      参数      |        描述         |
-| ------------------- | ---------------------------------------------------------------------------------------------------- |
-| `hObject`      | 此类的实例的 [支持结构](#support-structures) 引用。    |
-| `phServer`     | 用于返回此对象的 [支持结构](#support-structures) 引用的缓冲区。 |
-| `ppServerInterface` | 用于返回此对象的 [SoObjectInterface](#soobjectinterface) 引用的缓冲区。   |
+| 参数 | 描述 |
+| --- | --- |
+| `hObject` | 此类的实例的 [支持结构](#support-structures) 引用。 |
+| `phServer` | 用于返回此对象的 [支持结构](#support-structures) 引用的缓冲区。 |
+| `ppServerInterface` | 用于返回此对象的 [SoObjectInterface](#soobjectinterface) 引用的缓冲区。 |
 
 ##### 返回
 
@@ -318,10 +318,10 @@ SoServerInterface {
 
 ##### 参数
 
-| 参数 |      描述       |
-| --------- | -------------------------------------------------------------------------------------- |
+| 参数 | 描述 |
+| --- | --- |
 | `hObject` | 此类的实例的 [支持结构](#support-structures) 引用。 |
-| `pData`   | 指向库定义数据的指针。       |
+| `pData` | 指向库定义数据的指针。 |
 
 ##### 返回
 
@@ -339,10 +339,10 @@ SoServerInterface {
 
 ##### 参数
 
-| 参数 |      描述       |
-| --------- | -------------------------------------------------------------------------------------- |
+| 参数 | 描述 |
+| --- | --- |
 | `hObject` | 此类的实例的 [支持结构](#support-structures) 引用。 |
-| `pData`   | 用于返回指向库定义数据的指针的缓冲区。     |
+| `pData` | 用于返回指向库定义数据的指针的缓冲区。 |
 
 ##### 返回
 
@@ -360,11 +360,11 @@ SoServerInterface {
 
 ##### 参数
 
-|   参数   |        描述        |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `hServer`     | 此共享库的 [支持结构](#support-structures) 引用，作为初始化时传递给全局 [ESClientInterface()](#esclientinterface) 函数的参数。 |
-| String   | 包含要评估的 JavaScript 表达式的字符串。   |
-| `pTaggedData` | 指向 [TaggedData](#taggeddata) 对象的指针，用于返回评估结果。         |
+| 参数 | 描述 |
+| --- | --- |
+| `hServer` | 此共享库的 [支持结构](#support-structures) 引用，作为初始化时传递给全局 [ESClientInterface()](#esclientinterface) 函数的参数。 |
+| String | 包含要评估的 JavaScript 表达式的字符串。 |
+| `pTaggedData` | 指向 [TaggedData](#taggeddata) 对象的指针，用于返回评估结果。 |
 
 ##### 返回
 
@@ -382,10 +382,10 @@ SoServerInterface {
 
 ##### 参数
 
-|   参数   |        描述        |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `hServer`     | 此共享库的 [支持结构](#support-structures) 引用，作为初始化时传递给全局 [ESClientInterface()](#esclientinterface) 函数的参数。 |
-| `pTaggedData` | 指向 [TaggedData](#taggeddata) 的指针。    |
+| 参数 | 描述 |
+| --- | --- |
+| `hServer` | 此共享库的 [支持结构](#support-structures) 引用，作为初始化时传递给全局 [ESClientInterface()](#esclientinterface) 函数的参数。 |
+| `pTaggedData` | 指向 [TaggedData](#taggeddata) 的指针。 |
 
 ##### 返回
 
@@ -403,10 +403,10 @@ SoServerInterface {
 
 ##### 参数
 
-|   参数   |        描述        |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `hServer`     | 此共享库的 [支持结构](#support-structures) 引用，作为初始化时传递给全局 [ESClientInterface()](#esclientinterface) 函数的参数。 |
-| `pTaggedData` | 指向 [TaggedData](#taggeddata) 的指针。    |
+| 参数 | 描述 |
+| --- | --- |
+| `hServer` | 此共享库的 [支持结构](#support-structures) 引用，作为初始化时传递给全局 [ESClientInterface()](#esclientinterface) 函数的参数。 |
+| `pTaggedData` | 指向 [TaggedData](#taggeddata) 的指针。 |
 
 ##### 返回
 
@@ -422,13 +422,13 @@ SoObjectInterface 是一个函数指针数组，定义如下：
 
 ```cpp
 SoObjectInterface {
-    SoObjectInitialize_f initialize;
-    SoObjectPut_f   put;
-    SoObjectGet_f   get;
-    SoObjectCall_f       call;
-    SoObjectValueOf_f    valueOf;
-    SoObjectToString_f   toString;
-    SoObjectFinalize_f   finalize;
+ SoObjectInitialize_f initialize;
+ SoObjectPut_f put;
+ SoObjectGet_f get;
+ SoObjectCall_f call;
+ SoObjectValueOf_f valueOf;
+ SoObjectToString_f toString;
+ SoObjectFinalize_f finalize;
 }
 ```
 
@@ -450,10 +450,10 @@ var xx = New MyClass(arg1, ...)
 
 ##### 参数
 
-|  参数   |       描述        |
-| -------- | ---------------------------------------------------------------------------------------------------- |
-| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。    |
-| `argc, argv` | 传递给构造函数的参数数量和指针，以 [TaggedData](#taggeddata) 的形式传递。        |
+| 参数 | 描述 |
+| --- | --- |
+| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。 |
+| `argc, argv` | 传递给构造函数的参数数量和指针，以 [TaggedData](#taggeddata) 的形式传递。 |
 
 ##### 返回值
 
@@ -477,11 +477,11 @@ xx.myproperty = "abc" ;
 
 ##### 参数
 
-| 参数      |      描述       |
-| --------- | ------------------------------------------------------------------------------ |
-| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。   |
-| `name`    | 属性名称，指向 [SoCClientName](#socclientname) 的指针。    |
-| `pValue`  | 新值，指向 [TaggedData](#taggeddata) 的指针。         |
+| 参数 | 描述 |
+| --- | --- |
+| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。 |
+| `name` | 属性名称，指向 [SoCClientName](#socclientname) 的指针。 |
+| `pValue` | 新值，指向 [TaggedData](#taggeddata) 的指针。 |
 
 ##### 返回值
 
@@ -503,11 +503,11 @@ alert(xx.myproperty);
 
 ##### 参数
 
-| 参数      |      描述       |
-| --------- | ------------------------------------------------------------------------------ |
-| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。   |
-| `name`    | 属性名称，指向 [SoCClientName](#socclientname) 的指针。    |
-| `pValue`  | 用于返回属性值的缓冲区，类型为 [TaggedData](#taggeddata)。      |
+| 参数 | 描述 |
+| --- | --- |
+| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。 |
+| `name` | 属性名称，指向 [SoCClientName](#socclientname) 的指针。 |
+| `pValue` | 用于返回属性值的缓冲区，类型为 [TaggedData](#taggeddata)。 |
 
 ##### 返回值
 
@@ -531,12 +531,12 @@ xx.mymethod()
 
 ##### 参数
 
-| 参数      |      描述       |
-| --------- | ---------------------------------------------------------------------------------------- |
-| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。   |
-| `name`    | 属性名称，指向 [SoCClientName](#socclientname) 的指针。         |
-| `argc, argv` | 传递给调用的参数数量和指针，以 [TaggedData](#taggeddata) 的形式传递。     |
-| `pResult` | 用于返回调用结果的缓冲区，以 [TaggedData](#taggeddata) 的形式传递。       |
+| 参数 | 描述 |
+| --- | --- |
+| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。 |
+| `name` | 属性名称，指向 [SoCClientName](#socclientname) 的指针。 |
+| `argc, argv` | 传递给调用的参数数量和指针，以 [TaggedData](#taggeddata) 的形式传递。 |
+| `pResult` | 用于返回调用结果的缓冲区，以 [TaggedData](#taggeddata) 的形式传递。 |
 
 ##### 返回值
 
@@ -554,10 +554,10 @@ xx.mymethod()
 
 ##### 参数
 
-| 参数      |    描述      |
-| --------- | -------------------------------------------------------------------------------------- |
-| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。       |
-| `pResult` | 用于返回值的缓冲区，以 [TaggedData](#taggeddata) 的形式传递。      |
+| 参数 | 描述 |
+| --- | --- |
+| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。 |
+| `pResult` | 用于返回值的缓冲区，以 [TaggedData](#taggeddata) 的形式传递。 |
 
 ##### 返回值
 
@@ -575,10 +575,10 @@ xx.mymethod()
 
 ##### 参数
 
-| 参数      |    描述      |
-| --------- | -------------------------------------------------------------------------------------- |
-| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。       |
-| `pResult` | 用于返回字符串结果的缓冲区，以 [TaggedData](#taggeddata) 的形式传递。   |
+| 参数 | 描述 |
+| --- | --- |
+| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。 |
+| `pResult` | 用于返回字符串结果的缓冲区，以 [TaggedData](#taggeddata) 的形式传递。 |
 
 ##### 返回值
 
@@ -598,9 +598,9 @@ xx.mymethod()
 
 ##### 参数
 
-| 参数      |      描述       |
-| --------- | ------------------------------------------------------------------------------ |
-| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。   |
+| 参数 | 描述 |
+| --- | --- |
+| `hObject` | 此类实例的 [支持结构](#support-structures) 引用。 |
 
 ##### 返回值
 
@@ -614,12 +614,12 @@ xx.mymethod()
 
 #### 参数
 
-| 参数      |       描述        |
-| -------------- | ---------------------------------------------------------------------------------------------------- |
-| `SoHObject`    | 指向 JavaScript 对象的 C/C++ 表示形式的不透明指针 `(long *)`。         |
-| `SoHServer`    | 指向服务器对象的不透明指针 `(long *)`，该对象充当共享库的对象工厂。         |
-| `SoCClientName` | 唯一标识方法和属性的结构。      |
-| `TaggedData`   | 封装带有类型信息的数据值的结构，用于在 C/C++ 和 JavaScript 之间传递。       |
+| 参数 | 描述 |
+| --- | --- |
+| `SoHObject` | 指向 JavaScript 对象的 C/C++ 表示形式的不透明指针 `(long *)`。 |
+| `SoHServer` | 指向服务器对象的不透明指针 `(long *)`，该对象充当共享库的对象工厂。 |
+| `SoCClientName` | 唯一标识方法和属性的结构。 |
+| `TaggedData` | 封装带有类型信息的数据值的结构，用于在 C/C++ 和 JavaScript 之间传递。 |
 
 ### SoCClientName
 
@@ -627,19 +627,19 @@ xx.mymethod()
 
 ```cpp
 SoCClientName {
-    char* name_sig ;
-    uint32_t id ;
-    char* desc ;
+ char* name_sig ;
+ uint32_t id ;
+ char* desc ;
 }
 ```
 
 #### 参数
 
-| 参数       |       描述        |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `name_sig` | 属性或方法的名称，在类内唯一。可选地包含下划线后的签名，用于标识方法的参数类型；请参阅函数签名。当名称传递回您的 `SoObjectInterface` 函数时，签名部分会被省略。      |
-| `id`       | 属性或方法的唯一标识号，或 0 以分配生成的 UID。如果您分配 UID，您的 C/C++ 代码可以使用它来避免在识别 JavaScript 属性和方法时进行字符串比较。建议您要么显式分配所有 UID，要么允许它们全部生成。   |
-| `desc`     | 描述性字符串或 `NULL`。        |
+| 参数 | 描述 |
+| --- | --- |
+| `name_sig` | 属性或方法的名称，在类内唯一。可选地包含下划线后的签名，用于标识方法的参数类型；请参阅函数签名。当名称传递回您的 `SoObjectInterface` 函数时，签名部分会被省略。 |
+| `id` | 属性或方法的唯一标识号，或 0 以分配生成的 UID。如果您分配 UID，您的 C/C++ 代码可以使用它来避免在识别 JavaScript 属性和方法时进行字符串比较。建议您要么显式分配所有 UID，要么允许它们全部生成。 |
+| `desc` | 描述性字符串或 `NULL`。 |
 
 ---
 
@@ -649,37 +649,37 @@ SoCClientName {
 
 ```cpp
 typedef struct {
-    union {
-   long intval;
-   double fltval;
-   char* string;
-   SoHObject* hObject;
-    } data;
-    long type;
-    long filler;
+ union {
+ long intval;
+ double fltval;
+ char* string;
+ SoHObject* hObject;
+ } data;
+ long type;
+ long filler;
 } TaggedData;
 ```
 
 #### 参数
 
-| 参数      |        描述        |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `intval`  | 整数和布尔数据值。类型为 `kTypeInteger`、`kTypeUInteger` 或 `kTypeBool`。        |
-| `fltval`  | 浮点数值数据值。类型为 `kTypeDouble`。    |
-| `string`  | 字符串数据值。所有字符串均为 UTF-8 编码并以 null 结尾。类型为 `kTypeString` 或 `kTypeScript`。   |
-|      | - 库必须定义一个入口函数 [ESFreeMem()](../defining-entry-points-for-direct-access#esfreemem)，ExtendScript 调用该入口函数以释放返回的字符串指针。如果缺少此入口函数，ExtendScript 不会尝试释放任何返回的字符串数据。 |
-|      | - 当函数返回类型为 `kTypeScript` 的字符串时，ExtendScript 会评估该脚本并返回评估结果作为函数调用的结果。       |
-| `hObject` | JavaScript 对象数据值的 C/C++ 表示形式。类型为 `kTypeLiveObject` 或 `kTypeLiveObjectRelease`。   |
-|      | - 当函数返回类型为 `kTypeLiveObject` 的对象时，ExtendScript 不会释放该对象。      |
-|      | - 当函数返回类型为 `kTypeLiveObjectRelease` 的对象时，ExtendScript 会释放该对象。        |
-| `type`    | 数据类型标签。以下之一：          |
-|      | - `kTypeUndefined`：空值，相当于 JavaScript 的 `undefined`。函数的返回值默认始终设置为该值。      |
-|      | - `kTypeBool`：布尔值，0 表示 `false`，1 表示 `true`。      |
-|      | - `kTypeDouble`：64 位浮点数。         |
-|      | - `kTypeString`：字符字符串。          |
-|      | - `kTypeLiveObject`：指向对象内部表示形式（SoHObject）的指针。         |
-|      | - `kTypeLiveObjectRelease`：指向对象内部表示形式（SoHObject）的指针。       |
-|      | - `kTypeInteger`：32 位有符号整数值。       |
-|      | - `kTypeUInteger`：32 位无符号整数值。    |
-|      | - `kTypeScript`：包含可执行 JavaScript 脚本的字符串。       |
-| `filler`  | 用于 8 字节对齐的 4 字节填充。         |
+| 参数 | 描述 |
+| --- | --- |
+| `intval` | 整数和布尔数据值。类型为 `kTypeInteger`、`kTypeUInteger` 或 `kTypeBool`。 |
+| `fltval` | 浮点数值数据值。类型为 `kTypeDouble`。 |
+| `string` | 字符串数据值。所有字符串均为 UTF-8 编码并以 null 结尾。类型为 `kTypeString` 或 `kTypeScript`。 |
+| | - 库必须定义一个入口函数 [ESFreeMem()](../defining-entry-points-for-direct-access#esfreemem)，ExtendScript 调用该入口函数以释放返回的字符串指针。如果缺少此入口函数，ExtendScript 不会尝试释放任何返回的字符串数据。 |
+| | - 当函数返回类型为 `kTypeScript` 的字符串时，ExtendScript 会评估该脚本并返回评估结果作为函数调用的结果。 |
+| `hObject` | JavaScript 对象数据值的 C/C++ 表示形式。类型为 `kTypeLiveObject` 或 `kTypeLiveObjectRelease`。 |
+| | - 当函数返回类型为 `kTypeLiveObject` 的对象时，ExtendScript 不会释放该对象。 |
+| | - 当函数返回类型为 `kTypeLiveObjectRelease` 的对象时，ExtendScript 会释放该对象。 |
+| `type` | 数据类型标签。以下之一： |
+| | - `kTypeUndefined`：空值，相当于 JavaScript 的 `undefined`。函数的返回值默认始终设置为该值。 |
+| | - `kTypeBool`：布尔值，0 表示 `false`，1 表示 `true`。 |
+| | - `kTypeDouble`：64 位浮点数。 |
+| | - `kTypeString`：字符字符串。 |
+| | - `kTypeLiveObject`：指向对象内部表示形式（SoHObject）的指针。 |
+| | - `kTypeLiveObjectRelease`：指向对象内部表示形式（SoHObject）的指针。 |
+| | - `kTypeInteger`：32 位有符号整数值。 |
+| | - `kTypeUInteger`：32 位无符号整数值。 |
+| | - `kTypeScript`：包含可执行 JavaScript 脚本的字符串。 |
+| `filler` | 用于 8 字节对齐的 4 字节填充。 |

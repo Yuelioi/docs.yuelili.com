@@ -67,9 +67,9 @@ title: RasterItems
 
 #### 参数
 
-| 参数      | 类型   | 描述         |
-| --------- | ------ | ------------------ |
-| `name`    | 字符串 | 要获取的元素的名称 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `name` | 字符串 | 要获取的元素的名称 |
 
 #### 返回值
 
@@ -87,9 +87,9 @@ title: RasterItems
 
 #### 参数
 
-| 参数      | 类型     | 描述         |
-| --------- | -------------- | ------------------ |
-| `itemKey` | 字符串, 数字   | 字符串或数字键     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `itemKey` | 字符串, 数字 | 字符串或数字键 |
 
 #### 返回值
 
@@ -119,13 +119,13 @@ title: RasterItems
 // 从栅格文件在新文档中创建一个新的栅格项
 // jpgFilePath 包含 jpg 文件的完整路径和文件名
 function createRasterItem(jpgFilePath) {
-    var rasterFile = File(jpgFilePath);
-    var myDoc = app.documents.add();
+ var rasterFile = File(jpgFilePath);
+ var myDoc = app.documents.add();
 
-    var myPlacedItem = myDoc.placedItems.add();
-    myPlacedItem.file = rasterFile;
-    myPlacedItem.position = Array(0, myDoc.height);
-    myPlacedItem.embed();
+ var myPlacedItem = myDoc.placedItems.add();
+ myPlacedItem.file = rasterFile;
+ myPlacedItem.position = Array(0, myDoc.height);
+ myPlacedItem.embed();
 }
 ```
 
@@ -134,20 +134,20 @@ function createRasterItem(jpgFilePath) {
 ```javascript
 // 检查文档中第一个栅格项的颜色空间并在 ESTK 控制台中显示结果
 if (app.documents.length > 0 && app.activeDocument.rasterItems.length > 0) {
-    var rasterArt = app.activeDocument.rasterItems[0];
+ var rasterArt = app.activeDocument.rasterItems[0];
 
-    switch (rasterArt.imageColorSpace) {
-        case ImageColorSpace.CMYK:
-      $.writeln("第一个栅格项的颜色空间是 CMYK");
-      break;
+ switch (rasterArt.imageColorSpace) {
+ case ImageColorSpace.CMYK:
+ $.writeln("第一个栅格项的颜色空间是 CMYK");
+ break;
 
-        case ImageColorSpace.RGB:
-      $.writeln("第一个栅格项的颜色空间是 RGB");
-      break;
+ case ImageColorSpace.RGB:
+ $.writeln("第一个栅格项的颜色空间是 RGB");
+ break;
 
-        case ImageColorSpace.GRAYSCALE:
-      $.writeln("第一个栅格项的颜色空间是 GRAYSCALE");
-      break;
-    }
+ case ImageColorSpace.GRAYSCALE:
+ $.writeln("第一个栅格项的颜色空间是 GRAYSCALE");
+ break;
+ }
 }
 ```

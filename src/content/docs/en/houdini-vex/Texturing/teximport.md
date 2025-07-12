@@ -62,18 +62,18 @@ The transform matrix that will transform world spaced points into the NDC (Norma
 matrix ndc;
 if (teximport(map, "texture:worldtoNDC", ndc))
 {
-    vector P_ndc = pos * ndc;
-    // If the camera is a perspective camera,
-    // dehomogenize the point
-    if (getcomp(ndc, 2, 3) != 0)
-    {
-        P_ndc.x = P_ndc.x / P_ndc.z;
-        P_ndc.y = P_ndc.y / P_ndc.z;
-    }
-    // Finally, scale and offset XY
-    // from [-1,1] to [0,1]
-    P_ndc *= {.5, .5, 1};
-    P_ndc += {.5, .5, 0};
+ vector P_ndc = pos * ndc;
+ // If the camera is a perspective camera,
+ // dehomogenize the point
+ if (getcomp(ndc, 2, 3) != 0)
+ {
+ P_ndc.x = P_ndc.x / P_ndc.z;
+ P_ndc.y = P_ndc.y / P_ndc.z;
+ }
+ // Finally, scale and offset XY
+ // from [-1,1] to [0,1]
+ P_ndc *= {.5, .5, 1};
+ P_ndc += {.5, .5, 0};
 }
 
 ```
@@ -133,28 +133,28 @@ Examples
 cvex
  test(string map="Mandril.rat")
 {
-    for (string token : {
-            "texture:xres",
-            "texture:yres",
-            "texture:channels",
-            "texture:resolution",
-            "texture:tokens",
-            "image:pixelaspect",
-            "space:world"
-        })
-    {
-        float fval;
-        vector vval;
-        matrix mval;
+ for (string token : {
+ "texture:xres",
+ "texture:yres",
+ "texture:channels",
+ "texture:resolution",
+ "texture:tokens",
+ "image:pixelaspect",
+ "space:world"
+ })
+ {
+ float fval;
+ vector vval;
+ matrix mval;
 
-        printf("----------------- %s ---------------------\n", token);
-        if (teximport(map, token, fval))
-    printf("'%s' = %g\n", token, fval);
-        else if (teximport(map, token, vval))
-    printf("'%s' = %g\n", token, vval);
-        else if (teximport(map, token, mval))
-    printf("'%s' = %g\n", token, mval);
-    }
+ printf("----------------- %s ---------------------\n", token);
+ if (teximport(map, token, fval))
+ printf("'%s' = %g\n", token, fval);
+ else if (teximport(map, token, vval))
+ printf("'%s' = %g\n", token, vval);
+ else if (teximport(map, token, mval))
+ printf("'%s' = %g\n", token, mval);
+ }
 }
 
 ```

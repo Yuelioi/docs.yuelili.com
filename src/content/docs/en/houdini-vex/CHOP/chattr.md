@@ -105,11 +105,11 @@ int channel = 0; // Or use C global variable for current channel index.
 int sample = -1; // Or use I global variable for current sample index.
 string s = chattr(input, attrname, attrclass, channel, sample, success )
 if (success) {
-    // Do something with s
-    printf("s=%s\n", s);
+ // Do something with s
+ printf("s=%s\n", s);
 } else {
-    // Couldn't read attribute, usually because an attribute with that
-    // name doesn't exist
+ // Couldn't read attribute, usually because an attribute with that
+ // name doesn't exist
 }
 
 ```

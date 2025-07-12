@@ -7,7 +7,6 @@ title: index
 The Extendscript Toolkit has been deprecated in favour of [The VS Code Debugger](../../vscode-debugger/index)!
 :::
 
-
 This information is preserved here for legacy reference, but the Extendscript Toolkit is no longer being actively maintained or supported, and will no longer work on 64-bit-only versions of MacOS.
 
 The ExtendScript Toolkit provides an interactive development and testing environment for ExtendScript in all JavaScript-enabled Adobe applications.

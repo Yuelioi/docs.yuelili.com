@@ -52,7 +52,7 @@ import plastic;
 
 surface caller(vector diff = {1,0.5,0})
 {
-    plastic("diff", diff, "Cf", Cf);
+ plastic("diff", diff, "Cf", Cf);
 }
 
 ```
@@ -83,12 +83,12 @@ The called shader:
 
 ```vex
 cvex callee(export int mval = 0;
-        int rval = 0;
-        export int wval = 0;
-        float castval = 0)
+ int rval = 0;
+ export int wval = 0;
+ float castval = 0)
 {
-    mval *= 2;
-    wval = rval;
+ mval *= 2;
+ wval = rval;
 }
 
 ```
@@ -100,12 +100,12 @@ import callee;
 
 cvex caller()
 {
-    int mval = 1;
-    int rval = 2;
-    int wval = 1;
-    callee("mval", mval, "rval", rval, "wval", wval, "castval",
-    1);
-    printf("%d %d %d\n", mval, rval, wval);
+ int mval = 1;
+ int rval = 2;
+ int wval = 1;
+ callee("mval", mval, "rval", rval, "wval", wval, "castval",
+ 1);
+ printf("%d %d %d\n", mval, rval, wval);
 }
 
 ```
@@ -115,16 +115,16 @@ A recursive shader:
 ```vex
 cvex fib(int i = 0; export int rval = 0)
 {
-    if (i >= 2)
-    {
-        int v1, v2;
-        fib("i", i-1, "rval", v1);
-        fib("i", i-2, "rval", v2);
-        rval = v1 + v2;
-    }
-    else
-        rval = i;
-    printf("%d: %d\n", i, rval);
+ if (i >= 2)
+ {
+ int v1, v2;
+ fib("i", i-1, "rval", v1);
+ fib("i", i-2, "rval", v2);
+ rval = v1 + v2;
+ }
+ else
+ rval = i;
+ printf("%d: %d\n", i, rval);
 }
 
 ```

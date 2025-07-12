@@ -45,16 +45,16 @@ tell application "Adobe Illustrator"
 set docRef to make new document
 -- 设置 stroked 为 true，以便我们可以看到路径
 set lineRef to make new path item in docRef with properties {stroked:true}
-    -- 将方向点设置为与锚点相同的值，创建直线段
+ -- 将方向点设置为与锚点相同的值，创建直线段
 set newPoint to make new path point of lineRef with properties
-    {anchor:{220, 475},left direction:{220, 475},right direction:{220, 475}, point type:corner}
+ {anchor:{220, 475},left direction:{220, 475},right direction:{220, 475}, point type:corner}
 
 set newPoint2 to make new path point of lineRef with properties
-    {anchor:{375, 300},left direction:{375, 300},right direction:{375, 300}, point type:corner}
+ {anchor:{375, 300},left direction:{375, 300},right direction:{375, 300}, point type:corner}
 
-    -- 将方向点设置为不同的值，创建曲线
+ -- 将方向点设置为不同的值，创建曲线
 set newPoint3 to make new path point of lineRef with properties
-    {anchor:{220, 300},left direction:{180, 260},right direction:{240, 320}, point type:corner}
+ {anchor:{220, 300},left direction:{180, 260},right direction:{240, 320}, point type:corner}
 
 end tell
 ```
@@ -70,7 +70,7 @@ set docRef to make new document
 set lineRef to make new path item in docRef with properties {stroked:true}
 set entire path of lineRef to { {220, 475},{375, 300} }
 set newPoint to make new path point of lineRef with properties
-    {anchor:{220, 300},left direction:{180, 260},right direction:{240, 320}, point type:corner}
+ {anchor:{220, 300},left direction:{180, 260},right direction:{240, 320}, point type:corner}
 end tell
 ```
 
@@ -97,7 +97,7 @@ end tell
 tell application "Adobe Illustrator"
 set docRef to make new document
 set rectRef to make new rectangle in docRef with properties
-    { bounds:{288, 360, 72, 144} }
+ { bounds:{288, 360, 72, 144} }
 end tell
 ```
 

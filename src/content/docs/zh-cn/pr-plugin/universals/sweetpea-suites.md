@@ -11,58 +11,58 @@ title: SweetPea Suites
 
 以下是 Premiere Pro 中所有可用的 Suites 表格：
 
-|      Suite 名称   |    相关插件类型    |
-| --------------------------------------------------------------------------------- | ----------------------------- |
-| Accelerated Render Invocation Suite    | 导出器    |
-| [App Info Suite](#app-info-suite)      | 所有    |
-| [Application Settings Suite](#application-settings-suite)    | 所有    |
-| [Async File Reader Suite](../../importers/suites#async-file-reader-suite)   | 导入器    |
-| Async Operation Suite   | 所有    |
-| [Audio Suite](#audio-suite)   | 导入器, 导出器    |
-| [Captioning Suite](#captioning-suite)   | 设备控制器, 导出器, 传输器   |
-| [Clip Render Suite](#clip-render-suite)   | 导出器    |
-| [Deferred Processing Suite](../../importers/suites#deferred-processing-suite)   | 导入器    |
-| [Error Suite](#error-suite)   | 除 CS6 开始的导出器外的所有   |
-| [Export File Suite](../../exporters/suites#export-file-suite)   | 导出器    |
-| [Export Info Suite](../../exporters/suites#export-info-suite)   | 导出器    |
-| [Export Param Suite](../../exporters/suites#export-param-suite)   | 导出器    |
-| [Export Progress Suite](../../exporters/suites#export-progress-suite)    | 导出器    |
-| [Export Standard Param Suite](../../exporters/suites#export-standard-param-suite) | 导出器    |
-| [Exporter Utility Suite](../../exporters/suites#exporter-utility-suite)   | 导出器    |
-| [File Registration Suite](#file-registration-suite)     | 导入器, 转场, 视频滤镜    |
-| [Flash Cue Marker Data Suite](#flash-cue-marker-data-suite)    | 导出器    |
-| [GPU Device Suite](../../gpu-effects-transitions/suites#gpu-device-suite)   | GPU 效果和转场    |
-| [Image Processing Suite](#image-processing-suite)     | 所有    |
-| Importer File Manager Suite   | 导入器    |
-| [Legacy Callback Suites](../legacy-callback-suites)     | 所有    |
-| [Marker Suite](#marker-suite)   | 导出器    |
-| Media Accelerator Suite   | 导入器    |
-| [Memory Manager Suite](#memory-manager-suite)   | 所有    |
-| [Palette Suite](../../exporters/suites#palette-suite)     | 导出器    |
-| [Pixel Format Suite](#pixel-format-suite)      | 所有    |
-| [Playmod Audio Suite](../../transmitters/suites#playmod-audio-suite)    | 传输器    |
-| Playmod Device Control Suite      | 无 (已弃用)   |
-| [Playmod Overlay Suite](#playmod-overlay-suite)     | 传输器    |
-| Playmod Render Suite    | 无 (已弃用)   |
-| [PPix Cache Suite](#ppix-cache-suite)   | 导入器    |
-| [PPix Creator Suite](#ppix-creator-suite)      | 所有    |
-| [PPix Creator 2 Suite](#ppix-creator-2-suite)   | 所有    |
-| [PPix Suite](#ppix-suite)   | 所有    |
-| [PPix 2 Suite](#ppix-2-suite)   | 所有    |
-| Quality Suite     | 无 (已弃用)   |
-| [RollCrawl Suite](#rollcrawl-suite)    | 导出器    |
-| Scope Render Suite     | 无 (已弃用)   |
-| [Sequence Audio Suite](../../exporters/suites#sequence-audio-suite)    | 导出器    |
-| [Sequence Info Suite](#sequence-info-suite)      | 导入器, 转场, 视频滤镜    |
-| [Sequence Render Suite](../../exporters/suites#sequence-render-suite)    | 导出器    |
-| Stock Image Suite     | 无 (已弃用)   |
-| [String Suite](#string-suite)   | 所有    |
-| [Threaded Work Suite](#threaded-work-suite)      | 所有    |
-| [Time Suite](#time-suite)   | 所有    |
-| [Transmit Invocation Suite](../../transmitters/suites#transmit-invocation-suite)  | 所有    |
-| [Video Segment Render Suite](#video-segment-render-suite)    | 导出器    |
-| [Video Segment Suite](#video-segment-suite)      | 导出器    |
-| [Window Suite](#window-suite)   | 所有    |
+| Suite 名称 | 相关插件类型 |
+| --- | --- |
+| Accelerated Render Invocation Suite | 导出器 |
+| [App Info Suite](#app-info-suite) | 所有 |
+| [Application Settings Suite](#application-settings-suite) | 所有 |
+| [Async File Reader Suite](../../importers/suites#async-file-reader-suite) | 导入器 |
+| Async Operation Suite | 所有 |
+| [Audio Suite](#audio-suite) | 导入器, 导出器 |
+| [Captioning Suite](#captioning-suite) | 设备控制器, 导出器, 传输器 |
+| [Clip Render Suite](#clip-render-suite) | 导出器 |
+| [Deferred Processing Suite](../../importers/suites#deferred-processing-suite) | 导入器 |
+| [Error Suite](#error-suite) | 除 CS6 开始的导出器外的所有 |
+| [Export File Suite](../../exporters/suites#export-file-suite) | 导出器 |
+| [Export Info Suite](../../exporters/suites#export-info-suite) | 导出器 |
+| [Export Param Suite](../../exporters/suites#export-param-suite) | 导出器 |
+| [Export Progress Suite](../../exporters/suites#export-progress-suite) | 导出器 |
+| [Export Standard Param Suite](../../exporters/suites#export-standard-param-suite) | 导出器 |
+| [Exporter Utility Suite](../../exporters/suites#exporter-utility-suite) | 导出器 |
+| [File Registration Suite](#file-registration-suite) | 导入器, 转场, 视频滤镜 |
+| [Flash Cue Marker Data Suite](#flash-cue-marker-data-suite) | 导出器 |
+| [GPU Device Suite](../../gpu-effects-transitions/suites#gpu-device-suite) | GPU 效果和转场 |
+| [Image Processing Suite](#image-processing-suite) | 所有 |
+| Importer File Manager Suite | 导入器 |
+| [Legacy Callback Suites](../legacy-callback-suites) | 所有 |
+| [Marker Suite](#marker-suite) | 导出器 |
+| Media Accelerator Suite | 导入器 |
+| [Memory Manager Suite](#memory-manager-suite) | 所有 |
+| [Palette Suite](../../exporters/suites#palette-suite) | 导出器 |
+| [Pixel Format Suite](#pixel-format-suite) | 所有 |
+| [Playmod Audio Suite](../../transmitters/suites#playmod-audio-suite) | 传输器 |
+| Playmod Device Control Suite | 无 (已弃用) |
+| [Playmod Overlay Suite](#playmod-overlay-suite) | 传输器 |
+| Playmod Render Suite | 无 (已弃用) |
+| [PPix Cache Suite](#ppix-cache-suite) | 导入器 |
+| [PPix Creator Suite](#ppix-creator-suite) | 所有 |
+| [PPix Creator 2 Suite](#ppix-creator-2-suite) | 所有 |
+| [PPix Suite](#ppix-suite) | 所有 |
+| [PPix 2 Suite](#ppix-2-suite) | 所有 |
+| Quality Suite | 无 (已弃用) |
+| [RollCrawl Suite](#rollcrawl-suite) | 导出器 |
+| Scope Render Suite | 无 (已弃用) |
+| [Sequence Audio Suite](../../exporters/suites#sequence-audio-suite) | 导出器 |
+| [Sequence Info Suite](#sequence-info-suite) | 导入器, 转场, 视频滤镜 |
+| [Sequence Render Suite](../../exporters/suites#sequence-render-suite) | 导出器 |
+| Stock Image Suite | 无 (已弃用) |
+| [String Suite](#string-suite) | 所有 |
+| [Threaded Work Suite](#threaded-work-suite) | 所有 |
+| [Time Suite](#time-suite) | 所有 |
+| [Transmit Invocation Suite](../../transmitters/suites#transmit-invocation-suite) | 所有 |
+| [Video Segment Render Suite](#video-segment-render-suite) | 导出器 |
+| [Video Segment Suite](#video-segment-suite) | 导出器 |
+| [Window Suite](#window-suite) | 所有 |
 
 ---
 
@@ -86,8 +86,8 @@ SPBasic->AcquireSuite ( kPrSDKPixelFormatSuite, kPrSDKPixelFormatSuiteVersion, (
 ```cpp
 if (SPBasic && PixelFormatSuite)
 {
-  SPBasic->ReleaseSuite ( kPrSDKPixelFormatSuite,
-    kPrSDKPixelFormatSuiteVersion);
+ SPBasic->ReleaseSuite ( kPrSDKPixelFormatSuite,
+ kPrSDKPixelFormatSuiteVersion);
 }
 ```
 
@@ -225,55 +225,55 @@ CC 2014 中的版本 2 移除了 `CalculateVisibleRegions()`。
 
 ```cpp
 prSuiteError (*RenderImage)(
-  PrPlayID   inPlayID,
-  PrTime   inTime,
-  const prRect*  inLogicalRegion,
-  int   inDisplayWidth,
-  int   inDisplayHeight,
-  prBool   inClearToTransparentBlack,
-  PPixHand*   ioPPix);
+ PrPlayID inPlayID,
+ PrTime inTime,
+ const prRect* inLogicalRegion,
+ int inDisplayWidth,
+ int inDisplayHeight,
+ prBool inClearToTransparentBlack,
+ PPixHand* ioPPix);
 ```
 
-|    参数    |      描述      |
-|-----------------------|--------------------------------------------------------------------------------------------------------|
-| `inLogicalRegion`   | 源 PPix 的非缩放区域以叠加       |
-| `inDisplayWidth`   | 如果提供了 `ioPPix`，则为 PPix 的宽度和高度，缩放以考虑监视器缩放和 PAR     |
-| `inDisplayHeight`   |    |
-| `inClearToTransparentBlack` | 如果为 `kPrTrue`，则在渲染之前将帧清除为透明黑色      |
-| `ioPPix`    | 绘制叠加层的帧。如果为 NULL，宿主将分配 PPix。   |
-|    | 如果提供，PPix 必须为 BGRA，方形像素宽高比，并且大小与 `inDisplayWidth` 和 `inDisplayHeight` 匹配。   |
+| 参数 | 描述 |
+|---|---|
+| `inLogicalRegion` | 源 PPix 的非缩放区域以叠加 |
+| `inDisplayWidth` | 如果提供了 `ioPPix`，则为 PPix 的宽度和高度，缩放以考虑监视器缩放和 PAR |
+| `inDisplayHeight` | |
+| `inClearToTransparentBlack` | 如果为 `kPrTrue`，则在渲染之前将帧清除为透明黑色 |
+| `ioPPix` | 绘制叠加层的帧。如果为 NULL，宿主将分配 PPix。 |
+| | 如果提供，PPix 必须为 BGRA，方形像素宽高比，并且大小与 `inDisplayWidth` 和 `inDisplayHeight` 匹配。 |
 
 ### GetIdentifier
 
 ```cpp
 prSuiteError (*GetIdentifier)(
-  PrPlayID   inPlayID,
-  PrTime   inTime,
-  const prRect*  inLogicalRegion,
-  int   inDisplayWidth,
-  int   inDisplayHeight,
-  prBool   inClearToTransparentBlack,
-  prPluginID*   outIdentifier);
+ PrPlayID inPlayID,
+ PrTime inTime,
+ const prRect* inLogicalRegion,
+ int inDisplayWidth,
+ int inDisplayHeight,
+ prBool inClearToTransparentBlack,
+ prPluginID* outIdentifier);
 ```
 
 ### HasVisibleRegions
 
 ```cpp
 prSuiteError (*HasVisibleRegions)(
-  PrPlayID   inPlayID,
-  PrTime   inTime,
-  const prRect*  inLogicalRegion,
-  int   inDisplayWidth,
-  int   inDisplayHeight,
-  prBool*    outHasVisibleRegions);
+ PrPlayID inPlayID,
+ PrTime inTime,
+ const prRect* inLogicalRegion,
+ int inDisplayWidth,
+ int inDisplayHeight,
+ prBool* outHasVisibleRegions);
 ```
 
 ### VariesOverTime
 
 ```cpp
 prSuiteError (*VariesOverTime)(
-  PrPlayID  inPlayID,
-  prBool*   outVariesOverTime);
+ PrPlayID inPlayID,
+ prBool* outVariesOverTime);
 ```
 
 ---
@@ -310,17 +310,17 @@ CC 2014 中新增的版本 6 添加了 `AddFrameToCacheWithColorProfile2()` 和 
 
 ```cpp
 prSuiteError (*CreatePPix)(
-  PPixHand*   outPPixHand,
-  PrPPixBufferAccess  inRequestedAccess,
-  PrPixelFormat   inPixelFormat,
-  const prRect*   inBoundingRect);
+ PPixHand* outPPixHand,
+ PrPPixBufferAccess inRequestedAccess,
+ PrPixelFormat inPixelFormat,
+ const prRect* inBoundingRect);
 ```
 
-|    参数    |     描述    |
-|-----------------------------------|---------------------------------------------------------------|
-| `PPixHand *outPPixHand`   | 如果创建成功，则为新的 PPix 句柄。否则为 NULL。    |
-| `PrPPixBufferAccess inRequestedAccess` | 请求的像素访问权限。不允许只读（没有意义）。     |
-| `PrPixelFormat inPixelFormat`   | 此 PPix 的像素格式   |
+| 参数 | 描述 |
+|---|---|
+| `PPixHand *outPPixHand` | 如果创建成功，则为新的 PPix 句柄。否则为 NULL。 |
+| `PrPPixBufferAccess inRequestedAccess` | 请求的像素访问权限。不允许只读（没有意义）。 |
+| `PrPixelFormat inPixelFormat` | 此 PPix 的像素格式 |
 
 ### ClonePPix
 
@@ -330,16 +330,16 @@ prSuiteError (*CreatePPix)(
 
 ```cpp
 prSuiteError (*ClonePPix)(
-  PPixHand   inPPixToClone,
-  PPixHand*   outPPixHand,
-  PrPPixBufferAccess  inRequestedAccess);
+ PPixHand inPPixToClone,
+ PPixHand* outPPixHand,
+ PrPPixBufferAccess inRequestedAccess);
 ```
 
-|    参数    |     描述    |
-|-----------------------------------|---------------------------------------------------------------|
-| `PPixHand inPPixToClone`    | 要克隆的 PPix。    |
-| `PPixHand *outPPixHand`   | 如果创建成功，则为新的 PPix 句柄。否则为 NULL。    |
-| `PrPPixBufferAccess inRequestedAccess` | 请求的像素访问权限。目前仅允许只读。    |
+| 参数 | 描述 |
+|---|---|
+| `PPixHand inPPixToClone` | 要克隆的 PPix。 |
+| `PPixHand *outPPixHand` | 如果创建成功，则为新的 PPix 句柄。否则为 NULL。 |
+| `PrPPixBufferAccess inRequestedAccess` | 请求的像素访问权限。目前仅允许只读。 |
 
 ---
 
@@ -371,11 +371,11 @@ prSuiteError (*ClonePPix)(
 
 ```cpp
 prSuiteError (*Dispose)(
-  PPixHand  inPPixHand);
+ PPixHand inPPixHand);
 ```
 
-|   参数    |   描述    |
-|-------------------|-----------------------|
+| 参数 | 描述 |
+|---|---|
 | `PPixHand inPPixHand` | 要释放的 PPix 句柄。 |
 
 ### GetPixels
@@ -384,16 +384,16 @@ prSuiteError (*Dispose)(
 
 ```cpp
 prSuiteError (*GetPixels)(
-  PPixHand   inPPixHand,
-  PrPPixBufferAccess  inRequestedAccess,
-  char**    outPixelAddress);
+ PPixHand inPPixHand,
+ PrPPixBufferAccess inRequestedAccess,
+ char** outPixelAddress);
 ```
 
-|    参数    |    描述    |
-|-----------------------------------|-------------------------------------------------------|
-| `PPixHand inPPixHand`    | 要操作的 PPix 句柄。      |
-| `PrPPixBufferAccess inRequestedAccess` | 请求的像素访问权限。大多数 PPix 不支持写访问模式。   |
-| `char** outPixelAddress`    | 输出的像素缓冲区地址。如果请求的像素访问权限不支持，则可能为 NULL。 |
+| 参数 | 描述 |
+|---|---|
+| `PPixHand inPPixHand` | 要操作的 PPix 句柄。 |
+| `PrPPixBufferAccess inRequestedAccess` | 请求的像素访问权限。大多数 PPix 不支持写访问模式。 |
+| `char** outPixelAddress` | 输出的像素缓冲区地址。如果请求的像素访问权限不支持，则可能为 NULL。 |
 
 ### GetBounds
 
@@ -401,14 +401,14 @@ prSuiteError (*GetPixels)(
 
 ```cpp
 prSuiteError (*GetBounds)(
-  PPixHand  inPPixHand,
-  prRect*   inoutBoundingRect);
+ PPixHand inPPixHand,
+ prRect* inoutBoundingRect);
 ```
 
-|    参数   |   描述     |
-|-------------------------|-------------------------------------------|
-| `PPixHand inPPixHand`   | 要操作的 PPix 句柄。    |
-| `prRect* inoutBoundingRect` | 要填充的边界矩形的地址。     |
+| 参数 | 描述 |
+|---|---|
+| `PPixHand inPPixHand` | 要操作的 PPix 句柄。 |
+| `prRect* inoutBoundingRect` | 要填充的边界矩形的地址。 |
 
 ### GetRowBytes
 
@@ -416,14 +416,14 @@ prSuiteError (*GetBounds)(
 
 ```cpp
 prSuiteError (*GetRowBytes)(
-  PPixHand   inPPixHand,
-  csSDK_int32*  outRowBytes);
+ PPixHand inPPixHand,
+ csSDK_int32* outRowBytes);
 ```
 
-|   参数    |      描述   |
-|-----------------------|-----------------------------------------------------------------------------------|
-| `PPixHand inPPixHand` | 要操作的 PPix 句柄。    |
-| `csSDK_int32* outRowBytes` | 返回必须添加到像素缓冲区地址以到达下一行的字节数。     |
+| 参数 | 描述 |
+|---|---|
+| `PPixHand inPPixHand` | 要操作的 PPix 句柄。 |
+| `csSDK_int32* outRowBytes` | 返回必须添加到像素缓冲区地址以到达下一行的字节数。 |
 
 ### GetPixelAspectRatio
 
@@ -431,38 +431,38 @@ prSuiteError (*GetRowBytes)(
 
 ```cpp
 prSuiteError (*GetPixelAspectRatio)(
-  PPixHand   inPPixHand,
-  csSDK_uint32*  outPixelAspectRatioNumerator,
-  csSDK_uint32*  outPixelAspectRatioDenominator);
+ PPixHand inPPixHand,
+ csSDK_uint32* outPixelAspectRatioNumerator,
+ csSDK_uint32* outPixelAspectRatioDenominator);
 ```
 
-|   参数    |    描述    |
-|-----------------------------|-------------------------------|
-| `PPixHand inPPixHand`   | 要操作的 PPix 句柄。    |
-| `PrPixelFormat* outPixelFormat` | 返回此 PPix 的像素格式。   |
+| 参数 | 描述 |
+|---|---|
+| `PPixHand inPPixHand` | 要操作的 PPix 句柄。 |
+| `PrPixelFormat* outPixelFormat` | 返回此 PPix 的像素格式。 |
 
 ### GetUniqueKey
 
 这将返回此 PPix 的唯一键。
 
-| 返回值 |      如果   |
-|--------|-----------------------------------------------------------------------------------|
-| 错误   | 缓冲区大小太小（调用 `GetUniqueKeySize` 以获取正确的大小）    |
-| 错误   | 键不可用       |
-| 成功   | 键数据已填充      |
+| 返回值 | 如果 |
+|---|---|
+| 错误 | 缓冲区大小太小（调用 `GetUniqueKeySize` 以获取正确的大小） |
+| 错误 | 键不可用 |
+| 成功 | 键数据已填充 |
 
 ```cpp
 prSuiteError (*GetUniqueKey)(
-  PPixHand    inPPixHand,
-  unsigned char*  inoutKeyBuffer,
-  size_t    inKeyBufferSize);
+ PPixHand inPPixHand,
+ unsigned char* inoutKeyBuffer,
+ size_t inKeyBufferSize);
 ```
 
-|   参数    |   描述    |
-|-----------------------------|-----------------------------|
-| `PPixHand inPPixHand`   | 要操作的 PPix 句柄。    |
-| `unsigned char* inoutKeyBuffer` | 用于返回键的存储。    |
-| `size_t inKeyBufferSize`   | 缓冲区大小     |
+| 参数 | 描述 |
+|---|---|
+| `PPixHand inPPixHand` | 要操作的 PPix 句柄。 |
+| `unsigned char* inoutKeyBuffer` | 用于返回键的存储。 |
+| `size_t inKeyBufferSize` | 缓冲区大小 |
 
 ### GetUniqueKeySize
 
@@ -470,12 +470,12 @@ prSuiteError (*GetUniqueKey)(
 
 ```cpp
 prSuiteError (*GetUniqueKeySize)(
-  size_t*  outKeyBufferSize);
+ size_t* outKeyBufferSize);
 ```
 
-|   参数    |    描述    |
-|-----------------------|-----------------------------------|
-| `size_t* outKeyBufferSize` | 返回 PPix 唯一键的大小。    |
+| 参数 | 描述 |
+|---|---|
+| `size_t* outKeyBufferSize` | 返回 PPix 唯一键的大小。 |
 
 ### GetRenderTime
 
@@ -483,15 +483,15 @@ prSuiteError (*GetUniqueKeySize)(
 
 ```cpp
 prSuiteError (*GetRenderTime)(
-  PPixHand   inPPixHand,
-  csSDK_int32*  outRenderMilliseconds);
+ PPixHand inPPixHand,
+ csSDK_int32* outRenderMilliseconds);
 ```
 
-|    参数    |   描述     |
-|---------------------------------|-------------------------------------------|
-| `PPixHand inPPixHand`   | 要操作的 PPix 句柄。    |
-| `csSDK_int32* outRenderMilliseconds` | 返回渲染时间（以毫秒为单位）。   |
-|     | 如果帧被缓存，则时间为零。    |
+| 参数 | 描述 |
+|---|---|
+| `PPixHand inPPixHand` | 要操作的 PPix 句柄。 |
+| `csSDK_int32* outRenderMilliseconds` | 返回渲染时间（以毫秒为单位）。 |
+| | 如果帧被缓存，则时间为零。 |
 
 ---
 
@@ -535,25 +535,25 @@ CS4 中新增。注册和排队线程工作回调以在渲染线程上处理的�
 
 ### pmPlayTimebase
 
-|   成员   |    描述   |
-|---------------------------|---------------------|
-| `csSDK_uint32 scale`   | 时间基准的速率   |
-| `csSDK_int32 sampleSize`  | 一个样本的大小   |
-| `csSDK_int32 fileDuration` | 文件中的样本数   |
+| 成员 | 描述 |
+|---|---|
+| `csSDK_uint32 scale` | 时间基准的速率 |
+| `csSDK_int32 sampleSize` | 一个样本的大小 |
+| `csSDK_int32 fileDuration` | 文件中的样本数 |
 
 ### PrVideoFrameRates
 
-|    成员   | 描述  |
-|-------------------------|-------|
+| 成员 | 描述 |
+|---|---|
 | `kVideoFrameRate_24Drop` | 24000 / 1001 |
-| `kVideoFrameRate_24`   | 24   |
-| `kVideoFrameRate_PAL`   | 25   |
-| `kVideoFrameRate_NTSC`   | 30000 / 1001 |
-| `kVideoFrameRate_30`   | 30   |
-| `kVideoFrameRate_PAL_HD` | 50   |
+| `kVideoFrameRate_24` | 24 |
+| `kVideoFrameRate_PAL` | 25 |
+| `kVideoFrameRate_NTSC` | 30000 / 1001 |
+| `kVideoFrameRate_30` | 30 |
+| `kVideoFrameRate_PAL_HD` | 50 |
 | `kVideoFrameRate_NTSC_HD` | 60000 / 1001 |
-| `kVideoFrameRate_60`   | 60   |
-| `kVideoFrameRate_Max`   | 0xFFFFFFFF   |
+| `kVideoFrameRate_60` | 60 |
+| `kVideoFrameRate_Max` | 0xFFFFFFFF |
 
 ### GetTicksPerSecond
 
@@ -561,7 +561,7 @@ CS4 中新增。注册和排队线程工作回调以在渲染线程上处理的�
 
 ```cpp
 prSuiteError (*GetTicksPerSecond)(
-  PrTime*  outTicksPerSec);
+ PrTime* outTicksPerSec);
 ```
 
 ### GetTicksPerVideoFrame
@@ -570,23 +570,23 @@ prSuiteError (*GetTicksPerSecond)(
 
 ```cpp
 prSuiteError (*GetTicksPerVideoFrame)(
-  PrVideoFrameRates  inVideoFrameRate,
-  PrTime*   outTicksPerFrame);
+ PrVideoFrameRates inVideoFrameRate,
+ PrTime* outTicksPerFrame);
 ```
 
 ### GetTicksPerAudioSample
 
 获取当前音频采样速率中的滴答数。
 
-|    返回值    |     如果     |
-|--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| `kPrTimeSuite_RoundedAudioRate` | 请求的音频采样速率不是基本滴答计数的偶数除数，因此此速率中的时间将不准确。   |
-| `kPrTimeSuite_Success`    | 否则       |
+| 返回值 | 如果 |
+|---|---|
+| `kPrTimeSuite_RoundedAudioRate` | 请求的音频采样速率不是基本滴答计数的偶数除数，因此此速率中的时间将不准确。 |
+| `kPrTimeSuite_Success` | 否则 |
 
 ```cpp
 prSuiteError (*GetTicksPerAudioSample)(
-  float   inSampleRate,
-  PrTime*  outTicksPerSample);
+ float inSampleRate,
+ PrTime* outTicksPerSample);
 ```
 
 ---
@@ -615,14 +615,14 @@ prSuiteError (*GetTicksPerAudioSample)(
 
 ```cpp
 Segment
-  Compositor Node
-   Clip Node
-   Media Node (bottom clip) Clip Node
-   Clip Node
-   Media Node (middle clip) Clip Node
-   Clip Node
-   Media Node (top clip)
-   Clip Operators (Blur, Color Corrector, Motion)
+ Compositor Node
+ Clip Node
+ Media Node (bottom clip) Clip Node
+ Clip Node
+ Media Node (middle clip) Clip Node
+ Clip Node
+ Media Node (top clip)
+ Clip Operators (Blur, Color Corrector, Motion)
 ```
 
 要了解片段结构，请尝试使用 SDK 播放器，使用 SDK 编辑模式创建序列，并在执行编辑时观察序列监视器中的文本叠加。

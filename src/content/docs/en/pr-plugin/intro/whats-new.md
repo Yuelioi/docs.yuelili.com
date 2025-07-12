@@ -181,10 +181,10 @@ When the source settings effect parameters are changed, the effect gets called w
 
 ```cpp
 PF_Err TranslateParamsToPrefs(
-  PF_InData*                      in_data,
-  PF_OutData*                     out_data,
-  PF_ParamDef*                    params[],
-  PF_TranslateParamsToPrefsExtra  *extra)
+ PF_InData* in_data,
+ PF_OutData* out_data,
+ PF_ParamDef* params[],
+ PF_TranslateParamsToPrefsExtra *extra)
 ```
 
 With the new prefs, the importer will be sent *imOpenFile8, imGetInfo8, imGetIndPixelFormat, imGetPreferredFrameSize, imGetSourceVideo*, etc.
@@ -304,7 +304,6 @@ The importer and exporter APIs have been extended to support closed captioning e
 :::note
 Premiere Pro can also import and export captions in a sidecar file (e.g. .mcc, .scc, or .xml) alongside any media file, regardless of the media file format.
 :::
-
 
 ### Miscellaneous Improvements
 
@@ -442,7 +441,6 @@ Exporters and players can now handle any pixel format, with the new [Image Proce
 :::note
 If you provide an installer for an exporter, custom presets created in Premiere Pro are now visible in AME and vice-versa.
 :::
-
 
 ### Mac 64-Bit and Cocoa
 

@@ -13,7 +13,6 @@ Specifies the properties and attributes of a paragraph contained in a text frame
 Paragraph attributes do not have default values, and are `undefined` until explicitly set.
 :::
 
-
 ---
 
 ## Properties
@@ -192,7 +191,6 @@ The distance (in points) from the right edge of the paragraph that marks the par
 `0` allows all hyphenation. Valid only when [ParagraphAttributes.everyLineComposer](#paragraphattributeseverylinecomposer) is `false`.
 :::
 
-
 #### Type
 
 Number (double).
@@ -311,7 +309,6 @@ Range: 50.0 to 200.0; at 100.0. The width of characters is not changed.
 Valid only for justified paragraphs.
 :::
 
-
 #### Type
 
 Number (double).
@@ -332,7 +329,6 @@ Range: -100.0 to 500.0; at 0. No space is added between letters. At 100.0, an en
 Valid only for justified paragraphs.
 :::
 
-
 #### Type
 
 Number (double).
@@ -352,7 +348,6 @@ Range: 0.0 to 1000.0; at 100.00. No space is added between words.
 :::note
 Valid only for justified paragraphs.
 :::
-
 
 #### Type
 
@@ -402,7 +397,6 @@ Range: 50.0 to 200.0. At 100.0, the width of characters is not changed.
 Valid only for justified paragraphs.
 :::
 
-
 #### Type
 
 Number (double).
@@ -435,7 +429,6 @@ Minimum letter spacing, expressed as a percentage of the default kerning or trac
 Valid only for justified paragraphs.
 :::
 
-
 #### Type
 
 Number (double).
@@ -455,7 +448,6 @@ Range: 0.0 to 1000.0; at 100.00. No space is added between words.
 :::note
 Valid only for justified paragraphs.
 :::
-
 
 #### Type
 

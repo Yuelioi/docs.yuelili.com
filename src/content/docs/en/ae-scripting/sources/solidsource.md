@@ -7,7 +7,6 @@ title: solidsource
 
 `app.project.item(index).proxySource`
 
-
 #### Description
 
 The SolidSource object represents a solid-color footage source.
@@ -15,7 +14,6 @@ The SolidSource object represents a solid-color footage source.
 :::info
 SolidSource is a subclass of [FootageSource](../footagesource). All methods and attributes of FootageSource, in addition to those listed below, are available when working with SolidSource.
 :::
-
 
 ---
 

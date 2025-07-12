@@ -71,11 +71,11 @@ title: 单词
 
 #### 参数
 
-|      参数       |       类型        |       描述       |
-| --------------- | --------------------------------------------------------------------- | ---------------- |
-| `contents`      | 字符串      | 要添加的单词     |
-| `relativeObject`| [TextFrameItem](.././TextFrameItem)，可选    | 要添加项的对象   |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 插入文本的位置   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `contents` | 字符串 | 要添加的单词 |
+| `relativeObject`| [TextFrameItem](.././TextFrameItem)，可选 | 要添加项的对象 |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 插入文本的位置 |
 
 #### 返回值
 
@@ -93,8 +93,8 @@ title: 单词
 
 #### 参数
 
-| 参数       | 类型   | 描述   |
-| ---------- | ------ | ------------ |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `contents` | 字符串 | 要添加的单词 |
 
 #### 返回值
@@ -113,8 +113,8 @@ title: 单词
 
 #### 参数
 
-| 参数      | 类型   | 描述     |
-| --------- | ------------ | -------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `itemKey` | 字符串, 数字 | 字符串或数字键 |
 
 #### 返回值
@@ -144,11 +144,11 @@ title: 单词
 ```javascript
 // 统计当前文档中的所有单词并将总数存储在 numWords 中
 if ( app.documents.length > 0 ) {
-    var numWords = 0;
+ var numWords = 0;
 
-    for ( i = 0; i < app.activeDocument.textFrames.length; i++) {
-        numWords += app.activeDocument.textFrames[i].words.length;
-    }
+ for ( i = 0; i < app.activeDocument.textFrames.length; i++) {
+ numWords += app.activeDocument.textFrames[i].words.length;
+ }
 }
 ```
 
@@ -157,30 +157,30 @@ if ( app.documents.length > 0 ) {
 ```javascript
 // 创建一个新的洋红色并将其应用于符合特定条件的所有单词
 if (app.documents.length > 0 && app.activeDocument.textFrames.length > 0) {
-    // 创建要应用于单词的颜色
-    var wordColor = new RGBColor();
-    wordColor.red = 255;
-    wordColor.green = 0;
-    wordColor.blue = 255;
+ // 创建要应用于单词的颜色
+ var wordColor = new RGBColor();
+ wordColor.red = 255;
+ wordColor.green = 0;
+ wordColor.blue = 255;
 
-    // 设置要查找的单词的值 searchWord1 = "the";
-    var searchWord2 = "The";
-    var searchWord3 = "THE";
+ // 设置要查找的单词的值 searchWord1 = "the";
+ var searchWord2 = "The";
+ var searchWord3 = "THE";
 
-    // 遍历文档中的所有单词
-    // 并为匹配 searchWord 的单词着色
+ // 遍历文档中的所有单词
+ // 并为匹配 searchWord 的单词着色
 
-    for (var i = 0; i < app.activeDocument.textFrames.length; i++) {
-        var textArt = activeDocument.textFrames[i];
+ for (var i = 0; i < app.activeDocument.textFrames.length; i++) {
+ var textArt = activeDocument.textFrames[i];
 
-        for (var j = 0; j < textArt.words.length; j++) {
-      var word = textArt.words[j];
+ for (var j = 0; j < textArt.words.length; j++) {
+ var word = textArt.words[j];
 
       if (word.contents == searchWord1 || word.contents == searchWord2 || word.contents == searchWord3) {
-          word.filled = true;
-          word.fillColor = wordColor;
-      }
-        }
-    }
+ word.filled = true;
+ word.fillColor = wordColor;
+ }
+ }
+ }
 }
 ```

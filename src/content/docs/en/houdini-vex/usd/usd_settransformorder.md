@@ -30,7 +30,7 @@ Examples
 ## examples
 
 ```vex
-string  ops[] = {"xformOp:translate:xform_cube_t", "xformOp:rotateZ:xform_cube_r", "xformOp:rotateXYZ:xform_cube_r", "xformOp:scale:xform_cube_s"};
+string ops[] = {"xformOp:translate:xform_cube_t", "xformOp:rotateZ:xform_cube_r", "xformOp:rotateXYZ:xform_cube_r", "xformOp:scale:xform_cube_s"};
 usd_settransformorder(0, "/geo/cube", ops);
 
 ```

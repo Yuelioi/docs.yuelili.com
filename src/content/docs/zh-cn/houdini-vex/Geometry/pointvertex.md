@@ -21,7 +21,7 @@ order: 22
 ## 示例
 
 ```vex
-int    vtx;
+int vtx;
 
 // 获取点3的线性顶点编号
 vtx = pointvertex("defgeo.bgeo", 3);

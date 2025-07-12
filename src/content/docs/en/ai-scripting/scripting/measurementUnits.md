@@ -9,13 +9,13 @@ Illustrator uses points when communicating with your scripts regardless of the c
 
 The following table shows conversion formulas for various units of measurement:
 
-| Unit        | Conversion formula                             |
-|-------------|------------------------------------------------|
-| centimeters | 28.346 points = 1 centimeter                   |
-| inches      | 72 points = 1 inch                             |
-| millimeters | 2.834645 points = 1 millimeter                 |
-| picas       | 12 points = 1 pica                             |
-| Qs          | 0.709 point = 1 Q (1 Q equals 0.23 millimeter) |
+| Unit | Conversion formula |
+|---|---|
+| centimeters | 28.346 points = 1 centimeter |
+| inches | 72 points = 1 inch |
+| millimeters | 2.834645 points = 1 millimeter |
+| picas | 12 points = 1 pica |
+| Qs | 0.709 point = 1 Q (1 Q equals 0.23 millimeter) |
 
 JavaScript provides the UnitValue object type, which offers unit-conversion utilities. For details, see [JavaScript Tools Guide](https://extendscript.docsforadobe.dev/)
 

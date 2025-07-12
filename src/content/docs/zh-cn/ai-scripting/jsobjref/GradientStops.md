@@ -81,9 +81,9 @@ title: GradientStops
 
 #### 参数
 
-| 参数      | 类型   | 描述         |
-| --------- | ------ | ------------------ |
-| `name`    | 字符串 | 要获取的元素的名称 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `name` | 字符串 | 要获取的元素的名称 |
 
 #### 返回值
 
@@ -101,9 +101,9 @@ title: GradientStops
 
 #### 参数
 
-| 参数      | 类型     | 描述       |
-| --------- | -------------- | ---------------- |
-| `itemKey` | 字符串, 数字   | 字符串或数字键   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `itemKey` | 字符串, 数字 | 字符串或数字键 |
 
 #### 返回值
 
@@ -132,24 +132,24 @@ title: GradientStops
 ```javascript
 // 向渐变中添加一个新的渐变停止点，新停止点的颜色为 70% 灰色
 if (app.documents.length > 0 && app.activeDocument.gradients.length > 0) {
-    // 获取要更改的渐变的引用
-    var changeGradient = app.activeDocument.gradients[0];
+ // 获取要更改的渐变的引用
+ var changeGradient = app.activeDocument.gradients[0];
 
-    // 获取最后一个渐变停止点的引用
-    var origCount = changeGradient.gradientStops.length;
-    var lastStop = changeGradient.gradientStops[origCount - 1];
+ // 获取最后一个渐变停止点的引用
+ var origCount = changeGradient.gradientStops.length;
+ var lastStop = changeGradient.gradientStops[origCount - 1];
 
-    // 添加新的渐变停止点
-    var newStop = changeGradient.gradientStops.add();
+ // 添加新的渐变停止点
+ var newStop = changeGradient.gradientStops.add();
 
-    // 设置新渐变停止点的值。
-    // 将原始的最后一个渐变停止点向左移动一点，并在旧位置插入新的渐变停止点
-    newStop.rampPoint = lastStop.rampPoint;
-    lastStop.rampPoint = lastStop.rampPoint - 10;
+ // 设置新渐变停止点的值。
+ // 将原始的最后一个渐变停止点向左移动一点，并在旧位置插入新的渐变停止点
+ newStop.rampPoint = lastStop.rampPoint;
+ lastStop.rampPoint = lastStop.rampPoint - 10;
 
-    // 创建一个新颜色以应用于新创建的渐变停止点
-    var newStopColor = new GrayColor();
-    newStopColor.gray = 70.0;
-    newStop.color = newStopColor;
+ // 创建一个新颜色以应用于新创建的渐变停止点
+ var newStopColor = new GrayColor();
+ newStopColor.gray = 70.0;
+ newStop.color = newStopColor;
 }
 ```

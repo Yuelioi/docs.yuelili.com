@@ -81,9 +81,9 @@ title: GroupItems
 
 #### 参数
 
-|  参数       |         类型         |       描述        |
-| ----------- | ------------------------------------------------------------------------------------ | ----------------- |
-| `imageFile` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象    | 要放置的矢量艺术文件 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `imageFile` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要放置的矢量艺术文件 |
 
 #### 返回值
 
@@ -101,9 +101,9 @@ title: GroupItems
 
 #### 参数
 
-| 参数     |  类型  |       描述       |
-| -------- | ------ | ---------------- |
-| `name`   | 字符串 | 要获取的元素名称 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `name` | 字符串 | 要获取的元素名称 |
 
 #### 返回值
 
@@ -121,9 +121,9 @@ title: GroupItems
 
 #### 参数
 
-| 参数      |      类型      |       描述       |
-| --------- | -------------- | ---------------- |
-| `itemKey` | 字符串, 数字   | 字符串或数字键   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `itemKey` | 字符串, 数字 | 字符串或数字键 |
 
 #### 返回值
 
@@ -160,10 +160,10 @@ title: GroupItems
 // dest 应包含完整路径和文件名
 
 function embedPDF(dest) {
-    var embedDoc = new File(dest);
-    if (app.documents.length > 0 && embedDoc.exists) {
-        var doc = app.activeDocument;
-        var placed = doc.groupItems.createFromFile(embedDoc);
-    }
+ var embedDoc = new File(dest);
+ if (app.documents.length > 0 && embedDoc.exists) {
+ var doc = app.activeDocument;
+ var placed = doc.groupItems.createFromFile(embedDoc);
+ }
 }
 ```

@@ -67,8 +67,8 @@ Creates a new Artboard object.
 
 #### Parameters
 
-|   Parameter    | Type |     Description     |
-| -------------- | ---- | ------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `artboardRect` | Rect | Artboard dimensions |
 
 #### Returns
@@ -103,9 +103,9 @@ Gets the first element in the collection with the specified name.
 
 #### Parameters
 
-| Parameter |  Type  |      Description       |
-| --------- | ------ | ---------------------- |
-| `name`    | String | Name of element to get |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Name of element to get |
 
 #### Returns
 
@@ -123,10 +123,10 @@ Creates a new Artboard object and inserts it at the given index in the list.
 
 #### Parameters
 
-|   Parameter    |     Type      |         Description         |
-| -------------- | ------------- | --------------------------- |
-| `artboardRect` | Rect          | Artboard dimensions         |
-| `index`        | Number (long) | Index to insert artboard at |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `artboardRect` | Rect | Artboard dimensions |
+| `index` | Number (long) | Index to insert artboard at |
 
 #### Returns
 
@@ -144,9 +144,9 @@ Deletes an artboard object. You cannot remove the last artboard in a document.
 
 #### Parameters
 
-| Parameter |     Type      |         Description         |
-| --------- | ------------- | --------------------------- |
-| `index`   | Number (long) | Index of artboard to remove |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | Number (long) | Index of artboard to remove |
 
 #### Returns
 
@@ -164,9 +164,9 @@ Makes a specific artboard active and makes it current in the iteration order.
 
 #### Parameters
 
-| Parameter |     Type      |           Description           |
-| --------- | ------------- | ------------------------------- |
-| `index`   | Number (long) | Index of artboard to set active |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | Number (long) | Index of artboard to set active |
 
 #### Returns
 

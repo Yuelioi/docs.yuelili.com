@@ -28,8 +28,8 @@ b1 = win.add ( "button", undefined, localize( btnText ) );
 
 ```javascript
 var today = {
-   en: "Today is %1/%2.",
-   de: "Heute ist der %2.%1."
+ en: "Today is %1/%2.",
+ de: "Heute ist der %2.%1."
 };
 var date = new Date();
 Window.alert( localize( today, date.getMonth() + 1, date.getDate() ) );

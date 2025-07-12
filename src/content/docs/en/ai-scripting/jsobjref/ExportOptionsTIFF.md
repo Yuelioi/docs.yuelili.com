@@ -85,7 +85,6 @@ Default: `ImageColorSpace.RGB`.
 This property was erroneously written as "IZWCompression" (with a capital "I"), as opposed to "lzwCompression" (with a lowercase "L"). Note that the latter is correct, and this doc has been updated to reflect this.
 :::
 
-
 #### Description
 
 If `true`, use IZW compression in the new file.
@@ -139,16 +138,16 @@ Number (double).
 // dest contains the full path including the file name
 
 function exportFileToPSD(dest) {
-    if (app.documents.length > 0) {
-        var exportOptions = new ExportOptionsTIFF();
-        exportOptions.resolution = 150;
-        exportOptions.byteOrder = TIFFByteOrder.IBMPC;
-        exportOptions.lZWCompression = false;
+ if (app.documents.length > 0) {
+ var exportOptions = new ExportOptionsTIFF();
+ exportOptions.resolution = 150;
+ exportOptions.byteOrder = TIFFByteOrder.IBMPC;
+ exportOptions.lZWCompression = false;
 
-        var type = ExportType.TIFF;
-        var fileSpec = new File(dest);
+ var type = ExportType.TIFF;
+ var fileSpec = new File(dest);
 
-        app.activeDocument.exportFile(fileSpec, type, exportOptions);
-    }
+ app.activeDocument.exportFile(fileSpec, type, exportOptions);
+ }
 }
 ```

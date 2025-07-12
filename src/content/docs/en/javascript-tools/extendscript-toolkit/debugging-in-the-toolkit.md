@@ -17,10 +17,10 @@ Some applications use multiple JavaScript engines; all available engines in the 
 
 An icon by each engine name indicates whether it is running, halted, or waiting for input:
 
-|                                                   Icon                                                    | Status  |
-| --------------------------------------------------------------------------------------------------------- | ------- |
+| Icon | Status |
+| --- | --- |
 | ![running](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_running.jpg) | running |
-| ![halted](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_halted.jpg)   | halted  |
+| ![halted](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_halted.jpg) | halted |
 | ![waiting](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_waiting.jpg) | waiting |
 
 The current engine is the one whose data and state is displayed in the Toolkit's panes. If an application has only one engine, its engine becomes current when you select the application as the target. If there is more than one engine available in the target application, you can select an engine in the list to make it current.
@@ -61,20 +61,20 @@ You can use the console to evaluate expressions or call functions. Enter any Jav
 
 The debugging commands are available from the **Debug** menu, from the document window's right-click context menu, through keyboard shortcuts, and from the toolbar buttons. Use these menu commands and buttons to control the execution of code when the JavaScript Debugger is active.
 
-|                                                            Icon                                                             |    Action    |       Hotkey        |                                                                                            Description                                                                                             |
-|-----------------------------------------------------------------------------------------------------------------------------|--------------|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ![run-continue](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_run-continue.jpg) | Run/Continue | F5 (Windows)        | Starts or resumes execution of a script.                                                                                                                                                           |
-|                                                                                                                             |              | Ctrl R (Mac OS)     | Disabled when script is executing.                                                                                                                                                                 |
-| ![break](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_break.jpg)               | Break        | Ctrl F5 (Windows)   | Halts the currently executing script temporarily and reactivates the JavaScript Debugger.                                                                                                          |
-|                                                                                                                             |              | Cmd . (Mac OS)      | Enabled when a script is executing.                                                                                                                                                                |
-| ![stop](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_stop.jpg)                 | Stop         | Shift F5 (Windows)  | Stops execution of the script and generates a runtime error.                                                                                                                                       |
-|                                                                                                                             |              | Ctrl K (Mac OS)     | Enabled when a script is executing.                                                                                                                                                                |
-| ![step-over](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-over.jpg)       | Step Over    | F10 (Windows)       | Halts after executing a single JavaScript line in the script. If the statement calls a JavaScript function, executes the function in its entirety before stopping (do not step into the function). |
-|                                                                                                                             |              | Ctrl S (Mac OS)     |                                                                                                                                                                                                    |
-| ![step-into](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-into.jpg)       | Step Into    | F11 (Windows)       | Halts after executing a single JavaScript line statement in the script or after executing a single statement in any JavaScript function that the script calls.                                     |
-|                                                                                                                             |              | Ctrl T (Mac OS)     |                                                                                                                                                                                                    |
-| ![step-out](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-out.jpg)         | Step Out     | Shift F11 (Windows) | When paused within the body of a JavaScript function, resumes script execution until the function returns.                                                                                         |
-|                                                                                                                             |              | Ctrl U (Mac OS)     | When paused outside the body of a function, resumes script execution until the script terminates.                                                                                                  |
+| Icon | Action | Hotkey | Description |
+|---|---|---|---|
+| ![run-continue](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_run-continue.jpg) | Run/Continue | F5 (Windows) | Starts or resumes execution of a script. |
+| | | Ctrl R (Mac OS) | Disabled when script is executing. |
+| ![break](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_break.jpg) | Break | Ctrl F5 (Windows) | Halts the currently executing script temporarily and reactivates the JavaScript Debugger. |
+| | | Cmd . (Mac OS) | Enabled when a script is executing. |
+| ![stop](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_stop.jpg) | Stop | Shift F5 (Windows) | Stops execution of the script and generates a runtime error. |
+| | | Ctrl K (Mac OS) | Enabled when a script is executing. |
+| ![step-over](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-over.jpg) | Step Over | F10 (Windows) | Halts after executing a single JavaScript line in the script. If the statement calls a JavaScript function, executes the function in its entirety before stopping (do not step into the function). |
+| | | Ctrl S (Mac OS) | |
+| ![step-into](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-into.jpg) | Step Into | F11 (Windows) | Halts after executing a single JavaScript line statement in the script or after executing a single statement in any JavaScript function that the script calls. |
+| | | Ctrl T (Mac OS) | |
+| ![step-out](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-out.jpg) | Step Out | Shift F11 (Windows) | When paused within the body of a JavaScript function, resumes script execution until the function returns. |
+| | | Ctrl U (Mac OS) | When paused outside the body of a function, resumes script execution until the script terminates. |
 
 ---
 
@@ -122,12 +122,12 @@ When execution reaches this breakpoint after the specified number of hits, the d
 
 Each breakpoint is indicated by an icon to the left of the line number in the document window, and an icon and line number in the Breakpoints panel. Different icons are used in the document window and in the Breakpoints panel.
 
-|                                                                               Document window                                                                               |                                                                             Breakpoints panel                                                                             |                                            Description                                             |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| ![unconditional-document](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-document.jpg)                   | ![unconditional-bppanel](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-bppanel.jpg)                   | Unconditional breakpoint. Execution stops here.                                                    |
-| ![unconditional-disabled-document](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-disabled-document.jpg) | ![unconditional-disabled-bppanel](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-disabled-bppanel.jpg) | Unconditional breakpoint, disabled. Execution does not stop.                                       |
-| ![conditional-document](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-document.jpg)                       | ![conditional-bppanel](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-bppanel.jpg)                       | Conditional breakpoint. Execution stops if the attached JavaScript expression evaluates to `true`. |
-| ![conditional-disabled-document](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-disabled-document.jpg)     | ![conditional-disabled-bppanel](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-disabled-bppanel.jpg)     | Conditional breakpoint, disabled. Execution does not stop.                                         |
+| Document window | Breakpoints panel | Description |
+| --- | --- | --- |
+| ![unconditional-document](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-document.jpg) | ![unconditional-bppanel](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-bppanel.jpg) | Unconditional breakpoint. Execution stops here. |
+| ![unconditional-disabled-document](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-disabled-document.jpg) | ![unconditional-disabled-bppanel](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-disabled-bppanel.jpg) | Unconditional breakpoint, disabled. Execution does not stop. |
+| ![conditional-document](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-document.jpg) | ![conditional-bppanel](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-bppanel.jpg) | Conditional breakpoint. Execution stops if the attached JavaScript expression evaluates to `true`. |
+| ![conditional-disabled-document](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-disabled-document.jpg) | ![conditional-disabled-bppanel](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-disabled-bppanel.jpg) | Conditional breakpoint, disabled. Execution does not stop. |
 
 ---
 
@@ -156,14 +156,14 @@ The flyout menu for this panel lets you control the amount of data displayed:
 
 Each variable has a small icon that indicates the data type. An invalid object (that is, a reference to an object that has been deleted) shows the object icon crossed out in red. An undefined value has no icon.
 
-|                                                 Icon                                                 | Status  |
-| ---------------------------------------------------------------------------------------------------- | ------- |
+| Icon | Status |
+| --- | --- |
 | ![Boolean](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_boolean.jpg) | Boolean |
-| ![Number](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_number.jpg)   | Number  |
-| ![String](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_string.jpg)   | String  |
-| ![Object](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_object.jpg)   | Object  |
-| ![Method](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_method.jpg)   | Method  |
-| ![Null](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_null.jpg)       | null    |
+| ![Number](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_number.jpg) | Number |
+| ![String](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_string.jpg) | String |
+| ![Object](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_object.jpg) | Object |
+| ![Method](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_method.jpg) | Method |
+| ![Null](./_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_null.jpg) | null |
 
 You can inspect the contents of an object by clicking its icon. The list expands to show the object's properties (and methods, if Functions display is enabled), and the triangle points down to indicate that the object is open.
 

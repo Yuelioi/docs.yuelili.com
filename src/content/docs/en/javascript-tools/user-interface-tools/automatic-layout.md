@@ -35,7 +35,6 @@ For details of how you can set these property values to affect the automatic lay
 The default font and font size are chosen differently on different platforms, and by different applications on the same platform, so ScriptUI windows that are created the same way can appear different in different contexts.
 :::
 
-
 ---
 
 ## Automatic layout properties
@@ -44,11 +43,11 @@ Your script establishes rules for the layout manager by setting the values of ce
 
 ```javascript
 var w = new Window( "window { \
-    orientation: 'row', \
-    st: StaticText { }, \
-    pb: Button { text: 'OK' }, \
+ orientation: 'row', \
+ st: StaticText { }, \
+ pb: Button { text: 'OK' }, \
 
-    et: EditText { characters:4, justify:'right' } \
+ et: EditText { characters:4, justify:'right' } \
 }");
 
 w.show();
@@ -62,11 +61,11 @@ Each example shows the effects of setting particular layout properties in variou
 
 The `orientation` property of a container specifies the organization of child elements within it. It can have these values:
 
-|  Value   |                                                                                                                                                                                  Behavior                                                                                                                                                                                  |
-| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `row`    | Child elements are arranged next to each other, in a single row from left to right across the container. The height of the container is based on the height of the tallest child element in the row, and the width of the container is based on the combined widths of all the child elements.                                                                             |
-| `column` | Child elements are arranged above and below each other, in a single column from top to bottom across the container. The height of the container is based on the combined heights of all the child elements, and the width of the container is based on the widest child element in the column.                                                                             |
-| `stack`  | Child elements are arranged overlapping one another, as in a stack of papers. The elements overlie one another in the same region of the container. Only the top element is fully visible. The height of the container is based on the height of the tallest child element in the stack, and the width of the container is based on the widest child element in the stack. |
+| Value | Behavior |
+| --- | --- |
+| `row` | Child elements are arranged next to each other, in a single row from left to right across the container. The height of the container is based on the height of the tallest child element in the row, and the width of the container is based on the combined widths of all the child elements. |
+| `column` | Child elements are arranged above and below each other, in a single column from top to bottom across the container. The height of the container is based on the combined heights of all the child elements, and the width of the container is based on the widest child element in the column. |
+| `stack` | Child elements are arranged overlapping one another, as in a stack of papers. The elements overlie one another in the same region of the container. Only the top element is fully visible. The height of the container is based on the height of the tallest child element in the stack, and the width of the container is based on the widest child element in the stack. |
 
 The following figure shows the results of laying out the sample window with each of these orientations:
 
@@ -92,32 +91,32 @@ If you set the `alignment` value using a constant and then query the property, i
 
 Elements in a row can be aligned along the vertical axis, in these ways:
 
-|  Value   |                                                 Behavior                                                 |
-| -------- | -------------------------------------------------------------------------------------------------------- |
-| `top`    | The element's top edge is located at the top margin of its container.                                    |
-| `bottom` | The element's bottom edge is located at the bottom margin of its container.                              |
-| `center` | The element is centered within the top and bottom margins of its container.                              |
-| `fill`   | The element's height is adjusted to fill the height of the container between the top and bottom margins. |
+| Value | Behavior |
+| --- | --- |
+| `top` | The element's top edge is located at the top margin of its container. |
+| `bottom` | The element's bottom edge is located at the bottom margin of its container. |
+| `center` | The element is centered within the top and bottom margins of its container. |
+| `fill` | The element's height is adjusted to fill the height of the container between the top and bottom margins. |
 
 Elements in a column can be aligned along the horizontal axis, in these ways:
 
-|  Value   |                                                Behavior                                                |
-| -------- | ------------------------------------------------------------------------------------------------------ |
-| `left`   | The element's left edge is located at the left margin of its container.                                |
-| `right`  | The element's right edge is located at the right margin of its container.                              |
-| `center` | The element is centered within the right and left margins of its container.                            |
-| `fill`   | The element's width is adjusted to fill the width of the container between the right and left margins. |
+| Value | Behavior |
+| --- | --- |
+| `left` | The element's left edge is located at the left margin of its container. |
+| `right` | The element's right edge is located at the right margin of its container. |
+| `center` | The element is centered within the right and left margins of its container. |
+| `fill` | The element's width is adjusted to fill the width of the container between the right and left margins. |
 
 Elements in a stack can be aligned along either the vertical or the horizontal axis, in these ways:
 
-|  Value   |                                                                                                       Behavior                                                                                                       |
-| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `top`    | The element's top edge is located at the top margin of its container, and the element is centered within the right and left margins of its container.                                                                |
-| `bottom` | The element's bottom edge is located at the bottom margin of its container, and the element is centered within the right and left margins of its container.                                                          |
-| `left`   | The element's left edge is located at the left margin of its container, and the element is centered within the top and bottom margins of its container.                                                              |
-| `right`  | The element's right edge is located at the right margin of its container, and the element is centered within the top and bottom margins of its container.-                                                           |
-| `center` | The element is centered within the top, bottom, right and left margins of its container.                                                                                                                             |
-| `fill`   | The element's height is adjusted to fill the height of the container between the top and bottom margins., and the element's width is adjusted to fill the width of the container between the right and left margins. |
+| Value | Behavior |
+| --- | --- |
+| `top` | The element's top edge is located at the top margin of its container, and the element is centered within the right and left margins of its container. |
+| `bottom` | The element's bottom edge is located at the bottom margin of its container, and the element is centered within the right and left margins of its container. |
+| `left` | The element's left edge is located at the left margin of its container, and the element is centered within the top and bottom margins of its container. |
+| `right` | The element's right edge is located at the right margin of its container, and the element is centered within the top and bottom margins of its container.- |
+| `center` | The element is centered within the top, bottom, right and left margins of its container. |
+| `fill` | The element's height is adjusted to fill the height of the container between the top and bottom margins., and the element's width is adjusted to fill the width of the container between the right and left margins. |
 
 The following figure shows the results of creating the sample window with row orientation and the `bottom` and `top` alignment settings in the parent's `alignChildren` property:
 
@@ -143,9 +142,9 @@ You can set the alignment property with a two-string array instead of a single s
 The following figures show the results of the sample script [SnpAlignElements.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SnpAlignElements.jsx), that demonstrates how to specify alignment in two dimensions.
 
 - In the first, each control is centered vertically within its row, and placed at a specific horizontal position, using an alignment value such as `["left", "center"]` for each element:
-    ![Horizontal Alignment](./_static/04_user-interface-tools_automatic-layout_alignment-in-2d_horizontal.jpg)
+ ![Horizontal Alignment](./_static/04_user-interface-tools_automatic-layout_alignment-in-2d_horizontal.jpg)
 - The vertical alignment example creates four columns, and places the controls within each column along the vertical axis. It uses alignment values such as `["fill", "top"]` to distribute controls within the column, while still controlling the relative vertical positions:
-    ![Vertical Alignment](./_static/04_user-interface-tools_automatic-layout_alignment-in-2d_vertical.jpg)
+ ![Vertical Alignment](./_static/04_user-interface-tools_automatic-layout_alignment-in-2d_vertical.jpg)
 
 ---
 
@@ -203,21 +202,21 @@ Many dialogs consist of rows of information to be filled in, where each row has 
 
 ```javascript
 var res = "dialog { \
-    info: Panel { orientation: 'column', \
-        text: 'Personal Info', \
-        name: Group { orientation: 'row', \
-            s: StaticText { text:'Name:' }, \
-            e: EditText { characters: 30 } \
-        }, \
-        addr: Group { orientation: 'row', \
-            s: StaticText { text:'Street / City:' }, \
-            e: EditText { characters: 30 } \
-        } \
-    }, \
-    buttons: Group { orientation: 'row', \
-        okBtn: Button { text:'OK', properties:{name:'ok'} }, \
-        cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
-    } \
+ info: Panel { orientation: 'column', \
+ text: 'Personal Info', \
+ name: Group { orientation: 'row', \
+ s: StaticText { text:'Name:' }, \
+ e: EditText { characters: 30 } \
+ }, \
+ addr: Group { orientation: 'row', \
+ s: StaticText { text:'Street / City:' }, \
+ e: EditText { characters: 30 } \
+ } \
+ }, \
+ buttons: Group { orientation: 'row', \
+ okBtn: Button { text:'OK', properties:{name:'ok'} }, \
+ cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
+ } \
 }";
 win = new Window( res );
 win.center();
@@ -240,24 +239,24 @@ Suppose now that you need two panels, and want each panel to have the same width
 
 ```javascript
 var res = "dialog { alignChildren: 'fill', \
-    info: Panel { orientation: 'column', alignChildren:'right', \
-        text: 'Personal Info', \
-        name: Group { orientation: 'row', \
-            s: StaticText { text:'Name:' }, \
-            e: EditText { characters: 30 } \
-        } \
-    }, \
-    workInfo: Panel { orientation: 'column', \
-        text: 'Work Info', \
-        name: Group { orientation: 'row', \
-            s: StaticText { text:'Company name:' }, \
-            e: EditText { characters: 30 } \
-        } \
-    }, \
-    buttons: Group { orientation: 'row', alignment: 'right', \
-        okBtn: Button { text:'OK', properties:{name:'ok'} }, \
-        cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
-    } \
+ info: Panel { orientation: 'column', alignChildren:'right', \
+ text: 'Personal Info', \
+ name: Group { orientation: 'row', \
+ s: StaticText { text:'Name:' }, \
+ e: EditText { characters: 30 } \
+ } \
+ }, \
+ workInfo: Panel { orientation: 'column', \
+ text: 'Work Info', \
+ name: Group { orientation: 'row', \
+ s: StaticText { text:'Company name:' }, \
+ e: EditText { characters: 30 } \
+ } \
+ }, \
+ buttons: Group { orientation: 'row', alignment: 'right', \
+ okBtn: Button { text:'OK', properties:{name:'ok'} }, \
+ cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
+ } \
 }";
 win = new Window( res );
 win.center();
@@ -285,35 +284,35 @@ The following script creates this dialog. It compresses the "Personal Info" and 
 
 ```javascript
 var res = "dialog { \
-    whichInfo: DropDownList { alignment:'left' }, \
-    allGroups: Panel { orientation:'stack', \
-        info: Group { orientation: 'column', \
-            name: Group { orientation: 'row', \
-                s: StaticText { text:'Name:' }, \
-                e: EditText { characters: 30 } \
-            } \
-        }, \
-        workInfo: Group { orientation: 'column', \
-            name: Group { orientation: 'row', \
-                s: StaticText { text:'Company name:' }, \
-                e: EditText { characters: 30 } \
-            } \
-        }, \
-    }, \
-    buttons: Group { orientation: 'row', alignment: 'right', \
-        okBtn: Button { text:'OK', properties:{name:'ok'} }, \
-        cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
-    } \
+ whichInfo: DropDownList { alignment:'left' }, \
+ allGroups: Panel { orientation:'stack', \
+ info: Group { orientation: 'column', \
+ name: Group { orientation: 'row', \
+ s: StaticText { text:'Name:' }, \
+ e: EditText { characters: 30 } \
+ } \
+ }, \
+ workInfo: Group { orientation: 'column', \
+ name: Group { orientation: 'row', \
+ s: StaticText { text:'Company name:' }, \
+ e: EditText { characters: 30 } \
+ } \
+ }, \
+ }, \
+ buttons: Group { orientation: 'row', alignment: 'right', \
+ okBtn: Button { text:'OK', properties:{name:'ok'} }, \
+ cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
+ } \
 }";
 
 win = new Window( res );
 win.whichInfo.onChange = function () {
-    if ( this.selection !== null ) {
-        for ( var g = 0; g < this.items.length; g++ ) {
-            this.items[ g ].group.visible = false; //hide all other groups
-        }
-        this.selection.group.visible = true;//show this group
-    }
+ if ( this.selection !== null ) {
+ for ( var g = 0; g < this.items.length; g++ ) {
+ this.items[ g ].group.visible = false; //hide all other groups
+ }
+ this.selection.group.visible = true;//show this group
+ }
 };
 
 var item = win.whichInfo.add( "item", "Personal Info" );
@@ -343,35 +342,35 @@ This script-defined layout manager positions elements in its container in a stai
 // Define a custom layout manager that arranges the children
 // of "container" in a stair-step fashion.
 function StairStepButtonLayout( container ) {
-    this.initSelf( container );
+ this.initSelf( container );
 }
 
 // Define its "method" functions
 function SSBL_initSelf( container ) {
-    this.container = container;
+ this.container = container;
 }
 
 function SSBL_layout() {
-    var top = 0,
-    left = 0;
-    var width;
-    var vspacing = 10,
-    hspacing = 20;
-    for ( i = 0; i < this.container.children.length; i++ ) {
-        var child = this.container.children[ i ];
+ var top = 0,
+ left = 0;
+ var width;
+ var vspacing = 10,
+ hspacing = 20;
+ for ( i = 0; i < this.container.children.length; i++ ) {
+ var child = this.container.children[ i ];
 
-        // If child is a container, call its layout method
-        if ( typeof child.layout !== "undefined" ) {
-            child.layout.layout();
-        }
+ // If child is a container, call its layout method
+ if ( typeof child.layout !== "undefined" ) {
+ child.layout.layout();
+ }
 
-        child.size = child.preferredSize;
-        child.location = [ left, top ];
-        width = left + child.size.width;
-        top += child.size.height + vspacing;
-        left += hspacing;
-    }
-    this.container.preferredSize = [ width, top - vspacing ];
+ child.size = child.preferredSize;
+ child.location = [ left, top ];
+ width = left + child.size.width;
+ top += child.size.height + vspacing;
+ left += hspacing;
+ }
+ this.container.preferredSize = [ width, top - vspacing ];
 }
 
 // Attach methods to Object's prototype
@@ -380,25 +379,25 @@ StairStepButtonLayout.prototype.layout = SSBL_layout;
 
 // Define a string containing the resource specification for the controls
 var res = "dialog { \
-    whichInfo: DropDownList { alignment:'left' }, \
-    allGroups: Panel { orientation:'stack', \
-        info: Group { orientation: 'column', \
-            name: Group { orientation: 'row', \
-                s: StaticText { text:'Name:' }, \
-                e: EditText { characters: 30 } \
-            } \
-        }, \
-        workInfo: Group { orientation: 'column', \
-            name: Group { orientation: 'row', \
-                s: StaticText { text:'Company name:' }, \
-                e: EditText { characters: 30 } \
-            } \
-        }, \
-    }, \
-    buttons: Group { orientation: 'row', alignment: 'right', \
-        okBtn: Button { text:'OK', properties:{name:'ok'} }, \
-        cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
-    } \
+ whichInfo: DropDownList { alignment:'left' }, \
+ allGroups: Panel { orientation:'stack', \
+ info: Group { orientation: 'column', \
+ name: Group { orientation: 'row', \
+ s: StaticText { text:'Name:' }, \
+ e: EditText { characters: 30 } \
+ } \
+ }, \
+ workInfo: Group { orientation: 'column', \
+ name: Group { orientation: 'row', \
+ s: StaticText { text:'Company name:' }, \
+ e: EditText { characters: 30 } \
+ } \
+ }, \
+ }, \
+ buttons: Group { orientation: 'row', alignment: 'right', \
+ okBtn: Button { text:'OK', properties:{name:'ok'} }, \
+ cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
+ } \
 }";
 
 // Create window using resource spec
@@ -406,12 +405,12 @@ win = new Window( res );
 
 // Create list items, select first one
 win.whichInfo.onChange = function() {
-    if ( this.selection !== null ) {
-        for ( var g = 0; g < this.items.length; g++ ) {
-            this.items[ g ].group.visible = false;
-        }
-        this.selection.group.visible = true;
-    }
+ if ( this.selection !== null ) {
+ for ( var g = 0; g < this.items.length; g++ ) {
+ this.items[ g ].group.visible = false;
+ }
+ this.selection.group.visible = true;
+ }
 };
 var item = win.whichInfo.add( "item", "Personal Info" );
 item.group = win.allGroups.info;
@@ -438,10 +437,10 @@ The default AutoLayoutManager's layout method performs these steps when invoked 
 1. Read the bounds property for the managed container; if undefined, proceed with auto layout. If defined, assume that the script has explicitly placed the elements in this container, and cancel the layout operation (if both the location and size property have been set, this is equivalent to setting the bounds property, and layout does not proceed).
 2. Determine the container's margins and inter-element spacing from its margins and spacing properties, and the orientation and alignment of its child elements from the container's orientation and alignChildren properties. If any of these properties are undefined, use default settings obtained from platform and user-interface framework-specific default values.
 3. Enumerate the child elements, and for each child:
-    - If the child is a container, call its layout manager (that is, execute this entire algorithm again for the container).
-    - Read its alignment property; if defined, override the default alignment established by the parent container with its alignChildren property.
-    - Read its size property: if defined, use it to determine the child's dimensions. If undefined, read its preferredSize property to get the child's dimensions. Ignore the child's location property.
-    - All the per-child information is collected for later use.
+ - If the child is a container, call its layout manager (that is, execute this entire algorithm again for the container).
+ - Read its alignment property; if defined, override the default alignment established by the parent container with its alignChildren property.
+ - Read its size property: if defined, use it to determine the child's dimensions. If undefined, read its preferredSize property to get the child's dimensions. Ignore the child's location property.
+ - All the per-child information is collected for later use.
 4. Based on the orientation, calculate the trial location of each child in the row or column, using inter-element spacing and the container's margins.
 5. Determine the column, row, or stack dimensions, based on the dimensions of the children.
 6. Using the desired alignment for each child element, adjust its trial location relative to the edges of its container.

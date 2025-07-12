@@ -103,17 +103,17 @@ CMYK 颜色规范，用于需要 [Color](.././Color) 对象的场景。
 // 将当前文档中最前面的路径项的填充颜色设置为浅紫色 CMYK 颜色
 
 if (app.documents.length > 0 && app.activeDocument.pathItems.length > 0) {
-    var frontPath = app.activeDocument.pathItems[0];
+ var frontPath = app.activeDocument.pathItems[0];
 
-    // 为 CMYK 对象设置颜色值
-    var newCMYKColor = new cmykColor();
-    newCMYKColor.black = 0;
-    newCMYKColor.cyan = 30.4;
-    newCMYKColor.magenta = 32;
-    newCMYKColor.yellow = 0;
+ // 为 CMYK 对象设置颜色值
+ var newCMYKColor = new cmykColor();
+ newCMYKColor.black = 0;
+ newCMYKColor.cyan = 30.4;
+ newCMYKColor.magenta = 32;
+ newCMYKColor.yellow = 0;
 
-    // 在路径项中使用颜色对象
-    frontPath.filled = true;
-    frontPath.fillColor = newCMYKColor;
+ // 在路径项中使用颜色对象
+ frontPath.filled = true;
+ frontPath.fillColor = newCMYKColor;
 }
 ```

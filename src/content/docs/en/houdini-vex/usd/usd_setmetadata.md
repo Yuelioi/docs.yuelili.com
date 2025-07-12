@@ -42,7 +42,7 @@ usd_setmetadata(0, "/geo/sphere", "customData:a_float", 0.25);
 usd_setmetadata(0, "/geo/sphere", "customData:a_string", "foo bar baz");
 usd_setmetadata(0, "/geo/sphere", "customData:a_vector", {1.25, 1.50, 1.75});
 
-float  f_arr[] = {0, 0.25, 0.5, 0.75, 1};
+float f_arr[] = {0, 0.25, 0.5, 0.75, 1};
 usd_setmetadata(0, "/geo/sphere", "customData:a_float_array", f_arr);
 
 // Set the metadata value on an attribute.

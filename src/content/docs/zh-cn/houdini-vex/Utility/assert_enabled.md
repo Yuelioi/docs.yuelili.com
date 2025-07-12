@@ -9,11 +9,11 @@ order: 1
 `assert()` 宏使用此函数仅在 `HOUDINI_VEX_ASSERT` 设置时执行断言：
 
 ```vex
-#define assert(EXPR)    \
-    if (assert_enabled()) { \
-    if (!(EXPR)) print_once(sprintf('VEX Assertion Failed %s:%d - (%s)\n', \
-      __FILE__, __LINE__, #EXPR)); \
-    }
+#define assert(EXPR) \
+ if (assert_enabled()) { \
+ if (!(EXPR)) print_once(sprintf('VEX Assertion Failed %s:%d - (%s)\n', \
+ __FILE__, __LINE__, #EXPR)); \
+ }
 
 ```
 

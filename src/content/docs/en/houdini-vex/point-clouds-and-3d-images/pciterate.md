@@ -14,13 +14,13 @@ the condition in a [while loop](../statement.html).
 Warnings:
 
 - It is not possible to nest pcunshaded or pciterate loops for the same
-  handle. That is, for a single [pcopen](./pcopen "Returns a handle to a point cloud file.") call, only one
-  [pcunshaded](./pcunshaded "Iterate over all of the points of a read-write channel which haven’t
-  had any data written to the channel yet.") or `pciterate` loop may be entered.
+ handle. That is, for a single [pcopen](./pcopen "Returns a handle to a point cloud file.") call, only one
+ [pcunshaded](./pcunshaded "Iterate over all of the points of a read-write channel which haven’t
+ had any data written to the channel yet.") or `pciterate` loop may be entered.
 - Computations involving derivatives inside [pcunshaded](./pcunshaded "Iterate over all of the points of a read-write channel which haven’t
-  had any data written to the channel yet.")
-  loops may have slightly different results. If derivatives are required
-  for variables which aren’t set by [pcimport](./pcimport "Imports channel data from a point cloud inside a pciterate or a pcunshaded loop.") it may be
-  better to pre-compute the derivatives before the
-  [pcunshaded](./pcunshaded "Iterate over all of the points of a read-write channel which haven’t
-  had any data written to the channel yet.") loop is entered.
+ had any data written to the channel yet.")
+ loops may have slightly different results. If derivatives are required
+ for variables which aren’t set by [pcimport](./pcimport "Imports channel data from a point cloud inside a pciterate or a pcunshaded loop.") it may be
+ better to pre-compute the derivatives before the
+ [pcunshaded](./pcunshaded "Iterate over all of the points of a read-write channel which haven’t
+ had any data written to the channel yet.") loop is entered.

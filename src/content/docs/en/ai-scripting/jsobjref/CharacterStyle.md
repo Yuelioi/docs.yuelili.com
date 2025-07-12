@@ -81,10 +81,10 @@ Applies the character style to the text object or objects.
 
 #### Parameters
 
-|      Parameter      |       Type        |         Description         |
-| ------------------- | ----------------- | --------------------------- |
-| `textItem`          | Object            | Text item to apply style to |
-| `clearingOverrides` | Boolean, optional | Whether to clear overrides  |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `textItem` | Object | Text item to apply style to |
+| `clearingOverrides` | Boolean, optional | Whether to clear overrides |
 
 #### Returns
 

@@ -19,7 +19,6 @@ These functions are accessible on the [Text.sourceText](../text#textsourcetext) 
 This functionality was added in After Effects 25.0.
 :::
 
-
 #### Description
 
 Returns `true` if the Text layer is horizontal and `false` if it is vertical.
@@ -37,7 +36,6 @@ Boolean
 :::note
 This functionality was added in After Effects 25.0.
 :::
-
 
 #### Description
 
@@ -57,7 +55,6 @@ Boolean
 This functionality was added in After Effects 25.0.
 :::
 
-
 #### Description
 
 Returns `true` if a Text layer is Point text. If the Text layer is Paragraph text, it returns `false`.
@@ -75,7 +72,6 @@ Boolean
 :::note
 This functionality was added in After Effects 25.0.
 :::
-
 
 #### Description
 
@@ -121,9 +117,9 @@ To create a new style with font size 300 and the font Impact:
 
 ```js
 text.sourceText
-    .createStyle()
-    .setFontSize(300)
-    .setFont("Impact");
+ .createStyle()
+ .setFontSize(300)
+ .setFont("Impact");
 ```
 
 ---
@@ -142,13 +138,12 @@ In case the style is keyframed and changes over time, use the second `time` para
 Using [SourceText.style](#sourcetextstyle) is the same as using `text.sourceText.getStyleAt(0,0)`
 :::
 
-
 #### Parameters
 
-| Parameter |  Type  |                                     Description                                      |
-| --------- | ------ | ------------------------------------------------------------------------------------ |
-| `index`   | Number | The index of the letter or character whose style is needed                           |
-| `time`    | Number | Optional. The time within the composition to get the style from. Defaults to `time`. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `index` | Number | The index of the letter or character whose style is needed |
+| `time` | Number | Optional. The time within the composition to get the style from. Defaults to `time`. |
 
 #### Returns
 

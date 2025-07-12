@@ -67,9 +67,9 @@ title: SymbolItems
 
 #### 参数
 
-| 参数      |   类型    |      描述       |
-| --------- | --------------------- | --------------- |
-| `symbol`  | [Symbol](.././Symbol) | 要实例化的符号  |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `symbol` | [Symbol](.././Symbol) | 要实例化的符号 |
 
 #### 返回值
 
@@ -87,9 +87,9 @@ title: SymbolItems
 
 #### 参数
 
-| 参数      |  类型  |        描述        |
-| --------- | ------ | ------------------ |
-| `name`    | 字符串 | 要获取元素的名称   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `name` | 字符串 | 要获取元素的名称 |
 
 #### 返回值
 
@@ -107,9 +107,9 @@ title: SymbolItems
 
 #### 参数
 
-| 参数      |      类型      |       描述       |
-| --------- | -------------- | ---------------- |
-| `itemKey` | 字符串, 数字   | 字符串或数字键   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `itemKey` | 字符串, 数字 | 字符串或数字键 |
 
 #### 返回值
 
@@ -147,16 +147,16 @@ var iCount = docRef.graphicStyles.length;
 
 for (var i=0; i<iCount; i++) {
 
-    var pathRef = docRef.pathItems.rectangle( y, x, 20, 20 );
-    docRef.graphicStyles[i].applyTo(pathRef);
+ var pathRef = docRef.pathItems.rectangle( y, x, 20, 20 );
+ docRef.graphicStyles[i].applyTo(pathRef);
 
-    // 是否到达底部？
-    if ( (y-=60) <= 60 ) {
-        y = 750; // 回到顶部。
-        x+= 200
-    }
+ // 是否到达底部？
+ if ( (y-=60) <= 60 ) {
+ y = 750; // 回到顶部。
+ x+= 200
+ }
 
-    redraw();
-    docRef.symbolItems.add(pathRef);
+ redraw();
+ docRef.symbolItems.add(pathRef);
 }
 ```

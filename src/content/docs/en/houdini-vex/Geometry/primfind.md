@@ -50,7 +50,7 @@ Remove primitives that may be intersecting the unit box centered at the origin:
 int[] prims = primfind(geometry, {-0.5, -0.5, -0.5}, {0.5, 0.5, 0.5});
 foreach ( int prim; prims )
 {
-    removeprim("primitives.bgeo", prim, 1);
+ removeprim("primitives.bgeo", prim, 1);
 }
 
 ```
@@ -63,7 +63,7 @@ getbbox("bbox.bgeo", min, max);
 int[] prims = primfind(geometry, min, max);
 foreach ( int prim; prims )
 {
-    removeprim("primitives.bgeo", prim, 1);
+ removeprim("primitives.bgeo", prim, 1);
 }
 
 ```
@@ -78,26 +78,26 @@ getbbox("bbox.bgeo",min,max);
 int n = nprimitives(0);
 for ( int prim = 0; prim < n; ++prim )
 {
-    int[] verts = primvertices("primitives.bgeo", prim);
+ int[] verts = primvertices("primitives.bgeo", prim);
 
-    // compute primitive bounding box and store it in prim_min and prim_max
-    vector vert_pos = point("primitives.bgeo", "P", vertexpoint("primitives.bgeo", verts[0]));
-    vector prim_min = vert_pos, prim_max = vert_pos;
-    for ( int v = 1; v < len(verts); ++v )
-    {
-        vert_pos = point("primitives.bgeo", "P", vertexpoint("primitives.bgeo", verts[v]));
-        prim_min = min(prim_min, vert_pos);
-        prim_max = max(prim_max, vert_pos);
-    }
+ // compute primitive bounding box and store it in prim_min and prim_max
+ vector vert_pos = point("primitives.bgeo", "P", vertexpoint("primitives.bgeo", verts[0]));
+ vector prim_min = vert_pos, prim_max = vert_pos;
+ for ( int v = 1; v < len(verts); ++v )
+ {
+ vert_pos = point("primitives.bgeo", "P", vertexpoint("primitives.bgeo", verts[v]));
+ prim_min = min(prim_min, vert_pos);
+ prim_max = max(prim_max, vert_pos);
+ }
 
-    // bounding box intersection test
-    if ( prim_max.x - min.x < -tol ) continue;
-    if ( prim_max.y - min.y < -tol ) continue;
-    if ( prim_max.z - min.z < -tol ) continue;
-    if ( prim_min.x - max.x > tol ) continue;
-    if ( prim_min.y - max.y > tol ) continue;
-    if ( prim_min.z - max.z > tol ) continue;
-    removeprim("primitives.bgeo", prim, 1);
+ // bounding box intersection test
+ if ( prim_max.x - min.x < -tol ) continue;
+ if ( prim_max.y - min.y < -tol ) continue;
+ if ( prim_max.z - min.z < -tol ) continue;
+ if ( prim_min.x - max.x > tol ) continue;
+ if ( prim_min.y - max.y > tol ) continue;
+ if ( prim_min.z - max.z > tol ) continue;
+ removeprim("primitives.bgeo", prim, 1);
 }
 
 ```

@@ -167,16 +167,16 @@ title: ExportOptionsPNG24
 // saveAsHTML 选项会创建一个包含 PNG 文件的 HTML 版本，并保存在 images 文件夹中
 
 function exportFileToPNG24(dest) {
-    if (app.documents.length > 0) {
-        var exportOptions = new ExportOptionsPNG24();
-        exportOptions.antiAliasing = false;
-        exportOptions.transparency = false;
-        exportOptions.saveAsHTML = true;
+ if (app.documents.length > 0) {
+ var exportOptions = new ExportOptionsPNG24();
+ exportOptions.antiAliasing = false;
+ exportOptions.transparency = false;
+ exportOptions.saveAsHTML = true;
 
-        var type = ExportType.PNG24;
-        var fileSpec = new File(dest);
+ var type = ExportType.PNG24;
+ var fileSpec = new File(dest);
 
-        app.activeDocument.exportFile(fileSpec, type, exportOptions);
-    }
+ app.activeDocument.exportFile(fileSpec, type, exportOptions);
+ }
 }
 ```

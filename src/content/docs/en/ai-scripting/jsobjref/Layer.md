@@ -453,10 +453,10 @@ Moves the object.
 
 #### Parameters
 
-|      Parameter      |                                 Type                                  |          Description          |
-| ------------------- | --------------------------------------------------------------------- | ----------------------------- |
-| `relativeObject`    | Object                                                                | Object to move element within |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), optional | Location to move element to   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `relativeObject` | Object | Object to move element within |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), optional | Location to move element to |
 
 #### Returns
 
@@ -488,8 +488,8 @@ Arranges the layer's position in the stacking order of the containing layer or d
 
 #### Parameters
 
-|  Parameter  |                        Type                         |            Description            |
-| ----------- | --------------------------------------------------- | --------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | Stacking order arrangement method |
 
 #### Returns
@@ -506,12 +506,12 @@ Nothing.
 // Moves the bottom layer to become the topmost layer
 
 if (documents.length > 0) {
-    var countOfLayers = activeDocument.layers.length;
-    if (countOfLayers > 1) {
-        var bottomLayer = activeDocument.layers[countOfLayers - 1];
-        bottomLayer.zOrder(ZOrderMethod.BRINGTOFRONT);
-    } else {
-        alert("The active document only has only 1 layer");
-    }
+ var countOfLayers = activeDocument.layers.length;
+ if (countOfLayers > 1) {
+ var bottomLayer = activeDocument.layers[countOfLayers - 1];
+ bottomLayer.zOrder(ZOrderMethod.BRINGTOFRONT);
+ } else {
+ alert("The active document only has only 1 layer");
+ }
 }
 ```

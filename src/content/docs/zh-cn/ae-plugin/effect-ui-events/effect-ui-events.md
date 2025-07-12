@@ -27,25 +27,25 @@ After Effects 可以向效果发送事件以处理用户界面和参数管理，
 
 ## 事件
 
-| 事件       | 说明        |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `PF_Event_NEW_CONTEXT`   | 用户创建了一个新的事件上下文（可能是通过打开窗口）。         |
-|       | 插件允许使用上下文句柄在上下文中存储状态信息。          |
-|       | [PF_EventUnion](../PF_EventUnion#pf_eventunion) 包含有效的上下文和类型，但其他内容应忽略。       |
-| `PF_Event_ACTIVATE`      | 用户激活了一个新上下文（可能是通过将窗口带到前台）。[PF_EventUnion](../PF_EventUnion#pf_eventunion) 为空。       |
-| `PF_Event_DO_CLICK`      | 用户在效果的 UI 中点击。[PF_EventUnion](../PF_EventUnion#pf_eventunion) 包含一个 `PF_DoClickEventInfo`。       |
-|       | 处理鼠标点击并响应，传递拖动信息；请参阅示例代码），在上下文中。         |
-|       | !!! 注意   |
-|       | 从 7.0 开始，*不要* 阻塞直到鼠标松开；而是依赖 `PF_Event_DRAG`。   |
-| `PF_Event_DRAG`     | 也是一个点击事件，[PF_EventUnion](../PF_EventUnion#pf_eventunion) 包含一个 `PF_DoClickEventInfo`。        |
-|       | 通过在 `PF_Event_DO_CLICK` 中返回 `send_drag == TRUE` 来请求此事件。     |
-|       | 这样做是为了让 After Effects 可以看到用户更改的新数据。      |
-| `PF_Event_DRAW`     | 绘制！[PF_EventUnion](../PF_EventUnion#pf_eventunion) 包含一个 `PF_DrawEventInfo`。       |
-| `PF_Event_DEACTIVATE`    | 用户已停用上下文（可能是通过将另一个窗口带到前台）。`PF_EventUnion` 为空。      |
-| `PF_Event_CLOSE_CONTEXT` | 用户已关闭上下文。`PF_EventUnion` 将为空。      |
-| `PF_Event_IDLE`     | 上下文已打开，但没有发生任何事情。`PF_EventUnion` 为空。   |
-| `PF_Event_ADJUST_CURSOR` | 鼠标悬停在插件的 UI 上。通过更改 `PF_AdjustCursorEventInfo` 中的 `PF_CursorType` 来设置光标。        |
-|       | 使用操作系统特定的调用来实现自定义光标；通过将 `PF_CursorType` 设置为 `PF_Cursor_CUSTOM` 来告诉 After Effects 你已经这样做了。 |
-|       | 尽可能使用 After Effects 的光标以保持界面一致性。       |
-| `PF_Event_KEYDOWN`       | 按键。[PF_EventUnion](../PF_EventUnion#pf_eventunion) 包含一个 `PF_KeyDownEvent`。        |
-| `PF_Event_MOUSE_EXITED`  | CS6 新增。通知鼠标不再悬停在特定视图上（仅限图层或合成）。   |
+| 事件 | 说明 |
+| --- | --- |
+| `PF_Event_NEW_CONTEXT` | 用户创建了一个新的事件上下文（可能是通过打开窗口）。 |
+| | 插件允许使用上下文句柄在上下文中存储状态信息。 |
+| | [PF_EventUnion](../PF_EventUnion#pf_eventunion) 包含有效的上下文和类型，但其他内容应忽略。 |
+| `PF_Event_ACTIVATE` | 用户激活了一个新上下文（可能是通过将窗口带到前台）。[PF_EventUnion](../PF_EventUnion#pf_eventunion) 为空。 |
+| `PF_Event_DO_CLICK` | 用户在效果的 UI 中点击。[PF_EventUnion](../PF_EventUnion#pf_eventunion) 包含一个 `PF_DoClickEventInfo`。 |
+| | 处理鼠标点击并响应，传递拖动信息；请参阅示例代码），在上下文中。 |
+| | !!! 注意 |
+| | 从 7.0 开始，*不要* 阻塞直到鼠标松开；而是依赖 `PF_Event_DRAG`。 |
+| `PF_Event_DRAG` | 也是一个点击事件，[PF_EventUnion](../PF_EventUnion#pf_eventunion) 包含一个 `PF_DoClickEventInfo`。 |
+| | 通过在 `PF_Event_DO_CLICK` 中返回 `send_drag == TRUE` 来请求此事件。 |
+| | 这样做是为了让 After Effects 可以看到用户更改的新数据。 |
+| `PF_Event_DRAW` | 绘制！[PF_EventUnion](../PF_EventUnion#pf_eventunion) 包含一个 `PF_DrawEventInfo`。 |
+| `PF_Event_DEACTIVATE` | 用户已停用上下文（可能是通过将另一个窗口带到前台）。`PF_EventUnion` 为空。 |
+| `PF_Event_CLOSE_CONTEXT` | 用户已关闭上下文。`PF_EventUnion` 将为空。 |
+| `PF_Event_IDLE` | 上下文已打开，但没有发生任何事情。`PF_EventUnion` 为空。 |
+| `PF_Event_ADJUST_CURSOR` | 鼠标悬停在插件的 UI 上。通过更改 `PF_AdjustCursorEventInfo` 中的 `PF_CursorType` 来设置光标。 |
+| | 使用操作系统特定的调用来实现自定义光标；通过将 `PF_CursorType` 设置为 `PF_Cursor_CUSTOM` 来告诉 After Effects 你已经这样做了。 |
+| | 尽可能使用 After Effects 的光标以保持界面一致性。 |
+| `PF_Event_KEYDOWN` | 按键。[PF_EventUnion](../PF_EventUnion#pf_eventunion) 包含一个 `PF_KeyDownEvent`。 |
+| `PF_Event_MOUSE_EXITED` | CS6 新增。通知鼠标不再悬停在特定视图上（仅限图层或合成）。 |

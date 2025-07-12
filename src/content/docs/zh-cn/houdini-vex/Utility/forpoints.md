@@ -25,12 +25,12 @@ vector clr = 0;
 vector blended_color;
 
 forpoints ( P ) {
-    d = mdensity(P);
-    if (d > max) {
-    clr = mattrib("Cd", P);
-    max = d;
-    }
-    blended_color = d * clr;
+ d = mdensity(P);
+ if (d > max) {
+ clr = mattrib("Cd", P);
+ max = d;
+ }
+ blended_color = d * clr;
 }
 
 ```

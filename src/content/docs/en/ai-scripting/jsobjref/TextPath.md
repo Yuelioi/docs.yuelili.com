@@ -481,8 +481,8 @@ Sets the path using the array of points specified as [x, y] coordinate pairs.
 
 #### Parameters
 
-|  Parameter   |               Type               |        Description         |
-| ------------ | -------------------------------- | -------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `pathPoints` | Array of [x, y] coordinate pairs | Path points to set path as |
 
 #### Returns

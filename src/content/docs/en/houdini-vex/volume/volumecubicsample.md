@@ -37,7 +37,7 @@ Examples
 Approximating a volume value at the point `P + u` using volume values at the point `P`.
 
 ```vex
-vector  P = {1.0, 2.0, 3.0};
+vector P = {1.0, 2.0, 3.0};
 vector grad;
 matrix3 hess;
 float val1 = volumecubicsample(0, "density", P, grad, hess);

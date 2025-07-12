@@ -21,7 +21,6 @@ As of Version 12/CC, preferences and settings methods now take a third argument 
 - If you're looking to get or set internal AE preferences, see [Preferences object](../preferences)
 :::
 
-
 ---
 
 ## Methods
@@ -38,15 +37,13 @@ Retrieves a script settings item value from the preferences file.
 If the value is greater than 1999 bytes, `getSetting` that item will throw an error (seen in AE 15.0.1)
 :::
 
-
 #### Parameters
 
-|   Parameter   |                       Type                        |               Description               |
-| ------------- | ------------------------------------------------- | --------------------------------------- |
-| `sectionName` | String                                            | The name of a settings section.         |
-| `keyName`     | String                                            | The key name of the setting item.       |
-| `prefType`    | [`PREFType` enum](../preferences#preftype-enum) | Optional. Which preference file to use. |
-
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sectionName` | String | The name of a settings section. |
+| `keyName` | String | The key name of the setting item. |
+| `prefType` | [`PREFType` enum](../preferences#preftype-enum) | Optional. Which preference file to use. |
 
 #### Returns
 
@@ -73,11 +70,11 @@ Returns `true` if the specified script settings item exists and has a value.
 
 #### Parameters
 
-|   Parameter   |                       Type                        |               Description               |
-| ------------- | ------------------------------------------------- | --------------------------------------- |
-| `sectionName` | String                                            | The name of a settings section.         |
-| `keyName`     | String                                            | The key name of the setting item.       |
-| `prefType`    | [`PREFType` enum](../preferences#preftype-enum) | Optional. Which preference file to use. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sectionName` | String | The name of a settings section. |
+| `keyName` | String | The key name of the setting item. |
+| `prefType` | [`PREFType` enum](../preferences#preftype-enum) | Optional. Which preference file to use. |
 
 #### Returns
 
@@ -97,15 +94,14 @@ Saves a value for a script settings item.
 If the value is greater than 1999 bytes, `saveSetting` that item will throw an error (seen in AE 15.0.1)
 :::
 
-
 #### Parameters
 
-|   Parameter   |                       Type                        |               Description               |
-| ------------- | ------------------------------------------------- | --------------------------------------- |
-| `sectionName` | String                                            | The name of a settings section.         |
-| `keyName`     | String                                            | The key name of the setting item.       |
-| `value`       | String                                            | The new value.                          |
-| `prefType`    | [`PREFType` enum](../preferences#preftype-enum) | Optional. Which preference file to use. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sectionName` | String | The name of a settings section. |
+| `keyName` | String | The key name of the setting item. |
+| `value` | String | The new value. |
+| `prefType` | [`PREFType` enum](../preferences#preftype-enum) | Optional. Which preference file to use. |
 
 #### Returns
 

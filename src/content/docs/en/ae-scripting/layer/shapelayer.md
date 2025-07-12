@@ -12,4 +12,3 @@ The ShapeLayer object represents a shape layer within a composition. Create it u
 :::info
 ShapeLayer is a subclass of [AVLayer](../avlayer), which is a subclass of [Layer](../layer). All methods and attributes of AVLayer and Layer are available when working with ShapeLayer.
 :::
-

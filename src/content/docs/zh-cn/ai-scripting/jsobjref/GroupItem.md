@@ -627,8 +627,8 @@ title: GroupItem
 
 ```javascript
 app.activeDocument.groupItems[index].duplicate(
-    [relativeObject]
-    [,insertionLocation]
+ [relativeObject]
+ [,insertionLocation]
 )
 ```
 
@@ -638,10 +638,10 @@ app.activeDocument.groupItems[index].duplicate(
 
 #### 参数
 
-|      参数      |       类型        |        描述   |
-| -------------- | --------------------------------------------------------------------- | ------------------- |
-| `relativeObject` | 对象, 可选       | 要复制到的对象      |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 插入元素的位置      |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `relativeObject` | 对象, 可选 | 要复制到的对象 |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 插入元素的位置 |
 
 #### 返回
 
@@ -659,10 +659,10 @@ app.activeDocument.groupItems[index].duplicate(
 
 #### 参数
 
-|      参数      |       类型        |    描述    |
-| -------------- | --------------------------------------------------------------------- | ---------------------- |
-| `relativeObject` | 对象      | 要移动元素的对象       |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 移动元素到的位置       |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `relativeObject` | 对象 | 要移动元素的对象 |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 移动元素到的位置 |
 
 #### 返回
 
@@ -688,14 +688,14 @@ app.activeDocument.groupItems[index].duplicate(
 
 ```javascript
 app.activeDocument.groupItems[index].resize(
-    scaleX,
-    scaleY
-    [,changePositions]
-    [,changeFillPatterns]
-    [,changeFillGradients]
-    [,changeStrokePattern]
-    [,changeLineWidths]
-    [,scaleAbout]
+ scaleX,
+ scaleY
+ [,changePositions]
+ [,changeFillPatterns]
+ [,changeFillGradients]
+ [,changeStrokePattern]
+ [,changeLineWidths]
+ [,scaleAbout]
 )
 ```
 
@@ -705,16 +705,16 @@ app.activeDocument.groupItems[index].resize(
 
 #### 参数
 
-|       参数        |     类型      |   描述   |
-| ----------------- | ----------------------------------------------------------------- | ------------------------------------------------ |
-| `scaleX`    | 数字（双精度）    | 水平缩放因子     |
-| `scaleY`    | 数字（双精度）    | 垂直缩放因子     |
-| `changePositions` | 布尔值, 可选       | 是否影响艺术对象的位置和方向         |
-| `changeFillPatterns` | 布尔值, 可选       | 是否变换填充图案       |
-| `changeFillGradients` | 布尔值, 可选       | 是否变换填充渐变       |
-| `changeStrokePattern` | 布尔值, 可选       | 是否变换描边图案       |
-| `changeLineWidths` | 数字（双精度）, 可选       | 缩放线宽的量     |
-| `scaleAbout`      | [Transformation](../scripting-constants#transformation), 可选     | 用作锚点的点，以进行变换     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `scaleX` | 数字（双精度） | 水平缩放因子 |
+| `scaleY` | 数字（双精度） | 垂直缩放因子 |
+| `changePositions` | 布尔值, 可选 | 是否影响艺术对象的位置和方向 |
+| `changeFillPatterns` | 布尔值, 可选 | 是否变换填充图案 |
+| `changeFillGradients` | 布尔值, 可选 | 是否变换填充渐变 |
+| `changeStrokePattern` | 布尔值, 可选 | 是否变换描边图案 |
+| `changeLineWidths` | 数字（双精度）, 可选 | 缩放线宽的量 |
+| `scaleAbout` | [Transformation](../scripting-constants#transformation), 可选 | 用作锚点的点，以进行变换 |
 
 #### 返回
 
@@ -726,12 +726,12 @@ app.activeDocument.groupItems[index].resize(
 
 ```javascript
 app.activeDocument.groupItems[index].rotate(
-    angle
-    [,changePositions]
-    [,changeFillPatterns]
-    [,changeFillGradients]
-    [,changeStrokePattern]
-    [,rotateAbout]
+ angle
+ [,changePositions]
+ [,changeFillPatterns]
+ [,changeFillGradients]
+ [,changeStrokePattern]
+ [,rotateAbout]
 )
 ```
 
@@ -741,14 +741,14 @@ app.activeDocument.groupItems[index].rotate(
 
 #### 参数
 
-|       参数        |     类型      |   描述   |
-| ----------------- | ----------------------------------------------------------------- | ------------------------------------------------ |
-| `angle`     | 数字（双精度）    | 旋转元素的角度量       |
-| `changePositions` | 布尔值, 可选       | 是否影响艺术对象的位置和方向         |
-| `changeFillPatterns` | 布尔值, 可选       | 是否变换填充图案       |
-| `changeFillGradients` | 布尔值, 可选       | 是否变换填充渐变       |
-| `changeStrokePattern` | 布尔值, 可选       | 是否变换描边图案       |
-| `rotateAbout`     | [Transformation](../scripting-constants#transformation), 可选     | 用作锚点的点，以进行变换     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `angle` | 数字（双精度） | 旋转元素的角度量 |
+| `changePositions` | 布尔值, 可选 | 是否影响艺术对象的位置和方向 |
+| `changeFillPatterns` | 布尔值, 可选 | 是否变换填充图案 |
+| `changeFillGradients` | 布尔值, 可选 | 是否变换填充渐变 |
+| `changeStrokePattern` | 布尔值, 可选 | 是否变换描边图案 |
+| `rotateAbout` | [Transformation](../scripting-constants#transformation), 可选 | 用作锚点的点，以进行变换 |
 
 #### 返回
 
@@ -760,13 +760,13 @@ app.activeDocument.groupItems[index].rotate(
 
 ```javascript
 app.activeDocument.groupItems[index].transform(
-    transformationMatrix
-    [,changePositions]
-    [,changeFillPatterns]
-    [,changeFillGradients]
-    [,changeStrokePattern]
-    [,changeLineWidths]
-    [,transformAbout]
+ transformationMatrix
+ [,changePositions]
+ [,changeFillPatterns]
+ [,changeFillGradients]
+ [,changeStrokePattern]
+ [,changeLineWidths]
+ [,transformAbout]
 )
 ```
 
@@ -776,15 +776,15 @@ app.activeDocument.groupItems[index].transform(
 
 #### 参数
 
-|        参数   |     类型      |      描述       |
-| ------------------- | ----------------------------------------------------------------- | --------------------------------------- |
-| `transformationMatrix` | [Matrix](.././Matrix)       | 要应用的变换矩阵     |
-| `changePositions`   | 布尔值, 可选       | 是否更改位置   |
-| `changeFillPatterns` | 布尔值, 可选       | 是否更改填充图案     |
-| `changeFillGradients` | 布尔值, 可选       | 是否更改填充渐变     |
-| `changeStrokePattern` | 布尔值, 可选       | 是否更改描边图案     |
-| `changeLineWidths`  | 数字（双精度）, 可选       | 缩放线宽的量   |
-| `transformAbout`    | [Transformation](../scripting-constants#transformation), 可选     | 用作锚点的点，以进行变换   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `transformationMatrix` | [Matrix](.././Matrix) | 要应用的变换矩阵 |
+| `changePositions` | 布尔值, 可选 | 是否更改位置 |
+| `changeFillPatterns` | 布尔值, 可选 | 是否更改填充图案 |
+| `changeFillGradients` | 布尔值, 可选 | 是否更改填充渐变 |
+| `changeStrokePattern` | 布尔值, 可选 | 是否更改描边图案 |
+| `changeLineWidths` | 数字（双精度）, 可选 | 缩放线宽的量 |
+| `transformAbout` | [Transformation](../scripting-constants#transformation), 可选 | 用作锚点的点，以进行变换 |
 
 #### 返回
 
@@ -796,12 +796,12 @@ app.activeDocument.groupItems[index].transform(
 
 ```javascript
 app.activeDocument.groupItems[index].translate(
-    [deltaX]
-    [,deltaY]
-    [,transformObjects]
-    [,transformFillPatterns]
-    [,transformFillGradients]
-    [,transformStrokePatterns]
+ [deltaX]
+ [,deltaY]
+ [,transformObjects]
+ [,transformFillPatterns]
+ [,transformFillGradients]
+ [,transformStrokePatterns]
 )
 ```
 
@@ -811,14 +811,14 @@ app.activeDocument.groupItems[index].translate(
 
 #### 参数
 
-|    参数    |      类型      |       描述        |
-| ---------------------- | -------------------------- | ----------------------------- |
-| `deltaX`         | 数字（双精度）, 可选       | 水平偏移量        |
-| `deltaY`         | 数字（双精度）, 可选       | 垂直偏移量        |
-| `transformObjects`     | 布尔值, 可选         | 是否变换对象      |
-| `transformFillPatterns` | 布尔值, 可选         | 是否变换填充图案        |
-| `transformFillGradients` | 布尔值, 可选         | 是否变换填充渐变        |
-| `transformStrokePatterns` | 布尔值, 可选         | 是否变换描边图案        |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `deltaX` | 数字（双精度）, 可选 | 水平偏移量 |
+| `deltaY` | 数字（双精度）, 可选 | 垂直偏移量 |
+| `transformObjects` | 布尔值, 可选 | 是否变换对象 |
+| `transformFillPatterns` | 布尔值, 可选 | 是否变换填充图案 |
+| `transformFillGradients` | 布尔值, 可选 | 是否变换填充渐变 |
+| `transformStrokePatterns` | 布尔值, 可选 | 是否变换描边图案 |
 
 #### 返回
 
@@ -836,9 +836,9 @@ app.activeDocument.groupItems[index].translate(
 
 #### 参数
 
-|    参数     |    类型     |      描述      |
-| ----------- | --------------------------------------------------- | -------------------------- |
-| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法 |
 
 #### 返回
 
@@ -857,25 +857,25 @@ app.activeDocument.groupItems[index].translate(
 // 然后向组中添加一个新的文本项目，并将文本的填充颜色设置为红色
 
 if (app.documents.length > 0) {
-    var triangleGroup = app.activeDocument.groupItems.add();
+ var triangleGroup = app.activeDocument.groupItems.add();
 
-    // 创建一个三角形并添加文本，新艺术项目在组内创建
-    var trianglePath = triangleGroup.pathItems.add();
-    trianglePath.setEntirePath(Array(Array(100, 100), Array(300, 100), Array(200, Math.tan(1.0471975) * 100 + 100)));
-    trianglePath.closed = true;
-    trianglePath.stroked = true;
-    trianglePath.filled = false;
-    trianglePath.strokeWidth = 3;
+ // 创建一个三角形并添加文本，新艺术项目在组内创建
+ var trianglePath = triangleGroup.pathItems.add();
+ trianglePath.setEntirePath(Array(Array(100, 100), Array(300, 100), Array(200, Math.tan(1.0471975) * 100 + 100)));
+ trianglePath.closed = true;
+ trianglePath.stroked = true;
+ trianglePath.filled = false;
+ trianglePath.strokeWidth = 3;
 
-    var captionText = triangleGroup.textFrames.add();
-    captionText.position = Array(100, 150);
-    captionText.textRange.size = 48;
-    captionText.contents = "A triangle";
+ var captionText = triangleGroup.textFrames.add();
+ captionText.position = Array(100, 150);
+ captionText.textRange.size = 48;
+ captionText.contents = "A triangle";
 
-    var fillColor = new RGBColor();
-    fillColor.red = 255;
-    fillColor.green = 0;
-    fillColor.blue = 0;
-    captionText.characters.fillColor = fillColor;
+ var fillColor = new RGBColor();
+ fillColor.red = 255;
+ fillColor.green = 0;
+ fillColor.blue = 0;
+ captionText.characters.fillColor = fillColor;
 }
 ```

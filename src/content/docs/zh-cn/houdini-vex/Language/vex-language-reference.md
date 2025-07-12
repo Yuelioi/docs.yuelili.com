@@ -41,9 +41,9 @@ VEX包含一个大型的[内置函数库](functions/index.html)。某些函数�
 
 ```vex
 int test(int a, b; string c) {
-    if (a > b) {
-      printf(c);
-    }
+ if (a > b) {
+ printf(c);
+ }
 }
 ```
 
@@ -53,38 +53,38 @@ int test(int a, b; string c) {
 
 ```vex
 function int test(int a, b; string c) {
-    if (a > b) {
-      printf(c);
-    }
+ if (a > b) {
+ printf(c);
+ }
 }
 ```
 
 ```vex
 void print(basis b) { 
-    printf("basis: { i: %s, j: %s, k: %s }\n", b.i, b.j, b.k); 
+ printf("basis: { i: %s, j: %s, k: %s }\n", b.i, b.j, b.k); 
 } 
 void print(matrix m) { 
-    printf("matrix: %s\n", m); 
+ printf("matrix: %s\n", m); 
 } 
 void print(bases b) { 
-    printf("bases <%s> {\n", b.description); 
-    printf("  "); print(b.m); 
-    printf("  "); print(b.n); 
-    printf("  "); print(b.o); 
-    printf("}\n"); 
+ printf("bases <%s> {\n", b.description); 
+ printf(" "); print(b.m); 
+ printf(" "); print(b.n); 
+ printf(" "); print(b.o); 
+ printf("}\n"); 
 } 
 
 basis rotate(basis b; vector axis; float amount) { 
-    matrix m = 1; 
-    rotate(m, amount, axis); 
-    basis result = b; 
-    result.i *= m; 
-    result.j *= m; 
-    result.k *= m; 
-    return result; 
+ matrix m = 1; 
+ rotate(m, amount, axis); 
+ basis result = b; 
+ result.i *= m; 
+ result.j *= m; 
+ result.k *= m; 
+ return result; 
 } 
 void rotate(basis b; vector axis; float amount) { 
-    b = rotate(b, axis, amount); 
+ b = rotate(b, axis, amount); 
 } 
 ```
 
@@ -115,10 +115,10 @@ VEX程序必须包含一个返回类型为上下文名称的函数。这是程�
 ```vex
 surface
 noise_surf(vector clr = {1,1,1}; float frequency = 1;
-       export vector nml = {0,0,0})
+ export vector nml = {0,0,0})
 {
-    Cf = clr * (float(noise(frequency * P)) + 0.5) * diffuse(normalize(N));
-    nml = normalize(N)*0.5 + 0.5;
+ Cf = clr * (float(noise(frequency * P)) + 0.5) * diffuse(normalize(N));
+ nml = normalize(N)*0.5 + 0.5;
 }
 ```
 
@@ -133,20 +133,20 @@ user-interface-pragmas
 Houdini从此程序生成的用户界面将是最小的，基本上只是变量名和基于数据类型的通用文本字段。例如，您可能希望指定`frequency`应该是一个具有特定范围的滑块，而`clr`应该被视为颜色(给它一个颜色选择器UI)。您可以使用[用户界面编译器编译指示](pragmas.html)来实现这一点。
 
 ```vex
-#pragma opname      noise_surf
-#pragma oplabel      "噪波表面"
+#pragma opname noise_surf
+#pragma oplabel "噪波表面"
 
-#pragma label    clr   "颜色"
-#pragma label    frequency    "频率"
+#pragma label clr "颜色"
+#pragma label frequency "频率"
 
-#pragma hint    clr   color
-#pragma range    frequency    0.1 10
+#pragma hint clr color
+#pragma range frequency 0.1 10
 
 surface noise_surf(vector clr = {1,1,1}; float frequency = 1;
-       export vector nml = {0,0,0})
+ export vector nml = {0,0,0})
 {
-    Cf = clr * (float(noise(frequency * P)) + 0.5) * diffuse(normalize(N));
-    nml = normalize(N)*0.5 + 0.5;
+ Cf = clr * (float(noise(frequency * P)) + 0.5) * diffuse(normalize(N));
+ nml = normalize(N)*0.5 + 0.5;
 }
 ```
 
@@ -253,7 +253,7 @@ operator-type-interactions
 ```
 
 - 对不同维度的向量进行加减乘除运算时，VEX会返回较大维度的向量。运算按分量逐个执行。
-  **重要**：较小维度向量中"缺失"的分量会以`{0.0, 0.0, 0.0, 1.0}`填充
+ **重要**：较小维度向量中"缺失"的分量会以`{0.0, 0.0, 0.0, 1.0}`填充
 
 ```vex
 {1.0, 2.0, 3.0} * {2.0, 3.0, 4.0, 5.0} == {2.0, 6.0, 12.0, 5.0}
@@ -310,35 +310,35 @@ VEX引擎运行在32位或64位模式下。在32位模式下，所有浮点数�
 #include <math.h>
 
 struct basis {
-    vector i, j, k;
+ vector i, j, k;
 }
 
 struct bases {
-    basis m, n, o;
-    string description;
+ basis m, n, o;
+ string description;
 }
 
 struct values {
-    int uninitialized;      // 未初始化的成员数据
-    int      ival = 3;
-    float fval = 3.14;
-    float aval[] = { 1, 2, 3, 4.5 };
+ int uninitialized; // 未初始化的成员数据
+ int ival = 3;
+ float fval = 3.14;
+ float aval[] = { 1, 2, 3, 4.5 };
 }
 
 basis rotate(basis b; vector axis; float amount) {
-    matrix m = 1;
-    rotate(m, amount, axis);
-    basis result = b;
-    result.i *= m;
-    result.j *= m;
-    result.k *= m;
-    return result;
+ matrix m = 1;
+ rotate(m, amount, axis);
+ basis result = b;
+ result.i *= m;
+ result.j *= m;
+ result.k *= m;
+ return result;
 }
 
 // 声明结构体变量
-basis b0;      // 使用默认值初始化(本例中为0)
-basis b1 = basis({1,0,0}, {0,1,0}, {0,0,1});      // 使用构造函数初始化
-basis b2 = { {1,0,0}, {0,1,0}, {0,0,1} };       // 显式结构体初始化
+basis b0; // 使用默认值初始化(本例中为0)
+basis b1 = basis({1,0,0}, {0,1,0}, {0,0,1}); // 使用构造函数初始化
+basis b2 = { {1,0,0}, {0,1,0}, {0,0,1} }; // 显式结构体初始化
 
 // 可以使用M_PI或PI
 b1 = rotate(b1, {0,0,1}, M_PI/6);
@@ -355,29 +355,29 @@ methods
 - 在结构体函数内部，可以使用`this`引用结构体实例。
 - 在结构体函数内部，可以通过名称引用结构体字段，就像它们是变量一样(例如，`basis`是`this.basis`的简写)。
 - 可以使用`->`箭头运算符在结构体实例上调用结构体函数，例如`sampler->sample()`。
-  注意在结构体函数内部，可以使用`this->method()`调用结构体上的其他方法。
+ 注意在结构体函数内部，可以使用`this->method()`调用结构体上的其他方法。
 
 ```vex
 struct randsampler {
-    // 字段
-    int      seed;
+ // 字段
+ int seed;
 
-    // 方法
-    float sample()
-    {
-      // 结构体函数可以通过名称引用字段
-      return random(seed++);
-    }
+ // 方法
+ float sample()
+ {
+ // 结构体函数可以通过名称引用字段
+ return random(seed++);
+ }
 }
 
 cvex shader()
 {
-    randsampler sampler = randsampler(11);
-    for (int i = 0; i < 10; i++)
-    {
-      // 使用->在结构体实例上调用方法
-      printf("%f\n", sampler->sample());
-    }
+ randsampler sampler = randsampler(11);
+ for (int i = 0; i < 10; i++)
+ {
+ // 使用->在结构体实例上调用方法
+ printf("%f\n", sampler->sample());
+ }
 }
 ```
 
@@ -446,7 +446,7 @@ n = noise( vector( noise(P) ) );
 当直接将函数调用赋值给指定类型的变量时，函数转换是隐含的。因此以下表达式是等价的，可以省略函数转换以使代码更简洁：
 
 ```vex
-vector n = vector( noise(P) );      // 不必要的函数转换
+vector n = vector( noise(P) ); // 不必要的函数转换
 vector n = noise(P);
 ```
 

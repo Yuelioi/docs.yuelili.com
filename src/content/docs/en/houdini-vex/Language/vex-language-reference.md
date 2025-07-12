@@ -56,9 +56,9 @@ re-declaring the type. Other arguments must be separated by a semi-colon.
 
 ```vex
 int test(int a, b; string c) {
-    if (a > b) {
-        printf(c);
-    }
+ if (a > b) {
+ printf(c);
+ }
 }
 
 ```
@@ -70,39 +70,39 @@ You can introduce a function definition with the optional `function` keyword to 
 
 ```vex
 function int test(int a, b; string c) {
-    if (a > b) {
-        printf(c);
-    }
+ if (a > b) {
+ printf(c);
+ }
 }
 
 ```
 
 ```vex
 void print(basis b) { 
-    printf("basis: { i: %s, j: %s, k: %s }\n", b.i, b.j, b.k); 
+ printf("basis: { i: %s, j: %s, k: %s }\n", b.i, b.j, b.k); 
 } 
 void print(matrix m) { 
-    printf("matrix: %s\n", m); 
+ printf("matrix: %s\n", m); 
 } 
 void print(bases b) { 
-    printf("bases <%s> {\n", b.description); 
-    printf("  "); print(b.m); 
-    printf("  "); print(b.n); 
-    printf("  "); print(b.o); 
-    printf("}\n"); 
+ printf("bases <%s> {\n", b.description); 
+ printf(" "); print(b.m); 
+ printf(" "); print(b.n); 
+ printf(" "); print(b.o); 
+ printf("}\n"); 
 } 
 
 basis rotate(basis b; vector axis; float amount) { 
-    matrix m = 1; 
-    rotate(m, amount, axis); 
-    basis result = b; 
-    result.i *= m; 
-    result.j *= m; 
-    result.k *= m; 
-    return result; 
+ matrix m = 1; 
+ rotate(m, amount, axis); 
+ basis result = b; 
+ result.i *= m; 
+ result.j *= m; 
+ result.k *= m; 
+ return result; 
 } 
 void rotate(basis b; vector axis; float amount) { 
-    b = rotate(b, axis, amount); 
+ b = rotate(b, axis, amount); 
 } 
 
 ```
@@ -113,21 +113,21 @@ notes
 
 - User functions must be declared before they are referenced.
 - The functions are in-lined automatically by the [compiler](vcc.html "Overview of how to use the VEX language compiler vcc and its
-  pre-processor and pragma statements."), so
-  **recursion will not work**. To write a recursive algorithm, you should use
-  [shader calls](shadercalls.html) instead.
+ pre-processor and pragma statements."), so
+ **recursion will not work**. To write a recursive algorithm, you should use
+ [shader calls](shadercalls.html) instead.
 - As in RenderMan Shading Language, parameters to user functions are always
-  passed **by reference**, so modifications in a user function affect the variable
-  the function was called with. You can force a shader parameter to be read-only
-  by prefixing it with the `const` keyword. To ensure that the user function
-  writes to an output parameter, prefix it with the `export` keyword.
+ passed **by reference**, so modifications in a user function affect the variable
+ the function was called with. You can force a shader parameter to be read-only
+ by prefixing it with the `const` keyword. To ensure that the user function
+ writes to an output parameter, prefix it with the `export` keyword.
 - There is no limit on the number of user functions.
 - You can have more than one return statement in a function.
 - You can access global variables directly (unlike RenderMan Shading
-  Language, you do not need to declare them with `extern`). However, we
-  recommend you avoid accessing global variables, since this limits your
-  function to only work in one context (where those globals exist).
-  Instead, pass the global(s) to the function as parameters.
+ Language, you do not need to declare them with `extern`). However, we
+ recommend you avoid accessing global variables, since this limits your
+ function to only work in one context (where those globals exist).
+ Instead, pass the global(s) to the function as parameters.
 - Functions can be defined inside of a function (nested functions).
 
 Main (context) function
@@ -156,10 +156,10 @@ attributes onto geometry to control VEX code.
 ```vex
 surface
 noise_surf(vector clr = {1,1,1}; float frequency = 1;
-   export vector nml = {0,0,0})
+ export vector nml = {0,0,0})
 {
-    Cf = clr * (float(noise(frequency * P)) + 0.5) * diffuse(normalize(N));
-    nml = normalize(N)*0.5 + 0.5;
+ Cf = clr * (float(noise(frequency * P)) + 0.5) * diffuse(normalize(N));
+ nml = normalize(N)*0.5 + 0.5;
 }
 
 ```
@@ -185,20 +185,20 @@ with a certain range, and that `clr` should be treated as a color (giving it a
 color picker UI). You can do this with [user interface compiler pragmas](pragmas.html).
 
 ```vex
-#pragma opname        noise_surf
-#pragma oplabel        "Noisy Surface"
+#pragma opname noise_surf
+#pragma oplabel "Noisy Surface"
 
-#pragma label    clr    "Color"
-#pragma label    frequency    "Frequency"
+#pragma label clr "Color"
+#pragma label frequency "Frequency"
 
-#pragma hint    clr    color
-#pragma range    frequency    0.1 10
+#pragma hint clr color
+#pragma range frequency 0.1 10
 
 surface noise_surf(vector clr = {1,1,1}; float frequency = 1;
-   export vector nml = {0,0,0})
+ export vector nml = {0,0,0})
 {
-    Cf = clr * (float(noise(frequency * P)) + 0.5) * diffuse(normalize(N));
-    nml = normalize(N)*0.5 + 0.5;
+ Cf = clr * (float(noise(frequency * P)) + 0.5) * diffuse(normalize(N));
+ nml = normalize(N)*0.5 + 0.5;
 }
 
 ```
@@ -318,7 +318,7 @@ operator-type-interactions
 ```
 
 - If you add, multiply, divide, or subtract vectors of different size, VEX returns a vector of the larger size. The operation is applied component-wise.
-  **Important**: the “missing” component(s) on the smaller vector are filled in as `{0.0, 0.0, 0.0, 1.0}`
+ **Important**: the “missing” component(s) on the smaller vector are filled in as `{0.0, 0.0, 0.0, 1.0}`
 
 ```vex
 
@@ -382,35 +382,35 @@ Two implicit constructor functions are created for each struct. The first takes 
 # include <math.h>
 
 struct basis {
-    vector i, j, k;
+ vector i, j, k;
 }
 
 struct bases {
-    basis m, n, o;
-    string description;
+ basis m, n, o;
+ string description;
 }
 
 struct values {
-    int uninitialized;        // Uninitialized member data
-    int        ival = 3;
-    float fval = 3.14;
-    float aval[] = { 1, 2, 3, 4.5 };
+ int uninitialized; // Uninitialized member data
+ int ival = 3;
+ float fval = 3.14;
+ float aval[] = { 1, 2, 3, 4.5 };
 }
 
 basis rotate(basis b; vector axis; float amount) {
-    matrix m = 1;
-    rotate(m, amount, axis);
-    basis result = b;
-    result.i *= m;
-    result.j *= m;
-    result.k *= m;
-    return result;
+ matrix m = 1;
+ rotate(m, amount, axis);
+ basis result = b;
+ result.i *= m;
+ result.j *= m;
+ result.k *= m;
+ return result;
 }
 
 // Declare struct variables
-basis b0;        // Initialize using default values (i.e. 0 in this case)
-basis b1 = basis({1,0,0}, {0,1,0}, {0,0,1});        // Initialize using constructor
-basis b2 = { {1,0,0}, {0,1,0}, {0,0,1} };         // Initialize as explicit struct
+basis b0; // Initialize using default values (i.e. 0 in this case)
+basis b1 = basis({1,0,0}, {0,1,0}, {0,0,1}); // Initialize using constructor
+basis b2 = { {1,0,0}, {0,1,0}, {0,0,1} }; // Initialize as explicit struct
 
 // You can use M_PI or PI
 b1 = rotate(b1, {0,0,1}, M_PI/6);
@@ -428,33 +428,33 @@ allow a limited form of object-oriented programming.
 
 - Inside a struct function, you can use `this` to refer to the struct instance.
 - Inside a struct function, you can refer to struct fields by name as if they were variables
-  (for example, `basis` is a shortcut for `this.basis`).
+ (for example, `basis` is a shortcut for `this.basis`).
 - You can call struct functions on a struct instance using the `->` arrow operator,
-  for example `sampler->sample()`.
-  Note inside a struct function that you can call other methods on the struct using `this->method()`.
+ for example `sampler->sample()`.
+ Note inside a struct function that you can call other methods on the struct using `this->method()`.
 
 ```vex
 
 struct randsampler {
-    // Fields
-    int        seed;
+ // Fields
+ int seed;
 
-    // Methods
-    float sample()
-    {
-        // Struct functions can refer to fields by name
-        return random(seed++);
-    }
+ // Methods
+ float sample()
+ {
+ // Struct functions can refer to fields by name
+ return random(seed++);
+ }
 }
 
 cvex shader()
 {
-    randsampler sampler = randsampler(11);
-    for (int i = 0; i < 10; i++)
-    {
-        // Use -> to call methods on struct instances
-        printf("%f\n", sampler->sample());
-    }
+ randsampler sampler = randsampler(11);
+ for (int i = 0; i < 10; i++)
+ {
+ // Use -> to call methods on struct instances
+ printf("%f\n", sampler->sample());
+ }
 }
 
 ```
@@ -550,7 +550,7 @@ and the function cast may be omitted for more concise code:
 
 ```vex
 
-vector n = vector( noise(P) );        // Unnecessary function cast
+vector n = vector( noise(P) ); // Unnecessary function cast
 vector n = noise(P);
 
 ```

@@ -79,12 +79,12 @@ Creates a new object.
 
 ```javascript
 app.activeDocument.pathItems.ellipse(
-    [top = 100]
-    [, left = 100]
-    [, width = 50]
-    [, height = 100]
-    [, reversed = false]
-    [, inscribed]
+ [top = 100]
+ [, left = 100]
+ [, width = 50]
+ [, height = 100]
+ [, reversed = false]
+ [, inscribed]
 )
 ```
 
@@ -94,14 +94,14 @@ Creates a new pathItem in the shape of an ellipse using the supplied parameters.
 
 #### Parameters
 
-|  Parameter  |           Type            |                  Description                  |
-| ----------- | ------------------------- | --------------------------------------------- |
-| `top`       | Number (double), optional | Top of path. Defaults to `100` pt.            |
-| `left`      | Number (double), optional | Left of path. Defaults to `100` pt.           |
-| `width`     | Number (double), optional | Width of path. Defaults to `50` pt.           |
-| `height`    | Number (double), optional | Height of path. Defaults to `100` pt.         |
-| `reversed`  | Boolean, optional         | Whether path is reversed. Defaults to `false` |
-| `inscribed` | Boolean, optional         | Whether path is inscribed                     |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `top` | Number (double), optional | Top of path. Defaults to `100` pt. |
+| `left` | Number (double), optional | Left of path. Defaults to `100` pt. |
+| `width` | Number (double), optional | Width of path. Defaults to `50` pt. |
+| `height` | Number (double), optional | Height of path. Defaults to `100` pt. |
+| `reversed` | Boolean, optional | Whether path is reversed. Defaults to `false` |
+| `inscribed` | Boolean, optional | Whether path is inscribed |
 
 #### Returns
 
@@ -119,9 +119,9 @@ Gets the first element in the collection with the specified name.
 
 #### Parameters
 
-| Parameter |  Type  |      Description       |
-| --------- | ------ | ---------------------- |
-| `name`    | String | Name of element to get |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Name of element to get |
 
 #### Returns
 
@@ -139,8 +139,8 @@ Gets an element from the collection.
 
 #### Parameters
 
-| Parameter |      Type      |     Description      |
-| --------- | -------------- | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `itemKey` | String, Number | String or number key |
 
 #### Returns
@@ -153,11 +153,11 @@ Gets an element from the collection.
 
 ```javascript
 app.activeDocument.pathItems.polygon(
-    [centerX = 200]
-    [, centerY = 300]
-    [, radius = 50]
-    [, sides = 8]
-    [, reversed = false]
+ [centerX = 200]
+ [, centerY = 300]
+ [, radius = 50]
+ [, sides = 8]
+ [, reversed = false]
 )
 ```
 
@@ -167,13 +167,13 @@ Creates a new `pathItem` in the shape of an polygon using the supplied parameter
 
 #### Parameters
 
-| Parameter  |           Type            |                  Description                  |
-| ---------- | ------------------------- | --------------------------------------------- |
-| `centerX`  | Number (double), optional | CenterX of path. Defaults to `200` pt.        |
-| `centerY`  | Number (double), optional | CenterY of path. Defaults to `300` pt.        |
-| `radius`   | Number (double), optional | Radius of path. Defaults to `50` pt.          |
-| `sides`    | Number (long), optional   | Number of sides. Defaults to `8`              |
-| `reversed` | Boolean, optional         | Whether path is reversed. Defaults to `false` |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `centerX` | Number (double), optional | CenterX of path. Defaults to `200` pt. |
+| `centerY` | Number (double), optional | CenterY of path. Defaults to `300` pt. |
+| `radius` | Number (double), optional | Radius of path. Defaults to `50` pt. |
+| `sides` | Number (long), optional | Number of sides. Defaults to `8` |
+| `reversed` | Boolean, optional | Whether path is reversed. Defaults to `false` |
 
 #### Returns
 
@@ -191,12 +191,12 @@ Creates a new `pathItem` in the shape of an polygon using the supplied parameter
 
 #### Parameters
 
-| Parameter  |       Type        |       Description        |
-| ---------- | ----------------- | ------------------------ |
-| `top`      | Number (double)   | Top of path              |
-| `left`     | Number (double)   | Left of path             |
-| `width`    | Number (double)   | Width of path            |
-| `height`   | Number (double)   | Height of path           |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `top` | Number (double) | Top of path |
+| `left` | Number (double) | Left of path |
+| `width` | Number (double) | Width of path |
+| `height` | Number (double) | Height of path |
 | `reversed` | Boolean, optional | Whether path is reversed |
 
 #### Returns
@@ -223,13 +223,13 @@ Nothing
 
 ```javascript
 app.activeDocument.pathItems.roundedRectangle(
-    top,
-    left,
-    width,
-    height
-    [,horizontalRadius = 15]
-    [,verticalRadius = 20]
-    [,reversed = false]
+ top,
+ left,
+ width,
+ height
+ [,horizontalRadius = 15]
+ [,verticalRadius = 20]
+ [,reversed = false]
 )
 ```
 
@@ -239,15 +239,15 @@ Creates a new pathItem in the shape of a rectangle with rounded corners using th
 
 #### Parameters
 
-|     Parameter      |           Type            |                        Description                        |
-| ------------------ | ------------------------- | --------------------------------------------------------- |
-| `top`              | Number (double)           | Top of path                                               |
-| `left`             | Number (double)           | Left of path                                              |
-| `width`            | Number (double)           | Width of path                                             |
-| `height`           | Number (double)           | Height of path                                            |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `top` | Number (double) | Top of path |
+| `left` | Number (double) | Left of path |
+| `width` | Number (double) | Width of path |
+| `height` | Number (double) | Height of path |
 | `horizontalRadius` | Number (double), optional | Horizontal radius of rounded corner. Defaults to `15` pt. |
-| `verticalRadius`   | Number (double), optional | Vertical radius of rounded corner. Defaults to `20` pt.   |
-| `reversed`         | Boolean, optional         | Whether path is reversed. Defaults to `false`             |
+| `verticalRadius` | Number (double), optional | Vertical radius of rounded corner. Defaults to `20` pt. |
+| `reversed` | Boolean, optional | Whether path is reversed. Defaults to `false` |
 
 #### Returns
 
@@ -259,12 +259,12 @@ Creates a new pathItem in the shape of a rectangle with rounded corners using th
 
 ```javascript
 app.activeDocument.pathItems.star(
-    [centerX = 200]
-    [, centerY = 300]
-    [, radius = 50]
-    [, innerRadius = 20]
-    [, points = 5]
-    [, reversed = false]
+ [centerX = 200]
+ [, centerY = 300]
+ [, radius = 50]
+ [, innerRadius = 20]
+ [, points = 5]
+ [, reversed = false]
 )
 ```
 
@@ -274,14 +274,14 @@ Creates a new path item in the shape of a star using the supplied parameters.
 
 #### Parameters
 
-|   Parameter   |           Type            |                  Description                  |
-| ------------- | ------------------------- | --------------------------------------------- |
-| `centerX`     | Number (double), optional | CenterX of path. Defaults to `200` pt.        |
-| `centerY`     | Number (double), optional | CenterY of path. Defaults to `300` pt.        |
-| `radius`      | Number (double), optional | Radius of path. Defaults to `50` pt.          |
-| `innerRadius` | Number (double), optional | Inner radius of path. Defaults to `20` pt.    |
-| `points`      | Number (long), optional   | Number of points. Defaults to `5`             |
-| `reversed`    | Boolean, optional         | Whether path is reversed. Defaults to `false` |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `centerX` | Number (double), optional | CenterX of path. Defaults to `200` pt. |
+| `centerY` | Number (double), optional | CenterY of path. Defaults to `300` pt. |
+| `radius` | Number (double), optional | Radius of path. Defaults to `50` pt. |
+| `innerRadius` | Number (double), optional | Inner radius of path. Defaults to `20` pt. |
+| `points` | Number (long), optional | Number of points. Defaults to `5` |
+| `reversed` | Boolean, optional | Whether path is reversed. Defaults to `false` |
 
 #### Returns
 
@@ -314,7 +314,7 @@ var octagon = artLayer.pathItems.polygon(300.0, 325.0, 75.0, 8);
 var star = artLayer.pathItems.star(300.0, 125.0, 100.0, 20.0, 4);
 
 for (i = 0; i < artLayer.pathItems.length; i++) {
-    var styleIndex = Math.round(Math.random() * (doc.graphicStyles.length - 1));
-    doc.graphicStyles[styleIndex].applyTo(artLayer.pathItems[i]);
+ var styleIndex = Math.round(Math.random() * (doc.graphicStyles.length - 1));
+ doc.graphicStyles[styleIndex].applyTo(artLayer.pathItems[i]);
 }
 ```

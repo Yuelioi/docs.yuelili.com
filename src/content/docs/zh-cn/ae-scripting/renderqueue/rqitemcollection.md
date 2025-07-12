@@ -27,9 +27,9 @@ RQItemCollection 是 [Collection 对象](../../other/collection) 的子类。在
 
 #### 参数
 
-| 参数 |    类型     |     描述      |
-| ---- | --------- | -------- |
-| `comp`  | [CompItem 对象](../../item/compitem) | 要添加的合成。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `comp` | [CompItem 对象](../../item/compitem) | 要添加的合成。 |
 
 #### 返回
 

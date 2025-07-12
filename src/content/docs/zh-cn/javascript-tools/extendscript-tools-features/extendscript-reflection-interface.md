@@ -15,7 +15,7 @@ ExtendScript 提供了一个反射接口，允许你了解一个对象的所有�
 var f = new File ("myfile");
 var props = f.reflect.properties;
 for (var i = 0; i < props.length; i++) {
-    $.writeln('this property ' + props[i].name + ' is ' + f[props[i].name]);
+ $.writeln('this property ' + props[i].name + ' is ' + f[props[i].name]);
 }
 ```
 
@@ -111,8 +111,8 @@ for (var i = 0; i < props.length; i++) {
 
 ##### 参数
 
-| 参数 | 类型   | 描述      |
-| ---- | ------ | ---------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | name | 字符串 | 要检索信息的属性名称。 |
 
 #### 示例
@@ -199,8 +199,8 @@ obj.reflect.methods.indexOf.arguments[0];
 - `"number"`
 - `"string"`
 - `"Classname"`: 对象的类名。
-  !!! 注意
-  类名以大写字母开头。因此，值 `String` 表示 JavaScript 字符串，而 `String` 是 JavaScript 字符串包装对象。
+ !!! 注意
+ 类名以大写字母开头。因此，值 `String` 表示 JavaScript 字符串，而 `String` 是 JavaScript 字符串包装对象。
 - `*`: 任何类型。这是默认值。
 - `null`
 - `undefined`: 不返回任何值的函数的返回数据类型。

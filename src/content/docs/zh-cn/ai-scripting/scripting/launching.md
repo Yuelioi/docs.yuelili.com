@@ -35,31 +35,31 @@ end tell
 
 - `CreateObject`会在Illustrator未运行时将其作为不可见应用程序启动。如果Illustrator作为不可见应用程序启动，你必须手动激活应用程序以使其可见：
 
-    ```vbscript
-    Set appRef = CreateObject("Illustrator.Application")
-    ```
+ ```vbscript
+ Set appRef = CreateObject("Illustrator.Application")
+ ```
 
-    如果你在同一台机器上安装了多个版本的Illustrator，并使用`CreateObject`方法获取应用程序引用，使用"Illustrator.Application"会创建对最新版本Illustrator的引用。要专门针对早期版本，请在字符串末尾使用版本标识符：
+ 如果你在同一台机器上安装了多个版本的Illustrator，并使用`CreateObject`方法获取应用程序引用，使用"Illustrator.Application"会创建对最新版本Illustrator的引用。要专门针对早期版本，请在字符串末尾使用版本标识符：
 
-    |       版本       |      标识符      |
-    | ---------------- | --------------------------- |
-    | Illustrator 10   | "Illustrator.Application.1" |
-    | Illustrator CS   | "Illustrator.Application.2" |
-    | Illustrator CS2  | "Illustrator.Application.3" |
-    | Illustrator CS3  | "Illustrator.Application.4" |
-    | Illustrator CS4  | "Illustrator.Application.CS4" |
-    | Illustrator CS5  | "Illustrator.Application.CS5" |
-    | Illustrator CS6  | "Illustrator.Application.CS6" |
-    | Illustrator CC   | "Illustrator.Application.CC" |
-    | Illustrator CC 2014 | "Illustrator.Application.CC2014" |
-    | Illustrator CC 2015 | "Illustrator.Application.CC2015" |
-    | Illustrator CC 2017 | "Illustrator.Application.CC2017" |
+ | 版本 | 标识符 |
+ | --- | --- |
+ | Illustrator 10 | "Illustrator.Application.1" |
+ | Illustrator CS | "Illustrator.Application.2" |
+ | Illustrator CS2 | "Illustrator.Application.3" |
+ | Illustrator CS3 | "Illustrator.Application.4" |
+ | Illustrator CS4 | "Illustrator.Application.CS4" |
+ | Illustrator CS5 | "Illustrator.Application.CS5" |
+ | Illustrator CS6 | "Illustrator.Application.CS6" |
+ | Illustrator CC | "Illustrator.Application.CC" |
+ | Illustrator CC 2014 | "Illustrator.Application.CC2014" |
+ | Illustrator CC 2015 | "Illustrator.Application.CC2015" |
+ | Illustrator CC 2017 | "Illustrator.Application.CC2017" |
 
 - 如果你向项目添加了对Illustrator类型库的引用，可以使用`New`运算符。例如，以下代码行创建了对Application对象的新引用：
 
-    ```vbscript
-    Set appRef = New Illustrator.Application
-    ```
+ ```vbscript
+ Set appRef = New Illustrator.Application
+ ```
 
 ---
 

@@ -27,14 +27,14 @@ ItemCollection 是 [Collection 对象](../../other/collection) 的子类。除�
 
 #### 参数
 
-| 参数    | 类型     | 描述           |
-| --------------- | --------------------------------- | ------------------------------ |
-| `name`        | 字符串   | 合成的名称。           |
-| `width`       | 整数, 范围为 `[4..30000]`       | 合成的宽度（以像素为单位）。   |
-| `height`      | 整数, 范围为 `[4..30000]`       | 合成的高度（以像素为单位）。   |
-| `pixelAspect` | 浮点值, 范围为 `[0.01..100.0]`  | 合成的像素宽高比。     |
-| `duration`    | 浮点值, 范围为 `[0.0..10800.0]` | 合成的持续时间（以秒为单位）。 |
-| `frameRate`   | 浮点值, 范围为 `[1.0..99.0]`    | 合成的帧率。           |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `name` | 字符串 | 合成的名称。 |
+| `width` | 整数, 范围为 `[4..30000]` | 合成的宽度（以像素为单位）。 |
+| `height` | 整数, 范围为 `[4..30000]` | 合成的高度（以像素为单位）。 |
+| `pixelAspect` | 浮点值, 范围为 `[0.01..100.0]` | 合成的像素宽高比。 |
+| `duration` | 浮点值, 范围为 `[0.0..10800.0]` | 合成的持续时间（以秒为单位）。 |
+| `frameRate` | 浮点值, 范围为 `[1.0..99.0]` | 合成的帧率。 |
 
 #### 返回
 
@@ -52,8 +52,8 @@ CompItem 对象。
 
 #### 参数
 
-| 参数     | 类型   | 描述   |
-| -------- | ------ | -------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `name` | 字符串 | 文件夹的名称。 |
 
 #### 返回
@@ -69,8 +69,8 @@ FolderItem 对象。
 var compFolder = app.project.items.addFolder("comps");
 //通过将合成的 Item 的 parentFolder 设置为 "comps" 文件夹，将所有合成移动到新文件夹中
 for (var i = 1; i <= app.project.numItems; i++) {
-  if (app.project.item(i) instanceof CompItem) {
-    app.project.item(i).parentFolder = compFolder;
-  }
+ if (app.project.item(i) instanceof CompItem) {
+ app.project.item(i).parentFolder = compFolder;
+ }
 }
 ```

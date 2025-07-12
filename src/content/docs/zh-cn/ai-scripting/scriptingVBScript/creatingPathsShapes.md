@@ -21,7 +21,7 @@ title: 创建路径和形状
 Set appRef = CreateObject ("Illustrator.Application")
 
 Set firstPath = appRef.ActiveDocument.PathItems.Add
-    firstPath.Stroked = True
+ firstPath.Stroked = True
 firstPath.SetEntirePath(Array(Array(220, 475),Array(375, 300),Array(200, 300)))
 ```
 
@@ -43,7 +43,7 @@ firstPath.SetEntirePath(Array(Array(220, 475),Array(375, 300),Array(200, 300)))
 Set appRef = CreateObject ("Illustrator.Application")
 
 Set firstPath = appRef.ActiveDocument.PathItems.Add
-    firstPath.Stroked = true
+ firstPath.Stroked = true
 Set newPoint = firstPath.PathPoints.Add
 '使用相同的坐标创建直线段
 newPoint.Anchor = Array(75, 300)
@@ -70,15 +70,15 @@ newPoint3.RightDirection = Array(155, 150)
 Set appRef = CreateObject("Illustrator.Application")
 Set myDoc = appRef.ActiveDocument
 Set myLine = myDoc.PathItems.Add
-    myLine.Stroked = True
-    myLine.SetEntirePath( Array( Array(320, 475), Array(375, 300)))
+ myLine.Stroked = True
+ myLine.SetEntirePath( Array( Array(320, 475), Array(375, 300)))
 
 ' 向直线添加另一个点
 Set newPoint = myLine.PathPoints.Add
-    '使用相同的坐标创建直线段
-    newPoint.Anchor = Array(220, 300)
-    newPoint.LeftDirection = Array(220, 300)
-    newPoint.RightDirection = Array(220, 300)
+ '使用相同的坐标创建直线段
+ newPoint.Anchor = Array(220, 300)
+ newPoint.LeftDirection = Array(220, 300)
+ newPoint.RightDirection = Array(220, 300)
 ```
 
 ---

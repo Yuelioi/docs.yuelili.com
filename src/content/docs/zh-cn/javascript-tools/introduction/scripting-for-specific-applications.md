@@ -15,7 +15,7 @@ title: 特定应用程序的脚本编写
 
 ```javascript
 if ( BridgeTalk.appName == "bridge" ) {
-    // 继续执行脚本
+ // 继续执行脚本
 }
 ```
 
@@ -23,10 +23,10 @@ if ( BridgeTalk.appName == "bridge" ) {
 
 ```javascript
 if ( BridgeTalk.appName == "bridge-2.0" ) {
-    // 检查是否安装了 Photoshop。
-    if ( BridgeTalk.getSpecifier( "photoshop", 10 ) ){
-     // 将 Photoshop 自动化菜单添加到 Adobe Bridge 用户界面。
-    }
+ // 检查是否安装了 Photoshop。
+ if ( BridgeTalk.getSpecifier( "photoshop", 10 ) ){
+ // 将 Photoshop 自动化菜单添加到 Adobe Bridge 用户界面。
+ }
 }
 ```
 

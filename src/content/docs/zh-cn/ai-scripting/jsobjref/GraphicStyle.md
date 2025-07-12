@@ -67,8 +67,8 @@ title: 图形样式
 
 #### 参数
 
-| 参数      |     类型      |   描述   |
-| --------- | ------------------------- | -------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `artItem` | [PageItem](.././PageItem) | 目标艺术项目 |
 
 #### 返回值
@@ -87,8 +87,8 @@ title: 图形样式
 
 #### 参数
 
-| 参数      |     类型      |   描述   |
-| --------- | ------------------------- | -------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `artItem` | [PageItem](.././PageItem) | 目标艺术项目 |
 
 #### 返回值
@@ -120,20 +120,20 @@ title: 图形样式
 // 然后将图形样式应用于新组的项目
 
 if (app.documents.length > 0) {
-    var doc = app.activeDocument;
-    var selected = doc.selection;
-    var newGroup = doc.groupItems.add();
-    newGroup.name = "NewGroup";
-    newGroup.move(doc, ElementPlacement.PLACEATEND);
+ var doc = app.activeDocument;
+ var selected = doc.selection;
+ var newGroup = doc.groupItems.add();
+ newGroup.name = "NewGroup";
+ newGroup.move(doc, ElementPlacement.PLACEATEND);
 
-    var endIndex = selected.length;
-    for (var i = 0; i < endIndex; i++) {
-        if (selected[i].typename == "PathItem")
-        selected[i].duplicate(newGroup, ElementPlacement.PLACEATEND);
-    }
+ var endIndex = selected.length;
+ for (var i = 0; i < endIndex; i++) {
+ if (selected[i].typename == "PathItem")
+ selected[i].duplicate(newGroup, ElementPlacement.PLACEATEND);
+ }
 
-    for (i = 0; i < newGroup.pageItems.length; i++) {
-        doc.graphicStyles[1].applyTo(newGroup.pageItems[i]);
-    }
+ for (i = 0; i < newGroup.pageItems.length; i++) {
+ doc.graphicStyles[1].applyTo(newGroup.pageItems[i]);
+ }
 }
 ```

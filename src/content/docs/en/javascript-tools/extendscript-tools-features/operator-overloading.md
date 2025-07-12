@@ -8,12 +8,12 @@ ExtendScript allows you to extend or override the behavior of a math or a Boolea
 ```javascript
 // define the constructor method
 function MyClass (initialValue) {
-    this.value = initialValue;
+ this.value = initialValue;
 }
 
 // define the addition operator
 MyClass.prototype ["+"] = function (operand) {
-    return this.value + operand;
+ return this.value + operand;
 }
 ```
 
@@ -28,14 +28,13 @@ Result: 15
 
 You can override the following operators:
 
-
-| Category |     Operators     |
-|----------|-------------------|
-| Unary    | `+, ~`            |
-| Binary   | - `+, *, /, %, ^` |
-|          | - `<, <=, ==`     |
-|          | - `<<, >>, >>>`   |
-|          | - `&, \|, ===`    |
+| Category | Operators |
+|---|---|
+| Unary | `+, ~` |
+| Binary | - `+, *, /, %, ^` |
+| | - `<, <=, ==` |
+| | - `<<, >>, >>>` |
+| | - `&, \|, ===` |
 
 - The operators `>` and `>=` are implemented by executing NOT operator `<=` and NOT operator `<`.
 - Combined assignment operators such as `*=` are not supported.
@@ -48,11 +47,11 @@ For binary operators, a second argument indicates the order of operands. For non
 
 ```javascript
 this ["/"] = function (operand, rev) {
-    if (rev) {
-        // do not resolve operand / this
-        return;
-    } else {
-        // resolve this / operand
-        return this.value / operand;
+ if (rev) {
+ // do not resolve operand / this
+ return;
+ } else {
+ // resolve this / operand
+ return this.value / operand;
 }
 ```

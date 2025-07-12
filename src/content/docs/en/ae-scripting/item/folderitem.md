@@ -16,11 +16,11 @@ Given that the second item in the project is a FolderItem, the following code pu
 ```javascript
 var secondItem = app.project.item(2);
 if (!(secondItem instanceof FolderItem)) {
-    alert("problem: second item is not a folder");
+ alert("problem: second item is not a folder");
 } else {
-    for (var i = 1; i <= secondItem.numItems; i++) {
-        alert("item number " + i + " within the folder is named " + secondItem.item(i).name);
-    }
+ for (var i = 1; i <= secondItem.numItems; i++) {
+ alert("item number " + i + " within the folder is named " + secondItem.item(i).name);
+ }
 }
 ```
 
@@ -74,8 +74,8 @@ Note that "top-level" here means top-level within the folder, not necessarily wi
 
 #### Parameters
 
-| Parameter  |  Type   |                                Description                                |
-| ---------- | ------- | ------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `subIndex` | Integer | The position index of the item to retrieve. The first item is at index 1. |
 
 #### Returns

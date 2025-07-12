@@ -36,7 +36,7 @@ order: 3
 使用点`P`处的体积值来近似计算点`P + u`处的体积值。
 
 ```vex
-vector  P = {1.0, 2.0, 3.0};
+vector P = {1.0, 2.0, 3.0};
 matrix3 grad, hessX, hessY, hessZ;
 vector val1 = volumecubicsamplev(0, "vel", P, grad, hessX, hessY, hessZ));
 

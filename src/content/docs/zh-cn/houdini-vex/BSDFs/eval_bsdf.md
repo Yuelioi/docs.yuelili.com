@@ -56,9 +56,9 @@ order: 9
 
 ```vex
 v = eval_bsdf(F, inI, dir,
-    "direct", 0,     // 指定间接照明
-    "import:sssmfp", sssmfp,        // 读取导出的sssmfp参数
-    ...
+ "direct", 0, // 指定间接照明
+ "import:sssmfp", sssmfp, // 读取导出的sssmfp参数
+ ...
 );
 
 ```

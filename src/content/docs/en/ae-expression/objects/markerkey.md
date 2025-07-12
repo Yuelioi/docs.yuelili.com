@@ -19,7 +19,6 @@ Dan Ebberts provides a tutorial on the [After Effects Developer Center](http://w
 On this page, we're going to use `thisComp.marker.key(1)` as a sample on how to call these items, however note that any method that returns a [MarkerKey](#) will work.
 :::
 
-
 ---
 
 ## Attributes
@@ -140,7 +139,6 @@ thisComp.marker.nearestKey(time).parameters["background color"];
 This functionality was added in After Effects 16.0
 :::
 
-
 #### Description
 
 State of the Protected Region option in the Composition Marker dialog box.
@@ -176,20 +174,20 @@ This expression on the Source Text property of a text layer displays the time, d
 ```js
 const m = thisLayer.marker.nearestKey(time);
 const s = [
-    "time:" + timeToCurrentFormat(m.time),
-    "duration: " + m.duration,
-    "key index: " + m.index,
-    "comment:" + m.comment,
-    "chapter:" + m.chapter,
-    "URL:" + m.url,
-    "frame target: " + m.frameTarget,
-    "cue point name: " + m.cuePointName,
-    "Event cue point? " + m.eventCuePoint,
-    ""
+ "time:" + timeToCurrentFormat(m.time),
+ "duration: " + m.duration,
+ "key index: " + m.index,
+ "comment:" + m.comment,
+ "chapter:" + m.chapter,
+ "URL:" + m.url,
+ "frame target: " + m.frameTarget,
+ "cue point name: " + m.cuePointName,
+ "Event cue point? " + m.eventCuePoint,
+ ""
 ];
 
 for (let param in m.parameters){
-    s.push("parameter: " + param + " value: " + m.parameters[param]);
+ s.push("parameter: " + param + " value: " + m.parameters[param]);
 }
 
 s.join("\n");

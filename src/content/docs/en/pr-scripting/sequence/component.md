@@ -7,7 +7,6 @@ title: Component object
 
 `app.project.sequences[index].videoTracks[index].clips[index].components[index]`
 
-
 #### Description
 
 The Component object represents something which has been added or applied to a trackItem.
@@ -21,7 +20,6 @@ The Component object represents something which has been added or applied to a t
 `app.project.sequences[index].audioTracks[index].clips[index].components[index].displayName`
 
 `app.project.sequences[index].videoTracks[index].clips[index].components[index].displayName`
-
 
 #### Description
 
@@ -39,7 +37,6 @@ String; read-only.
 
 `app.project.sequences[index].videoTracks[index].clips[index].components[index].matchName`
 
-
 #### Description
 
 The name of the component, as it is loaded from disk; used to uniquely identify effect plug-ins.
@@ -55,7 +52,6 @@ String; read-only.
 `app.project.sequences[index].audioTracks[index].clips[index].components[index].properties`
 
 `app.project.sequences[index].videoTracks[index].clips[index].components[index].properties`
-
 
 #### Description
 

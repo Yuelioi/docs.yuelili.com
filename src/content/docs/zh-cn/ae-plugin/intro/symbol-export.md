@@ -13,9 +13,9 @@ After Effects 团队最近发现了一个与符号冲突相关的问题，该问
 
 ```cpp
 #ifdef AE_OS_WIN
-        #define DllExport   __declspec( dllexport )
+ #define DllExport __declspec( dllexport )
 #elif defined AE_OS_MAC
-        #define DllExport   __attribute__ ((visibility ("default")))
+ #define DllExport __attribute__ ((visibility ("default")))
 #endif
 ```
 
@@ -24,23 +24,23 @@ After Effects 团队最近发现了一个与符号冲突相关的问题，该问
 ```cpp
 extern "C" DllExport
 PF_Err PluginDataEntryFunction(
-    PF_PluginDataPtr inPtr,
-    PF_PluginDataCB inPluginDataCallBackPtr,
-    SPBasicSuite* inSPBasicSuitePtr,
-    const char* inHostName,
-    const char* inHostVersion)
+ PF_PluginDataPtr inPtr,
+ PF_PluginDataCB inPluginDataCallBackPtr,
+ SPBasicSuite* inSPBasicSuitePtr,
+ const char* inHostName,
+ const char* inHostVersion)
 {
-    PF_Err result = PF_Err_INVALID_CALLBACK;
+ PF_Err result = PF_Err_INVALID_CALLBACK;
 
-    result = PF_REGISTER_EFFECT(
-        inPtr,
-        inPluginDataCallBackPtr,
-        "ColorGrid", // 名称
-        "ADBE ColorGrid", // 匹配名称
-        "Sample Plug-ins", // 类别
-        AE_RESERVED_INFO); // 保留信息
+ result = PF_REGISTER_EFFECT(
+ inPtr,
+ inPluginDataCallBackPtr,
+ "ColorGrid", // 名称
+ "ADBE ColorGrid", // 匹配名称
+ "Sample Plug-ins", // 类别
+ AE_RESERVED_INFO); // 保留信息
 
-    return result;
+ return result;
 }
 ```
 

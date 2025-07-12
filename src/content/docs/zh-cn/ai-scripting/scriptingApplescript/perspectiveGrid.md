@@ -27,12 +27,12 @@ Illustrator 提供了一、二、三点透视的默认网格参数预设。预�
 
 ```applescript
 tell application "Adobe Illustrator"
-    -- 创建新文档
-    set docRef to make new document
-    tell docRef
-        -- 选择默认的两点透视预设
-        select perspective preset perspective preset "[2P-Normal View]"
-    end tell
+ -- 创建新文档
+ set docRef to make new document
+ tell docRef
+ -- 选择默认的两点透视预设
+ select perspective preset perspective preset "[2P-Normal View]"
+ end tell
 end tell
 ```
 
@@ -40,15 +40,15 @@ end tell
 
 ```applescript
 tell application "Adobe Illustrator"
-    set docRef to make new document
-    set filePath to "Macintosh HD:scripting:PGPresetsExported"
-    export perspective grid preset of docRef to file filePath
+ set docRef to make new document
+ set filePath to "Macintosh HD:scripting:PGPresetsExported"
+ export perspective grid preset of docRef to file filePath
 end tell
 
 tell application "Adobe Illustrator"
-    set docRef to make new document
-    set filePath to "Macintosh HD:scripting:PGPresets"
-    import perspective grid preset of docRef from file filePath
+ set docRef to make new document
+ set filePath to "Macintosh HD:scripting:PGPresets"
+ import perspective grid preset of docRef from file filePath
 end tell
 ```
 
@@ -60,14 +60,14 @@ end tell
 
 ```applescript
 tell application "Adobe Illustrator"
-    -- 创建新文档
-    set docRef to make new document
-    tell docRef
-        -- 显示文档中定义的透视网格
-        show perspective grid
-        -- 隐藏文档中定义的透视网格
-        hide perspective grid
-    end tell
+ -- 创建新文档
+ set docRef to make new document
+ tell docRef
+ -- 显示文档中定义的透视网格
+ show perspective grid
+ -- 隐藏文档中定义的透视网格
+ hide perspective grid
+ end tell
 end tell
 ```
 
@@ -77,12 +77,12 @@ end tell
 
 透视网格平面类型包括：
 
-|     平面     |          类型          |
-| ------------ | ---------------------------------- |
-| 左平面       | `perspective grid plane leftplane`  |
-| 右平面       | `perspective grid plane rightplane` |
-| 地面平面     | `perspective grid plane floorplane` |
-| 无效平面     | `perspective grid plane noplane`    |
+| 平面 | 类型 |
+| --- | --- |
+| 左平面 | `perspective grid plane leftplane` |
+| 右平面 | `perspective grid plane rightplane` |
+| 地面平面 | `perspective grid plane floorplane` |
+| 无效平面 | `perspective grid plane noplane` |
 
 对于一点透视网格，只有左平面和地面平面有效。
 
@@ -90,12 +90,12 @@ end tell
 
 ```applescript
 tell application "Adobe Illustrator"
-    -- 创建新文档
-    set docRef to make new document
-    tell docRef
-        -- 将活动平面设置为左平面
-        set perspective active plane perspective grid plane leftplane
-    end tell
+ -- 创建新文档
+ set docRef to make new document
+ tell docRef
+ -- 将活动平面设置为左平面
+ set perspective active plane perspective grid plane leftplane
+ end tell
 end tell
 ```
 
@@ -107,40 +107,40 @@ end tell
 
 ```applescript
 tell application "Adobe Illustrator"
-    -- 创建新文档
-    set docRef to make new document
-    tell docRef
-        -- 选择默认的两点透视预设
-        select perspective preset perspective preset "[2P-Normal View]"
+ -- 创建新文档
+ set docRef to make new document
+ tell docRef
+ -- 选择默认的两点透视预设
+ select perspective preset perspective preset "[2P-Normal View]"
 
-        -- 显示文档中定义的透视网格
-        show perspective grid
+ -- 显示文档中定义的透视网格
+ show perspective grid
 
-        -- 检查活动平面是否设置为左平面，否则设置为左平面
-        if (get perspective active plane) is not leftplane then
-      set perspective active plane perspective grid plane leftplane
-        end if
+ -- 检查活动平面是否设置为左平面，否则设置为左平面
+ if (get perspective active plane) is not leftplane then
+ set perspective active plane perspective grid plane leftplane
+ end if
 
-        -- 以透视方式绘制矩形，然后调整大小为 200% 并移动
-        set rectRef to make new rectangle with properties {bounds:{0, 0, 30, 30}, reversed:false}
-        scale rectRef horizontal scale 200 vertical scale 200 about top left with transforming objects
-        translate rectRef delta x -420 delta y 480
+ -- 以透视方式绘制矩形，然后调整大小为 200% 并移动
+ set rectRef to make new rectangle with properties {bounds:{0, 0, 30, 30}, reversed:false}
+ scale rectRef horizontal scale 200 vertical scale 200 about top left with transforming objects
+ translate rectRef delta x -420 delta y 480
 
-        -- 以透视方式绘制椭圆
-        set ellipseRef to make new ellipse with properties {bounds:{60, -60, 90, -30}, reversed:false, inscribed:true}
+ -- 以透视方式绘制椭圆
+ set ellipseRef to make new ellipse with properties {bounds:{60, -60, 90, -30}, reversed:false, inscribed:true}
 
-        -- 以透视方式绘制圆角矩形
-        set rrectRef to make new rounded rectangle with properties {bounds:{90, -90, 30, 30}, horizontal radius:10, vertical radius:10, reversed:false}
+ -- 以透视方式绘制圆角矩形
+ set rrectRef to make new rounded rectangle with properties {bounds:{90, -90, 30, 30}, horizontal radius:10, vertical radius:10, reversed:false}
 
-        -- 以透视方式绘制多边形
-        set polyRef to make new polygon with properties {center point:{105, 105}, radius:15, sides:7, reversed:false}
+ -- 以透视方式绘制多边形
+ set polyRef to make new polygon with properties {center point:{105, 105}, radius:15, sides:7, reversed:false}
 
-        -- 以透视方式绘制星形
-        set starRef to make new star with properties {center point:{135, 135}, radius:15, inner radius:10, point count:6, reversed:false}
+ -- 以透视方式绘制星形
+ set starRef to make new star with properties {center point:{135, 135}, radius:15, inner radius:10, point count:6, reversed:false}
 
-        -- 以透视方式绘制路径
-        set newPath to make new path item with properties {entire path:{ {anchor:{0, 0} }, {anchor:{60, 0} }, {anchor:{30, 45} }, {anchor:{90, 110} } } }
-    end tell
+ -- 以透视方式绘制路径
+ set newPath to make new path item with properties {entire path:{ {anchor:{0, 0} }, {anchor:{60, 0} }, {anchor:{30, 45} }, {anchor:{90, 110} } } }
+ end tell
 end tell
 ```
 
@@ -154,25 +154,25 @@ end tell
 
 ```applescript
 tell application "Adobe Illustrator"
-    -- 创建新文档
-    set docRef to make new document
-    tell docRef
-        -- 绘制星形
-        set starRef to make new star with properties {center point:{135, 135}, radius:15, inner radius:10, point count:6, reversed:false}
+ -- 创建新文档
+ set docRef to make new document
+ tell docRef
+ -- 绘制星形
+ set starRef to make new star with properties {center point:{135, 135}, radius:15, inner radius:10, point count:6, reversed:false}
 
-        -- 选择默认的三点透视预设
-        select perspective preset perspective preset "[3P-Normal View]"
+ -- 选择默认的三点透视预设
+ select perspective preset perspective preset "[3P-Normal View]"
 
-        -- 显示文档中定义的透视网格
-        show perspective grid
+ -- 显示文档中定义的透视网格
+ show perspective grid
 
-        -- 检查活动平面是否设置为左平面，否则设置为左平面
-        if (get perspective active plane) is not leftplane then
-      set perspective active plane perspective grid plane leftplane
-        end if
+ -- 检查活动平面是否设置为左平面，否则设置为左平面
+ if (get perspective active plane) is not leftplane then
+ set perspective active plane perspective grid plane leftplane
+ end if
 
-        -- 将星形带入地面平面
-        bring in perspective starRef position x 100 position y 100 perspective grid plane floorplane
-    end tell
+ -- 将星形带入地面平面
+ bring in perspective starRef position x 100 position y 100 perspective grid plane floorplane
+ end tell
 end tell
 ```

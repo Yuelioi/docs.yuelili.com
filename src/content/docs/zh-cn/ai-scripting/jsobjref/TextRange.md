@@ -305,9 +305,9 @@ String; 只读。
 
 #### 参数
 
-| 参数      |      类型         |     描述     |
-| --------- | ------------------------------------------------------- | ------------------------ |
-| `type`    | [CaseChangeType](../scripting-constants#casechangetype) | 要更改的大小写类型       |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `type` | [CaseChangeType](../scripting-constants#casechangetype) | 要更改的大小写类型 |
 
 #### 返回值
 
@@ -339,10 +339,10 @@ String; 只读。
 
 #### 参数
 
-| 参数          |       类型        |   描述   |
-| ------------------- | --------------------------------------------------------------------- | -------------------- |
-| `relativeObject`    | Object, 可选    | 要复制到的对象       |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选    | 插入元素的位置       |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `relativeObject` | Object, 可选 | 要复制到的对象 |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 插入元素的位置 |
 
 #### 返回值
 
@@ -416,10 +416,10 @@ Int32
 
 #### 参数
 
-| 参数          |       类型        |     描述     |
-| ------------------- | --------------------------------------------------------------------- | ------------------------ |
-| `relativeObject`    | Object      | 要移动元素的对象   |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选    | 移动元素到的位置   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `relativeObject` | Object | 要移动元素的对象 |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 移动元素到的位置 |
 
 #### 返回值
 
@@ -451,9 +451,9 @@ Int32
 
 #### 参数
 
-| 参数      |       类型        |   描述   |
-| --------------- | ----------------- | ------------------------------------ |
-| `addToDocument` | Boolean, 可选     | 是否添加或替换当前选择         |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `addToDocument` | Boolean, 可选 | 是否添加或替换当前选择 |
 
 #### 返回值
 
@@ -469,18 +469,18 @@ Int32
 // 通过更改每个字符的大小属性来更改当前文档中每个单词的第一个字符的大小
 
 if ( app.documents.length > 0 ) {
-    for ( i = 0; i < app.activeDocument.textFrames.length; i++ ) {
-        var text = app.activeDocument.textFrames[i].textRange;
-        for ( j = 0 ; j < text.words.length; j++ ) {
-      // 每个单词都是一个 textRange 对象
-      var textWord = text.words[j];
+ for ( i = 0; i < app.activeDocument.textFrames.length; i++ ) {
+ var text = app.activeDocument.textFrames[i].textRange;
+ for ( j = 0 ; j < text.words.length; j++ ) {
+ // 每个单词都是一个 textRange 对象
+ var textWord = text.words[j];
 
-      // 字符也是 textRange 对象。
-      // 获取每个单词的第一个字符并增加其大小。
+ // 字符也是 textRange 对象。
+ // 获取每个单词的第一个字符并增加其大小。
 
-      var firstChars = textWord.characters[0];
-      firstChars.size = firstChars.size * 1.5;
-        }
-    }
+ var firstChars = textWord.characters[0];
+ firstChars.size = firstChars.size * 1.5;
+ }
+ }
 }
 ```

@@ -53,7 +53,7 @@ String; read/write.
 
 The specified setting for clip transfer. Value will be one of the following:
 
-- `CLIP_TRANSFER_COPY`      - Copy entire source media.
+- `CLIP_TRANSFER_COPY` - Copy entire source media.
 - `CLIP_TRANSFER_TRANSCODE` - Transcode to default output format.
 
 ---

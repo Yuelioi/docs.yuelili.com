@@ -13,11 +13,11 @@ Optional arguments
 
 | Keyword | Values |
 | --- | --- |
-|  |`channel`
+| |`channel`
 td>>
 An integer value indicating which channel of the ptex image to use.
 
-|  |`filter`
+| |`filter`
 td>>
 
 | `filtersharp` | A floating point value indicating the filter sharpness. This is only valid for the bicubic filter. The range is 0-1 (the default is 1.0). |

@@ -42,7 +42,6 @@ The name of the key currently pressed. This is the JavaScript name, a string suc
 Modifier keys will report `undefined`; to get those, see [shiftKey, ctrlKey, altKey, metaKey](#shiftkey-ctrlkey-altkey-metakey)
 :::
 
-
 #### Type
 
 String
@@ -77,7 +76,6 @@ alert(currentPressedKey); // "A"
 `metaKey` captures both the `META` and `COMMAND` keys.
 :::
 
-
 #### Type
 
 Boolean
@@ -90,7 +88,7 @@ For example, checking whether a modifier key is held during script execution:
 var shiftHeld = ScriptUI.environment.keyboardState.shiftKey;
 
 if (shiftHeld) {
-    alert("User is holding shift!");
+ alert("User is holding shift!");
 }
 ```
 
@@ -100,7 +98,7 @@ Or to check for keyboard modifier combinations:
 var keyboardState = ScriptUI.environment.keyboardState;
 
 if (keyboardState.shiftKey && keyboardState.altKey) {
-    alert("Shift and alt held!");
+ alert("Shift and alt held!");
 }
 ```
 
@@ -110,11 +108,11 @@ For example:
 
 ```javascript
 button.onClick = function () {
-    if (ScriptUI.environment.keyboardState.shiftKey) {
-        // Special functionality for 'shift' key here
-        return;
-    }
+ if (ScriptUI.environment.keyboardState.shiftKey) {
+ // Special functionality for 'shift' key here
+ return;
+ }
 
-    // normal button behaviour here
+ // normal button behaviour here
 }
 ```

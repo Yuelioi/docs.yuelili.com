@@ -47,8 +47,8 @@ Checks whether a given property exists in preferences.
 
 #### Parameters
 
-| Parameter  |  Type  |     Description     |
-| ---------- | ------ | ------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `property` | String | A property to check |
 
 #### Returns
@@ -81,8 +81,8 @@ Returns a property value.
 
 #### Parameters
 
-| Parameter  |  Type  |          Description          |
-| ---------- | ------ | ----------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `property` | String | A property to get a value for |
 
 #### Returns
@@ -98,9 +98,9 @@ var labelIndex = 0;
 var property = 'BE.Prefs.LabelNames.' + labelIndex;
 
 if (app.properties.doesPropertyExist(property)) {
-    alert(app.properties.getProperty(property));
+ alert(app.properties.getProperty(property));
 } else {
-    alert('Property "' + property + '" does not exist');
+ alert('Property "' + property + '" does not exist');
 }
 ```
 
@@ -116,8 +116,8 @@ Checks whether a given property can be overwritten by the user. Returns `false` 
 
 #### Parameters
 
-| Parameter  |  Type  |     Description      |
-| ---------- | ------ | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `property` | String | A property to check. |
 
 #### Returns
@@ -140,12 +140,12 @@ For any file paths to be used in Premiere Pro's preferences, a trailing path sep
 
 #### Parameters
 
-|     Parameter      |  Type   |         Description          |
-| ------------------ | ------- | ------------------------------------------------ |
-| `property`         | String  | A property to create         |
-| `value`            | Any     | A value for a property       |
-| `persistent`       | Boolean | Whether if should be persistent between sessions |
-| `createIfNotExist` | Boolean | Should create, if such property does not exist   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `property` | String | A property to create |
+| `value` | Any | A value for a property |
+| `persistent` | Boolean | Whether if should be persistent between sessions |
+| `createIfNotExist` | Boolean | Should create, if such property does not exist |
 
 #### Returns
 
@@ -164,15 +164,15 @@ var persistent = true;
 var createIfNotExist = true;
 
 if (app.properties.doesPropertyExist(property)) {
-    if (app.properties.isPropertyReadOnly(property)) {
-        alert('Could not rename property "' + property + '" because it is read-only.');
-    } else {
-        var oldValue = app.properties.getProperty(property);
-        app.properties.setProperty(property, newValue, persistent, createIfNotExist);
-        alert('Value changed from "' + oldValue + '" to "' + newValue + '"');
-    }
+ if (app.properties.isPropertyReadOnly(property)) {
+ alert('Could not rename property "' + property + '" because it is read-only.');
+ } else {
+ var oldValue = app.properties.getProperty(property);
+ app.properties.setProperty(property, newValue, persistent, createIfNotExist);
+ alert('Value changed from "' + oldValue + '" to "' + newValue + '"');
+ }
 } else {
-    app.properties.setProperty(property, newValue, persistent, createIfNotExist);
-    alert('Created new property "' + property + '" with value "' + newValue + '"');
+ app.properties.setProperty(property, newValue, persistent, createIfNotExist);
+ alert('Created new property "' + property + '" with value "' + newValue + '"');
 }
 ```

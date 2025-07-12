@@ -123,7 +123,7 @@ BridgeTalk 类提供了以下静态属性，这些属性在全局命名空间中
 
 ```javascript
 BridgeTalk.onReceive = function( bridgeTalkObject ) {
-    // 处理接收到的消息
+ // 处理接收到的消息
 };
 ```
 
@@ -155,8 +155,8 @@ BridgeTalk 类提供了以下静态方法，这些方法在全局命名空间中
 
 #### 参数
 
-| 参数    | 类型        | 描述       |
-| ------- | ----------------------------------------------------------------------------- | -------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `app` | [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) | 目标应用程序的指定符 |
 
 #### 返回
@@ -175,8 +175,8 @@ BridgeTalk 类提供了以下静态方法，这些方法在全局命名空间中
 
 #### 参数
 
-| 参数    | 类型        | 描述       |
-| ------- | ----------------------------------------------------------------------------- | -------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `app` | [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) | 目标应用程序的指定符 |
 
 #### 返回
@@ -195,8 +195,8 @@ BridgeTalk 类提供了以下静态方法，这些方法在全局命名空间中
 
 #### 参数
 
-| 参数    | 类型        | 描述       |
-| ------- | ----------------------------------------------------------------------------- | -------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `app` | [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) | 目标应用程序的指定符 |
 
 #### 返回
@@ -222,15 +222,15 @@ BridgeTalk.getDisplayName("photoshop-10.0");
 
 #### 参数
 
-| 参数     | 类型    | 描述      |
-| ----------- | ---------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `appName` | 要搜索的应用程序的基本名称。 |    |
-| `version` | 数字    | 可选。要搜索的特定版本号。     |
-|   |       | 如果为 `0` 或未提供，则返回最新版本。        |
-|   |       | 如果为负值，则返回最高版本，直到并包括该值的绝对值。    |
-|   |       | 如果指定了主版本号，则返回最高次版本号的变化。例如，如果安装了 Photoshop CS 版本 9、9.1 和 10：     |
-|   |       | `<pre lang="javascript">`BridgeTalk.Specifier( "photoshop", "9" )`` => ["photoshop-9.1"]`</pre>` |
-| `locale`  | 字符串      | 可选。要搜索的特定区域设置。如果未提供且安装了多个语言版本，则优先选择当前区域设置的版本。      |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `appName` | 要搜索的应用程序的基本名称。 | |
+| `version` | 数字 | 可选。要搜索的特定版本号。 |
+| | | 如果为 `0` 或未提供，则返回最新版本。 |
+| | | 如果为负值，则返回最高版本，直到并包括该值的绝对值。 |
+| | | 如果指定了主版本号，则返回最高次版本号的变化。例如，如果安装了 Photoshop CS 版本 9、9.1 和 10： |
+| | | `<pre lang="javascript">`BridgeTalk.Specifier( "photoshop", "9" )`` => ["photoshop-9.1"]`</pre>` |
+| `locale` | 字符串 | 可选。要搜索的特定区域设置。如果未提供且安装了多个语言版本，则优先选择当前区域设置的版本。 |
 
 #### 返回
 
@@ -242,19 +242,19 @@ BridgeTalk.getDisplayName("photoshop-10.0");
 
 ```javascript
 BridgeTalk.getSpecifier ("photoshop");
-    => ["photoshop-11.0-en_us"]
+ => ["photoshop-11.0-en_us"]
 
 BridgeTalk.getSpecifier ("photoshop", 0, "en_us");
-    => ["photoshop-11.0-en_us"]
+ => ["photoshop-11.0-en_us"]
 
 BridgeTalk.getSpecifier ("photoshop", 0, "de_de");
-    => ["photoshop-9.5-de_de"]
+ => ["photoshop-9.5-de_de"]
 
 BridgeTalk.getSpecifier ("photoshop", -9.2, "de_de");
-    => ["photoshop-9.0-de_de"]
+ => ["photoshop-9.0-de_de"]
 
 BridgeTalk.getSpecifier ("photoshop", 8);
-    => ["photoshop-8.5-de_de"]
+ => ["photoshop-8.5-de_de"]
 ```
 
 ---
@@ -269,8 +269,8 @@ BridgeTalk.getSpecifier ("photoshop", 8);
 
 #### 参数
 
-| 参数    | 类型        | 描述        |
-| -------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `targetSpec` | [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) | 可选。目标应用程序的指定符。如果未提供，则返回当前应用程序的处理状态。 |
 
 #### 返回
@@ -296,15 +296,15 @@ BridgeTalk.getSpecifier ("photoshop", 8);
 
 #### 参数
 
-| 参数     | 类型   | 描述   |
-| ----------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `version` | 数字   | 可选。要搜索的特定版本号，或 `null` 以返回最合适的版本（匹配、最新或正在运行的版本），并包含版本信息。      |
-|   |     | 仅指定主版本号以返回最高次版本号的变化。    |
-|   |     | 例如，如果安装了 Photoshop CS 版本 9、9.5 和 10     |
-|   |     | `<pre lang="javascript">`BridgeTalk.getTargets( "9" )``=> [photoshop-9.5]`</pre>`        |
-|   |     | 指定负值以返回所有版本，直到版本号的绝对值。例如   |
-|   |     | `<pre lang="javascript">`BridgeTalk.getTargets( "-9.9" )``=> [photoshop-9.0, photoshop-9.5]`</pre>`   |
-| `locale`  | 字符串 | 可选。要搜索的特定区域设置，或 `null` 以返回所有区域设置的应用程序，并包含区域设置信息。如果未提供版本信息，则仅返回带有版本信息的指定符。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `version` | 数字 | 可选。要搜索的特定版本号，或 `null` 以返回最合适的版本（匹配、最新或正在运行的版本），并包含版本信息。 |
+| | | 仅指定主版本号以返回最高次版本号的变化。 |
+| | | 例如，如果安装了 Photoshop CS 版本 9、9.5 和 10 |
+| | | `<pre lang="javascript">`BridgeTalk.getTargets( "9" )``=> [photoshop-9.5]`</pre>` |
+| | | 指定负值以返回所有版本，直到版本号的绝对值。例如 |
+| | | `<pre lang="javascript">`BridgeTalk.getTargets( "-9.9" )``=> [photoshop-9.0, photoshop-9.5]`</pre>` |
+| `locale` | 字符串 | 可选。要搜索的特定区域设置，或 `null` 以返回所有区域设置的应用程序，并包含区域设置信息。如果未提供版本信息，则仅返回带有版本信息的指定符。 |
 
 #### 返回
 
@@ -320,19 +320,19 @@ BridgeTalk.getSpecifier ("photoshop", 8);
 
 ```javascript
 BridgeTalk.getTargets();
-    => [photoshop,illustrator]
+ => [photoshop,illustrator]
 
 BridgeTalk.getTargets( "10.0" );
-    => [photoshop-10.0]
+ => [photoshop-10.0]
 
 BridgeTalk.getTargets( null );
-    => [photoshop-11.0, illustrator-14.0]
+ => [photoshop-11.0, illustrator-14.0]
 
 BridgeTalk.getTargets( null, "en_US" );
-    => [photoshop-10.0-en_US, photoshop-11.0-en_US]
+ => [photoshop-10.0-en_US, photoshop-11.0-en_US]
 
 BridgeTalk.getTargets( null, null );
-    => [photoshop-10.0-en_US, photoshop-11.0-en_us, illustrator-14.0-de_de]
+ => [photoshop-10.0-en_US, photoshop-11.0-en_us, illustrator-14.0-de_de]
 ```
 
 ---
@@ -347,8 +347,8 @@ BridgeTalk.getTargets( null, null );
 
 #### 参数
 
-| 参数   | 类型        | 描述       |
-| ------------- | ----------------------------------------------------------------------------- | -------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `specifier` | [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) | 目标应用程序的指定符 |
 
 #### 返回
@@ -367,10 +367,10 @@ BridgeTalk.getTargets( null, null );
 
 #### 参数
 
-| 参数   | 类型        | 描述       |
-| ------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `specifier` | [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) | 目标应用程序的指定符    |
-| `where`     | 未知。      | 可选。如果指定了值 "background"，则应用程序的主窗口不会置于屏幕的最前面。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `specifier` | [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) | 目标应用程序的指定符 |
+| `where` | 未知。 | 可选。如果指定了值 "background"，则应用程序的主窗口不会置于屏幕的最前面。 |
 
 #### 返回
 
@@ -388,8 +388,8 @@ BridgeTalk.getTargets( null, null );
 
 #### 参数
 
-| 参数   | 类型        | 描述       |
-| ------------- | ----------------------------------------------------------------------------- | -------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `specifier` | [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) | 目标应用程序的指定符 |
 
 #### 返回
@@ -408,13 +408,13 @@ BridgeTalk.getTargets( null, null );
 
 #### 参数
 
-| 参数      | 类型        | 描述       |
-| --------------- | ----------------------------------------------------------------------------- | -------------------- |
-| `specifier`   | [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) | 目标应用程序的指定符 |
-| `pingRequest` | 标识键字符串，可能的值包括：   | 特定类型的返回值。   |
-|       | -`STATUS`：返回处理状态；请参阅 [getStatus()](#bridgetalkgetstatus)。   |    |
-|       | -`DIAGNOSTICS`：返回包含有效 ping 键列表的诊断报告。   |    |
-|       | -`ECHO_REQUEST`：返回 `ECHO_RESPONSE` 以进行简单的 ping 请求。      |    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `specifier` | [应用程序指定符](../application-and-namespace-specifiers#application-specifiers) | 目标应用程序的指定符 |
+| `pingRequest` | 标识键字符串，可能的值包括： | 特定类型的返回值。 |
+| | -`STATUS`：返回处理状态；请参阅 [getStatus()](#bridgetalkgetstatus)。 | |
+| | -`DIAGNOSTICS`：返回包含有效 ping 键列表的诊断报告。 | |
+| | -`ECHO_REQUEST`：返回 `ECHO_RESPONSE` 以进行简单的 ping 请求。 | |
 
 #### 返回
 

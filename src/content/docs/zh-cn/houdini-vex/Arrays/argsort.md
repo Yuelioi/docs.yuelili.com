@@ -18,22 +18,22 @@ order: 2
 ```vex
 cvex main()
 {
-    // 给定一个字符串数组...
-    string colors[] = {"Red", "Green", "Blue", "Orange", "Violet", "Indigo"};
+ // 给定一个字符串数组...
+ string colors[] = {"Red", "Green", "Blue", "Orange", "Violet", "Indigo"};
 
-    // 创建包含对应长度的数组
-    int[] lengths = {};
-    foreach (string name; colors) {
-        push(lengths, len(name));
-    }
+ // 创建包含对应长度的数组
+ int[] lengths = {};
+ foreach (string name; colors) {
+ push(lengths, len(name));
+ }
 
-    // 对长度进行排序并返回包含新排序的数组
-    int[] ordering = argsort(lengths);
+ // 对长度进行排序并返回包含新排序的数组
+ int[] ordering = argsort(lengths);
 
-    // 获取按名称长度排序的颜色名称数组
-    string colors_by_len[] = reorder(colors, ordering);
+ // 获取按名称长度排序的颜色名称数组
+ string colors_by_len[] = reorder(colors, ordering);
 
-    printf("%s\n", colors_by_len);
+ printf("%s\n", colors_by_len);
 }
 
 // 输出 {Red, Blue, Green, Orange, Violet, Indigo}

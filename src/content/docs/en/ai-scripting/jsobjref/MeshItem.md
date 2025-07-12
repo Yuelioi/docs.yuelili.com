@@ -439,9 +439,9 @@ Creates a duplicate of the selected object.
 
 #### Parameters
 
-|      Parameter      |                                 Type                                  |        Description         |
-| ------------------- | --------------------------------------------------------------------- | -------------------------- |
-| `relativeObject`    | Object, optional                                                      | Object to duplicate to     |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `relativeObject` | Object, optional | Object to duplicate to |
 | `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), optional | Location to insert element |
 
 #### Returns
@@ -460,10 +460,10 @@ Moves the object.
 
 #### Parameters
 
-|      Parameter      |                                 Type                                  |          Description          |
-| ------------------- | --------------------------------------------------------------------- | ----------------------------- |
-| `relativeObject`    | Object                                                                | Object to move element within |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), optional | Location to move element to   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `relativeObject` | Object | Object to move element within |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), optional | Location to move element to |
 
 #### Returns
 
@@ -489,14 +489,14 @@ Nothing.
 
 ```javascript
 app.activeDocument.meshItems[index].resize(
-    scaleX,
-    scaleY
-    [,changePositions]
-    [,changeFillPatterns]
-    [,changeFillGradients]
-    [,changeStrokePattern]
-    [,changeLineWidths]
-    [,scaleAbout]
+ scaleX,
+ scaleY
+ [,changePositions]
+ [,changeFillPatterns]
+ [,changeFillGradients]
+ [,changeStrokePattern]
+ [,changeLineWidths]
+ [,scaleAbout]
 )
 ```
 
@@ -506,16 +506,16 @@ Scales the art item where `scaleX` is the horizontal scaling factor and `scaleY`
 
 #### Parameters
 
-|       Parameter       |                               Type                                |                       Description                       |
-| --------------------- | ----------------------------------------------------------------- | ------------------------------------------------------- |
-| `scaleX`              | Number (double)                                                   | Horizontal scaling factor                               |
-| `scaleY`              | Number (double)                                                   | Vertical scaling factor                                 |
-| `changePositions`     | Boolean, optional                                                 | Whether to effect art object positions and orientations |
-| `changeFillPatterns`  | Boolean, optional                                                 | Whether to transform fill patterns                      |
-| `changeFillGradients` | Boolean, optional                                                 | Whether to transform fill gradients                     |
-| `changeStrokePattern` | Boolean, optional                                                 | Whether to transform stroke patterns                    |
-| `changeLineWidths`    | Number (double), optional                                         | The amount to scale line widths                         |
-| `scaleAbout`          | [Transformation](../scripting-constants#transformation), optional | The point to use as anchor, to transform about          |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `scaleX` | Number (double) | Horizontal scaling factor |
+| `scaleY` | Number (double) | Vertical scaling factor |
+| `changePositions` | Boolean, optional | Whether to effect art object positions and orientations |
+| `changeFillPatterns` | Boolean, optional | Whether to transform fill patterns |
+| `changeFillGradients` | Boolean, optional | Whether to transform fill gradients |
+| `changeStrokePattern` | Boolean, optional | Whether to transform stroke patterns |
+| `changeLineWidths` | Number (double), optional | The amount to scale line widths |
+| `scaleAbout` | [Transformation](../scripting-constants#transformation), optional | The point to use as anchor, to transform about |
 
 #### Returns
 
@@ -527,12 +527,12 @@ Nothing.
 
 ```javascript
 app.activeDocument.meshItems[index].rotate(
-    angle
-    [,changePositions]
-    [,changeFillPatterns]
-    [,changeFillGradients]
-    [,changeStrokePattern]
-    [,rotateAbout]
+ angle
+ [,changePositions]
+ [,changeFillPatterns]
+ [,changeFillGradients]
+ [,changeStrokePattern]
+ [,rotateAbout]
 )
 ```
 
@@ -542,14 +542,14 @@ Rotates the art item relative to the current rotation. The object is rotated cou
 
 #### Parameters
 
-|       Parameter       |                               Type                                |                       Description                       |
-| --------------------- | ----------------------------------------------------------------- | ------------------------------------------------------- |
-| `angle`               | Number (double)                                                   | The angle amount to rotate the element                  |
-| `changePositions`     | Boolean, optional                                                 | Whether to effect art object positions and orientations |
-| `changeFillPatterns`  | Boolean, optional                                                 | Whether to transform fill patterns                      |
-| `changeFillGradients` | Boolean, optional                                                 | Whether to transform fill gradients                     |
-| `changeStrokePattern` | Boolean, optional                                                 | Whether to transform stroke patterns                    |
-| `rotateAbout`         | [Transformation](../scripting-constants#transformation), optional | The point to use as anchor, to transform about          |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `angle` | Number (double) | The angle amount to rotate the element |
+| `changePositions` | Boolean, optional | Whether to effect art object positions and orientations |
+| `changeFillPatterns` | Boolean, optional | Whether to transform fill patterns |
+| `changeFillGradients` | Boolean, optional | Whether to transform fill gradients |
+| `changeStrokePattern` | Boolean, optional | Whether to transform stroke patterns |
+| `rotateAbout` | [Transformation](../scripting-constants#transformation), optional | The point to use as anchor, to transform about |
 
 #### Returns
 
@@ -561,13 +561,13 @@ Nothing.
 
 ```javascript
 app.activeDocument.meshItems[index].transform(
-    transformationMatrix
-    [,changePositions]
-    [,changeFillPatterns]
-    [,changeFillGradients]
-    [,changeStrokePattern]
-    [,changeLineWidths]
-    [,transformAbout]
+ transformationMatrix
+ [,changePositions]
+ [,changeFillPatterns]
+ [,changeFillGradients]
+ [,changeStrokePattern]
+ [,changeLineWidths]
+ [,transformAbout]
 )
 ```
 
@@ -577,15 +577,15 @@ Transforms the art item by applying a transformation matrix.
 
 #### Parameters
 
-|       Parameter        |                               Type                                |                  Description                   |
-| ---------------------- | ----------------------------------------------------------------- | ---------------------------------------------- |
-| `transformationMatrix` | [Matrix](.././Matrix)                                             | Transformation matrix to apply                 |
-| `changePositions`      | Boolean, optional                                                 | Whether to change Positions                    |
-| `changeFillPatterns`   | Boolean, optional                                                 | Whether to change Fill Patterns                |
-| `changeFillGradients`  | Boolean, optional                                                 | Whether to change Fill Gradients               |
-| `changeStrokePattern`  | Boolean, optional                                                 | Whether to change Stroke Pattern               |
-| `changeLineWidths`     | Number (double), optional                                         | The amount to scale line widths                |
-| `transformAbout`       | [Transformation](../scripting-constants#transformation), optional | The point to use as anchor, to transform about |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `transformationMatrix` | [Matrix](.././Matrix) | Transformation matrix to apply |
+| `changePositions` | Boolean, optional | Whether to change Positions |
+| `changeFillPatterns` | Boolean, optional | Whether to change Fill Patterns |
+| `changeFillGradients` | Boolean, optional | Whether to change Fill Gradients |
+| `changeStrokePattern` | Boolean, optional | Whether to change Stroke Pattern |
+| `changeLineWidths` | Number (double), optional | The amount to scale line widths |
+| `transformAbout` | [Transformation](../scripting-constants#transformation), optional | The point to use as anchor, to transform about |
 
 #### Returns
 
@@ -597,12 +597,12 @@ Nothing.
 
 ```javascript
 app.activeDocument.meshItems[index].translate(
-    [deltaX]
-    [,deltaY]
-    [,transformObjects]
-    [,transformFillPatterns]
-    [,transformFillGradients]
-    [,transformStrokePatterns]
+ [deltaX]
+ [,deltaY]
+ [,transformObjects]
+ [,transformFillPatterns]
+ [,transformFillGradients]
+ [,transformStrokePatterns]
 )
 ```
 
@@ -612,14 +612,14 @@ Repositions the art item relative to the current position, where `deltaX` is the
 
 #### Parameters
 
-|         Parameter         |           Type            |             Description              |
-| ------------------------- | ------------------------- | ------------------------------------ |
-| `deltaX`                  | Number (double), optional | Horizontal offset                    |
-| `deltaY`                  | Number (double), optional | Vertical offset                      |
-| `transformObjects`        | Boolean, optional         | Whether to transform Objects         |
-| `transformFillPatterns`   | Boolean, optional         | Whether to transform Fill Patterns   |
-| `transformFillGradients`  | Boolean, optional         | Whether to transform Fill Gradients  |
-| `transformStrokePatterns` | Boolean, optional         | Whether to transform Stroke Patterns |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `deltaX` | Number (double), optional | Horizontal offset |
+| `deltaY` | Number (double), optional | Vertical offset |
+| `transformObjects` | Boolean, optional | Whether to transform Objects |
+| `transformFillPatterns` | Boolean, optional | Whether to transform Fill Patterns |
+| `transformFillGradients` | Boolean, optional | Whether to transform Fill Gradients |
+| `transformStrokePatterns` | Boolean, optional | Whether to transform Stroke Patterns |
 
 #### Returns
 
@@ -637,8 +637,8 @@ Arranges the art item's position in the stacking order of the group or layer (pa
 
 #### Parameters
 
-|  Parameter  |                        Type                         |            Description            |
-| ----------- | --------------------------------------------------- | --------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | Stacking order arrangement method |
 
 #### Returns
@@ -654,9 +654,9 @@ Nothing.
 ```javascript
 // Locks all mesh items in the current document
 if (app.documents.length > 0) {
-    var doc = app.activeDocument;
-    for (var i = 0; i < doc.meshItems.length; i++) {
-        doc.meshItems[i].locked = true;
-    }
+ var doc = app.activeDocument;
+ for (var i = 0; i < doc.meshItems.length; i++) {
+ doc.meshItems[i].locked = true;
+ }
 }
 ```

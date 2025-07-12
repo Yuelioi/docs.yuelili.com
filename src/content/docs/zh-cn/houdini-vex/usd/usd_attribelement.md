@@ -45,6 +45,6 @@ float a = usd_attribelement("opinput:0", "/geo/cube", "array_attrib_name", 3);
 
 // 获取"bar"数组属性中索引2处元素的值
 @b_element_2_at_current_frame = usd_attribelement(0, "/geo/sphere", "bar", 2);
-@b_element_2_at_frame_11    = usd_attribelement(0, "/geo/sphere", "bar", 2, 11.0);
+@b_element_2_at_frame_11 = usd_attribelement(0, "/geo/sphere", "bar", 2, 11.0);
 
 ```

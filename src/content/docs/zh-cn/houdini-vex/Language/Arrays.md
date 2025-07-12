@@ -26,20 +26,20 @@ VEX包含数组数据类型，在以下场景中非常有用：
 ```vex
 surface
 crazy(
-    string maps[] = { "Mandril.rat", "default.pic" };
-    export float alength = 0;
-    )
+ string maps[] = { "Mandril.rat", "default.pic" };
+ export float alength = 0;
+ )
 {
-    vector texclr, av[];
+ vector texclr, av[];
 
-    texclr = texture(maps[s+t > 1], s, t);
-    av = array( {1,0,0}, vector(nrandom()), t, texclr, {.5,0,0});
+ texclr = texture(maps[s+t > 1], s, t);
+ av = array( {1,0,0}, vector(nrandom()), t, texclr, {.5,0,0});
 
-    if (fit(noise(s*8), 0, 1, .3, .7) > t)
-    av = array(1, {0,1,0}, 0);
+ if (fit(noise(s*8), 0, 1, .3, .7) > t)
+ av = array(1, {0,1,0}, 0);
 
-    Cf = spline("linear", s, av);
-    alength = len(av);
+ Cf = spline("linear", s, av);
+ alength = len(av);
 }
 ```
 
@@ -51,13 +51,13 @@ crazy(
 
 ```vex
 // my_array是浮点数数组
-float   my_array[];
+float my_array[];
 
 // v是单个向量，vector_array是向量数组
-vector  v, vector_array[];
+vector v, vector_array[];
 
 // str_array是字符串数组
-string  str_array[];
+string str_array[];
 ```
 
 可以在方括号内指定大小，但VEX编译器目前会忽略该值。
@@ -70,7 +70,7 @@ string  str_array[];
 vector[] rgb_array()
 {
 ...
-};    
+}; 
 ```
 
 嵌套函数存在类型歧义。注意Wrangles和Snippets总是隐式嵌套。声明嵌套的返回数组函数：
@@ -80,11 +80,11 @@ vector[] rgb_array()
 cvex
 foo()
 {
-    // 使用可选的'function'关键字避免类型歧义
-    function vector[] rgb_array()
-    {
-    ...
-    };    
+ // 使用可选的'function'关键字避免类型歧义
+ function vector[] rgb_array()
+ {
+ ...
+ }; 
 }
 ```
 
@@ -95,7 +95,7 @@ vector an_array[] = { {1, 2, 3}, {2, 3, 4}, {4, 5, 6} };
 
 vector[] rgb_array()
 {
-    return { {1, 0, 0}, {0, 1, 0}, {0, 0, 1} };
+ return { {1, 0, 0}, {0, 1, 0}, {0, 0, 1} };
 }
 ```
 
@@ -153,11 +153,11 @@ Cf = bw[index];
 
 ```vex
 int nums[] = { 0, 1, 2, 3, 4, 5 };
-int n = nums[10];  // 返回0
-int b = nums[-2];  // 返回4
+int n = nums[10]; // 返回0
+int b = nums[-2]; // 返回4
 
 string strs[] = { };
-string s = strs[20];  // 返回""
+string s = strs[20]; // 返回""
 ```
 
 也可以使用方括号表示法赋值：
@@ -180,9 +180,9 @@ nums[0] = 3.14;
 
 ```vex
 int nums[] = { 0, 1, 2, 3, 4, 5 };
-int start[] = nums[0:2];  // { 0, 1 }
-int end[] = nums[-2:];  // { 4, 5 }
-int rev[] = nums[::-1];  // { 5, 4, 3, 2, 1, 0 }
+int start[] = nums[0:2]; // { 0, 1 }
+int end[] = nums[-2:]; // { 4, 5 }
+int rev[] = nums[::-1]; // { 5, 4, 3, 2, 1, 0 }
 int odd[] = nums[1::2]; // { 1, 3, 5 }
 ```
 
@@ -198,32 +198,32 @@ int odd[] = nums[1::2]; // { 1, 3, 5 }
 float x[];
 // Cf和P是向量
 
-x = set(P);   // 将P的分量赋给数组x的对应成员
+x = set(P); // 将P的分量赋给数组x的对应成员
 
-Cf = set(x);  // 将x的前3个成员作为向量Cf的分量
+Cf = set(x); // 将x的前3个成员作为向量Cf的分量
 ```
 
 如果数组长度不足以填充向量/矩阵，最后一个成员会重复填充。
 
 ```vex
 float x[] = {1, 2} // 长度不足以填充向量
-Cf = set(x);  // Cf == {1, 2, 2}
+Cf = set(x); // Cf == {1, 2, 2}
 ```
 
 也可以在矩阵类型和`vector2`/`vector`/`vector4`数组之间赋值：
 
 ```vex
-vector2   v2[];
-vector    v[];
-vector4   v4[];
-matrix2   m2 = 1;
-matrix3   m3 = 1;
-matrix    m4 = 1;
+vector2 v2[];
+vector v[];
+vector4 v4[];
+matrix2 m2 = 1;
+matrix3 m3 = 1;
+matrix m4 = 1;
 
-v = set(m3);   // 将3x3矩阵的每行放入一个向量
-m3 = set(v);   // 将向量复制到矩阵的行向量中
-v4 = set(m4);  // 将矩阵的行提取到vector4数组
-m4 = set(v4);  // 使用数组中的vector4作为行向量创建矩阵
+v = set(m3); // 将3x3矩阵的每行放入一个向量
+m3 = set(v); // 将向量复制到矩阵的行向量中
+v4 = set(m4); // 将矩阵的行提取到vector4数组
+m4 = set(v4); // 使用数组中的vector4作为行向量创建矩阵
 ```
 
 总结：

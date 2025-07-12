@@ -4,7 +4,7 @@ order: 45
 ---
 `int  vertexprimindex(<geometry>geometry, int linearindex)`
 
-注意  
+注意 
 要将线性索引转换为基元编号和基元顶点编号，
 请使用 [vertexprim](./vertexprim "返回包含给定顶点的基元编号。") 和 [vertexprimindex](./vertexprimindex "将线性顶点索引转换为基元顶点编号。")。
 
@@ -24,7 +24,7 @@ order: 45
 
 要获取包含顶点的基元编号，请使用 [vertexprim](./vertexprim "返回包含给定顶点的基元编号。")。
 
-注意  
+注意 
 由于几何体结构的特性，首次在几何体上运行此函数时，需要遍历所有基元以查找查找表。
 如果大多数顶点都调用此函数，这一开销会被分摊。
 

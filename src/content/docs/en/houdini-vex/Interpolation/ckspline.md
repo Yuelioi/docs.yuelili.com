@@ -40,11 +40,11 @@ Find the value at position `t` along a curve
 
 ```vex
 Cf = ckspline(t,
-    {1,1,1},    -0.25,    // First key
-    {.5,.5,.5},  0.0,    // Second key
-    {.5, 0,.5},  0.25,    // Third key
-    {0,0,.8},    1.0,    // Fourth key
-    {0,0,0},     1.25    // Fifth key
+ {1,1,1}, -0.25, // First key
+ {.5,.5,.5}, 0.0, // Second key
+ {.5, 0,.5}, 0.25, // Third key
+ {0,0,.8}, 1.0, // Fourth key
+ {0,0,0}, 1.25 // Fifth key
 );
 
 ```

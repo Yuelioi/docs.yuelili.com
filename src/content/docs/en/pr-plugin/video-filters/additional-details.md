@@ -57,9 +57,8 @@ In that folder are the PNG graphics that are loaded at runtime for various badge
 3. Relaunch the application. You'll get a badge filter icon next to the others and a badge icons next to each effect that was listed in the XML file.
 
 :::note
-'Sample' is a special case that is intentionally excluded. Any other set of  *.xml/*.png files will be used.
+'Sample' is a special case that is intentionally excluded. Any other set of *.xml/*.png files will be used.
 :::
-
 
 ---
 

@@ -36,6 +36,6 @@ Examples
 ```vex
 // Get collection's expansion rule.
 string collection_path = usd_makecollectionpath(0, "/geo/cube", "some_collection");
-string expansion_rule  = usd_collectionexpansionrule(0, collection_path);
+string expansion_rule = usd_collectionexpansionrule(0, collection_path);
 
 ```

@@ -87,10 +87,10 @@ title: 发射器基础
 
 ```cpp
 tmResult (*tmEntryFunc)(
-  csSDK_int32  inInterfaceVersion,
-  prBool   inLoadModule,
-  piSuitesPtr  piSuites,
-  tmModule*   outModule)
+ csSDK_int32 inInterfaceVersion,
+ prBool inLoadModule,
+ piSuitesPtr piSuites,
+ tmModule* outModule)
 ```
 
 tmModule 是一个函数指针结构，由发射器实现。

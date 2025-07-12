@@ -21,23 +21,23 @@ myVal = new UnitValue (value, "unit");
 
 The value is a number, and the unit is specified with a string in abbreviated, singular, or plural form, as shown in the following table.
 
-| Abbreviation |       Singular        |         Plural         |       Comments       |
-| ------------ | --------------------- | ---------------------- | -------------------- |
-| `"in"`       | `"inch"`              | `"inches"`             | 2.54 cm              |
-| `"ft"`       | `"foot"`              | `"feet"`               | 30.48 cm             |
-| `"yd"`       | `"yard"`              | `"yards"`              | 91.44 cm             |
-| `"mi"`       | `"mile"`              | `"miles"`              | 1609.344 m           |
-| `"mm"`       | `"millimeter"`        | `"millimeters"`        |                      |
-| `"cm"`       | `"centintimeter"`     | `"centimeters"`        |                      |
-| `"m"`        | `"meter"`             | `"meters"`             |                      |
-| `"km"`       | `"kilometer"`         | `"kilometers"`         |                      |
-| `"pt"`       | `"point"`             | `"points"`             | inches / 72          |
-| `"pc"`       | `"pica"`              | `"picas"`              | points \* 12         |
-| `"tpt"`      | `"traditional point"` | `"traditional points"` | inches / 72.27       |
-| `"tpc"`      | `"traditional pica"`  | `"traditional picas"`  | 12 tpt               |
-| `"ci"`       | `"cicero"`            | `"ciceros"`            | 12.7872 pt           |
-| `"px"`       | `"pixel"`             | `"pixels"`             | baseless (see below) |
-| `"%" `       | `"percent"`           | `"percent"`            | baseless (see below) |
+| Abbreviation | Singular | Plural | Comments |
+| --- | --- | --- | --- |
+| `"in"` | `"inch"` | `"inches"` | 2.54 cm |
+| `"ft"` | `"foot"` | `"feet"` | 30.48 cm |
+| `"yd"` | `"yard"` | `"yards"` | 91.44 cm |
+| `"mi"` | `"mile"` | `"miles"` | 1609.344 m |
+| `"mm"` | `"millimeter"` | `"millimeters"` | |
+| `"cm"` | `"centintimeter"` | `"centimeters"` | |
+| `"m"` | `"meter"` | `"meters"` | |
+| `"km"` | `"kilometer"` | `"kilometers"` | |
+| `"pt"` | `"point"` | `"points"` | inches / 72 |
+| `"pc"` | `"pica"` | `"picas"` | points \* 12 |
+| `"tpt"` | `"traditional point"` | `"traditional points"` | inches / 72.27 |
+| `"tpc"` | `"traditional pica"` | `"traditional picas"` | 12 tpt |
+| `"ci"` | `"cicero"` | `"ciceros"` | 12.7872 pt |
+| `"px"` | `"pixel"` | `"pixels"` | baseless (see below) |
+| `"%" ` | `"percent"` | `"percent"` | baseless (see below) |
 
 If an unknown unit type is supplied, the type is set to `"?"`, and the `UnitValue` object prints as "UnitValue 0.00000".
 
@@ -99,7 +99,6 @@ Number
 
 ---
 
-
 ---
 
 ## Methods
@@ -114,9 +113,9 @@ Returns the numeric value of this object in the given unit. If the unit is unkno
 
 #### Parameter
 
-| Parameter |  Type  |                            Description                            |
-| --------- | ------ | ----------------------------------------------------------------- |
-| `unit`    | String | The unit type in abbreviated form; for example, `"cm"` or `"in"`. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `unit` | String | The unit type in abbreviated form; for example, `"cm"` or `"in"`. |
 
 #### Returns
 
@@ -136,9 +135,9 @@ Returns `true` if the conversion is successful. If the unit is unknown or the ob
 
 #### Parameter
 
-| Parameter |  Type  |                            Description                            |
-| --------- | ------ | ----------------------------------------------------------------- |
-| `unit`    | String | The unit type in abbreviated form; for example, `"cm"` or `"in"`. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `unit` | String | The unit type in abbreviated form; for example, `"cm"` or `"in"`. |
 
 #### Returns
 
@@ -212,8 +211,8 @@ UnitValue objects can be used in computational JavaScript expressions. The way t
 
 ### Unary operators `(~, !, +, -)`
 
-|   Operator   |                                Behaviour                                |
-| ------------ | ----------------------------------------------------------------------- |
+| Operator | Behaviour |
+| --- | --- |
 | `~unitValue` | Result is a new UnitValue with the same type, but value converted to a 32-bit integer and inverted bitwise. |
 | `!unitValue` | Result is `true` if the numeric value is nonzero, `false` if it is not. |
 | `+unitValue` | Result is a new UnitValue with the same type and value as the original. |
@@ -255,7 +254,7 @@ For example:
 ```javascript
 a = new UnitValue ("98 cm");
 b = new UnitValue ("1 m");
-a < b;   // => true
-a < 1;   // => false
+a < b; // => true
+a < 1; // => false
 a == 98; // => true
 ```

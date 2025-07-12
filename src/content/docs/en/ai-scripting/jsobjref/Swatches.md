@@ -81,9 +81,9 @@ Get the first element in the collection with the provided name.
 
 #### Parameters
 
-| Parameter |  Type  |      Description       |
-| --------- | ------ | ---------------------- |
-| `name`    | String | Name of element to get |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Name of element to get |
 
 #### Returns
 
@@ -115,8 +115,8 @@ Gets an element from the collection.
 
 #### Parameters
 
-| Parameter |      Type      |      Description      |
-| --------- | -------------- | --------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `itemKey` | String, Number | Key of element to get |
 
 #### Returns
@@ -146,9 +146,9 @@ Nothing.
 ```javascript
 // Deletes swatch 4 from the current document
 if ( app.documents.length > 0 ) {
-  if (app.activeDocument.swatches.length > 4) {
-    var swatchToDelete = app.activeDocument.swatches[3];
-    swatchToDelete.remove();
-  }
+ if (app.activeDocument.swatches.length > 4) {
+ var swatchToDelete = app.activeDocument.swatches[3];
+ swatchToDelete.remove();
+ }
 }
 ```

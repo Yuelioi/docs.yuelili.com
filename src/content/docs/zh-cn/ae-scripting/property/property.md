@@ -67,9 +67,9 @@ var myProperty = myLayer.scale;
 var scaleValue = myProperty.valueAtTime(3.5, false);
 
 if (scaleValue[0] === 10 && scaleValue[1] === 50) {
-    alert("hurray");
+ alert("hurray");
 } else {
-    alert("oops");
+ alert("oops");
 }
 ```
 
@@ -87,11 +87,11 @@ myProperty.setValueAtTime(10, 0);
 ```javascript
 var myProperty = myTextLayer.sourceText;
 if (myProperty.numKeys < 3) {
-    alert("error, I thought there were 3 keyframes");
+ alert("error, I thought there were 3 keyframes");
 } else {
-    myProperty.setValueAtKey(1, newTextDocument("keynumber1"));
-    myProperty.setValueAtKey(2, newTextDocument("keynumber2"));
-    myProperty.setValueAtKey(3, newTextDocument("keynumber3"));
+ myProperty.setValueAtKey(1, newTextDocument("keynumber1"));
+ myProperty.setValueAtKey(2, newTextDocument("keynumber2"));
+ myProperty.setValueAtKey(3, newTextDocument("keynumber3"));
 }
 ```
 
@@ -247,7 +247,7 @@ secondComp.layers.add(firstComp);
 
 var essentialOpacity = secondComp.layer(1).essentialProperty.property(1);
 if (essentialOpacity.essentialPropertySource == opacityProp) {
-    alert("You can get the source Property from an Essential Property!");
+ alert("You can get the source Property from an Essential Property!");
 }
 ```
 
@@ -342,8 +342,8 @@ if (essentialOpacity.essentialPropertySource == opacityProp) {
 #### 示例
 
 ```javascript
-appliedEffect.property("Menu").isDropdownEffect;    // true
-appliedEffect.property("Color").isDropdownEffect;   // false
+appliedEffect.property("Menu").isDropdownEffect; // true
+appliedEffect.property("Color").isDropdownEffect; // false
 appliedEffect.property("Feather").isDropdownEffect; // false
 ```
 
@@ -602,9 +602,9 @@ Property对象；只读。
 
 #### 参数
 
-| 参数      | 类型      | 描述       |
-| --------- | ----------------- | -------------------------------------------------------------------- |
-| `time`    | 浮点数值          | 添加关键帧的时间（以秒为单位）。合成开始时间为0。    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `time` | 浮点数值 | 添加关键帧的时间（以秒为单位）。合成开始时间为0。 |
 
 #### 返回值
 
@@ -632,9 +632,9 @@ Property对象；只读。
 
 #### 参数
 
-| 参数      | 类型      | 描述    |
-| --------- | ------------------------- | -------------------------------- |
-| `comp`    | [CompItem](../../item/compitem) | 要添加属性的目标合成。   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `comp` | [CompItem](../../item/compitem) | 要添加属性的目标合成。 |
 
 #### 返回值
 
@@ -662,10 +662,10 @@ Property对象；只读。
 
 #### 参数
 
-| 参数      | 类型      | 描述    |
-| --------- | ------------------------- | -------------------------------- |
-| `comp`    | [CompItem](../../item/compitem) | 要添加属性的目标合成。   |
-| `name`    | 字符串   | 新名称。         |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `comp` | [CompItem](../../item/compitem) | 要添加属性的目标合成。 |
+| `name` | 字符串 | 新名称。 |
 
 #### 返回值
 
@@ -698,9 +698,9 @@ Property对象；只读。
 
 #### 参数
 
-| 参数      | 类型      | 描述    |
-| --------- | ------------------------- | -------------------------------- |
-| `comp`    | [CompItem](../../item/compitem) | 要添加属性的目标合成。   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `comp` | [CompItem](../../item/compitem) | 要添加属性的目标合成。 |
 
 #### 返回值
 
@@ -722,9 +722,9 @@ Property对象；只读。
 
 #### 参数
 
-| 参数  | 类型    | 描述       |
-| ----- | ------- | ------------------ |
-| `dim` | 整数    | 维度编号（从0开始）。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `dim` | 整数 | 维度编号（从0开始）。 |
 
 #### 返回值
 
@@ -766,9 +766,9 @@ Property对象；只读。
 
 #### 参数
 
-| 参数        | 类型      | 描述       |
-| ----------- | ------------------------- | -------------------------------------------------------------------- |
-| `keyIndex`  | 整数，范围 `[1..numKeys]` | 关键帧索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围 `[1..numKeys]` | 关键帧索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
 
 #### 返回值
 
@@ -790,9 +790,9 @@ Property对象；只读。
 
 #### 参数
 
-| 参数        | 类型      | 描述       |
-| ----------- | ------------------------- | -------------------------------------------------------------------- |
-| `keyIndex`  | 整数，范围 `[1..numKeys]` | 关键帧索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围 `[1..numKeys]` | 关键帧索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
 
 #### 返回值
 
@@ -814,9 +814,9 @@ Property对象；只读。
 
 #### 参数
 
-| 参数        | 类型      | 描述       |
-| ----------- | ------------------------- | -------------------------------------------------------------------- |
-| `keyIndex`  | 整数，范围 `[1..numKeys]` | 关键帧索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围 `[1..numKeys]` | 关键帧索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
 
 #### 返回值
 
@@ -844,9 +844,9 @@ Property对象；只读。
 
 #### 参数
 
-| 参数        | 类型      | 描述       |
-| ----------- | ------------------------- | -------------------------------------------------------------------- |
-| `keyIndex`  | 整数，范围 `[1..numKeys]` | 关键帧索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围 `[1..numKeys]` | 关键帧索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
 
 #### 返回值
 
@@ -864,9 +864,9 @@ Property对象；只读。
 
 #### 参数
 
-| 参数        | 类型      | 描述       |
-| ----------- | ------------------------- | -------------------------------------------------------------------- |
-| `keyIndex`  | 整数，范围 `[1..numKeys]` | 关键帧索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围 `[1..numKeys]` | 关键帧索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
 
 #### 返回值
 
@@ -888,9 +888,9 @@ Property对象；只读。
 
 #### 参数
 
-| 参数        | 类型      | 描述       |
-| ----------- | ------------------------- | -------------------------------------------------------------------- |
-| `keyIndex`  | 整数，范围 `[1..numKeys]` | 关键帧索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围 `[1..numKeys]` | 关键帧索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
 
 #### 返回值
 
@@ -912,9 +912,9 @@ Property对象；只读。
 
 #### 参数
 
-| 参数        | 类型      | 描述       |
-| ----------- | ------------------------- | -------------------------------------------------------------------- |
-| `keyIndex`  | 整数，范围 `[1..numKeys]` | 关键帧索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围 `[1..numKeys]` | 关键帧索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
 
 #### 返回值
 
@@ -936,9 +936,9 @@ KeyframeEase 对象数组：
 
 #### 参数
 
-| 参数       | 类型         | 描述       |
-| ---------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。 |
 
 #### 返回值
 
@@ -956,9 +956,9 @@ KeyframeEase 对象数组：
 
 #### 参数
 
-| 参数       | 类型         | 描述       |
-| ---------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。 |
 
 #### 返回值
 
@@ -976,9 +976,9 @@ KeyframeEase 对象数组：
 
 #### 参数
 
-| 参数       | 类型         | 描述       |
-| ---------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。 |
 
 #### 返回值
 
@@ -996,9 +996,9 @@ KeyframeEase 对象数组：
 
 #### 参数
 
-| 参数       | 类型         | 描述       |
-| ---------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。 |
 
 #### 返回值
 
@@ -1016,9 +1016,9 @@ KeyframeEase 对象数组：
 
 #### 参数
 
-| 参数       | 类型         | 描述       |
-| ---------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。 |
 
 #### 返回值
 
@@ -1036,9 +1036,9 @@ KeyframeEase 对象数组：
 
 #### 参数
 
-| 参数       | 类型         | 描述       |
-| ---------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。 |
 
 #### 返回值
 
@@ -1057,10 +1057,10 @@ KeyframeEase 对象数组：
 
 #### 参数
 
-| 参数    | 类型         | 描述       |
-| --------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `keyIndex`      | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。     |
-| `markerComment` | 字符串       | 附加到标记的注释（参见[MarkerValue.comment](../../other/markervalue#markervaluecomment)属性）。        |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。 |
+| `markerComment` | 字符串 | 附加到标记的注释（参见[MarkerValue.comment](../../other/markervalue#markervaluecomment)属性）。 |
 
 #### 返回值
 
@@ -1080,10 +1080,10 @@ KeyframeEase 对象数组：
 
 #### 参数
 
-| 参数    | 类型         | 描述       |
-| --------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `keyIndex`      | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。     |
-| `markerComment` | 字符串       | 附加到标记的注释（参见[MarkerValue.comment](../../other/markervalue#markervaluecomment)属性）。        |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。 |
+| `markerComment` | 字符串 | 附加到标记的注释（参见[MarkerValue.comment](../../other/markervalue#markervaluecomment)属性）。 |
 
 #### 返回值
 
@@ -1101,9 +1101,9 @@ KeyframeEase 对象数组：
 
 #### 参数
 
-| 参数   | 类型   | 描述      |
-| ------ | -------------- | ---------------------------------- |
-| `time` | 浮点数值       | 时间，以秒为单位。合成的开始为0。  |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `time` | 浮点数值 | 时间，以秒为单位。合成的开始为0。 |
 
 #### 返回值
 
@@ -1121,9 +1121,9 @@ KeyframeEase 对象数组：
 
 #### 参数
 
-| 参数       | 类型         | 描述       |
-| ---------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。 |
 
 #### 返回值
 
@@ -1150,9 +1150,9 @@ Property对象和被调用的AVItem的输入参数需要兼容媒体替换才能
 
 #### 参数
 
-| 参数         | 类型    | 描述       |
-| ------------ | ------------------------ | ------------------ |
-| `newSource` | [AVItem对象](../../item/avitem) | 新的源AVItem。     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `newSource` | [AVItem对象](../../item/avitem) | 新的源AVItem。 |
 
 #### 返回值
 
@@ -1170,17 +1170,17 @@ Property对象和被调用的AVItem的输入参数需要兼容媒体替换才能
 
 #### 参数
 
-| 参数       | 类型          | 描述       |
-| ---------- | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `keyIndex` | 整数          | 关键帧索引，范围`[1..numKeys]`，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。         |
-| `inType`   | `KeyframeInterpolationType`枚举 | 传入插值类型。可选值：     |
-|    |      | - `KeyframeInterpolationType.LINEAR`        |
-|    |      | - `KeyframeInterpolationType.BEZIER`        |
-|    |      | - `KeyframeInterpolationType.HOLD`          |
-| `outType`  | `KeyframeInterpolationType`枚举 | 可选。传出插值类型。如果未提供，则'out'类型设置为`inType`值。可选值：         |
-|    |      | - `KeyframeInterpolationType.LINEAR`        |
-|    |      | - `KeyframeInterpolationType.BEZIER`        |
-|    |      | - `KeyframeInterpolationType.HOLD`          |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数 | 关键帧索引，范围`[1..numKeys]`，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。 |
+| `inType` | `KeyframeInterpolationType`枚举 | 传入插值类型。可选值： |
+| | | - `KeyframeInterpolationType.LINEAR` |
+| | | - `KeyframeInterpolationType.BEZIER` |
+| | | - `KeyframeInterpolationType.HOLD` |
+| `outType` | `KeyframeInterpolationType`枚举 | 可选。传出插值类型。如果未提供，则'out'类型设置为`inType`值。可选值： |
+| | | - `KeyframeInterpolationType.LINEAR` |
+| | | - `KeyframeInterpolationType.BEZIER` |
+| | | - `KeyframeInterpolationType.HOLD` |
 
 #### 返回值
 
@@ -1202,10 +1202,10 @@ Property对象和被调用的AVItem的输入参数需要兼容媒体替换才能
 
 #### 参数
 
-| 参数         | 类型         | 描述       |
-| ------------ | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `keyIndex`   | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。     |
-| `labelIndex` | 整数，范围`[0..16]`  | 新标签值的索引。   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。 |
+| `labelIndex` | 整数，范围`[0..16]` | 新标签值的索引。 |
 
 #### 返回值
 
@@ -1231,14 +1231,14 @@ Property对象和被调用的AVItem的输入参数需要兼容媒体替换才能
 
 #### 参数
 
-| 参数    | 类型   | 描述       |
-| ------- | -------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `items` | 字符串数组     | 将替换下拉菜单控件中现有菜单项的值。         |
-|         |        | - 仅允许字符串。   |
-|         |        | - 不允许空项目字符串。     |
-|         |        | - 不允许重复的项目字符串。           |
-|         |        | - 项目字符串中不允许字符`"\"`。      |
-|         |        | - 可以将字符串`"(-"`指定为项目字符串之一，以在下拉菜单中创建分隔线。分隔线将各自占用一个索引。          |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `items` | 字符串数组 | 将替换下拉菜单控件中现有菜单项的值。 |
+| | | - 仅允许字符串。 |
+| | | - 不允许空项目字符串。 |
+| | | - 不允许重复的项目字符串。 |
+| | | - 项目字符串中不允许字符`"\"`。 |
+| | | - 可以将字符串`"(-"`指定为项目字符串之一，以在下拉菜单中创建分隔线。分隔线将各自占用一个索引。 |
 
 :::tip
 
@@ -1249,11 +1249,11 @@ Property对象和被调用的AVItem的输入参数需要兼容媒体替换才能
 
 ```javascript
 var dropdownItems = [
-    "第一个项目",
-    "第二个项目",
-    "(-",
-    "另一个项目",
-    "最后一个项目"
+ "第一个项目",
+ "第二个项目",
+ "(-",
+ "另一个项目",
+ "最后一个项目"
 ];
 
 var dropdownEffect = layer.property("ADBE Effect Parade").addProperty("ADBE Dropdown Control");
@@ -1276,10 +1276,10 @@ Property对象，更新后的下拉菜单控件的菜单属性。
 
 #### 参数
 
-| 参数       | 类型         | 描述       |
-| ---------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。     |
-| `newVal`   | 布尔值       | `true`开启浮动，`false`关闭浮动。            |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围`[1..numKeys]` | 关键帧索引，由[addKey](#propertyaddkey)或[nearestKeyIndex](#propertynearestkeyindex)返回。 |
+| `newVal` | 布尔值 | `true`开启浮动，`false`关闭浮动。 |
 
 #### 返回值
 
@@ -1295,10 +1295,10 @@ Property对象，更新后的下拉菜单控件的菜单属性。
 
 #### 参数
 
-| 参数        |         类型          |       描述        |
-| ----------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex`  | 整数，范围在 `[1..numKeys]` 之间      | 关键帧的索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。           |
-| `onOff`     | 布尔值       | `true` 表示选中关键帧，`false` 表示取消选中。   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围在 `[1..numKeys]` 之间 | 关键帧的索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
+| `onOff` | 布尔值 | `true` 表示选中关键帧，`false` 表示取消选中。 |
 
 #### 返回值
 
@@ -1316,10 +1316,10 @@ Property对象，更新后的下拉菜单控件的菜单属性。
 
 #### 参数
 
-| 参数        |         类型          |       描述        |
-| ----------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex`  | 整数，范围在 `[1..numKeys]` 之间      | 关键帧的索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。           |
-| `newVal`    | 布尔值       | `true` 表示开启空间自动贝塞尔插值，`false` 表示关闭。   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围在 `[1..numKeys]` 之间 | 关键帧的索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
+| `newVal` | 布尔值 | `true` 表示开启空间自动贝塞尔插值，`false` 表示关闭。 |
 
 #### 返回值
 
@@ -1337,10 +1337,10 @@ Property对象，更新后的下拉菜单控件的菜单属性。
 
 #### 参数
 
-| 参数        |         类型          |       描述        |
-| ----------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex`  | 整数，范围在 `[1..numKeys]` 之间      | 关键帧的索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。           |
-| `newVal`    | 布尔值       | `true` 表示开启空间自动贝塞尔插值，`false` 表示关闭。   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围在 `[1..numKeys]` 之间 | 关键帧的索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
+| `newVal` | 布尔值 | `true` 表示开启空间自动贝塞尔插值，`false` 表示关闭。 |
 
 #### 返回值
 
@@ -1358,15 +1358,15 @@ Property对象，更新后的下拉菜单控件的菜单属性。
 
 #### 参数
 
-| 参数          |   类型    |       描述        |
-| ------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `keyIndex`    | 整数       | 关键帧的索引，范围在 `[1..numKeys]` 之间，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。         |
-| `inTangent`   | 包含 2 或 3 个浮点值的数组。        | 输入切线向量。            |
-|       |    | - 如果属性值类型是 `PropertyValueType.TwoD_SPATIAL`，数组包含 2 个值。    |
-|       |    | - 如果属性值类型是 `PropertyValueType.ThreeD_SPATIAL`，数组包含 3 个值。            |
-| `outTangent`  | 包含 2 或 3 个浮点值的数组。        | 可选。输出切线向量。如果未提供，输出切线将设置为与输入切线相同的值。       |
-|       |    | - 如果属性值类型是 `PropertyValueType.TwoD_SPATIAL`，数组包含 2 个值。    |
-|       |    | - 如果属性值类型是 `PropertyValueType.ThreeD_SPATIAL`，数组包含 3 个值。            |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数 | 关键帧的索引，范围在 `[1..numKeys]` 之间，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
+| `inTangent` | 包含 2 或 3 个浮点值的数组。 | 输入切线向量。 |
+| | | - 如果属性值类型是 `PropertyValueType.TwoD_SPATIAL`，数组包含 2 个值。 |
+| | | - 如果属性值类型是 `PropertyValueType.ThreeD_SPATIAL`，数组包含 3 个值。 |
+| `outTangent` | 包含 2 或 3 个浮点值的数组。 | 可选。输出切线向量。如果未提供，输出切线将设置为与输入切线相同的值。 |
+| | | - 如果属性值类型是 `PropertyValueType.TwoD_SPATIAL`，数组包含 2 个值。 |
+| | | - 如果属性值类型是 `PropertyValueType.ThreeD_SPATIAL`，数组包含 3 个值。 |
 
 #### 返回值
 
@@ -1384,10 +1384,10 @@ Property对象，更新后的下拉菜单控件的菜单属性。
 
 #### 参数
 
-| 参数        |         类型          |       描述        |
-| ----------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex`  | 整数，范围在 `[1..numKeys]` 之间      | 关键帧的索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。           |
-| `newVal`    | 布尔值       | `true` 表示开启时间自动贝塞尔插值，`false` 表示关闭。    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围在 `[1..numKeys]` 之间 | 关键帧的索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
+| `newVal` | 布尔值 | `true` 表示开启时间自动贝塞尔插值，`false` 表示关闭。 |
 
 #### 返回值
 
@@ -1405,10 +1405,10 @@ Property对象，更新后的下拉菜单控件的菜单属性。
 
 #### 参数
 
-| 参数        |         类型          |       描述        |
-| ----------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex`  | 整数，范围在 `[1..numKeys]` 之间      | 关键帧的索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。           |
-| `newVal`    | 布尔值       | `true` 表示开启时间自动贝塞尔插值，`false` 表示关闭。    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围在 `[1..numKeys]` 之间 | 关键帧的索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
+| `newVal` | 布尔值 | `true` 表示开启时间自动贝塞尔插值，`false` 表示关闭。 |
 
 #### 返回值
 
@@ -1426,17 +1426,17 @@ Property对象，更新后的下拉菜单控件的菜单属性。
 
 #### 参数
 
-| 参数       |     类型     |       描述        |
-| ------------------ | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `keyIndex`         | 整数        | 关键帧的索引，范围在 `[1..numKeys]` 之间，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。         |
-| `inTemporalEase`   | 包含 1、2 或 3 个 [KeyframeEase 对象](../../other/keyframeease) 的数组        | 输入时间缓动。            |
-|   |    | - 如果属性值类型是 `PropertyValueType.TwoD`，数组包含 2 个对象。           |
-|   |    | - 如果属性值类型是 `PropertyValueType.ThreeD`，数组包含 3 个对象。         |
-|   |    | - 对于其他值类型，数组包含 1 个对象。    |
-| `outTemporalEase`  | 包含 1、2 或 3 个 [KeyframeEase 对象](../../other/keyframeease) 的数组        | 可选。输出时间缓动。如果未提供，输出缓动将设置为与输入缓动相同的值。       |
-|   |    | - 如果属性值类型是 `PropertyValueType.TwoD`，数组包含 2 个对象。           |
-|   |    | - 如果属性值类型是 `PropertyValueType.ThreeD`，数组包含 3 个对象。         |
-|   |    | - 对于其他值类型，数组包含 1 个对象。    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数 | 关键帧的索引，范围在 `[1..numKeys]` 之间，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
+| `inTemporalEase` | 包含 1、2 或 3 个 [KeyframeEase 对象](../../other/keyframeease) 的数组 | 输入时间缓动。 |
+| | | - 如果属性值类型是 `PropertyValueType.TwoD`，数组包含 2 个对象。 |
+| | | - 如果属性值类型是 `PropertyValueType.ThreeD`，数组包含 3 个对象。 |
+| | | - 对于其他值类型，数组包含 1 个对象。 |
+| `outTemporalEase` | 包含 1、2 或 3 个 [KeyframeEase 对象](../../other/keyframeease) 的数组 | 可选。输出时间缓动。如果未提供，输出缓动将设置为与输入缓动相同的值。 |
+| | | - 如果属性值类型是 `PropertyValueType.TwoD`，数组包含 2 个对象。 |
+| | | - 如果属性值类型是 `PropertyValueType.ThreeD`，数组包含 3 个对象。 |
+| | | - 对于其他值类型，数组包含 1 个对象。 |
 
 #### 返回值
 
@@ -1454,9 +1454,9 @@ Property对象，更新后的下拉菜单控件的菜单属性。
 
 #### 参数
 
-| 参数        |  类型  |         描述         |
-| ----------- | ------ | ----------------------------------------------------------------------------------------------------- |
-| `newValue`  | 值     | 适合被设置属性类型的值；参见 [Property.propertyValueType](#propertypropertyvaluetype)。       |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `newValue` | 值 | 适合被设置属性类型的值；参见 [Property.propertyValueType](#propertypropertyvaluetype)。 |
 
 #### 返回值
 
@@ -1474,10 +1474,10 @@ Property对象，更新后的下拉菜单控件的菜单属性。
 
 #### 参数
 
-| 参数        |         类型          |       描述        |
-| ----------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `keyIndex`  | 整数，范围在 `[1..numKeys]` 之间      | 关键帧的索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。           |
-| `newValue`  | 值   | 适合被设置属性类型的值；参见 [Property.propertyValueType](#propertypropertyvaluetype)。   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `keyIndex` | 整数，范围在 `[1..numKeys]` 之间 | 关键帧的索引，由 [addKey](#propertyaddkey) 或 [nearestKeyIndex](#propertynearestkeyindex) 返回。 |
+| `newValue` | 值 | 适合被设置属性类型的值；参见 [Property.propertyValueType](#propertypropertyvaluetype)。 |
 
 #### 返回值
 
@@ -1495,10 +1495,10 @@ Property对象，更新后的下拉菜单控件的菜单属性。
 
 #### 参数
 
-| 参数        |         类型         |         描述         |
-| ----------- | -------------------- | ----------------------------------------------------------------------------------------------------- |
-| `time`      | 浮点值       | 设置值的时间，单位为秒。合成的开始时间为 0。          |
-| `newValue`  | 值           | 适合被设置属性类型的值；参见 [Property.propertyValueType](#propertypropertyvaluetype)。       |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `time` | 浮点值 | 设置值的时间，单位为秒。合成的开始时间为 0。 |
+| `newValue` | 值 | 适合被设置属性类型的值；参见 [Property.propertyValueType](#propertypropertyvaluetype)。 |
 
 #### 返回值
 
@@ -1516,10 +1516,10 @@ Property对象，更新后的下拉菜单控件的菜单属性。
 
 #### 参数
 
-| 参数         |    类型    |         描述         |
-| ------------ | -------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `times`      | 浮点值数组         | 时间数组，单位为秒。合成的开始时间为 0。   |
-| `newValues`  | 值数组    | 适合被设置属性类型的值数组；参见 [Property.propertyValueType](#propertypropertyvaluetype)。           |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `times` | 浮点值数组 | 时间数组，单位为秒。合成的开始时间为 0。 |
+| `newValues` | 值数组 | 适合被设置属性类型的值数组；参见 [Property.propertyValueType](#propertypropertyvaluetype)。 |
 
 #### 返回值
 
@@ -1541,10 +1541,10 @@ Property对象，更新后的下拉菜单控件的菜单属性。
 
 #### 参数
 
-| 参数    |         类型         |   描述            |
-| --------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `time`          | 浮点值       | 评估值的时间，单位为秒。合成的开始时间为 0。      |
-| `preExpression` | 布尔值       | 如果属性有表达式且此参数为 `true`，则返回指定时间的值而不应用表达式。当为 `false` 时，返回表达式在指定时间评估的结果。如果属性没有关联的表达式，则忽略此参数。           |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `time` | 浮点值 | 评估值的时间，单位为秒。合成的开始时间为 0。 |
+| `preExpression` | 布尔值 | 如果属性有表达式且此参数为 `true`，则返回指定时间的值而不应用表达式。当为 `false` 时，返回表达式在指定时间评估的结果。如果属性没有关联的表达式，则忽略此参数。 |
 
 #### 返回值
 

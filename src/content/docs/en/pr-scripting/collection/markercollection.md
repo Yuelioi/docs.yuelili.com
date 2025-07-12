@@ -7,13 +7,11 @@ title: MarkerCollection object
 
 `app.project.rootItem.children[index].getMarkers()`
 
-
 The MarkerCollection object represents a collection of [Marker objects](../../general/marker) in a [ProjectItem object](../../item/projectitem) and [Sequence object](../../sequence/sequence).
 
 :::info
 MarkerCollection is a subclass of [Collection object](../collection). All methods and attributes of Collection, in addition to those listed below, are available when working with MarkerCollection.
 :::
-
 
 ---
 
@@ -24,7 +22,6 @@ MarkerCollection is a subclass of [Collection object](../collection). All method
 `app.project.sequences[index].markers.numMarkers`
 
 `app.project.rootItem.children[index].getMarkers().numMarkers`
-
 
 #### Description
 
@@ -44,16 +41,15 @@ Integer, read-only.
 
 `app.project.rootItem.children[index].getMarkers().createMarker(time)`
 
-
 #### Description
 
 Create a new [Marker object](../../general/marker) on a project item or a sequence.
 
 #### Parameters
 
-| Parameter | Type  |                     Description                     |
-| --------- | ----- | --------------------------------------------------- |
-| `time`    | Float | A time, in seconds, where marker should be created. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `time` | Float | A time, in seconds, where marker should be created. |
 
 #### Returns
 
@@ -67,16 +63,15 @@ Create a new [Marker object](../../general/marker) on a project item or a sequen
 
 `app.project.rootItem.children[index].getMarkers().deleteMarker(marker)`
 
-
 #### Description
 
 Remove a given marker object from a collection.
 
 #### Parameters
 
-| Parameter |                 Type                  |                Description                 |
-| --------- | ------------------------------------- | ------------------------------------------ |
-| `marker`  | [Marker object](../../general/marker) | A marker object to remove from collection. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `marker` | [Marker object](../../general/marker) | A marker object to remove from collection. |
 
 #### Returns
 
@@ -92,8 +87,8 @@ var marker = markers.getFirstMarker();
 var count = markers.numMarkers;
 
 while (marker) {
-    markers.deleteMarker(marker);
-    marker = markers.getFirstMarker();
+ markers.deleteMarker(marker);
+ marker = markers.getFirstMarker();
 }
 
 alert('Removed ' + count.toString() + ' markers');
@@ -106,7 +101,6 @@ alert('Removed ' + count.toString() + ' markers');
 `app.project.sequences[index].markers.getFirstMarker()`
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker()`
-
 
 #### Description
 
@@ -128,7 +122,6 @@ None.
 
 `app.project.rootItem.children[index].getMarkers().getLastMarker()`
 
-
 #### Description
 
 Retrieve the very last marker object, sorted by time in seconds, on a given project item or sequence.
@@ -149,15 +142,14 @@ None.
 
 `app.project.rootItem.children[index].getMarkers().getNextMarker(currentMarker)`
 
-
 #### Description
 
 Get the next available marker, sorted by seconds, starting from a given one.
 
 #### Parameters
 
-|    Parameter    |                 Type                  |                       Description                       |
-| --------------- | ------------------------------------- | ------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `currentMarker` | [Marker object](../../general/marker) | A starting marker object, from which to get a next one. |
 
 #### Returns
@@ -172,15 +164,14 @@ Get the next available marker, sorted by seconds, starting from a given one.
 
 `app.project.rootItem.children[index].getMarkers().getPrevMarker(currentMarker)`
 
-
 #### Description
 
 Get the previous available marker, sorted by seconds, starting from a given one.
 
 #### Parameters
 
-|    Parameter    |                 Type                  |                         Description                         |
-| --------------- | ------------------------------------- | ----------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `currentMarker` | [Marker object](../../general/marker) | A starting marker object, from which to get a previous one. |
 
 #### Returns

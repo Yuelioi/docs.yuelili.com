@@ -13,10 +13,10 @@ title: 查看对象模型
 
 在默认的Adobe安装中，ESTK位于以下位置：
 
-|   操作系统   |       路径        |
-| ----------- | --------------------------------------------------------------------------------- |
-| Windows     | `\系统盘\Program Files\Adobe\Adobe Utilities CC\ExtendScript Toolkit CC`    |
-| Mac OS      | `\系统盘\Applications\Utilities\Adobe Utilities CC\ExtendScript Toolkit CC`       |
+| 操作系统 | 路径 |
+| --- | --- |
+| Windows | `\系统盘\Program Files\Adobe\Adobe Utilities CC\ExtendScript Toolkit CC` |
+| Mac OS | `\系统盘\Applications\Utilities\Adobe Utilities CC\ExtendScript Toolkit CC` |
 
 1. 启动ESTK。
 2. 在ESTK中，选择帮助 > 对象模型查看器。

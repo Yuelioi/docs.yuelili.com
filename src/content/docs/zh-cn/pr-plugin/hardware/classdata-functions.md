@@ -13,8 +13,8 @@ title: ClassData 函数
 
 ```c++
 typedef struct {
-  SetClassDataFunc  setClassData;
-  GetClassDataFunc  getClassData;
+ SetClassDataFunc setClassData;
+ GetClassDataFunc getClassData;
 } ClassDataFuncs, *ClassDataFuncsPtr;
 ```
 
@@ -34,16 +34,16 @@ typedef struct {
 
 ```cpp
 int setClassData (
-    unsigned int  theClass,
-    void      *info);
+ unsigned int theClass,
+ void *info);
 ```
 
 #### 参数
 
-| 参数    | 类型    | 描述        |
-| ----------- | ---------------- | -------------------------------------------------------------------- |
-| `theClass`  | 无符号整数   | 要设置的类。使用唯一的 4 字节代码。        |
-| `info`      | 指针或句柄   | 要设置的类数据。它可以作为指针或句柄使用。    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `theClass` | 无符号整数 | 要设置的类。使用唯一的 4 字节代码。 |
+| `info` | 指针或句柄 | 要设置的类数据。它可以作为指针或句柄使用。 |
 
 ---
 
@@ -57,11 +57,11 @@ int setClassData (
 
 ```cpp
 int getClassData (
-    unsigned int  theClass);
+ unsigned int theClass);
 ```
 
 #### 参数
 
-| 参数    | 类型    | 描述    |
-| ----------- | ---------------- | ------------------------------ |
-| `theClass`  | 无符号整数   | 要检索数据的类。       |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `theClass` | 无符号整数 | 要检索数据的类。 |

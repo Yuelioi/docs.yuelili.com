@@ -25,35 +25,35 @@ MarkerValue 对象表示图层或合成标记，它将注释以及可选的章�
 
 - 要在 2 秒处设置一个显示“Fade Up”的**图层**标记：
 
-  ```javascript
-  var myMarker = new MarkerValue("FadeUp");
-  myLayer.property("Marker").setValueAtTime(2, myMarker);
-  // 或者
-  myLayer.marker.setValueAtTime(2, myMarker);
-  ```
+ ```javascript
+ var myMarker = new MarkerValue("FadeUp");
+ myLayer.property("Marker").setValueAtTime(2, myMarker);
+ // 或者
+ myLayer.marker.setValueAtTime(2, myMarker);
+ ```
 
 - 要在 2 秒处设置一个显示“Fade Up”的**合成**标记：
 
-  ```javascript
-  var myMarker = new MarkerValue("FadeUp");
-  comp.markerProperty.setValueAtTime(2, myMarker);
-  ```
+ ```javascript
+ var myMarker = new MarkerValue("FadeUp");
+ comp.markerProperty.setValueAtTime(2, myMarker);
+ ```
 
 - 从特定标记获取注释值：
 
-  ```javascript
-  var layer = app.project.item(1).layer(1);
-  var markerProperty = layer.marker;
+ ```javascript
+ var layer = app.project.item(1).layer(1);
+ var markerProperty = layer.marker;
 
-  var commentOfFirstMarker = markerProperty.keyValue(1).comment;
+ var commentOfFirstMarker = markerProperty.keyValue(1).comment;
 
-  // 或者
-  var commentOfMarkerAtTime4 = markerProperty.valueAtTime(4.0, true).comment;
+ // 或者
+ var commentOfMarkerAtTime4 = markerProperty.valueAtTime(4.0, true).comment;
 
-  // 或者
-  var markerValueAtTimeClosestToTime4 = markerProperty.keyValue(markerProperty.nearestKeyIndex(4.0));
-  var commentOfMarkerClosestToTime4 = markerValueAtTimeClosestToTime4.comment;
-  ```
+ // 或者
+ var markerValueAtTimeClosestToTime4 = markerProperty.keyValue(markerProperty.nearestKeyIndex(4.0));
+ var commentOfMarkerClosestToTime4 = markerValueAtTimeClosestToTime4.comment;
+ ```
 
 ---
 
@@ -219,8 +219,8 @@ Flash 视频提示点名称，如标记对话框中所示。
 
 #### 参数
 
-| 参数      | 类型       | 描述           |
-| ----------------- | ---------- | ------------------------------------------------------------------------------------------------ |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `keyValuePairs` | 键值对对象 | 包含键值对作为属性和值的对象。调用对象的 `toString()` 方法将每个属性的字符串值分配给命名的键。 |
 
 #### 返回

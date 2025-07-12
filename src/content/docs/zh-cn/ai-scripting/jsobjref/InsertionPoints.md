@@ -67,9 +67,9 @@ title: 插入点
 
 #### 参数
 
-| 参数      | 类型     | 描述         |
-| --------- | -------------- | ------------------ |
-| `itemKey` | 字符串, 数字   | 字符串或数字键     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `itemKey` | 字符串, 数字 | 字符串或数字键 |
 
 #### 返回值
 
@@ -96,7 +96,7 @@ redraw();
 // 使用插入点在每个字符之间添加空格。
 var ip;
 for (var i = 0; i < textRef.insertionPoints.length; i += 2) {
-    ip = textRef.insertionPoints[i];
-    ip.characters.add(" ");
+ ip = textRef.insertionPoints[i];
+ ip.characters.add(" ");
 }
 ```

@@ -7,13 +7,11 @@ title: TrackCollection object
 
 `app.project.sequences[index].videoTracks`
 
-
 The TrackCollection object represents a collection of [Track objects](../../sequence/track) in a sequence.
 
 :::info
 TrackCollection is a subclass of [Collection object](../collection). All methods and attributes of Collection, in addition to those listed below, are available when working with TrackCollection.
 :::
-
 
 ---
 
@@ -24,7 +22,6 @@ TrackCollection is a subclass of [Collection object](../collection). All methods
 `app.project.sequences[index].audioTracks.numTracks`
 
 `app.project.sequences[index].videoTracks.numTracks`
-
 
 #### Description
 

@@ -79,12 +79,12 @@ GetProperty(kVideoSegmentProperty_Transition_TransitionDuration, duration);
 
 ```cpp
 prSuiteError xGPUFilterEntry (
-  csSDK_uint32      inHostInterfaceVersion,
-  csSDK_int32*      ioIndex,
-  prBool   inStartup,
-  piSuitesPtr   piSuites,
-  PrGPUFilter*      outFilter,
-  PrGPUFilterInfo*  outFilterInfo)
+ csSDK_uint32 inHostInterfaceVersion,
+ csSDK_int32* ioIndex,
+ prBool inStartup,
+ piSuitesPtr piSuites,
+ PrGPUFilter* outFilter,
+ PrGPUFilterInfo* outFilterInfo)
 ```
 
 如果`inStartup`为非零值，效果/过渡应启动并初始化实现PrGPUFilter所需的函数，以及PrGPUFilterInfo中的信息。

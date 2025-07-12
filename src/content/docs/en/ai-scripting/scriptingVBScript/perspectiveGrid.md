@@ -7,7 +7,6 @@ title: Working with the perspective grid
 This functionality was added in Illustrator CC 2017
 :::
 
-
 The Perspective Grid is a feature that enables you to create and manipulate art in a spatial environment using established laws of perspective. Enable Perspective Grid using the View > Perspective Grid menu or the perspective tools in the toolbar.
 
 The SDK provides an API for working with the perspective grid programmatically, and your scripts have some access to this API. A script can:
@@ -78,12 +77,12 @@ docRef.HidePerspectiveGrid();
 
 The perspective grid plane types are:
 
-|     Plane     |        Type        |
-| ------------- | ------------------ |
-| Left plane    | `aiLEFTPLANE (1)`  |
-| Right plane   | `aiRIGHTPLANE (2)` |
-| Floor plane   | `aiFLOORPLANE (3)` |
-| Invalid plane | `aiNOPLANE (4)`    |
+| Plane | Type |
+| --- | --- |
+| Left plane | `aiLEFTPLANE (1)` |
+| Right plane | `aiRIGHTPLANE (2)` |
+| Floor plane | `aiFLOORPLANE (3)` |
+| Invalid plane | `aiNOPLANE (4)` |
 
 For a one-point perspective grid, only the left and floor plane are valid.
 
@@ -119,7 +118,7 @@ docRef.ShowPerspectiveGrid()
 
 Rem Check if active plane is set to left, otherwise set it to left
 If docRef.GetPerspectiveActivePlane() <> 1 Then
-    docRef.SetPerspectiveActivePlane(1) 'aiLEFTPLANE
+ docRef.SetPerspectiveActivePlane(1) 'aiLEFTPLANE
 End If
 
 Rem Draw rectangle in perspective, then resize to 200% and move
@@ -176,7 +175,7 @@ docRef.ShowPerspectiveGrid()
 
 Rem Check if active plane is set to left, otherwise set it to left
 If docRef.GetPerspectiveActivePlane() <> 1 Then
-    docRef.SetPerspectiveActivePlane(1) 'aiLEFTPLANE
+ docRef.SetPerspectiveActivePlane(1) 'aiLEFTPLANE
 End If
 
 Rem Bring the ellipse to the active plane (left plane)

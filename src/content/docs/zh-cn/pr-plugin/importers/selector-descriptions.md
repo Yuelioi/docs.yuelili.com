@@ -37,9 +37,9 @@ title: 选择器描述
 有关自定义导入器的更多信息，请参见附加详细信息。
 
 ```cpp
-noFile    = kPrTrue;
-hasSetup  = kPrTrue;
-canOpen   = kPrTrue;
+noFile = kPrTrue;
+hasSetup = kPrTrue;
+canOpen = kPrTrue;
 canCreate = kPrTrue;
 addToMenu = imMenuNew;
 ```

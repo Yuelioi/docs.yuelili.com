@@ -7,7 +7,6 @@ title: examples
 Many of the examples in this section are based on expressions provided by Dan Ebberts.
 :::
 
-
 ---
 
 ## Get this project's AEP name (AE 15.1+ only)
@@ -35,9 +34,9 @@ You can create an expression without using properties from other layers. For exa
 
 1. Select a layer, press P to reveal its Position property in the Timeline panel, and Alt-click (Windows) or Option-click (Mac OS) the stopwatch to the left of the property name.
 2. Enter the following in the expression field:
-    ```js
-    [(thisComp.width/2), (thisComp.height/2)] + [Math.sin(time)*50, -Math.cos(time)*50]
-    ```
+ ```js
+ [(thisComp.width/2), (thisComp.height/2)] + [Math.sin(time)*50, -Math.cos(time)*50]
+ ```
 
 ---
 
@@ -51,13 +50,13 @@ You can use the pick whip to link rotation values between layers to animate the 
 4. Set Rotation keyframes for the hour hand.
 5. Select the Rotation property for the minute hand and choose `Animation > Add Expression.`
 6. Drag the pick whip to the Rotation property for the hour hand. The following expression appears:
-    ```js
-    thisComp.layer("hour hand").rotation
-    ```
+ ```js
+ thisComp.layer("hour hand").rotation
+ ```
 7. To make the minute hand rotate 12 times as fast as the hour hand, add `* 12` at the end of the expression as follows:
-    ```js
-    thisComp.layer("hour hand").rotation * 12
-    ```
+ ```js
+ thisComp.layer("hour hand").rotation * 12
+ ```
 
 ---
 
@@ -69,9 +68,9 @@ This example expression positions and maintains one layer at a balanced distance
 2. Animate the positions of the first two layers in the Timeline panel.
 3. Select the third layer, press P to reveal the Position property, and Alt-click (Windows) or Option-click (Mac OS) the stopwatch button to the left of the property name.
 4. Enter the following in the expression field:
-    ```js
-    (thisComp.layer(1).position + thisComp.layer(2).position)/2
-    ```
+ ```js
+ (thisComp.layer(1).position + thisComp.layer(2).position)/2
+ ```
 
 ---
 
@@ -83,9 +82,9 @@ This example expression instructs a layer to be at the same position as the next
 2. Animate the position of the first layer.
 3. Select the second layer, press P to reveal the Position property, and Alt-click (Windows) or Option-click (Mac OS) the stopwatch button to the left of the property name.
 4. Enter the following in the expression field:
-    ```js
-    thisComp.layer(thisLayer, -1).position.valueAtTime(time - .5)
-    ```
+ ```js
+ thisComp.layer(thisLayer, -1).position.valueAtTime(time - .5)
+ ```
 5. Duplicate the last layer five times by selecting it and pressing Ctrl+D (Windows) or Command+D (Mac OS) five times.
 
 All layers follow the same path, and each is delayed 0.5 seconds from the previous.
@@ -93,7 +92,6 @@ All layers follow the same path, and each is delayed 0.5 seconds from the previo
 :::note
 Dan Ebberts provides more examples and techniques for creating trails of images on his [MotionScript](http://www.motionscript.com/mastering-expressions/follow-the-leader.html).
 :::
-
 
 ---
 
@@ -108,9 +106,9 @@ You can also use other effects, such as Ripple, with this expression.
 3. Apply the Bulge effect to the other layer. (See Apply an effect or animation preset.)
 4. Select the Bulge Center property of the Bulge effect in the Timeline panel and choose Animation > Add Expression, or Alt-click (Windows) or Option-click (Mac OS) the stopwatch button for the property.
 5. Select the default expression text and type the following:
-    ```js
-    fromWorld(thisComp.layer("Magnifier").position)
-    ```
+ ```js
+ fromWorld(thisComp.layer("Magnifier").position)
+ ```
 
 ---
 
@@ -120,7 +118,7 @@ Apply the following expression to the Opacity property of a 3D layer:
 
 ```js
 startFade = 500; // Start fade 500 pixels from camera.
-endFade = 1500;  // End fade 1500 pixels from camera.
+endFade = 1500; // End fade 1500 pixels from camera.
 
 try { // Check whether there's a camera
 C = thisComp.activeCamera.toWorld([0,0,0]);
@@ -152,7 +150,6 @@ if (toCompVec([0, 0, 1])[2] > 0 ) value else 0
 Dan Ebberts explains this expression on his [site](http://www.adobe.com/go/learn_ae_motionscriptinvisiblelayer).
 :::
 
-
 ---
 
 ## Flip layer horizontally if facing away from camera
@@ -174,8 +171,8 @@ n = 0;
 t = 0;
 
 if (marker.numKeys > 0){
-    n = marker.nearestKey(time).index;
-    if (marker.key(n).time > time) n--;
+ n = marker.nearestKey(time).index;
+ if (marker.key(n).time > time) n--;
 }
 
 if (n > 0) t = time - marker.key(n).time;
@@ -202,7 +199,7 @@ timeToStart = 2;
 if (time > timeToStart) {
 wiggle(3,25);
 } else {
-    value;
+ value;
 }
 ```
 
@@ -212,9 +209,9 @@ Apply the following expression to a property to stop wiggling it at time 4 secon
 timeToStop = 4;
 
 if (time > timeToStop) {
-        value;
+ value;
 } else {
-        wiggle(3,25);
+ wiggle(3,25);
 }
 ```
 
@@ -225,9 +222,9 @@ timeToStart = 2;
 timeToStop = 4;
 
 if ((time > timeToStart) && (time < timeToStop)) {
-    wiggle(3,25);
+ wiggle(3,25);
 } else {
-    value;
+ value;
 }
 ```
 
@@ -247,4 +244,3 @@ dot(V1,V2);
 :::note
 Dan Ebberts explains this expression example in detail on his [website](http://motionscript.com/design-guide/auto-focus.html).
 :::
-

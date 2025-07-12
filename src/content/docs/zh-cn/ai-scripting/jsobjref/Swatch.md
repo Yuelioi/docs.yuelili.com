@@ -96,8 +96,8 @@ title: 色板
 ```javascript
 // 更改最后一个色板的名称
 if ( app.documents.length > 0 && app.activeDocument.swatches.length > 0 ) {
-    var lastIndex = app.activeDocument.swatches.length - 1;
-    var lastSwatch = app.activeDocument.swatches[lastIndex];
-    lastSwatch.name = "TheLastSwatch";
+ var lastIndex = app.activeDocument.swatches.length - 1;
+ var lastSwatch = app.activeDocument.swatches[lastIndex];
+ lastSwatch.name = "TheLastSwatch";
 }
 ```

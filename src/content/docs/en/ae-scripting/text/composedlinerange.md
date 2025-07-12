@@ -9,7 +9,6 @@ title: composedlinerange
 This functionality was added in After Effects 24.3
 :::
 
-
 #### Description
 
 The ComposedLineRange object is an accessor to a composed line range of the [TextDocument object](../textdocument) instance it was created from.

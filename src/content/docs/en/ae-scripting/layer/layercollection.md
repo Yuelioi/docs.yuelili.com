@@ -13,7 +13,6 @@ The LayerCollection object represents a set of layers. The LayerCollection belon
 LayerCollection is a subclass of [Collection object](../../other/collection). All methods and attributes of Collection, in addition to those listed below, are available when working with LayerCollection.
 :::
 
-
 #### Example
 
 Given that the first item in the project is a CompItem and the second item is an AVItem, this example shows the number of layers in the CompItem's layer collection, adds a new layer based on an AVItem in the project, then displays the new number of layers.
@@ -41,12 +40,12 @@ Creates a new [AVLayer object](../avlayer) containing the specified item, and ad
 
 #### Parameters
 
-| Parameter  |                Type                |                                                                                                                                Description                                                                                                                                |
-|------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `item`     | [AVItem object](../../item/avitem) | The item to be added.                                                                                                                                                                                                                                                     |
-| `duration` | Floating-point value               | Optional. The length of a still layer in seconds. Used only if the item contains a piece of still footage. Has no effect on movies, sequences or audio.                                                                                                                   |
-|            |                                    | If supplied, sets the duration value of the new layer. Otherwise, the duration value is set according to user preferences.                                                                                                                                                |
-|            |                                    | By default, this is the same as the duration of the containing [CompItem](../../item/compitem). To set another preferred value, open `Edit > Preferences > Import` (Windows) or `After Effects > Preferences > Import` (Mac OS), and specify options under Still Footage. |
+| Parameter | Type | Description |
+|---|---|---|
+| `item` | [AVItem object](../../item/avitem) | The item to be added. |
+| `duration` | Floating-point value | Optional. The length of a still layer in seconds. Used only if the item contains a piece of still footage. Has no effect on movies, sequences or audio. |
+| | | If supplied, sets the duration value of the new layer. Otherwise, the duration value is set according to user preferences. |
+| | | By default, this is the same as the duration of the containing [CompItem](../../item/compitem). To set another preferred value, open `Edit > Preferences > Import` (Windows) or `After Effects > Preferences > Import` (Mac OS), and specify options under Still Footage. |
 
 #### Returns
 
@@ -64,8 +63,8 @@ Creates a new paragraph (box) text layer with [TextDocument.lineOrientation](../
 
 #### Parameters
 
-|     Parameter     |              Type              |             Description             |
-| ----------------- | ------------------------------ | ----------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `[width, height]` | Array of floating-point values | The dimensions of the new text box. |
 
 #### Returns
@@ -84,9 +83,9 @@ Creates a new camera layer and adds the [CameraLayer object](../cameralayer) to 
 
 #### Parameters
 
-|   Parameter   |                   Type                   |                                             Description                                             |
-| ------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `name`        | String                                   | The name of the new layer.                                                                          |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | The name of the new layer. |
 | `centerPoint` | Array of floating-point values, `[x, y]` | The initial X and Y values of the new camera's Point of Interest property. The z value is set to 0. |
 
 #### Returns
@@ -105,9 +104,9 @@ Creates a new light layer and adds the [LightLayer object](../lightlayer) to thi
 
 #### Parameters
 
-|   Parameter   |                   Type                   |         Description         |
-| ------------- | ---------------------------------------- | --------------------------- |
-| `name`        | String                                   | The name of the new layer.  |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | The name of the new layer. |
 | `centerPoint` | Array of floating-point values, `[x, y]` | The center of the new light |
 
 #### Returns
@@ -126,10 +125,10 @@ Creates a new null layer and adds the [AVLayer object](../avlayer) to this colle
 
 #### Parameters
 
-| Parameter  |         Type         |                                                                                                                                Description                                                                                                                                |
-|------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `duration` | Floating-point value | Optional. The length of a still layer in seconds. If supplied, sets the `duration` value of the new layer. Otherwise, the `duration` value is set according to user preferences.                                                                                          |
-|            |                      | By default, this is the same as the duration of the containing [CompItem](../../item/compitem). To set another preferred value, open `Edit > Preferences > Import (Windows)` or `After Effects > Preferences > Import (Mac OS)`, and specify options under Still Footage. |
+| Parameter | Type | Description |
+|---|---|---|
+| `duration` | Floating-point value | Optional. The length of a still layer in seconds. If supplied, sets the `duration` value of the new layer. Otherwise, the `duration` value is set according to user preferences. |
+| | | By default, this is the same as the duration of the containing [CompItem](../../item/compitem). To set another preferred value, open `Edit > Preferences > Import (Windows)` or `After Effects > Preferences > Import (Mac OS)`, and specify options under Still Footage. |
 
 #### Returns
 
@@ -165,15 +164,15 @@ Creates a new [SolidSource object](../../sources/solidsource), with values set a
 
 #### Parameters
 
-|   Parameter   |                 Type                 |                                                                                                                               Description                                                                                                                                |
-|---------------|--------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `color`       | Array of three floating-point values | The color of the solid. Three numbers, `[R, G, B]`, in the range `[0.0..1.0]`                                                                                                                                                                                            |
-| `name`        | String                               | The name of the solid.                                                                                                                                                                                                                                                   |
-| `width`       | Integer                              | The width of the solid in pixels, in the range `[4..30000]`                                                                                                                                                                                                              |
-| `height`      | Integer                              | The height of the solid in pixels, in the range `[4..30000]`                                                                                                                                                                                                             |
-| `pixelAspect` | Floating-point value                 | The pixel aspect ratio of the solid, in the range `[0.01..100.0]`                                                                                                                                                                                                        |
-| `duration`    | Floating-point value                 | Optional. The length of a still layer in seconds. If supplied, sets the `duration` value of the new layer. Otherwise, the `duration` value is set according to user preferences.                                                                                         |
-|               |                                      | By default, this is the same as the duration of the containing [CompItem](../../item/compitem). To set another preferred value, open `Edit > Preferences > Import` (Windows) or `After Effects > Preferences > Import` (MacOS), and specify options under Still Footage. |
+| Parameter | Type | Description |
+|---|---|---|
+| `color` | Array of three floating-point values | The color of the solid. Three numbers, `[R, G, B]`, in the range `[0.0..1.0]` |
+| `name` | String | The name of the solid. |
+| `width` | Integer | The width of the solid in pixels, in the range `[4..30000]` |
+| `height` | Integer | The height of the solid in pixels, in the range `[4..30000]` |
+| `pixelAspect` | Floating-point value | The pixel aspect ratio of the solid, in the range `[0.01..100.0]` |
+| `duration` | Floating-point value | Optional. The length of a still layer in seconds. If supplied, sets the `duration` value of the new layer. Otherwise, the `duration` value is set according to user preferences. |
+| | | By default, this is the same as the duration of the containing [CompItem](../../item/compitem). To set another preferred value, open `Edit > Preferences > Import` (Windows) or `After Effects > Preferences > Import` (MacOS), and specify options under Still Footage. |
 
 #### Returns
 
@@ -191,8 +190,8 @@ Creates a new point text layer with [TextDocument.lineOrientation](../../text/te
 
 #### Parameters
 
-|  Parameter   |  Type  |                                                                 Description                                                                  |
-| ------------ | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `sourceText` | String | Optional. The source text of the new layer, or a [TextDocument object](../../text/textdocument) containing the source text of the new layer. |
 
 #### Returns
@@ -209,17 +208,15 @@ Creates a new point text layer with [TextDocument.lineOrientation](../../text/te
 This functionality was added in After Effects 24.2
 :::
 
-
 #### Description
 
 Creates a new paragraph (box) text layer with [TextDocument.lineOrientation](../../text/textdocument#textdocumentlineorientation) set to `LineOrientation.VERTICAL_RIGHT_TO_LEFT` and adds the new [TextLayer object](../textlayer) to this collection. To create a point text layer, use the [LayerCollection.addText()](#layercollectionaddtext) or [LayerCollection.addVerticalText()](#layercollectionaddverticaltext) methods.
 
 #### Parameters
 
-|     Parameter     |              Type              |             Description             |
-| ----------------- | ------------------------------ | ----------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `[width, height]` | Array of floating-point values | The dimensions of the new text box. |
-
 
 #### Returns
 
@@ -235,15 +232,14 @@ TextLayer object.
 This functionality was added in After Effects 24.2
 :::
 
-
 #### Description
 
 Creates a new point text layer with [TextDocument.lineOrientation](../../text/textdocument#textdocumentlineorientation) set to `LineOrientation.VERTICAL_RIGHT_TO_LEFT` and adds the new [TextLayer object](../textlayer) to this collection. To create a paragraph (box) text layer, use the [LayerCollection.addBoxText()](#layercollectionaddboxtext) or [LayerCollection.addVerticalBoxText()](#layercollectionaddverticalboxtext) methods.
 
 #### Parameters
 
-|  Parameter   |  Type  |                                                                 Description                                                                  |
-| ------------ | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `sourceText` | String | Optional. The source text of the new layer, or a [TextDocument object](../../text/textdocument) containing the source text of the new layer. |
 
 #### Returns
@@ -280,11 +276,11 @@ Creates a new [CompItem object](../../item/compitem) and moves the specified lay
 
 #### Parameters
 
-|      Parameter      |       Type        |                                                                                                                                                                                              Description                                                                                                                                                                                              |
-| ------------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `layerIndices`      | Array of integers | The position indexes of the layers to be collected.                                                                                                                                                                                                                                                                                                                                                   |
-| `name`              | String            | The name of the new [CompItem](../../item/compitem) object.                                                                                                                                                                                                                                                                                                                                          |
-| `moveAllAttributes` | Boolean           | Optional. When `true` (the default), retains all attributes in the new composition. This is the same as selecting the "Move all attributes into the new composition" option in the Pre-compose dialog box. You can only set this to `false` if there is just one index in the `layerIndices` array. This is the same as selecting the "Leave all attributes in" option in the Pre-compose dialog box. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `layerIndices` | Array of integers | The position indexes of the layers to be collected. |
+| `name` | String | The name of the new [CompItem](../../item/compitem) object. |
+| `moveAllAttributes` | Boolean | Optional. When `true` (the default), retains all attributes in the new composition. This is the same as selecting the "Move all attributes into the new composition" option in the Pre-compose dialog box. You can only set this to `false` if there is just one index in the `layerIndices` array. This is the same as selecting the "Leave all attributes in" option in the Pre-compose dialog box. |
 
 #### Returns
 

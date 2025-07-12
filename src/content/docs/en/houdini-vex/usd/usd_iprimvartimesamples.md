@@ -41,16 +41,16 @@ float time_codes[] = usd_primvartimesamples(0, "/geo/cube", "foo");
 // Get primvar values at authored time samples on the given prim or its ancestor.
 float[] usd_iprimvartimesamplevalues(const int input; const string primpath, primvarname)
 {
-    float result[];
+ float result[];
 
-    float time_samples[] = usd_iprimvartimesamples( input, primpath, primvarname );
-    foreach( float time_code ; time_samples ) 
-    {
-        float value = usd_iprimvar( input, primpath, primvarname, time_code );
-        push( result, value );
-    }
+ float time_samples[] = usd_iprimvartimesamples( input, primpath, primvarname );
+ foreach( float time_code ; time_samples ) 
+ {
+ float value = usd_iprimvar( input, primpath, primvarname, time_code );
+ push( result, value );
+ }
 
-    return result;
+ return result;
 }
 
 ```

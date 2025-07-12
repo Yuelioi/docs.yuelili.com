@@ -24,8 +24,8 @@ String literals can be enclosed in either single quotes (') or double quotes (")
 ```vex
 string s = 'foo';
 string t = "bar";
-string py = r"Hello world\n";        // Python style, equivalent to "Hello world\\n"
-string cpp = R"(Hello world\n)";   // C++ style, equivalent to "Hello world\\n"
+string py = r"Hello world\n"; // Python style, equivalent to "Hello world\\n"
+string cpp = R"(Hello world\n)"; // C++ style, equivalent to "Hello world\\n"
 
 ```
 
@@ -41,19 +41,19 @@ The syntax for strings can be summarized
 - Escaped strings `"text"` or `'text'`
 - Python raw-strings `r"raw text"`
 - C++ raw-string `R"delimiter(raw text)delimiter"`
-  Where the `delimiter` is an optional string of 0 to 16 characters. Unlike
-  Python raw-strings, C++ style raw strings can contain multi-line text and
-  even binary data.
+ Where the `delimiter` is an optional string of 0 to 16 characters. Unlike
+ Python raw-strings, C++ style raw strings can contain multi-line text and
+ even binary data.
 
 ```vex
 string escaped = 'Line 1\nLine 2';
-string raw = r"Line 1\nLine 1 continues";        // "Line 1\\nLine 1 continues"
-string cppraw = R"(Line 1\nLine 1 continues)";        // "Line 1\\nLine 1 continues"
+string raw = r"Line 1\nLine 1 continues"; // "Line 1\\nLine 1 continues"
+string cppraw = R"(Line 1\nLine 1 continues)"; // "Line 1\\nLine 1 continues"
 string cppmultiline = R"multi(This is a long
-    string which has multiple lines.  The string
-    also contains an embedded raw string R"(raw string)"
-    But since the delimiter doesn't match, the string isn't
-    actually ended until here.)multi";
+ string which has multiple lines. The string
+ also contains an embedded raw string R"(raw string)"
+ But since the delimiter doesn't match, the string isn't
+ actually ended until here.)multi";
 
 ```
 
@@ -83,7 +83,7 @@ To declare a string variable, the general form is
 
 ```vex
 // My string is a normal string
-string   mystring;
+string mystring;
 
 ```
 
@@ -94,7 +94,7 @@ To declare a function that returns a string:
 string rgb_name()
 {
 ...
-};    
+}; 
 
 ```
 

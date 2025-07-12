@@ -30,7 +30,7 @@ reflect_or_refract = bouncemask("reflect refract")
 ```vex
 mask = getbounces(mybsdf)
 if (mask & bouncemask("reflect")) {
-    ...
+ ...
 }
 
 ```

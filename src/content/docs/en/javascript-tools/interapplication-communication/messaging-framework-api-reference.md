@@ -13,11 +13,11 @@ The messaging API defines the BridgeTalk class. Static properties and methods of
 
 The sample code distributed with the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) includes these code examples that specifically demonstrate the use of interapplication messaging:
 
-|                     Interapplication messaging example                      |              Description               |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| [MessagingBetweenApps.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/MessagingBetweenApps.jsx)         | Shows how to send a message to a Creative Suite application and receive a response.                |
-| [MessageSendingToInDesign.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/MessageSendingToInDesign.jsx) | Sends message to InDesign through BridgeTalk.                        |
-| SendArrayToPhotoshop.jsx                                | Sends message to Photoshop that creates an array in the target and passes it back to the sender.             |
-| [SendObjectToPhotoshop.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SendObjectToPhotoshop.jsx)       | Sends message to Photoshop that creates a JavaScript object in the target and passes it back to the sender.            |
-| [SendDOMObjectToPhotoshop.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SnpSendDOMObject.jsx)         | Sends message to Photoshop that creates a Photoshop object in the target and passes values from it back to the sender. |
-| [SaveAsDifferentFileType.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SaveAsDifferentFileType.jsx)   | Locates an image file, uses messaging to load it into Photoshop and save it as a different file type.        |
+| Interapplication messaging example | Description |
+| --- | --- |
+| [MessagingBetweenApps.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/MessagingBetweenApps.jsx) | Shows how to send a message to a Creative Suite application and receive a response. |
+| [MessageSendingToInDesign.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/MessageSendingToInDesign.jsx) | Sends message to InDesign through BridgeTalk. |
+| SendArrayToPhotoshop.jsx | Sends message to Photoshop that creates an array in the target and passes it back to the sender. |
+| [SendObjectToPhotoshop.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SendObjectToPhotoshop.jsx) | Sends message to Photoshop that creates a JavaScript object in the target and passes it back to the sender. |
+| [SendDOMObjectToPhotoshop.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SnpSendDOMObject.jsx) | Sends message to Photoshop that creates a Photoshop object in the target and passes values from it back to the sender. |
+| [SaveAsDifferentFileType.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SaveAsDifferentFileType.jsx) | Locates an image file, uses messaging to load it into Photoshop and save it as a different file type. |

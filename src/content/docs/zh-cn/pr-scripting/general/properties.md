@@ -47,9 +47,9 @@ title: 属性对象
 
 #### 参数
 
-| 参数    | 类型   | 描述    |
-| ----------- | ------ | ------------------ |
-| `property`  | String | 要检查的属性   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `property` | String | 要检查的属性 |
 
 #### 返回值
 
@@ -81,9 +81,9 @@ alert('属性 "' + property + '" 存在: ' + exists.toString());
 
 #### 参数
 
-| 参数    | 类型   | 描述   |
-| ----------- | ------ | ------------------------ |
-| `property`  | String | 要获取值的属性   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `property` | String | 要获取值的属性 |
 
 #### 返回值
 
@@ -98,9 +98,9 @@ var labelIndex = 0;
 var property = 'BE.Prefs.LabelNames.' + labelIndex;
 
 if (app.properties.doesPropertyExist(property)) {
-   alert(app.properties.getProperty(property));
+ alert(app.properties.getProperty(property));
 } else {
-   alert('属性 "' + property + '" 不存在');
+ alert('属性 "' + property + '" 不存在');
 }
 ```
 
@@ -116,9 +116,9 @@ if (app.properties.doesPropertyExist(property)) {
 
 #### 参数
 
-| 参数    | 类型   | 描述    |
-| ----------- | ------ | ------------------ |
-| `property`  | String | 要检查的属性   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `property` | String | 要检查的属性 |
 
 #### 返回值
 
@@ -140,12 +140,12 @@ if (app.properties.doesPropertyExist(property)) {
 
 #### 参数
 
-| 参数    | 类型   | 描述     |
-| ------------------ | ------- | -------------------------------------- |
-| `property`   | String  | 要创建的属性   |
-| `value`   | Any   | 属性的值     |
-| `persistent`   | Boolean | 是否在会话之间持久化   |
-| `createIfNotExist` | Boolean | 如果属性不存在，是否创建    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `property` | String | 要创建的属性 |
+| `value` | Any | 属性的值 |
+| `persistent` | Boolean | 是否在会话之间持久化 |
+| `createIfNotExist` | Boolean | 如果属性不存在，是否创建 |
 
 #### 返回值
 
@@ -164,15 +164,15 @@ var persistent = true;
 var createIfNotExist = true;
 
 if (app.properties.doesPropertyExist(property)) {
-   if (app.properties.isPropertyReadOnly(property)) {
-    alert('无法重命名属性 "' + property + '"，因为它是只读的。');
-   } else {
-    var oldValue = app.properties.getProperty(property);
-    app.properties.setProperty(property, newValue, persistent, createIfNotExist);
-    alert('值从 "' + oldValue + '" 更改为 "' + newValue + '"');
-   }
+ if (app.properties.isPropertyReadOnly(property)) {
+ alert('无法重命名属性 "' + property + '"，因为它是只读的。');
+ } else {
+ var oldValue = app.properties.getProperty(property);
+ app.properties.setProperty(property, newValue, persistent, createIfNotExist);
+ alert('值从 "' + oldValue + '" 更改为 "' + newValue + '"');
+ }
 } else {
-   app.properties.setProperty(property, newValue, persistent, createIfNotExist);
-   alert('创建了新属性 "' + property + '" 并设置值为 "' + newValue + '"');
+ app.properties.setProperty(property, newValue, persistent, createIfNotExist);
+ alert('创建了新属性 "' + property + '" 并设置值为 "' + newValue + '"');
 }
 ```

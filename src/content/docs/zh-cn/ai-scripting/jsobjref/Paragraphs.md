@@ -69,11 +69,11 @@ title: 段落
 
 #### 参数
 
-|      参数      |       类型        |       描述       |
-| -------------- | --------------------------------------------------------------------- | ---------------- |
-| `contents`     | 字符串      | 要添加的文本内容 |
-| `relativeObject` | [TextFrameItem](.././TextFrameItem)，可选     | 要添加到的对象   |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 放置文本的位置   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `contents` | 字符串 | 要添加的文本内容 |
+| `relativeObject` | [TextFrameItem](.././TextFrameItem)，可选 | 要添加到的对象 |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 放置文本的位置 |
 
 #### 返回值
 
@@ -91,8 +91,8 @@ title: 段落
 
 #### 参数
 
-| 参数       | 类型   |       描述       |
-| ---------- | ------ | ---------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `contents` | 字符串 | 要添加的文本内容 |
 
 #### 返回值
@@ -111,9 +111,9 @@ title: 段落
 
 #### 参数
 
-| 参数      |      类型      |       描述       |
-| --------- | -------------- | ---------------- |
-| `itemKey` | 字符串，数字   | 字符串或数字键   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `itemKey` | 字符串，数字 | 字符串或数字键 |
 
 #### 返回值
 
@@ -142,10 +142,10 @@ title: 段落
 ```javascript
 // 计算当前文档中的所有段落并将结果存储在 paragraphCount 中
 if (app.documents.length > 0) {
-    var doc = app.activeDocument;
-    var paragraphCount = 0;
-    for (var i = 0; i < doc.textFrames.length; i++) {
-        paragraphCount += doc.textFrames[i].paragraphs.length;
-    }
+ var doc = app.activeDocument;
+ var paragraphCount = 0;
+ for (var i = 0; i < doc.textFrames.length; i++) {
+ paragraphCount += doc.textFrames[i].paragraphs.length;
+ }
 }
 ```

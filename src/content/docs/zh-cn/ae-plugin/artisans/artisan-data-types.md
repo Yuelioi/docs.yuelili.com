@@ -9,15 +9,15 @@ title: artisan 数据类型
 
 ## Artisan API 中使用的数据类型
 
-| 类型   | 描述         |
-| ---------------------------- | ------------------------------------------------------- |
+| 类型 | 描述 |
+| --- | --- |
 | `AEGP_RenderLayerContextH` | 渲染请求时的状态信息，由 After Effects 发送给 Artisan。 |
-| `PR_RenderContextH`        | 定义渲染内容和方式的设置集合。    |
-| `AEGP_SoundDataH`   | 用于给定图层的音频设置。   |
-| `AEGP_RenderReceiptH`      | 由 Artisan 在渲染时使用。          |
-| `AEGP_FrameReceiptH`       |      |
-| `AEGP_WorldH`       | 一帧像素。          |
-| `AEGP_RenderOptionsH`      | 与渲染队列项相关的设置。   |
+| `PR_RenderContextH` | 定义渲染内容和方式的设置集合。 |
+| `AEGP_SoundDataH` | 用于给定图层的音频设置。 |
+| `AEGP_RenderReceiptH` | 由 Artisan 在渲染时使用。 |
+| `AEGP_FrameReceiptH` | |
+| `AEGP_WorldH` | 一帧像素。 |
+| `AEGP_RenderOptionsH` | 与渲染队列项相关的设置。 |
 
 ---
 
@@ -49,45 +49,45 @@ Artisan 是一个 AEGP，并且只有一个入口函数。Artisan 还必须注�
 
 ### Artisan 入口函数
 
-| PR_ArtisanEntryPoints        |   |
-| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `global_setup_func0`       | 仅在 `GP_Main` 之后调用一次。全局数据在所有插件实例之间共享。      |
-|         | 如果在全局设置期间分配了内存，则必须在 `global_setdown_func` 期间释放它。           |
-|         | `<pre lang="cpp">`PR_GlobalSetupFunc(``const PR_InData    \*in_dataP,``  PR_GlobalContextH  global_contextH,``  PR_GlobalDataH     \*global_dataPH);`</pre>`   |
-| `global_setdown_func0`     | 释放你分配的任何全局数据。       |
-|         | `<pre lang="cpp">`PR_GlobalSetdownFunc(``const PR_InData    \*in_dataP,``  PR_GlobalContextH  global_contextH,``  PR_GlobalDataH     global_dataH);`</pre>`    |
-| `global_do_about_func0`    | 向世界介绍你自己！使用 `in_dataP>msg_func` 显示你的对话框。          |
-|         | `<pre lang="cpp">`PR_GlobalDoAboutFunc(``const PR_InData    \*in_dataP,``  PR_GlobalContextH  global_contextH,``  PR_GlobalDataH     global_dataH);`</pre>`    |
-| `setup_instance_func0`     | 分配并实例化此 Artisan 实例的特定数据。         |
-|         | `<pre lang="cpp">`PR_InstanceSetupFunc(``const PR_InData      \*in_dataP,``  PR_GlobalContextH    global_contextH,``PR_InstanceContextH  instance_contextH,``  PR_GlobalDataH       global_dataH,``PR_InstanceFlags     flags,``  PR_FlatHandle        flat_dataH0,``  PR_InstanceDataH     \*instance_dataPH);`</pre>`        |
-| `setdown_instance_func0`   | 释放并释放此 Artisan 实例的特定数据。   |
-|         | `<pre lang="cpp">`PR_InstanceSetdownFunc(``const PR_InData      \*in_dataP,``  PR_GlobalContextH    global_contextH,``PR_InstanceContextH  instance_contextH,``  PR_GlobalDataH       global_dataH,``  PR_InstanceDataH     instance_dataH);`</pre>`   |
-| `flatten_instance_func0`   | 在准备写入磁盘时展平你的数据。（确保它是操作系统独立的，如果你的 Artisan 是）。    |
-|         | `<pre lang="cpp">`PR_FlattenInstanceFunc(``const PR_InData      \*in_dataP,``  PR_GlobalContextH    global_contextH,``PR_InstanceContextH  instance_contextH,``  PR_GlobalDataH       global_dataH,``PR_InstanceDataH     instance_dataH,``  PR_FlatHandle        \*flatH);`</pre>`        |
-| `do_instance_dialog_func0` | 如果你的 Artisan 有额外的参数（通过其选项对话框访问），将调用此函数来获取和设置它们。        |
-|         | `<pre lang="cpp">`PR_DoInstanceDialogFunc(``const PR_InData      \*in_dataP,``  PR_GlobalContextH    global_contextH,``PR_InstanceContextH  instance_contextH,``  PR_GlobalDataH       global_dataH,``PR_InstanceDataH     instance_dataH,``  PR_DialogResult      \*resultP);`</pre>`   |
-|         | `PR_DialogResultis` 是 `PR_DialogResult_NO_CHANGE` 或 `PR_DialogResult_CHANGE_MADE`。         |
-| `frame_setup_func0`        | 执行渲染帧所需的任何设置（在渲染之前立即调用）。         |
-|         | `<pre lang="cpp">`PR_FrameSetupFunc(``const PR_InData      \*in_dataP,``  PR_GlobalContextH    global_contextH,``PR_InstanceContextH  instance_contextH``  PR_RenderContextH    render_contextH,``PR_GlobalDataH       global_dataH,``  PR_InstanceDataH     instance_dataH,``  PR_RenderDataH       \*render_dataPH);`</pre>` |
-| `frame_setdown_func0`      | 释放 `frame_setup` 期间分配的任何设置数据（在渲染后立即发送）。    |
-|         | `<pre lang="cpp">`PR_FrameSetdownFunc(``const PR_InData      \*in_dataP,``  PR_GlobalContextH    global_contextH,``PR_InstanceContextH  instance_contextH``  PR_RenderContextH    render_contextH,``PR_GlobalDataH       global_dataH,``  PR_InstanceDataH     instance_dataH,``  PR_RenderDataH       render_dataH);`</pre>`  |
-| `render_func`       | 渲染场景。         |
-|         | `<pre lang="cpp">`PR_FrameRenderFunc(``const PR_InData      \*in_dataP,``  PR_GlobalContextH    global_contextH,``PR_InstanceContextH  instance_contextH``  PR_RenderContextH    render_contextH,``PR_GlobalDataH       global_dataH,``  PR_InstanceDataH     instance_dataH,``  PR_RenderDataH       render_dataH);`</pre>`   |
-| `query_func0`       | Artisan 可以绘制自己的投影轴，如果需要的话。   |
-|         | After Effects 将调用此函数以获取合成世界与这些轴之间的变换，以及与屏幕内外预览绘制相关的许多其他函数（前者仅与交互式 Artisan 相关）。            |
-|         | `<pre lang="cpp">`PR_QueryFunc(``const PR_InData      \*in_dataP,``  PR_GlobalContextH    global_contextH,``PR_InstanceContextH  instance_contextH``  PR_QueryContextH     query_contextH,``PR_QueryType         query_type,``  PR_GlobalDataH       global_dataH,``  PR_InstanceDataH     instance_dataH);`</pre>`     |
-|         | `PR_QueryType` 可以是以下之一：       |
-|         | -`PR_QueryType_NONE = 0`       |
-|         | -`PR_QueryType_TRANSFORM`      |
-|         | -`PR_QueryType_INTERACTIVE_WINDOW_DISPOSE`   |
-|         | -`PR_QueryType_INTERACTIVE_WINDOW_CLEAR`     |
-|         | -`PR_QueryType_INTERACTIVE_WINDOW_FROZEN_PROXY`     |
-|         | -`PR_QueryType_INTERACTIVE_SWAP_BUFFER`      |
-|         | -`PR_QueryType_INTERACTIVE_DRAW_PROCS`       |
-|         | -`PR_QueryType_PREPARE_FOR_LINE_DRAWING`     |
-|         | -`PR_QueryType_UNPREPARE_FOR_LINE_DRAWING`   |
-|         | -`PR_QueryType_GET_CURRENT_CONTEXT_SAFE_FOR_LINE_DRAWING`            |
-|         | -`PR_QueryType_GET_ARTISAN_QUALITY` (CS6 新增)         |
+| PR_ArtisanEntryPoints | |
+| --- | --- |
+| `global_setup_func0` | 仅在 `GP_Main` 之后调用一次。全局数据在所有插件实例之间共享。 |
+| | 如果在全局设置期间分配了内存，则必须在 `global_setdown_func` 期间释放它。 |
+| | `<pre lang="cpp">`PR_GlobalSetupFunc(``const PR_InData    \*in_dataP,``  PR_GlobalContextH  global_contextH,``  PR_GlobalDataH     \*global_dataPH);`</pre>` |
+| `global_setdown_func0` | 释放你分配的任何全局数据。 |
+| | `<pre lang="cpp">`PR_GlobalSetdownFunc(``const PR_InData    \*in_dataP,``  PR_GlobalContextH  global_contextH,``  PR_GlobalDataH     global_dataH);`</pre>` |
+| `global_do_about_func0` | 向世界介绍你自己！使用 `in_dataP>msg_func` 显示你的对话框。 |
+| | `<pre lang="cpp">`PR_GlobalDoAboutFunc(``const PR_InData    \*in_dataP,``  PR_GlobalContextH  global_contextH,``  PR_GlobalDataH     global_dataH);`</pre>` |
+| `setup_instance_func0` | 分配并实例化此 Artisan 实例的特定数据。 |
+| | `<pre lang="cpp">`PR_InstanceSetupFunc(``const PR_InData      \*in_dataP,``  PR_GlobalContextH    global_contextH,``PR_InstanceContextH  instance_contextH,``  PR_GlobalDataH       global_dataH,``PR_InstanceFlags     flags,``  PR_FlatHandle        flat_dataH0,``  PR_InstanceDataH     \*instance_dataPH);`</pre>` |
+| `setdown_instance_func0` | 释放并释放此 Artisan 实例的特定数据。 |
+| | `<pre lang="cpp">`PR_InstanceSetdownFunc(``const PR_InData      \*in_dataP,``  PR_GlobalContextH    global_contextH,``PR_InstanceContextH  instance_contextH,``  PR_GlobalDataH       global_dataH,``  PR_InstanceDataH     instance_dataH);`</pre>` |
+| `flatten_instance_func0` | 在准备写入磁盘时展平你的数据。（确保它是操作系统独立的，如果你的 Artisan 是）。 |
+| | `<pre lang="cpp">`PR_FlattenInstanceFunc(``const PR_InData      \*in_dataP,``  PR_GlobalContextH    global_contextH,``PR_InstanceContextH  instance_contextH,``  PR_GlobalDataH       global_dataH,``PR_InstanceDataH     instance_dataH,``  PR_FlatHandle        \*flatH);`</pre>` |
+| `do_instance_dialog_func0` | 如果你的 Artisan 有额外的参数（通过其选项对话框访问），将调用此函数来获取和设置它们。 |
+| | `<pre lang="cpp">`PR_DoInstanceDialogFunc(``const PR_InData      \*in_dataP,``  PR_GlobalContextH    global_contextH,``PR_InstanceContextH  instance_contextH,``  PR_GlobalDataH       global_dataH,``PR_InstanceDataH     instance_dataH,``  PR_DialogResult      \*resultP);`</pre>` |
+| | `PR_DialogResultis` 是 `PR_DialogResult_NO_CHANGE` 或 `PR_DialogResult_CHANGE_MADE`。 |
+| `frame_setup_func0` | 执行渲染帧所需的任何设置（在渲染之前立即调用）。 |
+| | `<pre lang="cpp">`PR_FrameSetupFunc(``const PR_InData      \*in_dataP,``  PR_GlobalContextH    global_contextH,``PR_InstanceContextH  instance_contextH``  PR_RenderContextH    render_contextH,``PR_GlobalDataH       global_dataH,``  PR_InstanceDataH     instance_dataH,``  PR_RenderDataH       \*render_dataPH);`</pre>` |
+| `frame_setdown_func0` | 释放 `frame_setup` 期间分配的任何设置数据（在渲染后立即发送）。 |
+| | `<pre lang="cpp">`PR_FrameSetdownFunc(``const PR_InData      \*in_dataP,``  PR_GlobalContextH    global_contextH,``PR_InstanceContextH  instance_contextH``  PR_RenderContextH    render_contextH,``PR_GlobalDataH       global_dataH,``  PR_InstanceDataH     instance_dataH,``  PR_RenderDataH       render_dataH);`</pre>` |
+| `render_func` | 渲染场景。 |
+| | `<pre lang="cpp">`PR_FrameRenderFunc(``const PR_InData      \*in_dataP,``  PR_GlobalContextH    global_contextH,``PR_InstanceContextH  instance_contextH``  PR_RenderContextH    render_contextH,``PR_GlobalDataH       global_dataH,``  PR_InstanceDataH     instance_dataH,``  PR_RenderDataH       render_dataH);`</pre>` |
+| `query_func0` | Artisan 可以绘制自己的投影轴，如果需要的话。 |
+| | After Effects 将调用此函数以获取合成世界与这些轴之间的变换，以及与屏幕内外预览绘制相关的许多其他函数（前者仅与交互式 Artisan 相关）。 |
+| | `<pre lang="cpp">`PR_QueryFunc(``const PR_InData      \*in_dataP,``  PR_GlobalContextH    global_contextH,``PR_InstanceContextH  instance_contextH``  PR_QueryContextH     query_contextH,``PR_QueryType         query_type,``  PR_GlobalDataH       global_dataH,``  PR_InstanceDataH     instance_dataH);`</pre>` |
+| | `PR_QueryType` 可以是以下之一： |
+| | -`PR_QueryType_NONE = 0` |
+| | -`PR_QueryType_TRANSFORM` |
+| | -`PR_QueryType_INTERACTIVE_WINDOW_DISPOSE` |
+| | -`PR_QueryType_INTERACTIVE_WINDOW_CLEAR` |
+| | -`PR_QueryType_INTERACTIVE_WINDOW_FROZEN_PROXY` |
+| | -`PR_QueryType_INTERACTIVE_SWAP_BUFFER` |
+| | -`PR_QueryType_INTERACTIVE_DRAW_PROCS` |
+| | -`PR_QueryType_PREPARE_FOR_LINE_DRAWING` |
+| | -`PR_QueryType_UNPREPARE_FOR_LINE_DRAWING` |
+| | -`PR_QueryType_GET_CURRENT_CONTEXT_SAFE_FOR_LINE_DRAWING` |
+| | -`PR_QueryType_GET_ARTISAN_QUALITY` (CS6 新增) |
 
 ---
 
@@ -109,135 +109,135 @@ Artisan 是一个 AEGP，并且只有一个入口函数。Artisan 还必须注�
 
 ### AEGP_CanvasSuite8
 
-|    函数    |    用途    |
-|--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `AEGP_GetCompToRender`   | 给定渲染时提供给 Artisan 的渲染上下文，返回合成的句柄。   |
-|    | <pre lang="cpp">AEGP_GetCompToRender(<br/>  PR_RenderContextH  render_contextH,<br/>  AEGP_CompH   \*compPH)</pre>    |
-| `AEGP_GetNumLayersToRender`    | 给定渲染上下文，返回 Artisan 需要渲染的图层数量。   |
-|    | <pre lang="cpp">AEGP_GetNumLayersToRender(<br/>  PR_RenderContextH  render_contextH,<br/>  A_long   \*num_to_renderPL)</pre>    |
-| `AEGP_GetNthLayerContextToRender`    | 用于在确定 Artisan 需要渲染的总图层数量后，构建要渲染的图层列表。   |
-|    | <pre lang="cpp">AEGP_GetNthLayerContextToRender(<br/>  PR_RenderContextH   render_contextH,<br/>  A_long    n,<br/>  AEGP_RenderLayerContextH  \*layer_indexPH)</pre>   |
-| `AEGP_GetLayerFromLayerContext`    | 给定一个 `AEGP_RenderLayerContextH`，检索关联的 `AEGP_LayerH`（许多套件函数需要）。   |
-|    | <pre lang="cpp">AEGP_GetLayerFromLayerContext(<br/>  const PR_RenderContextH   render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  AEGP_LayerH   \*layerPH);</pre>   |
-| `AEGP_GetLayerAndSubLayerFromLayerContext` | 允许渲染子图层（如 Photoshop 文件中的子图层）。    |
-|    | <pre lang="cpp">AEGP_GetLayerAndSubLayerFromLayerContext(<br/>  const PR_RenderContextH   render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  AEGP_LayerH   \*layerPH,<br/>  AEGP_SubLayerIndex    \*sublayerP);</pre>   |
-| `AEGP_GetTopLayerFromLayerContext`   | 当折叠几何体“开启”时，返回包含图层上下文的根合成中的图层。   |
-|    | 当折叠几何体关闭时，这与 `AEGP_GetLayerFromLayerContext` 相同。    |
-|    | <pre lang="cpp">AEGP_GetTopLayerFromLayerContext(<br/>  const PR_RenderContextH   r_contextH,<br/>  AEGP_RenderLayerContextH  l_contextH,<br/>  AEGP_LayerH   \*layerPH);</pre>   |
-| `AEGP_GetCompRenderTime`   | 给定渲染上下文，返回要渲染的当前（合成）时间点。    |
-|    | <pre lang="cpp">AEGP_GetNthLayerIndexToRender(<br/>  PR_RenderContextH  render_contextH,<br/>  A_long   \*time,<br/>  A_long   \*time_step)</pre>   |
-| `AEGP_GetCompDestinationBuffer`    | 给定渲染上下文，返回用于放置最终渲染输出的缓冲区。   |
-|    | <pre lang="cpp">AEGP_GetCompToRender(<br/>  PR_RenderContextH  render_contextH,<br/>  AEGP_CompH   compH,<br/>  PF_EffectWorld   \*dst);</pre>    |
-| `AEGP_GetROI`    | 给定渲染时提供给 Artisan 的渲染上下文，返回合成的句柄。   |
-|    | <pre lang="cpp">AEGP_GetROI(<br/>  PR_RenderContextH  render_contextH,<br/>  A_LegacyRect   \*roiPR);</pre>   |
-| `AEGP_RenderTexture`   | 给定渲染上下文和图层，返回图层纹理。    |
-|    | 所有以 '0' 结尾的参数都是可选的；返回的 `PF_EffectWorld` 可以为 NULL。   |
-|    | <pre lang="cpp">AEGP_RenderTexture(<br/>  PR_RenderContextH  render_contextH,<br/>  AEGP_LayerH    layerH,<br/>  AEGP_RenderHints   render_hints,<br/>  A_FloatPoint   \*suggested_scaleP0,<br/>  A_FloatRect    \*suggsted_src_rectP0,<br/>  A_Matrix3    \*src_matrixP0,<br/>  PF_EffectWorld   \*render_bufferP);</pre>    |
-|    | `AEGP_RenderHints` 包含以下一个或多个：   |
-|    | - `AEGP_RenderHints_NONE`   |
-|    | - `AEGP_RenderHints_IGNORE_EXTENTS`   |
-|    | - `AEGP_RenderHints_NO_TRANSFER_MODE`（防止应用不透明度和传输模式；用于 `RenderLayer` 调用。）    |
-| `AEGP_DisposeTexture`    | 释放获取的图层纹理。    |
-|    | <pre lang="cpp">AEGP_DisposeTexture(<br/>  PR_RenderContextH  render_contextH,<br/>  AEGP_LayerH    layerH,<br/>  AEGP_WorldH    \*dst0);</pre>   |
-| `AEGP_GetFieldRender`    | 返回给定 `PR_RenderContextH` 的场设置。    |
-|    | <pre lang="cpp">AEGP_GetFieldRender(<br/>  PR_RenderContextH  render_contextH,<br/>  PF_Field   \*field);</pre>   |
-| `AEGP_ReportArtisanProgress`   | 给定渲染时提供给 Artisan 的渲染上下文，返回合成的句柄。   |
-|    | !!! 注意    |
-|    |    在 macOS 上，这不是线程安全的；仅当当前线程 ID 为 0 时才使用此函数。    |
-|    | <pre lang="cpp">AEGP_ReportArtisanProgress(<br/>  PR_RenderContextH  render_contextH,<br/>  A_long   countL,<br/>  A_long   totalL);</pre>    |
-| `AEGP_GetRenderDownsampleFactor`   | 返回 `PR_RenderContextH` 的下采样因子。   |
-|    | <pre lang="cpp">AEGP_GetRenderDownsampleFactor(<br/>  PR_RenderContextH    render_contextH,<br/>  AEGP_DownsampleFactor  \*dsfP);</pre>   |
-| `AEGP_IsBlankCanvas`   | 确定 `PR_RenderContextH` 是否为空白（空）。    |
-|    | <pre lang="cpp">AEGP_IsBlankCanvas(<br/>  PR_RenderContextH  render_contextH,<br/>  A_Boolean    \*is_blankPB);</pre>   |
-| `AEGP_GetRenderLayerToWorldXform`    | 给定渲染上下文和图层（在给定时间），检索 4x4 变换以在它们的坐标空间之间移动。   |
-|    | <pre lang="cpp">AEGP_GetRenderLayerToWorldXform(<br/>  PR_RenderContextH   render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  const A_Time    \*comp_timeP,<br/>  A_Matrix4   \*transform);</pre>   |
-| `AEGP_GetRenderLayerBounds`    | 检索 `render_contextH` 中 `layer_contextH`（在给定时间）的边界矩形。    |
-|    | <pre lang="cpp">AEGP_GetRenderLayerBounds(<br/>  PR_RenderContextH   render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  const A_Time    \*comp_timeP,<br/>  A_LegacyRect    \*boundsP);</pre>   |
-| `AEGP_GetRenderOpacity`    | 返回给定图层上下文在给定时间内的不透明度，在渲染上下文中。    |
-|    | <pre lang="cpp">AEGP_GetRenderOpacity(<br/>  PR_RenderContextH   render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  const A_Time    \*comp_timePT,<br/>  A_FpLong    \*opacityPF);</pre>    |
-| `AEGP_IsRenderLayerActive`   | 返回给定图层上下文在给定时间内是否在渲染上下文中处于活动状态。    |
-|    | <pre lang="cpp">AEGP_IsRenderLayerActive(<br/>  PR_RenderContextH   render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  const A_Time    \*comp_timePT,<br/>  A_Boolean   \*activePB);</pre>    |
-| `AEGP_SetArtisanLayerProgress`   | 设置渲染 Artisan 的进度信息。    |
-|    | - `countL` 是已完成的图层数量，   |
-|    | - `num_layersL` 是 Artisan 正在渲染的总图层数量。   |
-|    | <pre lang="cpp">AEGP_SetArtisanLayerProgress(<br/>  PR_RenderContextH  render_contextH,<br/>  A_long   countL,<br/>  A_long   num_layersL);</pre>   |
-| `AEGP_RenderLayerPlus`   | 类似于 `AEGP_RenderLayer`，但考虑了 `AEGP_RenderLayerContextH`。   |
-|    | <pre lang="cpp">AEGP_RenderLayerPlus(<br/>  PR_RenderContextH    r_contextH,<br/>  AEGP_LayerH    layerH,<br/>  AEGP_RenderLayerContextH   l_contextH,<br/>  AEGP_RenderHints   render_hints,<br/>  AEGP_WorldH    \*bufferP);</pre>    |
-| `AEGP_GetTrackMatteContext`    | 检索指定渲染和填充上下文的 `AEGP_RenderLayerContextH`。    |
-|    | <pre lang="cpp">AEGP_GetTrackMatteContext(<br/>  PR_RenderContextH   rnder_contextH,<br/>  AEGP_RenderLayerContextH  fill_contextH,<br/>  AEGP_RenderLayerContextH  \*mattePH);</pre>   |
-| `AEGP_RenderTextureWithReceipt`    | 将纹理渲染到 `AEGP_WorldH` 中，并提供操作的 `AEGP_RenderReceiptH`。   |
-|    | 返回的 `receiptPH` 必须使用 `AEGP_DisposeRenderReceipt` 释放。    |
-|    | <pre lang="cpp">AEGP_RenderTextureWithReceipt(<br/>  PR_RenderContextH   render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  AEGP_RenderHints    render_hints,<br/>  A_FloatPoint    \*suggested_scaleP0,<br/>  A_FloatRect   \*suggest_src_rectP0,<br/>  A_Matrix3   \*src_matrixP0,<br/>  AEGP_RenderReceiptH   \*receiptPH,<br/>  AEGP_WorldH   \*dstPH);</pre> |
-| `AEGP_GetNumberOfSoftwareEffects`    | 返回给定 `AEGP_RenderLayerContextH` 中应用的软件效果数量。   |
-|    | <pre lang="cpp">AEGP_GetNumberOfSoftwareEffects(<br/>  PR_RenderContextH   ren_contextH,<br/>  AEGP_RenderLayerContextH  lyr_contextH,<br/>  A_short   \*num_sft_FXPS);</pre>   |
-| `AEGP_RenderLayerPlusWithReceipt`    | 对 `AEGP_RenderLayerPlus` 的改进，此函数还提供了用于缓存的 `AEGP_RenderReceiptH`。    |
-|    | <pre lang="cpp">AEGP_RenderLayerPlusWithReceipt(<br/>  PR_RenderContextH    render_contextH,<br/>  AEGP_LayerH    layerH,<br/>  AEGP_RenderLayerContextH   layer_contextH,<br/>  AEGP_RenderHints   render_hints,<br/>  AEGP_NumEffectsToRenderType  num_effectsS,<br/>  AEGP_RenderReceiptH    \*receiptPH,<br/>  AEGP_WorldH    \*bufferPH);</pre>    |
-| `AEGP_DisposeRenderReceipt`    | 释放 `AEGP_RenderReceiptH`。   |
-|    | <pre lang="cpp">AEGP_DisposeRenderReceipt(<br/>  AEGP_RenderReceiptH  receiptH);</pre>    |
-| `AEGP_CheckRenderReceipt`    | 检查 After Effects 的内部缓存，以确定给定的 `AEGP_RenderReceiptH` 是否仍然有效。    |
-|    | <pre lang="cpp">AEGP_CheckRenderReceipt(<br/>  PR_RenderContextH    current_contextH,<br/>  AEGP_RenderLayerContextH   current_lyr_ctxtH,<br/>  AEGP_RenderReceiptH    old_receiptH,<br/>  A_Boolean    check_aceB,<br/>  AEGP_NumEffectsToRenderType  num_effectsS,<br/>  AEGP_RenderReceiptStatus   \*receipt_statusP);</pre>   |
-| `AEGP_GenerateRenderReceipt`   | 为图层生成 `AEGP_RenderReceiptH`，就好像前 `num_effectsS` 个效果已被渲染一样。    |
-|    | <pre lang="cpp">AEGP_GenerateRenderReceipt(<br/>  PR_RenderContextH    current_contextH,<br/>  AEGP_RenderLayerContextH   current_lyr_contextH,<br/>  AEGP_NumEffectsToRenderType  num_effectsS,<br/>  AEGP_RenderReceiptH    \*render_receiptPH);</pre>    |
-| `AEGP_GetNumBinsToRender`    | 返回 After Effects 希望 Artisan 渲染的 bin 数量。   |
-|    | <pre lang="cpp">AEGP_GetNumBinsToRender(<br/>  const PR_RenderContextH  contextH,<br/>  A_long   \*num_binsPL);</pre>   |
-| `AEGP_SetNthBin`   | 将给定的渲染上下文设置为 After Effects 要渲染的第 n 个 bin。   |
-|    | <pre lang="cpp">AEGP_SetNthBin(<br/>  const PR_RenderContextH  contextH,<br/>  A_long   n);</pre>   |
-| `AEGP_GetBinType`    | 检索给定 bin 的类型。    |
-|    | <pre lang="cpp">AEGP_GetBinType(<br/>  const PR_RenderContextH  contextH,<br/>  AEGP_BinType   \*bin_typeP);</pre>    |
-|    | `AEGP_BinType` 将是以下之一：    |
-|    | - `AEGP_BinType_NONE`   |
-|    | - `AEGP_BinType_2D`   |
-|    | - `AEGP_BinType_3D`   |
-| `AEGP_GetRenderLayerToWorldXform2D3D`    | 检索变换以正确定向正在渲染的图层与输出世界。   |
-|    | 传递 `TRUE` 给 `only_2dB` 以将变换限制为二维。    |
-|    | <pre lang="cpp">AEGP_GetRenderLayerToWorldXform2D3D(<br/>  PR_RenderContextH   render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  const A_Time    \*comp_timeP,<br/>  A_Boolean   only_2dB,<br/>  A_Matrix4   \*transformP);</pre>    |
+| 函数 | 用途 |
+|---|---|
+| `AEGP_GetCompToRender` | 给定渲染时提供给 Artisan 的渲染上下文，返回合成的句柄。 |
+| | <pre lang="cpp">AEGP_GetCompToRender(<br/>  PR_RenderContextH  render_contextH,<br/>  AEGP_CompH   \*compPH)</pre> |
+| `AEGP_GetNumLayersToRender` | 给定渲染上下文，返回 Artisan 需要渲染的图层数量。 |
+| | <pre lang="cpp">AEGP_GetNumLayersToRender(<br/>  PR_RenderContextH  render_contextH,<br/>  A_long   \*num_to_renderPL)</pre> |
+| `AEGP_GetNthLayerContextToRender` | 用于在确定 Artisan 需要渲染的总图层数量后，构建要渲染的图层列表。 |
+| | <pre lang="cpp">AEGP_GetNthLayerContextToRender(<br/>  PR_RenderContextH   render_contextH,<br/>  A_long    n,<br/>  AEGP_RenderLayerContextH  \*layer_indexPH)</pre> |
+| `AEGP_GetLayerFromLayerContext` | 给定一个 `AEGP_RenderLayerContextH`，检索关联的 `AEGP_LayerH`（许多套件函数需要）。 |
+| | <pre lang="cpp">AEGP_GetLayerFromLayerContext(<br/>  const PR_RenderContextH   render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  AEGP_LayerH   \*layerPH);</pre> |
+| `AEGP_GetLayerAndSubLayerFromLayerContext` | 允许渲染子图层（如 Photoshop 文件中的子图层）。 |
+| | <pre lang="cpp">AEGP_GetLayerAndSubLayerFromLayerContext(<br/>  const PR_RenderContextH   render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  AEGP_LayerH   \*layerPH,<br/>  AEGP_SubLayerIndex    \*sublayerP);</pre> |
+| `AEGP_GetTopLayerFromLayerContext` | 当折叠几何体“开启”时，返回包含图层上下文的根合成中的图层。 |
+| | 当折叠几何体关闭时，这与 `AEGP_GetLayerFromLayerContext` 相同。 |
+| | <pre lang="cpp">AEGP_GetTopLayerFromLayerContext(<br/>  const PR_RenderContextH   r_contextH,<br/>  AEGP_RenderLayerContextH  l_contextH,<br/>  AEGP_LayerH   \*layerPH);</pre> |
+| `AEGP_GetCompRenderTime` | 给定渲染上下文，返回要渲染的当前（合成）时间点。 |
+| | <pre lang="cpp">AEGP_GetNthLayerIndexToRender(<br/>  PR_RenderContextH  render_contextH,<br/>  A_long   \*time,<br/>  A_long   \*time_step)</pre> |
+| `AEGP_GetCompDestinationBuffer` | 给定渲染上下文，返回用于放置最终渲染输出的缓冲区。 |
+| | <pre lang="cpp">AEGP_GetCompToRender(<br/>  PR_RenderContextH  render_contextH,<br/>  AEGP_CompH   compH,<br/>  PF_EffectWorld   \*dst);</pre> |
+| `AEGP_GetROI` | 给定渲染时提供给 Artisan 的渲染上下文，返回合成的句柄。 |
+| | <pre lang="cpp">AEGP_GetROI(<br/>  PR_RenderContextH  render_contextH,<br/>  A_LegacyRect   \*roiPR);</pre> |
+| `AEGP_RenderTexture` | 给定渲染上下文和图层，返回图层纹理。 |
+| | 所有以 '0' 结尾的参数都是可选的；返回的 `PF_EffectWorld` 可以为 NULL。 |
+| | <pre lang="cpp">AEGP_RenderTexture(<br/>  PR_RenderContextH  render_contextH,<br/>  AEGP_LayerH    layerH,<br/>  AEGP_RenderHints   render_hints,<br/>  A_FloatPoint   \*suggested_scaleP0,<br/>  A_FloatRect    \*suggsted_src_rectP0,<br/>  A_Matrix3    \*src_matrixP0,<br/>  PF_EffectWorld   \*render_bufferP);</pre> |
+| | `AEGP_RenderHints` 包含以下一个或多个： |
+| | - `AEGP_RenderHints_NONE` |
+| | - `AEGP_RenderHints_IGNORE_EXTENTS` |
+| | - `AEGP_RenderHints_NO_TRANSFER_MODE`（防止应用不透明度和传输模式；用于 `RenderLayer` 调用。） |
+| `AEGP_DisposeTexture` | 释放获取的图层纹理。 |
+| | <pre lang="cpp">AEGP_DisposeTexture(<br/>  PR_RenderContextH  render_contextH,<br/>  AEGP_LayerH    layerH,<br/>  AEGP_WorldH    \*dst0);</pre> |
+| `AEGP_GetFieldRender` | 返回给定 `PR_RenderContextH` 的场设置。 |
+| | <pre lang="cpp">AEGP_GetFieldRender(<br/>  PR_RenderContextH  render_contextH,<br/>  PF_Field   \*field);</pre> |
+| `AEGP_ReportArtisanProgress` | 给定渲染时提供给 Artisan 的渲染上下文，返回合成的句柄。 |
+| | !!! 注意 |
+| | 在 macOS 上，这不是线程安全的；仅当当前线程 ID 为 0 时才使用此函数。 |
+| | <pre lang="cpp">AEGP_ReportArtisanProgress(<br/>  PR_RenderContextH  render_contextH,<br/>  A_long   countL,<br/>  A_long   totalL);</pre> |
+| `AEGP_GetRenderDownsampleFactor` | 返回 `PR_RenderContextH` 的下采样因子。 |
+| | <pre lang="cpp">AEGP_GetRenderDownsampleFactor(<br/>  PR_RenderContextH    render_contextH,<br/>  AEGP_DownsampleFactor  \*dsfP);</pre> |
+| `AEGP_IsBlankCanvas` | 确定 `PR_RenderContextH` 是否为空白（空）。 |
+| | <pre lang="cpp">AEGP_IsBlankCanvas(<br/>  PR_RenderContextH  render_contextH,<br/>  A_Boolean    \*is_blankPB);</pre> |
+| `AEGP_GetRenderLayerToWorldXform` | 给定渲染上下文和图层（在给定时间），检索 4x4 变换以在它们的坐标空间之间移动。 |
+| | <pre lang="cpp">AEGP_GetRenderLayerToWorldXform(<br/>  PR_RenderContextH   render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  const A_Time    \*comp_timeP,<br/>  A_Matrix4   \*transform);</pre> |
+| `AEGP_GetRenderLayerBounds` | 检索 `render_contextH` 中 `layer_contextH`（在给定时间）的边界矩形。 |
+| | <pre lang="cpp">AEGP_GetRenderLayerBounds(<br/>  PR_RenderContextH   render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  const A_Time    \*comp_timeP,<br/>  A_LegacyRect    \*boundsP);</pre> |
+| `AEGP_GetRenderOpacity` | 返回给定图层上下文在给定时间内的不透明度，在渲染上下文中。 |
+| | <pre lang="cpp">AEGP_GetRenderOpacity(<br/>  PR_RenderContextH   render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  const A_Time    \*comp_timePT,<br/>  A_FpLong    \*opacityPF);</pre> |
+| `AEGP_IsRenderLayerActive` | 返回给定图层上下文在给定时间内是否在渲染上下文中处于活动状态。 |
+| | <pre lang="cpp">AEGP_IsRenderLayerActive(<br/>  PR_RenderContextH   render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  const A_Time    \*comp_timePT,<br/>  A_Boolean   \*activePB);</pre> |
+| `AEGP_SetArtisanLayerProgress` | 设置渲染 Artisan 的进度信息。 |
+| | - `countL` 是已完成的图层数量， |
+| | - `num_layersL` 是 Artisan 正在渲染的总图层数量。 |
+| | <pre lang="cpp">AEGP_SetArtisanLayerProgress(<br/>  PR_RenderContextH  render_contextH,<br/>  A_long   countL,<br/>  A_long   num_layersL);</pre> |
+| `AEGP_RenderLayerPlus` | 类似于 `AEGP_RenderLayer`，但考虑了 `AEGP_RenderLayerContextH`。 |
+| | <pre lang="cpp">AEGP_RenderLayerPlus(<br/>  PR_RenderContextH    r_contextH,<br/>  AEGP_LayerH    layerH,<br/>  AEGP_RenderLayerContextH   l_contextH,<br/>  AEGP_RenderHints   render_hints,<br/>  AEGP_WorldH    \*bufferP);</pre> |
+| `AEGP_GetTrackMatteContext` | 检索指定渲染和填充上下文的 `AEGP_RenderLayerContextH`。 |
+| | <pre lang="cpp">AEGP_GetTrackMatteContext(<br/>  PR_RenderContextH   rnder_contextH,<br/>  AEGP_RenderLayerContextH  fill_contextH,<br/>  AEGP_RenderLayerContextH  \*mattePH);</pre> |
+| `AEGP_RenderTextureWithReceipt` | 将纹理渲染到 `AEGP_WorldH` 中，并提供操作的 `AEGP_RenderReceiptH`。 |
+| | 返回的 `receiptPH` 必须使用 `AEGP_DisposeRenderReceipt` 释放。 |
+| | <pre lang="cpp">AEGP_RenderTextureWithReceipt(<br/>  PR_RenderContextH   render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  AEGP_RenderHints    render_hints,<br/>  A_FloatPoint    \*suggested_scaleP0,<br/>  A_FloatRect   \*suggest_src_rectP0,<br/>  A_Matrix3   \*src_matrixP0,<br/>  AEGP_RenderReceiptH   \*receiptPH,<br/>  AEGP_WorldH   \*dstPH);</pre> |
+| `AEGP_GetNumberOfSoftwareEffects` | 返回给定 `AEGP_RenderLayerContextH` 中应用的软件效果数量。 |
+| | <pre lang="cpp">AEGP_GetNumberOfSoftwareEffects(<br/>  PR_RenderContextH   ren_contextH,<br/>  AEGP_RenderLayerContextH  lyr_contextH,<br/>  A_short   \*num_sft_FXPS);</pre> |
+| `AEGP_RenderLayerPlusWithReceipt` | 对 `AEGP_RenderLayerPlus` 的改进，此函数还提供了用于缓存的 `AEGP_RenderReceiptH`。 |
+| | <pre lang="cpp">AEGP_RenderLayerPlusWithReceipt(<br/>  PR_RenderContextH    render_contextH,<br/>  AEGP_LayerH    layerH,<br/>  AEGP_RenderLayerContextH   layer_contextH,<br/>  AEGP_RenderHints   render_hints,<br/>  AEGP_NumEffectsToRenderType  num_effectsS,<br/>  AEGP_RenderReceiptH    \*receiptPH,<br/>  AEGP_WorldH    \*bufferPH);</pre> |
+| `AEGP_DisposeRenderReceipt` | 释放 `AEGP_RenderReceiptH`。 |
+| | <pre lang="cpp">AEGP_DisposeRenderReceipt(<br/>  AEGP_RenderReceiptH  receiptH);</pre> |
+| `AEGP_CheckRenderReceipt` | 检查 After Effects 的内部缓存，以确定给定的 `AEGP_RenderReceiptH` 是否仍然有效。 |
+| | <pre lang="cpp">AEGP_CheckRenderReceipt(<br/>  PR_RenderContextH    current_contextH,<br/>  AEGP_RenderLayerContextH   current_lyr_ctxtH,<br/>  AEGP_RenderReceiptH    old_receiptH,<br/>  A_Boolean    check_aceB,<br/>  AEGP_NumEffectsToRenderType  num_effectsS,<br/>  AEGP_RenderReceiptStatus   \*receipt_statusP);</pre> |
+| `AEGP_GenerateRenderReceipt` | 为图层生成 `AEGP_RenderReceiptH`，就好像前 `num_effectsS` 个效果已被渲染一样。 |
+| | <pre lang="cpp">AEGP_GenerateRenderReceipt(<br/>  PR_RenderContextH    current_contextH,<br/>  AEGP_RenderLayerContextH   current_lyr_contextH,<br/>  AEGP_NumEffectsToRenderType  num_effectsS,<br/>  AEGP_RenderReceiptH    \*render_receiptPH);</pre> |
+| `AEGP_GetNumBinsToRender` | 返回 After Effects 希望 Artisan 渲染的 bin 数量。 |
+| | <pre lang="cpp">AEGP_GetNumBinsToRender(<br/>  const PR_RenderContextH  contextH,<br/>  A_long   \*num_binsPL);</pre> |
+| `AEGP_SetNthBin` | 将给定的渲染上下文设置为 After Effects 要渲染的第 n 个 bin。 |
+| | <pre lang="cpp">AEGP_SetNthBin(<br/>  const PR_RenderContextH  contextH,<br/>  A_long   n);</pre> |
+| `AEGP_GetBinType` | 检索给定 bin 的类型。 |
+| | <pre lang="cpp">AEGP_GetBinType(<br/>  const PR_RenderContextH  contextH,<br/>  AEGP_BinType   \*bin_typeP);</pre> |
+| | `AEGP_BinType` 将是以下之一： |
+| | - `AEGP_BinType_NONE` |
+| | - `AEGP_BinType_2D` |
+| | - `AEGP_BinType_3D` |
+| `AEGP_GetRenderLayerToWorldXform2D3D` | 检索变换以正确定向正在渲染的图层与输出世界。 |
+| | 传递 `TRUE` 给 `only_2dB` 以将变换限制为二维。 |
+| | <pre lang="cpp">AEGP_GetRenderLayerToWorldXform2D3D(<br/>  PR_RenderContextH   render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  const A_Time    \*comp_timeP,<br/>  A_Boolean   only_2dB,<br/>  A_Matrix4   \*transformP);</pre> |
 
 :::note
 以下函数仅适用于交互式 Artisan。
 :::
 
-|         函数          |      用途       |
-|-----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `AEGP_GetPlatformWindowRef`      | 获取平台特定的窗口上下文，用于绘制给定的 `PR_RenderContextH`。     |
-|     | <pre lang="cpp">AEGP_GetPlatformWindowRef(<br/>  const PR_RenderContextH  contextH,<br/>  AEGP_PlatformWindowRef   \*window_refP);</pre>          |
-| `AEGP_GetViewportScale`          | 获取给定 `PR_RenderContextH` 的源到帧的下采样因子。            |
-|     | <pre lang="cpp">AEGP_GetViewportScale(<br/>  const PR_RenderContextH  contextH,<br/>  A_FpLong          \*scale_xPF,<br/>  A_FpLong          \*scale_yPF);</pre>        |
-| `AEGP_GetViewportOrigin`         | 获取源在帧内的原点（用于在两者之间进行转换），适用于给定的 `PR_RenderContextH`。           |
-|     | <pre lang="cpp">AEGP_GetViewportOrigin(<br/>  const PR_RenderContextH  contextH,<br/>  A_long    \*origin_xPL,<br/>  A_long    \*origin_yPL);</pre>    |
-| `AEGP_GetViewportRect`   | 获取要绘制的区域的边界矩形，适用于给定的 `PR_RenderContextH`。        |
-|     | <pre lang="cpp">AEGP_GetViewportRect(<br/>  const PR_RenderContextH  contextH,<br/>  A_LegacyRect      \*v_rectPR);</pre>           |
-| `AEGP_GetFallowColor`    | 获取给定 `PR_RenderContextH` 中用于休耕区域的颜色。   |
-|     | <pre lang="cpp">AEGP_GetFallowColor(<br/>  const PR_RenderContextH  contextH,<br/>  PF_Pixel8         \*fallow_colorP);</pre>     |
-| `AEGP_GetInteractiveCheckerboard`       | 获取给定 `PR_RenderContextH` 的棋盘格是否当前处于活动状态。     |
-|     | <pre lang="cpp">AEGP_GetInteractiveCheckerboard(<br/>  const PR_RenderContextH  contextH,<br/>  A_Boolean         \*cboard_onPB);</pre>           |
-| `AEGP_GetInteractiveCheckerboardColors` | 获取棋盘格中使用的颜色。            |
-|     | <pre lang="cpp">AEGP_GetInteractiveCheckerboardColors(<br/>  const PR_RenderContextH  contextH,<br/>  PF_Pixel          \*color1P,<br/>  PF_Pixel          \*color2P);</pre>           |
-| `AEGP_GetInteractiveCheckerboardSize`   | 获取棋盘格方块的宽度和高度。       |
-|     | <pre lang="cpp">AEGP_GetInteractiveCheckerboardSize(<br/>  const PR_RenderContextH  contextH,<br/>  A_u_long          \*cbd_widthPLu,<br/>  A_u_long          \*cbd_heightPLu);</pre>         |
-| `AEGP_GetInteractiveCachedBuffer`       | 获取上次用于 `PR_RenderContextH` 的缓存 AEGP_WorldH。        |
-|     | <pre lang="cpp">AEGP_GetInteractiveCachedBuffer(<br/>  const PR_RenderContextH  contextH,<br/>  AEGP_WorldH       \*buffer);</pre>         |
-| `AEGP_ArtisanMustRenderAsLayer`         | 确定工匠是否必须将当前的 `AEGP_RenderLayerContextH` 渲染为图层。         |
-|     | <pre lang="cpp">AEGP_ArtisanMustRenderAsLayer(<br/>  const PR_RenderContextH   contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  A_Boolean          \*use_txturePB);</pre>    |
-| `AEGP_GetInteractiveDisplayChannel`     | 返回交互式工匠应显示的通道。          |
-|     | <pre lang="cpp">AEGP_GetInteractiveDisplayChannel(<br/>  const PR_RenderContextH  contextH,<br/>  AEGP_DisplayChannelType  \*channelP);</pre>   |
-|     | `AEGP_DisplayChannelType` 将是以下之一：          |
-|     | - `AEGP_DisplayChannel_NONE`       |
-|     | - `AEGP_DisplayChannel_RED`         |
-|     | - `AEGP_DisplayChannel_GREEN`      |
-|     | - `AEGP_DisplayChannel_BLUE`       |
-|     | - `AEGP_DisplayChannel_ALPHA`      |
-|     | - `AEGP_DisplayChannel_RED_ALT`            |
-|     | - `AEGP_DisplayChannel_GREEN_ALT`          |
-|     | - `AEGP_DisplayChannel_BLUE_ALT`           |
-|     | - `AEGP_DisplayChannel_ALPHA_ALT`          |
-| `AEGP_GetInteractiveExposure`    | 返回给定 `PR_RenderContextH` 的曝光值，表示为浮点数。        |
-|     | <pre lang="cpp">AEGP_GetInteractiveExposure(<br/>  const PR_RenderContextH  rcH,<br/>  A_FpLong          \*exposurePF);</pre>     |
-| `AEGP_GetColorTransform`         | 返回给定 `PR_RenderContextH` 的颜色变换。          |
-|     | <pre lang="cpp">AEGP_GetColorTransform(<br/>  const PR_RenderContextH  render_contextH,<br/>  A_Boolean         \*cms_onB,<br/>  A_u_long          \*xform_keyLu,<br/>  void        \*xformP);</pre>         |
-| `AEGP_GetCompShutterTime`        | 返回给定 `PR_RenderContextH` 的快门角度。   |
-|     | <pre lang="cpp">AEGP_GetCompShutterTime(<br/>  PR_RenderContextH  render_contextH,<br/>  A_Time      \*shutter_time,<br/>  A_Time      \*shutter_dur);</pre>    |
-| `AEGP_MapCompToLayerTime`        | CC 新增功能。与 [AEGP_ConvertCompToLayerTime](../../aegps/aegp-suites#aegp_layersuite9) 不同，此功能处理折叠或嵌套合成的时间重映射。           |
-|     | <pre lang="cpp">AEGP_MapCompToLayerTime(<br/>  PR_RenderContextH         render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  const A_Time       \*comp_timePT,<br/>  A_Time      \*layer_timePT);</pre> |
+| 函数 | 用途 |
+|---|---|
+| `AEGP_GetPlatformWindowRef` | 获取平台特定的窗口上下文，用于绘制给定的 `PR_RenderContextH`。 |
+| | <pre lang="cpp">AEGP_GetPlatformWindowRef(<br/>  const PR_RenderContextH  contextH,<br/>  AEGP_PlatformWindowRef   \*window_refP);</pre> |
+| `AEGP_GetViewportScale` | 获取给定 `PR_RenderContextH` 的源到帧的下采样因子。 |
+| | <pre lang="cpp">AEGP_GetViewportScale(<br/>  const PR_RenderContextH  contextH,<br/>  A_FpLong          \*scale_xPF,<br/>  A_FpLong          \*scale_yPF);</pre> |
+| `AEGP_GetViewportOrigin` | 获取源在帧内的原点（用于在两者之间进行转换），适用于给定的 `PR_RenderContextH`。 |
+| | <pre lang="cpp">AEGP_GetViewportOrigin(<br/>  const PR_RenderContextH  contextH,<br/>  A_long    \*origin_xPL,<br/>  A_long    \*origin_yPL);</pre> |
+| `AEGP_GetViewportRect` | 获取要绘制的区域的边界矩形，适用于给定的 `PR_RenderContextH`。 |
+| | <pre lang="cpp">AEGP_GetViewportRect(<br/>  const PR_RenderContextH  contextH,<br/>  A_LegacyRect      \*v_rectPR);</pre> |
+| `AEGP_GetFallowColor` | 获取给定 `PR_RenderContextH` 中用于休耕区域的颜色。 |
+| | <pre lang="cpp">AEGP_GetFallowColor(<br/>  const PR_RenderContextH  contextH,<br/>  PF_Pixel8         \*fallow_colorP);</pre> |
+| `AEGP_GetInteractiveCheckerboard` | 获取给定 `PR_RenderContextH` 的棋盘格是否当前处于活动状态。 |
+| | <pre lang="cpp">AEGP_GetInteractiveCheckerboard(<br/>  const PR_RenderContextH  contextH,<br/>  A_Boolean         \*cboard_onPB);</pre> |
+| `AEGP_GetInteractiveCheckerboardColors` | 获取棋盘格中使用的颜色。 |
+| | <pre lang="cpp">AEGP_GetInteractiveCheckerboardColors(<br/>  const PR_RenderContextH  contextH,<br/>  PF_Pixel          \*color1P,<br/>  PF_Pixel          \*color2P);</pre> |
+| `AEGP_GetInteractiveCheckerboardSize` | 获取棋盘格方块的宽度和高度。 |
+| | <pre lang="cpp">AEGP_GetInteractiveCheckerboardSize(<br/>  const PR_RenderContextH  contextH,<br/>  A_u_long          \*cbd_widthPLu,<br/>  A_u_long          \*cbd_heightPLu);</pre> |
+| `AEGP_GetInteractiveCachedBuffer` | 获取上次用于 `PR_RenderContextH` 的缓存 AEGP_WorldH。 |
+| | <pre lang="cpp">AEGP_GetInteractiveCachedBuffer(<br/>  const PR_RenderContextH  contextH,<br/>  AEGP_WorldH       \*buffer);</pre> |
+| `AEGP_ArtisanMustRenderAsLayer` | 确定工匠是否必须将当前的 `AEGP_RenderLayerContextH` 渲染为图层。 |
+| | <pre lang="cpp">AEGP_ArtisanMustRenderAsLayer(<br/>  const PR_RenderContextH   contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  A_Boolean          \*use_txturePB);</pre> |
+| `AEGP_GetInteractiveDisplayChannel` | 返回交互式工匠应显示的通道。 |
+| | <pre lang="cpp">AEGP_GetInteractiveDisplayChannel(<br/>  const PR_RenderContextH  contextH,<br/>  AEGP_DisplayChannelType  \*channelP);</pre> |
+| | `AEGP_DisplayChannelType` 将是以下之一： |
+| | - `AEGP_DisplayChannel_NONE` |
+| | - `AEGP_DisplayChannel_RED` |
+| | - `AEGP_DisplayChannel_GREEN` |
+| | - `AEGP_DisplayChannel_BLUE` |
+| | - `AEGP_DisplayChannel_ALPHA` |
+| | - `AEGP_DisplayChannel_RED_ALT` |
+| | - `AEGP_DisplayChannel_GREEN_ALT` |
+| | - `AEGP_DisplayChannel_BLUE_ALT` |
+| | - `AEGP_DisplayChannel_ALPHA_ALT` |
+| `AEGP_GetInteractiveExposure` | 返回给定 `PR_RenderContextH` 的曝光值，表示为浮点数。 |
+| | <pre lang="cpp">AEGP_GetInteractiveExposure(<br/>  const PR_RenderContextH  rcH,<br/>  A_FpLong          \*exposurePF);</pre> |
+| `AEGP_GetColorTransform` | 返回给定 `PR_RenderContextH` 的颜色变换。 |
+| | <pre lang="cpp">AEGP_GetColorTransform(<br/>  const PR_RenderContextH  render_contextH,<br/>  A_Boolean         \*cms_onB,<br/>  A_u_long          \*xform_keyLu,<br/>  void        \*xformP);</pre> |
+| `AEGP_GetCompShutterTime` | 返回给定 `PR_RenderContextH` 的快门角度。 |
+| | <pre lang="cpp">AEGP_GetCompShutterTime(<br/>  PR_RenderContextH  render_contextH,<br/>  A_Time      \*shutter_time,<br/>  A_Time      \*shutter_dur);</pre> |
+| `AEGP_MapCompToLayerTime` | CC 新增功能。与 [AEGP_ConvertCompToLayerTime](../../aegps/aegp-suites#aegp_layersuite9) 不同，此功能处理折叠或嵌套合成的时间重映射。 |
+| | <pre lang="cpp">AEGP_MapCompToLayerTime(<br/>  PR_RenderContextH         render_contextH,<br/>  AEGP_RenderLayerContextH  layer_contextH,<br/>  const A_Time       \*comp_timePT,<br/>  A_Time      \*layer_timePT);</pre> |
 
 ---
 
@@ -247,20 +247,20 @@ Artisan 是一个 AEGP，并且只有一个入口函数。Artisan 还必须注�
 
 ### AEGP_ArtisanUtilSuite1
 
-|   函数   |          用途          |
-|--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `AEGP_GetGlobalContextFromInstanceContext` | 给定实例上下文，返回全局上下文的句柄。          |
-|        | <pre lang="cpp">AEGP_GetGlobalContextFromInstanceContext(<br/>  const PR_InstanceContextH  instance_contextH,<br/>  PR_GlobalContextH   \*global_contextPH);</pre> |
-| `AEGP_GetInstanceContextFromRenderContext` | 给定渲染上下文，返回实例上下文的句柄。         |
-|        | <pre lang="cpp">AEGP_GetInstanceContextFromRenderContext(<br/>  const PR_RenderContextH  render_contextH,<br/>  PR_InstanceContextH      \*instnc_ctextPH);</pre>         |
-| `AEGP_GetInstanceContextFromQueryContext`  | 给定查询上下文，返回实例上下文的句柄。   |
-|        | <pre lang="cpp">AEGP_GetInstanceContextFromQueryContext(<br/>  const PR_QueryContextH  query_contextH,<br/>  PR_InstanceContextH     \*instnce_contextPH);</pre>   |
-| `AEGP_GetGlobalData`         | 给定全局上下文，返回全局数据的句柄。           |
-|        | <pre lang="cpp">AEGP_GetGlobalData(<br/>  const PR_GlobalContextH  global_contextH,<br/>  PR_GlobalDataH    \*global_dataPH);</pre>   |
-| `AEGP_GetInstanceData`       | 给定实例上下文，返回关联的实例数据。    |
-|        | <pre lang="cpp">AEGP_GetInstanceData(<br/>  const PR_InstanceContextH  instance_contextH,<br/>  PR_InstanceDataH    \*instance_dataPH);</pre>        |
-| `AEGP_GetRenderData`         | 给定渲染上下文，返回关联的渲染数据。          |
-|        | <pre lang="cpp">AEGP_GetRenderData(<br/>  const PR_RenderContextH  render_contextH,<br/>  PR_RenderDataH    \*render_dataPH);</pre>   |
+| 函数 | 用途 |
+|---|---|
+| `AEGP_GetGlobalContextFromInstanceContext` | 给定实例上下文，返回全局上下文的句柄。 |
+| | <pre lang="cpp">AEGP_GetGlobalContextFromInstanceContext(<br/>  const PR_InstanceContextH  instance_contextH,<br/>  PR_GlobalContextH   \*global_contextPH);</pre> |
+| `AEGP_GetInstanceContextFromRenderContext` | 给定渲染上下文，返回实例上下文的句柄。 |
+| | <pre lang="cpp">AEGP_GetInstanceContextFromRenderContext(<br/>  const PR_RenderContextH  render_contextH,<br/>  PR_InstanceContextH      \*instnc_ctextPH);</pre> |
+| `AEGP_GetInstanceContextFromQueryContext` | 给定查询上下文，返回实例上下文的句柄。 |
+| | <pre lang="cpp">AEGP_GetInstanceContextFromQueryContext(<br/>  const PR_QueryContextH  query_contextH,<br/>  PR_InstanceContextH     \*instnce_contextPH);</pre> |
+| `AEGP_GetGlobalData` | 给定全局上下文，返回全局数据的句柄。 |
+| | <pre lang="cpp">AEGP_GetGlobalData(<br/>  const PR_GlobalContextH  global_contextH,<br/>  PR_GlobalDataH    \*global_dataPH);</pre> |
+| `AEGP_GetInstanceData` | 给定实例上下文，返回关联的实例数据。 |
+| | <pre lang="cpp">AEGP_GetInstanceData(<br/>  const PR_InstanceContextH  instance_contextH,<br/>  PR_InstanceDataH    \*instance_dataPH);</pre> |
+| `AEGP_GetRenderData` | 给定渲染上下文，返回关联的渲染数据。 |
+| | <pre lang="cpp">AEGP_GetRenderData(<br/>  const PR_RenderContextH  render_contextH,<br/>  PR_RenderDataH    \*render_dataPH);</pre> |
 
 ---
 
@@ -270,22 +270,22 @@ Artisan 是一个 AEGP，并且只有一个入口函数。Artisan 还必须注�
 
 ### AEGP_CameraSuite2
 
-|   函数    |    用途    |
-|---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `AEGP_GetCamera`      | 给定图层句柄和时间，返回当前摄像机图层句柄。           |
-|         | <pre lang="cpp">AEGP_GetCamera(<br/>  PR_RenderContextH  render_contextH,<br/>  const A_Time       \*comp_timeP,<br/>  AEGP_LayerH        \*camera_layerPH);</pre>       |
-| `AEGP_GetCameraType`          | 给定图层，返回图层的摄像机类型。       |
-|         | <pre lang="cpp">AEGP_GetCameraType(<br/>  AEGP_LayerH      aegp_layerH,<br/>  AEGP_CameraType  \*camera_typeP;</pre>          |
-|         | 摄像机类型可以是以下之一：       |
-|         | - `AEGP_CameraType_NONE = -1`        |
-|         | - `AEGP_CameraType_PERSPECTIVE`      |
-|         | - `AEGP_CameraType_ORTHOGRAPHIC`     |
-| `AEGP_GetDefaultCameraDistanceToImagePlane` | 给定合成句柄，返回摄像机到图像平面的距离。      |
-|         | <pre lang="cpp">AEGP_GetDefaultCamera DistanceToImagePlane(<br/>  AEGP_CompH  compH,<br/>  A_FpLong    \*dist_to_planePF)</pre>    |
-| `AEGP_GetCameraFilmSize`      | 获取指定摄像机使用的胶片尺寸（以及用于测量该尺寸的单位）。   |
-|         | <pre lang="cpp">AEGP_GetCameraFilmSize(<br/>  AEGP_LayerH         camera_layerH,<br/>  AEGP_FilmSizeUnits  \*film_size_unitsP,<br/>  A_FpLong     \*film_sizePF0);</pre> |
-| `AEGP_SetCameraFilmSize`      | 设置指定摄像机使用的胶片尺寸（以及用于测量该尺寸的单位）。         |
-|         | <pre lang="cpp">AEGP_SetCameraFilmSize)(<br/>  AEGP_LayerH         camera_layerH,<br/>  AEGP_FilmSizeUnits  film_size_units,<br/>  A_FpLong     \*film_sizePF0);</pre>   |
+| 函数 | 用途 |
+|---|---|
+| `AEGP_GetCamera` | 给定图层句柄和时间，返回当前摄像机图层句柄。 |
+| | <pre lang="cpp">AEGP_GetCamera(<br/>  PR_RenderContextH  render_contextH,<br/>  const A_Time       \*comp_timeP,<br/>  AEGP_LayerH        \*camera_layerPH);</pre> |
+| `AEGP_GetCameraType` | 给定图层，返回图层的摄像机类型。 |
+| | <pre lang="cpp">AEGP_GetCameraType(<br/>  AEGP_LayerH      aegp_layerH,<br/>  AEGP_CameraType  \*camera_typeP;</pre> |
+| | 摄像机类型可以是以下之一： |
+| | - `AEGP_CameraType_NONE = -1` |
+| | - `AEGP_CameraType_PERSPECTIVE` |
+| | - `AEGP_CameraType_ORTHOGRAPHIC` |
+| `AEGP_GetDefaultCameraDistanceToImagePlane` | 给定合成句柄，返回摄像机到图像平面的距离。 |
+| | <pre lang="cpp">AEGP_GetDefaultCamera DistanceToImagePlane(<br/>  AEGP_CompH  compH,<br/>  A_FpLong    \*dist_to_planePF)</pre> |
+| `AEGP_GetCameraFilmSize` | 获取指定摄像机使用的胶片尺寸（以及用于测量该尺寸的单位）。 |
+| | <pre lang="cpp">AEGP_GetCameraFilmSize(<br/>  AEGP_LayerH         camera_layerH,<br/>  AEGP_FilmSizeUnits  \*film_size_unitsP,<br/>  A_FpLong     \*film_sizePF0);</pre> |
+| `AEGP_SetCameraFilmSize` | 设置指定摄像机使用的胶片尺寸（以及用于测量该尺寸的单位）。 |
+| | <pre lang="cpp">AEGP_SetCameraFilmSize)(<br/>  AEGP_LayerH         camera_layerH,<br/>  AEGP_FilmSizeUnits  film_size_units,<br/>  A_FpLong     \*film_sizePF0);</pre> |
 
 ---
 
@@ -335,17 +335,17 @@ tan(ϴ) = 1/2 合成高度 / 焦距
 
 ### AEGP_LightSuite2
 
-|      函数       |           用途   |
-|---------------------|--------------------------------------------------------------------------------------------------------------------|
-| `AEGP_GetLightType` | 获取指定摄像机图层的 `AEGP_LightType`。           |
-|       | <pre lang="cpp">AEGP_GetLightType(<br/>  AEGP_LayerH     light_layerH,<br/>  AEGP_LightType  \*light_typeP);</pre> |
-|       | `AEGP_LightType` 将是以下之一：           |
-|       | - `AEGP_LightType_PARALLEL`       |
-|       | - `AEGP_LightType_SPOT`    |
-|       | - `AEGP_LightType_POINT`   |
-|       | - `AEGP_LightType_AMBIENT`         |
-| `AEGP_SetLightType` | 设置指定摄像机图层的 `AEGP_LightType`。       |
-|       | <pre lang="cpp">AEGP_SetLightType(<br/>  AEGP_LayerH     light_layerH,<br/>  AEGP_LightType  light_type);</pre>    |
+| 函数 | 用途 |
+|---|---|
+| `AEGP_GetLightType` | 获取指定摄像机图层的 `AEGP_LightType`。 |
+| | <pre lang="cpp">AEGP_GetLightType(<br/>  AEGP_LayerH     light_layerH,<br/>  AEGP_LightType  \*light_typeP);</pre> |
+| | `AEGP_LightType` 将是以下之一： |
+| | - `AEGP_LightType_PARALLEL` |
+| | - `AEGP_LightType_SPOT` |
+| | - `AEGP_LightType_POINT` |
+| | - `AEGP_LightType_AMBIENT` |
+| `AEGP_SetLightType` | 设置指定摄像机图层的 `AEGP_LightType`。 |
+| | <pre lang="cpp">AEGP_SetLightType(<br/>  AEGP_LayerH     light_layerH,<br/>  AEGP_LightType  light_type);</pre> |
 
 ### 关于灯光行为的注意事项
 
@@ -379,45 +379,45 @@ After Effects 依赖工匠绘制 3D 图层句柄。如果您的工匠选择不�
 
 ### AEGP_QueryXFormSuite2
 
-|       函数        |        用途         |
-|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `AEGP_QueryXformGetSrcType`         | 给定查询上下文，返回当前正在修改的变换源。      |
-|        | <pre lang="cpp">AEGP_QueryXformGetSrcType(<br/>  PR_QueryContextH     query_contextH,<br/>  AEGP_QueryXformType  \*src_type);</pre>         |
-|        | 查询上下文将是以下之一：   |
-|        | - `AEGP_Query_Xform_LAYER`            |
-|        | - `AEGP_Query_Xform_WORLD`            |
-|        | - `AEGP_Query_Xform_VIEW`   |
-|        | - `AEGP_Query_Xform_SCREEN`          |
-| `AEGP_QueryXformGetDstType`         | 给定查询上下文，返回当前请求的变换目标。            |
-|        | <pre lang="cpp">AEGP_QueryXformGetDstType(<br/>  PR_QueryContextH     query_contextH,<br/>  AEGP_QueryXformType  \*dst_type);</pre>         |
-| `AEGP_QueryXformGetLayer`    | 如果源或目标类型是图层，则使用此函数。给定查询上下文，返回图层句柄。            |
-|        | <pre lang="cpp">AEGP_QueryXformGetLayer(<br/>  PR_QueryContextH  query_contextH,<br/>  AEGP_LayerH       \*layerPH);</pre>          |
-| `AEGP_QueryXformGetComp`     | 给定查询上下文，返回当前合成的句柄。            |
-|        | <pre lang="cpp">AEGP_QueryXformGetComp(<br/>  PR_QueryContextH  query_contextH,<br/>  AEGP_CompH        \*compPH);</pre>     |
-| `AEGP_QueryXformGetTransformTime`   | 给定查询上下文，返回变换的时间。            |
-|        | <pre lang="cpp">AEGP_QueryXformGetTransformTime(<br/>  PR_QueryContextH  query_contextH,<br/>  A_Time     \*time);</pre>     |
-| `AEGP_QueryXformGetViewTime`        | 给定查询上下文，返回关联视图的时间。           |
-|        | <pre lang="cpp">AEGP_QueryXformGetViewTime(<br/>  PR_QueryContextH  query_contextH,<br/>  A_Time     \*time);</pre>          |
-| `AEGP_QueryXformGetCamera`   | 给定查询上下文，返回当前相机图层句柄。           |
-|        | <pre lang="cpp">AEGP_QueryXformGetCamera(<br/>  PR_QueryContextH  query_contextH,<br/>  AEGP_LayerH       \*camera_layerPH);</pre>          |
-| `AEGP_QueryXformGetXform`    | 给定查询上下文，返回当前矩阵变换。      |
-|        | <pre lang="cpp">AEGP_QueryXformGetXform(<br/>  PR_QueryContextH  query_contextH,<br/>  A_Matrix4         \*xform);</pre>     |
-| `AEGP_QueryXformSetXform`    | 给定查询上下文，返回你在 `xform` 中计算的矩阵变换。      |
-|        | <pre lang="cpp">AEGP_QueryXformSetXform(<br/>  PR_QueryContextH  query_contextH,<br/>  A_Matrix4         \*xform);</pre>     |
-| `AEGP_QueryWindowRef`        | 设置要使用的窗口引用（由 After Effects 使用），针对给定的 `PR_QueryContextH`。       |
-|        | <pre lang="cpp">AEGP_QueryWindowRef(<br/>  PR_QueryContextH        q_contextH,<br/>  AEGP_PlatformWindowRef  \*window_refP);</pre>          |
-| `AEGP_QueryWindowClear`      | 返回要清除的 `AEGP_PlatformWindowRef`（和 `A_Rect`），针对给定的 `PR_QueryContextH`。      |
-|        | <pre lang="cpp">AEGP_QueryWindowClear(<br/>  PR_QueryContextH        q_contextH,<br/>  AEGP_PlatformWindowRef  \*window_refP,<br/>  A_LegacyRect     \*boundsPR);</pre>          |
-| `AEGP_QueryFrozenProxy`      | 返回给定 `PR_QueryContextH` 中使用的纹理是否应冻结。      |
-|        | <pre lang="cpp">AEGP_QueryFrozenProxy(<br/>  PR_QueryContextH  q_contextH,<br/>  A_Boolean         \*onPB);</pre>            |
-| `AEGP_QuerySwapBuffer`       | 在渲染和相机/灯光句柄绘制完成后发送；After Effects 返回 artisan 应绘制其输出的缓冲区。         |
-|        | <pre lang="cpp">AEGP_QuerySwapBuffer(<br/>  PR_QueryContextH        q_contextH,<br/>  AEGP_PlatformWindowRef  \*window_refP,<br/>  AEGP_WorldH      \*dest_bufferp);</pre>      |
-| `AEGP_QueryDrawProcs`        | 设置 After Effects 在绘制相机和灯光句柄到 artisan 提供的上下文时将调用的交互式绘制函数。      |
-|        | <pre lang="cpp">AEGP_QueryDrawProcs(<br/>  PR_QueryContextH         query_contextH,<br/>  PR_InteractiveDrawProcs  \*window_refP);</pre>   |
-| `AEGP_QueryPrepareForLineDrawing`   | 通知 After Effects 它将绘制的上下文。            |
-|        | <pre lang="cpp">AEGP_QueryPrepareForLineDrawing(<br/>  PR_QueryContextH        query_contextH,<br/>  AEGP_PlatformWindowRef  \*window_refP,<br/>  A_LegacyRect     \*viewportP,<br/>  A_LPoint         \*originP,<br/>  A_FloatPoint     \*scaleP);</pre> |
-| `AEGP_QueryUnprepareForLineDrawing` | 就 After Effects 而言，artisan 已完成线条绘制。         |
-|        | <pre lang="cpp">AEGP_QueryUnprepareForLineDrawing(<br/>  PR_QueryContextH        query_contextH,<br/>  AEGP_PlatformWindowRef  \*window_refP);</pre>      |
+| 函数 | 用途 |
+|---|---|
+| `AEGP_QueryXformGetSrcType` | 给定查询上下文，返回当前正在修改的变换源。 |
+| | <pre lang="cpp">AEGP_QueryXformGetSrcType(<br/>  PR_QueryContextH     query_contextH,<br/>  AEGP_QueryXformType  \*src_type);</pre> |
+| | 查询上下文将是以下之一： |
+| | - `AEGP_Query_Xform_LAYER` |
+| | - `AEGP_Query_Xform_WORLD` |
+| | - `AEGP_Query_Xform_VIEW` |
+| | - `AEGP_Query_Xform_SCREEN` |
+| `AEGP_QueryXformGetDstType` | 给定查询上下文，返回当前请求的变换目标。 |
+| | <pre lang="cpp">AEGP_QueryXformGetDstType(<br/>  PR_QueryContextH     query_contextH,<br/>  AEGP_QueryXformType  \*dst_type);</pre> |
+| `AEGP_QueryXformGetLayer` | 如果源或目标类型是图层，则使用此函数。给定查询上下文，返回图层句柄。 |
+| | <pre lang="cpp">AEGP_QueryXformGetLayer(<br/>  PR_QueryContextH  query_contextH,<br/>  AEGP_LayerH       \*layerPH);</pre> |
+| `AEGP_QueryXformGetComp` | 给定查询上下文，返回当前合成的句柄。 |
+| | <pre lang="cpp">AEGP_QueryXformGetComp(<br/>  PR_QueryContextH  query_contextH,<br/>  AEGP_CompH        \*compPH);</pre> |
+| `AEGP_QueryXformGetTransformTime` | 给定查询上下文，返回变换的时间。 |
+| | <pre lang="cpp">AEGP_QueryXformGetTransformTime(<br/>  PR_QueryContextH  query_contextH,<br/>  A_Time     \*time);</pre> |
+| `AEGP_QueryXformGetViewTime` | 给定查询上下文，返回关联视图的时间。 |
+| | <pre lang="cpp">AEGP_QueryXformGetViewTime(<br/>  PR_QueryContextH  query_contextH,<br/>  A_Time     \*time);</pre> |
+| `AEGP_QueryXformGetCamera` | 给定查询上下文，返回当前相机图层句柄。 |
+| | <pre lang="cpp">AEGP_QueryXformGetCamera(<br/>  PR_QueryContextH  query_contextH,<br/>  AEGP_LayerH       \*camera_layerPH);</pre> |
+| `AEGP_QueryXformGetXform` | 给定查询上下文，返回当前矩阵变换。 |
+| | <pre lang="cpp">AEGP_QueryXformGetXform(<br/>  PR_QueryContextH  query_contextH,<br/>  A_Matrix4         \*xform);</pre> |
+| `AEGP_QueryXformSetXform` | 给定查询上下文，返回你在 `xform` 中计算的矩阵变换。 |
+| | <pre lang="cpp">AEGP_QueryXformSetXform(<br/>  PR_QueryContextH  query_contextH,<br/>  A_Matrix4         \*xform);</pre> |
+| `AEGP_QueryWindowRef` | 设置要使用的窗口引用（由 After Effects 使用），针对给定的 `PR_QueryContextH`。 |
+| | <pre lang="cpp">AEGP_QueryWindowRef(<br/>  PR_QueryContextH        q_contextH,<br/>  AEGP_PlatformWindowRef  \*window_refP);</pre> |
+| `AEGP_QueryWindowClear` | 返回要清除的 `AEGP_PlatformWindowRef`（和 `A_Rect`），针对给定的 `PR_QueryContextH`。 |
+| | <pre lang="cpp">AEGP_QueryWindowClear(<br/>  PR_QueryContextH        q_contextH,<br/>  AEGP_PlatformWindowRef  \*window_refP,<br/>  A_LegacyRect     \*boundsPR);</pre> |
+| `AEGP_QueryFrozenProxy` | 返回给定 `PR_QueryContextH` 中使用的纹理是否应冻结。 |
+| | <pre lang="cpp">AEGP_QueryFrozenProxy(<br/>  PR_QueryContextH  q_contextH,<br/>  A_Boolean         \*onPB);</pre> |
+| `AEGP_QuerySwapBuffer` | 在渲染和相机/灯光句柄绘制完成后发送；After Effects 返回 artisan 应绘制其输出的缓冲区。 |
+| | <pre lang="cpp">AEGP_QuerySwapBuffer(<br/>  PR_QueryContextH        q_contextH,<br/>  AEGP_PlatformWindowRef  \*window_refP,<br/>  AEGP_WorldH      \*dest_bufferp);</pre> |
+| `AEGP_QueryDrawProcs` | 设置 After Effects 在绘制相机和灯光句柄到 artisan 提供的上下文时将调用的交互式绘制函数。 |
+| | <pre lang="cpp">AEGP_QueryDrawProcs(<br/>  PR_QueryContextH         query_contextH,<br/>  PR_InteractiveDrawProcs  \*window_refP);</pre> |
+| `AEGP_QueryPrepareForLineDrawing` | 通知 After Effects 它将绘制的上下文。 |
+| | <pre lang="cpp">AEGP_QueryPrepareForLineDrawing(<br/>  PR_QueryContextH        query_contextH,<br/>  AEGP_PlatformWindowRef  \*window_refP,<br/>  A_LegacyRect     \*viewportP,<br/>  A_LPoint         \*originP,<br/>  A_FloatPoint     \*scaleP);</pre> |
+| `AEGP_QueryUnprepareForLineDrawing` | 就 After Effects 而言，artisan 已完成线条绘制。 |
+| | <pre lang="cpp">AEGP_QueryUnprepareForLineDrawing(<br/>  PR_QueryContextH        query_contextH,<br/>  AEGP_PlatformWindowRef  \*window_refP);</pre> |
 
 ---
 
@@ -427,13 +427,13 @@ After Effects 依赖工匠绘制 3D 图层句柄。如果您的工匠选择不�
 
 ### PR_InteractiveDrawProcs
 
-|        函数         |       用途       |
-| ----------------------- | ----------------------------------------------------------------------------- |
-| `PR_Draw_MoveToFunc`    | <pre lang="cpp">PR_Draw_MoveToFunc(<br/>  short  x,<br/>  short  y);</pre>    |
-| `PR_Draw_LineToFunc`    | <pre lang="cpp">PR_Draw_LineToFunc(<br/>  short  x,<br/>  short  y);</pre>    |
+| 函数 | 用途 |
+| --- | --- |
+| `PR_Draw_MoveToFunc` | <pre lang="cpp">PR_Draw_MoveToFunc(<br/>  short  x,<br/>  short  y);</pre> |
+| `PR_Draw_LineToFunc` | <pre lang="cpp">PR_Draw_LineToFunc(<br/>  short  x,<br/>  short  y);</pre> |
 | `PR_Draw_ForeColorFunc` | <pre lang="cpp">PR_Draw_ForeColorFunc(<br/>  const A_Color  \*fore_colo</pre> |
-| `PR_Draw_FrameRectFunc` | <pre lang="cpp">PR_Draw_FrameRectFunc(<br/>  const A_Rect  \*rectPR );</pre>  |
-| `PR_Draw_PaintRectFunc` | <pre lang="cpp">PR_Draw_PaintRectFunc(<br/>  const A_Rect  \*rectPR );</pre>  |
+| `PR_Draw_FrameRectFunc` | <pre lang="cpp">PR_Draw_FrameRectFunc(<br/>  const A_Rect  \*rectPR );</pre> |
+| `PR_Draw_PaintRectFunc` | <pre lang="cpp">PR_Draw_PaintRectFunc(<br/>  const A_Rect  \*rectPR );</pre> |
 
 ---
 

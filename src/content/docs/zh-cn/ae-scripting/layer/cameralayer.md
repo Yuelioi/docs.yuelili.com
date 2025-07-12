@@ -19,16 +19,16 @@ CameraLayer 没有定义额外的属性，但与其他图层类型相比，它�
 
 - `Marker`
 - `Transform`
-  - `PointofInterest`
-  - `Position`
-  - `Scale`
-  - `Orientation`
-  - `XRotation`
-  - `YRotation`
-  - `Rotation`
-  - `Opacity`
+ - `PointofInterest`
+ - `Position`
+ - `Scale`
+ - `Orientation`
+ - `XRotation`
+ - `YRotation`
+ - `Rotation`
+ - `Opacity`
 - `CameraOptions`
-  - `Zoom`
-  - `DepthofField`
-  - `FocusDistance`
-  - `BlurLevel`
+ - `Zoom`
+ - `DepthofField`
+ - `FocusDistance`
+ - `BlurLevel`

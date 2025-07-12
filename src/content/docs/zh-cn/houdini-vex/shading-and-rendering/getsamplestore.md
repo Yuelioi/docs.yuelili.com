@@ -28,39 +28,39 @@ order: 31
 
 ```vex
 cvex displacedlens(
-    // 输入
-    float x = 0;
-    float y = 0;
-    float Time = 0;
-    float dofx = 0;
-    float dofy = 0;
-    float aspect = 1;
+ // 输入
+ float x = 0;
+ float y = 0;
+ float Time = 0;
+ float dofx = 0;
+ float dofy = 0;
+ float aspect = 1;
 
-    float displaceScale = 1.0;
-    float displaceGain = 0.1;
+ float displaceScale = 1.0;
+ float displaceGain = 0.1;
 
-    // 输出
-    export vector P = 0;
-    export vector I = 0;
+ // 输出
+ export vector P = 0;
+ export vector I = 0;
 )
 {
-    P = {x, y, 0};
-    I = {1, 0, 0};
+ P = {x, y, 0};
+ I = {1, 0, 0};
 
-    vector displace = noise(P * displaceScale) * displaceGain;
-    I += displace;
+ vector displace = noise(P * displaceScale) * displaceGain;
+ I += displace;
 
-    // 在眼睛点'P'处存储位移
-    int status = setsamplestore("displacedlens_d", P, displace);
+ // 在眼睛点'P'处存储位移
+ int status = setsamplestore("displacedlens_d", P, displace);
 }
 
 surface mysurface()
 {
-    // 在眼睛点'Eye'处获取位移
-    vector displace = 0;
-    int status = getsamplestore("displacedlens_d", Eye, displace);
+ // 在眼睛点'Eye'处获取位移
+ vector displace = 0;
+ int status = getsamplestore("displacedlens_d", Eye, displace);
 
-    //...
+ //...
 }
 
 ```

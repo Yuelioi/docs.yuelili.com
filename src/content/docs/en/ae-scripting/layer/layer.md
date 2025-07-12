@@ -13,11 +13,9 @@ The Layer object provides access to layers within compositions. It can be access
 Layer is a subclass of [PropertyGroup](../../property/propertygroup), which is a subclass of [PropertyBase](../../property/propertybase). All methods and attributes of PropertyGroup, in addition to those listed below, are available when working with Layer, with the exception that `propertyIndex` attribute is set to `undefined`.
 :::
 
-
 :::info
 Layer is the base class for [CameraLayer object](../cameralayer), [LightLayer object](../lightlayer), and [AVLayer object](../avlayer), so Layer attributes and methods are available when working with all layer types. Layers contain AE properties, in addition to their JavaScript attributes and methods. For examples of how to access properties in layers, see [PropertyBase object](../../property/propertybase).
 :::
-
 
 #### Example
 
@@ -102,7 +100,6 @@ Boolean; read-only.
 This functionality was added in After Effects 22.0 (2022)
 :::
 
-
 #### Description
 
 Instance property on Layer which returns a unique and persistent identification number used internally to identify a Layer between sessions.
@@ -158,7 +155,6 @@ Floating-point value, in the range `[-10800.0..10800.0]` (minus or plus three ho
 This always returns `true` for layers that do not have a [AVLayer.source](../avlayer#avlayersource)
 :::
 
-
 #### Type
 
 Boolean; read-only.
@@ -176,7 +172,6 @@ The label color for the item. Colors are represented by their number (0 for None
 :::tip
 Custom label colors cannot be set programmatically.
 :::
-
 
 #### Type
 
@@ -377,9 +372,9 @@ To return `true`, the layer must be enabled, no other layer may be soloing unles
 
 #### Parameters
 
-| Parameter |         Type         |     Description      |
-| --------- | -------------------- | -------------------- |
-| `time`    | Floating-point value | The time in seconds. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `time` | Floating-point value | The time in seconds. |
 
 #### Returns
 
@@ -401,11 +396,10 @@ Predefined animation preset files are installed in the Presets folder, and users
 The animation preset is applied to the the selected layer(s) of the comp, not to the layer whose applyPreset function is called. Hence, the layer whose applyPreset function is called effectively just determines the comp whose layers are processed.
 :::
 
-
 #### Parameters
 
-|  Parameter   |                                                 Type                                                  |                Description                |
-| ------------ | ----------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `presetName` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) object | The file containing the animation preset. |
 
 #### Returns
@@ -432,16 +426,14 @@ This is the same as copying and pasting a layer through the user interface.
 As of After Effects 13.6, this method no longer causes After Effects to crash when the layer has a parent.
 :::
 
-
 :::warning
 As of After Effects 13.7 (13.6, has not been tested), if the copied layer has an effect on it and the user undoes the action, After Effects will Crash.
 :::
 
-
 #### Parameters
 
-| Parameter  |                  Type                  |       Description       |
-| ---------- | -------------------------------------- | ----------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `intoComp` | [CompItem object](../../item/compitem) | The target composition. |
 
 #### Returns
@@ -458,7 +450,6 @@ Nothing.
 This functionality was added in After Effects 22.3 (2022)
 :::
 
-
 #### Description
 
 Runs Scene Edit Detection on the layer that the method is called on and returns an array containing the times of any detected scenes. This is the same as selecting a layer in the Timeline and choosing "Layer > Scene Edit Detection" with the single argument determining whether the edits are applied as markers, layer splits, pre-comps, or are not applied to the layer.
@@ -467,13 +458,13 @@ Just as in the UI, `doSceneEditDetection` will fail and error if called on a non
 
 #### Parameters
 
-|   Parameter    |             Type              |                                          Description                                           |
-|----------------|-------------------------------|------------------------------------------------------------------------------------------------|
-| `applyOptions` | `SceneEditDetectionMode` enum | How the detected edits will be applied. One of:                                                |
-|                |                               | - `SceneEditDetectionMode.MARKERS`: Create markers at edit points.                             |
-|                |                               | - `SceneEditDetectionMode.SPLIT`: Split layer.                                                 |
-|                |                               | - `SceneEditDetectionMode.SPLIT_PRECOMP`: Split layer at edit points and pre-compose each one. |
-|                |                               | - `SceneEditDetectionMode.NONE`: Detected edits are not applied to the layer.                  |
+| Parameter | Type | Description |
+|---|---|---|
+| `applyOptions` | `SceneEditDetectionMode` enum | How the detected edits will be applied. One of: |
+| | | - `SceneEditDetectionMode.MARKERS`: Create markers at edit points. |
+| | | - `SceneEditDetectionMode.SPLIT`: Split layer. |
+| | | - `SceneEditDetectionMode.SPLIT_PRECOMP`: Split layer at edit points and pre-compose each one. |
+| | | - `SceneEditDetectionMode.NONE`: Detected edits are not applied to the layer. |
 
 #### Returns
 
@@ -509,10 +500,9 @@ Moves this layer to a position immediately after (below) the specified layer.
 
 #### Parameters
 
-| Parameter |           Type           |                Description                |
-| --------- | ------------------------ | ----------------------------------------- |
-| `layer`   | [Layer object](../layer) | The target layer in the same composition. |
-
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `layer` | [Layer object](../layer) | The target layer in the same composition. |
 
 #### Returns
 
@@ -530,9 +520,9 @@ Moves this layer to a position immediately before (above) the specified layer.
 
 #### Parameters
 
-| Parameter |           Type           |                Description                |
-| --------- | ------------------------ | ----------------------------------------- |
-| `layer`   | [Layer object](../layer) | The target layer in the same composition. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `layer` | [Layer object](../layer) | The target layer in the same composition. |
 
 #### Returns
 
@@ -608,8 +598,8 @@ If you do not want the child layer to jump, set the [parent](#layerparent) attri
 
 #### Parameters
 
-|  Parameter  |           Type           |                                       Description                                        |
-| ----------- | ------------------------ | ---------------------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `newParent` | [Layer object](../layer) | Optional. A layer in the same composition. If not specified, it sets the parent to None. |
 
 #### Returns

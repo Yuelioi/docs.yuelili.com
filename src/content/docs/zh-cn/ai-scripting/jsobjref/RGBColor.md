@@ -85,12 +85,12 @@ RGB [颜色](.././Color) 规范，用于将 RGB 颜色应用于图层或艺术�
 // 将当前文档的默认填充颜色设置为黄色。
 
 if (app.documents.length > 0) {
-    // 定义新颜色
-    var newRGBColor = new RGBColor();
-    newRGBColor.red = 255;
-    newRGBColor.green = 255;
-    newRGBColor.blue = 0;
+ // 定义新颜色
+ var newRGBColor = new RGBColor();
+ newRGBColor.red = 255;
+ newRGBColor.green = 255;
+ newRGBColor.blue = 0;
 
-    app.activeDocument.defaultFillColor = newRGBColor;
+ app.activeDocument.defaultFillColor = newRGBColor;
 }
 ```

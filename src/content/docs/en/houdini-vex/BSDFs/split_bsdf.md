@@ -67,7 +67,7 @@ float albedos[];
 resize(albedos, len(lobes));
 for (int i = 0; i < len(lobes); i++)
 {
-    albedos[i] = luminance(albedo(lobes[i], -hitnI)) * weights[i];
+ albedos[i] = luminance(albedo(lobes[i], -hitnI)) * weights[i];
 }
 
 // Compute CDF

@@ -143,7 +143,6 @@ Specific plugins can be blocked from being loaded by MediaCore in specific appli
 This does not work for After Effects plugins loaded by AE, although it does work for AE plugins loaded in Premiere Pro.
 :::
 
-
 In the plugins folder, look for the appropriate blacklist file, and append the the filename of the plugin to the file (e.g. BadPlugin, not BadPlugin.prm). If the file doesn't exist, create it first. "Blocklist.txt" contains names of plugins blacklisted from all apps. Plugins can be blocked from loading in specific apps by including them in "Blocklist Adobe Premiere Pro.txt", or "Blocklist After Effects.txt", etc.
 
 ---
@@ -200,4 +199,3 @@ Once enabled, the player displays the statistics as black text on a partially tr
 :::note
 If you are developing a transmitter, displaying dog ears will result in duplicate calls to PushVideo for the same frame. This happens because the player routinely updates the dog ears on a timer even when the frame hasn't changed for updated stats. As of CS6, this triggers a PushVideo to active transmitters as a side effect.
 :::
-

@@ -23,7 +23,7 @@ Examples
 ## examples
 
 ```vex
-int        nvtx;
+int nvtx;
 
 // Get the number of vertices of primitive 3
 nvtx = primvertexcount("defgeo.bgeo", 3);

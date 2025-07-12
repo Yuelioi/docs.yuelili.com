@@ -39,7 +39,7 @@ string step_suffix = "step";
 usd_addtranslate(0, "/geo/cone", step_suffix, {1, 0, 0});
 
 // 通过将其添加到变换顺序中来重复相同的平移操作
-string step_name   = usd_transformname(USD_XFORM_TRANSLATE, step_suffix);
+string step_name = usd_transformname(USD_XFORM_TRANSLATE, step_suffix);
 usd_addrotate(0, "/geo/cone", "first_rotation", USD_AXIS_Z, -30);
 usd_addtotransformorder(0, "/geo/cone", step_name);
 usd_addrotate(0, "/geo/cone", "second_rotation", USD_AXIS_Z, 45);

@@ -155,33 +155,33 @@ var x = -70;
 
 if (docRef.symbols.length > 0) {
 
-    for (var i = 0; i < 5; i++) {
-        symbolRef = docRef.symbols[0];
+ for (var i = 0; i < 5; i++) {
+ symbolRef = docRef.symbols[0];
 
-        symbolItemRef1 = docRef.symbolItems.add(symbolRef);
-        symbolItemRef1.top = y;
-        symbolItemRef1.left = x;
+ symbolItemRef1 = docRef.symbolItems.add(symbolRef);
+ symbolItemRef1.top = y;
+ symbolItemRef1.left = x;
 
-        x += 30;
-    }
+ x += 30;
+ }
 
-    redraw();
+ redraw();
 
-    // 使用各种坐标选项打印
-    var coordinateOptions = new PrintCoordinateOptions();
-    var options = new PrintOptions();
-    options.coordinateOptions = coordinateOptions;
+ // 使用各种坐标选项打印
+ var coordinateOptions = new PrintCoordinateOptions();
+ var options = new PrintOptions();
+ options.coordinateOptions = coordinateOptions;
 
-    coordinateOptions.emulsion = true; // 从右到左反转
-    coordinateOptions.fitToPage = true; // 将图稿适应页面大小
-    coordinateOptions.orientation = PrintOrientation.LANDSCAPE;
-    docRef.print(options);
+ coordinateOptions.emulsion = true; // 从右到左反转
+ coordinateOptions.fitToPage = true; // 将图稿适应页面大小
+ coordinateOptions.orientation = PrintOrientation.LANDSCAPE;
+ docRef.print(options);
 
-    coordinateOptions.emulsion = false;
-    coordinateOptions.fitToPage = false;
-    coordinateOptions.orientation = PrintOrientation.PORTRAIT;
-    coordinateOptions.horizontalScale = 50;
-    coordinateOptions.verticalScale = 50;
-    docRef.print(options);
+ coordinateOptions.emulsion = false;
+ coordinateOptions.fitToPage = false;
+ coordinateOptions.orientation = PrintOrientation.PORTRAIT;
+ coordinateOptions.horizontalScale = 50;
+ coordinateOptions.verticalScale = 50;
+ docRef.print(options);
 }
 ```

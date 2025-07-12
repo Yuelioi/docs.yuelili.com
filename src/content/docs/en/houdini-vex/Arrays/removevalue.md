@@ -12,7 +12,7 @@ Examples
 
 ```vex
 float nums[] = {0, 1, 2, 3, 1, 2, 3};
-removevalue(nums, 2);  // == 1
+removevalue(nums, 2); // == 1
 // nums == {0, 1, 3, 1, 2, 3}
 
 ```

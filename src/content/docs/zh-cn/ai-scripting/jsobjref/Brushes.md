@@ -67,9 +67,9 @@ title: 画笔
 
 #### 参数
 
-| 参数      | 类型   | 描述         |
-| --------- | ------ | ------------------ |
-| `name`    | 字符串 | 要获取的元素的名称 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `name` | 字符串 | 要获取的元素的名称 |
 
 #### 返回值
 
@@ -87,9 +87,9 @@ title: 画笔
 
 #### 参数
 
-| 参数      | 类型    | 描述         |
-| --------- | ------------- | ------------------ |
-| `itemKey` | 字符串, 数字  | 字符串或数字键     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `itemKey` | 字符串, 数字 | 字符串或数字键 |
 
 #### 返回值
 
@@ -105,6 +105,6 @@ title: 画笔
 // 统计活动文档中的所有画笔数量
 
 if (app.documents.length > 0) {
-    var numberOfBrushes = app.activeDocument.brushes.length;
+ var numberOfBrushes = app.activeDocument.brushes.length;
 }
 ```

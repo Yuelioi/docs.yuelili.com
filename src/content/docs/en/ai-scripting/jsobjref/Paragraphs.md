@@ -69,10 +69,10 @@ Adds a new paragraph with specified text contents at the specified location in t
 
 #### Parameters
 
-|      Parameter      |                                 Type                                  |      Description       |
-| ------------------- | --------------------------------------------------------------------- | ---------------------- |
-| `contents`          | String                                                                | Text contents to add   |
-| `relativeObject`    | [TextFrameItem](.././TextFrameItem), optional                         | Object to add item to  |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `contents` | String | Text contents to add |
+| `relativeObject` | [TextFrameItem](.././TextFrameItem), optional | Object to add item to |
 | `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), optional | Location to place text |
 
 #### Returns
@@ -91,8 +91,8 @@ Adds a new paragraph with specified text contents before the current text select
 
 #### Parameters
 
-| Parameter  |  Type  |     Description      |
-| ---------- | ------ | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `contents` | String | Text contents to add |
 
 #### Returns
@@ -111,8 +111,8 @@ Gets an element from the collection.
 
 #### Parameters
 
-| Parameter |      Type      |     Description      |
-| --------- | -------------- | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `itemKey` | String, Number | String or number key |
 
 #### Returns
@@ -142,10 +142,10 @@ Nothing.
 ```javascript
 // Counts all paragraphs in current doc and stores result in paragraphCount
 if (app.documents.length > 0) {
-    var doc = app.activeDocument;
-    var paragraphCount = 0;
-    for (var i = 0; i < doc.textFrames.length; i++) {
-        paragraphCount += doc.textFrames[i].paragraphs.length;
-    }
+ var doc = app.activeDocument;
+ var paragraphCount = 0;
+ for (var i = 0; i < doc.textFrames.length; i++) {
+ paragraphCount += doc.textFrames[i].paragraphs.length;
+ }
 }
 ```

@@ -13,8 +13,8 @@ The cross-DOM functions for each application are implemented in JavaScript. You 
 
 The sample code distributed with the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) includes these code examples that specifically demonstrate the use of cross-DOM functions:
 
-|                     Example                     |              Description               |
-| --------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| Example | Description |
+| --- | --- |
 | [OpenImageInPhotoshop.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/OpenImageInPhotoshop.jsx) | Shows how to send an image file to be opened in Photoshop. |
 
 ---
@@ -78,9 +78,9 @@ Performs a JavaScript eval on the specified script. The entire document object m
 
 #### Parameters
 
-| Parameter |  Type  |         Description         |
-| --------- | ------ | --------------------------- |
-| `script`  | String | The script to be evaluated. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `script` | String | The script to be evaluated. |
 
 #### Returns
 
@@ -98,9 +98,9 @@ Performs the equivalent of the target application's File > Open command on the s
 
 #### Parameters
 
-| Parameter |                 Type                  |            Description            |
-| --------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `files`   | [File object](../../file-system-access/file-object) or array of File objects. | File(s) to open. For applications that use compound documents, this should be a project file. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `files` | [File object](../../file-system-access/file-object) or array of File objects. | File(s) to open. For applications that use compound documents, this should be a project file. |
 
 #### Returns
 
@@ -118,13 +118,13 @@ Performs the equivalent of the target application's File > New command.
 
 #### Parameters
 
-| Parameter |                         Type                          |         Description         |
-|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|
-| `options` | Application-specific creation options:                                    | Optional. Creation options. |
-|           | - Adobe Bridge: none                                            |         |
-|           | - Photoshop: none                                               |         |
-|           | - InDesign: creation options are: `(Boolean:showingWindow, ObjectOrString:documentPresets)`. See the arguments for `documents.add()` in the Adobe InDesign CS5 Scripting Reference.     |         |
-|           | - Illustrator: creation options are: `([DocumentColorSpace:colorspace][, Number:width, Number:height])`. See the arguments for documents.add() in the Adobe Illustrator CS5 JavaScript Reference. |         |
+| Parameter | Type | Description |
+|---|---|---|
+| `options` | Application-specific creation options: | Optional. Creation options. |
+| | - Adobe Bridge: none | |
+| | - Photoshop: none | |
+| | - InDesign: creation options are: `(Boolean:showingWindow, ObjectOrString:documentPresets)`. See the arguments for `documents.add()` in the Adobe InDesign CS5 Scripting Reference. | |
+| | - Illustrator: creation options are: `([DocumentColorSpace:colorspace][, Number:width, Number:height])`. See the arguments for documents.add() in the Adobe Illustrator CS5 JavaScript Reference. | |
 
 #### Returns
 
@@ -142,9 +142,9 @@ Performs the equivalent of the target application's File > Print command on the 
 
 #### Parameters
 
-| Parameter |                 Type                  |            Description             |
-| --------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `files`   | [File object](../../file-system-access/file-object) or array of File objects. | File(s) to print. For applications that use compound documents, this should be a project file. |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `files` | [File object](../../file-system-access/file-object) or array of File objects. | File(s) to print. For applications that use compound documents, this should be a project file. |
 
 #### Returns
 
@@ -180,9 +180,9 @@ Gives the target application the operating-system focus, and, if the specified f
 
 #### Parameters
 
-| Parameter |         Type          |     Description     |
-| --------- | ------------------------------------------------------------- | ------------------- |
-| `file`    | [File object](../../file-system-access/file-object) or String | File info to reveal |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `file` | [File object](../../file-system-access/file-object) or String | File info to reveal |
 
 #### Returns
 

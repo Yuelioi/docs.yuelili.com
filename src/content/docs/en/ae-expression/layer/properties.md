@@ -11,7 +11,6 @@ When you add masks, effects, paint, or text to a layer, After Effects adds new p
 On this page, we're going to use `thisLayer` as a sample on how to call these items, however note that any method that returns a [Layer](.././layer) will work.
 :::
 
-
 ---
 
 ## Attributes

@@ -27,40 +27,40 @@ RotoBezier 遮罩会自动计算其切线。（参见 [MaskPropertyGroup.rotoBez
 
 - 创建一个方形遮罩。方形是一个具有 4 个顶点的闭合形状。连接的直线段的 `inTangents` 和 `outTangents` 为 0（默认值），不需要显式设置。
 
-  ```javascript
-  var myShape = new Shape();
-  myShape.vertices = [[0,0], [0,100], [100,100], [100,0]];
-  myShape.closed = true;
-  ```
+ ```javascript
+ var myShape = new Shape();
+ myShape.vertices = [[0,0], [0,100], [100,100], [100,0]];
+ myShape.closed = true;
+ ```
 
 - 创建一个 "U" 形遮罩。"U" 是一个具有与方形相同的 4 个顶点的开放形状。
 
-  ```javascript
-  var myShape = new Shape();
-  myShape.vertices = [[0,0], [0,100], [100,100], [100,0]];
-  myShape.closed = false;
-  ```
+ ```javascript
+ var myShape = new Shape();
+ myShape.vertices = [[0,0], [0,100], [100,100], [100,0]];
+ myShape.closed = false;
+ ```
 
 - 创建一个椭圆形。椭圆形是一个具有 4 个顶点和 `inTangent` 和 `outTangent` 值的闭合形状。
 
-  ```javascript
-  var myShape = new Shape();
-  myShape.vertices = [[300,50], [200,150],[300,250],[400,150]];
-  myShape.inTangents = [[55.23,0],[0,-55.23],[-55.23,0],[0,55.23]];
-  myShape.outTangents = [[-55.23,0],[0,55.23],[55.23,0],[0,-55.23]];
-  myShape.closed = true;
-  ```
+ ```javascript
+ var myShape = new Shape();
+ myShape.vertices = [[300,50], [200,150],[300,250],[400,150]];
+ myShape.inTangents = [[55.23,0],[0,-55.23],[-55.23,0],[0,55.23]];
+ myShape.outTangents = [[-55.23,0],[0,55.23],[55.23,0],[0,-55.23]];
+ myShape.closed = true;
+ ```
 
 - 创建一个带有两个羽化点的方形遮罩。一个大的方形遮罩，带有两个羽化点，一个靠近第二个遮罩段（底部边缘）的左端，半径为 30 像素，另一个位于第三个遮罩段（右侧边缘）的中心，半径为 100 像素。
 
-  ```javascript
-  var myShape = new Shape();
-  myShape.vertices = [[100,100], [100,400], [400,400], [400,100]]; // 段按逆时针方向绘制
-  myShape.closed = true;
-  myShape.featherSegLocs = [1, 2]; // 段从 0 开始编号，因此第二段为 1
-  myShape.featherRelSegLocs = [0.15, 0.5]; // 0.15 更接近方形的左下角
-  myShape.featherRadii = [30, 100]; // 第二个羽化点（在右侧段上）具有更大的半径
-  ```
+ ```javascript
+ var myShape = new Shape();
+ myShape.vertices = [[100,100], [100,400], [400,400], [400,100]]; // 段按逆时针方向绘制
+ myShape.closed = true;
+ myShape.featherSegLocs = [1, 2]; // 段从 0 开始编号，因此第二段为 1
+ myShape.featherRelSegLocs = [0.15, 0.5]; // 0.15 更接近方形的左下角
+ myShape.featherRadii = [30, 100]; // 第二个羽化点（在右侧段上）具有更大的半径
+ ```
 
 ---
 

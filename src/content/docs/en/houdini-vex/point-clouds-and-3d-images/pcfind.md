@@ -34,8 +34,8 @@ int closept[] = pcfind(filename, "P", P, maxdistance, maxpoints);
 P = 0;
 foreach (int ptnum; closept)
 {
-    vector closepos = point(filename, "P", ptnum);
-    P += closepos;
+ vector closepos = point(filename, "P", ptnum);
+ P += closepos;
 }
 P /= len(closept);
 

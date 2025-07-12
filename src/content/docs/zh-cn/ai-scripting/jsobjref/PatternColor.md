@@ -191,25 +191,25 @@ title: PatternColor
 // 旋转当前文档中每个图案的颜色，
 // 然后将最后一个图案应用于第一个路径项
 if (app.documents.length > 0 && app.activeDocument.pathItems.length > 0) {
-    var doc = app.activeDocument;
-    var swatchIndex = 0;
+ var doc = app.activeDocument;
+ var swatchIndex = 0;
 
-    for (i = 0; i < doc.swatches.length; i++) {
-        // 获取色板的通用颜色对象
-        var currentSwatch = doc.swatches[i];
-        var swatchColor = currentSwatch.color;
+ for (i = 0; i < doc.swatches.length; i++) {
+ // 获取色板的通用颜色对象
+ var currentSwatch = doc.swatches[i];
+ var swatchColor = currentSwatch.color;
 
-        // 仅对图案进行操作
-        if (currentSwatch.color.typename == "PatternColor") {
-      // 更改图案属性
-      currentSwatch.color.rotation = 10;
-      swatchIndex = i;
-        }
-    }
+ // 仅对图案进行操作
+ if (currentSwatch.color.typename == "PatternColor") {
+ // 更改图案属性
+ currentSwatch.color.rotation = 10;
+ swatchIndex = i;
+ }
+ }
 
-    // 将最后一个图案颜色色板应用于最前面的路径
-    var firstPath = app.activeDocument.pathItems[0];
-    firstPath.filled = true;
-    firstPath.fillColor = doc.swatches[swatchIndex].color;
+ // 将最后一个图案颜色色板应用于最前面的路径
+ var firstPath = app.activeDocument.pathItems[0];
+ firstPath.filled = true;
+ firstPath.fillColor = doc.swatches[swatchIndex].color;
 }
 ```

@@ -67,9 +67,9 @@ Creates an instance of the specified symbol.
 
 #### Parameters
 
-| Parameter |         Type          |    Description     |
-| --------- | --------------------- | ------------------ |
-| `symbol`  | [Symbol](.././Symbol) | Symbol to instance |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `symbol` | [Symbol](.././Symbol) | Symbol to instance |
 
 #### Returns
 
@@ -87,9 +87,9 @@ Get the first element in the collection with the provided name.
 
 #### Parameters
 
-| Parameter |  Type  |      Description       |
-| --------- | ------ | ---------------------- |
-| `name`    | String | Name of element to get |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Name of element to get |
 
 #### Returns
 
@@ -107,8 +107,8 @@ Gets an element from the collection.
 
 #### Parameters
 
-| Parameter |      Type      |     Description      |
-| --------- | -------------- | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `itemKey` | String, Number | String or number key |
 
 #### Returns
@@ -147,16 +147,16 @@ var iCount = docRef.graphicStyles.length;
 
 for (var i=0; i<iCount; i++) {
 
-    var pathRef = docRef.pathItems.rectangle( y, x, 20, 20 );
-    docRef.graphicStyles[i].applyTo(pathRef);
+ var pathRef = docRef.pathItems.rectangle( y, x, 20, 20 );
+ docRef.graphicStyles[i].applyTo(pathRef);
 
-    // are we at bottom?
-    if ( (y-=60) <= 60 ) {
-        y = 750; // go back to the top.
-        x+= 200
-    }
+ // are we at bottom?
+ if ( (y-=60) <= 60 ) {
+ y = 750; // go back to the top.
+ x+= 200
+ }
 
-    redraw();
-    docRef.symbolItems.add(pathRef);
+ redraw();
+ docRef.symbolItems.add(pathRef);
 }
 ```

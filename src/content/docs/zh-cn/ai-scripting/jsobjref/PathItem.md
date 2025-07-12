@@ -769,10 +769,10 @@ Number；只读。
 
 #### 参数
 
-|      参数      |       类型        |        描述   |
-| -------------- | --------------------------------------------------------------------- | ------------------- |
-| `relativeObject` | Object, 可选    | 要复制到的对象      |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 插入元素的位置      |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `relativeObject` | Object, 可选 | 要复制到的对象 |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 插入元素的位置 |
 
 #### 返回值
 
@@ -790,10 +790,10 @@ Number；只读。
 
 #### 参数
 
-|      参数      |       类型        |    描述     |
-| -------------- | --------------------------------------------------------------------- | ----------------------- |
-| `relativeObject` | Object      | 要移动元素的对象        |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 移动元素到的位置        |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `relativeObject` | Object | 要移动元素的对象 |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 移动元素到的位置 |
 
 #### 返回值
 
@@ -819,14 +819,14 @@ Number；只读。
 
 ```javascript
 app.activeDocument.pathItems[index].resize(
-    scaleX,
-    scaleY
-    [,changePositions]
-    [,changeFillPatterns]
-    [,changeFillGradients]
-    [,changeStrokePattern]
-    [,changeLineWidths]
-    [,scaleAbout]
+ scaleX,
+ scaleY
+ [,changePositions]
+ [,changeFillPatterns]
+ [,changeFillGradients]
+ [,changeStrokePattern]
+ [,changeLineWidths]
+ [,scaleAbout]
 )
 ```
 
@@ -836,16 +836,16 @@ app.activeDocument.pathItems[index].resize(
 
 #### 参数
 
-|       参数        |     类型      |   描述   |
-| ----------------- | ----------------------------------------------------------------- | ------------------------------------------------ |
-| `scaleX`    | Number (double)    | 水平缩放因子     |
-| `scaleY`    | Number (double)    | 垂直缩放因子     |
-| `changePositions` | Boolean, 可选       | 是否影响图稿对象的位置和方向         |
-| `changeFillPatterns` | Boolean, 可选       | 是否变换填充图案       |
-| `changeFillGradients` | Boolean, 可选       | 是否变换填充渐变       |
-| `changeStrokePattern` | Boolean, 可选       | 是否变换描边图案       |
-| `changeLineWidths` | Number (double), 可选       | 缩放线宽的量     |
-| `scaleAbout`      | [Transformation](../scripting-constants#transformation), 可选     | 用作锚点的点，用于变换         |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `scaleX` | Number (double) | 水平缩放因子 |
+| `scaleY` | Number (double) | 垂直缩放因子 |
+| `changePositions` | Boolean, 可选 | 是否影响图稿对象的位置和方向 |
+| `changeFillPatterns` | Boolean, 可选 | 是否变换填充图案 |
+| `changeFillGradients` | Boolean, 可选 | 是否变换填充渐变 |
+| `changeStrokePattern` | Boolean, 可选 | 是否变换描边图案 |
+| `changeLineWidths` | Number (double), 可选 | 缩放线宽的量 |
+| `scaleAbout` | [Transformation](../scripting-constants#transformation), 可选 | 用作锚点的点，用于变换 |
 
 #### 返回值
 
@@ -857,12 +857,12 @@ app.activeDocument.pathItems[index].resize(
 
 ```javascript
 app.activeDocument.pathItems[index].rotate(
-    angle
-    [,changePositions]
-    [,changeFillPatterns]
-    [,changeFillGradients]
-    [,changeStrokePattern]
-    [,rotateAbout]
+ angle
+ [,changePositions]
+ [,changeFillPatterns]
+ [,changeFillGradients]
+ [,changeStrokePattern]
+ [,rotateAbout]
 )
 ```
 
@@ -874,14 +874,14 @@ app.activeDocument.pathItems[index].rotate(
 
 #### 参数
 
-|       参数        |     类型      |   描述   |
-| ----------------- | ----------------------------------------------------------------- | ------------------------------------------------ |
-| `angle`     | Number (double)    | 旋转元素的角度量       |
-| `changePositions` | Boolean, 可选       | 是否影响图稿对象的位置和方向         |
-| `changeFillPatterns` | Boolean, 可选       | 是否变换填充图案       |
-| `changeFillGradients` | Boolean, 可选       | 是否变换填充渐变       |
-| `changeStrokePattern` | Boolean, 可选       | 是否变换描边图案       |
-| `rotateAbout`     | [Transformation](../scripting-constants#transformation), 可选     | 用作锚点的点，用于变换         |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `angle` | Number (double) | 旋转元素的角度量 |
+| `changePositions` | Boolean, 可选 | 是否影响图稿对象的位置和方向 |
+| `changeFillPatterns` | Boolean, 可选 | 是否变换填充图案 |
+| `changeFillGradients` | Boolean, 可选 | 是否变换填充渐变 |
+| `changeStrokePattern` | Boolean, 可选 | 是否变换描边图案 |
+| `rotateAbout` | [Transformation](../scripting-constants#transformation), 可选 | 用作锚点的点，用于变换 |
 
 #### 返回值
 
@@ -899,9 +899,9 @@ app.activeDocument.pathItems[index].rotate(
 
 #### 参数
 
-|    参数     |         类型          |      描述       |
-| ----------- | --------------------------------- | --------------------------- |
-| `pathPoints` | [x, y] 坐标对的数组         | 要设置的点坐标数组    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `pathPoints` | [x, y] 坐标对的数组 | 要设置的点坐标数组 |
 
 #### 返回值
 
@@ -913,13 +913,13 @@ app.activeDocument.pathItems[index].rotate(
 
 ```javascript
 app.activeDocument.pathItems[index].transform(
-    transformationMatrix
-    [, changePositions]
-    [, changeFillPatterns]
-    [, changeFillGradients]
-    [, changeStrokePattern]
-    [, changeLineWidths]
-    [, transformAbout]
+ transformationMatrix
+ [, changePositions]
+ [, changeFillPatterns]
+ [, changeFillGradients]
+ [, changeStrokePattern]
+ [, changeLineWidths]
+ [, transformAbout]
 )
 ```
 
@@ -929,15 +929,15 @@ app.activeDocument.pathItems[index].transform(
 
 #### 参数
 
-|        参数   |     类型      |      描述       |
-| ------------------- | ----------------------------------------------------------------- | --------------------------------------- |
-| `transformationMatrix` | [Matrix](.././Matrix)       | 要应用的变换矩阵    |
-| `changePositions`   | Boolean, 可选       | 是否更改位置          |
-| `changeFillPatterns` | Boolean, 可选       | 是否更改填充图案    |
-| `changeFillGradients` | Boolean, 可选       | 是否更改填充渐变    |
-| `changeStrokePattern` | Boolean, 可选       | 是否更改描边图案    |
-| `changeLineWidths`  | Number (double), 可选       | 缩放线宽的量          |
-| `transformAbout`    | [Transformation](../scripting-constants#transformation), 可选     | 用作锚点的点，用于变换      |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `transformationMatrix` | [Matrix](.././Matrix) | 要应用的变换矩阵 |
+| `changePositions` | Boolean, 可选 | 是否更改位置 |
+| `changeFillPatterns` | Boolean, 可选 | 是否更改填充图案 |
+| `changeFillGradients` | Boolean, 可选 | 是否更改填充渐变 |
+| `changeStrokePattern` | Boolean, 可选 | 是否更改描边图案 |
+| `changeLineWidths` | Number (double), 可选 | 缩放线宽的量 |
+| `transformAbout` | [Transformation](../scripting-constants#transformation), 可选 | 用作锚点的点，用于变换 |
 
 #### 返回值
 
@@ -949,12 +949,12 @@ app.activeDocument.pathItems[index].transform(
 
 ```javascript
 app.activeDocument.pathItems[index].translate(
-    [deltaX]
-    [, deltaY]
-    [, transformObjects]
-    [, transformFillPatterns]
-    [, transformFillGradients]
-    [, transformStrokePatterns]
+ [deltaX]
+ [, deltaY]
+ [, transformObjects]
+ [, transformFillPatterns]
+ [, transformFillGradients]
+ [, transformStrokePatterns]
 )
 ```
 
@@ -964,14 +964,14 @@ app.activeDocument.pathItems[index].translate(
 
 #### 参数
 
-|    参数    |     类型      |        描述         |
-| ---------------------- | ------------------------- | ------------------------------- |
-| `deltaX`         | Number (double), 可选     | 水平偏移量          |
-| `deltaY`         | Number (double), 可选     | 垂直偏移量          |
-| `transformObjects`     | Boolean, 可选       | 是否变换对象        |
-| `transformFillPatterns` | Boolean, 可选       | 是否变换填充图案          |
-| `transformFillGradients` | Boolean, 可选       | 是否变换填充渐变          |
-| `transformStrokePatterns` | Boolean, 可选       | 是否变换描边图案          |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `deltaX` | Number (double), 可选 | 水平偏移量 |
+| `deltaY` | Number (double), 可选 | 垂直偏移量 |
+| `transformObjects` | Boolean, 可选 | 是否变换对象 |
+| `transformFillPatterns` | Boolean, 可选 | 是否变换填充图案 |
+| `transformFillGradients` | Boolean, 可选 | 是否变换填充渐变 |
+| `transformStrokePatterns` | Boolean, 可选 | 是否变换描边图案 |
 
 #### 返回值
 
@@ -989,9 +989,9 @@ app.activeDocument.pathItems[index].translate(
 
 #### 参数
 
-|    参数     |    类型     |      描述       |
-| ----------- | --------------------------------------------------- | --------------------------- |
-| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法      |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法 |
 
 #### 返回值
 
@@ -1004,19 +1004,19 @@ app.activeDocument.pathItems[index].translate(
 ### 设置路径中的颜色
 
 ```javascript
-//  将路径项的描边和填充设置为随机选择的色板的颜色
+// 将路径项的描边和填充设置为随机选择的色板的颜色
 if (app.documents.length > 0 && app.activeDocument.pathItems.length > 0) {
-    var doc = app.activeDocument;
+ var doc = app.activeDocument;
 
-    for (var i = 0; i < doc.pathItems.length; i++) {
-        var pathRef = doc.pathItems[i];
-        pathRef.filled = true;
-        pathRef.stroked = true;
+ for (var i = 0; i < doc.pathItems.length; i++) {
+ var pathRef = doc.pathItems[i];
+ pathRef.filled = true;
+ pathRef.stroked = true;
 
-        var swatchIndex = Math.round(Math.random() * (doc.swatches.length - 1));
-        pathRef.fillColor = doc.swatches[swatchIndex].color;
-        pathRef.strokeColor = doc.swatches[swatchIndex].color;
-    }
+ var swatchIndex = Math.round(Math.random() * (doc.swatches.length - 1));
+ pathRef.fillColor = doc.swatches[swatchIndex].color;
+ pathRef.strokeColor = doc.swatches[swatchIndex].color;
+ }
 }
 ```
 
@@ -1028,14 +1028,14 @@ if (app.documents.length > 0 && app.activeDocument.pathItems.length > 0) {
 // 此脚本演示了 setEntirePath 方法的使用。
 // 创建一个由10条直线组成的新开放路径
 if (app.documents.length > 0) {
-    var lineList = [];
+ var lineList = [];
 
-    for (i = 0; i < lineList.length; i++) {
-        lineList.push([i * 10 + 50, ((i - 5) ^ 2) * 5 + 50];
-    }
+ for (i = 0; i < lineList.length; i++) {
+ lineList.push([i * 10 + 50, ((i - 5) ^ 2) * 5 + 50];
+ }
 
-    app.defaultStroked = true;
-    newPath = app.activeDocument.pathItems.add();
-    newPath.setEntirePath(lineList);
+ app.defaultStroked = true;
+ newPath = app.activeDocument.pathItems.add();
+ newPath.setEntirePath(lineList);
 }
 ```

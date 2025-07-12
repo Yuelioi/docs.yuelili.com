@@ -35,8 +35,8 @@ Examples
 
 ```vex
 // Set the primvar's value and indices.
-float values[]  = array(0, 100, 200, 300, 400, 500);
-int   indices[] = array(5,5,4,4,3,3,2,2,1,1,0,0);
+float values[] = array(0, 100, 200, 300, 400, 500);
+int indices[] = array(5,5,4,4,3,3,2,2,1,1,0,0);
 usd_setprimvar(0, "/geo/mesh", "primvar_name", values); 
 usd_setprimvarindices(0, "/geo/mesh", "primvar_name", indices);
 

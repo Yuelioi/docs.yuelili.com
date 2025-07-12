@@ -25,13 +25,13 @@ Returns `value1` when `t <= tMin`. Returns `value2` when `t >= tMax`. Returns a 
 
 #### Parameters
 
-| Parameter |      Type       |        Description        |
-| --------- | --------------- | ------------------------- |
-| `t`       | Number          | Interpolation Driver      |
-| `tMin`    | Number          | Minimum driver value      |
-| `tMax`    | Number          | Maximum driver value      |
-| `value1`  | Number or Array | Value to interpolate from |
-| `value2`  | Number or Array | Value to interpolate to   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `t` | Number | Interpolation Driver |
+| `tMin` | Number | Minimum driver value |
+| `tMax` | Number | Maximum driver value |
+| `value1` | Number or Array | Value to interpolate from |
+| `value2` | Number or Array | Value to interpolate to |
 
 #### Returns
 
@@ -63,11 +63,11 @@ Returns a value that linearly interpolates from `value1` to `value2` as `t` rang
 
 #### Parameters
 
-| Parameter |      Type       |        Description        |
-| --------- | --------------- | ------------------------- |
-| `t`       | Number          | Interpolation Driver      |
-| `value1`  | Number or Array | Value to interpolate from |
-| `value2`  | Number or Array | Value to interpolate to   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `t` | Number | Interpolation Driver |
+| `value1` | Number or Array | Value to interpolate from |
+| `value2` | Number or Array | Value to interpolate to |
 
 #### Returns
 
@@ -85,13 +85,13 @@ Similar to linear with the same arguments, except that the interpolation eases i
 
 #### Parameters
 
-| Parameter |      Type       |        Description        |
-| --------- | --------------- | ------------------------- |
-| `t`       | Number          | Interpolation Driver      |
-| `tMin`    | Number          | Minimum driver value      |
-| `tMax`    | Number          | Maximum driver value      |
-| `value1`  | Number or Array | Value to interpolate from |
-| `value2`  | Number or Array | Value to interpolate to   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `t` | Number | Interpolation Driver |
+| `tMin` | Number | Minimum driver value |
+| `tMax` | Number | Maximum driver value |
+| `value1` | Number or Array | Value to interpolate from |
+| `value2` | Number or Array | Value to interpolate to |
 
 #### Returns
 
@@ -109,11 +109,11 @@ Similar to linear with the same arguments, except that the interpolation eases i
 
 #### Parameters
 
-| Parameter |      Type       |        Description        |
-| --------- | --------------- | ------------------------- |
-| `t`       | Number          | Interpolation Driver      |
-| `value1`  | Number or Array | Value to interpolate from |
-| `value2`  | Number or Array | Value to interpolate to   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `t` | Number | Interpolation Driver |
+| `value1` | Number or Array | Value to interpolate from |
+| `value2` | Number or Array | Value to interpolate to |
 
 #### Returns
 
@@ -131,13 +131,13 @@ Similar to ease, except that the tangent is `0` only on the `tMin` side and inte
 
 #### Parameters
 
-| Parameter |      Type       |        Description        |
-| --------- | --------------- | ------------------------- |
-| `t`       | Number          | Interpolation Driver      |
-| `tMin`    | Number          | Minimum driver value      |
-| `tMax`    | Number          | Maximum driver value      |
-| `value1`  | Number or Array | Value to interpolate from |
-| `value2`  | Number or Array | Value to interpolate to   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `t` | Number | Interpolation Driver |
+| `tMin` | Number | Minimum driver value |
+| `tMax` | Number | Maximum driver value |
+| `value1` | Number or Array | Value to interpolate from |
+| `value2` | Number or Array | Value to interpolate to |
 
 #### Returns
 
@@ -155,11 +155,11 @@ Similar to ease, except that the tangent is `0` only on the `value1` side and in
 
 #### Parameters
 
-| Parameter |      Type       |        Description        |
-| --------- | --------------- | ------------------------- |
-| `t`       | Number          | Interpolation Driver      |
-| `value1`  | Number or Array | Value to interpolate from |
-| `value2`  | Number or Array | Value to interpolate to   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `t` | Number | Interpolation Driver |
+| `value1` | Number or Array | Value to interpolate from |
+| `value2` | Number or Array | Value to interpolate to |
 
 #### Returns
 
@@ -177,13 +177,13 @@ Similar to ease, except that the tangent is `0` only on the `tMax` side and inte
 
 #### Parameters
 
-| Parameter |      Type       |        Description        |
-| --------- | --------------- | ------------------------- |
-| `t`       | Number          | Interpolation Driver      |
-| `tMin`    | Number          | Minimum driver value      |
-| `tMax`    | Number          | Maximum driver value      |
-| `value1`  | Number or Array | Value to interpolate from |
-| `value2`  | Number or Array | Value to interpolate to   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `t` | Number | Interpolation Driver |
+| `tMin` | Number | Minimum driver value |
+| `tMax` | Number | Maximum driver value |
+| `value1` | Number or Array | Value to interpolate from |
+| `value2` | Number or Array | Value to interpolate to |
 
 #### Returns
 
@@ -201,11 +201,11 @@ Similar to ease, except that the tangent is `0` only on the `value2` side and in
 
 #### Parameters
 
-| Parameter |      Type       |        Description        |
-| --------- | --------------- | ------------------------- |
-| `t`       | Number          | Interpolation Driver      |
-| `value1`  | Number or Array | Value to interpolate from |
-| `value2`  | Number or Array | Value to interpolate to   |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `t` | Number | Interpolation Driver |
+| `value1` | Number or Array | Value to interpolate from |
+| `value2` | Number or Array | Value to interpolate to |
 
 #### Returns
 

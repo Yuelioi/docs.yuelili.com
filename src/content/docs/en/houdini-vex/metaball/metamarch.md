@@ -23,8 +23,8 @@ index, index, and index arguments to ray-march through areas
 of interest, skipping the dead space:
 
 ```vex
-int    index;
-vector    p0, p1;
+int index;
+vector p0, p1;
 // Initialize input values
 index = -1;
 p0 = Eye; p1 = P;

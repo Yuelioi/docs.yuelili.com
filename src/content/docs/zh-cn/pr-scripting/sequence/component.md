@@ -7,7 +7,6 @@ title: 组件对象
 
 `app.project.sequences[index].videoTracks[index].clips[index].components[index]`
 
-
 #### 描述
 
 Component 对象表示已添加或应用于 trackItem 的内容。
@@ -21,7 +20,6 @@ Component 对象表示已添加或应用于 trackItem 的内容。
 `app.project.sequences[index].audioTracks[index].clips[index].components[index].displayName`
 
 `app.project.sequences[index].videoTracks[index].clips[index].components[index].displayName`
-
 
 #### 描述
 
@@ -39,7 +37,6 @@ Component 对象表示已添加或应用于 trackItem 的内容。
 
 `app.project.sequences[index].videoTracks[index].clips[index].components[index].matchName`
 
-
 #### 描述
 
 组件的名称，从磁盘加载时使用的名称；用于唯一标识效果插件。
@@ -55,7 +52,6 @@ Component 对象表示已添加或应用于 trackItem 的内容。
 `app.project.sequences[index].audioTracks[index].clips[index].components[index].properties`
 
 `app.project.sequences[index].videoTracks[index].clips[index].components[index].properties`
-
 
 #### 描述
 

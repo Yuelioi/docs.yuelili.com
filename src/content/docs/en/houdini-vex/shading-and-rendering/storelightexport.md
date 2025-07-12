@@ -22,12 +22,12 @@ Examples
 ```vex
 surface test(export vector perlight = {0,0,0})
 {
-    int     lights[] = getlights();
-    for (int i = 0; i < len(lights); i++)
-    {
-        vector val = set(lights[i], 0, 0);
-        storelightexport(getlightname(lights[i]), "perlight", val);
-    }
+ int lights[] = getlights();
+ for (int i = 0; i < len(lights); i++)
+ {
+ vector val = set(lights[i], 0, 0);
+ storelightexport(getlightname(lights[i]), "perlight", val);
+ }
 }
 
 ```

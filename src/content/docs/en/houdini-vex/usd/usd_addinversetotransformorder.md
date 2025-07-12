@@ -40,7 +40,7 @@ Examples
 
 // Construct the pivot translation operation suffix and name. 
 string pivot_xform_suffix = "some_pivot";
-string pivot_xform_name   = usd_transformname(USD_XFORM_TRANSLATE, pivot_xform_suffix);
+string pivot_xform_name = usd_transformname(USD_XFORM_TRANSLATE, pivot_xform_suffix);
 
 // Rotate about z-axis that goes thru pivot (1,0,0).
 usd_addtranslate(0, "/geo/cone", pivot_xform_suffix, {1, 0, 0});

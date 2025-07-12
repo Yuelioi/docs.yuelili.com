@@ -30,7 +30,7 @@ When you get a bitmask as a return value, you can check if it matches a certain 
 ```vex
 mask = getbounces(mybsdf)
 if (mask & bouncemask("reflect")) {
-    ...
+ ...
 }
 
 ```

@@ -35,9 +35,9 @@ aepName = aepName === "" ? "Unsaved" : aepName;
 1. 选择一个图层，按 P 键在时间轴面板中显示其位置属性，然后按住 Alt 键（Windows）或 Option 键（Mac OS）点击属性名称左侧的秒表图标。
 2. 在表达式字段中输入以下内容：
 
-   ```js
-   [(thisComp.width/2), (thisComp.height/2)] + [Math.sin(time)*50, -Math.cos(time)*50]
-   ```
+ ```js
+ [(thisComp.width/2), (thisComp.height/2)] + [Math.sin(time)*50, -Math.cos(time)*50]
+ ```
 
 ---
 
@@ -52,15 +52,15 @@ aepName = aepName === "" ? "Unsaved" : aepName;
 5. 选择分针的旋转属性，然后选择 `动画 > 添加表达式`。
 6. 将拾取器拖动到时针的旋转属性。以下表达式将出现：
 
-   ```js
-   thisComp.layer("hour hand").rotation
-   ```
+ ```js
+ thisComp.layer("hour hand").rotation
+ ```
 
 7. 为了让分针的旋转速度是时针的 12 倍，在表达式末尾添加 `* 12`，如下所示：
 
-   ```js
-   thisComp.layer("hour hand").rotation * 12
-   ```
+ ```js
+ thisComp.layer("hour hand").rotation * 12
+ ```
 
 ---
 
@@ -73,9 +73,9 @@ aepName = aepName === "" ? "Unsaved" : aepName;
 3. 选择第三个图层，按 P 键显示位置属性，然后按住 Alt 键（Windows）或 Option 键（Mac OS）点击属性名称左侧的秒表图标。
 4. 在表达式字段中输入以下内容：
 
-   ```js
-   (thisComp.layer(1).position + thisComp.layer(2).position)/2
-   ```
+ ```js
+ (thisComp.layer(1).position + thisComp.layer(2).position)/2
+ ```
 
 ---
 
@@ -88,9 +88,9 @@ aepName = aepName === "" ? "Unsaved" : aepName;
 3. 选择第二个图层，按 P 键显示位置属性，然后按住 Alt 键（Windows）或 Option 键（Mac OS）点击属性名称左侧的秒表图标。
 4. 在表达式字段中输入以下内容：
 
-   ```js
-   thisComp.layer(thisLayer, -1).position.valueAtTime(time - .5)
-   ```
+ ```js
+ thisComp.layer(thisLayer, -1).position.valueAtTime(time - .5)
+ ```
 
 5. 通过选择最后一个图层并按 Ctrl+D（Windows）或 Command+D（Mac OS）五次，复制该图层五次。
 
@@ -114,9 +114,9 @@ Dan Ebberts 在他的 [MotionScript](http://www.motionscript.com/mastering-expre
 4. 在时间轴面板中选择 Bulge 效果的 Bulge Center 属性，然后选择 `动画 > 添加表达式`，或按住 Alt 键（Windows）或 Option 键（Mac OS）点击属性的秒表图标。
 5. 选择默认的表达式文本并输入以下内容：
 
-   ```js
-   fromWorld(thisComp.layer("Magnifier").position)
-   ```
+ ```js
+ fromWorld(thisComp.layer("Magnifier").position)
+ ```
 
 ---
 
@@ -126,7 +126,7 @@ Dan Ebberts 在他的 [MotionScript](http://www.motionscript.com/mastering-expre
 
 ```js
 startFade = 500; // 从摄像机 500 像素处开始淡出。
-endFade = 1500;  // 从摄像机 1500 像素处结束淡出。
+endFade = 1500; // 从摄像机 1500 像素处结束淡出。
 
 try { // 检查是否有摄像机
 C = thisComp.activeCamera.toWorld([0,0,0]);
@@ -175,8 +175,8 @@ n = 0;
 t = 0;
 
 if (marker.numKeys > 0){
-    n = marker.nearestKey(time).index;
-    if (marker.key(n).time > time) n--;
+ n = marker.nearestKey(time).index;
+ if (marker.key(n).time > time) n--;
 }
 
 if (n > 0) t = time - marker.key(n).time;
@@ -203,7 +203,7 @@ timeToStart = 2;
 if (time > timeToStart) {
 wiggle(3,25);
 } else {
-    value;
+ value;
 }
 ```
 
@@ -213,9 +213,9 @@ wiggle(3,25);
 timeToStop = 4;
 
 if (time > timeToStop) {
-        value;
+ value;
 } else {
-        wiggle(3,25);
+ wiggle(3,25);
 }
 ```
 
@@ -226,9 +226,9 @@ timeToStart = 2;
 timeToStop = 4;
 
 if ((time > timeToStart) && (time < timeToStop)) {
-    wiggle(3,25);
+ wiggle(3,25);
 } else {
-    value;
+ value;
 }
 ```
 

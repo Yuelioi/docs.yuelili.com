@@ -64,29 +64,29 @@ title: ScreenSpotFunction
 var docRef = documents.add();
 var sInfo = "";
 if (PPDFileList.length == 0) {
-    sInfo = "\r\t\tPPDFileList为空"
+ sInfo = "\r\t\tPPDFileList为空"
 } else {
-    var ppdRef = PPDFileList[0];
-    var ppdInfoRef = ppdRef.PPDInfo;
+ var ppdRef = PPDFileList[0];
+ var ppdInfoRef = ppdRef.PPDInfo;
 
-    var sInfo = "\r\t\t第一个PPD文件的ScreenSpotFunctions:\r";
-    sInfo += "\t\t" + ppdRef.name + "\r";
+ var sInfo = "\r\t\t第一个PPD文件的ScreenSpotFunctions:\r";
+ sInfo += "\t\t" + ppdRef.name + "\r";
 
-    var iScreenSpots = ppdInfoRef.screenSpotFunctionList.length;
-    if (iScreenSpots > 0) {
-        for (var n = 0; n < iScreenSpots; n++) {
-        var screenSpotRef = ppdInfoRef.screenSpotFunctionList[n];
-        sInfo += "\t\t";
+ var iScreenSpots = ppdInfoRef.screenSpotFunctionList.length;
+ if (iScreenSpots > 0) {
+ for (var n = 0; n < iScreenSpots; n++) {
+ var screenSpotRef = ppdInfoRef.screenSpotFunctionList[n];
+ sInfo += "\t\t";
 
-        sInfo += screenSpotRef.name;
-        sInfo += ", spotFunction: ";
+ sInfo += screenSpotRef.name;
+ sInfo += ", spotFunction: ";
 
-        sInfo += screenSpotRef.spotFunction;
-        sInfo += "\r";
-        }
-    } else {
-        sInfo += "\t\tScreenSpotFunctionList为空";
-    }
+ sInfo += screenSpotRef.spotFunction;
+ sInfo += "\r";
+ }
+ } else {
+ sInfo += "\t\tScreenSpotFunctionList为空";
+ }
 }
 
 var textRef = docRef.textFrames.add();

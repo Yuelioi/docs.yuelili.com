@@ -67,9 +67,9 @@ Gets the first element in the collection with the specified name.
 
 #### Parameters
 
-| Parameter |  Type  |      Description       |
-| --------- | ------ | ---------------------- |
-| `name`    | String | Name of element to get |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Name of element to get |
 
 #### Returns
 
@@ -87,8 +87,8 @@ Gets an element from the collection.
 
 #### Parameters
 
-| Parameter |      Type      |     Description      |
-| --------- | -------------- | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `itemKey` | String, Number | String or number key |
 
 #### Returns
@@ -122,16 +122,16 @@ Nothing.
 var ok = false;
 
 if (documents.length > 0) {
-    var docRef = activeDocument;
-    var iCount = docRef.graphItems.length;
-    if (iCount > 0) {
-        ok = true;
-        for (var i = 0; i < iCount; i++) {
-            var graphRef = docRef.graphItems[i];
-            graphRef.selected = true;
-            graphRef.rotate(90); //rotate clockwise 90 degrees
-        }
-        redraw();
-    }
+ var docRef = activeDocument;
+ var iCount = docRef.graphItems.length;
+ if (iCount > 0) {
+ ok = true;
+ for (var i = 0; i < iCount; i++) {
+ var graphRef = docRef.graphItems[i];
+ graphRef.selected = true;
+ graphRef.rotate(90); //rotate clockwise 90 degrees
+ }
+ redraw();
+ }
 }
 ```

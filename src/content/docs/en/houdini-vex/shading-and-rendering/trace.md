@@ -82,7 +82,7 @@ For area sampling, you must specify both the angle and sample variadic parameter
 surface
 blurry_mirror(float angle = 3; int samples = 16; float bias=0.05)
 {
-    Cf = reflectlight(bias, 1, "angle", angle, "samples", samples);
+ Cf = reflectlight(bias, 1, "angle", angle, "samples", samples);
 }
 
 ```
@@ -325,7 +325,7 @@ Importing information from the ray
 You can specify names of global or exported variables to import from the hit shader in the form `"varname", &var`, typically including `Cf` (color vector of surface hit) and `Of` (opacity vector of surface hit).
 
 ```vex
-vector  hitcf;
+vector hitcf;
 gather(P, dir, "bias", 0.01, "Cf", hitcf) {...}
 
 ```
@@ -373,9 +373,9 @@ be inserted regardless of whether the opacity limit was exceeded.
 vector a_pos[];
 vector a_nml[];
 trace(P, dir, Time,
-        "samplefilter", "all",
-    "P", a_pos,
-    "N", a_nml);
+ "samplefilter", "all",
+ "P", a_pos,
+ "N", a_nml);
 
 ```
 
@@ -429,20 +429,20 @@ When using [sample_geometry](../sampling/sample_geometry "Samples geometry in th
 
 ```vex
 gather(P, dir,
-        "samplefilter", "opacity",
-    "Cf", hitCf,
-    "Of", hitOf,
-        "samplefilter", "closest",
-    "P", hitP,
-    "N", hitN)
+ "samplefilter", "opacity",
+ "Cf", hitCf,
+ "Of", hitOf,
+ "samplefilter", "closest",
+ "P", hitP,
+ "N", hitN)
 {
-    trace(pos, dir, time,
-    // Composite the bsdf of the hit surfaces using stochastic transparency
-    "samplefilter", "screendoor",
-    "F", hitF,
-    // But find the closest sample's position
-    "samplefilter", "closest",
-    "P", hitP);
+ trace(pos, dir, time,
+ // Composite the bsdf of the hit surfaces using stochastic transparency
+ "samplefilter", "screendoor",
+ "F", hitF,
+ // But find the closest sample's position
+ "samplefilter", "closest",
+ "P", hitP);
 }
 
 ```
@@ -458,6 +458,6 @@ As you specify variables, you can intersperse `pipeline` keyword options to cont
 
 ```vex
 gather(p, d, "pipeline", "surface", "Cf", surfCf,
-     "pipeline", "atmosphere" "Cf", fogCf, "P", hitP)
+ "pipeline", "atmosphere" "Cf", fogCf, "P", hitP)
 
 ```

@@ -17,18 +17,18 @@ Examples
 
 ```vex
 if (primintrinsic(0,"typeid",@primnum) != 1) {
-    warning("Primitives that aren't polygons are being ignored.");
-    return;
+ warning("Primitives that aren't polygons are being ignored.");
+ return;
 }
 if (primintrinsic(0,"closed",@primnum) == 0 || @numvtx < 3) {
-    warning("Open or degenerate polygons are being ignored.");
-    return;
+ warning("Open or degenerate polygons are being ignored.");
+ return;
 }
 float minimumValue = chf("min");
 float maximumValue = chf("max");
 if (minimumValue > maximumValue) {
-    warning("Minimum (%f) can't be greater than maximum (%f); replacing minimum with maximum.", minimumValue, maximumValue);
-    minimumValue = maximumValue;
+ warning("Minimum (%f) can't be greater than maximum (%f); replacing minimum with maximum.", minimumValue, maximumValue);
+ minimumValue = maximumValue;
 }
 
 ```

@@ -81,9 +81,9 @@ title: 色板
 
 #### 参数
 
-| 参数     | 类型   | 描述         |
-| -------- | ------ | ------------------ |
-| `name`   | 字符串 | 要获取的元素的名称 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `name` | 字符串 | 要获取的元素的名称 |
 
 #### 返回值
 
@@ -115,9 +115,9 @@ title: 色板
 
 #### 参数
 
-| 参数      | 类型    | 描述         |
-| --------- | ------------- | ------------------ |
-| `itemKey` | 字符串, 数字  | 要获取的元素的键   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `itemKey` | 字符串, 数字 | 要获取的元素的键 |
 
 #### 返回值
 
@@ -146,9 +146,9 @@ title: 色板
 ```javascript
 // 从当前文档中删除第4个色板
 if ( app.documents.length > 0 ) {
-  if (app.activeDocument.swatches.length > 4) {
-    var swatchToDelete = app.activeDocument.swatches[3];
-    swatchToDelete.remove();
-  }
+ if (app.activeDocument.swatches.length > 4) {
+ var swatchToDelete = app.activeDocument.swatches[3];
+ swatchToDelete.remove();
+ }
 }
 ```

@@ -29,7 +29,7 @@ Examples
 
 ```vex
 // Get the attribute name for the given primvar.
-string attrib_name  = usd_primvarattribname(0, "some_primvar");
+string attrib_name = usd_primvarattribname(0, "some_primvar");
 int is_attrib = usd_isattrib(0, "/geo/sphere", attrib_name);
 
 ```

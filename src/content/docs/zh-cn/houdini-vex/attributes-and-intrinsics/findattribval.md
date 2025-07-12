@@ -57,7 +57,7 @@ int prim_num = findattribval(0, "prim", "id", 10);
 ```vex
 for (int point_num : findattribval(0, "point", "age", 10))
 {
-    // ...对点进行操作...
+ // ...对点进行操作...
 }
 
 ```
@@ -68,8 +68,8 @@ for (int point_num : findattribval(0, "point", "age", 10))
 int count = findattribvalcount(0, "point", "age", 10);
 int point_num;
 for (int i = 0; i < count; i++) {
-    point_num = findattribval(0, "point", "age", 10, i);
-    // ...对点进行操作...
+ point_num = findattribval(0, "point", "age", 10, i);
+ // ...对点进行操作...
 }
 
 ```

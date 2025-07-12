@@ -33,7 +33,7 @@ Examples
 
 ```vex
 // Check if the primitive has a USD Geometry Model API applied.
-int has_geom_model_api_by_name  = usd_hasapi(0, "/geo/sphere", "UsdGeomModelAPI");
+int has_geom_model_api_by_name = usd_hasapi(0, "/geo/sphere", "UsdGeomModelAPI");
 int has_geom_model_api_by_alias = usd_hasapi(0, "/geo/sphere", "GeomModelAPI");
 
 ```

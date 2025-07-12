@@ -47,9 +47,9 @@ MarkerCollection 是 [Collection 对象](../collection) 的子类。在使用 Ma
 
 #### 参数
 
-| 参数   | 类型  |   描述   |
-| -------- | ----- | -------------------------------------------- |
-| `time`   | Float | 标记应创建的时间，以秒为单位。    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `time` | Float | 标记应创建的时间，以秒为单位。 |
 
 #### 返回值
 
@@ -69,9 +69,9 @@ MarkerCollection 是 [Collection 对象](../collection) 的子类。在使用 Ma
 
 #### 参数
 
-| 参数   |     类型     |    描述    |
-| -------- | ------------------------------------- | -------------------------------- |
-| `marker` | [Marker 对象](../../general/marker)   | 要从集合中移除的标记对象。   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `marker` | [Marker 对象](../../general/marker) | 要从集合中移除的标记对象。 |
 
 #### 返回值
 
@@ -87,8 +87,8 @@ var marker = markers.getFirstMarker();
 var count = markers.numMarkers;
 
 while (marker) {
-   markers.deleteMarker(marker);
-   marker = markers.getFirstMarker();
+ markers.deleteMarker(marker);
+ marker = markers.getFirstMarker();
 }
 
 alert('移除了 ' + count.toString() + ' 个标记');
@@ -148,9 +148,9 @@ alert('移除了 ' + count.toString() + ' 个标记');
 
 #### 参数
 
-| 参数   |     类型     |    描述    |
-| --------------- | ------------------------------------- | ---------------------------------------------- |
-| `currentMarker` | [Marker 对象](../../general/marker)   | 起始标记对象，从该对象开始获取下一个标记对象。 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `currentMarker` | [Marker 对象](../../general/marker) | 起始标记对象，从该对象开始获取下一个标记对象。 |
 
 #### 返回值
 
@@ -170,9 +170,9 @@ alert('移除了 ' + count.toString() + ' 个标记');
 
 #### 参数
 
-| 参数   |     类型     |    描述    |
-| --------------- | ------------------------------------- | ------------------------------------------------- |
-| `currentMarker` | [Marker 对象](../../general/marker)   | 起始标记对象，从该对象开始获取上一个标记对象。   |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `currentMarker` | [Marker 对象](../../general/marker) | 起始标记对象，从该对象开始获取上一个标记对象。 |
 
 #### 返回值
 

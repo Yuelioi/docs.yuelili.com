@@ -13,17 +13,17 @@ order: 3
 
 ```vex
 if (!pointattribtype(0,chs("nameattrib")) != 2) {
-    error("名称属性 %s 必须是字符串类型！", chs("nameattrib"));
-    return;
+ error("名称属性 %s 必须是字符串类型！", chs("nameattrib"));
+ return;
 }
 if (chf("distance") < 0) {
-    error("")
+ error("")
 }
 float minimumValue = chf("min");
 float maximumValue = chf("max");
 if (minimumValue >= maximumValue) {
-    error("最小值 (%f) 必须严格小于最大值 (%f)! 当前无法确定应执行的操作。", minimumValue, maximumValue);
-    return;
+ error("最小值 (%f) 必须严格小于最大值 (%f)! 当前无法确定应执行的操作。", minimumValue, maximumValue);
+ return;
 }
 
 ```

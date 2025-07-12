@@ -11,19 +11,18 @@ For example, the following definition describes the `rotate()` method for an art
 
 ```javascript
 rotate(
-    angle
-    [,changePositions]
-    [,changeFillPatterns]
-    [,changeFillGradients]
-    [,changeStrokePattern]
-    [,rotateAbout]
+ angle
+ [,changePositions]
+ [,changeFillPatterns]
+ [,changeFillGradients]
+ [,changeStrokePattern]
+ [,rotateAbout]
 )
 ```
 
 :::tip
 In the definition, optional parameters are enclosed in square brackets ( `[]` ).
 :::
-
 
 To rotate the object 30 degrees and change the `fillGradients`, you would use the following script statement
 

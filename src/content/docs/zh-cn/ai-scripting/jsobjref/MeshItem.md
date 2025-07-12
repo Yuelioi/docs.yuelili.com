@@ -439,10 +439,10 @@ title: MeshItem
 
 #### 参数
 
-|      参数       |      类型        |        描述   |
-| --------------- | --------------------------------------------------------------------- | ------------------- |
-| `relativeObject`    | 对象，可选          | 要复制到的对象     |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 插入元素的位置     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `relativeObject` | 对象，可选 | 要复制到的对象 |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 插入元素的位置 |
 
 #### 返回值
 
@@ -460,10 +460,10 @@ title: MeshItem
 
 #### 参数
 
-|      参数       |      类型        |    描述    |
-| --------------- | --------------------------------------------------------------------- | ---------------------- |
-| `relativeObject`    | 对象      | 要移动元素的对象     |
-| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 移动元素到的位置     |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `relativeObject` | 对象 | 要移动元素的对象 |
+| `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 移动元素到的位置 |
 
 #### 返回值
 
@@ -489,14 +489,14 @@ title: MeshItem
 
 ```javascript
 app.activeDocument.meshItems[index].resize(
-    scaleX,
-    scaleY
-    [,changePositions]
-    [,changeFillPatterns]
-    [,changeFillGradients]
-    [,changeStrokePattern]
-    [,changeLineWidths]
-    [,scaleAbout]
+ scaleX,
+ scaleY
+ [,changePositions]
+ [,changeFillPatterns]
+ [,changeFillGradients]
+ [,changeStrokePattern]
+ [,changeLineWidths]
+ [,scaleAbout]
 )
 ```
 
@@ -506,16 +506,16 @@ app.activeDocument.meshItems[index].resize(
 
 #### 参数
 
-|       参数        |     类型      |   描述   |
-| ----------------- | ----------------------------------------------------------------- | ------------------------------------------------ |
-| `scaleX`        | 数字（双精度）    | 水平缩放因子     |
-| `scaleY`        | 数字（双精度）    | 垂直缩放因子       |
-| `changePositions`     | 布尔值，可选           | 是否影响艺术对象的位置和方向 |
-| `changeFillPatterns`  | 布尔值，可选           | 是否变换填充图案          |
-| `changeFillGradients` | 布尔值，可选           | 是否变换填充渐变         |
-| `changeStrokePattern` | 布尔值，可选           | 是否变换描边图案        |
-| `changeLineWidths`    | 数字（双精度），可选         | 缩放线宽的量     |
-| `scaleAbout`    | [Transformation](../scripting-constants#transformation)，可选 | 用作锚点的点，以进行变换    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `scaleX` | 数字（双精度） | 水平缩放因子 |
+| `scaleY` | 数字（双精度） | 垂直缩放因子 |
+| `changePositions` | 布尔值，可选 | 是否影响艺术对象的位置和方向 |
+| `changeFillPatterns` | 布尔值，可选 | 是否变换填充图案 |
+| `changeFillGradients` | 布尔值，可选 | 是否变换填充渐变 |
+| `changeStrokePattern` | 布尔值，可选 | 是否变换描边图案 |
+| `changeLineWidths` | 数字（双精度），可选 | 缩放线宽的量 |
+| `scaleAbout` | [Transformation](../scripting-constants#transformation)，可选 | 用作锚点的点，以进行变换 |
 
 #### 返回值
 
@@ -527,12 +527,12 @@ app.activeDocument.meshItems[index].resize(
 
 ```javascript
 app.activeDocument.meshItems[index].rotate(
-    angle
-    [,changePositions]
-    [,changeFillPatterns]
-    [,changeFillGradients]
-    [,changeStrokePattern]
-    [,rotateAbout]
+ angle
+ [,changePositions]
+ [,changeFillPatterns]
+ [,changeFillGradients]
+ [,changeStrokePattern]
+ [,rotateAbout]
 )
 ```
 
@@ -542,14 +542,14 @@ app.activeDocument.meshItems[index].rotate(
 
 #### 参数
 
-|       参数        |     类型      |   描述   |
-| ----------------- | ----------------------------------------------------------------- | ------------------------------------------------ |
-| `angle`         | 数字（双精度）    | 旋转元素的角度量      |
-| `changePositions`     | 布尔值，可选           | 是否影响艺术对象的位置和方向 |
-| `changeFillPatterns`  | 布尔值，可选           | 是否变换填充图案          |
-| `changeFillGradients` | 布尔值，可选           | 是否变换填充渐变         |
-| `changeStrokePattern` | 布尔值，可选           | 是否变换描边图案        |
-| `rotateAbout`   | [Transformation](../scripting-constants#transformation)，可选 | 用作锚点的点，以进行变换    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `angle` | 数字（双精度） | 旋转元素的角度量 |
+| `changePositions` | 布尔值，可选 | 是否影响艺术对象的位置和方向 |
+| `changeFillPatterns` | 布尔值，可选 | 是否变换填充图案 |
+| `changeFillGradients` | 布尔值，可选 | 是否变换填充渐变 |
+| `changeStrokePattern` | 布尔值，可选 | 是否变换描边图案 |
+| `rotateAbout` | [Transformation](../scripting-constants#transformation)，可选 | 用作锚点的点，以进行变换 |
 
 #### 返回值
 
@@ -561,13 +561,13 @@ app.activeDocument.meshItems[index].rotate(
 
 ```javascript
 app.activeDocument.meshItems[index].transform(
-    transformationMatrix
-    [,changePositions]
-    [,changeFillPatterns]
-    [,changeFillGradients]
-    [,changeStrokePattern]
-    [,changeLineWidths]
-    [,transformAbout]
+ transformationMatrix
+ [,changePositions]
+ [,changeFillPatterns]
+ [,changeFillGradients]
+ [,changeStrokePattern]
+ [,changeLineWidths]
+ [,transformAbout]
 )
 ```
 
@@ -577,15 +577,15 @@ app.activeDocument.meshItems[index].transform(
 
 #### 参数
 
-|        参数   |     类型      |      描述       |
-| ------------------- | ----------------------------------------------------------------- | --------------------------------------- |
-| `transformationMatrix` | [Matrix](.././Matrix)       | 要应用的变换矩阵   |
-| `changePositions`      | 布尔值，可选           | 是否改变位置        |
-| `changeFillPatterns`   | 布尔值，可选           | 是否改变填充图案          |
-| `changeFillGradients`  | 布尔值，可选           | 是否改变填充渐变          |
-| `changeStrokePattern`  | 布尔值，可选           | 是否改变描边图案          |
-| `changeLineWidths`     | 数字（双精度），可选         | 缩放线宽的量        |
-| `transformAbout`       | [Transformation](../scripting-constants#transformation)，可选 | 用作锚点的点，以进行变换 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `transformationMatrix` | [Matrix](.././Matrix) | 要应用的变换矩阵 |
+| `changePositions` | 布尔值，可选 | 是否改变位置 |
+| `changeFillPatterns` | 布尔值，可选 | 是否改变填充图案 |
+| `changeFillGradients` | 布尔值，可选 | 是否改变填充渐变 |
+| `changeStrokePattern` | 布尔值，可选 | 是否改变描边图案 |
+| `changeLineWidths` | 数字（双精度），可选 | 缩放线宽的量 |
+| `transformAbout` | [Transformation](../scripting-constants#transformation)，可选 | 用作锚点的点，以进行变换 |
 
 #### 返回值
 
@@ -597,12 +597,12 @@ app.activeDocument.meshItems[index].transform(
 
 ```javascript
 app.activeDocument.meshItems[index].translate(
-    [deltaX]
-    [,deltaY]
-    [,transformObjects]
-    [,transformFillPatterns]
-    [,transformFillGradients]
-    [,transformStrokePatterns]
+ [deltaX]
+ [,deltaY]
+ [,transformObjects]
+ [,transformFillPatterns]
+ [,transformFillGradients]
+ [,transformStrokePatterns]
 )
 ```
 
@@ -612,14 +612,14 @@ app.activeDocument.meshItems[index].translate(
 
 #### 参数
 
-|   参数    |     类型      |       描述        |
-| --------------------- | ------------------------- | ----------------------------- |
-| `deltaX`      | 数字（双精度），可选 | 水平偏移量        |
-| `deltaY`      | 数字（双精度），可选 | 垂直偏移量          |
-| `transformObjects`        | 布尔值，可选   | 是否变换对象   |
-| `transformFillPatterns`   | 布尔值，可选   | 是否变换填充图案   |
-| `transformFillGradients`  | 布尔值，可选   | 是否变换填充渐变  |
-| `transformStrokePatterns` | 布尔值，可选   | 是否变换描边图案 |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `deltaX` | 数字（双精度），可选 | 水平偏移量 |
+| `deltaY` | 数字（双精度），可选 | 垂直偏移量 |
+| `transformObjects` | 布尔值，可选 | 是否变换对象 |
+| `transformFillPatterns` | 布尔值，可选 | 是否变换填充图案 |
+| `transformFillGradients` | 布尔值，可选 | 是否变换填充渐变 |
+| `transformStrokePatterns` | 布尔值，可选 | 是否变换描边图案 |
 
 #### 返回值
 
@@ -637,8 +637,8 @@ app.activeDocument.meshItems[index].translate(
 
 #### 参数
 
-|  参数   |    类型     |     描述      |
-| ------ | --------------------------------------------------- | ------------------------- |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
 | `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法 |
 
 #### 返回值
@@ -654,9 +654,9 @@ app.activeDocument.meshItems[index].translate(
 ```javascript
 // 锁定当前文档中的所有网格项
 if (app.documents.length > 0) {
-    var doc = app.activeDocument;
-    for (var i = 0; i < doc.meshItems.length; i++) {
-        doc.meshItems[i].locked = true;
-    }
+ var doc = app.activeDocument;
+ for (var i = 0; i < doc.meshItems.length; i++) {
+ doc.meshItems[i].locked = true;
+ }
 }
 ```

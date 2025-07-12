@@ -20,13 +20,13 @@ the condition in a [while loop](../statement.html).
 Warnings:
 
 - This function will not work correctly when used in multi-threaded OPs.
-  It is not possible to nest `pcunshaded` or [pciterate](./pciterate "This function can be used to iterate over all the points which were
-  found in the pcopen query.")
-  loops for the same handle. That is, for a single [pcopen](./pcopen "Returns a handle to a point cloud file.")
-  call, only one `pcunshaded` or [pciterate](./pciterate "This function can be used to iterate over all the points which were
-  found in the pcopen query.") loop may be
-  entered.
+ It is not possible to nest `pcunshaded` or [pciterate](./pciterate "This function can be used to iterate over all the points which were
+ found in the pcopen query.")
+ loops for the same handle. That is, for a single [pcopen](./pcopen "Returns a handle to a point cloud file.")
+ call, only one `pcunshaded` or [pciterate](./pciterate "This function can be used to iterate over all the points which were
+ found in the pcopen query.") loop may be
+ entered.
 - Computations involving derivatives inside `pcunshaded` loops may have
-  slightly different results. If derivatives are required for variables
-  which aren’t set by [pcimport](./pcimport "Imports channel data from a point cloud inside a pciterate or a pcunshaded loop.") it may be better to
-  pre-compute the derivatives before the `pcunshaded` loop is entered.
+ slightly different results. If derivatives are required for variables
+ which aren’t set by [pcimport](./pcimport "Imports channel data from a point cloud inside a pciterate or a pcunshaded loop.") it may be better to
+ pre-compute the derivatives before the `pcunshaded` loop is entered.

@@ -236,20 +236,20 @@ var type_str = "";
 // 检查当前值并提示用户
 
 switch (currentGPUSettings) {
-    case GpuAccelType.CUDA:
-        type_str = "CUDA";
-        break;
-    case GpuAccelType.METAL:
-        type_str = "Metal";
-        break;
-    case GpuAccelType.OPENCL:
-        type_str = "OpenCL";
-        break;
-    case GpuAccelType.SOFTWARE:
-        type_str = "Software";
-        break;
-    default:
-        type_str = "UNKNOWN";
+ case GpuAccelType.CUDA:
+ type_str = "CUDA";
+ break;
+ case GpuAccelType.METAL:
+ type_str = "Metal";
+ break;
+ case GpuAccelType.OPENCL:
+ type_str = "OpenCL";
+ break;
+ case GpuAccelType.SOFTWARE:
+ type_str = "Software";
+ break;
+ default:
+ type_str = "UNKNOWN";
 }
 
 alert("当前设置为 " + type_str);
@@ -455,17 +455,17 @@ alert("当前项目包含 " + numItems + " 个项目项")
 // 假设项目中已选中一个合成
 var comp = app.project.activeItem;
 if (comp instanceof CompItem) {
-    // 为当前合成添加摄像机（UCT必需）
-    var cameraLayer = comp.layers.addCamera("测试摄像机", [comp.width / 2, comp.height / 2]);
-    comp.openInViewer();
+ // 为当前合成添加摄像机（UCT必需）
+ var cameraLayer = comp.layers.addCamera("测试摄像机", [comp.width / 2, comp.height / 2]);
+ comp.openInViewer();
 
-    // 如果当前选择工具不是摄像机工具之一，则设为UCT
-    if (( app.project.toolType !== ToolType.Tool_CameraMaya) &&
-        ( app.project.toolType !== ToolType.Tool_CameraOrbit ) &&
-        ( app.project.toolType !== ToolType.Tool_CameraTrackXY) &&
-        ( app.project.toolType !== ToolType.Tool_CameraTrackZ)) {
-   app.project.toolType = ToolType.Tool_CameraMaya;
-        }
+ // 如果当前选择工具不是摄像机工具之一，则设为UCT
+ if (( app.project.toolType !== ToolType.Tool_CameraMaya) &&
+ ( app.project.toolType !== ToolType.Tool_CameraOrbit ) &&
+ ( app.project.toolType !== ToolType.Tool_CameraTrackXY) &&
+ ( app.project.toolType !== ToolType.Tool_CameraTrackZ)) {
+ app.project.toolType = ToolType.Tool_CameraMaya;
+ }
 }
 ```
 
@@ -476,18 +476,18 @@ if (comp instanceof CompItem) {
 
 var item = app.project.activeItem;
 if (item !== null && (item.typeName === "Footage" || item.typeName === "Composition")) {
-    // 用素材创建合成
-    var comp = app.project.items.addComp(item.name, item.width, item.height, item.pixelAspect, item.duration, item.frameRate);
-    var layers = comp.layers;
-    var footageLayer = layers.add(item);
+ // 用素材创建合成
+ var comp = app.project.items.addComp(item.name, item.width, item.height, item.pixelAspect, item.duration, item.frameRate);
+ var layers = comp.layers;
+ var footageLayer = layers.add(item);
 
-    // 应用CC Environment效果并创建摄像机
-    var effect = footageLayer.Effects.addProperty("CC Environment");
-    var camera = layers.addCamera("360摄像机", [item.width / 2, item.height / 2]);
-    comp.openInViewer();
-    app.project.toolType = ToolType.Tool_CameraMaya;
+ // 应用CC Environment效果并创建摄像机
+ var effect = footageLayer.Effects.addProperty("CC Environment");
+ var camera = layers.addCamera("360摄像机", [item.width / 2, item.height / 2]);
+ comp.openInViewer();
+ app.project.toolType = ToolType.Tool_CameraMaya;
 } else {
-    alert("请在项目面板中选择单个素材项或合成。");
+ alert("请在项目面板中选择单个素材项或合成。");
 }
 ```
 
@@ -524,20 +524,20 @@ if (item !== null && (item.typeName === "Footage" || item.typeName === "Composit
 ```javascript
 var usedList = app.project.usedFonts;
 if (usedList.length) {
-    var font = usedList[0].font;
-    var usedAt = usedList[0].usedAt;
+ var font = usedList[0].font;
+ var usedAt = usedList[0].usedAt;
 
-    var str = "[0]:" + font.postScriptName + "\n";
-    for (var i = 0; i < usedAt.length; i++) {
-        var layerID = usedAt[i].layerID;
-        // Source Text属性的valueAtTime()期望时间是图层时间而非合成时间
-        // 与其他属性不同。因此我们调整了usedFonts返回的字段名以明确这一点
-        var layerTimeD = usedAt[i].layerTimeD;
+ var str = "[0]:" + font.postScriptName + "\n";
+ for (var i = 0; i < usedAt.length; i++) {
+ var layerID = usedAt[i].layerID;
+ // Source Text属性的valueAtTime()期望时间是图层时间而非合成时间
+ // 与其他属性不同。因此我们调整了usedFonts返回的字段名以明确这一点
+ var layerTimeD = usedAt[i].layerTimeD;
 
-        var layer = app.project.layerByID(layerID);
-        str += "    图层:'" + String(layer.property("Source Text").valueAtTime(layerTimeD, false)) + "'\n";
-    }
-    alert(str);
+ var layer = app.project.layerByID(layerID);
+ str += " 图层:'" + String(layer.property("Source Text").valueAtTime(layerTimeD, false)) + "'\n";
+ }
+ alert(str);
 }
 ```
 
@@ -615,16 +615,16 @@ var proj = app.project;
 
 // 将XMPlibrary作为ExtendScript ExternalObject加载
 if (ExternalObject.AdobeXMPScript === undefined){
-    ExternalObject.AdobeXMPScript = new ExternalObject('lib:AdobeXMPScript');
+ ExternalObject.AdobeXMPScript = new ExternalObject('lib:AdobeXMPScript');
 }
 var mdata = new XMPMeta(app.project.xmpPacket); //获取项目的XMP元数据
 // 更新Label项目元数据值
 var schemaNS = XMPMeta.getNamespaceURI("xmp");
 var propName = "xmp:Label";
 try{
-    mdata.setProperty(schemaNS, propName, "最终版本...真的！");
+ mdata.setProperty(schemaNS, propName, "最终版本...真的！");
 } catch (e) {
-    alert(e);
+ alert(e);
 }
 
 app.project.xmpPacket = mdata.serialize();
@@ -644,10 +644,10 @@ app.project.xmpPacket = mdata.serialize();
 
 #### 参数
 
-| 参数      | 类型   | 描述           |
-| --------- | ------ | -------------- |
-| `oldText` | 字符串 | 待替换文本     |
-| `newText` | 字符串 | 新文本         |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `oldText` | 字符串 | 待替换文本 |
+| `newText` | 字符串 | 新文本 |
 
 #### 返回值
 
@@ -665,12 +665,12 @@ app.project.xmpPacket = mdata.serialize();
 
 #### 参数
 
-| 参数          | 类型   | 描述            |
-| ------------- | --------------- | ---------------------------------------------------------------------------------------- |
-| `closeOptions` | `CloseOptions`枚举 | 关闭时执行的操作。可选：          |
-|      |        | - `CloseOptions.DO_NOT_SAVE_CHANGES`: 不保存直接关闭          |
-|      |        | - `CloseOptions.PROMPT_TO_SAVE_CHANGES`: 关闭前提示是否保存            |
-|      |        | - `CloseOptions.SAVE_CHANGES`: 自动保存后关闭       |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `closeOptions` | `CloseOptions`枚举 | 关闭时执行的操作。可选： |
+| | | - `CloseOptions.DO_NOT_SAVE_CHANGES`: 不保存直接关闭 |
+| | | - `CloseOptions.PROMPT_TO_SAVE_CHANGES`: 关闭前提示是否保存 |
+| | | - `CloseOptions.SAVE_CHANGES`: 自动保存后关闭 |
 
 #### 返回值
 
@@ -708,9 +708,9 @@ app.project.xmpPacket = mdata.serialize();
 
 #### 参数
 
-|      参数      |           类型            |   描述    |
-| -------------- | ------------------------------------------- | ----------------------------------------------------------------- |
-| `importOptions` | [ImportOptions](../../other/importoptions)  | 指定要导入的文件及操作选项的对象。    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `importOptions` | [ImportOptions](../../other/importoptions) | 指定要导入的文件及操作选项的对象。 |
 
 #### 返回值
 
@@ -748,13 +748,13 @@ app.project.importFile(new ImportOptions(new File("sample.psd")));
 
 #### 参数
 
-|     参数     |       类型        |     描述      |
-| ------------ | ---------------------------------------------------- | ------------------------------- |
-| `name`       | String          | 占位符名称。           |
-| `width`      | 整数，范围 `[4..30000]`            | 占位符宽度（像素）。   |
-| `height`     | 整数，范围 `[4..30000]`            | 占位符高度（像素）。   |
-| `frameRate`  | 浮点数，范围 `[1.0..99.0]`         | 占位符帧速率。         |
-| `duration`   | 浮点数，范围 `[0.0..10800.0]`      | 占位符持续时间（秒）。          |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `name` | String | 占位符名称。 |
+| `width` | 整数，范围 `[4..30000]` | 占位符宽度（像素）。 |
+| `height` | 整数，范围 `[4..30000]` | 占位符高度（像素）。 |
+| `frameRate` | 浮点数，范围 `[1.0..99.0]` | 占位符帧速率。 |
+| `duration` | 浮点数，范围 `[0.0..10800.0]` | 占位符持续时间（秒）。 |
 
 #### 返回值
 
@@ -772,9 +772,9 @@ PlaceholderItem 对象。
 
 #### 参数
 
-|  参数   |  类型   |      描述       |
-| ------- | ------- | --------------------------------- |
-| `index` | 整数    | 项的索引位置（第一个项的索引为1）。|
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `index` | 整数 | 项的索引位置（第一个项的索引为1）。|
 
 #### 返回值
 
@@ -796,9 +796,9 @@ PlaceholderItem 对象。
 
 #### 参数
 
-| 参数 |  类型   |     描述      |
-| ---- | ------- | ------------- |
-| `id` | 整数    | 项的ID。      |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `id` | 整数 | 项的ID。 |
 
 #### 返回值
 
@@ -820,9 +820,9 @@ Project 的实例方法，当给定有效的 ID 值时，返回项目中具有�
 
 #### 参数
 
-| 参数 |          类型           |      描述       |
-| ---- | ----------------------- | --------------------------------- |
-| `id` | 整数（非负数）          | 要从项目中检索的图层的 ID。       |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `id` | 整数（非负数） | 要从项目中检索的图层的 ID。 |
 
 #### 返回值
 
@@ -836,7 +836,7 @@ var firstLayer = firstComp.layer(1);
 var layerID = firstLayer.id;
 
 if (app.project.layerByID(layerID) === firstLayer) {
-    alert("可以通过ID获取图层！");
+ alert("可以通过ID获取图层！");
 }
 ```
 
@@ -870,9 +870,9 @@ if (app.project.layerByID(layerID) === firstLayer) {
 
 #### 参数
 
-|       参数       |         类型          |     描述      |
-| ---------------- | --------------------------------------- | ------------- |
-| `array_of_items` | [Item 对象](../../item/item)数组        | 要保留的项。  |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `array_of_items` | [Item 对象](../../item/item)数组 | 要保留的项。 |
 
 #### 返回值
 
@@ -936,11 +936,11 @@ var layerChanged = app.project.replaceFont(fromFont, toFont);
 
 #### 参数
 
-|      参数      |        类型         |          描述           |
-| -------------- | ------------------------------------- | ----------------------- |
-| `fromFont`     | [Font 对象](../../text/fontobject)    | 要替换的字体。          |
-| `toFont`       | [Font 对象](../../text/fontobject)    | 替换后的字体。          |
-| `noFontLocking` | 布尔值    | 可选。默认为 `false`    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `fromFont` | [Font 对象](../../text/fontobject) | 要替换的字体。 |
+| `toFont` | [Font 对象](../../text/fontobject) | 替换后的字体。 |
+| `noFontLocking` | 布尔值 | 可选。默认为 `false` |
 
 #### 返回值
 
@@ -960,9 +960,9 @@ var layerChanged = app.project.replaceFont(fromFont, toFont);
 
 #### 参数
 
-|  参数   |         类型          |       描述        |
-| ------- | ---------------------------------------------------------------------------------------------- | ----------------- |
-| `file`  | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html)  | 可选。要保存的文件。|
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `file` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) | 可选。要保存的文件。|
 
 #### 返回值
 
@@ -998,9 +998,9 @@ var layerChanged = app.project.replaceFont(fromFont, toFont);
 
 #### 参数
 
-|   参数   |            类型   |       描述        |
-| -------- | --------------------------------------------------------------------------------------------------- | ----------------- |
-| `folder` | [Extendscript Folder](https://extendscript.docsforadobe.dev/file-system-access/folder-object.html)  | 要设置为默认的文件夹。|
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `folder` | [Extendscript Folder](https://extendscript.docsforadobe.dev/file-system-access/folder-object.html) | 要设置为默认的文件夹。|
 
 #### 返回值
 
@@ -1032,9 +1032,9 @@ var layerChanged = app.project.replaceFont(fromFont, toFont);
 
 #### 参数
 
-|   参数   |  类型   |      描述       |
-| -------- | ------- | --------------------------------- |
-| `doShow` | 布尔值  | 为 `true` 时显示项目面板，为 `false` 时隐藏。|
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `doShow` | 布尔值 | 为 `true` 时显示项目面板，为 `false` 时隐藏。|
 
 #### 返回值
 
@@ -1058,10 +1058,10 @@ var layerChanged = app.project.replaceFont(fromFont, toFont);
 
 #### 参数
 
-|       参数        |  类型   |          描述           |
-| ----------------- | ------- | ----------------------- |
-| `teamProjectName` | 字符串  | 团队项目名称。          |
-| `description`     | 字符串  | 可选。项目描述。        |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `teamProjectName` | 字符串 | 团队项目名称。 |
+| `description` | 字符串 | 可选。项目描述。 |
 
 #### 返回值
 
@@ -1083,9 +1083,9 @@ var layerChanged = app.project.replaceFont(fromFont, toFont);
 
 #### 参数
 
-|       参数        |  类型   |       描述        |
-| ----------------- | ------- | ----------------- |
-| `teamProjectName` | 字符串  | 团队项目名称。    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `teamProjectName` | 字符串 | 团队项目名称。 |
 
 #### 返回值
 
@@ -1107,9 +1107,9 @@ var layerChanged = app.project.replaceFont(fromFont, toFont);
 
 #### 参数
 
-|    参数    |  类型   |       描述        |
-| ---------- | ------- | ----------------- |
-| `comment`  | 字符串  | 可选。注释。      |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `comment` | 字符串 | 可选。注释。 |
 
 #### 返回值
 
@@ -1167,9 +1167,9 @@ var layerChanged = app.project.replaceFont(fromFont, toFont);
 
 #### 参数
 
-|      参数       |         类型          |          描述           |
-| --------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `project_file`  | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html)  | 本地 After Effects 项目文件（扩展名应为 .aep 或 .aet，不支持 .aepx）。        |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `project_file` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) | 本地 After Effects 项目文件（扩展名应为 .aep 或 .aet，不支持 .aepx）。 |
 
 #### 返回值
 
@@ -1209,9 +1209,9 @@ var layerChanged = app.project.replaceFont(fromFont, toFont);
 
 #### 参数
 
-|       参数        |  类型   |       描述        |
-| ----------------- | ------- | ----------------- |
-| `teamProjectName` | 字符串  | 团队项目名称。    |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `teamProjectName` | 字符串 | 团队项目名称。 |
 
 #### 返回值
 
@@ -1341,12 +1341,12 @@ var layerChanged = app.project.replaceFont(fromFont, toFont);
 
 #### 参数
 
-|     参数      |        类型         |         描述          |
-| ------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ResolveType` | `ResolveType` 枚举  | 要使用的冲突解决方法类型。可以是以下之一：       |
-|      |            | - `ResolveType.ACCEPT_THEIRS`: 接受共享版本。共享版本将替换您的版本。       |
-|      |            | - `ResolveType.ACCEPT_YOURS`: 保留您的项目版本。不接受共享版本。             |
-|      |            | - `ResolveType.ACCEPT_THEIRS_AND_COPY`: 复制并重命名您的版本，然后接受共享版本。共享版本将替换您的原始版本。      |
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `ResolveType` | `ResolveType` 枚举 | 要使用的冲突解决方法类型。可以是以下之一： |
+| | | - `ResolveType.ACCEPT_THEIRS`: 接受共享版本。共享版本将替换您的版本。 |
+| | | - `ResolveType.ACCEPT_YOURS`: 保留您的项目版本。不接受共享版本。 |
+| | | - `ResolveType.ACCEPT_THEIRS_AND_COPY`: 复制并重命名您的版本，然后接受共享版本。共享版本将替换您的原始版本。 |
 
 #### 返回值
 

@@ -67,9 +67,9 @@ Get the first element in the collection with the provided name.
 
 #### Parameters
 
-| Parameter |  Type  |      Description       |
-| --------- | ------ | ---------------------- |
-| `name`    | String | Name of element to get |
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `name` | String | Name of element to get |
 
 #### Returns
 
@@ -87,8 +87,8 @@ Gets an element from the collection.
 
 #### Parameters
 
-| Parameter |      Type      |     Description      |
-| --------- | -------------- | -------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `itemKey` | String, Number | String or number key |
 
 #### Returns
@@ -118,30 +118,30 @@ var y = (docRef.height - edgeSpacing);
 var iCount = textFonts.length;
 
 for (var i=0; i<iCount; i++) {
-    sFontName = textFonts[i].name;
-    sFontName += " ";
-    sFontNames = sFontName + textFonts[i].style;
+ sFontName = textFonts[i].name;
+ sFontName += " ";
+ sFontNames = sFontName + textFonts[i].style;
 
-    var textRef = docRef.textFrames.add();
-    textRef.textRange.characterAttributes.size = 10;
-    textRef.contents = sFontNames;
-    textRef.top = y;
-    textRef.left = x;
+ var textRef = docRef.textFrames.add();
+ textRef.textRange.characterAttributes.size = 10;
+ textRef.contents = sFontNames;
+ textRef.top = y;
+ textRef.left = x;
 
-    // check wether the text frame will go off the edge of the document
-    if ((x + textRef.width)> docRef.width) {
-        textRef.remove();
-        iCount = i;
-        break;
-    } else {
-        // display text frame
-        textRef.textRange.characterAttributes.textFont = textFonts.getByName(textFonts[i].name);
-        redraw();
+ // check wether the text frame will go off the edge of the document
+ if ((x + textRef.width)> docRef.width) {
+ textRef.remove();
+ iCount = i;
+ break;
+ } else {
+ // display text frame
+ textRef.textRange.characterAttributes.textFont = textFonts.getByName(textFonts[i].name);
+ redraw();
 
-        if ((y-=(textRef.height)) <= 20) {
-            y = (docRef.height - edgeSpacing);
-            x += columnSpacing;
-        }
-    }
+ if ((y-=(textRef.height)) <= 20) {
+ y = (docRef.height - edgeSpacing);
+ x += columnSpacing;
+ }
+ }
 }
 ```
