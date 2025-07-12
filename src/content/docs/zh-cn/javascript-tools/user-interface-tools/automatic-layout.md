@@ -61,10 +61,10 @@ w.show();
 
 容器的 `orientation` 属性指定其子元素的组织方式。它可以具有以下值：
 
-|  值      |                                                                                                                                                                                  行为                                                                                                                                                                                  |
+|  值   |     行为     |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `row`    | 子元素排列在容器中的单行中，从左到右排列。容器的高度基于行中最高的子元素的高度，容器的宽度基于所有子元素的宽度之和。                                                                             |
-| `column` | 子元素排列在容器中的单列中，从上到下排列。容器的高度基于所有子元素的高度之和，容器的宽度基于列中最宽的子元素的宽度。                                                                             |
+| `row`    | 子元素排列在容器中的单行中，从左到右排列。容器的高度基于行中最高的子元素的高度，容器的宽度基于所有子元素的宽度之和。   |
+| `column` | 子元素排列在容器中的单列中，从上到下排列。容器的高度基于所有子元素的高度之和，容器的宽度基于列中最宽的子元素的宽度。   |
 | `stack`  | 子元素重叠排列，就像一叠纸一样。元素在容器的同一区域中重叠。只有最上面的元素完全可见。容器的高度基于堆栈中最高的子元素的高度，容器的宽度基于堆栈中最宽的子元素的宽度。 |
 
 下图显示了使用这些方向布局示例窗口的结果：
@@ -91,31 +91,31 @@ myGroup.alignment = [ ScriptUI.Alignment.LEFT, ScriptUI.Alignment.TOP]
 
 行中的元素可以沿垂直轴对齐，方式如下：
 
-|  值      |                                                 行为                                                 |
+|  值   |    行为    |
 | -------- | -------------------------------------------------------------------------------------------------------- |
-| `top`    | 元素的顶部边缘位于其容器的顶部边距处。                                    |
-| `bottom` | 元素的底部边缘位于其容器的底部边距处。                              |
-| `center` | 元素在其容器的顶部和底部边距之间居中。                              |
+| `top`    | 元素的顶部边缘位于其容器的顶部边距处。        |
+| `bottom` | 元素的底部边缘位于其容器的底部边距处。    |
+| `center` | 元素在其容器的顶部和底部边距之间居中。    |
 | `fill`   | 元素的高度调整为填充容器在顶部和底部边距之间的高度。 |
 
 列中的元素可以沿水平轴对齐，方式如下：
 
-|  值      |                                                行为                                                |
+|  值   |   行为   |
 | -------- | ------------------------------------------------------------------------------------------------------ |
-| `left`   | 元素的左边缘位于其容器的左边距处。                                |
-| `right`  | 元素的右边缘位于其容器的右边距处。                              |
-| `center` | 元素在其容器的右边和左边距之间居中。                            |
+| `left`   | 元素的左边缘位于其容器的左边距处。       |
+| `right`  | 元素的右边缘位于其容器的右边距处。    |
+| `center` | 元素在其容器的右边和左边距之间居中。      |
 | `fill`   | 元素的宽度调整为填充容器在右边和左边距之间的宽度。 |
 
 堆栈中的元素可以沿垂直或水平轴对齐，方式如下：
 
-|  值      |                                                                                                       行为                                                                                                       |
+|  值   |   行为   |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `top`    | 元素的顶部边缘位于其容器的顶部边距处，并且元素在其容器的右边和左边距之间居中。                                                                |
-| `bottom` | 元素的底部边缘位于其容器的底部边距处，并且元素在其容器的右边和左边距之间居中。                                                          |
-| `left`   | 元素的左边缘位于其容器的左边距处，并且元素在其容器的顶部和底部边距之间居中。                                                              |
-| `right`  | 元素的右边缘位于其容器的右边距处，并且元素在其容器的顶部和底部边距之间居中。-                                                           |
-| `center` | 元素在其容器的顶部、底部、右边和左边距之间居中。                                                                                                                             |
+| `top`    | 元素的顶部边缘位于其容器的顶部边距处，并且元素在其容器的右边和左边距之间居中。        |
+| `bottom` | 元素的底部边缘位于其容器的底部边距处，并且元素在其容器的右边和左边距之间居中。   |
+| `left`   | 元素的左边缘位于其容器的左边距处，并且元素在其容器的顶部和底部边距之间居中。      |
+| `right`  | 元素的右边缘位于其容器的右边距处，并且元素在其容器的顶部和底部边距之间居中。-      |
+| `center` | 元素在其容器的顶部、底部、右边和左边距之间居中。      |
 | `fill`   | 元素的高度调整为填充容器在顶部和底部边距之间的高度，并且元素的宽度调整为填充容器在右边和左边距之间的宽度。 |
 
 下图显示了创建具有行方向的示例窗口并在父容器的 `alignChildren` 属性中设置 `bottom` 和 `top` 对齐设置的结果：
@@ -203,19 +203,19 @@ myGroup.alignment = [ ScriptUI.Alignment.LEFT, ScriptUI.Alignment.TOP]
 ```javascript
 var res = "dialog { \
     info: Panel { orientation: 'column', \
-        text: 'Personal Info', \
-        name: Group { orientation: 'row', \
-            s: StaticText { text:'Name:' }, \
-            e: EditText { characters: 30 } \
-        }, \
-        addr: Group { orientation: 'row', \
-            s: StaticText { text:'Street / City:' }, \
-            e: EditText { characters: 30 } \
-        } \
+     text: 'Personal Info', \
+     name: Group { orientation: 'row', \
+      s: StaticText { text:'Name:' }, \
+      e: EditText { characters: 30 } \
+     }, \
+     addr: Group { orientation: 'row', \
+      s: StaticText { text:'Street / City:' }, \
+      e: EditText { characters: 30 } \
+     } \
     }, \
     buttons: Group { orientation: 'row', \
-        okBtn: Button { text:'OK', properties:{name:'ok'} }, \
-        cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
+     okBtn: Button { text:'OK', properties:{name:'ok'} }, \
+     cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
     } \
 }";
 win = new Window( res );
@@ -240,22 +240,22 @@ info: Panel { orientation: 'column', alignChildren:'right', \
 ```javascript
 var res = "dialog { alignChildren: 'fill', \
     info: Panel { orientation: 'column', alignChildren:'right', \
-        text: 'Personal Info', \
-        name: Group { orientation: 'row', \
-            s: StaticText { text:'Name:' }, \
-            e: EditText { characters: 30 } \
-        } \
+     text: 'Personal Info', \
+     name: Group { orientation: 'row', \
+      s: StaticText { text:'Name:' }, \
+      e: EditText { characters: 30 } \
+     } \
     }, \
     workInfo: Panel { orientation: 'column', \
-        text: 'Work Info', \
-        name: Group { orientation: 'row', \
-            s: StaticText { text:'Company name:' }, \
-            e: EditText { characters: 30 } \
-        } \
+     text: 'Work Info', \
+     name: Group { orientation: 'row', \
+      s: StaticText { text:'Company name:' }, \
+      e: EditText { characters: 30 } \
+     } \
     }, \
     buttons: Group { orientation: 'row', alignment: 'right', \
-        okBtn: Button { text:'OK', properties:{name:'ok'} }, \
-        cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
+     okBtn: Button { text:'OK', properties:{name:'ok'} }, \
+     cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
     } \
 }";
 win = new Window( res );

@@ -19,6 +19,7 @@
     "astro-expressive-code": "^0.40.2",
     "daisyui": "^5.0.6",
     "deepl-node": "^1.17.3",
+    "fast-glob": "^3.3.3",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.1",
     "remark-images": "^4.1.0",

@@ -13,11 +13,11 @@ title: 消息框架 API 参考
 
 [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) 分发的示例代码中包含以下专门演示应用程序间消息传递的代码示例：
 
-|                                                             应用程序间消息传递示例                                                             |                                                      描述                                                      |
+|    应用程序间消息传递示例    |    描述    |
 | -------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| [MessagingBetweenApps.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/MessagingBetweenApps.jsx)         | 展示如何向 Creative Suite 应用程序发送消息并接收响应。                                    |
-| [MessageSendingToInDesign.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/MessageSendingToInDesign.jsx) | 通过 BridgeTalk 向 InDesign 发送消息。                                                                          |
-| SendArrayToPhotoshop.jsx                                                                                                                                    | 向 Photoshop 发送消息，在目标中创建一个数组并将其传递回发送者。                       |
-| [SendObjectToPhotoshop.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SendObjectToPhotoshop.jsx)       | 向 Photoshop 发送消息，在目标中创建一个 JavaScript 对象并将其传递回发送者。            |
-| [SendDOMObjectToPhotoshop.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SnpSendDOMObject.jsx)         | 向 Photoshop 发送消息，在目标中创建一个 Photoshop 对象并将其值传递回发送者。 |
-| [SaveAsDifferentFileType.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SaveAsDifferentFileType.jsx)   | 定位图像文件，使用消息传递将其加载到 Photoshop 中并另存为不同的文件类型。                  |
+| [MessagingBetweenApps.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/MessagingBetweenApps.jsx)      | 展示如何向 Creative Suite 应用程序发送消息并接收响应。     |
+| [MessageSendingToInDesign.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/MessageSendingToInDesign.jsx) | 通过 BridgeTalk 向 InDesign 发送消息。        |
+| SendArrayToPhotoshop.jsx         | 向 Photoshop 发送消息，在目标中创建一个数组并将其传递回发送者。      |
+| [SendObjectToPhotoshop.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SendObjectToPhotoshop.jsx)    | 向 Photoshop 发送消息，在目标中创建一个 JavaScript 对象并将其传递回发送者。      |
+| [SendDOMObjectToPhotoshop.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SnpSendDOMObject.jsx)      | 向 Photoshop 发送消息，在目标中创建一个 Photoshop 对象并将其值传递回发送者。 |
+| [SaveAsDifferentFileType.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SaveAsDifferentFileType.jsx)   | 定位图像文件，使用消息传递将其加载到 Photoshop 中并另存为不同的文件类型。     |

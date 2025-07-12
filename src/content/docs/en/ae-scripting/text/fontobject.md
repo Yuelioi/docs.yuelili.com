@@ -7,7 +7,6 @@ title: fontobject
 This functionality was added in After Effects 24.0
 :::
 
-
 #### Description
 
 The Font object provides information about a specific font, along with the font technology used, helping disambiguate when multiple fonts sharing the same Postscript name are installed on the system.
@@ -30,7 +29,6 @@ Each object is composed of the axis `name`, `tag`, `min` value and `max` value.
 :::tip
 Will return undefined for non-variable fonts.
 :::
-
 
 #### Example
 
@@ -65,7 +63,6 @@ For Variable fonts will return an ordered array with a length matching the numbe
 Will return undefined for non-variable fonts.
 :::
 
-
 #### Type
 
 Array of floating-point values; read-only.
@@ -98,7 +95,6 @@ The family prefix of the variable font. For example, the family of the PostScrip
 Will return undefined for non-variable fonts.
 :::
 
-
 #### Type
 
 String; read-only.
@@ -112,7 +108,6 @@ String; read-only.
 :::note
 This functionality was added in After Effects 24.2
 :::
-
 
 #### Description
 
@@ -195,7 +190,6 @@ The location of the font file on your system.
 :::warning
 Not guaranteed to be returned for all font types; return value may be empty string for some kinds of fonts.
 :::
-
 
 #### Type
 
@@ -447,7 +441,6 @@ An array of `CTScript` enumerated values; read-only. One or more of:
 This functionality was added in After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
 :::
 
-
 #### Description
 
 Fonts do not contain glyphs for all possible ranges of Unicode and this method gives the caller the opportunity to query the Font about support for one or more characters.
@@ -458,10 +451,9 @@ The character order does not matter, and in the case of a parameter string with 
 
 #### Parameters
 
-|  Parameter   |  Type  |                                Description                                |
+|  Parameter   |  Type  |            Description            |
 | ------------ | ------ | ------------------------------------------------------------------------- |
 | `charString` | String | Text that will be checked for support in the [Font object](#font-object). |
-
 
 #### Returns
 
@@ -481,10 +473,9 @@ This function will `true` if the [Font object](#font-object) passed as an argume
 Can only return `true` when called on a variable [Font object](#font-object) with the argument also being a [Font object](#font-object) of a variable font.
 :::
 
-
 #### Parameters
 
-|  Parameter   |            Type             |   Description   |
+|  Parameter   |            Type   |   Description   |
 | ------------ | --------------------------- | --------------- |
 | `fontObject` | [Font object](#font-object) | Object to check |
 
@@ -502,7 +493,6 @@ Boolean.
 This functionality was added in After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
 :::
 
-
 #### Description
 
 Given an [Font object](#font-object) passed as an argument, returns an Array of [Font object](#font-object) instances which share the same font dictionary as the [Font object](#font-object) the function is called on.
@@ -511,7 +501,7 @@ Will return an empty Array if the argument is not a Variable font, or the Variab
 
 #### Parameters
 
-|  Parameter   |            Type             |   Description   |
+|  Parameter   |            Type   |   Description   |
 | ------------ | --------------------------- | --------------- |
 | `fontObject` | [Font object](#font-object) | Object to check |
 
@@ -531,7 +521,7 @@ This function will return the postscript name of the variable font for the speci
 
 #### Parameters
 
-|   Parameter    |              Type              |                                           Description                                           |
+|   Parameter    |    Type    |             Description             |
 | -------------- | ------------------------------ | ----------------------------------------------------------------------------------------------- |
 | `vectorValues` | Array of floating-point values | Values to check [FontObject.designVector](#fontobjectdesignvector) for the given variable font. |
 

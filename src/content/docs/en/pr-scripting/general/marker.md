@@ -7,7 +7,6 @@ title: Marker object
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker()`
 
-
 #### Description
 
 Both [Project items](../../item/projectitem) and [sequences](../../sequence/sequence) have associated Marker objects, which represent their associated markers.
@@ -21,7 +20,6 @@ Both [Project items](../../item/projectitem) and [sequences](../../sequence/sequ
 `app.project.activeSequence.markers.getFirstMarker().comments`
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().comments`
-
 
 #### Description
 
@@ -39,7 +37,6 @@ String; read/write.
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().end`
 
-
 #### Description
 
 A [Time object](../../other/time) containing the value of the ending of the marker.
@@ -55,7 +52,6 @@ A [Time object](../../other/time) containing the value of the ending of the mark
 `app.project.activeSequence.markers.getFirstMarker().guid`
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().guid`
-
 
 #### Description
 
@@ -73,7 +69,6 @@ String; read-only.
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().name`
 
-
 #### Description
 
 The name of the marker.
@@ -89,7 +84,6 @@ String; read/write.
 `app.project.activeSequence.markers.getFirstMarker().start`
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().start`
-
 
 #### Description
 
@@ -107,7 +101,6 @@ A [Time object](../../other/time) containing the value of the beginning of the m
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().type`
 
-
 #### Description
 
 The type of marker, one of:
@@ -120,7 +113,6 @@ The type of marker, one of:
 :::note
 Premiere Pro can import some marker types which cannot be created from within Premiere Pro.
 :::
-
 
 #### Type
 
@@ -136,11 +128,9 @@ String; read-only.
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().getColorByIndex(index)`
 
-
 :::note
 This functionality was added in Adobe Premire Pro 13.x.
 :::
-
 
 #### Description
 
@@ -164,7 +154,6 @@ Returns the color index as an Integer.
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().getWebLinkFrameTarget()`
 
-
 #### Description
 
 Retrieves the frame target, from the marker's FrameTarget field.
@@ -184,7 +173,6 @@ Returns a String containing the frame target, or `0` if unsuccessful.
 `app.project.activeSequence.markers.getFirstMarker().getWebLinkURL()`
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().getWebLinkURL()`
-
 
 #### Description
 
@@ -206,11 +194,9 @@ Returns a String containing the URL, or `0` if unsuccessful.
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().setColorByIndex(colorIndex, markerIndex)`
 
-
 :::note
 This functionality was added in Adobe Premire Pro 13.x.
 :::
-
 
 #### Description
 
@@ -227,10 +213,10 @@ Sets the marker color by index. Color indices listed below.
 
 #### Parameters
 
-|   Parameter   |  Type   |                Description                 |
+|   Parameter   |  Type   |      Description       |
 | ------------- | ------- | ------------------------------------------ |
 | `colorIndex`  | Integer | Index of the color to apply to the marker. |
-| `markerIndex` | Integer | Index of the marker to be set.             |
+| `markerIndex` | Integer | Index of the marker to be set.   |
 
 #### Returns
 
@@ -243,7 +229,6 @@ Returns `undefined`.
 `app.project.activeSequence.markers.getFirstMarker().setTypeAsChapter()`
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().setTypeAsChapter()`
-
 
 #### Description
 
@@ -265,7 +250,6 @@ Returns `0` if successful.
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().setTypeAsComment()`
 
-
 #### Description
 
 Sets the type of the marker to "Comment".
@@ -286,7 +270,6 @@ Returns `0` if successful.
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().setTypeAsSegmentation()`
 
-
 #### Description
 
 Sets the type of the marker to "Segmentation".
@@ -306,7 +289,6 @@ Returns `0` if successful.
 `app.project.activeSequence.markers.getFirstMarker().setTypeAsWebLink()`
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().setTypeAsWebLink()`
-
 
 #### Description
 

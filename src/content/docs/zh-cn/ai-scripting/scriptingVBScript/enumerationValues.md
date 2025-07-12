@@ -12,9 +12,9 @@ title: 使用枚举值
 - 脚本编辑器环境中的对象浏览器。请参阅 [查看 VBScript 对象模型](../../introduction/viewingTheObjectModel#viewing-the-vbscript-object-model)。
 - Adobe Illustrator CC 2017 脚本参考：VBScript，该书末尾的“枚举”章节中直接在常量值后列出了数字值。以下示例来自该表格：
 
-| 枚举类型           | 值                                  | 含义                                     |
+| 枚举类型     | 值        | 含义     |
 |--------------------|-------------------------------------|-----------------------------------------|
-| `AiTextOrientation` | `aiHorizontal = 0` `aiVertical = 1` | 文本框中文本的方向                       |
+| `AiTextOrientation` | `aiHorizontal = 0` `aiVertical = 1` | 文本框中文本的方向   |
 
 以下示例指定了垂直文本方向：
 

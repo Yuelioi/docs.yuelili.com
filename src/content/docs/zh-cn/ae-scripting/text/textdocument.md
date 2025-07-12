@@ -568,11 +568,430 @@ var boxTextLayerPos = myTextLayer.sourceText.value.boxTextPos;
 `textDocument.direction`
 
 :::note
-该方法添加于 After Effects 24.0
+此功能在 After Effects 24.0 版本中新增
 :::
 
 #### 描述
 
 文本图层的段落方向选项。
 
-如果此属性
+如果该属性值为混合值，读取时将返回 `undefined`。
+
+:::warning
+该值反映文本图层中所有段落的设置
+:::
+
+修改此值会将文本图层中所有段落设置为指定方向。
+
+#### 类型
+
+`ParagraphDirection` 枚举值；可读写。可选值包括：
+
+- `ParagraphDirection.DIRECTION_LEFT_TO_RIGHT`
+- `ParagraphDirection.DIRECTION_RIGHT_TO_LEFT`
+
+---
+
+### TextDocument.endIndent
+
+`textDocument.endIndent`
+
+:::note
+此功能在 After Effects 24.0 版本中新增
+:::
+
+#### 描述
+
+文本图层的段落末端缩进选项。
+
+如果该属性值为混合值，读取时将返回 `undefined`。
+
+:::warning
+该值反映文本图层中所有段落的设置
+:::
+
+修改此值会将文本图层中所有段落设置为指定缩进值。
+
+#### 类型
+
+浮点数值；可读写。
+
+---
+
+### TextDocument.everyLineComposer
+
+`textDocument.everyLineComposer`
+
+:::note
+此功能在 After Effects 24.0 版本中新增
+:::
+
+#### 描述
+
+文本图层的"每行排版器"段落选项。若设为 `false`，TextDocument 将使用"单行排版器"。
+
+如果该属性值为混合值，读取时将返回 `undefined`。
+
+:::warning
+该值反映文本图层中所有段落的设置
+:::
+
+修改此值会将文本图层中所有段落设置为指定排版方式。
+
+#### 类型
+
+布尔值；可读写。
+
+---
+
+### TextDocument.fauxBold
+
+`textDocument.fauxBold`
+
+:::note
+写入功能在 After Effects 24.0 版本中新增
+:::
+
+#### 描述
+
+若文本图层启用伪粗体则返回 `true`，否则返回 `false`。
+
+:::warning
+该值仅反映文本图层中第一个字符的设置
+:::
+
+修改此值会将文本图层中所有字符设置为指定状态。
+
+#### 类型
+
+布尔值；可读写。
+
+#### 示例
+
+```javascript
+var isFauxBold = myTextLayer.sourceText.value.fauxBold;
+```
+
+---
+
+### TextDocument.fauxItalic
+
+`textDocument.fauxItalic`
+
+:::note
+写入功能在 After Effects 24.0 版本中新增
+:::
+
+#### 描述
+
+若文本图层启用伪斜体则返回 `true`，否则返回 `false`。
+
+:::warning
+该值仅反映文本图层中第一个字符的设置
+:::
+
+修改此值会将文本图层中所有字符设置为指定状态。
+
+#### 类型
+
+布尔值；可读写。
+
+---
+
+### TextDocument.fillColor
+
+`textDocument.fillColor`
+
+#### 描述
+
+文本图层的填充颜色，以 `[r, g, b]` 浮点数组表示。例如在8-bpc项目中，红色值255对应1.0；在32-bpc项目中，超亮蓝色值可以是3.2之类的数值。
+
+若 [applyFill](#textdocumentapplyfill) 不为 `true`，读取时会抛出异常。
+
+设置此值同时会将受影响字符的 [applyFill](#textdocumentapplyfill) 设为 `true`。
+
+:::warning
+该值仅反映文本图层中第一个字符的设置
+:::
+
+修改此值会将文本图层中所有字符设置为指定颜色。
+
+#### 类型
+
+`[r, g, b]` 浮点数组；可读写。
+
+---
+
+### TextDocument.firstLineIndent
+
+`textDocument.firstLineIndent`
+
+:::note
+此功能在 After Effects 24.0 版本中新增
+:::
+
+#### 描述
+
+文本图层的段落首行缩进选项。
+
+如果该属性值为混合值，读取时将返回 `undefined`。
+
+:::warning
+该值反映文本图层中所有段落的设置
+:::
+
+修改此值会将文本图层中所有段落设置为指定缩进值。
+
+#### 类型
+
+浮点数值；可读写。
+
+---
+
+### TextDocument.font
+
+`textDocument.font`
+
+#### 描述
+
+通过PostScript名称指定的文本图层字体。
+
+写入时限制极少——如果底层字体管理系统没有与提供的PostScript名称匹配的[字体对象](../fontobject)实例，将创建替代实例。
+在PostScript名称重复的情况下，返回的字体实例将是[FontsObject.getFontsByPostScriptName()](../fontsobject#fontsobjectgetfontsbypostscriptname)返回数组的第0个元素。
+
+如需精确控制，应使用[字体对象](../fontobject)属性。
+
+:::warning
+该值仅反映文本图层中第一个字符的设置
+:::
+
+修改此值会将文本图层中所有字符设置为指定字体。
+
+#### 类型
+
+字符串；可读写。
+
+---
+
+### TextDocument.fontBaselineOption
+
+`textDocument.fontBaselineOption`
+
+:::note
+此功能在 After Effects 24.0 版本中新增
+:::
+
+#### 描述
+
+文本图层的字体基线选项。用于将文本设置为上标或下标。
+
+:::warning
+该值仅反映文本图层中第一个字符的设置
+:::
+
+修改此值会将文本图层中所有字符设置为指定基线。
+
+#### 类型
+
+`FontBaselineOption` 枚举值；可读写。可选值包括：
+
+- `FontBaselineOption.FONT_NORMAL_BASELINE`
+- `FontBaselineOption.FONT_FAUXED_SUPERSCRIPT`
+- `FontBaselineOption.FONT_FAUXED_SUBSCRIPT`
+
+---
+
+### TextDocument.fontCapsOption
+
+`textDocument.fontCapsOption`
+
+:::note
+此功能在 After Effects 24.0 版本中新增
+:::
+
+#### 描述
+
+文本图层的字体大写选项。
+
+:::warning
+该值仅反映文本图层中第一个字符的设置
+:::
+
+修改此值会将文本图层中所有字符设置为指定大写样式。
+
+#### 类型
+
+`FontCapsOption` 枚举值；可读写。可选值包括：
+
+- `FontCapsOption.FONT_NORMAL_CAPS`
+- `FontCapsOption.FONT_SMALL_CAPS`
+- `FontCapsOption.FONT_ALL_CAPS`
+- `FontCapsOption.FONT_ALL_SMALL_CAPS`
+
+---
+
+### TextDocument.fontFamily
+
+`textDocument.fontFamily`
+
+:::note
+此功能在 After Effects 13.1 (CC 2014.1) 版本中新增
+:::
+
+#### 描述
+
+包含字体家族名称的字符串。
+
+:::warning
+该值仅反映文本图层中第一个字符的设置
+:::
+
+#### 类型
+
+字符串；只读。
+
+---
+
+### TextDocument.fontLocation
+
+`textDocument.fontLocation`
+
+:::note
+此功能在 After Effects 13.1 (CC 2014.1) 版本中新增
+:::
+
+#### 描述
+
+字体文件的磁盘路径。
+
+:::warning
+并非所有字体类型都能返回此值；某些字体可能返回空字符串
+:::
+
+:::warning
+该值仅反映文本图层中第一个字符的设置
+:::
+
+#### 类型
+
+字符串；只读。
+
+---
+
+### TextDocument.fontObject
+
+`textDocument.fontObject`
+
+:::note
+此功能在 After Effects 24.0 版本中新增
+:::
+
+#### 描述
+
+通过PostScript名称指定的文本图层[字体对象](../fontobject)。
+
+:::warning
+该值仅反映文本图层中第一个字符的设置
+:::
+
+#### 类型
+
+[字体对象](../fontobject)；可读写。
+
+---
+
+### TextDocument.fontSize
+
+`textDocument.fontSize`
+
+#### 描述
+
+文本图层的字体大小（像素单位）。
+
+:::warning
+该值仅反映文本图层中第一个字符的设置
+:::
+
+修改此值会将文本图层中所有字符设置为指定字号。
+
+#### 类型
+
+浮点数值（0.1至1296，含边界值）；可读写。
+
+---
+
+### TextDocument.fontStyle
+
+`textDocument.fontStyle`
+
+:::note
+此功能在 After Effects 13.1 (CC 2014.1) 版本中新增
+:::
+
+#### 描述
+
+包含样式信息的字符串，如"bold"、"italic"等。
+
+:::warning
+该值仅反映文本图层中第一个字符的设置
+:::
+
+#### 类型
+
+字符串；只读。
+
+---
+
+### TextDocument.hangingRoman
+
+`textDocument.hangingRoman`
+
+:::note
+此功能在 After Effects 24.0 版本中新增
+:::
+
+#### 描述
+
+文本图层的"罗马悬挂标点"段落选项。仅对文本框图层有意义——允许标点符号悬挂在框外而不换行。
+
+如果该属性值为混合值，读取时将返回 `undefined`。
+
+:::warning
+该值反映文本图层中所有段落的设置
+:::
+
+修改此值会将文本图层中所有段落设置为指定状态。
+
+#### 类型
+
+布尔值；可读写。
+
+---
+
+### TextDocument.horizontalScale
+
+`textDocument.horizontalScale`
+
+:::note
+此功能在 After Effects 13.2 (CC 2014.2) 版本中新增
+:::
+
+#### 描述
+
+文本图层的水平缩放比例（像素单位）。
+
+:::warning
+该值仅反映文本图层中第一个字符的设置
+:::
+
+修改此值会将文本图层中所有字符设置为指定缩放比例。
+
+#### 类型
+
+浮点数值；可读写。
+
+#### 示例
+
+```javascript
+var valOfHScale = myTextLayer.sourceText.value.horizontalScale;
+```

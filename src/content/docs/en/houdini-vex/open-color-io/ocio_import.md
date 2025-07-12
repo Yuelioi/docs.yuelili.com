@@ -62,27 +62,27 @@ cvex test()
 {
     string        token;
     string        sval;
-    int                ival;
+    int        ival;
     vector        vval;
 
     // Color spaces may be specified by name or by role
     foreach(space; { "sRGB", "color_picker" })
     {
         foreach(token; { "name",
-            "description",
-            "isdata",
-            "allocation",
-            "allocationvars",
-            "description",
+    "description",
+    "isdata",
+    "allocation",
+    "allocationvars",
+    "description",
         } )
         {
-            printf("----------------- %s ---------------------\n", token);
-            if (teximport(map, token, sval))
-                fprintf(stderr, "'%s' = %s\n", token, sval);
-            if (teximport(map, token, ival))
-                fprintf(stderr, "'%s' = %d\n", token, ival);
-            else if (teximport(map, token, vval))
-                fprintf(stderr, "'%s' = %g\n", token, vval);
+    printf("----------------- %s ---------------------\n", token);
+    if (teximport(map, token, sval))
+        fprintf(stderr, "'%s' = %s\n", token, sval);
+    if (teximport(map, token, ival))
+        fprintf(stderr, "'%s' = %d\n", token, ival);
+    else if (teximport(map, token, vval))
+        fprintf(stderr, "'%s' = %g\n", token, vval);
         }
     }
 

@@ -57,29 +57,29 @@ order: 3
 ```vex
 cvex test()
 {
-    string        token;
-    string        sval;
-    int                ival;
-    vector        vval;
+    string    token;
+    string    sval;
+    int      ival;
+    vector    vval;
 
     // 可以通过名称或角色指定色彩空间
     foreach(space; { "sRGB", "color_picker" })
     {
-        foreach(token; { "name",
-            "description",
-            "isdata",
-            "allocation",
-            "allocationvars",
-            "description",
-        } )
-        {
-            printf("----------------- %s ---------------------\n", token);
-            if (teximport(map, token, sval))
-                fprintf(stderr, "'%s' = %s\n", token, sval);
-            if (teximport(map, token, ival))
-                fprintf(stderr, "'%s' = %d\n", token, ival);
-            else if (teximport(map, token, vval))
-                fprintf(stderr, "'%s' = %g\n", token, vval);
-        }
+    foreach(token; { "name",
+      "description",
+      "isdata",
+      "allocation",
+      "allocationvars",
+      "description",
+    } )
+    {
+      printf("----------------- %s ---------------------\n", token);
+      if (teximport(map, token, sval))
+      fprintf(stderr, "'%s' = %s\n", token, sval);
+      if (teximport(map, token, ival))
+      fprintf(stderr, "'%s' = %d\n", token, ival);
+      else if (teximport(map, token, vval))
+      fprintf(stderr, "'%s' = %g\n", token, vval);
+    }
     }
 ```

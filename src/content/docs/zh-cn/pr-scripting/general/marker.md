@@ -7,7 +7,6 @@ title: 标记对象
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker()`
 
-
 #### 描述
 
 [项目项](../../item/projectitem) 和 [序列](../../sequence/sequence) 都有与之关联的标记对象，这些对象表示它们关联的标记。
@@ -21,7 +20,6 @@ title: 标记对象
 `app.project.activeSequence.markers.getFirstMarker().comments`
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().comments`
-
 
 #### 描述
 
@@ -39,7 +37,6 @@ title: 标记对象
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().end`
 
-
 #### 描述
 
 一个 [时间对象](../../other/time)，包含标记结束的值。
@@ -55,7 +52,6 @@ title: 标记对象
 `app.project.activeSequence.markers.getFirstMarker().guid`
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().guid`
-
 
 #### 描述
 
@@ -73,7 +69,6 @@ title: 标记对象
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().name`
 
-
 #### 描述
 
 标记的名称。
@@ -90,7 +85,6 @@ title: 标记对象
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().start`
 
-
 #### 描述
 
 一个 [时间对象](../../other/time)，包含标记开始的值。
@@ -106,7 +100,6 @@ title: 标记对象
 `app.project.activeSequence.markers.getFirstMarker().type`
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().type`
-
 
 #### 描述
 
@@ -135,7 +128,6 @@ Premiere Pro 可以导入一些无法在 Premiere Pro 内部创建的标记类�
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().getColorByIndex(index)`
 
-
 :::note
 此功能在 Adobe Premiere Pro 13.x 版本中添加。
 :::
@@ -146,9 +138,9 @@ Premiere Pro 可以导入一些无法在 Premiere Pro 内部创建的标记类�
 
 #### 参数
 
-| 参数      | 类型    | 描述                     |
+| 参数   | 类型   | 描述   |
 | --------- | ------- | ------------------------ |
-| `index`   | 整数    | 要读取的标记的索引。     |
+| `index`   | 整数   | 要读取的标记的索引。   |
 
 #### 返回值
 
@@ -161,7 +153,6 @@ Premiere Pro 可以导入一些无法在 Premiere Pro 内部创建的标记类�
 `app.project.activeSequence.markers.getFirstMarker().getWebLinkFrameTarget()`
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().getWebLinkFrameTarget()`
-
 
 #### 描述
 
@@ -183,7 +174,6 @@ Premiere Pro 可以导入一些无法在 Premiere Pro 内部创建的标记类�
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().getWebLinkURL()`
 
-
 #### 描述
 
 从标记的 URL 字段中检索 URL。
@@ -204,7 +194,6 @@ Premiere Pro 可以导入一些无法在 Premiere Pro 内部创建的标记类�
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().setColorByIndex(colorIndex, markerIndex)`
 
-
 :::note
 此功能在 Adobe Premiere Pro 13.x 版本中添加。
 :::
@@ -224,10 +213,10 @@ Premiere Pro 可以导入一些无法在 Premiere Pro 内部创建的标记类�
 
 #### 参数
 
-| 参数          | 类型    | 描述                     |
+| 参数    | 类型   | 描述   |
 | ------------- | ------- | ------------------------ |
-| `colorIndex`  | 整数    | 应用于标记的颜色索引。   |
-| `markerIndex` | 整数    | 要设置的标记的索引。     |
+| `colorIndex`  | 整数   | 应用于标记的颜色索引。   |
+| `markerIndex` | 整数   | 要设置的标记的索引。   |
 
 #### 返回值
 
@@ -240,7 +229,6 @@ Premiere Pro 可以导入一些无法在 Premiere Pro 内部创建的标记类�
 `app.project.activeSequence.markers.getFirstMarker().setTypeAsChapter()`
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().setTypeAsChapter()`
-
 
 #### 描述
 
@@ -262,7 +250,6 @@ Premiere Pro 可以导入一些无法在 Premiere Pro 内部创建的标记类�
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().setTypeAsComment()`
 
-
 #### 描述
 
 将标记的类型设置为 "Comment"（注释）。
@@ -283,7 +270,6 @@ Premiere Pro 可以导入一些无法在 Premiere Pro 内部创建的标记类�
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().setTypeAsSegmentation()`
 
-
 #### 描述
 
 将标记的类型设置为 "Segmentation"（分段）。
@@ -303,7 +289,6 @@ Premiere Pro 可以导入一些无法在 Premiere Pro 内部创建的标记类�
 `app.project.activeSequence.markers.getFirstMarker().setTypeAsWebLink()`
 
 `app.project.rootItem.children[index].getMarkers().getFirstMarker().setTypeAsWebLink()`
-
 
 #### 描述
 

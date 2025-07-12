@@ -201,9 +201,9 @@ if (app.documents.length > 0 && app.activeDocument.pathItems.length > 0) {
 
         // 仅对图案进行操作
         if (currentSwatch.color.typename == "PatternColor") {
-            // 更改图案属性
-            currentSwatch.color.rotation = 10;
-            swatchIndex = i;
+      // 更改图案属性
+      currentSwatch.color.rotation = 10;
+      swatchIndex = i;
         }
     }
 

@@ -37,7 +37,6 @@ The Viewer object for the currently focused or active-focused viewer (Compositio
 This functionality was added in After Effects 14.0 (CC 2017)
 :::
 
-
 #### Description
 
 Use this in conjunction with `app.project.gpuAccelType` to set the value for Project Settings > Video Rendering and Effects > Use.
@@ -52,6 +51,7 @@ Array of `GpuAccelType` enums, or `null` if no viewers are open; read-only. One 
 - `SOFTWARE`
 
 #### Example
+
 The following sample code checks the current computer's available GPU acceleration types, and sets it to Metal if available.
 
 ```javascript
@@ -113,7 +113,6 @@ Integer; read-only.
 :::note
 This functionality was added in After Effects 16.0 (CC 2019)
 :::
-
 
 #### Description
 
@@ -200,7 +199,6 @@ app.exitCode = 2; // on quit, if value is 2, an error has occurred
 This functionality was added in After Effects 24.0
 :::
 
-
 #### Description
 
 Returns an object to navigate and retreive all the fonts currently available on your system.
@@ -222,7 +220,6 @@ A string indicating the locale (language and regional designations) After Effect
 :::tip
 `$.locale` returns the operating system language, not the language of the After Effects application.
 :::
-
 
 #### Type
 
@@ -381,7 +378,6 @@ Settings object; read-only.
 :::note
 This functionality was added in After Effects 12.0 (CC)
 :::
-
 
 #### Description
 
@@ -642,7 +638,6 @@ app.newProject();
 
 `app.open(file)`
 
-
 #### Description
 
 Opens a project.
@@ -678,7 +673,6 @@ if (my_file.exists) {
 :::warning
 This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
 :::
-
 
 #### Description
 
@@ -793,7 +787,6 @@ Nothing.
 This functionality was updated in After Effects 24.3 to allow the `ALL_CACHES` enumerated value to clear both the RAM and disk cache, with the ALL_MEMORY_CACHES enumerated value added to purge only the RAM. In versions prior to 24.3, `ALL_CACHES` will only clear the RAM cache.
 :::
 
-
 #### Description
 
 Purges unused data of the specified types. Replicates the Purge options in the Edit menu.
@@ -883,7 +876,6 @@ Nothing.
 :::note
 This functionality was added in After Effects 22.0 (2022)
 :::
-
 
 #### Description
 

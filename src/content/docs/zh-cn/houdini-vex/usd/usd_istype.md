@@ -31,8 +31,8 @@ order: 82
 
 ```vex
 // 检查图元是否为立方体且可绑定
-int is_cube_by_alias     = usd_istype(0, "/geo/cube", "Cube");
-int is_cube_by_name      = usd_istype(0, "/geo/cube", "UsdGeomCube");
+int is_cube_by_alias   = usd_istype(0, "/geo/cube", "Cube");
+int is_cube_by_name    = usd_istype(0, "/geo/cube", "UsdGeomCube");
 int is_boundable_by_name = usd_istype(0, "/geo/cube", "UsdGeomBoundable");
 
 ```

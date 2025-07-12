@@ -24,7 +24,7 @@ order: 43
 ## 示例
 
 ```vex
-int        vtx;
+int    vtx;
 
 // 获取顶点3的前一个顶点
 vtx = vertexprev("defgeo.bgeo", 3);

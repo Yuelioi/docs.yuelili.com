@@ -71,10 +71,10 @@ title: 字符
 
 #### 参数
 
-|      参数       |                                 类型                                  |       描述       |
+|      参数       |       类型        |       描述       |
 | --------------- | --------------------------------------------------------------------- | ---------------- |
-| `contents`      | 字符串                                                                | 要添加的文本内容 |
-| `relativeObject`| [TextFrameItem](.././TextFrameItem), 可选                              | 要添加到的对象   |
+| `contents`      | 字符串      | 要添加的文本内容 |
+| `relativeObject`| [TextFrameItem](.././TextFrameItem), 可选    | 要添加到的对象   |
 | `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement), 可选 | 放置文本的位置   |
 
 #### 返回值

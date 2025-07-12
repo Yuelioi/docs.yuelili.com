@@ -29,17 +29,17 @@ Cf = 0;
 while (pciterate(handle))
 {
     // 从平均点查询A值
-    float        ptarea;
+    float    ptarea;
     pcimport(handle, "A", ptarea);
 
     pcsampleleaf(handle, nrandom());
 
     // 从采样的叶子点查询P值
-    vector        pos;
+    vector    pos;
     pcimport(handle, "P", pos);
 
     if (trace(pos, P-pos, Time))
-        Cf += ptarea / length2(P-pos);
+    Cf += ptarea / length2(P-pos);
 }
 
 ```

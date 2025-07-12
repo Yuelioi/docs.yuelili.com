@@ -258,7 +258,6 @@ Use caution: the functions for opening and creating projects do not save changes
 Values in unused fields persist when After Effects is using a different display type.
 :::
 
-
 |              Member              |                                                 Descrpition                                                 |
 |----------------------------------|-------------------------------------------------------------------------------------------------------------|
 | `AEGP_TimeDisplayType type;`     | One of the following:                                                                                       |
@@ -375,7 +374,6 @@ Unless more specificity is required for the function(s) you're using, remain as 
 :::note
 `AEGP_RenderNewItemSoundData()` used to be here, but is now part of [AEGP_RenderSuite4](#aegp_rendersuite4).
 :::
-
 
 ---
 
@@ -973,7 +971,7 @@ To get an effect's instance name (as renamed by the user), get the AEGP_StreamRe
 
 ---
 
-## Diving Into Streams!
+## Diving Into Streams
 
 Just about everything in After Effects is a stream. Effect parameters, layers, masks, and shapes are all internally represented by streams. The AEGP API can access nearly every aspect of every stream.
 
@@ -1766,7 +1764,6 @@ After Effects can handle plug-ins which change the preferences during their appl
 For the functions below, if a given key is not found, the default value is both written to the blob and returned as the value; if no default is provided, a blank value will be written and returned.
 :::
 
-
 |         Function         |                                                                                                                                                             Purpose                                                                                                                                                              |
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `AEGP_GetDataHandle`     | Obtains the value associated with the given section's key. If using in-memory data structures, watch for endian issues.                                                                                                                                                                                                          |
@@ -1930,7 +1927,6 @@ Then do the rendering with [AEGP_RenderSuite4](#aegp_rendersuite4).
 :::note
 New in 13.0
 :::
-
 
 |            Function            |                                                                                        Purpose                                                                                        |
 |--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -2354,7 +2350,6 @@ These functions provide a way for effects (and AEGPs) to obtain information abou
 :::note
 Any time you modify or rely on data from outside the normal render pipeline, you run the risk of dependency problems.
 :::
-
 
 There is no way for After Effects to know that you depend on this external information; consequently, you will not be notified if it changes out from under you.
 

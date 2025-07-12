@@ -30,15 +30,15 @@ CharacterRange 对象是从 [TextDocument 对象](../textdocument) 实例创建�
 
 以下属性和方法在 CharacterRange 实例中 **不可用**：
 
-| 属性                | 方法                            |
+| 属性      | 方法       |
 | ------------------- | ------------------------------- |
-| `baselineLocs`    | `characterRange`              |
-| `boxText`         | `paragraphCharacterIndexesAt` |
-| `boxTextPos`      | `paragraphRange`              |
-| `boxTextSize`     |                                 |
-| `lineOrientation` |                                 |
-| `paragraphCount`  |                                 |
-| `pointText`       |                                 |
+| `baselineLocs`    | `characterRange`   |
+| `boxText`    | `paragraphCharacterIndexesAt` |
+| `boxTextPos`      | `paragraphRange`   |
+| `boxTextSize`     |       |
+| `lineOrientation` |       |
+| `paragraphCount`  |       |
+| `pointText`       |       |
 
 #### 示例
 
@@ -239,7 +239,7 @@ textDocument.characterRange(1,-1).fontSize = 40;
 
 #### 参数
 
-| 参数               | 类型                                       | 描述                                                                              |
+| 参数    | 类型       | 描述        |
 | ------------------ | ------------------------------------------ | --------------------------------------------------------------------------------- |
 | `characterRange` | [CharacterRange 对象](#characterrange-object) | 其文本和样式将被粘贴到调用者[CharacterRange 对象](#characterrange-object) 中的对象。 |
 

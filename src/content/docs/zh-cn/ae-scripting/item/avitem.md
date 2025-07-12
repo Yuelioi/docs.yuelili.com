@@ -197,14 +197,14 @@ CompItem 或 FootageItem 可以用作图层的替代源，但有一些限制：
 
 | After Effects UI 中的 PAR | pixelAspect 属性返回的 PAR |
 | ------- | ------ |
-| 0.91            | 0.909091     |
-| 1               | 1        |
-| 1.5             | 1.5        |
-| 1.09            | 1.09402      |
-| 1.21            | 1.21212      |
-| 1.33            | 1.33333      |
-| 1.46            | 1.45869      |
-| 2               | 2        |
+| 0.91    | 0.909091     |
+| 1       | 1        |
+| 1.5     | 1.5        |
+| 1.09    | 1.09402      |
+| 1.21    | 1.21212      |
+| 1.33    | 1.33333      |
+| 1.46    | 1.45869      |
+| 2       | 2        |
 
 #### 类型
 
@@ -303,7 +303,7 @@ CompItem 对象数组；只读。
 
 #### 参数
 
-| 参数 |            类型             |       描述       |
+| 参数 |    类型     |       描述       |
 | ---- | ---------------- | ------ |
 | `file`  | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象 | 用作代理的文件。 |
 
@@ -350,7 +350,7 @@ CompItem 对象数组；只读。
 | `name`    | 字符串    | 新对象的名称。         |
 | `width`   | 整数, 范围为 `[4..30000]`   | 占位符的像素尺寸。  |
 | `height`  | 整数, 范围为 `[4..30000]`   | 占位符的像素尺寸。  |
-| `frameRate` | 整数, 范围为 `[1..99]`    | 代理的帧速率。           |
+| `frameRate` | 整数, 范围为 `[1..99]`    | 代理的帧速率。   |
 | `duration`  | 整数, 范围为 `[0.0..10800.0]` | 总长度（以秒为单位），最多 3 小时。 |
 
 #### 返回
@@ -373,9 +373,9 @@ CompItem 对象数组；只读。
 
 #### 参数
 
-|    参数    |            类型             |             描述             |
+|    参数    |    类型     |     描述     |
 | ---- | ---------------- | ---------- |
-| `file`        | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象 | 序列中的第一个文件。             |
+| `file`        | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象 | 序列中的第一个文件。     |
 | `forceAlphabetical` | 布尔值          | 当为 `true` 时，使用“强制按字母顺序排列”选项。 |
 
 #### 返回
@@ -403,7 +403,7 @@ CompItem 对象数组；只读。
 | `color`       | 三个浮点值的数组，`[R, G, B]`，范围为 `[0.0..1.0]`。 | 纯色的颜色。          |
 | `name`      | 字符串          | 新对象的名称。        |
 | `width`, `height` | 整数, 范围为 `[1..30000]`         | 占位符的像素尺寸。 |
-| `pixelAspect`   | 浮点值, 范围为 `[0.01..100.0]`              | 纯色的像素宽高比。   |
+| `pixelAspect`   | 浮点值, 范围为 `[0.01..100.0]`      | 纯色的像素宽高比。   |
 
 #### 返回
 

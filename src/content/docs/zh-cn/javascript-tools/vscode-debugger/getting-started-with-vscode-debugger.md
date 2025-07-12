@@ -49,14 +49,14 @@ title: 开始使用 VS Code 调试器
 
 ```json
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "extendscript-debug",
-            "request": "attach",
-            "name": "extendScript-Debug attach",
-        }
-    ]
+   "version": "0.2.0",
+   "configurations": [
+    {
+    "type": "extendscript-debug",
+    "request": "attach",
+    "name": "extendScript-Debug attach",
+    }
+   ]
 }
 ```
 

@@ -21,11 +21,11 @@ title: 管理控件标题
 
 - [title](../control-objects#title)属性是一个字符串，用于定义UI元素的文本标签。标题可以出现在图形元素的左侧或右侧、上方或下方，或者叠加在图形元素的中心；其位置由[titleLayout](../control-objects#titlelayout)属性控制。
 - [titleLayout](../control-objects#titlelayout)属性是一个对象，包含以下属性：
-    - 标题的字符宽度；
-    - 标题在字符宽度内的对齐方式；
-    - 标题在必要时应如何截断；
-    - 标题相对于所标识对象的朝向、对齐方式和间距；
-    - 围绕标题及其相关对象的虚拟容器内的边距。
+  - 标题的字符宽度；
+  - 标题在字符宽度内的对齐方式；
+  - 标题在必要时应如何截断；
+  - 标题相对于所标识对象的朝向、对齐方式和间距；
+  - 围绕标题及其相关对象的虚拟容器内的边距。
 
 所有`titleLayout`属性都是可选的；使用此机制的元素类型为每个属性提供了默认值。完整的详细信息请参阅参考部分；参见[titleLayout](../control-objects#titlelayout)。
 
@@ -38,70 +38,78 @@ title: 管理控件标题
 与自动布局不同，标题布局使用[alignment](../control-objects#alignment)属性来指定标题和图形元素的朝向，以及标题如何与图形元素对齐。此属性包含一个2元素数组，其中第一个元素指定水平对齐，第二个元素指定垂直对齐。这些允许的值与自动布局使用的值相同（参见[对齐子元素](../automatic-layout#aligning-children)），但不允许使用`fill`值。
 
 - 要实现标题出现在图形元素左侧或右侧的行朝向，将水平对齐定义为`left`或`right`，垂直对齐定义为`center`、`top`或`bottom`：
-    ```javascript
-    button.titleLayout = { alignment: ["right", "center"] };
-    ```
 
-    ![行朝向：标题右对齐](./_static/04_user-interface-tools_managing-control-titles_title-alignment_row.jpg)
+   ```javascript
+   button.titleLayout = { alignment: ["right", "center"] };
+   ```
+
+   ![行朝向：标题右对齐](./_static/04_user-interface-tools_managing-control-titles_title-alignment_row.jpg)
 - 要实现标题出现在图形元素上方或下方的列朝向，将垂直对齐定义为`top`或`bottom`，水平对齐定义为`center`：
-    ```javascript
-    image.titleLayout = { alignment: ["center", "bottom"] };
-    ```
 
-    ![列朝向：居中/底部对齐](./_static/04_user-interface-tools_managing-control-titles_title-alignment_column.jpg)
+   ```javascript
+   image.titleLayout = { alignment: ["center", "bottom"] };
+   ```
+
+   ![列朝向：居中/底部对齐](./_static/04_user-interface-tools_managing-control-titles_title-alignment_column.jpg)
 - 要实现标题叠加在图形元素上的堆叠朝向，将垂直和水平对齐都定义为`center`。这种朝向主要用于`iconbutton`或`image`元素类型；例如，将标题叠加在dropdownlist上就没有意义。在此示例中，按钮的标题居中在其图标图像上：
-    ```javascript
-    button.title = "获取信息";
-    button.titleLayout = { alignment: ["center", "center"] };
-    ```
 
-    ![堆叠朝向：居中/居中对齐](./_static/04_user-interface-tools_managing-control-titles_title-alignment_stack.jpg)
+   ```javascript
+   button.title = "获取信息";
+   button.titleLayout = { alignment: ["center", "center"] };
+   ```
+
+   ![堆叠朝向：居中/居中对齐](./_static/04_user-interface-tools_managing-control-titles_title-alignment_stack.jpg)
 - 在行朝向下，您可以控制标题是与图形元素的顶部、中心还是底部对齐。在此示例中，标题放置在图像的左侧，与顶部边缘对齐：
-    ```javascript
-    image.titleLayout = { alignment: ["left", "top"] };
-    ```
 
-    ![行朝向：左上对齐](./_static/04_user-interface-tools_managing-control-titles_title-alignment_row-top-left.jpg)
+   ```javascript
+   image.titleLayout = { alignment: ["left", "top"] };
+   ```
+
+   ![行朝向：左上对齐](./_static/04_user-interface-tools_managing-control-titles_title-alignment_row-top-left.jpg)
 - 使用`spacing`覆盖标题与图形元素之间的默认像素间距。在此示例中，`titleLayout`配置为将标题放置在面板上方15像素处：
-    ```javascript
-    panel.title = "图像格式";
-    panel.titleLayout = { alignment: ["center", "top"], spacing: 15 };
-    ```
 
-    ![列朝向：标题偏移15px](./_static/04_user-interface-tools_managing-control-titles_title-alignment_column-offset.jpg)
+   ```javascript
+   panel.title = "图像格式";
+   panel.titleLayout = { alignment: ["center", "top"], spacing: 15 };
+   ```
+
+   ![列朝向：标题偏移15px](./_static/04_user-interface-tools_managing-control-titles_title-alignment_column-offset.jpg)
 
 ---
 
 ## 标题字符宽度和对齐
 
 - 要覆盖自动计算的标题宽度，为`characters`属性定义一个正的非零值。这将为标题区域保留足够的空间以容纳指定数量的“X”字符。当元素的标题可能发生变化时（例如本地化值），这非常有用，您希望保留足够的空间以容纳所有预期值，而不会截断或影响整体布局。
-    ```javascript
-    droplist.titleLayout = { alignment: ["left", "center"], characters: 20 };
-    ```
 
-    ![更宽的字符宽度：左对齐](./_static/04_user-interface-tools_managing-control-titles_title-width-justification_left-justified.jpg)
+   ```javascript
+   droplist.titleLayout = { alignment: ["left", "center"], characters: 20 };
+   ```
+
+   ![更宽的字符宽度：左对齐](./_static/04_user-interface-tools_managing-control-titles_title-width-justification_left-justified.jpg)
 - 当`characters`值指定的宽度大于默认标题宽度时，您可以设置`justify`属性来控制标题文本在为其保留的空间内的对齐方式。值`left`将文本放置在空间的左端，右侧留出空白；`right`将文本放置在空间的右端，左侧留出空白；`center`将文本放置在空间的中间，将空白均匀分布在文本的两侧。
-    ```javascript
-    droplist.titleLayout = { alignment: ["left", "center"],
-                             characters: 20,
-                             justify: "right" };
-    ```
 
-    ![更宽的字符宽度：右对齐](./_static/04_user-interface-tools_managing-control-titles_title-width-justification_right-justified.jpg)
+   ```javascript
+   droplist.titleLayout = { alignment: ["left", "center"],
+   characters: 20,
+   justify: "right" };
+   ```
+
+   ![更宽的字符宽度：右对齐](./_static/04_user-interface-tools_managing-control-titles_title-width-justification_right-justified.jpg)
 - 此示例演示了使用`characters`和`justify`来垂直对齐一组dropdownlist控件标题末尾的冒号。每个元素的`title`使用相同的`characters`值，并且所有标题都右对齐：
-    ```javascript
-    w.ddl1 = w.add("dropdownlist { title: '图像格式:' }");
-    w.ddl2 = w.add("dropdownlist { title: '背景颜色:' }");
-    w.ddl3 = w.add("dropdownlist { title: '文本颜色:' }");
-    w.ddl1.titleLayout = { alignment: ["left", "center"], spacing: 3,
-                           characters: 16, justify: "right" };
-    w.ddl2.titleLayout = { alignment: ["left", "center"], spacing: 3,
-                           characters: 16, justify: "right" };
-    w.ddl3.titleLayout = { alignment: ["left", "center"], spacing: 3,
-                           characters: 16, justify: "right" };
-    ```
 
-    ![使用characters和justify对齐标题](./_static/04_user-interface-tools_managing-control-titles_title-width-justification_align-titles.jpg)
+   ```javascript
+   w.ddl1 = w.add("dropdownlist { title: '图像格式:' }");
+   w.ddl2 = w.add("dropdownlist { title: '背景颜色:' }");
+   w.ddl3 = w.add("dropdownlist { title: '文本颜色:' }");
+   w.ddl1.titleLayout = { alignment: ["left", "center"], spacing: 3,
+       characters: 16, justify: "right" };
+   w.ddl2.titleLayout = { alignment: ["left", "center"], spacing: 3,
+       characters: 16, justify: "right" };
+   w.ddl3.titleLayout = { alignment: ["left", "center"], spacing: 3,
+       characters: 16, justify: "right" };
+   ```
+
+   ![使用characters和justify对齐标题](./_static/04_user-interface-tools_managing-control-titles_title-width-justification_align-titles.jpg)
 
 ---
 

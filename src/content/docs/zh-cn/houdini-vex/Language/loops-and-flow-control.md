@@ -75,7 +75,7 @@ if ( needs_zapping() ) {
 ```vex  
 int max(int a, b) {  
     if (a > b) {  
-        return a;  
+    return a;  
     }  
     return b;  
 }  
@@ -92,7 +92,7 @@ for (int i = 0; i < sizes; i++)
 {  
     mixamount += getAmount(roughness);  
     if (mixamount > 1) {  
-        break;  
+    break;  
     }  
 }  
 ```  

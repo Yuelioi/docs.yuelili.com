@@ -9,7 +9,7 @@ title: 相机层
 
 |   匹配名称    | 显示名称 (中文) |
 | ---- | ------- |
-| `ADBE Camera Layer` |           |
+| `ADBE Camera Layer` |   |
 
 ---
 

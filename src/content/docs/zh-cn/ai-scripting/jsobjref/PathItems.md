@@ -94,14 +94,14 @@ app.activeDocument.pathItems.ellipse(
 
 #### 参数
 
-|  参数       |           类型           |                  描述                  |
+|  参数       |     类型     |      描述      |
 | ----------- | ------------------------ | -------------------------------------- |
-| `top`       | 数字 (double), 可选      | 路径的顶部。默认为 `100` pt。          |
-| `left`      | 数字 (double), 可选      | 路径的左侧。默认为 `100` pt。          |
-| `width`     | 数字 (double), 可选      | 路径的宽度。默认为 `50` pt。           |
-| `height`    | 数字 (double), 可选      | 路径的高度。默认为 `100` pt。          |
-| `reversed`  | 布尔值, 可选             | 路径是否反转。默认为 `false`。         |
-| `inscribed` | 布尔值, 可选             | 路径是否内切                           |
+| `top`       | 数字 (double), 可选      | 路径的顶部。默认为 `100` pt。    |
+| `left`      | 数字 (double), 可选      | 路径的左侧。默认为 `100` pt。    |
+| `width`     | 数字 (double), 可选      | 路径的宽度。默认为 `50` pt。     |
+| `height`    | 数字 (double), 可选      | 路径的高度。默认为 `100` pt。    |
+| `reversed`  | 布尔值, 可选       | 路径是否反转。默认为 `false`。   |
+| `inscribed` | 布尔值, 可选       | 路径是否内切         |
 
 #### 返回值
 
@@ -167,13 +167,13 @@ app.activeDocument.pathItems.polygon(
 
 #### 参数
 
-| 参数      |           类型           |                  描述                  |
+| 参数      |     类型     |      描述      |
 | --------- | ------------------------ | -------------------------------------- |
-| `centerX` | 数字 (double), 可选      | 路径的中心X。默认为 `200` pt。         |
-| `centerY` | 数字 (double), 可选      | 路径的中心Y。默认为 `300` pt。         |
-| `radius`  | 数字 (double), 可选      | 路径的半径。默认为 `50` pt。           |
-| `sides`   | 数字 (long), 可选        | 边数。默认为 `8`。                     |
-| `reversed`| 布尔值, 可选             | 路径是否反转。默认为 `false`。         |
+| `centerX` | 数字 (double), 可选      | 路径的中心X。默认为 `200` pt。   |
+| `centerY` | 数字 (double), 可选      | 路径的中心Y。默认为 `300` pt。   |
+| `radius`  | 数字 (double), 可选      | 路径的半径。默认为 `50` pt。     |
+| `sides`   | 数字 (long), 可选        | 边数。默认为 `8`。         |
+| `reversed`| 布尔值, 可选       | 路径是否反转。默认为 `false`。   |
 
 #### 返回值
 
@@ -193,10 +193,10 @@ app.activeDocument.pathItems.polygon(
 
 | 参数      |       类型       |        描述        |
 | --------- | ---------------- | ------------------ |
-| `top`     | 数字 (double)    | 路径的顶部         |
-| `left`    | 数字 (double)    | 路径的左侧         |
-| `width`   | 数字 (double)    | 路径的宽度         |
-| `height`  | 数字 (double)    | 路径的高度         |
+| `top`     | 数字 (double)    | 路径的顶部   |
+| `left`    | 数字 (double)    | 路径的左侧   |
+| `width`   | 数字 (double)    | 路径的宽度   |
+| `height`  | 数字 (double)    | 路径的高度   |
 | `reversed`| 布尔值, 可选     | 路径是否反转       |
 
 #### 返回值
@@ -239,15 +239,15 @@ app.activeDocument.pathItems.roundedRectangle(
 
 #### 参数
 
-| 参数              |           类型           |                       描述                        |
+| 参数        |     类型     |   描述    |
 | ----------------- | ------------------------ | ------------------------------------------------ |
-| `top`             | 数字 (double)            | 路径的顶部                                       |
-| `left`            | 数字 (double)            | 路径的左侧                                       |
-| `width`           | 数字 (double)            | 路径的宽度                                       |
-| `height`          | 数字 (double)            | 路径的高度                                       |
-| `horizontalRadius`| 数字 (double), 可选      | 圆角的水平半径。默认为 `15` pt。                 |
-| `verticalRadius`  | 数字 (double), 可选      | 圆角的垂直半径。默认为 `20` pt。                 |
-| `reversed`        | 布尔值, 可选             | 路径是否反转。默认为 `false`。                   |
+| `top`       | 数字 (double)      | 路径的顶部       |
+| `left`      | 数字 (double)      | 路径的左侧       |
+| `width`     | 数字 (double)      | 路径的宽度       |
+| `height`    | 数字 (double)      | 路径的高度       |
+| `horizontalRadius`| 数字 (double), 可选      | 圆角的水平半径。默认为 `15` pt。   |
+| `verticalRadius`  | 数字 (double), 可选      | 圆角的垂直半径。默认为 `20` pt。   |
+| `reversed`        | 布尔值, 可选       | 路径是否反转。默认为 `false`。       |
 
 #### 返回值
 
@@ -274,14 +274,14 @@ app.activeDocument.pathItems.star(
 
 #### 参数
 
-| 参数        |           类型           |                  描述                  |
+| 参数        |     类型     |      描述      |
 | ----------- | ------------------------ | -------------------------------------- |
-| `centerX`   | 数字 (double), 可选      | 路径的中心X。默认为 `200` pt。         |
-| `centerY`   | 数字 (double), 可选      | 路径的中心Y。默认为 `300` pt。         |
-| `radius`    | 数字 (double), 可选      | 路径的半径。默认为 `50` pt。           |
-| `innerRadius`| 数字 (double), 可选      | 路径的内半径。默认为 `20` pt。         |
-| `points`    | 数字 (long), 可选        | 点数。默认为 `5`。                     |
-| `reversed`  | 布尔值, 可选             | 路径是否反转。默认为 `false`。         |
+| `centerX`   | 数字 (double), 可选      | 路径的中心X。默认为 `200` pt。   |
+| `centerY`   | 数字 (double), 可选      | 路径的中心Y。默认为 `300` pt。   |
+| `radius`    | 数字 (double), 可选      | 路径的半径。默认为 `50` pt。     |
+| `innerRadius`| 数字 (double), 可选      | 路径的内半径。默认为 `20` pt。   |
+| `points`    | 数字 (long), 可选        | 点数。默认为 `5`。         |
+| `reversed`  | 布尔值, 可选       | 路径是否反转。默认为 `false`。   |
 
 #### 返回值
 

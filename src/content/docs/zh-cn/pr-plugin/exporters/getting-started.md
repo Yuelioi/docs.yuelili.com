@@ -233,8 +233,8 @@ title: 入门指南
 DllExport PREMPLUGENTRY xSDKExport (
   csSDK_int32      selector,
   exportStdParms*  stdParmsP,
-  void*            param1,
-  void*            param2)
+  void*       param1,
+  void*       param2)
 ```
 
 - `selector` 是主机希望导出器执行的操作。
@@ -251,19 +251,19 @@ DllExport PREMPLUGENTRY xSDKExport (
 
 ```cpp
 typedef struct {
-  csSDK_int32               interfaceVer;
+  csSDK_int32    interfaceVer;
   plugGetSPBasicSuiteFunc*  getSPBasicSuite;
 } exportStdParms;
 ```
 
-|      成员       |                                                                          描述                                                                          |
+|      成员       |    描述    |
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `interfaceVer` | 导出器 API 版本，其中之一：                                                                                                                           |
-|                | - Premiere Pro CC - `prExportVersion400`                                                                                                              |
-|                | - Premiere Pro CS6 - `prExportVersion300`                                                                                                             |
-|                | - Premiere Pro CS5.5 - `prExportVersion250`                                                                                                           |
-|                | - Premiere Pro CS5 - `prExportVersion200`                                                                                                             |
-|                | - Premiere Pro 4.0.1 到 4.2.1 - `prExportVersion101`                                                                                                 |
-|                | - Premiere Pro CS4 - `prExportVersion100`                                                                                                             |
+| `interfaceVer` | 导出器 API 版本，其中之一：   |
+|      | - Premiere Pro CC - `prExportVersion400`        |
+|      | - Premiere Pro CS6 - `prExportVersion300`      |
+|      | - Premiere Pro CS5.5 - `prExportVersion250`   |
+|      | - Premiere Pro CS5 - `prExportVersion200`      |
+|      | - Premiere Pro 4.0.1 到 4.2.1 - `prExportVersion101`      |
+|      | - Premiere Pro CS4 - `prExportVersion100`      |
 | `getSPBasicSuite` | 这个非常重要的调用返回 SweetPea 套件，允许插件获取和释放所有其他 [SweetPea 套件](../../universals/sweetpea-suites)。 |
-|                | ```SPBasicSuite* getSPBasicSuite();```                                                                                                                |
+|      | ```SPBasicSuite* getSPBasicSuite();```   |

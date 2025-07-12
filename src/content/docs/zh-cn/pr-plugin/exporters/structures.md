@@ -3,18 +3,18 @@ title: 结构
 ---
 # 结构
 
-|                                        结构                                         |                                                         随选择器发送                                                          |
+|         结构   |   随选择器发送    |
 | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| [exDoExportRec](../structure-descriptions#exdoexportrec)                                 | [exSelExport](../selector-descriptions#exselexport)                                                                                 |
-| [exExporterInfoRec](../structure-descriptions#exexporterinforec)                         | [exSelStartup](../selector-descriptions#exselstartup)                                                                               |
-| [exExporterInstanceRec](../structure-descriptions#exexporterinstancerec)                 | [exSelBeginInstance](../selector-descriptions#exselbegininstance) 和 [exSelEndInstance](../selector-descriptions#exselendinstance) |
-| [exGenerateDefaultParamRec](../structure-descriptions#exgeneratedefaultparamrec)         | [exSelGenerateDefaultParams](../selector-descriptions#exselgeneratedefaultparams)                                                   |
-| [exParamButtonRec](../structure-descriptions#exparambuttonrec)                           | [exSelParamButton](../selector-descriptions#exselparambutton)                                                                       |
-| [exParamChangedRec](../structure-descriptions#exparamchangedrec)                         | [exSelValidateParamChanged](../selector-descriptions#exselvalidateparamchanged)                                                     |
-| [exParamSummaryRec](../structure-descriptions#exparamsummaryrec)                         | [exSelGetParamSummary](../selector-descriptions#exselgetparamsummary)                                                               |
-| [exPostProcessParamsRec](../structure-descriptions#expostprocessparamsrec)               | [exSelPostProcessParams](../selector-descriptions#exselpostprocessparams)                                                           |
-| [exQueryExportFileExtensionRec](../structure-descriptions#exqueryexportfileextensionrec) | [exSelQueryExportFileExtension](../selector-descriptions#exselqueryexportfileextension)                                             |
-| [exQueryOutputFileListRec](../structure-descriptions#exqueryoutputfilelistrec)           | [exSelQueryOutputFileList](../selector-descriptions#exselqueryoutputfilelist)                                                       |
-| [exQueryOutputSettingsRec](../structure-descriptions#exqueryoutputsettingsrec)           | [exSelQueryOutputSettings](../selector-descriptions#exselqueryoutputsettings)                                                       |
-| [exQueryStillSequenceRec](../structure-descriptions#exquerystillsequencerec)             | [exSelQueryStillSequence](../selector-descriptions#exselquerystillsequence)                                                         |
-| [exValidateOutputSettingsRec](../structure-descriptions#exvalidateoutputsettingsrec)     | [exSelValidateOutputSettings](../selector-descriptions#exselvalidateoutputsettings)                                                 |
+| [exDoExportRec](../structure-descriptions#exdoexportrec)       | [exSelExport](../selector-descriptions#exselexport)      |
+| [exExporterInfoRec](../structure-descriptions#exexporterinforec)    | [exSelStartup](../selector-descriptions#exselstartup)         |
+| [exExporterInstanceRec](../structure-descriptions#exexporterinstancerec)       | [exSelBeginInstance](../selector-descriptions#exselbegininstance) 和 [exSelEndInstance](../selector-descriptions#exselendinstance) |
+| [exGenerateDefaultParamRec](../structure-descriptions#exgeneratedefaultparamrec)    | [exSelGenerateDefaultParams](../selector-descriptions#exselgeneratedefaultparams)         |
+| [exParamButtonRec](../structure-descriptions#exparambuttonrec)      | [exSelParamButton](../selector-descriptions#exselparambutton)      |
+| [exParamChangedRec](../structure-descriptions#exparamchangedrec)    | [exSelValidateParamChanged](../selector-descriptions#exselvalidateparamchanged)    |
+| [exParamSummaryRec](../structure-descriptions#exparamsummaryrec)    | [exSelGetParamSummary](../selector-descriptions#exselgetparamsummary)   |
+| [exPostProcessParamsRec](../structure-descriptions#expostprocessparamsrec)    | [exSelPostProcessParams](../selector-descriptions#exselpostprocessparams)     |
+| [exQueryExportFileExtensionRec](../structure-descriptions#exqueryexportfileextensionrec) | [exSelQueryExportFileExtension](../selector-descriptions#exselqueryexportfileextension)        |
+| [exQueryOutputFileListRec](../structure-descriptions#exqueryoutputfilelistrec)      | [exSelQueryOutputFileList](../selector-descriptions#exselqueryoutputfilelist)      |
+| [exQueryOutputSettingsRec](../structure-descriptions#exqueryoutputsettingsrec)      | [exSelQueryOutputSettings](../selector-descriptions#exselqueryoutputsettings)      |
+| [exQueryStillSequenceRec](../structure-descriptions#exquerystillsequencerec)        | [exSelQueryStillSequence](../selector-descriptions#exselquerystillsequence)   |
+| [exValidateOutputSettingsRec](../structure-descriptions#exvalidateoutputsettingsrec)     | [exSelValidateOutputSettings](../selector-descriptions#exselvalidateoutputsettings)       |

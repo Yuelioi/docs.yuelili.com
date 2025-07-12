@@ -16,8 +16,6 @@ order: 57
 
 ## 光线选项
 
-### ray-options
-
 提示
 当指定纹理时（如使用`"environment"`关键字），您还可以使用图像过滤关键字参数。参见[environment](../texturing/environment "返回环境纹理的颜色")了解图像过滤关键字参数的列表。
 

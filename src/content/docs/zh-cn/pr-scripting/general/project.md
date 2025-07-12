@@ -145,15 +145,15 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-|    参数     |  类型   |           描述           |
+|   参数   |  类型   |   描述   |
 |-------------|---------|--------------------------|
 | `propertyName`  | 字符串  | 要添加的属性名称。  |
 | `propertyLabel` | 字符串  | 要添加的属性标签。 |
-| `propertyType`  | 整数    | 必须是以下之一：    |
-|             |         | - `0` - 整数           |
-|             |         | - `1` - 实数           |
-|             |         | - `2` - 字符串         |
-|             |         | - `3` - 布尔值         |
+| `propertyType`  | 整数   | 必须是以下之一：   |
+|    |   | - `0` - 整数   |
+|    |   | - `1` - 实数   |
+|    |   | - `2` - 字符串   |
+|    |   | - `3` - 布尔值   |
 
 #### 返回值
 
@@ -171,10 +171,10 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-|    参数     |  类型   |                              描述                               |
+|   参数   |  类型   |    描述     |
 | ----------- | ------- | --------------------------------------------------------------- |
-| `saveFirst`     | 整数    | 如果为 `1`，则在关闭前保存项目。                       |
-| `promptIfDirty` | 整数    | 如果为 `1`，则询问用户是否要先保存更改。 |
+| `saveFirst`   | 整数   | 如果为 `1`，则在关闭前保存项目。    |
+| `promptIfDirty` | 整数   | 如果为 `1`，则询问用户是否要先保存更改。 |
 
 #### 返回值
 
@@ -210,9 +210,9 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-|   参数    |  类型  |                 描述                   |
+|   参数   |  类型  |     描述   |
 | --------- | ------ | --------------------------------------- |
-| `sequenceName` | 字符串 | 序列的名称。                          |
+| `sequenceName` | 字符串 | 序列的名称。    |
 | `sequenceID`   | 字符串 | 新序列的唯一标识 ID。 |
 
 #### 返回值
@@ -231,11 +231,11 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-|       参数        |                         类型                          |                      描述                       |
+|   参数    |    类型    |    描述    |
 | ----------------- | ------------------------------------------------------ | ----------------------------------------------- |
-| `sequenceName`        | 字符串                                                 | 可选。新序列的名称。                    |
+| `sequenceName`    | 字符串      | 可选。新序列的名称。     |
 | `arrayOfProjectItems` | [ProjectItem 对象](../../item/projectitem) 数组 | 要插入序列的项目项数组。 |
-| `destinationBin`      | [ProjectItem 对象](../../item/projectitem)           | 可选。包含序列的目标 bin。                    |
+| `destinationBin`   | [ProjectItem 对象](../../item/projectitem)   | 可选。包含序列的目标 bin。     |
 
 #### 返回值
 
@@ -253,7 +253,7 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-| 参数  |                   类型                    |     描述      |
+| 参数  |   类型     |   描述   |
 | ----- | ------------------------------------------ | ------------- |
 | `sequence` | [Sequence 对象](../../sequence/sequence) | 要删除的序列。 |
 
@@ -273,22 +273,22 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-|       参数        |                   类型                    |                                描述                                  |
+|   参数    |   类型     |     描述      |
 | ----------------- | ------------------------------------------ | -------------------------------------------------------------------- |
-| `sequenceToExport`     | [Sequence 对象](../../sequence/sequence) | 要导出的序列。                                                        |
-| `outputPath`           | 字符串                                     | .aaf 文件的输出路径。                                                |
-| `mixdownVideo`         | 整数                                    | 如果为 `1`，则在导出前渲染视频。                                          |
-| `explodeToMono`        | 整数                                    | 如果为 `1`，则将立体声轨道拆分为单声道。                                    |
-| `sampleRate`           | 整数                                    | 输出音频的采样率。                                             |
-| `bitsPerSample`        | 整数                                    | 音频输出的每样本位数。                                         |
-| `embedAudio`           | 整数                                    | 如果为 `1`，则嵌入音频；如果为 `0`，则为外部音频。                                 |
-| `audioFileFormat`      | 整数                                    | `0` 为 AIFF，`1` 为 WAV。                                                     |
-| `trimSources`          | 整数                                    | 如果为 `1`，则在导出前修剪并重新编码媒体；`0` 导出整个文件。 |
-| `handleFrames`         | 整数                                    | 处理帧数（0 到 1000）。                                |
-| `presetPath`           | 字符串                                     | 导出预设 (.epr) 文件的路径。                                         |
-| `renderAudioEffects`   | 整数                                    | 如果为 `1`，则在导出前渲染音频效果。                                  |
-| `includeClipCopies`    | 整数                                    | 如果为 `1`，则包含每个剪辑的副本。                                         |
-| `preserveParentFolder` | 整数                                    | 如果为 `1`，则在输出中保留父文件夹。                              |
+| `sequenceToExport`   | [Sequence 对象](../../sequence/sequence) | 要导出的序列。      |
+| `outputPath`   | 字符串   | .aaf 文件的输出路径。      |
+| `mixdownVideo`   | 整数      | 如果为 `1`，则在导出前渲染视频。      |
+| `explodeToMono`    | 整数      | 如果为 `1`，则将立体声轨道拆分为单声道。      |
+| `sampleRate`   | 整数      | 输出音频的采样率。   |
+| `bitsPerSample`    | 整数      | 音频输出的每样本位数。      |
+| `embedAudio`   | 整数      | 如果为 `1`，则嵌入音频；如果为 `0`，则为外部音频。     |
+| `audioFileFormat`   | 整数      | `0` 为 AIFF，`1` 为 WAV。   |
+| `trimSources`    | 整数      | 如果为 `1`，则在导出前修剪并重新编码媒体；`0` 导出整个文件。 |
+| `handleFrames`   | 整数      | 处理帧数（0 到 1000）。     |
+| `presetPath`   | 字符串   | 导出预设 (.epr) 文件的路径。      |
+| `renderAudioEffects`   | 整数      | 如果为 `1`，则在导出前渲染音频效果。      |
+| `includeClipCopies`   | 整数      | 如果为 `1`，则包含每个剪辑的副本。      |
+| `preserveParentFolder` | 整数      | 如果为 `1`，则在输出中保留父文件夹。    |
 
 #### 返回值
 
@@ -306,9 +306,9 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-|  参数   |  类型   |                          描述                           |
+|  参数   |  类型   |    描述   |
 | ------- | ------- | ------------------------------------------------------- |
-| `outputPath` | 字符串  | .xml 文件的输出路径。                                   |
+| `outputPath` | 字符串  | .xml 文件的输出路径。     |
 | `suppressUI` | 整数 | 如果为 `1`，则在导出期间不显示警告或提示。 |
 
 #### 返回值
@@ -327,18 +327,18 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-|     参数      |                   类型                    |                描述                  |
+|   参数   |   类型     |    描述     |
 | ------------- | ------------------------------------------ | ------------------------------------- |
-| `sequence`          | [Sequence 对象](../../sequence/sequence) | 要输出的序列。                   |
-| `filePath`          | 字符串                                     | .omf 文件的输出路径。                |
-| `omfTitle`          | 字符串                                     | OMF 的标题。                        |
-| `sampleRate`        |                                            | 输出音频的采样率。             |
-| `bitsPerSample`     |                                            | 音频输出的每样本位数。         |
-| `audioEncapsulated` | 整数                                    | 如果为 `1`，则嵌入音频；如果为 `0`，则为外部音频。 |
-| `audioFileFormat`   | 整数                                    | `0` 为 AIFF，`1` 为 WAV。                     |
-| `trimAudioFiles`    | 整数                                    | `1` 表示修剪音频文件。             |
-| `handleFrames`      | 整数                                    | 处理帧数（0 到 1000）。    |
-| `includePan`        | 整数                                    | `1` 表示包含平移信息；`0` 表示不包含。 |
+| `sequence`    | [Sequence 对象](../../sequence/sequence) | 要输出的序列。   |
+| `filePath`    | 字符串   | .omf 文件的输出路径。    |
+| `omfTitle`    | 字符串   | OMF 的标题。    |
+| `sampleRate`    |   | 输出音频的采样率。    |
+| `bitsPerSample`   |   | 音频输出的每样本位数。   |
+| `audioEncapsulated` | 整数      | 如果为 `1`，则嵌入音频；如果为 `0`，则为外部音频。 |
+| `audioFileFormat`   | 整数      | `0` 为 AIFF，`1` 为 WAV。   |
+| `trimAudioFiles`   | 整数      | `1` 表示修剪音频文件。    |
+| `handleFrames`   | 整数      | 处理帧数（0 到 1000）。   |
+| `includePan`    | 整数      | `1` 表示包含平移信息；`0` 表示不包含。 |
 
 #### 返回值
 
@@ -356,7 +356,7 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-|       参数        |  类型  |                                                                      描述                                                                        |
+|   参数    |  类型  |      描述     |
 | ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `exportControllerName` | 字符串 | 要使用的导出控制器插件的名称。要使用 Premiere Pro SDK 示例导出控制器，值为 "SDK Export Controller"。 |
 
@@ -466,11 +466,11 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-|  参数   |                    类型                     |                            描述                             |
+|  参数   |     类型   |    描述     |
 | ------- | -------------------------------------------- | ----------------------------------------------------------- |
-| `path`      | 字符串                                       | After Effects .aep 项目文件的路径。                      |
-| `compNames` | 字符串数组                             | 要导入的指定项目中的合成名称。 |
-| `targetBin` | [ProjectItem 对象](../../item/projectitem) | 可选。此导入的目标 bin。                      |
+| `path`   | 字符串      | After Effects .aep 项目文件的路径。    |
+| `compNames` | 字符串数组     | 要导入的指定项目中的合成名称。 |
+| `targetBin` | [ProjectItem 对象](../../item/projectitem) | 可选。此导入的目标 bin。    |
 
 #### 返回值
 
@@ -488,9 +488,9 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-|  参数   |                    类型                     |                 描述                   |
+|  参数   |     类型   |     描述   |
 | ------- | -------------------------------------------- | --------------------------------------- |
-| `path`      | 字符串                                       | After Effects .aep 项目文件的路径。     |
+| `path`   | 字符串      | After Effects .aep 项目文件的路径。   |
 | `targetBin` | [ProjectItem 对象](../../item/projectitem) | 可选。此导入的目标 bin。 |
 
 #### 返回值
@@ -509,12 +509,12 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-|        参数         |                    类型                     |                                 描述                                   |
+|    参数   |     类型   |     描述     |
 | ------------------- | -------------------------------------------- | ---------------------------------------------------------------------- |
-| `filePaths`              | 字符串数组                             | 要导入的文件路径数组。                                     |
-| `suppressUI`             | 布尔值                                      | 是否应抑制警告对话框。                                  |
-| `targetBin`              | [ProjectItem 对象](../../item/projectitem) | 文件应导入的 bin。                               |
-| `importAsNumberedStills` | 布尔值                                      | 文件路径是否应解释为编号静止图像的序列。 |
+| `filePaths`    | 字符串数组     | 要导入的文件路径数组。   |
+| `suppressUI`    | 布尔值   | 是否应抑制警告对话框。      |
+| `targetBin`    | [ProjectItem 对象](../../item/projectitem) | 文件应导入的 bin。     |
+| `importAsNumberedStills` | 布尔值   | 文件路径是否应解释为编号静止图像的序列。 |
 
 #### 返回值
 
@@ -532,9 +532,9 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-|   参数    |  类型  |            描述             |
+|   参数   |  类型  |   描述    |
 | --------- | ------ | --------------------------- |
-| `path`        | 字符串 | 项目文件的路径。           |
+| `path`    | 字符串 | 项目文件的路径。   |
 | `sequenceIDs` | 数组  | 要导入的序列 ID 数组。 |
 
 #### 返回值
@@ -571,15 +571,15 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-|     参数      |  类型   |           描述             |
+|   参数   |  类型   |   描述    |
 | ------------- | ------- | -------------------------- |
-| `width`           | 整数 |                                    |
-| `height`          | 整数 |                                    |
-| `timeBase`        |         | 新项目项的时间基准。 |
-| `PARNum`          | 整数 | 像素宽高比分子。     |
-| `PARDen`          | 整数 | 像素宽高比分母。   |
-| `audioSampleRate` |         | 音频采样率。                 |
-| `name`            | 字符串  | 新项目项的名称。       |
+| `width`   | 整数 |      |
+| `height`    | 整数 |      |
+| `timeBase`    |   | 新项目项的时间基准。 |
+| `PARNum`    | 整数 | 像素宽高比分子。   |
+| `PARDen`    | 整数 | 像素宽高比分母。   |
+| `audioSampleRate` |   | 音频采样率。     |
+| `name`   | 字符串  | 新项目项的名称。   |
 
 #### 返回值
 
@@ -597,9 +597,9 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-|       参数        |  类型  |           描述             |
+|   参数    |  类型  |   描述    |
 | ----------------- | ------ | -------------------------- |
-| `name`                 | 字符串 | 新序列的名称。           |
+| `name`     | 字符串 | 新序列的名称。   |
 | `pathToSequencePreset` | 字符串 | 预设 .sqpreset 文件的路径。 |
 
 #### 返回值
@@ -618,7 +618,7 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-|  参数   |                              类型                                |               描述                 |
+|  参数   |    类型     |    描述     |
 | ------- | ----------------------------------------------------------------- | ---------------------------------- |
 | `sequenceID` | [Sequence.sequenceID](../../sequence/sequence#sequencesequenceid) | 应打开的有效序列 ID。 |
 
@@ -638,7 +638,7 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-| 参数 |  类型   |           描述             |
+| 参数 |  类型   |   描述    |
 | ---- | ------- | -------------------------- |
 | `pause`   | 整数 | 如果为 `1`，则启用增长文件。 |
 
@@ -676,9 +676,9 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-| 参数 |  类型  |     描述      |
+| 参数 |  类型  |   描述   |
 | ---- | ------ | ------------- |
-| `path`    | 字符串 | 新文件的路径。 |
+| `path`   | 字符串 | 新文件的路径。 |
 
 #### 返回值
 
@@ -696,7 +696,7 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-| 参数      | 类型    | 描述         |
+| 参数   | 类型   | 描述   |
 | --------- | ------- | ------------ |
 | `state`   | Boolean | 期望的状态。 |
 
@@ -716,7 +716,7 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-| 参数      | 类型    | 描述                                                                                   |
+| 参数   | 类型   | 描述     |
 | --------- | ------- | -------------------------------------------------------------------------------------- |
 | `value`   | Integer | 要使用的值；必须是由 [Project.getSupportedGraphicsWhiteLuminances()](#projectgetsupportedgraphicswhiteluminances) 提供的值。 |
 
@@ -736,7 +736,7 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-| 参数      | 类型   | 描述                                                                                                                                 |
+| 参数   | 类型   | 描述       |
 | --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------ |
 | `layout`  | String | 表示期望的项目面板布局。注意：生成有效布局字符串的唯一已知方法是设置项目面板为所需状态，然后使用 [Project.getProjectPanelMetadata()](#projectgetprojectpanelmetadata)。 |
 
@@ -756,23 +756,23 @@ app.project.path; // /Users/USERNAME/Desktop/Project.prproj
 
 #### 参数
 
-| 参数              | 类型                | 描述                                                                 |
+| 参数    | 类型    | 描述     |
 |-------------------|---------------------|----------------------------------------------------------------------|
-| `newPath`         | String              | 新路径。                                                             |
-| `scratchDiskType` | `ScratchDiskType` 枚举 | 以下之一：                                                           |
-|                   |                     | - `ScratchDiskType.FirstVideoCaptureFolder`                          |
-|                   |                     | - `ScratchDiskType.FirstAudioCaptureFolder`                          |
-|                   |                     | - `ScratchDiskType.FirstVideoPreviewFolder`                          |
-|                   |                     | - `ScratchDiskType.FirstAudioPreviewFolder`                          |
-|                   |                     | - `ScratchDiskType.FirstAutoSaveFolder`                              |
-|                   |                     | - `ScratchDiskType.FirstCCLibrariesFolder`                           |
-|                   |                     | - `ScratchDiskType.FirstCapsuleMediaFolder`                          |
-|                   |                     | - `ScratchDiskType.FirstAudioCaptureFolder`                          |
-|                   |                     | - `ScratchDiskType.FirstVideoPreviewFolder`                          |
-|                   |                     | - `ScratchDiskType.FirstAudioPreviewFolder`                          |
-|                   |                     | - `ScratchDiskType.FirstAutoSaveFolder`                              |
-|                   |                     | - `ScratchDiskType.FirstCCLibrariesFolder`                           |
-|                   |                     | - `ScratchDiskType.FirstCapsuleMediaFolder`                          |
+| `newPath`   | String    | 新路径。   |
+| `scratchDiskType` | `ScratchDiskType` 枚举 | 以下之一：   |
+|   |   | - `ScratchDiskType.FirstVideoCaptureFolder`    |
+|   |   | - `ScratchDiskType.FirstAudioCaptureFolder`    |
+|   |   | - `ScratchDiskType.FirstVideoPreviewFolder`    |
+|   |   | - `ScratchDiskType.FirstAudioPreviewFolder`    |
+|   |   | - `ScratchDiskType.FirstAutoSaveFolder`    |
+|   |   | - `ScratchDiskType.FirstCCLibrariesFolder`   |
+|   |   | - `ScratchDiskType.FirstCapsuleMediaFolder`    |
+|   |   | - `ScratchDiskType.FirstAudioCaptureFolder`    |
+|   |   | - `ScratchDiskType.FirstVideoPreviewFolder`    |
+|   |   | - `ScratchDiskType.FirstAudioPreviewFolder`    |
+|   |   | - `ScratchDiskType.FirstAutoSaveFolder`    |
+|   |   | - `ScratchDiskType.FirstCCLibrariesFolder`   |
+|   |   | - `ScratchDiskType.FirstCapsuleMediaFolder`    |
 
 #### 返回值
 

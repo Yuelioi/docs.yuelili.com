@@ -21,7 +21,7 @@ order: 29
 ## 示例
 
 ```vex
-int        nvtx;
+int    nvtx;
 
 // 获取3号基元的顶点数量
 nvtx = primvertexcount("defgeo.bgeo", 3);

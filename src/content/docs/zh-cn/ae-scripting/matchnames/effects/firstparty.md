@@ -93,7 +93,7 @@ title: 第一方
 
 |       匹配名称       |    显示名称 (中文)     | BPC | GPU  |
 | ---------- | -------- | --- | ---- |
-| `ADBE AutoColor`         | 自动颜色           | 16  |    |
+| `ADBE AutoColor`         | 自动颜色   | 16  |    |
 | `ADBE AutoContrast`      | 自动对比度        | 16  |    |
 | `ADBE AutoLevels`        | 自动色阶          | 16  |    |
 | `ADBE Black&White`       | 黑白        | 16  |    |
@@ -102,31 +102,31 @@ title: 第一方
 | `CS Color Neutralizer`     | CC 颜色中和器     | 32  |    |
 | `CC Color Offset`        | CC 颜色偏移        | 16  |    |
 | `CS Kernel`          | CC 内核          | 32  |    |
-| `CC Toner`           | CC 调色剂           | 32  |    |
+| `CC Toner`   | CC 调色剂   | 32  |    |
 | `ADBE Change Color`      | 更改颜色         | 16  |    |
 | `ADBE Change To Color`     | 更改为颜色        | 16  |    |
 | `ADBE CHANNEL MIXER`       | 通道混合器        | 32  |    |
 | `ADBE Color Balance 2`     | 色彩平衡        | 16  |    |
 | `ADBE Color Balance (HLS)`   | 色彩平衡 (HLS)      | 16  |    |
-| `ADBE Color Link`        | 颜色链接           | 8   |    |
+| `ADBE Color Link`        | 颜色链接   | 8   |    |
 | `ADBE Deflicker`         | 颜色稳定器       | 16  |    |
-| `APC Colorama`         | 彩光           | 16  |    |
-| `ADBE CurvesCustom`      | 曲线             | 32  |    |
-| `ADBE Equalize`        | 均衡化           | 8   |    |
-| `ADBE Exposure2`         | 曝光           | 32  |    |
+| `APC Colorama`         | 彩光   | 16  |    |
+| `ADBE CurvesCustom`      | 曲线     | 32  |    |
+| `ADBE Equalize`        | 均衡化   | 8   |    |
+| `ADBE Exposure2`         | 曝光   | 32  |    |
 | `ADBE Gamma/Pedestal/Gain2`  | 伽马/基座/增益      | 8   |    |
 | `ADBE HUE SATURATION`      | 色相/饱和度         | 32  | 14.1 |
 | `ADBE Leave Color`       | 保留颜色          | 8   |    |
-| `ADBE Easy Levels2`      | 色阶             | 32  | 14.2 |
+| `ADBE Easy Levels2`      | 色阶     | 32  | 14.2 |
 | `ADBE Pro Levels2`       | 色阶 (单独控制) | 32  | 14.2 |
 | `ADBE Lumetri`         | Lumetri 颜色        | 32  | 13.8 |
 | `ADBE PhotoFilterPS`       | 照片滤镜         | 32  |    |
 | `ADBE PS Arbitrary Map`    | PS 任意映射       | 8   |    |
 | `ADBE SelectiveColor`      | 选择性颜色        | 16  |    |
 | `ADBE ShadowHighlight`     | 阴影/高光       | 16  |    |
-| `ADBE Tint`          | 色调             | 32  | 14.1 |
-| `ADBE Tritone`         | 三色调            | 32  |    |
-| `ADBE Vibrance`        | 自然饱和度           | 16  |    |
+| `ADBE Tint`          | 色调     | 32  | 14.1 |
+| `ADBE Tritone`         | 三色调    | 32  |    |
+| `ADBE Vibrance`        | 自然饱和度   | 16  |    |
 
 ---
 
@@ -135,13 +135,13 @@ title: 第一方
 |     匹配名称     |   显示名称 (中文)   | BPC | GPU  |
 | ------ | ----- | --- | ---- |
 | `ADBE BEZMESH`       | 贝塞尔扭曲         | 16  |    |
-| `ADBE Bulge`         | 膨胀           | 16  |    |
+| `ADBE Bulge`         | 膨胀   | 16  |    |
 | `CC Bend It`         | CC 弯曲        | 16  |    |
 | `CC Bender`        | CC 弯曲器         | 16  |    |
 | `CC Blobbylize`      | CC 液化       | 16  |    |
 | `CC Flo Motion`      | CC 流动       | 32  |    |
 | `CC Griddler`        | CC 网格         | 32  |    |
-| `CC Lens`          | CC 镜头           | 32  |    |
+| `CC Lens`          | CC 镜头   | 32  |    |
 | `CC Page Turn`       | CC 翻页        | 16  |    |
 | `CC Power Pin`       | CC 强力定位        | 32  |    |
 | `CC Ripple Pulse`      | CC 波纹脉冲       | 32  |    |
@@ -153,22 +153,22 @@ title: 第一方
 | `ADBE Corner Pin`      | 角定位        | 32  |    |
 | `ADBE Upscale`       | 保留细节的放大 | 32  |    |
 | `ADBE Displacement Map`  | 置换映射      | 32  |    |
-| `ADBE LIQUIFY`       | 液化           | 16  |    |
-| `ADBE Magnify`       | 放大           | 8   |    |
+| `ADBE LIQUIFY`       | 液化   | 16  |    |
+| `ADBE Magnify`       | 放大   | 8   |    |
 | `ADBE MESH WARP`       | 网格扭曲         | 16  |    |
 | `ADBE Mirror`        | 镜像          | 16  |    |
 | `ADBE Offset`        | 偏移          | 16  | 14.2 |
 | `ADBE Optics Compensation` | 光学补偿     | 32  |    |
 | `ADBE Polar Coordinates`   | 极坐标     | 32  |    |
-| `ADBE RESHAPE`       | 重塑           | 16  |    |
+| `ADBE RESHAPE`       | 重塑   | 16  |    |
 | `ADBE Ripple`        | 波纹          | 16  |    |
 | `ADBE Rolling Shutter`   | 滚动快门修复  | 32  |    |
-| `ADBE SCHMEAR`       | 涂抹           | 16  |    |
+| `ADBE SCHMEAR`       | 涂抹   | 16  |    |
 | `ADBE Spherize`      | 球面化          | 16  |    |
 | `ADBE Geometry2`       | 变换         | 32  | 15.0 |
 | `ADBE Turbulent Displace`  | 湍流置换    | 32  |    |
-| `ADBE Twirl`         | 旋转           | 32  |    |
-| `ADBE WRPMESH`       | 扭曲            | 16  |    |
+| `ADBE Twirl`         | 旋转   | 32  |    |
+| `ADBE WRPMESH`       | 扭曲    | 16  |    |
 | `ADBE SubspaceStabilizer`  | 扭曲稳定器 VFX     | 32  |    |
 | `ADBE Wave Warp`       | 波浪扭曲         | 16  |    |
 

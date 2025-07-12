@@ -7,22 +7,22 @@ title: 插件属性列表资源(PiPLs)
 
 为了跨平台兼容性，请像示例一样，为 macOS 和 Windows 版本的插件使用单个 .r 文件。PiPL 属性必须始终以 macOS 特定的字节顺序排列。在 Windows 上，PiPLs 通过 pipltool.exe 处理 .r 文件来编译，将 .r 文件转换为二进制 .rc 文件。Windows 示例项目都包含自定义构建步骤，使用跨平台的 .r 文件和我们的 cnvtpipl.exe 命令行工具生成 .rc 文件。基于现有的示例插件进行开发，构建步骤将正确实现。
 
-| PiPL 属性                   | 用途                                                                                                                                                                                       |
+| PiPL 属性       | 用途    |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Kind                        | 插件类型。AEEffect 表示效果插件。                                                                                                                                                          |
-| Name                        | 显示名称，最多 47 个字符。                                                                                                                                                                 |
-| Category                    | 用于菜单和“效果与预设”面板的效果类别                                                                                                                                                     |
+| Kind     | 插件类型。AEEffect 表示效果插件。         |
+| Name     | 显示名称，最多 47 个字符。        |
+| Category        | 用于菜单和“效果与预设”面板的效果类别          |
 | Entry Point (每个平台一个)  | 插件的入口函数通过 PiPL 在 Windows 和 macOS 上导出。如果插件支持多个平台，则必须在 PiPL 中定义多个入口函数。除非您还指定了其他特定于操作系统的入口函数，否则不需要 Windows .def 文件或手动导出。 |
-|                             | entry.h 中定义的宏（位于\\SDKExamplesHeaders 目录）负责导出每个示例的入口函数。所有示例项目的入口函数对于效果插件是 `EffectMain()`，对于 AEGPs 是 `EntryPointFunc()`。             |
-| AE_PiPL_Version             | 未使用                                                                                                                                                                                     |
-| AE_Effect_Spec_Version      | 效果插件构建时使用的 SDK 版本                                                                                                                                                              |
-| AE_Effect_Version           | 效果插件的版本                                                                                                                                                                             |
-| AE_Effect_Info_Flags        | 未使用                                                                                                                                                                                     |
-| AE_Effect_Global_OutFlags   | 必须与 GlobalSetup 中设置的 `out_flags` 匹配                                                                                                                                             |
-| AE_Effect_Global_OutFlags_2 | 必须与 GlobalSetup 中设置的 `out_flags2` 匹配                                                                                                                                            |
-| AE_Effect_Match_Name        | 唯一的、常量标识符，与插件的显示名称不同，后者可以动态更改。                                                                                                                               |
-| AE_Reserved_Info            | 未使用                                                                                                                                                                                     |
-| AE_Effect_Support_URL       | **AE 23.5 新增！** 效果插件的 URL。显示在效果管理器中。用户可能会点击链接以获取有关效果的更多信息或查找更新版本。                                                                    |
+|    | entry.h 中定义的宏（位于\\SDKExamplesHeaders 目录）负责导出每个示例的入口函数。所有示例项目的入口函数对于效果插件是 `EffectMain()`，对于 AEGPs 是 `EntryPointFunc()`。       |
+| AE_PiPL_Version       | 未使用           |
+| AE_Effect_Spec_Version      | 效果插件构建时使用的 SDK 版本    |
+| AE_Effect_Version     | 效果插件的版本        |
+| AE_Effect_Info_Flags        | 未使用           |
+| AE_Effect_Global_OutFlags   | 必须与 GlobalSetup 中设置的 `out_flags` 匹配        |
+| AE_Effect_Global_OutFlags_2 | 必须与 GlobalSetup 中设置的 `out_flags2` 匹配       |
+| AE_Effect_Match_Name        | 唯一的、常量标识符，与插件的显示名称不同，后者可以动态更改。       |
+| AE_Reserved_Info      | 未使用           |
+| AE_Effect_Support_URL       | **AE 23.5 新增！** 效果插件的 URL。显示在效果管理器中。用户可能会点击链接以获取有关效果的更多信息或查找更新版本。    |
 
 ---
 

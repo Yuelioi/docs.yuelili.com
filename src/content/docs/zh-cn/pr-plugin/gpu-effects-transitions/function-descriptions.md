@@ -35,9 +35,9 @@ prSuiteError (*DisposeInstance)(
 
 ```cpp
 prSuiteError (*GetFrameDependencies)(
-  PrGPUFilterInstance*            inInstanceData,
+  PrGPUFilterInstance*   inInstanceData,
   const PrGPUFilterRenderParams*  inRenderParams,
-  csSDK_int32*                    ioQueryIndex,
+  csSDK_int32*       ioQueryIndex,
   PrGPUFilterFrameDependency*     outFrameDependencies);
 ```
 
@@ -51,10 +51,10 @@ prSuiteError (*GetFrameDependencies)(
 
 ```cpp
 prSuiteError (*Precompute)(
-  PrGPUFilterInstance*            inInstanceData,
+  PrGPUFilterInstance*   inInstanceData,
   const PrGPUFilterRenderParams*  inRenderParams,
-  csSDK_int32                     inIndex,
-  PPixHand                        inFrame);
+  csSDK_int32    inIndex,
+  PPixHand       inFrame);
 ```
 
 将结果预计算到预分配的未初始化主机（固定）内存中。
@@ -73,11 +73,11 @@ prSuiteError (*Precompute)(
 
 ```cpp
 prSuiteError (*Render)(
-  PrGPUFilterInstance*            inInstanceData,
+  PrGPUFilterInstance*   inInstanceData,
   const PrGPUFilterRenderParams*  inRenderParams,
-  const PPixHand*                 inFrames,
-  csSDK_size_t                    inFrameCount,
-  PPixHand*                       outFrame);
+  const PPixHand*    inFrames,
+  csSDK_size_t       inFrameCount,
+  PPixHand*      outFrame);
 ```
 
 渲染到使用 `PrSDKGPUDeviceSuite` 分配的 `outFrame` 中，或就地操作。
@@ -87,4 +87,5 @@ prSuiteError (*Render)(
 对于效果，`inFrames[0]` 始终是当前时间的帧，其他输入帧的顺序与 `GetFrameDependencies` 返回的顺序相同。对于过渡效果，`inFrames[0]` 是传入帧，`inFrames[1]` 是传出帧。过渡效果可能没有其他帧依赖项。
 
 使用实用函数 `GetParam` 检索当前时间的参数值。
+
 ```

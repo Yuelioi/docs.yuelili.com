@@ -175,9 +175,9 @@ AE 风格的过渡现在可以从底层剪辑的任意位置检索 GPU 帧。有
 
 ```cpp
 PF_Err TranslateParamsToPrefs(
-  PF_InData*                      in_data,
-  PF_OutData*                     out_data,
-  PF_ParamDef*                    params[],
+  PF_InData*       in_data,
+  PF_OutData*      out_data,
+  PF_ParamDef*     params[],
   PF_TranslateParamsToPrefsExtra  *extra)
 ```
 

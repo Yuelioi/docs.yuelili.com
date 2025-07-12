@@ -54,32 +54,39 @@ dlg.show();
 您的脚本可以访问这些值，并且（如果不使用自动布局）可以按如下方式设置它们：
 
 - 窗口的 `location` 由包含左上角（原点）坐标（`x` 和 `y`）的 [Point](../size-and-location-objects#point) 对象定义，坐标在屏幕坐标系中指定。窗口或其他容器内元素的位置定义为容器坐标系中指定的原点。也就是说，`x` 和 `y` 值是相对于容器的原点的。
-    - 以下示例显示了将现有窗口的内容区域放置在屏幕坐标 [10, 50] 处的等效方法：
-        ```javascript
-        win.location = [ 10, 50 ];
-        win.location = { x: 10, y: 50 };
-        win.location = "x:10, y:50";
-        ```
+  - 以下示例显示了将现有窗口的内容区域放置在屏幕坐标 [10, 50] 处的等效方法：
+
+    ```javascript
+    win.location = [ 10, 50 ];
+    win.location = { x: 10, y: 50 };
+    win.location = "x:10, y:50";
+    ```
+
 - 元素区域的 `size` 由包含 `width` 和 `height`（以像素为单位）的 [Dimension](../size-and-location-objects#dimension) 对象定义。
-    - 以下示例显示了将现有窗口的宽度和高度更改为 200 和 100 的等效方法：
-        ```javascript
-        win.size = [ 200, 100 ];
-        win.size = { width: 200, height: 100 };
-        win.size = "width:200, height:100";
-        ```
-    - 此示例显示了如何将窗口的高度更改为 100，同时保持其位置和宽度不变：
-        ```javascript
-        win.size.height = 100;
-        ```
+  - 以下示例显示了将现有窗口的宽度和高度更改为 200 和 100 的等效方法：
+
+    ```javascript
+    win.size = [ 200, 100 ];
+    win.size = { width: 200, height: 100 };
+    win.size = "width:200, height:100";
+    ```
+
+  - 此示例显示了如何将窗口的高度更改为 100，同时保持其位置和宽度不变：
+
+    ```javascript
+    win.size.height = 100;
+    ```
+
 - 元素的 `bounds` 由包含原点点（`x`，`y`）和大小（`width`，`height`）的 `Bounds` 对象定义。要一步定义窗口和控件的大小和位置，请使用 `bounds` 属性。
-    - `bounds` 属性的值可以是具有适当内容的字符串、内联 JavaScript `Bounds` 对象或四元素数组。以下示例显示了在屏幕左上角附近放置一个 380 x 390 像素窗口的等效方法：
-        ```javascript
-        var dlg = new Window( "dialog", "Alert Box Builder", [ 100, 100, 480, 490] );
-        dlg.bounds = [ 100, 100, 480, 490 ];
-        dlg.bounds = { x: 100, y: 100, width: 380, height: 390 };
-        dlg.bounds = { left: 100, top: 100, right: 480, bottom: 490 };
-        dlg.bounds = "left:100, top:100, right:480, bottom:490";
-        ```
+  - `bounds` 属性的值可以是具有适当内容的字符串、内联 JavaScript `Bounds` 对象或四元素数组。以下示例显示了在屏幕左上角附近放置一个 380 x 390 像素窗口的等效方法：
+
+    ```javascript
+    var dlg = new Window( "dialog", "Alert Box Builder", [ 100, 100, 480, 490] );
+    dlg.bounds = [ 100, 100, 480, 490 ];
+    dlg.bounds = { x: 100, y: 100, width: 380, height: 390 };
+    dlg.bounds = { left: 100, top: 100, right: 480, bottom: 490 };
+    dlg.bounds = "left:100, top:100, right:480, bottom:490";
+    ```
 
 窗口的尺寸定义了窗口的*内容区域*的大小，或脚本可以直接控制的那部分窗口。实际窗口大小通常更大，因为主机平台的窗口系统通常会添加标题栏和边框。`Window` 的 `bounds` 属性仅指其内容区域。要确定围绕窗口内容区域的框架的边界，请使用 `Window.frameBounds` 属性。
 

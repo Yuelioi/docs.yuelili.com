@@ -128,12 +128,12 @@ if (canSet) {
 
 数组，每个元素包含以下属性; 只读:
 
-| 属性            | 类型   | 描述                                                                                    |
+| 属性   | 类型   | 描述           |
 | --------------- | ------ | --------------------------------------------------------------------------------------- |
-| `displayName` | 字符串 | 本地化的效果显示名称（与效果菜单中显示的一致）                                          |
+| `displayName` | 字符串 | 本地化的效果显示名称（与效果菜单中显示的一致）     |
 | `category`    | 字符串 | 本地化的分类标签（与效果菜单中显示的一致），对于不向用户显示的人工合成效果可能为 `""` |
-| `matchName`   | 字符串 | 效果的内部唯一标识名（不会随版本变化），用于实际应用效果                                |
-| `version`     | 字符串 | 效果的内部版本号（可能与插件厂商在效果关于框中显示的版本不同）                          |
+| `matchName`   | 字符串 | 效果的内部唯一标识名（不会随版本变化），用于实际应用效果    |
+| `version`     | 字符串 | 效果的内部版本号（可能与插件厂商在效果关于框中显示的版本不同）        |
 
 #### 示例
 
@@ -426,7 +426,7 @@ alert("本机运行的 AfterEffects 版本是：" + ver);
 
 #### 参数
 
-| 参数           | 类型   | 描述                                                 |
+| 参数           | 类型   | 描述   |
 | -------------- | ------ | ---------------------------------------------------- |
 | `undoString` | 字符串 | 在编辑菜单中显示的撤销命令文本（即"Undo"对应的文字） |
 
@@ -446,7 +446,7 @@ alert("本机运行的 AfterEffects 版本是：" + ver);
 
 #### 参数
 
-| 参数       | 类型 | 描述                                     |
+| 参数       | 类型 | 描述          |
 | ---------- | ---- | ---------------------------------------- |
 | `taskID` | 整数 | 任务标识符（由[app.scheduleTask()]() 返回） |
 
@@ -466,7 +466,7 @@ alert("本机运行的 AfterEffects 版本是：" + ver);
 
 #### 参数
 
-| 参数      | 类型   | 描述                                                                 |
+| 参数      | 类型   | 描述          |
 | --------- | ------ | -------------------------------------------------------------------- |
 | `alert` | 布尔值 | 为 `true` 时显示调用 `beginSuppressDialogs()` 后发生的错误对话框 |
 
@@ -535,7 +535,7 @@ GUI 应用程序中的菜单命令都有独立 ID 号，可作此方法的参数
 
 #### 参数
 
-| 参数   | 类型 | 描述             |
+| 参数   | 类型 | 描述    |
 | ------ | ---- | ---------------- |
 | `id` | 整数 | 菜单命令的 ID 号 |
 
@@ -569,7 +569,7 @@ app.executeCommand(4162);
 
 #### 参数
 
-| 参数        | 类型   | 描述                                 |
+| 参数        | 类型   | 描述     |
 | ----------- | ------ | ------------------------------------ |
 | `command` | 字符串 | 菜单命令文本（需与界面显示完全一致） |
 
@@ -624,7 +624,7 @@ app.newProject();
 
 #### 参数
 
-| 参数     | 类型                                                                                        | 描述                                       |
+| 参数     | 类型               | 描述            |
 | -------- | ------------------------------------------------------------------------------------------- | ------------------------------------------ |
 | `file` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) | 可选。要打开的项目文件，不提供时弹出对话框 |
 
@@ -656,7 +656,7 @@ if (my_file.exists) {
 
 #### 参数
 
-| 参数     | 类型                                                                                        | 描述             |
+| 参数     | 类型               | 描述    |
 | -------- | ------------------------------------------------------------------------------------------- | ---------------- |
 | `file` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) | 要打开的项目文件 |
 
@@ -696,7 +696,7 @@ alert( "时间差为 " + parseInt(normalEnd-fastEnd) + " 毫秒" +
 
 #### 参数
 
-| 参数     | 类型                                                                                        | 描述                   |
+| 参数     | 类型               | 描述          |
 | -------- | ------------------------------------------------------------------------------------------- | ---------------------- |
 | `file` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) | The ASE file to parse. |
 
@@ -704,26 +704,26 @@ alert( "时间差为 " + parseInt(normalEnd-fastEnd) + " 毫秒" +
 
 The swatch data, in this format:
 
-| Property              | 描述                                                                  |
+| Property     | 描述           |
 | --------------------- | --------------------------------------------------------------------- |
-| `data.majorVersion` | ASE 版本号。                                                          |
-| `data.minorVersion` |                                                                       |
-| `data.values`       | 一个 Swatch Value 数组。                                              |
-| `SwatchValue.type`  | 颜色模式之一："RGB", "CMYK", "LAB", "Gray"                            |
-| `SwatchValue.r`     | 当 `type = "RGB"` 时，颜色值范围 `[0.0..1.0]`。                   |
-| `SwatchValue.g`     |                                                                       |
-| `SwatchValue.b`     | `[0, 0, 0]` 代表黑色                                               |
+| `data.majorVersion` | ASE 版本号。            |
+| `data.minorVersion` |      |
+| `data.values`       | 一个 Swatch Value 数组。         |
+| `SwatchValue.type`  | 颜色模式之一："RGB", "CMYK", "LAB", "Gray"          |
+| `SwatchValue.r`     | 当 `type = "RGB"` 时，颜色值范围 `[0.0..1.0]`。          |
+| `SwatchValue.g`     |      |
+| `SwatchValue.b`     | `[0, 0, 0]` 代表黑色          |
 | `SwatchValue.c`     | When `type = "CMYK"`, the color values in the range `[0.0..1.0]`. |
-| `SwatchValue.m`     |                                                                       |
-| `SwatchValue.y`     | `[0, 0, 0, 0]` 代表白色                                             |
-| `SwatchValue.k`     |                                                                       |
-| `SwatchValue.L`     | When `type = "LAB"`, the color values.                              |
-| `SwatchValue.a`     |                                                                       |
-| `SwatchValue.b`     | -`L` is in the range `[0.0..1.0]`                                 |
-|                       | -`a` and `b`are in the range `[-128.0..+128.0]`                 |
-|                       | `[0, 0, 0]` is Black.                                               |
+| `SwatchValue.m`     |      |
+| `SwatchValue.y`     | `[0, 0, 0, 0]` 代表白色        |
+| `SwatchValue.k`     |      |
+| `SwatchValue.L`     | When `type = "LAB"`, the color values.            |
+| `SwatchValue.a`     |      |
+| `SwatchValue.b`     | -`L` is in the range `[0.0..1.0]`     |
+|    | -`a` and `b`are in the range `[-128.0..+128.0]`        |
+|    | `[0, 0, 0]` is Black.          |
 | `SwatchValue.value` | When `type = "Gray"`, the `value` range is `[0.0..1.0]`.        |
-|                       | `0.0` is Black.                                                     |
+|    | `0.0` is Black.       |
 
 ---
 
@@ -737,7 +737,7 @@ The swatch data, in this format:
 
 #### 参数
 
-| 参数      | 类型    | 描述                          |
+| 参数      | 类型    | 描述        |
 | --------- | ------- | ----------------------------- |
 | `pause` | Boolean | `true` 暂停, `false` 恢复 |
 
@@ -767,14 +767,14 @@ Nothing.
 
 #### 参数
 
-| 参数       | 类型                   | 描述                                                                 |
+| 参数       | 类型          | 描述          |
 | ---------- | ---------------------- | -------------------------------------------------------------------- |
-| `target` | `PurgeTarget` 枚举值 | 要清除的缓存类型之一：                                               |
-|            |                        | -`PurgeTarget.ALL_CACHES`：清除 RAM 和磁盘缓存。                   |
-|            |                        | -`PurgeTarget.ALL_MEMORY_CACHES`：清除 RAM 缓存（24.3 版本新增）。 |
-|            |                        | -`PurgeTarget.UNDO_CACHES`：清除撤销缓存。                         |
-|            |                        | -`PurgeTarget.SNAPSHOT_CACHES`：清除合成/图层快照缓存。            |
-|            |                        | -`PurgeTarget.IMAGE_CACHES`：清除已保存的图像数据。                |
+| `target` | `PurgeTarget` 枚举值 | 要清除的缓存类型之一：          |
+|   |      | -`PurgeTarget.ALL_CACHES`：清除 RAM 和磁盘缓存。          |
+|   |      | -`PurgeTarget.ALL_MEMORY_CACHES`：清除 RAM 缓存（24.3 版本新增）。 |
+|   |      | -`PurgeTarget.UNDO_CACHES`：清除撤销缓存。       |
+|   |      | -`PurgeTarget.SNAPSHOT_CACHES`：清除合成/图层快照缓存。   |
+|   |      | -`PurgeTarget.IMAGE_CACHES`：清除已保存的图像数据。       |
 
 #### 返回
 
@@ -810,10 +810,10 @@ Nothing.
 
 #### 参数
 
-| 参数                | 类型    | 描述                                          |
+| 参数       | 类型    | 描述     |
 | ------------------- | ------- | --------------------------------------------- |
-| `stringToExecute` | String  | 需要执行的 JavaScript 代码。                  |
-| `delay`           | Float   | 执行前等待的毫秒数。                          |
+| `stringToExecute` | String  | 需要执行的 JavaScript 代码。         |
+| `delay`           | Float   | 执行前等待的毫秒数。        |
 | `repeat`          | Boolean | `true` 表示重复执行，`false` 仅执行一次。 |
 
 #### 返回
@@ -828,33 +828,11 @@ Nothing.
 
 #### 描述
 
-安排指定的JavaScript代码延迟执行。
-
-#### 参数
-
-| 参数                | 类型   | 描述                                                                                              |
-| ------------------- | ------ | ------------------------------------------------------------------------------------------------- |
-| `stringToExecute` | 字符串 | 包含要执行的JavaScript代码的字符串。                                                              |
-| `delay`           | 浮点数 | 在执行JavaScript之前等待的毫秒数。                                                                |
-| `repeat`          | 布尔值 | 当为 `true`时，重复执行脚本，每次执行之间间隔指定的延迟时间。当为 `false`时，脚本仅执行一次。 |
-
-#### 返回
-
-整数，此任务的唯一标识符，可用于通过 [app.cancelTask()](#appcanceltask) 取消它。
-
----
-
-### app.setMemoryUsageLimits()
-
-`app.setMemoryUsageLimits(imageCachePercentage, maximumMemoryPercentage)`
-
-#### 描述
-
 设置内存使用限制，类似于“内存与缓存”偏好设置区域中的选项。对于这两个值，如果安装的内存小于给定数量（`n` GB），则该值是安装内存的百分比；否则是 `n` 的百分比。`n` 的值为：32位 Windows 为2 GB，64位 Windows 为4 GB，Mac OS 为3.5 GB。
 
 #### 参数
 
-| 参数                        | 类型  | 描述                         |
+| 参数      | 类型  | 描述       |
 | --------------------------- | ----- | ---------------------------- |
 | `imageCachePercentage`    | Float | 分配给图像缓存的内存百分比。 |
 | `maximumMemoryPercentage` | Float | 最大可用内存百分比。         |
@@ -880,9 +858,9 @@ Nothing.
 
 #### 参数
 
-| 参数             | 类型                                      | 描述                                                                                 |
+| 参数    | 类型           | 描述       |
 | ---------------- | ----------------------------------------- | ------------------------------------------------------------------------------------ |
-| `mfr_on`       | Boolean                                   | 设置为 `true` 以启用多帧渲染。                                                     |
+| `mfr_on`       | Boolean       | 设置为 `true` 以启用多帧渲染。       |
 | `max_cpu_perc` | Floating-point value, 范围为 `[1..100]` | 多帧渲染应使用的最大 CPU 百分比。如果 `mfr_on` 设置为 `false`，则传入值应为100。 |
 
 #### 返回
@@ -900,7 +878,7 @@ Set or clears the flag that determines whether preferences are saved when the ap
 
 #### 参数
 
-| 参数       | 类型    | 描述                                                                   |
+| 参数       | 类型    | 描述            |
 | ---------- | ------- | ---------------------------------------------------------------------- |
 | `doSave` | Boolean | When `true`, preferences saved on quit, when `false` they are not. |
 
@@ -920,7 +898,7 @@ Set or clears the flag that determines whether preferences are saved when the ap
 
 #### 参数
 
-| 参数                       | 类型                                                                                            | 描述         |
+| 参数    | 类型         | 描述         |
 | -------------------------- | ----------------------------------------------------------------------------------------------- | ------------ |
 | `folder_object_to_watch` | [Extendscript Folder](https://extendscript.docsforadobe.dev/file-system-access/folder-object.html) | 要监控的文件 |
 

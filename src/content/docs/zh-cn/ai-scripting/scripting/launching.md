@@ -41,7 +41,7 @@ end tell
 
     如果你在同一台机器上安装了多个版本的Illustrator，并使用`CreateObject`方法获取应用程序引用，使用"Illustrator.Application"会创建对最新版本Illustrator的引用。要专门针对早期版本，请在字符串末尾使用版本标识符：
 
-    |       版本       |            标识符            |
+    |       版本       |      标识符      |
     | ---------------- | --------------------------- |
     | Illustrator 10   | "Illustrator.Application.1" |
     | Illustrator CS   | "Illustrator.Application.2" |

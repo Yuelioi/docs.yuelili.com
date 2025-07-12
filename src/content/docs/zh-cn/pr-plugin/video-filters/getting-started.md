@@ -32,126 +32,126 @@ title: 入门指南
 
 resource 'PiPL' (16000) {
   {
-    // 插件类型
-    Kind {PrEffect},
+   // 插件类型
+   Kind {PrEffect},
 
-    // 插件名称，显示给用户
-    Name {plugInName},
+   // 插件名称，显示给用户
+   Name {plugInName},
 
-    // 插件的内部名称
-    AE_Effect_Match_Name {plugInMatchName},
+   // 插件的内部名称
+   AE_Effect_Match_Name {plugInMatchName},
 
-    // 插件在效果面板中的文件夹
-    Category {plugInCategory},
+   // 插件在效果面板中的文件夹
+   Category {plugInCategory},
 
-    // PiPL 资源定义的版本
-    AE_PiPL_Version {PiPLVerMajor, PiPLVerMinor},
+   // PiPL 资源定义的版本
+   AE_PiPL_Version {PiPLVerMajor, PiPLVerMinor},
 
-    // ANIM 属性描述滤镜参数，以及数据如何存储在项目文件中。有一个 ANIM_FilterInfo 属性，后跟 n 个 ANIM_ParamAtoms
-    ANIM_FilterInfo {
-      0,
-      #ifdef PiPLVer2p3
+   // ANIM 属性描述滤镜参数，以及数据如何存储在项目文件中。有一个 ANIM_FilterInfo 属性，后跟 n 个 ANIM_ParamAtoms
+   ANIM_FilterInfo {
+    0,
+    #ifdef PiPLVer2p3
 
-      // 支持非方形像素宽高比
-      notUnityPixelAspectRatio,
-      anyPixelAspectRatio,
-      reserved4False,
-      reserved3False,
-      reserved2False,
+    // 支持非方形像素宽高比
+    notUnityPixelAspectRatio,
+    anyPixelAspectRatio,
+    reserved4False,
+    reserved3False,
+    reserved2False,
 
-      #endif
-    },
+    #endif
+   },
 
-    reserved1False, // 这些标志供 After Effects 使用
-    reserved0False, // Premiere 未使用
-    driveMe, // Premiere 未使用
-    needsDialog, // Premiere 未使用
-    paramsNotPointer, // Premiere 未使用
-    paramsNotHandle, // Premiere 未使用
-    paramsNotMacHandle, // Premiere 未使用
-    dialogNotInRender, // Premiere 未使用
-    paramsNotInGlobals, // Premiere 未使用
-    bgAnimatable, // Premiere 未使用
-    fgAnimatable, // Premiere 未使用
-    geometric, // Premiere 未使用
-    noRandomness, // Premiere 未使用
+   reserved1False, // 这些标志供 After Effects 使用
+   reserved0False, // Premiere 未使用
+   driveMe, // Premiere 未使用
+   needsDialog, // Premiere 未使用
+   paramsNotPointer, // Premiere 未使用
+   paramsNotHandle, // Premiere 未使用
+   paramsNotMacHandle, // Premiere 未使用
+   dialogNotInRender, // Premiere 未使用
+   paramsNotInGlobals, // Premiere 未使用
+   bgAnimatable, // Premiere 未使用
+   fgAnimatable, // Premiere 未使用
+   geometric, // Premiere 未使用
+   noRandomness, // Premiere 未使用
 
-    // 在此处放置参数数量
-    2,
+   // 在此处放置参数数量
+   2,
 
-    plugInMatchName
+   plugInMatchName
 
-    // 每个参数有一个 ANIM_ParamAtom
-    ANIM_ParamAtom {
-      // 这是第一个属性 - 从零开始计数
-      0,
+   // 每个参数有一个 ANIM_ParamAtom
+   ANIM_ParamAtom {
+    // 这是第一个属性 - 从零开始计数
+    0,
 
-      // 控件显示的名称
-      "级别",
+    // 控件显示的名称
+    "级别",
 
-      // 参数编号 - 从一开始计数
-      1,
+    // 参数编号 - 从一开始计数
+    1,
 
-      // 在此处放置数据类型
-      ANIM_DT_SHORT,
+    // 在此处放置数据类型
+    ANIM_DT_SHORT,
 
-      // UI 控件类型
-      ANIM_UI_SLIDER,
-      0x0,
-      0x0, // valid_min (0.0)
-      0x405fc000,
-      0x0, // valid_max (127.0)
-      0x0,
-      0x0, // ui_min (0.0)
-      0x40590000,
-      0x0, // ui_max (100.0)
+    // UI 控件类型
+    ANIM_UI_SLIDER,
+    0x0,
+    0x0, // valid_min (0.0)
+    0x405fc000,
+    0x0, // valid_max (127.0)
+    0x0,
+    0x0, // ui_min (0.0)
+    0x40590000,
+    0x0, // ui_max (100.0)
 
-      #if PiPLVer2p3
-      // 新增 - 如果用户修改，缩放/不缩放 UI 范围
-      dontScaleUIRange,
-      #endif
-    },
+    #if PiPLVer2p3
+    // 新增 - 如果用户修改，缩放/不缩放 UI 范围
+    dontScaleUIRange,
+    #endif
+   },
+
+   // 如果参数应动画化，则设置/不设置此标志
+   animateParam,
+   dontRestrictBounds, // Premiere 未使用
+   spaceIsAbsolute, // Premiere 未使用
+   resIndependent, // Premiere 未使用
+
+   // 参数数据的字节大小
+   2
+
+   ANIM_ParamAtom {
+    1,
+    "目标颜色", 2,
+
+    // 在此处放置数据类型
+    ANIM_DT_COLOR_RGB,
+
+    // UI 控件类型
+    ANIM_UI_COLOR_RGB,
+    0x0,
+    0x0,
+    0x0,
+    0x0,
+    0x0,
+    0x0,
+    0x0,
+    0x0,
+
+    #ifdef PiPLVer2p3
+    dontScaleUIRange,
+    #endif
 
     // 如果参数应动画化，则设置/不设置此标志
     animateParam,
-    dontRestrictBounds, // Premiere 未使用
-    spaceIsAbsolute, // Premiere 未使用
-    resIndependent, // Premiere 未使用
+    dontRestrictBounds,
+    spaceIsAbsolute,
+    resIndependent,
 
     // 参数数据的字节大小
-    2
-
-    ANIM_ParamAtom {
-      1,
-      "目标颜色", 2,
-
-      // 在此处放置数据类型
-      ANIM_DT_COLOR_RGB,
-
-      // UI 控件类型
-      ANIM_UI_COLOR_RGB,
-      0x0,
-      0x0,
-      0x0,
-      0x0,
-      0x0,
-      0x0,
-      0x0,
-      0x0,
-
-      #ifdef PiPLVer2p3
-      dontScaleUIRange,
-      #endif
-
-      // 如果参数应动画化，则设置/不设置此标志
-      animateParam,
-      dontRestrictBounds,
-      spaceIsAbsolute,
-      resIndependent,
-
-      // 参数数据的字节大小
-      4
-    },
+    4
+   },
   }
 };
 ```
@@ -162,7 +162,7 @@ resource 'PiPL' (16000) {
 
 ```cpp
 short xFilter (
-  short        selector,
+  short   selector,
   VideoHandle  theData)
 ```
 

@@ -1,33 +1,32 @@
-const fs = require('fs');
-const path = require('path');
-const fg = require('fast-glob');
-const matter = require('gray-matter');
+import fs from 'fs/promises';
+import path from 'path';
+import fg from 'fast-glob';
+import matter from 'gray-matter';
+import { fileURLToPath } from 'url';
 
-const enDir = path.resolve(__dirname, 'src/content/docs/en');
-const zhDir = path.resolve(__dirname, 'src/content/docs/zh');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// 匹配所有 md 文件
+const enDir = path.resolve(__dirname, '../src/content/docs/en');
+const zhDir = path.resolve(__dirname, '../src/content/docs/zh-cn');
+
 async function getMarkdownFiles(dir) {
   return await fg('**/*.md', { cwd: dir, onlyFiles: true });
 }
 
-// 提取 ## 和 ### 标题
-function extractHeadings(content) {
+function countHeadings(content) {
   const lines = content.split('\n');
-  const headings = [];
+  let h2 = 0;
+  let h3 = 0;
 
-  for (let line of lines) {
-    if (/^#{2,3}\s+/.test(line)) {
-      const level = line.startsWith('###') ? 3 : 2;
-      const text = line.replace(/^#{2,3}\s+/, '').trim();
-      headings.push({ level, text });
-    }
+  for (const line of lines) {
+    if (/^##\s+/.test(line)) h2++;
+    else if (/^###\s+/.test(line)) h3++;
   }
 
-  return headings;
+  return { h2, h3 };
 }
 
-// 主流程
 async function compareDocs() {
   const enFiles = await getMarkdownFiles(enDir);
   const zhFiles = await getMarkdownFiles(zhDir);
@@ -35,36 +34,25 @@ async function compareDocs() {
   const commonFiles = enFiles.filter(f => zhFiles.includes(f));
 
   for (const file of commonFiles) {
-    const enContent = fs.readFileSync(path.join(enDir, file), 'utf8');
-    const zhContent = fs.readFileSync(path.join(zhDir, file), 'utf8');
+    const enContent = matter(await fs.readFile(path.join(enDir, file), 'utf8')).content;
+    const zhContent = matter(await fs.readFile(path.join(zhDir, file), 'utf8')).content;
 
-    const enHeadings = extractHeadings(matter(enContent).content);
-    const zhHeadings = extractHeadings(matter(zhContent).content);
+    const enCount = countHeadings(enContent);
+    const zhCount = countHeadings(zhContent);
 
-    const enSet = new Set(enHeadings.map(h => h.text));
-    const zhSet = new Set(zhHeadings.map(h => h.text));
-
-    const missingInZh = [...enSet].filter(text => !zhSet.has(text));
-    const missingInEn = [...zhSet].filter(text => !enSet.has(text));
-
-    if (missingInZh.length || missingInEn.length) {
+    if (enCount.h2 !== zhCount.h2 || enCount.h3 !== zhCount.h3) {
       console.log(`❗ File: ${file}`);
-
-      if (missingInZh.length) {
-        console.log('  Missing in ZH:');
-        missingInZh.forEach(h => console.log(`    - ${h}`));
+      if (enCount.h2 !== zhCount.h2) {
+        console.log(`  H2 count mismatch: EN=${enCount.h2}, ZH=${zhCount.h2}`);
       }
-
-      if (missingInEn.length) {
-        console.log('  Missing in EN:');
-        missingInEn.forEach(h => console.log(`    - ${h}`));
+      if (enCount.h3 !== zhCount.h3) {
+        console.log(`  H3 count mismatch: EN=${enCount.h3}, ZH=${zhCount.h3}`);
       }
-
       console.log();
     }
   }
 
-  console.log('✅ Done comparing headings.');
+  console.log('✅ Heading count comparison complete.');
 }
 
 compareDocs().catch(console.error);

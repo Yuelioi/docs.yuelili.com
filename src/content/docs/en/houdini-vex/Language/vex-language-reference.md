@@ -156,7 +156,7 @@ attributes onto geometry to control VEX code.
 ```vex
 surface
 noise_surf(vector clr = {1,1,1}; float frequency = 1;
-           export vector nml = {0,0,0})
+   export vector nml = {0,0,0})
 {
     Cf = clr * (float(noise(frequency * P)) + 0.5) * diffuse(normalize(N));
     nml = normalize(N)*0.5 + 0.5;
@@ -188,14 +188,14 @@ color picker UI). You can do this with [user interface compiler pragmas](pragmas
 #pragma opname        noise_surf
 #pragma oplabel        "Noisy Surface"
 
-#pragma label    clr            "Color"
+#pragma label    clr    "Color"
 #pragma label    frequency    "Frequency"
 
-#pragma hint    clr            color
+#pragma hint    clr    color
 #pragma range    frequency    0.1 10
 
 surface noise_surf(vector clr = {1,1,1}; float frequency = 1;
-           export vector nml = {0,0,0})
+   export vector nml = {0,0,0})
 {
     Cf = clr * (float(noise(frequency * P)) + 0.5) * diffuse(normalize(N));
     nml = normalize(N)*0.5 + 0.5;
@@ -312,29 +312,29 @@ operator-type-interactions
 - When you apply an operation to a `float` and an `int`, the result is the type to the left of the operator. That is, `float * int = float`, while `int * float = int`.
 - If you add, multiply, divide, or subtract a vector with a scalar value (`int` or `float`), VEX returns a vector of the same size, with the operation applied component-wise. For example:
 
-```
+```vex
 {1.0, 2.0, 3.0} * 2.0 == {2.0, 4.0, 6.0}
 
-```vex
+```
 
 - If you add, multiply, divide, or subtract vectors of different size, VEX returns a vector of the larger size. The operation is applied component-wise.
   **Important**: the “missing” component(s) on the smaller vector are filled in as `{0.0, 0.0, 0.0, 1.0}`
 
-```
+```vex
 
 {1.0, 2.0, 3.0} * {2.0, 3.0, 4.0, 5.0} == {2.0, 6.0, 12.0, 5.0}
 
-```vex
+```
 
 This can give surprising results if you're not expecting it, for example:
 
-```
+```vex
 
 // Third element of the vector2 is treated as 0,
 // but fourth element is treated as 1.0
 {1.0, 2.0} + {1.0, 2.0, 3.0, 4.0} == {2.0, 4.0, 3.0, 5.0}
 
-```vex
+```
 
 If you're combining different-sized vectors, you might want to break out the components and operate on them “manually” to get the results you want without surprises.
 
@@ -377,7 +377,7 @@ Member data can be assigned default values in the struct definition similar to C
 
 Two implicit constructor functions are created for each struct. The first takes initialization arguments in the order they are declared in the struct, the second takes no arguments but sets all members to their default values.
 
-```
+```vex
 
 # include <math.h>
 
@@ -415,7 +415,7 @@ basis b2 = { {1,0,0}, {0,1,0}, {0,0,1} };         // Initialize as explicit stru
 // You can use M_PI or PI
 b1 = rotate(b1, {0,0,1}, M_PI/6);
 
-```vex
+```
 
 Note
 You must define structs before using them in the source file.
@@ -433,7 +433,7 @@ allow a limited form of object-oriented programming.
   for example `sampler->sample()`.
   Note inside a struct function that you can call other methods on the struct using `this->method()`.
 
-```
+```vex
 
 struct randsampler {
     // Fields
@@ -457,7 +457,7 @@ cvex shader()
     }
 }
 
-```vex
+```
 
 Mantra Specific Types
 
@@ -482,7 +482,7 @@ value of one type into another (for example, an int into a float).
 
 This is sometimes necessary, as when you have the following:
 
-```
+```vex
 
 int a, b;
 float c;
@@ -501,7 +501,7 @@ int a, b;
 float c;
 c = (float)a / (float)b;
 
-```vex
+```
 
 This generates additional instructions to perform the casts. This
 may be an issue in performance-sensitive sections of your code.
@@ -522,12 +522,12 @@ return either a float or vector.
 
 In the code:
 
-```
+```vex
 
 float n;
 n = noise(noise(P));
 
-```vex
+```
 
 …VEX could dispatch to either `float noise(vector)` or
 `vector noise(vector)`.
@@ -535,11 +535,11 @@ n = noise(noise(P));
 To cast a function call, surround it with `typename( ... )`, as
 in:
 
-```
+```vex
 
 n = noise( vector( noise(P) ) );
 
-```vex
+```
 
 While this looks like a function call, it does nothing but disambiguate the
 function call inside and has no performance overhead.
@@ -548,12 +548,12 @@ Function casting is implied when you assign a function call directly to a
 variable of a specified type. So the following expressions are equivalent,
 and the function cast may be omitted for more concise code:
 
-```
+```vex
 
 vector n = vector( noise(P) );        // Unnecessary function cast
 vector n = noise(P);
 
-```vex
+```
 
 Note
 If VEX is unable to determine which signature of a function you are

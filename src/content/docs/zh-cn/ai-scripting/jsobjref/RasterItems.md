@@ -67,7 +67,7 @@ title: RasterItems
 
 #### 参数
 
-| 参数      | 类型   | 描述               |
+| 参数      | 类型   | 描述         |
 | --------- | ------ | ------------------ |
 | `name`    | 字符串 | 要获取的元素的名称 |
 
@@ -87,7 +87,7 @@ title: RasterItems
 
 #### 参数
 
-| 参数      | 类型           | 描述               |
+| 参数      | 类型     | 描述         |
 | --------- | -------------- | ------------------ |
 | `itemKey` | 字符串, 数字   | 字符串或数字键     |
 
@@ -138,16 +138,16 @@ if (app.documents.length > 0 && app.activeDocument.rasterItems.length > 0) {
 
     switch (rasterArt.imageColorSpace) {
         case ImageColorSpace.CMYK:
-            $.writeln("第一个栅格项的颜色空间是 CMYK");
-            break;
+      $.writeln("第一个栅格项的颜色空间是 CMYK");
+      break;
 
         case ImageColorSpace.RGB:
-            $.writeln("第一个栅格项的颜色空间是 RGB");
-            break;
+      $.writeln("第一个栅格项的颜色空间是 RGB");
+      break;
 
         case ImageColorSpace.GRAYSCALE:
-            $.writeln("第一个栅格项的颜色空间是 GRAYSCALE");
-            break;
+      $.writeln("第一个栅格项的颜色空间是 GRAYSCALE");
+      break;
     }
 }
 ```

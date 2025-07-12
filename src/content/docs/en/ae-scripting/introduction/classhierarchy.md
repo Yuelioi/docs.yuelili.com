@@ -23,41 +23,41 @@ Note that some classes exist only as base classes, and demonstrate unexpected be
 ## Properties, Property Groups, and Layers
 
 - [PropertyBase object](../../property/propertybase) ⚠
-    - [Property object](../../property/property)
-    - [PropertyGroup object](../../property/propertygroup)
-        - [MaskPropertyGroup object](../../property/maskpropertygroup)
-        - [Layer object](../../layer/layer) ⚠
-            - [AVLayer object](../../layer/avlayer)
-                - [ShapeLayer object](../../layer/shapelayer)
-                - [TextLayer object](../../layer/textlayer)
-            - [CameraLayer object](../../layer/cameralayer)
-            - [LightLayer object](../../layer/lightlayer)
+  - [Property object](../../property/property)
+  - [PropertyGroup object](../../property/propertygroup)
+    - [MaskPropertyGroup object](../../property/maskpropertygroup)
+    - [Layer object](../../layer/layer) ⚠
+      - [AVLayer object](../../layer/avlayer)
+        - [ShapeLayer object](../../layer/shapelayer)
+        - [TextLayer object](../../layer/textlayer)
+      - [CameraLayer object](../../layer/cameralayer)
+      - [LightLayer object](../../layer/lightlayer)
 
 ---
 
 ## Project Items
 
 - [Item object](../../item/item) ❌
-    - [AVItem object](../../item/avitem) ❌
-        - [CompItem object](../../item/compitem)
-        - [FootageItem object](../../item/footageitem)
-    - [FolderItem object](../../item/folderitem)
+  - [AVItem object](../../item/avitem) ❌
+    - [CompItem object](../../item/compitem)
+    - [FootageItem object](../../item/footageitem)
+  - [FolderItem object](../../item/folderitem)
 
 ---
 
 ## Footage Item Sources
 
 - [FootageSource object](../../sources/footagesource) ❌
-    - [FileSource object](../../sources/filesource)
-    - [PlaceholderSource object](../../sources/placeholdersource)
-    - [SolidSource object](../../sources/solidsource)
+  - [FileSource object](../../sources/filesource)
+  - [PlaceholderSource object](../../sources/placeholdersource)
+  - [SolidSource object](../../sources/solidsource)
 
 ---
 
 ## Collections
 
 - [Collection object](../../other/collection) ❌
-    - [ItemCollection object](../../item/itemcollection)
-    - [LayerCollection object](../../layer/layercollection)
-    - [OMCollection object](../../renderqueue/omcollection)
-    - [RQItemCollection object](../../renderqueue/rqitemcollection)
+  - [ItemCollection object](../../item/itemcollection)
+  - [LayerCollection object](../../layer/layercollection)
+  - [OMCollection object](../../renderqueue/omcollection)
+  - [RQItemCollection object](../../renderqueue/rqitemcollection)

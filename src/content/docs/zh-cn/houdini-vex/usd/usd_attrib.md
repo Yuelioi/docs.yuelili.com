@@ -46,6 +46,6 @@ vector b[] = usd_attrib(0, "/geo/cube", "attribute_name_b");
 
 // 获取不同时间码下"bar"属性的值
 f[]@b_at_current_frame = usd_attrib(0, "/geo/sphere", "bar");
-f[]@b_at_frame_7       = usd_attrib(0, "/geo/sphere", "bar", 7.0);
+f[]@b_at_frame_7   = usd_attrib(0, "/geo/sphere", "bar", 7.0);
 
 ```

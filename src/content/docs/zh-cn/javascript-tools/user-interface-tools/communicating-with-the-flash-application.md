@@ -71,7 +71,7 @@ ExternalInterface.addCallback( "getActionScriptArray", this, getActionScriptArra
 
 [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit)中的这些示例演示了如何使用Flash Player：
 
-|                                                                   示例                                                                   |                                                                  描述                                                                  |
+|      示例      |    描述    |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| [UsingFlashPlayer.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/UsingFlashPlayer.jsx) | 展示如何创建Flash® Player，并使用它加载并播放SWF文件中定义的电影。                                           |
+| [UsingFlashPlayer.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/UsingFlashPlayer.jsx) | 展示如何创建Flash® Player，并使用它加载并播放SWF文件中定义的电影。       |
 | [ActionScriptDemo.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/ActionScriptDemo.jsx) | 展示如何在Adobe应用程序脚本环境和Flash Player的ActionScript™脚本环境之间进行通信。 |

@@ -9,7 +9,6 @@ title: fontsobject
 This functionality was added in After Effects 24.0
 :::
 
-
 #### Description
 
 The Fonts objects provides information about the current font ecosystem on your device.
@@ -79,7 +78,6 @@ alert(firstFontFamilyName+" "+firstFamilyStyle);
 This functionality was added in After Effects 24.6
 :::
 
-
 #### Description
 
 Provides access to the Favorites list presented in the Character panel and Properties panel. To set the Favorites simply provide an (unsorted) array of strings based on the [familyName](../fontobject#fontobjectfamilyname). To clear the list simply assign an empty Array.
@@ -97,7 +95,6 @@ Array of Strings; read/write.
 :::note
 This functionality was added in After Effects 24.6
 :::
-
 
 #### Description
 
@@ -118,7 +115,6 @@ Array of Arrays of [Font Objects](../fontobject); read-only.
 :::note
 This functionality was added in After Effects 24.2
 :::
-
 
 #### Description
 
@@ -170,7 +166,6 @@ alert(variableFontList.length);
 This functionality was added in After Effects 24.6
 :::
 
-
 #### Description
 
 When a Project is opened and one or more fonts are not found in the local font environment, a *sync* process is initiated with Adobe Fonts to see if one or more Fonts could be activated and installed.
@@ -180,7 +175,6 @@ By default this happens automatically—this property will disable it from happe
 :::warning
 The rules for deciding if Adobe Fonts has a matching font is entirely based on the PostScript name. With some Variable Fonts, due to ambiguity about which font has which named instance, it is possible that more than one face (Regular/Italic) may be installed during an activation. Whether the installed font is a valid replacement is controlled by the [FontsObject.substitutedFontReplacementMatchPolicy](#fontsobjectsubstitutedfontreplacementmatchpolicy).
 :::
-
 
 #### Type
 
@@ -203,7 +197,6 @@ The list of all the missing or substituted fonts of the current Project.
 A substituted font is a font that was already missing when the project is opened. A missing font is a font that went missing (font being uninstalled, for example) *while* the project was open.
 :::
 
-
 #### Type
 
 Array of [Font objects](../fontobject); read-only.
@@ -217,7 +210,6 @@ Array of [Font objects](../fontobject); read-only.
 :::note
 This functionality was added in After Effects 24.6
 :::
-
 
 #### Description
 
@@ -237,7 +229,6 @@ Array of Strings; read/write.
 This functionality was added in After Effects 24.6
 :::
 
-
 #### Description
 
 Controls the rules which are used to determine which fonts are considered matching for automatic replacement for a substituted [Font object](../fontobject).
@@ -248,10 +239,10 @@ A `SubstitutedFontReplacementMatchPolicy` enumerated value; read/write. One of:
 
 - `SubstitutedFontReplacementMatchPolicy.POSTSCRIPT_NAME` is the default; any [Font object](../fontobject) which has the same PostScript name is a valid candidate for replacement of a substituted [Font object](../fontobject).
 - `SubstitutedFontReplacementMatchPolicy.CTFI_EQUAL` requires that the following properties of substituted [Font object](../fontobject) must match to be considered a valid candidate:
-    - [postScriptName](../fontobject#fontobjectpostscriptname)
-    - [technology](../fontobject#fontobjecttechnology)
-    - [writingScripts](../fontobject#fontobjectwritingscripts) (primary)
-    - [designVector](../fontobject#fontobjectdesignvector)
+  - [postScriptName](../fontobject#fontobjectpostscriptname)
+  - [technology](../fontobject#fontobjecttechnology)
+  - [writingScripts](../fontobject#fontobjectwritingscripts) (primary)
+  - [designVector](../fontobject#fontobjectdesignvector)
 - `SubstitutedFontReplacementMatchPolicy.DISABLED` means that no [Font object](../fontobject) is an acceptable replacement for a the substituted [Font object](../fontobject).
 
 ---
@@ -265,7 +256,6 @@ A `SubstitutedFontReplacementMatchPolicy` enumerated value; read/write. One of:
 :::note
 This functionality was added in After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
 :::
-
 
 #### Description
 
@@ -284,10 +274,10 @@ alert(str);
 
 #### Parameters
 
-|      Parameter      |      Type       |                        Description                         |
+|      Parameter      |      Type       |              Description               |
 | ------------------- | --------------- | ---------------------------------------------------------- |
 | `charString`        | String          | Characters to check. If empty, will return an empty array. |
-| `preferredCTScript` | `CTScript` enum | CT Script to prefer                                        |
+| `preferredCTScript` | `CTScript` enum | CT Script to prefer          |
 
 #### Returns
 
@@ -305,7 +295,6 @@ Array of generic objects;
 :::note
 This functionality was added in After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
 :::
-
 
 #### Description
 
@@ -329,7 +318,7 @@ var font = app.fonts.getDefaultFontForCTScript(CTScript.CT_JAPANESE_SCRIPT);
 
 #### Parameters
 
-| Parameter  |      Type       |                   Description                    |
+| Parameter  |      Type       |         Description          |
 | ---------- | --------------- | ------------------------------------------------ |
 | `ctScript` | `CTScript` enum | Corresponding CTScript to get default font from. |
 
@@ -346,7 +335,6 @@ var font = app.fonts.getDefaultFontForCTScript(CTScript.CT_JAPANESE_SCRIPT);
 :::note
 This functionality was added in After Effects 24.2
 :::
-
 
 #### Description
 
@@ -383,7 +371,6 @@ This function will return an array of [Font object](../fontobject) based on the 
 :::tip
 The returned array length can be more than 1 if you have multiple copies of a same font.
 :::
-
 
 ```javascript
 var fontList = app.fonts.getFontsByFamilyNameAndStyleName("Abolition", "Regular")
@@ -442,7 +429,6 @@ Array of [Font objects](../fontobject); read-only.
 This functionality was added in After Effects 24.6
 :::
 
-
 #### Description
 
 The addition and removal of font files in what is considered the *system font folders* is recognized and handled automatically without user intervention to update the font environment. Non-system font folders are not automatically handled and so additions and removal of font files in these folders are not recognized until the After Effects is restarted.
@@ -474,7 +460,6 @@ Boolean; One of:
 This functionality was added in After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
 :::
 
-
 #### Description
 
 This function will set an instance of [Font object](../fontobject) mapped based on `CTScript` parameter.
@@ -505,9 +490,9 @@ alert("set:" + ret);
 
 #### Parameters
 
-| Parameter  |             Type             |                           Description                            |
+| Parameter  |   Type   |       Description        |
 | ---------- | ---------------------------- | ---------------------------------------------------------------- |
-| `ctScript` | `CTScript` enum              | CTScript for font to be mapped                                   |
+| `ctScript` | `CTScript` enum    | CTScript for font to be mapped               |
 | `font`     | [Font object](../fontobject) | The font to be mapped. If `null`, then current mapping is reset. |
 
 #### Returns

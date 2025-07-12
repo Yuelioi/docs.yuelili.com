@@ -7,7 +7,6 @@ title: TrackItem object
 
 `app.project.sequences[index].videoTracks[index].clips[index]`
 
-
 #### Description
 
 The TrackItem object represents an item on a video or audio track, within a [Sequence object](../../sequence/sequence).
@@ -21,7 +20,6 @@ The TrackItem object represents an item on a video or audio track, within a [Seq
 `app.project.sequences[index].audioTracks[index].clips[index].components`
 
 `app.project.sequences[index].videoTracks[index].clips[index].components`
-
 
 #### Description
 
@@ -39,7 +37,6 @@ The components associated with this trackItem. This can include intrinsic transf
 
 `app.project.sequences[index].videoTracks[index].clips[index].duration`
 
-
 #### Description
 
 The duration of the trackItem.
@@ -56,7 +53,6 @@ The duration of the trackItem.
 
 `app.project.sequences[index].videoTracks[index].clips[index].end`
 
-
 #### Description
 
 The visible end time of the trackItem in the sequence, relative to the beginning of its corresponding sequence (NOT the sequence zero point).
@@ -64,7 +60,6 @@ The visible end time of the trackItem in the sequence, relative to the beginning
 :::note
 This may differ from the trackItem's out point, which is relative to the source.
 :::
-
 
 #### Type
 
@@ -77,7 +72,6 @@ This may differ from the trackItem's out point, which is relative to the source.
 `app.project.sequences[index].audioTracks[index].clips[index].inPoint`
 
 `app.project.sequences[index].videoTracks[index].clips[index].inPoint`
-
 
 #### Description
 
@@ -95,7 +89,6 @@ The in point set on the source for this trackItem instance, relative to the begi
 
 `app.project.sequences[index].videoTracks[index].clips[index].matchName`
 
-
 #### Description
 
 *Add a description*
@@ -111,7 +104,6 @@ String; read-only.
 `app.project.sequences[index].audioTracks[index].clips[index].mediaType`
 
 `app.project.sequences[index].videoTracks[index].clips[index].mediaType`
-
 
 #### Description
 
@@ -132,7 +124,6 @@ String, one of:
 
 `app.project.sequences[index].videoTracks[index].clips[index].name`
 
-
 #### Description
 
 The name of the track item.
@@ -148,7 +139,6 @@ String; read/write.
 `app.project.sequences[index].audioTracks[index].clips[index].nodeId`
 
 `app.project.sequences[index].videoTracks[index].clips[index].nodeId`
-
 
 #### Description
 
@@ -166,7 +156,6 @@ String.
 
 `app.project.sequences[index].videoTracks[index].clips[index].outPoint`
 
-
 #### Description
 
 The out point set on the source for this TrackItem instance, relative to the beginning of the source.
@@ -182,7 +171,6 @@ The out point set on the source for this TrackItem instance, relative to the beg
 `app.project.sequences[index].audioTracks[index].clips[index].projectItem`
 
 `app.project.sequences[index].videoTracks[index].clips[index].projectItem`
-
 
 #### Description
 
@@ -200,7 +188,6 @@ A [ProjectItem object](../projectitem).
 
 `app.project.sequences[index].videoTracks[index].clips[index].start`
 
-
 #### Description
 
 The visible start time of the trackItem in the sequence, relative to the beginning of its corresponding sequence (NOT the sequence zero point). Note: This may differ from the trackItem's in point, which is relative to the source.
@@ -216,7 +203,6 @@ The visible start time of the trackItem in the sequence, relative to the beginni
 `app.project.sequences[index].audioTracks[index].clips[index].type`
 
 `app.project.sequences[index].videoTracks[index].clips[index].type`
-
 
 #### Description
 
@@ -236,17 +222,16 @@ Number, `1` means video, `2` means audio.
 
 `app.project.sequences[index].audiotracks[index].getMGTComponent`
 
-
 #### Description
 
 Adds an After Effects Motion Graphics Template - a Mogrt - to the selected track at the specified time.
 
 #### Parameters
 
-|    Parameter     |  Type   |                                       Description                                       |
+|    Parameter     |  Type   |         Description         |
 | ---------------- | ------- | --------------------------------------------------------------------------------------- |
-| `mogrtPath`      | String  | Full path to a valid .mogrt, created in After Effects                                   |
-| `targetTime`     | String  | The time at which to insert the .mogrt, in ticks                                        |
+| `mogrtPath`      | String  | Full path to a valid .mogrt, created in After Effects               |
+| `targetTime`     | String  | The time at which to insert the .mogrt, in ticks          |
 | `vidTrackOffset` | Integer | The offset from 0 (the first available track), on which to insert video from the .mogrt |
 | `audTrackOffset` | Integer | The offset from 0 (the first available track), on which to insert audio from the .mogrt |
 
@@ -261,7 +246,6 @@ A Component object representing the parameters of the .mogrt, which the creator 
 `app.project.sequences[index].audioTracks[index].clips[index].getSpeed()`
 
 `app.project.sequences[index].videoTracks[index].clips[index].getSpeed()`
-
 
 #### Description
 
@@ -283,7 +267,6 @@ Returns the speed multiplier applied to the TrackItem, as a Float. No speed adju
 
 `app.project.sequences[index].videoTracks[index].clips[index].isAdjustmentLayer()`
 
-
 #### Description
 
 Returns wheter the TrackItem is an adjustment layer.
@@ -303,7 +286,6 @@ Returns `true` if the trackitem is an adjustment layer; `false` if not.
 `app.project.sequences[index].audioTracks[index].clips[index].isSpeedReversed()`
 
 `app.project.sequences[index].videoTracks[index].clips[index].isSpeedReversed()`
-
 
 #### Description
 
@@ -325,7 +307,6 @@ Returns `1` if TrackItem is reversed; `0` if not.
 
 `app.project.sequences[index].videoTracks[index].clips[index].isSelected()`
 
-
 #### Description
 
 Retrieves the current selection state of the trackItem.
@@ -346,14 +327,13 @@ Returns `true` if trackItem is selected; `false` if not.
 
 `app.project.sequences[index].videoTracks[index].clips[index].setSelected(state, updateUI)`
 
-
 #### Description
 
 Sets the selection state of the trackItem.
 
 #### Parameters
 
-| Parameter  |  Type   |                                  Description                                  |
+| Parameter  |  Type   |              Description              |
 | ---------- | ------- | ----------------------------------------------------------------------------- |
 | `state`    | Integer | If `1`, the track item will be selected; if `0`, it will be deselected.       |
 | `updateUI` | Integer | If `1`, the Premiere Pro UI will be updated after this function call is made. |
@@ -369,7 +349,6 @@ Returns `0` if successful.
 `app.project.sequences[index].audioTracks[index].clips[index].getMatchName()`
 
 `app.project.sequences[index].videoTracks[index].clips[index].getMatchName()`
-
 
 #### Description
 
@@ -391,17 +370,16 @@ Returns the match name as a String if successful.
 
 `app.project.sequences[index].videoTracks[index].clips[index].remove(inRipple, inAlignToVideo)`
 
-
 #### Description
 
 Sets the selection state of the trackItem.
 
 #### Parameters
 
-|    Parameter     |  Type   |                                                    Description                                                    |
+|    Parameter     |  Type   |            Description            |
 | ---------------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
 | `inRipple`       | Boolean | If `1`, later track items will be moved earlier, to fill the gap; if `0`, later track items will remain in place. |
-| `inAlignToVideo` | Boolean | If `1`, Premiere Pro will align moved track items to the start of the nearest video frame.                        |
+| `inAlignToVideo` | Boolean | If `1`, Premiere Pro will align moved track items to the start of the nearest video frame.              |
 
 #### Returns
 
@@ -415,14 +393,13 @@ Returns `0` if successful.
 
 `app.project.sequences[index].videoTracks[index].clips[index].disabled`
 
-
 #### Description
 
 Sets the disabled state of the TrackItem. Read/Write.
 
 #### Parameters
 
-|     Parameter     |  Type   |                                    Description                                     |
+|     Parameter     |  Type   |                Description                 |
 | ----------------- | ------- | ---------------------------------------------------------------------------------- |
 | `newDisableState` | Boolean | If `true`, this TrackItem will be disabled; if `false`, TrackItem will be enabled. |
 
@@ -438,14 +415,13 @@ Returns `0` if successful.
 
 `app.project.sequences[index].videoTracks[index].clips[index].move(newInPoint)`
 
-
 #### Description
 
 Moves the inPoint of the track item to a new time, by shifting it by a number of seconds.
 
 #### Parameters
 
-|  Parameter   |              Type               |                                          Description                                          |
+|  Parameter   |    Type     |            Description            |
 | ------------ | ------------------------------- | --------------------------------------------------------------------------------------------- |
 | `newInPoint` | [Time object](../../other/time) | A Time object that represent the amount of time, in seconds, to shift the track item's start. |
 

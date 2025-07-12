@@ -66,9 +66,9 @@ dict rgb_table()
 VEX要求类型在编译时已知，但实际存储类型可能在运行时变化。因此通常需要显式类型转换函数来指定提取类型。在可能的情况下，原生类型将被转换为所需类型。
 
 ```vex
-dict dictionary;        // 创建空字典
-dictionary['key'] = 3;        // 在key索引处存储3
-float three = dictionary['key'];        // 提取key
+dict dictionary;    // 创建空字典
+dictionary['key'] = 3;    // 在key索引处存储3
+float three = dictionary['key'];    // 提取key
 dictionary['newkey'] = dictionary['key'];  // 错误：类型不明确！
 dictionary['newkey'] = int(dictionary['key']);  // 以int类型提取key并复制
 

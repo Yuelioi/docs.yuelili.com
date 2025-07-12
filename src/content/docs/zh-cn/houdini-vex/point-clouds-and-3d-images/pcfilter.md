@@ -15,11 +15,11 @@ float pcfilter(int handle; string channel)
     float    value, result = 0;
     while (pciterate(handle))
     {
-        pcimport(handle, "point.distance", d);
-        pcimport(handle, channel, value);
-        w = 1 - smooth(0, radius, d);
-        sum += w;
-        result += w * value;
+    pcimport(handle, "point.distance", d);
+    pcimport(handle, channel, value);
+    w = 1 - smooth(0, radius, d);
+    sum += w;
+    result += w * value;
     }
     result /= sum;
     return result;

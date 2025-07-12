@@ -150,10 +150,10 @@ Adds a new field of the specified type to Premiere Pro's private project metadat
 | `propertyName`  | String  | A name of property to be added.  |
 | `propertyLabel` | String  | A label of property to be added. |
 | `propertyType`  | Integer | Must be one of the following:    |
-|                 |         | - `0` - Integer                  |
-|                 |         | - `1` - `Real`                   |
-|                 |         | - `2` - String                   |
-|                 |         | - `3` - Boolean                  |
+|       |         | - `0` - Integer        |
+|       |         | - `1` - `Real`         |
+|       |         | - `2` - String         |
+|       |         | - `3` - Boolean        |
 
 #### Returns
 
@@ -171,9 +171,9 @@ Closes this project.
 
 #### Parameters
 
-|    Parameter    |  Type   |                               Description                               |
+|    Parameter    |  Type   |           Description           |
 | --------------- | ------- | ----------------------------------------------------------------------- |
-| `saveFirst`     | Integer | If `1`, the project will be saved before closing.                       |
+| `saveFirst`     | Integer | If `1`, the project will be saved before closing.             |
 | `promptIfDirty` | Integer | If `1`, the user will be asked whether they want to save changes first. |
 
 #### Returns
@@ -210,9 +210,9 @@ Creates a new [Sequence object](../../sequence/sequence) with the specified ID.
 
 #### Parameters
 
-|   Parameter    |  Type  |                  Description                   |
+|   Parameter    |  Type  |        Description         |
 | -------------- | ------ | ---------------------------------------------- |
-| `sequenceName` | String | A name of a sequence.                          |
+| `sequenceName` | String | A name of a sequence.      |
 | `sequenceID`   | String | An uniquely identifying ID for a new sequence. |
 
 #### Returns
@@ -231,11 +231,11 @@ Creates a new [Sequence object](../../sequence/sequence) with the given name, in
 
 #### Parameters
 
-|       Parameter       |                          Type                          |                       Description                       |
+|       Parameter       |      Type      |             Description             |
 | --------------------- | ------------------------------------------------------ | ------------------------------------------------------- |
-| `sequenceName`        | String                                                 | Optional. A name for a new sequence.                    |
+| `sequenceName`        | String                   | Optional. A name for a new sequence.          |
 | `arrayOfProjectItems` | Array of [ProjectItem objects](../../item/projectitem) | An array of project items to be inserted into sequence. |
-| `destinationBin`      | [ProjectItem object](../../item/projectitem)           | Optional. A bin to contain sequence.                    |
+| `destinationBin`      | [ProjectItem object](../../item/projectitem)           | Optional. A bin to contain sequence.          |
 
 #### Returns
 
@@ -253,7 +253,7 @@ Deletes the specified [Sequence object](../../sequence/sequence) from the projec
 
 #### Parameters
 
-| Parameter  |                    Type                    |      Description      |
+| Parameter  |          Type          |      Description      |
 | ---------- | ------------------------------------------ | --------------------- |
 | `sequence` | [Sequence object](../../sequence/sequence) | A sequence to delete. |
 
@@ -273,22 +273,22 @@ Exports an AAF file of the specified [Sequence object](../../sequence/sequence),
 
 #### Parameters
 
-|       Parameter        |                    Type                    |                                 Description                                  |
+|       Parameter        |          Type          |             Description              |
 | ---------------------- | ------------------------------------------ | ---------------------------------------------------------------------------- |
-| `sequenceToExport`     | [Sequence object](../../sequence/sequence) | A sequence to export.                                                        |
-| `outputPath`           | String                                     | An output path for .aaf file.                                                |
-| `mixdownVideo`         | Integer                                    | If `1`, render video before export.                                          |
-| `explodeToMono`        | Integer                                    | If `1`, breaks out stereo tracks to mono.                                    |
-| `sampleRate`           | Integer                                    | The sample rate of output audio.                                             |
-| `bitsPerSample`        | Integer                                    | The bits per sample of audio output.                                         |
-| `embedAudio`           | Integer                                    | If `1`, audio is embedded, if `0`, external.                                 |
-| `audioFileFormat`      | Integer                                    | `0` is AIFF, `1` is WAV.                                                     |
-| `trimSources`          | Integer                                    | If `1`, trim and re-encode media before export; `0` exports the entire file. |
-| `handleFrames`         | Integer                                    | The number of handle frames (from 0 to 1000).                                |
-| `presetPath`           | String                                     | A path to export preset (.epr) file.                                         |
-| `renderAudioEffects`   | Integer                                    | If `1`, render audio effects before export.                                  |
-| `includeClipCopies`    | Integer                                    | If `1`, include each copy of a clip.                                         |
-| `preserveParentFolder` | Integer                                    | If `1`, preserves the parent folder, in output.                              |
+| `sequenceToExport`     | [Sequence object](../../sequence/sequence) | A sequence to export.                |
+| `outputPath`           | String                 | An output path for .aaf file.                  |
+| `mixdownVideo`         | Integer                | If `1`, render video before export.            |
+| `explodeToMono`        | Integer                | If `1`, breaks out stereo tracks to mono.                |
+| `sampleRate`           | Integer                | The sample rate of output audio.               |
+| `bitsPerSample`        | Integer                | The bits per sample of audio output.           |
+| `embedAudio`           | Integer                | If `1`, audio is embedded, if `0`, external.             |
+| `audioFileFormat`      | Integer                | `0` is AIFF, `1` is WAV.             |
+| `trimSources`          | Integer                | If `1`, trim and re-encode media before export; `0` exports the entire file. |
+| `handleFrames`         | Integer                | The number of handle frames (from 0 to 1000).            |
+| `presetPath`           | String                 | A path to export preset (.epr) file.           |
+| `renderAudioEffects`   | Integer                | If `1`, render audio effects before export.              |
+| `includeClipCopies`    | Integer                | If `1`, include each copy of a clip.           |
+| `preserveParentFolder` | Integer                | If `1`, preserves the parent folder, in output.          |
 
 #### Returns
 
@@ -306,9 +306,9 @@ Exports an FCP XML representation of the entire project, to the specified output
 
 #### Parameters
 
-|  Parameter   |  Type   |                           Description                           |
+|  Parameter   |  Type   |       Description       |
 | ------------ | ------- | --------------------------------------------------------------- |
-| `outputPath` | String  | An output path for .xml file.                                   |
+| `outputPath` | String  | An output path for .xml file.               |
 | `suppressUI` | Integer | If `1`, no warnings or alerts will be shown, during the export. |
 
 #### Returns
@@ -327,18 +327,18 @@ Exports an OMF file of the specified [Sequence object](../../sequence/sequence),
 
 #### Parameters
 
-|      Parameter      |                    Type                    |                 Description                  |
+|      Parameter      |          Type          |       Description        |
 | ------------------- | ------------------------------------------ | -------------------------------------------- |
-| `sequence`          | [Sequence object](../../sequence/sequence) | The sequence to be output.                   |
-| `filePath`          | String                                     | An output path for .omf file.                |
-| `omfTitle`          | String                                     | The title of the OMF.                        |
-| `sampleRate`        |                                            | The sample rate of output audio.             |
-| `bitsPerSample`     |                                            | The bits per sample of audio output.         |
-| `audioEncapsulated` | Integer                                    | If `1`, audio is embedded, if `0`, external. |
-| `audioFileFormat`   | Integer                                    | `0` is AIFF, `1` is WAV.                     |
-| `trimAudioFiles`    | Integer                                    | `1` means yes, trim audio files.             |
-| `handleFrames`      | Integer                                    | Number of handle frames (from 0 to 1000).    |
-| `includePan`        | Integer                                    | `1` means include pan info; `0` means don't. |
+| `sequence`          | [Sequence object](../../sequence/sequence) | The sequence to be output.         |
+| `filePath`          | String                 | An output path for .omf file.      |
+| `omfTitle`          | String                 | The title of the OMF.              |
+| `sampleRate`        |              | The sample rate of output audio.   |
+| `bitsPerSample`     |              | The bits per sample of audio output.         |
+| `audioEncapsulated` | Integer                | If `1`, audio is embedded, if `0`, external. |
+| `audioFileFormat`   | Integer                | `0` is AIFF, `1` is WAV.           |
+| `trimAudioFiles`    | Integer                | `1` means yes, trim audio files.   |
+| `handleFrames`      | Integer                | Number of handle frames (from 0 to 1000).    |
+| `includePan`        | Integer                | `1` means include pan info; `0` means don't. |
 
 #### Returns
 
@@ -356,7 +356,7 @@ Exports the currently active [Sequence object](../../sequence/sequence), using a
 
 #### Parameters
 
-|       Parameter        |  Type  |                                                                       Description                                                                        |
+|       Parameter        |  Type  |                     Description                      |
 | ---------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `exportControllerName` | String | The name of the Export Controller plug-in to be used. To use the Premiere Pro SDK example Export Controller, the value would be "SDK Export Controller". |
 
@@ -466,11 +466,11 @@ Imports specified Compositions (by name) from the containing After Effects .aep 
 
 #### Parameters
 
-|  Parameter  |                     Type                     |                             Description                             |
+|  Parameter  |           Type           |         Description         |
 | ----------- | -------------------------------------------- | ------------------------------------------------------------------- |
-| `path`      | String                                       | A path to the After Effects .aep project file.                      |
-| `compNames` | Array of strings                             | Names of compositions within the specified project, to be imported. |
-| `targetBin` | [ProjectItem object](../../item/projectitem) | Optional. The destination bin for this import.                      |
+| `path`      | String         | A path to the After Effects .aep project file.            |
+| `compNames` | Array of strings         | Names of compositions within the specified project, to be imported. |
+| `targetBin` | [ProjectItem object](../../item/projectitem) | Optional. The destination bin for this import.            |
 
 #### Returns
 
@@ -488,9 +488,9 @@ Imports specified Compositions (by name) from the containing After Effects .aep 
 
 #### Parameters
 
-|  Parameter  |                     Type                     |                  Description                   |
+|  Parameter  |           Type           |        Description         |
 | ----------- | -------------------------------------------- | ---------------------------------------------- |
-| `path`      | String                                       | A path to After Effects .aep project file.     |
+| `path`      | String         | A path to After Effects .aep project file.     |
 | `targetBin` | [ProjectItem object](../../item/projectitem) | Optional. The destination bin for this import. |
 
 #### Returns
@@ -509,12 +509,12 @@ Imports media from the specified file paths.
 
 #### Parameters
 
-|        Parameter         |                     Type                     |                                  Description                                   |
+|        Parameter         |           Type           |              Description               |
 | ------------------------ | -------------------------------------------- | ------------------------------------------------------------------------------ |
-| `filePaths`              | Array of strings                             | An array of the file paths to be imported.                                     |
-| `suppressUI`             | Boolean                                      | Whether warning dialogs should be suppressed.                                  |
-| `targetBin`              | [ProjectItem object](../../item/projectitem) | The bin into which the files should be imported.                               |
-| `importAsNumberedStills` | Boolean                                      | Whether the file paths should be interpreted as a sequence of numbered stills. |
+| `filePaths`    | Array of strings         | An array of the file paths to be imported.                 |
+| `suppressUI`   | Boolean                  | Whether warning dialogs should be suppressed.              |
+| `targetBin`    | [ProjectItem object](../../item/projectitem) | The bin into which the files should be imported.           |
+| `importAsNumberedStills` | Boolean                  | Whether the file paths should be interpreted as a sequence of numbered stills. |
 
 #### Returns
 
@@ -532,7 +532,7 @@ Imports an array of [sequence](../../sequence/sequence) objects (with specified 
 
 #### Parameters
 
-|   Parameter   |  Type  |             Description             |
+|   Parameter   |  Type  |   Description   |
 | ------------- | ------ | ----------------------------------- |
 | `path`        | String | A path to a project file.           |
 | `sequenceIDs` | Array  | An array of sequence IDs to import. |
@@ -571,14 +571,14 @@ Creates a new [Sequence object](../../sequence/sequence) with the given name, ba
 
 #### Parameters
 
-|     Parameter     |  Type   |            Description             |
+|     Parameter     |  Type   |            Description   |
 | ----------------- | ------- | ---------------------------------- |
-| `width`           | Integer |                                    |
-| `height`          | Integer |                                    |
+| `width`           | Integer |                |
+| `height`          | Integer |                |
 | `timeBase`        |         | A timebase for a new project item. |
 | `PARNum`          | Integer | Pixel aspect ration numerator.     |
 | `PARDen`          | Integer | Pixel aspect ration denominator.   |
-| `audioSampleRate` |         | Audio sample rate.                 |
+| `audioSampleRate` |         | Audio sample rate.       |
 | `name`            | String  | Name for a new project item.       |
 
 #### Returns
@@ -597,9 +597,9 @@ Creates a new [Sequence object](../../sequence/sequence) with the given name, ba
 
 #### Parameters
 
-|       Parameter        |  Type  |            Description             |
+|       Parameter        |  Type  |            Description   |
 | ---------------------- | ------ | ---------------------------------- |
-| `name`                 | String | Name for a new sequence.           |
+| `name`       | String | Name for a new sequence.           |
 | `pathToSequencePreset` | String | A path to a preset .sqpreset file. |
 
 #### Returns
@@ -618,7 +618,7 @@ Makes the [Sequence object](../../sequence/sequence) with the provided sequence 
 
 #### Parameters
 
-|  Parameter   |                               Type                                |                Description                 |
+|  Parameter   |           Type            |      Description       |
 | ------------ | ----------------------------------------------------------------- | ------------------------------------------ |
 | `sequenceID` | [Sequence.sequenceID](../../sequence/sequence#sequencesequenceid) | A valid sequence ID that should be opened. |
 
@@ -638,7 +638,7 @@ Pauses (and resumes) growing file capture.
 
 #### Parameters
 
-| Parameter |  Type   |            Description             |
+| Parameter |  Type   |            Description   |
 | --------- | ------- | ---------------------------------- |
 | `pause`   | Integer | If `1`, growing files are enabled. |
 
@@ -716,7 +716,7 @@ Sets the current graphics white luminance value, for this project.
 
 #### Parameters
 
-| Parameter |  Type   |                                                                   Description                                                                   |
+| Parameter |  Type   |                 Description                 |
 | --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | `value`   | Integer | The value to be used; must be a value provided by [Project.getSupportedGraphicsWhiteLuminances()](#projectgetsupportedgraphicswhiteluminances). |
 
@@ -736,7 +736,7 @@ Returns the current layout of the Project panel.
 
 #### Parameters
 
-| Parameter |  Type  |                                                                                                               Description                                                                                                               |
+| Parameter |  Type  |                               Description                               |
 | --------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `layout`  | String | Represents the desired Project panel layout. Note: The only known method for generating a valid layout string, is setting the Project panel as desired then using [Project.getProjectPanelMetadata()](#projectgetprojectpanelmetadata). |
 
@@ -756,23 +756,23 @@ Changes the specified scratch disk path to a new path.
 
 #### Parameters
 
-|     Parameter     |          Type          |                 Description                 |
+|     Parameter     |          Type          |       Description       |
 |-------------------|------------------------|---------------------------------------------|
-| `newPath`         | String                 | A new path.                                 |
-| `scratchDiskType` | `ScratchDiskType` enum | One of:                                     |
-|                   |                        | - `ScratchDiskType.FirstVideoCaptureFolder` |
-|                   |                        | - `ScratchDiskType.FirstAudioCaptureFolder` |
-|                   |                        | - `ScratchDiskType.FirstVideoPreviewFolder` |
-|                   |                        | - `ScratchDiskType.FirstAudioPreviewFolder` |
-|                   |                        | - `ScratchDiskType.FirstAutoSaveFolder`     |
-|                   |                        | - `ScratchDiskType.FirstCCLibrariesFolder`  |
-|                   |                        | - `ScratchDiskType.FirstCapsuleMediaFolder` |
-|                   |                        | - `ScratchDiskType.FirstAudioCaptureFolder` |
-|                   |                        | - `ScratchDiskType.FirstVideoPreviewFolder` |
-|                   |                        | - `ScratchDiskType.FirstAudioPreviewFolder` |
-|                   |                        | - `ScratchDiskType.FirstAutoSaveFolder`     |
-|                   |                        | - `ScratchDiskType.FirstCCLibrariesFolder`  |
-|                   |                        | - `ScratchDiskType.FirstCapsuleMediaFolder` |
+| `newPath`         | String       | A new path.             |
+| `scratchDiskType` | `ScratchDiskType` enum | One of:                 |
+|         |              | - `ScratchDiskType.FirstVideoCaptureFolder` |
+|         |              | - `ScratchDiskType.FirstAudioCaptureFolder` |
+|         |              | - `ScratchDiskType.FirstVideoPreviewFolder` |
+|         |              | - `ScratchDiskType.FirstAudioPreviewFolder` |
+|         |              | - `ScratchDiskType.FirstAutoSaveFolder`     |
+|         |              | - `ScratchDiskType.FirstCCLibrariesFolder`  |
+|         |              | - `ScratchDiskType.FirstCapsuleMediaFolder` |
+|         |              | - `ScratchDiskType.FirstAudioCaptureFolder` |
+|         |              | - `ScratchDiskType.FirstVideoPreviewFolder` |
+|         |              | - `ScratchDiskType.FirstAudioPreviewFolder` |
+|         |              | - `ScratchDiskType.FirstAutoSaveFolder`     |
+|         |              | - `ScratchDiskType.FirstCCLibrariesFolder`  |
+|         |              | - `ScratchDiskType.FirstCapsuleMediaFolder` |
 
 #### Returns
 

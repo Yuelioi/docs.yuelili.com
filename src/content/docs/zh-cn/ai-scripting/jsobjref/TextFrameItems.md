@@ -81,12 +81,12 @@ title: TextFrameItems
 
 #### 参数
 
-|   参数        |                               类型                                 |                 描述                  |
+|   参数        |     类型       |   描述      |
 | ------------- | ------------------------------------------------------------------- | ------------------------------------- |
-| `textPath`    | [PathItem](.././PathItem)                                           | 使用的路径项                          |
-| `orientation` | [TextOrientation](../scripting-constants#textorientation), 可选     | 文本的方向                            |
-| `baseFrame`   | [TextFrameItem](.././TextFrameItem), 可选                           | 使用的文本框架                        |
-| `postFix`     | 布尔值, 可选                                                        | 是否在文本框架前后添加内容            |
+| `textPath`    | [PathItem](.././PathItem)           | 使用的路径项      |
+| `orientation` | [TextOrientation](../scripting-constants#textorientation), 可选     | 文本的方向          |
+| `baseFrame`   | [TextFrameItem](.././TextFrameItem), 可选         | 使用的文本框架    |
+| `postFix`     | 布尔值, 可选   | 是否在文本框架前后添加内容      |
 
 #### 返回值
 
@@ -144,14 +144,14 @@ title: TextFrameItems
 
 #### 参数
 
-|   参数        |                               类型                                 |                 描述                  |
+|   参数        |     类型       |   描述      |
 | ------------- | ------------------------------------------------------------------- | ------------------------------------- |
-| `textPath`    | [PathItem](.././PathItem)                                           | 使用的路径项                          |
-| `startTValue` | 数字 (双精度)                                                       | 文本沿路径的起始位置                  |
-| `endTValue`   | 数字 (双精度)                                                       | 文本沿路径的结束位置                  |
-| `orientation` | [TextOrientation](../scripting-constants#textorientation), 可选     | 文本的方向                            |
-| `baseFrame`   | [TextFrameItem](.././TextFrameItem), 可选                           | 使用的文本框架                        |
-| `postFix`     | 布尔值, 可选                                                        | 是否在文本框架前后添加内容            |
+| `textPath`    | [PathItem](.././PathItem)           | 使用的路径项      |
+| `startTValue` | 数字 (双精度)           | 文本沿路径的起始位置      |
+| `endTValue`   | 数字 (双精度)           | 文本沿路径的结束位置      |
+| `orientation` | [TextOrientation](../scripting-constants#textorientation), 可选     | 文本的方向          |
+| `baseFrame`   | [TextFrameItem](.././TextFrameItem), 可选         | 使用的文本框架    |
+| `postFix`     | 布尔值, 可选   | 是否在文本框架前后添加内容      |
 
 #### 返回值
 
@@ -169,9 +169,9 @@ title: TextFrameItems
 
 #### 参数
 
-|   参数        |                               类型                                 |     描述      |
+|   参数        |     类型       |     描述      |
 | ------------- | ------------------------------------------------------------------- | ------------- |
-| `anchor`      | 2个数字的数组                                                       | 点文本锚点    |
+| `anchor`      | 2个数字的数组           | 点文本锚点    |
 | `orientation` | [TextOrientation](../scripting-constants#textorientation), 可选     | 文本的方向    |
 
 #### 返回值

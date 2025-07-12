@@ -49,12 +49,12 @@ while (pcunshaded(handle, "P"))
 {
     sample = set(nrandom("qstrat"), nrandom("qstrat"), 0.0);
     rval = sample_geometry(
-        sample, sample, Time,
-        "scope", getobjectname(),
-        "pipeline", "displacement",
-        "P", pos);
+    sample, sample, Time,
+    "scope", getobjectname(),
+    "pipeline", "displacement",
+    "P", pos);
     if (rval)
-        rval = pcexport(handle, "P", pos);
+    rval = pcexport(handle, "P", pos);
 }
 pcclose(handle);
 

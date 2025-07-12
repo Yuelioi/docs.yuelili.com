@@ -318,16 +318,141 @@ gather(P, dir, "bias", 0.01, "Cf", hitcf) {...}
 vector a_pos[];
 vector a_nml[];
 trace(P, dir, Time,
-        "samplefilter", "all",
-            "P", a_pos,
-            "N", a_nml);
+    "samplefilter", "all",
+      "P", a_pos,
+      "N", a_nml);
 
 ```
 
 ### 采样过滤选项
 
-采样过滤选项
-默认情况下，Houdini使用不透明度混合合成全局变量。在某些情况下，获取最近表面的值（无论是否透明）更有用。您可以使用特殊的`samplefilter`关键字，其字符串值为`closest`或`opacity`，以控制全局变量的值是来自最近表面还是不透明度混合。
+sample-filtering-options
+默认情况下，Houdini使用不透明度混合来合成全局变量。在某些情况下，获取最近表面的值（无论是否透明）更为实用。您可以使用特殊的`samplefilter`关键字，其字符串值为`closest`或`opacity`，来控制全局变量的值是来自最近的表面还是不透明度混合。
 
 "`samplefilter`",
 `string`
+
+当在参数列表中遇到`samplefilter`关键字时，*之后所有*的导入变量将使用指定的过滤模式。您可以在单个gather语句中指定多个`samplefilter`参数，以不同方式过滤不同的变量。
+
+当前允许的`samplefilter`类型包括：
+
+`minimum`
+
+取所有样本的最小值。注意，对于元组值，将使用每个分量的最小值。
+
+`maximum`
+
+取所有样本的最大值。注意，对于元组值，将使用每个分量的最大值。
+
+`opacity`
+
+使用over操作合成样本。
+
+`closest`
+
+这是默认行为，仅返回最近的表面。
+
+`screendoor`
+
+使用样本的随机合成。
+
+`sum`
+
+返回所有样本值的总和。
+
+`sum_square`
+
+返回所有样本值的平方和。
+
+`sum_reciprocal`
+
+返回每个样本的倒数之和。
+
+注意
+当使用[sample_geometry](./sample_geometry "对场景中的几何体进行采样，并从采样表面的着色器返回信息。")时，默认的`samplefilter`设置为`closest`，因为不透明度混合仅在沿射线合成数据时有效。
+
+```vex
+gather(P, dir,
+    "samplefilter", "opacity",
+      "Cf", hitCf,
+      "Of", hitOf,
+    "samplefilter", "closest",
+      "P", hitP,
+      "N", hitN)
+{
+    trace(pos, dir, time,
+      // 使用随机透明度合成命中表面的bsdf
+      "samplefilter", "screendoor",
+      "F", hitF,
+      // 但找到最近样本的位置
+      "samplefilter", "closest",
+      "P", hitP);
+}
+
+```
+
+### 管线选项
+
+pipeline-options
+
+"`pipeline`",
+`string`
+
+在指定变量时，您可以穿插`pipeline`关键字选项来控制读写变量在管线中的填充位置。该值可以是`surface`、`atmosphere`或`displacement`之一。您可以多次指定`pipeline`选项。每次使用该选项都会影响之后指定的任何变量（直到下一次使用`pipeline`，如果有的话）。
+
+```vex
+gather(p, d, "pipeline", "surface", "Cf", surfCf,
+       "pipeline", "atmosphere" "Cf", fogCf, "P", hitP)
+
+```
+
+示例
+
+## 示例
+
+以下示例演示了如何使用`sample_geometry`从一个表面照亮另一个表面。不是使用光源，而是从场景中名为`/obj/sphere_object*`的其他表面收集光照，并将照亮任何分配了geolight表面着色器的表面。
+
+关于该着色器的几点观察：
+
+- 使用`ray:solidangle`输出来按命中表面所对的立体角缩放几何体样本的贡献。这确保使用sample_geometry的结果与基于物理的辐照度匹配。
+- 使用[trace](../shading-and-rendering/trace "从P沿归一化向量D发送一条射线。")指令进行阴影处理
+- 使用[newsampler](./newsampler "为nextsample函数初始化采样序列。")和[nextsample](./nextsample)的高质量采样模式进行抗锯齿处理
+
+```vex
+surface
+geolight(int nsamples = 64)
+{
+    vector    sam;
+    vector    clr, pos;
+    float    angle, sx, sy;
+    int      sid;
+    int      i;
+
+    sid = newsampler();
+
+    Cf = 0;
+    for (i = 0; i < nsamples; i++)
+    {
+    nextsample(sid, sx, sy, "mode", "qstrat");
+    sam = set(sx, sy, 0.0);
+    if (sample_geometry(P, sam, Time,
+      "distribution", "solidangle",
+      "scope", "/obj/sphere_object*",
+      "ray:solidangle", angle, "P", pos, "Cf", clr))
+    {
+      if (!trace(P, normalize(pos-P), Time,
+      "scope", "/obj/sphere_object*",
+      "maxdist", length(pos-P)-0.01))
+      {
+      clr *= angle / (2*PI);
+      clr *= max(dot(normalize(pos-P), normalize(N)), 0);
+      }
+      else
+      clr = 0;
+    }
+    Cf += clr;
+    }
+    Cf /= nsamples;
+}
+
+```

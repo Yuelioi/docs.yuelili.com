@@ -490,3 +490,41 @@ alert(firstAxis.name+"\n"+firstAxis.tag+"\n"+firstAxis.min+"\n"+firstAxis.max);
 `app.fonts.fontsWithDefaultDesignAxes[0].otherFontsWithSameDict(fontObject)`
 
 :::note
+此功能在 After Effects (Beta) 25.0 版本中添加，在 Beta 阶段可能发生变更。
+:::
+
+#### 描述
+
+当传入一个[字体对象](#font-object)作为参数时，返回与该[字体对象](#font-object)共享相同字体字典的所有[字体对象](#font-object)实例组成的数组。
+
+如果参数不是可变字体，或该可变字体只有一个实例（参数本身），则返回空数组。
+
+#### 参数
+
+|    参数     |       类型        |      描述      |
+| ----------- | --------------------------- | -------------- |
+| `fontObject` | [字体对象](#font-object) | 要检查的对象 |
+
+#### 返回值
+
+[字体对象](#font-object)数组，可能为空。
+
+---
+
+### FontObject.postScriptNameForDesignVector()
+
+`app.fonts.fontsWithDefaultDesignAxes[0].postScriptNameForDesignVector([...vectorValues])`
+
+#### 描述
+
+此函数将返回可变字体针对传入的特定设计向量值所对应的PostScript名称。
+
+#### 参数
+
+|     参数      |   类型   |      描述      |
+| ------------- | ------------------------------ | --------------------------------------------------------------------------------------- |
+| `vectorValues` | 浮点数值数组 | 要检查给定可变字体的[FontObject.designVector](#fontobjectdesignvector)的设计向量值。 |
+
+#### 返回值
+
+字符串。

@@ -60,7 +60,7 @@ Examples
 
 ```vex
 v = eval_bsdf(F, inI, dir,
-    "direct", 0,                        // Specify indirect illumination
+    "direct", 0,        // Specify indirect illumination
     "import:sssmfp", sssmfp,        // Read the exported sssmfp parameter
     ...
 );

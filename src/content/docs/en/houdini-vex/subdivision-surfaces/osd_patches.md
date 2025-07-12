@@ -18,7 +18,7 @@ osd_patches(const string file; const face_id)
     {
         int        npatches = osd_patchcount(file, face_id);
         for (int i = 0; i < npatches; i++)
-            append(patches, first+i);
+    append(patches, first+i);
     }
     return patches;
 }

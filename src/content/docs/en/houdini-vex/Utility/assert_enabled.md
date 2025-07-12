@@ -12,7 +12,7 @@ The `assert()` macro uses this function to only execute assertions when `HOUDINI
 #define assert(EXPR)    \
     if (assert_enabled()) { \
         if (!(EXPR)) print_once(sprintf('VEX Assertion Failed %s:%d - (%s)\n', \
-                __FILE__, __LINE__, #EXPR)); \
+        __FILE__, __LINE__, #EXPR)); \
     }
 
 ```

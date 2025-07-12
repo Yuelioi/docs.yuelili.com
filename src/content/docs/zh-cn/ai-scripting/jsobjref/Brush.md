@@ -67,7 +67,7 @@ Illustrator 文档中的画笔。画笔包含在文档中。用户可以在 Illu
 
 #### 参数
 
-| 参数       |           类型            |         描述          |
+| 参数       |     类型      |   描述    |
 | ---------- | ------------------------- | --------------------- |
 | `artItem`  | [PageItem](.././PageItem) | 要应用画笔的艺术项目  |
 
@@ -91,8 +91,8 @@ if (app.documents.length > 0) {
         var newGroup = app.activeDocument.groupItems.add();
 
         for (var i = 0; i < docSelection.length; i++) {
-            var newItem = docSelection[i].duplicate();
-            newItem.moveToBeginning(newGroup);
+      var newItem = docSelection[i].duplicate();
+      newItem.moveToBeginning(newGroup);
         }
 
         var brush = app.activeDocument.brushes[1];

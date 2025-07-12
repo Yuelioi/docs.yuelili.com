@@ -1,7 +1,7 @@
 ---
 title: 类层级结构
 ---
-### After Effects 类层级结构
+# After Effects 类层级结构
 
 本节列出了 After Effects API 相关元素的类层级结构。关于类的基础知识，请参阅 [JavaScript 类](../javascript#javascript-classes)。
 
@@ -61,4 +61,5 @@ title: 类层级结构
   - [LayerCollection 对象](../../layer/layercollection)
   - [OMCollection 对象](../../renderqueue/omcollection)
   - [RQItemCollection 对象](../../renderqueue/rqitemcollection)
+
 ```

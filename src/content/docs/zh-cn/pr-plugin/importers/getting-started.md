@@ -275,8 +275,8 @@ Premiere Pro 中的项目管理器允许用户归档项目、修剪未使用的�
 csSDK_int32 xImportEntry (
   csSDK_int32  selector,
   imStdParms   *stdParms,
-  void         *param1,
-  void         *param2)
+  void     *param1,
+  void     *param2)
 ```
 
 *selector* 是 Premiere 希望导入器执行的操作。`stdParms` 提供了回调函数，用于从 Premiere 获取更多信息或让 Premiere 执行任务。
@@ -297,18 +297,18 @@ typedef struct {
 } imStdParms;
 ```
 
-|      成员      |                   描述                   |
+|      成员      |      描述      |
 |----------------|------------------------------------------|
-| `imInterfaceVer` | 导入器 API 版本                          |
-|                | - Premiere Pro CC 2014 - `IMPORTMOD_VERSION_15` |
-|                | - Premiere Pro CC - `IMPORTMOD_VERSION_14`      |
-|                | - Premiere Pro CS6.0.2 - `IMPORTMOD_VERSION_13` |
-|                | - Premiere Pro CS6 - `IMPORTMOD_VERSION_12`     |
-|                | - Premiere Pro CS5.5 - `IMPORTMOD_VERSION_11`   |
-|                | - Premiere Pro CS5 - `IMPORTMOD_VERSION_10`     |
-|                | - Premiere Pro CS4 - `IMPORTMOD_VERSION_9`      |
-| `funcs`         | 指向导入器回调函数的指针                  |
-| `piSuites`      | 指向通用回调套件的指针                    |
+| `imInterfaceVer` | 导入器 API 版本   |
+|   | - Premiere Pro CC 2014 - `IMPORTMOD_VERSION_15` |
+|   | - Premiere Pro CC - `IMPORTMOD_VERSION_14`      |
+|   | - Premiere Pro CS6.0.2 - `IMPORTMOD_VERSION_13` |
+|   | - Premiere Pro CS6 - `IMPORTMOD_VERSION_12`     |
+|   | - Premiere Pro CS5.5 - `IMPORTMOD_VERSION_11`   |
+|   | - Premiere Pro CS5 - `IMPORTMOD_VERSION_10`     |
+|   | - Premiere Pro CS4 - `IMPORTMOD_VERSION_9`      |
+| `funcs`     | 指向导入器回调函数的指针     |
+| `piSuites`      | 指向通用回调套件的指针       |
 
 ---
 
@@ -317,8 +317,8 @@ typedef struct {
 ```cpp
 typedef struct {
   ClassDataFuncsPtr  classFuncs;
-  csSDK_int32        unused1;
-  csSDK_int32        unused2;
+  csSDK_int32    unused1;
+  csSDK_int32    unused2;
 } imCallbackFuncs;
 
 typedef csSDK_int32 (*importProgressFunc){
@@ -327,10 +327,10 @@ typedef csSDK_int32 (*importProgressFunc){
 void *trimCallbackID};
 ```
 
-|       函数       |                                                                     描述                                                                      |
+|   函数   |       描述         |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| `classFuncs`      | 参见 [ClassData 函数](../../hardware/classdata-functions)。                                                                                   |
-| `importProgressFunc` | 在 *imSaveFile8* 和 *imTrimFile8* 期间，可在 `imSaveFileRec` 和 `imTrimFileRec` 中使用。                                                     |
-|                   | 回调函数指针，用于在项目归档或修剪期间调用 Premiere 并更新进度条并检查是否取消。                                                              |
-|                   | 将返回 `imProgressAbort` 或 `imProgressContinue`。                                                                                            |
-|                   | `trimCallbackID` 参数在相同的结构中传递。                                                                                                     |
+| `classFuncs`      | 参见 [ClassData 函数](../../hardware/classdata-functions)。       |
+| `importProgressFunc` | 在 *imSaveFile8* 和 *imTrimFile8* 期间，可在 `imSaveFileRec` 和 `imTrimFileRec` 中使用。    |
+|      | 回调函数指针，用于在项目归档或修剪期间调用 Premiere 并更新进度条并检查是否取消。         |
+|      | 将返回 `imProgressAbort` 或 `imProgressContinue`。         |
+|      | `trimCallbackID` 参数在相同的结构中传递。        |

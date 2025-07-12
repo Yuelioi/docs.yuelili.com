@@ -10,48 +10,48 @@ title: PageItems
 一个包含 [PageItem](.././PageItem) 对象的集合。提供了对 Illustrator 文档中所有艺术项目的完全访问权限，涵盖以下类：
 
 - [CompoundPathItem](../CompoundPathItem)
-    - [属性](../CompoundPathItem#properties)
-    - [方法](../CompoundPathItem#methods)
-    - [示例](../CompoundPathItem#example)
+  - [属性](../CompoundPathItem#properties)
+  - [方法](../CompoundPathItem#methods)
+  - [示例](../CompoundPathItem#example)
 - [GraphItem](../GraphItem)
-    - [属性](../GraphItem#properties)
-    - [方法](../GraphItem#methods)
+  - [属性](../GraphItem#properties)
+  - [方法](../GraphItem#methods)
 - [GroupItem](../GroupItem)
-    - [属性](../GroupItem#properties)
-    - [方法](../GroupItem#methods)
-    - [示例](../GroupItem#example)
+  - [属性](../GroupItem#properties)
+  - [方法](../GroupItem#methods)
+  - [示例](../GroupItem#example)
 - [LegacyTextItem](../LegacyTextItem)
-    - [属性](../LegacyTextItem#properties)
-    - [方法](../LegacyTextItem#methods)
+  - [属性](../LegacyTextItem#properties)
+  - [方法](../LegacyTextItem#methods)
 - [MeshItem](../MeshItem)
-    - [属性](../MeshItem#properties)
-    - [方法](../MeshItem#methods)
-    - [示例](../MeshItem#example)
+  - [属性](../MeshItem#properties)
+  - [方法](../MeshItem#methods)
+  - [示例](../MeshItem#example)
 - [NonNativeItem](../NonNativeItem)
-    - [属性](../NonNativeItem#properties)
-    - [方法](../NonNativeItem#methods)
+  - [属性](../NonNativeItem#properties)
+  - [方法](../NonNativeItem#methods)
 - [PathItem](../PathItem)
-    - [属性](../PathItem#properties)
-    - [方法](../PathItem#methods)
-    - [示例](../PathItem#example)
+  - [属性](../PathItem#properties)
+  - [方法](../PathItem#methods)
+  - [示例](../PathItem#example)
 - [PlacedItem](../PlacedItem)
-    - [属性](../PlacedItem#properties)
-    - [方法](../PlacedItem#methods)
-    - [示例](../PlacedItem#example)
+  - [属性](../PlacedItem#properties)
+  - [方法](../PlacedItem#methods)
+  - [示例](../PlacedItem#example)
 - [PluginItem](../PluginItem)
-    - [属性](../PluginItem#properties)
-    - [方法](../PluginItem#methods)
-    - [示例](../PluginItem#example)
+  - [属性](../PluginItem#properties)
+  - [方法](../PluginItem#methods)
+  - [示例](../PluginItem#example)
 - [RasterItem](../RasterItem)
-    - [属性](../RasterItem#properties)
-    - [方法](../RasterItem#methods)
+  - [属性](../RasterItem#properties)
+  - [方法](../RasterItem#methods)
 - [SymbolItem](../SymbolItem)
-    - [属性](../SymbolItem#properties)
-    - [方法](../SymbolItem#methods)
+  - [属性](../SymbolItem#properties)
+  - [方法](../SymbolItem#methods)
 - [TextFrameItem](../TextFrameItem)
-    - [属性](../TextFrameItem#properties)
-    - [方法](../TextFrameItem#methods)
-    - [示例](../TextFrameItem#example)
+  - [属性](../TextFrameItem#properties)
+  - [方法](../TextFrameItem#methods)
+  - [示例](../TextFrameItem#example)
 
 你可以通过 [Document](.././Document)、[Layer](.././Layer) 或 [GroupItem](.././GroupItem) 中的 [PageItems](#pageitems) 属性来引用页面项目。
 
@@ -115,7 +115,7 @@ title: PageItems
 
 #### 参数
 
-| 参数     | 类型   | 描述               |
+| 参数     | 类型   | 描述         |
 | -------- | ------ | ------------------ |
 | `name`   | 字符串 | 要获取的元素名称   |
 
@@ -135,7 +135,7 @@ title: PageItems
 
 #### 参数
 
-| 参数      | 类型          | 描述               |
+| 参数      | 类型    | 描述         |
 | --------- | ------------- | ------------------ |
 | `itemKey` | 字符串, 数字  | 字符串或数字键     |
 
@@ -175,13 +175,13 @@ if (app.documents.length > 0) {
         var artItem = sourceDoc.pageItems[i];
         switch (artItem.typename) {
         case "PlacedItem":
-            fileReferences.push(artItem.file.fsName);
-            break;
+      fileReferences.push(artItem.file.fsName);
+      break;
         case "RasterItem":
-            if (!artItem.embedded) {
-                fileReferences.push(artItem.file.fsName);
-            }
-            break;
+      if (!artItem.embedded) {
+          fileReferences.push(artItem.file.fsName);
+      }
+      break;
         }
     }
 

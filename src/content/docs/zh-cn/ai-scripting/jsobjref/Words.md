@@ -71,10 +71,10 @@ title: 单词
 
 #### 参数
 
-|      参数       |                                 类型                                  |       描述       |
+|      参数       |       类型        |       描述       |
 | --------------- | --------------------------------------------------------------------- | ---------------- |
-| `contents`      | 字符串                                                                | 要添加的单词     |
-| `relativeObject`| [TextFrameItem](.././TextFrameItem)，可选                              | 要添加项的对象   |
+| `contents`      | 字符串      | 要添加的单词     |
+| `relativeObject`| [TextFrameItem](.././TextFrameItem)，可选    | 要添加项的对象   |
 | `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 插入文本的位置   |
 
 #### 返回值
@@ -93,7 +93,7 @@ title: 单词
 
 #### 参数
 
-| 参数       | 类型   | 描述         |
+| 参数       | 类型   | 描述   |
 | ---------- | ------ | ------------ |
 | `contents` | 字符串 | 要添加的单词 |
 
@@ -113,7 +113,7 @@ title: 单词
 
 #### 参数
 
-| 参数      | 类型         | 描述           |
+| 参数      | 类型   | 描述     |
 | --------- | ------------ | -------------- |
 | `itemKey` | 字符串, 数字 | 字符串或数字键 |
 
@@ -174,12 +174,12 @@ if (app.documents.length > 0 && app.activeDocument.textFrames.length > 0) {
         var textArt = activeDocument.textFrames[i];
 
         for (var j = 0; j < textArt.words.length; j++) {
-            var word = textArt.words[j];
+      var word = textArt.words[j];
 
-            if (word.contents == searchWord1 || word.contents == searchWord2 || word.contents == searchWord3) {
-                word.filled = true;
-                word.fillColor = wordColor;
-            }
+      if (word.contents == searchWord1 || word.contents == searchWord2 || word.contents == searchWord3) {
+          word.filled = true;
+          word.fillColor = wordColor;
+      }
         }
     }
 }

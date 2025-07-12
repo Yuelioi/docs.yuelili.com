@@ -44,8 +44,8 @@ float[] usd_iprimvartimesamplevalues(const int input; const string primpath, pri
     float time_samples[] = usd_iprimvartimesamples( input, primpath, primvarname );
     foreach( float time_code ; time_samples ) 
     {
-        float value = usd_iprimvar( input, primpath, primvarname, time_code );
-        push( result, value );
+    float value = usd_iprimvar( input, primpath, primvarname, time_code );
+    push( result, value );
     }
 
     return result;

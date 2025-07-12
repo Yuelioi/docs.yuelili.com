@@ -13,9 +13,9 @@ title: 查看对象模型
 
 在默认的Adobe安装中，ESTK位于以下位置：
 
-|   操作系统   |                                       路径                                        |
+|   操作系统   |       路径        |
 | ----------- | --------------------------------------------------------------------------------- |
-| Windows     | `\系统盘\Program Files\Adobe\Adobe Utilities CC\ExtendScript Toolkit CC`          |
+| Windows     | `\系统盘\Program Files\Adobe\Adobe Utilities CC\ExtendScript Toolkit CC`    |
 | Mac OS      | `\系统盘\Applications\Utilities\Adobe Utilities CC\ExtendScript Toolkit CC`       |
 
 1. 启动ESTK。
@@ -64,5 +64,5 @@ VBScript提供了一个类型库，您可以使用它来查看Illustrator对象�
 
 在Illustrator CC安装目录的`/Scripting/Sample Scripts/`文件夹中有几个扩展的示例脚本。
 
-您还可以在[Illustrator脚本参考：VBScript](../../scriptingVBScript/forMoreInfo)中查看脚本示例以及有关各个类、对象、属性、方法和参数的信息。
+您还可以在[Illustrator脚本参考：VBScript](../../scriptingVBScript/forMoreInfo)中查看脚本示例以及有关各个类、对象、属性、方法和参数的信息
 ---

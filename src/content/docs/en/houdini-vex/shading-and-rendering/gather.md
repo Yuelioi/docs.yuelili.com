@@ -363,8 +363,8 @@ vector a_pos[];
 vector a_nml[];
 trace(P, dir, Time,
         "samplefilter", "all",
-            "P", a_pos,
-            "N", a_nml);
+    "P", a_pos,
+    "N", a_nml);
 
 ```
 
@@ -419,19 +419,19 @@ When using [sample_geometry](../sampling/sample_geometry "Samples geometry in th
 ```vex
 gather(P, dir,
         "samplefilter", "opacity",
-            "Cf", hitCf,
-            "Of", hitOf,
+    "Cf", hitCf,
+    "Of", hitOf,
         "samplefilter", "closest",
-            "P", hitP,
-            "N", hitN)
+    "P", hitP,
+    "N", hitN)
 {
     trace(pos, dir, time,
-            // Composite the bsdf of the hit surfaces using stochastic transparency
-            "samplefilter", "screendoor",
-            "F", hitF,
-            // But find the closest sample's position
-            "samplefilter", "closest",
-            "P", hitP);
+    // Composite the bsdf of the hit surfaces using stochastic transparency
+    "samplefilter", "screendoor",
+    "F", hitF,
+    // But find the closest sample's position
+    "samplefilter", "closest",
+    "P", hitP);
 }
 
 ```
@@ -447,7 +447,7 @@ As you specify variables, you can intersperse `pipeline` keyword options to cont
 
 ```vex
 gather(p, d, "pipeline", "surface", "Cf", surfCf,
-             "pipeline", "atmosphere" "Cf", fogCf, "P", hitP)
+     "pipeline", "atmosphere" "Cf", fogCf, "P", hitP)
 
 ```
 

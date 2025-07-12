@@ -134,14 +134,14 @@ cvex
  test(string map="Mandril.rat")
 {
     for (string token : {
-                    "texture:xres",
-                    "texture:yres",
-                    "texture:channels",
-                    "texture:resolution",
-                    "texture:tokens",
-                    "image:pixelaspect",
-                    "space:world"
-                })
+            "texture:xres",
+            "texture:yres",
+            "texture:channels",
+            "texture:resolution",
+            "texture:tokens",
+            "image:pixelaspect",
+            "space:world"
+        })
     {
         float fval;
         vector vval;
@@ -149,11 +149,11 @@ cvex
 
         printf("----------------- %s ---------------------\n", token);
         if (teximport(map, token, fval))
-            printf("'%s' = %g\n", token, fval);
+    printf("'%s' = %g\n", token, fval);
         else if (teximport(map, token, vval))
-            printf("'%s' = %g\n", token, vval);
+    printf("'%s' = %g\n", token, vval);
         else if (teximport(map, token, mval))
-            printf("'%s' = %g\n", token, mval);
+    printf("'%s' = %g\n", token, mval);
     }
 }
 

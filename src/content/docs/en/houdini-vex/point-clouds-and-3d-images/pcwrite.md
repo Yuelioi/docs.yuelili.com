@@ -72,7 +72,7 @@ dumpsomepoints(string fname = "points.$F4.pc"; int do_cull = 0; float keepamt = 
     {
         if( do_cull && keepamt > 0 )
         {
-            A = A/keepamt;
+    A = A/keepamt;
         }
         rval = pcwrite(fname, "interpolate", 1,
         "P", ptransform("space:camera","space:world", P),

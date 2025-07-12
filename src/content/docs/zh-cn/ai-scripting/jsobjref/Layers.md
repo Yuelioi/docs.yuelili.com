@@ -81,7 +81,7 @@ title: 图层
 
 #### 参数
 
-| 参数      | 类型   | 描述               |
+| 参数      | 类型   | 描述         |
 | --------- | ------ | ------------------ |
 | `name`    | 字符串 | 要获取的元素的名称 |
 
@@ -101,7 +101,7 @@ title: 图层
 
 #### 参数
 
-| 参数      | 类型           | 描述               |
+| 参数      | 类型     | 描述         |
 | --------- | -------------- | ------------------ |
 | `itemKey` | 字符串, 数字   | 字符串或数字键     |
 
@@ -143,8 +143,8 @@ for (var i = 0; i < app.documents.length; i++) {
         var targetLayer = targetDocument.layers[ii];
         var layerName = new String(targetLayer.name);
         if (layerName.indexOf("Temp") == 0) {
-            targetDocument.layers[ii].remove();
-            layersDeleted++;
+      targetDocument.layers[ii].remove();
+      layersDeleted++;
         }
     }
 }

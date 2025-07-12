@@ -230,10 +230,10 @@ float x[];
 // Cf and P are vectors
 
 x = set(P);   // Assigns the components of P to the corresponding
-              // members of the array x
+      // members of the array x
 
 Cf = set(x);  // Assigns the first 3 members of x as the
-              // components of the vector Cf
+      // components of the vector Cf
 
 ```
 

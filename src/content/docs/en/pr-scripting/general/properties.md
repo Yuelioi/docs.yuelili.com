@@ -138,13 +138,12 @@ Set property value.
 For any file paths to be used in Premiere Pro's preferences, a trailing path seperator is mandatory.
 :::
 
-
 #### Parameters
 
-|     Parameter      |  Type   |                   Description                    |
+|     Parameter      |  Type   |         Description          |
 | ------------------ | ------- | ------------------------------------------------ |
-| `property`         | String  | A property to create                             |
-| `value`            | Any     | A value for a property                           |
+| `property`         | String  | A property to create         |
+| `value`            | Any     | A value for a property       |
 | `persistent`       | Boolean | Whether if should be persistent between sessions |
 | `createIfNotExist` | Boolean | Should create, if such property does not exist   |
 

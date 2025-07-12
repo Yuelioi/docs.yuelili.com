@@ -95,6 +95,7 @@ order: 65
 解包前，Mantra会自动将图元属性转换为自定义对象属性（参见[IFD文件格式](../../render/ifd.html)中的`ray_declare`）。属性命名格式为`packed:属性名`，可通过`renderstate()`函数访问这些属性。  
 
 示例：  
+
 ```vex  
 vector Cd;  
 if (!renderstate("packed:Cd", Cd))  
@@ -110,9 +111,9 @@ surface showversion()
 {  
     string    rname, rversion;  
     if (!renderstate("renderer:name", rname))  
-        rname = "未知渲染器";  
+    rname = "未知渲染器";  
     if (!renderstate("renderer:version", rversion))  
-        rversion = "未知版本";  
+    rversion = "未知版本";  
     printf("图像由 %s (%s) 渲染\n", rname, rversion);  
 }  
 
@@ -121,7 +122,7 @@ vector mapToScreen(vector NDC_P)
     // 将NDC空间中的点映射到像素坐标  
     vector    result;  
     if (!renderstate("image:resolution", result))  
-        result = {640, 486, 0};  
+    result = {640, 486, 0};  
     return result * NDC_P;  
 }  
 ```

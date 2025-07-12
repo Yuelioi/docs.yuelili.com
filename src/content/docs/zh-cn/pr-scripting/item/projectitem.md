@@ -53,20 +53,20 @@ title: ProjectItem 对象
 
 ```javascript
 {
-    value: [
-        sRGB,
-        BT.601 (NTSC),
-        BT.601 (PAL),
-        BT.709,
-        BT.709 (Scene),
-        BT.2020,
-        BT.2020 (Scene),
-        BT.2100 PQ,
-        BT.2100 PQ (Scene),
-        BT.2100 HLG,
-        BT.2100 HLG (Scene),
-        DCDM XYZ,
-    ]
+   value: [
+    sRGB,
+    BT.601 (NTSC),
+    BT.601 (PAL),
+    BT.709,
+    BT.709 (Scene),
+    BT.2020,
+    BT.2020 (Scene),
+    BT.2100 PQ,
+    BT.2100 PQ (Scene),
+    BT.2100 HLG,
+    BT.2100 HLG (Scene),
+    DCDM XYZ,
+   ]
 };
 ```
 
@@ -95,9 +95,9 @@ Javascript 对象。
 ```javascript
 var item = app.project.rootItem.children[0];
 if (item) {
-    item.name = item.name + ', updated by PProPanel.';
+   item.name = item.name + ', updated by PProPanel.';
 } else {
-    alert('Could not rename project item');
+   alert('Could not rename project item');
 }
 ```
 
@@ -182,9 +182,9 @@ if (item) {
 
 #### 参数
 
-|  参数  |  类型  |                   描述                   |
+|  参数  |  类型  |   描述   |
 | ------ | ------ | ---------------------------------------- |
-| `mediaPath` | 字符串 | 新分配媒体的路径。                       |
+| `mediaPath` | 字符串 | 新分配媒体的路径。    |
 | `isHiRes`   | 整数   | 新媒体应作为代理 `0` 或高分辨率 `1` 媒体附加。 |
 
 #### 返回值
@@ -239,10 +239,10 @@ if (item) {
 
 #### 参数
 
-|    参数     |  类型  |         描述          |
+|   参数   |  类型  |   描述    |
 | ----------- | ------ | --------------------- |
-| `newPath`        | 字符串 | 媒体文件的新路径。    |
-| `overrideChecks` | 布尔值 | 覆盖任何安全顾虑。    |
+| `newPath`    | 字符串 | 媒体文件的新路径。   |
+| `overrideChecks` | 布尔值 | 覆盖任何安全顾虑。   |
 
 #### 返回值
 
@@ -278,9 +278,9 @@ if (item) {
 
 #### 参数
 
-| 参数 |  类型  |     描述      |
+| 参数 |  类型  |   描述   |
 | ---- | ------ | ------------- |
-| `name`    | 字符串 | 新分箱的名称。 |
+| `name`   | 字符串 | 新分箱的名称。 |
 
 #### 返回值
 
@@ -298,9 +298,9 @@ if (item) {
 
 #### 参数
 
-|   参数    |  类型  |       描述        |
+|   参数   |  类型  |   描述    |
 | --------- | ------ | ----------------- |
-| `name`        | 字符串 | 新分箱的名称。    |
+| `name`    | 字符串 | 新分箱的名称。   |
 | `queryString` | 字符串 | 搜索的查询字符串。 |
 
 #### 返回值
@@ -319,14 +319,14 @@ if (item) {
 
 #### 参数
 
-|      参数       |  类型  |                描述                 |
+|   参数   |  类型  |    描述     |
 | --------------- | ------ | ----------------------------------- |
-| `name`              | 字符串 | 新子剪辑的名称。                    |
-| `startTime`         | 字符串 | 子剪辑的开始时间，以 ticks 为单位。 |
-| `endTime`           | 字符串 | 子剪辑的结束时间，以 ticks 为单位。 |
+| `name`    | 字符串 | 新子剪辑的名称。     |
+| `startTime`   | 字符串 | 子剪辑的开始时间，以 ticks 为单位。 |
+| `endTime`   | 字符串 | 子剪辑的结束时间，以 ticks 为单位。 |
 | `hasHardBoundaries` | 整数   | 如果为 `1`，用户无法扩展入点和出点。 |
-| `takeVideo`         | 整数   | 如果为 `1`，使用源视频。            |
-| `takeAudio`         | 整数   | 如果为 `1`，使用源音频。            |
+| `takeVideo`   | 整数   | 如果为 `1`，使用源视频。   |
+| `takeAudio`   | 整数   | 如果为 `1`，使用源音频。   |
 
 #### 返回值
 
@@ -362,9 +362,9 @@ if (item) {
 
 #### 参数
 
-|    参数     |  类型  |             描述              |
+|   参数   |  类型  |    描述    |
 | ----------- | ------ | ----------------------------- |
-| `pathToMatch`    | 字符串 | 要匹配的路径。                |
+| `pathToMatch`   | 字符串 | 要匹配的路径。    |
 | `ignoreSubClips` | 整数   | 如果为 `1`，则不返回子剪辑。  |
 
 #### 返回值
@@ -540,32 +540,32 @@ app.setSDKEventMessage("Input LutID " + " = " + inputLutID, 'info');
 
 一个素材解释结构，如果失败则返回 `0`。
 
-|         属性          |  类型   |                    描述                     |
+|   属性    |  类型   |     描述   |
 |-----------------------|---------|---------------------------------------------|
-| `alphaUsage`              | 整数   | Alpha，将是以下之一：                       |
-|                           |         | - `0` - `ALPHACHANNEL_NONE`                 |
-|                           |         | - `1` - `ALPHACHANNEL_STRAIGHT`             |
-|                           |         | - `2` - `ALPHACHANNEL_PREMULTIPLIED`        |
-|                           |         | - `3` - `ALPHACHANNEL_IGNORE`               |
-| `fieldType`               | 整数   | 场类型，以下之一：                          |
-|                           |         | - `-1` - `FIELDTYPE_DEFAULT`                |
-|                           |         | - `0` - `FIELDTYPE_PROGRESSIVE`             |
-|                           |         | - `1` - `FIELDTYPE_UPPERFIRST`              |
-|                           |         | - `2` - `FIELDTYPE_LOWERFIRST`              |
-| `ignoreAlpha`             | 布尔值 | `true` 或 `false`。                         |
-| `invertAlpha`             | 布尔值 | `true` 或 `false`。                         |
-| `frameRate`               | 浮点数 | 帧率作为浮点值。                            |
-| `pixelAspectRatio`        | 浮点数 | 像素宽高比作为浮点值。                      |
-| `removePulldown`          | 布尔值 | `true` 或 `false`。                         |
-| `vrConformProjectionType` | 整数   | 用于 VR 素材的投影类型，以下之一：          |
-|                           |         | - `0` - `VR_CONFORM_PROJECTION_NONE`        |
-|                           |         | - `1` - `VR_CONFORM_PROJECTION_EQUIRECTANGULAR` |
-| `vrLayoutType`            | 整数   | 用于 VR 的素材布局，以下之一：              |
-|                           |         | - `0` - `VR_LAYOUT_MONOSCOPIC`              |
-|                           |         | - `1` - `VR_LAYOUT_STEREO_OVER_UNDER`       |
-|                           |         | - `2` - `VR_LAYOUT_STEREO_SIDE_BY_SIDE`     |
-| `vrHorizontalView`        | 字符串 | 用于 VR 素材的水平视图。                    |
-| `vrVerticalView`          | 字符串 | 用于 VR 素材的垂直视图。                    |
+| `alphaUsage`    | 整数   | Alpha，将是以下之一：    |
+|   |   | - `0` - `ALPHACHANNEL_NONE`     |
+|   |   | - `1` - `ALPHACHANNEL_STRAIGHT`    |
+|   |   | - `2` - `ALPHACHANNEL_PREMULTIPLIED`    |
+|   |   | - `3` - `ALPHACHANNEL_IGNORE`    |
+| `fieldType`    | 整数   | 场类型，以下之一：    |
+|   |   | - `-1` - `FIELDTYPE_DEFAULT`    |
+|   |   | - `0` - `FIELDTYPE_PROGRESSIVE`    |
+|   |   | - `1` - `FIELDTYPE_UPPERFIRST`    |
+|   |   | - `2` - `FIELDTYPE_LOWERFIRST`    |
+| `ignoreAlpha`    | 布尔值 | `true` 或 `false`。    |
+| `invertAlpha`    | 布尔值 | `true` 或 `false`。    |
+| `frameRate`    | 浮点数 | 帧率作为浮点值。    |
+| `pixelAspectRatio`    | 浮点数 | 像素宽高比作为浮点值。    |
+| `removePulldown`    | 布尔值 | `true` 或 `false`。    |
+| `vrConformProjectionType` | 整数   | 用于 VR 素材的投影类型，以下之一：    |
+|   |   | - `0` - `VR_CONFORM_PROJECTION_NONE`    |
+|   |   | - `1` - `VR_CONFORM_PROJECTION_EQUIRECTANGULAR` |
+| `vrLayoutType`   | 整数   | 用于 VR 的素材布局，以下之一：    |
+|   |   | - `0` - `VR_LAYOUT_MONOSCOPIC`    |
+|   |   | - `1` - `VR_LAYOUT_STEREO_OVER_UNDER`   |
+|   |   | - `2` - `VR_LAYOUT_STEREO_SIDE_BY_SIDE`   |
+| `vrHorizontalView`    | 字符串 | 用于 VR 素材的水平视图。     |
+| `vrVerticalView`    | 字符串 | 用于 VR 素材的垂直视图。     |
 
 ---
 
@@ -638,10 +638,10 @@ app.setSDKEventMessage("Input LutID " + " = " + inputLutID, 'info');
 
 #### 参数
 
-|  参数  |  类型   |                              描述                               |
+|  参数  |  类型   |    描述     |
 |--------|---------|-----------------------------------------------------------------|
-| `mediaType` | 整数   | 传递 `1` 仅用于视频，或 `2` 仅用于音频。                         |
-|        |         | 如果未传递 `mediaType`，则函数获取所有媒体的出点。               |
+| `mediaType` | 整数   | 传递 `1` 仅用于视频，或 `2` 仅用于音频。    |
+|    |   | 如果未传递 `mediaType`，则函数获取所有媒体的出点。    |
 
 #### 返回值
 
@@ -690,12 +690,12 @@ app.setSDKEventMessage("Input LutID " + " = " + inputLutID, 'info');
 
 例如：
 
-|      键      |                            值                            |       描述        |
+|   键   |    值    |   描述    |
 | ------------ | -------------------------------------------------------- | ----------------- |
-| `ColumnName`  | `"Name"`                                                 | 列的名称          |
-| `ColumnValue` | `"A014C003_180620_R205.mov"`                             | 列值的示例        |
-| `ColumnID`    | `"Column.Intrinsic.Name"`                                | 列的 ID           |
-| `ColumnPath`  | `"http://ns.adobe.com/premierePrivateProjectMetaData/1.0/"` | 列的路径          |
+| `ColumnName`  | `"Name"`      | 列的名称    |
+| `ColumnValue` | `"A014C003_180620_R205.mov"`     | 列值的示例    |
+| `ColumnID`   | `"Column.Intrinsic.Name"`     | 列的 ID   |
+| `ColumnPath`  | `"http://ns.adobe.com/premierePrivateProjectMetaData/1.0/"` | 列的路径    |
 
 ---
 
@@ -871,7 +871,7 @@ app.setSDKEventMessage("Input LutID " + " = " + inputLutID, 'info');
 
 #### 参数
 
-| 参数      | 类型   | 描述         |
+| 参数   | 类型   | 描述   |
 | --------- | ------ | ------------ |
 | `newName` | 字符串 | 新的容器名称。 |
 
@@ -909,9 +909,9 @@ app.setSDKEventMessage("Input LutID " + " = " + inputLutID, 'info');
 
 #### 参数
 
-| 参数        | 类型    | 描述                                       |
+| 参数    | 类型   | 描述      |
 | ----------- | ------- | ------------------------------------------ |
-| `labelColor` | 整数    | 标签颜色；参见 [ProjectItem.getColorLabel()](#projectitemgetcolorlabel)。 |
+| `labelColor` | 整数   | 标签颜色；参见 [ProjectItem.getColorLabel()](#projectitemgetcolorlabel)。 |
 
 #### 返回值
 
@@ -929,9 +929,9 @@ app.setSDKEventMessage("Input LutID " + " = " + inputLutID, 'info');
 
 #### 参数
 
-| 参数            | 类型 | 描述                     |
+| 参数   | 类型 | 描述   |
 | --------------- | ---- | ------------------------ |
-| `interpretation` |      | 素材解释结构。           |
+| `interpretation` |   | 素材解释结构。   |
 
 #### 返回值
 
@@ -949,10 +949,10 @@ app.setSDKEventMessage("Input LutID " + " = " + inputLutID, 'info');
 
 #### 参数
 
-| 参数        | 类型    | 描述                                                                 |
+| 参数    | 类型   | 描述     |
 | ----------- | ------- | -------------------------------------------------------------------- |
-| `time`      | 字符串  | 以 ticks 表示的时间。                                                |
-| `mediaType` | 整数    | 确定要影响的媒体类型；传递 `1` 表示仅视频，`2` 表示仅音频，`4` 表示所有媒体类型。 |
+| `time`   | 字符串  | 以 ticks 表示的时间。      |
+| `mediaType` | 整数   | 确定要影响的媒体类型；传递 `1` 表示仅视频，`2` 表示仅音频，`4` 表示所有媒体类型。 |
 
 #### 返回值
 
@@ -988,10 +988,10 @@ app.setSDKEventMessage("Input LutID " + " = " + inputLutID, 'info');
 
 #### 参数
 
-| 参数        | 类型    | 描述                                                                 |
+| 参数    | 类型   | 描述     |
 | ----------- | ------- | -------------------------------------------------------------------- |
-| `time`      | 字符串  | 以 ticks 表示的时间。                                                |
-| `mediaType` | 整数    | 确定要影响的媒体类型；传递 `1` 表示仅视频，`2` 表示仅音频，`4` 表示所有媒体类型。 |
+| `time`   | 字符串  | 以 ticks 表示的时间。      |
+| `mediaType` | 整数   | 确定要影响的媒体类型；传递 `1` 表示仅视频，`2` 表示仅音频，`4` 表示所有媒体类型。 |
 
 #### 返回值
 
@@ -1009,7 +1009,7 @@ app.setSDKEventMessage("Input LutID " + " = " + inputLutID, 'info');
 
 #### 参数
 
-| 参数            | 类型  | 描述         |
+| 参数   | 类型  | 描述   |
 | --------------- | ----- | ------------ |
 | `newFrameRate` | 浮点数 | 新的帧率。   |
 
@@ -1029,10 +1029,10 @@ app.setSDKEventMessage("Input LutID " + " = " + inputLutID, 'info');
 
 #### 参数
 
-| 参数          | 类型    | 描述         |
+| 参数    | 类型   | 描述   |
 | ------------- | ------- | ------------ |
-| `numerator`   | 整数    | 新的分子。   |
-| `denominator` | 整数    | 新的分母。   |
+| `numerator`   | 整数   | 新的分子。   |
+| `denominator` | 整数   | 新的分母。   |
 
 #### 返回值
 
@@ -1050,10 +1050,10 @@ app.setSDKEventMessage("Input LutID " + " = " + inputLutID, 'info');
 
 #### 参数
 
-| 参数            | 类型           | 描述                         |
+| 参数   | 类型   | 描述    |
 | --------------- | -------------- | ---------------------------- |
-| `newMetadata`   | 字符串         | 新的序列化私有项目元数据。   |
-| `updatedFields` | 字符串数组     | 包含要更新的字段名称的数组。 |
+| `newMetadata`   | 字符串   | 新的序列化私有项目元数据。   |
+| `updatedFields` | 字符串数组   | 包含要更新的字段名称的数组。 |
 
 #### 返回值
 
@@ -1089,7 +1089,7 @@ app.setSDKEventMessage("Input LutID " + " = " + inputLutID, 'info');
 
 #### 参数
 
-| 参数  | 类型   | 描述                     |
+| 参数  | 类型   | 描述   |
 | ----- | ------ | ------------------------ |
 | `time` | 字符串 | 以 ticks 表示的新开始时间。 |
 
@@ -1109,7 +1109,7 @@ app.setSDKEventMessage("Input LutID " + " = " + inputLutID, 'info');
 
 #### 参数
 
-| 参数    | 类型   | 描述               |
+| 参数   | 类型   | 描述    |
 | ------- | ------ | ------------------ |
 | `newXMP` | 字符串 | 新的序列化 XMP 元数据。 |
 

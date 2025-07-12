@@ -584,9 +584,9 @@ myLayer.trackMatteType = TrackMatteType.NO_TRACK_MATTE;
 
 #### 参数
 
-| 参数    |                  类型                   |                    描述                    |
+| 参数    |          类型           |   描述   |
 | ------- | --------------------------------------- | ----------------------------------------- |
-| `comp`  | [CompItem 对象](../../item/compitem)   | 要将属性添加到 EGP 的目标合成。           |
+| `comp`  | [CompItem 对象](../../item/compitem)   | 要将属性添加到 EGP 的目标合成。   |
 
 #### 返回值
 
@@ -614,10 +614,10 @@ myLayer.trackMatteType = TrackMatteType.NO_TRACK_MATTE;
 
 #### 参数
 
-| 参数    |                  类型                   |                    描述                    |
+| 参数    |          类型           |   描述   |
 | ------- | --------------------------------------- | ----------------------------------------- |
-| `comp`  | [CompItem 对象](../../item/compitem)   | 要将属性添加到 EGP 的目标合成。           |
-| `name`  | 字符串                                  | 新名称。                                  |
+| `comp`  | [CompItem 对象](../../item/compitem)   | 要将属性添加到 EGP 的目标合成。   |
+| `name`  | 字符串          | 新名称。          |
 
 #### 返回值
 
@@ -639,7 +639,7 @@ myLayer.trackMatteType = TrackMatteType.NO_TRACK_MATTE;
 
 | 参数    |         类型         |      描述      |
 | ------- | -------------------- | ------------- |
-| `time`  | 浮点数值             | 时间（秒）。  |
+| `time`  | 浮点数值     | 时间（秒）。  |
 
 #### 返回值
 
@@ -657,11 +657,11 @@ myLayer.trackMatteType = TrackMatteType.NO_TRACK_MATTE;
 
 #### 参数
 
-| 参数               |                       类型                       |          描述          |
+| 参数       |       类型       |          描述          |
 | ------------------ | ----------------------------------------------- | ---------------------- |
-| `pointTopLeft`     | 浮点数值数组，`[x, y, z]`                      | 左上角点坐标。         |
-| `pointTopRight`    | 浮点数值数组，`[x, y, z]`                      | 右上角点坐标。         |
-| `pointBottomRight` | 浮点数值数组，`[x, y, z]`                      | 右下角点坐标。         |
+| `pointTopLeft`     | 浮点数值数组，`[x, y, z]`      | 左上角点坐标。         |
+| `pointTopRight`    | 浮点数值数组，`[x, y, z]`      | 右上角点坐标。         |
+| `pointBottomRight` | 浮点数值数组，`[x, y, z]`      | 右下角点坐标。         |
 
 #### 返回值
 
@@ -709,9 +709,9 @@ AVLayer 需要符合以下限制才能被视为媒体替换图层：
 
 #### 参数
 
-| 参数    |                  类型                   |                    描述                    |
+| 参数    |          类型           |   描述   |
 | ------- | --------------------------------------- | ----------------------------------------- |
-| `comp`  | [CompItem 对象](../../item/compitem)   | 要将属性添加到 EGP 的目标合成。           |
+| `comp`  | [CompItem 对象](../../item/compitem)   | 要将属性添加到 EGP 的目标合成。   |
 
 #### 返回值
 
@@ -737,9 +737,9 @@ AVLayer 需要符合以下限制才能被视为媒体替换图层：
 
 #### 参数
 
-| 参数                |                  类型                   |           描述           |
+| 参数        |          类型           |   描述   |
 | ------------------- | --------------------------------------- | ------------------------ |
-| `sourcePointToComp` | 浮点数值数组，`[x, y]`                 | 合成坐标的位置数组。     |
+| `sourcePointToComp` | 浮点数值数组，`[x, y]`         | 合成坐标的位置数组。     |
 
 #### 返回值
 
@@ -813,12 +813,12 @@ alert(myLayer.trackMatteType);
 
 #### 参数
 
-| 参数              |               类型                |                                                                                    描述                                                                                    |
+| 参数      |       类型        |          描述          |
 | ----------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `newSource`       | [AVItem 对象](../../item/avitem) | 新的源 AVItem 对象。                                                                                                                                                      |
-| `fixExpressions`  | 布尔值                            | `true` 调整表达式以适应新源，否则为 `false`。                                                                                                                             |
-|                   |                                   | !!! 警告                                                                                                                                                                  |
-|                   |                                   |      此功能可能消耗大量资源；如果要替换大量素材，请在操作结束时执行此操作。另请参阅 [Project.autoFixExpressions()](../../general/project#projectautofixexpressions)。     |
+| `newSource`       | [AVItem 对象](../../item/avitem) | 新的源 AVItem 对象。         |
+| `fixExpressions`  | 布尔值   | `true` 调整表达式以适应新源，否则为 `false`。          |
+|           |           | !!! 警告    |
+|           |           |      此功能可能消耗大量资源；如果要替换大量素材，请在操作结束时执行此操作。另请参阅 [Project.autoFixExpressions()](../../general/project#projectautofixexpressions)。     |
 
 #### 返回值
 
@@ -841,9 +841,9 @@ alert(myLayer.trackMatteType);
 
 #### 参数
 
-| 参数               |                     类型                     |           描述           |
+| 参数       |    类型    |   描述   |
 | ------------------ | -------------------------------------------- | ------------------------ |
-| `trackMatteLayer`  | [AVLayer](../../layer/avlayer)              | 用作轨道遮罩的图层。     |
+| `trackMatteLayer`  | [AVLayer](../../layer/avlayer)      | 用作轨道遮罩的图层。     |
 | `trackMatteType`   | [TrackMatteType](#avlayertrackmattetype) 枚举 | 要使用的轨道遮罩类型。   |
 
 :::warning
@@ -894,9 +894,9 @@ myLayer.setTrackMatte(otherLayer, TrackMatteType.NO_TRACK_MATTE);
 
 #### 参数
 
-| 参数          |                  类型                   |         描述         |
+| 参数          |          类型           |         描述         |
 | ------------- | --------------------------------------- | -------------------- |
-| `boxTextPos`  | 浮点数值数组，`[x, y]`                 | 图层坐标的位置数组。 |
+| `boxTextPos`  | 浮点数值数组，`[x, y]`         | 图层坐标的位置数组。 |
 
 #### 返回值
 
@@ -922,10 +922,10 @@ var boxTextCompPos = myTextLayer.sourcePointToComp(boxTextLayerPos);
 
 #### 参数
 
-| 参数      |         类型         |                                             描述                                             |
+| 参数      |         类型         |    描述    |
 | --------- | -------------------- | ------------------------------------------------------------------------------------------- |
-| `timeT`   | 浮点数值             | 时间索引（秒）。                                                                            |
-| `extents` | 布尔值               | `true` 包含范围，否则为 `false`。范围适用于形状图层，根据需要增加图层边界的大小。            |
+| `timeT`   | 浮点数值     | 时间索引（秒）。          |
+| `extents` | 布尔值       | `true` 包含范围，否则为 `false`。范围适用于形状图层，根据需要增加图层边界的大小。    |
 
 #### 返回值
 

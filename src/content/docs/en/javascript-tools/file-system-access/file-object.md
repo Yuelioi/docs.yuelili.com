@@ -650,7 +650,6 @@ The method attempts to detect the encoding of the open file. It reads a few byte
 Be careful about opening a file more than once. The operating system usually permits you to do so, but if you start writing to the file using two different File objects, you can destroy your data.
 :::
 
-
 #### Parameters
 
 | Parameter |  Type  |                                                                   Description                                                                   |
@@ -766,7 +765,6 @@ Does not resolve aliases; instead, deletes the referenced alias or shortcut file
 Cannot be undone. It is recommended that you prompt the user for permission before deleting.
 :::
 
-
 #### Returns
 
 Boolean. `true` if the file is deleted successfully.
@@ -857,7 +855,6 @@ Seeks to the specified position in the file. The new position cannot be less tha
 |           |        | - `1`: Seek relative to the current position.                                                                               |
 |           |        | - `2`: Seek backward from the end of the file.                                                                              |
 
-
 #### Returns
 
 Boolean. `true` if the position was changed.
@@ -890,7 +887,6 @@ Writes the specified text to the file at the current position. For encoded files
 Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.
 :::
 
-
 #### Parameters
 
 | Parameter |  Type  |                                  Description                                  |
@@ -914,7 +910,6 @@ Writes the specified text to the file at the current position, and appends a Lin
 :::warning
 Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.
 :::
-
 
 #### Parameters
 

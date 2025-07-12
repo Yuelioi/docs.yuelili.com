@@ -13,10 +13,10 @@ title: 图层样式
 | `ADBE Global Angle2`     | 全局光照角度       |
 | `ADBE Global Altitude2`  | 全局光照高度      |
 | `ADBE Adv Blend Group`   | 高级混合        |
-| `ADBE Layer Fill Opacity2` | 填充不透明度           |
-| `ADBE R Channel Blend`   | 红色              |
-| `ADBE G Channel Blend`   | 绿色              |
-| `ADBE B Channel Blend`   | 蓝色               |
+| `ADBE Layer Fill Opacity2` | 填充不透明度   |
+| `ADBE R Channel Blend`   | 红色      |
+| `ADBE G Channel Blend`   | 绿色      |
+| `ADBE B Channel Blend`   | 蓝色       |
 | `ADBE Blend Interior`    | 将内部样式作为组混合 |
 | `ADBE Blend Ranges`    | 使用源文件的混合范围   |
 
@@ -27,15 +27,15 @@ title: 图层样式
 |       匹配名称      |    显示名称 (中文)     |
 | ------ | -------- |
 | `dropShadow/enabled`      | 投影          |
-| `dropShadow/mode2`        | 混合模式           |
-| `dropShadow/color`        | 颜色            |
-| `dropShadow/opacity`      | 不透明度            |
+| `dropShadow/mode2`        | 混合模式   |
+| `dropShadow/color`        | 颜色    |
+| `dropShadow/opacity`      | 不透明度    |
 | `dropShadow/useGlobalAngle`   | 使用全局光照       |
-| `dropShadow/localLightingAngle` | 角度            |
-| `dropShadow/distance`       | 距离           |
-| `dropShadow/chokeMatte`     | 扩展             |
-| `dropShadow/blur`         | 大小             |
-| `dropShadow/noise`        | 噪点            |
+| `dropShadow/localLightingAngle` | 角度    |
+| `dropShadow/distance`       | 距离   |
+| `dropShadow/chokeMatte`     | 扩展     |
+| `dropShadow/blur`         | 大小     |
+| `dropShadow/noise`        | 噪点    |
 | `dropShadow/layerConceals`    | 图层挖空投影 |
 
 ---

@@ -39,15 +39,15 @@ PF_OutFlag2_MUTABLE_RENDER_SEQUENCE_DATA_SLOWER
 
 下表概述了效果需要进行的更改以支持新行为：
 
-|                                            MFR 和 Sequence Data 使用情况                                            |                                                                                                                                                 2021 年 3 月 SDK 所需更改                                                                                                                                                  |
+|        MFR 和 Sequence Data 使用情况        |      2021 年 3 月 SDK 所需更改       |
 |-----------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 插件未设置 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING`                                                     | 无需更改。效果和 `sequence_data` 将继续像过去一样工作。                                                                                                                                                                                                                                            |
-| 插件设置了 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` 但在渲染期间既不读取也不写入 `sequence_data` | 使用 2021 年 3 月 SDK 重新编译插件，无需其他代码更改。                                                                                                                                                                                                                                                   |
-|                                                                                                                 | 如果插件未使用 2021 年 3 月 SDK 编译，则从 AE 22.0x6 开始，插件将停止使用 MFR。                                                                                                                                                                                                                  |
-| 插件设置了 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` 但在渲染期间仅读取 `sequence_data`                  | 使用 2021 年 3 月 SDK 重新编译插件，通过 `PF_EffectSequenceDataSuite1` 更新读取 `sequence_data` 以实现线程安全访问。有关更多信息，请参阅 [多帧渲染时在渲染时访问 sequence_data](../global-sequence-frame-data#多帧渲染时在渲染时访问-sequence_data)。 |
-| 插件设置了 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` 并在渲染期间读取和写入 `sequence_data`         | 使用 2021 年 3 月 SDK 重新编译插件并修改插件以：                                                                                                                                                                                                                                                              |
-|                                                                                                                 | 1. 使用 [计算缓存 API](../compute-cache-api#计算缓存-api) 进行线程安全的缓存访问，而不是直接读取/写入 `sequence_data`。有关更多信息，请参阅 [多帧渲染的计算缓存](#多帧渲染的计算缓存)。和/或                                               |
-|                                                                                                                 | 2. 添加 `PF_OutFlag2_MUTABLE_RENDER_SEQUENCE_DATA_SLOWER` 标志以恢复对 `sequence_data` 的直接读取/写入访问。                                                                                                                                                                                                    |
+| 插件未设置 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING`          | 无需更改。效果和 `sequence_data` 将继续像过去一样工作。         |
+| 插件设置了 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` 但在渲染期间既不读取也不写入 `sequence_data` | 使用 2021 年 3 月 SDK 重新编译插件，无需其他代码更改。         |
+|   | 如果插件未使用 2021 年 3 月 SDK 编译，则从 AE 22.0x6 开始，插件将停止使用 MFR。    |
+| 插件设置了 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` 但在渲染期间仅读取 `sequence_data`   | 使用 2021 年 3 月 SDK 重新编译插件，通过 `PF_EffectSequenceDataSuite1` 更新读取 `sequence_data` 以实现线程安全访问。有关更多信息，请参阅 [多帧渲染时在渲染时访问 sequence_data](../global-sequence-frame-data#多帧渲染时在渲染时访问-sequence_data)。 |
+| 插件设置了 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` 并在渲染期间读取和写入 `sequence_data`         | 使用 2021 年 3 月 SDK 重新编译插件并修改插件以：    |
+|   | 1. 使用 [计算缓存 API](../compute-cache-api#计算缓存-api) 进行线程安全的缓存访问，而不是直接读取/写入 `sequence_data`。有关更多信息，请参阅 [多帧渲染的计算缓存](#多帧渲染的计算缓存)。和/或           |
+|   | 2. 添加 `PF_OutFlag2_MUTABLE_RENDER_SEQUENCE_DATA_SLOWER` 标志以恢复对 `sequence_data` 的直接读取/写入访问。    |
 
 :::note
 使用 2021 年 3 月 SDK 编译并使用 `PF_OutFlag2_SUPPORTS_THREADED_RENDERING` 标志以及可选的 `PF_OutFlag2_MUTABLE_RENDER_SEQUENCE_DATA_SLOWER` 标志的效果将从 AE beta 版本 18.0 开始工作，此时引入了 `PF_EffectSequeceDataSuite1`。如果需要支持两种 `sequence_data` 行为，请检查此套件是否存在。

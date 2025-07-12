@@ -64,7 +64,6 @@ Provides access to Adobe Media Encoder (on the same system).
 `app.encoder` is broken on Premiere Pro 14.3.1 - 15 on Mac only. Fixed in 22 and up. [See this discussion](https://community.adobe.com/t5/premiere-pro-discussions/missing-the-object-app-encoder-14-3-1-15-0-15-1-15-2/m-p/12544488).
 :::
 
-
 #### Type
 
 [Encoder object](../../general/encoder).
@@ -502,7 +501,7 @@ Creates a new .prproj [Project object](../../general/project), at the specified 
 
 #### Parameters
 
-| Parameter |  Type  |                             Description                              |
+| Parameter |  Type  |         Description          |
 | --------- | ------ | -------------------------------------------------------------------- |
 | `path`    | String | A full path to new project; a .prproj extension will *not* be added. |
 
@@ -522,12 +521,12 @@ Opens the file at the specified path, as a Premiere Pro [Project object](../../g
 
 #### Parameters
 
-|         Parameter          |  Type   |                           Description                           |
+|         Parameter          |  Type   |       Description       |
 | -------------------------- | ------- | --------------------------------------------------------------- |
-| `path`                     | String  | Full path to the document to be opened.                         |
-| `suppressConversionDialog` | Boolean | Optional. Suppress project conversion dialog.                   |
-| `bypassLocateFileDialog`   | Boolean | Optional. Bypass the locate file dialog.                        |
-| `bypassWarningDialog`      | Boolean | Optional. Bypass warning dialog.                                |
+| `path`           | String  | Full path to the document to be opened.               |
+| `suppressConversionDialog` | Boolean | Optional. Suppress project conversion dialog.         |
+| `bypassLocateFileDialog`   | Boolean | Optional. Bypass the locate file dialog.              |
+| `bypassWarningDialog`      | Boolean | Optional. Bypass warning dialog.            |
 | `doNotAddToMRUList`        | Boolean | Optional. Skip adding this file to the Most Recently Used List. |
 
 #### Returns
@@ -548,8 +547,8 @@ Opens an FCP XML file as a Premiere Pro [Project object](../../general/project) 
 
 | Parameter  |  Type  | Description |
 | ---------- | ------ | ----------- |
-| `path`     | String |             |
-| `projPath` | String |             |
+| `path`     | String |   |
+| `projPath` | String |   |
 
 #### Returns
 
@@ -585,7 +584,7 @@ Determines whether proxy usage is currently enabled.
 
 #### Parameters
 
-| Parameter |  Type   |                Description                |
+| Parameter |  Type   |      Description      |
 | --------- | ------- | ----------------------------------------- |
 | `enabled` | Integer | `1` turns proxies on, `0` turns them off. |
 
@@ -605,9 +604,9 @@ Whether extension with the given extensionID persists, within this session.
 
 #### Parameters
 
-|   Parameter   |  Type   |                          Description                          |
+|   Parameter   |  Type   |      Description      |
 | ------------- | ------- | ------------------------------------------------------------- |
-| `extensionID` | String  | Which extension to modify.                                    |
+| `extensionID` | String  | Which extension to modify.                |
 | `persistent`  | Integer | Pass `1` to keep extension in memory, `0` to allow unloading. |
 
 #### Returns
@@ -637,18 +636,17 @@ Specifies the path to be used for one of Premiere Pro's scratch disk paths.
 
 #### Parameters
 
-
-|     Parameter     |          Type          |                   Description                   |
+|     Parameter     |          Type          |         Description         |
 |-------------------|------------------------|-------------------------------------------------|
-| `path`            | String                 | The new path to be used.                        |
+| `path`            | String       | The new path to be used.              |
 | `scratchDiskType` | `ScratchDiskType` enum | Enumerated value, must be one of the following: |
-|                   |                        | - `ScratchDiskType.FirstVideoCaptureFolder`     |
-|                   |                        | - `ScratchDiskType.FirstAudioCaptureFolder`     |
-|                   |                        | - `ScratchDiskType.FirstVideoPreviewFolder`     |
-|                   |                        | - `ScratchDiskType.FirstAudioPreviewFolder`     |
-|                   |                        | - `ScratchDiskType.FirstAutoSaveFolder`         |
-|                   |                        | - `ScratchDiskType.FirstCCLibrariesFolder`      |
-|                   |                        | - `ScratchDiskType.FirstCapsuleMediaFolder`     |
+|         |              | - `ScratchDiskType.FirstVideoCaptureFolder`     |
+|         |              | - `ScratchDiskType.FirstAudioCaptureFolder`     |
+|         |              | - `ScratchDiskType.FirstVideoPreviewFolder`     |
+|         |              | - `ScratchDiskType.FirstAudioPreviewFolder`     |
+|         |              | - `ScratchDiskType.FirstAutoSaveFolder`         |
+|         |              | - `ScratchDiskType.FirstCCLibrariesFolder`      |
+|         |              | - `ScratchDiskType.FirstCapsuleMediaFolder`     |
 
 #### Returns
 
@@ -679,9 +677,9 @@ Writes a string to Premiere Pro's Events panel.
 |-------------|--------|-----------------------|
 | `message`   | String | A message to display. |
 | `decorator` | String | Decorator, one of:    |
-|             |        | - `info`              |
-|             |        | - `warning`           |
-|             |        | - `error`             |
+|   |        | - `info`    |
+|   |        | - `warning`           |
+|   |        | - `error`   |
 
 #### Returns
 

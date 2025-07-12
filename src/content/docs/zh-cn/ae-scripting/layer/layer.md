@@ -397,7 +397,7 @@ Layer 对象或 `null`；可读写。
 
 #### 参数
 
-| 参数           | 类型                                                                                             | 描述                 |
+| 参数   | 类型           | 描述         |
 | -------------- | ------------------------------------------------------------------------------------------------ | -------------------- |
 | `presetName` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象 | 包含动画预设的文件。 |
 
@@ -431,7 +431,7 @@ Layer 对象或 `null`；可读写。
 
 #### 参数
 
-| 参数         | 类型                              | 描述       |
+| 参数         | 类型     | 描述       |
 | ------------ | --------------------------------- | ---------- |
 | `intoComp` | [CompItem 对象](../../item/compitem) | 目标合成。 |
 
@@ -457,13 +457,13 @@ Layer 对象或 `null`；可读写。
 
 #### 参数
 
-| 参数             | 类型                            | 描述                                                                          |
+| 参数     | 类型   | 描述        |
 | ---------------- | ------------------------------- | ----------------------------------------------------------------------------- |
-| `applyOptions` | `SceneEditDetectionMode` 枚举 | 检测到的编辑将如何应用。可能的值包括：                                        |
-|                  |                                 | -`SceneEditDetectionMode.MARKERS`：在编辑点创建标记。                       |
-|                  |                                 | -`SceneEditDetectionMode.SPLIT`：分割图层。                                 |
-|                  |                                 | -`SceneEditDetectionMode.SPLIT_PRECOMP`：在编辑点分割图层并预合成每个部分。 |
-|                  |                                 | -`SceneEditDetectionMode.NONE`：检测到的编辑不应用于图层。                  |
+| `applyOptions` | `SceneEditDetectionMode` 枚举 | 检测到的编辑将如何应用。可能的值包括：       |
+|          |         | -`SceneEditDetectionMode.MARKERS`：在编辑点创建标记。       |
+|          |         | -`SceneEditDetectionMode.SPLIT`：分割图层。         |
+|          |         | -`SceneEditDetectionMode.SPLIT_PRECOMP`：在编辑点分割图层并预合成每个部分。 |
+|          |         | -`SceneEditDetectionMode.NONE`：检测到的编辑不应用于图层。          |
 
 #### 返回
 
@@ -499,7 +499,7 @@ Layer 对象。
 
 #### 参数
 
-| 参数      | 类型                | 描述                   |
+| 参数      | 类型        | 描述           |
 | --------- | ------------------- | ---------------------- |
 | `layer` | [Layer 对象](../layer) | 同一合成中的目标图层。 |
 
@@ -519,7 +519,7 @@ Layer 对象。
 
 #### 参数
 
-| 参数      | 类型                | 描述                   |
+| 参数      | 类型        | 描述           |
 | --------- | ------------------- | ---------------------- |
 | `layer` | [Layer 对象](../layer) | 同一合成中的目标图层。 |
 
@@ -549,4 +549,58 @@ Layer 对象。
 
 ### Layer.moveToEnd()
 
-`app.project
+`app.project.item(index).layer(index).moveToEnd()`
+
+#### 描述
+
+将该图层移动到图层堆栈的最底部（即最后一个图层）。
+
+#### 参数
+
+无。
+
+#### 返回值
+
+无。
+
+---
+
+### Layer.remove()
+
+`app.project.item(index).layer(index).remove()`
+
+#### 描述
+
+从合成中删除指定的图层。
+
+#### 参数
+
+无。
+
+#### 返回值
+
+无。
+
+---
+
+### Layer.setParentWithJump()
+
+`app.project.item(index).layer(index).setParentWithJump([newParent])`
+
+#### 描述
+
+将此图层的父级设置为指定图层，且不改变子图层的变换值。
+
+由于该图层的变换值会与其祖先图层的变换值合并，子图层在旋转、位移或缩放方面可能会出现明显的跳跃。
+
+如果不想让子图层发生跳跃，请直接设置 [parent](#layerparent) 属性。在这种情况下，会计算偏移量并设置到子图层的变换字段中，以防止跳跃发生。
+
+#### 参数
+
+|  参数  |   类型   |      描述       |
+| ------ | ------------------------ | -------------------------------------------------------------------------------- |
+| `newParent` | [Layer 对象](../layer) | 可选。同一合成中的一个图层。如果未指定，则将父级设置为 None。 |
+
+#### 返回值
+
+无。

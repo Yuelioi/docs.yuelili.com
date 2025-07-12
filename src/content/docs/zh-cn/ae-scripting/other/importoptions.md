@@ -160,13 +160,13 @@ var item = app.project.importFile(importOptions);
 
 #### 参数
 
-| 参数     | 类型                    | 描述                                  |
+| 参数     | 类型   | 描述          |
 | -------- | ----------------------- | ------------------------------------- |
 | `type` | `ImportAsType` 枚举值 | 可以导入的文件类型。可选值包括：      |
-|          |                         | -`ImportAsType.COMP`                |
-|          |                         | -`ImportAsType.FOOTAGE`             |
-|          |                         | -`ImportAsType.COMP_CROPPED_LAYERS` |
-|          |                         | -`ImportAsType.PROJECT`             |
+|          |         | -`ImportAsType.COMP`        |
+|          |         | -`ImportAsType.FOOTAGE`     |
+|          |         | -`ImportAsType.COMP_CROPPED_LAYERS` |
+|          |         | -`ImportAsType.PROJECT`     |
 
 #### 返回
 
@@ -197,7 +197,7 @@ if (io.canImportAs(ImportAsType.COMP)) {
 
 #### 参数
 
-| 参数     | 类型                                                                                             | 描述         |
+| 参数     | 类型           | 描述         |
 | -------- | ------------------------------------------------------------------------------------------------ | ------------ |
 | `file` | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html) 对象 | 要检查的文件 |
 

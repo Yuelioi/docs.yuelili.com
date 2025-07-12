@@ -77,7 +77,7 @@ end tell
 
 透视网格平面类型包括：
 
-|     平面     |                类型                |
+|     平面     |          类型          |
 | ------------ | ---------------------------------- |
 | 左平面       | `perspective grid plane leftplane`  |
 | 右平面       | `perspective grid plane rightplane` |
@@ -118,7 +118,7 @@ tell application "Adobe Illustrator"
 
         -- 检查活动平面是否设置为左平面，否则设置为左平面
         if (get perspective active plane) is not leftplane then
-            set perspective active plane perspective grid plane leftplane
+      set perspective active plane perspective grid plane leftplane
         end if
 
         -- 以透视方式绘制矩形，然后调整大小为 200% 并移动
@@ -168,7 +168,7 @@ tell application "Adobe Illustrator"
 
         -- 检查活动平面是否设置为左平面，否则设置为左平面
         if (get perspective active plane) is not leftplane then
-            set perspective active plane perspective grid plane leftplane
+      set perspective active plane perspective grid plane leftplane
         end if
 
         -- 将星形带入地面平面

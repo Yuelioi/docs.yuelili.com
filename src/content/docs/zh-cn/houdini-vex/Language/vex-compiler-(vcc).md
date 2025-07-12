@@ -5,21 +5,21 @@ order: 8
   
 
 | 本页内容 | * [命令行选项](#command-line-options)  
-  + [编译器选项](#compiler-options)  
-  + [预处理器选项](#preprocessor-options)  
-  + [诊断选项](#diagnostic-options)  
-  + [VEX上下文选项](#vex-context-options)  
-  + [资产选项](#otl)  
-  + [对话框脚本选项](#ds)  
-* [预处理器](#pre-processor)  
+
++ [编译器选项](#compiler-options)  
++ [预处理器选项](#preprocessor-options)  
++ [诊断选项](#diagnostic-options)  
++ [VEX上下文选项](#vex-context-options)  
++ [资产选项](#otl)  
++ [对话框脚本选项](#ds)  
+
++ [预处理器](#pre-processor)  
   + [预定义宏](#predefined-macros) |  
 | --- | --- |  
 
 `vcc`编译器将VEX源代码编译成Houdini可执行的形式。VEX编译器(vcc)能够编译VEX代码、为VEX函数生成对话框脚本，并通过列出任何给定上下文中可用的全局变量和函数来提供快速帮助。  
 
 ## 命令行选项  
-
-### command-line-options  
 
 注意  
 
@@ -207,11 +207,11 @@ pre-processor
 
 表达式可以使用以下运算符：  
 
-- 比较（`==`、`!=`、`<=`、`>=`、`<`、`>`）  
-- 逻辑AND（`&&`）、OR（`||`）和NOT（`!`）。  
-- 位AND（`&`）、OR（`|`）、异或（`^`）和NOT（`~`）。  
-- 算术（`+`、`-`、`*`、`/`、`%`）。  
-- 括号。  
++ 比较（`==`、`!=`、`<=`、`>=`、`<`、`>`）  
++ 逻辑AND（`&&`）、OR（`||`）和NOT（`!`）。  
++ 位AND（`&`）、OR（`|`）、异或（`^`）和NOT（`~`）。  
++ 算术（`+`、`-`、`*`、`/`、`%`）。  
++ 括号。  
 
 表达式还可以使用以下函数：  
 

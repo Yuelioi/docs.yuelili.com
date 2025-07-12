@@ -79,10 +79,10 @@ title: 符号
 
 #### 参数
 
-|      参数      |                                        类型                                         |           描述           |
+|      参数      |        类型         |     描述     |
 | -------------- | ----------------------------------------------------------------------------------- | ------------------------ |
-| `sourceArt`    | [PageItem](.././PageItem)                                                           | 用于创建符号的源图稿     |
-| `registrationPoint` | [SymbolRegistrationPoint](../scripting-constants#symbolregistrationpoint), 可选 | 使用的注册点             |
+| `sourceArt`    | [PageItem](.././PageItem)       | 用于创建符号的源图稿     |
+| `registrationPoint` | [SymbolRegistrationPoint](../scripting-constants#symbolregistrationpoint), 可选 | 使用的注册点       |
 
 #### 返回值
 

@@ -7,13 +7,13 @@ title: useful-utility-functions
 
 Although not strictly concerned with parameters, this suite can change the name of the options button.
 
-|         Function          |                                                    Purpose                                                    |
+|         Function          |                    Purpose                    |
 |---------------------------|---------------------------------------------------------------------------------------------------------------|
-| `PF_SetOptionsButtonName` | Changes the text on the options button in the effect controls palette.                                        |
-|                           | !!! note                                                                                                      |
-|                           |      This must be called during [PF_Cmd_PARAM_SETUP](../../effect-basics/command-selectors#global-selectors). |
-|                           | <pre lang="cpp">PF_SetOptionsButtonName(<br/>  PF_ProgPtr    effect_ref,<br/>  const A_char  \*nameZ);</pre>  |
-|                           | `nameZ` may be up to `A_char[31]` in length.                                                                  |
+| `PF_SetOptionsButtonName` | Changes the text on the options button in the effect controls palette.                |
+|           | !!! note                              |
+|           |      This must be called during [PF_Cmd_PARAM_SETUP](../../effect-basics/command-selectors#global-selectors). |
+|           | <pre lang="cpp">PF_SetOptionsButtonName(<br/>  PF_ProgPtr    effect_ref,<br/>  const A_char  \*nameZ);</pre>  |
+|           | `nameZ` may be up to `A_char[31]` in length.                  |
 
 ---
 
@@ -25,56 +25,56 @@ In addition to the [PF_EffectCustomUIOverlayThemeSuite](../../effect-ui-events/c
 
 What better way to shame someone into purchasing a copy of your plug-in than by putting their personal information into a watermark, eh? Or set the cursor to add mask vertices, just to confuse people? Heh heh heh. But that would be wrong.
 
-|         Function          |                                                                                                                                                  Purpose                                                                                                                                                  |
+|         Function          |                                          Purpose                                          |
 |---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `PF_AppGetBgColor`        | Retrieves the current background color.                                                                                                                                                                                                                                                                   |
-|                           | <pre lang="cpp">PF_AppGetBgColor(<br/>  PF_App_Color  bg_colorP);</pre>                                                                                                                                                                                                                                   |
-| `PF_AppGetColor`          | Retrieves the color for the specified UI element.                                                                                                                                                                                                                                                         |
-|                           | See AE_EffectSuites.h for a complete enumeration of available `PF_App_Color` values; basically any color in After Effects' UI can be retrieved.                                                                                                                                                           |
-|                           | CC adds several new `PF_App_ColorType` enum values for new elements that can be queried.                                                                                                                                                                                                                  |
-|                           | Note that in CS6, the color definitions are off from `FILL_LIGHT` downward.                                                                                                                                                                                                                               |
-|                           | Use following psuedocode for CS6 only:                                                                                                                                                                                                                                                                    |
-|                           | <pre lang="cpp">GetColor(enum e)<br/>{<br/>  if host_is_CS6 and e >= FILL_LIGHT<br/>  e += 3<br/>    call real GetColor<br/>}<br/><br/>PF_AppGetColor(<br/>  PF_App_ColorType  color_type,<br/>  PF_App_Color      \*app_colorP);</pre>                                                                   |
-| `PF_AppGetLanguage`       | New in CC. Retrieves the active displayed language of AE UI so plug-in can match. Here are the possible language codes as of CC:                                                                                                                                                                          |
-|                           | - Chinese - `zh_CN`                                                                                                                                                                                                                                                                                       |
-|                           | - English - `en_US`                                                                                                                                                                                                                                                                                       |
-|                           | - French - `fr_FR`                                                                                                                                                                                                                                                                                        |
-|                           | - German - `de_DE`                                                                                                                                                                                                                                                                                        |
-|                           | - Italian - `it_IT`                                                                                                                                                                                                                                                                                       |
-|                           | - Japanese - `ja_JP`                                                                                                                                                                                                                                                                                      |
-|                           | - Korean - `ko_KR`                                                                                                                                                                                                                                                                                        |
-|                           | - Spanish - `es_ES`                                                                                                                                                                                                                                                                                       |
-|                           | <pre lang="cpp">PF_AppGetLanguage(<br/>  A_char  lang_tagZ);</pre>                                                                                                                                                                                                                                        |
-| `PF_GetPersonalInfo`      | Retrieves the user's registration information.                                                                                                                                                                                                                                                            |
-|                           | <pre lang="cpp">PF_GetPersonalInfo(<br/>  PF_AppPersonalTextInfo  \*ptiP);<br/><br/>typedef struct PF_AppPersonalTextInfo {<br/>  A_char  name[PF_APP_MAX_PERS_LEN + 1];<br/>  A_char  org[PF_APP_MAX_PERS_LEN + 1];<br/>  A_char  serial_str[PF_APP_MAX_PERS_LEN+1];<br/>} PF_AppPersonalTextInfo;</pre> |
-| `PF_GetFontStyleSheet`    | Retrieves font style sheet information for the fonts used in After Effects' UI.                                                                                                                                                                                                                           |
-|                           | Trivia: The font used in After Effects' UI starting in 15.0 is Adobe Clean.                                                                                                                                                                                                                               |
-|                           | Before that, it was Tahoma on Windows and Lucida Grande on macOS X.                                                                                                                                                                                                                                       |
-|                           | <pre lang="cpp">PF_GetFontStyleSheet(<br/>  PF_FontStyleSheet  sheet,<br/>  PF_FontName        \*font_nameP0,<br/>  A_short            \*font_numPS0,<br/>  A_short            \*sizePS0,<br/>  A_short            \*stylePS0);</pre>                                                                     |
-| `PF_SetCursor`            | Sets the cursor to any of After Effects' cursors. See AE_EffectUI.h for a complete enumeration.                                                                                                                                                                                                           |
-|                           | Set to:                                                                                                                                                                                                                                                                                                   |
-|                           | - `PF_Cursor_NONE` to allow After Effects to set the cursor.                                                                                                                                                                                                                                              |
-|                           | - `PF_Cursor_CUSTOM` if you've used OS-specific calls to change the cursor (After Effects will honor your changes).                                                                                                                                                                                       |
-|                           | <pre lang="cpp">PF_SetCursor(<br/>  PF_CursorType  cursor);</pre>                                                                                                                                                                                                                                         |
-| `PF_IsRenderEngine`       | Returns TRUE if After Effects is running in watched folder mode, or is a render engine installation.                                                                                                                                                                                                      |
-|                           | <pre lang="cpp">PF_IsRenderEngine(<br/>  PF_Boolean  \*render_enginePB);</pre>                                                                                                                                                                                                                            |
-|                           | As of AE6.5, this function returns `TRUE` if the installation is the render engine, or if the After Effects is being run with no UI, or if After Effects is in watched folder mode.                                                                                                                       |
-| `PF_AppColorPickerDialog` | Displays the After Effects color picker dialog (which may be the system color picker, depending on the user's preferences).                                                                                                                                                                               |
-|                           | Will return `PF_Interrupt_CANCEL` if user cancels dialog. Returned color is in the project's working color space.                                                                                                                                                                                         |
-|                           | <pre lang="cpp">PF_AppColorPickerDialog(<br/>  const A_char         \*dialog_titleZ0,<br/>  const PF_PixelFloat  \*sample_colorP,<br/>  PF_PixelFloat        \*result_colorP);</pre>                                                                                                                      |
-| `PF_GetMouse`             | Returns the position of the mouse in the custom UI coordinate space.                                                                                                                                                                                                                                      |
-|                           | <pre lang="cpp">PF_GetMouse(<br/>  PF_Point  \*pointP);</pre>                                                                                                                                                                                                                                             |
-| `PF_InvalidateRect`       | Queue up a [redraw](../../effect-ui-events/custom-ui-and-drawbot#redrawing) of a specific area of the custom UI for an effect.                                                                                                                                                                            |
-|                           | Only valid while handling a non-drawing event in the effect.                                                                                                                                                                                                                                              |
-|                           | Specify `rectP0` as `NULL` to invalidate the entire window. The redraw will happen at the next available idle moment after returning from the event.                                                                                                                                                      |
-|                           | Set the `PF_EO_UPDATE_NOW` event outflag to update the window immediately after the event returns.                                                                                                                                                                                                        |
-|                           | <pre lang="cpp">PF_InvalidateRect(<br/>  const PF_ContextH  contextH,<br/>  const PF_Rect*     rectP0);</pre>                                                                                                                                                                                             |
-| `PF_ConvertLocalToGlobal` | Converts from the custom UI coordinate system to global screen coordinates. Use only during custom UI event handling.                                                                                                                                                                                     |
-|                           | <pre lang="cpp">PF_ConvertLocalToGlobal(<br/>  const PF_Point  \*localP,<br/>  PF_Point        \*globalP);</pre>                                                                                                                                                                                          |
+| `PF_AppGetBgColor`        | Retrieves the current background color.                                                                           |
+|           | <pre lang="cpp">PF_AppGetBgColor(<br/>  PF_App_Color  bg_colorP);</pre>                                                                   |
+| `PF_AppGetColor`          | Retrieves the color for the specified UI element.                                                                         |
+|           | See AE_EffectSuites.h for a complete enumeration of available `PF_App_Color` values; basically any color in After Effects' UI can be retrieved.                                           |
+|           | CC adds several new `PF_App_ColorType` enum values for new elements that can be queried.                                                          |
+|           | Note that in CS6, the color definitions are off from `FILL_LIGHT` downward.                                                               |
+|           | Use following psuedocode for CS6 only:                                                                            |
+|           | <pre lang="cpp">GetColor(enum e)<br/>{<br/>  if host_is_CS6 and e >= FILL_LIGHT<br/>  e += 3<br/>    call real GetColor<br/>}<br/><br/>PF_AppGetColor(<br/>  PF_App_ColorType  color_type,<br/>  PF_App_Color      \*app_colorP);</pre>                   |
+| `PF_AppGetLanguage`       | New in CC. Retrieves the active displayed language of AE UI so plug-in can match. Here are the possible language codes as of CC:                                                  |
+|           | - Chinese - `zh_CN`                                                                               |
+|           | - English - `en_US`                                                                               |
+|           | - French - `fr_FR`                                                                                |
+|           | - German - `de_DE`                                                                                |
+|           | - Italian - `it_IT`                                                                               |
+|           | - Japanese - `ja_JP`                                                                              |
+|           | - Korean - `ko_KR`                                                                                |
+|           | - Spanish - `es_ES`                                                                               |
+|           | <pre lang="cpp">PF_AppGetLanguage(<br/>  A_char  lang_tagZ);</pre>                                                                |
+| `PF_GetPersonalInfo`      | Retrieves the user's registration information.                                                                            |
+|           | <pre lang="cpp">PF_GetPersonalInfo(<br/>  PF_AppPersonalTextInfo  \*ptiP);<br/><br/>typedef struct PF_AppPersonalTextInfo {<br/>  A_char  name[PF_APP_MAX_PERS_LEN + 1];<br/>  A_char  org[PF_APP_MAX_PERS_LEN + 1];<br/>  A_char  serial_str[PF_APP_MAX_PERS_LEN+1];<br/>} PF_AppPersonalTextInfo;</pre> |
+| `PF_GetFontStyleSheet`    | Retrieves font style sheet information for the fonts used in After Effects' UI.                                                                   |
+|           | Trivia: The font used in After Effects' UI starting in 15.0 is Adobe Clean.                                                               |
+|           | Before that, it was Tahoma on Windows and Lucida Grande on macOS X.                                                               |
+|           | <pre lang="cpp">PF_GetFontStyleSheet(<br/>  PF_FontStyleSheet  sheet,<br/>  PF_FontName        \*font_nameP0,<br/>  A_short    \*font_numPS0,<br/>  A_short    \*sizePS0,<br/>  A_short    \*stylePS0);</pre>                     |
+| `PF_SetCursor`    | Sets the cursor to any of After Effects' cursors. See AE_EffectUI.h for a complete enumeration.                                                           |
+|           | Set to:                                                                                   |
+|           | - `PF_Cursor_NONE` to allow After Effects to set the cursor.                                                                      |
+|           | - `PF_Cursor_CUSTOM` if you've used OS-specific calls to change the cursor (After Effects will honor your changes).                                                       |
+|           | <pre lang="cpp">PF_SetCursor(<br/>  PF_CursorType  cursor);</pre>                                                                 |
+| `PF_IsRenderEngine`       | Returns TRUE if After Effects is running in watched folder mode, or is a render engine installation.                                                      |
+|           | <pre lang="cpp">PF_IsRenderEngine(<br/>  PF_Boolean  \*render_enginePB);</pre>                                                            |
+|           | As of AE6.5, this function returns `TRUE` if the installation is the render engine, or if the After Effects is being run with no UI, or if After Effects is in watched folder mode.                                       |
+| `PF_AppColorPickerDialog` | Displays the After Effects color picker dialog (which may be the system color picker, depending on the user's preferences).                                                       |
+|           | Will return `PF_Interrupt_CANCEL` if user cancels dialog. Returned color is in the project's working color space.                                                         |
+|           | <pre lang="cpp">PF_AppColorPickerDialog(<br/>  const A_char         \*dialog_titleZ0,<br/>  const PF_PixelFloat  \*sample_colorP,<br/>  PF_PixelFloat        \*result_colorP);</pre>                                      |
+| `PF_GetMouse`     | Returns the position of the mouse in the custom UI coordinate space.                                                                      |
+|           | <pre lang="cpp">PF_GetMouse(<br/>  PF_Point  \*pointP);</pre>                                                                     |
+| `PF_InvalidateRect`       | Queue up a [redraw](../../effect-ui-events/custom-ui-and-drawbot#redrawing) of a specific area of the custom UI for an effect.                                                    |
+|           | Only valid while handling a non-drawing event in the effect.                                                                      |
+|           | Specify `rectP0` as `NULL` to invalidate the entire window. The redraw will happen at the next available idle moment after returning from the event.                                              |
+|           | Set the `PF_EO_UPDATE_NOW` event outflag to update the window immediately after the event returns.                                                        |
+|           | <pre lang="cpp">PF_InvalidateRect(<br/>  const PF_ContextH  contextH,<br/>  const PF_Rect*     rectP0);</pre>                                                     |
+| `PF_ConvertLocalToGlobal` | Converts from the custom UI coordinate system to global screen coordinates. Use only during custom UI event handling.                                                     |
+|           | <pre lang="cpp">PF_ConvertLocalToGlobal(<br/>  const PF_Point  \*localP,<br/>  PF_Point        \*globalP);</pre>                                                          |
 
 ---
 
-## Advanced Appsuite: You Can Do That?!
+## Advanced Appsuite: You Can Do That?
 
 `PF_AdvAppSuite` was originally designed for some pretty nefarious purposes; an external application was pretending to be an After Effects plug-in, and required ways to notify After Effects of the changes it had made to the project. Our API impurity is your gain.
 
@@ -82,22 +82,22 @@ What better way to shame someone into purchasing a copy of your plug-in than by 
 
 ## PF_AdvAppSuite2
 
-|          Function           |                                                                                                       Purpose                                                                                                       |
+|          Function   |                               Purpose                               |
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `PF_SetProjectDirty`        | Tells After Effects that the project has been changed since it was last saved.                                                                                                                                      |
-|                             | <pre lang="cpp">PF_SetProjectDirty(void);</pre>                                                                                                                                                                     |
-| `PF_SaveProject`            | Saves the project to the current path. To save the project elsewhere, use [AEGP_SaveProjectToPath()](../../aegps/aegp-suites#aegp_projsuite6).                                                                      |
-|                             | <pre lang="cpp">PF_SaveProject(void);</pre>                                                                                                                                                                         |
-| `PF_SaveBackgroundState`    | Stores the background state (After Effects' position in the stacking order of open applications and windows).                                                                                                       |
-|                             | <pre lang="cpp">PF_SaveBackgroundState(void);</pre>                                                                                                                                                                 |
-| `PF_ForceForeground`        | Brings After Effects to the front of all currently open applications and windows.                                                                                                                                   |
-|                             | <pre lang="cpp">PF_ForceForeground(void);</pre>                                                                                                                                                                     |
-| `PF_RestoreBackgroundState` | Puts After Effects back where it was, in relation to other applications and windows.                                                                                                                                |
-|                             | <pre lang="cpp">PF_RestoreBackgroundState(void);</pre>                                                                                                                                                              |
-| `PF_RefreshAllWindows`      | Forces all After Effects windows to update.                                                                                                                                                                         |
-|                             | Note that although the Composition panel will be refreshed, this does not guarantee a new frame will be sent to External Monitor Preview plug-ins.                                                                  |
-|                             | <pre lang="cpp">PF_RefreshAllWindows(void);</pre>                                                                                                                                                                   |
-| `PF_InfoDrawText`           | Writes text into the After Effects info palette.                                                                                                                                                                    |
+| `PF_SetProjectDirty`        | Tells After Effects that the project has been changed since it was last saved.                                      |
+|             | <pre lang="cpp">PF_SetProjectDirty(void);</pre>                                             |
+| `PF_SaveProject`    | Saves the project to the current path. To save the project elsewhere, use [AEGP_SaveProjectToPath()](../../aegps/aegp-suites#aegp_projsuite6).                      |
+|             | <pre lang="cpp">PF_SaveProject(void);</pre>                                                 |
+| `PF_SaveBackgroundState`    | Stores the background state (After Effects' position in the stacking order of open applications and windows).                               |
+|             | <pre lang="cpp">PF_SaveBackgroundState(void);</pre>                                                 |
+| `PF_ForceForeground`        | Brings After Effects to the front of all currently open applications and windows.                                           |
+|             | <pre lang="cpp">PF_ForceForeground(void);</pre>                                             |
+| `PF_RestoreBackgroundState` | Puts After Effects back where it was, in relation to other applications and windows.                                        |
+|             | <pre lang="cpp">PF_RestoreBackgroundState(void);</pre>                                              |
+| `PF_RefreshAllWindows`      | Forces all After Effects windows to update.                                                 |
+|             | Note that although the Composition panel will be refreshed, this does not guarantee a new frame will be sent to External Monitor Preview plug-ins.                  |
+|             | <pre lang="cpp">PF_RefreshAllWindows(void);</pre>                                                   |
+| `PF_InfoDrawText`   | Writes text into the After Effects info palette.                                                                    |
 |                             | <pre lang="cpp">PF_InfoDrawText(<br/>  const A_char  \*line1Z0,<br/>  const A_char  \*line2Z0);</pre>                                                                                                               |
 | `PF_InfoDrawColor`          | Draws the specified color in the After Effects info palette (alpha is ignored).                                                                                                                                     |
 |                             | <pre lang="cpp">PF_InfoDrawColor(<br/>  PF_Pixel  color);</pre>                                                                                                                                                     |

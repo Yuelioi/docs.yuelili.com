@@ -11,8 +11,8 @@ order: 1
 ```vex
 #define assert(EXPR)    \
     if (assert_enabled()) { \
-        if (!(EXPR)) print_once(sprintf('VEX Assertion Failed %s:%d - (%s)\n', \
-                __FILE__, __LINE__, #EXPR)); \
+    if (!(EXPR)) print_once(sprintf('VEX Assertion Failed %s:%d - (%s)\n', \
+      __FILE__, __LINE__, #EXPR)); \
     }
 
 ```

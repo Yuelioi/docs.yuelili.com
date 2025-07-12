@@ -51,14 +51,14 @@ Houdini多边形面的基元编号。
 void
 movePointToLimitSurface(string file; vector P, uv; int sourceprim)
 {
-    int        patch_id = -1;
+    int    patch_id = -1;
     float patch_u, patch_v;
     if (osd_lookuppatch(file, sourceprim, uv.x, uv.y,
-            patch_id, patch_u, patch_v, "uv"))
+      patch_id, patch_u, patch_v, "uv"))
     {
-        vector        tmpP;
-        if (osd_limitsurface(file, "P", patch_id, patch_u, patch_v, tmpP))
-            P = tmpP;
+    vector    tmpP;
+    if (osd_limitsurface(file, "P", patch_id, patch_u, patch_v, tmpP))
+      P = tmpP;
     }
 }
 

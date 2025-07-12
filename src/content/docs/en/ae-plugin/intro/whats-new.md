@@ -83,25 +83,25 @@ The application font is now Adobe Clean. Previously, the fonts used in After Eff
 
 ## What's New In CC 2017.1 (14.2)?
 
-- Layer Params can include Masks and Effects
+* Layer Params can include Masks and Effects
 
 Effects that use layers as an input, such as Set Matte and Displacement Map, can now target the input layer's masks and effects, instead of only the source of the layer. This means that for there is no need to pre-compose layers just so that they can be referenced by an effect.
 
 Where an effect includes a layer parameter, a new menu to the right of the layer selector allows you to choose whether to target the input layer from its source, masks, or effects:
 
-- Source: targets only the source of the layer. Masks and effects are ignored.
-- Masks: targets the layer after its masks are applied. Effects are ignored.
-- Effects & Masks: targets the layer after its masks and effects are applied.
+* Source: targets only the source of the layer. Masks and effects are ignored.
+* Masks: targets the layer after its masks are applied. Effects are ignored.
+* Effects & Masks: targets the layer after its masks and effects are applied.
 
 This control is similar to the View menu at the bottom of the Layer viewer panel, which allows you to render the layer from different positions in the rendering order: from its source, from its masks, or from its individual effects.
 
 As this is a user-facing option, the design is intended to be transparent to the effect. From the effect's perspective, the input simply just includes the upstream effects and masks without any change to the effect. For any effect that uses layer params, here are some testing recommendations:
 
-- Effect continues to work as expected.
-- Using new control in the layer param for Source/Mask/Effects works with effect.
-- Opening old projects or saving back to a previous version project does not break effect.
-- Confirm that effect cannot self-reference; meaning cannot use the effects on the layer as input for the same layer.
-- Suite Enhancements
+* Effect continues to work as expected.
+* Using new control in the layer param for Source/Mask/Effects works with effect.
+* Opening old projects or saving back to a previous version project does not break effect.
+* Confirm that effect cannot self-reference; meaning cannot use the effects on the layer as input for the same layer.
+* Suite Enhancements
 
 PF_AdvTimeSuite is now at version 3, providing a revised [PF_GetTimeDisplayPref()](../../effect-details/useful-utility-functions#pf_advtimesuite4) call that uses a revised `PF_TimeDisplayPrefVersion` parameter, that supports higher frame rates.
 The previous version 2 of the call can now return an error if there is a problem with the values exceeding the range supported by the structure.
@@ -147,7 +147,7 @@ To avoid a deadlock, in PF_Cmd_UPDATE_PARAMS_UI only, AEGP_RenderNewItemSoundDat
 
 ## What's New In CC 2015 (13.5)?
 
-- Separate UI and Render Threads
+* Separate UI and Render Threads
 
 This release of After Effects includes major architectural changes to separate the UI (main) thread from the render thread. The render thread sends selectors such as PF_Cmd_RENDER, PF_Cmd_SMART_PRERENDER, and PF_Cmd_SMART_RENDER to effect plug-ins. The UI thread sends selectors such as PF_Cmd_SEQUENCE_SETUP, PF_Cmd_USER_CHANGED_PARAM, PF_Cmd_DO_DIALOG, and PF_EVENT_DRAW. PF_Cmd_SEQUENCE_RESETUP is
 
@@ -170,7 +170,7 @@ Generally, calculations that will persist or update the UI will now have to be p
 
 13.5 APIs or different solutions than in past releases.
 
-- The Need For More Efficient Sequence Data Handling
+* The Need For More Efficient Sequence Data Handling
 
 PF_OutFlag2_SUPPORTS_GET_FLATTENED_SEQUENCE_DATA
 
@@ -182,7 +182,7 @@ To make this process more efficient, starting in 13.5, AE can send PF_Cmd_GET_FL
 
 This will eventually become required for plug-ins that are rebuilt to be thread-safe (see PF_OutFlag2_AE13_5_THREADSAFE below). The venerable PF_Cmd_SEQUENCE_FLATTEN will eventually be unsupported in future versions.
 
-- PF_OutFlag_FORCE_RERENDER Changes
+* PF_OutFlag_FORCE_RERENDER Changes
 
 Where possible, we recommend triggering rerenders using one of the following: GuidMixInPtr() (described in the next section), arb data, or PF_ChangeFlag_CHANGED_VALUE. All of these allow cached frames to be reused after an Undo.
 
@@ -198,7 +198,7 @@ FORCE_RERENDER doesn't work in every situation it did before, because it needs t
 
 FORCE_RERENDER works when set during PF_Cmd_USER_CHANGED_PARAM. It also works in CLICK and DRAG events, but only if PF_Cmd_GET_FLATTENED_SEQUENCE_DATA is implemented. This is required to prevent flattening and loss of UI state in the middle of mouse operations. Without GET_FLATTENED, the new FORCE_RERENDER behavior will NOT be turned on.
 
-- GUIDs for Cached Frames
+* GUIDs for Cached Frames
 
 PF_OutFlag2_I_MIX_GUID_DEPENDENCIES
 
@@ -208,7 +208,7 @@ Used by SmartFX only. Use this if custom UI or PF_Cmd_DO_DIALOG changes sequence
 
 This is an improvement over the older mechanisms PF_OutFlag_FORCE_RERENDER and PF_Cmd_DO_DIALOG, which would remove the frame from the cache because the host didn't know what else the plug-in was factoring into the rendering. This can also be used rather than PF_OutFlag2_OUTPUT_IS_WATERMARKED.
 
-- Request Frames Asynchronously Without Blocking the UI
+* Request Frames Asynchronously Without Blocking the UI
 
 PF_OutFlag2_CUSTOM_UI_ASYNC_MANAGER
 
@@ -222,11 +222,11 @@ Note: Async retrieval of frames is preferred for handling passive drawing situat
 
 The new HistoGrid sample in the SDK shows how to do completely asynchronous custom UI DRAW event handling on the UI thread when 1 or more frame renders are needed. e.g. for calculating histograms that are shown in the effect pane. Please note there is still a known bug where drag-changing an upstream param may not refresh the histogram draw until the mouse hovers over it.
 
-- Get Rendered Output of an Effect from its UI
+* Get Rendered Output of an Effect from its UI
 
 Effects such as keyers or those that draw histograms of post-processed video can retrieve the needed AEGP_LayerRenderOptionsH using the new function AEGP_NewFromDownstreamOfEffect() in AEGP_LayerRenderOptionsSuite. This function may only be called from the UI thread.
 
-- AEGP Usage on Render Thread
+* AEGP Usage on Render Thread
 
 We've tightened validation of when AEGP calls could be used dangerously (such as from the wrong thread or making a change to the project state in render). You may see new errors if code is hitting such cases. For example, making these calls on the render thread will result in an error:
 
@@ -236,11 +236,11 @@ The solution is to move these calls to the UI thread. Selectors for passive UI u
 
 Another example of more strict requirements is AEGP_RegisterWithAEGP(). The documentation has always noted that this function must be called on PF_Cmd_GLOBAL_SETUP. However in previous versions, plug-ins were able to call this function at other times without running into trouble. Not anymore in 13.5! Calling this function at other times can cause crashes!
 
-- PF_Cmd_SEQUENCE_RESETUP Called on UI or Render Thread?
+* PF_Cmd_SEQUENCE_RESETUP Called on UI or Render Thread?
 
 There is now a PF_InFlag_PROJECT_IS_RENDER_ONLY flag that is only valid in PF_Cmd_SEQUENCE_RESETUP that will tell you if the effect instance is for render-only purposes. If so, the project should be treated as completely read-only, and you will not be receiving UI related selectors on that effect instance. This can be used to optimize away any UI-only initialization that render does not need. If this flag is false, you should setup UI as normal. This should not be used to avoid reporting errors in render. Errors in render should be reported as usual via existing SDK mechanisms.
 
-- Changes to Avoid Deadlocks
+* Changes to Avoid Deadlocks
 
 During development, it was noticed that deadlocks could occur in specific call usage. Seatbelts have been introduced to avoid this. The cases occur in PF_Cmd_UPDATE_PARAMS_UI when using particular calls because of deprecated synchronous behavior in these calls when used in the UI:
 
@@ -250,7 +250,7 @@ In PF_Cmd_UPDATE_PARAMS_UI only, PF_GetCurrentState() will now return a random G
 
 The above uses should be rare, but if this affects you please contact us about workarounds.
 
-- Deprecated
+* Deprecated
 
 AEGP_RenderAndCheckoutFrame() (on the UI Thread). This call should generally not be used on the UI thread since synchronous renders block interactivity.
 
@@ -260,7 +260,7 @@ For example, an "Auto Color" button that takes a frame and then adjusts effect p
 
 A beta of a progress dialog for this blocking operation if it is slow has been implemented, but using this call on the UI thread should be limited to this special cases. The dialog design is not final.
 
-- Flag for Thread-Safe Effects
+* Flag for Thread-Safe Effects
 
 PF_OutFlag2_AE13_5_THREADSAFE
 
@@ -268,7 +268,7 @@ Plug-ins updated for threading should use this flag to tell AE that the plug-in 
 
 This flag tells AE that different threads on different AE project copies can be in the effect at the same time but not accessing the same instance. While multiple render threads are not yet in use, this will be useful in future releases.
 
-- Support for Effect Version greater than 7 (new max is MAJOR version 127)
+* Support for Effect Version greater than 7 (new max is MAJOR version 127)
 
 Effects greater than version 7 will now report properly in 13.5 if built with the current SDK headers. It is possible to use these recompiled effects in AE versions older than 13.5, but internally the version number will wrap modulo 8 (e.g. AE will internally see effect version 8 as version 0).
 
@@ -296,13 +296,13 @@ If built with an older SDK, you will need to keep the effect version at 7 or bel
 
 These bits are ignored in AE versions older than 13.5.
 
-- New Installer Hints for macOS
+* New Installer Hints for macOS
 
 Developers can find paths to the default location of plug-ins, scripts, and presets on macOS X in a new plist file (same as the paths in the Windows registry): /Library/Preferences/ com.Adobe.After Effects.paths.plist
 
 You can use the values in this plist to direct where your installers or scripts write files, in the same way that you would use the paths keys in the registry on Windows: HKEY_LOCAL_MACHINESOFTWAREAdobeAfter Effects13.5
 
-- Work In Progress
+* Work In Progress
 
 AEGP_RenderAndCheckoutLayerFrame_Async() AEGP_CancelAsyncRequest()
 
@@ -329,7 +329,6 @@ layer with effects applied at non-render time. This is useful for an operation t
 :::note
 Since it is not asynchronous, it will not solve the general problem where custom UI needs to draw based on the frame.
 :::
-
 
 The layer render options are specified using the new [AEGP_LayerRenderOptionsSuite](../../aegps/aegp-suites#aegp_renderoptionssuite4).
 

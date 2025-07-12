@@ -14,9 +14,9 @@ if ( ExternalObject.AdobeXMPScript == undefined ) {
 
 加载库后，以下主要的XMP类将在全局JavaScript命名空间中可用：
 
-|                             对象                             |                                                                                        描述                                                                                         |
+|       对象       |         描述   |
 | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [XMPMeta对象](../xmpscript-object-reference#xmpmeta-object) | 提供XMP Toolkit的核心服务。允许您创建和删除元数据属性，并检索和修改属性值。                                            |
+| [XMPMeta对象](../xmpscript-object-reference#xmpmeta-object) | 提供XMP Toolkit的核心服务。允许您创建和删除元数据属性，并检索和修改属性值。       |
 | [XMPFile对象](../xmpscript-object-reference#xmpfile-object) | 提供对文件的主文档级别XMP的便捷I/O访问。允许您从文件中检索现有元数据，更新文件元数据，并向文件添加新元数据。 |
 
 其他顶级对象包括数组处理工具、日期时间对象以及包含命名空间常量的常量定义。顶级对象提供了对封装单个元数据属性、文件信息和XMP数据包信息的附加支持类的访问，以及允许遍历属性的工具。
@@ -135,19 +135,19 @@ for ( var i = 0; i < pics.length; i++ ) {
 
     // 仅适用于文件，不适用于文件夹
     if ( file instanceof File ) {
-        var xmpFile = new XMPFile( file.fsName, XMPConst.UNKNOWN, XMPConst.OPEN_FOR_UPDATE );
-        var xmp = xmpFile.getXMP();
+     var xmpFile = new XMPFile( file.fsName, XMPConst.UNKNOWN, XMPConst.OPEN_FOR_UPDATE );
+     var xmp = xmpFile.getXMP();
 
-        // 删除现有作者并添加一个新作者
-        // 现有元数据保持不变
-        xmp.deleteProperty( XMPConst.NS_DC, "creator" );
-        xmp.appendArrayItem( XMPConst.NS_DC, "creator", "Judy", 0, XMPConst.ARRAY_IS_ORDERED );
+     // 删除现有作者并添加一个新作者
+     // 现有元数据保持不变
+     xmp.deleteProperty( XMPConst.NS_DC, "creator" );
+     xmp.appendArrayItem( XMPConst.NS_DC, "creator", "Judy", 0, XMPConst.ARRAY_IS_ORDERED );
 
-        // 将更新后的元数据写入文件
-        if ( xmpFile.canPutXMP( xmp ) ) {
-            xmpFile.putXMP( xmp );
-        }
-        xmpFile.closeFile( XMPConst.CLOSE_UPDATE_SAFELY );
+     // 将更新后的元数据写入文件
+     if ( xmpFile.canPutXMP( xmp ) ) {
+      xmpFile.putXMP( xmp );
+     }
+     xmpFile.closeFile( XMPConst.CLOSE_UPDATE_SAFELY );
     }
 }
 ```
@@ -201,7 +201,7 @@ if ( thumb && thumb.metadata ) {
     var num = xmp.countArrayItems( XMPConst.NS_DC, "creator" );
 
     for ( var i = 1; i <= num; i++ ) {}
-        msg += "* " + xmp.getArrayItem( XMPConst.NS_DC, "creator", i ) + "\n";
+     msg += "* " + xmp.getArrayItem( XMPConst.NS_DC, "creator", i ) + "\n";
     }
 
     // 一个带有日期值的简单属性

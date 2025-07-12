@@ -33,7 +33,7 @@ Invoked automatically the first time the window is displayed. Thereafter, the sc
 
 #### Parameters
 
-|   Parameter   |  Type   |                                                                Description                                                                |
+|   Parameter   |  Type   |                        Description                        |
 | ------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | `recalculate` | Boolean | Optional. When `true`, forces the layout manager to recalculate the container size for this and any child containers. Default is `false`. |
 

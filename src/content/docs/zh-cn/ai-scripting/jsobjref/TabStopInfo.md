@@ -110,10 +110,10 @@ for( var i=0 ; i < textRef.length; i++ ) {
         var tabRef = attrRef.tabStops;
 
         if ( tabRef.length > 0 ) {
-            for(var t=0; t<tabRef.length; t++){
-                sData += "\t" + tabRef[t].leader + "\t\t";
-                sData += "\t\t" + tabRef[t].position + "\r";
-            } // end for
+      for(var t=0; t<tabRef.length; t++){
+          sData += "\t" + tabRef[t].leader + "\t\t";
+          sData += "\t\t" + tabRef[t].position + "\r";
+      } // end for
         } // end if
     } // end for
 } // end for

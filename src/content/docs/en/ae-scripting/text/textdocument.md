@@ -7,7 +7,6 @@ title: textdocument
 
 `app.project.item(index).layer(index).property("Source Text").value`
 
-
 #### Description
 
 The TextDocument object stores a value for a TextLayer's Source Text property. Create it with the constructor, passing the string to be encapsulated.
@@ -65,7 +64,6 @@ textProp.setValue(textDocument);
 This functionality was added in After Effects 13.2 (CC 2014.2)
 :::
 
-
 #### Description
 
 `true` if a Text layer has All Caps enabled; otherwise `false`. To set this value, use [fontCapsOption](#textdocumentfontcapsoption) added in After Effects 24.0.
@@ -73,7 +71,6 @@ This functionality was added in After Effects 13.2 (CC 2014.2)
 :::warning
 This value only reflects the first character in the Text layer.
 :::
-
 
 #### Type
 
@@ -116,7 +113,6 @@ Boolean; read/write.
 :::note
 This functionality was added in After Effects 24.0
 :::
-
 
 #### Description
 
@@ -166,7 +162,6 @@ Boolean; read/write.
 This functionality was added in After Effects 24.0
 :::
 
-
 #### Description
 
 The Text layer's auto kern type option.
@@ -194,7 +189,6 @@ An `AutoKernType` enumerated value; read/write. One of:
 :::note
 This functionality was added in After Effects 24.0
 :::
-
 
 #### Description
 
@@ -224,7 +218,6 @@ A `BaselineDirection` enumerated value; read/write. One of:
 This functionality was added in After Effects 13.6 (CC 2015)
 :::
 
-
 #### Description
 
 The baseline (x,y) locations for a Text layer. Line wraps in a paragraph text box are treated as multiple lines.
@@ -232,7 +225,6 @@ The baseline (x,y) locations for a Text layer. Line wraps in a paragraph text bo
 :::tip
 If a line has no characters, the x and y values for start and end will be the maximum float value (`3.402823466e+38F`).
 :::
-
 
 #### Type
 
@@ -266,7 +258,6 @@ Array of floating-point values in the form of
 This functionality was added in After Effects 13.2 (CC 2014.2)
 :::
 
-
 #### Description
 
 This Text layer's baseline shift in pixels.
@@ -290,7 +281,6 @@ Floating-point value; read-write.
 :::note
 This functionality was added in After Effects 24.6
 :::
-
 
 #### Description
 
@@ -319,7 +309,6 @@ A `BoxAutoFitPolicy` enumerated value; read-write. One of:
 :::note
 This functionality was added in After Effects 24.6
 :::
-
 
 #### Description
 
@@ -353,7 +342,6 @@ A `BoxFirstBaselineAlignment` enumerated value; read-write. One of:
 This functionality was added in After Effects 24.6
 :::
 
-
 #### Description
 
 Manually controls the position of the first line of composed text relative to the top of the box.
@@ -376,7 +364,6 @@ Floating-point value; read/write.
 This functionality was added in After Effects 24.6
 :::
 
-
 #### Description
 
 Controls the inner space between the box bounds and where the composable text box begins. The same value is applied to all four sides of the box.
@@ -396,7 +383,6 @@ Floating-point value; read/write.
 :::note
 This functionality was added in After Effects 24.6
 :::
-
 
 #### Description
 
@@ -431,7 +417,6 @@ Boolean; read-only.
 As of After Effects 14 (CC2017), it seems this is also writeable.
 :::
 
-
 #### Description
 
 The layer coordinates from a paragraph (box) Text layer's anchor point as a [width, height] array of pixel dimensions.
@@ -439,7 +424,6 @@ The layer coordinates from a paragraph (box) Text layer's anchor point as a [wid
 :::warning
 Throws an exception if [boxText](#textdocumentboxtext) does not return `true` for the Text layer.
 :::
-
 
 #### Type
 
@@ -467,7 +451,6 @@ The size of a paragraph (box) Text layer as a [width, height] array of pixel dim
 Throws an exception if [boxText](#textdocumentboxtext) does not return `true` for the Text layer.
 :::
 
-
 #### Type
 
 Array of two integers (minimum value of 1); read/write.
@@ -481,7 +464,6 @@ Array of two integers (minimum value of 1); read/write.
 :::note
 This functionality was added in After Effects 24.6
 :::
-
 
 #### Description
 
@@ -526,7 +508,6 @@ Integer; read-only.
 This functionality was added in After Effects 24.0
 :::
 
-
 #### Description
 
 The Text layer's paragraph composer engine option. By default new Text layers will use the `ComposerEngine.UNIVERSAL_TYPE_ENGINE`; the other enum value will only be encountered in projects created before the Universal Type Engine engine (formerly known as the South Asian and Middle Eastern engine) became the default in [After Effects 22.1.1](https://helpx.adobe.com/after-effects/using/whats-new/2022-1.html).
@@ -560,7 +541,6 @@ A `ComposerEngine` enumerated value; read-write. One of:
 This functionality was added in After Effects 24.0
 :::
 
-
 #### Description
 
 The Text layer's digit set option.
@@ -591,7 +571,6 @@ A `DigitSet` enumerated value; read/write. One of:
 This functionality was added in After Effects 24.0
 :::
 
-
 #### Description
 
 The Text layer's paragraph direction option.
@@ -621,7 +600,6 @@ A `ParagraphDirection` enumerated value; read/write. One of:
 This functionality was added in After Effects 24.0
 :::
 
-
 #### Description
 
 The Text layer's paragraph end indent option.
@@ -647,7 +625,6 @@ Floating-point value; read/write.
 :::note
 This functionality was added in After Effects 24.0
 :::
-
 
 #### Description
 
@@ -675,8 +652,6 @@ Boolean; read/write.
 
 The write functionality was added in After Effects 24.0
 :::
-
-
 
 #### Description
 
@@ -708,7 +683,6 @@ var isFauxBold = myTextLayer.sourceText.value.fauxBold;
 
 The write functionality was added in After Effects 24.0
 :::
-
 
 #### Description
 
@@ -757,7 +731,6 @@ Array `[r, g, b]` of floating-point values; read/write.
 :::note
 This functionality was added in After Effects 24.0
 :::
-
 
 #### Description
 
@@ -810,7 +783,6 @@ String; read/write.
 This functionality was added in After Effects 24.0
 :::
 
-
 #### Description
 
 The Text layer's font baseline option. This is for setting a textDocument to superscript or subscript.
@@ -838,7 +810,6 @@ A `FontBaselineOption` enumerated value; read/write. One of:
 :::note
 This functionality was added in After Effects 24.0
 :::
-
 
 #### Description
 
@@ -869,7 +840,6 @@ A `FontCapsOption` enumerated value; read/write. One of:
 This functionality was added in After Effects 13.1 (CC 2014.1)
 :::
 
-
 #### Description
 
 String with with the name of the font family.
@@ -877,7 +847,6 @@ String with with the name of the font family.
 :::warning
 This value only reflects the first character in the Text layer.
 :::
-
 
 #### Type
 
@@ -893,7 +862,6 @@ String; read-only.
 This functionality was added in After Effects 13.1 (CC 2014.1)
 :::
 
-
 #### Description
 
 Path of font file, providing its location on disk.
@@ -902,11 +870,9 @@ Path of font file, providing its location on disk.
 Not guaranteed to be returned for all font types; return value may be empty string for some kinds of fonts.
 :::
 
-
 :::warning
 This value only reflects the first character in the Text layer.
 :::
-
 
 #### Type
 
@@ -922,7 +888,6 @@ String; read-only.
 This functionality was added in After Effects 24.0
 :::
 
-
 #### Description
 
 The Text layer's [Font object](../fontobject) specified by its PostScript name.
@@ -930,7 +895,6 @@ The Text layer's [Font object](../fontobject) specified by its PostScript name.
 :::warning
 This value only reflects the first character in the Text layer.
 :::
-
 
 #### Type
 
@@ -966,7 +930,6 @@ Floating-point value (0.1 to 1296, inclusive); read/write.
 This functionality was added in After Effects 13.1 (CC 2014.1)
 :::
 
-
 #### Description
 
 String with style information, e.g., "bold", "italic"
@@ -974,7 +937,6 @@ String with style information, e.g., "bold", "italic"
 :::warning
 This value only reflects the first character in the Text layer.
 :::
-
 
 #### Type
 
@@ -989,7 +951,6 @@ String; read-only.
 :::note
 This functionality was added in After Effects 24.0
 :::
-
 
 #### Description
 
@@ -1016,7 +977,6 @@ Boolean; read/write.
 :::note
 This functionality was added in After Effects 13.2 (CC 2014.2)
 :::
-
 
 #### Description
 
@@ -1081,7 +1041,6 @@ If you change this value, it will set all paragraphs in the Text layer to the sp
 This functionality was added in After Effects 24.0
 :::
 
-
 #### Description
 
 The Text layer's kerning option.
@@ -1109,7 +1068,6 @@ Integer value; read/write.
 :::note
 This functionality was added in After Effects 14.2 (CC 2017.1)
 :::
-
 
 #### Description
 
@@ -1154,7 +1112,6 @@ myTextSource.setValue(myTextDocument);
 This functionality was added in After Effects 24.0
 :::
 
-
 #### Description
 
 The Text layer's paragraph leading type option.
@@ -1184,7 +1141,6 @@ A `LeadingType` enumerated value; read/write. One of:
 This functionality was added in After Effects 24.0
 :::
 
-
 #### Description
 
 The Text layer's ligature option.
@@ -1208,7 +1164,6 @@ Boolean; read/write.
 :::note
 This functionality was added in After Effects 24.0
 :::
-
 
 #### Description
 
@@ -1238,7 +1193,6 @@ A `LineJoinType` enumerated value; read/write. One of:
 This functionality was added in After Effects 24.2
 :::
 
-
 #### Description
 
 The Text layer's line orientation, in general horizontal vs vertical, which affects how all text in the layer is composed.
@@ -1260,7 +1214,6 @@ A `LineOrientation` enumerated value; read/write. One of:
 :::note
 This functionality was added in After Effects 24.0
 :::
-
 
 #### Description
 
@@ -1314,7 +1267,6 @@ Boolean; read-only.
 This functionality was added in After Effects 13.2 (CC 2014.2)
 :::
 
-
 #### Description
 
 `true` if a Text layer has small caps enabled; otherwise `false`. To set this value, use [TextDocument.fontCapsOption](#textdocumentfontcapsoption) added in After Effects 24.0.
@@ -1322,7 +1274,6 @@ This functionality was added in After Effects 13.2 (CC 2014.2)
 :::warning
 This value only reflects the first character in the Text layer.
 :::
-
 
 #### Type
 
@@ -1337,7 +1288,6 @@ Boolean; read-only.
 :::note
 This functionality was added in After Effects 24.0
 :::
-
 
 #### Description
 
@@ -1365,7 +1315,6 @@ Floating-point value; read/write.
 This functionality was added in After Effects 24.0
 :::
 
-
 #### Description
 
 The Text layer's paragraph space before option.
@@ -1391,7 +1340,6 @@ Floating-point value; read/write.
 :::note
 This functionality was added in After Effects 24.0
 :::
-
 
 #### Description
 
@@ -1487,7 +1435,6 @@ Floating-point value (0 to 1000, inclusive); read/write.
 This functionality was added in After Effects 13.2 (CC 2014.2)
 :::
 
-
 #### Description
 
 `true` if a Text layer has subscript enabled; otherwise `false`. To set this value, use [TextDocument.fontBaselineOption](#textdocumentfontbaselineoption) added in After Effects 24.0.
@@ -1495,7 +1442,6 @@ This functionality was added in After Effects 13.2 (CC 2014.2)
 :::warning
 This value only reflects the first character in the Text layer.
 :::
-
 
 #### Type
 
@@ -1511,7 +1457,6 @@ Boolean; read-only.
 This functionality was added in After Effects 13.2 (CC 2014.2)
 :::
 
-
 #### Description
 
 `true` if a Text layer has superscript enabled; otherwise `false`. To set this value, use [TextDocument.fontBaselineOption](#textdocumentfontbaselineoption) added in After Effects 24.0.
@@ -1519,7 +1464,6 @@ This functionality was added in After Effects 13.2 (CC 2014.2)
 :::warning
 This value only reflects the first character in the Text layer.
 :::
-
 
 #### Type
 
@@ -1569,7 +1513,6 @@ Floating-point value; read/write.
 This functionality was added in After Effects 13.2 (CC 2014.2)
 :::
 
-
 #### Description
 
 This Text layer's tsume value as a normalized percentage, from 0.0 -> 1.0.
@@ -1595,7 +1538,6 @@ Floating-point value; read-write.
 :::note
 This functionality was added in After Effects 13.2 (CC 2014.2)
 :::
-
 
 #### Description
 
@@ -1623,7 +1565,6 @@ Floating-point value; read-write.
 This functionality was added in After Effects 24.3
 :::
 
-
 #### Description
 
 Returns an instance of the Text layer range accessor CharacterRange.
@@ -1634,12 +1575,12 @@ Use toString() to find out what the constructed parameters were.
 
 #### Parameters
 
-|      Parameter       |       Type       |                                                                                            Description                                                                                             |
+|      Parameter       |       Type       |                      Description                       |
 |----------------------|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `characterStart`     | Unsigned integer | Starts at zero, must be the less than or equal to the (text) length of the [TextDocument object](#textdocument-object).                                                                            |
-| `signedCharacterEnd` | Signed integer.  | Optional. If not specified, will be computed at `(characterStart + 1)`.                                                                                                                            |
-|                      |                  | If set to `-1`, then the [CharacterRange object](../characterrange) will dynamically calculate this on access to be equal to the (text) length of the [TextDocument object](#textdocument-object). |
-|                      |                  | `signedCharacterEnd` must be greater than or equal to `characterStart`, and less than or equal to the (text) length of the [TextDocument object](#textdocument-object).                            |
+| `characterStart`     | Unsigned integer | Starts at zero, must be the less than or equal to the (text) length of the [TextDocument object](#textdocument-object).                          |
+| `signedCharacterEnd` | Signed integer.  | Optional. If not specified, will be computed at `(characterStart + 1)`.                                  |
+|            |        | If set to `-1`, then the [CharacterRange object](../characterrange) will dynamically calculate this on access to be equal to the (text) length of the [TextDocument object](#textdocument-object). |
+|            |        | `signedCharacterEnd` must be greater than or equal to `characterStart`, and less than or equal to the (text) length of the [TextDocument object](#textdocument-object).        |
 
 Throws an exception if the parameters would result in an invalid range.
 
@@ -1659,14 +1600,13 @@ An instance of [CharacterRange object](../characterrange)
 This functionality was added in After Effects 24.3
 :::
 
-
 #### Description
 
 Returns the character index bounds of a [ComposedLineRange object](../composedlinerange) in the Text layer.
 
 #### Parameters
 
-|    Parameter     |       Type       |                                       Description                                        |
+|    Parameter     |       Type       |         Description          |
 | ---------------- | ---------------- | ---------------------------------------------------------------------------------------- |
 | `characterIndex` | Unsigned integer | A text index in the Text layer, which will be mapped to the composed line it intersects. |
 
@@ -1689,7 +1629,6 @@ Remember that the composed lines are static and subsequent changes to the [TextD
 This functionality was added in After Effects 24.3
 :::
 
-
 #### Description
 
 Returns an instance of the Text layer range accessor [ComposedLineRange object](../composedlinerange).
@@ -1700,12 +1639,12 @@ Use [ComposedLineRange.toString()](../composedlinerange#composedlinerangetostrin
 
 #### Parameters
 
-|          Parameter           |       Type       |                                                                                           Description                                                                                           |
+|          Parameter           |       Type       |                     Description                     |
 |------------------------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `composedLineIndexStart`     | Unsigned integer | Starts at zero, must be the less than the number of composed lines in the [TextDocument object](#textdocument-object).                                                                          |
-| `signedComposedLineIndexEnd` | Signed integer.  | Optional. If not specified, will be computed at `(composedLineIndexStart + 1)`.                                                                                                                 |
-|                              |                  | If set to -1, then the [ComposedLineRange object](../composedlinerange) will dynamically calculate this on access to the last composed line of the [TextDocument object](#textdocument-object). |
-|                              |                  | `signedComposedLineIndexEnd` must be greater than `composedLineIndexStart`, and less than or equal to the number of composed lines in the [TextDocument object](#textdocument-object).          |
+| `composedLineIndexStart`     | Unsigned integer | Starts at zero, must be the less than the number of composed lines in the [TextDocument object](#textdocument-object).                        |
+| `signedComposedLineIndexEnd` | Signed integer.  | Optional. If not specified, will be computed at `(composedLineIndexStart + 1)`.                                 |
+|          |        | If set to -1, then the [ComposedLineRange object](../composedlinerange) will dynamically calculate this on access to the last composed line of the [TextDocument object](#textdocument-object). |
+|          |        | `signedComposedLineIndexEnd` must be greater than `composedLineIndexStart`, and less than or equal to the number of composed lines in the [TextDocument object](#textdocument-object).          |
 
 Throws an exception if the parameters would result in an invalid range.
 
@@ -1725,14 +1664,13 @@ An instance of [ComposedLineRange object](../composedlinerange)
 This functionality was added in After Effects 24.3
 :::
 
-
 #### Description
 
 Returns the character index bounds of a paragraph in the Text layer.
 
 #### Parameters
 
-|    Parameter     |       Type       |                                     Description                                      |
+|    Parameter     |       Type       |                 Description                  |
 | ---------------- | ---------------- | ------------------------------------------------------------------------------------ |
 | `characterIndex` | Unsigned integer | A text index in the Text layer, which will be mapped to the paragraph it intersects. |
 
@@ -1752,7 +1690,6 @@ Key `end` will be set to text index of the end of the paragraph (greater than st
 This functionality was added in After Effects 24.3
 :::
 
-
 #### Description
 
 Returns an instance of the Text layer range accessor [ParagraphRange object](../paragraphrange).
@@ -1763,12 +1700,12 @@ Use [ParagraphRange.toString()](../paragraphrange#paragraphrangetostring) to fin
 
 #### Parameters
 
-|         Parameter         |       Type       |                                                                                      Description                                                                                      |
+|         Parameter         |       Type       |                          Description                          |
 |---------------------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `paragraphIndexStart`     | Unsigned integer | Starts at zero, must be the less than the number of paragraphs in the [TextDocument object](#textdocument-object).                                                                    |
-| `signedParagraphIndexEnd` | Signed integer   | Optional. If not specified, will be computed at `(paragraphIndexStart + 1)`.                                                                                                          |
-|                           |                  | If set to -1, then the [ParagraphRange object](../paragraphrange) will dynamically calculate this on access to the last paragraph of the [TextDocument object](#textdocument-object). |
-|                           |                  | `signedParagraphIndexEnd` must be greater than `paragraphIndexStart`, and less than or equal to the number of paragraphs in the [TextDocument object](#textdocument-object).          |
+| `paragraphIndexStart`     | Unsigned integer | Starts at zero, must be the less than the number of paragraphs in the [TextDocument object](#textdocument-object).                  |
+| `signedParagraphIndexEnd` | Signed integer   | Optional. If not specified, will be computed at `(paragraphIndexStart + 1)`.                          |
+|       |        | If set to -1, then the [ParagraphRange object](../paragraphrange) will dynamically calculate this on access to the last paragraph of the [TextDocument object](#textdocument-object). |
+|       |        | `signedParagraphIndexEnd` must be greater than `paragraphIndexStart`, and less than or equal to the number of paragraphs in the [TextDocument object](#textdocument-object).          |
 
 Throws an exception if the parameters would result in an invalid range.
 

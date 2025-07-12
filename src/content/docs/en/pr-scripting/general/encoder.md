@@ -13,7 +13,6 @@ The `encoder` object represents Adobe Media Encoder, and is used for local rende
 `app.encoder` is broken on Premiere Pro 14.3.1 - 15 on Mac only. Fixed in 22 and up. [See here.](https://community.adobe.com/t5/premiere-pro-discussions/missing-the-object-app-encoder-14-3-1-15-0-15-1-15-2/m-p/12544488)
 :::
 
-
 ---
 
 ## Attributes
@@ -34,18 +33,18 @@ Makes Adobe Media Encoder render (optionally, a specified range from) the specif
 
 #### Parameters
 
-|       Parameter        |              Type               |                  Description                  |
+|       Parameter        |    Type     |        Description        |
 |------------------------|---------------------------------|-----------------------------------------------|
-| `filePath`             | String                          | A path to a file to render.                   |
-| `outputPath`           | String                          | A path to an output file.                     |
-| `presetPath`           | String                          | A path to a preset (.epr) file.               |
-| `workArea`             | Integer                         | Integer denoting work area to be used:        |
-|                        |                                 | - `0` - `ENCODE_ENTIRE`                       |
-|                        |                                 | - `1` - `ENCODE_IN_TO_OUT`                    |
-|                        |                                 | - `2` - `ENCODE_WORK_AREA`                    |
-| `removeUponCompletion` | Integer                         | If `1`, job will be removed once complete.    |
-| `inPoint`              | [Time object](../../other/time) | A Time object, for the in point of new file.  |
-| `outPoint`             | [Time object](../../other/time) | A Time object, for the out point of new file. |
+| `filePath`   | String      | A path to a file to render.         |
+| `outputPath`           | String      | A path to an output file.           |
+| `presetPath`           | String      | A path to a preset (.epr) file.     |
+| `workArea`   | Integer               | Integer denoting work area to be used:        |
+|              |             | - `0` - `ENCODE_ENTIRE`             |
+|              |             | - `1` - `ENCODE_IN_TO_OUT`          |
+|              |             | - `2` - `ENCODE_WORK_AREA`          |
+| `removeUponCompletion` | Integer               | If `1`, job will be removed once complete.    |
+| `inPoint`    | [Time object](../../other/time) | A Time object, for the in point of new file.  |
+| `outPoint`   | [Time object](../../other/time) | A Time object, for the out point of new file. |
 
 #### Returns
 
@@ -63,16 +62,16 @@ Makes Adobe Media Encoder render (optionally, a specified range from) the specif
 
 #### Parameters
 
-|       Parameter        |                     Type                     |                Description                 |
+|       Parameter        |           Type           |      Description       |
 |------------------------|----------------------------------------------|--------------------------------------------|
-| `projectItem`          | [ProjectItem object](../../item/projectitem) | A project item to render.                  |
-| `outputPath`           | String                                       | A path to an output file.                  |
-| `presetPath`           | String                                       | A path to a preset (.epr) file.            |
-| `workArea`             | Integer                                      | Integer denoting work area to be used:     |
-|                        |                                              | - `0` - `ENCODE_ENTIRE`                    |
-|                        |                                              | - `1` - `ENCODE_IN_TO_OUT`                 |
-|                        |                                              | - `2` - `ENCODE_WORK_AREA`                 |
-| `removeUponCompletion` | Integer                                      | If `1`, job will be removed once complete. |
+| `projectItem`          | [ProjectItem object](../../item/projectitem) | A project item to render.        |
+| `outputPath`           | String         | A path to an output file.        |
+| `presetPath`           | String         | A path to a preset (.epr) file.            |
+| `workArea`   | Integer                  | Integer denoting work area to be used:     |
+|              |                | - `0` - `ENCODE_ENTIRE`          |
+|              |                | - `1` - `ENCODE_IN_TO_OUT`       |
+|              |                | - `2` - `ENCODE_WORK_AREA`       |
+| `removeUponCompletion` | Integer                  | If `1`, job will be removed once complete. |
 
 #### Returns
 
@@ -90,16 +89,16 @@ Makes Adobe Media Encoder render the specified [Sequence object](../../sequence/
 
 #### Parameters
 
-|       Parameter        |                    Type                    |                Description                 |
+|       Parameter        |          Type          |      Description       |
 |------------------------|--------------------------------------------|--------------------------------------------|
-| `sequence`             | [Sequence object](../../sequence/sequence) | A sequence to render.                      |
-| `outputPath`           | String                                     | A path to an output file.                  |
-| `presetPath`           | String                                     | A path to a preset (.epr) file.            |
-| `workArea`             | Integer                                    | Integer denoting work area to be used:     |
-|                        |                                            | - `0` - `ENCODE_ENTIRE`                    |
-|                        |                                            | - `1` - `ENCODE_IN_TO_OUT`                 |
-|                        |                                            | - `2` - `ENCODE_WORK_AREA`                 |
-| `removeUponCompletion` | Integer                                    | If `1`, job will be removed once complete. |
+| `sequence`   | [Sequence object](../../sequence/sequence) | A sequence to render.            |
+| `outputPath`           | String                 | A path to an output file.        |
+| `presetPath`           | String                 | A path to a preset (.epr) file.            |
+| `workArea`   | Integer                | Integer denoting work area to be used:     |
+|              |              | - `0` - `ENCODE_ENTIRE`          |
+|              |              | - `1` - `ENCODE_IN_TO_OUT`       |
+|              |              | - `2` - `ENCODE_WORK_AREA`       |
+| `removeUponCompletion` | Integer                | If `1`, job will be removed once complete. |
 
 #### Returns
 
@@ -135,7 +134,7 @@ Determines whether embedded XMP metadata, will be output.
 
 #### Parameters
 
-| Parameter |  Type   |                    Description                     |
+| Parameter |  Type   |          Description           |
 | --------- | ------- | -------------------------------------------------- |
 | `enabled` | Integer | Pass `1` to enable sidecar output, `0` to disable. |
 
@@ -147,7 +146,6 @@ Returns `0` if successful.
 
 The applications make this determination based on numerous factors, and there is no API control to "force" sidecar or embedded output, for formats which normally use "the other approach".
 :::
-
 
 ---
 
@@ -161,7 +159,7 @@ Determines whether a sidecar file containing XMP metadata, will be output.
 
 #### Parameters
 
-| Parameter |  Type   |                    Description                     |
+| Parameter |  Type   |          Description           |
 | --------- | ------- | -------------------------------------------------- |
 | `enabled` | Integer | Pass `1` to enable sidecar output, `0` to disable. |
 

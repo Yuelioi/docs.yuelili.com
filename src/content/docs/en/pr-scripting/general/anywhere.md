@@ -137,7 +137,7 @@ Opens the production at the specified URL.
 
 #### Parameters
 
-|    Parameter    |  Type  |            Description             |
+|    Parameter    |  Type  |            Description   |
 | --------------- | ------ | ---------------------------------- |
 | `productionURL` | String | The url of the production to open. |
 

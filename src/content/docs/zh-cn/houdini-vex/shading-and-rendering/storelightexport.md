@@ -18,11 +18,11 @@ order: 75
 ```vex
 surface test(export vector perlight = {0,0,0})
 {
-    int             lights[] = getlights();
+    int       lights[] = getlights();
     for (int i = 0; i < len(lights); i++)
     {
-        vector val = set(lights[i], 0, 0);
-        storelightexport(getlightname(lights[i]), "perlight", val);
+    vector val = set(lights[i], 0, 0);
+    storelightexport(getlightname(lights[i]), "perlight", val);
     }
 }
 ```

@@ -81,7 +81,7 @@ title: 标签
 
 #### 参数
 
-| 参数      | 类型   | 描述               |
+| 参数      | 类型   | 描述         |
 | --------- | ------ | ------------------ |
 | `name`    | 字符串 | 要获取的元素的名称 |
 
@@ -101,7 +101,7 @@ title: 标签
 
 #### 参数
 
-| 参数      | 类型           | 描述               |
+| 参数      | 类型     | 描述         |
 | --------- | -------------- | ------------------ |
 | `itemKey` | 字符串, 数字   | 字符串或数字键     |
 
@@ -136,15 +136,15 @@ if ( app.documents.length > 0 ) {
 
     if ( doc.placedItems.length + doc.rasterItems.length > 0 ) {
         for ( i = 0; i < doc.pageItems.length; i++ ) {
-            var imageArt = doc.pageItems[i];
+      var imageArt = doc.pageItems[i];
 
-            if ( imageArt.typename == "PlacedItem" || imageArt.typename == "RasterItem") {
-                // 创建一个名为 AdobeURL 的新标签，并设置其值为 www 链接
+      if ( imageArt.typename == "PlacedItem" || imageArt.typename == "RasterItem") {
+          // 创建一个名为 AdobeURL 的新标签，并设置其值为 www 链接
 
-                var urlTAG = imageArt.tags.add();
-                urlTAG.name = "AdobeWebSite";
-                urlTAG.value = "http://www.adobe.com/";
-            }
+          var urlTAG = imageArt.tags.add();
+          urlTAG.name = "AdobeWebSite";
+          urlTAG.value = "http://www.adobe.com/";
+      }
         }
     } else {
         alert( "文档中没有放置或栅格化的项目" );

@@ -45,10 +45,10 @@ Preferences 对象提供了一种简单的方式来管理 AE 的内部偏好设�
 
 #### 参数
 
-|   参数   |         类型        |         描述         |
+|   参数   |   类型        |   描述   |
 | --- | -------- | --------- |
-| `sectionName` | String              | 偏好设置部分的名称。    |
-| `keyName`   | String              | 偏好设置的键名。     |
+| `sectionName` | String        | 偏好设置部分的名称。    |
+| `keyName`   | String        | 偏好设置的键名。     |
 | `prefType`  | [`PREFType` 枚举](#preftype-枚举) | 可选。指定使用哪个偏好设置文件。 |
 
 #### 返回
@@ -75,10 +75,10 @@ app.preferences.deletePref("Settings_Precomp Cropper", "trimPrecomps");
 
 #### 参数
 
-|   参数   |         类型        |         描述         |
+|   参数   |   类型        |   描述   |
 | --- | -------- | --------- |
-| `sectionName` | String              | 偏好设置部分的名称。    |
-| `keyName`   | String              | 偏好设置的键名。     |
+| `sectionName` | String        | 偏好设置部分的名称。    |
+| `keyName`   | String        | 偏好设置的键名。     |
 | `prefType`  | [`PREFType` 枚举](#preftype-枚举) | 可选。指定使用哪个偏好设置文件。 |
 
 #### 返回
@@ -113,10 +113,10 @@ alert("该设置为: " + debuggerEnabled);
 
 #### 参数
 
-|   参数   |         类型        |         描述         |
+|   参数   |   类型        |   描述   |
 | --- | -------- | --------- |
-| `sectionName` | String              | 偏好设置部分的名称。    |
-| `keyName`   | String              | 偏好设置的键名。     |
+| `sectionName` | String        | 偏好设置部分的名称。    |
+| `keyName`   | String        | 偏好设置的键名。     |
 | `prefType`  | [`PREFType` 枚举](#preftype-枚举) | 可选。指定使用哪个偏好设置文件。 |
 
 #### 返回
@@ -135,10 +135,10 @@ alert("该设置为: " + debuggerEnabled);
 
 #### 参数
 
-|   参数   |         类型        |         描述         |
+|   参数   |   类型        |   描述   |
 | --- | -------- | --------- |
-| `sectionName` | String              | 偏好设置部分的名称。    |
-| `keyName`   | String              | 偏好设置的键名。     |
+| `sectionName` | String        | 偏好设置部分的名称。    |
+| `keyName`   | String        | 偏好设置的键名。     |
 | `prefType`  | [`PREFType` 枚举](#preftype-枚举) | 可选。指定使用哪个偏好设置文件。 |
 
 #### 返回
@@ -157,10 +157,10 @@ alert("该设置为: " + debuggerEnabled);
 
 #### 参数
 
-|   参数   |         类型        |         描述         |
+|   参数   |   类型        |   描述   |
 | --- | -------- | --------- |
-| `sectionName` | String              | 偏好设置部分的名称。    |
-| `keyName`   | String              | 偏好设置的键名。     |
+| `sectionName` | String        | 偏好设置部分的名称。    |
+| `keyName`   | String        | 偏好设置的键名。     |
 | `prefType`  | [`PREFType` 枚举](#preftype-枚举) | 可选。指定使用哪个偏好设置文件。 |
 
 #### 返回
@@ -179,10 +179,10 @@ alert("该设置为: " + debuggerEnabled);
 
 #### 参数
 
-|   参数   |         类型        |         描述         |
+|   参数   |   类型        |   描述   |
 | --- | -------- | --------- |
-| `sectionName` | String              | 偏好设置部分的名称。    |
-| `keyName`   | String              | 偏好设置的键名。     |
+| `sectionName` | String        | 偏好设置部分的名称。    |
+| `keyName`   | String        | 偏好设置的键名。     |
 | `prefType`  | [`PREFType` 枚举](#preftype-枚举) | 可选。指定使用哪个偏好设置文件。 |
 
 #### 返回
@@ -219,11 +219,11 @@ alert("该设置为: " + debuggerEnabled);
 
 #### 参数
 
-|   参数   |         类型        |         描述         |
+|   参数   |   类型        |   描述   |
 | --- | -------- | --------- |
-| `sectionName` | String              | 偏好设置部分的名称。    |
-| `keyName`   | String              | 偏好设置的键名。     |
-| `value`     | Boolean               | 新值。              |
+| `sectionName` | String        | 偏好设置部分的名称。    |
+| `keyName`   | String        | 偏好设置的键名。     |
+| `value`     | Boolean         | 新值。        |
 | `prefType`  | [`PREFType` 枚举](#preftype-枚举) | 可选。指定使用哪个偏好设置文件。 |
 
 #### 返回
@@ -242,11 +242,11 @@ alert("该设置为: " + debuggerEnabled);
 
 #### 参数
 
-|   参数   |         类型        |         描述         |
+|   参数   |   类型        |   描述   |
 | --- | -------- | --------- |
-| `sectionName` | String              | 偏好设置部分的名称。    |
-| `keyName`   | String              | 偏好设置的键名。     |
-| `value`     | 浮点数值        | 新值。              |
+| `sectionName` | String        | 偏好设置部分的名称。    |
+| `keyName`   | String        | 偏好设置的键名。     |
+| `value`     | 浮点数值        | 新值。        |
 | `prefType`  | [`PREFType` 枚举](#preftype-枚举) | 可选。指定使用哪个偏好设置文件。 |
 
 #### 返回
@@ -265,11 +265,11 @@ alert("该设置为: " + debuggerEnabled);
 
 #### 参数
 
-|   参数   |         类型        |         描述         |
+|   参数   |   类型        |   描述   |
 | --- | -------- | --------- |
-| `sectionName` | String              | 偏好设置部分的名称。    |
-| `keyName`   | String              | 偏好设置的键名。     |
-| `value`     | 长整型值            | 新值。              |
+| `sectionName` | String        | 偏好设置部分的名称。    |
+| `keyName`   | String        | 偏好设置的键名。     |
+| `value`     | 长整型值      | 新值。        |
 | `prefType`  | [`PREFType` 枚举](#preftype-枚举) | 可选。指定使用哪个偏好设置文件。 |
 
 #### 返回
@@ -288,11 +288,11 @@ alert("该设置为: " + debuggerEnabled);
 
 #### 参数
 
-|   参数   |         类型        |         描述         |
+|   参数   |   类型        |   描述   |
 | --- | -------- | --------- |
-| `sectionName` | String              | 偏好设置部分的名称。    |
-| `keyName`   | String              | 偏好设置的键名。     |
-| `value`     | String              | 新值。              |
+| `sectionName` | String        | 偏好设置部分的名称。    |
+| `keyName`   | String        | 偏好设置的键名。     |
+| `value`     | String        | 新值。        |
 | `prefType`  | [`PREFType` 枚举](#preftype-枚举) | 可选。指定使用哪个偏好设置文件。 |
 
 #### 返回

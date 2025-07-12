@@ -175,11 +175,11 @@ BridgeTalk.onReceive = function (message) {
 ```javascript
 BridgeTalk.onReceive = function (message) {
     switch (message.type) {
-        case "Data":
-            return processData( message );
-            break;
-        default: //"ExtendScript"
-            return eval( mesage.body );
+     case "Data":
+      return processData( message );
+      break;
+     default: //"ExtendScript"
+      return eval( mesage.body );
     }
 }
 ```
@@ -270,25 +270,165 @@ bt.send();
 // 在目标应用程序（Adobe Bridge）中处理消息并发送中间响应的代码
 BridgeTalk.onReceive = function (message){
     switch (message.type) {
-        case "iterator":
-            done = false;
-            i = 0;
-            while (!done) {
-                // message.body 使用 "i" 在每次执行消息时生成不同的结果
-                // 当完成时，message.body 将 "done" 设置为 `true`
-                // 以便此 onReceive 方法跳出循环。
-                message.sendResult(eval(message.body));
-                i++;
-            }
-            break;
-        default: //"ExtendScript"
-            return eval( message.body );
+     case "iterator":
+      done = false;
+      i = 0;
+      while (!done) {
+      // message.body 使用 "i" 在每次执行消息时生成不同的结果
+      // 当完成时，message.body 将 "done" 设置为 `true`
+      // 以便此 onReceive 方法跳出循环。
+      message.sendResult(eval(message.body));
+      i++;
+      }
+      break;
+     default: //"ExtendScript"
+      return eval( message.body );
     }
 }
 ```
 
-### 示例：设置发送者以接收多个响应
+### 示例：设置发送方接收多个响应
 
-此示例发送了一条类型为迭代器的消息，由上一个示例中的 `onReceive` 处理程序处理，并处理从该目标接收到的响应。
+此示例发送一个迭代器类型的消息，由前例中的onReceive处理程序处理，并处理从该目标接收的响应。
 
-发送应用程序创建了一条消息，其脚本（包含在 `body`
+发送应用程序创建一个消息，其脚本（包含在body字符串中）使用迭代变量i遍历特定文件夹（由Adobe Bridge缩略图对象表示）中的所有文件。
+
+对于文件夹中的每个文件，它返回文件大小数据。对于每个包含的文件夹，返回-1。脚本中最后执行的行是消息的最终结果值。
+
+消息对象的`onResult`方法接收每个中间结果，将其存储到数组`resArr`中，并立即使用脚本定义的函数processInterResult进行处理：
+
+```javascript
+// 发送消息和处理响应的代码
+// 在发送应用程序（任何支持消息的应用程序）中
+var idx = 0;
+var resArr = new Array;
+bt = new BridgeTalk;
+bt.target = "bridge";
+bt.type = "iterator";
+bt.body = "
+var fld = new Thumbnail(Folder('C/Junk'));
+if (i == (fld.children.length - 1))
+done = true; //没有更多文件，结束循环
+tn = fld.children[i];
+if (tn.spec.constructor.name == 'File')
+md = tn.core.immediate.size;
+else md = -1;
+";
+
+// 存储中间结果
+bt.onResult = function(rObj) {
+    resArr[idx] = rObj.body;
+    processInterResult(resArr[idx]);
+    idx++;
+};
+
+bt.onError = function(eObj) {
+    bt.error = eObj.body
+};
+
+bt.send();
+```
+
+---
+
+## 在应用程序之间传递值
+
+BridgeTalk.onReceive静态回调函数可以返回任何类型的值。然而，消息传递框架会将响应打包成响应消息，并将任何返回值以UTF-8编码字符串的形式传递到消息体中。
+
+### 传递简单类型
+
+当消息对象的onResult回调接收到响应时，它必须解释响应消息体中的字符串以获取正确类型的结果。各种类型的结果可以按如下方式识别和处理：
+
+| 类型    | 描述     |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 数字    | JavaScript允许您直接访问包含数字的字符串作为数字，无需进行任何类型转换。但是，在使用加号运算符（+）时要小心，因为它可以用于字符串或数字。如果其中一个操作数是字符串，则两个操作数都会转换为字符串并连接。      |
+| 字符串  | 无需转换。      |
+| 布尔值  | 结果字符串为"true"或"false"。可以使用`eval`方法将其转换为真正的布尔值。         |
+| 日期    | 结果字符串包含以下格式的日期：`"dow mmm dd yyyy hh:mm:ss GMT-nnnn"`。例如"Wed Jun 23 2004 00:00:00 GMT-0700"。        |
+| 数组    | 结果字符串包含数组元素的逗号分隔列表。例如，如果结果数组是`[12, "test", 432]`，消息传递框架会将其扁平化为字符串`"12,test,432"`。作为简单返回数组的替代方法，消息目标可以使用`toSource`方法返回用于创建数组的代码。在这种情况下，发送方必须使用`eval`方法对响应体中的结果字符串进行重新构造。详见下文讨论。       |
+
+### 传递复杂类型
+
+当返回复杂类型（数组和对象）时，发送的脚本必须使用toSource方法序列化数组或对象来构造结果字符串。在这种情况下，发送方必须使用eval方法对响应体中的结果字符串进行重新构造。
+
+#### 使用toSource和eval传递数组
+
+例如，以下代码发送一个脚本，以这种方式返回数组。接收响应的onResult回调使用eval重新构造数组：
+
+```javascript
+// 发送消息和处理响应的代码
+// 在发送应用程序（任何支持消息的应用程序）中
+var idx = 0;
+var resArr = new Array;
+var bt = new BridgeTalk;
+bt.target = "bridge-3.0";
+
+// 传递给目标应用程序的脚本
+// 需要使用"toSource"返回数组
+bt.body = "var arr = [10, this string, 324]; arr.toSource()";
+
+bt.onResult = function(resObj) {
+    // 使用eval重新构造数组
+    arr = eval(resObj.body);
+
+    // 现在可以访问返回的数组
+    for (i=0; i< arr.length(); i++)
+     doSomething(arr[i]);
+}
+
+// 发送消息
+bt.send();
+```
+
+#### 使用toSource和eval传递对象
+
+此技术是在应用程序之间传递对象的唯一方法。例如，此代码发送一个脚本，返回包含特定文件部分元数据的对象，并定义一个接收该对象的onResult回调：
+
+```javascript
+var bt = new BridgeTalk;
+bt.target = "bridge-3.0";
+
+//传递给目标应用程序的脚本
+// 使用"toSource"返回对象
+bt.body = "var tn = new Thumbnail(File('C:\\Myphotos\\photo1.jpg'));
+var md = {fname:tn.core.immediate.name,
+fsize:tn.core.immediate.size};
+md.toSource();"
+
+//对于结果，使用eval重新构造对象
+bt.onResult = function(resObj) {
+    md = bt.result = eval(resObj.body);
+    // 现在可以访问fname和fsize属性
+    doSomething (md.fname, md.fsize);
+}
+
+// 发送消息
+bt.send();
+```
+
+#### 传递DOM对象
+
+您可以发送一个返回DOM对象的脚本，但结果对象仅包含脚本中访问的那些属性。例如，以下脚本请求返回Adobe Bridge DOM缩略图对象。脚本仅访问了path和uri属性，因此仅返回这些属性：
+
+```javascript
+var bt = new BridgeTalk;
+bt.target = "bridge";
+
+//设置传递给目标应用程序的脚本
+// 使用"toSource"返回数组
+bt.body = "var tn = new Thumbnail(File('C:\\Myphotos\\photo1.jpg'));
+var p = tn.path; var u = tn.uri;
+tn.toSource();"
+
+//对于结果，使用eval重新构造对象
+bt.onResult = function(resObj) {
+    // 使用eval重新构造对象
+    tn = eval(resObj.body);
+    // 现在脚本可以访问tn.path和tn.uri，
+    // 但不能访问Adobe Bridge DOM缩略图对象的其他属性
+    doSomething (tn.path, tn.uri);
+}
+
+// 发送消息
+bt.send();
+```

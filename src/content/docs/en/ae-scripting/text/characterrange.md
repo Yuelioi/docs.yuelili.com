@@ -5,11 +5,9 @@ title: characterrange
 
 `app.project.item(index).layer(index).text.sourceText.value.characterRange(characterIndexStart, [signedCharacterIndexEnd])`
 
-
 :::note
 This functionality was added in After Effects 24.3
 :::
-
 
 #### Description
 
@@ -34,13 +32,13 @@ The following attributes and methods are **not** available on instances of Chara
 
 |    Attributes     |            Methods            |
 | ----------------- | ----------------------------- |
-| `baselineLocs`    | `characterRange`              |
+| `baselineLocs`    | `characterRange`    |
 | `boxText`         | `paragraphCharacterIndexesAt` |
-| `boxTextPos`      | `paragraphRange`              |
-| `boxTextSize`     |                               |
-| `lineOrientation` |                               |
-| `paragraphCount`  |                               |
-| `pointText`       |                               |
+| `boxTextPos`      | `paragraphRange`    |
+| `boxTextSize`     |           |
+| `lineOrientation` |           |
+| `paragraphCount`  |           |
+| `pointText`       |           |
 
 #### Examples
 
@@ -108,7 +106,6 @@ If this attribute has a mixed value for the range of characters, it will be read
 In contrast to the same attribute on the TextDocument API, we will *not* throw an exception on read if `applyFill` is not `true`.
 :::
 
-
 #### Type
 
 Array `[r, g, b]` of floating-point values; read/write.
@@ -168,7 +165,6 @@ Setting this value will also set [applyStroke](../textdocument#textdocumentapply
 In contrast to the same attribute on the TextDocument API, we will *not* throw an exception on read if [applyStroke](../textdocument#textdocumentapplystroke) is not `true`.
 :::
 
-
 #### Type
 
 Array [r, g, b] of floating-point values; read/write.
@@ -191,8 +187,6 @@ If this attribute has a mixed value, it will be read as `undefined`.
 
 The value returned here represents what is applied to the characters, without regard to the possible Text layer override.
 :::
-
-
 
 #### Type
 
@@ -230,7 +224,6 @@ String; read/write.
 This functionality was added in After Effects (Beta) 25.0 and is subject to change while it remains in Beta.
 :::
 
-
 #### Description
 
 Copies, using paste semantics, from the `characterRange` parameter to the callee [CharacterRange object](#characterrange-object). The two instances may be the same, and the spans may be different.
@@ -246,7 +239,7 @@ As the span of the [CharacterRange object](#characterrange-object) is not adjust
 
 #### Parameters
 
-|    Parameter     |                      Type                       |                                                     Description                                                      |
+|    Parameter     |            Type             |             Description              |
 | ---------------- | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | `characterRange` | [CharacterRange object](#characterrange-object) | Object whose text and styling will be pasted in place of the callee [CharacterRange object](#characterrange-object). |
 

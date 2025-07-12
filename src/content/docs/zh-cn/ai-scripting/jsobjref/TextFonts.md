@@ -67,7 +67,7 @@ title: 文本字体
 
 #### 参数
 
-| 参数      | 类型   | 描述               |
+| 参数      | 类型   | 描述         |
 | --------- | ------ | ------------------ |
 | `name`    | 字符串 | 要获取的元素的名称 |
 
@@ -87,7 +87,7 @@ title: 文本字体
 
 #### 参数
 
-| 参数      | 类型           | 描述               |
+| 参数      | 类型     | 描述         |
 | --------- | -------------- | ------------------ |
 | `itemKey` | 字符串, 数字   | 字符串或数字键     |
 
@@ -139,8 +139,8 @@ for (var i=0; i<iCount; i++) {
         redraw();
 
         if ((y-=(textRef.height)) <= 20) {
-            y = (docRef.height - edgeSpacing);
-            x += columnSpacing;
+      y = (docRef.height - edgeSpacing);
+      x += columnSpacing;
         }
     }
 }

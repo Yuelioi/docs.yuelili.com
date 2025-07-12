@@ -436,9 +436,9 @@ title: NonNativeItem
 
 #### 参数
 
-|      参数      |                                 类型                                  |        描述        |
+|      参数      |       类型        |        描述        |
 | -------------- | -------------------------------------------------------------------- | ----------------- |
-| `relativeObject` | 对象，可选                                                           | 要复制到的对象     |
+| `relativeObject` | 对象，可选       | 要复制到的对象     |
 | `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 插入元素的位置     |
 
 #### 返回值
@@ -457,9 +457,9 @@ title: NonNativeItem
 
 #### 参数
 
-|      参数      |                                 类型                                  |          描述          |
+|      参数      |       类型        |    描述    |
 | -------------- | -------------------------------------------------------------------- | ---------------------- |
-| `relativeObject` | 对象                                                                 | 要移动元素的对象       |
+| `relativeObject` | 对象       | 要移动元素的对象       |
 | `insertionLocation` | [ElementPlacement](../scripting-constants#elementplacement)，可选 | 移动元素到的位置       |
 
 #### 返回值
@@ -517,16 +517,16 @@ nonNativeItem.resize(
 
 #### 参数
 
-|       参数       |                               类型                                |                       描述                       |
+|       参数       |     类型      |   描述   |
 | ---------------- | ----------------------------------------------------------------- | ------------------------------------------------ |
-| `scaleX`         | 数字（双精度）                                                    | 水平缩放因子                                     |
-| `scaleY`         | 数字（双精度）                                                    | 垂直缩放因子                                     |
-| `changePositions` | 布尔值，可选                                                      | 是否影响艺术对象的位置和方向                     |
-| `changeFillPatterns` | 布尔值，可选                                                      | 是否变换填充图案                                 |
-| `changeFillGradients` | 布尔值，可选                                                      | 是否变换填充渐变                                 |
-| `changeStrokePattern` | 布尔值，可选                                                      | 是否变换描边图案                                 |
-| `changeLineWidths` | 数字（双精度），可选                                              | 缩放线宽的量                                     |
-| `scaleAbout`     | [Transformation](../scripting-constants#transformation)，可选     | 用作锚点的点，用于变换                           |
+| `scaleX`   | 数字（双精度）      | 水平缩放因子     |
+| `scaleY`   | 数字（双精度）      | 垂直缩放因子     |
+| `changePositions` | 布尔值，可选          | 是否影响艺术对象的位置和方向         |
+| `changeFillPatterns` | 布尔值，可选          | 是否变换填充图案       |
+| `changeFillGradients` | 布尔值，可选          | 是否变换填充渐变       |
+| `changeStrokePattern` | 布尔值，可选          | 是否变换描边图案       |
+| `changeLineWidths` | 数字（双精度），可选        | 缩放线宽的量     |
+| `scaleAbout`     | [Transformation](../scripting-constants#transformation)，可选     | 用作锚点的点，用于变换         |
 
 #### 返回值
 
@@ -553,14 +553,14 @@ nonNativeItem.rotate(
 
 #### 参数
 
-|       参数       |                               类型                                |                       描述                       |
+|       参数       |     类型      |   描述   |
 | ---------------- | ----------------------------------------------------------------- | ------------------------------------------------ |
-| `angle`          | 数字（双精度）                                                    | 旋转元素的角度量                                 |
-| `changePositions` | 布尔值，可选                                                      | 是否影响艺术对象的位置和方向                     |
-| `changeFillPatterns` | 布尔值，可选                                                      | 是否变换填充图案                                 |
-| `changeFillGradients` | 布尔值，可选                                                      | 是否变换填充渐变                                 |
-| `changeStrokePattern` | 布尔值，可选                                                      | 是否变换描边图案                                 |
-| `rotateAbout`    | [Transformation](../scripting-constants#transformation)，可选     | 用作锚点的点，用于变换                           |
+| `angle`    | 数字（双精度）      | 旋转元素的角度量       |
+| `changePositions` | 布尔值，可选          | 是否影响艺术对象的位置和方向         |
+| `changeFillPatterns` | 布尔值，可选          | 是否变换填充图案       |
+| `changeFillGradients` | 布尔值，可选          | 是否变换填充渐变       |
+| `changeStrokePattern` | 布尔值，可选          | 是否变换描边图案       |
+| `rotateAbout`    | [Transformation](../scripting-constants#transformation)，可选     | 用作锚点的点，用于变换         |
 
 #### 返回值
 
@@ -588,15 +588,15 @@ nonNativeItem.transform(
 
 #### 参数
 
-|        参数        |                               类型                                |                  描述                  |
+|        参数        |     类型      |      描述      |
 | ----------------- | ----------------------------------------------------------------- | -------------------------------------- |
-| `transformationMatrix` | [Matrix](.././Matrix)                                             | 要应用的变换矩阵                       |
-| `changePositions` | 布尔值，可选                                                      | 是否改变位置                           |
-| `changeFillPatterns` | 布尔值，可选                                                      | 是否改变填充图案                       |
-| `changeFillGradients` | 布尔值，可选                                                      | 是否改变填充渐变                       |
-| `changeStrokePattern` | 布尔值，可选                                                      | 是否改变描边图案                       |
-| `changeLineWidths` | 数字（双精度），可选                                              | 缩放线宽的量                           |
-| `transformAbout`  | [Transformation](../scripting-constants#transformation)，可选     | 用作锚点的点，用于变换                 |
+| `transformationMatrix` | [Matrix](.././Matrix)       | 要应用的变换矩阵   |
+| `changePositions` | 布尔值，可选          | 是否改变位置         |
+| `changeFillPatterns` | 布尔值，可选          | 是否改变填充图案   |
+| `changeFillGradients` | 布尔值，可选          | 是否改变填充渐变   |
+| `changeStrokePattern` | 布尔值，可选          | 是否改变描边图案   |
+| `changeLineWidths` | 数字（双精度），可选        | 缩放线宽的量         |
+| `transformAbout`  | [Transformation](../scripting-constants#transformation)，可选     | 用作锚点的点，用于变换   |
 
 #### 返回值
 
@@ -623,14 +623,14 @@ nonNativeItem.translate(
 
 #### 参数
 
-|         参数         |           类型            |             描述              |
+|   参数   |     类型      |       描述        |
 | -------------------- | ------------------------- | ----------------------------- |
-| `deltaX`             | 数字（双精度），可选      | 水平偏移量                    |
-| `deltaY`             | 数字（双精度），可选      | 垂直偏移量                    |
-| `transformObjects`   | 布尔值，可选              | 是否变换对象                  |
-| `transformFillPatterns` | 布尔值，可选              | 是否变换填充图案              |
-| `transformFillGradients` | 布尔值，可选              | 是否变换填充渐变              |
-| `transformStrokePatterns` | 布尔值，可选              | 是否变换描边图案              |
+| `deltaX`       | 数字（双精度），可选      | 水平偏移量        |
+| `deltaY`       | 数字（双精度），可选      | 垂直偏移量        |
+| `transformObjects`   | 布尔值，可选        | 是否变换对象      |
+| `transformFillPatterns` | 布尔值，可选        | 是否变换填充图案        |
+| `transformFillGradients` | 布尔值，可选        | 是否变换填充渐变        |
+| `transformStrokePatterns` | 布尔值，可选        | 是否变换描边图案        |
 
 #### 返回值
 
@@ -648,9 +648,9 @@ nonNativeItem.translate(
 
 #### 参数
 
-|  参数   |                        类型                         |           描述            |
+|  参数   |    类型     |     描述      |
 | ------ | --------------------------------------------------- | ------------------------- |
-| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法          |
+| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法    |
 
 #### 返回值
 

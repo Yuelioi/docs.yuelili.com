@@ -24,7 +24,7 @@ VEX包含字符串数据类型，在以下场景中非常有用：
 ```vex
 string s = 'foo';
 string t = "bar";
-string py = r"Hello world\n";        // Python风格，等价于"Hello world\\n"
+string py = r"Hello world\n";      // Python风格，等价于"Hello world\\n"
 string cpp = R"(Hello world\n)";   // C++风格，等价于"Hello world\\n"
 
 ```
@@ -42,8 +42,8 @@ string cpp = R"(Hello world\n)";   // C++风格，等价于"Hello world\\n"
 
 ```vex
 string escaped = 'Line 1\nLine 2';
-string raw = r"Line 1\nLine 1 continues";        // "Line 1\\nLine 1 continues"
-string cppraw = R"(Line 1\nLine 1 continues)";        // "Line 1\\nLine 1 continues"
+string raw = r"Line 1\nLine 1 continues";      // "Line 1\\nLine 1 continues"
+string cppraw = R"(Line 1\nLine 1 continues)";      // "Line 1\\nLine 1 continues"
 string cppmultiline = R"multi(这是一个很长的
     多行字符串。字符串
     还包含一个内嵌的原始字符串 R"(原始字符串)"

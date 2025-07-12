@@ -13,16 +13,16 @@ Premiere Pro 和 Premiere Elements 都将 `PF_InData>appl_id` 设置为 'PrMr'�
 
 如果需要区分 Premiere Pro 和 Premiere Elements，可以使用 Premiere 特定的 App Info Suite，该套件可从 [Premiere Pro SDK](http://ppro-plugin-sdk.aenhancers.com) 头文件中获取。
 
-|             应用程序版本             | PF_InData> version.major | PF_InData> version.minor |
+|       应用程序版本       | PF_InData> version.major | PF_InData> version.minor |
 | ------------------------------------ | ------------------------ | ------------------------ |
-| Premiere Pro CC 到 Premiere Pro CC 2019 | 13                       | 4                        |
-| Premiere Pro CS6                     | 13                       | 2                        |
-| Premiere Pro CS5.5                   | 13                       | 1                        |
-| Premiere Pro CS5, Premiere Elements 9 | 13                       | 0                        |
-| Premiere Pro CS4, Premiere Elements 8 | 12                       | 5                        |
-| Premiere Pro CS3, Premiere Elements 4 和 7 | 12                       | 4                        |
-| Premiere Pro 2.0, Premiere Elements 3 | 12                       | 3                        |
-| Premiere Pro 1.5, Premiere Elements 2 | 12                       | 2                        |
-| Premiere Pro 1.0, Premiere Elements 1 | 12                       | 1                        |
+| Premiere Pro CC 到 Premiere Pro CC 2019 | 13    | 4     |
+| Premiere Pro CS6         | 13    | 2     |
+| Premiere Pro CS5.5       | 13    | 1     |
+| Premiere Pro CS5, Premiere Elements 9 | 13    | 0     |
+| Premiere Pro CS4, Premiere Elements 8 | 12    | 5     |
+| Premiere Pro CS3, Premiere Elements 4 和 7 | 12    | 4     |
+| Premiere Pro 2.0, Premiere Elements 3 | 12    | 3     |
+| Premiere Pro 1.5, Premiere Elements 2 | 12    | 2     |
+| Premiere Pro 1.0, Premiere Elements 1 | 12    | 1     |
 
 请注意，Premiere Pro 和 Premiere Elements 使用的版本号并不意味着它们支持与 After Effects 相同版本的 API 功能。它仅用于区分不同版本。

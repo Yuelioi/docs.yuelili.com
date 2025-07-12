@@ -1099,7 +1099,7 @@ title: 文档
 
 #### 参数
 
-|   参数    |                                    类型                                     |               描述                |
+|   参数    |    类型     |         描述          |
 | --------- | --------------------------------------------------------------------------- | --------------------------------- |
 | `layoutStyle` | [DocumentLayoutStyle](../scripting-constants#documentlayoutstyle), 可选 | 用于排列文档的布局样式 |
 
@@ -1121,7 +1121,7 @@ title: 文档
 
 #### 参数
 
-|   参数    |                       类型                        |        描述         |
+|   参数    |   类型    |        描述   |
 | --------- | ------------------------------------------------- | ------------------- |
 | `saveOptions` | [SaveOptions](../scripting-constants#saveoptions) | 关闭时的保存选项 |
 
@@ -1155,9 +1155,9 @@ title: 文档
 
 #### 参数
 
-|   参数    |                            类型                             |         描述          |
+|   参数    |          类型   |   描述    |
 | --------- | ----------------------------------------------------------- | --------------------- |
-| `coordinate`  | 点                                                       | 要转换的点              |
+| `coordinate`  | 点           | 要转换的点        |
 | `source`      | [CoordinateSystem](../scripting-constants#coordinatesystem) | 源坐标系      |
 | `destination` | [CoordinateSystem](../scripting-constants#coordinatesystem) | 目标坐标系 |
 
@@ -1177,11 +1177,11 @@ title: 文档
 
 #### 参数
 
-|    参数     |                                         类型                                          |    描述     |
+|    参数     |         类型          |    描述     |
 | ----------- | ------------------------------------------------------------------------------------ | ----------- |
 | `exportFile`   | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要保存的文件       |
-| `exportFormat` | [ExportType](../scripting-constants#exporttype)                                      | 导出文件格式 |
-| `options`      | [Variable](.././Variable), 可选                                                  | 待办事项               |
+| `exportFormat` | [ExportType](../scripting-constants#exporttype)      | 导出文件格式 |
+| `options`      | [Variable](.././Variable), 可选   | 待办事项         |
 
 #### 返回值
 
@@ -1199,7 +1199,7 @@ title: 文档
 
 #### 参数
 
-| 参数      |                                         类型                                         |       描述       |
+| 参数      |         类型         |       描述       |
 | --------- | ------------------------------------------------------------------------------------ | ---------------- |
 | `file`    | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要导出的预设文件 |
 
@@ -1219,7 +1219,7 @@ title: 文档
 
 #### 参数
 
-| 参数      |                                         类型                                         |       描述       |
+| 参数      |         类型         |       描述       |
 | --------- | ------------------------------------------------------------------------------------ | ---------------- |
 | `file`    | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要导出的预设文件 |
 
@@ -1239,7 +1239,7 @@ title: 文档
 
 #### 参数
 
-| 参数      |                                         类型                                         |       描述       |
+| 参数      |         类型         |       描述       |
 | --------- | ------------------------------------------------------------------------------------ | ---------------- |
 | `file`    | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要导出的预设文件 |
 
@@ -1259,7 +1259,7 @@ title: 文档
 
 #### 参数
 
-| 参数       |                                         类型                                         |          描述          |
+| 参数       |         类型         |    描述    |
 | ---------- | ------------------------------------------------------------------------------------ | ---------------------- |
 | `fileSpec` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要导出的 XML 库文件    |
 
@@ -1279,7 +1279,7 @@ title: 文档
 
 #### 参数
 
-| 参数      |          类型          |       描述       |
+| 参数      |    类型    |       描述       |
 | --------- | ---------------------- | ---------------- |
 | `index`   | 数字（长整型），可选 | 要调整的画板索引 |
 
@@ -1355,11 +1355,11 @@ title: 文档
 
 #### 参数
 
-|                                             参数                                             |                           类型                            |   描述   |
+|       参数       |         类型          |   描述   |
 | -------------------------------------------------------------------------------------------- | --------------------------------------------------------- | -------- |
-| `imageFile`  [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要写入的图像文件                                          |          |
-| `clipBounds`                                                                                  | 矩形，可选                                                | 裁剪边界 |
-| `options`                                                                                     | [ImageCaptureOptions](.././ImageCaptureOptions)，可选      | todo     |
+| `imageFile`  [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要写入的图像文件          |    |
+| `clipBounds`   | 矩形，可选          | 裁剪边界 |
+| `options`      | [ImageCaptureOptions](.././ImageCaptureOptions)，可选      | todo     |
 
 #### 返回值
 
@@ -1377,9 +1377,9 @@ title: 文档
 
 #### 参数
 
-|                                            参数                                             |                类型                | 描述 |
+|   参数       |          类型          | 描述 |
 | ------------------------------------------------------------------------------------------- | ---------------------------------- | ---- |
-| `fileSpec`  [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要加载字符样式的文件               |      |
+| `fileSpec`  [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要加载字符样式的文件         |      |
 
 #### 返回值
 
@@ -1397,7 +1397,7 @@ title: 文档
 
 #### 参数
 
-| 参数       |                                         类型                                         |            描述            |
+| 参数       |         类型         |      描述      |
 | ---------- | ------------------------------------------------------------------------------------ | -------------------------- |
 | `fileSpec` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要加载段落样式的文件       |
 
@@ -1417,10 +1417,10 @@ title: 文档
 
 #### 参数
 
-|     参数      |                                         类型                                         |            描述            |
+|     参数      |         类型         |      描述      |
 | ------------- | ------------------------------------------------------------------------------------ | -------------------------- |
 | `fileSpec`    | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要加载 PDF 预设的文件      |
-| `replacingPreset` | 字符串，可选                                                                     | 是否替换现有预设           |
+| `replacingPreset` | 字符串，可选           | 是否替换现有预设     |
 
 #### 返回值
 
@@ -1438,9 +1438,9 @@ title: 文档
 
 #### 参数
 
-|   参数     |                                         类型                                         |          描述          |
+|   参数     |         类型         |    描述    |
 | ---------- | ------------------------------------------------------------------------------------ | ---------------------- |
-| `printPreset` | 字符串                                                                               | 要加载的预设名称       |
+| `printPreset` | 字符串      | 要加载的预设名称       |
 | `fileSpec` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要加载打印预设的文件   |
 
 #### 返回值
@@ -1459,7 +1459,7 @@ title: 文档
 
 #### 参数
 
-| 参数       |                                         类型                                         |          描述          |
+| 参数       |         类型         |    描述    |
 | ---------- | ------------------------------------------------------------------------------------ | ---------------------- |
 | `fileSpec` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要导入变量的文件       |
 
@@ -1479,7 +1479,7 @@ title: 文档
 
 #### 参数
 
-| 参数      |                    类型                     | 描述 |
+| 参数      |        类型         | 描述 |
 | --------- | ------------------------------------------- | ---- |
 | `options` | [PrintOptions](.././PrintOptions)，可选     | todo |
 
@@ -1499,11 +1499,11 @@ title: 文档
 
 #### 参数
 
-|  参数       |                        类型                         |       描述       |
+|  参数       |    类型     |       描述       |
 | ----------- | --------------------------------------------------- | ---------------- |
-| `sourceArt` | [Variable](.././Variable)                           | 要栅格化的源图稿 |
-| `clipBounds` | 矩形，可选                                          | 裁剪边界         |
-| `options`   | [RasterizeOptions](.././RasterizeOptions)，可选     | todo             |
+| `sourceArt` | [Variable](.././Variable)         | 要栅格化的源图稿 |
+| `clipBounds` | 矩形，可选          | 裁剪边界   |
+| `options`   | [RasterizeOptions](.././RasterizeOptions)，可选     | todo       |
 
 #### 返回值
 
@@ -1529,12 +1529,12 @@ title: 文档
 
 #### 参数
 
-|       参数        |                                       类型                                        |                描述                |
+|       参数        |       类型        |          描述          |
 | ----------------- | --------------------------------------------------------------------------------- | ---------------------------------- |
-| `artboardLayout`  | [DocumentArtboardLayout](../scripting-constants#documentartboardlayout)，可选     | 画板布局                           |
-| `artboardRowsOrCols` | 整数，可选                                                                 | 行数或列数                         |
-| `artboardSpacing` | 数字，可选                                                                  | 间距的像素数                       |
-| `artboardMoveArtwork` | 布尔值，可选                                                              | 是否将图稿随画板一起移动           |
+| `artboardLayout`  | [DocumentArtboardLayout](../scripting-constants#documentartboardlayout)，可选     | 画板布局         |
+| `artboardRowsOrCols` | 整数，可选       | 行数或列数     |
+| `artboardSpacing` | 数字，可选        | 间距的像素数   |
+| `artboardMoveArtwork` | 布尔值，可选          | 是否将图稿随画板一起移动     |
 
 #### 返回值
 
@@ -1566,10 +1566,10 @@ title: 文档
 
 #### 参数
 
-| 参数      |                                         类型                                         |         描述         |
+| 参数      |         类型         |   描述   |
 | --------- | ------------------------------------------------------------------------------------ | -------------------- |
 | `saveIn`  | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要保存文档的文件     |
-| `options` | [SaveOptions](../scripting-constants#saveoptions)，可选                              | 保存选项             |
+| `options` | [SaveOptions](../scripting-constants#saveoptions)，可选    | 保存选项       |
 
 #### 返回值
 
@@ -1587,7 +1587,7 @@ title: 文档
 
 #### 参数
 
-| 参数      |                                         类型                                         |         描述         |
+| 参数      |         类型         |   描述   |
 | --------- | ------------------------------------------------------------------------------------ | -------------------- |
 | `saveIn`  | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要保存文档的文件     |
 
@@ -1621,7 +1621,7 @@ title: 文档
 
 #### 参数
 
-| 参数        |                                    类型                                     |   描述   |
+| 参数        |    类型     |   描述   |
 | ----------- | --------------------------------------------------------------------------- | -------- |
 | `gridPlane` | [PerspectiveGridPlaneType](../scripting-constants#perspectivegridplanetype) | 网格平面类型 |
 
@@ -1641,10 +1641,10 @@ title: 文档
 
 #### 参数
 
-| 参数         |                               类型                                |      描述      |
+| 参数   |     类型      |      描述      |
 | ------------ | ----------------------------------------------------------------- | -------------- |
 | `gridType`   | [PerspectiveGridType](../scripting-constants#perspectivegridtype) | 网格类型       |
-| `presetName` | 字符串                                                            | 要选择的预设名称 |
+| `presetName` | 字符串        | 要选择的预设名称 |
 
 #### 返回值
 
@@ -1676,10 +1676,10 @@ title: 文档
 
 #### 参数
 
-| 参数         |                                         类型                                         |      描述      |
+| 参数   |         类型         |      描述      |
 | ------------ | ------------------------------------------------------------------------------------ | -------------- |
 | `imageFile`  | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象 | 要保存的图像文件 |
-| `windowSize` | 2 个数字的数组                                                                       | 窗口大小       |
+| `windowSize` | 2 个数字的数组    | 窗口大小       |
 
 #### 返回值
 

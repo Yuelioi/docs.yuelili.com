@@ -324,7 +324,7 @@ app.project.activeItem.removeGuide(0);
 
 #### 参数
 
-|  参数   |  类型   |            描述            |
+|  参数   |  类型   |    描述    |
 | ------- | ------- | ------------------ |
 | `position`   | 整数 | 参考线的新 X 或 Y 坐标位置（以像素为单位），具体取决于其现有的 `orientationType`。 |
 | `guideIndex` | 整数 | 要修改的参考线的索引。        |

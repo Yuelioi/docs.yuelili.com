@@ -121,7 +121,7 @@ Open a project item in the Source monitor.
 
 #### Parameters
 
-|   Parameter   |                     Type                     |       Description       |
+|   Parameter   |           Type           |       Description       |
 | ------------- | -------------------------------------------- | ----------------------- |
 | `projectItem` | [ProjectItem object](../../item/projectitem) | A project item to open. |
 

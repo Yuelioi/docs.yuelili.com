@@ -7,23 +7,23 @@ The classes defined for the XMP JavaScript API, with their properties and method
 
 After the library has been loaded, these XMP classes are available in the global JavaScript namespace:
 
-|                  Object                   |                                  Description                                   |
+|     Object   |      Description     |
 | ----------------------------------------- | ------------------------------------------------------------------------------ |
-| [XMPMeta object](#xmpmeta-object)         | Provides the core services of the XMP Toolkit.                                 |
-| [XMPFile object](#xmpfile-object)         | Provides convenient I/O access to the main, or document level, XMP for a file. |
-| [XMPUtils object](#xmputils-object)       | Provides additional utility functions for array handling.                      |
-| [XMPDateTime object](#xmpdatetime-object) | Represents date-time values.                                                   |
-| [XMPConst object](#xmpconst-object)       | Contains numeric and string constant values for use with the JavaScript API.   |
+| [XMPMeta object](#xmpmeta-object)   | Provides the core services of the XMP Toolkit.     |
+| [XMPFile object](#xmpfile-object)   | Provides convenient I/O access to the main, or document level, XMP for a file. |
+| [XMPUtils object](#xmputils-object)   | Provides additional utility functions for array handling.    |
+| [XMPDateTime object](#xmpdatetime-object) | Represents date-time values.      |
+| [XMPConst object](#xmpconst-object)   | Contains numeric and string constant values for use with the JavaScript API.   |
 
 These top-level objects provide access to additional support classes:
 
-|                    Object                     |                                 Description                                  |
+|     Object   |     Description      |
 | --------------------------------------------- | ---------------------------------------------------------------------------- |
-| [XMPIterator object](#xmpiterator-object)     | Allows iteration through properties in an [XMPMeta object](#xmpmeta-object). |
-| [XMPProperty object](#xmpproperty-object)     | Describes a metadata property.                                               |
-| [XMPAliasInfo object](#xmpaliasinfo-object)   | Describes a metadata alias.                                                  |
-| [XMPFileInfo object](#xmpfileinfo-object)     | Describes a file.                                                            |
-| [XMPPacketInfo object](#xmppacketinfo-object) | Describes a raw XMP packet in a file.                                        |
+| [XMPIterator object](#xmpiterator-object)   | Allows iteration through properties in an [XMPMeta object](#xmpmeta-object). |
+| [XMPProperty object](#xmpproperty-object)   | Describes a metadata property.    |
+| [XMPAliasInfo object](#xmpaliasinfo-object)   | Describes a metadata alias.      |
+| [XMPFileInfo object](#xmpfileinfo-object)   | Describes a file.   |
+| [XMPPacketInfo object](#xmppacketinfo-object) | Describes a raw XMP packet in a file.   |
 
 ---
 
@@ -33,15 +33,15 @@ This object is returned by [XMPMeta.resolveAlias](#xmpmetaresolvealias). The rea
 
 ### XMPAliasInfo object properties
 
-| Property  |  Type  |                                                               Description                                                               |
+| Property  |  Type  |     Description     |
 |-----------|--------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| arrayForm | Number | A constant that describes the property type of the resolved alias, 0 for a simple property. Constants are:                              |
-|           |        | - `XMPConst.ALIAS_TO_SIMPLE_PROP`: A direct mapping. It can be simple-to-simple, array-to-array, or structure-to-structure.             |
-|           |        | - `XMPConst.ALIAS_TO_ARRAY`: The actual property is an unordered array; the alias is to the first element.                              |
-|           |        | - `XMPConst.ALIAS_TO_ORDERED_ARRAY`: The actual property is an ordered array; the alias is to the first element.                        |
-|           |        | - `XMPConst.ALIAS_TO_ALT_ARRAY`: The actual property is an alternate array; the alias is to the first element.                          |
-|           |        | - `XMPConst.ALIAS_TO_ALT_TEXT`: The actual property is an alternate text array; the alias is to the `x-default` element.                |
-| name      | String | The name of the property to which the alias resolves.                                                                                   |
+| arrayForm | Number | A constant that describes the property type of the resolved alias, 0 for a simple property. Constants are:    |
+|   |    | - `XMPConst.ALIAS_TO_SIMPLE_PROP`: A direct mapping. It can be simple-to-simple, array-to-array, or structure-to-structure.    |
+|   |    | - `XMPConst.ALIAS_TO_ARRAY`: The actual property is an unordered array; the alias is to the first element.    |
+|   |    | - `XMPConst.ALIAS_TO_ORDERED_ARRAY`: The actual property is an ordered array; the alias is to the first element.    |
+|   |    | - `XMPConst.ALIAS_TO_ALT_ARRAY`: The actual property is an alternate array; the alias is to the first element.    |
+|   |    | - `XMPConst.ALIAS_TO_ALT_TEXT`: The actual property is an alternate text array; the alias is to the `x-default` element.    |
+| name   | String | The name of the property to which the alias resolves.     |
 | namespace | String | The namespace of the property to which the alias resolves. See [Schema namespace string constants](#schema-namespace-string-constants). |
 
 ---
@@ -54,32 +54,32 @@ This object contains the read-only constant definitions for use with the JavaScr
 
 Constant values for the namespace URI strings used in all get and set property operations. See [XMPMeta object](#xmpmeta-object).
 
-|       Namespace        |                                                   Description                                                    |
+|   Namespace    |      Description      |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `NS_DC`                | The XML namespace for the Dublin Core schema, [http://purl.org/dc/elements/1.1](http://purl.org/dc/elements/1.1) |
-| `NS_IPTC_CORE`         | The XML namespace for the IPTC Core schema.                                                                      |
-| `NS_RDF`               | The XML namespace for RDF.                                                                                       |
-| `NS_XML`               | The XML namespace for XML.                                                                                       |
-| `NS_XMP`               | The XML namespace for the XMP basic schema.                                                                      |
-| `NS_XMP_RIGHTS`        | The XML namespace for the XMP copyright schema.                                                                  |
-| `NS_XMP_MM`            | The XML namespace for the XMP digital asset management schema.                                                   |
-| `NS_XMP_BJ`            | The XML namespace for the job management schema.                                                                 |
-| `NS_XMP_NOTE`          | The XML namespace for the XMP note schema. An Adobe private namespace; do not create new properties.             |
-| `NS_PDF`               | The XML namespace for the PDF schema.                                                                            |
-| `NS_PDFX`              | The XML namespace for the PDFX schema. An Adobe private namespace; do not create new properties.                 |
-| `NS_PHOTOSHOP`         | The XML namespace for the Adobe Photoshop custom schema.                                                         |
-| `NS_PS_ALBUM`          | The XML namespace for the Adobe Photoshop Album custom schema.                                                   |
-| `NS_EXIF`              | The XML namespace for Adobe's EXIF schema.                                                                       |
-| `NS_EXIF_AUX`          | The XML namespace for Adobe's EXIF auxiliary schema.                                                             |
-| `NS_TIFF`              | The XML namespace for Adobe's TIFF schema.                                                                       |
-| `NS_PNG`               | The XML namespace for the PNG schema.                                                                            |
-| `NS_JPEG`              | The XML namespace for the JPEG schema.                                                                           |
-| `NS_SWF`               | The XML namespace for the Flash small web format schema.                                                         |
-| `NS_JPK`               | The XML namespace for the JPK schema.                                                                            |
-| `NS_CAMERA_RAW`        | The XML namespace for the Camera Raw schema.                                                                     |
-| `NS_DM`                | The XML namespace for the DM schema.                                                                             |
-| `NS_ADOBE_STOCK_PHOTO` | The XML namespace for the Adobe Stock Photos schema.                                                             |
-| `NS_ASF`               | The XML namespace for the Microsoft advanced streaming format schema.                                            |
+| `NS_DC`    | The XML namespace for the Dublin Core schema, [http://purl.org/dc/elements/1.1](http://purl.org/dc/elements/1.1) |
+| `NS_IPTC_CORE`   | The XML namespace for the IPTC Core schema.      |
+| `NS_RDF`    | The XML namespace for RDF.     |
+| `NS_XML`    | The XML namespace for XML.     |
+| `NS_XMP`    | The XML namespace for the XMP basic schema.      |
+| `NS_XMP_RIGHTS`    | The XML namespace for the XMP copyright schema.     |
+| `NS_XMP_MM`   | The XML namespace for the XMP digital asset management schema.      |
+| `NS_XMP_BJ`   | The XML namespace for the job management schema.     |
+| `NS_XMP_NOTE`    | The XML namespace for the XMP note schema. An Adobe private namespace; do not create new properties.    |
+| `NS_PDF`    | The XML namespace for the PDF schema.       |
+| `NS_PDFX`    | The XML namespace for the PDFX schema. An Adobe private namespace; do not create new properties.     |
+| `NS_PHOTOSHOP`   | The XML namespace for the Adobe Photoshop custom schema.   |
+| `NS_PS_ALBUM`    | The XML namespace for the Adobe Photoshop Album custom schema.      |
+| `NS_EXIF`    | The XML namespace for Adobe's EXIF schema.     |
+| `NS_EXIF_AUX`    | The XML namespace for Adobe's EXIF auxiliary schema.   |
+| `NS_TIFF`    | The XML namespace for Adobe's TIFF schema.     |
+| `NS_PNG`    | The XML namespace for the PNG schema.       |
+| `NS_JPEG`    | The XML namespace for the JPEG schema.      |
+| `NS_SWF`    | The XML namespace for the Flash small web format schema.   |
+| `NS_JPK`    | The XML namespace for the JPK schema.       |
+| `NS_CAMERA_RAW`    | The XML namespace for the Camera Raw schema.     |
+| `NS_DM`    | The XML namespace for the DM schema.       |
+| `NS_ADOBE_STOCK_PHOTO` | The XML namespace for the Adobe Stock Photos schema.   |
+| `NS_ASF`    | The XML namespace for the Microsoft advanced streaming format schema.   |
 
 ---
 
@@ -87,26 +87,26 @@ Constant values for the namespace URI strings used in all get and set property o
 
 Constant values for the field-type namespace URI strings used in all structured property operations. See [XMPMeta object](#xmpmeta-object).
 
-|       Namespace        |                                                 Description                                                 |
+|   Namespace    |      Description      |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `TYPE_IDENTIFIER_QUAL` | The XML namespace for qualifiers of the xmp:Identifier property.                                            |
-| `TYPE_DIMENSIONS`      | The XML namespace for fields of the Dimensions type.                                                        |
-| `TYPE_TEXT`            | The XML namespace for the XMP text document schema.                                                         |
-| `TYPE_PAGEDFILE`       | The XML namespace for the XMP paged document schema.                                                        |
-| `TYPE_GRAPHICS`        | The XML namespace for a structure containing the characteristics of a colorant (swatch) used in a document. |
-| `TYPE_IMAGE`           | The XML namespace for fields of a graphical image. Used for the Thumbnail type.                             |
-| `TYPE_FONT`            | The XML namespace for a structure containing the characteristics of a font used in a document.              |
-| `TYPE_RESOURCE_EVENT`  | The XML namespace for fields of the ResourceEvent type.                                                     |
-| `TYPE_RESOURCE_REF`    | The XML namespace for fields of the ResourceRef type.                                                       |
-| `TYPE_ST_VERSION`      | The XML namespace for fields of the Version type.                                                           |
-| `TYPE_ST_JOB`          | The XML namespace for fields of the JobRef type.                                                            |
-| `TYPE_MANIFEST_ITEM`   | The XML namespace for the elements of a manifest array.                                                     |
-| `TYPE_PDFA_SCHEMA`     |                                                                                                             |
-| `TYPE_PDFA_PROPERTY`   |                                                                                                             |
-| `TYPE_PDFA_TYPE`       |                                                                                                             |
-| `TYPE_PDFA_FIELD`      |                                                                                                             |
-| `TYPE_PDFA_ID`         |                                                                                                             |
-| `TYPE_PDFA_EXTENSION`  | The XML namespaces for PDF subtypes                                                                         |
+| `TYPE_IDENTIFIER_QUAL` | The XML namespace for qualifiers of the xmp:Identifier property.   |
+| `TYPE_DIMENSIONS`   | The XML namespace for fields of the Dimensions type.      |
+| `TYPE_TEXT`   | The XML namespace for the XMP text document schema.   |
+| `TYPE_PAGEDFILE`   | The XML namespace for the XMP paged document schema.      |
+| `TYPE_GRAPHICS`    | The XML namespace for a structure containing the characteristics of a colorant (swatch) used in a document. |
+| `TYPE_IMAGE`   | The XML namespace for fields of a graphical image. Used for the Thumbnail type.     |
+| `TYPE_FONT`   | The XML namespace for a structure containing the characteristics of a font used in a document.    |
+| `TYPE_RESOURCE_EVENT`  | The XML namespace for fields of the ResourceEvent type.   |
+| `TYPE_RESOURCE_REF`   | The XML namespace for fields of the ResourceRef type.   |
+| `TYPE_ST_VERSION`   | The XML namespace for fields of the Version type.   |
+| `TYPE_ST_JOB`    | The XML namespace for fields of the JobRef type.   |
+| `TYPE_MANIFEST_ITEM`   | The XML namespace for the elements of a manifest array.   |
+| `TYPE_PDFA_SCHEMA`   |    |
+| `TYPE_PDFA_PROPERTY`   |    |
+| `TYPE_PDFA_TYPE`   |    |
+| `TYPE_PDFA_FIELD`   |    |
+| `TYPE_PDFA_ID`   |    |
+| `TYPE_PDFA_EXTENSION`  | The XML namespaces for PDF subtypes      |
 
 ---
 
@@ -114,44 +114,44 @@ Constant values for the field-type namespace URI strings used in all structured 
 
 Constant values for supported file types, used in I/O operations. See [XMPFile object](#xmpfile-object).
 
-|          Constant          |                   Description                    |
+|    Constant    |   Description     |
 | -------------------------- | ------------------------------------------------ |
-| `FILE_UNKNOWN`             | Unknown file-format.                             |
-| `FILE_PDF`                 | PDF                                              |
-| `FILE_POSTSCRIPT`          | PS, general PostScript following DSC conventions |
-| `FILE_EPS`                 | EPS, encapsulated PostScript                     |
-| `FILE_JPEG`                | JPEG                                             |
-| `FILE_JPEG2K`              | JPX, JPEG 2000 file                              |
-| `FILE_TIFF`                | TIFF                                             |
-| `FILE_GIF`                 | GIF                                              |
-| `FILE_PNG`                 | PNG                                              |
-| `FILE_SWF`                 | SWF, Flash file                                  |
-| `FILE_FLA`                 | FLA, Flash authoring file                        |
-| `FILE_FLV`                 | FLV, Flash video file                            |
-| `FILE_MOV`                 | MOV, Quicktime                                   |
-| `FILE_AVI`                 | AVI                                              |
-| `FILE_CIN`                 | CIN, Cineon                                      |
-| `FILE_WAV`                 | WAV                                              |
-| `FILE_MP3`                 | MP3                                              |
-| `FILE_SES`                 | SES, Audition session                            |
-| `FILE_CEL`                 | CEL, Audition loop                               |
-| `FILE_MPEG`                | MPEG                                             |
-| `FILE_MPEG2`               | MP2                                              |
-| `FILE_MPEG4`               | MP4                                              |
-| `FILE_WMAV`                | WMAV, Windows Media Audio and Video              |
-| `FILE_AIFF`                | AIFF                                             |
-| `FILE_HTML`                | HTML                                             |
-| `FILE_XML`                 | XML                                              |
-| `FILE_TEXT`                | TEXT                                             |
-| `FILE_PHOTOSHOP`           | PSD, Photoshop                                   |
-| `FILE_ILLUSTRATOR`         | AI, Illustrator                                  |
-| `FILE_INDESIGN`            | INDD, Indesign                                   |
-| `FILE_AE_PROJECT`          | AE, After Effects                                |
-| `FILE_AE_PROJECT_TEMPLATE` | AET, After Effects Project Template              |
-| `FILE_AE_FILTER_PRESET`    | FFX, After Effects Filter Preset file            |
-| `FILE_ENCORE_PROJECT`      | NCOR, Encore DVD project file                    |
-| `FILE_PREMIERE_PROJECT`    | PRPJ, Premiere Project file                      |
-| `FILE_PREMIERE_TITLE`      | PRTL, Premiere Title file                        |
+| `FILE_UNKNOWN`    | Unknown file-format.     |
+| `FILE_PDF`     | PDF   |
+| `FILE_POSTSCRIPT`    | PS, general PostScript following DSC conventions |
+| `FILE_EPS`     | EPS, encapsulated PostScript   |
+| `FILE_JPEG`    | JPEG   |
+| `FILE_JPEG2K`    | JPX, JPEG 2000 file    |
+| `FILE_TIFF`    | TIFF   |
+| `FILE_GIF`     | GIF   |
+| `FILE_PNG`     | PNG   |
+| `FILE_SWF`     | SWF, Flash file      |
+| `FILE_FLA`     | FLA, Flash authoring file    |
+| `FILE_FLV`     | FLV, Flash video file    |
+| `FILE_MOV`     | MOV, Quicktime     |
+| `FILE_AVI`     | AVI   |
+| `FILE_CIN`     | CIN, Cineon   |
+| `FILE_WAV`     | WAV   |
+| `FILE_MP3`     | MP3   |
+| `FILE_SES`     | SES, Audition session    |
+| `FILE_CEL`     | CEL, Audition loop     |
+| `FILE_MPEG`    | MPEG   |
+| `FILE_MPEG2`    | MP2   |
+| `FILE_MPEG4`    | MP4   |
+| `FILE_WMAV`    | WMAV, Windows Media Audio and Video    |
+| `FILE_AIFF`    | AIFF   |
+| `FILE_HTML`    | HTML   |
+| `FILE_XML`     | XML   |
+| `FILE_TEXT`    | TEXT   |
+| `FILE_PHOTOSHOP`   | PSD, Photoshop     |
+| `FILE_ILLUSTRATOR`   | AI, Illustrator      |
+| `FILE_INDESIGN`   | INDD, Indesign     |
+| `FILE_AE_PROJECT`    | AE, After Effects     |
+| `FILE_AE_PROJECT_TEMPLATE` | AET, After Effects Project Template    |
+| `FILE_AE_FILTER_PRESET`   | FFX, After Effects Filter Preset file   |
+| `FILE_ENCORE_PROJECT`   | NCOR, Encore DVD project file     |
+| `FILE_PREMIERE_PROJECT`   | PRPJ, Premiere Project file    |
+| `FILE_PREMIERE_TITLE`   | PRTL, Premiere Title file    |
 
 ---
 
@@ -162,17 +162,17 @@ This class represents a date and time. Times include a time zone, and can have u
 ### XMPDateTime object constructors
 
 ```javascript
-new XMPDateTime();            // creates an object containing a 0 date
-new XMPDateTime(date);        // initializes the object with a JavaScript date
+new XMPDateTime();   // creates an object containing a 0 date
+new XMPDateTime(date);    // initializes the object with a JavaScript date
 new XMPDateTime(iso8601Date); // initializes the object with an ISO date
 ```
 
 #### Parameter
 
-|  Parameter  |            Type             |                                                                                                                 Description                                                                                                                 |
+|  Parameter  |   Type    |    Description    |
 | ----------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| date        | A JavaScript `Date` object. | The time zone is set to the local operation-system time-zone value. Times in the XMP Toolkit can have up to nanosecond resolution; however, when converting to or from a JavaScript Date value, time resolution is reduced to milliseconds. |
-| iso8601Date | String                      | The date-time in ISO 8601 format; for example: `"2007-04-10T17:54:50+01:00"`                                                                                                                                                                |
+| date    | A JavaScript `Date` object. | The time zone is set to the local operation-system time-zone value. Times in the XMP Toolkit can have up to nanosecond resolution; however, when converting to or from a JavaScript Date value, time resolution is reduced to milliseconds. |
+| iso8601Date | String    | The date-time in ISO 8601 format; for example: `"2007-04-10T17:54:50+01:00"`      |
 
 ---
 
@@ -180,20 +180,20 @@ new XMPDateTime(iso8601Date); // initializes the object with an ISO date
 
 All properties are read-write, and allow you to modify the date-time value. If values are set outside the allowed range, they are automatically set to the minimum or maximum allowed value.
 
-|   Property   |  Type  |                                  Description                                  |
+|   Property   |  Type  |      Description      |
 |--------------|--------|-------------------------------------------------------------------------------|
-| `year`       | Number | The year, in the range `[0000...9999]`.                                       |
-| `month`      | Number | The month, in the range `[1...12]`.                                           |
-| `day`        | Number | The day, in the range `[1...31]`.                                             |
-| `hour`       | Number | The hour, in the range `[1...23]`.                                            |
-| `minute`     | Number | The minute, in the range `[1...59]`.                                          |
-| `second`     | Number | The second, in the range `[1...59]`.                                          |
-| `nanosecond` | Number | The nanosecond, in the range `[0...1e+9 -1]`.                                 |
-| `tzSign`     | Number | The time zone direction of offset.                                            |
-|              |        | - `0`: UTC                                                                    |
-|              |        | - `-1`: west                                                                  |
-|              |        | - `1`: east                                                                   |
-| `tzHour`     | Number | The time zone hour offset from the prime meridian, in the range `[1...23]`.   |
+| `year`   | Number | The year, in the range `[0000...9999]`.      |
+| `month`   | Number | The month, in the range `[1...12]`.   |
+| `day`    | Number | The day, in the range `[1...31]`.   |
+| `hour`   | Number | The hour, in the range `[1...23]`.   |
+| `minute`   | Number | The minute, in the range `[1...59]`.      |
+| `second`   | Number | The second, in the range `[1...59]`.      |
+| `nanosecond` | Number | The nanosecond, in the range `[0...1e+9 -1]`.     |
+| `tzSign`   | Number | The time zone direction of offset.   |
+|    |    | - `0`: UTC      |
+|    |    | - `-1`: west     |
+|    |    | - `1`: east      |
+| `tzHour`   | Number | The time zone hour offset from the prime meridian, in the range `[1...23]`.   |
 | `tzMinute`   | Number | The time zone minute offset from the prime meridian, in the range `[1...59]`. |
 
 ---
@@ -210,7 +210,7 @@ Reports the time order of two date-time values.
 
 ##### Parameters
 
-|  Parameter  |        Type        |     Description      |
+|  Parameter  |    Type    |   Description   |
 | ----------- | ------------------ | -------------------- |
 | xmpDataTime | XMPDateTime object | Object to compare to |
 
@@ -295,25 +295,24 @@ The XMPScript API does not currently support retrieving thumbnails.
 For details, see the Adobe Bridge JavaScript Guide and Adobe Bridge JavaScript Reference.
 :::
 
-
 ---
 
 ### XMPFile object constructors
 
 `new XMPFile(filePath, format, openFlags)`
 
-|  Property   |                                                    Type                                                    |          Description           |
+|  Property   |      Type      |    Description   |
 |-------------|------------------------------------------------------------------------------------------------------------|--------------------------------|
-| `filePath`  | String                                                                                                     | File path                      |
-| `format`    | [File format numeric constant](#file-format-numeric-constants)                                             | Format to create as.           |
-| `openFlags` | Constant. One of:                                                                                          | The open options for the file. |
-|             | - `XMPConst.OPEN_FOR_READ` - Open for read-only access.                                                    |                                |
-|             | - `XMPConst.OPEN_FOR_UPDATE` - Open for reading and writing.                                               |                                |
-|             | - `XMPConst.OPEN_ONLY_XMP` - Only the XMP is wanted, allows space/time optimizations.                      |                                |
-|             | - `XMPConst.OPEN_STRICTLY` - Be strict about locating XMP and reconciling with other forms.                |                                |
-|             | - `XMPConst.OPEN_USE_SMART_HANDLER` - Require the use of a smart handler. No packet scanning is performed. |                                |
-|             | - `XMPConst.OPEN_USE_PACKET_SCANNING` - Force packet scanning, do not use a smart handler.                 |                                |
-|             | - `XMPConst.OPEN_LIMITED_SCANNING` - Only packet-scan files known to need scanning.                        |                                |
+| `filePath`  | String   | File path    |
+| `format`   | [File format numeric constant](#file-format-numeric-constants)   | Format to create as.   |
+| `openFlags` | Constant. One of:      | The open options for the file. |
+|    | - `XMPConst.OPEN_FOR_READ` - Open for read-only access.      |     |
+|    | - `XMPConst.OPEN_FOR_UPDATE` - Open for reading and writing.    |     |
+|    | - `XMPConst.OPEN_ONLY_XMP` - Only the XMP is wanted, allows space/time optimizations.    |     |
+|    | - `XMPConst.OPEN_STRICTLY` - Be strict about locating XMP and reconciling with other forms.    |     |
+|    | - `XMPConst.OPEN_USE_SMART_HANDLER` - Require the use of a smart handler. No packet scanning is performed. |     |
+|    | - `XMPConst.OPEN_USE_PACKET_SCANNING` - Force packet scanning, do not use a smart handler.     |     |
+|    | - `XMPConst.OPEN_LIMITED_SCANNING` - Only packet-scan files known to need scanning.    |     |
 
 ---
 
@@ -321,7 +320,7 @@ For details, see the Adobe Bridge JavaScript Guide and Adobe Bridge JavaScript R
 
 This property is available as a static property of the XMPFile class. It is not necessary to create an instance to access it.
 
-| Property  |  Type  |                        Descriptiopn                         |
+| Property  |  Type  |    Descriptiopn    |
 | --------- | ------ | ----------------------------------------------------------- |
 | `version` | String | The descriptive string for this version of the XMP Toolkit. |
 
@@ -341,7 +340,7 @@ Reports the supported features for the given file format.
 
 ##### Parameters
 
-| Parameter |                              Type                               |         Description         |
+| Parameter |    Type     |   Description   |
 | --------- | --------------------------------------------------------------- | --------------------------- |
 | `format`  | [File format numeric constants](#file-format-numeric-constants) | The format to get info from |
 
@@ -382,11 +381,11 @@ Considers only the length of the serialized packet; does not keep the provided X
 
 ##### Parameters
 
-|  Parameter  |               Type                |            Description             |
+|  Parameter  |    Type    |   Description    |
 | ----------- | --------------------------------- | ---------------------------------- |
-| `xmpObj`    | [XMPMeta object](#xmpmeta-object) | The XMP metadata to check          |
-| `xmpPacket` | String                            | A string containing an XMP packet. |
-| `xmpBuffer` | Array of Number                   | The raw XMP packet data.           |
+| `xmpObj`   | [XMPMeta object](#xmpmeta-object) | The XMP metadata to check    |
+| `xmpPacket` | String    | A string containing an XMP packet. |
+| `xmpBuffer` | Array of Number   | The raw XMP packet data.   |
 
 ##### Retrurns
 
@@ -404,10 +403,10 @@ Closes this open file, after writing to it as necessary; that is, if the file wa
 
 ##### Parameters
 
-|  Parameter   |                                            Type                                            |       Description        |
+|  Parameter   |   Type   |   Description    |
 |--------------|--------------------------------------------------------------------------------------------|--------------------------|
-| `closeFlags` | Close-option constant, or `0`. One of:                                                     | Flags to use for closing |
-|              | - `XMPConst.CLOSE_UPDATE_SAFELY` - Write into a temporary file then swap for crash safety. |                          |
+| `closeFlags` | Close-option constant, or `0`. One of:   | Flags to use for closing |
+|    | - `XMPConst.CLOSE_UPDATE_SAFELY` - Write into a temporary file then swap for crash safety. |    |
 
 ##### Returns
 
@@ -469,10 +468,10 @@ An [XMPFileInfo object](#xmpfileinfo-object).
 
 ##### Parameters
 
-|  Parameter  |       Type       |                              Description                               |
+|  Parameter  |   Type   |    Description     |
 | ----------- | ---------------- | ---------------------------------------------------------------------- |
-| `xmpObj`    | XMPMeta object   | The XMP metadata as an XMPMeta object.                                 |
-| `xmpPacket` | String           | The XMP metadata as a String containing an XMP packet.                 |
+| `xmpObj`   | XMPMeta object   | The XMP metadata as an XMPMeta object.     |
+| `xmpPacket` | String   | The XMP metadata as a String containing an XMP packet.     |
 | `xmpBuffer` | Array of Numbers | The XMP metadata as an Array of Number containing raw XMP packet data. |
 
 Supplies new XMP metadata for this file. The file is not actually written until [closeFile()](#xmpfileclosefile) is called. The options provided when the file was opened determine whether that function reconciles the XMP with other forms of metadata; that is, whether any legacy metadata is also updated to be consistent with the XMP metadata.
@@ -491,34 +490,33 @@ This object is returned by [XMPFile.getFileInfo](#xmpfilegetfileinfo). The read-
 This object is not related to the XMP File Info dialog that Adobe Creative Suite 4 applications use to display metadata.
 :::
 
-
 ---
 
 ### XMPFileInfo object properties
 
-|    Property    |  Type  |                                                Description                                                 |
+|   Property   |  Type  |      Description      |
 |----------------|--------|------------------------------------------------------------------------------------------------------------|
-| `filePath`     | String | The absolute path of the file, in JavaScript notation.                                                     |
-| `format`       | Number | One of the file-format constants. See [File format numeric constants](#file-format-numeric-constants).     |
-| `handlerFlags` | Number | The features that are supported for this format. A logical OR of these bit-flag constants:                 |
-|                |        | - `XMPConst.HANDLER_CAN_INJECT_XMP` - Can inject first-time XMP into an existing file.                     |
-|                |        | - `XMPConst.HANDLER_CAN_EXPAND` - Can expand XMP or other metadata in an existing file.                    |
-|                |        | - `XMPConst.HANDLER_CAN_REWRITE` - Can copy one file to another, writing new metadata.                     |
-|                |        | - `XMPConst.HANDLER_PPEFERS_IN_PLACE` - Can expand, but prefers in-place update.                           |
-|                |        | - `XMPConst.HANDLER_CAN_RECONCILE` - Supports reconciliation between XMP and other forms.                  |
-|                |        | - `XMPConst.HANDLER_ALLOWS_ONLY_XMP` - Allows access to just the XMP, ignoring other forms.                |
-|                |        | - `XMPConst.HANDLER_RETURNS_RAW_PACKETS` - File handler returns raw XMP packet information.                |
-|                |        | - `XMPConst.HANDLER_RETURNS_TNAIL` - File handler returns native thumbnail.                                |
-|                |        | - `XMPConst.HANDLER_OWNS_FILE` - File handler does the file open and close.                                |
-|                |        | - `XMPConst.HANDLER_ALLOWS_SAFE_UPDATE` - File handler allows crash-safe file updates.                     |
-| `openFlags`    | Number | The options with which this file was opened. One of these constants:                                       |
-|                |        | - `XMPConst.OPEN_FOR_READ` - Open for read-only access.                                                    |
-|                |        | - `XMPConst.OPEN_FOR_UPDATE` - Open for reading and writing.                                               |
-|                |        | - `XMPConst.OPEN_ONLY_XMP` - Only the XMP is wanted, allows space/time optimizations.                      |
-|                |        | - `XMPConst.OPEN_STRICTLY` - Be strict about locating XMP and reconciling with other forms.                |
-|                |        | - `XMPConst.OPEN_USE_SMART_HANDLER` - Require the use of a smart handler. No packet scanning is performed. |
-|                |        | - `XMPConst.OPEN_USE_PACKET_SCANNING` - Force packet scanning, do not use a smart handler.                 |
-|                |        | - `XMPConst.OPEN_LIMITED_SCANNING` - Only packet-scan files known to need scanning.                        |
+| `filePath`   | String | The absolute path of the file, in JavaScript notation.   |
+| `format`   | Number | One of the file-format constants. See [File format numeric constants](#file-format-numeric-constants).   |
+| `handlerFlags` | Number | The features that are supported for this format. A logical OR of these bit-flag constants:     |
+|    |    | - `XMPConst.HANDLER_CAN_INJECT_XMP` - Can inject first-time XMP into an existing file.   |
+|    |    | - `XMPConst.HANDLER_CAN_EXPAND` - Can expand XMP or other metadata in an existing file.     |
+|    |    | - `XMPConst.HANDLER_CAN_REWRITE` - Can copy one file to another, writing new metadata.   |
+|    |    | - `XMPConst.HANDLER_PPEFERS_IN_PLACE` - Can expand, but prefers in-place update.   |
+|    |    | - `XMPConst.HANDLER_CAN_RECONCILE` - Supports reconciliation between XMP and other forms.     |
+|    |    | - `XMPConst.HANDLER_ALLOWS_ONLY_XMP` - Allows access to just the XMP, ignoring other forms.    |
+|    |    | - `XMPConst.HANDLER_RETURNS_RAW_PACKETS` - File handler returns raw XMP packet information.    |
+|    |    | - `XMPConst.HANDLER_RETURNS_TNAIL` - File handler returns native thumbnail.     |
+|    |    | - `XMPConst.HANDLER_OWNS_FILE` - File handler does the file open and close.     |
+|    |    | - `XMPConst.HANDLER_ALLOWS_SAFE_UPDATE` - File handler allows crash-safe file updates.   |
+| `openFlags`   | Number | The options with which this file was opened. One of these constants:      |
+|    |    | - `XMPConst.OPEN_FOR_READ` - Open for read-only access.      |
+|    |    | - `XMPConst.OPEN_FOR_UPDATE` - Open for reading and writing.    |
+|    |    | - `XMPConst.OPEN_ONLY_XMP` - Only the XMP is wanted, allows space/time optimizations.    |
+|    |    | - `XMPConst.OPEN_STRICTLY` - Be strict about locating XMP and reconciling with other forms.    |
+|    |    | - `XMPConst.OPEN_USE_SMART_HANDLER` - Require the use of a smart handler. No packet scanning is performed. |
+|    |    | - `XMPConst.OPEN_USE_PACKET_SCANNING` - Force packet scanning, do not use a smart handler.     |
+|    |    | - `XMPConst.OPEN_LIMITED_SCANNING` - Only packet-scan files known to need scanning.    |
 
 ---
 
@@ -598,9 +596,9 @@ new XMPMeta ( buffer );
 
 ##### Parameters
 
-| Parameter |       Type       |                                                                     Description                                                                      |
+| Parameter |   Type   |     Description      |
 | --------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `packet`  | String           | An XML file or an XMP packet.                                                                                                                        |
+| `packet`  | String   | An XML file or an XMP packet.    |
 | `buffer`  | Array of Numbers | The UTF-8 or UTF-16 encoded bytes of an XML file or an XMP packet. This array is the result of [XMPMeta.serializeToArray](#xmpmetaserializetoarray). |
 
 ---
@@ -611,7 +609,7 @@ The `XMPMeta` class provides this static property. It is not necessary to create
 
 ##### Properties
 
-| Property  |  Type  |                         Description                         |
+| Property  |  Type  |    Description    |
 | --------- | ------ | ----------------------------------------------------------- |
 | `version` | String | The descriptive string for this version of the XMP Toolkit. |
 
@@ -635,13 +633,12 @@ If the alias does not exist, does nothing.
 Not yet implemented in the XMP Toolkit.
 :::
 
-
 ##### Parameters
 
-|  Parameter  |  Type  |                                              Description                                               |
+|  Parameter  |  Type  |   Description    |
 | ----------- | ------ | ------------------------------------------------------------------------------------------------------ |
 | `aliasNS`   | String | The namespace URI string. See [Schema namespace string constants](#schema-namespace-string-constants). |
-| `aliasProp` | String | The alias property string.                                                                             |
+| `aliasProp` | String | The alias property string.       |
 
 ##### Returns
 
@@ -661,10 +658,9 @@ Deletes a registered prefix - namespace URI pair.
 Not yet implemented in the XMP Toolkit.
 :::
 
-
 ##### Parameters
 
-|   Parameter    |  Type  |                                              Description                                               |
+|   Parameter   |  Type  |   Description    |
 | -------------- | ------ | ------------------------------------------------------------------------------------------------------ |
 | `namespaceURI` | String | The namespace URI string. See [Schema namespace string constants](#schema-namespace-string-constants). |
 
@@ -712,7 +708,7 @@ Retrieves the prefix associated with a registered namespace URI.
 
 ##### Parameters
 
-|   Parameter    |  Type  |                                              Description                                               |
+|   Parameter   |  Type  |   Description    |
 | -------------- | ------ | ------------------------------------------------------------------------------------------------------ |
 | `namespaceURI` | String | The namespace URI string. See [Schema namespace string constants](#schema-namespace-string-constants). |
 
@@ -732,7 +728,7 @@ Retrieves the registered namespace URI associated with a namespace prefix.
 
 ##### Parameters
 
-|     Parameter     |  Type  |         Description          |
+|   Parameter   |  Type  |   Description    |
 | ----------------- | ------ | ---------------------------- |
 | `namespacePrefix` | String | The namespace prefix string. |
 
@@ -754,18 +750,18 @@ Multiple alias names can map to the same actual property, as long as the forms m
 
 ##### Parameters
 
-|  Parameter   |                                  Type                                   |                                                                              Description                                                                               |
+|  Parameter   |      Type     |       Description     |
 |--------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `aliasNS`    | String                                                                  | The alias namespace string. See [Schema namespace string constants](#schema-namespace-string-constants).                                                               |
-| `aliasProp`  | String                                                                  | The alias property, a simple name string.                                                                                                                              |
-| `actualNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace string of the aliased property.                                                                                                                          |
-| `actualProp` | String                                                                  | The aliased property, a simple name string.                                                                                                                            |
-| `arrayForm`  | Number                                                                  | The array form for a simple alias to an array item, which controls how the array is created if it is set for the first time through the alias. One of these constants: |
-|              |                                                                         | - `XMPConst.ALIAS_TO_SIMPLE_PROP` (default) - A direct mapping. It can be simple-to-simple, array-to-array, or structure-to-structure.                                 |
-|              |                                                                         | - `XMPConst.ALIAS_TO_ARRAY` - The actual is an unordered array, the alias is to the first element of the array.                                                        |
-|              |                                                                         | - `XMPConst.ALIAS_TO_ORDERED_ARRAY` - The actual is an ordered array, the alias is to the first element of the array.                                                  |
-|              |                                                                         | - `XMPConst.ALIAS_TO_ALT_ARRAY` - The actual is an alternate array, the alias is to the first element of the array.                                                    |
-|              |                                                                         | - `XMPConst.ALIAS_TO_ALT_TEXT` - The actual is an alternate-text array (a localized property), the alias is to the x-default element of the array.                     |
+| `aliasNS`   | String     | The alias namespace string. See [Schema namespace string constants](#schema-namespace-string-constants).     |
+| `aliasProp`  | String     | The alias property, a simple name string.       |
+| `actualNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace string of the aliased property.      |
+| `actualProp` | String     | The aliased property, a simple name string.       |
+| `arrayForm`  | Number     | The array form for a simple alias to an array item, which controls how the array is created if it is set for the first time through the alias. One of these constants: |
+|    |      | - `XMPConst.ALIAS_TO_SIMPLE_PROP` (default) - A direct mapping. It can be simple-to-simple, array-to-array, or structure-to-structure.     |
+|    |      | - `XMPConst.ALIAS_TO_ARRAY` - The actual is an unordered array, the alias is to the first element of the array.      |
+|    |      | - `XMPConst.ALIAS_TO_ORDERED_ARRAY` - The actual is an ordered array, the alias is to the first element of the array.      |
+|    |      | - `XMPConst.ALIAS_TO_ALT_ARRAY` - The actual is an alternate array, the alias is to the first element of the array.      |
+|    |      | - `XMPConst.ALIAS_TO_ALT_TEXT` - The actual is an alternate-text array (a localized property), the alias is to the x-default element of the array.   |
 
 #### Returns
 
@@ -783,10 +779,10 @@ Registers a namespace with a prefix. If the suggested prefix is already in use, 
 
 ##### Parameters
 
-|    Parameter    |                                  Type                                   |              Description               |
+|   Parameter   |      Type     |    Description    |
 | --------------- | ----------------------------------------------------------------------- | -------------------------------------- |
-| namespaceURI    | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.              |
-| suggestedPrefix | String                                                                  | The suggested namespace prefix string. |
+| namespaceURI   | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.    |
+| suggestedPrefix | String     | The suggested namespace prefix string. |
 
 ##### Returns
 
@@ -804,11 +800,10 @@ Retrieves information about the actual property to which an alias is mapped.
 
 ##### Parameters
 
-| Parameter |                                  Type                                   |           Description           |
+| Parameter |      Type     |   Description   |
 | --------- | ----------------------------------------------------------------------- | ------------------------------- |
 | schemaNS  | [Schema namespace string constants](#schema-namespace-string-constants) | The alias namespace URI string. |
-| aliasProp | The alias property string.                                              |                                 |
-
+| aliasProp | The alias property string.   |     |
 
 #### Returns
 
@@ -828,18 +823,18 @@ Appends an item to an existing array, or creates a new array-type property if th
 
 ##### Parameters
 
-|   Parameter    |                                   Type                                   |                                                                  Description                                                                   |
+|   Parameter   |     Type     |     Description      |
 |----------------|--------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| `schemaNS`     | [Schema namespace string constants](#schema-namespace-string-constants). | The namespace URI string.                                                                                                                      |
-| `arrayName`    | String                                                                   | The array-type property name string. Can be a general path expression.                                                                         |
-| `itemOptions`  | Number                                                                   | Optional. A flag that describes the new item, if it is being created. One of:                                                                  |
-|                |                                                                          | - `0`: The default. A simple item, or the type implied by the arrayOptions value.                                                              |
-|                |                                                                          | - `XMPConst.PROP_IS_ARRAY`: The item is an array (of type alt, bag, or seq).                                                                   |
-|                |                                                                          | - `XMPConst.PROP_IS_STRUCT`: The item is a structure with nested fields.                                                                       |
-| `itemValue`    | String                                                                   | The new item value string. Pass `null` for array items that do not have values.                                                                |
-| `arrayOptions` | Number                                                                   | Optional. A flag that describes the array form. Must be provided if the array is being created; ignored if the array already exists. One of:   |
-|                |                                                                          | - `XMPConst.ARRAY_IS_ORDERED` - Item order is significant. Implies `XMPConst.PROP_IS_ARRAY`.                                                   |
-|                |                                                                          | - `XMPConst.ARRAY_IS_ALTERNATIVE` - Items are mutually exclusive alternates. Implies `XMPConst.PROP_IS_ARRAY` and `XMPConst.ARRAY_IS_ORDERED`. |
+| `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants). | The namespace URI string.    |
+| `arrayName`   | String      | The array-type property name string. Can be a general path expression.      |
+| `itemOptions`  | Number      | Optional. A flag that describes the new item, if it is being created. One of:     |
+|    |       | - `0`: The default. A simple item, or the type implied by the arrayOptions value.    |
+|    |       | - `XMPConst.PROP_IS_ARRAY`: The item is an array (of type alt, bag, or seq).      |
+|    |       | - `XMPConst.PROP_IS_STRUCT`: The item is a structure with nested fields.     |
+| `itemValue`   | String      | The new item value string. Pass `null` for array items that do not have values.     |
+| `arrayOptions` | Number      | Optional. A flag that describes the array form. Must be provided if the array is being created; ignored if the array already exists. One of:   |
+|    |       | - `XMPConst.ARRAY_IS_ORDERED` - Item order is significant. Implies `XMPConst.PROP_IS_ARRAY`.      |
+|    |       | - `XMPConst.ARRAY_IS_ALTERNATIVE` - Items are mutually exclusive alternates. Implies `XMPConst.PROP_IS_ARRAY` and `XMPConst.ARRAY_IS_ORDERED`. |
 
 ##### Returns
 
@@ -857,10 +852,10 @@ Reports the number of items in an array-type metadata property.
 
 ##### Parameters
 
-|  Parameter  |                                  Type                                   |                              Description                               |
+|  Parameter  |      Type     |    Description     |
 | ----------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                              |
-| `arrayName` | String                                                                  | The array-type property name string. Can be a general path expression. |
+| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.   |
+| `arrayName` | String     | The array-type property name string. Can be a general path expression. |
 
 ##### Returns
 
@@ -878,11 +873,11 @@ Deletes the metadata tree that has the given array item as its root.
 
 ##### Parameters
 
-|  Parameter  |                                  Type                                   |                                                       Description                                                        |
+|  Parameter  |      Type     |   Description      |
 | ----------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                                                                                |
-| `arrayName` | String                                                                  | The array-type property name string. Can be a general path expression.                                                   |
-| `itemIndex` | Number                                                                  | The 1-based position index of the item. Use `XMPConst.ARRAY_LAST_ITEM` to reference the last existing item in the array. |
+| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.   |
+| `arrayName` | String     | The array-type property name string. Can be a general path expression.      |
+| `itemIndex` | Number     | The 1-based position index of the item. Use `XMPConst.ARRAY_LAST_ITEM` to reference the last existing item in the array. |
 
 ##### Returns
 
@@ -900,11 +895,10 @@ Deletes the metadata tree that has the given property as its root. If the proper
 
 ##### Parameters
 
-| Parameter  |                                  Type                                   |                         Description                         |
+| Parameter  |      Type     |    Description    |
 | ---------- | ----------------------------------------------------------------------- | ----------------------------------------------------------- |
-| `schemaNS` | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                   |
-| `propName` | String                                                                  | The property name string. Can be a general path expression. |
-
+| `schemaNS` | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.     |
+| `propName` | String     | The property name string. Can be a general path expression. |
 
 ##### Returns
 
@@ -922,12 +916,12 @@ Deletes the metadata tree that has the given structure field as its root.
 
 ##### Parameters
 
-|  Parameter   |                                  Type                                   |                         Description                          |
+|  Parameter   |      Type     |    Description    |
 | ------------ | ----------------------------------------------------------------------- | ------------------------------------------------------------ |
-| `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                    |
-| `structName` | String                                                                  | The structure name string. Can be a general path expression. |
-| `fieldNS`    | [Schema namespace string constants](#schema-namespace-string-constants) | The field type namespace string.                             |
-| `fieldName`  | String                                                                  | The field name string. Must be a simple XML name.            |
+| `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.      |
+| `structName` | String     | The structure name string. Can be a general path expression. |
+| `fieldNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The field type namespace string.     |
+| `fieldName`  | String     | The field name string. Must be a simple XML name.   |
 
 ##### Returns
 
@@ -945,12 +939,12 @@ Deletes the metadata tree that has the given qualifier as its root. If the quali
 
 ##### Parameters
 
-| Parameter  |                                  Type                                   |                         Description                          |
+| Parameter  |      Type     |    Description    |
 | ---------- | ----------------------------------------------------------------------- | ------------------------------------------------------------ |
-| `schemaNS` | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                    |
-| structName | String                                                                  | The structure name string. Can be a general path expression. |
-| qualNS     | String                                                                  | The URI string of the qualifier namespace.                   |
-| qualName   | String                                                                  | The qualifier name string. Must be a simple XML name.        |
+| `schemaNS` | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.      |
+| structName | String     | The structure name string. Can be a general path expression. |
+| qualNS   | String     | The URI string of the qualifier namespace.   |
+| qualName   | String     | The qualifier name string. Must be a simple XML name.    |
 
 ##### Returns
 
@@ -968,11 +962,11 @@ Reports whether an array item with a given index currently exists in an existing
 
 ##### Parameters
 
-|  Parameter  |                                  Type                                   |                       Description                        |
+|  Parameter  |      Type     |    Description    |
 | ----------- | ----------------------------------------------------------------------- | -------------------------------------------------------- |
-| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                |
-| `arrayName` | String                                                                  | The array name string. Can be a general path expression. |
-| `itemIndex` | Number                                                                  | The 1-based position index of the item.                  |
+| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.     |
+| `arrayName` | String     | The array name string. Can be a general path expression. |
+| `itemIndex` | Number     | The 1-based position index of the item.     |
 
 ##### Returns
 
@@ -990,10 +984,10 @@ Reports whether a property with a given name currently exists in the metadata.
 
 ##### Parameters
 
-| Parameter  |                                  Type                                   |                         Description                         |
+| Parameter  |      Type     |    Description    |
 | ---------- | ----------------------------------------------------------------------- | ----------------------------------------------------------- |
-| `schemaNS` | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                   |
-| `propName` | String                                                                  | The property name string. Can be a general path expression. |
+| `schemaNS` | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.     |
+| `propName` | String     | The property name string. Can be a general path expression. |
 
 ##### Returns
 
@@ -1011,12 +1005,12 @@ Reports whether a structure field with a given name currently exists in the meta
 
 ##### Parameters
 
-| Parameter  |                                  Type                                   |                         Description                          |
+| Parameter  |      Type     |    Description    |
 | ---------- | ----------------------------------------------------------------------- | ------------------------------------------------------------ |
-| schemaNS   | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                    |
-| structName | String                                                                  | The structure name string. Can be a general path expression. |
-| fieldNS    | [Schema namespace string constants](#schema-namespace-string-constants) | The field type namespace string.                             |
-| fieldName  | String                                                                  | The field name string. Must be a simple XML name.            |
+| schemaNS   | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.      |
+| structName | String     | The structure name string. Can be a general path expression. |
+| fieldNS   | [Schema namespace string constants](#schema-namespace-string-constants) | The field type namespace string.     |
+| fieldName  | String     | The field name string. Must be a simple XML name.   |
 
 ##### Returns
 
@@ -1034,12 +1028,12 @@ Reports whether a qualifier with a given name currently exists for a given prope
 
 ##### Parameters
 
-| Parameter  |                                  Type                                   |                         Description                          |
+| Parameter  |      Type     |    Description    |
 | ---------- | ----------------------------------------------------------------------- | ------------------------------------------------------------ |
-| `schemaNS` | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                    |
-| structName | String                                                                  | The structure name string. Can be a general path expression. |
-| qualNS     | String                                                                  | The URI string of the qualifier namespace.                   |
-| qualName   | String                                                                  | The qualifier name string. Must be a simple XML name.        |
+| `schemaNS` | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.      |
+| structName | String     | The structure name string. Can be a general path expression. |
+| qualNS   | String     | The URI string of the qualifier namespace.   |
+| qualName   | String     | The qualifier name string. Must be a simple XML name.    |
 
 ##### Returns
 
@@ -1071,11 +1065,11 @@ Retrieves an item from an array-type metadata property.
 
 ##### Parameters
 
-|  Parameter  |                                  Type                                   |                                                       Description                                                        |
+|  Parameter  |      Type     |   Description      |
 | ----------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                                                                                |
-| `arrayName` | String                                                                  | The array name string. Can be a general path expression.                                                                 |
-| `itemIndex` | Number                                                                  | The 1-based position index of the item. Use `XMPConst.ARRAY_LAST_ITEM` to reference the last existing item in the array. |
+| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.   |
+| `arrayName` | String     | The array name string. Can be a general path expression.     |
+| `itemIndex` | Number     | The 1-based position index of the item. Use `XMPConst.ARRAY_LAST_ITEM` to reference the last existing item in the array. |
 
 ##### Returns
 
@@ -1093,12 +1087,12 @@ Retrieves the text value for a specific language from an alternate-text array. F
 
 ##### Parameters
 
-|   Parameter    |                                  Type                                   |                                               Description                                               |
+|   Parameter   |      Type     |    Description    |
 | -------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `schemaNS`     | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                                                               |
-| `altTextName`  | String                                                                  | The alternate-text array name string. Can be a general path expression.                                 |
-| `genericLang`  | String                                                                  | The name of the generic language as an RFC 3066 primary subtag. Can be `null` or the empty string.      |
-| `specificLang` | String                                                                  | The name of the specific language as an RFC 3066 primary subtag; for example, en-US. Must be specified. |
+| `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.     |
+| `altTextName`  | String     | The alternate-text array name string. Can be a general path expression.     |
+| `genericLang`  | String     | The name of the generic language as an RFC 3066 primary subtag. Can be `null` or the empty string.   |
+| `specificLang` | String     | The name of the specific language as an RFC 3066 primary subtag; for example, en-US. Must be specified. |
 
 ##### Returns
 
@@ -1116,16 +1110,16 @@ Retrieves the value and options of a metadata property. Use for top-level, simpl
 
 ##### Parameters
 
-|  Parameter  |                                  Type                                   |                         Description                         |
+|  Parameter  |      Type     |    Description    |
 |-------------|-------------------------------------------------------------------------|-------------------------------------------------------------|
-| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                   |
-| `propName`  | String                                                                  | The property name string. Can be a general path expression. |
-| `valueType` | String                                                                  | Optional. The property data type, one of:                   |
-|             |                                                                         | - `XMPConst.STRING`                                         |
-|             |                                                                         | - `XMPConst.INTEGER`                                        |
-|             |                                                                         | - `XMPConst.NUMBER`                                         |
-|             |                                                                         | - `XMPConst.BOOLEAN`                                        |
-|             |                                                                         | - `XMPConst.XMPDATE`                                        |
+| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.     |
+| `propName`  | String     | The property name string. Can be a general path expression. |
+| `valueType` | String     | Optional. The property data type, one of:   |
+|    |      | - `XMPConst.STRING`      |
+|    |      | - `XMPConst.INTEGER`   |
+|    |      | - `XMPConst.NUMBER`      |
+|    |      | - `XMPConst.BOOLEAN`   |
+|    |      | - `XMPConst.XMPDATE`   |
 
 ##### Returns
 
@@ -1143,12 +1137,12 @@ Retrieves a field value from within a nested structure in metadata.
 
 ##### Parameters
 
-|  Parameter   |                                  Type                                   |                         Description                          |
+|  Parameter   |      Type     |    Description    |
 | ------------ | ----------------------------------------------------------------------- | ------------------------------------------------------------ |
-| `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                    |
-| `structName` | String                                                                  | The structure name string. Can be a general path expression. |
-| `fieldNS`    | [Schema namespace string constants](#schema-namespace-string-constants) | The field type namespace string.                             |
-| `fieldName`  | String                                                                  | The field name string. Must be a simple XML name.            |
+| `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.      |
+| `structName` | String     | The structure name string. Can be a general path expression. |
+| `fieldNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The field type namespace string.     |
+| `fieldName`  | String     | The field name string. Must be a simple XML name.   |
 
 ##### Returns
 
@@ -1166,12 +1160,12 @@ Retrieves a qualifier attached to a metadata property.
 
 ##### Parameters
 
-|  Parameter   |                                  Type                                   |                         Description                          |
+|  Parameter   |      Type     |    Description    |
 | ------------ | ----------------------------------------------------------------------- | ------------------------------------------------------------ |
-| `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                    |
-| `structName` | String                                                                  | The structure name string. Can be a general path expression. |
-| `qualNS`     | String                                                                  | The URI string of the qualifier namespace.                   |
-| `qualName`   | String                                                                  | The qualifier name string. Must be a simple XML name.        |
+| `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.      |
+| `structName` | String     | The structure name string. Can be a general path expression. |
+| `qualNS`   | String     | The URI string of the qualifier namespace.   |
+| `qualName`   | String     | The qualifier name string. Must be a simple XML name.    |
 
 ##### Returns
 
@@ -1189,16 +1183,16 @@ Inserts an item into an array, before an existing item. The index positions of a
 
 ##### Parameters
 
-|   Parameter   |                                                  Type                                                  |                                                                 Description                                                                  |
+|   Parameter   |      Type      |     Description     |
 |---------------|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| `schemaNS`    | The namespace URI string. See [Schema namespace string constants](#schema-namespace-string-constants). |                                                                                                                                              |
-| `arrayName`   | String                                                                                                 | The array-type property name string. Can be a general path expression.                                                                       |
-| `itemIndex`   | Number                                                                                                 | The 1-based position index at which to insert the new item. Use `XMPConst.ARRAY_LAST_ITEM` to reference the last existing item in the array. |
-| `itemValue`   | String                                                                                                 | The new item value. Pass `null` for array items that do not have values.                                                                     |
-| `itemOptions` | Number                                                                                                 | Optional. A flag that describes the new item, if it is being created. One of:                                                                |
-|               |                                                                                                        | - `0`: A simple item, the default.                                                                                                           |
-|               |                                                                                                        | - `XMPConst.PROP_IS_ARRAY`: The item is an array (of type alt, bag, or seq).                                                                 |
-|               |                                                                                                        | - `XMPConst.PROP_IS_STRUCT`: The item is a structure with nested fields.                                                                     |
+| `schemaNS`   | The namespace URI string. See [Schema namespace string constants](#schema-namespace-string-constants). |   |
+| `arrayName`   | String    | The array-type property name string. Can be a general path expression.     |
+| `itemIndex`   | Number    | The 1-based position index at which to insert the new item. Use `XMPConst.ARRAY_LAST_ITEM` to reference the last existing item in the array. |
+| `itemValue`   | String    | The new item value. Pass `null` for array items that do not have values.     |
+| `itemOptions` | Number    | Optional. A flag that describes the new item, if it is being created. One of:     |
+|    |    | - `0`: A simple item, the default.      |
+|    |    | - `XMPConst.PROP_IS_ARRAY`: The item is an array (of type alt, bag, or seq).     |
+|    |    | - `XMPConst.PROP_IS_STRUCT`: The item is a structure with nested fields.     |
 
 ##### Returns
 
@@ -1216,16 +1210,16 @@ Creates an iteration object that can iterate over the properties, arrays, and qu
 
 ##### Parameters
 
-| Parameter  |                                                                 Type                                                                  |                                         Description                                          |
+| Parameter  |     Type     |      Description      |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| `options`  | A logical OR of these bit-flag constants:                                                                                             | The set of options that control how the iteration is performed, and how values are returned. |
-|            | - `XMPConst.ITERATOR_JUST_CHILDREN` - Limit iteration to immediate children of the root property. By default, iterates into subtrees. |                                                                                              |
-|            | - `XMPConst.ITERATOR_JUST_LEAFNODES` - Limit iteration to leaf nodes. By default, iterates into all nodes of a subtree.               |                                                                                              |
-|            | - `XMPConst.ITERATOR_JUST_LEAFNAMES` - Return only the leaf part of the path. By default, returns a full path.                        |                                                                                              |
-|            | - `XMPConst.ITERATOR_INCLUDE_ALIASES` - Include aliases. By default, considers only actual properties.                                |                                                                                              |
-|            | - `XMPConst.ITERATOR_OMIT_QUALIFIERS` - Omit qualifiers from iteration.                                                               |                                                                                              |
-| `schemaNS` | [Schema namespace string constants](#schema-namespace-string-constants)                                                               | The namespace URI string.                                                                    |
-| `propName` | String                                                                                                                                | The array-type property name string. Can be a general path expression.                       |
+| `options`  | A logical OR of these bit-flag constants:   | The set of options that control how the iteration is performed, and how values are returned. |
+|   | - `XMPConst.ITERATOR_JUST_CHILDREN` - Limit iteration to immediate children of the root property. By default, iterates into subtrees. |   |
+|   | - `XMPConst.ITERATOR_JUST_LEAFNODES` - Limit iteration to leaf nodes. By default, iterates into all nodes of a subtree.    |   |
+|   | - `XMPConst.ITERATOR_JUST_LEAFNAMES` - Return only the leaf part of the path. By default, returns a full path.    |   |
+|   | - `XMPConst.ITERATOR_INCLUDE_ALIASES` - Include aliases. By default, considers only actual properties.     |   |
+|   | - `XMPConst.ITERATOR_OMIT_QUALIFIERS` - Omit qualifiers from iteration.     |   |
+| `schemaNS` | [Schema namespace string constants](#schema-namespace-string-constants)     | The namespace URI string.      |
+| `propName` | String       | The array-type property name string. Can be a general path expression.    |
 
 ##### Returns
 
@@ -1243,23 +1237,23 @@ Serializes this XMP metadata into a string as RDF.
 
 ##### Parameters
 
-|  Parameter   |                                                                                               Type                                                                                                |                                                                            Description                                                                            |
+|  Parameter   |   Type   |       Description       |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `options`    | Optional. A logical OR of these bit-flag constants:                                                                                                                                               | The set of options that control how the serialization is performed. The options must be logically consistent; if they conflict, the function throws an exception. |
-|              | - `XMPConst.SERIALIZE_OMIT_PACKET_WRAPPER` - Do not include an XML packet wrapper.                                                                                                                |                                                                                                                                                                   |
-|              | - `XMPConst.SERIALIZE_READ_ONLY_PACKET` - Create a read-only XML packet wrapper.                                                                                                                  |                                                                                                                                                                   |
-|              | - `XMPConst.SERIALIZE_USE_COMPACT_FORMAT` - Use a highly compact RDF syntax and layout.                                                                                                           |                                                                                                                                                                   |
-|              | - `XMPConst.SERIALIZE_USE_PLAIN_XMP` - Serialize a plain XMP (not currently supported).                                                                                                           |                                                                                                                                                                   |
-|              | - `XMPConst.SERIALIZE_INCLUDE_THUMBNAIL_PAD` - Include typical space for a JPEG thumbnail in the padding if no xmp:Thumbnail property is present.                                                 |                                                                                                                                                                   |
-|              | - `XMPConst.SERIALIZE_EXACT_PACKET_LENGTH` - Compute padding to meet the overall packet length provided by the padding parameter. Throws an exception if the unpadded packet exceeds this length. |                                                                                                                                                                   |
-|              | - `XMPConst.SERIALIZE_WRITE_ALIAS_COMMENTS` - Include XML comments for aliases.                                                                                                                   |                                                                                                                                                                   |
-| `padding`    | Number                                                                                                                                                                                            | Optional.                                                                                                                                                         |
-|              |                                                                                                                                                                                                   | - If the options value is `SERIALIZE_EXACT_PACKET_LENGTH`, this the exact length of the packet, including padding characters that are added to meet this length.  |
-|              |                                                                                                                                                                                                   | - If the options value is not `SERIALIZE_EXACT_PACKET_LENGTH`, this is a number of padding characters to add.                                                     |
-|              |                                                                                                                                                                                                   | - Default is `0`, meaning to use the appropriate amount of padding.                                                                                               |
-| `indent`     | String                                                                                                                                                                                            | Optional. The string to use as an indent. Default is two spaces.                                                                                                  |
-| `newline`    | String                                                                                                                                                                                            | Optional. The newline character to use. Default is `U+000A`.                                                                                                      |
-| `baseIndent` | Number                                                                                                                                                                                            | Optional. The level of indentation of the outermost XML element. Default is `0`.                                                                                  |
+| `options`   | Optional. A logical OR of these bit-flag constants:       | The set of options that control how the serialization is performed. The options must be logically consistent; if they conflict, the function throws an exception. |
+|    | - `XMPConst.SERIALIZE_OMIT_PACKET_WRAPPER` - Do not include an XML packet wrapper.    |       |
+|    | - `XMPConst.SERIALIZE_READ_ONLY_PACKET` - Create a read-only XML packet wrapper.   |       |
+|    | - `XMPConst.SERIALIZE_USE_COMPACT_FORMAT` - Use a highly compact RDF syntax and layout.      |       |
+|    | - `XMPConst.SERIALIZE_USE_PLAIN_XMP` - Serialize a plain XMP (not currently supported).      |       |
+|    | - `XMPConst.SERIALIZE_INCLUDE_THUMBNAIL_PAD` - Include typical space for a JPEG thumbnail in the padding if no xmp:Thumbnail property is present.      |       |
+|    | - `XMPConst.SERIALIZE_EXACT_PACKET_LENGTH` - Compute padding to meet the overall packet length provided by the padding parameter. Throws an exception if the unpadded packet exceeds this length. |       |
+|    | - `XMPConst.SERIALIZE_WRITE_ALIAS_COMMENTS` - Include XML comments for aliases.    |       |
+| `padding`   | Number    | Optional.     |
+|    |     | - If the options value is `SERIALIZE_EXACT_PACKET_LENGTH`, this the exact length of the packet, including padding characters that are added to meet this length.  |
+|    |     | - If the options value is not `SERIALIZE_EXACT_PACKET_LENGTH`, this is a number of padding characters to add.   |
+|    |     | - Default is `0`, meaning to use the appropriate amount of padding.   |
+| `indent`   | String    | Optional. The string to use as an indent. Default is two spaces.    |
+| `newline`   | String    | Optional. The newline character to use. Default is `U+000A`.    |
+| `baseIndent` | Number    | Optional. The level of indentation of the outermost XML element. Default is `0`.      |
 
 ##### Returns
 
@@ -1277,23 +1271,23 @@ Serializes this XMP metadata into a string as RDF, then converts that to an arra
 
 ##### Parameters
 
-|  Parameter   |                                                                                               Type                                                                                                |                                                                                 Description                                                                                 |
+|  Parameter   |   Type   |     Description     |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `options`    | A logical OR of these bit-flag constants:                                                                                                                                                         | Optional. The set of options that control how the serialization is performed. The options must be logically consistent; if they conflict, the function throws an exception. |
-|              | - `XMPConst.SERIALIZE_OMIT_PACKET_WRAPPER` - Do not include an XML packet wrapper.                                                                                                                |                                                                                                                                                                             |
-|              | - `XMPConst.SERIALIZE_READ_ONLY_PACKET` - Create a read-only XML packet wrapper.                                                                                                                  |                                                                                                                                                                             |
-|              | - `XMPConst.SERIALIZE_USE_COMPACT_FORMAT` - Use a highly compact RDF syntax and layout.                                                                                                           |                                                                                                                                                                             |
-|              | - `XMPConst.SERIALIZE_USE_PLAIN_XMP` - Serialize a plain XMP (not currently supported).                                                                                                           |                                                                                                                                                                             |
-|              | - `XMPConst.SERIALIZE_INCLUDE_THUMBNAIL_PAD` - Include typical space for a JPEG thumbnail in the padding if no xmp:Thumbnail property is present.                                                 |                                                                                                                                                                             |
-|              | - `XMPConst.SERIALIZE_EXACT_PACKET_LENGTH` - Compute padding to meet the overall packet length provided by the padding parameter. Throws an exception if the unpadded packet exceeds this length. |                                                                                                                                                                             |
-|              | - `XMPConst.SERIALIZE_WRITE_ALIAS_COMMENTS` - Include XML comments for aliases.                                                                                                                   |                                                                                                                                                                             |
-| `padding`    | Number                                                                                                                                                                                            | Optional.                                                                                                                                                                   |
-|              |                                                                                                                                                                                                   | - If the options value is `SERIALIZE_EXACT_PACKET_LENGTH`, this the exact length of the packet, including padding characters that are added to meet this length.            |
-|              |                                                                                                                                                                                                   | - If the options value is not `SERIALIZE_EXACT_PACKET_LENGTH`, this is a number of padding characters to add.                                                               |
-|              |                                                                                                                                                                                                   | - Default is `0`, meaning to use the appropriate amount of padding.                                                                                                         |
-| `indent`     | String                                                                                                                                                                                            | Optional. The string to use as an indent. Default is two spaces.                                                                                                            |
-| `newline`    | String                                                                                                                                                                                            | Optional. The newline character to use. Default is `U+000A`.                                                                                                                |
-| `baseIndent` | Number                                                                                                                                                                                            | Optional. The level of indentation of the outermost XML element. Default is `0`.                                                                                            |
+| `options`   | A logical OR of these bit-flag constants:     | Optional. The set of options that control how the serialization is performed. The options must be logically consistent; if they conflict, the function throws an exception. |
+|    | - `XMPConst.SERIALIZE_OMIT_PACKET_WRAPPER` - Do not include an XML packet wrapper.    |     |
+|    | - `XMPConst.SERIALIZE_READ_ONLY_PACKET` - Create a read-only XML packet wrapper.   |     |
+|    | - `XMPConst.SERIALIZE_USE_COMPACT_FORMAT` - Use a highly compact RDF syntax and layout.      |     |
+|    | - `XMPConst.SERIALIZE_USE_PLAIN_XMP` - Serialize a plain XMP (not currently supported).      |     |
+|    | - `XMPConst.SERIALIZE_INCLUDE_THUMBNAIL_PAD` - Include typical space for a JPEG thumbnail in the padding if no xmp:Thumbnail property is present.      |     |
+|    | - `XMPConst.SERIALIZE_EXACT_PACKET_LENGTH` - Compute padding to meet the overall packet length provided by the padding parameter. Throws an exception if the unpadded packet exceeds this length. |     |
+|    | - `XMPConst.SERIALIZE_WRITE_ALIAS_COMMENTS` - Include XML comments for aliases.    |     |
+| `padding`   | Number    | Optional.       |
+|    |     | - If the options value is `SERIALIZE_EXACT_PACKET_LENGTH`, this the exact length of the packet, including padding characters that are added to meet this length.   |
+|    |     | - If the options value is not `SERIALIZE_EXACT_PACKET_LENGTH`, this is a number of padding characters to add.     |
+|    |     | - Default is `0`, meaning to use the appropriate amount of padding.    |
+| `indent`   | String    | Optional. The string to use as an indent. Default is two spaces.   |
+| `newline`   | String    | Optional. The newline character to use. Default is `U+000A`.    |
+| `baseIndent` | Number    | Optional. The level of indentation of the outermost XML element. Default is `0`.       |
 
 ##### Returns
 
@@ -1311,16 +1305,16 @@ Replaces an item within an array, or appends an item. The array must exist. To c
 
 ##### Parameters
 
-|   Parameter   |                                     Type                                     |                                                                Description                                                                 |
+|   Parameter   |   Type   |     Description     |
 |---------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| `schemaNS`    | [Schema namespace string constants](#schema-namespace-string-constants)      | The namespace URI string.                                                                                                                  |
-| `arrayName`   | String                                                                       | The array-type property name string. Can be a general path expression.                                                                     |
-| `itemIndex`   | Number                                                                       | The 1-based position index at which to insert the new item. Use `XMPConst.ARRAY_LAST_ITEM` to replace the last existing item in the array. |
-| `itemValue`   | String                                                                       | The new item value string. Pass `null` for array items that do not have values.                                                            |
-| `itemOptions` | A flag that describes the new item, if it is being created. One of:          | Optional                                                                                                                                   |
-|               | - `0`: A simple item, the default.                                           |                                                                                                                                            |
-|               | - `XMPConst.PROP_IS_ARRAY`: The item is an array (of type alt, bag, or seq). |                                                                                                                                            |
-|               | - `XMPConst.PROP_IS_STRUCT`: The item is a structure with nested fields.     |                                                                                                                                            |
+| `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants)   | The namespace URI string.   |
+| `arrayName`   | String     | The array-type property name string. Can be a general path expression.     |
+| `itemIndex`   | Number     | The 1-based position index at which to insert the new item. Use `XMPConst.ARRAY_LAST_ITEM` to replace the last existing item in the array. |
+| `itemValue`   | String     | The new item value string. Pass `null` for array items that do not have values.   |
+| `itemOptions` | A flag that describes the new item, if it is being created. One of:    | Optional       |
+|    | - `0`: A simple item, the default.   |       |
+|    | - `XMPConst.PROP_IS_ARRAY`: The item is an array (of type alt, bag, or seq). |       |
+|    | - `XMPConst.PROP_IS_STRUCT`: The item is a structure with nested fields.   |       |
 
 ##### Returns
 
@@ -1338,14 +1332,14 @@ Sets the text value for a specific language in an alternate-text array. Handles 
 
 ##### Parameters
 
-|   Parameter    |                                  Type                                   |                                               Description                                               |
+|   Parameter   |      Type     |    Description    |
 | -------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `schemaNS`     | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                                                               |
-| `altTextName`  | String                                                                  | The name string of the alternate-text array. Can be a general path expression.                          |
-| `genericLang`  | String                                                                  | The name of the generic language as an RFC 3066 primary subtag. Can be null or the empty string.        |
-| `specificLang` | String                                                                  | The name of the specific language as an RFC 3066 primary subtag; for example, en-US. Must be specified. |
-| `itemValue`    | String                                                                  | The new string value.                                                                                   |
-| `setOptions`   | Unknown                                                                 | Not used.                                                                                               |
+| `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.     |
+| `altTextName`  | String     | The name string of the alternate-text array. Can be a general path expression.    |
+| `genericLang`  | String     | The name of the generic language as an RFC 3066 primary subtag. Can be null or the empty string.    |
+| `specificLang` | String     | The name of the specific language as an RFC 3066 primary subtag; for example, en-US. Must be specified. |
+| `itemValue`   | String     | The new string value.     |
+| `setOptions`   | Unknown     | Not used.   |
 
 ##### Returns
 
@@ -1363,17 +1357,17 @@ Sets the value of a field within a structure-type property, or creates a new fie
 
 ##### Parameters
 
-|  Parameter   |                                     Type                                      |                                 Description                                 |
+|  Parameter   |   Type   |     Description     |
 |--------------|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants)       | The namespace URI string.                                                   |
-| `structName` | String                                                                        | The name string of an existing structure. Can be a general path expression. |
-| `fieldNS`    | [Schema namespace string constants](#schema-namespace-string-constants)       | The field type namespace string.                                            |
-| `fieldName`  | String                                                                        | The field name string. Must be a simple XML name.                           |
-| `fieldValue` | String                                                                        | The new field value string. Pass null for fields that do not have values.   |
-| `options`    | Option flags that describe a new structure. One of:                           | Optional. Used only if the structure is being created.                      |
-|              | - `0` - A simple item, the default.                                           |                                                                             |
-|              | - `XMPConst.PROP_IS_ARRAY` - The item is an array (of type alt, bag, or seq). |                                                                             |
-|              | - `XMPConst.PROP_IS_STRUCT` - The item is a structure with nested fields.     |                                                                             |
+| `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants)   | The namespace URI string.      |
+| `structName` | String     | The name string of an existing structure. Can be a general path expression. |
+| `fieldNS`   | [Schema namespace string constants](#schema-namespace-string-constants)   | The field type namespace string.   |
+| `fieldName`  | String     | The field name string. Must be a simple XML name.   |
+| `fieldValue` | String     | The new field value string. Pass null for fields that do not have values.   |
+| `options`   | Option flags that describe a new structure. One of:   | Optional. Used only if the structure is being created.    |
+|    | - `0` - A simple item, the default.   |       |
+|    | - `XMPConst.PROP_IS_ARRAY` - The item is an array (of type alt, bag, or seq). |       |
+|    | - `XMPConst.PROP_IS_STRUCT` - The item is a structure with nested fields.   |       |
 
 ##### Returns
 
@@ -1391,17 +1385,17 @@ Attaches a new qualifier to a metadata property. A qualifier can be added to a s
 
 ##### Parameters
 
-|  Parameter  |                                     Type                                      |                                             Description                                             |
+|  Parameter  |   Type   |   Description   |
 |-------------|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants)       | The namespace URI string.                                                                           |
-| `propName`  | String                                                                        | The name string of an existing property. Can be a general path expression.                          |
-| `qualNS`    | String                                                                        | The URI of the qualifier namespace. Has the same URI and prefix usage as a schema namespace.        |
-| `qualName`  | String                                                                        | The name of the qualifier. Must be a simple XML name. Has the same prefix usage as a property name. |
-| `qualValue` | String                                                                        | The new qualifier value string. Pass null for qualifiers that do not have values.                   |
-| `options`   | Option flags that describe the qualifier. One of:                             | Optional. Used only if the qualifier is being created.                                              |
-|             | - `0` - A simple item, the default.                                           |                                                                                                     |
-|             | - `XMPConst.PROP_IS_ARRAY` - The item is an array (of type alt, bag, or seq). |                                                                                                     |
-|             | - `XMPConst.PROP_IS_STRUCT` - The item is a structure with nested fields.     |                                                                                                     |
+| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants)   | The namespace URI string.      |
+| `propName`  | String     | The name string of an existing property. Can be a general path expression.    |
+| `qualNS`   | String     | The URI of the qualifier namespace. Has the same URI and prefix usage as a schema namespace.    |
+| `qualName`  | String     | The name of the qualifier. Must be a simple XML name. Has the same prefix usage as a property name. |
+| `qualValue` | String     | The new qualifier value string. Pass null for qualifiers that do not have values.   |
+| `options`   | Option flags that describe the qualifier. One of:     | Optional. Used only if the qualifier is being created.   |
+|    | - `0` - A simple item, the default.   |   |
+|    | - `XMPConst.PROP_IS_ARRAY` - The item is an array (of type alt, bag, or seq). |   |
+|    | - `XMPConst.PROP_IS_STRUCT` - The item is a structure with nested fields.   |   |
 
 ##### Returns
 
@@ -1419,21 +1413,21 @@ Sets the value of a simple metadata property, creating the property if necessary
 
 ##### Parameters
 
-|  Parameter   |                                     Type                                      |                                            Description                                            |
+|  Parameter   |   Type   |   Description   |
 |--------------|-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants)       | The namespace URI string.                                                                         |
-| `propName`   | String                                                                        | The property name string. Can be a general path expression.                                       |
-| `propValue`  | String                                                                        | The new property value string. Pass null to create an array or non-leaf level structure property. |
-| `setOptions` | A simple-valued property. Other constant values are:                          | Optional. The type of property to create, if the named property does not exist. Default is `0`.   |
-|              | - `0` - A simple item, the default.                                           |                                                                                                   |
-|              | - `XMPConst.PROP_IS_ARRAY` - The item is an array (of type alt, bag, or seq). |                                                                                                   |
-|              | - `XMPConst.PROP_IS_STRUCT` - The item is a structure with nested fields.     |                                                                                                   |
-| `valueType`  | The property data type. One of:                                               | Optional. If supplied, the value is converted to this type.                                       |
-|              | - `XMPConst.STRING`                                                           |                                                                                                   |
-|              | - `XMPConst.INTEGER`                                                          |                                                                                                   |
-|              | - `XMPConst.NUMBER`                                                           |                                                                                                   |
-|              | - `XMPConst.BOOLEAN`                                                          |                                                                                                   |
-|              | - `XMPConst.XMPDATE`                                                          |                                                                                                   |
+| `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants)   | The namespace URI string.      |
+| `propName`   | String     | The property name string. Can be a general path expression.      |
+| `propValue`  | String     | The new property value string. Pass null to create an array or non-leaf level structure property. |
+| `setOptions` | A simple-valued property. Other constant values are:    | Optional. The type of property to create, if the named property does not exist. Default is `0`.   |
+|    | - `0` - A simple item, the default.   |   |
+|    | - `XMPConst.PROP_IS_ARRAY` - The item is an array (of type alt, bag, or seq). |   |
+|    | - `XMPConst.PROP_IS_STRUCT` - The item is a structure with nested fields.   |   |
+| `valueType`  | The property data type. One of:    | Optional. If supplied, the value is converted to this type.      |
+|    | - `XMPConst.STRING`   |   |
+|    | - `XMPConst.INTEGER`   |   |
+|    | - `XMPConst.NUMBER`   |   |
+|    | - `XMPConst.BOOLEAN`   |   |
+|    | - `XMPConst.XMPDATE`   |   |
 
 ##### Returns
 
@@ -1469,19 +1463,19 @@ This object is returned by [XMPFile.getPacketInfo()](#xmpfilegetpacketinfo). The
 
 ### XMPPacketInfo object properties
 
-|  Parameter  |  Type   |                             Description                             |
+|  Parameter  |  Type   |     Description     |
 |-------------|---------|---------------------------------------------------------------------|
-| `charForm`  | Number  | The character encoding in the packet, one of:                       |
-|             |         | - `0` - UTF8                                                        |
-|             |         | - `2` - UTF-16, MSB-first (big-endian)                              |
-|             |         | - `3` - UTF-16, LSB-first (little-endian)                           |
-|             |         | - `4` - UTF 32, MSB-first (big-endian)                              |
-|             |         | - `5` - UTF 32, LSB-first (little-endian)                           |
-| `length`    | Number  | The length of the packet in bytes.                                  |
-| `offset`    | Number  | The byte-offset from the start of the file where the packet begins. |
-| `packet`    | String  | The raw packet data.                                                |
-| `padSize`   | Number  | The packet's padding size in bytes, 0 if unknown.                   |
-| `writeable` | Boolean | If `true`, the packet is writeable.                                 |
+| `charForm`  | Number  | The character encoding in the packet, one of:    |
+|    |   | - `0` - UTF8      |
+|    |   | - `2` - UTF-16, MSB-first (big-endian)    |
+|    |   | - `3` - UTF-16, LSB-first (little-endian)   |
+|    |   | - `4` - UTF 32, MSB-first (big-endian)    |
+|    |   | - `5` - UTF 32, LSB-first (little-endian)   |
+| `length`   | Number  | The length of the packet in bytes.      |
+| `offset`   | Number  | The byte-offset from the start of the file where the packet begins. |
+| `packet`   | String  | The raw packet data.      |
+| `padSize`   | Number  | The packet's padding size in bytes, 0 if unknown.   |
+| `writeable` | Boolean | If `true`, the packet is writeable.     |
 
 ---
 
@@ -1494,15 +1488,15 @@ This object is returned by various property accessor functions of the [XMPMeta o
 
 ### XMPProperty object properties
 
-| Parameter |  Type   |                                                                                                     Description                                                                                                      |
+| Parameter |  Type   |   Description    |
 |-----------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| locale    | String  | The language of the property value. This value is set by calls to [getLocalizedText()](#xmpmetagetlocalizedtext), which assigns the language of the selected alternative text item, if an appropriate item is found. |
-| namespace | String  | The namespace of the property; see [Schema namespace string constants](#schema-namespace-string-constants). Typically used when browsing metadata with an [XMPIterator object](#xmpiterator-object).                 |
-| options   | Number  | A constant that describes the property type, 0 for a simple property. Constants are:                                                                                                                                 |
-|           |         | - `XMPConst.PROP_IS_ARRAY` - The property is an array (of type alt, bag, or seq).                                                                                                                                    |
-|           |         | - `XMPConst.PROP_IS_STRUCT` - The property is a structure with nested fields.                                                                                                                                        |
-| path      | String  | The property path, including the property name. For a simple property, the entire path is the property name.                                                                                                         |
-| value     | Variant | The value of the property, if any. Arrays and non-leaf levels of structures do not have values.                                                                                                                      |
+| locale   | String  | The language of the property value. This value is set by calls to [getLocalizedText()](#xmpmetagetlocalizedtext), which assigns the language of the selected alternative text item, if an appropriate item is found. |
+| namespace | String  | The namespace of the property; see [Schema namespace string constants](#schema-namespace-string-constants). Typically used when browsing metadata with an [XMPIterator object](#xmpiterator-object).     |
+| options   | Number  | A constant that describes the property type, 0 for a simple property. Constants are:       |
+|   |   | - `XMPConst.PROP_IS_ARRAY` - The property is an array (of type alt, bag, or seq).       |
+|   |   | - `XMPConst.PROP_IS_STRUCT` - The property is a structure with nested fields.    |
+| path   | String  | The property path, including the property name. For a simple property, the entire path is the property name.    |
+| value   | Variant | The value of the property, if any. Arrays and non-leaf levels of structures do not have values.    |
 
 ---
 
@@ -1528,14 +1522,14 @@ Copies properties from a source XMPMeta object and appends them to a destination
 
 ##### Parameters
 
-| Parameter |                                                                                                            Type                                                                                                            |                           Description                            |
+| Parameter |   Type   |   Description    |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
-| `source`  | [XMPMeta Object](#xmpmeta-object)                                                                                                                                                                                          | The source XMPMeta object.                                       |
-| `dest`    | [XMPMeta Object](#xmpmeta-object)                                                                                                                                                                                          | The destination XMPMeta object.                                  |
-| `options` | A logical OR of these bit-flag constants:                                                                                                                                                                                  | Option flags that control the copying operation. Default is `0`. |
-|           | - `XMPConst.APPEND_ALL_PROPERTIES` - Include both internal and external properties. By default, copies only external properties. This applies only to top-level properties.                                                |                                                                  |
-|           | - `XMPConst.APPEND_REPLACE_OLD_VALUES` - Replace the values of existing properties with the value from the source object. By default, existing values are retained. This applies to properties at all levels of hierarchy. |                                                                  |
-|           | - `XMPConst.APPEND_DELETE_EMPTY_VALUES` - Delete properties if the new value is empty.                                                                                                                                     |                                                                  |
+| `source`  | [XMPMeta Object](#xmpmeta-object)    | The source XMPMeta object.      |
+| `dest`   | [XMPMeta Object](#xmpmeta-object)    | The destination XMPMeta object.      |
+| `options` | A logical OR of these bit-flag constants:      | Option flags that control the copying operation. Default is `0`. |
+|   | - `XMPConst.APPEND_ALL_PROPERTIES` - Include both internal and external properties. By default, copies only external properties. This applies only to top-level properties.      |     |
+|   | - `XMPConst.APPEND_REPLACE_OLD_VALUES` - Replace the values of existing properties with the value from the source object. By default, existing values are retained. This applies to properties at all levels of hierarchy. |     |
+|   | - `XMPConst.APPEND_DELETE_EMPTY_VALUES` - Delete properties if the new value is empty.   |     |
 
 ##### Returns
 
@@ -1553,14 +1547,14 @@ Concatenates a set of array item values into a single string. The resulting stri
 
 ##### Parameters
 
-|  Parameter  |                                  Type                                   |                                                                                                                                                             Description                                                                                                                                                              |
+|  Parameter  |      Type     |      Description      |
 | ----------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `xmpObj`    | [XMPMeta Object](#xmpmeta-object)                                       | The XMPMeta object containing the array.                                                                                                                                                                                                                                                                                             |
-| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                                                                                                                                                                                                                                                                                            |
-| `arrayName` | String                                                                  | The array property name string. Can be a general path expression. Each item in the array must be a simple string value.                                                                                                                                                                                                              |
-| `separator` | String                                                                  | The string used to separate the items in the result string. Default is '; ', an ASCII semicolon and space (U+003B,U+0020).                                                                                                                                                                                                           |
-| `quotes`    | String                                                                  | The character used to quote items that contain a separator. Default is '"', an ASCII double quote (U+0022).                                                                                                                                                                                                                          |
-| `options`   | Constant value                                                          | Option flag that controls the concatenation. The constant value `XMPConst.SEPARATE_ALLOW_COMMAS` - Allow commas in item values (such as "LastName, FirstName"). This option must be set the same way in this function and in [separateArrayItems()](#xmputilsseparatearrayitems) to reconstruct the items correctly. Default is `0`. |
+| `xmpObj`   | [XMPMeta Object](#xmpmeta-object)      | The XMPMeta object containing the array.      |
+| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.      |
+| `arrayName` | String     | The array property name string. Can be a general path expression. Each item in the array must be a simple string value.    |
+| `separator` | String     | The string used to separate the items in the result string. Default is '; ', an ASCII semicolon and space (U+003B,U+0020).    |
+| `quotes`   | String     | The character used to quote items that contain a separator. Default is '"', an ASCII double quote (U+0022).       |
+| `options`   | Constant value   | Option flag that controls the concatenation. The constant value `XMPConst.SEPARATE_ALLOW_COMMAS` - Allow commas in item values (such as "LastName, FirstName"). This option must be set the same way in this function and in [separateArrayItems()](#xmputilsseparatearrayitems) to reconstruct the items correctly. Default is `0`. |
 
 ##### Returns
 
@@ -1582,11 +1576,11 @@ schemaNS:arrayName[itemIndex]
 
 ##### Parameters
 
-|  Parameter  |                                  Type                                   |                                                                                     Description                                                                                      |
+|  Parameter  |      Type     |     Description     |
 | ----------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                                                                                                                                            |
-| `arrayName` | String                                                                  | The array property name string. Can be a general path expression.                                                                                                                    |
-| `itemIndex` | Number                                                                  | The 1-based position index of the item. Use `XMPConst.ARRAY_LAST_ITEM` to reference the last existing item in the array. In this case, the resulting path is `ns:arrayName[last()]`. |
+| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.      |
+| `arrayName` | String     | The array property name string. Can be a general path expression.   |
+| `itemIndex` | Number     | The 1-based position index of the item. Use `XMPConst.ARRAY_LAST_ITEM` to reference the last existing item in the array. In this case, the resulting path is `ns:arrayName[last()]`. |
 
 ##### Returns
 
@@ -1608,13 +1602,13 @@ schemaNS:arrayName[fieldNS:fieldName="fieldValue"]
 
 ##### Parameters
 
-|  Parameter   |                                  Type                                   |                            Description                            |
+|  Parameter   |      Type     |    Description    |
 | ------------ | ----------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                         |
-| `arrayName`  | String                                                                  | The array property name string. Can be a general path expression. |
-| `fieldNS`    | String                                                                  | The field namespace URI string.                                   |
-| `fieldName`  | String                                                                  | The field name. Must be a simple XML name.                        |
-| `fieldValue` | Any                                                                     | The desired field value.                                          |
+| `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.      |
+| `arrayName`  | String     | The array property name string. Can be a general path expression. |
+| `fieldNS`   | String     | The field namespace URI string.     |
+| `fieldName`  | String     | The field name. Must be a simple XML name.    |
+| `fieldValue` | Any     | The desired field value.      |
 
 ##### Returns
 
@@ -1639,14 +1633,13 @@ schemaNS:arrayName[@xml:lang="langName"]
 Those functions provide extra logic to choose the appropriate language and maintain consistency with the x-default value. This function provides a path expression for an explicit language, and only for that language.
 :::
 
-
 ##### Parameters
 
-|  Parameter  |                                  Type                                   |                            Description                            |
+|  Parameter  |      Type     |    Description    |
 | ----------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                         |
-| `arrayName` | String                                                                  | The array property name string. Can be a general path expression. |
-| `locale`    | String                                                                  | The RFC3066 locale code string for the desired language.          |
+| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.      |
+| `arrayName` | String     | The array property name string. Can be a general path expression. |
+| `locale`   | String     | The RFC3066 locale code string for the desired language.    |
 
 ##### Returns
 
@@ -1668,12 +1661,12 @@ schemaNS:structName/fieldNS:fieldName
 
 ##### Parameters
 
-|  Parameter   |                                  Type                                   |                              Description                              |
+|  Parameter   |      Type     |    Description    |
 | ------------ | ----------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                             |
-| `structName` | String                                                                  | The structure property name string. Can be a general path expression. |
-| `fieldNS`    | String                                                                  | The field namespace URI string.                                       |
-| `fieldName`  | String                                                                  | The field name. Must be a simple XML name.                            |
+| `schemaNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.   |
+| `structName` | String     | The structure property name string. Can be a general path expression. |
+| `fieldNS`   | String     | The field namespace URI string.      |
+| `fieldName`  | String     | The field name. Must be a simple XML name.    |
 
 ##### Returns
 
@@ -1695,12 +1688,12 @@ schemaNS:propName/?qualNS:qualName
 
 ##### Parameters
 
-| Parameter  |                                  Type                                   |                         Description                         |
+| Parameter  |      Type     |    Description    |
 | ---------- | ----------------------------------------------------------------------- | ----------------------------------------------------------- |
-| `schemaNS` | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                   |
-| `propName` | String                                                                  | The property name string. Can be a general path expression. |
-| `qualNS`   | String                                                                  | The qualifier namespace URI string.                         |
-| `qualName` | String                                                                  | The qualifier name. Must be a simple XML name.              |
+| `schemaNS` | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.     |
+| `propName` | String     | The property name string. Can be a general path expression. |
+| `qualNS`   | String     | The qualifier namespace URI string.    |
+| `qualName` | String     | The qualifier name. Must be a simple XML name.    |
 
 ##### Returns
 
@@ -1718,18 +1711,18 @@ Copies properties in the specified subtree from a source [XMPMeta object](#xmpme
 
 ##### Parameters
 
-|  Parameter   |                                  Type                                   |                                                                                                        Description                                                                                                         |
+|  Parameter   |      Type     |    Description    |
 |--------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `source`     | [XMPMeta Object](#xmpmeta-object)                                       | The source XMPMeta object.                                                                                                                                                                                                 |
-| `dest`       | [XMPMeta Object](#xmpmeta-object)                                       | The destination XMPMeta object.                                                                                                                                                                                            |
-| `sourceNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The source namespace URI string.                                                                                                                                                                                           |
-| `sourceRoot` | String                                                                  | The property name string for the root location of the source subtree. Can be a general path expression.                                                                                                                    |
-| `destNS`     | [Schema namespace string constants](#schema-namespace-string-constants) | The destination namespace URI string.                                                                                                                                                                                      |
-| `destRoot`   | String                                                                  | Optional. The property name string for the root location of the destination subtree. Can be a general path expression. Default is the source root location.                                                                |
-| `options`    | A logical OR of these bit-flag constants:                               | Option flags that control the copying operation. Default is `0`.                                                                                                                                                           |
-|              |                                                                         | - `XMPConst.APPEND_ALL_PROPERTIES` - Include both internal and external properties. By default, copies only external properties. This applies only to top-level properties.                                                |
-|              |                                                                         | - `XMPConst.APPEND_REPLACE_OLD_VALUES` - Replace the values of existing properties with the value from the source object. By default, existing values are retained. This applies to properties at all levels of hierarchy. |
-|              |                                                                         | - `XMPConst.APPEND_DELETE_EMPTY_VALUES` - Delete properties if the new value is empty.                                                                                                                                     |
+| `source`   | [XMPMeta Object](#xmpmeta-object)      | The source XMPMeta object.     |
+| `dest`   | [XMPMeta Object](#xmpmeta-object)      | The destination XMPMeta object.    |
+| `sourceNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The source namespace URI string.     |
+| `sourceRoot` | String     | The property name string for the root location of the source subtree. Can be a general path expression.   |
+| `destNS`   | [Schema namespace string constants](#schema-namespace-string-constants) | The destination namespace URI string.    |
+| `destRoot`   | String     | Optional. The property name string for the root location of the destination subtree. Can be a general path expression. Default is the source root location.     |
+| `options`   | A logical OR of these bit-flag constants:     | Option flags that control the copying operation. Default is `0`.     |
+|    |      | - `XMPConst.APPEND_ALL_PROPERTIES` - Include both internal and external properties. By default, copies only external properties. This applies only to top-level properties.      |
+|    |      | - `XMPConst.APPEND_REPLACE_OLD_VALUES` - Replace the values of existing properties with the value from the source object. By default, existing values are retained. This applies to properties at all levels of hierarchy. |
+|    |      | - `XMPConst.APPEND_DELETE_EMPTY_VALUES` - Delete properties if the new value is empty.   |
 
 ##### Returns
 
@@ -1753,14 +1746,14 @@ If neither the namespace nor the property name are supplied, removes all externa
 
 ##### Parameters
 
-| Parameter  |                                                                             Type                                                                              |                                                                            Description                                                                            |
+| Parameter  |       Type       |       Description       |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `xmpObj`   | [XMPMeta Object](#xmpmeta-object)                                                                                                                             | The object to remove properties from                                                                                                                              |
-| `schemaNS` | [Schema namespace string constants](#schema-namespace-string-constants). Optional. The namespace URI string. Must be supplied if a property name is supplied. |                                                                                                                                                                   |
-| `propName` | String                                                                                                                                                        | Optional. The property name string. Can be a general path expression.                                                                                             |
-| `options`  | A logical OR of these bit-flag constants:                                                                                                                     | Option flags that control the deletion operation. Default is `0`.                                                                                                 |
-|            |                                                                                                                                                               | - `XMPConst.REMOVE_ALL_PROPERTIES` - Remove internal and external properties. By default, removes only external properties. Applies only to top-level properties. |
-|            |                                                                                                                                                               | - `XMPConst.REMOVE_INCLUDE_ALIASES` - Remove aliases defined in the namespace. If the property name is supplied, removes it regardless of this option.            |
+| `xmpObj`   | [XMPMeta Object](#xmpmeta-object)       | The object to remove properties from       |
+| `schemaNS` | [Schema namespace string constants](#schema-namespace-string-constants). Optional. The namespace URI string. Must be supplied if a property name is supplied. |       |
+| `propName` | String    | Optional. The property name string. Can be a general path expression.   |
+| `options`  | A logical OR of these bit-flag constants:    | Option flags that control the deletion operation. Default is `0`.    |
+|   |     | - `XMPConst.REMOVE_ALL_PROPERTIES` - Remove internal and external properties. By default, removes only external properties. Applies only to top-level properties. |
+|   |     | - `XMPConst.REMOVE_INCLUDE_ALIASES` - Remove aliases defined in the namespace. If the property name is supplied, removes it regardless of this option.   |
 
 ##### Returns
 
@@ -1778,17 +1771,17 @@ Updates individual array item strings in the XMPMeta object from a concatenated 
 
 ##### Parameters
 
-|   Parameter    |                                                                                                            Type                                                                                                            |                                                       Description                                                        |
+|   Parameter   |   Type   |   Description      |
 |----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| `xmpObj`       | [XMPMeta Object](#xmpmeta-object)                                                                                                                                                                                          | The object to separate items from                                                                                        |
-| `schemaNS`     | The namespace URI string. See [Schema namespace string constants](#schema-namespace-string-constants).                                                                                                                     |                                                                                                                          |
-| `arrayName`    | String                                                                                                                                                                                                                     | The array property name string. Can be a general path expression. Each item in the array must be a simple string value.  |
-| `arrayOptions` | A logical OR of these bit-flag constants:                                                                                                                                                                                  | Option flags that control how the array property is updated from the separated string. Default is `0`.                   |
-|                | - `XMPConst.APPEND_ALL_PROPERTIES` - Include both internal and external properties. By default, copies only external properties. This applies only to top-level properties.                                                |                                                                                                                          |
-|                | - `XMPConst.APPEND_REPLACE_OLD_VALUES` - Replace the values of existing properties with the value from the source object. By default, existing values are retained. This applies to properties at all levels of hierarchy. |                                                                                                                          |
-|                | - `XMPConst.APPEND_DELETE_EMPTY_VALUES` - Delete properties if the new value is empty.                                                                                                                                     |                                                                                                                          |
-|                | - `XMPConst.SEPARATE_ALLOW_COMMAS` - Allow commas in item values. If not specified, an item containing a comma (such as "LastName, FirstName") is separated into two array items.                                          |                                                                                                                          |
-| `concatString` | String                                                                                                                                                                                                                     | The string containing the concatenated array values, as returned by [catenateArrayItems()](#xmputilscatenatearrayitems). |
+| `xmpObj`   | [XMPMeta Object](#xmpmeta-object)    | The object to separate items from      |
+| `schemaNS`   | The namespace URI string. See [Schema namespace string constants](#schema-namespace-string-constants).    |      |
+| `arrayName`   | String       | The array property name string. Can be a general path expression. Each item in the array must be a simple string value.  |
+| `arrayOptions` | A logical OR of these bit-flag constants:      | Option flags that control how the array property is updated from the separated string. Default is `0`.   |
+|    | - `XMPConst.APPEND_ALL_PROPERTIES` - Include both internal and external properties. By default, copies only external properties. This applies only to top-level properties.      |      |
+|    | - `XMPConst.APPEND_REPLACE_OLD_VALUES` - Replace the values of existing properties with the value from the source object. By default, existing values are retained. This applies to properties at all levels of hierarchy. |      |
+|    | - `XMPConst.APPEND_DELETE_EMPTY_VALUES` - Delete properties if the new value is empty.   |      |
+|    | - `XMPConst.SEPARATE_ALLOW_COMMAS` - Allow commas in item values. If not specified, an item containing a comma (such as "LastName, FirstName") is separated into two array items.      |      |
+| `concatString` | String       | The string containing the concatenated array values, as returned by [catenateArrayItems()](#xmputilscatenatearrayitems). |
 
 ##### Returns
 

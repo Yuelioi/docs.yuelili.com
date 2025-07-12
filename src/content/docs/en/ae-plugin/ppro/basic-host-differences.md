@@ -77,10 +77,10 @@ Many suites supported by After Effects are not implemented in the Premiere Pro h
 
 |        After Effects suite call         | Premiere Pro equivalent function |
 | --------------------------------------- | -------------------------------- |
-| `WorldTransformSuite1()->copy()`        | `PF_COPY()`                      |
+| `WorldTransformSuite1()->copy()`        | `PF_COPY()`      |
 | `WorldTransformSuite1()->convolve()`    | `in_data->utils->convolve()`     |
-| `FillMatteSuite2()->fill()`             | `PF_FILL()`                      |
-| `PF_PixelDataSuite1->get_pixel_data8()` | `PF_GET_PIXEL_DATA8()`           |
+| `FillMatteSuite2()->fill()`     | `PF_FILL()`      |
+| `PF_PixelDataSuite1->get_pixel_data8()` | `PF_GET_PIXEL_DATA8()`   |
 
 The sample projects demonstrate alternate ways of handling a missing suite, by checking for the host application and version. The Portable sample project demonstrates both host application and version checking.
 

@@ -81,8 +81,8 @@ GetProperty(kVideoSegmentProperty_Transition_TransitionDuration, duration);
 prSuiteError xGPUFilterEntry (
   csSDK_uint32      inHostInterfaceVersion,
   csSDK_int32*      ioIndex,
-  prBool            inStartup,
-  piSuitesPtr       piSuites,
+  prBool   inStartup,
+  piSuitesPtr   piSuites,
   PrGPUFilter*      outFilter,
   PrGPUFilterInfo*  outFilterInfo)
 ```

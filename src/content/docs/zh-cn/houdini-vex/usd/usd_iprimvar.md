@@ -46,6 +46,6 @@ float values[] = usd_iprimvar(0, "/geo/cube", "primvar_name");
 float value    = usd_iprimvar(0, "/geo/cube", "primvar_name", 3);
 
 v[]@foo_at_current_frame = usd_iprimvar(0, "/geo/sphere", "foo");
-v[]@foo_at_frame_8       = usd_iprimvar(0, "/geo/sphere", "foo", 8.0);
+v[]@foo_at_frame_8   = usd_iprimvar(0, "/geo/sphere", "foo", 8.0);
 
 ```

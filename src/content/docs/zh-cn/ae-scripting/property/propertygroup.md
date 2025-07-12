@@ -86,14 +86,14 @@ var sliderProperty = effectsProperty.property(sliderIndex).property("ADBE Slider
 
 #### 参数
 
-| 参数     | 类型   | 描述                                                                                                                                                                       |
+| 参数     | 类型   | 描述          |
 | -------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name` | String | 要添加的属性的显示名称或[matchName](../propertybase#propertybasematchname)。支持以下名称：                                                                                    |
-|          |        | - 可以通过用户界面添加的任何属性的匹配名称。例如，`"ADBE Mask Atom`", `"ADBE Paint Atom`", `"ADBE Text Position`", `"ADBE Text Anchor Point`"。                    |
-|          |        | - 当添加到 ADBE Mask Parade 时：`"ADBE Mask Atom`", `"Mask`"。                                                                                                         |
-|          |        | - 当添加到 ADBE Effect Parade 时，任何效果的匹配名称，例如 `"ADBE Bulge`", `"ADBE Glo2`", `"APC Vegas`"。                                                            |
-|          |        | - 任何效果的显示名称，例如 `"Bulge`", `"Glow`", `"Vegas`"。                                                                                                          |
-|          |        | - 对于文本动画器，`"ADBE Text Animator`"。                                                                                                                               |
+| `name` | String | 要添加的属性的显示名称或[matchName](../propertybase#propertybasematchname)。支持以下名称：          |
+|          |        | - 可以通过用户界面添加的任何属性的匹配名称。例如，`"ADBE Mask Atom`", `"ADBE Paint Atom`", `"ADBE Text Position`", `"ADBE Text Anchor Point`"。   |
+|          |        | - 当添加到 ADBE Mask Parade 时：`"ADBE Mask Atom`", `"Mask`"。     |
+|          |        | - 当添加到 ADBE Effect Parade 时，任何效果的匹配名称，例如 `"ADBE Bulge`", `"ADBE Glo2`", `"APC Vegas`"。           |
+|          |        | - 任何效果的显示名称，例如 `"Bulge`", `"Glow`", `"Vegas`"。      |
+|          |        | - 对于文本动画器，`"ADBE Text Animator`"。            |
 |          |        | - 对于选择器，范围选择器的名称为 `"ADBE Text Selector`"，摆动选择器的名称为 `"ADBE Text Wiggly Selector`"，表达式选择器的名称为 `"ADBE Text Expressible Selector`"。 |
 
 #### 返回
@@ -120,7 +120,7 @@ maskGroup.canAddProperty("blend"); // 返回 false
 
 #### 参数
 
-| 参数     | 类型   | 描述                                                                                                |
+| 参数     | 类型   | 描述    |
 | -------- | ------ | --------------------------------------------------------------------------------------------------- |
 | `name` | String | 要检查的属性的显示名称或匹配名称。（请参阅[PropertyGroup.addProperty()](#propertygroupaddproperty)）。 |
 
@@ -154,14 +154,14 @@ mylayer.property(1);
 
 #### 参数
 
-| 参数      | 类型    | 描述                                                              |
+| 参数      | 类型    | 描述   |
 | --------- | ------- | ----------------------------------------------------------------- |
 | `index` | Integer | 子属性的索引，范围为 `[1..numProperties]`，如果这是一个索引组。 |
-| `name`  | String  | 子属性的名称。可以是：                                            |
-|           |         | - 任何匹配名称                                                    |
-|           |         | - 表达式“括号样式”语法中的任何名称，即显示名称或紧凑的英文名称  |
-|           |         | - 表达式“驼峰样式”语法中的任何名称。                            |
-|           |         | 有关支持的属性名称，请参阅下表。                                  |
+| `name`  | String  | 子属性的名称。可以是：   |
+|   |         | - 任何匹配名称           |
+|   |         | - 表达式“括号样式”语法中的任何名称，即显示名称或紧凑的英文名称  |
+|   |         | - 表达式“驼峰样式”语法中的任何名称。   |
+|   |         | 有关支持的属性名称，请参阅下表。          |
 
 #### 返回
 
@@ -169,50 +169,50 @@ mylayer.property(1);
 
 #### 可通过名称访问的属性
 
-| 来源                                      | 值                                                                          |
+| 来源     | 值        |
 | ----------------------------------------- | --------------------------------------------------------------------------- |
-| 来自任何图层                              | -`"ADBE Mask Parade`", 或 `"Masks`"                                     |
-|                                           | -`"ADBE Effect Parade`", 或 `"Effects`"                                 |
-|                                           | -`"ADBE MTrackers`", 或 `"Motion Trackers`"                             |
-| 来自 AVLayer                              | -`"Anchor Point`" 或 `"anchorPoint`"                                    |
-|                                           | -`"Position`" 或 `"position`"                                           |
-|                                           | -`"Scale`" 或 `"scale`"                                                 |
-|                                           | -`"Rotation`" 或 `"rotation`"                                           |
-|                                           | -`"Z Rotation`" 或 `"zRotation`" 或 `"Rotation Z`" 或 `"rotationZ`" |
-|                                           | -`"Opacity`" 或 `"opacity`"                                             |
-|                                           | -`"Marker`" 或 `"marker`"                                               |
-| 来自具有非静态源的 AVLayer                | -`"Time Remap`" 或 `"timeRemapEnabled`"                                 |
-| 来自具有音频组件的 AVLayer                | -`"Audio Levels`" 或 `"audioLevels`"                                    |
-| 来自摄像机图层                            | -`"Zoom`" 或 `"zoom`"                                                   |
-|                                           | -`"Depth of Field`" 或 `"depthOfField`"                                 |
-|                                           | -`"Focus Distance`" 或 `"focusDistance`"                                |
-|                                           | -`"Aperture`" 或 `"aperture`"                                           |
-|                                           | -`"Blur Level`" 或 `"blurLevel`"                                        |
-| 来自灯光图层                              | -`"Intensity`" 或 `"intensity`"                                         |
-|                                           | -`"Color`" 或 `"color`"                                                 |
-|                                           | -`"Cone Angle`" 或 `"coneAngle`"                                        |
-|                                           | -`"Cone Feather`" 或 `"coneFeather`"                                    |
-|                                           | -`"Shadow Darkness`" 或 `"shadowDarkness`"                              |
-|                                           | -`"Shadow Diffusion`" 或 `"shadowDiffusion`"                            |
-|                                           | -`"Casts Shadows`" 或 `"castsShadows`"                                  |
-| 来自 3D 图层                              | -`"Accepts Shadows`" 或 `"acceptsShadows`"                              |
-|                                           | -`"Accepts Lights`" 或 `"acceptsLights`"                                |
-|                                           | -`"Ambient`" 或 `"ambient`"                                             |
-|                                           | -`"Diffuse`" 或 `"diffuse`"                                             |
-|                                           | -`"Specular`" 或 `"specular`"（这些用于高光强度属性）                   |
-|                                           | -`"Shininess`" 或 `"shininess`"（这些用于高光光泽度属性）               |
-|                                           | -`"Casts Shadows`" 或 `"castsShadows`"                                  |
-|                                           | -`"Light Transmission`" 或 `"lightTransmission`"                        |
-|                                           | -`"Metal`" 或 `"metal`"                                                 |
-| 来自摄像机、灯光或 3D 图层                | -`"X Rotation`" 或 `"xRotation`" 或 `"Rotation X`" 或 `"rotationX`" |
-|                                           | -`"Y Rotation`" 或 `"yRotation`" 或 `"Rotation Y`" 或 `"rotationY`" |
-|                                           | -`"Orientation`" 或 `"orientation`"                                     |
-| 来自文本图层                              | -`"Source Text`" 或 `"source Text`" 或 `"Text`" 或 `"text`"         |
-| 来自 PropertyGroup `"ADBE Mask Parade`" | -`"ADBE Mask Atom`"                                                       |
-| 来自 PropertyGroup `"ADBE Mask Atom`"   | -`"ADBE Mask Shape`", 或 `"maskShape`", 或 `"maskPath`"               |
-|                                           | -`"ADBE Mask Feather`", 或 `"maskFeather`"                              |
-|                                           | -`"ADBE Mask Opacity`", 或 `"maskOpacity`"                              |
-|                                           | -`"ADBE Mask Offset`", 或 `"maskOffset"`                                |
+| 来自任何图层     | -`"ADBE Mask Parade`", 或 `"Masks`"    |
+|          | -`"ADBE Effect Parade`", 或 `"Effects`"         |
+|          | -`"ADBE MTrackers`", 或 `"Motion Trackers`"    |
+| 来自 AVLayer     | -`"Anchor Point`" 或 `"anchorPoint`"   |
+|          | -`"Position`" 或 `"position`"          |
+|          | -`"Scale`" 或 `"scale`"        |
+|          | -`"Rotation`" 或 `"rotation`"          |
+|          | -`"Z Rotation`" 或 `"zRotation`" 或 `"Rotation Z`" 或 `"rotationZ`" |
+|          | -`"Opacity`" 或 `"opacity`"    |
+|          | -`"Marker`" 或 `"marker`"      |
+| 来自具有非静态源的 AVLayer        | -`"Time Remap`" 或 `"timeRemapEnabled`"         |
+| 来自具有音频组件的 AVLayer        | -`"Audio Levels`" 或 `"audioLevels`"   |
+| 来自摄像机图层   | -`"Zoom`" 或 `"zoom`"          |
+|          | -`"Depth of Field`" 或 `"depthOfField`"         |
+|          | -`"Focus Distance`" 或 `"focusDistance`"       |
+|          | -`"Aperture`" 或 `"aperture`"          |
+|          | -`"Blur Level`" 或 `"blurLevel`"       |
+| 来自灯光图层     | -`"Intensity`" 或 `"intensity`"        |
+|          | -`"Color`" 或 `"color`"        |
+|          | -`"Cone Angle`" 或 `"coneAngle`"       |
+|          | -`"Cone Feather`" 或 `"coneFeather`"   |
+|          | -`"Shadow Darkness`" 或 `"shadowDarkness`"     |
+|          | -`"Shadow Diffusion`" 或 `"shadowDiffusion`"   |
+|          | -`"Casts Shadows`" 或 `"castsShadows`"          |
+| 来自 3D 图层     | -`"Accepts Shadows`" 或 `"acceptsShadows`"     |
+|          | -`"Accepts Lights`" 或 `"acceptsLights`"       |
+|          | -`"Ambient`" 或 `"ambient`"    |
+|          | -`"Diffuse`" 或 `"diffuse`"    |
+|          | -`"Specular`" 或 `"specular`"（这些用于高光强度属性）           |
+|          | -`"Shininess`" 或 `"shininess`"（这些用于高光光泽度属性）       |
+|          | -`"Casts Shadows`" 或 `"castsShadows`"          |
+|          | -`"Light Transmission`" 或 `"lightTransmission`"        |
+|          | -`"Metal`" 或 `"metal`"        |
+| 来自摄像机、灯光或 3D 图层        | -`"X Rotation`" 或 `"xRotation`" 或 `"Rotation X`" 或 `"rotationX`" |
+|          | -`"Y Rotation`" 或 `"yRotation`" 或 `"Rotation Y`" 或 `"rotationY`" |
+|          | -`"Orientation`" 或 `"orientation`"    |
+| 来自文本图层     | -`"Source Text`" 或 `"source Text`" 或 `"Text`" 或 `"text`"         |
+| 来自 PropertyGroup `"ADBE Mask Parade`" | -`"ADBE Mask Atom`"      |
+| 来自 PropertyGroup `"ADBE Mask Atom`"   | -`"ADBE Mask Shape`", 或 `"maskShape`", 或 `"maskPath`"       |
+|          | -`"ADBE Mask Feather`", 或 `"maskFeather`"     |
+|          | -`"ADBE Mask Opacity`", 或 `"maskOpacity`"     |
+|          | -`"ADBE Mask Offset`", 或 `"maskOffset"`       |
 
 #### 示例
 

@@ -24,7 +24,7 @@ order: 41
 ## 示例
 
 ```vex
-int        vtx;
+int    vtx;
 
 // 获取顶点3的下一个顶点
 vtx = vertexnext("defgeo.bgeo", 3);

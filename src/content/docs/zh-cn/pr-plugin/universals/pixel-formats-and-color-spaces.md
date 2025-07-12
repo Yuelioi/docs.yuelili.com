@@ -61,108 +61,108 @@ BGRA、ARGB 和 VUYA 按从左到右的内存地址递增顺序写入。未压�
 
 ### 未打包，未压缩
 
-|   PrPixelFormat   | 每通道位数 | 格式 / FourCC |               附加详细信息               |
+|   PrPixelFormat   | 每通道位数 | 格式 / FourCC |    附加详细信息    |
 | ----------------- | ---------- | ------------- | ---------------------------------------- |
-| BGRA_4444_8u      | 8          | RGB           |                                          |
-| VUYA_4444_8u      | 8          | Y'UV          |                                          |
-| VUYA_4444_8u_709  | 8          | Y'UV          | Rec. 709 色彩空间。Premiere Pro 4.1 新增。 |
-| BGRA_4444_16u     | 16         | RGB           |                                          |
-| BGRA_4444_32f     | 32         | RGB           |                                          |
-| VUYA_4444_32f     | 32         | Y'UV          |                                          |
-| VUYA_4444_32f_709 | 32         | Y'UV          | Rec. 709 色彩空间。Premiere Pro 4.1 新增。 |
+| BGRA_4444_8u    | 8    | RGB     |      |
+| VUYA_4444_8u    | 8    | Y'UV    |      |
+| VUYA_4444_8u_709  | 8   | Y'UV   | Rec. 709 色彩空间。Premiere Pro 4.1 新增。 |
+| BGRA_4444_16u    | 16     | RGB    |       |
+| BGRA_4444_32f    | 32     | RGB    |       |
+| VUYA_4444_32f    | 32     | Y'UV   |       |
+| VUYA_4444_32f_709 | 32     | Y'UV   | Rec. 709 色彩空间。Premiere Pro 4.1 新增。 |
 
 ### 未打包，未压缩，仅限 After Effects 原生支持
 
-| PrPixelFormat | 每通道位数 | 格式 / FourCC |                              附加详细信息                              |
+| PrPixelFormat | 每通道位数 | 格式 / FourCC |     附加详细信息     |
 | ------------- | ---------- | ------------- | --------------------------------------------------------------------- |
-| ARGB_4444_8u  | 8          | RGB           | 用于 After Effects 原生支持。对于 Premiere Pro 原生支持，请使用 BGRA。 |
-| ARGB_4444_16u | 16         | RGB           |                                                                       |
-| ARGB_4444_32f | 32         | RGB           |                                                                       |
+| ARGB_4444_8u  | 8   | RGB    | 用于 After Effects 原生支持。对于 Premiere Pro 原生支持，请使用 BGRA。 |
+| ARGB_4444_16u | 16     | RGB    |      |
+| ARGB_4444_32f | 32     | RGB    |      |
 
 ### 未打包，未压缩，带有隐式 Alpha
 
-|   PrPixelFormat   | 每通道位数 | 格式 / FourCC |                                                                                                        附加详细信息                                                                                                        |
+|   PrPixelFormat   | 每通道位数 | 格式 / FourCC |       附加详细信息       |
 | ----------------- | ---------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| BGRX_4444_8u      | 8          | RGB           | 隐式不透明 Alpha 通道。实际数据可能填充了垃圾数据，这允许插件和主机进行优化处理，前提是 Alpha 通道是不透明的。Premiere Pro CS5 新增。                                                                                     |
-| VUYX_4444_8u      | 8          | Y'UV          |                                                                                                                                                                                                                          |
-| VUYX_4444_8u_709  | 8          | Y'UV          |                                                                                                                                                                                                                          |
-| XRGB_4444_8u      | 8          | RGB           |                                                                                                                                                                                                                          |
-| BGRX_4444_16u     | 16         | RGB           |                                                                                                                                                                                                                          |
-| XRGB_4444_16u     | 16         | RGB           |                                                                                                                                                                                                                          |
-| BGRX_4444_32f     | 32         | RGB           |                                                                                                                                                                                                                          |
-| VUYX_4444_32f     | 32         | Y'UV          |                                                                                                                                                                                                                          |
-| VUYX_4444_32f_709 | 32         | Y'UV          |                                                                                                                                                                                                                          |
-| XRGB_4444_32f     | 32         | RGB           |                                                                                                                                                                                                                          |
-| BGRP_4444_8u      | 8          | RGB           | 预乘 Alpha。Premiere Pro CS5 新增。                                                                                                                                                                                      |
-| VUYP_4444_8u      | 8          | Y'UV          |                                                                                                                                                                                                                          |
-| VUYP_4444_8u_709  | 8          | Y'UV          |                                                                                                                                                                                                                          |
-| PRGB_4444_8u      | 8          | RGB           |                                                                                                                                                                                                                          |
-| BGRP_4444_16u     | 16         | RGB           |                                                                                                                                                                                                                          |
-| PRGB_4444_16u     | 16         | RGB           |                                                                                                                                                                                                                          |
-| BGRP_4444_32f     | 32         | RGB           |                                                                                                                                                                                                                          |
-| VUYP_4444_32f     | 32         | Y'UV          |                                                                                                                                                                                                                          |
-| VUYP_4444_32f_709 | 32         | Y'UV          |                                                                                                                                                                                                                          |
-| PRGB_4444_32f     | 32         | RGB           |                                                                                                                                                                                                                          |
+| BGRX_4444_8u   | 8   | RGB    | 隐式不透明 Alpha 通道。实际数据可能填充了垃圾数据，这允许插件和主机进行优化处理，前提是 Alpha 通道是不透明的。Premiere Pro CS5 新增。     |
+| VUYX_4444_8u   | 8   | Y'UV   |   |
+| VUYX_4444_8u_709  | 8   | Y'UV   |   |
+| XRGB_4444_8u   | 8   | RGB    |   |
+| BGRX_4444_16u    | 16     | RGB    |   |
+| XRGB_4444_16u    | 16     | RGB    |   |
+| BGRX_4444_32f    | 32     | RGB    |   |
+| VUYX_4444_32f    | 32     | Y'UV   |   |
+| VUYX_4444_32f_709 | 32     | Y'UV   |   |
+| XRGB_4444_32f    | 32     | RGB    |   |
+| BGRP_4444_8u   | 8   | RGB    | 预乘 Alpha。Premiere Pro CS5 新增。    |
+| VUYP_4444_8u   | 8   | Y'UV   |   |
+| VUYP_4444_8u_709  | 8   | Y'UV   |   |
+| PRGB_4444_8u   | 8   | RGB    |   |
+| BGRP_4444_16u    | 16     | RGB    |   |
+| PRGB_4444_16u    | 16     | RGB    |   |
+| BGRP_4444_32f    | 32     | RGB    |   |
+| VUYP_4444_32f    | 32     | Y'UV   |   |
+| VUYP_4444_32f_709 | 32     | Y'UV   |   |
+| PRGB_4444_32f    | 32     | RGB    |   |
 
 ### 线性 RGB
 
-|    PrPixelFormat     | 每通道位数 | 格式 / FourCC |                                     附加详细信息                                      |
+|   PrPixelFormat    | 每通道位数 | 格式 / FourCC |     附加详细信息      |
 | -------------------- | ---------- | ------------- | ------------------------------------------------------------------------------------- |
-| BGRA_4444_32f_Linear | 32         | RGB           | 这些 RGB 格式的伽马值为 1，而不是标准的 2.2。Premiere Pro CS5 新增。                  |
-| BGRP_4444_32f_Linear | 32         | RGB           |                                                                                       |
-| BGRX_4444_32f_Linear | 32         | RGB           |                                                                                       |
-| ARGB_4444_32f_Linear | 32         | RGB           |                                                                                       |
-| PRGB_4444_32f_Linear | 32         | RGB           |                                                                                       |
-| XRGB_4444_32f_Linear | 32         | RGB           |                                                                                       |
+| BGRA_4444_32f_Linear | 32     | RGB    | 这些 RGB 格式的伽马值为 1，而不是标准的 2.2。Premiere Pro CS5 新增。   |
+| BGRP_4444_32f_Linear | 32     | RGB    |     |
+| BGRX_4444_32f_Linear | 32     | RGB    |     |
+| ARGB_4444_32f_Linear | 32     | RGB    |     |
+| PRGB_4444_32f_Linear | 32     | RGB    |     |
+| XRGB_4444_32f_Linear | 32     | RGB    |     |
 
 ### 打包，未压缩格式
 
-|  PrPixelFormat   | 每通道位数 | 格式 / FourCC |                       附加详细信息                        |
+|  PrPixelFormat   | 每通道位数 | 格式 / FourCC |      附加详细信息      |
 | ---------------- | ---------- | ------------- | --------------------------------------------------------- |
-| RGB_444_10u      |            |               | Premiere Pro CC 新增。全范围 10 位 444 RGB 小端格式       |
-| YUYV_422_8u_601  | 8          | 'YUY2'        | Premiere Pro CS4 新增。                                   |
-| YUYV_422_8u_709  | 8          | 'YUY2'        | Rec. 709 色彩空间。Premiere Pro CS4 新增。                |
-| UYVY_422_8u_601  | 8          | 'UYVY'        | Premiere Pro CS4 新增。                                   |
-| UYVY_422_8u_709  | 8          | 'UYVY'        | Rec. 709 色彩空间。Premiere Pro CS4 新增。                |
-| V210_422_10u_601 | 10         | 'v210'        | Premiere Pro CS4 新增。                                   |
-| V210_422_10u_709 | 10         | 'v210'        | Rec. 709 色彩空间。Premiere Pro CS4 新增。                |
-| UYVY_422_32f_601 | 32         | 'UYVY'        | Premiere Pro CC 新增。                                    |
-| UYVY_422_32f_709 | 32         | 'UYVY'        | Premiere Pro CC 新增。                                    |
+| RGB_444_10u   |    |     | Premiere Pro CC 新增。全范围 10 位 444 RGB 小端格式    |
+| YUYV_422_8u_601  | 8   | 'YUY2'    | Premiere Pro CS4 新增。       |
+| YUYV_422_8u_709  | 8   | 'YUY2'    | Rec. 709 色彩空间。Premiere Pro CS4 新增。     |
+| UYVY_422_8u_601  | 8   | 'UYVY'    | Premiere Pro CS4 新增。       |
+| UYVY_422_8u_709  | 8   | 'UYVY'    | Rec. 709 色彩空间。Premiere Pro CS4 新增。     |
+| V210_422_10u_601 | 10     | 'v210'    | Premiere Pro CS4 新增。       |
+| V210_422_10u_709 | 10     | 'v210'    | Rec. 709 色彩空间。Premiere Pro CS4 新增。     |
+| UYVY_422_32f_601 | 32     | 'UYVY'    | Premiere Pro CC 新增。       |
+| UYVY_422_32f_709 | 32     | 'UYVY'    | Premiere Pro CC 新增。       |
 
 ### 压缩 Y'UV
 
-|                           PrPixelFormat                           | 每通道位数 |   格式 / FourCC    |                                                                                  附加详细信息                                                                                   |
+|   PrPixelFormat   | 每通道位数 |   格式 / FourCC   |       附加详细信息    |
 | ----------------------------------------------------------------- | ---------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| NTSCDV25                                                          | 8          | DV25 / 'dvsd'      |                                                                                                                                                                                |
-| PALDV25                                                           | 8          | DV25 / 'dvsd'      |                                                                                                                                                                                |
-| NTSCDV50                                                          | 8          | DV50 / 'dv50'      |                                                                                                                                                                                |
-| PALDV50                                                           | 8          | DV50 / 'dv50'      |                                                                                                                                                                                |
-| NTSCDV100_720p                                                    | 8          | DV100 720p / 'dvh1' |                                                                                                                                                                                |
-| PALDV100_720p                                                     | 8          | DV100 720p / 'dvh1' |                                                                                                                                                                                |
-| NTSCDV100_1080i                                                   | 8          | DV100 1080i / 'dvh1' |                                                                                                                                                                                |
-| PALDV100_1080i                                                    | 8          | DV100 1080i / 'dvh1' |                                                                                                                                                                                |
-| YUV_420_MPEG2_FRAME_PICTURE_PLANAR_8u_601                         | 8          | Y'UV 4:2:0 / 'YV12' | 渐进式 Rec. 601 色彩空间                                                                                                                                                       |
-| YUV_420_MPEG2_FIELD_PICTURE_PLANAR_8u_601                         | 8          | Y'UV 4:2:0 / 'YV12' | 隔行 Rec. 601 色彩空间                                                                                                                                                         |
-| YUV_420_MPEG2_FRAME_PICTURE_PLANAR_8u_601_FullRange               | 8          | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS5.5 新增。渐进式 Rec. 601 色彩空间，全范围 Y'UV                                                                                                                 |
-| YUV_420_MPEG2_FIELD_PICTURE_PLANAR_8u_601_FullRange               | 8          | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS5.5 新增。隔行 Rec. 601 色彩空间，全范围 Y'UV                                                                                                                   |
-| YUV_420_MPEG2_FRAME_PICTURE_PLANAR_8u_709                         | 8          | Y'UV 4:2:0 / 'YV12' | 渐进式 Rec. 709 色彩空间                                                                                                                                                       |
-| YUV_420_MPEG2_FIELD_PICTURE_PLANAR_8u_709                         | 8          | Y'UV 4:2:0 / 'YV12' | 隔行 Rec. 709 色彩空间                                                                                                                                                         |
-| YUV_420_MPEG2_FRAME_PICTURE_PLANAR_8u_709_FullRange               | 8          | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。渐进式 Rec. 709 色彩空间，全范围 Y'UV。矩阵从 709 按每个分量的偏移量缩放（Y 按 219/255 缩放，UV 按 224/256 缩放）                                        |
-| YUV_420_MPEG2_FIELD_PICTURE_PLANAR_8u_709_FullRange               | 8          | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。隔行 Rec. 709 色彩空间，全范围 Y'UV                                                                                                                     |
-| YUV_420_MPEG4_FRAME_PICTURE_PLANAR_8u_601                         | 8          | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。渐进式 Rec. 601 色彩空间                                                                                                                                |
-| YUV_420_MPEG4_FIELD_PICTURE_PLANAR_8u_601                         | 8          | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。隔行 Rec. 601 色彩空间                                                                                                                                  |
-| YUV_420_MPEG4_FRAME_PICTURE_PLANAR_8u_601_FullRange               | 8          | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。渐进式 Rec. 601 色彩空间，全范围 Y'UV                                                                                                                   |
-| YUV_420_MPEG4_FIELD_PICTURE_PLANAR_8u_601_FullRange               | 8          | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。隔行 Rec. 601 色彩空间，全范围 Y'UV                                                                                                                     |
-| YUV_420_MPEG4_FRAME_PICTURE_PLANAR_8u_709                         | 8          | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。渐进式 Rec. 709 色彩空间                                                                                                                                |
-| YUV_420_MPEG4_FIELD_PICTURE_PLANAR_8u_709                         | 8          | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。隔行 Rec. 709 色彩空间                                                                                                                                  |
-| YUV_420_MPEG4_FRAME_PICTURE_PLANAR_8u_709_FullRange               | 8          | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。渐进式 Rec. 709 色彩空间，全范围 Y'UV。矩阵从 709 按每个分量的偏移量缩放（Y 按 219/255 缩放，UV 按 224/256 缩放）                                        |
-| PrPixelFormat_YUV_420_MPEG4_FIELD_PICTURE_PLANAR_8u_709_FullRange | 8          | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。隔行 Rec. 709 色彩空间，全范围 Y'UV                                                                                                                     |
+| NTSCDV25   | 8   | DV25 / 'dvsd'   |     |
+| PALDV25       | 8   | DV25 / 'dvsd'   |     |
+| NTSCDV50   | 8   | DV50 / 'dv50'   |     |
+| PALDV50       | 8   | DV50 / 'dv50'   |     |
+| NTSCDV100_720p    | 8   | DV100 720p / 'dvh1' |     |
+| PALDV100_720p   | 8   | DV100 720p / 'dvh1' |     |
+| NTSCDV100_1080i    | 8   | DV100 1080i / 'dvh1' |     |
+| PALDV100_1080i    | 8   | DV100 1080i / 'dvh1' |     |
+| YUV_420_MPEG2_FRAME_PICTURE_PLANAR_8u_601   | 8   | Y'UV 4:2:0 / 'YV12' | 渐进式 Rec. 601 色彩空间       |
+| YUV_420_MPEG2_FIELD_PICTURE_PLANAR_8u_601   | 8   | Y'UV 4:2:0 / 'YV12' | 隔行 Rec. 601 色彩空间      |
+| YUV_420_MPEG2_FRAME_PICTURE_PLANAR_8u_601_FullRange     | 8   | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS5.5 新增。渐进式 Rec. 601 色彩空间，全范围 Y'UV    |
+| YUV_420_MPEG2_FIELD_PICTURE_PLANAR_8u_601_FullRange     | 8   | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS5.5 新增。隔行 Rec. 601 色彩空间，全范围 Y'UV        |
+| YUV_420_MPEG2_FRAME_PICTURE_PLANAR_8u_709   | 8   | Y'UV 4:2:0 / 'YV12' | 渐进式 Rec. 709 色彩空间       |
+| YUV_420_MPEG2_FIELD_PICTURE_PLANAR_8u_709   | 8   | Y'UV 4:2:0 / 'YV12' | 隔行 Rec. 709 色彩空间      |
+| YUV_420_MPEG2_FRAME_PICTURE_PLANAR_8u_709_FullRange     | 8   | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。渐进式 Rec. 709 色彩空间，全范围 Y'UV。矩阵从 709 按每个分量的偏移量缩放（Y 按 219/255 缩放，UV 按 224/256 缩放）     |
+| YUV_420_MPEG2_FIELD_PICTURE_PLANAR_8u_709_FullRange     | 8   | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。隔行 Rec. 709 色彩空间，全范围 Y'UV    |
+| YUV_420_MPEG4_FRAME_PICTURE_PLANAR_8u_601   | 8   | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。渐进式 Rec. 601 色彩空间    |
+| YUV_420_MPEG4_FIELD_PICTURE_PLANAR_8u_601   | 8   | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。隔行 Rec. 601 色彩空间   |
+| YUV_420_MPEG4_FRAME_PICTURE_PLANAR_8u_601_FullRange     | 8   | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。渐进式 Rec. 601 色彩空间，全范围 Y'UV        |
+| YUV_420_MPEG4_FIELD_PICTURE_PLANAR_8u_601_FullRange     | 8   | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。隔行 Rec. 601 色彩空间，全范围 Y'UV    |
+| YUV_420_MPEG4_FRAME_PICTURE_PLANAR_8u_709   | 8   | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。渐进式 Rec. 709 色彩空间    |
+| YUV_420_MPEG4_FIELD_PICTURE_PLANAR_8u_709   | 8   | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。隔行 Rec. 709 色彩空间   |
+| YUV_420_MPEG4_FRAME_PICTURE_PLANAR_8u_709_FullRange     | 8   | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。渐进式 Rec. 709 色彩空间，全范围 Y'UV。矩阵从 709 按每个分量的偏移量缩放（Y 按 219/255 缩放，UV 按 224/256 缩放）     |
+| PrPixelFormat_YUV_420_MPEG4_FIELD_PICTURE_PLANAR_8u_709_FullRange | 8   | Y'UV 4:2:0 / 'YV12' | Premiere Pro CS6 新增。隔行 Rec. 709 色彩空间，全范围 Y'UV    |
 
 ### 其他
 
-| PrPixelFormat | 每通道位数 | 格式 / FourCC |              附加详细信息               |
+| PrPixelFormat | 每通道位数 | 格式 / FourCC |    附加详细信息     |
 | ------------- | ---------- | ------------- | --------------------------------------- |
-| Raw           | ?          | ?             | 原始、不透明数据，没有行字节或高度信息 |
+| Raw    | ?   | ?   | 原始、不透明数据，没有行字节或高度信息 |
 
 ---
 

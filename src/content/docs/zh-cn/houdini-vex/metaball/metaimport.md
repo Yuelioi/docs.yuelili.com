@@ -34,7 +34,7 @@ order: 1
 float
 metaweight(string file; vector P)
 {
-int        handle;
+int      handle;
 float    density, tmp;
 
 density = 0;
@@ -54,7 +54,7 @@ return density;
 vector
 meta_attribute(string file, attrib_name; vector P)
 {
-int        handle;
+int      handle;
 vector    result, tmp;
 float    density;
 

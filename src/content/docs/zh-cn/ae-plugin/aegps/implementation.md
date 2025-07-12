@@ -20,8 +20,8 @@ AEGP还可以使用任何不需要PF_ProgPtr的效果API套件函数（效果从
 ```cpp
 A_Err AEGP_PluginInitFuncPrototype(
     struct SPBasicSuite  *pica_basicP,
-    A_long               major_versionL,
-    A_long               minor_versionL,
+    A_long       major_versionL,
+    A_long       minor_versionL,
     AEGP_PluginID        aegp_plugin_id,
     AEGP_GlobalRefcon    *global_refconP)
 ```
@@ -56,7 +56,7 @@ AEIO和Artisans必须向After Effects注册才能接收它们所依赖的消息�
 
 ---
 
-### 私有数据
+## 私有数据
 
 不同于特效,AEPGs在一个 AE session 内永远不会卸载.但这并不意味着依赖静态变量和全局变量就是好主意.
 
@@ -69,7 +69,7 @@ AEIO和Artisans必须向After Effects注册才能接收它们所依赖的消息�
 
 ---
 
-### 线程安全
+## 线程安全
 
 APGE完全不支持任何形式多线程操作一切都得在主线程完成要么响应回拨要么来自空闲勾选...
 唯一保证 thread safe call: 'cause idle routines to be called()'.

@@ -42,7 +42,7 @@ fastshadow()
 {
     vector        surfP;
     if (!getsmoothP(surfP, Eye, I))
-        surfP = Ps;                // Set to the Ps (surface P) variable
+        surfP = Ps;        // Set to the Ps (surface P) variable
     vector shad = trace(surfP, normalize(L), Time, "raystyle", "shadow");
     Cl *= ({1,1,1} - shad);
 }

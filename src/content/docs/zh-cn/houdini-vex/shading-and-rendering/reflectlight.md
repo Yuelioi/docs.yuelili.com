@@ -413,7 +413,77 @@ Z方向的过滤器宽度（用于阴影贴图）。
 
 指定纹理存储的颜色空间。
 当访问纹理值时，如果需要，它们将从该空间转换为线性空间进行渲染。
-
 `auto`
 
-（默认）根据文件确定源颜色
+(默认) 根据文件自动判断源色彩空间。当前实现中，8位纹理将假定为sRGB色彩空间，其他所有纹理假定为线性空间。
+
+`linear`
+
+转换为线性空间。当前仅影响8位纹理（其他纹理默认已在线性空间）。此选项用于强制将凹凸贴图或置换贴图使用的纹理按线性空间解释。
+
+`sRGB`
+
+无论纹理的位深度或通道数量如何，都强制从sRGB色彩空间转换为线性空间。
+
+`rec709`
+
+从Rec709色彩空间转换为线性空间。
+
+`gamma22`
+
+从Gamma 2.2色彩空间转换为线性空间。
+
+`raw`
+
+直接使用未经转换的贴图颜色
+
+`srccolorspace`参数也可以是OpenColorIO支持的任何色彩空间。
+
+"`face`",
+
+使用Ptex纹理贴图时，`face`参数用于指定ptexture查询的面。
+**对OpenImageIO格式无效**。
+
+"`ptexorient`",
+`int`
+
+使用Ptex纹理时，多边形上的隐式纹理坐标将作为纹理查询的插值参数（与`face`结合使用）。但不同软件可能对缠绕方向和朝向有不同的理解。此关键字参数允许您控制Houdini多边形朝向的解释方式。`ptexorient`需要一个由位字段组成的整型参数：
+
+- 位0×01：对`s`坐标取补
+- 位0×02：对`t`坐标取补
+- 位0×04：交换`s`和`t`坐标
+
+例如，值6(0×4|0×2)相当于调用`texture(map, 1-t, s)`而非`texture(map, s, t)`。
+
+默认`ptexorient`为0，与<http://ptex.us>上的示例兼容。
+
+**对OpenImageIO格式无效**。
+
+"`iesnormalization`",
+`string`
+`="maxvalue"`
+
+通过`environment()`函数查询时，选择IES贴图输出值的不同归一化方法。
+
+`none`
+
+使用原始值（按头部坎德拉乘数缩放）。
+
+`maxvalue`
+
+(默认) 按最大值归一化。这是mantra默认灯光着色器使用的传统行为。
+
+`preserveenergy`
+
+按覆盖角度积分值归一化，使IES配置文件在保持总能量输出的同时影响光的形状。
+
+示例
+
+## 示例
+
+```vex
+surface mirror(vector refl_color=1; float bias=.005)
+{
+    Cf = refl_color * reflectlight(bias, max(refl_color));
+}
+```

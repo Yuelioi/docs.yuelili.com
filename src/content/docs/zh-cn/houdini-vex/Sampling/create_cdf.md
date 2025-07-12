@@ -42,9 +42,9 @@ for (int i = 0; i < len(li); i++)
 {
     for (int j = 0; j < nsamples; j++)
     {
-        nextsample(sid, s.x, s.y, "mode", "nextpixel");
-        sample_light(li[i], P, s, Time, pos, clr, scale);
-        values[i] += luminance(clr);
+    nextsample(sid, s.x, s.y, "mode", "nextpixel");
+    sample_light(li[i], P, s, Time, pos, clr, scale);
+    values[i] += luminance(clr);
     }
     values[i] /= nsamples;
 }

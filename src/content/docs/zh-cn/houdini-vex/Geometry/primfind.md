@@ -75,9 +75,9 @@ for ( int prim = 0; prim < n; ++prim )
     vector prim_min = vert_pos, prim_max = vert_pos;
     for ( int v = 1; v < len(verts); ++v )
     {
-        vert_pos = point("primitives.bgeo", "P", vertexpoint("primitives.bgeo", verts[v]));
-        prim_min = min(prim_min, vert_pos);
-        prim_max = max(prim_max, vert_pos);
+    vert_pos = point("primitives.bgeo", "P", vertexpoint("primitives.bgeo", verts[v]));
+    prim_min = min(prim_min, vert_pos);
+    prim_max = max(prim_max, vert_pos);
     }
 
     // 边界框相交测试

@@ -11,58 +11,58 @@ Suites that are only used by one plugin type are documented in the chapter on th
 
 Below is a table of all suites available in Premiere Pro:
 
-|                                    Suite Name                                     |          Relevant to Plug-in Type           |
+|            Suite Name   |          Relevant to Plug-in Type   |
 | --------------------------------------------------------------------------------- | ------------------------------------------- |
-| Accelerated Render Invocation Suite                                               | Exporters                                   |
-| [App Info Suite](#app-info-suite)                                                 | All                                         |
-| [Application Settings Suite](#application-settings-suite)                         | All                                         |
-| [Async File Reader Suite](../../importers/suites#async-file-reader-suite)         | Importers                                   |
-| Async Operation Suite                                                             | All                                         |
-| [Audio Suite](#audio-suite)                                                       | Importers, Exporters                        |
-| [Captioning Suite](#captioning-suite)                                             | Device Controllers, Exporters, Transmitters |
-| [Clip Render Suite](#clip-render-suite)                                           | Exporters                                   |
-| [Deferred Processing Suite](../../importers/suites#deferred-processing-suite)     | Importers                                   |
-| [Error Suite](#error-suite)                                                       | All except Exporters starting in CS6        |
-| [Export File Suite](../../exporters/suites#export-file-suite)                     | Exporters                                   |
-| [Export Info Suite](../../exporters/suites#export-info-suite)                     | Exporters                                   |
-| [Export Param Suite](../../exporters/suites#export-param-suite)                   | Exporters                                   |
-| [Export Progress Suite](../../exporters/suites#export-progress-suite)             | Exporters                                   |
-| [Export Standard Param Suite](../../exporters/suites#export-standard-param-suite) | Exporters                                   |
-| [Exporter Utility Suite](../../exporters/suites#exporter-utility-suite)           | Exporters                                   |
-| [File Registration Suite](#file-registration-suite)                               | Importers, Transitions, Video Filters       |
-| [Flash Cue Marker Data Suite](#flash-cue-marker-data-suite)                       | Exporters                                   |
-| [GPU Device Suite](../../gpu-effects-transitions/suites#gpu-device-suite)         | GPU Effects and Transitions                 |
-| [Image Processing Suite](#image-processing-suite)                                 | All                                         |
-| Importer File Manager Suite                                                       | Importers                                   |
-| [Legacy Callback Suites](../legacy-callback-suites)                               | All                                         |
-| [Marker Suite](#marker-suite)                                                     | Exporters                                   |
-| Media Accelerator Suite                                                           | Importers                                   |
-| [Memory Manager Suite](#memory-manager-suite)                                     | All                                         |
-| [Palette Suite](../../exporters/suites#palette-suite)                             | Exporters                                   |
-| [Pixel Format Suite](#pixel-format-suite)                                         | All                                         |
-| [Playmod Audio Suite](../../transmitters/suites#playmod-audio-suite)              | Transmitters                                |
-| Playmod Device Control Suite                                                      | None (Deprecated)                           |
-| [Playmod Overlay Suite](#playmod-overlay-suite)                                   | Transmitters                                |
-| Playmod Render Suite                                                              | None (Deprecated)                           |
-| [PPix Cache Suite](#ppix-cache-suite)                                             | Importers                                   |
-| [PPix Creator Suite](#ppix-creator-suite)                                         | All                                         |
-| [PPix Creator 2 Suite](#ppix-creator-2-suite)                                     | All                                         |
-| [PPix Suite](#ppix-suite)                                                         | All                                         |
-| [PPix 2 Suite](#ppix-2-suite)                                                     | All                                         |
-| Quality Suite                                                                     | None (Deprecated)                           |
-| [RollCrawl Suite](#rollcrawl-suite)                                               | Exporters                                   |
-| Scope Render Suite                                                                | None (Deprecated)                           |
-| [Sequence Audio Suite](../../exporters/suites#sequence-audio-suite)               | Exporters                                   |
-| [Sequence Info Suite](#sequence-info-suite)                                       | Importers, Transitions, Video Filters       |
-| [Sequence Render Suite](../../exporters/suites#sequence-render-suite)             | Exporters                                   |
-| Stock Image Suite                                                                 | None (Deprecated)                           |
-| [String Suite](#string-suite)                                                     | All                                         |
-| [Threaded Work Suite](#threaded-work-suite)                                       | All                                         |
-| [Time Suite](#time-suite)                                                         | All                                         |
-| [Transmit Invocation Suite](../../transmitters/suites#transmit-invocation-suite)  | All                                         |
-| [Video Segment Render Suite](#video-segment-render-suite)                         | Exporters                                   |
-| [Video Segment Suite](#video-segment-suite)                                       | Exporters                                   |
-| [Window Suite](#window-suite)                                                     | All                                         |
+| Accelerated Render Invocation Suite     | Exporters           |
+| [App Info Suite](#app-info-suite)       | All       |
+| [Application Settings Suite](#application-settings-suite)         | All       |
+| [Async File Reader Suite](../../importers/suites#async-file-reader-suite)         | Importers           |
+| Async Operation Suite           | All       |
+| [Audio Suite](#audio-suite)     | Importers, Exporters        |
+| [Captioning Suite](#captioning-suite)   | Device Controllers, Exporters, Transmitters |
+| [Clip Render Suite](#clip-render-suite)         | Exporters           |
+| [Deferred Processing Suite](../../importers/suites#deferred-processing-suite)     | Importers           |
+| [Error Suite](#error-suite)     | All except Exporters starting in CS6        |
+| [Export File Suite](../../exporters/suites#export-file-suite)   | Exporters           |
+| [Export Info Suite](../../exporters/suites#export-info-suite)   | Exporters           |
+| [Export Param Suite](../../exporters/suites#export-param-suite)           | Exporters           |
+| [Export Progress Suite](../../exporters/suites#export-progress-suite)     | Exporters           |
+| [Export Standard Param Suite](../../exporters/suites#export-standard-param-suite) | Exporters           |
+| [Exporter Utility Suite](../../exporters/suites#exporter-utility-suite)   | Exporters           |
+| [File Registration Suite](#file-registration-suite)     | Importers, Transitions, Video Filters       |
+| [Flash Cue Marker Data Suite](#flash-cue-marker-data-suite)       | Exporters           |
+| [GPU Device Suite](../../gpu-effects-transitions/suites#gpu-device-suite)         | GPU Effects and Transitions         |
+| [Image Processing Suite](#image-processing-suite)         | All       |
+| Importer File Manager Suite     | Importers           |
+| [Legacy Callback Suites](../legacy-callback-suites)     | All       |
+| [Marker Suite](#marker-suite)           | Exporters           |
+| Media Accelerator Suite         | Importers           |
+| [Memory Manager Suite](#memory-manager-suite)   | All       |
+| [Palette Suite](../../exporters/suites#palette-suite)   | Exporters           |
+| [Pixel Format Suite](#pixel-format-suite)       | All       |
+| [Playmod Audio Suite](../../transmitters/suites#playmod-audio-suite)      | Transmitters      |
+| Playmod Device Control Suite            | None (Deprecated)           |
+| [Playmod Overlay Suite](#playmod-overlay-suite)           | Transmitters      |
+| Playmod Render Suite            | None (Deprecated)           |
+| [PPix Cache Suite](#ppix-cache-suite)   | Importers           |
+| [PPix Creator Suite](#ppix-creator-suite)       | All       |
+| [PPix Creator 2 Suite](#ppix-creator-2-suite)   | All       |
+| [PPix Suite](#ppix-suite)       | All       |
+| [PPix 2 Suite](#ppix-2-suite)           | All       |
+| Quality Suite           | None (Deprecated)           |
+| [RollCrawl Suite](#rollcrawl-suite)     | Exporters           |
+| Scope Render Suite              | None (Deprecated)           |
+| [Sequence Audio Suite](../../exporters/suites#sequence-audio-suite)       | Exporters           |
+| [Sequence Info Suite](#sequence-info-suite)     | Importers, Transitions, Video Filters       |
+| [Sequence Render Suite](../../exporters/suites#sequence-render-suite)     | Exporters           |
+| Stock Image Suite               | None (Deprecated)           |
+| [String Suite](#string-suite)           | All       |
+| [Threaded Work Suite](#threaded-work-suite)     | All       |
+| [Time Suite](#time-suite)       | All       |
+| [Transmit Invocation Suite](../../transmitters/suites#transmit-invocation-suite)  | All       |
+| [Video Segment Render Suite](#video-segment-render-suite)         | Exporters           |
+| [Video Segment Suite](#video-segment-suite)     | Exporters           |
+| [Window Suite](#window-suite)           | All       |
 
 ---
 
@@ -87,7 +87,7 @@ Don't forget to release the suites when finished!
 if (SPBasic && PixelFormatSuite)
 {
   SPBasic->ReleaseSuite ( kPrSDKPixelFormatSuite,
-                          kPrSDKPixelFormatSuiteVersion);
+          kPrSDKPixelFormatSuiteVersion);
 }
 ```
 
@@ -106,7 +106,6 @@ Useful for plug-i that are shared between different applications, such as After 
 :::note
 This suite is not available to AE effects running in AE.
 :::
-
 
 This suite provides the host application and version number. For a version such as 6.0.3, it will return major = 6, minor = 0, and patch = 3. See PrSDKAppInfoSuite.h.
 
@@ -229,20 +228,20 @@ prSuiteError (*RenderImage)(
   PrPlayID       inPlayID,
   PrTime         inTime,
   const prRect*  inLogicalRegion,
-  int            inDisplayWidth,
-  int            inDisplayHeight,
+  int    inDisplayWidth,
+  int    inDisplayHeight,
   prBool         inClearToTransparentBlack,
   PPixHand*      ioPPix);
 ```
 
-|          Parameter          |                                                  Description                                                  |
+|          Parameter          |        Description        |
 |-----------------------------|---------------------------------------------------------------------------------------------------------------|
-| `inLogicalRegion`           | The non-scaled region of the source PPix to overlay                                                           |
-| `inDisplayWidth`            | Width and height of PPix, if provided in ioPPix, scaled to account for Monitor zoom and PAR                   |
-| `inDisplayHeight`           |                                                                                                               |
-| `inClearToTransparentBlack` | If `kPrTrue`, the frame will first be cleared to transparent black before render                              |
-| `ioPPix`                    | The frame into which to draw the overlay. If NULL, the host will allocate the PPix.                           |
-|                             | If provided, the PPix must be BGRA, square pixel aspect ratio, and sized to inDisplayWidth & inDisplayHeight. |
+| `inLogicalRegion`   | The non-scaled region of the source PPix to overlay         |
+| `inDisplayWidth`    | Width and height of PPix, if provided in ioPPix, scaled to account for Monitor zoom and PAR           |
+| `inDisplayHeight`   |           |
+| `inClearToTransparentBlack` | If `kPrTrue`, the frame will first be cleared to transparent black before render    |
+| `ioPPix`            | The frame into which to draw the overlay. If NULL, the host will allocate the PPix.           |
+|   | If provided, the PPix must be BGRA, square pixel aspect ratio, and sized to inDisplayWidth & inDisplayHeight. |
 
 ### GetIdentifier
 
@@ -251,8 +250,8 @@ prSuiteError (*GetIdentifier)(
   PrPlayID       inPlayID,
   PrTime         inTime,
   const prRect*  inLogicalRegion,
-  int            inDisplayWidth,
-  int            inDisplayHeight,
+  int    inDisplayWidth,
+  int    inDisplayHeight,
   prBool         inClearToTransparentBlack,
   prPluginID*    outIdentifier);
 ```
@@ -264,8 +263,8 @@ prSuiteError (*HasVisibleRegions)(
   PrPlayID       inPlayID,
   PrTime         inTime,
   const prRect*  inLogicalRegion,
-  int            inDisplayWidth,
-  int            inDisplayHeight,
+  int    inDisplayWidth,
+  int    inDisplayHeight,
   prBool*        outHasVisibleRegions);
 ```
 
@@ -311,19 +310,19 @@ Creates a new PPix. The advantage of using this callback is that frames allocate
 
 ```cpp
 prSuiteError (*CreatePPix)(
-  PPixHand*           outPPixHand,
+  PPixHand*   outPPixHand,
   PrPPixBufferAccess  inRequestedAccess,
   PrPixelFormat       inPixelFormat,
   const prRect*       inBoundingRect);
 ```
 
-|               Parameter                |                              Description                               |
+|       Parameter        |    Description     |
 |----------------------------------------|------------------------------------------------------------------------|
-| `PPixHand *outPPixHand`                | The new PPix handle if the creation was successful.                    |
-|                                        | NULL otherwise.                                                        |
+| `PPixHand *outPPixHand`        | The new PPix handle if the creation was successful.            |
+|      | NULL otherwise.      |
 | `PrPPixBufferAccess inRequestedAccess` | Requested pixel access. Read-only is not allowed (doesn't make sense). |
-|                                        | `PrPPixBufferAccess` values are defined in [PPix Suite](#ppix-suite).  |
-| `PrPixelFormat inPixelFormat`          | The pixel format of this PPix                                          |
+|      | `PrPPixBufferAccess` values are defined in [PPix Suite](#ppix-suite).  |
+| `PrPixelFormat inPixelFormat`          | The pixel format of this PPix        |
 
 ### ClonePPix
 
@@ -333,19 +332,19 @@ It will ref-count the PPix if only read access is requested and the PPix to copy
 
 ```cpp
 prSuiteError (*ClonePPix)(
-  PPixHand            inPPixToClone,
-  PPixHand*           outPPixHand,
+  PPixHand    inPPixToClone,
+  PPixHand*   outPPixHand,
   PrPPixBufferAccess  inRequestedAccess);
 ```
 
-|               Parameter                |                              Description                              |
+|       Parameter        |    Description    |
 |----------------------------------------|-----------------------------------------------------------------------|
-| `PPixHand inPPixToClone`               | The PPix to clone from.                                               |
-| `PPixHand *outPPixHand`                | The new PPix handle if the creation was successful.                   |
-|                                        | NULL otherwise.                                                       |
-| `PrPPixBufferAccess inRequestedAccess` | Requested pixel access.                                               |
-|                                        | Only read-only is allowed right now.                                  |
-|                                        | `PrPPixBufferAccess` values are defined in [PPix Suite](#ppix-suite). |
+| `PPixHand inPPixToClone`       | The PPix to clone from.     |
+| `PPixHand *outPPixHand`        | The new PPix handle if the creation was successful.           |
+|      | NULL otherwise.     |
+| `PrPPixBufferAccess inRequestedAccess` | Requested pixel access.     |
+|      | Only read-only is allowed right now.          |
+|      | `PrPPixBufferAccess` values are defined in [PPix Suite](#ppix-suite). |
 
 ---
 
@@ -390,18 +389,18 @@ This will return a pointer to the pixel buffer.
 
 ```cpp
 prSuiteError (*GetPixels)(
-  PPixHand            inPPixHand,
+  PPixHand    inPPixHand,
   PrPPixBufferAccess  inRequestedAccess,
-  char**              outPixelAddress);
+  char**      outPixelAddress);
 ```
 
-|               Parameter                |                         Description                         |
+|       Parameter        |         Description         |
 |----------------------------------------|-------------------------------------------------------------|
-| `PPixHand inPPixHand`                  | The PPix handle to operate on.                              |
-| `PrPPixBufferAccess inRequestedAccess` | Requested pixel access.                                     |
-|                                        | Most PPixs do not support write access modes.               |
-| `char** outPixelAddress`               | The output pixel buffer address.                            |
-|                                        | May be NULL if the requested pixel access is not supported. |
+| `PPixHand inPPixHand`          | The PPix handle to operate on.    |
+| `PrPPixBufferAccess inRequestedAccess` | Requested pixel access.   |
+|      | Most PPixs do not support write access modes.       |
+| `char** outPixelAddress`       | The output pixel buffer address.            |
+|      | May be NULL if the requested pixel access is not supported. |
 
 ### GetBounds
 
@@ -413,9 +412,9 @@ prSuiteError (*GetBounds)(
   prRect*   inoutBoundingRect);
 ```
 
-|          Parameter          |                   Description                   |
+|          Parameter          |           Description           |
 | --------------------------- | ----------------------------------------------- |
-| `PPixHand inPPixHand`       | The PPix handle to operate on.                  |
+| `PPixHand inPPixHand`       | The PPix handle to operate on.          |
 | `prRect* inoutBoundingRect` | The address of a bounding rect to be filled in. |
 
 ### GetRowBytes
@@ -428,9 +427,9 @@ prSuiteError (*GetRowBytes)(
   csSDK_int32*  outRowBytes);
 ```
 
-|         Parameter          |                                        Description                                        |
+|         Parameter          |      Description      |
 | -------------------------- | ----------------------------------------------------------------------------------------- |
-| `PPixHand inPPixHand`      | The PPix handle to operate on.                                                            |
+| `PPixHand inPPixHand`      | The PPix handle to operate on.          |
 | `csSDK_int32* outRowBytes` | Returns how many bytes must be added to the pixel buffer address to get to the next line. |
 
 ### GetPixelAspectRatio
@@ -444,20 +443,20 @@ prSuiteError (*GetPixelAspectRatio)(
   csSDK_uint32*  outPixelAspectRatioDenominator);
 ```
 
-|            Parameter            |              Description              |
+|    Parameter    |      Description      |
 | ------------------------------- | ------------------------------------- |
-| `PPixHand inPPixHand`           | The PPix handle to operate on.        |
+| `PPixHand inPPixHand`   | The PPix handle to operate on.        |
 | `PrPixelFormat* outPixelFormat` | Returns the pixel format of this PPix |
 
 ### GetUniqueKey
 
 This will return the unique key for this PPix.
 
-| Returns |                                       If                                       |
+| Returns |     If     |
 | ------- | ------------------------------------------------------------------------------ |
 | error   | the buffer size is too small (call `GetUniqueKeySize` to get the correct size) |
-| error   | the key is not available                                                       |
-| success | the key data was filled in                                                     |
+| error   | the key is not available     |
+| success | the key data was filled in           |
 
 ```cpp
 prSuiteError (*GetUniqueKey)(
@@ -466,11 +465,11 @@ prSuiteError (*GetUniqueKey)(
   size_t          inKeyBufferSize);
 ```
 
-|            Parameter            |             Description             |
+|    Parameter    |     Description     |
 | ------------------------------- | ----------------------------------- |
-| `PPixHand inPPixHand`           | The PPix handle to operate on.      |
+| `PPixHand inPPixHand`   | The PPix handle to operate on.      |
 | `unsigned char* inoutKeyBuffer` | Storage for the key to be returned. |
-| `size_t inKeyBufferSize`        | Size of buffer                      |
+| `size_t inKeyBufferSize`        | Size of buffer      |
 
 ### GetUniqueKeySize
 
@@ -481,7 +480,7 @@ prSuiteError (*GetUniqueKeySize)(
   size_t*  outKeyBufferSize);
 ```
 
-|         Parameter          |               Description                |
+|         Parameter          |       Description        |
 | -------------------------- | ---------------------------------------- |
 | `size_t* outKeyBufferSize` | Returns the size of the PPix unique key. |
 
@@ -495,11 +494,11 @@ prSuiteError (*GetRenderTime)(
   csSDK_int32*  outRenderMilliseconds);
 ```
 
-|              Parameter               |                   Description                   |
+|      Parameter       |           Description           |
 |--------------------------------------|-------------------------------------------------|
-| `PPixHand inPPixHand`                | The PPix handle to operate on.                  |
+| `PPixHand inPPixHand`        | The PPix handle to operate on.          |
 | `csSDK_int32* outRenderMilliseconds` | Returns the render time in milliseconds.        |
-|                                      | If the frame was cached, the time will be zero. |
+|    | If the frame was cached, the time will be zero. |
 
 ---
 
@@ -543,7 +542,7 @@ A SweetPea suite that includes the following structure, callbacks, and enum:
 
 ### pmPlayTimebase
 
-|           Member           |        Description        |
+|   Member   |        Description        |
 | -------------------------- | ------------------------- |
 | `csSDK_uint32 scale`       | rate of the timebase      |
 | `csSDK_int32 sampleSize`   | size of one sample        |
@@ -551,16 +550,16 @@ A SweetPea suite that includes the following structure, callbacks, and enum:
 
 ### PrVideoFrameRates
 
-|          Member           | Description  |
+|          Member   | Description  |
 | ------------------------- | ------------ |
 | `kVideoFrameRate_24Drop`  | 24000 / 1001 |
-| `kVideoFrameRate_24`      | 24           |
-| `kVideoFrameRate_PAL`     | 25           |
+| `kVideoFrameRate_24`      | 24   |
+| `kVideoFrameRate_PAL`     | 25   |
 | `kVideoFrameRate_NTSC`    | 30000 / 1001 |
-| `kVideoFrameRate_30`      | 30           |
-| `kVideoFrameRate_PAL_HD`  | 50           |
+| `kVideoFrameRate_30`      | 30   |
+| `kVideoFrameRate_PAL_HD`  | 50   |
 | `kVideoFrameRate_NTSC_HD` | 60000 / 1001 |
-| `kVideoFrameRate_60`      | 60           |
+| `kVideoFrameRate_60`      | 60   |
 | `kVideoFrameRate_Max`     | 0xFFFFFFFF   |
 
 ### GetTicksPerSecond
@@ -579,17 +578,17 @@ Get the current ticks in a video frame rate. inVideoFrameRate may be any of the 
 ```cpp
 prSuiteError (*GetTicksPerVideoFrame)(
   PrVideoFrameRates  inVideoFrameRate,
-  PrTime*            outTicksPerFrame);
+  PrTime*    outTicksPerFrame);
 ```
 
 ### GetTicksPerAudioSample
 
 Get the current ticks in an audio sample rate.
 
-|             Returns             |                                                                If                                                                 |
+|     Returns     |              If               |
 | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `kPrTimeSuite_RoundedAudioRate` | the requested audio sample rate is not an even divisor of the base tick count and therefore times in this rate will not be exact. |
-| `kPrTimeSuite_Success`          | otherwise                                                                                                                         |
+| `kPrTimeSuite_Success`          | otherwise             |
 
 ```cpp
 prSuiteError (*GetTicksPerAudioSample)(

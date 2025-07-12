@@ -26,9 +26,9 @@ VEX包含数组数据类型，在以下场景中非常有用：
 ```vex
 surface
 crazy(
-      string maps[] = { "Mandril.rat", "default.pic" };
-      export float alength = 0;
-      )
+    string maps[] = { "Mandril.rat", "default.pic" };
+    export float alength = 0;
+    )
 {
     vector texclr, av[];
 
@@ -36,7 +36,7 @@ crazy(
     av = array( {1,0,0}, vector(nrandom()), t, texclr, {.5,0,0});
 
     if (fit(noise(s*8), 0, 1, .3, .7) > t)
-        av = array(1, {0,1,0}, 0);
+    av = array(1, {0,1,0}, 0);
 
     Cf = spline("linear", s, av);
     alength = len(av);
@@ -213,12 +213,12 @@ Cf = set(x);  // Cf == {1, 2, 2}
 也可以在矩阵类型和`vector2`/`vector`/`vector4`数组之间赋值：
 
 ```vex
-vector2     v2[];
-vector      v[];
-vector4     v4[];
-matrix2     m2 = 1;
-matrix3     m3 = 1;
-matrix      m4 = 1;
+vector2   v2[];
+vector    v[];
+vector4   v4[];
+matrix2   m2 = 1;
+matrix3   m3 = 1;
+matrix    m4 = 1;
 
 v = set(m3);   // 将3x3矩阵的每行放入一个向量
 m3 = set(v);   // 将向量复制到矩阵的行向量中

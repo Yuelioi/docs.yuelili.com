@@ -12,10 +12,10 @@ XML 对象表示 XML 树中的 XML 元素节点。XML 文件的顶层 `XML` 对�
 ```xml
 <rootElement>
     <elementA>
-        <elementB></elementB>
+   <elementB></elementB>
     </elementA>
     <elementA>
-        <elementB></elementB>
+   <elementB></elementB>
     </elementA>
 </rootElement>
 ```
@@ -31,10 +31,10 @@ var myRoot = new XML( "<rootElement> <elementA> <elementB></elementB> </elementA
 ```javascript
 var myRoot = <rootElement>
     <elementA>
-        <elementB></elementB>
+   <elementB></elementB>
     </elementA>
     <elementA>
-        <elementB></elementB>
+   <elementB></elementB>
     </elementA>
 </rootElement>;
 ```
@@ -56,30 +56,30 @@ var elemB1 = myRoot.elementA[0].elementB[0];
 ```xml
 <bookstore>
     <book category="COOKING">
-        <title lang="en">The Boston Cooking-School Cookbook</title>
-        <author>Fannie Merrit Farmer</author>
-        <year>1896</year>
-        <price>49.99</price>
+   <title lang="en">The Boston Cooking-School Cookbook</title>
+   <author>Fannie Merrit Farmer</author>
+   <year>1896</year>
+   <price>49.99</price>
     </book>
     <book category="CHILDREN">
-        <title lang="en">The Wonderful Wizard of Oz</title>
-        <author>L. Frank Baum</author>
-        <year>1900</year>
-        <price>39.95</price>
+   <title lang="en">The Wonderful Wizard of Oz</title>
+   <author>L. Frank Baum</author>
+   <year>1900</year>
+   <price>39.95</price>
     </book>
     <book category="CHILDREN">
-        <title lang="en">Alice's Adventures in Wonderland</title>
-        <author>Charles "Lewis Carroll" Dodgeson</author>
-        <author>Charles Dodgeson</author>
-        <author>Lewis Carroll</author>
-        <year>1865</year>
-        <price>29.99</price>
+   <title lang="en">Alice's Adventures in Wonderland</title>
+   <author>Charles "Lewis Carroll" Dodgeson</author>
+   <author>Charles Dodgeson</author>
+   <author>Lewis Carroll</author>
+   <year>1865</year>
+   <price>29.99</price>
     </book>
     <book category="MUSIC">
-        <title lang="en">Gilbert and Sullivan Opera; A History and a Comment</title>
-        <author>H. M. Walbrook</author>
-        <year>1922</year>
-        <price>30.00</price>
+   <title lang="en">Gilbert and Sullivan Opera; A History and a Comment</title>
+   <author>H. M. Walbrook</author>
+   <year>1922</year>
+   <price>30.00</price>
     </book>
 </bookstore>
 ```
@@ -140,10 +140,10 @@ XML 对象与所有 ExtendScript 对象一样，具有 `toString` 方法，该�
 ```xml
 > bookstoreXML.book[1];
     <book category="CHILDREN">
-        <title lang="en">The Wonderful Wizard of Oz</title>
-        <author>L. Frank Baum</author>
-        <year>1900</year>
-        <price>39.95</price>
+   <title lang="en">The Wonderful Wizard of Oz</title>
+   <author>L. Frank Baum</author>
+   <year>1900</year>
+   <price>39.95</price>
     </book>
 ```
 
@@ -285,8 +285,8 @@ delete bookstoreXML.book[2].@category;
 <top>
     <one>one text</one>
     <two>
-        two text
-        <inside>inside text</inside>
+   two text
+   <inside>inside text</inside>
     </two>
     top text
 </top>
@@ -315,8 +315,8 @@ delete bookstoreXML.book[2].@category;
   **> x.elements()**
       <one>one text</one>
       <two>
-          two text
-          <inside>inside text</inside>
+     two text
+     <inside>inside text</inside>
       </two>
   **> x.elements().length()**
       2
@@ -329,8 +329,8 @@ delete bookstoreXML.book[2].@category;
       <one>one text</one>
       one text
       <two>
-          two text
-          <inside>inside text</inside>
+     two text
+     <inside>inside text</inside>
       </two>
       two text
       <inside>inside text</inside>

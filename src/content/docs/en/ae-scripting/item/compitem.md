@@ -7,7 +7,6 @@ title: compitem
 
 `app.project.items[index]`
 
-
 #### Description
 
 The CompItem object represents a composition, and allows you to manipulate and get information about it. Access the objects by position index number in a project's item collection.
@@ -15,7 +14,6 @@ The CompItem object represents a composition, and allows you to manipulate and g
 :::info
 CompItem is a subclass of [AVItem object](../avitem), which is a subclass of [Item object](../item). All methods and attributes of AVItem and Item, in addition to those listed below, are available when working with CompItem.
 :::
-
 
 #### Example
 
@@ -67,11 +65,9 @@ An array containing three floating-point values, `[R, G, B]`, in the range `[0.0
 This functionality was added in After Effects 13.2 (CC2014).
 :::
 
-
 :::warning
 This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
 :::
-
 
 #### Description
 
@@ -99,7 +95,6 @@ This value is an alternative to calculating the start frame using [CompItem.disp
 This functionality was added in After Effects 17.1.
 :::
 
-
 #### Type
 
 Integer; read/write.
@@ -117,7 +112,6 @@ The time set as the beginning of the composition, in seconds. This is the equiva
 :::note
 As of After Effects 17.1, the minimum value is `-10800.0`. Before 17.1, the minimum value was `0.0`
 :::
-
 
 #### Type
 
@@ -217,7 +211,6 @@ LayerCollection object; read-only.
 This functionality was added in After Effects 14.0 (CC 2017)
 :::
 
-
 #### Description
 
 A [PropertyGroup object](../../property/propertygroup) that contains all a composition's markers. Composition marker scripting has the same functionality as [Layer markers](../../layer/layer#layermarker).
@@ -301,7 +294,6 @@ Integer (between 2 and 64); read/write.
 This functionality was added in After Effects 16.1 (CC 2019)
 :::
 
-
 #### Description
 
 The number of properties in the Essential Graphics panel for the composition.
@@ -319,7 +311,6 @@ Integer; read-only.
 :::note
 This functionality was added in After Effects 15.0 (CC 2018)
 :::
-
 
 #### Description
 
@@ -536,7 +527,6 @@ CompItem object.
 This functionality was added in After Effects 15.0 (CC 2018)
 :::
 
-
 #### Description
 
 Exports the composition as a Motion Graphics template. Returns `true` if the Motion Graphics template is successfully exported, otherwise `false`.
@@ -551,7 +541,6 @@ user's Motion Graphics Templates folder:
 | ------- | ----------------------------------------------------------------------------------- |
 | macOS   | `/Users/<name>/Library/Application Support/Adobe/Common/Motion Graphics Templates/` |
 | Windows | `C:\Users\<name>\AppData\Roaming\Adobe\Common\Motion Graphics Templates\`           |
-
 
 If the project has been changed since the last time it was saved, After Effects will prompt the user to save the project. To avoid this, use the
 project `save()` method before exporting the Motion Graphics template.
@@ -577,7 +566,6 @@ Boolean.
 This functionality was added in After Effects 16.1 (CC 2019)
 :::
 
-
 #### Description
 
 Gets the name of a single property in the Essential Graphics panel.
@@ -602,7 +590,6 @@ String; read-only.
 This functionality was added in After Effects 16.1 (CC 2019)
 :::
 
-
 #### Description
 
 Sets the name of a single property in the Essential Graphics panel.
@@ -610,7 +597,6 @@ Sets the name of a single property in the Essential Graphics panel.
 :::tip
 To rename a property as it is added to the EGP, see [Property.addToMotionGraphicsTemplateAs()](../../property/property#propertyaddtomotiongraphicstemplateas).
 :::
-
 
 #### Parameters
 
@@ -632,7 +618,6 @@ String; read-only.
 `app.project.item(index).layer(otherLayer, relIndex)`
 
 `app.project.item(index).layer(name)`
-
 
 #### Description
 
@@ -670,7 +655,6 @@ or:
 :::note
 This functionality was added in After Effects 15.0 (CC 2018)
 :::
-
 
 #### Description
 

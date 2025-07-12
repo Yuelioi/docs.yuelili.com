@@ -30,11 +30,11 @@ Result: 15
 
 | 类别     |     运算符      |
 |----------|-----------------|
-| 一元运算符 | `+, ~`          |
+| 一元运算符 | `+, ~`      |
 | 二元运算符 | - `+, *, /, %, ^` |
-|          | - `<, <=, ==`   |
-|          | - `<<, >>, >>>` |
-|          | - `&, \|, ===`  |
+|      | - `<, <=, ==`   |
+|      | - `<<, >>, >>>` |
+|      | - `&, \|, ===`  |
 
 - 运算符 `>` 和 `>=` 是通过执行 NOT 运算符 `<=` 和 NOT 运算符 `<` 来实现的。
 - 不支持组合赋值运算符，例如 `*=`。
@@ -48,10 +48,10 @@ Result: 15
 ```javascript
 this ["/"] = function (operand, rev) {
     if (rev) {
-        // 不解析 operand / this
-        return;
+    // 不解析 operand / this
+    return;
     } else {
-        // 解析 this / operand
-        return this.value / operand;
+    // 解析 this / operand
+    return this.value / operand;
 }
 ```

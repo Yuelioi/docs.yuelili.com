@@ -61,19 +61,19 @@ surface
 dumpsomepoints(string fname = "points.$F4.pc"; int do_cull = 0; float keepamt = 0.05)
 {
     vector    nn = normalize(frontface(N, I));
-    int       rval=0;
-    float     A = area(P,"smooth",0);  // 不使用平滑导数的面积
+    int   rval=0;
+    float   A = area(P,"smooth",0);  // 不使用平滑导数的面积
 
     if( !do_cull  ||  do_cull & (nrandom()<keepamt) )
     {
-        if( do_cull && keepamt > 0 )
-        {
-            A = A/keepamt;
-        }
-        rval = pcwrite(fname, "interpolate", 1,
-        "P", ptransform("space:camera","space:world", P),
-        "N", ntransform("space:camera","space:world", normalize(N)),
-        "area", A);  // 在pc中输出一个"area"通道
+    if( do_cull && keepamt > 0 )
+    {
+      A = A/keepamt;
+    }
+    rval = pcwrite(fname, "interpolate", 1,
+    "P", ptransform("space:camera","space:world", P),
+    "N", ntransform("space:camera","space:world", normalize(N)),
+    "area", A);  // 在pc中输出一个"area"通道
     }
     Cf =abs(nn)*rval;
 }

@@ -70,7 +70,7 @@ if (s->isValid())
 
 int file_size(string name)  
 {  
-    stat        info(name);  
+    stat      info(name);  
     return file_stat(name)->st_size;  
 }  
 

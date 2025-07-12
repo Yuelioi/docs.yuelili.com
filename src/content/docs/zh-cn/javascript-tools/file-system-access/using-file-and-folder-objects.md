@@ -44,13 +44,13 @@ URI 表示法中的相对路径名称附加到当前目录的路径中，该路�
 
 例如，以下路径描述了文件 `myFile.jsx` 的各种相对位置：
 
-|    文件引用    |                        位置                        |
+|    文件引用    |   位置   |
 | -------------- | ------------------------------------------------- |
-| `myFile.jsx`   | 在当前目录中。                                    |
-| `./myFile.jsx` |                                                    |
-| `../myFile.jsx`| 在当前目录的父目录中。                            |
-| `../../myFile.jsx` | 在当前目录的祖父目录中。                     |
-| `../dir1/myFile.jsx` | 在 `dir1` 中，与当前目录平行。          |
+| `myFile.jsx`   | 在当前目录中。   |
+| `./myFile.jsx` |   |
+| `../myFile.jsx`| 在当前目录的父目录中。       |
+| `../../myFile.jsx` | 在当前目录的祖父目录中。     |
+| `../dir1/myFile.jsx` | 在 `dir1` 中，与当前目录平行。     |
 
 相对路径名称独立于不同机器和操作系统上的不同卷名，因此使你的代码更具可移植性。例如，你可以使用绝对路径进行单个操作，以在 `Folder.current` 属性中设置当前目录，并对所有其他操作使用相对路径。然后，你只需要一次代码更改即可更新到新平台或文件位置。
 
@@ -102,10 +102,10 @@ Mac OS 9 不再作为操作系统支持，但仍然支持使用冒号作为路�
 
 |   URI 路径名称    | Mac OS 9 路径名称 |     Mac OS X 路径名称     |
 | ----------------- | ----------------- | ------------------------ |
-| `/MacOSX/dir/file` | `MacOSX:dir:file`  | `/dir/file`              |
+| `/MacOSX/dir/file` | `MacOSX:dir:file`  | `/dir/file`   |
 | `/Remote/dir/file` | `Remote:dir:file`  | `/Volumes/Remote/dir/file` |
-| `/root/dir/file`   | `Root:dir:file`    | `/root/dir/file`         |
-| `~/dir/file`       |                    | `/Users/jdoe/dir/file`   |
+| `/root/dir/file`   | `Root:dir:file`    | `/root/dir/file`    |
+| `~/dir/file`       |    | `/Users/jdoe/dir/file`   |
 
 #### Windows 驱动器
 
@@ -121,7 +121,7 @@ Mac OS 9 不再作为操作系统支持，但仍然支持使用冒号作为路�
 
 |   URI 路径名称    |      Windows 路径名称       |
 | ----------------- | -------------------------- |
-| `/c/dir/file`     | `c:\\dir\\file`            |
+| `/c/dir/file`     | `c:\\dir\\file`       |
 | `/remote/dir/file`| `D:\\remote\\dir\\file`    |
 | `/root/dir/file`  | `D:\\root\\dir\\file`      |
 | `~/dir/file`      | `C:\\Users\\jdoe\\dir\\file` |

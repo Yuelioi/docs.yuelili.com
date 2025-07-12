@@ -41,11 +41,11 @@ for (int patch = 0; patch < npatches; patch++)
 {
     for (int v = 0; v < 100; v++)
     {
-        vector P;
-        if (osd_limitsurface(file, "P", patch, nrandom(), nrandom(), P))
-        {
-            int ptid = addpoint(geohandle, P);
-        }
+    vector P;
+    if (osd_limitsurface(file, "P", patch, nrandom(), nrandom(), P))
+    {
+      int ptid = addpoint(geohandle, P);
+    }
     }
 }
 

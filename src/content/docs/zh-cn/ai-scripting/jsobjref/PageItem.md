@@ -471,10 +471,10 @@ Number (long); 只读。
 
 #### 参数
 
-|       参数        |                                    类型                                     |            描述             |
+|       参数        |    类型     |      描述       |
 | ----------------- | --------------------------------------------------------------------------- | --------------------------- |
-| `posX`            | Number                                                                      | 放置艺术的 X 位置           |
-| `posY`            | Number                                                                      | 放置艺术的 Y 位置           |
+| `posX`      | Number   | 放置艺术的 X 位置     |
+| `posY`      | Number   | 放置艺术的 Y 位置     |
 | `perspectiveGridPlane` | [PerspectiveGridPlaneType](../scripting-constants#perspectivegridplanetype) | 使用的透视网格平面类型      |
 
 #### 返回值
@@ -504,16 +504,16 @@ app.activeDocument.pageItems[index].resize(
 
 #### 参数
 
-|       参数        |                               类型                                |                       描述                       |
+|       参数        |     类型      |   描述   |
 | ----------------- | ----------------------------------------------------------------- | ------------------------------------------------ |
-| `scaleX`          | Number (double)                                                   | 水平缩放因子                                     |
-| `scaleY`          | Number (double)                                                   | 垂直缩放因子                                     |
-| `changePositions` | Boolean, 可选                                                     | 是否影响艺术对象的位置和方向                     |
-| `changeFillPatterns` | Boolean, 可选                                                     | 是否变换填充图案                                 |
-| `changeFillGradients` | Boolean, 可选                                                     | 是否变换填充渐变                                 |
-| `changeStrokePattern` | Boolean, 可选                                                     | 是否变换描边图案                                 |
-| `changeLineWidths` | Number (double), 可选                                             | 缩放线宽的量                                     |
-| `scaleAbout`      | [Transformation](../scripting-constants#transformation), 可选     | 用作锚点的点，以进行变换                         |
+| `scaleX`    | Number (double)    | 水平缩放因子     |
+| `scaleY`    | Number (double)    | 垂直缩放因子     |
+| `changePositions` | Boolean, 可选       | 是否影响艺术对象的位置和方向         |
+| `changeFillPatterns` | Boolean, 可选       | 是否变换填充图案       |
+| `changeFillGradients` | Boolean, 可选       | 是否变换填充渐变       |
+| `changeStrokePattern` | Boolean, 可选       | 是否变换描边图案       |
+| `changeLineWidths` | Number (double), 可选       | 缩放线宽的量     |
+| `scaleAbout`      | [Transformation](../scripting-constants#transformation), 可选     | 用作锚点的点，以进行变换     |
 
 #### 返回值
 
@@ -540,14 +540,14 @@ app.activeDocument.pageItems[index].rotate(
 
 #### 参数
 
-|       参数        |                               类型                                |                       描述                       |
+|       参数        |     类型      |   描述   |
 | ----------------- | ----------------------------------------------------------------- | ------------------------------------------------ |
-| `angle`           | Number (double)                                                   | 旋转元素的角度量                                 |
-| `changePositions` | Boolean, 可选                                                     | 是否影响艺术对象的位置和方向                     |
-| `changeFillPatterns` | Boolean, 可选                                                     | 是否变换填充图案                                 |
-| `changeFillGradients` | Boolean, 可选                                                     | 是否变换填充渐变                                 |
-| `changeStrokePattern` | Boolean, 可选                                                     | 是否变换描边图案                                 |
-| `rotateAbout`     | [Transformation](../scripting-constants#transformation), 可选     | 用作锚点的点，以进行变换                         |
+| `angle`     | Number (double)    | 旋转元素的角度量       |
+| `changePositions` | Boolean, 可选       | 是否影响艺术对象的位置和方向         |
+| `changeFillPatterns` | Boolean, 可选       | 是否变换填充图案       |
+| `changeFillGradients` | Boolean, 可选       | 是否变换填充渐变       |
+| `changeStrokePattern` | Boolean, 可选       | 是否变换描边图案       |
+| `rotateAbout`     | [Transformation](../scripting-constants#transformation), 可选     | 用作锚点的点，以进行变换     |
 
 #### 返回值
 
@@ -575,15 +575,15 @@ app.activeDocument.pageItems[index].transform(
 
 #### 参数
 
-|        参数         |                               类型                                |                  描述                   |
+|        参数   |     类型      |      描述       |
 | ------------------- | ----------------------------------------------------------------- | --------------------------------------- |
-| `transformationMatrix` | [Matrix](.././Matrix)                                             | 要应用的变换矩阵                         |
-| `changePositions`   | Boolean, 可选                                                     | 是否更改位置                             |
-| `changeFillPatterns` | Boolean, 可选                                                     | 是否更改填充图案                         |
-| `changeFillGradients` | Boolean, 可选                                                     | 是否更改填充渐变                         |
-| `changeStrokePattern` | Boolean, 可选                                                     | 是否更改描边图案                         |
-| `changeLineWidths`  | Number (double), 可选                                             | 缩放线宽的量                             |
-| `transformAbout`    | [Transformation](../scripting-constants#transformation), 可选     | 用作锚点的点，以进行变换                 |
+| `transformationMatrix` | [Matrix](.././Matrix)       | 要应用的变换矩阵     |
+| `changePositions`   | Boolean, 可选       | 是否更改位置   |
+| `changeFillPatterns` | Boolean, 可选       | 是否更改填充图案     |
+| `changeFillGradients` | Boolean, 可选       | 是否更改填充渐变     |
+| `changeStrokePattern` | Boolean, 可选       | 是否更改描边图案     |
+| `changeLineWidths`  | Number (double), 可选       | 缩放线宽的量   |
+| `transformAbout`    | [Transformation](../scripting-constants#transformation), 可选     | 用作锚点的点，以进行变换   |
 
 #### 返回值
 
@@ -610,14 +610,14 @@ app.activeDocument.pageItems[index].translate(
 
 #### 参数
 
-|         参数          |           类型            |             描述              |
+|   参数    |     类型      |       描述        |
 | --------------------- | ------------------------- | ----------------------------- |
-| `deltaX`              | Number (double), 可选     | 水平偏移量                    |
-| `deltaY`              | Number (double), 可选     | 垂直偏移量                    |
-| `transformObjects`    | Boolean, 可选             | 是否变换对象                  |
-| `transformFillPatterns` | Boolean, 可选             | 是否变换填充图案              |
-| `transformFillGradients` | Boolean, 可选             | 是否变换填充渐变              |
-| `transformStrokePatterns` | Boolean, 可选             | 是否变换描边图案              |
+| `deltaX`        | Number (double), 可选     | 水平偏移量        |
+| `deltaY`        | Number (double), 可选     | 垂直偏移量        |
+| `transformObjects`    | Boolean, 可选       | 是否变换对象      |
+| `transformFillPatterns` | Boolean, 可选       | 是否变换填充图案        |
+| `transformFillGradients` | Boolean, 可选       | 是否变换填充渐变        |
+| `transformStrokePatterns` | Boolean, 可选       | 是否变换描边图案        |
 
 #### 返回值
 
@@ -635,9 +635,9 @@ app.activeDocument.pageItems[index].translate(
 
 #### 参数
 
-|  参数   |                        类型                         |           描述            |
+|  参数   |    类型     |     描述      |
 | ------- | --------------------------------------------------- | ------------------------- |
-| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法          |
+| `zOrderCmd` | [ZOrderMethod](../scripting-constants#zordermethod) | 堆叠顺序排列方法    |
 
 #### 返回值
 

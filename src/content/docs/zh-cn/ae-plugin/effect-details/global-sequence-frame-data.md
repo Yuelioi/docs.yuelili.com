@@ -97,10 +97,10 @@ typedef struct {
 
 ### PF_EffectSequenceDataSuite1
 
-| 函数                        | 用途                                                                                                                                        |
+| 函数          | 用途    |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `PF_GetConstSequenceData` | 在为效果启用多帧渲染时，检索渲染线程的只读常量 sequence_data 对象。                                                                         |
-|                             | `<pre lang="cpp">`PF_Err(*PF_GetConstSequenceData)(``PF_ProgPtr effect_ref,``  PF_ConstHandle \*sequence_data);`</pre>` |
+| `PF_GetConstSequenceData` | 在为效果启用多帧渲染时，检索渲染线程的只读常量 sequence_data 对象。        |
+|       | `<pre lang="cpp">`PF_Err(*PF_GetConstSequenceData)(``PF_ProgPtr effect_ref,``  PF_ConstHandle \*sequence_data);`</pre>` |
 
 ```cpp
 static PF_Err Render(
@@ -113,10 +113,10 @@ static PF_Err Render(
 
     AEFX_SuiteScoper<PF_EffectSequenceDataSuite1> seqdata_suite =
         AEFX_SuiteScoper<PF_EffectSequenceDataSuite1>(
-            in_dataP,
-            kPFEffectSequenceDataSuite,
-            kPFEffectSequenceDataSuiteVersion1,
-            out_dataP);
+     in_dataP,
+     kPFEffectSequenceDataSuite,
+     kPFEffectSequenceDataSuiteVersion1,
+     out_dataP);
 
     PF_ConstHandle const_seq;
     seqdata_suite->PF_GetConstSequenceData(in_data->effect_ref, &const_seq);

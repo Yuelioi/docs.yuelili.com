@@ -126,9 +126,9 @@ surface showversion()
 {
     string    rname, rversion;
     if (!objectstate("renderer:name", rname))
-        rname = "未知渲染器";
+    rname = "未知渲染器";
     if (!objectstate("renderer:version", rversion))
-        rversion = "未知版本";
+    rversion = "未知版本";
     printf("图像由 %s (%s) 渲染\n", rname, rversion);
 }
 
@@ -137,7 +137,7 @@ vector mapToScreen(vector NDC_P)
     // 给定NDC空间中的点，计算其映射到的像素坐标
     vector    result;
     if (!objectstate("image:resolution", result))
-        result = {640, 486, 0};
+    result = {640, 486, 0};
     return result * NDC_P;
 }
 

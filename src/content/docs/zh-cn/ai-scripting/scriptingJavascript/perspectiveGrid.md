@@ -72,7 +72,7 @@ mydoc.hidePerspectiveGrid();
 
 透视网格平面类型包括：
 
-|     平面     |                 类型                  |
+|     平面     |   类型      |
 | ------------ | ------------------------------------- |
 | 左平面       | `PerspectiveGridPlaneType.LEFTPLANE`  |
 | 右平面       | `PerspectiveGridPlaneType.RIGHTPLANE` |

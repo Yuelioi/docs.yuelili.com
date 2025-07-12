@@ -266,18 +266,18 @@ alert(variableFontList.length);
 ```javascript
 var scriptsV = app.fonts.getCTScriptForString("ABヂ", CTScript.CT_ROMAN_SCRIPT);
 var str = "[0] chars:" + scriptsV[0].chars +   // 2
-      " ctScript:" + getEnumAsString(scriptsV[0].ctScript) +
-      "\n[1] chars:" + scriptsV[1].chars + // 1
-      " ctScript:" + getEnumAsString(scriptsV[1].ctScript);
+    " ctScript:" + getEnumAsString(scriptsV[0].ctScript) +
+    "\n[1] chars:" + scriptsV[1].chars + // 1
+    " ctScript:" + getEnumAsString(scriptsV[1].ctScript);
 alert(str);
 ```
 
 #### 参数
 
-| 参数                  | 类型              | 描述                                       |
+| 参数      | 类型    | 描述      |
 | --------------------- | ----------------- | ------------------------------------------ |
-| `charString`        | 字符串            | 要检查的字符。如果为空，将返回一个空数组。 |
-| `preferredCTScript` | `CTScript` 枚举 | 首选的 CT 脚本                             |
+| `charString`      | 字符串        | 要检查的字符。如果为空，将返回一个空数组。 |
+| `preferredCTScript` | `CTScript` 枚举 | 首选的 CT 脚本       |
 
 #### 返回
 
@@ -312,7 +312,7 @@ var font = app.fonts.getDefaultFontForCTScript(CTScript.CT_JAPANESE_SCRIPT);
 
 #### 参数
 
-| 参数         | 类型              | 描述                            |
+| 参数       | 类型    | 描述      |
 | ------------ | ----------------- | ------------------------------- |
 | `ctScript` | `CTScript` 枚举 | 要获取默认字体的对应 CTScript。 |
 
@@ -344,7 +344,7 @@ alert(font1.fontID == font2.fontID);
 
 #### 参数
 
-| 参数   | 类型 | 描述        |
+| 参数   | 类型 | 描述      |
 | ------ | ---- | ----------- |
 | fontID | 整数 | 字体的 ID。 |
 
@@ -373,7 +373,7 @@ alert(fontList.length);
 
 #### 参数
 
-| 参数       | 类型   | 描述             |
+| 参数     | 类型   | 描述   |
 | ---------- | ------ | ---------------- |
 | FamilyName | 字符串 | 字体的家族名称。 |
 | StyleName  | 字符串 | 字体的样式名称。 |

@@ -228,6 +228,170 @@ SDK 中的新 HistoGrid 示例展示了如何在 UI 线程上完全异步处理�
 
 另一个更严格要求的示例是 `AEGP_RegisterWithAEGP()`。文档一直指出此函数必须在 `PF_Cmd_GLOBAL_SETUP` 上调用。然而，在以前的版本中，插件能够在其他时间调用此函数而不会遇到问题。在 13.5 中不再如此！在其他时间调用此函数可能会导致崩溃！
 
-* `PF_Cmd_SEQUENCE_RESETUP` 在 UI 或渲染线程上调用？
+* PF_Cmd_SEQUENCE_RESETUP 在UI线程还是渲染线程调用？
 
-现在有一个 `PF_InFlag_PROJECT_IS_RENDER_ONLY` 标志，仅在 `PF_Cmd_SEQUENCE_RESETUP` 中有效，它将告诉您效果实例是否仅用于渲染目的。如果是，项目应被视为完全只读，您将不会在该效果实例上收到与 UI 相关的选择器。这可以
+现在新增了一个 PF_InFlag_PROJECT_IS_RENDER_ONLY 标志位，仅在 PF_Cmd_SEQUENCE_RESETUP 中有效，用于指示该效果实例是否仅用于渲染用途。如果是，则应将该项目视为完全只读，且不会在该效果实例上接收到与UI相关的选择器。这可用于优化掉渲染不需要的UI初始化操作。若该标志为false，则应正常设置UI。此标志不应被用于避免在渲染中报告错误，渲染中的错误仍应通过现有SDK机制正常上报。
+
+* 避免死锁的改动
+
+在开发过程中发现，特定调用使用方式可能导致死锁。现已引入防护机制来避免这种情况。这些问题主要出现在 PF_Cmd_UPDATE_PARAMS_UI 中使用某些调用时，因为这些调用在UI线程中使用时存在已弃用的同步行为：
+
+仅在 PF_Cmd_UPDATE_PARAMS_UI 中，针对图层参数的 PF_PARAM_CHECKOUT() 将保持原有行为，但会返回一个相同尺寸的黑色帧而非实际渲染像素。原先用于参数启用/禁用检测的代码仍可正常工作。而在 PF_Cmd_UPDATE_PARAMS_UI 之外获取分析帧等操作仍将保持原有行为。
+
+仅在 PF_Cmd_UPDATE_PARAMS_UI 中，PF_GetCurrentState() 现在将返回随机GUID。在此上下文中不再保持原有功能，但在其他场景中仍可正常工作。
+
+上述情况应属罕见，若您受影响请联系我们获取解决方案。
+
+* 已弃用功能
+
+AEGP_RenderAndCheckoutFrame()（在UI线程）。此调用通常不应在UI线程使用，因为同步渲染会阻塞交互性。
+
+在渲染线程中使用没有问题。唯一可能在UI线程中有用的场景是：类似"自动调色"按钮这类需要计算帧来更新AE项目参数的情况。
+
+我们已为此阻塞操作实现了进度对话框测试版（当操作较慢时显示），但UI线程中使用此调用应仅限于此类特殊情况。对话框设计尚未最终确定。
+
+* 线程安全效果标志
+
+PF_OutFlag2_AE13_5_THREADSAFE
+
+为多线程更新过的插件应使用此标志告知AE该插件是UI线程<>渲染线程安全的。
+
+此标志告知AE不同AE项目副本的不同线程可以同时进入效果但不会访问同一实例。虽然多渲染线程尚未启用，但这将在未来版本中发挥作用。
+
+* 支持大于7的效果版本（新上限为MAJOR版本127）
+
+使用当前SDK头文件构建的效果现在可以在13.5中正确报告大于7的版本号。这些重新编译的效果也可用于13.5之前的AE版本，但内部版本号将对8取模（例如AE内部会将效果版本8视为版本0）。
+
+这可能影响旧版AE错误对话框中显示的版本号及使用情况报告。
+
+由于许多旧插件在转向64位后已无法加载，当前使用中不太可能因此取模导致与实际插件的混淆（除非这些插件在过去几年中快速增加版本号）。
+
+但使用旧SDK构建且版本号为8或更高时，插件将向AE报告错误版本号，进而导致与设置了高位数的PiPL版本检查不匹配。此情况不受支持。
+
+若使用旧SDK构建，需保持效果版本在7或以下。版本上限的提升是通过新增4个高位版本位实现的，只有AE13.5及以上版本能"看到"这些高位。这些新高版本位与原有MAJOR版本位不连续——只需忽略中间位。新版本布局如下（十六进制或二进制）：
+
+0x 3C38 0000
+^^ 原始MAJOR版本位（十六进制掩码0-7）
+^^ 扩展原始MAJOR版本位的新HIGH位（8-127）
+
+0b 0011 1100 0011 1000 0000 0000 0000 0000
+^^ ^ 原始MAJOR版本位（十六进制掩码0-7）
+^^ ^^ 忽略/不使用
+^^ ^^ 扩展原始MAJOR版本位的新HIGH位（8-127）
+
+AE13.5以下版本将忽略这些位。
+
+* macOS安装路径提示
+
+开发者可在新的plist文件中找到macOS X上插件、脚本和预设的默认路径（与Windows注册表中的路径相同）：
+/Library/Preferences/com.Adobe.After Effects.paths.plist
+
+您可以使用此plist中的值来指导安装程序或脚本写入文件的位置，就像在Windows上使用注册表路径键一样：
+HKEY_LOCAL_MACHINE\SOFTWARE\Adobe\After Effects\13.5
+
+* 开发中功能
+
+AEGP_RenderAndCheckoutLayerFrame_Async()
+AEGP_CancelAsyncRequest()
+
+这些API正在开发中，暂不可用。
+
+---
+
+## CC 2014.1 (13.1) 新增功能？
+
+PF_CreateNewAppProgressDialog()
+
+除非检测到渲染缓慢（2秒超时），否则不会打开对话框。
+
+---
+
+## CC 2014 (13.0) 新增功能？
+
+从CC 2014开始，After Effects现在支持使用 [PF_UpdateParamUI](../../effect-details/parameter-supervision#pf_paramutilsuite3) 更改自定义UI高度。
+
+[AEGP效果套件](../../aegps/aegp-suites#aegp_effectsuite4) 升级至版本4，新增处理效果遮罩的函数。[AEGP渲染套件](../../aegps/aegp-suites#aegp_rendersuite4) 也升级至版本4，新增函数 `AEGP_RenderAndCheckoutLayerFrame`，允许在非渲染时间检出应用了效果的当前图层帧。这对需要帧的操作很有用，例如点击按钮时可接受短暂等待渲染的情况。
+
+:::注意
+由于不是异步操作，它无法解决自定义UI需要基于帧绘制的普遍问题。
+:::
+
+图层渲染选项通过新的 [AEGP图层渲染选项套件](../../aegps/aegp-suites#aegp_renderoptionssuite4) 指定。
+
+现支持 [Mercury Transmit](../other-integration-possibilities#mercury-transmit) 插件和 [HTML5面板](../other-integration-possibilities#html5-panels)。
+
+---
+
+## CC (12.0) 新增功能？
+
+效果名称长度从31字符增至47字符。
+
+新增 [PF角度参数套件](../../effect-details/parameters-floating-point-values#pf_angleparamsuite1)，提供获取角度参数浮点值的方法。[PF应用套件](../../effect-details/useful-utility-functions) 版本5新增 `PF_AppGetLanguage` 用于查询当前语言，以及多个新的PF_App_ColorType枚举值。
+
+[AEGP持久数据套件](../../aegps/aegp-suites#persistent-data-suite) 升级至版本4，新增AEGP_GetApplicationBlob参数以选择检索不同应用数据块。还新增获取/设置时间和ARGB值的函数。
+
+[AEGP合成套件](../../aegps/aegp-suites#aegp_compositesuite2) 升级至版本10，新增检查/修改图层名称/源名称显示及混合模式列显示的函数。还新增获取/设置运动模糊自适应采样限制的函数。
+
+[AEGP图层套件](../../aegps/aegp-suites#aegp_layersuite9) 升级至版本8，新增设置/获取图层采样质量的函数。[AEGP画布套件](../../artisans/artisan-data-types#aegp_canvassuite8) 也升级至版本8。新函数 `AEGP_MapCompToLayerTime` 处理折叠/嵌套合成的时间重映射。
+
+[AEGP实用工具套件](../../aegps/aegp-suites#aegp_utilitysuite6) 升级至版本6，新增Unicode函数 `AEGP_ReportInfoUnicode` 和获取插件路径的函数 `AEGP_GetPluginPaths`。
+
+`AEGP_NewPlaceholderFootageWithPath` 的行为已更新，现在需要正确设置file_type否则会出现警告。
+
+`AEGP_InsertMenuCommand` 现在可以在"文件>新建"子菜单中插入菜单项。
+
+[AEGP输入套件](../../aeios/new-kids-on-the-function-block#aegp_ioinsuite5) 升级至版本5，新增获取/设置/清除原生开始时间及获取/设置素材丢帧设置的函数。
+
+---
+
+## CS6.0.1 (11.0.1) 新增功能？
+
+11.0.1中，AE效果API版本已升级至13.3。
+
+这使得效果可以区分11.0和11.0.1。
+
+11.0中存在一个全局性能缓存bug，当SmartFX效果同时使用 `PF_OutFlag2_AUTOMATIC_WIDE_TIME_INPUT` 和 `PF_OutFlag_NON_PARAM_VARY` 时。
+
+在 `PF_Cmd_SMART_PRE_RENDER` 期间调用 `checkout_layer` 会在 `PF_CheckoutResult` 中返回空矩形。
+
+解决方案是简单地再次调用。11.0.1中不再需要此解决方案。
+
+---
+
+## CS6 (11.0) 新增功能？
+
+我们为参数UI处理做了多项改进。After Effects现在支持 `PF_PUI_INVISIBLE` 参数UI标志，适用于需要影响渲染的隐藏参数。当插件使用 [PF_UpdateParamUI](../../effect-details/parameter-supervision#pf_paramutilsuite3) 禁用参数时，现在会在UI标志中保存该状态。新标志 `PF_ParamFlag_SKIP_REVEAL_WHEN_UNHIDDEN` 允许参数取消隐藏时不展开父级且不滚动到视图。
+
+试用模式下渲染水印的效果现在可以使用新标志 `PF_OutFlag2_OUTPUT_IS_WATERMARKED` 告知After Effects水印渲染状态。
+
+新的全局性能缓存意味着您必须告知After Effects [在更改效果渲染时](../../effect-details/tips-tricks#caching-behavior) 丢弃旧缓存帧。
+
+我们移除了 `PF_HasParamChanged` 和 `PF_HaveInputsChangedOverTimeSpan`，改用 [PF_AreStatesIdentical](../../effect-details/parameter-supervision#pf_paramutilsuite3)。
+
+提供自定义UI的效果现在可以接收 `PF_Event_MOUSE_EXITED` 事件。`PF_ParamUtilsSuite` 升级至版本3。
+
+`PF_GET_PLATFORM_DATA` 新增获取可执行文件和资源文件宽字符路径的选择器：`PF_PlatData_EXE_FILE_PATH_W` 和 `PF_PlatData_RES_FILE_PATH_W`。旧的非宽字符选择器已弃用。
+
+3D是AE CS6的重要主题。新增 `AEGP_LayerFlag_ENVIRONMENT_LAYER` 标志和多个新 [图层流](../../aegps/aegp-suites#aegp_streamsuite5)。
+
+此外，`AEGP_LayerStream_SPECULAR_COEFF` 更名为 `AEGP_LayerStream_SPECULAR_INTENSITY`，`AEGP_LayerStream_SHININESS_COEFF` 更名为 `AEGP_LayerStream_SPECULAR_SHININESS`，`AEGP_LayerStream_METAL_COEFF` 简化为 `AEGP_LayerStream_METAL`。
+
+新套件 [AEGP渲染队列监控套件](../../aegps/aegp-suites#render-queue-monitor-suite) 提供渲染队列管理器所需的所有信息。
+
+[AEGP遮罩套件](../../aegps/aegp-suites#aegp_masksuite6) 升级至版本6，提供获取/设置遮罩羽化衰减类型的函数。[AEGP遮罩轮廓套件](../../aegps/aegp-suites#aegp_maskoutlinesuite3) 升级至版本3，提供访问遮罩轮廓羽化信息的功能。
+
+依赖遮罩的效果现在可以使用新标志 `PF_OutFlag2_DEPENDS_ON_UNREFERENCED_MASKS`。
+
+[AEGP合成套件](../../aegps/aegp-suites#aegp_compositesuite2) 升级至版本9。AEGP_CreateTextLayerInComp 和 AEGP_CreateBoxTextLayerInComp 新增参数 select_new_layerB。
+
+[AEGP渲染套件](../../aegps/aegp-suites#aegp_rendersuite4) 升级至版本3，新增获取渲染收据GUID的函数。
+
+最后，我们新增了两个只读 [动态流](../../aegps/aegp-suites#aegp_dynamicstreamsuite4) 标志：`AEGP_DynStreamFlag_SHOWN_WHEN_EMPTY` 和 `AEGP_DynStreamFlag_SKIP_REVEAL_WHEN_UNHIDDEN`。
+
+对于在Premiere Pro CS6中运行的效果，新增了从 `PF_CHECKOUT_PARAM` 获取32位浮点和YUV帧的功能。
+
+---
+
+## ...CS6之前有哪些新功能？
+
+更早的历史请参见过时的SDK副本（我们不提供；如果有人要求您为古董软件开发，他们最好提供SDK）。

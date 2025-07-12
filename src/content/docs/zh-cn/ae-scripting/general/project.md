@@ -464,7 +464,7 @@ if (comp instanceof CompItem) {
         ( app.project.toolType !== ToolType.Tool_CameraOrbit ) &&
         ( app.project.toolType !== ToolType.Tool_CameraTrackXY) &&
         ( app.project.toolType !== ToolType.Tool_CameraTrackZ)) {
-            app.project.toolType = ToolType.Tool_CameraMaya;
+   app.project.toolType = ToolType.Tool_CameraMaya;
         }
 }
 ```
@@ -665,12 +665,12 @@ app.project.xmpPacket = mdata.serialize();
 
 #### 参数
 
-| 参数          | 类型            | 描述                                                                                     |
+| 参数          | 类型   | 描述            |
 | ------------- | --------------- | ---------------------------------------------------------------------------------------- |
-| `closeOptions` | `CloseOptions`枚举 | 关闭时执行的操作。可选：                                                                 |
-|               |                 | - `CloseOptions.DO_NOT_SAVE_CHANGES`: 不保存直接关闭                                     |
-|               |                 | - `CloseOptions.PROMPT_TO_SAVE_CHANGES`: 关闭前提示是否保存                              |
-|               |                 | - `CloseOptions.SAVE_CHANGES`: 自动保存后关闭                                            |
+| `closeOptions` | `CloseOptions`枚举 | 关闭时执行的操作。可选：          |
+|      |        | - `CloseOptions.DO_NOT_SAVE_CHANGES`: 不保存直接关闭          |
+|      |        | - `CloseOptions.PROMPT_TO_SAVE_CHANGES`: 关闭前提示是否保存            |
+|      |        | - `CloseOptions.SAVE_CHANGES`: 自动保存后关闭       |
 
 #### 返回值
 
@@ -708,9 +708,9 @@ app.project.xmpPacket = mdata.serialize();
 
 #### 参数
 
-|      参数      |                    类型                     |                               描述                                |
+|      参数      |           类型            |   描述    |
 | -------------- | ------------------------------------------- | ----------------------------------------------------------------- |
-| `importOptions` | [ImportOptions](../../other/importoptions)  | 指定要导入的文件及操作选项的对象。                                |
+| `importOptions` | [ImportOptions](../../other/importoptions)  | 指定要导入的文件及操作选项的对象。    |
 
 #### 返回值
 
@@ -748,13 +748,13 @@ app.project.importFile(new ImportOptions(new File("sample.psd")));
 
 #### 参数
 
-|     参数     |                         类型                          |              描述               |
+|     参数     |       类型        |     描述      |
 | ------------ | ---------------------------------------------------- | ------------------------------- |
-| `name`       | String                                               | 占位符名称。                    |
-| `width`      | 整数，范围 `[4..30000]`                              | 占位符宽度（像素）。            |
-| `height`     | 整数，范围 `[4..30000]`                              | 占位符高度（像素）。            |
-| `frameRate`  | 浮点数，范围 `[1.0..99.0]`                           | 占位符帧速率。                  |
-| `duration`   | 浮点数，范围 `[0.0..10800.0]`                        | 占位符持续时间（秒）。          |
+| `name`       | String          | 占位符名称。           |
+| `width`      | 整数，范围 `[4..30000]`            | 占位符宽度（像素）。   |
+| `height`     | 整数，范围 `[4..30000]`            | 占位符高度（像素）。   |
+| `frameRate`  | 浮点数，范围 `[1.0..99.0]`         | 占位符帧速率。         |
+| `duration`   | 浮点数，范围 `[0.0..10800.0]`      | 占位符持续时间（秒）。          |
 
 #### 返回值
 
@@ -772,7 +772,7 @@ PlaceholderItem 对象。
 
 #### 参数
 
-|  参数   |  类型   |               描述                |
+|  参数   |  类型   |      描述       |
 | ------- | ------- | --------------------------------- |
 | `index` | 整数    | 项的索引位置（第一个项的索引为1）。|
 
@@ -820,7 +820,7 @@ Project 的实例方法，当给定有效的 ID 值时，返回项目中具有�
 
 #### 参数
 
-| 参数 |          类型           |               描述                |
+| 参数 |          类型           |      描述       |
 | ---- | ----------------------- | --------------------------------- |
 | `id` | 整数（非负数）          | 要从项目中检索的图层的 ID。       |
 
@@ -870,7 +870,7 @@ if (app.project.layerByID(layerID) === firstLayer) {
 
 #### 参数
 
-|       参数       |                  类型                   |     描述      |
+|       参数       |         类型          |     描述      |
 | ---------------- | --------------------------------------- | ------------- |
 | `array_of_items` | [Item 对象](../../item/item)数组        | 要保留的项。  |
 
@@ -936,11 +936,11 @@ var layerChanged = app.project.replaceFont(fromFont, toFont);
 
 #### 参数
 
-|      参数      |                 类型                  |          描述           |
+|      参数      |        类型         |          描述           |
 | -------------- | ------------------------------------- | ----------------------- |
 | `fromFont`     | [Font 对象](../../text/fontobject)    | 要替换的字体。          |
 | `toFont`       | [Font 对象](../../text/fontobject)    | 替换后的字体。          |
-| `noFontLocking` | 布尔值                                | 可选。默认为 `false`    |
+| `noFontLocking` | 布尔值    | 可选。默认为 `false`    |
 
 #### 返回值
 
@@ -960,7 +960,7 @@ var layerChanged = app.project.replaceFont(fromFont, toFont);
 
 #### 参数
 
-|  参数   |                                              类型                                               |       描述        |
+|  参数   |         类型          |       描述        |
 | ------- | ---------------------------------------------------------------------------------------------- | ----------------- |
 | `file`  | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html)  | 可选。要保存的文件。|
 
@@ -998,7 +998,7 @@ var layerChanged = app.project.replaceFont(fromFont, toFont);
 
 #### 参数
 
-|   参数   |                                                类型                                                 |       描述        |
+|   参数   |            类型   |       描述        |
 | -------- | --------------------------------------------------------------------------------------------------- | ----------------- |
 | `folder` | [Extendscript Folder](https://extendscript.docsforadobe.dev/file-system-access/folder-object.html)  | 要设置为默认的文件夹。|
 
@@ -1032,7 +1032,7 @@ var layerChanged = app.project.replaceFont(fromFont, toFont);
 
 #### 参数
 
-|   参数   |  类型   |               描述                |
+|   参数   |  类型   |      描述       |
 | -------- | ------- | --------------------------------- |
 | `doShow` | 布尔值  | 为 `true` 时显示项目面板，为 `false` 时隐藏。|
 
@@ -1167,7 +1167,7 @@ var layerChanged = app.project.replaceFont(fromFont, toFont);
 
 #### 参数
 
-|      参数       |                                              类型                                               |                                     描述                                      |
+|      参数       |         类型          |          描述           |
 | --------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | `project_file`  | [Extendscript File](https://extendscript.docsforadobe.dev/file-system-access/file-object.html)  | 本地 After Effects 项目文件（扩展名应为 .aep 或 .aet，不支持 .aepx）。        |
 
@@ -1341,12 +1341,12 @@ var layerChanged = app.project.replaceFont(fromFont, toFont);
 
 #### 参数
 
-|     参数      |        类型         |                                                                         描述                                                                          |
+|     参数      |        类型         |         描述          |
 | ------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ResolveType` | `ResolveType` 枚举  | 要使用的冲突解决方法类型。可以是以下之一：                                                                                                            |
-|               |                     | - `ResolveType.ACCEPT_THEIRS`: 接受共享版本。共享版本将替换您的版本。                                                                                 |
-|               |                     | - `ResolveType.ACCEPT_YOURS`: 保留您的项目版本。不接受共享版本。                                                                                      |
-|               |                     | - `ResolveType.ACCEPT_THEIRS_AND_COPY`: 复制并重命名您的版本，然后接受共享版本。共享版本将替换您的原始版本。                                           |
+| `ResolveType` | `ResolveType` 枚举  | 要使用的冲突解决方法类型。可以是以下之一：       |
+|      |            | - `ResolveType.ACCEPT_THEIRS`: 接受共享版本。共享版本将替换您的版本。       |
+|      |            | - `ResolveType.ACCEPT_YOURS`: 保留您的项目版本。不接受共享版本。             |
+|      |            | - `ResolveType.ACCEPT_THEIRS_AND_COPY`: 复制并重命名您的版本，然后接受共享版本。共享版本将替换您的原始版本。      |
 
 #### 返回值
 

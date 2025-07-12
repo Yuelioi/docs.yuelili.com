@@ -307,35 +307,35 @@ gather(P, 方向, "bias", 0.01, "Cf", 命中颜色) {...}
 vector 所有位置[];
 vector 所有法线[];
 trace(P, 方向, 时间,
-        "samplefilter", "all",
-            "P", 所有位置,
-            "N", 所有法线);
+    "samplefilter", "all",
+      "P", 所有位置,
+      "N", 所有法线);
 ```
 
 采样过滤选项
 
 ## 采样过滤选项
 
-默认情况下，Houdini使用不透明度混合合成全局变量。在某些情况下，获取最近表面的值（无论是否透明）更有用。您可以使用特殊的`samplefilter`关键字，其字符串值为`closest`或`opacity`，来控制全局变量的值是来自最近表面还是不透明度混合。
+默认情况下，Houdini使用透明度混合来合成全局变量。在某些情况下，获取最近表面（无论是否透明）的值更为实用。您可以使用特殊的`samplefilter`关键字，其字符串值为`closest`或`opacity`，来控制全局变量的值是来自最近表面还是透明度混合。
 
 "`samplefilter`",
 `string`
 
-当在参数列表中遇到`samplefilter`关键字时，*所有后续*导入变量将使用指定的过滤模式。您可以在单个gather语句中指定多个`samplefilter`参数，以不同方式过滤不同变量。
+当在参数列表中遇到`samplefilter`关键字时，*之后所有*导入变量都将使用指定的过滤模式。您可以在单个gather语句中指定多个`samplefilter`参数，以不同方式过滤不同变量。
 
-当前允许的`samplefilter`类型有：
+当前允许的`samplefilter`类型包括：
 
 `minimum`
 
-取所有采样的最小值。注意，对于元组值，将使用每个分量的最小值。
+取所有样本的最小值。注意，对于元组值，将使用每个分量的最小值。
 
 `maximum`
 
-取所有采样的最大值。注意，对于元组值，将使用每个分量的最大值。
+取所有样本的最大值。注意，对于元组值，将使用每个分量的最大值。
 
 `opacity`
 
-使用over操作合成采样。
+使用over操作合成样本。
 
 `closest`
 
@@ -343,32 +343,113 @@ trace(P, 方向, 时间,
 
 `screendoor`
 
-使用采样的随机合成。
+使用样本的随机合成。
 
 `sum`
 
-返回所有采样值的总和。
+返回所有样本值的总和。
 
 `sum_square`
 
-返回所有采样值的平方和。
+返回所有样本值的平方和。
 
 `sum_reciprocal`
 
-返回每个采样倒数的总和。
+返回每个样本的倒数之和。
 
 注意
-当使用[sample_geometry](../sampling/sample_geometry "采样场景中的几何体并返回被采样表面着色器的信息")时，默认`samplefilter`设置为`closest`，因为不透明度混合仅在沿光线合成数据时有效。
+当使用[sample_geometry](../sampling/sample_geometry "采样场景中的几何体并返回采样表面的着色器信息")时，默认`samplefilter`设置为`closest`，因为透明度混合仅在沿射线合成数据时有效。
 
 ```vex
-gather(P, 方向,
-        "samplefilter", "opacity",
-            "Cf", 命中颜色,
-            "Of", 命中不透明度,
-        "samplefilter", "closest",
-            "P", 命中位置,
-            "N", 命中法线)
+gather(P, dir,
+    "samplefilter", "opacity",
+      "Cf", hitCf,
+      "Of", hitOf,
+    "samplefilter", "closest",
+      "P", hitP,
+      "N", hitN)
 {
-    trace(位置, 方向, 时间,
-            // 使用随机透明度合成命中表面的bsdf
-            "samplefilter",
+    trace(pos, dir, time,
+      // 使用随机透明度合成命中表面的bsdf
+      "samplefilter", "screendoor",
+      "F", hitF,
+      // 但找到最近样本的位置
+      "samplefilter", "closest",
+      "P", hitP);
+}
+
+```
+
+管线选项
+
+## 管线选项
+
+"`pipeline`",
+`string`
+
+在指定变量时，可以穿插`pipeline`关键字选项来控制管线中填充读写变量的位置。该值可以是`surface`、`atmosphere`或`displacement`之一。您可以多次指定`pipeline`选项。每次使用该选项都会影响之后指定的任何变量（直到下一次使用`pipeline`，如果有的话）。
+
+```vex
+gather(p, d, "pipeline", "surface", "Cf", surfCf,
+       "pipeline", "atmosphere" "Cf", fogCf, "P", hitP)
+
+```
+
+示例
+
+## 示例
+
+以下是两个通过`gather`通信的着色器。
+
+这个着色器向场景中发送射线。它发送一个标记为`exportvalue`的消息，值为`1.234`。由于射线命中的表面可能没有名为`amp`的导出参数，因此在gather循环之前初始化此变量非常重要。
+
+```vex
+surface
+sendray(vector background=0; int nsamples=16)
+{
+    float   amp;
+
+    amp = 0;
+    Cf = 0;
+
+    gather(P, N,
+    "bias", 0.01,
+    "angle", radians(15),
+    "samples", nsamples,
+    "samplebase", 1,
+    "distribution", "cosine",
+    "send:exportvalue", 0.8,
+    "amp", amp)
+    {
+    Cf += amp;
+    amp = 0;
+    }
+    else
+    {
+    Cf += background;
+    }
+
+    Cf *= 1.0 / nsamples;
+    Of = 1;
+}
+
+```
+
+以下着色器导入由gather循环发送的值。导出的参数可以被gather循环导入。
+
+```vex
+surface
+hitsurf(export float amp=1)
+{
+    float   sendvalue = 0;
+
+    if (!rayimport("exportvalue", sendvalue))
+    printf("导入send:exportvalue时出错\n");
+
+    amp = sendvalue;
+
+    Cf = 1;
+    Of = 1;
+}
+
+```

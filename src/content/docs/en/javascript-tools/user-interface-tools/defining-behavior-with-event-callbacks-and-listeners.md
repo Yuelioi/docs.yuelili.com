@@ -6,15 +6,15 @@ title: defining-behavior-with-event-callbacks-and-listeners
 You must define the behavior of your controls in order for them to respond to user interaction. You can do this by defining event-handling callback functions as part of the definition of the control or window. To respond to a specific event, define a handler function for it, and assign a reference to that function in the corresponding property of the window or control object. Different types of windows and controls respond to different actions, or events:
 
 - Windows generate events when the user moves or resizes the window. To handle these events, define callback functions for `onMove`, `onMoving`, `onResize`, `onResizing`.
-    - To respond to the user opening or closing the window, define callback functions for `onShow` and `onClose`.
+  - To respond to the user opening or closing the window, define callback functions for `onShow` and `onClose`.
 - Button, RadioButton, and Checkbox controls generate events when the user clicks within the control bounds.
-    - To handle the event, define a callback function for [onClick](../control-objects#onclick).
+  - To handle the event, define a callback function for [onClick](../control-objects#onclick).
 - EditNumber, EditText, Scrollbar, and Slider controls generate events when the content or value changes-that is, when the user types into an edit field, or moves the scroll or slider indicator. To handle these events, define callback functions for [onChange](../control-objects#onchange) and [onChanging](../control-objects#onchanging).
 - ListBox, DropDownList, and TreeView controls generate events whenever the selection in the list changes. To handle the event, define a callback function for [onChange](../control-objects#onchange).
-    - The TreeView control also generates events when the user expands or collapses a node, handled by the [onExpand](../control-objects#onexpand) and [onCollapse](../control-objects#oncollapse) callback functions.
+  - The TreeView control also generates events when the user expands or collapses a node, handled by the [onExpand](../control-objects#onexpand) and [onCollapse](../control-objects#oncollapse) callback functions.
 - The ListBox also generates an event when the user double-clicks an item. To handle it, define a callback function for the [onDoubleClick](../control-objects#ondoubleclick) event.
 - Both containers and controls generate events just before they are drawn, that allow you to customize their appearance. To handle these events, define callback functions for [onDraw](../control-objects#ondraw).
-    - Your handler can modify or control how the container or control is drawn using the methods defined in the control's associated [ScriptUIGraphics object](../graphic-customization-objects#scriptuigraphics-object).
+  - Your handler can modify or control how the container or control is drawn using the methods defined in the control's associated [ScriptUIGraphics object](../graphic-customization-objects#scriptuigraphics-object).
 - In [Windows](.././window-object) only, you can register a key sequence as a [shortcutKey](../control-objects#shortcutkey) for a window or for most types of controls. To handle the key sequence, define a callback function for [onShortcutKey](../control-objects#onshortcutkey) in that control.
 
 ---
@@ -24,11 +24,14 @@ You must define the behavior of your controls in order for them to respond to us
 Your script can define an event handler as a named function referenced by the callback property, or as an unnamed function defined inline in the callback property.
 
 - If you define a named function, assign its name as the value of the corresponding callback property. For example:
+
     ```javascript
     function hasBtnsCbOnClick() { /* do something interesting */ }
     hasBtnsCb.onClick = hasBtnsCbOnClick;
     ```
+
 - For a simple, unnamed function, set the property value directly to the function definition:
+
     ```javascript
     UI-element.callback-name = function () { handler-definition };
     ```
@@ -110,11 +113,13 @@ Use [addEventListener()](../window-object#addeventlistener) or [addEventListener
 You can register:
 
 - The name of a handler function defined in the extension that takes one argument, the event object. For example:
+
     ```javascript
     myButton.addEventListener( "click", myFunction );
     ```
 
 - A locally defined handler function that takes one argument, the event object. For example:
+
     ```javascript
     myButton.addEventListener( "click", "function( e ) { /*handler code*/ }" );
     ```
@@ -127,20 +132,20 @@ You can register for an event in a parent or ancestor object of the actual targe
 
 The predefined types of `UIEvent` correspond to the event callbacks, as follows:
 
-|                        Callback                         |      UIEvent type      |
+|              Callback               |      UIEvent type      |
 | ------------------------------------------------------- | ---------------------- |
-| [`"onChange"`](../control-objects#onchange)           | `"change"`             |
+| [`"onChange"`](../control-objects#onchange)           | `"change"`   |
 | [`"onChanging"`](../control-objects#onchanging)       | `"changing"`           |
-| [`"onClick"`](../control-objects#onclick)             | `"click"` (detail = 1) |
+| [`"onClick"`](../control-objects#onclick)   | `"click"` (detail = 1) |
 | [`"onDoubleClick"`](../control-objects#ondoubleclick) | `"click"` (detail = 2) |
 | [`"onEnterKey"`](../control-objects#onenterkey)       | `"enterKey"`           |
-| [`"onMove"`](../window-object#onmove)                 | `"move"`               |
-| [`"onMoving"`](../window-object#onmoving)             | `"moving"`             |
-| [`"onResize"`](../window-object#onresize)             | `"resize"`             |
+| [`"onMove"`](../window-object#onmove)       | `"move"`     |
+| [`"onMoving"`](../window-object#onmoving)   | `"moving"`   |
+| [`"onResize"`](../window-object#onresize)   | `"resize"`   |
 | [`"onResizing"`](../window-object#onresizing)         | `"resizing"`           |
-| [`"onShow"`](../window-object#onshow)                 | `"show"`               |
-| [`"onActivate"`](../control-objects#onactivate)       | `"focus"`              |
-| [`"onDeactivate"`](../control-objects#ondeactivate)   | `"blur"`               |
+| [`"onShow"`](../window-object#onshow)       | `"show"`     |
+| [`"onActivate"`](../control-objects#onactivate)       | `"focus"`    |
+| [`"onDeactivate"`](../control-objects#ondeactivate)   | `"blur"`     |
 
 In addition, ScriptUI implements all types of W3C events according to the W3C DOM level 3 functional specification [for UI events](https://www.w3.org/TR/uievents/), with these modifications and exceptions:
 

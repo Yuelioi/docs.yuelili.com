@@ -47,6 +47,6 @@ Primvar名称（不带命名空间）。
 float flat_value    = usd_flattenedprimvarelement(0, "/geo/cube", "primvar_name", 3);
 
 f@flat_primvar_element_10_at_current_frame = usd_flattenedprimvarelement(0, "/geo/sphere", "bar", 10);
-f@flat_primvar_element_10_at_frame_7       = usd_flattenedprimvarelement(0, "/geo/sphere", "bar", 10, 7.0);
+f@flat_primvar_element_10_at_frame_7   = usd_flattenedprimvarelement(0, "/geo/sphere", "bar", 10, 7.0);
 
 ```

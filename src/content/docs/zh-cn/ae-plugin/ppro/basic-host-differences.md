@@ -75,12 +75,12 @@ Premiere Pro支持宏`PF_ADD_FLOAT_EXPONENTIAL_SLIDER()`，该宏允许您定义
 
 After Effects支持的许多套件在Premiere Pro主机中未实现。在某些情况下，即使Premiere Pro中缺少某个套件，也有等效的宏函数可用。以下是一些示例：
 
-|        After Effects套件调用         | Premiere Pro等效函数 |
+|        After Effects套件调用   | Premiere Pro等效函数 |
 | --------------------------------------- | -------------------------------- |
-| `WorldTransformSuite1()->copy()`        | `PF_COPY()`                      |
+| `WorldTransformSuite1()->copy()`        | `PF_COPY()`   |
 | `WorldTransformSuite1()->convolve()`    | `in_data->utils->convolve()`     |
-| `FillMatteSuite2()->fill()`             | `PF_FILL()`                      |
-| `PF_PixelDataSuite1->get_pixel_data8()` | `PF_GET_PIXEL_DATA8()`           |
+| `FillMatteSuite2()->fill()`       | `PF_FILL()`   |
+| `PF_PixelDataSuite1->get_pixel_data8()` | `PF_GET_PIXEL_DATA8()`     |
 
 示例项目展示了通过检查主机应用程序和版本来处理缺失套件的替代方法。Portable示例项目展示了主机应用程序和版本检查。
 

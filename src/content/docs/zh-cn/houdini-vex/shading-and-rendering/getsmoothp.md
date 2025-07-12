@@ -42,9 +42,9 @@ order: 33
 shadow  
 fastshadow()  
 {  
-    vector        surfP;  
+    vector    surfP;  
     if (!getsmoothP(surfP, Eye, I))  
-        surfP = Ps;                // 设置为 Ps（表面位置）变量  
+    surfP = Ps;      // 设置为 Ps（表面位置）变量  
     vector shad = trace(surfP, normalize(L), Time, "raystyle", "shadow");  
     Cl *= ({1,1,1} - shad);  
 }  

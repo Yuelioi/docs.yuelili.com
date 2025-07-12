@@ -67,7 +67,7 @@ title: GraphItems
 
 #### 参数
 
-| 参数     | 类型   | 描述               |
+| 参数     | 类型   | 描述         |
 | -------- | ------ | ------------------ |
 | `name`   | 字符串 | 要获取的元素名称   |
 
@@ -87,7 +87,7 @@ title: GraphItems
 
 #### 参数
 
-| 参数     | 类型          | 描述               |
+| 参数     | 类型    | 描述         |
 | -------- | ------------- | ------------------ |
 | `itemKey` | 字符串, 数字  | 字符串或数字键     |
 
@@ -127,9 +127,9 @@ if (documents.length > 0) {
     if (iCount > 0) {
         ok = true;
         for (var i = 0; i < iCount; i++) {
-            var graphRef = docRef.graphItems[i];
-            graphRef.selected = true;
-            graphRef.rotate(90); // 顺时针旋转 90 度
+      var graphRef = docRef.graphItems[i];
+      graphRef.selected = true;
+      graphRef.rotate(90); // 顺时针旋转 90 度
         }
         redraw();
     }

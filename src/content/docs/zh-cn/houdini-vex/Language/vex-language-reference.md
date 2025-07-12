@@ -42,7 +42,7 @@ VEX包含一个大型的[内置函数库](functions/index.html)。某些函数�
 ```vex
 int test(int a, b; string c) {
     if (a > b) {
-        printf(c);
+      printf(c);
     }
 }
 ```
@@ -54,7 +54,7 @@ int test(int a, b; string c) {
 ```vex
 function int test(int a, b; string c) {
     if (a > b) {
-        printf(c);
+      printf(c);
     }
 }
 ```
@@ -115,7 +115,7 @@ VEX程序必须包含一个返回类型为上下文名称的函数。这是程�
 ```vex
 surface
 noise_surf(vector clr = {1,1,1}; float frequency = 1;
-           export vector nml = {0,0,0})
+       export vector nml = {0,0,0})
 {
     Cf = clr * (float(noise(frequency * P)) + 0.5) * diffuse(normalize(N));
     nml = normalize(N)*0.5 + 0.5;
@@ -133,17 +133,17 @@ user-interface-pragmas
 Houdini从此程序生成的用户界面将是最小的，基本上只是变量名和基于数据类型的通用文本字段。例如，您可能希望指定`frequency`应该是一个具有特定范围的滑块，而`clr`应该被视为颜色(给它一个颜色选择器UI)。您可以使用[用户界面编译器编译指示](pragmas.html)来实现这一点。
 
 ```vex
-#pragma opname        noise_surf
-#pragma oplabel        "噪波表面"
+#pragma opname      noise_surf
+#pragma oplabel      "噪波表面"
 
-#pragma label    clr            "颜色"
+#pragma label    clr   "颜色"
 #pragma label    frequency    "频率"
 
-#pragma hint    clr            color
+#pragma hint    clr   color
 #pragma range    frequency    0.1 10
 
 surface noise_surf(vector clr = {1,1,1}; float frequency = 1;
-           export vector nml = {0,0,0})
+       export vector nml = {0,0,0})
 {
     Cf = clr * (float(noise(frequency * P)) + 0.5) * diffuse(normalize(N));
     nml = normalize(N)*0.5 + 0.5;
@@ -245,46 +245,231 @@ precedence
 
 operator-type-interactions
 
-- 当您对`float`和`int`应用运算时，结果是运算符左侧的类型。即`float * int = float`，而`int * float = int`。
-- 如果将向量与标量值(`int`或`float`)相加、相乘、相除或相减，VEX返回相同大小的向量，运算按分量执行。例如：
+- 当对`float`和`int`类型执行运算时，结果类型取决于运算符左侧的类型。即`float * int = float`，而`int * float = int`。
+- 当向量与标量值（`int`或`float`）进行加减乘除运算时，VEX会返回相同维度的向量，并按分量逐个运算。例如：
 
-```
+```vex
 {1.0, 2.0, 3.0} * 2.0 == {2.0, 4.0, 6.0}
 ```
 
-- 如果对不同大小的向量进行加、乘、除或减运算，VEX返回较大大小的向量。运算按分量执行。
-  **重要**：较小向量上的"缺失"分量填充为`{0.0, 0.0, 0.0, 1.0}`
+- 对不同维度的向量进行加减乘除运算时，VEX会返回较大维度的向量。运算按分量逐个执行。
+  **重要**：较小维度向量中"缺失"的分量会以`{0.0, 0.0, 0.0, 1.0}`填充
 
-```
+```vex
 {1.0, 2.0, 3.0} * {2.0, 3.0, 4.0, 5.0} == {2.0, 6.0, 12.0, 5.0}
 ```
 
-如果您不期望这一点，可能会得到令人惊讶的结果，例如：
+如果不注意这点可能会得到意外结果，例如：
 
-```
-// vector2的第三个元素被视为0，
+```vex
+// 向量2的第三个元素被视为0，
 // 但第四个元素被视为1.0
 {1.0, 2.0} + {1.0, 2.0, 3.0, 4.0} == {2.0, 4.0, 3.0, 5.0}
 ```
 
-如果您要组合不同大小的向量，可能需要手动分解组件并进行运算，以获得预期结果而不出现意外。
+当组合不同维度的向量时，建议手动拆分分量进行操作，以避免意外结果。
 
 数据类型
 
 ## data-types
 
 警告
-默认情况下，VEX使用32位整数。如果您使用[AttribCast SOP](../nodes/sop/attribcast.html "更改Houdini用于存储属性的大小/精度。")将几何属性转换为64位，VEX将在VEX代码中操作该属性时静默丢弃多余的位。
+默认情况下，VEX使用32位整数。如果使用[AttribCast SOP](../nodes/sop/attribcast.html "更改Houdini存储属性的大小/精度")将几何属性转换为64位，在VEX代码中操作该属性时，VEX会静默丢弃多余的位。
 
-VEX引擎以32位或64位模式运行。在32位模式下，所有浮点数、向量和整数都是32位。在64位模式下，它们是64位。没有`double`或`long`类型来允许混合精度数学。
+VEX引擎运行在32位或64位模式下。在32位模式下，所有浮点数、向量和整数都是32位的。在64位模式下，它们都是64位的。没有`double`或`long`类型来支持混合精度计算。
 
-您可以使用下划线分隔长数字。
+可以使用下划线分隔长数字。
 
 | 类型 | 定义 | 示例 |
 | --- | --- | --- |
 | `int` | 整数值 | `21, -3, 0x31, 0b1001, 0212, 1_000_000` |
 | `float` | 浮点标量值 | `21.3, -3.2, 1.0, 0.000_000_1` |
-| `vector2` | 两个浮点值。您可能使用它来表示纹理坐标(尽管通常Houdini使用向量)或复数 | `{0,0}, {0.3,0.5}` |
-| `vector` | 三个浮点值。您可以使用它来表示位置、方向、法线或颜色(RGB或HSV) | `{0,0,0}, {0.3,0.5,-0.5}` |
-| `vector4` | 四个浮点值。您可以使用它来表示齐次坐标中的位置，或带alpha的颜色(RGBA)。它通常用于表示四元数。VEX中的四元数按`x/y/z/w`顺序排列，而不是`w/x/y/z`。这适用于四元数和具有齐次坐标的位置。 | `{0,0,0,1}, {0.3,0.5,-0.5,0.2}` |
-| `array` | 值列表。有关更多信息，请参见
+| `vector2` | 两个浮点值。可用于表示纹理坐标(虽然Houdini通常使用向量)或复数 | `{0,0}, {0.3,0.5}` |
+| `vector` | 三个浮点值。可用于表示位置、方向、法线或颜色(RGB或HSV) | `{0,0,0}, {0.3,0.5,-0.5}` |
+| `vector4` | 四个浮点值。可用于表示齐次坐标位置，或带alpha通道的颜色(RGBA)。常用于表示四元数。VEX中的四元数按`x/y/z/w`顺序排列，而非`w/x/y/z`。这适用于四元数和齐次坐标位置。 | `{0,0,0,1}, {0.3,0.5,-0.5,0.2}` |
+| `array` | 值列表。详见[数组](./arrays) | `{ 1, 2, 3, 4, 5, 6, 7, 8 }` |
+| `struct` | 固定命名的值集合。详见[结构体](lang.html#structs) |
+| `matrix2` | 表示2D旋转矩阵的四个浮点值 | `{ {1,0}, {0,1} }` |
+| `matrix3` | 表示3D旋转矩阵或2D变换矩阵的九个浮点值 | `{ {1,0,0}, {0,1,0}, {0,0,1} }` |
+| `matrix` | 表示3D变换矩阵的十六个浮点值 | `{ {1,0,0,0}, {0,1,0,0}, {0,0,1,0}, {0,0,0,1} }` |
+| `string` | 字符串。详见[字符串](./strings) | `"hello world"` |
+| `dict` | 将`string`映射到其他VEX数据类型的字典。详见[字典](dicts.html) |
+| `bsdf` | 双向散射分布函数。关于BSDF的信息请参阅[编写PBR着色器](pbr.html) |
+
+结构体
+
+## structs
+
+从Houdini 12开始，可以使用`struct`关键字定义新的结构化类型。
+
+成员数据可以在结构体定义中分配默认值，类似于C++11的成员初始化。
+
+每个结构体会隐式创建两个构造函数。第一个按结构体中声明的顺序接受初始化参数，第二个不接受参数但将所有成员设置为其默认值。
+
+```vex
+#include <math.h>
+
+struct basis {
+    vector i, j, k;
+}
+
+struct bases {
+    basis m, n, o;
+    string description;
+}
+
+struct values {
+    int uninitialized;      // 未初始化的成员数据
+    int      ival = 3;
+    float fval = 3.14;
+    float aval[] = { 1, 2, 3, 4.5 };
+}
+
+basis rotate(basis b; vector axis; float amount) {
+    matrix m = 1;
+    rotate(m, amount, axis);
+    basis result = b;
+    result.i *= m;
+    result.j *= m;
+    result.k *= m;
+    return result;
+}
+
+// 声明结构体变量
+basis b0;      // 使用默认值初始化(本例中为0)
+basis b1 = basis({1,0,0}, {0,1,0}, {0,0,1});      // 使用构造函数初始化
+basis b2 = { {1,0,0}, {0,1,0}, {0,0,1} };       // 显式结构体初始化
+
+// 可以使用M_PI或PI
+b1 = rotate(b1, {0,0,1}, M_PI/6);
+```
+
+注意
+必须在源文件中先定义结构体才能使用。
+
+### 结构体函数
+
+methods
+可以在结构体中定义函数来组织代码，并允许有限形式的面向对象编程。
+
+- 在结构体函数内部，可以使用`this`引用结构体实例。
+- 在结构体函数内部，可以通过名称引用结构体字段，就像它们是变量一样(例如，`basis`是`this.basis`的简写)。
+- 可以使用`->`箭头运算符在结构体实例上调用结构体函数，例如`sampler->sample()`。
+  注意在结构体函数内部，可以使用`this->method()`调用结构体上的其他方法。
+
+```vex
+struct randsampler {
+    // 字段
+    int      seed;
+
+    // 方法
+    float sample()
+    {
+      // 结构体函数可以通过名称引用字段
+      return random(seed++);
+    }
+}
+
+cvex shader()
+{
+    randsampler sampler = randsampler(11);
+    for (int i = 0; i < 10; i++)
+    {
+      // 使用->在结构体实例上调用方法
+      printf("%f\n", sampler->sample());
+    }
+}
+```
+
+Mantra特定类型
+
+## mantratypes
+
+Mantra有一些预定义的结构体类型，用于特定着色函数。
+
+| `light` | 仅在Mantra着色上下文中定义。表示光源句柄的结构体。该结构体有方法:\* illuminate(…) 调用绑定到光源`vm_illumshader`属性的VEX表面着色器。 在IFD中，可能会看到类似`ray_property light illumshader diffuselighting` 或`ray_property light illumshader mislighting misbias 1.000000`的行。这些语句定义了在light对象上调用`illuminate()`方法时调用的着色器。 |
+| --- | --- |
+| `material` | 仅在Mantra着色上下文中定义。表示分配给对象材质的不透明结构体。 |
+| `lpeaccumulator` | 仅在Mantra着色上下文中定义。表示光路表达式累加器的结构体。该结构体有方法:\* begin() - 构造并初始化累加器。 * end() - 完成并销毁。 * move(string eventtype; string scattertype; string tag, string bsdflabel) - 根据当前事件修改内部状态。如果传入空字符串，则假定为'any'。 * pushstate() - 将内部状态压入堆栈。 * popstate() - 从堆栈弹出内部状态。用于pushstate()来"撤销"move()。 * int matches() - 如果当前内部状态匹配用户定义的任何光路表达式，则返回非零值。 * accum(vector color, ...) - 将输入颜色累加到中间缓冲区。还接受可选前缀字符串与LPE图像平面声明的前缀进行比较。所有前缀必须匹配才能累加。 * flush(vector multiplier) - 将中间缓冲区乘以乘数并添加到图像平面。中间缓冲区用于允许方差抗锯齿(即乘数为1/样本数)。 * int getid() - 返回分配给lpeaccumulator的整数id。 * lpeaccumulator getlpeaccumulator(int id) - 根据id返回lpeaccumulator。与getid()一起用于跨着色器边界传递lpeaccumulator。 |
+
+类型转换
+
+## type-casting
+
+### 变量转换
+
+variable-casting
+这与C++或Java中的类型转换类似：将一种类型的值转换为另一种类型(例如，将int转换为float)。
+
+有时这是必要的，例如：
+
+```vex
+int a, b;
+float c;
+c = a / b;
+```
+
+在这个例子中，编译器会执行整数除法(参见[类型解析](lang.html#typeres))。如果想执行浮点除法，需要显式将`a`和`b`转换为float：
+
+```vex
+int a, b;
+float c;
+c = (float)a / (float)b;
+```
+
+这会生成额外的指令来执行转换。在性能敏感的代码部分可能会成为问题。
+
+### 函数转换
+
+function-casting
+VEX不仅根据参数类型(如C++或Java)分发函数，还根据返回类型分发函数。为了消除具有相同参数类型但不同返回类型的函数调用的歧义，可以*转换函数*。
+
+例如，[noise](functions/noise.html "有两种Perlin风格噪声：一种在N维空间中随机变化的非周期性噪声，以及一种在给定空间范围内重复的周期性形式。")函数可以接受不同的参数类型，也可以返回不同的类型：`noise`可以返回float或vector。
+
+在代码中：
+
+```vex
+float n;
+n = noise(noise(P));
+```
+
+...VEX可以分派到`float noise(vector)`或`vector noise(vector)`。
+
+要转换函数调用，用`typename( ... )`包围它，如：
+
+```vex
+n = noise( vector( noise(P) ) );
+```
+
+虽然这看起来像函数调用，但它只是消除内部函数调用的歧义，没有性能开销。
+
+当直接将函数调用赋值给指定类型的变量时，函数转换是隐含的。因此以下表达式是等价的，可以省略函数转换以使代码更简洁：
+
+```vex
+vector n = vector( noise(P) );      // 不必要的函数转换
+vector n = noise(P);
+```
+
+注意
+如果VEX无法确定要调用哪个函数签名，将触发歧义错误并打印候选函数。然后应选择适当的返回值并添加函数转换来选择它。
+
+由于函数转换不会生成任何类型转换(它只是选择要调用的函数)，因此使用它没有性能损失。一个好的经验法则是尽可能使用函数转换，只有在需要显式类型转换时才使用变量转换。
+
+注释
+
+## comments
+
+VEX使用C++风格的注释：
+
+- 单行注释以`//`开头
+- 自由格式注释以`/*`开头，以`*/`结尾
+
+保留关键字
+
+## reserved
+
+`break`, `bsdf`, `char`, `color`, `const`, `continue`, `do`, `dict`, `else`,
+`export`, `false`, `float`, `for`, `forpoints`, `foreach`, `gather`,
+`hpoint`, `if`, `illuminance`, `import`, `int`, `integer`, `matrix`,
+`matrix2`, `matrix3`, `normal`, `point`, `return`, `string`, `struct`, `true`,
+`typedef`, `union`, `vector`, `vector2`, `vector4`, `void`, `while`

@@ -71,8 +71,6 @@ var info = bt.headers.info;
 var error = bt.headers ["Error-Code"];
 ```
 
-
-
 ---
 
 ### sender
@@ -143,13 +141,11 @@ String
 The message callbacks are optional, and are not implemented by all message-enabled applications.
 :::
 
-
 ### onError()
 
 `bridgeTalkObj.onError()`
 
 #### Description
-
 
 A callback function that the target application invokes to return an error response to the sender. It can send JavaScript run-time errors or exceptions, or C++ exceptions.
 
@@ -243,10 +239,10 @@ Sending the message does not guarantee that the target actually receives it. You
 
 #### Parameters
 
-|     Parameter      |  Type  |                                                                                                                                                                                    Description                                                                                                                                                                                     |
+|     Parameter      |  Type  |                                                  Description                                                   |
 | ------------------ | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `timoutInSecs`     | Number | Optional. A maximum number of seconds to wait for a result before returning from this function. The message is sent synchronously, and the function does not return until the target has processed the message or this number of seconds have passed. If not supplied or 0, the message is sent asynchronously, and the function returns immediately without waiting for a result. |
-| `launchParameters` | String | Optional. A string of parameters to append to the name of the target application when launching it, if the application is not already running. If the target application is already running, this value is ignored.                                                                                                                                                                |
+| `launchParameters` | String | Optional. A string of parameters to append to the name of the target application when launching it, if the application is not already running. If the target application is already running, this value is ignored.                                        |
 
 #### Returns
 
@@ -266,7 +262,7 @@ This allows you to send multiple responses to messages.
 
 #### Parameters
 
-| Parameter | Type |                                                                                                                                                     Description                                                                                                                                                      |
+| Parameter | Type |                                       Description                                        |
 | --------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `result`  | Any  | You can send data of any type as the result value. The messaging framework creates a BridgeTalk message object, and flattens this value into a string which it stores in the body of that message. See [Passing values between applications](../communicating-through-messages#passing-values-between-applications). |
 

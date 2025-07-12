@@ -44,6 +44,6 @@ Primvar名称（不包含命名空间）。
 float value    = usd_iprimvarelement(0, "/geo/cube", "primvar_name", 3);
 
 v@element_2_at_current_frame  = usd_iprimvarelement(0, "/geo/sphere", "foo", 2);
-v@element_2_at_frame_8        = usd_iprimvarelement(0, "/geo/sphere", "foo", 2, 8.0);
+v@element_2_at_frame_8    = usd_iprimvarelement(0, "/geo/sphere", "foo", 2, 8.0);
 
 ```

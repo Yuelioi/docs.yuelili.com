@@ -36,9 +36,9 @@ VEX支持C++风格的原始字符串。`c++rawstring`指令可用于禁用或重
 ```vex  
 string a = R"(Hello world\n)";  
 string b = "Hello world\\n";  
-#pragma c++rawstrings 0        // 禁用C++风格原始字符串支持  
+#pragma c++rawstrings 0      // 禁用C++风格原始字符串支持  
 string b = R"(这将产生错误!)";  
-#pragma c++rawstrings 1        // 重新启用C++风格原始字符串支持  
+#pragma c++rawstrings 1      // 重新启用C++风格原始字符串支持  
 ```  
 
 # pragma bindhandle  
@@ -429,8 +429,8 @@ hint_type可以是以下之一：
 ```vex  
 #pragma hint __nondiffuse toggle // 定义为切换按钮  
 #pragma hint specularcolor color // 这表示颜色  
-#pragma hint rest hidden         // 不在UI中显示rest参数  
-#pragma hint mapname image       // 这表示图像文件  
+#pragma hint rest hidden       // 不在UI中显示rest参数  
+#pragma hint mapname image     // 这表示图像文件  
 #pragma hint nullobject oppath "obj/null" // 仅空对象  
 ```  
 

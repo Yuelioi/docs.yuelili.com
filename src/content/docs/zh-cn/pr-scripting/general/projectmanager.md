@@ -53,7 +53,7 @@ ProjectManager 对象暴露了 Premiere Pro 的项目管理器，用于项目整
 
 剪辑传输的指定设置。值将是以下之一：
 
-- `CLIP_TRANSFER_COPY`      - 复制整个源媒体。
+- `CLIP_TRANSFER_COPY`   - 复制整个源媒体。
 - `CLIP_TRANSFER_TRANSCODE` - 转码为默认输出格式。
 
 ---

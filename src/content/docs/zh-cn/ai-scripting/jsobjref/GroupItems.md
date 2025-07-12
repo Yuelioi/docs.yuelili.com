@@ -81,7 +81,7 @@ title: GroupItems
 
 #### 参数
 
-|  参数       |                                         类型                                         |       描述        |
+|  参数       |         类型         |       描述        |
 | ----------- | ------------------------------------------------------------------------------------ | ----------------- |
 | `imageFile` | [File](https://extendscript.docsforadobe.dev/file-system-access/file-object/) 对象    | 要放置的矢量艺术文件 |
 

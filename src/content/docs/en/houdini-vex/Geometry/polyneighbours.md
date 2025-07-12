@@ -32,13 +32,13 @@ int[] polyneighbours(const string opname; const int primnum)
     for (int hedge = start; hedge != -1; )
     {
         for (int nh = hedge_nextequiv(opname, hedge);
-             nh != hedge;
-             nh = hedge_nextequiv(opname, nh))
+   nh != hedge;
+   nh = hedge_nextequiv(opname, nh))
         {
             int prim = hedge_prim(opname, nh);
             if (prim != -1 && prim != primnum)
             {
-                append(result, prim);
+      append(result, prim);
             }
         }
         hedge = hedge_next(opname, hedge);

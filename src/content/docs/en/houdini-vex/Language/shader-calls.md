@@ -104,7 +104,7 @@ cvex caller()
     int rval = 2;
     int wval = 1;
     callee("mval", mval, "rval", rval, "wval", wval, "castval",
-            1);
+    1);
     printf("%d %d %d\n", mval, rval, wval);
 }
 
