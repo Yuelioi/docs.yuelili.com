@@ -39,15 +39,13 @@ Next, if the Match Source button is pressed in the Export Settings, `exPostProce
 
 Starting in CS6, exporters can use the new push model, or the legacy pull model for obtaining frames. The new push model is supported starting in CS6, and the pull model is still supported.
 
-Push Model
-
----
+## Push Model
 
 Using the push model, the exporter host can simply push frames to a thread-safe exporter-specified callback. Use DoMultiPassExportLoop in the [Exporter Utility Suite](../suites#exporter-utility-suite) to register the callback.
 
 Compared with the pull model, this will cut down on the code previously required for render loop management. It should also yield substantial performance increases for exporters that haven't finely tuned their multithreaded rendering.
 
-### Pull Model
+## Pull Model
 
 Using the pull model to get video and audio data involves making calls to the host to ask for this data. Use the [Sequence Render Suite](../suites#sequence-render-suite) to get individual video frames, and the [Sequence Audio Suite](../suites#sequence-audio-suite) to get buffers of audio samples.
 

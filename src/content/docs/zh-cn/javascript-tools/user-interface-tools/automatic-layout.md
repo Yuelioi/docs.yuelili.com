@@ -69,9 +69,9 @@ w.show();
 
 下图显示了使用这些方向布局示例窗口的结果：
 
-![Orientation = Row](./_static/04_user-interface-tools_automatic-layout_container-orientation_row.jpg) 
-![Orientation = Column](./_static/04_user-interface-tools_automatic-layout_container-orientation_column.jpg) 
-![Orientation = Stack](./_static/04_user-interface-tools_automatic-layout_container-orientation_stack.jpg) 
+![Orientation = Row](./_static/04_user-interface-tools_automatic-layout_container-orientation_row.jpg)
+![Orientation = Column](./_static/04_user-interface-tools_automatic-layout_container-orientation_column.jpg)
+![Orientation = Stack](./_static/04_user-interface-tools_automatic-layout_container-orientation_stack.jpg)
 
 ---
 
@@ -120,18 +120,18 @@ myGroup.alignment = [ ScriptUI.Alignment.LEFT, ScriptUI.Alignment.TOP]
 
 下图显示了创建具有行方向的示例窗口并在父容器的 `alignChildren` 属性中设置 `bottom` 和 `top` 对齐设置的结果：
 
-![alignChildren = bottom](./_static/04_user-interface-tools_automatic-layout_aligning-children_bottom.jpg) 
-![alignChildren = top](./_static/04_user-interface-tools_automatic-layout_aligning-children_top.jpg) 
+![alignChildren = bottom](./_static/04_user-interface-tools_automatic-layout_aligning-children_bottom.jpg)
+![alignChildren = top](./_static/04_user-interface-tools_automatic-layout_aligning-children_top.jpg)
 
 下图显示了创建具有列方向的示例窗口并在父容器的 `alignChildren` 属性中设置 `right`、`left` 和 `fill` 对齐设置的结果。请注意在 `fill` 情况下，每个元素的宽度都调整为容器中最宽元素的宽度：
 
-![alignChildren = left](./_static/04_user-interface-tools_automatic-layout_aligning-children_left.jpg) 
-![alignChildren = right](./_static/04_user-interface-tools_automatic-layout_aligning-children_right.jpg) 
-![alignChildren = fill](./_static/04_user-interface-tools_automatic-layout_aligning-children_fill.jpg) 
+![alignChildren = left](./_static/04_user-interface-tools_automatic-layout_aligning-children_left.jpg)
+![alignChildren = right](./_static/04_user-interface-tools_automatic-layout_aligning-children_right.jpg)
+![alignChildren = fill](./_static/04_user-interface-tools_automatic-layout_aligning-children_fill.jpg)
 
 您可以通过设置特定子元素的 `alignment` 属性来覆盖容器的子元素对齐方式（由 `alignChildren` 指定）。下图显示了当父容器的 `alignChildren` 值为 `left` 时，将 `EditText` 元素的 `alignment` 设置为 `right` 的结果：
 
-![override alignChildren = left](./_static/04_user-interface-tools_automatic-layout_aligning-children_override-left.jpg) 
+![override alignChildren = left](./_static/04_user-interface-tools_automatic-layout_aligning-children_override-left.jpg)
 
 ---
 
@@ -142,9 +142,9 @@ myGroup.alignment = [ ScriptUI.Alignment.LEFT, ScriptUI.Alignment.TOP]
 下图显示了示例脚本 [SnpAlignElements.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SnpAlignElements.jsx) 的结果，该脚本演示了如何指定二维对齐。
 
 - 在第一个图中，每个控件在其行中垂直居中，并使用诸如 `["left", "center"]` 的对齐值将每个元素放置在特定的水平位置：
- ![Horizontal Alignment](./_static/04_user-interface-tools_automatic-layout_alignment-in-2d_horizontal.jpg) 
+ ![Horizontal Alignment](./_static/04_user-interface-tools_automatic-layout_alignment-in-2d_horizontal.jpg)
 - 垂直对齐示例创建了四列，并将控件沿垂直轴放置在每列中。它使用诸如 `["fill", "top"]` 的对齐值在列中分布控件，同时仍然控制相对垂直位置：
- ![Vertical Alignment](./_static/04_user-interface-tools_automatic-layout_alignment-in-2d_vertical.jpg) 
+ ![Vertical Alignment](./_static/04_user-interface-tools_automatic-layout_alignment-in-2d_vertical.jpg)
 
 ---
 
@@ -154,12 +154,12 @@ myGroup.alignment = [ ScriptUI.Alignment.LEFT, ScriptUI.Alignment.TOP]
 
 下图显示了创建具有行方向和 5 和 15 像素边距的示例窗口的结果：
 
-![margins = 5](./_static/04_user-interface-tools_automatic-layout_margins_margin5.jpg) 
-![margins = 15](./_static/04_user-interface-tools_automatic-layout_margins_margin15.jpg) 
+![margins = 5](./_static/04_user-interface-tools_automatic-layout_margins_margin5.jpg)
+![margins = 15](./_static/04_user-interface-tools_automatic-layout_margins_margin15.jpg)
 
 此图显示了创建具有列方向、顶部边距为 0 像素、底部边距为 20 像素以及左右边距为 15 像素的示例窗口的结果：
 
-![margins = 15,0,15,20](./_static/04_user-interface-tools_automatic-layout_margins_mixed.jpg) 
+![margins = 15,0,15,20](./_static/04_user-interface-tools_automatic-layout_margins_mixed.jpg)
 
 ---
 
@@ -169,12 +169,12 @@ myGroup.alignment = [ ScriptUI.Alignment.LEFT, ScriptUI.Alignment.TOP]
 
 此图显示了创建具有行方向和 15 和 5 像素间距的示例窗口的结果：
 
-![spacing = 5](./_static/04_user-interface-tools_automatic-layout_spacing_spacing5.jpg) 
-![spacing = 15](./_static/04_user-interface-tools_automatic-layout_spacing_spacing15.jpg) 
+![spacing = 5](./_static/04_user-interface-tools_automatic-layout_spacing_spacing5.jpg)
+![spacing = 15](./_static/04_user-interface-tools_automatic-layout_spacing_spacing15.jpg)
 
 此图显示了创建具有列方向和 20 像素间距的示例窗口的结果：
 
-![spacing = 20](./_static/04_user-interface-tools_automatic-layout_spacing_spacing20.jpg) 
+![spacing = 20](./_static/04_user-interface-tools_automatic-layout_spacing_spacing20.jpg)
 
 ---
 
@@ -223,7 +223,7 @@ win.center();
 win.show();
 ```
 
-![Unaligned](./_static/04_user-interface-tools_automatic-layout_complex-arrangements_unaligned.jpg) 
+![Unaligned](./_static/04_user-interface-tools_automatic-layout_complex-arrangements_unaligned.jpg)
 
 在这个最简单的示例中，列没有垂直对齐。当您在行中使用固定宽度的控件时，一种简单的方法是将 `StaticText` 标签对齐到面板的右侧。在示例中，将以下内容添加到 `Panel` 规范中：
 
@@ -233,7 +233,7 @@ info: Panel { orientation: 'column', alignChildren:'right', \
 
 这将创建以下结果：
 
-![Aligned](./_static/04_user-interface-tools_automatic-layout_complex-arrangements_aligned.jpg) 
+![Aligned](./_static/04_user-interface-tools_automatic-layout_complex-arrangements_aligned.jpg)
 
 假设现在您需要两个面板，并且希望每个面板在对话框中具有相同的宽度。您可以在对话框窗口对象级别指定这一点，即两个面板的父级。指定 `alignChildren="fill"`，这会使对话框的每个子元素匹配其宽度到最宽的子元素。
 
@@ -263,7 +263,7 @@ win.center();
 win.show();
 ```
 
-![Groups](./_static/04_user-interface-tools_automatic-layout_complex-arrangements_groups.jpg) 
+![Groups](./_static/04_user-interface-tools_automatic-layout_complex-arrangements_groups.jpg)
 
 为了使按钮出现在对话框的右侧，`buttons` 组覆盖了其父级（对话框）的 `fill` 对齐方式，并指定 `alignment="right"`。
 
@@ -271,16 +271,187 @@ win.show();
 
 ### 创建动态内容
 
-许多对话框需要根据用户在对话框中选择某些选项来呈现不同的信息集。您可以使用堆栈方向在同一对话框区域中呈现不同的视图。
+许多对话框需要根据用户在对话框中选择的选项来呈现不同的信息集。您可以使用堆叠(Stack)方向在对话框的同一区域呈现不同视图。
 
-容器的 `stack` 方向将子元素放置在容器的同一区域中，以便它们居中在一个足够宽以容纳最宽子元素和足够高以容纳最高子元素的空间中。如果您在这样的堆栈中排列组或面板，您可以显示和隐藏它们以在同一空间中显示不同的控件集，具体取决于对话框中的其他选择。
+容器的`stack`方向会将子元素放置在能够容纳最宽子元素宽度和最高子元素高度的中心位置。如果您在这种堆叠中排列组(Group)或面板(Panel)，就可以通过显示/隐藏它们来在同一空间展示不同的控件组合，具体取决于对话框中的其他选择。
 
-例如，此对话框根据用户在 `DropDownList` 中的选择动态更改。
+例如，这个对话框会根据用户在`DropDownList`中的选择动态变化。
 
-![Personal Info](./_static/04_user-interface-tools_automatic-layout_dynamic-content_personalInfo.jpg) 
-![Work Info](./_static/04_user-interface-tools_automatic-layout_dynamic-content_workInfo.jpg) 
+![个人信息](./_static/04_user-interface-tools_automatic-layout_dynamic-content_personalInfo.jpg)
+![工作信息](./_static/04_user-interface-tools_automatic-layout_dynamic-content_workInfo.jpg)
 
-以下脚本创建此对话框。它将前面示例中的“Personal Info”和“Work Info”面板压缩为一个具有两个 `Group` 的 `Panel`，这些 `Group` 排列在堆栈中。`DropDownList` 允许用户选择要查看的信息集。当用户在列表中进行选择时，其 `onChange` 函数显示一个组并隐藏另一个组。
+以下脚本创建了这个对话框。它将之前示例中的"个人信息"和"工作信息"面板压缩到一个具有两个堆叠排列`Group`的`Panel`中。`DropDownList`允许用户选择要查看的信息集。当用户在列表中进行选择时，其`onChange`函数会显示一个组并隐藏另一个组。
 
 ```javascript
-var res =
+var res = "dialog { \
+ whichInfo: DropDownList { alignment:'left' }, \
+ allGroups: Panel { orientation:'stack', \
+ info: Group { orientation: 'column', \
+ name: Group { orientation: 'row', \
+ s: StaticText { text:'姓名:' }, \
+ e: EditText { characters: 30 } \
+ } \
+ }, \
+ workInfo: Group { orientation: 'column', \
+ name: Group { orientation: 'row', \
+ s: StaticText { text:'公司名称:' }, \
+ e: EditText { characters: 30 } \
+ } \
+ }, \
+ }, \
+ buttons: Group { orientation: 'row', alignment: 'right', \
+ okBtn: Button { text:'确定', properties:{name:'ok'} }, \
+ cancelBtn: Button { text:'取消', properties:{name:'cancel'} } \
+ } \
+}";
+
+win = new Window( res );
+win.whichInfo.onChange = function () {
+ if ( this.selection !== null ) {
+ for ( var g = 0; g < this.items.length; g++ ) {
+ this.items[ g ].group.visible = false; //隐藏所有其他组
+ }
+ this.selection.group.visible = true;//显示当前组
+ }
+};
+
+var item = win.whichInfo.add( "item", "个人信息" );
+item.group = win.allGroups.info;
+item = win.whichInfo.add( "item", "工作信息" );
+item.group = win.allGroups.workInfo;
+
+// TODO: 以下哪项是正确的或最佳的
+win.whichInfo.selection = win.whichInfo.items[ 0 ];
+win.whichInfo.selection = 0;
+
+win.center();
+win.show();
+```
+
+---
+
+## 自定义布局管理器示例
+
+这个脚本创建的对话框与上一个示例几乎相同，只是它定义了一个布局管理器子类，并将该类的实例分配为对话框中最后一个`Group`的layout属性。(此示例还演示了在JavaScript中定义可重用类的技术。)
+
+这个脚本定义的布局管理器以阶梯式排列容器中的元素，使按钮呈现交错排列而非直线排列。
+
+![自定义布局管理器示例](./_static/04_user-interface-tools_automatic-layout_custom-layoutmanager-example.jpg)
+
+```javascript
+// 定义一个自定义布局管理器，以阶梯式排列"container"的子元素
+function StairStepButtonLayout( container ) {
+ this.initSelf( container );
+}
+
+// 定义其"方法"函数
+function SSBL_initSelf( container ) {
+ this.container = container;
+}
+
+function SSBL_layout() {
+ var top = 0,
+ left = 0;
+ var width;
+ var vspacing = 10,
+ hspacing = 20;
+ for ( i = 0; i < this.container.children.length; i++ ) {
+ var child = this.container.children[ i ];
+
+ // 如果子元素是容器，调用其布局方法
+ if ( typeof child.layout !== "undefined" ) {
+ child.layout.layout();
+ }
+
+ child.size = child.preferredSize;
+ child.location = [ left, top ];
+ width = left + child.size.width;
+ top += child.size.height + vspacing;
+ left += hspacing;
+ }
+ this.container.preferredSize = [ width, top - vspacing ];
+}
+
+// 将方法附加到Object的原型
+StairStepButtonLayout.prototype.initSelf = SSBL_initSelf;
+StairStepButtonLayout.prototype.layout = SSBL_layout;
+
+// 定义包含控件资源规范的字符串
+var res = "dialog { \
+ whichInfo: DropDownList { alignment:'left' }, \
+ allGroups: Panel { orientation:'stack', \
+ info: Group { orientation: 'column', \
+ name: Group { orientation: 'row', \
+ s: StaticText { text:'姓名:' }, \
+ e: EditText { characters: 30 } \
+ } \
+ }, \
+ workInfo: Group { orientation: 'column', \
+ name: Group { orientation: 'row', \
+ s: StaticText { text:'公司名称:' }, \
+ e: EditText { characters: 30 } \
+ } \
+ }, \
+ }, \
+ buttons: Group { orientation: 'row', alignment: 'right', \
+ okBtn: Button { text:'确定', properties:{name:'ok'} }, \
+ cancelBtn: Button { text:'取消', properties:{name:'cancel'} } \
+ } \
+}";
+
+// 使用资源规范创建窗口
+win = new Window( res );
+
+// 创建列表项，选择第一项
+win.whichInfo.onChange = function() {
+ if ( this.selection !== null ) {
+ for ( var g = 0; g < this.items.length; g++ ) {
+ this.items[ g ].group.visible = false;
+ }
+ this.selection.group.visible = true;
+ }
+};
+var item = win.whichInfo.add( "item", "个人信息" );
+item.group = win.allGroups.info;
+item = win.whichInfo.add( "item", "工作信息" );
+item.group = win.allGroups.workInfo;
+
+win.whichInfo.selection = 0;
+
+// 用自定义布局管理器覆盖'buttons'组的默认布局管理器
+win.buttons.layout = new StairStepButtonLayout( win.buttons );
+win.center();
+win.show();
+```
+
+---
+
+## AutoLayoutManager算法
+
+当脚本创建Window对象及其元素并首次显示时，会创建可见的用户界面平台窗口和控件。此时，如果脚本没有指定控件的显式位置，所有控件都位于其容器内的[0, 0]位置，并具有默认尺寸。在窗口显示之前，会调用布局管理器的layout方法来为所有元素及其容器分配位置和大小。
+
+默认AutoLayoutManager的layout方法在Window对象的show方法首次调用时执行以下步骤：
+
+1. 读取受管容器的bounds属性；如果未定义，则继续自动布局。如果已定义，则假定脚本已显式放置此容器中的元素，并取消布局操作(如果同时设置了location和size属性，则相当于设置了bounds属性，布局不会继续)。
+2. 从容器的margins和spacing属性确定容器的边距和元素间距，从容器的orientation和alignChildren属性确定子元素的方向和对齐方式。如果任何属性未定义，则使用从平台和用户界面框架特定默认值获得的默认设置。
+3. 枚举子元素，并为每个子元素：
+
+- 如果子元素是容器，则调用其布局管理器(即为容器再次执行整个算法)。
+- 读取其alignment属性；如果已定义，则用其覆盖父容器通过alignChildren属性建立的默认对齐方式。
+- 读取其size属性：如果已定义，则使用它来确定子元素的尺寸。如果未定义，则读取其preferredSize属性以获取子元素的尺寸。忽略子元素的location属性。
+- 收集所有子元素信息以供后续使用。
+
+4. 根据方向，使用元素间距和容器的边距计算每行或每列中每个子元素的试验位置。
+5. 根据子元素的尺寸确定列、行或堆叠的尺寸。
+6. 使用每个子元素的期望对齐方式，相对于其容器边缘调整其试验位置。
+7. 为每个子元素设置bounds属性。
+8. 根据边距和子元素行或列的尺寸设置容器的preferredSize属性。
+
+---
+
+## 自动布局限制
+
+自动布局机制有以下限制：
+
+- 默认布局管理器不会尝试布局已定义`bounds`属性的容器。脚本程序员可以通过为容器定义自定义布局管理器来覆盖此行为。
+- 布局机制不会跟踪初始布局后元素大小的变化。脚本可以通过调用布局管理器的`layout`方法来启动另一个布局，并可以通过传递可选参数`true`来强制管理器重新计算所有子容器的大小。

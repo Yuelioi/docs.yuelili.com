@@ -470,10 +470,192 @@ Object
 
 ##### 描述
 
-使用给定的绘制笔描边路径的路径段。
+使用指定的绘图笔触绘制路径段。
 
 ##### 参数
 
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
-| `pen` | [ScriptUIPen 对象](#scriptuipen-object) | 定义颜色和线
+| `pen` | [ScriptUIPen 对象](#scriptuipen-object) | 定义颜色和线宽的 [ScriptUIPen 对象](#scriptuipen-object)。 |
+| `path` | [ScriptUIPath 对象](#scriptuipath-object) | 可选参数，指定路径的 [ScriptUIPath 对象](#scriptuipath-object)。若未提供，则操作当前路径（currentPath）。 |
+
+##### 返回值
+
+无
+
+---
+
+## ScriptUIBrush 对象
+
+辅助对象，封装了用于填充控件路径的画笔属性。通过 `ScriptUIGraphics` 对象的 `newBrush()` 方法创建。
+
+用作 `backgroundColor` 和 `disabledBackgroundColor` 的属性值。
+
+作为参数传递给 `fillPath()`。
+
+### ScriptUIBrush 对象属性
+
+该对象包含以下属性：
+
+| 属性 | 类型 | 描述 |
+|---|---|---|
+| `color` | 数值数组 | 当类型为 `SOLID_COLOR` 时使用的颜色值。格式为 [R, G, B, A] 的数组，指定颜色的红、绿、蓝分量和透明度（Alpha通道），数值范围 [0.0...1.0]。 |
+| | | 透明度为 0 表示完全透明，1 表示完全不透明。 |
+| `theme` | 字符串 | 当类型为 `THEME_COLOR` 时使用的颜色主题名称。主题颜色由宿主应用程序定义。 |
+| `type` | 数值 | 画笔类型，取以下常量之一： |
+| | | - `ScriptUIGraphics.BrushType.SOLID_COLOR` |
+| | | - `ScriptUIGraphics.BrushType.THEME_COLOR` |
+
+---
+
+## ScriptUIFont 对象
+
+辅助对象，封装了用于在控件中绘制文本的字体属性。通过 `ScriptUI` 类的 [`newFont()`](../scriptui-class#scriptuinewfont) 方法创建。
+
+用作 font 属性的值。
+
+作为参数传递给 [`drawString()`](#drawstring) 和 [`measureString()`](#measurestring)。
+
+### ScriptUIFont 对象属性
+
+该对象包含以下属性：
+
+| 属性 | 类型 | 描述 |
+|---|---|---|
+| `family` | 字符串 | 字体系列名称。 |
+| `name` | 字符串 | 完整的字体名称，包含家族和样式（如指定）。 |
+| `size` | 数值 | 字体磅值大小。 |
+| `style` | 对象 | 字体样式。取以下常量之一： |
+| | | - `ScriptUI.FontStyle.REGULAR` |
+| | | - `ScriptUI.FontStyle.BOLD` |
+| | | - `ScriptUI.FontStyle.ITALIC` |
+| | | - `ScriptUI.FontStyle.BOLDITALIC` |
+| `substitute` | 字符串 | 替代字体名称，当请求的字体系列或样式不可用时使用的回退字体。 |
+
+---
+
+## ScriptUIImage 对象
+
+辅助对象，封装了可绘制到控件中的一组图像。图像的不同版本可以反映控件状态，例如禁用状态的变暗版本。
+
+当脚本使用路径名或 File 对象设置 Image、IconButton 或 ListItem 对象的 image 属性时，会自动创建此类型的对象；该新对象将成为该属性的值。
+
+可以通过 `ScriptUI` 类的 [`newImage()`](../scriptui-class#scriptuinewimage) 方法显式创建此对象。此时可以指定用于不同控件状态（如启用、禁用和悬停）的图像替代版本。
+
+该对象作为参数传递给 [`drawImage()`](#drawimage)。
+
+### ScriptUIImage 对象属性
+
+该对象包含以下只读属性：
+
+| 属性 | 类型 | 描述 |
+| --- | --- | --- |
+| `format` | 字符串 | 图像格式。脚本可定义 `JPEG` 和 `PNG` 格式的图像。应用程序可定义 `resource` 格式的图像。 |
+| `name` | 字符串 | 图像名称，可以是文件名或资源名。 |
+| `pathname` | 字符串 | 包含图像的文件的完整路径。 |
+| `size` | Dimension | 定义图像像素尺寸的 Dimension 对象。 |
+
+---
+
+## ScriptUIPath 对象
+
+辅助对象，封装了要绘制到控件中的图形路径。通过 [`newPath()`](#newpath) 方法创建，并使用 `ScriptUIGraphics` 对象的 `moveto()`、`lineto()`、`rectPath()` 和 `ellipsePath()` 方法定义路径段。
+
+用作 currentPath 的值，由 [`closePath()`](#closepath) 和其他方法操作。
+
+可作为可选参数传递给 [`fillPath()`](#fillpath) 和 [`strokePath()`](#strokepath)（否则作用于 [`currentPath`](#currentpath)）。
+
+该类未定义任何属性或方法。
+
+---
+
+## ScriptUIPen 对象
+
+辅助对象，封装了用于描边控件路径段的画笔属性。通过 `ScriptUIGraphics` 对象的 [`newPen()`](#newpen) 方法创建。
+
+用作 [`foregroundColor`](#foregroundcolor) 和 [`disabledForegroundColor`](#disabledforegroundcolor) 的属性值。
+
+作为参数传递给 [`drawString()`](#drawstring) 和 [`strokePath()`](#strokepath)。
+
+### ScriptUIPen 对象属性
+
+该对象包含以下属性：
+
+| 属性 | 类型 | 描述 |
+|---|---|---|
+| `color` | 数值数组 | 当类型为 SOLID_COLOR 时使用的颜色值。格式为 [R, G, B, A] 的数组，指定颜色的红、绿、蓝分量和透明度（Alpha通道），数值范围 [0.0...1.0]。 |
+| | | 透明度为 0 表示完全透明，1 表示完全不透明。 |
+| `lineWidth` | 数值 | 绘制线条的像素宽度。 |
+| `theme` | 字符串 | 当类型为 `THEME_COLOR` 时用于绘制的颜色主题名称。主题颜色由宿主应用程序定义。 |
+| `type` | 数值 | 画笔类型，取以下常量之一： |
+| | | - `ScriptUIGraphics.PenType.SOLID_COLOR` |
+| | | - `ScriptUIGraphics.PenType.THEME_COLOR` |
+
+---
+
+## 自定义元素类
+
+Custom 类的元素与典型 UI 元素不同之处在于它们没有默认外观；创建自定义元素的脚本需要通过定义元素的 onDraw 事件处理函数来负责绘制它。这允许脚本为自定义元素创建任何可以通过 UI 元素的 graphics 对象定义的绘图函数呈现的外观。
+
+自定义元素具有与其他类型控件元素相同的公共属性（参见[公共属性](../common-properties)）。不同类型的自定义元素具有额外的属性。
+
+Custom 元素类包含以下类型的元素：
+
+| 元素 | 描述 | |
+|---|---|---|
+| `customBoundedValue` | 可用于实现其"值"可以在最小和最大范围内变化的控件，如 Progressbar、Slider 和 Scrollbar。具有与这些控件相同的附加属性： | |
+| | - `value` | |
+| | - `minvalue` | |
+| | - `maxvalue` | |
+| | - `shortcutKey` | |
+| | 如果 value 属性发生变化，控件会收到 onChange 事件通知，然后是 onDraw 事件通知，因此元素可以重新绘制自身以反映更改后的状态。 | |
+| `customButton` | 可用于实现各种类型的按钮控件，如 `Button`、带文本的 `IconButton`、`Checkbox` 等。附加属性包括： | |
+| | - `image` | |
+| | - `shortcutKey` | |
+| | - `text` | |
+| | - `value` | |
+| `customView` | 具有 `image` 属性，允许脚本定义要显示的图像。 | |
+| | 如果未定义 `onDraw` 函数且设置了 image 属性，则默认外观仅为指定的图像，在元素的边界范围内居中呈现。 | |
+
+当鼠标进入或离开元素占据的屏幕区域时，不会调用自定义元素的 onDraw 事件处理函数。
+
+如果在这种情况下需要强制更新绘图，则必须为元素调用 `notify("onDraw")`，以响应元素的 mouseover 或 mouseout 事件。
+
+在以下示例中，脚本通过在自定义按钮的 mouseover 或 mouseout 事件时处理这些事件，强制更新 customButton 元素的视觉外观：
+
+```javascript
+var res =
+"""palette {
+ text:'自定义元素演示',
+ properties:{ closeOnKey:'OSCmnd+W', resizeable:true },
+ customBtn: Custom {
+ type:'customButton',
+ text:'重绘原始图像'
+ },
+ customImageViewer: Custom {
+ type:'customView',
+ alignment:['fill','fill']
+ }
+}""";
+
+var w = new Window (res);
+w.customBtn.onDraw = drawButton;
+w.customBtn.addEventListener ("mouseover", btnMouseEventHandler, false);
+w.customBtn.addEventListener ("mouseout", btnMouseEventHandler, false);
+
+// ...
+
+function btnMouseEventHandler (event) {
+ try {
+ //
+ 在 mouseover 和 mouseout 时重绘按钮
+ event.target.notify("onDraw");
+ } catch (e) {
+ ...
+ }
+}
+
+function drawButton (drawingState) {
+ ...
+}
+```

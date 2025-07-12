@@ -136,37 +136,86 @@ typedef struct {
 | | - `kFileTypes_AudioVideo`: 音频和视频媒体 |
 | | - `kFileTypes_AllNoIntrinsics`: 所有可通过导入插件导入的媒体类型（不包括 prproj、txt 等） |
 
-### 时间轴函数
+### 时间线函数
 
 | 函数 | 描述 |
 |---|---|
-| `getClipVideo` | 已被 [剪辑渲染套件](../sweetpea-suites#clip-render-suite) 取代，后者提供异步导入。 |
-| | 从 [视频片段套件](../sweetpea-suites#video-segment-suite) 返回的片段树中检索剪辑中的一帧。 |
-| | 它可以用于检索和存储静止帧，例如标题，用于播放。 |
+| `getClipVideo` | 已被[Clip Render Suite](../sweetpea-suites#clip-render-suite)取代，后者提供异步导入功能。 |
+| | 从[Video Segment Suite](../sweetpea-suites#video-segment-suite)返回的片段树中获取剪辑帧。 |
+| | 可用于检索和存储静态帧（如标题）以供播放。 |
 | | !!! 警告 |
-| | 此调用开销较大；请谨慎使用。 |
-| | <pre lang="cpp">csSDK_int32 getClipVideo (<br/>  csSDK_int32  frame,<br/>  PPixHand   thePort,<br/>  prRect    \*bounds,<br/>  csSDK_int32  flags,<br/>  PrClipID   clipData);</pre> |
-| | - `frame`: 你请求的帧号 |
-| | - `thePort`: 使用 [PPix 创建器套件](../sweetpea-suites#ppix-creator-suite) 分配 |
+| | 此调用开销较大，请谨慎使用。 |
+| | <pre lang="cpp">csSDK_int32 getClipVideo (<br/>  csSDK_int32  帧号,<br/>  PPixHand    端口,<br/>  prRect      *边界,<br/>  csSDK_int32  标志,<br/>  PrClipID    剪辑数据);</pre> |
+| | - `frame`: 请求的帧号 |
+| | - `thePort`: 调用前使用[PPix Creator Suite](../sweetpea-suites#ppix-creator-suite)分配 |
 | | - `bounds`: 要返回的视频边界 |
-| | - `flags`: 要么是 `kGCVFlag_UseFilePixelAspectRatio` 要么是 0。设置为 `kGCVFlag_UseFilePixelAspectRatio` 将返回一个带有文件 PAR 的 PPix。设置为 0 将返回一个调整为项目 PAR 的 PPix，并相应地标记。它会缩放，但不会拉伸 PPix 以适应传入的目标 PPix。因此，如果目标 PPix 大于请求的帧，帧将保持其帧宽高比，用透明黑色填充帧。要以其原始尺寸导入帧，请使用 getClipVideoBounds，使用返回的尺寸分配目标 PPix，并将 PPixHand 和尺寸传递给 `getClipVideo`。如果帧尺寸与序列尺寸不同，帧必须由插件在合成中定位。 | |
-| | - `clipData`: 在 prtFileRec 中找到的 clipData 句柄 |
-| `getWorkArea` | 传递回两个 longs，表示当前工作区域的开始和结束（只读）。 |
-| | 将 timelineData 设置为当前序列的 timelineData。 |
-| | <pre lang="cpp">csSDK_int32 getWorkArea (<br/>  PrTimelineID  timelineData,<br/>  csSDK_int32   \*workAreaStart,<br/>  csSDK_int32   \*workAreaEnd);</pre> |
-| `getCurrentTimebase` | 传递回时间轴的当前时基（`scale + sampleSize`）。 |
-| | <pre lang="cpp">void getCurrentTimebase(<br/>  PrTimelineID  timelineData,<br/>  csSDK_uint32  \*scale,<br/>  csSDK_int32   \*sampleSize);</pre> |
-| | - `timelineData`: 当前序列的 timelineData |
+| | - `flags`: 使用`kGCVFlag_UseFilePixelAspectRatio`或0。设为`kGCVFlag_UseFilePixelAspectRatio`将返回带有文件PAR标记的PPix。设为0将返回调整为项目PAR的PPix并相应标记。它会缩放但不会拉伸PPix以适应传入的目标PPix。 |
+| | - `clipData`: prtFileRec中的clipData句柄 |
+| `getWorkArea` | 返回当前工作区的开始和结束位置（只读）。 |
+| | 将timelineData设置为当前序列的timelineData。 |
+| | <pre lang="cpp">csSDK_int32 getWorkArea (<br/>  PrTimelineID  时间线数据,<br/>  csSDK_int32   *工作区开始,<br/>  csSDK_int32   *工作区结束);</pre> |
+| `getCurrentTimebase` | 返回时间线的当前时基（`scale + sampleSize`）。 |
+| | <pre lang="cpp">void getCurrentTimebase(<br/>  PrTimelineID  时间线数据,<br/>  csSDK_uint32  *比例,<br/>  csSDK_int32   *采样大小);</pre> |
+| | - `timelineData`: 当前序列的时间线数据 |
 | | - `scale`: 序列比例 |
-| | - `sampleSize`: 序列样本大小 |
-| `getCurrentPos` | 返回当前时间指示器的位置（用户设置的位置栏）。 |
-| | 如果返回 (-1)，时间轴中的位置栏不存在。 |
-| | <pre lang="cpp">csSDK_int32 getCurrentPos(<br/>  PrTimelineID  timelineData);</pre> |
-| | - `timelineData`: 当前序列的 timelineData |
-| `getPreviewFrameEx` | 从时间轴获取完全渲染的帧（所有层）。 |
-| | 用于视频滤镜和过渡在模态设置对话框中的预览。 |
-| | 如果返回值为 -1，则发生错误，但如果为 0，则回调已安全返回。 |
-| | 导出器渲染最终电影时不应使用此回调。 |
-| | <pre lang="cpp">csSDK_int32 getPreviewFrameEx(<br/>  PrTimelineID    timelineData,<br/>  csSDK_int32   inFrame,<br/>  PPixHand\*   outRenderedFrame,<br/>  const prRect\*   inFrameRect,<br/>  PrPixelFormat\*  inRequestedPixelFormatArray,<br/>  csSDK_int32   inRequestedPixelFormatArrayCount,<br/>  csSDK_uint32    inPixelAspectRatioNumerator,<br/>  csSDK_uint32    inPixelAspectRatioDenominator,<br/>  bool   inAlwaysRender);</pre> |
-| | - `timelineData`: 当前序列的 timelineData。传递 EffectRecord、VideoRecord、compDoCompileInfo 或 imGetPrefsRec 中提供的时间轴句柄。 |
-| | - `inFrame`: 要获取的帧
+| | - `sampleSize`: 序列采样大小 |
+| `getCurrentPos` | 返回当前时间指示器的位置（用户设置的位置条）。 |
+| | 如果返回-1，表示时间线中不存在位置条。 |
+| | <pre lang="cpp">csSDK_int32 getCurrentPos(<br/>  PrTimelineID  时间线数据);</pre> |
+| | - `timelineData`: 当前序列的时间线数据 |
+| `getPreviewFrameEx` | 从时间线获取完全渲染的帧（所有层）。 |
+| | 用于视频滤镜和转场在模态设置对话框中的预览。 |
+| | 如果返回值为-1表示出错，0表示回调安全返回。 |
+| | 最终影片渲染导出器不应使用此回调。 |
+| | <pre lang="cpp">csSDK_int32 getPreviewFrameEx(<br/>  PrTimelineID    时间线数据,<br/>  csSDK_int32     输入帧,<br/>  PPixHand*       输出渲染帧,<br/>  const prRect*   输入帧矩形,<br/>  PrPixelFormat*  请求的像素格式数组,<br/>  csSDK_int32     请求的像素格式数组计数,<br/>  csSDK_uint32    像素宽高比分子,<br/>  csSDK_uint32    像素宽高比分母,<br/>  bool            始终渲染);</pre> |
+| `getClipVideoBounds` | 返回序列中剪辑的尺寸。对于滚动/爬行标题，请改用Roll/Crawl Suite获取尺寸。 |
+| | <pre lang="cpp">csSDK_int32 getClipVideoBounds (<br/>  PrClipID      输入剪辑数据,<br/>  prRect        *输出边界,<br/>  csSDK_uint32  *输出像素宽高比分子,<br/>  csSDK_uint32  *输出像素宽高比分母);</pre> |
+| `getClipVideoEx` | 已被[Clip Render Suite](../sweetpea-suites#clip-render-suite)取代，后者提供异步导入功能。 |
+| | 从[Video Segment Suite](../sweetpea-suites#video-segment-suite)返回的片段树中获取剪辑帧。 |
+| | 可用于检索和存储静态帧（如标题）以供播放。 |
+| | !!! 警告 |
+| | 此调用开销较大，请谨慎使用。 |
+| | <pre lang="cpp">csSDK_int32 getClipVideoEx (<br/>  csSDK_int32         输入帧,<br/>  PPixHand            *输出渲染帧,<br/>  const prRect        *输入帧矩形,<br/>  const PrPixelFormat *请求的像素格式数组,<br/>  csSDK_int32         请求的像素格式数组计数,<br/>  csSDK_uint32        像素宽高比分子,<br/>  csSDK_uint32        像素宽高比分母,<br/>  PrClipID            输入剪辑数据);</pre> |
+
+---
+
+## 瓶颈函数
+
+传统瓶颈函数指针仅传递给转场和视频滤镜。
+
+这些函数不向其他插件类型公开。
+
+这些函数不支持不同像素格式，仅用于8位BGRA处理。
+
+示例用法：
+
+```cpp
+((*theData)->bottleNecks->StretchBits) (*srcpix,
+ *dstpix,
+ &srcbox,
+ &srcbox,
+ 0,
+ NULL);
+```
+
+| 函数 | 描述 |
+| --- | --- |
+| `StretchBits` | 拉伸并复制图像（包括alpha通道）。 |
+| | 当目标大于源时，执行双线性插值以实现平滑缩放。 |
+| | <pre lang="cpp">void StretchBits (<br/>  PPixHand  源PPix,<br/>  PPixHand  目标PPix,<br/>  prRect    源矩形,<br/>  prRect    目标矩形,<br/>  int       模式,<br/>  prRgn     区域);</pre> |
+| | 仅适用于8位PPix。 |
+| | `srcRect`是要复制的源PPix区域；`dstRect`用于缩放副本。 |
+| | 有效模式：`cbBlend`、`cbInterp`和`cbMaskHdl` |
+| `DistortPolygon` | 将源矩形映射到目标中的四点多边形。 |
+| | <pre lang="cpp">void DistortPolygon (<br/>  PPixHand  源,<br/>  PPixHand  目标,<br/>  prRect    *源框,<br/>  prPoint   *目标点);</pre> |
+| `MapPolygon` | 将四点源多边形映射到四点目标多边形。 |
+| | 如果源多边形是矩形，则等同于`DistortPolygon`。 |
+| | <pre lang="cpp">void MapPolygon (<br/>  PPixHand  源,<br/>  PPixHand  目标,<br/>  prPoint   *源点,<br/>  prPoint   *目标点);</pre> |
+| `DistortFixed` | 使用定点坐标的DistortPolygon等效函数。 |
+| | <pre lang="cpp">void DistortFixed (<br/>  PPixHand   源,<br/>  PPixHand   目标,<br/>  prRect     *源框,<br/>  LongPoint  *目标点);</pre> |
+| `FixedToFixed` | 使用定点坐标的MapPolygon等效函数。 |
+| | <pre lang="cpp">void FixedToFixed (<br/>  PPixHand   源,<br/>  PPixHand   目标,<br/>  LongPoint  *源点,<br/>  LongPoint  *目标点);</pre> |
+| `DoIndexMap` | 图像映射函数。 |
+| | <pre lang="cpp">void DoIndexMap (<br/>  char    *源,<br/>  char    *目标,<br/>  short   行,<br/>  short,  像素宽度,<br/>  short,  高度,<br/>  char    *查找表1,<br/>  char    *查找表2,<br/>  char    *查找表3);</pre> |
+| `DoConvolve` | 卷积函数。 |
+| | <pre lang="cpp">void DoConvolve (<br/>  unsigned char  *源,<br/>  unsigned char  *目标,<br/>  short          *矩阵,<br/>  short,         行字节数,<br/>  short,         宽度,<br/>  short,         高度);</pre> |

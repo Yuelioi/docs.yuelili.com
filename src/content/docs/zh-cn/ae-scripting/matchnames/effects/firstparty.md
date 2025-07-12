@@ -224,8 +224,250 @@ title: 第一方
 
 ## 键控
 
-| 匹配名称 | 显示名称 (中文) | BPC | GPU |
+| 匹配名称 | 显示名称(英文) | BPC | GPU |
 | --- | --- | --- | --- |
-| `ADBE Spill2` | 高级溢出抑制器 | 32 | |
-| `CC Simple Wire Removal` | CC 简单电线移除 | 32 | |
-| `ADBE Color Difference Key` |
+| `ADBE Spill2` | 高级溢色抑制器 | 32 | |
+| `CC Simple Wire Removal` | CC简单去线工具 | 32 | |
+| `ADBE Color Difference Key` | 色差键控 | 16 | |
+| `ADBE Color Range` | 颜色范围 | 8 | |
+| `ADBE Difference Matte2` | 差异蒙版 | 16 | |
+| `ADBE Extract` | 提取 | 16 | |
+| `ADBE ATG Extract` | 内外键控 | 16 | |
+| `ADBE KeyCleaner` | 键控清理 | 32 | |
+| `Keylight 906` | Keylight (1.2版) | 32 | |
+| `ADBE Linear Color Key2` | 线性颜色键控 | 32 | |
+
+---
+
+## 蒙版
+
+| 匹配名称 | 显示名称(英文) | BPC | GPU |
+| --- | --- | --- | --- |
+| `ADBE Matte Choker` | 蒙版收缩 | 16 | |
+| `ISL MochaShapeImporter` | mocha形状 | 32 | |
+| `ADBE RefineRBMatte` | 优化硬边蒙版 | 32 | |
+| `ADBE RefineMatte2` | 优化柔边蒙版 | 32 | |
+| `ADBE Simple Choker` | 简单收缩 | 32 | |
+
+---
+
+## 噪波与颗粒
+
+| 匹配名称 | 显示名称(英文) | BPC | GPU |
+| --- | --- | --- | --- |
+| `VISINF Grain Implant` | 添加颗粒 | 16 | |
+| `ADBE Dust & Scratches` | 灰尘与划痕 | 16 | |
+| `ADBE Fractal Noise` | 分形噪波 | 32 | 14.2 |
+| `VISINF Grain Duplication` | 匹配颗粒 | 16 | |
+| `ADBE Median` | 中间值 | 16 | |
+| `ADBE Noise` | 噪波 | 32 | |
+| `ADBE Noise Alpha2` | Alpha噪波 | 8 | |
+| `ADBE Noise HLS2` | HLS噪波 | 8 | |
+| `ADBE Noise HLS Auto2` | HLS自动噪波 | 8 | |
+| `VISINF Grain Removal` | 去除颗粒 | 16 | |
+| `ADBE AIF Perlin Noise 3D` | 湍流噪波 | 32 | |
+
+---
+
+## 过时效果
+
+| 匹配名称 | 显示名称(英文) | BPC | GPU |
+| --- | --- | --- | --- |
+| `ADBE Basic 3D` | 基本3D | 8 | |
+| `ADBE Basic Text2` | 基本文字 | 8 | |
+| `ADBE Color Key` | 颜色键控 | 16 | |
+| `ADBE Fast Blur` | 快速模糊(旧版) | 32 | |
+| `ADBE Gaussian Blur` | 高斯模糊(旧版) | 32 | |
+| `ADBE Lightning` | 闪电 | 8 | |
+| `ADBE Luma Key` | 亮度键控 | 16 | |
+| `ADBE Path Text` | 路径文字 | 8 | |
+| `ADBE Reduce Interlace Flicker` | 减少隔行闪烁 | 32 | |
+| `ADBE Spill Suppressor` | 溢色抑制器 | 32 | |
+
+---
+
+## 透视
+
+| 匹配名称 | 显示名称(英文) | BPC | GPU |
+| --- | --- | --- | --- |
+| `ADBE 3D Tracker` | 3D摄像机跟踪器 | 32 | |
+| `ADBE 3D Glasses2` | 3D眼镜 | 32 | |
+| `ADBE Bevel Alpha` | Alpha斜角 | 16 | |
+| `ADBE Bevel Edges` | 边缘斜角 | 8 | |
+| `CC Cylinder` | CC圆柱体 | 16 | |
+| `CC Environment` | CC环境 | 32 | |
+| `CC Sphere` | CC球体 | 32 | |
+| `CC Spotlight` | CC聚光灯 | 16 | |
+| `ADBE Drop Shadow` | 投影 | 32 | 14.2 |
+| `ADBE Radial Shadow` | 径向阴影 | 8 | |
+
+---
+
+## 模拟
+
+| 匹配名称 | 显示名称(英文) | BPC | GPU |
+| --- | --- | --- | --- |
+| `APC CardDanceCam` | 卡片舞蹈 | 8 | |
+| `APC Caustics` | 焦散 | 8 | |
+| `CC Ball Action` | CC球体运动 | 16 | |
+| `CC Bubbles` | CC气泡 | 32 | |
+| `CC Drizzle` | CC细雨 | 32 | |
+| `CC Hair` | CC毛发 | 16 | |
+| `CC Mr. Mercury` | CC水银先生 | 32 | |
+| `CC Particle Systems II` | CC粒子系统II | 32 | |
+| `CC Particle World` | CC粒子世界 | 16 | |
+| `CC Pixel Polly` | CC像素破碎 | 16 | |
+| `CSRainfall` | CC降雨 | 32 | |
+| `CC Scatterize` | CC散射 | 16 | |
+| `CSSnowfall` | CC降雪 | 32 | |
+| `CC Star Burst` | CC星爆 | 16 | |
+| `APC Foam` | 泡沫 | 8 | |
+| `ADBE Playgnd` | 粒子游乐场 | 8 | |
+| `APC Shatter` | 破碎 | 8 | |
+| `APC Wave World` | 波形世界 | 8 | |
+
+---
+
+## 风格化
+
+| 匹配名称 | 显示名称(英文) | BPC | GPU |
+| --- | --- | --- | --- |
+| `ADBE Brush Strokes` | 画笔描边 | 8 | |
+| `ADBE Cartoonify` | 卡通 | 32 | |
+| `CS BlockLoad` | CC块加载 | 32 | |
+| `CC Burn Film` | CC胶片烧录 | 32 | |
+| `CC Glass` | CC玻璃 | 16 | |
+| `CS HexTile` | CC六边形 | 32 | |
+| `CC Kaleida` | CC万花筒 | 32 | |
+| `CC Mr. Smoothie` | CC平滑先生 | 16 | |
+| `CC Plastic` | CC塑料 | 16 | |
+| `CC RepeTile` | CC重复拼贴 | 32 | |
+| `CC Threshold` | CC阈值 | 32 | |
+| `CC Threshold RGB` | CC RGB阈值 | 32 | |
+| `CS Vignette` | CC暗角 | 32 | |
+| `ADBE Color Emboss` | 彩色浮雕 | 16 | |
+| `ADBE Emboss` | 浮雕 | 16 | |
+| `ADBE Find Edges` | 查找边缘 | 8 | 14.1 |
+| `ADBE Glo2` | 发光 | 32 | 14.1 |
+| `ADBE Mosaic` | 马赛克 | 16 | |
+| `ADBE Tile` | 运动拼贴 | 8 | |
+| `ADBE Posterize` | 色调分离 | 32 | |
+| `ADBE Roughen Edges` | 边缘粗糙化 | 8 | |
+| `ADBE Scatter` | 散射 | 16 | |
+| `ADBE Strobe` | 闪光灯 | 8 | |
+| `ADBE Texturize` | 纹理化 | 8 | |
+| `ADBE Threshold2` | 阈值 | 32 | |
+
+---
+
+## Synthetic Aperture
+
+| 匹配名称 | 显示名称(英文) | BPC | GPU |
+| --- | --- | --- | --- |
+| `SYNTHAP CF Color Finesse 2` | SA Color Finesse 3 | 32 | |
+
+---
+
+## 文字
+
+| 匹配名称 | 显示名称(英文) | BPC | GPU |
+| --- | --- | --- | --- |
+| `ADBE Numbers2` | 数字 | 8 | |
+| `ADBE Timecode` | 时间码 | 8 | |
+
+---
+
+## 时间
+
+| 匹配名称 | 显示名称(英文) | BPC | GPU |
+| --- | --- | --- | --- |
+| `CC Force Motion Blur` | CC强制运动模糊 | 32 | |
+| `CC Wide Time` | CC宽时间 | 32 | |
+| `ADBE Echo` | 回声 | 32 | |
+| `ADBE OFMotionBlur` | 像素运动模糊 | 32 | |
+| `ADBE Posterize Time` | 时间分离 | 32 | |
+| `ADBE Difference` | 时间差异 | 8 | |
+| `ADBE Time Displacement` | 时间置换 | 16 | |
+| `ADBE Timewarp` | 时间扭曲 | 32 | |
+
+---
+
+## 过渡
+
+| 匹配名称 | 显示名称(英文) | BPC | GPU |
+| --- | --- | --- | --- |
+| `ADBE Block Dissolve` | 块溶解 | 16 | |
+| `APC CardWipeCam` | 卡片擦除 | 8 | |
+| `CC Glass Wipe` | CC玻璃擦除 | 16 | |
+| `CC Grid Wipe` | CC网格擦除 | 32 | |
+| `CC Image Wipe` | CC图像擦除 | 16 | |
+| `CC Jaws` | CC锯齿 | 32 | |
+| `CC Light Wipe` | CC光线擦除 | 16 | |
+| `CS LineSweep` | CC线条扫描 | 32 | |
+| `CC Radial ScaleWipe` | CC径向缩放擦除 | 16 | |
+| `CC Scale Wipe` | CC缩放擦除 | 32 | |
+| `CC Twister` | CC扭曲 | 16 | |
+| `CC WarpoMatic` | CC自动变形 | 16 | |
+| `ADBE Gradient Wipe` | 渐变擦除 | 16 | |
+| `ADBE IRIS_WIPE` | 光圈擦除 | 32 | |
+| `ADBE Linear Wipe` | 线性擦除 | 32 | |
+| `ADBE Radial Wipe` | 径向擦除 | 32 | |
+| `ADBE Venetian Blinds` | 百叶窗 | 32 | |
+
+---
+
+## 实用工具
+
+| 匹配名称 | 显示名称(英文) | BPC | GPU |
+| --- | --- | --- | --- |
+| `ADBE Apply Color LUT2` | 应用颜色LUT | 32 | |
+| `CC Overbrights` | CC过亮 | 32 | |
+| `ADBE Cineon Converter2` | Cineon转换器 | 32 | |
+| `ADBE ProfileToProfile` | 颜色配置文件转换器 | 32 | |
+| `ADBE GROW BOUNDS` | 扩展边界 | 32 | |
+| `ADBE Compander` | HDR压缩扩展器 | 32 | |
+| `ADBE HDR ToneMap` | HDR高光压缩 | 32 | |
+
+---
+
+## _过时效果
+
+| 匹配名称 | 显示名称(英文) | BPC | GPU |
+| --- | --- | --- | --- |
+| `ADBE Paint` | 绘画 | | |
+| `ADBE Samurai` | Roto笔刷和优化边缘 | | |
+| `ADBE FreePin3` | 操控 | | |
+| `ADBE RefineMatte` | 优化蒙版 | | |
+| `ADBE 3D Glasses` | 3D眼镜(过时) | | |
+| `ADBE Alpha Levels2` | Alpha色阶 | | |
+| `ADBE Alpha Levels3` | Alpha色阶 | | |
+| `ADBE Apply Color LUT` | 应用颜色LUT | | |
+| `ADBE Brightness & Contrast` | 亮度和对比度 | | |
+| `ADBE Box Blur` | 方框模糊 | | |
+| `ADBE Cineon Converter` | Cineon转换器 | | |
+| `ADBE Color Balance` | 色彩平衡 | | |
+| `CC PS Classic` | CC PS经典(过时) | | |
+| `CC PS LE Classic` | CC PS LE经典(过时) | | |
+| `CC Rain` | CC雨 | | |
+| `CC Snow` | CC雪 | | |
+| `CC Time Blend` | CC时间混合 | | |
+| `CC Time Blend FX` | CC时间混合FX | | |
+| `ADBE Exposure` | 曝光 | | |
+| `ADBE Easy Levels` | 色阶 | | |
+| `ADBE Pro Levels` | 色阶(单独控制) | | |
+| `ADBE Noise Alpha` | Alpha噪波 | | |
+| `ADBE Noise HLS` | HLS噪波 | | |
+| `ADBE Noise HLS Auto` | HLS自动噪波 | | |
+| `ADBE PSL Bevel Emboss` | Photoshop斜面和浮雕 | | |
+| `ADBE PSL Drop Shadow` | Photoshop投影 | | |
+| `ADBE PSL Inner Glow` | Photoshop内发光 | | |
+| `ADBE PSL Inner Shadow` | Photoshop内阴影 | | |
+| `ADBE PSL Outer Glow` | Photoshop外发光 | | |
+| `ADBE PSL Solid Fill` | Photoshop纯色填充 | | |
+| `ADBE Photo Filter` | 照片滤镜 | | |
+| `ADBE Set Matte2` | 设置蒙版 | | |
+| `ADBE Three-Way Color Corrector` | 三向颜色校正器 | | |
+| `ADBE Threshold` | 阈值 | | |
+| `ADBE Geometry` | 变换 | | |
+| `ADBE Unsharp Mask` | 非锐化蒙版 | | |
+| `ADBE Vector Paint` | 矢量绘画 | | |

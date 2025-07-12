@@ -1173,3 +1173,614 @@ URI 字符串。
 ---
 
 #### XMPMeta.insertArrayItem()
+
+`XMPMetaObj.insertArrayItem(schemaNS, arrayName, itemIndex, itemValue[, itemOptions])`
+
+##### 描述
+
+在数组中现有项之前插入一个新项。所有后续项的索引位置都会递增。数组必须已存在。
+
+##### 参数
+
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | 命名空间URI字符串。参见[模式命名空间字符串常量](#schema-namespace-string-constants)。 | |
+| `arrayName` | 字符串 | 数组类型属性名称字符串。可以是通用路径表达式。 |
+| `itemIndex` | 数字 | 插入新项的1-based位置索引。使用`XMPConst.ARRAY_LAST_ITEM`引用数组中的最后一个现有项。 |
+| `itemValue` | 字符串 | 新项值。对于没有值的数组项，传递`null`。 |
+| `itemOptions` | 数字 | 可选。描述新项的标志，如果正在创建。可选值： |
+| | | - `0`：简单项，默认值。 |
+| | | - `XMPConst.PROP_IS_ARRAY`：该项是一个数组（alt、bag或seq类型）。 |
+| | | - `XMPConst.PROP_IS_STRUCT`：该项是具有嵌套字段的结构。 |
+
+##### 返回值
+
+无
+
+---
+
+#### XMPMeta.iterator()
+
+`XMPMetaObj.iterator(options, schemaNS, propName)`
+
+##### 描述
+
+创建一个迭代对象，可以迭代此元数据中的属性、数组和限定符。指定选项、命名空间和属性以限制结果项的范围和粒度。
+
+##### 参数
+
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `options` | 这些位标志常量的逻辑OR： | 控制迭代方式和返回值的一组选项。 |
+| | - `XMPConst.ITERATOR_JUST_CHILDREN` - 将迭代限制为根属性的直接子项。默认情况下，迭代进入子树。 | |
+| | - `XMPConst.ITERATOR_JUST_LEAFNODES` - 将迭代限制为叶节点。默认情况下，迭代进入子树的所有节点。 | |
+| | - `XMPConst.ITERATOR_JUST_LEAFNAMES` - 仅返回路径的叶部分。默认情况下，返回完整路径。 | |
+| | - `XMPConst.ITERATOR_INCLUDE_ALIASES` - 包括别名。默认情况下，仅考虑实际属性。 | |
+| | - `XMPConst.ITERATOR_OMIT_QUALIFIERS` - 从迭代中省略限定符。 | |
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| `propName` | 字符串 | 数组类型属性名称字符串。可以是通用路径表达式。 |
+
+##### 返回值
+
+此元数据对象的[XMPIterator对象](#xmpiterator-object)。
+
+---
+
+#### XMPMeta.serialize()
+
+`XMPMetaObj.serialize([options, padding, indent, newline, baseIndent])`
+
+##### 描述
+
+将此XMP元数据序列化为RDF格式的字符串。
+
+##### 参数
+
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `options` | 可选。这些位标志常量的逻辑OR： | 控制序列化方式的一组选项。选项必须逻辑一致；如果冲突，函数将抛出异常。 |
+| | - `XMPConst.SERIALIZE_OMIT_PACKET_WRAPPER` - 不包含XML包包装器。 | |
+| | - `XMPConst.SERIALIZE_READ_ONLY_PACKET` - 创建只读XML包包装器。 | |
+| | - `XMPConst.SERIALIZE_USE_COMPACT_FORMAT` - 使用高度紧凑的RDF语法和布局。 | |
+| | - `XMPConst.SERIALIZE_USE_PLAIN_XMP` - 序列化为纯XMP（当前不支持）。 | |
+| | - `XMPConst.SERIALIZE_INCLUDE_THUMBNAIL_PAD` - 如果不存在xmp:Thumbnail属性，则在填充中包含JPEG缩略图的典型空间。 | |
+| | - `XMPConst.SERIALIZE_EXACT_PACKET_LENGTH` - 计算填充以满足padding参数提供的总包长度。如果未填充的包超过此长度，则抛出异常。 | |
+| | - `XMPConst.SERIALIZE_WRITE_ALIAS_COMMENTS` - 包含别名的XML注释。 | |
+| `padding` | 数字 | 可选。 |
+| | | - 如果选项值为`SERIALIZE_EXACT_PACKET_LENGTH`，则这是包的确切长度，包括为满足此长度而添加的填充字符。 |
+| | | - 如果选项值不是`SERIALIZE_EXACT_PACKET_LENGTH`，则这是要添加的填充字符数。 |
+| | | - 默认值为`0`，表示使用适当的填充量。 |
+| `indent` | 字符串 | 可选。用作缩进的字符串。默认为两个空格。 |
+| `newline` | 字符串 | 可选。使用的新行字符。默认为`U+000A`。 |
+| `baseIndent` | 数字 | 可选。最外层XML元素的缩进级别。默认为`0`。 |
+
+##### 返回值
+
+字符串
+
+---
+
+#### XMPMeta.serializeToArray()
+
+`XMPMetaObj.serializeToArray([options, padding, indent, newline, baseIndent])`
+
+##### 描述
+
+将此XMP元数据序列化为RDF格式的字符串，然后将其转换为一个字节数值数组，即UTF-8或UTF-16编码的字符。
+
+##### 参数
+
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `options` | 这些位标志常量的逻辑OR： | 可选。控制序列化方式的一组选项。选项必须逻辑一致；如果冲突，函数将抛出异常。 |
+| | - `XMPConst.SERIALIZE_OMIT_PACKET_WRAPPER` - 不包含XML包包装器。 | |
+| | - `XMPConst.SERIALIZE_READ_ONLY_PACKET` - 创建只读XML包包装器。 | |
+| | - `XMPConst.SERIALIZE_USE_COMPACT_FORMAT` - 使用高度紧凑的RDF语法和布局。 | |
+| | - `XMPConst.SERIALIZE_USE_PLAIN_XMP` - 序列化为纯XMP（当前不支持）。 | |
+| | - `XMPConst.SERIALIZE_INCLUDE_THUMBNAIL_PAD` - 如果不存在xmp:Thumbnail属性，则在填充中包含JPEG缩略图的典型空间。 | |
+| | - `XMPConst.SERIALIZE_EXACT_PACKET_LENGTH` - 计算填充以满足padding参数提供的总包长度。如果未填充的包超过此长度，则抛出异常。 | |
+| | - `XMPConst.SERIALIZE_WRITE_ALIAS_COMMENTS` - 包含别名的XML注释。 | |
+| `padding` | 数字 | 可选。 |
+| | | - 如果选项值为`SERIALIZE_EXACT_PACKET_LENGTH`，则这是包的确切长度，包括为满足此长度而添加的填充字符。 |
+| | | - 如果选项值不是`SERIALIZE_EXACT_PACKET_LENGTH`，则这是要添加的填充字符数。 |
+| | | - 默认值为`0`，表示使用适当的填充量。 |
+| `indent` | 字符串 | 可选。用作缩进的字符串。默认为两个空格。 |
+| `newline` | 字符串 | 可选。使用的新行字符。默认为`U+000A`。 |
+| `baseIndent` | 数字 | 可选。最外层XML元素的缩进级别。默认为`0`。 |
+
+##### 返回值
+
+数字数组
+
+---
+
+#### XMPMeta.setArrayItem()
+
+`XMPMetaObj.setArrayItem(schemaNS, arrayName, itemIndex, itemValue[, itemOptions])`
+
+##### 描述
+
+替换数组中的项或追加项。数组必须已存在。要创建项，优先使用[appendArrayItem()](#xmpmetaappendarrayitem)和[insertArrayItem()](#xmpmetainsertarrayitem)。
+
+##### 参数
+
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| `arrayName` | 字符串 | 数组类型属性名称字符串。可以是通用路径表达式。 |
+| `itemIndex` | 数字 | 插入新项的1-based位置索引。使用`XMPConst.ARRAY_LAST_ITEM`替换数组中的最后一个现有项。 |
+| `itemValue` | 字符串 | 新项值字符串。对于没有值的数组项，传递`null`。 |
+| `itemOptions` | 描述新项的标志，如果正在创建。可选值： | 可选 |
+| | - `0`：简单项，默认值。 | |
+| | - `XMPConst.PROP_IS_ARRAY`：该项是一个数组（alt、bag或seq类型）。 | |
+| | - `XMPConst.PROP_IS_STRUCT`：该项是具有嵌套字段的结构。 | |
+
+##### 返回值
+
+无
+
+---
+
+#### XMPMeta.setLocalizedText()
+
+`XMPMetaObj.setLocalizedText(schemaNS, altTextName, genericLang, specificLang, itemValue, setOptions)`
+
+##### 描述
+
+为替代文本数组中的特定语言设置文本值。处理x-default项的特殊情况。
+
+##### 参数
+
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| `altTextName` | 字符串 | 替代文本数组的名称字符串。可以是通用路径表达式。 |
+| `genericLang` | 字符串 | 通用语言的名称，作为RFC 3066主要子标签。可以为null或空字符串。 |
+| `specificLang` | 字符串 | 特定语言的名称，作为RFC 3066主要子标签；例如en-US。必须指定。 |
+| `itemValue` | 字符串 | 新字符串值。 |
+| `setOptions` | 未知 | 未使用。 |
+
+##### 返回值
+
+无
+
+---
+
+#### XMPMeta.setStructField()
+
+`XMPMetaObj.setStructField(schemaNS, structName, fieldNS, fieldName, fieldValue[, options])`
+
+##### 描述
+
+设置结构类型属性中字段的值，如果命名字段在结构中不存在则创建新字段，如果命名结构不存在则创建包含命名字段的新结构。
+
+##### 参数
+
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| `structName` | 字符串 | 现有结构的名称字符串。可以是通用路径表达式。 |
+| `fieldNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 字段类型命名空间字符串。 |
+| `fieldName` | 字符串 | 字段名称字符串。必须是简单的XML名称。 |
+| `fieldValue` | 字符串 | 新字段值字符串。对于没有值的字段，传递null。 |
+| `options` | 描述新结构的选项标志。可选值： | 可选。仅在创建结构时使用。 |
+| | - `0` - 简单项，默认值。 | |
+| | - `XMPConst.PROP_IS_ARRAY` - 该项是一个数组（alt、bag或seq类型）。 | |
+| | - `XMPConst.PROP_IS_STRUCT` - 该项是具有嵌套字段的结构。 | |
+
+##### 返回值
+
+无
+
+---
+
+#### XMPMeta.setQualifier()
+
+`XMPMetaObj.setQualifier(schemaNS, propName, qualNS, qualName, qualValue[, options])`
+
+##### 描述
+
+将新限定符附加到元数据属性。限定符可以添加到简单属性、数组项、结构字段或其他限定符。
+
+##### 参数
+
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| `propName` | 字符串 | 现有属性的名称字符串。可以是通用路径表达式。 |
+| `qualNS` | 字符串 | 限定符命名空间的URI。与模式命名空间具有相同的URI和前缀用法。 |
+| `qualName` | 字符串 | 限定符的名称。必须是简单的XML名称。与属性名称具有相同的前缀用法。 |
+| `qualValue` | 字符串 | 新限定符值字符串。对于没有值的限定符，传递null。 |
+| `options` | 描述限定符的选项标志。可选值： | 可选。仅在创建限定符时使用。 |
+| | - `0` - 简单项，默认值。 | |
+| | - `XMPConst.PROP_IS_ARRAY` - 该项是一个数组（alt、bag或seq类型）。 | |
+| | - `XMPConst.PROP_IS_STRUCT` - 该项是具有嵌套字段的结构。 | |
+
+##### 返回值
+
+无
+
+---
+
+#### XMPMeta.setProperty()
+
+`XMPMetaObj.setProperty(schemaNS, propName, propValue[, setOptions, valueType])`
+
+##### 描述
+
+设置简单元数据属性的值，必要时创建属性，或创建新的数组或结构属性。对于创建数组和结构属性，优先使用[setArrayItem()](#xmpmetasetarrayitem)和[setStructField()](#xmpmetasetstructfield)。使用此调用创建或设置顶级简单属性，或在[XMPUtils对象](#xmputils-object)中使用路径组合函数后使用。
+
+##### 参数
+
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间URI字符串。 |
+| `propName` | 字符串 | 属性名称字符串。可以是通用路径表达式。 |
+| `propValue` | 字符串 | 新属性值字符串。传递null以创建数组或非叶级结构属性。 |
+| `setOptions` | 简单值属性。其他常量值： | 可选。如果命名属性不存在，则创建属性的类型。默认为`0`。 |
+| | - `0` - 简单项，默认值。 | |
+| | - `XMPConst.PROP_IS_ARRAY` - 该项是一个数组（alt、bag或seq类型）。 | |
+| | - `XMPConst.PROP_IS_STRUCT` - 该项是具有嵌套字段的结构。 | |
+| `valueType` | 属性数据类型。可选值： | 可选。如果提供，则将值转换为此类型。 |
+| | - `XMPConst.STRING` | |
+| | - `XMPConst.INTEGER` | |
+| | - `XMPConst.NUMBER` | |
+| | - `XMPConst.BOOLEAN` | |
+| | - `XMPConst.XMPDATE` | |
+
+##### 返回值
+
+无
+
+---
+
+#### XMPMeta.sort()
+
+`XMPMetaObj.sort()`
+
+##### 描述
+
+按字母顺序对XMP内容进行排序。
+
+- 在顶层，按前缀对命名空间进行排序。
+- 在命名空间内，按名称对顶级属性进行排序。
+- 在结构中，按限定名称（即XML `prefix:local`形式）对字段进行排序。
+- 按值对简单项的无序数组进行排序。
+- 按`xml:lang`限定符对语言替代数组进行排序，将`"x-default"`项放在首位。
+
+##### 返回值
+
+无
+
+---
+
+## XMPPacketInfo 对象
+
+此对象由[XMPFile.getPacketInfo()](#xmpfilegetpacketinfo)返回。只读属性描述了由[XMPFile对象](#xmpfile-object)表示的文件中的XMP包。
+
+---
+
+### XMPPacketInfo 对象属性
+
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `charForm` | 数字 | 包中的字符编码，可选值： |
+| | | - `0` - UTF8 |
+| | | - `2` - UTF-16，MSB优先（大端序） |
+| | | - `3` - UTF-16，LSB优先（小端序） |
+| | | - `4` - UTF 32，MSB优先（大端序） |
+| | | - `5` - UTF 32，LSB优先（小端序） |
+| `length` | 数字 | 包的字节长度。 |
+| `offset` | 数字 | 包在文件中开始的字节偏移量。 |
+| `packet` | 字符串 | 原始包数据。 |
+| `padSize` | 数字 | 包的填充大小（字节），如果未知则为0。 |
+| `writeable` | 布尔值 | 如果为`true`，则包可写。 |
+
+---
+
+## XMPProperty 对象
+
+此对象由[XMPMeta对象](#xmpfile-object)的各种属性访问器函数返回，例如[getProperty](#xmpmetagetproperty)。只读属性描述了元数据属性。
+
+---
+
+### XMPProperty 对象属性
+
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| locale | 字符串 | 属性值的语言。此值由[getLocalizedText()](#xmpmetagetlocalizedtext)调用设置，如果找到适当的项，则分配所选替代文本项的语言。 |
+| namespace | 字符串 | 属性的命名空间；参见[模式命名空间字符串常量](#schema-namespace-string-constants)。通常在浏览元数据时使用[XMPIterator对象](#xmpiterator-object)。 |
+| options | 数字 | 描述属性类型的常量，简单属性为0。常量包括： |
+| | | - `XMPConst.PROP_IS_ARRAY` - 属性是数组（alt、bag或seq类型）。 |
+| | | - `XMPConst.PROP_IS_STRUCT` - 属性是具有嵌套字段的结构。 |
+| path | 字符串 | 属性路径，包括属性名称。对于简单属性，整个路径就是属性名称。 |
+| value | 变体 | 属性的值（如果有）。数组和非叶级结构没有值。 |
+
+---
+
+## XMPUtils 对象
+
+此类为 XMP 工具包提供额外实用功能，构建在 [XMPMeta 对象](#xmpmeta-object)功能之上。仅包含静态函数，无法创建实例。
+
+路径组合函数如 [composeArrayItemPath()](#xmputilscomposearrayitempath)，支持构建深层嵌套属性的路径表达式，这些表达式可传递给 XMPMeta 对象的访问函数，如 xmpmetaobj-getProperty。
+
+高级函数如 xmputils-duplicateSubtree 允许操作 XMPMeta 对象中的元数据树。
+
+---
+
+### XMPUtils 类函数
+
+#### XMPUtils.appendProperties()
+
+`XMPUtils.appendProperties(source, dest, options)`
+
+##### 说明
+
+从源 XMPMeta 对象复制属性并追加到目标 XMPMeta 对象。
+
+##### 参数
+
+| 参数 | 类型 | 说明 |
+|---|---|---|
+| `source` | [XMPMeta 对象](#xmpmeta-object) | 源 XMPMeta 对象 |
+| `dest` | [XMPMeta 对象](#xmpmeta-object) | 目标 XMPMeta 对象 |
+| `options` | 这些位标志常量的逻辑或： | 控制复制操作的选项标志。默认为 `0` |
+| | - `XMPConst.APPEND_ALL_PROPERTIES` - 包含内部和外部属性。默认仅复制外部属性。仅适用于顶层属性 | |
+| | - `XMPConst.APPEND_REPLACE_OLD_VALUES` - 用源对象值替换现有属性值。默认保留现有值。适用于所有层级属性 | |
+| | - `XMPConst.APPEND_DELETE_EMPTY_VALUES` - 若新值为空则删除属性 | |
+
+##### 返回值
+
+无
+
+---
+
+#### XMPUtils.catenateArrayItems()
+
+`XMPUtils.catenateArrayItems(xmpObj, schemaNS, arrayName, separator, quotes, options)`
+
+##### 说明
+
+将数组项值连接为单个字符串。结果字符串可使用 [separateArrayItems()](#xmputilsseparatearrayitems) 重新拆分为数组项。
+
+##### 参数
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| `xmpObj` | [XMPMeta 对象](#xmpmeta-object) | 包含数组的 XMPMeta 对象 |
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间 URI 字符串 |
+| `arrayName` | 字符串 | 数组属性名称字符串。可为通用路径表达式。数组每项须为简单字符串值 |
+| `separator` | 字符串 | 结果字符串中分隔项的分隔符。默认为 '; '（ASCII 分号和空格 U+003B,U+0020） |
+| `quotes` | 字符串 | 用于引用包含分隔符的项的字符。默认为 '"'（ASCII 双引号 U+0022） |
+| `options` | 常量值 | 控制连接的选项标志。常量值 `XMPConst.SEPARATE_ALLOW_COMMAS` - 允许项值中包含逗号（如"姓,名"）。此选项需在本函数和[separateArrayItems()](#xmputilsseparatearrayitems)中保持一致以正确重建项。默认为 `0` |
+
+##### 返回值
+
+字符串
+
+---
+
+#### XMPUtils.composeArrayItemPath()
+
+`XMPUtils.composeArrayItemPath(schemaNS, arrayName, itemIndex)`
+
+##### 说明
+
+创建并返回数组项的路径表达式字符串，使用命名空间注册前缀，格式为：
+
+```javascript
+schemaNS:arrayName[itemIndex]
+```
+
+##### 参数
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间 URI 字符串 |
+| `arrayName` | 字符串 | 数组属性名称字符串。可为通用路径表达式 |
+| `itemIndex` | 数字 | 项的1基位置索引。使用 `XMPConst.ARRAY_LAST_ITEM` 引用数组最后一项，此时结果为 `ns:arrayName[last()]` |
+
+##### 返回值
+
+字符串
+
+---
+
+#### XMPUtils.composeFieldSelector()
+
+`XMPUtils.composeFieldSelector(schemaNS, arrayName, fieldNS, fieldName, fieldValue)`
+
+##### 说明
+
+创建并返回通过字段值选择替代项的路径表达式字符串，使用命名空间注册前缀，格式为：
+
+```javascript
+schemaNS:arrayName[fieldNS:fieldName="fieldValue"]
+```
+
+##### 参数
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间 URI 字符串 |
+| `arrayName` | 字符串 | 数组属性名称字符串。可为通用路径表达式 |
+| `fieldNS` | 字符串 | 字段命名空间 URI 字符串 |
+| `fieldName` | 字符串 | 字段名称。须为简单 XML 名称 |
+| `fieldValue` | 任意 | 所需字段值 |
+
+##### 返回值
+
+字符串
+
+---
+
+#### XMPUtils.composeLanguageSelector()
+
+`XMPUtils.composeLanguageSelector(schemaNS, arrayName, locale)`
+
+##### 说明
+
+创建并返回通过语言选择替代文本数组项的路径表达式字符串，使用命名空间注册前缀，格式为：
+
+```javascript
+schemaNS:arrayName[@xml:lang="langName"]
+```
+
+:::注意
+
+这些函数提供额外逻辑来选择适当语言并与x-default值保持一致。本函数提供显式语言的路径表达式，且仅针对该语言。
+:::
+
+##### 参数
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间 URI 字符串 |
+| `arrayName` | 字符串 | 数组属性名称字符串。可为通用路径表达式 |
+| `locale` | 字符串 | 所需语言的 RFC3066 语言代码字符串 |
+
+##### 返回值
+
+字符串
+
+---
+
+#### XMPUtils.composeStructFieldPath()
+
+`XMPUtils.composeStructFieldPath(schemaNS, structName, fieldNS, fieldName)`
+
+##### 说明
+
+创建并返回结构字段的路径表达式字符串，使用命名空间注册前缀，格式为：
+
+```javascript
+schemaNS:structName/fieldNS:fieldName
+```
+
+##### 参数
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间 URI 字符串 |
+| `structName` | 字符串 | 结构属性名称字符串。可为通用路径表达式 |
+| `fieldNS` | 字符串 | 字段命名空间 URI 字符串 |
+| `fieldName` | 字符串 | 字段名称。须为简单 XML 名称 |
+
+##### 返回值
+
+字符串
+
+---
+
+#### XMPUtils.composeQualifierPath()
+
+`XMPUtils.composeQualifierPath(schemaNS, propName, qualNS, qualName)`
+
+##### 说明
+
+创建并返回属性限定符的路径表达式字符串，使用命名空间注册前缀，格式为：
+
+```javascript
+schemaNS:propName/?qualNS:qualName
+```
+
+##### 参数
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 命名空间 URI 字符串 |
+| `propName` | 字符串 | 属性名称字符串。可为通用路径表达式 |
+| `qualNS` | 字符串 | 限定符命名空间 URI 字符串 |
+| `qualName` | 字符串 | 限定符名称。须为简单 XML 名称 |
+
+##### 返回值
+
+字符串
+
+---
+
+#### XMPUtils.duplicateSubtree()
+
+`XMPUtils.duplicateSubtree(source, dest, sourceNS, sourceRoot, destNS, destRoot, options)`
+
+##### 说明
+
+从源 [XMPMeta 对象](#xmpmeta-object)复制指定子树属性到目标 [XMPMeta 对象](#xmpmeta-object)。
+
+##### 参数
+
+| 参数 | 类型 | 说明 |
+|---|---|---|
+| `source` | [XMPMeta 对象](#xmpmeta-object) | 源 XMPMeta 对象 |
+| `dest` | [XMPMeta 对象](#xmpmeta-object) | 目标 XMPMeta 对象 |
+| `sourceNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 源命名空间 URI 字符串 |
+| `sourceRoot` | 字符串 | 源子树根位置的属性名称字符串。可为通用路径表达式 |
+| `destNS` | [模式命名空间字符串常量](#schema-namespace-string-constants) | 目标命名空间 URI 字符串 |
+| `destRoot` | 字符串 | 可选。目标子树根位置的属性名称字符串。可为通用路径表达式。默认为源根位置 |
+| `options` | 这些位标志常量的逻辑或： | 控制复制操作的选项标志。默认为 `0` |
+| | | - `XMPConst.APPEND_ALL_PROPERTIES` - 包含内部和外部属性。默认仅复制外部属性。仅适用于顶层属性 |
+| | | - `XMPConst.APPEND_REPLACE_OLD_VALUES` - 用源对象值替换现有属性值。默认保留现有值。适用于所有层级属性 |
+| | | - `XMPConst.APPEND_DELETE_EMPTY_VALUES` - 若新值为空则删除属性 |
+
+##### 返回值
+
+无
+
+---
+
+#### XMPUtils.removeProperties()
+
+`XMPUtils.removeProperties(xmpObj, schemaNS, propName, options)`
+
+##### 说明
+
+从 [XMPMeta 对象](#xmpmeta-object)移除多个属性。
+
+若同时提供命名空间和属性名称，移除外部属性（即使是别名）。若为内部属性，则需指定选项 `XMPConst.REMOVE_ALL_PROPERTIES` 才会移除。
+
+若仅提供命名空间，移除该命名空间所有外部属性，可选移除所有内部属性。仅当指定 `XMPConst.REMOVE_INCLUDE_ALIASES` 时移除别名。
+
+若均未提供，移除所有外部属性，可选移除所有内部属性。别名会隐式处理，因为关联的实际属性会被移除。
+
+##### 参数
+
+| 参数 | 类型 | 说明 |
+|---|---|---|
+| `xmpObj` | [XMPMeta 对象](#xmpmeta-object) | 要移除属性的对象 |
+| `schemaNS` | [模式命名空间字符串常量](#schema-namespace-string-constants)。可选 | 命名空间 URI 字符串。若提供属性名称则必须提供 |
+| `propName` | 字符串 | 可选。属性名称字符串。可为通用路径表达式 |
+| `options` | 这些位标志常量的逻辑或： | 控制删除操作的选项标志。默认为 `0` |
+| | | - `XMPConst.REMOVE_ALL_PROPERTIES` - 移除内部和外部属性。默认仅移除外部属性。仅适用于顶层属性 |
+| | | - `XMPConst.REMOVE_INCLUDE_ALIASES` - 移除命名空间中定义的别名。若提供属性名称则无视此选项 |
+
+##### 返回值
+
+无
+
+---
+
+#### XMPUtils.separateArrayItems()
+
+`XMPUtils.separateArrayItems(xmpObj, schemaNS, arrayName, arrayOptions, concatString)`
+
+##### 说明
+
+从 [catenateArrayItems()](#xmputilscatenatearrayitems) 返回的连接字符串更新 XMPMeta 对象中的单独数组项字符串。可识别多种分隔符，包括分号、逗号、制表符、回车、换行和多个空格。
+
+##### 参数
+
+| 参数 | 类型 | 说明 |
+|---|---|---|
+| `xmpObj` | [XMPMeta 对象](#xmpmeta-object) | 要分离项的对象 |
+| `schemaNS` | 命名空间 URI 字符串。参见[模式命名空间字符串常量](#schema-namespace-string-constants) | |
+| `arrayName` | 字符串 | 数组属性名称字符串。可为通用路径表达式。数组每项须为简单字符串值 |
+| `arrayOptions` | 这些位标志常量的逻辑或： | 控制如何从分离字符串更新数组属性的选项标志。默认为 `0` |
+| | - `XMPConst.APPEND_ALL_PROPERTIES` - 包含内部和外部属性。默认仅复制外部属性。仅适用于顶层属性 | |
+| | - `XMPConst.APPEND_REPLACE_OLD_VALUES` - 用源对象值替换现有属性值。默认保留现有值。适用于所有层级属性 | |
+| | - `XMPConst.APPEND_DELETE_EMPTY_VALUES` - 若新值为空则删除属性 | |
+| | - `XMPConst.SEPARATE_ALLOW_COMMAS` - 允许项值中包含逗号。若未指定，包含逗号的项（如"姓,名"）会被拆分为两个数组项 | |
+| `concatString` | 字符串 | 包含连接数组值的字符串，由 [catenateArrayItems()](#xmputilscatenatearrayitems) 返回 |
+
+##### 返回值
+
+无

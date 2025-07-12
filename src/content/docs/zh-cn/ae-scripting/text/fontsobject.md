@@ -239,10 +239,10 @@ alert(variableFontList.length);
 
 - `SubstitutedFontReplacementMatchPolicy.POSTSCRIPT_NAME` 是默认值；任何具有相同 PostScript 名称的 [Font 对象](../fontobject) 都是替代 [Font 对象](../fontobject) 的有效候选者。
 - `SubstitutedFontReplacementMatchPolicy.CTFI_EQUAL` 要求替代 [Font 对象](../fontobject) 的以下属性必须匹配才能被视为有效候选者：
- - [postScriptName](../fontobject#fontobjectpostscriptname)
- - [technology](../fontobject#fontobjecttechnology)
- - [writingScripts](../fontobject#fontobjectwritingscripts)（主要）
- - [designVector](../fontobject#fontobjectdesignvector)
+- [postScriptName](../fontobject#fontobjectpostscriptname)
+- [technology](../fontobject#fontobjecttechnology)
+- [writingScripts](../fontobject#fontobjectwritingscripts)（主要）
+- [designVector](../fontobject#fontobjectdesignvector)
 - `SubstitutedFontReplacementMatchPolicy.DISABLED` 表示没有 [Font 对象](../fontobject) 是替代 [Font 对象](../fontobject) 的可接受替换。
 
 ---
@@ -390,8 +390,102 @@ alert(fontList.length);
 
 #### 描述
 
-此函数将基于之前找到的字体的 PostScript 名称返回一个 [Font 对象](../fontobject) 数组。
+此函数将根据已发现字体的PostScript名称返回一个[字体对象](../fontobject)数组。
 
-完全允许多个 [Font 对象](../fontobject) 共享相同的 PostScript 名称，这些字体的顺序由它们在字体环境中的枚举顺序决定。`[0]` 处的条目将在设置 [TextDocument.fontObject](../textdocument#textdocumentfontobject) 属性时使用。
+多个[字体对象](../fontobject)共享相同PostScript名称是完全有效的，它们的顺序由字体环境中枚举的顺序决定。当设置[TextDocument.fontObject](../textdocument#textdocumentfontobject)属性时，将使用索引`[0]`处的条目。
 
-此外，此 API 对于可变字体有一个特殊属性。如果找不到与请求的 Post
+此外，此API对于可变字体有一个特殊属性。如果找不到与请求的PostScript名称匹配的[字体对象](../fontobject)，但发现存在与请求的PostScript名称前缀匹配的可变字体，则会请求此可变字体实例创建一个匹配的[字体对象](../fontobject)。这是唯一会返回调用此方法之前不存在的实例的情况。
+
+如果找不到匹配的字体，将返回一个空数组。
+
+```javascript
+var fontList = app.fonts.getFontsByPostScriptName("Abolition")
+alert(fontList.length);
+```
+
+#### 参数
+
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| postscriptName | 字符串 | 字体的PostScript名称。 |
+
+#### 返回值
+
+[字体对象](../fontobject)数组；只读。
+
+---
+
+### FontsObject.pollForAndPushNonSystemFontFoldersChanges()
+
+`app.fonts.pollForAndPushNonSystemFontFoldersChanges()`
+
+:::note
+此功能在After Effects 24.6版本中添加
+:::
+
+#### 描述
+
+在*系统字体文件夹*中添加和删除字体文件会被自动识别和处理，无需用户干预来更新字体环境。非系统字体文件夹不会自动处理，因此在这些文件夹中添加和删除字体文件直到After Effects重启后才会被识别。
+
+此函数将触发对已知非系统字体文件夹的检查，如果识别到有更改，将安排异步更新字体环境来处理此更改。
+
+After Effects已知的非系统字体文件夹如下：
+
+```text
+Windows: <系统驱动器>:\Program Files\Common Files\Adobe\Fonts
+
+Mac: /Library/Application Support/Adobe/Fonts
+```
+
+#### 返回值
+
+布尔值；以下之一：
+
+- `false` 如果未发现字体环境的更改。
+- `true` 如果检测到字体环境的更改并安排了异步更新来处理它。此状态将在更新处理后清除，此时[FontsObject.fontServerRevision](#fontsobjectfontserverrevision)将返回一个递增的值。
+
+—
+
+### FontsObject.setDefaultFontForCTScript()
+
+`app.fonts.setDefaultFontForCTScript(ctScript, font)`
+
+:::note
+此功能在After Effects (Beta) 25.0版本中添加，在Beta期间可能会发生变化。
+:::
+
+#### 描述
+
+此函数将根据`CTScript`参数设置一个[字体对象](../fontobject)实例的映射。
+
+After Effects在输入或应用字体时使用这些映射，当发现字体不包含给定字符的字形时。在这种情况下，它会尝试将字符映射到`CTScript`值，然后使用此默认映射选择一个可能有该字符字形的替代字体。
+
+可变字体不能作为默认字体，会导致抛出异常。
+
+指定的字体不需要包含映射到`CTScript`的任何或所有字符的字形。
+
+此机制也用于脚本中的文本和字体，从而提供一种方式来暴露哪些字体将用于哪些`CTScript`值（参见[FontsObject.getDefaultFontForCTScript()](#fontsobjectgetdefaultfontforctscript)）。
+
+分配给`CTScript.CT_ROMAN_SCRIPT`的字体是在重置字符样式后用于重新初始化字符面板的字体。
+
+要将特定`CTScript`的默认值重置为应用程序启动时的值，只需传入`null`。
+
+```javascript
+var font = app.fonts.getFontsByPostScriptName("MyriadPro-Regular")[0];
+var ret = app.fonts.setDefaultFontForCTScript(CTScript.CT_ROMAN_SCRIPT, font);
+alert("set:" + ret);
+```
+
+#### 参数
+
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `ctScript` | `CTScript` 枚举 | 要映射字体的CTScript |
+| `font` | [字体对象](../fontobject) | 要映射的字体。如果为`null`，则重置当前映射。 |
+
+#### 返回值
+
+布尔值；以下之一：
+
+- `false` 如果指定的映射与当前映射相同。
+- `true` 如果指定的映射与当前映射不同。

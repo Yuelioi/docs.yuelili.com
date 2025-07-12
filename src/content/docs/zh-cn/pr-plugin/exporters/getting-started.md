@@ -39,13 +39,13 @@ title: 入门指南
 
 从 CS6 开始，导出器可以使用新的推送模型或传统的拉取模型来获取帧。新的推送模型从 CS6 开始支持，而拉取模型仍然支持。
 
-### 推送模型
+## 推送模型
 
 使用推送模型，导出器主机可以简单地将帧推送到导出器指定的线程安全回调中。使用 [Exporter Utility Suite](../suites#exporter-utility-suite) 中的 DoMultiPassExportLoop 注册回调。
 
 与拉取模型相比，这将减少以前所需的渲染循环管理代码。对于尚未优化多线程渲染的导出器，它还应该带来显著的性能提升。
 
-### 拉取模型
+## 拉取模型
 
 使用拉取模型获取视频和音频数据涉及向主机请求此数据。使用 [Sequence Render Suite](../suites#sequence-render-suite) 获取单个视频帧，并使用 [Sequence Audio Suite](../suites#sequence-audio-suite) 获取音频样本的缓冲区。
 

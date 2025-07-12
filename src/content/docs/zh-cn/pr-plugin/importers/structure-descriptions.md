@@ -396,6 +396,82 @@ typedef struct {
 
 ---
 
+## imFileInfoRec8
+
+选择器: [imGetInfo8](../selector-descriptions#imgetinfo8)
+
+描述剪辑或具有streamIdx ID的流。从文件头或数据源设置剪辑或流的属性。创建并存储任何私有数据(privateData)。
+
+当创建合成剪辑时，如果用户在"新建合成"对话框中提供了所需的分辨率、帧率、像素宽高比和音频采样率，这些值将由Premiere预先初始化。
+
+如果导入立体素材，streamID 0对应左眼视频通道，streamID 1对应右眼视频通道。
+
+```cpp
+typedef struct {
+ char hasVideo;
+ char hasAudio;
+ imImageInfoRec vidInfo;
+ csSDK_int32 vidScale;
+ csSDK_int32 vidSampleSize;
+ csSDK_int32 vidDuration;
+ imAudioInfoRec7 audInfo;
+ PrAudioSample audDuration;
+ csSDK_int32 accessModes;
+ void *privatedata;
+ void *prefs;
+ char hasDataRate;
+ csSDK_int32 streamIdx;
+ char streamsAsComp;
+ prUTF16Char streamName[256];
+ csSDK_int32 sessionPluginID;
+ char alwaysUnquiet;
+ char unused;
+ prUTF16Char filePath[2048];
+ char canProvidePeakData;
+ char mayBeGrowing;
+} imFileInfoRec8;
+```
+
+| 成员 | 描述 |
+|---|---|
+| `hasVideo` | 非零表示文件包含视频 |
+| `hasAudio` | 非零表示文件包含音频 |
+| `vidInfo` | 如果文件有视频，填写`imImageInfoRec`结构(如高度、宽度、alpha信息等) |
+| `vidScale` | 视频帧率，表示为scale/sampleSize |
+| `vidSampleSize` | |
+| `vidDuration` | 视频总帧数，以视频时基表示 |
+| `audInfo` | 如果文件有音频，填写imAudioInfoRec7结构 |
+| `audDuration` | 音频采样帧总数 |
+| `accessModes` | 文件访问模式，使用以下常量之一: |
+| | - `kRandomAccessImport` - 可随机访问读取(默认) |
+| | - `kSequentialAudioOnly` - 访问音频时仅允许顺序读取(用于可变比特率文件) |
+| | - `kSequentialVideoOnly` - 访问视频时仅允许顺序读取 |
+| | - `kSequentialOnly` - 音频和视频都需顺序访问 |
+| | - `kSeparateSequentialAudio` - 同时支持随机访问和顺序访问 |
+| | 此设置允许在音频匹配期间仍能获取音频进行擦洗或播放 |
+| `privatedata` | 私有实例数据 |
+| | 使用Premiere的内存函数分配句柄并存储在此处 |
+| | Premiere将在后续选择器中返回该句柄 |
+| `prefs` | 从`imGetPrefs8`(设置对话框信息)收集的剪辑源设置数据 |
+| | 当使用"文件>新建"创建合成剪辑时，`imGetPrefs8`会在`imGetInfo8`之前发送，因此此设置结构将已有效 |
+| `hasDataRate` | 如果设置，导入器可以读取或生成此文件的数据率信息，并将发送`imDataRateAnalysis` |
+| `streamIdx` | Premiere指定的流索引号 |
+| | 仅在剪辑使用多流时有意义 |
+| `streamsAsComp` | 如果是多流且这是流0，指示是否作为合成导入或多个剪辑导入 |
+| `streamName` | 可选。多流时此流的Unicode名称 |
+| | Premiere Pro 3.1新增，导入器可基于元数据而非文件名设置剪辑名称 |
+| | 导入器应将`imImportInfoRec.canSupplyMetadataClipName`设为true，并在此填写名称 |
+| `sessionPluginID` | 此ID应用于[文件注册套件](../../universals/sweetpea-suites#file-registration-suite)注册外部文件(如纹理、徽标等)，这些文件被导入器实例使用但不会作为素材出现在项目窗口中 |
+| | 使用项目管理器修剪或复制项目时会考虑已注册文件 |
+| | `sessionPluginID`仅在传递它的调用中有效 |
+| `alwaysUnquiet` | 设为非零告诉Premiere当应用程序重新获得焦点时是否应立即取消静音该剪辑 |
+| `filepath` | Premiere Pro 4.1新增。对于音频与视频文件分离的剪辑，在此设置文件名，以便在将序列导出为AAF时能正确生成UMID |
+| `canProvidePeakData` | Premiere Pro CS6新增。允许导入器按剪辑切换是否提供峰值音频数据 |
+| | 默认为`imImportInfoRec.canProvidePeakAudio`中的设置 |
+| | !!! 警告 |
+| | 不要在增长文件中使用此设置 |
+| `mayBeGrowing` | Premiere Pro CS6.0.2新增。如果此剪辑正在增长且应按媒体首选项中设置的间隔刷新，则设为非零 |
+
 ## imFileOpenRec8
 
 选择器: [imOpenFile8](../selector-descriptions#imopenfile8)

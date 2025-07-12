@@ -973,18 +973,18 @@ var isFauxBold = myTextLayer.sourceText.value.fauxBold;
 `textDocument.horizontalScale`
 
 :::note
-此功能在 After Effects 13.2 (CC 2014.2) 版本中新增
+此功能在 After Effects 13.2 (CC 2014.2) 版本中添加
 :::
 
 #### 描述
 
-文本图层的水平缩放比例（像素单位）。
+文本图层水平缩放比例（以像素为单位）。
 
 :::warning
-该值仅反映文本图层中第一个字符的设置
+该值仅反映文本图层中的第一个字符。
 :::
 
-修改此值会将文本图层中所有字符设置为指定缩放比例。
+修改此值将会把文本图层中所有字符设置为指定值。
 
 #### 类型
 
@@ -995,3 +995,754 @@ var isFauxBold = myTextLayer.sourceText.value.fauxBold;
 ```javascript
 var valOfHScale = myTextLayer.sourceText.value.horizontalScale;
 ```
+
+---
+
+### TextDocument.justification
+
+`textDocument.justification`
+
+#### 描述
+
+文本图层的段落对齐方式。
+
+#### 类型
+
+`ParagraphJustification`枚举值；可读写。可选值包括：
+
+- `ParagraphJustification.LEFT_JUSTIFY`（左对齐）
+- `ParagraphJustification.RIGHT_JUSTIFY`（右对齐）
+- `ParagraphJustification.CENTER_JUSTIFY`（居中对齐）
+- `ParagraphJustification.FULL_JUSTIFY_LASTLINE_LEFT`（两端对齐最后行左对齐）
+- `ParagraphJustification.FULL_JUSTIFY_LASTLINE_RIGHT`（两端对齐最后行右对齐）
+- `ParagraphJustification.FULL_JUSTIFY_LASTLINE_CENTER`（两端对齐最后行居中对齐）
+- `ParagraphJustification.FULL_JUSTIFY_LASTLINE_FULL`（两端对齐最后行两端对齐）
+- `ParagraphJustification.MULTIPLE_JUSTIFICATIONS`（多重对齐方式）
+
+若文本图层包含混合对齐方式，将返回`ParagraphJustification.MULTIPLE_JUSTIFICATIONS`。
+
+尝试将TextDocument设置为`ParagraphJustification.MULTIPLE_JUSTIFICATIONS`时实际会应用`ParagraphJustification.CENTER_JUSTIFY`。
+
+:::warning
+该值反映文本图层中的所有段落。
+:::
+
+修改此值将会把文本图层中所有段落设置为指定对齐方式。
+
+---
+
+### TextDocument.kerning
+
+`textDocument.kerning`
+
+:::note
+此功能在 After Effects 24.0 版本中添加
+:::
+
+#### 描述
+
+文本图层的字距调整选项。
+
+对于`AutoKernType.METRIC_KERN`和`AutoKernType.OPTICAL_KERN`将返回零。
+
+设置此值同时会将受影响字符的`AutoKernType.NO_AUTO_KERN`设为`true`。
+
+:::warning
+该值仅反映文本图层中的第一个字符。
+:::
+
+修改此值将会把文本图层中所有字符设置为指定值。
+
+#### 类型
+
+整数值；可读写。
+
+---
+
+### TextDocument.leading
+
+`textDocument.leading`
+
+:::note
+此功能在 After Effects 14.2 (CC 2017.1) 版本中添加
+:::
+
+#### 描述
+
+文本图层的行间距。
+
+若[TextDocument.autoLeading](#textdocumentautoleading)为`true`则返回零。
+
+设置此值同时会将受影响字符的[TextDocument.autoLeading](#textdocumentautoleading)设为`true`。
+
+:::warning
+该值仅反映文本图层中的第一个字符。
+:::
+
+修改此值将会把文本图层中所有字符设置为指定值。
+
+最小可设置值为0，但会被自动调整为0.01。
+
+#### 类型
+
+浮点数值；可读写。
+
+#### 示例
+
+```javascript
+// 创建文本图层并设置行间距为100
+
+var composition = app.project.activeItem;
+var myTextLayer = comp.layers.addText("Spring\nSummer\nAutumn\nWinter");
+var myTextSource = myTextLayer.sourceText;
+var myTextDocument = myTextSource.value;
+myTextDocument.leading = 100;
+myTextSource.setValue(myTextDocument);
+```
+
+---
+
+### TextDocument.leadingType
+
+`textDocument.leadingType`
+
+:::note
+此功能在 After Effects 24.0 版本中添加
+:::
+
+#### 描述
+
+文本图层的段落行距类型选项。
+
+若该属性存在混合值，将返回`undefined`。
+
+:::warning
+该值反映文本图层中的所有段落。
+:::
+
+修改此值将会把文本图层中所有段落设置为指定值。
+
+#### 类型
+
+`LeadingType`枚举值；可读写。可选值包括：
+
+- `LeadingType.ROMAN_LEADING_TYPE`（罗马行距）
+- `LeadingType.JAPANESE_LEADING_TYPE`（日文行距）
+
+---
+
+### TextDocument.ligature
+
+`textDocument.ligature`
+
+:::note
+此功能在 After Effects 24.0 版本中添加
+:::
+
+#### 描述
+
+文本图层的连字选项。
+
+:::warning
+该值仅反映文本图层中的第一个字符。
+:::
+
+修改此值将会把文本图层中所有字符设置为指定值。
+
+#### 类型
+
+布尔值；可读写。
+
+---
+
+### TextDocument.lineJoinType
+
+`textDocument.lineJoinType`
+
+:::note
+此功能在 After Effects 24.0 版本中添加
+:::
+
+#### 描述
+
+文本图层描边的线段连接类型选项。
+
+:::warning
+该值仅反映文本图层中的第一个字符。
+:::
+
+修改此值将会把文本图层中所有字符设置为指定值。
+
+#### 类型
+
+`LineJoinType`枚举值；可读写。可选值包括：
+
+- `LineJoinType.LINE_JOIN_MITER`（尖角连接）
+- `LineJoinType.LINE_JOIN_ROUND`（圆角连接）
+- `LineJoinType.LINE_JOIN_BEVEL`（斜切连接）
+
+---
+
+### TextDocument.lineOrientation
+
+`textDocument.lineOrientation`
+
+:::note
+此功能在 After Effects 24.2 版本中添加
+:::
+
+#### 描述
+
+文本图层的行方向（水平/垂直），影响图层中所有文字的排版方式。
+
+#### 类型
+
+`LineOrientation`枚举值；可读写。可选值包括：
+
+- `LineOrientation.HORIZONTAL`（水平方向）
+- `LineOrientation.VERTICAL_RIGHT_TO_LEFT`（垂直方向从右到左）
+- `LineOrientation.VERTICAL_LEFT_TO_RIGHT`（垂直方向从左到右）
+
+---
+
+### TextDocument.noBreak
+
+`textDocument.noBreak`
+
+:::note
+此功能在 After Effects 24.0 版本中添加
+:::
+
+#### 描述
+
+文本图层的不断行属性。
+
+:::warning
+该值仅反映文本图层中的第一个字符。
+:::
+
+修改此值将会把文本图层中所有字符设置为指定值。
+
+#### 类型
+
+布尔值；可读写。
+
+---
+
+### TextDocument.paragraphCount
+
+`textDocument.paragraphCount`
+
+#### 描述
+
+返回文本图层中的段落数量（始终大于等于1）。
+
+#### 类型
+
+整数值；只读。
+
+---
+
+### TextDocument.pointText
+
+`textDocument.pointText`
+
+#### 描述
+
+若文本图层为点文本（无边界）则返回`true`，否则返回`false`。
+
+#### 类型
+
+布尔值；只读。
+
+---
+
+### TextDocument.smallCaps
+
+`textDocument.smallCaps`
+
+:::note
+此功能在 After Effects 13.2 (CC 2014.2) 版本中添加
+:::
+
+#### 描述
+
+若文本图层启用小型大写字母则返回`true`，否则返回`false`。要设置此值，请使用After Effects 24.0添加的[TextDocument.fontCapsOption](#textdocumentfontcapsoption)。
+
+:::warning
+该值仅反映文本图层中的第一个字符。
+:::
+
+#### 类型
+
+布尔值；只读。
+
+---
+
+### TextDocument.spaceAfter
+
+`textDocument.spaceAfter`
+
+:::note
+此功能在 After Effects 24.0 版本中添加
+:::
+
+#### 描述
+
+文本图层的段后间距选项。
+
+若该属性存在混合值，将返回`undefined`。
+
+:::warning
+该值反映文本图层中的所有段落。
+:::
+
+修改此值将会把文本图层中所有段落设置为指定值。
+
+#### 类型
+
+浮点数值；可读写。
+
+---
+
+### TextDocument.spaceBefore
+
+`textDocument.spaceBefore`
+
+:::note
+此功能在 After Effects 24.0 版本中新增
+:::
+
+#### 描述
+
+文本图层的段落前间距选项。
+
+如果该属性具有混合值，则读取时为 `undefined`。
+
+:::warning
+该值反映文本图层中的所有段落。
+:::
+
+如果更改此值，将会把文本图层中的所有段落设置为指定值。
+
+#### 类型
+
+浮点数值；可读写。
+
+---
+
+### TextDocument.startIndent
+
+`textDocument.startIndent`
+
+:::note
+此功能在 After Effects 24.0 版本中新增
+:::
+
+#### 描述
+
+文本图层的段落首行缩进选项。
+
+如果该属性具有混合值，则读取时为 `undefined`。
+
+:::warning
+该值反映文本图层中的所有段落。
+:::
+
+如果更改此值，将会把文本图层中的所有段落设置为指定值。
+
+#### 类型
+
+浮点数值；可读写。
+
+---
+
+### TextDocument.strokeColor
+
+`textDocument.strokeColor`
+
+#### 描述
+
+文本图层的描边颜色，以 [r, g, b] 浮点数值数组表示。例如，在 8-bpc 项目中，红色值 255 对应 1.0；在 32-bpc 项目中，超亮蓝色值可以是 3.2 之类的数值。
+
+如果 [applyStroke](#textdocumentapplystroke) 不为 `true`，读取时会抛出异常。
+
+设置此值也会将受影响字符的 [applyStroke](#textdocumentapplystroke) 设为 `true`。
+
+:::warning
+该值仅反映文本图层中的第一个字符。
+:::
+
+如果更改此值，将会把文本图层中的所有字符设置为指定值。
+
+#### 类型
+
+[r, g, b] 浮点数值数组；可读写。
+
+---
+
+### TextDocument.strokeOverFill
+
+`textDocument.strokeOverFill`
+
+#### 描述
+
+指示文本图层填充和描边的渲染顺序。当为 `true` 时，描边显示在填充上方。
+
+如果文本图层在字符面板中设置为"所有描边在所有填充之上"或"所有填充在所有描边之上"，则文本图层可以覆盖每个字符的属性设置。因此此处返回的值可能与字符上设置的实际属性值不同。可以通过文本图层的"更多选项"下的"填充和描边"属性（使用 TextLayer.text("ADBE Text More Options")("ADBE Text Render Order")）来设置填充/描边的渲染顺序。
+
+:::warning
+该值仅反映文本图层中的第一个字符。
+:::
+
+如果更改此值，将会把文本图层中的所有字符设置为指定值。
+
+#### 类型
+
+布尔值；可读写。
+
+---
+
+### TextDocument.strokeWidth
+
+`textDocument.strokeWidth`
+
+#### 描述
+
+文本图层的描边粗细（以像素为单位）。
+
+:::warning
+该值仅反映文本图层中的第一个字符。
+:::
+
+如果更改此值，将会把文本图层中的所有字符设置为指定值。
+
+设置的最小可接受值为 0，但会静默截取为 0.01。
+
+#### 类型
+
+浮点数值（0 至 1000，含边界值）；可读写。
+
+---
+
+### TextDocument.subscript
+
+`textDocument.subscript`
+
+:::note
+此功能在 After Effects 13.2 (CC 2014.2) 版本中新增
+:::
+
+#### 描述
+
+如果文本图层启用了下标则为 `true`；否则为 `false`。要设置此值，请使用 After Effects 24.0 新增的 [TextDocument.fontBaselineOption](#textdocumentfontbaselineoption)。
+
+:::warning
+该值仅反映文本图层中的第一个字符。
+:::
+
+#### 类型
+
+布尔值；只读。
+
+---
+
+### TextDocument.superscript
+
+`textDocument.superscript`
+
+:::note
+此功能在 After Effects 13.2 (CC 2014.2) 版本中新增
+:::
+
+#### 描述
+
+如果文本图层启用了上标则为 `true`；否则为 `false`。要设置此值，请使用 After Effects 24.0 新增的 [TextDocument.fontBaselineOption](#textdocumentfontbaselineoption)。
+
+:::warning
+该值仅反映文本图层中的第一个字符。
+:::
+
+#### 类型
+
+布尔值；只读。
+
+---
+
+### TextDocument.text
+
+`textDocument.text`
+
+#### 描述
+
+文本图层源文本属性的文本值。
+
+#### 类型
+
+字符串；可读写。
+
+---
+
+### TextDocument.tracking
+
+`textDocument.tracking`
+
+#### 描述
+
+文本图层字符间的间距。
+
+:::warning
+该值仅反映文本图层中的第一个字符。
+:::
+
+如果更改此值，将会把文本图层中的所有字符设置为指定值。
+
+#### 类型
+
+浮点数值；可读写。
+
+---
+
+### TextDocument.tsume
+
+`textDocument.tsume`
+
+:::note
+此功能在 After Effects 13.2 (CC 2014.2) 版本中新增
+:::
+
+#### 描述
+
+文本图层的 tsume 值（标准化百分比，范围 0.0 -> 1.0）。
+
+:::warning
+该值仅反映文本图层中的第一个字符。
+:::
+
+如果更改此值，将会把文本图层中的所有字符设置为指定值。
+
+此属性接受 0.0 -> 100.0 的值，但实际期望的是 0.0 -> 1.0 的标准化值。使用大于 1.0 的值会产生意外结果；AE 的字符面板会将值限制在 100%，尽管脚本设置了更高的值（即 `TextDocument.tsume = 100` 实际设置的是 10,000%）。
+
+#### 类型
+
+浮点数值；可读写。
+
+---
+
+### TextDocument.verticalScale
+
+`textDocument.verticalScale`
+
+:::note
+此功能在 After Effects 13.2 (CC 2014.2) 版本中新增
+:::
+
+#### 描述
+
+文本图层的垂直缩放（以像素为单位）。
+
+:::warning
+该值仅反映文本图层中的第一个字符。
+:::
+
+如果更改此值，将会把文本图层中的所有字符设置为指定值。
+
+#### 类型
+
+浮点数值；可读写。
+
+---
+
+## 方法
+
+### TextDocument.characterRange()
+
+`textDocument.characterRange(characterStart, [signedCharacterEnd])`
+
+:::note
+此功能在 After Effects 24.3 版本中新增
+:::
+
+#### 描述
+
+返回文本图层范围访问器 CharacterRange 的实例。
+
+该实例会记住构造函数中传入的参数 - 这些参数保持不变，对 [TextDocument](#textdocument-object) 长度的更改可能导致实例在访问时抛出异常，直到 [TextDocument](#textdocument-object) 长度更改使范围再次有效。
+
+使用 toString() 可查看构造参数。
+
+#### 参数
+
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `characterStart` | 无符号整数 | 从零开始，必须小于或等于 [TextDocument 对象](#textdocument-object) 的（文本）长度。 |
+| `signedCharacterEnd` | 有符号整数。 | 可选。如果未指定，则计算为 `(characterStart + 1)`。 |
+| | | 如果设为 `-1`，则 [CharacterRange 对象](../characterrange) 会在访问时动态计算此值，使其等于 [TextDocument 对象](#textdocument-object) 的（文本）长度。 |
+| | | `signedCharacterEnd` 必须大于或等于 `characterStart`，且小于或等于 [TextDocument 对象](#textdocument-object) 的（文本）长度。 |
+
+如果参数会导致无效范围，则抛出异常。
+
+无法创建跨越 [TextDocument 对象](#textdocument-object) 中最后一个回车符的 [CharacterRange 对象](../characterrange)。
+
+#### 返回值
+
+[CharacterRange 对象](../characterrange) 的实例
+
+---
+
+### TextDocument.composedLineCharacterIndexesAt()
+
+`textDocument.composedLineCharacterIndexesAt(characterIndex)`
+
+:::note
+此功能在 After Effects 24.3 版本中新增
+:::
+
+#### 描述
+
+返回文本图层中 [ComposedLineRange 对象](../composedlinerange) 的字符索引边界。
+
+#### 参数
+
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `characterIndex` | 无符号整数 | 文本图层中的文本索引，将映射到其相交的排版行。 |
+
+#### 返回值
+
+通用对象；
+键 `start` 将设为排版行起始的文本索引（大于或等于零）。
+键 `end` 将设为排版行结束的文本索引（大于起始值，或如果是最后一个排版行则等于起始值）。
+
+如果计算的起始和结束超出当前 [TextDocument 对象](#textdocument-object) 范围，将抛出异常。
+请注意排版行是静态的，后续对 [TextDocument 对象](#textdocument-object) 实例的更改如果导致其长度变化，可能会使排版行数据无效。
+
+---
+
+### TextDocument.composedLineRange()
+
+`textDocument.composedLineRange(composedLineIndexStart, [signedComposedLineIndexEnd])`
+
+:::note
+此功能在 After Effects 24.3 版本中新增
+:::
+
+#### 描述
+
+返回文本图层范围访问器 [ComposedLineRange 对象](../composedlinerange) 的实例。
+
+该实例会记住构造函数中传入的参数 - 这些参数保持不变，对 [TextDocument](#textdocument-object) 内容的更改可能导致实例在访问时抛出异常，直到 [TextDocument](#textdocument-object) 内容更改使范围再次有效。
+
+使用 [ComposedLineRange.toString()](../composedlinerange#composedlinerangetostring) 可查看构造参数。
+
+#### 参数
+
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `composedLineIndexStart` | 无符号整数 | 从零开始，必须小于 [TextDocument 对象](#textdocument-object) 中的排版行数量。 |
+| `signedComposedLineIndexEnd` | 有符号整数。 | 可选。如果未指定，则计算为 `(composedLineIndexStart + 1)`。 |
+| | | 如果设为 -1，则 [ComposedLineRange 对象](../composedlinerange) 会在访问时动态计算此值为 [TextDocument 对象](#textdocument-object) 的最后一个排版行。 |
+| | | `signedComposedLineIndexEnd` 必须大于 `composedLineIndexStart`，且小于或等于 [TextDocument 对象](#textdocument-object) 中的排版行数量。 |
+
+如果参数会导致无效范围，则抛出异常。
+
+请注意排版行是静态的，后续对 [TextDocument 对象](#textdocument-object) 实例的更改如果导致其长度变化，可能会使排版行数据无效。
+
+#### 返回值
+
+[ComposedLineRange 对象](../composedlinerange) 的实例
+
+---
+
+### TextDocument.paragraphCharacterIndexesAt()
+
+`textDocument.paragraphCharacterIndexesAt(characterIndex)`
+
+:::note
+此功能在 After Effects 24.3 版本中新增
+:::
+
+#### 描述
+
+返回文本图层中段落的字符索引边界。
+
+#### 参数
+
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| `characterIndex` | 无符号整数 | 文本图层中的文本索引，将映射到其相交的段落。 |
+
+#### 返回值
+
+通用对象；
+键 `start` 将设为段落起始的文本索引（大于或等于零）。
+键 `end` 将设为段落结束的文本索引（大于起始值，或如果是最后一个段落则等于起始值）。
+
+---
+
+### TextDocument.paragraphRange()
+
+`textDocument.paragraphRange(paragraphIndexStart, [signedParagraphIndexEnd])`
+
+:::note
+此功能在 After Effects 24.3 版本中新增
+:::
+
+#### 描述
+
+返回文本图层范围访问器 [ParagraphRange 对象](../paragraphrange) 的实例。
+
+该实例会记住构造函数中传入的参数 - 这些参数保持不变，对 [TextDocument](#textdocument-object) 内容的更改可能导致实例在访问时抛出异常，直到 [TextDocument](#textdocument-object) 内容更改使范围再次有效。
+
+使用 [ParagraphRange.toString()](../paragraphrange#paragraphrangetostring) 可查看构造参数。
+
+#### 参数
+
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `paragraphIndexStart` | 无符号整数 | 从零开始，必须小于 [TextDocument 对象](#textdocument-object) 中的段落数量。 |
+| `signedParagraphIndexEnd` | 有符号整数 | 可选。如果未指定，则计算为 `(paragraphIndexStart + 1)`。 |
+| | | 如果设为 -1，则 [ParagraphRange 对象](../paragraphrange) 会在访问时动态计算此值为 [TextDocument 对象](#textdocument-object) 的最后一个段落。 |
+| | | `signedParagraphIndexEnd` 必须大于 `paragraphIndexStart`，且小于或等于 [TextDocument 对象](#textdocument-object) 中的段落数量。 |
+
+如果参数会导致无效范围，则抛出异常。
+
+#### 返回值
+
+[ParagraphRange 对象](../paragraphrange) 的实例
+
+---
+
+### TextDocument.resetCharStyle()
+
+`textDocument.resetCharStyle()`
+
+#### 描述
+
+将文本图层中的所有字符恢复为字符面板中的默认文本字符特性。
+
+#### 参数
+
+无。
+
+#### 返回值
+
+无。
+
+---
+
+### TextDocument.resetParagraphStyle()
+
+`textDocument.resetParagraphStyle()`
+
+#### 描述
+
+将文本图层中的所有段落恢复为段落面板中的默认文本段落特性。
+
+#### 参数
+
+无。
+
+#### 返回值
+
+无。
