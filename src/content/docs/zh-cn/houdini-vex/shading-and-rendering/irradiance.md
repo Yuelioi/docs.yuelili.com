@@ -29,14 +29,14 @@ order: 41
 ## ray-options
 
 提示
-当指定纹理时（如使用`"environment"`关键字），也可以使用图像过滤关键字参数。详见[环境贴图](../texturing/environment "返回环境纹理的颜色")中列出的图像过滤关键字参数。
+当指定纹理时（如使用`"environment"`关键字），也可以使用图像过滤关键字参数。详见[环境贴图](/zh-cn/houdini-vex/texturing/environment "返回环境纹理的颜色")中列出的图像过滤关键字参数。
 
 "`scope`",
 `string`
 
 可被光线击中的对象列表。指定后，`scope`将覆盖给定`raystyle`的默认作用域。`"scope:default"`值将使`scope`参数使用当前上下文的默认作用域——就像未指定该参数一样。
 
-允许覆盖光线相交的[作用域](../contexts/shading_contexts.html#scope)。
+允许覆盖光线相交的[作用域](/zh-cn/houdini-vex/contexts/shading_contexts.html#scope)。
 特殊作用域参数`scope:self`将匹配当前着色对象。
 
 "`currentobject`",
@@ -50,7 +50,7 @@ order: 41
 
 搜索对象的最大距离。可用于将对象搜索限制在附近对象。如果`maxdist`为负值，则表示没有最大距离限制。
 
-允许覆盖测试相交时光线能传播的最大距离。某些函数（如[快速阴影](../light/fastshadow "从位置P沿方向D发送光线")）已隐式定义了最大距离（由光线长度决定），应避免使用此选项。但在计算反射、全局光照、折射等时，此选项可有效使用。
+允许覆盖测试相交时光线能传播的最大距离。某些函数（如[快速阴影](/zh-cn/houdini-vex/light/fastshadow "从位置P沿方向D发送光线")）已隐式定义了最大距离（由光线长度决定），应避免使用此选项。但在计算反射、全局光照、折射等时，此选项可有效使用。
 
 "`variancevar`",
 `string`
@@ -118,6 +118,6 @@ Cf = R*reflectlight(bias, max(R), "environment", "map.rat", "envobject", "null_o
 "`distribution`",
 `string`
 
-**函数**: [辐照度](./irradiance "计算点P处法线为N的辐照度（全局光照）"), [遮挡](./occlusion "计算环境光遮挡")
+**函数**: [辐照度](/zh-cn/houdini-vex/shading-and-rendering/irradiance "计算点P处法线为N的辐照度（全局光照）"), [遮挡](/zh-cn/houdini-vex/shading-and-rendering/occlusion "计算环境光遮挡")
 
 计算辐照度的分布方式。默认使用余弦分布（漫射照明）。可能的样式值为：`"nonweighted"`表示均匀采样，`"cosine"`表示余弦加权采样。

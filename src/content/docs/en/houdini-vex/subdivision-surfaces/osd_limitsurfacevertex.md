@@ -2,8 +2,8 @@
 title: osd_limitsurfacevertex
 order: 4
 ---
-This is like [osd_limitsurface](./osd_limitsurface "Evaluates a point attribute at the subdivision limit surface using Open Subdiv.") but for vertex attributes instead of point attributes.
-See [osd_limitsurface](./osd_limitsurface "Evaluates a point attribute at the subdivision limit surface using Open Subdiv.") for more information.
+This is like [osd_limitsurface](/en/houdini-vex/subdivision-surfaces/osd_limitsurface "Evaluates a point attribute at the subdivision limit surface using Open Subdiv.") but for vertex attributes instead of point attributes.
+See [osd_limitsurface](/en/houdini-vex/subdivision-surfaces/osd_limitsurface "Evaluates a point attribute at the subdivision limit surface using Open Subdiv.") for more information.
 
 `int  osd_limitsurfacevertex(<geometry>geometry, string attrib_name, int face_id, float u, float v, <type>&result)`
 

@@ -33,7 +33,7 @@ primvar的元组大小：
 
 若primvar不存在，返回`0`。
 
-如需获取数组primvar的长度，请使用[usd_iprimvarlen](./usd_iprimvarlen "返回USD图元或其祖先上数组primvar的长度")。
+如需获取数组primvar的长度，请使用[usd_iprimvarlen](/zh-cn/houdini-vex/usd/usd_iprimvarlen "返回USD图元或其祖先上数组primvar的长度")。
 
 ## 示例
 

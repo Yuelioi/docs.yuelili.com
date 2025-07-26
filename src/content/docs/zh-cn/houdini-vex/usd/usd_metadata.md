@@ -29,7 +29,7 @@ order: 92
 
 返回值
 
-现有元数据的值，如果元数据不存在则返回零/空值。如果要检查元数据是否存在，请使用[usd_ismetadata](./usd_ismetadata "检查图元是否具有指定名称的元数据。")。
+现有元数据的值，如果元数据不存在则返回零/空值。如果要检查元数据是否存在，请使用[usd_ismetadata](/zh-cn/houdini-vex/usd/usd_ismetadata "检查图元是否具有指定名称的元数据。")。
 
 ## 示例
 

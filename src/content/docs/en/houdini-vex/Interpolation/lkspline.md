@@ -14,7 +14,7 @@ This is useful for specifying a 1D data ramp.
 Samples a polyline defined by a series of vector value/position pairs.
 This is useful for specifying a color ramp.
 
-If you just want linearly spaced keys, use [lspline](./lspline "Samples a polyline defined by linearly spaced values.") instead.
+If you just want linearly spaced keys, use [lspline](/en/houdini-vex/interpolation/lspline "Samples a polyline defined by linearly spaced values.") instead.
 
 `sample_pos`
 
@@ -31,4 +31,4 @@ Returns
 The value of the curve at the sampled position.
 
 Tip
-The [spline](../math/spline "Samples a value along a polyline or spline curve.") function is a more flexible superset of this function.
+The [spline](/en/houdini-vex/math/spline "Samples a value along a polyline or spline curve.") function is a more flexible superset of this function.

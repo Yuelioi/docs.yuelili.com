@@ -7,7 +7,7 @@ order: 51
 
 `void  setagentchannelvalues(int geohandle, int prim, float values[])`
 
-当只需修改单个通道时，使用 [setagentchannelvalue](./setagentchannelvalue "覆盖代理体元通道的值") 可以显著提高效率。
+当只需修改单个通道时，使用 [setagentchannelvalue](/zh-cn/houdini-vex/crowds/setagentchannelvalue "覆盖代理体元通道的值") 可以显著提高效率。
 
 `geohandle`
 

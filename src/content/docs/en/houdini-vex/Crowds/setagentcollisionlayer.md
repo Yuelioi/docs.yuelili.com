@@ -3,7 +3,7 @@ title: setagentcollisionlayer
 order: 56
 ---
 Warning
-This function has been deprecated. Use [setagentcollisionlayers](./setagentcollisionlayers "Sets the collision layers of an agent primitive.") instead.
+This function has been deprecated. Use [setagentcollisionlayers](/en/houdini-vex/crowds/setagentcollisionlayers "Sets the collision layers of an agent primitive.") instead.
 
 `geohandle`
 

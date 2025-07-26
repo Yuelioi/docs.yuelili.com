@@ -45,7 +45,7 @@ order: 7
 
 函数必须用BSDF的反射率（反照率）覆盖此变量。
 
-这不依赖于`v`向量，因为它用作所有光照方向上的平均反射率。这是[albedo](./albedo "返回给定出射光方向的bsdf的反照率（反射光百分比）。")函数将返回的值。
+这不依赖于`v`向量，因为它用作所有光照方向上的平均反射率。这是[albedo](/zh-cn/houdini-vex/bsdfs/albedo "返回给定出射光方向的bsdf的反照率（反射光百分比）。")函数将返回的值。
 
 `eval`
 
@@ -111,7 +111,7 @@ BSDF的反射率（反照率），由采样方向的光的颜色着色。此值�
 
 如果您在评估或采样着色器中添加`int mybounces`输出参数，它将填充BSDF的组件掩码。您可以将其与传递给`cvex_bsdf()`函数的额外`"label"`可变参数进行检查，以查看是否应应用。这允许您为不同的组件类型使用相同的CVEX着色器源代码。
 
-有关组件标签位掩码的信息，请参见[bouncemask](../shading-and-rendering/bouncemask)。
+有关组件标签位掩码的信息，请参见[bouncemask](/zh-cn/houdini-vex/shading-and-rendering/bouncemask)。
 
 自定义可变参数
 

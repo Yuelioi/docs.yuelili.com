@@ -11,7 +11,7 @@ Creates a vector representing euler angles from a vector4 representing a quatern
 
 The angles are in radians. Use the `degrees()` function to convert radians into degrees.
 
-For more information, see [Data types](../lang.html#data-types) and [Dot operator](../lang.html#dot-operator).
+For more information, see [Data types](/en/houdini-vex/lang.html#data-types) and [Dot operator](/en/houdini-vex/lang.html#dot-operator).
 
 `order`
 

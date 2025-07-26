@@ -7,7 +7,7 @@ order: 57
 
 `vector  pathtrace(vector P, vector N, ...)`
 
-`pathtrace` works like [irradiance](./irradiance "Computes irradiance (global illumination) at the point P with the normal N."), but uses the physically based
+`pathtrace` works like [irradiance](/en/houdini-vex/shading-and-rendering/irradiance "Computes irradiance (global illumination) at the point P with the normal N."), but uses the physically based
 rendering (PBR) engine to do secondary bounces.
 
 `pathtrace` provides a simple (and not very flexible) method of invoking the
@@ -16,14 +16,14 @@ the `F` (BSDF) output, not `Cf`/`Of` on the hit shaders. Maximum path depth
 is controlled by the “diffuse bounces” parameter on the PBR tab of the
 [mantra output driver](../../nodes/out/ifd.html "Renders the scene using Houdini’s standard mantra renderer and generates IFD files.").
 
-Irradiance caching works the same way it works with [occlusion](./occlusion "Computes ambient occlusion.").
+Irradiance caching works the same way it works with [occlusion](/en/houdini-vex/shading-and-rendering/occlusion "Computes ambient occlusion.").
 Ray options
 
 ## ray-options
 
 Tip
 When you specify a texture, such as with the `"environment"` keyword,
-you can also use the image filtering keyword arguments. See [environment](../texturing/environment "Returns the color of the environment texture.")
+you can also use the image filtering keyword arguments. See [environment](/en/houdini-vex/texturing/environment "Returns the color of the environment texture.")
 for a listing of the image filter keyword arguments.
 
 "`scope`",
@@ -31,7 +31,7 @@ for a listing of the image filter keyword arguments.
 
 A list of objects which can be hit by the rays. When specified, `scope` overrides the default scope that would have been selected for the given `raystyle`. The `"scope:default"` value will cause the `scope` argument to use the default scope for the current context - as if the argument were not specified.
 
-Allows an override of the [scope](../contexts/shading_contexts.html#scope) for ray-intersections.
+Allows an override of the [scope](/en/houdini-vex/contexts/shading_contexts.html#scope) for ray-intersections.
 A special scope argument, `scope:self`, will match the currently
 shading object.
 
@@ -48,7 +48,7 @@ The maximum distance to search for objects. This can be used to limit the search
 
 Allows an override of the maximum distance the ray can
 travel when testing for intersections. Some functions (such as
-[fastshadow](../light/fastshadow "Sends a ray from the position P along the direction specified by the
+[fastshadow](/en/houdini-vex/light/fastshadow "Sends a ray from the position P along the direction specified by the
 direction D.")) have the maximum distance implicitly defined (by
 the length of the ray) and should probably avoid using this
 option. However, this option can be used effectively when
@@ -141,7 +141,7 @@ background color specified.
 "`distribution`",
 `string`
 
-**Functions**: [irradiance](./irradiance "Computes irradiance (global illumination) at the point P with the normal N."), [occlusion](./occlusion "Computes ambient occlusion.")
+**Functions**: [irradiance](/en/houdini-vex/shading-and-rendering/irradiance "Computes irradiance (global illumination) at the point P with the normal N."), [occlusion](/en/houdini-vex/shading-and-rendering/occlusion "Computes ambient occlusion.")
 
 Distribution for computing irradiance. The default is to use
 a cosine distribution (diffuse illumination). The possible

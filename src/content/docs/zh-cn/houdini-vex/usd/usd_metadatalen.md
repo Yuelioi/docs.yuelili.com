@@ -29,7 +29,7 @@ order: 94
 
 返回值
 
-数组元数据的长度，若非数组则返回1。如需检查元数据是否为数组，可使用[usd_isarraymetadata](./usd_isarraymetadata "检查给定元数据是否为数组。")。
+数组元数据的长度，若非数组则返回1。如需检查元数据是否为数组，可使用[usd_isarraymetadata](/zh-cn/houdini-vex/usd/usd_isarraymetadata "检查给定元数据是否为数组。")。
 
 ## 示例
 

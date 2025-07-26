@@ -2,7 +2,7 @@
 title: setdetailattrib
 order: 65
 ---
-If you don’t know the attribute class ahead of time, use [setattrib](./setattrib "Writes an attribute value to geometry.").
+If you don’t know the attribute class ahead of time, use [setattrib](/en/houdini-vex/attributes-and-intrinsics/setattrib "Writes an attribute value to geometry.").
 
 `int  setdetailattrib(int geohandle, string name, <type>value, string mode="set")`
 
@@ -12,14 +12,14 @@ Returns the value of `geohandle` on success or `-1` on failure.
 
 Note
 If the attribute does not exist, this function **creates the attribute** with a default value of zero, empty string, or an empty array.
-If you want to control the default value of a numeric attribute, use [addattrib](./addattrib "Adds an attribute to a geometry.") before setting the attribute.
+If you want to control the default value of a numeric attribute, use [addattrib](/en/houdini-vex/attributes-and-intrinsics/addattrib "Adds an attribute to a geometry.") before setting the attribute.
 
-If the attribute does not already exist, its type info is automatically set for attributes with [standard names](../snippets.html#known) such as `Cd` and `orient`.
-If you want to control the type info of a numeric attribute, use [setattribtypeinfo](./setattribtypeinfo "Sets the meaning of an attribute in geometry.") before setting the attribute.
+If the attribute does not already exist, its type info is automatically set for attributes with [standard names](/en/houdini-vex/snippets.html#known) such as `Cd` and `orient`.
+If you want to control the type info of a numeric attribute, use [setattribtypeinfo](/en/houdini-vex/attributes-and-intrinsics/setattribtypeinfo "Sets the meaning of an attribute in geometry.") before setting the attribute.
 
 `geohandle`
 
-A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](../geometry/geoself "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
+A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](/en/houdini-vex/geometry/geoself "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
 
 `name`
 

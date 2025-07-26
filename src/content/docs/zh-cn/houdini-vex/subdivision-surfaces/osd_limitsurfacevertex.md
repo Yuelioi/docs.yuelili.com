@@ -3,8 +3,8 @@ title: osd_limitsurfacevertex
 order: 4
 ---
 
-该函数类似于 [osd_limitsurface](./osd_limitsurface "使用Open Subdiv在细分极限曲面上评估点属性。")，但针对的是顶点属性而非点属性。
-更多信息请参阅 [osd_limitsurface](./osd_limitsurface "使用Open Subdiv在细分极限曲面上评估点属性。")。
+该函数类似于 [osd_limitsurface](/zh-cn/houdini-vex/subdivision-surfaces/osd_limitsurface "使用Open Subdiv在细分极限曲面上评估点属性。")，但针对的是顶点属性而非点属性。
+更多信息请参阅 [osd_limitsurface](/zh-cn/houdini-vex/subdivision-surfaces/osd_limitsurface "使用Open Subdiv在细分极限曲面上评估点属性。")。
 
 `int  osd_limitsurfacevertex(<geometry>geometry, string attrib_name, int face_id, float u, float v, <type>&result)`
 

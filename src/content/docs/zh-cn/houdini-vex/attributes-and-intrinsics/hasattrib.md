@@ -2,7 +2,7 @@
 title: hasattrib
 order: 24
 ---
-如果事先知道属性类别，使用 [hasdetailattrib](./hasdetailattrib "判断几何体细节属性是否存在")、[hasprimattrib](./hasprimattrib "判断几何体图元属性是否存在")、[haspointattrib](./haspointattrib "判断几何体点属性是否存在") 或 [hasvertexattrib](./hasvertexattrib "判断几何体顶点属性是否存在") 可能更快。
+如果事先知道属性类别，使用 [hasdetailattrib](/zh-cn/houdini-vex/attributes-and-intrinsics/hasdetailattrib "判断几何体细节属性是否存在")、[hasprimattrib](/zh-cn/houdini-vex/attributes-and-intrinsics/hasprimattrib "判断几何体图元属性是否存在")、[haspointattrib](/zh-cn/houdini-vex/attributes-and-intrinsics/haspointattrib "判断几何体点属性是否存在") 或 [hasvertexattrib](/zh-cn/houdini-vex/attributes-and-intrinsics/hasvertexattrib "判断几何体顶点属性是否存在") 可能更快。
 
 `int  hasattrib(<geometry>geometry, string attribclass, string attribute_name)`
 

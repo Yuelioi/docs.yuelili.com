@@ -7,7 +7,7 @@ order: 10
 
 `float  agentcliplength(<geometry>geometry, int prim, int clipindex)`
 
-如果`prim`超出范围或不是代理图元，或者`clipname`不是该代理的[动画片段](./agentclipcatalog "返回已为代理图元加载的所有动画片段")之一，则返回`0`。
+如果`prim`超出范围或不是代理图元，或者`clipname`不是该代理的[动画片段](/zh-cn/houdini-vex/crowds/agentclipcatalog "返回已为代理图元加载的所有动画片段")之一，则返回`0`。
 
 `<geometry>`
 
@@ -26,4 +26,4 @@ order: 10
 `clipindex`
 
 代理定义中片段的索引。
-可以通过[agentfindclip](./agentfindclip "查找代理定义中片段的索引")获取片段的索引。
+可以通过[agentfindclip](/zh-cn/houdini-vex/crowds/agentfindclip "查找代理定义中片段的索引")获取片段的索引。

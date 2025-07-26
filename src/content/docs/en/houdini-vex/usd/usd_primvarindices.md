@@ -31,7 +31,7 @@ The USD time code at which to evaluate the attribute. A USD time code roughly co
 
 Returns
 
-The index array of an indexed primvar, or zero/empty value if the primvar does not exist or is not indexed. Use [usd_isprimvar](./usd_isprimvar "Checks if the primitive has a primvar of the given name.") if you want to check whether the primvar exists and [usd_isindexedprimvar](./usd_isindexedprimvar "Checks if there is an indexed primvar directly on the USD primitive.") to check whether it is indexed.
+The index array of an indexed primvar, or zero/empty value if the primvar does not exist or is not indexed. Use [usd_isprimvar](/en/houdini-vex/usd/usd_isprimvar "Checks if the primitive has a primvar of the given name.") if you want to check whether the primvar exists and [usd_isindexedprimvar](/en/houdini-vex/usd/usd_isindexedprimvar "Checks if there is an indexed primvar directly on the USD primitive.") to check whether it is indexed.
 
 Examples
 

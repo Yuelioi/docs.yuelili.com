@@ -7,7 +7,7 @@ order: 3
 
 `vector  mspace(vector P)`
 
-将指定位置转换到元球的"局部"空间。此函数仅在[forpoints](../utility/forpoints)循环结构内有效。
+将指定位置转换到元球的"局部"空间。此函数仅在[forpoints](/zh-cn/houdini-vex/utility/forpoints)循环结构内有效。
 
 该函数的典型应用场景是基于"静止"位置计算噪波...例如：
 

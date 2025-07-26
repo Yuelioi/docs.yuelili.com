@@ -2,7 +2,7 @@
 title: hasattrib
 order: 24
 ---
-If you know the attribute class ahead of time, using [hasdetailattrib](./hasdetailattrib "Returns if a geometry detail attribute exists."), [hasprimattrib](./hasprimattrib "Returns if a geometry prim attribute exists."), [haspointattrib](./haspointattrib "Returns if a geometry point attribute exists."), or [hasvertexattrib](./hasvertexattrib "Returns if a geometry vertex attribute exists.") may be faster.
+If you know the attribute class ahead of time, using [hasdetailattrib](/en/houdini-vex/attributes-and-intrinsics/hasdetailattrib "Returns if a geometry detail attribute exists."), [hasprimattrib](/en/houdini-vex/attributes-and-intrinsics/hasprimattrib "Returns if a geometry prim attribute exists."), [haspointattrib](/en/houdini-vex/attributes-and-intrinsics/haspointattrib "Returns if a geometry point attribute exists."), or [hasvertexattrib](/en/houdini-vex/attributes-and-intrinsics/hasvertexattrib "Returns if a geometry vertex attribute exists.") may be faster.
 
 `int  hasattrib(<geometry>geometry, string attribclass, string attribute_name)`
 

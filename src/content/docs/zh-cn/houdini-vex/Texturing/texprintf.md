@@ -4,7 +4,7 @@ order: 12
 ---
 `string  texprintf(float u, float v, string format, ...)`
 
-格式化字符串的方式类似于 [sprintf](../strings/sprintf "类似printf格式化字符串，但以字符串形式返回结果而非直接打印")，但会扫描特殊转换字符来执行UDIM或UVTILE风格的文件名扩展。
+格式化字符串的方式类似于 [sprintf](/zh-cn/houdini-vex/strings/sprintf "类似printf格式化字符串，但以字符串形式返回结果而非直接打印")，但会扫描特殊转换字符来执行UDIM或UVTILE风格的文件名扩展。
 
 这比直接调用sprintf()效率要高得多。
 

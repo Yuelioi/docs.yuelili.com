@@ -8,9 +8,9 @@ order: 7
 `int  agentclipchannel(<geometry>geometry, int prim, int clipindex, string channel)`
 
 返回指定动画片段中某个通道的索引。
-如果`clipname`不是该代理的[动画片段](./agentclipcatalog "返回已加载到代理图元的所有动画片段")之一、`prim`超出范围、`prim`不是代理图元，或者`channel`不存在，则返回-1。
+如果`clipname`不是该代理的[动画片段](/zh-cn/houdini-vex/crowds/agentclipcatalog "返回已加载到代理图元的所有动画片段")之一、`prim`超出范围、`prim`不是代理图元，或者`channel`不存在，则返回-1。
 
-要采样片段中的变换通道，请使用[agentrigfind](./agentrigfind "查找代理图元骨骼中某个变换的索引")以及[agentclipsamplelocal](./agentclipsamplelocal "在特定时间采样代理的动画片段")或[agentclipsampleworld](./agentclipsampleworld "在特定时间采样代理的动画片段")。
+要采样片段中的变换通道，请使用[agentrigfind](/zh-cn/houdini-vex/crowds/agentrigfind "查找代理图元骨骼中某个变换的索引")以及[agentclipsamplelocal](/zh-cn/houdini-vex/crowds/agentclipsamplelocal "在特定时间采样代理的动画片段")或[agentclipsampleworld](/zh-cn/houdini-vex/crowds/agentclipsampleworld "在特定时间采样代理的动画片段")。
 
 `<geometry>`
 
@@ -29,7 +29,7 @@ order: 7
 `clipindex`
 
 代理定义中片段的索引。
-可以通过[agentfindclip](./agentfindclip "查找代理定义中某个片段的索引")获取片段的索引。
+可以通过[agentfindclip](/zh-cn/houdini-vex/crowds/agentfindclip "查找代理定义中某个片段的索引")获取片段的索引。
 
 `channel`
 

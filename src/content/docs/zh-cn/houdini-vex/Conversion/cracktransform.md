@@ -11,7 +11,7 @@ order: 3
 
 注意
 当`c=1`时，返回的旋转角度以度为单位，而许多其他VEX函数使用弧度制。
-您可以使用[radians](./radians "将参数从角度转换为弧度") VEX函数将角度值向量转换为弧度值向量。
+您可以使用[radians](/zh-cn/houdini-vex/conversion/radians "将参数从角度转换为弧度") VEX函数将角度值向量转换为弧度值向量。
 例如：`vector angles = radians(cracktransform(XFORM_TRS, XFORM_XYZ, 1, {0,0,0}, M));`
 
 注意

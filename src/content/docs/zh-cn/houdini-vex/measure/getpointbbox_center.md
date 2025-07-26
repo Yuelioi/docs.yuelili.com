@@ -6,7 +6,7 @@ order: 10
 
 `vector  getpointbbox_center(<geometry>geometry, string pointgroup)`
 
-该函数与 [getbbox_center](./getbbox_center "返回几何体边界框的中心点") 功能相同，但仅计算*点*的边界框。因此，如果图元存在不包含点的延伸部分（例如原始球体的边界），这些部分将不会被包含在边界框内。
+该函数与 [getbbox_center](/zh-cn/houdini-vex/measure/getbbox_center "返回几何体边界框的中心点") 功能相同，但仅计算*点*的边界框。因此，如果图元存在不包含点的延伸部分（例如原始球体的边界），这些部分将不会被包含在边界框内。
 
 `<geometry>`
 

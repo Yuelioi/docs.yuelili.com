@@ -2,7 +2,7 @@
 title: neighbour
 order: 14
 ---
-This function lets you walk the points connected to a point (separated by a single edge). To get a list of all connected points at once, use [neighbours](./neighbours "Returns an array of the point numbers of the neighbours of a point.").
+This function lets you walk the points connected to a point (separated by a single edge). To get a list of all connected points at once, use [neighbours](/en/houdini-vex/geometry/neighbours "Returns an array of the point numbers of the neighbours of a point.").
 
 `int  neighbour(<geometry>geometry, int point_num, int neighbour_num)`
 
@@ -18,7 +18,7 @@ The number of the point whose neighbours you want to find.
 
 `neighbour_num`
 
-Which neighbour to find. The neighbours are in no particular order. Use [neighbourcount](./neighbourcount "Returns the number of points that are connected to the specified point.") to get the total number of connected points.
+Which neighbour to find. The neighbours are in no particular order. Use [neighbourcount](/en/houdini-vex/geometry/neighbourcount "Returns the number of points that are connected to the specified point.") to get the total number of connected points.
 
 Returns
 

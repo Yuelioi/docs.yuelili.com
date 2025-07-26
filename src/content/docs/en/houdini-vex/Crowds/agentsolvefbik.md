@@ -46,7 +46,7 @@ A list of the target world transforms for the end effectors, in the same order a
 `xformgroup`
 
 The index of a transform group, which specifies the joints to be used for the IK solver (all transforms not in the transform group will be ignored).
-[agentfindtransformgroup](./agentfindtransformgroup "Finds the index of a transform group in an agent’s definition.") can be used to look up a transform group by name, and a value of -1 indicates that all the transforms in the agent should be included.
+[agentfindtransformgroup](/en/houdini-vex/crowds/agentfindtransformgroup "Finds the index of a transform group in an agent’s definition.") can be used to look up a transform group by name, and a value of -1 indicates that all the transforms in the agent should be included.
 It’s recommended to use a transform group that includes only transforms that correspond to the agent’s bone structure.
 
 `iters`

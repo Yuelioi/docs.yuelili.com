@@ -8,8 +8,8 @@ order: 18
 `string  getlightname()`
 
 Returns the name of the current light when called from within an
-[illuminance](./illuminance "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables.") loop or when a current light has been set using
-[setcurrentlight](./setcurrentlight "Sets the current light").
+[illuminance](/en/houdini-vex/shading-and-rendering/illuminance "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables.") loop or when a current light has been set using
+[setcurrentlight](/en/houdini-vex/shading-and-rendering/setcurrentlight "Sets the current light").
 
 `string  getlightname(int lightid)`
 

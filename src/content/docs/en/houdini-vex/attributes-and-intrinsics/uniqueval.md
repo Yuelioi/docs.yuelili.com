@@ -27,7 +27,7 @@ The name of the attribute (or intrinsic) to read.
 `which`
 
 Which one of the unique values to return.
-Use [nuniqueval](./nuniqueval "Returns the number of unique values from an integer or string attribute.") to get how many unique values the attribute has.
+Use [nuniqueval](/en/houdini-vex/attributes-and-intrinsics/nuniqueval "Returns the number of unique values from an integer or string attribute.") to get how many unique values the attribute has.
 
 Examples
 

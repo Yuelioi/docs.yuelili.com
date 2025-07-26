@@ -12,7 +12,7 @@ order: 4
 
 逆变换主要用于围绕非原点的枢轴点进行旋转（或缩放）操作。通常做法是先平移到枢轴点，然后执行旋转，最后应用原始平移的逆变换。本函数用于实现原始平移的逆变换。
 
-注意：与大多数处理图元变换并以操作后缀作为参数的VEX函数不同，本函数需要完整的操作名称。若已知操作后缀，可使用[usd_transformname](./usd_transformname "构造变换操作的完整名称")获取完整名称。
+注意：与大多数处理图元变换并以操作后缀作为参数的VEX函数不同，本函数需要完整的操作名称。若已知操作后缀，可使用[usd_transformname](/zh-cn/houdini-vex/usd/usd_transformname "构造变换操作的完整名称")获取完整名称。
 
 `stagehandle`
 
@@ -24,7 +24,7 @@ order: 4
 
 `name`
 
-变换操作的完整名称。使用[usd_transformname](./usd_transformname "构造变换操作的完整名称")根据操作后缀获取完整名称。
+变换操作的完整名称。使用[usd_transformname](/zh-cn/houdini-vex/usd/usd_transformname "构造变换操作的完整名称")根据操作后缀获取完整名称。
 
 返回值
 

@@ -29,7 +29,7 @@ The name can be namespaced to acces values inside (possibly nested) VtDictionari
 
 Returns
 
-The length of the array metadata, or 1 if the metadata is not an array. Use [usd_isarraymetadata](./usd_isarraymetadata "Checks if the given metadata is an array.") if you want to check whether the metadata is an array.
+The length of the array metadata, or 1 if the metadata is not an array. Use [usd_isarraymetadata](/en/houdini-vex/usd/usd_isarraymetadata "Checks if the given metadata is an array.") if you want to check whether the metadata is an array.
 
 Examples
 

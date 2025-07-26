@@ -11,7 +11,7 @@ order: 13
 `matrix  agentclipsamplelocal(<geometry>geometry, int prim, int clipindex, float time, int transform)`
 
 Evaluates the clip at the given time and returns the local transforms of the agent’s rig.
-Returns an empty array if `clipname` is not one of the agent’s [animation clips](./agentclipcatalog "Returns all of the animation clips that have been loaded for an agent primitive."), `prim` is out of range, `prim` is not an agent primitive, or `transform` is [out of range](./agenttransformcount "Returns the number of transforms in an agent primitive’s rig.").
+Returns an empty array if `clipname` is not one of the agent’s [animation clips](/en/houdini-vex/crowds/agentclipcatalog "Returns all of the animation clips that have been loaded for an agent primitive."), `prim` is out of range, `prim` is not an agent primitive, or `transform` is [out of range](/en/houdini-vex/crowds/agenttransformcount "Returns the number of transforms in an agent primitive’s rig.").
 The `matrix` signature is more efficient than the `matrix[]` signature for sampling a single transform.
 
 `<geometry>`
@@ -31,11 +31,11 @@ The name of the animation clip.
 `clipindex`
 
 Index of a clip in the agent’s definition.
-A clip’s index can be obtained via [agentfindclip](./agentfindclip "Finds the index of a clip in an agent’s definition.").
+A clip’s index can be obtained via [agentfindclip](/en/houdini-vex/crowds/agentfindclip "Finds the index of a clip in an agent’s definition.").
 
 `time`
 
-The time (in seconds) to evaluate the clip at. If this time is greater than the [clip’s length](./agentcliplength "Returns the length (in seconds) of an agent’s animation clip."), it will be wrapped around.
+The time (in seconds) to evaluate the clip at. If this time is greater than the [clip’s length](/en/houdini-vex/crowds/agentcliplength "Returns the length (in seconds) of an agent’s animation clip."), it will be wrapped around.
 
 `transform`
 

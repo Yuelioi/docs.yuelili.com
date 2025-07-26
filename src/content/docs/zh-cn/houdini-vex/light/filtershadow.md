@@ -32,14 +32,14 @@ blurry_mirror(float angle = 3; int samples = 16; float bias=0.05)
 ## ray-options
 
 提示
-当指定纹理时（如使用`"environment"`关键字），也可以使用图像过滤关键字参数。详见[environment](../texturing/environment "返回环境纹理的颜色")中列出的图像过滤关键字参数。
+当指定纹理时（如使用`"environment"`关键字），也可以使用图像过滤关键字参数。详见[environment](/zh-cn/houdini-vex/texturing/environment "返回环境纹理的颜色")中列出的图像过滤关键字参数。
 
 "`scope`",
 `string`
 
 可被光线击中的物体列表。指定后，`scope`将覆盖给定`raystyle`的默认作用域。`"scope:default"`值将使`scope`参数使用当前上下文的默认作用域 - 如同未指定该参数。
 
-允许覆盖光线相交的[作用域](../contexts/shading_contexts.html#scope)。
+允许覆盖光线相交的[作用域](/zh-cn/houdini-vex/contexts/shading_contexts.html#scope)。
 特殊作用域参数`scope:self`将匹配当前着色对象。
 
 "`currentobject`",
@@ -53,7 +53,7 @@ blurry_mirror(float angle = 3; int samples = 16; float bias=0.05)
 
 搜索物体的最大距离。可用于将物体搜索限制在附近物体。如果给定的`maxdist`为负值，则表示没有最大距离限制。
 
-允许覆盖测试相交时光线能行进的最大距离。某些函数（如[fastshadow](./fastshadow "从位置P沿方向D发射一条光线")）已隐式定义了最大距离（通过光线长度），应避免使用此选项。但在计算反射、全局光照、折射等时，此选项可有效使用。
+允许覆盖测试相交时光线能行进的最大距离。某些函数（如[fastshadow](/zh-cn/houdini-vex/light/fastshadow "从位置P沿方向D发射一条光线")）已隐式定义了最大距离（通过光线长度），应避免使用此选项。但在计算反射、全局光照、折射等时，此选项可有效使用。
 
 "`variancevar`",
 `string`
@@ -121,6 +121,6 @@ Cf = R*reflectlight(bias, max(R), "environment", "map.rat", "envobject", "null_o
 "`distribution`",
 `string`
 
-**函数**: [irradiance](../shading-and-rendering/irradiance "计算点P处法线N的辐照度（全局光照）"), [occlusion](../shading-and-rendering/occlusion "计算环境光遮蔽")
+**函数**: [irradiance](/zh-cn/houdini-vex/shading-and-rendering/irradiance "计算点P处法线N的辐照度（全局光照）"), [occlusion](/zh-cn/houdini-vex/shading-and-rendering/occlusion "计算环境光遮蔽")
 
 计算辐照度的分布方式。默认使用余弦分布（漫反射照明）。可能的样式值为`"nonweighted"`（均匀采样）或`"cosine"`（余弦加权采样）。

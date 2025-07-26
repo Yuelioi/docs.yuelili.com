@@ -7,7 +7,7 @@ order: 7
 `<type>[] attrib(<geometry>geometry, string attribclass, string name, int elemnum)`
 
 这个通用形式允许您在运行时指定属性的"类别"。这对于编写能处理不同类别的通用代码非常有用。
-如果您提前知道要读取的属性类别，使用[detail](./detail "从几何体中读取细节属性值")、[prim](./prim "从几何体中读取图元属性值")、[point](./point "从几何体中读取点属性值")或[vertex](./vertex "从几何体中读取顶点属性值")可能会更快。
+如果您提前知道要读取的属性类别，使用[detail](/zh-cn/houdini-vex/attributes-and-intrinsics/detail "从几何体中读取细节属性值")、[prim](/zh-cn/houdini-vex/attributes-and-intrinsics/prim "从几何体中读取图元属性值")、[point](/zh-cn/houdini-vex/attributes-and-intrinsics/point "从几何体中读取点属性值")或[vertex](/zh-cn/houdini-vex/attributes-and-intrinsics/vertex "从几何体中读取顶点属性值")可能会更快。
 
 `<geometry>`
 
@@ -27,8 +27,8 @@ order: 7
 
 `elemnum`
 
-要读取的元素编号(如点编号、图元编号、顶点编号)。对于细节属性会被忽略。您可以使用[vertexindex](../geometry/vertexindex "将图元/顶点对转换为线性顶点编号")将图元/点对转换为顶点编号。
+要读取的元素编号(如点编号、图元编号、顶点编号)。对于细节属性会被忽略。您可以使用[vertexindex](/zh-cn/houdini-vex/geometry/vertexindex "将图元/顶点对转换为线性顶点编号")将图元/点对转换为顶点编号。
 
 返回值
 
-如果属性不存在则返回零/空值。如果您想检查属性是否存在，请使用[getattrib](./getattrib "从几何体中读取属性值，并检查有效性")。
+如果属性不存在则返回零/空值。如果您想检查属性是否存在，请使用[getattrib](/zh-cn/houdini-vex/attributes-and-intrinsics/getattrib "从几何体中读取属性值，并检查有效性")。

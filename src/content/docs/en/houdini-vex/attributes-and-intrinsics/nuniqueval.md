@@ -5,7 +5,7 @@ order: 33
 `int  nuniqueval(<geometry>geometry, string attribclass, string attribute_name)`
 
 Returns the number of *unique* values across all values of an attribute.
-You can use [uniqueval](./uniqueval "Returns one of the set of unique values across all values for an int or string attribute.") to iterate though the set of unique values.
+You can use [uniqueval](/en/houdini-vex/attributes-and-intrinsics/uniqueval "Returns one of the set of unique values across all values for an int or string attribute.") to iterate though the set of unique values.
 
 `<geometry>`
 

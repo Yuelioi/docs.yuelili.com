@@ -4,7 +4,7 @@ order: 63
 ---
 `void  setagentworldtransforms(int geohandle, int prim, matrix transforms[])`
 
-当只需要修改单个变换时，使用[setagentworldtransform](./setagentworldtransform "覆盖代理基元骨骼的世界空间变换。")可能会显著提高性能。
+当只需要修改单个变换时，使用[setagentworldtransform](/zh-cn/houdini-vex/crowds/setagentworldtransform "覆盖代理基元骨骼的世界空间变换。")可能会显著提高性能。
 
 `geohandle`
 

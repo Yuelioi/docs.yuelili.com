@@ -8,4 +8,4 @@ order: 36
 
 `vector  vtransform(string fromspace, string tospace, vector v)`
 
-Transforms a vector representing a direction. See [ptransform](./ptransform "Transforms a vector from one space to another.") for more information.
+Transforms a vector representing a direction. See [ptransform](/en/houdini-vex/transforms-and-space/ptransform "Transforms a vector from one space to another.") for more information.

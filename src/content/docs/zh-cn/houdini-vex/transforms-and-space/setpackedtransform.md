@@ -18,7 +18,7 @@ order: 24
 
 因此在多种情况下，此函数不会应用预期的变换。
 
-[getpackedtransform](./getpackedtransform "获取打包图元的变换矩阵。")函数存在相同问题，因为它返回的变换矩阵仅基于`P`和`transform`计算得出。
+[getpackedtransform](/zh-cn/houdini-vex/transforms-and-space/getpackedtransform "获取打包图元的变换矩阵。")函数存在相同问题，因为它返回的变换矩阵仅基于`P`和`transform`计算得出。
 
 ## 示例
 

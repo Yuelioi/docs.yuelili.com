@@ -13,4 +13,4 @@ order: 28
 
 返回给定CHOP输入第一个样本对应的时间（以秒为单位）。
 
-要获取起始样本编号，请使用 [chstart](./chstart "返回指定输入的起始样本")。要获取起始样本帧编号，请使用 [chstartf](./chstartf "返回指定输入的第一个样本对应的帧")。
+要获取起始样本编号，请使用 [chstart](/zh-cn/houdini-vex/chop/chstart "返回指定输入的起始样本")。要获取起始样本帧编号，请使用 [chstartf](/zh-cn/houdini-vex/chop/chstartf "返回指定输入的第一个样本对应的帧")。

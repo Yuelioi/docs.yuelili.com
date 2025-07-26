@@ -86,7 +86,7 @@ curve for the shown points.)
 `"linearsolve"` (or `"solvelinear"`)
 
 Maps between a set of non-uniform positions and a set of values.
-The [kspline](./kspline "Returns an interpolated value along a curve defined by a basis and key/position pairs.") function does this mapping implicitly.
+The [kspline](/en/houdini-vex/math/kspline "Returns an interpolated value along a curve defined by a basis and key/position pairs.") function does this mapping implicitly.
 
 ```vex
 tk = spline("linearsolve", t, k0, k1, k2, k3, ...);

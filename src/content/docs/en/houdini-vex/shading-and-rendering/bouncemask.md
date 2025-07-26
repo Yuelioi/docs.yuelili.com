@@ -12,11 +12,11 @@ Returns
 
 A bitmask that matches any of the labels.
 
-Mantra tags different types of rays using shading component *labels*, such as “diffuse”, “reflect”, “refract”, “volume”, and “sss”. A custom BSDF can also specify its own labels in addition to existing ones (see [cvex_bsdf](../bsdfs/cvex_bsdf "Creates a bsdf object from two CVEX shader strings.") for more information).
+Mantra tags different types of rays using shading component *labels*, such as “diffuse”, “reflect”, “refract”, “volume”, and “sss”. A custom BSDF can also specify its own labels in addition to existing ones (see [cvex_bsdf](/en/houdini-vex/bsdfs/cvex_bsdf "Creates a bsdf object from two CVEX shader strings.") for more information).
 
 Some VEX functions take or return a *component bitmask*, which specifies a combination of one or more of these labels using the bits of an integer.
 
-To get the bit value associated with a label, use [bouncemask](./bouncemask), for example `bouncemask("diffuse")`. To get a mask that matches multiple labels, use a space-separated list:
+To get the bit value associated with a label, use [bouncemask](/en/houdini-vex/shading-and-rendering/bouncemask), for example `bouncemask("diffuse")`. To get a mask that matches multiple labels, use a space-separated list:
 
 ```vex
 reflect_or_refract = bouncemask("reflect refract")

@@ -10,8 +10,8 @@ order: 16
 
 返回按升序排列的给定数组版本。
 
-- [argsort](./argsort "返回排序后数组的索引") 和 [sort](./sort "返回按升序排列的数组") 使用稳定排序算法。
-- 使用 [reverse](./reverse "返回逆序排列的数组或字符串") 可以反转排序顺序。
+- [argsort](/zh-cn/houdini-vex/arrays/argsort "返回排序后数组的索引") 和 [sort](/zh-cn/houdini-vex/arrays/sort "返回按升序排列的数组") 使用稳定排序算法。
+- 使用 [reverse](/zh-cn/houdini-vex/arrays/reverse "返回逆序排列的数组或字符串") 可以反转排序顺序。
 
 ## 示例
 

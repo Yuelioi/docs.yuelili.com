@@ -9,9 +9,9 @@ Overview
 
 ## overview
 
-Use this function to sample values from a CDF array created with the [create_cdf](./create_cdf "Creates a cumulative distribution function (CDF) from an array of probability density function (PDF) values.") function. See [create_cdf](./create_cdf "Creates a cumulative distribution function (CDF) from an array of probability density function (PDF) values.") for more information.
+Use this function to sample values from a CDF array created with the [create_cdf](/en/houdini-vex/sampling/create_cdf "Creates a cumulative distribution function (CDF) from an array of probability density function (PDF) values.") function. See [create_cdf](/en/houdini-vex/sampling/create_cdf "Creates a cumulative distribution function (CDF) from an array of probability density function (PDF) values.") for more information.
 
-See the [create_cdf](./create_cdf "Creates a cumulative distribution function (CDF) from an array of probability density function (PDF) values.") function docs for example code.
+See the [create_cdf](/en/houdini-vex/sampling/create_cdf "Creates a cumulative distribution function (CDF) from an array of probability density function (PDF) values.") function docs for example code.
 
 Usage
 
@@ -31,7 +31,7 @@ Writes the index of the sampled CDF, the sampled value, and the corresponding PD
 
 `cdf`
 
-The CDF to sample from (create this using [create_cdf](./create_cdf "Creates a cumulative distribution function (CDF) from an array of probability density function (PDF) values.")).
+The CDF to sample from (create this using [create_cdf](/en/houdini-vex/sampling/create_cdf "Creates a cumulative distribution function (CDF) from an array of probability density function (PDF) values.")).
 
 `uniform_rand`
 

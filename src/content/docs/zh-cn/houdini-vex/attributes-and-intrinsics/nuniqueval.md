@@ -5,7 +5,7 @@ order: 33
 `int  nuniqueval(<geometry>geometry, string attribclass, string attribute_name)`
 
 返回某个属性所有值中*不重复*值的数量。
-您可以使用[uniqueval](./uniqueval "返回整型或字符串属性所有值集合中的某个唯一值")来遍历这些唯一值集合。
+您可以使用[uniqueval](/zh-cn/houdini-vex/attributes-and-intrinsics/uniqueval "返回整型或字符串属性所有值集合中的某个唯一值")来遍历这些唯一值集合。
 
 `<geometry>`
 

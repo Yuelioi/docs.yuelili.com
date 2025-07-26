@@ -8,7 +8,7 @@ order: 5
 
 Takes the value in the range (omin, omax) and shifts it to the corresponding value in the new range (nmin, nmax).
 
-The function clamps the given value the range (omin, omax) before fitting, so the resulting value will be guaranteed to be in the range (nmin, nmax). To avoid clamping use [efit](./efit "Takes the value in one range and shifts it to the corresponding value in a new range.") instead.
+The function clamps the given value the range (omin, omax) before fitting, so the resulting value will be guaranteed to be in the range (nmin, nmax). To avoid clamping use [efit](/en/houdini-vex/interpolation/efit "Takes the value in one range and shifts it to the corresponding value in a new range.") instead.
 
 Examples
 

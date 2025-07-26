@@ -6,7 +6,7 @@ order: 53
 
 `int  setagentclips(int geohandle, int prim, int clip_ids[], float clip_times[], float clip_weights[], int clip_transform_group_ids[], int clip_layer_ids[], int layer_blend_modes[], float layer_weights[], int layer_parent_ids[])`
 
-This function can provide improved performance compared to using a combination of [setagentclipnames](./setagentclipnames "Sets the current animation clips for an agent primitive."), [setagentcliptimes](./setagentcliptimes "Sets the current times for an agent primitive’s animation clips."), and [setagentclipweights](./setagentclipweights "Sets the blend weights for an agent primitive’s animation clips."), and also modifies the [primitive intrinsics used for layering animation clips](../../crowds/agents.html#currentclips).
+This function can provide improved performance compared to using a combination of [setagentclipnames](/en/houdini-vex/crowds/setagentclipnames "Sets the current animation clips for an agent primitive."), [setagentcliptimes](/en/houdini-vex/crowds/setagentcliptimes "Sets the current times for an agent primitive’s animation clips."), and [setagentclipweights](/en/houdini-vex/crowds/setagentclipweights "Sets the blend weights for an agent primitive’s animation clips."), and also modifies the [primitive intrinsics used for layering animation clips](../../crowds/agents.html#currentclips).
 
 `geohandle`
 
@@ -23,7 +23,7 @@ A list of animation clip names.
 `clip_ids`
 
 A list of animation clip indices in the agent definition.
-A clip’s index can be obtained via [agentfindclip](./agentfindclip "Finds the index of a clip in an agent’s definition.").
+A clip’s index can be obtained via [agentfindclip](/en/houdini-vex/crowds/agentfindclip "Finds the index of a clip in an agent’s definition.").
 
 `clip_times`
 
@@ -40,7 +40,7 @@ A list of transform groups, which specify the joints that each clip should be ap
 `clip_transform_group_ids`
 
 A list of transform group indices in the agent definition.
-A transform group’s index can be obtained via [agentfindtransformgroup](./agentfindtransformgroup "Finds the index of a transform group in an agent’s definition.").
+A transform group’s index can be obtained via [agentfindtransformgroup](/en/houdini-vex/crowds/agentfindtransformgroup "Finds the index of a transform group in an agent’s definition.").
 
 `clip_layer_ids`
 

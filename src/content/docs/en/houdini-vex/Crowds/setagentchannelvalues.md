@@ -7,7 +7,7 @@ order: 51
 
 `void  setagentchannelvalues(int geohandle, int prim, float values[])`
 
-When modifying a single channel, using [setagentchannelvalue](./setagentchannelvalue "Overrides the value of an agent primitive’s channel.") instead can be significantly faster.
+When modifying a single channel, using [setagentchannelvalue](/en/houdini-vex/crowds/setagentchannelvalue "Overrides the value of an agent primitive’s channel.") instead can be significantly faster.
 
 `geohandle`
 

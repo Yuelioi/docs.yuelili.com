@@ -358,12 +358,12 @@ You can use underscores to break up long numbers.
 | `vector2` | Two floating point values. You might use this to represent texture coordinates (though usually Houdini uses vectors) or complex numbers | `{0,0}, {0.3,0.5}` |
 | `vector` | Three floating point values. You can use this to represent positions, directions, normals or colors (RGB or HSV) | `{0,0,0}, {0.3,0.5,-0.5}` |
 | `vector4` | Four floating point values. You can use this to represent positions in homogeneous coordinates, or color with alpha (RGBA). It is often used to represent a quaternion. Quaternions in VEX are laid out in `x/y/z/w` order, not `w/x/y/z`. This applies both to both quaternions and positions with homogeneous coordinates. | `{0,0,0,1}, {0.3,0.5,-0.5,0.2}` |
-| `array` | A list of values. See [arrays](./arrays) for more information. | `{ 1, 2, 3, 4, 5, 6, 7, 8 }` |
+| `array` | A list of values. See [arrays](/en/houdini-vex/language/arrays) for more information. | `{ 1, 2, 3, 4, 5, 6, 7, 8 }` |
 | `struct` | A fixed set of named values. See [structs](lang.html#structs) for more information. |
 | `matrix2` | Four floating point values representing a 2D rotation matrix | `{ {1,0}, {0,1} }` |
 | `matrix3` | Nine floating point values representing a 3D rotation matrix or a 2D transformation matrix | `{ {1,0,0}, {0,1,0}, {0,0,1} }` |
 | `matrix` | Sixteen floating point values representing a 3D transformation matrix | `{ {1,0,0,0}, {0,1,0,0}, {0,0,1,0}, {0,0,0,1} }` |
-| `string` | A string of characters. See [strings](./strings) for more information. | `"hello world"` |
+| `string` | A string of characters. See [strings](/en/houdini-vex/language/strings) for more information. | `"hello world"` |
 | `dict` | A dictionary mapping `string`s to other VEX data types. See [dicts](dicts.html) for more information. |
 | `bsdf` | A *bidirectional scattering distribution function*. See [writing PBR shaders](pbr.html) for information on BSDFs. |
 

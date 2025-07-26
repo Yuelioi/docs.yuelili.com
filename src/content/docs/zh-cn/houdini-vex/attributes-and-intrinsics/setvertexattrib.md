@@ -13,14 +13,14 @@ order: 73
 
 注意
 如果属性不存在，此函数**会创建该属性**，默认值为零、空字符串或空数组。
-如果要控制数值属性的默认值，请在设置属性之前使用 [addattrib](./addattrib "向几何体添加属性。")。
+如果要控制数值属性的默认值，请在设置属性之前使用 [addattrib](/zh-cn/houdini-vex/attributes-and-intrinsics/addattrib "向几何体添加属性。")。
 
-如果属性尚不存在，对于具有[标准名称](../snippets.html#known)（如 `Cd` 和 `orient`）的属性，其类型信息会自动设置。
-如果要控制数值属性的类型信息，请在设置属性之前使用 [setattribtypeinfo](./setattribtypeinfo "设置几何体中属性的含义。")。
+如果属性尚不存在，对于具有[标准名称](/zh-cn/houdini-vex/snippets.html#known)（如 `Cd` 和 `orient`）的属性，其类型信息会自动设置。
+如果要控制数值属性的类型信息，请在设置属性之前使用 [setattribtypeinfo](/zh-cn/houdini-vex/attributes-and-intrinsics/setattribtypeinfo "设置几何体中属性的含义。")。
 
 `geohandle`
 
-要写入的几何体的句柄。目前唯一有效的值是 `0` 或 [geoself](../geometry/geoself "返回当前几何体的句柄。")，表示节点中的当前几何体。（此参数将来可能用于允许写入其他几何体。）
+要写入的几何体的句柄。目前唯一有效的值是 `0` 或 [geoself](/zh-cn/houdini-vex/geometry/geoself "返回当前几何体的句柄。")，表示节点中的当前几何体。（此参数将来可能用于允许写入其他几何体。）
 
 `name`
 

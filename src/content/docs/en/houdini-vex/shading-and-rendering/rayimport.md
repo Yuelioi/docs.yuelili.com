@@ -9,12 +9,12 @@ order: 60
 
 `int  rayimport(string name, <type>&value[])`
 
-Extracts information any passed when the surface is hit by a ray fired by the [gather](./gather "Sends rays into the scene and returns information from the shaders of
+Extracts information any passed when the surface is hit by a ray fired by the [gather](/en/houdini-vex/shading-and-rendering/gather "Sends rays into the scene and returns information from the shaders of
 surfaces hit by the rays.").
 
 `name`
 
-The variable name, as passed using a `"send:name", value` argument pair in [gather](./gather "Sends rays into the scene and returns information from the shaders of
+The variable name, as passed using a `"send:name", value` argument pair in [gather](/en/houdini-vex/shading-and-rendering/gather "Sends rays into the scene and returns information from the shaders of
 surfaces hit by the rays.") (without the `send:` prefix).
 
 `value`

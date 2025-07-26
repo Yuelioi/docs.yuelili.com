@@ -3,7 +3,7 @@ title: adddetailattrib
 order: 2
 ---
 
-如果直到运行时才知道属性的类别，请使用 [addattrib](./addattrib "向几何体添加属性")。
+如果直到运行时才知道属性的类别，请使用 [addattrib](/zh-cn/houdini-vex/attributes-and-intrinsics/addattrib "向几何体添加属性")。
 
 `int  adddetailattrib(int geohandle, string name, <type>defvalue)`
 
@@ -15,11 +15,11 @@ order: 2
 
 `int  adddetailattrib(int geohandle, string name, <type>defvalue[], string typeinfo)`
 
-添加带有给定转换信息的细节属性。更多详情请参阅 [attribtypeinfo](./attribtypeinfo "返回几何体属性的转换元数据")。
+添加带有给定转换信息的细节属性。更多详情请参阅 [attribtypeinfo](/zh-cn/houdini-vex/attributes-and-intrinsics/attribtypeinfo "返回几何体属性的转换元数据")。
 
 `geohandle`
 
-要写入的几何体的句柄。目前唯一有效的值是 `0` 或 [geoself](../geometry/geoself "返回当前几何体的句柄")，表示节点中的当前几何体。（此参数将来可能用于允许写入其他几何体。）
+要写入的几何体的句柄。目前唯一有效的值是 `0` 或 [geoself](/zh-cn/houdini-vex/geometry/geoself "返回当前几何体的句柄")，表示节点中的当前几何体。（此参数将来可能用于允许写入其他几何体。）
 
 `name`
 

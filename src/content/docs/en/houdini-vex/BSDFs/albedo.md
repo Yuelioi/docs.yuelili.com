@@ -18,4 +18,4 @@ Vector toward viewer.
 
 A bitmask composed from values representing different shading components.
 
-See [bouncemask](../shading-and-rendering/bouncemask) for information on component label bitmasks.
+See [bouncemask](/en/houdini-vex/shading-and-rendering/bouncemask) for information on component label bitmasks.

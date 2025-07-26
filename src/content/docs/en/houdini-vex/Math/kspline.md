@@ -14,7 +14,7 @@ This is useful for specifying a 1D data ramp.
 Samples a curve defined by a series of vector value/position pairs.
 This is useful for specifying a color ramp.
 
-If you just want linearly spaced keys, or if you need to vary the basis, use [spline](./spline "Samples a value along a polyline or spline curve.") instead.
+If you just want linearly spaced keys, or if you need to vary the basis, use [spline](/en/houdini-vex/math/spline "Samples a value along a polyline or spline curve.") instead.
 
 `basis`, `bases`
 
@@ -61,7 +61,7 @@ curve for the shown points.)
 `"linearsolve"` (or `"solvelinear"`)
 
 Maps between a set of non-uniform positions and a set of values.
-The [kspline](./kspline "Returns an interpolated value along a curve defined by a basis and key/position pairs.") function does this mapping implicitly.
+The [kspline](/en/houdini-vex/math/kspline "Returns an interpolated value along a curve defined by a basis and key/position pairs.") function does this mapping implicitly.
 
 ```vex
 tk = spline("linearsolve", t, k0, k1, k2, k3, ...);
@@ -99,7 +99,7 @@ To define the shape of the curve, you pass a number of value/position pairs spec
 You must specify key positions in ascending order or the results will be unpredictable.
 
 Tip
-The [spline](./spline "Samples a value along a polyline or spline curve.") function is a more flexible superset of this function.
+The [spline](/en/houdini-vex/math/spline "Samples a value along a polyline or spline curve.") function is a more flexible superset of this function.
 
 This function is the equivalent of:
 

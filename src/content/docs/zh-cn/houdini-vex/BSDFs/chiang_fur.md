@@ -8,7 +8,7 @@ order: 5
 
 `bsdf  chiang_fur(vector nn, vector tanV, float mask, float cuticle, float R_v, float R_s, float TT_v, float TT_s, float TRT_v, float TRT_s, float shift, vector absorption_coeff, float ior, float R2_v, float R2_s, vector R2_color, ...)`
 
-创建一个用于计算基于物理的毛发模型的BSDF，该模型基于Chiang的论文《生产级路径追踪中实用可控的毛发模型》以及Ling-Qi Yan等人的《物理精确的毛发反射：建模、测量与渲染》。Chiang Fur是[Chiang模型着色器](./chiang "返回一个chiang BSDF")的扩展版本。
+创建一个用于计算基于物理的毛发模型的BSDF，该模型基于Chiang的论文《生产级路径追踪中实用可控的毛发模型》以及Ling-Qi Yan等人的《物理精确的毛发反射：建模、测量与渲染》。Chiang Fur是[Chiang模型着色器](/zh-cn/houdini-vex/bsdfs/chiang "返回一个chiang BSDF")的扩展版本。
 
 该模型考虑了毛发和粗发丝的结构特征：即所谓的髓质层。毛发主要由三个组成部分构成：
 

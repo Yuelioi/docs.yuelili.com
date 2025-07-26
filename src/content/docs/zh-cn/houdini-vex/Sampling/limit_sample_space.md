@@ -32,7 +32,7 @@ order: 3
 若要根据概率分布的`minvalue`和`maxvalue`确定`minu`和`maxu`，
 可通过`minu = CDF(minvalue)`和`maxu = CDF(maxvalue)`计算，
 其中`CDF`是该概率分布的累积分布函数（非逆函数）。
-接收`minvalue`或`maxvalue`参数的[sample_exponential](./sample_exponential "对指数分布进行采样")、
-[sample_cauchy](./sample_cauchy "对柯西（洛伦兹）分布进行采样")、[sample_normal](./sample_normal "对正态（高斯）分布进行采样")、[sample_lognormal](./sample_lognormal "基于底层正态分布参数对对数正态分布进行采样")和
-[sample_lognormal_by_median](./sample_lognormal_by_median "基于中位数和标准差对对数正态分布进行采样")函数版本都采用范围适配而非此限制方法，
+接收`minvalue`或`maxvalue`参数的[sample_exponential](/zh-cn/houdini-vex/sampling/sample_exponential "对指数分布进行采样")、
+[sample_cauchy](/zh-cn/houdini-vex/sampling/sample_cauchy "对柯西（洛伦兹）分布进行采样")、[sample_normal](/zh-cn/houdini-vex/sampling/sample_normal "对正态（高斯）分布进行采样")、[sample_lognormal](/zh-cn/houdini-vex/sampling/sample_lognormal "基于底层正态分布参数对对数正态分布进行采样")和
+[sample_lognormal_by_median](/zh-cn/houdini-vex/sampling/sample_lognormal_by_median "基于中位数和标准差对对数正态分布进行采样")函数版本都采用范围适配而非此限制方法，
 因为前者能保持单调性。但若需要更好的区间样本一致性，可在采样前对本函数应用于`u`值。

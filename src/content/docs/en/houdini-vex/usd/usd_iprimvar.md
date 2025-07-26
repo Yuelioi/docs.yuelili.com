@@ -35,7 +35,7 @@ The USD time code at which to evaluate the attribute. A USD time code roughly co
 
 Returns
 
-The value of an existing primvar, or zero/empty value if the primvar does not exist. Use [usd_isiprimvar](./usd_isiprimvar "Checks if the primitive or its ancestor has a primvar of the given name.") if you want to check whether the primvar exists.
+The value of an existing primvar, or zero/empty value if the primvar does not exist. Use [usd_isiprimvar](/en/houdini-vex/usd/usd_isiprimvar "Checks if the primitive or its ancestor has a primvar of the given name.") if you want to check whether the primvar exists.
 
 Examples
 

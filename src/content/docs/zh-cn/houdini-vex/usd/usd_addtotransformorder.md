@@ -9,7 +9,7 @@ order: 12
 
 此函数将变换操作追加到图元的变换顺序中。变换顺序是指一系列变换操作的序列，其完整名称以字符串数组形式存储在`xformOpOrder`属性中。因此，本函数会向该属性追加新的操作名称。
 
-注意：与大多数处理图元变换且以操作后缀作为参数的VEX函数不同，本函数需要完整的操作名称。若已知操作后缀，可使用[usd_transformname](./usd_transformname "构造变换操作的完整名称")来获取完整名称。
+注意：与大多数处理图元变换且以操作后缀作为参数的VEX函数不同，本函数需要完整的操作名称。若已知操作后缀，可使用[usd_transformname](/zh-cn/houdini-vex/usd/usd_transformname "构造变换操作的完整名称")来获取完整名称。
 
 `stagehandle`
 
@@ -21,7 +21,7 @@ order: 12
 
 `name`
 
-变换操作的完整名称。使用[usd_transformname](./usd_transformname "构造变换操作的完整名称")从操作后缀获取完整名称。
+变换操作的完整名称。使用[usd_transformname](/zh-cn/houdini-vex/usd/usd_transformname "构造变换操作的完整名称")从操作后缀获取完整名称。
 
 返回值
 

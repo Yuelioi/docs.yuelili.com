@@ -64,9 +64,9 @@ order: 38
 
 当包含周期参数时，函数会生成重复（周期性）噪声。
 
-Voronoi噪声与Worley噪声函数([wnoise](./wnoise "生成Worley（细胞）噪声。"))的结果几乎相同。但本函数提供了扰动控制（即空间中点的随机散布程度），并返回两个最近种子点的实际位置，而[wnoise](./wnoise "生成Worley（细胞）噪声。")仅返回到最近种子点的距离。
+Voronoi噪声与Worley噪声函数([wnoise](/zh-cn/houdini-vex/noise-and-randomness/wnoise "生成Worley（细胞）噪声。"))的结果几乎相同。但本函数提供了扰动控制（即空间中点的随机散布程度），并返回两个最近种子点的实际位置，而[wnoise](/zh-cn/houdini-vex/noise-and-randomness/wnoise "生成Worley（细胞）噪声。")仅返回到最近种子点的距离。
 
-虽然本函数比[wnoise](./wnoise "生成Worley（细胞）噪声。")稍耗资源，但由于返回实际点位置，可以克服Worley噪声的一些伪影。例如，要获得沿细胞边界的均匀边界：
+虽然本函数比[wnoise](/zh-cn/houdini-vex/noise-and-randomness/wnoise "生成Worley（细胞）噪声。")稍耗资源，但由于返回实际点位置，可以克服Worley噪声的一些伪影。例如，要获得沿细胞边界的均匀边界：
 
 ```vex
 if (f2 - f1 < tolerance * (distance(p1, p2) / (f1 + f2)) ...

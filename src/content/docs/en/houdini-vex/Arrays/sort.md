@@ -10,8 +10,8 @@ order: 16
 
 Returns a version of the given array sorted in increasing order.
 
-- [argsort](./argsort "Returns the indices of a sorted version of an array.") and [sort](./sort "Returns the array sorted in increasing order.") use a stable sort.
-- Use [reverse](./reverse "Returns an array or string in reverse order.") to reverse the order of the sort.
+- [argsort](/en/houdini-vex/arrays/argsort "Returns the indices of a sorted version of an array.") and [sort](/en/houdini-vex/arrays/sort "Returns the array sorted in increasing order.") use a stable sort.
+- Use [reverse](/en/houdini-vex/arrays/reverse "Returns an array or string in reverse order.") to reverse the order of the sort.
 
 Examples
 

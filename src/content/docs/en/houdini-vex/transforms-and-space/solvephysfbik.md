@@ -7,10 +7,10 @@ order: 30
 
 `matrix [] solvephysfbik(matrix xforms[], int parents[], dict jointoptions[], matrix targetxforms[], int targets[], dict targetoptions[], int iters, float damping, float tolerance)`
 
-This solver uses a different algorithm than [solvefbik](./solvefbik "Applies a full-body inverse kinematics algorithm to a skeleton.") - it typically performs somewhat slower, but provides more control over the skeleton’s behavior and can produce higher-quality results.
+This solver uses a different algorithm than [solvefbik](/en/houdini-vex/transforms-and-space/solvefbik "Applies a full-body inverse kinematics algorithm to a skeleton.") - it typically performs somewhat slower, but provides more control over the skeleton’s behavior and can produce higher-quality results.
 The solver can also use the optional per-joint masses and center of mass positions to achieve a target position for the skeleton’s center of mass, allowing for physics-based behavior such as maintaining balance.
 
-Compared to [solvefbik](./solvefbik "Applies a full-body inverse kinematics algorithm to a skeleton."), this solver has more stable behavior when joint limits are enabled, and produces more accurate results when there are targets at different priority levels.
+Compared to [solvefbik](/en/houdini-vex/transforms-and-space/solvefbik "Applies a full-body inverse kinematics algorithm to a skeleton."), this solver has more stable behavior when joint limits are enabled, and produces more accurate results when there are targets at different priority levels.
 This solver also tends to distribute joint angle changes more evenly along the chain (particularly when orientation targets are being used), rather than producing large joint angle changes for one or two joints.
 
 The rotation and translation weight parameters provide control over how each joint axis behaves during the solve. This can be used to ensure that certain joints rotate more than others, to lock a specific joint axis, or to enable translating (stretchy) joints.

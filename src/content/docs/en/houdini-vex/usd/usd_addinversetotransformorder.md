@@ -11,7 +11,7 @@ This function appends an inversed transformation to the primitive’s transform 
 
 Inverse transforms are used primary for rotating (or scaling) around a pivot that does not coincide with the origin. The usual practice is to apply a translation to the pivot point, then perform rotation, and finally apply an inverse of the original translation. This function is used for applying the inverse of the original translation.
 
-NOTE: unlike most VEX functions that deal with primitive transforms and take an operation suffix as a parameter, this function takes the full operation name. Use [usd_transformname](./usd_transformname "Constructs a full name of a transform operation") to obtain the full name if you know the suffix.
+NOTE: unlike most VEX functions that deal with primitive transforms and take an operation suffix as a parameter, this function takes the full operation name. Use [usd_transformname](/en/houdini-vex/usd/usd_transformname "Constructs a full name of a transform operation") to obtain the full name if you know the suffix.
 
 `stagehandle`
 
@@ -23,7 +23,7 @@ The path to the primitive.
 
 `name`
 
-The full name of the transform operation. Use [usd_transformname](./usd_transformname "Constructs a full name of a transform operation") to obtain the full name from the operation suffix.
+The full name of the transform operation. Use [usd_transformname](/en/houdini-vex/usd/usd_transformname "Constructs a full name of a transform operation") to obtain the full name from the operation suffix.
 
 Returns
 

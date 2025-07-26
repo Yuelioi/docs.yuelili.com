@@ -7,7 +7,7 @@ order: 11
 
 `int  usd_addschemaattrib(int stagehandle, string primpath, string name, string typename)`
 
-This function adds an attribute of a given type to the primitive. There are a few attributes which are considered part of a schema but which are not automatically added to a prim (such as the `extentsHint` attribute of the \`GeomModelAPI schema). In these rare cases, this function will add the attribute to a prim, marking it as a non-custom attribute. The data type of the attribute is not verified, so be sure to set the type expected by the schema. To create custom attributes, use [usd_addattrib](./usd_addattrib "Creates an attribute of a given type on a primitive.").
+This function adds an attribute of a given type to the primitive. There are a few attributes which are considered part of a schema but which are not automatically added to a prim (such as the `extentsHint` attribute of the \`GeomModelAPI schema). In these rare cases, this function will add the attribute to a prim, marking it as a non-custom attribute. The data type of the attribute is not verified, so be sure to set the type expected by the schema. To create custom attributes, use [usd_addattrib](/en/houdini-vex/usd/usd_addattrib "Creates an attribute of a given type on a primitive.").
 
 `stagehandle`
 

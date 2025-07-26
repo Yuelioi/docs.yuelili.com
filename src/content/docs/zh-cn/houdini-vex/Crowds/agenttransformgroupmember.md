@@ -28,7 +28,7 @@ order: 41
 `transformgroupidx`
 
 代理定义中变换组的索引。
-变换组的索引可通过[agentfindtransformgroup](./agentfindtransformgroup "查找代理定义中变换组的索引。")获取。
+变换组的索引可通过[agentfindtransformgroup](/zh-cn/houdini-vex/crowds/agentfindtransformgroup "查找代理定义中变换组的索引。")获取。
 
 `transform`
 

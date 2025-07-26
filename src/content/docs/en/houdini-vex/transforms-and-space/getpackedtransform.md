@@ -19,7 +19,7 @@ This function builds a transform from *only* the `P` (position) attribute and th
 
 So this function will not return the expected transform in several different cases.
 
-The [setpackedtransform](./setpackedtransform "Sets the transform of a packed primitive.") function has the same issues since it *only* overwrites `P` and `transform`. So, for example, the `packedfulltransform` won’t contain the matrix you would expect if there is a non-zero packed pivot, or in the other cases listed above.
+The [setpackedtransform](/en/houdini-vex/transforms-and-space/setpackedtransform "Sets the transform of a packed primitive.") function has the same issues since it *only* overwrites `P` and `transform`. So, for example, the `packedfulltransform` won’t contain the matrix you would expect if there is a non-zero packed pivot, or in the other cases listed above.
 
 Examples
 

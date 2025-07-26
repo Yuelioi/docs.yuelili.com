@@ -19,6 +19,6 @@ The input number to read from, starting from 0. For example, the first input is 
 
 If you specify `-1`, the function uses the current CHOP node or input `0` if it is connected.
 
-To get the start frame, use [chstartf](./chstartf "Returns the frame corresponding to the first sample of the input
-specified."). To get the start time in seconds, use [chstartt](./chstartt "Returns the time corresponding to the first sample of the input
+To get the start frame, use [chstartf](/en/houdini-vex/chop/chstartf "Returns the frame corresponding to the first sample of the input
+specified."). To get the start time in seconds, use [chstartt](/en/houdini-vex/chop/chstartt "Returns the time corresponding to the first sample of the input
 specified.").

@@ -22,7 +22,7 @@ illuminance(position, [axis], [angle], [light_typemask], [lightmask])
 
 ```
 
-The shadow shader is not called unless you explicitly call it. However, once the shadow shader has been called, the value of `Cl` will be changed for the duration of the surface shader. The shadow shader is automatically called when using any of the built-in lighting calls (e.g. [diffuse](../bsdfs/diffuse "Returns a diffuse BSDF or computes diffuse shading."), [specular](../bsdfs/specular "Returns a specular BSDF or computes specular shading."), [ambient](../light/ambient "Returns the color of ambient light in the scene.")).
+The shadow shader is not called unless you explicitly call it. However, once the shadow shader has been called, the value of `Cl` will be changed for the duration of the surface shader. The shadow shader is automatically called when using any of the built-in lighting calls (e.g. [diffuse](/en/houdini-vex/bsdfs/diffuse "Returns a diffuse BSDF or computes diffuse shading."), [specular](/en/houdini-vex/bsdfs/specular "Returns a specular BSDF or computes specular shading."), [ambient](/en/houdini-vex/light/ambient "Returns the color of ambient light in the scene.")).
 
 The default value for the axis is the surface normal. The default value for the angle is PI/2. The default value for the light mask is LIGHT_DIFFUSE|LIGHT_SPECULAR (please see shading.h for the light definitions).
 
@@ -89,7 +89,7 @@ illuminance (P, nf, M_PI/2, "orgN", N) {
 
 ```
 
-In the light’s shader, you can receive the value from the illuminance loop with the [simport](./simport "Imports a variable sent by a surface shader in an illuminance loop.") function.
+In the light’s shader, you can receive the value from the illuminance loop with the [simport](/en/houdini-vex/shading-and-rendering/simport "Imports a variable sent by a surface shader in an illuminance loop.") function.
 
 ```vex
 vector orgN;
@@ -129,10 +129,10 @@ Message passing
 ## message-passing
 
 Within the illuminance loop, you can retrieve values from the light shader
-with the [limport](./limport "Imports a variable from the light shader for the surface.") function.
+with the [limport](/en/houdini-vex/shading-and-rendering/limport "Imports a variable from the light shader for the surface.") function.
 
 The light shader can retrieve any “keyword” arguments passed to the illuminance
-statement with the [simport](./simport "Imports a variable sent by a surface shader in an illuminance loop.") function.
+statement with the [simport](/en/houdini-vex/shading-and-rendering/simport "Imports a variable sent by a surface shader in an illuminance loop.") function.
 
 For example, to send down the vector variable `uv` to the light shader…
 

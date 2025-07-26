@@ -7,7 +7,7 @@ order: 22
 `<type>[] getattrib(<geometry>geometry, string attribclass, string attribute_name, int elemnum, int &success)`
 
 This general form lets you specify the attribute “class” at run-time. This can be useful for writing general code that can work on different classes.
-If you know the class of attribute you want to read ahead of time, using [detailattrib](./detailattrib "Reads a detail attribute value from a geometry."), [primattrib](./primattrib "Reads a primitive attribute value from a geometry, outputting a success flag."), [pointattrib](./pointattrib "Reads a point attribute value from a geometry and outputs a success/fail flag."), or [vertexattrib](./vertexattrib "Reads a vertex attribute value from a geometry.") may be faster.
+If you know the class of attribute you want to read ahead of time, using [detailattrib](/en/houdini-vex/attributes-and-intrinsics/detailattrib "Reads a detail attribute value from a geometry."), [primattrib](/en/houdini-vex/attributes-and-intrinsics/primattrib "Reads a primitive attribute value from a geometry, outputting a success flag."), [pointattrib](/en/houdini-vex/attributes-and-intrinsics/pointattrib "Reads a point attribute value from a geometry and outputs a success/fail flag."), or [vertexattrib](/en/houdini-vex/attributes-and-intrinsics/vertexattrib "Reads a vertex attribute value from a geometry.") may be faster.
 
 `<geometry>`
 
@@ -29,7 +29,7 @@ The name of the attribute (or intrinsic) to read.
 
 The point/primitive/vertex number to read the attribute value from. For detail attributes, use `0` here (the argument is ignored for detail attributes).
 
-To get the linear vertex number given a primitive number and the vertex number on the primitive, use the [primvertex](../geometry/primvertex "Converts a primitive/vertex pair into a linear vertex.") function.
+To get the linear vertex number given a primitive number and the vertex number on the primitive, use the [primvertex](/en/houdini-vex/geometry/primvertex "Converts a primitive/vertex pair into a linear vertex.") function.
 
 `success`
 

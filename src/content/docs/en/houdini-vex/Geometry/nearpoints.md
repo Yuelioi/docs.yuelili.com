@@ -41,4 +41,4 @@ Returns
 
 An array of point numbers
 This will only search against points, not the surface locations of the geometry.
-Use [xyzdist](../measure/xyzdist "Finds the distance from a point to the closest location on surface geometry.") to find the closest point on surfaces or curves.
+Use [xyzdist](/en/houdini-vex/measure/xyzdist "Finds the distance from a point to the closest location on surface geometry.") to find the closest point on surfaces or curves.

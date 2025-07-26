@@ -8,4 +8,4 @@ order: 8
 
 `vector  frontface(vector N, vector I, vector Nref)`
 
-如果[点积](../math/dot "返回参数之间的点积")(I, Nref)小于零，则N将被取反。
+如果[点积](/zh-cn/houdini-vex/math/dot "返回参数之间的点积")(I, Nref)小于零，则N将被取反。

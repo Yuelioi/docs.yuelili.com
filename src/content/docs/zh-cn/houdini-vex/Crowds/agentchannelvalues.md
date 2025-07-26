@@ -7,7 +7,7 @@ order: 5
 
 `float [] agentchannelvalues(<geometry>geometry, int prim)`
 
-如果只需要获取单个通道值，使用 [agentchannelvalue](./agentchannelvalue "返回代理体元通道的当前值") 可能会显著提高效率。
+如果只需要获取单个通道值，使用 [agentchannelvalue](/zh-cn/houdini-vex/crowds/agentchannelvalue "返回代理体元通道的当前值") 可能会显著提高效率。
 
 当`prim`超出范围或不是代理体元时，返回空数组。
 

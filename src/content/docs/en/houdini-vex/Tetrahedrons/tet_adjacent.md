@@ -24,4 +24,4 @@ Returns
 The primitive number of the tetrahedron opposite the given vertex.
 Returns `-1` f the primitive is not a tet or doesn’t have an adjacent tetrahedron.
 
-Use [tet_faceindex](./tet_faceindex "Returns vertex indices of each face of a tetrahedron.") to get the vertex indices of each face of a tetrahedron.
+Use [tet_faceindex](/en/houdini-vex/tetrahedrons/tet_faceindex "Returns vertex indices of each face of a tetrahedron.") to get the vertex indices of each face of a tetrahedron.

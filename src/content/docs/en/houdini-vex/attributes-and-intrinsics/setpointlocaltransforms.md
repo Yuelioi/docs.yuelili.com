@@ -11,7 +11,7 @@ Sets an array of local transforms associated with the point indices. This functi
 
 `geohandle`
 
-A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](../geometry/geoself "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
+A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](/en/houdini-vex/geometry/geoself "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
 
 `pnts`
 

@@ -13,7 +13,7 @@ primvar元素大小适用于数组型primvar，但它并不表示数组的长度
 
 在大多数情况下，元素大小为`1`。
 
-注意：元素大小是USD特有的概念，不同于通过[usd_primvarsize](./usd_primvarsize "返回USD图元上primvar的元组大小")获取的VEX元组大小，也不同于通过[usd_primvarlen](./usd_primvarlen "返回USD图元上数组型primvar的长度")获取的VEX数组长度。
+注意：元素大小是USD特有的概念，不同于通过[usd_primvarsize](/zh-cn/houdini-vex/usd/usd_primvarsize "返回USD图元上primvar的元组大小")获取的VEX元组大小，也不同于通过[usd_primvarlen](/zh-cn/houdini-vex/usd/usd_primvarlen "返回USD图元上数组型primvar的长度")获取的VEX数组长度。
 
 `<stage>`
 

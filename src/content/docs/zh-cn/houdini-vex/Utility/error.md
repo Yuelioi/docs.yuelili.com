@@ -5,9 +5,9 @@ order: 3
 
 `void  error(string format, ...)`
 
-报告自定义的运行时VEX错误。该函数使用与[printf](./printf "将值打印到启动VEX程序的控制台。")相同的格式化字符串语法。
+报告自定义的运行时VEX错误。该函数使用与[printf](/zh-cn/houdini-vex/utility/printf "将值打印到启动VEX程序的控制台。")相同的格式化字符串语法。
 
-如果某些操作仍可作为可接受的备选方案执行，而非完全失败，则考虑使用[warning](./warning "报告自定义的运行时VEX警告。")而非错误报告可能更为合适。
+如果某些操作仍可作为可接受的备选方案执行，而非完全失败，则考虑使用[warning](/zh-cn/houdini-vex/utility/warning "报告自定义的运行时VEX警告。")而非错误报告可能更为合适。
 
 ## 示例
 

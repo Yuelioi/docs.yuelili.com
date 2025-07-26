@@ -3,7 +3,7 @@ title: agentcurrentlayer
 order: 22
 ---
 Warning
-This function has been deprecated. Use [agentcurrentlayers](./agentcurrentlayers "Returns the names of an agent primitive’s current layers.") instead.
+This function has been deprecated. Use [agentcurrentlayers](/en/houdini-vex/crowds/agentcurrentlayers "Returns the names of an agent primitive’s current layers.") instead.
 
 Returns an empty string if `prim` is out of range or is not an agent primitive.
 

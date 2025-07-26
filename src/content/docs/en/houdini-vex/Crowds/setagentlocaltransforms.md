@@ -4,7 +4,7 @@ order: 61
 ---
 `void  setagentlocaltransforms(int geohandle, int prim, matrix transforms[])`
 
-When modifying a single transform, using [setagentlocaltransform](./setagentlocaltransform "Overrides the local space transform of an agent primitive’s bone.") instead can be significantly faster.
+When modifying a single transform, using [setagentlocaltransform](/en/houdini-vex/crowds/setagentlocaltransform "Overrides the local space transform of an agent primitive’s bone.") instead can be significantly faster.
 
 `geohandle`
 

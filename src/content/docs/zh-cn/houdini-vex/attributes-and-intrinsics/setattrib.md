@@ -2,7 +2,7 @@
 title: setattrib
 order: 63
 ---
-如果提前知道属性类别，使用[setdetailattrib](./setdetailattrib "设置几何体中的细节属性")、[setprimattrib](./setprimattrib "设置几何体中的基元属性")、[setpointattrib](./setpointattrib "设置几何体中的点属性")或[setvertexattrib](./setvertexattrib "设置几何体中的顶点属性")可能更快。
+如果提前知道属性类别，使用[setdetailattrib](/zh-cn/houdini-vex/attributes-and-intrinsics/setdetailattrib "设置几何体中的细节属性")、[setprimattrib](/zh-cn/houdini-vex/attributes-and-intrinsics/setprimattrib "设置几何体中的基元属性")、[setpointattrib](/zh-cn/houdini-vex/attributes-and-intrinsics/setpointattrib "设置几何体中的点属性")或[setvertexattrib](/zh-cn/houdini-vex/attributes-and-intrinsics/setvertexattrib "设置几何体中的顶点属性")可能更快。
 
 `int  setattrib(int geohandle, string attribclass, string attribute_name, int element_num, int vertex_num, <type>value, string mode="set")`
 
@@ -12,14 +12,14 @@ order: 63
 
 注意
 如果属性不存在，该函数会**创建属性**，默认值为零、空字符串或空数组。
-如果要控制数值属性的默认值，请在设置属性前使用[addattrib](./addattrib "向几何体添加属性")。
+如果要控制数值属性的默认值，请在设置属性前使用[addattrib](/zh-cn/houdini-vex/attributes-and-intrinsics/addattrib "向几何体添加属性")。
 
-如果属性尚不存在，对于具有[标准名称](../snippets.html#known)（如`Cd`和`orient`）的属性，其类型信息会自动设置。
-如果要控制数值属性的类型信息，请在设置属性前使用[setattribtypeinfo](./setattribtypeinfo "设置几何体中属性的含义")。
+如果属性尚不存在，对于具有[标准名称](/zh-cn/houdini-vex/snippets.html#known)（如`Cd`和`orient`）的属性，其类型信息会自动设置。
+如果要控制数值属性的类型信息，请在设置属性前使用[setattribtypeinfo](/zh-cn/houdini-vex/attributes-and-intrinsics/setattribtypeinfo "设置几何体中属性的含义")。
 
 `geohandle`
 
-要写入的几何体的句柄。目前唯一有效的值是`0`或[geoself](../geometry/geoself "返回当前几何体的句柄")，表示节点中的当前几何体。（该参数未来可能用于允许写入其他几何体。）
+要写入的几何体的句柄。目前唯一有效的值是`0`或[geoself](/zh-cn/houdini-vex/geometry/geoself "返回当前几何体的句柄")，表示节点中的当前几何体。（该参数未来可能用于允许写入其他几何体。）
 
 `attribclass`
 

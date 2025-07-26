@@ -6,7 +6,7 @@ order: 12
 
 `vector  getpointbbox_min(<geometry>geometry, string pointgroup)`
 
-This is the same as [getbbox_min](./getbbox_min "Returns the minimum of the bounding box for the geometry.") except it only computes the bounding box of the *points*. So if a primitive has extents that don’t have points (for example, the boundary of a primitive sphere), they will not be included in the box.
+This is the same as [getbbox_min](/en/houdini-vex/measure/getbbox_min "Returns the minimum of the bounding box for the geometry.") except it only computes the bounding box of the *points*. So if a primitive has extents that don’t have points (for example, the boundary of a primitive sphere), they will not be included in the box.
 
 `<geometry>`
 

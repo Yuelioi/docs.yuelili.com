@@ -6,7 +6,7 @@ order: 44
 
 Note
 To convert the linear index into a primitive number and primitive vertex number,
-use [vertexprim](./vertexprim "Returns the number of the primitive containing a given vertex.") and [vertexprimindex](./vertexprimindex "Converts a linear vertex index into a primitive vertex number.").
+use [vertexprim](/en/houdini-vex/geometry/vertexprim "Returns the number of the primitive containing a given vertex.") and [vertexprimindex](/en/houdini-vex/geometry/vertexprimindex "Converts a linear vertex index into a primitive vertex number.").
 
 `<geometry>`
 
@@ -17,7 +17,7 @@ Alternatively, the argument can be a string specifying a geometry file (for exam
 `linearvertex`
 
 The linear index of a vertex.
-If you have a point number and point vertex number, you can use [vertexindex](./vertexindex "Converts a primitive/vertex pair into a linear vertex.") to convert them to a linear index.
+If you have a point number and point vertex number, you can use [vertexindex](/en/houdini-vex/geometry/vertexindex "Converts a primitive/vertex pair into a linear vertex.") to convert them to a linear index.
 
 Returns
 

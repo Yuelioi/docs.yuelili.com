@@ -33,7 +33,7 @@ order: 18
 
 返回值
 
-数组属性的长度，若非数组属性则返回1。如需检查属性是否为数组，请使用[usd_isarray](./usd_isarray "检查属性是否为数组")。
+数组属性的长度，若非数组属性则返回1。如需检查属性是否为数组，请使用[usd_isarray](/zh-cn/houdini-vex/usd/usd_isarray "检查属性是否为数组")。
 
 ## 示例
 

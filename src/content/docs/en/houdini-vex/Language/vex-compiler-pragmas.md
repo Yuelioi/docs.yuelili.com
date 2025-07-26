@@ -307,7 +307,7 @@ indicating which parameter changed.
 - For Python callbacks, Houdini creates a `kwargs` variable containing a
  dictionary of information about the parameter that changed.
 
-See [callback scripts](../hom/locations.html#parameter_callback_scripts) for
+See [callback scripts](/en/houdini-vex/hom/locations.html#parameter_callback_scripts) for
 more information.
 
 # pragma disablewhen and #pragma hidewhen
@@ -323,7 +323,7 @@ Disables parm_name when the conditional_expression evaluates to true.
 Hides parm_name from the UI when the conditional_expression evaluates to true.
 
 The syntax of the conditional_expression is the same as for the **Disable when** and
-**Hide when** options on parameters. See the [help for conditional rules](../ref/windows/optype.html#conditionals)
+**Hide when** options on parameters. See the [help for conditional rules](/en/houdini-vex/ref/windows/optype.html#conditionals)
 for more information on the conditional syntax.
 
 ```vex

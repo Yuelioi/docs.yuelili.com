@@ -12,7 +12,7 @@ order: 20
 
 指示要评估哪些类型反弹的位掩码。
 
-有关组件标签位掩码的信息，请参见[bouncemask](../shading-and-rendering/bouncemask)。
+有关组件标签位掩码的信息，请参见[bouncemask](/zh-cn/houdini-vex/shading-and-rendering/bouncemask)。
 
 ## 示例
 

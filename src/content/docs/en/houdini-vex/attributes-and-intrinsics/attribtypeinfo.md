@@ -5,7 +5,7 @@ order: 12
 `string  attribtypeinfo(<geometry>geometry, string attribclass, string attribute_name)`
 
 This general form lets you specify the attribute “class” at run-time. This can be useful for writing general code that can work on different classes.
-If you know the attribute class ahead of time, using [detailattribtypeinfo](./detailattribtypeinfo "Returns the type info of a geometry attribute."), [primattribtypeinfo](./primattribtypeinfo "Returns the type info of a geometry attribute."), [pointattribtypeinfo](./pointattribtypeinfo "Returns the type info of a geometry attribute."), or [vertexattribtypeinfo](./vertexattribtypeinfo "Returns the type info of a geometry attribute.") may be faster.
+If you know the attribute class ahead of time, using [detailattribtypeinfo](/en/houdini-vex/attributes-and-intrinsics/detailattribtypeinfo "Returns the type info of a geometry attribute."), [primattribtypeinfo](/en/houdini-vex/attributes-and-intrinsics/primattribtypeinfo "Returns the type info of a geometry attribute."), [pointattribtypeinfo](/en/houdini-vex/attributes-and-intrinsics/pointattribtypeinfo "Returns the type info of a geometry attribute."), or [vertexattribtypeinfo](/en/houdini-vex/attributes-and-intrinsics/vertexattribtypeinfo "Returns the type info of a geometry attribute.") may be faster.
 
 `<geometry>`
 

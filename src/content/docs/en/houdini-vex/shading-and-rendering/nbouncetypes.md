@@ -6,4 +6,4 @@ order: 54
 
 Return the number of different bounce types supported by the renderer.
 
-See [bouncemask](./bouncemask) for information on component label bitmasks.
+See [bouncemask](/en/houdini-vex/shading-and-rendering/bouncemask) for information on component label bitmasks.

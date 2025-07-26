@@ -37,7 +37,7 @@ order: 10
 
 到达采样点的光照比例。例如，如果点完全处于阴影中，返回值为0；如果完全被照亮，返回值为1。
 
-shadowmap() VEX函数与texture()接收相同的可变参数。更多信息请参阅[texture](./texture "计算指定纹理图的过滤采样")。
+shadowmap() VEX函数与texture()接收相同的可变参数。更多信息请参阅[texture](/zh-cn/houdini-vex/texturing/texture "计算指定纹理图的过滤采样")。
 深度摄像机贴图通道
 
 ## 深度摄像机贴图通道

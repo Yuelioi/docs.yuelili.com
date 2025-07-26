@@ -15,7 +15,7 @@ order: 29
 
 返回该图层引用的且绑定到指定变换的所有形状名称。
 
-如果`layername`不是代理的[图层](./agentlayers "返回代理基元已加载的所有图层")之一、`shapetype`无效、`transform`超出范围、`prim`超出范围或`prim`不是代理基元，则返回空数组。
+如果`layername`不是代理的[图层](/zh-cn/houdini-vex/crowds/agentlayers "返回代理基元已加载的所有图层")之一、`shapetype`无效、`transform`超出范围、`prim`超出范围或`prim`不是代理基元，则返回空数组。
 
 `<geometry>`
 
@@ -34,7 +34,7 @@ order: 29
 `layerindex`
 
 代理定义中图层的索引。
-可通过[agentfindlayer](./agentfindlayer "查找代理定义中图层的索引")获取图层的索引。
+可通过[agentfindlayer](/zh-cn/houdini-vex/crowds/agentfindlayer "查找代理定义中图层的索引")获取图层的索引。
 
 `shapetype`
 

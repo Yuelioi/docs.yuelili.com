@@ -29,7 +29,7 @@ The name can be namespaced to acces values inside (possibly nested) VtDictionari
 
 Returns
 
-The value of an existing metadata, or zero/empty value if the metadata does not exist. Use [usd_ismetadata](./usd_ismetadata "Checks if the primitive has metadata by the given name.") if you want to check whether the metadata exists.
+The value of an existing metadata, or zero/empty value if the metadata does not exist. Use [usd_ismetadata](/en/houdini-vex/usd/usd_ismetadata "Checks if the primitive has metadata by the given name.") if you want to check whether the metadata exists.
 
 Examples
 

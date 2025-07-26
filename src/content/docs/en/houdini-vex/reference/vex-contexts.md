@@ -27,7 +27,7 @@ See [common shading context features](shading_contexts.html) for information spe
  shaders to calculate the illumination of a surface.")
  Define a light shader with a program called from surface or fog
  shaders to calculate the illumination of a surface.
-- [shadow](../shading-and-rendering/shadow "Define a shadow shader by defining a program that’s called from
+- [shadow](/en/houdini-vex/shading-and-rendering/shadow "Define a shadow shader by defining a program that’s called from
  surface or fog shaders to calculate the occlusion on a surface from a
  light source.")
  Define a shadow shader by defining a program that’s called from
@@ -43,7 +43,7 @@ Other contexts
 ## other-contexts
 
 - [cvex](cvex.html)
-- [chop](../chop/chop "Define a custom CHOP operator with a program that edits channel
+- [chop](/en/houdini-vex/chop/chop "Define a custom CHOP operator with a program that edits channel
  values.")
  Define a custom CHOP operator with a program that edits channel
  values.

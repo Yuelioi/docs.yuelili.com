@@ -12,7 +12,7 @@ BSDF to sample.
 
 A bitmask indicating which types of bounces to evaluate.
 
-See [bouncemask](../shading-and-rendering/bouncemask) for information on component label bitmasks.
+See [bouncemask](/en/houdini-vex/shading-and-rendering/bouncemask) for information on component label bitmasks.
 
 Examples
 

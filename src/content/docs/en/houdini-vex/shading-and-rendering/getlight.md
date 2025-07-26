@@ -8,7 +8,7 @@ order: 16
 `light  getlight(int lid)`
 
 Given a integer light identifier (lid), you can get a reference to a light
-object representing the light (see details on the [mantra specific type](../lang.html#mantratypes))
+object representing the light (see details on the [mantra specific type](/en/houdini-vex/lang.html#mantratypes))
 
 ```vex
 int[] lights = getlights();

@@ -77,7 +77,7 @@ spline("catrom", t, v0, v1, v2, v3, v4, v5)
 
 `"linearsolve"` (或 `"solvelinear"`)
 
-在非均匀位置集合与值集合之间建立映射。[kspline](./kspline "返回由基础和键/位置对定义的曲线上的插值。")函数隐式实现了这种映射。
+在非均匀位置集合与值集合之间建立映射。[kspline](/zh-cn/houdini-vex/math/kspline "返回由基础和键/位置对定义的曲线上的插值。")函数隐式实现了这种映射。
 
 ```vex
 tk = spline("linearsolve", t, k0, k1, k2, k3, ...);

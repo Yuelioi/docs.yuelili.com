@@ -13,7 +13,7 @@ order: 71
 
 `lightid`
 
-光源标识符，由[getlights](./getlights "返回当前着色表面的光源标识符数组")返回。
+光源标识符，由[getlights](/zh-cn/houdini-vex/shading-and-rendering/getlights "返回当前着色表面的光源标识符数组")返回。
 
 `pos`
 

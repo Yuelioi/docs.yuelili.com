@@ -6,7 +6,7 @@ order: 45
 
 Note
 To convert the linear index into a primitive number and primitive vertex number,
-use [vertexprim](./vertexprim "Returns the number of the primitive containing a given vertex.") and [vertexprimindex](./vertexprimindex "Converts a linear vertex index into a primitive vertex number.").
+use [vertexprim](/en/houdini-vex/geometry/vertexprim "Returns the number of the primitive containing a given vertex.") and [vertexprimindex](/en/houdini-vex/geometry/vertexprimindex "Converts a linear vertex index into a primitive vertex number.").
 
 `<geometry>`
 
@@ -23,7 +23,7 @@ Returns
 The vertex’s number within the primitive that contains it, or
 `-1` if the vertex has no primitive.
 
-To get the primitive number of the containing primitive, use [vertexprim](./vertexprim "Returns the number of the primitive containing a given vertex.").
+To get the primitive number of the containing primitive, use [vertexprim](/en/houdini-vex/geometry/vertexprim "Returns the number of the primitive containing a given vertex.").
 
 Note
 Due to the nature of the geometry structure, the first time this is run on

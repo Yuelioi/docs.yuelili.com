@@ -18,7 +18,7 @@ For a string, this returns the number of *bytes* (not characters).
 
 For a dictionary, this returns the number of keys in the dictionary.
 
-Don’t confuse this function with [length](../math/length "Returns the magnitude of a vector."), which returns the magnitude of a vector.
+Don’t confuse this function with [length](/en/houdini-vex/math/length "Returns the magnitude of a vector."), which returns the magnitude of a vector.
 
 Examples
 

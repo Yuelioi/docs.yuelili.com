@@ -9,7 +9,7 @@ order: 25
 
 This function blocks the primvar indices. I.e., removes all time samples and sets the *block* as default value. It changes the indexed primvar into a non-indexed primvar.
 
-Note, you may also want to block the primvar itself with [usd_blockprimvar](./usd_blockprimvar "Blocks the primvar.").
+Note, you may also want to block the primvar itself with [usd_blockprimvar](/en/houdini-vex/usd/usd_blockprimvar "Blocks the primvar.").
 
 `stagehandle`
 

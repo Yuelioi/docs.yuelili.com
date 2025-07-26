@@ -38,7 +38,7 @@ Primvar名称（不包含命名空间）。
 
 返回值 
 
-返回现有primvar扁平化值数组中的元素。若primvar不存在则返回零值/空值。如需检查primvar是否存在，请使用[usd_isiprimvar](./usd_isiprimvar "检查指定图元或其祖先是否包含给定名称的primvar")。 
+返回现有primvar扁平化值数组中的元素。若primvar不存在则返回零值/空值。如需检查primvar是否存在，请使用[usd_isiprimvar](/zh-cn/houdini-vex/usd/usd_isiprimvar "检查指定图元或其祖先是否包含给定名称的primvar")。 
 
 示例 
 

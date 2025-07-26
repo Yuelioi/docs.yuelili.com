@@ -14,7 +14,7 @@ Returns the names of all shapes that are referenced by the layer and satisfy the
 
 Returns the names of all shapes that are referenced by the layer and are bound to the specified transform.
 
-Returns an empty array if `layername` is not one of the agent’s [layers](./agentlayers "Returns all of the layers that have been loaded for an agent primitive."), `shapetype` is invalid, `transform` is out of range, `prim` is out of range, or `prim` is not an agent primitive.
+Returns an empty array if `layername` is not one of the agent’s [layers](/en/houdini-vex/crowds/agentlayers "Returns all of the layers that have been loaded for an agent primitive."), `shapetype` is invalid, `transform` is out of range, `prim` is out of range, or `prim` is not an agent primitive.
 
 `<geometry>`
 
@@ -33,7 +33,7 @@ The name of one of the agent’s layers.
 `layerindex`
 
 Index of a layer in the agent’s definition.
-A layer’s index can be obtained via [agentfindlayer](./agentfindlayer "Finds the index of a layer in an agent’s definition.").
+A layer’s index can be obtained via [agentfindlayer](/en/houdini-vex/crowds/agentfindlayer "Finds the index of a layer in an agent’s definition.").
 
 `shapetype`
 

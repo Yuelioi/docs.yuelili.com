@@ -3,7 +3,7 @@ title: addattrib
 order: 1
 ---
 
-如果提前知道要添加的属性类别，使用 [adddetailattrib](./adddetailattrib "向几何体添加细节属性")、[addprimattrib](./addprimattrib "向几何体添加图元属性")、[addpointattrib](./addpointattrib "向几何体添加点属性") 或 [addvertexattrib](./addvertexattrib "向几何体添加顶点属性") 可能更快。
+如果提前知道要添加的属性类别，使用 [adddetailattrib](/zh-cn/houdini-vex/attributes-and-intrinsics/adddetailattrib "向几何体添加细节属性")、[addprimattrib](/zh-cn/houdini-vex/attributes-and-intrinsics/addprimattrib "向几何体添加图元属性")、[addpointattrib](/zh-cn/houdini-vex/attributes-and-intrinsics/addpointattrib "向几何体添加点属性") 或 [addvertexattrib](/zh-cn/houdini-vex/attributes-and-intrinsics/addvertexattrib "向几何体添加顶点属性") 可能更快。
 
 `int  addattrib(int geohandle, string attribclass, string name, <type>defvalue)`
 
@@ -11,7 +11,7 @@ order: 1
 
 `geohandle`
 
-要写入的几何体句柄。目前唯一有效的值是 `0` 或 [geoself](../geometry/geoself "返回当前节点的几何体句柄")，表示节点中的当前几何体。（此参数未来可能用于支持写入其他几何体）
+要写入的几何体句柄。目前唯一有效的值是 `0` 或 [geoself](/zh-cn/houdini-vex/geometry/geoself "返回当前节点的几何体句柄")，表示节点中的当前几何体。（此参数未来可能用于支持写入其他几何体）
 
 `attribclass`
 

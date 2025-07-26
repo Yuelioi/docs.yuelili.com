@@ -37,7 +37,7 @@ Surface normal.
 
 A bitmask indicating which types of shading component bounces to evaluate.
 
-See [bouncemask](../shading-and-rendering/bouncemask) for information on component label bitmasks.
+See [bouncemask](/en/houdini-vex/shading-and-rendering/bouncemask) for information on component label bitmasks.
 
 `&pdf`
 

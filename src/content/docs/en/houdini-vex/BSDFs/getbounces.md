@@ -6,4 +6,4 @@ order: 10
 
 Returns the bounce mask for the specified `bsdf`.
 
-See [bouncemask](../shading-and-rendering/bouncemask) for information on component label bitmasks.
+See [bouncemask](/en/houdini-vex/shading-and-rendering/bouncemask) for information on component label bitmasks.

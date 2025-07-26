@@ -9,7 +9,7 @@ order: 21
 
 `lightid`
 
-标识光源的整数值。您可以使用[getlights](../shading-and-rendering/getlights "返回当前着色表面所受光照的灯光标识符数组")获取影响当前着色表面的光源ID列表。
+标识光源的整数值。您可以使用[getlights](/zh-cn/houdini-vex/shading-and-rendering/getlights "返回当前着色表面所受光照的灯光标识符数组")获取影响当前着色表面的光源ID列表。
 
 `pos`
 
@@ -17,7 +17,7 @@ order: 21
 
 `sam`
 
-随机值向量，例如由[nextsample](./nextsample)生成的数值。目前仅使用`sam`的前2个分量。不同的`sam`值会转换为光源几何体上不同的随机位置。
+随机值向量，例如由[nextsample](/zh-cn/houdini-vex/sampling/nextsample)生成的数值。目前仅使用`sam`的前2个分量。不同的`sam`值会转换为光源几何体上不同的随机位置。
 
 `time`
 
@@ -39,10 +39,10 @@ order: 21
 
 返回值
 
-表示该光源影响哪些类型组件反弹的[组件位掩码](../shading-and-rendering/bouncemask)。
+表示该光源影响哪些类型组件反弹的[组件位掩码](/zh-cn/houdini-vex/shading-and-rendering/bouncemask)。
 
 提示
-如果您使用[sample_light](./sample_light "采样光源上的3D位置并在该点运行灯光着色器")生成灯光颜色（例如要重现[illuminance](../shading-and-rendering/illuminance "遍历场景中所有光源，为每个光源调用灯光着色器来设置Cl和L全局变量")循环产生的`Cl`值），您需要将`clr`归一化到`scale`：
+如果您使用[sample_light](/zh-cn/houdini-vex/sampling/sample_light "采样光源上的3D位置并在该点运行灯光着色器")生成灯光颜色（例如要重现[illuminance](/zh-cn/houdini-vex/shading-and-rendering/illuminance "遍历场景中所有光源，为每个光源调用灯光着色器来设置Cl和L全局变量")循环产生的`Cl`值），您需要将`clr`归一化到`scale`：
 
 ```vex
 clr *= scale / luminance(clr);

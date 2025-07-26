@@ -14,9 +14,9 @@ Rather than iterating over all the values, this form imports the values from all
 
 …to import non-attribute information from the metaballs.
 
-Once you get a handle to a metaball using [metastart](./metastart "Open a geometry file and return a handle for the metaballs of
+Once you get a handle to a metaball using [metastart](/en/houdini-vex/metaball/metastart "Open a geometry file and return a handle for the metaballs of
 interest, at the position p.") and
-[metanext](./metanext "Iterate to the next metaball in the list of metaballs returned by the metastart() function."), you can query attributes of the metaball with
+[metanext](/en/houdini-vex/metaball/metanext "Iterate to the next metaball in the list of metaballs returned by the metastart() function."), you can query attributes of the metaball with
 `metaimport`.
 
 There are three “special” attributes you can query:
@@ -32,7 +32,7 @@ The transform associated with the current metaball. Applying the
 inverse of this transform will transform a point into the “space” of
 the metaball.
 
-For example, the [metaweight](./metaweight "Returns the metaweight of the geometry at position p.") function can be expressed in the following
+For example, the [metaweight](/en/houdini-vex/metaball/metaweight "Returns the metaweight of the geometry at position p.") function can be expressed in the following
 way:
 
 ```vex

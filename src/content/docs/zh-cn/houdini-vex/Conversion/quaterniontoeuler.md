@@ -11,7 +11,7 @@ order: 8
 
 角度单位为弧度。可使用 `degrees()` 函数将弧度转换为角度。
 
-更多信息请参阅[数据类型](../lang.html#data-types)和[点运算符](../lang.html#dot-operator)。
+更多信息请参阅[数据类型](/zh-cn/houdini-vex/lang.html#data-types)和[点运算符](/zh-cn/houdini-vex/lang.html#dot-operator)。
 
 `order`
 

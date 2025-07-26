@@ -49,7 +49,7 @@ Whether evaluating from the camera (`0`) or the light source (`1`).
 
 The function must overwrite this variable with the reflectivity (albedo) of the BSDF.
 
-This should not be dependent on the `v` vector, since it is used as an average reflectivity over all lighting directions. This is the value that the [albedo](./albedo "Returns the albedo (percentage of reflected light) for a bsdf given the outgoing light direction.") function will return.
+This should not be dependent on the `v` vector, since it is used as an average reflectivity over all lighting directions. This is the value that the [albedo](/en/houdini-vex/bsdfs/albedo "Returns the albedo (percentage of reflected light) for a bsdf given the outgoing light direction.") function will return.
 
 `eval`
 
@@ -116,7 +116,7 @@ Component mask implicit argument
 
 If you add an `int mybounces` output argument to your evaluation or sample shader, it will be filled in with the component mask for the BSDF. You can check this against an extra `"label"` variadic argument passed to the `cvex_bsdf()` function to see if it should apply. This allows you to use the same CVEX shader source code for different component types.
 
-See [bouncemask](../shading-and-rendering/bouncemask) for information on component label bitmasks.
+See [bouncemask](/en/houdini-vex/shading-and-rendering/bouncemask) for information on component label bitmasks.
 
 Custom variadic arguments
 

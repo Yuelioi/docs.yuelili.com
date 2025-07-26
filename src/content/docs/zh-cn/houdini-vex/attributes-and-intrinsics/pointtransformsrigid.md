@@ -11,7 +11,7 @@ order: 43
 `matrix [] pointtransformsrigid(<geometry>geometry)`
 
 返回与点索引关联的刚性变换矩阵数组。
-该函数使用[标准实例化点属性](../../copy/instanceattrs.html)来构建矩阵，并通过[极分解](../transforms-and-space/polardecomp "计算矩阵的极分解")使其成为刚性变换。
+该函数使用[标准实例化点属性](../../copy/instanceattrs.html)来构建矩阵，并通过[极分解](/zh-cn/houdini-vex/transforms-and-space/polardecomp "计算矩阵的极分解")使其成为刚性变换。
 若省略点索引参数，则返回所有点的变换矩阵。
 
 `<geometry>`

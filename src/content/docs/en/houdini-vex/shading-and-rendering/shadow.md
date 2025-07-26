@@ -4,7 +4,7 @@ order: 70
 ---
 | Context(s) | [displace](../contexts/displace.html)  [fog](../contexts/fog.html)  [surface](../contexts/surface.html) |
 | --- | --- |
-This function can only be called from within an [illuminance](./illuminance "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables.") statement.
+This function can only be called from within an [illuminance](/en/houdini-vex/shading-and-rendering/illuminance "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables.") statement.
 
 `void  shadow(vector &Cl)`
 

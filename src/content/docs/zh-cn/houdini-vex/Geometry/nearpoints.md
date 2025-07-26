@@ -40,4 +40,4 @@ order: 12
 
 一个点编号的数组
 此函数仅搜索点，不搜索几何体的表面位置。
-使用[xyzdist](../measure/xyzdist "查找点到表面几何体最近位置的距离。")来查找曲面或曲线上最近的点。
+使用[xyzdist](/zh-cn/houdini-vex/measure/xyzdist "查找点到表面几何体最近位置的距离。")来查找曲面或曲线上最近的点。

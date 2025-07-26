@@ -19,7 +19,7 @@ in the shadow shader with with simport().
 
 `lightid`
 
-A light identifier, as returned by [getlights](./getlights "Returns an array of light identifiers for the currently shaded surface.").
+A light identifier, as returned by [getlights](/en/houdini-vex/shading-and-rendering/getlights "Returns an array of light identifiers for the currently shaded surface.").
 
 `pos`
 

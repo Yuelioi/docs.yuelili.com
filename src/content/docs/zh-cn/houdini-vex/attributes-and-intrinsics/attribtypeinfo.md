@@ -5,7 +5,7 @@ order: 12
 `string  attribtypeinfo(<geometry>geometry, string attribclass, string attribute_name)`
 
 这个通用形式允许您在运行时指定属性的"类别"。这对于编写可以处理不同类别的通用代码非常有用。
-如果您提前知道属性类别，使用[detailattribtypeinfo](./detailattribtypeinfo "返回几何属性的类型信息")、[primattribtypeinfo](./primattribtypeinfo "返回几何属性的类型信息")、[pointattribtypeinfo](./pointattribtypeinfo "返回几何属性的类型信息")或[vertexattribtypeinfo](./vertexattribtypeinfo "返回几何属性的类型信息")可能会更快。
+如果您提前知道属性类别，使用[detailattribtypeinfo](/zh-cn/houdini-vex/attributes-and-intrinsics/detailattribtypeinfo "返回几何属性的类型信息")、[primattribtypeinfo](/zh-cn/houdini-vex/attributes-and-intrinsics/primattribtypeinfo "返回几何属性的类型信息")、[pointattribtypeinfo](/zh-cn/houdini-vex/attributes-and-intrinsics/pointattribtypeinfo "返回几何属性的类型信息")或[vertexattribtypeinfo](/zh-cn/houdini-vex/attributes-and-intrinsics/vertexattribtypeinfo "返回几何属性的类型信息")可能会更快。
 
 `<geometry>`
 

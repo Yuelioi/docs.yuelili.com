@@ -5,7 +5,7 @@ order: 49
 
 `matrix [] agentworldtransforms(<geometry>geometry, int prim)`
 
-如果只需要单个变换，使用[agentworldtransform](./agentworldtransform "返回代理基元骨骼的当前世界空间变换。")可以显著提高速度。
+如果只需要单个变换，使用[agentworldtransform](/zh-cn/houdini-vex/crowds/agentworldtransform "返回代理基元骨骼的当前世界空间变换。")可以显著提高速度。
 
 如果`prim`超出范围或不是代理基元，则返回空数组。
 

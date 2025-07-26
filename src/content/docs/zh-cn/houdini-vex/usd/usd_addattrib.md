@@ -7,7 +7,7 @@ order: 1
 
 `int  usd_addattrib(int stagehandle, string primpath, string name, string typename)`
 
-此函数用于向图元添加指定类型的属性（如果该属性不属于模式的一部分）。该函数对于精确控制自定义属性的类型非常有用。对于由图元模式定义的属性，此调用不会产生效果，因为模式已确定其类型。若要创建属性但将其标记为非自定义属性，请使用 [usd_addschemaattrib](./usd_addschemaattrib "在原始图上创建指定类型的属性，并将自定义元数据标志设置为False。")。
+此函数用于向图元添加指定类型的属性（如果该属性不属于模式的一部分）。该函数对于精确控制自定义属性的类型非常有用。对于由图元模式定义的属性，此调用不会产生效果，因为模式已确定其类型。若要创建属性但将其标记为非自定义属性，请使用 [usd_addschemaattrib](/zh-cn/houdini-vex/usd/usd_addschemaattrib "在原始图上创建指定类型的属性，并将自定义元数据标志设置为False。")。
 
 `stagehandle`
 

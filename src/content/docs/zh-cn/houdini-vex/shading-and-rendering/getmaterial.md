@@ -7,4 +7,4 @@ order: 22
 
 `material  getmaterial()`
 
-返回的材质句柄是不透明的，但可以被其他函数用来查询材质信息（详见[特定于Mantra的类型](../lang.html#mantratypes)）。
+返回的材质句柄是不透明的，但可以被其他函数用来查询材质信息（详见[特定于Mantra的类型](/zh-cn/houdini-vex/lang.html#mantratypes)）。

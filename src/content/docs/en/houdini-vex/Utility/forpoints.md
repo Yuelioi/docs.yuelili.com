@@ -16,8 +16,8 @@ forpoints ( position [, distance] ) {
 
 If you specify the distance, all metaballs/particles within the distance of the point specified will be iterated through. The distance parameter is optional and may result in slower execution of the shader.
 
-Inside the loop, you can call the [mdensity](../point-clouds-and-3d-images/mdensity "Returns the density of the metaball field if metaball geometry is
-specified to i3dgen.") and [mattrib](../point-clouds-and-3d-images/mattrib "Returns the value of the point attribute for the metaballs if
+Inside the loop, you can call the [mdensity](/en/houdini-vex/point-clouds-and-3d-images/mdensity "Returns the density of the metaball field if metaball geometry is
+specified to i3dgen.") and [mattrib](/en/houdini-vex/point-clouds-and-3d-images/mattrib "Returns the value of the point attribute for the metaballs if
 metaball geometry is specified to i3dgen.") functions to query the contribution of the current point instead of getting a “blended” value.
 
 For example, the following code will take the point color of the metaball which contributes the maximum weight to the point in space:
@@ -38,5 +38,5 @@ forpoints ( P ) {
 
 ```
 
-Note that when you call [mattrib](../point-clouds-and-3d-images/mattrib "Returns the value of the point attribute for the metaballs if
+Note that when you call [mattrib](/en/houdini-vex/point-clouds-and-3d-images/mattrib "Returns the value of the point attribute for the metaballs if
 metaball geometry is specified to i3dgen.") inside a `forpoints` loop, the attribute is not pre-blended by the density of the metaball.

@@ -16,7 +16,7 @@ order: 22
 
 CHOP属性存储有关片段、通道、采样或通道/采样对的元数据。
 
-此函数用于设置CHOP属性的值。使用[chattr](./chattr "读取CHOP属性。")来读取CHOP属性。
+此函数用于设置CHOP属性的值。使用[chattr](/zh-cn/houdini-vex/chop/chattr "读取CHOP属性。")来读取CHOP属性。
 
 `attribclass`
 

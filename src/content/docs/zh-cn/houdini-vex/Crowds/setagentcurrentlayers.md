@@ -23,4 +23,4 @@ order: 59
 
 `layer_ids`
 
-代理层索引列表，由[agentfindlayer](./agentfindlayer "查找代理定义中某层的索引")函数返回。
+代理层索引列表，由[agentfindlayer](/zh-cn/houdini-vex/crowds/agentfindlayer "查找代理定义中某层的索引")函数返回。

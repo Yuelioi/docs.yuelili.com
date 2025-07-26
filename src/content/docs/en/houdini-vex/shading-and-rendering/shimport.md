@@ -4,7 +4,7 @@ order: 72
 ---
 | Context(s) | [fog](../contexts/fog.html)  [surface](../contexts/surface.html) |
 | --- | --- |
-This function is only valid inside an [illuminance](./illuminance "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables.") loop.
+This function is only valid inside an [illuminance](/en/houdini-vex/shading-and-rendering/illuminance "Loops through all light sources in the scene, calling the light shader for each light source to set the Cl and L global variables.") loop.
 
 `int  shimport(string variable_name, <type>&value)`
 

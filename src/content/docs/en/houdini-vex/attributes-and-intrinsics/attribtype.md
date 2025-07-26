@@ -2,7 +2,7 @@
 title: attribtype
 order: 11
 ---
-If you know the attribute class ahead of time, using [detailattribtype](./detailattribtype "Returns the type of a geometry detail attribute."), [primattribtype](./primattribtype "Returns the type of a geometry prim attribute."), [pointattribtype](./pointattribtype "Returns the type of a geometry point attribute."), or [vertexattribtype](./vertexattribtype "Returns the type of a geometry vertex attribute.") may be faster.
+If you know the attribute class ahead of time, using [detailattribtype](/en/houdini-vex/attributes-and-intrinsics/detailattribtype "Returns the type of a geometry detail attribute."), [primattribtype](/en/houdini-vex/attributes-and-intrinsics/primattribtype "Returns the type of a geometry prim attribute."), [pointattribtype](/en/houdini-vex/attributes-and-intrinsics/pointattribtype "Returns the type of a geometry point attribute."), or [vertexattribtype](/en/houdini-vex/attributes-and-intrinsics/vertexattribtype "Returns the type of a geometry vertex attribute.") may be faster.
 
 `int  attribtype(<geometry>geometry, string attribclass, string attribute_name)`
 

@@ -8,7 +8,7 @@ order: 29
 
 如果几何体没有`id`属性，则使用点编号作为id。在这种情况下，函数将返回给定的`id`值，除非该值大于源几何体中的点数，此时函数将返回`-1`。
 
-要通过`name`属性值查找点，请使用[nametopoint](./nametopoint "通过name属性查找点")。要通过任意字符串或整数属性值查找点，请使用[findattribval](./findattribval "查找具有特定属性值的图元/点/顶点")。
+要通过`name`属性值查找点，请使用[nametopoint](/zh-cn/houdini-vex/attributes-and-intrinsics/nametopoint "通过name属性查找点")。要通过任意字符串或整数属性值查找点，请使用[findattribval](/zh-cn/houdini-vex/attributes-and-intrinsics/findattribval "查找具有特定属性值的图元/点/顶点")。
 
 `<geometry>`
 

@@ -11,7 +11,7 @@ Creates a BSDF for computation of the physically based fur and hair
 model described in papers “A Practical and Controllable Hair
 and Fur Model for Production Path Tracing” by Chiang, “Physically-AccurAate
 Fur Reflectance: Modeling, Measurement and Rendering” by Ling-Qi Yan et al.
-Chiang Fur is an extension of the [Chiang model - shader](./chiang "Returns a chiang BSDF.").
+Chiang Fur is an extension of the [Chiang model - shader](/en/houdini-vex/bsdfs/chiang "Returns a chiang BSDF.").
 This model considers a structural feature of fur and thick hair:
 the so-called medulla. Hair and fur have three main components:
 

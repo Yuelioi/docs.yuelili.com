@@ -7,7 +7,7 @@ order: 7
 `<type>[] attrib(<geometry>geometry, string attribclass, string name, int elemnum)`
 
 This general form lets you specify the attribute “class” at run-time. This can be useful for writing general code that can work on different classes.
-If you know the class of attribute you want to read ahead of time, using [detail](./detail "Reads the value of a detail attribute value from a geometry."), [prim](./prim "Reads a primitive attribute value from a geometry."), [point](./point "Reads a point attribute value from a geometry."), or [vertex](./vertex "Reads a vertex attribute value from a geometry.") may be faster.
+If you know the class of attribute you want to read ahead of time, using [detail](/en/houdini-vex/attributes-and-intrinsics/detail "Reads the value of a detail attribute value from a geometry."), [prim](/en/houdini-vex/attributes-and-intrinsics/prim "Reads a primitive attribute value from a geometry."), [point](/en/houdini-vex/attributes-and-intrinsics/point "Reads a point attribute value from a geometry."), or [vertex](/en/houdini-vex/attributes-and-intrinsics/vertex "Reads a vertex attribute value from a geometry.") may be faster.
 
 `<geometry>`
 
@@ -27,8 +27,8 @@ The name of the attribute, group, or intrinsic to read from.
 
 `elemnum`
 
-Which element (e.g. point number, primitive number, vertex number) to read from. Ignored for detail attributes. You can use [vertexindex](../geometry/vertexindex "Converts a primitive/vertex pair into a linear vertex.") to convert a primitive/point pair into a vertex number.
+Which element (e.g. point number, primitive number, vertex number) to read from. Ignored for detail attributes. You can use [vertexindex](/en/houdini-vex/geometry/vertexindex "Converts a primitive/vertex pair into a linear vertex.") to convert a primitive/point pair into a vertex number.
 
 Returns
 
-Zero/empty value if the attribute does not exist. Use [getattrib](./getattrib "Reads an attribute value from geometry, with validity check.") if you want to check whether the attribute existed.
+Zero/empty value if the attribute does not exist. Use [getattrib](/en/houdini-vex/attributes-and-intrinsics/getattrib "Reads an attribute value from geometry, with validity check.") if you want to check whether the attribute existed.

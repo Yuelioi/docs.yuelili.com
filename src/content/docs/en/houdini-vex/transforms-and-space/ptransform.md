@@ -34,10 +34,10 @@ The possible values for the space arguments are:
 | `"space:lightndc"` | Normal Device Coordinate space for the *current* light when executing a shadow or light shader. |
 | `"space:current"` | The current space the vector is in. |
 
-- [ptransform](./ptransform "Transforms a vector from one space to another.") interprets the vector as a position.
-- [vtransform](./vtransform "Transforms a directional vector.") interprets the vector as a direction
+- [ptransform](/en/houdini-vex/transforms-and-space/ptransform "Transforms a vector from one space to another.") interprets the vector as a position.
+- [vtransform](/en/houdini-vex/transforms-and-space/vtransform "Transforms a directional vector.") interprets the vector as a direction
  vector, and so doesn’t apply the translations from the matrix.
-- [ntransform](./ntransform "Transforms a normal vector.") interprets the vector as a normal vector,
+- [ntransform](/en/houdini-vex/transforms-and-space/ntransform "Transforms a normal vector.") interprets the vector as a normal vector,
  and so multiplies by the inverse transpose of the matrix (ignoring the
  translations).
  Examples

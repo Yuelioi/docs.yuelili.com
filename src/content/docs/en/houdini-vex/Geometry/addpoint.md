@@ -12,10 +12,10 @@ Creates a new point with the given position.
 
 `geohandle`
 
-A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](./geoself "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
+A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](/en/houdini-vex/geometry/geoself "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
 
 Returns
 
 A point number for the created point, or `-1` if the point could not be created.
 
-You can use the return value with [setpointattrib](../attributes-and-intrinsics/setpointattrib "Sets a point attribute in a geometry.") to set attributes on the new point, however it may not be the final number of the point.
+You can use the return value with [setpointattrib](/en/houdini-vex/attributes-and-intrinsics/setpointattrib "Sets a point attribute in a geometry.") to set attributes on the new point, however it may not be the final number of the point.

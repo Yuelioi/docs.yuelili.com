@@ -37,9 +37,9 @@ of slightly affecting samples that are not outliers.
 To find `minu` and `maxu` given a `minvalue` and `maxvalue` of some probability
 distribution, `minu = CDF(minvalue)` and `maxu = CDF(maxvalue)`, where `CDF`
 is the cumulative distribution function (not inverse) of the probability
-distribution. The versions of [sample_exponential](./sample_exponential "Samples the exponential distribution."),
-[sample_cauchy](./sample_cauchy "Samples the Cauchy (Lorentz) distribution."), [sample_normal](./sample_normal "Samples the normal (Gaussian) distribution."), [sample_lognormal](./sample_lognormal "Samples the log-normal distribution based on parameters of the underlying normal distribution."), and
-[sample_lognormal_by_median](./sample_lognormal_by_median "Samples the log-normal distribution based on median and standard deviation.") that take a `minvalue` or `maxvalue` use fitting
+distribution. The versions of [sample_exponential](/en/houdini-vex/sampling/sample_exponential "Samples the exponential distribution."),
+[sample_cauchy](/en/houdini-vex/sampling/sample_cauchy "Samples the Cauchy (Lorentz) distribution."), [sample_normal](/en/houdini-vex/sampling/sample_normal "Samples the normal (Gaussian) distribution."), [sample_lognormal](/en/houdini-vex/sampling/sample_lognormal "Samples the log-normal distribution based on parameters of the underlying normal distribution."), and
+[sample_lognormal_by_median](/en/houdini-vex/sampling/sample_lognormal_by_median "Samples the log-normal distribution based on median and standard deviation.") that take a `minvalue` or `maxvalue` use fitting
 instead of this limiting, because it maintains monotonicity, but this
 function can be applied to `u` before sampling, in order to have better
 consistency for samples in the range.

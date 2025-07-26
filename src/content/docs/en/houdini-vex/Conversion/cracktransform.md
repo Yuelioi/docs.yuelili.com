@@ -14,7 +14,7 @@ value.
 
 Note
 Rotation angles (when `c=1`) are returned in degrees, whereas many other VEX functions use radians.
-You can use the [radians](./radians "Converts the argument from degrees into radians.") VEX function to convert the vector of angles in degrees to a vector of angles in radians.
+You can use the [radians](/en/houdini-vex/conversion/radians "Converts the argument from degrees into radians.") VEX function to convert the vector of angles in degrees to a vector of angles in radians.
 For example: `vector angles = radians(cracktransform(XFORM_TRS, XFORM_XYZ, 1, {0,0,0}, M));`
 
 Note

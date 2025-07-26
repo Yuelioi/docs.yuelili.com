@@ -12,7 +12,7 @@ order: 40
 
 `lightids`
 
-灯光ID数组，由[getlights](./getlights "返回当前着色表面的灯光标识符数组")返回。
+灯光ID数组，由[getlights](/zh-cn/houdini-vex/shading-and-rendering/getlights "返回当前着色表面的灯光标识符数组")返回。
 
 `pos`
 
@@ -46,4 +46,4 @@ order: 40
 
 返回值
 
-表示灯光影响哪些类型组件反弹的[组件位掩码](./bouncemask)，若光线未击中灯光则返回`0`。
+表示灯光影响哪些类型组件反弹的[组件位掩码](/zh-cn/houdini-vex/shading-and-rendering/bouncemask)，若光线未击中灯光则返回`0`。

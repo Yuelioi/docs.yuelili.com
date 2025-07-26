@@ -11,7 +11,7 @@ Overview
 
 CDFs are useful when sampling from distributions. For example, you could create a CDF of light source power. This would allow sampling of lights with a probability based on power. This is an example of a discrete CDF, where sampling selects among a fixed set of probabilities. (See the example below.)
 
-Use the [sample_cdf](./sample_cdf "Samples a cumulative distribution function (CDF).") function to sample values from the returned CDF array.
+Use the [sample_cdf](/en/houdini-vex/sampling/sample_cdf "Samples a cumulative distribution function (CDF).") function to sample values from the returned CDF array.
 
 Usage
 

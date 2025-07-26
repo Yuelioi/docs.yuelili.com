@@ -12,16 +12,16 @@ agent’s skeleton.
 
 The channels within the clip should of the form `transform_name:channel_name`
 where \_transform_name\_ is a string matching the values returned by
-[agenttransformnames](./agenttransformnames "Returns the name of each transform in an agent primitive’s rig.") and \_channel_name\_ is one of `tx`, `ty`, `tz`, `rx`,
+[agenttransformnames](/en/houdini-vex/crowds/agenttransformnames "Returns the name of each transform in an agent primitive’s rig.") and \_channel_name\_ is one of `tx`, `ty`, `tz`, `rx`,
 `ry`, `rz`, `sx`, `sy`, or `sz`. The channels starting with `t` denote
 translation, `r` denote rotation, and `s` denote scale. The resulting
 transforms will be treated as *local* transforms, such as those returned by
-[agentlocaltransform](./agentlocaltransform "Returns the current local space transform of an agent primitive’s bone.") (ie. they are relative to the corresponding parent
+[agentlocaltransform](/en/houdini-vex/crowds/agentlocaltransform "Returns the current local space transform of an agent primitive’s bone.") (ie. they are relative to the corresponding parent
 transform in the agent’s skeleton).
 
 `geohandle`
 
-A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](../geometry/geoself "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
+A handle to the geometry to write to. Currently the only valid value is `0` or [geoself](/en/houdini-vex/geometry/geoself "Returns a handle to the current geometry."), which means the current geometry in a node. (This argument may be used in the future to allow writing to other geometries.)
 
 `prim`
 

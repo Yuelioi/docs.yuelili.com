@@ -12,4 +12,4 @@ temperature values between 1666K and 25000K. Values outside of this
 range are clamped to the nearest valid in-range value.
 
 The returned value can be converted to linear sRGB values using
-the [xyztorgb](../conversion/xyztorgb "Convert CIE XYZ tristimulus values to a linear sRGB triplet.") function.
+the [xyztorgb](/en/houdini-vex/conversion/xyztorgb "Convert CIE XYZ tristimulus values to a linear sRGB triplet.") function.

@@ -33,7 +33,7 @@ The tuple size of the primvar.
 
 If the primvar does not exist, returns `0`.
 
-Use [usd_primvarlen](./usd_primvarlen "Returns the length of the array primvar directly on the USD primitive.") if you want to obtain the array primvar length.
+Use [usd_primvarlen](/en/houdini-vex/usd/usd_primvarlen "Returns the length of the array primvar directly on the USD primitive.") if you want to obtain the array primvar length.
 
 Examples
 

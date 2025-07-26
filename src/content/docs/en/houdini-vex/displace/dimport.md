@@ -17,7 +17,7 @@ Mantra runs the shaders for a surface in a fixed order:
 
 Once the displacement shader has run, you can use `dimport`
 to retrieve exported variables from it. Once the surface shader
-has run, you can use [simport](../shading-and-rendering/simport "Imports a variable sent by a surface shader in an illuminance loop.") to retrieve exported variables
+has run, you can use [simport](/en/houdini-vex/shading-and-rendering/simport "Imports a variable sent by a surface shader in an illuminance loop.") to retrieve exported variables
 from it.
 
 If the shader variable named by the first argument is defined and

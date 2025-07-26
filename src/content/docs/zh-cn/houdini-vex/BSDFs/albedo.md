@@ -19,4 +19,4 @@ order: 1
 
 由代表不同着色分量的值组成的位掩码。
 
-有关分量标签位掩码的信息，请参阅[bouncemask](../shading-and-rendering/bouncemask)。
+有关分量标签位掩码的信息，请参阅[bouncemask](/zh-cn/houdini-vex/shading-and-rendering/bouncemask)。

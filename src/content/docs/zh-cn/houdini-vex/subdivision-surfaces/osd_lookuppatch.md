@@ -10,7 +10,7 @@ order: 6
 
 如果指定了纹理属性，该函数将使用该属性中的UV坐标将面坐标转换到OSD补丁上。
 
-给定面ID(`face_id`)和面内点的纹理坐标(`face_u`和`face_v`)，此函数将返回对应的补丁ID(`patch_id`，即Catmull-Clark细分面)和补丁插值(`patch_u`和`patch_v`)。从补丁映射回面的反向函数是[osd_lookupface](./osd_lookupface "输出给定OSD补丁坐标对应的Houdini面和UV坐标")。
+给定面ID(`face_id`)和面内点的纹理坐标(`face_u`和`face_v`)，此函数将返回对应的补丁ID(`patch_id`，即Catmull-Clark细分面)和补丁插值(`patch_u`和`patch_v`)。从补丁映射回面的反向函数是[osd_lookupface](/zh-cn/houdini-vex/subdivision-surfaces/osd_lookupface "输出给定OSD补丁坐标对应的Houdini面和UV坐标")。
 
 `<geometry>`
 

@@ -4,7 +4,7 @@ order: 38
 ---
 `int  agentrigparent(<geometry>geometry, int prim, int transform)`
 
-如果`transform`是变换层级的根节点、`transform`[超出范围](./agenttransformcount "返回代理基元骨骼中的变换数量")、`prim`超出范围或`prim`不是代理基元，则返回`-1`。
+如果`transform`是变换层级的根节点、`transform`[超出范围](/zh-cn/houdini-vex/crowds/agenttransformcount "返回代理基元骨骼中的变换数量")、`prim`超出范围或`prim`不是代理基元，则返回`-1`。
 
 `<geometry>`
 

@@ -4,7 +4,7 @@ order: 58
 ---
 
 警告
-此函数已被弃用。请改用 [setagentcurrentlayers](./setagentcurrentlayers "设置代理图元的当前显示层")。
+此函数已被弃用。请改用 [setagentcurrentlayers](/zh-cn/houdini-vex/crowds/setagentcurrentlayers "设置代理图元的当前显示层")。
 
 `geohandle`
 

@@ -13,13 +13,13 @@ Alternatively, the argument can be a string specifying a geometry file (for exam
 `linearvertex`
 
 The linear index of a vertex.
-If you have a point number and point vertex number, you can use [vertexindex](./vertexindex "Converts a primitive/vertex pair into a linear vertex.") to convert them to a linear index.
+If you have a point number and point vertex number, you can use [vertexindex](/en/houdini-vex/geometry/vertexindex "Converts a primitive/vertex pair into a linear vertex.") to convert them to a linear index.
 
 Returns
 
 The linear index of the previous vertex sharing the same point with the given vertex,
 or `-1` if the vertex has no earlier shared vertices.
-(To go in the other direction, use [vertexnext](./vertexnext "Returns the linear vertex number of the next vertex sharing a point with a given vertex.").)
+(To go in the other direction, use [vertexnext](/en/houdini-vex/geometry/vertexnext "Returns the linear vertex number of the next vertex sharing a point with a given vertex.").)
 
 Examples
 

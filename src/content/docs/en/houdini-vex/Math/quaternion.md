@@ -18,4 +18,4 @@ Creates a vector4 representing a unit quaternion from a combined angle/axis. Thi
 
 There used to be a fourth form that took a rotation vector. It has been renamed to `eulertoquaternion` and now takes radians.
 
-For more information, see [Data types](../lang.html#data-types) and [Dot operator](../lang.html#dot-operator).
+For more information, see [Data types](/en/houdini-vex/lang.html#data-types) and [Dot operator](/en/houdini-vex/lang.html#dot-operator).

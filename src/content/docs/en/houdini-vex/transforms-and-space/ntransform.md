@@ -8,4 +8,4 @@ order: 9
 
 `vector  ntransform(string fromspace, string tospace, vector v)`
 
-Transforms a vector representing a normal. See [ptransform](./ptransform "Transforms a vector from one space to another.") for more information.
+Transforms a vector representing a normal. See [ptransform](/en/houdini-vex/transforms-and-space/ptransform "Transforms a vector from one space to another.") for more information.

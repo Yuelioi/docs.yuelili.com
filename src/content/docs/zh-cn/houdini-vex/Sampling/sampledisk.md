@@ -12,4 +12,4 @@ order: 31
 
 `sx`, `sy`
 
-范围在`[0,1]`内的均匀随机值，例如由[nextsample](./nextsample)生成的数值。
+范围在`[0,1]`内的均匀随机值，例如由[nextsample](/zh-cn/houdini-vex/sampling/nextsample)生成的数值。

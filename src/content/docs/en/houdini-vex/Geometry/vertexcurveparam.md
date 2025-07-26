@@ -18,14 +18,14 @@ Returns
 
 The parametric coordinate along the perimeter of the primitive. The
 primitive is assumed to be a polygon. This is in unit space (See
-[primuv](../attributes-and-intrinsics/primuv "Interpolates the value of an attribute at a certain parametric (uvw) position.") for a distription of parameter spaces).
+[primuv](/en/houdini-vex/attributes-and-intrinsics/primuv "Interpolates the value of an attribute at a certain parametric (uvw) position.") for a distription of parameter spaces).
 
 For open polygons (polygon curves in other words), the returned value can
-be used directly with [primuv](../attributes-and-intrinsics/primuv "Interpolates the value of an attribute at a certain parametric (uvw) position."). It is in the range of `[0,1]`.
+be used directly with [primuv](/en/houdini-vex/attributes-and-intrinsics/primuv "Interpolates the value of an attribute at a certain parametric (uvw) position."). It is in the range of `[0,1]`.
 
 For closed polygons the value is in the range of `[0, (numvtx-1)/numvtx]`, so
 there’s no vertex with value 1. The value cannot be used directly with
-[primuv](../attributes-and-intrinsics/primuv "Interpolates the value of an attribute at a certain parametric (uvw) position."), but may be useful wherever you need a normalized value around
+[primuv](/en/houdini-vex/attributes-and-intrinsics/primuv "Interpolates the value of an attribute at a certain parametric (uvw) position."), but may be useful wherever you need a normalized value around
 the perimeter of a polygon.
 
 Examples

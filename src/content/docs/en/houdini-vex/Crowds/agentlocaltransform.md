@@ -4,7 +4,7 @@ order: 30
 ---
 `matrix  agentlocaltransform(<geometry>geometry, int prim, int transform)`
 
-Returns an identity matrix if `transform` is [out of range](./agenttransformcount "Returns the number of transforms in an agent primitive’s rig."), `prim` is out of range, or `prim` is not an agent primitive.
+Returns an identity matrix if `transform` is [out of range](/en/houdini-vex/crowds/agenttransformcount "Returns the number of transforms in an agent primitive’s rig."), `prim` is out of range, or `prim` is not an agent primitive.
 
 `<geometry>`
 

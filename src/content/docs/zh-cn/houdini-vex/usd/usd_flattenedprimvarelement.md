@@ -38,7 +38,7 @@ Primvar名称（不带命名空间）。
 
 返回值
 
-现有primvar展平值数组的元素，如果primvar不存在则返回零/空值。如果要检查primvar是否存在，请使用[usd_isprimvar](./usd_isprimvar "检查图元是否具有指定名称的primvar。")。
+现有primvar展平值数组的元素，如果primvar不存在则返回零/空值。如果要检查primvar是否存在，请使用[usd_isprimvar](/zh-cn/houdini-vex/usd/usd_isprimvar "检查图元是否具有指定名称的primvar。")。
 
 ## 示例
 

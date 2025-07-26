@@ -49,7 +49,7 @@ NURBS或贝塞尔曲线的阶数。多边形曲线忽略此参数。
 
 `primuvmode`
 
-定义uv1和uv2坐标的单位模式。详见[primuvconvert](./primuvconvert "在不同空间之间转换曲线图元上的参数化UV位置")的模式列表。
+定义uv1和uv2坐标的单位模式。详见[primuvconvert](/zh-cn/houdini-vex/attributes-and-intrinsics/primuvconvert "在不同空间之间转换曲线图元上的参数化UV位置")的模式列表。
 
 `primuvtol`
 

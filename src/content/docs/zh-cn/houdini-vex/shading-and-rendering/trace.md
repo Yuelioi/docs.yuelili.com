@@ -5,7 +5,7 @@ order: 77
 | 本页内容 | * [光源包含/排除选项](#光源包含排除选项) * [区域采样选项](#区域采样选项) * [光线选项](#光线选项) * [光线发射选项](#光线发射选项) * [向表面着色器发送信息](#向表面着色器发送信息) * [从光线导入信息](#从光线导入信息) * [采样过滤选项](#采样过滤选项) * [渲染管线选项](#渲染管线选项) |
 | --- | --- |
 | 上下文 | [着色](../contexts/shading.html) |
-说明：用于计算输入矩阵迹(trace)的VEX函数是[tr](../math/tr "返回给定矩阵的迹")。
+说明：用于计算输入矩阵迹(trace)的VEX函数是[tr](/zh-cn/houdini-vex/math/tr "返回给定矩阵的迹")。
 
 `void  trace(vector &cv, vector &of, float &af, vector P, vector D, float shadow_bias, float max_contrib, ...)`
 
@@ -82,14 +82,14 @@ blurry_mirror(float angle = 3; int samples = 16; float bias=0.05)
 ## 光线选项
 
 提示
-当指定纹理时（如使用`"environment"`关键字），也可以使用图像过滤关键字参数。详见[environment](../texturing/environment "返回环境纹理的颜色")查看图像过滤关键字参数列表。
+当指定纹理时（如使用`"environment"`关键字），也可以使用图像过滤关键字参数。详见[environment](/zh-cn/houdini-vex/texturing/environment "返回环境纹理的颜色")查看图像过滤关键字参数列表。
 
 "`scope`",
 `string`
 
 可被光线击中的对象列表。指定后，`scope`将覆盖给定`raystyle`的默认作用域。`"scope:default"`值将使`scope`参数使用当前上下文的默认作用域——就像未指定该参数一样。
 
-允许覆盖光线相交的[作用域](../contexts/shading_contexts.html#scope)。
+允许覆盖光线相交的[作用域](/zh-cn/houdini-vex/contexts/shading_contexts.html#scope)。
 特殊作用域参数`scope:self`将匹配当前着色对象。
 
 "`currentobject`",
@@ -103,7 +103,7 @@ blurry_mirror(float angle = 3; int samples = 16; float bias=0.05)
 
 搜索对象的最大距离。可用于将对象搜索限制在附近对象。如果给定的`maxdist`为负值，则表示没有最大距离限制。
 
-允许覆盖测试相交时光线能行进的最大距离。某些函数（如[fastshadow](../light/fastshadow "从位置P沿方向D发射光线")）已隐式定义了最大距离（通过光线长度），应避免使用此选项。但在计算反射、全局光照、折射等时，此选项可有效使用。
+允许覆盖测试相交时光线能行进的最大距离。某些函数（如[fastshadow](/zh-cn/houdini-vex/light/fastshadow "从位置P沿方向D发射光线")）已隐式定义了最大距离（通过光线长度），应避免使用此选项。但在计算反射、全局光照、折射等时，此选项可有效使用。
 
 "`variancevar`",
 `string`
@@ -171,7 +171,7 @@ Cf = R*reflectlight(bias, max(R), "environment", "map.rat", "envobject", "null_o
 "`distribution`",
 `string`
 
-**函数**：[irradiance](./irradiance "计算点P处法线为N的辐照度（全局光照）"), [occlusion](./occlusion "计算环境光遮挡")
+**函数**：[irradiance](/zh-cn/houdini-vex/shading-and-rendering/irradiance "计算点P处法线为N的辐照度（全局光照）"), [occlusion](/zh-cn/houdini-vex/shading-and-rendering/occlusion "计算环境光遮挡")
 
 计算辐照度的分布方式。默认使用余弦分布（漫反射照明）。样式可能值为`"nonweighted"`（均匀采样）或`"cosine"`（余弦加权采样）。
 
@@ -191,12 +191,12 @@ Cf = R*reflectlight(bias, max(R), "environment", "map.rat", "envobject", "null_o
 
 决定采样分布方式。
 
-对于[gather](./gather "向场景发射光线并返回被光线击中的表面着色器信息")：
+对于[gather](/zh-cn/houdini-vex/shading-and-rendering/gather "向场景发射光线并返回被光线击中的表面着色器信息")：
 
 - `cosine` – 光线按余弦（漫反射）函数在半球上分布
 - `uniform` – 光线在半球上均匀分布
 
-对于[sample_geometry](../sampling/sample_geometry "采样场景中的几何体并返回被采样表面的着色器信息")：
+对于[sample_geometry](/zh-cn/houdini-vex/sampling/sample_geometry "采样场景中的几何体并返回被采样表面的着色器信息")：
 
 - `area` – 采样按图元面积分布
 - `parametric` – 采样按图元ID、细分ID和参数化表面坐标(s,t)分布
@@ -268,7 +268,7 @@ gather(P, dir, "send:N", normalize(N)) { ... }
 
 ```
 
-您可以在接收端（即被光线击中的表面）使用[rayimport](./rayimport "导入由聚集循环中的着色器发送的值")函数提取这些传递的数据。第一个参数是名称（不带`send:`前缀），第二个参数是存储导入值的变量。
+您可以在接收端（即被光线击中的表面）使用[rayimport](/zh-cn/houdini-vex/shading-and-rendering/rayimport "导入由聚集循环中的着色器发送的值")函数提取这些传递的数据。第一个参数是名称（不带`send:`前缀），第二个参数是存储导入值的变量。
 
 `int rayimport(string name, <type> &value)`
 
@@ -313,7 +313,7 @@ gather(P, dir, "bias", 0.01, "Cf", hitcf) {...}
 
 光线追踪作用域中所有几何体所对立体角的估计值。对于靠近或包围光线原点的大型物体，这可能是一个非常粗略的估计，而对于单个图元，估计可以非常准确。
 
-您可以通过在数组变量中请求数据来检索沿光线多个击中点的信息。当导入值是数组类型时，[trace](./trace "从P沿归一化向量D发射光线")函数会自动为光线追踪期间合成的每个独立击中点在数组中追加一个条目。对于`opacity`采样过滤器（见下文），将为遇到的每个半透明采样创建数组条目，直到达到完全不透明。使用数组输出时，也可以使用`all`采样过滤器，这将导致无论是否超过不透明度限制，沿光线的所有击中点都会被插入。
+您可以通过在数组变量中请求数据来检索沿光线多个击中点的信息。当导入值是数组类型时，[trace](/zh-cn/houdini-vex/shading-and-rendering/trace "从P沿归一化向量D发射光线")函数会自动为光线追踪期间合成的每个独立击中点在数组中追加一个条目。对于`opacity`采样过滤器（见下文），将为遇到的每个半透明采样创建数组条目，直到达到完全不透明。使用数组输出时，也可以使用`all`采样过滤器，这将导致无论是否超过不透明度限制，沿光线的所有击中点都会被插入。
 
 ```vex
 // 查找沿光线所有击中点的位置和法线，不考虑可见性。
@@ -372,7 +372,7 @@ trace(P, dir, Time,
 返回每个样本的倒数之和。
 
 注意
-当使用[sample_geometry](../sampling/sample_geometry "对场景中的几何体进行采样，并从采样表面的着色器返回信息。")时，默认的`samplefilter`设置为`closest`，因为透明度混合仅在沿射线合成数据时有效。
+当使用[sample_geometry](/zh-cn/houdini-vex/sampling/sample_geometry "对场景中的几何体进行采样，并从采样表面的着色器返回信息。")时，默认的`samplefilter`设置为`closest`，因为透明度混合仅在沿射线合成数据时有效。
 
 ```vex
 gather(P, dir,

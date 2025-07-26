@@ -23,7 +23,7 @@ The primitive number.
 `transformgroupidx`
 
 Index of a transform group in the agent’s definition.
-A transform group’s index can be obtained via [agentfindtransformgroup](./agentfindtransformgroup "Finds the index of a transform group in an agent’s definition.").
+A transform group’s index can be obtained via [agentfindtransformgroup](/en/houdini-vex/crowds/agentfindtransformgroup "Finds the index of a transform group in an agent’s definition.").
 
 `channel`
 

@@ -2,7 +2,7 @@
 title: attribtype
 order: 11
 ---
-如果提前知道属性类别，使用 [detailattribtype](./detailattribtype "返回几何体细节属性的类型")、[primattribtype](./primattribtype "返回几何体图元属性的类型")、[pointattribtype](./pointattribtype "返回几何体点属性的类型") 或 [vertexattribtype](./vertexattribtype "返回几何体顶点属性的类型") 可能会更快。
+如果提前知道属性类别，使用 [detailattribtype](/zh-cn/houdini-vex/attributes-and-intrinsics/detailattribtype "返回几何体细节属性的类型")、[primattribtype](/zh-cn/houdini-vex/attributes-and-intrinsics/primattribtype "返回几何体图元属性的类型")、[pointattribtype](/zh-cn/houdini-vex/attributes-and-intrinsics/pointattribtype "返回几何体点属性的类型") 或 [vertexattribtype](/zh-cn/houdini-vex/attributes-and-intrinsics/vertexattribtype "返回几何体顶点属性的类型") 可能会更快。
 
 `int  attribtype(<geometry>geometry, string attribclass, string attribute_name)`
 

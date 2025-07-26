@@ -7,7 +7,7 @@ order: 8
 
 `void  opend(int handle)`
 
-Informs mantra that a long operation begun with [opstart](./opstart "Start a long operation.") has completed. Pass in the value returned by [opstart](./opstart "Start a long operation.").
+Informs mantra that a long operation begun with [opstart](/en/houdini-vex/utility/opstart "Start a long operation.") has completed. Pass in the value returned by [opstart](/en/houdini-vex/utility/opstart "Start a long operation.").
 
 ```vex
 int op_handle = opstart("Performing long operation");

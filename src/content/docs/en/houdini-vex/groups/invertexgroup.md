@@ -16,7 +16,7 @@ Alternatively, the argument can be a string specifying a geometry file (for exam
 
 The linear vertex number of the vertex to test.
 
-To convert a primitive number and vertex number within that primitive to a linear vertex number for the `vertexnum` parameter, use the [vertexindex](../geometry/vertexindex "Converts a primitive/vertex pair into a linear vertex.") function.
+To convert a primitive number and vertex number within that primitive to a linear vertex number for the `vertexnum` parameter, use the [vertexindex](/en/houdini-vex/geometry/vertexindex "Converts a primitive/vertex pair into a linear vertex.") function.
 
 Returns
 

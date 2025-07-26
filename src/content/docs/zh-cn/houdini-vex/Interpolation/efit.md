@@ -6,7 +6,7 @@ order: 4
 `float  efit(float value, float omin, float omax, float nmin, float nmax)`
 
 将处于范围(omin, omax)内的值转换到新范围(nmin, nmax)中的对应值。
-与[fit](./fit "将某个范围内的值转换到新范围中的对应值")不同，此函数不会将值限制在给定范围内。
+与[fit](/zh-cn/houdini-vex/interpolation/fit "将某个范围内的值转换到新范围中的对应值")不同，此函数不会将值限制在给定范围内。
 
 `<vector> efit(<vector>value, <vector>omin, <vector>omax, <vector>nmin, <vector>nmax)`
 

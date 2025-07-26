@@ -5,7 +5,7 @@ order: 4
 `float  efit(float value, float omin, float omax, float nmin, float nmax)`
 
 Takes the value in the range (omin, omax) and shifts it to the corresponding value in the new range (nmin, nmax).
-Unlike [fit](./fit "Takes the value in one range and shifts it to the corresponding value in a new range."), this function does not clamp values to the given range.
+Unlike [fit](/en/houdini-vex/interpolation/fit "Takes the value in one range and shifts it to the corresponding value in a new range."), this function does not clamp values to the given range.
 
 `<vector> efit(<vector>value, <vector>omin, <vector>omax, <vector>nmin, <vector>nmax)`
 

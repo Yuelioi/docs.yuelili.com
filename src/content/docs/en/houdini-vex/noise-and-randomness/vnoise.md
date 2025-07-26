@@ -64,9 +64,9 @@ You can combine these distances to generate noise patterns. The noise generated 
 
 If you include the period argument(s), the function generates repeating (periodic) noise.
 
-Voronoi noise gives almost identical results to the Worley noise function ([wnoise](./wnoise "Generates Worley (cellular) noise.")). However, this function has controls over jittering (i.e. how randomly the points are scattered through space) and also return the actual locations of the two nearest seed points, whereas [wnoise](./wnoise "Generates Worley (cellular) noise.") only returns the distances to the two nearest seed points.
+Voronoi noise gives almost identical results to the Worley noise function ([wnoise](/en/houdini-vex/noise-and-randomness/wnoise "Generates Worley (cellular) noise.")). However, this function has controls over jittering (i.e. how randomly the points are scattered through space) and also return the actual locations of the two nearest seed points, whereas [wnoise](/en/houdini-vex/noise-and-randomness/wnoise "Generates Worley (cellular) noise.") only returns the distances to the two nearest seed points.
 
-Though this function is slightly more expensive than [wnoise](./wnoise "Generates Worley (cellular) noise."), since it returns the actual point positions, you can overcome some of the artifacts of Worley noise. For example, to get even boundaries along the cell boundaries:
+Though this function is slightly more expensive than [wnoise](/en/houdini-vex/noise-and-randomness/wnoise "Generates Worley (cellular) noise."), since it returns the actual point positions, you can overcome some of the artifacts of Worley noise. For example, to get even boundaries along the cell boundaries:
 
 ```vex
 if (f2 - f1 < tolerance * (distance(p1, p2) / (f1 + f2)) ...

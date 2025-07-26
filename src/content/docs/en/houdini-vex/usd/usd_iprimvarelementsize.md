@@ -13,7 +13,7 @@ The primvar element size applies to array primvars, but it does not encode the l
 
 In most cases, the element size is `1`.
 
-Note, element size is a USD concept and differs from the VEX tuple size obtained with [usd_iprimvarsize](./usd_iprimvarsize "Returns the tuple size of the primvar directly on the USD primitive or on USD primitive’s ancestor.") or the VEX array length obtained with [usd_iprimvarlen](./usd_iprimvarlen "Returns the length of the array primvar directly on the USD primitive or on USD primitive’s ancestor.").
+Note, element size is a USD concept and differs from the VEX tuple size obtained with [usd_iprimvarsize](/en/houdini-vex/usd/usd_iprimvarsize "Returns the tuple size of the primvar directly on the USD primitive or on USD primitive’s ancestor.") or the VEX array length obtained with [usd_iprimvarlen](/en/houdini-vex/usd/usd_iprimvarlen "Returns the length of the array primvar directly on the USD primitive or on USD primitive’s ancestor.").
 
 `<stage>`
 

@@ -6,7 +6,7 @@ order: 44
 
 注意
 要将线性索引转换为基元编号和基元顶点编号，
-请使用[vertexprim](./vertexprim "返回包含给定顶点的基元编号。")和[vertexprimindex](./vertexprimindex "将线性顶点索引转换为基元顶点编号。")函数。
+请使用[vertexprim](/zh-cn/houdini-vex/geometry/vertexprim "返回包含给定顶点的基元编号。")和[vertexprimindex](/zh-cn/houdini-vex/geometry/vertexprimindex "将线性顶点索引转换为基元顶点编号。")函数。
 
 `<geometry>`
 
@@ -17,7 +17,7 @@ order: 44
 `linearvertex`
 
 顶点的线性索引。
-如果您有点编号和点顶点编号，可以使用[vertexindex](./vertexindex "将基元/顶点对转换为线性顶点。")函数将它们转换为线性索引。
+如果您有点编号和点顶点编号，可以使用[vertexindex](/zh-cn/houdini-vex/geometry/vertexindex "将基元/顶点对转换为线性顶点。")函数将它们转换为线性索引。
 
 返回值
 

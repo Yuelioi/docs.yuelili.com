@@ -2,7 +2,7 @@
 title: ckspline
 order: 1
 ---
-To specify the curve using uniformly spaced value keys, use [cspline](./cspline "Samples a Catmull-Rom (Cardinal) spline defined by uniformly spaced keys.").
+To specify the curve using uniformly spaced value keys, use [cspline](/en/houdini-vex/interpolation/cspline "Samples a Catmull-Rom (Cardinal) spline defined by uniformly spaced keys.").
 
 `float  ckspline(float t, float value, float pos, ...)`
 

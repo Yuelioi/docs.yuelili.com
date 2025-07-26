@@ -4,7 +4,7 @@ order: 38
 ---
 `int  agentrigparent(<geometry>geometry, int prim, int transform)`
 
-Returns `-1` if `transform` is a root of the transform hierarchy, `transform` is [out of range](./agenttransformcount "Returns the number of transforms in an agent primitive’s rig."), `prim` is out of range, or `prim` is not an agent primitive.
+Returns `-1` if `transform` is a root of the transform hierarchy, `transform` is [out of range](/en/houdini-vex/crowds/agenttransformcount "Returns the number of transforms in an agent primitive’s rig."), `prim` is out of range, or `prim` is not an agent primitive.
 
 `<geometry>`
 

@@ -27,7 +27,7 @@ matrix3 m = set(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0);
 
 ```
 
-[assign](./assign "一种高效提取向量或矩阵分量到浮点变量的方法。")函数执行与此相反的操作（将分量提取到变量中）。
+[assign](/zh-cn/houdini-vex/utility/assign "一种高效提取向量或矩阵分量到浮点变量的方法。")函数执行与此相反的操作（将分量提取到变量中）。
 
 `<vector> set(float nums[])`
 
@@ -151,7 +151,7 @@ float[] nums = set(m3); // -> 数组 [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9
 
 `<matrix>[] set(float nums[])`
 
-通过从浮点数数组中逐个获取分量来创建向量/矩阵类型的数组。这与使用[unserialize](../conversion/unserialize "将扁平浮点数数组转换为向量或矩阵数组。")函数相同。
+通过从浮点数数组中逐个获取分量来创建向量/矩阵类型的数组。这与使用[unserialize](/zh-cn/houdini-vex/conversion/unserialize "将扁平浮点数数组转换为向量或矩阵数组。")函数相同。
 
 ```vex
 float[] nums = {1.0, 2.0, 3.0, 4.0};

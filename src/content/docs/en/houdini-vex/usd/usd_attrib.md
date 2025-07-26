@@ -35,7 +35,7 @@ The USD time code at which to evaluate the attribute. A USD time code roughly co
 
 Returns
 
-The value of an existing attribute, or zero/empty value if the attribute does not exist. Use [usd_isattrib](./usd_isattrib "Checks if the primitive has an attribute by the given name.") if you want to check whether the attribute exists.
+The value of an existing attribute, or zero/empty value if the attribute does not exist. Use [usd_isattrib](/en/houdini-vex/usd/usd_isattrib "Checks if the primitive has an attribute by the given name.") if you want to check whether the attribute exists.
 
 Examples
 

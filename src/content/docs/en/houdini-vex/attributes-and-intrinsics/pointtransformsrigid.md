@@ -10,7 +10,7 @@ order: 43
 `matrix [] pointtransformsrigid(<geometry>geometry)`
 
 Returns an array of rigid transforms associated with the point indices.
-This function uses the [standard instancing point attributes](../../copy/instanceattrs.html) to build the matrix, and [polar decomposition](../transforms-and-space/polardecomp "Computes the polar decomposition of a matrix.") is performed to make it rigid.
+This function uses the [standard instancing point attributes](../../copy/instanceattrs.html) to build the matrix, and [polar decomposition](/en/houdini-vex/transforms-and-space/polardecomp "Computes the polar decomposition of a matrix.") is performed to make it rigid.
 Returns all the point transforms if the point indices argument is omitted.
 
 `<geometry>`

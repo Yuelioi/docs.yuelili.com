@@ -2,7 +2,7 @@
 title: attribsize
 order: 10
 ---
-If you know the attribute class ahead of time, using [detailattribsize](./detailattribsize "Returns the size of a geometry detail attribute."), [primattribsize](./primattribsize "Returns the size of a geometry prim attribute."), [pointattribsize](./pointattribsize "Returns the size of a geometry point attribute."), or [vertexattribsize](./vertexattribsize "Returns the size of a geometry vertex attribute.") may be faster.
+If you know the attribute class ahead of time, using [detailattribsize](/en/houdini-vex/attributes-and-intrinsics/detailattribsize "Returns the size of a geometry detail attribute."), [primattribsize](/en/houdini-vex/attributes-and-intrinsics/primattribsize "Returns the size of a geometry prim attribute."), [pointattribsize](/en/houdini-vex/attributes-and-intrinsics/pointattribsize "Returns the size of a geometry point attribute."), or [vertexattribsize](/en/houdini-vex/attributes-and-intrinsics/vertexattribsize "Returns the size of a geometry vertex attribute.") may be faster.
 
 `int  attribsize(<geometry>geometry, string attribclass, string attribute_name)`
 

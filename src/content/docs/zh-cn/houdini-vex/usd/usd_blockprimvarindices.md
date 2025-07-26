@@ -10,7 +10,7 @@ order: 25
 
 此函数用于阻塞primvar索引。即移除所有时间样本，并将*block*设为默认值。该操作会将索引型primvar转换为非索引型primvar。
 
-注意：你可能还需要使用[usd_blockprimvar](./usd_blockprimvar "阻塞primvar。")来阻塞primvar本身。
+注意：你可能还需要使用[usd_blockprimvar](/zh-cn/houdini-vex/usd/usd_blockprimvar "阻塞primvar。")来阻塞primvar本身。
 
 `stagehandle`
 

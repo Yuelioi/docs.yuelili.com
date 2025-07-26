@@ -12,7 +12,7 @@ This function only works with area lights.
 
 `lightids`
 
-An array of light IDs, as returned by [getlights](./getlights "Returns an array of light identifiers for the currently shaded surface.").
+An array of light IDs, as returned by [getlights](/en/houdini-vex/shading-and-rendering/getlights "Returns an array of light identifiers for the currently shaded surface.").
 
 `pos`
 
@@ -47,5 +47,5 @@ The light average hemispherical intensity (for area lights).
 
 Returns
 
-A [component bitmask](./bouncemask) indicating what types of component bounces the light affects,
+A [component bitmask](/en/houdini-vex/shading-and-rendering/bouncemask) indicating what types of component bounces the light affects,
 or `0` if the ray did not hit a light.

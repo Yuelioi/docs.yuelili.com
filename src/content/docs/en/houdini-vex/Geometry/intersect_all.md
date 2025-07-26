@@ -2,7 +2,7 @@
 title: intersect_all
 order: 9
 ---
-To get only the *first* intersection, use [intersect](./intersect "This function computes the first intersection of a ray with geometry.").
+To get only the *first* intersection, use [intersect](/en/houdini-vex/geometry/intersect "This function computes the first intersection of a ray with geometry.").
 
 `int  intersect_all(<geometry>geometry, string group, vector orig, vector dir, vector &pos[], int &prim[], vector &uvw[], float tol=0.01, float ttol=0.01 )`
 

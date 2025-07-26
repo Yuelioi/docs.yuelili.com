@@ -10,7 +10,7 @@ order: 5
 
 如果指定了纹理属性，该函数将使用该属性中的UV坐标将面片坐标转换到Houdini几何体上。
 
-几何体中的每个多边形都会生成一个或多个Catmull-Clark细分面片。四边形会生成单个面片，而五边形会生成五个面片。此函数帮助在细分面片ID和Houdini多边形（面）之间建立映射。反向映射（从面到面片）的函数是[osd_lookuppatch](./osd_lookuppatch "输出与Houdini多边形面上给定坐标对应的OSD面片和UV坐标")。
+几何体中的每个多边形都会生成一个或多个Catmull-Clark细分面片。四边形会生成单个面片，而五边形会生成五个面片。此函数帮助在细分面片ID和Houdini多边形（面）之间建立映射。反向映射（从面到面片）的函数是[osd_lookuppatch](/zh-cn/houdini-vex/subdivision-surfaces/osd_lookuppatch "输出与Houdini多边形面上给定坐标对应的OSD面片和UV坐标")。
 
 `<geometry>`
 

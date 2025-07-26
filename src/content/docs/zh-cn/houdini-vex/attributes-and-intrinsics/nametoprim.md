@@ -14,4 +14,4 @@ order: 32
 
 返回`name`属性中具有给定值的点的编号。如果没有点具有给定ID，或者几何图形没有`name`属性，则返回`-1`。
 
-要通过`id`属性值查找点，请使用[idtopoint](./idtopoint "通过id属性查找点。")。要通过任意字符串或整数属性值查找点，请使用[findattribval](./findattribval "查找具有特定属性值的图元/点/顶点。")。
+要通过`id`属性值查找点，请使用[idtopoint](/zh-cn/houdini-vex/attributes-and-intrinsics/idtopoint "通过id属性查找点。")。要通过任意字符串或整数属性值查找点，请使用[findattribval](/zh-cn/houdini-vex/attributes-and-intrinsics/findattribval "查找具有特定属性值的图元/点/顶点。")。

@@ -46,7 +46,7 @@ order: 39
 `xformgroup`
 
 变换组的索引，指定用于IK求解器的关节（不在变换组中的所有变换将被忽略）。
-可以使用[agentfindtransformgroup](./agentfindtransformgroup "查找代理定义中变换组的索引")按名称查找变换组，值为-1表示应包含代理中的所有变换。
+可以使用[agentfindtransformgroup](/zh-cn/houdini-vex/crowds/agentfindtransformgroup "查找代理定义中变换组的索引")按名称查找变换组，值为-1表示应包含代理中的所有变换。
 建议使用仅包含与代理骨骼结构对应的变换的变换组。
 
 `iters`

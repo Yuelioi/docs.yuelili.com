@@ -46,11 +46,11 @@ BSDF的标志位字段，定义在`pbr.h`中。函数可能会设置如`PBR_BSDF
 
 在复合BSDF中，返回被采样的弹射类型。
 
-关于组件标签位掩码的信息，请参阅[bouncemask](../shading-and-rendering/bouncemask)。
+关于组件标签位掩码的信息，请参阅[bouncemask](/zh-cn/houdini-vex/shading-and-rendering/bouncemask)。
 
 `sx`和`sy`
 
-随机值，例如由[nextsample](../sampling/nextsample)生成。不同的`sx`和`sy`值代表不同的随机采样方向。
+随机值，例如由[nextsample](/zh-cn/houdini-vex/sampling/nextsample)生成。不同的`sx`和`sy`值代表不同的随机采样方向。
 
 `&eval`
 

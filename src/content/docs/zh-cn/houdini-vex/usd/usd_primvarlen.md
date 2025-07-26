@@ -33,7 +33,7 @@ Primvar名称（不包含命名空间）。
 
 返回值
 
-返回数组型primvar的长度，若非数组型primvar则返回`1`，若primvar不存在则返回`0`。可使用[usd_isarrayprimvar](./usd_isarrayprimvar "检查USD图元上是否存在数组型primvar。")来验证primvar是否为数组类型。
+返回数组型primvar的长度，若非数组型primvar则返回`1`，若primvar不存在则返回`0`。可使用[usd_isarrayprimvar](/zh-cn/houdini-vex/usd/usd_isarrayprimvar "检查USD图元上是否存在数组型primvar。")来验证primvar是否为数组类型。
 
 ## 示例
 

@@ -35,7 +35,7 @@ matrix or a 4×4 transform matrix. The matrix will be constructed so that the
 z-axis will be transformed to the z-axis specified with the given up vector
 (yaxis). Thus, maketransform({0,0,1}, {0,1,0}) will result in an identity
 matrix. The version which returns a 4×4 transform will apply the translation
-to the 4×4 matrix. This function is very similar to the [lookat](./lookat "Computes a rotation matrix or angles to orient the negative z-axis along the vector (to-from) under the transformation.")
+to the 4×4 matrix. This function is very similar to the [lookat](/en/houdini-vex/transforms-and-space/lookat "Computes a rotation matrix or angles to orient the negative z-axis along the vector (to-from) under the transformation.")
 function. The vectors passed in are *not* normalized meaning that scales
 should be preserved in construction of the transform.
 

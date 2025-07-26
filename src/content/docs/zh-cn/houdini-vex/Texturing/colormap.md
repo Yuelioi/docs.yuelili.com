@@ -2,7 +2,7 @@
 title: colormap
 order: 1
 ---
-该函数对像素值进行双线性插值。要获取未过滤的像素值，请使用[rawcolormap](./rawcolormap "从纹理文件中查找未过滤的颜色")。
+该函数对像素值进行双线性插值。要获取未过滤的像素值，请使用[rawcolormap](/zh-cn/houdini-vex/texturing/rawcolormap "从纹理文件中查找未过滤的颜色")。
 
 `vector|vector4 colormap(string filename, vector uvw, ...)`
 

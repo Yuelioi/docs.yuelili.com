@@ -7,9 +7,9 @@ order: 8
 
 `string [] agentclipchannelnames(<geometry>geometry, int prim, int clipindex)`
 
-如果 `clipname` 不是代理的[动画剪辑](./agentclipcatalog "返回代理基元加载的所有动画剪辑")之一，`prim` 超出范围，或 `prim` 不是代理基元，则返回空数组。
+如果 `clipname` 不是代理的[动画剪辑](/zh-cn/houdini-vex/crowds/agentclipcatalog "返回代理基元加载的所有动画剪辑")之一，`prim` 超出范围，或 `prim` 不是代理基元，则返回空数组。
 
-要获取代理的变换列表，请使用 [agenttransformnames](./agenttransformnames "返回代理基元骨骼中每个变换的名称")。
+要获取代理的变换列表，请使用 [agenttransformnames](/zh-cn/houdini-vex/crowds/agenttransformnames "返回代理基元骨骼中每个变换的名称")。
 
 `<geometry>`
 
@@ -28,4 +28,4 @@ order: 8
 `clipindex`
 
 代理定义中剪辑的索引。
-剪辑的索引可通过 [agentfindclip](./agentfindclip "查找代理定义中剪辑的索引") 获取。
+剪辑的索引可通过 [agentfindclip](/zh-cn/houdini-vex/crowds/agentfindclip "查找代理定义中剪辑的索引") 获取。

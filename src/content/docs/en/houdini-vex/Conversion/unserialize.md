@@ -6,7 +6,7 @@ order: 13
 
 `<matrix>[] unserialize(float values[])`
 
-The inverse operation to [serialize](./serialize "Flattens an array of vector or matrix types into an array of floats."). This operation takes an array of float values
+The inverse operation to [serialize](/en/houdini-vex/conversion/serialize "Flattens an array of vector or matrix types into an array of floats."). This operation takes an array of float values
 and creates a new array of vectors or floats by taking each float and assigning it to the
 next component of the vector or matrix in the output array. For example:
 

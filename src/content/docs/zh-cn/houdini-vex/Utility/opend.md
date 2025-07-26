@@ -8,7 +8,7 @@ order: 8
 
 `void  opend(int handle)`
 
-通知mantra一个由[opstart](./opstart "开始一个长时间操作")启动的长时间操作已完成。传入[opstart](./opstart "开始一个长时间操作")返回的值。
+通知mantra一个由[opstart](/zh-cn/houdini-vex/utility/opstart "开始一个长时间操作")启动的长时间操作已完成。传入[opstart](/zh-cn/houdini-vex/utility/opstart "开始一个长时间操作")返回的值。
 
 ```vex
 int op_handle = opstart("正在执行长时间操作");

@@ -4,8 +4,8 @@ order: 88
 ---
 `float  trunc(float x)`
 
-如果参数为负数，则返回 [ceil(x)](./ceil "返回大于或等于参数的最小整数")，否则返回
-[floor(x)](./floor "返回小于或等于参数的最大整数")。
+如果参数为负数，则返回 [ceil(x)](/zh-cn/houdini-vex/math/ceil "返回大于或等于参数的最小整数")，否则返回
+[floor(x)](/zh-cn/houdini-vex/math/floor "返回小于或等于参数的最大整数")。
 
 `vector2  trunc(vector2 x)`
 

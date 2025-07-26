@@ -6,7 +6,7 @@ order: 32
 
 If the string matches `pattern_from`, it is replaced with `pattern_to` with the matching wildcards substituted in.
 
-The pattern can use wildcards such as `str*` or `str?`, similar to the [match](./match "This function returns 1 if the subject matches the pattern specified,
+The pattern can use wildcards such as `str*` or `str?`, similar to the [match](/en/houdini-vex/strings/match "This function returns 1 if the subject matches the pattern specified,
 or 0 if the subject doesn’t match.") function.
 The wildcards may also be referred to with an index (e.g. `(2)`) to allow reordering.
 Examples

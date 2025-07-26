@@ -12,7 +12,7 @@ order: 11
 
 Returns the number of the closest point on the geometry.
 This will only search against points, not the surface locations
-of the geometry. Use [xyzdist](../measure/xyzdist "Finds the distance from a point to the closest location on surface geometry.") to find the closest point on surfaces or curves.
+of the geometry. Use [xyzdist](/en/houdini-vex/measure/xyzdist "Finds the distance from a point to the closest location on surface geometry.") to find the closest point on surfaces or curves.
 
 -1 is returned if no point is found in the search distance.
 

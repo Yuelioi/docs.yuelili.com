@@ -248,7 +248,7 @@ Houdini在具有某些可用变量的上下文中执行脚本，这些变量指�
 - 对于HScript回调，Houdini创建变量，如`$node`，其中包含参数更改的节点路径。
 - 对于Python回调，Houdini创建`kwargs`变量，其中包含有关已更改参数的信息字典。
 
-有关更多信息，请参阅[回调脚本](../hom/locations.html#parameter_callback_scripts)。
+有关更多信息，请参阅[回调脚本](/zh-cn/houdini-vex/hom/locations.html#parameter_callback_scripts)。
 
 # pragma disablewhen和#pragma hidewhen
 
@@ -262,7 +262,7 @@ Houdini在具有某些可用变量的上下文中执行脚本，这些变量指�
 
 当conditional_expression评估为true时，从UI中隐藏parm_name。
 
-conditional_expression的语法与参数上的**禁用条件**和**隐藏条件**选项相同。有关条件语法的更多信息，请参阅[条件规则帮助](../ref/windows/optype.html#conditionals)。
+conditional_expression的语法与参数上的**禁用条件**和**隐藏条件**选项相同。有关条件语法的更多信息，请参阅[条件规则帮助](/zh-cn/houdini-vex/ref/windows/optype.html#conditionals)。
 
 ```vex
 // 当'enable'参数切换为关闭时，禁用'samples'参数

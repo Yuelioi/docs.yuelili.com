@@ -15,7 +15,7 @@ Mantra runs the shaders for a surface in a fixed order:
 1. Surface (possibly calling light shaders in `illuminance` loops)
 1. Fog (possibly calling light shaders in `illuminance` loops)
 
-Once the displacement shader has run, you can use [dimport](../displace/dimport "Reads a variable from the displacement shader for the surface.")
+Once the displacement shader has run, you can use [dimport](/en/houdini-vex/displace/dimport "Reads a variable from the displacement shader for the surface.")
 to retrieve exported variables from it. Once the surface shader
 has run, you can use `simport` to retrieve exported variables
 from it.

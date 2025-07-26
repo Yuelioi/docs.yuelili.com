@@ -10,4 +10,4 @@ When running in the context of a node (such as a wrangle SOP), this argument can
 
 Alternatively, the argument can be a string specifying a geometry file (for example, a `.bgeo`) to read from. When running inside Houdini, this can be an `op:/path/to/sop` reference.
 
-See [attribtypeinfo](./attribtypeinfo "Returns the transformation metadata of a geometry attribute.") for more information.
+See [attribtypeinfo](/en/houdini-vex/attributes-and-intrinsics/attribtypeinfo "Returns the transformation metadata of a geometry attribute.") for more information.
